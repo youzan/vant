@@ -29,7 +29,7 @@ export const PopupMixin = {
     // whether to close popup when click overlay
     closeOnClickOverlay: Boolean,
     // z-index
-    zIndex: [String, Number],
+    zIndex: [Number, String],
     // prevent body scroll
     lockScroll: {
       type: Boolean,

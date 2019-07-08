@@ -13,7 +13,7 @@ export default createComponent({
       default: () => ({})
     },
     columnsNum: {
-      type: [String, Number],
+      type: [Number, String],
       default: 3
     }
   },

@@ -12,7 +12,7 @@ export default createComponent({
     wrapable: Boolean,
     background: String,
     delay: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     },
     scrollable: {

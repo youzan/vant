@@ -7,11 +7,8 @@ export default createComponent({
   mixins: [PopupMixin],
 
   props: {
+    duration: Number,
     transition: String,
-    duration: {
-      type: Number,
-      default: null
-    },
     position: {
       type: String,
       default: 'center'

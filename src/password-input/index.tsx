@@ -60,8 +60,8 @@ function PasswordInput(
 
 PasswordInput.props = {
   info: String,
+  gutter: [Number, String],
   errorInfo: String,
-  gutter: [String, Number],
   mask: {
     type: Boolean,
     default: true

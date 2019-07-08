@@ -226,11 +226,11 @@ export default createComponent({
   },
 
   render(h) {
-    const { data, errorInfo } = this;
+    const { data, errorInfo, searchResult } = this;
     const onFocus = name => () => this.onFocus(name);
 
     // hide bottom field when use search && detail get focused
-    const hideBottomFields = this.searchResult.length && this.detailFocused;
+    const hideBottomFields = searchResult && searchResult.length && this.detailFocused;
 
     return (
       <div class={bem()}>

@@ -5,8 +5,11 @@ const [createComponent, bem] = createNamespace('key');
 export default createComponent({
   props: {
     type: String,
-    theme: Array,
-    text: [String, Number]
+    text: [Number, String],
+    theme: {
+      type: Array,
+      default: () => []
+    }
   },
 
   data() {

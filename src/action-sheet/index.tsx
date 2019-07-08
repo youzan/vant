@@ -21,7 +21,7 @@ export type ActionSheetItem = {
 
 export type ActionSheetProps = PopupMixinProps & {
   title?: string;
-  actions: ActionSheetItem[];
+  actions?: ActionSheetItem[];
   duration: number;
   cancelText?: string;
   closeOnClickAction?: boolean;
@@ -126,7 +126,7 @@ function ActionSheet(
       {...inherit(ctx, true)}
     >
       {Header()}
-      {props.actions.map(Option)}
+      {props.actions && props.actions.map(Option)}
       {Content()}
       {CancelText()}
     </Popup>
@@ -137,14 +137,11 @@ ActionSheet.props = {
   ...PopupMixin.props,
   title: String,
   actions: Array,
+  duration: Number,
   cancelText: String,
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
   safeAreaInsetBottom: Boolean,
-  duration: {
-    type: Number,
-    default: null
-  },
   overlay: {
     type: Boolean,
     default: true

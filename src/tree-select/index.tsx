@@ -35,7 +35,7 @@ function TreeSelect(
 ) {
   const { height, items, mainActiveIndex, activeId } = props;
 
-  const selectedItem = items[mainActiveIndex] || {};
+  const selectedItem: Partial<TreeSelectItem> = items[mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
 
   return (
@@ -90,15 +90,21 @@ function TreeSelect(
 }
 
 TreeSelect.props = {
-  items: Array,
-  mainActiveIndex: Number,
-  activeId: {
-    type: [Number, String],
-    default: 0
+  items: {
+    type: Array,
+    default: () => []
   },
   height: {
     type: Number,
     default: 300
+  },
+  activeId: {
+    type: [Number, String],
+    default: 0
+  },
+  mainActiveIndex: {
+    type: Number,
+    default: 0
   }
 };
 

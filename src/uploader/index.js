@@ -18,27 +18,22 @@ export default createComponent({
   },
 
   props: {
-    fileList: Array,
     disabled: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
     previewSize: [Number, String],
     name: {
-      type: [String, Number],
+      type: [Number, String],
       default: ''
-    },
-    previewImage: {
-      type: Boolean,
-      default: true
     },
     accept: {
       type: String,
       default: 'image/*'
     },
-    resultType: {
-      type: String,
-      default: 'dataUrl'
+    fileList: {
+      type: Array,
+      default: () => []
     },
     maxSize: {
       type: Number,
@@ -47,6 +42,14 @@ export default createComponent({
     maxCount: {
       type: Number,
       default: Number.MAX_VALUE
+    },
+    previewImage: {
+      type: Boolean,
+      default: true
+    },
+    resultType: {
+      type: String,
+      default: 'dataUrl'
     }
   },
 

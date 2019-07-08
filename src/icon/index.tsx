@@ -52,9 +52,9 @@ function Icon(
 
 Icon.props = {
   name: String,
-  size: [String, Number],
+  size: [Number, String],
   color: String,
-  info: [String, Number],
+  info: [Number, String],
   tag: {
     type: String,
     default: 'i'

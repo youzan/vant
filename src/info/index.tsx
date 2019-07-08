@@ -29,7 +29,7 @@ function Info(
 }
 
 Info.props = {
-  info: [String, Number]
+  info: [Number, String]
 };
 
 export default createComponent<InfoProps>(Info);

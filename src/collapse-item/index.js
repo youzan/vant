@@ -12,7 +12,7 @@ export default createComponent({
 
   props: {
     ...cellProps,
-    name: [String, Number],
+    name: [Number, String],
     disabled: Boolean,
     isLink: {
       type: Boolean,

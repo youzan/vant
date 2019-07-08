@@ -13,8 +13,14 @@ function format(rate) {
 export default createComponent({
   props: {
     text: String,
-    value: Number,
-    speed: Number,
+    value: {
+      type: Number,
+      default: 0
+    },
+    speed: {
+      type: Number,
+      default: 0
+    },
     size: {
       type: String,
       default: '100px'

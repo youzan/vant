@@ -12,7 +12,7 @@ export default createComponent({
     inactiveColor: String,
     safeAreaInsetBottom: Boolean,
     value: {
-      type: [String, Number],
+      type: [Number, String],
       default: 0
     },
     border: {

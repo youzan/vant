@@ -7,18 +7,24 @@ const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default createComponent({
   props: {
-    quota: Number,
-    quotaUsed: Number,
     hideStock: Boolean,
+    selectedSku: Object,
     skuEventBus: Object,
     skuStockNum: Number,
-    selectedSku: Object,
     selectedNum: Number,
     stepperTitle: String,
     hideQuotaText: Boolean,
     selectedSkuComb: Object,
     disableStepperInput: Boolean,
-    customStepperConfig: Object
+    customStepperConfig: Object,
+    quota: {
+      type: Number,
+      default: 0
+    },
+    quotaUsed: {
+      type: Number,
+      default: 0
+    }
   },
 
   data() {

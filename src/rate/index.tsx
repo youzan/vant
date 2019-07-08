@@ -154,12 +154,15 @@ function Rate(
 }
 
 Rate.props = {
-  value: Number,
-  size: [String, Number],
-  gutter: [String, Number],
+  size: [Number, String],
+  gutter: [Number, String],
   readonly: Boolean,
   disabled: Boolean,
   allowHalf: Boolean,
+  value: {
+    type: Number,
+    default: 0
+  },
   icon: {
     type: String,
     default: 'star'

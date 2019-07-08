@@ -10,7 +10,7 @@ export default createComponent({
 
   props: {
     ...routeProps,
-    info: [String, Number],
+    info: [Number, String],
     title: String
   },
 

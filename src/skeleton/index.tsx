@@ -84,9 +84,12 @@ function Skeleton(
 }
 
 Skeleton.props = {
-  row: Number,
   title: Boolean,
   avatar: Boolean,
+  row: {
+    type: Number,
+    default: 0
+  },
   loading: {
     type: Boolean,
     default: true

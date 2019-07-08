@@ -74,9 +74,9 @@ function Loading(
 }
 
 Loading.props = {
-  size: [String, Number],
-  textSize: [String, Number],
+  size: [Number, String],
   vertical: Boolean,
+  textSize: [Number, String],
   type: {
     type: String,
     default: 'circular'

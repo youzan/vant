@@ -11,8 +11,8 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
   props: {
     name: null,
     value: null,
-    iconSize: [String, Number],
     disabled: Boolean,
+    iconSize: [Number, String],
     checkedColor: String,
     labelPosition: String,
     labelDisabled: Boolean,

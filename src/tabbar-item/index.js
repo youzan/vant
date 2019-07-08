@@ -11,10 +11,10 @@ export default createComponent({
 
   props: {
     ...routeProps,
-    icon: String,
     dot: Boolean,
-    name: [String, Number],
-    info: [String, Number]
+    icon: String,
+    name: [Number, String],
+    info: [Number, String]
   },
 
   data() {

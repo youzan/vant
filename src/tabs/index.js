@@ -31,13 +31,20 @@ export default createComponent({
     color: String,
     sticky: Boolean,
     animated: Boolean,
-    offsetTop: Number,
     swipeable: Boolean,
     background: String,
     lineWidth: [Number, String],
     lineHeight: [Number, String],
     titleActiveColor: String,
     titleInactiveColor: String,
+    type: {
+      type: String,
+      default: 'line'
+    },
+    active: {
+      type: [Number, String],
+      default: 0
+    },
     border: {
       type: Boolean,
       default: true
@@ -46,21 +53,17 @@ export default createComponent({
       type: Boolean,
       default: true
     },
-    lazyRender: {
-      type: Boolean,
-      default: true
-    },
-    active: {
-      type: [Number, String],
-      default: 0
-    },
-    type: {
-      type: String,
-      default: 'line'
-    },
     duration: {
       type: Number,
       default: 0.3
+    },
+    offsetTop: {
+      type: Number,
+      default: 0
+    },
+    lazyRender: {
+      type: Boolean,
+      default: true
     },
     swipeThreshold: {
       type: Number,

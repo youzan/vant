@@ -8,8 +8,11 @@ export default createComponent({
 
   props: {
     max: Number,
-    value: Array,
-    disabled: Boolean
+    disabled: Boolean,
+    value: {
+      type: Array,
+      default: () => []
+    }
   },
 
   watch: {

@@ -9,8 +9,8 @@ export default createComponent({
     fit: String,
     alt: String,
     lazyLoad: Boolean,
-    width: [String, Number],
-    height: [String, Number]
+    width: [Number, String],
+    height: [Number, String]
   },
 
   data() {

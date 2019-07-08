@@ -25,23 +25,26 @@ export default createComponent({
     height: Number,
     autoplay: Number,
     vertical: Boolean,
-    initialSwipe: Number,
     indicatorColor: String,
     loop: {
-      type: Boolean,
-      default: true
-    },
-    touchable: {
-      type: Boolean,
-      default: true
-    },
-    showIndicators: {
       type: Boolean,
       default: true
     },
     duration: {
       type: Number,
       default: 500
+    },
+    touchable: {
+      type: Boolean,
+      default: true
+    },
+    initialSwipe: {
+      type: Number,
+      default: 0
+    },
+    showIndicators: {
+      type: Boolean,
+      default: true
     }
   },
 
