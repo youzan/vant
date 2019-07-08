@@ -19,7 +19,7 @@ export type ContactListItem = {
 
 export type ContactListProps = {
   value?: any;
-  list: ContactListItem[];
+  list?: ContactListItem[];
   addText?: string;
 };
 
@@ -31,39 +31,49 @@ function ContactList(
   slots: DefaultSlots,
   ctx: RenderContext<ContactListProps>
 ) {
-  const List = props.list.map((item, index) => {
-    const onClick = () => {
-      emit(ctx, 'input', item.id);
-      emit(ctx, 'select', item, index);
-    };
+  const List =
+    props.list &&
+    props.list.map((item, index) => {
+      function onClick() {
+        emit(ctx, 'input', item.id);
+        emit(ctx, 'select', item, index);
+      }
 
-    return (
-      <Cell
-        key={item.id}
-        isLink
-        class={bem('item')}
-        valueClass={bem('item-value')}
-        scopedSlots={{
-          default: () => (
-            <Radio name={item.id} iconSize={16} checkedColor={RED} onClick={onClick}>
-              <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
-            </Radio>
-          ),
-          'right-icon': () => (
-            <Icon
-              name="edit"
-              class={bem('edit')}
-              onClick={event => {
-                event.stopPropagation();
-                emit(ctx, 'edit', item, index);
-              }}
-            />
-          )
-        }}
-        onClick={onClick}
-      />
-    );
-  });
+      function Content() {
+        return (
+          <Radio name={item.id} iconSize={16} checkedColor={RED} onClick={onClick}>
+            <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
+          </Radio>
+        );
+      }
+
+      function RightIcon() {
+        return (
+          <Icon
+            name="edit"
+            class={bem('edit')}
+            onClick={event => {
+              event.stopPropagation();
+              emit(ctx, 'edit', item, index);
+            }}
+          />
+        );
+      }
+
+      return (
+        <Cell
+          key={item.id}
+          isLink
+          class={bem('item')}
+          valueClass={bem('item-value')}
+          scopedSlots={{
+            default: Content,
+            'right-icon': RightIcon
+          }}
+          onClick={onClick}
+        />
+      );
+    });
 
   return (
     <div class={bem()} {...inherit(ctx)}>

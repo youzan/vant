@@ -8,12 +8,14 @@ export default createComponent({
   mixins: [TouchMixin],
 
   props: {
-    min: Number,
-    value: Number,
     disabled: Boolean,
     vertical: Boolean,
     activeColor: String,
     inactiveColor: String,
+    min: {
+      type: Number,
+      default: 0
+    },
     max: {
       type: Number,
       default: 100
@@ -21,6 +23,10 @@ export default createComponent({
     step: {
       type: Number,
       default: 1
+    },
+    value: {
+      type: Number,
+      default: 0
     },
     barHeight: {
       type: String,

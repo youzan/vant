@@ -27,9 +27,9 @@ export const cellProps = {
   titleClass: null as any,
   valueClass: null as any,
   labelClass: null as any,
-  title: [String, Number],
-  value: [String, Number],
-  label: [String, Number],
+  title: [Number, String],
+  value: [Number, String],
+  label: [Number, String],
   arrowDirection: String,
   border: {
     type: Boolean,

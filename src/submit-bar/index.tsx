@@ -94,8 +94,8 @@ function SubmitBar(
 
 SubmitBar.props = {
   tip: String,
-  tipIcon: String,
   label: String,
+  tipIcon: String,
   loading: Boolean,
   disabled: Boolean,
   buttonText: String,

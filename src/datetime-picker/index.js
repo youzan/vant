@@ -18,8 +18,14 @@ export default createComponent({
     ...pickerProps,
     value: null,
     filter: Function,
-    minHour: Number,
-    minMinute: Number,
+    minHour: {
+      type: Number,
+      default: 0
+    },
+    minMinute: {
+      type: Number,
+      default: 0
+    },
     type: {
       type: String,
       default: 'datetime'

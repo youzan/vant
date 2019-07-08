@@ -12,9 +12,12 @@ export default createComponent({
   props: {
     value: null,
     title: String,
-    options: Array,
     disabled: Boolean,
-    titleClass: String
+    titleClass: String,
+    options: {
+      type: Array,
+      default: () => []
+    }
   },
 
   data() {

@@ -8,12 +8,21 @@ function makePage(number, text, active) {
 
 export default createComponent({
   props: {
-    value: Number,
     prevText: String,
     nextText: String,
-    pageCount: Number,
-    totalItems: Number,
     forceEllipses: Boolean,
+    value: {
+      type: Number,
+      default: 0
+    },
+    pageCount: {
+      type: Number,
+      default: 0
+    },
+    totalItems: {
+      type: Number,
+      default: 0
+    },
     mode: {
       type: String,
       default: 'multi'

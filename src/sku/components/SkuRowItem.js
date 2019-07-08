@@ -5,11 +5,14 @@ const [createComponent] = createNamespace('sku-row-item');
 
 export default createComponent({
   props: {
-    skuList: Array,
     skuValue: Object,
     skuKeyStr: String,
     skuEventBus: Object,
-    selectedSku: Object
+    selectedSku: Object,
+    skuList: {
+      type: Array,
+      default: () => []
+    }
   },
 
   computed: {

@@ -14,15 +14,15 @@ export default createComponent({
   props: {
     ...cellProps,
     error: Boolean,
+    readonly: Boolean,
+    autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
-    readonly: Boolean,
     clearable: Boolean,
-    labelWidth: [String, Number],
     labelClass: null,
+    labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,
-    autosize: [Boolean, Object],
     errorMessage: String,
     errorMessageAlign: String,
     type: {

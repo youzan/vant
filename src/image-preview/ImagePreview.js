@@ -26,12 +26,14 @@ export default createComponent({
   ],
 
   props: {
-    images: Array,
     className: null,
     lazyLoad: Boolean,
     asyncClose: Boolean,
-    startPosition: Number,
     showIndicators: Boolean,
+    images: {
+      type: Array,
+      default: () => []
+    },
     loop: {
       type: Boolean,
       default: true
@@ -44,6 +46,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    startPosition: {
+      type: Number,
+      default: 0
+    },
     minZoom: {
       type: Number,
       default: 1 / 3
@@ -54,7 +60,7 @@ export default createComponent({
     },
     overlayClass: {
       type: String,
-      default: 'van-image-preview__overlay'
+      default: bem('overlay')
     },
     closeOnClickOverlay: {
       type: Boolean,

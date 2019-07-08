@@ -58,7 +58,7 @@ GoodsActionIcon.props = {
   ...routeProps,
   text: String,
   icon: String,
-  info: [String, Number],
+  info: [Number, String],
   iconClass: null as any
 };
 

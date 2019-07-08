@@ -25,26 +25,6 @@ export type TsxComponent<Props, Events, Slots> = (
   props: Partial<Props & Events & TsxBaseProps<Slots>>
 ) => VNode;
 
-const arrayProp = {
-  type: Array,
-  default: () => []
-};
-
-const numberProp = {
-  type: Number,
-  default: 0
-};
-
-function defaultProps(props: any) {
-  Object.keys(props).forEach(key => {
-    if (props[key] === Array) {
-      props[key] = arrayProp;
-    } else if (props[key] === Number) {
-      props[key] = numberProp;
-    }
-  });
-}
-
 function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
   const { name } = this;
   Vue.component(name as string, this);
@@ -87,10 +67,6 @@ export function createComponent(name: string) {
     if (!sfc.functional) {
       sfc.mixins = sfc.mixins || [];
       sfc.mixins.push(SlotsMixin);
-    }
-
-    if (sfc.props) {
-      defaultProps(sfc.props);
     }
 
     sfc.name = name;

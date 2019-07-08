@@ -8,7 +8,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanTabs')],
 
   props: {
-    name: [String, Number],
+    name: [Number, String],
     title: String,
     disabled: Boolean
   },

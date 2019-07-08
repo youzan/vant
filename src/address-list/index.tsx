@@ -13,8 +13,8 @@ export type AddressListProps = {
   switchable: boolean;
   disabledText?: string;
   addButtonText?: string;
-  list: AddressItemData[];
-  disabledList: AddressItemData[];
+  list?: AddressItemData[];
+  disabledList?: AddressItemData[];
 };
 
 export type AddressListSlots = DefaultSlots & {
@@ -29,8 +29,12 @@ function AddressList(
   slots: AddressListSlots,
   ctx: RenderContext<AddressListProps>
 ) {
-  const getList = (list: AddressItemData[], disabled?: boolean) =>
-    list.map((item, index) => (
+  function renderList(list?: AddressItemData[], disabled?: boolean) {
+    if (!list) {
+      return;
+    }
+
+    return list.map((item, index) => (
       <AddressItem
         data={item}
         key={item.id}
@@ -44,9 +48,10 @@ function AddressList(
         }}
       />
     ));
+  }
 
-  const List = getList(props.list);
-  const DisabledList = getList(props.disabledList, true);
+  const List = renderList(props.list);
+  const DisabledList = renderList(props.disabledList, true);
 
   return (
     <div class={bem()} {...inherit(ctx)}>
@@ -59,9 +64,7 @@ function AddressList(
       >
         {List}
       </RadioGroup>
-      {props.disabledText && (
-        <div class={bem('disabled-text')}>{props.disabledText}</div>
-      )}
+      {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
       {DisabledList}
       {slots.default && slots.default()}
       <Button
@@ -83,7 +86,7 @@ AddressList.props = {
   disabledList: Array,
   disabledText: String,
   addButtonText: String,
-  value: [String, Number],
+  value: [Number, String],
   switchable: {
     type: Boolean,
     default: true

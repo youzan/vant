@@ -114,7 +114,8 @@ test('column watch default index', async () => {
     propsData: {
       initialOptions: [disabled, ...simpleColumn],
       valueKey: 'text',
-      itemHeight: 50
+      itemHeight: 50,
+      visibleItemCount: 5
     }
   });
 

@@ -60,7 +60,10 @@ CouponCell.model = {
 
 CouponCell.props = {
   title: String,
-  coupons: Array,
+  coupons: {
+    type: Array,
+    default: () => []
+  },
   currency: {
     type: String,
     default: '¥'

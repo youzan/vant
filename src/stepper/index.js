@@ -10,24 +10,24 @@ export default createComponent({
     value: null,
     integer: Boolean,
     disabled: Boolean,
-    inputWidth: [String, Number],
-    buttonSize: [String, Number],
+    inputWidth: [Number, String],
+    buttonSize: [Number, String],
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     },
     max: {
-      type: [String, Number],
+      type: [Number, String],
       default: Infinity
     },
     step: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     },
     defaultValue: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     }
   },

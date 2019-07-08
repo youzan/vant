@@ -11,8 +11,14 @@ const [createComponent, bem, t] = createNamespace('picker');
 export default createComponent({
   props: {
     ...pickerProps,
-    columns: Array,
-    defaultIndex: Number,
+    defaultIndex: {
+      type: Number,
+      default: 0
+    },
+    columns: {
+      type: Array,
+      default: () => []
+    },
     toolbarPosition: {
       type: String,
       default: 'top'
