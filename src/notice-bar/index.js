@@ -60,10 +60,10 @@ export default createComponent({
   },
 
   methods: {
-    onClickIcon() {
+    onClickIcon(event) {
       if (this.mode === 'closeable') {
         this.showNoticeBar = false;
-        this.$emit('close');
+        this.$emit('close', event);
       }
     },
 
