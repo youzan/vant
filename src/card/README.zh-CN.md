@@ -82,8 +82,8 @@ Vue.use(Card);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | - |
-| click-thumb | 点击自定义图片时触发 | - |
+| click | 点击时触发 | event: Event |
+| click-thumb | 点击自定义图片时触发 | event: Event |
 
 ### Slots
 

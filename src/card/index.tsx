@@ -53,9 +53,9 @@ function Card(
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
   const showBottom = showNum || showPrice || showOriginPrice;
 
-  const onThumbClick = () => {
-    emit(ctx, 'click-thumb');
-  };
+  function onThumbClick(event: MouseEvent) {
+    emit(ctx, 'click-thumb', event);
+  }
 
   function ThumbTag() {
     if (slots.tag || props.tag) {
