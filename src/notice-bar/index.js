@@ -60,10 +60,10 @@ export default createComponent({
   },
 
   methods: {
-    onClickIcon() {
+    onClickIcon(event) {
       if (this.mode === 'closeable') {
         this.showNoticeBar = false;
-        this.$emit('close');
+        this.$emit('close', event);
       }
     },
 
@@ -121,8 +121,8 @@ export default createComponent({
         vShow={this.showNoticeBar}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
-        onClick={() => {
-          this.$emit('click');
+        onClick={event => {
+          this.$emit('click', event);
         }}
       >
         {LeftIcon()}

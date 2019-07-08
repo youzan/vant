@@ -79,8 +79,8 @@ Vue.use(NoticeBar);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click NoticeBar | - |
-| close | Triggered when closed | - |
+| click | Triggered when click NoticeBar | event: Event |
+| close | Triggered when closed | event: Event |
 
 ### Slots
 
