@@ -148,12 +148,10 @@ export default createComponent({
     },
 
     onClickLeftIcon(event) {
-      event.stopPropagation();
       this.$emit('click-left-icon', event);
     },
 
     onClickRightIcon(event) {
-      event.stopPropagation();
       this.$emit('click-right-icon', event);
     },
 
