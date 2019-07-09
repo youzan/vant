@@ -2,38 +2,38 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><span class="van-tag" style="background-color: rgb(150, 151, 153);">标签</span> <span class="van-tag" style="background-color: rgb(255, 68, 68);">标签</span> <span class="van-tag" style="background-color: rgb(25, 137, 250);">标签</span> <span class="van-tag" style="background-color: rgb(7, 193, 96);">标签</span></div>
-  <div><span class="van-tag van-tag--plain van-hairline--surround" style="color: rgb(150, 151, 153);">标签</span> <span class="van-tag van-tag--plain van-tag--round van-hairline--surround" style="color: rgb(255, 68, 68);">
+  <div><span class="van-tag van-tag--default">标签</span> <span class="van-tag van-tag--danger">标签</span> <span class="van-tag van-tag--primary">标签</span> <span class="van-tag van-tag--success">标签</span></div>
+  <div><span class="van-tag van-tag--plain van-tag--default van-hairline--surround">标签</span> <span class="van-tag van-tag--plain van-tag--round van-tag--danger van-hairline--surround">
       标签
-    </span> <span class="van-tag van-tag--plain van-tag--round van-hairline--surround" style="color: rgb(25, 137, 250);">
+    </span> <span class="van-tag van-tag--plain van-tag--round van-tag--primary van-hairline--surround">
       标签
-    </span> <span class="van-tag van-tag--plain van-hairline--surround" style="color: rgb(7, 193, 96);">
-      标签
-    </span></div>
-  <div><span class="van-tag van-tag--round" style="background-color: rgb(150, 151, 153);">标签</span> <span class="van-tag van-tag--round" style="background-color: rgb(255, 68, 68);">
-      标签
-    </span> <span class="van-tag van-tag--round" style="background-color: rgb(25, 137, 250);">
-      标签
-    </span> <span class="van-tag van-tag--round" style="background-color: rgb(7, 193, 96);">
+    </span> <span class="van-tag van-tag--plain van-tag--success van-hairline--surround">
       标签
     </span></div>
-  <div><span class="van-tag van-tag--mark" style="background-color: rgb(150, 151, 153);">标签</span> <span class="van-tag van-tag--mark" style="background-color: rgb(255, 68, 68);">
+  <div><span class="van-tag van-tag--round van-tag--default">标签</span> <span class="van-tag van-tag--round van-tag--danger">
       标签
-    </span> <span class="van-tag van-tag--mark" style="background-color: rgb(25, 137, 250);">
+    </span> <span class="van-tag van-tag--round van-tag--primary">
       标签
-    </span> <span class="van-tag van-tag--mark" style="background-color: rgb(7, 193, 96);">
-      标签
-    </span></div>
-  <div><span class="van-tag" style="background-color: rgb(242, 130, 106);">标签</span> <span class="van-tag van-tag--plain van-hairline--surround" style="color: rgb(242, 130, 106);">
-      标签
-    </span> <span class="van-tag" style="background-color: rgb(114, 50, 221);">标签</span> <span class="van-tag van-tag--plain van-hairline--surround" style="color: rgb(114, 50, 221);">
-      标签
-    </span> <span class="van-tag" style="background-color: rgb(255, 225, 225); color: rgb(173, 0, 0);">
+    </span> <span class="van-tag van-tag--round van-tag--success">
       标签
     </span></div>
-  <div><span class="van-tag" style="background-color: rgb(255, 68, 68);">标签</span> <span class="van-tag van-tag--medium" style="background-color: rgb(255, 68, 68);">
+  <div><span class="van-tag van-tag--mark van-tag--default">标签</span> <span class="van-tag van-tag--mark van-tag--danger">
       标签
-    </span> <span class="van-tag van-tag--large" style="background-color: rgb(255, 68, 68);">
+    </span> <span class="van-tag van-tag--mark van-tag--primary">
+      标签
+    </span> <span class="van-tag van-tag--mark van-tag--success">
+      标签
+    </span></div>
+  <div><span class="van-tag van-tag--default" style="background-color: rgb(242, 130, 106);">标签</span> <span class="van-tag van-tag--plain van-tag--default van-hairline--surround" style="color: rgb(242, 130, 106);">
+      标签
+    </span> <span class="van-tag van-tag--default" style="background-color: rgb(114, 50, 221);">标签</span> <span class="van-tag van-tag--plain van-tag--default van-hairline--surround" style="color: rgb(114, 50, 221);">
+      标签
+    </span> <span class="van-tag van-tag--default" style="background-color: rgb(255, 225, 225); color: rgb(173, 0, 0);">
+      标签
+    </span></div>
+  <div><span class="van-tag van-tag--danger">标签</span> <span class="van-tag van-tag--medium van-tag--danger">
+      标签
+    </span> <span class="van-tag van-tag--large van-tag--danger">
       标签
     </span></div>
 </div>

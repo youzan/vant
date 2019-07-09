@@ -78,7 +78,7 @@ Vue.use(Tag);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为`primary` `success` `danger` | `String` | - | - |
+| type | 类型，可选值为`primary` `success` `danger` | `String` | `default` | - |
 | size | 大小, 可选值为`large` `medium` | `String` | - | - |
 | color | 标签颜色 | `String` | - | - |
 | plain | 是否为空心样式 | `Boolean` | `false` | - |
