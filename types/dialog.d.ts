@@ -8,6 +8,7 @@ export type DialogOptions = {
   className?: any;
   lockScroll?: boolean;
   messageAlign?: string;
+  closeOnPopstate?: boolean;
   cancelButtonText?: string;
   cancelButtonColor?: string;
   confirmButtonText?: string;
