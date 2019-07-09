@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`bar height 1`] = `
+<div class="van-slider">
+  <div class="van-slider__bar" style="width: 50%; height: 10px;">
+    <div role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" aria-orientation="horizontal" class="van-slider__button-wrapper">
+      <div class="van-slider__button"></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`click bar 1`] = `
 <div class="van-slider van-slider--disabled">
   <div class="van-slider__bar" style="width: 50%; height: 2px;">
