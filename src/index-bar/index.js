@@ -3,7 +3,12 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/color';
-import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/dom/scroll';
+import {
+  getScrollTop,
+  getElementTop,
+  getRootScrollTop,
+  getScrollEventTarget
+} from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('index-bar');
 
@@ -32,6 +37,10 @@ export default createComponent({
     highlightColor: {
       type: String,
       default: GREEN
+    },
+    stickyOffsetTop: {
+      type: Number,
+      default: 0
     },
     indexList: {
       type: Array,
@@ -84,7 +93,7 @@ export default createComponent({
       this.children.forEach((item, index) => {
         if (index === active) {
           item.active = true;
-          item.top = Math.max(0, rects[index].top - scrollTop);
+          item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop);
         } else if (index === active - 1) {
           const activeItemTop = rects[active].top - scrollTop;
           item.active = activeItemTop > 0;
@@ -99,7 +108,7 @@ export default createComponent({
       for (let i = this.children.length - 1; i >= 0; i--) {
         const prevHeight = i > 0 ? rects[i - 1].height : 0;
 
-        if (scrollTop + prevHeight >= rects[i].top) {
+        if (scrollTop + prevHeight + this.stickyOffsetTop >= rects[i].top) {
           return i;
         }
       }
@@ -142,6 +151,11 @@ export default createComponent({
       const match = this.children.filter(item => String(item.index) === index);
       if (match[0]) {
         match[0].scrollIntoView();
+
+        if (this.stickyOffsetTop) {
+          window.scrollTo(0, getRootScrollTop() - this.stickyOffsetTop);
+        }
+
         this.$emit('select', match[0].index);
       }
     },

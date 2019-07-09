@@ -69,6 +69,7 @@ export default {
 | index-list | 索引字符列表 | `Array` | `A-Z` | - |
 | z-index | z-index 层级 | `Number` | `1` | - |
 | sticky | 是否开启锚点自动吸顶 | `Boolean` | `true` | - |
+| sticky-offset-top | 锚点自动吸顶时与顶部的距离 | `Number` | `0` | 2.0.7 |
 | highlight-color | 索引字符高亮颜色 | `String` | `#07c160` | - |
 
 ### IndexAnchor Props
