@@ -48,6 +48,17 @@ Use `position` prop to set popup display position
 />
 ```
 
+### Round Corner
+
+```html
+<van-popup
+  v-model="show"
+  round
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+```
+
 ### Get Container
 
 Use `get-container` prop to specify mount location
@@ -93,11 +104,12 @@ export default {
 | position | Can be set to `top` `bottom` `right` `left` | `String` | `center` |
 | overlay-class | Custom overlay class | `String` | - |
 | overlay-style | Custom overlay style | `Object` | - |
-| close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` |
-| transition | Transition | `String` | `popup-slide` |
 | duration | Transition duration, unit second | `Number` | `0.3` |
+| round | Whether to show round corner | `Boolean` | `false` | 
 | lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
 | lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
+| transition | Transition | `String` | `popup-slide` |
 | get-container | Return the mount node for Popup | `String | () => HTMLElement` | - |
 
 ### Events

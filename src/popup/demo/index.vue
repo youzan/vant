@@ -73,6 +73,24 @@
 
     <demo-block
       v-if="!$attrs.weapp"
+      :title="$t('roundCorner')"
+    >
+      <van-button
+        type="primary"
+        @click="showRoundCorner = true"
+      >
+        {{ $t('roundCorner') }}
+      </van-button>
+      <van-popup
+        v-model="showRoundCorner"
+        round
+        position="bottom"
+        :style="{ height: '20%' }"
+      />
+    </demo-block>
+
+    <demo-block
+      v-if="!$attrs.weapp"
       :title="$t('getContainer')"
     >
       <van-button
@@ -100,7 +118,8 @@ export default {
       buttonBottom: '底部弹出',
       buttonLeft: '左侧弹出',
       buttonRight: '右侧弹出',
-      getContainer: '指定挂载节点'
+      getContainer: '指定挂载节点',
+      roundCorner: '圆角弹窗'
     },
     'en-US': {
       position: 'Position',
@@ -109,7 +128,8 @@ export default {
       buttonBottom: 'From Bottom',
       buttonLeft: 'From Left',
       buttonRight: 'From Right',
-      getContainer: 'Get Container'
+      getContainer: 'Get Container',
+      roundCorner: 'Round Corner'
     }
   },
 
@@ -120,6 +140,7 @@ export default {
       showBottom: false,
       showLeft: false,
       showRight: false,
+      showRoundCorner: false,
       showGetContainer: false
     };
   }

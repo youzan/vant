@@ -7,6 +7,7 @@ export default createComponent({
   mixins: [PopupMixin],
 
   props: {
+    round: Boolean,
     duration: Number,
     transition: String,
     position: {
@@ -36,7 +37,7 @@ export default createComponent({
       return;
     }
 
-    const { position, duration } = this;
+    const { round, position, duration } = this;
 
     const transitionName =
       this.transition ||
@@ -56,7 +57,7 @@ export default createComponent({
         <div
           vShow={this.value}
           style={style}
-          class={bem({ [position]: position })}
+          class={bem({ round, [position]: position })}
           onClick={this.onClick}
         >
           {this.slots()}
