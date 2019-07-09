@@ -17,30 +17,50 @@
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
+
+      &.van-popup--round {
+        border-radius: @popup-round-border-radius;
+      }
     }
 
     &--top {
       top: 0;
       left: 0;
       width: 100%;
+
+      &.van-popup--round {
+        border-radius: 0 0 @popup-round-border-radius @popup-round-border-radius;
+      }
     }
 
     &--right {
       top: 50%;
       right: 0;
       transform: translate3d(0, -50%, 0);
+
+      &.van-popup--round {
+        border-radius: @popup-round-border-radius 0 0 @popup-round-border-radius;
+      }
     }
 
     &--bottom {
       bottom: 0;
       left: 0;
       width: 100%;
+
+      &.van-popup--round {
+        border-radius: @popup-round-border-radius @popup-round-border-radius 0 0;
+      }
     }
 
     &--left {
       top: 50%;
       left: 0;
       transform: translate3d(0, -50%, 0);
+
+      &.van-popup--round {
+        border-radius: 0 @popup-round-border-radius @popup-round-border-radius 0;
+      }
     }
 
     &-slide-top-enter,
