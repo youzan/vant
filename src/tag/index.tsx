@@ -1,12 +1,11 @@
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
-import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
-export type TagType = 'primary' | 'success' | 'danger';
+export type TagType = 'default' | 'primary' | 'success' | 'danger';
 
 export type TagSize = 'large' | 'medium';
 
@@ -22,21 +21,14 @@ export type TagProps = {
 
 const [createComponent, bem] = createNamespace('tag');
 
-const COLOR_MAP: { [key: string]: string } = {
-  danger: RED,
-  primary: BLUE,
-  success: GREEN
-};
-
 function Tag(
   h: CreateElement,
   props: TagProps,
   slots: DefaultSlots,
   ctx: RenderContext<TagProps>
 ) {
-  const { type, mark, plain, round, size } = props;
+  const { type, mark, plain, color, round, size } = props;
 
-  const color = props.color || (type && COLOR_MAP[type]) || GRAY_DARK;
   const key = plain ? 'color' : 'backgroundColor';
   const style = { [key]: color };
 
@@ -53,7 +45,7 @@ function Tag(
     <span
       style={style}
       class={[
-        bem(classes),
+        bem([classes, type]),
         {
           'van-hairline--surround': plain
         }
@@ -67,12 +59,15 @@ function Tag(
 
 Tag.props = {
   size: String,
-  type: String,
   mark: Boolean,
   color: String,
   plain: Boolean,
   round: Boolean,
-  textColor: String
+  textColor: String,
+  type: {
+    type: String,
+    default: 'default'
+  }
 };
 
 export default createComponent<TagProps>(Tag);
