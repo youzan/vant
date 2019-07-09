@@ -97,7 +97,7 @@ Slider 垂直展示时，高度为 100% 父元素高度
 | max | 最大值 | `Number` | `100` | - |
 | min | 最小值 | `Number` | `0` | - |
 | step | 步长 | `Number` | `1` | - |
-| bar-height | 进度条高度 | `String` | `2px` | - |
+| bar-height | 进度条高度，默认单位为`px` | `Number | String` | `2px` | - |
 | active-color | 进度条激活态颜色 | `String` | `#1989fa` | 1.5.1 |
 | inactive-color | 进度条默认颜色 | `String` | `#e5e5e5` | 1.5.1 |
 | vertical | 是否垂直展示 | `Boolean` | `false` | 1.6.13 |
