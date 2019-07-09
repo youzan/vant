@@ -1,14 +1,10 @@
 import { createNamespace, addUnit } from '../utils';
-import { toArray, readFile, isOversize } from './utils';
+import { toArray, readFile, isOversize, isImageDataUrl } from './utils';
 import Icon from '../icon';
 import Image from '../image';
 import ImagePreview from '../image-preview';
 
 const [createComponent, bem] = createNamespace('uploader');
-
-function isImageDataUrl(dataUrl) {
-  return dataUrl.indexOf('data:image') === 0;
-}
 
 export default createComponent({
   inheritAttrs: false,
