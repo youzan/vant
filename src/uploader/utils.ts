@@ -1,4 +1,4 @@
-export function toArray(item) {
+export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
     return item;
   }
@@ -6,12 +6,12 @@ export function toArray(item) {
   return [item];
 }
 
-export function readFile(file, resultType) {
+export function readFile(file: File, resultType: string) {
   return new Promise(resolve => {
     const reader = new FileReader();
 
     reader.onload = event => {
-      resolve(event.target.result);
+      resolve((event.target as FileReader).result);
     };
 
     if (resultType === 'dataUrl') {
@@ -22,6 +22,10 @@ export function readFile(file, resultType) {
   });
 }
 
-export function isOversize(files, maxSize) {
+export function isOversize(files: File | File[], maxSize: number): boolean {
   return toArray(files).some(file => file.size > maxSize);
+}
+
+export function isImageDataUrl(dataUrl: string): boolean {
+  return dataUrl.indexOf('data:image') === 0;
 }
