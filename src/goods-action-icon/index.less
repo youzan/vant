@@ -6,15 +6,11 @@
   justify-content: center;
   min-width: @goods-action-icon-width;
   height: @goods-action-icon-height;
-  color: @goods-action-icon-color;
+  color: @goods-action-icon-text-color;
   font-size: @goods-action-icon-font-size;
   line-height: 1;
   text-align: center;
   background-color: @white;
-
-  &:not(:first-child)::after {
-    border-left-width: 1px;
-  }
 
   &:active {
     background-color: @goods-action-icon-active-color;
@@ -23,6 +19,7 @@
   &__icon {
     width: 1em;
     margin: 0 auto 5px;
+    color: @goods-action-icon-color;
     font-size: @goods-action-icon-size;
   }
 }
