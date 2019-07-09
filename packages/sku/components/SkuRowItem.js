@@ -34,6 +34,7 @@ export default sfc({
 
   render(h) {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
+    const imgUrl = this.skuValue.imgUrl || this.skuValue.img_url;
 
     return (
       <span
@@ -46,7 +47,8 @@ export default sfc({
         ]}
         onClick={this.onSelect}
       >
-        {this.skuValue.name}
+        {imgUrl && <img class="van-sku-row__item-img" src={imgUrl} />}
+        <span class="van-sku-row__item-name">{this.skuValue.name}</span>
       </span>
     );
   }

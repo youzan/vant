@@ -88,9 +88,11 @@ Vue.use(Sku);
 | v-model | Whether to show sku | `Boolean` | `false` |
 | sku | Sku data | `Object` | - |
 | goods | Goods info | `Object` | - |
-| goods-id | Goods id | `String | Number` | - |
+| goods-id | Goods id | `String` | Number` | - |
+| price-tag | Price tag | `String` | - | - |
 | hide-stock | Whether to hide stock | `Boolean` | `false` |
 | hide-quota-text | Whether to hide quota text | `Boolean` | `false` |
+| hide-selected-text | Whether to hide selected text | `Boolean` | `false` | - |
 | show-add-cart-btn | Whether to show cart button | `Boolean` | `true` |
 | quota | Quota (0 as no limit) | `Number` | `0` |
 | quota-used | Used quota | `Number` | `0` |
@@ -228,7 +230,13 @@ customStepperConfig: {
         Toast('not enough stock');
       }
     }
-  }
+  },
+  // custom callback when stepper value change
+  handleStepperChange: currentValue => {},
+  // stock
+  stockNum: 1999,
+  // stock fomatter
+  stockFormatter: stockNum => {},
 }
 ```
 

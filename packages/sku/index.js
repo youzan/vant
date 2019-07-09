@@ -1,6 +1,7 @@
 import Sku from './Sku';
 import SkuActions from './components/SkuActions';
 import SkuHeader from './components/SkuHeader';
+import SkuHeaderItem from './components/SkuHeaderItem';
 import SkuMessages from './components/SkuMessages';
 import SkuStepper from './components/SkuStepper';
 import SkuRow from './components/SkuRow';
@@ -10,6 +11,7 @@ import constants from './constants';
 
 Sku.SkuActions = SkuActions;
 Sku.SkuHeader = SkuHeader;
+Sku.SkuHeaderItem = SkuHeaderItem;
 Sku.SkuMessages = SkuMessages;
 Sku.SkuStepper = SkuStepper;
 Sku.SkuRow = SkuRow;

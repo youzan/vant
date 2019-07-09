@@ -89,9 +89,11 @@ Vue.use(Sku);
 | v-model | 是否显示sku | `Boolean` | `false` | - |
 | sku | 商品sku数据 | `Object` | - | - |
 | goods | 商品信息 | `Object` | - | - |
-| goods-id | 商品 id | `String | Number` | - | - |
+| goods-id | 商品 id | `String` | Number` | - | - |
+| price-tag | 价格标签 | `String` | - | - |
 | hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
 | hide-quota-text | 是否显示限购提示 | `Boolean` | `false` | 1.4.8 |
+| hide-selected-text | 是否隐藏已选提示 | `Boolean` | `false` | - |
 | show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
 | quota | 限购数，0 表示不限购 | `Number` | `0` | - |
 | quota-used | 已经购买过的数量 | `Number` | `0` | - |
@@ -239,7 +241,13 @@ customStepperConfig: {
         Toast('库存不够了');
       }
     }
-  }
+  },
+  // 步进器变化的回调
+  handleStepperChange: currentValue => {},
+  // 库存
+  stockNum: 1999,
+  // 格式化库存
+  stockFormatter: stockNum => {},
 }
 ```
 

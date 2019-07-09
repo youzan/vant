@@ -50,10 +50,9 @@ function SkuHeader(
         <img src={goodsImg} />
       </div>
       <div class={bem('goods-info')}>
-        <div class="van-sku__goods-name van-ellipsis">{goods.title}</div>
         {slots.default && slots.default()}
         <Icon
-          name="close"
+          name="clear"
           class="van-sku__close-icon"
           onClick={() => {
             skuEventBus.$emit('sku:close');
