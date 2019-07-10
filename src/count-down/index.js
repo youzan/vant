@@ -22,19 +22,17 @@ export default createComponent({
   },
 
   data() {
-    this.counting = false;
-
     return {
-      remainTime: 0
+      remain: 0
     };
   },
 
   computed: {
     timeData() {
-      return parseTimeData(this.remainTime);
+      return parseTimeData(this.remain);
     },
 
-    parsedTime() {
+    formattedTime() {
       return parseFormat(this.format, this.timeData);
     }
   },
@@ -55,7 +53,7 @@ export default createComponent({
       }
 
       this.counting = true;
-      this.endTime = Date.now() + this.remainTime;
+      this.endTime = Date.now() + this.remain;
       this.tick();
     },
 
@@ -66,7 +64,7 @@ export default createComponent({
 
     reset() {
       this.pause();
-      this.remainTime = this.time;
+      this.remain = this.time;
 
       if (this.autoStart) {
         this.start();
@@ -83,9 +81,9 @@ export default createComponent({
 
     microTick() {
       this.rafId = raf(() => {
-        this.setRemainTime(this.getRemainTime());
+        this.setRemain(this.getRemain());
 
-        if (this.remainTime !== 0) {
+        if (this.remain !== 0) {
           this.microTick();
         }
       });
@@ -93,26 +91,26 @@ export default createComponent({
 
     macroTick() {
       this.rafId = raf(() => {
-        const remainTime = this.getRemainTime();
+        const remain = this.getRemain();
 
-        if (!isSameSecond(remainTime, this.remainTime) || remainTime === 0) {
-          this.setRemainTime(remainTime);
+        if (!isSameSecond(remain, this.remain) || remain === 0) {
+          this.setRemain(remain);
         }
 
-        if (this.remainTime !== 0) {
+        if (this.remain !== 0) {
           this.macroTick();
         }
       });
     },
 
-    getRemainTime() {
+    getRemain() {
       return Math.max(this.endTime - Date.now(), 0);
     },
 
-    setRemainTime(remainTime) {
-      this.remainTime = remainTime;
+    setRemain(remain) {
+      this.remain = remain;
 
-      if (remainTime === 0) {
+      if (remain === 0) {
         this.pause();
         this.$emit('finish');
       }
@@ -120,6 +118,10 @@ export default createComponent({
   },
 
   render(h) {
-    return <div class={bem()}>{this.slots('default', this.timeData) || this.parsedTime}</div>;
+    return (
+      <div class={bem()}>
+        {this.slots('default', this.timeData) || this.formattedTime}
+      </div>
+    );
   }
 });
