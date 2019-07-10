@@ -1,4 +1,6 @@
 import { createNamespace, isDef, addUnit } from '../utils';
+import { getRootScrollTop } from '../utils/dom/scroll';
+import { isIOS } from '../utils/validate/system';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -152,6 +154,13 @@ export default createComponent({
       // fix edge case when input is empty and min is 0
       if (this.currentValue === 0) {
         event.target.value = this.currentValue;
+      }
+
+      // Hack for iOS12 page scroll
+      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
+      /* istanbul ignore next */
+      if (isIOS()) {
+        window.scrollTo(0, getRootScrollTop());
       }
     },
 
