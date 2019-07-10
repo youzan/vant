@@ -228,6 +228,10 @@ export default {
                 title: 'Collapse 折叠面板'
               },
               {
+                path: '/count-down',
+                title: 'CountDown 倒计时'
+              },
+              {
                 path: '/divider',
                 title: 'Divider 分割线'
               },
@@ -560,6 +564,10 @@ export default {
               {
                 path: '/collapse',
                 title: 'Collapse'
+              },
+              {
+                path: '/count-down',
+                title: 'CountDown'
               },
               {
                 path: '/divider',
