@@ -18,6 +18,7 @@ import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
+import CountDown from './count-down';
 import Coupon from './coupon';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
@@ -107,6 +108,7 @@ const components = [
   ContactCard,
   ContactEdit,
   ContactList,
+  CountDown,
   Coupon,
   CouponCell,
   CouponList,
@@ -201,6 +203,7 @@ export {
   ContactCard,
   ContactEdit,
   ContactList,
+  CountDown,
   Coupon,
   CouponCell,
   CouponList,
