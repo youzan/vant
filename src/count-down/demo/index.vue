@@ -68,7 +68,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      millisecond: '毫秒级精度',
+      millisecond: '毫秒级渲染',
       customStyle: '自定义样式',
       customFormat: '自定义格式',
       manualControl: '手动控制',

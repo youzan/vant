@@ -49,10 +49,10 @@ export default {
 
 ```html
 <van-count-down :time="time">
-  <template v-slot="currentTime">
-    <span class="item">{{ currentTime.hours }}</span>
-    <span class="item">{{ currentTime.minutes }}</span>
-    <span class="item">{{ currentTime.seconds }}</span>
+  <template v-slot="timeData">
+    <span class="item">{{ timeData.hours }}</span>
+    <span class="item">{{ timeData.minutes }}</span>
+    <span class="item">{{ timeData.seconds }}</span>
   </template>
 </van-count-down>
 

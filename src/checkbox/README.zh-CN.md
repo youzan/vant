@@ -179,7 +179,7 @@ export default {
 
 ### Checkbox Slots
 
-| 名称 | 说明 | slot-scope |
+| 名称 | 说明 | slot-scope 参数 |
 |------|------|------|
 | default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
