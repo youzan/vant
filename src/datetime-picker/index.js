@@ -249,20 +249,23 @@ export default createComponent({
       let value;
 
       if (this.type === 'time') {
-        const indexes = picker.getIndexes();
-        value = `${indexes[0] + this.minHour}:${indexes[1] + this.minMinute}`;
+        value = picker.getValues().join(':');
       } else {
         const values = picker.getValues();
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
         let date = getTrueValue(values[2]);
+
         if (this.type === 'year-month') {
           date = 1;
         }
+
         date = date > maxDate ? maxDate : date;
+
         let hour = 0;
         let minute = 0;
+
         if (this.type === 'datetime') {
           hour = getTrueValue(values[3]);
           minute = getTrueValue(values[4]);
@@ -293,12 +296,14 @@ export default createComponent({
           formatter('month', padZero(value.getMonth() + 1)),
           formatter('day', padZero(value.getDate()))
         ];
+
         if (this.type === 'datetime') {
           values.push(
             formatter('hour', padZero(value.getHours())),
             formatter('minute', padZero(value.getMinutes()))
           );
         }
+
         if (this.type === 'year-month') {
           values = values.slice(0, 2);
         }
