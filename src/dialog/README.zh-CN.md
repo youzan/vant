@@ -183,7 +183,7 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 
 ### Events
 
