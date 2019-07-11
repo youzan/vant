@@ -110,6 +110,7 @@ export default {
 | direction | 菜单展开方向，可选值为`up` | `String` | `down` | 2.0.1 |
 | overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | `Boolean` | `true` | - |
+| close-on-click-outside | 是否在点击外部元素后关闭菜单 | `Boolean` | `true` | 2.0.7 |
 
 ### DropdownItem Props
 
