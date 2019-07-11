@@ -58,7 +58,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 开关状态 | `null` | `false` | - |
+| v-model | 开关状态 | `any` | `false` | - |
 | title | 左侧标题 |  `string` | `''` | - |
 | border | 是否展示单元格内边框 | `boolean` | `true` | 2.0.0 |
 | cell-size | 单元格大小，可选值为 `large` | `string` | 2.0.0 |
