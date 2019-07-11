@@ -125,3 +125,27 @@ test('reset method', async () => {
 
   expect(prevSnapShot === laterShapShot).toBeTruthy();
 });
+
+test('complete format prop', () => {
+  const wrapper = mount(CountDown, {
+    propsData: {
+      time: 30 * 60 * 60 * 1000 - 1,
+      autoStart: false,
+      format: 'DD-HH-mm-ss-SSS'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('incomplate format prop', () => {
+  const wrapper = mount(CountDown, {
+    propsData: {
+      time: 30 * 60 * 60 * 1000 - 1,
+      autoStart: false,
+      format: 'HH-mm-ss-SSS'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
