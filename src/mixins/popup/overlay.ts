@@ -44,9 +44,10 @@ export function updateOverlay(): void {
     const { vm, config } = context.top;
 
     const el = vm.$el;
-    const target = el && el.parentNode ? el.parentNode : document.body;
-    if (target) {
-      target.appendChild(overlay.$el);
+    if (el && el.parentNode) {
+      el.parentNode.insertBefore(overlay.$el, el);
+    } else {
+      document.body.appendChild(overlay.$el);
     }
 
     Object.assign(overlay, defaultConfig, config, {
