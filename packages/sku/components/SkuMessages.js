@@ -127,6 +127,7 @@ export default sfc({
         {this.messages.map((message, index) => (message.type === 'image' ? (
           <Cell
             class={bem('image-cell')}
+            value-class={bem('image-cell-value')}
             label="仅限一张"
             title={message.name}
             key={`${this.goodsId}-${index}`}
