@@ -162,7 +162,13 @@ export default {
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |------|------|------|------|
-| swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
+| swipeTo | index: 目标位置的索引, options: 选项 | void | 滚动到目标位置 |
+
+### swipeTo Options 格式
+
+| 名称 | 说明 | 类型 |
+|------|------|------|
+| immediate | 是否跳过动画 | `boolean` |
 
 ### Swipe Slots
 

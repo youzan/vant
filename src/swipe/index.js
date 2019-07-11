@@ -2,6 +2,7 @@ import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { BindEventMixin } from '../mixins/bind-event';
+import { doubleRaf } from '../utils/dom/raf';
 import { range } from '../utils/format/number';
 
 const [createComponent, bem] = createNamespace('swipe');
@@ -108,6 +109,7 @@ export default createComponent({
     trackStyle() {
       const mainAxis = this.vertical ? 'height' : 'width';
       const crossAxis = this.vertical ? 'width' : 'height';
+
       return {
         [mainAxis]: `${this.trackSize}px`,
         [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
@@ -246,24 +248,32 @@ export default createComponent({
       }
     },
 
-    swipeTo(index) {
+    swipeTo(index, options = {}) {
       this.swiping = true;
       this.resetTouchStatus();
       this.correctPosition();
 
-      setTimeout(() => {
-        this.swiping = false;
+      doubleRaf(() => {
         this.move({
           pace: (index % this.count) - this.active,
           emitChange: true
         });
-      }, 30);
+
+        if (options.immediate) {
+          doubleRaf(() => {
+            this.swiping = false;
+          });
+        } else {
+          this.swiping = false;
+        }
+      });
     },
 
     correctPosition() {
       if (this.active <= -1) {
         this.move({ pace: this.count });
       }
+
       if (this.active >= this.count) {
         this.move({ pace: -this.count });
       }
@@ -283,14 +293,14 @@ export default createComponent({
           this.resetTouchStatus();
           this.correctPosition();
 
-          setTimeout(() => {
+          doubleRaf(() => {
             this.swiping = false;
             this.move({
               pace: 1,
               emitChange: true
             });
             this.autoPlay();
-          }, 30);
+          });
         }, autoplay);
       }
     },
