@@ -88,7 +88,7 @@ export default createComponent({
       const active = this.getActiveAnchorIndex(scrollTop, rects);
 
       this.activeAnchorIndex = this.indexList[active];
-      
+
       if (this.sticky) {
         this.children.forEach((item, index) => {
           if (index === active) {
