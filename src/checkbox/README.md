@@ -175,7 +175,7 @@ export default {
 
 ### Checkbox Slots
 
-| Name | Description | slot-scope |
+| Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
 | icon | Custom icon | checked: whether to be checked |

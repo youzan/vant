@@ -135,7 +135,7 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 | slot-scope 参数 |
+| 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义内容 | timeData |
 

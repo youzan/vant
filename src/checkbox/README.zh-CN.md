@@ -41,7 +41,7 @@ export default {
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
+通过 icon 插槽自定义图标，可以通过`slotProps`判断是否为选中状态
 
 ```html
 <van-checkbox v-model="checked">
@@ -179,7 +179,7 @@ export default {
 
 ### Checkbox Slots
 
-| 名称 | 说明 | slot-scope 参数 |
+| 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |

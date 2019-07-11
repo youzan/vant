@@ -169,6 +169,6 @@ export default {
 
 ### TabbarItem Slots
 
-| Name | Description | slot-scope |
+| Name | Description | SlotProps |
 |------|------|------|
 | icon | Custom icon | active |
