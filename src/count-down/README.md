@@ -111,4 +111,40 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
+|------|------|------|------|------|
+| time | Total time | `Number` | - |
+| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | `String` | `HH:mm:ss` |
+| auto-start | Whether to auto start count down | `Boolean` | `true` |
+| millisecond | Whether to enable millisecond render | `Boolean` | `false` |
+
+### Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| finish | Triggered when count down finished | - |
+
+### Slots
+
+| Name | Description | slot-scope |
+|------|------|------|
+| default | Custom Content | timeData |
+
+### timeData Structure
+
+| Name | Description | Type |
+|------|------|------|
+| days | Remain days | `number` |
+| hours | Remain hours | `number` |
+| minutes | Remain minutes | `number` |
+| seconds | Remain seconds | `number` |
+| milliseconds | Remain milliseconds | `number` |
+
+### Methods
+
+Use ref to get CountDown instance and call instance methods
+
+| Name | Attribute | Return value | Description |
 |------|------|------|------|
+| start | - | - | Start count down |
+| pause | - | - | Pause count down |
+| reset | - | - | Reset count down |
