@@ -71,18 +71,18 @@ Use slot to add custom contents.
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| price | Price |  `Number` | - |
-| label | Price left label |  `String` | `Total：` |
-| suffix-label | Price right label | `String` | - |
-| button-text | Button text | `String` | - |
-| button-type | Button type |  `String` | `danger` |
-| tip | Tip |  `String` | - |
-| tip-icon | Icon |  `String` | - |
-| disabled | Whether to disable button |  `Boolean` | `false` |
-| loading | Whether to show loading icon |  `Boolean` | `false` |
-| currency | Currency symbol |  `String` | `¥` |
-| decimal-length | Number of digits to appear after the decimal point | `Number` | `2` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
+| price | Price | `number` | - |
+| label | Price left label | `string` | `Total：` |
+| suffix-label | Price right label | `string` | - |
+| button-text | Button text | `string` | - |
+| button-type | Button type | `string` | `danger` |
+| tip | Tip | `string` | - |
+| tip-icon | Icon |  `string` | - |
+| disabled | Whether to disable button | `boolean` | `false` |
+| loading | Whether to show loading icon | `boolean` | `false` |
+| currency | Currency symbol | `string` | `¥` |
+| decimal-length | number of digits to appear after the decimal point | `number` | `2` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `boolean` | `false` |
 
 ### Events
 

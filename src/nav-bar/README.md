@@ -50,13 +50,13 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| title | Title | `String` | `''` |
-| left-text | Left Text | `String` | `''` |
-| right-text | Right Text | `String` | `''` |
-| left-arrow | Whether to show left arrow | `Boolean` | `false` |
-| fixed | Whether to fixed top | `Boolean` | `false` |
-| border | Whether to show bottom border | `Boolean` | `true` |
-| z-index | Z-index | `Number` | `1` |
+| title | Title | `string` | `''` |
+| left-text | Left Text | `string` | `''` |
+| right-text | Right Text | `string` | `''` |
+| left-arrow | Whether to show left arrow | `boolean` | `false` |
+| fixed | Whether to fixed top | `boolean` | `false` |
+| border | Whether to show bottom border | `boolean` | `true` |
+| z-index | Z-index | `number` | `1` |
 
 ### Slots
 

@@ -51,7 +51,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前导航项的索引 | `String | Number` | `0` | 2.0.4 |
+| v-model | 当前导航项的索引 | `string | number` | `0` | 2.0.4 |
 
 ### Sidebar Events
 
@@ -63,11 +63,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| title | 内容 | `String` | `''` | - |
-| info | 提示消息 | `String | Number` | `''` | - |
-| url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | 2.0.4 |
-| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 2.0.4 |
+| title | 内容 | `string` | `''` | - |
+| info | 提示消息 | `string | number` | `''` | - |
+| url | 跳转链接 | `string` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | 2.0.4 |
+| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | 2.0.4 |
 
 ### SidebarItem Events
 

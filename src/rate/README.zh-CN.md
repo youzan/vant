@@ -92,18 +92,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前分值 | `Number` | - | - |
-| count | 图标总数 | `Number` | `5` | - |
-| size | 图标大小，默认单位为`px` | `String | Number` | `20px` | - |
-| gutter | 图标间距，默认单位为`px` | `String | Number` | `4px` | 2.0.0 |
-| color | 选中时的颜色 | `String` | `#ffd21e` | - |
-| void-color | 未选中时的颜色 | `String` | `#c7c7c7` | - |
-| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` | - |
-| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star-o`  | - |
-| allow-half | 是否允许半选 | `Boolean` | `false` | 1.6.14 |
-| readonly | 是否为只读状态 | `Boolean` | `false` | - |
-| disabled | 是否禁用评分 | `Boolean` | `false` | - |
-| disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` | - |
+| v-model | 当前分值 | `number` | - | - |
+| count | 图标总数 | `number` | `5` | - |
+| size | 图标大小，默认单位为`px` | `string | number` | `20px` | - |
+| gutter | 图标间距，默认单位为`px` | `string | number` | `4px` | 2.0.0 |
+| color | 选中时的颜色 | `string` | `#ffd21e` | - |
+| void-color | 未选中时的颜色 | `string` | `#c7c7c7` | - |
+| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `string` | `star` | - |
+| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `string` | `star-o`  | - |
+| allow-half | 是否允许半选 | `boolean` | `false` | 1.6.14 |
+| readonly | 是否为只读状态 | `boolean` | `false` | - |
+| disabled | 是否禁用评分 | `boolean` | `false` | - |
+| disabled-color | 禁用时的颜色 | `string` | `#bdbdbd` | - |
 
 ### Events
 

@@ -59,14 +59,14 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 开关状态 | `null` | `false` | - |
-| title | 左侧标题 |  `String` | `''` | - |
-| border | 是否展示单元格内边框 | `Boolean` | `true` | 2.0.0 |
-| cell-size | 单元格大小，可选值为 `large` | `String` | 2.0.0 |
-| loading | 是否为加载状态 |  `Boolean` | `false` | - |
-| disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
-| size | 开关尺寸 | `String` | `24px` | - |
-| active-color | 开关时的背景色 | `String` | `#1989fa` | 1.5.0 |
-| inactive-color | 开关时的背景色 | `String` | `#fff` | 1.5.0 |
+| title | 左侧标题 |  `string` | `''` | - |
+| border | 是否展示单元格内边框 | `boolean` | `true` | 2.0.0 |
+| cell-size | 单元格大小，可选值为 `large` | `string` | 2.0.0 |
+| loading | 是否为加载状态 |  `boolean` | `false` | - |
+| disabled | 是否为禁用状态 |  `boolean` | `false` | - |
+| size | 开关尺寸 | `string` | `24px` | - |
+| active-color | 开关时的背景色 | `string` | `#1989fa` | 1.5.0 |
+| inactive-color | 开关时的背景色 | `string` | `#fff` | 1.5.0 |
 | active-value | 打开时的值 | `any` | `true` | 1.5.6 |
 | inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
 

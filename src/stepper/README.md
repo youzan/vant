@@ -97,16 +97,16 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Current value | `String | Number` | Min value |
-| min | Min value | `String | Number` | `1` |
-| max | Max value | `String | Number` | - |
-| step | Value change step | `String | Number` | `1` |
-| integer | Whether to allow only integers | `Boolean` | `false` |
-| disabled | Disable value change | `Boolean` | `false` |
-| disable-input | Disable input | `Boolean` | `false` |
-| async-change | Whether to enable async change | `Boolean` | `false` | - |
-| input-width | Input width | `String | Number` | `32px` |
-| button-size | Button size | `String | Number` | `28px` |
+| v-model | Current value | `string | number` | Min value |
+| min | Min value | `string | number` | `1` |
+| max | Max value | `string | number` | - |
+| step | Value change step | `string | number` | `1` |
+| integer | Whether to allow only integers | `boolean` | `false` |
+| disabled | Disable value change | `boolean` | `false` |
+| disable-input | Disable input | `boolean` | `false` |
+| async-change | Whether to enable async change | `boolean` | `false` | - |
+| input-width | Input width | `string | number` | `32px` |
+| button-size | Button size | `string | number` | `28px` |
 
 ### Events
 

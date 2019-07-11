@@ -117,36 +117,36 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show sku | `Boolean` | `false` |
-| sku | Sku data | `Object` | - |
-| goods | Goods info | `Object` | - |
-| goods-id | Goods id | `String | Number` | - |
-| hide-stock | Whether to hide stock | `Boolean` | `false` |
-| hide-quota-text | Whether to hide quota text | `Boolean` | `false` |
-| show-add-cart-btn | Whether to show cart button | `Boolean` | `true` |
-| buy-text | Buy button text | `String` | - | - |
-| add-cart-text | Add cart button text | `String` | - | - |
-| quota | Quota (0 as no limit) | `Number` | `0` |
-| quota-used | Used quota | `Number` | `0` |
-| reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` |
-| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` |
-| disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | `Boolean` | `false` |
-| stepper-title | Quantity title | `String` | `Quantity` |
-| custom-stepper-config | Custom stepper related config | `Object` | `{}` |
-| message-config | Message related config | `Object` | `{}` |
-| get-container | Return the mount node for sku | `String | () => HTMLElement` | - |
+| v-model | Whether to show sku | `boolean` | `false` |
+| sku | Sku data | `object` | - |
+| goods | Goods info | `object` | - |
+| goods-id | Goods id | `string | number` | - |
+| hide-stock | Whether to hide stock | `boolean` | `false` |
+| hide-quota-text | Whether to hide quota text | `boolean` | `false` |
+| show-add-cart-btn | Whether to show cart button | `boolean` | `true` |
+| buy-text | Buy button text | `string` | - | - |
+| add-cart-text | Add cart button text | `string` | - | - |
+| quota | Quota (0 as no limit) | `number` | `0` |
+| quota-used | Used quota | `number` | `0` |
+| reset-stepper-on-hide | Whether to reset stepper when hide | `boolean` | `false` |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `boolean` | `false` |
+| disable-stepper-input | Whether to disable stepper input | `boolean` | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | `boolean` | `false` |
+| stepper-title | Quantity title | `string` | `Quantity` |
+| custom-stepper-config | Custom stepper related config | `object` | `{}` |
+| message-config | Message related config | `object` | `{}` |
+| get-container | Return the mount node for sku | `string | () => HTMLElement` | - |
 
 ### Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| add-cart | Triggered when click cart button | data: Object |
-| buy-clicked | Triggered when click buy button | data: Object |
+| add-cart | Triggered when click cart button | data: object |
+| buy-clicked | Triggered when click buy button | data: object |
 | stepper-change | Triggered when stepper value changed | value: number |
 | sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
-| open-preview | Triggered when open image preview | data: Object |
-| close-preview | Triggered when close image preview | data: Object |
+| open-preview | Triggered when open image preview | data: object |
+| close-preview | Triggered when close image preview | data: object |
 
 ### Methods
 

@@ -99,18 +99,18 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show popup | `Boolean` | `false` |
-| overlay | Whether to show overlay | `Boolean` | `true` |
-| position | Can be set to `top` `bottom` `right` `left` | `String` | `center` |
-| overlay-class | Custom overlay class | `String` | - |
-| overlay-style | Custom overlay style | `Object` | - |
-| duration | Transition duration, unit second | `Number` | `0.3` |
-| round | Whether to show round corner | `Boolean` | `false` | 
-| lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
-| lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
-| transition | Transition | `String` | `popup-slide` |
-| get-container | Return the mount node for Popup | `String | () => HTMLElement` | - |
+| v-model | Whether to show popup | `boolean` | `false` |
+| overlay | Whether to show overlay | `boolean` | `true` |
+| position | Can be set to `top` `bottom` `right` `left` | `string` | `center` |
+| overlay-class | Custom overlay class | `string` | - |
+| overlay-style | Custom overlay style | `object` | - |
+| duration | Transition duration, unit second | `number` | `0.3` |
+| round | Whether to show round corner | `boolean` | `false` | 
+| lock-scroll | Whether to lock background scroll | `boolean` | `true` |
+| lazy-render | Whether to lazy render util appeared | `boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `boolean` | `true` |
+| transition | Transition | `string` | `popup-slide` |
+| get-container | Return the mount node for Popup | `string | () => HTMLElement` | - |
 
 ### Events
 

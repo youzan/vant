@@ -101,16 +101,16 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | actions | 菜单选项 | `Array` | `[]` | - |
-| title | 标题 | `String` | - | - |
-| cancel-text | 取消按钮文字 | `String` | - | - |
-| overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
-| close-on-click-action | 是否在点击选项后关闭 | `Boolean` | `false` | 2.0.0 |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `true` | - |
-| lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | 2.0.0 |
-| duration | 动画时长，单位秒 | `Number` | `0.3` | 2.0.3 |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
+| title | 标题 | `string` | - | - |
+| cancel-text | 取消按钮文字 | `string` | - | - |
+| overlay | 是否显示遮罩层 | `boolean` | `true` | - |
+| close-on-click-action | 是否在点击选项后关闭 | `boolean` | `false` | 2.0.0 |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `true` | - |
+| lazy-render | 是否在显示弹层时才渲染节点 | `boolean` | `true` | - |
+| lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | 2.0.0 |
+| duration | 动画时长，单位秒 | `number` | `0.3` | 2.0.3 |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | - | - |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
 
 ### Events
 

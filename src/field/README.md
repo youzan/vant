@@ -123,28 +123,28 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| value | Field value | `String | Number` | - |
-| label | Field label | `String` | - |
-| type | Input type | `String` | `text` |
-| size | Size，can be set to `large` | `String` | - |
-| border | Whether to show inner border | `Boolean` | `true` |
-| disabled | Whether to disable field | `Boolean` | `false` |
-| readonly | Whether to be readonly | `Boolean` | `false` |
-| required | Whether to show required mark | `Boolean` | `false` |
-| clearable | Whether to be clearable | `Boolean` | `false` |
-| clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
-| is-link | Whether to show link icon | `Boolean` | `false` |
-| arrow-direction | Can be set to `left` `up` `down` | `String` | - |
-| error | Whether to show error info | `Boolean` | `false` |
-| error-message | Error message | `String` | `''` |
+| value | Field value | `string | number` | - |
+| label | Field label | `string` | - |
+| type | Input type | `string` | `text` |
+| size | Size，can be set to `large` | `string` | - |
+| border | Whether to show inner border | `boolean` | `true` |
+| disabled | Whether to disable field | `boolean` | `false` |
+| readonly | Whether to be readonly | `boolean` | `false` |
+| required | Whether to show required mark | `boolean` | `false` |
+| clearable | Whether to be clearable | `boolean` | `false` |
+| clickable | Whether to show click feedback when clicked | `boolean` | `false` |
+| is-link | Whether to show link icon | `boolean` | `false` |
+| arrow-direction | Can be set to `left` `up` `down` | `string` | - |
+| error | Whether to show error info | `boolean` | `false` |
+| error-message | Error message | `string` | `''` |
 | label-class | Label className | `any` | - |
-| label-width | Label width | `String | Number` | `90px` |
-| label-align | Label text align, can be set to `center` `right` | `String` | `left` |
-| input-align | Input text align, can be set to `center` `right` | `String` | `left` |
-| error-message-align | Error message text align, can be set to `center` `right` | `String` | `left` |
-| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
-| left-icon | Left side icon name | `String` | - |
-| right-icon | Right side icon name | `String` | - |
+| label-width | Label width | `string | number` | `90px` |
+| label-align | Label text align, can be set to `center` `right` | `string` | `left` |
+| input-align | Input text align, can be set to `center` `right` | `string` | `left` |
+| error-message-align | Error message text align, can be set to `center` `right` | `string` | `left` |
+| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | `boolean | object` | `false` |
+| left-icon | Left side icon name | `string` | - |
+| right-icon | Right side icon name | `string` | - |
 
 ### Events
 

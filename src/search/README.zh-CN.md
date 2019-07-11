@@ -60,17 +60,17 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| label | 搜索框左侧文本 | `String` | - | 1.6.6 |
-| shape | 形状，可选值为 `round` | `String` | `square` | 1.6.6 |
-| background | 搜索框背景色 | `String` | `#f2f2f2` | - |
-| clearable | 是否启用清除控件 | `Boolean` | `true` | 2.0.0 |
-| show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` | - |
-| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
-| readonly | 是否将输入框设为只读 | `Boolean` | `false` | - |
-| error | 是否将输入内容标红 | `Boolean` | `false` | - |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | `search` | 2.0.0 |
-| right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.0 |
+| label | 搜索框左侧文本 | `string` | - | 1.6.6 |
+| shape | 形状，可选值为 `round` | `string` | `square` | 1.6.6 |
+| background | 搜索框背景色 | `string` | `#f2f2f2` | - |
+| clearable | 是否启用清除控件 | `boolean` | `true` | 2.0.0 |
+| show-action | 是否在搜索框右侧显示取消按钮 | `boolean` | `false` | - |
+| disabled | 是否禁用输入框 | `boolean` | `false` | - |
+| readonly | 是否将输入框设为只读 | `boolean` | `false` | - |
+| error | 是否将输入内容标红 | `boolean` | `false` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `string` | `left` | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | `search` | 2.0.0 |
+| right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 2.0.0 |
 
 ### Events
 

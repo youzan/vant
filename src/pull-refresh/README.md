@@ -47,15 +47,15 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Loading status | `Boolean` | - |
-| pulling-text | Text to show when pulling | `String` | `Pull to refresh...` |
-| loosing-text | Text to show when loosing | `String` | `Loose to refresh...` |
-| loading-text | Text to show when loading | `String` | `Loading...` |
-| success-text | Text to show when loading success | `String` | - |
-| success-duration | Success text display duration(ms) | `Number` | `500` |
-| animation-duration | Animation duration | `Number` | `300` |
-| head-height | Height of head | `Number` | `50` |
-| disabled | Whether to disable pull refresh | `Boolean` | `false` |
+| v-model | Loading status | `boolean` | - |
+| pulling-text | Text to show when pulling | `string` | `Pull to refresh...` |
+| loosing-text | Text to show when loosing | `string` | `Loose to refresh...` |
+| loading-text | Text to show when loading | `string` | `Loading...` |
+| success-text | Text to show when loading success | `string` | - |
+| success-duration | Success text display duration(ms) | `number` | `500` |
+| animation-duration | Animation duration | `number` | `300` |
+| head-height | Height of head | `number` | `50` |
+| disabled | Whether to disable pull refresh | `boolean` | `false` |
 
 ### Events
 

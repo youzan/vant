@@ -117,22 +117,22 @@ Vue.use(Grid).use(GridItem);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| column-num | 列数 | `Number` | `4` | 2.0.4 |
-| gutter | 格子之间的间距，默认单位为`px` | `String | Number` | `0` | - |
-| border | 是否显示边框 | `Boolean` | `true` | - |
-| center | 是否将格子内容居中显示 | `Boolean` | `true` | - |
-| square | 是否将格子固定为正方形 | `Boolean` | `false` | - |
-| clickable | 是否开启格子点击反馈 | `Boolean` | `false` | - |
+| column-num | 列数 | `number` | `4` | 2.0.4 |
+| gutter | 格子之间的间距，默认单位为`px` | `string | number` | `0` | - |
+| border | 是否显示边框 | `boolean` | `true` | - |
+| center | 是否将格子内容居中显示 | `boolean` | `true` | - |
+| square | 是否将格子固定为正方形 | `boolean` | `false` | - |
+| clickable | 是否开启格子点击反馈 | `boolean` | `false` | - |
 
 ### GridItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| text | 文字 | `String` | - | - |
-| icon | 图标名称或图片链接，可选值见 Icon 组件 | `String` | - | - |
-| url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
-| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
+| text | 文字 | `string` | - | - |
+| icon | 图标名称或图片链接，可选值见 Icon 组件 | `string` | - | - |
+| url | 跳转链接 | `string` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | - |
+| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | - |
 
 ### GridItem Events
 

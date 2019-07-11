@@ -108,19 +108,19 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Input name | `String | Number` | - |
-| accept | Accepted file type | `String` | `image/*` |
-| preview-image | Whether to show image preview | `Boolean` | `true` |
-| preview-size | Size of preview image | `String | Number` | `80px` |
-| multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
-| disabled | Whether to disabled the upload | `Boolean` | `false` |
-| capture | Capture，can be set to `camera` | `String` | - |
+| name | Input name | `string | number` | - |
+| accept | Accepted file type | `string` | `image/*` |
+| preview-image | Whether to show image preview | `boolean` | `true` |
+| preview-size | Size of preview image | `string | number` | `80px` |
+| multiple | Whether to enable multiple selection pictures | `boolean` | `false` |
+| disabled | Whether to disabled the upload | `boolean` | `false` |
+| capture | Capture，can be set to `camera` | `string` | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
-| max-size | Max size of file | `Number` | - |
-| max-count | Max count of image | `Number` | - |
-| result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
-| upload-text | Upload text | `String` | - |
+| max-size | Max size of file | `number` | - |
+| max-count | Max count of image | `number` | - |
+| result-type | Type of file read result, can be set to `dataUrl` `text` | `string` | `dataUrl` |
+| upload-text | Upload text | `string` | - |
 
 ### Events
 
@@ -139,5 +139,5 @@ export default {
 
 | Attribute | Description | Type |
 |------|------|------|
-| file | File object | `Object` |
-| detail | Detail info | `Object` |
+| file | File object | `object` |
+| detail | Detail info | `object` |

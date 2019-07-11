@@ -42,11 +42,11 @@ Vue.use(Loading);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| color | Loading color | `String` | `#c9c9c9` |  |
-| type | Can be set to `spinner` | `String` | `circular` |
-| size | Icon size | `String | Number` | `30px` |
-| text-size | Text font size | `String | Number` | `14px` |
-| vertical | Whether to arrange icons and text content vertically | `Boolean` | `false` |
+| color | Loading color | `string` | `#c9c9c9` |  |
+| type | Can be set to `spinner` | `string` | `circular` |
+| size | Icon size | `string | number` | `30px` |
+| text-size | Text font size | `string | number` | `14px` |
+| vertical | Whether to arrange icons and text content vertically | `boolean` | `false` |
 
 ### Slots
 

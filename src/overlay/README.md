@@ -41,10 +41,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| show | Whether to show overlay | `Boolean` | `false` |
-| z-index | z-index | `Number | String` | `1` |
-| duration | Animation duration | `Number | String` | `0.3` |
-| class-name | ClassName | `String` | - |
+| show | Whether to show overlay | `boolean` | `false` |
+| z-index | z-index | `number | string` | `1` |
+| duration | Animation duration | `number | string` | `0.3` |
+| class-name | ClassName | `string` | - |
 
 ### Events
 

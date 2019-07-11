@@ -112,10 +112,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| time | Total time | `Number` | - |
-| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | `String` | `HH:mm:ss` |
-| auto-start | Whether to auto start count down | `Boolean` | `true` |
-| millisecond | Whether to enable millisecond render | `Boolean` | `false` |
+| time | Total time | `number` | - |
+| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | `string` | `HH:mm:ss` |
+| auto-start | Whether to auto start count down | `boolean` | `true` |
+| millisecond | Whether to enable millisecond render | `boolean` | `false` |
 
 ### Events
 

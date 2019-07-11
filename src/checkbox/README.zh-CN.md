@@ -148,21 +148,21 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标识符 | `any` | - | - |
-| shape | 形状，可选值为 `square` | `String` | `round` | - |
-| v-model | 是否为选中状态 | `Boolean` | `false` | - |
-| disabled | 是否禁用复选框 | `Boolean` | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | `String | Number` | `20px` | 2.0.0 |
-| label-disabled | 是否禁用复选框文本点击 | `Boolean` | `false` | - |
-| label-position | 文本位置，可选值为 `left` | `String` | `right` | - |
-| checked-color | 选中状态颜色 | `String` | `#1989fa` | - |
+| shape | 形状，可选值为 `square` | `string` | `round` | - |
+| v-model | 是否为选中状态 | `boolean` | `false` | - |
+| disabled | 是否禁用复选框 | `boolean` | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
+| label-disabled | 是否禁用复选框文本点击 | `boolean` | `false` | - |
+| label-position | 文本位置，可选值为 `left` | `string` | `right` | - |
+| checked-color | 选中状态颜色 | `string` | `#1989fa` | - |
 
 ### CheckboxGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 所有选中项的标识符 | `Array` | - | - |
-| disabled | 是否禁用所有复选框 | `Boolean` | `false` | - |
-| max | 设置最大可选数，0 为无限制 | `Number` | `0` | - |
+| disabled | 是否禁用所有复选框 | `boolean` | `false` | - |
+| max | 设置最大可选数，0 为无限制 | `number` | `0` | - |
 
 ### Checkbox Events
 

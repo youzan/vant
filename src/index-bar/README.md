@@ -63,16 +63,16 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | index-list | Index List | `Array` | `A-Z` |
-| z-index | z-index | `Number` | `1` |
-| sticky | Whether to enable anchor sticky top | `Boolean` | `true` |
-| sticky-offset-top | Anchor offset top when sticky | `Number` | `0` |
-| highlight-color | Index character highlight color | `String` | `#07c160` | - |
+| z-index | z-index | `number` | `1` |
+| sticky | Whether to enable anchor sticky top | `boolean` | `true` |
+| sticky-offset-top | Anchor offset top when sticky | `number` | `0` |
+| highlight-color | Index character highlight color | `string` | `#07c160` | - |
 
 ### IndexAnchor Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| index | Index | `String | Number` | - |
+| index | Index | `string | number` | - |
 
 ### IndexBar Events
 

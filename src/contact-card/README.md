@@ -136,10 +136,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Can be set to `add` `edit` | `String` | `add` |
-| name | Name | `String` | - |
-| tel | Phone | `String` | - |
-| add-text | Add card text | `String` | `Add contact info` |
+| type | Can be set to `add` `edit` | `string` | `add` |
+| name | Name | `string` | - |
+| tel | Phone | `string` | - |
+| add-text | Add card text | `string` | `Add contact info` |
 
 ### ContactCard Events
 
@@ -151,9 +151,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| v-model | Id of chosen contact | `String | Number` | - |
+| v-model | Id of chosen contact | `string | number` | - |
 | list | Contact list | `Array` | `[]` |
-| add-text | Add button text | `String` | `Add new contact` |
+| add-text | Add button text | `string` | `Add new contact` |
 
 ### ContactList Events
 
@@ -167,10 +167,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| contact-info | Contact Info | `Object` | `[]` |
-| is-edit | Whether is editing | `Boolean` | `false` |
-| is-saving | Whether to show save button loading status | `Boolean` | `false` |
-| is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
+| contact-info | Contact Info | `object` | `[]` |
+| is-edit | Whether is editing | `boolean` | `false` |
+| is-saving | Whether to show save button loading status | `boolean` | `false` |
+| is-deleting | Whether to show delete button loading status | `boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 
 ### ContactEdit Events
@@ -184,6 +184,6 @@ export default {
 
 | key | Description | Type |
 |------|------|------|
-| id | ID | `String | Number` |
-| name | Name | `String` |
-| tel | Phone | `String` |
+| id | ID | `string | number` |
+| name | Name | `string` |
+| tel | Phone | `string` |

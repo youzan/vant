@@ -101,15 +101,15 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show loading info，the `load` event will not be triggered when loading | `Boolean` | `false` |
-| finished | Whether loading is finished，the `load` event will not be triggered when finished | `Boolean` | `false` |
-| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | `Boolean` | `false` |
-| offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `Number` | `300` |
-| loading-text | Loading text | `String` | `Loading...` |
-| finished-text | Finished text | `String` | - |
-| error-text | Error loaded text | `String` | - |
-| immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
-| direction | Scroll direction，can be set to `up` | `String` | `down` |
+| v-model | Whether to show loading info，the `load` event will not be triggered when loading | `boolean` | `false` |
+| finished | Whether loading is finished，the `load` event will not be triggered when finished | `boolean` | `false` |
+| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | `boolean` | `false` |
+| offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `number` | `300` |
+| loading-text | Loading text | `string` | `Loading...` |
+| finished-text | Finished text | `string` | - |
+| error-text | Error loaded text | `string` | - |
+| immediate-check | Whether to check loading position immediately after mounted | `boolean` | `true` |
+| direction | Scroll direction，can be set to `up` | `string` | `down` |
 
 ### Events
 

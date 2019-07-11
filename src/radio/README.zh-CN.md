@@ -115,19 +115,19 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标识符 | 任意类型 | - | - |
-| shape | 形状，可选值为 `square` | `String` | `round` | 1.6.0 |
-| disabled | 是否为禁用状态 | `Boolean` | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | `String | Number` | `20px` | 2.0.0 |
-| label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` | - |
-| label-position | 文本位置，可选值为 `left` | `String` | `right` | - |
-| checked-color | 选中状态颜色 | `String` | `#1989fa` | - |
+| shape | 形状，可选值为 `square` | `string` | `round` | 1.6.0 |
+| disabled | 是否为禁用状态 | `boolean` | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
+| label-disabled | 是否禁用文本内容点击 | `boolean` | `false` | - |
+| label-position | 文本位置，可选值为 `left` | `string` | `right` | - |
+| checked-color | 选中状态颜色 | `string` | `#1989fa` | - |
 
 ### RadioGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 当前选中项的标识符 | 任意类型 | - | - |
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| disabled | 是否禁用所有单选框 | `boolean` | `false` | - |
 
 ### Radio Events
 

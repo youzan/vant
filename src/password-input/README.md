@@ -80,12 +80,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| value | Password value | `String` | `''` |
-| length | Maxlength of password | `Number` | `6` |
-| mask | Whether to mask value | `Boolean` | `true` |
-| info | Bottom info | `String` | - |
-| error-info | Bottom error info | `String` | - |
-| gutter | Gutter of input | `Number | String` | `0` |
+| value | Password value | `string` | `''` |
+| length | Maxlength of password | `number` | `6` |
+| mask | Whether to mask value | `boolean` | `true` |
+| info | Bottom info | `string` | - |
+| error-info | Bottom error info | `string` | - |
+| gutter | Gutter of input | `number | string` | `0` |
 
 ### Events
 

@@ -52,13 +52,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| title | 标题 | `String` | `''` | - |
-| left-text | 左侧文案 | `String` | `''` | - |
-| right-text | 右侧文案 | `String` | `''` | - |
-| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
-| fixed | 是否固定在顶部 | `Boolean` | `false` | - |
-| border | 是否显示下边框 | `Boolean` | `true` | - |
-| z-index | 元素 z-index | `Number` | `1` | - |
+| title | 标题 | `string` | `''` | - |
+| left-text | 左侧文案 | `string` | `''` | - |
+| right-text | 右侧文案 | `string` | `''` | - |
+| left-arrow | 是否显示左侧箭头 | `boolean` | `false` | - |
+| fixed | 是否固定在顶部 | `boolean` | `false` | - |
+| border | 是否显示下边框 | `boolean` | `true` | - |
+| z-index | 元素 z-index | `number` | `1` | - |
 
 ### Slots
 

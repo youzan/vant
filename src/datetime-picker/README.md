@@ -147,21 +147,21 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| type | Can be set to `date` `time`<br> `year-month` | `String` | `datetime` |
+| type | Can be set to `date` `time`<br> `year-month` | `string` | `datetime` |
 | min-date | Min date | `Date` | Ten years ago on January 1 |
 | max-date | Max date | `Date` | Ten years later on December 31 |
-| min-hour | Min hour for `time` type | `Number` | `0` |
-| max-hour | Max hour for `time` type | `Number` | `23` |
-| min-minute | Max minute for `time` type | `Number` | `0` |
-| max-minute | Max minute for `time` type | `Number` | `59` |
+| min-hour | Min hour for `time` type | `number` | `0` |
+| max-hour | Max hour for `time` type | `number` | `23` |
+| min-minute | Max minute for `time` type | `number` | `0` |
+| max-minute | Max minute for `time` type | `number` | `59` |
 | filter | Option filter | `(type, values) => values` | - |
 | formatter | Option text formatter | `(type, value) => value` | - |
-| title | Toolbar title | `String` | `''` |
-| loading | Whether to show loading prompt | `Boolean` | `false` |
-| item-height | Option height | `Number` | `44` |
-| confirm-button-text | Text of confirm button | `String` | `Confirm` |
-| cancel-button-text | Text of cancel button | `String` | `Cancel` |
-| visible-item-count | Count of visible columns | `Number` | `5` |
+| title | Toolbar title | `string` | `''` |
+| loading | Whether to show loading prompt | `boolean` | `false` |
+| item-height | Option height | `number` | `44` |
+| confirm-button-text | Text of confirm button | `string` | `Confirm` |
+| cancel-button-text | Text of cancel button | `string` | `Cancel` |
+| visible-item-count | Count of visible columns | `number` | `5` |
 
 ### Events
 

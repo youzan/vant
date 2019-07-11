@@ -47,7 +47,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Index of chosen item | `String | Number` | `0` |
+| v-model | Index of chosen item | `string | number` | `0` |
 
 ### Sidebar Events
 
@@ -59,9 +59,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| title | Content | `String` | `''` |
-| info | Info Message | `String | Number` | `''` |
-| url | Link | `String` | - |
+| title | Content | `string` | `''` |
+| info | Info Message | `string | number` | `''` |
+| url | Link | `string` | - |
 
 ### SidebarItem Events
 

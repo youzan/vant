@@ -77,11 +77,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标识符，可以在 onClose 的参数中获取到 | `String | Number` | - | 2.0.4 |
+| name | 标识符，可以在 onClose 的参数中获取到 | `string | number` | - | 2.0.4 |
 | on-close | 关闭时的回调函数 | `Function` | - | - |
-| disabled | 是否禁用滑动 | `Boolean` | `false` | - |
-| left-width | 指定左侧滑动区域宽度 | `Number` | `auto` | - |
-| right-width | 指定右侧滑动区域宽度 | `Number` | `auto` | - |
+| disabled | 是否禁用滑动 | `boolean` | `false` | - |
+| left-width | 指定左侧滑动区域宽度 | `number` | `auto` | - |
+| right-width | 指定右侧滑动区域宽度 | `number` | `auto` | - |
 
 ### Slots
 
@@ -101,9 +101,9 @@ export default {
 
 | 参数名 | 说明 | 类型 |
 |------|------|------|
-| clickPosition | 关闭时的点击位置 (`left` `right` `cell` `outside`) | `String` |
-| instance | SwipeCell 实例，用于调用实例方法 | `Object` |
-| detail | 额外信息，包含 name 字段 | `Object` |
+| clickPosition | 关闭时的点击位置 (`left` `right` `cell` `outside`) | `string` |
+| instance | SwipeCell 实例，用于调用实例方法 | `object` |
+| detail | 额外信息，包含 name 字段 | `object` |
 
 ### 方法
 

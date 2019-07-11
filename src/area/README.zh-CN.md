@@ -44,15 +44,15 @@ Vue.use(Area);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| value | 当前选中的省市区`code` | `String` | - | - |
-| title | 顶部栏标题 | `String` | - | - |
-| area-list | 省市区数据，格式见下方 | `Object` | - | - |
-| columns-num | 显示列数，3-省市区，2-省市，1-省 | `String | Number` | `3` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | 1.5.3 |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | 1.5.3 |
+| value | 当前选中的省市区`code` | `string` | - | - |
+| title | 顶部栏标题 | `string` | - | - |
+| area-list | 省市区数据，格式见下方 | `object` | - | - |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | `string | number` | `3` | - |
+| loading | 是否显示加载状态 | `boolean` | `false` | - |
+| item-height | 选项高度 | `number` | `44` | - |
+| visible-item-count | 可见的选项个数 | `number` | `5` | - |
+| confirm-button-text | 确认按钮文字 | `string` | `确认` | 1.5.3 |
+| cancel-button-text | 取消按钮文字 | `string` | `取消` | 1.5.3 |
 
 ### Events
 
@@ -72,7 +72,7 @@ Vue.use(Area);
 
 ### 省市区列表数据格式
 
-整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。
+整体是一个 object，包含 `province_list`, `city_list`, `county_list` 三个 key。
 
 每项以省市区编码作为 key，省市区名字作为 value。编码为 6 位数字，前两位代表省份，中间两位代表城市，后两位代表区县，以 0 补足 6 位。如北京编码为 `11`，以零补足 6 位，为 `110000`。
 

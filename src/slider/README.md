@@ -90,15 +90,15 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| value | Current value | `Number` | `0` |
-| disabled | Whether to disable slider | `Boolean` | `false` |
-| max | Max value | `Number` | `100` |
-| min | Min value | `Number` | `0` |
-| step | Step size | `Number` | `1` |
-| bar-height | Height of bar | `Number | String` | `2px` |
-| active-color | Active color of bar | `String` | `#1989fa` |
-| inactive-color | Inactive color of bar | `String` | `#e5e5e5` |
-| vertical | Whether to display vertical | `Boolean` | `false` |
+| value | Current value | `number` | `0` |
+| disabled | Whether to disable slider | `boolean` | `false` |
+| max | Max value | `number` | `100` |
+| min | Min value | `number` | `0` |
+| step | Step size | `number` | `1` |
+| bar-height | Height of bar | `number | string` | `2px` |
+| active-color | Active color of bar | `string` | `#1989fa` |
+| inactive-color | Inactive color of bar | `string` | `#e5e5e5` |
+| vertical | Whether to display vertical | `boolean` | `false` |
 
 ### Events
 
