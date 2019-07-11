@@ -55,7 +55,7 @@ export default {
 | success-duration | Success text display duration(ms) | `Number` | `500` |
 | animation-duration | Animation duration | `Number` | `300` |
 | head-height | Height of head | `Number` | `50` |
-| disabled | Whether to disable | `Boolean` | `false` |
+| disabled | Whether to disable pull refresh | `Boolean` | `false` |
 
 ### Events
 
@@ -65,10 +65,10 @@ export default {
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| default | Default slot |
-| normal | Content of head when at normal status |
-| pulling | Content of head when at pulling |
-| loosing | Content of head when at loosing |
-| loading | Content of head when at loading |
+| Name | Description | scoped-slot |
+|------|------|------|
+| default | Default slot | - |
+| normal | Content of head when at normal status | - |
+| pulling | Content of head when at pulling | { distance } |
+| loosing | Content of head when at loosing | { distance } |
+| loading | Content of head when at loading | { distance } |
