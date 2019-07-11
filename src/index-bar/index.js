@@ -77,11 +77,9 @@ export default createComponent({
 
   methods: {
     onScroll() {
-      if (!this.sticky) {
-        return;
-      }
-
-      const scrollTop = getScrollTop(this.scroller);
+      const scrollTop = this.scroller === window
+        ? getScrollTop(this.scroller)
+        : 0;
       const rects = this.children.map(item => ({
         height: item.height,
         top: getElementTop(item.$el)
@@ -90,18 +88,21 @@ export default createComponent({
       const active = this.getActiveAnchorIndex(scrollTop, rects);
 
       this.activeAnchorIndex = this.indexList[active];
-      this.children.forEach((item, index) => {
-        if (index === active) {
-          item.active = true;
-          item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop);
-        } else if (index === active - 1) {
-          const activeItemTop = rects[active].top - scrollTop;
-          item.active = activeItemTop > 0;
-          item.top = activeItemTop - item.height;
-        } else {
-          item.active = false;
-        }
-      });
+
+      if (this.sticky) {
+        this.children.forEach((item, index) => {
+          if (index === active) {
+            item.active = true;
+            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop);
+          } else if (index === active - 1) {
+            const activeItemTop = rects[active].top - scrollTop;
+            item.active = activeItemTop > 0;
+            item.top = activeItemTop - item.height;
+          } else {
+            item.active = false;
+          }
+        });
+      }
     },
 
     getActiveAnchorIndex(scrollTop, rects) {
