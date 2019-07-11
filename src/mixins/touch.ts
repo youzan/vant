@@ -1,29 +1,42 @@
+import Vue from 'vue';
+
 const MIN_DISTANCE = 10;
-function getDirection(x, y) {
+
+function getDirection(x: number, y: number) {
   if (x > y && x > MIN_DISTANCE) {
     return 'horizontal';
   }
+
   if (y > x && y > MIN_DISTANCE) {
     return 'vertical';
   }
+
   return '';
 }
 
-export const TouchMixin = {
+type TouchMixinData = {
+  startX: number;
+  startY: number;
+  deltaX: number;
+  deltaY: number;
+  offsetX: number;
+  offsetY: number;
+  direction: string;
+};
+
+export const TouchMixin = Vue.extend({
   data() {
-    return {
-      direction: ''
-    };
+    return { direction: '' } as TouchMixinData;
   },
 
   methods: {
-    touchStart(event) {
+    touchStart(event: TouchEvent) {
       this.resetTouchStatus();
       this.startX = event.touches[0].clientX;
       this.startY = event.touches[0].clientY;
     },
 
-    touchMove(event) {
+    touchMove(event: TouchEvent) {
       const touch = event.touches[0];
       this.deltaX = touch.clientX - this.startX;
       this.deltaY = touch.clientY - this.startY;
@@ -40,4 +53,4 @@ export const TouchMixin = {
       this.offsetY = 0;
     }
   }
-};
+});

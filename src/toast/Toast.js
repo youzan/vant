@@ -13,7 +13,7 @@ export default createComponent({
     className: null,
     loadingType: String,
     forbidClick: Boolean,
-    message: [String, Number],
+    message: [Number, String],
     type: {
       type: String,
       default: 'text'

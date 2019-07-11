@@ -13,8 +13,14 @@ function format(rate) {
 export default createComponent({
   props: {
     text: String,
-    value: Number,
-    speed: Number,
+    value: {
+      type: Number,
+      default: 0
+    },
+    speed: {
+      type: Number,
+      default: 0
+    },
     size: {
       type: String,
       default: '100px'
@@ -56,6 +62,7 @@ export default createComponent({
     layerStyle() {
       let offset = (PERIMETER * (100 - this.value)) / 100;
       offset = this.clockwise ? offset : PERIMETER * 2 - offset;
+
       return {
         stroke: `${this.color}`,
         strokeDashoffset: `${offset}px`,
@@ -80,6 +87,7 @@ export default createComponent({
         this.endRate = format(this.rate);
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs(((this.startRate - this.endRate) * 1000) / this.speed);
+
         if (this.speed) {
           cancelRaf(this.rafId);
           this.rafId = raf(this.animate);
@@ -97,6 +105,7 @@ export default createComponent({
       const progress = Math.min((now - this.startTime) / this.duration, 1);
       const rate = progress * (this.endRate - this.startRate) + this.startRate;
       this.$emit('input', format(parseFloat(rate.toFixed(1))));
+
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
         this.rafId = raf(this.animate);
       }

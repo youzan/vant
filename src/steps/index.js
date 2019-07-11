@@ -5,8 +5,11 @@ const [createComponent, bem] = createNamespace('steps');
 
 export default createComponent({
   props: {
-    active: Number,
     inactiveIcon: String,
+    active: {
+      type: Number,
+      default: 0
+    },
     direction: {
       type: String,
       default: 'horizontal'

@@ -153,8 +153,8 @@ export default {
 | disabled | 是否禁用复选框 | `Boolean` | `false` | - |
 | icon-size | 图标大小，默认单位为`px` | `String | Number` | `20px` | 2.0.0 |
 | label-disabled | 是否禁用复选框文本点击 | `Boolean` | `false` | - |
-| label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
-| checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
+| label-position | 文本位置，可选值为 `left` | `String` | `right` | - |
+| checked-color | 选中状态颜色 | `String` | `#1989fa` | - |
 
 ### CheckboxGroup Props
 
@@ -179,7 +179,7 @@ export default {
 
 ### Checkbox Slots
 
-| 名称 | 说明 | slot-scope |
+| 名称 | 说明 | slot-scope 参数 |
 |------|------|------|
 | default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |

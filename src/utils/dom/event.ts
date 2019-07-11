@@ -2,7 +2,7 @@
 /* eslint-disable getter-return */
 /* eslint-disable import/no-mutable-exports */
 import { isServer } from '..';
-import { EventHanlder } from '../types';
+import { EventHandler } from '../types';
 
 export let supportsPassive = false;
 
@@ -20,9 +20,9 @@ if (!isServer) {
 }
 
 export function on(
-  target: HTMLElement,
+  target: HTMLElement | Document | Window,
   event: string,
-  handler: EventHanlder,
+  handler: EventHandler,
   passive = false
 ) {
   if (!isServer) {
@@ -34,7 +34,11 @@ export function on(
   }
 }
 
-export function off(target: HTMLElement, event: string, handler: EventHanlder) {
+export function off(
+  target: HTMLElement | Document | Window,
+  event: string,
+  handler: EventHandler
+) {
   if (!isServer) {
     target.removeEventListener(event, handler);
   }

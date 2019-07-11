@@ -54,6 +54,19 @@ export default {
 />
 ```
 
+### 圆角弹窗
+
+设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
+
+```html
+<van-popup
+  v-model="show"
+  round
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+```
+
 ### 指定挂载位置
 
 弹出层默认挂载到组件所在位置，可以通过`get-container`属性指定挂载位置
@@ -97,21 +110,22 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前组件是否显示 | `Boolean` | `false` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
-| position | 位置，可选值为 `top` `bottom` <br> `right` `left` | `String` | `center` | - |
+| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | `String` | `center` | - |
 | overlay-class | 自定义遮罩层类名 | `String` | - | - |
 | overlay-style | 自定义遮罩层样式 | `Object` | - | - |
-| transition | 动画类名，用法与原生`transtion`组件的`name`属性一致 | `String` | - | - |
 | duration | 动画时长，单位秒 | `Number` | `0.3` | 2.0.0 |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
+| round | 是否显示圆角 | `Boolean` | `false` | 2.0.7 |
+| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
+| lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | 1.0.0 |
-| lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | 1.1.5 |
+| transition | 动画类名，用法与 Vue 内置的`transtion`组件的`name`属性一致 | `String` | - | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击弹出层时触发 | - |
+| click | 点击弹出层时触发 | event: Event |
 | open | 打开弹出层时触发 | - |
 | opened | 打开弹出层且动画结束后触发 | - |
 | close | 关闭弹出层时触发 | - |

@@ -71,8 +71,10 @@ export default {
 
 ### 纵向滚动
 
+设置`vertical`属性后滑块会纵向排列，此时需要指定滑块容器的高度
+
 ```html
-<van-swipe :autoplay="3000" vertical>
+<van-swipe style="height: 200px;" vertical>
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
@@ -82,8 +84,10 @@ export default {
 
 ### 控制滑块大小
 
+滑块默认宽度为`100%`，可以通过`width`属性设置滑块的宽度，此属性不能与循环播放同时使用
+
 ```html
-<van-swipe :autoplay="3000" :width="300">
+<van-swipe :loop="false" :width="300">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
@@ -92,6 +96,8 @@ export default {
 ```
 
 ### 自定义指示器
+
+通过`indicator`插槽可以自定义指示器的样式
 
 ```html
 <van-swipe @change="onChange">
@@ -132,11 +138,11 @@ export default {
 | initial-swipe | 初始位置索引值 | `Number` | `0` | - |
 | loop | 是否开启循环播放 | `Boolean` | `true` | - |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
-| indicator-color | 指示器颜色 | `String` | `#1989fa` | 1.4.5 |
-| vertical | 是否为纵向滚动 | `Boolean` | `false` | 1.1.1 |
-| touchable | 是否可以通过手势滑动 | `Boolean` | `true` | 1.1.1 |
-| width | 滑块宽度 | `Number` | `0` | 1.2.1 |
-| height | 滑块高度 | `Number` | `0` | 1.2.1 |
+| indicator-color | 指示器颜色 | `String` | `#1989fa` | - |
+| vertical | 是否为纵向滚动 | `Boolean` | `false` | - |
+| touchable | 是否可以通过手势滑动 | `Boolean` | `true` | - |
+| width | 滑块宽度 | `Number` | `auto` | - |
+| height | 滑块高度 | `Number` | `auto` | - |
 
 ### Swipe Events
 
@@ -148,7 +154,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | - |
+| click | 点击时触发 | event: Event |
 
 ### Swipe 方法
 

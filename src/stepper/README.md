@@ -73,12 +73,22 @@ export default {
       Toast.loading({ forbidClick: true });
 
       setTimeout(() => {
-        Toast.claer();
+        Toast.clear();
         this.value = value;
       }, 500);
     }
   }
 }
+```
+
+### Custom Size
+
+```html
+<van-stepper
+  v-model="value"
+  input-width="40px"
+  button-size="32px"
+/>
 ```
 
 ## API
@@ -95,7 +105,8 @@ export default {
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
 | async-change | Whether to enable async change | `Boolean` | `false` | - |
-| input-width | Input width | `String | Number` | `30px` |
+| input-width | Input width | `String | Number` | `32px` |
+| button-size | Button size | `String | Number` | `28px` |
 
 ### Events
 

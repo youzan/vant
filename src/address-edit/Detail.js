@@ -13,6 +13,7 @@ export default createComponent({
     focused: Boolean,
     detailRows: Number,
     searchResult: Array,
+    detailMaxlength: Number,
     showSearchResult: Boolean
   },
 
@@ -69,10 +70,10 @@ export default createComponent({
           rows={this.detailRows}
           clearable={!android}
           type="textarea"
-          maxlength="200"
           value={this.value}
           error={this.error}
           label={t('label')}
+          maxlength={this.detailMaxlength}
           placeholder={t('placeholder')}
           scopedSlots={{ icon: this.renderFinish }}
           {...{ on: this.$listeners }}

@@ -211,3 +211,14 @@ test('duration prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('round prop', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      round: true
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

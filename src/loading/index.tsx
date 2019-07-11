@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { GRAY } from '../utils/color';
 import { inherit } from '../utils/functional';
 
@@ -37,7 +37,7 @@ function LoadingIcon(h: CreateElement, props: LoadingProps) {
 function LoadingText(h: CreateElement, props: LoadingProps, slots: DefaultSlots) {
   if (slots.default) {
     const style = props.textSize && {
-      fontSize: suffixPx(props.textSize)
+      fontSize: addUnit(props.textSize)
     };
 
     return (
@@ -58,7 +58,7 @@ function Loading(
 
   const style: { [key: string]: string } = { color };
   if (size) {
-    const iconSize = suffixPx(size) as string;
+    const iconSize = addUnit(size) as string;
     style.width = iconSize;
     style.height = iconSize;
   }
@@ -74,9 +74,9 @@ function Loading(
 }
 
 Loading.props = {
-  size: [String, Number],
-  textSize: [String, Number],
+  size: [Number, String],
   vertical: Boolean,
+  textSize: [Number, String],
   type: {
     type: String,
     default: 'circular'

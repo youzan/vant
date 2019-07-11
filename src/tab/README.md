@@ -32,6 +32,26 @@ export default {
 }
 ```
 
+### Match By Name
+
+```html
+<van-tabs v-model="activeName">
+  <van-tab title="tab 1" name="a">content of tab 1</van-tab>
+  <van-tab title="tab 2" name="b">content of tab 2</van-tab>
+  <van-tab title="tab 3" name="c">content of tab 3</van-tab>
+</van-tabs>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeName: 'a'
+    };
+  }
+}
+```
+
 ### Swipe Tabs
 
 By default more than 4 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
@@ -59,7 +79,7 @@ You can set `disabled` attribute on the corresponding `van-tab`.
 ```javascript
 export default {
   methods: {
-    onClickDisabled(index, title) {
+    onClickDisabled(name, title) {
       this.$toast(title + ' is disabled');
     }
   }
@@ -91,7 +111,7 @@ Tabs styled as cards.
 ```javascript
 export default {
   methods: {
-    onClick(index, title) {
+    onClick(name, title) {
       this.$toast(title);
     }
   }
@@ -155,7 +175,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Index of active tab | `String` `Number` | `0` |
+| v-model | Index of active tab | `String | Number` | `0` |
 | type | Can be set to `line` `card` | `String` | `line` |
 | duration | Toggle tab's animation time | `Number` | `0.3` | - |
 | background | Background color | `String` | `white` |
@@ -177,6 +197,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| name | Identifier | `String | Number` | Index of tab |
 | title | Title | `String` | - |
 | disabled | Whether to disable tab | `Boolean` | `false` |
 
@@ -198,7 +219,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click tab | index：index of current tab，title: tab title |
-| change | Triggered when active tab changed | index：index of current tab，title: tab title |
-| disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |
+| click | Triggered when click tab | name：name of current tab，title: tab title |
+| change | Triggered when active tab changed | name：name of current tab，title: tab title |
+| disabled | Triggered when click disabled tab | name：name of current tab, title: tab title |
 | scroll | Triggered when tab scroll in sticky mode | Object: { scrollTop, isFixed } |

@@ -3,9 +3,15 @@
 exports[`Button render default slot 1`] = `<button class="van-button van-button--default van-button--large van-button--square van-goods-action-button"><span class="van-button__text">Default Content</span></button>`;
 
 exports[`Icon render default slot 1`] = `
-<div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+<div role="button" tabindex="0" class="van-goods-action-icon">
   <div class="van-icon van-icon-undefined van-goods-action-icon__icon">
     <!---->
   </div>Default Content
+</div>
+`;
+
+exports[`Icon render icon slot 1`] = `
+<div role="button" tabindex="0" class="van-goods-action-icon">
+  <div class="van-goods-action-icon__icon">Custom Icon</div>Text
 </div>
 `;

@@ -3,7 +3,7 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
 import { getRootScrollTop } from '../utils/dom/scroll';
-import { createNamespace, isObj, isDef, suffixPx } from '../utils';
+import { createNamespace, isObj, isDef, addUnit } from '../utils';
 import { isIOS } from '../utils/validate/system';
 
 const [createComponent, bem] = createNamespace('field');
@@ -14,15 +14,15 @@ export default createComponent({
   props: {
     ...cellProps,
     error: Boolean,
+    readonly: Boolean,
+    autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
-    readonly: Boolean,
     clearable: Boolean,
-    labelWidth: [String, Number],
     labelClass: null,
+    labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,
-    autosize: [Boolean, Object],
     errorMessage: String,
     errorMessageAlign: String,
     type: {
@@ -76,7 +76,7 @@ export default createComponent({
     labelStyle() {
       const { labelWidth } = this;
       if (labelWidth) {
-        return { width: suffixPx(labelWidth) };
+        return { width: addUnit(labelWidth) };
       }
     }
   },
@@ -147,18 +147,18 @@ export default createComponent({
       this.$emit('click', event);
     },
 
-    onClickLeftIcon() {
-      this.$emit('click-left-icon');
+    onClickLeftIcon(event) {
+      this.$emit('click-left-icon', event);
     },
 
-    onClickRightIcon() {
-      this.$emit('click-right-icon');
+    onClickRightIcon(event) {
+      this.$emit('click-right-icon', event);
     },
 
     onClear(event) {
       preventDefault(event);
       this.$emit('input', '');
-      this.$emit('clear');
+      this.$emit('clear', event);
     },
 
     onKeypress(event) {

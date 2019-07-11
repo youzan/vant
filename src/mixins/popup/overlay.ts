@@ -50,10 +50,10 @@ export function updateOverlay(): void {
     }
 
     Object.assign(overlay, defaultConfig, config, {
-      visible: true
+      show: true
     });
   } else {
-    overlay.visible = false;
+    overlay.show = false;
   }
 }
 

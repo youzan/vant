@@ -7,11 +7,11 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type OverlayProps = {
-  zIndex?: number;
+  show?: boolean;
+  zIndex?: number | string;
+  duration: number | string | null;
   className?: any;
-  visible?: boolean;
-  duration: number | null;
-  customStyle?: object;
+  customStyle?: any;
 };
 
 export type OverlayEvents = {
@@ -42,7 +42,7 @@ function Overlay(
   return (
     <transition name="van-fade">
       <div
-        vShow={props.visible}
+        vShow={props.show}
         style={style}
         class={[bem(), props.className]}
         onTouchmove={preventTouchMove}
@@ -53,14 +53,14 @@ function Overlay(
 }
 
 Overlay.props = {
-  zIndex: Number,
+  show: Boolean,
+  duration: [Number, String],
   className: null as any,
-  visible: Boolean,
-  customStyle: Object,
-  duration: {
-    type: Number,
-    default: null
-  }
+  customStyle: null as any,
+  zIndex: {
+    type: [Number, String],
+    default: 1
+  },
 };
 
 export default createComponent<OverlayProps, OverlayEvents>(Overlay);

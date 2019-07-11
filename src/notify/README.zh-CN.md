@@ -53,10 +53,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| message | 展示文案，支持通过`\n`换行 | `String` | - | 1.4.7 |
-| duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `Number` | `3000` | 1.4.7 |
-| color | 字体颜色 | `String` | `#fff` | 1.4.7 |
-| background | 背景颜色 | `String` | `#f44` | 1.4.7 |
+| message | 展示文案，支持通过`\n`换行 | `String` | - | - |
+| duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `Number` | `3000` | - |
+| color | 字体颜色 | `String` | `#fff` | - |
+| background | 背景颜色 | `String` | `#f44` | - |
 | className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
 | onClick | 点击时的回调函数 | `Function` | - | 2.0.0 |
 | onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |

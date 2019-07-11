@@ -58,7 +58,7 @@ setTimeout(() => {
   :images="images"
   @change="onChange"
 >
-  <template v-slot:index>Page: { index }</template>
+  <template v-slot:index>Page: {{ index }}</template>
 </van-image-preview>
 ```
 

@@ -3,3 +3,5 @@
 exports[`duration prop 1`] = `<div class="van-popup van-popup--center" style="transition-duration: 0.5s;" name="van-fade"></div>`;
 
 exports[`reset z-index 1`] = `<div class="van-popup van-popup--center" name="van-fade"></div>`;
+
+exports[`round prop 1`] = `<div class="van-popup van-popup--round van-popup--center" name="van-fade"></div>`;

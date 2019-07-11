@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -33,7 +33,7 @@ function Skeleton(
 
   function Title() {
     if (props.title) {
-      return <h3 class={bem('title')} style={{ width: suffixPx(props.titleWidth) }} />;
+      return <h3 class={bem('title')} style={{ width: addUnit(props.titleWidth) }} />;
     }
   }
 
@@ -54,7 +54,7 @@ function Skeleton(
     }
 
     for (let i = 0; i < props.row; i++) {
-      Rows.push(<div class={bem('row')} style={{ width: suffixPx(getRowWidth(i)) }} />);
+      Rows.push(<div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />);
     }
 
     return Rows;
@@ -62,7 +62,7 @@ function Skeleton(
 
   function Avatar() {
     if (props.avatar) {
-      const size = suffixPx(props.avatarSize);
+      const size = addUnit(props.avatarSize);
       return (
         <div
           class={bem('avatar', props.avatarShape)}
@@ -84,9 +84,12 @@ function Skeleton(
 }
 
 Skeleton.props = {
-  row: Number,
   title: Boolean,
   avatar: Boolean,
+  row: {
+    type: Number,
+    default: 0
+  },
   loading: {
     type: Boolean,
     default: true

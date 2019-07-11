@@ -28,7 +28,7 @@ exports[`renders demo correctly 1`] = `
             <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
                 <!----></i></div>
           </div>
-          <div class="van-card__tag"><span class="van-tag van-tag--mark" style="background-color: rgb(255, 68, 68);">标签</span></div>
+          <div class="van-card__tag"><span class="van-tag van-tag--mark van-tag--danger">标签</span></div>
         </a>
         <div class="van-card__content">
           <div class="van-card__title">商品名称</div>
@@ -53,9 +53,9 @@ exports[`renders demo correctly 1`] = `
         <div class="van-card__content">
           <div class="van-card__title">商品名称</div>
           <div class="van-card__desc van-ellipsis">描述信息</div>
-          <div><span class="van-tag van-tag--plain van-hairline--surround" style="margin-right: 5px; color: rgb(255, 68, 68);">
+          <div><span class="van-tag van-tag--plain van-tag--danger van-hairline--surround" style="margin-right: 5px;">
             标签
-          </span> <span class="van-tag van-tag--plain van-hairline--surround" style="color: rgb(255, 68, 68);">
+          </span> <span class="van-tag van-tag--plain van-tag--danger van-hairline--surround">
             标签
           </span></div>
           <div class="van-card__bottom">

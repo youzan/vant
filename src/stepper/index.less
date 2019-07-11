@@ -2,6 +2,7 @@
 
 .van-stepper {
   font-size: 0;
+  user-select: none;
 
   &__minus,
   &__plus {
@@ -9,7 +10,7 @@
     box-sizing: border-box;
     width: 28px;
     height: 28px;
-    margin: 1px;
+    margin: 0;
     padding: 5px;
     color: @stepper-button-icon-color;
     vertical-align: middle;
@@ -17,13 +18,13 @@
     border: 0;
 
     &::before {
-      width: 9px;
+      width: 13px;
       height: 1px;
     }
 
     &::after {
       width: 1px;
-      height: 9px;
+      height: 13px;
     }
 
     &::before,
@@ -65,11 +66,11 @@
   }
 
   &__input {
-    box-sizing: content-box;
+    box-sizing: border-box;
     width: @stepper-input-width;
     height: @stepper-input-height;
-    margin: 1px;
-    padding: 1px;
+    margin: 0 2px;
+    padding: 0;
     color: @stepper-input-text-color;
     font-size: @stepper-input-font-size;
     text-align: center;

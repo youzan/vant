@@ -151,15 +151,17 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 
 ### Events
 
-Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
+除下列事件外，Field 默认支持 Input 标签所有的原生事件
 
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
-| input | 输入框内容变化时触发 | - |
-| click | 点击时触发 | - |
-| clear | 点击清除按钮后触发 | - |
-| click-left-icon | 点击头部图标时触发 | - |
-| click-right-icon | 点击尾部图标时触发 | - |
+| input | 输入框内容变化时触发 | value: 输入框当前值 |
+| focus | 输入框获得焦点时触发 | event: Event |
+| blur | 输入框失去焦点时触发 | event: Event |
+| clear | 点击清除按钮时触发 | event: Event |
+| click | 点击时触发 | event: Event |
+| click-left-icon | 点击左侧图标时触发 | event: Event |
+| click-right-icon | 点击右侧图标时触发 | event: Event |
 
 ### 方法
 

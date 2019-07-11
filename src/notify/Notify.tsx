@@ -48,7 +48,7 @@ function Notify(
 Notify.props = {
   ...PopupMixin.props,
   className: null as any,
-  message: [String, Number],
+  message: [Number, String],
   getContainer: [String, Function],
   color: {
     type: String,

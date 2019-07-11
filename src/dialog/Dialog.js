@@ -1,11 +1,12 @@
 import { createNamespace } from '../utils';
 import { PopupMixin } from '../mixins/popup';
+import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 import Button from '../button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
 export default createComponent({
-  mixins: [PopupMixin],
+  mixins: [PopupMixin, CloseOnPopstateMixin],
 
   props: {
     title: String,

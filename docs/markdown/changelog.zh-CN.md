@@ -1,5 +1,57 @@
 # 更新日志
 
+### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
+`2019-07-05`
+
+**Improvements**
+
+- 新增 Divider 分割线组件 [\#3755](https://github.com/youzan/vant/pull/3755)
+- Tab: 新增 name 属性 [\#3762](https://github.com/youzan/vant/pull/3762)
+- Sku: 新增 add-cart-text 属性 [\#3725](https://github.com/youzan/vant/pull/3725)
+
+**Bug Fixes**
+
+- 修复 Grid gutter 属性不能传入 String 类型的问题 [\#3741](https://github.com/youzan/vant/pull/3741)
+- 修复 Swipe 使用 width 属性后出现空白区域的问题 [\#3751](https://github.com/youzan/vant/pull/3751)
+- 修复 PullRefresh 同步修改 loading 时状态错误的问题 [\#3719](https://github.com/youzan/vant/pull/3719)
+- 修复 Collapse 在 safari 浏览器上渲染内容较多时高度错误的问题 [\#3723](https://github.com/youzan/vant/pull/3723)
+
+
+### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
+`2019-07-02`
+
+**Improvements**
+
+- Stepper: 支持长按手势 [\#3711](https://github.com/youzan/vant/pull/3711)
+- Stepper: 新增 button-size 属性 [\#3714](https://github.com/youzan/vant/pull/3714)
+- Dialog: 新增 close-on-popstate 属性 [\#3709](https://github.com/youzan/vant/pull/3709)
+
+**Bug Fixes**
+
+- 修复 postcss 配置对 vant 不生效的问题
+
+
+### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4) 🇨🇳
+`2019-07-01`
+
+**Improvements**
+
+- 新增 Grid、GridItem 组件 [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
+- Field: 新增 arrow-direction 属性 [\#3679](https://github.com/youzan/vant/pull/3679)
+- Sidebar: 新增 to、replace 属性 [\#3696](https://github.com/youzan/vant/pull/3696)
+- Sidebar: 支持通过 v-model 绑定当前项索引 [\#3698](https://github.com/youzan/vant/pull/3698)
+- IndexBar: 新增选中状态的类名，用于定制样式 [\#3692](https://github.com/youzan/vant/pull/3692)
+- Uploader: 支持 Number 类型的 name 属性 [\#3681](https://github.com/youzan/vant/pull/3681)
+- SwipeCell: 新增 name 属性 [\#3680](https://github.com/youzan/vant/pull/3680)
+- AddressEdit: 新增 detail-maxlength 属性 [\#3707](https://github.com/youzan/vant/pull/3707)
+- GoodsActionIcon: 新增 icon 插槽 [\#3705](https://github.com/youzan/vant/pull/3705)
+
+**Bug Fixes**
+
+- 修复 Collapse 在 safari 浏览器上动画可能闪烁的问题 [\#3686](https://github.com/youzan/vant/pull/3686)
+- 修复 Picker 在低版本 Android 机器上的兼容性问题 [\#3688](https://github.com/youzan/vant/pull/3688)
+
+
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`
 

@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/dom/event';
 
@@ -8,12 +8,14 @@ export default createComponent({
   mixins: [TouchMixin],
 
   props: {
-    min: Number,
-    value: Number,
     disabled: Boolean,
     vertical: Boolean,
     activeColor: String,
     inactiveColor: String,
+    min: {
+      type: Number,
+      default: 0
+    },
     max: {
       type: Number,
       default: 100
@@ -22,9 +24,13 @@ export default createComponent({
       type: Number,
       default: 1
     },
+    value: {
+      type: Number,
+      default: 0
+    },
     barHeight: {
-      type: String,
-      default: '2px'
+      type: [Number, String],
+      default: 2
     }
   },
 
@@ -120,7 +126,7 @@ export default createComponent({
 
     const barStyle = {
       [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
-      [crossAxis]: this.barHeight,
+      [crossAxis]: addUnit(this.barHeight),
       background: this.activeColor
     };
 

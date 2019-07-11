@@ -119,7 +119,7 @@ toast2.clear();
 | icon | 自定义图标，支持传入图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.1 |
 | mask | 是否显示背景遮罩层 | `Boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
-| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
+| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | - |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |
 | className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
 | onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |

@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanIndexBar', { indexKey: 'childrenIndex' })],
 
   props: {
-    index: [String, Number]
+    index: [Number, String]
   },
 
   data() {

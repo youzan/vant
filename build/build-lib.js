@@ -9,7 +9,7 @@ const tasks = [
   'npm run bootstrap',
   'npm run lint',
   'npm run build:entry',
-  'node build/build-components.js --color',
+  'node build/build-components.js',
   'node build/build-style.js',
   'node build/build-style-entry.js',
   'cross-env NODE_ENV=production webpack --color --config build/webpack.build.js',

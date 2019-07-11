@@ -35,8 +35,11 @@ export default createComponent({
     className: String,
     itemHeight: Number,
     defaultIndex: Number,
-    initialOptions: Array,
-    visibleItemCount: Number
+    visibleItemCount: Number,
+    initialOptions: {
+      type: Array,
+      default: () => []
+    }
   },
 
   data() {

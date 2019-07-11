@@ -1,8 +1,6 @@
 const path = require('path');
 const config = require('./webpack.dev.js');
 
-delete config.serve;
-
 module.exports = Object.assign(config, {
   mode: 'production',
   output: {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 export { createNamespace } from './create';
-export { suffixPx } from './format/unit';
+export { addUnit } from './format/unit';
 
 export const isServer: boolean = Vue.prototype.$isServer;
 

@@ -1,7 +1,7 @@
 import PullRefresh from '..';
-import { mount, trigger, triggerDrag } from '../../../test/utils';
+import { mount, later, trigger, triggerDrag } from '../../../test/utils';
 
-test('change head content when pulling down', () => {
+test('change head content when pulling down', async () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
       value: false
@@ -32,6 +32,9 @@ test('change head content when pulling down', () => {
   expect(wrapper).toMatchSnapshot();
 
   expect(wrapper.emitted('input')).toBeTruthy();
+  expect(wrapper.emitted('refresh')).toBeFalsy();
+
+  await later();
   expect(wrapper.emitted('refresh')).toBeTruthy();
 
   // end loading

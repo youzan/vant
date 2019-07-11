@@ -80,7 +80,7 @@ Vue.use(SubmitBar);
 | tip-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 |  `String` | - | - |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
-| currency | 货币符号 | `String` | `¥` | 1.0.6 |
+| currency | 货币符号 | `String` | `¥` | - |
 | decimal-length | 价格小数点后位数 | `Number` | `2` | 1.6.15 | 
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 

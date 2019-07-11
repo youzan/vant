@@ -1,11 +1,15 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-sidebar
-        :active-key="activeKey"
-        @change="onChange"
-      >
+      <van-sidebar v-model="activeKey1">
         <van-sidebar-item :title="$t('title')" />
+        <van-sidebar-item :title="$t('title')" />
+        <van-sidebar-item :title="$t('title')" />
+      </van-sidebar>
+    </demo-block>
+
+    <demo-block :title="$t('showBadge')">
+      <van-sidebar v-model="activeKey2">
         <van-sidebar-item
           :title="$t('title')"
           info="8"
@@ -27,20 +31,19 @@
 export default {
   i18n: {
     'zh-CN': {
-      title: '标签名称'
+      title: '标签名称',
+      showBadge: '显示徽标'
+    },
+    'en-US': {
+      showBadge: 'Show Badge'
     }
   },
 
   data() {
     return {
-      activeKey: 0
+      activeKey1: 0,
+      activeKey2: 0
     };
-  },
-
-  methods: {
-    onChange(key) {
-      this.activeKey = key;
-    }
   }
 };
 </script>
@@ -49,20 +52,10 @@ export default {
 @import '../../style/var';
 
 .demo-sidebar {
+  background-color: @white;
+
   .van-sidebar {
-    width: auto;
-    margin: 0 15px;
-    padding: 20px 0;
-    background-color: @white;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  .van-sidebar-item {
-    width: 85px;
-    margin: 0 auto;
+    margin-left: 15px;
   }
 }
 </style>

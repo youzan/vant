@@ -36,7 +36,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="demo-swipe--vertical van-swipe">
+    <div class="demo-swipe--vertical van-swipe" style="height: 200px;">
       <div class="van-swipe__track" style="height: 400px; transition-duration: 0ms; transform: translateY(0px);">
         <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">1</div>
         <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">2</div>

@@ -1,8 +1,8 @@
 # SwitchCell 开关单元格
 
-### 介绍
+### 废弃提示
 
-`SwitchCell`组件是对`Switch`和`Cell`组件的封装
+<b>SwitchCell 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Switch 组件代替
 
 ### 引入
 
@@ -64,7 +64,7 @@ export default {
 | cell-size | 单元格大小，可选值为 `large` | `String` | 2.0.0 |
 | loading | 是否为加载状态 |  `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
-| size | 开关尺寸 | `String` | `24px` | 1.1.11 |
+| size | 开关尺寸 | `String` | `24px` | - |
 | active-color | 开关时的背景色 | `String` | `#1989fa` | 1.5.0 |
 | inactive-color | 开关时的背景色 | `String` | `#fff` | 1.5.0 |
 | active-value | 打开时的值 | `any` | `true` | 1.5.6 |

@@ -18,11 +18,13 @@ import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
+import CountDown from './count-down';
 import Coupon from './coupon';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
+import Divider from './divider';
 import DropdownItem from './dropdown-item';
 import DropdownMenu from './dropdown-menu';
 import Field from './field';
@@ -87,7 +89,7 @@ declare global {
   }
 }
 
-const version = '2.0.3';
+const version = '2.0.6';
 const components = [
   ActionSheet,
   AddressEdit,
@@ -106,11 +108,13 @@ const components = [
   ContactCard,
   ContactEdit,
   ContactList,
+  CountDown,
   Coupon,
   CouponCell,
   CouponList,
   DatetimePicker,
   Dialog,
+  Divider,
   DropdownItem,
   DropdownMenu,
   Field,
@@ -199,11 +203,13 @@ export {
   ContactCard,
   ContactEdit,
   ContactList,
+  CountDown,
   Coupon,
   CouponCell,
   CouponList,
   DatetimePicker,
   Dialog,
+  Divider,
   DropdownItem,
   DropdownMenu,
   Field,

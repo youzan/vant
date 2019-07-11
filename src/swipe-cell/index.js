@@ -22,7 +22,7 @@ export default createComponent({
     leftWidth: Number,
     rightWidth: Number,
     name: {
-      type: [String, Number],
+      type: [Number, String],
       default: ''
     }
   },

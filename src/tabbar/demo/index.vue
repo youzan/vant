@@ -9,7 +9,7 @@
       </van-tabbar>
     </demo-block>
 
-    <demo-block :title="$t('itemName')">
+    <demo-block :title="$t('matchByName')">
       <van-tabbar v-model="activeName">
         <van-tabbar-item
           name="home"
@@ -97,13 +97,13 @@ export default {
       badge: '显示徽标',
       customIcon: '自定义图标',
       customColor: '自定义颜色',
-      itemName: '通过名称匹配'
+      matchByName: '通过名称匹配'
     },
     'en-US': {
       badge: 'Show Badge',
       customIcon: 'Custom Icon',
       customColor: 'Custom Color',
-      itemName: 'Item Name'
+      matchByName: 'Match by name'
     }
   },
 

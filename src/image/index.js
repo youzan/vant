@@ -1,4 +1,4 @@
-import { createNamespace, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
@@ -9,8 +9,8 @@ export default createComponent({
     fit: String,
     alt: String,
     lazyLoad: Boolean,
-    width: [String, Number],
-    height: [String, Number]
+    width: [Number, String],
+    height: [Number, String]
   },
 
   data() {
@@ -32,11 +32,11 @@ export default createComponent({
       const style = {};
 
       if (isDef(this.width)) {
-        style.width = suffixPx(this.width);
+        style.width = addUnit(this.width);
       }
 
       if (isDef(this.height)) {
-        style.height = suffixPx(this.height);
+        style.height = addUnit(this.height);
       }
 
       return style;

@@ -28,8 +28,9 @@ test('click icon event', () => {
 
   wrapper.find('.van-field__left-icon').trigger('click');
   wrapper.find('.van-field__right-icon').trigger('click');
-  expect(wrapper.emitted('click-left-icon')).toBeTruthy();
-  expect(wrapper.emitted('click-right-icon')).toBeTruthy();
+  expect(wrapper.emitted('click').length).toEqual(2);
+  expect(wrapper.emitted('click-left-icon')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('click-right-icon')[0][0]).toBeTruthy();
 });
 
 test('keypress event', () => {
@@ -164,7 +165,7 @@ test('clearable', () => {
 
   wrapper.find('.van-field__clear').trigger('touchstart');
   expect(wrapper.emitted('input')[0][0]).toEqual('');
-  expect(wrapper.emitted('clear')).toBeTruthy();
+  expect(wrapper.emitted('clear')[0][0]).toBeTruthy();
 });
 
 test('render input slot', () => {

@@ -1,5 +1,5 @@
 /* eslint-disable prefer-spread */
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 import Icon from '../icon';
@@ -90,13 +90,13 @@ function Rate(
     }
   }
 
-  const gutter = suffixPx(props.gutter);
+  const gutter = addUnit(props.gutter);
 
   function renderStar(status: RateStatus, index: number) {
     const isFull = status === 'full';
     const isVoid = status === 'void';
     const score = index + 1;
-    const size = suffixPx(props.size);
+    const size = addUnit(props.size);
 
     let style;
     if (gutter && score !== count) {
@@ -154,12 +154,15 @@ function Rate(
 }
 
 Rate.props = {
-  value: Number,
-  size: [String, Number],
-  gutter: [String, Number],
+  size: [Number, String],
+  gutter: [Number, String],
   readonly: Boolean,
   disabled: Boolean,
   allowHalf: Boolean,
+  value: {
+    type: Number,
+    default: 0
+  },
   icon: {
     type: String,
     default: 'star'

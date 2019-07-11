@@ -1,7 +1,7 @@
 import { VNode, CreateElement, RenderContext } from 'vue';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
-export type EventHanlder = (eventName?: Event) => void;
+export type EventHandler = (event: Event) => void;
 
 export type ObjectIndex = {
   [key: string]: any;

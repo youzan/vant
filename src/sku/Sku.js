@@ -20,20 +20,27 @@ export default createComponent({
   props: {
     sku: Object,
     goods: Object,
-    quota: Number,
     value: Boolean,
     buyText: String,
-    quotaUsed: Number,
     goodsId: [Number, String],
     hideStock: Boolean,
-    hideQuotaText: Boolean,
+    addCartText: String,
     stepperTitle: String,
     getContainer: Function,
+    hideQuotaText: Boolean,
+    resetStepperOnHide: Boolean,
     customSkuValidator: Function,
     closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
-    resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
+    quota: {
+      type: Number,
+      default: 0
+    },
+    quotaUsed: {
+      type: Number,
+      default: 0
+    },
     initialSku: {
       type: Object,
       default: () => ({})
@@ -453,6 +460,7 @@ export default createComponent({
       <SkuActions
         buyText={this.buyText}
         skuEventBus={skuEventBus}
+        addCartText={this.addCartText}
         showAddCartBtn={this.showAddCartBtn}
       />
     );

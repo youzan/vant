@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 
 // Types
@@ -31,7 +31,7 @@ function PasswordInput(
 
     let style;
     if (i !== 0 && props.gutter) {
-      style = { marginLeft: suffixPx(props.gutter) };
+      style = { marginLeft: addUnit(props.gutter) };
     }
 
     Points.push(
@@ -60,8 +60,8 @@ function PasswordInput(
 
 PasswordInput.props = {
   info: String,
+  gutter: [Number, String],
   errorInfo: String,
-  gutter: [String, Number],
   mask: {
     type: Boolean,
     default: true

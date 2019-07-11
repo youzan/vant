@@ -70,7 +70,7 @@ Vue.use(Tag);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` | `String` | - |
+| type | Type, can be set to `primary` `success` `danger` | `String` | `default` |
 | size | Size, can be set to `large` `medium` | `String` | - |
 | color | Custom color | `String` | - |
 | plain | Whether to be plain style | `Boolean` | `false` |
@@ -88,4 +88,4 @@ Vue.use(Tag);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | - |
+| click | Triggered when clicked | event: Event |

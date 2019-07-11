@@ -1,14 +1,10 @@
-import { createNamespace, suffixPx } from '../utils';
-import { toArray, readFile, isOversize } from './utils';
+import { createNamespace, addUnit } from '../utils';
+import { toArray, readFile, isOversize, isImageDataUrl } from './utils';
 import Icon from '../icon';
 import Image from '../image';
 import ImagePreview from '../image-preview';
 
 const [createComponent, bem] = createNamespace('uploader');
-
-function isImageDataUrl(dataUrl) {
-  return dataUrl.indexOf('data:image') === 0;
-}
 
 export default createComponent({
   inheritAttrs: false,
@@ -18,27 +14,22 @@ export default createComponent({
   },
 
   props: {
-    fileList: Array,
     disabled: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
     previewSize: [Number, String],
     name: {
-      type: [String, Number],
+      type: [Number, String],
       default: ''
-    },
-    previewImage: {
-      type: Boolean,
-      default: true
     },
     accept: {
       type: String,
       default: 'image/*'
     },
-    resultType: {
-      type: String,
-      default: 'dataUrl'
+    fileList: {
+      type: Array,
+      default: () => []
     },
     maxSize: {
       type: Number,
@@ -47,6 +38,14 @@ export default createComponent({
     maxCount: {
       type: Number,
       default: Number.MAX_VALUE
+    },
+    previewImage: {
+      type: Boolean,
+      default: true
+    },
+    resultType: {
+      type: String,
+      default: 'dataUrl'
     }
   },
 
@@ -223,7 +222,7 @@ export default createComponent({
 
       let style;
       if (this.previewSize) {
-        const size = suffixPx(this.previewSize);
+        const size = addUnit(this.previewSize);
         style = {
           width: size,
           height: size

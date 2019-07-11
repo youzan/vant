@@ -1,4 +1,56 @@
-# 更新日志
+# Changelog
+
+### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
+`2019-07-05`
+
+**Improvements**
+
+- add Divider component [\#3755](https://github.com/youzan/vant/pull/3755)
+- Tab: add name prop [\#3762](https://github.com/youzan/vant/pull/3762)
+- Sku: add add-cart-text prop [\#3725](https://github.com/youzan/vant/pull/3725)
+
+**Bug Fixes**
+
+- fix Swipe fix blank area when use width prop [\#3751](https://github.com/youzan/vant/pull/3751)
+- fix Grid gutter can be string type [\#3741](https://github.com/youzan/vant/pull/3741)
+- fix Collapse use double raf to ensure animation can start [\#3723](https://github.com/youzan/vant/pull/3723)
+- fix PullRefresh ensure value change can be watched [\#3719](https://github.com/youzan/vant/pull/3719)
+
+
+### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
+`2019-07-02`
+
+**Improvements**
+
+- Stepper: add button-size prop [\#3714](https://github.com/youzan/vant/pull/3714)
+- Stepper: support long press gesture [\#3711](https://github.com/youzan/vant/pull/3711)
+- Dialog: add close-on-popstate prop [\#3709](https://github.com/youzan/vant/pull/3709)
+
+**Bug Fixes**
+
+- fix postcss config overwritten issue
+
+
+### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4)
+`2019-07-01`
+
+**Improvements**
+
+- add Grid、GridItem component [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
+- Field: add arrow-direction prop [\#3679](https://github.com/youzan/vant/pull/3679)
+- Sidebar: add to、replace prop [\#3696](https://github.com/youzan/vant/pull/3696)
+- Sidebar: support use v-model to bind active key [\#3698](https://github.com/youzan/vant/pull/3698)
+- IndexBar: add class for active index [\#3692](https://github.com/youzan/vant/pull/3692)
+- Uploader: support number type of name prop [\#3681](https://github.com/youzan/vant/pull/3681)
+- SwipeCell: add name prop [\#3680](https://github.com/youzan/vant/pull/3680)
+- AddressEdit: add detail-maxlength prop [\#3707](https://github.com/youzan/vant/pull/3707)
+- GoodsActionIcon: add icon slot [\#3705](https://github.com/youzan/vant/pull/3705)
+
+**Bug Fixes**
+
+- fix Collapse flick in safari [\#3686](https://github.com/youzan/vant/pull/3686)
+- fix Picker compatibility issues on lower versions of Android [\#3688](https://github.com/youzan/vant/pull/3688)
+
 
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`

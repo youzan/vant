@@ -1,8 +1,9 @@
-import { createNamespace, isServer } from '../utils';
+import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
+import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
@@ -18,16 +19,21 @@ function getDistance(touches) {
 }
 
 export default createComponent({
-  mixins: [PopupMixin, TouchMixin],
+  mixins: [
+    PopupMixin,
+    TouchMixin,
+    CloseOnPopstateMixin
+  ],
 
   props: {
-    images: Array,
     className: null,
     lazyLoad: Boolean,
     asyncClose: Boolean,
-    startPosition: Number,
     showIndicators: Boolean,
-    closeOnPopstate: Boolean,
+    images: {
+      type: Array,
+      default: () => []
+    },
     loop: {
       type: Boolean,
       default: true
@@ -40,6 +46,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    startPosition: {
+      type: Number,
+      default: 0
+    },
     minZoom: {
       type: Number,
       default: 1 / 3
@@ -50,7 +60,7 @@ export default createComponent({
     },
     overlayClass: {
       type: String,
-      default: 'van-image-preview__overlay'
+      default: bem('overlay')
     },
     closeOnClickOverlay: {
       type: Boolean,
@@ -94,30 +104,10 @@ export default createComponent({
 
     startPosition(active) {
       this.active = active;
-    },
-
-    closeOnPopstate: {
-      handler(val) {
-        this.handlePopstate(val);
-      },
-      immediate: true
     }
   },
 
   methods: {
-    handlePopstate(bind) {
-      /* istanbul ignore if */
-      if (isServer) {
-        return;
-      }
-
-      if (this.bindStatus !== bind) {
-        this.bindStatus = bind;
-        const action = bind ? 'add' : 'remove';
-        window[`${action}EventListener`]('popstate', this.close);
-      }
-    },
-
     onWrapperTouchStart() {
       this.touchStartTime = new Date();
     },

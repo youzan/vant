@@ -198,6 +198,10 @@ export default {
                 title: 'Notify 消息通知'
               },
               {
+                path: '/overlay',
+                title: 'Overlay 遮罩层'
+              },
+              {
                 path: '/pull-refresh',
                 title: 'PullRefresh 下拉刷新'
               },
@@ -222,6 +226,14 @@ export default {
               {
                 path: '/collapse',
                 title: 'Collapse 折叠面板'
+              },
+              {
+                path: '/count-down',
+                title: 'CountDown 倒计时'
+              },
+              {
+                path: '/divider',
+                title: 'Divider 分割线'
               },
               {
                 path: '/image-preview',
@@ -524,6 +536,10 @@ export default {
                 title: 'Notify'
               },
               {
+                path: '/overlay',
+                title: 'Overlay 遮罩层'
+              },
+              {
                 path: '/pull-refresh',
                 title: 'PullRefresh'
               },
@@ -548,6 +564,14 @@ export default {
               {
                 path: '/collapse',
                 title: 'Collapse'
+              },
+              {
+                path: '/count-down',
+                title: 'CountDown'
+              },
+              {
+                path: '/divider',
+                title: 'Divider'
               },
               {
                 path: '/image-preview',

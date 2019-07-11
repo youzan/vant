@@ -1,4 +1,4 @@
-export type GetContainer = (container: HTMLElement) => void;
+export type GetContainer = () => HTMLElement;
 
 export type PopupMixinProps = {
   value: boolean;

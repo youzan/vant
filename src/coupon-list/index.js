@@ -15,8 +15,6 @@ export default createComponent({
 
   props: {
     code: String,
-    coupons: Array,
-    disabledCoupons: Array,
     closeButtonText: String,
     inputPlaceholder: String,
     enabledTitle: String,
@@ -31,6 +29,14 @@ export default createComponent({
     chosenCoupon: {
       type: Number,
       default: -1
+    },
+    coupons: {
+      type: Array,
+      default: () => []
+    },
+    disabledCoupons: {
+      type: Array,
+      default: () => []
     },
     displayedCouponIndex: {
       type: Number,

@@ -75,12 +75,24 @@ export default {
       Toast.loading({ forbidClick: true });
 
       setTimeout(() => {
-        Toast.claer();
+        Toast.clear();
         this.value = value;
       }, 500);
     }
   }
 }
+```
+
+### 自定义大小
+
+通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
+
+```html
+<van-stepper
+  v-model="value"
+  input-width="40px"
+  button-size="32px"
+/>
 ```
 
 ## API
@@ -93,11 +105,12 @@ export default {
 | min | 最小值 | `String | Number` | `1` | - |
 | max | 最大值 | `String | Number` | - | - |
 | step | 步数 | `String | Number` | `1` | - |
-| integer | 是否只允许输入整数 | `Boolean` | `false` | 1.1.1 |
+| integer | 是否只允许输入整数 | `Boolean` | `false` | - |
 | disabled | 是否禁用步进器 | `Boolean` | `false` | - |
 | disable-input | 是否禁用输入框 | `Boolean` | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | `Boolean` | `false` | - |
-| input-width | 输入框宽度，默认单位为`px` | `String | Number` | `30px` | 1.6.13 |
+| input-width | 输入框宽度，默认单位为`px` | `String | Number` | `32px` | 1.6.13 |
+| button-size | 按钮大小，默认单位为`px`，输入框高度会和按钮大小保持一致 | `String | Number` | `28px` | 2.0.5 |
 
 ### Events
 

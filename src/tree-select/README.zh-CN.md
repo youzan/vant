@@ -51,7 +51,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | items | 分类显示所需的数据，结构参见下方 | `Array` | `[]` | - |
-| height | 高度，单位为 px | `Number` | `300` | 1.3.6 |
+| height | 高度，单位为 px | `Number` | `300` | - |
 | main-active-index | 左侧导航高亮的索引 | `Number` | `0` | - |
 | active-id | 右侧选择项，高亮的数据id | `String | Number` | `0` | - |
 

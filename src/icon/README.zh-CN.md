@@ -65,13 +65,13 @@ import 'vant/lib/icon/local.css';
 |------|------|------|------|------|
 | name | 图标名称或图片链接 | `String` | - | - |
 | info | 图标右上角文字提示 | `String | Number` | - | - |
-| color | 图标颜色 | `String` | `inherit` | 1.1.3 |
+| color | 图标颜色 | `String` | `inherit` | - |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | `String | Number` | `inherit` | 2.0.0 |
-| class-prefix | 类名前缀 | `String` | `van-icon` | 1.2.1 |
+| class-prefix | 类名前缀 | `String` | `van-icon` | - |
 | tag | HTML 标签 | `String` | `i` | 1.6.10 |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击图标时触发 | - |
+| click | 点击图标时触发 | event: Event |

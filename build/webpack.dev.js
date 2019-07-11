@@ -6,8 +6,8 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
   mode: 'development',
   entry: {
-    'vant-docs': './docs/site/index.js',
-    'vant-mobile': './docs/site/mobile.js'
+    'vant-docs': './docs/site/desktop/main.js',
+    'vant-mobile': './docs/site/mobile/main.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -25,7 +25,7 @@ module.exports = {
     clientLogLevel: 'warning'
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.vue', '.css']
+    extensions: ['.js', '.ts', '.tsx', '.vue', '.less']
   },
   module: {
     rules: [
@@ -65,10 +65,6 @@ module.exports = {
       {
         test: /\.md$/,
         use: ['vue-loader', '@vant/markdown-loader']
-      },
-      {
-        test: /\.(ttf|svg)$/,
-        loader: 'url-loader'
       }
     ]
   },
@@ -77,13 +73,13 @@ module.exports = {
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['vant-docs'],
-      template: 'docs/site/index.tpl',
+      template: 'docs/site/desktop/index.html',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
       chunks: ['vant-mobile'],
-      template: 'docs/site/index.tpl',
+      template: 'docs/site/mobile/index.html',
       filename: 'mobile.html',
       inject: true
     })

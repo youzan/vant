@@ -1,6 +1,13 @@
 import NoticeBar from '..';
 import { mount } from '../../../test/utils';
 
+test('click event', () => {
+  const wrapper = mount(NoticeBar);
+
+  wrapper.trigger('click');
+  expect(wrapper.emitted('click')[0][0]).toBeTruthy();
+});
+
 test('close event', () => {
   const wrapper = mount(NoticeBar, {
     propsData: {
@@ -10,7 +17,7 @@ test('close event', () => {
   const close = wrapper.find('.van-notice-bar__right-icon');
 
   close.trigger('click');
-  expect(wrapper.emitted('close')).toBeTruthy();
+  expect(wrapper.emitted('close')[0][0]).toBeTruthy();
 });
 
 test('icon slot', () => {

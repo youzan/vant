@@ -8,6 +8,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanTabs')],
 
   props: {
+    name: [Number, String],
     title: String,
     disabled: Boolean
   },
@@ -19,14 +20,18 @@ export default createComponent({
   },
 
   computed: {
-    selected() {
-      return this.index === this.parent.curActive;
+    computedName() {
+      return this.name || this.index;
+    },
+
+    isActive() {
+      return this.computedName === this.parent.currentName;
     }
   },
 
   watch: {
-    'parent.curActive'() {
-      this.inited = this.inited || this.selected;
+    'parent.currentIndex'() {
+      this.inited = this.inited || this.isActive;
     },
 
     title() {
@@ -41,7 +46,7 @@ export default createComponent({
   },
 
   render(h) {
-    const { slots, selected } = this;
+    const { slots, isActive } = this;
     const shouldRender = this.inited || !this.parent.lazyRender;
     const Content = [shouldRender ? slots() : h()];
 
@@ -53,8 +58,8 @@ export default createComponent({
       return (
         <div
           role="tabpanel"
-          aria-hidden={!selected}
-          class={bem('pane-wrapper', { inactive: !selected })}
+          aria-hidden={!isActive}
+          class={bem('pane-wrapper', { inactive: !isActive })}
         >
           <div class={bem('pane')}>{Content}</div>
         </div>
@@ -62,7 +67,7 @@ export default createComponent({
     }
 
     return (
-      <div vShow={selected} role="tabpanel" class={bem('pane')}>
+      <div vShow={isActive} role="tabpanel" class={bem('pane')}>
         {Content}
       </div>
     );

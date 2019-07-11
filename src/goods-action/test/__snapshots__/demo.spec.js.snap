@@ -4,12 +4,12 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-goods-action">
-      <div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+      <div role="button" tabindex="0" class="van-goods-action-icon">
         <div class="van-icon van-icon-chat-o van-goods-action-icon__icon">
           <!---->
         </div>客服
       </div>
-      <div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+      <div role="button" tabindex="0" class="van-goods-action-icon">
         <div class="van-icon van-icon-cart-o van-goods-action-icon__icon">
           <!---->
         </div>购物车
@@ -18,17 +18,17 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-goods-action">
-      <div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+      <div role="button" tabindex="0" class="van-goods-action-icon">
         <div class="van-icon van-icon-chat-o van-goods-action-icon__icon">
           <!---->
         </div>客服
       </div>
-      <div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+      <div role="button" tabindex="0" class="van-goods-action-icon">
         <div class="van-icon van-icon-cart-o van-goods-action-icon__icon">
           <div class="van-info">5</div>
         </div>购物车
       </div>
-      <div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+      <div role="button" tabindex="0" class="van-goods-action-icon">
         <div class="van-icon van-icon-shop-o van-goods-action-icon__icon">
           <!---->
         </div>店铺

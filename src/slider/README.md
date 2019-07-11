@@ -95,7 +95,7 @@ export default {
 | max | Max value | `Number` | `100` |
 | min | Min value | `Number` | `0` |
 | step | Step size | `Number` | `1` |
-| bar-height | Height of bar | `String` | `2px` |
+| bar-height | Height of bar | `Number | String` | `2px` |
 | active-color | Active color of bar | `String` | `#1989fa` |
 | inactive-color | Inactive color of bar | `String` | `#e5e5e5` |
 | vertical | Whether to display vertical | `Boolean` | `false` |

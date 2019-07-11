@@ -1,29 +1,35 @@
-import { createNamespace, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
+import { getRootScrollTop } from '../utils/dom/scroll';
+import { isIOS } from '../utils/validate/system';
 
 const [createComponent, bem] = createNamespace('stepper');
+
+const LONG_PRESS_START_TIME = 600;
+const LONG_PRESS_INTERVAL = 200;
 
 export default createComponent({
   props: {
     value: null,
     integer: Boolean,
     disabled: Boolean,
-    inputWidth: [String, Number],
+    inputWidth: [Number, String],
+    buttonSize: [Number, String],
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     },
     max: {
-      type: [String, Number],
+      type: [Number, String],
       default: Infinity
     },
     step: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     },
     defaultValue: {
-      type: [String, Number],
+      type: [Number, String],
       default: 1
     }
   },
@@ -46,6 +52,32 @@ export default createComponent({
 
     plusDisabled() {
       return this.disabled || this.currentValue >= this.max;
+    },
+
+    inputStyle() {
+      const style = {};
+
+      if (this.inputWidth) {
+        style.width = addUnit(this.inputWidth);
+      }
+
+      if (this.buttonSize) {
+        style.height = addUnit(this.buttonSize);
+      }
+
+      return style;
+    },
+
+    buttonStyle() {
+      const style = {};
+
+      if (this.buttonSize) {
+        const size = addUnit(this.buttonSize);
+        style.width = size;
+        style.height = size;
+      }
+
+      return style;
     }
   },
 
@@ -78,19 +110,21 @@ export default createComponent({
       const { value } = event.target;
       const formatted = this.format(value);
 
-      if (!this.asyncChange) {
+      if (this.asyncChange) {
+        event.target.value = this.currentValue;
+        this.$emit('input', formatted);
+        this.$emit('change', formatted);
+      } else {
         if (+value !== formatted) {
           event.target.value = formatted;
         }
         this.currentValue = formatted;
-      } else {
-        event.target.value = this.currentValue;
-        this.$emit('input', formatted);
-        this.$emit('change', formatted);
       }
     },
 
-    onChange(type) {
+    onChange() {
+      const { type } = this;
+
       if (this[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
@@ -99,12 +133,13 @@ export default createComponent({
       const diff = type === 'minus' ? -this.step : +this.step;
       const value = Math.round((this.currentValue + diff) * 100) / 100;
 
-      if (!this.asyncChange) {
-        this.currentValue = this.range(value);
-      } else {
+      if (this.asyncChange) {
         this.$emit('input', value);
         this.$emit('change', value);
+      } else {
+        this.currentValue = this.range(value);
       }
+
       this.$emit(type);
     },
 
@@ -120,19 +155,64 @@ export default createComponent({
       if (this.currentValue === 0) {
         event.target.value = this.currentValue;
       }
+
+      // Hack for iOS12 page scroll
+      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
+      /* istanbul ignore next */
+      if (isIOS()) {
+        window.scrollTo(0, getRootScrollTop());
+      }
+    },
+
+    longPressStep() {
+      this.longPressTimer = setTimeout(() => {
+        this.onChange(this.type);
+        this.longPressStep(this.type);
+      }, LONG_PRESS_INTERVAL);
+    },
+
+    onTouchStart(type) {
+      clearTimeout(this.longPressTimer);
+      this.isLongPress = false;
+
+      this.longPressTimer = setTimeout(() => {
+        this.isLongPress = true;
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_START_TIME);
+    },
+
+    onTouchEnd(event) {
+      clearTimeout(this.longPressTimer);
+
+      if (this.isLongPress) {
+        event.preventDefault();
+      }
     }
   },
 
   render(h) {
-    const onChange = type => () => {
-      this.onChange(type);
-    };
+    const createListeners = type => ({
+      on: {
+        click: () => {
+          this.type = type;
+          this.onChange();
+        },
+        touchstart: () => {
+          this.type = type;
+          this.onTouchStart(type);
+        },
+        touchend: this.onTouchEnd,
+        touchcancel: this.onTouchEnd
+      }
+    });
 
     return (
       <div class={bem()}>
         <button
+          style={this.buttonStyle}
           class={bem('minus', { disabled: this.minusDisabled })}
-          onClick={onChange('minus')}
+          {...createListeners('minus')}
         />
         <input
           type="number"
@@ -143,14 +223,15 @@ export default createComponent({
           aria-valuemin={this.min}
           aria-valuenow={this.currentValue}
           disabled={this.disabled || this.disableInput}
-          style={{ width: suffixPx(this.inputWidth) }}
+          style={this.inputStyle}
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
         />
         <button
+          style={this.buttonStyle}
           class={bem('plus', { disabled: this.plusDisabled })}
-          onClick={onChange('plus')}
+          {...createListeners('plus')}
         />
       </div>
     );

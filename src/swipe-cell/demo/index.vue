@@ -7,8 +7,8 @@
           <template #left>
             <van-button
               square
-              type="danger"
-              :text="$t('button1')"
+              type="primary"
+              :text="$t('select')"
             />
           </template>
           <van-cell
@@ -20,7 +20,12 @@
             <van-button
               square
               type="danger"
-              :text="$t('button2')"
+              :text="$t('delete')"
+            />
+            <van-button
+              square
+              type="primary"
+              :text="$t('collect')"
             />
           </template>
         </van-swipe-cell>
@@ -31,8 +36,8 @@
           <template #left>
             <van-button
               square
-              type="danger"
-              :text="$t('button1')"
+              type="primary"
+              :text="$t('select')"
             />
           </template>
           <van-cell
@@ -44,7 +49,7 @@
             <van-button
               square
               type="danger"
-              :text="$t('button2')"
+              :text="$t('delete')"
             />
           </template>
         </van-swipe-cell>
@@ -57,16 +62,18 @@
 export default {
   i18n: {
     'zh-CN': {
-      button1: '选择',
-      button2: '删除',
+      select: '选择',
+      delete: '删除',
+      collect: '收藏',
       title: '单元格',
       title2: '异步关闭',
       confirm: '确定删除吗？',
       tips: '建议在手机模式下浏览本示例'
     },
     'en-US': {
-      button1: 'Select',
-      button2: 'Delete',
+      select: 'Select',
+      delete: 'Delete',
+      collect: 'Collect',
       title: 'Cell',
       title2: 'Async close',
       confirm: 'Are you sure to delete?',
