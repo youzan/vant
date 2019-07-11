@@ -125,7 +125,7 @@ export default {
 
 ### Slots
 
-| Name | Description | slot-scope |
+| Name | Description | SlotProps |
 |------|------|------|
 | default | Custom Content | timeData |
 
