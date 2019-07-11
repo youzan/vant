@@ -8,7 +8,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">杭州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
@@ -29,7 +29,7 @@ exports[`renders demo correctly 1`] = `
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
           </ul>
@@ -51,7 +51,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">杭州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
@@ -80,7 +80,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">杭州</li>
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">宁波</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
           </ul>
         </div>
@@ -96,7 +96,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column column1">
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">浙江</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">浙江</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">福建</li>
           </ul>
         </div>
@@ -104,7 +104,7 @@ exports[`renders demo correctly 1`] = `
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
           </ul>
@@ -121,7 +121,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column column1">
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">浙江</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">浙江</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">福建</li>
           </ul>
         </div>
@@ -129,7 +129,7 @@ exports[`renders demo correctly 1`] = `
           <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
-            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
           </ul>

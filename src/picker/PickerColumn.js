@@ -118,8 +118,7 @@ export default createComponent({
       const distance = this.offset - this.momentumOffset;
       const duration = Date.now() - this.touchStartTime;
       const allowMomentum =
-        duration < MOMENTUM_LIMIT_TIME &&
-        Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
+        duration < MOMENTUM_LIMIT_TIME && Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
 
       if (allowMomentum) {
         this.momentum(distance, duration);
@@ -195,17 +194,13 @@ export default createComponent({
     },
 
     getIndexByOffset(offset) {
-      return range(
-        Math.round(-offset / this.itemHeight),
-        0,
-        this.count - 1
-      );
+      return range(Math.round(-offset / this.itemHeight), 0, this.count - 1);
     },
 
     momentum(distance, duration) {
       const speed = Math.abs(distance / duration);
 
-      distance = this.offset + speed / 0.002 * (distance < 0 ? -1 : 1);
+      distance = this.offset + (speed / 0.002) * (distance < 0 ? -1 : 1);
 
       const index = this.getIndexByOffset(distance);
 
@@ -259,7 +254,10 @@ export default createComponent({
               style={optionStyle}
               class={[
                 'van-ellipsis',
-                bem('item', { disabled: isOptionDisabled(option) })
+                bem('item', {
+                  disabled: isOptionDisabled(option),
+                  selected: index === this.currentIndex
+                })
               ]}
               domPropsInnerHTML={this.getOptionText(option)}
               onClick={() => {
