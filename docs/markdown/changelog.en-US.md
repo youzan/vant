@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.0.7](https://github.com/youzan/vant/tree/v2.0.7)
+`2019-07-11`
+
+**Improvements**
+
+- add CountDown component [\#3805](https://github.com/youzan/vant/pull/3805)
+- Popup: add round prop [\#3781](https://github.com/youzan/vant/pull/3781)
+- PullRefresh: add distance of slotProps [\#3829](https://github.com/youzan/vant/pull/3829)
+- DropdownMenu: add close-on-click-outside prop [\#3824](https://github.com/youzan/vant/pull/3824)
+- Swipe: add immediate option of swipeTo method [\#3821](https://github.com/youzan/vant/pull/3821)
+- Slider: support number type of bar-height prop [\#3794](https://github.com/youzan/vant/pull/3794)
+- IndexBar: add sticky-offset-top prop [\#3791](https://github.com/youzan/vant/pull/3791)
+
+**Bug Fixes**
+
+- fix Popup overlay may cover popup in some cases [\#3831](https://github.com/youzan/vant/pull/3831)
+- fix Stepper add hack for iOS 12 page scroll [\#3804](https://github.com/youzan/vant/pull/3804)
+- fix Dialog missing closeOnPopstate in type definition [\#3789](https://github.com/youzan/vant/pull/3789)
+- fix DatetimePicker confirm event param incorrect when use filter [\#3816](https://github.com/youzan/vant/pull/3816)
+
+
 ### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
 `2019-07-05`
 
