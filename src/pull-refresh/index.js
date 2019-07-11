@@ -37,7 +37,7 @@ export default createComponent({
   data() {
     return {
       status: 'normal',
-      height: 0,
+      distance: 0,
       duration: 0
     };
   },
@@ -119,23 +119,25 @@ export default createComponent({
       return this.ceiling;
     },
 
-    ease(height) {
+    ease(distance) {
       const { headHeight } = this;
-      return height < headHeight
-        ? height
-        : height < headHeight * 2
-          ? Math.round(headHeight + (height - headHeight) / 2)
-          : Math.round(headHeight * 1.5 + (height - headHeight * 2) / 4);
+      return Math.round(
+        distance < headHeight
+          ? distance
+          : distance < headHeight * 2
+            ? headHeight + (distance - headHeight) / 2
+            : headHeight * 1.5 + (distance - headHeight * 2) / 4
+      );
     },
 
-    setStatus(height, isLoading) {
-      this.height = height;
+    setStatus(distance, isLoading) {
+      this.distance = distance;
 
       const status = isLoading
         ? 'loading'
-        : height === 0
+        : distance === 0
           ? 'normal'
-          : height < this.headHeight
+          : distance < this.headHeight
             ? 'pulling'
             : 'loosing';
 
@@ -146,14 +148,14 @@ export default createComponent({
   },
 
   render(h) {
-    const { status } = this;
+    const { status, distance } = this;
     const text = this[`${status}Text`] || t(status);
     const style = {
       transition: `${this.duration}ms`,
-      transform: this.height ? `translate3d(0,${this.height}px, 0)` : ''
+      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : ''
     };
 
-    const Status = this.slots(status) || [
+    const Status = this.slots(status, { distance }) || [
       TEXT_STATUS.indexOf(status) !== -1 && <div class={bem('text')}>{text}</div>,
       status === 'loading' && <Loading size="16">{text}</Loading>
     ];

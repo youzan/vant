@@ -65,10 +65,10 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 自定义内容 |
-| normal | 非下拉状态时顶部内容 |
-| pulling | 下拉过程中顶部内容 |
-| loosing | 释放过程中顶部内容 |
-| loading | 加载过程中顶部内容 |
+| 名称 | 说明 | scoped-slot 参数 |
+|------|------|------|
+| default | 自定义内容 | - |
+| normal | 非下拉状态时顶部内容 | - |
+| pulling | 下拉过程中顶部内容 | { distance: 当前下拉距离 } |
+| loosing | 释放过程中顶部内容 | { distance: 当前下拉距离 } |
+| loading | 加载过程中顶部内容 | { distance: 当前下拉距离 } |

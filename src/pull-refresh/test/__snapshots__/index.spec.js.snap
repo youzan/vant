@@ -48,6 +48,30 @@ exports[`change head content when pulling down 5`] = `
 </div>
 `;
 
+exports[`custom content by slots 1`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,20px, 0);">
+    <div class="van-pull-refresh__head">pulling 20</div>
+  </div>
+</div>
+`;
+
+exports[`custom content by slots 2`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,75px, 0);">
+    <div class="van-pull-refresh__head">loosing 75</div>
+  </div>
+</div>
+`;
+
+exports[`custom content by slots 3`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track" style="transition: 300ms; transform: translate3d(0,50px, 0);">
+    <div class="van-pull-refresh__head">loading 50</div>
+  </div>
+</div>
+`;
+
 exports[`not in page top 1`] = `
 <div class="van-pull-refresh">
   <div class="van-pull-refresh__track" style="transition: 0ms;">

@@ -42,6 +42,37 @@ test('change head content when pulling down', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('custom content by slots', async () => {
+  const wrapper = mount(PullRefresh, {
+    scopedSlots: {
+      pulling({ distance }) {
+        return `pulling ${distance}`;
+      },
+      loosing({ distance }) {
+        return `loosing ${distance}`;
+      },
+      loading({ distance }) {
+        return `loading ${distance}`;
+      }
+    }
+  });
+
+  const track = wrapper.find('.van-pull-refresh__track');
+
+  // pulling
+  trigger(track, 'touchstart', 0, 0);
+  trigger(track, 'touchmove', 0, 20);
+  expect(wrapper).toMatchSnapshot();
+
+  // loosing
+  trigger(track, 'touchmove', 0, 100);
+  expect(wrapper).toMatchSnapshot();
+
+  // loading
+  trigger(track, 'touchend', 0, 100);
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('pull a short distance', () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
