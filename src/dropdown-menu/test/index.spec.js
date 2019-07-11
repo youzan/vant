@@ -5,7 +5,7 @@ import DropdownItem from '../../dropdown-item';
 function renderWrapper(options = {}) {
   return mount({
     template: `
-      <dropdown-menu :direction="direction">
+      <dropdown-menu :direction="direction" :close-on-click-outside="closeOnClickOutside">
         <dropdown-item v-model="value" :title="title" :options="options" />
         <dropdown-item v-model="value" :title="title" :options="options" />
       </dropdown-menu>
@@ -19,6 +19,7 @@ function renderWrapper(options = {}) {
         value: options.value || 0,
         title: options.title || '',
         direction: options.direction || 'down',
+        closeOnClickOutside: options.closeOnClickOutside,
         options: [
           { text: 'A', value: 0 },
           { text: 'B', value: 1 }
@@ -45,8 +46,24 @@ test('show dropdown item', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('close on click outside', async () => {
-  const wrapper = renderWrapper();
+test('close-on-click-outside', async () => {
+  const wrapper = renderWrapper({
+    closeOnClickOutside: true
+  });
+
+  await later();
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+
+  titles.at(0).trigger('click');
+  document.body.click();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('disable close-on-click-outside', async () => {
+  const wrapper = renderWrapper({
+    closeOnClickOutside: false
+  });
 
   await later();
 

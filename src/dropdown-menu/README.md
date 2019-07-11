@@ -106,6 +106,7 @@ export default {
 | direction | Expand direction, can be set to `up` | `String` | `down` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
+| close-on-click-outside | Whether to close when click outside | `Boolean` | `true` |
 
 ### DropdownItem Props
 
