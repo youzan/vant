@@ -48,7 +48,18 @@ test('swipeTo', async () => {
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
 
-  await later(30);
+  await later(50);
+  expect(swipe.active).toEqual(2);
+});
+
+test('swipeTo immediate', async () => {
+  const wrapper = mount(Component);
+  const { swipe } = wrapper.vm.$refs;
+  swipe.swipeTo(2, {
+    immediate: true
+  });
+
+  await later(100);
   expect(swipe.active).toEqual(2);
 });
 

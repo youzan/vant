@@ -1,5 +1,5 @@
 import { createNamespace, isDef } from '../utils';
-import { raf } from '../utils/dom/raf';
+import { raf, doubleRaf } from '../utils/dom/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { ChildrenMixin } from '../mixins/relation';
@@ -76,10 +76,8 @@ export default createComponent({
           wrapper.style.height = expanded ? 0 : contentHeight;
 
           // use double raf to ensure animation can start in mobile safari
-          raf(() => {
-            raf(() => {
-              wrapper.style.height = expanded ? contentHeight : 0;
-            });
+          doubleRaf(() => {
+            wrapper.style.height = expanded ? contentHeight : 0;
           });
         } else {
           this.onTransitionEnd();

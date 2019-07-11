@@ -28,6 +28,13 @@ export function raf(fn: FrameRequestCallback): number {
   return iRaf.call(root, fn);
 }
 
+// double raf for animation
+export function doubleRaf(fn: FrameRequestCallback): void {
+  raf(() => {
+    raf(fn);
+  });
+}
+
 export function cancelRaf(id: number) {
   iCancel.call(root, id);
 }
