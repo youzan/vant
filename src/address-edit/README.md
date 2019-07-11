@@ -63,8 +63,8 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | area-list | Area List | `object` | - |
-| address-info | Address Info | `object` | `{}` |
-| search-result | Address search result | `Array` | `[]` |
+| address-info | Address Info | `AddressInfo` | `{}` |
+| search-result | Address search result | `SearchResult[]` | `[]` |
 | show-postal | Whether to show postal field | `boolean` | `false` |
 | show-delete | Whether to show delete button | `boolean` | `false` |
 | show-set-default | Whether to show default address switch | `boolean` | `false` |
@@ -105,7 +105,7 @@ Use ref to get address-edit instance and call instance methods
 |------|------|------|------|
 | setAddressDetail | addressDetail: string | - | Set address detail |
 
-### addressInfo Data Structure
+### AddressInfo Data Structure
 
 | key | Description | Type |
 |------|------|------|
@@ -120,7 +120,7 @@ Use ref to get address-edit instance and call instance methods
 | postalCode | Postal code | `string` |
 | isDefault | Is default address | `boolean` |
 
-### searchResult Data Structure
+### SearchResult Data Structure
 
 | key | Description | Type |
 |------|------|------|

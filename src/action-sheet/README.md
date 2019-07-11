@@ -93,7 +93,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| actions | Options | `Array` | `[]` |
+| actions | Options | `Action[]` | `[]` |
 | title | Title | `string` | - |
 | cancel-text | Text of cancel button | `string` | - |
 | overlay | Whether to show overlay | `boolean` | `true` |
@@ -117,7 +117,7 @@ export default {
 | close | Triggered when close ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
 
-### Data struct of actions
+### Data struct of Action
 
 | key | Description |
 |------|------|

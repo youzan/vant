@@ -152,7 +152,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
 | v-model | Id of chosen contact | `string | number` | - |
-| list | Contact list | `Array` | `[]` |
+| list | Contact list | `Contact[]` | `[]` |
 | add-text | Add button text | `string` | `Add new contact` |
 
 ### ContactList Events

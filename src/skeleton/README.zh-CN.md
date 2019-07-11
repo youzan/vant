@@ -61,7 +61,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | row | 段落占位图行数 | `number` | `0` | - |
-| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | `number | string | Array` | `100%` | - |
+| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | `number | string | number[] | string[]` | `100%` | - |
 | title | 是否显示标题占位图 | `boolean` | `false` | - |
 | title-width | 标题占位图宽度 | `number | string` | `40%` | - |
 | avatar | 是否显示头像占位图 | `boolean` | `false` | - |

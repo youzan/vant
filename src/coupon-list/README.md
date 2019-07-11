@@ -74,7 +74,7 @@ export default {
 |------|------|------|------|
 | title | Cell title | `string` | `Coupon` |
 | chosen-coupon | Index of chosen coupon | `number` | `-1` |
-| coupons | Coupon list | `Array` | `[]` |
+| coupons | Coupon list | `Coupon[]` | `[]` |
 | editable | Cell editable | `boolean` | `true` |
 | border | Whether to show innner border | `boolean` | `true` |
 | currency | Currency symbol |  `string` | `¥` |
@@ -85,8 +85,8 @@ export default {
 |------|------|------|------|
 | v-model | Current exchange code | `string` | - |
 | chosen-coupon | Index of chosen coupon | `number` | `-1` |
-| coupons | Coupon list | `Array` | `[]` |
-| disabled-coupons | Disabled coupon list | `Array` | `[]` |
+| coupons | Coupon list | `Coupon[]` | `[]` |
+| disabled-coupons | Disabled coupon list | `Coupon[]` | `[]` |
 | enabled-title | Title of coupon list | `string` | `Available` | - |
 | disabled-title | Title of disabled coupon list | `string` | `Unavailable` | - |
 | exchange-button-text | Exchange button text | `string` | `Exchange` |
@@ -105,7 +105,7 @@ export default {
 | change | Triggered when change chosen coupon | index: index of chosen coupon |
 | exchange | Triggered when exchange coupon | code: exchange code |
 
-### Coupon Item Data Structure
+### Coupon Data Structure
 
 | key | Description | Type |
 |------|------|------|

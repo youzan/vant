@@ -101,7 +101,7 @@ export default {
 
 | 参数名 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| images | 需要预览的图片 URL 数组 | `Array` | `[]` | - |
+| images | 需要预览的图片 URL 数组 | `string[]` | `[]` | - |
 | startPosition | 图片预览起始位置索引 | `number` | `0` | - |
 | showIndex | 是否显示页码 | `boolean` | `true` | - |
 | showIndicators | 是否显示轮播指示器 | `boolean` | `false` | - |
@@ -110,7 +110,7 @@ export default {
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | `Function` | - | 2.0.3 |
 | asyncClose | 是否开启异步关闭 | `boolean` | `false` | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | `boolean` | `false` | 2.0.0 |
-| className | 自定义类名 | `string | Array | object` | - | 1.5.2 |
+| className | 自定义类名 | `any` | - | 1.5.2 |
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | 1.5.3 |
 | maxZoom | 手势缩放时，最大缩放比例 | `number` | `3` | 1.6.14 |
 | minZoom | 手势缩放时，最小缩放比例 | `number` | `1/3` | 1.6.14 |
@@ -121,14 +121,14 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| images | 需要预览的图片 URL 数组 | `Array` | `[]` | 1.1.16 |
+| images | 需要预览的图片 URL 数组 | `string[]` | `[]` | 1.1.16 |
 | start-position | 图片预览起始位置索引 | `number` | `0` | 1.1.16 |
 | show-index | 是否显示页码 | `boolean` | `true` | 1.3.4 |
 | show-indicators | 是否显示轮播指示器 | `boolean` | `false` | 1.3.10 |
 | loop | 是否开启循环播放 | `boolean` | `true` | 1.4.4 |
 | async-close | 是否开启异步关闭 | `boolean` | `false` | 1.4.8 |
 | close-on-popstate | 是否在页面回退时自动关闭 | `boolean` | `false` |
-| class-name | 自定义类名 | `string | Array | object` | - | 1.5.2 |
+| class-name | 自定义类名 | `any` | - | 1.5.2 |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | 1.5.3 |
 | max-zoom | 手势缩放时，最大缩放比例 | `number` | `3` | 1.6.14 |
 | min-zoom | 手势缩放时，最小缩放比例 | `number` | `1/3` | 1.6.14 |

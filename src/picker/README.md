@@ -185,7 +185,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| columns | Columns data | `Array` | `[]` |
+| columns | Columns data | `Column[]` | `[]` |
 | show-toolbar | Whether to show toolbar | `boolean` | `false` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | `string` | `top` |
 | title | Toolbar title | `string` | `''` |
@@ -198,6 +198,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | default-index | Default value index of single column picker | `number` | `0` |
 
 ### Events
+
 Picker events will pass different parameters according to the columns are single or multiple
 
 | Event | Description | Arguments |
@@ -212,7 +213,7 @@ Picker events will pass different parameters according to the columns are single
 |------|------|
 | title | Custom title |
 
-### Data struct of columns
+### Column Data Struct
 
 | key | Description |
 |------|------|

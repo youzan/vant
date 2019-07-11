@@ -156,7 +156,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of all checked checkboxes | `Array` | - |
+| v-model | Names of all checked checkboxes | `any[]` | - |
 | disabled | Disable all checkboxes | `boolean` | `false` |
 | max | Maximum amount of checked options | `number` | `0`(Unlimited) |
 

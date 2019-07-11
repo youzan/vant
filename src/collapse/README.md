@@ -77,7 +77,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | names of current active panels | `Array | string | number` | - |
+| v-model | Names of current active panels | `string[] | number[] | string | number` | - |
 | accordion | Whether to be accordion mode | `boolean` | `false` |
 | border | Whether to show outer border | `boolean` | `true` |
 

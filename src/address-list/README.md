@@ -69,12 +69,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Id of chosen address | string | - |
-| list | Address list | Array | `[]` |
-| disabled-list | Disabled address list | `Array` | `[]` |
+| v-model | Id of chosen address | `string` | - |
+| list | Address list | `Address[]` | `[]` |
+| disabled-list | Disabled address list | `Address[]` | `[]` |
 | disabled-text | Disabled text | `string` | - |
 | switchable | Whether to allow switch address | `boolean` | `true` |
-| add-button-text | Add button text | string | `Add new address` |
+| add-button-text | Add button text | `string` | `Add new address` |
 
 ### Events
 

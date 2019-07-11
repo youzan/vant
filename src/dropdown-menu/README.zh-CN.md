@@ -118,7 +118,7 @@ export default {
 |------|------|------|------|------|
 | value | 当前选中项对应的 value，可以通过`v-model`双向绑定 | `string | number` | - | - |
 | title | 菜单项标题 | `string` | 当前选中项文字 | - |
-| options | 选项数组 | `Array` | `[]` | - |
+| options | 选项数组 | `Option[]` | `[]` | - |
 | disabled | 是否禁用菜单 | `boolean` | `false` | - |
 | title-class | 标题额外类名 | `string` | - | - |
 

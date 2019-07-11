@@ -156,7 +156,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 当前选中联系人的 id | `string | number` | - | - |
-| list | 联系人列表 | `Array` | `[]` | - |
+| list | 联系人列表 | `Contact[]` | `[]` | - |
 | add-text | 新建按钮文案 | `string` | `新建联系人` | - |
 
 ### ContactList Events
@@ -184,7 +184,7 @@ export default {
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
 
-### 联系人数据格式
+### Contact 数据结构
 
 | key | 说明 | 类型 |
 |------|------|------|

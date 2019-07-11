@@ -55,7 +55,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | row | Row count | `number` | `0` |
-| row-width | Row width, can be array | `number | string | Array` | `100%` |
+| row-width | Row width, can be array | `number | string | number[] | string []` | `100%` |
 | title | Whether to show title placeholder | `boolean` | `false` |
 | title-width | Title width | `number | string` | `40%` |
 | avatar | Whether to show avatar placeholder | `boolean` | `false` |

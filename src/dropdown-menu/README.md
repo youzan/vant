@@ -114,7 +114,7 @@ export default {
 |------|------|------|------|------|
 | value | Value of current option，can use `v-model` | `string | number` | - |
 | title | Item title | `string` | Text of selected option |
-| options | Options | `Array` | `[]` |
+| options | Options | `Option[]` | `[]` |
 | disabled | Whether to disable dropdown item | `boolean` | `false` |
 | title-class | Title class | `string` | - |
 

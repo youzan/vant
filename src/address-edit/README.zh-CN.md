@@ -62,8 +62,8 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | area-list | 地区列表 | `object` | - | - |
-| address-info | 收货人信息初始值 | `object` | `{}` | - |
-| search-result | 详细地址搜索结果 | `Array` | `[]` | - |
+| address-info | 收货人信息初始值 | `AddressInfo` | `{}` | - |
+| search-result | 详细地址搜索结果 | `SearchResult[]` | `[]` | - |
 | show-postal | 是否显示邮政编码 | `boolean` | `false` | - |
 | show-delete | 是否显示删除按钮 | `boolean` | `false` | - |
 | show-set-default | 是否显示默认地址栏 | `boolean` | `false` | - |
@@ -104,9 +104,9 @@ export default {
 |------|------|------|------|
 | setAddressDetail | addressDetail: string | - | 设置详细地址 |
 
-### addressInfo 数据格式
+### AddressInfo 数据格式
 
-注意：addressInfo 仅作为初始值传入，表单最终内容可以在 save 事件中获取
+注意：AddressInfo 仅作为初始值传入，表单最终内容可以在 save 事件中获取
 
 | key | 说明 | 类型 |
 |------|------|------|
@@ -121,7 +121,7 @@ export default {
 | postalCode | 邮政编码 | `string` |
 | isDefault | 是否为默认地址 | `boolean` |
 
-### searchResult 数据格式
+### SearchResult 数据格式
 
 | key | 说明 | 类型 |
 |------|------|------|

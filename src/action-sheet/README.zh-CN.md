@@ -100,7 +100,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| actions | 菜单选项 | `Array` | `[]` | - |
+| actions | 菜单选项 | `Action[]` | `[]` | - |
 | title | 标题 | `string` | - | - |
 | cancel-text | 取消按钮文字 | `string` | - | - |
 | overlay | 是否显示遮罩层 | `boolean` | `true` | - |
@@ -124,7 +124,7 @@ export default {
 | close | 关闭菜单时触发 | - |
 | closed | 关闭菜单且动画结束后触发 | - |
 
-### actions
+### Action 数据结构
 
 `Props`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
 

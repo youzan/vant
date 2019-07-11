@@ -78,7 +78,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前展开面板的 name | `Array | string | number` | - | - |
+| v-model | 当前展开面板的 name | `string[] | number[] | string | number` | - | - |
 | accordion | 是否开启手风琴模式 | `boolean` | `false` | - |
 | border | 是否显示外边框 | `boolean` | `true` | 1.6.9 |
 

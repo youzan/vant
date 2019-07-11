@@ -120,7 +120,7 @@ export default {
 | title | Title | `string` | - |
 | message | Message | `string` | - |
 | messageAlign | Message text align，can be set to `left` `right` | `string` | `center` |
-| className | Custom className | `string | Array | object` | - |
+| className | Custom className | `any` | - |
 | showConfirmButton | Whether to show confirm button | `boolean` | `true` |
 | showCancelButton | Whether to show cancel button | `boolean` | `false` |
 | cancelButtonText | Cancel button text | `string` | `Cancel` |

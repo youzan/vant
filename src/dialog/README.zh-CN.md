@@ -149,7 +149,7 @@ export default {
 | title | 标题 | `string` | - | - |
 | message | 文本内容，支持通过`\n`换行 | `string` | - | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `string` | `center` | 1.5.0 |
-| className | 自定义类名 | `string | Array | object` | - | - |
+| className | 自定义类名 | `any` | - | - |
 | showConfirmButton | 是否展示确认按钮 | `boolean` | `true` | - |
 | showCancelButton | 是否展示取消按钮 | `boolean` | `false` | - |
 | cancelButtonText | 取消按钮文案 | `string` | `取消` | - |

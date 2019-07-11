@@ -74,7 +74,7 @@ export default {
 |------|------|------|------|------|
 | title | 单元格标题 | `string` | `优惠券` | - |
 | chosen-coupon | 当前选中优惠券的索引 | `number` | `-1` | - |
-| coupons | 可用优惠券列表 | `Array` | `[]` | - |
+| coupons | 可用优惠券列表 | `Coupon[]` | `[]` | - |
 | editable | 能否切换优惠券 | `boolean` | `true` | - |
 | border | 是否显示内边框 | `boolean` | `true` | - |
 | currency | 货币符号 |  `string` | `¥` | - | 1.5.0 |
@@ -85,8 +85,8 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前输入的兑换码 | `string` | - | - |
 | chosen-coupon | 当前选中优惠券的索引 | `number` | `-1` | - |
-| coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| disabled-coupons | 不可用优惠券列表 | `Array` | `[]` | - |
+| coupons | 可用优惠券列表 | `Coupon[]` | `[]` | - |
+| disabled-coupons | 不可用优惠券列表 | `Coupon[]` | `[]` | - |
 | enabled-title | 可用优惠券列表标题 | `string` | `可使用优惠券` | - |
 | disabled-title | 不可用优惠券列表标题 | `string` | `不可使用优惠券` | - |
 | exchange-button-text | 兑换按钮文字 | `string` | `兑换` | - |
@@ -107,7 +107,7 @@ export default {
 | change | 优惠券切换回调 | index, 选中优惠券的索引 |
 | exchange | 兑换优惠券回调 | code, 兑换码 |
 
-### 优惠券字段说明
+### Coupon 数据结构
 
 | key | 说明 | 类型 |
 |------|------|------|
