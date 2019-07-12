@@ -77,7 +77,8 @@ export default createComponent({
       moveY: 0,
       moving: false,
       zooming: false,
-      active: 0
+      active: 0,
+      doubleClickTimer: null
     };
   },
 
@@ -120,16 +121,26 @@ export default createComponent({
 
       // prevent long tap to close component
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
-        const index = this.active;
+        if (!this.doubleClickTimer) {
+          this.doubleClickTimer = setTimeout(() => {
+            const index = this.active;
 
-        this.resetScale();
-        this.$emit('close', {
-          index,
-          url: this.images[index]
-        });
+            this.resetScale();
+            this.$emit('close', {
+              index,
+              url: this.images[index]
+            });
 
-        if (!this.asyncClose) {
-          this.$emit('input', false);
+            if (!this.asyncClose) {
+              this.$emit('input', false);
+            }
+
+            this.doubleClickTimer = null;
+          }, 300);
+        } else {
+          clearTimeout(this.doubleClickTimer);
+          this.doubleClickTimer = null;
+          this.resetScale(this.scale > 1 ? 1 : 2);
         }
       }
     },
@@ -224,8 +235,8 @@ export default createComponent({
       this.$emit('change', active);
     },
 
-    resetScale() {
-      this.scale = 1;
+    resetScale(scale = 1) {
+      this.scale = scale;
       this.moveX = 0;
       this.moveY = 0;
     }
