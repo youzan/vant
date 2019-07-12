@@ -38,7 +38,6 @@ Vue.use(Image);
   round
   width="10rem"
   height="10rem"
-  fit="contain"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
