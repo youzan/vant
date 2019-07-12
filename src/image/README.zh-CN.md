@@ -39,6 +39,20 @@ Vue.use(Image);
 />
 ```
 
+### 圆形图片
+
+通过`round`属性可以设置图片变圆，可选值见下方表格
+
+```html
+<van-image
+  round
+  width="10rem"
+  height="10rem"
+  fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
 ### 图片懒加载
 
 设置`lazy-load`属性来开启图片懒加载，需要搭配 [Lazyload](#/zh-CN/lazyload) 组件使用
@@ -82,6 +96,7 @@ Vue.use(Image);
 |------|------|------|------|------|
 | src | 图片链接 | `string` | - | - |
 | fit | 图片填充模式 | `string` | `fill` | - |
+| round | 图片填充模式，仅`fit`为`cover`、`fill`、`none`时起作用 | `boolean` | `false` | - |
 | alt | 替代文本 | `string` | - | - |
 | width | 宽度，默认单位为 px | `string | number` | - | - |
 | height | 高度，默认单位为 px | `string | number` | - | - |

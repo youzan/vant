@@ -5,6 +5,7 @@ const [createComponent, bem] = createNamespace('image');
 
 export default createComponent({
   props: {
+    round: Boolean,
     src: String,
     fit: String,
     alt: String,
@@ -133,8 +134,13 @@ export default createComponent({
   },
 
   render(h) {
+    let imageClass = bem();
+    if (this.round && this.fit !== 'contain' && this.fit !== 'scale-down') {
+      imageClass = bem({ round: this.round });
+    }
+
     return (
-      <div class={bem()} style={this.style} onClick={this.onClick}>
+      <div class={ imageClass } style={this.style} onClick={this.onClick}>
         {this.renderImage()}
         {this.renderPlaceholder()}
       </div>

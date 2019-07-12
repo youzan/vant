@@ -31,6 +31,18 @@ Vue.use(Image);
 />
 ```
 
+### Round
+
+```html
+<van-image
+  round
+  width="10rem"
+  height="10rem"
+  fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
 ### Lazy Load
 
 ```html
@@ -56,6 +68,7 @@ Vue.use(Lazyload);
 |------|------|------|------|
 | src | Src | `string` | - | - |
 | fit | Fit mode | `string` | `fill` | - |
+| round | Circle Border，it only works when `fit` is `cover`or`fill`or`none`  | `boolean` | `false` | - |
 | alt | Alt | `string` | - | - |
 | width | Width | `string | number` | - | - |
 | height | Height | `string | number` | - | - |
