@@ -39,6 +39,7 @@ const registerRoute = ({ mobile, componentMap }) => {
           component = DemoPages;
         } else if (mobile) {
           const module = componentMap[`./${path}/demo/index.vue`];
+
           if (module) {
             component = demoWrapper(module, path);
           }
