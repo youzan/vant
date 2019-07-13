@@ -1189,10 +1189,10 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@vant/doc@^2.3.4":
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.4.tgz#0dd625ffbc4592a5a99f1ea81d50493646940aa0"
-  integrity sha512-cFiO+ISh39ZvwiFTtZsr5BxcaQ2sfls5yyKz5tAn2kCz83+fyHtoRX++SXsIQFH56SWvr/kcd7ocZ2VTq4EGcQ==
+"@vant/doc@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.6.tgz#821ac94bd0b19800458193e9f884e8c95a90634a"
+  integrity sha512-G7iXa1BIK7JgoCYYWbOnZ4WQXE7FftXhRRC4Fqy69+OUjsQ/BQ0BZdJSbMiHSPJR2Olz7o67SgmfPqGWUHl2Sg==
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
@@ -1217,13 +1217,15 @@
   resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.9.tgz#37eafdaff5fcfbb594a27a1470ff3adeb2fa0301"
   integrity sha512-nGw0EE5jWe5doIJ6aHll2ia5Z/X5jxK9y5xK/r6swhGU3/Z12nrYVkN3T+EH+sRrMB4+Q/w054e10Gq4cV4T7g==
 
-"@vant/markdown-loader@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.0.0.tgz#9bcc3b3375f39d27663fbee65dea5374f4fea6db"
-  integrity sha512-nvIW109AZOe6IX/E5qOBuATSdvdUm0uaonnWQ2yM6hgRD7xlKOrAhBBl+aT+AxUCQw7LLWRVKKkqE91oFqZYVQ==
+"@vant/markdown-loader@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.1.2.tgz#13f58cb0182f37cfeceb17bbf03233f0f4348f03"
+  integrity sha512-EfqaGZ+fYYlQOO7UHU/7F8GZ6LKNjr//ZkeM2rJNtxZUtm1ipfzDsM2vGwIK8eJ09XRtqLUgQWG856Lpoy9xpg==
   dependencies:
     highlight.js "^9.15.6"
     markdown-it "^8.4.2"
+    markdown-it-anchor "^5.2.4"
+    transliteration "^2.1.4"
 
 "@vant/markdown-vetur@^1.0.0":
   version "1.0.0"
@@ -6154,6 +6156,11 @@ lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
+lodash@^4.17.14:
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -6287,6 +6294,11 @@ markdown-escapes@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.3.tgz#6155e10416efaafab665d466ce598216375195f5"
   integrity sha512-XUi5HJhhV5R74k8/0H2oCbCiYf/u4cO/rX8tnGkRvrqhsr5BRNU6Mg0yt/8UIx1iIS8220BNJsDb7XnILhLepw==
+
+markdown-it-anchor@^5.2.4:
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.2.4.tgz#d39306fe4c199705b4479d3036842cf34dcba24f"
+  integrity sha512-n8zCGjxA3T+Mx1pG8HEgbJbkB8JFUuRkeTZQuIM8iPY6oQ8sWOPRZJDFC9a/pNg2QkHEjjGkhBEl/RSyzaDZ3A==
 
 markdown-it@^8.4.2:
   version "8.4.2"
@@ -7584,13 +7596,13 @@ postcss-sorting@^4.1.0:
     lodash "^4.17.4"
     postcss "^7.0.0"
 
-postcss-sorting@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-5.0.0.tgz#4e4ce0a554c17d78d4287f08f792db8992bf62b5"
-  integrity sha512-m25mKLNq0fPAyZFElQ1hngRDFQDMlc+9ZwoWsL8oix6i1GsBzIxyke6sDeY9BXee7L86z4tex01fcH/9wTj3Jg==
+postcss-sorting@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-sorting/-/postcss-sorting-5.0.1.tgz#10d5d0059eea8334dacc820c0121864035bc3f11"
+  integrity sha512-Y9fUFkIhfrm6i0Ta3n+89j56EFqaNRdUKqXyRp6kvTcSXnmgEjaVowCXH+JBe9+YKWqd4nc28r2sgwnzJalccA==
   dependencies:
-    lodash "^4.17.11"
-    postcss "^7.0.14"
+    lodash "^4.17.14"
+    postcss "^7.0.17"
 
 postcss-syntax@^0.36.2:
   version "0.36.2"
@@ -9072,14 +9084,14 @@ stylelint-order@^2.2.1:
     postcss "^7.0.2"
     postcss-sorting "^4.1.0"
 
-stylelint-order@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.0.0.tgz#ec44afb93a3183dcf8c91540d4486de776250506"
-  integrity sha512-CaK3ebU5qSDY4aQZ5yA5uCL1jjAeK+TQeyKcH1w1O/wxC1GjM6JCv0msrA3Wno29F1jW/1UoWIsRFeo7hk9gtg==
+stylelint-order@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.0.1.tgz#f1dd5e39345d04b684a6f04f1133cafa28606175"
+  integrity sha512-isVEJ1oUoVB7bb5pYop96KYOac4c+tLOqa5dPtAEwAwQUVSbi7OPFbfaCclcTjOlXicymasLpwhRirhFWh93yw==
   dependencies:
-    lodash "^4.17.11"
-    postcss "^7.0.14"
-    postcss-sorting "^5.0.0"
+    lodash "^4.17.14"
+    postcss "^7.0.17"
+    postcss-sorting "^5.0.1"
 
 stylelint@^10.1.0:
   version "10.1.0"
@@ -9438,6 +9450,13 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+transliteration@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.1.4.tgz#6046a137ff72e7e4344566fb7cbb90253f984964"
+  integrity sha512-vkm7FYLkL3c+mjTqu4lCcqH1Mvi4Av2dYquZPz3eg6TAmhJttPlVviLuQA23Rbc6jNU9qjBDXZAlDflvY7FDSQ==
+  dependencies:
+    yargs "^13.2.4"
 
 traverse-chain@~0.1.0:
   version "0.1.0"
@@ -10302,7 +10321,7 @@ yargs@12.0.5, yargs@^12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-yargs@13.2.4:
+yargs@13.2.4, yargs@^13.2.4:
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-13.2.4.tgz#0b562b794016eb9651b98bd37acf364aa5d6dc83"
   integrity sha512-HG/DWAJa1PAnHT9JAhNa8AbAv3FPaiLzioSjCcmuXXhP8MlpHO5vwls4g4j6n30Z74GVQj8Xa62dWVx1QCGklg==
