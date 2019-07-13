@@ -72,33 +72,33 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| title | 单元格标题 | `String` | `优惠券` | - |
-| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
-| coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| editable | 能否切换优惠券 | `Boolean` | `true` | - |
-| border | 是否显示内边框 | `Boolean` | `true` | - |
-| currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
+| title | 单元格标题 | `string` | `优惠券` | - |
+| chosen-coupon | 当前选中优惠券的索引 | `number` | `-1` | - |
+| coupons | 可用优惠券列表 | `Coupon[]` | `[]` | - |
+| editable | 能否切换优惠券 | `boolean` | `true` | - |
+| border | 是否显示内边框 | `boolean` | `true` | - |
+| currency | 货币符号 |  `string` | `¥` | - | 1.5.0 |
 
 ### CouponList Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前输入的兑换码 | `String` | - | - |
-| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
-| coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| disabled-coupons | 不可用优惠券列表 | `Array` | `[]` | - |
-| enabled-title | 可用优惠券列表标题 | `String` | `可使用优惠券` | - |
-| disabled-title | 不可用优惠券列表标题 | `String` | `不可使用优惠券` | - |
-| exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
-| exchange-button-loading | 是否显示兑换按钮加载动画 | `Boolean` | `false` | - |
-| exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
-| exchange-min-length | 兑换码最小长度 | `Number` | `1` | - |
-| displayed-coupon-index | 滚动至特定优惠券位置 | `Number` | - | - |
-| show-close-button | 是否显示列表底部按钮 | `Boolean` | `true` | - |
-| close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
-| input-placeholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
-| show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
-| currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
+| v-model | 当前输入的兑换码 | `string` | - | - |
+| chosen-coupon | 当前选中优惠券的索引 | `number` | `-1` | - |
+| coupons | 可用优惠券列表 | `Coupon[]` | `[]` | - |
+| disabled-coupons | 不可用优惠券列表 | `Coupon[]` | `[]` | - |
+| enabled-title | 可用优惠券列表标题 | `string` | `可使用优惠券` | - |
+| disabled-title | 不可用优惠券列表标题 | `string` | `不可使用优惠券` | - |
+| exchange-button-text | 兑换按钮文字 | `string` | `兑换` | - |
+| exchange-button-loading | 是否显示兑换按钮加载动画 | `boolean` | `false` | - |
+| exchange-button-disabled | 是否禁用兑换按钮 | `boolean` | `false` | - |
+| exchange-min-length | 兑换码最小长度 | `number` | `1` | - |
+| displayed-coupon-index | 滚动至特定优惠券位置 | `number` | - | - |
+| show-close-button | 是否显示列表底部按钮 | `boolean` | `true` | - |
+| close-button-text | 列表底部按钮文字 | `string` | `不使用优惠` | - |
+| input-placeholder | 输入框文字提示 | `string` | `请输入优惠码` | - |
+| show-exchange-bar | 是否展示兑换栏 | `boolean` | `true` | - |
+| currency | 货币符号 |  `string` | `¥` | - | 1.5.0 |
 
 ### CouponList Events
 
@@ -107,17 +107,17 @@ export default {
 | change | 优惠券切换回调 | index, 选中优惠券的索引 |
 | exchange | 兑换优惠券回调 | code, 兑换码 |
 
-### 优惠券字段说明
+### Coupon 数据结构
 
 | key | 说明 | 类型 |
 |------|------|------|
-| id | 优惠券 id | `String` |
-| name | 优惠券名称 | `String` |
-| condition | 满减条件 | `String` |
-| startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
-| endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
-| description | 描述信息，优惠券可用时展示 | `String` |
-| reason | 不可用原因，优惠券不可用时展示 | `String` |
-| value | 折扣券优惠金额，单位分 | `Number` |
-| valueDesc | 折扣券优惠金额文案 | `String` |
-| unitDesc | 单位文案 | `String` |
+| id | 优惠券 id | `string` |
+| name | 优惠券名称 | `string` |
+| condition | 满减条件 | `string` |
+| startAt | 卡有效开始时间 (时间戳, 单位秒) | `number` |
+| endAt | 卡失效日期 (时间戳, 单位秒) | `number` |
+| description | 描述信息，优惠券可用时展示 | `string` |
+| reason | 不可用原因，优惠券不可用时展示 | `string` |
+| value | 折扣券优惠金额，单位分 | `number` |
+| valueDesc | 折扣券优惠金额文案 | `string` |
+| unitDesc | 单位文案 | `string` |

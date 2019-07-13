@@ -72,11 +72,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Identifier of SwipeCell | `String | Number` | - |
+| name | Identifier of SwipeCell | `string | number` | - |
 | on-close | Callback function before close | `Function` | - |
-| disabled | Whether to disabled swipe | `Boolean` | `false` |
-| left-width | Width of the left swipe area | `Number` | `auto` |
-| right-width | Width of the right swipe area | `Number` | `auto` |
+| disabled | Whether to disabled swipe | `boolean` | `false` |
+| left-width | Width of the left swipe area | `number` | `auto` |
+| right-width | Width of the right swipe area | `number` | `auto` |
 
 ### Slots
 
@@ -96,9 +96,9 @@ export default {
 
 | Attribute | Description | Type |
 |------|------|------|
-| clickPosition | Click positon (`left` `right` `cell` `outside`) | `String` |
-| instance | SwipeCell instance | `Object` |
-| detail | Detail info | `Object` |
+| clickPosition | Click positon (`left` `right` `cell` `outside`) | `string` |
+| instance | SwipeCell instance | `object` |
+| detail | Detail info | `object` |
 
 ### Methods
 

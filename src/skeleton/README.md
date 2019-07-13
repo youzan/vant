@@ -54,12 +54,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| row | Row count | `Number` | `0` |
-| row-width | Row width, can be array | `Number | String | Array` | `100%` |
-| title | Whether to show title placeholder | `Boolean` | `false` |
-| title-width | Title width | `Number | String` | `40%` |
-| avatar | Whether to show avatar placeholder | `Boolean` | `false` |
-| avatar-size | Size of avatar placeholder | `Number | String` | `32px` |
-| avatar-shape | Shape of avatar placeholder，can be set to `square` | `String` | `round` |
-| loading | Whether to show skeleton，pass `false` to show child component | `Boolean` | `true` |
-| animate | Whether to enable animation | `Boolean` | `true` |
+| row | Row count | `number` | `0` |
+| row-width | Row width, can be array | `number | string | number[] | string []` | `100%` |
+| title | Whether to show title placeholder | `boolean` | `false` |
+| title-width | Title width | `number | string` | `40%` |
+| avatar | Whether to show avatar placeholder | `boolean` | `false` |
+| avatar-size | Size of avatar placeholder | `number | string` | `32px` |
+| avatar-shape | Shape of avatar placeholder，can be set to `square` | `string` | `round` |
+| loading | Whether to show skeleton，pass `false` to show child component | `boolean` | `true` |
+| animate | Whether to enable animation | `boolean` | `true` |

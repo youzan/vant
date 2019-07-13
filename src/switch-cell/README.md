@@ -59,14 +59,14 @@ use `loading` property to keep component in loading state
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | on-off state of the switch | `any` | `false` |
-| title | the left side title | `String` | `''` |
-| border | whether to show cell border | `Boolean` | `true` |
-| cell-size | Cell size，can be set to `large` | `String` | - |
-| loading | whether switch is loading | `Boolean` | `false` |
-| disabled | whether to disable switch | `Boolean` | `false` |
-| size | Size of switch | `String` | `24px` |
-| active-color | Background of switch color when active | `String` | `#1989fa` |
-| inactive-color | Background of switch color when inactive | `String` | `#fff` |
+| title | the left side title | `string` | `''` |
+| border | whether to show cell border | `boolean` | `true` |
+| cell-size | Cell size，can be set to `large` | `string` | - |
+| loading | whether switch is loading | `boolean` | `false` |
+| disabled | whether to disable switch | `boolean` | `false` |
+| size | Size of switch | `string` | `24px` |
+| active-color | Background of switch color when active | `string` | `#1989fa` |
+| inactive-color | Background of switch color when inactive | `string` | `#fff` |
 | active-value | Value when active | `any` | `true` |
 | inactive-value | Value when inactive | `any` | `false` |
 

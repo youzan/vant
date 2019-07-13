@@ -193,17 +193,17 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | `String` | `top` | 2.0.0 |
-| title | 顶部栏标题 | `String` | `''` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
-| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` | 1.6.9 |
+| columns | 对象数组，配置每一列显示的数据 | `Column[]` | `[]` | - |
+| show-toolbar | 是否显示顶部栏 | `boolean` | `false` | - |
+| toolbar-position | 顶部栏位置，可选值为`bottom` | `string` | `top` | 2.0.0 |
+| title | 顶部栏标题 | `string` | `''` | - |
+| loading | 是否显示加载状态 | `boolean` | `false` | - |
+| value-key | 选项对象中，文字对应的 key | `string` | `text` | - |
+| item-height | 选项高度 | `number` | `44` | - |
+| confirm-button-text | 确认按钮文字 | `string` | `确认` | - |
+| cancel-button-text | 取消按钮文字 | `string` | `取消` | - |
+| visible-item-count | 可见的选项个数 | `number` | `5` | - |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `number` | `0` | 1.6.9 |
 
 ### Events
 
@@ -221,7 +221,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 |------|------|
 | title | 自定义标题内容 |
 
-### Columns 数据结构
+### Column 数据结构
 
 当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`
 

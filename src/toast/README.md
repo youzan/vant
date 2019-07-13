@@ -113,15 +113,15 @@ toast2.clear();
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Can be set to `loading` `success` `fail` `html` | `String` | `text` |
-| position | Can be set to `top` `middle` `bottom` | `String` | `middle` |
-| message | Message | `String` | `''` |
-| icon | Custom icon | `String` | - |
-| mask | Whether to show mask | `Boolean` | `false` |
-| forbidClick | Whether to forbid click background | `Boolean` | `false` |
-| loadingType | Loading icon type, can be set to `spinner` | `String` | `circular` |
-| duration | Toast duration(ms), won't disappear if value is 0 | `Number` | `3000` |
-| className | Custom className | `String | Array | Object` | - |
+| type | Can be set to `loading` `success` `fail` `html` | `string` | `text` |
+| position | Can be set to `top` `middle` `bottom` | `string` | `middle` |
+| message | Message | `string` | `''` |
+| icon | Custom icon | `string` | - |
+| mask | Whether to show mask | `boolean` | `false` |
+| forbidClick | Whether to forbid click background | `boolean` | `false` |
+| loadingType | Loading icon type, can be set to `spinner` | `string` | `circular` |
+| duration | Toast duration(ms), won't disappear if value is 0 | `number` | `3000` |
+| className | Custom className | `any` | - |
 | onOpened | Callback function after opened | `Function` | - |
 | onClose | Callback function after close | `Function` | - |
-| getContainer | Return the mount node for Toast | `String | () => HTMLElement` | `body` |
+| getContainer | Return the mount node for Toast | `string | () => HTMLElement` | `body` |

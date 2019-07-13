@@ -3,7 +3,7 @@
 exports[`column watch default index 1`] = `
 <div class="van-picker-column">
   <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 100px, 0); transition-duration: 0ms; transition-property: none; line-height: 50px;">
-    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled van-picker-column__item--selected" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
@@ -19,7 +19,7 @@ exports[`column watch default index 2`] = `
   <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 50px;">
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>

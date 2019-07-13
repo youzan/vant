@@ -52,13 +52,13 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| loading | Src of the image while loading | `String` | - |
-| error | Src of the image upon load fail | `String` | - |
-| preload | Proportion of pre-loading height | `String` | - |
-| attempt | Attempts count | `Number` | `3` |
-| listenEvents | Events that you want vue listen for | `Array` | `scroll`... |
-| adapter | Dynamically modify the attribute of element | `Object` | - |
-| filter | The image's listener filter | `Object` | - |
-| lazyComponent | Lazyload component | `Boolean` | `false` |
+| loading | Src of the image while loading | `string` | - |
+| error | Src of the image upon load fail | `string` | - |
+| preload | Proportion of pre-loading height | `string` | - |
+| attempt | Attempts count | `number` | `3` |
+| listenEvents | Events that you want vue listen for | `string[]` | `scroll`... |
+| adapter | Dynamically modify the attribute of element | `object` | - |
+| filter | The image's listener filter | `object` | - |
+| lazyComponent | Lazyload component | `boolean` | `false` |
 
 See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)

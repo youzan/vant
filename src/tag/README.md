@@ -70,13 +70,13 @@ Vue.use(Tag);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` | `String` | `default` |
-| size | Size, can be set to `large` `medium` | `String` | - |
-| color | Custom color | `String` | - |
-| plain | Whether to be plain style | `Boolean` | `false` |
-| round | Whether to be round style | `Boolean` | `false` |
-| mark | Whether to be mark style | `Boolean` | `false` |
-| text-color | Text color | `String` | `white` |
+| type | Type, can be set to `primary` `success` `danger` | `string` | `default` |
+| size | Size, can be set to `large` `medium` | `string` | - |
+| color | Custom color | `string` | - |
+| plain | Whether to be plain style | `boolean` | `false` |
+| round | Whether to be round style | `boolean` | `false` |
+| mark | Whether to be mark style | `boolean` | `false` |
+| text-color | Text color | `string` | `white` |
 
 ### Slots
 

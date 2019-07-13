@@ -67,17 +67,17 @@ Search support all native properties of input tag，such as `maxlength`、`place
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| label | Search label | `String` | - |
-| shape | Can be set to `round` | `String` | `square` |
-| background | Background color | `String` | `#f2f2f2` |
-| clearable | Whether to be clearable | `Boolean` | `true` |
-| show-action | Whether to show right button | `Boolean` | `false` |
-| disabled | Whether to disable field | `Boolean` | `false` |
-| readonly | Whether to be readonly | `Boolean` | `false` |
-| error | Whether to show error info | `Boolean` | `false` |
-| input-align | Input text align, can be set to `center` `right` | `String` | `left` |
-| left-icon | Left icon name | `String` | `search` |
-| right-icon | Right icon name | `String` | - |
+| label | Search label | `string` | - |
+| shape | Can be set to `round` | `string` | `square` |
+| background | Background color | `string` | `#f2f2f2` |
+| clearable | Whether to be clearable | `boolean` | `true` |
+| show-action | Whether to show right button | `boolean` | `false` |
+| disabled | Whether to disable field | `boolean` | `false` |
+| readonly | Whether to be readonly | `boolean` | `false` |
+| error | Whether to show error info | `boolean` | `false` |
+| input-align | Input text align, can be set to `center` `right` | `string` | `left` |
+| left-icon | Left icon name | `string` | `search` |
+| right-icon | Right icon name | `string` | - |
 
 ### Events
 

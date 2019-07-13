@@ -119,38 +119,38 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 是否显示sku | `Boolean` | `false` | - |
-| sku | 商品sku数据 | `Object` | - | - |
-| goods | 商品信息 | `Object` | - | - |
-| goods-id | 商品 id | `String | Number` | - | - |
-| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
-| hide-quota-text | 是否显示限购提示 | `Boolean` | `false` | 1.4.8 |
-| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
-| buy-text | 购买按钮文字 | `String` | `立即购买` | - |
-| add-cart-text | 加入购物车按钮文字 | `String` | `加入购物车` | - |
-| quota | 限购数，0 表示不限购 | `Number` | `0` | - |
-| quota-used | 已经购买过的数量 | `Number` | `0` | - |
-| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
-| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | `Boolean` | `false` | - |
-| disable-stepper-input | 是否禁用步进器输入 | `Boolean` | `false` | - |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `false` | - |
-| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
-| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
-| message-config | 留言相关配置 | `Object` | `{}` | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
-| initial-sku | 默认选中的 sku，具体参考高级用法 | `Object` | `{}` | - |
-| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | `Boolean` | `true` | - |
+| v-model | 是否显示sku | `boolean` | `false` | - |
+| sku | 商品sku数据 | `object` | - | - |
+| goods | 商品信息 | `object` | - | - |
+| goods-id | 商品 id | `string | number` | - | - |
+| hide-stock | 是否显示商品剩余库存 | `boolean` | `false` | - |
+| hide-quota-text | 是否显示限购提示 | `boolean` | `false` | 1.4.8 |
+| show-add-cart-btn | 是否显示加入购物车按钮 | `boolean` | `true` | - |
+| buy-text | 购买按钮文字 | `string` | `立即购买` | - |
+| add-cart-text | 加入购物车按钮文字 | `string` | `加入购物车` | - |
+| quota | 限购数，0 表示不限购 | `number` | `0` | - |
+| quota-used | 已经购买过的数量 | `number` | `0` | - |
+| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | `boolean` | `false` | - |
+| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | `boolean` | `false` | - |
+| disable-stepper-input | 是否禁用步进器输入 | `boolean` | `false` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `false` | - |
+| stepper-title | 数量选择组件左侧文案 | `string` | `购买数量` | - |
+| custom-stepper-config | 步进器相关自定义配置 | `object` | `{}` | - |
+| message-config | 留言相关配置 | `object` | `{}` | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | - | - |
+| initial-sku | 默认选中的 sku，具体参考高级用法 | `object` | `{}` | - |
+| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | `boolean` | `true` | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| add-cart | 点击添加购物车回调 | skuData: Object |
-| buy-clicked | 点击购买回调 | skuData: Object |
+| add-cart | 点击添加购物车回调 | skuData: object |
+| buy-clicked | 点击购买回调 | skuData: object |
 | stepper-change | 购买数量变化时触发 | value: number |
 | sku-selected | 切换规格类目时触发 | { skuValue, selectedSku, selectedSkuComb } |
-| open-preview | 打开商品图片预览时触发 | data: Object |
-| close-preview | 关闭商品图片预览时触发 | data: Object |
+| open-preview | 打开商品图片预览时触发 | data: object |
+| close-preview | 关闭商品图片预览时触发 | data: object |
 
 ### 方法
 

@@ -93,17 +93,17 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| actions | Options | `Array` | `[]` |
-| title | Title | `String` | - |
-| cancel-text | Text of cancel button | `String` | - |
-| overlay | Whether to show overlay | `Boolean` | `true` |
-| close-on-click-action | Whether to close when click action | `Boolean` | `false` |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
-| lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
-| lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
-| duration | Transition duration, unit second | `Number` | `0.3` |
-| get-container | Return the mount node for action-sheet | `String | () => HTMLElement` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
+| actions | Options | `Action[]` | `[]` |
+| title | Title | `string` | - |
+| cancel-text | Text of cancel button | `string` | - |
+| overlay | Whether to show overlay | `boolean` | `true` |
+| close-on-click-action | Whether to close when click action | `boolean` | `false` |
+| close-on-click-overlay | Whether to close when click overlay | `boolean` | `true` |
+| lazy-render | Whether to lazy render util appeared | `boolean` | `true` |
+| lock-scroll | Whether to lock background scroll | `boolean` | `true` |
+| duration | Transition duration, unit second | `number` | `0.3` |
+| get-container | Return the mount node for action-sheet | `string | () => HTMLElement` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `boolean` | `false` |
 
 ### Events
 
@@ -117,7 +117,7 @@ export default {
 | close | Triggered when close ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
 
-### Data struct of actions
+### Data struct of Action
 
 | key | Description |
 |------|------|

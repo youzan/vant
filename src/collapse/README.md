@@ -77,9 +77,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | names of current active panels | `Array | String | Number` | - |
-| accordion | Whether to be accordion mode | `Boolean` | `false` |
-| border | Whether to show outer border | `Boolean` | `true` |
+| v-model | Names of current active panels | `string[] | number[] | string | number` | - |
+| accordion | Whether to be accordion mode | `boolean` | `false` |
+| border | Whether to show outer border | `boolean` | `true` |
 
 ### Collapse Events
 
@@ -91,18 +91,18 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Name | `String | Number` | `index` |
-| icon | Left Icon | `String` | - |
-| size | Title size，can be set to `large` | `String` | - |
-| title | Title | `String | Number` | - |
-| value | Right text | `String | Number` | - |
-| label | Description below the title | `String` | - |
-| border | Whether to show inner border | `Boolean` | `true` |
-| disabled | Whether to disabled collapse | `Boolean` | `false` |
-| is-link | Whether to show link icon | `Boolean` | `true` |
-| title-class | Title className | `String` | - |
-| value-class | Value className | `String` | - |
-| label-class | Label className | `String` | - |
+| name | Name | `string | number` | `index` |
+| icon | Left Icon | `string` | - |
+| size | Title size，can be set to `large` | `string` | - |
+| title | Title | `string | number` | - |
+| value | Right text | `string | number` | - |
+| label | Description below the title | `string` | - |
+| border | Whether to show inner border | `boolean` | `true` |
+| disabled | Whether to disabled collapse | `boolean` | `false` |
+| is-link | Whether to show link icon | `boolean` | `true` |
+| title-class | Title className | `string` | - |
+| value-class | Value className | `string` | - |
+| label-class | Label className | `string` | - |
 
 ### CollapseItem Slots
 

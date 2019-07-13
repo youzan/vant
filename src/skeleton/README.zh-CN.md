@@ -60,12 +60,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| row | 段落占位图行数 | `Number` | `0` | - |
-| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | `Number | String | Array` | `100%` | - |
-| title | 是否显示标题占位图 | `Boolean` | `false` | - |
-| title-width | 标题占位图宽度 | `Number | String` | `40%` | - |
-| avatar | 是否显示头像占位图 | `Boolean` | `false` | - |
-| avatar-size | 头像占位图大小 | `Number | String` | `32px` | - |
-| avatar-shape | 头像占位图形状，可选值为`square` | `String` | `round` | - |
-| loading | 是否显示占位图，传`false`时会展示子组件内容 | `Boolean` | `true` | - |
-| animate | 是否开启动画 | `Boolean` | `true` | - |
+| row | 段落占位图行数 | `number` | `0` | - |
+| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | `number | string | number[] | string[]` | `100%` | - |
+| title | 是否显示标题占位图 | `boolean` | `false` | - |
+| title-width | 标题占位图宽度 | `number | string` | `40%` | - |
+| avatar | 是否显示头像占位图 | `boolean` | `false` | - |
+| avatar-size | 头像占位图大小 | `number | string` | `32px` | - |
+| avatar-shape | 头像占位图形状，可选值为`square` | `string` | `round` | - |
+| loading | 是否显示占位图，传`false`时会展示子组件内容 | `boolean` | `true` | - |
+| animate | 是否开启动画 | `boolean` | `true` | - |

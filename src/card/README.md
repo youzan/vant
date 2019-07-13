@@ -64,17 +64,17 @@ Use slot to custom content.
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| thumb | Left thumb image URL | `String` | - |
-| title | Title | `String` | - |
-| desc | Description | `String` | - |
-| tag | Tag | `String` | - |
-| num | Number | `String | Number` | - |
-| price | Price | `String | Number` | - |
-| origin-price | Origin price | `String | Number` | - |
-| centered | Whether content vertical centered | `Boolean` | `false` |
-| currency | Currency symbol |  `String` | `¥` |
-| thumb-link | Thumb link URL | `String` | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
+| thumb | Left thumb image URL | `string` | - |
+| title | Title | `string` | - |
+| desc | Description | `string` | - |
+| tag | Tag | `string` | - |
+| num | number | `string | number` | - |
+| price | Price | `string | number` | - |
+| origin-price | Origin price | `string | number` | - |
+| centered | Whether content vertical centered | `boolean` | `false` |
+| currency | Currency symbol |  `string` | `¥` |
+| thumb-link | Thumb link URL | `string` | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` |
 
 ### Events
 

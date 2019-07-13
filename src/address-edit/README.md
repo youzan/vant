@@ -62,19 +62,19 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| area-list | Area List | `Object` | - |
-| address-info | Address Info | `Object` | `{}` |
-| search-result | Address search result | `Array` | `[]` |
-| show-postal | Whether to show postal field | `Boolean` | `false` |
-| show-delete | Whether to show delete button | `Boolean` | `false` |
-| show-set-default | Whether to show default address switch | `Boolean` | `false` |
-| show-search-result | Whether to show address search result | `Boolean` | `false` |
-| save-button-text | Save button text | `String` | `Save` |
-| delete-button-text | Delete button text | `String` | `Delete` |
-| detail-rows | Detail input rows | `Number` | `1` |
-| detail-maxlenth | Detail maxlength | `Number` | `200` |
-| is-saving | Whether to show save button loading status | `Boolean` | `false` |
-| is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
+| area-list | Area List | `object` | - |
+| address-info | Address Info | `AddressInfo` | `{}` |
+| search-result | Address search result | `SearchResult[]` | `[]` |
+| show-postal | Whether to show postal field | `boolean` | `false` |
+| show-delete | Whether to show delete button | `boolean` | `false` |
+| show-set-default | Whether to show default address switch | `boolean` | `false` |
+| show-search-result | Whether to show address search result | `boolean` | `false` |
+| save-button-text | Save button text | `string` | `Save` |
+| delete-button-text | Delete button text | `string` | `Delete` |
+| detail-rows | Detail input rows | `number` | `1` |
+| detail-maxlenth | Detail maxlength | `number` | `200` |
+| is-saving | Whether to show save button loading status | `boolean` | `false` |
+| is-deleting | Whether to show delete button loading status | `boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 | validator | Custom validator | `(key, value) => string` | - | 1.3.9 |
 
@@ -105,27 +105,27 @@ Use ref to get address-edit instance and call instance methods
 |------|------|------|------|
 | setAddressDetail | addressDetail: string | - | Set address detail |
 
-### addressInfo Data Structure
+### AddressInfo Data Structure
 
 | key | Description | Type |
 |------|------|------|
-| id | Address Id | `String | Number` |
-| name | Name | `String` |
-| tel | Phone | `String` |
-| province | Province | `String` |
-| city | City | `String` |
-| county | County | `String` |
-| addressDetail | Detailed Address | `String` |
-| areaCode | Area code | `String` |
-| postalCode | Postal code | `String` |
-| isDefault | Is default address | `Boolean` |
+| id | Address Id | `string | number` |
+| name | Name | `string` |
+| tel | Phone | `string` |
+| province | Province | `string` |
+| city | City | `string` |
+| county | County | `string` |
+| addressDetail | Detailed Address | `string` |
+| areaCode | Area code | `string` |
+| postalCode | Postal code | `string` |
+| isDefault | Is default address | `boolean` |
 
-### searchResult Data Structure
+### SearchResult Data Structure
 
 | key | Description | Type |
 |------|------|------|
-| name | Name | `String` |
-| address | Address | `String` |
+| name | Name | `string` |
+| address | Address | `string` |
 
 ### Area Data Structure
 

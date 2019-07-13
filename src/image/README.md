@@ -54,12 +54,12 @@ Vue.use(Lazyload);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| src | Src | `String` | - | - |
-| fit | Fit mode | `String` | `fill` | - |
-| alt | Alt | `String` | - | - |
-| width | Width | `String | Number` | - | - |
-| height | Height | `String | Number` | - | - |
-| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` | - |
+| src | Src | `string` | - | - |
+| fit | Fit mode | `string` | `fill` | - |
+| alt | Alt | `string` | - | - |
+| width | Width | `string | number` | - | - |
+| height | Height | `string | number` | - | - |
+| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
 
 ### fit optional value
 

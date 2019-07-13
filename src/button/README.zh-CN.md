@@ -95,25 +95,25 @@ Vue.use(Button);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` | 1.6.6 |
-| size | 尺寸，可选值为 `large` `small` `mini` | `String` | `normal` | - |
-| text | 按钮文字 | `String` | - | - |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.0 |
-| tag | HTML 标签 | `String` | `button` | - |
-| native-type | 原生 button 标签 type 属性 | `String` | - | - |
-| block | 是否为块级元素 | `Boolean` | `false` | - |
-| plain | 是否为朴素按钮 | `Boolean` | `false` | - |
-| square | 是否为方形按钮 | `Boolean` | `false` | - |
-| round | 是否为圆形按钮 | `Boolean` | `false` | - |
-| disabled | 是否禁用按钮 | `Boolean` | `false` | - |
-| hairline | 是否使用 0.5px 边框 | `Boolean` | `false` | 1.6.11 |
-| loading | 是否显示为加载状态 | `Boolean` | `false` | - |
-| loading-text | 加载状态提示文字 | `String` | - | 1.6.3 |
-| loading-type | 加载图标类型，可选值为`spinner` | `String` | `circular` | 2.0.0 |
-| loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
-| url | 跳转链接 | `String` | - | 1.6.5 |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | 1.6.5 |
-| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 1.6.5 |
+| type | 类型，可选值为 `primary` `info` `warning` `danger` | `string` | `default` | 1.6.6 |
+| size | 尺寸，可选值为 `large` `small` `mini` | `string` | `normal` | - |
+| text | 按钮文字 | `string` | - | - |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 2.0.0 |
+| tag | HTML 标签 | `string` | `button` | - |
+| native-type | 原生 button 标签 type 属性 | `string` | - | - |
+| block | 是否为块级元素 | `boolean` | `false` | - |
+| plain | 是否为朴素按钮 | `boolean` | `false` | - |
+| square | 是否为方形按钮 | `boolean` | `false` | - |
+| round | 是否为圆形按钮 | `boolean` | `false` | - |
+| disabled | 是否禁用按钮 | `boolean` | `false` | - |
+| hairline | 是否使用 0.5px 边框 | `boolean` | `false` | 1.6.11 |
+| loading | 是否显示为加载状态 | `boolean` | `false` | - |
+| loading-text | 加载状态提示文字 | `string` | - | 1.6.3 |
+| loading-type | 加载图标类型，可选值为`spinner` | `string` | `circular` | 2.0.0 |
+| loading-size | 加载图标大小 | `string` | `20px` | 1.6.7 |
+| url | 跳转链接 | `string` | - | 1.6.5 |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | 1.6.5 |
+| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | 1.6.5 |
 
 ### Events
 

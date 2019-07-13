@@ -58,16 +58,16 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Current rate | `Number` | - |
-| rate | Target rate | `Number` | `100` |
-| size | Circle size | `String` | `100px` |
-| color | Progress bar color | `String` | `#1989fa` |
-| layer-color | Layer color | `String` | `#fff` |
-| fill | Fill color | `String` | `none` |
-| speed | Animate speed（rate/s）| `Number` | `0` |
-| text | Text | `String` | - |
-| stroke-width | Stroke width | `Number` | `40` |
-| clockwise | Is clockwise | `Boolean` | `true` |
+| v-model | Current rate | `number` | - |
+| rate | Target rate | `number` | `100` |
+| size | Circle size | `string` | `100px` |
+| color | Progress bar color | `string` | `#1989fa` |
+| layer-color | Layer color | `string` | `#fff` |
+| fill | Fill color | `string` | `none` |
+| speed | Animate speed（rate/s）| `number` | `0` |
+| text | Text | `string` | - |
+| stroke-width | Stroke width | `number` | `40` |
+| clockwise | Is clockwise | `boolean` | `true` |
 
 ### Slots
 

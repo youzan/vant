@@ -117,42 +117,42 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| title | Title | `String` | - |
-| message | Message | `String` | - |
-| messageAlign | Message text align，can be set to `left` `right` | `String` | `center` |
-| className | Custom className | `String | Array | Object` | - |
-| showConfirmButton | Whether to show confirm button | `Boolean` | `true` |
-| showCancelButton | Whether to show cancel button | `Boolean` | `false` |
-| cancelButtonText | Cancel button text | `String` | `Cancel` |
-| cancelButtonColor | Cancel button color | `String` | `#000` |
-| confirmButtonText | Confirm button text | `String` | `Confirm` |
-| confirmButtonColor | Confirm button color | `String` | `#1989fa` |
-| overlay | Whether to show overlay | `Boolean` | `true` |
-| closeOnPopstate | Whether to close when popstate | `Boolean` | `false` |
-| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |
-| lockScroll | Whether to lock body scroll | `Boolean` | `true` |
-| beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
-| getContainer | Return the mount node for Dialog | `String | () => HTMLElement` | `body` |
+| title | Title | `string` | - |
+| message | Message | `string` | - |
+| messageAlign | Message text align，can be set to `left` `right` | `string` | `center` |
+| className | Custom className | `any` | - |
+| showConfirmButton | Whether to show confirm button | `boolean` | `true` |
+| showCancelButton | Whether to show cancel button | `boolean` | `false` |
+| cancelButtonText | Cancel button text | `string` | `Cancel` |
+| cancelButtonColor | Cancel button color | `string` | `#000` |
+| confirmButtonText | Confirm button text | `string` | `Confirm` |
+| confirmButtonColor | Confirm button color | `string` | `#1989fa` |
+| overlay | Whether to show overlay | `boolean` | `true` |
+| closeOnPopstate | Whether to close when popstate | `boolean` | `false` |
+| closeOnClickOverlay | Whether to close when click overlay | `boolean` | `false` |
+| lockScroll | Whether to lock body scroll | `boolean` | `true` |
+| beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
+| getContainer | Return the mount node for Dialog | `string | () => HTMLElement` | `body` |
 
 ### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show dialog | `Boolean` | - |
-| title | Title | `String` | - |
-| message | Message | `String` | - |
-| message-align | Message align，can be set to `left` `right` | `String` | `center` |
-| show-confirm-button | Whether to show confirm button | `Boolean` |  `true` |
-| show-cancel-button | Whether to show cancel button | `Boolean` |  `false` |
-| cancel-button-text | Cancel button text | `String` | `Cancel` |
-| cancel-button-color | Cancel button color | `String` | `#000` |
-| confirm-button-text | Confirm button text | `String` | `Confirm` |
-| confirm-button-color | Confirm button color | `String` | `#1989fa` |
-| overlay | Whether to show overlay | `Boolean` | `true` |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` |
-| lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
-| before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
-| get-container | Return the mount node for Dialog | `String | () => HTMLElement` | `body` |
+| v-model | Whether to show dialog | `boolean` | - |
+| title | Title | `string` | - |
+| message | Message | `string` | - |
+| message-align | Message align，can be set to `left` `right` | `string` | `center` |
+| show-confirm-button | Whether to show confirm button | `boolean` |  `true` |
+| show-cancel-button | Whether to show cancel button | `boolean` |  `false` |
+| cancel-button-text | Cancel button text | `string` | `Cancel` |
+| cancel-button-color | Cancel button color | `string` | `#000` |
+| confirm-button-text | Confirm button text | `string` | `Confirm` |
+| confirm-button-color | Confirm button color | `string` | `#1989fa` |
+| overlay | Whether to show overlay | `boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `boolean` | `false` |
+| lock-scroll | Whether to lock background scroll | `boolean` | `true` |
+| before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
+| get-container | Return the mount node for Dialog | `string | () => HTMLElement` | - |
 
 ### Events
 

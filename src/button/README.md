@@ -79,24 +79,24 @@ Vue.use(Button);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
-| size | Can be set to `large` `small` `mini` | `String` | `normal` |
-| text | Text | `String` | - |
-| icon | Left Icon | `String` | - |
-| tag | HTML Tag | `String` | `button` |
-| native-type | Native Type Attribute | `String` | `''` |
-| plain | Whether to be plain button | `Boolean` | `false` |
-| block | Whether to set display block | `Boolean` | `false` |
-| round | Whether to be round button | `Boolean` | `false` |
-| square | Whether to be square button | `Boolean` | `false` |
-| disabled | Whether to disable button | `Boolean` | `false` |
-| loading | Whether show loading status | `Boolean` | `false` |
-| loading-text | Loading text | `String` | - |
-| loading-type | Loading type, can be set to `spinner` | `String` | `circular` |
-| loading-size | Loading icon size | `String` | `20px` |
-| url | Link URL | `String` | - |
-| to | Target route of the link, same as to of vue-router | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
+| type | Can be set to `primary` `info` `warning` `danger` | `string` | `default` |
+| size | Can be set to `large` `small` `mini` | `string` | `normal` |
+| text | Text | `string` | - |
+| icon | Left Icon | `string` | - |
+| tag | HTML Tag | `string` | `button` |
+| native-type | Native Type Attribute | `string` | `''` |
+| plain | Whether to be plain button | `boolean` | `false` |
+| block | Whether to set display block | `boolean` | `false` |
+| round | Whether to be round button | `boolean` | `false` |
+| square | Whether to be square button | `boolean` | `false` |
+| disabled | Whether to disable button | `boolean` | `false` |
+| loading | Whether show loading status | `boolean` | `false` |
+| loading-text | Loading text | `string` | - |
+| loading-type | Loading type, can be set to `spinner` | `string` | `circular` |
+| loading-size | Loading icon size | `string` | `20px` |
+| url | Link URL | `string` | - |
+| to | Target route of the link, same as to of vue-router | `string | object` | - |
+| replace | If true, the navigation will not leave a history record | `boolean` | `false` |
 
 ### Events
 

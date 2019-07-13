@@ -152,22 +152,22 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `date` <br> `time` `year-month` | `String` | `datetime` | - |
+| type | 类型，可选值为 `date` <br> `time` `year-month` | `string` | `datetime` | - |
 | min-date | 可选的最小时间，精确到分钟 | `Date` | 十年前 | - |
 | max-date | 可选的最大时间，精确到分钟 | `Date` | 十年后 | - |
-| min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` | - |
-| max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` | - |
-| min-minute | 可选的最小分钟，针对 time 类型 | `Number` | `0` | - |
-| max-minute | 可选的最大分钟，针对 time 类型 | `Number` | `59` | - |
+| min-hour | 可选的最小小时，针对 time 类型 | `number` | `0` | - |
+| max-hour | 可选的最大小时，针对 time 类型 | `number` | `23` | - |
+| min-minute | 可选的最小分钟，针对 time 类型 | `number` | `0` | - |
+| max-minute | 可选的最大分钟，针对 time 类型 | `number` | `59` | - |
 | filter | 选项过滤函数 | `(type, values) => values` | - | 2.0.0 |
 | formatter | 选项格式化函数 | `(type, value) => value` | - | - |
-| title | 顶部栏标题 | `String` | `''` | - |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| title | 顶部栏标题 | `string` | `''` | - |
+| show-toolbar | 是否显示顶部栏 | `boolean` | `false` | - |
+| loading | 是否显示加载状态 | `boolean` | `false` | - |
+| item-height | 选项高度 | `number` | `44` | - |
+| confirm-button-text | 确认按钮文字 | `string` | `确认` | - |
+| cancel-button-text | 取消按钮文字 | `string` | `取消` | - |
+| visible-item-count | 可见的选项个数 | `number` | `5` | - |
 
 ### Events
 

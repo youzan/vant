@@ -69,12 +69,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Id of chosen address | String | - |
-| list | Address list | Array | `[]` |
-| disabled-list | Disabled address list | `Array` | `[]` |
-| disabled-text | Disabled text | `String` | - |
-| switchable | Whether to allow switch address | `Boolean` | `true` |
-| add-button-text | Add button text | String | `Add new address` |
+| v-model | Id of chosen address | `string` | - |
+| list | Address list | `Address[]` | `[]` |
+| disabled-list | Disabled address list | `Address[]` | `[]` |
+| disabled-text | Disabled text | `string` | - |
+| switchable | Whether to allow switch address | `boolean` | `true` |
+| add-button-text | Add button text | `string` | `Add new address` |
 
 ### Events
 
@@ -90,10 +90,10 @@ export default {
 
 | key | Description | Type |
 |------|------|------|
-| id | Id | `String | Number` |
-| name | Name | `String` |
-| tel | Phone | `String | Number` |
-| address | Address | `String` |
+| id | Id | `string | number` |
+| name | Name | `string` |
+| tel | Phone | `string | number` |
+| address | Address | `string` |
 
 ### Slots
 

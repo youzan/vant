@@ -146,14 +146,14 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中标签的名称或索引值 | `String | Number` | `0` | - |
-| fixed | 是否固定在底部 | `Boolean` | `true` | - |
-| border | 是否显示外边框 | `Boolean` | `true` | 2.0.0 |
-| z-index | 元素 z-index | `Number` | `1` | - |
-| active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
-| inactive-color | 未选中标签的颜色 | `String` | `#7d7e80` | 2.0.0 |
-| route | 是否开启路由模式 | `Boolean` | `false` | 2.0.0 |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
+| v-model | 当前选中标签的名称或索引值 | `string | number` | `0` | - |
+| fixed | 是否固定在底部 | `boolean` | `true` | - |
+| border | 是否显示外边框 | `boolean` | `true` | 2.0.0 |
+| z-index | 元素 z-index | `number` | `1` | - |
+| active-color | 选中标签的颜色 | `string` | `#1989fa` | 1.5.1 |
+| inactive-color | 未选中标签的颜色 | `string` | `#7d7e80` | 2.0.0 |
+| route | 是否开启路由模式 | `boolean` | `false` | 2.0.0 |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
 
 ### Tabbar Events
 
@@ -165,16 +165,16 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标签名称，作为匹配的标识符 | `String | Number` | 当前标签的索引值 | 2.0.0 |
-| icon | 图标名称或图片链接，可选值见 Icon 组件| `String` | - | - |
-| dot | 是否显示小红点 | `Boolean` | - | - |
-| info | 图标右上角提示信息 | `String | Number` | - | - |
-| url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
-| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
+| name | 标签名称，作为匹配的标识符 | `string | number` | 当前标签的索引值 | 2.0.0 |
+| icon | 图标名称或图片链接，可选值见 Icon 组件| `string` | - | - |
+| dot | 是否显示小红点 | `boolean` | - | - |
+| info | 图标右上角提示信息 | `string | number` | - | - |
+| url | 跳转链接 | `string` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | - |
+| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | - |
 
 ### TabbarItem Slots
 
-| 名称 | 说明 | slot-scope |
+| 名称 | 说明 | SlotProps |
 |------|------|------|
 | icon | 自定义图标 | active: 是否为选中标签 |

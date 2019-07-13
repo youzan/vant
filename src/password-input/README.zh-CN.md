@@ -77,12 +77,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| value | 密码值 | `String` | `''` | - |
-| length | 密码最大长度 | `Number` | `6` | - |
-| mask | 是否隐藏密码内容 | `Boolean` | `true` | 1.6.6 |
-| info | 输入框下方文字提示 | `String` | - | - |
-| error-info | 输入框下方错误提示 | `String` | - | - |
-| gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | `Number | String` | `0` | 2.0.0 |
+| value | 密码值 | `string` | `''` | - |
+| length | 密码最大长度 | `number` | `6` | - |
+| mask | 是否隐藏密码内容 | `boolean` | `true` | 1.6.6 |
+| info | 输入框下方文字提示 | `string` | - | - |
+| error-info | 输入框下方错误提示 | `string` | - | - |
+| gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | `number | string` | `0` | 2.0.0 |
 
 ### Events
 

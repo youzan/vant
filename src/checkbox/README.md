@@ -144,21 +144,21 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | name | Checkbox name | `any` | - |
-| shape | Can be set to `square` | `String` | `round` |
-| v-model | Check status | `Boolean` | `false` |
-| disabled | Diable checkbox | `Boolean` | `false` |
-| icon-size | Icon size | `String | Number` | `20px` |
-| label-disabled | Whether to disable label click | `Boolean` | `false` |
-| label-position | Can be set to `left` | `String` | `right` |
-| checked-color | Checked color | `String` | `#1989fa` | - |
+| shape | Can be set to `square` | `string` | `round` |
+| v-model | Check status | `boolean` | `false` |
+| disabled | Diable checkbox | `boolean` | `false` |
+| icon-size | Icon size | `string | number` | `20px` |
+| label-disabled | Whether to disable label click | `boolean` | `false` |
+| label-position | Can be set to `left` | `string` | `right` |
+| checked-color | Checked color | `string` | `#1989fa` | - |
 
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of all checked checkboxes | `Array` | - |
-| disabled | Disable all checkboxes | `Boolean` | `false` |
-| max | Maximum amount of checked options | `Number` | `0`(Unlimited) |
+| v-model | Names of all checked checkboxes | `any[]` | - |
+| disabled | Disable all checkboxes | `boolean` | `false` |
+| max | Maximum amount of checked options | `number` | `0`(Unlimited) |
 
 ### Checkbox Events
 
@@ -175,7 +175,7 @@ export default {
 
 ### Checkbox Slots
 
-| Name | Description | slot-scope |
+| Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
 | icon | Custom icon | checked: whether to be checked |

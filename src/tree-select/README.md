@@ -50,10 +50,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| items | Required datasets for the component, see Data Structure for detail. | `Array` | `[]` |
-| height | Height (px) | `Number` | `300` |
-| main-Active-index | The index of selected parent node | `Number` | `0` |
-| active-id | Id of selected item | `String | Number` | `0` |
+| items | Required datasets for the component | `Item[]` | `[]` |
+| height | Height (px) | `number` | `300` |
+| main-Active-index | The index of selected parent node | `number` | `0` |
+| active-id | Id of selected item | `string | number` | `0` |
 
 ### Events
 
@@ -62,7 +62,7 @@ export default {
 | navclick | triggered when parent node is selected |  index: index of selected parent |
 | itemclick | triggered when item is selected | data: selected item |
 
-### Data Structure
+### Item Data Structure
 
 `items` should be an array contains specified tree objects.
 

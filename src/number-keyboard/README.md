@@ -94,19 +94,19 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Current value | `String` | - |
-| show | Whether to show keyboard | `Boolean` | - |
-| theme | Keyboard theme，can be set to `default` `custom` | `String` | `default` |
-| title | Keyboard title | `String` | - |
-| maxlength | Value maxlength | `Number | String` | - |
-| transition | Whether to show transition animation | `Boolean` | `true` |
-| z-index | Keyboard z-index | `Number` | `100` |
-| extra-key | Content of bottom left key | `String` | `''` |
-| close-button-text | Close button text | `String` | `-` |
-| delete-button-text | Delete button text | `String` | `delete` |
-| show-delete-key | Whether to show delete button | `Boolean` | `true` |
-| hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
+| v-model | Current value | `string` | - |
+| show | Whether to show keyboard | `boolean` | - |
+| theme | Keyboard theme，can be set to `default` `custom` | `string` | `default` |
+| title | Keyboard title | `string` | - |
+| maxlength | Value maxlength | `number | string` | - |
+| transition | Whether to show transition animation | `boolean` | `true` |
+| z-index | Keyboard z-index | `number` | `100` |
+| extra-key | Content of bottom left key | `string` | `''` |
+| close-button-text | Close button text | `string` | `-` |
+| delete-button-text | Delete button text | `string` | `delete` |
+| show-delete-key | Whether to show delete button | `boolean` | `true` |
+| hide-on-click-outside | Whether to hide keyboard when click outside | `boolean` | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `boolean` | `false` |
 
 ### Events
 

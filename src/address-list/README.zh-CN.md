@@ -70,12 +70,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中地址的 id | `String` | - | - |
-| list | 地址列表 | `Array` | `[]` | - |
-| add-button-text | 底部按钮文字 | `String` | `新增地址` | - |
-| disabled-list | 不可配送地址列表 | `Array` | `[]` | - |
-| disabled-text | 不可配送提示文案 | `String` | - | - |
-| switchable | 是否允许切换地址 | `Boolean` | `true` | - |
+| v-model | 当前选中地址的 id | `string` | - | - |
+| list | 地址列表 | `Address[]` | `[]` | - |
+| disabled-list | 不可配送地址列表 | `Address[]` | `[]` | - |
+| disabled-text | 不可配送提示文案 | `string` | - | - |
+| switchable | 是否允许切换地址 | `boolean` | `true` | - |
+| add-button-text | 底部按钮文字 | `string` | `新增地址` | - |
 
 ### Events
 
@@ -87,14 +87,14 @@ export default {
 | edit-disabled | 编辑不可配送的地址时触发 | item: 地址对象，index: 索引 |
 | select-disabled | 选中不可配送的地址时触发 | item: 地址对象，index: 索引 |
 
-### 地址列表字段说明
+### Address 数据结构
 
 | key | 说明 | 类型 |
 |------|------|------|
-| id | 每条地址的唯一标识 | `String | Number` |
-| name | 收货人姓名 | `String` |
-| tel | 收货人手机号 | `String | Number` |
-| address | 收货地址 | `String` |
+| id | 每条地址的唯一标识 | `string | number` |
+| name | 收货人姓名 | `string` |
+| tel | 收货人手机号 | `string | number` |
+| address | 收货地址 | `string` |
 
 ### Slots
 

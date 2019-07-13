@@ -100,22 +100,23 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| active-color | Active color of title and option | `String` | `#1989fa` |
-| z-index | z-index of menu item | `Number` | `10` |
-| duration | Transition duration, unit second | `Number` | `0.2` |
-| direction | Expand direction, can be set to `up` | `String` | `down` |
-| overlay | Whether to show overlay | `Boolean` | `true` |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
+| active-color | Active color of title and option | `string` | `#1989fa` |
+| z-index | z-index of menu item | `number` | `10` |
+| duration | Transition duration, unit second | `number` | `0.2` |
+| direction | Expand direction, can be set to `up` | `string` | `down` |
+| overlay | Whether to show overlay | `boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `boolean` | `true` |
+| close-on-click-outside | Whether to close when click outside | `boolean` | `true` |
 
 ### DropdownItem Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| value | Value of current option，can use `v-model` | `String | Number` | - |
-| title | Item title | `String` | Text of selected option |
-| options | Options | `Array` | `[]` |
-| disabled | Whether to disable dropdown item | `Boolean` | `false` |
-| title-class | Title class | `String` | - |
+| value | Value of current option，can use `v-model` | `string | number` | - |
+| title | Item title | `string` | Text of selected option |
+| options | Options | `Option[]` | `[]` |
+| disabled | Whether to disable dropdown item | `boolean` | `false` |
+| title-class | Title class | `string` | - |
 
 ### DropdownItem Events
 

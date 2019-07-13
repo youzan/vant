@@ -89,35 +89,35 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| images | Images URL list | `Array` | `[]` |
-| startPosition | Start position | `Number` | `0` |
-| showIndex | Whether to show index | `Boolean` | `true` |
-| showIndicators | Whether to show indicators | `Boolean` | `false` |
-| loop | Whether to enable loop | `Boolean` | `true` |
+| images | Images URL list | `string[]` | `[]` |
+| startPosition | Start position | `number` | `0` |
+| showIndex | Whether to show index | `boolean` | `true` |
+| showIndicators | Whether to show indicators | `boolean` | `false` |
+| loop | Whether to enable loop | `boolean` | `true` |
 | onClose | Triggered when close | `Function` | - |
 | onChange | Triggered when current image change | `Function` | - |
-| closeOnPopstate | Whether to close when popstate | `Boolean` | `false` |
-| asyncClose | Whether to enable async close | `Boolean` | `false` |
-| className | Custom className | `String | Array | Object` | - |
-| lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
-| maxZoom | Max zoom | `Number` | `3` |
-| minZoom | Min zoom | `Number` | `1/3` |
+| closeOnPopstate | Whether to close when popstate | `boolean` | `false` |
+| asyncClose | Whether to enable async close | `boolean` | `false` |
+| className | Custom className | `any` | - |
+| lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` |
+| maxZoom | Max zoom | `number` | `3` |
+| minZoom | Min zoom | `number` | `1/3` |
 
 ### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| images | Images URL list | `Array` | `[]` |
-| start-position | Start position | `Number` | `0` |
-| show-index | Whether to show index | `Boolean` | `true` |
-| show-indicators | Whether to show indicators | `Boolean` | `false` |
-| loop | Whether to enable loop | `Boolean` | `true` |
-| async-close | Whether to enable async close | `Boolean` | `false` |
-| close-on-popstate | Whether to close when popstate | `Boolean` | `false` |
-| class-name | Custom className | `String | Array | Object` | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
-| max-zoom | Max zoom | `Number` | `3` |
-| min-zoom | Min zoom | `Number` | `1/3` |
+| images | Images URL list | `string[]` | `[]` |
+| start-position | Start position | `number` | `0` |
+| show-index | Whether to show index | `boolean` | `true` |
+| show-indicators | Whether to show indicators | `boolean` | `false` |
+| loop | Whether to enable loop | `boolean` | `true` |
+| async-close | Whether to enable async close | `boolean` | `false` |
+| close-on-popstate | Whether to close when popstate | `boolean` | `false` |
+| class-name | Custom className | `any` | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` |
+| max-zoom | Max zoom | `number` | `3` |
+| min-zoom | Min zoom | `number` | `1/3` |
 
 ### Events
 
@@ -136,5 +136,5 @@ export default {
 
 | Attribute | Description | Type |
 |------|------|------|
-| url | Url of current image | `Number` |
-| index | Index of current image | `String` |
+| url | Url of current image | `number` |
+| index | Index of current image | `string` |

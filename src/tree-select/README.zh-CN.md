@@ -50,10 +50,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| items | 分类显示所需的数据，结构参见下方 | `Array` | `[]` | - |
-| height | 高度，单位为 px | `Number` | `300` | - |
-| main-active-index | 左侧导航高亮的索引 | `Number` | `0` | - |
-| active-id | 右侧选择项，高亮的数据id | `String | Number` | `0` | - |
+| items | 分类显示所需的数据 | `Item[]` | `[]` | - |
+| height | 高度，单位为 px | `number` | `300` | - |
+| main-active-index | 左侧导航高亮的索引 | `number` | `0` | - |
+| active-id | 右侧选择项，高亮的数据id | `string | number` | `0` | - |
 
 ### Events
 
@@ -62,7 +62,7 @@ export default {
 | navclick | 左侧导航点击时，触发的事件 |  index：被点击的导航的索引 |
 | itemclick | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
 
-### items 分类显示所需数据的数据结构
+### Item 数据结构
 
 `items` 整体为一个数组，数组内包含一系列描述分类的对象。
 

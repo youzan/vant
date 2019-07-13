@@ -101,22 +101,22 @@ Vue.use(Grid).use(GridItem);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| column-num | Column Num | `Number` | `4` |
-| gutter | Gutter | `String | Number` | `0` |
-| border | Whether to show border | `Boolean` | `true` |
-| center | Whether to center content | `Boolean` | `true` |
-| square | Whether to be square shape | `Boolean` | `false` |
-| clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
+| column-num | Column Num | `number` | `4` |
+| gutter | Gutter | `string | number` | `0` |
+| border | Whether to show border | `boolean` | `true` |
+| center | Whether to center content | `boolean` | `true` |
+| square | Whether to be square shape | `boolean` | `false` |
+| clickable | Whether to show click feedback when clicked | `boolean` | `false` |
 
 ### GridItem Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
-| text | Text | `String` | - |
-| icon | Icon name or URL | `String` | - |
-| url | Link URL | `String` | - |
-| to | Target route of the link, same as to of vue-router | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
+| text | Text | `string` | - |
+| icon | Icon name or URL | `string` | - |
+| url | Link URL | `string` | - |
+| to | Target route of the link, same as to of vue-router | `string | object` | - |
+| replace | If true, the navigation will not leave a history record | `boolean` | `false` |
 
 ### GridItem Events
 

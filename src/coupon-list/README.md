@@ -72,31 +72,31 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| title | Cell title | `String` | `Coupon` |
-| chosen-coupon | Index of chosen coupon | `Number` | `-1` |
-| coupons | Coupon list | `Array` | `[]` |
-| editable | Cell editable | `Boolean` | `true` |
-| border | Whether to show innner border | `Boolean` | `true` |
-| currency | Currency symbol |  `String` | `¥` |
+| title | Cell title | `string` | `Coupon` |
+| chosen-coupon | Index of chosen coupon | `number` | `-1` |
+| coupons | Coupon list | `Coupon[]` | `[]` |
+| editable | Cell editable | `boolean` | `true` |
+| border | Whether to show innner border | `boolean` | `true` |
+| currency | Currency symbol |  `string` | `¥` |
 
 ### CouponList Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Current exchange code | `String` | - |
-| chosen-coupon | Index of chosen coupon | `Number` | `-1` |
-| coupons | Coupon list | `Array` | `[]` |
-| disabled-coupons | Disabled coupon list | `Array` | `[]` |
-| enabled-title | Title of coupon list | `String` | `Available` | - |
-| disabled-title | Title of disabled coupon list | `String` | `Unavailable` | - |
-| exchange-button-text | Exchange button text | `String` | `Exchange` |
-| exchange-button-loading | Whether to show loading in exchange button | `Boolean` | `false` |
-| exchange-button-disabled | Whether to disable exchange button | `Boolean` | `false` |
-| exchange-min-length | Min length to enable exchange button | `Number` | `1` |
-| displayed-coupon-index | Index of displayed coupon | `Number` | - |
-| close-button-text | Close button text | `String` | `Close` |
-| input-placeholder | Input placeholder | `String` | `Coupon code` |
-| currency | Currency symbol |  `String` | `¥` |
+| v-model | Current exchange code | `string` | - |
+| chosen-coupon | Index of chosen coupon | `number` | `-1` |
+| coupons | Coupon list | `Coupon[]` | `[]` |
+| disabled-coupons | Disabled coupon list | `Coupon[]` | `[]` |
+| enabled-title | Title of coupon list | `string` | `Available` | - |
+| disabled-title | Title of disabled coupon list | `string` | `Unavailable` | - |
+| exchange-button-text | Exchange button text | `string` | `Exchange` |
+| exchange-button-loading | Whether to show loading in exchange button | `boolean` | `false` |
+| exchange-button-disabled | Whether to disable exchange button | `boolean` | `false` |
+| exchange-min-length | Min length to enable exchange button | `number` | `1` |
+| displayed-coupon-index | Index of displayed coupon | `number` | - |
+| close-button-text | Close button text | `string` | `Close` |
+| input-placeholder | Input placeholder | `string` | `Coupon code` |
+| currency | Currency symbol |  `string` | `¥` |
 
 ### CouponList Events
 
@@ -105,17 +105,17 @@ export default {
 | change | Triggered when change chosen coupon | index: index of chosen coupon |
 | exchange | Triggered when exchange coupon | code: exchange code |
 
-### Coupon Item Data Structure
+### Coupon Data Structure
 
 | key | Description | Type |
 |------|------|------|
-| id | Id | `String` |
-| name | Name | `String` |
-| condition | Condition | `String` |
-| startAt | Start time (Timestmap, unit second) | `Number` |
-| endAt | End time (Timestmap, unit second) | `Number` |
-| description | Description | `String` |
-| reason | Unavailable reason | `String` |
-| value | Value | `Number` |
-| valueDesc | Value Text | `String` |
-| unitDesc | Unit Text | `String` |
+| id | Id | `string` |
+| name | Name | `string` |
+| condition | Condition | `string` |
+| startAt | Start time (Timestmap, unit second) | `number` |
+| endAt | End time (Timestmap, unit second) | `number` |
+| description | Description | `string` |
+| reason | Unavailable reason | `string` |
+| value | Value | `number` |
+| valueDesc | Value Text | `string` |
+| unitDesc | Unit Text | `string` |

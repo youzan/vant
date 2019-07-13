@@ -80,12 +80,12 @@ Vue.use(Image);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| src | 图片链接 | `String` | - | - |
-| fit | 图片填充模式 | `String` | `fill` | - |
-| alt | 替代文本 | `String` | - | - |
-| width | 宽度，默认单位为 px | `String | Number` | - | - |
-| height | 高度，默认单位为 px | `String | Number` | - | - |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | - |
+| src | 图片链接 | `string` | - | - |
+| fit | 图片填充模式 | `string` | `fill` | - |
+| alt | 替代文本 | `string` | - | - |
+| width | 宽度，默认单位为 px | `string | number` | - | - |
+| height | 高度，默认单位为 px | `string | number` | - | - |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | - |
 
 ### 图片填充模式
 

@@ -71,18 +71,18 @@ Vue.use(SubmitBar);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| price | 价格（单位分） | `Number` | - | - |
-| label | 价格左侧文案 | `String` | `合计：` | - |
-| suffix-label | 价格右侧文案 | `String` | - | 2.0.0 |
-| button-text | 按钮文字 | `String` | - | - |
-| button-type | 按钮类型 | `String` | `danger` | - |
-| tip | 提示文案 |  `String` | - | - |
-| tip-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 |  `String` | - | - |
-| disabled | 是否禁用按钮 | `Boolean` | `false` | - |
-| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
-| currency | 货币符号 | `String` | `¥` | - |
-| decimal-length | 价格小数点后位数 | `Number` | `2` | 1.6.15 | 
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
+| price | 价格（单位分） | `number` | - | - |
+| label | 价格左侧文案 | `string` | `合计：` | - |
+| suffix-label | 价格右侧文案 | `string` | - | 2.0.0 |
+| button-text | 按钮文字 | `string` | - | - |
+| button-type | 按钮类型 | `string` | `danger` | - |
+| tip | 提示文案 |  `string` | - | - |
+| tip-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 |  `string` | - | - |
+| disabled | 是否禁用按钮 | `boolean` | `false` | - |
+| loading | 是否显示加载中的按钮 |  `boolean` | `false` | - |
+| currency | 货币符号 | `string` | `¥` | - |
+| decimal-length | 价格小数点后位数 | `number` | `2` | 1.6.15 | 
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
 
 ### Events
 

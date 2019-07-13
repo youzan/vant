@@ -185,19 +185,20 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| columns | Columns data | `Array` | `[]` |
-| show-toolbar | Whether to show toolbar | `Boolean` | `false` |
-| toolbar-position | Toolbar position, cat be set to `bottom` | `String` | `top` |
-| title | Toolbar title | `String` | `''` |
-| loading | Whether to show loading prompt | `Boolean` | `false` |
-| value-key | Key of option text | `String` | `text` |
-| item-height | Option height | `Number` | `44` |
-| confirm-button-text | Text of confirm button | `String` | `Confirm` |
-| cancel-button-text | Text of cancel button | `String` | `Cancel` |
-| visible-item-count | Count of visible columns | `Number` | `5` |
-| default-index | Default value index of single column picker | `Number` | `0` |
+| columns | Columns data | `Column[]` | `[]` |
+| show-toolbar | Whether to show toolbar | `boolean` | `false` |
+| toolbar-position | Toolbar position, cat be set to `bottom` | `string` | `top` |
+| title | Toolbar title | `string` | `''` |
+| loading | Whether to show loading prompt | `boolean` | `false` |
+| value-key | Key of option text | `string` | `text` |
+| item-height | Option height | `number` | `44` |
+| confirm-button-text | Text of confirm button | `string` | `Confirm` |
+| cancel-button-text | Text of cancel button | `string` | `Cancel` |
+| visible-item-count | Count of visible columns | `number` | `5` |
+| default-index | Default value index of single column picker | `number` | `0` |
 
 ### Events
+
 Picker events will pass different parameters according to the columns are single or multiple
 
 | Event | Description | Arguments |
@@ -212,7 +213,7 @@ Picker events will pass different parameters according to the columns are single
 |------|------|
 | title | Custom title |
 
-### Data struct of columns
+### Column Data Struct
 
 | key | Description |
 |------|------|

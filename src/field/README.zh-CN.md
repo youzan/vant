@@ -126,28 +126,28 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|------|
-| label | 输入框左侧文本 | `String` | - | - |
-| value | 当前输入的值 | `String | Number` | - | - |
-| type | 可设置为原生类型, 如 `number` `tel` `textarea` | `String` | `text` | - |
-| size | 大小，可选值为 `large` | `String` | - | 1.6.9 |
-| border | 是否显示内边框 | `Boolean` | `true` | - |
-| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
-| readonly | 是否只读 | `Boolean` | `false` | - |
-| required | 是否显示表单必填星号 | `Boolean` | `false` | - |
-| clearable | 是否启用清除控件 | `Boolean` | `false` | - |
-| clickable | 是否开启点击反馈 | `Boolean` | `false` | 2.0.0 |
-| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - | 2.0.4 |
-| error | 是否将输入内容标红 | `Boolean` | `false` | - |
-| error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - 
+| label | 输入框左侧文本 | `string` | - | - |
+| value | 当前输入的值 | `string | number` | - | - |
+| type | 可设置为原生类型, 如 `number` `tel` `textarea` | `string` | `text` | - |
+| size | 大小，可选值为 `large` | `string` | - | 1.6.9 |
+| border | 是否显示内边框 | `boolean` | `true` | - |
+| disabled | 是否禁用输入框 | `boolean` | `false` | - |
+| readonly | 是否只读 | `boolean` | `false` | - |
+| required | 是否显示表单必填星号 | `boolean` | `false` | - |
+| clearable | 是否启用清除控件 | `boolean` | `false` | - |
+| clickable | 是否开启点击反馈 | `boolean` | `false` | 2.0.0 |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `boolean` | `false` | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | 2.0.4 |
+| error | 是否将输入内容标红 | `boolean` | `false` | - |
+| error-message | 底部错误提示文案，为空时不展示 | `string` | `''` | - 
 | label-class | 左侧文本额外类名 | `any` | - | 2.0.0 |
-| label-width | 左侧文本宽度，可指定单位，默认为 px | `String | Number` | `90px` | 1.6.17 |
-| label-align | 左侧文本对齐方式，可选值为 `center` `right` | `String` | `left` | - |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | - |
-| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `String` | `left` | 1.6.11 |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
-| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
+| label-width | 左侧文本宽度，可指定单位，默认为 px | `string | number` | `90px` | 1.6.17 |
+| label-align | 左侧文本对齐方式，可选值为 `center` `right` | `string` | `left` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `string` | `left` | - |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `string` | `left` | 1.6.11 |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `boolean | object` | `false` | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 1.5.7 |
+| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 1.5.7 |
 
 ### Events
 

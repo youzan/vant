@@ -113,15 +113,15 @@ toast2.clear();
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | `String` | `text` | - |
-| position | 位置，可选值为 `top` `bottom` | `String` | `middle` | - |
-| message | 文本内容，支持通过`\n`换行 | `String` | `''` | - | - |
-| icon | 自定义图标，支持传入图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.1 |
-| mask | 是否显示背景遮罩层 | `Boolean` | `false` | - |
-| forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
-| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | - |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |
-| className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
+| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | `string` | `text` | - |
+| position | 位置，可选值为 `top` `bottom` | `string` | `middle` | - |
+| message | 文本内容，支持通过`\n`换行 | `string` | `''` | - | - |
+| icon | 自定义图标，支持传入图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 2.0.1 |
+| mask | 是否显示背景遮罩层 | `boolean` | `false` | - |
+| forbidClick | 是否禁止背景点击 | `boolean` | `false` | - |
+| loadingType | 加载图标类型, 可选值为 `spinner` | `string` | `circular` | - |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `number` | `3000` | - |
+| className | 自定义类名 | `any` | - | 1.6.0 |
 | onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.6.10 |
-| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.3 |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | `body` | 1.6.3 |

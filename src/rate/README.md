@@ -93,18 +93,18 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Current rate | `Number` | - |
-| count | Count | `Number` | `5` |
-| size | Icon size| `String | Number` | `20px` |
-| gutter | Icon gutter | `String | Number` | `4px` |
-| color | Selected color | `String` | `#ffd21e` |
-| void-color | Void color | `String` | `#c7c7c7` |
-| icon | Selected icon | `String` | `star` |
-| void-icon | Void icon | `String` | `star-o` |
-| allow-half | Whether to allow half star | `Boolean` | `false` |
-| readonly | Whether to be readonly | `Boolean` | `false` |
-| disabled | Whether to disable rate | `Boolean` | `false` |
-| disabled-color | Disabled color | `String` | `#bdbdbd` | 
+| v-model | Current rate | `number` | - |
+| count | Count | `number` | `5` |
+| size | Icon size| `string | number` | `20px` |
+| gutter | Icon gutter | `string | number` | `4px` |
+| color | Selected color | `string` | `#ffd21e` |
+| void-color | Void color | `string` | `#c7c7c7` |
+| icon | Selected icon | `string` | `star` |
+| void-icon | Void icon | `string` | `star-o` |
+| allow-half | Whether to allow half star | `boolean` | `false` |
+| readonly | Whether to be readonly | `boolean` | `false` |
+| disabled | Whether to disable rate | `boolean` | `false` |
+| disabled-color | Disabled color | `string` | `#bdbdbd` | 
 
 ### Events
 

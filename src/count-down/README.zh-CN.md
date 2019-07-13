@@ -122,10 +122,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| time | 倒计时时长，单位毫秒 | `Number` | - | - |
-| format | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | `String` | `HH:mm:ss` | - |
-| auto-start | 是否自动开始倒计时 | `Boolean` | `true` | - |
-| millisecond | 是否开启毫秒级渲染 | `Boolean` | `false` | - |
+| time | 倒计时时长，单位毫秒 | `number` | - | - |
+| format | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | `string` | `HH:mm:ss` | - |
+| auto-start | 是否自动开始倒计时 | `boolean` | `true` | - |
+| millisecond | 是否开启毫秒级渲染 | `boolean` | `false` | - |
 
 ### Events
 
@@ -135,7 +135,7 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 | slot-scope 参数 |
+| 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义内容 | timeData |
 
