@@ -78,7 +78,13 @@ export default createComponent({
 
   methods: {
     onScroll() {
-      const scrollTop = getScrollTop(this.scroller);
+      let scrollTop;
+      if (this.scroller === window || this.scroller === document.body) {
+        scrollTop = getScrollTop(this.scroller);
+      } else {
+        // see: https://github.com/youzan/vant/issues/3774
+        scrollTop = 0;
+      }
       const rects = this.children.map(item => ({
         height: item.height,
         top: getElementTop(item.$el)
