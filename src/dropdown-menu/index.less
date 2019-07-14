@@ -11,6 +11,7 @@
     flex: 1;
     align-items: center;
     justify-content: center;
+    min-width: 0; // hack for flex ellipsis
 
     &:active {
       opacity: .7;
@@ -29,12 +30,15 @@
 
   &__title {
     position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 8px;
     font-size: @dropdown-menu-title-font-size;
 
     &::after {
       position: absolute;
       top: 3px;
-      right: -12px;
+      right: -4px;
       border: 3px solid;
       border-color: transparent transparent currentColor currentColor;
       transform: rotate(-45deg);
