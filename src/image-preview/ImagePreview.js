@@ -140,7 +140,7 @@ export default createComponent({
         } else {
           clearTimeout(this.doubleClickTimer);
           this.doubleClickTimer = null;
-          this.resetScale(this.scale > 1 ? 1 : 2);
+          this.toggleScale();
         }
       }
     },
@@ -235,7 +235,15 @@ export default createComponent({
       this.$emit('change', active);
     },
 
-    resetScale(scale = 1) {
+    resetScale() {
+      this.scale = 1;
+      this.moveX = 0;
+      this.moveY = 0;
+    },
+
+    toggleScale() {
+      const scale = this.scale > 1 ? 1 : 2;
+
       this.scale = scale;
       this.moveX = 0;
       this.moveY = 0;
