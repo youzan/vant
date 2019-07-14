@@ -94,14 +94,11 @@ test('onClose option', async done => {
   instance.$emit('input', true);
   expect(onClose).toHaveBeenCalledTimes(0);
 
-  await later();
+  await later(300);
 
   const wrapper = document.querySelector('.van-image-preview');
   const swipe = wrapper.querySelector('.van-swipe__track');
   triggerDrag(swipe, 0, 0);
-
-  await later(300);
-
   expect(onClose).toHaveBeenCalledTimes(1);
   expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
   done();
