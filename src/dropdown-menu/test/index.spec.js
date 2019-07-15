@@ -92,7 +92,7 @@ test('direction up', async () => {
     direction: 'up'
   });
 
-  await later();
+  await later(10);
 
   const titles = wrapper.findAll('.van-dropdown-menu__title');
 
