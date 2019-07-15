@@ -138,3 +138,11 @@ export default {
 | 方法名 | 参数 | 返回值 | 介绍 |
 |------|------|------|------|
 | toggle | show: boolean | - | 切换菜单是否展示 |
+
+### Option 数据结构
+
+| 键名 | 说明 | 类型 |
+|------|------|------|
+| text | 文字 | `string` |
+| value | 标识符 | `string | number` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `string` |

@@ -21,8 +21,8 @@ function renderWrapper(options = {}) {
         direction: options.direction || 'down',
         closeOnClickOutside: options.closeOnClickOutside,
         options: [
-          { text: 'A', value: 0 },
-          { text: 'B', value: 1 }
+          { text: 'A', value: 0, icon: options.icon },
+          { text: 'B', value: 1, icon: options.icon }
         ]
       };
     }
@@ -43,6 +43,19 @@ test('show dropdown item', async () => {
   expect(wrapper).toMatchSnapshot();
 
   titles.at(1).trigger('click');
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option icon', async () => {
+  const wrapper = renderWrapper({
+    icon: 'success'
+  });
+
+  await later();
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+
+  titles.at(0).trigger('click');
   expect(wrapper).toMatchSnapshot();
 });
 
