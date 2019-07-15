@@ -134,3 +134,11 @@ Use ref to get DropdownItem instance and call instance methods
 | Name | Attribute | Return value | Description |
 |------|------|------|------|
 | toggle | show: boolean | - | Toggle display |
+
+### Data Structure of Option
+
+| Key | Description | Type |
+|------|------|------|
+| text | Text | `string` |
+| value | Value | `string | number` |
+| icon | Left icon | `string` |
