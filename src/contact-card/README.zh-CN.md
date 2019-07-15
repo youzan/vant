@@ -186,7 +186,7 @@ export default {
 
 ### Contact 数据结构
 
-| key | 说明 | 类型 |
+| 键名 | 说明 | 类型 |
 |------|------|------|
 | id | 每位联系人的唯一标识 | `string | number` |
 | name | 联系人姓名 | `string` |

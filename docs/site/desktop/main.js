@@ -44,6 +44,7 @@ new Vue({
   el: '#app',
   mounted() {
     if (this.$route.hash) {
+      // wait page init
       setTimeout(() => {
         const el = document.querySelector(this.$route.hash);
         if (el) {
@@ -51,7 +52,7 @@ new Vue({
             behavior: 'smooth'
           });
         }
-      }, 500);
+      }, 1000);
     }
   },
   render: h => h(App),
