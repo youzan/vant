@@ -42,9 +42,8 @@ export function getRootScrollTop(): number {
 }
 
 export function setRootScrollTop(value: number) {
-  const { body } = document;
-  window.scrollTo(0, value);
-  'scrollTop' in body ? (body.scrollTop = value) : (body as HTMLElement).scrollTo(0, value);
+  setScrollTop(window, value);
+  setScrollTop(document.body, value);
 }
 
 // get distance from element top to page top
