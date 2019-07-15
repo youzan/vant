@@ -117,12 +117,12 @@ export default {
 | close | Triggered when close ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
 
-### Data struct of Action
+### Data Structure of Action
 
-| key | Description |
-|------|------|
-| name | Title |
-| subname | Subtitle |
-| className | className for the option |
-| loading | Whether to be loading status |
-| disabled | Whether to be disabled |
+| Key | Description | Type |
+|------|------|------|
+| name | Title | `string` |
+| subname | Subtitle | `string` |
+| className | className for the option | `any` |
+| loading | Whether to be loading status | `boolean` |
+| disabled | Whether to be disabled | `boolean` |

@@ -109,7 +109,7 @@ export default {
 
 ### Coupon 数据结构
 
-| key | 说明 | 类型 |
+| 键名 | 说明 | 类型 |
 |------|------|------|
 | id | 优惠券 id | `string` |
 | name | 优惠券名称 | `string` |
