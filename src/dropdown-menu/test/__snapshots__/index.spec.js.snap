@@ -73,7 +73,7 @@ exports[`direction up 1`] = `
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down"><div class="van-ellipsis">A</div></span></div>
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down"><div class="van-ellipsis">A</div></span></div>
   <div class="van-dropdown-item van-dropdown-item--up" style="z-index: 10; bottom: 768px;">
-    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2010; position: absolute; animation-duration: 0.2s;"></div>
+    <div class="van-overlay van-fade-enter-active" style="z-index: 2010; position: absolute; animation-duration: 0.2s;"></div>
     <div class="van-popup van-popup--bottom van-dropdown-item__content van-popup-slide-bottom-enter van-popup-slide-bottom-enter-active" style="transition-duration: 0.2s;">
       <div class="van-cell van-cell--clickable" style="color: rgb(25, 137, 250);">
         <div class="van-cell__title"><span>A</span></div>
