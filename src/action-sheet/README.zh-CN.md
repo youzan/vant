@@ -128,10 +128,10 @@ export default {
 
 `Props`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
 
-| key | 说明 |
-|------|------|
-| name | 标题 |
-| subname | 二级标题 |
-| className | 为对应列添加额外的 class |
-| loading | 是否为加载状态 |
-| disabled | 是否为禁用状态 |
+| 键名 | 说明 | 类型 |
+|------|------|------|
+| name | 标题 | `string` |
+| subname | 二级标题 | `string` |
+| className | 为对应列添加额外的 class | `any` |
+| loading | 是否为加载状态 | `boolean` |
+| disabled | 是否为禁用状态 | `boolean` |

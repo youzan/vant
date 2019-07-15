@@ -89,7 +89,7 @@ export default {
 
 ### Address 数据结构
 
-| key | 说明 | 类型 |
+| 键名 | 说明 | 类型 |
 |------|------|------|
 | id | 每条地址的唯一标识 | `string | number` |
 | name | 收货人姓名 | `string` |

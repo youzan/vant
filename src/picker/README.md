@@ -213,13 +213,13 @@ Picker events will pass different parameters according to the columns are single
 |------|------|
 | title | Custom title |
 
-### Column Data Struct
+### Data Structure of Column
 
-| key | Description |
-|------|------|
-| values | Value of column |
-| defaultIndex | Default value index |
-| className | ClassName for this column |
+| Key | Description | Type |
+|------|------|------|
+| values | Value of column | `string[]` |
+| defaultIndex | Default value index | `number` |
+| className | ClassName for this column | `any` |
 
 ### Methods
 

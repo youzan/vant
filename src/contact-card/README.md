@@ -180,7 +180,7 @@ export default {
 | save | Triggered when click save button | content：contact info |
 | delete | Triggered when click delete button | content：contact info |
 
-### Contact Data Structure
+### Data Structure of Contact
 
 | key | Description | Type |
 |------|------|------|

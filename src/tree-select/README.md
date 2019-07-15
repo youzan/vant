@@ -62,7 +62,7 @@ export default {
 | navclick | triggered when parent node is selected |  index: index of selected parent |
 | itemclick | triggered when item is selected | data: selected item |
 
-### Item Data Structure
+### Data Structure of Item
 
 `items` should be an array contains specified tree objects.
 
