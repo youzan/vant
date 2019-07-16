@@ -125,9 +125,7 @@ export default createComponent({
   watch: {
     active(name) {
       if (name !== this.currentName) {
-        this.$nextTick(() => {
-          this.setCurrentIndexByName(name);
-        });
+        this.setCurrentIndexByName(name);
       }
     },
 
