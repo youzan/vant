@@ -85,7 +85,7 @@ export default createComponent({
     getPlaceholder(message) {
       const type = +message.multiple === 1 ? 'textarea' : message.type;
       const map = this.messageConfig.placeholderMap || {};
-      return map[type] || PLACEHOLDER[type];
+      return message.placeholder || map[type] || PLACEHOLDER[type];
     },
 
     validateMessages() {
