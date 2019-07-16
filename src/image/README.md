@@ -67,7 +67,7 @@ Vue.use(Lazyload);
 |------|------|------|------|
 | src | Src | `string` | - | - |
 | fit | Fit mode | `string` | `fill` | - |
-| round | Circle Border，it only works when `fit` is `cover`or`fill`or`none`  | `boolean` | `false` | - |
+| round | Round，when img width not eq height it may not works at `fit=contain` and `fit=scale-down`  | `boolean` | `false` | - |
 | alt | Alt | `string` | - | - |
 | width | Width | `string | number` | - | - |
 | height | Height | `string | number` | - | - |

@@ -114,7 +114,7 @@ export default {
     },
     'en-US': {
       fitMode: 'Fit Mode',
-      round: 'Circle Border',
+      round: 'Round',
       loading: 'Loading',
       error: 'Error',
       defaultTip: 'Default Tip',

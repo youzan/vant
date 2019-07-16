@@ -41,7 +41,7 @@ Vue.use(Image);
 
 ### 圆形图片
 
-通过`round`属性可以设置图片变圆，可选值见下方表格
+通过`round`属性可以设置图片变圆
 
 ```html
 <van-image
@@ -95,7 +95,7 @@ Vue.use(Image);
 |------|------|------|------|------|
 | src | 图片链接 | `string` | - | - |
 | fit | 图片填充模式 | `string` | `fill` | - |
-| round | 圆形图片，仅`fit`为`cover`、`fill`、`none`时起作用 | `boolean` | `false` | - |
+| round | 圆形图片，当图片宽高不相等时 `fit=contain` 和 `fit=scale-down` 可能无法实现「圆形」图片 | `boolean` | `false` | - |
 | alt | 替代文本 | `string` | - | - |
 | width | 宽度，默认单位为 px | `string | number` | - | - |
 | height | 高度，默认单位为 px | `string | number` | - | - |
