@@ -71,6 +71,16 @@ export default {
 </van-collapse>
 ```
 
+``` javascript
+export default {
+  data() {
+    return {
+      activeNames: ['1']
+    };
+  }
+};
+```
+
 ## API
 
 ### Collapse Props
