@@ -276,12 +276,12 @@ export default createComponent({
 
     // emit event when clicked
     onClick(index) {
-      const { title, disabled, name } = this.children[index];
+      const { title, disabled, computedName } = this.children[index];
       if (disabled) {
-        this.$emit('disabled', name, title);
+        this.$emit('disabled', computedName, title);
       } else {
         this.setCurrentIndex(index);
-        this.$emit('click', name, title);
+        this.$emit('click', computedName, title);
       }
     },
 
