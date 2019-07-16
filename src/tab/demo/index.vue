@@ -1,15 +1,20 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-tabs v-model="active">
+      <van-tabs
+        type="card"
+        v-model="active"
+      >
         <van-tab
           :title="$t('tab') + index"
-          v-for="index in tabs"
+          v-for="(index,i) in tabs"
+          :disabled="active !== i"
           :key="index"
         >
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
+      <van-button @click="active=1">点我</van-button>
     </demo-block>
 
     <demo-block :title="$t('matchByName')">
