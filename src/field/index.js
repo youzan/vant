@@ -2,9 +2,8 @@ import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
-import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
+import { resetScroll } from '../utils/dom/reset-scroll';
 import { createNamespace, isObj, isDef, addUnit } from '../utils';
-import { isIOS } from '../utils/validate/system';
 
 const [createComponent, bem] = createNamespace('field');
 
@@ -134,13 +133,7 @@ export default createComponent({
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', event);
-
-      // Hack for iOS12 page scroll
-      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
-      /* istanbul ignore next */
-      if (isIOS()) {
-        setRootScrollTop(getRootScrollTop());
-      }
+      resetScroll();
     },
 
     onClick(event) {

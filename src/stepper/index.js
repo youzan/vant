@@ -1,6 +1,5 @@
 import { createNamespace, isDef, addUnit } from '../utils';
-import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
-import { isIOS } from '../utils/validate/system';
+import { resetScroll } from '../utils/dom/reset-scroll';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -156,12 +155,7 @@ export default createComponent({
         event.target.value = this.currentValue;
       }
 
-      // Hack for iOS12 page scroll
-      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
-      /* istanbul ignore next */
-      if (isIOS()) {
-        setRootScrollTop(getRootScrollTop());
-      }
+      resetScroll();
     },
 
     longPressStep() {
