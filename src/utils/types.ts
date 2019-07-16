@@ -3,9 +3,7 @@ import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
 export type EventHandler = (event: Event) => void;
 
-export type ObjectIndex = {
-  [key: string]: any;
-};
+export type ObjectIndex = Record<string, any>;
 
 export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
 
@@ -22,7 +20,7 @@ export type ModelOptions = {
   event?: string;
 };
 
-export type DefaultProps = Record<string, any>;
+export type DefaultProps = ObjectIndex;
 
 export type FunctionComponent<Props = DefaultProps, PropDefs = PropsDefinition<Props>> = {
   (h: CreateElement, props: Props, slots: ScopedSlots, context: RenderContext<Props>):
