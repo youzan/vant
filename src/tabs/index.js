@@ -125,7 +125,7 @@ export default createComponent({
   watch: {
     active(name) {
       if (name !== this.currentName) {
-        this.setCurrentIndexByName(name, true);
+        this.setCurrentIndexByName(name);
       }
     },
 
@@ -241,19 +241,15 @@ export default createComponent({
       });
     },
 
-    /**
-     * correct the index of active tab
-     * @param {String,Number} name  tag name
-     * @param {Boolean} isJSChangeActive  判断是否是在js中触发的改变
-     */
-    setCurrentIndexByName(name, isJSChangeActive) {
+    // correct the index of active tab
+    setCurrentIndexByName(name) {
       const matched = this.children.filter(tab => tab.computedName === name);
       const defaultIndex = (this.children[0] || {}).index || 0;
-      this.setCurrentIndex(matched.length ? matched[0].index : defaultIndex, isJSChangeActive);
+      this.setCurrentIndex(matched.length ? matched[0].index : defaultIndex);
     },
 
-    setCurrentIndex(currentIndex, isJSChangeActive) {
-      currentIndex = this.findAvailableTab(currentIndex, isJSChangeActive);
+    setCurrentIndex(currentIndex) {
+      currentIndex = this.findAvailableTab(currentIndex);
 
       if (isDef(currentIndex) && currentIndex !== this.currentIndex) {
         const shouldEmitChange = this.currentIndex !== null;
@@ -266,11 +262,11 @@ export default createComponent({
       }
     },
 
-    findAvailableTab(index, isJSChangeActive) {
+    findAvailableTab(index) {
       const diff = index < this.currentIndex ? -1 : 1;
 
       while (index >= 0 && index < this.children.length) {
-        if (!this.children[index].disabled || isJSChangeActive) {
+        if (!this.children[index].disabled) {
           return index;
         }
 
