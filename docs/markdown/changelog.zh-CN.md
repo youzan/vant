@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
+`2019-07-16`
+
+**Improvements**
+
+- Sku: 支持自定义留言占位文本 [\#3864](https://github.com/youzan/vant/pull/3864)
+- DropdownMenu: 新增 icon 选项 [\#3855](https://github.com/youzan/vant/pull/3855)
+- DropdownMenu: 标题过长时自动截断 [\#3847](https://github.com/youzan/vant/pull/3847)
+- ImagePreview: 支持双击缩放手势 [\#3839](https://github.com/youzan/vant/pull/3839)
+
+**Bug Fixes**
+
+- 修复 Tab 点击事件参数丢失的问题 [\#3866](https://github.com/youzan/vant/pull/3866)
+- 修复 List 在 body 标签添加滚动样式时异常的问题 [\#3844](https://github.com/youzan/vant/pull/3844)
+- 修复 IndexBar 在某些情况下 active 锚点失效的问题 [\#3832](https://github.com/youzan/vant/pull/3832)
+
+
 ### [v2.0.7](https://github.com/youzan/vant/tree/v2.0.7)
 `2019-07-11`
 

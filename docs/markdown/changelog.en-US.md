@@ -1,5 +1,22 @@
 # Changelog
 
+### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
+`2019-07-16`
+
+**Improvements**
+
+- Sku: support custom placeholder [\#3864](https://github.com/youzan/vant/pull/3864)
+- DropdownMenu: add icon option [\#3855](https://github.com/youzan/vant/pull/3855)
+- DropdownMenu: optimize title ellipsis [\#3847](https://github.com/youzan/vant/pull/3847)
+- ImagePreview: support double click zoom [\#3839](https://github.com/youzan/vant/pull/3839)
+
+**Bug Fixes**
+
+- fix Tab: click event param missing [\#3866](https://github.com/youzan/vant/pull/3866)
+- fix List not work when body is the scrolling container [\#3844](https://github.com/youzan/vant/pull/3844)
+- fix IndexBar incorrect active anchor in some cases [\#3832](https://github.com/youzan/vant/pull/3832)
+
+
 ### [v2.0.7](https://github.com/youzan/vant/tree/v2.0.7)
 `2019-07-11`
 
