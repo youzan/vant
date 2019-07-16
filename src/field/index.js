@@ -2,7 +2,7 @@ import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
-import { getRootScrollTop } from '../utils/dom/scroll';
+import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
 import { createNamespace, isObj, isDef, addUnit } from '../utils';
 import { isIOS } from '../utils/validate/system';
 
@@ -139,7 +139,7 @@ export default createComponent({
       // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
       /* istanbul ignore next */
       if (isIOS()) {
-        window.scrollTo(0, getRootScrollTop());
+        setRootScrollTop(getRootScrollTop());
       }
     },
 

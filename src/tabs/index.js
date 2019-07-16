@@ -4,7 +4,7 @@ import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import {
-  setScrollTop,
+  setRootScrollTop,
   getScrollTop,
   getElementTop,
   getScrollEventTarget
@@ -145,7 +145,7 @@ export default createComponent({
 
       // scroll to correct position
       if (this.position === 'top' || this.position === 'bottom') {
-        setScrollTop(window, getElementTop(this.$el) - this.offsetTop);
+        setRootScrollTop(getElementTop(this.$el) - this.offsetTop);
       }
     },
 
@@ -184,7 +184,7 @@ export default createComponent({
 
     // adjust tab position
     onScroll() {
-      const scrollTop = getScrollTop(window) + this.offsetTop;
+      const scrollTop = getScrollTop(this.scrollEl) + this.offsetTop;
       const elTopToPageTop = getElementTop(this.$el);
       const elBottomToPageTop =
         elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;

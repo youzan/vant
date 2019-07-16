@@ -82,8 +82,9 @@ export default createComponent({
         <Cell
           clickable
           key={option.value}
+          icon={option.icon}
           title={option.text}
-          titleStyle={{ color: active ? activeColor : '' }}
+          style={{ color: active ? activeColor : '' }}
           onClick={() => {
             this.showPopup = false;
 

@@ -79,9 +79,14 @@ export default {
   },
 
   methods: {
-    onLoad(index) {
+    onLoad(index, isRefresh) {
       const list = this.list[index];
+      list.loading = true;
       setTimeout(() => {
+        if (isRefresh) {
+          list.items = [];
+        }
+
         for (let i = 0; i < 10; i++) {
           const text = list.items.length + 1;
           list.items.push(text < 10 ? '0' + text : text);
@@ -104,11 +109,10 @@ export default {
     onRefresh(index) {
       const list = this.list[index];
       setTimeout(() => {
-        list.items = [];
         list.error = false;
         list.finished = false;
         list.refreshing = false;
-        window.scrollTo(0, 10);
+        this.onLoad(index, true);
       }, 1000);
     }
   }

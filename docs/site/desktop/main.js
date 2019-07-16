@@ -20,11 +20,17 @@ importAll(docs, docsFromPackages);
 
 const router = new VueRouter({
   mode: 'hash',
-  routes: routes({ componentMap: docs })
+  routes: routes({ componentMap: docs }),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return { selector: to.hash };
+    }
+
+    return savedPosition || { x: 0, y: 0 };
+  }
 });
 
-router.afterEach(() => {
-  window.scrollTo(0, 0);
+router.afterEach(path => {
   Vue.nextTick(() => window.syncPath());
 });
 
@@ -36,6 +42,19 @@ if (process.env.NODE_ENV !== 'production') {
 
 new Vue({
   el: '#app',
+  mounted() {
+    if (this.$route.hash) {
+      // wait page init
+      setTimeout(() => {
+        const el = document.querySelector(this.$route.hash);
+        if (el) {
+          el.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }, 1000);
+    }
+  },
   render: h => h(App),
   router
 });

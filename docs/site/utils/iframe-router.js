@@ -31,6 +31,10 @@ export function initIframeRouter() {
 
   window.changePath = function (lang, path = '') {
     setLang(lang);
-    window.vueRouter.replace(path);
+
+    // should preserve hash for anchor
+    if (window.vueRouter.currentRoute.path !== path) {
+      window.vueRouter.replace(path);
+    }
   };
 }
