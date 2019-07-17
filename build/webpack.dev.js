@@ -21,7 +21,6 @@ module.exports = {
   serve: {
     open: true,
     host: '0.0.0.0',
-    port: '8081',
     devMiddleware: {
       logLevel: 'warn'
     },
