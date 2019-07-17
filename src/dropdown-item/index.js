@@ -45,16 +45,13 @@ export default createComponent({
         return;
       }
 
-      if (options.immediate) {
-        this.transition = false;
-      }
+      this.transition = !options.immediate;
+      this.showPopup = show;
 
       if (show) {
         this.parent.updateOffset();
         this.showWrapper = true;
       }
-
-      this.showPopup = show;
     }
   },
 
@@ -121,7 +118,6 @@ export default createComponent({
           onClose={this.onClose}
           onOpened={this.onOpened}
           onClosed={() => {
-            this.transition = true;
             this.showWrapper = false;
             this.$emit('closed');
           }}
