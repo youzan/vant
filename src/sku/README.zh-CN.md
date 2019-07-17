@@ -125,6 +125,7 @@ export default {
 | goods-id | 商品 id | `string | number` | - | - |
 | hide-stock | 是否显示商品剩余库存 | `boolean` | `false` | - |
 | hide-quota-text | 是否显示限购提示 | `boolean` | `false` | 1.4.8 |
+| hide-selected-text | 是否隐藏已选提示 | `boolean` | `false` | - |
 | show-add-cart-btn | 是否显示加入购物车按钮 | `boolean` | `true` | - |
 | buy-text | 购买按钮文字 | `string` | `立即购买` | - |
 | add-cart-text | 加入购物车按钮文字 | `string` | `加入购物车` | - |
