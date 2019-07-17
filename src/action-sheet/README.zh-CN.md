@@ -104,6 +104,7 @@ export default {
 | title | 标题 | `string` | - | - |
 | cancel-text | 取消按钮文字 | `string` | - | - |
 | overlay | 是否显示遮罩层 | `boolean` | `true` | - |
+| round | 是否显示圆角 | `boolean` | `false` | 2.0.9 |
 | close-on-click-action | 是否在点击选项后关闭 | `boolean` | `false` | 2.0.0 |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `true` | - |
 | lazy-render | 是否在显示弹层时才渲染节点 | `boolean` | `true` | - |

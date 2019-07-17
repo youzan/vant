@@ -21,6 +21,7 @@ export type ActionSheetItem = {
 
 export type ActionSheetProps = PopupMixinProps & {
   title?: string;
+  round?: boolean;
   actions?: ActionSheetItem[];
   duration: number;
   cancelText?: string;
@@ -116,6 +117,7 @@ function ActionSheet(
     <Popup
       class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
       position="bottom"
+      round={props.round}
       value={props.value}
       overlay={props.overlay}
       duration={props.duration}
@@ -136,6 +138,7 @@ function ActionSheet(
 ActionSheet.props = {
   ...PopupMixin.props,
   title: String,
+  round: Boolean,
   actions: Array,
   duration: Number,
   cancelText: String,
