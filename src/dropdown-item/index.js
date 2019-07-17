@@ -40,20 +40,21 @@ export default createComponent({
   },
 
   methods: {
-    toggle(show) {
-      this.showPopup = !this.showPopup;
-
-      if (this.showPopup) {
-        this.showWrapper = true;
+    toggle(show = !this.showPopup, options = {}) {
+      if (show === this.showPopup) {
+        return;
       }
-    },
 
-    hide(skipTransition) {
-      this.showPopup = false;
-
-      if (skipTransition) {
+      if (options.immediate) {
         this.transition = false;
       }
+
+      if (show) {
+        this.parent.updateOffset();
+        this.showWrapper = true;
+      }
+
+      this.showPopup = show;
     }
   },
 
