@@ -117,6 +117,7 @@ toast2.clear();
 | position | 位置，可选值为 `top` `bottom` | `string` | `middle` | - |
 | message | 文本内容，支持通过`\n`换行 | `string` | `''` | - | - |
 | icon | 自定义图标，支持传入图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 2.0.1 |
+| iconPrefix | 图标类名前缀 | `string` | `van-icon` | 2.0.9 |
 | mask | 是否显示背景遮罩层 | `boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `boolean` | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `string` | `circular` | - |

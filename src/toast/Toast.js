@@ -11,6 +11,7 @@ export default createComponent({
   props: {
     icon: String,
     className: null,
+    iconPrefix: String,
     loadingType: String,
     forbidClick: Boolean,
     message: [Number, String],
@@ -77,13 +78,13 @@ export default createComponent({
   },
 
   render(h) {
-    const { type, icon, message, loadingType } = this;
+    const { type, icon, message, iconPrefix, loadingType } = this;
 
     const hasIcon = icon || (type === 'success' || type === 'fail');
 
     function ToastIcon() {
       if (hasIcon) {
-        return <Icon class={bem('icon')} name={icon || type} />;
+        return <Icon class={bem('icon')} classPrefix={iconPrefix} name={icon || type} />;
       }
 
       if (type === 'loading') {

@@ -12,6 +12,7 @@ const defaultOptions = {
   onClose: null,
   onOpened: null,
   duration: 3000,
+  iconPrefix: undefined,
   position: 'middle',
   forbidClick: false,
   loadingType: undefined,
