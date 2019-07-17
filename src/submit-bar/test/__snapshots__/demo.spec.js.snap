@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 30.50</span></div><button class="van-button van-button--danger van-button--large van-button--square van-submit-bar__button"><span class="van-button__text">提交订单</span></button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip"><i class="van-icon van-icon-info-o van-submit-bar__tip-icon">
+          <!----></i><span class="van-submit-bar__tip-text">你的收货地址不支持同城送, 我们已为你推荐快递</span></div>
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 30.50</span></div><button disabled="disabled" class="van-button van-button--danger van-button--large van-button--disabled van-button--square van-submit-bar__button"><span class="van-button__text">提交订单</span></button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 30.50</span></div><button class="van-button van-button--danger van-button--large van-button--square van-submit-bar__button">
+          <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip">
+        你的收货地址不支持同城送,
+        <span class="edit-address">
+          修改地址
+        </span></div>
+      <div class="van-submit-bar__bar">
+        <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
+          <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
+              <!----></i></div><span class="van-checkbox__label">全选</span>
+        </div>
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 30.50</span></div><button class="van-button van-button--danger van-button--large van-button--square van-submit-bar__button"><span class="van-button__text">提交订单</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

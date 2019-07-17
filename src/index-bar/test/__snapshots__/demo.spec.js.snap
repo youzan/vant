@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div class="van-tabs van-tabs--line">
+    <div class="van-tabs__wrap van-hairline--top-bottom">
+      <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
+        <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">基础用法</span></div>
+        <div role="tab" class="van-tab"><span class="van-ellipsis">自定义索引列表</span></div>
+        <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel" class="van-tab__pane" style="">
+        <div class="van-index-bar">
+          <div class="van-index-bar__sidebar" style="z-index: 1;"><span data-index="A" class="van-index-bar__index">A</span><span data-index="B" class="van-index-bar__index">B</span><span data-index="C" class="van-index-bar__index">C</span><span data-index="D" class="van-index-bar__index">D</span><span data-index="E" class="van-index-bar__index">E</span><span data-index="F" class="van-index-bar__index">F</span><span data-index="G" class="van-index-bar__index">G</span><span data-index="H" class="van-index-bar__index">H</span><span data-index="I" class="van-index-bar__index">I</span><span data-index="J" class="van-index-bar__index">J</span><span data-index="K" class="van-index-bar__index">K</span><span data-index="L" class="van-index-bar__index">L</span><span data-index="M" class="van-index-bar__index">M</span><span data-index="N" class="van-index-bar__index">N</span><span data-index="O" class="van-index-bar__index">O</span><span data-index="P" class="van-index-bar__index">P</span><span data-index="Q" class="van-index-bar__index">Q</span><span data-index="R" class="van-index-bar__index">R</span><span data-index="S" class="van-index-bar__index">S</span><span data-index="T" class="van-index-bar__index">T</span><span data-index="U" class="van-index-bar__index">U</span><span data-index="V" class="van-index-bar__index">V</span><span data-index="W" class="van-index-bar__index">W</span><span data-index="X" class="van-index-bar__index">X</span><span data-index="Y" class="van-index-bar__index">Y</span><span data-index="Z" class="van-index-bar__index">Z</span></div>
+          <div>
+            <div>
+              <div class="van-index-anchor">A</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">B</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">C</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">D</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">E</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">F</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">G</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">H</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">I</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">J</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">K</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">L</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">M</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">N</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">O</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">P</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">Q</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">R</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">S</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">T</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">U</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">V</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">W</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">X</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">Y</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="van-index-anchor">Z</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel" class="van-tab__pane" style="display: none;">
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;

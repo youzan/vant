@@ -1,0 +1,64 @@
+@import '../style/var';
+
+.van-action-sheet {
+  max-height: @action-sheet-max-height;
+  color: @action-sheet-item-text-color;
+
+  &__item,
+  &__cancel {
+    font-size: @action-sheet-item-font-size;
+    line-height: @action-sheet-item-height;
+    text-align: center;
+    background-color: @action-sheet-item-background;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+
+  &__item {
+    height: @action-sheet-item-height;
+
+    &--disabled {
+      color: @gray;
+
+      &:active {
+        background-color: @white;
+      }
+    }
+  }
+
+  &__subname {
+    margin-left: 5px;
+    color: @action-sheet-subname-color;
+    font-size: @action-sheet-subname-font-size;
+  }
+
+  &__cancel::before {
+    display: block;
+    height: 10px;
+    background-color: @background-color;
+    content: ' ';
+  }
+
+  &__header {
+    font-size: @action-sheet-header-font-size;
+    line-height: @action-sheet-header-height;
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    color: @action-sheet-close-icon-color;
+    font-size: @action-sheet-close-icon-size;
+    line-height: inherit;
+  }
+
+  &--safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

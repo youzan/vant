@@ -1,0 +1,43 @@
+@import '../style/var';
+
+.van-contact-list {
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 50px;
+
+  &__item {
+    padding: @contact-list-item-padding;
+  }
+
+  &__item-value {
+    padding-right: 34px;
+  }
+
+  &__group {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__edit {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: @contact-list-edit-icon-size;
+    transform: translate(0, -50%);
+  }
+
+  &__add {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: @contact-list-add-button-z-index;
+  }
+}

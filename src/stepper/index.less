@@ -1,0 +1,95 @@
+@import '../style/var';
+
+.van-stepper {
+  font-size: 0;
+  user-select: none;
+
+  &__minus,
+  &__plus {
+    position: relative;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 5px;
+    color: @stepper-button-icon-color;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+
+    &::before {
+      width: 13px;
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: 13px;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      background-color: currentColor;
+      content: '';
+    }
+
+    &:active {
+      background-color: @stepper-active-color;
+    }
+
+    &--disabled {
+      color: @stepper-button-disabled-icon-color;
+      background-color: @stepper-button-disabled-color;
+
+      &:active {
+        background-color: @stepper-button-disabled-color;
+      }
+    }
+  }
+
+  &__minus {
+    border-radius: @stepper-border-radius 0 0 @stepper-border-radius;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__plus {
+    border-radius: 0 @stepper-border-radius @stepper-border-radius 0;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: @stepper-input-width;
+    height: @stepper-input-height;
+    margin: 0 2px;
+    padding: 0;
+    color: @stepper-input-text-color;
+    font-size: @stepper-input-font-size;
+    text-align: center;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+    &[disabled] {
+      color: @stepper-input-disabled-text-color;
+      background-color: @stepper-input-disabled-background-color;
+    }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+}

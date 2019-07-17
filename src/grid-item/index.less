@@ -1,0 +1,59 @@
+@import '../style/var';
+
+.van-grid-item {
+  position: relative;
+  box-sizing: border-box;
+
+  &--square {
+    height: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: @grid-item-content-padding;
+    background-color: @grid-item-content-background-color;
+
+    &::after {
+      z-index: 1;
+      border-width: 0 1px 1px 0;
+    }
+
+    &--square {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--surround {
+      &::after {
+        border-width: 1px;
+      }
+    }
+
+    &--clickable:active {
+      background-color: @grid-item-content-active-color;
+    }
+  }
+
+  &__icon {
+    font-size: @grid-item-icon-size;
+  }
+
+  &__text {
+    color: @grid-item-text-color;
+    font-size: @grid-item-text-font-size;
+  }
+
+  &__icon + &__text {
+    margin-top: 8px;
+  }
+}

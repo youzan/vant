@@ -1,0 +1,23 @@
+@import '../style/var';
+
+.van-swipe-cell {
+  position: relative;
+  overflow: hidden;
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  &__left {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  &__right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}

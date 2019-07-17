@@ -1,0 +1,85 @@
+@import '../style/var';
+
+.van-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: @dialog-width;
+  overflow: hidden;
+  font-size: @dialog-font-size;
+  background-color: @dialog-background-color;
+  border-radius: @dialog-border-radius;
+  transform: translate3d(-50%, -50%, 0);
+  backface-visibility: hidden; // avoid blurry text after scale animation
+  transition: @dialog-transition;
+
+  &__header {
+    padding-top: @dialog-header-padding-top;
+    font-weight: @dialog-header-font-weight;
+    text-align: center;
+
+    &--isolated {
+      padding: @dialog-header-isolated-padding;
+    }
+  }
+
+  &__message {
+    max-height: @dialog-message-max-height;
+    padding: @dialog-message-padding;
+    overflow-y: auto;
+    font-size: @dialog-message-font-size;
+    line-height: @dialog-message-line-height;
+
+    // allow newline charactor
+    white-space: pre-wrap;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+
+    &--has-title {
+      padding-top: @dialog-has-title-message-padding-top;
+      color: @dialog-has-title-message-text-color;
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__footer {
+    overflow: hidden;
+    user-select: none;
+
+    &--buttons {
+      display: flex;
+
+      .van-button {
+        flex: 1;
+      }
+    }
+  }
+
+  .van-button {
+    border: 0;
+  }
+
+  &__confirm {
+    &,
+    &:active {
+      color: @dialog-confirm-button-text-color;
+    }
+  }
+
+  &-bounce-enter {
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+    opacity: 0;
+  }
+
+  &-bounce-leave-active {
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+    opacity: 0;
+  }
+}

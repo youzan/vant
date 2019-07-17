@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
 <h3 align="center" style="margin: 30px 0 35px;">Mobile UI Components built on Vue</h3>
@@ -15,16 +15,18 @@
 </p>
 
 <p align="center">
-  🇨🇳 <a href="./README.zh-CN.md">访问中文版</a>
+  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
   &nbsp;
-  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
+  🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
+  &nbsp;
+  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
 </p>
 
 ---
 
 ## Features
 
-* 50+ Reusable components
+* 60 Reusable components
 * 90% Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
@@ -35,78 +37,23 @@
 
 ## Install
 
-#### NPM
-
-```shell
+```bash
+# Using npm
 npm i vant -S
-```
 
-#### YARN
-
-```shell
+# Using yarn
 yarn add vant
-```
-
-#### CDN
-
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css" />
-
-<!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
 ```
 
 ## Quickstart
 
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
-
-```bash
-# Install babel-plugin-import
-npm i babel-plugin-import -D
-```
-
-```js
-// set babel config in .babelrc or babel-loader
-// Note: Don't set libraryDirectory if you are using webpack 1.
-{
-  "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
-  ]
-}
-```
-
-Then you can import components from vant, equivalent to import manually below.
-
-```js
-import { Button } from 'vant';
-```
-
-> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead
-
-#### 2. Manually import
-
-```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
-
-#### 3. Import all components
-
 ```js
 import Vue from 'vue';
-import Vant from 'vant';
+import { Button } from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+Vue.use(Button);
 ```
-
-> If you configured babel-plugin-import, you won't be allowed to import all components.
 
 See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
@@ -123,9 +70,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 * [Documentation](https://youzan.github.io/vant)
 * [Changelog](https://youzan.github.io/vant#/en-US/changelog)
 * [Vant Demo](https://github.com/youzan/vant-demo)
-* [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
-* [Zent: PC UI base on React](https://www.youzanyun.com/zanui/zent)
-
+* [Vant Weapp](https://github.com/youzan/vant-weapp)
 
 ## Preview
 

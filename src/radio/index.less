@@ -1,0 +1,69 @@
+@import '../style/var';
+
+.van-radio {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+
+  &__icon {
+    flex: none;
+    height: 1em;
+    font-size: @radio-size;
+    line-height: 1em;
+
+    .van-icon {
+      display: block;
+      box-sizing: border-box;
+      width: 1.25em;
+      height: 1.25em;
+      color: transparent;
+      font-size: .8em;
+      line-height: inherit;
+      text-align: center;
+      border: 1px solid @radio-border-color;
+      transition: @radio-transition-duration;
+    }
+
+    &--round {
+      .van-icon {
+        border-radius: 100%;
+      }
+    }
+
+    &--checked {
+      .van-icon {
+        color: @white;
+        background-color: @radio-checked-icon-color;
+        border-color: @radio-checked-icon-color;
+      }
+    }
+
+    &--disabled {
+      .van-icon {
+        background-color: @radio-disabled-background-color;
+        border-color: @radio-disabled-icon-color;
+      }
+    }
+
+    &--disabled&--checked {
+      .van-icon {
+        color: @radio-disabled-icon-color;
+      }
+    }
+  }
+
+  &__label {
+    margin-left: @radio-label-margin;
+    color: @radio-label-color;
+    line-height: @radio-size;
+
+    &--left {
+      margin: 0 @radio-label-margin 0 0;
+    }
+
+    &--disabled {
+      color: @radio-disabled-label-color;
+    }
+  }
+}

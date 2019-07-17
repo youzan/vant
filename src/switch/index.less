@@ -1,0 +1,46 @@
+@import '../style/var';
+
+.van-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: content-box;
+  width: @switch-width;
+  height: @switch-height;
+  background-color: @switch-background-color;
+  border: @switch-border;
+  border-radius: @switch-node-size;
+  transition: background-color @switch-transition-duration;
+
+  &__node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: @switch-node-z-index;
+    width: @switch-node-size;
+    height: @switch-node-size;
+    background-color: @switch-node-background-color;
+    border-radius: 100%;
+    box-shadow: @switch-node-box-shadow;
+    transition: @switch-transition-duration;
+  }
+
+  &__loading {
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    line-height: 1;
+  }
+
+  &--on {
+    background-color: @switch-on-background-color;
+
+    .van-switch__node {
+      transform: translateX(@switch-width - @switch-node-size);
+    }
+  }
+
+  &--disabled {
+    opacity: @switch-disabled-opacity;
+  }
+}

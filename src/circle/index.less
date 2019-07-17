@@ -1,0 +1,35 @@
+@import '../style/var';
+
+.van-circle {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layer {
+    transform: rotate(90deg);
+    // should not use transform-origin: center
+    // that will cause incorrect style in android devices
+    transform-origin: 530px 530px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 3140;
+    stroke-dashoffset: 3140;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    color: @circle-text-color;
+    transform: translateY(-50%);
+  }
+}

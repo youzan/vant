@@ -1,12 +1,14 @@
-## Custom Theme
+# Custom Theme
 
-`Vant` provides a set of default themes, if you want to custom the theme color or other styles, you can use the following methods:
+### Intro
+
+Vant provides a set of default themes, if you want to custom the theme color or other styles, you can use the following methods:
 
 ### Less variables
 
 Vant use [Less](http://lesscss.org/) as css preprocessor，you can modify less variables to custom theme.
 
-There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/dev/packages/style/var.less)。
+There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/dev/src/style/var.less)。
 
 ```less
 // color variables

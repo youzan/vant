@@ -1,0 +1,69 @@
+@import '../style/var';
+
+.van-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+
+  // hack for avoid max-width when use left & fixed
+  width: @toast-default-width;
+  max-width: @toast-max-width;
+  min-height: @toast-default-min-height;
+  padding: @toast-default-padding;
+  color: @toast-text-color;
+  font-size: @toast-font-size;
+  line-height: @toast-line-height;
+
+  // allow newline charactor
+  white-space: pre-wrap;
+  text-align: center;
+  word-break: break-all;
+  background-color: @toast-background-color;
+  border-radius: @toast-border-radius;
+  transform: translate3d(-50%, -50%, 0);
+
+  // should not add pointer-events: none directly to body tag
+  // that will cause unexpected tap-highlight-color in mobile safari
+  &--unclickable {
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &--text {
+    width: fit-content;
+    min-width: @toast-text-min-width;
+    min-height: unset;
+    padding: @toast-text-padding;
+
+    .van-toast__text {
+      margin-top: 0;
+    }
+  }
+
+  &--top {
+    top: @toast-position-top-distance;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: @toast-position-bottom-distance;
+  }
+
+  &__icon {
+    font-size: @toast-icon-size;
+  }
+
+  &__loading {
+    padding: 5px;
+  }
+
+  &__text {
+    margin-top: 10px;
+  }
+}

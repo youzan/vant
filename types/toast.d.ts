@@ -4,12 +4,14 @@ import { VanPopupMixin } from './mixins/popup';
 type ToastMessage = string | number;
 
 export type ToastOptions = {
+  icon?: string;
   type?: string;
   mask?: boolean;
   position?: string;
   duration?: number;
   className?: any;
   onClose?(): void;
+  onOpened?(): void;
   forbidClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
@@ -30,7 +32,7 @@ export interface Toast {
   loading(options?: ToastOptions | ToastMessage): VanToast;
   success(options?: ToastOptions | ToastMessage): VanToast;
   fail(options?: ToastOptions | ToastMessage): VanToast;
-  clear(): void;
+  clear(all?: boolean): void;
   install(): void;
   setDefaultOptions(options: ToastOptions): void;
   resetDefaultOptions(): void;

@@ -1,0 +1,17 @@
+@import '../style/var';
+
+.van-list {
+  &__loading,
+  &__finished-text,
+  &__error-text {
+    color: @list-text-color;
+    font-size: @list-text-font-size;
+    line-height: @list-text-line-height;
+    text-align: center;
+  }
+
+  &__placeholder {
+    height: 0;
+    pointer-events: none;
+  }
+}

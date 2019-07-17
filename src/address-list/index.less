@@ -1,0 +1,57 @@
+@import '../style/var';
+
+.van-address-list {
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 100px;
+
+  &__add {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: @address-list-add-button-z-index;
+  }
+
+  &__disabled-text {
+    padding: 0 15px;
+    color: @address-list-disabled-text-color;
+    font-size: @address-list-disabled-text-font-size;
+    line-height: @address-list-disabled-text-line-height;
+  }
+}
+
+.van-address-item {
+  padding: @address-list-item-padding;
+
+  &__value {
+    padding-right: 34px;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__address {
+    color: @address-list-item-text-color;
+    font-size: @address-list-item-font-size;
+    line-height: @address-list-item-line-height;
+  }
+
+  &--disabled {
+    .van-address-item__name,
+    .van-address-item__address {
+      color: @address-list-item-disabled-text-color;
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: @address-list-edit-icon-size;
+    transform: translate(0, -50%);
+  }
+}

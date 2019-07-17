@@ -1,0 +1,49 @@
+@import '../style/var';
+
+.van-swipe {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+
+  &__track {
+    height: 100%;
+  }
+
+  &__indicators {
+    position: absolute;
+    bottom: @swipe-indicator-margin;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+
+    &--vertical {
+      top: 50%;
+      bottom: auto;
+      left: @swipe-indicator-margin;
+      flex-direction: column;
+      transform: translateY(-50%);
+
+      .van-swipe__indicator:not(:last-child) {
+        margin-bottom: @swipe-indicator-size;
+      }
+    }
+  }
+
+  &__indicator {
+    width: @swipe-indicator-size;
+    height: @swipe-indicator-size;
+    background-color: @swipe-indicator-inactive-background-color;
+    border-radius: 100%;
+    opacity: @swipe-indicator-inactive-opacity;
+    transition: opacity .2s;
+
+    &:not(:last-child) {
+      margin-right: @swipe-indicator-size;
+    }
+
+    &--active {
+      background-color: @swipe-indicator-active-background-color;
+      opacity: @swipe-indicator-active-opacity;
+    }
+  }
+}

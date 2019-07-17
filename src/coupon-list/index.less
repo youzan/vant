@@ -1,0 +1,47 @@
+@import '../style/var';
+
+.van-coupon-list {
+  position: relative;
+  height: 100%;
+  background-color: @coupon-list-background-color;
+
+  &__field {
+    padding: @coupon-list-field-padding;
+  }
+
+  &__exchange {
+    height: @coupon-list-exchange-button-height;
+    line-height: @coupon-list-exchange-button-height - 2px;
+  }
+
+  &__list {
+    box-sizing: border-box;
+    padding: 15px 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 500;
+  }
+
+  &__empty {
+    padding-top: 60px;
+    text-align: center;
+
+    p {
+      margin: 15px 0;
+      color: @coupon-list-empty-tip-color;
+      font-size: @coupon-list-empty-tip-font-size;
+      line-height: @coupon-list-empty-tip-line-height;
+    }
+
+    img {
+      width: @coupon-list-empty-image-size;
+      height: @coupon-list-empty-image-size;
+    }
+  }
+}

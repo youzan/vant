@@ -1,0 +1,36 @@
+@import '../style/var';
+
+.van-progress {
+  position: relative;
+  height: @progress-height;
+  background: @progress-background-color;
+  border-radius: @progress-height;
+
+  &__portion {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border-radius: inherit;
+
+    &--with-pivot {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__pivot {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    box-sizing: border-box;
+    min-width: 2em;
+    padding: @progress-pivot-padding;
+    font-size: @progress-pivot-font-size;
+    line-height: @progress-pivot-line-height;
+    text-align: center;
+    word-break: keep-all;
+    background-color: @progress-pivot-background-color;
+    border-radius: 1em;
+    transform: translate(100%, -50%);
+  }
+}

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+            <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+            <!----></i><input multiple="multiple" type="file" accept="*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+            <!----></i><input multiple="multiple" type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__input-wrapper"><button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-photo van-button__icon">
+              <!----></i><span class="van-button__text">
+        上传文件
+      </span></button><input type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+            <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

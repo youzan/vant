@@ -1,6 +1,3 @@
-git checkout master
-git merge dev
-
 #!/usr/bin/env sh
 set -e
 echo "Enter release version: "
@@ -19,11 +16,13 @@ then
   git commit -am "[release] $VERSION"
 
   # publish
-  git push origin master
+  git push origin 1.x
   git push origin refs/tags/v$VERSION
-  git checkout dev
-  git rebase master
-  git push origin dev
 
-  npm publish
+  if [[ $VERSION =~ [beta] ]]
+  then
+    npm publish --tag beta
+  else 
+    npm publish
+  fi
 fi

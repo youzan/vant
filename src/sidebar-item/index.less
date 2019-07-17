@@ -1,0 +1,46 @@
+@import '../style/var';
+
+.van-sidebar-item {
+  display: block;
+  box-sizing: border-box;
+  padding: @sidebar-padding;
+  overflow: hidden;
+  color: @sidebar-text-color;
+  font-size: @sidebar-font-size;
+  line-height: @sidebar-line-height;
+  word-break: break-all;
+  background-color: @sidebar-background-color;
+  border-left: 3px solid transparent;
+  user-select: none;
+
+  &__text {
+    position: relative;
+  }
+
+  &:active {
+    background-color: @sidebar-active-color;
+  }
+
+  &:not(:last-child)::after {
+    border-bottom-width: 1px;
+  }
+
+  &--select {
+    color: @sidebar-selected-text-color;
+    font-weight: @sidebar-selected-font-weight;
+    border-color: @sidebar-selected-border-color;
+
+    &::after {
+      border-right-width: 1px;
+    }
+
+    &,
+    &:active {
+      background-color: @sidebar-selected-background-color;
+    }
+  }
+
+  .van-info {
+    right: 4px;
+  }
+}

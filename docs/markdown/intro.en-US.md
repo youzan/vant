@@ -1,12 +1,14 @@
-<div class="van-doc-intro">
-  <img class="van-doc-intro__logo" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
-  <h2>Vant</h2>
-  <p>Mobile UI Components built on Vue</p>
+<div class="card">
+  <div class="van-doc-intro">
+    <img class="van-doc-intro__logo" style="width: 120px; height: 120px; box-shadow: none;" src="https://img.yzcdn.cn/vant/logo.png">
+    <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
+    <p>Mobile UI Components built on Vue</p>
+  </div>
 </div>
- 
+
 ### Features
 
-* 50+ Reusable components
+* 60 Reusable components
 * 90% Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
@@ -31,10 +33,8 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 * [Feedback](https://github.com/youzan/vant/issues)
 * [Changelog](#/en-US/changelog)
-* [Weapp UI](https://github.com/youzan/zanui-weapp)
-* [React UI](https://www.youzanyun.com/zanui/zent)
 * [Vant Demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant Weapp](https://github.com/youzan/vant-weapp)
 
 ### LICENSE
 

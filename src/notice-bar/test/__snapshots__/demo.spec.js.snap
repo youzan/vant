@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div role="alert" class="van-notice-bar"><i class="van-icon van-icon-volume-o van-notice-bar__left-icon">
+        <!----></i>
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div role="alert" class="van-notice-bar">
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content van-ellipsis" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div role="alert" class="van-notice-bar van-notice-bar--wrapable">
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div role="alert" class="van-notice-bar">
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div><i class="van-icon van-icon-cross van-notice-bar__right-icon">
+        <!----></i>
+    </div>
+    <div role="alert" class="van-notice-bar">
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div><i class="van-icon van-icon-arrow van-notice-bar__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="alert" class="van-notice-bar" style="color: rgb(25, 137, 250); background: rgb(236, 249, 255);"><i class="van-icon van-icon-info-o van-notice-bar__left-icon">
+        <!----></i>
+      <div role="marquee" class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

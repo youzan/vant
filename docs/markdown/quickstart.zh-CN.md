@@ -1,4 +1,4 @@
-## 快速上手
+# 快速上手
 
 ### 脚手架
 
@@ -10,66 +10,48 @@ npm install -g @vue/cli
 
 # 创建一个项目
 vue create hello-world
-```
 
-创建完成后，可以通过命令打开图形化界面
-
-```bash
-# 打开图形化界面
+# 创建完成后，可以通过命令打开图形化界面，如下图所示
 vue ui
 ```
 
-在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
+![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
-<img width="100%" style="box-shadow: 0 1px 1px rgba(0, 0, 0, .1); border-radius: 3px;" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png" >
+在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
 ### 示例工程
 
 我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
 
-- 基于 vant 搭建单页面应用
+- 基于 vant 搭建单页面应用，配置按需引入
 - 配置 rem 适配方案
+- 配置 viewport 适配方案
 - 配置 TypeScript 工程
 - 配置自定义主题色方案
 
 ### 安装
 
-#### NPM
-
-```shell
+```bash
+# 通过 npm 安装
 npm i vant -S
-```
 
-#### YARN
-
-```shell
+# 通过 yarn 安装
 yarn add vant
 ```
 
-#### CDN
+## 引入组件
 
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css">
+### 方式一. 自动按需引入组件 (推荐)
 
-<!-- 引入组件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
-```
-
-### 引入组件
-
-#### 方式一. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
-
-`babel-plugin-import` 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
 
 ```bash
-# 安装 babel-plugin-import 插件
+# 安装插件
 npm i babel-plugin-import -D
 ```
 
 ```js
-// .babelrc 中配置
+// 在.babelrc 中添加配置
 // 注意：webpack 1 无需设置 libraryDirectory
 {
   "plugins": [
@@ -93,15 +75,15 @@ module.exports = {
 };
 ```
 
-接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为方式二中的按需引入形式
-
 ```js
-import { Button, Cell } from 'vant';
+// 接着你可以在代码中直接引入 Vant 组件
+// 插件会自动将代码转化为方式二中的按需引入形式
+import { Button } from 'vant';
 ```
 
 > 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
 
-#### 方式二. 按需引入组件
+### 方式二. 手动按需引入组件
 
 在不使用插件的情况下，可以手动引入需要的组件
 
@@ -109,8 +91,10 @@ import { Button, Cell } from 'vant';
 import Button from 'vant/lib/button';
 import 'vant/lib/button/style';
 ```
- 
-#### 方式三. 导入所有组件
+
+### 方式三. 导入所有组件
+
+Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法
 
 ```js
 import Vue from 'vue';
@@ -121,6 +105,30 @@ Vue.use(Vant);
 ```
 
 > 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+
+### 方式四. 通过 CDN 引入
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.0/lib/index.css">
+
+<!-- 引入组件 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.0/lib/vant.min.js"></script>
+
+<script>
+var Vue = window.Vue;
+var vant = window.vant;
+
+// 注册组件
+Vue.use(vant);
+
+// 调用函数式组件
+vant.Toast('提示');
+</script>
+```
+
+## 其他
 
 ### Rem 适配
 
@@ -146,3 +154,17 @@ module.exports = {
 ```
 
 > 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+
+### 在桌面端使用
+
+Vant 组件默认只适配了移动端设备，如果你需要在桌面端使用 vant，可以引入我们提供的 [@vant/touch-emulator](https://github.com/chenjiahan/vant-touch-emulator).
+
+```bash
+# 安装模块
+npm i @vant/touch-emulator -S
+```
+
+```js
+// 引入模块后自动生效
+import '@vant/touch-emulator';
+```

@@ -1,0 +1,97 @@
+@import '../style/var';
+
+.van-picker {
+  position: relative;
+  background-color: @picker-background-color;
+  user-select: none;
+  -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
+
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    height: @picker-toolbar-height;
+    line-height: @picker-toolbar-height;
+  }
+
+  &__cancel,
+  &__confirm {
+    padding: @picker-action-padding;
+    color: @picker-action-text-color;
+    font-size: @picker-action-font-size;
+
+    &:active {
+      background-color: @picker-action-active-color;
+    }
+  }
+
+  &__title {
+    max-width: 50%;
+    font-weight: 500;
+    font-size: @picker-title-font-size;
+    text-align: center;
+  }
+
+  &__columns {
+    position: relative;
+    display: flex;
+  }
+
+  &__loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .9);
+  }
+
+  &__loading .van-loading,
+  &__frame {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .9), hsla(0, 0%, 100%, .4)),
+      linear-gradient(0deg, hsla(0, 0%, 100%, .9), hsla(0, 0%, 100%, .4));
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    backface-visibility: hidden;
+    pointer-events: none;
+  }
+
+  &-column {
+    flex: 1;
+    overflow: hidden;
+    font-size: @picker-option-font-size;
+    text-align: center;
+
+    &__wrapper {
+      transition-timing-function: cubic-bezier(0.23, 1, 0.68, 1);
+    }
+
+    &__item {
+      padding: 0 5px;
+      color: @picker-option-text-color;
+
+      &--disabled {
+        opacity: @picker-option-disabled-opacity;
+      }
+    }
+  }
+}

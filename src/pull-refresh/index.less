@@ -1,0 +1,23 @@
+@import '../style/var';
+
+.van-pull-refresh {
+  overflow: hidden;
+  user-select: none;
+
+  &__track {
+    position: relative;
+  }
+
+  &__head {
+    position: absolute;
+    top: -@pull-refresh-head-height;
+    left: 0;
+    width: 100%;
+    height: @pull-refresh-head-height;
+    overflow: hidden;
+    color: @pull-refresh-head-text-color;
+    font-size: @pull-refresh-head-font-size;
+    line-height: @pull-refresh-head-height;
+    text-align: center;
+  }
+}

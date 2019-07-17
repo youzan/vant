@@ -1,0 +1,49 @@
+@import '../style/var';
+
+.van-tabbar-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: @tabbar-item-text-color;
+  font-size: @tabbar-item-font-size;
+  line-height: @tabbar-item-line-height;
+
+  &__icon {
+    position: relative;
+    margin-bottom: @tabbar-item-margin-bottom;
+    font-size: @tabbar-item-icon-size;
+
+    .van-icon {
+      display: block;
+      min-width: 1em;
+    }
+
+    &--dot {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 8px;
+        height: 8px;
+        background-color: @red;
+        border-radius: 100%;
+        content: ' ';
+      }
+    }
+
+    img {
+      display: block;
+      height: @tabbar-item-icon-size;
+    }
+  }
+
+  &--active {
+    color: @tabbar-item-active-color;
+  }
+
+  .van-info {
+    margin-top: 2px;
+  }
+}

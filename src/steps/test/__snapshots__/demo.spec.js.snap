@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-steps van-steps--horizontal">
+      <div class="van-steps__items">
+        <div class="van-hairline van-step van-step--horizontal van-step--finish">
+          <div class="van-step__title">买家下单</div>
+          <div class="van-step__circle-container"><i class="van-step__circle"></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal van-step--process">
+          <div class="van-step__title" style="color: rgb(7, 193, 96);">商家接单</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon" style="color: rgb(7, 193, 96);">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal">
+          <div class="van-step__title">买家提货</div>
+          <div class="van-step__circle-container"><i class="van-step__circle"></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal">
+          <div class="van-step__title">交易完成</div>
+          <div class="van-step__circle-container"><i class="van-step__circle"></i></div>
+          <div class="van-step__line"></div>
+        </div>
+      </div>
+    </div> <button class="van-button van-button--default van-button--normal"><span class="van-button__text">下一步</span></button>
+  </div>
+  <div>
+    <div class="van-steps van-steps--horizontal">
+      <div class="van-steps__items">
+        <div class="van-hairline van-step van-step--horizontal van-step--finish">
+          <div class="van-step__title">买家下单</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-arrow van-step__icon">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal van-step--process">
+          <div class="van-step__title" style="color: rgb(51, 136, 255);">商家接单</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-success van-step__icon" style="color: rgb(51, 136, 255);">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal">
+          <div class="van-step__title">买家提货</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-arrow van-step__icon">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--horizontal">
+          <div class="van-step__title">交易完成</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-arrow van-step__icon">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-steps van-steps--vertical">
+      <div class="van-steps__items">
+        <div class="van-hairline van-step van-step--vertical van-step--process">
+          <div class="van-step__title" style="color: rgb(7, 193, 96);">
+            <h3>【城市】物流状态1</h3>
+            <p>2016-07-12 12:40</p>
+          </div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon" style="color: rgb(7, 193, 96);">
+              <!----></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--vertical">
+          <div class="van-step__title">
+            <h3>【城市】物流状态</h3>
+            <p>2016-07-11 10:00</p>
+          </div>
+          <div class="van-step__circle-container"><i class="van-step__circle"></i></div>
+          <div class="van-step__line"></div>
+        </div>
+        <div class="van-hairline van-step van-step--vertical">
+          <div class="van-step__title">
+            <h3>快件已发货</h3>
+            <p>2016-07-10 09:30</p>
+          </div>
+          <div class="van-step__circle-container"><i class="van-step__circle"></i></div>
+          <div class="van-step__line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

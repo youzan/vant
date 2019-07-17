@@ -1,0 +1,115 @@
+@import '../style/var';
+
+.van-number-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: @number-keyboard-background-color;
+  animation-timing-function: ease-out;
+  user-select: none;
+
+  &__title {
+    position: relative;
+    height: @number-keyboard-title-height;
+    color: @number-keyboard-title-color;
+    font-size: @number-keyboard-title-font-size;
+    line-height: @number-keyboard-title-height;
+    text-align: center;
+
+    &-left {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__body {
+    box-sizing: border-box;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    padding: @number-keyboard-close-padding;
+    color: @number-keyboard-close-color;
+    font-size: @number-keyboard-close-font-size;
+
+    &:active {
+      background-color: @number-keyboard-key-active-color;
+    }
+  }
+
+  &__sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: @number-keyboard-key-height * 4;
+  }
+
+  &--custom {
+    .van-number-keyboard__body {
+      padding-right: 25%;
+    }
+  }
+
+  &--safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.van-key {
+  display: inline-block;
+  width: 100% / 3;
+  height: @number-keyboard-key-height;
+  font-size: @number-keyboard-key-font-size;
+  font-style: normal;
+  line-height: @number-keyboard-key-height;
+  text-align: center;
+  vertical-align: middle;
+
+  &::after {
+    border-width: 1px 1px 0 0;
+  }
+
+  &--middle {
+    width: 200% / 3;
+  }
+
+  &--big {
+    width: 100%;
+    height: @number-keyboard-key-height * 2;
+    line-height: @number-keyboard-key-height * 2;
+  }
+
+  &--blue,
+  &--delete {
+    font-size: @number-keyboard-delete-font-size;
+  }
+
+  &--blue {
+    color: @number-keyboard-button-text-color;
+    background-color: @number-keyboard-button-background-color;
+
+    &.van-key--active {
+      background-color: @number-keyboard-button-background-color;
+    }
+
+    &::after {
+      border-color: @number-keyboard-button-background-color;
+    }
+
+    &:active {
+      background-color: darken(@number-keyboard-button-background-color, 10%);
+    }
+  }
+
+  &--gray {
+    background-color: @number-keyboard-key-background;
+  }
+
+  &--active {
+    background-color: @number-keyboard-key-active-color;
+  }
+}

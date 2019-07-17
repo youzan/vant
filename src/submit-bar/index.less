@@ -1,0 +1,71 @@
+@import '../style/var';
+
+.van-submit-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: @submit-bar-z-index;
+  width: 100%;
+  background-color: @submit-bar-background-color;
+  user-select: none;
+
+  &__tip {
+    padding: @submit-bar-tip-padding;
+    color: @submit-bar-tip-color;
+    font-size: @submit-bar-tip-font-size;
+    line-height: @submit-bar-tip-line-height;
+    background-color: @submit-bar-tip-background-color;
+  }
+
+  &__tip-icon {
+    min-width: @submit-bar-tip-icon-size * 1.5;
+    font-size: @submit-bar-tip-icon-size;
+    vertical-align: middle;
+  }
+
+  &__tip-text {
+    vertical-align: middle;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: @submit-bar-height;
+    font-size: @submit-bar-text-font-size;
+  }
+
+  &__text {
+    flex: 1;
+    padding-right: 12px;
+    color: @submit-bar-text-color;
+    font-weight: 500;
+    text-align: right;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__suffix-label {
+    margin-left: 5px;
+  }
+
+  &__price {
+    color: @submit-bar-price-color;
+    font-size: @submit-bar-price-font-size;
+
+    &::first-letter {
+      font-size: @submit-bar-currency-font-size;
+    }
+  }
+
+  &__button {
+    width: @submit-bar-button-width;
+  }
+
+  &--safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

@@ -1,0 +1,100 @@
+@import '../style/var';
+@import "../style/mixins/hairline";
+
+.van-cell {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
+  overflow: hidden;
+  color: @cell-text-color;
+  font-size: @cell-font-size;
+  line-height: @cell-line-height;
+  background-color: @cell-background-color;
+
+  &:not(:last-child)::after {
+    .hairline-bottom(@cell-border-color, 15px);
+  }
+
+  &--borderless::after {
+    display: none;
+  }
+
+  &__label {
+    margin-top: @cell-label-margin-top;
+    color: @cell-label-color;
+    font-size: @cell-label-font-size;
+    line-height: @cell-label-line-height;
+  }
+
+  &__title,
+  &__value {
+    flex: 1;
+  }
+
+  &__value {
+    position: relative;
+    overflow: hidden;
+    color: @cell-value-color;
+    text-align: right;
+    vertical-align: middle;
+
+    &--alone {
+      color: @text-color;
+      text-align: left;
+    }
+  }
+
+  &__left-icon,
+  &__right-icon {
+    min-width: 1em;
+    height: @cell-line-height;
+    font-size: @cell-icon-size;
+    line-height: @cell-line-height;
+  }
+
+  &__left-icon {
+    margin-right: 5px;
+  }
+
+  &__right-icon {
+    margin-left: 5px;
+    color: @cell-right-icon-color;
+  }
+
+  &--clickable {
+    &:active {
+      background-color: @cell-active-color;
+    }
+  }
+
+  &--required {
+    overflow: visible;
+
+    &::before {
+      position: absolute;
+      left: 7px;
+      color: @cell-required-color;
+      font-size: @cell-font-size;
+      content: '*';
+    }
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--large {
+    padding-top: @cell-large-vertical-padding;
+    padding-bottom: @cell-large-vertical-padding;
+
+    .van-cell__title {
+      font-size: @cell-large-title-font-size;
+    }
+
+    .van-cell__label {
+      font-size: @cell-large-label-font-size;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon slot 1`] = `
+<div role="alert" class="van-notice-bar">Custom Left Icon<div role="marquee" class="van-notice-bar__wrap">
+    <div class="van-notice-bar__content" style="padding-left: 0px; animation-delay: 1s; animation-duration: 0s;">
+      Content
+    </div>
+  </div>Custom Right Icon</div>
+`;

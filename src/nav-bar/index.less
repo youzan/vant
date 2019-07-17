@@ -1,0 +1,67 @@
+@import '../style/var';
+
+.van-nav-bar {
+  position: relative;
+  height: @nav-bar-height;
+  line-height: @nav-bar-height;
+  text-align: center;
+  background-color: @nav-bar-background-color;
+  user-select: none;
+
+  .van-icon {
+    color: @nav-bar-icon-color;
+    vertical-align: middle;
+  }
+
+  &__arrow {
+    min-width: 1em;
+    font-size: @nav-bar-arrow-size;
+
+    + .van-nav-bar__text {
+      margin-left: -20px;
+      padding-left: 25px;
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__title {
+    max-width: 60%;
+    margin: 0 auto;
+    color: @nav-bar-title-text-color;
+    font-weight: 500;
+    font-size: @nav-bar-title-font-size;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+  }
+
+  &__left {
+    left: 15px;
+  }
+
+  &__right {
+    right: 15px;
+  }
+
+  &__text {
+    display: inline-block;
+    margin: 0 -15px;
+    padding: 0 15px;
+    color: @nav-bar-text-color;
+    vertical-align: middle;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}

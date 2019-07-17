@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a forbidClick toast 1`] = `
+<div class="van-toast van-toast--middle" style="z-index: 2000;" name="van-fade"><i class="van-icon van-icon-success van-toast__icon">
+    <!----></i></div>
+`;
+
+exports[`icon prop 1`] = `
+<div class="van-toast van-toast--middle" style="z-index: 2004;" name="van-fade"><i class="van-icon van-icon-star-o van-toast__icon">
+    <!----></i>
+  <div class="van-toast__text">Message</div>
+</div>
+`;
+
+exports[`show html toast 1`] = `
+<div class="van-toast van-toast--middle van-toast--text" style="z-index: 2003;" name="van-fade">
+  <div class="van-toast__text">
+    <div>Message</div>
+  </div>
+</div>
+`;
+
+exports[`show loading toast 1`] = `
+<div class="van-toast van-toast--middle" style="z-index: 2002;" name="van-fade">
+  <div class="van-loading van-loading--circular van-toast__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: white;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+  <div class="van-toast__text">Message</div>
+</div>
+`;

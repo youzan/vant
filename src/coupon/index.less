@@ -1,0 +1,101 @@
+@import '../style/var';
+@import '../style/mixins/ellipsis';
+
+.van-coupon {
+  margin: @coupon-margin;
+  overflow: hidden;
+  background-color: @coupon-background-color;
+  border-radius: @coupon-border-radius;
+  box-shadow: @coupon-box-shadow;
+
+  &:active {
+    background-color: @coupon-active-background-color;
+  }
+
+  &__content {
+    display: flex;
+    box-sizing: border-box;
+    height: @coupon-content-height;
+    padding: @coupon-content-padding;
+  }
+
+  p,
+  h2 {
+    margin: 0;
+
+    .ellipsis();
+  }
+
+  h2 {
+    height: 34px;
+    font-weight: 500;
+    line-height: 34px;
+  }
+
+  p {
+    color: @gray-dark;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &__head {
+    position: relative;
+    min-width: @coupon-head-width;
+    padding-right: 10px;
+
+    p {
+      white-space: pre-wrap;
+    }
+  }
+
+  &__amount {
+    color: @coupon-amount-color;
+    font-size: @coupon-amount-font-size;
+
+    span {
+      font-size: @coupon-currency-font-size;
+
+      &:not(:empty) {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    flex: 1;
+    border-radius: 0 @coupon-border-radius @coupon-border-radius 0;
+  }
+
+  &__name {
+    font-size: @coupon-name-font-size;
+  }
+
+  &__corner {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+  }
+
+  &__description {
+    padding: @coupon-description-padding;
+    background-color: @coupon-description-background-color;
+    border-top: 1px dashed @coupon-description-border-color;
+  }
+
+  &--disabled {
+    &:active {
+      background-color: @coupon-background-color;
+    }
+
+    .van-coupon-item__content {
+      height: @coupon-content-height - 10px;
+    }
+
+    p,
+    h2,
+    span {
+      color: @coupon-disabled-text-color;
+    }
+  }
+}

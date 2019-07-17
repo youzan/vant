@@ -8,6 +8,7 @@ export type DialogOptions = {
   className?: any;
   lockScroll?: boolean;
   messageAlign?: string;
+  closeOnPopstate?: boolean;
   cancelButtonText?: string;
   cancelButtonColor?: string;
   confirmButtonText?: string;
@@ -27,6 +28,7 @@ export interface Dialog {
   install(): void;
   setDefaultOptions(options: DialogOptions): void;
   resetDefaultOptions(): void;
+  Component: any;
 }
 
 declare module 'vue/types/vue' {

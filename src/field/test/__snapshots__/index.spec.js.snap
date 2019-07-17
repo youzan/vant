@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrow-direction prop 1`] = `
+<div class="van-cell van-cell--clickable van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div><i class="van-icon van-icon-arrow-up van-cell__right-icon">
+    <!----></i>
+</div>
+`;
+
+exports[`clearable 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
+exports[`clearable 2`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"><i class="van-icon van-icon-clear van-field__clear">
+        <!----></i></div>
+  </div>
+</div>
+`;
+
+exports[`label-class prop 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label custom-label-class"><span>Label</span></div>
+  <div class="van-cell__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
+exports[`label-width prop with unit 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label" style="width: 10rem;"><span>Label</span></div>
+  <div class="van-cell__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
+exports[`label-width prop without unit 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label" style="width: 100px;"><span>Label</span></div>
+  <div class="van-cell__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
+exports[`render input slot 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body">
+      <div class="van-field__control">Custom Input</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render label slot 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label">Custom Label</div>
+  <div class="van-cell__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
+exports[`render textarea 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><textarea class="van-field__control" style="height: auto;"></textarea></div>
+  </div>
+</div>
+`;
+
+exports[`size prop 1`] = `
+<div class="van-cell van-cell--large van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;

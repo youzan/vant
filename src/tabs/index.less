@@ -1,0 +1,149 @@
+@import '../style/var';
+
+.van-tab {
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 0; // hack for flex ellipsis
+  padding: 0 5px;
+  color: @tab-text-color;
+  font-size: @tab-font-size;
+  line-height: @tabs-line-height;
+  text-align: center;
+  cursor: pointer;
+
+  span {
+    display: block;
+  }
+
+  &--active {
+    color: @tab-active-text-color;
+    font-weight: 500;
+  }
+
+  &--disabled {
+    color: @tab-disabled-text-color;
+  }
+}
+
+.van-tabs {
+  position: relative;
+
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    overflow: hidden;
+
+    &--page-top {
+      position: fixed;
+    }
+
+    &--content-bottom {
+      top: auto;
+      bottom: 0;
+    }
+
+    &--scrollable {
+      .van-tab {
+        flex: 0 0 22%;
+
+        &--complete {
+          flex: 1 0 auto;
+        }
+      }
+
+      .van-tabs__nav {
+        overflow: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    position: relative;
+    display: flex;
+    background-color: @tabs-nav-background-color;
+    user-select: none;
+
+    &--line {
+      box-sizing: content-box;
+      height: 100%;
+      padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
+    }
+
+    &--card {
+      box-sizing: border-box;
+      height: @tabs-card-height;
+      margin: 0 15px;
+      border: 1px solid @tabs-default-color;
+      border-radius: 2px;
+
+      .van-tab {
+        color: @tabs-default-color;
+        line-height: @tabs-card-height - 2px;
+        border-right: 1px solid @tabs-default-color;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &.van-tab--active {
+          color: @white;
+          background-color: @tabs-default-color;
+        }
+
+        &--disabled {
+          color: @tab-disabled-text-color;
+        }
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    z-index: 1;
+    height: @tabs-bottom-bar-height;
+    background-color: @tabs-bottom-bar-color;
+    border-radius: @tabs-bottom-bar-height;
+  }
+
+  &__track {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: left;
+  }
+
+  &__content {
+    &--animated {
+      overflow: hidden;
+    }
+  }
+
+  &--line {
+    padding-top: @tabs-line-height;
+
+    .van-tabs__wrap {
+      height: @tabs-line-height;
+    }
+  }
+
+  &--card {
+    padding-top: @tabs-card-height;
+
+    > .van-tabs__wrap {
+      height: @tabs-card-height;
+    }
+  }
+}

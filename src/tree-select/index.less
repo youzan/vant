@@ -1,0 +1,61 @@
+@import '../style/var';
+
+.van-tree-select {
+  position: relative;
+  display: flex;
+  font-size: @tree-select-font-size;
+  user-select: none;
+
+  &__nav {
+    flex: 1;
+    overflow-y: auto;
+    background-color: @tree-select-nav-background-color;
+    -webkit-overflow-scrolling: touch;
+
+    &-item {
+      position: relative;
+      padding: @tree-select-nav-item-padding;
+      line-height: @tree-select-item-height;
+      border-left: 3px solid transparent;
+
+      &--active {
+        font-weight: bold;
+        background-color: @tree-select-nav-item-active-background-color;
+        border-color: @tree-select-nav-item-active-border-color;
+      }
+
+      &--disabled {
+        color: @tree-select-nav-item-disabled-color;
+      }
+    }
+  }
+
+  &__content {
+    flex: 2;
+    overflow-y: auto;
+    background-color: @tree-select-content-background-color;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 15px;
+    font-weight: bold;
+    line-height: @tree-select-item-height;
+
+    &--active {
+      color: @tree-select-item-active-color;
+    }
+
+    &--disabled {
+      color: @tree-select-item-disabled-color;
+    }
+  }
+
+  &__selected {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -8px;
+  }
+}

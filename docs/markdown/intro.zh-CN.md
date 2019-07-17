@@ -1,12 +1,14 @@
-<div class="van-doc-intro">
-  <img class="van-doc-intro__logo" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
-  <h2>Vant</h2>
-  <p>轻量、可靠的移动端 Vue 组件库</p>
+<div class="card">
+  <div class="van-doc-intro">
+    <img class="van-doc-intro__logo" style="width: 120px; height: 120px; box-shadow: none;" src="https://img.yzcdn.cn/vant/logo.png">
+    <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
+    <p>轻量、可靠的移动端 Vue 组件库</p>
+  </div>
 </div>
- 
+
 ### 特性
 
-* 50+ 个组件
+* 60 个组件
 * 90% 单元测试覆盖率
 * 完善的中英文文档和示例
 * 支持按需引入
@@ -32,12 +34,9 @@
 ### 链接
 
 * [意见反馈](https://github.com/youzan/vant/issues)
-* [加入我们](https://job.youzan.com)
 * [更新日志](#/zh-CN/changelog)
-* [React 组件库](https://www.youzanyun.com/zanui/zent)
-* [微信小程序组件库](https://github.com/youzan/zanui-weapp)
-* [vant-demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant 示例仓库](https://github.com/youzan/vant-demo)
+* [VantWeapp 小程序组件](https://github.com/youzan/vant-weapp)
 
 ### 开源协议
 

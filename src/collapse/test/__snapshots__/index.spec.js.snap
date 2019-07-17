@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`disable border 1`] = `
+<div class="van-collapse">
+  <div class="van-collapse-item">
+    <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
+      <div class="van-cell__title"><span>a</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div class="van-collapse-item van-hairline--top">
+    <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
+      <div class="van-cell__title"><span>b</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div class="van-collapse-item van-hairline--top">
+    <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
+      <div class="van-cell__title"><span>c</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`lazy render collapse content 1`] = `
+<div class="van-collapse van-hairline--top-bottom">
+  <div class="van-collapse-item" style="padding: 0px;">
+    <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
+      <div class="van-cell__title"><span>a</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div class="van-collapse-item van-hairline--top" style="padding: 0px;">
+    <div role="button" tabindex="0" aria-expanded="true" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+      <div class="van-cell__title"><span>b</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-collapse-item__wrapper">
+      <div class="van-collapse-item__content">content</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render collapse-item slot 1`] = `
+<div class="van-collapse van-hairline--top-bottom">
+  <div class="van-collapse-item">
+    <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">this is icon<div class="van-cell__title">this is title</div>
+      <div class="van-cell__value">this is value</div>this is right icon
+    </div>
+  </div>
+</div>
+`;

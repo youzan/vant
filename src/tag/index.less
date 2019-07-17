@@ -1,0 +1,76 @@
+@import '../style/var';
+
+.van-tag {
+  display: inline-block;
+  padding: @tag-padding;
+  color: @tag-text-color;
+  font-size: @tag-font-size;
+  line-height: normal;
+  border-radius: @tag-border-radius;
+
+  &::after {
+    border-color: currentColor;
+    border-radius: @tag-border-radius * 2;
+  }
+
+  &--default {
+    background-color: @tag-default-color;
+
+    &.van-tag--plain {
+      color: @tag-default-color;
+    }
+  }
+
+  &--danger {
+    background-color: @tag-dander-color;
+
+    &.van-tag--plain {
+      color: @tag-dander-color;
+    }
+  }
+
+  &--primary {
+    background-color: @tag-primary-color;
+
+    &.van-tag--plain {
+      color: @tag-primary-color;
+    }
+  }
+
+  &--success {
+    background-color: @tag-success-color;
+
+    &.van-tag--plain {
+      color: @tag-success-color;
+    }
+  }
+
+  &--plain {
+    background-color: @tag-plain-background-color;
+  }
+
+  &--mark {
+    padding-right: .6em;
+    border-radius: 0 .8em .8em 0;
+
+    &::after {
+      border-radius: 0 1.6em 1.6em 0;
+    }
+  }
+
+  &--round {
+    border-radius: @tag-round-border-radius;
+
+    &::after {
+      border-radius: @tag-round-border-radius * 2;
+    }
+  }
+
+  &--medium {
+    font-size: @tag-medium-font-size;
+  }
+
+  &--large {
+    font-size: @tag-large-font-size;
+  }
+}

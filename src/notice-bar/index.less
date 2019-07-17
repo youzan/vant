@@ -1,0 +1,75 @@
+@import '../style/var';
+
+.van-notice-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: @notice-bar-height;
+  padding: @notice-bar-padding;
+  color: @notice-bar-text-color;
+  font-size: @notice-bar-font-size;
+  line-height: @notice-bar-line-height;
+  background-color: @notice-bar-background-color;
+
+  &__left-icon,
+  &__right-icon {
+    min-width: @notice-bar-icon-min-width;
+    font-size: @notice-bar-icon-size;
+  }
+
+  &__right-icon {
+    text-align: right;
+  }
+
+  &__wrap {
+    position: relative;
+    flex: 1;
+    height: @notice-bar-line-height;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: absolute;
+    white-space: nowrap;
+
+    &.van-ellipsis {
+      max-width: 100%;
+    }
+  }
+
+  &__play {
+    animation: van-notice-bar-play linear both;
+
+    &--infinite {
+      animation: van-notice-bar-play-infinite linear infinite both;
+    }
+  }
+
+  &--wrapable {
+    height: auto;
+    padding: @notice-bar-wrapable-padding;
+
+    .van-notice-bar {
+      &__wrap {
+        height: auto;
+      }
+
+      &__content {
+        position: relative;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+/**
+ * Declare two same keyframes
+ * In case that some mobile browsers can continue animation when className changed
+ */
+@keyframes van-notice-bar-play {
+  to { transform: translate3d(-100%, 0, 0); }
+}
+
+@keyframes van-notice-bar-play-infinite {
+  to { transform: translate3d(-100%, 0, 0); }
+}

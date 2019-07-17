@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`disable border 1`] = `<div class="van-tabbar van-tabbar--fixed" style="z-index: 1;"></div>`;
+
+exports[`route mode 1`] = `
+<div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index: 1;">
+  <div class="van-tabbar-item van-tabbar-item--active">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+</div>
+`;
+
+exports[`route mode 2`] = `
+<div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index: 1;">
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item van-tabbar-item--active">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+</div>
+`;
+
+exports[`route mode 3`] = `
+<div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index: 1;">
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item van-tabbar-item--active">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">
+      Tab
+    </div>
+  </div>
+</div>
+`;
+
+exports[`watch tabbar value 1`] = `
+<div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index: 1;">
+  <div class="van-tabbar-item">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">Tab</div>
+  </div>
+  <div class="van-tabbar-item van-tabbar-item--active">
+    <div class="van-tabbar-item__icon">
+      <!---->
+    </div>
+    <div class="van-tabbar-item__text">Tab</div>
+  </div>
+</div>
+`;

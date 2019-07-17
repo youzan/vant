@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render icon default slot 1`] = `
+<i class="van-icon van-icon-success">Default slot
+  <!----></i>
+`;
+
+exports[`render icon with builtin icon name 1`] = `
+<i class="van-icon van-icon-success">
+  <!----></i>
+`;
+
+exports[`render icon with local image 1`] = `
+<i class="van-icon">
+  <div class="van-image van-icon__image"><img src="/assets/icon.jpg" class="van-image__img" style="object-fit: contain;">
+    <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <!----></i></div>
+  </div>
+  <!---->
+</i>
+`;
+
+exports[`render icon with url name 1`] = `
+<i class="van-icon">
+  <div class="van-image van-icon__image"><img src="https://img.yzcdn.com/icon.jpg" class="van-image__img" style="object-fit: contain;">
+    <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <!----></i></div>
+  </div>
+  <!---->
+</i>
+`;
+
+exports[`size without unit 1`] = `
+<i class="van-icon van-icon-undefined" style="font-size: 20px;">
+  <!----></i>
+`;
+
+exports[`tag prop 1`] = `
+<div class="van-icon van-icon-undefined">
+  <!---->
+</div>
+`;

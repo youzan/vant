@@ -1,4 +1,6 @@
-## 设计资源
+# 设计资源
+
+### 介绍
 
 这里提供了 Vant 现有的设计资源，更多资源还在整理中。
 
@@ -21,11 +23,11 @@
 <style>
 a.design-download {
   display: inline-block;
-  color: #fff;
   width: 100px;
+  color: #fff;
   line-height: 40px;
-  background-color: #38f;
   text-align: center;
+  background-color: #38f;
   border-radius: 3px;
 }
 

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(25, 137, 250); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(25, 137, 250);">50%</span></span></div>
+  </div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(202, 202, 202); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(202, 202, 202);">50%</span></span></div>
+  </div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(242, 130, 106); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(242, 130, 106);">橙色</span></span></div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(255, 68, 68); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(255, 68, 68);">红色</span></span></div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221);">紫色</span></span></div>
+  </div>
+</div>
+`;

@@ -70,3 +70,13 @@ export function later(delay: number = 0): Promise<void> {
 export function transitionStub(): void {
   Vue.component('transition', TransitionStub as any);
 }
+
+export function mockGetBoundingClientRect(rect: ClientRect | DOMRect): Function {
+  const originMethod = Element.prototype.getBoundingClientRect;
+
+  Element.prototype.getBoundingClientRect = <any> jest.fn(() => rect);
+
+  return function () {
+    Element.prototype.getBoundingClientRect = originMethod;
+  };
+}

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`column watch default index 1`] = `
+<div class="van-picker-column">
+  <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 100px, 0); transition-duration: 0ms; transition-property: none; line-height: 50px;">
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled van-picker-column__item--selected" style="height: 50px;">1</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  </ul>
+</div>
+`;
+
+exports[`column watch default index 2`] = `
+<div class="van-picker-column">
+  <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 50px;">
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  </ul>
+</div>
+`;
+
+exports[`render title slot 1`] = `
+<div class="van-picker">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>Custom title<div role="button" tabindex="0" class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`toolbar-position prop 1`] = `
+<div class="van-picker">
+  <!---->
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
+    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
+  </div>
+</div>
+`;

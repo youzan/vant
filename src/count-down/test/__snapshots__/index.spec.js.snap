@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`complete format prop 1`] = `<div class="van-count-down">01-05-59-59-999</div>`;
+
+exports[`disable auto-start prop 1`] = `<div class="van-count-down">100</div>`;
+
+exports[`incomplate format prop 1`] = `<div class="van-count-down">29-59-59-999</div>`;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>基础用法</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>步长设置</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>限制输入范围</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="8" aria-valuemin="5" aria-valuenow="5" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>限制输入整数</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>禁用状态</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" disabled="disabled" class="van-stepper__input"><button class="van-stepper__plus van-stepper__plus--disabled"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>异步变更</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>自定义大小</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled" style="width: 32px; height: 32px;"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="width: 40px; height: 32px;"><button class="van-stepper__plus" style="width: 32px; height: 32px;"></button></div>
+    </div>
+  </div>
+</div>
+`;

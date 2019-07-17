@@ -1,0 +1,28 @@
+@import '../style/var';
+
+.van-rate {
+  user-select: none;
+
+  &__item {
+    position: relative;
+    display: inline-block;
+
+    &:not(:last-child) {
+      padding-right: @rate-icon-gutter;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 1em;
+    font-size: @rate-icon-size;
+
+    &--half {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: .5em;
+      overflow: hidden;
+    }
+  }
+}

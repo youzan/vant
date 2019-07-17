@@ -1,0 +1,53 @@
+@import '../style/var';
+
+.van-slider {
+  position: relative;
+  background-color: @slider-inactive-background-color;
+  border-radius: 999px;
+
+  &__bar {
+    position: relative;
+    background-color: @slider-active-background-color;
+    border-radius: inherit;
+  }
+
+  &__button {
+    width: @slider-button-width;
+    height: @slider-button-height;
+    background-color: @slider-button-background-color;
+    border-radius: @slider-button-border-radius;
+    box-shadow: @slider-button-box-shadow;
+
+    &-wrapper {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+
+      /* use pseudo element to expand touch area */
+      &::after {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        content: '';
+      }
+    }
+  }
+
+  &--disabled {
+    opacity: @slider-disabled-opacity;
+  }
+
+  &--vertical {
+    display: inline-block;
+    height: 100%;
+
+    .van-slider__button-wrapper {
+      top: auto;
+      bottom: 0;
+      transform: translate3d(50%, 50%, 0);
+    }
+  }
+}

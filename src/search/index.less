@@ -1,0 +1,61 @@
+@import '../style/var';
+
+.van-search {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: @search-padding;
+
+  &__content {
+    display: flex;
+    flex: 1;
+    padding-left: 10px;
+    background-color: @search-background-color;
+    border-radius: 2px;
+
+    &--round {
+      border-radius: @search-input-height / 2;
+    }
+  }
+
+  &__label {
+    padding: @search-label-padding;
+    color: @search-label-color;
+    font-size: @search-label-font-size;
+    line-height: @search-input-height;
+  }
+
+  .van-cell {
+    flex: 1;
+    padding: 5px 10px 5px 0;
+    background-color: transparent;
+
+    &__left-icon {
+      color: @search-left-icon-color;
+    }
+  }
+
+  &--show-action {
+    padding-right: 0;
+  }
+
+  input {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  &__action {
+    padding: @search-action-padding;
+    color: @search-action-text-color;
+    font-size: @search-action-font-size;
+    line-height: @search-input-height;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-picker">
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
+        <div class="van-ellipsis van-picker__title">标题</div>
+        <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>城市</span></div>
+      <div class="van-cell__value">
+        <div class="van-field__body"><input type="text" placeholder="选择城市" readonly="readonly" class="van-field__control"></div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <div>
+    <div class="van-picker">
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">温州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column column1">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">浙江</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">福建</li>
+          </ul>
+        </div>
+        <div class="van-picker-column column2">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-loading van-loading--circular van-picker__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: rgb(25, 137, 250);"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column column1">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">浙江</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">福建</li>
+          </ul>
+        </div>
+        <div class="van-picker-column column2">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴</li>
+            <li class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州</li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
