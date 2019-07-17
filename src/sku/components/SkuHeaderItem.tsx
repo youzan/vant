@@ -1,13 +1,13 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../../utils/use/sfc';
+import { DefaultSlots } from '../../utils/types';
 
 export type SkuHeaderItemProps = {};
 
-const [sfc, bem] = use('sku-header__item');
+const [createComponent, bem] = createNamespace('sku-header__item');
 
 function SkuHeader(
   h: CreateElement,
@@ -22,4 +22,4 @@ function SkuHeader(
   );
 }
 
-export default sfc<SkuHeaderItemProps>(SkuHeader);
+export default createComponent<SkuHeaderItemProps>(SkuHeader);
