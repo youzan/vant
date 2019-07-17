@@ -123,6 +123,7 @@ export default {
 | sku | 商品sku数据 | `object` | - | - |
 | goods | 商品信息 | `object` | - | - |
 | goods-id | 商品 id | `string | number` | - | - |
+| price-tag | 显示在价格后面的标签 | `string` | - | - |
 | hide-stock | 是否显示商品剩余库存 | `boolean` | `false` | - |
 | hide-quota-text | 是否显示限购提示 | `boolean` | `false` | 1.4.8 |
 | hide-selected-text | 是否隐藏已选提示 | `boolean` | `false` | - |

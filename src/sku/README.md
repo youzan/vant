@@ -120,7 +120,8 @@ export default {
 | v-model | Whether to show sku | `boolean` | `false` |
 | sku | Sku data | `object` | - |
 | goods | Goods info | `object` | - |
-| goods-id | Goods id | `string | number` | - |
+| goods-id | Goods id | `string | `number` | - |
+| price-tag | Tag behind the price | `string` | - |
 | hide-stock | Whether to hide stock | `boolean` | `false` |
 | hide-quota-text | Whether to hide quota text | `boolean` | `false` |
 | hide-selected-text | Whether to hide selected text | `boolean` | `false` |
