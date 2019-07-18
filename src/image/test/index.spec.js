@@ -101,3 +101,13 @@ test('lazy-load error event', done => {
     }
   });
 });
+
+test('loading-placeholder prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      loadingPlaceholder: false
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

@@ -5,13 +5,17 @@ const [createComponent, bem] = createNamespace('image');
 
 export default createComponent({
   props: {
-    round: Boolean,
     src: String,
     fit: String,
     alt: String,
-    lazyLoad: Boolean,
+    round: Boolean,
     width: [Number, String],
-    height: [Number, String]
+    height: [Number, String],
+    lazyLoad: Boolean,
+    loadingPlaceholder: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -91,7 +95,7 @@ export default createComponent({
     },
 
     renderPlaceholder() {
-      if (this.loading) {
+      if (this.loading && this.loadingPlaceholder) {
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || <Icon name="photo-o" size="22" />}

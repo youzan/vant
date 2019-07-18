@@ -33,6 +33,8 @@ Vue.use(Image);
 
 ### Round
 
+Show round image, it may not works at `fit=contain` and `fit=scale-down`
+
 ```html
 <van-image
   round
@@ -67,11 +69,12 @@ Vue.use(Lazyload);
 |------|------|------|------|
 | src | Src | `string` | - | - |
 | fit | Fit mode | `string` | `fill` | - |
-| round | Round，when img width not eq height it may not works at `fit=contain` and `fit=scale-down`  | `boolean` | `false` | - |
 | alt | Alt | `string` | - | - |
 | width | Width | `string | number` | - | - |
 | height | Height | `string | number` | - | - |
+| round | Whether to be round | `boolean` | `false` | - |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
+| loading-placeholder | Whether to show loading placeholder | `boolean` | `true` |
 
 ### fit optional value
 
