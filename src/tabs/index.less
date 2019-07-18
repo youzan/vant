@@ -30,11 +30,6 @@
   position: relative;
 
   &__wrap {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 99;
     overflow: hidden;
 
     &--page-top {
@@ -132,8 +127,6 @@
   }
 
   &--line {
-    padding-top: @tabs-line-height;
-
     .van-tabs__wrap {
       height: @tabs-line-height;
     }

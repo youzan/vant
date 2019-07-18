@@ -23,7 +23,7 @@ function getTouch(el: HTMLElement, x: number, y: number) {
 
 // Trigger pointer/touch event
 export function trigger(
-  wrapper: Wrapper<Vue> | HTMLElement,
+  wrapper: Wrapper<Vue> | HTMLElement | Window,
   eventName: string,
   x: number = 0,
   y: number = 0,
@@ -79,4 +79,34 @@ export function mockGetBoundingClientRect(rect: ClientRect | DOMRect): Function 
   return function () {
     Element.prototype.getBoundingClientRect = originMethod;
   };
+}
+
+export function mockHTMLElementOffset() {
+  Object.defineProperties(HTMLElement.prototype, {
+    offsetLeft: {
+      get() {
+        return parseFloat(window.getComputedStyle(this).marginLeft) || 0;
+      }
+    },
+    offsetTop: {
+      get() {
+        return parseFloat(window.getComputedStyle(this).marginTop) || 0;
+      }
+    },
+    offsetHeight: {
+      get() {
+        return parseFloat(window.getComputedStyle(this).height) || 0;
+      }
+    },
+    offsetWidth: {
+      get() {
+        return parseFloat(window.getComputedStyle(this).width) || 0;
+      }
+    }
+  });
+}
+
+export function mockScrollTop(value: number) {
+  Object.defineProperty(window, 'scrollTop', { value, writable: true });
+  trigger(window, 'scroll');
 }

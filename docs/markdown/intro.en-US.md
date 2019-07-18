@@ -8,7 +8,7 @@
 
 ### Features
 
-* 60 Reusable components
+* 60+ Reusable components
 * 90% Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)

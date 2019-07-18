@@ -13,12 +13,16 @@ exports[`border props 1`] = `
 
 exports[`change tabs data 1`] = `
 <div class="van-tabs van-tabs--line">
-  <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+  <div>
+    <div class="van-sticky">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+          <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
+          <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
+          <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+          <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -98,12 +102,16 @@ exports[`click to switch tab 2`] = `
 
 exports[`lazy render 1`] = `
 <div class="van-tabs van-tabs--line">
-  <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+  <div>
+    <div class="van-sticky">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+          <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
+          <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
+          <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+          <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -120,12 +128,16 @@ exports[`lazy render 1`] = `
 
 exports[`lazy render 2`] = `
 <div class="van-tabs van-tabs--line">
-  <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%);"></div>
+  <div>
+    <div class="van-sticky">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+          <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
+          <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
+          <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+          <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%);"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -160,11 +172,15 @@ exports[`name prop 1`] = `
 
 exports[`render nav-left & nav-right slot 1`] = `
 <div class="van-tabs van-tabs--line">
-  <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">Nav Left<div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>Nav Right
+  <div>
+    <div class="van-sticky">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">Nav Left<div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
+          <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
+          <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+          <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>Nav Right
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-tabs__content">

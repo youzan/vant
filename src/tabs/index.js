@@ -1,24 +1,18 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo } from './utils';
-import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
-import {
-  setRootScrollTop,
-  getScrollTop,
-  getElementTop,
-  getScrollEventTarget
-} from '../utils/dom/scroll';
+import { setRootScrollTop, getElementTop } from '../utils/dom/scroll';
 import Title from './Title';
 import Content from './Content';
+import Sticky from '../sticky';
 
 const [createComponent, bem] = createNamespace('tabs');
 
 export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
-    BindEventMixin(function (bind, isBind) {
-      this.bindScrollEvent(isBind);
+    BindEventMixin(function (bind) {
       bind(window, 'resize', this.setLine, true);
     })
   ],
@@ -72,8 +66,6 @@ export default createComponent({
   },
 
   data() {
-    this.scrollEvent = false;
-
     return {
       position: '',
       currentIndex: null,
@@ -87,23 +79,6 @@ export default createComponent({
     // whether the nav is scrollable
     scrollable() {
       return this.children.length > this.swipeThreshold || !this.ellipsis;
-    },
-
-    wrapStyle() {
-      switch (this.position) {
-        case 'top':
-          return {
-            top: this.offsetTop + 'px',
-            position: 'fixed'
-          };
-        case 'bottom':
-          return {
-            top: 'auto',
-            bottom: 0
-          };
-        default:
-          return null;
-      }
     },
 
     navStyle() {
@@ -144,13 +119,9 @@ export default createComponent({
       this.setLine();
 
       // scroll to correct position
-      if (this.position === 'top' || this.position === 'bottom') {
+      if (this.stickyFixed) {
         setRootScrollTop(getElementTop(this.$el) - this.offsetTop);
       }
-    },
-
-    sticky(val) {
-      this.bindScrollEvent(val);
     }
   },
 
@@ -169,40 +140,6 @@ export default createComponent({
         this.inited = true;
         this.scrollIntoView(true);
       });
-    },
-
-    bindScrollEvent(isBind) {
-      const sticky = this.sticky && isBind;
-
-      if (this.scrollEvent !== sticky) {
-        this.scrollEvent = sticky;
-        this.scrollEl = this.scrollEl || getScrollEventTarget(this.$el);
-        (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
-        this.onScroll();
-      }
-    },
-
-    // adjust tab position
-    onScroll() {
-      const scrollTop = getScrollTop(this.scrollEl) + this.offsetTop;
-      const elTopToPageTop = getElementTop(this.$el);
-      const elBottomToPageTop =
-        elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
-
-      if (scrollTop > elBottomToPageTop) {
-        this.position = 'bottom';
-      } else if (scrollTop > elTopToPageTop) {
-        this.position = 'top';
-      } else {
-        this.position = '';
-      }
-
-      const scrollParams = {
-        scrollTop,
-        isFixed: this.position === 'top'
-      };
-
-      this.$emit('scroll', scrollParams);
     },
 
     // update nav bar style
@@ -305,6 +242,11 @@ export default createComponent({
       this.$nextTick(() => {
         this.$refs.titles[index].renderTitle(el);
       });
+    },
+
+    onScroll(params) {
+      this.stickyFixed = params.isFixed;
+      this.$emit('scroll', params);
     }
   },
 
@@ -331,23 +273,36 @@ export default createComponent({
       />
     ));
 
+    const Wrap = (
+      <div
+        ref="wrap"
+        class={[
+          bem('wrap', { scrollable }),
+          { 'van-hairline--top-bottom': type === 'line' && this.border }
+        ]}
+      >
+        <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
+          {this.slots('nav-left')}
+          {Nav}
+          {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
+          {this.slots('nav-right')}
+        </div>
+      </div>
+    );
+
     return (
       <div class={bem([type])}>
-        <div
-          ref="wrap"
-          style={this.wrapStyle}
-          class={[
-            bem('wrap', { scrollable }),
-            { 'van-hairline--top-bottom': type === 'line' && this.border }
-          ]}
-        >
-          <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
-            {this.slots('nav-left')}
-            {Nav}
-            {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
-            {this.slots('nav-right')}
-          </div>
-        </div>
+        {this.sticky ? (
+          <Sticky
+            container={this.$el}
+            offsetTop={this.offsetTop}
+            onScroll={this.onScroll}
+          >
+            {Wrap}
+          </Sticky>
+        ) : (
+          Wrap
+        )}
         <Content
           count={this.children.length}
           animated={animated}
