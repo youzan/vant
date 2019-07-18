@@ -3,9 +3,11 @@ import { on, off } from '../utils/dom/event';
 import { BindEventMixin } from './bind-event';
 
 export const CloseOnPopstateMixin = Vue.extend({
-  mixins: [BindEventMixin(function (this: any, bind, isBind) {
-    this.onPopstate(isBind);
-  })],
+  mixins: [
+    BindEventMixin(function (this: any, bind, isBind) {
+      this.handlePopstate(isBind && this.closeOnPopstate);
+    })
+  ],
 
   props: {
     closeOnPopstate: Boolean
@@ -19,12 +21,12 @@ export const CloseOnPopstateMixin = Vue.extend({
 
   watch: {
     closeOnPopstate(val: boolean) {
-      this.onPopstate(val);
+      this.handlePopstate(val);
     }
   },
 
   methods: {
-    onPopstate(bind: boolean) {
+    handlePopstate(bind: boolean) {
       /* istanbul ignore if */
       if (this.$isServer) {
         return;

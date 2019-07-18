@@ -211,7 +211,8 @@ sku: {
       multiple: '0',
       name: 'Message',
       type: 'text',
-      required: '1'
+      required: '1'，
+      placeholder: ''
     }
   ],
   hide_stock: false
@@ -278,7 +279,7 @@ messageConfig: {
   },
   // max file size (MB)
   uploadMaxSize: 3,
-  // placehold config
+  // placeholder config
   placeholderMap: {
     text: 'xxx',
     tel: 'xxx',

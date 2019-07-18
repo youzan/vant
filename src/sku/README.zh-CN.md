@@ -221,7 +221,8 @@ sku: {
       multiple: '0', // 留言类型为 text 时，是否多行文本。'1' 表示多行
       name: '留言', // 留言名称
       type: 'text', // 留言类型，可选: id_no（身份证）, text, tel, date, time, email
-      required: '1' // 是否必填 '1' 表示必填
+      required: '1', // 是否必填 '1' 表示必填
+      placeholder: '' // 可选值，占位文本
     }
   ],
   hide_stock: false // 是否隐藏剩余库存
@@ -290,7 +291,7 @@ messageConfig: {
   },
   // 最大上传体积 (MB)
   uploadMaxSize: 3,
-  // placehold配置
+  // placeholder 配置
   placeholderMap: {
     text: 'xxx',
     tel: 'xxx',

@@ -12,6 +12,13 @@ exports[`icon prop 1`] = `
 </div>
 `;
 
+exports[`icon-prefix prop 1`] = `
+<div class="van-toast van-toast--middle" style="z-index: 2005;" name="van-fade"><i class="my-icon my-icon-star-o van-toast__icon">
+    <!----></i>
+  <div class="van-toast__text">Message</div>
+</div>
+`;
+
 exports[`show html toast 1`] = `
 <div class="van-toast van-toast--middle van-toast--text" style="z-index: 2003;" name="van-fade">
   <div class="van-toast__text">

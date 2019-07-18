@@ -39,6 +39,7 @@ export type SkuMessageData = {
   required?: string;
   datetime?: string;
   multiple?: string;
+  placeholder?: string;
 };
 
 export type SkuGoodsData = {

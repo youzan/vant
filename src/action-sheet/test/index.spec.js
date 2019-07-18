@@ -137,3 +137,15 @@ test('close-on-click-action prop', () => {
 
   expect(onInput).toHaveBeenCalledWith(false);
 });
+
+test('round prop', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      round: true,
+      actions: [{ name: 'Option' }]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

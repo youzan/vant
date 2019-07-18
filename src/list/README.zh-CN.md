@@ -128,7 +128,7 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 
 ### 使用 float 布局后一直触发加载？
 
-若 List 的内容使用了 float 布局，请使用`van-clearfix`清除浮动，使得 List 能正确判断元素位置
+若 List 的内容使用了 float 布局，可以在容器上添加`van-clearfix`类名来清除浮动，使得 List 能正确判断元素位置
 
 
 ## API
