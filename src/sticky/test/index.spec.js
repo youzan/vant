@@ -1,17 +1,8 @@
-import { mount, trigger } from '../../../test/utils';
+import { mount, mockScrollTop, mockHTMLElementOffset } from '../../../test/utils';
 import Vue from 'vue';
 import Sticky from '..';
 
 Vue.use(Sticky);
-
-function mockScrollTop(value) {
-  Object.defineProperty(window, 'scrollTop', { value, writable: true });
-  trigger(window, 'scroll');
-}
-
-function mockOffsetHeight(el, value) {
-  Object.defineProperty(el, 'offsetHeight', { value, writable: true });
-}
 
 test('sticky to top', () => {
   const wrapper = mount({
@@ -22,7 +13,6 @@ test('sticky to top', () => {
     `
   });
 
-  mockOffsetHeight(wrapper.vm.$el, 10);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
@@ -38,7 +28,7 @@ test('z-index prop', () => {
     `
   });
 
-  mockOffsetHeight(wrapper.vm.$el, 10);
+  mockHTMLElementOffset();
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(0);
@@ -53,7 +43,7 @@ test('offset-top prop', () => {
     `
   });
 
-  mockOffsetHeight(wrapper.vm.$el, 10);
+  mockHTMLElementOffset();
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(0);
@@ -75,8 +65,7 @@ test('container prop', () => {
     },
     mounted() {
       this.container = this.$refs.container;
-      mockOffsetHeight(this.$refs.container, 20);
-      mockOffsetHeight(this.$refs.sticky.$el, 10);
+      mockHTMLElementOffset();
     }
   });
 
