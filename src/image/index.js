@@ -5,6 +5,7 @@ const [createComponent, bem] = createNamespace('image');
 
 export default createComponent({
   props: {
+    round: Boolean,
     src: String,
     fit: String,
     alt: String,
@@ -134,7 +135,7 @@ export default createComponent({
 
   render(h) {
     return (
-      <div class={bem()} style={this.style} onClick={this.onClick}>
+      <div class={bem({ round: this.round })} style={this.style} onClick={this.onClick}>
         {this.renderImage()}
         {this.renderPlaceholder()}
       </div>

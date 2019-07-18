@@ -2,7 +2,7 @@
 
 ### 介绍
 
-增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示
+增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示
 
 ### 引入
 
@@ -35,6 +35,19 @@ Vue.use(Image);
   width="10rem"
   height="10rem"
   fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
+### 圆形图片
+
+通过`round`属性可以设置图片变圆
+
+```html
+<van-image
+  round
+  width="10rem"
+  height="10rem"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
@@ -81,7 +94,8 @@ Vue.use(Image);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | src | 图片链接 | `string` | - | - |
-| fit | 图片填充模式 | `string` | `fill` | - |
+| fit | 图片填充模式 | `string` | `fill` | - |
+| round | 圆形图片，当图片宽高不相等时 `fit=contain` 和 `fit=scale-down` 可能无法实现「圆形」图片 | `boolean` | `false` | - |
 | alt | 替代文本 | `string` | - | - |
 | width | 宽度，默认单位为 px | `string | number` | - | - |
 | height | 高度，默认单位为 px | `string | number` | - | - |
