@@ -17,7 +17,7 @@ function buildEntry() {
 
   const importList = Components.map(name => `import ${uppercamelize(name)} from './${name}';`);
   const exportList = Components.map(name => `${uppercamelize(name)}`);
-  const intallList = exportList.filter(name => !~uninstallComponents.indexOf(uppercamelize(name)));
+  const installList = exportList.filter(name => !~uninstallComponents.indexOf(uppercamelize(name)));
   const content = `${tips}
 import { VueConstructor } from 'vue/types';
 ${importList.join('\n')}
@@ -30,7 +30,7 @@ declare global {
 
 const version = '${version}';
 const components = [
-  ${intallList.join(',\n  ')}
+  ${installList.join(',\n  ')}
 ];
 
 const install = (Vue: VueConstructor) => {
