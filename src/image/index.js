@@ -134,10 +134,8 @@ export default createComponent({
   },
 
   render(h) {
-    const round = this.round && this.fit !== 'contain' && this.fit !== 'scale-down';
-
     return (
-      <div class={ bem({ round }) } style={this.style} onClick={this.onClick}>
+      <div class={bem({ round: this.round })} style={this.style} onClick={this.onClick}>
         {this.renderImage()}
         {this.renderPlaceholder()}
       </div>
