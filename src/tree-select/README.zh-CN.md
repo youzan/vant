@@ -17,8 +17,8 @@ Vue.use(TreeSelect);
   :items="items"
   :main-active-index="mainActiveIndex"
   :active-id="activeId"
-  @navclick="onNavClick"
-  @itemclick="onItemClick"
+  @click-nav="onClickNav"
+  @click-item="onClickItem"
 />
 ```
 
@@ -34,10 +34,10 @@ export default {
     };
   },
   methods: {
-    onNavClick(index) {
+    onClickNav(index) {
       this.mainActiveIndex = index;
     },
-    onItemClick(data) {
+    onClickItem(data) {
       this.activeId = data.id;
     }
   }
@@ -59,8 +59,8 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| navclick | 左侧导航点击时，触发的事件 |  index：被点击的导航的索引 |
-| itemclick | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
+| click-nav | 点击左侧导航时触发 | index：被点击的导航的索引 |
+| click-item | 点击右侧选择项时触发 | data: 该点击项的数据 |
 
 ### Item 数据结构
 
