@@ -53,6 +53,9 @@ function TreeSelect(
             ]}
             onClick={() => {
               if (!item.disabled) {
+                emit(ctx, 'click-nav', index);
+
+                // compatible for old usage, should be removed in next major version
                 emit(ctx, 'navclick', index);
               }
             }}
@@ -74,6 +77,9 @@ function TreeSelect(
             ]}
             onClick={() => {
               if (!item.disabled) {
+                emit(ctx, 'click-item', item);
+
+                // compatible for old usage, should be removed in next major version
                 emit(ctx, 'itemclick', item);
               }
             }}
