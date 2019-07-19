@@ -121,7 +121,7 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.direction === 'horizontal') {
-        preventDefault(event);
+        preventDefault(event, true);
         this.swipeMove(this.deltaX + this.startOffset);
       }
     },
