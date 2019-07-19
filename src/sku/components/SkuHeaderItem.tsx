@@ -7,7 +7,7 @@ import { DefaultSlots } from '../../utils/types';
 
 export type SkuHeaderItemProps = {};
 
-const [createComponent, bem] = createNamespace('sku-header__item');
+const [createComponent, bem] = createNamespace('sku-header-item');
 
 function SkuHeader(
   h: CreateElement,

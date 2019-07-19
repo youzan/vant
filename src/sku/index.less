@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    height: 80%;
+    height: 70%;
     max-height: max-content; /* avoid androiod keyboard cover fields */
     overflow-y: visible;
     font-size: 14px;
@@ -54,13 +54,13 @@
       padding: 12px 36px 12px 8px;
       overflow: hidden;
     }
+  }
 
-    &__item {
-      margin-top: 8px;
-      color: @gray-dark;
-      font-size: 12px;
-      line-height: 16px;
-    }
+  &-header-item {
+    margin-top: 8px;
+    color: @gray-dark;
+    font-size: 12px;
+    line-height: 16px;
   }
 
   &__price-symbol {
@@ -132,7 +132,7 @@
       font-size: 13px;
       line-height: 16px;
       vertical-align: middle;
-      background: @sku-block-background-color;
+      background: @sku-item-background-color;
       border-radius: 4px;
 
       &-img {
@@ -227,7 +227,7 @@
       width: 64px;
       height: 64px;
       margin-right: 8px;
-      background: @sku-block-background-color;
+      background: @sku-item-background-color;
       border-radius: 2px;
 
       img {
@@ -272,7 +272,7 @@
       line-height: 14px;
     }
 
-    &__pure-trigger {
+    &__trigger {
       display: flex;
       align-items: center;
       justify-content: center;

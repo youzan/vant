@@ -36,7 +36,6 @@ export default createComponent({
           });
         })
         .catch(() => {
-          // this.paddingImg = '';
           this.uploadFail = true;
         });
     },
@@ -104,7 +103,7 @@ export default createComponent({
         )}
 
         {!this.value && !this.paddingImg && this.renderUploader(
-          <div class={bem('pure-trigger')}>
+          <div class={bem('trigger')}>
             <Icon name="photograph" size="22px" />
           </div>
         )}
