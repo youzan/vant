@@ -111,3 +111,16 @@ test('show-loading prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('show-error prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      showError: false,
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+    }
+  });
+
+  wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});

@@ -100,6 +100,7 @@ Vue.use(Image);
 | height | 高度，默认单位为`px` | `string | number` | - | - |
 | round | 是否显示为圆形 | `boolean` | `false` | - |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | - |
+| show-error | 是否展示图片加载失败提示 | `boolean` | `true` | 2.0.9 |
 | show-loading | 是否展示图片加载中提示 | `boolean` | `true` | `2.0.9` |
 
 ### 图片填充模式
