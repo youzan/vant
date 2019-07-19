@@ -12,6 +12,10 @@ export default createComponent({
     width: [Number, String],
     height: [Number, String],
     lazyLoad: Boolean,
+    showError: {
+      type: Boolean,
+      default: true
+    },
     loadingPlaceholder: {
       type: Boolean,
       default: true
@@ -103,7 +107,7 @@ export default createComponent({
         );
       }
 
-      if (this.error) {
+      if (this.error && this.showError) {
         return (
           <div class={bem('error')}>
             {this.slots('error') || <Icon name="warning-o" size="22" />}
