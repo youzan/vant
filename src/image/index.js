@@ -16,7 +16,7 @@ export default createComponent({
       type: Boolean,
       default: true
     },
-    loadingPlaceholder: {
+    showLoading: {
       type: Boolean,
       default: true
     }
@@ -99,7 +99,7 @@ export default createComponent({
     },
 
     renderPlaceholder() {
-      if (this.loading && this.loadingPlaceholder) {
+      if (this.loading && this.showLoading) {
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || <Icon name="photo-o" size="22" />}

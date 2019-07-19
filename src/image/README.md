@@ -75,7 +75,7 @@ Vue.use(Lazyload);
 | round | Whether to be round | `boolean` | `false` | - |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
 | show-error | Whether to show error placeholder | `boolean` | `true` |
-| loading-placeholder | Whether to show loading placeholder | `boolean` | `true` |
+| show-loading | Whether to show loading placeholder | `boolean` | `true` |
 
 ### fit optional value
 

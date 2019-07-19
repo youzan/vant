@@ -19,10 +19,7 @@ exports[`renders demo correctly 1`] = `
   <div><button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-star-o van-button__icon">
         <!----></i></button> <button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-star-o van-button__icon">
         <!----></i><span class="van-button__text">按钮</span></button> <button class="van-button van-button--primary van-button--normal van-button--plain"><i class="van-icon van-button__icon">
-        <div class="van-image van-icon__image"><img src="https://img.yzcdn.cn/vant/logo.png" class="van-image__img" style="object-fit: contain;">
-          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
-              <!----></i></div>
-        </div>
+        <div class="van-image van-icon__image"><img src="https://img.yzcdn.cn/vant/logo.png" class="van-image__img" style="object-fit: contain;"></div>
         <!---->
       </i><span class="van-button__text">按钮</span></button></div>
   <div><button class="van-button van-button--primary van-button--large"><span class="van-button__text">

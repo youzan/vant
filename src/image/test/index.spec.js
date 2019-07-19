@@ -102,10 +102,10 @@ test('lazy-load error event', done => {
   });
 });
 
-test('loading-placeholder prop', () => {
+test('show-loading prop', () => {
   const wrapper = mount(Image, {
     propsData: {
-      loadingPlaceholder: false
+      showLoading: false
     }
   });
 
