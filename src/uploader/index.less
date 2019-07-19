@@ -69,18 +69,28 @@
     }
   }
 
-  &__file-icon {
-    color: @gray-darker;
-    font-size: 20px;
-  }
+  &__file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: @uploader-size;
+    height: @uploader-size;
+    background-color: #f8f8f8;
 
-  &__file-name {
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 5px;
-    padding: 0 5px;
-    color: @gray-darker;
-    font-size: 12px;
-    text-align: center;
+    &-icon {
+      color: @gray-darker;
+      font-size: 20px;
+    }
+
+    &-name {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 5px;
+      padding: 0 5px;
+      color: @gray-darker;
+      font-size: 12px;
+      text-align: center;
+    }
   }
 }
