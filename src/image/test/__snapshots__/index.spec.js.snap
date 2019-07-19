@@ -25,4 +25,4 @@ exports[`load event 2`] = `
 </div>
 `;
 
-exports[`loading-placeholder prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;
+exports[`show-loading prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;

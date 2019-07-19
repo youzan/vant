@@ -44,7 +44,7 @@ function Icon(
       {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}
-      {imageIcon && <Image class={bem('image')} fit="contain" src={props.name} />}
+      {imageIcon && <Image class={bem('image')} fit="contain" src={props.name} showLoading={false} />}
       <Info info={props.info} />
     </props.tag>
   );
