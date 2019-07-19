@@ -1,5 +1,29 @@
 # 更新日志
 
+
+### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
+`2019-07-19`
+
+**Improvements**
+
+- 新增 Sticky 粘性布局组件 [\#3888](https://github.com/youzan/vant/pull/3888)
+- Grid: 优化文字换行 [\#3897](https://github.com/youzan/vant/pull/3897)
+- Toast: 优化图片图标展示 [\#3895](https://github.com/youzan/vant/pull/3895)
+- Image: 新增 round 属性 [\#3838](https://github.com/youzan/vant/pull/3838)
+- Image: 新增 show-error 属性 [\#3896](https://github.com/youzan/vant/pull/3896)
+- Image: 新增 show-loading 属性 [\#3893](https://github.com/youzan/vant/pull/3893)
+- Toast: 新增 iconPrefix 选项 [\#3872](https://github.com/youzan/vant/pull/3872)
+- Uploader: 支持预览网络图片 [\#3899](https://github.com/youzan/vant/pull/3899)
+- ActionSheet: 新增 round 属性 [\#3874](https://github.com/youzan/vant/pull/3874)
+- TreeSelect: 新增 click-nav、click-item 事件 [\#3892](https://github.com/youzan/vant/pull/3892)
+
+**Bug Fixes**
+
+- 修复 SwipeCell 与 Swipe 嵌套时无法使用的问题 [\#3898](https://github.com/youzan/vant/pull/3898)
+- 修复 Dialog closeOnPopstate 无法被禁用的问题 [\#3868](https://github.com/youzan/vant/pull/3868)
+- 修复 DropdownMenu toggle 方法无法打开菜单的问题 [\#3876](https://github.com/youzan/vant/pull/3876)
+
+
 ### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
 `2019-07-16`
 

@@ -1,5 +1,28 @@
 # Changelog
 
+### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
+`2019-07-19`
+
+**Improvements**
+
+- add Sticky component [\#3888](https://github.com/youzan/vant/pull/3888)
+- Grid: optimize word break [\#3897](https://github.com/youzan/vant/pull/3897)
+- Image: add round prop [\#3838](https://github.com/youzan/vant/pull/3838)
+- Image: add show-error prop [\#3896](https://github.com/youzan/vant/pull/3896)
+- Image: add show-loading prop [\#3893](https://github.com/youzan/vant/pull/3893)
+- Toast: add iconPrefix option [\#3872](https://github.com/youzan/vant/pull/3872)
+- Toast: optimize image icon display [\#3895](https://github.com/youzan/vant/pull/3895)
+- TreeSelect: add click-nav、click-item event [\#3892](https://github.com/youzan/vant/pull/3892)
+- ActionSheet: add round prop [\#3874](https://github.com/youzan/vant/pull/3874)
+- Uploader: support preview network image [\#3899](https://github.com/youzan/vant/pull/3899)
+
+**Bug Fixes**
+
+- fix Dialog closeOnPopstate can't be disabled [\#3868](https://github.com/youzan/vant/pull/3868)
+- fix DropdownMenu cann't use toggle to open item [\#3876](https://github.com/youzan/vant/pull/3876)
+- fix SwipeCell should stop event propagation [\#3898](https://github.com/youzan/vant/pull/3898)
+
+
 ### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
 `2019-07-16`
 
