@@ -41,7 +41,9 @@ export default {
 export default {
   data() {
     return {
-      fileList: []
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' }
+      ]
     }
   }
 };

@@ -6,7 +6,7 @@ window.File = function () {
 };
 
 const mockFileDataUrl = 'data:image/test';
-const mockFile = new File([], '/Users');
+const mockFile = new File([], 'test.jpg');
 const file = { target: { files: [mockFile] } };
 const multiFile = { target: { files: [mockFile, mockFile] } };
 
@@ -164,7 +164,11 @@ it('render upload-text', () => {
 it('render preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: []
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
+        { url: 'https://img.yzcdn.cn/vant/test.pdf' },
+        { file: { name: 'test.pdf' } }
+      ]
     },
     listeners: {
       input(fileList) {
@@ -262,7 +266,10 @@ it('delete preview image', async () => {
 it('click to preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: [],
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
+        { url: 'https://img.yzcdn.cn/vant/test.pdf' }
+      ],
       previewSize: 30
     },
     listeners: {
@@ -278,25 +285,6 @@ it('click to preview image', async () => {
   wrapper.find('.van-image').trigger('click');
 
   const imagePreviewNode = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode).toBeTruthy();
+  expect(imagePreviewNode).toMatchSnapshot();
   imagePreviewNode.remove();
-});
-
-it('preview not image file', async () => {
-  const wrapper = mount(Uploader, {
-    propsData: {
-      fileList: [{
-        content: 'data:application',
-        file: {
-          name: 'test.md'
-        }
-      }]
-    }
-  });
-
-  wrapper.find('img').trigger('error');
-  wrapper.find('.van-image').trigger('click');
-
-  expect(document.querySelector('.van-image-preview')).toBeFalsy();
-  expect(wrapper).toMatchSnapshot();
 });
