@@ -26,3 +26,5 @@ exports[`load event 2`] = `
 `;
 
 exports[`loading-placeholder prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;
+
+exports[`show-error prop 1`] = `<div class="van-image"></div>`;
