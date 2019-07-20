@@ -38,7 +38,7 @@ Vue.use(Divider);
 ### Custom Style
 
 ```html
-<van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 15px' }">
+<van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }">
   Text
 </van-divider>
 ```

@@ -140,7 +140,7 @@ export default {
   background-color: @white;
 
   .van-row {
-    padding: 0 15px;
+    padding: 0 @padding-md;
   }
 
   .van-col {

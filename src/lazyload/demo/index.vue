@@ -60,19 +60,22 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-lazyload {
-  padding: 15px;
+  padding-right: @padding-md;
+  padding-left: @padding-md;
 
   img,
   div[lazy] {
     box-sizing: border-box;
     width: 100%;
     height: 250px;
-    margin: 10px 0 0;
-    padding: 15px;
+    margin-bottom: @padding-md;
+    padding: @padding-md;
     background-color: white;
     background-repeat: no-repeat;
-    background-position: 15px;
+    background-position: @padding-md;
     background-size: 315px 250px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }

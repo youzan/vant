@@ -90,7 +90,7 @@ export default {
 .demo-style {
   .van-ellipsis {
     max-width: 250px;
-    margin-left: 15px;
+    margin-left: @padding-md;
     font-size: 13px;
   }
 

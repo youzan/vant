@@ -84,9 +84,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-switch {
   .van-switch {
-    margin: 0 15px;
+    margin: 0 @padding-md;
   }
 }
 </style>

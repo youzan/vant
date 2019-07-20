@@ -127,7 +127,7 @@ export default {
   background-color: @white;
 
   .van-doc-demo-block > .van-button {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 
   img {

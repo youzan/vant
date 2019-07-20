@@ -2,11 +2,11 @@
 
 .van-skeleton {
   display: flex;
-  padding: 0 15px;
+  padding: 0 @padding-md;
 
   &__avatar {
     flex-shrink: 0;
-    margin-right: 15px;
+    margin-right: @padding-md;
     background-color: @skeleton-avatar-background-color;
 
     &--round {
@@ -19,7 +19,7 @@
   }
 
   &__avatar + &__content {
-    padding-top: 8px;
+    padding-top: @padding-xs;
   }
 
   &__row,

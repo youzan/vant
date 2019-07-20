@@ -90,12 +90,14 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-rate {
   padding-bottom: 20px;
   background-color: #fff;
 
   .van-rate {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>

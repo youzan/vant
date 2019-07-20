@@ -75,16 +75,18 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-circle {
   .van-circle {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 
   .van-button {
-    margin: 15px 0 0 10px;
+    margin: @padding-md 0 0 10px;
 
     &:first-of-type {
-      margin-left: 15px;
+      margin-left: @padding-md;
     }
   }
 }

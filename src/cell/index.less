@@ -14,7 +14,7 @@
   background-color: @cell-background-color;
 
   &:not(:last-child)::after {
-    .hairline-bottom(@cell-border-color, 15px);
+    .hairline-bottom(@cell-border-color, @padding-md);
   }
 
   &--borderless::after {
@@ -74,7 +74,7 @@
 
     &::before {
       position: absolute;
-      left: 7px;
+      left: @padding-xs;
       color: @cell-required-color;
       font-size: @cell-font-size;
       content: '*';

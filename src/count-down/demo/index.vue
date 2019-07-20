@@ -127,7 +127,7 @@ export default {
   background-color: @white;
 
   .van-count-down {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 
   .item {

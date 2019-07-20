@@ -62,6 +62,8 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-pagination {
   .van-pagination {
     width: 100%;
@@ -69,7 +71,7 @@ export default {
   }
 
   .van-doc-demo-block {
-    padding: 0 15px;
+    padding: 0 @padding-md;
   }
 
   .van-doc-demo-block__title {

@@ -87,11 +87,13 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-uploader {
-  background-color: #fff;
+  background-color: @white;
 
   .van-uploader {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>

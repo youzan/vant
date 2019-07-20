@@ -57,7 +57,7 @@ export default {
   }
 
   p {
-    margin: 10px 0 0 15px;
+    margin: @padding-xs 0 0 @padding-md;
   }
 }
 </style>

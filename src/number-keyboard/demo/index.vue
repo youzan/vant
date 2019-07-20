@@ -104,9 +104,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-number-keyboard {
   .van-button {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>
