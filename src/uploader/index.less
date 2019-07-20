@@ -33,7 +33,7 @@
     box-sizing: border-box;
     width: @uploader-size;
     height: @uploader-size;
-    margin: 0 10px 10px 0;
+    margin: 0 @padding-xs @padding-xs 0;
     background-color: @uploader-upload-background-color;
     border: 1px dashed @uploader-upload-border-color;
 
@@ -43,7 +43,7 @@
     }
 
     &-text {
-      margin-top: 10px;
+      margin-top: @padding-xs;
       color: @uploader-text-color;
       font-size: @uploader-text-font-size;
     }
@@ -51,7 +51,7 @@
 
   &__preview {
     position: relative;
-    margin: 0 10px 10px 0;
+    margin: 0 @padding-xs @padding-xs 0;
 
     &-image {
       display: block;
@@ -86,7 +86,7 @@
     &-name {
       box-sizing: border-box;
       width: 100%;
-      margin-top: 5px;
+      margin-top: @padding-xs;
       padding: 0 5px;
       color: @uploader-file-name-text-color;
       font-size: @uploader-file-name-font-size;

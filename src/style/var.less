@@ -18,11 +18,14 @@
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
-@padding-xl: 32px;
-@padding-lg: 24px;
-@padding-md: 16px;
-@padding-sm: 12px;
-@padding-xs: 8px;
+
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 
 // ActionSheet
 @action-sheet-max-height: 90%;
@@ -37,13 +40,13 @@
 @action-sheet-subname-font-size: 12px;
 @action-sheet-close-icon-size: 18px;
 @action-sheet-close-icon-color: @gray-dark;
-@action-sheet-close-icon-padding: 0 @padding-md;
+@action-sheet-close-icon-padding: 0 @padding-sm;
 @action-sheet-cancel-padding-top: @padding-xs;
 @action-sheet-cancel-padding-color: @background-color;
 
 // AddressEdit
 @address-edit-buttons-padding: @padding-xl @padding-md;
-@address-edit-button-margin-bottom: @padding-md;
+@address-edit-button-margin-bottom: @padding-sm;
 @address-edit-detail-finish-color: @blue;
 @address-edit-detail-fnish-font-size: 12px;
 
@@ -167,7 +170,7 @@
 
 // ContactEdit
 @contact-edit-buttons-padding: @padding-xl @padding-md;
-@contact-edit-button-margin-bottom: @padding-md;
+@contact-edit-button-margin-bottom: @padding-sm;
 @contact-edit-field-label-width: 65px;
 
 // ContactList
