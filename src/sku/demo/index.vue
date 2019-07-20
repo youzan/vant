@@ -226,7 +226,7 @@ export default {
   background-color: @white;
 
   .sku-container {
-    padding: 0 15px;
+    padding: 0 @padding-md;
   }
 }
 </style>

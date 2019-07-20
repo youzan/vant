@@ -180,20 +180,22 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-button {
   .van-button {
     &--large {
-      margin-bottom: 15px;
+      margin-bottom: @padding-md;
     }
 
     &--small,
     &--normal:not(:last-child) {
-      margin-right: 10px;
+      margin-right: @padding-md;
     }
   }
 
   .van-doc-demo-block {
-    padding: 0 15px;
+    padding: 0 @padding-md;
   }
 
   .van-doc-demo-block__title {
@@ -201,7 +203,7 @@ export default {
   }
 
   &-row {
-    margin-bottom: 10px;
+    margin-bottom: @padding-sm;
   }
 }
 </style>

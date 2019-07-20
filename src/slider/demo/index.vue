@@ -118,7 +118,7 @@ export default {
   user-select: none;
 
   .van-slider {
-    margin: 0 15px 30px;
+    margin: 0 @padding-md @padding-xl;
   }
 
   .custom-button {

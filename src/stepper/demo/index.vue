@@ -115,11 +115,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-.demo-stepper {
-  .van-stepper {
-    margin-left: 15px;
-  }
-}
-</style>

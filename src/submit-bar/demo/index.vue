@@ -102,7 +102,7 @@ export default {
   }
 
   .van-checkbox {
-    margin-left: 15px;
+    margin-left: @padding-sm;
   }
 }
 </style>

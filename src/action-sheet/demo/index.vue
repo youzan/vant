@@ -134,7 +134,7 @@ export default {
   background-color: @white;
 
   .van-button {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 
   p {
