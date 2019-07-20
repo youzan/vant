@@ -20,10 +20,10 @@
     height: @action-sheet-item-height;
 
     &--disabled {
-      color: @gray;
+      color: @action-sheet-item-disabled-text-color;
 
       &:active {
-        background-color: @white;
+        background-color: @action-sheet-item-background;
       }
     }
   }
@@ -36,8 +36,8 @@
 
   &__cancel::before {
     display: block;
-    height: 10px;
-    background-color: @background-color;
+    height: @action-sheet-cancel-padding-top;
+    background-color: @action-sheet-cancel-padding-color;
     content: ' ';
   }
 
@@ -51,7 +51,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0 15px;
+    padding: @action-sheet-close-icon-padding;
     color: @action-sheet-close-icon-color;
     font-size: @action-sheet-close-icon-size;
     line-height: inherit;
