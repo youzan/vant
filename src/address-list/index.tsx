@@ -42,6 +42,10 @@ function AddressList(
         switchable={props.switchable}
         onSelect={() => {
           emit(ctx, disabled ? 'select-disabled' : 'select', item, index);
+
+          if (!disabled) {
+            emit(ctx, 'input', item.id);
+          }
         }}
         onEdit={() => {
           emit(ctx, disabled ? 'edit-disabled' : 'edit', item, index);
