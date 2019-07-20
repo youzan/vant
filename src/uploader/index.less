@@ -76,11 +76,11 @@
     justify-content: center;
     width: @uploader-size;
     height: @uploader-size;
-    background-color: #f8f8f8;
+    background-color: @uploader-file-background-color;
 
     &-icon {
-      color: @gray-darker;
-      font-size: 20px;
+      color: @uploader-file-icon-color;
+      font-size: @uploader-file-icon-size;
     }
 
     &-name {
@@ -88,8 +88,8 @@
       width: 100%;
       margin-top: 5px;
       padding: 0 5px;
-      color: @gray-darker;
-      font-size: 12px;
+      color: @uploader-file-name-text-color;
+      font-size: @uploader-file-name-font-size;
       text-align: center;
     }
   }
