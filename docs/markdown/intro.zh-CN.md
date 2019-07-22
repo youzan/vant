@@ -37,9 +37,9 @@
 
 我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
 
-<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" style="width: 320px; box-shadow: none;">
+<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" style="width: 320px; height: 303px; box-shadow: none;">
 
-我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
+我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
 
 - <a target="_blank" href="https://job.youzan.com/apply/youzan/3750#/job/c1c4f154-be88-4ebf-95bd-76d4ce2d4faf?_k=tqcvo9">职位详情</a>（Base: 杭州/深圳）
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
