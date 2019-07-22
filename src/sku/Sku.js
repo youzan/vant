@@ -4,6 +4,7 @@ import Popup from '../popup';
 import Toast from '../toast';
 import ImagePreview from '../image-preview';
 import SkuHeader from './components/SkuHeader';
+import SkuHeaderItem from './components/SkuHeaderItem';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
 import SkuStepper from './components/SkuStepper';
@@ -19,6 +20,7 @@ const { QUOTA_LIMIT } = LIMIT_TYPE;
 export default createComponent({
   props: {
     sku: Object,
+    priceTag: String,
     goods: Object,
     value: Boolean,
     buyText: String,
@@ -28,6 +30,7 @@ export default createComponent({
     stepperTitle: String,
     getContainer: Function,
     hideQuotaText: Boolean,
+    hideSelectedText: Boolean,
     resetStepperOnHide: Boolean,
     customSkuValidator: Function,
     closeOnClickOverlay: Boolean,
@@ -83,10 +86,8 @@ export default createComponent({
     show(val) {
       this.$emit('input', val);
       if (!val) {
-        const selectedSkuValues = getSelectedSkuValues(this.sku.tree, this.selectedSku);
-
         this.$emit('sku-close', {
-          selectedSkuValues,
+          selectedSkuValues: this.selectedSkuValues,
           selectedNum: this.selectedNum,
           selectedSkuComb: this.selectedSkuComb
         });
@@ -114,7 +115,6 @@ export default createComponent({
     skuGroupClass() {
       return [
         'van-sku-group-container',
-        'van-hairline--bottom',
         {
           'van-sku-group-container--hide-soldout': !this.showSoldoutSku
         }
@@ -160,12 +160,23 @@ export default createComponent({
       return null;
     },
 
+    selectedSkuValues() {
+      return getSelectedSkuValues(this.skuTree, this.selectedSku);
+    },
+
     price() {
       if (this.selectedSkuComb) {
         return (this.selectedSkuComb.price / 100).toFixed(2);
       }
       // sku.price是一个格式化好的价格区间
       return this.sku.price;
+    },
+
+    originPrice() {
+      if (this.selectedSkuComb && this.selectedSkuComb.origin_price) {
+        return (this.selectedSkuComb.origin_price / 100).toFixed(2);
+      }
+      return this.sku.origin_price;
     },
 
     skuTree() {
@@ -191,6 +202,53 @@ export default createComponent({
       }
 
       return imageList;
+    },
+
+    stock() {
+      const { stockNum } = this.customStepperConfig;
+      if (stockNum !== undefined) {
+        return stockNum;
+      }
+      if (this.selectedSkuComb) {
+        return this.selectedSkuComb.stock_num;
+      }
+      return this.sku.stock_num;
+    },
+
+    stockText() {
+      const { stockFormatter } = this.customStepperConfig;
+      if (stockFormatter) return stockFormatter(this.stock);
+
+      return `剩余 ${this.stock}件`;
+    },
+
+    quotaText() {
+      const { quotaText, hideQuotaText } = this.customStepperConfig;
+
+      if (hideQuotaText) return '';
+
+      let text = '';
+
+      if (quotaText) {
+        text = quotaText;
+      } else if (this.quota > 0) {
+        text = `每人限购${this.quota}件`;
+      }
+
+      return text;
+    },
+
+    selectedText() {
+      if (this.selectedSkuComb) {
+        return `已选 ${this.selectedSkuValues.map(item => item.name).join('；')}`;
+      }
+
+      const unselected = this.skuTree
+        .filter(item => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID)
+        .map(item => item.k)
+        .join('；');
+
+      return `选择 ${unselected}`;
     }
   },
 
@@ -378,6 +436,7 @@ export default createComponent({
       sku,
       goods,
       price,
+      originPrice,
       skuEventBus,
       selectedSku,
       selectedNum,
@@ -388,6 +447,7 @@ export default createComponent({
 
     const slotsProps = {
       price,
+      originPrice,
       selectedNum,
       skuEventBus,
       selectedSku,
@@ -398,9 +458,25 @@ export default createComponent({
     const Header = slots('sku-header') || (
       <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>
         {slots('sku-header-price') || (
-          <div class="van-sku__goods-price">
-            <span class="van-sku__price-symbol">￥</span>
-            <span class="van-sku__price-num">{price}</span>
+          <div>
+            <div class="van-sku__goods-price">
+              <span class="van-sku__price-symbol">￥</span>
+              <span class="van-sku__price-num">{price}</span>
+              {this.priceTag && <span class="van-sku__price-tag">{this.priceTag}</span>}
+            </div>
+            {originPrice && (
+              <SkuHeaderItem>原价 ￥{originPrice}</SkuHeaderItem>
+            )}
+            {!this.hideStock && (
+              <SkuHeaderItem>
+                <span class="van-sku__stock">{this.stockText}</span>
+                {!hideQuotaText && this.quotaText && <span class="van-sku__quota">({this.quotaText})</span>}
+              </SkuHeaderItem>
+            )}
+            {this.hasSku && !this.hideSelectedText && (
+              <SkuHeaderItem>{this.selectedText}</SkuHeaderItem>
+            )}
+            {slots('sku-header-extra')}
           </div>
         )}
       </SkuHeader>
@@ -429,16 +505,14 @@ export default createComponent({
     const Stepper = slots('sku-stepper') || (
       <SkuStepper
         ref="skuStepper"
+        stock={this.stock}
         quota={this.quota}
-        hideStock={this.hideStock}
         quotaUsed={this.quotaUsed}
         skuEventBus={skuEventBus}
         selectedNum={selectedNum}
         selectedSku={selectedSku}
         stepperTitle={stepperTitle}
         skuStockNum={sku.stock_num}
-        hideQuotaText={hideQuotaText}
-        selectedSkuComb={selectedSkuComb}
         disableStepperInput={this.disableStepperInput}
         customStepperConfig={this.customStepperConfig}
         onChange={event => {
@@ -472,6 +546,7 @@ export default createComponent({
         class="van-sku-container"
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
+        round
       >
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>

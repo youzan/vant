@@ -18,20 +18,16 @@ export default createComponent({
   data() {
     return {
       // 正在上传的图片 base64
-      paddingImg: ''
+      paddingImg: '',
+      uploadFail: false
     };
-  },
-
-  computed: {
-    imgList() {
-      return this.value && !this.paddingImg ? [this.value] : [];
-    }
   },
 
   methods: {
     afterReadFile(file) {
       // 上传文件
       this.paddingImg = file.content;
+      this.uploadFail = false;
       this.uploadImg(file.file, file.content)
         .then(img => {
           this.$emit('input', img);
@@ -40,23 +36,53 @@ export default createComponent({
           });
         })
         .catch(() => {
-          this.paddingImg = '';
+          this.uploadFail = true;
         });
     },
 
     onOversize() {
       this.$toast(`最大可上传图片为${this.maxSize}MB，请尝试压缩图片尺寸`);
+    },
+
+    renderUploader(content, disabled = false) {
+      return (
+        <Uploader
+          class={bem('uploader')}
+          disabled={disabled}
+          afterRead={this.afterReadFile}
+          maxSize={this.maxSize * 1024 * 1024}
+          onOversize={this.onOversize}
+        >
+          <div class={bem('img')}>
+            {content}
+          </div>
+        </Uploader>
+      );
+    },
+
+    renderMask() {
+      return (
+        <div class={bem('mask')}>
+          {this.uploadFail
+            ? (
+              [
+                <Icon name="warning-o" size="20px" />,
+                <div class={bem('warn-text')}>上传失败<br />重新上传</div>
+              ]
+            ) : (
+              <Loading type="spinner" size="20px" color="white" />
+            )}
+        </div>
+      );
     }
   },
 
   render(h) {
-    const { imgList, paddingImg } = this;
-
-    const ImageList = (paddingImg || imgList.length > 0) && (
-      <div class="van-clearfix">
-        {imgList.map(img => (
-          <div class={bem('img')}>
-            <img src={img} />
+    return (
+      <div class={bem()}>
+        {this.value && this.renderUploader(
+          [
+            <img src={this.value} />,
             <Icon
               name="clear"
               class={bem('delete')}
@@ -64,39 +90,23 @@ export default createComponent({
                 this.$emit('input', '');
               }}
             />
-          </div>
-        ))}
-        {paddingImg && (
-          <div class={bem('img')}>
-            <img src={paddingImg} />
-            <Loading type="spinner" class={bem('uploading')} />
+          ],
+          true
+        )}
+
+        {this.paddingImg && this.renderUploader(
+          [
+            <img src={this.paddingImg} />,
+            this.renderMask()
+          ],
+          !this.uploadFail
+        )}
+
+        {!this.value && !this.paddingImg && this.renderUploader(
+          <div class={bem('trigger')}>
+            <Icon name="photograph" size="22px" />
           </div>
         )}
-      </div>
-    );
-
-    return (
-      <div class={bem()}>
-        <Uploader
-          disabled={!!paddingImg}
-          afterRead={this.afterReadFile}
-          maxSize={this.maxSize * 1024 * 1024}
-          onOversize={this.onOversize}
-        >
-          <div class={bem('header')}>
-            {paddingImg ? (
-              <div>正在上传...</div>
-            ) : (
-              [
-                <Icon name="photograph" />,
-                <span class="label">{this.value ? '重拍' : '拍照'} 或 </span>,
-                <Icon name="photo" />,
-                <span class="label">{this.value ? '重新选择照片' : '选择照片'}</span>
-              ]
-            )}
-          </div>
-        </Uploader>
-        {ImageList}
       </div>
     );
   }

@@ -19,8 +19,8 @@ function SkuRow(
   ctx: RenderContext<SkuRowProps>
 ) {
   return (
-    <div class={bem()} {...inherit(ctx)}>
-      <div class={bem('title')}>{props.skuRow.k}：</div>
+    <div class={[bem(), 'van-hairline--bottom']} {...inherit(ctx)}>
+      <div class={bem('title')}>{props.skuRow.k}</div>
       {slots.default && slots.default()}
     </div>
   );

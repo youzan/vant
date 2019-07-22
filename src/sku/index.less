@@ -3,6 +3,10 @@
 
 .van-sku {
   &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 70%;
     max-height: max-content; /* avoid androiod keyboard cover fields */
     overflow-y: visible;
     font-size: 14px;
@@ -10,6 +14,7 @@
   }
 
   &-body {
+    flex: 1 1 auto;
     max-height: 350px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -26,11 +31,11 @@
     &__img-wrap {
       position: relative;
       float: left;
-      width: 80px;
-      height: 80px;
-      margin-top: -10px;
+      width: 96px;
+      height: 96px;
+      margin: 12px 0 12px;
       background: @background-color;
-      border-radius: 2px;
+      border-radius: 4px;
 
       img {
         position: absolute;
@@ -45,37 +50,51 @@
     }
 
     &__goods-info {
-      box-sizing: border-box;
-      min-height: 82px;
-      padding: 10px 60px 10px 10px;
+      min-height: 96px;
+      padding: 12px 36px 12px 8px;
       overflow: hidden;
     }
   }
 
-  &__goods-name {
+  &-header-item {
+    margin-top: 8px;
+    color: @gray-dark;
     font-size: 12px;
+    line-height: 16px;
   }
 
   &__price-symbol {
-    vertical-align: middle;
+    font-size: 16px;
+    vertical-align: text-bottom;
   }
 
   &__price-num {
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 22px;
     vertical-align: middle;
   }
 
   &__goods-price {
-    margin-top: 10px;
     color: @red;
+  }
+
+  &__price-tag {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 0 5px;
+    color: @red;
+    font-size: 12px;
+    line-height: 16px;
     vertical-align: middle;
+    background-color: @sku-price-tag-color;
+    border-radius: 8px;
   }
 
   &__close-icon {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 15px;
-    color: @gray-dark;
+    color: @sku-icon-gray-color;
     font-size: 20px;
     text-align: center;
   }
@@ -93,40 +112,53 @@
 
   /* sku row */
   &-row {
-    margin: 0 15px 10px 0;
+    margin: 0 3px 12px 0;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     &__title {
-      padding-bottom: 10px;
+      padding-bottom: 12px;
     }
 
     &__item {
-      display: inline-block;
-      box-sizing: border-box;
-      min-width: 52px;
-      height: 28px;
-      margin: 0 10px 10px 0;
-      padding: 5px 9px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      margin: 0 12px 12px 0;
       color: @text-color;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 16px;
-      text-align: center;
-      border: 1px solid @gray-dark;
-      border-radius: 3px;
+      vertical-align: middle;
+      background: @sku-item-background-color;
+      border-radius: 4px;
+
+      &-img {
+        width: 24px;
+        height: 24px;
+        margin: 4px 0 4px 4px;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+
+      &-name {
+        padding: 8px;
+      }
 
       &--active {
-        color: @white;
-        background: @red;
-        border-color: @red;
+        color: @red;
+        background: @sku-item-active-background-color;
       }
 
       &--disabled {
         color: @gray;
         background: @active-color;
-        border-color: @border-color;
+
+        .van-sku-row__item-img {
+          opacity: .3;
+        }
       }
     }
   }
@@ -176,6 +208,7 @@
       }
 
       .van-cell__value {
+        overflow: visible;
         text-align: left;
       }
     }
@@ -184,35 +217,23 @@
   &-img-uploader {
     display: inline-block;
 
-    &__header {
-      padding: 0 10px;
-      color: @text-color;
-      font-size: 12px;
-      line-height: 24px;
-      border: 1px solid @border-color;
-      border-radius: 3px;
-
-      .van-icon {
-        top: 3px;
-        margin-right: 5px;
-        font-size: 14px;
-      }
+    &__uploader {
+      vertical-align: middle;
     }
 
     &__img {
       position: relative;
       float: left;
-      width: 60px;
-      height: 60px;
-      margin: 10px 10px 0 0;
-      border: 1px solid @border-color;
+      width: 64px;
+      height: 64px;
+      margin-right: 8px;
+      background: @sku-item-background-color;
+      border-radius: 2px;
 
       img {
-        position: relative;
-        top: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
 
@@ -222,7 +243,8 @@
       right: -14px;
       z-index: 1;
       padding: 6px;
-      color: @red;
+      color: @sku-upload-mask-color;
+      opacity: .8;
 
       &::before {
         background-color: @white;
@@ -230,15 +252,33 @@
       }
     }
 
-    &__uploading {
+    &__mask {
       position: absolute;
       top: 0;
-      right: 0;
-      bottom: 0;
       left: 0;
-      width: 20px;
-      height: 20px;
-      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: white;
+      background: @sku-upload-mask-color;
+    }
+
+    &__warn-text {
+      margin-top: 6px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &__trigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: @sku-icon-gray-color;
     }
   }
 

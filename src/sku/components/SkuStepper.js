@@ -7,14 +7,11 @@ const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default createComponent({
   props: {
-    hideStock: Boolean,
-    selectedSku: Object,
+    stock: Number,
     skuEventBus: Object,
     skuStockNum: Number,
     selectedNum: Number,
     stepperTitle: String,
-    hideQuotaText: Boolean,
-    selectedSkuComb: Object,
     disableStepperInput: Boolean,
     customStepperConfig: Object,
     quota: {
@@ -48,40 +45,6 @@ export default createComponent({
   },
 
   computed: {
-    stock() {
-      const { stockNum } = this.customStepperConfig;
-      if (stockNum !== undefined) {
-        return stockNum;
-      }
-      if (this.selectedSkuComb) {
-        return this.selectedSkuComb.stock_num;
-      }
-      return this.skuStockNum;
-    },
-
-    stockText() {
-      const { stockFormatter } = this.customStepperConfig;
-      if (stockFormatter) return stockFormatter(this.stock);
-
-      return `剩余${this.stock}件`;
-    },
-
-    quotaText() {
-      const { quotaText, hideQuotaText } = this.customStepperConfig;
-
-      if (hideQuotaText) return '';
-
-      let text = '';
-
-      if (quotaText) {
-        text = quotaText;
-      } else if (this.quota > 0) {
-        text = `每人限购${this.quota}件`;
-      }
-
-      return text;
-    },
-
     stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;
       let limit;
@@ -125,7 +88,7 @@ export default createComponent({
     return (
       <div class="van-sku-stepper-stock">
         <div class="van-sku-stepper-container">
-          <div class="van-sku__stepper-title">{this.stepperTitle || '购买数量'}：</div>
+          <div class="van-sku__stepper-title">{this.stepperTitle || '购买数量'}</div>
           <Stepper
             vModel={this.currentNum}
             class="van-sku__stepper"
@@ -135,10 +98,6 @@ export default createComponent({
             onChange={this.onChange}
           />
         </div>
-        {!this.hideStock && <div class="van-sku__stock">{this.stockText}</div>}
-        {!this.hideQuotaText && this.quotaText && (
-          <div class="van-sku__quota">{this.quotaText}</div>
-        )}
       </div>
     );
   }
