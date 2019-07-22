@@ -6,10 +6,10 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    height: 70%;
+    height: 80%;
     max-height: max-content; /* avoid androiod keyboard cover fields */
     overflow-y: visible;
-    font-size: 14px;
+    font-size: @font-size-md;
     background: @white;
   }
 
@@ -26,14 +26,14 @@
 
   /* sku header */
   &-header {
-    margin-left: 15px;
+    margin-left: @padding-md;
 
     &__img-wrap {
       position: relative;
       float: left;
       width: 96px;
       height: 96px;
-      margin: 12px 0 12px;
+      margin: @padding-sm 0;
       background: @background-color;
       border-radius: 4px;
 
@@ -51,13 +51,13 @@
 
     &__goods-info {
       min-height: 96px;
-      padding: 12px 36px 12px 8px;
+      padding: @padding-sm 36px @padding-sm @padding-xs;
       overflow: hidden;
     }
   }
 
   &-header-item {
-    margin-top: 8px;
+    margin-top: @padding-xs;
     color: @gray-dark;
     font-size: 12px;
     line-height: 16px;
@@ -80,7 +80,7 @@
 
   &__price-tag {
     display: inline-block;
-    margin-left: 8px;
+    margin-left: @padding-xs;
     padding: 0 5px;
     color: @red;
     font-size: 12px;
@@ -92,16 +92,16 @@
 
   &__close-icon {
     position: absolute;
-    top: 12px;
-    right: 15px;
+    top: @padding-sm;
+    right: @padding-md;
     color: @sku-icon-gray-color;
     font-size: 20px;
     text-align: center;
   }
 
   &-group-container {
-    margin-left: 15px;
-    padding: 12px 0 2px;
+    margin-left: @padding-md;
+    padding: @padding-sm 0 2px;
 
     &--hide-soldout {
       .van-sku-row__item--disabled {
@@ -112,14 +112,14 @@
 
   /* sku row */
   &-row {
-    margin: 0 3px 12px 0;
+    margin: 0 3px @padding-sm 0;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     &__title {
-      padding-bottom: 12px;
+      padding-bottom: @padding-sm;
     }
 
     &__item {
@@ -127,7 +127,7 @@
       align-items: center;
       justify-content: center;
       min-width: 40px;
-      margin: 0 12px 12px 0;
+      margin: 0 @padding-sm @padding-sm 0;
       color: @text-color;
       font-size: 13px;
       line-height: 16px;
@@ -144,7 +144,7 @@
       }
 
       &-name {
-        padding: 8px;
+        padding: @padding-xs;
       }
 
       &--active {
@@ -166,8 +166,8 @@
   /* sku stepper */
   &-stepper {
     &-stock {
-      margin-left: 15px;
-      padding: 12px 0;
+      margin-left: @padding-md;
+      padding: @padding-sm 0;
     }
 
     &-container {
@@ -187,7 +187,7 @@
 
   &__stock {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: @padding-xs;
     color: @gray-dark;
     font-size: 12px;
   }
@@ -199,7 +199,7 @@
   }
 
   &-messages {
-    padding-bottom: 10px;
+    padding-bottom: @padding-xs;
     background: @background-color;
 
     &__image-cell {
@@ -226,7 +226,7 @@
       float: left;
       width: 64px;
       height: 64px;
-      margin-right: 8px;
+      margin-right: @padding-xs;
       background: @sku-item-background-color;
       border-radius: 2px;
 
