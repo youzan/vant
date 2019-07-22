@@ -282,8 +282,32 @@
     }
   }
 
-  /* sku actions */
   &-actions {
     display: flex;
+    padding: @padding-xs @padding-md;
+
+    .van-button {
+      height: 36px;
+      font-weight: 500;
+      font-size: @font-size-md;
+      line-height: 34px;
+      border: none;
+
+      &:first-of-type {
+        border-radius: 18px 0 0 18px;
+      }
+
+      &:last-of-type {
+        border-radius: 0 18px 18px 0;
+      }
+
+      &--warning {
+        background: linear-gradient(to right, #ffd01e, #ff8917);
+      }
+
+      &--danger {
+        background: linear-gradient(to right, #ff6034, #ee0a24);
+      }
+    }
   }
 }
