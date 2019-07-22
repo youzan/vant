@@ -152,11 +152,11 @@ export default {
 
 .demo-popup {
   .van-row {
-    margin-bottom: 15px;
+    margin-bottom: @padding-md;
   }
 
   .van-button {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>

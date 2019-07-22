@@ -70,6 +70,7 @@ export class Slider extends VanComponent {}
 export class Step extends VanComponent {}
 export class Stepper extends VanComponent {}
 export class Steps extends VanComponent {}
+export class Sticky extends VanComponent {}
 export class SubmitBar extends VanComponent {}
 export class Swipe extends VanComponent {}
 export class SwipeItem extends VanComponent {}

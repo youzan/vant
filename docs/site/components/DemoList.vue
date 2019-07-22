@@ -77,13 +77,13 @@ export default {
 
   .vant-title,
   .vant-desc {
-    padding-left: 15px;
+    padding-left: @padding-md;
     font-weight: normal;
     user-select: none;
   }
 
   .vant-title {
-    margin: 0 0 15px;
+    margin: 0 0 @padding-md;
 
     img,
     span {
@@ -96,7 +96,7 @@ export default {
     }
 
     span {
-      margin-left: 15px;
+      margin-left: @padding-md;
       font-weight: 500;
       font-size: 36px;
     }

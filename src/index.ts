@@ -68,6 +68,7 @@ import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
+import Sticky from './sticky';
 import SubmitBar from './submit-bar';
 import Swipe from './swipe';
 import SwipeCell from './swipe-cell';
@@ -89,7 +90,7 @@ declare global {
   }
 }
 
-const version = '2.0.8';
+const version = '2.0.9';
 const components = [
   ActionSheet,
   AddressEdit,
@@ -156,6 +157,7 @@ const components = [
   Step,
   Stepper,
   Steps,
+  Sticky,
   SubmitBar,
   Swipe,
   SwipeCell,
@@ -253,6 +255,7 @@ export {
   Step,
   Stepper,
   Steps,
+  Sticky,
   SubmitBar,
   Swipe,
   SwipeCell,

@@ -33,7 +33,7 @@
     box-sizing: border-box;
     width: @uploader-size;
     height: @uploader-size;
-    margin: 0 10px 10px 0;
+    margin: 0 @padding-xs @padding-xs 0;
     background-color: @uploader-upload-background-color;
     border: 1px dashed @uploader-upload-border-color;
 
@@ -43,7 +43,7 @@
     }
 
     &-text {
-      margin-top: 10px;
+      margin-top: @padding-xs;
       color: @uploader-text-color;
       font-size: @uploader-text-font-size;
     }
@@ -51,7 +51,7 @@
 
   &__preview {
     position: relative;
-    margin: 0 10px 10px 0;
+    margin: 0 @padding-xs @padding-xs 0;
 
     &-image {
       display: block;
@@ -69,18 +69,28 @@
     }
   }
 
-  &__file-icon {
-    color: @gray-darker;
-    font-size: 20px;
-  }
+  &__file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: @uploader-size;
+    height: @uploader-size;
+    background-color: @uploader-file-background-color;
 
-  &__file-name {
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 5px;
-    padding: 0 5px;
-    color: @gray-darker;
-    font-size: 12px;
-    text-align: center;
+    &-icon {
+      color: @uploader-file-icon-color;
+      font-size: @uploader-file-icon-size;
+    }
+
+    &-name {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: @padding-xs;
+      padding: 0 5px;
+      color: @uploader-file-name-text-color;
+      font-size: @uploader-file-name-font-size;
+      text-align: center;
+    }
   }
 }

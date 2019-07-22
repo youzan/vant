@@ -101,3 +101,26 @@ test('lazy-load error event', done => {
     }
   });
 });
+
+test('show-loading prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      showLoading: false
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('show-error prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      showError: false,
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+    }
+  });
+
+  wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});

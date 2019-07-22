@@ -64,16 +64,18 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-skeleton {
-  background-color: #fff;
+  background-color: @white;
 
   .van-switch {
-    margin: 0 15px 10px;
+    margin: 0 @padding-md @padding-xs;
   }
 
   .demo-preview {
     display: flex;
-    padding: 0 15px;
+    padding: 0 @padding-md;
 
     .demo-content {
       padding-top: 6px;
@@ -95,7 +97,7 @@ export default {
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-      margin-right: 15px;
+      margin-right: @padding-md;
     }
   }
 }

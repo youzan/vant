@@ -33,10 +33,7 @@
       </van-button>
     </demo-block>
 
-    <demo-block
-      v-if="!$attrs.weapp"
-      :title="$t('componentCall')"
-    >
+    <demo-block :title="$t('componentCall')">
       <van-button
         type="primary"
         @click="show = true"
@@ -130,7 +127,7 @@ export default {
   background-color: @white;
 
   .van-doc-demo-block > .van-button {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 
   img {

@@ -48,7 +48,7 @@ export default createComponent({
   },
 
   methods: {
-    toggleItem(active) {
+    updateOffset() {
       const { menu } = this.$refs;
       const rect = menu.getBoundingClientRect();
 
@@ -57,19 +57,21 @@ export default createComponent({
       } else {
         this.offset = window.innerHeight - rect.top;
       }
+    },
 
+    toggleItem(active) {
       this.children.forEach((item, index) => {
         if (index === active) {
           item.toggle();
         } else if (item.showPopup) {
-          item.hide(true);
+          item.toggle(false, { immediate: true });
         }
       });
     },
 
     onClickOutside() {
       this.children.forEach(item => {
-        item.hide();
+        item.toggle(false);
       });
     }
   },

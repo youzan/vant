@@ -63,7 +63,7 @@ export default {
 
   data() {
     return {
-      fileList: [],
+      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
       fileList2: [],
       fileList3: []
     };
@@ -87,11 +87,13 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-uploader {
-  background-color: #fff;
+  background-color: @white;
 
   .van-uploader {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>

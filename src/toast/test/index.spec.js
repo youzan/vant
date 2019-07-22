@@ -60,6 +60,17 @@ test('icon prop', async () => {
   expect(toast.$el.outerHTML).toMatchSnapshot();
 });
 
+test('icon-prefix prop', async () => {
+  const toast = Toast({
+    message: 'Message',
+    icon: 'star-o',
+    iconPrefix: 'my-icon'
+  });
+
+  await later();
+  expect(toast.$el.outerHTML).toMatchSnapshot();
+});
+
 test('clear toast', () => {
   const toast1 = Toast();
   expect(toast1.value).toBeTruthy();

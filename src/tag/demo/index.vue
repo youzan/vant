@@ -138,16 +138,18 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-tag {
-  background-color: #fff;
+  background-color: @white;
 
   .van-tag + .van-tag {
-    margin-left: 10px;
+    margin-left: @padding-xs;
   }
 
   .van-tag {
     &:first-of-type {
-      margin-left: 15px;
+      margin-left: @padding-md;
     }
   }
 }

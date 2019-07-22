@@ -55,7 +55,7 @@ export default {
   background-color: @white;
 
   .van-sidebar {
-    margin-left: 15px;
+    margin-left: @padding-md;
   }
 }
 </style>

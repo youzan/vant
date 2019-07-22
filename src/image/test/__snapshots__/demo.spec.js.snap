@@ -52,6 +52,45 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-row" style="margin-left: -10px; margin-right: -10px;">
       <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image van-image--round" style="width: 100%; height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <div class="text">contain</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image van-image--round" style="width: 100%; height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <div class="text">cover</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image van-image--round" style="width: 100%; height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: fill;">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <div class="text">fill</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image van-image--round" style="width: 100%; height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: none;">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <div class="text">none</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image van-image--round" style="width: 100%; height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: scale-down;">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <div class="text">scale-down</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row" style="margin-left: -10px; margin-right: -10px;">
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
         <div class="van-image" style="width: 100%; height: 27vw;"><img class="van-image__img">
           <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
               <!----></i></div>

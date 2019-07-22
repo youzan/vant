@@ -28,6 +28,25 @@
       </van-row>
     </demo-block>
 
+    <demo-block :title="$t('round')">
+      <van-row gutter="20">
+        <van-col
+          v-for="fit in fits"
+          span="8"
+          :key="fit"
+        >
+          <van-image
+            round
+            :fit="fit"
+            width="100%"
+            height="27vw"
+            :src="image"
+          />
+          <div class="text">{{ fit }}</div>
+        </van-col>
+      </van-row>
+    </demo-block>
+
     <demo-block :title="$t('loading')">
       <van-row gutter="20">
         <van-col span="8">
@@ -86,6 +105,7 @@ export default {
   i18n: {
     'zh-CN': {
       fitMode: '填充模式',
+      round: '圆形图片',
       loading: '加载中提示',
       error: '加载失败提示',
       defaultTip: '默认提示',
@@ -94,6 +114,7 @@ export default {
     },
     'en-US': {
       fitMode: 'Fit Mode',
+      round: 'Round',
       loading: 'Loading',
       error: 'Error',
       defaultTip: 'Default Tip',
@@ -119,7 +140,7 @@ export default {
   background-color: @white;
 
   .van-row {
-    padding: 0 15px;
+    padding: 0 @padding-md;
   }
 
   .van-col {

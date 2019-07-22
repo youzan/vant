@@ -1,4 +1,4 @@
-// Color variables
+// Basic Colors
 @black: #000;
 @white: #fff;
 @red: #f44;
@@ -12,59 +12,81 @@
 @gray-darker: #7d7e80;
 @gray-dark: #969799;
 
-// Default colors
+// Component Colors
 @text-color: #323233;
 @border-color: #ebedf0;
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
 
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
+
+// Font Size
+@font-size-xs: 10px;
+@font-size-sm: 12px;
+@font-size-md: 14px;
+@font-size-lg: 16px;
+
+// Animation
+@animation-duration-base: .3s;
+@animation-duration-fast: .2s;
+
 // ActionSheet
 @action-sheet-max-height: 90%;
 @action-sheet-header-height: 44px;
-@action-sheet-header-font-size: 16px;
+@action-sheet-header-font-size: @font-size-lg;
 @action-sheet-item-height: 50px;
 @action-sheet-item-background: @white;
-@action-sheet-item-font-size: 16px;
+@action-sheet-item-font-size: @font-size-lg;
 @action-sheet-item-text-color: @text-color;
+@action-sheet-item-disabled-text-color: @gray;
 @action-sheet-subname-color: @gray-darker;
-@action-sheet-subname-font-size: 12px;
+@action-sheet-subname-font-size: @font-size-sm;
 @action-sheet-close-icon-size: 18px;
 @action-sheet-close-icon-color: @gray-dark;
+@action-sheet-close-icon-padding: 0 @padding-sm;
+@action-sheet-cancel-padding-top: @padding-xs;
+@action-sheet-cancel-padding-color: @background-color;
 
 // AddressEdit
-@address-edit-buttons-padding: 30px 15px;
-@address-edit-button-margin-bottom: 15px;
+@address-edit-buttons-padding: @padding-xl @padding-md;
+@address-edit-button-margin-bottom: @padding-sm;
 @address-edit-detail-finish-color: @blue;
-@address-edit-detail-fnish-font-size: 12px;
+@address-edit-detail-finish-font-size: @font-size-sm;
 
 // AddressList
 @address-list-disabled-text-color: @gray-dark;
-@address-list-disabled-text-font-size: 12px;
+@address-list-disabled-text-font-size: @font-size-sm;
 @address-list-disabled-text-line-height: 30px;
 @address-list-add-button-z-index: 9999;
-@address-list-item-padding: 15px;
+@address-list-item-padding: @padding-md;
 @address-list-item-text-color: @gray-darker;
 @address-list-item-disabled-text-color: @gray-dark;
-@address-list-item-font-size: 12px;
+@address-list-item-font-size: @font-size-sm;
 @address-list-item-line-height: 16px;
 @address-list-edit-icon-size: 16px;
 
 // Button
 @button-mini-height: 22px;
 @button-mini-min-width: 50px;
-@button-mini-font-size: 10px;
+@button-mini-font-size: @font-size-xs;
 @button-mini-line-height: 20px;
 @button-small-height: 30px;
-@button-small-font-size: 12px;
+@button-small-font-size: @font-size-sm;
 @button-small-min-width: 60px;
 @button-small-line-height: 28px;
-@button-normal-font-size: 14px;
+@button-normal-font-size: @font-size-md;
 @button-large-height: 50px;
 @button-large-line-height: 48px;
 @button-default-height: 44px;
 @button-default-line-height: 42px;
-@button-default-font-size: 16px;
+@button-default-font-size: @font-size-lg;
 @button-default-color: @text-color;
 @button-default-background-color: @white;
 @button-default-border-color: @border-color;
@@ -87,8 +109,8 @@
 @button-disabled-opacity: .5;
 
 // Card
-@card-padding: 5px 15px;
-@card-font-size: 12px;
+@card-padding: @padding-xs @padding-md;
+@card-font-size: @font-size-sm;
 @card-text-color: @text-color;
 @card-background-color: @background-color-light;
 @card-thumb-size: 90px;
@@ -97,41 +119,41 @@
 @card-desc-line-height: 20px;
 @card-price-color: @red;
 @card-origin-price-color: @gray-darker;
-@card-origin-price-font-size: 10px;
+@card-origin-price-font-size: @font-size-xs;
 
 // Cell
-@cell-font-size: 14px;
+@cell-font-size: @font-size-md;
 @cell-line-height: 24px;
 @cell-vertical-padding: 10px;
-@cell-horizontal-padding: 15px;
+@cell-horizontal-padding: @padding-md;
 @cell-text-color: @text-color;
 @cell-background-color: @white;
 @cell-border-color: @border-color;
 @cell-active-color: @active-color;
 @cell-required-color: @red;
 @cell-label-color: @gray-dark;
-@cell-label-font-size: 12px;
+@cell-label-font-size: @font-size-sm;
 @cell-label-line-height: 18px;
 @cell-label-margin-top: 3px;
 @cell-value-color: @gray-dark;
 @cell-icon-size: 16px;
 @cell-right-icon-color: @gray-dark;
-@cell-large-vertical-padding: 12px;
-@cell-large-title-font-size: 16px;
-@cell-large-label-font-size: 14px;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
 
 // CellGroup
 @cell-group-background-color: @white;
 @cell-group-title-color: @gray-dark;
-@cell-group-title-padding: 15px 15px 5px;
-@cell-group-title-font-size: 14px;
+@cell-group-title-padding: @padding-md @padding-md @padding-xs;
+@cell-group-title-font-size: @font-size-md;
 @cell-group-title-line-height: 16px;
 
 // Checkbox
 @checkbox-size: 20px;
 @checkbox-border-color: @gray-light;
-@checkbox-transition-duration: .2s;
-@checkbox-label-margin: 10px;
+@checkbox-transition-duration: @animation-duration-fast;
+@checkbox-label-margin: @padding-xs;
 @checkbox-label-color: @text-color;
 @checkbox-checked-icon-color: @blue;
 @checkbox-disabled-icon-color: @gray;
@@ -142,8 +164,8 @@
 @circle-text-color: @text-color;
 
 // Collapse
-@collapse-item-transition-duration: .3s;
-@collapse-item-content-padding: 15px;
+@collapse-item-transition-duration: @animation-duration-base;
+@collapse-item-content-padding: @padding-md;
 @collapse-item-content-font-size: 13px;
 @collapse-item-content-line-height: 1.5;
 @collapse-item-content-text-color: @gray-dark;
@@ -151,30 +173,30 @@
 @collapse-item-title-disabled-color: @gray;
 
 // ContactCard
-@contact-card-padding: 15px;
+@contact-card-padding: @padding-md;
 @contact-card-add-icon-size: 40px;
 @contact-card-add-icon-color: @blue;
 @contact-card-value-line-height: 20px;
 
 // ContactEdit
-@contact-edit-buttons-padding: 30px 15px;
-@contact-edit-button-margin-bottom: 15px;
+@contact-edit-buttons-padding: @padding-xl @padding-md;
+@contact-edit-button-margin-bottom: @padding-sm;
 @contact-edit-field-label-width: 65px;
 
 // ContactList
 @contact-list-edit-icon-size: 16px;
 @contact-list-add-button-z-index: 9999;
-@contact-list-item-padding: 15px;
+@contact-list-item-padding: @padding-md;
 
 // CountDown
 @count-down-text-color: @text-color;
-@count-down-font-size: 14px;
+@count-down-font-size: @font-size-md;
 @count-down-line-height: 20px;
 
 // Coupon
-@coupon-margin: 0 15px 15px;
+@coupon-margin: 0 @padding-md @padding-md;
 @coupon-content-height: 100px;
-@coupon-content-padding: 24px 0 0 15px;
+@coupon-content-padding: @padding-lg 0 0 @padding-md;
 @coupon-background-color: @white;
 @coupon-active-background-color: @active-color;
 @coupon-border-radius: 4px;
@@ -183,9 +205,9 @@
 @coupon-amount-color: @red;
 @coupon-amount-font-size: 24px;
 @coupon-currency-font-size: 50%;
-@coupon-name-font-size: 16px;
+@coupon-name-font-size: @font-size-lg;
 @coupon-disabled-text-color: @gray-dark;
-@coupon-description-padding: 7px 15px;
+@coupon-description-padding: @padding-xs @padding-md;
 @coupon-description-background-color: @background-color-light;
 @coupon-description-border-color: @border-color;
 
@@ -194,37 +216,38 @@
 
 // CouponList
 @coupon-list-background-color: @background-color;
-@coupon-list-field-padding: 7px 15px;
+@coupon-list-field-padding: @padding-xs @padding-md;
 @coupon-list-exchange-button-height: 32px;
 @coupon-list-empty-image-size: 200px;
 @coupon-list-empty-tip-color: @gray-dark;
-@coupon-list-empty-tip-font-size: 14px;
+@coupon-list-empty-tip-font-size: @font-size-md;
 @coupon-list-empty-tip-line-height: 20px;
 
 // Dialog
 @dialog-width: 85%;
-@dialog-font-size: 16px;
-@dialog-transition: .3s;
+@dialog-font-size: @font-size-lg;
+@dialog-transition: @animation-duration-base;
 @dialog-border-radius: 4px;
 @dialog-background-color: @white;
 @dialog-header-font-weight: 500;
-@dialog-header-padding-top: 25px;
-@dialog-header-isolated-padding: 25px 0;
-@dialog-message-padding: 25px;
-@dialog-message-font-size: 14px;
-@dialog-message-line-height: 1.5;
+@dialog-header-line-height: 24px;
+@dialog-header-padding-top: @padding-lg;
+@dialog-header-isolated-padding: @padding-lg 0;
+@dialog-message-padding: @padding-lg;
+@dialog-message-font-size: @font-size-md;
+@dialog-message-line-height: 20px;
 @dialog-message-max-height: 60vh;
 @dialog-has-title-message-text-color: @gray-darker;
-@dialog-has-title-message-padding-top: 12px;
+@dialog-has-title-message-padding-top: @padding-sm;
 @dialog-confirm-button-text-color: @blue;
 
 // Divider
-@divider-margin: 15px 0;
+@divider-margin: @padding-md 0;
 @divider-text-color: @gray-dark;
-@divider-font-size: 14px;
+@divider-font-size: @font-size-md;
 @divider-line-height: 24px;
 @divider-border-color: @border-color;
-@divider-content-padding: 15px;
+@divider-content-padding: @padding-md;
 @divider-content-left-width: 10%;
 @divider-content-right-width: 10%;
 
@@ -248,12 +271,12 @@
 @field-text-area-min-height: 60px;
 
 // GridItem
-@grid-item-content-padding: 15px 10px;
+@grid-item-content-padding: @padding-md @padding-xs;
 @grid-item-content-background-color: @white;
 @grid-item-content-active-color: @active-color;
 @grid-item-icon-size: 28px;
 @grid-item-text-color: @gray-darker;
-@grid-item-text-font-size: 12px;
+@grid-item-text-font-size: @font-size-sm;
 
 // GoodsAction
 @goods-action-background-color: @white;
@@ -261,28 +284,28 @@
 @goods-action-icon-height: 50px;
 @goods-action-icon-color: @text-color;
 @goods-action-icon-size: 18px;
-@goods-action-icon-font-size: 10px;
+@goods-action-icon-font-size: @font-size-xs;
 @goods-action-icon-active-color: @active-color;
 @goods-action-icon-text-color: @gray-darker;
 
 // IndexAnchor
-@index-anchor-padding: 0 15px;
+@index-anchor-padding: 0 @padding-md;
 @index-anchor-text-color: @text-color;
 @index-anchor-font-weight: 500;
-@index-anchor-font-size: 14px;
+@index-anchor-font-size: @font-size-md;
 @index-anchor-line-height: 32px;
 @index-anchor-background-color: transparent;
 @index-anchor-sticky-background-color: @white;
 
 // IndexBar
-@index-bar-index-font-size: 10px;
+@index-bar-index-font-size: @font-size-xs;
 @index-bar-index-line-height: 14px;
 
 // Info
 @info-size: 16px;
 @info-color: @white;
 @info-padding: 0 3px;
-@info-font-size: 12px;
+@info-font-size: @font-size-sm;
 @info-font-weight: 500;
 @info-border-width: 1px;
 @info-background-color: @red;
@@ -290,23 +313,23 @@
 
 // Image
 @image-placeholder-text-color: @gray-dark;
-@image-placeholder-font-size: 14px;
+@image-placeholder-font-size: @font-size-md;
 @image-placeholder-background-color: @background-color;
 
 // ImagePreview
 @image-preview-index-text-color: @white;
-@image-preview-index-font-size: 14px;
+@image-preview-index-font-size: @font-size-md;
 @image-preview-overlay-background-color: rgba(0, 0, 0, .9);
 
 // List
 @list-icon-margin-right: 5px;
 @list-text-color: @gray-dark;
-@list-text-font-size: 13px;
+@list-text-font-size: @font-size-sm;
 @list-text-line-height: 50px;
 
 // Loading
 @loading-text-color: @gray-dark;
-@loading-text-font-size: 14px;
+@loading-text-font-size: @font-size-md;
 
 // NavBar
 @nav-bar-height: 46px;
@@ -314,23 +337,23 @@
 @nav-bar-arrow-size: 16px;
 @nav-bar-icon-color: @blue;
 @nav-bar-text-color: @blue;
-@nav-bar-title-font-size: 16px;
+@nav-bar-title-font-size: @font-size-lg;
 @nav-bar-title-text-color: @text-color;
 
 // NoticeBar
 @notice-bar-height: 40px;
-@notice-bar-padding: 0 15px;
-@notice-bar-wrapable-padding: 8px 15px;
+@notice-bar-padding: 0 @padding-md;
+@notice-bar-wrapable-padding: @padding-xs @padding-md;
 @notice-bar-text-color: @orange-dark;
-@notice-bar-font-size: 14px;
+@notice-bar-font-size: @font-size-md;
 @notice-bar-line-height: 24px;
 @notice-bar-background-color: @orange-light;
 @notice-bar-icon-size: 16px;
 @notice-bar-icon-min-width: 22px;
 
 // Notify
-@notify-padding: 6px 15px;
-@notify-font-size: 14px;
+@notify-padding: @padding-xs @padding-md;
+@notify-font-size: @font-size-md;
 @notify-line-height: 20px;
 
 // NumberKeyboard
@@ -339,13 +362,13 @@
 @number-keyboard-key-background: #ebedf0;
 @number-keyboard-key-font-size: 24px;
 @number-keyboard-key-active-color: @active-color;
-@number-keyboard-delete-font-size: 16px;
+@number-keyboard-delete-font-size: @font-size-lg;
 @number-keyboard-title-color: @gray-darker;
 @number-keyboard-title-height: 30px;
-@number-keyboard-title-font-size: 14px;
-@number-keyboard-close-padding: 0 15px;
+@number-keyboard-title-font-size: @font-size-md;
+@number-keyboard-close-padding: 0 @padding-md;
 @number-keyboard-close-color: @blue;
-@number-keyboard-close-font-size: 14px;
+@number-keyboard-close-font-size: @font-size-md;
 @number-keyboard-button-text-color: @white;
 @number-keyboard-button-background-color: @blue;
 
@@ -354,7 +377,7 @@
 
 // Pagination
 @pagination-height: 40px;
-@pagination-font-size: 14px;
+@pagination-font-size: @font-size-md;
 @pagination-item-width: 36px;
 @pagination-item-default-color: @blue;
 @pagination-item-disabled-color: @gray-darker;
@@ -366,16 +389,16 @@
 // Panel
 @panel-background-color: @white;
 @panel-header-value-color: @red;
-@panel-footer-padding: 10px 15px;
+@panel-footer-padding: @padding-xs @padding-md;
 
 // PasswordInput
 @password-input-height: 50px;
-@password-input-margin: 0 15px;
+@password-input-margin: 0 @padding-md;
 @password-input-font-size: 20px;
 @password-input-border-radius: 6px;
 @password-input-background-color: @white;
 @password-input-info-color: @gray-dark;
-@password-input-info-font-size: 14px;
+@password-input-info-font-size: @font-size-md;
 @password-input-error-info-color: @red;
 @password-input-dot-size: 10px;
 @password-input-dot-color: @black;
@@ -383,38 +406,38 @@
 // Picker
 @picker-background-color: @white;
 @picker-toolbar-height: 44px;
-@picker-title-font-size: 16px;
-@picker-action-padding: 0 15px;
-@picker-action-font-size: 14px;
+@picker-title-font-size: @font-size-lg;
+@picker-action-padding: 0 @padding-md;
+@picker-action-font-size: @font-size-md;
 @picker-action-text-color: @blue;
 @picker-action-active-color: @active-color;
-@picker-option-font-size: 16px;
+@picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
 @picker-option-disabled-opacity: .3;
 
 // Popup
 @popup-background-color: @white;
-@popup-transition: .3s ease-out;
+@popup-transition: @animation-duration-base ease-out;
 @popup-round-border-radius: 12px;
 
 // Progress
 @progress-height: 4px;
 @progress-background-color: @gray-light;
 @progress-pivot-padding: 0 5px;
-@progress-pivot-font-size: 10px;
+@progress-pivot-font-size: @font-size-xs;
 @progress-pivot-line-height: 1.6;
 @progress-pivot-background-color: @gray-light;
 
 // PullRefresh
 @pull-refresh-head-height: 50px;
-@pull-refresh-head-font-size: 14px;
+@pull-refresh-head-font-size: @font-size-md;
 @pull-refresh-head-text-color: @gray-dark;
 
 // Radio
 @radio-size: 20px;
 @radio-border-color: @gray-light;
-@radio-transition-duration: .2s;
-@radio-label-margin: 10px;
+@radio-transition-duration: @animation-duration-fast;
+@radio-label-margin: @padding-xs;
 @radio-label-color: @text-color;
 @radio-checked-icon-color: @blue;
 @radio-disabled-icon-color: @gray;
@@ -426,25 +449,25 @@
 @rate-icon-gutter: 4px;
 
 // Search
-@search-padding: 10px 16px;
+@search-padding: 10px @padding-sm;
 @search-background-color: #f7f8fA;
 @search-input-height: 34px;
 @search-label-padding: 0 5px;
 @search-label-color: @text-color;
-@search-label-font-size: 14px;
+@search-label-font-size: @font-size-md;
 @search-left-icon-color: @gray-dark;
-@search-action-padding: 0 10px;
+@search-action-padding: 0 @padding-xs;
 @search-action-text-color: @text-color;
-@search-action-font-size: 14px;
+@search-action-font-size: @font-size-md;
 
 // Sidebar
 @sidebar-width: 85px;
 
 // SidebarItem
-@sidebar-font-size: 14px;
+@sidebar-font-size: @font-size-md;
 @sidebar-line-height: 1.4;
 @sidebar-text-color: @gray-darker;
-@sidebar-padding: 20px 12px 20px 9px;
+@sidebar-padding: 20px @padding-sm 20px @padding-xs;
 @sidebar-active-color: @active-color;
 @sidebar-background-color: @background-color;
 @sidebar-selected-font-weight: 500;
@@ -455,7 +478,7 @@
 // Skeleton
 @skeleton-row-height: 16px;
 @skeleton-row-background-color: @active-color;
-@skeleton-row-margin-top: 12px;
+@skeleton-row-margin-top: @padding-sm;
 @skeleton-avatar-background-color: @active-color;
 @skeleton-animation-duration: 1.2s;
 
@@ -472,17 +495,20 @@
 // Step
 @step-text-color: @gray-dark;
 @step-process-text-color: @text-color;
-@step-font-size: 14px;
+@step-font-size: @font-size-md;
 @step-line-color: @border-color;
 @step-finish-line-color: @green;
 @step-finish-text-color: @text-color;
 @step-icon-size: 12px;
 @step-circle-size: 5px;
 @step-circle-color: @gray-dark;
-@step-horizontal-title-font-size: 12px;
+@step-horizontal-title-font-size: @font-size-sm;
 
 // Steps
 @steps-background-color: @white;
+
+// Sticky
+@sticky-z-index: 99;
 
 // Stepper
 @stepper-active-color: #e8e8e8;
@@ -492,7 +518,7 @@
 @stepper-button-disabled-icon-color: @gray;
 @stepper-input-width: 32px;
 @stepper-input-height: 28px;
-@stepper-input-font-size: 14px;
+@stepper-input-font-size: @font-size-md;
 @stepper-input-text-color: @text-color;
 @stepper-input-disabled-text-color: @gray;
 @stepper-input-disabled-background-color: @active-color;
@@ -505,11 +531,11 @@
 @submit-bar-button-width: 110px;
 @submit-bar-price-color: @red;
 @submit-bar-price-font-size: 18px;
-@submit-bar-currency-font-size: 14px;
+@submit-bar-currency-font-size: @font-size-md;
 @submit-bar-text-color: @text-color;
-@submit-bar-text-font-size: 14px;
-@submit-bar-tip-padding: 10px;
-@submit-bar-tip-font-size: 12px;
+@submit-bar-text-font-size: @font-size-md;
+@submit-bar-tip-padding: @padding-xs @padding-sm;
+@submit-bar-tip-font-size: @font-size-sm;
 @submit-bar-tip-line-height: 1.5;
 @submit-bar-tip-color: #f56723;
 @submit-bar-tip-background-color: #fff7cc;
@@ -517,7 +543,7 @@
 
 // Swipe
 @swipe-indicator-size: 6px;
-@swipe-indicator-margin: 10px;
+@swipe-indicator-margin: @padding-sm;
 @swipe-indicator-active-opacity: 1;
 @swipe-indicator-inactive-opacity: .3;
 @swipe-indicator-active-background-color: @blue;
@@ -532,13 +558,13 @@
 @switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
-@switch-transition-duration: .3s;
+@switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: .4;
 @switch-border: 1px solid rgba(0, 0, 0, .1);
 
 // SwitchCell
 @switch-cell-padding-top: @cell-vertical-padding - 1px;
-@switch-cell-padding-bottom: @cell-vertical-padding -1px;
+@switch-cell-padding-bottom: @cell-vertical-padding - 1px;
 @switch-cell-large-padding-top: @cell-large-vertical-padding - 1px;
 @switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px;
 
@@ -547,7 +573,7 @@
 @tabbar-background-color: @white;
 
 // TabbarItem
-@tabbar-item-font-size: 12px;
+@tabbar-item-font-size: @font-size-sm;
 @tabbar-item-text-color: @gray-darker;
 @tabbar-item-active-color: @blue;
 @tabbar-item-line-height: 1;
@@ -558,7 +584,7 @@
 @tab-text-color: @gray-darker;
 @tab-active-text-color: @text-color;
 @tab-disabled-text-color: @gray;
-@tab-font-size: 14px;
+@tab-font-size: @font-size-md;
 
 // Tabs
 @tabs-default-color: @red;
@@ -570,9 +596,9 @@
 
 // Tag
 @tag-padding: .2em .5em;
-@tag-font-size: 10px;
-@tag-medium-font-size: 12px;
-@tag-large-font-size: 14px;
+@tag-font-size: @font-size-xs;
+@tag-medium-font-size: @font-size-sm;
+@tag-large-font-size: @font-size-md;
 @tag-text-color: @white;
 @tag-border-radius: .2em;
 @tag-round-border-radius: .8em;
@@ -584,25 +610,25 @@
 
 // Toast
 @toast-max-width: 70%;
-@toast-font-size: 14px;
+@toast-font-size: @font-size-md;
 @toast-text-color: @white;
 @toast-line-height: 20px;
 @toast-border-radius: 4px;
 @toast-background-color: rgba(@text-color, .88);
 @toast-icon-size: 40px;
 @toast-text-min-width: 96px;
-@toast-text-padding: 8px 12px;
-@toast-default-padding: 15px;
+@toast-text-padding: @padding-xs @padding-sm;
+@toast-default-padding: @padding-md;
 @toast-default-width: 90px;
 @toast-default-min-height: 90px;
 @toast-position-top-distance: 50px;
 @toast-position-bottom-distance: 50px;
 
 // TreeSelect
-@tree-select-font-size: 14px;
+@tree-select-font-size: @font-size-md;
 @tree-select-nav-background-color: @background-color-light;
 @tree-select-content-background-color: @white;
-@tree-select-nav-item-padding: 0 9px 0 12px;
+@tree-select-nav-item-padding: 0 @padding-xs 0 @padding-sm;
 @tree-select-nav-item-active-border-color: @red;
 @tree-select-nav-item-active-background-color: @white;
 @tree-select-nav-item-disabled-color: @gray-dark;
@@ -615,13 +641,18 @@
 @uploader-icon-size: 24px;
 @uploader-icon-color: @gray-dark;
 @uploader-text-color: @gray-dark;
-@uploader-text-font-size: 12px;
+@uploader-text-font-size: @font-size-sm;
 @uploader-upload-border-color: @gray-light;
 @uploader-upload-background-color: @white;
 @uploader-delete-color: @white;
 @uploader-delete-background-color: rgba(0, 0, 0, .45);
+@uploader-file-background-color: @background-color;
+@uploader-file-icon-size: 20px;
+@uploader-file-icon-color: @gray-darker;
+@uploader-file-name-font-size: @font-size-sm;
+@uploader-file-name-text-color: @gray-darker;
 
-// sku
+// Sku
 @sku-price-tag-color: rgba(227, 20, 54, .1);
 @sku-item-background-color: #f7f8fa;
 @sku-item-active-background-color: rgba(227, 20, 54, .1);

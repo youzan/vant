@@ -102,7 +102,7 @@ export default {
   }
 
   .van-button {
-    margin: 15px 0 0 15px;
+    margin: @padding-md 0 0 @padding-md;
   }
 
   .van-steps__message + p {

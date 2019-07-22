@@ -2,7 +2,7 @@
 
 ### 介绍
 
-增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示
+增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示
 
 ### 引入
 
@@ -35,6 +35,19 @@ Vue.use(Image);
   width="10rem"
   height="10rem"
   fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
+### 圆形图片
+
+通过`round`属性可以设置图片变圆，注意当图片宽高不相等且`fit`为`contain`或`scale-down`时，将无法填充一个完整的圆形。
+
+```html
+<van-image
+  round
+  width="10rem"
+  height="10rem"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
@@ -81,11 +94,14 @@ Vue.use(Image);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | src | 图片链接 | `string` | - | - |
-| fit | 图片填充模式 | `string` | `fill` | - |
+| fit | 图片填充模式 | `string` | `fill` | - |
 | alt | 替代文本 | `string` | - | - |
-| width | 宽度，默认单位为 px | `string | number` | - | - |
-| height | 高度，默认单位为 px | `string | number` | - | - |
+| width | 宽度，默认单位为`px` | `string | number` | - | - |
+| height | 高度，默认单位为`px` | `string | number` | - | - |
+| round | 是否显示为圆形 | `boolean` | `false` | - |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | - |
+| show-error | 是否展示图片加载失败提示 | `boolean` | `true` | 2.0.9 |
+| show-loading | 是否展示图片加载中提示 | `boolean` | `true` | `2.0.9` |
 
 ### 图片填充模式
 

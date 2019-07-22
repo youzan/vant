@@ -117,6 +117,7 @@ toast2.clear();
 | position | Can be set to `top` `middle` `bottom` | `string` | `middle` |
 | message | Message | `string` | `''` |
 | icon | Custom icon | `string` | - |
+| iconPrefix | Icon className prefix | `string` | `van-icon` |
 | mask | Whether to show mask | `boolean` | `false` |
 | forbidClick | Whether to forbid click background | `boolean` | `false` |
 | loadingType | Loading icon type, can be set to `spinner` | `string` | `circular` |

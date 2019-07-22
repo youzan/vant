@@ -24,3 +24,7 @@ exports[`load event 2`] = `
       <!----></i></div>
 </div>
 `;
+
+exports[`show-loading prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;
+
+exports[`show-error prop 1`] = `<div class="van-image"></div>`;

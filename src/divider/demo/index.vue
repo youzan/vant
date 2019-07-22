@@ -30,7 +30,7 @@
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
-      <van-divider :style="{ borderColor: BLUE, color: BLUE, padding: '0 15px' }">
+      <van-divider :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }">
         {{ $t('text') }}
       </van-divider>
     </demo-block>
@@ -67,11 +67,13 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-divider {
-  background-color: #fff;
+  background-color: @white;
 
   .van-doc-demo-block__title {
-    padding-top: 15px;
+    padding-top: @padding-md;
   }
 }
 </style>

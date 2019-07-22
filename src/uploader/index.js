@@ -1,5 +1,5 @@
 import { createNamespace, addUnit } from '../utils';
-import { toArray, readFile, isOversize, isImageDataUrl } from './utils';
+import { toArray, readFile, isOversize, isImageFile } from './utils';
 import Icon from '../icon';
 import Image from '../image';
 import ImagePreview from '../image-preview';
@@ -54,6 +54,10 @@ export default createComponent({
       return {
         name: this.name
       };
+    },
+
+    previewSizeWithUnit() {
+      return addUnit(this.previewSize);
     }
   },
 
@@ -145,12 +149,12 @@ export default createComponent({
 
     onPreviewImage(item) {
       const imageFiles = this.fileList
-        .map(item => item.content)
-        .filter(content => isImageDataUrl(content));
+        .filter(item => isImageFile(item))
+        .map(item => item.content || item.url);
 
       ImagePreview({
         images: imageFiles,
-        startPosition: imageFiles.indexOf(item.content)
+        startPosition: imageFiles.indexOf(item.content || item.url)
       });
     },
 
@@ -161,26 +165,31 @@ export default createComponent({
 
       return this.fileList.map((item, index) => (
         <div class={bem('preview')}>
-          <Image
-            fit="cover"
-            src={item.content}
-            class={bem('preview-image')}
-            width={this.previewSize}
-            height={this.previewSize}
-            scopedSlots={{
-              error() {
-                return [
-                  <Icon class={bem('file-icon')} name="description" />,
-                  <div class={[bem('file-name'), 'van-ellipsis']}>{item.file.name}</div>
-                ];
-              }
-            }}
-            onClick={() => {
-              if (isImageDataUrl(item.content)) {
+          {isImageFile(item) ? (
+            <Image
+              fit="cover"
+              src={item.content || item.url}
+              class={bem('preview-image')}
+              width={this.previewSize}
+              height={this.previewSize}
+              onClick={() => {
                 this.onPreviewImage(item);
-              }
-            }}
-          />
+              }}
+            />
+          ) : (
+            <div
+              class={bem('file')}
+              style={{
+                width: this.previewSizeWithUnit,
+                height: this.previewSizeWithUnit
+              }}
+            >
+              <Icon class={bem('file-icon')} name="description" />
+              <div class={[bem('file-name'), 'van-ellipsis']}>
+                {item.file ? item.file.name : item.url}
+              </div>
+            </div>
+          )}
           <Icon
             name="delete"
             class={bem('preview-delete')}
@@ -222,7 +231,7 @@ export default createComponent({
 
       let style;
       if (this.previewSize) {
-        const size = addUnit(this.previewSize);
+        const size = this.previewSizeWithUnit;
         style = {
           width: size,
           height: size

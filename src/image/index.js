@@ -8,9 +8,18 @@ export default createComponent({
     src: String,
     fit: String,
     alt: String,
-    lazyLoad: Boolean,
+    round: Boolean,
     width: [Number, String],
-    height: [Number, String]
+    height: [Number, String],
+    lazyLoad: Boolean,
+    showError: {
+      type: Boolean,
+      default: true
+    },
+    showLoading: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -90,7 +99,7 @@ export default createComponent({
     },
 
     renderPlaceholder() {
-      if (this.loading) {
+      if (this.loading && this.showLoading) {
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || <Icon name="photo-o" size="22" />}
@@ -98,7 +107,7 @@ export default createComponent({
         );
       }
 
-      if (this.error) {
+      if (this.error && this.showError) {
         return (
           <div class={bem('error')}>
             {this.slots('error') || <Icon name="warning-o" size="22" />}
@@ -134,7 +143,7 @@ export default createComponent({
 
   render(h) {
     return (
-      <div class={bem()} style={this.style} onClick={this.onClick}>
+      <div class={bem({ round: this.round })} style={this.style} onClick={this.onClick}>
         {this.renderImage()}
         {this.renderPlaceholder()}
       </div>
