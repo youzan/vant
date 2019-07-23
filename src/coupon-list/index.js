@@ -53,6 +53,10 @@ export default createComponent({
     currency: {
       type: String,
       default: '¥'
+    },
+    emptyImage: {
+      type: String,
+      default: EMPTY_IMAGE
     }
   },
 
@@ -128,7 +132,7 @@ export default createComponent({
     renderEmpty() {
       return (
         <div class={bem('empty')}>
-          <img src={EMPTY_IMAGE} />
+          <img src={this.emptyImage} />
           <p>{t('empty')}</p>
         </div>
       );

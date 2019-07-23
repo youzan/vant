@@ -102,6 +102,16 @@ test('render empty coupon list', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('empty-image prop', () => {
+  const wrapper = mount(CouponList, {
+    propsData: {
+      emptyImage: 'https://img.yzcdn.com/xxx.png'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('exchange coupon', () => {
   const wrapper = mount(CouponList);
   const exchange = wrapper.find('.van-coupon-list__exchange');
