@@ -44,3 +44,21 @@ test('select event', () => {
 
   expect(onSelect).toHaveBeenCalledTimes(1);
 });
+
+test('click-item event', () => {
+  const onClickItem = jest.fn();
+  const wrapper = mount(AddressList, {
+    propsData: {
+      list
+    },
+    context: {
+      on: {
+        'click-item': onClickItem
+      }
+    }
+  });
+
+  wrapper.find('.van-address-item').trigger('click');
+
+  expect(onClickItem).toHaveBeenCalledTimes(1);
+});
