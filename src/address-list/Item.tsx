@@ -38,12 +38,12 @@ function AddressItem(
 ) {
   const { disabled, switchable } = props;
 
-  function onClick(event: Event) {
+  function onClick() {
     if (switchable) {
       emit(ctx, 'select');
     }
 
-    emit(ctx, 'click', event);
+    emit(ctx, 'click');
   }
 
   const renderRightIcon = () => (
@@ -53,7 +53,7 @@ function AddressItem(
       onClick={(event: Event) => {
         event.stopPropagation();
         emit(ctx, 'edit');
-        emit(ctx, 'click', event);
+        emit(ctx, 'click');
       }}
     />
   );
