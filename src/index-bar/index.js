@@ -76,6 +76,12 @@ export default createComponent({
     }
   },
 
+  watch: {
+    indexList() {
+      this.$nextTick(this.onScroll);
+    }
+  },
+
   methods: {
     onScroll() {
       let scrollTop;
