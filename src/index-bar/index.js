@@ -78,9 +78,7 @@ export default createComponent({
 
   watch: {
     indexList() {
-      this.$nextTick(() => {
-        this.onScroll();
-      });
+      this.$nextTick(this.onScroll);
     }
   },
 
