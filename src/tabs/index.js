@@ -120,7 +120,7 @@ export default createComponent({
 
       // scroll to correct position
       if (this.stickyFixed) {
-        setRootScrollTop(getElementTop(this.$el) - this.offsetTop);
+        setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTop));
       }
     }
   },

@@ -91,7 +91,7 @@ export default createComponent({
         }
       }
 
-      if (scrollTop + offsetTop > topToPageTop) {
+      if (scrollTop + offsetTop >= topToPageTop) {
         this.fixed = true;
         this.transform = 0;
       } else {
