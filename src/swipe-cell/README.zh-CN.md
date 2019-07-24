@@ -82,6 +82,7 @@ export default {
 | disabled | 是否禁用滑动 | `boolean` | `false` | - |
 | left-width | 指定左侧滑动区域宽度 | `number` | `auto` | - |
 | right-width | 指定右侧滑动区域宽度 | `number` | `auto` | - |
+| stop-propagation | 是否阻止滑动事件冒泡 | `boolean` | `false` | 2.1.0 |
 
 ### Slots
 
