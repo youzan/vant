@@ -97,6 +97,7 @@ export default {
 | close-button-text | Close button text | `string` | `Close` |
 | input-placeholder | Input placeholder | `string` | `Coupon code` |
 | currency | Currency symbol |  `string` | `¥` |
+| empty-image | Placeholder image when list is empty | `string` | `https://img.yzcdn.cn/vant/coupon-empty.png` |
 
 ### CouponList Events
 

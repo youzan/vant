@@ -24,6 +24,7 @@ export type AddressItemProps = {
 
 export type AddressItemEvents = {
   onEdit(): void;
+  onClick(): void;
   onSelect(): void;
 };
 
@@ -37,10 +38,12 @@ function AddressItem(
 ) {
   const { disabled, switchable } = props;
 
-  function onSelect() {
+  function onClick() {
     if (switchable) {
       emit(ctx, 'select');
     }
+
+    emit(ctx, 'click');
   }
 
   const renderRightIcon = () => (
@@ -50,6 +53,7 @@ function AddressItem(
       onClick={(event: Event) => {
         event.stopPropagation();
         emit(ctx, 'edit');
+        emit(ctx, 'click');
       }}
     />
   );
@@ -79,7 +83,7 @@ function AddressItem(
         default: renderContent,
         'right-icon': renderRightIcon
       }}
-      onClick={onSelect}
+      onClick={onClick}
       {...inherit(ctx)}
     />
   );

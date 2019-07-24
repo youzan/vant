@@ -50,6 +50,9 @@ function AddressList(
         onEdit={() => {
           emit(ctx, disabled ? 'edit-disabled' : 'edit', item, index);
         }}
+        onClick={() => {
+          emit(ctx, 'click-item', item, index);
+        }}
       />
     ));
   }
