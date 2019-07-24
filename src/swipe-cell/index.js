@@ -21,6 +21,7 @@ export default createComponent({
     disabled: Boolean,
     leftWidth: Number,
     rightWidth: Number,
+    stopPropagation: Boolean,
     name: {
       type: [Number, String],
       default: ''
@@ -121,7 +122,7 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.direction === 'horizontal') {
-        preventDefault(event, true);
+        preventDefault(event, this.stopPropagation);
         this.swipeMove(this.deltaX + this.startOffset);
       }
     },

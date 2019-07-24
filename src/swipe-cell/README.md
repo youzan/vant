@@ -77,6 +77,7 @@ export default {
 | disabled | Whether to disabled swipe | `boolean` | `false` |
 | left-width | Width of the left swipe area | `number` | `auto` |
 | right-width | Width of the right swipe area | `number` | `auto` |
+| stop-propagation | Whether to stop touchmove event propagation | `boolean` | `false` |
 
 ### Slots
 
