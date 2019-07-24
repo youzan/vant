@@ -79,15 +79,27 @@
   }
 
   &__price-tag {
+    position: relative;
     display: inline-block;
     margin-left: @padding-xs;
     padding: 0 5px;
+    overflow: hidden;
     color: @red;
     font-size: @font-size-sm;
     line-height: 16px;
     vertical-align: middle;
-    background-color: @sku-price-tag-color;
     border-radius: 8px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: currentColor;
+      opacity: .1;
+      content: '';
+    }
   }
 
   &__close-icon {
@@ -123,19 +135,31 @@
     }
 
     &__item {
+      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-width: 40px;
       margin: 0 @padding-sm @padding-sm 0;
+      overflow: hidden;
       color: @text-color;
       font-size: 13px;
       line-height: 16px;
       vertical-align: middle;
-      background: @sku-item-background-color;
       border-radius: 4px;
 
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: @sku-item-background-color;
+        content: '';
+      }
+
       &-img {
+        z-index: 1;
         width: 24px;
         height: 24px;
         margin: 4px 0 4px 4px;
@@ -144,12 +168,17 @@
       }
 
       &-name {
+        z-index: 1;
         padding: @padding-xs;
       }
 
       &--active {
         color: @red;
-        background: @sku-item-active-background-color;
+
+        &::before {
+          background: currentColor;
+          opacity: .1;
+        }
       }
 
       &--disabled {
