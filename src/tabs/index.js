@@ -1,5 +1,6 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo } from './utils';
+import { isHidden } from '../utils/dom/style';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { setRootScrollTop, getElementTop } from '../utils/dom/scroll';
@@ -149,7 +150,7 @@ export default createComponent({
       this.$nextTick(() => {
         const { titles } = this.$refs;
 
-        if (!titles || !titles[this.currentIndex] || this.type !== 'line') {
+        if (!titles || !titles[this.currentIndex] || this.type !== 'line' || isHidden(this.$el)) {
           return;
         }
 
