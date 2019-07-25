@@ -1,7 +1,8 @@
 import { createNamespace } from '../utils';
-import Loading from '../loading';
+import { isHidden } from '../utils/dom/style';
 import { BindEventMixin } from '../mixins/bind-event';
 import { getScrollEventTarget } from '../utils/dom/scroll';
+import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('list');
 
@@ -78,11 +79,7 @@ export default createComponent({
       const scrollerHeight = scrollerRect.bottom - scrollerRect.top;
 
       /* istanbul ignore next */
-      if (
-        !scrollerHeight ||
-        window.getComputedStyle(el).display === 'none' ||
-        el.offsetParent === null
-      ) {
+      if (!scrollerHeight || isHidden(el)) {
         return false;
       }
 

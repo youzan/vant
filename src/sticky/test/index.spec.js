@@ -1,4 +1,4 @@
-import { mount, mockScrollTop, mockHTMLElementOffset } from '../../../test/utils';
+import { mount, mockScrollTop } from '../../../test/utils';
 import Vue from 'vue';
 import Sticky from '..';
 
@@ -28,7 +28,6 @@ test('z-index prop', () => {
     `
   });
 
-  mockHTMLElementOffset();
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(0);
@@ -43,7 +42,6 @@ test('offset-top prop', () => {
     `
   });
 
-  mockHTMLElementOffset();
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(0);
@@ -65,7 +63,6 @@ test('container prop', () => {
     },
     mounted() {
       this.container = this.$refs.container;
-      mockHTMLElementOffset();
     }
   });
 

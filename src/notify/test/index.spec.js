@@ -1,7 +1,5 @@
 import Notify from '..';
-import { transitionStub, later } from '../../../test/utils';
-
-transitionStub();
+import { later } from '../../../test/utils';
 
 test('create a notify', async () => {
   // should not cause error when call clear before show notify

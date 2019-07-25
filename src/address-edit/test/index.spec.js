@@ -1,9 +1,7 @@
 /* eslint-disable camelcase */
 import AddressEdit from '..';
 import areaList from '../../area/demo/area.simple';
-import { mount, later, transitionStub } from '../../../test/utils';
-
-transitionStub();
+import { mount, later } from '../../../test/utils';
 
 const addressInfo = {
   name: '测试',

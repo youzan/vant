@@ -1,22 +1,12 @@
 import List from '..';
 import { mount, later, mockGetBoundingClientRect } from '../../../test/utils';
 
-function mockOffsetParent(el) {
-  Object.defineProperty(el, 'offsetParent', {
-    get() {
-      return {};
-    }
-  });
-}
-
 test('load event', async () => {
   const wrapper = mount(List);
 
   wrapper.vm.$on('input', value => {
     wrapper.vm.loading = value;
   });
-
-  mockOffsetParent(wrapper.vm.$el);
 
   await later();
   expect(wrapper.emitted('load')).toBeTruthy();
@@ -36,8 +26,6 @@ test('error loaded, click error-text and reload', async () => {
       error: true,
     }
   });
-
-  mockOffsetParent(wrapper.vm.$el);
 
   await later();
 
@@ -69,8 +57,6 @@ test('finished', async () => {
       finishedText: 'Finished'
     }
   });
-
-  mockOffsetParent(wrapper.vm.$el);
 
   await later();
   expect(wrapper.emitted('load')).toBeFalsy();
@@ -114,7 +100,6 @@ test('check the case that scroller is not window', async () => {
   const listRef = wrapper.find({
     ref: 'list'
   });
-  mockOffsetParent(listRef.vm.$el);
 
   await later();
   expect(listRef.emitted('load')).toBeTruthy();
@@ -132,8 +117,6 @@ test('check the direction props', async () => {
       direction: 'up'
     }
   });
-
-  mockOffsetParent(wrapper.vm.$el);
 
   await later();
 
