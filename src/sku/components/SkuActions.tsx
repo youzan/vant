@@ -29,7 +29,6 @@ function SkuActions(
     <div class={bem()} {...inherit(ctx)}>
       {props.showAddCartBtn && (
         <Button
-          square
           size="large"
           type="warning"
           text={props.addCartText || '加入购物车'}
@@ -37,7 +36,6 @@ function SkuActions(
         />
       )}
       <Button
-        square
         size="large"
         type="danger"
         text={props.buyText || '立即购买'}
