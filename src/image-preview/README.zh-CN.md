@@ -106,6 +106,7 @@ export default {
 | showIndex | 是否显示页码 | `boolean` | `true` | - |
 | showIndicators | 是否显示轮播指示器 | `boolean` | `false` | - |
 | loop | 是否开启循环播放 | `boolean` | `true` | - |
+| swipeDuration | 动画时长，单位为 ms | `number` | `500` | - |
 | onClose | 关闭时的回调函数 | `Function` | - | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | `Function` | - | 2.0.3 |
 | asyncClose | 是否开启异步关闭 | `boolean` | `false` | - |
@@ -126,6 +127,7 @@ export default {
 | show-index | 是否显示页码 | `boolean` | `true` | 1.3.4 |
 | show-indicators | 是否显示轮播指示器 | `boolean` | `false` | 1.3.10 |
 | loop | 是否开启循环播放 | `boolean` | `true` | 1.4.4 |
+| swipe-duration | 动画时长，单位为 ms | `number` | `500` | - |
 | async-close | 是否开启异步关闭 | `boolean` | `false` | 1.4.8 |
 | close-on-popstate | 是否在页面回退时自动关闭 | `boolean` | `false` |
 | class-name | 自定义类名 | `any` | - | 1.5.2 |

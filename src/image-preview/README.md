@@ -94,6 +94,7 @@ export default {
 | showIndex | Whether to show index | `boolean` | `true` |
 | showIndicators | Whether to show indicators | `boolean` | `false` |
 | loop | Whether to enable loop | `boolean` | `true` |
+| swipeDuration | Animation duration (ms) | `number` | `500` |
 | onClose | Triggered when close | `Function` | - |
 | onChange | Triggered when current image change | `Function` | - |
 | closeOnPopstate | Whether to close when popstate | `boolean` | `false` |
@@ -112,6 +113,7 @@ export default {
 | show-index | Whether to show index | `boolean` | `true` |
 | show-indicators | Whether to show indicators | `boolean` | `false` |
 | loop | Whether to enable loop | `boolean` | `true` |
+| swipe-duration | Animation duration (ms) | `number` | `500` |
 | async-close | Whether to enable async close | `boolean` | `false` |
 | close-on-popstate | Whether to close when popstate | `boolean` | `false` |
 | class-name | Custom className | `any` | - |

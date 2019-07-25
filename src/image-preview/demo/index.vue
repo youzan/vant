@@ -37,6 +37,7 @@
       <van-image-preview
         v-model="show"
         :images="images"
+        :swipe-duration="300"
         @change="onChange"
       >
         <template #index>{{ $t('index', index) }}</template>
@@ -93,6 +94,7 @@ export default {
     showImagePreview(position, timer) {
       const instance = ImagePreview({
         images,
+        swipeDuration: 300,
         asyncClose: !!timer,
         closeOnPopstate: true,
         startPosition: typeof position === 'number' ? position : 0
