@@ -1,7 +1,5 @@
 import Popup from '..';
-import { mount, triggerDrag, transitionStub } from '../../../test/utils';
-
-transitionStub();
+import { mount, triggerDrag } from '../../../test/utils';
 
 let wrapper;
 afterEach(() => {

@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import Toast from '..';
 import ToastVue from '../Toast';
-import { transitionStub, later } from '../../../test/utils';
-
-transitionStub();
+import { later } from '../../../test/utils';
 
 test('create a forbidClick toast', async () => {
   const toast = Toast({

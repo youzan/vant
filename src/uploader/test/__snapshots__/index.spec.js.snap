@@ -3,6 +3,7 @@
 exports[`click to preview image 1`] = `
 <div
   class="van-image-preview"
+  name="van-fade"
 >
   <div
     class="van-image-preview__index"

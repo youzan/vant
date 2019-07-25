@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import Dialog from '..';
 import DialogVue from '../Dialog';
-import { mount, later, trigger, transitionStub } from '../../../test/utils';
-
-transitionStub();
+import { mount, later, trigger } from '../../../test/utils';
 
 test('Dialog function call', async () => {
   Dialog.close();
