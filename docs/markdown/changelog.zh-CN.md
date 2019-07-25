@@ -1,5 +1,38 @@
 # 更新日志
 
+### [v2.1.0-beta.1](https://github.com/youzan/vant/tree/v2.1.0-beta.1)
+`2019-07-25`
+
+**Improvements**
+
+- Sku: 按钮视觉升级 [\#3922](https://github.com/youzan/vant/pull/3922)
+- Sku: 新增 sku-header-origin-price 插槽 [\#3958](https://github.com/youzan/vant/pull/3958)
+- SwipeCell: 新增 stop-propagation 属性 [\#3952](https://github.com/youzan/vant/pull/3952)
+- AddressList: 新增 click-item 事件 [\#3942](https://github.com/youzan/vant/pull/3942)
+- CouponList: 新增 empty-image 属性 [\#3941](https://github.com/youzan/vant/pull/3941)
+
+**Bug Fixes**
+
+- 修复 Tabs 在 sticky 模式下滚动回到顶部时存在 1 像素偏差的问题 [\#3949](https://github.com/youzan/vant/pull/3949)
+- 修复 IndexBar 在 index-list 变化时未更新高亮选项的问题 [\#3943](https://github.com/youzan/vant/pull/3943)
+
+
+### [v2.1.0-beta.0](https://github.com/youzan/vant/tree/v2.1.0-beta.0)
+`2019-07-22`
+
+**Improvements**
+
+- Sku: 整体视觉升级 [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: 新增 price-tag 属性 [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: 新增 hide-selected-text 属性 [\#3875](https://github.com/youzan/vant/pull/3875)
+- Dialog: 优化垂直居中位置 [\#3905](https://github.com/youzan/vant/pull/3905)
+- Uploader: 新增多个 less 变量 [\#3907](https://github.com/youzan/vant/pull/3907)
+- ActionSheet: 新增多个 less 变量 [\#3908](https://github.com/youzan/vant/pull/3908)
+
+**Bug Fixes**
+
+- 修复 AddressList 点击空白区域时无法选中的问题 [\#3909](https://github.com/youzan/vant/pull/3909)
+
 
 ### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
 `2019-07-19`
