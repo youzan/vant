@@ -458,27 +458,27 @@ export default createComponent({
     const Header = slots('sku-header') || (
       <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>
         {slots('sku-header-price') || (
-          <div>
-            <div class="van-sku__goods-price">
-              <span class="van-sku__price-symbol">￥</span>
-              <span class="van-sku__price-num">{price}</span>
-              {this.priceTag && <span class="van-sku__price-tag">{this.priceTag}</span>}
-            </div>
-            {originPrice && (
-              <SkuHeaderItem>原价 ￥{originPrice}</SkuHeaderItem>
-            )}
-            {!this.hideStock && (
-              <SkuHeaderItem>
-                <span class="van-sku__stock">{this.stockText}</span>
-                {!hideQuotaText && this.quotaText && <span class="van-sku__quota">({this.quotaText})</span>}
-              </SkuHeaderItem>
-            )}
-            {this.hasSku && !this.hideSelectedText && (
-              <SkuHeaderItem>{this.selectedText}</SkuHeaderItem>
-            )}
-            {slots('sku-header-extra')}
+          <div class="van-sku__goods-price">
+            <span class="van-sku__price-symbol">￥</span>
+            <span class="van-sku__price-num">{price}</span>
+            {this.priceTag && <span class="van-sku__price-tag">{this.priceTag}</span>}
           </div>
         )}
+        {slots('sku-header-origin-price') || (
+          originPrice && (
+            <SkuHeaderItem>原价 ￥{originPrice}</SkuHeaderItem>
+          )
+        )}
+        {!this.hideStock && (
+          <SkuHeaderItem>
+            <span class="van-sku__stock">{this.stockText}</span>
+            {!hideQuotaText && this.quotaText && <span class="van-sku__quota">({this.quotaText})</span>}
+          </SkuHeaderItem>
+        )}
+        {this.hasSku && !this.hideSelectedText && (
+          <SkuHeaderItem>{this.selectedText}</SkuHeaderItem>
+        )}
+        {slots('sku-header-extra')}
       </SkuHeader>
     );
 
