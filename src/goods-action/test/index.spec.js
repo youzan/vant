@@ -3,31 +3,15 @@ import Icon from '../../goods-action-icon';
 import { mount } from '../../../test/utils';
 
 test('Button click event', () => {
-  const click = jest.fn();
-  const wrapper = mount(Button, {
-    context: {
-      on: {
-        click
-      }
-    }
-  });
-
+  const wrapper = mount(Button);
   wrapper.trigger('click');
-  expect(click).toHaveBeenCalledTimes(1);
+  expect(wrapper.emitted('click').length).toEqual(1);
 });
 
 test('Icon click event', () => {
-  const click = jest.fn();
-  const wrapper = mount(Icon, {
-    context: {
-      on: {
-        click
-      }
-    }
-  });
-
+  const wrapper = mount(Icon);
   wrapper.trigger('click');
-  expect(click).toHaveBeenCalledTimes(1);
+  expect(wrapper.emitted('click').length).toEqual(1);
 });
 
 test('Button render default slot', () => {

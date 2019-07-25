@@ -2,8 +2,33 @@
 
 .van-goods-action-button {
   flex: 1;
+  height: 36px;
+  font-weight: 500;
+  font-size: @font-size-md;
+  line-height: 34px;
+  border: none;
+
+  &--first {
+    margin-left: 5px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+  }
+
+  &--last {
+    margin-right: 5px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+
+  &--warning {
+    background: linear-gradient(to right, #ffd01e, #ff8917);
+  }
+
+  &--danger {
+    background: linear-gradient(to right, #ff6034, #ee0a24);
+  }
 
   @media (max-width: 321px) {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
