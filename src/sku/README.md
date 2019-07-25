@@ -164,6 +164,8 @@ Use ref to get sku instance and call instance methods
 |------|------|
 | sku-header | Custom header |
 | sku-header-price | Custom header price area |
+| sku-header-origin-price | Custom header origin price area |
+| sku-header-extra | Extra header area |
 | sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |
