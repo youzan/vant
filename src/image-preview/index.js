@@ -11,6 +11,8 @@ const defaultConfig = {
   minZoom: 1 / 3,
   maxZoom: 3,
   className: '',
+  onClose: null,
+  onChange: null,
   lazyLoad: false,
   showIndex: true,
   asyncClose: false,
