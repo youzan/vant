@@ -3,12 +3,7 @@ import { range } from '../utils/format/number';
 import { padZero } from '../utils/format/string';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
-import {
-  times,
-  isValidDate,
-  getTrueValue,
-  getMonthEndDay
-} from './utils';
+import { times, isValidDate, getTrueValue, getMonthEndDay } from './utils';
 
 const [createComponent, bem] = createNamespace('datetime-picker');
 const currentYear = new Date().getFullYear();
@@ -109,21 +104,15 @@ export default createComponent({
         ];
       }
 
-      const {
-        maxYear,
-        maxDate,
-        maxMonth,
-        maxHour,
-        maxMinute
-      } = this.getBoundary('max', this.innerValue);
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary(
+        'max',
+        this.innerValue
+      );
 
-      const {
-        minYear,
-        minDate,
-        minMonth,
-        minHour,
-        minMinute
-      } = this.getBoundary('min', this.innerValue);
+      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary(
+        'min',
+        this.innerValue
+      );
 
       const result = [
         {
@@ -153,11 +142,11 @@ export default createComponent({
       return result;
     },
 
-    columns() {
-      const results = this.ranges.map(({ type, range: rangeArr }) => {
+    originColumns() {
+      return this.ranges.map(({ type, range: rangeArr }) => {
         let values = times(rangeArr[1] - rangeArr[0] + 1, index => {
           const value = padZero(rangeArr[0] + index);
-          return this.formatter(type, value);
+          return value;
         });
 
         if (this.filter) {
@@ -165,11 +154,16 @@ export default createComponent({
         }
 
         return {
+          type,
           values
         };
       });
+    },
 
-      return results;
+    columns() {
+      return this.originColumns.map(column => ({
+        values: column.values.map(value => this.formatter(column.type, value))
+      }));
     }
   },
 
@@ -249,7 +243,11 @@ export default createComponent({
       let value;
 
       if (this.type === 'time') {
-        value = picker.getValues().join(':');
+        const indexes = picker.getIndexes();
+        const hour = this.originColumns[0].values[indexes[0]];
+        const minute = this.originColumns[1].values[indexes[1]];
+
+        value = `${hour}:${minute}`;
       } else {
         const values = picker.getValues();
         const year = getTrueValue(values[0]);
