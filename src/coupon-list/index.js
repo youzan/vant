@@ -153,7 +153,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { coupons, disabledCoupons } = this;
     const title = `${this.enabledTitle || t('enable')} (${coupons.length})`;
     const disabledTitle = `${this.disabledTitle || t('disabled')} (${

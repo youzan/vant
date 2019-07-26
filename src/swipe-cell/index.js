@@ -153,7 +153,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const onClick = (position, stop) => event => {
       if (stop) {
         event.stopPropagation();

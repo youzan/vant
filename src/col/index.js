@@ -23,7 +23,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { span, offset } = this;
     return (
       <this.tag class={bem({ [span]: span, [`offset-${offset}`]: offset })} style={this.style}>

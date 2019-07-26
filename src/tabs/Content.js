@@ -66,7 +66,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <div
         class={bem('content', { animated: this.animated })}

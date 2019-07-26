@@ -35,7 +35,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <Button
         class={bem([

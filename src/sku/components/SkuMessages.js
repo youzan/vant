@@ -121,7 +121,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <CellGroup class={bem()}>
         {this.messages.map((message, index) => (message.type === 'image' ? (

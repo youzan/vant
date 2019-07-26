@@ -219,7 +219,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { itemHeight, visibleItemCount } = this;
 
     const baseOffset = (itemHeight * (visibleItemCount - 1)) / 2;

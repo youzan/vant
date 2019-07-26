@@ -30,7 +30,7 @@ export default createComponent({
     };
   },
 
-  render(h) {
+  render() {
     return (
       <div class={bem([this.direction])}>
         <div class={bem('items')}>{this.slots()}</div>

@@ -115,7 +115,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { vertical } = this;
     const style = {
       background: this.inactiveColor

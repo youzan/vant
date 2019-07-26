@@ -251,7 +251,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { type, ellipsis, animated, scrollable } = this;
 
     const Nav = this.children.map((item, index) => (

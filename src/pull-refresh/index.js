@@ -147,7 +147,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { status, distance } = this;
     const text = this[`${status}Text`] || t(status);
     const style = {

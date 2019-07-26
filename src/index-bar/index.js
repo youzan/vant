@@ -154,7 +154,7 @@ export default createComponent({
       }
     },
 
-    scrollToElement(element, setActive) {
+    scrollToElement(element) {
       const { index } = element.dataset;
       if (!index) {
         return;
@@ -177,7 +177,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const Indexes = this.indexList.map(index => {
       const active = index === this.activeAnchorIndex;
 

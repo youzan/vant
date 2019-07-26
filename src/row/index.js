@@ -17,7 +17,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { align, justify } = this;
     const flex = this.type === 'flex';
     const margin = `-${Number(this.gutter) / 2}px`;

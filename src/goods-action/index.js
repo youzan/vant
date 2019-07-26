@@ -10,7 +10,7 @@ export default createComponent({
     safeAreaInsetBottom: Boolean
   },
 
-  render(h) {
+  render() {
     return (
       <div class={bem({ 'safe-area-inset-bottom': this.safeAreaInsetBottom })}>
         {this.slots()}

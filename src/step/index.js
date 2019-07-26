@@ -31,7 +31,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { slots, status } = this;
     const { activeIcon, activeColor, inactiveIcon, direction } = this.$parent;
     const titleStyle = status === 'process' && { color: activeColor };

@@ -32,7 +32,7 @@ export default createComponent({
     this.onClosed = createEmitter('closed');
   },
 
-  render(h) {
+  render() {
     if (!this.shouldRender) {
       return;
     }

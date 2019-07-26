@@ -23,7 +23,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <div role="button" tabindex="0" class={bem()} onClick={this.onClick}>
         {this.slots('icon') ? (

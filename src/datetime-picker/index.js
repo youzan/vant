@@ -313,7 +313,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const props = {};
     Object.keys(pickerProps).forEach(key => {
       props[key] = this[key];

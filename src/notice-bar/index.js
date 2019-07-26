@@ -76,7 +76,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { slots, mode, leftIcon, onClickIcon } = this;
 
     const barStyle = {

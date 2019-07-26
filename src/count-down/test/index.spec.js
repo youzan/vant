@@ -85,7 +85,7 @@ test('start method', async () => {
   wrapper.vm.start();
   wrapper.vm.start();
 
-  await later(20);
+  await later(50);
 
   const laterShapShot = wrapper.html();
 

@@ -129,7 +129,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { title, theme, onPress, closeButtonText } = this;
 
     const titleLeftSlot = this.slots('title-left');

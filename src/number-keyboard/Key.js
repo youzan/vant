@@ -39,7 +39,7 @@ export default createComponent({
       this.active = true;
     },
 
-    onBlur(event) {
+    onBlur() {
       this.active = false;
     },
 
@@ -48,7 +48,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { onBlur } = this;
     return (
       <i
