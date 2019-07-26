@@ -1,5 +1,21 @@
 # 更新日志
 
+### [v2.1.0-beta.2](https://github.com/youzan/vant/tree/v2.1.0-beta.2)
+`2019-07-26`
+
+**Improvements**
+
+- GoodsAction: 整体视觉升级 [\#3967](https://github.com/youzan/vant/pull/3967)
+- ImagePreview: 新增 swipe-duration 属性 [\#3963](https://github.com/youzan/vant/pull/3963)
+
+**Bug Fixes**
+
+- 修复 Sku 单个按钮时圆角错误的问题 [\#3966](https://github.com/youzan/vant/pull/3966)
+- 修复 Tabs 在特定情况下出现下划线位置错误的问题 [\#3961](https://github.com/youzan/vant/pull/3961)
+- 修复 ImagePreview onClose 和 onChange 未被重置的问题 [\#3960](https://github.com/youzan/vant/pull/3960)
+- 修复 DatetimePicker 使用 formatter 且为 time 类型时 confirm 事件参数错误的问题 [\#3969](https://github.com/youzan/vant/pull/3969)
+
+
 ### [v2.1.0-beta.1](https://github.com/youzan/vant/tree/v2.1.0-beta.1)
 `2019-07-25`
 

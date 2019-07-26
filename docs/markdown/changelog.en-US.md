@@ -1,5 +1,21 @@
 # Changelog
 
+### [v2.1.0-beta.2](https://github.com/youzan/vant/tree/v2.1.0-beta.2)
+`2019-07-26`
+
+**Improvements**
+
+- GoodsAction: update style [\#3967](https://github.com/youzan/vant/pull/3967)
+- ImagePreview: add swipe-duration prop [\#3963](https://github.com/youzan/vant/pull/3963)
+
+**Bug Fixes**
+
+- fix Sku incorrect button border radius [\#3966](https://github.com/youzan/vant/pull/3966)
+- fix Tabs incorrect line position in some cases [\#3961](https://github.com/youzan/vant/pull/3961)
+- fix ImagePreview should reset onClose & onChange option [\#3960](https://github.com/youzan/vant/pull/3960)
+- fix DatetimePicker incorrect confirm param when use formatter [\#3969](https://github.com/youzan/vant/pull/3969)
+
+
 ### [v2.1.0-beta.1](https://github.com/youzan/vant/tree/v2.1.0-beta.1)
 `2019-07-25`
 
