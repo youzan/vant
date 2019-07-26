@@ -76,7 +76,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const Titles = this.children.map((item, index) => (
       <div
         role="button"

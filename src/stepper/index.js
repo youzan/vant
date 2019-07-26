@@ -165,7 +165,7 @@ export default createComponent({
       }, LONG_PRESS_INTERVAL);
     },
 
-    onTouchStart(type) {
+    onTouchStart() {
       clearTimeout(this.longPressTimer);
       this.isLongPress = false;
 
@@ -185,7 +185,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const createListeners = type => ({
       on: {
         click: () => {

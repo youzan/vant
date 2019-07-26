@@ -107,7 +107,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { disabled, expanded } = this;
 
     const titleSlots = CELL_SLOTS.reduce((slots, name) => {

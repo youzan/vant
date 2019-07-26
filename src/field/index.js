@@ -263,7 +263,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { slots, labelAlign } = this;
 
     const scopedSlots = {

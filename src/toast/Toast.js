@@ -77,7 +77,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { type, icon, message, iconPrefix, loadingType } = this;
 
     const hasIcon = icon || (type === 'success' || type === 'fail');

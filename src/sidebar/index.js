@@ -17,7 +17,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return <div class={[bem(), 'van-hairline--top-bottom']}>{this.slots()}</div>;
   }
 });

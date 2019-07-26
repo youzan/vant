@@ -57,7 +57,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { pivotText, percentage } = this;
     const text = isDef(pivotText) ? pivotText : percentage + '%';
     const showPivot = this.showPivot && text;

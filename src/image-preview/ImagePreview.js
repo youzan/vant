@@ -254,7 +254,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     if (!this.value) {
       return;
     }

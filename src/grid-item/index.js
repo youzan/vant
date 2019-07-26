@@ -72,7 +72,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { center, border, square, gutter, clickable } = this.parent;
 
     return (

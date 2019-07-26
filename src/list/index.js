@@ -104,7 +104,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const Placeholder = <div ref="placeholder" class={bem('placeholder')}/>;
 
     return (

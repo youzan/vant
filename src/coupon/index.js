@@ -61,7 +61,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { coupon, disabled } = this;
     const description = (disabled && coupon.reason) || coupon.description;
 

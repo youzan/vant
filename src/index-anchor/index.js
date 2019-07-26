@@ -43,7 +43,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { sticky } = this;
 
     return (

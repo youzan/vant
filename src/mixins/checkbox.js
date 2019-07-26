@@ -46,7 +46,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     }
   },
 
-  render(h) {
+  render() {
     const { slots, checked } = this;
 
     const CheckIcon = slots('icon', { checked }) || (

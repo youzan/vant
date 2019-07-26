@@ -82,7 +82,7 @@ export default {
   },
 
   methods: {
-    onClose(clickPosition, instance, detail) {
+    onClose(clickPosition, instance) {
       switch (clickPosition) {
         case 'left':
         case 'cell':

@@ -427,7 +427,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     if (this.isSkuEmpty) {
       return;
     }

@@ -225,7 +225,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { data, errorInfo, searchResult } = this;
     const onFocus = name => () => this.onFocus(name);
 

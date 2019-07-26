@@ -114,7 +114,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { value } = this;
     const simple = this.mode !== 'multi';
 

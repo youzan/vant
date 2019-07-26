@@ -88,7 +88,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { data, errorInfo } = this;
     const onFocus = name => () => this.onFocus(name);
 

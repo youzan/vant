@@ -141,7 +141,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <div class={bem({ round: this.round })} style={this.style} onClick={this.onClick}>
         {this.renderImage()}

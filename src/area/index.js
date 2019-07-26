@@ -183,7 +183,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const on = {
       ...this.$listeners,
       change: this.onChange

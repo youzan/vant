@@ -35,7 +35,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
     const imgUrl = this.skuValue.imgUrl || this.skuValue.img_url;
 

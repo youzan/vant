@@ -21,7 +21,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return <div class={bem()}>{this.slots()}</div>;
   }
 });

@@ -41,7 +41,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { icon, slots } = this;
     const active = this.parent.route ? this.routeActive : this.active;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];

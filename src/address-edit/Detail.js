@@ -61,7 +61,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <Cell class={bem()}>
         <Field

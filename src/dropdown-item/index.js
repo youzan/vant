@@ -63,7 +63,7 @@ export default createComponent({
     this.onOpened = createEmitter('opened');
   },
 
-  render(h) {
+  render() {
     const {
       zIndex,
       offset,

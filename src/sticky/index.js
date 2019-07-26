@@ -102,7 +102,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     const { fixed } = this;
     const style = {
       height: fixed ? `${this.height}px` : null

@@ -29,7 +29,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <a
         class={[bem({ select: this.select }), 'van-hairline']}

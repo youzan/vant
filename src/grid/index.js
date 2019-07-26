@@ -36,7 +36,7 @@ export default createComponent({
     }
   },
 
-  render(h) {
+  render() {
     return (
       <div
         style={this.style}
