@@ -125,7 +125,7 @@ export default createComponent({
         const shouldPrevent = !this.opened || this.deltaX * this.startOffset < 0;
 
         if (shouldPrevent) {
-          preventDefault(event, true);
+          preventDefault(event, this.stopPropagation);
         }
 
         this.swipeMove(this.deltaX + this.startOffset);
