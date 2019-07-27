@@ -30,6 +30,7 @@ export default createComponent({
 
   methods: {
     onClick(event) {
+      console.log(this.parent.children);
       this.$emit('click', event);
       route(this.$router, this);
     }

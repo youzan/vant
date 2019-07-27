@@ -1,8 +1,30 @@
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 
 type ChildrenMixinOptions = {
   indexKey?: any;
 };
+
+function containVNode(parentNode: VNode, childNode: VNode): boolean {
+  if (parentNode === childNode) {
+    return true;
+  }
+
+  if (parentNode.children) {
+    return parentNode.children.some(node => containVNode(node, childNode));
+  }
+
+  return false;
+}
+
+function findVNodeIndex(childs: VNode[], node: VNode) {
+  for (let i = 0; i < childs.length; i++) {
+    if (containVNode(childs[i], node)) {
+      return i;
+    }
+  }
+
+  return -1;
+}
 
 export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}) {
   const indexKey = options.indexKey || 'index';
@@ -37,21 +59,20 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
 
     methods: {
       bindRelation() {
-        if (!this.parent) {
+        if (!this.parent || this.parent.children.indexOf(this) !== -1) {
           return;
         }
 
-        const { children } = this.parent;
+        const children = [...this.parent.children, this];
+        const vnodes = this.parent.slots();
 
-        if (children.indexOf(this) === -1) {
-          const vnodeIndex = this.parent.slots().indexOf(this.$vnode);
+        children.sort((a, b) => {
+          const indexA = findVNodeIndex(vnodes, a.$vnode);
+          const indexB = findVNodeIndex(vnodes, b.$vnode);
+          return indexA > indexB ? 1 : -1;
+        });
 
-          if (vnodeIndex === -1) {
-            children.push(this);
-          } else {
-            children.splice(vnodeIndex, 0, this);
-          }
-        }
+        this.parent.children = children;
       }
     }
   });
