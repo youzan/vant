@@ -160,3 +160,10 @@ export default {
 |------|------|------|
 | confirm | Triggered when click confirm button | - |
 | cancel | Triggered when click cancel button | - |
+
+### Slots
+
+| Name | Description |
+|------|------|
+| default | Custom message |
+| title | Custom title |
