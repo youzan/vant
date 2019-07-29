@@ -67,6 +67,10 @@ export const TimePickerMixin = {
   methods: {
     onConfirm() {
       this.$emit('confirm', this.innerValue);
+    },
+
+    onCancel() {
+      this.$emit('cancel');
     }
   },
 
@@ -82,9 +86,7 @@ export const TimePickerMixin = {
         columns={this.columns}
         onChange={this.onChange}
         onConfirm={this.onConfirm}
-        onCancel={() => {
-          this.$emit('cancel');
-        }}
+        onCancel={this.onCancel}
         {...{ props }}
       />
     );
