@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-picker van-datetime-picker">
+    <div class="van-picker van-date-picker van-datetime-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
         <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
@@ -166,7 +166,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-picker van-datetime-picker">
+    <div class="van-picker van-date-picker van-datetime-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
         <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
@@ -247,7 +247,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-picker van-datetime-picker">
+    <div class="van-picker van-date-picker van-datetime-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
         <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
@@ -293,7 +293,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-picker van-datetime-picker">
+    <div class="van-picker van-time-picker van-datetime-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
         <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
@@ -386,7 +386,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-picker van-datetime-picker">
+    <div class="van-picker van-time-picker van-datetime-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
         <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
