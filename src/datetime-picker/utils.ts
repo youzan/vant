@@ -1,11 +1,5 @@
 import { isNaN } from '../utils/validate/number';
 
-export function isValidDate(date: Date): boolean {
-  return (
-    Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime())
-  );
-}
-
 export function times(n: number, iteratee: (index: number) => any[]) {
   let index = -1;
   const result = Array(n);
