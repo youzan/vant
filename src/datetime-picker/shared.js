@@ -1,6 +1,7 @@
 import { times } from './utils';
 import { padZero } from '../utils/format/string';
 import { pickerProps } from '../picker/shared';
+import Picker from '../picker';
 
 export const sharedProps = {
   ...pickerProps,
@@ -66,6 +67,28 @@ export const TimePickerMixin = {
   methods: {
     onConfirm() {
       this.$emit('confirm', this.innerValue);
+    },
+
+    onCancel() {
+      this.$emit('cancel');
     }
+  },
+
+  render() {
+    const props = {};
+    Object.keys(pickerProps).forEach(key => {
+      props[key] = this[key];
+    });
+
+    return (
+      <Picker
+        ref="picker"
+        columns={this.columns}
+        onChange={this.onChange}
+        onConfirm={this.onConfirm}
+        onCancel={this.onCancel}
+        {...{ props }}
+      />
+    );
   }
 };

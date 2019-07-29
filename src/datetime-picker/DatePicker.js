@@ -1,13 +1,11 @@
 import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
-import { pickerProps } from '../picker/shared';
 import { getTrueValue, getMonthEndDay } from './utils';
 import { sharedProps, TimePickerMixin } from './shared';
-import Picker from '../picker';
 
 const currentYear = new Date().getFullYear();
-const [createComponent, bem] = createNamespace('date-picker');
+const [createComponent] = createNamespace('date-picker');
 
 export default createComponent({
   mixins: [TimePickerMixin],
@@ -185,26 +183,5 @@ export default createComponent({
         this.$refs.picker.setValues(values);
       });
     }
-  },
-
-  render() {
-    const props = {};
-    Object.keys(pickerProps).forEach(key => {
-      props[key] = this[key];
-    });
-
-    return (
-      <Picker
-        class={bem()}
-        ref="picker"
-        columns={this.columns}
-        onChange={this.onChange}
-        onConfirm={this.onConfirm}
-        onCancel={() => {
-          this.$emit('cancel');
-        }}
-        {...{ props }}
-      />
-    );
   }
 });
