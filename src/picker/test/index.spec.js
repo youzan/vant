@@ -80,12 +80,13 @@ test('set picker values', () => {
   expect(vm.getColumnValue(2)).toEqual(undefined);
 });
 
-test('drag columns', async () => {
+test('drag columns', () => {
   const wrapper = mount(Picker, {
     propsData: {
       columns
     }
   });
+
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
 
@@ -94,12 +95,13 @@ test('drag columns', async () => {
   expect(wrapper.emitted('change')[0][1]).toEqual(['normal', '1990']);
 });
 
-test('drag simple columns', async () => {
+test('drag simple columns', () => {
   const wrapper = mount(Picker, {
     propsData: {
       columns: simpleColumn
     }
   });
+
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
 
