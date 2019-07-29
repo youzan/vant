@@ -66,6 +66,7 @@ export default createComponent({
   watch: {
     value(val) {
       val = this.correctValue(val);
+
       const isEqual =
         this.type === 'time'
           ? val === this.innerValue
@@ -253,8 +254,8 @@ export default createComponent({
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
-        let date = getTrueValue(values[2]);
 
+        let date = getTrueValue(values[2]);
         if (this.type === 'year-month') {
           date = 1;
         }
