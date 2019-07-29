@@ -1,9 +1,10 @@
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
+import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
-import { times, isValidDate, getTrueValue, getMonthEndDay } from './utils';
+import { times, getTrueValue, getMonthEndDay } from './utils';
 
 const [createComponent, bem] = createNamespace('datetime-picker');
 const currentYear = new Date().getFullYear();
@@ -40,12 +41,12 @@ export default createComponent({
     minDate: {
       type: Date,
       default: () => new Date(currentYear - 10, 0, 1),
-      validator: isValidDate
+      validator: isDate
     },
     maxDate: {
       type: Date,
       default: () => new Date(currentYear + 10, 11, 31),
-      validator: isValidDate
+      validator: isDate
     },
     maxHour: {
       type: Number,
@@ -66,6 +67,7 @@ export default createComponent({
   watch: {
     value(val) {
       val = this.correctValue(val);
+
       const isEqual =
         this.type === 'time'
           ? val === this.innerValue
@@ -176,7 +178,7 @@ export default createComponent({
       // validate value
       const isDateType = this.type !== 'time';
 
-      if (isDateType && !isValidDate(value)) {
+      if (isDateType && !isDate(value)) {
         value = this.minDate;
       } else if (!value) {
         value = `${padZero(this.minHour)}:00`;
@@ -253,8 +255,8 @@ export default createComponent({
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
-        let date = getTrueValue(values[2]);
 
+        let date = getTrueValue(values[2]);
         if (this.type === 'year-month') {
           date = 1;
         }
