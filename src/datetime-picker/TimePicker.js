@@ -1,11 +1,9 @@
 import { createNamespace } from '../utils';
 import { padZero } from '../utils/format/string';
 import { range } from '../utils/format/number';
-import { pickerProps } from '../picker/shared';
 import { sharedProps, TimePickerMixin } from './shared';
-import Picker from '../picker';
 
-const [createComponent, bem] = createNamespace('time-picker');
+const [createComponent] = createNamespace('time-picker');
 
 export default createComponent({
   mixins: [TimePickerMixin],
@@ -93,26 +91,5 @@ export default createComponent({
         this.$refs.picker.setValues(values);
       });
     }
-  },
-
-  render() {
-    const props = {};
-    Object.keys(pickerProps).forEach(key => {
-      props[key] = this[key];
-    });
-
-    return (
-      <Picker
-        class={bem()}
-        ref="picker"
-        columns={this.columns}
-        onChange={this.onChange}
-        onConfirm={this.onConfirm}
-        onCancel={() => {
-          this.$emit('cancel');
-        }}
-        {...{ props }}
-      />
-    );
   }
 });

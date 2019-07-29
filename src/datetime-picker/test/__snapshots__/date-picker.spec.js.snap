@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`filter prop 1`] = `
-<div class="van-picker van-date-picker">
+<div class="van-picker">
   <div class="van-hairline--top-bottom van-picker__toolbar">
     <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
     <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
@@ -63,7 +63,7 @@ exports[`filter prop 1`] = `
 `;
 
 exports[`formatter prop 1`] = `
-<div class="van-picker van-date-picker">
+<div class="van-picker">
   <div class="van-hairline--top-bottom van-picker__toolbar">
     <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
     <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
