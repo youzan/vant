@@ -102,3 +102,27 @@ test('button text', () => {
 test('dialog component', () => {
   expect(Dialog.Component).toEqual(DialogVue);
 });
+
+test('default slot', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true
+    },
+    scopedSlots: {
+      default: () => 'Custom Message'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('title slot', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true
+    },
+    scopedSlots: {
+      title: () => 'Custom Title'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

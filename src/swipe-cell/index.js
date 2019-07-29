@@ -122,7 +122,12 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.direction === 'horizontal') {
-        preventDefault(event, this.stopPropagation);
+        const shouldPrevent = !this.opened || this.deltaX * this.startOffset < 0;
+
+        if (shouldPrevent) {
+          preventDefault(event, this.stopPropagation);
+        }
+
         this.swipeMove(this.deltaX + this.startOffset);
       }
     },
