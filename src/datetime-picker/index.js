@@ -30,10 +30,6 @@ export default createComponent({
       type: Boolean,
       default: true
     },
-    format: {
-      type: String,
-      default: 'YYYY.MM.DD HH时 mm分'
-    },
     formatter: {
       type: Function,
       default: (type, value) => value
