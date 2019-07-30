@@ -45,18 +45,6 @@ export default createComponent({
       });
     },
 
-    onClickIcon() {
-      if (!this.isDisabled) {
-        this.toggle();
-      }
-    },
-
-    onClickLabel() {
-      if (!this.isDisabled && !this.labelDisabled) {
-        this.toggle();
-      }
-    },
-
     setParentValue(val) {
       const { parent } = this;
       const value = parent.value.slice();
