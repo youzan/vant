@@ -541,7 +541,7 @@ export default {
               },
               {
                 path: '/overlay',
-                title: 'Overlay 遮罩层'
+                title: 'Overlay'
               },
               {
                 path: '/pull-refresh',

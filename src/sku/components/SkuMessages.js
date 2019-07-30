@@ -21,7 +21,10 @@ const PLACEHOLDER = {
 
 export default createComponent({
   props: {
-    messages: Array,
+    messages: {
+      type: Array,
+      default: () => []
+    },
     messageConfig: Object,
     goodsId: [Number, String]
   },
