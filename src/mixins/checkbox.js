@@ -46,6 +46,20 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     }
   },
 
+  methods: {
+    onClick(event) {
+      const { label } = this.$refs;
+      const { target } = event;
+      const labelClicked = label && (label === target || label.contains(target));
+
+      if (!this.disabled && !(labelClicked && this.labelDisabled)) {
+        this.toggle();
+      }
+
+      this.$emit('click', event);
+    }
+  },
+
   render() {
     const { slots, checked } = this;
 
@@ -55,8 +69,8 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
 
     const Label = slots() && (
       <span
+        ref="label"
         class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
-        onClick={this.onClickLabel}
       >
         {slots()}
       </span>
@@ -66,7 +80,6 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       <div
         class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
         style={{ fontSize: addUnit(this.iconSize) }}
-        onClick={this.onClickIcon}
       >
         {CheckIcon}
       </div>
@@ -84,9 +97,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
         class={bem()}
         tabindex={this.tabindex}
         aria-checked={String(this.checked)}
-        onClick={event => {
-          this.$emit('click', event);
-        }}
+        onClick={this.onClick}
       >
         {Children}
       </div>

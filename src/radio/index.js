@@ -27,16 +27,8 @@ export default createComponent({
   },
 
   methods: {
-    onClickIcon() {
-      if (!this.isDisabled) {
-        this.currentValue = this.name;
-      }
-    },
-
-    onClickLabel() {
-      if (!this.isDisabled && !this.labelDisabled) {
-        this.currentValue = this.name;
-      }
+    toggle() {
+      this.currentValue = this.name;
     }
   }
 });
