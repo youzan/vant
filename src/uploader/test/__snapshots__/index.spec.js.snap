@@ -6,11 +6,6 @@ exports[`click to preview image 1`] = `
   name="van-fade"
 >
   <div
-    class="van-image-preview__index"
-  >
-    1/2
-  </div>
-  <div
     class="van-swipe"
   >
     <div
@@ -37,6 +32,11 @@ exports[`click to preview image 1`] = `
         />
       </div>
     </div>
+  </div>
+  <div
+    class="van-image-preview__index"
+  >
+    1/2
   </div>
 </div>
 `;

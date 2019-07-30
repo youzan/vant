@@ -310,8 +310,8 @@ export default createComponent({
           onTouchend={this.onWrapperTouchEnd}
           onTouchcancel={this.onWrapperTouchEnd}
         >
-          {Index}
           {Images}
+          {Index}
         </div>
       </transition>
     );
