@@ -1,25 +1,59 @@
+
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
-        <div>
-          <template v-for="(i, index) in icons">
-            <van-goods-action-icon
-              :key="index"
-              icon="chat-o"
-              :text="$t('icon1')"
-              @click="onClickIcon"
-            />
-          </template>
-        </div>
-        <template v-for="(i, index) in buttons">
-          <van-goods-action-button
-            :key="index"
-            type="warning"
-            :text="String(index)"
-            @click="onClickButton"
-          />
-        </template>
+        <van-goods-action-icon
+          icon="chat-o"
+          :text="$t('icon1')"
+          @click="onClickIcon"
+        />
+        <van-goods-action-icon
+          icon="cart-o"
+          :text="$t('icon2')"
+          @click="onClickIcon"
+        />
+        <van-goods-action-button
+          type="warning"
+          :text="$t('button1')"
+          @click="onClickButton"
+        />
+        <van-goods-action-button
+          type="danger"
+          :text="$t('button2')"
+          @click="onClickButton"
+        />
+      </van-goods-action>
+    </demo-block>
+
+    <demo-block :title="$t('title2')">
+      <van-goods-action>
+        <van-goods-action-icon
+          icon="chat-o"
+          :text="$t('icon1')"
+          @click="onClickIcon"
+        />
+        <van-goods-action-icon
+          icon="cart-o"
+          info="5"
+          :text="$t('icon2')"
+          @click="onClickIcon"
+        />
+        <van-goods-action-icon
+          icon="shop-o"
+          :text="$t('icon3')"
+          @click="onClickIcon"
+        />
+        <van-goods-action-button
+          type="warning"
+          :text="$t('button1')"
+          @click="onClickButton"
+        />
+        <van-goods-action-button
+          type="danger"
+          :text="$t('button2')"
+          @click="onClickButton"
+        />
       </van-goods-action>
     </demo-block>
   </demo-section>
@@ -49,39 +83,10 @@ export default {
       title2: 'Icon info'
     }
   },
-
-  data() {
-    this.add();
-    return {
-      show: false,
-      icons: [],
-      buttons: []
-    };
-  },
-
   methods: {
-    add() {
-      this.$nextTick(() => {
-        this.$nextTick(() => {
-          if (Math.floor(Math.random() * 10) % 2 === 1) {
-            console.log('add button');
-            this.buttons.push(1);
-          } else {
-            console.log('add icon');
-            this.icons.push(1);
-          }
-
-          if (this.icons.length + this.buttons.length < 5) {
-            this.add();
-          }
-        });
-      });
-    },
-
     onClickIcon() {
       this.$toast(this.$t('clickIcon'));
     },
-
     onClickButton() {
       this.$toast(this.$t('clickButton'));
     }

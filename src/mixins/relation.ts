@@ -4,26 +4,21 @@ type ChildrenMixinOptions = {
   indexKey?: any;
 };
 
-function containVNode(parentNode: VNode, childNode: VNode): boolean {
-  if (parentNode === childNode) {
-    return true;
+function flattenVNodes(vnodes: VNode[]) {
+  const result: VNode[] = [];
+
+  function traverse(vnodes: VNode[]) {
+    vnodes.forEach(vnode => {
+      result.push(vnode);
+
+      if (vnode.children) {
+        traverse(vnode.children);
+      }
+    });
   }
 
-  if (parentNode.children) {
-    return parentNode.children.some(node => containVNode(node, childNode));
-  }
-
-  return false;
-}
-
-function findVNodeIndex(childs: VNode[], node: VNode) {
-  for (let i = 0; i < childs.length; i++) {
-    if (containVNode(childs[i], node)) {
-      return i;
-    }
-  }
-
-  return -1;
+  traverse(vnodes);
+  return result;
 }
 
 export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}) {
@@ -47,7 +42,7 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
       }
     },
 
-    created() {
+    mounted() {
       this.bindRelation();
     },
 
@@ -64,13 +59,8 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
         }
 
         const children = [...this.parent.children, this];
-        const vnodes = this.parent.slots();
-
-        children.sort((a, b) => {
-          const indexA = findVNodeIndex(vnodes, a.$vnode);
-          const indexB = findVNodeIndex(vnodes, b.$vnode);
-          return indexA > indexB ? 1 : -1;
-        });
+        const vnodes = flattenVNodes(this.parent.slots());
+        children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
 
         this.parent.children = children;
       }

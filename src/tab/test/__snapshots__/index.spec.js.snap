@@ -155,11 +155,11 @@ exports[`name prop 1`] = `
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line"></div>
+      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
     </div>
   </div>
   <div class="van-tabs__content">
-    <div role="tabpanel" class="van-tab__pane">Text</div>
+    <div role="tabpanel" class="van-tab__pane" style="">Text</div>
     <div role="tabpanel" class="van-tab__pane" style="display: none;">
       <!---->
     </div>
