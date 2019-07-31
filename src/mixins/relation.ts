@@ -1,8 +1,25 @@
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 
 type ChildrenMixinOptions = {
   indexKey?: any;
 };
+
+function flattenVNodes(vnodes: VNode[]) {
+  const result: VNode[] = [];
+
+  function traverse(vnodes: VNode[]) {
+    vnodes.forEach(vnode => {
+      result.push(vnode);
+
+      if (vnode.children) {
+        traverse(vnode.children);
+      }
+    });
+  }
+
+  traverse(vnodes);
+  return result;
+}
 
 export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}) {
   const indexKey = options.indexKey || 'index';
@@ -25,7 +42,7 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
       }
     },
 
-    created() {
+    mounted() {
       this.bindRelation();
     },
 
@@ -37,21 +54,15 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
 
     methods: {
       bindRelation() {
-        if (!this.parent) {
+        if (!this.parent || this.parent.children.indexOf(this) !== -1) {
           return;
         }
 
-        const { children } = this.parent;
+        const children = [...this.parent.children, this];
+        const vnodes = flattenVNodes(this.parent.slots());
+        children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
 
-        if (children.indexOf(this) === -1) {
-          const vnodeIndex = this.parent.slots().indexOf(this.$vnode);
-
-          if (vnodeIndex === -1) {
-            children.push(this);
-          } else {
-            children.splice(vnodeIndex, 0, this);
-          }
-        }
+        this.parent.children = children;
       }
     }
   });

@@ -1,3 +1,4 @@
+
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
@@ -82,12 +83,10 @@ export default {
       title2: 'Icon info'
     }
   },
-
   methods: {
     onClickIcon() {
       this.$toast(this.$t('clickIcon'));
     },
-
     onClickButton() {
       this.$toast(this.$t('clickButton'));
     }
