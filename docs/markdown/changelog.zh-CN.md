@@ -1,53 +1,35 @@
 # 更新日志
 
-### [v2.1.0-beta.2](https://github.com/youzan/vant/tree/v2.1.0-beta.2)
-`2019-07-26`
+### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
+`2019-08-01` 🇨🇳
 
 **Improvements**
 
-- GoodsAction: 整体视觉升级 [\#3967](https://github.com/youzan/vant/pull/3967)
-- ImagePreview: 新增 swipe-duration 属性 [\#3963](https://github.com/youzan/vant/pull/3963)
-
-**Bug Fixes**
-
-- 修复 Sku 单个按钮时圆角错误的问题 [\#3966](https://github.com/youzan/vant/pull/3966)
-- 修复 Tabs 在特定情况下出现下划线位置错误的问题 [\#3961](https://github.com/youzan/vant/pull/3961)
-- 修复 ImagePreview onClose 和 onChange 未被重置的问题 [\#3960](https://github.com/youzan/vant/pull/3960)
-- 修复 DatetimePicker 使用 formatter 且为 time 类型时 confirm 事件参数错误的问题 [\#3969](https://github.com/youzan/vant/pull/3969)
-
-
-### [v2.1.0-beta.1](https://github.com/youzan/vant/tree/v2.1.0-beta.1)
-`2019-07-25`
-
-**Improvements**
-
-- Sku: 按钮视觉升级 [\#3922](https://github.com/youzan/vant/pull/3922)
-- Sku: 新增 sku-header-origin-price 插槽 [\#3958](https://github.com/youzan/vant/pull/3958)
-- SwipeCell: 新增 stop-propagation 属性 [\#3952](https://github.com/youzan/vant/pull/3952)
-- AddressList: 新增 click-item 事件 [\#3942](https://github.com/youzan/vant/pull/3942)
-- CouponList: 新增 empty-image 属性 [\#3941](https://github.com/youzan/vant/pull/3941)
-
-**Bug Fixes**
-
-- 修复 Tabs 在 sticky 模式下滚动回到顶部时存在 1 像素偏差的问题 [\#3949](https://github.com/youzan/vant/pull/3949)
-- 修复 IndexBar 在 index-list 变化时未更新高亮选项的问题 [\#3943](https://github.com/youzan/vant/pull/3943)
-
-
-### [v2.1.0-beta.0](https://github.com/youzan/vant/tree/v2.1.0-beta.0)
-`2019-07-22`
-
-**Improvements**
-
-- Sku: 整体视觉升级 [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: UI 升级，采用更圆润的视觉风格 [\#3875](https://github.com/youzan/vant/pull/3875) [\#3922](https://github.com/youzan/vant/pull/3922)
+- GoodsAction: UI 升级，采用更圆润的视觉风格 [\#3967](https://github.com/youzan/vant/pull/3967)
 - Sku: 新增 price-tag 属性 [\#3875](https://github.com/youzan/vant/pull/3875)
 - Sku: 新增 hide-selected-text 属性 [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: 新增 sku-header-origin-price 插槽 [\#3958](https://github.com/youzan/vant/pull/3958)
+- Dialog: 新增 title 插槽 [\#3985](https://github.com/youzan/vant/pull/3985)
 - Dialog: 优化垂直居中位置 [\#3905](https://github.com/youzan/vant/pull/3905)
 - Uploader: 新增多个 less 变量 [\#3907](https://github.com/youzan/vant/pull/3907)
 - ActionSheet: 新增多个 less 变量 [\#3908](https://github.com/youzan/vant/pull/3908)
+- AddressList: 新增 click-item 事件 [\#3942](https://github.com/youzan/vant/pull/3942)
+- CouponList: 新增 empty-image 属性 [\#3941](https://github.com/youzan/vant/pull/3941)
+- ImagePreview: 新增 swipe-duration 属性 [\#3963](https://github.com/youzan/vant/pull/3963)
+- SwipeCell: 新增 stop-propagation 属性 [\#3952](https://github.com/youzan/vant/pull/3952)
 
 **Bug Fixes**
 
+- 修复 Tabs 在特定情况下出现下划线位置错误的问题 [\#3961](https://github.com/youzan/vant/pull/3961)
 - 修复 AddressList 点击空白区域时无法选中的问题 [\#3909](https://github.com/youzan/vant/pull/3909)
+- 修复 IndexBar 在 index-list 变化时未更新高亮选项的问题 [\#3943](https://github.com/youzan/vant/pull/3943)
+- 修复 ImagePreview 图片较长时遮挡索引的问题 [\#4002](https://github.com/youzan/vant/pull/4002)
+- 修复 ImagePreview onClose 和 onChange 选项未被重置的问题 [\#3960](https://github.com/youzan/vant/pull/3960)
+- 修复 Radio 和 Checkbox 点击中间空白区域时无法选中的问题 [\#4007](https://github.com/youzan/vant/pull/4007)
+- 修复 SwipeCell 在打开的情况下阻止事件冒泡的问题 [\#3982](https://github.com/youzan/vant/pull/3982)
+- 修复 Tabs 在 sticky 模式下滚动回到顶部时存在 1 像素偏差的问题 [\#3949](https://github.com/youzan/vant/pull/3949)
+- 修复 DatetimePicker 使用 formatter 且为 time 类型时 confirm 事件参数错误的问题 [\#3969](https://github.com/youzan/vant/pull/3969)
 
 
 ### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)

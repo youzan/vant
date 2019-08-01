@@ -1,53 +1,35 @@
 # Changelog
 
-### [v2.1.0-beta.2](https://github.com/youzan/vant/tree/v2.1.0-beta.2)
-`2019-07-26`
+### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
+`2019-08-01`
 
 **Improvements**
 
 - GoodsAction: update style [\#3967](https://github.com/youzan/vant/pull/3967)
+- Sku: update style [\#3875](https://github.com/youzan/vant/pull/3875) [\#3922](https://github.com/youzan/vant/pull/3922)
+- Sku: add price-tag prop [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: add hide-selected-text prop [\#3875](https://github.com/youzan/vant/pull/3875)
+- Sku: add sku-header-origin-price slot [\#3958](https://github.com/youzan/vant/pull/3958)
+- Dialog: add title slot [\#3985](https://github.com/youzan/vant/pull/3985)
+- Dialog: centered in screen [\#3905](https://github.com/youzan/vant/pull/3905)
+- Uploader: add less vars [\#3907](https://github.com/youzan/vant/pull/3907)
+- ActionSheet: add less vars [\#3908](https://github.com/youzan/vant/pull/3908)
+- AddressList: add click-item event [\#3942](https://github.com/youzan/vant/pull/3942)
+- CouponList: add empty-image prop [\#3941](https://github.com/youzan/vant/pull/3941)
+- SwipeCell: add stop-propagation prop [\#3952](https://github.com/youzan/vant/pull/3952)
 - ImagePreview: add swipe-duration prop [\#3963](https://github.com/youzan/vant/pull/3963)
 
 **Bug Fixes**
 
-- fix Sku incorrect button border radius [\#3966](https://github.com/youzan/vant/pull/3966)
 - fix Tabs incorrect line position in some cases [\#3961](https://github.com/youzan/vant/pull/3961)
 - fix ImagePreview should reset onClose & onChange option [\#3960](https://github.com/youzan/vant/pull/3960)
 - fix DatetimePicker incorrect confirm param when use formatter [\#3969](https://github.com/youzan/vant/pull/3969)
-
-
-### [v2.1.0-beta.1](https://github.com/youzan/vant/tree/v2.1.0-beta.1)
-`2019-07-25`
-
-**Improvements**
-
-- SwipeCell: add stop-propagation prop [\#3952](https://github.com/youzan/vant/pull/3952)
-- Sku: update button style [\#3922](https://github.com/youzan/vant/pull/3922)
-- Sku: add sku-header-origin-price slot [\#3958](https://github.com/youzan/vant/pull/3958)
-- CouponList: add empty-image prop [\#3941](https://github.com/youzan/vant/pull/3941)
-- AddressList: add click-item event [\#3942](https://github.com/youzan/vant/pull/3942)
-
-**Bug Fixes**
-
 - fix Tabs fix scroll position deviation when sticky [\#3949](https://github.com/youzan/vant/pull/3949)
 - fix IndexBar should update when index-list updated [\#3943](https://github.com/youzan/vant/pull/3943)
-
-
-### [v2.1.0-beta.0](https://github.com/youzan/vant/tree/v2.1.0-beta.0)
-`2019-07-22`
-
-**Improvements**
-
-- Sku: update style [\#3875](https://github.com/youzan/vant/pull/3875)
-- Sku: add price-tag prop [\#3875](https://github.com/youzan/vant/pull/3875)
-- Sku: add hide-selected-text prop [\#3875](https://github.com/youzan/vant/pull/3875)
-- Dialog: centered in screen [\#3905](https://github.com/youzan/vant/pull/3905)
-- Uploader: add less vars [\#3907](https://github.com/youzan/vant/pull/3907)
-- ActionSheet: add less vars [\#3908](https://github.com/youzan/vant/pull/3908)
-
-**Bug Fixes**
-
 - fix AddressList can't select item when click empty area [\#3909](https://github.com/youzan/vant/pull/3909)
+- fix ImagePreview Image beyond the screen height cover index [\#4002](https://github.com/youzan/vant/pull/4002)
+- fix Radio: can't select when click gap [\#4007](https://github.com/youzan/vant/pull/4007)
+- fix SwipeCell should not prevent touchmove when opened [\#3982](https://github.com/youzan/vant/pull/3982)
 
 
 ### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
