@@ -1,6 +1,15 @@
 # Changelog
 
-### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
+### [v2.1.1](https://github.com/youzan/vant/tree/v2.1.1)
+`2019-08-02`
+
+**Bug Fixes**
+
+- fix DatetimePicker event not work [\#4027](https://github.com/youzan/vant/pull/4027)
+- fix Popup ensure z-index setting order [\#4026](https://github.com/youzan/vant/pull/4026)
+
+
+### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0) [deprecated]
 `2019-08-01`
 
 **Improvements**

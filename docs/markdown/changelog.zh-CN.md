@@ -1,6 +1,15 @@
 # 更新日志
 
-### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
+### [v2.1.1](https://github.com/youzan/vant/tree/v2.1.1)
+`2019-08-02`
+
+**Bug Fixes**
+
+- 修复 DatetimePicker 事件无法触发的问题 [\#4027](https://github.com/youzan/vant/pull/4027)
+- 修复 Popup 设置 z-index 顺序错误的问题 [\#4026](https://github.com/youzan/vant/pull/4026)
+
+
+### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0) [已废弃]
 `2019-08-01` 🇨🇳
 
 **Improvements**
