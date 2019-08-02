@@ -1,5 +1,5 @@
 const path = require('path');
-const config = require('./webpack.base.js');
+const config = require('./webpack.dev.js');
 
 const isMinify = process.argv.indexOf('-p') !== -1;
 
