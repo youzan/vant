@@ -18,7 +18,7 @@ export default createComponent({
         class={bem()}
         {...{
           props: this.$props,
-          listeners: this.$listeners
+          on: this.$listeners
         }}
       />
     );
