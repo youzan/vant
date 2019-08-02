@@ -19,12 +19,12 @@
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant-doc changelog ./docs/markdown/changelog.generated.md --tag 2.0.0",
     "build:lib": "node build/build-lib.js",
-    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist --add",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",
     "test:coverage": "open test/coverage/index.html",
-    "release": "sh build/release.sh"
+    "release": "sh build/release-pkg.sh",
+    "release-site": "sh build/release-site.sh"
   },
   "husky": {
     "hooks": {
