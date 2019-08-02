@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 rm -rf docs/dist
 
-npx cross-env NODE_ENV=production webpack --config build/webpack.doc.js
+npx cross-env NODE_ENV=production webpack --config build/webpack.site.js
 
 superman-cdn cdn /vant ./docs/dist/*.js
 

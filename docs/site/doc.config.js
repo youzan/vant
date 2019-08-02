@@ -24,7 +24,17 @@ export default {
           text: 'En',
           from: 'zh-CN',
           to: 'en-US'
-        }
+        },
+        logoLink: [
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: 'https://youzan.github.io/vant-weapp'
+          },
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            url: github
+          }
+        ]
       }
     },
     nav: [
@@ -378,7 +388,13 @@ export default {
           text: '中文',
           from: 'en-US',
           to: 'zh-CN'
-        }
+        },
+        logoLink: [
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            url: github
+          }
+        ]
       }
     },
     nav: [
