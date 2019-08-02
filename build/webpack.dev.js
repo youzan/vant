@@ -13,16 +13,11 @@ module.exports = {
     publicPath: '/',
     chunkFilename: 'async_[name].js'
   },
-  stats: {
-    modules: false,
-    children: false
-  },
   devServer: {
     open: true,
     progress: true,
     host: '0.0.0.0',
-    stats: 'errors-only',
-    clientLogLevel: 'warning'
+    stats: 'errors-only'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.vue', '.less']
@@ -70,7 +65,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    // new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['vant-docs'],
       template: 'docs/site/desktop/index.html',
