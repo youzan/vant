@@ -168,24 +168,24 @@ export const PopupMixin = {
         return;
       }
 
-      if (this.overlay) {
-        openOverlay(this, {
-          zIndex: context.zIndex++,
-          duration: this.duration,
-          className: this.overlayClass,
-          customStyle: this.overlayStyle
-        });
-      } else {
-        closeOverlay(this);
-      }
+      this.$nextTick(() => {
+        this.updateZIndex(this.overlay ? 1 : 0);
 
-      this.updateZIndex();
+        if (this.overlay) {
+          openOverlay(this, {
+            zIndex: context.zIndex++,
+            duration: this.duration,
+            className: this.overlayClass,
+            customStyle: this.overlayStyle
+          });
+        } else {
+          closeOverlay(this);
+        }
+      });
     },
 
-    updateZIndex() {
-      this.$nextTick(() => {
-        this.$el.style.zIndex = context.zIndex++;
-      });
+    updateZIndex(value = 0) {
+      this.$el.style.zIndex = ++context.zIndex + value;
     }
   }
 };

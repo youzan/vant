@@ -1,4 +1,4 @@
-import { mount } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 import ActionSheet from '..';
 
 test('callback events', () => {
@@ -41,7 +41,7 @@ test('callback events', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('click overlay and close', () => {
+test('click overlay and close', async () => {
   const onInput = jest.fn();
   const onClickOverlay = jest.fn();
   const div = document.createElement('div');
@@ -70,6 +70,8 @@ test('click overlay and close', () => {
       onClickOverlay
     }
   });
+
+  await later();
 
   div.querySelector('.van-overlay').click();
   expect(onInput).toHaveBeenCalledWith(false);
