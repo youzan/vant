@@ -1,5 +1,5 @@
 import Popup from '..';
-import { mount, triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test/utils';
 
 let wrapper;
 afterEach(() => {
@@ -94,7 +94,7 @@ test('get container with selector', () => {
   expect(dom2.parentNode).toEqual(wrapper.vm.$el);
 });
 
-test('render overlay', () => {
+test('render overlay', async () => {
   const div = document.createElement('div');
   wrapper = mount({
     template: `
@@ -112,10 +112,12 @@ test('render overlay', () => {
     }
   });
 
+  await later();
+
   expect(div.querySelector('.van-overlay')).toBeTruthy();
 });
 
-test('watch overlay prop', () => {
+test('watch overlay prop', async () => {
   const div = document.createElement('div');
   wrapper = mount({
     template: `
@@ -135,16 +137,19 @@ test('watch overlay prop', () => {
     }
   });
 
+  await later();
   expect(div.querySelector('.van-overlay')).toBeFalsy();
 
   wrapper.setData({ overlay: true });
+  await later();
   expect(div.querySelector('.van-overlay')).toBeFalsy();
 
   wrapper.setData({ show: true });
+  await later();
   expect(div.querySelector('.van-overlay')).toBeTruthy();
 });
 
-test('close on click overlay', () => {
+test('close on click overlay', async () => {
   const div = document.createElement('div');
   const onClickOverlay = jest.fn();
 
@@ -171,6 +176,8 @@ test('close on click overlay', () => {
       onClickOverlay
     }
   });
+
+  await later();
 
   const modal = div.querySelector('.van-overlay');
   triggerDrag(modal, 0, -30);
