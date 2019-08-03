@@ -98,9 +98,13 @@ export default createComponent({
     },
 
     onTouchMove(event) {
-      preventDefault(event);
       this.moving = true;
       this.touchMove(event);
+
+      if (this.direction === 'vertical') {
+        preventDefault(event, true);
+      }
+
       this.offset = range(
         this.startOffset + this.deltaY,
         -(this.count * this.itemHeight),
