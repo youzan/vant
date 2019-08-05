@@ -41,7 +41,7 @@
 
 我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
 
-- <a target="_blank" href="https://job.youzan.com/apply/youzan/3750#/job/c1c4f154-be88-4ebf-95bd-76d4ce2d4faf?_k=tqcvo9">职位详情</a>（Base: 杭州/深圳）
+- <a target="_blank" href="https://app.mokahr.com/apply/youzan/6252#/job/96f5d2c7-e657-4d31-9244-195edc443a7f?_k=jf2141">职位详情</a>（Base: 杭州/深圳）
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
 - <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
