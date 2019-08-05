@@ -21,6 +21,10 @@ tasks.forEach(task => {
 
   const interactive = new Signale({ interactive: true });
   interactive.pending(task);
-  shell.exec(`${task} --silent`);
-  interactive.success(task);
+  const result = shell.exec(`${task} --silent`);
+  if (result.code !== 0) {
+    interactive.error(task);
+  } else {
+    interactive.success(task);
+  }
 });
