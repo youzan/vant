@@ -1225,10 +1225,10 @@
     eslint-plugin-import "^2.18.2"
     eslint-plugin-vue "^5.2.3"
 
-"@vant/icons@1.1.10":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.10.tgz#bbd34850b20d9944b64c64b64d35db7820181145"
-  integrity sha512-kSeN2fGnhc0iCeH+zANUAGXYQfIdKl0Dj7kXf5qNqqOB3xB8w+66+7FpFLXCkQHZ1uUIAB8KLAqh5RZTaVtmGQ==
+"@vant/icons@1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.11.tgz#4dfa9fbc2a693c958686ce7b6df2488368c60a17"
+  integrity sha512-s1LP5gNFaHlVPTbpR/x4GVQn1uRQF/NFucmQqvx/aB1G+BnuR0gx08Zhe9hzM5+4aCGF3Nucw9Qt7fn5TVCjWQ==
 
 "@vant/markdown-loader@^2.2.0":
   version "2.2.0"
@@ -10235,10 +10235,10 @@ webpack-sources@^1.4.0, webpack-sources@^1.4.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.39.0:
-  version "4.39.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.0.tgz#1d511308c3dd8f9fe3152c9447ce30f1814a620c"
-  integrity sha512-nrxFNSEKm4T1C/EsgOgN50skt//Pl4X7kgJC1MrlE47M292LSCVmMOC47iTGL0CGxbdwhKGgeThrJcw0bstEfA==
+webpack@4.39.1:
+  version "4.39.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.1.tgz#60ed9fb2b72cd60f26ea526c404d2a4cc97a1bd8"
+  integrity sha512-/LAb2TJ2z+eVwisldp3dqTEoNhzp/TLCZlmZm3GGGAlnfIWDgOEE758j/9atklNLfRyhKbZTCOIoPqLJXeBLbQ==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
