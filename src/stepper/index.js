@@ -30,6 +30,14 @@ export default createComponent({
     defaultValue: {
       type: [Number, String],
       default: 1
+    },
+    showPlus: {
+      type: Boolean,
+      default: true
+    },
+    showMinus: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -204,6 +212,7 @@ export default createComponent({
     return (
       <div class={bem()}>
         <button
+          vShow={this.showMinus}
           style={this.buttonStyle}
           class={bem('minus', { disabled: this.minusDisabled })}
           {...createListeners('minus')}
@@ -223,6 +232,7 @@ export default createComponent({
           onBlur={this.onBlur}
         />
         <button
+          vShow={this.showPlus}
           style={this.buttonStyle}
           class={bem('plus', { disabled: this.plusDisabled })}
           {...createListeners('plus')}

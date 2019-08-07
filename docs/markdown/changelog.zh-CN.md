@@ -9,7 +9,7 @@
 - 修复 Popup 设置 z-index 顺序错误的问题 [\#4026](https://github.com/youzan/vant/pull/4026)
 
 
-### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0) [已废弃]
+### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
 `2019-08-01` 🇨🇳
 
 **Improvements**
