@@ -111,6 +111,8 @@ export default {
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | `boolean` | `false` | - |
 | input-width | 输入框宽度，默认单位为`px` | `string | number` | `32px` | 1.6.13 |
 | button-size | 按钮大小，默认单位为`px`，输入框高度会和按钮大小保持一致 | `string | number` | `28px` | 2.0.5 |
+| show-plus | 是否显示增加按钮 | `boolean` | `true` | 2.1.2 |
+| show-minus | 是否显示减少按钮 | `boolean` | `true` | 2.1.2 |
 
 ### Events
 

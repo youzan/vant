@@ -107,6 +107,8 @@ export default {
 | async-change | Whether to enable async change | `boolean` | `false` | - |
 | input-width | Input width | `string | number` | `32px` |
 | button-size | Button size | `string | number` | `28px` |
+| show-plus | Whether to show plus button | `boolean` | `true` |
+| show-minus | Whether to show minus button | `boolean` | `true` |
 
 ### Events
 

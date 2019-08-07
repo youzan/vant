@@ -176,3 +176,14 @@ test('min value is 0', () => {
 
   expect(wrapper.emitted('input')[0][0]).toEqual(0);
 });
+
+test('show-plus & show-minus props', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      showPlus: false,
+      showMinus: false
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
