@@ -62,7 +62,7 @@ export default createComponent({
       this.height = this.$el.offsetHeight;
 
       const { container, offsetTop } = this;
-      const scrollTop = getScrollTop(document.body);
+      const scrollTop = getScrollTop(window);
       const topToPageTop = getElementTop(this.$el);
 
       const emitScrollEvent = () => {
