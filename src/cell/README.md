@@ -57,8 +57,8 @@ Vue.use(Cell).use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" is-link url="//youzan.github.io/vant/mobile.html" />
-  <van-cell title="Cell title" is-link to="index" />
+  <van-cell title="URL" is-link url="//youzan.github.io/vant/mobile.html" />
+  <van-cell title="Vue Router" is-link to="index" />
 </van-cell-group>
 ```
 

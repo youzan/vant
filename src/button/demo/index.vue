@@ -125,6 +125,19 @@
         {{ $t('mini') }}
       </van-button>
     </demo-block>
+
+    <demo-block :title="$t('router')">
+      <van-button
+        :text="$t('urlRoute')"
+        type="primary"
+        url="//youzan.github.io/vant/mobile.html"
+      />
+      <van-button
+        :text="$t('vueRoute')"
+        type="primary"
+        to="index"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -151,7 +164,10 @@ export default {
       round: '圆形按钮',
       hairline: '细边框',
       hairlineButton: '细边框按钮',
-      loadingText: '加载中...'
+      loadingText: '加载中...',
+      router: '页面导航',
+      urlRoute: 'URL 跳转',
+      vueRoute: '路由跳转'
     },
     'en-US': {
       type: 'Type',
@@ -173,7 +189,10 @@ export default {
       round: 'Round',
       hairline: 'Hairline',
       hairlineButton: 'Hairline',
-      loadingText: 'Loading...'
+      loadingText: 'Loading...',
+      router: 'Router',
+      urlRoute: 'URL',
+      vueRoute: 'Vue Router'
     }
   }
 };

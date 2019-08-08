@@ -89,6 +89,15 @@ Vue.use(Button);
 <van-button type="primary" size="mini">迷你按钮</van-button>
 ```
 
+### 页面导航
+
+可以通过`url`属性进行 URL 跳转，或通过`to`属性进行路由跳转
+
+```html
+<van-button type="primary" url="//youzan.github.io/vant/mobile.html">URL 跳转</van-button>
+<van-button type="primary" to="index">路由跳转</van-button>
+```
+
 ## API
 
 ### Props

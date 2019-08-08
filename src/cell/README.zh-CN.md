@@ -55,13 +55,13 @@ Vue.use(Cell).use(CellGroup);
 <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
 ```
 
-### 页面跳转
+### 页面导航
 
-可以通过`url`属性进行页面跳转，或通过`to`属性进行 vue-router 跳转
+可以通过`url`属性进行 URL 跳转，或通过`to`属性进行路由跳转
 
 ```html
-<van-cell title="单元格" is-link url="//youzan.github.io/vant/mobile.html" />
-<van-cell title="单元格" is-link to="index" />
+<van-cell title="URL 跳转" is-link url="//youzan.github.io/vant/mobile.html" />
+<van-cell title="路由跳转" is-link to="index" />
 ```
 
 ### 分组标题

@@ -60,12 +60,12 @@
 
     <demo-block :title="$t('router')">
       <van-cell
-        :title="$t('cell')"
+        :title="$t('urlRoute')"
         is-link
         url="//youzan.github.io/vant/mobile.html"
       />
       <van-cell
-        :title="$t('cell')"
+        :title="$t('vueRoute')"
         is-link
         to="index"
       />
@@ -122,7 +122,9 @@ export default {
       largeSize: '单元格大小',
       group: '分组',
       groupTitle: '分组标题',
-      router: '页面跳转'
+      router: '页面导航',
+      urlRoute: 'URL 跳转',
+      vueRoute: '路由跳转'
     },
     'en-US': {
       cell: 'Cell title',
@@ -132,7 +134,9 @@ export default {
       largeSize: 'Size',
       group: 'Group',
       groupTitle: 'Group Title',
-      router: 'Router'
+      router: 'Router',
+      urlRoute: 'URL',
+      vueRoute: 'Vue Router'
     }
   }
 };

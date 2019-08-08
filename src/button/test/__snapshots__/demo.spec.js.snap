@@ -31,5 +31,6 @@ exports[`renders demo correctly 1`] = `
     </span></button> <button class="van-button van-button--primary van-button--mini"><span class="van-button__text">
       迷你按钮
     </span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">URL 跳转</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">路由跳转</span></button></div>
 </div>
 `;
