@@ -3,28 +3,28 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-divider van-divider--hairline"></div>
+    <div role="separator" class="van-divider van-divider--hairline"></div>
   </div>
   <div>
-    <div class="van-divider van-divider--hairline van-divider--content-center">
+    <div role="separator" class="van-divider van-divider--hairline van-divider--content-center">
       文本
     </div>
   </div>
   <div>
-    <div class="van-divider van-divider--hairline van-divider--content-left">
+    <div role="separator" class="van-divider van-divider--hairline van-divider--content-left">
       文本
     </div>
-    <div class="van-divider van-divider--hairline van-divider--content-right">
-      文本
-    </div>
-  </div>
-  <div>
-    <div class="van-divider van-divider--dashed van-divider--content-center">
+    <div role="separator" class="van-divider van-divider--hairline van-divider--content-right">
       文本
     </div>
   </div>
   <div>
-    <div class="van-divider van-divider--hairline van-divider--content-center" style="border-color: #1989fa; color: rgb(25, 137, 250); padding: 0px 16px;">
+    <div role="separator" class="van-divider van-divider--dashed van-divider--content-center">
+      文本
+    </div>
+  </div>
+  <div>
+    <div role="separator" class="van-divider van-divider--hairline van-divider--content-center" style="border-color: #1989fa; color: rgb(25, 137, 250); padding: 0px 16px;">
       文本
     </div>
   </div>
