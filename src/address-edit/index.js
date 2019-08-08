@@ -24,6 +24,10 @@ const defaultData = {
   isDefault: false
 };
 
+function isPostal(value) {
+  return /^\d{6}$/.test(value);
+}
+
 export default createComponent({
   props: {
     areaList: Object,
@@ -60,6 +64,10 @@ export default createComponent({
     telValidator: {
       type: Function,
       default: isMobile
+    },
+    postalValidator: {
+      type: Function,
+      default: isPostal
     }
   },
 
@@ -183,7 +191,7 @@ export default createComponent({
         case 'addressDetail':
           return value ? '' : t('addressEmpty');
         case 'postalCode':
-          return value && !/^\d{6}$/.test(value) ? t('postalEmpty') : '';
+          return value && !this.postalValidator(value) ? t('postalEmpty') : '';
       }
     },
 

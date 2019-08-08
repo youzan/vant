@@ -76,7 +76,8 @@ export default {
 | is-saving | Whether to show save button loading status | `boolean` | `false` |
 | is-deleting | Whether to show delete button loading status | `boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
-| validator | Custom validator | `(key, value) => string` | - | 1.3.9 |
+| postal-validator | The method to validate postal | `(tel: string) => boolean` | - |
+| validator | Custom validator | `(key, value) => string` | - |
 
 ### Events
 
