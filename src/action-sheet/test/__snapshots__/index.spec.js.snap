@@ -12,6 +12,12 @@ exports[`callback events 1`] = `
 </div>
 `;
 
+exports[`color option 1`] = `
+<div class="van-popup van-popup--bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__item van-hairline--top" style="color: red;"><span class="van-action-sheet__name">Option</span></div>
+</div>
+`;
+
 exports[`disable lazy-render 1`] = `
 <div class="van-popup van-popup--bottom van-action-sheet" style="display: none;" name="van-popup-slide-bottom">
   <div class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></div>

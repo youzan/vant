@@ -61,8 +61,8 @@ export default {
     return {
       show: false,
       actions: [
-        { name: '选项' },
-        { name: '选项', loading: true },
+        { name: '选项', color: '#07c160' },
+        { loading: true },
         { name: '禁用选项', disabled: true }
       ]
     };
@@ -133,6 +133,7 @@ export default {
 |------|------|------|
 | name | 标题 | `string` |
 | subname | 二级标题 | `string` |
+| color | 选项文字颜色 | `string` |
 | className | 为对应列添加额外的 class | `any` |
 | loading | 是否为加载状态 | `boolean` |
 | disabled | 是否为禁用状态 | `boolean` |

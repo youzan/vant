@@ -114,7 +114,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标识符 | 任意类型 | - | - |
+| name | 标识符 | `any` | - | - |
 | shape | 形状，可选值为 `square` | `string` | `round` | 1.6.0 |
 | disabled | 是否为禁用状态 | `boolean` | `false` | - |
 | icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
@@ -126,7 +126,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中项的标识符 | 任意类型 | - | - |
+| v-model | 当前选中项的标识符 | `any` | - | - |
 | disabled | 是否禁用所有单选框 | `boolean` | `false` | - |
 
 ### Radio Events

@@ -151,3 +151,14 @@ test('round prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('color option', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      actions: [{ name: 'Option', color: 'red' }]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
