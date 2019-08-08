@@ -23,7 +23,7 @@
       }
 
       .van-dropdown-menu__title {
-        color: @gray-dark;
+        color: @dropdown-menu-title-disabled-text-color;
       }
     }
   }
@@ -32,7 +32,8 @@
     position: relative;
     box-sizing: border-box;
     max-width: 100%;
-    padding: 0 @padding-xs;
+    padding: @dropdown-menu-title-padding;
+    color: @dropdown-menu-title-text-color;
     font-size: @dropdown-menu-title-font-size;
 
     &::after {
