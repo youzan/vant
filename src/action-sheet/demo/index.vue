@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import { GREEN } from '../../utils/color';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -106,7 +108,7 @@ export default {
 
     statusActions() {
       return [
-        { name: this.$t('option') },
+        { name: this.$t('option'), color: GREEN },
         { loading: true },
         { name: this.$t('disabledOption'), disabled: true }
       ];

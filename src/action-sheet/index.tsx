@@ -12,6 +12,7 @@ import { PopupMixinProps } from '../mixins/popup/type';
 
 export type ActionSheetItem = {
   name: string;
+  color?: string;
   subname?: string;
   loading?: boolean;
   disabled?: boolean;
@@ -96,6 +97,7 @@ function ActionSheet(
     return (
       <div
         class={[bem('item', { disabled }), item.className, 'van-hairline--top']}
+        style={{ color: item.color }}
         onClick={onClickOption}
       >
         {OptionContent()}

@@ -58,7 +58,7 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option' },
+        { name: 'Option', color: '#07c160' },
         { loading: true },
         { name: 'Disabled Option', disabled: true }
       ]
@@ -124,6 +124,7 @@ export default {
 |------|------|------|
 | name | Title | `string` |
 | subname | Subtitle | `string` |
+| color | Text color | `string` |
 | className | className for the option | `any` |
 | loading | Whether to be loading status | `boolean` |
 | disabled | Whether to be disabled | `boolean` |
