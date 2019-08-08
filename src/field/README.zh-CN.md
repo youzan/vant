@@ -122,14 +122,14 @@ Vue.use(Field);
 
 ### Props
 
-Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
-
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|------|
 | label | 输入框左侧文本 | `string` | - | - |
 | value | 当前输入的值 | `string | number` | - | - |
-| type | 可设置为原生类型, 如 `number` `tel` `textarea` | `string` | `text` | - |
+| type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | `string` | `text` | - |
 | size | 大小，可选值为 `large` | `string` | - | 1.6.9 |
+| maxlength | 输入的最大字符数 | `string | number` | - | - |
+| placeholder | 占位提示文字 | `string` | - | - |
 | border | 是否显示内边框 | `boolean` | `true` | - |
 | disabled | 是否禁用输入框 | `boolean` | `false` | - |
 | readonly | 是否只读 | `boolean` | `false` | - |
@@ -137,8 +137,8 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | clearable | 是否启用清除控件 | `boolean` | `false` | - |
 | clickable | 是否开启点击反馈 | `boolean` | `false` | 2.0.0 |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `boolean` | `false` | - |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | 2.0.4 |
 | error | 是否将输入内容标红 | `boolean` | `false` | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | 2.0.4 |
 | error-message | 底部错误提示文案，为空时不展示 | `string` | `''` | - 
 | label-class | 左侧文本额外类名 | `any` | - | 2.0.0 |
 | label-width | 左侧文本宽度，可指定单位，默认为 px | `string | number` | `90px` | 1.6.17 |
