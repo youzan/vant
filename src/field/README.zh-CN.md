@@ -128,7 +128,7 @@ Vue.use(Field);
 | value | 当前输入的值 | `string | number` | - | - |
 | type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | `string` | `text` | - |
 | size | 大小，可选值为 `large` | `string` | - | 1.6.9 |
-| maxlength | 输入字符最大长度 | `string | number` | - | - |
+| maxlength | 输入的最大字符数 | `string | number` | - | - |
 | placeholder | 占位提示文字 | `string` | - | - |
 | border | 是否显示内边框 | `boolean` | `true` | - |
 | disabled | 是否禁用输入框 | `boolean` | `false` | - |
