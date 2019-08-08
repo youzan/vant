@@ -22,6 +22,7 @@ function Divider(
 ) {
   return (
     <div
+      role="separator"
       style={{ borderColor: props.borderColor }}
       class={bem({
         dashed: props.dashed,
