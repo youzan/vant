@@ -100,7 +100,7 @@ export default createComponent({
 
         if (value === '') {
           // 必填字段的校验
-          if (String(message.required) === '1') { // eslint-disable-line
+          if (String(message.required) === '1') {
             const textType = message.type === 'image'
               ? '请上传'
               : '请填写';

@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import Vue from 'vue';
 import Popup from '../popup';
 import Toast from '../toast';

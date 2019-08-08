@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import AddressEdit from '..';
 import areaList from '../../area/demo/area.simple';
 import { mount, later } from '../../../test/utils';

@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import { isDef, isObj } from '.';
 import { ObjectIndex } from './types';
 
@@ -14,6 +13,7 @@ function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
   if (!hasOwnProperty.call(to, key) || !isObj(val) || typeof val === 'function') {
     to[key] = val;
   } else {
+    // eslint-disable-next-line no-use-before-define
     to[key] = deepAssign(Object(to[key]), from[key]);
   }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable object-shorthand */
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 
@@ -30,6 +29,7 @@ export default createComponent({
   },
 
   watch: {
+    // eslint-disable-next-line object-shorthand
     'parent.currentIndex'() {
       this.inited = this.inited || this.isActive;
     },
