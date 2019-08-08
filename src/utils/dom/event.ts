@@ -1,21 +1,21 @@
-/* eslint-disable no-empty */
-/* eslint-disable getter-return */
-/* eslint-disable import/no-mutable-exports */
 import { isServer } from '..';
 import { EventHandler } from '../types';
 
+// eslint-disable-next-line import/no-mutable-exports
 export let supportsPassive = false;
 
 if (!isServer) {
   try {
     const opts = {};
     Object.defineProperty(opts, 'passive', {
+      // eslint-disable-next-line getter-return
       get() {
         /* istanbul ignore next */
         supportsPassive = true;
       }
     });
     window.addEventListener('test-passive', null as any, opts);
+  // eslint-disable-next-line no-empty
   } catch (e) {}
 }
 

@@ -24,7 +24,6 @@
 </template>
 
 <script>
-/* eslint-disable camelcase */
 export default {
   i18n: {
     'zh-CN': {

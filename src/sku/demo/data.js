@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   goods_id: '946755',
   quota: 15,

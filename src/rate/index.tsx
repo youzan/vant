@@ -1,4 +1,3 @@
-/* eslint-disable prefer-spread */
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';

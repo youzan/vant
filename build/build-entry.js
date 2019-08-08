@@ -5,8 +5,7 @@ const Components = require('./get-components')();
 const packageJson = require('../package.json');
 
 const version = process.env.VERSION || packageJson.version;
-const tips = `/* eslint-disable */
-// This file is auto gererated by build/build-entry.js`;
+const tips = '// This file is auto gererated by build/build-entry.js';
 
 function buildEntry() {
   const uninstallComponents = [

@@ -1,4 +1,3 @@
-/* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import { VueConstructor } from 'vue/types';
 import ActionSheet from './action-sheet';
