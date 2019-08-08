@@ -30,6 +30,7 @@ export type FileListItem = {
   url?: string;
   file?: File;
   content?: string; // dataUrl
+  isImage?: boolean;
 };
 
 const IMAGE_EXT = ['jpeg', 'jpg', 'gif', 'png', 'svg'];
@@ -39,6 +40,12 @@ export function isImageUrl(url: string): boolean {
 }
 
 export function isImageFile(item: FileListItem): boolean {
+  // some special urls cannot be recognized
+  // user can add `isImage` flag to mark it as an image url
+  if (item.isImage) {
+    return true;
+  }
+
   if (item.file && item.file.type) {
     return item.file.type.indexOf('image') === 0;
   }
