@@ -125,8 +125,10 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 |------|------|------|------|
 | value | Field value | `string | number` | - |
 | label | Field label | `string` | - |
-| type | Input type | `string` | `text` |
+| type | Input type, can be set to `tel` `number`<br>`textarea` `password` | `string` | `text` |
 | size | Size，can be set to `large` | `string` | - |
+| maxlength | Max length of value | `string | number` | - |
+| placeholder | Placeholder | `string` | - |
 | border | Whether to show inner border | `boolean` | `true` |
 | disabled | Whether to disable field | `boolean` | `false` |
 | readonly | Whether to be readonly | `boolean` | `false` |
@@ -134,8 +136,8 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | clearable | Whether to be clearable | `boolean` | `false` |
 | clickable | Whether to show click feedback when clicked | `boolean` | `false` |
 | is-link | Whether to show link icon | `boolean` | `false` |
-| arrow-direction | Can be set to `left` `up` `down` | `string` | - |
 | error | Whether to show error info | `boolean` | `false` |
+| arrow-direction | Can be set to `left` `up` `down` | `string` | - |
 | error-message | Error message | `string` | `''` |
 | label-class | Label className | `any` | - |
 | label-width | Label width | `string | number` | `90px` |
