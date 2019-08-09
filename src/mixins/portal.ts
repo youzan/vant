@@ -20,9 +20,7 @@ export function PortalMixin({ afterPortal }: PortalMixinOptions) {
     },
 
     watch: {
-      getContainer() {
-        this.portal();
-      }
+      getContainer: 'portal'
     },
 
     mounted() {

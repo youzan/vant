@@ -51,9 +51,7 @@ export default createComponent({
 
     areaList: {
       deep: true,
-      handler() {
-        this.setValues();
-      }
+      handler: 'setValues'
     },
 
     columnsNum() {

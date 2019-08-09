@@ -44,13 +44,8 @@ export default createComponent({
   },
 
   watch: {
-    value() {
-      this.toggleClickable();
-    },
-
-    forbidClick() {
-      this.toggleClickable();
-    }
+    value: 'toggleClickable',
+    forbidClick: 'toggleClickable'
   },
 
   methods: {

@@ -42,9 +42,7 @@ export default createComponent({
   },
 
   watch: {
-    columns() {
-      this.setColumns();
-    }
+    columns: 'setColumns'
   },
 
   methods: {

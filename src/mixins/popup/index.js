@@ -62,9 +62,7 @@ export const PopupMixin = {
       this.$emit(type);
     },
 
-    overlay() {
-      this.renderOverlay();
-    }
+    overlay: 'renderOverlay'
   },
 
   mounted() {
