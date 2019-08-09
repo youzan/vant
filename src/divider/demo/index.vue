@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { BLUE } from '../../utils/color';
+import { BLUE } from '../../utils/constant';
 
 export default {
   i18n: {

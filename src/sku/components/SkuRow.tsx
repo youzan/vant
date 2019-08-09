@@ -1,5 +1,6 @@
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
+import { BORDER_BOTTOM } from '../../utils/constant';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -19,7 +20,7 @@ function SkuRow(
   ctx: RenderContext<SkuRowProps>
 ) {
   return (
-    <div class={[bem(), 'van-hairline--bottom']} {...inherit(ctx)}>
+    <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
       <div class={bem('title')}>{props.skuRow.k}</div>
       {slots.default && slots.default()}
     </div>

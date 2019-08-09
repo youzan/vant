@@ -1,5 +1,5 @@
 import { createNamespace, addUnit } from '../utils';
-import { GRAY } from '../utils/color';
+import { GRAY } from '../utils/constant';
 import { inherit } from '../utils/functional';
 
 // Types

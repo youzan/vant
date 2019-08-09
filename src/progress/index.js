@@ -1,5 +1,5 @@
 import { createNamespace, isDef } from '../utils';
-import { BLUE, WHITE } from '../utils/color';
+import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('progress');
 

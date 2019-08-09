@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
-import { GREEN } from '../utils/color';
+import { GREEN } from '../utils/constant';
 import {
   getScrollTop,
   getElementTop,

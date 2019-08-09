@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { BLUE, GRAY_DARK } from '../utils/color';
+import { BLUE, GRAY_DARK } from '../utils/constant';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import Loading from '../loading';

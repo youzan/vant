@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { BORDER } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('key');
 
@@ -54,7 +55,7 @@ export default createComponent({
       <i
         role="button"
         tabindex="0"
-        class={['van-hairline', this.className]}
+        class={[BORDER, this.className]}
         onClick={this.onClick}
         onTouchstart={this.onFocus}
         onTouchmove={onBlur}

@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { GREEN } from '../utils/color';
+import { GREEN } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('steps');
 

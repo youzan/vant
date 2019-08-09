@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { RED } from '../utils/color';
+import { RED } from '../utils/constant';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';

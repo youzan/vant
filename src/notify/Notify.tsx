@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { RED, WHITE } from '../utils/color';
+import { RED, WHITE } from '../utils/constant';
 import { inherit } from '../utils/functional';
 import { PopupMixin } from '../mixins/popup';
 import Popup from '../popup';

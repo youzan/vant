@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { ParentMixin } from '../mixins/relation';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('collapse');
 
@@ -29,7 +30,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={[bem(), { 'van-hairline--top-bottom': this.border }]}>
+      <div class={[bem(), { [BORDER_TOP_BOTTOM]: this.border }]}>
         {this.slots()}
       </div>
     );

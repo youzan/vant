@@ -1,5 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
+import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -35,7 +36,7 @@ function PasswordInput(
     }
 
     Points.push(
-      <li class={{ 'van-hairline--left': showBorder }} style={style}>
+      <li class={{ [BORDER_LEFT]: showBorder }} style={style}>
         {props.mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }} /> : char}
       </li>
     );
@@ -44,7 +45,7 @@ function PasswordInput(
   return (
     <div class={bem()}>
       <ul
-        class={[bem('security'), { 'van-hairline--surround': !props.gutter }]}
+        class={[bem('security'), { [BORDER_SURROUND]: !props.gutter }]}
         onTouchstart={(event: TouchEvent) => {
           event.stopPropagation();
           emit(ctx, 'focus', event);

@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { ParentMixin } from '../mixins/relation';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('tabbar');
 
@@ -59,7 +60,7 @@ export default createComponent({
       <div
         style={{ zIndex: this.zIndex }}
         class={[
-          { 'van-hairline--top-bottom': this.border },
+          { [BORDER_TOP_BOTTOM]: this.border },
           bem({
             fixed: this.fixed,
             'safe-area-inset-bottom': this.safeAreaInsetBottom

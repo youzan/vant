@@ -1,5 +1,6 @@
 import { createNamespace, noop } from '../utils';
 import { inherit } from '../utils/functional';
+import { BORDER_BOTTOM } from '../utils/constant';
 import Icon from '../icon';
 
 // Types
@@ -39,7 +40,7 @@ function NavBar(
     <div
       class={[
         bem({ fixed: props.fixed }),
-        { 'van-hairline--bottom': props.border }
+        { [BORDER_BOTTOM]: props.border }
       ]}
       style={{ zIndex: props.zIndex }}
       {...inherit(ctx)}

@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { BLUE } from '../utils/color';
+import { BLUE, BORDER_TOP_BOTTOM } from '../utils/constant';
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
@@ -103,7 +103,7 @@ export default createComponent({
     ));
 
     return (
-      <div ref="menu" class={[bem(), 'van-hairline--top-bottom']}>
+      <div ref="menu" class={[bem(), BORDER_TOP_BOTTOM]}>
         {Titles}
         {this.slots('default')}
       </div>

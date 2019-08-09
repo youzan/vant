@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { RED } from '../utils/color';
+import { RED } from '../utils/constant';
 import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 

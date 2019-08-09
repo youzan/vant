@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
-import { BLUE, WHITE } from '../utils/color';
+import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
 const PERIMETER = 3140;

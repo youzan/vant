@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 import Button from '../button';
@@ -99,7 +100,7 @@ export default createComponent({
 
     const hasButtons = this.showCancelButton && this.showConfirmButton;
     const ButtonGroup = (
-      <div class={['van-hairline--top', bem('footer', { buttons: hasButtons })]}>
+      <div class={[BORDER_TOP, bem('footer', { buttons: hasButtons })]}>
         {this.showCancelButton && (
           <Button
             size="large"
@@ -115,7 +116,7 @@ export default createComponent({
         {this.showConfirmButton && (
           <Button
             size="large"
-            class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
+            class={[bem('confirm'), { [BORDER_LEFT]: hasButtons }]}
             loading={this.loading.confirm}
             text={this.confirmButtonText || t('confirm')}
             style={{ color: this.confirmButtonColor }}

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VanNotify from './Notify';
-import { RED, WHITE } from '../utils/color';
+import { RED, WHITE } from '../utils/constant';
 import { isObj, isServer } from '../utils';
 import { mount } from '../utils/functional';
 import { NotifyOptions } from 'types/notify';
