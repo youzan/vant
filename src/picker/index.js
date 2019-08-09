@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
-import { BLUE } from '../utils/color';
+import { BLUE, BORDER_TOP_BOTTOM } from '../utils/constant';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
@@ -163,7 +163,7 @@ export default createComponent({
     };
 
     const Toolbar = this.showToolbar && (
-      <div class={['van-hairline--top-bottom', bem('toolbar')]}>
+      <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
         {this.slots() || [
           <div role="button" tabindex="0" class={bem('cancel')} onClick={this.onCancel}>
             {this.cancelButtonText || t('cancel')}
@@ -198,7 +198,7 @@ export default createComponent({
             />
           ))}
           <div class={bem('mask')} style={maskStyle} />
-          <div class={['van-hairline--top-bottom', bem('frame')]} style={frameStyle} />
+          <div class={[BORDER_TOP_BOTTOM, bem('frame')]} style={frameStyle} />
         </div>
         {this.toolbarPosition === 'bottom' ? Toolbar : h()}
       </div>

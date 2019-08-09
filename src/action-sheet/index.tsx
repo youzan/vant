@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+import { BORDER_TOP, BORDER_BOTTOM } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
 import Popup from '../popup';
@@ -48,7 +49,7 @@ function ActionSheet(
   function Header() {
     if (title) {
       return (
-        <div class={[bem('header'), 'van-hairline--bottom']}>
+        <div class={[bem('header'), BORDER_BOTTOM]}>
           {title}
           <Icon name="close" class={bem('close')} onClick={onCancel} />
         </div>
@@ -96,7 +97,7 @@ function ActionSheet(
 
     return (
       <div
-        class={[bem('item', { disabled }), item.className, 'van-hairline--top']}
+        class={[bem('item', { disabled }), item.className, BORDER_TOP]}
         style={{ color: item.color }}
         onClick={onClickOption}
       >

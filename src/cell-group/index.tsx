@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -20,7 +21,7 @@ function CellGroup(
 ) {
   const Group = (
     <div
-      class={[bem(), { 'van-hairline--top-bottom': props.border }]}
+      class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}
       {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}

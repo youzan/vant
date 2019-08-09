@@ -1,4 +1,5 @@
 import { createNamespace, addUnit } from '../utils';
+import { BORDER } from '../utils/constant';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Icon from '../icon';
@@ -86,7 +87,7 @@ export default createComponent({
               clickable,
               surround: border && gutter
             }),
-            { 'van-hairline': border }
+            { [BORDER]: border }
           ]}
         >
           {this.renderContent()}

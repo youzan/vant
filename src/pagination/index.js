@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { BORDER } from '../utils/constant';
 
 const [createComponent, bem, t] = createNamespace('pagination');
 
@@ -125,14 +126,14 @@ export default createComponent({
     return (
       <ul class={bem({ simple })}>
         <li
-          class={[bem('item', { disabled: value === 1 }), bem('prev'), 'van-hairline']}
+          class={[bem('item', { disabled: value === 1 }), bem('prev'), BORDER]}
           onClick={onSelect(value - 1)}
         >
           {this.prevText || t('prev')}
         </li>
         {this.pages.map(page => (
           <li
-            class={[bem('item', { active: page.active }), bem('page'), 'van-hairline']}
+            class={[bem('item', { active: page.active }), bem('page'), BORDER]}
             onClick={onSelect(page.number)}
           >
             {page.text}
@@ -142,7 +143,7 @@ export default createComponent({
           <li class={bem('page-desc')}>{this.slots('pageDesc') || `${value}/${this.count}`}</li>
         )}
         <li
-          class={[bem('item', { disabled: value === this.count }), bem('next'), 'van-hairline']}
+          class={[bem('item', { disabled: value === this.count }), bem('next'), BORDER]}
           onClick={onSelect(value + 1)}
         >
           {this.nextText || t('next')}

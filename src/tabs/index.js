@@ -3,6 +3,7 @@ import { scrollLeftTo } from './utils';
 import { isHidden } from '../utils/dom/style';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { setRootScrollTop, getElementTop } from '../utils/dom/scroll';
 import Title from './Title';
 import Content from './Content';
@@ -282,7 +283,7 @@ export default createComponent({
         ref="wrap"
         class={[
           bem('wrap', { scrollable }),
-          { 'van-hairline--top-bottom': type === 'line' && this.border }
+          { [BORDER_TOP_BOTTOM]: type === 'line' && this.border }
         ]}
       >
         <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>

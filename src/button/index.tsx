@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
@@ -69,7 +70,7 @@ function Button(
         square: props.square
       }
     ]),
-    { 'van-hairline--surround': hairline }
+    { [BORDER_SURROUND]: hairline }
   ];
 
   function Content() {

@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { BORDER } from '../utils/constant';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('step');
@@ -54,7 +55,7 @@ export default createComponent({
     }
 
     return (
-      <div class={['van-hairline', bem([direction, { [status]: status }])]}>
+      <div class={[BORDER, bem([direction, { [status]: status }])]}>
         <div class={bem('title')} style={titleStyle}>
           {this.slots()}
         </div>

@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
+import { BORDER_BOTTOM } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('index-anchor');
 
@@ -50,7 +51,7 @@ export default createComponent({
       <div style={{ height: sticky ? `${this.height}px` : null }}>
         <div
           style={this.anchorStyle}
-          class={[bem({ sticky }), { 'van-hairline--bottom': sticky }]}
+          class={[bem({ sticky }), { [BORDER_BOTTOM]: sticky }]}
         >
           {this.slots('default') || this.index}
         </div>

@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { GREEN } from '../../utils/color';
+import { GREEN } from '../../utils/constant';
 
 export default {
   i18n: {

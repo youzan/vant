@@ -1,4 +1,5 @@
 import { createNamespace, isDef } from '../utils';
+import { BORDER_TOP } from '../utils/constant';
 import { raf, doubleRaf } from '../utils/dom/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
@@ -147,7 +148,7 @@ export default createComponent({
     );
 
     return (
-      <div class={[bem(), { 'van-hairline--top': this.index }]}>
+      <div class={[bem(), { [BORDER_TOP]: this.index }]}>
         {Title}
         {Content}
       </div>

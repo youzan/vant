@@ -1,5 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
 import { ParentMixin } from '../mixins/relation';
+import { BORDER_TOP } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('grid');
 
@@ -40,7 +41,7 @@ export default createComponent({
     return (
       <div
         style={this.style}
-        class={[bem(), { 'van-hairline--top': this.border && !this.gutter }]}
+        class={[bem(), { [BORDER_TOP]: this.border && !this.gutter }]}
       >
         {this.slots()}
       </div>
