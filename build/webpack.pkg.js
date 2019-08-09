@@ -16,7 +16,8 @@ module.exports = Object.assign(config, {
     libraryTarget: 'umd',
     filename: isMinify ? '[name].min.js' : '[name].js',
     umdNamedDefine: true,
-    globalObject: 'this'
+    // https://github.com/webpack/webpack/issues/6522
+    globalObject: 'typeof self !== \'undefined\' ? self : this'
   },
   externals: {
     vue: {
