@@ -35,7 +35,7 @@
       <van-count-down
         ref="countDown"
         millisecond
-        :time="manualTime"
+        :time="3000"
         :auto-start="false"
         format="ss:SSS"
         @finish="$toast($t('finished'))"
@@ -73,7 +73,6 @@ export default {
       customFormat: '自定义格式',
       manualControl: '手动控制',
       formatWithDay: 'DD 天 HH 时 mm 分 ss 秒',
-      add: '延长',
       reset: '重置',
       pause: '暂停',
       start: '开始',
@@ -85,7 +84,6 @@ export default {
       customFormat: 'Custom Format',
       manualControl: 'Manual Control',
       formatWithDay: 'DD Day, HH:mm:ss',
-      add: 'Add',
       reset: 'Reset',
       pause: 'Pause',
       start: 'Start',
@@ -95,8 +93,7 @@ export default {
 
   data() {
     return {
-      time: 30 * 60 * 60 * 1000,
-      manualTime: 3000
+      time: 30 * 60 * 60 * 1000
     };
   },
 
@@ -111,10 +108,6 @@ export default {
 
     reset() {
       this.$refs.countDown.reset();
-    },
-
-    add() {
-      this.manualTime += 3000;
     }
   }
 };

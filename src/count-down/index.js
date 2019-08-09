@@ -40,9 +40,7 @@ export default createComponent({
   watch: {
     time: {
       immediate: true,
-      handler() {
-        this.reset();
-      }
+      handler: 'reset'
     }
   },
 

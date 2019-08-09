@@ -99,14 +99,12 @@ export default createComponent({
   },
 
   watch: {
+    color: 'setLine',
+
     active(name) {
       if (name !== this.currentName) {
         this.setCurrentIndexByName(name);
       }
-    },
-
-    color() {
-      this.setLine();
     },
 
     children() {
