@@ -6,7 +6,7 @@ const [createComponent, bem] = createNamespace('sticky');
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function (bind) {
+    BindEventMixin(function(bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }

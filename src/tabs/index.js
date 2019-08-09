@@ -13,7 +13,7 @@ const [createComponent, bem] = createNamespace('tabs');
 export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
-    BindEventMixin(function (bind) {
+    BindEventMixin(function(bind) {
       bind(window, 'resize', this.setLine, true);
     })
   ],
@@ -150,7 +150,12 @@ export default createComponent({
       this.$nextTick(() => {
         const { titles } = this.$refs;
 
-        if (!titles || !titles[this.currentIndex] || this.type !== 'line' || isHidden(this.$el)) {
+        if (
+          !titles ||
+          !titles[this.currentIndex] ||
+          this.type !== 'line' ||
+          isHidden(this.$el)
+        ) {
           return;
         }
 

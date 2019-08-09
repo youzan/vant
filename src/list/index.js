@@ -8,7 +8,7 @@ const [createComponent, bem, t] = createNamespace('list');
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function (bind) {
+    BindEventMixin(function(bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }
@@ -44,68 +44,65 @@ export default createComponent({
 
   mounted() {
     if (this.immediateCheck) {
-      this.$nextTick(this.check);
+      this.check();
     }
   },
 
   watch: {
-    loading() {
-      this.$nextTick(this.check);
-    },
-
-    finished() {
-      this.$nextTick(this.check);
-    }
+    loading: 'check',
+    finished: 'check'
   },
 
   methods: {
     check() {
-      if (this.loading || this.finished || this.error) {
-        return;
-      }
+      this.$nextTick(() => {
+        if (this.loading || this.finished || this.error) {
+          return;
+        }
 
-      const { $el: el, scroller, offset, direction } = this;
-      let scrollerRect;
+        const { $el: el, scroller, offset, direction } = this;
+        let scrollerRect;
 
-      if (scroller.getBoundingClientRect) {
-        scrollerRect = scroller.getBoundingClientRect();
-      } else {
-        scrollerRect = {
-          top: 0,
-          bottom: scroller.innerHeight
-        };
-      }
+        if (scroller.getBoundingClientRect) {
+          scrollerRect = scroller.getBoundingClientRect();
+        } else {
+          scrollerRect = {
+            top: 0,
+            bottom: scroller.innerHeight
+          };
+        }
 
-      const scrollerHeight = scrollerRect.bottom - scrollerRect.top;
+        const scrollerHeight = scrollerRect.bottom - scrollerRect.top;
 
-      /* istanbul ignore next */
-      if (!scrollerHeight || isHidden(el)) {
-        return false;
-      }
+        /* istanbul ignore next */
+        if (!scrollerHeight || isHidden(el)) {
+          return false;
+        }
 
-      let isReachEdge = false;
-      const placeholderRect = this.$refs.placeholder.getBoundingClientRect();
+        let isReachEdge = false;
+        const placeholderRect = this.$refs.placeholder.getBoundingClientRect();
 
-      if (direction === 'up') {
-        isReachEdge = placeholderRect.top - scrollerRect.top <= offset;
-      } else {
-        isReachEdge = placeholderRect.bottom - scrollerRect.bottom <= offset;
-      }
+        if (direction === 'up') {
+          isReachEdge = placeholderRect.top - scrollerRect.top <= offset;
+        } else {
+          isReachEdge = placeholderRect.bottom - scrollerRect.bottom <= offset;
+        }
 
-      if (isReachEdge) {
-        this.$emit('input', true);
-        this.$emit('load');
-      }
+        if (isReachEdge) {
+          this.$emit('input', true);
+          this.$emit('load');
+        }
+      });
     },
 
     clickErrorText() {
       this.$emit('update:error', false);
-      this.$nextTick(this.check);
+      this.check();
     }
   },
 
   render() {
-    const Placeholder = <div ref="placeholder" class={bem('placeholder')}/>;
+    const Placeholder = <div ref="placeholder" class={bem('placeholder')} />;
 
     return (
       <div class={bem()} role="feed" aria-busy={this.loading}>

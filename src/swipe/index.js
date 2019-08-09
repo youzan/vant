@@ -10,7 +10,7 @@ const [createComponent, bem] = createNamespace('swipe');
 export default createComponent({
   mixins: [
     TouchMixin,
-    BindEventMixin(function (bind, isBind) {
+    BindEventMixin(function(bind, isBind) {
       bind(window, 'resize', this.onResize, true);
 
       if (isBind) {
