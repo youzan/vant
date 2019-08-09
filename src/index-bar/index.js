@@ -17,7 +17,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),
-    BindEventMixin(function (bind) {
+    BindEventMixin(function(bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }
