@@ -31,13 +31,8 @@ export default createComponent({
   },
 
   watch: {
-    children() {
-      this.setActiveItem();
-    },
-
-    value() {
-      this.setActiveItem();
-    }
+    value: 'setActiveItem',
+    children: 'setActiveItem'
   },
 
   methods: {

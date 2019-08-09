@@ -94,9 +94,7 @@ export default createComponent({
       this.$emit('input', code);
     },
 
-    displayedCouponIndex(val) {
-      this.scrollToShowCoupon(val);
-    }
+    displayedCouponIndex: 'scrollToShowCoupon'
   },
 
   mounted() {

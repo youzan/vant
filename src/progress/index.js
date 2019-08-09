@@ -35,21 +35,16 @@ export default createComponent({
   },
 
   mounted() {
-    this.getWidth();
+    this.setWidth();
   },
 
   watch: {
-    showPivot() {
-      this.getWidth();
-    },
-
-    pivotText() {
-      this.getWidth();
-    }
+    showPivot: 'setWidth',
+    pivotText: 'setWidth'
   },
 
   methods: {
-    getWidth() {
+    setWidth() {
       this.$nextTick(() => {
         this.progressWidth = this.$el.offsetWidth;
         this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;

@@ -4,7 +4,7 @@ import { BindEventMixin } from './bind-event';
 
 export const CloseOnPopstateMixin = Vue.extend({
   mixins: [
-    BindEventMixin(function (this: any, bind, isBind) {
+    BindEventMixin(function(this: any, bind, isBind) {
       this.handlePopstate(isBind && this.closeOnPopstate);
     })
   ],
