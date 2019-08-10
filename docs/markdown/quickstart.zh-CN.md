@@ -120,8 +120,8 @@ Vue.use(Vant);
 var Vue = window.Vue;
 var vant = window.vant;
 
-// 注册组件
-Vue.use(vant);
+// 注册 Lazyload 组件
+Vue.use(vant.Lazyload);
 
 // 调用函数式组件
 vant.Toast('提示');

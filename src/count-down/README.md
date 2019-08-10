@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { CountDown } from 'vant';
 
 Vue.use(CountDown);

@@ -1,7 +1,9 @@
 # AddressList 地址列表
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { AddressList } from 'vant';
 
 Vue.use(AddressList);

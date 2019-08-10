@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { RadioGroup, Radio } from 'vant';
 
 Vue.use(RadioGroup);

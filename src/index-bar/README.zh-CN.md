@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { IndexBar, IndexAnchor } from 'vant';
 
 Vue.use(IndexBar).use(IndexAnchor);

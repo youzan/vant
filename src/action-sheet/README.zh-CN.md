@@ -1,7 +1,9 @@
 # ActionSheet 上拉菜单
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { ActionSheet } from 'vant';
 
 Vue.use(ActionSheet);

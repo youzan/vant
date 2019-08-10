@@ -5,7 +5,9 @@
 表单中的输入框组件，支持`input`和`textarea`两种类型
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Field } from 'vant';
 
 Vue.use(Field);

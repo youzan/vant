@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Switch } from 'vant';
 
 Vue.use(Switch);

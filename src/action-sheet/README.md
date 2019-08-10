@@ -1,7 +1,9 @@
 # ActionSheet
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { ActionSheet } from 'vant';
 
 Vue.use(ActionSheet);

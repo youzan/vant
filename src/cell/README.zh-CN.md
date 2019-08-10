@@ -1,7 +1,9 @@
 # Cell 单元格
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Cell, CellGroup } from 'vant';
 
 Vue.use(Cell).use(CellGroup);

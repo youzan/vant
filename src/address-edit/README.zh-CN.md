@@ -1,7 +1,9 @@
 # AddressEdit 地址编辑
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { AddressEdit } from 'vant';
 
 Vue.use(AddressEdit);

@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
 Vue

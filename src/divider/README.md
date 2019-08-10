@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Divider } from 'vant';
 
 Vue.use(Divider);

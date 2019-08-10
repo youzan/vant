@@ -1,7 +1,9 @@
 # Circle
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { Circle } from 'vant';
 
 Vue.use(Circle);

@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { Step, Steps } from 'vant';
 
 Vue.use(Step).use(Steps);

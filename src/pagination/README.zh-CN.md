@@ -4,6 +4,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { Pagination } from 'vant';
 
 Vue.use(Pagination);

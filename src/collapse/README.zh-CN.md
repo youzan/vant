@@ -1,7 +1,9 @@
 # Collapse 折叠面板
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
 Vue.use(Collapse).use(CollapseItem);

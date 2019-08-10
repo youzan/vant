@@ -7,6 +7,7 @@
 ### 引入
 
 ```javascript
+import Vue from 'vue';
 import { Area } from 'vant';
 
 Vue.use(Area);

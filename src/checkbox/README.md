@@ -1,7 +1,9 @@
 # Checkbox
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
 Vue.use(Checkbox).use(CheckboxGroup);

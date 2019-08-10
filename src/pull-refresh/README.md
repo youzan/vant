@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { PullRefresh } from 'vant';
 
 Vue.use(PullRefresh);

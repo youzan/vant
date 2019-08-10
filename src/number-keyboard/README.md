@@ -1,7 +1,9 @@
 # NumberKeyboard
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { NumberKeyboard } from 'vant';
 
 Vue.use(NumberKeyboard);

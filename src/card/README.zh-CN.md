@@ -1,7 +1,9 @@
 # Card 卡片
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Card } from 'vant';
 
 Vue.use(Card);
