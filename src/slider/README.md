@@ -105,7 +105,8 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered after value change | value: current rate |
+| input | Instant triggered when value changed | value: current rate |
+| change | Triggered after value changed | value: current rate |
 | drag-start | Triggered when start drag | - |
 | drag-end | Triggered when end drag | - |
 

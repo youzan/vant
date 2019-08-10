@@ -96,14 +96,18 @@ export default createComponent({
       const total = this.vertical ? rect.height : rect.width;
       const value = (delta / total) * this.range + this.min;
 
+      this.startValue = this.value;
       this.updateValue(value, true);
     },
 
     updateValue(value, end) {
       value = this.format(value);
-      this.$emit('input', value);
 
-      if (end) {
+      if (value !== this.value) {
+        this.$emit('input', value);
+      }
+
+      if (end && value !== this.startValue) {
         this.$emit('change', value);
       }
     },
