@@ -23,7 +23,7 @@
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",
     "test:coverage": "open test/coverage/index.html",
-    "release": "sh build/release-pkg.sh",
+    "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh"
   },
   "husky": {
