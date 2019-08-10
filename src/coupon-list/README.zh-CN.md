@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
 Vue.use(CouponCell).use(CouponList);

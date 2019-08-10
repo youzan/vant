@@ -1,7 +1,9 @@
 # Collapse
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
 Vue.use(Collapse).use(CollapseItem);

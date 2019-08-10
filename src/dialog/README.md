@@ -3,6 +3,7 @@
 ### Install
 
 ```js
+import Vue from 'vue';
 import { Dialog } from 'vant';
 
 Vue.use(Dialog);

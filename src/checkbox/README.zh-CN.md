@@ -1,7 +1,9 @@
 # Checkbox 复选框
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
 Vue.use(Checkbox).use(CheckboxGroup);

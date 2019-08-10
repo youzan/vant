@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Progress } from 'vant';
 
 Vue.use(Progress);

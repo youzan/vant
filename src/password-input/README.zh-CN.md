@@ -5,7 +5,9 @@
 密码输入框组件通常与 [数字键盘](#/zh-CN/number-keyboard) 组件配合使用
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { PasswordInput, NumberKeyboard } from 'vant';
 
 Vue.use(PasswordInput).use(NumberKeyboard);

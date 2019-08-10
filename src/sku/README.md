@@ -3,6 +3,7 @@
 ### Install
 
 ```javascript
+import Vue from 'vue';
 import { Sku } from 'vant';
 
 Vue.use(Sku);

@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Image } from 'vant';
 
 Vue.use(Image);

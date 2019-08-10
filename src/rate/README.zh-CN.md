@@ -1,7 +1,9 @@
 # Rate 评分
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Rate } from 'vant';
 
 Vue.use(Rate);

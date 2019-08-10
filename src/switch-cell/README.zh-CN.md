@@ -7,6 +7,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { SwitchCell } from 'vant';
 
 Vue.use(SwitchCell);

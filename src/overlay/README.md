@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Overlay } from 'vant';
 
 Vue.use(Overlay);

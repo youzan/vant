@@ -5,6 +5,7 @@
 `ImagePreview`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
 
 ```js
+import Vue from 'vue';
 import { ImagePreview } from 'vant';
 
 Vue.use(ImagePreview);

@@ -1,7 +1,9 @@
 # Circle 环形进度条
 
 ### 引入
+
 ``` javascript
+import Vue from 'vue';
 import { Circle } from 'vant';
 
 Vue.use(Circle);

@@ -105,8 +105,8 @@ Vue.use(Vant);
 var Vue = window.Vue;
 var vant = window.vant;
 
-// Register components
-Vue.use(vant);
+// Register Lazyload component
+Vue.use(vant.Lazyload);
 
 // Call function components
 vant.Toast('message');

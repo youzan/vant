@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Grid, GridItem } from 'vant';
 
 Vue.use(Grid).use(GridItem);

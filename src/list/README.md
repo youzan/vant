@@ -7,6 +7,7 @@ A list component to show items and control loading status.
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { List } from 'vant';
 
 Vue.use(List);

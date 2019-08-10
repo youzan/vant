@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { SwipeCell } from 'vant';
 
 Vue.use(SwipeCell);

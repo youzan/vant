@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { IndexBar } from 'vant';
 
 Vue.use(IndexBar);

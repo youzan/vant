@@ -1,7 +1,9 @@
 # AddressList
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { AddressList } from 'vant';
 
 Vue.use(AddressList);

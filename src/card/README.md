@@ -1,7 +1,9 @@
 # Card
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { Card } from 'vant';
 
 Vue.use(Card);

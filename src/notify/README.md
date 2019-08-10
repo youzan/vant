@@ -3,6 +3,7 @@
 ### Install
 
 ``` javascript
+import Vue from 'vue';
 import { Notify } from 'vant';
 
 Vue.use(Notify);

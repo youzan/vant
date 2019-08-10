@@ -3,6 +3,7 @@
 ### 引入
 
 ``` javascript
+import Vue from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
 Vue.use(Sidebar);

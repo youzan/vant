@@ -5,7 +5,9 @@
 The DatetimePicker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
+
 ``` javascript
+import Vue from 'vue';
 import { DatetimePicker } from 'vant';
 
 Vue.use(DatetimePicker);
