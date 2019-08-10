@@ -86,7 +86,7 @@
     "dependency-tree": "^7.0.2",
     "eslint": "^6.1.0",
     "fast-glob": "^3.0.4",
-    "gh-pages": "^2.1.0",
+    "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",
     "husky": "^3.0.2",
     "jest": "^24.8.0",
