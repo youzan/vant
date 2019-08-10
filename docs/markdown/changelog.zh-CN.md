@@ -1,5 +1,29 @@
 # 更新日志
 
+### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
+`2019-08-10`
+
+**Improvements**
+
+- ActionSheet: 新增 color 选项 [\#4073](https://github.com/youzan/vant/pull/4073)
+- AddressEdit: 新增 postal-validator 属性 [\#4067](https://github.com/youzan/vant/pull/4067)
+- Stepper: 新增 show-plus、show-minus 属性 [\#4056](https://github.com/youzan/vant/pull/4056)
+- Icon: 新增 warning、good-job、good-job-o 图标 [\#4038](https://github.com/youzan/vant/pull/4038)
+- Icon: 新增 smile、music、thumb-circle、phone-circle 图标 [\#4048](https://github.com/youzan/vant/pull/4048)
+- Picker: 优化事件冒泡 [\#4043](https://github.com/youzan/vant/pull/4043)
+- Field: 优化图标点击区域 [\#4058](https://github.com/youzan/vant/pull/4058)
+- Divider: 优化无障碍访问 [\#4069](https://github.com/youzan/vant/pull/4069)
+- List: 优化底部文字大小 [\#4077](https://github.com/youzan/vant/pull/4077)
+- Image: img 标签继承圆角 [\#4032](https://github.com/youzan/vant/pull/4032)
+- Uploader: 支持 isImage 标记 [\#4072](https://github.com/youzan/vant/pull/4072)
+- DropdownMenu: 新增多个 Less 变量 [\#4071](https://github.com/youzan/vant/pull/4071)
+- 支持在 module 类型的 script 标签中引入 CDN 包 [\#4080](https://github.com/youzan/vant/pull/4080)
+
+**Bug Fixes**
+
+- 修复 Sticky 在局部滚动容器内位置错误的问题 [\#4055](https://github.com/youzan/vant/pull/4055)
+
+
 ### [v2.1.1](https://github.com/youzan/vant/tree/v2.1.1)
 `2019-08-02`
 

@@ -1,5 +1,29 @@
 # Changelog
 
+### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
+`2019-08-10`
+
+**Improvements**
+
+- ActionSheet: add color option [\#4073](https://github.com/youzan/vant/pull/4073)
+- AddressEdit: add postal-validator prop [\#4067](https://github.com/youzan/vant/pull/4067)
+- Stepper: add show-plus、show-minus prop [\#4056](https://github.com/youzan/vant/pull/4056)
+- Divider: add separator role to improve accessibility [\#4069](https://github.com/youzan/vant/pull/4069)
+- DropdownMenu: add more less vars [\#4071](https://github.com/youzan/vant/pull/4071)
+- Uploader: support isImage flag [\#4072](https://github.com/youzan/vant/pull/4072)
+- Field: increase clickable area of icon [\#4058](https://github.com/youzan/vant/pull/4058)
+- Picker: stop propagation when touchmove in vertical direction [\#4043](https://github.com/youzan/vant/pull/4043)
+- Icon: add warning、good-job、good-job-o icon [\#4038](https://github.com/youzan/vant/pull/4038)
+- Icon: add smile、music、thumb-circle、phone-circle icon [\#4048](https://github.com/youzan/vant/pull/4048)
+- List: unify text font-size [\#4077](https://github.com/youzan/vant/pull/4077)
+- Image: img inherit round border [\#4032](https://github.com/youzan/vant/pull/4032)
+- adjust globalObject to support module script [\#4080](https://github.com/youzan/vant/pull/4080)
+
+**Bug Fixes**
+
+- fix Sticky incorrect position when inside scroll container [\#4055](https://github.com/youzan/vant/pull/4055)
+
+
 ### [v2.1.1](https://github.com/youzan/vant/tree/v2.1.1)
 `2019-08-02`
 
