@@ -1225,10 +1225,10 @@
     eslint-plugin-import "^2.18.2"
     eslint-plugin-vue "^5.2.3"
 
-"@vant/icons@1.1.12":
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.12.tgz#8cdc67e4767ad8478bd5119c8e28d291709f54b2"
-  integrity sha512-pS2FIm3kwaEnYa2gVtuDIFrYJAX5/GvUDwHMiCq2OFntNI6nGcuFKQ4lWqt6obU4qQ4fdGVwvR7VqthYjAXifA==
+"@vant/icons@1.1.13":
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.13.tgz#ea77298f4f2b19ccc761005068a2c7436098e4d4"
+  integrity sha512-r2EoKDQ4Xh82fo5jVY/m/+LZFfRhHp+ViagySExzlJ7t6JFtmK1OqB6HdFkXXbfEzB/48BvGoPVifFoYzke6KQ==
 
 "@vant/markdown-loader@^2.2.0":
   version "2.2.0"
