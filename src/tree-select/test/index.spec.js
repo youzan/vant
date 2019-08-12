@@ -124,3 +124,20 @@ test('click disabled item', () => {
   items.at(0).trigger('click');
   expect(onClickItem).toHaveBeenCalledTimes(0);
 });
+
+test('content slot', () => {
+  const wrapper = mount(TreeSelect, {
+    propsData: {
+      items: [
+        {
+          text: 'group1'
+        }
+      ]
+    },
+    scopedSlots: {
+      content: () => 'Custom Content'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
