@@ -130,7 +130,7 @@
       <van-button
         :text="$t('urlRoute')"
         type="primary"
-        url="//youzan.github.io/vant/mobile.html"
+        url="/vant/mobile.html"
       />
       <van-button
         :text="$t('vueRoute')"
