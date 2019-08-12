@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`content slot 1`] = `
+<div class="van-tree-select" style="height: 300px;">
+  <div class="van-tree-select__nav">
+    <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">group1</div>
+  </div>
+  <div class="van-tree-select__content">Custom Content</div>
+</div>
+`;
+
 exports[`empty list 1`] = `
 <div class="van-tree-select" style="height: 300px;">
   <div class="van-tree-select__nav"></div>

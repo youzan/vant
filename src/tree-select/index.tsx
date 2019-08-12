@@ -4,7 +4,7 @@ import Icon from '../icon';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type TreeSelectItem = {
   text: string;
@@ -25,12 +25,16 @@ export type TreeSelectProps = {
   mainActiveIndex: number;
 };
 
+export type TreeSelectSlots = DefaultSlots & {
+  content?: ScopedSlot;
+};
+
 const [createComponent, bem] = createNamespace('tree-select');
 
 function TreeSelect(
   h: CreateElement,
   props: TreeSelectProps,
-  slots: DefaultSlots,
+  slots: TreeSelectSlots,
   ctx: RenderContext<TreeSelectProps>
 ) {
   const { height, items, mainActiveIndex, activeId } = props;
@@ -38,59 +42,65 @@ function TreeSelect(
   const selectedItem: Partial<TreeSelectItem> = items[mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
 
+  const Nav = items.map((item, index) => (
+    <div
+      key={index}
+      class={[
+        'van-ellipsis',
+        bem('nav-item', {
+          active: mainActiveIndex === index,
+          disabled: item.disabled
+        })
+      ]}
+      onClick={() => {
+        if (!item.disabled) {
+          emit(ctx, 'click-nav', index);
+
+          // compatible for old usage, should be removed in next major version
+          emit(ctx, 'navclick', index);
+        }
+      }}
+    >
+      {item.text}
+    </div>
+  ));
+
+  function Content() {
+    if (slots.content) {
+      return slots.content();
+    }
+
+    return subItems.map(item => (
+      <div
+        key={item.id}
+        class={[
+          'van-ellipsis',
+          bem('item', {
+            active: activeId === item.id,
+            disabled: item.disabled
+          })
+        ]}
+        onClick={() => {
+          if (!item.disabled) {
+            emit(ctx, 'click-item', item);
+
+            // compatible for old usage, should be removed in next major version
+            emit(ctx, 'itemclick', item);
+          }
+        }}
+      >
+        {item.text}
+        {activeId === item.id && (
+          <Icon name="checked" size="16px" class={bem('selected')} />
+        )}
+      </div>
+    ));
+  }
+
   return (
     <div class={bem()} style={{ height: `${height}px` }} {...inherit(ctx)}>
-      <div class={bem('nav')}>
-        {items.map((item, index) => (
-          <div
-            key={index}
-            class={[
-              'van-ellipsis',
-              bem('nav-item', {
-                active: mainActiveIndex === index,
-                disabled: item.disabled
-              })
-            ]}
-            onClick={() => {
-              if (!item.disabled) {
-                emit(ctx, 'click-nav', index);
-
-                // compatible for old usage, should be removed in next major version
-                emit(ctx, 'navclick', index);
-              }
-            }}
-          >
-            {item.text}
-          </div>
-        ))}
-      </div>
-      <div class={bem('content')}>
-        {subItems.map(item => (
-          <div
-            key={item.id}
-            class={[
-              'van-ellipsis',
-              bem('item', {
-                active: activeId === item.id,
-                disabled: item.disabled
-              })
-            ]}
-            onClick={() => {
-              if (!item.disabled) {
-                emit(ctx, 'click-item', item);
-
-                // compatible for old usage, should be removed in next major version
-                emit(ctx, 'itemclick', item);
-              }
-            }}
-          >
-            {item.text}
-            {activeId === item.id && (
-              <Icon name="checked" size="16px" class={bem('selected')} />
-            )}
-          </div>
-        ))}
-      </div>
+      <div class={bem('nav')}>{Nav}</div>
+      <div class={bem('content')}>{Content()}</div>
     </div>
   );
 }

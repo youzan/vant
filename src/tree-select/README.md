@@ -60,8 +60,14 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click-nav | triggered when parent node is selected |  index: index of selected parent |
+| click-nav | triggered when parent node is selected | index: index of selected parent |
 | click-item | triggered when item is selected | data: selected item |
+
+### Slots
+
+| Name | Description |
+|------|------|
+| content | Custom right content |
 
 ### Data Structure of Item
 
