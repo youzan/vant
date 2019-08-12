@@ -77,7 +77,7 @@ Vue.use(Button);
 ### Route
 
 ```html
-<van-button type="primary" url="//youzan.github.io/vant/mobile.html">URL</van-button>
+<van-button type="primary" url="/vant/mobile.html">URL</van-button>
 <van-button type="primary" to="index">Vue Router</van-button>
 ```
 
