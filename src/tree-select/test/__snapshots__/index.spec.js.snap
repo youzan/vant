@@ -15,3 +15,10 @@ exports[`empty list 1`] = `
   <div class="van-tree-select__content"></div>
 </div>
 `;
+
+exports[`height prop 1`] = `
+<div class="van-tree-select" style="height: 100vh;">
+  <div class="van-tree-select__nav"></div>
+  <div class="van-tree-select__content"></div>
+</div>
+`;

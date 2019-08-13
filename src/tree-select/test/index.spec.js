@@ -141,3 +141,13 @@ test('content slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('height prop', () => {
+  const wrapper = mount(TreeSelect, {
+    propsData: {
+      height: '100vh'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

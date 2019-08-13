@@ -52,7 +52,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | items | Required datasets for the component | `Item[]` | `[]` |
-| height | Height (px) | `number` | `300` |
+| height | Height | `string | number` | `300` |
 | main-Active-index | The index of selected parent node | `number` | `0` |
 | active-id | Id of selected item | `string | number` | `0` |
 

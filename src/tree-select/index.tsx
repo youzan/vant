@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 
@@ -19,7 +19,7 @@ export type TreeSelectChildren = {
 };
 
 export type TreeSelectProps = {
-  height: number;
+  height: number | string;
   items: TreeSelectItem[];
   activeId: number | string;
   mainActiveIndex: number;
@@ -98,7 +98,7 @@ function TreeSelect(
   }
 
   return (
-    <div class={bem()} style={{ height: `${height}px` }} {...inherit(ctx)}>
+    <div class={bem()} style={{ height: addUnit(height) }} {...inherit(ctx)}>
       <div class={bem('nav')}>{Nav}</div>
       <div class={bem('content')}>{Content()}</div>
     </div>
@@ -111,7 +111,7 @@ TreeSelect.props = {
     default: () => []
   },
   height: {
-    type: Number,
+    type: [Number, String],
     default: 300
   },
   activeId: {
