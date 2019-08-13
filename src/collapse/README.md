@@ -97,7 +97,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when switch panel | activeNames: `string | array` |
+| change | Triggered when switch panel | activeNames: `string[] | number[] | string | number` |
 
 ### CollapseItem Props
 
