@@ -98,7 +98,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 切换面板时触发 | activeNames: `string | array` |
+| change | 切换面板时触发 | activeNames: `string[] | number[] | string | number` |
 
 ### CollapseItem Props
 
