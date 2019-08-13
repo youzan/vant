@@ -52,7 +52,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | items | 分类显示所需的数据 | `Item[]` | `[]` | - |
-| height | 高度，单位为 px | `number` | `300` | - |
+| height | 高度，默认单位为 px | `string | number` | `300` | - |
 | main-active-index | 左侧导航高亮的索引 | `number` | `0` | - |
 | active-id | 右侧选择项，高亮的数据id | `string | number` | `0` | - |
 
