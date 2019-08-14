@@ -1,9 +1,12 @@
 import { createNamespace } from '../utils';
+import { TouchMixin } from '../mixins/touch';
 import { BORDER } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('key');
 
 export default createComponent({
+  mixins: [TouchMixin],
+
   props: {
     type: String,
     text: [Number, String],
@@ -36,31 +39,37 @@ export default createComponent({
   },
 
   methods: {
-    onFocus() {
+    onTouchStart(event) {
+      this.touchStart(event);
       this.active = true;
     },
 
-    onBlur() {
-      this.active = false;
+    onTouchMove(event) {
+      this.touchMove(event);
+
+      if (this.direction) {
+        this.active = false;
+      }
     },
 
-    onClick() {
-      this.$emit('press', this.text, this.type);
+    onTouchEnd() {
+      if (this.active) {
+        this.active = false;
+        this.$emit('press', this.text, this.type);
+      }
     }
   },
 
   render() {
-    const { onBlur } = this;
     return (
       <i
         role="button"
         tabindex="0"
         class={[BORDER, this.className]}
-        onClick={this.onClick}
-        onTouchstart={this.onFocus}
-        onTouchmove={onBlur}
-        onTouchend={onBlur}
-        onTouchcancel={onBlur}
+        onTouchstart={this.onTouchStart}
+        onTouchmove={this.onTouchMove}
+        onTouchend={this.onTouchEnd}
+        onTouchcancel={this.onTouchEnd}
       >
         {this.slots('default') || this.text}
       </i>

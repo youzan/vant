@@ -12,6 +12,24 @@ exports[`focus on key 2`] = `
 </div>
 `;
 
+exports[`move and blur key 1`] = `
+<div class="van-number-keyboard van-number-keyboard--default" style="z-index: 100; display: none;" name="van-slide-up">
+  <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key van-key--active">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray"></i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+</div>
+`;
+
+exports[`move and blur key 2`] = `
+<div class="van-number-keyboard van-number-keyboard--default" style="z-index: 100; display: none;" name="van-slide-up">
+  <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key van-key--active">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray"></i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+</div>
+`;
+
+exports[`move and blur key 3`] = `
+<div class="van-number-keyboard van-number-keyboard--default" style="z-index: 100; display: none;" name="van-slide-up">
+  <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray"></i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+</div>
+`;
+
 exports[`render title 1`] = `
 <div class="van-number-keyboard van-number-keyboard--default" style="z-index: 100; display: none;" name="van-slide-up">
   <div class="van-number-keyboard__title van-hairline--top"><span>Title</span><span role="button" tabindex="0" class="van-number-keyboard__close">Close</span></div>
