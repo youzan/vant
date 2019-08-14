@@ -1,6 +1,11 @@
 import NumberKeyboard from '..';
 import { mount, trigger } from '../../../test/utils';
 
+function clickKey(key) {
+  trigger(key, 'touchstart');
+  trigger(key, 'touchend');
+}
+
 test('click number key', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
@@ -9,10 +14,7 @@ test('click number key', () => {
     }
   });
 
-  wrapper
-    .findAll('.van-key')
-    .at(0)
-    .trigger('click');
+  clickKey(wrapper.findAll('.van-key').at(0));
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
 
   wrapper.destroy();
@@ -20,19 +22,14 @@ test('click number key', () => {
 
 it('click delete key', () => {
   const wrapper = mount(NumberKeyboard);
-  wrapper
-    .findAll('.van-key')
-    .at(11)
-    .trigger('click');
+
+  clickKey(wrapper.findAll('.van-key').at(11));
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
 it('click empty key', () => {
   const wrapper = mount(NumberKeyboard);
-  wrapper
-    .findAll('.van-key')
-    .at(9)
-    .trigger('click');
+  clickKey(wrapper.findAll('.van-key').at(9));
   expect(wrapper.emitted('input')).toBeFalsy();
 });
 
@@ -44,10 +41,7 @@ test('click close button', () => {
     }
   });
 
-  wrapper
-    .findAll('.van-key')
-    .at(12)
-    .trigger('click');
+  clickKey(wrapper.findAll('.van-key').at(12));
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
@@ -127,6 +121,20 @@ test('focus on key', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('move and blur key', () => {
+  const wrapper = mount(NumberKeyboard);
+
+  const key = wrapper.find('.van-key');
+  trigger(key, 'touchstart');
+  expect(wrapper).toMatchSnapshot();
+  trigger(key, 'touchmove', 0, 0);
+  expect(wrapper).toMatchSnapshot();
+  trigger(key, 'touchmove', 100, 0);
+  expect(wrapper).toMatchSnapshot();
+  trigger(key, 'touchend');
+  expect(wrapper.emitted('input')).toBeFalsy();
+});
+
 test('bind value', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
@@ -140,12 +148,12 @@ test('bind value', () => {
   });
 
   const keys = wrapper.findAll('.van-key');
-  keys.at(0).trigger('click');
-  keys.at(1).trigger('click');
+  clickKey(keys.at(0));
+  clickKey(keys.at(1));
 
   expect(wrapper.vm.value).toEqual('12');
 
-  keys.at(11).trigger('click');
+  clickKey(keys.at(11));
   expect(wrapper.vm.value).toEqual('1');
 });
 
@@ -165,8 +173,8 @@ test('maxlength', () => {
   });
 
   const keys = wrapper.findAll('.van-key');
-  keys.at(0).trigger('click');
-  keys.at(1).trigger('click');
+  clickKey(keys.at(0));
+  clickKey(keys.at(1));
 
   expect(wrapper.vm.value).toEqual('1');
   expect(onInput).toHaveBeenCalledTimes(1);
