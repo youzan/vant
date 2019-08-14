@@ -118,8 +118,9 @@ export default {
 | multiple | Whether to enable multiple selection pictures | `boolean` | `false` |
 | disabled | Whether to disabled the upload | `boolean` | `false` |
 | capture | Capture，can be set to `camera` | `string` | - |
-| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
+| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | `Function` | - |
+| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | `Function` | - |
 | max-size | Max size of file | `number` | - |
 | max-count | Max count of image | `number` | - |
 | result-type | Type of file read result, can be set to `dataUrl` `text` | `string` | `dataUrl` |

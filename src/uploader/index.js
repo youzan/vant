@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, noop } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 import Icon from '../icon';
 import Image from '../image';
@@ -18,6 +18,7 @@ export default createComponent({
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
+    beforeDelete: Function,
     previewSize: [Number, String],
     name: {
       type: [Number, String],
@@ -133,6 +134,27 @@ export default createComponent({
     },
 
     onDelete(file, index) {
+      if (this.beforeDelete) {
+        const response = this.beforeDelete(file, this.detail);
+
+        if (!response) {
+          return;
+        }
+
+        if (response.then) {
+          response
+            .then(() => {
+              this.deleteFile(file, index);
+            })
+            .catch(noop);
+          return;
+        }
+      }
+
+      this.deleteFile(file, index);
+    },
+
+    deleteFile(file, index) {
       const fileList = this.fileList.slice(0);
       fileList.splice(index, 1);
 
