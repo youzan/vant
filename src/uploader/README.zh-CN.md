@@ -134,8 +134,9 @@ export default {
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用文件上传 | `boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `string` | - | 2.0.0 |
-| before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
 | after-read | 文件读取完成后的回调函数 | `Function` | - | - |
+| before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
+| before-delete | 文件删除前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
 | max-size | 文件大小限制，单位为`byte` | `number` | - | - |
 | max-count | 文件上传数量限制 | `number` | - | 2.0.0 |
 | result-type | 文件读取结果类型，可选值为`text` | `string` | `dataUrl` | - |
@@ -154,7 +155,9 @@ export default {
 |------|------|
 | default | 自定义上传区域 |
 
-### before-read、after-read 回调参数
+### 回调参数
+
+before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 | 参数名 | 说明 | 类型 |
 |------|------|------|

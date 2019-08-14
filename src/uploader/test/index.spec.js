@@ -9,6 +9,8 @@ const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([], 'test.jpg');
 const file = { target: { files: [mockFile] } };
 const multiFile = { target: { files: [mockFile, mockFile] } };
+const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
+const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
 window.FileReader = function () {
   this.readAsText = function () {
@@ -240,10 +242,10 @@ it('preview-size prop', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('delete preview image', async () => {
+it('delete preview image', () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: [],
+      fileList: [{ url: IMAGE }],
       previewSize: 30
     },
     listeners: {
@@ -253,9 +255,6 @@ it('delete preview image', async () => {
     }
   });
 
-  wrapper.vm.onChange(file);
-  await later();
-
   wrapper.find('.van-uploader__preview-delete').trigger('click');
   expect(wrapper.vm.fileList.length).toEqual(0);
 
@@ -263,12 +262,62 @@ it('delete preview image', async () => {
   expect(wrapper.emitted('delete')[0]).toBeTruthy();
 });
 
+it('before-delete prop return false', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      beforeDelete: () => false
+    }
+  });
+
+  wrapper.find('.van-uploader__preview-delete').trigger('click');
+  expect(wrapper.emitted('delete')).toBeFalsy();
+});
+
+it('before-delete prop return true', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      beforeDelete: () => true
+    }
+  });
+
+  wrapper.find('.van-uploader__preview-delete').trigger('click');
+  expect(wrapper.emitted('delete')).toBeTruthy();
+});
+
+it('before-delete prop resolved', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      beforeDelete: () => new Promise(resolve => resolve())
+    }
+  });
+
+  wrapper.find('.van-uploader__preview-delete').trigger('click');
+  await later();
+  expect(wrapper.emitted('delete')).toBeTruthy();
+});
+
+it('before-delete prop rejected', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      beforeDelete: () => new Promise((resolve, reject) => reject())
+    }
+  });
+
+  wrapper.find('.van-uploader__preview-delete').trigger('click');
+  await later();
+  expect(wrapper.emitted('delete')).toBeFalsy();
+});
+
 it('click to preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
-        { url: 'https://img.yzcdn.cn/vant/test.pdf' }
+        { url: IMAGE },
+        { url: PDF }
       ],
       previewSize: 30
     },
