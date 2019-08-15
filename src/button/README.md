@@ -81,6 +81,13 @@ Vue.use(Button);
 <van-button type="primary" to="index">Vue Router</van-button>
 ```
 
+### Custom Color
+
+```html
+<van-button color="#7232dd">Custom Color</van-button>
+<van-button color="#7232dd" plain>Custom Color</van-button>
+```
+
 ## API
 
 ### Props
@@ -90,6 +97,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | `string` | `default` |
 | size | Can be set to `large` `small` `mini` | `string` | `normal` |
 | text | Text | `string` | - |
+| color | Color | `string` | - |
 | icon | Left Icon | `string` | - |
 | tag | HTML Tag | `string` | `button` |
 | native-type | Native Type Attribute | `string` | `''` |

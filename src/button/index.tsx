@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_SURROUND } from '../utils/constant';
+import { BORDER_SURROUND, WHITE } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
@@ -19,6 +19,7 @@ export type ButtonProps = RouteProps & {
   size: ButtonSize;
   text?: string;
   icon?: string;
+  color?: string;
   block?: boolean;
   plain?: boolean;
   round?: boolean;
@@ -44,7 +45,28 @@ function Button(
   slots: DefaultSlots,
   ctx: RenderContext<ButtonProps>
 ) {
-  const { tag, icon, type, disabled, loading, hairline, loadingText } = props;
+  const {
+    tag,
+    icon,
+    type,
+    color,
+    plain,
+    disabled,
+    loading,
+    hairline,
+    loadingText
+  } = props;
+
+  const style: Record<string, string> = {};
+
+  if (color) {
+    style.borderColor = color;
+    style.color = plain ? color : WHITE;
+
+    if (!plain) {
+      style.backgroundColor = color;
+    }
+  }
 
   function onClick(event: Event) {
     if (!loading && !disabled) {
@@ -62,10 +84,10 @@ function Button(
       type,
       props.size,
       {
+        plain,
         disabled,
         hairline,
         block: props.block,
-        plain: props.plain,
         round: props.round,
         square: props.square
       }
@@ -105,6 +127,7 @@ function Button(
 
   return (
     <tag
+      style={style}
       class={classes}
       type={props.nativeType}
       disabled={disabled}
@@ -121,6 +144,7 @@ Button.props = {
   ...routeProps,
   text: String,
   icon: String,
+  color: String,
   block: Boolean,
   plain: Boolean,
   round: Boolean,

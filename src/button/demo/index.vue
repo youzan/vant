@@ -138,6 +138,18 @@
         to="index"
       />
     </demo-block>
+
+    <demo-block :title="$t('customColor')">
+      <van-button
+        color="#7232dd"
+        :text="$t('customColor')"
+      />
+      <van-button
+        plain
+        color="#7232dd"
+        :text="$t('customColor')"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -167,7 +179,8 @@ export default {
       loadingText: '加载中...',
       router: '页面导航',
       urlRoute: 'URL 跳转',
-      vueRoute: '路由跳转'
+      vueRoute: '路由跳转',
+      customColor: '自定义颜色'
     },
     'en-US': {
       type: 'Type',
@@ -192,7 +205,8 @@ export default {
       loadingText: 'Loading...',
       router: 'Router',
       urlRoute: 'URL',
-      vueRoute: 'Vue Router'
+      vueRoute: 'Vue Router',
+      customColor: 'Custom Color'
     }
   }
 };
