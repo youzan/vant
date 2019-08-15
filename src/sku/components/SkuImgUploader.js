@@ -3,7 +3,7 @@ import Icon from '../../icon';
 import Loading from '../../loading';
 import Uploader from '../../uploader';
 
-const [createComponent, bem] = createNamespace('sku-img-uploader');
+const [createComponent, bem, t] = createNamespace('sku-img-uploader');
 
 export default createComponent({
   props: {
@@ -41,7 +41,7 @@ export default createComponent({
     },
 
     onOversize() {
-      this.$toast(`最大可上传图片为${this.maxSize}MB，请尝试压缩图片尺寸`);
+      this.$toast(t('oversize', this.maxSize));
     },
 
     renderUploader(content, disabled = false) {
@@ -67,7 +67,7 @@ export default createComponent({
             ? (
               [
                 <Icon name="warning-o" size="20px" />,
-                <div class={bem('warn-text')}>上传失败<br />重新上传</div>
+                <div class={bem('warn-text')} domPropsInnerHTML={t('fail')} />
               ]
             ) : (
               <Loading type="spinner" size="20px" color="white" />

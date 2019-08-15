@@ -6,18 +6,7 @@ import { isEmail } from '../../utils/validate/email';
 import { isNumber } from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
-const [createComponent, bem] = createNamespace('sku-messages');
-
-const PLACEHOLDER = {
-  id_no: '输入身份证号码',
-  text: '输入文本',
-  tel: '输入数字',
-  email: '输入邮箱',
-  date: '点击选择日期',
-  time: '点击选择时间',
-  textarea: '点击填写段落文本',
-  mobile: '输入手机号码'
-};
+const [createComponent, bem, t] = createNamespace('sku-messages');
 
 export default createComponent({
   props: {
@@ -88,7 +77,7 @@ export default createComponent({
     getPlaceholder(message) {
       const type = +message.multiple === 1 ? 'textarea' : message.type;
       const map = this.messageConfig.placeholderMap || {};
-      return message.placeholder || map[type] || PLACEHOLDER[type];
+      return message.placeholder || map[type] || t(`placeholder.${type}`);
     },
 
     validateMessages() {
@@ -101,23 +90,21 @@ export default createComponent({
         if (value === '') {
           // 必填字段的校验
           if (String(message.required) === '1') {
-            const textType = message.type === 'image'
-              ? '请上传'
-              : '请填写';
+            const textType = t(message.type === 'image' ? 'upload' : 'fill');
             return textType + message.name;
           }
         } else {
           if (message.type === 'tel' && !isNumber(value)) {
-            return '请填写正确的数字格式留言';
+            return t('invalid.tel');
           }
           if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {
-            return '手机号长度为6-20位数字';
+            return t('invalid.mobile');
           }
           if (message.type === 'email' && !isEmail(value)) {
-            return '请填写正确的邮箱';
+            return t('invalid.email');
           }
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
-            return '请填写正确的身份证号码';
+            return t('invalid.id_no');
           }
         }
       }
@@ -131,7 +118,7 @@ export default createComponent({
           <Cell
             class={bem('image-cell')}
             value-class={bem('image-cell-value')}
-            label="仅限一张"
+            label={t('imageLabel')}
             title={message.name}
             key={`${this.goodsId}-${index}`}
             required={String(message.required) === '1'}

@@ -2,7 +2,9 @@ import { createNamespace } from '../../utils';
 import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
 
-const [createComponent] = createNamespace('sku-stepper');
+const namespace = createNamespace('sku-stepper');
+const createComponent = namespace[0];
+const t = namespace[2];
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default createComponent({
@@ -88,7 +90,7 @@ export default createComponent({
     return (
       <div class="van-sku-stepper-stock">
         <div class="van-sku-stepper-container">
-          <div class="van-sku__stepper-title">{this.stepperTitle || '购买数量'}</div>
+          <div class="van-sku__stepper-title">{this.stepperTitle || t('num')}</div>
           <Stepper
             vModel={this.currentNum}
             class="van-sku__stepper"
