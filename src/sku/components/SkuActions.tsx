@@ -13,7 +13,7 @@ export type SkuActionsProps = {
   showAddCartBtn?: boolean;
 };
 
-const [createComponent, bem] = createNamespace('sku-actions');
+const [createComponent, bem, t] = createNamespace('sku-actions');
 
 function SkuActions(
   h: CreateElement,
@@ -31,14 +31,14 @@ function SkuActions(
         <Button
           size="large"
           type="warning"
-          text={props.addCartText || '加入购物车'}
+          text={props.addCartText || t('addCart')}
           onClick={createEmitter('sku:addCart')}
         />
       )}
       <Button
         size="large"
         type="danger"
-        text={props.buyText || '立即购买'}
+        text={props.buyText || t('buy')}
         onClick={createEmitter('sku:buy')}
       />
     </div>
