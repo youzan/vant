@@ -87,8 +87,6 @@ export default createComponent({
       const scrollTop = getScrollTop(scroller);
       const scrollerRect = this.getScrollerRect();
 
-      console.log(`index-bar onScroll... pageYOffset = ${scrollTop}`);
-
       const active = this.getActiveAnchorIndex(scrollTop, childrenRect);
       this.activeAnchorIndex = this.indexList[active];
 
@@ -107,7 +105,7 @@ export default createComponent({
             item.position = isReachEdge ? 'fixed' : 'relative';
             item.left = isReachEdge ? scrollerRect.left : 0;
             item.top = isReachEdge
-              ? this.stickyOffsetTop + scrollerRect.top + Math.max(0, activeItemTop)
+              ? this.stickyOffsetTop + scrollerRect.top
               : 0;
           } else if (index === active - 1) {
             item.active = !isReachEdge;
