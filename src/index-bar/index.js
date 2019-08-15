@@ -5,7 +5,6 @@ import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/constant';
 import {
   getScrollTop,
-  getElementTop,
   getRootScrollTop,
   setRootScrollTop,
   getScrollEventTarget
@@ -17,7 +16,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }
@@ -84,36 +83,72 @@ export default createComponent({
 
   methods: {
     onScroll() {
-      let scrollTop;
-      if (this.scroller === window || this.scroller === document.body) {
-        scrollTop = getScrollTop(this.scroller);
-      } else {
-        // see: https://github.com/youzan/vant/issues/3774
-        scrollTop = 0;
-      }
-      const rects = this.children.map(item => ({
-        height: item.height,
-        top: getElementTop(item.$el)
-      }));
+      const { scroller, childrenRect } = this;
+      const scrollTop = getScrollTop(scroller);
+      const scrollerRect = this.getScrollerRect();
 
-      const active = this.getActiveAnchorIndex(scrollTop, rects);
+      console.log(`index-bar onScroll... pageYOffset = ${scrollTop}`);
 
+      const active = this.getActiveAnchorIndex(scrollTop, childrenRect);
       this.activeAnchorIndex = this.indexList[active];
 
       if (this.sticky) {
+        let activeItemTop = 0;
+        let isReachEdge = false;
+
+        if (active !== -1) {
+          activeItemTop = childrenRect[active].top - scrollTop;
+          isReachEdge = activeItemTop <= 0;
+        }
+
         this.children.forEach((item, index) => {
           if (index === active) {
             item.active = true;
-            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop);
+            item.position = isReachEdge ? 'fixed' : 'relative';
+            item.left = isReachEdge ? scrollerRect.left : 0;
+            item.top = isReachEdge
+              ? this.stickyOffsetTop + scrollerRect.top + Math.max(0, activeItemTop)
+              : 0;
           } else if (index === active - 1) {
-            const activeItemTop = rects[active].top - scrollTop;
-            item.active = activeItemTop > 0;
-            item.top = activeItemTop - item.height;
+            item.active = !isReachEdge;
+            item.position = 'relative';
+            item.left = 0;
+            item.top = item.parentHeight - item.height;
           } else {
             item.active = false;
+            item.position = undefined;
           }
         });
       }
+    },
+
+    initChildrenRect() {
+      if (!this.childrenRect) {
+        const scrollTop = getScrollTop(this.scroller);
+        const scrollerRect = this.getScrollerRect();
+
+        this.childrenRect = this.children.map(item => ({
+          height: item.height,
+          // `<index-anchor />`与滚动容器间的距离。参考：https://github.com/youzan/vant/issues/3443
+          top: scrollTop + (item.rect.top - scrollerRect.top)
+        }));
+      }
+
+      return this.childrenRect;
+    },
+
+    getScrollerRect() {
+      const { scroller } = this;
+      let scrollerRect = {
+        top: 0,
+        left: 0,
+      };
+
+      if (scroller.getBoundingClientRect) {
+        scrollerRect = scroller.getBoundingClientRect();
+      }
+
+      return scrollerRect;
     },
 
     getActiveAnchorIndex(scrollTop, rects) {
@@ -177,6 +212,10 @@ export default createComponent({
     }
   },
 
+  mounted() {
+    this.initChildrenRect();
+  },
+
   render() {
     const Indexes = this.indexList.map(index => {
       const active = index === this.activeAnchorIndex;
@@ -196,7 +235,7 @@ export default createComponent({
       <div class={bem()}>
         <div
           class={bem('sidebar')}
-          style={{ zIndex: this.zIndex }}
+          style={{ zIndex: this.zIndex + 1 }}
           onClick={this.onClick}
           onTouchstart={this.touchStart}
           onTouchmove={this.onTouchMove}
