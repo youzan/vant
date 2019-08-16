@@ -13,12 +13,13 @@ Vue.use(TreeSelect);
 
 ### 单选模式
 
+`item`为分类显示所需的数据，数据格式见下方示例。`main-active-index`表示左侧高亮选项的索引，`active-id`表示右侧高亮选项的 id
+
 ```html
 <van-tree-select
   :items="items"
-  :active-id="activeId"
+  :active-id.sync="activeId"
   :main-active-index.sync="mainActiveIndex"
-  @click-item="onClickItem"
 />
 ```
 
@@ -30,23 +31,19 @@ export default {
       activeId: 1,
       mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickItem(data) {
-      this.activeId = data.id;
-    }
   }
 }
 ```
 
 ### 多选模式
 
+`active-id`为数组格式时，可以选中多个右侧选项
+
 ```html
 <van-tree-select
   :items="items"
-  :active-id="activeIds"
+  :active-id.sync="activeIds"
   :main-active-index.sync="mainActiveIndex"
-  @click-item="onClickItem"
 />
 ```
 
@@ -55,21 +52,9 @@ export default {
   data() {
     return {
       items,
-      activeIds: 1,
-      mainActiveIndex: 0,
+      activeIds: [1, 2],
+      mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickItem(data) {
-      const { id } = data;
-      const { activeIds } = this;
-
-      if (activeIds.indexOf(id) !== -1) {
-        activeIds.splice(activeIds.indexOf(id), 1);
-      } else {
-        activeIds.push(id);
-      }
-    }
   }
 }
 ```
