@@ -1,5 +1,27 @@
 # 更新日志
 
+### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
+`2019-08-15`
+
+**Improvements**
+
+- Sku: 支持国际化 [\#4123](https://github.com/youzan/vant/pull/4123)
+- Button: 新增 color 属性 [\#4124](https://github.com/youzan/vant/pull/4124)
+- Uploader: 新增 before-delete 属性 [\#4118](https://github.com/youzan/vant/pull/4118)
+- Collapse: 新增 value 属性类型错误时的提示 [\#4122](https://github.com/youzan/vant/pull/4122)
+- TreeSelect: 新增 content 插槽 [\#4105](https://github.com/youzan/vant/pull/4105)
+- TreeSelect: 支持 string 类型的 height 属性 [\#4107](https://github.com/youzan/vant/pull/4107)
+- NumberKeyboard: 优化点击体验 [\#4116](https://github.com/youzan/vant/pull/4116)
+
+**Bug Fixes**
+
+- 修复 DropdownMenu 嵌套在 NavBar 内时样式错误的问题 [\#4098](https://github.com/youzan/vant/pull/4098)
+- 修复 Tab 动态插入标签页时下划线位置未更新的问题 [\#4091](https://github.com/youzan/vant/pull/4091)
+- 修复 Icon service-o 图标不完整的问题 [\#4088](https://github.com/youzan/vant/pull/4088)
+- 修复 Icon gift-o、refund-o 图标不完整的问题 [\#4089](https://github.com/youzan/vant/pull/4089)
+- 修复 Slider 位置未改变时也会触发 change 事件的问题 [\#4087](https://github.com/youzan/vant/pull/4087)
+
+
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 

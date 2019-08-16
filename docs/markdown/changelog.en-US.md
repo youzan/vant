@@ -1,5 +1,27 @@
 # Changelog
 
+### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
+`2019-08-15`
+
+**Improvements**
+
+- Sku: support i18n [\#4123](https://github.com/youzan/vant/pull/4123)
+- Button: add color prop [\#4124](https://github.com/youzan/vant/pull/4124)
+- Collapse: log tips for incorrect value [\#4122](https://github.com/youzan/vant/pull/4122)
+- Uploader: add before-delete prop [\#4118](https://github.com/youzan/vant/pull/4118)
+- TreeSelect: add content slot [\#4105](https://github.com/youzan/vant/pull/4105)
+- TreeSelect: support string type of height prop [\#4107](https://github.com/youzan/vant/pull/4107)
+- NumberKeyboard: improve click experience [\#4116](https://github.com/youzan/vant/pull/4116)
+
+**Bug Fixes**
+
+- fix DropdownMenu incorrect style when inside NavBar [\#4098](https://github.com/youzan/vant/pull/4098)
+- fix Tab incorrect title position when insert tab pane [\#4091](https://github.com/youzan/vant/pull/4091)
+- fix Icon service-o icon incomplete [\#4088](https://github.com/youzan/vant/pull/4088)
+- fix Icon gift-o、refund-o icon incomplete [\#4089](https://github.com/youzan/vant/pull/4089)
+- fix Slider should not emit change event when value not changed [\#4087](https://github.com/youzan/vant/pull/4087)
+
+
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 
