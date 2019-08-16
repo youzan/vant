@@ -17,8 +17,7 @@ Vue.use(TreeSelect);
 <van-tree-select
   :items="items"
   :active-id="activeId"
-  :main-active-index="mainActiveIndex"
-  @click-nav="onClickNav"
+  :main-active-index.sync="mainActiveIndex"
   @click-item="onClickItem"
 />
 ```
@@ -33,9 +32,6 @@ export default {
     };
   },
   methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
     onClickItem(data) {
       this.activeId = data.id;
     }
@@ -49,8 +45,7 @@ export default {
 <van-tree-select
   :items="items"
   :active-id="activeIds"
-  :main-active-index="mainActiveIndex"
-  @click-nav="onClickNav"
+  :main-active-index.sync="mainActiveIndex"
   @click-item="onClickItem"
 />
 ```
@@ -65,9 +60,6 @@ export default {
     };
   },
   methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
     onClickItem(data) {
       const { id } = data;
       const { activeIds } = this;
@@ -90,8 +82,8 @@ export default {
 |------|------|------|------|------|
 | items | 分类显示所需的数据 | `Item[]` | `[]` | - |
 | height | 高度，默认单位为 px | `string | number` | `300` | - |
-| main-active-index | 左侧导航高亮的索引 | `number` | `0` | - |
-| active-id | 右侧选择项，高亮的数据id | `string | number` | `0` | - |
+| main-active-index | 左侧高亮选项的索引 | `number` | `0` | - |
+| active-id | 右侧高亮选项的 id，支持传入数组 | `string | number | (string | number)[]` | `0` | - |
 
 ### Events
 

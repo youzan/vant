@@ -63,6 +63,7 @@ function TreeSelect(
       onClick={() => {
         if (!item.disabled) {
           emit(ctx, 'click-nav', index);
+          emit(ctx, 'update:main-active-index', index);
 
           // compatible for old usage, should be removed in next major version
           emit(ctx, 'navclick', index);

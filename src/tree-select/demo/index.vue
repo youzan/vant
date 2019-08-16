@@ -3,9 +3,8 @@
     <demo-block :title="$t('radioMode')">
       <van-tree-select
         :items="items"
-        :main-active-index="mainActiveIndex"
+        :main-active-index.sync="mainActiveIndex"
         :active-id="activeId"
-        @navclick="onNavClick"
         @itemclick="onItemClick"
       />
     </demo-block>
@@ -13,9 +12,8 @@
     <demo-block :title="$t('multipleMode')">
       <van-tree-select
         :items="items"
-        :main-active-index="mainActiveIndex2"
+        :main-active-index.sync="mainActiveIndex2"
         :active-id="activeIds"
-        @navclick="onNavClick2"
         @itemclick="onItemClick2"
       />
     </demo-block>
@@ -140,16 +138,8 @@ export default {
   },
 
   methods: {
-    onNavClick(index) {
-      this.mainActiveIndex = index;
-    },
-
     onItemClick(data) {
       this.activeId = data.id;
-    },
-
-    onNavClick2(index) {
-      this.mainActiveIndex2 = index;
     },
 
     onItemClick2(data) {
