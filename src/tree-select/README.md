@@ -16,10 +16,8 @@ Vue.use(TreeSelect);
 ```html
 <van-tree-select
   :items="items"
-  :main-active-index="mainActiveIndex"
-  :active-id="activeId"
-  @click-nav="onClickNav"
-  @click-item="onClickItem"
+  :active-id.sync="activeId"
+  :main-active-index.sync="mainActiveIndex"
 />
 ```
 
@@ -29,16 +27,8 @@ export default {
     return {
       items,
       activeId: 1,
-      mainActiveIndex: 0,
+      mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
-    onClickItem(data) {
-      this.activeId = data.id;
-    }
   }
 }
 ```
@@ -48,10 +38,8 @@ export default {
 ```html
 <van-tree-select
   :items="items"
-  :active-id="activeIds"
-  :main-active-index="mainActiveIndex"
-  @click-nav="onClickNav"
-  @click-item="onClickItem"
+  :active-id.sync="activeIds"
+  :main-active-index.sync="mainActiveIndex"
 />
 ```
 
@@ -60,24 +48,9 @@ export default {
   data() {
     return {
       items,
-      activeIds: 1,
-      mainActiveIndex: 0,
+      activeIds: [1, 2],
+      mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
-    onClickItem(data) {
-      const { id } = data;
-      const { activeIds } = this;
-
-      if (activeIds.indexOf(id) !== -1) {
-        activeIds.splice(activeIds.indexOf(id), 1);
-      } else {
-        activeIds.push(id);
-      }
-    }
   }
 }
 ```

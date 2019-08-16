@@ -18,10 +18,12 @@ export type TreeSelectChildren = {
   disabled?: boolean;
 };
 
+export type TreeSelectActiveId = number | string | (number | string)[];
+
 export type TreeSelectProps = {
   height: number | string;
   items: TreeSelectItem[];
-  activeId: number | string | (number | string)[];
+  activeId: TreeSelectActiveId;
   mainActiveIndex: number;
 };
 
@@ -41,7 +43,6 @@ function TreeSelect(
 
   const selectedItem: Partial<TreeSelectItem> = items[mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
-
   const isMultiple = Array.isArray(activeId);
 
   function isActiveItem(id: number | string) {
@@ -91,7 +92,21 @@ function TreeSelect(
         ]}
         onClick={() => {
           if (!item.disabled) {
+            let newActiveId: TreeSelectActiveId = item.id;
+            if (isMultiple) {
+              newActiveId = (activeId as (string | number)[]).slice();
+
+              const index = newActiveId.indexOf(item.id);
+
+              if (index !== -1) {
+                newActiveId.splice(index, 1);
+              } else {
+                newActiveId.push(item.id);
+              }
+            }
+
             emit(ctx, 'click-item', item);
+            emit(ctx, 'update:active-id', newActiveId);
 
             // compatible for old usage, should be removed in next major version
             emit(ctx, 'itemclick', item);
