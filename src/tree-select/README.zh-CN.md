@@ -11,13 +11,13 @@ Vue.use(TreeSelect);
 
 ## 代码演示
 
-### 基础用法
+### 单选模式
 
 ```html
 <van-tree-select
   :items="items"
-  :main-active-index="mainActiveIndex"
   :active-id="activeId"
+  :main-active-index="mainActiveIndex"
   @click-nav="onClickNav"
   @click-item="onClickItem"
 />
@@ -28,10 +28,8 @@ export default {
   data() {
     return {
       items,
-      // 左侧高亮元素的index
-      mainActiveIndex: 0,
-      // 被选中元素的id
-      activeId: 1
+      activeId: 1,
+      mainActiveIndex: 0
     };
   },
   methods: {
@@ -40,6 +38,45 @@ export default {
     },
     onClickItem(data) {
       this.activeId = data.id;
+    }
+  }
+}
+```
+
+### 多选模式
+
+```html
+<van-tree-select
+  :items="items"
+  :active-id="activeIds"
+  :main-active-index="mainActiveIndex"
+  @click-nav="onClickNav"
+  @click-item="onClickItem"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      items,
+      activeIds: 1,
+      mainActiveIndex: 0,
+    };
+  },
+  methods: {
+    onClickNav(index) {
+      this.mainActiveIndex = index;
+    },
+    onClickItem(data) {
+      const { id } = data;
+      const { activeIds } = this;
+
+      if (activeIds.indexOf(id) !== -1) {
+        activeIds.splice(activeIds.indexOf(id), 1);
+      } else {
+        activeIds.push(id);
+      }
     }
   }
 }

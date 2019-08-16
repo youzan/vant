@@ -21,7 +21,7 @@ export type TreeSelectChildren = {
 export type TreeSelectProps = {
   height: number | string;
   items: TreeSelectItem[];
-  activeId: number | string;
+  activeId: number | string | (number | string)[];
   mainActiveIndex: number;
 };
 
@@ -41,6 +41,14 @@ function TreeSelect(
 
   const selectedItem: Partial<TreeSelectItem> = items[mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
+
+  const isMultiple = Array.isArray(activeId);
+
+  function isActiveItem(id: number | string) {
+    return isMultiple
+      ? (activeId as (number | string)[]).indexOf(id) !== -1
+      : activeId === id;
+  }
 
   const Nav = items.map((item, index) => (
     <div
@@ -76,7 +84,7 @@ function TreeSelect(
         class={[
           'van-ellipsis',
           bem('item', {
-            active: activeId === item.id,
+            active: isActiveItem(item.id),
             disabled: item.disabled
           })
         ]}
@@ -90,7 +98,7 @@ function TreeSelect(
         }}
       >
         {item.text}
-        {activeId === item.id && (
+        {isActiveItem(item.id) && (
           <Icon name="checked" size="16px" class={bem('selected')} />
         )}
       </div>
@@ -115,7 +123,7 @@ TreeSelect.props = {
     default: 300
   },
   activeId: {
-    type: [Number, String],
+    type: [Number, String, Array],
     default: 0
   },
   mainActiveIndex: {

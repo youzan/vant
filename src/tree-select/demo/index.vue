@@ -1,12 +1,22 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="$t('radioMode')">
       <van-tree-select
         :items="items"
         :main-active-index="mainActiveIndex"
         :active-id="activeId"
         @navclick="onNavClick"
         @itemclick="onItemClick"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('multipleMode')">
+      <van-tree-select
+        :items="items"
+        :main-active-index="mainActiveIndex2"
+        :active-id="activeIds"
+        @navclick="onNavClick2"
+        @itemclick="onItemClick2"
       />
     </demo-block>
   </demo-section>
@@ -20,6 +30,8 @@ export default {
       group2: '浙江',
       group3: '江苏',
       group4: '福建',
+      radioMode: '单选模式',
+      multipleMode: '多选模式',
       city1: [{
         text: '杭州',
         id: 1
@@ -60,6 +72,8 @@ export default {
       group2: 'Group1',
       group3: 'Group2',
       group4: 'Group3',
+      radioMode: 'Radio Mode',
+      multipleMode: 'Multiple Mode',
       city1: [{
         text: 'Delaware',
         id: 1
@@ -99,8 +113,10 @@ export default {
 
   data() {
     return {
+      activeId: 1,
+      activeIds: [1, 2],
       mainActiveIndex: 0,
-      activeId: 1
+      mainActiveIndex2: 0
     };
   },
 
@@ -127,8 +143,24 @@ export default {
     onNavClick(index) {
       this.mainActiveIndex = index;
     },
+
     onItemClick(data) {
       this.activeId = data.id;
+    },
+
+    onNavClick2(index) {
+      this.mainActiveIndex2 = index;
+    },
+
+    onItemClick2(data) {
+      const { id } = data;
+      const { activeIds } = this;
+
+      if (activeIds.indexOf(id) !== -1) {
+        activeIds.splice(activeIds.indexOf(id), 1);
+      } else {
+        activeIds.push(id);
+      }
     }
   }
 };

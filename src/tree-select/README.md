@@ -11,7 +11,7 @@ Vue.use(TreeSelect);
 
 ## Usage
 
-### Basic Usage
+### Radio Mode
 
 ```html
 <van-tree-select
@@ -28,10 +28,8 @@ export default {
   data() {
     return {
       items,
-      // the index of parent item
+      activeId: 1,
       mainActiveIndex: 0,
-      // the id of selected item
-      activeId: 1001
     };
   },
   methods: {
@@ -40,6 +38,45 @@ export default {
     },
     onClickItem(data) {
       this.activeId = data.id;
+    }
+  }
+}
+```
+
+### Multiple Mode
+
+```html
+<van-tree-select
+  :items="items"
+  :active-id="activeIds"
+  :main-active-index="mainActiveIndex"
+  @click-nav="onClickNav"
+  @click-item="onClickItem"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      items,
+      activeIds: 1,
+      mainActiveIndex: 0,
+    };
+  },
+  methods: {
+    onClickNav(index) {
+      this.mainActiveIndex = index;
+    },
+    onClickItem(data) {
+      const { id } = data;
+      const { activeIds } = this;
+
+      if (activeIds.indexOf(id) !== -1) {
+        activeIds.splice(activeIds.indexOf(id), 1);
+      } else {
+        activeIds.push(id);
+      }
     }
   }
 }
