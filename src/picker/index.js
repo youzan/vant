@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
-import { BLUE, BORDER_TOP_BOTTOM } from '../utils/constant';
+import { BLUE, BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
@@ -198,7 +198,7 @@ export default createComponent({
             />
           ))}
           <div class={bem('mask')} style={maskStyle} />
-          <div class={[BORDER_TOP_BOTTOM, bem('frame')]} style={frameStyle} />
+          <div class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]} style={frameStyle} />
         </div>
         {this.toolbarPosition === 'bottom' ? Toolbar : h()}
       </div>
