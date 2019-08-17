@@ -89,7 +89,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of current active panels | `(string | number)[] `(non-accordion mode) / `string | number`(accordion mode) | - |
+| v-model | Names of current active panels | `(string | number)[] `(non-accordion mode)<br>`string | number`(accordion mode) | - |
 | accordion | Whether to be accordion mode | `boolean` | `false` |
 | border | Whether to show outer border | `boolean` | `true` |
 
