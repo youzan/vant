@@ -33,10 +33,10 @@ export type FileListItem = {
   isImage?: boolean;
 };
 
-const IMAGE_EXT = ['jpeg', 'jpg', 'gif', 'png', 'svg'];
+const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
 
 export function isImageUrl(url: string): boolean {
-  return IMAGE_EXT.some(ext => url.indexOf(`.${ext}`) !== -1);
+  return IMAGE_REGEXP.test(url);
 }
 
 export function isImageFile(item: FileListItem): boolean {
