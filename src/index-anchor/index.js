@@ -14,7 +14,6 @@ export default createComponent({
   data() {
     return {
       top: 0,
-      left: 0,
       active: false,
       position: 'static',
     };
@@ -29,7 +28,6 @@ export default createComponent({
       if (this.sticky) {
         return {
           position: this.position,
-          left: `${this.left}px`,
           zIndex: `${this.parent.zIndex}`,
           transform: `translate3d(0, ${this.top}px, 0)`,
           color: this.parent.highlightColor

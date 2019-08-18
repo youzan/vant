@@ -103,14 +103,12 @@ export default createComponent({
           if (index === active) {
             item.active = true;
             item.position = isReachEdge ? 'fixed' : 'relative';
-            item.left = isReachEdge ? scrollerRect.left : 0;
             item.top = isReachEdge
               ? this.stickyOffsetTop + scrollerRect.top
               : 0;
           } else if (index === active - 1) {
             item.active = !isReachEdge;
             item.position = 'relative';
-            item.left = 0;
             item.top = item.parentHeight - item.height;
           } else {
             item.active = false;
