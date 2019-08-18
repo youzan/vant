@@ -104,7 +104,7 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 
-> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+> 注意：配置 babel-plugin-import 插件后，将不允许以这种方式导入组件
 
 ### 方式四. 通过 CDN 引入
 
@@ -153,7 +153,7 @@ module.exports = {
 }
 ```
 
-> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
 
 ### 在桌面端使用
 
