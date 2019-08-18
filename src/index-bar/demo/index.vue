@@ -57,34 +57,8 @@ export default {
     return {
       activeTab: 0,
       indexList,
-      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
-      showPopup: false,
+      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10]
     };
   }
 };
 </script>
-
-<style lang="less">
-  .demo-index-bar {
-    .custom-scroller {
-      height: 50vh;
-      margin: 100px 0 0 100px;
-      overflow-y: scroll;
-    }
-
-    .popup-scroller {
-      padding: 50px 0;
-      text-align: center;
-    }
-  }
-
-  .index-bar-popup {
-    top: 0;
-    transform: none;
-
-    .van-index-bar {
-      width: 80vw;
-      background: #f8f8f8;
-    }
-  }
-</style>
