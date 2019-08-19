@@ -65,7 +65,7 @@ test('accordion', async () => {
   expect(wrapper.vm.active).toEqual('first');
 
   titles.at(0).trigger('click');
-  expect(wrapper.vm.active).toEqual('');
+  expect(wrapper.vm.active).toEqual(null);
 });
 
 test('render collapse-item slot', () => {

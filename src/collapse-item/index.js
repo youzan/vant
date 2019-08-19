@@ -95,7 +95,7 @@ export default createComponent({
 
       const { parent } = this;
       const name =
-        parent.accordion && this.currentName === parent.value ? '' : this.currentName;
+        parent.accordion && this.currentName === parent.value ? null : this.currentName;
       this.parent.switch(name, !this.expanded);
     },
 
