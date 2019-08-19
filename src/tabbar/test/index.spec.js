@@ -44,6 +44,40 @@ test('route mode', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('route mode match by name', async () => {
+  const Foo = { render: () => 'Foo' };
+  const Bar = { render: () => 'Bar' };
+  const router = new VueRouter({
+    routes: [
+      { path: '/foo', component: Foo, name: 'foo' },
+      { path: '/bar', component: Bar, name: 'bar' }
+    ]
+  });
+
+  const wrapper = mount({
+    router,
+    template: `
+      <van-tabbar route>
+        <van-tabbar-item :to="{ name: 'foo' }">
+          Tab
+        </van-tabbar-item>
+        <van-tabbar-item :to="{ name: 'bar' }">
+          Tab
+        </van-tabbar-item>
+      </van-tabbar>
+    `
+  });
+
+  const items = wrapper.findAll('.van-tabbar-item');
+  items.at(0).trigger('click');
+  await later();
+  expect(wrapper).toMatchSnapshot();
+
+  items.at(1).trigger('click');
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('router NavigationDuplicated', async done => {
   expect(async () => {
     const router = new VueRouter();
