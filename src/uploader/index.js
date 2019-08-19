@@ -176,6 +176,7 @@ export default createComponent({
 
       ImagePreview({
         images: imageFiles,
+        closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item.content || item.url)
       });
     },
