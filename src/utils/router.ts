@@ -14,7 +14,17 @@ export type RouteConfig = {
 export function route(router: VueRouter, config: RouteConfig) {
   const { to, url, replace } = config;
   if (to && router) {
-    router[replace ? 'replace' : 'push'](to);
+    const promise = router[replace ? 'replace' : 'push'](to);
+
+    /* istanbul ignore else */
+    if (promise && promise.catch) {
+      promise.catch(err => {
+        /* istanbul ignore if */
+        if (err.name !== 'NavigationDuplicated') {
+          throw err;
+        }
+      });
+    }
   } else if (url) {
     replace ? location.replace(url) : (location.href = url);
   }
@@ -25,10 +35,10 @@ export function functionalRoute(context: RenderContext) {
 }
 
 export type RouteProps = {
-  url?: string,
+  url?: string;
   replace?: boolean;
   to?: RawLocation;
-}
+};
 
 export const routeProps = {
   url: String,
