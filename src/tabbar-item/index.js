@@ -27,8 +27,8 @@ export default createComponent({
     routeActive() {
       const { to, $route } = this;
       if (to && $route) {
-        const path = isObj(to) ? to.path : to;
-        return $route.path === path;
+        const config = isObj(to) ? to : { path: to };
+        return config.path === $route.path || config.name === $route.name;
       }
     }
   },
