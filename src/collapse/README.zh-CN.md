@@ -90,7 +90,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前展开面板的 name | `string[] | number[] | string | number` | - | - |
+| v-model | 当前展开面板的 name | `(string | number)[] `(非手风琴模式) <br>`string | number`(手风琴模式) | - | - |
 | accordion | 是否开启手风琴模式 | `boolean` | `false` | - |
 | border | 是否显示外边框 | `boolean` | `true` | 1.6.9 |
 
@@ -98,7 +98,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 切换面板时触发 | activeNames: `string[] | number[] | string | number` |
+| change | 切换面板时触发 | activeNames:<br>`(string | number)[] `(非手风琴模式) <br>`string | number`(手风琴模式) |
 
 ### CollapseItem Props
 
