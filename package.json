@@ -29,7 +29,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": ""
+      "commit-msg": "node build/lint-commit-msg.js"
     }
   },
   "lint-staged": {
