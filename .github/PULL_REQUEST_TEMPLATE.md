@@ -8,9 +8,23 @@
 
 #### Title Format
 
-[bugfix / new feature / improvement] ComponentName：content
+[type] ComponentName：content
 
 Example：
-* [bugfix] Button: color prop not work
-* [new feature] Button: add color prop
-* [improvement] Button: optimize performance
+
+- [fix] Button: incorrect style
+- [feat] Button: add color prop
+- [dosc] Button: fix typo
+
+Allowed Types:
+
+- fix
+- feat
+- docs
+- perf
+- test
+- types
+- build
+- chore
+- refactor
+- breaking change
