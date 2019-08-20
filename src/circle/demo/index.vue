@@ -5,39 +5,73 @@
         v-model="currentRate1"
         :rate="rate"
         :speed="100"
-        size="120px"
         :text="currentRate1.toFixed(0) + '%'"
       />
-      <div>
-        <van-button
-          :text="$t('add')"
-          type="primary"
-          size="small"
-          @click="add"
-        />
-        <van-button
-          :text="$t('decrease')"
-          type="danger"
-          size="small"
-          @click="reduce"
-        />
-      </div>
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
       <van-circle
-        v-model="currentRate2"
-        color="#07c160"
-        fill="#fff"
+        v-model="currentRate3"
         :rate="rate"
-        size="120px"
         layer-color="#ebedf0"
         :speed="100"
         :stroke-width="60"
+        :text="$t('customWidth')"
+      />
+
+      <van-circle
+        v-model="currentRate3"
+        color="#f44"
+        :rate="rate"
+        layer-color="#ebedf0"
+        :speed="100"
+        :text="$t('customColor')"
+      />
+
+      <van-circle
+        v-model="currentRate2"
+        :rate="rate"
+        :speed="100"
+        :color="gradientColor"
+        :text="$t('gradient')"
+      />
+
+      <van-circle
+        v-model="currentRate4"
+        color="#07c160"
+        :rate="rate"
+        :speed="100"
         :clockwise="false"
-        :text="currentRate2.toFixed(0) + '%'"
+        :text="$t('counterClockwise')"
+        style="margin-top: 15px;"
+      />
+
+      <van-circle
+        v-model="currentRate4"
+        color="#7232dd"
+        :rate="rate"
+        :speed="100"
+        size="120px"
+        :clockwise="false"
+        :text="$t('customSize')"
+        style="margin-top: 15px;"
       />
     </demo-block>
+
+    <div style="margin-top: 15px;">
+      <van-button
+        :text="$t('add')"
+        type="primary"
+        size="small"
+        @click="add"
+      />
+      <van-button
+        :text="$t('decrease')"
+        type="danger"
+        size="small"
+        @click="reduce"
+      />
+    </div>
   </demo-section>
 </template>
 
@@ -47,18 +81,34 @@ const format = rate => Math.min(Math.max(rate, 0), 100);
 export default {
   i18n: {
     'zh-CN': {
-      customStyle: '样式定制'
+      gradient: '渐变色',
+      customSize: '大小定制',
+      customStyle: '样式定制',
+      customColor: '颜色定制',
+      customWidth: '宽度定制',
+      counterClockwise: '逆时针'
     },
     'en-US': {
-      customStyle: 'Custom Style'
+      gradient: 'Gradient',
+      customSize: 'Custom Size',
+      customStyle: 'Custom Style',
+      customColor: 'Custom Color',
+      customWidth: 'Custom Width',
+      counterClockwise: 'Counter Clockwise'
     }
   },
 
   data() {
     return {
-      rate: 30,
-      currentRate1: 30,
-      currentRate2: 30
+      rate: 70,
+      currentRate1: 70,
+      currentRate2: 70,
+      currentRate3: 70,
+      currentRate4: 70,
+      gradientColor: {
+        '0%': '#ffd01e',
+        '100%': '#ee0a24'
+      }
     };
   },
 
