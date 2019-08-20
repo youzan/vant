@@ -39,20 +39,82 @@ export default {
 };
 ```
 
-### 样式定制
+### 宽度定制
+
+通过`stroke-width`属性来控制进度条宽度
 
 ```html
 <van-circle
   v-model="currentRate"
-  color="#07c160"
-  fill="#fff"
-  size="120px"
-  layer-color="#ebedf0"
-  :text="text"
   :rate="rate"
-  :speed="100"
-  :clockwise="false"
   :stroke-width="60"
+  text="宽度定制"
+/>
+```
+
+### 颜色定制
+
+通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  layer-color="#ebedf0"
+  text="颜色定制"
+/>
+```
+
+### 渐变色
+
+`color`属性支持传入对象格式来定义渐变色
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  :color="gradientColor"
+  text="渐变色"
+/>
+```
+
+``` javascript
+export default {
+  data() {
+    return {
+      currentRate: 0,
+      gradientColor: {
+        '0%': '#ffd01e',
+        '100%': '#ee0a24'
+      }
+    };
+  }
+};
+```
+
+### 逆时针方向
+
+将`clockwise`设置为`false`，进度会从逆时针方向开始
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  :clockwise="false"
+  text="逆时针方向"
+/>
+```
+
+### 大小定制
+
+通过`size`属性设置圆环直径
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  size="120px"
+  text="大小定制"
 />
 ```
 
@@ -65,7 +127,7 @@ export default {
 | v-model | 当前进度 | `number` | - | - |
 | rate | 目标进度 | `number` | `100` | - |
 | size | 圆环直径 | `string` | `100px` | - |
-| color | 进度条颜色 | `string` | `#1989fa` | - |
+| color | 进度条颜色，传入对象格式可以定义渐变色 | `string | object` | `#1989fa` | 2.1.4 |
 | layer-color | 轨道颜色 | `string` | `#fff` | - |
 | fill | 填充颜色 | `string` | `none` | - |
 | speed | 动画速度（单位为 rate/s）| `number` | `0` | - |

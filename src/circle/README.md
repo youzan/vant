@@ -37,20 +37,72 @@ export default {
 };
 ```
 
-### Custom style
+### Custom Width
 
 ```html
 <van-circle
   v-model="currentRate"
-  color="#07c160"
-  fill="#fff"
-  size="120px"
-  layer-color="#ebedf0"
-  :text="text"
   :rate="rate"
-  :speed="100"
-  :clockwise="false"
   :stroke-width="60"
+  text="Custom Width"
+/>
+```
+
+### Custom Color
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  layer-color="#ebedf0"
+  text="Custom Color"
+/>
+```
+
+### Gradient
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  :color="gradientColor"
+  text="Gradient"
+/>
+```
+
+``` javascript
+export default {
+  data() {
+    return {
+      currentRate: 0,
+      gradientColor: {
+        '0%': '#ffd01e',
+        '100%': '#ee0a24'
+      }
+    };
+  }
+};
+```
+
+### Counter Clockwise
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  :clockwise="false"
+  text="Counter Clockwise"
+/>
+```
+
+### Custom Size
+
+```html
+<van-circle
+  v-model="currentRate"
+  :rate="rate"
+  size="120px"
+  text="Custom Size"
 />
 ```
 
@@ -63,7 +115,7 @@ export default {
 | v-model | Current rate | `number` | - |
 | rate | Target rate | `number` | `100` |
 | size | Circle size | `string` | `100px` |
-| color | Progress bar color | `string` | `#1989fa` |
+| color | Progress color, passing object to render gradient | `string | object` | `#1989fa` |
 | layer-color | Layer color | `string` | `#fff` |
 | fill | Fill color | `string` | `none` |
 | speed | Animate speed（rate/s）| `number` | `0` |
