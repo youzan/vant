@@ -54,6 +54,7 @@ Vue.use(Area);
 | visible-item-count | 可见的选项个数 | `number` | `5` | - |
 | confirm-button-text | 确认按钮文字 | `string` | `确认` | 1.5.3 |
 | cancel-button-text | 取消按钮文字 | `string` | `取消` | 1.5.3 |
+| is-oversea-code | 根据`code`校验海外地址，海外地址会划分至单独的分类 | `() => boolean` | - | 2.1.4 |
 
 ### Events
 
