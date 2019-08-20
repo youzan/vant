@@ -55,6 +55,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | visible-item-count | Count of visible columns | `number` | `5` |
 | confirm-button-text | Text of confirm button | `string` | `Confirm` |
 | cancel-button-text | Text of cancel button | `string` | `Cancel` |
+| is-oversea-code | The method to validate oversea code | `() => boolean` | - |
 
 ### Events
 
