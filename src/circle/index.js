@@ -1,4 +1,4 @@
-import { createNamespace, isObj } from '../utils';
+import { createNamespace, isObj, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
@@ -29,8 +29,8 @@ export default createComponent({
       default: 0
     },
     size: {
-      type: String,
-      default: '100px'
+      type: [String, Number],
+      default: 100
     },
     fill: {
       type: String,
@@ -64,9 +64,10 @@ export default createComponent({
 
   computed: {
     style() {
+      const size = addUnit(this.size);
       return {
-        width: this.size,
-        height: this.size
+        width: size,
+        height: size
       };
     },
 
