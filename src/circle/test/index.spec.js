@@ -37,3 +37,13 @@ test('animate', async () => {
   expect(onInput).toHaveBeenCalled();
   expect(onInput.mock.calls[0][0]).not.toEqual(0);
 });
+
+test('size prop', () => {
+  const wrapper = mount(Circle, {
+    propsData: {
+      size: 100
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
