@@ -14,8 +14,7 @@ export default createComponent({
   data() {
     return {
       top: 0,
-      active: false,
-      position: 'static',
+      active: false
     };
   },
 
@@ -27,10 +26,9 @@ export default createComponent({
     anchorStyle() {
       if (this.sticky) {
         return {
-          position: this.position,
-          zIndex: `${this.parent.zIndex}`,
           transform: `translate3d(0, ${this.top}px, 0)`,
-          color: this.parent.highlightColor
+          color: this.parent.highlightColor,
+          zIndex: `${this.parent.zIndex}`
         };
       }
     }
@@ -38,8 +36,6 @@ export default createComponent({
 
   mounted() {
     this.height = this.$el.offsetHeight;
-    this.rect = this.$el.getBoundingClientRect();
-    this.parentHeight = this.$el.parentElement.offsetHeight;
   },
 
   methods: {

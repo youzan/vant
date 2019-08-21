@@ -5,6 +5,7 @@ import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/constant';
 import {
   getScrollTop,
+  getElementTop,
   getRootScrollTop,
   setRootScrollTop,
   getScrollEventTarget
@@ -83,54 +84,31 @@ export default createComponent({
 
   methods: {
     onScroll() {
-      const { scroller, childrenRect } = this;
-      const scrollTop = getScrollTop(scroller);
+      const scrollTop = getScrollTop(this.scroller);
       const scrollerRect = this.getScrollerRect();
+      const rects = this.children.map(item => ({
+        height: item.height,
+        top: this.getElementTop(item.$el, scrollerRect)
+      }));
 
-      const active = this.getActiveAnchorIndex(scrollTop, childrenRect);
+      const active = this.getActiveAnchorIndex(scrollTop, rects);
+
       this.activeAnchorIndex = this.indexList[active];
 
       if (this.sticky) {
-        let activeItemTop = 0;
-        let isReachEdge = false;
-
-        if (active !== -1) {
-          activeItemTop = childrenRect[active].top - scrollTop;
-          isReachEdge = activeItemTop <= 0;
-        }
-
         this.children.forEach((item, index) => {
           if (index === active) {
             item.active = true;
-            item.position = isReachEdge ? 'fixed' : 'relative';
-            item.top = isReachEdge
-              ? this.stickyOffsetTop + scrollerRect.top
-              : 0;
+            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop) + scrollerRect.top;
           } else if (index === active - 1) {
-            item.active = !isReachEdge;
-            item.position = 'relative';
-            item.top = item.parentHeight - item.height;
+            const activeItemTop = rects[active].top - scrollTop;
+            item.active = activeItemTop > 0;
+            item.top = activeItemTop + scrollerRect.top - item.height;
           } else {
             item.active = false;
-            item.position = undefined;
           }
         });
       }
-    },
-
-    initChildrenRect() {
-      if (!this.childrenRect) {
-        const scrollTop = getScrollTop(this.scroller);
-        const scrollerRect = this.getScrollerRect();
-
-        this.childrenRect = this.children.map(item => ({
-          height: item.height,
-          // `<index-anchor />`与滚动容器间的距离。参考：https://github.com/youzan/vant/issues/3443
-          top: scrollTop + (item.rect.top - scrollerRect.top)
-        }));
-      }
-
-      return this.childrenRect;
     },
 
     getScrollerRect() {
@@ -145,6 +123,18 @@ export default createComponent({
       }
 
       return scrollerRect;
+    },
+
+    getElementTop(ele, scrollerRect) {
+      const { scroller } = this;
+
+      if (scroller === window || scroller === document.body) {
+        return getElementTop(ele);
+      }
+
+      const eleRect = ele.getBoundingClientRect();
+
+      return eleRect.top - scrollerRect.top + getScrollTop(scroller);
     },
 
     getActiveAnchorIndex(scrollTop, rects) {
@@ -206,10 +196,6 @@ export default createComponent({
     onTouchEnd() {
       this.active = null;
     }
-  },
-
-  mounted() {
-    this.initChildrenRect();
   },
 
   render() {
