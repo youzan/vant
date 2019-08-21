@@ -107,6 +107,12 @@ Setting `type` to `flex` to enable flex layout
 | offset | number of spacing on the left side of the grid | `string | number` | - |
 | tag | Custom element tag | `string` | `div` |
 
+### Row Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when click row | event: Event |
+
 ### Col Events
 
 | Event | Description | Arguments |
