@@ -361,7 +361,7 @@
 
 ##### Waterfall
 
-- Remove Waterfall component，please use `List` instead，or use [@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)。
+- Remove Waterfall component，please use `List` instead，or use [@vant/waterfall](https://github.com/youzan/vant/tree/dev/packages/vant-waterfall)。
 
 ---
 
