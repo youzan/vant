@@ -1,10 +1,11 @@
+/* stylelint-disable selector-pseudo-element-colon-notation */
 @font-face {
-  font-style: normal;
   font-weight: normal;
   font-family: '<%= fontName %>';
+  font-style: normal;
   src: url('https://img.yzcdn.cn/vant/<%= cssClass %>.woff2') format('woff2'),
-       url('https://img.yzcdn.cn/vant/<%= cssClass %>.woff') format('woff'),
-       url('https://img.yzcdn.cn/vant/<%= cssClass %>.ttf') format('truetype');
+    url('https://img.yzcdn.cn/vant/<%= cssClass %>.woff') format('woff'),
+    url('https://img.yzcdn.cn/vant/<%= cssClass %>.ttf') format('truetype');
 }
 
 .van-icon {

@@ -4,9 +4,9 @@ const config = require('../src/config');
 
 function template(fontName, ttf) {
   return `@font-face {
-  font-style: normal;
   font-weight: normal;
   font-family: '${fontName}';
+  font-style: normal;
   src: url('${ttf}') format('truetype');
 }
 `;
