@@ -12,9 +12,9 @@
 
 Example：
 
-- [fix] Button: incorrect style
-- [feat] Button: add color prop
-- [dosc] Button: fix typo
+- fix(Button): incorrect style
+- feat(Button): incorrect style
+- docs(Button): fix typo
 
 Allowed Types:
 
