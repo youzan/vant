@@ -4,6 +4,18 @@
 
 export default {
   'zh-CN': {
+    vanSku: {
+      select: '选择',
+      selected: '已选',
+      selectSku: '请先选择商品规格',
+      soldout: '库存不足',
+      originPrice: '原价',
+      minusTip: '至少选择一件',
+      unavailable: '商品已经无法购买啦',
+      stock: (stock: number) => `剩余 ${stock}件`,
+      quotaLimit: (quota: number) => `每人限购${quota}件`,
+      quotaCount: (count: number) => `你已购买${count}件`
+    },
     vanSkuActions: {
       buy: '立即购买',
       addCart: '加入购物车'
