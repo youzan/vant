@@ -1,0 +1,23 @@
+{
+  "name": "@vant/touch-emulator",
+  "version": "1.1.0",
+  "description": "Vant touch emulator",
+  "main": "index.js",
+  "scripts": {
+    "release": "npm publish --access publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-touch-emulator"
+  },
+  "keywords": [
+    "vant"
+  ],
+  "author": "neverland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/youzan/vant/issues"
+  },
+  "homepage": "https://github.com/youzan/vant/packages/vant-touch-emulator#readme"
+}
