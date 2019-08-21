@@ -1,5 +1,31 @@
 # Changelog
 
+### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
+`2019-08-21`
+
+**Improvements**
+
+- Col: add click event [\#4169](https://github.com/youzan/vant/pull/4169)
+- Row: add click event [\#4170](https://github.com/youzan/vant/pull/4170)
+- Area: add is-oversea-code prop [\#4163](https://github.com/youzan/vant/pull/4163)
+- Circle: support gradient color [\#4157](https://github.com/youzan/vant/pull/4157)
+- Circle: support number type of size prop [\#4160](https://github.com/youzan/vant/pull/4160)
+- Tabbar: support match route by to.name [\#4148](https://github.com/youzan/vant/pull/4148)
+- Sku: should close image preview when popstate [\#4152](https://github.com/youzan/vant/pull/4152)
+- Uploader: should close image preview when popstate [\#4151](https://github.com/youzan/vant/pull/4151)
+- Uploader: support more image types [\#4140](https://github.com/youzan/vant/pull/4140)
+- TreeSelect: support multiple select [\#4130](https://github.com/youzan/vant/pull/4130)
+- TreeSelect: active-id support sync modifier [\#4133](https://github.com/youzan/vant/pull/4133)
+- TreeSelect: main-active-index support sync modifier [\#4132](https://github.com/youzan/vant/pull/4132)
+
+**Bug Fixes**
+
+- fix Sku unextracted i18n message [\#4172](https://github.com/youzan/vant/pull/4172)
+- fix Tabbar avoid navigation duplicated [\#4147](https://github.com/youzan/vant/pull/4147)
+- fix Field button width shrinked in firefox [\#4144](https://github.com/youzan/vant/pull/4144)
+- fix Picker prevent style be override by base.css [\#4136](https://github.com/youzan/vant/pull/4136)
+
+
 ### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
 `2019-08-15`
 
