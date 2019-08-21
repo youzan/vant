@@ -1,0 +1,6 @@
+
+plugins:
+  - removeAttrs:
+      attrs:
+        - 'fill'
+        - 'stroke'
