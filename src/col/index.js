@@ -23,10 +23,20 @@ export default createComponent({
     }
   },
 
+  methods: {
+    onClick(event) {
+      this.$emit('click', event);
+    }
+  },
+
   render() {
     const { span, offset } = this;
     return (
-      <this.tag class={bem({ [span]: span, [`offset-${offset}`]: offset })} style={this.style}>
+      <this.tag
+        style={this.style}
+        class={bem({ [span]: span, [`offset-${offset}`]: offset })}
+        onClick={this.onClick}
+      >
         {this.slots()}
       </this.tag>
     );
