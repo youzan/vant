@@ -3,19 +3,11 @@
   "version": "1.2.4",
   "description": "eslint config of vant.",
   "main": "index.js",
-  "scripts": {
-    "release": "npm publish --access public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/youzan/vant.git",
-    "directory": "packages/vant-eslint-config"
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/youzan/vant/issues"
-  },
-  "homepage": "https://github.com/youzan/vant/packages/vant-eslint-config#readme",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
   "peerDependencies": {
     "eslint": "^6.0.0"
   },
