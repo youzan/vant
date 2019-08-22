@@ -121,6 +121,7 @@ toast2.clear();
 | iconPrefix | Icon className prefix | `string` | `van-icon` |
 | mask | Whether to show mask | `boolean` | `false` |
 | forbidClick | Whether to forbid click background | `boolean` | `false` |
+| closeOnClick | Whether to close after clicked | `boolean` | `false` |
 | loadingType | Loading icon type, can be set to `spinner` | `string` | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | `number` | `3000` |
 | className | Custom className | `any` | - |

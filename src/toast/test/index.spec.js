@@ -140,8 +140,23 @@ test('onClose callback', () => {
   });
 
   toast.clear();
-  Toast.allowMultiple(false);
   expect(onClose).toHaveBeenCalledTimes(1);
+  Toast.allowMultiple(false);
+});
+
+test('closeOnClick option', async () => {
+  Toast.allowMultiple();
+  const toast = Toast({
+    message: 'toast',
+    closeOnClick: true
+  });
+
+  await later();
+  toast.$el.click();
+
+  await later();
+  expect(toast.value).toBeFalsy();
+  Toast.allowMultiple(false);
 });
 
 test('register component', () => {
