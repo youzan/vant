@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vant cli tools",
   "main": "./src/index.js",
   "bin": {
@@ -13,6 +13,7 @@
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-cli",
   "dependencies": {
     "commander": "^2.17.1",
+    "husky": "^3.0.4",
     "shelljs": "^0.8.2"
   }
 }
