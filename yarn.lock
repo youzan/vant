@@ -1202,6 +1202,14 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
+"@vant/cli@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-0.1.1.tgz#d3513aa74b66bb3654d461198fd2b897ff155530"
+  integrity sha512-C7i4cVM5dCjcV6IgHhqwpdB/igGHL4/Dpxl50uyGk5Ac34E51iIUwgMXrA6xSjrtuwXW4yfwww9oNp92Vq/WqA==
+  dependencies:
+    commander "^2.17.1"
+    shelljs "^0.8.2"
+
 "@vant/doc@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.4.0.tgz#d0d2d03e7ed831795ebdf9d840208614d4051057"
