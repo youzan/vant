@@ -110,6 +110,7 @@ export default createComponent({
       }
 
       code = code.slice(0, compareNum);
+
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
           return i;
@@ -138,7 +139,7 @@ export default createComponent({
       picker.setColumnValues(0, province);
       picker.setColumnValues(1, city);
 
-      if (city.length && code.slice(2, 4) === '00') {
+      if (city.length && code.slice(2, 4) === '00' && !this.isOverseaCode(code)) {
         [{ code }] = city;
       }
 
