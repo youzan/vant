@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig",
+  "include": ["src/*"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "lib",
+    "noEmit": false
+  }
+}
