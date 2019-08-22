@@ -44,6 +44,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    imageFit: {
+      type: String,
+      default: 'cover'
+    },
     resultType: {
       type: String,
       default: 'dataUrl'
@@ -190,7 +194,7 @@ export default createComponent({
         <div class={bem('preview')}>
           {isImageFile(item) ? (
             <Image
-              fit="cover"
+              fit={this.imageFit}
               src={item.content || item.url}
               class={bem('preview-image')}
               width={this.previewSize}

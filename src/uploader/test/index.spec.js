@@ -185,6 +185,19 @@ it('render preview image', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('image-fit prop', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      imageFit: 'contain',
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' }
+      ]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('disable preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
