@@ -13,6 +13,7 @@ export type ToastOptions = {
   onClose?(): void;
   onOpened?(): void;
   forbidClick?: boolean;
+  closeOnClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
   getContainer?: string | (() => HTMLElement);

@@ -14,6 +14,7 @@ export default createComponent({
     iconPrefix: String,
     loadingType: String,
     forbidClick: Boolean,
+    closeOnClick: Boolean,
     message: [Number, String],
     type: {
       type: String,
@@ -49,8 +50,15 @@ export default createComponent({
   },
 
   methods: {
+    onClick() {
+      if (this.closeOnClick) {
+        this.close();
+      }
+    },
+
     toggleClickable() {
       const clickable = this.value && this.forbidClick;
+
       if (this.clickable !== clickable) {
         this.clickable = clickable;
         const action = clickable ? 'add' : 'remove';
@@ -111,6 +119,7 @@ export default createComponent({
             bem([this.position, { text: !hasIcon && type !== 'loading' }]),
             this.className
           ]}
+          onClick={this.onClick}
         >
           {ToastIcon()}
           {Message()}
