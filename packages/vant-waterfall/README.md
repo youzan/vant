@@ -1,9 +1,17 @@
 # Waterfall 瀑布流
 
-### 安装
+### Install
 
-```bash
+#### NPM
+
+```shell
 npm i @vant/waterfall -S
+```
+
+#### YARN
+
+```shell
+yarn add @vant/waterfall
 ```
 
 ### 使用指南
