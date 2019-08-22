@@ -125,6 +125,7 @@ export default {
 | max-count | Max count of image | `number` | - |
 | result-type | Type of file read result, can be set to `dataUrl` `text` | `string` | `dataUrl` |
 | upload-text | Upload text | `string` | - |
+| image-fit | Preview image fit mode | `string` | `cover` | 2.1.5 |
 
 ### Events
 

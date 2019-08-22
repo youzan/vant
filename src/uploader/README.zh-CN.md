@@ -129,8 +129,8 @@ export default {
 |------|------|------|------|------|
 | name | 标识符，可以在回调函数的第二项参数中获取 | `string | number` | - | 2.0.3 |
 | accept | 接受的文件类型 | `string` | `image/*` | - |
-| preview-image | 是否在上传完成后展示预览图 | `boolean` | `true` | 2.0.0 |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | `string | number` | `80px` | 2.0.0 |
+| preview-image | 是否在上传完成后展示预览图 | `boolean` | `true` | 2.0.0 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用文件上传 | `boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `string` | - | 2.0.0 |
@@ -141,6 +141,7 @@ export default {
 | max-count | 文件上传数量限制 | `number` | - | 2.0.0 |
 | result-type | 文件读取结果类型，可选值为`text` | `string` | `dataUrl` | - |
 | upload-text | 上传区域文字提示 | `string` | - | 2.0.0 |
+| image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | `string` | `cover` | 2.1.5 |
 
 ### Events
 
