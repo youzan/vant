@@ -53,6 +53,7 @@ export default {
 @import '../../../src/style/var';
 
 body {
+  min-width: 100vw;
   color: @text-color;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
