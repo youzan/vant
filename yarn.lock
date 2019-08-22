@@ -1205,10 +1205,10 @@
     fs-extra "^4.0.2"
     shelljs "^0.8.2"
 
-"@vant/eslint-config@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.2.4.tgz#a599f56df987b937b2ed96fceddbc63355ab66e2"
-  integrity sha512-8TTkxz18xFAXRxC41pgVfIPuP5GmgURAw7A9dPZxZkXSPuK6uAzWN2Mgjvp002UNZySSiMvUM1L9d+6FMuwRmA==
+"@vant/eslint-config@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.2.5.tgz#5451705a89c51270306977a2149f4fb7932f7c97"
+  integrity sha512-qF6ol7klHOXgs60wWmXvWPuzhJTTU5d5TmI4cAOl6O634RxRDJ9srkJlJFpoJB2pCD8NzTsuUzgRg4M56e6xEw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"

@@ -58,6 +58,7 @@ module.exports = {
     'vue/require-v-for-key': 0,
     'vue/require-default-prop': 0,
     'vue/no-unused-components': 0,
+    'vue/max-attributes-per-line': 0,
     'vue/singleline-html-element-content-newline': 0,
     'vue/name-property-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
