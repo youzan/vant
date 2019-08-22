@@ -21,3 +21,13 @@ yarn add @vant/cli --dev
 ```shell
 vant changelog ./name.md
 ```
+
+#### Commit Lint
+
+```json
+"husky": {
+  "hooks": {
+    "commit-msg": "vant commit-lint"
+  }
+}
+```
