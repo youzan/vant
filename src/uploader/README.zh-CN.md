@@ -131,6 +131,7 @@ export default {
 | accept | 接受的文件类型 | `string` | `image/*` | - |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | `string | number` | `80px` | 2.0.0 |
 | preview-image | 是否在上传完成后展示预览图 | `boolean` | `true` | 2.0.0 |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览 | `boolean` | `true` | 2.1.5 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用文件上传 | `boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `string` | - | 2.0.0 |

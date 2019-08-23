@@ -1,7 +1,7 @@
 import Uploader from '..';
 import { mount, later } from '../../../test/utils';
 
-window.File = function () {
+window.File = function() {
   this.size = 10000;
 };
 
@@ -12,8 +12,8 @@ const multiFile = { target: { files: [mockFile, mockFile] } };
 const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
-window.FileReader = function () {
-  this.readAsText = function () {
+window.FileReader = function() {
+  this.readAsText = function() {
     this.onload &&
       this.onload({
         target: {
@@ -101,9 +101,10 @@ it('before read return promise and resolve', async () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
     propsData: {
-      beforeRead: () => new Promise(resolve => {
-        resolve();
-      }),
+      beforeRead: () =>
+        new Promise(resolve => {
+          resolve();
+        }),
       afterRead
     }
   });
@@ -118,9 +119,10 @@ it('before read return promise and reject', async () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
     propsData: {
-      beforeRead: () => new Promise((resolve, reject) => {
-        reject();
-      }),
+      beforeRead: () =>
+        new Promise((resolve, reject) => {
+          reject();
+        }),
       afterRead
     }
   });
@@ -189,9 +191,7 @@ it('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       imageFit: 'contain',
-      fileList: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' }
-      ]
+      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }]
     }
   });
 
@@ -325,28 +325,21 @@ it('before-delete prop rejected', async () => {
   expect(wrapper.emitted('delete')).toBeFalsy();
 });
 
-it('click to preview image', async () => {
+it('click to preview image', () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: [
-        { url: IMAGE },
-        { url: PDF }
-      ],
-      previewSize: 30
-    },
-    listeners: {
-      input(fileList) {
-        wrapper.setProps({ fileList });
-      }
+      previewFullImage: false,
+      fileList: [{ url: IMAGE }, { url: PDF }]
     }
   });
 
-  wrapper.vm.onChange(file);
-  await later();
+  wrapper.find('.van-image').trigger('click');
+  const imagePreviewNode = document.querySelector('.van-image-preview');
+  expect(imagePreviewNode).toBeFalsy();
 
+  wrapper.setProps({ previewFullImage: true });
   wrapper.find('.van-image').trigger('click');
 
-  const imagePreviewNode = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode).toMatchSnapshot();
-  imagePreviewNode.remove();
+  const imagePreviewNode2 = document.querySelector('.van-image-preview');
+  expect(imagePreviewNode2).toMatchSnapshot();
 });
