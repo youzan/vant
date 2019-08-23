@@ -133,6 +133,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | oversize | Triggered when file size over limit | Same as after-read |
+| click-preview | Triggered when click preview image | Same as after-read |
 | delete | Triggered when delete preview file | file |
 
 ### Slots
@@ -141,7 +142,7 @@ export default {
 |------|------|
 | default | Custom icon |
 
-### Parematers of before-read、after-read
+### Parematers of before-read、after-read、before-delete
 
 | Attribute | Description | Type |
 |------|------|------|
