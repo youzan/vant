@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { BLUE, BORDER_TOP_BOTTOM } from '../utils/constant';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
@@ -15,6 +15,7 @@ export default createComponent({
   ],
 
   props: {
+    activeColor: String,
     overlay: {
       type: Boolean,
       default: true
@@ -30,10 +31,6 @@ export default createComponent({
     direction: {
       type: String,
       default: 'down'
-    },
-    activeColor: {
-      type: String,
-      default: BLUE
     },
     closeOnClickOverlay: {
       type: Boolean,
@@ -91,6 +88,7 @@ export default createComponent({
         <span
           class={[
             bem('title', {
+              active: item.showPopup,
               down: item.showPopup === (this.direction === 'down')
             }),
             item.titleClass

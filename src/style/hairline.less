@@ -1,14 +1,22 @@
 @import './mixins/hairline';
 
 [class*='van-hairline'] {
-  position: relative;
-
   &::after {
     .hairline();
   }
 }
 
 .van-hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
   &--top::after {
     border-top-width: 1px;
   }
@@ -25,8 +33,11 @@
     border-bottom-width: 1px;
   }
 
-  &--top-bottom::after {
-    border-width: 1px 0;
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: 1px 0;
+    }
   }
 
   &--surround::after {

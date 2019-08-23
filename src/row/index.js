@@ -17,6 +17,12 @@ export default createComponent({
     }
   },
 
+  methods: {
+    onClick(event) {
+      this.$emit('click', event);
+    }
+  },
+
   render() {
     const { align, justify } = this;
     const flex = this.type === 'flex';
@@ -31,6 +37,7 @@ export default createComponent({
           [`align-${align}`]: flex && align,
           [`justify-${justify}`]: flex && justify
         })}
+        onClick={this.onClick}
       >
         {this.slots()}
       </this.tag>

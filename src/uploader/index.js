@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, noop } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 import Icon from '../icon';
 import Image from '../image';
@@ -18,6 +18,7 @@ export default createComponent({
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
+    beforeDelete: Function,
     previewSize: [Number, String],
     name: {
       type: [Number, String],
@@ -42,6 +43,14 @@ export default createComponent({
     previewImage: {
       type: Boolean,
       default: true
+    },
+    previewFullImage: {
+      type: Boolean,
+      default: true
+    },
+    imageFit: {
+      type: String,
+      default: 'cover'
     },
     resultType: {
       type: String,
@@ -133,6 +142,27 @@ export default createComponent({
     },
 
     onDelete(file, index) {
+      if (this.beforeDelete) {
+        const response = this.beforeDelete(file, this.detail);
+
+        if (!response) {
+          return;
+        }
+
+        if (response.then) {
+          response
+            .then(() => {
+              this.deleteFile(file, index);
+            })
+            .catch(noop);
+          return;
+        }
+      }
+
+      this.deleteFile(file, index);
+    },
+
+    deleteFile(file, index) {
       const fileList = this.fileList.slice(0);
       fileList.splice(index, 1);
 
@@ -148,14 +178,23 @@ export default createComponent({
     },
 
     onPreviewImage(item) {
+      if (!this.previewFullImage) {
+        return;
+      }
+
       const imageFiles = this.fileList
         .filter(item => isImageFile(item))
         .map(item => item.content || item.url);
 
       ImagePreview({
         images: imageFiles,
+        closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item.content || item.url)
       });
+    },
+
+    onClickPreview(file) {
+      this.$emit('click-preview', file, this.detail);
     },
 
     renderPreview() {
@@ -164,10 +203,15 @@ export default createComponent({
       }
 
       return this.fileList.map((item, index) => (
-        <div class={bem('preview')}>
+        <div
+          class={bem('preview')}
+          onClick={() => {
+            this.onClickPreview(item);
+          }}
+        >
           {isImageFile(item) ? (
             <Image
-              fit="cover"
+              fit={this.imageFit}
               src={item.content || item.url}
               class={bem('preview-image')}
               width={this.previewSize}

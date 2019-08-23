@@ -38,8 +38,14 @@ export default createComponent({
         return null;
       }
 
-      const { value } = this.parent;
-      return this.parent.accordion
+      const { value, accordion } = this.parent;
+
+      if (process.env.NODE_ENV !== 'production' && !accordion && !Array.isArray(value)) {
+        console.error('[Vant] Collapse: type of prop "value" should be Array');
+        return;
+      }
+
+      return accordion
         ? value === this.currentName
         : value.some(name => name === this.currentName);
     }

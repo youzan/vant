@@ -11,15 +11,13 @@ Vue.use(TreeSelect);
 
 ## Usage
 
-### Basic Usage
+### Radio Mode
 
 ```html
 <van-tree-select
   :items="items"
-  :main-active-index="mainActiveIndex"
-  :active-id="activeId"
-  @click-nav="onClickNav"
-  @click-item="onClickItem"
+  :active-id.sync="activeId"
+  :main-active-index.sync="mainActiveIndex"
 />
 ```
 
@@ -28,19 +26,31 @@ export default {
   data() {
     return {
       items,
-      // the index of parent item
-      mainActiveIndex: 0,
-      // the id of selected item
-      activeId: 1001
+      activeId: 1,
+      mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
-    onClickItem(data) {
-      this.activeId = data.id;
-    }
+  }
+}
+```
+
+### Multiple Mode
+
+```html
+<van-tree-select
+  :items="items"
+  :active-id.sync="activeIds"
+  :main-active-index.sync="mainActiveIndex"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      items,
+      activeIds: [1, 2],
+      mainActiveIndex: 0
+    };
   }
 }
 ```
@@ -52,16 +62,22 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | items | Required datasets for the component | `Item[]` | `[]` |
-| height | Height (px) | `number` | `300` |
+| height | Height | `string | number` | `300` |
 | main-Active-index | The index of selected parent node | `number` | `0` |
-| active-id | Id of selected item | `string | number` | `0` |
+| active-id | Id of selected item | `string | number | (string | number)[]` | `0` |
 
 ### Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| click-nav | triggered when parent node is selected |  index: index of selected parent |
+| click-nav | triggered when parent node is selected | index: index of selected parent |
 | click-item | triggered when item is selected | data: selected item |
+
+### Slots
+
+| Name | Description |
+|------|------|
+| content | Custom right content |
 
 ### Data Structure of Item
 

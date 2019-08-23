@@ -17,7 +17,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }
@@ -84,16 +84,11 @@ export default createComponent({
 
   methods: {
     onScroll() {
-      let scrollTop;
-      if (this.scroller === window || this.scroller === document.body) {
-        scrollTop = getScrollTop(this.scroller);
-      } else {
-        // see: https://github.com/youzan/vant/issues/3774
-        scrollTop = 0;
-      }
+      const scrollTop = getScrollTop(this.scroller);
+      const scrollerRect = this.getScrollerRect();
       const rects = this.children.map(item => ({
         height: item.height,
-        top: getElementTop(item.$el)
+        top: this.getElementTop(item.$el, scrollerRect)
       }));
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
@@ -104,16 +99,42 @@ export default createComponent({
         this.children.forEach((item, index) => {
           if (index === active) {
             item.active = true;
-            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop);
+            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop) + scrollerRect.top;
           } else if (index === active - 1) {
             const activeItemTop = rects[active].top - scrollTop;
             item.active = activeItemTop > 0;
-            item.top = activeItemTop - item.height;
+            item.top = activeItemTop + scrollerRect.top - item.height;
           } else {
             item.active = false;
           }
         });
       }
+    },
+
+    getScrollerRect() {
+      const { scroller } = this;
+      let scrollerRect = {
+        top: 0,
+        left: 0,
+      };
+
+      if (scroller.getBoundingClientRect) {
+        scrollerRect = scroller.getBoundingClientRect();
+      }
+
+      return scrollerRect;
+    },
+
+    getElementTop(ele, scrollerRect) {
+      const { scroller } = this;
+
+      if (scroller === window || scroller === document.body) {
+        return getElementTop(ele);
+      }
+
+      const eleRect = ele.getBoundingClientRect();
+
+      return eleRect.top - scrollerRect.top + getScrollTop(scroller);
     },
 
     getActiveAnchorIndex(scrollTop, rects) {
@@ -196,7 +217,7 @@ export default createComponent({
       <div class={bem()}>
         <div
           class={bem('sidebar')}
-          style={{ zIndex: this.zIndex }}
+          style={{ zIndex: this.zIndex + 1 }}
           onClick={this.onClick}
           onTouchstart={this.touchStart}
           onTouchmove={this.onTouchMove}

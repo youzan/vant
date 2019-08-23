@@ -1,5 +1,71 @@
 # 更新日志
 
+### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
+`2019-08-23`
+
+**Improvements**
+
+- Toast: 新增 closeOnClick 选项 [\#4192](https://github.com/youzan/vant/pull/4192)
+- Uploader: 新增 image-fit 属性 [\#4189](https://github.com/youzan/vant/pull/4189)
+- Uploader: 新增 click-preview 事件 [\#4206](https://github.com/youzan/vant/pull/4206)
+- Uploader: 新增 preview-full-image 属性 [\#4205](https://github.com/youzan/vant/pull/4205)
+- DropdownMenu: 新增 @dropdown-menu-title-active-text-color less 变量 [\#4208](https://github.com/youzan/vant/pull/4208)
+
+**Bug Fixes**
+
+- 修复 Area 无法选中部分海外地址的问题 [\#4195](https://github.com/youzan/vant/pull/4195)
+- 修复 IndexBar 在局部滚动容器内计算错误的问题 [\#4184](https://github.com/youzan/vant/pull/4184)
+- 修复 NumberKeyboard 按键边框颜色错误的问题 [\#4183](https://github.com/youzan/vant/pull/4183)
+
+
+### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
+`2019-08-21`
+
+**Improvements**
+
+- Col: 新增 click 事件 [\#4169](https://github.com/youzan/vant/pull/4169)
+- Row: 新增 click 事件 [\#4170](https://github.com/youzan/vant/pull/4170)
+- Area: 新增 is-oversea-code 属性 [\#4163](https://github.com/youzan/vant/pull/4163)
+- Circle: 支持渐变色 [\#4157](https://github.com/youzan/vant/pull/4157)
+- Circle: 支持传入 number 类型的 size 属性 [\#4160](https://github.com/youzan/vant/pull/4160)
+- Tabbar: 支持通过 to.name 匹配路由 [\#4148](https://github.com/youzan/vant/pull/4148)
+- Sku: 页面返回时自动关闭图片预览 [\#4152](https://github.com/youzan/vant/pull/4152)
+- Uploader: 页面返回时自动关闭图片预览 [\#4151](https://github.com/youzan/vant/pull/4151)
+- Uploader: 图片预览支持更多图片格式 [\#4140](https://github.com/youzan/vant/pull/4140)
+- TreeSelect: 支持多选 [\#4130](https://github.com/youzan/vant/pull/4130)
+- TreeSelect: 支持在 active-id 属性上使用 sync 修饰符 [\#4133](https://github.com/youzan/vant/pull/4133)
+- TreeSelect: 支持在 main-active-index 属性上使用 sync 修饰符 [\#4132](https://github.com/youzan/vant/pull/4132)
+
+**Bug Fixes**
+
+- 修复 Sku 部分文案不支持国际化修改的问题 [\#4172](https://github.com/youzan/vant/pull/4172)
+- 修复 Field 按钮在 Firefox 上宽度变小的问题 [\#4144](https://github.com/youzan/vant/pull/4144)
+- 修复 Tabbar 触发 vue-router 路由重复跳转提示的问题 [\#4147](https://github.com/youzan/vant/pull/4147)
+- 修复 Picker 样式可能被重复引入的 base 样式覆盖的问题 [\#4136](https://github.com/youzan/vant/pull/4136)
+
+
+### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
+`2019-08-15`
+
+**Improvements**
+
+- Sku: 支持国际化 [\#4123](https://github.com/youzan/vant/pull/4123)
+- Button: 新增 color 属性 [\#4124](https://github.com/youzan/vant/pull/4124)
+- Uploader: 新增 before-delete 属性 [\#4118](https://github.com/youzan/vant/pull/4118)
+- Collapse: 新增 value 属性类型错误时的提示 [\#4122](https://github.com/youzan/vant/pull/4122)
+- TreeSelect: 新增 content 插槽 [\#4105](https://github.com/youzan/vant/pull/4105)
+- TreeSelect: 支持 string 类型的 height 属性 [\#4107](https://github.com/youzan/vant/pull/4107)
+- NumberKeyboard: 优化点击体验 [\#4116](https://github.com/youzan/vant/pull/4116)
+
+**Bug Fixes**
+
+- 修复 DropdownMenu 嵌套在 NavBar 内时样式错误的问题 [\#4098](https://github.com/youzan/vant/pull/4098)
+- 修复 Tab 动态插入标签页时下划线位置未更新的问题 [\#4091](https://github.com/youzan/vant/pull/4091)
+- 修复 Icon service-o 图标不完整的问题 [\#4088](https://github.com/youzan/vant/pull/4088)
+- 修复 Icon gift-o、refund-o 图标不完整的问题 [\#4089](https://github.com/youzan/vant/pull/4089)
+- 修复 Slider 位置未改变时也会触发 change 事件的问题 [\#4087](https://github.com/youzan/vant/pull/4087)
+
+
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 
@@ -337,7 +403,7 @@
 
 ##### Waterfall
 
-- 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
+- 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/youzan/vant/tree/dev/packages/vant-waterfall)包。
 
 ---
 

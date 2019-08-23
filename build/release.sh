@@ -13,7 +13,7 @@ then
 
   # commit
   git tag v$VERSION
-  git commit -am "[release] $VERSION"
+  git commit -am "build: release $VERSION"
 
   # publish
   git push origin dev

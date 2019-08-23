@@ -1,0 +1,21 @@
+{
+  "name": "@vant/waterfall",
+  "version": "1.0.0",
+  "description": "vant waterfall component",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npx babel src --out-dir lib",
+    "release": "npm run build && npm publish"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-waterfall",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.4.4"
+  }
+}

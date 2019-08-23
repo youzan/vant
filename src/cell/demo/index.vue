@@ -62,7 +62,7 @@
       <van-cell
         :title="$t('urlRoute')"
         is-link
-        url="//youzan.github.io/vant/mobile.html"
+        url="/vant/mobile.html"
       />
       <van-cell
         :title="$t('vueRoute')"

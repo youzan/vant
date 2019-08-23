@@ -11,15 +11,15 @@ Vue.use(TreeSelect);
 
 ## 代码演示
 
-### 基础用法
+### 单选模式
+
+`item`为分类显示所需的数据，数据格式见下方示例。`main-active-index`表示左侧高亮选项的索引，`active-id`表示右侧高亮选项的 id
 
 ```html
 <van-tree-select
   :items="items"
-  :main-active-index="mainActiveIndex"
-  :active-id="activeId"
-  @click-nav="onClickNav"
-  @click-item="onClickItem"
+  :active-id.sync="activeId"
+  :main-active-index.sync="mainActiveIndex"
 />
 ```
 
@@ -28,19 +28,33 @@ export default {
   data() {
     return {
       items,
-      // 左侧高亮元素的index
-      mainActiveIndex: 0,
-      // 被选中元素的id
-      activeId: 1
+      activeId: 1,
+      mainActiveIndex: 0
     };
-  },
-  methods: {
-    onClickNav(index) {
-      this.mainActiveIndex = index;
-    },
-    onClickItem(data) {
-      this.activeId = data.id;
-    }
+  }
+}
+```
+
+### 多选模式
+
+`active-id`为数组格式时，可以选中多个右侧选项
+
+```html
+<van-tree-select
+  :items="items"
+  :active-id.sync="activeIds"
+  :main-active-index.sync="mainActiveIndex"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      items,
+      activeIds: [1, 2],
+      mainActiveIndex: 0
+    };
   }
 }
 ```
@@ -52,9 +66,9 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | items | 分类显示所需的数据 | `Item[]` | `[]` | - |
-| height | 高度，单位为 px | `number` | `300` | - |
-| main-active-index | 左侧导航高亮的索引 | `number` | `0` | - |
-| active-id | 右侧选择项，高亮的数据id | `string | number` | `0` | - |
+| height | 高度，默认单位为 px | `string | number` | `300` | - |
+| main-active-index | 左侧高亮选项的索引 | `number` | `0` | - |
+| active-id | 右侧高亮选项的 id，支持传入数组 | `string | number | (string | number)[]` | `0` | - |
 
 ### Events
 
@@ -62,6 +76,12 @@ export default {
 |------|------|------|
 | click-nav | 点击左侧导航时触发 | index：被点击的导航的索引 |
 | click-item | 点击右侧选择项时触发 | data: 该点击项的数据 |
+
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| content | 自定义右侧区域内容 |
 
 ### Item 数据结构
 

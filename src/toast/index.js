@@ -17,7 +17,8 @@ const defaultOptions = {
   forbidClick: false,
   loadingType: undefined,
   getContainer: 'body',
-  overlayStyle: null
+  overlayStyle: null,
+  closeOnClick: false
 };
 
 let queue = [];
@@ -44,6 +45,11 @@ function createInstance() {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
+
+    toast.$on('input', value => {
+      toast.value = value;
+    });
+
     queue.push(toast);
   }
 

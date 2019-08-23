@@ -1,5 +1,72 @@
 # Changelog
 
+### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
+`2019-08-23`
+
+**Improvements**
+
+- Toast: add closeOnClick option [\#4192](https://github.com/youzan/vant/pull/4192)
+- Uploader: add image-fit prop [\#4189](https://github.com/youzan/vant/pull/4189)
+- Uploader: add click-preview event [\#4206](https://github.com/youzan/vant/pull/4206)
+- Uploader: add preview-full-image prop [\#4205](https://github.com/youzan/vant/pull/4205)
+- DropdownMenu: add @dropdown-menu-title-active-text-color less var [\#4208](https://github.com/youzan/vant/pull/4208)
+
+**Bug Fixes**
+
+- fix IndexBar sticky bug [\#4184](https://github.com/youzan/vant/pull/4184)
+- fix NumberKeyboard border color [\#4183](https://github.com/youzan/vant/pull/4183)
+- fix Area can't select some oversea countries [\#4195](https://github.com/youzan/vant/pull/4195)
+
+
+
+### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
+`2019-08-21`
+
+**Improvements**
+
+- Col: add click event [\#4169](https://github.com/youzan/vant/pull/4169)
+- Row: add click event [\#4170](https://github.com/youzan/vant/pull/4170)
+- Area: add is-oversea-code prop [\#4163](https://github.com/youzan/vant/pull/4163)
+- Circle: support gradient color [\#4157](https://github.com/youzan/vant/pull/4157)
+- Circle: support number type of size prop [\#4160](https://github.com/youzan/vant/pull/4160)
+- Tabbar: support match route by to.name [\#4148](https://github.com/youzan/vant/pull/4148)
+- Sku: should close image preview when popstate [\#4152](https://github.com/youzan/vant/pull/4152)
+- Uploader: should close image preview when popstate [\#4151](https://github.com/youzan/vant/pull/4151)
+- Uploader: support more image types [\#4140](https://github.com/youzan/vant/pull/4140)
+- TreeSelect: support multiple select [\#4130](https://github.com/youzan/vant/pull/4130)
+- TreeSelect: active-id support sync modifier [\#4133](https://github.com/youzan/vant/pull/4133)
+- TreeSelect: main-active-index support sync modifier [\#4132](https://github.com/youzan/vant/pull/4132)
+
+**Bug Fixes**
+
+- fix Sku unextracted i18n message [\#4172](https://github.com/youzan/vant/pull/4172)
+- fix Tabbar avoid navigation duplicated [\#4147](https://github.com/youzan/vant/pull/4147)
+- fix Field button width shrinked in firefox [\#4144](https://github.com/youzan/vant/pull/4144)
+- fix Picker prevent style be override by base.css [\#4136](https://github.com/youzan/vant/pull/4136)
+
+
+### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
+`2019-08-15`
+
+**Improvements**
+
+- Sku: support i18n [\#4123](https://github.com/youzan/vant/pull/4123)
+- Button: add color prop [\#4124](https://github.com/youzan/vant/pull/4124)
+- Collapse: log tips for incorrect value [\#4122](https://github.com/youzan/vant/pull/4122)
+- Uploader: add before-delete prop [\#4118](https://github.com/youzan/vant/pull/4118)
+- TreeSelect: add content slot [\#4105](https://github.com/youzan/vant/pull/4105)
+- TreeSelect: support string type of height prop [\#4107](https://github.com/youzan/vant/pull/4107)
+- NumberKeyboard: improve click experience [\#4116](https://github.com/youzan/vant/pull/4116)
+
+**Bug Fixes**
+
+- fix DropdownMenu incorrect style when inside NavBar [\#4098](https://github.com/youzan/vant/pull/4098)
+- fix Tab incorrect title position when insert tab pane [\#4091](https://github.com/youzan/vant/pull/4091)
+- fix Icon service-o icon incomplete [\#4088](https://github.com/youzan/vant/pull/4088)
+- fix Icon gift-o、refund-o icon incomplete [\#4089](https://github.com/youzan/vant/pull/4089)
+- fix Slider should not emit change event when value not changed [\#4087](https://github.com/youzan/vant/pull/4087)
+
+
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 
@@ -313,7 +380,7 @@
 
 ##### Waterfall
 
-- Remove Waterfall component，please use `List` instead，or use [@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)。
+- Remove Waterfall component，please use `List` instead，or use [@vant/waterfall](https://github.com/youzan/vant/tree/dev/packages/vant-waterfall)。
 
 ---
 

@@ -1,13 +1,20 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isObj, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
+
 const PERIMETER = 3140;
-const PATH = 'M 530 530 m -500, 0 a 500, 500 0 1, 1 1000, 0 a 500, 500 0 1, 1 -1000, 0';
+
+let uid = 0;
 
 function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
+}
+
+function getPath(clockwise) {
+  const sweepFlag = clockwise ? 1 : 0;
+  return `M 530 530 m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
 export default createComponent({
@@ -22,8 +29,8 @@ export default createComponent({
       default: 0
     },
     size: {
-      type: String,
-      default: '100px'
+      type: [String, Number],
+      default: 100
     },
     fill: {
       type: String,
@@ -38,7 +45,7 @@ export default createComponent({
       default: WHITE
     },
     color: {
-      type: String,
+      type: [String, Object],
       default: BLUE
     },
     strokeWidth: {
@@ -51,22 +58,30 @@ export default createComponent({
     }
   },
 
+  beforeCreate() {
+    this.uid = `van-circle-gradient-${uid++}`;
+  },
+
   computed: {
     style() {
+      const size = addUnit(this.size);
       return {
-        width: this.size,
-        height: this.size
+        width: size,
+        height: size
       };
     },
 
+    path() {
+      return getPath(this.clockwise);
+    },
+
     layerStyle() {
-      let offset = (PERIMETER * (100 - this.value)) / 100;
-      offset = this.clockwise ? offset : PERIMETER * 2 - offset;
+      const offset = (PERIMETER * this.value) / 100;
 
       return {
         stroke: `${this.color}`,
-        strokeDashoffset: `${offset}px`,
-        strokeWidth: `${this.strokeWidth + 1}px`
+        strokeWidth: `${this.strokeWidth + 1}px`,
+        strokeDasharray: `${offset}px ${PERIMETER}px`
       };
     },
 
@@ -76,6 +91,30 @@ export default createComponent({
         stroke: `${this.layerColor}`,
         strokeWidth: `${this.strokeWidth}px`
       };
+    },
+
+    gradient() {
+      return isObj(this.color);
+    },
+
+    LinearGradient() {
+      if (!this.gradient) {
+        return;
+      }
+
+      const Stops = Object.keys(this.color)
+        .sort((a, b) => parseFloat(a) - parseFloat(b))
+        .map((key, index) => (
+          <stop key={index} offset={key} stop-color={this.color[key]} />
+        ));
+
+      return (
+        <defs>
+          <linearGradient id={this.uid} x1="100%" y1="0%" x2="0%" y2="0%">
+            {Stops}
+          </linearGradient>
+        </defs>
+      );
     }
   },
 
@@ -116,8 +155,14 @@ export default createComponent({
     return (
       <div class={bem()} style={this.style}>
         <svg viewBox="0 0 1060 1060">
-          <path class={bem('hover')} style={this.hoverStyle} d={PATH} />
-          <path class={bem('layer')} style={this.layerStyle} d={PATH} />
+          {this.LinearGradient}
+          <path class={bem('hover')} style={this.hoverStyle} d={this.path} />
+          <path
+            d={this.path}
+            class={bem('layer')}
+            style={this.layerStyle}
+            stroke={this.gradient ? `url(#${this.uid})` : this.color}
+          />
         </svg>
         {this.slots() || (this.text && <div class={bem('text')}>{this.text}</div>)}
       </div>

@@ -104,17 +104,17 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 
-> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+> 注意：配置 babel-plugin-import 插件后，将不允许以这种方式导入组件
 
 ### 方式四. 通过 CDN 引入
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.0/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.0/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
 
 <script>
 var Vue = window.Vue;
@@ -153,11 +153,11 @@ module.exports = {
 }
 ```
 
-> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
 
 ### 在桌面端使用
 
-Vant 组件默认只适配了移动端设备，如果你需要在桌面端使用 vant，可以引入我们提供的 [@vant/touch-emulator](https://github.com/chenjiahan/vant-touch-emulator).
+Vant 组件默认只适配了移动端设备，如果你需要在桌面端使用 vant，可以引入我们提供的 [@vant/touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator).
 
 ```bash
 # 安装模块

@@ -67,13 +67,13 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['vant-docs'],
-      template: 'docs/site/desktop/index.html',
+      template: path.join(__dirname, '../docs/site/desktop/index.html'),
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
       chunks: ['vant-mobile'],
-      template: 'docs/site/mobile/index.html',
+      template: path.join(__dirname, '../docs/site/mobile/index.html'),
       filename: 'mobile.html',
       inject: true
     })

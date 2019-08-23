@@ -4,6 +4,10 @@ import { pickerProps } from '../picker/shared';
 
 const [createComponent, bem] = createNamespace('area');
 
+function isOverseaCode(code) {
+  return code[0] === '9';
+}
+
 export default createComponent({
   props: {
     ...pickerProps,
@@ -15,6 +19,10 @@ export default createComponent({
     columnsNum: {
       type: [Number, String],
       default: 3
+    },
+    isOverseaCode: {
+      type: Function,
+      default: isOverseaCode
     }
   },
 
@@ -81,7 +89,7 @@ export default createComponent({
 
       if (code) {
         // oversea code
-        if (code[0] === '9' && type === 'city') {
+        if (this.isOverseaCode(code) && type === 'city') {
           code = '9';
         }
 
@@ -97,11 +105,12 @@ export default createComponent({
       const list = this.getList(type, code.slice(0, compareNum - 2));
 
       // oversea code
-      if (code[0] === '9' && type === 'province') {
+      if (this.isOverseaCode(code) && type === 'province') {
         compareNum = 1;
       }
 
       code = code.slice(0, compareNum);
+
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
           return i;
@@ -130,7 +139,7 @@ export default createComponent({
       picker.setColumnValues(0, province);
       picker.setColumnValues(1, city);
 
-      if (city.length && code.slice(2, 4) === '00') {
+      if (city.length && code.slice(2, 4) === '00' && !this.isOverseaCode(code)) {
         [{ code }] = city;
       }
 
@@ -163,7 +172,7 @@ export default createComponent({
       const names = values.map(item => item.name);
 
       area.code = values[values.length - 1].code;
-      if (area.code[0] === '9') {
+      if (this.isOverseaCode(area.code)) {
         area.country = names[1] || '';
         area.province = names[2] || '';
       } else {

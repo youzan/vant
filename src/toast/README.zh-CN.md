@@ -121,6 +121,7 @@ toast2.clear();
 | iconPrefix | 图标类名前缀 | `string` | `van-icon` | 2.0.9 |
 | mask | 是否显示背景遮罩层 | `boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `boolean` | `false` | - |
+| closeOnClick | 是否在点击后关闭 | `boolean` | `false` | 2.1.5 |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `string` | `circular` | - |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `number` | `3000` | - |
 | className | 自定义类名 | `any` | - | 1.6.0 |

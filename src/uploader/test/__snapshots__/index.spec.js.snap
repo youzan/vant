@@ -22,21 +22,12 @@ exports[`click to preview image 1`] = `
           style="transition: .3s all;"
         />
       </div>
-      <div
-        class="van-swipe-item"
-        style="width: 0px; height: 100%; transform: translateX(0px);"
-      >
-        <img
-          class="van-image-preview__image"
-          src="data:image/test"
-        />
-      </div>
     </div>
   </div>
   <div
     class="van-image-preview__index"
   >
-    1/2
+    1/1
   </div>
 </div>
 `;
@@ -53,6 +44,22 @@ exports[`delete preview image 1`] = `
 exports[`disable preview image 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">
+    <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+        <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;
+
+exports[`image-fit prop 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__preview">
+      <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: contain;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+            <!----></i></div>
+      </div><i class="van-icon van-icon-delete van-uploader__preview-delete">
+        <!----></i>
+    </div>
     <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
         <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
   </div>

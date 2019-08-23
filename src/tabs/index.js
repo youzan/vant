@@ -110,8 +110,11 @@ export default createComponent({
 
     children() {
       this.setCurrentIndexByName(this.currentName || this.active);
-      this.scrollIntoView();
       this.setLine();
+
+      this.$nextTick(() => {
+        this.scrollIntoView(true);
+      });
     },
 
     currentIndex() {
