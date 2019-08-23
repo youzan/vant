@@ -193,13 +193,22 @@ export default createComponent({
       });
     },
 
+    onClickPreview(file) {
+      this.$emit('click-preview', file, this.detail);
+    },
+
     renderPreview() {
       if (!this.previewImage) {
         return;
       }
 
       return this.fileList.map((item, index) => (
-        <div class={bem('preview')}>
+        <div
+          class={bem('preview')}
+          onClick={() => {
+            this.onClickPreview(item);
+          }}
+        >
           {isImageFile(item) ? (
             <Image
               fit={this.imageFit}

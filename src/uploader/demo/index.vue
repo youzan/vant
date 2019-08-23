@@ -79,8 +79,8 @@ export default {
       return true;
     },
 
-    afterRead(file) {
-      console.log(file);
+    afterRead(file, detail) {
+      console.log(file, detail);
     }
   }
 };
