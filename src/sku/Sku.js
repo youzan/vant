@@ -105,7 +105,12 @@ export default createComponent({
       this.show = val;
     },
 
-    skuTree: 'resetSelectedSku'
+    skuTree: 'resetSelectedSku',
+
+    initialSku() {
+      this.resetStepper();
+      this.resetSelectedSku(this.skuTree);
+    },
   },
 
   computed: {
