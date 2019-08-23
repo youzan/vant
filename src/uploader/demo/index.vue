@@ -9,7 +9,6 @@
         v-model="fileList"
         multiple
         accept="*"
-        :preview-full-image="false"
       />
     </demo-block>
 
