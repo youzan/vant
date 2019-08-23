@@ -113,8 +113,9 @@ export default {
 |------|------|------|------|
 | name | Input name | `string | number` | - |
 | accept | Accepted file type | `string` | `image/*` |
-| preview-image | Whether to show image preview | `boolean` | `true` |
 | preview-size | Size of preview image | `string | number` | `80px` |
+| preview-image | Whether to show image preview | `boolean` | `true` |
+| preview-full-image | Whethe to show full screen image preview when click image | `boolean` | `true` |
 | multiple | Whether to enable multiple selection pictures | `boolean` | `false` |
 | disabled | Whether to disabled the upload | `boolean` | `false` |
 | capture | Capture，can be set to `camera` | `string` | - |

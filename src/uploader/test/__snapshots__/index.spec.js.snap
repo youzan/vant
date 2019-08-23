@@ -22,21 +22,12 @@ exports[`click to preview image 1`] = `
           style="transition: .3s all;"
         />
       </div>
-      <div
-        class="van-swipe-item"
-        style="width: 0px; height: 100%; transform: translateX(0px);"
-      >
-        <img
-          class="van-image-preview__image"
-          src="data:image/test"
-        />
-      </div>
     </div>
   </div>
   <div
     class="van-image-preview__index"
   >
-    1/2
+    1/1
   </div>
 </div>
 `;

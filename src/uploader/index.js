@@ -44,6 +44,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    previewFullImage: {
+      type: Boolean,
+      default: true
+    },
     imageFit: {
       type: String,
       default: 'cover'
@@ -174,6 +178,10 @@ export default createComponent({
     },
 
     onPreviewImage(item) {
+      if (!this.previewFullImage) {
+        return;
+      }
+
       const imageFiles = this.fileList
         .filter(item => isImageFile(item))
         .map(item => item.content || item.url);
