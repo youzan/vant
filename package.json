@@ -17,7 +17,7 @@
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
     "lint": "eslint ./src --ext .js,.vue,.ts,.tsx && stylelint \"src/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
-    "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag 2.0.0",
+    "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag v2.1.0",
     "build:lib": "node build/build-lib.js",
     "test": "jest",
     "test:watch": "jest --watch",
