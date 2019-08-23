@@ -9,7 +9,7 @@ test('macro task finish event', async () => {
   });
 
   expect(wrapper.emitted('finish')).toBeFalsy();
-  await later(20);
+  await later(50);
   expect(wrapper.emitted('finish')).toBeTruthy();
 });
 
@@ -22,7 +22,7 @@ test('micro task finish event', async () => {
   });
 
   expect(wrapper.emitted('finish')).toBeFalsy();
-  await later(20);
+  await later(50);
   expect(wrapper.emitted('finish')).toBeTruthy();
 });
 
@@ -35,7 +35,7 @@ test('macro task re-render', async () => {
   });
 
   const prevSnapShot = wrapper.html();
-  await later(20);
+  await later(50);
   const laterSnapShot = wrapper.html();
 
   expect(prevSnapShot !== laterSnapShot).toBeTruthy();
@@ -51,7 +51,7 @@ test('micro task re-render', async () => {
   });
 
   const prevSnapShot = wrapper.html();
-  await later(20);
+  await later(50);
   const laterSnapShot = wrapper.html();
 
   expect(prevSnapShot !== laterSnapShot).toBeTruthy();
@@ -66,7 +66,7 @@ test('disable auto-start prop', async () => {
     }
   });
 
-  await later(20);
+  await later(50);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -103,7 +103,7 @@ test('pause method', async () => {
 
   const prevSnapShot = wrapper.html();
   wrapper.vm.pause();
-  await later(20);
+  await later(50);
   const laterShapShot = wrapper.html();
 
   expect(prevSnapShot === laterShapShot).toBeTruthy();
@@ -119,7 +119,7 @@ test('reset method', async () => {
   });
 
   const prevSnapShot = wrapper.html();
-  await later(20);
+  await later(50);
   wrapper.vm.reset();
   const laterShapShot = wrapper.html();
 
