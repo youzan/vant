@@ -1184,10 +1184,10 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@vant/cli@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-1.0.3.tgz#4df8e2263fb453929ee9f1cb2f2c00e163c67131"
-  integrity sha512-aVAqtlQ1Nnnm54DjVdf9lEhFyxfyDSS346xx10dfgvR+XZMNNq/GBkQKCPNCtBJd+89z2O8Z+3u/yr2kfjwQxw==
+"@vant/cli@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-1.0.4.tgz#3f06f667e8d742dd28f6c501150c8437d7ced227"
+  integrity sha512-mFsYro5qi3c2kU3ld1kcE1mgZkEejsVfD+p9qKasL7Wl2fWcOV7S2+TIv2Ilje+T/LeJI63YANIY62eN/wAeYg==
   dependencies:
     commander "^2.17.1"
     husky "^3.0.4"

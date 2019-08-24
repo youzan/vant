@@ -15,7 +15,7 @@ function changelog(dist, cmd) {
       --issues-label "**Issue**" \
       --pr-label "**Improvements**" \
       --max-issues 0 \
-      --no-author
+      --no-author \
       --no-unreleased \
       --since-tag ${tag} \
       -o ${path.join(basepath, dist)}
