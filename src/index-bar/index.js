@@ -96,16 +96,28 @@ export default createComponent({
       this.activeAnchorIndex = this.indexList[active];
 
       if (this.sticky) {
+        let activeItemTop = 0;
+        let isReachEdge = false;
+
+        if (active !== -1) {
+          activeItemTop = rects[active].top - scrollTop;
+          isReachEdge = activeItemTop <= 0;
+        }
+
         this.children.forEach((item, index) => {
           if (index === active) {
             item.active = true;
-            item.top = Math.max(this.stickyOffsetTop, rects[index].top - scrollTop) + scrollerRect.top;
+            item.position = isReachEdge ? 'fixed' : 'relative';
+            item.top = isReachEdge
+              ? this.stickyOffsetTop + scrollerRect.top
+              : 0;
           } else if (index === active - 1) {
-            const activeItemTop = rects[active].top - scrollTop;
-            item.active = activeItemTop > 0;
-            item.top = activeItemTop + scrollerRect.top - item.height;
+            item.active = !isReachEdge;
+            item.position = 'relative';
+            item.top = item.$el.parentElement.offsetHeight - item.height;
           } else {
             item.active = false;
+            item.position = 'static';
           }
         });
       }
