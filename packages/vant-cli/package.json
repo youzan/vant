@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "vant cli tools",
   "main": "./src/index.js",
   "bin": {

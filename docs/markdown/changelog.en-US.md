@@ -1,5 +1,24 @@
 # Changelog
 
+### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
+`2019-08-23`
+
+**Improvements**
+
+- Toast: add closeOnClick option [\#4192](https://github.com/youzan/vant/pull/4192)
+- Uploader: add image-fit prop [\#4189](https://github.com/youzan/vant/pull/4189)
+- Uploader: add click-preview event [\#4206](https://github.com/youzan/vant/pull/4206)
+- Uploader: add preview-full-image prop [\#4205](https://github.com/youzan/vant/pull/4205)
+- DropdownMenu: add @dropdown-menu-title-active-text-color less var [\#4208](https://github.com/youzan/vant/pull/4208)
+
+**Bug Fixes**
+
+- fix IndexBar sticky bug [\#4184](https://github.com/youzan/vant/pull/4184)
+- fix NumberKeyboard border color [\#4183](https://github.com/youzan/vant/pull/4183)
+- fix Area can't select some oversea countries [\#4195](https://github.com/youzan/vant/pull/4195)
+
+
+
 ### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
 `2019-08-21`
 

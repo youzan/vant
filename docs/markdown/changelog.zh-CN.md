@@ -1,5 +1,23 @@
 # 更新日志
 
+### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
+`2019-08-23`
+
+**Improvements**
+
+- Toast: 新增 closeOnClick 选项 [\#4192](https://github.com/youzan/vant/pull/4192)
+- Uploader: 新增 image-fit 属性 [\#4189](https://github.com/youzan/vant/pull/4189)
+- Uploader: 新增 click-preview 事件 [\#4206](https://github.com/youzan/vant/pull/4206)
+- Uploader: 新增 preview-full-image 属性 [\#4205](https://github.com/youzan/vant/pull/4205)
+- DropdownMenu: 新增 @dropdown-menu-title-active-text-color less 变量 [\#4208](https://github.com/youzan/vant/pull/4208)
+
+**Bug Fixes**
+
+- 修复 Area 无法选中部分海外地址的问题 [\#4195](https://github.com/youzan/vant/pull/4195)
+- 修复 IndexBar 在局部滚动容器内计算错误的问题 [\#4184](https://github.com/youzan/vant/pull/4184)
+- 修复 NumberKeyboard 按键边框颜色错误的问题 [\#4183](https://github.com/youzan/vant/pull/4183)
+
+
 ### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
 `2019-08-21`
 
