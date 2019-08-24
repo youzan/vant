@@ -40,7 +40,13 @@ module.exports = {
       {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          // enable sub-packages to find babel config
+          options: {
+            rootMode: 'upward'
+          }
+        }
       },
       {
         test: /\.less$/,
