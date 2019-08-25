@@ -44,5 +44,7 @@ Current supported languages:
 | Traditional Chinese (TW) | zh-TW |
 | English | en-US |
 | Turkish | tr-TR |
+| Spanish (Spain) | es-ES |
+
 
 View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
