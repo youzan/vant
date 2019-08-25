@@ -4,11 +4,15 @@ import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type CellGroupProps = {
   title?: string;
-  border: boolean
+  border: boolean;
+};
+
+export type CellGroupSlots = DefaultSlots & {
+  title?: ScopedSlot;
 };
 
 const [createComponent, bem] = createNamespace('cell-group');
@@ -16,22 +20,19 @@ const [createComponent, bem] = createNamespace('cell-group');
 function CellGroup(
   h: CreateElement,
   props: CellGroupProps,
-  slots: DefaultSlots,
+  slots: CellGroupSlots,
   ctx: RenderContext<CellGroupProps>
 ) {
   const Group = (
-    <div
-      class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}
-      {...inherit(ctx, true)}
-    >
+    <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]} {...inherit(ctx, true)}>
       {slots.default && slots.default()}
     </div>
   );
 
-  if (props.title) {
+  if (props.title || slots.title) {
     return (
       <div>
-        <div class={bem('title')}>{props.title}</div>
+        <div class={bem('title')}>{slots.title ? slots.title() : props.title}</div>
         {Group}
       </div>
     );

@@ -147,3 +147,10 @@ Vue.use(Cell).use(CellGroup);
 | label | 自定义标题下方描述显示内容 |
 | icon | 自定义左侧图标 |
 | right-icon | 自定义右侧按钮，默认为`arrow` |
+
+### CellGroup Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 默认插槽 |
+| title | 自定义分组标题 |
