@@ -1,4 +1,4 @@
-import { createNamespace, isObj } from '../utils';
+import { createNamespace, isObj, isDef } from '../utils';
 import Icon from '../icon';
 import Info from '../info';
 import { route, routeProps } from '../utils/router';
@@ -28,7 +28,10 @@ export default createComponent({
       const { to, $route } = this;
       if (to && $route) {
         const config = isObj(to) ? to : { path: to };
-        return config.path === $route.path || config.name === $route.name;
+        const pathMatched = config.path === $route.path;
+        const nameMatched = isDef(config.name) && config.name === $route.name;
+
+        return pathMatched || nameMatched;
       }
     }
   },
