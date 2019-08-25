@@ -124,3 +124,14 @@ test('show-error prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('radius prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      radius: 3,
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

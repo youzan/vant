@@ -73,6 +73,7 @@ Vue.use(Lazyload);
 | alt | Alt | `string` | - | - |
 | width | Width | `string | number` | - | - |
 | height | Height | `string | number` | - | - |
+| radius | Border Radius | `string | number` | `0` | - |
 | round | Whether to be round | `boolean` | `false` | - |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
 | show-error | Whether to show error placeholder | `boolean` | `true` |
