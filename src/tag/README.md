@@ -15,36 +15,40 @@ Vue.use(Tag);
 
 ```html
 <van-tag>Tag</van-tag>
-<van-tag type="danger">Tag</van-tag>
 <van-tag type="primary">Tag</van-tag>
 <van-tag type="success">Tag</van-tag>
+<van-tag type="danger">Tag</van-tag>
+<van-tag type="warning">Tag</van-tag>
 ```
 
 ### Plain style
 
 ```html
 <van-tag plain>Tag</van-tag>
-<van-tag plain type="danger">Tag</van-tag>
 <van-tag plain type="primary">Tag</van-tag>
 <van-tag plain type="success">Tag</van-tag>
+<van-tag plain type="danger">Tag</van-tag>
+<van-tag plain type="warning">Tag</van-tag>
 ```
 
 ### Round style
 
 ```html
 <van-tag round>Tag</van-tag>
-<van-tag round type="danger">Tag</van-tag>
 <van-tag round type="primary">Tag</van-tag>
 <van-tag round type="success">Tag</van-tag>
+<van-tag round type="danger">Tag</van-tag>
+<van-tag round type="warning">Tag</van-tag>
 ```
 
 ### Mark style
 
 ```html
 <van-tag mark>Tag</van-tag>
-<van-tag mark type="danger">Tag</van-tag>
 <van-tag mark type="primary">Tag</van-tag>
 <van-tag mark type="success">Tag</van-tag>
+<van-tag mark type="danger">Tag</van-tag>
+<van-tag mark type="warning">Tag</van-tag>
 ```
 
 ### Custom Color
@@ -60,9 +64,9 @@ Vue.use(Tag);
 ### Custom Size
 
 ```html
-<van-tag>Tag</van-tag>
-<van-tag size="medium">Tag</van-tag>
-<van-tag size="large">Tag</van-tag>
+<van-tag type="danger">Tag</van-tag>
+<van-tag type="danger" size="medium">Tag</van-tag>
+<van-tag type="danger" size="large">Tag</van-tag>
 ```
 
 ## API
@@ -71,7 +75,7 @@ Vue.use(Tag);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` | `string` | `default` |
+| type | Type, can be set to `primary` `success` `danger` `warning` | `string` | `default` |
 | size | Size, can be set to `large` `medium` | `string` | - |
 | color | Custom color | `string` | - |
 | plain | Whether to be plain style | `boolean` | `false` |
