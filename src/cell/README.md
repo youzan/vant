@@ -132,6 +132,13 @@ Vue.use(Cell).use(CellGroup);
 |------|------|------|
 | click | Triggered when click cell | event: Event |
 
+### CellGroup Slots
+
+| Name | Description |
+|------|------|
+| default | Default slot |
+| title | Custom title |
+
 ### Cell Slots
 
 | Name | Description |

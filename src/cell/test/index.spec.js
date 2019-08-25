@@ -1,4 +1,5 @@
 import Cell from '..';
+import CellGroup from '../../cell-group';
 import { mount } from '../../../test/utils';
 
 test('click event', () => {
@@ -51,6 +52,16 @@ test('title-style prop', () => {
       titleStyle: {
         color: 'red'
       }
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('CellGroup title slot', () => {
+  const wrapper = mount(CellGroup, {
+    scopedSlots: {
+      title: () => 'CustomTitle'
     }
   });
 
