@@ -25,6 +25,13 @@ exports[`load event 2`] = `
 </div>
 `;
 
-exports[`show-loading prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;
+exports[`radius prop 1`] = `
+<div class="van-image" style="overflow: hidden; border-radius: 3px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+      <!----></i></div>
+</div>
+`;
 
 exports[`show-error prop 1`] = `<div class="van-image"></div>`;
+
+exports[`show-loading prop 1`] = `<div class="van-image"><img class="van-image__img"></div>`;

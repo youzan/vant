@@ -11,6 +11,7 @@ export default createComponent({
     round: Boolean,
     width: [Number, String],
     height: [Number, String],
+    radius: [Number, String],
     lazyLoad: Boolean,
     showError: {
       type: Boolean,
@@ -46,6 +47,11 @@ export default createComponent({
 
       if (isDef(this.height)) {
         style.height = addUnit(this.height);
+      }
+
+      if (isDef(this.radius)) {
+        style.overflow = 'hidden';
+        style.borderRadius = addUnit(this.radius);
       }
 
       return style;
