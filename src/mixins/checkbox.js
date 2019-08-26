@@ -52,7 +52,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       const { target } = event;
       const labelClicked = label && (label === target || label.contains(target));
 
-      if (!this.disabled && !(labelClicked && this.labelDisabled)) {
+      if (!this.isDisabled && !(labelClicked && this.labelDisabled)) {
         this.toggle();
       }
 
