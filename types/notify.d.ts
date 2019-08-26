@@ -3,6 +3,7 @@ import Vue from 'vue';
 export type NotifyMessage = string | number;
 
 export type NotifyOptions = {
+  type?: 'primary' | 'success' | 'danger' | 'warning';
   value?: boolean;
   color?: string;
   message?: NotifyMessage;

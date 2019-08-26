@@ -11,6 +11,16 @@ test('create a notify', async () => {
   expect(notify.$el.outerHTML).toMatchSnapshot();
 });
 
+test('type prop', async () => {
+  const notify = Notify({
+    message: 'test',
+    type: 'primary'
+  });
+
+  await later();
+  expect(notify.$el.outerHTML).toMatchSnapshot();
+});
+
 test('notify disappear', async () => {
   const onClose = jest.fn();
   const notify = Notify({
