@@ -43,3 +43,34 @@ test('radio-group change', () => {
   labels.at(3).trigger('click');
   expect(wrapper.vm.result).toEqual('b');
 });
+
+test('radio group disabled', () => {
+  const wrapper = mount({
+    template: `
+      <radio-group v-model="result" disabled @change="$emit('change', $event)">
+        <radio
+          v-for="item in list"
+          :key="item"
+          :name="item"
+        >
+          label
+        </radio>
+      </radio-group>
+    `,
+    components: {
+      Radio,
+      RadioGroup
+    },
+    data() {
+      return {
+        result: 'a',
+        list: ['a', 'b', 'c', 'd']
+      };
+    }
+  });
+
+  const icons = wrapper.findAll('.van-radio__icon');
+  icons.at(2).trigger('click');
+
+  expect(wrapper.emitted('change')).toBeFalsy();
+});
