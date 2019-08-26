@@ -1,5 +1,25 @@
 # 更新日志
 
+### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
+`2019-08-26`
+
+**Improvements**
+
+- Tag: 新增 warning 类型 [\#4232](https://github.com/youzan/vant/pull/4232)
+- Image: 新增 radius 属性 [\#4230](https://github.com/youzan/vant/pull/4230)
+- Notify: 新增 type 属性 [\#4237](https://github.com/youzan/vant/pull/4237)
+- CellGroup: 新增 title 插槽 [\#4227](https://github.com/youzan/vant/pull/4227)
+- Sku: 支持动态设置 initial-sku 属性 [\#4214](https://github.com/youzan/vant/pull/4214)
+- Sku: 支持预览更高层级的规格类目图片 [\#4236](https://github.com/youzan/vant/pull/4236)
+- Locale: 支持西班牙语 [\#4235](https://github.com/youzan/vant/pull/4235)
+
+**Bug Fixes**
+
+- 修复 Tabbar 在 route 模式下选中样式错误的问题 [\#4229](https://github.com/youzan/vant/pull/4229)
+- 修复 NumberKeyboard 使用 title 属性时按钮位置错误的问题 [\#4228](https://github.com/youzan/vant/pull/4228)
+- 修复 IndexBar 在 sticky 模式下锚点位置可能超出元素边界的问题 [\#4218](https://github.com/youzan/vant/pull/4218)
+
+
 ### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
 `2019-08-23`
 

@@ -1,5 +1,25 @@
 # Changelog
 
+### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
+`2019-08-26`
+
+**Improvements**
+
+- Tag: add warning type [\#4232](https://github.com/youzan/vant/pull/4232)
+- Image: add radius prop [\#4230](https://github.com/youzan/vant/pull/4230)
+- Notify: add type prop [\#4237](https://github.com/youzan/vant/pull/4237)
+- CellGroup: add title slot [\#4227](https://github.com/youzan/vant/pull/4227)
+- Sku: initialSku can be set dynamically [\#4214](https://github.com/youzan/vant/pull/4214)
+- Sku: can preview images of non-first level sku [\#4236](https://github.com/youzan/vant/pull/4236)
+- Locale: add Spanish translation [\#4235](https://github.com/youzan/vant/pull/4235)
+
+**Bug Fixes**
+
+- fix Tabbar incorrect active style in route mode [\#4229](https://github.com/youzan/vant/pull/4229)
+- fix NumberKeyboard incorrect sidebar position when has title [\#4228](https://github.com/youzan/vant/pull/4228)
+- fix IndexBar the problem of rolling out parent boundaries when sticky bottom [\#4218](https://github.com/youzan/vant/pull/4218)
+
+
 ### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
 `2019-08-23`
 
