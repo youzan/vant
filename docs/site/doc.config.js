@@ -77,7 +77,7 @@ export default {
               },
               {
                 path: '/demo',
-                title: '示例页面'
+                title: '示例工程'
               },
               {
                 path: '/locale',
@@ -422,10 +422,6 @@ export default {
               {
                 path: '/theme',
                 title: 'Custom Theme'
-              },
-              {
-                path: '/demo',
-                title: 'Demo pages'
               },
               {
                 path: '/locale',
