@@ -191,17 +191,17 @@ export default createComponent({
       const imageList = [this.goods.picture];
 
       if (this.skuTree.length > 0) {
-        const treeItem = this.skuTree.filter(item => item.k_s === 's1')[0] || {};
-
-        if (!treeItem.v) {
-          return imageList;
-        }
-
-        treeItem.v.forEach(vItem => {
-          const img = vItem.imgUrl || vItem.img_url;
-          if (img) {
-            imageList.push(img);
+        this.skuTree.forEach(treeItem => {
+          if (!treeItem.v) {
+            return;
           }
+
+          treeItem.v.forEach(vItem => {
+            const img = vItem.imgUrl || vItem.img_url;
+            if (img) {
+              imageList.push(img);
+            }
+          });
         });
       }
 

@@ -47,7 +47,4 @@ export type SkuGoodsData = {
   picture: string;
 };
 
-export type SelectedSkuData = {
-  s1: string;
-  s2: string;
-};
+export type SelectedSkuData = Record<string, string>;
