@@ -1,5 +1,14 @@
 # Changelog
 
+### [v2.1.7](https://github.com/youzan/vant/tree/v2.1.7)
+`2019-08-26`
+
+**Bug Fixes**
+
+- fix RadioGroup disabled prop not work [\#4242](https://github.com/youzan/vant/pull/4242)
+- fix CheckboxGroup disabled prop not work [\#4242](https://github.com/youzan/vant/pull/4242)
+
+
 ### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
 `2019-08-26`
 
@@ -13,7 +22,6 @@
 - Sku: can preview images of non-first level sku [\#4236](https://github.com/youzan/vant/pull/4236)
 - Locale: add Spanish translation [\#4235](https://github.com/youzan/vant/pull/4235)
 
-**Bug Fixes**
 
 - fix Tabbar incorrect active style in route mode [\#4229](https://github.com/youzan/vant/pull/4229)
 - fix NumberKeyboard incorrect sidebar position when has title [\#4228](https://github.com/youzan/vant/pull/4228)

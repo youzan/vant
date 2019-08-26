@@ -1,5 +1,14 @@
 # 更新日志
 
+### [v2.1.7](https://github.com/youzan/vant/tree/v2.1.7)
+`2019-08-26`
+
+**Bug Fixes**
+
+- 修复 RadioGroup 设置 disabled 属性后仍能切换的问题 [\#4242](https://github.com/youzan/vant/pull/4242)
+- 修复 CheckboxGroup 设置 disabled 属性后仍能切换的问题 [\#4242](https://github.com/youzan/vant/pull/4242)
+
+
 ### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
 `2019-08-26`
 
