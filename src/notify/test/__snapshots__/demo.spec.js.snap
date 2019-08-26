@@ -2,7 +2,10 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">显示消息通知</span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">显示自定义消息通知</span></button></div>
+  <div><button class="van-button van-button--danger van-button--normal"><span class="van-button__text">基础用法</span></button></div>
+  <div>
+    <div style="margin-bottom: 15px;"><button class="van-button van-button--info van-button--normal"><span class="van-button__text">主要通知</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">成功通知</span></button></div> <button class="van-button van-button--danger van-button--normal"><span class="van-button__text">危险通知</span></button> <button class="van-button van-button--warning van-button--normal"><span class="van-button__text">警告通知</span></button>
+  </div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义颜色</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义时长</span></button></div>
 </div>
 `;

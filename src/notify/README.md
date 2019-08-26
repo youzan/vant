@@ -17,13 +17,27 @@ Vue.use(Notify);
 Notify('Notify Message');
 ```
 
-### Custom Config
+### Notify Type
+
+```js
+Notify({ type: 'primary', message: 'Notify Message' });
+Notify({ type: 'success', message: 'Notify Message' });
+Notify({ type: 'danger', message: 'Notify Message' });
+Notify({ type: 'warning', message: 'Notify Message' });
+```
+
+### Custom Notify
 
 ```js
 Notify({
-  message: 'Notify Message',
-  duration: 1000,
-  background: '#1989fa'
+  message: 'Custom Color',
+  color: '#ad0000',
+  background: '#ffe1e1'
+});
+
+Notify({
+  message: 'Custom Duration',
+  duration: 1000
 });
 ```
 
@@ -54,6 +68,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| type | Can be set to `primary` `info` `warning` | `string` | `danger` |
 | message | Message | `string` | - |
 | duration | Duration(ms), won't disappear if value is 0 | `number` | `3000` |
 | color | Message color | `string` | `#fff` | |
