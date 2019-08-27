@@ -64,7 +64,8 @@ function Button(
     style.color = plain ? color : WHITE;
 
     if (!plain) {
-      style.backgroundColor = color;
+      // Use background instead of backgroundColor to make linear-gradient work
+      style.background = color;
     }
   }
 
