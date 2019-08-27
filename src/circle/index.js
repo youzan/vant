@@ -12,9 +12,9 @@ function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
 }
 
-function getPath(clockwise) {
+function getPath(clockwise, viewBoxSize) {
   const sweepFlag = clockwise ? 1 : 0;
-  return `M 530 530 m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
+  return `M ${viewBoxSize / 2} ${viewBoxSize / 2} m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
 export default createComponent({
@@ -72,7 +72,11 @@ export default createComponent({
     },
 
     path() {
-      return getPath(this.clockwise);
+      return getPath(this.clockwise, this.viewBoxSize);
+    },
+
+    viewBoxSize() {
+      return 1000 + this.strokeWidth;
     },
 
     layerStyle() {
@@ -154,7 +158,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()} style={this.style}>
-        <svg viewBox="0 0 1060 1060">
+        <svg viewBox={`0 0 ${this.viewBoxSize} ${this.viewBoxSize}`}>
           {this.LinearGradient}
           <path class={bem('hover')} style={this.hoverStyle} d={this.path} />
           <path
