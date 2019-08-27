@@ -134,7 +134,7 @@ export default {
     }
 
     em {
-      color: @van-doc-purple;
+      color: @van-doc-fuchsia;
       font-size: 12px;
       font-family: @van-doc-code-font-family;
       font-style: normal;

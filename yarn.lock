@@ -1194,10 +1194,10 @@
     shelljs "^0.8.2"
     signale "^1.4.0"
 
-"@vant/doc@^2.5.4":
-  version "2.5.4"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.5.4.tgz#1577c2ba4f53e3a120922750003250524c60eb44"
-  integrity sha512-c4/gN+RmmL/CG1sa9+7B7XDSO/f3K4gEzwGIsdTNkd/FV7/jGlqVwmMT85XMp7YADmL2v1aUjfbkU3ENRzfQXg==
+"@vant/doc@^2.5.5":
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.5.5.tgz#66592d745536c1414c0ccf31b928e158787b5fec"
+  integrity sha512-udMtqW2N5jFuyswzwhbPh55ViTYcK72fSRZaYlQUz1BuKGvk+Kjjfwt4onk/pnS8c/sZKHNhObWg2obBg2aRCg==
 
 "@vant/eslint-config@^1.2.5":
   version "1.2.5"
