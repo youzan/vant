@@ -101,23 +101,23 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| active-color | Active color of title and option | `string` | `#1989fa` | - |
-| z-index | z-index of menu item | `number` | `10` | - |
-| duration | Transition duration, unit second | `number` | `0.2` | - |
-| direction | Expand direction, can be set to `up` | `string` | `down` | 2.0.1 |
-| overlay | Whether to show overlay | `boolean` | `true` | - |
-| close-on-click-overlay | Whether to close when click overlay | `boolean` | `true` | - |
-| close-on-click-outside | Whether to close when click outside | `boolean` | `true` | 2.0.7 |
+| active-color | Active color of title and option | *string* | `#1989fa` | - |
+| z-index | z-index of menu item | *number* | `10` | - |
+| duration | Transition duration, unit second | *number* | `0.2` | - |
+| direction | Expand direction, can be set to `up` | *string* | `down` | 2.0.1 |
+| overlay | Whether to show overlay | *boolean* | `true` | - |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
+| close-on-click-outside | Whether to close when click outside | *boolean* | `true` | 2.0.7 |
 
 ### DropdownItem Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| value | Value of current option，can use `v-model` | `string | number` | - | - |
-| title | Item title | `string` | Text of selected option | - |
-| options | Options | `Option[]` | `[]` | - |
-| disabled | Whether to disable dropdown item | `boolean` | `false` | - |
-| title-class | Title class | `string` | - | - |
+| value | Value of current option，can use `v-model` | *string \| number* | - | - |
+| title | Item title | *string* | Text of selected option | - |
+| options | Options | *Option[]* | `[]` | - |
+| disabled | Whether to disable dropdown item | *boolean* | `false` | - |
+| title-class | Title class | *string* | - | - |
 
 ### DropdownItem Events
 
@@ -140,6 +140,6 @@ Use ref to get DropdownItem instance and call instance methods
 
 | Key | Description | Type |
 |------|------|------|
-| text | Text | `string` |
-| value | Value | `string | number` |
-| icon | Left icon | `string` |
+| text | Text | *string* |
+| value | Value | *string \| number* |
+| icon | Left icon | *string* |

@@ -102,18 +102,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前输入值 | `string | number` | 最小值 | - |
-| min | 最小值 | `string | number` | `1` | - |
-| max | 最大值 | `string | number` | - | - |
-| step | 步数 | `string | number` | `1` | - |
-| integer | 是否只允许输入整数 | `boolean` | `false` | - |
-| disabled | 是否禁用步进器 | `boolean` | `false` | - |
-| disable-input | 是否禁用输入框 | `boolean` | `false` | - |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | `boolean` | `false` | - |
-| input-width | 输入框宽度，默认单位为`px` | `string | number` | `32px` | - |
-| button-size | 按钮大小，默认单位为`px`，输入框高度会和按钮大小保持一致 | `string | number` | `28px` | 2.0.5 |
-| show-plus | 是否显示增加按钮 | `boolean` | `true` | 2.1.2 |
-| show-minus | 是否显示减少按钮 | `boolean` | `true` | 2.1.2 |
+| v-model | 当前输入值 | *string \| number* | 最小值 | - |
+| min | 最小值 | *string \| number* | `1` | - |
+| max | 最大值 | *string \| number* | - | - |
+| step | 步数 | *string \| number* | `1` | - |
+| integer | 是否只允许输入整数 | *boolean* | `false` | - |
+| disabled | 是否禁用步进器 | *boolean* | `false` | - |
+| disable-input | 是否禁用输入框 | *boolean* | `false` | - |
+| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
+| input-width | 输入框宽度，默认单位为`px` | *string \| number* | `32px` | - |
+| button-size | 按钮大小，默认单位为`px`，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | 2.0.5 |
+| show-plus | 是否显示增加按钮 | *boolean* | `true` | 2.1.2 |
+| show-minus | 是否显示减少按钮 | *boolean* | `true` | 2.1.2 |
 
 ### Events
 

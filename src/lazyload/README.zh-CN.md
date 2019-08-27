@@ -59,13 +59,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| loading | 加载时的图片 | `string` | - | - |
-| error | 错误时的图片 | `string` | - | - |
-| preload | 预加载高度的比例 | `string` | - | - |
-| attempt | 尝试次数 | `number` | `3` | - |
-| listenEvents | 监听的事件 | `string[]` | `scroll`等 | - |
-| adapter | 适配器 | `object` | - | - |
-| filter | 图片 URL 过滤 | `object` | - | - |
-| lazyComponent | 是否能懒加载模块 | `boolean` | `false` | - |
+| loading | 加载时的图片 | *string* | - | - |
+| error | 错误时的图片 | *string* | - | - |
+| preload | 预加载高度的比例 | *string* | - | - |
+| attempt | 尝试次数 | *number* | `3` | - |
+| listenEvents | 监听的事件 | *string[]* | `scroll`等 | - |
+| adapter | 适配器 | *object* | - | - |
+| filter | 图片 URL 过滤 | *object* | - | - |
+| lazyComponent | 是否能懒加载模块 | *boolean* | `false` | - |
 
 更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)

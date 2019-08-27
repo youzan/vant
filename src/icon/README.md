@@ -62,12 +62,12 @@ import 'vant/lib/icon/local.css';
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| name | Icon name or URL | `string` | `''` | - |
-| info | Info message | `string | number` | `''` | - |
-| color | Icon color | `string` | `inherit` | - |
-| size | Icon size | `string | number` | `inherit` | - |
-| class-prefix | ClassName prefix | `string` | `van-icon` | - |
-| tag | HTML Tag | `string` | `i` | - |
+| name | Icon name or URL | *string* | `''` | - |
+| info | Info message | *string \| number* | `''` | - |
+| color | Icon color | *string* | `inherit` | - |
+| size | Icon size | *string \| number* | `inherit` | - |
+| class-prefix | ClassName prefix | *string* | `van-icon` | - |
+| tag | HTML Tag | *string* | `i` | - |
 
 ### Events
 

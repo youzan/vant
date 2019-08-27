@@ -46,10 +46,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| show | 是否展示遮罩层 | `boolean` | `false` | - |
-| z-index | z-index 层级 | `number | string` | `1` | - |
-| duration | 动画时长，单位秒 | `number | string` | `0.3` | - |
-| class-name | 自定义类名 | `string` | - | - |
+| show | 是否展示遮罩层 | *boolean* | `false` | - |
+| z-index | z-index 层级 | *string \| number* | `1` | - |
+| duration | 动画时长，单位秒 | *string \| number* | `0.3` | - |
+| class-name | 自定义类名 | *string* | - | - |
 
 ### Events
 

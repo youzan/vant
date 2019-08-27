@@ -48,15 +48,15 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 是否在加载中 | `boolean` | - | - |
-| pulling-text | 下拉过程文案 | `string` | `下拉即可刷新...` | - |
-| loosing-text | 释放过程文案 | `string` | `释放即可刷新...` | - |
-| loading-text | 加载过程文案 | `string` | `加载中...` | - |
-| success-text | 加载成功提示文案 | `string` | - | - |
-| success-duration | 加载成功提示时长(ms) | `number` | `500` | - |
-| animation-duration | 动画时长 | `number` | `300` | - |
-| head-height | 顶部内容高度 | `number` | `50` | - |
-| disabled | 是否禁用下拉刷新 | `boolean` | `false` | - |
+| v-model | 是否在加载中 | *boolean* | - | - |
+| pulling-text | 下拉过程文案 | *string* | `下拉即可刷新...` | - |
+| loosing-text | 释放过程文案 | *string* | `释放即可刷新...` | - |
+| loading-text | 加载过程文案 | *string* | `加载中...` | - |
+| success-text | 加载成功提示文案 | *string* | - | - |
+| success-duration | 加载成功提示时长(ms) | *number* | `500` | - |
+| animation-duration | 动画时长 | *number* | `300` | - |
+| head-height | 顶部内容高度 | *number* | `50` | - |
+| disabled | 是否禁用下拉刷新 | *boolean* | `false` | - |
 
 ### Events
 

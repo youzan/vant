@@ -89,32 +89,32 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Names of current active panels | `(string | number)[] `(non-accordion mode)<br>`string | number`(accordion mode) | - | - |
-| accordion | Whether to be accordion mode | `boolean` | `false` | - |
-| border | Whether to show outer border | `boolean` | `true` | - |
+| v-model | Names of current active panels | `(string | number)[] `(non-accordion mode)<br>*string \| number*(accordion mode) | - | - |
+| accordion | Whether to be accordion mode | *boolean* | `false` | - |
+| border | Whether to show outer border | *boolean* | `true` | - |
 
 ### Collapse Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when switch panel | activeNames: `(string | number)[] `(non-accordion mode) / `string | number`(accordion mode) |
+| change | Triggered when switch panel | activeNames: `(string | number)[] `(non-accordion mode) / *string \| number*(accordion mode) |
 
 ### CollapseItem Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| name | Name | `string | number` | `index` | - |
-| icon | Left Icon | `string` | - | - |
-| size | Title size，can be set to `large` | `string` | - | - |
-| title | Title | `string | number` | - | - |
-| value | Right text | `string | number` | - | - |
-| label | Description below the title | `string` | - | - |
-| border | Whether to show inner border | `boolean` | `true` | - |
-| disabled | Whether to disabled collapse | `boolean` | `false` | - |
-| is-link | Whether to show link icon | `boolean` | `true` | - |
-| title-class | Title className | `string` | - | - |
-| value-class | Value className | `string` | - | - |
-| label-class | Label className | `string` | - | - |
+| name | Name | *string \| number* | `index` | - |
+| icon | Left Icon | *string* | - | - |
+| size | Title size，can be set to `large` | *string* | - | - |
+| title | Title | *string \| number* | - | - |
+| value | Right text | *string \| number* | - | - |
+| label | Description below the title | *string* | - | - |
+| border | Whether to show inner border | *boolean* | `true` | - |
+| disabled | Whether to disabled collapse | *boolean* | `false` | - |
+| is-link | Whether to show link icon | *boolean* | `true` | - |
+| title-class | Title className | *string* | - | - |
+| value-class | Value className | *string* | - | - |
+| label-class | Label className | *string* | - | - |
 
 ### CollapseItem Slots
 

@@ -93,19 +93,19 @@ Setting `type` to `flex` to enable flex layout
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| type | Layout type, can be set to `flex` | `string` | - | - |
-| gutter | Grid spacing（px） | `string | number` | - | - |
-| tag | Custom element tag | `string` | `div` | - |
-| justify | Flex main axis，can be set to  end/center/space-around/space-between | `string` | `start` | - |
-| align | Flex cross axis, be set to  center/bottom | `string` | `top` | - |
+| type | Layout type, can be set to `flex` | *string* | - | - |
+| gutter | Grid spacing（px） | *string \| number* | - | - |
+| tag | Custom element tag | *string* | `div` | - |
+| justify | Flex main axis，can be set to  end/center/space-around/space-between | *string* | `start` | - |
+| align | Flex cross axis, be set to  center/bottom | *string* | `top` | - |
 
 ### Col Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| span | number of column the grid spans | `string | number` | - | - |
-| offset | number of spacing on the left side of the grid | `string | number` | - | - |
-| tag | Custom element tag | `string` | `div` | - |
+| span | number of column the grid spans | *string \| number* | - | - |
+| offset | number of spacing on the left side of the grid | *string \| number* | - | - |
+| tag | Custom element tag | *string* | `div` | - |
 
 ### Row Events
 

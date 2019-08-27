@@ -114,17 +114,17 @@ toast2.clear();
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| type | Can be set to `loading` `success` `fail` `html` | `string` | `text` | - |
-| position | Can be set to `top` `middle` `bottom` | `string` | `middle` | - |
-| message | Message | `string` | `''` | - |
-| icon | Custom icon | `string` | - | 2.0.1 |
-| iconPrefix | Icon className prefix | `string` | `van-icon` | 2.0.9 |
-| mask | Whether to show mask | `boolean` | `false` | - |
-| forbidClick | Whether to forbid click background | `boolean` | `false` | - |
-| closeOnClick | Whether to close after clicked | `boolean` | `false` | 2.1.5 |
-| loadingType | Loading icon type, can be set to `spinner` | `string` | `circular` | - |
-| duration | Toast duration(ms), won't disappear if value is 0 | `number` | `3000` | - |
-| className | Custom className | `any` | - | - |
-| onOpened | Callback function after opened | `Function` | - | - |
-| onClose | Callback function after close | `Function` | - | - |
-| getContainer | Return the mount node for Toast | `string | () => HTMLElement` | `body` | - |
+| type | Can be set to `loading` `success` `fail` `html` | *string* | `text` | - |
+| position | Can be set to `top` `middle` `bottom` | *string* | `middle` | - |
+| message | Message | *string* | `''` | - |
+| icon | Custom icon | *string* | - | 2.0.1 |
+| iconPrefix | Icon className prefix | *string* | `van-icon` | 2.0.9 |
+| mask | Whether to show mask | *boolean* | `false` | - |
+| forbidClick | Whether to forbid click background | *boolean* | `false` | - |
+| closeOnClick | Whether to close after clicked | *boolean* | `false` | 2.1.5 |
+| loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` | - |
+| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `3000` | - |
+| className | Custom className | *any* | - | - |
+| onOpened | Callback function after opened | *Function* | - | - |
+| onClose | Callback function after close | *Function* | - | - |
+| getContainer | Return the mount node for Toast | *string \| () => HTMLElement* | `body` | - |

@@ -128,16 +128,16 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| autoplay | Autoplay interval (ms) | `number` | - | - |
-| duration | Animation duration (ms) | `number` | `500` | - |
-| loop | Whether to enable loop | `boolean` | `true` | - |
-| vertical | Vertical Scrolling | `boolean` | `false` | - |
-| touchable | Whether touchable | `boolean` | `true` | - |
-| show-indicators | Whether to show indicators | `boolean` | `true` | - |
-| indicator-color | Indicator color | `string` | `#1989fa` | - |
-| initial-swipe | Index of initial swipe, start from 0 | `number` | `0` | - |
-| width | Set Swiper Item Width | `number` | `0` | - |
-| height | Set Swiper Item Height | `number` | `0` | - |
+| autoplay | Autoplay interval (ms) | *number* | - | - |
+| duration | Animation duration (ms) | *number* | `500` | - |
+| loop | Whether to enable loop | *boolean* | `true` | - |
+| vertical | Vertical Scrolling | *boolean* | `false` | - |
+| touchable | Whether touchable | *boolean* | `true` | - |
+| show-indicators | Whether to show indicators | *boolean* | `true` | - |
+| indicator-color | Indicator color | *string* | `#1989fa` | - |
+| initial-swipe | Index of initial swipe, start from 0 | *number* | `0` | - |
+| width | Set Swiper Item Width | *number* | `0` | - |
+| height | Set Swiper Item Height | *number* | `0` | - |
 
 ### Swipe Events
 
@@ -163,7 +163,7 @@ Use ref to get swipe instance and call instance methods
 
 | Name | Description | Type |
 |------|------|------|
-| immediate | Whether to skip animation | `boolean` |
+| immediate | Whether to skip animation | *boolean* |
 
 ### Swipe Slots
 

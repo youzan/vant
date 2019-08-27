@@ -66,17 +66,17 @@ Use slot to custom content.
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| thumb | Left thumb image URL | `string` | - | - |
-| title | Title | `string` | - | - |
-| desc | Description | `string` | - | - |
-| tag | Tag | `string` | - | - |
-| num | number | `string | number` | - | - |
-| price | Price | `string | number` | - | - |
-| origin-price | Origin price | `string | number` | - | - |
-| centered | Whether content vertical centered | `boolean` | `false` | - |
-| currency | Currency symbol |  `string` | `¥` | - |
-| thumb-link | Thumb link URL | `string` | - | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
+| thumb | Left thumb image URL | *string* | - | - |
+| title | Title | *string* | - | - |
+| desc | Description | *string* | - | - |
+| tag | Tag | *string* | - | - |
+| num | number | *string \| number* | - | - |
+| price | Price | *string \| number* | - | - |
+| origin-price | Origin price | *string \| number* | - | - |
+| centered | Whether content vertical centered | *boolean* | `false` | - |
+| currency | Currency symbol |  *string* | `¥` | - |
+| thumb-link | Thumb link URL | *string* | - | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` | - |
 
 ### Events
 

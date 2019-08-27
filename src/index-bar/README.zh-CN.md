@@ -67,17 +67,17 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| index-list | 索引字符列表 | `string[] | number[]` | `A-Z` | - |
-| z-index | z-index 层级 | `number` | `1` | - |
-| sticky | 是否开启锚点自动吸顶 | `boolean` | `true` | - |
-| sticky-offset-top | 锚点自动吸顶时与顶部的距离 | `number` | `0` | 2.0.7 |
-| highlight-color | 索引字符高亮颜色 | `string` | `#07c160` | - |
+| index-list | 索引字符列表 | *string[] \| number[]* | `A-Z` | - |
+| z-index | z-index 层级 | *number* | `1` | - |
+| sticky | 是否开启锚点自动吸顶 | *boolean* | `true` | - |
+| sticky-offset-top | 锚点自动吸顶时与顶部的距离 | *number* | `0` | 2.0.7 |
+| highlight-color | 索引字符高亮颜色 | *string* | `#07c160` | - |
 
 ### IndexAnchor Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| index | 索引字符 | `string | number` | - | - |
+| index | 索引字符 | *string \| number* | - | - |
 
 ### IndexBar Events
 

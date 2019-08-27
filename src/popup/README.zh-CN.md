@@ -109,18 +109,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前组件是否显示 | `boolean` | `false` | - |
-| overlay | 是否显示遮罩层 | `boolean` | `true` | - |
-| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | `string` | `center` | - |
-| overlay-class | 自定义遮罩层类名 | `string` | - | - |
-| overlay-style | 自定义遮罩层样式 | `object` | - | - |
-| duration | 动画时长，单位秒 | `number` | `0.3` | - |
-| round | 是否显示圆角 | `boolean` | `false` | 2.0.7 |
-| lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | - |
-| lazy-render | 是否在显示弹层时才渲染节点 | `boolean` | `true` | - |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `true` | - |
-| transition | 动画类名，用法与 Vue 内置的`transtion`组件的`name`属性一致 | `string` | - | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | - | - |
+| v-model | 当前组件是否显示 | *boolean* | `false` | - |
+| overlay | 是否显示遮罩层 | *boolean* | `true` | - |
+| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` | - |
+| overlay-class | 自定义遮罩层类名 | *string* | - | - |
+| overlay-style | 自定义遮罩层样式 | *object* | - | - |
+| duration | 动画时长，单位秒 | *number* | `0.3` | - |
+| round | 是否显示圆角 | *boolean* | `false` | 2.0.7 |
+| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
+| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
+| transition | 动画类名，用法与 Vue 内置的`transtion`组件的`name`属性一致 | *string* | - | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
 
 ### Events
 

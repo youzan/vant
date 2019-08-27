@@ -66,15 +66,15 @@ Vue.use(NoticeBar);
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| mode | Mode, can be set to `closeable` `link` | `string` | `''` | - |
-| text | Notice text content | `string` | `''` | - | - |
-| delay | Animation delay (s) | `number` | `1` | - |
-| speed | Scroll speed (px/s) | `number` | `50` | - |
-| scrollable | Whether to scroll content | `boolean` | `true` | - |
-| wrapable | Whether to enable text wrap | `boolean` | `false` | - | - |
-| left-icon | Left Icon | `string` | - | - |
-| color | Text color | `string` | `#f60` | - |
-| background | Background color | `string` | `#fff7cc` | - |
+| mode | Mode, can be set to `closeable` `link` | *string* | `''` | - |
+| text | Notice text content | *string* | `''` | - | - |
+| delay | Animation delay (s) | *number* | `1` | - |
+| speed | Scroll speed (px/s) | *number* | `50` | - |
+| scrollable | Whether to scroll content | *boolean* | `true` | - |
+| wrapable | Whether to enable text wrap | *boolean* | `false` | - | - |
+| left-icon | Left Icon | *string* | - | - |
+| color | Text color | *string* | `#f60` | - |
+| background | Background color | *string* | `#fff7cc` | - |
 
 ### Events
 

@@ -73,33 +73,33 @@ Use `info` prop to show messages in upper right corner of icon
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `boolean` | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
 
 ### GoodsActionIcon Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| text | Button text | `string` | - | - |
-| icon | Icon | `string` | - | - |
-| icon-class | Icon class name | `any` | `''` | - |
-| info | Info message | `string | number` | - | - |
-| url | Link | `string` | - | - |
-| to | Target route of the link, same as to of vue-router | `string | object` | - | - |
-| replace | If true, the navigation will not leave a history record | `boolean` | `false` | - |
+| text | Button text | *string* | - | - |
+| icon | Icon | *string* | - | - |
+| icon-class | Icon class name | *any* | `''` | - |
+| info | Info message | *string \| number* | - | - |
+| url | Link | *string* | - | - |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
 
 ### GoodsActionButton Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| text | Button text | `string` | - | - |
-| type | Button type, Can be set to `primary` `info` `warning` `danger` | `string` | `default` | - |
-| color | Button color, support linear-gradient | `string` | - | 2.1.8 |
-| primary | Is primary button (red color) | `boolean` | `false` | - |
-| disabled | Whether to disable button | `boolean` | `false` | - |
-| loading | Whether show loading status | `boolean` | `false` | - |
-| url | Link | `string` | - | - |
-| to | Target route of the link, same as to of vue-router | `string | object` | - | - |
-| replace | If true, the navigation will not leave a history record | `boolean` | `false` | - |
+| text | Button text | *string* | - | - |
+| type | Button type, Can be set to `primary` `info` `warning` `danger` | *string* | `default` | - |
+| color | Button color, support linear-gradient | *string* | - | 2.1.8 |
+| primary | Is primary button (red color) | *boolean* | `false` | - |
+| disabled | Whether to disable button | *boolean* | `false` | - |
+| loading | Whether show loading status | *boolean* | `false` | - |
+| url | Link | *string* | - | - |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
 
 ### GoodsActionIcon Slots
 

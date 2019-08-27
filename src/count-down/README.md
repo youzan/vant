@@ -113,10 +113,10 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| time | Total time | `number` | - | - |
-| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | `string` | `HH:mm:ss` | - |
-| auto-start | Whether to auto start count down | `boolean` | `true` | - |
-| millisecond | Whether to enable millisecond render | `boolean` | `false` | - |
+| time | Total time | *number* | - | - |
+| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | *string* | `HH:mm:ss` | - |
+| auto-start | Whether to auto start count down | *boolean* | `true` | - |
+| millisecond | Whether to enable millisecond render | *boolean* | `false` | - |
 
 ### Events
 
@@ -134,11 +134,11 @@ export default {
 
 | Name | Description | Type |
 |------|------|------|
-| days | Remain days | `number` |
-| hours | Remain hours | `number` |
-| minutes | Remain minutes | `number` |
-| seconds | Remain seconds | `number` |
-| milliseconds | Remain milliseconds | `number` |
+| days | Remain days | *number* |
+| hours | Remain hours | *number* |
+| minutes | Remain minutes | *number* |
+| seconds | Remain seconds | *number* |
+| milliseconds | Remain milliseconds | *number* |
 
 ### Methods
 

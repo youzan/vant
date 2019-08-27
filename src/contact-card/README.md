@@ -137,10 +137,10 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| type | Can be set to `add` `edit` | `string` | `add` | - |
-| name | Name | `string` | - | - |
-| tel | Phone | `string` | - | - |
-| add-text | Add card text | `string` | `Add contact info` | - |
+| type | Can be set to `add` `edit` | *string* | `add` | - |
+| name | Name | *string* | - | - |
+| tel | Phone | *string* | - | - |
+| add-text | Add card text | *string* | `Add contact info` | - |
 
 ### ContactCard Events
 
@@ -152,9 +152,9 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Id of chosen contact | `string | number` | - | - |
-| list | Contact list | `Contact[]` | `[]` | - |
-| add-text | Add button text | `string` | `Add new contact` | - |
+| v-model | Id of chosen contact | *string \| number* | - | - |
+| list | Contact list | *Contact[]* | `[]` | - |
+| add-text | Add button text | *string* | `Add new contact` | - |
 
 ### ContactList Events
 
@@ -168,11 +168,11 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| contact-info | Contact Info | `object` | `[]` | - |
-| is-edit | Whether is editing | `boolean` | `false` | - |
-| is-saving | Whether to show save button loading status | `boolean` | `false` | - |
-| is-deleting | Whether to show delete button loading status | `boolean` | `false` | - |
-| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
+| contact-info | Contact Info | *object* | `[]` | - |
+| is-edit | Whether is editing | *boolean* | `false` | - |
+| is-saving | Whether to show save button loading status | *boolean* | `false` | - |
+| is-deleting | Whether to show delete button loading status | *boolean* | `false` | - |
+| tel-validator | The method to validate tel | *(tel: string) => boolean* | - | - |
 
 ### ContactEdit Events
 
@@ -185,6 +185,6 @@ export default {
 
 | key | Description | Type |
 |------|------|------|
-| id | ID | `string | number` |
-| name | Name | `string` |
-| tel | Phone | `string` |
+| id | ID | *string \| number* |
+| name | Name | *string* |
+| tel | Phone | *string* |
