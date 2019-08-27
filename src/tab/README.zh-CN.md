@@ -180,31 +180,31 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 绑定当前选中标签的标识符 | `string | number` | `0` | - |
-| type | 样式类型，可选值为`card` | `string` | `line` | - |
-| duration | 动画时间，单位秒 | `number` | `0.3` | - |
-| background | 标签栏背景色 | `string` | `white` | - |
-| line-width | 底部条宽度，默认单位 px | `number | string` | `auto` | - |
-| line-height | 底部条高度，默认单位 px | `number | string` | `3px` | - |
-| color | 标签主题色 | `string` | `#f44` | - |
-| title-active-color | 标题选中态颜色 | `string` | - | - |
-| title-inactive-color | 标题默认态颜色 | `string` | - | - |
-| swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `number` | `4` | - |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `number` | `0` | - |
-| animated | 是否开启切换标签内容时的转场动画 | `boolean` | `false` | - |
-| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | `boolean` | `true` | - |
-| ellipsis | 是否省略过长的标题文字 | `boolean` | `true` | - |
-| sticky | 是否使用粘性定位布局 | `boolean` | `false` | - |
-| swipeable | 是否开启手势滑动切换 | `boolean` | `false` | - |
-| lazy-render | 是否开启标签页内容延迟渲染 | `boolean` | `true` | - |
+| v-model | 绑定当前选中标签的标识符 | *string \| number* | `0` | - |
+| type | 样式类型，可选值为`card` | *string* | `line` | - |
+| duration | 动画时间，单位秒 | *number* | `0.3` | - |
+| background | 标签栏背景色 | *string* | `white` | - |
+| line-width | 底部条宽度，默认单位 px | *string \| number* | `auto` | - |
+| line-height | 底部条高度，默认单位 px | *string \| number* | `3px` | - |
+| color | 标签主题色 | *string* | `#f44` | - |
+| title-active-color | 标题选中态颜色 | *string* | - | - |
+| title-inactive-color | 标题默认态颜色 | *string* | - | - |
+| swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | *number* | `4` | - |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | *number* | `0` | - |
+| animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` | - |
+| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` | - |
+| ellipsis | 是否省略过长的标题文字 | *boolean* | `true` | - |
+| sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
+| swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
+| lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
 
 ### Tab Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标签名称，作为匹配的标识符 | `string | number` | 标签的索引值 | 2.0.6 |
-| title | 标题 | `string` | - | - |
-| disabled | 是否禁用标签 | `boolean` | `false` | - |
+| name | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 | 2.0.6 |
+| title | 标题 | *string* | - | - |
+| disabled | 是否禁用标签 | *boolean* | `false` | - |
 
 ### Tabs Slots
 

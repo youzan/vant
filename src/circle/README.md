@@ -112,16 +112,16 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Current rate | `number` | - | - |
-| rate | Target rate | `number` | `100` | - |
-| size | Circle size | `string | number` | `100px` | - |
-| color | Progress color, passing object to render gradient | `string | object` | `#1989fa` | 2.1.4 |
-| layer-color | Layer color | `string` | `#fff` | - |
-| fill | Fill color | `string` | `none` | - |
-| speed | Animate speed（rate/s）| `number` | `0` | - |
-| text | Text | `string` | - | - |
-| stroke-width | Stroke width | `number` | `40` | - |
-| clockwise | Is clockwise | `boolean` | `true` | - |
+| v-model | Current rate | *number* | - | - |
+| rate | Target rate | *number* | `100` | - |
+| size | Circle size | *string \| number* | `100px` | - |
+| color | Progress color, passing object to render gradient | *string \| object* | `#1989fa` | 2.1.4 |
+| layer-color | Layer color | *string* | `#fff` | - |
+| fill | Fill color | *string* | `none` | - |
+| speed | Animate speed（rate/s）| *number* | `0` | - |
+| text | Text | *string* | - | - |
+| stroke-width | Stroke width | *number* | `40` | - |
+| clockwise | Is clockwise | *boolean* | `true` | - |
 
 ### Slots
 

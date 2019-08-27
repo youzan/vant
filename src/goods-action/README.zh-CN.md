@@ -75,32 +75,32 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | *boolean* | `false` | - |
 
 ### GoodsActionIcon Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| text | 按钮文字 | `string` | - | - |
-| icon | 图标 | `string` | - | - |
-| icon-class | 图标额外类名 | `any` | - | - |
-| info | 图标右上角提示信息 | `string | number` | - | - |
-| url | 跳转链接 | `string` | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | - |
-| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | - |
+| text | 按钮文字 | *string* | - | - |
+| icon | 图标 | *string* | - | - |
+| icon-class | 图标额外类名 | *any* | - | - |
+| info | 图标右上角提示信息 | *string \| number* | - | - |
+| url | 跳转链接 | *string* | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionButton Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| text | 按钮文字 | `string` | - | - |
-| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `string` | `default` | - |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | `string` | - | 2.1.8 |
-| disabled | 是否禁用按钮 | `boolean` | `false` | - | - |
-| loading | 是否显示为加载状态 | `boolean` | `false` | - | - |
-| url | 跳转链接 | `string` | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | `string | object` | - | - |
-| replace | 跳转时是否替换当前页面历史 | `boolean` | `false` | - |
+| text | 按钮文字 | *string* | - | - |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.8 |
+| disabled | 是否禁用按钮 | *boolean* | `false` | - | - |
+| loading | 是否显示为加载状态 | *boolean* | `false` | - | - |
+| url | 跳转链接 | *string* | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionIcon Slots
 

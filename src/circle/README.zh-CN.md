@@ -124,16 +124,16 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前进度 | `number` | - | - |
-| rate | 目标进度 | `number` | `100` | - |
-| size | 圆环直径，默认单位为 `px` | `string | number` | `100px` | - |
-| color | 进度条颜色，传入对象格式可以定义渐变色 | `string | object` | `#1989fa` | 2.1.4 |
-| layer-color | 轨道颜色 | `string` | `#fff` | - |
-| fill | 填充颜色 | `string` | `none` | - |
-| speed | 动画速度（单位为 rate/s）| `number` | `0` | - |
-| text | 文字 | `string` | - | - |
-| stroke-width | 进度条宽度 | `number` | `40` | - |
-| clockwise | 是否顺时针增加 | `boolean` | `true` | - |
+| v-model | 当前进度 | *number* | - | - |
+| rate | 目标进度 | *number* | `100` | - |
+| size | 圆环直径，默认单位为 `px` | *string \| number* | `100px` | - |
+| color | 进度条颜色，传入对象格式可以定义渐变色 | *string \| object* | `#1989fa` | 2.1.4 |
+| layer-color | 轨道颜色 | *string* | `#fff` | - |
+| fill | 填充颜色 | *string* | `none` | - |
+| speed | 动画速度（单位为 rate/s）| *number* | `0` | - |
+| text | 文字 | *string* | - | - |
+| stroke-width | 进度条宽度 | *number* | `40` | - |
+| clockwise | 是否顺时针增加 | *boolean* | `true` | - |
 
 ### Slots
 

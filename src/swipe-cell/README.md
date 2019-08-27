@@ -73,12 +73,12 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| name | Identifier of SwipeCell | `string | number` | - | 2.0.4 |
-| on-close | Callback function before close | `Function` | - | - |
-| disabled | Whether to disabled swipe | `boolean` | `false` | - |
-| left-width | Width of the left swipe area | `number` | `auto` | - |
-| right-width | Width of the right swipe area | `number` | `auto` | - |
-| stop-propagation | Whether to stop touchmove event propagation | `boolean` | `false` | 2.1.0 |
+| name | Identifier of SwipeCell | *string \| number* | - | 2.0.4 |
+| on-close | Callback function before close | *Function* | - | - |
+| disabled | Whether to disabled swipe | *boolean* | `false` | - |
+| left-width | Width of the left swipe area | *number* | `auto` | - |
+| right-width | Width of the right swipe area | *number* | `auto` | - |
+| stop-propagation | Whether to stop touchmove event propagation | *boolean* | `false` | 2.1.0 |
 
 ### Slots
 
@@ -98,9 +98,9 @@ export default {
 
 | Attribute | Description | Type |
 |------|------|------|
-| clickPosition | Click positon (`left` `right` `cell` `outside`) | `string` |
-| instance | SwipeCell instance | `object` |
-| detail | Detail info | `object` |
+| clickPosition | Click positon (`left` `right` `cell` `outside`) | *string* |
+| instance | SwipeCell instance | *object* |
+| detail | Detail info | *object* |
 
 ### Methods
 

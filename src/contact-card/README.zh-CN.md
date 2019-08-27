@@ -141,10 +141,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `add` `edit` | `string` | `add` | - |
-| name | 联系人姓名 | `string` | - | - |
-| tel | 联系人手机号 | `string` | - | - |
-| add-text | 添加时的文案提示 | `string` | `添加订单联系人信息` | - |
+| type | 类型，可选值为 `add` `edit` | *string* | `add` | - |
+| name | 联系人姓名 | *string* | - | - |
+| tel | 联系人手机号 | *string* | - | - |
+| add-text | 添加时的文案提示 | *string* | `添加订单联系人信息` | - |
 
 ### ContactCard Events
 
@@ -156,9 +156,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中联系人的 id | `string | number` | - | - |
-| list | 联系人列表 | `Contact[]` | `[]` | - |
-| add-text | 新建按钮文案 | `string` | `新建联系人` | - |
+| v-model | 当前选中联系人的 id | *string \| number* | - | - |
+| list | 联系人列表 | *Contact[]* | `[]` | - |
+| add-text | 新建按钮文案 | *string* | `新建联系人` | - |
 
 ### ContactList Events
 
@@ -172,11 +172,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| contact-info | 联系人信息 | `object` | `[]` | - |
-| is-edit | 是否为编辑联系人 | `boolean` | `false` | - |
-| is-saving | 是否显示保存按钮加载动画 | `boolean` | `false` | - |
-| is-deleting | 是否显示删除按钮加载动画 | `boolean` | `false` | - |
-| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
+| contact-info | 联系人信息 | *object* | `[]` | - |
+| is-edit | 是否为编辑联系人 | *boolean* | `false` | - |
+| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` | - |
+| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` | - |
+| tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - | - |
 
 ### ContactEdit Events
 
@@ -189,6 +189,6 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每位联系人的唯一标识 | `string | number` |
-| name | 联系人姓名 | `string` |
-| tel | 联系人手机号 | `string | number` |
+| id | 每位联系人的唯一标识 | *string \| number* |
+| name | 联系人姓名 | *string* |
+| tel | 联系人手机号 | *string \| number* |

@@ -132,6 +132,13 @@ export default {
       font-family: inherit;
       word-break: keep-all;
     }
+
+    em {
+      color: @van-doc-purple;
+      font-size: 12px;
+      font-family: @van-doc-code-font-family;
+      font-style: normal;
+    }
   }
 
   ul li,

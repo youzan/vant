@@ -50,9 +50,9 @@ Vue.use(Divider);
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| dashed | Whether to use dashed border | `boolean` | `false` | - |
-| hairline | Whether to use hairline | `boolean` | `true` | - |
-| content-position | Content position，can be set to `left` `right` | `string` | `center` | - |
+| dashed | Whether to use dashed border | *boolean* | `false` | - |
+| hairline | Whether to use hairline | *boolean* | `true` | - |
+| content-position | Content position，can be set to `left` `right` | *string* | `center` | - |
 
 ### Slots
 

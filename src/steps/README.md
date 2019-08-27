@@ -72,12 +72,12 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| active | Active step | `number` | 0 | - |
-| description | Description | `string` | - | - |
-| direction | Can be set to `vertical` | `string` | `horizontal` | - |
-| active-color | Active step color | `string` | `#07c160` | - |
-| active-icon | Active icon name | `string` | `checked` | - |
-| inactive-icon | Active icon name | `string` | - | - |
+| active | Active step | *number* | 0 | - |
+| description | Description | *string* | - | - |
+| direction | Can be set to `vertical` | *string* | `horizontal` | - |
+| active-color | Active step color | *string* | `#07c160` | - |
+| active-icon | Active icon name | *string* | `checked` | - |
+| inactive-icon | Active icon name | *string* | - | - |
 
 ### Step Slots
 

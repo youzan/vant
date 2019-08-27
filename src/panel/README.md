@@ -37,10 +37,10 @@ Vue.use(Panel);
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| icon | Left Icon | `string` | - | - |
-| title | Title | `string` | - | - |
-| desc | Description | `string` | - | - |
-| status | Status | `string` | - | - |
+| icon | Left Icon | *string* | - | - |
+| title | Title | *string* | - | - |
+| desc | Description | *string* | - | - |
+| status | Status | *string* | - | - |
 
 ### Slots
 

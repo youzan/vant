@@ -127,22 +127,22 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标识符，可以在回调函数的第二项参数中获取 | `string | number` | - | 2.0.3 |
-| accept | 接受的文件类型 | `string` | `image/*` | - |
-| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | `string | number` | `80px` | - |
-| preview-image | 是否在上传完成后展示预览图 | `boolean` | `true` | - |
-| preview-full-image | 是否在点击预览图后展示全屏图片预览 | `boolean` | `true` | 2.1.5 |
-| multiple | 是否开启图片多选，部分安卓机型不支持 | `boolean` | `false` | - |
-| disabled | 是否禁用文件上传 | `boolean` | `false` | - |
-| capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `string` | - | - |
-| after-read | 文件读取完成后的回调函数 | `Function` | - | - |
-| before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
-| before-delete | 文件删除前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
-| max-size | 文件大小限制，单位为`byte` | `number` | - | - |
-| max-count | 文件上传数量限制 | `number` | - | - |
-| result-type | 文件读取结果类型，可选值为`text` | `string` | `dataUrl` | - |
-| upload-text | 上传区域文字提示 | `string` | - | - |
-| image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | `string` | `cover` | 2.1.5 |
+| name | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - | 2.0.3 |
+| accept | 接受的文件类型 | *string* | `image/*` | - |
+| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` | - |
+| preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` | - |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` | 2.1.5 |
+| multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` | - |
+| disabled | 是否禁用文件上传 | *boolean* | `false` | - |
+| capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | *string* | - | - |
+| after-read | 文件读取完成后的回调函数 | *Function* | - | - |
+| before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | *Function* | - | - |
+| before-delete | 文件删除前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | *Function* | - | - |
+| max-size | 文件大小限制，单位为`byte` | *number* | - | - |
+| max-count | 文件上传数量限制 | *number* | - | - |
+| result-type | 文件读取结果类型，可选值为`text` | *string* | `dataUrl` | - |
+| upload-text | 上传区域文字提示 | *string* | - | - |
+| image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | *string* | `cover` | 2.1.5 |
 
 ### Events
 
@@ -164,5 +164,5 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 | 参数名 | 说明 | 类型 |
 |------|------|------|
-| file | 文件解析后的 file 对象 | `object` |
-| detail | 额外信息，包含 name 字段 | `object` |
+| file | 文件解析后的 file 对象 | *object* |
+| detail | 额外信息，包含 name 字段 | *object* |

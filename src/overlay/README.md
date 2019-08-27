@@ -42,10 +42,10 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| show | Whether to show overlay | `boolean` | `false` | - |
-| z-index | z-index | `number | string` | `1` | - |
-| duration | Animation duration | `number | string` | `0.3` | - |
-| class-name | ClassName | `string` | - | - |
+| show | Whether to show overlay | *boolean* | `false` | - |
+| z-index | z-index | *string \| number* | `1` | - |
+| duration | Animation duration | *string \| number* | `0.3` | - |
+| class-name | ClassName | *string* | - | - |
 
 ### Events
 

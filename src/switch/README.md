@@ -100,14 +100,14 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Check status of Switch | `any` | `false` | - |
-| loading | Whether to show loading icon | `boolean` | `false` | - |
-| disabled | Whether to disable switch | `boolean` | `false` | - |
-| size | Size of switch | `string` | `30px` | - |
-| active-color | Background color when active | `string` | `#1989fa` | - |
-| inactive-color | Background color when inactive | `string` | `#fff` | - |
-| active-value | Value when active | `any` | `true` | - |
-| inactive-value | Value when inactive | `any` | `false` | - |
+| v-model | Check status of Switch | *any* | `false` | - |
+| loading | Whether to show loading icon | *boolean* | `false` | - |
+| disabled | Whether to disable switch | *boolean* | `false` | - |
+| size | Size of switch | *string* | `30px` | - |
+| active-color | Background color when active | *string* | `#1989fa` | - |
+| inactive-color | Background color when inactive | *string* | `#fff` | - |
+| active-value | Value when active | *any* | `true` | - |
+| inactive-value | Value when inactive | *any* | `false` | - |
 
 ### Events
 

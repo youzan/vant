@@ -58,10 +58,10 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| inactive | Whether to be gray | `boolean` | `false` | - |
-| percentage | Percentage | `number` | `0` | - |
-| show-pivot | Whether to show text | `boolean` | `true` | - |
-| color | Color | `string` | `#1989fa` | - |
-| pivot-text | Text | `string` | percentage | - |
-| pivot-color | Text background color | `string` | inherit progress color | - |
-| text-color | Text color | `string` | `#fff` | - |
+| inactive | Whether to be gray | *boolean* | `false` | - |
+| percentage | Percentage | *number* | `0` | - |
+| show-pivot | Whether to show text | *boolean* | `true` | - |
+| color | Color | *string* | `#1989fa` | - |
+| pivot-text | Text | *string* | percentage | - |
+| pivot-color | Text background color | *string* | inherit progress color | - |
+| text-color | Text color | *string* | `#fff` | - |

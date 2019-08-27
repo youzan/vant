@@ -134,16 +134,16 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| autoplay | 自动轮播间隔，单位为 ms | `number` | - | - |
-| duration | 动画时长，单位为 ms | `number` | `500` | - |
-| initial-swipe | 初始位置索引值 | `number` | `0` | - |
-| loop | 是否开启循环播放 | `boolean` | `true` | - |
-| show-indicators | 是否显示指示器 | `boolean` | `true` | - |
-| indicator-color | 指示器颜色 | `string` | `#1989fa` | - |
-| vertical | 是否为纵向滚动 | `boolean` | `false` | - |
-| touchable | 是否可以通过手势滑动 | `boolean` | `true` | - |
-| width | 滑块宽度 | `number` | `auto` | - |
-| height | 滑块高度 | `number` | `auto` | - |
+| autoplay | 自动轮播间隔，单位为 ms | *number* | - | - |
+| duration | 动画时长，单位为 ms | *number* | `500` | - |
+| initial-swipe | 初始位置索引值 | *number* | `0` | - |
+| loop | 是否开启循环播放 | *boolean* | `true` | - |
+| show-indicators | 是否显示指示器 | *boolean* | `true` | - |
+| indicator-color | 指示器颜色 | *string* | `#1989fa` | - |
+| vertical | 是否为纵向滚动 | *boolean* | `false` | - |
+| touchable | 是否可以通过手势滑动 | *boolean* | `true` | - |
+| width | 滑块宽度 | *number* | `auto` | - |
+| height | 滑块高度 | *number* | `auto` | - |
 
 ### Swipe Events
 
@@ -169,7 +169,7 @@ export default {
 
 | 名称 | 说明 | 类型 |
 |------|------|------|
-| immediate | 是否跳过动画 | `boolean` |
+| immediate | 是否跳过动画 | *boolean* |
 
 ### Swipe Slots
 

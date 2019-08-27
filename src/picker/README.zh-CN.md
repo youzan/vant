@@ -194,17 +194,17 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| columns | 对象数组，配置每一列显示的数据 | `Column[]` | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | `boolean` | `false` | - |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | `string` | `top` | - |
-| title | 顶部栏标题 | `string` | `''` | - |
-| loading | 是否显示加载状态 | `boolean` | `false` | - |
-| value-key | 选项对象中，文字对应的 key | `string` | `text` | - |
-| item-height | 选项高度 | `number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `string` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `string` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `number` | `5` | - |
-| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `number` | `0` | - |
+| columns | 对象数组，配置每一列显示的数据 | *Column[]* | `[]` | - |
+| show-toolbar | 是否显示顶部栏 | *boolean* | `false` | - |
+| toolbar-position | 顶部栏位置，可选值为`bottom` | *string* | `top` | - |
+| title | 顶部栏标题 | *string* | `''` | - |
+| loading | 是否显示加载状态 | *boolean* | `false` | - |
+| value-key | 选项对象中，文字对应的 key | *string* | `text` | - |
+| item-height | 选项高度 | *number* | `44` | - |
+| confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
+| cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
+| visible-item-count | 可见的选项个数 | *number* | `5` | - |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` | - |
 
 ### Events
 
@@ -228,9 +228,9 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| values | 列中对应的备选值 | `string[]`
-| defaultIndex | 初始选中项的索引，默认为 0 | `number` |
-| className | 为对应列添加额外的类名 | `any` |
+| values | 列中对应的备选值 | *string[]*
+| defaultIndex | 初始选中项的索引，默认为 0 | *number* |
+| className | 为对应列添加额外的类名 | *any* |
 
 ### 方法
 

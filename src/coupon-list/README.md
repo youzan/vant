@@ -73,32 +73,32 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| title | Cell title | `string` | `Coupon` | - |
-| chosen-coupon | Index of chosen coupon | `number` | `-1` | - |
-| coupons | Coupon list | `Coupon[]` | `[]` | - |
-| editable | Cell editable | `boolean` | `true` | - |
-| border | Whether to show innner border | `boolean` | `true` | - |
-| currency | Currency symbol |  `string` | `¥` | - |
+| title | Cell title | *string* | `Coupon` | - |
+| chosen-coupon | Index of chosen coupon | *number* | `-1` | - |
+| coupons | Coupon list | *Coupon[]* | `[]` | - |
+| editable | Cell editable | *boolean* | `true` | - |
+| border | Whether to show innner border | *boolean* | `true` | - |
+| currency | Currency symbol |  *string* | `¥` | - |
 
 ### CouponList Props
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Current exchange code | `string` | - | - |
-| chosen-coupon | Index of chosen coupon | `number` | `-1` | - |
-| coupons | Coupon list | `Coupon[]` | `[]` | - |
-| disabled-coupons | Disabled coupon list | `Coupon[]` | `[]` | - |
-| enabled-title | Title of coupon list | `string` | `Available` | - | - |
-| disabled-title | Title of disabled coupon list | `string` | `Unavailable` | - | - |
-| exchange-button-text | Exchange button text | `string` | `Exchange` | - |
-| exchange-button-loading | Whether to show loading in exchange button | `boolean` | `false` | - |
-| exchange-button-disabled | Whether to disable exchange button | `boolean` | `false` | - |
-| exchange-min-length | Min length to enable exchange button | `number` | `1` | - |
-| displayed-coupon-index | Index of displayed coupon | `number` | - | - |
-| close-button-text | Close button text | `string` | `Close` | - |
-| input-placeholder | Input placeholder | `string` | `Coupon code` | - |
-| currency | Currency symbol |  `string` | `¥` | - |
-| empty-image | Placeholder image when list is empty | `string` | `https://img.yzcdn.cn/vant/coupon-empty.png` | - |
+| v-model | Current exchange code | *string* | - | - |
+| chosen-coupon | Index of chosen coupon | *number* | `-1` | - |
+| coupons | Coupon list | *Coupon[]* | `[]` | - |
+| disabled-coupons | Disabled coupon list | *Coupon[]* | `[]` | - |
+| enabled-title | Title of coupon list | *string* | `Available` | - | - |
+| disabled-title | Title of disabled coupon list | *string* | `Unavailable` | - | - |
+| exchange-button-text | Exchange button text | *string* | `Exchange` | - |
+| exchange-button-loading | Whether to show loading in exchange button | *boolean* | `false` | - |
+| exchange-button-disabled | Whether to disable exchange button | *boolean* | `false` | - |
+| exchange-min-length | Min length to enable exchange button | *number* | `1` | - |
+| displayed-coupon-index | Index of displayed coupon | *number* | - | - |
+| close-button-text | Close button text | *string* | `Close` | - |
+| input-placeholder | Input placeholder | *string* | `Coupon code` | - |
+| currency | Currency symbol |  *string* | `¥` | - |
+| empty-image | Placeholder image when list is empty | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` | - |
 
 ### CouponList Events
 
@@ -111,13 +111,13 @@ export default {
 
 | Key | Description | Type |
 |------|------|------|
-| id | Id | `string` |
-| name | Name | `string` |
-| condition | Condition | `string` |
-| startAt | Start time (Timestmap, unit second) | `number` |
-| endAt | End time (Timestmap, unit second) | `number` |
-| description | Description | `string` |
-| reason | Unavailable reason | `string` |
-| value | Value | `number` |
-| valueDesc | Value Text | `string` |
-| unitDesc | Unit Text | `string` |
+| id | Id | *string* |
+| name | Name | *string* |
+| condition | Condition | *string* |
+| startAt | Start time (Timestmap, unit second) | *number* |
+| endAt | End time (Timestmap, unit second) | *number* |
+| description | Description | *string* |
+| reason | Unavailable reason | *string* |
+| value | Value | *number* |
+| valueDesc | Value Text | *string* |
+| unitDesc | Unit Text | *string* |
