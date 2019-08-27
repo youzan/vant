@@ -12,7 +12,6 @@ export default createComponent({
     ...routeProps,
     type: String,
     text: String,
-    color: String,
     loading: Boolean,
     disabled: Boolean
   },
@@ -49,7 +48,6 @@ export default createComponent({
         square
         size="large"
         type={this.type}
-        color={this.color}
         loading={this.loading}
         disabled={this.disabled}
         onClick={this.onClick}
