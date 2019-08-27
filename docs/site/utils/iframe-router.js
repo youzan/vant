@@ -34,7 +34,7 @@ export function initIframeRouter() {
 
     // should preserve hash for anchor
     if (window.vueRouter.currentRoute.path !== path) {
-      window.vueRouter.replace(path);
+      window.vueRouter.replace(path).catch(() => {});
     }
   };
 }
