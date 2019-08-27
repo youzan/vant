@@ -74,7 +74,7 @@ Vue.use(SubmitBar);
 |------|------|------|------|------|
 | price | 价格（单位分） | `number` | - | - |
 | label | 价格左侧文案 | `string` | `合计：` | - |
-| suffix-label | 价格右侧文案 | `string` | - | 2.0.0 |
+| suffix-label | 价格右侧文案 | `string` | - | - |
 | button-text | 按钮文字 | `string` | - | - |
 | button-type | 按钮类型 | `string` | `danger` | - |
 | tip | 提示文案 |  `string` | - | - |

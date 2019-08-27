@@ -94,7 +94,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 按钮文字 | `string` | - | - |
-| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `string` | `default` | 2.0.0 |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `string` | `default` | - |
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | `string` | - | 2.1.8 |
 | disabled | 是否禁用按钮 | `boolean` | `false` | - | - |
 | loading | 是否显示为加载状态 | `boolean` | `false` | - | - |

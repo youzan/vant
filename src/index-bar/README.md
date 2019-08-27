@@ -61,19 +61,19 @@ export default {
 
 ### IndexBar Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| index-list | Index List | `string[] | number[]` | `A-Z` |
-| z-index | z-index | `number` | `1` |
-| sticky | Whether to enable anchor sticky top | `boolean` | `true` |
-| sticky-offset-top | Anchor offset top when sticky | `number` | `0` |
-| highlight-color | Index character highlight color | `string` | `#07c160` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| index-list | Index List | `string[] | number[]` | `A-Z` | - |
+| z-index | z-index | `number` | `1` | - |
+| sticky | Whether to enable anchor sticky top | `boolean` | `true` | - |
+| sticky-offset-top | Anchor offset top when sticky | `number` | `0` | 2.0.7 |
+| highlight-color | Index character highlight color | `string` | `#07c160` | - | - |
 
 ### IndexAnchor Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| index | Index | `string | number` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| index | Index | `string | number` | - | - |
 
 ### IndexBar Events
 

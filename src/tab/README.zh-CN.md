@@ -192,7 +192,7 @@ export default {
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `number` | `4` | - |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `number` | `0` | - |
 | animated | 是否开启切换标签内容时的转场动画 | `boolean` | `false` | - |
-| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | `boolean` | `true` | 2.0.0 |
+| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | `boolean` | `true` | - |
 | ellipsis | 是否省略过长的标题文字 | `boolean` | `true` | - |
 | sticky | 是否使用粘性定位布局 | `boolean` | `false` | - |
 | swipeable | 是否开启手势滑动切换 | `boolean` | `false` | - |

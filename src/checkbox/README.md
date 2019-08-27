@@ -143,24 +143,24 @@ export default {
 
 ### Checkbox Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| name | Checkbox name | `any` | - |
-| shape | Can be set to `square` | `string` | `round` |
-| v-model | Check status | `boolean` | `false` |
-| disabled | Diable checkbox | `boolean` | `false` |
-| icon-size | Icon size | `string | number` | `20px` |
-| label-disabled | Whether to disable label click | `boolean` | `false` |
-| label-position | Can be set to `left` | `string` | `right` |
-| checked-color | Checked color | `string` | `#1989fa` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| name | Checkbox name | `any` | - | - |
+| shape | Can be set to `square` | `string` | `round` | - |
+| v-model | Check status | `boolean` | `false` | - |
+| disabled | Diable checkbox | `boolean` | `false` | - |
+| icon-size | Icon size | `string | number` | `20px` | - |
+| label-disabled | Whether to disable label click | `boolean` | `false` | - |
+| label-position | Can be set to `left` | `string` | `right` | - |
+| checked-color | Checked color | `string` | `#1989fa` | - | - |
 
 ### CheckboxGroup Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Names of all checked checkboxes | `any[]` | - |
-| disabled | Disable all checkboxes | `boolean` | `false` |
-| max | Maximum amount of checked options | `number` | `0`(Unlimited) |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| v-model | Names of all checked checkboxes | `any[]` | - | - |
+| disabled | Disable all checkboxes | `boolean` | `false` | - |
+| max | Maximum amount of checked options | `number` | `0`(Unlimited) | - |
 
 ### Checkbox Events
 

@@ -50,15 +50,15 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 
 ### Options
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| loading | Src of the image while loading | `string` | - |
-| error | Src of the image upon load fail | `string` | - |
-| preload | Proportion of pre-loading height | `string` | - |
-| attempt | Attempts count | `number` | `3` |
-| listenEvents | Events that you want vue listen for | `string[]` | `scroll`... |
-| adapter | Dynamically modify the attribute of element | `object` | - |
-| filter | The image's listener filter | `object` | - |
-| lazyComponent | Lazyload component | `boolean` | `false` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| loading | Src of the image while loading | `string` | - | - |
+| error | Src of the image upon load fail | `string` | - | - |
+| preload | Proportion of pre-loading height | `string` | - | - |
+| attempt | Attempts count | `number` | `3` | - |
+| listenEvents | Events that you want vue listen for | `string[]` | `scroll`... | - |
+| adapter | Dynamically modify the attribute of element | `object` | - | - |
+| filter | The image's listener filter | `object` | - | - |
+| lazyComponent | Lazyload component | `boolean` | `false` | - |
 
 See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)
