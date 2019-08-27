@@ -32,6 +32,6 @@ exports[`renders demo correctly 1`] = `
       迷你按钮
     </span></button></div>
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">URL 跳转</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">路由跳转</span></button></div>
-  <div><button class="van-button van-button--default van-button--normal" style="border-color: #7232dd; color: rgb(255, 255, 255); background-color: rgb(114, 50, 221);"><span class="van-button__text">自定义颜色</span></button> <button class="van-button van-button--default van-button--normal van-button--plain" style="border-color: #7232dd; color: rgb(114, 50, 221);"><span class="van-button__text">自定义颜色</span></button></div>
+  <div><button class="van-button van-button--default van-button--normal" style="border-color: #7232dd; color: rgb(255, 255, 255); background: rgb(114, 50, 221);"><span class="van-button__text">自定义颜色</span></button> <button class="van-button van-button--default van-button--normal van-button--plain" style="border-color: #7232dd; color: rgb(114, 50, 221);"><span class="van-button__text">自定义颜色</span></button></div>
 </div>
 `;
