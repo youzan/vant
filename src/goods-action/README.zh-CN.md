@@ -22,26 +22,10 @@ Vue
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon
-    icon="chat-o"
-    text="客服"
-    @click="onClickIcon"
-  />
-  <van-goods-action-icon
-    icon="cart-o"
-    text="购物车"
-    @click="onClickIcon"
-  />
-  <van-goods-action-button
-    type="warning"
-    text="加入购物车"
-    @click="onClickButton"
-  />
-  <van-goods-action-button
-    type="danger"
-    text="立即购买"
-    @click="onClickButton"
-  />
+  <van-goods-action-icon icon="chat-o" text="客服" @click="onClickIcon" />
+  <van-goods-action-icon icon="cart-o" text="购物车" @click="onClickIcon" />
+  <van-goods-action-button type="warning" text="加入购物车" @click="onClickButton" />
+  <van-goods-action-button type="danger" text="立即购买" @click="onClickButton" />
 </van-goods-action>
 ```
 
@@ -64,27 +48,24 @@ export default {
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon
-    icon="chat-o"
-    text="客服"
-  />
-  <van-goods-action-icon
-    info="5"
-    icon="cart-o"
-    text="购物车"
-  />
-  <van-goods-action-icon
-    icon="shop-o"
-    text="店铺"
-  />
-  <van-goods-action-button
-    type="warning"
-    text="加入购物车"
-  />
-  <van-goods-action-button
-    type="danger"
-    text="立即购买"
-  />
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
+```
+
+### 自定义按钮颜色
+
+通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button color="#be99ff" type="warning" text="加入购物车" />
+  <van-goods-action-button color="#7232dd" type="danger" text="立即购买" />
 </van-goods-action>
 ```
 
@@ -114,6 +95,7 @@ export default {
 |------|------|------|------|------|
 | text | 按钮文字 | `string` | - | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `string` | `default` | 2.0.0 |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | `string` | - | 2.1.8 |
 | disabled | 是否禁用按钮 | `boolean` | `false` | - | - |
 | loading | 是否显示为加载状态 | `boolean` | `false` | - | - |
 | url | 跳转链接 | `string` | - | - |

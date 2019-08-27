@@ -3,57 +3,29 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
-        <van-goods-action-icon
-          icon="chat-o"
-          :text="$t('icon1')"
-          @click="onClickIcon"
-        />
-        <van-goods-action-icon
-          icon="cart-o"
-          :text="$t('icon2')"
-          @click="onClickIcon"
-        />
-        <van-goods-action-button
-          type="warning"
-          :text="$t('button1')"
-          @click="onClickButton"
-        />
-        <van-goods-action-button
-          type="danger"
-          :text="$t('button2')"
-          @click="onClickButton"
-        />
+        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" @click="onClickIcon" />
+        <van-goods-action-icon icon="cart-o" :text="$t('icon2')" @click="onClickIcon" />
+        <van-goods-action-button type="warning" :text="$t('button1')" @click="onClickButton" />
+        <van-goods-action-button type="danger" :text="$t('button2')" @click="onClickButton" />
       </van-goods-action>
     </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-goods-action>
-        <van-goods-action-icon
-          icon="chat-o"
-          :text="$t('icon1')"
-          @click="onClickIcon"
-        />
-        <van-goods-action-icon
-          icon="cart-o"
-          info="5"
-          :text="$t('icon2')"
-          @click="onClickIcon"
-        />
-        <van-goods-action-icon
-          icon="shop-o"
-          :text="$t('icon3')"
-          @click="onClickIcon"
-        />
-        <van-goods-action-button
-          type="warning"
-          :text="$t('button1')"
-          @click="onClickButton"
-        />
-        <van-goods-action-button
-          type="danger"
-          :text="$t('button2')"
-          @click="onClickButton"
-        />
+        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" />
+        <van-goods-action-icon icon="cart-o" info="5" :text="$t('icon2')" />
+        <van-goods-action-icon icon="shop-o" :text="$t('icon3')" />
+        <van-goods-action-button type="warning" :text="$t('button1')" />
+        <van-goods-action-button type="danger" :text="$t('button2')" />
+      </van-goods-action>
+    </demo-block>
+
+    <demo-block :title="$t('customButtonColor')">
+      <van-goods-action>
+        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" />
+        <van-goods-action-icon icon="cart-o" :text="$t('icon2')" />
+        <van-goods-action-button color="#be99ff" type="warning" :text="$t('button1')" />
+        <van-goods-action-button color="#7232dd" type="danger" :text="$t('button2')" />
       </van-goods-action>
     </demo-block>
   </demo-section>
@@ -70,7 +42,8 @@ export default {
       icon3: '店铺',
       button1: '加入购物车',
       button2: '立即购买',
-      title2: '图标提示'
+      title2: '图标提示',
+      customButtonColor: '自定义按钮颜色'
     },
     'en-US': {
       clickIcon: 'Click Icon',
@@ -80,7 +53,8 @@ export default {
       icon3: 'Icon3',
       button1: 'Button1',
       button2: 'Button2',
-      title2: 'Icon info'
+      title2: 'Icon info',
+      customButtonColor: 'Custom Button Color'
     }
   },
   methods: {

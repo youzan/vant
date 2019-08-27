@@ -22,26 +22,10 @@ Vue
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon
-    icon="chat-o"
-    text="Icon1"
-    @click="onClickIcon"
-  />
-  <van-goods-action-icon
-    icon="cart-o"
-    text="Icon2"
-    @click="onClickIcon"
-  />
-  <van-goods-action-button
-    type="warning"
-    text="Button1"
-    @click="onClickButton"
-  />
-  <van-goods-action-button
-    type="danger"
-    text="Button2"
-    @click="onClickButton"
-  />
+  <van-goods-action-icon icon="chat-o" text="Icon1" @click="onClickIcon" />
+  <van-goods-action-icon icon="cart-o" text="Icon2" @click="onClickIcon" />
+  <van-goods-action-button type="warning" text="Button1" @click="onClickButton" />
+  <van-goods-action-button type="danger" text="Button2" @click="onClickButton" />
 </van-goods-action>
 ```
 
@@ -64,27 +48,22 @@ Use `info` prop to show messages in upper right corner of icon
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon
-    icon="chat-o"
-    text="Icon1"
-  />
-  <van-goods-action-icon
-    info="5"
-    icon="cart-o"
-    text="Icon2"
-  />
-  <van-goods-action-icon
-    icon="shop-o"
-    text="Icon3"
-  />
-  <van-goods-action-button
-    type="warning"
-    text="Button1"
-  />
-  <van-goods-action-button
-    type="danger"
-    text="Button2"
-  />
+  <van-goods-action-icon icon="chat-o" text="Icon1" />
+  <van-goods-action-icon icon="cart-o" text="Icon2" info="5" />
+  <van-goods-action-icon icon="shop-o" text="Icon3" />
+  <van-goods-action-button type="warning" text="Button1" />
+  <van-goods-action-button type="danger" text="Button2" />
+</van-goods-action>
+```
+
+### Custom Button Color
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="Icon1" />
+  <van-goods-action-icon icon="shop-o" text="Icon2" />
+  <van-goods-action-button color="#be99ff" type="warning" text="Button1" />
+  <van-goods-action-button color="#7232dd" type="danger" text="Button2" />
 </van-goods-action>
 ```
 
@@ -114,6 +93,7 @@ Use `info` prop to show messages in upper right corner of icon
 |------|------|------|------|
 | type | Button type, Can be set to `primary` `info` `warning` `danger` | `string` | `default` |
 | text | Button text | `string` | - |
+| color | Button color, support linear-gradient | `string` | - |
 | primary | Is primary button (red color) | `boolean` | `false` |
 | disabled | Whether to disable button | `boolean` | `false` |
 | loading | Whether show loading status | `boolean` | `false` |

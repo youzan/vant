@@ -97,7 +97,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | `string` | `default` |
 | size | Can be set to `large` `small` `mini` | `string` | `normal` |
 | text | Text | `string` | - |
-| color | Color | `string` | - |
+| color | Color, support linear-gradient | `string` | - |
 | icon | Left Icon | `string` | - |
 | tag | HTML Tag | `string` | `button` |
 | native-type | Native Type Attribute | `string` | `''` |
