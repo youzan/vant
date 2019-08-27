@@ -66,19 +66,19 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 
 Search support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| label | Search label | `string` | - |
-| shape | Can be set to `round` | `string` | `square` |
-| background | Background color | `string` | `#f2f2f2` |
-| clearable | Whether to be clearable | `boolean` | `true` |
-| show-action | Whether to show right button | `boolean` | `false` |
-| disabled | Whether to disable field | `boolean` | `false` |
-| readonly | Whether to be readonly | `boolean` | `false` |
-| error | Whether to show error info | `boolean` | `false` |
-| input-align | Input text align, can be set to `center` `right` | `string` | `left` |
-| left-icon | Left icon name | `string` | `search` |
-| right-icon | Right icon name | `string` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| label | Search label | `string` | - | - |
+| shape | Can be set to `round` | `string` | `square` | - |
+| background | Background color | `string` | `#f2f2f2` | - |
+| clearable | Whether to be clearable | `boolean` | `true` | - |
+| show-action | Whether to show right button | `boolean` | `false` | - |
+| disabled | Whether to disable field | `boolean` | `false` | - |
+| readonly | Whether to be readonly | `boolean` | `false` | - |
+| error | Whether to show error info | `boolean` | `false` | - |
+| input-align | Input text align, can be set to `center` `right` | `string` | `left` | - |
+| left-icon | Left icon name | `string` | `search` | - |
+| right-icon | Right icon name | `string` | - | - |
 
 ### Events
 

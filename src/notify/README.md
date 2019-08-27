@@ -64,16 +64,16 @@ export default {
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
 | Notify.resetDefaultOptions | - | `void` | Reset default options of all notifies |
 
-### Props
+### Options
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| type | Can be set to `primary` `info` `warning` | `string` | `danger` |
-| message | Message | `string` | - |
-| duration | Duration(ms), won't disappear if value is 0 | `number` | `3000` |
-| color | Message color | `string` | `#fff` | |
-| background | Background color | `string` | `#f44` |
-| className | Custom className | `any` | - |
-| onClick | Callback function after click | `Function` | - |
-| onOpened | Callback function after opened | `Function` | - |
-| onClose | Callback function after close | `Function` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| type | Can be set to `primary` `info` `warning` | `string` | `danger` | - |
+| message | Message | `string` | - | - |
+| duration | Duration(ms), won't disappear if value is 0 | `number` | `3000` | - |
+| color | Message color | `string` | `#fff` | | - |
+| background | Background color | `string` | `#f44` | - |
+| className | Custom className | `any` | - | - |
+| onClick | Callback function after click | `Function` | - | - |
+| onOpened | Callback function after opened | `Function` | - | - |
+| onClose | Callback function after close | `Function` | - | - |

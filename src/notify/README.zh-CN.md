@@ -85,6 +85,6 @@ export default {
 | color | 字体颜色 | `string` | `#fff` | - |
 | background | 背景颜色 | `string` | `#f44` | - |
 | className | 自定义类名 | `any` | - | - |
-| onClick | 点击时的回调函数 | `Function` | - | 2.0.0 |
-| onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |
-| onClose | 关闭时的回调函数 | `Function` | - | 2.0.0 |
+| onClick | 点击时的回调函数 | `Function` | - | - |
+| onOpened | 完全展示后的回调函数 | `Function` | - | - |
+| onClose | 关闭时的回调函数 | `Function` | - | - |

@@ -118,7 +118,7 @@ export default {
 | name | 标识符 | `any` | - | - |
 | shape | 形状，可选值为 `square` | `string` | `round` | - |
 | disabled | 是否为禁用状态 | `boolean` | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
+| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | - |
 | label-disabled | 是否禁用文本内容点击 | `boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `string` | `right` | - |
 | checked-color | 选中状态颜色 | `string` | `#1989fa` | - |

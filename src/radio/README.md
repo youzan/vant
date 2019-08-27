@@ -107,22 +107,22 @@ export default {
 
 ### Radio Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| name | Radio name | `any` | - |
-| shape | Can be set to `square` | `string` | `round` |
-| disabled | Whether to disable radio | `boolean` | `false` |
-| icon-size | Icon size | `string | number` | `20px` |
-| label-disabled | Whether to disable label click | `boolean` | `false` |
-| label-position | Can be set to `left` | `string` | `right` |
-| checked-color | Checked color | `string` | `#1989fa` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| name | Radio name | `any` | - | - |
+| shape | Can be set to `square` | `string` | `round` | - |
+| disabled | Whether to disable radio | `boolean` | `false` | - |
+| icon-size | Icon size | `string | number` | `20px` | - |
+| label-disabled | Whether to disable label click | `boolean` | `false` | - |
+| label-position | Can be set to `left` | `string` | `right` | - |
+| checked-color | Checked color | `string` | `#1989fa` | - | - |
 
 ### RadioGroup Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Name of checked radio | `any` | - |
-| disabled | Diable all radios | `boolean` | `false` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| v-model | Name of checked radio | `any` | - | - |
+| disabled | Diable all radios | `boolean` | `false` | - |
 
 ### Radio Events
 

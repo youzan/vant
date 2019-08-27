@@ -40,12 +40,12 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| show | Whether to show overlay | `boolean` | `false` |
-| z-index | z-index | `number | string` | `1` |
-| duration | Animation duration | `number | string` | `0.3` |
-| class-name | ClassName | `string` | - |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| show | Whether to show overlay | `boolean` | `false` | - |
+| z-index | z-index | `number | string` | `1` | - |
+| duration | Animation duration | `number | string` | `0.3` | - |
+| class-name | ClassName | `string` | - | - |
 
 ### Events
 

@@ -149,11 +149,11 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前选中标签的名称或索引值 | `string | number` | `0` | - |
 | fixed | 是否固定在底部 | `boolean` | `true` | - |
-| border | 是否显示外边框 | `boolean` | `true` | 2.0.0 |
+| border | 是否显示外边框 | `boolean` | `true` | - |
 | z-index | 元素 z-index | `number` | `1` | - |
 | active-color | 选中标签的颜色 | `string` | `#1989fa` | - |
-| inactive-color | 未选中标签的颜色 | `string` | `#7d7e80` | 2.0.0 |
-| route | 是否开启路由模式 | `boolean` | `false` | 2.0.0 |
+| inactive-color | 未选中标签的颜色 | `string` | `#7d7e80` | - |
+| route | 是否开启路由模式 | `boolean` | `false` | - |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |
 
 ### Tabbar Events
@@ -166,7 +166,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标签名称，作为匹配的标识符 | `string | number` | 当前标签的索引值 | 2.0.0 |
+| name | 标签名称，作为匹配的标识符 | `string | number` | 当前标签的索引值 | - |
 | icon | 图标名称或图片链接，可选值见 Icon 组件| `string` | - | - |
 | dot | 是否显示小红点 | `boolean` | - | - |
 | info | 图标右上角提示信息 | `string | number` | - | - |

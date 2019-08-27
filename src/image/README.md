@@ -66,18 +66,18 @@ Vue.use(Lazyload);
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
 | src | Src | `string` | - | - |
 | fit | Fit mode | `string` | `fill` | - |
 | alt | Alt | `string` | - | - |
 | width | Width | `string | number` | - | - |
 | height | Height | `string | number` | - | - |
-| radius | Border Radius | `string | number` | `0` | - |
+| radius | Border Radius | `string | number` | `0` | 2.1.6 |
 | round | Whether to be round | `boolean` | `false` | - |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | `boolean` | `false` | - |
-| show-error | Whether to show error placeholder | `boolean` | `true` |
-| show-loading | Whether to show loading placeholder | `boolean` | `true` |
+| show-error | Whether to show error placeholder | `boolean` | `true` | 2.0.9 |
+| show-loading | Whether to show loading placeholder | `boolean` | `true` | 2.0.9 |
 
 ### fit optional value
 

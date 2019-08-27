@@ -125,7 +125,7 @@ Vue.use(Field);
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|------|
+|------|------|------|------|------|
 | label | 输入框左侧文本 | `string` | - | - |
 | value | 当前输入的值 | `string | number` | - | - |
 | type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | `string` | `text` | - |
@@ -137,12 +137,12 @@ Vue.use(Field);
 | readonly | 是否只读 | `boolean` | `false` | - |
 | required | 是否显示表单必填星号 | `boolean` | `false` | - |
 | clearable | 是否启用清除控件 | `boolean` | `false` | - |
-| clickable | 是否开启点击反馈 | `boolean` | `false` | 2.0.0 |
+| clickable | 是否开启点击反馈 | `boolean` | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `boolean` | `false` | - |
 | error | 是否将输入内容标红 | `boolean` | `false` | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | 2.0.4 |
 | error-message | 底部错误提示文案，为空时不展示 | `string` | `''` | - 
-| label-class | 左侧文本额外类名 | `any` | - | 2.0.0 |
+| label-class | 左侧文本额外类名 | `any` | - | - |
 | label-width | 左侧文本宽度，可指定单位，默认为 px | `string | number` | `90px` | - |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | `string` | `left` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `string` | `left` | - |

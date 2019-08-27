@@ -111,7 +111,7 @@ export default {
 | onClose | 关闭时的回调函数 | `Function` | - | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | `Function` | - | 2.0.3 |
 | asyncClose | 是否开启异步关闭 | `boolean` | `false` | - |
-| closeOnPopstate | 是否在页面回退时自动关闭 | `boolean` | `false` | 2.0.0 |
+| closeOnPopstate | 是否在页面回退时自动关闭 | `boolean` | `false` | - |
 | className | 自定义类名 | `any` | - | - |
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | - |
 | maxZoom | 手势缩放时，最大缩放比例 | `number` | `3` | - |
@@ -130,7 +130,7 @@ export default {
 | loop | 是否开启循环播放 | `boolean` | `true` | - |
 | swipe-duration | 动画时长，单位为 ms | `number` | `500` | - |
 | async-close | 是否开启异步关闭 | `boolean` | `false` | - |
-| close-on-popstate | 是否在页面回退时自动关闭 | `boolean` | `false` |
+| close-on-popstate | 是否在页面回退时自动关闭 | `boolean` | `false` | - |
 | class-name | 自定义类名 | `any` | - | - |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `boolean` | `false` | - |
 | max-zoom | 手势缩放时，最大缩放比例 | `number` | `3` | - |

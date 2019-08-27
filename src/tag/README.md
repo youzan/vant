@@ -73,15 +73,15 @@ Vue.use(Tag);
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` `warning` | `string` | `default` |
-| size | Size, can be set to `large` `medium` | `string` | - |
-| color | Custom color | `string` | - |
-| plain | Whether to be plain style | `boolean` | `false` |
-| round | Whether to be round style | `boolean` | `false` |
-| mark | Whether to be mark style | `boolean` | `false` |
-| text-color | Text color | `string` | `white` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| type | Type, can be set to `primary` `success` `danger` `warning` | `string` | `default` | - |
+| size | Size, can be set to `large` `medium` | `string` | - | - |
+| color | Custom color | `string` | - | - |
+| plain | Whether to be plain style | `boolean` | `false` | - |
+| round | Whether to be round style | `boolean` | `false` | - |
+| mark | Whether to be mark style | `boolean` | `false` | - |
+| text-color | Text color | `string` | `white` | - |
 
 ### Slots
 

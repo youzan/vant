@@ -153,7 +153,7 @@ export default {
 | shape | 形状，可选值为 `square` | `string` | `round` | - |
 | v-model | 是否为选中状态 | `boolean` | `false` | - |
 | disabled | 是否禁用复选框 | `boolean` | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
+| icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | - |
 | label-disabled | 是否禁用复选框文本点击 | `boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `string` | `right` | - |
 | checked-color | 选中状态颜色 | `string` | `#1989fa` | - |

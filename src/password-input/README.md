@@ -79,14 +79,14 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| value | Password value | `string` | `''` |
-| length | Maxlength of password | `number` | `6` |
-| mask | Whether to mask value | `boolean` | `true` |
-| info | Bottom info | `string` | - |
-| error-info | Bottom error info | `string` | - |
-| gutter | Gutter of input | `number | string` | `0` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| value | Password value | `string` | `''` | - |
+| length | Maxlength of password | `number` | `6` | - |
+| mask | Whether to mask value | `boolean` | `true` | - |
+| info | Bottom info | `string` | - | - |
+| error-info | Bottom error info | `string` | - | - |
+| gutter | Gutter of input | `number | string` | `0` | - |
 
 ### Events
 

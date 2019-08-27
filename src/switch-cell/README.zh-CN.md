@@ -61,8 +61,8 @@ export default {
 |------|------|------|------|------|
 | v-model | 开关状态 | `any` | `false` | - |
 | title | 左侧标题 |  `string` | `''` | - |
-| border | 是否展示单元格内边框 | `boolean` | `true` | 2.0.0 |
-| cell-size | 单元格大小，可选值为 `large` | `string` | 2.0.0 |
+| border | 是否展示单元格内边框 | `boolean` | `true` | - |
+| cell-size | 单元格大小，可选值为 `large` | `string` | - |
 | loading | 是否为加载状态 |  `boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `boolean` | `false` | - |
 | size | 开关尺寸 | `string` | `24px` | - |

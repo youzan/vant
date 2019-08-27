@@ -114,10 +114,10 @@ export default {
 | cancel-text | 取消按钮文字 | `string` | - | - |
 | overlay | 是否显示遮罩层 | `boolean` | `true` | - |
 | round | 是否显示圆角 | `boolean` | `false` | 2.0.9 |
-| close-on-click-action | 是否在点击选项后关闭 | `boolean` | `false` | 2.0.0 |
+| close-on-click-action | 是否在点击选项后关闭 | `boolean` | `false` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `true` | - |
 | lazy-render | 是否在显示弹层时才渲染节点 | `boolean` | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | 2.0.0 |
+| lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | - |
 | duration | 动画时长，单位秒 | `number` | `0.3` | 2.0.3 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | - | - |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |

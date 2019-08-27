@@ -174,33 +174,33 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ### Tabs Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Index of active tab | `string | number` | `0` |
-| type | Can be set to `line` `card` | `string` | `line` |
-| duration | Toggle tab's animation time | `number` | `0.3` | - |
-| background | Background color | `string` | `white` |
-| line-width | Width of tab line | `number | string` | Width of active tab |
-| line-height | Height of tab line | `number | string` | `3px` |
-| color | Tab color | `string` | `#f44` |
-| title-active-color | Title active color | `string` | - |
-| title-inactive-color | Title inactive color | `string` | - |
-| swipe-threshold | Set swipe tabs threshold | `number` | `4` | - |
-| offset-top | Offset top when use sticky mode | `number` | `0` |
-| animated | Whether to change tabs with animation | `boolean` | `false` |
-| border | Whether to show border when `type="line"` | `boolean` | `true` |
-| ellipsis | Whether to ellipsis too long title | `boolean` | `true` |
-| sticky | Whether to use sticky mode | `boolean` | `false` |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | `boolean` | `false` |
-| lazy-render | Whether to enable tab content lazy render | `boolean` | `true` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| v-model | Index of active tab | `string | number` | `0` | - |
+| type | Can be set to `line` `card` | `string` | `line` | - |
+| duration | Toggle tab's animation time | `number` | `0.3` | - | - |
+| background | Background color | `string` | `white` | - |
+| line-width | Width of tab line | `number | string` | Width of active tab | - |
+| line-height | Height of tab line | `number | string` | `3px` | - |
+| color | Tab color | `string` | `#f44` | - |
+| title-active-color | Title active color | `string` | - | - |
+| title-inactive-color | Title inactive color | `string` | - | - |
+| swipe-threshold | Set swipe tabs threshold | `number` | `4` | - | - |
+| offset-top | Offset top when use sticky mode | `number` | `0` | - |
+| animated | Whether to change tabs with animation | `boolean` | `false` | - |
+| border | Whether to show border when `type="line"` | `boolean` | `true` | - |
+| ellipsis | Whether to ellipsis too long title | `boolean` | `true` | - |
+| sticky | Whether to use sticky mode | `boolean` | `false` | - |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `boolean` | `false` | - |
+| lazy-render | Whether to enable tab content lazy render | `boolean` | `true` | - |
 
 ### Tab Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| name | Identifier | `string | number` | Index of tab |
-| title | Title | `string` | - |
-| disabled | Whether to disable tab | `boolean` | `false` |
+| Attribute | Description | Type | Default | Version |
+|------|------|------|------|------|
+| name | Identifier | `string | number` | Index of tab | - |
+| title | Title | `string` | - | - |
+| disabled | Whether to disable tab | `boolean` | `false` | - |
 
 ### Tabs Slots
 

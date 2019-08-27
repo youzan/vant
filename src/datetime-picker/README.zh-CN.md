@@ -160,7 +160,7 @@ export default {
 | max-hour | 可选的最大小时，针对 time 类型 | `number` | `23` | - |
 | min-minute | 可选的最小分钟，针对 time 类型 | `number` | `0` | - |
 | max-minute | 可选的最大分钟，针对 time 类型 | `number` | `59` | - |
-| filter | 选项过滤函数 | `(type, values) => values` | - | 2.0.0 |
+| filter | 选项过滤函数 | `(type, values) => values` | - | - |
 | formatter | 选项格式化函数 | `(type, value) => value` | - | - |
 | title | 顶部栏标题 | `string` | `''` | - |
 | show-toolbar | 是否显示顶部栏 | `boolean` | `false` | - |
