@@ -110,7 +110,7 @@ export default {
 | delete-button-text | 删除按钮文字 | `string` | `删除` | - |
 | show-delete-key | 是否展示删除按钮 | `boolean` | `true` | - |
 | hide-on-click-outside | 点击外部时是否收起键盘 | `boolean` | `true` | - |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |
 
 ### Events
 

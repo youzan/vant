@@ -149,20 +149,20 @@ export default {
 |------|------|------|------|------|
 | title | 标题 | `string` | - | - |
 | message | 文本内容，支持通过`\n`换行 | `string` | - | - |
-| messageAlign | 内容对齐方式，可选值为`left` `right` | `string` | `center` | 1.5.0 |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | `string` | `center` | - |
 | className | 自定义类名 | `any` | - | - |
 | showConfirmButton | 是否展示确认按钮 | `boolean` | `true` | - |
 | showCancelButton | 是否展示取消按钮 | `boolean` | `false` | - |
 | cancelButtonText | 取消按钮文案 | `string` | `取消` | - |
-| cancelButtonColor | 取消按钮颜色 | `string` | `#000` | 1.6.14 |
+| cancelButtonColor | 取消按钮颜色 | `string` | `#000` | - |
 | confirmButtonText | 确认按钮文案 | `string` | `确认` | - |
-| confirmButtonColor | 确认按钮颜色 | `string` | `#1989fa` | 1.6.14 |
+| confirmButtonColor | 确认按钮颜色 | `string` | `#1989fa` | - |
 | overlay | 是否展示遮罩层 | `boolean` | `true` | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | `boolean` | `false` | 2.0.5 |
 | closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | `boolean` | `false` | - |
 | lockScroll | 是否锁定背景滚动 | `boolean` | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | - |
-| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | `body` | 1.6.11 |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | `body` | - |
 
 ### Props
 
@@ -173,13 +173,13 @@ export default {
 | v-model | 是否显示弹窗 | `boolean` | - | - |
 | title | 标题 | `string` | - | - |
 | message | 内容 | `string` | - | - |
-| message-align | 内容对齐方式，可选值为`left` `right` | `string` | `center` | 1.5.0 |
+| message-align | 内容对齐方式，可选值为`left` `right` | `string` | `center` | - |
 | show-confirm-button | 是否展示确认按钮 | `boolean` |  `true` | - |
 | show-cancel-button | 是否展示取消按钮 | `boolean` |  `false` | - |
 | cancel-button-text | 取消按钮文案 | `string` | `取消` | - |
-| cancel-button-color | 取消按钮颜色 | `string` | `#000` | 1.6.14 |
+| cancel-button-color | 取消按钮颜色 | `string` | `#000` | - |
 | confirm-button-text | 确认按钮文案 | `string` | `确认` | - |
-| confirm-button-color | 确认按钮颜色 | `string` | `#1989fa` | 1.6.14 |
+| confirm-button-color | 确认按钮颜色 | `string` | `#1989fa` | - |
 | overlay | 是否展示遮罩层 | `boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `boolean` | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | - |

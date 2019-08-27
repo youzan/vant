@@ -79,7 +79,7 @@ Vue.use(NoticeBar);
 | delay | 动画延迟时间 (s) | `number` | `1` | - |
 | speed | 滚动速率 (px/s) | `number` | `50` | - |
 | scrollable | 是否在长度溢出时滚动播放 | `boolean` | `true` | - |
-| wrapable | 是否开启文本换行，只在禁用滚动时生效 | `boolean` | `false` | 1.6.11 |
+| wrapable | 是否开启文本换行，只在禁用滚动时生效 | `boolean` | `false` | - |
 | left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | - |
 | color | 文本颜色 | `string` | `#f60` | - |
 | background | 滚动条背景 | `string` | `#fff7cc` | - |

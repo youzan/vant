@@ -84,7 +84,7 @@ export default {
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `number` | `3000` | - |
 | color | 字体颜色 | `string` | `#fff` | - |
 | background | 背景颜色 | `string` | `#f44` | - |
-| className | 自定义类名 | `any` | - | 1.6.0 |
+| className | 自定义类名 | `any` | - | - |
 | onClick | 点击时的回调函数 | `Function` | - | 2.0.0 |
 | onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |
 | onClose | 关闭时的回调函数 | `Function` | - | 2.0.0 |

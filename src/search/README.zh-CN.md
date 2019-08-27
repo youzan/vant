@@ -61,8 +61,8 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| label | 搜索框左侧文本 | `string` | - | 1.6.6 |
-| shape | 形状，可选值为 `round` | `string` | `square` | 1.6.6 |
+| label | 搜索框左侧文本 | `string` | - | - |
+| shape | 形状，可选值为 `round` | `string` | `square` | - |
 | background | 搜索框背景色 | `string` | `#f2f2f2` | - |
 | clearable | 是否启用清除控件 | `boolean` | `true` | 2.0.0 |
 | show-action | 是否在搜索框右侧显示取消按钮 | `boolean` | `false` | - |

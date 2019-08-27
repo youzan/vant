@@ -69,7 +69,7 @@ import 'vant/lib/icon/local.css';
 | color | 图标颜色 | `string` | `inherit` | - |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | `string | number` | `inherit` | 2.0.0 |
 | class-prefix | 类名前缀 | `string` | `van-icon` | - |
-| tag | HTML 标签 | `string` | `i` | 1.6.10 |
+| tag | HTML 标签 | `string` | `i` | - |
 
 ### Events
 

@@ -151,10 +151,10 @@ export default {
 | fixed | 是否固定在底部 | `boolean` | `true` | - |
 | border | 是否显示外边框 | `boolean` | `true` | 2.0.0 |
 | z-index | 元素 z-index | `number` | `1` | - |
-| active-color | 选中标签的颜色 | `string` | `#1989fa` | 1.5.1 |
+| active-color | 选中标签的颜色 | `string` | `#1989fa` | - |
 | inactive-color | 未选中标签的颜色 | `string` | `#7d7e80` | 2.0.0 |
 | route | 是否开启路由模式 | `boolean` | `false` | 2.0.0 |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |
 
 ### Tabbar Events
 
