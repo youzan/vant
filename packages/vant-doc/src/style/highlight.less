@@ -1,4 +1,5 @@
 @import './variable';
+@import '../../../../src/style/var';
 
 code {
   position: relative;
@@ -35,7 +36,7 @@ pre {
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: #5758bb;
+  color: #7232dd;
 }
 
 .hljs-comment,
@@ -56,6 +57,7 @@ pre {
   color: #88f;
 }
 
+.hljs-attr,
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-title,
@@ -63,12 +65,11 @@ pre {
 .hljs-built_in,
 .hljs-doctag,
 .hljs-type,
-.hljs-tag,
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-strong {
-  color: #1889f9;
+  color: @blue;
 }
 
 .hljs-emphasis {
