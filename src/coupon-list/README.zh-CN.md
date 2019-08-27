@@ -78,7 +78,7 @@ export default {
 | coupons | 可用优惠券列表 | `Coupon[]` | `[]` | - |
 | editable | 能否切换优惠券 | `boolean` | `true` | - |
 | border | 是否显示内边框 | `boolean` | `true` | - |
-| currency | 货币符号 |  `string` | `¥` | - | 1.5.0 |
+| currency | 货币符号 |  `string` | `¥` | - | - |
 
 ### CouponList Props
 
@@ -99,7 +99,7 @@ export default {
 | close-button-text | 列表底部按钮文字 | `string` | `不使用优惠` | - |
 | input-placeholder | 输入框文字提示 | `string` | `请输入优惠码` | - |
 | show-exchange-bar | 是否展示兑换栏 | `boolean` | `true` | - |
-| currency | 货币符号 |  `string` | `¥` | 1.5.0 |
+| currency | 货币符号 |  `string` | `¥` | - |
 | empty-image | 列表为空时的占位图 | `string` | `https://img.yzcdn.cn/vant/coupon-empty.png` | 2.1.0 |
 
 ### CouponList Events

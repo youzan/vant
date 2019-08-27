@@ -106,7 +106,7 @@ Vue.use(Cell).use(CellGroup);
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| title | 分组标题 | `string` | `-` | 1.6.9 |
+| title | 分组标题 | `string` | `-` | - |
 | border | 是否显示外边框 | `boolean` | `true` | - |
 
 ### Cell Props
@@ -127,7 +127,7 @@ Vue.use(Cell).use(CellGroup);
 | required | 是否显示表单必填星号 | `boolean` | `false` | - |
 | center | 是否使内容垂直居中 | `boolean` | `false` | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | -|
-| title-style | 左侧标题额外样式 | `any` | - | 1.6.17 |
+| title-style | 左侧标题额外样式 | `any` | - | - |
 | title-class | 左侧标题额外类名 | `any` | - | - |
 | value-class | 右侧内容额外类名 | `any` | - | - |
 | label-class | 描述信息额外类名 | `any` | - | - |

@@ -129,7 +129,7 @@ Vue.use(Field);
 | label | 输入框左侧文本 | `string` | - | - |
 | value | 当前输入的值 | `string | number` | - | - |
 | type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | `string` | `text` | - |
-| size | 大小，可选值为 `large` | `string` | - | 1.6.9 |
+| size | 大小，可选值为 `large` | `string` | - | - |
 | maxlength | 输入的最大字符数 | `string | number` | - | - |
 | placeholder | 占位提示文字 | `string` | - | - |
 | border | 是否显示内边框 | `boolean` | `true` | - |
@@ -143,13 +143,13 @@ Vue.use(Field);
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `string` | - | 2.0.4 |
 | error-message | 底部错误提示文案，为空时不展示 | `string` | `''` | - 
 | label-class | 左侧文本额外类名 | `any` | - | 2.0.0 |
-| label-width | 左侧文本宽度，可指定单位，默认为 px | `string | number` | `90px` | 1.6.17 |
+| label-width | 左侧文本宽度，可指定单位，默认为 px | `string | number` | `90px` | - |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | `string` | `left` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `string` | `left` | - |
-| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `string` | `left` | 1.6.11 |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `string` | `left` | - |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `boolean | object` | `false` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 1.5.7 |
-| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `string` | - | 1.5.7 |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | - |
+| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `string` | - | - |
 
 ### Events
 

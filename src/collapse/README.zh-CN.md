@@ -92,7 +92,7 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前展开面板的 name | `(string | number)[] `(非手风琴模式)<br>`string | number`(手风琴模式) | - | - |
 | accordion | 是否开启手风琴模式 | `boolean` | `false` | - |
-| border | 是否显示外边框 | `boolean` | `true` | 1.6.9 |
+| border | 是否显示外边框 | `boolean` | `true` | - |
 
 ### Collapse Events
 
@@ -106,7 +106,7 @@ export default {
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | `string | number` | `index` | - |
 | icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `string` | - | - |
-| size | 标题栏大小，可选值为 `large` | `string` | - | 1.6.9 |
+| size | 标题栏大小，可选值为 `large` | `string` | - | - |
 | title | 标题栏左侧内容 | `string | number` | - | - |
 | value | 标题栏右侧内容 | `string | number` | - | - |
 | label | 标题栏描述信息 | `string | number`  | - | - |

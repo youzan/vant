@@ -116,7 +116,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标识符 | `any` | - | - |
-| shape | 形状，可选值为 `square` | `string` | `round` | 1.6.0 |
+| shape | 形状，可选值为 `square` | `string` | `round` | - |
 | disabled | 是否为禁用状态 | `boolean` | `false` | - |
 | icon-size | 图标大小，默认单位为`px` | `string | number` | `20px` | 2.0.0 |
 | label-disabled | 是否禁用文本内容点击 | `boolean` | `false` | - |

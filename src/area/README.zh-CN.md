@@ -52,8 +52,8 @@ Vue.use(Area);
 | loading | 是否显示加载状态 | `boolean` | `false` | - |
 | item-height | 选项高度 | `number` | `44` | - |
 | visible-item-count | 可见的选项个数 | `number` | `5` | - |
-| confirm-button-text | 确认按钮文字 | `string` | `确认` | 1.5.3 |
-| cancel-button-text | 取消按钮文字 | `string` | `取消` | 1.5.3 |
+| confirm-button-text | 确认按钮文字 | `string` | `确认` | - |
+| cancel-button-text | 取消按钮文字 | `string` | `取消` | - |
 | is-oversea-code | 根据`code`校验海外地址，海外地址会划分至单独的分类 | `() => boolean` | - | 2.1.4 |
 
 ### Events

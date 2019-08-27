@@ -120,7 +120,7 @@ export default {
 | lock-scroll | 是否锁定背景滚动 | `boolean` | `true` | 2.0.0 |
 | duration | 动画时长，单位秒 | `number` | `0.3` | 2.0.3 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `string | () => HTMLElement` | - | - |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | 1.6.15 |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `boolean` | `false` | - |
 
 ### Events
 

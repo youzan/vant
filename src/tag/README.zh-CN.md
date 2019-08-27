@@ -89,7 +89,7 @@ Vue.use(Tag);
 | plain | 是否为空心样式 | `boolean` | `false` | - |
 | round | 是否为圆角样式 | `boolean` | `false` | - |
 | mark | 是否为标记样式 | `boolean` | `false` | - |
-| text-color | 文本颜色，优先级高于`color`属性 | `string` | `white` | 1.5.0 |
+| text-color | 文本颜色，优先级高于`color`属性 | `string` | `white` | - |
 
 ### Slots
 

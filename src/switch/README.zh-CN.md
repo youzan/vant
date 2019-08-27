@@ -106,8 +106,8 @@ export default {
 | size | 开关尺寸 | `string` | `30px` | - |
 | active-color | 打开时的背景色 | `string` | `#1989fa` | - |
 | inactive-color | 关闭时的背景色 | `string` | `#fff` | - |
-| active-value | 打开时的值 | `any` | `true` | 1.5.6 |
-| inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
+| active-value | 打开时的值 | `any` | `true` | - |
+| inactive-value | 关闭时的值 | `any` | `false` | - |
 
 ### Events
 

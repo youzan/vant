@@ -66,10 +66,10 @@ export default {
 | loading | 是否为加载状态 |  `boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `boolean` | `false` | - |
 | size | 开关尺寸 | `string` | `24px` | - |
-| active-color | 开关时的背景色 | `string` | `#1989fa` | 1.5.0 |
-| inactive-color | 开关时的背景色 | `string` | `#fff` | 1.5.0 |
-| active-value | 打开时的值 | `any` | `true` | 1.5.6 |
-| inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
+| active-color | 开关时的背景色 | `string` | `#1989fa` | - |
+| inactive-color | 开关时的背景色 | `string` | `#fff` | - |
+| active-value | 打开时的值 | `any` | `true` | - |
+| inactive-value | 关闭时的值 | `any` | `false` | - |
 
 ### Events
 
