@@ -89,7 +89,7 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Names of current active panels | `(string | number)[] `(non-accordion mode)<br>*string \| number*(accordion mode) | - | - |
+| v-model | Names of current active panels | accordion mode： *string \| number*<br>non-accordion mode：*(string \| number)[]* | - | - |
 | accordion | Whether to be accordion mode | *boolean* | `false` | - |
 | border | Whether to show outer border | *boolean* | `true` | - |
 
@@ -97,7 +97,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when switch panel | activeNames: `(string | number)[] `(non-accordion mode) / *string \| number*(accordion mode) |
+| change | Triggered when switch panel | activeNames |
 
 ### CollapseItem Props
 
