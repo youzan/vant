@@ -17,7 +17,7 @@ Vue.use(TreeSelect);
 <van-tree-select
   :items="items"
   :active-id.sync="activeId"
-  :main-active-index.sync="mainActiveIndex"
+  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -27,7 +27,7 @@ export default {
     return {
       items,
       activeId: 1,
-      mainActiveIndex: 0
+      activeIndex: 0
     };
   }
 }
@@ -39,7 +39,7 @@ export default {
 <van-tree-select
   :items="items"
   :active-id.sync="activeIds"
-  :main-active-index.sync="mainActiveIndex"
+  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -49,8 +49,40 @@ export default {
     return {
       items,
       activeIds: [1, 2],
-      mainActiveIndex: 0
+      activeIndex: 0
     };
+  }
+}
+```
+
+### Custom Content
+
+```html
+<van-tree-select
+  height="55vw"
+  :items="items"
+  :main-active-index.sync="activeIndex"
+>
+  <template slot="content">
+    <van-image
+      v-if="activeIndex === 0"
+      src="https://img.yzcdn.cn/vant/apple-1.jpg"
+    />
+    <van-image
+      v-if="activeIndex === 1"
+      src="https://img.yzcdn.cn/vant/apple-2.jpg"
+    />
+  </template>
+</van-tree-select>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeIndex: 0,
+      items: [{ text: 'Group 1' }, { text: 'Group 2' }]
+    }
   }
 }
 ```
@@ -89,7 +121,7 @@ In every tree object, `text` property defines `id` stands for the unique key whi
 [
   {
     // name of the parent node
-    text: 'All Cities',
+    text: 'Group 1',
     // leaves of this parent node
     children: [
       {

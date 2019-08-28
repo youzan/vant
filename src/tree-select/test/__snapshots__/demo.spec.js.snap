@@ -5,8 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-tree-select" style="height: 300px;">
       <div class="van-tree-select__nav">
-        <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">所有城市</div>
-        <div class="van-ellipsis van-tree-select__nav-item">浙江</div>
+        <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">浙江</div>
         <div class="van-ellipsis van-tree-select__nav-item">江苏</div>
         <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--disabled">福建</div>
       </div>
@@ -16,18 +15,13 @@ exports[`renders demo correctly 1`] = `
         <div class="van-ellipsis van-tree-select__item">温州</div>
         <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>
         <div class="van-ellipsis van-tree-select__item">义乌</div>
-        <div class="van-ellipsis van-tree-select__item">南京</div>
-        <div class="van-ellipsis van-tree-select__item">无锡</div>
-        <div class="van-ellipsis van-tree-select__item">徐州</div>
-        <div class="van-ellipsis van-tree-select__item">苏州</div>
       </div>
     </div>
   </div>
   <div>
     <div class="van-tree-select" style="height: 300px;">
       <div class="van-tree-select__nav">
-        <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">所有城市</div>
-        <div class="van-ellipsis van-tree-select__nav-item">浙江</div>
+        <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">浙江</div>
         <div class="van-ellipsis van-tree-select__nav-item">江苏</div>
         <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--disabled">福建</div>
       </div>
@@ -38,10 +32,21 @@ exports[`renders demo correctly 1`] = `
             <!----></i></div>
         <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>
         <div class="van-ellipsis van-tree-select__item">义乌</div>
-        <div class="van-ellipsis van-tree-select__item">南京</div>
-        <div class="van-ellipsis van-tree-select__item">无锡</div>
-        <div class="van-ellipsis van-tree-select__item">徐州</div>
-        <div class="van-ellipsis van-tree-select__item">苏州</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tree-select" style="height: 55vw;">
+      <div class="van-tree-select__nav">
+        <div class="van-ellipsis van-tree-select__nav-item van-tree-select__nav-item--active">分组 1</div>
+        <div class="van-ellipsis van-tree-select__nav-item">分组 2</div>
+      </div>
+      <div class="van-tree-select__content">
+        <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <!---->
       </div>
     </div>
   </div>
