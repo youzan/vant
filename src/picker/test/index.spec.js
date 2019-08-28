@@ -195,3 +195,14 @@ test('toolbar-position prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('not allow html', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      allowHtml: false,
+      columns: ['<div>option</div>']
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

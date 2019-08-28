@@ -204,6 +204,7 @@ export default {
 | confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
+| allow-html | 是否允许选项内容中渲染 HTML | *boolean* | `true` | 2.1.8 |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` | - |
 
 ### Events
