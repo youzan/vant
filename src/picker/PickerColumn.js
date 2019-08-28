@@ -32,6 +32,7 @@ export default createComponent({
 
   props: {
     valueKey: String,
+    allowHtml: Boolean,
     className: String,
     itemHeight: Number,
     defaultIndex: Number,
@@ -226,20 +227,48 @@ export default createComponent({
         this.transitionEndTrigger();
         this.transitionEndTrigger = null;
       }
+    },
+
+    genOptions() {
+      const optionStyle = {
+        height: `${this.itemHeight}px`
+      };
+
+      return this.options.map((option, index) => {
+        const text = this.getOptionText(option);
+        const data = {
+          style: optionStyle,
+          class: [
+            'van-ellipsis',
+            bem('item', {
+              disabled: isOptionDisabled(option),
+              selected: index === this.currentIndex
+            })
+          ],
+          on: {
+            click: () => {
+              this.onClickItem(index);
+            }
+          }
+        };
+
+        if (this.allowHtml) {
+          data.domProps = {
+            innerHTML: text
+          };
+        }
+
+        return <li {...data}>{this.allowHtml ? '' : text}</li>;
+      });
     }
   },
 
   render() {
-    const { itemHeight } = this;
     const wrapperStyle = {
       transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
       transitionProperty: this.duration ? 'all' : 'none',
-      lineHeight: `${itemHeight}px`
-    };
-
-    const optionStyle = {
-      height: `${itemHeight}px`
+      lineHeight: `${this.itemHeight}px`
     };
 
     return (
@@ -256,22 +285,7 @@ export default createComponent({
           class={bem('wrapper')}
           onTransitionend={this.onTransitionEnd}
         >
-          {this.options.map((option, index) => (
-            <li
-              style={optionStyle}
-              class={[
-                'van-ellipsis',
-                bem('item', {
-                  disabled: isOptionDisabled(option),
-                  selected: index === this.currentIndex
-                })
-              ]}
-              domPropsInnerHTML={this.getOptionText(option)}
-              onClick={() => {
-                this.onClickItem(index);
-              }}
-            />
-          ))}
+          {this.genOptions()}
         </ul>
       </div>
     );

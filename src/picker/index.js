@@ -187,6 +187,7 @@ export default createComponent({
           {columns.map((item, index) => (
             <PickerColumn
               valueKey={this.valueKey}
+              allowHtml={this.allowHtml}
               className={item.className}
               itemHeight={this.itemHeight}
               defaultIndex={item.defaultIndex || this.defaultIndex}

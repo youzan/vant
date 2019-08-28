@@ -196,6 +196,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |
+| allow-html | Whether to allow HTML in option text | *boolean* | `true` | 2.1.8 |
 | default-index | Default value index of single column picker | *number* | `0` | - |
 
 ### Events
