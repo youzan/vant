@@ -89,14 +89,13 @@ export default createComponent({
 
       if (this.moving) {
         const translateY = getElementTranslateY(this.$refs.wrapper);
-        this.offset = Math.min(0, translateY) - this.baseOffset;
+        this.offset = Math.min(0, translateY - this.baseOffset);
         this.startOffset = this.offset;
       } else {
         this.startOffset = this.offset;
       }
 
       this.duration = 0;
-      this.moving = false;
       this.transitionEndTrigger = null;
       this.touchStartTime = Date.now();
       this.momentumOffset = this.startOffset;

@@ -19,7 +19,7 @@ Vue.use(TreeSelect);
 <van-tree-select
   :items="items"
   :active-id.sync="activeId"
-  :main-active-index.sync="mainActiveIndex"
+  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -29,7 +29,7 @@ export default {
     return {
       items,
       activeId: 1,
-      mainActiveIndex: 0
+      activeIndex: 0
     };
   }
 }
@@ -43,7 +43,7 @@ export default {
 <van-tree-select
   :items="items"
   :active-id.sync="activeIds"
-  :main-active-index.sync="mainActiveIndex"
+  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -53,8 +53,42 @@ export default {
     return {
       items,
       activeIds: [1, 2],
-      mainActiveIndex: 0
+      activeIndex: 0
     };
+  }
+}
+```
+
+### 自定义内容
+
+通过`content`插槽可以自定义右侧区域的内容
+
+```html
+<van-tree-select
+  height="55vw"
+  :items="items"
+  :main-active-index.sync="activeIndex"
+>
+  <template slot="content">
+    <van-image
+      v-if="activeIndex === 0"
+      src="https://img.yzcdn.cn/vant/apple-1.jpg"
+    />
+    <van-image
+      v-if="activeIndex === 1"
+      src="https://img.yzcdn.cn/vant/apple-2.jpg"
+    />
+  </template>
+</van-tree-select>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeIndex: 0,
+      items: [{ text: '分组 1' }, { text: '分组 2' }]
+    }
   }
 }
 ```
