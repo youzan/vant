@@ -76,6 +76,10 @@ export default createComponent({
   computed: {
     count() {
       return this.options.length;
+    },
+
+    baseOffset() {
+      return (this.itemHeight * (this.visibleItemCount - 1)) / 2;
     }
   },
 
@@ -85,13 +89,13 @@ export default createComponent({
 
       if (this.moving) {
         const translateY = getElementTranslateY(this.$refs.wrapper);
-        this.startOffset = Math.min(0, translateY);
+        this.offset = Math.min(0, translateY - this.baseOffset);
+        this.startOffset = this.offset;
       } else {
         this.startOffset = this.offset;
       }
 
       this.duration = 0;
-      this.moving = false;
       this.transitionEndTrigger = null;
       this.touchStartTime = Date.now();
       this.momentumOffset = this.startOffset;
@@ -129,11 +133,9 @@ export default createComponent({
         return;
       }
 
-      if (this.offset !== this.startOffset) {
-        this.duration = DEFAULT_DURATION;
-        const index = this.getIndexByOffset(this.offset);
-        this.setIndex(index, true);
-      }
+      const index = this.getIndexByOffset(this.offset);
+      this.duration = DEFAULT_DURATION;
+      this.setIndex(index, true);
     },
 
     onTransitionEnd() {
@@ -228,12 +230,9 @@ export default createComponent({
   },
 
   render() {
-    const { itemHeight, visibleItemCount } = this;
-
-    const baseOffset = (itemHeight * (visibleItemCount - 1)) / 2;
-
+    const { itemHeight } = this;
     const wrapperStyle = {
-      transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
+      transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
       transitionProperty: this.duration ? 'all' : 'none',
       lineHeight: `${itemHeight}px`
