@@ -141,6 +141,10 @@ export default createComponent({
     },
 
     onClickItem(index) {
+      if (this.moving) {
+        return;
+      }
+
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
     },
