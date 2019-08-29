@@ -2,7 +2,7 @@
 
 ### Intro
 
-The DatetimePicker component is usually used with [Popup](#/en-US/popup) Component.
+Used to select time, support date and time dimensions, usually used with the [Popup](#/en-US/popup) component.
 
 ### Install
 
