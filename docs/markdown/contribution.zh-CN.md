@@ -77,7 +77,7 @@ vant
 
 ### 添加新组件
 
-添加新组件时，请按照下面的目录结构组织文件，并在 `docs/src/doc.config.js` 中配置组件名称
+添加新组件时，请按照下面的目录结构组织文件，并在 `docs/site/doc.config.js` 中配置组件名称
 
 ```
 src
