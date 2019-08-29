@@ -1,5 +1,22 @@
 # Changelog
 
+### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
+`2019-08-29`
+
+**Improvements**
+
+- Picker: add allow-html prop [\#4278](https://github.com/youzan/vant/pull/4278)
+- NumberKeyboard: add focused prop [\#4279](https://github.com/youzan/vant/pull/4279)
+- GoodsActionButton: add color prop [\#4255](https://github.com/youzan/vant/pull/4255)
+- Button: color prop support linear-gradient [\#4252](https://github.com/youzan/vant/pull/4252)
+
+**Bug Fixes**
+
+- fix Circle stroke-width can't be greater than 60 [\#4256](https://github.com/youzan/vant/pull/4256)
+- fix Picker should avoid click event when moving [\#4273](https://github.com/youzan/vant/pull/4273)
+- fix Picker incorrect position when pause momentum [\#4277](https://github.com/youzan/vant/pull/4277)
+
+
 ### [v2.1.7](https://github.com/youzan/vant/tree/v2.1.7)
 `2019-08-26`
 

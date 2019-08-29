@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
+`2019-08-29`
+
+**Improvements**
+
+- Picker: 新增 allow-html 属性 [\#4278](https://github.com/youzan/vant/pull/4278)
+- NumberKeyboard: 新增 focused 属性 [\#4279](https://github.com/youzan/vant/pull/4279)
+- GoodsActionButton: 新增 color 属性 [\#4255](https://github.com/youzan/vant/pull/4255)
+- Button: color 属性支持传入 linear-gradient 渐变色 [\#4252](https://github.com/youzan/vant/pull/4252)
+
+**Bug Fixes**
+
+- 修复 Circle stroke-width 超过 60 时样式错误的问题 [\#4256](https://github.com/youzan/vant/pull/4256)
+- 修复 Picker 滑动暂停时位置错误的问题 [\#4277](https://github.com/youzan/vant/pull/4277)
+- 修复 Picker 滑动结束时触发点击会跳动的问题 [\#4273](https://github.com/youzan/vant/pull/4273)
+
+
 ### [v2.1.7](https://github.com/youzan/vant/tree/v2.1.7)
 `2019-08-26`
 
