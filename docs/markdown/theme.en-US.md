@@ -17,14 +17,6 @@ There are some basic variables below, all available variables could be found in 
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
-
-// Padding
-@padding-base: 4px;
-@padding-xs: @padding-base * 2;
-@padding-sm: @padding-base * 3;
-@padding-md: @padding-base * 4;
-@padding-lg: @padding-base * 6;
-@padding-xl: @padding-base * 8;
 ```
 
 ### How to custom theme

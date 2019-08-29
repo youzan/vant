@@ -21,14 +21,6 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
-
-// Padding
-@padding-base: 4px;
-@padding-xs: @padding-base * 2;
-@padding-sm: @padding-base * 3;
-@padding-md: @padding-base * 4;
-@padding-lg: @padding-base * 6;
-@padding-xl: @padding-base * 8;
 ```
 
 ### 定制方法
