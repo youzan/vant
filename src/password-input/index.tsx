@@ -12,6 +12,7 @@ export type PasswordInputProps = {
   value: string;
   length: number;
   gutter: number;
+  focused?: boolean;
   errorInfo?: string;
 };
 
@@ -29,6 +30,7 @@ function PasswordInput(
   for (let i = 0; i < props.length; i++) {
     const char = props.value[i];
     const showBorder = i !== 0 && !props.gutter;
+    const showCursor = props.focused && i === props.value.length;
 
     let style;
     if (i !== 0 && props.gutter) {
@@ -38,6 +40,7 @@ function PasswordInput(
     Points.push(
       <li class={{ [BORDER_LEFT]: showBorder }} style={style}>
         {props.mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }} /> : char}
+        {showCursor && <div class={bem('cursor')} />}
       </li>
     );
   }
@@ -62,6 +65,7 @@ function PasswordInput(
 PasswordInput.props = {
   info: String,
   gutter: [Number, String],
+  focused: Boolean,
   errorInfo: String,
   mask: {
     type: Boolean,

@@ -4,6 +4,7 @@
       <van-password-input
         :value="value1"
         :info="$t('info')"
+        :focused="keyboard === 'value1'"
         @focus="keyboard = 'value1'"
       />
 
@@ -20,6 +21,7 @@
         :value="value2"
         :length="4"
         gutter="15"
+        :focused="keyboard === 'value2'"
         @focus="keyboard = 'value2'"
       />
     </demo-block>
@@ -28,6 +30,7 @@
       <van-password-input
         :value="value3"
         :mask="false"
+        :focused="keyboard === 'value3'"
         @focus="keyboard = 'value3'"
       />
     </demo-block>

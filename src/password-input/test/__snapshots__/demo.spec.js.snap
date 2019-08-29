@@ -8,7 +8,9 @@ exports[`renders demo correctly 1`] = `
         <li class=""><i style="visibility: visible;"></i></li>
         <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
         <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
-        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i>
+          <div class="van-password-input__cursor"></div>
+        </li>
         <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
         <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
       </ul>

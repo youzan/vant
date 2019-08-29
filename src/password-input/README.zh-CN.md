@@ -22,6 +22,7 @@ Vue.use(PasswordInput).use(NumberKeyboard);
 <van-password-input
   :value="value"
   info="密码为 6 位数字"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 
@@ -61,6 +62,7 @@ export default {
   :value="value"
   :length="4"
   :gutter="15"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
@@ -71,6 +73,7 @@ export default {
 <van-password-input
   :value="value"
   :mask="false"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
@@ -82,6 +85,7 @@ export default {
 | value | 密码值 | *string* | `''` | - |
 | length | 密码最大长度 | *number* | `6` | - |
 | mask | 是否隐藏密码内容 | *boolean* | `true` | - |
+| focused | 是否已聚焦，聚焦时会显示光标 | *boolean* | `false` | 2.1.8 |
 | info | 输入框下方文字提示 | *string* | - | - |
 | error-info | 输入框下方错误提示 | *string* | - | - |
 | gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | *string \| number* | `0` | - |
