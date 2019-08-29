@@ -135,6 +135,7 @@ export default createComponent({
       }
 
       const index = this.getIndexByOffset(this.offset);
+      this.moving = false;
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
     },
