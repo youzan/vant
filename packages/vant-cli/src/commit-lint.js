@@ -8,7 +8,7 @@ function commitLint() {
   const commitMsg = fs.readFileSync(gitParams, 'utf-8').trim();
 
   if (!commitRE.test(commitMsg)) {
-    signale.error(`Error: invalid commit message format.
+    signale.error(`Error: invalid commit message: "${commitMsg}".
 
 Proper commit message format is required for automated changelog generation.
 
