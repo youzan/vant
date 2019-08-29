@@ -68,11 +68,12 @@ npm run dev
 
 ```
 vant
-├─ build            # 构建脚本
-├─ docs             # 文档网站
-├─ src              # 组件文件
-├─ test             # 单元测试
-└─ types            # 类型定义
+├─ build     # 构建
+├─ docs      # 文档
+├─ src       # 组件
+├─ packages  # 子包
+├─ test      # 单测
+└─ types     # 类型
 ```
 
 ### 添加新组件
@@ -82,13 +83,13 @@ vant
 ```
 src
 |- button
-|  ├─ demo        # 示例代码
-|  ├─ test        # 单元测试
-|  ├─ zh-CN.md    # 中文文档
-|  ├─ en-US.md    # 英文文档
-|  ├─ index.less  # 组件样式
-|  └─ index.vue   # 组件入口
+|  ├─ demo             # 示例代码
+|  ├─ test             # 单元测试
+|  ├─ index.js         # 组件入口
+|  ├─ index.less       # 组件样式
+|  ├─ README.md        # 英文文档
+|  └─ README.zh-CN.md  # 中文文档
 |
-├─ index.js       # 所有组件入口
-└─ index.less     # 所有组件样式
+├─ index.js            # 所有组件入口
+└─ index.less          # 所有组件样式
 ```
