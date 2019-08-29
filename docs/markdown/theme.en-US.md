@@ -11,26 +11,20 @@ Vant use [Less](http://lesscss.org/) as css preprocessor，you can modify less v
 There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/dev/src/style/var.less)。
 
 ```less
-// color variables
-@black: #000;
-@white: #fff;
-@red: #f44;
-@blue: #1989fa;
-@orange: #ff976a;
-@orange-dark: #ed6a0c;
-@orange-light: #fffbe8;
-@green: #07c160;
-@gray: #c9c9c9;
-@gray-light: #e5e5e5;
-@gray-darker: #7d7e80;
-@gray-dark: #969799;
-
-// default colors
+// Component Colors
 @text-color: #323233;
 @border-color: #ebedf0;
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
+
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 ```
 
 ### How to custom theme
@@ -82,10 +76,11 @@ module.exports = {
           loader: 'less-loader',
           options: {
             modifyVars: {
-              red: '#03a9f4',
-              blue: '#3eaf7c',
-              orange: '#f08d49',
-              'text-color': '#111'
+              // overide with less vars
+              'text-color': '#111',
+              'border-color': '#eee'
+              // or override with less file
+              'hack': `true; @import "your-less-file-path.less";`
             }
           }
         }

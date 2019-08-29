@@ -15,26 +15,20 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/src/style/var.less)。
 
 ```less
-// color variables
-@black: #000;
-@white: #fff;
-@red: #f44;
-@blue: #1989fa;
-@orange: #ff976a;
-@orange-dark: #ed6a0c;
-@orange-light: #fffbe8;
-@green: #07c160;
-@gray: #c9c9c9;
-@gray-light: #e5e5e5;
-@gray-darker: #7d7e80;
-@gray-dark: #969799;
-
-// default colors
+// Component Colors
 @text-color: #323233;
 @border-color: #ebedf0;
 @active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
+
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 ```
 
 ### 定制方法
@@ -83,15 +77,16 @@ module.exports = {
     {
       test: /\.less$/,
       use: [
-        // ...other loaders
+        // ...其他 loader 配置
         {
           loader: 'less-loader',
           options: {
             modifyVars: {
-              red: '#03a9f4',
-              blue: '#3eaf7c',
-              orange: '#f08d49',
-              'text-color': '#111'
+              // 直接覆盖变量
+              'text-color': '#111',
+              'border-color': '#eee'
+              // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+              'hack': `true; @import "your-less-file-path.less";`
             }
           }
         }
