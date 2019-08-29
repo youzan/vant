@@ -51,4 +51,29 @@
       visibility: hidden;
     }
   }
+
+  &__cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: @number-keyboard-cursor-width;
+    height: @number-keyboard-cursor-height;
+    background-color: @number-keyboard-cursor-color;
+    transform: translate(-50%, -50%);
+    animation: @number-keyboard-cursor-animation-duration van-cursor-flicker infinite;
+  }
+}
+
+@keyframes van-cursor-flicker {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

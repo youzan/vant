@@ -22,6 +22,7 @@ Vue.use(PasswordInput).use(NumberKeyboard);
 <van-password-input
   :value="value"
   info="Some tips"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 
@@ -61,6 +62,7 @@ export default {
   :value="value"
   :length="4"
   :gutter="15"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
@@ -71,6 +73,7 @@ export default {
 <van-password-input
   :value="value"
   :mask="false"
+  :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
@@ -84,6 +87,7 @@ export default {
 | value | Password value | *string* | `''` | - |
 | length | Maxlength of password | *number* | `6` | - |
 | mask | Whether to mask value | *boolean* | `true` | - |
+| focused | Whether to show focused cursor | *boolean* | `false` | 2.1.8 |
 | info | Bottom info | *string* | - | - |
 | error-info | Bottom error info | *string* | - | - |
 | gutter | Gutter of input | *string \| number* | `0` | - |
