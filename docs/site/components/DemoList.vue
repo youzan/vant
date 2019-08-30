@@ -73,7 +73,9 @@ export default {
 .side-nav {
   box-sizing: border-box;
   width: 100%;
-  padding: 64px 20px 20px;
+  min-height: 100vh;
+  padding: 46px 20px 20px;
+  background: @white;
 
   .vant-title,
   .vant-desc {
@@ -111,8 +113,8 @@ export default {
 
 .mobile-switch-lang {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   overflow: hidden;
   color: @blue;
   font-size: 12px;
@@ -121,11 +123,11 @@ export default {
   span {
     display: inline-block;
     width: 48px;
-    color: @gray-dark;
+    color: @text-color;
     line-height: 22px;
     text-align: center;
-    background-color: #f7f8fa;
-    border: 1px solid #dcdee0;
+    background-color: #fff;
+    border: 1px solid @border-color;
 
     &:first-child {
       border-right: none;

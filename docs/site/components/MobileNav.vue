@@ -46,6 +46,9 @@ export default {
 .mobile-nav {
   &__item {
     margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 1px 5px #ebedf0;
   }
 
   &__icon {
