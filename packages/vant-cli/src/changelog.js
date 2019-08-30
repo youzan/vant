@@ -13,7 +13,7 @@ function changelog(dist, cmd) {
       --bugs-label "**Bug Fixes**" \
       --enhancement-label "**Breaking changes**" \
       --issues-label "**Issue**" \
-      --pr-label "**Improvements**" \
+      --pr-label "**Features**" \
       --max-issues 0 \
       --no-author \
       --no-unreleased \

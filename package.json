@@ -70,7 +70,7 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.16",
-    "@vant/cli": "^1.0.5",
+    "@vant/cli": "^1.0.6",
     "@vant/doc": "^2.5.5",
     "@vant/eslint-config": "^1.2.5",
     "@vant/markdown-loader": "^2.2.0",
