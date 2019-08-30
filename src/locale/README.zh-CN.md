@@ -44,8 +44,9 @@ Locale.add(messages);
 | 繁體中文（台） | zh-TW |
 | 英语 | en-US |
 | 土耳其语 | tr-TR |
+| 西班牙语 | es-ES |
 
-在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的 i18n 配置文件。
+> 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的 i18n 配置文件。
 
 ### Sku 组件
 
