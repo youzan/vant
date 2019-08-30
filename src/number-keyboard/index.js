@@ -191,8 +191,10 @@ export default createComponent({
           onWebkitAnimationEnd={this.onAnimationEnd}
         >
           {Title}
-          <div class={bem('body')}>{Keys}</div>
-          {Sidebar}
+          <div class={bem('body')}>
+            {Keys}
+            {Sidebar}
+          </div>
         </div>
       </transition>
     );
