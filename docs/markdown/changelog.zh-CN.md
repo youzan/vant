@@ -3,7 +3,7 @@
 ### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
 `2019-08-29`
 
-**Improvements**
+**Features**
 
 - Picker: 新增 allow-html 属性 [\#4278](https://github.com/youzan/vant/pull/4278)
 - NumberKeyboard: 新增 focused 属性 [\#4279](https://github.com/youzan/vant/pull/4279)
@@ -29,7 +29,7 @@
 ### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
 `2019-08-26`
 
-**Improvements**
+**Features**
 
 - Tag: 新增 warning 类型 [\#4232](https://github.com/youzan/vant/pull/4232)
 - Image: 新增 radius 属性 [\#4230](https://github.com/youzan/vant/pull/4230)
@@ -49,7 +49,7 @@
 ### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
 `2019-08-23`
 
-**Improvements**
+**Features**
 
 - Toast: 新增 closeOnClick 选项 [\#4192](https://github.com/youzan/vant/pull/4192)
 - Uploader: 新增 image-fit 属性 [\#4189](https://github.com/youzan/vant/pull/4189)
@@ -67,7 +67,7 @@
 ### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
 `2019-08-21`
 
-**Improvements**
+**Features**
 
 - Col: 新增 click 事件 [\#4169](https://github.com/youzan/vant/pull/4169)
 - Row: 新增 click 事件 [\#4170](https://github.com/youzan/vant/pull/4170)
@@ -93,7 +93,7 @@
 ### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
 `2019-08-15`
 
-**Improvements**
+**Features**
 
 - Sku: 支持国际化 [\#4123](https://github.com/youzan/vant/pull/4123)
 - Button: 新增 color 属性 [\#4124](https://github.com/youzan/vant/pull/4124)
@@ -115,7 +115,7 @@
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 
-**Improvements**
+**Features**
 
 - ActionSheet: 新增 color 选项 [\#4073](https://github.com/youzan/vant/pull/4073)
 - AddressEdit: 新增 postal-validator 属性 [\#4067](https://github.com/youzan/vant/pull/4067)
@@ -148,7 +148,7 @@
 ### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0)
 `2019-08-01` 🇨🇳
 
-**Improvements**
+**Features**
 
 - Sku: UI 升级，采用更圆润的视觉风格 [\#3875](https://github.com/youzan/vant/pull/3875) [\#3922](https://github.com/youzan/vant/pull/3922)
 - GoodsAction: UI 升级，采用更圆润的视觉风格 [\#3967](https://github.com/youzan/vant/pull/3967)
@@ -180,7 +180,7 @@
 ### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
 `2019-07-19`
 
-**Improvements**
+**Features**
 
 - 新增 Sticky 粘性布局组件 [\#3888](https://github.com/youzan/vant/pull/3888)
 - Grid: 优化文字换行 [\#3897](https://github.com/youzan/vant/pull/3897)
@@ -203,7 +203,7 @@
 ### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
 `2019-07-16`
 
-**Improvements**
+**Features**
 
 - Sku: 支持自定义留言占位文本 [\#3864](https://github.com/youzan/vant/pull/3864)
 - DropdownMenu: 新增 icon 选项 [\#3855](https://github.com/youzan/vant/pull/3855)
@@ -220,7 +220,7 @@
 ### [v2.0.7](https://github.com/youzan/vant/tree/v2.0.7)
 `2019-07-11`
 
-**Improvements**
+**Features**
 
 - 新增 CountDown 倒计时组件 [\#3805](https://github.com/youzan/vant/pull/3805)
 - Popup: 新增 round 属性 [\#3781](https://github.com/youzan/vant/pull/3781)
@@ -241,7 +241,7 @@
 ### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
 `2019-07-05`
 
-**Improvements**
+**Features**
 
 - 新增 Divider 分割线组件 [\#3755](https://github.com/youzan/vant/pull/3755)
 - Tab: 新增 name 属性 [\#3762](https://github.com/youzan/vant/pull/3762)
@@ -258,7 +258,7 @@
 ### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
 `2019-07-02`
 
-**Improvements**
+**Features**
 
 - Stepper: 支持长按手势 [\#3711](https://github.com/youzan/vant/pull/3711)
 - Stepper: 新增 button-size 属性 [\#3714](https://github.com/youzan/vant/pull/3714)
@@ -272,7 +272,7 @@
 ### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4) 🇨🇳
 `2019-07-01`
 
-**Improvements**
+**Features**
 
 - 新增 Grid、GridItem 组件 [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
 - Field: 新增 arrow-direction 属性 [\#3679](https://github.com/youzan/vant/pull/3679)
@@ -293,7 +293,7 @@
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`
 
-**Improvements**
+**Features**
 
 - ActionSheet: 新增 duration 属性 [\#3608](https://github.com/youzan/vant/pull/3608)
 - ActionSheet: 新增 open、opened 事件 [\#3639](https://github.com/youzan/vant/pull/3639)
@@ -316,7 +316,7 @@
 ### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
 `2019-06-21`
 
-**Improvements**
+**Features**
 
 - Picker: 优化滚动速率 [\#3556](https://github.com/youzan/vant/pull/3556)
 - Card: 新增 click-thumb 事件 [\#3586](https://github.com/youzan/vant/pull/3586)
@@ -337,7 +337,7 @@
 ### [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
 `2019-06-15`
 
-**Improvements**
+**Features**
 
 - Toast: 新增 icon 属性 [\#3485](https://github.com/youzan/vant/pull/3485)
 - DropdownMenu: 新增 direction 属性 [\#3490](https://github.com/youzan/vant/pull/3490)

@@ -3,7 +3,7 @@
 ### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
 `2019-08-29`
 
-**Improvements**
+**Features**
 
 - Picker: add allow-html prop [\#4278](https://github.com/youzan/vant/pull/4278)
 - NumberKeyboard: add focused prop [\#4279](https://github.com/youzan/vant/pull/4279)
@@ -29,7 +29,7 @@
 ### [v2.1.6](https://github.com/youzan/vant/tree/v2.1.6)
 `2019-08-26`
 
-**Improvements**
+**Features**
 
 - Tag: add warning type [\#4232](https://github.com/youzan/vant/pull/4232)
 - Image: add radius prop [\#4230](https://github.com/youzan/vant/pull/4230)
@@ -48,7 +48,7 @@
 ### [v2.1.5](https://github.com/youzan/vant/tree/v2.1.5)
 `2019-08-23`
 
-**Improvements**
+**Features**
 
 - Toast: add closeOnClick option [\#4192](https://github.com/youzan/vant/pull/4192)
 - Uploader: add image-fit prop [\#4189](https://github.com/youzan/vant/pull/4189)
@@ -67,7 +67,7 @@
 ### [v2.1.4](https://github.com/youzan/vant/tree/v2.1.4)
 `2019-08-21`
 
-**Improvements**
+**Features**
 
 - Col: add click event [\#4169](https://github.com/youzan/vant/pull/4169)
 - Row: add click event [\#4170](https://github.com/youzan/vant/pull/4170)
@@ -93,7 +93,7 @@
 ### [v2.1.3](https://github.com/youzan/vant/tree/v2.1.3)
 `2019-08-15`
 
-**Improvements**
+**Features**
 
 - Sku: support i18n [\#4123](https://github.com/youzan/vant/pull/4123)
 - Button: add color prop [\#4124](https://github.com/youzan/vant/pull/4124)
@@ -115,7 +115,7 @@
 ### [v2.1.2](https://github.com/youzan/vant/tree/v2.1.2)
 `2019-08-10`
 
-**Improvements**
+**Features**
 
 - ActionSheet: add color option [\#4073](https://github.com/youzan/vant/pull/4073)
 - AddressEdit: add postal-validator prop [\#4067](https://github.com/youzan/vant/pull/4067)
@@ -148,7 +148,7 @@
 ### [v2.1.0](https://github.com/youzan/vant/tree/v2.1.0) [deprecated]
 `2019-08-01`
 
-**Improvements**
+**Features**
 
 - GoodsAction: update style [\#3967](https://github.com/youzan/vant/pull/3967)
 - Sku: update style [\#3875](https://github.com/youzan/vant/pull/3875) [\#3922](https://github.com/youzan/vant/pull/3922)
@@ -180,7 +180,7 @@
 ### [v2.0.9](https://github.com/youzan/vant/tree/v2.0.9)
 `2019-07-19`
 
-**Improvements**
+**Features**
 
 - add Sticky component [\#3888](https://github.com/youzan/vant/pull/3888)
 - Grid: optimize word break [\#3897](https://github.com/youzan/vant/pull/3897)
@@ -203,7 +203,7 @@
 ### [v2.0.8](https://github.com/youzan/vant/tree/v2.0.8)
 `2019-07-16`
 
-**Improvements**
+**Features**
 
 - Sku: support custom placeholder [\#3864](https://github.com/youzan/vant/pull/3864)
 - DropdownMenu: add icon option [\#3855](https://github.com/youzan/vant/pull/3855)
@@ -220,7 +220,7 @@
 ### [v2.0.7](https://github.com/youzan/vant/tree/v2.0.7)
 `2019-07-11`
 
-**Improvements**
+**Features**
 
 - add CountDown component [\#3805](https://github.com/youzan/vant/pull/3805)
 - Popup: add round prop [\#3781](https://github.com/youzan/vant/pull/3781)
@@ -241,7 +241,7 @@
 ### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
 `2019-07-05`
 
-**Improvements**
+**Features**
 
 - add Divider component [\#3755](https://github.com/youzan/vant/pull/3755)
 - Tab: add name prop [\#3762](https://github.com/youzan/vant/pull/3762)
@@ -258,7 +258,7 @@
 ### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
 `2019-07-02`
 
-**Improvements**
+**Features**
 
 - Stepper: add button-size prop [\#3714](https://github.com/youzan/vant/pull/3714)
 - Stepper: support long press gesture [\#3711](https://github.com/youzan/vant/pull/3711)
@@ -272,7 +272,7 @@
 ### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4)
 `2019-07-01`
 
-**Improvements**
+**Features**
 
 - add Grid、GridItem component [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
 - Field: add arrow-direction prop [\#3679](https://github.com/youzan/vant/pull/3679)
@@ -293,7 +293,7 @@
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`
 
-**Improvements**
+**Features**
 
 - ActionSheet: add duration prop [\#3608](https://github.com/youzan/vant/pull/3608)
 - ActionSheet: add open、opened events [\#3639](https://github.com/youzan/vant/pull/3639)
@@ -316,7 +316,7 @@
 ### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
 `2019-06-21`
 
-**Improvements**
+**Features**
 
 - Card: add click-thumb event [\#3586](https://github.com/youzan/vant/pull/3586)
 - CouponList: add enabled-title、disabled-title props [\#3578](https://github.com/youzan/vant/pull/3578)
@@ -337,7 +337,7 @@
 ### [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
 `2019-06-15`
 
-**Improvements**
+**Features**
 
 - Tab: support string type of line-width & line-height [\#3514](https://github.com/youzan/vant/pull/3514)
 - Icon: use image component to display image [\#3515](https://github.com/youzan/vant/pull/3515)
