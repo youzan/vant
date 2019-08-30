@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
+    "dev": "npm run build:entry && webpack-dev-server --config build/webpack.site.dev.js",
     "lint": "eslint ./src --ext .js,.vue,.ts,.tsx && stylelint \"src/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag v2.1.0",
@@ -112,7 +112,8 @@
     "vue-template-compiler": "2.6.10",
     "webpack": "4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "3.7.2"
+    "webpack-dev-server": "3.7.2",
+    "webpack-merge": "^4.2.2"
   },
   "sideEffects": [
     "es/**/style/*",
