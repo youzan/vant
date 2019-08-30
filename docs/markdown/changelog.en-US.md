@@ -6,7 +6,7 @@
 **Features**
 
 - Picker: add allow-html prop [\#4278](https://github.com/youzan/vant/pull/4278)
-- NumberKeyboard: add focused prop [\#4279](https://github.com/youzan/vant/pull/4279)
+- PasswordInput: add focused prop [\#4279](https://github.com/youzan/vant/pull/4279)
 - GoodsActionButton: add color prop [\#4255](https://github.com/youzan/vant/pull/4255)
 - Button: color prop support linear-gradient [\#4252](https://github.com/youzan/vant/pull/4252)
 

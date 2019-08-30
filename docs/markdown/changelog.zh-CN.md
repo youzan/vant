@@ -6,7 +6,7 @@
 **Features**
 
 - Picker: 新增 allow-html 属性 [\#4278](https://github.com/youzan/vant/pull/4278)
-- NumberKeyboard: 新增 focused 属性 [\#4279](https://github.com/youzan/vant/pull/4279)
+- PasswordInput: 新增 focused 属性 [\#4279](https://github.com/youzan/vant/pull/4279)
 - GoodsActionButton: 新增 color 属性 [\#4255](https://github.com/youzan/vant/pull/4255)
 - Button: color 属性支持传入 linear-gradient 渐变色 [\#4252](https://github.com/youzan/vant/pull/4252)
 
