@@ -4,6 +4,7 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
+      :border="false"
       :left-arrow="showNav"
       @click-left="onBack"
     />

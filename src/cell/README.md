@@ -75,7 +75,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-### Advanced Usage
+### Use Slots
 
 ```html
 <van-cell value="Content" is-link>
@@ -143,7 +143,7 @@ Vue.use(Cell).use(CellGroup);
 
 | Name | Description |
 |------|------|
-| default | Default slot |
+| default | Custom value |
 | icon | Custom icon |
 | title | Custom title |
 | label | Custom label |

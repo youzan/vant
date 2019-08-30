@@ -41,7 +41,7 @@ Vue.use(Cell).use(CellGroup);
 
 ### 只设置 value
 
-只设置`value`时会向左对齐
+只设置`value`时，内容会靠左对齐
 
 ```html
 <van-cell value="内容" />
@@ -49,7 +49,7 @@ Vue.use(Cell).use(CellGroup);
 
 ### 展示箭头
 
-传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
+设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向
 
 ```html
 <van-cell title="单元格" is-link />
@@ -79,12 +79,13 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-### 高级用法
+### 使用插槽
 
-如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
+如以上用法不能满足你的需求，可以使用插槽来自定义内容
 
 ```html
 <van-cell value="内容" is-link>
+  <!-- 使用 title 插槽来自定义标题 -->
   <template slot="title">
     <span class="custom-title">单元格</span>
     <van-tag type="danger">标签</van-tag>
@@ -92,6 +93,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell>
 
 <van-cell title="单元格" icon="shop-o">
+  <!-- 使用 right-icon 插槽来自定义右侧图标 -->
   <van-icon
     slot="right-icon"
     name="search"
@@ -138,19 +140,19 @@ Vue.use(Cell).use(CellGroup);
 |------|------|------|
 | click | 点击单元格时触发 | event: Event |
 
-### Cell Slots
-
-| 名称 | 说明 |
-|------|------|
-| default | 自定义`value`显示内容 |
-| title | 自定义标题显示内容 |
-| label | 自定义标题下方描述显示内容 |
-| icon | 自定义左侧图标 |
-| right-icon | 自定义右侧按钮，默认为`arrow` |
-
 ### CellGroup Slots
 
 | 名称 | 说明 |
 |------|------|
 | default | 默认插槽 |
 | title | 自定义分组标题 |
+
+### Cell Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 自定义右侧内容 |
+| title | 自定义左侧标题 |
+| label | 自定义标题下方描述 |
+| icon | 自定义左侧图标 |
+| right-icon | 自定义右侧按钮，默认为`arrow` |
