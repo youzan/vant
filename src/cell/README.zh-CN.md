@@ -13,7 +13,7 @@ Vue.use(Cell).use(CellGroup);
 
 ### 基础用法
 
-`Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框。
+`Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框
 
 ```html
 <van-cell-group>
