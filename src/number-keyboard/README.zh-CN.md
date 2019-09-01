@@ -1,5 +1,9 @@
 # NumberKeyboard 数字键盘
 
+### 介绍
+
+数字键盘，提供两种样式风格，可以与[密码输入框](#/zh-CN/password-input)或自定义的输入框组件配合使用
+
 ### 引入
 
 ``` javascript
