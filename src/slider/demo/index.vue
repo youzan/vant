@@ -51,6 +51,16 @@
       </van-slider>
     </demo-block>
 
+    <demo-block :title="$t('segment')">
+      <van-slider
+        v-model="segment.value"
+        :min="segment.min"
+        :max="segment.max"
+        :segment="segment.segment"
+        @change="onChange"
+      />
+    </demo-block>
+
     <demo-block
       v-if="!$attrs.weapp"
       :title="$t('vertical')"
@@ -77,7 +87,8 @@ export default {
       customStyle: '自定义样式',
       customButton: '自定义按钮',
       text: '当前值：',
-      vertical: '垂直方向'
+      vertical: '垂直方向',
+      segment: '分段滑块(0~10000), [[0.5, 3000]]'
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -87,7 +98,8 @@ export default {
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
       text: 'Current value: ',
-      vertical: 'Vertical'
+      vertical: 'Vertical',
+      segment: 'Segment Slider'
     }
   },
 
@@ -99,7 +111,13 @@ export default {
       value4: 50,
       value5: 50,
       value6: 50,
-      value7: 50
+      value7: 50,
+      segment: {
+        min: 0,
+        max: 10000,
+        value: 3000,
+        segment: [[0.50, 3000]]
+      }
     };
   },
 

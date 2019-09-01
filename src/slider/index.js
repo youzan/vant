@@ -31,6 +31,10 @@ export default createComponent({
     barHeight: {
       type: [Number, String],
       default: 2
+    },
+    segment: {
+      type: Array,
+      default: null
     }
   },
 
@@ -57,6 +61,10 @@ export default createComponent({
       }
 
       if (this.dragStatus === 'start') {
+        const evt = event.touches[0];
+        const ele = event.target;
+        this.dragStartPos = this.vertical ? evt.clientY : evt.clientX;
+        this.dragStartPos -= (this.vertical ? ele.clientHeight : ele.clientWidth);
         this.$emit('drag-start');
       }
 
@@ -69,7 +77,7 @@ export default createComponent({
       const total = this.vertical ? rect.height : rect.width;
       const diff = (delta / total) * this.range;
 
-      this.newValue = this.startValue + diff;
+      this.newValue = this.segment ? this.getValue((this.dragStartPos + delta) / total) : (this.startValue + diff);
       this.updateValue(this.newValue);
     },
 
@@ -94,7 +102,7 @@ export default createComponent({
       const rect = this.$el.getBoundingClientRect();
       const delta = this.vertical ? event.clientY - rect.top : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
-      const value = (delta / total) * this.range + this.min;
+      const value = this.segment ? this.getValue(delta / total) : ((delta / total) * this.range + this.min);
 
       this.startValue = this.value;
       this.updateValue(value, true);
@@ -116,6 +124,36 @@ export default createComponent({
       return (
         Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step
       );
+    },
+
+    getValue (position) {
+      position = position < 0 ? 0 : position > 1 ? 1 : position;
+      const segment = this.segmentSet.concat([]);
+      const range = segment.findIndex(item => position < item[0]);
+      const start = range > 0 ? segment[range - 1] : segment[0];
+      const end = range > 0 ? segment[range] : segment.pop();
+      const pos = (position - start[0]) / (end[0] - start[0]);
+      const value = start[1] + (end[1] - start[1]) * pos;
+
+      return Math.floor(value);
+    },
+
+    getPosition (value) {
+      const segment = this.segmentSet.concat([]);
+      const range = segment.findIndex(item => value < item[1]);
+      const start = range > 0 ? segment[range - 1] : segment[0];
+      const end = range > 0 ? segment[range] : segment.pop();
+      const pos = (value - start[1]) / (end[1] - start[1]);
+      const position = start[0] + (end[0] - start[0]) * pos;
+
+      return position * 100;
+    }
+  },
+
+  created() {
+    if (this.segment !== null) {
+      this.segmentSet = ([[0, this.min]]).concat(this.segment);
+      this.segmentSet.push([1, this.max]);
     }
   },
 
@@ -127,9 +165,10 @@ export default createComponent({
 
     const mainAxis = vertical ? 'height' : 'width';
     const crossAxis = vertical ? 'width' : 'height';
+    const pos = this.segment ? this.getPosition(this.value) : (((this.value - this.min) * 100) / this.range);
 
     const barStyle = {
-      [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
+      [mainAxis]: `${pos}%`,
       [crossAxis]: addUnit(this.barHeight),
       background: this.activeColor
     };

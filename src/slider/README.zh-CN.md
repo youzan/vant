@@ -102,6 +102,7 @@ Slider 垂直展示时，高度为 100% 父元素高度
 | active-color | 进度条激活态颜色 | *string* | `#1989fa` | - |
 | inactive-color | 进度条默认颜色 | *string* | `#e5e5e5` | - |
 | vertical | 是否垂直展示 | *boolean* | `false` | - |
+| segment | 滑动分段，分段格式：[位置，最大值]。例：[[.25, 50]]，滑块将分为两段[0~25%]，[25~100%]，对应取值为[0-50]，[51-100] | *Array[Array]* | `null` | - |
 
 ### Events
 
