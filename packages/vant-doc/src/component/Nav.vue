@@ -117,21 +117,23 @@ export default {
     a {
       display: block;
       margin: 0;
-      padding: 10px 10px 10px @van-doc-padding;
+      padding: 10px 0 10px @van-doc-padding;
       color: #455a64;
       font-size: 16px;
       line-height: 24px;
       transition: all 0.3s;
 
       &.active {
-        color: @van-doc-blue;
+        color: #000;
+        font-weight: 500;
+        font-size: 15px;
       }
     }
   }
 
   &__item {
     > a {
-      font-weight: bold;
+      font-weight: 500;
     }
   }
 
@@ -140,7 +142,7 @@ export default {
       font-size: 14px;
 
       &:hover {
-        color: @van-doc-blue;
+        color: #000;
       }
     }
 
@@ -170,6 +172,10 @@ export default {
     &__subitem {
       a {
         font-size: 13px;
+      }
+
+      &:active {
+        font-size: 14px;
       }
     }
   }
