@@ -69,7 +69,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | label | Search label | *string* | - | - |
-| shape | Can be set to `round` | *string* | `square` | - |
+| shape | Shape of input, can be set to `round` | *string* | `square` | - |
 | background | Background color | *string* | `#f2f2f2` | - |
 | clearable | Whether to be clearable | *boolean* | `true` | - |
 | show-action | Whether to show right button | *boolean* | `false` | - |

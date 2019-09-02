@@ -10,7 +10,7 @@ import { DefaultSlots, ScopedSlot } from '../utils/types';
 const [createComponent, bem, t] = createNamespace('search');
 
 export type SearchProps = {
-  shape: string;
+  shape: 'sqaure' | 'round';
   value?: string;
   label?: string;
   leftIcon: string;
