@@ -12,7 +12,8 @@ export default createComponent({
   props: {
     ...routeProps,
     info: [Number, String],
-    title: String
+    title: String,
+    disabled: Boolean
   },
 
   computed: {
@@ -23,6 +24,10 @@ export default createComponent({
 
   methods: {
     onClick() {
+      if (this.disabled) {
+        return;
+      }
+
       this.$emit('click', this.index);
       this.parent.$emit('input', this.index);
       this.parent.$emit('change', this.index);
@@ -33,7 +38,7 @@ export default createComponent({
   render() {
     return (
       <a
-        class={[bem({ select: this.select }), BORDER]}
+        class={[bem({ select: this.select, disabled: this.disabled }), BORDER]}
         onClick={this.onClick}
       >
         <div class={bem('text')}>

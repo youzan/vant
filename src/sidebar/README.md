@@ -62,6 +62,7 @@ export default {
 |------|------|------|------|------|
 | title | Content | *string* | `''` | - |
 | info | Info Message | *string \| number* | `''` | - |
+| disabled | Whether to be disabled | *boolean* | `false` | 2.1.9 |
 | url | Link | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.0.4 |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.0.4 |
