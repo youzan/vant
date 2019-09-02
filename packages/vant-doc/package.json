@@ -1,6 +1,6 @@
 {
   "name": "@vant/doc",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "description": "vant document template",
   "main": "./lib/index.js",
   "publishConfig": {
