@@ -21,6 +21,7 @@ export type TreeSelectChildren = {
 export type TreeSelectActiveId = number | string | (number | string)[];
 
 export type TreeSelectProps = {
+  max: number;
   height: number | string;
   items: TreeSelectItem[];
   activeId: TreeSelectActiveId;
@@ -100,7 +101,7 @@ function TreeSelect(
 
               if (index !== -1) {
                 newActiveId.splice(index, 1);
-              } else {
+              } else if (newActiveId.length < props.max) {
                 newActiveId.push(item.id);
               }
             }
@@ -130,6 +131,10 @@ function TreeSelect(
 }
 
 TreeSelect.props = {
+  max: {
+    type: Number,
+    default: Infinity
+  },
   items: {
     type: Array,
     default: () => []
