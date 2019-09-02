@@ -104,6 +104,7 @@ export default createComponent({
 
   watch: {
     value() {
+      this.resetScale();
       this.active = this.startPosition;
     },
 
@@ -129,7 +130,6 @@ export default createComponent({
           this.doubleClickTimer = setTimeout(() => {
             const index = this.active;
 
-            this.resetScale();
             this.$emit('close', {
               index,
               url: this.images[index]
