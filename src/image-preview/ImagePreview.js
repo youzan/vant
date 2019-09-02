@@ -104,12 +104,11 @@ export default createComponent({
 
   watch: {
     value() {
-      this.resetScale();
-      this.active = this.startPosition;
+      this.setActive(this.startPosition);
     },
 
     startPosition(active) {
-      this.active = active;
+      this.setActive(active);
     }
   },
 
@@ -233,10 +232,13 @@ export default createComponent({
       }
     },
 
-    onSwipeChange(active) {
+    setActive(active) {
       this.resetScale();
-      this.active = active;
-      this.$emit('change', active);
+
+      if (active !== this.active) {
+        this.active = active;
+        this.$emit('change', active);
+      }
     },
 
     resetScale() {
@@ -275,7 +277,7 @@ export default createComponent({
         indicatorColor="white"
         initialSwipe={this.startPosition}
         showIndicators={this.showIndicators}
-        onChange={this.onSwipeChange}
+        onChange={this.setActive}
       >
         {images.map((image, index) => {
           const props = {
