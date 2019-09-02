@@ -233,3 +233,33 @@ test('multiple select', () => {
   items.at(1).trigger('click');
   expect(wrapper.vm.activeId).toEqual([]);
 });
+
+test('max prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-tree-select
+        :max="1"
+        :items="items"
+        :main-active-index="0"
+        :active-id.sync="activeId"
+      />
+    `,
+    data() {
+      return {
+        activeId: [],
+        mainActiveIndex: 0,
+        items: [
+          {
+            text: 'group1',
+            children: [mockItem, mockItem2]
+          }
+        ]
+      };
+    }
+  });
+
+  const items = wrapper.findAll('.van-tree-select__item');
+  items.at(0).trigger('click');
+  items.at(1).trigger('click');
+  expect(wrapper.vm.activeId).toEqual([mockItem.id]);
+});
