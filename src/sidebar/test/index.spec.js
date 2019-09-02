@@ -1,20 +1,20 @@
 import { mount } from '../../../test/utils';
+import Vue from 'vue';
 import Sidebar from '..';
 import SidebarItem from '../../sidebar-item';
+
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 
 test('click event & change event', () => {
   const onClick = jest.fn();
   const onChange = jest.fn();
   const wrapper = mount({
     template: `
-      <sidebar @change="onChange">
-        <sidebar-item @click="onClick">Text</sidebar-item>
-      </sidebar>
+      <van-sidebar @change="onChange">
+        <van-sidebar-item @click="onClick">Text</van-sidebar-item>
+      </van-sidebar>
     `,
-    components: {
-      Sidebar,
-      SidebarItem
-    },
     methods: {
       onClick,
       onChange
@@ -30,15 +30,11 @@ test('click event & change event', () => {
 test('v-model', () => {
   const wrapper = mount({
     template: `
-      <sidebar v-model="active">
-        <sidebar-item>Text</sidebar-item>
-        <sidebar-item>Text</sidebar-item>
-      </sidebar>
+      <van-sidebar v-model="active">
+        <van-sidebar-item>Text</van-sidebar-item>
+        <van-sidebar-item>Text</van-sidebar-item>
+      </van-sidebar>
     `,
-    components: {
-      Sidebar,
-      SidebarItem
-    },
     data() {
       return {
         active: 0
@@ -48,6 +44,25 @@ test('v-model', () => {
 
   wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
   expect(wrapper.vm.active).toEqual(1);
+});
+
+test('disabled prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-sidebar v-model="active">
+        <van-sidebar-item>Text</van-sidebar-item>
+        <van-sidebar-item disabled>Text</van-sidebar-item>
+      </van-sidebar>
+    `,
+    data() {
+      return {
+        active: 0
+      };
+    }
+  });
+
+  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
+  expect(wrapper.vm.active).toEqual(0);
 });
 
 test('without parent', () => {
