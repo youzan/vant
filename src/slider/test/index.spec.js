@@ -1,5 +1,10 @@
 import Slider from '..';
-import { mount, trigger, triggerDrag, mockGetBoundingClientRect } from '../../../test/utils';
+import {
+  mount,
+  trigger,
+  triggerDrag,
+  mockGetBoundingClientRect
+} from '../../../test/utils';
 
 function mockRect(vertical) {
   return mockGetBoundingClientRect({
@@ -133,4 +138,18 @@ it('should not emit change event when value not changed', () => {
   trigger(wrapper, 'click', 100, 0);
 
   expect(wrapper.emitted('change').length).toEqual(1);
+});
+
+it('should format initial value', done => {
+  mount(Slider, {
+    propsData: {
+      value: null
+    },
+    listeners: {
+      input(value) {
+        expect(value).toEqual(0);
+        done();
+      }
+    }
+  });
 });

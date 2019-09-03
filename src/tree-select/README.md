@@ -97,7 +97,7 @@ export default {
 | height | Height | *string \| number* | `300` | - |
 | main-Active-index | The index of selected parent node | *number* | `0` | - |
 | active-id | Id of selected item | *string \| number \| (string \| number)[]* | `0` | - |
-| max | Maximum number of selected items | *number* | `Infinity` | 2.1.9 |
+| max | Maximum number of selected items | *number* | `Infinity` | 2.2.0 |
 
 ### Events
 

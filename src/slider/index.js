@@ -40,6 +40,11 @@ export default createComponent({
     }
   },
 
+  created() {
+    // format initial value
+    this.updateValue(this.value);
+  },
+
   methods: {
     onTouchStart(event) {
       if (this.disabled) {
