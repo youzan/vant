@@ -103,7 +103,7 @@ export default {
 | height | 高度，默认单位为 px | *string \| number* | `300` | - |
 | main-active-index | 左侧选中项的索引 | *number* | `0` | - |
 | active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| (string \| number)[]* | `0` | - |
-| max | 右侧项最大选中个数 | *number* | *Infinity* | 2.1.9 |
+| max | 右侧项最大选中个数 | *number* | *Infinity* | 2.2.0 |
 
 ### Events
 
