@@ -57,15 +57,21 @@ function Button(
     loadingText
   } = props;
 
-  const style: Record<string, string> = {};
+  const style: Record<string, string | number> = {};
 
   if (color) {
-    style.borderColor = color;
     style.color = plain ? color : WHITE;
 
     if (!plain) {
       // Use background instead of backgroundColor to make linear-gradient work
       style.background = color;
+    }
+
+    // hide border when color is linear-gradient
+    if (color.indexOf('gradient') !== -1) {
+      style.border = 0;
+    } else {
+      style.borderColor = color;
     }
   }
 
