@@ -1,5 +1,9 @@
 # Stepper 步进器
 
+### 介绍
+
+步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字
+
 ### 引入
 
 ``` javascript
@@ -12,6 +16,8 @@ Vue.use(Stepper);
 ## 代码演示
 
 ### 基础用法
+
+通过`v-model`绑定输入值，可以通过`change`事件监听到输入值的变化
 
 ```html
 <van-stepper v-model="value" />
@@ -29,11 +35,15 @@ export default {
 
 ### 步长设置
 
+通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为`1`
+
 ```html
 <van-stepper v-model="value" step="2" />
 ```
 
 ### 限制输入范围
+
+通过`min`和`max`属性限制输入值的范围
 
 ```html
 <van-stepper v-model="value" min="5" max="8" />
@@ -41,19 +51,23 @@ export default {
 
 ### 限制输入整数
 
+设置`integer`属性后，输入框将限制只能输入整数
+
 ```html
 <van-stepper v-model="value" integer />
 ```
 
 ### 禁用状态
 
-通过设置`disabled`属性来禁用 stepper
+通过设置`disabled`属性来禁用步进器，禁用状态下无法点击按钮或修改输入框
 
 ```html
 <van-stepper v-model="value" disabled />
 ```
 
 ### 异步变更
+
+如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
 
 ```html
 <van-stepper
@@ -77,6 +91,8 @@ export default {
 
       setTimeout(() => {
         Toast.clear();
+
+        // 注意此时修改 value 后会再次触发 change 事件
         this.value = value;
       }, 500);
     }
@@ -105,7 +121,7 @@ export default {
 | v-model | 当前输入值 | *string \| number* | 最小值 | - |
 | min | 最小值 | *string \| number* | `1` | - |
 | max | 最大值 | *string \| number* | - | - |
-| step | 步数 | *string \| number* | `1` | - |
+| step | 步长 | *string \| number* | `1` | - |
 | integer | 是否只允许输入整数 | *boolean* | `false` | - |
 | disabled | 是否禁用步进器 | *boolean* | `false` | - |
 | disable-input | 是否禁用输入框 | *boolean* | `false` | - |
