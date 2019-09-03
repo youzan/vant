@@ -23,7 +23,7 @@ The value of field is bound with v-model.
 
 ### Custom type
 
-Use `type` prop to custom diffrent type fields.
+Use `type` prop to custom different type fields.
 
 ```html
 <van-cell-group>

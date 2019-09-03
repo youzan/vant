@@ -6,7 +6,7 @@ The default language of Vant is Chinese. If you want to use other languages, you
 
 ### Switch languages
 
-Vant supports multiple languages with the Locale component, and the `Locale.use` method allows you to switch to diffrent languages.
+Vant supports multiple languages with the Locale component, and the `Locale.use` method allows you to switch to different languages.
 
 ```js
 import { Locale } from 'vant';
