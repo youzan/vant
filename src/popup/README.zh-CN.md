@@ -57,12 +57,21 @@ export default {
 
 ### 关闭图标
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标
 
 ```html
 <van-popup
   v-model="show"
   closeable
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+
+<!-- 自定义图标 -->
+<van-popup
+  v-model="show"
+  closeable
+  close-icon="close"
   position="bottom"
   :style="{ height: '20%' }"
 />
@@ -133,6 +142,7 @@ export default {
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
 | closeable | 是否显示关闭图标 | *boolean* | `false` | 2.2.0 |
+| close-icon | 关闭图标名称或图片链接 | *string* | `cross` | 2.2.0 |
 | transition | 动画类名，用法与 Vue 原生`transtion`组件的`name`属性一致 | *string* | - | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
 
