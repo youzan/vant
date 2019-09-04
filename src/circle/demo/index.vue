@@ -21,7 +21,7 @@
 
       <van-circle
         v-model="currentRate3"
-        color="#f44"
+        color="#ee0a24"
         :rate="rate"
         layer-color="#ebedf0"
         :speed="100"

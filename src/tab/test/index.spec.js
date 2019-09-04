@@ -25,7 +25,7 @@ function createWrapper(options = {}) {
     `,
     data() {
       return {
-        color: '#f44',
+        color: '#ee0a24',
         type: 'line',
         sticky: true,
         lineWidth: 2,

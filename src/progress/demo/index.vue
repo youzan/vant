@@ -18,7 +18,7 @@
         :pivot-text="$t('orange')"
       />
       <van-progress
-        color="#f44"
+        color="#ee0a24"
         :percentage="50"
         :pivot-text="$t('red')"
       />

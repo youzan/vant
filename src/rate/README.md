@@ -43,7 +43,7 @@ export default {
 <van-rate
   v-model="value"
   :size="25"
-  color="#f44"
+  color="#ee0a24"
   void-icon="star"
   void-color="#eee"
 />

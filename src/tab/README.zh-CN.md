@@ -186,7 +186,7 @@ export default {
 | background | 标签栏背景色 | *string* | `white` | - |
 | line-width | 底部条宽度，默认单位 px | *string \| number* | `auto` | - |
 | line-height | 底部条高度，默认单位 px | *string \| number* | `3px` | - |
-| color | 标签主题色 | *string* | `#f44` | - |
+| color | 标签主题色 | *string* | `#ee0a24` | - |
 | title-active-color | 标题选中态颜色 | *string* | - | - |
 | title-inactive-color | 标题默认态颜色 | *string* | - | - |
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | *number* | `4` | - |
