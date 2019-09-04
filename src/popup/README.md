@@ -49,6 +49,17 @@ Use `position` prop to set popup display position
 />
 ```
 
+### Close Icon
+
+```html
+<van-popup
+  v-model="show"
+  closeable
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+```
+
 ### Round Corner
 
 ```html
@@ -112,6 +123,7 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
 | transition | Transition | *string* | `popup-slide` | - |
 | get-container | Return the mount node for Popup | *string \| () => HTMLElement* | - | - |
+| closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
 
 ### Events
 
