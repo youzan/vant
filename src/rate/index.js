@@ -53,6 +53,10 @@ export default createComponent({
     count: {
       type: Number,
       default: 5
+    },
+    touchable: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -84,7 +88,7 @@ export default createComponent({
     },
 
     onTouchStart(event) {
-      if (this.readonly || this.disabled) {
+      if (this.readonly || this.disabled || !this.touchable) {
         return;
       }
 
@@ -108,7 +112,7 @@ export default createComponent({
     },
 
     onTouchMove(event) {
-      if (this.readonly || this.disabled) {
+      if (this.readonly || this.disabled || !this.touchable) {
         return;
       }
 
