@@ -2,7 +2,7 @@
 
 ### 介绍
 
-表单中的输入框组件，支持`input`和`textarea`两种类型
+表单中的输入框组件
 
 ### 引入
 
@@ -128,7 +128,7 @@ Vue.use(Field);
 |------|------|------|------|------|
 | label | 输入框左侧文本 | *string* | - | - |
 | value | 当前输入的值 | *string \| number* | - | - |
-| type | 输入框类型, 可选值为 `tel` *number*<br>`textarea` `password` 等 | *string* | `text` | - |
+| type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | *string* | `text` | - |
 | size | 大小，可选值为 `large` | *string* | - | - |
 | maxlength | 输入的最大字符数 | *string \| number* | - | - |
 | placeholder | 占位提示文字 | *string* | - | - |
@@ -148,8 +148,8 @@ Vue.use(Field);
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | *boolean \| object* | `false` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
-| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
 
 ### Events
 
