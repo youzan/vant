@@ -100,12 +100,13 @@ export default {
 | gutter | 图标间距，默认单位为`px` | *string \| number* | `4px` | - |
 | color | 选中时的颜色 | *string* | `#ffd21e` | - |
 | void-color | 未选中时的颜色 | *string* | `#c7c7c7` | - |
+| disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` | - |
 | icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star` | - |
 | void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star-o`  | - |
 | allow-half | 是否允许半选 | *boolean* | `false` | - |
 | readonly | 是否为只读状态 | *boolean* | `false` | - |
 | disabled | 是否禁用评分 | *boolean* | `false` | - |
-| disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` | - |
+| touchable | 是否可以通过滑动手势选择评分 | *boolean* | `true` | 2.2.0 |
 
 ### Events
 

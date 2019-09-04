@@ -137,3 +137,18 @@ test('size prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('untouchable', () => {
+  const onChange = jest.fn();
+  const wrapper = mount(Rate, {
+    propsData: {
+      touchable: false
+    },
+    listeners: {
+      change: onChange
+    }
+  });
+
+  triggerDrag(wrapper, 100, 0);
+  expect(onChange).toHaveBeenCalledTimes(0);
+});
