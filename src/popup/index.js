@@ -1,5 +1,6 @@
 import { createNamespace, isDef } from '../utils';
 import { PopupMixin } from '../mixins/popup';
+import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('popup');
 
@@ -9,7 +10,12 @@ export default createComponent({
   props: {
     round: Boolean,
     duration: Number,
+    closeable: Boolean,
     transition: String,
+    closeIcon: {
+      type: String,
+      default: 'cross'
+    },
     position: {
       type: String,
       default: 'center'
@@ -61,6 +67,9 @@ export default createComponent({
           onClick={this.onClick}
         >
           {this.slots()}
+          {this.closeable && (
+            <Icon name={this.closeIcon} class={bem('close-icon')} onClick={this.close} />
+          )}
         </div>
       </transition>
     );

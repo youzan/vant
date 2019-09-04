@@ -132,7 +132,7 @@ export default {
 | duration | Animation duration (ms) | *number* | `500` | - |
 | loop | Whether to enable loop | *boolean* | `true` | - |
 | vertical | Vertical Scrolling | *boolean* | `false` | - |
-| touchable | Whether touchable | *boolean* | `true` | - |
+| touchable | Whether to allow swipe by touch gesture | *boolean* | `true` | - |
 | show-indicators | Whether to show indicators | *boolean* | `true` | - |
 | indicator-color | Indicator color | *string* | `#1989fa` | - |
 | initial-swipe | Index of initial swipe, start from 0 | *number* | `0` | - |

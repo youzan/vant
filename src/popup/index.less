@@ -82,5 +82,17 @@
     &-slide-left-leave-active {
       transform: translate3d(-100%, -50%, 0);
     }
+
+    &__close-icon {
+      position: absolute;
+      top: @popup-close-icon-margin;
+      right: @popup-close-icon-margin;
+      color: @popup-close-icon-color;
+      font-size: @popup-close-icon-size;
+
+      &:active {
+        opacity: .6;
+      }
+    }
   }
 }
