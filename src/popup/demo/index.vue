@@ -28,6 +28,15 @@
     <demo-block v-if="!$attrs.weapp" :title="$t('closeIcon')">
       <van-button type="primary" @click="showCloseIcon = true">{{ $t('closeIcon') }}</van-button>
       <van-popup v-model="showCloseIcon" closeable position="bottom" :style="{ height: '20%' }" />
+
+      <van-button type="primary" @click="showCustomCloseIcon = true">{{ $t('customCloseIcon') }}</van-button>
+      <van-popup
+        v-model="showCustomCloseIcon"
+        closeable
+        close-icon="close"
+        position="bottom"
+        :style="{ height: '20%' }"
+      />
     </demo-block>
 
     <demo-block v-if="!$attrs.weapp" :title="$t('roundCorner')">
@@ -54,7 +63,8 @@ export default {
       buttonRight: '右侧弹出',
       getContainer: '指定挂载节点',
       roundCorner: '圆角弹窗',
-      closeIcon: '关闭图标'
+      closeIcon: '关闭图标',
+      customCloseIcon: '自定义图标'
     },
     'en-US': {
       position: 'Position',
@@ -65,7 +75,8 @@ export default {
       buttonRight: 'From Right',
       getContainer: 'Get Container',
       roundCorner: 'Round Corner',
-      closeIcon: 'Close Icon'
+      closeIcon: 'Close Icon',
+      customCloseIcon: 'Custom Icon'
     }
   },
 
@@ -78,7 +89,8 @@ export default {
       showRight: false,
       showCloseIcon: false,
       showRoundCorner: false,
-      showGetContainer: false
+      showGetContainer: false,
+      showCustomCloseIcon: false,
     };
   }
 };

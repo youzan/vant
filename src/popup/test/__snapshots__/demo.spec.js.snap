@@ -14,6 +14,7 @@ exports[`renders demo correctly 1`] = `
     <!---->
   </div>
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">关闭图标</span></button>
+    <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义图标</span></button>
     <!---->
   </div>
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">圆角弹窗</span></button>

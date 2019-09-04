@@ -12,6 +12,10 @@ export default createComponent({
     duration: Number,
     closeable: Boolean,
     transition: String,
+    closeIcon: {
+      type: String,
+      default: 'cross'
+    },
     position: {
       type: String,
       default: 'center'
@@ -64,7 +68,7 @@ export default createComponent({
         >
           {this.slots()}
           {this.closeable && (
-            <Icon name="cross" class={bem('close-icon')} onClick={this.close} />
+            <Icon name={this.closeIcon} class={bem('close-icon')} onClick={this.close} />
           )}
         </div>
       </transition>
