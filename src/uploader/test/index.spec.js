@@ -341,7 +341,7 @@ it('click to preview image', () => {
   wrapper.find('.van-image').trigger('click');
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode2).toMatchSnapshot();
+  expect(imagePreviewNode2.querySelectorAll('.van-image-preview__image').length).toEqual(1);
 });
 
 it('click-preview event', () => {

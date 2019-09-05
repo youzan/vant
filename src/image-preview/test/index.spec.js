@@ -136,6 +136,17 @@ test('zoom', async () => {
   Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
 
+test('set show-index prop to false', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      showIndex: false
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('index slot', () => {
   const wrapper = mount({
     template: `
