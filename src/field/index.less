@@ -50,11 +50,16 @@
       text-align: right;
     }
 
-    /* for ios wechat */
+    // for ios wechat
     &[type="date"],
     &[type="time"],
     &[type="datetime-local"] {
       min-height: @cell-line-height;
+    }
+
+    // for safari
+    &[type="search"] {
+      -webkit-appearance: none;
     }
   }
 
