@@ -134,6 +134,7 @@ export default {
 |------|------|------|
 | oversize | Triggered when file size over limit | Same as after-read |
 | click-preview | Triggered when click preview image | Same as after-read |
+| close-preview | Triggered when close full screen image preview | - |
 | delete | Triggered when delete preview file | file |
 
 ### Slots

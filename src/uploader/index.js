@@ -189,7 +189,10 @@ export default createComponent({
       ImagePreview({
         images: imageFiles,
         closeOnPopstate: true,
-        startPosition: imageFiles.indexOf(item.content || item.url)
+        startPosition: imageFiles.indexOf(item.content || item.url),
+        onClose: () => {
+          this.$emit('close-preview');
+        }
       });
     },
 
