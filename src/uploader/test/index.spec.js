@@ -1,5 +1,5 @@
 import Uploader from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test/utils';
 
 window.File = function() {
   this.size = 10000;
@@ -355,4 +355,21 @@ it('click-preview event', () => {
   wrapper.find('.van-image').trigger('click');
   expect(wrapper.emitted('click-preview')[0][0]).toEqual({ url: IMAGE });
   expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '' });
+});
+
+it('close-preview event', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }]
+    }
+  });
+
+  wrapper.find('.van-image').trigger('click');
+
+  const preview = document.querySelector('.van-image-preview');
+  const swipe = preview.querySelector('.van-swipe__track');
+  triggerDrag(swipe, 0, 0);
+
+  await later(300);
+  expect(wrapper.emitted('close-preview')).toBeTruthy();
 });

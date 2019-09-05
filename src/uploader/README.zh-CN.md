@@ -150,6 +150,7 @@ export default {
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同`after-read` |
 | click-preview | 点击预览图时触发 | 同`after-read` | 
+| close-preview | 关闭全屏图片预览时触发 | - |
 | delete | 删除文件预览时触发 | file: 被删除的文件对象 |
 
 ### Slots
