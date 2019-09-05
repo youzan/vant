@@ -40,7 +40,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 
 <van-progress
   pivot-text="Red"
-  color="#f44"
+  color="#ee0a24"
   :percentage="50"
 />
 

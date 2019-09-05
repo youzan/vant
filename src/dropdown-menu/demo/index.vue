@@ -43,7 +43,7 @@
     </demo-block>
 
     <demo-block :title="$t('customActiveColor')">
-      <van-dropdown-menu active-color="#f44">
+      <van-dropdown-menu active-color="#ee0a24">
         <van-dropdown-item
           v-model="value1"
           :options="option1"

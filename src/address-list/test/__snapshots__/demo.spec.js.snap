@@ -8,7 +8,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell van-cell--clickable van-address-item">
           <div class="van-cell__value van-cell__value--alone van-address-item__value">
             <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
-              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success" style="border-color: #f44; background-color: rgb(255, 68, 68);">
+              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success" style="border-color: #ee0a24; background-color: rgb(238, 10, 36);">
                   <!----></i></div><span class="van-radio__label"><div class="van-address-item__name">张三，13000000000</div><div class="van-address-item__address">浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室</div></span>
             </div>
           </div><i class="van-icon van-icon-edit van-address-item__edit">

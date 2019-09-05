@@ -10,7 +10,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(242, 130, 106); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(242, 130, 106);">橙色</span></span></div>
-    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(255, 68, 68); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(255, 68, 68);">红色</span></span></div>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="background: rgb(238, 10, 36); width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(238, 10, 36);">红色</span></span></div>
     <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="width: 0px;"><span class="van-progress__pivot" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221);">紫色</span></span></div>
   </div>
 </div>

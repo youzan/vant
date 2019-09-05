@@ -57,7 +57,7 @@ export default {
 <van-slider
   v-model="value"
   bar-height="4px"
-  active-color="#f44"
+  active-color="#ee0a24"
 />
 ```
 
@@ -66,7 +66,7 @@ export default {
 ```html
 <van-slider
   v-model="value"
-  active-color="#f44"
+  active-color="#ee0a24"
 >
   <div
     slot="button"
