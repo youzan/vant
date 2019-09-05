@@ -1,37 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`click to preview image 1`] = `
-<div
-  class="van-image-preview"
-  name="van-fade"
->
-  <div
-    class="van-swipe"
-  >
-    <div
-      class="van-swipe__track"
-      style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"
-    >
-      <div
-        class="van-swipe-item"
-        style="width: 0px; height: 100%; transform: translateX(0px);"
-      >
-        <img
-          class="van-image-preview__image"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
-          style="transition: .3s all;"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="van-image-preview__index"
-  >
-    1/1
-  </div>
-</div>
-`;
-
 exports[`delete preview image 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">
