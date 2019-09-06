@@ -1,5 +1,36 @@
 # Changelog
 
+### [v2.2.0](https://github.com/youzan/vant/tree/v2.2.0)
+`2019-09-06`
+
+**Features**
+
+- Style: update basic red color [\#4368](https://github.com/youzan/vant/pull/4368)
+- Rate: add touchable prop [\#4361](https://github.com/youzan/vant/pull/4361)
+- Rate: should be inline-block [\#4334](https://github.com/youzan/vant/pull/4334)
+- Rate: optimize touchmove gesture [\#4336](https://github.com/youzan/vant/pull/4336)
+- Popup: add closeable prop [\#4362](https://github.com/youzan/vant/pull/4362)
+- Popup: add close-icon prop [\#4366](https://github.com/youzan/vant/pull/4366)
+- Sidebar: remove border [\#4382](https://github.com/youzan/vant/pull/4382)
+- SidebarItem add disabled prop [\#4325](https://github.com/youzan/vant/pull/4325)
+- TreeSelect: add max prop [\#4323](https://github.com/youzan/vant/pull/4323)
+- TreeSelect: support show info [\#4384](https://github.com/youzan/vant/pull/4384)
+- Uploader: add close-preview event [\#4376](https://github.com/youzan/vant/pull/4376)
+- ImagePreview: add image loading tip [\#4378](https://github.com/youzan/vant/pull/4378)
+
+**Bug Fixes**
+
+- fix Field should reset appearance in safari [\#4380](https://github.com/youzan/vant/pull/4380)
+- fix Button should hide border when color is linear-gradient [\#4342](https://github.com/youzan/vant/pull/4342)
+- fix Dialog should reset loading when closed [\#4352](https://github.com/youzan/vant/pull/4352)
+- fix Slider should format initial value [\#4337](https://github.com/youzan/vant/pull/4337)
+- fix Sidebar incorrect info position [\#4324](https://github.com/youzan/vant/pull/4324)
+- fix DropdownItem missing default active color [\#4330](https://github.com/youzan/vant/pull/4330)
+- fix NumberKeyboard incorrect button position in iphoneX [\#4304](https://github.com/youzan/vant/pull/4304)
+- fix ImagePreview should reset scale after toggle [\#4319](https://github.com/youzan/vant/pull/4319)
+- fix ImagePreview should emit change event when reset to start position [\#4320](https://github.com/youzan/vant/pull/4320)
+
+
 ### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
 `2019-08-29`
 

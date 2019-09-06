@@ -1,5 +1,36 @@
 # 更新日志
 
+### [v2.2.0](https://github.com/youzan/vant/tree/v2.2.0)
+`2019-09-06`
+
+**Features**
+
+- Style: 更新基础红色为 #ee0a24 [\#4368](https://github.com/youzan/vant/pull/4368)
+- Rate: 新增 touchable 属性 [\#4361](https://github.com/youzan/vant/pull/4361)
+- Rate: 布局调整为 inline-block [\#4334](https://github.com/youzan/vant/pull/4334)
+- Rate: 优化手势滑动的流畅度 [\#4336](https://github.com/youzan/vant/pull/4336)
+- Popup: 新增 closeable 属性 [\#4362](https://github.com/youzan/vant/pull/4362)
+- Popup: 新增 close-icon 属性 [\#4366](https://github.com/youzan/vant/pull/4366)
+- Sidebar: 移除了内外边框 [\#4382](https://github.com/youzan/vant/pull/4382)
+- SidebarItem 新增 disabled 属性 [\#4325](https://github.com/youzan/vant/pull/4325)
+- TreeSelect: 新增 max 属性 [\#4323](https://github.com/youzan/vant/pull/4323)
+- TreeSelect: 支持通过 info 展示徽标 [\#4384](https://github.com/youzan/vant/pull/4384)
+- Uploader: 新增 close-preview 事件 [\#4376](https://github.com/youzan/vant/pull/4376)
+- ImagePreview: 新增图片加载过程的提示 [\#4378](https://github.com/youzan/vant/pull/4378)
+
+**Bug Fixes**
+
+- 修复 Field 在 Safari 浏览器上样式异常的问题 [\#4380](https://github.com/youzan/vant/pull/4380)
+- 修复 Button 在 color 属性中传入渐变色时边框颜色错误的问题 [\#4342](https://github.com/youzan/vant/pull/4342)
+- 修复 Dialog 关闭时未重置按钮加载状态的问题 [\#4352](https://github.com/youzan/vant/pull/4352)
+- 修复 Slider 初始值超出范围时展示错误的问题 [\#4337](https://github.com/youzan/vant/pull/4337)
+- 修复 Sidebar 徽标位置错误的问题 [\#4324](https://github.com/youzan/vant/pull/4324)
+- 修复 DropdownItem 选项选中态颜色丢失的问题 [\#4330](https://github.com/youzan/vant/pull/4330)
+- 修复 NumberKeyboard 在 iphoneX 上右侧按钮位置错误的问题 [\#4304](https://github.com/youzan/vant/pull/4304)
+- 修复 ImagePreview 在关闭后未重置图片缩放状态的问题 [\#4319](https://github.com/youzan/vant/pull/4319)
+- 修复 ImagePreview 在某些情况下页码不正确的问题 [\#4320](https://github.com/youzan/vant/pull/4320)
+
+
 ### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
 `2019-08-29`
 
