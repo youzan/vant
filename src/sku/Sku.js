@@ -260,7 +260,6 @@ export default createComponent({
     const skuEventBus = new Vue();
     this.skuEventBus = skuEventBus;
 
-    skuEventBus.$on('sku:close', this.onClose);
     skuEventBus.$on('sku:select', this.onSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
     skuEventBus.$on('sku:previewImage', this.onPreviewImage);
@@ -337,10 +336,6 @@ export default createComponent({
       }
 
       return t('selectSku');
-    },
-
-    onClose() {
-      this.show = false;
     },
 
     onSelect(skuValue) {
@@ -547,11 +542,13 @@ export default createComponent({
     return (
       <Popup
         vModel={this.show}
+        round
+        closeable
         position="bottom"
+        closeIcon="clear"
         class="van-sku-container"
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
-        round
       >
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>

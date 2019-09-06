@@ -11,6 +11,12 @@
     overflow-y: visible;
     font-size: @font-size-md;
     background: @white;
+
+    .van-popup__close-icon {
+      top: @padding-sm;
+      color: @sku-icon-gray-color;
+      font-size: 20px;
+    }
   }
 
   &-body {
@@ -101,15 +107,6 @@
       opacity: .1;
       content: '';
     }
-  }
-
-  &__close-icon {
-    position: absolute;
-    top: @padding-sm;
-    right: @padding-md;
-    color: @sku-icon-gray-color;
-    font-size: 20px;
-    text-align: center;
   }
 
   &-group-container {

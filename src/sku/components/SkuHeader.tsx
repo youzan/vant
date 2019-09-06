@@ -1,7 +1,6 @@
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import { BORDER_BOTTOM } from '../../utils/constant';
-import Icon from '../../icon';
 
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
@@ -53,16 +52,7 @@ function SkuHeader(
       <div class={bem('img-wrap')} onClick={previewImage}>
         <img src={goodsImg} />
       </div>
-      <div class={bem('goods-info')}>
-        {slots.default && slots.default()}
-        <Icon
-          name="clear"
-          class="van-sku__close-icon"
-          onClick={() => {
-            skuEventBus.$emit('sku:close');
-          }}
-        />
-      </div>
+      <div class={bem('goods-info')}>{slots.default && slots.default()}</div>
     </div>
   );
 }
