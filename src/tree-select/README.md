@@ -123,6 +123,8 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   {
     // name of the parent node
     text: 'Group 1',
+    // info
+    info: 3,
     // leaves of this parent node
     children: [
       {

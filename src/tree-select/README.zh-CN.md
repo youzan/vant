@@ -129,6 +129,8 @@ export default {
   {
     // 导航名称
     text: '所有城市',
+    // 导航名称右上角徽标
+    info: 3,
     // 该导航下所有的可选项
     children: [
       {

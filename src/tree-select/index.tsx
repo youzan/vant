@@ -10,6 +10,7 @@ import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type TreeSelectItem = {
   text: string;
+  info?: string | number;
   disabled?: boolean;
   children: TreeSelectChildren[];
 };
@@ -54,8 +55,9 @@ function TreeSelect(
       : activeId === id;
   }
 
-  const Nav = items.map(item => (
+  const Navs = items.map(item => (
     <SidebarItem
+      info={item.info}
       title={item.text}
       disabled={item.disabled}
       class={bem('nav-item')}
@@ -121,7 +123,7 @@ function TreeSelect(
           emit(ctx, 'navclick', index);
         }}
       >
-        {Nav}
+        {Navs}
       </Sidebar>
       <div class={bem('content')}>{Content()}</div>
     </div>
