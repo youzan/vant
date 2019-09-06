@@ -1,6 +1,8 @@
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
+import Sidebar from '../sidebar';
+import SidebarItem from '../sidebar-item';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -52,28 +54,12 @@ function TreeSelect(
       : activeId === id;
   }
 
-  const Nav = items.map((item, index) => (
-    <div
-      key={index}
-      class={[
-        'van-ellipsis',
-        bem('nav-item', {
-          active: mainActiveIndex === index,
-          disabled: item.disabled
-        })
-      ]}
-      onClick={() => {
-        if (!item.disabled) {
-          emit(ctx, 'click-nav', index);
-          emit(ctx, 'update:main-active-index', index);
-
-          // compatible for old usage, should be removed in next major version
-          emit(ctx, 'navclick', index);
-        }
-      }}
-    >
-      {item.text}
-    </div>
+  const Nav = items.map(item => (
+    <SidebarItem
+      title={item.text}
+      disabled={item.disabled}
+      class={bem('nav-item')}
+    />
   ));
 
   function Content() {
@@ -124,7 +110,19 @@ function TreeSelect(
 
   return (
     <div class={bem()} style={{ height: addUnit(height) }} {...inherit(ctx)}>
-      <div class={bem('nav')}>{Nav}</div>
+      <Sidebar
+        class={bem('nav')}
+        activeKey={mainActiveIndex}
+        onChange={(index: number) => {
+          emit(ctx, 'click-nav', index);
+          emit(ctx, 'update:main-active-index', index);
+
+          // compatible for old usage, should be removed in next major version
+          emit(ctx, 'navclick', index);
+        }}
+      >
+        {Nav}
+      </Sidebar>
       <div class={bem('content')}>{Content()}</div>
     </div>
   );
