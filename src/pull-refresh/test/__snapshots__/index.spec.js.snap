@@ -2,7 +2,7 @@
 
 exports[`change head content when pulling down 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,20px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms; transform: translate3d(0,20px, 0);">
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">下拉即可刷新...</div>
     </div>
@@ -12,7 +12,7 @@ exports[`change head content when pulling down 1`] = `
 
 exports[`change head content when pulling down 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,75px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms; transform: translate3d(0,75px, 0);">
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">释放即可刷新...</div>
     </div>
@@ -22,7 +22,7 @@ exports[`change head content when pulling down 2`] = `
 
 exports[`change head content when pulling down 3`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 300ms; transform: translate3d(0,50px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 300ms; transform: translate3d(0,50px, 0);">
     <div class="van-pull-refresh__head">
       <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">加载中...</span></div>
     </div>
@@ -32,7 +32,7 @@ exports[`change head content when pulling down 3`] = `
 
 exports[`change head content when pulling down 4`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 300ms; transform: translate3d(0,50px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 300ms; transform: translate3d(0,50px, 0);">
     <div class="van-pull-refresh__head">
       <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">加载中...</span></div>
     </div>
@@ -42,7 +42,7 @@ exports[`change head content when pulling down 4`] = `
 
 exports[`change head content when pulling down 5`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 300ms;">
+  <div class="van-pull-refresh__track" style="transition-duration: 300ms;">
     <div class="van-pull-refresh__head"></div>
   </div>
 </div>
@@ -50,7 +50,7 @@ exports[`change head content when pulling down 5`] = `
 
 exports[`custom content by slots 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,20px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms; transform: translate3d(0,20px, 0);">
     <div class="van-pull-refresh__head">pulling 20</div>
   </div>
 </div>
@@ -58,7 +58,7 @@ exports[`custom content by slots 1`] = `
 
 exports[`custom content by slots 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,75px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms; transform: translate3d(0,75px, 0);">
     <div class="van-pull-refresh__head">loosing 75</div>
   </div>
 </div>
@@ -66,7 +66,7 @@ exports[`custom content by slots 2`] = `
 
 exports[`custom content by slots 3`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 300ms; transform: translate3d(0,50px, 0);">
+  <div class="van-pull-refresh__track" style="transition-duration: 300ms; transform: translate3d(0,50px, 0);">
     <div class="van-pull-refresh__head">loading 50</div>
   </div>
 </div>
@@ -74,7 +74,7 @@ exports[`custom content by slots 3`] = `
 
 exports[`not in page top 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms;">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms;">
     <div class="van-pull-refresh__head"></div>
   </div>
 </div>

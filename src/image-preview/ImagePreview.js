@@ -88,7 +88,7 @@ export default createComponent({
     imageStyle() {
       const { scale } = this;
       const style = {
-        transition: this.zooming || this.moving ? '' : '.3s all'
+        transitionDuration: this.zooming || this.moving ? '0s' : '.3s'
       };
 
       if (scale !== 1) {

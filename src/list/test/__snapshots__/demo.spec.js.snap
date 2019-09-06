@@ -13,7 +13,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs__content">
       <div role="tabpanel" class="van-tab__pane" style="">
         <div class="van-pull-refresh">
-          <div class="van-pull-refresh__track" style="transition: 0ms;">
+          <div class="van-pull-refresh__track" style="transition-duration: 0ms;">
             <div class="van-pull-refresh__head"></div>
             <div role="feed" class="van-list" aria-busy="true">
               <div class="van-list__loading">

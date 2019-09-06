@@ -12,6 +12,7 @@
   transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
   transition: @dialog-transition;
+  transition-property: transform, opacity;
 
   &__header {
     padding-top: @dialog-header-padding-top;
