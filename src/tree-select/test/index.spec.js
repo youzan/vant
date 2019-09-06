@@ -150,6 +150,21 @@ test('height prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('nav info', () => {
+  const wrapper = mount(TreeSelect, {
+    propsData: {
+      items: [
+        {
+          text: 'group1',
+          info: 3
+        }
+      ]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('use sync modifier in main-active-index', () => {
   const wrapper = mount({
     template: `
