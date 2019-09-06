@@ -21,7 +21,7 @@ export default createComponent({
 
   methods: {
     genCircle() {
-      const { activeIcon, activeColor, inactiveIcon } = this.$parent;
+      const { activeIcon, activeColor, inactiveIcon } = this.parent;
 
       if (this.status === 'process') {
         return (
@@ -43,7 +43,7 @@ export default createComponent({
 
   render() {
     const { status } = this;
-    const { activeColor, direction } = this.$parent;
+    const { activeColor, direction } = this.parent;
     const titleStyle = status === 'process' && { color: activeColor };
 
     return (
