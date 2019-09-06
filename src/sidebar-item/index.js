@@ -1,7 +1,6 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
-import { BORDER } from '../utils/constant';
 import Info from '../info';
 
 const [createComponent, bem] = createNamespace('sidebar-item');
@@ -38,7 +37,7 @@ export default createComponent({
   render() {
     return (
       <a
-        class={[bem({ select: this.select, disabled: this.disabled }), BORDER]}
+        class={bem({ select: this.select, disabled: this.disabled })}
         onClick={this.onClick}
       >
         <div class={bem('text')}>
