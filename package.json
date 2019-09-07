@@ -37,7 +37,7 @@
       "eslint",
       "git add"
     ],
-    "*.{vue,css}": [
+    "*.{vue,css,less}": [
       "stylelint",
       "git add"
     ]
