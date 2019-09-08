@@ -60,17 +60,18 @@ export default createComponent({
 
     const pivotStyle = {
       color: this.textColor,
+      left: `${(this.progressWidth - this.pivotWidth) * percentage / 100}px`,
       background: this.pivotColor || background
     };
 
     const portionStyle = {
       background,
-      width: ((this.progressWidth - this.pivotWidth) * percentage) / 100 + 'px'
+      width: (this.progressWidth * percentage) / 100 + 'px'
     };
 
     return (
       <div class={bem()}>
-        <span class={bem('portion', { 'with-pivot': showPivot })} style={portionStyle}>
+        <span class={bem('portion')} style={portionStyle}>
           {showPivot && (
             <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
               {text}
