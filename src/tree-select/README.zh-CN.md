@@ -100,10 +100,10 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | items | 分类显示所需的数据 | *Item[]* | `[]` | - |
-| height | 高度，默认单位为 px | *string \| number* | `300` | - |
+| height | 高度，默认单位为`px` | *string \| number* | `300` | - |
 | main-active-index | 左侧选中项的索引 | *number* | `0` | - |
 | active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| (string \| number)[]* | `0` | - |
-| max | 右侧项最大选中个数 | *number* | *Infinity* | 2.2.0 |
+| max | 右侧项最大选中个数 | *number* | `Infinity` | 2.2.0 |
 
 ### Events
 
@@ -120,9 +120,7 @@ export default {
 
 ### Item 数据结构
 
-`items` 整体为一个数组，数组内包含一系列描述分类的对象。
-
-每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项
+`items` 整体为一个数组，数组内包含一系列描述分类的对象，每个分类里，`text`表示当前分类的名称，`children`表示分类里的可选项。
 
 ```javascript
 [
@@ -136,7 +134,7 @@ export default {
       {
         // 名称
         text: '温州',
-        // id，作为匹配选中状态的标识
+        // id，作为匹配选中状态的标识符
         id: 1,
         // 禁用选项
         disabled: true
