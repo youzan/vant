@@ -62,13 +62,13 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
+    "@babel/core": "^7.6.0",
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/plugin-transform-object-assign": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-typescript": "^7.3.3",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@types/jest": "^24.0.16",
     "@vant/cli": "^1.0.6",
     "@vant/doc": "^2.5.6",
@@ -97,7 +97,7 @@
     "lint-staged": "^9.2.1",
     "postcss": "^7.0.17",
     "postcss-loader": "^3.0.0",
-    "style-loader": "^0.23.1",
+    "style-loader": "^1.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^18.3.0",
@@ -112,7 +112,7 @@
     "vue-template-compiler": "2.6.10",
     "webpack": "4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "3.7.2",
+    "webpack-dev-server": "3.8.0",
     "webpack-merge": "^4.2.2"
   },
   "sideEffects": [
