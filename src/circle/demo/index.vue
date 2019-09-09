@@ -13,7 +13,6 @@
       <van-circle
         v-model="currentRate3"
         :rate="rate"
-        layer-color="#ebedf0"
         :speed="100"
         :stroke-width="60"
         :text="$t('customWidth')"
