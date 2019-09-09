@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.1.14
+
+- add down、wap-home-o icon
+
 ## 1.1.13
 
 - fix gift-o、refund-o icon incomplete
