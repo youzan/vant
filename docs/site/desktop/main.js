@@ -21,16 +21,16 @@ importAll(docs, docsFromPackages);
 const router = new VueRouter({
   mode: 'hash',
   routes: routes({ componentMap: docs }),
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(to) {
     if (to.hash) {
       return { selector: to.hash };
     }
 
-    return savedPosition || { x: 0, y: 0 };
+    return { x: 0, y: 0 };
   }
 });
 
-router.afterEach(path => {
+router.afterEach(() => {
   Vue.nextTick(() => window.syncPath());
 });
 

@@ -118,7 +118,7 @@ Vue.use(Button);
 | size | 尺寸，可选值为 `large` `small` `mini` | *string* | `normal` | - |
 | text | 按钮文字 | *string* | - | - |
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.3 |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 | tag | HTML 标签 | *string* | `button` | - |
 | native-type | 原生 button 标签 type 属性 | *string* | - | - |
 | block | 是否为块级元素 | *boolean* | `false` | - |
@@ -132,7 +132,7 @@ Vue.use(Button);
 | loading-type | 加载图标类型，可选值为`spinner` | *string* | `circular` | - |
 | loading-size | 加载图标大小 | *string* | `20px` | - |
 | url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| to | 路由跳转对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### Events
