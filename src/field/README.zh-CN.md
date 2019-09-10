@@ -17,7 +17,7 @@ Vue.use(Field);
 
 ### 基础用法
 
-通过 v-model 绑定输入框的值
+通过`v-model`绑定输入框的值
 
 ```html
 <van-cell-group>

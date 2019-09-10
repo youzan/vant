@@ -19,7 +19,7 @@ Vue.use(Search);
 <van-search placeholder="请输入搜索关键词" v-model="value" />
 ```
 
-### 监听对应事件
+### 事件监听
 
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的 搜索/回车 按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
 
@@ -37,7 +37,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 </form>
 ```
 
-### 自定义行动按钮
+### 自定义按钮
 
 `van-search` 支持自定义右侧取消按钮，使用名字为 action 的插槽即可。使用此插槽以后，原有的 cancel 事件不再生效。
 
@@ -75,19 +75,20 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 
 ### Events
 
-Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
-
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| cancel | 取消搜索 | - |
-| search | 确定搜索 | - |
-| clear | 点击清除按钮后触发 | - |
+| search | 确定搜索时触发 | value: 输入框当前值 |
+| input | 输入框内容变化时触发 | value: 输入框当前值 |
+| focus | 输入框获得焦点时触发 | event: Event |
+| blur | 输入框失去焦点时触发 | event: Event |
+| clear | 点击清除按钮后触发 | event: Event |
+| cancel | 点击取消按钮时触发 | - |
 
 ### Slots
 
 | 名称 | 说明 |
 |------|------|
 | label | 自定义搜索框左侧文本 |
-| action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
+| action | 自定义搜索框右侧按钮，设置`show-action`属性后展示 |
 | left-icon | 自定义输入框左侧图标 |
 | right-icon | 自定义输入框右侧图标 |
