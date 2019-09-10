@@ -148,7 +148,7 @@ export default {
 | active-color | Color of active tab item | *string* | `#1989fa` | - |
 | inactive-color | Color of inactive tab item | *string* | `#7d7e80` | - |
 | route | Whether to enable route mode | *boolean* | `false` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Tabbar Events
 

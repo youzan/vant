@@ -122,6 +122,8 @@ Vant use `px` as size units by default，you can use tools such as `postcss-pxto
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
 - [lib-flexible](https://github.com/amfe/lib-flexible)
 
+#### PostCSS Config
+
 postcss config example:
 
 ```js

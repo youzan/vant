@@ -83,7 +83,7 @@ Vue.use(SubmitBar);
 | loading | 是否显示加载中的按钮 |  *boolean* | `false` | - |
 | currency | 货币符号 | *string* | `¥` | - |
 | decimal-length | 价格小数点后位数 | *number* | `2` | - | 
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | *boolean* | `false` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
 
 ### Events
 
