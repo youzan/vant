@@ -70,8 +70,8 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | readonly | 是否将输入框设为只读 | *boolean* | `false` | - |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | `search` | - |
-| right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | `search` | - |
+| right-icon | 输入框右侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 
 ### Events
 

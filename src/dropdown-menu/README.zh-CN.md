@@ -157,4 +157,4 @@ export default {
 |------|------|------|
 | text | 文字 | *string* |
 | value | 标识符 | *string \| number* |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* |

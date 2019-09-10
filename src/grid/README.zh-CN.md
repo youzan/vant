@@ -130,9 +130,9 @@ Vue.use(Grid).use(GridItem);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 文字 | *string* | - | - |
-| icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 | url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| to | 路由跳转对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GridItem Events
