@@ -108,7 +108,7 @@ export default {
 | delete-button-text | Delete button text | *string* | `delete` | - |
 | show-delete-key | Whether to show delete button | *boolean* | `true` | - |
 | hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Events
 

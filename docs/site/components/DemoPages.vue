@@ -109,9 +109,7 @@ export default {
     }
 
     h4 {
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 20px;
+      margin-top: 0;
     }
 
     img {

@@ -120,7 +120,7 @@ export default {
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | duration | 动画时长，单位秒 | *number* | `0.3` | 2.0.3 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | *boolean* | `false` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
 
 ### Events
 
@@ -136,7 +136,7 @@ export default {
 
 ### Action 数据结构
 
-`Props`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+`actions`属性为一个对象数组，数组中的每个对象配置一列，对象可以包含以下值：
 
 | 键名 | 说明 | 类型 |
 |------|------|------|

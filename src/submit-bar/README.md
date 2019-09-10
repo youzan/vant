@@ -83,7 +83,7 @@ Use slot to add custom contents.
 | loading | Whether to show loading icon | *boolean* | `false` | - |
 | currency | Currency symbol | *string* | `¥` | - |
 | decimal-length | number of digits to appear after the decimal point | *number* | `2` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Events
 

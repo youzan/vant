@@ -122,10 +122,12 @@ vant.Toast('提示');
 
 ### Rem 适配
 
-Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，推荐使用以下两个工具
+Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，推荐使用以下两个工具：
 
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
 - [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
+
+#### PostCSS 配置
 
 下面提供了一份基本的 postcss 配置，可以在此配置的基础上根据项目需求进行修改
 
@@ -144,6 +146,20 @@ module.exports = {
 ```
 
 > 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+
+### 底部安全区适配
+
+iPhone X 等机型底部存在底部指示条，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行底部安全区适配。Vant 中部分组件提供了`safe-area-inset-bottom`属性，设置该属性后，即可在对应的机型上开启适配，如下示例：
+
+```html
+<!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+
+<!-- 开启 safe-area-inset-bottom 属性 -->
+<van-number-keyboard safe-area-inset-bottom />
+```
+
+<img src="https://b.yzcdn.cn/vant/safearea.png" style="margin-top: 30px;">
 
 ### 在桌面端使用
 

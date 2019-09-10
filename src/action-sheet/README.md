@@ -106,7 +106,7 @@ export default {
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | duration | Transition duration, unit second | *number* | `0.3` | 2.0.3 |
 | get-container | Return the mount node for action-sheet | *string \| () => HTMLElement* | - | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Events
 

@@ -203,7 +203,7 @@ export default {
     }
 
     img {
-      width: 26px;
+      width: 24px;
       margin-right: 10px;
     }
 

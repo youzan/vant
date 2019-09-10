@@ -154,7 +154,7 @@ export default {
 | active-color | 选中标签的颜色 | *string* | `#1989fa` | - |
 | inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` | - |
 | route | 是否开启路由模式 | *boolean* | `false` | - |
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | *boolean* | `false` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
 
 ### Tabbar Events
 

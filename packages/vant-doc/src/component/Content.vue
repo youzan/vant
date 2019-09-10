@@ -210,14 +210,13 @@ export default {
     }
 
     h3 {
-      font-size: 20px;
-
       + p code {
         margin: 0;
       }
 
       a {
         color: inherit;
+        font-size: 20px;
       }
     }
   }

@@ -13,7 +13,7 @@ Vue.use(Search);
 
 ### 基础用法
 
-`van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
+v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
 <van-search placeholder="请输入搜索关键词" v-model="value" />
@@ -21,9 +21,7 @@ Vue.use(Search);
 
 ### 事件监听
 
-`van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的 搜索/回车 按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
-
-Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
+Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘上的搜索/回车按钮后触发，`cancel`事件在点击搜索框右侧取消按钮时触发
 
 ```html
 <form action="/">
@@ -36,6 +34,8 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   />
 </form>
 ```
+
+> Tips: 在 van-search 外层增加 form 标签，且 action 不为空，即可在 iOS 输入法中显示搜索按钮
 
 ### 自定义按钮
 
