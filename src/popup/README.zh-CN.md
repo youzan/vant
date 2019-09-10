@@ -145,6 +145,7 @@ export default {
 | close-icon | 关闭图标名称或图片链接 | *string* | `cross` | 2.2.0 |
 | transition | 动画类名，用法与 Vue 原生`transtion`组件的`name`属性一致 | *string* | - | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
 
 ### Events
 

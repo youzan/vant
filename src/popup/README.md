@@ -134,7 +134,7 @@ export default {
 | close-icon | Close icon name | *string* | `cross` | 2.2.0 |
 | transition | Transition | *string* | `popup-slide` | - |
 | get-container | Return the mount node for Popup | *string \| () => HTMLElement* | - | - |
-
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
 ### Events
 
