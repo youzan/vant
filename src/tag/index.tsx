@@ -11,8 +11,8 @@ export type TagType = 'default' | 'primary' | 'success' | 'danger';
 export type TagSize = 'large' | 'medium';
 
 export type TagProps = {
+  type: TagType;
   size?: TagSize;
-  type?: TagType;
   mark?: boolean;
   color?: string;
   plain?: boolean;

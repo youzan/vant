@@ -67,9 +67,6 @@ function Search(
     attrs: ctx.data.attrs,
     on: {
       ...ctx.listeners,
-      input(value: string) {
-        emit(ctx, 'input', value);
-      },
       keypress(event: KeyboardEvent) {
         // press enter
         if (event.keyCode === 13) {

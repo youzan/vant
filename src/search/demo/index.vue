@@ -1,13 +1,10 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-search
-        v-model="value"
-        :placeholder="$t('placeholder')"
-      />
+      <van-search v-model="value" :placeholder="$t('placeholder')" />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="$t('listenToEvents')">
       <form action="/">
         <van-search
           v-model="value"
@@ -19,7 +16,7 @@
       </form>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('customButton')">
       <van-search
         v-model="value"
         :placeholder="$t('placeholder')"
@@ -40,16 +37,16 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '监听对应事件',
-      title3: '高级用法',
+      label: '地址',
       placeholder: '请输入搜索关键词',
-      label: '地址'
+      customButton: '自定义按钮',
+      listenToEvents: '事件监听'
     },
     'en-US': {
-      title2: 'Listen to Events',
-      title3: 'Advanced Usage',
+      label: 'Address',
       placeholder: 'Placeholder',
-      label: 'Address'
+      customButton: 'Custom Button',
+      listenToEvents: 'Listen to Events'
     }
   },
 
@@ -63,6 +60,7 @@ export default {
     onSearch() {
       this.$toast(this.value);
     },
+
     onCancel() {
       this.$toast(this.$t('cancel'));
     }
