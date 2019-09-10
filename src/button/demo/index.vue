@@ -11,86 +11,34 @@
     </demo-block>
 
     <demo-block :title="$t('plain')">
-      <van-button
-        plain
-        type="primary"
-        :text="$t('plain')"
-      />
-      <van-button
-        plain
-        type="danger"
-        :text="$t('plain')"
-      />
+      <van-button plain type="primary" :text="$t('plain')" />
+      <van-button plain type="info" :text="$t('plain')" />
     </demo-block>
 
     <demo-block :title="$t('hairline')">
-      <van-button
-        plain
-        hairline
-        type="primary"
-        :text="$t('hairlineButton')"
-      />
-      <van-button
-        plain
-        hairline
-        type="danger"
-        :text="$t('hairlineButton')"
-      />
+      <van-button plain hairline type="primary" :text="$t('hairlineButton')" />
+      <van-button plain hairline type="info" :text="$t('hairlineButton')" />
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-button
-        disabled
-        type="primary"
-        :text="$t('disabled')"
-      />
-      <van-button
-        disabled
-        type="danger"
-        :text="$t('disabled')"
-      />
+      <van-button disabled type="primary" :text="$t('disabled')" />
+      <van-button disabled type="info" :text="$t('disabled')" />
     </demo-block>
 
     <demo-block :title="$t('loadingStatus')">
-      <van-button
-        loading
-        type="primary"
-      />
-      <van-button
-        loading
-        type="primary"
-        loading-type="spinner"
-      />
-      <van-button
-        loading
-        :loading-text="$t('loadingText')"
-        type="danger"
-      />
+      <van-button loading type="primary" />
+      <van-button loading type="primary" loading-type="spinner" />
+      <van-button loading :loading-text="$t('loadingText')" type="info" />
     </demo-block>
 
     <demo-block :title="$t('shape')">
-      <van-button
-        type="primary"
-        square
-        :text="$t('square')"
-      />
-      <van-button
-        type="danger"
-        round
-        :text="$t('round')"
-      />
+      <van-button type="primary" square :text="$t('square')" />
+      <van-button type="info" round :text="$t('round')" />
     </demo-block>
 
     <demo-block :title="$t('icon')">
-      <van-button
-        type="primary"
-        icon="star-o"
-      />
-      <van-button
-        type="primary"
-        icon="star-o"
-        :text="$t('button')"
-      />
+      <van-button type="primary" icon="star-o" />
+      <van-button type="primary" icon="star-o" :text="$t('button')" />
       <van-button
         plain
         type="primary"
@@ -100,55 +48,20 @@
     </demo-block>
 
     <demo-block :title="$t('size')">
-      <van-button
-        type="primary"
-        size="large"
-      >
-        {{ $t('large') }}
-      </van-button>
-      <van-button
-        type="primary"
-        size="normal"
-      >
-        {{ $t('normal') }}
-      </van-button>
-      <van-button
-        type="primary"
-        size="small"
-      >
-        {{ $t('small') }}
-      </van-button>
-      <van-button
-        type="primary"
-        size="mini"
-      >
-        {{ $t('mini') }}
-      </van-button>
+      <van-button type="primary" size="large">{{ $t('large') }}</van-button>
+      <van-button type="primary" size="normal">{{ $t('normal') }}</van-button>
+      <van-button type="primary" size="small">{{ $t('small') }}</van-button>
+      <van-button type="primary" size="mini">{{ $t('mini') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('router')">
-      <van-button
-        :text="$t('urlRoute')"
-        type="primary"
-        url="/vant/mobile.html"
-      />
-      <van-button
-        :text="$t('vueRoute')"
-        type="primary"
-        to="index"
-      />
+      <van-button :text="$t('urlRoute')" type="primary" url="/vant/mobile.html" />
+      <van-button :text="$t('vueRoute')" type="primary" to="index" />
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-button
-        color="#7232dd"
-        :text="$t('customColor')"
-      />
-      <van-button
-        plain
-        color="#7232dd"
-        :text="$t('customColor')"
-      />
+      <van-button color="#7232dd" :text="$t('customColor')" />
+      <van-button plain color="#7232dd" :text="$t('customColor')" />
     </demo-block>
   </demo-section>
 </template>
@@ -213,7 +126,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-button {
   .van-button {

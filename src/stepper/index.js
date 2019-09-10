@@ -1,5 +1,6 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
+import { preventDefault } from '../utils/dom/event';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -76,15 +77,14 @@ export default createComponent({
     },
 
     buttonStyle() {
-      const style = {};
-
       if (this.buttonSize) {
         const size = addUnit(this.buttonSize);
-        style.width = size;
-        style.height = size;
-      }
 
-      return style;
+        return {
+          width: size,
+          height: size
+        };
+      }
     }
   },
 
@@ -188,7 +188,7 @@ export default createComponent({
       clearTimeout(this.longPressTimer);
 
       if (this.isLongPress) {
-        event.preventDefault();
+        preventDefault(event);
       }
     }
   },

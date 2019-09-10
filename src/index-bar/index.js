@@ -3,6 +3,7 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/constant';
+import { preventDefault } from '../utils/dom/event';
 import {
   getScrollTop,
   getElementTop,
@@ -168,10 +169,7 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.direction === 'vertical') {
-        /* istanbul ignore else */
-        if (event.cancelable) {
-          event.preventDefault();
-        }
+        preventDefault(event);
 
         const { clientX, clientY } = event.touches[0];
         const target = document.elementFromPoint(clientX, clientY);

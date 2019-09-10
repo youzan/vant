@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <van-tabs v-model="activeTab">
+    <van-tabs v-model="activeTab" :color="BLUE">
       <van-tab :title="$t('basicUsage')">
         <van-index-bar>
           <div
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import { BLUE } from '../../utils/constant';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -55,6 +57,7 @@ export default {
     }
 
     return {
+      BLUE,
       activeTab: 0,
       indexList,
       customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10]

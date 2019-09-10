@@ -21,7 +21,7 @@
 
     <demo-block :title="$t('custom')">
       <van-button
-        type="primary"
+        type="info"
         @touchstart.stop="keyboard = 'custom'"
       >
         {{ $t('button2') }}
