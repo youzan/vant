@@ -200,52 +200,61 @@ export default createComponent({
       this.$emit('click-preview', file, this.detail);
     },
 
-    renderPreview() {
-      if (!this.previewImage) {
-        return;
-      }
+    renderPreviewItem(item, index) {
+      const DeleteIcon = (
+        <Icon
+          name="delete"
+          class={bem('preview-delete')}
+          onClick={event => {
+            event.stopPropagation();
+            this.onDelete(item, index);
+          }}
+        />
+      );
 
-      return this.fileList.map((item, index) => (
+      const Preview = isImageFile(item) ? (
+        <Image
+          fit={this.imageFit}
+          src={item.content || item.url}
+          class={bem('preview-image')}
+          width={this.previewSize}
+          height={this.previewSize}
+          onClick={() => {
+            this.onPreviewImage(item);
+          }}
+        />
+      ) : (
+        <div
+          class={bem('file')}
+          style={{
+            width: this.previewSizeWithUnit,
+            height: this.previewSizeWithUnit
+          }}
+        >
+          <Icon class={bem('file-icon')} name="description" />
+          <div class={[bem('file-name'), 'van-ellipsis']}>
+            {item.file ? item.file.name : item.url}
+          </div>
+        </div>
+      );
+
+      return (
         <div
           class={bem('preview')}
           onClick={() => {
             this.onClickPreview(item);
           }}
         >
-          {isImageFile(item) ? (
-            <Image
-              fit={this.imageFit}
-              src={item.content || item.url}
-              class={bem('preview-image')}
-              width={this.previewSize}
-              height={this.previewSize}
-              onClick={() => {
-                this.onPreviewImage(item);
-              }}
-            />
-          ) : (
-            <div
-              class={bem('file')}
-              style={{
-                width: this.previewSizeWithUnit,
-                height: this.previewSizeWithUnit
-              }}
-            >
-              <Icon class={bem('file-icon')} name="description" />
-              <div class={[bem('file-name'), 'van-ellipsis']}>
-                {item.file ? item.file.name : item.url}
-              </div>
-            </div>
-          )}
-          <Icon
-            name="delete"
-            class={bem('preview-delete')}
-            onClick={() => {
-              this.onDelete(item, index);
-            }}
-          />
+          {Preview}
+          {DeleteIcon}
         </div>
-      ));
+      );
+    },
+
+    renderPreviewList() {
+      if (this.previewImage) {
+        return this.fileList.map(this.renderPreviewItem);
+      }
     },
 
     renderUpload() {
@@ -299,7 +308,7 @@ export default createComponent({
     return (
       <div class={bem()}>
         <div class={bem('wrapper')}>
-          {this.renderPreview()}
+          {this.renderPreviewList()}
           {this.renderUpload()}
         </div>
       </div>
