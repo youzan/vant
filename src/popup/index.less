@@ -63,6 +63,11 @@
       }
     }
 
+    &--safe-area-inset-bottom {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
     &-slide-top-enter,
     &-slide-top-leave-active {
       transform: translate3d(0, -100%, 0);
