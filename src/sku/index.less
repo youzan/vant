@@ -21,7 +21,6 @@
 
   &-body {
     flex: 1 1 auto;
-    max-height: 350px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
@@ -311,6 +310,7 @@
 
   &-actions {
     display: flex;
+    flex-shrink: 0;
     padding: @padding-xs @padding-md;
 
     .van-button {
