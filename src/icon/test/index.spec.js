@@ -46,6 +46,15 @@ test('tag prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('dot prop', () => {
+  const wrapper = mount(Icon, {
+    propsData: {
+      dot: true
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('size without unit', () => {
   const wrapper = mount(Icon, {
     propsData: {

@@ -8,6 +8,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type IconProps = {
+  dot?: boolean;
   tag: keyof HTMLElementTagNameMap | string;
   name: string;
   size?: string | number;
@@ -47,12 +48,13 @@ function Icon(
       {imageIcon && (
         <Image class={bem('image')} fit="contain" src={props.name} showLoading={false} />
       )}
-      <Info info={props.info} />
+      <Info dot={props.dot} info={props.info} />
     </props.tag>
   );
 }
 
 Icon.props = {
+  dot: Boolean,
   name: String,
   size: [Number, String],
   info: [Number, String],

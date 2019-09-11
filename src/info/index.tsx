@@ -6,6 +6,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type InfoProps = {
+  dot?: boolean;
   info?: string | number;
 };
 
@@ -17,18 +18,22 @@ function Info(
   slots: DefaultSlots,
   ctx: RenderContext<InfoProps>
 ) {
-  if (!isDef(props.info) || props.info === '') {
+  const { dot, info } = props;
+  const showInfo = isDef(info) && info !== '';
+
+  if (!dot && !showInfo) {
     return;
   }
 
   return (
-    <div class={bem()} {...inherit(ctx, true)}>
-      {props.info}
+    <div class={bem({ dot })} {...inherit(ctx, true)}>
+      {dot ? '' : props.info}
     </div>
   );
 }
 
 Info.props = {
+  dot: Boolean,
   info: [Number, String]
 };
 

@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`dot prop 1`] = `
+<i class="van-icon van-icon-undefined">
+  <div class="van-info van-info--dot"></div>
+</i>
+`;
+
 exports[`render icon default slot 1`] = `
 <i class="van-icon van-icon-success">Default slot
   <!----></i>
