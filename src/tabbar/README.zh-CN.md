@@ -170,8 +170,8 @@ export default {
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon)| *string* | - | - |
 | dot | 是否显示小红点 | *boolean* | - | - |
 | info | 图标右上角提示信息 | *string \| number* | - | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### TabbarItem Slots

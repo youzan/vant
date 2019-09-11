@@ -77,7 +77,7 @@ Vue.use(Card);
 | origin-price | 商品划线原价 | *string \| number* | - | - |
 | centered | 内容是否垂直居中 | *boolean* | `false` | - |
 | currency | 货币符号 |  *string* | `¥` | - |
-| thumb-link | 点击左侧图片后的跳转链接 | *string* | - | - |
+| thumb-link | 点击左侧图片后跳转的链接地址 | *string* | - | - |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` | - |
 
 ### Events
