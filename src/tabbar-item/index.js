@@ -51,9 +51,9 @@ export default createComponent({
 
     return (
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
-        <div class={bem('icon', { dot: this.dot })}>
+        <div class={bem('icon')}>
           {slots('icon', { active }) || (icon && <Icon name={icon} />)}
-          <Info info={this.info} />
+          <Info dot={this.dot} info={this.info} />
         </div>
         <div class={bem('text')}>{slots('default', { active })}</div>
       </div>
