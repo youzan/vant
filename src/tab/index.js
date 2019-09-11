@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
+import { routeProps } from '../utils/router';
 
 const [createComponent, bem] = createNamespace('tab');
 
@@ -7,6 +8,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanTabs')],
 
   props: {
+    ...routeProps,
     name: [Number, String],
     title: String,
     disabled: Boolean

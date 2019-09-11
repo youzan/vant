@@ -67,8 +67,8 @@ export default {
 | title | 内容 | *string* | `''` | - |
 | info | 提示消息 | *string \| number* | `''` | - |
 | disabled | 是否禁用该项 | *boolean* | `false` | 2.2.0 |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.0.4 |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.0.4 |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | 2.0.4 |
 
 ### SidebarItem Events

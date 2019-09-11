@@ -120,8 +120,8 @@ Vue.use(Cell).use(CellGroup);
 | value | 右侧内容 | *string \| number* | - | - |
 | label | 标题下方的描述信息 | *string* | - | - |
 | size | 单元格大小，可选值为 `large` | *string* | - | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | border | 是否显示内边框 | *boolean* | `true` | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 | clickable | 是否开启点击反馈 | *boolean* | `false` | - |
