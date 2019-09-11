@@ -11,12 +11,13 @@
           :hide-stock="skuData.sku.hide_stock"
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          reset-stepper-on-hide
-          reset-selected-sku-on-hide
-          disable-stepper-input
           :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           :custom-sku-validator="customSkuValidator"
+          disable-stepper-input
+          reset-stepper-on-hide
+          safe-area-inset-bottom
+          reset-selected-sku-on-hide
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -34,7 +35,6 @@
     <demo-block :title="$t('title2')">
       <div class="sku-container">
         <van-sku
-          hide-quota-text
           v-model="showStepper"
           :sku="skuData.sku"
           :goods="skuData.goods_info"
@@ -44,6 +44,8 @@
           :quota-used="skuData.quota_used"
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
+          hide-quota-text
+          safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -61,7 +63,6 @@
     <demo-block :title="$t('hideSoldoutSku')">
       <div class="sku-container">
         <van-sku
-          hide-quota-text
           v-model="showSoldout"
           :sku="skuData.sku"
           :goods="skuData.goods_info"
@@ -72,6 +73,8 @@
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
           :show-soldout-sku="false"
+          hide-quota-text
+          safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -98,6 +101,7 @@
           :quota-used="skuData.quota_used"
           show-add-cart-btn
           reset-stepper-on-hide
+          safe-area-inset-bottom
           :initial-sku="initialSku"
           :message-config="messageConfig"
           @buy-clicked="onBuyClicked"

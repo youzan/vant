@@ -36,6 +36,7 @@ export default createComponent({
     customSkuValidator: Function,
     closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
+    safeAreaInsetBottom: Boolean,
     resetSelectedSkuOnHide: Boolean,
     quota: {
       type: Number,
@@ -549,6 +550,7 @@ export default createComponent({
         class="van-sku-container"
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
+        safeAreaInsetBottom={this.safeAreaInsetBottom}
       >
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>
