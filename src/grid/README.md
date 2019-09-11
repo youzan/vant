@@ -15,12 +15,10 @@ Vue.use(Grid).use(GridItem);
 
 ```html
 <van-grid>
-  <van-grid-item
-    v-for="value in 4"
-    :key="value"
-    icon="photo-o"
-    text="Text"
-  />
+  <van-grid-item icon="photo-o" text="Text" />
+  <van-grid-item icon="photo-o" text="Text" />
+  <van-grid-item icon="photo-o" text="Text" />
+  <van-grid-item icon="photo-o" text="Text" />
 </van-grid>
 ```
 
@@ -83,16 +81,17 @@ Vue.use(Grid).use(GridItem);
 
 ```html
 <van-grid clickable :column-num="2">
-  <van-grid-item
-    icon="home-o"
-    text="Vue Router"
-    to="/"
-  />
-  <van-grid-item
-    icon="search"
-    text="URL"
-    url="https://www.baidu.com"
-  />
+  <van-grid-item icon="home-o" text="Vue Router" to="/" />
+  <van-grid-item icon="search" text="URL" url="/vant/mobile.html" />
+</van-grid>
+```
+
+### Show Info
+
+```html
+<van-grid :column-num="2">
+  <van-grid-item icon="home-o" text="Text" info="5" />
+  <van-grid-item icon="search" text="Text" info="99+" />
 </van-grid>
 ```
 
@@ -115,6 +114,7 @@ Vue.use(Grid).use(GridItem);
 |------|------|------|------|------|
 | text | Text | *string* | - | - |
 | icon | Icon name or URL | *string* | - | - |
+| info | Content of badge in the upper right corner of icon | *string \| number* | `''` | 2.2.1 |
 | url | Link URL | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |

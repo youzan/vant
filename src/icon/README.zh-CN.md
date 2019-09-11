@@ -73,7 +73,7 @@ import 'vant/lib/icon/local.css';
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 图标名称或图片链接 | *string* | - | - |
-| info | 图标右上角文字提示 | *string \| number* | - | - |
+| info | 图标右上角徽标提示的内容 | *string \| number* | - | - |
 | color | 图标颜色 | *string* | `inherit` | - |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | *string \| number* | `inherit` | - |
 | class-prefix | 类名前缀 | *string* | `van-icon` | - |
