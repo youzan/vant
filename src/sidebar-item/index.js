@@ -10,6 +10,7 @@ export default createComponent({
 
   props: {
     ...routeProps,
+    dot: Boolean,
     info: [Number, String],
     title: String,
     disabled: Boolean
@@ -42,7 +43,7 @@ export default createComponent({
       >
         <div class={bem('text')}>
           {this.title}
-          <Info info={this.info} class={bem('info')} />
+          <Info dot={this.dot} info={this.info} class={bem('info')} />
         </div>
       </a>
     );

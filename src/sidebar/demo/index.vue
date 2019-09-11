@@ -11,10 +11,10 @@
       </van-grid-item>
 
       <van-grid-item>
-        <h3 class="demo-sidebar-title">{{ $t('showBadge') }}</h3>
+        <h3 class="demo-sidebar-title">{{ $t('showInfo') }}</h3>
         <van-sidebar v-model="activeKey2">
-          <van-sidebar-item :title="$t('title')" info="8" />
-          <van-sidebar-item :title="$t('title')" info="99" />
+          <van-sidebar-item :title="$t('title')" dot />
+          <van-sidebar-item :title="$t('title')" info="5" />
           <van-sidebar-item :title="$t('title')" info="99+" />
         </van-sidebar>
       </van-grid-item>
@@ -36,11 +36,11 @@ export default {
   i18n: {
     'zh-CN': {
       title: '标签名',
-      showBadge: '显示徽标',
+      showInfo: '提示信息',
       disabled: '禁用选项'
     },
     'en-US': {
-      showBadge: 'Show Badge',
+      showInfo: 'Show Info',
       disabled: 'Disabled'
     }
   },
