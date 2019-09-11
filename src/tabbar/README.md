@@ -163,7 +163,7 @@ export default {
 | name | Identifier | *string \| number* | Item index | - |
 | icon | Icon name | *string* | - | - |
 | dot | Whether to show red dot | *boolean* | - | - |
-| info | Info message | *string \| number* | - | - |
+| info | Content of badge in the upper right corner of icon | *string \| number* | - | - |
 | url | Link | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
