@@ -102,13 +102,13 @@ Vue.use(Grid).use(GridItem);
 </van-grid>
 ```
 
-### 显示徽标
+### 提示信息
 
-设置`info`属性后，会在图标的右上角显示红色的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-grid :column-num="2">
-  <van-grid-item icon="home-o" text="文字" info="5" />
+  <van-grid-item icon="home-o" text="文字" dot />
   <van-grid-item icon="search" text="文字" info="99+" />
 </van-grid>
 ```
@@ -132,6 +132,7 @@ Vue.use(Grid).use(GridItem);
 |------|------|------|------|------|
 | text | 文字 | *string* | - | - |
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| dot | 是否显示图标右上角小红点 | *boolean* | `false` | 2.2.1 |
 | info | 图标右上角徽标的内容 | *string \| number* | - | 2.2.1 |
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |

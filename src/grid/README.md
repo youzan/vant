@@ -90,7 +90,7 @@ Vue.use(Grid).use(GridItem);
 
 ```html
 <van-grid :column-num="2">
-  <van-grid-item icon="home-o" text="Text" info="5" />
+  <van-grid-item icon="home-o" text="Text" dot />
   <van-grid-item icon="search" text="Text" info="99+" />
 </van-grid>
 ```
@@ -114,6 +114,7 @@ Vue.use(Grid).use(GridItem);
 |------|------|------|------|------|
 | text | Text | *string* | - | - |
 | icon | Icon name or URL | *string* | - | - |
+| dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
 | info | Content of the badge | *string \| number* | `''` | 2.2.1 |
 | url | Link URL | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
