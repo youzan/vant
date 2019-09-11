@@ -47,7 +47,7 @@
 
     <demo-block :title="$t('showInfo')">
       <van-grid :column-num="2">
-        <van-grid-item icon="home-o" :text="$t('text')" info="5" />
+        <van-grid-item icon="home-o" :text="$t('text')" dot />
         <van-grid-item icon="search" :text="$t('text')" info="99+" />
       </van-grid>
     </demo-block>
@@ -66,7 +66,7 @@ export default {
       customContent: '自定义内容',
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
-      showInfo: '显示徽标'
+      showInfo: '提示信息'
     },
     'en-US': {
       text: 'Text',
