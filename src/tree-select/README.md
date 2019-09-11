@@ -87,6 +87,30 @@ export default {
 }
 ```
 
+### Show Info
+
+```html
+<van-tree-select
+  height="55vw"
+  :items="items"
+  :main-active-index.sync="activeIndex"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeIndex: 0,
+      items: [
+        { text: 'Group 1', children: [], dot: true },
+        { text: 'Group 2', children: [], info: 5 }
+      ]
+    }
+  }
+}
+```
+
 ## API
 
 ### Props

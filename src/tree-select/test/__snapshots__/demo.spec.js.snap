@@ -71,5 +71,23 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <div class="van-tree-select" style="height: 55vw;">
+      <div class="van-sidebar van-tree-select__nav"><a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
+          <div class="van-sidebar-item__text">浙江<div class="van-info van-info--dot van-sidebar-item__info"></div>
+          </div>
+        </a><a class="van-sidebar-item van-tree-select__nav-item">
+          <div class="van-sidebar-item__text">江苏<div class="van-info van-sidebar-item__info">5</div>
+          </div>
+        </a></div>
+      <div class="van-tree-select__content">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-checked van-tree-select__selected" style="font-size: 16px;">
+            <!----></i></div>
+        <div class="van-ellipsis van-tree-select__item">温州</div>
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>
+        <div class="van-ellipsis van-tree-select__item">义乌</div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

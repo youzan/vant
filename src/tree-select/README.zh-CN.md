@@ -70,14 +70,8 @@ export default {
   :main-active-index.sync="activeIndex"
 >
   <template slot="content">
-    <van-image
-      v-if="activeIndex === 0"
-      src="https://img.yzcdn.cn/vant/apple-1.jpg"
-    />
-    <van-image
-      v-if="activeIndex === 1"
-      src="https://img.yzcdn.cn/vant/apple-2.jpg"
-    />
+    <van-image v-if="activeIndex === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image v-if="activeIndex === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
 </van-tree-select>
 ```
@@ -88,6 +82,32 @@ export default {
     return {
       activeIndex: 0,
       items: [{ text: '分组 1' }, { text: '分组 2' }]
+    }
+  }
+}
+```
+
+### 提示信息
+
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+
+```html
+<van-tree-select
+  height="55vw"
+  :items="items"
+  :main-active-index.sync="activeIndex"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeIndex: 0,
+      items: [
+        { text: '浙江', children: [], dot: true },
+        { text: '江苏', children: [], info: 5 }
+      ]
     }
   }
 }
