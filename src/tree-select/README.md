@@ -64,14 +64,8 @@ export default {
   :main-active-index.sync="activeIndex"
 >
   <template slot="content">
-    <van-image
-      v-if="activeIndex === 0"
-      src="https://img.yzcdn.cn/vant/apple-1.jpg"
-    />
-    <van-image
-      v-if="activeIndex === 1"
-      src="https://img.yzcdn.cn/vant/apple-2.jpg"
-    />
+    <van-image v-if="activeIndex === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image v-if="activeIndex === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
 </van-tree-select>
 ```
