@@ -545,7 +545,6 @@ export default createComponent({
         round
         closeable
         position="bottom"
-        closeIcon="clear"
         class="van-sku-container"
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
