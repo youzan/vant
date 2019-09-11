@@ -1,19 +1,21 @@
 <template>
   <demo-section>
     <van-tabs v-model="tab" sticky :color="BLUE">
-      <van-tab title="基础图标">
+      <van-tab :title="$t('basic')">
         <van-col v-for="icon in icons.basic" :key="icon" span="6" @click="copy(icon)">
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
-      <van-tab title="线框风格">
+
+      <van-tab :title="$t('outline')">
         <van-col v-for="icon in icons.outline" :key="icon" span="6" @click="copy(icon)">
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
-      <van-tab title="实底风格">
+
+      <van-tab :title="$t('filled')">
         <van-col v-for="icon in icons.filled" :key="icon" span="6" @click="copy(icon)">
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
@@ -55,15 +57,19 @@ export default {
   i18n: {
     'zh-CN': {
       title: '图标列表',
-      info: '显示徽标',
+      info: '提示信息',
       basic: '基础图标',
-      copied: '复制成功'
+      copied: '复制成功',
+      outline: '线框风格',
+      filled: '实底风格'
     },
     'en-US': {
       title: 'Icon List',
       info: 'Show Info',
-      basic: 'Basic Icon',
-      copied: 'Copied'
+      basic: 'Basic',
+      copied: 'Copied',
+      outline: 'Outline',
+      filled: 'Filled'
     }
   },
 

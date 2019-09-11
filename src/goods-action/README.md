@@ -82,7 +82,7 @@ Use `info` prop to show badge in icon
 | text | Button text | *string* | - | - |
 | icon | Icon | *string* | - | - |
 | icon-class | Icon class name | *any* | `''` | - |
-| info | Content of badge in the upper right corner of icon | *string \| number* | - | - |
+| info | Content of the badge | *string \| number* | - | - |
 | url | Link | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |

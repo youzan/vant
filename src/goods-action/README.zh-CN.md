@@ -84,7 +84,7 @@ export default {
 | text | 按钮文字 | *string* | - | - |
 | icon | 图标 | *string* | - | - |
 | icon-class | 图标额外类名 | *any* | - | - |
-| info | 图标右上角徽标提示的内容 | *string \| number* | - | - |
+| info | 图标右上角徽标的内容 | *string \| number* | - | - |
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
