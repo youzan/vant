@@ -126,6 +126,7 @@ export default {
 | hide-stock | Whether to hide stock | *boolean* | `false` | - |
 | hide-quota-text | Whether to hide quota text | *boolean* | `false` | - |
 | hide-selected-text | Whether to hide selected text | *boolean* | `false` | - |
+| stock-threshold | stock threshold | *boolean* | `50` | - |
 | show-add-cart-btn | Whether to show cart button | *boolean* | `true` | - |
 | buy-text | Buy button text | *string* | - | - | - |
 | add-cart-text | Add cart button text | *string* | - | - | - |
