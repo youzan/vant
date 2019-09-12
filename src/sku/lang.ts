@@ -12,7 +12,8 @@ export default {
       originPrice: '原价',
       minusTip: '至少选择一件',
       unavailable: '商品已经无法购买啦',
-      stock: (stock: number) => `剩余 ${stock}件`,
+      stock: '剩余',
+      stockUnit: '件',
       quotaLimit: (quota: number) => `每人限购${quota}件`,
       quotaCount: (count: number) => `你已购买${count}件`
     },

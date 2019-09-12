@@ -14,8 +14,7 @@ import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from 
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
 const namespace = createNamespace('sku');
-const createComponent = namespace[0];
-const t = namespace[2];
+const [createComponent, bem, t] = namespace;
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
 export default createComponent({
@@ -49,6 +48,10 @@ export default createComponent({
     initialSku: {
       type: Object,
       default: () => ({})
+    },
+    stockThreshold: {
+      type: Number,
+      default: 50,
     },
     showSoldoutSku: {
       type: Boolean,
@@ -224,7 +227,13 @@ export default createComponent({
       const { stockFormatter } = this.customStepperConfig;
       if (stockFormatter) return stockFormatter(this.stock);
 
-      return t('stock', this.stock);
+      return [
+        `${t('stock')} `,
+        <span class={bem('stock-num', this.stock < this.stockThreshold && 'low')}>
+          {this.stock}
+        </span>,
+        ` ${t('stockUnit')}`
+      ];
     },
 
     quotaText() {
