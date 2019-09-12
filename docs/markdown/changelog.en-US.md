@@ -1,5 +1,32 @@
 # Changelog
 
+### [v2.2.1](https://github.com/youzan/vant/tree/v2.2.1)
+`2019-09-12`
+
+**Features**
+
+- Icon: add dot prop [\#4425](https://github.com/youzan/vant/pull/4425)
+- Icon: add down、wap-home icon [\#4404](https://github.com/youzan/vant/pull/4404)
+- Circle: update text style [\#4401](https://github.com/youzan/vant/pull/4401)
+- GridItem: add dot prop [\#4426](https://github.com/youzan/vant/pull/4426)
+- GridItem: add info prop [\#4424](https://github.com/youzan/vant/pull/4424)
+- Progress: add stroke-width prop [\#4397](https://github.com/youzan/vant/pull/4397)
+- Popup: add safe-area-inset-bottom prop [\#4419](https://github.com/youzan/vant/pull/4419)
+- Tab: add to、url、replace prop [\#4422](https://github.com/youzan/vant/pull/4422)
+- TreeSelect: add dot option [\#4433](https://github.com/youzan/vant/pull/4433)
+- Stepper: add decimal-length prop [\#4443](https://github.com/youzan/vant/pull/4443)
+- Sku: add stock-threshold prop [\#4444](https://github.com/youzan/vant/pull/4444)
+- Sku: add safe-area-inset-bottom prop [\#4428](https://github.com/youzan/vant/pull/4428)
+- Sku: update sku style [\#4437](https://github.com/youzan/vant/pull/4437)
+- SidebarItem: add dot prop [\#4432](https://github.com/youzan/vant/pull/4432)
+
+**Bug Fixes**
+
+- fix Sku incorrect button position [\#4427](https://github.com/youzan/vant/pull/4427)
+- fix Uploader should't emit click-preview when delete [\#4407](https://github.com/youzan/vant/pull/4407)
+- fix Progress incorrect pivot position [\#4396](https://github.com/youzan/vant/pull/4396)
+
+
 ### [v2.2.0](https://github.com/youzan/vant/tree/v2.2.0)
 `2019-09-06`
 

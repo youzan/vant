@@ -10,6 +10,33 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.1](https://github.com/youzan/vant/tree/v2.2.1)
+`2019-09-12`
+
+**Features**
+
+- Icon: 新增 dot 属性 [\#4425](https://github.com/youzan/vant/pull/4425)
+- Icon: 新增 down、wap-home 图标 [\#4404](https://github.com/youzan/vant/pull/4404)
+- GridItem: 新增 dot 属性 [\#4426](https://github.com/youzan/vant/pull/4426)
+- GridItem: 新增 info 属性 [\#4424](https://github.com/youzan/vant/pull/4424)
+- TreeSelect: 新增 dot 选项 [\#4433](https://github.com/youzan/vant/pull/4433)
+- Tab: 新增 to、url、replace 属性 [\#4422](https://github.com/youzan/vant/pull/4422)
+- Progress: 新增 stroke-width 属性 [\#4397](https://github.com/youzan/vant/pull/4397)
+- Popup: 新增 safe-area-inset-bottom 属性 [\#4419](https://github.com/youzan/vant/pull/4419)
+- Stepper: 新增 decimal-length 属性 [\#4443](https://github.com/youzan/vant/pull/4443)
+- Sku: 新增 stock-threshold 属性 [\#4444](https://github.com/youzan/vant/pull/4444)
+- Sku: 新增 safe-area-inset-bottom 属性 [\#4428](https://github.com/youzan/vant/pull/4428)
+- SidebarItem: 新增 dot 属性 [\#4432](https://github.com/youzan/vant/pull/4432)
+- Sku: 优化样式细节 [\#4437](https://github.com/youzan/vant/pull/4437)
+- Circle: 优化文本样式 [\#4401](https://github.com/youzan/vant/pull/4401)
+
+**Bug Fixes**
+
+- 修复 Sku 按钮位置可能错误的问题 [\#4427](https://github.com/youzan/vant/pull/4427)
+- 修复 Uploader 删除时会触发 click-preview 事件的问题 [\#4407](https://github.com/youzan/vant/pull/4407)
+- 修复 Progress 文字位置不准确的问题 [\#4396](https://github.com/youzan/vant/pull/4396)
+
+
 ### [v2.2.0](https://github.com/youzan/vant/tree/v2.2.0)
 `2019-09-06`
 
