@@ -43,9 +43,16 @@ export default {
 <div v-for="img in imageList" v-lazy:background-image="img" />
 ```
 
-### 懒加载模块
+### 组件懒加载
 
-懒加载模块需要使用到`lazy-component`，将需要懒加载的内容放在`lazy-component`中即可。
+将需要懒加载的组件放在`lazy-component`标签中，即可实现组件懒加载。
+
+```js
+// 注册时设置`lazyComponent`选项
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
+```
 
 ```html
 <lazy-component>
@@ -68,4 +75,4 @@ export default {
 | filter | 图片 URL 过滤 | *object* | - | - |
 | lazyComponent | 是否能懒加载模块 | *boolean* | `false` | - |
 
-更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)
+> 更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)
