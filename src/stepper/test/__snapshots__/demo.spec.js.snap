@@ -33,15 +33,21 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div class="van-cell van-cell--center">
-    <div class="van-cell__title"><span>异步变更</span></div>
+    <div class="van-cell__title"><span>固定小数位数</span></div>
     <div class="van-cell__value">
-      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1.0" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
     </div>
   </div>
   <div class="van-cell van-cell--center">
     <div class="van-cell__title"><span>自定义大小</span></div>
     <div class="van-cell__value">
       <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled" style="width: 32px; height: 32px;"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="width: 40px; height: 32px;"><button class="van-stepper__plus" style="width: 32px; height: 32px;"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>异步变更</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus"></button></div>
     </div>
   </div>
 </div>
