@@ -51,6 +51,18 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+### Decimal Length
+
+```html
+<van-stepper v-model="value" step="0.2" :decimal-length="1" />
+```
+
+### Custom Size
+
+```html
+<van-stepper v-model="value" input-width="40px" button-size="32px" />
+```
+
 ### Async Change
 
 ```html
@@ -82,16 +94,6 @@ export default {
 }
 ```
 
-### Custom Size
-
-```html
-<van-stepper
-  v-model="value"
-  input-width="40px"
-  button-size="32px"
-/>
-```
-
 ## API
 
 ### Props
@@ -110,6 +112,7 @@ export default {
 | button-size | Button size | *string \| number* | `28px` | 2.0.5 |
 | show-plus | Whether to show plus button | *boolean* | `true` | 2.1.2 |
 | show-minus | Whether to show minus button | *boolean* | `true` | 2.1.2 |
+| decimal-length | Decimal length | *number* | - | 2.2.1 |
 
 ### Events
 

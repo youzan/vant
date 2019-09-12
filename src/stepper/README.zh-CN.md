@@ -65,6 +65,22 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+### 固定小数位数
+
+通过设置`decimal-length`属性可以保留固定的小数位数
+
+```html
+<van-stepper v-model="value" step="0.2" :decimal-length="1" />
+```
+
+### 自定义大小
+
+通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
+
+```html
+<van-stepper v-model="value" input-width="40px" button-size="32px" />
+```
+
 ### 异步变更
 
 如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
@@ -100,25 +116,13 @@ export default {
 }
 ```
 
-### 自定义大小
-
-通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
-
-```html
-<van-stepper
-  v-model="value"
-  input-width="40px"
-  button-size="32px"
-/>
-```
-
 ## API
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前输入值 | *string \| number* | 最小值 | - |
+| v-model | 当前输入值 | *string \| number* | min | - |
 | min | 最小值 | *string \| number* | `1` | - |
 | max | 最大值 | *string \| number* | - | - |
 | step | 步长 | *string \| number* | `1` | - |
@@ -127,9 +131,10 @@ export default {
 | disable-input | 是否禁用输入框 | *boolean* | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
 | input-width | 输入框宽度，默认单位为`px` | *string \| number* | `32px` | - |
-| button-size | 按钮大小，默认单位为`px`，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | 2.0.5 |
+| button-size | 按钮大小以及输入框高度，默认单位为`px` | *string \| number* | `28px` | 2.0.5 |
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | 2.1.2 |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | 2.1.2 |
+| decimal-length | 固定显示的小数位数 | *number* | - | 2.2.1 |
 
 ### Events
 
