@@ -229,7 +229,7 @@ export default createComponent({
 
       return [
         `${t('stock')} `,
-        <span class={bem('stock-num', this.stock < this.stockThreshold && 'low')}>
+        <span class={bem('stock-num', { highlight: this.stock < this.stockThreshold })}>
           {this.stock}
         </span>,
         ` ${t('stockUnit')}`
