@@ -1,13 +1,31 @@
 <template>
   <demo-section>
+    <demo-block :title="$t('default')">
+      <van-button
+        type="primary"
+        @touchstart.stop="keyboard = 'default'"
+      >
+        {{ $t('button1') }}
+      </van-button>
+
       <van-number-keyboard
         :show="keyboard === 'default'"
         :close-button-text="$t('close')"
         extra-key="."
+        safe-area-inset-bottom
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"
       />
+    </demo-block>
+
+    <demo-block :title="$t('custom')">
+      <van-button
+        type="info"
+        @touchstart.stop="keyboard = 'custom'"
+      >
+        {{ $t('button2') }}
+      </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'custom'"
@@ -19,6 +37,25 @@
         @input="onInput"
         @delete="onDelete"
       />
+    </demo-block>
+
+    <demo-block :title="$t('bindValue')">
+      <van-field
+        readonly
+        clickable
+        :value="value"
+        :placeholder="$t('clickToInput')"
+        @touchstart.native.stop="keyboard = 'bindValue'"
+      />
+
+      <van-number-keyboard
+        v-model="value"
+        :show="keyboard === 'bindValue'"
+        maxlength="6"
+        safe-area-inset-bottom
+        @blur="keyboard = ''"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
