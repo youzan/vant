@@ -84,8 +84,8 @@ export default {
     return {
       currentRate: 0,
       gradientColor: {
-        '0%': '#ffd01e',
-        '100%': '#ee0a24'
+        '0%': '#3fecff',
+        '100%': '#6149f6'
       }
     };
   }

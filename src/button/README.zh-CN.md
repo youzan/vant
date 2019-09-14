@@ -104,8 +104,9 @@ Vue.use(Button);
 通过`color`属性可以自定义按钮的颜色
 
 ```html
-<van-button color="#7232dd">自定义颜色</van-button>
-<van-button color="#7232dd" plain>自定义颜色</van-button>
+<van-button color="#7232dd">单色按钮</van-button>
+<van-button color="#7232dd" plain>单色按钮</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
 ## API

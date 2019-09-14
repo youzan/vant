@@ -60,8 +60,9 @@
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-button color="#7232dd" :text="$t('customColor')" />
-      <van-button plain color="#7232dd" :text="$t('customColor')" />
+      <van-button color="#7232dd" :text="$t('pure')" />
+      <van-button plain color="#7232dd" :text="$t('pure')" />
+      <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" :text="$t('gradient')" />
     </demo-block>
   </demo-section>
 </template>
@@ -93,7 +94,9 @@ export default {
       router: '页面导航',
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
-      customColor: '自定义颜色'
+      customColor: '自定义颜色',
+      pure: '单色按钮',
+      gradient: '渐变色按钮'
     },
     'en-US': {
       type: 'Type',
@@ -119,7 +122,9 @@ export default {
       router: 'Router',
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
-      customColor: 'Custom Color'
+      customColor: 'Custom Color',
+      pure: 'Pure',
+      gradient: 'Gradient'
     }
   }
 };
