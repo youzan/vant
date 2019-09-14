@@ -9,7 +9,7 @@
 ### Features
 
 * 60+ Reusable components
-* 90% Unit test coverage
+* 95% Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * Support Custom Theme
@@ -27,7 +27,7 @@ Please make sure to read the [Contributing Guide](https://github.com/youzan/vant
 
 ### Browser Support
 
-Modern browsers and Android 4.0+, iOS 6+.
+Modern browsers and Android 4.0+, iOS 7+.
 
 ### Links
 

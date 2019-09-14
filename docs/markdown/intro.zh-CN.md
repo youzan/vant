@@ -8,8 +8,8 @@
 
 ### 特性
 
-* 60+ 个组件
-* 90% 单元测试覆盖率
+* 60+ 高质量组件
+* 95% 单元测试覆盖率
 * 完善的中英文文档和示例
 * 支持按需引入
 * 支持主题定制
@@ -19,7 +19,7 @@
 
 ### 快速上手
 
-请参考 [快速上手](#/zh-CN/quickstart)
+请参考 [快速上手](#/zh-CN/quickstart) 章节
 
 ### 贡献代码
 
@@ -29,7 +29,7 @@
 
 ### 浏览器支持
 
-现代浏览器以及 Android 4.0+, iOS 6+
+现代浏览器以及 Android 4.0+, iOS 7+
 
 ### 加入我们
 
@@ -45,11 +45,11 @@
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
 - <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
-
 ### 链接
 
 * [意见反馈](https://github.com/youzan/vant/issues)
 * [更新日志](#/zh-CN/changelog)
+* [码云镜像](https://gitee.com/organizations/vant-contrib)
 * [Vant 示例仓库](https://github.com/youzan/vant-demo)
 * [VantWeapp 小程序组件](https://github.com/youzan/vant-weapp)
 
