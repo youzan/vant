@@ -84,8 +84,9 @@ Vue.use(Button);
 ### Custom Color
 
 ```html
-<van-button color="#7232dd">Custom Color</van-button>
-<van-button color="#7232dd" plain>Custom Color</van-button>
+<van-button color="#7232dd">Pure</van-button>
+<van-button color="#7232dd" plain>Pure</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">Gradient</van-button>
 ```
 
 ## API

@@ -26,8 +26,8 @@ exports[`renders demo correctly 1`] = `
     <div class="van-circle" style="width: 100px; height: 100px;"><svg viewBox="0 0 1040 1040">
         <defs>
           <linearGradient id="van-circle-gradient-3" x1="100%" y1="0%" x2="0%" y2="0%">
-            <stop offset="0%" stop-color="#ffd01e"></stop>
-            <stop offset="100%" stop-color="#ee0a24"></stop>
+            <stop offset="0%" stop-color="#3fecff"></stop>
+            <stop offset="100%" stop-color="#6149f6"></stop>
           </linearGradient>
         </defs>
         <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000" class="van-circle__hover" style="fill: none; stroke: #fff; stroke-width: 40px;"></path>
