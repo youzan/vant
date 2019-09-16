@@ -354,7 +354,7 @@ it('click-preview event', () => {
 
   wrapper.find('.van-image').trigger('click');
   expect(wrapper.emitted('click-preview')[0][0]).toEqual({ url: IMAGE });
-  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '' });
+  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '', index: 0 });
 });
 
 it('close-preview event', async () => {

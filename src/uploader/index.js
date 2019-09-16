@@ -59,18 +59,19 @@ export default createComponent({
   },
 
   computed: {
-    detail() {
-      return {
-        name: this.name
-      };
-    },
-
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
     }
   },
 
   methods: {
+    getDetail(index = this.fileList.length) {
+      return {
+        name: this.name,
+        index
+      };
+    },
+
     onChange(event) {
       let { files } = event.target;
 
@@ -81,7 +82,7 @@ export default createComponent({
       files = files.length === 1 ? files[0] : [].slice.call(files);
 
       if (this.beforeRead) {
-        const response = this.beforeRead(files, this.detail);
+        const response = this.beforeRead(files, this.getDetail());
 
         if (!response) {
           this.resetInput();
@@ -129,7 +130,7 @@ export default createComponent({
 
     onAfterRead(files, oversize) {
       if (oversize) {
-        this.$emit('oversize', files, this.detail);
+        this.$emit('oversize', files, this.getDetail());
         return;
       }
 
@@ -137,13 +138,13 @@ export default createComponent({
       this.$emit('input', [...this.fileList, ...toArray(files)]);
 
       if (this.afterRead) {
-        this.afterRead(files, this.detail);
+        this.afterRead(files, this.getDetail());
       }
     },
 
     onDelete(file, index) {
       if (this.beforeDelete) {
-        const response = this.beforeDelete(file, this.detail);
+        const response = this.beforeDelete(file, this.getDetail(index));
 
         if (!response) {
           return;
@@ -167,7 +168,7 @@ export default createComponent({
       fileList.splice(index, 1);
 
       this.$emit('input', fileList);
-      this.$emit('delete', file);
+      this.$emit('delete', file, this.getDetail(index));
     },
 
     resetInput() {
@@ -194,10 +195,6 @@ export default createComponent({
           this.$emit('close-preview');
         }
       });
-    },
-
-    onClickPreview(file) {
-      this.$emit('click-preview', file, this.detail);
     },
 
     renderPreviewItem(item, index) {
@@ -242,7 +239,7 @@ export default createComponent({
         <div
           class={bem('preview')}
           onClick={() => {
-            this.onClickPreview(item);
+            this.$emit('click-preview', item, this.getDetail(index));
           }}
         >
           {Preview}
