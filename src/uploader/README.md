@@ -135,7 +135,7 @@ export default {
 | oversize | Triggered when file size over limit | Same as after-read |
 | click-preview | Triggered when click preview image | Same as after-read |
 | close-preview | Triggered when close full screen image preview | - |
-| delete | Triggered when delete preview file | file |
+| delete | Triggered when delete preview file | Same as after-read |
 
 ### Slots
 
@@ -148,4 +148,4 @@ export default {
 | Attribute | Description | Type |
 |------|------|------|
 | file | File object | *object* |
-| detail | Detail info | *object* |
+| detail | Detail info, contains name and index | *object* |
