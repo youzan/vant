@@ -79,13 +79,15 @@ Use icon slot to custom icon
 ```js
 export default {
   data() {
-    radio: '1',
-    icon: {
-      active: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-    }
+    return {
+      radio: '1',
+      icon: {
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
+      }
+    };
   }
-}
+};
 ```
 
 ### Inside a Cell
@@ -122,7 +124,7 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | v-model | Name of checked radio | *any* | - | - |
-| disabled | Diable all radios | *boolean* | `false` | - |
+| disabled | Disable all radios | *boolean* | `false` | - |
 
 ### Radio Events
 

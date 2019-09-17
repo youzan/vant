@@ -57,13 +57,15 @@ Use icon slot to custom icon
 ```js
 export default {
   data() {
-    checked: true,
-    icon: {
-      active: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-    }
+    return {
+      checked: true,
+      icon: {
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
+      }
+    };
   }
-}
+};
 ```
 
 ### Checkbox Group
@@ -148,7 +150,7 @@ export default {
 | name | Checkbox name | *any* | - | - |
 | shape | Can be set to `square` | *string* | `round` | - |
 | v-model | Check status | *boolean* | `false` | - |
-| disabled | Diable checkbox | *boolean* | `false` | - |
+| disabled | Disable checkbox | *boolean* | `false` | - |
 | icon-size | Icon size | *string \| number* | `20px` | - |
 | label-disabled | Whether to disable label click | *boolean* | `false` | - |
 | label-position | Can be set to `left` | *string* | `right` | - |
