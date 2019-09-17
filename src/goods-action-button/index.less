@@ -2,16 +2,16 @@
 
 .van-goods-action-button {
   flex: 1;
-  height: 36px;
+  height: @goods-action-button-height;
   font-weight: 500;
   font-size: @font-size-md;
-  line-height: 34px;
+  line-height: normal;
   border: none;
 
   &--first {
     margin-left: 5px;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
+    border-top-left-radius: @goods-action-button-height / 2;
+    border-bottom-left-radius: @goods-action-button-height / 2;
   }
 
   &--last {
