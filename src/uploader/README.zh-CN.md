@@ -150,7 +150,8 @@ export default {
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同`after-read` |
 | click-preview | 点击预览图时触发 | 同`after-read` | 
-| delete | 删除文件预览时触发 | file: 被删除的文件对象 |
+| close-preview | 关闭全屏图片预览时触发 | - |
+| delete | 删除文件预览时触发 | 同`after-read` |
 
 ### Slots
 
@@ -165,4 +166,4 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | 参数名 | 说明 | 类型 |
 |------|------|------|
 | file | 文件解析后的 file 对象 | *object* |
-| detail | 额外信息，包含 name 字段 | *object* |
+| detail | 额外信息，包含 name 和 index 字段 | *object* |

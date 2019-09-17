@@ -1,6 +1,5 @@
 import { createNamespace } from '../utils';
 import { ParentMixin } from '../mixins/relation';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
@@ -19,6 +18,6 @@ export default createComponent({
   },
 
   render() {
-    return <div class={[bem(), BORDER_TOP_BOTTOM]}>{this.slots()}</div>;
+    return <div class={bem()}>{this.slots()}</div>;
   }
 });

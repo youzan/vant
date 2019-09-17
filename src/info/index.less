@@ -2,7 +2,7 @@
 
 .van-info {
   position: absolute;
-  top: -@info-size / 2;
+  top: 0;
   right: 0;
   box-sizing: border-box;
   min-width: @info-size;
@@ -16,6 +16,14 @@
   background-color: @info-background-color;
   border: @info-border-width solid @white;
   border-radius: @info-size;
-  transform: translateX(50%);
+  transform: translate(50%, -50%);
   transform-origin: 100%;
+
+  &--dot {
+    width: @info-dot-size;
+    min-width: 0;
+    height: @info-dot-size;
+    background-color: @info-dot-color;
+    border-radius: 100%;
+  }
 }

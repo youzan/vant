@@ -64,14 +64,8 @@ export default {
   :main-active-index.sync="activeIndex"
 >
   <template slot="content">
-    <van-image
-      v-if="activeIndex === 0"
-      src="https://img.yzcdn.cn/vant/apple-1.jpg"
-    />
-    <van-image
-      v-if="activeIndex === 1"
-      src="https://img.yzcdn.cn/vant/apple-2.jpg"
-    />
+    <van-image v-if="activeIndex === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image v-if="activeIndex === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
 </van-tree-select>
 ```
@@ -87,6 +81,30 @@ export default {
 }
 ```
 
+### Show Info
+
+```html
+<van-tree-select
+  height="55vw"
+  :items="items"
+  :main-active-index.sync="activeIndex"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeIndex: 0,
+      items: [
+        { text: 'Group 1', children: [], dot: true },
+        { text: 'Group 2', children: [], info: 5 }
+      ]
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -97,6 +115,7 @@ export default {
 | height | Height | *string \| number* | `300` | - |
 | main-Active-index | The index of selected parent node | *number* | `0` | - |
 | active-id | Id of selected item | *string \| number \| (string \| number)[]* | `0` | - |
+| max | Maximum number of selected items | *number* | `Infinity` | 2.2.0 |
 
 ### Events
 
@@ -122,6 +141,10 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   {
     // name of the parent node
     text: 'Group 1',
+    // info
+    info: 3,
+    // Whether to show red dot
+    dot: true,
     // leaves of this parent node
     children: [
       {

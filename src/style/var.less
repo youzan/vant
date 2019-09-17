@@ -1,7 +1,7 @@
 // Basic Colors
 @black: #000;
 @white: #fff;
-@red: #f44;
+@red: #ee0a24;
 @blue: #1989fa;
 @orange: #ff976a;
 @orange-dark: #ed6a0c;
@@ -162,6 +162,9 @@
 
 // Circle
 @circle-text-color: @text-color;
+@circle-text-font-weight: 500;
+@circle-text-font-size: @font-size-md;
+@circle-text-line-height: 18px;
 
 // Collapse
 @collapse-item-transition-duration: @animation-duration-base;
@@ -260,6 +263,7 @@
 @dropdown-menu-title-disabled-text-color: @gray-dark;
 @dropdown-menu-title-padding: 0 @padding-xs;
 @dropdown-menu-title-line-height: 18px;
+@dropdown-menu-option-active-color: @blue;
 
 // Field
 @field-label-width: 90px;
@@ -292,6 +296,7 @@
 @goods-action-icon-font-size: @font-size-xs;
 @goods-action-icon-active-color: @active-color;
 @goods-action-icon-text-color: @gray-darker;
+@goods-action-button-height: 40px;
 
 // IndexAnchor
 @index-anchor-padding: 0 @padding-md;
@@ -314,6 +319,8 @@
 @info-font-weight: 500;
 @info-border-width: 1px;
 @info-background-color: @red;
+@info-dot-color: @red;
+@info-dot-size: 8px;
 @info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // Image
@@ -430,8 +437,12 @@
 
 // Popup
 @popup-background-color: @white;
-@popup-transition: @animation-duration-base ease-out;
-@popup-round-border-radius: 12px;
+@popup-transition: transform @animation-duration-base ease-out;
+@popup-round-border-radius: 20px;
+@popup-close-icon-size: 18px;
+@popup-close-icon-color: @gray-dark;
+@popup-close-icon-margin: 16px;
+@popup-close-icon-z-index: 1;
 
 // Progress
 @progress-height: 4px;
@@ -478,11 +489,12 @@
 
 // SidebarItem
 @sidebar-font-size: @font-size-md;
-@sidebar-line-height: 1.4;
-@sidebar-text-color: @gray-darker;
+@sidebar-line-height: 20px;
+@sidebar-text-color: @text-color;
+@sidebar-disabled-text-color: @gray;
 @sidebar-padding: 20px @padding-sm 20px @padding-xs;
 @sidebar-active-color: @active-color;
-@sidebar-background-color: @background-color;
+@sidebar-background-color: @background-color-light;
 @sidebar-selected-font-weight: 500;
 @sidebar-selected-text-color: @text-color;
 @sidebar-selected-border-color: @red;
@@ -642,10 +654,7 @@
 @tree-select-font-size: @font-size-md;
 @tree-select-nav-background-color: @background-color-light;
 @tree-select-content-background-color: @white;
-@tree-select-nav-item-padding: 0 @padding-xs 0 @padding-sm;
-@tree-select-nav-item-active-border-color: @red;
-@tree-select-nav-item-active-background-color: @white;
-@tree-select-nav-item-disabled-color: @gray-dark;
+@tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
 @tree-select-item-height: 44px;
 @tree-select-item-active-color: @red;
 @tree-select-item-disabled-color: @gray;

@@ -23,7 +23,7 @@ The value of field is bound with v-model.
 
 ### Custom type
 
-Use `type` prop to custom diffrent type fields.
+Use `type` prop to custom different type fields.
 
 ```html
 <van-cell-group>
@@ -124,7 +124,7 @@ Use button slot to insert button
 |------|------|------|------|------|
 | value | Field value | *string \| number* | - | - |
 | label | Field label | *string* | - | - |
-| type | Input type, can be set to `tel` *number*<br>`textarea` `password` | *string* | `text` | - |
+| type | Input type, can be set to `tel` `number`<br>`textarea` `password` | *string* | `text` | - |
 | size | Size，can be set to `large` | *string* | - | - |
 | maxlength | Max length of value | *string \| number* | - | - |
 | placeholder | Placeholder | *string* | - | - |

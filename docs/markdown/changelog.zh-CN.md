@@ -1,5 +1,73 @@
 # 更新日志
 
+### 介绍
+
+Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
+
+**发布节奏**
+
+- 修订号：每周发布，包含新特性和问题修复。
+- 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
+- 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
+
+### [v2.2.1](https://github.com/youzan/vant/tree/v2.2.1)
+`2019-09-12`
+
+**Features**
+
+- Icon: 新增 dot 属性 [\#4425](https://github.com/youzan/vant/pull/4425)
+- Icon: 新增 down、wap-home 图标 [\#4404](https://github.com/youzan/vant/pull/4404)
+- GridItem: 新增 dot 属性 [\#4426](https://github.com/youzan/vant/pull/4426)
+- GridItem: 新增 info 属性 [\#4424](https://github.com/youzan/vant/pull/4424)
+- TreeSelect: 新增 dot 选项 [\#4433](https://github.com/youzan/vant/pull/4433)
+- Tab: 新增 to、url、replace 属性 [\#4422](https://github.com/youzan/vant/pull/4422)
+- Progress: 新增 stroke-width 属性 [\#4397](https://github.com/youzan/vant/pull/4397)
+- Popup: 新增 safe-area-inset-bottom 属性 [\#4419](https://github.com/youzan/vant/pull/4419)
+- Stepper: 新增 decimal-length 属性 [\#4443](https://github.com/youzan/vant/pull/4443)
+- Sku: 新增 stock-threshold 属性 [\#4444](https://github.com/youzan/vant/pull/4444)
+- Sku: 新增 safe-area-inset-bottom 属性 [\#4428](https://github.com/youzan/vant/pull/4428)
+- SidebarItem: 新增 dot 属性 [\#4432](https://github.com/youzan/vant/pull/4432)
+- Sku: 优化样式细节 [\#4437](https://github.com/youzan/vant/pull/4437)
+- Circle: 优化文本样式 [\#4401](https://github.com/youzan/vant/pull/4401)
+
+**Bug Fixes**
+
+- 修复 Sku 按钮位置可能错误的问题 [\#4427](https://github.com/youzan/vant/pull/4427)
+- 修复 Uploader 删除时会触发 click-preview 事件的问题 [\#4407](https://github.com/youzan/vant/pull/4407)
+- 修复 Progress 文字位置不准确的问题 [\#4396](https://github.com/youzan/vant/pull/4396)
+
+
+### [v2.2.0](https://github.com/youzan/vant/tree/v2.2.0)
+`2019-09-06`
+
+**Features**
+
+- Style: 更新基础红色为 #ee0a24 [\#4368](https://github.com/youzan/vant/pull/4368)
+- Rate: 新增 touchable 属性 [\#4361](https://github.com/youzan/vant/pull/4361)
+- Rate: 布局调整为 inline-block [\#4334](https://github.com/youzan/vant/pull/4334)
+- Rate: 优化手势滑动的流畅度 [\#4336](https://github.com/youzan/vant/pull/4336)
+- Popup: 新增 closeable 属性 [\#4362](https://github.com/youzan/vant/pull/4362)
+- Popup: 新增 close-icon 属性 [\#4366](https://github.com/youzan/vant/pull/4366)
+- Sidebar: 移除了内外边框 [\#4382](https://github.com/youzan/vant/pull/4382)
+- SidebarItem 新增 disabled 属性 [\#4325](https://github.com/youzan/vant/pull/4325)
+- TreeSelect: 新增 max 属性 [\#4323](https://github.com/youzan/vant/pull/4323)
+- TreeSelect: 支持通过 info 展示徽标 [\#4384](https://github.com/youzan/vant/pull/4384)
+- Uploader: 新增 close-preview 事件 [\#4376](https://github.com/youzan/vant/pull/4376)
+- ImagePreview: 新增图片加载过程的提示 [\#4378](https://github.com/youzan/vant/pull/4378)
+
+**Bug Fixes**
+
+- 修复 Field 在 Safari 浏览器上样式异常的问题 [\#4380](https://github.com/youzan/vant/pull/4380)
+- 修复 Button 在 color 属性中传入渐变色时边框颜色错误的问题 [\#4342](https://github.com/youzan/vant/pull/4342)
+- 修复 Dialog 关闭时未重置按钮加载状态的问题 [\#4352](https://github.com/youzan/vant/pull/4352)
+- 修复 Slider 初始值超出范围时展示错误的问题 [\#4337](https://github.com/youzan/vant/pull/4337)
+- 修复 Sidebar 徽标位置错误的问题 [\#4324](https://github.com/youzan/vant/pull/4324)
+- 修复 DropdownItem 选项选中态颜色丢失的问题 [\#4330](https://github.com/youzan/vant/pull/4330)
+- 修复 NumberKeyboard 在 iphoneX 上右侧按钮位置错误的问题 [\#4304](https://github.com/youzan/vant/pull/4304)
+- 修复 ImagePreview 在关闭后未重置图片缩放状态的问题 [\#4319](https://github.com/youzan/vant/pull/4319)
+- 修复 ImagePreview 在某些情况下页码不正确的问题 [\#4320](https://github.com/youzan/vant/pull/4320)
+
+
 ### [v2.1.8](https://github.com/youzan/vant/tree/v2.1.8)
 `2019-08-29`
 

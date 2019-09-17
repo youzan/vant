@@ -59,7 +59,6 @@ body {
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
   background-color: #f8f8f8;
-  user-select: none;
   -webkit-font-smoothing: antialiased;
 }
 

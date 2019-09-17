@@ -182,7 +182,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | background | Background color | *string* | `white` | - |
 | line-width | Width of tab line | *string \| number* | Width of active tab | - |
 | line-height | Height of tab line | *string \| number* | `3px` | - |
-| color | Tab color | *string* | `#f44` | - |
+| color | Tab color | *string* | `#ee0a24` | - |
 | title-active-color | Title active color | *string* | - | - |
 | title-inactive-color | Title inactive color | *string* | - | - |
 | swipe-threshold | Set swipe tabs threshold | *number* | `4` | - | - |
@@ -201,6 +201,9 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | name | Identifier | *string \| number* | Index of tab | - |
 | title | Title | *string* | - | - |
 | disabled | Whether to disable tab | *boolean* | `false` | - |
+| url | Link | *string* | - | 2.2.1 |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.2.1 |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.2.1 |
 
 ### Tabs Slots
 

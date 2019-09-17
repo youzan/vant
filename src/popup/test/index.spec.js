@@ -227,3 +227,27 @@ test('round prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('closeable prop', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      closeable: true
+    }
+  });
+
+  wrapper.find('.van-popup__close-icon').trigger('click');
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+});
+
+test('close-icon prop', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'success'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

@@ -4,6 +4,6 @@ exports[`disable stepper input 1`] = `<div class="van-stepper"><button class="va
 
 exports[`disabled stepper 1`] = `<div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" disabled="disabled" class="van-stepper__input"><button class="van-stepper__plus van-stepper__plus--disabled"></button></div>`;
 
-exports[`input width 1`] = `<div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="width: 10rem;"><button class="van-stepper__plus"></button></div>`;
+exports[`input-width prop 1`] = `<div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="width: 10rem;"><button class="van-stepper__plus"></button></div>`;
 
 exports[`show-plus & show-minus props 1`] = `<div class="van-stepper"><button class="van-stepper__minus van-stepper__minus--disabled" style="display: none;"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button class="van-stepper__plus" style="display: none;"></button></div>`;

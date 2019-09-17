@@ -72,3 +72,13 @@ test('touchstart event', () => {
   wrapper.trigger('touchstart');
   expect(onTouchstart).toHaveBeenCalled();
 });
+
+test('hide border when color is gradient', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      color: 'linear-gradient(#000, #fff)'
+    }
+  });
+
+  expect(wrapper.element.style.border).toEqual('0px');
+});

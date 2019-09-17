@@ -4,6 +4,8 @@ import { preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
+import Image from '../image';
+import Loading from '../loading';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
@@ -19,11 +21,7 @@ function getDistance(touches) {
 }
 
 export default createComponent({
-  mixins: [
-    PopupMixin,
-    TouchMixin,
-    CloseOnPopstateMixin
-  ],
+  mixins: [PopupMixin, TouchMixin, CloseOnPopstateMixin],
 
   props: {
     className: null,
@@ -90,7 +88,7 @@ export default createComponent({
     imageStyle() {
       const { scale } = this;
       const style = {
-        transition: this.zooming || this.moving ? '' : '.3s all'
+        transitionDuration: this.zooming || this.moving ? '0s' : '.3s'
       };
 
       if (scale !== 1) {
@@ -104,11 +102,11 @@ export default createComponent({
 
   watch: {
     value() {
-      this.active = this.startPosition;
+      this.setActive(this.startPosition);
     },
 
     startPosition(active) {
-      this.active = active;
+      this.setActive(active);
     }
   },
 
@@ -129,7 +127,6 @@ export default createComponent({
           this.doubleClickTimer = setTimeout(() => {
             const index = this.active;
 
-            this.resetScale();
             this.$emit('close', {
               index,
               url: this.images[index]
@@ -233,10 +230,13 @@ export default createComponent({
       }
     },
 
-    onSwipeChange(active) {
+    setActive(active) {
       this.resetScale();
-      this.active = active;
-      this.$emit('change', active);
+
+      if (active !== this.active) {
+        this.active = active;
+        this.$emit('change', active);
+      }
     },
 
     resetScale() {
@@ -251,6 +251,51 @@ export default createComponent({
       this.scale = scale;
       this.moveX = 0;
       this.moveY = 0;
+    },
+
+    genIndex() {
+      if (this.showIndex) {
+        return (
+          <div class={bem('index')}>
+            {this.slots('index') || `${this.active + 1}/${this.images.length}`}
+          </div>
+        );
+      }
+    },
+
+    genImages() {
+      const imageSlots = {
+        loading: () => <Loading type="spinner" />
+      };
+
+      return (
+        <Swipe
+          ref="swipe"
+          loop={this.loop}
+          duration={this.swipeDuration}
+          indicatorColor="white"
+          initialSwipe={this.startPosition}
+          showIndicators={this.showIndicators}
+          onChange={this.setActive}
+        >
+          {this.images.map((image, index) => (
+            <SwipeItem>
+              <Image
+                src={image}
+                fit="contain"
+                class={bem('image')}
+                lazyLoad={this.lazyLoad}
+                scopedSlots={imageSlots}
+                style={index === this.active ? this.imageStyle : null}
+                nativeOnTouchstart={this.onImageTouchStart}
+                nativeOnTouchmove={this.onImageTouchMove}
+                nativeOnTouchend={this.onImageTouchEnd}
+                nativeOnTouchcancel={this.onImageTouchEnd}
+              />
+            </SwipeItem>
+          ))}
+        </Swipe>
+      );
     }
   },
 
@@ -258,48 +303,6 @@ export default createComponent({
     if (!this.value) {
       return;
     }
-
-    const { active, images } = this;
-
-    const Index = this.showIndex && (
-      <div class={bem('index')}>
-        {this.slots('index') || `${active + 1}/${images.length}`}
-      </div>
-    );
-
-    const Images = (
-      <Swipe
-        ref="swipe"
-        loop={this.loop}
-        duration={this.swipeDuration}
-        indicatorColor="white"
-        initialSwipe={this.startPosition}
-        showIndicators={this.showIndicators}
-        onChange={this.onSwipeChange}
-      >
-        {images.map((image, index) => {
-          const props = {
-            class: bem('image'),
-            style: index === active ? this.imageStyle : null,
-            on: {
-              touchstart: this.onImageTouchStart,
-              touchmove: this.onImageTouchMove,
-              touchend: this.onImageTouchEnd,
-              touchcancel: this.onImageTouchEnd
-            }
-          };
-          return (
-            <SwipeItem>
-              {this.lazyLoad ? (
-                <img vLazy={image} {...props} />
-              ) : (
-                <img src={image} {...props} />
-              )}
-            </SwipeItem>
-          );
-        })}
-      </Swipe>
-    );
 
     return (
       <transition name="van-fade">
@@ -310,8 +313,8 @@ export default createComponent({
           onTouchend={this.onWrapperTouchEnd}
           onTouchcancel={this.onWrapperTouchEnd}
         >
-          {Images}
-          {Index}
+          {this.genImages()}
+          {this.genIndex()}
         </div>
       </transition>
     );

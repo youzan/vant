@@ -13,7 +13,6 @@
       <van-circle
         v-model="currentRate3"
         :rate="rate"
-        layer-color="#ebedf0"
         :speed="100"
         :stroke-width="60"
         :text="$t('customWidth')"
@@ -21,7 +20,7 @@
 
       <van-circle
         v-model="currentRate3"
-        color="#f44"
+        color="#ee0a24"
         :rate="rate"
         layer-color="#ebedf0"
         :speed="100"
@@ -106,8 +105,8 @@ export default {
       currentRate3: 70,
       currentRate4: 70,
       gradientColor: {
-        '0%': '#ffd01e',
-        '100%': '#ee0a24'
+        '0%': '#3fecff',
+        '100%': '#6149f6'
       }
     };
   },

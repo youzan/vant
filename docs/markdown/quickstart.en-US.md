@@ -93,23 +93,25 @@ Vue.use(Vant);
 
 ### 4. CDN
 
+The easiest way to use Vant is to include a CDN link in the html file, after which you can access all components via the global variable `vant`.
+
 ```html
 <!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
 
 <!-- import script -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
 
 <script>
-var Vue = window.Vue;
-var vant = window.vant;
+  // Render the Button component
+  new Vue({
+    el: '#app',
+    template: `<van-button>Button</van-button>`
+  });
 
-// Register Lazyload component
-Vue.use(vant.Lazyload);
-
-// Call function components
-vant.Toast('message');
+  // Call function component
+  vant.Toast('Message');
 </script>
 ```
 
@@ -121,6 +123,8 @@ Vant use `px` as size units by default，you can use tools such as `postcss-pxto
 
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
 - [lib-flexible](https://github.com/amfe/lib-flexible)
+
+#### PostCSS Config
 
 postcss config example:
 

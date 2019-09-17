@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    height: 80%;
-    max-height: max-content; /* avoid androiod keyboard cover fields */
+    min-height: 50%;
+    max-height: 80%;
     overflow-y: visible;
     font-size: @font-size-md;
     background: @white;
@@ -15,7 +15,6 @@
 
   &-body {
     flex: 1 1 auto;
-    max-height: 350px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
@@ -34,6 +33,7 @@
       width: 96px;
       height: 96px;
       margin: @padding-sm 0;
+      overflow: hidden;
       background: @background-color;
       border-radius: 4px;
 
@@ -50,6 +50,9 @@
     }
 
     &__goods-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       min-height: 96px;
       padding: @padding-sm 36px @padding-sm @padding-xs;
       overflow: hidden;
@@ -101,15 +104,6 @@
       opacity: .1;
       content: '';
     }
-  }
-
-  &__close-icon {
-    position: absolute;
-    top: @padding-sm;
-    right: @padding-md;
-    color: @sku-icon-gray-color;
-    font-size: 20px;
-    text-align: center;
   }
 
   &-group-container {
@@ -220,6 +214,10 @@
     margin-right: @padding-xs;
     color: @gray-dark;
     font-size: @font-size-sm;
+
+    &-num--highlight {
+      color: @red;
+    }
   }
 
   &__quota {
@@ -229,8 +227,7 @@
   }
 
   &-messages {
-    padding-bottom: @padding-xs;
-    background: @background-color;
+    padding-bottom: @padding-xl;
 
     &__image-cell {
       .van-cell__title {
@@ -314,10 +311,11 @@
 
   &-actions {
     display: flex;
+    flex-shrink: 0;
     padding: @padding-xs @padding-md;
 
     .van-button {
-      height: 36px;
+      height: 40px;
       font-weight: 500;
       font-size: @font-size-md;
       line-height: 34px;
@@ -325,13 +323,13 @@
       border-radius: 0;
 
       &:first-of-type {
-        border-top-left-radius: 18px;
-        border-bottom-left-radius: 18px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
       }
 
       &:last-of-type {
-        border-top-right-radius: 18px;
-        border-bottom-right-radius: 18px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
       }
 
       &--warning {

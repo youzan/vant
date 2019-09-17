@@ -118,7 +118,7 @@ function ActionSheet(
 
   return (
     <Popup
-      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
+      class={bem()}
       position="bottom"
       round={props.round}
       value={props.value}
@@ -128,6 +128,7 @@ function ActionSheet(
       lockScroll={props.lockScroll}
       getContainer={props.getContainer}
       closeOnClickOverlay={props.closeOnClickOverlay}
+      safeAreaInsetBottom={props.safeAreaInsetBottom}
       {...inherit(ctx, true)}
     >
       {Header()}

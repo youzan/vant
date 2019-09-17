@@ -83,7 +83,7 @@ export default {
 | message | 展示文案，支持通过`\n`换行 | *string* | - | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | *number* | `3000` | - |
 | color | 字体颜色 | *string* | `#fff` | - |
-| background | 背景颜色 | *string* | `#f44` | - |
+| background | 背景颜色 | *string* | `#ee0a24` | - |
 | className | 自定义类名 | *any* | - | - |
 | onClick | 点击时的回调函数 | *Function* | - | - |
 | onOpened | 完全展示后的回调函数 | *Function* | - | - |

@@ -27,11 +27,7 @@ export default {
 
 ### Listen to Events
 
-`search` event will be triggered when click the search button on the keyboard.
-
-`cancel` event will be triggered when click the cancel button.
-
-Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
+`search` event will be triggered when click the search button on the keyboard, `cancel` event will be triggered when click the cancel button.
 
 ```html
 <form action="/">
@@ -44,6 +40,8 @@ Tips: There will be a search button on the keyboard when Search is inside a form
   />
 </form>
 ```
+
+> Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
 
 ### Custom Button
 
@@ -69,7 +67,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | label | Search label | *string* | - | - |
-| shape | Can be set to `round` | *string* | `square` | - |
+| shape | Shape of input, can be set to `round` | *string* | `square` | - |
 | background | Background color | *string* | `#f2f2f2` | - |
 | clearable | Whether to be clearable | *boolean* | `true` | - |
 | show-action | Whether to show right button | *boolean* | `false` | - |
@@ -82,19 +80,20 @@ Search support all native properties of input tag，such as `maxlength`、`place
 
 ### Events
 
-Search support all native events of input tag，such as `focus`、`blur`、`keypress`
-
 | Event | Description | Arguments |
 |------|------|------|
+| search | Triggered when confirm search | value: current value |
+| input | Triggered when input value changed | value: current value |
+| focus | Triggered when input gets focus | event: Event |
+| blur | Triggered when input loses focus | event: Event |
+| clear | Triggered when click clear icon | event: Event |
 | cancel | Triggered when click cancel button | - |
-| search | Triggered when confirm search | - |
-| clear | Triggered when click clear icon | - |
 
 ### Slots
 
 | Name | Description |
 |------|------|
 | label | Custom Search label |
-| action | Custom right button, displayed when `showAction` is true |
+| action | Custom right button, displayed when `show-action` is `true` |
 | left-icon | Custom left icon |
 | right-icon | Custom right icon |

@@ -151,7 +151,7 @@ export default createComponent({
     const { status, distance } = this;
     const text = this[`${status}Text`] || t(status);
     const style = {
-      transition: `${this.duration}ms`,
+      transitionDuration: `${this.duration}ms`,
       transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : ''
     };
 

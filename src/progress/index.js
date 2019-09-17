@@ -1,4 +1,4 @@
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('progress');
@@ -8,6 +8,7 @@ export default createComponent({
     inactive: Boolean,
     pivotText: String,
     pivotColor: String,
+    strokeWidth: [String, Number],
     percentage: {
       type: Number,
       required: true,
@@ -60,17 +61,25 @@ export default createComponent({
 
     const pivotStyle = {
       color: this.textColor,
+      left: `${(this.progressWidth - this.pivotWidth) * percentage / 100}px`,
       background: this.pivotColor || background
     };
 
     const portionStyle = {
       background,
-      width: ((this.progressWidth - this.pivotWidth) * percentage) / 100 + 'px'
+      width: (this.progressWidth * percentage) / 100 + 'px'
     };
 
+    let wrapperStyle;
+    if (this.strokeWidth) {
+      wrapperStyle = {
+        height: addUnit(this.strokeWidth)
+      };
+    }
+
     return (
-      <div class={bem()}>
-        <span class={bem('portion', { 'with-pivot': showPivot })} style={portionStyle}>
+      <div class={bem()} style={wrapperStyle}>
+        <span class={bem('portion')} style={portionStyle}>
           {showPivot && (
             <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
               {text}

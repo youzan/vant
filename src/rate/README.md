@@ -43,7 +43,7 @@ export default {
 <van-rate
   v-model="value"
   :size="25"
-  color="#f44"
+  color="#ee0a24"
   void-icon="star"
   void-color="#eee"
 />
@@ -100,12 +100,13 @@ export default {
 | gutter | Icon gutter | *string \| number* | `4px` | - |
 | color | Selected color | *string* | `#ffd21e` | - |
 | void-color | Void color | *string* | `#c7c7c7` | - |
+| disabled-color | Disabled color | *string* | `#bdbdbd` | - |
 | icon | Selected icon | *string* | `star` | - |
 | void-icon | Void icon | *string* | `star-o` | - |
 | allow-half | Whether to allow half star | *boolean* | `false` | - |
 | readonly | Whether to be readonly | *boolean* | `false` | - |
 | disabled | Whether to disable rate | *boolean* | `false` | - |
-| disabled-color | Disabled color | *string* | `#bdbdbd` | - |
+| touchable | Whether to allow select rate by touch gesture | *boolean* | `true` | 2.2.0 |
 
 ### Events
 

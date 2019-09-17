@@ -49,6 +49,26 @@ Use `position` prop to set popup display position
 />
 ```
 
+### Close Icon
+
+```html
+<van-popup
+  v-model="show"
+  closeable
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+
+<!-- Custom Icon -->
+<van-popup
+  v-model="show"
+  closeable
+  close-icon="close"
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+```
+
 ### Round Corner
 
 ```html
@@ -110,8 +130,11 @@ export default {
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
+| closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
+| close-icon | Close icon name | *string* | `cross` | 2.2.0 |
 | transition | Transition | *string* | `popup-slide` | - |
 | get-container | Return the mount node for Popup | *string \| () => HTMLElement* | - | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
 ### Events
 

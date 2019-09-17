@@ -126,6 +126,7 @@ export default {
 | hide-stock | Whether to hide stock | *boolean* | `false` | - |
 | hide-quota-text | Whether to hide quota text | *boolean* | `false` | - |
 | hide-selected-text | Whether to hide selected text | *boolean* | `false` | - |
+| stock-threshold | stock threshold | *boolean* | `50` | - |
 | show-add-cart-btn | Whether to show cart button | *boolean* | `true` | - |
 | buy-text | Buy button text | *string* | - | - | - |
 | add-cart-text | Add cart button text | *string* | - | - | - |
@@ -139,6 +140,7 @@ export default {
 | custom-stepper-config | Custom stepper related config | *object* | `{}` | - |
 | message-config | Message related config | *object* | `{}` | - |
 | get-container | Return the mount node for sku | *string \| () => HTMLElement* | - | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
 ### Events
 

@@ -168,7 +168,7 @@ export default createComponent({
 
     const wrapperStyle = {
       transform: `translate3d(${this.offset}px, 0, 0)`,
-      transition: this.dragging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
+      transitionDuration: this.dragging ? '0s' : '.6s'
     };
 
     return (

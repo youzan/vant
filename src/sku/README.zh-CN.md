@@ -128,6 +128,7 @@ export default {
 | hide-stock | 是否显示商品剩余库存 | *boolean* | `false` | - |
 | hide-quota-text | 是否显示限购提示 | *boolean* | `false` | - |
 | hide-selected-text | 是否隐藏已选提示 | *boolean* | `false` | - |
+| stock-threshold | 库存阈值。低于这个值会把库存数高亮显示 | *boolean* | `50` | - |
 | show-add-cart-btn | 是否显示加入购物车按钮 | *boolean* | `true` | - |
 | buy-text | 购买按钮文字 | *string* | `立即购买` | - |
 | add-cart-text | 加入购物车按钮文字 | *string* | `加入购物车` | - |
@@ -143,6 +144,7 @@ export default {
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
 
 ### Events
 

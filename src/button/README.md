@@ -25,21 +25,21 @@ Vue.use(Button);
 
 ```html
 <van-button plain type="primary">Primary</van-button>
-<van-button plain type="danger">Danger</van-button>
+<van-button plain type="info">Danger</van-button>
 ```
 
 ### Hairline
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
-<van-button plain hairline type="danger">Hairline</van-button>
+<van-button plain hairline type="info">Hairline</van-button>
 ```
 
 ### Disabled
 
 ```html
 <van-button disabled type="primary">Diabled</van-button>
-<van-button disabled type="danger">Diabled</van-button>
+<van-button disabled type="info">Diabled</van-button>
 ```
 
 ### Loading
@@ -47,14 +47,14 @@ Vue.use(Button);
 ```html 
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="danger" loading-text="Loading..." />
+<van-button loading type="info" loading-text="Loading..." />
 ```
 
 ### Shape
 
 ```html 
 <van-button square type="primary">Square</van-button>
-<van-button round type="danger">Round</van-button>
+<van-button round type="info">Round</van-button>
 ```
 
 ### Icon
@@ -62,7 +62,7 @@ Vue.use(Button);
 ```html 
 <van-button icon="star-o" type="primary" />
 <van-button icon="star-o" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">Button</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info">Button</van-button>
 ```
 
 ### Size
@@ -84,8 +84,9 @@ Vue.use(Button);
 ### Custom Color
 
 ```html
-<van-button color="#7232dd">Custom Color</van-button>
-<van-button color="#7232dd" plain>Custom Color</van-button>
+<van-button color="#7232dd">Pure</van-button>
+<van-button color="#7232dd" plain>Pure</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">Gradient</van-button>
 ```
 
 ## API
@@ -97,7 +98,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | *string* | `default` | - |
 | size | Can be set to `large` `small` `mini` | *string* | `normal` | - |
 | text | Text | *string* | - | - |
-| color | Color, support linear-gradient | *string* | - | 2.1.3 |
+| color | Color, support linear-gradient | *string* | - | 2.1.8 |
 | icon | Left Icon | *string* | - | - |
 | tag | HTML Tag | *string* | `button` | - |
 | native-type | Native Type Attribute | *string* | `''` | - |

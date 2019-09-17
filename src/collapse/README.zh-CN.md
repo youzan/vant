@@ -105,7 +105,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | *string \| number* | `index` | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 | size | 标题栏大小，可选值为 `large` | *string* | - | - |
 | title | 标题栏左侧内容 | *string \| number* | - | - |
 | value | 标题栏右侧内容 | *string \| number* | - | - |

@@ -94,7 +94,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      badge: '显示徽标',
+      badge: '提示信息',
       customIcon: '自定义图标',
       customColor: '自定义颜色',
       matchByName: '通过名称匹配'

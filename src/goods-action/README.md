@@ -44,13 +44,13 @@ export default {
 
 ### Icon info
 
-Use `info` prop to show messages in upper right corner of icon
+Use `info` prop to show badge in icon
 
 ```html
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="Icon1" />
   <van-goods-action-icon icon="cart-o" text="Icon2" info="5" />
-  <van-goods-action-icon icon="shop-o" text="Icon3" />
+  <van-goods-action-icon icon="shop-o" text="Icon3" info=12" />
   <van-goods-action-button type="warning" text="Button1" />
   <van-goods-action-button type="danger" text="Button2" />
 </van-goods-action>
@@ -73,7 +73,7 @@ Use `info` prop to show messages in upper right corner of icon
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### GoodsActionIcon Props
 
@@ -82,7 +82,7 @@ Use `info` prop to show messages in upper right corner of icon
 | text | Button text | *string* | - | - |
 | icon | Icon | *string* | - | - |
 | icon-class | Icon class name | *any* | `''` | - |
-| info | Info message | *string \| number* | - | - |
+| info | Content of the badge | *string \| number* | - | - |
 | url | Link | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |

@@ -14,8 +14,7 @@ import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from 
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
 const namespace = createNamespace('sku');
-const createComponent = namespace[0];
-const t = namespace[2];
+const [createComponent, bem, t] = namespace;
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
 export default createComponent({
@@ -36,6 +35,7 @@ export default createComponent({
     customSkuValidator: Function,
     closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
+    safeAreaInsetBottom: Boolean,
     resetSelectedSkuOnHide: Boolean,
     quota: {
       type: Number,
@@ -48,6 +48,10 @@ export default createComponent({
     initialSku: {
       type: Object,
       default: () => ({})
+    },
+    stockThreshold: {
+      type: Number,
+      default: 50,
     },
     showSoldoutSku: {
       type: Boolean,
@@ -223,7 +227,13 @@ export default createComponent({
       const { stockFormatter } = this.customStepperConfig;
       if (stockFormatter) return stockFormatter(this.stock);
 
-      return t('stock', this.stock);
+      return [
+        `${t('stock')} `,
+        <span class={bem('stock-num', { highlight: this.stock < this.stockThreshold })}>
+          {this.stock}
+        </span>,
+        ` ${t('stockUnit')}`
+      ];
     },
 
     quotaText() {
@@ -260,7 +270,6 @@ export default createComponent({
     const skuEventBus = new Vue();
     this.skuEventBus = skuEventBus;
 
-    skuEventBus.$on('sku:close', this.onClose);
     skuEventBus.$on('sku:select', this.onSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
     skuEventBus.$on('sku:previewImage', this.onPreviewImage);
@@ -337,10 +346,6 @@ export default createComponent({
       }
 
       return t('selectSku');
-    },
-
-    onClose() {
-      this.show = false;
     },
 
     onSelect(skuValue) {
@@ -547,11 +552,13 @@ export default createComponent({
     return (
       <Popup
         vModel={this.show}
+        round
+        closeable
         position="bottom"
         class="van-sku-container"
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
-        round
+        safeAreaInsetBottom={this.safeAreaInsetBottom}
       >
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>

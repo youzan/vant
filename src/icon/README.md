@@ -23,6 +23,7 @@ Use `name` prop to set icon name or icon URL
 ### Show Info
 
 ```html
+<van-icon name="chat" dot />
 <van-icon name="chat" info="9" />
 <van-icon name="chat" info="99+" />
 ```
@@ -63,7 +64,8 @@ import 'vant/lib/icon/local.css';
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | name | Icon name or URL | *string* | `''` | - |
-| info | Info message | *string \| number* | `''` | - |
+| dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
+| info | Content of the badge | *string \| number* | `''` | - |
 | color | Icon color | *string* | `inherit` | - |
 | size | Icon size | *string \| number* | `inherit` | - |
 | class-prefix | ClassName prefix | *string* | `van-icon` | - |

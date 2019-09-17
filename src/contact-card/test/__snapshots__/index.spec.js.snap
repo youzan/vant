@@ -6,7 +6,7 @@ exports[`ContactList render 1`] = `
     <div class="van-cell van-cell--clickable van-contact-list__item">
       <div class="van-cell__value van-cell__value--alone van-contact-list__item-value">
         <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
-          <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success" style="border-color: #f44; background-color: rgb(255, 68, 68);">
+          <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success" style="border-color: #ee0a24; background-color: rgb(238, 10, 36);">
               <!----></i></div><span class="van-radio__label"><div class="van-contact-list__name">test，123123213</div></span>
         </div>
       </div><i class="van-icon van-icon-edit van-contact-list__edit">

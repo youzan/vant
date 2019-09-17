@@ -10,7 +10,7 @@ import { DefaultSlots, ScopedSlot } from '../utils/types';
 const [createComponent, bem, t] = createNamespace('search');
 
 export type SearchProps = {
-  shape: string;
+  shape: 'sqaure' | 'round';
   value?: string;
   label?: string;
   leftIcon: string;
@@ -67,9 +67,6 @@ function Search(
     attrs: ctx.data.attrs,
     on: {
       ...ctx.listeners,
-      input(value: string) {
-        emit(ctx, 'input', value);
-      },
       keypress(event: KeyboardEvent) {
         // press enter
         if (event.keyCode === 13) {

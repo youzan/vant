@@ -34,14 +34,14 @@ export default {
 };
 ```
 
-### 显示徽标
+### 提示信息
 
-通过`info`属性设置徽标内容
+设置`dot`属性后，会在右上角展示一个小红点。设置`info`属性后，会在右上角展示相应的徽标
 
 ```html
 <van-sidebar v-model="activeKey">
-  <van-sidebar-item title="标签名称" info="8" />
-  <van-sidebar-item title="标签名称" info="99" />
+  <van-sidebar-item title="标签名称" dot />
+  <van-sidebar-item title="标签名称" info="5" />
   <van-sidebar-item title="标签名称" info="99+" />
 </van-sidebar>
 ```
@@ -65,9 +65,11 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 内容 | *string* | `''` | - |
-| info | 提示消息 | *string \| number* | `''` | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | 2.0.4 |
+| dot | 是否显示右上角小红点 | *boolean* | `false` | 2.2.1 |
+| info | 右上角徽标的内容 | *string \| number* | - | - |
+| disabled | 是否禁用该项 | *boolean* | `false` | 2.2.0 |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.0.4 |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | 2.0.4 |
 
 ### SidebarItem Events

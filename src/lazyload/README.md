@@ -40,6 +40,13 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 
 ### Lazyload Component
 
+```js
+// set `lazyComponent` option
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
+```
+
 ```html
 <lazy-component>
   <img v-for="img in imageList" v-lazy="img" >
@@ -61,4 +68,4 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 | filter | The image's listener filter | *object* | - | - |
 | lazyComponent | Lazyload component | *boolean* | `false` | - |
 
-See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)
+> See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)

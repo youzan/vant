@@ -2,7 +2,7 @@
 
 ### 介绍
 
-表单中的输入框组件，支持`input`和`textarea`两种类型
+表单中的输入框组件
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Field);
 
 ### 基础用法
 
-通过 v-model 绑定输入框的值
+通过`v-model`绑定输入框的值
 
 ```html
 <van-cell-group>
@@ -128,7 +128,7 @@ Vue.use(Field);
 |------|------|------|------|------|
 | label | 输入框左侧文本 | *string* | - | - |
 | value | 当前输入的值 | *string \| number* | - | - |
-| type | 输入框类型, 可选值为 `tel` *number*<br>`textarea` `password` 等 | *string* | `text` | - |
+| type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | *string* | `text` | - |
 | size | 大小，可选值为 `large` | *string* | - | - |
 | maxlength | 输入的最大字符数 | *string \| number* | - | - |
 | placeholder | 占位提示文字 | *string* | - | - |
@@ -143,13 +143,13 @@ Vue.use(Field);
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | 2.0.4 |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` | - 
 | label-class | 左侧文本额外类名 | *any* | - | - |
-| label-width | 左侧文本宽度，可指定单位，默认为 px | *string \| number* | `90px` | - |
+| label-width | 左侧文本宽度，默认单位为`px` | *string \| number* | `90px` | - |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` | - |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | *boolean \| object* | `false` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
-| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为`px` | *boolean \| object* | `false` | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 
 ### Events
 

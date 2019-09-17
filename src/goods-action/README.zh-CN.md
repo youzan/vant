@@ -42,15 +42,15 @@ export default {
 }
 ```
 
-### 图标提示
+### 徽标提示
 
-通过`info`属性在图标右上角增加相应的提示
+通过`info`属性在图标右上角显示徽标
 
 ```html
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" />
   <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-icon icon="shop-o" text="店铺" info=12" />
   <van-goods-action-button type="warning" text="加入购物车" />
   <van-goods-action-button type="danger" text="立即购买" />
 </van-goods-action>
@@ -75,7 +75,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | *boolean* | `false` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
 
 ### GoodsActionIcon Props
 
@@ -84,9 +84,9 @@ export default {
 | text | 按钮文字 | *string* | - | - |
 | icon | 图标 | *string* | - | - |
 | icon-class | 图标额外类名 | *any* | - | - |
-| info | 图标右上角提示信息 | *string \| number* | - | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| info | 图标右上角徽标的内容 | *string \| number* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionButton Props
@@ -98,8 +98,8 @@ export default {
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.8 |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - | - |
 | loading | 是否显示为加载状态 | *boolean* | `false` | - | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionIcon Slots

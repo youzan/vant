@@ -1,5 +1,5 @@
 import Uploader from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test/utils';
 
 window.File = function() {
   this.size = 10000;
@@ -341,7 +341,7 @@ it('click to preview image', () => {
   wrapper.find('.van-image').trigger('click');
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode2).toMatchSnapshot();
+  expect(imagePreviewNode2.querySelectorAll('.van-image-preview__image').length).toEqual(1);
 });
 
 it('click-preview event', () => {
@@ -354,5 +354,22 @@ it('click-preview event', () => {
 
   wrapper.find('.van-image').trigger('click');
   expect(wrapper.emitted('click-preview')[0][0]).toEqual({ url: IMAGE });
-  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '' });
+  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '', index: 0 });
+});
+
+it('close-preview event', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }]
+    }
+  });
+
+  wrapper.find('.van-image').trigger('click');
+
+  const preview = document.querySelector('.van-image-preview');
+  const swipe = preview.querySelector('.van-swipe__track');
+  triggerDrag(swipe, 0, 0);
+
+  await later(300);
+  expect(wrapper.emitted('close-preview')).toBeTruthy();
 });

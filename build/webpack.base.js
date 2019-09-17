@@ -1,24 +1,8 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    'vant-docs': './docs/site/desktop/main.js',
-    'vant-mobile': './docs/site/mobile/main.js'
-  },
-  output: {
-    path: path.join(__dirname, '../docs/dist'),
-    publicPath: '/',
-    chunkFilename: 'async_[name].js'
-  },
-  devServer: {
-    open: true,
-    progress: true,
-    host: '0.0.0.0',
-    stats: 'errors-only'
-  },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.vue', '.less']
   },
@@ -69,19 +53,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new HtmlWebpackPlugin({
-      chunks: ['vant-docs'],
-      template: path.join(__dirname, '../docs/site/desktop/index.html'),
-      filename: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['vant-mobile'],
-      template: path.join(__dirname, '../docs/site/mobile/index.html'),
-      filename: 'mobile.html',
-      inject: true
-    })
-  ]
+  plugins: [new VueLoaderPlugin()]
 };

@@ -29,7 +29,7 @@ Vue.use(Button);
 
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
-<van-button plain type="danger">朴素按钮</van-button>
+<van-button plain type="info">朴素按钮</van-button>
 ```
 
 ### 细边框
@@ -38,7 +38,7 @@ Vue.use(Button);
 
 ```html
 <van-button plain hairline type="primary">细边框按钮</van-button>
-<van-button plain hairline type="danger">细边框按钮</van-button>
+<van-button plain hairline type="info">细边框按钮</van-button>
 ```
 
 ### 禁用状态
@@ -47,7 +47,7 @@ Vue.use(Button);
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
-<van-button disabled type="danger">禁用状态</van-button>
+<van-button disabled type="info">禁用状态</van-button>
 ```
 
 ### 加载状态
@@ -57,7 +57,7 @@ Vue.use(Button);
 ```html 
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="danger" loading-text="加载中..." />
+<van-button loading type="info" loading-text="加载中..." />
 ```
 
 ### 按钮形状
@@ -66,7 +66,7 @@ Vue.use(Button);
 
 ```html 
 <van-button square type="primary">方形按钮</van-button>
-<van-button round type="danger">圆形按钮</van-button>
+<van-button round type="info">圆形按钮</van-button>
 ```
 
 ### 图标按钮
@@ -76,7 +76,7 @@ Vue.use(Button);
 ```html 
 <van-button icon="star-o" type="primary" />
 <van-button icon="star-o" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info">按钮</van-button>
 ```
 
 ### 按钮尺寸
@@ -104,8 +104,9 @@ Vue.use(Button);
 通过`color`属性可以自定义按钮的颜色
 
 ```html
-<van-button color="#7232dd">自定义颜色</van-button>
-<van-button color="#7232dd" plain>自定义颜色</van-button>
+<van-button color="#7232dd">单色按钮</van-button>
+<van-button color="#7232dd" plain>单色按钮</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
 ## API
@@ -117,8 +118,8 @@ Vue.use(Button);
 | type | 类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
 | size | 尺寸，可选值为 `large` `small` `mini` | *string* | `normal` | - |
 | text | 按钮文字 | *string* | - | - |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.3 |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.8 |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
 | tag | HTML 标签 | *string* | `button` | - |
 | native-type | 原生 button 标签 type 属性 | *string* | - | - |
 | block | 是否为块级元素 | *boolean* | `false` | - |
@@ -131,8 +132,8 @@ Vue.use(Button);
 | loading-text | 加载状态提示文字 | *string* | - | - |
 | loading-type | 加载图标类型，可选值为`spinner` | *string* | `circular` | - |
 | loading-size | 加载图标大小 | *string* | `20px` | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### Events

@@ -29,7 +29,7 @@
       <van-switch
         v-model="checked3"
         active-color="#07c160"
-        inactive-color="#f44"
+        inactive-color="#ee0a24"
       />
     </demo-block>
 

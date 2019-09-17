@@ -13,9 +13,27 @@ exports[`lazy-load prop 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe">
     <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);">
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img class="van-image-preview__image" style="transition: .3s all;"></div>
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img class="van-image-preview__image"></div>
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img class="van-image-preview__image"></div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image" style="transition-duration: .3s;"><img class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-image-preview__index">1/3</div>
@@ -26,12 +44,38 @@ exports[`render image 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe">
     <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);">
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/1.png" class="van-image-preview__image" style="transition: .3s all;"></div>
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/2.png" class="van-image-preview__image"></div>
-      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/3.png" class="van-image-preview__image"></div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image" style="transition-duration: .3s;"><img src="https://img.yzcdn.cn/1.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img src="https://img.yzcdn.cn/2.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 0px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img src="https://img.yzcdn.cn/3.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-image-preview__index">1/3</div>
+</div>
+`;
+
+exports[`set show-index prop to false 1`] = `
+<div class="van-image-preview" name="van-fade">
+  <div class="van-swipe">
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+  </div>
 </div>
 `;
 
@@ -39,9 +83,27 @@ exports[`zoom 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe">
     <div class="van-swipe__track" style="transition-duration: 500ms; width: 0px; transform: translateX(0px);">
-      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/1.png" class="van-image-preview__image" style="transform: scale3d(2, 2, 1) translate(0px, NaNpx);"></div>
-      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/2.png" class="van-image-preview__image"></div>
-      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img src="https://img.yzcdn.cn/3.png" class="van-image-preview__image"></div>
+      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image" style="transition-duration: 0s; transform: scale3d(2, 2, 1) translate(0px, NaNpx);"><img src="https://img.yzcdn.cn/1.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img src="https://img.yzcdn.cn/2.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">
+        <div class="van-image van-image-preview__image"><img src="https://img.yzcdn.cn/3.png" class="van-image__img" style="object-fit: contain;">
+          <div class="van-image__loading">
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="van-image-preview__index">1/3</div>

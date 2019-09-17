@@ -15,6 +15,7 @@
 
   &__text {
     position: relative;
+    display: inline-block;
   }
 
   &:active {
@@ -40,7 +41,11 @@
     }
   }
 
-  .van-info {
-    right: 4px;
+  &--disabled {
+    color: @sidebar-disabled-text-color;
+
+    &:active {
+      background-color: @sidebar-background-color;
+    }
   }
 }

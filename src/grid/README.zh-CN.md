@@ -21,12 +21,10 @@ Vue.use(Grid).use(GridItem);
 
 ```html
 <van-grid>
-  <van-grid-item
-    v-for="value in 4"
-    :key="value"
-    icon="photo-o"
-    text="文字"
-  />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -99,16 +97,19 @@ Vue.use(Grid).use(GridItem);
 
 ```html
 <van-grid clickable :column-num="2">
-  <van-grid-item
-    icon="home-o"
-    text="路由跳转"
-    to="/"
-  />
-  <van-grid-item
-    icon="search"
-    text="URL 跳转"
-    url="https://www.baidu.com"
-  />
+  <van-grid-item icon="home-o" text="路由跳转" to="/" />
+  <van-grid-item icon="search" text="URL 跳转" url="/vant/mobile.html" />
+</van-grid>
+```
+
+### 提示信息
+
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+
+```html
+<van-grid :column-num="2">
+  <van-grid-item icon="home-o" text="文字" dot />
+  <van-grid-item icon="search" text="文字" info="99+" />
 </van-grid>
 ```
 
@@ -130,9 +131,11 @@ Vue.use(Grid).use(GridItem);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 文字 | *string* | - | - |
-| icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
-| url | 跳转链接 | *string* | - | - |
-| to | 路由跳转对象，同 vue-router 的 to 属性 | *string \| object* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| dot | 是否显示图标右上角小红点 | *boolean* | `false` | 2.2.1 |
+| info | 图标右上角徽标的内容 | *string \| number* | - | 2.2.1 |
+| url | 点击后跳转的链接地址 | *string* | - | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
 
 ### GridItem Events

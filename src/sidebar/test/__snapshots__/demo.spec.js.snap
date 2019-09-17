@@ -2,32 +2,58 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div>
-    <div class="van-sidebar van-hairline--top-bottom"><a class="van-sidebar-item van-sidebar-item--select van-hairline">
-        <div class="van-sidebar-item__text">标签名称
-          <!---->
-        </div>
-      </a> <a class="van-sidebar-item van-hairline">
-        <div class="van-sidebar-item__text">标签名称
-          <!---->
-        </div>
-      </a> <a class="van-sidebar-item van-hairline">
-        <div class="van-sidebar-item__text">标签名称
-          <!---->
-        </div>
-      </a></div>
-  </div>
-  <div>
-    <div class="van-sidebar van-hairline--top-bottom"><a class="van-sidebar-item van-sidebar-item--select van-hairline">
-        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">8</div>
-        </div>
-      </a> <a class="van-sidebar-item van-hairline">
-        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">99</div>
-        </div>
-      </a> <a class="van-sidebar-item van-hairline">
-        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">99+</div>
-        </div>
-      </a></div>
+  <div class="van-grid">
+    <div class="van-grid-item" style="flex-basis: 50%;">
+      <div class="van-grid-item__content van-grid-item__content--center">
+        <h3 class="demo-sidebar-title">基础用法</h3>
+        <div class="van-sidebar"><a class="van-sidebar-item van-sidebar-item--select">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a></div>
+      </div>
+    </div>
+    <div class="van-grid-item" style="flex-basis: 50%;">
+      <div class="van-grid-item__content van-grid-item__content--center">
+        <h3 class="demo-sidebar-title">提示信息</h3>
+        <div class="van-sidebar"><a class="van-sidebar-item van-sidebar-item--select">
+            <div class="van-sidebar-item__text">标签名<div class="van-info van-info--dot van-sidebar-item__info"></div>
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名<div class="van-info van-sidebar-item__info">5</div>
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名<div class="van-info van-sidebar-item__info">99+</div>
+            </div>
+          </a></div>
+      </div>
+    </div>
+    <div class="van-grid-item" style="flex-basis: 50%;">
+      <div class="van-grid-item__content van-grid-item__content--center">
+        <h3 class="demo-sidebar-title">禁用选项</h3>
+        <div class="van-sidebar"><a class="van-sidebar-item van-sidebar-item--select">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item van-sidebar-item--disabled">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名
+              <!---->
+            </div>
+          </a></div>
+      </div>
+    </div>
   </div>
 </div>
 `;

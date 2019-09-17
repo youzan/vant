@@ -63,6 +63,11 @@
       }
     }
 
+    &--safe-area-inset-bottom {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
     &-slide-top-enter,
     &-slide-top-leave-active {
       transform: translate3d(0, -100%, 0);
@@ -81,6 +86,19 @@
     &-slide-left-enter,
     &-slide-left-leave-active {
       transform: translate3d(-100%, -50%, 0);
+    }
+
+    &__close-icon {
+      position: absolute;
+      top: @popup-close-icon-margin;
+      right: @popup-close-icon-margin;
+      z-index: @popup-close-icon-z-index;
+      color: @popup-close-icon-color;
+      font-size: @popup-close-icon-size;
+
+      &:active {
+        opacity: .6;
+      }
     }
   }
 }

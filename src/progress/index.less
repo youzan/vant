@@ -11,19 +11,13 @@
     left: 0;
     height: 100%;
     border-radius: inherit;
-
-    &--with-pivot {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
   }
 
   &__pivot {
     position: absolute;
     top: 50%;
-    right: 0;
     box-sizing: border-box;
-    min-width: 2em;
+    min-width: 3.6em;
     padding: @progress-pivot-padding;
     font-size: @progress-pivot-font-size;
     line-height: @progress-pivot-line-height;
@@ -31,6 +25,6 @@
     word-break: keep-all;
     background-color: @progress-pivot-background-color;
     border-radius: 1em;
-    transform: translate(100%, -50%);
+    transform: translate(0, -50%);
   }
 }

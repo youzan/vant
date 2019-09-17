@@ -11,8 +11,10 @@ export default createComponent({
 
   props: {
     ...routeProps,
+    dot: Boolean,
+    text: String,
     icon: String,
-    text: String
+    info: [Number, String]
   },
 
   computed: {
@@ -67,7 +69,10 @@ export default createComponent({
       }
 
       return [
-        this.slots('icon') || (this.icon && <Icon name={this.icon} class={bem('icon')} />),
+        this.slots('icon') ||
+          (this.icon && (
+            <Icon name={this.icon} dot={this.dot} info={this.info} class={bem('icon')} />
+          )),
         this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>)
       ];
     }

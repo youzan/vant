@@ -148,7 +148,7 @@ export default {
 | active-color | Color of active tab item | *string* | `#1989fa` | - |
 | inactive-color | Color of inactive tab item | *string* | `#7d7e80` | - |
 | route | Whether to enable route mode | *boolean* | `false` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | *boolean* | `false` | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Tabbar Events
 
@@ -163,7 +163,7 @@ export default {
 | name | Identifier | *string \| number* | Item index | - |
 | icon | Icon name | *string* | - | - |
 | dot | Whether to show red dot | *boolean* | - | - |
-| info | Info message | *string \| number* | - | - |
+| info | Content of the badge | *string \| number* | - | - |
 | url | Link | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |

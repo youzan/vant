@@ -15,7 +15,7 @@ export default {
   'zh-CN': {
     header: {
       logo: {
-        image: 'https://img.yzcdn.cn/vant/logo.png',
+        image: 'https://b.yzcdn.cn/vant/logo-white.png',
         title: 'Vant',
         href: '#/'
       },
@@ -123,7 +123,7 @@ export default {
           },
           {
             groupName: '表单组件',
-            icon: 'https://img.yzcdn.cn/vant/form-0401.svg',
+            icon: 'orders-o',
             list: [
               {
                 path: '/checkbox',
@@ -185,7 +185,7 @@ export default {
           },
           {
             groupName: '反馈组件',
-            icon: 'passed',
+            icon: 'gift-card-o',
             list: [
               {
                 path: '/action-sheet',
@@ -293,7 +293,7 @@ export default {
           },
           {
             groupName: '导航组件',
-            icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
+            icon: 'peer-pay',
             list: [
               {
                 path: '/grid',
@@ -331,7 +331,7 @@ export default {
           },
           {
             groupName: '业务组件',
-            icon: 'ellipsis',
+            icon: 'other-pay',
             list: [
               {
                 path: '/address-edit',
@@ -378,8 +378,7 @@ export default {
   'en-US': {
     header: {
       logo: {
-        image:
-          'https://img.yzcdn.cn/vant/logo.png',
+        image: 'https://b.yzcdn.cn/vant/logo-white.png',
         title: 'Vant',
         href: '#/'
       },
@@ -467,7 +466,7 @@ export default {
           },
           {
             groupName: 'Form Components',
-            icon: 'https://img.yzcdn.cn/vant/form-0401.svg',
+            icon: 'orders-o',
             list: [
               {
                 path: '/checkbox',
@@ -529,7 +528,7 @@ export default {
           },
           {
             groupName: 'Action Components',
-            icon: 'passed',
+            icon: 'gift-card-o',
             list: [
               {
                 path: '/action-sheet',
@@ -637,7 +636,7 @@ export default {
           },
           {
             groupName: 'Navigation Components',
-            icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
+            icon: 'peer-pay',
             list: [
               {
                 path: '/grid',
@@ -675,7 +674,7 @@ export default {
           },
           {
             groupName: 'Business Components',
-            icon: 'ellipsis',
+            icon: 'other-pay',
             list: [
               {
                 path: '/address-edit',

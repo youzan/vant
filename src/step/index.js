@@ -1,65 +1,57 @@
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
+import { ChildrenMixin } from '../mixins/relation';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('step');
 
 export default createComponent({
-  beforeCreate() {
-    const { steps } = this.$parent;
-    const index = this.$parent.slots().indexOf(this.$vnode);
-    steps.splice(index === -1 ? steps.length : index, 0, this);
-  },
-
-  beforeDestroy() {
-    const index = this.$parent.steps.indexOf(this);
-    if (index > -1) {
-      this.$parent.steps.splice(index, 1);
-    }
-  },
+  mixins: [ChildrenMixin('vanSteps')],
 
   computed: {
     status() {
-      const index = this.$parent.steps.indexOf(this);
-      const { active } = this.$parent;
-
-      if (index < active) {
+      if (this.index < this.parent.active) {
         return 'finish';
       }
-      if (index === active) {
+      if (this.index === this.parent.active) {
         return 'process';
       }
     }
   },
 
-  render() {
-    const { slots, status } = this;
-    const { activeIcon, activeColor, inactiveIcon, direction } = this.$parent;
-    const titleStyle = status === 'process' && { color: activeColor };
+  methods: {
+    genCircle() {
+      const { activeIcon, activeColor, inactiveIcon } = this.parent;
 
-    function Circle() {
-      if (status === 'process') {
+      if (this.status === 'process') {
         return (
-          slots('active-icon') || (
+          this.slots('active-icon') || (
             <Icon class={bem('icon')} name={activeIcon} color={activeColor} />
           )
         );
       }
 
-      const inactiveIconSlot = slots('inactive-icon');
+      const inactiveIconSlot = this.slots('inactive-icon');
+
       if (inactiveIcon || inactiveIconSlot) {
         return inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />;
       }
 
       return <i class={bem('circle')} />;
     }
+  },
+
+  render() {
+    const { status } = this;
+    const { activeColor, direction } = this.parent;
+    const titleStyle = status === 'process' && { color: activeColor };
 
     return (
       <div class={[BORDER, bem([direction, { [status]: status }])]}>
         <div class={bem('title')} style={titleStyle}>
           {this.slots()}
         </div>
-        <div class={bem('circle-container')}>{Circle()}</div>
+        <div class={bem('circle-container')}>{this.genCircle()}</div>
         <div class={bem('line')} />
       </div>
     );
