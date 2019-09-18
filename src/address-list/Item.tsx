@@ -1,5 +1,4 @@
 import { createNamespace } from '../utils';
-import { RED } from '../utils/constant';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
@@ -66,7 +65,7 @@ function AddressItem(
     ];
 
     return switchable && !disabled ? (
-      <Radio name={data.id} iconSize={16} checkedColor={RED}>
+      <Radio name={data.id} iconSize={16}>
         {Info}
       </Radio>
     ) : (
