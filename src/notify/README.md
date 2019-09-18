@@ -68,11 +68,11 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| type | Can be set to `primary` `info` `warning` | *string* | `danger` | - |
+| type | Can be set to `primary` `info` `warning` | *string* | `danger` | 2.1.6 |
 | message | Message | *string* | - | - |
 | duration | Duration(ms), won't disappear if value is 0 | *number* | `3000` | - |
 | color | Message color | *string* | `#fff` | | - |
-| background | Background color | *string* | `#ee0a24` | - |
+| background | Background color | *string* | - | - |
 | className | Custom className | *any* | - | - |
 | onClick | Callback function after click | *Function* | - | - |
 | onOpened | Callback function after opened | *Function* | - | - |
