@@ -129,14 +129,18 @@ export default createComponent({
     },
 
     onChange(picker) {
-      const values = picker.getValues();
-      const year = getTrueValue(values[0]);
-      const month = getTrueValue(values[1]);
+      const indexes = picker.getIndexes();
+      const getValue = index => getTrueValue(this.originColumns[index].values[indexes[index]]);
+
+      const year = getValue(0);
+      const month = getValue(1);
       const maxDate = getMonthEndDay(year, month);
 
-      let date = getTrueValue(values[2]);
+      let date;
       if (this.type === 'year-month') {
         date = 1;
+      } else {
+        date = getValue(2);
       }
 
       date = date > maxDate ? maxDate : date;
@@ -145,8 +149,8 @@ export default createComponent({
       let minute = 0;
 
       if (this.type === 'datetime') {
-        hour = getTrueValue(values[3]);
-        minute = getTrueValue(values[4]);
+        hour = getValue(3);
+        minute = getValue(4);
       }
 
       const value = new Date(year, month - 1, date, hour, minute);
