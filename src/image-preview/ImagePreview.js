@@ -13,10 +13,8 @@ const [createComponent, bem] = createNamespace('image-preview');
 
 function getDistance(touches) {
   return Math.sqrt(
-    Math.abs(
-      (touches[0].clientX - touches[1].clientX) *
-        (touches[0].clientY - touches[1].clientY)
-    )
+    ((touches[0].clientX - touches[1].clientX) ** 2) +
+    ((touches[0].clientY - touches[1].clientY) ** 2)
   );
 }
 
