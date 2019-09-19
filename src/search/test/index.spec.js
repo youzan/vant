@@ -104,3 +104,14 @@ test('right-icon slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('action-text prop', () => {
+  const wrapper = mount(Search, {
+    propsData: {
+      actionText: 'Custom Text',
+      showAction: true
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

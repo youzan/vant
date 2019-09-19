@@ -45,7 +45,7 @@ export default {
     'en-US': {
       label: 'Address',
       placeholder: 'Placeholder',
-      customButton: 'Custom Button',
+      customButton: 'Custom Action Button',
       listenToEvents: 'Listen to Events'
     }
   },

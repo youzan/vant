@@ -17,6 +17,7 @@ export type SearchProps = {
   rightIcon?: string;
   clearable: boolean;
   background: string;
+  actionText?: string;
   showAction?: boolean;
 };
 
@@ -58,7 +59,11 @@ function Search(
 
     return (
       <div class={bem('action')}>
-        {slots.action ? slots.action() : <div onClick={onCancel}>{t('cancel')}</div>}
+        {slots.action ? (
+          slots.action()
+        ) : (
+          <div onClick={onCancel}>{props.actionText || t('cancel')}</div>
+        )}
       </div>
     );
   }
@@ -112,6 +117,7 @@ Search.props = {
   value: String,
   label: String,
   rightIcon: String,
+  actionText: String,
   showAction: Boolean,
   shape: {
     type: String,

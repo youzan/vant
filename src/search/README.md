@@ -43,7 +43,7 @@ export default {
 
 > Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
 
-### Custom Button
+### Custom Action Button
 
 Use `action` slot to custom right button, `cancel` event will no longer be triggered when use this slot
 
@@ -66,15 +66,16 @@ Search support all native properties of input tag，such as `maxlength`、`place
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| label | Search label | *string* | - | - |
-| shape | Shape of input, can be set to `round` | *string* | `square` | - |
-| background | Background color | *string* | `#f2f2f2` | - |
+| label | Left side label | *string* | - | - |
+| shape | Shape of field, can be set to `round` | *string* | `square` | - |
+| background | Background color of field | *string* | `#f2f2f2` | - |
 | clearable | Whether to be clearable | *boolean* | `true` | - |
-| show-action | Whether to show right button | *boolean* | `false` | - |
+| show-action | Whether to show right action button | *boolean* | `false` | - |
+| action-text | Text of action button | *boolean* | `Cancel` | 2.2.2 |
 | disabled | Whether to disable field | *boolean* | `false` | - |
 | readonly | Whether to be readonly | *boolean* | `false` | - |
 | error | Whether to show error info | *boolean* | `false` | - |
-| input-align | Input text align, can be set to `center` `right` | *string* | `left` | - |
+| input-align | Text align of field, can be set to `center` `right` | *string* | `left` | - |
 | left-icon | Left icon name | *string* | `search` | - |
 | right-icon | Right icon name | *string* | - | - |
 
