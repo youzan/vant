@@ -90,14 +90,32 @@
 
     &__close-icon {
       position: absolute;
-      top: @popup-close-icon-margin;
-      right: @popup-close-icon-margin;
       z-index: @popup-close-icon-z-index;
       color: @popup-close-icon-color;
       font-size: @popup-close-icon-size;
 
       &:active {
         opacity: .6;
+      }
+
+      &--top-left {
+        top: @popup-close-icon-margin;
+        left: @popup-close-icon-margin;
+      }
+
+      &--top-right {
+        top: @popup-close-icon-margin;
+        right: @popup-close-icon-margin;
+      }
+
+      &--bottom-left {
+        bottom: @popup-close-icon-margin;
+        left: @popup-close-icon-margin;
+      }
+
+      &--bottom-right {
+        right: @popup-close-icon-margin;
+        bottom: @popup-close-icon-margin;
       }
     }
   }

@@ -14,9 +14,7 @@ Vue.use(Popup);
 ### Basic Usage
 
 ```html
-<van-button type="primary" @click="showPopup">
-  Show Popup
-</van-button>
+<van-cell is-link @click="showPopup">Show Popup</van-cell>
 
 <van-popup v-model="show">Content</van-popup>
 ```
@@ -64,6 +62,15 @@ Use `position` prop to set popup display position
   v-model="show"
   closeable
   close-icon="close"
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+
+<!-- Icon Position -->
+<van-popup
+  v-model="show"
+  closeable
+  close-icon-position="top-left"
   position="bottom"
   :style="{ height: '20%' }"
 />
@@ -132,8 +139,9 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
 | closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
 | close-icon | Close icon name | *string* | `cross` | 2.2.0 |
+| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
 | transition | Transition | *string* | `popup-slide` | - |
-| get-container | Return the mount node for Popup | *string \| () => HTMLElement* | - | - |
+| get-container | Return the mount node for Popup | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
 ### Events

@@ -20,9 +20,7 @@ Vue.use(Popup);
 通过`v-model`控制弹出层是否展示
 
 ```html
-<van-button type="primary" @click="showPopup">
-  展示弹出层
-</van-button>
+<van-cell is-link @click="showPopup">展示弹出层</van-cell>
 
 <van-popup v-model="show">内容</van-popup>
 ```
@@ -57,7 +55,7 @@ export default {
 
 ### 关闭图标
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置
 
 ```html
 <van-popup
@@ -72,6 +70,15 @@ export default {
   v-model="show"
   closeable
   close-icon="close"
+  position="bottom"
+  :style="{ height: '20%' }"
+/>
+
+<!-- 图标位置 -->
+<van-popup
+  v-model="show"
+  closeable
+  close-icon-position="top-left"
   position="bottom"
   :style="{ height: '20%' }"
 />
@@ -143,8 +150,9 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
 | closeable | 是否显示关闭图标 | *boolean* | `false` | 2.2.0 |
 | close-icon | 关闭图标名称或图片链接 | *string* | `cross` | 2.2.0 |
+| close-icon-position | 关闭图标位置，可选值为`top-left` `bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
 | transition | 动画类名，用法与 Vue 原生`transtion`组件的`name`属性一致 | *string* | - | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \|<br> () => Element* | - | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
 
 ### Events

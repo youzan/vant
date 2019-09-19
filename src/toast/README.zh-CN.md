@@ -127,4 +127,4 @@ toast2.clear();
 | className | 自定义类名 | *any* | - | - |
 | onOpened | 完全展示后的回调函数 | *Function* | - | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |
-| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | `body` | - |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` | - |

@@ -139,7 +139,7 @@ export default {
 | stepper-title | Quantity title | *string* | `Quantity` | - |
 | custom-stepper-config | Custom stepper related config | *object* | `{}` | - |
 | message-config | Message related config | *object* | `{}` | - |
-| get-container | Return the mount node for sku | *string \| () => HTMLElement* | - | - |
+| get-container | Return the mount node for sku | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
 ### Events

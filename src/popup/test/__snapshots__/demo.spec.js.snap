@@ -2,24 +2,64 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">展示弹出层</span></button>
+  <div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>展示弹出层</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
     <!---->
   </div>
   <div>
-    <div class="van-row"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">顶部弹出</span></button>
-      <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">底部弹出</span></button>
-      <!---->
-    </div> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">左侧弹出</span></button>
-    <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">右侧弹出</span></button>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>顶部弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>底部弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>左侧弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>右侧弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+    <!---->
+    <!---->
     <!---->
   </div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">关闭图标</span></button>
-    <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义图标</span></button>
+  <div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>关闭图标</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>自定义图标</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>图标位置</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+    <!---->
     <!---->
   </div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">圆角弹窗</span></button>
+  <div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>圆角弹窗</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
     <!---->
   </div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">指定挂载节点</span></button> </div>
+  <div>
+    <div class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>指定挂载节点</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
 </div>
 `;

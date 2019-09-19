@@ -162,7 +162,7 @@ export default {
 | closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | *boolean* | `false` | - |
 | lockScroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
-| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | `body` | - |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` | - |
 
 ### Props
 
@@ -185,7 +185,7 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
 
 ### Events
 

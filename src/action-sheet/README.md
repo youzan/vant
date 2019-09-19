@@ -105,7 +105,7 @@ export default {
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | duration | Transition duration, unit second | *number* | `0.3` | 2.0.3 |
-| get-container | Return the mount node for action-sheet | *string \| () => HTMLElement* | - | - |
+| get-container | Return the mount node for action-sheet | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
 
 ### Events
