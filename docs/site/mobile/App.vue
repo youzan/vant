@@ -8,6 +8,15 @@
       :left-arrow="showNav"
       @click-left="onBack"
     />
+    <van-notice-bar
+      v-if="weapp"
+      v-show="title"
+      wrapable
+      :text="tips"
+      background="#ecf9ff"
+      color="rgba(52, 73, 94, 0.8)"
+      style="font-size: 12px;"
+    />
     <keep-alive>
       <router-view :weapp="weapp" />
     </keep-alive>
@@ -40,6 +49,10 @@ export default {
     weapp() {
       return getQueryString('weapp') === '1';
     }
+  },
+
+  beforeCreate() {
+    this.tips = 'Tips: 当前预览的是 Vue 版 Vant 的示例，少部分功能可能与小程序版有出入，请以文档描述和实际效果为准。';
   },
 
   methods: {
