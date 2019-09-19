@@ -13,7 +13,7 @@ Vue.use(Search);
 
 ### 基础用法
 
-v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
+v-model 用于控制搜索框中的文字，background 可以自定义搜索框外部背景色
 
 ```html
 <van-search placeholder="请输入搜索关键词" v-model="value" />
@@ -39,7 +39,7 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 
 ### 自定义按钮
 
-`van-search` 支持自定义右侧取消按钮，使用名字为 action 的插槽即可。使用此插槽以后，原有的 cancel 事件不再生效。
+使用`action`插槽可以自定义右侧按钮的内容。使用插槽后，cancel 事件将不再触发
 
 ```html
 <van-search
@@ -66,6 +66,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | background | 搜索框背景色 | *string* | `#f2f2f2` | - |
 | clearable | 是否启用清除控件 | *boolean* | `true` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` | - |
+| action-text | 取消按钮文字 | *boolean* | `取消` | 2.2.2 |
 | disabled | 是否禁用输入框 | *boolean* | `false` | - |
 | readonly | 是否将输入框设为只读 | *boolean* | `false` | - |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
