@@ -133,7 +133,7 @@ export default {
 | closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lockScroll | Whether to lock body scroll | *boolean* | `true` | - |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - | - |
-| getContainer | Return the mount node for Dialog | *string \| () => HTMLElement* | `body` | - |
+| getContainer | Return the mount node for Dialog | *string \| () => Element* | `body` | - |
 
 ### Props
 
@@ -154,7 +154,7 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - | - |
-| get-container | Return the mount node for Dialog | *string \| () => HTMLElement* | - | - |
+| get-container | Return the mount node for Dialog | *string \| () => Element* | - | - |
 
 ### Events
 

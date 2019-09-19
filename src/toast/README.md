@@ -127,4 +127,4 @@ toast2.clear();
 | className | Custom className | *any* | - | - |
 | onOpened | Callback function after opened | *Function* | - | - |
 | onClose | Callback function after close | *Function* | - | - |
-| getContainer | Return the mount node for Toast | *string \| () => HTMLElement* | `body` | - |
+| getContainer | Return the mount node for Toast | *string \| () => Element* | `body` | - |

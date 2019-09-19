@@ -141,7 +141,7 @@ export default {
 | stepper-title | 数量选择组件左侧文案 | *string* | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | *object* | `{}` | - |
 | message-config | 留言相关配置 | *object* | `{}` | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => HTMLElement* | - | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |

@@ -16,7 +16,7 @@ export type ToastOptions = {
   closeOnClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
-  getContainer?: string | (() => HTMLElement);
+  getContainer?: string | (() => Element);
 };
 
 export interface VanToast extends Vue, VanPopupMixin {

@@ -1,35 +1,28 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button type="primary" @click="showBasic = true">{{ $t('buttonBasic') }}</van-button>
+      <van-cell :title="$t('buttonBasic')" is-link @click="showBasic = true" />
       <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }">{{ $t('content') }}</van-popup>
     </demo-block>
 
     <demo-block :title="$t('position')">
-      <van-row>
-        <!-- top -->
-        <van-button type="primary" @click="showTop = true">{{ $t('buttonTop') }}</van-button>
-        <van-popup v-model="showTop" position="top" :style="{ height: '20%' }" />
+      <van-cell :title="$t('buttonTop')" is-link @click="showTop = true" />
+      <van-cell :title="$t('buttonBottom')" is-link @click="showBottom = true" />
+      <van-cell :title="$t('buttonLeft')" is-link @click="showLeft = true" />
+      <van-cell :title="$t('buttonRight')" is-link @click="showRight = true" />
 
-        <!-- bottom -->
-        <van-button type="primary" @click="showBottom = true">{{ $t('buttonBottom') }}</van-button>
-        <van-popup v-model="showBottom" position="bottom" :style="{ height: '20%' }" />
-      </van-row>
-
-      <!-- left -->
-      <van-button type="primary" @click="showLeft = true">{{ $t('buttonLeft') }}</van-button>
+      <van-popup v-model="showTop" position="top" :style="{ height: '20%' }" />
+      <van-popup v-model="showBottom" position="bottom" :style="{ height: '20%' }" />
       <van-popup v-model="showLeft" position="left" :style="{ width: '20%', height: '100%' }" />
-
-      <!-- right -->
-      <van-button type="primary" @click="showRight = true">{{ $t('buttonRight') }}</van-button>
       <van-popup v-model="showRight" position="right" :style="{ width: '20%', height: '100%' }" />
     </demo-block>
 
     <demo-block v-if="!$attrs.weapp" :title="$t('closeIcon')">
-      <van-button type="primary" @click="showCloseIcon = true">{{ $t('closeIcon') }}</van-button>
-      <van-popup v-model="showCloseIcon" closeable position="bottom" :style="{ height: '20%' }" />
+      <van-cell :title="$t('closeIcon')" is-link @click="showCloseIcon = true" />
+      <van-cell :title="$t('customCloseIcon')" is-link @click="showCustomCloseIcon = true" />
+      <van-cell :title="$t('customIconPosition')" is-link @click="showCustomIconPosition = true" />
 
-      <van-button type="primary" @click="showCustomCloseIcon = true">{{ $t('customCloseIcon') }}</van-button>
+      <van-popup v-model="showCloseIcon" closeable position="bottom" :style="{ height: '20%' }" />
       <van-popup
         v-model="showCustomCloseIcon"
         closeable
@@ -37,15 +30,22 @@
         position="bottom"
         :style="{ height: '20%' }"
       />
+      <van-popup
+        v-model="showCustomIconPosition"
+        closeable
+        close-icon-position="top-left"
+        position="bottom"
+        :style="{ height: '20%' }"
+      />
     </demo-block>
 
     <demo-block v-if="!$attrs.weapp" :title="$t('roundCorner')">
-      <van-button type="primary" @click="showRoundCorner = true">{{ $t('roundCorner') }}</van-button>
+      <van-cell :title="$t('roundCorner')" is-link @click="showRoundCorner = true" />
       <van-popup v-model="showRoundCorner" round position="bottom" :style="{ height: '20%' }" />
     </demo-block>
 
     <demo-block v-if="!$attrs.weapp" :title="$t('getContainer')">
-      <van-button type="primary" @click="showGetContainer = true">{{ $t('getContainer') }}</van-button>
+      <van-cell :title="$t('getContainer')" is-link @click="showGetContainer = true" />
       <van-popup v-model="showGetContainer" get-container="body" :style="{ padding: '30px 50px' }" />
     </demo-block>
   </demo-section>
@@ -64,7 +64,8 @@ export default {
       getContainer: '指定挂载节点',
       roundCorner: '圆角弹窗',
       closeIcon: '关闭图标',
-      customCloseIcon: '自定义图标'
+      customCloseIcon: '自定义图标',
+      customIconPosition: '图标位置'
     },
     'en-US': {
       position: 'Position',
@@ -76,7 +77,8 @@ export default {
       getContainer: 'Get Container',
       roundCorner: 'Round Corner',
       closeIcon: 'Close Icon',
-      customCloseIcon: 'Custom Icon'
+      customCloseIcon: 'Custom Icon',
+      customIconPosition: 'Icon Position'
     }
   },
 
@@ -91,6 +93,7 @@ export default {
       showRoundCorner: false,
       showGetContainer: false,
       showCustomCloseIcon: false,
+      showCustomIconPosition: false
     };
   }
 };

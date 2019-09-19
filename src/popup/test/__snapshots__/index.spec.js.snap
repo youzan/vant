@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`close-icon prop 1`] = `
-<div class="van-popup van-popup--center" name="van-fade"><i class="van-icon van-icon-success van-popup__close-icon">
+<div class="van-popup van-popup--center" name="van-fade"><i class="van-icon van-icon-success van-popup__close-icon van-popup__close-icon--top-right">
     <!----></i></div>
 `;
 
