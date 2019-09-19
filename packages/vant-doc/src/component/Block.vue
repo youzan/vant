@@ -22,7 +22,7 @@ export default {
     box-sizing: border-box;
 
     pre {
-      word-break: break-all;
+      word-wrap: break-word;
     }
   }
 }
