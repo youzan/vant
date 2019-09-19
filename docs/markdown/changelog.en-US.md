@@ -1,5 +1,24 @@
 # Changelog
 
+### [v2.2.2](https://github.com/youzan/vant/tree/v2.2.2)
+`2019-09-19`
+
+**Features**
+
+- Dialog: improve word wrap [\#4506](https://github.com/youzan/vant/pull/4506)
+- Search: add action-text prop [\#4501](https://github.com/youzan/vant/pull/4501)
+- Popup: add close-icon-position prop [\#4507](https://github.com/youzan/vant/pull/4507)
+- Uploader: add index param in events [\#4460](https://github.com/youzan/vant/pull/4460)
+- GoodsActionButton: increase height [\#4461](https://github.com/youzan/vant/pull/4461)
+- AddressList: add @address-list-item-radio-icon-color var [\#4481](https://github.com/youzan/vant/pull/4481)
+
+**Bug Fixes**
+
+- fix Field disabled color in safari [\#4508](https://github.com/youzan/vant/pull/4508)
+- fix ImagePreview incorrect scale [\#4477](https://github.com/youzan/vant/pull/4477)
+- fix DatetimePicker infinite loop when use formatted text is unnumeric [\#4485](https://github.com/youzan/vant/pull/4485)
+
+
 ### [v2.2.1](https://github.com/youzan/vant/tree/v2.2.1)
 `2019-09-12`
 

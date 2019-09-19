@@ -10,6 +10,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.2](https://github.com/youzan/vant/tree/v2.2.2)
+`2019-09-19`
+
+**Features**
+
+- Dialog: 优化文字换行 [\#4506](https://github.com/youzan/vant/pull/4506)
+- Search: 新增 action-text 属性 [\#4501](https://github.com/youzan/vant/pull/4501)
+- Popup: 新增 close-icon-position 属性 [\#4507](https://github.com/youzan/vant/pull/4507)
+- Uploader: 回调函数增加 index 参数 [\#4460](https://github.com/youzan/vant/pull/4460)
+- GoodsActionButton: 加大按钮高度 [\#4461](https://github.com/youzan/vant/pull/4461)
+- AddressList: 新增 @address-list-item-radio-icon-color 变量 [\#4481](https://github.com/youzan/vant/pull/4481)
+
+**Bug Fixes**
+
+- 修复 Field 禁用状态在 safari 上文字颜色过浅的问题 [\#4508](https://github.com/youzan/vant/pull/4508)
+- 修复 DatetimePicker 选项为纯文字时陷入死循环的问题 [\#4485](https://github.com/youzan/vant/pull/4485)
+- 修复 ImagePreview 手势缩放时可能出现缩放比例异常的问题 [\#4477](https://github.com/youzan/vant/pull/4477)
+
+
 ### [v2.2.1](https://github.com/youzan/vant/tree/v2.2.1)
 `2019-09-12`
 
