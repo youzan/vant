@@ -75,11 +75,12 @@ function Cell(
     functionalRoute(ctx);
   }
 
+  const clickable = isLink || props.clickable;
   const classes: Mods = {
+    clickable,
     center: props.center,
     required: props.required,
-    borderless: !props.border,
-    clickable: isLink || props.clickable
+    borderless: !props.border
   };
 
   if (size) {
@@ -87,7 +88,13 @@ function Cell(
   }
 
   return (
-    <div class={bem(classes)} onClick={onClick} {...inherit(ctx)}>
+    <div
+      class={bem(classes)}
+      role={clickable ? 'button' : null}
+      tabindex={clickable ? 0 : null}
+      onClick={onClick}
+      {...inherit(ctx)}
+    >
       {LeftIcon}
       {Title}
       {Value}

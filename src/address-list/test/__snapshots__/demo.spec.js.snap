@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-address-list">
       <div role="radiogroup" class="van-radio-group">
-        <div class="van-cell van-cell--clickable van-address-item">
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-address-item">
           <div class="van-cell__value van-cell__value--alone van-address-item__value">
             <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
               <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success">
@@ -14,7 +14,7 @@ exports[`renders demo correctly 1`] = `
           </div><i class="van-icon van-icon-edit van-address-item__edit">
             <!----></i>
         </div>
-        <div class="van-cell van-cell--clickable van-address-item">
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-address-item">
           <div class="van-cell__value van-cell__value--alone van-address-item__value">
             <div role="radio" tabindex="-1" aria-checked="false" class="van-radio">
               <div class="van-radio__icon van-radio__icon--round" style="font-size: 16px;"><i class="van-icon van-icon-success">
