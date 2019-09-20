@@ -21,7 +21,7 @@ export default {
 .van-doc-demo-block {
   &__title {
     margin: 0;
-    padding: 35px 15px 15px;
+    padding: 32px 16px 16px;
     color: @van-doc-text-light-blue;
     font-weight: normal;
     font-size: 14px;
