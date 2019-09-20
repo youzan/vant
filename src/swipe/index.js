@@ -10,7 +10,7 @@ const [createComponent, bem] = createNamespace('swipe');
 export default createComponent({
   mixins: [
     TouchMixin,
-    BindEventMixin(function(bind, isBind) {
+    BindEventMixin(function (bind, isBind) {
       bind(window, 'resize', this.onResize, true);
 
       if (isBind) {
@@ -155,12 +155,14 @@ export default createComponent({
     },
 
     onTouchStart(event) {
+      const { active, count } = this;
       if (!this.touchable) return;
 
       this.clear();
       this.swiping = true;
       this.touchStart(event);
       this.correctPosition();
+      this.$emit('beforeChange', active, count);
     },
 
     onTouchMove(event) {
@@ -242,7 +244,6 @@ export default createComponent({
 
       this.active = targetActive;
       this.offset = targetOffset;
-
       if (emitChange && targetActive !== active) {
         this.$emit('change', this.activeIndicator);
       }
