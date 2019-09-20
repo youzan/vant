@@ -120,7 +120,7 @@ export default {
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | duration | 动画时长，单位秒 | *number* | `0.3` | 2.0.3 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
 
 ### Events
 
