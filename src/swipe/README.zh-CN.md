@@ -150,6 +150,7 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 每一页轮播结束后触发 | index, 当前页的索引 |
+| beforeChange | 每一页轮播开始时触发 | index, 当前页的索引 count, 总的页数 |
 
 ### SwipeItem Events
 

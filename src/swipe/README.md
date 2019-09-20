@@ -144,6 +144,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered when current swipe change | index: index of current swipe |
+| beforeChange | Triggered when current swipe before change | index: index of current swipe  count: total swipe|
 
 ### SwipeItem Events
 
