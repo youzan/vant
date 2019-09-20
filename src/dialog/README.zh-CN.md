@@ -132,14 +132,14 @@ export default {
 
 ### 方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| Dialog | `options` | `Promise` | 展示弹窗 |
-| Dialog.alert | `options` | `Promise` | 展示消息提示弹窗 |
-| Dialog.confirm | `options` | `Promise` | 展示消息确认弹窗 |
-| Dialog.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Dialog 生效 |
-| Dialog.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Dialog 生效 |
-| Dialog.close | - | `void` | 关闭弹窗 |
+| Dialog | 展示弹窗 | `options` | `Promise` |
+| Dialog.alert | 展示消息提示弹窗 | `options` | `Promise` |
+| Dialog.confirm | 展示消息确认弹窗 | `options` | `Promise` |
+| Dialog.setDefaultOptions | 修改默认配置，对所有 Dialog 生效 | `options` | `void` |
+| Dialog.resetDefaultOptions | 重置默认配置，对所有 Dialog 生效 | - | `void` |
+| Dialog.close | 关闭弹窗 | - | `void` |
 
 ### Options
 
@@ -153,10 +153,10 @@ export default {
 | className | 自定义类名 | *any* | - | - |
 | showConfirmButton | 是否展示确认按钮 | *boolean* | `true` | - |
 | showCancelButton | 是否展示取消按钮 | *boolean* | `false` | - |
-| cancelButtonText | 取消按钮文案 | *string* | `取消` | - |
-| cancelButtonColor | 取消按钮颜色 | *string* | `#000` | - |
 | confirmButtonText | 确认按钮文案 | *string* | `确认` | - |
 | confirmButtonColor | 确认按钮颜色 | *string* | `#1989fa` | - |
+| cancelButtonText | 取消按钮文案 | *string* | `取消` | - |
+| cancelButtonColor | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
 | closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | *boolean* | `false` | - |
@@ -172,14 +172,14 @@ export default {
 |------|------|------|------|------|
 | v-model | 是否显示弹窗 | *boolean* | - | - |
 | title | 标题 | *string* | - | - |
-| message | 内容 | *string* | - | - |
+| message | 文本内容，支持通过`\n`换行 | *string* | - | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` | - |
 | show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` | - |
-| cancel-button-text | 取消按钮文案 | *string* | `取消` | - |
-| cancel-button-color | 取消按钮颜色 | *string* | `#000` | - |
 | confirm-button-text | 确认按钮文案 | *string* | `确认` | - |
 | confirm-button-color | 确认按钮颜色 | *string* | `#1989fa` | - |
+| cancel-button-text | 取消按钮文案 | *string* | `取消` | - |
+| cancel-button-color | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | - |

@@ -227,15 +227,15 @@ Picker events will pass different parameters according to the columns are single
 
 Use ref to get picker instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| getValues | - | values | Get current values of all columns |
-| setValues | values | - |  Set current values of all columns |
-| getIndexes | - | indexes | Get current indexes of all columns |
-| setIndexes | indexes | - | Set current indexes of all columns |
-| getColumnValue | columnIndex | value | Get current value of the column |
-| setColumnValue | columnIndex, value | - | Set current value of the column |
-| getColumnIndex | columnIndex | optionIndex | Get current index of the column |
-| setColumnIndex | columnIndex, optionIndex | - | Set current index of the column |
-| getColumnValues | columnIndex | values | Get columns data of the column |
-| setColumnValues | columnIndex, values | - | Set columns data of the column |
+| getValues | Get current values of all columns | - | values |
+| setValues | Set current values of all columns | values | - |
+| getIndexes | Get current indexes of all columns | - | indexes |
+| setIndexes | Set current indexes of all columns | indexes | - |
+| getColumnValue | Get current value of the column | columnIndex | value |
+| setColumnValue | Set current value of the column | columnIndex, value | - |
+| getColumnIndex | Get current index of the column | columnIndex | optionIndex |
+| setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
+| getColumnValues | Get columns data of the column | columnIndex | values |
+| setColumnValues | Set columns data of the column | columnIndex, values | - |

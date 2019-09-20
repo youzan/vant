@@ -122,9 +122,9 @@ export default {
 
 Use ref to get list instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| check | - | - | Check scroll position |
+| check | Check scroll position | - | - |
 
 ### Slots
 

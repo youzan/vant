@@ -69,9 +69,9 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 
 Use ref to get area instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| reset | code: string | - | Reset all options by code |
+| reset | Reset all options by code | code: string | - |
 
 ### areaList Data Structure
 

@@ -188,6 +188,6 @@ export default {
 
 Use ref to get checkbox instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggle | - | - | Toggle check status |
+| toggle | Toggle check status | - | - |

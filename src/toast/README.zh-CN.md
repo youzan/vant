@@ -99,16 +99,16 @@ toast2.clear();
 
 ### 方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| Toast | `options | message` | toast 实例 | 展示提示 |
-| Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
-| Toast.success | `options | message` | toast 实例 | 展示成功提示 |
-| Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
-| Toast.clear | `clearAll: boolean` | `void` | 关闭提示 |
-| Toast.allowMultiple | - | `void` | 允许同时存在多个 Toast |
-| Toast.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Toast 生效 |
-| Toast.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Toast 生效 |
+| Toast | 展示提示 | `options | message` | toast 实例 |
+| Toast.loading | 展示加载提示 | `options | message` | toast 实例 |
+| Toast.success | 展示成功提示 | `options | message` | toast 实例 |
+| Toast.fail | 展示失败提示 | `options | message` | toast 实例 |
+| Toast.clear | 关闭提示 | `clearAll: boolean` | `void` |
+| Toast.allowMultiple | 允许同时存在多个 Toast | - | `void` |
+| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效 | `options` | `void` |
+| Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效 | - | `void` |
 
 ### Options
 

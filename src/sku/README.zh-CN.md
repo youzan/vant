@@ -161,9 +161,9 @@ export default {
 
 通过 ref 可以获取到 sku 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| getSkuData | - | skuData | 获取当前 skuData |
+| getSkuData | 获取当前 skuData | - | skuData |
 
 ### Slots
 

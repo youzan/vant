@@ -237,15 +237,15 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 通过 ref 可以获取到 picker 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| getValues | - | values | 获取所有列选中的值 |
-| setValues | values | - | 设置所有列选中的值 |
-| getIndexes | - | indexes | 获取所有列选中值对应的索引 |
-| setIndexes | indexes | - | 设置所有列选中值对应的索引 |
-| getColumnValue | columnIndex | value | 获取对应列选中的值 |
-| setColumnValue | columnIndex, value | - | 设置对应列选中的值 |
-| getColumnIndex | columnIndex | optionIndex | 获取对应列选中项的索引 |
-| setColumnIndex | columnIndex, optionIndex | - | 设置对应列选中项的索引 |
-| getColumnValues | columnIndex | values | 获取对应列中所有选项 |
-| setColumnValues | columnIndex, values | - | 设置对应列中所有选项 |
+| getValues | 获取所有列选中的值 | - | values |
+| setValues | 设置所有列选中的值 | values | - |
+| getIndexes | 获取所有列选中值对应的索引 | - | indexes |
+| setIndexes | 设置所有列选中值对应的索引 | indexes | - |
+| getColumnValue | 获取对应列选中的值 | columnIndex | value |
+| setColumnValue | 设置对应列选中的值 | columnIndex, value | - |
+| getColumnIndex | 获取对应列选中项的索引 | columnIndex | optionIndex |
+| setColumnIndex | 设置对应列选中项的索引 | columnIndex, optionIndex | - |
+| getColumnValues | 获取对应列中所有选项 | columnIndex | values |
+| setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |

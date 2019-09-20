@@ -111,7 +111,7 @@ export default {
 
 通过 ref 可以获取到 SwipeCell 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| open | position: `left | right` | - | 打开单元格侧边栏 |
-| close | - | - | 收起单元格侧边栏 |
+| open | 打开单元格侧边栏 | position: `left | right` | - |
+| close | 收起单元格侧边栏 | - | - |

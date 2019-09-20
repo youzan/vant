@@ -157,9 +157,9 @@ export default {
 
 Use ref to get sku instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| getSkuData | - | skuData | Get current skuData |
+| getSkuData | Get current skuData | - | skuData |
 
 ### Slots
 

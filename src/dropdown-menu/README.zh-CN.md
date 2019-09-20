@@ -147,9 +147,9 @@ export default {
 
 通过 ref 可以获取到 DropdownItem 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggle | show: boolean | - | 切换菜单是否展示 |
+| toggle | 切换菜单是否展示 | show: boolean | - |
 
 ### Option 数据结构
 

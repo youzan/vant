@@ -143,9 +143,9 @@ Use `active-color` prop to custom active color of the title and options
 
 Use ref to get DropdownItem instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggle | show: boolean | - | Toggle display |
+| toggle | Toggle display | show: boolean | - |
 
 ### Data Structure of Option
 

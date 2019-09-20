@@ -105,14 +105,14 @@ export default {
 
 ### Methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| Dialog | `options` | `Promise` | Show dialog |
-| Dialog.alert | `options` | `Promise` | Show alert dialog |
-| Dialog.confirm | `options` | `Promise` | Show confim dialog |
-| Dialog.setDefaultOptions | `options` | `void` | Set default options of all dialogs |
-| Dialog.resetDefaultOptions | - | `void` | Reset default options of all dialogs |
-| Dialog.close | - | `void` | Close dialog |
+| Dialog | Show dialog | `options` | `Promise` |
+| Dialog.alert | Show alert dialog | `options` | `Promise` |
+| Dialog.confirm | Show confim dialog | `options` | `Promise` |
+| Dialog.setDefaultOptions | Set default options of all dialogs | `options` | `void` |
+| Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
+| Dialog.close | Close dialog | - | `void` |
 
 ### Options
 
