@@ -11,9 +11,7 @@ exports[`action-text prop 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-search__action">
-    <div>Custom Text</div>
-  </div>
+  <div role="button" tabindex="0" class="van-search__action">Custom Text</div>
 </div>
 `;
 

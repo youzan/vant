@@ -53,17 +53,17 @@ function Search(
     }
 
     function onCancel() {
+      if (slots.action) {
+        return;
+      }
+
       emit(ctx, 'input', '');
       emit(ctx, 'cancel');
     }
 
     return (
-      <div class={bem('action')}>
-        {slots.action ? (
-          slots.action()
-        ) : (
-          <div onClick={onCancel}>{props.actionText || t('cancel')}</div>
-        )}
+      <div class={bem('action')} role="button" tabindex="0" onClick={onCancel}>
+        {slots.action ? slots.action() : props.actionText || t('cancel')}
       </div>
     );
   }
