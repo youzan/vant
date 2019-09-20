@@ -85,6 +85,8 @@ export default createComponent({
       <div class={[bem({ square })]} style={this.style} onClick={this.onClick}>
         <div
           style={this.contentStyle}
+          role={clickable ? 'button' : null}
+          tabindex={clickable ? 0 : null}
           class={[
             bem('content', {
               center,
