@@ -2,28 +2,25 @@
 
 exports[`change option 1`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -35,28 +32,25 @@ exports[`change option 1`] = `
 
 exports[`change option 2`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">和平区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">河东区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">和平区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河东区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -68,28 +62,25 @@ exports[`change option 2`] = `
 
 exports[`change option 3`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">和平区</li>
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">河东区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">和平区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">河东区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -101,22 +92,19 @@ exports[`change option 3`] = `
 
 exports[`columns-num prop 1`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -128,27 +116,24 @@ exports[`columns-num prop 1`] = `
 
 exports[`reset method 1`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 44px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">蓟县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">蓟县</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -160,28 +145,25 @@ exports[`reset method 1`] = `
 
 exports[`reset method 2`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -193,28 +175,25 @@ exports[`reset method 2`] = `
 
 exports[`watch areaList & code 1`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -226,28 +205,25 @@ exports[`watch areaList & code 1`] = `
 
 exports[`watch areaList & code 2`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -259,28 +235,25 @@ exports[`watch areaList & code 2`] = `
 
 exports[`watch areaList & code 3`] = `
 <div class="van-picker van-area">
-  <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
-    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
-  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">县</li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-        <li class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
+        <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>

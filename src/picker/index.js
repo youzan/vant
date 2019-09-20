@@ -165,16 +165,16 @@ export default createComponent({
     const Toolbar = this.showToolbar && (
       <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
         {this.slots() || [
-          <div role="button" tabindex="0" class={bem('cancel')} onClick={this.onCancel}>
+          <button class={bem('cancel')} onClick={this.onCancel}>
             {this.cancelButtonText || t('cancel')}
-          </div>,
+          </button>,
           this.slots('title') ||
             (this.title && (
               <div class={['van-ellipsis', bem('title')]}>{this.title}</div>
             )),
-          <div role="button" tabindex="0" class={bem('confirm')} onClick={this.onConfirm}>
+          <button class={bem('confirm')} onClick={this.onConfirm}>
             {this.confirmButtonText || t('confirm')}
-          </div>
+          </button>
         ]}
       </div>
     );
