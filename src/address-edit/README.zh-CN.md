@@ -103,9 +103,9 @@ export default {
 
 通过 ref 可以获取到 address-edit 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| setAddressDetail | addressDetail: string | - | 设置详细地址 |
+| setAddressDetail | 设置详细地址 | addressDetail: string | - |
 
 ### AddressInfo 数据格式
 

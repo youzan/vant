@@ -103,9 +103,9 @@ export default {
 
 Use ref to get address-edit instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| setAddressDetail | addressDetail: string | - | Set address detail |
+| setAddressDetail | Set address detail | addressDetail: string | - |
 
 ### AddressInfo Data Structure
 

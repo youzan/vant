@@ -155,9 +155,9 @@ export default {
 
 Use ref to get swipe instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| swipeTo | index: target index, options: Options | void | Swipe to target index |
+| swipeTo | Swipe to target index | index: target index, options: Options | void |
 
 ### swipeTo Options
 

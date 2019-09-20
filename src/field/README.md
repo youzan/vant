@@ -165,10 +165,10 @@ Field support all native events of input tag
 
 Use ref to get field instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| focus | - | - | Trigger input focus |
-| blur | - | - | Trigger input blur |
+| focus | Trigger input focus | - | - |
+| blur | Trigger input blur | - | - |
 
 ### Slots
 

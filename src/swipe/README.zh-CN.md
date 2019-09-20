@@ -161,9 +161,9 @@ export default {
 
 通过 ref 可以获取到 swipe 实例并调用实例方法
 
-| 方法名 | 参数 | 返回值 | 介绍 |
+| 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| swipeTo | index: 目标位置的索引, options: 选项 | void | 滚动到目标位置 |
+| swipeTo | 滚动到目标位置 | index: 目标位置的索引, options: 选项 | void |
 
 ### swipeTo Options 格式
 

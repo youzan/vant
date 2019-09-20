@@ -144,8 +144,8 @@ export default {
 
 Use ref to get CountDown instance and call instance methods
 
-| Name | Attribute | Return value | Description |
+| Name | Description | Attribute | Return value |
 |------|------|------|------|
-| start | - | - | Start count down |
-| pause | - | - | Pause count down |
-| reset | - | - | Reset count down |
+| start | Start count down | - | - |
+| pause | Pause count down | - | - |
+| reset | Reset count down | - | - |
