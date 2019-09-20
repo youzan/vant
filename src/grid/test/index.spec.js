@@ -19,7 +19,7 @@ test('click grid item', () => {
     }
   });
 
-  const Item = wrapper.find('.van-grid-item');
+  const Item = wrapper.find('.van-grid-item__content');
   Item.trigger('click');
 
   expect(onClick).toHaveBeenCalledTimes(1);
