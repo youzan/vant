@@ -7,7 +7,7 @@
 
     <demo-block :title="$t('status')">
       <van-button type="primary" @click="show2 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet v-model="show2" :actions="statusActions" @select="onSelect" />
+      <van-action-sheet v-model="show2" close-on-click-action :actions="statusActions" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -15,9 +15,9 @@
       <van-action-sheet
         v-model="show3"
         :actions="simpleActions"
+        close-on-click-action
         :cancel-text="$t('cancel')"
         @cancel="onCancel"
-        @select="onSelect"
       />
     </demo-block>
 
@@ -83,7 +83,6 @@ export default {
   methods: {
     onSelect(item) {
       this.show1 = false;
-      this.show2 = false;
       this.$toast(item.name);
     },
 
