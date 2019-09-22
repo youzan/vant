@@ -76,8 +76,20 @@ test('icon-size prop', () => {
     template: `
       <van-radio-group icon-size="10rem">
         <van-radio>label</van-radio>
-        <van-radio>label</van-radio>
         <van-radio icon-size="5rem">label</van-radio>
+      </van-radio-group>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('checked-color prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-radio-group checked-color="black">
+        <van-radio :value="true">label</van-radio>
+        <van-radio :value="true" checked-color="white">label</van-radio>
       </van-radio-group>
     `
   });
