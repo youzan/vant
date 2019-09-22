@@ -162,6 +162,7 @@ export default {
 |------|------|------|------|------|
 | v-model | Names of all checked checkboxes | *any[]* | - | - |
 | disabled | Disable all checkboxes | *boolean* | `false` | - |
+| icon-size | Icon size of all checkboxes | *string \| number* | `20px` | 2.2.3 |
 | max | Maximum amount of checked options | *number* | `0`(Unlimited) | - |
 
 ### Checkbox Events
