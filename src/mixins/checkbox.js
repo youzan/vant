@@ -76,10 +76,12 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       </span>
     );
 
+    const iconSize = this.iconSize || (this.parent && this.parent.iconSize);
+
     const Children = [
       <div
         class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
-        style={{ fontSize: addUnit(this.iconSize) }}
+        style={{ fontSize: addUnit(iconSize) }}
       >
         {CheckIcon}
       </div>
