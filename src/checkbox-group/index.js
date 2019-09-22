@@ -9,6 +9,7 @@ export default createComponent({
   props: {
     max: Number,
     disabled: Boolean,
+    iconSize: [Number, String],
     value: {
       type: Array,
       default: () => []
