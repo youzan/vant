@@ -111,8 +111,20 @@ test('icon-size prop', () => {
     template: `
       <van-checkbox-group icon-size="10rem">
         <van-checkbox>label</van-checkbox>
-        <van-checkbox>label</van-checkbox>
         <van-checkbox icon-size="5rem">label</van-checkbox>
+      </van-checkbox-group>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('checked-color prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-checkbox-group :value="['a', 'b']" checked-color="black">
+        <van-checkbox name="a" :value="true">label</van-checkbox>
+        <van-checkbox name="b" :value="true" checked-color="white">label</van-checkbox>
       </van-checkbox-group>
     `
   });

@@ -10,6 +10,7 @@ export default createComponent({
     max: Number,
     disabled: Boolean,
     iconSize: [Number, String],
+    checkedColor: String,
     value: {
       type: Array,
       default: () => []
