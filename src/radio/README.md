@@ -125,6 +125,7 @@ export default {
 |------|------|------|------|------|
 | v-model | Name of checked radio | *any* | - | - |
 | disabled | Disable all radios | *boolean* | `false` | - |
+| icon-size | Icon size of all radios | *string \| number* | `20px` | 2.2.3 |
 
 ### Radio Events
 

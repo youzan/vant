@@ -8,7 +8,8 @@ export default createComponent({
 
   props: {
     value: null,
-    disabled: Boolean
+    disabled: Boolean,
+    iconSize: [Number, String]
   },
 
   watch: {
