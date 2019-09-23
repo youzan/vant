@@ -237,12 +237,18 @@ export default createComponent({
 
       return this.options.map((option, index) => {
         const text = this.getOptionText(option);
+        const disabled = isOptionDisabled(option);
+
         const data = {
           style: optionStyle,
+          attrs: {
+            role: 'button',
+            tabindex: disabled ? -1 : 0
+          },
           class: [
             'van-ellipsis',
             bem('item', {
-              disabled: isOptionDisabled(option),
+              disabled,
               selected: index === this.currentIndex
             })
           ],

@@ -41,27 +41,27 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>单元格</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>单元格</span></div>
       <div class="van-cell__value"><span>内容</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>单元格</span></div>
       <div class="van-cell__value"><span>内容</span></div><i class="van-icon van-icon-arrow-down van-cell__right-icon">
         <!----></i>
     </div>
   </div>
   <div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>URL 跳转</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>路由跳转</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
@@ -87,7 +87,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-cell van-cell--clickable">
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span class="custom-title">单元格</span> <span class="van-tag van-tag--danger">标签</span></div>
       <div class="van-cell__value"><span>内容</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>

@@ -1,64 +1,29 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button
-        type="primary"
-        @click="show1 = true"
-      >
-        {{ $t('buttonText') }}
-      </van-button>
-      <van-action-sheet
-        v-model="show1"
-        :actions="simpleActions"
-        safe-area-inset-bottom
-        @select="onSelect"
-      />
+      <van-button type="primary" @click="show1 = true">{{ $t('buttonText') }}</van-button>
+      <van-action-sheet v-model="show1" :actions="simpleActions" @select="onSelect" />
     </demo-block>
 
     <demo-block :title="$t('status')">
-      <van-button
-        type="primary"
-        @click="show2 = true"
-      >
-        {{ $t('buttonText') }}
-      </van-button>
-      <van-action-sheet
-        v-model="show2"
-        :actions="statusActions"
-        safe-area-inset-bottom
-        @select="onSelect"
-      />
+      <van-button type="primary" @click="show2 = true">{{ $t('buttonText') }}</van-button>
+      <van-action-sheet v-model="show2" close-on-click-action :actions="statusActions" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button
-        type="primary"
-        @click="show3 = true"
-      >
-        {{ $t('buttonText') }}
-      </van-button>
+      <van-button type="primary" @click="show3 = true">{{ $t('buttonText') }}</van-button>
       <van-action-sheet
         v-model="show3"
         :actions="simpleActions"
+        close-on-click-action
         :cancel-text="$t('cancel')"
-        safe-area-inset-bottom
         @cancel="onCancel"
-        @select="onSelect"
       />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button
-        type="primary"
-        @click="show4 = true"
-      >
-        {{ $t('buttonText') }}
-      </van-button>
-      <van-action-sheet
-        v-model="show4"
-        :title="$t('title')"
-        safe-area-inset-bottom
-      >
+      <van-button type="primary" @click="show4 = true">{{ $t('buttonText') }}</van-button>
+      <van-action-sheet v-model="show4" :title="$t('title')">
         <p>{{ $t('content') }}</p>
       </van-action-sheet>
     </demo-block>
@@ -118,7 +83,6 @@ export default {
   methods: {
     onSelect(item) {
       this.show1 = false;
-      this.show2 = false;
       this.$toast(item.name);
     },
 
@@ -130,7 +94,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-action-sheet {
   background-color: @white;

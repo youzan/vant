@@ -27,9 +27,7 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <div class="van-search__action">
-          <div>取消</div>
-        </div>
+        <div role="button" tabindex="0" class="van-search__action">取消</div>
       </div>
     </form>
   </div>
@@ -45,7 +43,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-search__action">
+      <div role="button" tabindex="0" class="van-search__action">
         <div>搜索</div>
       </div>
     </div>

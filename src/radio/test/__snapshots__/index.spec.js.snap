@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checked-color prop 1`] = `
+<div role="radiogroup" class="van-radio-group">
+  <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
+    <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success" style="border-color: black; background-color: black;">
+        <!----></i></div><span class="van-radio__label">label</span>
+  </div>
+  <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
+    <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success" style="border-color: white; background-color: white;">
+        <!----></i></div><span class="van-radio__label">label</span>
+  </div>
+</div>
+`;
+
+exports[`icon-size prop 1`] = `
+<div role="radiogroup" class="van-radio-group">
+  <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
+    <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 10rem;"><i class="van-icon van-icon-success">
+        <!----></i></div><span class="van-radio__label">label</span>
+  </div>
+  <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
+    <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 5rem;"><i class="van-icon van-icon-success">
+        <!----></i></div><span class="van-radio__label">label</span>
+  </div>
+</div>
+`;

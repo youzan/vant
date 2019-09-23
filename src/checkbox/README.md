@@ -151,9 +151,9 @@ export default {
 | shape | Can be set to `square` | *string* | `round` | - |
 | v-model | Check status | *boolean* | `false` | - |
 | disabled | Disable checkbox | *boolean* | `false` | - |
-| icon-size | Icon size | *string \| number* | `20px` | - |
 | label-disabled | Whether to disable label click | *boolean* | `false` | - |
 | label-position | Can be set to `left` | *string* | `right` | - |
+| icon-size | Icon size | *string \| number* | `20px` | - |
 | checked-color | Checked color | *string* | `#1989fa` | - | - |
 
 ### CheckboxGroup Props
@@ -161,8 +161,10 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | v-model | Names of all checked checkboxes | *any[]* | - | - |
-| disabled | Disable all checkboxes | *boolean* | `false` | - |
 | max | Maximum amount of checked options | *number* | `0`(Unlimited) | - |
+| disabled | Disable all checkboxes | *boolean* | `false` | - |
+| icon-size | Icon size of all checkboxes | *string \| number* | `20px` | 2.2.3 |
+| checked-color | Checked color of all checkboxes | *string* | `#1989fa` | - | 2.2.3 |
 
 ### Checkbox Events
 

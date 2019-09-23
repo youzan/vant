@@ -8,7 +8,9 @@ export default createComponent({
 
   props: {
     value: null,
-    disabled: Boolean
+    disabled: Boolean,
+    checkedColor: String,
+    iconSize: [Number, String]
   },
 
   watch: {

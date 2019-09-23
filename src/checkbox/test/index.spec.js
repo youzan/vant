@@ -1,6 +1,10 @@
+import Vue from 'vue';
 import Checkbox from '..';
 import CheckboxGroup from '../../checkbox-group';
 import { mount, later } from '../../../test/utils';
+
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 
 test('switch checkbox', async () => {
   const wrapper = mount(Checkbox);
@@ -47,14 +51,10 @@ test('label disabled', () => {
 test('checkbox group', async () => {
   const wrapper = mount({
     template: `
-      <checkbox-group v-model="result" :max="2">
-        <checkbox v-for="item in list" :key="item" :name="item"></checkbox>
-      </checkbox-group>
+      <van-checkbox-group v-model="result" :max="2">
+        <van-checkbox v-for="item in list" :key="item" :name="item"></van-checkbox>
+      </van-checkbox-group>
     `,
-    components: {
-      Checkbox,
-      CheckboxGroup
-    },
     data() {
       return {
         result: [],
@@ -101,6 +101,32 @@ test('label-position prop', () => {
     propsData: {
       labelPosition: 'left'
     }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('icon-size prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-checkbox-group icon-size="10rem">
+        <van-checkbox>label</van-checkbox>
+        <van-checkbox icon-size="5rem">label</van-checkbox>
+      </van-checkbox-group>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('checked-color prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-checkbox-group :value="['a', 'b']" checked-color="black">
+        <van-checkbox name="a" :value="true">label</van-checkbox>
+        <van-checkbox name="b" :value="true" checked-color="white">label</van-checkbox>
+      </van-checkbox-group>
+    `
   });
 
   expect(wrapper).toMatchSnapshot();

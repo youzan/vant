@@ -114,9 +114,9 @@ export default {
 | name | Radio name | *any* | - | - |
 | shape | Can be set to `square` | *string* | `round` | - |
 | disabled | Whether to disable radio | *boolean* | `false` | - |
-| icon-size | Icon size | *string \| number* | `20px` | - |
 | label-disabled | Whether to disable label click | *boolean* | `false` | - |
 | label-position | Can be set to `left` | *string* | `right` | - |
+| icon-size | Icon size | *string \| number* | `20px` | - |
 | checked-color | Checked color | *string* | `#1989fa` | - | - |
 
 ### RadioGroup Props
@@ -125,6 +125,8 @@ export default {
 |------|------|------|------|------|
 | v-model | Name of checked radio | *any* | - | - |
 | disabled | Disable all radios | *boolean* | `false` | - |
+| icon-size | Icon size of all radios | *string \| number* | `20px` | 2.2.3 |
+| checked-color | Checked color of all radios | *string* | `#1989fa` | - | 2.2.3 |
 
 ### Radio Events
 

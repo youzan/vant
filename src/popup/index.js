@@ -77,7 +77,13 @@ export default createComponent({
         >
           {this.slots()}
           {this.closeable && (
-            <Icon name={this.closeIcon} class={bem('close-icon', this.closeIconPosition)} onClick={this.close} />
+            <Icon
+              role="button"
+              tabindex="0"
+              name={this.closeIcon}
+              class={bem('close-icon', this.closeIconPosition)}
+              onClick={this.close}
+            />
           )}
         </div>
       </transition>

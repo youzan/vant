@@ -1,25 +1,25 @@
+import Vue from 'vue';
 import Radio from '..';
 import RadioGroup from '../../radio-group';
 import { mount } from '../../../test/utils';
 
+Vue.use(Radio);
+Vue.use(RadioGroup);
+
 test('radio-group change', () => {
   const wrapper = mount({
     template: `
-      <radio-group v-model="result" @change="$emit('change', $event)">
-        <radio
+      <van-radio-group v-model="result" @change="$emit('change', $event)">
+        <van-radio
           v-for="item in list"
           :key="item"
           :name="item"
           :disabled="item === 'd'"
         >
           label
-        </radio>
-      </radio-group>
+        </van-radio>
+      </van-radio-group>
     `,
-    components: {
-      Radio,
-      RadioGroup
-    },
     data() {
       return {
         result: 'a',
@@ -47,20 +47,16 @@ test('radio-group change', () => {
 test('radio group disabled', () => {
   const wrapper = mount({
     template: `
-      <radio-group v-model="result" disabled @change="$emit('change', $event)">
-        <radio
+      <van-radio-group v-model="result" disabled @change="$emit('change', $event)">
+        <van-radio
           v-for="item in list"
           :key="item"
           :name="item"
         >
           label
-        </radio>
-      </radio-group>
+        </van-radio>
+      </van-radio-group>
     `,
-    components: {
-      Radio,
-      RadioGroup
-    },
     data() {
       return {
         result: 'a',
@@ -73,4 +69,30 @@ test('radio group disabled', () => {
   icons.at(2).trigger('click');
 
   expect(wrapper.emitted('change')).toBeFalsy();
+});
+
+test('icon-size prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-radio-group icon-size="10rem">
+        <van-radio>label</van-radio>
+        <van-radio icon-size="5rem">label</van-radio>
+      </van-radio-group>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('checked-color prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-radio-group checked-color="black">
+        <van-radio :value="true">label</van-radio>
+        <van-radio :value="true" checked-color="white">label</van-radio>
+      </van-radio-group>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

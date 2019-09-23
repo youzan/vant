@@ -96,22 +96,22 @@ function ActionSheet(
     }
 
     return (
-      <div
+      <button
         class={[bem('item', { disabled }), item.className, BORDER_TOP]}
         style={{ color: item.color }}
         onClick={onClickOption}
       >
         {OptionContent()}
-      </div>
+      </button>
     );
   }
 
   function CancelText() {
     if (cancelText) {
       return (
-        <div class={bem('cancel')} onClick={onCancel}>
+        <button class={bem('cancel')} onClick={onCancel}>
           {cancelText}
-        </div>
+        </button>
       );
     }
   }
@@ -147,8 +147,11 @@ ActionSheet.props = {
   cancelText: String,
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
-  safeAreaInsetBottom: Boolean,
   round: {
+    type: Boolean,
+    default: true
+  },
+  safeAreaInsetBottom: {
     type: Boolean,
     default: true
   },

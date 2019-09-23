@@ -153,9 +153,9 @@ export default {
 | shape | 形状，可选值为 `square` | *string* | `round` | - |
 | v-model | 是否为选中状态 | *boolean* | `false` | - |
 | disabled | 是否禁用复选框 | *boolean* | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` | - |
 | label-disabled | 是否禁用复选框文本点击 | *boolean* | `false` | - |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` | - |
+| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` | - |
 | checked-color | 选中状态颜色 | *string* | `#1989fa` | - |
 
 ### CheckboxGroup Props
@@ -164,7 +164,9 @@ export default {
 |------|------|------|------|------|
 | v-model | 所有选中项的标识符 | *any[]* | - | - |
 | disabled | 是否禁用所有复选框 | *boolean* | `false` | - |
-| max | 设置最大可选数，0 为无限制 | *number* | `0` | - |
+| max | 最大可选数，0 为无限制 | *number* | `0` | - |
+| icon-size | 所有复选框的图标大小，默认单位为`px` | *string \| number* | `20px` | 2.2.3 |
+| checked-color | 所有复选框的选中状态颜色 | *string* | `#1989fa` | 2.2.3 |
 
 ### Checkbox Events
 

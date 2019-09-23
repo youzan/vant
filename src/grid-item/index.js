@@ -82,9 +82,11 @@ export default createComponent({
     const { center, border, square, gutter, clickable } = this.parent;
 
     return (
-      <div class={[bem({ square })]} style={this.style} onClick={this.onClick}>
+      <div class={[bem({ square })]} style={this.style}>
         <div
           style={this.contentStyle}
+          role={clickable ? 'button' : null}
+          tabindex={clickable ? 0 : null}
           class={[
             bem('content', {
               center,
@@ -94,6 +96,7 @@ export default createComponent({
             }),
             { [BORDER]: border }
           ]}
+          onClick={this.onClick}
         >
           {this.renderContent()}
         </div>

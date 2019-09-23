@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`checked-color prop 1`] = `
+<div class="van-checkbox-group">
+  <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: black; background-color: black;">
+        <!----></i></div><span class="van-checkbox__label">label</span>
+  </div>
+  <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: white; background-color: white;">
+        <!----></i></div><span class="van-checkbox__label">label</span>
+  </div>
+</div>
+`;
+
+exports[`icon-size prop 1`] = `
+<div class="van-checkbox-group">
+  <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
+    <div class="van-checkbox__icon van-checkbox__icon--round" style="font-size: 10rem;"><i class="van-icon van-icon-success">
+        <!----></i></div><span class="van-checkbox__label">label</span>
+  </div>
+  <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
+    <div class="van-checkbox__icon van-checkbox__icon--round" style="font-size: 5rem;"><i class="van-icon van-icon-success">
+        <!----></i></div><span class="van-checkbox__label">label</span>
+  </div>
+</div>
+`;
+
 exports[`label disabled 1`] = `
 <div role="checkbox" tabindex="0" aria-checked="undefined" class="van-checkbox">
   <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
