@@ -104,7 +104,7 @@ export default {
   }
 
   p {
-    padding: 20px;
+    padding: @padding-md @padding-md @padding-md * 10;
   }
 }
 </style>
