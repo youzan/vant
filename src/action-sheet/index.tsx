@@ -22,8 +22,8 @@ export type ActionSheetItem = {
 };
 
 export type ActionSheetProps = PopupMixinProps & {
+  round: boolean;
   title?: string;
-  round?: boolean;
   actions?: ActionSheetItem[];
   duration: number;
   cancelText?: string;
@@ -142,12 +142,15 @@ function ActionSheet(
 ActionSheet.props = {
   ...PopupMixin.props,
   title: String,
-  round: Boolean,
   actions: Array,
   duration: Number,
   cancelText: String,
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
+  round: {
+    type: Boolean,
+    default: true
+  },
   safeAreaInsetBottom: {
     type: Boolean,
     default: true
