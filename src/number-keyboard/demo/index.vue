@@ -1,18 +1,12 @@
 <template>
   <demo-section>
     <demo-block :title="$t('default')">
-      <van-button
-        type="primary"
-        @touchstart.stop="keyboard = 'default'"
-      >
-        {{ $t('button1') }}
-      </van-button>
+      <van-button type="primary" @touchstart.stop="keyboard = 'default'">{{ $t('button1') }}</van-button>
 
       <van-number-keyboard
         :show="keyboard === 'default'"
         :close-button-text="$t('close')"
         extra-key="."
-        safe-area-inset-bottom
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"
@@ -20,19 +14,13 @@
     </demo-block>
 
     <demo-block :title="$t('custom')">
-      <van-button
-        type="info"
-        @touchstart.stop="keyboard = 'custom'"
-      >
-        {{ $t('button2') }}
-      </van-button>
+      <van-button type="info" @touchstart.stop="keyboard = 'custom'">{{ $t('button2') }}</van-button>
 
       <van-number-keyboard
         :show="keyboard === 'custom'"
         :close-button-text="$t('close')"
         theme="custom"
         extra-key="."
-        safe-area-inset-bottom
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"
@@ -52,7 +40,6 @@
         v-model="value"
         :show="keyboard === 'bindValue'"
         maxlength="6"
-        safe-area-inset-bottom
         @blur="keyboard = ''"
       />
     </demo-block>
@@ -104,7 +91,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-number-keyboard {
   .van-button {
