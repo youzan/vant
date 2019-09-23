@@ -26,7 +26,6 @@ export default createComponent({
     title: String,
     closeButtonText: String,
     deleteButtonText: String,
-    safeAreaInsetBottom: Boolean,
     theme: {
       type: String,
       default: 'default'
@@ -56,6 +55,10 @@ export default createComponent({
       default: true
     },
     hideOnClickOutside: {
+      type: Boolean,
+      default: true
+    },
+    safeAreaInsetBottom: {
       type: Boolean,
       default: true
     }
