@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.2.3](https://github.com/youzan/vant/tree/v2.2.3)
+`2019-09-24`
+
+**Features**
+
+- Cell: improve accessibility [\#4519](https://github.com/youzan/vant/pull/4519)
+- Popup: improve accessibility [\#4516](https://github.com/youzan/vant/pull/4516)
+- Search: improve accessibility [\#4522](https://github.com/youzan/vant/pull/4522)
+- Picker: improve accessibility [\#4521](https://github.com/youzan/vant/pull/4521)
+- GridItem: improve accessbility [\#4517](https://github.com/youzan/vant/pull/4517)
+- ActionSheet: improve accessibility [\#4525](https://github.com/youzan/vant/pull/4525)
+- Sku: add sku item previewImgUrl [\#4562](https://github.com/youzan/vant/pull/4562)
+- ActionSheet: enable round by default [\#4542](https://github.com/youzan/vant/pull/4542)
+- RadioGroup: add icon-size prop [\#4529](https://github.com/youzan/vant/pull/4529)
+- RadioGroup: add checked-color prop [\#4532](https://github.com/youzan/vant/pull/4532)
+- CheckboxGroup: add icon-size prop [\#4530](https://github.com/youzan/vant/pull/4530)
+- CheckboxGroup: add checked-color prop [\#4531](https://github.com/youzan/vant/pull/4531)
+- ActionSheet: enable safe-area-inset-bottom by default [\#4524](https://github.com/youzan/vant/pull/4524)
+- NumberKeyboard: enable safe-area-inset-bottom by default [\#4544](https://github.com/youzan/vant/pull/4544)
+
+
 ### [v2.2.2](https://github.com/youzan/vant/tree/v2.2.2)
 `2019-09-19`
 

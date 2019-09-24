@@ -10,6 +10,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.2.3](https://github.com/youzan/vant/tree/v2.2.3)
+`2019-09-24`
+
+**Features**
+
+- Cell: 优化无障碍访问 [\#4519](https://github.com/youzan/vant/pull/4519)
+- Popup: 优化无障碍访问 [\#4516](https://github.com/youzan/vant/pull/4516)
+- Search: 优化无障碍访问 [\#4522](https://github.com/youzan/vant/pull/4522)
+- Picker: 优化无障碍访问 [\#4521](https://github.com/youzan/vant/pull/4521)
+- GridItem: 优化无障碍访问 [\#4517](https://github.com/youzan/vant/pull/4517)
+- ActionSheet: 优化无障碍访问 [\#4525](https://github.com/youzan/vant/pull/4525)
+- Sku: 新增 previewImgUrl 字段 [\#4562](https://github.com/youzan/vant/pull/4562)
+- RadioGroup: 新增 icon-size 属性 [\#4529](https://github.com/youzan/vant/pull/4529)
+- RadioGroup: 新增 checked-color 属性 [\#4532](https://github.com/youzan/vant/pull/4532)
+- CheckboxGroup: 新增 icon-size 属性 [\#4530](https://github.com/youzan/vant/pull/4530)
+- CheckboxGroup: 新增 checked-color 属性 [\#4531](https://github.com/youzan/vant/pull/4531)
+- ActionSheet: 默认开启 round 属性 [\#4542](https://github.com/youzan/vant/pull/4542)
+- ActionSheet: 默认开启 safe-area-inset-bottom 属性 [\#4524](https://github.com/youzan/vant/pull/4524)
+- NumberKeyboard: 默认开启 safe-area-inset-bottom 属性 [\#4544](https://github.com/youzan/vant/pull/4544)
+
+
 ### [v2.2.2](https://github.com/youzan/vant/tree/v2.2.2)
 `2019-09-19`
 
