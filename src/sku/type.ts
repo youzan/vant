@@ -22,6 +22,8 @@ export type SkuTreeItemValueData = {
   name: string;
   imgUrl?: string;
   img_url?: string;
+  previewImgUrl?: string;
+  preview_img_url?: string;
 };
 
 export type SkuListItemData = {
