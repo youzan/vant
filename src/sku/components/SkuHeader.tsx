@@ -24,7 +24,7 @@ function getSkuImg(sku: SkuData, selectedSku: SelectedSkuData): string | undefin
 
     if (id && item.v) {
       const matchedSku = item.v.filter(skuValue => skuValue.id === id)[0] || {};
-      img = matchedSku.imgUrl || matchedSku.img_url;
+      img = matchedSku.previewImgUrl || matchedSku.imgUrl || matchedSku.img_url;
       return img;
     }
 

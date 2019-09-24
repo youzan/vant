@@ -201,7 +201,7 @@ export default createComponent({
           }
 
           treeItem.v.forEach(vItem => {
-            const img = vItem.imgUrl || vItem.img_url;
+            const img = vItem.previewImgUrl || vItem.imgUrl || vItem.img_url;
             if (img) {
               imageList.push(img);
             }
