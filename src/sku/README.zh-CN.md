@@ -195,12 +195,14 @@ sku: {
         {
           id: '30349', // skuValueId：规格值 id
           name: '红色', // skuValueName：规格值名称
-          imgUrl: 'https://img.yzcdn.cn/1.jpg' // 规格类目图片，只有第一个规格类目可以定义图片
+          imgUrl: 'https://img.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
+          previewImgUrl: 'https://img.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
         },
         {
           id: '1215',
           name: '蓝色',
-          imgUrl: 'https://img.yzcdn.cn/2.jpg'
+          imgUrl: 'https://img.yzcdn.cn/2.jpg',
+          previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
       k_s: 's1' // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id

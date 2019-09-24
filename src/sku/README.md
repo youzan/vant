@@ -187,12 +187,14 @@ sku: {
         {
           id: '30349',
           name: 'Red',
-          imgUrl: 'https://img.yzcdn.cn/1.jpg'
+          imgUrl: 'https://img.yzcdn.cn/1.jpg',
+          previewImgUrl: 'https://img.yzcdn.cn/1p.jpg',
         },
         {
           id: '1215',
           name: 'Blue',
-          imgUrl: 'https://img.yzcdn.cn/2.jpg'
+          imgUrl: 'https://img.yzcdn.cn/2.jpg',
+          previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
       k_s: 's1'
