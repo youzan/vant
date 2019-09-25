@@ -183,14 +183,13 @@ export default createComponent({
         return;
       }
 
-      const imageFiles = this.fileList
-        .filter(item => isImageFile(item))
-        .map(item => item.content || item.url);
+      const imageFiles = this.fileList.filter(item => isImageFile(item));
+      const imageContents = imageFiles.map(item => item.content || item.url);
 
       ImagePreview({
-        images: imageFiles,
+        images: imageContents,
         closeOnPopstate: true,
-        startPosition: imageFiles.indexOf(item.content || item.url),
+        startPosition: imageFiles.indexOf(item),
         onClose: () => {
           this.$emit('close-preview');
         }
