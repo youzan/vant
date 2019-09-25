@@ -57,7 +57,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | title | Toolbar title | `String` | - |
 | area-list | Area data | `Object` | - |
 | columns-num | level of picker | `String | Number` | `3` |
-| columns-placeholder | placeholder of columns | *array* | [] | - |
+| columns-placeholder | 列占位提示文字 | `String[]` | `[]` | - |
 | item-height | Option height | `Number` | `44` |
 | loading | Whether to show loading prompt | `Boolean` | `false` |
 | visible-item-count | Count of visible columns | `Number` | `5` |

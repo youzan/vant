@@ -134,6 +134,17 @@ export default sfc({
       this.$emit('change', picker, picker.getValues(), index);
     },
 
+    onConfirm(values) {
+      values.forEach(value => {
+        if (value.code === '000000') {
+          value.code = '';
+          value.name = '';
+        }
+      });
+      this.setValues();
+      this.$emit('confirm', values);
+    },
+
     setValues() {
       let code = this.code || Object.keys(this.county).sort((a, b) => a - b)[0] || '';
       const { picker } = this.$refs;
@@ -201,7 +212,8 @@ export default sfc({
   render(h) {
     const on = {
       ...this.$listeners,
-      change: this.onChange
+      change: this.onChange,
+      confirm: this.onConfirm
     };
 
     return (
