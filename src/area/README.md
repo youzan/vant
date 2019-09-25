@@ -40,6 +40,18 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 <van-area :area-list="areaList" :columns-num="2" title="Title" />
 ```
 
+### Columns Placeholder
+
+`columns-placeholder` property is used to config placeholder of columns.
+
+```html
+<van-area
+  :area-list="areaList"
+  :columns-placeholder="['Choose']"
+  title="Title"
+/>
+```
+
 ## API
 
 ### Props
@@ -50,6 +62,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | title | Toolbar title | *string* | - | - |
 | area-list | Area data | *object* | - | - |
 | columns-num | level of picker | *string \| number* | `3` | - |
+| columns-placeholder | placeholder of columns | *string[]* | `[]` | - |
 | item-height | Option height | *number* | `44` | - |
 | loading | Whether to show loading prompt | *boolean* | `false` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |

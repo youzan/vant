@@ -23,6 +23,10 @@ export default createComponent({
     isOverseaCode: {
       type: Function,
       default: isOverseaCode
+    },
+    columnsPlaceholder: {
+      type: Array,
+      default: () => []
     }
   },
 
@@ -48,6 +52,14 @@ export default createComponent({
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
+    },
+
+    typeToColumnsPlaceholder() {
+      return {
+        province: this.columnsPlaceholder[0] || '',
+        city: this.columnsPlaceholder[1] || '',
+        county: this.columnsPlaceholder[2] || '',
+      };
     }
   },
 
@@ -86,6 +98,14 @@ export default createComponent({
         code: listCode,
         name: list[listCode]
       }));
+
+      if (this.columnsPlaceholder.length) {
+        // set columns placeholder
+        result.unshift({
+          code: '000000',
+          name: this.typeToColumnsPlaceholder[type]
+        });
+      }
 
       if (code) {
         // oversea code
@@ -126,8 +146,30 @@ export default createComponent({
       this.$emit('change', picker, picker.getValues(), index);
     },
 
+    onConfirm(values, index) {
+      values.forEach(value => {
+        if (value.code === '000000') {
+          value.code = '';
+          value.name = '';
+        }
+      });
+      this.setValues();
+      this.$emit('confirm', values, index);
+    },
+
     setValues() {
-      let code = this.code || Object.keys(this.county)[0] || '';
+      let { code } = this;
+
+      if (!code) {
+        if (this.columnsPlaceholder.length) {
+          code = '000000';
+        } else if (Object.keys(this.county)[0]) {
+          code = Object.keys(this.county)[0];
+        } else {
+          code = '';
+        }
+      }
+
       const { picker } = this.$refs;
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
@@ -193,7 +235,8 @@ export default createComponent({
   render() {
     const on = {
       ...this.$listeners,
-      change: this.onChange
+      change: this.onChange,
+      confirm: this.onConfirm
     };
 
     return (
