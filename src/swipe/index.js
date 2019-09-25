@@ -254,15 +254,8 @@ export default createComponent({
       this.correctPosition();
 
       doubleRaf(() => {
-        let targetIndex;
-        if (this.loop && index === this.count) {
-          targetIndex = this.active === 0 ? 0 : index;
-        } else {
-          targetIndex = index % this.count;
-        }
-
         this.move({
-          pace: targetIndex - this.active,
+          pace: (index % this.count) - this.active,
           emitChange: true
         });
 

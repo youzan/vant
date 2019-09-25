@@ -21,7 +21,7 @@
         :title="$t('title')"
         :columns="$t('column1')"
         @cancel="onCancel"
-        @confirm="onConfirm('test')"
+        @confirm="onConfirm"
       />
     </demo-block>
 
