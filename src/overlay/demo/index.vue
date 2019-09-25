@@ -8,10 +8,7 @@
         @click="show = true"
       />
 
-      <van-overlay
-        :show="show"
-        @click="show = false"
-      />
+      <van-overlay :show="show" @click="show = false" />
     </demo-block>
   </demo-section>
 </template>

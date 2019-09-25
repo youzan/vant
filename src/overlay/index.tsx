@@ -47,7 +47,9 @@ function Overlay(
         class={[bem(), props.className]}
         onTouchmove={preventTouchMove}
         {...inherit(ctx, true)}
-      />
+      >
+        {slots.default && slots.default()}
+      </div>
     </transition>
   );
 }

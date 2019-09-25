@@ -47,3 +47,13 @@ test('click event', () => {
   wrapper.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(1);
 });
+
+test('default slot', () => {
+  const wrapper = mount(Overlay, {
+    scopedSlots: {
+      default: () => 'Custom Default'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

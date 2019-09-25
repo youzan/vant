@@ -14,16 +14,9 @@ Vue.use(Overlay);
 ### Basic Usage
 
 ```html
-<van-button
-  type="primary"
-  text="Show Overlay"
-  @click="show = true"
-/>
+<van-button type="primary" text="Show Overlay" @click="show = true" />
 
-<van-overlay
-  :show="show"
-  @click="show = false"
-/>
+<van-overlay :show="show" @click="show = false" />
 ```
 
 ```js
@@ -52,3 +45,9 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | event: Event |
+
+### Slots
+
+| Name | Description |
+|------|------|
+| default | Default slot |
