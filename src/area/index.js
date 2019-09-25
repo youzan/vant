@@ -39,19 +39,27 @@ export default createComponent({
 
   computed: {
     province() {
-      return this.getPlaceholderList(this.areaList.province_list, 0);
+      return this.areaList.province_list || {};
     },
 
     city() {
-      return this.getPlaceholderList(this.areaList.city_list, 1);
+      return this.areaList.city_list || {};
     },
 
     county() {
-      return this.getPlaceholderList(this.areaList.county_list, 2);
+      return this.areaList.county_list || {};
     },
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
+    },
+
+    typeToColumnsPlaceholder() {
+      return {
+        province: this.columnsPlaceholder[0] || '',
+        city: this.columnsPlaceholder[1] || '',
+        county: this.columnsPlaceholder[2] || '',
+      };
     }
   },
 
@@ -86,10 +94,18 @@ export default createComponent({
       }
 
       const list = this[type];
-      result = Object.keys(list).sort((a, b) => a - b).map(listCode => ({
+      result = Object.keys(list).map(listCode => ({
         code: listCode,
         name: list[listCode]
       }));
+
+      if (this.columnsPlaceholder.length) {
+        // set columns placeholder
+        result.unshift({
+          code: '000000',
+          name: this.typeToColumnsPlaceholder[type]
+        });
+      }
 
       if (code) {
         // oversea code
@@ -101,17 +117,6 @@ export default createComponent({
       }
 
       return result;
-    },
-
-    getPlaceholderList(list = {}, columnsIndex) {
-      if (!this.columnsPlaceholder.length) {
-        return list;
-      }
-
-      return {
-        '000000': this.columnsPlaceholder[columnsIndex] || '',
-        ...list
-      };
     },
 
     // get index by code
@@ -141,7 +146,7 @@ export default createComponent({
       this.$emit('change', picker, picker.getValues(), index);
     },
 
-    onConfirm(values) {
+    onConfirm(values, index) {
       values.forEach(value => {
         if (value.code === '000000') {
           value.code = '';
@@ -149,11 +154,21 @@ export default createComponent({
         }
       });
       this.setValues();
-      this.$emit('confirm', values);
+      this.$emit('confirm', values, index);
     },
 
     setValues() {
-      let code = this.code || Object.keys(this.county).sort((a, b) => a - b)[0] || '';
+      let { code } = this;
+
+      if (!code) {
+        if (this.columnsPlaceholder.length) {
+          code = '000000';
+        } else if (Object.keys(this.county)[0]) {
+          code = Object.keys(this.county)[0];
+        } else {
+          code = '';
+        }
+      }
 
       const { picker } = this.$refs;
       const province = this.getList('province');
