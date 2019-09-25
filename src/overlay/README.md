@@ -39,6 +39,7 @@ export default {
 | z-index | z-index | *string \| number* | `1` | - |
 | duration | Animation duration | *string \| number* | `0.3` | - |
 | class-name | ClassName | *string* | - | - |
+| custom-class | Custom style | *object* | - | - |
 
 ### Events
 
