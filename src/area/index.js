@@ -141,6 +141,16 @@ export default createComponent({
       this.$emit('change', picker, picker.getValues(), index);
     },
 
+    onConfirm(values) {
+      values.forEach(value => {
+        if (value.code === '000000') {
+          value.code = '';
+          value.name = '';
+        }
+      });
+      this.$emit('confirm', values);
+    },
+
     setValues() {
       let code = this.code || Object.keys(this.county).sort((a, b) => a - b)[0] || '';
 
@@ -209,7 +219,8 @@ export default createComponent({
   render() {
     const on = {
       ...this.$listeners,
-      change: this.onChange
+      change: this.onChange,
+      confirm: this.onConfirm
     };
 
     return (
