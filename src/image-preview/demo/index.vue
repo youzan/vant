@@ -50,7 +50,7 @@
 import { ImagePreview } from '../..';
 
 const images = [
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://qsy-1256083940.cos.ap-shanghai.myqcloud.com/100057/m/20190924/f72a703d3ad14b148ae18a19a9457b82.png',
   'https://img.yzcdn.cn/vant/apple-2.jpg',
   'https://img.yzcdn.cn/vant/apple-3.jpg',
   'https://img.yzcdn.cn/vant/apple-4.jpg'
@@ -95,6 +95,7 @@ export default {
       const instance = ImagePreview({
         images,
         lazyLoad: true,
+        maxZoom: 10,
         swipeDuration: 300,
         asyncClose: !!timer,
         closeOnPopstate: true,

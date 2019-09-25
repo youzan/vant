@@ -2,8 +2,9 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-swipe
-        :autoplay="3000"
+        ref="swipe"
         indicator-color="white"
+        @change="onChange2"
       >
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
@@ -100,6 +101,9 @@ export default {
   },
 
   data() {
+    setTimeout(() => {
+      this.$refs.swipe.swipeTo(5);
+    }, 1000);
     return {
       current: 0,
       images: [
