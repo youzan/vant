@@ -23,6 +23,19 @@ test('class-name prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('custom style prop', () => {
+  const wrapper = mount(Overlay, {
+    propsData: {
+      show: true,
+      customStyle: {
+        backgroundColor: 'red'
+      }
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('duration prop', () => {
   const wrapper = mount(Overlay, {
     propsData: {

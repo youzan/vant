@@ -43,6 +43,7 @@ export default {
 | z-index | z-index 层级 | *string \| number* | `1` | - |
 | duration | 动画时长，单位秒 | *string \| number* | `0.3` | - |
 | class-name | 自定义类名 | *string* | - | - |
+| custom-style | 自定义样式 | *object* | - | - |
 
 ### Events
 
