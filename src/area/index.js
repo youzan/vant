@@ -148,6 +148,7 @@ export default createComponent({
           value.name = '';
         }
       });
+      this.setValues();
       this.$emit('confirm', values);
     },
 
