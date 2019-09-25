@@ -18,16 +18,9 @@ Vue.use(Overlay);
 ### 基础用法
 
 ```html
-<van-button
-  type="primary"
-  text="显示遮罩层"
-  @click="show = true"
-/>
+<van-button type="primary" text="显示遮罩层" @click="show = true" />
 
-<van-overlay
-  :show="show"
-  @click="show = false"
-/>
+<van-overlay :show="show" @click="show = false" />
 ```
 
 ```js
@@ -56,3 +49,9 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | event: Event |
+
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 默认插槽 |
