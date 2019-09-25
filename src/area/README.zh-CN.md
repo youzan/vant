@@ -49,6 +49,7 @@ Vue.use(Area);
 | title | 顶部栏标题 | *string* | - | - |
 | area-list | 省市区数据，格式见下方 | *object* | - | - |
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` | - |
+| columns-placeholder | 每一列的占位文案 | *array* | [] | - |
 | loading | 是否显示加载状态 | *boolean* | `false` | - |
 | item-height | 选项高度 | *number* | `44` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |

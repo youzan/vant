@@ -23,6 +23,10 @@ export default createComponent({
     isOverseaCode: {
       type: Function,
       default: isOverseaCode
+    },
+    columnsPlaceholder: {
+      type: Array,
+      default: () => []
     }
   },
 
@@ -35,15 +39,15 @@ export default createComponent({
 
   computed: {
     province() {
-      return this.areaList.province_list || {};
+      return this.getPlaceholderList(this.areaList.province_list, 0);
     },
 
     city() {
-      return this.areaList.city_list || {};
+      return this.getPlaceholderList(this.areaList.city_list, 1);
     },
 
     county() {
-      return this.areaList.county_list || {};
+      return this.getPlaceholderList(this.areaList.county_list, 2);
     },
 
     displayColumns() {
@@ -82,7 +86,7 @@ export default createComponent({
       }
 
       const list = this[type];
-      result = Object.keys(list).map(listCode => ({
+      result = Object.keys(list).sort((a, b) => a - b).map(listCode => ({
         code: listCode,
         name: list[listCode]
       }));
@@ -97,6 +101,17 @@ export default createComponent({
       }
 
       return result;
+    },
+
+    getPlaceholderList(list = {}, columnsIndex) {
+      if (!this.columnsPlaceholder.length) {
+        return list;
+      }
+
+      return {
+        '000000': this.columnsPlaceholder[columnsIndex] || '',
+        ...list
+      };
     },
 
     // get index by code
@@ -127,7 +142,8 @@ export default createComponent({
     },
 
     setValues() {
-      let code = this.code || Object.keys(this.county)[0] || '';
+      let code = this.code || Object.keys(this.county).sort((a, b) => a - b)[0] || '';
+
       const { picker } = this.$refs;
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
