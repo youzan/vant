@@ -39,6 +39,18 @@ Vue.use(Area);
 <van-area :area-list="areaList" :columns-num="2" title="标题" />
 ```
 
+### 配置列占位提示文字
+
+可以通过`columns-placeholder`属性配置每一列的占位提示文字
+
+```html
+<van-area
+  :area-list="areaList"
+  :columns-placeholder="['请选择']"
+  title="标题"
+/>
+```
+
 ## API
 
 ### Props
@@ -49,7 +61,7 @@ Vue.use(Area);
 | title | 顶部栏标题 | *string* | - | - |
 | area-list | 省市区数据，格式见下方 | *object* | - | - |
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` | - |
-| columns-placeholder | 每一列的占位文案 | *array* | [] | - |
+| columns-placeholder | 每一列的占位提示文字 | *array* | [] | - |
 | loading | 是否显示加载状态 | *boolean* | `false` | - |
 | item-height | 选项高度 | *number* | `44` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |

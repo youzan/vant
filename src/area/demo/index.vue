@@ -38,7 +38,7 @@ export default {
     'zh-CN': {
       title2: '选中省市区',
       title3: '配置显示列',
-      title4: '配置列占位文案',
+      title4: '配置列占位提示文字',
       columnsPlaceholder: ['请选择'],
       areaList: AreaList,
     },
