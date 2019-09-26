@@ -21,6 +21,14 @@
         :title="$t('title')"
       />
     </demo-block>
+
+    <demo-block :title="$t('title4')">
+      <van-area
+        :area-list="$t('areaList')"
+        :columns-placeholder="$t('columnsPlaceholder')"
+        :title="$t('title')"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -33,11 +41,15 @@ export default {
     'zh-CN': {
       title2: '选中省市区',
       title3: '配置显示列',
+      title4: '配置列占位提示文字',
+      columnsPlaceholder: ['请选择'],
       areaList: AreaList
     },
     'en-US': {
       title2: 'Initial Value',
       title3: 'Columns Number',
+      title4: 'Columns Placeholder',
+      columnsPlaceholder: ['Choose'],
       areaList: AreaListEn
     }
   },
