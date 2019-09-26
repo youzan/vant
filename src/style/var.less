@@ -33,6 +33,9 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 
+// Font Weight
+@font-weight-bold: 500;
+
 // Animation
 @animation-duration-base: .3s;
 @animation-duration-fast: .2s;
@@ -163,7 +166,7 @@
 
 // Circle
 @circle-text-color: @text-color;
-@circle-text-font-weight: 500;
+@circle-text-font-weight: @font-weight-bold;
 @circle-text-font-size: @font-size-md;
 @circle-text-line-height: 18px;
 
@@ -233,7 +236,7 @@
 @dialog-transition: @animation-duration-base;
 @dialog-border-radius: 4px;
 @dialog-background-color: @white;
-@dialog-header-font-weight: 500;
+@dialog-header-font-weight: @font-weight-bold;
 @dialog-header-line-height: 24px;
 @dialog-header-padding-top: @padding-lg;
 @dialog-header-isolated-padding: @padding-lg 0;
@@ -302,7 +305,7 @@
 // IndexAnchor
 @index-anchor-padding: 0 @padding-md;
 @index-anchor-text-color: @text-color;
-@index-anchor-font-weight: 500;
+@index-anchor-font-weight: @font-weight-bold;
 @index-anchor-font-size: @font-size-md;
 @index-anchor-line-height: 32px;
 @index-anchor-background-color: transparent;
@@ -317,7 +320,7 @@
 @info-color: @white;
 @info-padding: 0 3px;
 @info-font-size: @font-size-sm;
-@info-font-weight: 500;
+@info-font-weight: @font-weight-bold;
 @info-border-width: 1px;
 @info-background-color: @red;
 @info-dot-color: @red;
@@ -496,7 +499,7 @@
 @sidebar-padding: 20px @padding-sm 20px @padding-xs;
 @sidebar-active-color: @active-color;
 @sidebar-background-color: @background-color-light;
-@sidebar-selected-font-weight: 500;
+@sidebar-selected-font-weight: @font-weight-bold;
 @sidebar-selected-text-color: @text-color;
 @sidebar-selected-border-color: @red;
 @sidebar-selected-background-color: @white;
@@ -673,6 +676,8 @@
 @uploader-file-background-color: @background-color;
 @uploader-file-icon-size: 20px;
 @uploader-file-icon-color: @gray-darker;
+@uploader-file-name-padding: 0 @padding-base;
+@uploader-file-name-margin-top: @padding-xs;
 @uploader-file-name-font-size: @font-size-sm;
 @uploader-file-name-text-color: @gray-darker;
 
