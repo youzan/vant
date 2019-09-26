@@ -2,6 +2,7 @@
 // This file is auto gererated by build/build-entry.js
 export default {
   'changelog.en-US': () => import('../markdown/changelog.en-US.md'),
+  'changelog.generated': () => import('../markdown/changelog.generated.md'),
   'changelog.zh-CN': () => import('../markdown/changelog.zh-CN.md'),
   'contribution.zh-CN': () => import('../markdown/contribution.zh-CN.md'),
   'design.zh-CN': () => import('../markdown/design.zh-CN.md'),
