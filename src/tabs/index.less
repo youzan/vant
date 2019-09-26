@@ -78,13 +78,13 @@
       box-sizing: border-box;
       height: @tabs-card-height;
       margin: 0 @padding-md;
-      border: 1px solid @tabs-default-color;
+      border: @border-width-base solid @tabs-default-color;
       border-radius: 2px;
 
       .van-tab {
         color: @tabs-default-color;
         line-height: @tabs-card-height - 2px;
-        border-right: 1px solid @tabs-default-color;
+        border-right: @border-width-base solid @tabs-default-color;
 
         &:last-child {
           border-right: none;
