@@ -1,6 +1,15 @@
 ## Changelog
 
-## [v1.6.24](https://github.com/youzan/vant/tree/v1.6.23)
+## [v1.6.25](https://github.com/youzan/vant/tree/v1.6.25)
+`2019-09-26`
+
+**Improvements**
+
+- Area: add columns-placeholder prop
+- AddressEdit: add area-columns-placeholder prop
+
+
+## [v1.6.24](https://github.com/youzan/vant/tree/v1.6.24)
 `2019-06-21`
 
 **Improvements**
