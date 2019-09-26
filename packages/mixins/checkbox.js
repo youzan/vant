@@ -17,11 +17,17 @@ export const CheckboxMixin = (parent, bem) => ({
     shape: {
       type: String,
       default: 'round'
+    },
+    bindParent: {
+      type: Boolean,
+      default: true,
     }
   },
 
   created() {
-    this.findParent(parent);
+    if (this.bindParent) {
+      this.findParent(parent);
+    }
   },
 
   computed: {
@@ -40,7 +46,7 @@ export const CheckboxMixin = (parent, bem) => ({
     }
   },
 
-  render(h) {
+  render() {
     const { slots, checked } = this;
 
     const CheckIcon = slots('icon', { checked }) || (
