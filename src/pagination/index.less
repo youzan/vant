@@ -21,11 +21,11 @@
     }
 
     &::after {
-      border-width: 1px 0 1px 1px;
+      border-width: @border-width-base 0 @border-width-base @border-width-base;
     }
 
     &:last-child::after {
-      border-right-width: 1px;
+      border-right-width: @border-width-base;
     }
 
     &--disabled,
@@ -43,7 +43,7 @@
 
   &__prev,
   &__next {
-    padding: 0 5px;
+    padding: 0 @padding-base;
   }
 
   &__page {
@@ -60,7 +60,7 @@
     .van-pagination__prev,
     .van-pagination__next {
       &::after {
-        border-width: 1px;
+        border-width: @border-width-base;
       }
     }
   }
