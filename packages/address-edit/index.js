@@ -56,6 +56,10 @@ export default sfc({
     telValidator: {
       type: Function,
       default: isMobile
+    },
+    areaColumnsPlaceholder: {
+      type: Array,
+      default: () => []
     }
   },
 
@@ -323,6 +327,7 @@ export default sfc({
             loading={!this.areaListLoaded}
             value={data.areaCode}
             areaList={this.areaList}
+            columnsPlaceholder={this.areaColumnsPlaceholder}
             onConfirm={this.onAreaConfirm}
             onCancel={() => {
               this.showAreaPopup = false;

@@ -60,6 +60,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | area-list | 地区列表 | `Object` | - | - |
+| area-columns-placeholder | 地区选择列占位提示文字 | `string[]` | `[]` | - |
 | address-info | 收货人信息初始值 | `Object` | `{}` | - |
 | search-result | 详细地址搜索结果 | `Array` | `[]` | - |
 | show-postal | 是否显示邮政编码 | `Boolean` | `false` | - |
