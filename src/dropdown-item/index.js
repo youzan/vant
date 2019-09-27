@@ -2,12 +2,13 @@ import { createNamespace } from '../utils';
 import Cell from '../cell';
 import Icon from '../icon';
 import Popup from '../popup';
+import { PortalMixin } from '../mixins/portal';
 import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('dropdown-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanDropdownMenu')],
+  mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu')],
 
   props: {
     value: null,
@@ -106,26 +107,33 @@ export default createComponent({
     }
 
     return (
-      <div vShow={this.showWrapper} style={style} class={bem([direction])}>
-        <Popup
-          vModel={this.showPopup}
-          overlay={overlay}
-          class={bem('content')}
-          position={direction === 'down' ? 'top' : 'bottom'}
-          duration={this.transition ? duration : 0}
-          closeOnClickOverlay={closeOnClickOverlay}
-          overlayStyle={{ position: 'absolute' }}
-          onOpen={this.onOpen}
-          onClose={this.onClose}
-          onOpened={this.onOpened}
-          onClosed={() => {
-            this.showWrapper = false;
-            this.$emit('closed');
-          }}
+      <div>
+        <div
+          vShow={this.showWrapper}
+          ref="wrapper"
+          style={style}
+          class={bem([direction])}
         >
-          {Options}
-          {this.slots('default')}
-        </Popup>
+          <Popup
+            vModel={this.showPopup}
+            overlay={overlay}
+            class={bem('content')}
+            position={direction === 'down' ? 'top' : 'bottom'}
+            duration={this.transition ? duration : 0}
+            closeOnClickOverlay={closeOnClickOverlay}
+            overlayStyle={{ position: 'absolute' }}
+            onOpen={this.onOpen}
+            onClose={this.onClose}
+            onOpened={this.onOpened}
+            onClosed={() => {
+              this.showWrapper = false;
+              this.$emit('closed');
+            }}
+          >
+            {Options}
+            {this.slots('default')}
+          </Popup>
+        </div>
       </div>
     );
   }
