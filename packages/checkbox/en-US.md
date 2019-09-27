@@ -145,6 +145,7 @@ export default {
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |
+| bind-group | Whether to bind with CheckboxGroup | `boolean` | `true` |
 
 ### CheckboxGroup API
 

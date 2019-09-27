@@ -18,9 +18,9 @@ export const CheckboxMixin = (parent, bem) => ({
       type: String,
       default: 'round'
     },
-    bindParent: {
+    bindGroup: {
       type: Boolean,
-      default: true,
+      default: true
     }
   },
 

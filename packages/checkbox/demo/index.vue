@@ -84,27 +84,6 @@
         </van-cell-group>
       </van-checkbox-group>
     </demo-block>
-    <demo-block :title="$t('title6')">
-      <van-checkbox v-model="selectAll">{{ $t('selectAll') }}</van-checkbox>
-      <van-checkbox-group
-        v-model="result4"
-        @change="select4"
-      >
-        <van-checkbox
-          v-for="(item, index) in list"
-          :key="index"
-          :name="item"
-        >
-          {{ $t('checkbox') }} {{ item }}
-        </van-checkbox>
-        <van-checkbox
-          :bind-parent="false"
-          v-model="other"
-        >
-          {{ $t('checkbox') }} {{ $t('other') }}
-        </van-checkbox>
-      </van-checkbox-group>
-    </demo-block>
   </demo-section>
 </template>
 
@@ -117,10 +96,7 @@ export default {
       customColor: '自定义颜色',
       title3: '复选框组',
       title4: '设置最大可选数',
-      title5: '搭配单元格组件使用',
-      title6: '取消和复选框组的绑定',
-      other: '其他',
-      selectAll: '全选',
+      title5: '搭配单元格组件使用'
     },
     'en-US': {
       checkbox: 'Checkbox',
@@ -128,10 +104,7 @@ export default {
       customColor: 'Custom Color',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
-      title5: 'Inside a Cell',
-      title6: 'Cancel Bind Group',
-      other: 'other',
-      selectAll: 'select all',
+      title5: 'Inside a Cell'
     }
   },
 
@@ -148,34 +121,16 @@ export default {
       result: ['a', 'b'],
       result2: [],
       result3: [],
-      result4: [],
-      other: true,
-      selectAll: false,
       icon: {
         normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
         active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
       }
     };
   },
-  watch: {
-    selectAll() {
-      if (this.selectAll) {
-        this.result4 = this.list;
-      } else {
-        this.result4 = [];
-      }
-    }
-  },
+
   methods: {
     toggle(index) {
       this.$refs.checkboxes[index].toggle();
-    },
-    select4() {
-      if (this.result4.length === 3) {
-        this.selectAll = true;
-      } else {
-        this.selectAll = false;
-      }
     }
   }
 };

@@ -75,12 +75,13 @@ test('checkbox group', async () => {
   await later();
   expect(wrapper.vm.result).toEqual(['b']);
 });
+
 test('checkbox group unbind', async () => {
   const wrapper = mount({
     template: `
       <checkbox-group v-model="result" :max="2">
-        <checkbox v-for="item in list" :key="item" :name="item"></checkbox>
-        <checkbox :bind-parent='false' v-model="other"></checkbox>
+        <checkbox v-for="item in list" :key="item" :name="item" />
+        <checkbox :bind-parent='false' v-model="value" />
       </checkbox-group>
     `,
     components: {
@@ -90,6 +91,7 @@ test('checkbox group unbind', async () => {
     data() {
       return {
         result: [],
+        value: false,
         list: ['a', 'b', 'c']
       };
     }
@@ -99,10 +101,7 @@ test('checkbox group unbind', async () => {
   icons.at(3).trigger('click');
   await later();
   expect(wrapper.vm.result).toEqual([]);
-
-  icons.at(3).trigger('click');
-  await later();
-  expect(wrapper.vm.result).toEqual([]);
+  expect(wrapper.vm.value).toBeTruthy();
 });
 
 test('click event', () => {
