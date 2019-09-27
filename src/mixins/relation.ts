@@ -21,6 +21,10 @@ function flattenVNodes(vnodes: VNode[]) {
   return result;
 }
 
+type ChildrenMixinThis = {
+  disableBindRelation?: boolean;
+};
+
 export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}) {
   const indexKey = options.indexKey || 'index';
 
@@ -33,6 +37,10 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
 
     computed: {
       parent() {
+        if ((this as ChildrenMixinThis).disableBindRelation) {
+          return null;
+        }
+
         return (this as any)[parent];
       },
 

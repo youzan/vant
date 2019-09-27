@@ -155,6 +155,7 @@ export default {
 | label-position | Can be set to `left` | *string* | `right` | - |
 | icon-size | Icon size | *string \| number* | `20px` | - |
 | checked-color | Checked color | *string* | `#1989fa` | - | - |
+| bind-group | Whether to bind with CheckboxGroup | *boolean* | `true` | 2.2.4 |
 
 ### CheckboxGroup Props
 

@@ -157,6 +157,7 @@ export default {
 | label-position | 文本位置，可选值为 `left` | *string* | `right` | - |
 | icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` | - |
 | checked-color | 选中状态颜色 | *string* | `#1989fa` | - |
+| bind-group | 是否与复选框组绑定 | *boolean* | `true` | 2.2.4 |
 
 ### CheckboxGroup Props
 

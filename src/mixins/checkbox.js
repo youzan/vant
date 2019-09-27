@@ -19,10 +19,18 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     shape: {
       type: String,
       default: 'round'
+    },
+    bindGroup: {
+      type: Boolean,
+      default: true
     }
   },
 
   computed: {
+    disableBindRelation() {
+      return !this.bindGroup;
+    },
+
     isDisabled() {
       return (this.parent && this.parent.disabled) || this.disabled;
     },
