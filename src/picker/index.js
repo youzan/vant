@@ -183,6 +183,7 @@ export default createComponent({
       <div class={bem()}>
         {this.toolbarPosition === 'top' ? Toolbar : h()}
         {this.loading ? <Loading class={bem('loading')} color={BLUE} /> : h()}
+        {this.slots('columns-top')}
         <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
           {columns.map((item, index) => (
             <PickerColumn
@@ -201,6 +202,7 @@ export default createComponent({
           <div class={bem('mask')} style={maskStyle} />
           <div class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]} style={frameStyle} />
         </div>
+        {this.slots('columns-bottom')}
         {this.toolbarPosition === 'bottom' ? Toolbar : h()}
       </div>
     );

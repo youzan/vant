@@ -206,3 +206,17 @@ test('not allow html', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('columns-top、columns-bottom prop', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true
+    },
+    scopedSlots: {
+      'columns-top': () => 'Custom Columns Top',
+      'columns-bottom': () => 'Custom Columns Bottom',
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
