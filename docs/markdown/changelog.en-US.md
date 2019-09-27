@@ -1,5 +1,13 @@
 ## Changelog
 
+## [v1.6.26](https://github.com/youzan/vant/tree/v1.6.26)
+`2019-09-27`
+
+**Improvements**
+
+- Checkbox: add bind-group prop
+
+
 ## [v1.6.25](https://github.com/youzan/vant/tree/v1.6.25)
 `2019-09-26`
 

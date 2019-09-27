@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.26](https://github.com/youzan/vant/tree/v1.6.26)
+`2019-09-27`
+
+**Improvements**
+
+- Checkbox: 新增 bind-group 属性
+
+
 ## [v1.6.25](https://github.com/youzan/vant/tree/v1.6.25)
 `2019-09-26`
 
