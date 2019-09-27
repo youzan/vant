@@ -50,6 +50,7 @@ export class Loading extends VanComponent {}
 export class NavBar extends VanComponent {}
 export class NoticeBar extends VanComponent {}
 export class NumberKeyboard extends VanComponent {}
+export class Overlay extends VanComponent {}
 export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
