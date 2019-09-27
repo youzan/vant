@@ -213,6 +213,7 @@ Picker events will pass different parameters according to the columns are single
 
 | Name | Description |
 |------|------|
+| default | Custom toolbar content |
 | title | Custom title |
 
 ### Data Structure of Column
