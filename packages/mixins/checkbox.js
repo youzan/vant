@@ -25,7 +25,7 @@ export const CheckboxMixin = (parent, bem) => ({
   },
 
   created() {
-    if (this.bindParent) {
+    if (this.bindGroup) {
       this.findParent(parent);
     }
   },

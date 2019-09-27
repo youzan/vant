@@ -114,37 +114,5 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div>
-    <div class="van-checkbox">
-      <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-          <!----></i></div><span class="van-checkbox__label">全选</span>
-    </div>
-    <div class="van-checkbox-group">
-      <div class="van-checkbox">
-        <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-checkbox__label">
-        复选框 a
-      </span>
-      </div>
-      <div class="van-checkbox">
-        <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-checkbox__label">
-        复选框 b
-      </span>
-      </div>
-      <div class="van-checkbox">
-        <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-checkbox__label">
-        复选框 c
-      </span>
-      </div>
-      <div class="van-checkbox">
-        <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-checkbox__label">
-        复选框 其他
-      </span>
-      </div>
-    </div>
-  </div>
 </div>
 `;

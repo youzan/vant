@@ -81,7 +81,7 @@ test('checkbox group unbind', async () => {
     template: `
       <checkbox-group v-model="result" :max="2">
         <checkbox v-for="item in list" :key="item" :name="item" />
-        <checkbox :bind-parent='false' v-model="value" />
+        <checkbox :bind-group='false' v-model="value" />
       </checkbox-group>
     `,
     components: {
