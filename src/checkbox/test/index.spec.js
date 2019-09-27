@@ -131,3 +131,27 @@ test('checked-color prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('bind-group prop', async () => {
+  const wrapper = mount({
+    template: `
+      <van-checkbox-group v-model="result">
+        <van-checkbox v-model="value" :bind-group="false" />
+        <van-checkbox v-for="item in list" :key="item" :name="item"></van-checkbox>
+      </van-checkbox-group>
+    `,
+    data() {
+      return {
+        value: false,
+        result: [],
+        list: ['a', 'b', 'c']
+      };
+    }
+  });
+
+  const icons = wrapper.findAll('.van-checkbox__icon');
+  icons.at(0).trigger('click');
+  await later();
+  expect(wrapper.vm.result).toEqual([]);
+  expect(wrapper.vm.value).toBeTruthy();
+});
