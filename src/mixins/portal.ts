@@ -2,6 +2,7 @@ import Vue, { PropType } from 'vue';
 import { GetContainer } from './popup/type';
 
 type PortalMixinOptions = {
+  ref?: string;
   afterPortal?: () => void;
 };
 
@@ -13,7 +14,7 @@ function getElement(selector: string | GetContainer): Element | null {
   return selector();
 }
 
-export function PortalMixin({ afterPortal }: PortalMixinOptions) {
+export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
   return Vue.extend({
     props: {
       getContainer: [String, Function] as (PropType<string | GetContainer>)
@@ -32,6 +33,7 @@ export function PortalMixin({ afterPortal }: PortalMixinOptions) {
     methods: {
       portal() {
         const { getContainer } = this;
+        const el = ref ? this.$refs[ref] as HTMLElement : this.$el;
 
         let container;
         if (getContainer) {
@@ -40,8 +42,8 @@ export function PortalMixin({ afterPortal }: PortalMixinOptions) {
           container = this.$parent.$el;
         }
 
-        if (container && container !== this.$el.parentNode) {
-          container.appendChild(this.$el);
+        if (container && container !== el.parentNode) {
+          container.appendChild(el);
         }
 
         if (afterPortal) {

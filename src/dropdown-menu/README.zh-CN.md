@@ -133,6 +133,7 @@ export default {
 | options | 选项数组 | *Option[]* | `[]` | - |
 | disabled | 是否禁用菜单 | *boolean* | `false` | - |
 | title-class | 标题额外类名 | *string* | - | - |
+| get-container | 指定弹出菜单挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | 2.2.4 |
 
 ### DropdownItem Events
 
