@@ -75,6 +75,35 @@ test('checkbox group', async () => {
   await later();
   expect(wrapper.vm.result).toEqual(['b']);
 });
+test('checkbox group unbind', async () => {
+  const wrapper = mount({
+    template: `
+      <checkbox-group v-model="result" :max="2">
+        <checkbox v-for="item in list" :key="item" :name="item"></checkbox>
+        <checkbox :bind-parent='false' v-model="other"></checkbox>
+      </checkbox-group>
+    `,
+    components: {
+      Checkbox,
+      CheckboxGroup
+    },
+    data() {
+      return {
+        result: [],
+        list: ['a', 'b', 'c']
+      };
+    }
+  });
+
+  const icons = wrapper.findAll('.van-checkbox__icon');
+  icons.at(3).trigger('click');
+  await later();
+  expect(wrapper.vm.result).toEqual([]);
+
+  icons.at(3).trigger('click');
+  await later();
+  expect(wrapper.vm.result).toEqual([]);
+});
 
 test('click event', () => {
   const onClick = jest.fn();

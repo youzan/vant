@@ -79,6 +79,7 @@ export default {
   >
     复选框 {{ item }}
   </van-checkbox>
+  <vant-checkbox :bind-parent="false">不与复选框组绑定</vant-checkbox>
 </van-checkbox-group>
 ```
 
@@ -148,6 +149,7 @@ export default {
 | label-disabled | 是否禁用复选框文本点击 | `Boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
+| bind-parent | 与复选框组绑定 | `boolean` | `true` | xxx |
 
 ### CheckboxGroup API
 
