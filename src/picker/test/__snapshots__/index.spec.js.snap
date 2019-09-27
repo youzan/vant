@@ -28,6 +28,17 @@ exports[`column watch default index 2`] = `
 </div>
 `;
 
+exports[`columns-top、columns-bottom prop 1`] = `
+<div class="van-picker">
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+  <!---->Custom Columns Top<div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>Custom Columns Bottom
+  <!---->
+</div>
+`;
+
 exports[`not allow html 1`] = `
 <div class="van-picker">
   <!---->
