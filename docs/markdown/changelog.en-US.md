@@ -1,5 +1,13 @@
 # Changelog
 
+### [v2.2.4](https://github.com/youzan/vant/tree/v2.2.4) [Deprecated]
+`2019-09-28` 🇨🇳
+
+**Tips**
+
+- There is a style loss issue in this version, please use version 2.2.5
+
+
 ### [v2.2.3](https://github.com/youzan/vant/tree/v2.2.3)
 `2019-09-24`
 
