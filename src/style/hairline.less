@@ -1,3 +1,4 @@
+@import './var';
 @import './mixins/hairline';
 
 [class*='van-hairline'] {
@@ -18,25 +19,25 @@
   }
 
   &--top::after {
-    border-top-width: 1px;
+    border-top-width: @border-width-base;
   }
 
   &--left::after {
-    border-left-width: 1px;
+    border-left-width: @border-width-base;
   }
 
   &--right::after {
-    border-right-width: 1px;
+    border-right-width: @border-width-base;
   }
 
   &--bottom::after {
-    border-bottom-width: 1px;
+    border-bottom-width: @border-width-base;
   }
 
   &,
   &-unset {
     &--top-bottom::after {
-      border-width: 1px 0;
+      border-width: @border-width-base 0;
     }
   }
 
