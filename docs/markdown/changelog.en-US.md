@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.2.5](https://github.com/youzan/vant/tree/v2.2.5)
+`2019-09-28`
+
+**Features**
+
+- Picker: add columns-top slot [\#4607](https://github.com/youzan/vant/pull/4607)
+- Picker: add columns-bottom slot [\#4607](https://github.com/youzan/vant/pull/4607)
+- Overlay: add default slot [\#4571](https://github.com/youzan/vant/pull/4571)
+- Overlay: add custom-style prop [\#4572](https://github.com/youzan/vant/pull/4572)
+- Checkbox: add bind-group prop [\#4600](https://github.com/youzan/vant/pull/4600)
+- DropdownItem: add get-container prop [\#4611](https://github.com/youzan/vant/pull/4611)
+- Area: add columns-placeholder prop [\#4580](https://github.com/youzan/vant/pull/4580)
+- AddressEdit: add area-columns-placeholder props [\#4584](https://github.com/youzan/vant/pull/4584)
+
+**Bug Fixes**
+
+- fix Overlay type definition missing [\#4601](https://github.com/youzan/vant/pull/4601)
+- fix Swipe incorrect swipeTo animation [\#4570](https://github.com/youzan/vant/pull/4570)
+- fix Uploader incorrect preview index when upload same images [\#4577](https://github.com/youzan/vant/pull/4577)
+
+
 ### [v2.2.4](https://github.com/youzan/vant/tree/v2.2.4) [Deprecated]
 `2019-09-28` 🇨🇳
 

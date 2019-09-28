@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.5](https://github.com/youzan/vant/tree/v2.2.5)
+`2019-09-28`
+
+**Features**
+
+- Picker: 新增 columns-top 插槽 [\#4607](https://github.com/youzan/vant/pull/4607)
+- Picker: 新增 columns-bottom 插槽 [\#4607](https://github.com/youzan/vant/pull/4607)
+- Overlay: 新增 default 插槽 [\#4571](https://github.com/youzan/vant/pull/4571)
+- Overlay: 新增 custom-style 属性 [\#4572](https://github.com/youzan/vant/pull/4572)
+- Checkbox: 新增 bind-group 属性 [\#4600](https://github.com/youzan/vant/pull/4600)
+- DropdownItem: 新增 get-container 属性 [\#4611](https://github.com/youzan/vant/pull/4611)
+- Area: 新增 columns-placeholder 属性 [\#4580](https://github.com/youzan/vant/pull/4580)
+- AddressEdit: 新增 area-columns-placeholder 属性 [\#4584](https://github.com/youzan/vant/pull/4584)
+
+**Bug Fixes**
+
+- 修复 Overlay 未添加 TypeScript 定义的问题 [\#4601](https://github.com/youzan/vant/pull/4601)
+- 修复 Swipe swipeTo 方法在某些边界情况下过渡动画不正确的问题 [\#4570](https://github.com/youzan/vant/pull/4570)
+- 修复 Uploader 预览 URL 相同的图片时索引错误的问题 [\#4577](https://github.com/youzan/vant/pull/4577)
+
+
 ### [v2.2.4](https://github.com/youzan/vant/tree/v2.2.4) [已废弃]
 `2019-09-28` 🇨🇳
 
