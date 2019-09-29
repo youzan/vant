@@ -47,7 +47,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 ```html
 <van-area
   :area-list="areaList"
-  :columns-placeholder="['Choose']"
+  :columns-placeholder="['Choose', 'Choose', 'Choose']"
   title="Title"
 />
 ```
