@@ -39,14 +39,14 @@ export default {
       title2: '选中省市区',
       title3: '配置显示列',
       title4: '配置列占位提示文字',
-      columnsPlaceholder: ['请选择'],
+      columnsPlaceholder: ['请选择', '请选择', '请选择'],
       areaList: AreaList,
     },
     'en-US': {
       title2: 'Initial Value',
       title3: 'Columns Number',
       title4: 'Columns Placeholder',
-      columnsPlaceholder: ['Choose'],
+      columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
       areaList: AreaListEn,
     }
   },
