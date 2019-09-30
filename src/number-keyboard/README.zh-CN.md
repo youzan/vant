@@ -131,5 +131,6 @@ export default {
 
 | 名称 | 说明 |
 |------|------|
-| delete | 自定义删除按钮内容 |
+| delete | 自定义删除按键内容 |
+| extra-key | 自定义左下角按键内容
 | title-left | 自定义标题栏左侧内容 |

@@ -88,6 +88,16 @@ test('title-left slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('extra-key slot', () => {
+  const wrapper = mount(NumberKeyboard, {
+    scopedSlots: {
+      'extra-key': () => 'Custom Extra Key'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('hideOnClickOutside', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {

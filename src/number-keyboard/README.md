@@ -125,5 +125,6 @@ export default {
 
 | Name | Description |
 |------|------|
-| delete | Custom delete button content |
+| delete | Custom delete key content |
+| extra-key | Custom extra key content |
 | title-left | Custom title left content |
