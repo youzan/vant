@@ -163,7 +163,9 @@ export default {
 | confirm | Triggered when click confirm button | - |
 | cancel | Triggered when click cancel button | - |
 | open | Triggered when open Dialog | - |
+| opened | Triggered when opened Dialog | - |
 | close | Triggered when close Dialog | - |
+| closed | Triggered when closed Dialog | - |
 
 ### Slots
 
