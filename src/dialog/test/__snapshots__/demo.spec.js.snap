@@ -2,20 +2,10 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      提示弹窗
-    </span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      提示弹窗（无标题）
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      确认弹窗
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      异步关闭
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      组件调用
-    </span></button>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">提示弹窗</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">提示弹窗（无标题）</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">确认弹窗</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">异步关闭</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">组件调用</span></button>
     <div role="dialog" aria-labelledby="标题" class="van-dialog" style="display: none;" name="van-dialog-bounce">
       <div class="van-dialog__header">标题</div>
       <div class="van-dialog__content"><img src="https://img.yzcdn.cn/vant/apple-3.jpg"></div>

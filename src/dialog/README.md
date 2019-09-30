@@ -162,6 +162,8 @@ export default {
 |------|------|------|
 | confirm | Triggered when click confirm button | - |
 | cancel | Triggered when click cancel button | - |
+| open | Triggered when open Popup | - |
+| close | Triggered when close Popup | - |
 
 ### Slots
 
