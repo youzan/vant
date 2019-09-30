@@ -123,7 +123,7 @@ Vue.use(Cell).use(CellGroup);
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
 | border | 是否显示内边框 | *boolean* | `true` | - |
-| replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
 | clickable | 是否开启点击反馈 | *boolean* | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |
 | required | 是否显示表单必填星号 | *boolean* | `false` | - |
