@@ -48,14 +48,19 @@ async function dest(output, paths) {
 // compile component css
 async function compile() {
   let codes;
-  const paths = await glob(['./es/**/*.less', './lib/**/*.less'], { absolute: true });
+  try {
+    const paths = await glob(['./es/**/*.less', './lib/**/*.less'], { absolute: true });
 
-  codes = await Promise.all(paths.map(path => fs.readFile(path, 'utf-8')));
-  codes = await compileLess(codes, paths);
-  codes = await compilePostcss(codes, paths);
-  codes = await compileCsso(codes);
+    codes = await Promise.all(paths.map(path => fs.readFile(path, 'utf-8')));
+    codes = await compileLess(codes, paths);
+    codes = await compilePostcss(codes, paths);
+    codes = await compileCsso(codes);
 
-  await dest(codes, paths);
+    await dest(codes, paths);
+  } catch (err) {
+    console.log(err);
+    process.exit(1);
+  }
 }
 
 compile();

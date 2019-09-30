@@ -16,15 +16,19 @@ const tasks = [
   'cross-env NODE_ENV=production webpack -p --color --config build/webpack.pkg.js'
 ];
 
-tasks.forEach(task => {
+tasks.every(task => {
   signale.start(task);
 
   const interactive = new Signale({ interactive: true });
   interactive.pending(task);
+
   const result = shell.exec(`${task} --silent`);
+
   if (result.code !== 0) {
     interactive.error(task);
-  } else {
-    interactive.success(task);
+    return false;
   }
+
+  interactive.success(task);
+  return true;
 });
