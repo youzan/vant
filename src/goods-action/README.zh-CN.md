@@ -87,7 +87,7 @@ export default {
 | info | 图标右上角徽标的内容 | *string \| number* | - | - |
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionButton Props
 
@@ -100,7 +100,7 @@ export default {
 | loading | 是否显示为加载状态 | *boolean* | `false` | - | - |
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| replace | 跳转时是否替换当前页面历史 | *boolean* | `false` | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
 
 ### GoodsActionIcon Slots
 
