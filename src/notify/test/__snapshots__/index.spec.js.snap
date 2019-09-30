@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create a notify 1`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="color: rgb(255, 255, 255); z-index: 2001;" name="van-popup-slide-top">test</div>`;
+exports[`create a notify 1`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="transition-duration: 0.2s; color: rgb(255, 255, 255); z-index: 2001;" name="van-popup-slide-top">test</div>`;
 
-exports[`notify disappear 1`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="color: red; z-index: 2001; background: blue;" name="van-popup-slide-top">test</div>`;
+exports[`notify disappear 1`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="transition-duration: 0.2s; color: red; z-index: 2001; background: blue;" name="van-popup-slide-top">test</div>`;
 
-exports[`notify disappear 2`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="color: red; z-index: 2001; background: blue; display: none;" name="van-popup-slide-top">test</div>`;
+exports[`notify disappear 2`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="transition-duration: 0.2s; color: red; z-index: 2001; background: blue; display: none;" name="van-popup-slide-top">test</div>`;
 
-exports[`notify disappear 3`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="color: rgb(255, 255, 255); z-index: 2002;" name="van-popup-slide-top">text2</div>`;
+exports[`notify disappear 3`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="transition-duration: 0.2s; color: rgb(255, 255, 255); z-index: 2002;" name="van-popup-slide-top">text2</div>`;
 
-exports[`notify disappear 4`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="color: rgb(255, 255, 255); z-index: 2002; display: none;" name="van-popup-slide-top">text2</div>`;
+exports[`notify disappear 4`] = `<div class="van-popup van-popup--top van-notify van-notify--danger" style="transition-duration: 0.2s; color: rgb(255, 255, 255); z-index: 2002; display: none;" name="van-popup-slide-top">text2</div>`;
 
-exports[`type prop 1`] = `<div class="van-popup van-popup--top van-notify van-notify--primary" style="color: rgb(255, 255, 255); z-index: 2001;" name="van-popup-slide-top">test</div>`;
+exports[`type prop 1`] = `<div class="van-popup van-popup--top van-notify van-notify--primary" style="transition-duration: 0.2s; color: rgb(255, 255, 255); z-index: 2001;" name="van-popup-slide-top">test</div>`;
