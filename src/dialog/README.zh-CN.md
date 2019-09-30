@@ -162,6 +162,7 @@ export default {
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lockScroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | 2.2.6 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` | - |
 
 ### Props
@@ -185,6 +186,7 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | 2.2.6 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
 
 ### Events
