@@ -33,6 +33,12 @@ export default {
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
+### Custom Shape
+
+```html
+<van-checkbox v-model="checked" shape="square">Checkbox</van-checkbox>
+```
+
 ### Custom Color
 
 ```html

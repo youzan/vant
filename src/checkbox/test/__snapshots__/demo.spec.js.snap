@@ -24,6 +24,14 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
+      <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"><i class="van-icon van-icon-success">
+          <!----></i></div><span class="van-checkbox__label">
+      自定义颜色
+    </span>
+    </div>
+  </div>
+  <div>
+    <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: #07c160; background-color: rgb(7, 193, 96);">
           <!----></i></div><span class="van-checkbox__label">
       自定义颜色

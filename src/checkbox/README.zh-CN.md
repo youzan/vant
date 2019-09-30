@@ -13,7 +13,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 
 ### 基础用法
 
-通过`v-model`绑定 checkbox 的勾选状态
+通过`v-model`绑定复选框的勾选状态
 
 ```html
 <van-checkbox v-model="checked">复选框</van-checkbox>
@@ -35,6 +35,14 @@ export default {
 
 ```html
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
+```
+
+### 自定义形状
+
+将`shape`属性设置为`square`，复选框的形状会变成方形
+
+```html
+<van-checkbox v-model="checked" shape="square">复选框</van-checkbox>
 ```
 
 ### 自定义颜色
