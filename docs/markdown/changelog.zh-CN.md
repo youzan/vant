@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.27](https://github.com/youzan/vant/tree/v1.6.27)
+`2019-09-30`
+
+**Improvements**
+
+- Area: 优化 area-columns-placeholder 属性交互
+
+
 ## [v1.6.26](https://github.com/youzan/vant/tree/v1.6.26)
 `2019-09-27`
 
