@@ -31,11 +31,15 @@ export default {
 
 ### 禁用状态
 
+通过设置`disabled`属性可以禁用复选框
+
 ```html
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
 
 ### 自定义颜色
+
+通过`checked-color`属性可以自定义选中状态下的图标颜色
 
 ```html
 <van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
@@ -51,7 +55,7 @@ export default {
   <img
     slot="icon"
     slot-scope="props"
-    :src="props.checked ? icon.active : icon.inactive"
+    :src="props.checked ? activeIcon : inactiveIcon"
   >
 </van-checkbox>
 ```
@@ -60,27 +64,21 @@ export default {
 export default {
   data() {
     checked: true,
-    icon: {
-      active: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-    }
+    activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
   }
 }
 ```
 
 ### 复选框组
 
-与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
+复选框可以与复选框组一起使用，选中值是一个数组，通过`v-model`绑定在`CheckboxGroup`上，数组中的值为选中的复选框的`name`
 
 ```html
 <van-checkbox-group v-model="result">
-  <van-checkbox
-    v-for="(item, index) in list"
-    :key="item"
-    :name="item"
-  >
-    复选框 {{ item }}
-  </van-checkbox>
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+  <van-checkbox name="c">复选框 c</van-checkbox>
 </van-checkbox-group>
 ```
 
@@ -88,7 +86,6 @@ export default {
 export default {
   data() {
     return {
-      list: ['a', 'b', 'c'],
       result: ['a', 'b']
     };
   }
@@ -97,21 +94,53 @@ export default {
 
 ### 设置最大可选数
 
+通过`max`属性可以限制最大可选数
+
 ```html
 <van-checkbox-group v-model="result" :max="2">
-  <van-checkbox
-    v-for="(item, index) in list"
-    :key="item"
-    :name="item"
-  >
-    复选框 {{ item }}
-  </van-checkbox>
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+  <van-checkbox name="c">复选框 c</van-checkbox>
 </van-checkbox-group>
+```
+
+### 全选与反选
+
+通过`CheckboxGroup`实例上的`toggleAll`方法可以实现全选与反选
+
+```html
+<van-checkbox-group v-model="result" ref="checkboxGroup">
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+  <van-checkbox name="c">复选框 c</van-checkbox>
+</van-checkbox-group>
+
+<van-button type="primary" @click="checkAll">全选</van-button>
+<van-button type="info" @click="toggleAll">反选</van-button>
+```
+
+```js
+export default {
+  data() {
+    return {
+      result: []
+    }
+  },
+
+  methods: {
+    checkAll() {
+      this.$refs.checkboxGroup.toggleAll(true);
+    },
+    toggleAll() {
+      this.$refs.checkboxGroup.toggleAll();
+    }
+  }
+}
 ```
 
 ### 搭配单元格组件使用
 
-此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
+此时你需要再引入`Cell`和`CellGroup`组件，并通过`Checkbox`实例上的 toggle 方法触发切换
 
 ```html
 <van-checkbox-group v-model="result">
@@ -189,10 +218,18 @@ export default {
 | default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
 
-### Checkbox 方法
+### CheckboxGroup 方法
 
-通过 ref 可以获取到 checkbox 实例并调用实例方法
+通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggle | 切换选中状态 | - | - |
+| toggleAll | 切换所有复选框的选中状态 | checked?: boolean | - |
+
+### Checkbox 方法
+
+通过 ref 可以获取到 Checkbox 实例并调用实例方法
+
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| toggle | 切换选中状态 | checked?: boolean | - |

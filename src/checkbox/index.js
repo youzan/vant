@@ -33,9 +33,7 @@ export default createComponent({
   },
 
   methods: {
-    toggle() {
-      const checked = !this.checked;
-
+    toggle(checked = !this.checked) {
       // When toggle method is called multiple times at the same time,
       // only the last call is valid.
       // This is a hack for usage inside Cell.
