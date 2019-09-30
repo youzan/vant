@@ -1,51 +1,28 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-radio-group
-        v-model="radio1"
-        class="demo-radio-group"
-      >
+      <van-radio-group v-model="radio1" class="demo-radio-group">
         <van-radio name="1">{{ $t('radio') }} 1</van-radio>
         <van-radio name="2">{{ $t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-radio-group
-        v-model="radio2"
-        class="demo-radio-group"
-        disabled
-      >
+      <van-radio-group v-model="radio2" class="demo-radio-group" disabled>
         <van-radio name="1">{{ $t('radio') }} 1</van-radio>
         <van-radio name="2">{{ $t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-radio-group
-        v-model="radio3"
-        class="demo-radio-group"
-      >
-        <van-radio
-          name="1"
-          checked-color="#07c160"
-        >
-          {{ $t('radio') }} 1
-        </van-radio>
-        <van-radio
-          name="2"
-          checked-color="#07c160"
-        >
-          {{ $t('radio') }} 2
-        </van-radio>
+      <van-radio-group v-model="radio3" class="demo-radio-group">
+        <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
+        <van-radio name="2" checked-color="#07c160">{{ $t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 
     <demo-block :title="$t('customIcon')">
-      <van-radio-group
-        v-model="radio4"
-        class="demo-radio-group"
-      >
+      <van-radio-group v-model="radio4" class="demo-radio-group">
         <van-radio name="1">
           {{ $t('radio') }} 1
           <template #icon="{ checked }">
@@ -64,25 +41,11 @@
     <demo-block :title="$t('withCell')">
       <van-radio-group v-model="radio5">
         <van-cell-group>
-          <van-cell
-            clickable
-            :title="$t('radio') + 1"
-            @click="radio5 = '1'"
-          >
-            <van-radio
-              name="1"
-              slot="right-icon"
-            />
+          <van-cell clickable :title="$t('radio') + 1" @click="radio5 = '1'">
+            <van-radio name="1" slot="right-icon" />
           </van-cell>
-          <van-cell
-            clickable
-            :title="$t('radio') + 2"
-            @click="radio5 = '2'"
-          >
-            <van-radio
-              name="2"
-              slot="right-icon"
-            />
+          <van-cell clickable :title="$t('radio') + 2" @click="radio5 = '2'">
+            <van-radio name="2" slot="right-icon" />
           </van-cell>
         </van-cell-group>
       </van-radio-group>

@@ -62,7 +62,7 @@ Use icon slot to custom icon
     <img
       slot="icon"
       slot-scope="props"
-      :src="props.checked ? icon.active : icon.inactive"
+      :src="props.checked ? activeIcon : inactiveIcon"
     >
   </van-radio>
   <van-radio name="2">
@@ -70,7 +70,7 @@ Use icon slot to custom icon
     <img
       slot="icon"
       slot-scope="props"
-      :src="props.checked ? icon.active : icon.inactive"
+      :src="props.checked ? activeIcon : inactiveIcon"
     >
   </van-radio>
 </van-radio-group>
@@ -81,10 +81,8 @@ export default {
   data() {
     return {
       radio: '1',
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-      }
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
     };
   }
 };

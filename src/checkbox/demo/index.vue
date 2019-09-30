@@ -13,6 +13,12 @@
       </van-checkbox>
     </demo-block>
 
+    <demo-block :title="$t('customShape')">
+      <van-checkbox v-model="checkboxShape" shape="square">
+        {{ $t('customColor') }}
+      </van-checkbox>
+    </demo-block>
+
     <demo-block :title="$t('customColor')">
       <van-checkbox v-model="checkbox2" checked-color="#07c160">
         {{ $t('customColor') }}
@@ -84,6 +90,7 @@ export default {
       checkbox: '复选框',
       customIcon: '自定义图标',
       customColor: '自定义颜色',
+      customShape: '自定义形状',
       title3: '复选框组',
       title4: '设置最大可选数',
       title5: '搭配单元格组件使用',
@@ -95,6 +102,7 @@ export default {
       checkbox: 'Checkbox',
       customIcon: 'Custom Icon',
       customColor: 'Custom Color',
+      customShape: 'Custom Shape',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
       title5: 'Inside a Cell',
@@ -109,6 +117,7 @@ export default {
       checkbox1: true,
       checkbox2: true,
       checkbox3: true,
+      checkboxShape: true,
       list: [
         'a',
         'b',

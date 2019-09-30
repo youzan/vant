@@ -35,7 +35,7 @@ export default {
 
 ### 禁用状态
 
-通过`disabled`属性禁止选项切换，在`van-radio`上设置`disabled`可以禁用单个选项
+通过`disabled`属性禁止选项切换，在`Radio`上设置`disabled`可以禁用单个选项
 
 ```html
 <van-radio-group v-model="radio" disabled>
@@ -66,7 +66,7 @@ export default {
     <img
       slot="icon"
       slot-scope="props"
-      :src="props.checked ? icon.active : icon.inactive"
+      :src="props.checked ? activeIcon : inactiveIcon"
     >
   </van-radio>
   <van-radio name="2">
@@ -74,7 +74,7 @@ export default {
     <img
       slot="icon"
       slot-scope="props"
-      :src="props.checked ? icon.active : icon.inactive"
+      :src="props.checked ? activeIcon : inactiveIcon"
     >
   </van-radio>
 </van-radio-group>
@@ -83,18 +83,16 @@ export default {
 ```js
 export default {
   data() {
-    radio: '1'
-    icon: {
-      active: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-    }
+    radio: '1',
+    activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
   }
 }
 ```
 
 ### 与 Cell 组件一起使用
 
-此时你需要再引入`Cell`和`CellGroup`组件。
+此时你需要再引入`Cell`和`CellGroup`组件
 
 ```html
 <van-radio-group v-model="radio">
