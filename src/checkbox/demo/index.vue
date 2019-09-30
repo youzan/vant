@@ -5,25 +5,16 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-checkbox
-        :value="false"
-        disabled
-      >
+      <van-checkbox :value="false" disabled>
         {{ $t('checkbox') }}
       </van-checkbox>
-      <van-checkbox
-        :value="true"
-        disabled
-      >
+      <van-checkbox :value="true" disabled>
         {{ $t('checkbox') }}
       </van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-checkbox
-        v-model="checkbox2"
-        checked-color="#07c160"
-      >
+      <van-checkbox v-model="checkbox2" checked-color="#07c160">
         {{ $t('customColor') }}
       </van-checkbox>
     </demo-block>
@@ -32,36 +23,38 @@
       <van-checkbox v-model="checkbox3">
         {{ $t('customIcon') }}
         <template #icon="{ checked }">
-          <img :src="checked ? icon.active : icon.inactive">
+          <img :src="checked ? activeIcon : inactiveIcon">
         </template>
       </van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('title3')">
       <van-checkbox-group v-model="result">
-        <van-checkbox
-          v-for="(item, index) in list"
-          :key="index"
-          :name="item"
-        >
-          {{ $t('checkbox') }} {{ item }}
-        </van-checkbox>
+        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="c">{{ $t('checkbox') }} c</van-checkbox>
       </van-checkbox-group>
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-checkbox-group
-        v-model="result2"
-        :max="2"
-      >
-        <van-checkbox
-          v-for="(item, index) in list"
-          :key="index"
-          :name="item"
-        >
-          {{ $t('checkbox') }} {{ item }}
-        </van-checkbox>
+      <van-checkbox-group v-model="result2" :max="2">
+        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="c">{{ $t('checkbox') }} c</van-checkbox>
       </van-checkbox-group>
+    </demo-block>
+
+    <demo-block v-if="!$attrs.weapp" :title="$t('toggleAll')">
+      <van-checkbox-group v-model="checkAllResult" ref="group">
+        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="c">{{ $t('checkbox') }} c</van-checkbox>
+      </van-checkbox-group>
+
+      <div class="demo-checkbox-buttons">
+        <van-button type="primary" @click="checkAll">{{ $t('checkAll') }}</van-button>
+        <van-button type="info" @click="toggleAll">{{ $t('inverse') }}</van-button>
+      </div>
     </demo-block>
 
     <demo-block :title="$t('title5')">
@@ -74,11 +67,9 @@
             :title="$t('checkbox') + item"
             @click="toggle(index)"
           >
-            <van-checkbox
-              ref="checkboxes"
-              slot="right-icon"
-              :name="item"
-            />
+            <template #right-icon>
+              <van-checkbox ref="checkboxes" :name="item" />
+            </template>
           </van-cell>
         </van-cell-group>
       </van-checkbox-group>
@@ -95,7 +86,10 @@ export default {
       customColor: '自定义颜色',
       title3: '复选框组',
       title4: '设置最大可选数',
-      title5: '搭配单元格组件使用'
+      title5: '搭配单元格组件使用',
+      toggleAll: '全选与反选',
+      checkAll: '全选',
+      inverse: '反选'
     },
     'en-US': {
       checkbox: 'Checkbox',
@@ -103,7 +97,10 @@ export default {
       customColor: 'Custom Color',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
-      title5: 'Inside a Cell'
+      title5: 'Inside a Cell',
+      toggleAll: 'Toggle All',
+      checkAll: 'Check All',
+      inverse: 'Inverse'
     }
   },
 
@@ -120,22 +117,31 @@ export default {
       result: ['a', 'b'],
       result2: [],
       result3: [],
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-      }
+      checkAllResult: [],
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
     };
   },
 
   methods: {
     toggle(index) {
       this.$refs.checkboxes[index].toggle();
+    },
+
+    checkAll() {
+      this.$refs.group.toggleAll(true);
+    },
+
+    toggleAll() {
+      this.$refs.group.toggleAll();
     }
   }
 };
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-checkbox {
   .van-checkbox {
     margin: 10px 0 0 20px;
@@ -149,6 +155,14 @@ export default {
 
   img {
     height: 20px;
+  }
+
+  &-buttons {
+    margin-top: @padding-md;
+
+    .van-button {
+      margin-left: @padding-md;
+    }
   }
 }
 </style>

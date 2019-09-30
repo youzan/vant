@@ -52,13 +52,14 @@ test('checkbox group', async () => {
   const wrapper = mount({
     template: `
       <van-checkbox-group v-model="result" :max="2">
-        <van-checkbox v-for="item in list" :key="item" :name="item"></van-checkbox>
+        <van-checkbox name="a" />
+        <van-checkbox name="b" />
+        <van-checkbox name="c" />
       </van-checkbox-group>
     `,
     data() {
       return {
-        result: [],
-        list: ['a', 'b', 'c']
+        result: []
       };
     }
   });
@@ -154,4 +155,38 @@ test('bind-group prop', async () => {
   await later();
   expect(wrapper.vm.result).toEqual([]);
   expect(wrapper.vm.value).toBeTruthy();
+});
+
+test('toggleAll method', async () => {
+  const wrapper = mount({
+    template: `
+      <van-checkbox-group v-model="result" ref="group">
+        <van-checkbox name="a" />
+        <van-checkbox name="b" />
+        <van-checkbox name="c" />
+      </van-checkbox-group>
+    `,
+    data() {
+      return {
+        result: ['a']
+      };
+    },
+    methods: {
+      toggleAll(checked) {
+        this.$refs.group.toggleAll(checked);
+      }
+    }
+  });
+
+  wrapper.vm.toggleAll();
+  await later();
+  expect(wrapper.vm.result).toEqual(['b', 'c']);
+
+  wrapper.vm.toggleAll(false);
+  await later();
+  expect(wrapper.vm.result).toEqual([]);
+
+  wrapper.vm.toggleAll(true);
+  await later();
+  expect(wrapper.vm.result).toEqual(['a', 'b', 'c']);
 });

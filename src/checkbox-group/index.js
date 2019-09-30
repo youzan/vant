@@ -23,6 +23,14 @@ export default createComponent({
     }
   },
 
+  methods: {
+    toggleAll(checked) {
+      this.children.forEach(item => {
+        item.toggle(checked);
+      });
+    }
+  },
+
   render() {
     return <div class={bem()}>{this.slots()}</div>;
   }
