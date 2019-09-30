@@ -19,5 +19,5 @@ then
   git push origin 1.x
   git push origin refs/tags/v$VERSION
 
-  npm publish
+  npm publish --tag latest-v1
 fi
