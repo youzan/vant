@@ -159,7 +159,7 @@ export default {
 | cancelButtonColor | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
-| closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | *boolean* | `false` | - |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lockScroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` | - |
@@ -182,7 +182,7 @@ export default {
 | cancel-button-color | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
@@ -195,6 +195,8 @@ export default {
 |------|------|------|
 | confirm | 点击确认按钮时触发 | - |
 | cancel | 点击取消按钮时触发 | - |
+| open | 打开弹窗时触发 | - |
+| close | 关闭弹窗时触发 | - |
 
 ### Slots
 
