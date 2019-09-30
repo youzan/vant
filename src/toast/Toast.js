@@ -24,6 +24,10 @@ export default createComponent({
       type: String,
       default: 'middle'
     },
+    transition: {
+      type: String,
+      default: 'van-fade'
+    },
     lockScroll: {
       type: Boolean,
       default: false
@@ -109,7 +113,7 @@ export default createComponent({
 
     return (
       <transition
-        name="van-fade"
+        name={this.transition}
         onAfterEnter={this.onAfterEnter}
         onAfterLeave={this.onAfterLeave}
       >
