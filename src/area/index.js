@@ -4,6 +4,8 @@ import { pickerProps } from '../picker/shared';
 
 const [createComponent, bem] = createNamespace('area');
 
+const COLUMNSPLACEHOLDERCODE = '000000';
+
 function isOverseaCode(code) {
   return code[0] === '9';
 }
@@ -99,14 +101,6 @@ export default createComponent({
         name: list[listCode]
       }));
 
-      if (this.columnsPlaceholder.length) {
-        // set columns placeholder
-        result.unshift({
-          code: '000000',
-          name: this.typeToColumnsPlaceholder[type]
-        });
-      }
-
       if (code) {
         // oversea code
         if (this.isOverseaCode(code) && type === 'city') {
@@ -114,6 +108,15 @@ export default createComponent({
         }
 
         result = result.filter(item => item.code.indexOf(code) === 0);
+      }
+
+      if (this.typeToColumnsPlaceholder[type] && result.length) {
+        // set columns placeholder
+        const codeFill = type === 'province' ? '' : type === 'city' ? COLUMNSPLACEHOLDERCODE.slice(2, 4) : COLUMNSPLACEHOLDERCODE.slice(4, 6);
+        result.unshift({
+          code: `${code}${codeFill}`,
+          name: this.typeToColumnsPlaceholder[type]
+        });
       }
 
       return result;
@@ -140,19 +143,28 @@ export default createComponent({
       return 0;
     },
 
-    onChange(picker, values, index) {
-      this.code = values[index].code;
-      this.setValues();
-      this.$emit('change', picker, picker.getValues(), index);
-    },
-
-    onConfirm(values, index) {
-      values.forEach(value => {
-        if (value.code === '000000') {
+    // parse output columns data
+    parseOutputValues(values) {
+      return values.map((value = {}, index) => {
+        value = JSON.parse(JSON.stringify(value));
+        if (!value.code || value.name === this.columnsPlaceholder[index]) {
           value.code = '';
           value.name = '';
         }
+        return value;
       });
+    },
+
+    onChange(picker, values, index) {
+      this.code = values[index].code;
+      this.setValues();
+      let getValues = picker.getValues();
+      getValues = this.parseOutputValues(getValues);
+      this.$emit('change', picker, getValues, index);
+    },
+
+    onConfirm(values, index) {
+      values = this.parseOutputValues(values);
       this.setValues();
       this.$emit('confirm', values, index);
     },
@@ -162,7 +174,7 @@ export default createComponent({
 
       if (!code) {
         if (this.columnsPlaceholder.length) {
-          code = '000000';
+          code = COLUMNSPLACEHOLDERCODE;
         } else if (Object.keys(this.county)[0]) {
           code = Object.keys(this.county)[0];
         } else {
