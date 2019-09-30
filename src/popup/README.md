@@ -93,22 +93,13 @@ Use `get-container` prop to specify mount location
 
 ```html
 <!-- mount to body -->
-<van-popup
-  v-model="show"
-  get-container="body"
-/>
+<van-popup v-model="show" get-container="body" />
 
 <!-- mount to #app -->
-<van-popup
-  v-model="show"
-  get-container="#app"
-/>
+<van-popup v-model="show" get-container="#app" />
 
 <!-- Specify the mount location by function -->
-<van-popup
-  v-model="show"
-  :get-container="getContainer"
-/>
+<van-popup v-model="show" :get-container="getContainer" />
 ```
 
 ```js
@@ -140,7 +131,7 @@ export default {
 | closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
 | close-icon | Close icon name | *string* | `cross` | 2.2.0 |
 | close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
-| transition | Transition | *string* | `popup-slide` | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | `popup-slide` | - |
 | get-container | Return the mount node for Popup | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 
