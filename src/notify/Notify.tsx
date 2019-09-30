@@ -37,6 +37,7 @@ function Notify(
       style={style}
       position="top"
       overlay={false}
+      duration={0.2}
       lockScroll={false}
       class={[bem([props.type]), props.className]}
       {...inherit(ctx, true)}
