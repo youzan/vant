@@ -7,6 +7,7 @@ export type DialogOptions = {
   overlay?: boolean;
   className?: any;
   lockScroll?: boolean;
+  transition?: string;
   messageAlign?: string;
   closeOnPopstate?: boolean;
   cancelButtonText?: string;

@@ -133,6 +133,7 @@ export default {
 | closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lockScroll | Whether to lock body scroll | *boolean* | `true` | - |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | 2.2.6 |
 | getContainer | Return the mount node for Dialog | *string \| () => Element* | `body` | - |
 
 ### Props
@@ -154,6 +155,7 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | 2.2.6 |
 | get-container | Return the mount node for Dialog | *string \| () => Element* | - | - |
 
 ### Events
