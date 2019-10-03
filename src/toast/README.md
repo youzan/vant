@@ -127,4 +127,5 @@ toast2.clear();
 | className | Custom className | *any* | - | - |
 | onOpened | Callback function after opened | *Function* | - | - |
 | onClose | Callback function after close | *Function* | - | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | 2.2.6 |
 | getContainer | Return the mount node for Toast | *string \| () => Element* | `body` | - |

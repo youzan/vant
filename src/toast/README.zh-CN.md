@@ -127,4 +127,5 @@ toast2.clear();
 | className | 自定义类名 | *any* | - | - |
 | onOpened | 完全展示后的回调函数 | *Function* | - | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | 2.2.6 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` | - |
