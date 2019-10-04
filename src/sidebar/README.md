@@ -42,6 +42,16 @@ export default {
 </van-sidebar>
 ```
 
+### Disabled
+
+```html
+<van-sidebar v-model="activeKey">
+  <van-sidebar-item title="Title" />
+  <van-sidebar-item title="Title" disabled />
+  <van-sidebar-item title="Title" />
+</van-sidebar>
+```
+
 ## API
 
 ### Sidebar Props

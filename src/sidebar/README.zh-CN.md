@@ -46,6 +46,18 @@ export default {
 </van-sidebar>
 ```
 
+### 禁用选项
+
+通过`disabled`属性禁用选项
+
+```html
+<van-sidebar v-model="activeKey">
+  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名称" disabled />
+  <van-sidebar-item title="标签名称" />
+</van-sidebar>
+```
+
 ## API
 
 ### Sidebar Props
