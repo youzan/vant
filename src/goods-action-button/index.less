@@ -16,16 +16,16 @@
 
   &--last {
     margin-right: 5px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-top-right-radius: @goods-action-button-height / 2;
+    border-bottom-right-radius: @goods-action-button-height / 2;
   }
 
   &--warning {
-    background: linear-gradient(to right, #ffd01e, #ff8917);
+    background: @goods-action-button-warning-color;
   }
 
   &--danger {
-    background: linear-gradient(to right, #ff6034, #ee0a24);
+    background: @goods-action-button-danger-color;
   }
 
   @media (max-width: 321px) {
