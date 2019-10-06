@@ -30,7 +30,8 @@ List 组件通过`loading`和`finished`两个变量控制加载状态，当组�
     v-for="item in list"
     :key="item"
     :title="item"
-  />
+  >
+  </van-cell>
 </van-list>
 ```
 
