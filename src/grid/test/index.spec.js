@@ -38,3 +38,15 @@ test('sqaure and set gutter', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('icon-size prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-grid icon-size="10">
+        <van-grid-item icon="success" />
+      </van-grid>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
