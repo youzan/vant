@@ -125,6 +125,7 @@ Vue.use(Grid).use(GridItem);
 | center | 是否将格子内容居中显示 | *boolean* | `true` | - |
 | square | 是否将格子固定为正方形 | *boolean* | `false` | - |
 | clickable | 是否开启格子点击反馈 | *boolean* | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | *string \| number* | `28px` | 2.2.6 |
 
 ### GridItem Props
 

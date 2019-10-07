@@ -107,6 +107,7 @@ Vue.use(Grid).use(GridItem);
 | center | Whether to center content | *boolean* | `true` | - |
 | square | Whether to be square shape | *boolean* | `false` | - |
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
+| icon-size | Icon size | *string \| number* | `28px` | 2.2.6 |
 
 ### GridItem Props
 

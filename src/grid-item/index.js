@@ -71,7 +71,13 @@ export default createComponent({
       return [
         this.slots('icon') ||
           (this.icon && (
-            <Icon name={this.icon} dot={this.dot} info={this.info} class={bem('icon')} />
+            <Icon
+              name={this.icon}
+              dot={this.dot}
+              info={this.info}
+              size={this.parent.iconSize}
+              class={bem('icon')}
+            />
           )),
         this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>)
       ];

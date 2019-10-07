@@ -10,6 +10,7 @@ export default createComponent({
   props: {
     square: Boolean,
     gutter: [Number, String],
+    iconSize: [Number, String],
     clickable: Boolean,
     columnNum: {
       type: Number,
