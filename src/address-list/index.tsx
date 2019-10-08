@@ -63,14 +63,7 @@ function AddressList(
   return (
     <div class={bem()} {...inherit(ctx)}>
       {slots.top && slots.top()}
-      <RadioGroup
-        value={props.value}
-        onInput={(event: Event) => {
-          emit(ctx, 'input', event);
-        }}
-      >
-        {List}
-      </RadioGroup>
+      <RadioGroup value={props.value}>{List}</RadioGroup>
       {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
       {DisabledList}
       {slots.default && slots.default()}
