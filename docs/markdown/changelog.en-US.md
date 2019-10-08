@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.2.6](https://github.com/youzan/vant/tree/v2.2.6)
+`2019-10-08`
+
+**Features**
+
+- Grid: add icon-size prop [\#4656](https://github.com/youzan/vant/pull/4656)
+- Toast: add transition option [\#4638](https://github.com/youzan/vant/pull/4638)
+- Dialog: add transition prop [\#4636](https://github.com/youzan/vant/pull/4636)
+- Dialog: add open、close event [\#4633](https://github.com/youzan/vant/pull/4633)
+- Dialog: add opened、closed event [\#4634](https://github.com/youzan/vant/pull/4634)
+- NumberKeyboard: add extra-key slot [\#4644](https://github.com/youzan/vant/pull/4644)
+- CheckboxGroup: add toggleAll method [\#4640](https://github.com/youzan/vant/pull/4640)
+
+**Bug Fixes**
+
+- fix AddressList input event triggered twice [\#4659](https://github.com/youzan/vant/pull/4659)
+- fix Tabs incorrect padding when type is card [\#4658](https://github.com/youzan/vant/pull/4658)
+- fix GoodsAction incorrect border radius [\#4653](https://github.com/youzan/vant/pull/4653)
+- fix NumberKeyboard compatible with Vue 2.6 event bubble bug [\#4632](https://github.com/youzan/vant/pull/4632)
+
+
 ### [v2.2.5](https://github.com/youzan/vant/tree/v2.2.5)
 `2019-09-28`
 

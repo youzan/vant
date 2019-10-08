@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.6](https://github.com/youzan/vant/tree/v2.2.6)
+`2019-10-08`
+
+**Features**
+
+- Grid: 新增 icon-size 属性 [\#4656](https://github.com/youzan/vant/pull/4656)
+- Toast: 新增 transition 属性 [\#4638](https://github.com/youzan/vant/pull/4638)
+- Dialog: 新增 transition 属性 [\#4636](https://github.com/youzan/vant/pull/4636)
+- Dialog: 新增 open、close 事件 [\#4633](https://github.com/youzan/vant/pull/4633)
+- Dialog: 新增 opened、closed 事件 [\#4634](https://github.com/youzan/vant/pull/4634)
+- NumberKeyboard: 新增 extra-key 插槽 [\#4644](https://github.com/youzan/vant/pull/4644)
+- CheckboxGroup: 新增 toggleAll 方法 [\#4640](https://github.com/youzan/vant/pull/4640)
+
+**Bug Fixes**
+
+- 修复 GoodsAction 圆角错误的问题 [\#4653](https://github.com/youzan/vant/pull/4653)
+- 修复 Tabs 类型为 card 时上边距错误的问题 [\#4658](https://github.com/youzan/vant/pull/4658)
+- 修复 AddressList input 事件重复触发的问题 [\#4659](https://github.com/youzan/vant/pull/4659)
+- 修复 NumberKeyboard 在 Vue 2.6 下的兼容问题 [\#4632](https://github.com/youzan/vant/pull/4632)
+
+
 ### [v2.2.5](https://github.com/youzan/vant/tree/v2.2.5)
 `2019-09-28`
 
