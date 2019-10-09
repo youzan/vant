@@ -288,7 +288,6 @@ export default createComponent({
         arrowDirection={this.arrowDirection}
         class={bem({
           error: this.error,
-          disabled: this.$attrs.disabled,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize
         })}
