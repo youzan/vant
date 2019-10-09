@@ -56,17 +56,15 @@ function TreeSelect(
       : activeId === id;
   }
 
-  const Navs = items
-    .filter(item => item.text)
-    .map(item => (
-      <SidebarItem
-        dot={item.dot}
-        info={item.info}
-        title={item.text}
-        disabled={item.disabled}
-        class={bem('nav-item')}
-      />
-    ));
+  const Navs = items.map(item => (
+    <SidebarItem
+      dot={item.dot}
+      info={item.info}
+      title={item.text}
+      disabled={item.disabled}
+      class={bem('nav-item')}
+    />
+  ));
 
   function Content() {
     if (slots.content) {
