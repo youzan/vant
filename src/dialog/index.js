@@ -53,6 +53,7 @@ Dialog.defaultOptions = {
   lockScroll: true,
   transition: 'van-dialog-bounce',
   beforeClose: null,
+  overlayClass: '',
   overlayStyle: null,
   messageAlign: '',
   getContainer: 'body',
