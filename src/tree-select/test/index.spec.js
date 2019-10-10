@@ -262,7 +262,6 @@ test('max prop', () => {
     data() {
       return {
         activeId: [],
-        mainActiveIndex: 0,
         items: [
           {
             text: 'group1',
@@ -277,4 +276,22 @@ test('max prop', () => {
   items.at(0).trigger('click');
   items.at(1).trigger('click');
   expect(wrapper.vm.activeId).toEqual([mockItem.id]);
+});
+
+test('className of nav', () => {
+  const wrapper = mount(TreeSelect, {
+    propsData: {
+      mainActiveIndex: 0,
+      items: [
+        {
+          text: 'group1',
+          className: 'my-class',
+          children: []
+        }
+      ]
+    }
+  });
+
+  const items = wrapper.findAll('.van-tree-select__nav-item');
+  expect(items.at(0).element.classList.contains('my-class')).toBeTruthy();
 });

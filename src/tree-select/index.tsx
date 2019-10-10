@@ -13,6 +13,7 @@ export type TreeSelectItem = {
   dot?: boolean;
   info?: string | number;
   disabled?: boolean;
+  className?: any;
   children: TreeSelectChildren[];
 };
 
@@ -62,7 +63,7 @@ function TreeSelect(
       info={item.info}
       title={item.text}
       disabled={item.disabled}
-      class={bem('nav-item')}
+      class={[bem('nav-item'), item.className]}
     />
   ));
 
