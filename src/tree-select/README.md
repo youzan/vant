@@ -145,6 +145,8 @@ In every tree object, `text` property defines `id` stands for the unique key whi
     info: 3,
     // Whether to show red dot
     dot: true,
+    // ClassName of parent node
+    className: 'my-class',
     // leaves of this parent node
     children: [
       {
