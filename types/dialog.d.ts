@@ -9,6 +9,7 @@ export type DialogOptions = {
   lockScroll?: boolean;
   transition?: string;
   messageAlign?: string;
+  overlayClass?: string;
   overlayStyle?: object;
   closeOnPopstate?: boolean;
   cancelButtonText?: string;
