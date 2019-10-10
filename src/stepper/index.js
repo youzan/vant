@@ -11,6 +11,12 @@ function equal(value1, value2) {
   return String(value1) === String(value2);
 }
 
+// add num and avoid float number
+function add(num1, num2) {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+
 export default createComponent({
   props: {
     value: null,
@@ -171,14 +177,7 @@ export default createComponent({
 
       const diff = type === 'minus' ? -this.step : +this.step;
 
-      let value = +this.currentValue + diff;
-
-      // avoid float number
-      if (!isDef(this.decimalLength)) {
-        value = Math.round(value * 100) / 100;
-      }
-
-      value = this.format(value);
+      const value = this.format(add(+this.currentValue, diff));
 
       this.emitChange(value);
       this.$emit(type);
