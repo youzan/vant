@@ -124,7 +124,7 @@ export default {
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - | - |
 | max-size | Max size of file | *number* | - | - |
 | max-count | Max count of image | *number* | - | - |
-| result-type | Type of file read result, can be set to `dataUrl` `text` | *string* | `dataUrl` | - |
+| result-type | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` | 2.2.7 |
 | upload-text | Upload text | *string* | - | - |
 | image-fit | Preview image fit mode | *string* | `cover` | 2.1.5 |
 
@@ -149,3 +149,11 @@ export default {
 |------|------|------|
 | file | File object | *object* |
 | detail | Detail info, contains name and index | *object* |
+
+### ResultType
+
+| Value | Description |
+|------|------|
+| file | Result contains File object |
+| text | Result contains File object and text content |
+| dataUrl | Result contains File object and base64 content |

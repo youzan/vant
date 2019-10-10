@@ -1,3 +1,5 @@
+export type ResultType = 'dataUrl' | 'text' | 'file';
+
 export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
     return item;
@@ -6,8 +8,13 @@ export function toArray<T>(item: T | T[]): T[] {
   return [item];
 }
 
-export function readFile(file: File, resultType: string) {
+export function readFile(file: File, resultType: ResultType) {
   return new Promise(resolve => {
+    if (resultType === 'file') {
+      resolve();
+      return;
+    }
+
     const reader = new FileReader();
 
     reader.onload = event => {
