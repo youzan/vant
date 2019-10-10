@@ -44,6 +44,12 @@ export default createComponent({
   },
 
   watch: {
+    filter: 'updateInnerValue',
+    minHour: 'updateInnerValue',
+    maxHour: 'updateInnerValue',
+    minMinute: 'updateInnerValue',
+    maxMinute: 'updateInnerValue',
+
     value(val) {
       val = this.formatValue(val);
 
@@ -67,13 +73,17 @@ export default createComponent({
       return `${hour}:${minute}`;
     },
 
-    onChange(picker) {
-      const indexes = picker.getIndexes();
+    updateInnerValue() {
+      const indexes = this.$refs.picker.getIndexes();
       const hour = this.originColumns[0].values[indexes[0]];
       const minute = this.originColumns[1].values[indexes[1]];
       const value = `${hour}:${minute}`;
 
       this.innerValue = this.formatValue(value);
+    },
+
+    onChange(picker) {
+      this.updateInnerValue();
 
       this.$nextTick(() => {
         this.$nextTick(() => {
@@ -82,9 +92,9 @@ export default createComponent({
       });
     },
 
-    updateColumnValue(value) {
+    updateColumnValue() {
       const { formatter } = this;
-      const pair = value.split(':');
+      const pair = this.innerValue.split(':');
       const values = [formatter('hour', pair[0]), formatter('minute', pair[1])];
 
       this.$nextTick(() => {
