@@ -37,12 +37,27 @@ test('disabled', () => {
   expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
-it('read text', done => {
+it('result-type as text', done => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'text',
       afterRead: readFile => {
         expect(readFile.content).toEqual(mockFileDataUrl);
+        done();
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+});
+
+it('result-type as file', done => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      resultType: 'file',
+      afterRead: readFile => {
+        expect(readFile.file).toBeTruthy();
+        expect(readFile.content).toBeFalsy();
         done();
       }
     }

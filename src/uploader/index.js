@@ -114,16 +114,27 @@ export default createComponent({
         }
 
         Promise.all(files.map(file => readFile(file, this.resultType))).then(contents => {
-          const fileList = files.map((file, index) => ({
-            file,
-            content: contents[index]
-          }));
+          const fileList = files.map((file, index) => {
+            const result = { file };
+
+            if (contents[index]) {
+              result.content = contents[index];
+            }
+
+            return result;
+          });
 
           this.onAfterRead(fileList, oversize);
         });
       } else {
         readFile(files, this.resultType).then(content => {
-          this.onAfterRead({ file: files, content }, oversize);
+          const result = { file: files };
+
+          if (content) {
+            result.content = content;
+          }
+
+          this.onAfterRead(result, oversize);
         });
       }
     },

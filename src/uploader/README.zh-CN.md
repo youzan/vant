@@ -140,7 +140,7 @@ export default {
 | before-delete | 文件删除前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | *Function* | - | - |
 | max-size | 文件大小限制，单位为`byte` | *number* | - | - |
 | max-count | 文件上传数量限制 | *number* | - | - |
-| result-type | 文件读取结果类型，可选值为`text` | *string* | `dataUrl` | - |
+| result-type | 文件读取结果类型，可选值为`file` `text` | *string* | `dataUrl` | 2.2.7 |
 | upload-text | 上传区域文字提示 | *string* | - | - |
 | image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | *string* | `cover` | 2.1.5 |
 
@@ -167,3 +167,13 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 |------|------|------|
 | file | 文件解析后的 file 对象 | *object* |
 | detail | 额外信息，包含 name 和 index 字段 | *object* |
+
+### ResultType 可选值
+
+`result-type`字段表示文件读取结果的类型，上传大文件时，建议使用 file 类型，避免卡顿。
+
+| 值 | 描述 |
+|------|------|
+| file | 结果仅包含 File 对象 |
+| text | 结果包含 File 对象，以及文件的文本内容 |
+| dataUrl | 结果包含 File 对象，以及文件对应的 base64 编码 |
