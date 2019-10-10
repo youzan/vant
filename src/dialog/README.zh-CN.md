@@ -158,6 +158,7 @@ export default {
 | cancelButtonText | 取消按钮文案 | *string* | `取消` | - |
 | cancelButtonColor | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
+| overlayStyle | 自定义遮罩层样式 | *object* | - | 2.2.7 |
 | closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lockScroll | 是否锁定背景滚动 | *boolean* | `true` | - |
@@ -182,6 +183,7 @@ export default {
 | cancel-button-text | 取消按钮文案 | *string* | `取消` | - |
 | cancel-button-color | 取消按钮颜色 | *string* | `#000` | - |
 | overlay | 是否展示遮罩层 | *boolean* | `true` | - |
+| overlay-style | 自定义遮罩层样式 | *object* | - | 2.2.7 |
 | close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
 | close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
