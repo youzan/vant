@@ -129,6 +129,7 @@ export default {
 | confirmButtonText | Confirm button text | *string* | `Confirm` | - |
 | confirmButtonColor | Confirm button color | *string* | `#1989fa` | - |
 | overlay | Whether to show overlay | *boolean* | `true` | - |
+| overlayStyle | Custom overlay style | *object* | - | 2.2.7 |
 | closeOnPopstate | Whether to close when popstate | *boolean* | `false` | 2.0.5 |
 | closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lockScroll | Whether to lock body scroll | *boolean* | `true` | - |
@@ -151,6 +152,7 @@ export default {
 | confirm-button-text | Confirm button text | *string* | `Confirm` | - |
 | confirm-button-color | Confirm button color | *string* | `#1989fa` | - |
 | overlay | Whether to show overlay | *boolean* | `true` | - |
+| overlay-style | Custom overlay style | *object* | - | 2.2.7 |
 | close-on-popstate | Whether to close when popstate | *boolean* | `false` | 2.0.5 |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `false` | - |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
