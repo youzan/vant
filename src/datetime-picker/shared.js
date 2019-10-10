@@ -51,17 +51,15 @@ export const TimePickerMixin = {
   },
 
   watch: {
+    columns: 'updateColumnValue',
+
     innerValue(val) {
       this.$emit('input', val);
-    },
-
-    columns() {
-      this.updateColumnValue(this.innerValue);
     }
   },
 
   mounted() {
-    this.updateColumnValue(this.innerValue);
+    this.updateColumnValue();
   },
 
   methods: {
