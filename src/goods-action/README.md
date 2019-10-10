@@ -50,7 +50,7 @@ Use `info` prop to show badge in icon
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="Icon1" />
   <van-goods-action-icon icon="cart-o" text="Icon2" info="5" />
-  <van-goods-action-icon icon="shop-o" text="Icon3" info=12" />
+  <van-goods-action-icon icon="shop-o" text="Icon3" info="12" />
   <van-goods-action-button type="warning" text="Button1" />
   <van-goods-action-button type="danger" text="Button2" />
 </van-goods-action>
