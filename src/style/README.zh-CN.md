@@ -9,7 +9,14 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 当文本内容长度超过容器最大宽度时，自动省略多余的文本。
 
 ```html
-<div class="van-ellipsis">这是一段宽度限制 250px 的文字，后面的内容会省略</div>
+<!-- 最多显示一行 -->
+<div class="van-ellipsis">这是一段最多显示一行的文字，多余的内容会被省略</div>
+
+<!-- 最多显示两行 -->
+<div class="van-multi-ellipsis--l2">这是一段最多显示两行的文字，多余的内容会被省略</div>
+
+<!-- 最多显示三行 -->
+<div class="van-multi-ellipsis--l3">这是一段最多显示三行的文字，多余的内容会被省略</div>
 ```
 
 ### 1px 边框
