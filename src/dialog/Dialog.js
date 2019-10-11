@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
@@ -11,6 +11,7 @@ export default createComponent({
 
   props: {
     title: String,
+    width: [Number, String],
     message: String,
     className: null,
     callback: Function,
@@ -153,6 +154,7 @@ export default createComponent({
           role="dialog"
           aria-labelledby={this.title || message}
           class={[bem(), this.className]}
+          style={{ width: addUnit(this.width) }}
         >
           {Title}
           {Content}

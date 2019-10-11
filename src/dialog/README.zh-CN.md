@@ -148,6 +148,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 标题 | *string* | - | - |
+| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 2.2.7 |
 | message | 文本内容，支持通过`\n`换行 | *string* | - | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | className | 自定义类名 | *any* | - | - |
@@ -175,6 +176,7 @@ export default {
 |------|------|------|------|------|
 | v-model | 是否显示弹窗 | *boolean* | - | - |
 | title | 标题 | *string* | - | - |
+| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 2.2.7 |
 | message | 文本内容，支持通过`\n`换行 | *string* | - | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` | - |

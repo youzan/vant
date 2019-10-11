@@ -134,3 +134,14 @@ test('open & close event', () => {
   wrapper.vm.value = false;
   expect(wrapper.emitted('close')).toBeTruthy();
 });
+
+test('width prop', () => {
+  const wrapper = mount(DialogComponent, {
+    propsData: {
+      value: true,
+      width: 200
+    }
+  });
+
+  expect(wrapper.element.style.width).toEqual('200px');
+});
