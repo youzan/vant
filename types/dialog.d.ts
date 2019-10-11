@@ -3,6 +3,7 @@ type DialogDone = (close?: boolean) => void;
 
 export type DialogOptions = {
   title?: string;
+  width?: string | number;
   message?: string;
   overlay?: boolean;
   className?: any;
