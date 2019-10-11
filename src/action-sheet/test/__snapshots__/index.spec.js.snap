@@ -8,6 +8,12 @@ exports[`callback events 1`] = `
 
 exports[`color option 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button class="van-action-sheet__item van-hairline--top" style="color: red;"><span class="van-action-sheet__name">Option</span></button></div>`;
 
+exports[`description prop 1`] = `
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__description">This is a description</div><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button>
+</div>
+`;
+
 exports[`disable lazy-render 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" style="display: none;" name="van-popup-slide-bottom"><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button class="van-action-sheet__cancel">Cancel</button></div>`;
 
 exports[`render title and default slot 1`] = ``;

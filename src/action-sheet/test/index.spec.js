@@ -162,3 +162,15 @@ test('color option', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('description prop', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      description: 'This is a description',
+      actions: [{ name: 'Option' }]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

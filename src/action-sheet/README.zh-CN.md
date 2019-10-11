@@ -16,11 +16,7 @@ Vue.use(ActionSheet);
 `ActionSheet`通过`actions`数组来定义展示的选项，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-action-sheet
-  v-model="show"
-  :actions="actions"
-  @select="onSelect"
-/>
+<van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
 ```javascript
@@ -38,7 +34,8 @@ export default {
 
   methods: {
     onSelect(item) {
-      // 点击选项时默认不会关闭菜单，可以手动关闭
+      // 默认情况下，点击选项时不会自动关闭菜单
+      // 可以通过 close-on-click-action 属性开启自动关闭
       this.show = false;
       Toast(item.name);
     }
@@ -48,13 +45,10 @@ export default {
 
 ### 选项状态
 
-选项可以设置为加载状态或禁用状态
+选项可以设置为加载状态或禁用状态，也可以通过`color`设置选项颜色
 
 ```html
-<van-action-sheet
-  v-model="show"
-  :actions="actions"
-/>
+<van-action-sheet v-model="show" :actions="actions" />
 ```
 
 ```javascript
@@ -81,8 +75,36 @@ export default {
   v-model="show"
   :actions="actions"
   cancel-text="取消"
-  @select="onSelect"
   @cancel="onCancel"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false
+    };
+  },
+
+  methods: {
+    onCancel() {
+      this.show = false;
+      Toast('cancel');
+    }
+  }
+}
+```
+
+### 展示描述信息
+
+设置`description`属性后，会在选项上方显示描述信息
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+  description="这是一段描述信息"
 />
 ```
 
@@ -110,8 +132,9 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | actions | 菜单选项 | *Action[]* | `[]` | - |
-| title | 标题 | *string* | - | - |
+| title | 顶部标题 | *string* | - | - |
 | cancel-text | 取消按钮文字 | *string* | - | - |
+| description | 选项上方的描述信息 | *string* | - | 2.2.8 |
 | overlay | 是否显示遮罩层 | *boolean* | `true` | - |
 | round | 是否显示圆角 | *boolean* | `true` | 2.0.9 |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` | - |
