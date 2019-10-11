@@ -14,6 +14,10 @@
   transition: @dialog-transition;
   transition-property: transform, opacity;
 
+  @media (max-width: 321px) {
+    width: @dialog-small-screen-width;
+  }
+
   &__header {
     padding-top: @dialog-header-padding-top;
     font-weight: @dialog-header-font-weight;
