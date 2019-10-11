@@ -1,5 +1,24 @@
 # Changelog
 
+### [v2.2.7](https://github.com/youzan/vant/tree/v2.2.7)
+`2019-10-11`
+
+**Features**
+
+- Dialog: add width prop [\#4687](https://github.com/youzan/vant/pull/4687)
+- Dialog: add overlay-class prop [\#4683](https://github.com/youzan/vant/pull/4683)
+- Dialog: add overlay-style prop [\#4682](https://github.com/youzan/vant/pull/4682)
+- Uploader: add file result-type [\#4680](https://github.com/youzan/vant/pull/4680)
+- TreeSelect: add className option [\#4671](https://github.com/youzan/vant/pull/4671)
+
+**Bug Fixes**
+
+- fix Dialog avoid text blurry [\#4686](https://github.com/youzan/vant/pull/4686)
+- fix Stepper can't work when step is small [\#4675](https://github.com/youzan/vant/pull/4675)
+- fix DatetimePicker should update value when range changed [\#4676](https://github.com/youzan/vant/pull/4676)
+- fix Field incorrect placeholder color when error and disabled [\#4666](https://github.com/youzan/vant/pull/4666)
+
+
 ### [v2.2.6](https://github.com/youzan/vant/tree/v2.2.6)
 `2019-10-08`
 
