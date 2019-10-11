@@ -100,7 +100,7 @@ function Card(
     }
 
     if (props.title) {
-      return <div class={bem('title')}>{props.title}</div>;
+      return <div class={[bem('title'), 'van-multi-ellipsis--l2']}>{props.title}</div>;
     }
   }
 
