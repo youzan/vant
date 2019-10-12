@@ -5,6 +5,16 @@
   background-color: @slider-inactive-background-color;
   border-radius: 999px;
 
+  // use pseudo element to expand click area
+  &::before {
+    position: absolute;
+    top: -@padding-xs;
+    right: 0;
+    bottom: -@padding-xs;
+    left: 0;
+    content: '';
+  }
+
   &__bar {
     position: relative;
     background-color: @slider-active-background-color;
