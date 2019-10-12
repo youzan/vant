@@ -34,6 +34,12 @@ export default createComponent({
     }
   },
 
+  data() {
+    return {
+      dragStatus: ''
+    };
+  },
+
   computed: {
     range() {
       return this.max - this.min;
@@ -138,6 +144,10 @@ export default createComponent({
       [crossAxis]: addUnit(this.barHeight),
       background: this.activeColor
     };
+
+    if (this.dragStatus) {
+      barStyle.transition = 'none';
+    }
 
     return (
       <div
