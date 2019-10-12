@@ -20,7 +20,7 @@ export function route(router: VueRouter, config: RouteConfig) {
     if (promise && promise.catch) {
       promise.catch(err => {
         /* istanbul ignore if */
-        if (err.name !== 'NavigationDuplicated') {
+        if (err && err.name !== 'NavigationDuplicated') {
           throw err;
         }
       });
