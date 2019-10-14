@@ -81,9 +81,10 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
   const { key, valueId } = skuToChoose;
 
   // 先假设sku已选中，拼入已选中sku对象中
-  const matchedSku = Object.assign({}, selectedSku, {
+  const matchedSku = {
+    ...selectedSku,
     [key]: valueId
-  });
+  };
 
   // 再判断剩余sku是否全部不可选，若不可选则当前sku不可选中
   const skusToCheck = Object.keys(matchedSku).filter(
