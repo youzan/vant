@@ -24,6 +24,7 @@ export default createComponent({
     inputAlign: String,
     errorMessage: String,
     errorMessageAlign: String,
+    showWordLimit: Boolean,
     type: {
       type: String,
       default: 'text'
@@ -260,6 +261,16 @@ export default createComponent({
           </div>
         );
       }
+    },
+
+    renderWordLimit() {
+      if (this.showWordLimit && this.$attrs.maxlength) {
+        return (
+          <div class={bem('word-limit')}>
+            {this.value.length}/{this.$attrs.maxlength}
+          </div>
+        );
+      }
     }
   },
 
@@ -302,6 +313,7 @@ export default createComponent({
           {this.renderRightIcon()}
           {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
+        {this.renderWordLimit()}
         {this.errorMessage && (
           <div class={bem('error-message', this.errorMessageAlign)}>
             {this.errorMessage}
