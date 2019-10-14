@@ -136,8 +136,8 @@ export default sfc({
     },
 
     // parse output columns data
-    parseOutputValues(values) {
-      return values.map((value = {}, index) => {
+    parseOutputValues(values, isVerify) {
+      values = values.map((value = {}, index) => {
         value = JSON.parse(JSON.stringify(value));
         if (!value.code || value.name === this.columnsPlaceholder[index]) {
           value.code = '';
@@ -145,6 +145,12 @@ export default sfc({
         }
         return value;
       });
+
+      if (isVerify) {
+        values = values.some(value => !value.code) ? [] : values;
+      }
+
+      return values;
     },
 
     onChange(picker, values, index) {
@@ -200,8 +206,8 @@ export default sfc({
     getValues() {
       const { picker } = this.$refs;
       let getValues = picker ? picker.getValues() : [];
-      getValues = this.parseOutputValues(getValues);
-      return getValues.filter(value => !!value);
+      getValues = this.parseOutputValues(getValues, true);
+      return getValues;
     },
 
     getArea() {
