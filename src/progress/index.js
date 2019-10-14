@@ -61,7 +61,7 @@ export default createComponent({
 
     const pivotStyle = {
       color: this.textColor,
-      left: `${(this.progressWidth - this.pivotWidth) * percentage / 100}px`,
+      left: `${((this.progressWidth - this.pivotWidth) * percentage) / 100}px`,
       background: this.pivotColor || background
     };
 
