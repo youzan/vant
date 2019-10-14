@@ -5,37 +5,21 @@
     </demo-block>
 
     <demo-block :title="$t('preview')">
-      <van-uploader
-        v-model="fileList"
-        multiple
-        accept="*"
-      />
+      <van-uploader v-model="fileList" multiple accept="*" />
     </demo-block>
 
     <demo-block :title="$t('maxCount')">
-      <van-uploader
-        v-model="fileList2"
-        multiple
-        :max-count="2"
-      />
+      <van-uploader v-model="fileList2" multiple :max-count="2" />
     </demo-block>
 
     <demo-block :title="$t('uploadStyle')">
       <van-uploader>
-        <van-button
-          type="primary"
-          icon="photo"
-        >
-          {{ this.$t('upload') }}
-        </van-button>
+        <van-button type="primary" icon="photo">{{ this.$t('upload') }}</van-button>
       </van-uploader>
     </demo-block>
 
     <demo-block :title="$t('beforeRead')">
-      <van-uploader
-        v-model="fileList3"
-        :before-read="beforeRead"
-      />
+      <van-uploader v-model="fileList3" :before-read="beforeRead" />
     </demo-block>
   </demo-section>
 </template>
@@ -63,8 +47,11 @@ export default {
 
   data() {
     return {
-      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
-      fileList2: [],
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img.yzcdn.cn/vant/tree.jpg' }
+      ],
+      fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: []
     };
   },
@@ -87,7 +74,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-uploader {
   background-color: @white;
