@@ -219,8 +219,8 @@ export default sfc({
       }
 
       const names = values.map(item => item.name);
-
-      area.code = (values.reverse().find(value => !!value.code) || {}).code || '';
+      const filterCodeValues = values.filter(value => !!value.code);
+      area.code = filterCodeValues.length ? filterCodeValues[filterCodeValues.length - 1].code : '';
 
       if (area.code[0] === '9') {
         area.country = names[1] || '';
