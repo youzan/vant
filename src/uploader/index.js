@@ -226,6 +226,7 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
+          radius={4}
           onClick={() => {
             this.onPreviewImage(item);
           }}
