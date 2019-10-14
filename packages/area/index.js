@@ -220,7 +220,8 @@ export default sfc({
 
       const names = values.map(item => item.name);
 
-      area.code = values.find(value => !!value.code).code;
+      area.code = (values.reverse().find(value => !!value.code) || {}).code || '';
+
       if (area.code[0] === '9') {
         area.country = names[1] || '';
         area.province = names[2] || '';
