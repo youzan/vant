@@ -21,7 +21,7 @@ The value of field is bound with v-model.
 </van-cell-group>
 ```
 
-### Custom type
+### Custom Type
 
 Use `type` prop to custom different type fields.
 
@@ -60,7 +60,7 @@ Use `type` prop to custom different type fields.
 </van-cell-group>
 ```
 
-### Error info
+### Error Info
 
 Use `error` or `error-message` to show error info
 
@@ -81,7 +81,25 @@ Use `error` or `error-message` to show error info
 </van-cell-group>
 ```
 
-### Auto resize
+### Insert Button
+
+Use button slot to insert button
+
+```html
+<van-cell-group>
+  <van-field
+    v-model="sms"
+    center
+    clearable
+    label="SMS"
+    placeholder="SMS"
+  >
+    <van-button slot="button" size="small" type="primary">Send SMS</van-button>
+  </van-field>
+</van-cell-group>
+```
+
+### Auto Resize
 
 Textarea Field can be auto resize when has `autosize` prop
 
@@ -98,21 +116,20 @@ Textarea Field can be auto resize when has `autosize` prop
 </van-cell-group>
 ```
 
-### Insert button
-
-Use button slot to insert button
+### Show Word Limit
 
 ```html
 <van-cell-group>
   <van-field
-    v-model="sms"
-    center
-    clearable
-    label="SMS"
-    placeholder="SMS"
-  >
-    <van-button slot="button" size="small" type="primary">Send SMS</van-button>
-  </van-field>
+    v-model="message"
+    rows="2"
+    autosize
+    label="留言"
+    type="textarea"
+    maxlength="50"
+    placeholder="请输入留言"
+    show-word-limit
+  />
 </van-cell-group>
 ```
 
@@ -135,6 +152,7 @@ Use button slot to insert button
 | clearable | Whether to be clearable | *boolean* | `false` | - |
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
 | is-link | Whether to show link icon | *boolean* | `false` | - |
+| show-word-limit | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` | 2.2.8 |
 | error | Whether to show error info | *boolean* | `false` | - |
 | arrow-direction | Can be set to `left` `up` `down` | *string* | - | 2.0.4 |
 | error-message | Error message | *string* | `''` | - |

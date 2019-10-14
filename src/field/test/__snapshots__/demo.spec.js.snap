@@ -61,6 +61,20 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
+      <div class="van-cell van-cell--center van-field">
+        <div class="van-cell__title van-field__label"><span>短信验证码</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body"><input type="text" placeholder="请输入短信验证码" class="van-field__control">
+            <div class="van-field__button"><button class="van-button van-button--primary van-button--small"><span class="van-button__text">
+            发送验证码
+          </span></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>留言</span></div>
         <div class="van-cell__value">
@@ -71,14 +85,11 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
-      <div class="van-cell van-cell--center van-field">
-        <div class="van-cell__title van-field__label"><span>短信验证码</span></div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>留言</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><input type="text" placeholder="请输入短信验证码" class="van-field__control">
-            <div class="van-field__button"><button class="van-button van-button--primary van-button--small"><span class="van-button__text">
-            发送验证码
-          </span></button></div>
-          </div>
+          <div class="van-field__body"><textarea placeholder="请输入留言" rows="2" maxlength="50" class="van-field__control" style="height: auto;"></textarea></div>
+          <div class="van-field__word-limit">0/50</div>
         </div>
       </div>
     </div>
