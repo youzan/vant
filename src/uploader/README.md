@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' }
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' }
       ]
     }
   }
