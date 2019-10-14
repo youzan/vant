@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
                 <!----></i></div>
-          </div><i class="van-icon van-icon-delete van-uploader__preview-delete">
+          </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
             <!----></i>
         </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">

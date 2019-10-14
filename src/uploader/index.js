@@ -210,7 +210,7 @@ export default createComponent({
     renderPreviewItem(item, index) {
       const DeleteIcon = (
         <Icon
-          name="delete"
+          name="clear"
           class={bem('preview-delete')}
           onClick={event => {
             event.stopPropagation();
