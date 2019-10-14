@@ -198,7 +198,10 @@ export default sfc({
     },
 
     getValues() {
-      return this.$refs.picker ? this.$refs.picker.getValues().filter(value => !!value) : [];
+      const { picker } = this.$refs;
+      let getValues = picker ? picker.getValues() : [];
+      getValues = this.parseOutputValues(getValues);
+      return getValues.filter(value => !!value);
     },
 
     getArea() {
@@ -216,8 +219,9 @@ export default sfc({
       }
 
       const names = values.map(item => item.name);
+      const filterCodeValues = values.filter(value => !!value.code);
+      area.code = filterCodeValues.length ? filterCodeValues[filterCodeValues.length - 1].code : '';
 
-      area.code = values[values.length - 1].code;
       if (area.code[0] === '9') {
         area.country = names[1] || '';
         area.province = names[2] || '';
