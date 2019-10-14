@@ -1,5 +1,13 @@
 ## Changelog
 
+## [v1.6.28](https://github.com/youzan/vant/tree/v1.6.28)
+`2019-10-14`
+
+**Improvements**
+
+- fix AddressEdit should filter area placeholder
+
+
 ## [v1.6.27](https://github.com/youzan/vant/tree/v1.6.27)
 `2019-09-30`
 

@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.28](https://github.com/youzan/vant/tree/v1.6.28)
+`2019-10-14`
+
+**Improvements**
+
+- 修复 AddressEdit 在使用 Area placeholder 后显示错误的问题
+
+
 ## [v1.6.27](https://github.com/youzan/vant/tree/v1.6.27)
 `2019-09-30`
 
