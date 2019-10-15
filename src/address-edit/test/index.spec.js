@@ -19,7 +19,8 @@ const createComponent = () => {
     propsData: {
       areaList,
       addressInfo,
-      showPostal: true
+      showPostal: true,
+      showSetDefault: true
     }
   });
 
@@ -52,6 +53,64 @@ test('create a AddressEdit with props', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('valid area placeholder confirm', async () => {
+  const wrapper = mount(AddressEdit, {
+    propsData: {
+      areaList,
+      areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
+    }
+  });
+
+  const { data } = wrapper.vm;
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+
+  await later(50);
+
+  expect(data.areaCode).toBe('');
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('show area component', async () => {
+  const { wrapper } = createComponent();
+
+  const field = wrapper.findAll('.van-field').at(2);
+  field.trigger('click');
+
+  await later(50);
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.find('.van-picker__cancel').trigger('click');
+
+  await later(50);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('set-default', () => {
+  const { wrapper } = createComponent();
+  wrapper.find('.van-switch').trigger('click');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('validator props', async () => {
+  const wrapper = mount(AddressEdit, {
+    propsData: {
+      areaList,
+      validator(key, value) {
+        return `${key}${value}`;
+      }
+    }
+  });
+
+  const { errorInfo, data } = wrapper.vm;
+  data.name = '';
+  const button = wrapper.find('.van-button');
+  button.trigger('click');
+
+  expect(errorInfo.name).toBeTruthy();
 });
 
 test('valid name', () => {
