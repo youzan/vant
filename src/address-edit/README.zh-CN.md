@@ -21,7 +21,7 @@ Vue.use(AddressEdit);
   show-set-default
   show-search-result
   :search-result="searchResult"
-  areaColumnsPlaceholder="['请选择', '请选择', '请选择']"
+  area-columns-placeholder="['请选择', '请选择', '请选择']"
   @save="onSave"
   @delete="onDelete"
   @change-detail="onChangeDetail"
