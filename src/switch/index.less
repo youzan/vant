@@ -21,7 +21,7 @@
     background-color: @switch-node-background-color;
     border-radius: 100%;
     box-shadow: @switch-node-box-shadow;
-    transition: transform @switch-transition-duration;
+    transition: transform @switch-transition-duration cubic-bezier(.3, 1.05, .4, 1.05);
   }
 
   &__loading {
