@@ -11,6 +11,7 @@ import SwitchCell from '../switch-cell';
 
 const [createComponent, bem, t] = createNamespace('address-edit');
 
+console.log(1);
 const defaultData = {
   name: '',
   tel: '',

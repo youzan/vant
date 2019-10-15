@@ -67,9 +67,8 @@ test('valid area placeholder confirm', async () => {
 
   wrapper.find('.van-picker__confirm').trigger('click');
 
-  await later(50);
-
   expect(data.areaCode).toBe('');
+  await later(50);
   expect(wrapper).toMatchSnapshot();
 });
 
