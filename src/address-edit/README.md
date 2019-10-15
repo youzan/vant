@@ -21,6 +21,7 @@ Vue.use(AddressEdit);
   show-set-default
   show-search-result
   :search-result="searchResult"
+  areaColumnsPlaceholder="['Choose', 'Choose', 'Choose']"
   @save="onSave"
   @delete="onDelete"
   @change-detail="onChangeDetail"
