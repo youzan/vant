@@ -8,6 +8,7 @@
         show-set-default
         show-search-result
         :search-result="searchResult"
+        :area-columns-placeholder="$t('areaColumnsPlaceholder')"
         @save="onSave"
         @delete="onDelete"
         @change-detail="onChangeDetail"
@@ -22,6 +23,7 @@ import areaList from '../../area/demo/area';
 export default {
   i18n: {
     'zh-CN': {
+      areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
       searchResult: [{
         name: '黄龙万科中心',
         address: '杭州市西湖区'
@@ -33,6 +35,7 @@ export default {
       }]
     },
     'en-US': {
+      areaColumnsPlaceholder: ['Choose', 'Choose', 'Choose'],
       searchResult: [{
         name: 'Name1',
         address: 'Address'

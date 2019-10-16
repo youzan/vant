@@ -206,7 +206,10 @@ export default createComponent({
     },
 
     getValues() {
-      return this.$refs.picker ? this.$refs.picker.getValues().filter(value => !!value) : [];
+      const { picker } = this.$refs;
+      let getValues = picker ? picker.getValues().filter(value => !!value) : [];
+      getValues = this.parseOutputValues(getValues);
+      return getValues;
     },
 
     getArea() {
@@ -224,8 +227,9 @@ export default createComponent({
       }
 
       const names = values.map(item => item.name);
+      const filterCodeValues = values.filter(value => !!value.code);
+      area.code = filterCodeValues.length ? filterCodeValues[filterCodeValues.length - 1].code : '';
 
-      area.code = values[values.length - 1].code;
       if (this.isOverseaCode(area.code)) {
         area.country = names[1] || '';
         area.province = names[2] || '';

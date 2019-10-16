@@ -139,6 +139,10 @@ export default createComponent({
     },
 
     onAreaConfirm(values) {
+      if (values.some(value => !value.code)) {
+        Toast(t('areaEmpty'));
+        return;
+      }
       this.showAreaPopup = false;
       this.assignAreaValues();
       this.$emit('change-area', values);
