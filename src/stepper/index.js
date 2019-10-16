@@ -149,7 +149,13 @@ export default createComponent({
         return;
       }
 
-      const formatted = this.filter(value);
+      let formatted = this.filter(value);
+
+      // limit max decimal length
+      if (isDef(this.decimalLength) && formatted.indexOf('.') !== -1) {
+        const pair = formatted.split('.');
+        formatted = `${pair[0]}.${pair[1].slice(0, this.decimalLength)}`;
+      }
 
       if (!equal(value, formatted)) {
         event.target.value = formatted;
