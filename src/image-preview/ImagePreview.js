@@ -61,16 +61,10 @@ export default createComponent({
     overlayClass: {
       type: String,
       default: bem('overlay')
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true
     }
   },
 
   data() {
-    this.bindStatus = false;
-
     return {
       scale: 1,
       moveX: 0,
