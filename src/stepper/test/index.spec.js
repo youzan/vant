@@ -213,3 +213,19 @@ test('decimal-length prop', () => {
   plus.trigger('click');
   expect(wrapper.emitted('input')[1][0]).toEqual('1.20');
 });
+
+test('should limit decimal-length when input', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1,
+      step: 0.2,
+      decimalLength: 1
+    }
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '1.25';
+  input.trigger('input');
+
+  expect(input.element.value).toEqual('1.2');
+});
