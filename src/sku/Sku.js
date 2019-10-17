@@ -316,6 +316,18 @@ export default createComponent({
           this.selectedSku[key] = valueId;
         }
       });
+
+      const skuValues = this.selectedSkuValues;
+
+      if (skuValues.length > 0) {
+        this.$nextTick(() => {
+          this.$emit('sku-selected', {
+            skuValue: skuValues[skuValues.length - 1],
+            selectedSku: this.selectedSku,
+            selectedSkuComb: this.selectedSkuComb,
+          });
+        });
+      }
     },
 
     getSkuMessages() {
