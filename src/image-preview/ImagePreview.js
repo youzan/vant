@@ -13,8 +13,8 @@ const [createComponent, bem] = createNamespace('image-preview');
 
 function getDistance(touches) {
   return Math.sqrt(
-    ((touches[0].clientX - touches[1].clientX) ** 2) +
-    ((touches[0].clientY - touches[1].clientY) ** 2)
+    (touches[0].clientX - touches[1].clientX) ** 2 +
+      (touches[0].clientY - touches[1].clientY) ** 2
   );
 }
 
@@ -298,14 +298,16 @@ export default createComponent({
 
     return (
       <transition name="van-fade">
-        <div
-          class={[bem(), this.className]}
-          onTouchstart={this.onWrapperTouchStart}
-          onTouchMove={preventDefault}
-          onTouchend={this.onWrapperTouchEnd}
-          onTouchcancel={this.onWrapperTouchEnd}
-        >
-          {this.genImages()}
+        <div class={[bem(), this.className]}>
+          <div
+            class={bem('wrapper')}
+            onTouchstart={this.onWrapperTouchStart}
+            onTouchMove={preventDefault}
+            onTouchend={this.onWrapperTouchEnd}
+            onTouchcancel={this.onWrapperTouchEnd}
+          >
+            {this.genImages()}
+          </div>
           {this.genIndex()}
         </div>
       </transition>
