@@ -12,6 +12,10 @@
 @gray-darker: #7d7e80;
 @gray-dark: #969799;
 
+// Gradient Colors
+@gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+@gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
 // Component Colors
 @text-color: #323233;
 @active-color: #f2f3f5;
@@ -314,8 +318,8 @@
 @goods-action-icon-active-color: @active-color;
 @goods-action-icon-text-color: @gray-darker;
 @goods-action-button-height: 40px;
-@goods-action-button-warning-color: linear-gradient(to right, #ffd01e, #ff8917);
-@goods-action-button-danger-color: linear-gradient(to right, #ff6034, #ee0a24);
+@goods-action-button-warning-color: @gradient-orange;
+@goods-action-button-danger-color: @gradient-red;
 
 // IndexAnchor
 @index-anchor-padding: 0 @padding-md;
