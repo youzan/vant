@@ -169,7 +169,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标签名称，作为匹配的标识符 | *string \| number* | 当前标签的索引值 | - |
-| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon)| *string* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon)| *string* | - | - |
 | dot | 是否显示图标右上角小红点 | *boolean* | `false` | - |
 | info | 图标右上角徽标的内容 | *string \| number* | - | - |
 | url | 点击后跳转的链接地址 | *string* | - | - |
