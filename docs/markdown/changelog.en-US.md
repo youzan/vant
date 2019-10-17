@@ -1,5 +1,27 @@
 # Changelog
 
+### [v2.2.8](https://github.com/youzan/vant/tree/v2.2.8)
+`2019-10-17`
+
+**Features**
+
+- Dialog: update border radius [\#4730](https://github.com/youzan/vant/pull/4730)
+- Uploader: update delete icon style [\#4712](https://github.com/youzan/vant/pull/4712)
+- Field: add show-word-limit prop [\#4721](https://github.com/youzan/vant/pull/4721)
+- Stepper: limit decimal length when input [\#4747](https://github.com/youzan/vant/pull/4747)
+- Slider: improve click area [\#4701](https://github.com/youzan/vant/pull/4701)
+- ActionSheet: add description prop [\#4691](https://github.com/youzan/vant/pull/4691)
+- Slider: add slide animation [\#4700](https://github.com/youzan/vant/pull/4700)
+- add gradient color variables [\#4752](https://github.com/youzan/vant/pull/4752)
+- add multi-line ellipsis classes [\#4690](https://github.com/youzan/vant/pull/4690)
+
+**Bug Fixes**
+
+- fix AddressEdit area confirmation verification [\#4724](https://github.com/youzan/vant/pull/4724)
+- fix Rate incorrect height caused by inline-block [\#4693](https://github.com/youzan/vant/pull/4693)
+- fix Slider pseudo element may casue body overflow-x [\#4699](https://github.com/youzan/vant/pull/4699)
+
+
 ### [v2.2.7](https://github.com/youzan/vant/tree/v2.2.7)
 `2019-10-11`
 

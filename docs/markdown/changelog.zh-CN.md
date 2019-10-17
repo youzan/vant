@@ -10,6 +10,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.8](https://github.com/youzan/vant/tree/v2.2.8)
+`2019-10-17`
+
+**Features**
+
+- Slider: 优化点击区域 [\#4701](https://github.com/youzan/vant/pull/4701)
+- Slider: 增加过渡动画 [\#4700](https://github.com/youzan/vant/pull/4700)
+- Dialog: 更新圆角样式 [\#4730](https://github.com/youzan/vant/pull/4730)
+- Uploader: 更新删除图标样式，添加图片圆角样式 [\#4712](https://github.com/youzan/vant/pull/4712)
+- Field: 新增 show-word-limit 属性 [\#4721](https://github.com/youzan/vant/pull/4721)
+- ActionSheet: 新增 description 属性 [\#4691](https://github.com/youzan/vant/pull/4691)
+- Stepper: 设置 decimal-length 属性后会在输入过程中进行校验 [\#4747](https://github.com/youzan/vant/pull/4747)
+- 新增渐变色相关的 Less 变量 [\#4752](https://github.com/youzan/vant/pull/4752)
+- 新增多行文字省略的内置样式 [\#4690](https://github.com/youzan/vant/pull/4690)
+
+**Bug Fixes**
+
+- 修复 Slider 宽度异常的问题 [\#4699](https://github.com/youzan/vant/pull/4699)
+- 修复 Rate 由于 inline-block 导致的错误高度 [\#4693](https://github.com/youzan/vant/pull/4693)
+- 修复 AddressEdit 省市区未选择完全时能够保存的问题 [\#4724](https://github.com/youzan/vant/pull/4724)
+
+
 ### [v2.2.7](https://github.com/youzan/vant/tree/v2.2.7)
 `2019-10-11`
 
