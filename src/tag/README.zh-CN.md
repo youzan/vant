@@ -23,18 +23,6 @@ Vue.use(Tag);
 <van-tag type="warning">标签</van-tag>
 ```
 
-### 空心样式
-
-设置`plain`属性设置为空心样式
-
-```html
-<van-tag plain>标签</van-tag>
-<van-tag plain type="primary">标签</van-tag>
-<van-tag plain type="success">标签</van-tag>
-<van-tag plain type="danger">标签</van-tag>
-<van-tag plain type="warning">标签</van-tag>
-```
-
 ### 圆角样式
 
 通过`round`设置为圆角样式
@@ -59,6 +47,18 @@ Vue.use(Tag);
 <van-tag mark type="warning">标签</van-tag>
 ```
 
+### 空心样式
+
+设置`plain`属性设置为空心样式
+
+```html
+<van-tag plain>标签</van-tag>
+<van-tag plain type="primary">标签</van-tag>
+<van-tag plain type="success">标签</van-tag>
+<van-tag plain type="danger">标签</van-tag>
+<van-tag plain type="warning">标签</van-tag>
+```
+
 ### 自定义颜色
 
 ```html
@@ -77,6 +77,47 @@ Vue.use(Tag);
 <van-tag type="danger" size="large">标签</van-tag>
 ```
 
+### 可关闭标签
+
+添加`closeable`属性表示标签是可关闭的，关闭标签时会触发`close`事件，在`close`事件中可以执行隐藏标签的逻辑
+
+```html
+<van-tag
+  v-if="showPrimary"
+  type="primary"
+  size="medium"
+  @close="close('primary')"
+>
+  标签
+</van-tag>
+<van-tag
+  v-if="showSuccess"
+  type="success"
+  size="medium"
+  @close="close('success')"
+>
+  标签
+</van-tag>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: {
+        primary: true,
+        success: true
+      }
+    }
+  },
+  methods: {
+    close(type) {
+      this.show[type] = false;
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -90,15 +131,17 @@ Vue.use(Tag);
 | round | 是否为圆角样式 | *boolean* | `false` | - |
 | mark | 是否为标记样式 | *boolean* | `false` | - |
 | text-color | 文本颜色，优先级高于`color`属性 | *string* | `white` | - |
+| closeable | 是否为可关闭标签 | *boolean* | `false` | 2.2.9 |
 
 ### Slots
 
 | 名称 | 说明 |
 |------|------|
-| default | 自定义 Tag 显示内容 |
+| default | 标签显示内容 |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | event: Event |
+| close | 关闭标签时触发 | - |
