@@ -21,16 +21,6 @@ Vue.use(Tag);
 <van-tag type="warning">Tag</van-tag>
 ```
 
-### Plain style
-
-```html
-<van-tag plain>Tag</van-tag>
-<van-tag plain type="primary">Tag</van-tag>
-<van-tag plain type="success">Tag</van-tag>
-<van-tag plain type="danger">Tag</van-tag>
-<van-tag plain type="warning">Tag</van-tag>
-```
-
 ### Round style
 
 ```html
@@ -51,6 +41,16 @@ Vue.use(Tag);
 <van-tag mark type="warning">Tag</van-tag>
 ```
 
+### Plain style
+
+```html
+<van-tag plain>Tag</van-tag>
+<van-tag plain type="primary">Tag</van-tag>
+<van-tag plain type="success">Tag</van-tag>
+<van-tag plain type="danger">Tag</van-tag>
+<van-tag plain type="warning">Tag</van-tag>
+```
+
 ### Custom Color
 
 ```html
@@ -69,6 +69,45 @@ Vue.use(Tag);
 <van-tag type="danger" size="large">Tag</van-tag>
 ```
 
+### Closeable
+
+```html
+<van-tag
+  v-if="showPrimary"
+  type="primary"
+  size="medium"
+  @close="close('primary')"
+>
+  Tag
+</van-tag>
+<van-tag
+  v-if="showSuccess"
+  type="success"
+  size="medium"
+  @close="close('success')"
+>
+  Tag
+</van-tag>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: {
+        primary: true,
+        success: true
+      }
+    }
+  },
+  methods: {
+    close(type) {
+      this.show[type] = false;
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -82,6 +121,7 @@ Vue.use(Tag);
 | round | Whether to be round style | *boolean* | `false` | - |
 | mark | Whether to be mark style | *boolean* | `false` | - |
 | text-color | Text color | *string* | `white` | - |
+| closeable | Whether to be closeable | *boolean* | `false` | 2.2.9 |
 
 ### Slots
 
@@ -94,3 +134,4 @@ Vue.use(Tag);
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | event: Event |
+| close | Triggered when click close icon | - |
