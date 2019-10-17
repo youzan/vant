@@ -18,7 +18,7 @@ It's welcomed to pull request, And there are some tips about that:
 
 - When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, don't bundle more than one feature or bug fix per pull request. It's always best to create two smaller PRs than one big one.
 
-- When adding new features or modifying existing, please attempt to include tests to confirm the new behaviour. 
+- When adding new features or modifying existing, please attempt to include tests to confirm the new behaviour.
 
 - Rebase before creating a PR to keep commit history clear.
 
@@ -37,3 +37,9 @@ npm run dev
 
 # open http://localhost:8080
 ```
+
+## Contribute from the browser with a single click
+
+You can use gitpod (A free online IDE) with a single click it will launch a ready to code workspace with dependencies pre-installed and the web server running so that you don't have to waste any time on the dev setup and start contributing straight away.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/youzan/vant)
