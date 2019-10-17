@@ -48,6 +48,7 @@
 @border-width-base: 1px;
 @border-radius-sm: 2px;
 @border-radius-md: 4px;
+@border-radius-max: 999px;
 
 // ActionSheet
 @action-sheet-max-height: 90%;
@@ -120,7 +121,7 @@
 @button-warning-border-color: @orange;
 @button-border-width: @border-width-base;
 @button-border-radius: @border-radius-sm;
-@button-round-border-radius: 10em;
+@button-round-border-radius: @border-radius-max;
 @button-plain-background-color: @white;
 @button-disabled-opacity: @disabled-opacity;
 
@@ -649,7 +650,7 @@
 @tag-large-font-size: @font-size-md;
 @tag-text-color: @white;
 @tag-border-radius: .2em;
-@tag-round-border-radius: .8em;
+@tag-round-border-radius: @border-radius-max;
 @tag-dander-color: @red;
 @tag-primary-color: @blue;
 @tag-success-color: @green;
