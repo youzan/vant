@@ -1,5 +1,6 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { BLUE, WHITE } from '../utils/constant';
+import { observeStyle } from '../utils/dom/observer';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -37,6 +38,7 @@ export default createComponent({
 
   mounted() {
     this.setWidth();
+    observeStyle(this.$el, this.setWidth);
   },
 
   watch: {
