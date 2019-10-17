@@ -12,7 +12,8 @@ module.exports = merge(config, {
     open: true,
     progress: true,
     host: '0.0.0.0',
-    stats: 'errors-only'
+    stats: 'errors-only',
+    disableHostCheck: true,
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
