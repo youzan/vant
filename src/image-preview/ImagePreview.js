@@ -264,11 +264,16 @@ export default createComponent({
         <Swipe
           ref="swipe"
           loop={this.loop}
+          class={bem('swipe')}
           duration={this.swipeDuration}
           indicatorColor="white"
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
           onChange={this.setActive}
+          nativeOnTouchstart={this.onWrapperTouchStart}
+          nativeOnTouchMove={preventDefault}
+          nativeOnTouchend={this.onWrapperTouchEnd}
+          nativeOnTouchcancel={this.onWrapperTouchEnd}
         >
           {this.images.map((image, index) => (
             <SwipeItem>
@@ -299,15 +304,7 @@ export default createComponent({
     return (
       <transition name="van-fade">
         <div class={[bem(), this.className]}>
-          <div
-            class={bem('wrapper')}
-            onTouchstart={this.onWrapperTouchStart}
-            onTouchMove={preventDefault}
-            onTouchend={this.onWrapperTouchEnd}
-            onTouchcancel={this.onWrapperTouchEnd}
-          >
-            {this.genImages()}
-          </div>
+          {this.genImages()}
           {this.genIndex()}
         </div>
       </transition>
