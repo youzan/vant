@@ -13,8 +13,8 @@ const [createComponent, bem] = createNamespace('image-preview');
 
 function getDistance(touches) {
   return Math.sqrt(
-    ((touches[0].clientX - touches[1].clientX) ** 2) +
-    ((touches[0].clientY - touches[1].clientY) ** 2)
+    (touches[0].clientX - touches[1].clientX) ** 2 +
+      (touches[0].clientY - touches[1].clientY) ** 2
   );
 }
 
@@ -69,9 +69,9 @@ export default createComponent({
       scale: 1,
       moveX: 0,
       moveY: 0,
+      active: 0,
       moving: false,
       zooming: false,
-      active: 0,
       doubleClickTimer: null
     };
   },
@@ -264,11 +264,16 @@ export default createComponent({
         <Swipe
           ref="swipe"
           loop={this.loop}
+          class={bem('swipe')}
           duration={this.swipeDuration}
           indicatorColor="white"
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
           onChange={this.setActive}
+          nativeOnTouchstart={this.onWrapperTouchStart}
+          nativeOnTouchMove={preventDefault}
+          nativeOnTouchend={this.onWrapperTouchEnd}
+          nativeOnTouchcancel={this.onWrapperTouchEnd}
         >
           {this.images.map((image, index) => (
             <SwipeItem>
@@ -298,13 +303,7 @@ export default createComponent({
 
     return (
       <transition name="van-fade">
-        <div
-          class={[bem(), this.className]}
-          onTouchstart={this.onWrapperTouchStart}
-          onTouchMove={preventDefault}
-          onTouchend={this.onWrapperTouchEnd}
-          onTouchcancel={this.onWrapperTouchEnd}
-        >
+        <div class={[bem(), this.className]}>
           {this.genImages()}
           {this.genIndex()}
         </div>
