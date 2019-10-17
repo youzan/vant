@@ -69,9 +69,9 @@ export default createComponent({
       scale: 1,
       moveX: 0,
       moveY: 0,
+      active: 0,
       moving: false,
       zooming: false,
-      active: 0,
       doubleClickTimer: null
     };
   },
