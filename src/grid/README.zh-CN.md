@@ -132,7 +132,7 @@ Vue.use(Grid).use(GridItem);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 文字 | *string* | - | - |
-| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
 | dot | 是否显示图标右上角小红点 | *boolean* | `false` | 2.2.1 |
 | info | 图标右上角徽标的内容 | *string \| number* | - | 2.2.1 |
 | url | 点击后跳转的链接地址 | *string* | - | - |

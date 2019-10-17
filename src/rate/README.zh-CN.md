@@ -101,8 +101,8 @@ export default {
 | color | 选中时的颜色 | *string* | `#ffd21e` | - |
 | void-color | 未选中时的颜色 | *string* | `#c7c7c7` | - |
 | disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` | - |
-| icon | 选中时的图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | `star` | - |
-| void-icon | 未选中时的图标名称或图片链接，可选值见 [Icon 组件](/#/zh-CN/icon) | *string* | `star-o`  | - |
+| icon | 选中时的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `star` | - |
+| void-icon | 未选中时的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `star-o`  | - |
 | allow-half | 是否允许半选 | *boolean* | `false` | - |
 | readonly | 是否为只读状态 | *boolean* | `false` | - |
 | disabled | 是否禁用评分 | *boolean* | `false` | - |
