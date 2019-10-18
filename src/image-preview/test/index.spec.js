@@ -151,7 +151,19 @@ test('index slot', () => {
   const wrapper = mount({
     template: `
       <van-image-preview :value="true">
-        <template v-slot:index>Custom Index</template>
+        <template #index>Custom Index</template>
+      </van-image-preview>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('cover slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-image-preview :value="true">
+        <template #cover>Custom Cover Content</template>
       </van-image-preview>
     `
   });
