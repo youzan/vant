@@ -249,9 +249,17 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') || `${this.active + 1}/${this.images.length}`}
+            {this.slots('index') || `${this.active + 1} / ${this.images.length}`}
           </div>
         );
+      }
+    },
+
+    genCover() {
+      const cover = this.slots('cover');
+
+      if (cover) {
+        return <div class={bem('cover')}>{cover}</div>;
       }
     },
 
@@ -306,6 +314,7 @@ export default createComponent({
         <div class={[bem(), this.className]}>
           {this.genImages()}
           {this.genIndex()}
+          {this.genCover()}
         </div>
       </transition>
     );

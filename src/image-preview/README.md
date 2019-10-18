@@ -134,6 +134,7 @@ export default {
 | Name | Description |
 |------|------|
 | index | Custom index |
+| cover | Custom content that covers the image preview |
 
 ### onClose Parematers
 
