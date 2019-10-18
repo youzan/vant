@@ -137,7 +137,10 @@ export default sfc({
 
     // parse output columns data
     parseOutputValues(values) {
-      return values.map((value = {}, index) => {
+      return values.map((value, index) => {
+        // save undefined value
+        if (!value) return value;
+
         value = JSON.parse(JSON.stringify(value));
         if (!value.code || value.name === this.columnsPlaceholder[index]) {
           value.code = '';

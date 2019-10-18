@@ -127,6 +127,8 @@ export default sfc({
     },
 
     onAreaConfirm(values) {
+      values = values.filter(value => !!value);
+
       if (values.some(value => !value.code)) {
         Toast(t('areaEmpty'));
         return;
