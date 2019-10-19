@@ -111,7 +111,7 @@ function Button(
           class={bem('loading')}
           size={props.loadingSize}
           type={props.loadingType}
-          color={type === 'default' ? undefined : ''}
+          color="currentColor"
         />
       );
     } else if (icon) {
