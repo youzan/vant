@@ -106,7 +106,7 @@ export default {
 
   methods: {
     showLoadingToast() {
-      this.$toast.loading({ mask: true, message: this.$t('loading') });
+      this.$toast.loading({ forbidClick: true, message: this.$t('loading') });
     },
 
     showSuccessToast() {

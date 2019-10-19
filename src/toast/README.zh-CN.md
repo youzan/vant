@@ -21,8 +21,8 @@ Toast('提示内容');
 
 ```js
 Toast.loading({
-  mask: true,
-  message: '加载中...'
+  message: '加载中...',
+  forbidClick: true
 });
 ```
 

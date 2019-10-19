@@ -95,7 +95,7 @@ export default createComponent({
       }
 
       if (type === 'loading') {
-        return <Loading class={bem('loading')} color="white" type={loadingType} />;
+        return <Loading class={bem('loading')} type={loadingType} />;
       }
     }
 

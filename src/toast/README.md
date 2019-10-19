@@ -21,8 +21,8 @@ Toast('Some messages');
 
 ```javascript
 Toast.loading({
-  mask: true,
-  message: 'Loading...'
+  message: 'Loading...',
+  forbidClick: true
 });
 ```
 
