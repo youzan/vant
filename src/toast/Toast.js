@@ -81,15 +81,12 @@ export default createComponent({
 
     onAfterLeave() {
       this.$emit('closed');
-    }
-  },
+    },
 
-  render() {
-    const { type, icon, message, iconPrefix, loadingType } = this;
+    genIcon() {
+      const { icon, type, iconPrefix, loadingType } = this;
+      const hasIcon = icon || (type === 'success' || type === 'fail');
 
-    const hasIcon = icon || (type === 'success' || type === 'fail');
-
-    function ToastIcon() {
       if (hasIcon) {
         return <Icon class={bem('icon')} classPrefix={iconPrefix} name={icon || type} />;
       }
@@ -97,9 +94,11 @@ export default createComponent({
       if (type === 'loading') {
         return <Loading class={bem('loading')} type={loadingType} />;
       }
-    }
+    },
 
-    function Message() {
+    genMessage() {
+      const { type, message } = this;
+
       if (!isDef(message) || message === '') {
         return;
       }
@@ -110,7 +109,9 @@ export default createComponent({
 
       return <div class={bem('text')}>{message}</div>;
     }
+  },
 
+  render() {
     return (
       <transition
         name={this.transition}
@@ -119,14 +120,11 @@ export default createComponent({
       >
         <div
           vShow={this.value}
-          class={[
-            bem([this.position, { text: !hasIcon && type !== 'loading' }]),
-            this.className
-          ]}
+          class={[bem([this.position, { [this.type]: !this.icon }]), this.className]}
           onClick={this.onClick}
         >
-          {ToastIcon()}
-          {Message()}
+          {this.genIcon()}
+          {this.genMessage()}
         </div>
       </transition>
     );
