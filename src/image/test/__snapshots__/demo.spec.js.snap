@@ -100,7 +100,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
         <div class="van-image" style="width: 100%; height: 27vw;"><img class="van-image__img">
           <div class="van-image__loading">
-            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(201, 201, 201); width: 20px; height: 20px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+            <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="width: 20px; height: 20px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
           </div>
         </div>
         <div class="text">自定义提示</div>
