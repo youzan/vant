@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
-import { BLUE, BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
@@ -182,7 +182,7 @@ export default createComponent({
     return (
       <div class={bem()}>
         {this.toolbarPosition === 'top' ? Toolbar : h()}
-        {this.loading ? <Loading class={bem('loading')} color={BLUE} /> : h()}
+        {this.loading ? <Loading class={bem('loading')} /> : h()}
         {this.slots('columns-top')}
         <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
           {columns.map((item, index) => (
