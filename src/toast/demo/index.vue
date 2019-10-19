@@ -1,70 +1,27 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button
-        type="primary"
-        @click="$toast($t('text'))"
-      >
-        {{ $t('title1') }}
-      </van-button>
-      <van-button
-        type="primary"
-        @click="$toast($t('longText'))"
-      >
-        {{ $t('longTextButton') }}
-      </van-button>
+      <van-button type="primary" :text="$t('title1')" @click="$toast($t('text'))" />
+      <van-button type="primary" :text="$t('longTextButton')" @click="$toast($t('longText'))" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button
-        type="primary"
-        @click="showLoadingToast"
-      >
-        {{ $t('title2') }}
-      </van-button>
+      <van-button type="primary" :text="$t('title2')" @click="showLoadingToast()" />
+      <van-button type="primary" :text="$t('loadingType')" @click="showLoadingToast('spinner')" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button
-        type="info"
-        @click="showSuccessToast"
-      >
-        {{ $t('success') }}
-      </van-button>
-      <van-button
-        type="danger"
-        @click="showFailToast"
-      >
-        {{ $t('fail') }}
-      </van-button>
+      <van-button type="info" :text="$t('success')" @click="showSuccessToast" />
+      <van-button type="danger" :text="$t('fail')" @click="showFailToast" />
     </demo-block>
 
-    <demo-block
-      v-if="!$attrs.weapp"
-      :title="$t('customIcon')"
-    >
-      <van-button
-        type="primary"
-        @click="showIconToast"
-      >
-        {{ $t('customIcon') }}
-      </van-button>
-
-      <van-button
-        type="primary"
-        @click="showImageToast"
-      >
-        {{ $t('customImage') }}
-      </van-button>
+    <demo-block v-if="!$attrs.weapp" :title="$t('customIcon')">
+      <van-button type="primary" :text="$t('customIcon')" @click="showIconToast" />
+      <van-button type="primary" :text="$t('customImage')" @click="showImageToast" />
     </demo-block>
 
-    <demo-block :title="$t('advancedUsage')">
-      <van-button
-        type="primary"
-        @click="showCustomizedToast"
-      >
-        {{ $t('advancedUsage') }}
-      </van-button>
+    <demo-block :title="$t('updateMessage')">
+      <van-button type="primary" :text="$t('updateMessage')" @click="showCustomizedToast" />
     </demo-block>
   </demo-section>
 </template>
@@ -85,7 +42,9 @@ export default {
       customIcon: '自定义图标',
       customImage: '展示图片',
       text4: second => `倒计时 ${second} 秒`,
-      longTextButton: '长文字提示'
+      longTextButton: '长文字提示',
+      updateMessage: '动态更新提示',
+      loadingType: '自定义加载图标'
     },
     'en-US': {
       title1: 'Text',
@@ -100,13 +59,19 @@ export default {
       customIcon: 'Custom Icon',
       customImage: 'Custom Image',
       text4: second => `${second} seconds`,
-      longTextButton: 'Long Text'
+      longTextButton: 'Long Text',
+      updateMessage: 'Update Message',
+      loadingType: 'Loading Type'
     }
   },
 
   methods: {
-    showLoadingToast() {
-      this.$toast.loading({ forbidClick: true, message: this.$t('loading') });
+    showLoadingToast(loadingType) {
+      this.$toast.loading({
+        forbidClick: true,
+        message: this.$t('loading'),
+        loadingType
+      });
     },
 
     showSuccessToast() {
@@ -135,7 +100,6 @@ export default {
       const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,
-        loadingType: 'spinner',
         message: this.$t('text4', 3)
       });
 
@@ -155,7 +119,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-toast {
   background-color: @white;

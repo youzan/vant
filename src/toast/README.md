@@ -24,6 +24,12 @@ Toast.loading({
   message: 'Loading...',
   forbidClick: true
 });
+
+Toast.loading({
+  message: 'Loading...',
+  forbidClick: true,
+  loadingType: 'spinner'
+});
 ```
 
 ### Success/Fail
@@ -47,12 +53,12 @@ Toast({
 });
 ```
 
-### Advanced Usage
+### Update Message
 
 ```javascript
 const toast = Toast.loading({
-  duration: 0,       // continuous display toast
-  forbidClick: true, // forbid click background
+  duration: 0, // continuous display toast
+  forbidClick: true,
   loadingType: 'spinner',
   message: '3 seconds'
 });

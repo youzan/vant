@@ -19,10 +19,19 @@ Toast('提示内容');
 
 ### 加载提示
 
+使用`Toast.loading`方法展示加载提示，通过`forbidClick`属性可以禁用背景点击，通过`loadingType`属性可以自定义加载图标类型。
+
 ```js
 Toast.loading({
   message: '加载中...',
   forbidClick: true
+});
+
+// 自定义加载图标
+Toast.loading({
+  message: '加载中...',
+  forbidClick: true,
+  loadingType: 'spinner'
 });
 ```
 
@@ -47,13 +56,12 @@ Toast({
 });
 ```
 
-### 高级用法
+### 动态更新提示
 
 ```js
 const toast = Toast.loading({
-  duration: 0,       // 持续展示 toast
-  forbidClick: true, // 禁用背景点击
-  loadingType: 'spinner',
+  duration: 0, // 持续展示 toast
+  forbidClick: true,
   message: '倒计时 3 秒'
 });
 
@@ -64,6 +72,7 @@ const timer = setInterval(() => {
     toast.message = `倒计时 ${second} 秒`;
   } else {
     clearInterval(timer);
+    // 手动清除 Toast
     Toast.clear();
   }
 }, 1000);
