@@ -1,5 +1,4 @@
 import { createNamespace, addUnit } from '../utils';
-import { GRAY } from '../utils/constant';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -74,16 +73,13 @@ function Loading(
 }
 
 Loading.props = {
+  color: String,
   size: [Number, String],
   vertical: Boolean,
   textSize: [Number, String],
   type: {
     type: String,
     default: 'circular'
-  },
-  color: {
-    type: String,
-    default: GRAY
   }
 };
 

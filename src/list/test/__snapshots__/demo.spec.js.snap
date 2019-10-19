@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
             <div class="van-pull-refresh__head"></div>
             <div role="feed" class="van-list" aria-busy="true">
               <div class="van-list__loading">
-                <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="color: rgb(201, 201, 201); width: 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">加载中...</span></div>
+                <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 16px; height: 16px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">加载中...</span></div>
               </div>
               <div class="van-list__placeholder"></div>
             </div>
