@@ -1,12 +1,13 @@
 import { createNamespace, isDef, addUnit } from '../utils';
-import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('progress');
 
 export default createComponent({
   props: {
+    color: String,
     inactive: Boolean,
     pivotText: String,
+    textColor: String,
     pivotColor: String,
     trackColor: String,
     strokeWidth: [String, Number],
@@ -18,14 +19,6 @@ export default createComponent({
     showPivot: {
       type: Boolean,
       default: true
-    },
-    color: {
-      type: String,
-      default: BLUE
-    },
-    textColor: {
-      type: String,
-      default: WHITE
     }
   },
 
