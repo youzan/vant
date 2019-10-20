@@ -8,6 +8,7 @@ export default createComponent({
     inactive: Boolean,
     pivotText: String,
     pivotColor: String,
+    trackColor: String,
     strokeWidth: [String, Number],
     percentage: {
       type: Number,
@@ -70,12 +71,10 @@ export default createComponent({
       width: (this.progressWidth * percentage) / 100 + 'px'
     };
 
-    let wrapperStyle;
-    if (this.strokeWidth) {
-      wrapperStyle = {
-        height: addUnit(this.strokeWidth)
-      };
-    }
+    const wrapperStyle = {
+      background: this.trackColor,
+      height: addUnit(this.strokeWidth)
+    };
 
     return (
       <div class={bem()} style={wrapperStyle}>

@@ -16,3 +16,13 @@ test('calc width', async () => {
   await later();
   expect(wrapper).toMatchSnapshot();
 });
+
+test('track color prop', async () => {
+  const wrapper = mount(Progress, {
+    propsData: {
+      trackColor: 'green'
+    }
+  });
+
+  expect(wrapper.element.style.background).toEqual('green');
+});
