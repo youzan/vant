@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.2.9](https://github.com/youzan/vant/tree/v2.2.9)
+`2019-10-20`
+
+**Features**
+
+- Tag: add closeable prop [\#4763](https://github.com/youzan/vant/pull/4763)
+- Loading: add some less vars [\#4781](https://github.com/youzan/vant/pull/4781)
+- Progress: add some less vars [\#4790](https://github.com/youzan/vant/pull/4790)
+- Progress: add track-color prop [\#4789](https://github.com/youzan/vant/pull/4789)
+- Toast: add @toast-loading-icon-color var [\#4782](https://github.com/youzan/vant/pull/4782)
+- Picker: add @picker-loading-icon-color var [\#4787](https://github.com/youzan/vant/pull/4787)
+- ImagePreview: add cover slot [\#4766](https://github.com/youzan/vant/pull/4766)
+
+**Bug Fixes**
+
+- fix Tag incorrect round radius [\#4762](https://github.com/youzan/vant/pull/4762)
+- fix Sku emit sku-selected event when reset sku [\#4755](https://github.com/youzan/vant/pull/4755)
+- fix ImagePreview should not close when click index [\#4764](https://github.com/youzan/vant/pull/4764)
+- fix AddressEdit choose overseas failure when configuring placeholer [\#4769](https://github.com/youzan/vant/pull/4769)
+
+
 ### [v2.2.8](https://github.com/youzan/vant/tree/v2.2.8)
 `2019-10-17`
 

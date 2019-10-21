@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.9](https://github.com/youzan/vant/tree/v2.2.9)
+`2019-10-20`
+
+**Features**
+
+- Tag: 新增 closeable 属性 [\#4763](https://github.com/youzan/vant/pull/4763)
+- Loading: 新增若干个 Less 变量 [\#4781](https://github.com/youzan/vant/pull/4781)
+- Progress: 新增若干个 Less 变量 [\#4790](https://github.com/youzan/vant/pull/4790)
+- Progress: 新增 track-color 属性 [\#4789](https://github.com/youzan/vant/pull/4789)
+- Toast: 新增 @toast-loading-icon-color 变量 [\#4782](https://github.com/youzan/vant/pull/4782)
+- Picker: 新增 @picker-loading-icon-color 变量 [\#4787](https://github.com/youzan/vant/pull/4787)
+- ImagePreview: 新增 cover 插槽 [\#4766](https://github.com/youzan/vant/pull/4766)
+
+**Bug Fixes**
+
+- 修复 Tag 圆角不够圆的问题 [\#4762](https://github.com/youzan/vant/pull/4762)
+- 修复 Sku 重置时不触发 sku-selected 事件的问题 [\#4755](https://github.com/youzan/vant/pull/4755)
+- 修复 ImagePreview 点击索引时会关闭预览的问题 [\#4764](https://github.com/youzan/vant/pull/4764)
+- 修复 AddressEdit 设置 area-placeholder 后无法选择海外地址的问题 [\#4769](https://github.com/youzan/vant/pull/4769)
+
+
 ### [v2.2.8](https://github.com/youzan/vant/tree/v2.2.8)
 `2019-10-17`
 
