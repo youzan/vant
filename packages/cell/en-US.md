@@ -128,10 +128,10 @@ Vue.use(Cell).use(CellGroup);
 
 ### Cell Slot
 
-| name | Description |
-|------|------|
-| - | Default slot |
-| icon | Custom icon |
-| title | Custom title |
-| label | Custom label |
-| right-icon | Custom right icon |
+| name | Description | Version |
+|------|------|------|
+| - | Default slot | |
+| icon | Custom icon | |
+| title | Custom title | |
+| label | Custom label | 1.6.10 |
+| right-icon | Custom right icon | |
