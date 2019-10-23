@@ -1,18 +1,11 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-picker
-        :columns="$t('column1')"
-        @change="onChange1"
-      />
+      <van-picker :columns="$t('column1')" @change="onChange1" />
     </demo-block>
 
     <demo-block :title="$t('defaultIndex')">
-      <van-picker
-        :columns="$t('column1')"
-        :default-index="2"
-        @change="onChange1"
-      />
+      <van-picker :columns="$t('column1')" :default-index="2" @change="onChange1" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -34,10 +27,7 @@
         :placeholder="$t('chooseCity')"
         @click="onClickField"
       />
-      <van-popup
-        v-model="showPicker"
-        position="bottom"
-      >
+      <van-popup v-model="showPicker" position="bottom">
         <van-picker
           show-toolbar
           :columns="$t('column1')"
@@ -52,17 +42,11 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-picker
-        :columns="columns"
-        @change="onChange2"
-      />
+      <van-picker :columns="columns" @change="onChange2" />
     </demo-block>
 
     <demo-block :title="$t('loadingStatus')">
-      <van-picker
-        loading
-        :columns="columns"
-      />
+      <van-picker loading :columns="columns" />
     </demo-block>
   </demo-section>
 </template>
@@ -79,11 +63,7 @@ export default {
       withPopup: '搭配弹出层使用',
       chooseCity: '选择城市',
       column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-      column2: [
-        { text: '杭州', disabled: true },
-        { text: '宁波' },
-        { text: '温州' }
-      ],
+      column2: [{ text: '杭州', disabled: true }, { text: '宁波' }, { text: '温州' }],
       column3: {
         浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
         福建: ['福州', '厦门', '莆田', '三明', '泉州']

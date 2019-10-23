@@ -198,6 +198,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | visible-item-count | Count of visible columns | *number* | `5` | - |
 | allow-html | Whether to allow HTML in option text | *boolean* | `true` | 2.1.8 |
 | default-index | Default value index of single column picker | *number* | `0` | - |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.10` |
 
 ### Events
 

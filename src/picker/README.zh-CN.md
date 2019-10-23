@@ -206,6 +206,7 @@ export default {
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
 | allow-html | 是否允许选项内容中渲染 HTML | *boolean* | `true` | 2.1.8 |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` | - |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.10` |
 
 ### Events
 

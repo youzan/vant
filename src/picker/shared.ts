@@ -25,5 +25,9 @@ export const pickerProps = {
   itemHeight: {
     type: Number,
     default: 44
+  },
+  swipeDuration: {
+    type: Number,
+    default: 1000
   }
 };
