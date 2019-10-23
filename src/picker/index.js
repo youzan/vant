@@ -192,6 +192,7 @@ export default createComponent({
               className={item.className}
               itemHeight={this.itemHeight}
               defaultIndex={item.defaultIndex || this.defaultIndex}
+              swipeDuration={this.swipeDuration}
               visibleItemCount={this.visibleItemCount}
               initialOptions={this.simple ? item : item.values}
               onChange={() => {

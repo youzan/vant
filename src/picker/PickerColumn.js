@@ -8,8 +8,7 @@ const DEFAULT_DURATION = 200;
 
 // 惯性滑动思路:
 // 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
-// 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动，持续 `MOMENTUM_DURATION`
-const MOMENTUM_DURATION = 1000;
+// 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动
 const MOMENTUM_LIMIT_TIME = 300;
 const MOMENTUM_LIMIT_DISTANCE = 15;
 
@@ -36,6 +35,7 @@ export default createComponent({
     className: String,
     itemHeight: Number,
     defaultIndex: Number,
+    swipeDuration: Number,
     visibleItemCount: Number,
     initialOptions: {
       type: Array,
@@ -216,7 +216,7 @@ export default createComponent({
 
       const index = this.getIndexByOffset(distance);
 
-      this.duration = MOMENTUM_DURATION;
+      this.duration = this.swipeDuration;
       this.setIndex(index, true);
     },
 
