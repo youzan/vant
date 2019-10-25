@@ -60,6 +60,10 @@ export const TimePickerMixin = {
 
   mounted() {
     this.updateColumnValue();
+
+    this.$nextTick(() => {
+      this.updateInnerValue();
+    });
   },
 
   methods: {
