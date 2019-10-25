@@ -115,3 +115,9 @@ export default {
 |------|------|------|------|
 | open | 打开单元格侧边栏 | position: `left | right` | - |
 | close | 收起单元格侧边栏 | - | - |
+
+## 常见问题
+
+### 在桌面端无法操作组件？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
