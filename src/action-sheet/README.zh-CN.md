@@ -118,13 +118,6 @@ export default {
 </van-action-sheet>
 ```
 
-## 常见问题
-
-### 引入时提示 dependencies not found？
-
-在 1.x 版本中，上拉菜单的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
-
-
 ## API
 
 ### Props
@@ -169,3 +162,9 @@ export default {
 | className | 为对应列添加额外的 class | *any* |
 | loading | 是否为加载状态 | *boolean* |
 | disabled | 是否为禁用状态 | *boolean* |
+
+## 常见问题
+
+### 引入时提示 dependencies not found？
+
+在 1.x 版本中，上拉菜单的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
