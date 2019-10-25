@@ -13,19 +13,13 @@
       />
     </demo-block>
 
-    <demo-block
-      v-if="!$attrs.weapp"
-      :title="$t('text')"
-    >
+    <demo-block :title="$t('text')">
       <van-loading size="24px">
         {{ $t('loading') }}
       </van-loading>
     </demo-block>
 
-    <demo-block
-      v-if="!$attrs.weapp"
-      :title="$t('vertical')"
-    >
+    <demo-block :title="$t('vertical')">
       <van-loading
         size="24px"
         vertical

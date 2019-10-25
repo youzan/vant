@@ -17,7 +17,7 @@
       <van-popup v-model="showRight" position="right" :style="{ width: '20%', height: '100%' }" />
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('closeIcon')">
+    <demo-block :title="$t('closeIcon')">
       <van-cell :title="$t('closeIcon')" is-link @click="showCloseIcon = true" />
       <van-cell :title="$t('customCloseIcon')" is-link @click="showCustomCloseIcon = true" />
       <van-cell :title="$t('customIconPosition')" is-link @click="showCustomIconPosition = true" />
@@ -39,7 +39,7 @@
       />
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('roundCorner')">
+    <demo-block :title="$t('roundCorner')">
       <van-cell :title="$t('roundCorner')" is-link @click="showRoundCorner = true" />
       <van-popup v-model="showRoundCorner" round position="bottom" :style="{ height: '20%' }" />
     </demo-block>

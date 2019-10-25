@@ -99,7 +99,7 @@
       </van-tabs>
     </demo-block>
 
-    <demo-block :title="$t('title7')">
+    <demo-block v-if="!$attrs.weapp" :title="$t('title7')">
       <van-tabs :active="active">
         <van-tab
           v-for="index in 2"
