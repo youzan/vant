@@ -134,3 +134,9 @@ export default {
 | delete | 自定义删除按键内容 |
 | extra-key | 自定义左下角按键内容
 | title-left | 自定义标题栏左侧内容 |
+
+## 常见问题
+
+### 在桌面端无法操作组件？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。

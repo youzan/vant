@@ -73,3 +73,9 @@ export default {
 | pulling | 下拉过程中顶部内容 | { distance: 当前下拉距离 } |
 | loosing | 释放过程中顶部内容 | { distance: 当前下拉距离 } |
 | loading | 加载过程中顶部内容 | { distance: 当前下拉距离 } |
+
+## 常见问题
+
+### 在桌面端无法操作组件？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
