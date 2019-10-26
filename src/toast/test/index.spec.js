@@ -121,6 +121,15 @@ test('set default options', () => {
   expect(Toast().className).toEqual('');
 });
 
+test('set default options by type', () => {
+  const className = 'my-toast';
+  Toast.setDefaultOptions('loading', { className });
+  expect(Toast.loading().className).toEqual(className);
+  expect(Toast.success().className).toEqual('');
+  Toast.resetDefaultOptions();
+  expect(Toast.loading().className).toEqual('');
+});
+
 test('toast duration 0', () => {
   Toast.allowMultiple();
   const toast = Toast({
