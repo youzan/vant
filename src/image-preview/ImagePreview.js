@@ -3,7 +3,6 @@ import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
-import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 import Image from '../image';
 import Loading from '../loading';
 import Swipe from '../swipe';
@@ -19,7 +18,7 @@ function getDistance(touches) {
 }
 
 export default createComponent({
-  mixins: [PopupMixin, TouchMixin, CloseOnPopstateMixin],
+  mixins: [PopupMixin, TouchMixin],
 
   props: {
     className: null,
