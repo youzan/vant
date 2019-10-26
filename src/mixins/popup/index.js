@@ -1,6 +1,7 @@
 import { context } from './context';
 import { TouchMixin } from '../touch';
 import { PortalMixin } from '../portal';
+import { CloseOnPopstateMixin } from '../close-on-popstate';
 import { on, off, preventDefault } from '../../utils/dom/event';
 import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/dom/scroll';
@@ -8,6 +9,7 @@ import { getScrollEventTarget } from '../../utils/dom/scroll';
 export const PopupMixin = {
   mixins: [
     TouchMixin,
+    CloseOnPopstateMixin,
     PortalMixin({
       afterPortal() {
         if (this.overlay) {

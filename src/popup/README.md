@@ -127,6 +127,7 @@ export default {
 | round | Whether to show round corner | *boolean* | `false` | 2.0.7 |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
+| close-on-popstate | Whether to close when popstate | *boolean* | `false` | 2.2.10 |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
 | closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
 | close-icon | Close icon name | *string* | `cross` | 2.2.0 |
