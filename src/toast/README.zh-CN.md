@@ -104,6 +104,24 @@ toast1.clear();
 toast2.clear();
 ```
 
+### 修改默认配置
+
+通过`Toast.setDefaultOptions`函数可以全局修改 Toast 的默认配置
+
+```js
+// 将所有 Toast 的展示时长设置为 2000 毫秒
+Toast.setDefaultOptions({ duration: 2000 });
+
+// 将所有 loading Toast 设置为背景不可点击 (2.2.10 版本开始支持)
+Toast.setDefaultOptions('loading', { forbidClick: true });
+
+// 重置所有 Toast 的默认配置
+Toast.resetDefaultOptions();
+
+// 重置 loading Toast 的默认配置 (2.2.10 版本开始支持)
+Toast.resetDefaultOptions('loading');
+```
+
 ## API
 
 ### 方法
@@ -116,8 +134,8 @@ toast2.clear();
 | Toast.fail | 展示失败提示 | `options | message` | toast 实例 |
 | Toast.clear | 关闭提示 | `clearAll: boolean` | `void` |
 | Toast.allowMultiple | 允许同时存在多个 Toast | - | `void` |
-| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效 | `options` | `void` |
-| Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效 | - | `void` |
+| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type | options` | `void` |
+| Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### Options
 

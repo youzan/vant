@@ -22,6 +22,9 @@ const defaultOptions = {
   closeOnClick: false
 };
 
+// default options of specific type
+let defaultOptionsMap = {};
+
 let queue = [];
 let multiple = false;
 let currentOptions = {
@@ -76,29 +79,32 @@ function Toast(options = {}) {
     toast.updateZIndex();
   }
 
+  options = parseOptions(options);
   options = {
     ...currentOptions,
-    ...parseOptions(options),
-    clear() {
-      toast.value = false;
+    ...defaultOptionsMap[options.type || currentOptions.type],
+    ...options
+  };
 
-      if (options.onClose) {
-        options.onClose();
-      }
+  options.clear = () => {
+    toast.value = false;
 
-      if (multiple && !isServer) {
-        toast.$on('closed', () => {
-          clearTimeout(toast.timer);
-          queue = queue.filter(item => item !== toast);
+    if (options.onClose) {
+      options.onClose();
+    }
 
-          const parent = toast.$el.parentNode;
-          if (parent) {
-            parent.removeChild(toast.$el);
-          }
+    if (multiple && !isServer) {
+      toast.$on('closed', () => {
+        clearTimeout(toast.timer);
+        queue = queue.filter(item => item !== toast);
 
-          toast.$destroy();
-        });
-      }
+        const parent = toast.$el.parentNode;
+        if (parent) {
+          parent.removeChild(toast.$el);
+        }
+
+        toast.$destroy();
+      });
     }
   };
 
@@ -139,12 +145,21 @@ Toast.clear = all => {
   }
 };
 
-Toast.setDefaultOptions = options => {
-  Object.assign(currentOptions, options);
+Toast.setDefaultOptions = (type, options) => {
+  if (typeof type === 'string') {
+    defaultOptionsMap[type] = options;
+  } else {
+    Object.assign(currentOptions, type);
+  }
 };
 
-Toast.resetDefaultOptions = () => {
-  currentOptions = { ...defaultOptions };
+Toast.resetDefaultOptions = type => {
+  if (typeof type === 'string') {
+    defaultOptionsMap[type] = null;
+  } else {
+    currentOptions = { ...defaultOptions };
+    defaultOptionsMap = {};
+  }
 };
 
 Toast.allowMultiple = (value = true) => {

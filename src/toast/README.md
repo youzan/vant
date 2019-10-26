@@ -101,6 +101,24 @@ toast1.clear();
 toast2.clear();
 ```
 
+### Set Default Options
+
+The Toast default configuration can be globally modified with the `Toast.setDefaultOptions` function.
+
+```js
+// Set the duration of all Toast to 2000 ms
+Toast.setDefaultOptions({ duration: 2000 });
+
+// Set all loading types Toast to background unclickable
+Toast.setDefaultOptions('loading', { forbidClick: true });
+
+// Reset default options of all Toast
+Toast.resetDefaultOptions();
+
+// Reset default options of all loading Toast
+Toast.resetDefaultOptions('loading');
+```
+
 ## API
 
 ### Methods
@@ -113,8 +131,8 @@ toast2.clear();
 | Toast.fail | `options | message` | toast instance | Show fail toast |
 | Toast.clear | `clearAll: boolean` | `void` | Close toast |
 | Toast.allowMultiple | - | `void` | Allow multlple toast at the same time |
-| Toast.setDefaultOptions | `options` | `void` | Set default options of all toasts |
-| Toast.resetDefaultOptions | - | `void` | Reset default options of all toasts |
+| Toast.setDefaultOptions | `type | options` | `void` | Set default options of all toasts |
+| Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
 
 ### Options
 
