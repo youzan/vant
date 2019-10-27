@@ -10,6 +10,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.10](https://github.com/youzan/vant/tree/v2.2.10)
+`2019-10-27`
+
+**Features**
+
+- Icon: 新增 font-display: auto 样式 [\#4831](https://github.com/youzan/vant/pull/4831)
+- Popup: 新增 close-on-popstate 属性 [\#4845](https://github.com/youzan/vant/pull/4845)
+- Picker: 新增 swipe-duration 属性 [\#4816](https://github.com/youzan/vant/pull/4816)
+- Toast: 支持针对指定类型的 Toast 修改默认配置 [\#4848](https://github.com/youzan/vant/pull/4848)
+
+**Bug Fixes**
+
+- 修复 Uploader 文件预览圆角样式错误的问题 [\#4846](https://github.com/youzan/vant/pull/4846)
+- 修复 DatetimePicker 同时使用 min-date 和 filter 时初始值错误的问题 [\#4837](https://github.com/youzan/vant/pull/4837)
+
+
 ### [v2.2.9](https://github.com/youzan/vant/tree/v2.2.9)
 `2019-10-20`
 

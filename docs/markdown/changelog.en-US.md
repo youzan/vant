@@ -1,5 +1,21 @@
 # Changelog
 
+### [v2.2.10](https://github.com/youzan/vant/tree/v2.2.10)
+`2019-10-27`
+
+**Features**
+
+- Icon: add font-display auto property [\#4831](https://github.com/youzan/vant/pull/4831)
+- Popup: add close-on-popstate prop [\#4845](https://github.com/youzan/vant/pull/4845)
+- Picker: add swipe-duration prop [\#4816](https://github.com/youzan/vant/pull/4816)
+- Toast: support set default options of specfic type [\#4848](https://github.com/youzan/vant/pull/4848)
+
+**Bug Fixes**
+
+- fix Uploader file preview border radius [\#4846](https://github.com/youzan/vant/pull/4846)
+- fix DatetimePicker incorrecrt initial value when use min-date and filter [\#4837](https://github.com/youzan/vant/pull/4837)
+
+
 ### [v2.2.9](https://github.com/youzan/vant/tree/v2.2.9)
 `2019-10-20`
 
