@@ -1,16 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const excludes = [
-  'index.ts',
-  'index.less',
-  'style',
-  'mixins',
-  'utils',
-  '.DS_Store'
-];
+const EXCLUDES = ['index.ts', 'index.less', 'style', 'mixins', 'utils', '.DS_Store'];
 
-module.exports = function () {
-  const dirs = fs.readdirSync(path.resolve(__dirname, '../src'));
-  return dirs.filter(dirName => excludes.indexOf(dirName) === -1);
+module.exports = function() {
+  const src = path.resolve(__dirname, '../src');
+  const dirs = fs.readdirSync(src);
+  return dirs.filter(dir => !EXCLUDES.includes(dir));
 };
