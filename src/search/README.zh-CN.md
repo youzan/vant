@@ -57,13 +57,13 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 
 ### Props
 
-Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
-
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | label | 搜索框左侧文本 | *string* | - | - |
 | shape | 搜索框形状，可选值为 `round` | *string* | `square` | - |
 | background | 搜索框背景色 | *string* | `#f2f2f2` | - |
+| maxlength | 输入的最大字符数 | *string \| number* | - | - |
+| placeholder | 占位提示文字 | *string* | - | - |
 | clearable | 是否启用清除控件 | *boolean* | `true` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` | - |
 | action-text | 取消按钮文字 | *boolean* | `取消` | 2.2.2 |
