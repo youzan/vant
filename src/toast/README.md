@@ -147,7 +147,7 @@ Toast.resetDefaultOptions('loading');
 | forbidClick | Whether to forbid click background | *boolean* | `false` | - |
 | closeOnClick | Whether to close after clicked | *boolean* | `false` | 2.1.5 |
 | loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` | - |
-| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `3000` | - |
+| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `2000` | - |
 | className | Custom className | *any* | - | - |
 | onOpened | Callback function after opened | *Function* | - | - |
 | onClose | Callback function after close | *Function* | - | - |
