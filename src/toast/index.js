@@ -11,7 +11,7 @@ const defaultOptions = {
   className: '',
   onClose: null,
   onOpened: null,
-  duration: 3000,
+  duration: 2000,
   iconPrefix: undefined,
   position: 'middle',
   transition: 'van-fade',
