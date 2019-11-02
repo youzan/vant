@@ -157,3 +157,11 @@ export default {
 | file | Result contains File object |
 | text | Result contains File object and text content |
 | dataUrl | Result contains File object and base64 content |
+
+### Methods
+
+Use ref to get Uploader instance and call instance methods
+
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| closeImagePreview | Close full screen image preview | - | - |

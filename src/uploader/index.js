@@ -197,7 +197,7 @@ export default createComponent({
       const imageFiles = this.fileList.filter(item => isImageFile(item));
       const imageContents = imageFiles.map(item => item.content || item.url);
 
-      ImagePreview({
+      this.imagePreview = ImagePreview({
         images: imageContents,
         closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item),
@@ -205,6 +205,12 @@ export default createComponent({
           this.$emit('close-preview');
         }
       });
+    },
+
+    closeImagePreview() {
+      if (this.imagePreview) {
+        this.imagePreview.close();
+      }
     },
 
     renderPreviewItem(item, index) {
