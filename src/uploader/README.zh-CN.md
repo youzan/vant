@@ -177,3 +177,11 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | file | 结果仅包含 File 对象 |
 | text | 结果包含 File 对象，以及文件的文本内容 |
 | dataUrl | 结果包含 File 对象，以及文件对应的 base64 编码 |
+
+### 方法
+
+通过 ref 可以获取到 Uploader 实例并调用实例方法
+
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| closeImagePreview | 关闭全屏的图片预览 | - | - |

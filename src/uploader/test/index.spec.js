@@ -359,6 +359,24 @@ it('click to preview image', () => {
   expect(imagePreviewNode2.querySelectorAll('.van-image-preview__image').length).toEqual(1);
 });
 
+it('closeImagePreview method', () => {
+  const close = jest.fn();
+  const wrapper = mount(Uploader, {
+    mocks: {
+      imagePreview: {
+        close
+      }
+    }
+  });
+
+  wrapper.vm.closeImagePreview();
+  expect(close).toHaveBeenCalledTimes(1);
+
+  // should not throw error
+  const wrapper2 = mount(Uploader);
+  wrapper2.vm.closeImagePreview();
+});
+
 it('click-preview event', () => {
   const wrapper = mount(Uploader, {
     propsData: {
