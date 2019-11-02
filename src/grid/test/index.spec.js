@@ -50,3 +50,17 @@ test('icon-size prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('render icon-slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-grid icon-size="10">
+        <van-grid-item info="1">
+          <div slot="icon" />
+        </van-grid-item>
+      </van-grid>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
