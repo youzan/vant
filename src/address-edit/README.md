@@ -65,7 +65,7 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | area-list | Area List | *object* | - | - |
-| area-columns-placeholder | placeholder of area columns | *string[]* | `[]` | - |
+| area-columns-placeholder | placeholder of area columns | *string[]* | `[]` | 2.2.5 |
 | address-info | Address Info | *AddressInfo* | `{}` | - |
 | search-result | Address search result | *SearchResult[]* | `[]` | - |
 | show-postal | Whether to show postal field | *boolean* | `false` | - |
