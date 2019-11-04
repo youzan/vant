@@ -82,3 +82,18 @@ test('size prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('click event', () => {
+  const click = jest.fn();
+  const wrapper = mount(Switch, {
+    context: {
+      on: {
+        click
+      }
+    }
+  });
+
+  wrapper.trigger('click');
+
+  expect(click).toHaveBeenCalledTimes(1);
+});
