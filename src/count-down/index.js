@@ -44,6 +44,21 @@ export default createComponent({
     }
   },
 
+  activated() {
+    if (this.keepAlivePaused) {
+      this.counting = true;
+      this.keepAlivePaused = false;
+      this.tick();
+    }
+  },
+
+  deactivated() {
+    if (this.counting) {
+      this.pause();
+      this.keepAlivePaused = true;
+    }
+  },
+
   beforeDestroy() {
     this.pause();
   },
