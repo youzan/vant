@@ -5,3 +5,9 @@ exports[`inactive-color prop 1`] = `
   <div class="van-switch__node"></div>
 </div>
 `;
+
+exports[`size prop 1`] = `
+<div role="switch" aria-checked="false" class="van-switch" style="font-size: 20px;">
+  <div class="van-switch__node"></div>
+</div>
+`;

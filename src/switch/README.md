@@ -103,7 +103,7 @@ export default {
 | v-model | Check status of Switch | *any* | `false` | - |
 | loading | Whether to show loading icon | *boolean* | `false` | - |
 | disabled | Whether to disable switch | *boolean* | `false` | - |
-| size | Size of switch | *string* | `30px` | - |
+| size | Size of switch | *string \| number* | `30px` | 2.2.11 |
 | active-color | Background color when active | *string* | `#1989fa` | - |
 | inactive-color | Background color when inactive | *string* | `#fff` | - |
 | active-value | Value when active | *any* | `true` | - |

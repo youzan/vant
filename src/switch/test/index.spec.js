@@ -72,3 +72,13 @@ test('inactive-color prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('size prop', () => {
+  const wrapper = mount(Switch, {
+    propsData: {
+      size: 20
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
