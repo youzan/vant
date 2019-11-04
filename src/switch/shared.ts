@@ -14,6 +14,7 @@ export type SharedSwitchProps = {
 };
 
 export const switchProps = {
+  size: String,
   value: null as any,
   loading: Boolean,
   disabled: Boolean,
@@ -26,9 +27,5 @@ export const switchProps = {
   inactiveValue: {
     type: null as any,
     default: false
-  },
-  size: {
-    type: String,
-    default: '30px'
   }
 };
