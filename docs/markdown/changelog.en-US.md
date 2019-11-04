@@ -1,5 +1,23 @@
 # Changelog
 
+### [v2.2.11](https://github.com/youzan/vant/tree/v2.2.11)
+`2019-11-04`
+
+**Features**
+
+- Switch: add click event [\#4915](https://github.com/youzan/vant/pull/4915)
+- Switch: support number type of size prop [\#4913](https://github.com/youzan/vant/pull/4913)
+- Toast: change default duration to 2s [\#4886](https://github.com/youzan/vant/pull/4886)
+- Uploader: add closeImagePreview method [\#4901](https://github.com/youzan/vant/pull/4901)
+
+**Bug Fixes**
+
+- fix Button loading color [\#4868](https://github.com/youzan/vant/pull/4868)
+- fix CountDown should clear timer when destroyed [\#4918](https://github.com/youzan/vant/pull/4918)
+- fix CountDown should pause timer when deactivated [\#4919](https://github.com/youzan/vant/pull/4919)
+- fix Grid info、dot prop not work when use icon slot [\#4902](https://github.com/youzan/vant/pull/4902)
+
+
 ### [v2.2.10](https://github.com/youzan/vant/tree/v2.2.10)
 `2019-10-27`
 
