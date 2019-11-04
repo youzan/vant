@@ -5,39 +5,23 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-switch
-        v-model="checked"
-        disabled
-      />
+      <van-switch v-model="checked" disabled />
     </demo-block>
 
     <demo-block :title="$t('loadingStatus')">
-      <van-switch
-        v-model="checked"
-        loading
-      />
+      <van-switch v-model="checked" loading />
     </demo-block>
 
     <demo-block :title="$t('customSize')">
-      <van-switch
-        v-model="checked2"
-        size="24px"
-      />
+      <van-switch v-model="checked2" size="24px" />
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-switch
-        v-model="checked3"
-        active-color="#07c160"
-        inactive-color="#ee0a24"
-      />
+      <van-switch v-model="checked3" active-color="#07c160" inactive-color="#ee0a24" />
     </demo-block>
 
     <demo-block :title="$t('asyncControl')">
-      <van-switch
-        :value="checked4"
-        @input="onInput"
-      />
+      <van-switch :value="checked4" @input="onInput" />
     </demo-block>
   </demo-section>
 </template>
@@ -72,19 +56,21 @@ export default {
 
   methods: {
     onInput(checked) {
-      this.$dialog.confirm({
-        title: this.$t('title'),
-        message: this.$t('message')
-      }).then(() => {
-        this.checked4 = checked;
-      });
+      this.$dialog
+        .confirm({
+          title: this.$t('title'),
+          message: this.$t('message')
+        })
+        .then(() => {
+          this.checked4 = checked;
+        });
     }
   }
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-switch {
   .van-switch {

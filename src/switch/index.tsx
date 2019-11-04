@@ -40,7 +40,9 @@ function Switch(
 
   const loadingColor = checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
 
-  function onClick() {
+  function onClick(event: PointerEvent) {
+    emit(ctx, 'click', event);
+
     if (!disabled && !loading) {
       const newValue = checked ? inactiveValue : activeValue;
       emit(ctx, 'input', newValue);
