@@ -62,7 +62,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | title | Toolbar title | *string* | - | - |
 | area-list | Area data | *object* | - | - |
 | columns-num | level of picker | *string \| number* | `3` | - |
-| columns-placeholder | placeholder of columns | *string[]* | `[]` | - |
+| columns-placeholder | placeholder of columns | *string[]* | `[]` | 2.2.5 |
 | item-height | Option height | *number* | `44` | - |
 | loading | Whether to show loading prompt | *boolean* | `false` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |
