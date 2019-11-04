@@ -44,6 +44,10 @@ export default createComponent({
     }
   },
 
+  beforeDestroy() {
+    this.pause();
+  },
+
   methods: {
     start() {
       if (this.counting) {

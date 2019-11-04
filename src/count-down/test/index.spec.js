@@ -149,3 +149,16 @@ test('incomplate format prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('pause when destroyed', async () => {
+  const pause = jest.fn();
+  const wrapper = mount(CountDown, {
+    mocks: {
+      pause
+    }
+  });
+
+  wrapper.destroy();
+
+  expect(wrapper.vm.counting).toBeFalsy();
+});
