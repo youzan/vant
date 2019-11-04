@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { BLUE, GRAY_DARK } from '../utils/constant';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
@@ -34,7 +34,7 @@ function Switch(
   const checked = value === activeValue;
 
   const switchStyle = {
-    fontSize: size,
+    fontSize: addUnit(size),
     backgroundColor: checked ? activeColor : inactiveColor
   };
 
