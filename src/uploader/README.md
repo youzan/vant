@@ -118,7 +118,7 @@ export default {
 | preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` | - |
 | multiple | Whether to enable multiple selection pictures | *boolean* | `false` | - |
 | disabled | Whether to disabled the upload | *boolean* | `false` | - |
-| deletable | Whether to show delete icon | *boolean* | `true` | 2.2.11 |
+| deletable | Whether to show delete icon | *boolean* | `true` | 2.2.12 |
 | capture | Capture，can be set to `camera` | *string* | - | - |
 | after-read | Hook after reading the file | *Function* | - | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - | - |
