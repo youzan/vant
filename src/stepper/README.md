@@ -104,6 +104,7 @@ export default {
 | min | Min value | *string \| number* | `1` | - |
 | max | Max value | *string \| number* | - | - |
 | step | Value change step | *string \| number* | `1` | - |
+| name | Stepper name | *string \| number* | - | 2.0.3 |
 | integer | Whether to allow only integers | *boolean* | `false` | - |
 | disabled | Disable value change | *boolean* | `false` | - |
 | disable-input | Disable input | *boolean* | `false` | - |
@@ -118,9 +119,9 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when value change | value: current value |
+| change | Triggered when value change | value: current value, detail: Detail info, contains name |
 | overlimit | Triggered when click disabled button | - |
 | plus | Triggered when click plus button | - |
 | minus | Triggered when click minus button | - |
-| focus | Triggered when input focused | - |
-| blur | Triggered when input blured | - |
+| focus | Triggered when input focused | event: Event |
+| blur | Triggered when input blured | event: Event |
