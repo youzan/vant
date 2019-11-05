@@ -84,7 +84,7 @@ function Search(
   };
 
   const inheritData = inherit(ctx);
-  delete inheritData.attrs;
+  inheritData.attrs = undefined;
 
   return (
     <div

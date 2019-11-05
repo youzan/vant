@@ -62,13 +62,12 @@ function createInstance() {
 
 // transform toast options to popup props
 function transformOptions(options) {
-  options = { ...options };
-  options.overlay = options.mask;
-
-  delete options.mask;
-  delete options.duration;
-
-  return options;
+  return {
+    ...options,
+    overlay: options.mask,
+    mask: undefined,
+    duration: undefined
+  };
 }
 
 function Toast(options = {}) {
