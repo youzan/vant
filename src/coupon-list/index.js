@@ -127,7 +127,7 @@ export default createComponent({
       });
     },
 
-    renderEmpty() {
+    genEmpty() {
       return (
         <div class={bem('empty')}>
           <img src={this.emptyImage} />
@@ -136,7 +136,7 @@ export default createComponent({
       );
     },
 
-    renderExchangeButton() {
+    genExchangeButton() {
       return (
         <Button
           size="small"
@@ -167,7 +167,7 @@ export default createComponent({
         placeholder={this.inputPlaceholder || t('placeholder')}
         maxlength="20"
         scopedSlots={{
-          button: this.renderExchangeButton
+          button: this.genExchangeButton
         }}
       />
     );
@@ -187,7 +187,7 @@ export default createComponent({
               nativeOnClick={onChange(index)}
             />
           ))}
-          {!coupons.length && this.renderEmpty()}
+          {!coupons.length && this.genEmpty()}
         </div>
       </Tab>
     );
@@ -198,7 +198,7 @@ export default createComponent({
           {disabledCoupons.map(coupon => (
             <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
           ))}
-          {!disabledCoupons.length && this.renderEmpty()}
+          {!disabledCoupons.length && this.genEmpty()}
         </div>
       </Tab>
     );

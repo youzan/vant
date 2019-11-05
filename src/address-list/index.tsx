@@ -29,7 +29,7 @@ function AddressList(
   slots: AddressListSlots,
   ctx: RenderContext<AddressListProps>
 ) {
-  function renderList(list?: AddressItemData[], disabled?: boolean) {
+  function genList(list?: AddressItemData[], disabled?: boolean) {
     if (!list) {
       return;
     }
@@ -57,8 +57,8 @@ function AddressList(
     ));
   }
 
-  const List = renderList(props.list);
-  const DisabledList = renderList(props.disabledList, true);
+  const List = genList(props.list);
+  const DisabledList = genList(props.disabledList, true);
 
   return (
     <div class={bem()} {...inherit(ctx)}>

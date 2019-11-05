@@ -213,7 +213,7 @@ export default createComponent({
       }
     },
 
-    renderPreviewItem(item, index) {
+    genPreviewItem(item, index) {
       const DeleteIcon = (
         <Icon
           name="clear"
@@ -265,13 +265,13 @@ export default createComponent({
       );
     },
 
-    renderPreviewList() {
+    genPreviewList() {
       if (this.previewImage) {
-        return this.fileList.map(this.renderPreviewItem);
+        return this.fileList.map(this.genPreviewItem);
       }
     },
 
-    renderUpload() {
+    genUpload() {
       if (this.fileList.length >= this.maxCount) {
         return;
       }
@@ -322,8 +322,8 @@ export default createComponent({
     return (
       <div class={bem()}>
         <div class={bem('wrapper')}>
-          {this.renderPreviewList()}
-          {this.renderUpload()}
+          {this.genPreviewList()}
+          {this.genUpload()}
         </div>
       </div>
     );
