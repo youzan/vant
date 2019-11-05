@@ -27,6 +27,10 @@ export default createComponent({
     asyncChange: Boolean,
     disableInput: Boolean,
     decimalLength: Number,
+    name: {
+      type: [Number, String],
+      default: ''
+    },
     min: {
       type: [Number, String],
       default: 1
@@ -110,7 +114,7 @@ export default createComponent({
 
     currentValue(val) {
       this.$emit('input', val);
-      this.$emit('change', val);
+      this.$emit('change', val, { name: this.name });
     }
   },
 
@@ -167,7 +171,7 @@ export default createComponent({
     emitChange(value) {
       if (this.asyncChange) {
         this.$emit('input', value);
-        this.$emit('change', value);
+        this.$emit('change', value, { name: this.name });
       } else {
         this.currentValue = value;
       }
