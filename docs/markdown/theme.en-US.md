@@ -19,16 +19,18 @@ There are some basic variables below, all available variables could be found in 
 @background-color-light: #fafafa;
 ```
 
-### How to custom theme
+## How to custom theme
 
 
-#### Step 1: import less file
+### Step 1: import less file
 
 First you should import the less source file to your project. you can use babel-plugin-import to automatically import or just manually import less file.
 
+#### Automatically import style
+
+Configure babel plugin in babel.config.js, if you are using babel6, please manually import less file.
+
 ```js
-// configure babel plugin in babel.config.js
-// For users who use babel6, please manually import less file
 module.exports = {
   plugins: [
     [
@@ -45,14 +47,17 @@ module.exports = {
 };
 ```
 
-manually import less file：
+#### Manually import style
 
 ```js
-import Button from 'vant/lib/button';
+// import all styles
+import 'vant/lib/index.less';
+
+// import style of single component
 import 'vant/lib/button/style/less';
 ```
 
-#### Step 2: modify less variables
+### Step 2: modify less variables
 
 Use [modifyVars](http://lesscss.org/usage/#using-less-in-the-browser-modify-variables) provided by less.js to modify less variables，webpack config for reference:
 

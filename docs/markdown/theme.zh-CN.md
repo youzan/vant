@@ -23,17 +23,17 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 @background-color-light: #fafafa;
 ```
 
-### 定制方法
+## 定制方法
 
-定制主题分为两步：引入样式源文件和修改样式变量
+### 步骤一. 引入样式源文件
 
-#### 步骤一. 引入样式源文件
+定制主题时，需要引入组件对应的 Less 样式文件，支持按需引入和手动引入两种方式。
 
-Vant 支持通过 babel 插件按需引入和手动引入两种方式，推荐使用按需引入的方式。
+#### 按需引入样式（推荐）
+
+在 babel.config.js 中配置按需引入样式源文件，注意 babel6 不支持按需引入样式，请手动引入样式
 
 ```js
-// 在 babel.config.js 中配置按需引入样式源文件
-// 注意：babel6 不支持按需引入样式，请手动引入
 module.exports = {
   plugins: [
     [
@@ -50,17 +50,19 @@ module.exports = {
 };
 ```
 
-下面是手动引入的方法：
+#### 手动引入样式
 
 ```js
-// 手动引入组件的样式源文件
-import Button from 'vant/lib/button';
+// 引入全部样式
+import 'vant/lib/index.less';
+
+// 引入单个组件样式
 import 'vant/lib/button/style/less';
 ```
 
-#### 步骤二. 修改样式变量
+### 步骤二. 修改样式变量
 
-使用 less 提供的 [modifyVars](http://lesscss.org/usage/#using-less-in-the-browser-modify-variables) 即可对变量进行修改，下面是参考的 webpack 配置。
+使用 Less 提供的 [modifyVars](http://lesscss.org/usage/#using-less-in-the-browser-modify-variables) 即可对变量进行修改，下面是参考的 webpack 配置。
 
 ```js
 // webpack.config.js
