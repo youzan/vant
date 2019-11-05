@@ -40,6 +40,10 @@ export default createComponent({
       type: Number,
       default: Number.MAX_VALUE
     },
+    deletable: {
+      type: Boolean,
+      default: true
+    },
     previewImage: {
       type: Boolean,
       default: true
@@ -214,7 +218,7 @@ export default createComponent({
     },
 
     genPreviewItem(item, index) {
-      const DeleteIcon = (
+      const DeleteIcon = this.deletable && (
         <Icon
           name="clear"
           class={bem('preview-delete')}

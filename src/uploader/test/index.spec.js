@@ -270,6 +270,19 @@ it('preview-size prop', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('deletable prop', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }]
+    }
+  });
+
+  expect(wrapper.find('.van-uploader__preview-delete').element).toBeTruthy();
+
+  wrapper.setProps({ deletable: false });
+  expect(wrapper.find('.van-uploader__preview-delete').element).toBeFalsy();
+});
+
 it('delete preview image', () => {
   const wrapper = mount(Uploader, {
     propsData: {
