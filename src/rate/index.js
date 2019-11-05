@@ -136,7 +136,7 @@ export default createComponent({
       return this.allowHalf ? 0.5 : 1;
     },
 
-    renderStar(status, index) {
+    genStar(status, index) {
       const { icon, color, count, voidIcon, disabled, voidColor, disabledColor } = this;
       const score = index + 1;
       const isFull = status === 'full';
@@ -196,7 +196,7 @@ export default createComponent({
         onTouchstart={this.onTouchStart}
         onTouchmove={this.onTouchMove}
       >
-        {this.list.map((status, index) => this.renderStar(status, index))}
+        {this.list.map((status, index) => this.genStar(status, index))}
       </div>
     );
   }

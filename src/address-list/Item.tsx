@@ -45,7 +45,7 @@ function AddressItem(
     emit(ctx, 'click');
   }
 
-  const renderRightIcon = () => (
+  const genRightIcon = () => (
     <Icon
       name="edit"
       class={bem('edit')}
@@ -57,7 +57,7 @@ function AddressItem(
     />
   );
 
-  const renderContent = () => {
+  const genContent = () => {
     const { data } = props;
     const Info = [
       <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
@@ -79,8 +79,8 @@ function AddressItem(
       valueClass={bem('value')}
       clickable={switchable && !disabled}
       scopedSlots={{
-        default: renderContent,
-        'right-icon': renderRightIcon
+        default: genContent,
+        'right-icon': genRightIcon
       }}
       onClick={onClick}
       {...inherit(ctx)}

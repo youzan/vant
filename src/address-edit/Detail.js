@@ -30,7 +30,7 @@ export default createComponent({
       this.$refs.field.blur();
     },
 
-    renderFinish() {
+    genFinish() {
       const show = this.value && this.focused && android;
       if (show) {
         return (
@@ -41,7 +41,7 @@ export default createComponent({
       }
     },
 
-    renderSearchResult() {
+    genSearchResult() {
       const { searchResult } = this;
       const show = this.focused && searchResult && this.showSearchResult;
       if (show) {
@@ -75,10 +75,10 @@ export default createComponent({
           label={t('label')}
           maxlength={this.detailMaxlength}
           placeholder={t('placeholder')}
-          scopedSlots={{ icon: this.renderFinish }}
+          scopedSlots={{ icon: this.genFinish }}
           {...{ on: this.$listeners }}
         />
-        {this.renderSearchResult()}
+        {this.genSearchResult()}
       </Cell>
     );
   }

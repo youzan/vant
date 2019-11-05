@@ -53,7 +53,7 @@ export default createComponent({
       }
     },
 
-    renderChildren() {
+    genChildren() {
       if (this.animated) {
         return (
           <div class={bem('track')} style={this.style}>
@@ -72,7 +72,7 @@ export default createComponent({
         class={bem('content', { animated: this.animated })}
         {...{ on: this.listeners }}
       >
-        {this.renderChildren()}
+        {this.genChildren()}
       </div>
     );
   }

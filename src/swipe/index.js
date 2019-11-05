@@ -312,7 +312,7 @@ export default createComponent({
       }
     },
 
-    renderIndicator() {
+    genIndicator() {
       const { count, activeIndicator } = this;
       const slot = this.slots('indicator');
 
@@ -349,7 +349,7 @@ export default createComponent({
         >
           {this.slots()}
         </div>
-        {this.renderIndicator()}
+        {this.genIndicator()}
       </div>
     );
   }
