@@ -1345,6 +1345,15 @@
   resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.0.0.tgz#04774bc45cb6e11c734b8985925558ed8d3aab61"
   integrity sha512-v6rVoLPJhKc6V4iHnidaueHCdkF6/aCVdQFDGvKcYoNJnVL8t8pem/XGJ+VBFNfD3b2pggwLc1QaWYVJFfaXLw==
 
+"@vant/stylelint-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.0.0.tgz#83a9a68510d8de3b94bcfbcd45c5303b574c702e"
+  integrity sha512-503KNz26HwiXP8mndmKl6z59SjEyeEM/vDDX5Cez+S6HLWLEod4vNmRPB0WWVUGrszqKvKdZ1DHFnTA1LSChGQ==
+  dependencies:
+    stylelint-config-rational-order "^0.1.2"
+    stylelint-config-standard "^19.0.0"
+    stylelint-order "^3.1.1"
+
 "@vant/touch-emulator@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.1.0.tgz#3cb2bcf87dbed1f8a2408c57139ee4fb2e761e5f"
@@ -9391,7 +9400,7 @@ stylelint-order@^2.2.1:
     postcss "^7.0.2"
     postcss-sorting "^4.1.0"
 
-stylelint-order@^3.0.1:
+stylelint-order@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.1.1.tgz#ba9ea6844d1482f97f31204e7c9605c7b792c294"
   integrity sha512-4gP/r8j/6JGZ/LL41b2sYtQqfwZl4VSqTp7WeIwI67v/OXNQ08dnn64BGXNwAUSgb2+YIvIOxQaMzqMyQMzoyQ==
