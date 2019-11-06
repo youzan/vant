@@ -73,17 +73,19 @@ Vue.use(Tag);
 
 ```html
 <van-tag
-  v-if="showPrimary"
-  type="primary"
+  v-if="show.primary"
+  closeable
   size="medium"
+  type="primary"
   @close="close('primary')"
 >
   Tag
 </van-tag>
 <van-tag
-  v-if="showSuccess"
-  type="success"
+  v-if="show.success"
+  closeable
   size="medium"
+  type="success"
   @close="close('success')"
 >
   Tag
