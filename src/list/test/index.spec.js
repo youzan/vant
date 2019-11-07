@@ -108,7 +108,7 @@ test('check the case that scroller is not window', async () => {
   restoreMock();
 });
 
-test('check the direction props', async () => {
+test('check the direction props', () => {
   const wrapper = mount(List, {
     slots: {
       default: '<div class="list-item">list item</div>'
@@ -117,8 +117,6 @@ test('check the direction props', async () => {
       direction: 'up'
     }
   });
-
-  await later();
 
   let children = wrapper.findAll('.van-list > div');
   expect(children.at(0).is('.van-list__placeholder')).toBeTruthy();
@@ -129,7 +127,6 @@ test('check the direction props', async () => {
     direction: 'down'
   });
 
-  await later();
   children = wrapper.findAll('.van-list > div');
   expect(children.at(0).is('.list-item')).toBeTruthy();
   expect(children.at(1).is('.van-list__placeholder')).toBeTruthy();
