@@ -159,6 +159,7 @@ export default {
 | filter | Option filter | *(type, values) => values* | - | - |
 | formatter | Option text formatter | *(type, value) => value* | - | - |
 | title | Toolbar title | *string* | `''` | - |
+| show-toolbar | Whether to show toolbar | *boolean* | `true` | - |
 | loading | Whether to show loading prompt | *boolean* | `false` | - |
 | item-height | Option height | *number* | `44` | - |
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
