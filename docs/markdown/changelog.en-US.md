@@ -1,5 +1,20 @@
 # Changelog
 
+### [v2.2.12](https://github.com/youzan/vant/tree/v2.2.12)
+`2019-11-07`
+
+**Features**
+
+- Stepper: add name prop [\#4931](https://github.com/youzan/vant/pull/4931)
+- Uploader: add deletable prop [\#4925](https://github.com/youzan/vant/pull/4925)
+
+**Bug Fixes**
+
+- fix Sku set min-height for sku body [\#4942](https://github.com/youzan/vant/pull/4942)
+- fix List may trigger load event repeatedly [\#4953](https://github.com/youzan/vant/pull/4953)
+- fix can't custom hairline border color [\#4939](https://github.com/youzan/vant/pull/4939)
+
+
 ### [v2.2.11](https://github.com/youzan/vant/tree/v2.2.11)
 `2019-11-04`
 

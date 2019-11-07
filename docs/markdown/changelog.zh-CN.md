@@ -10,6 +10,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.2.12](https://github.com/youzan/vant/tree/v2.2.12)
+`2019-11-07`
+
+**Features**
+
+- Stepper: 新增 name 属性 [\#4931](https://github.com/youzan/vant/pull/4931)
+- Uploader: 新增 deletable 属性 [\#4925](https://github.com/youzan/vant/pull/4925)
+
+**Bug Fixes**
+
+- 修复 Sku 内容最小高度错误的问题 [\#4942](https://github.com/youzan/vant/pull/4942)
+- 修复 List 在初始化时可能同时触发两次 load 事件的问题 [\#4953](https://github.com/youzan/vant/pull/4953)
+- 修复 @border-color 变量无法定制某些组件边框颜色的问题 [\#4939](https://github.com/youzan/vant/pull/4939)
+
+
 ### [v2.2.11](https://github.com/youzan/vant/tree/v2.2.11)
 `2019-11-04`
 
