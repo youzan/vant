@@ -124,6 +124,20 @@
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vant"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@vant/stylelint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 7"
