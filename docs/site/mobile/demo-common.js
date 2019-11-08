@@ -4,7 +4,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VantDoc, { DemoBlock, DemoSection } from '@vant/doc';
+import VantDoc from '@vant/doc';
 import i18n from '../utils/i18n';
 import Vant, { Lazyload, Locale } from '../../../src';
 import { camelize } from '../../../src/utils/format/string';
@@ -18,8 +18,6 @@ Vue
   });
 
 Vue.mixin(i18n);
-Vue.component('demo-block', DemoBlock);
-Vue.component('demo-section', DemoSection);
 
 Locale.add({
   'zh-CN': {
