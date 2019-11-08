@@ -1306,10 +1306,10 @@
     shelljs "^0.8.2"
     signale "^1.4.0"
 
-"@vant/doc@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.6.0.tgz#ff09f13982f0a85b445e78c1e426ba4b98b4da35"
-  integrity sha512-Zl/JEAacSJrDu8UYY20o9p49WxhmgUtsc7zEhQPi+XSXqblnyVyr+aJsPlHI02ZAvpXJNae1nYnCikTl6sxQ6g==
+"@vant/doc@^2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.6.1.tgz#667db2ca32cd86f3def452a03c66076c1b97c969"
+  integrity sha512-4e0EraSRqxFtHZj0vsmYywjPGTNGKjOA7fLKrovDpnLDMdkUmMUAWRTiJ1MUtlXYHJOI4C6vHj6pW57NLMd45A==
 
 "@vant/eslint-config@^1.4.0":
   version "1.4.0"

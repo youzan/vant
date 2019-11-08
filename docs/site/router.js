@@ -57,13 +57,13 @@ const registerRoute = ({ mobile, componentMap }) => {
         }
 
         route.push({
-          name: lang + '/' + path,
           component,
+          name: `${lang}/${path}`,
           path: `/${lang}/${path}`,
           meta: {
             lang,
-            path,
-            name: page.title
+            name: path,
+            title: page.title
           }
         });
       }

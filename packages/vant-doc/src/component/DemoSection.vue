@@ -13,8 +13,8 @@ export default {
   computed: {
     demoName() {
       const { meta } = this.$route;
-      if (meta && meta.path) {
-        return `demo-${decamelize(meta.path)}`;
+      if (meta && meta.name) {
+        return `demo-${decamelize(meta.name, '-')}`;
       }
 
       return '';
