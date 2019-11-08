@@ -38,8 +38,7 @@ function getQueryString(name) {
 export default {
   computed: {
     title() {
-      const { name } = this.$route.meta;
-      return name ? name.replace(/-/g, '') : '';
+      return this.$route.meta.title || '';
     },
 
     showNav() {

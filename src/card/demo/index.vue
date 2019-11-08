@@ -1,5 +1,5 @@
 <template>
-  <demo-section background="white">
+  <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-card
         num="2"
@@ -90,3 +90,11 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+@import '../../style/var';
+
+.demo-card {
+  background-color: @white;
+}
+</style>
