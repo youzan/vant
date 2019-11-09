@@ -5,10 +5,12 @@ import { isObj, isServer } from '../utils';
 const defaultOptions = {
   icon: '',
   type: 'text',
+  // @deprecated
   mask: false,
   value: true,
   message: '',
   className: '',
+  overlay: false,
   onClose: null,
   onOpened: null,
   duration: 2000,
@@ -65,7 +67,7 @@ function createInstance() {
 function transformOptions(options) {
   return {
     ...options,
-    overlay: options.mask,
+    overlay: options.mask || options.overlay,
     mask: undefined,
     duration: undefined
   };

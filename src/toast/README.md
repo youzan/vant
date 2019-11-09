@@ -143,7 +143,7 @@ Toast.resetDefaultOptions('loading');
 | message | Message | *string* | `''` | - |
 | icon | Custom icon | *string* | - | 2.0.1 |
 | iconPrefix | Icon className prefix | *string* | `van-icon` | 2.0.9 |
-| mask | Whether to show mask | *boolean* | `false` | - |
+| overlay | Whether to show overlay | *boolean* | `false` | 2.2.13 |
 | forbidClick | Whether to forbid click background | *boolean* | `false` | - |
 | closeOnClick | Whether to close after clicked | *boolean* | `false` | 2.1.5 |
 | closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | 2.2.13 |
