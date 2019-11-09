@@ -6,10 +6,11 @@ export type ImagePreviewOptions = string[] | {
   maxZoom?: number;
   minZoom?: number;
   className?: any;
-  startPosition?: number;
   lazyLoad?: boolean;
   showIndex?: boolean;
   asyncClose?: boolean;
+  swipeDuration?: number;
+  startPosition?: number;
   showIndicators?: boolean;
   closeOnPopstate?: boolean;
   onClose?: () => void;
