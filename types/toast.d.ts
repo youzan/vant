@@ -17,6 +17,7 @@ export type ToastOptions = {
   loadingType?: string;
   forbidClick?: boolean;
   closeOnClick?: boolean;
+  closeOnClickOverlay?: boolean;
   getContainer?: string | (() => Element);
 };
 

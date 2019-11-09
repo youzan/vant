@@ -19,7 +19,8 @@ const defaultOptions = {
   loadingType: undefined,
   getContainer: 'body',
   overlayStyle: null,
-  closeOnClick: false
+  closeOnClick: false,
+  closeOnClickOverlay: false
 };
 
 // default options of specific type
