@@ -46,6 +46,10 @@ export default createComponent({
     showIndicators: {
       type: Boolean,
       default: true
+    },
+    stopPropagation: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -169,7 +173,7 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.isCorrectDirection) {
-        preventDefault(event, true);
+        preventDefault(event, this.stopPropagation);
         this.move({ offset: this.delta });
       }
     },
