@@ -10,6 +10,7 @@ export type ToastOptions = {
   message?: ToastMessage;
   onClose?: () => void;
   onOpened?: () => void;
+  overlay?: boolean;
   duration?: number;
   position?: string;
   className?: any;
