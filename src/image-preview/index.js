@@ -5,9 +5,8 @@ import { isServer } from '../utils';
 let instance;
 
 const defaultConfig = {
-  images: [],
   loop: true,
-  swipeDuration: 500,
+  images: [],
   value: true,
   minZoom: 1 / 3,
   maxZoom: 3,
@@ -18,6 +17,7 @@ const defaultConfig = {
   showIndex: true,
   asyncClose: false,
   startPosition: 0,
+  swipeDuration: 500,
   showIndicators: false,
   closeOnPopstate: false
 };
