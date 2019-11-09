@@ -149,6 +149,7 @@ Toast.resetDefaultOptions('loading');
 | mask | 是否显示背景遮罩层 | *boolean* | `false` | - |
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` | - |
 | closeOnClick | 是否在点击后关闭 | *boolean* | `false` | 2.1.5 |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | 2.2.13 |
 | loadingType | 加载图标类型, 可选值为 `spinner` | *string* | `circular` | - |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `2000` | - |
 | className | 自定义类名 | *any* | - | - |

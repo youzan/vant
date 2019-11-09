@@ -146,6 +146,7 @@ Toast.resetDefaultOptions('loading');
 | mask | Whether to show mask | *boolean* | `false` | - |
 | forbidClick | Whether to forbid click background | *boolean* | `false` | - |
 | closeOnClick | Whether to close after clicked | *boolean* | `false` | 2.1.5 |
+| closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | 2.2.13 |
 | loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` | - |
 | duration | Toast duration(ms), won't disappear if value is 0 | *number* | `2000` | - |
 | className | Custom className | *any* | - | - |
