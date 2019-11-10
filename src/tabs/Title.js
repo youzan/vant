@@ -1,8 +1,8 @@
 import { createNamespace } from '../utils';
 
-const bem = createNamespace('tab')[1];
+const [createComponent, bem] = createNamespace('tab');
 
-export default {
+export default createComponent({
   props: {
     type: String,
     color: String,
@@ -51,12 +51,6 @@ export default {
   methods: {
     onClick() {
       this.$emit('click');
-    },
-
-    renderTitle(el) {
-      const { title } = this.$refs;
-      title.innerHTML = '';
-      title.appendChild(el);
     }
   },
 
@@ -73,10 +67,10 @@ export default {
         style={this.style}
         onClick={this.onClick}
       >
-        <span ref="title" class={{ 'van-ellipsis': this.ellipsis }}>
-          {this.title}
+        <span class={{ 'van-ellipsis': this.ellipsis }}>
+          {this.slots() || this.title}
         </span>
       </div>
     );
   }
-};
+});

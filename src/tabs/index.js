@@ -203,7 +203,11 @@ export default createComponent({
         this.$emit('input', this.currentName);
 
         if (shouldEmitChange) {
-          this.$emit('change', this.currentName, this.children[currentIndex].title);
+          this.$emit(
+            'change',
+            this.currentName,
+            this.children[currentIndex].title
+          );
         }
       }
     },
@@ -246,13 +250,6 @@ export default createComponent({
       scrollLeftTo(nav, to, immediate ? 0 : this.duration);
     },
 
-    // render title slot of child tab
-    renderTitle(el, index) {
-      this.$nextTick(() => {
-        this.$refs.titles[index].renderTitle(el);
-      });
-    },
-
     onScroll(params) {
       this.stickyFixed = params.isFixed;
       this.$emit('scroll', params);
@@ -276,6 +273,9 @@ export default createComponent({
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
         swipeThreshold={this.swipeThreshold}
+        scopedSlots={{
+          default: () => item.slots('title')
+        }}
         onClick={() => {
           this.onClick(index);
           route(item.$router, item);
@@ -291,10 +291,17 @@ export default createComponent({
           { [BORDER_TOP_BOTTOM]: type === 'line' && this.border }
         ]}
       >
-        <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
+        <div
+          ref="nav"
+          role="tablist"
+          class={bem('nav', [type])}
+          style={this.navStyle}
+        >
           {this.slots('nav-left')}
           {Nav}
-          {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
+          {type === 'line' && (
+            <div class={bem('line')} style={this.lineStyle} />
+          )}
           {this.slots('nav-right')}
         </div>
       </div>
