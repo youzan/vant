@@ -11,16 +11,16 @@ export function times(n: number, iteratee: (index: number) => any[]) {
   return result;
 }
 
-export function getTrueValue(value: string | undefined): number | undefined {
+export function getTrueValue(value: string | undefined): number {
   if (!value) {
-    return;
+    return 0;
   }
 
   while (isNaN(parseInt(value, 10))) {
     if (value.length > 1) {
       value = value.slice(1);
     } else {
-      return;
+      return 0;
     }
   }
 
