@@ -221,7 +221,7 @@ export default {
 | 名称 | 说明 |
 |------|------|
 | default | 标签页内容 |
-| title | 自定义标签 |
+| title | 自定义标题，不支持动态渲染 |
 
 ### Tabs Events
 

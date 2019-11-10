@@ -241,3 +241,19 @@ test('toggle method', async done => {
     }
   });
 });
+
+test('title slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-dropdown-menu>
+        <van-dropdown-item>
+          <template #title>
+            Custom Title
+          </template>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

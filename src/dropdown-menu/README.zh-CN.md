@@ -144,6 +144,13 @@ export default {
 | opened | 打开菜单栏且动画结束后触发 | - |
 | close | 关闭菜单栏时触发 | - |
 
+### DropdownItem Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 菜单内容 |
+| title | 自定义标题，不支持动态渲染 |
+
 ### DropdownItem 方法
 
 通过 ref 可以获取到 DropdownItem 实例并调用实例方法
