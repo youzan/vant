@@ -140,6 +140,13 @@ Use `active-color` prop to custom active color of the title and options
 | opened | Triggered when opened menu | - |
 | close | Triggered when close menu | - |
 
+### DropdownItem Slots
+
+| Name | Description |
+|------|------|
+| default | Content |
+| title | Custom title |
+
 ### DropdownItem Methods
 
 Use ref to get DropdownItem instance and call instance methods
