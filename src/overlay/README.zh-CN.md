@@ -33,6 +33,33 @@ export default {
 },
 ```
 
+### 嵌入内容
+
+通过默认插槽可以在遮罩层上嵌入任意内容
+
+```html
+<van-overlay :show="show" @click="show = false">
+  <div class="wrapper" @click.stop>
+    <div class="block" />
+  </div>
+</van-overlay>
+
+<style>
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
+</style>
+```
+
 ## API
 
 ### Props
