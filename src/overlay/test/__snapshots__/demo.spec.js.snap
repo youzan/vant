@@ -5,5 +5,12 @@ exports[`renders demo correctly 1`] = `
   <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;"><span class="van-button__text">显示遮罩层</span></button>
     <div class="van-overlay" style="z-index: 1; display: none;" name="van-fade"></div>
   </div>
+  <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;"><span class="van-button__text">嵌入内容</span></button>
+    <div class="van-overlay" style="z-index: 1; display: none;" name="van-fade">
+      <div class="wrapper">
+        <div class="block"></div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
