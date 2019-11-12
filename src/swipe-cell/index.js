@@ -59,6 +59,11 @@ export default createComponent({
       const offset = position === 'left' ? this.computedLeftWidth : -this.computedRightWidth;
       this.swipeMove(offset);
       this.resetSwipeStatus();
+
+      this.$emit('open', {
+        position,
+        detail: this.name
+      });
     },
 
     close() {

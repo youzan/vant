@@ -93,6 +93,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
+| open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
 
 ### onClose Params
 
