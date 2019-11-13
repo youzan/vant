@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Circle from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('speed is 0', async () => {
   const wrapper = mount(Circle, {

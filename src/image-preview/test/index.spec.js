@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag, later } from '../../../test/utils';
+import { mount, trigger, triggerDrag, later } from '../../../test';
 
 function triggerZoom(el, x, y) {
   trigger(el, 'touchstart', 0, 0, { x, y });

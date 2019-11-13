@@ -1,5 +1,5 @@
 import Info from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('should not render when info is empty string', () => {
   const wrapper = mount(Info, {

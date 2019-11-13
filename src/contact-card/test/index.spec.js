@@ -1,7 +1,7 @@
 import ContactCard from '..';
 import ContactList from '../../contact-list';
 import ContactEdit from '../../contact-edit';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 const contactInfo = {
   name: 'test',

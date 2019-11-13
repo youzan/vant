@@ -4,7 +4,7 @@ import {
   triggerDrag,
   later,
   mockGetBoundingClientRect
-} from '../../../test/utils';
+} from '../../../test';
 
 const THRESHOLD = 0.15;
 const defaultProps = {

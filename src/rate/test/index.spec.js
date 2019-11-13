@@ -1,5 +1,5 @@
 import Rate from '..';
-import { mount, triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag } from '../../../test';
 
 function mockGetBoundingClientRect(items) {
   items.filter((icon, index) => {

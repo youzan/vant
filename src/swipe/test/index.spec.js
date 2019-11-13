@@ -1,6 +1,6 @@
 import Swipe from '..';
 import SwipeItem from '../../swipe-item';
-import { mount, triggerDrag, later } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test';
 
 const Component = {
   template: `

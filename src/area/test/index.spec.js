@@ -1,6 +1,6 @@
 import Area from '..';
 import areaList from '../demo/area.simple';
-import { mount, later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test';
 
 const firstOption = [
   { code: '110000', name: '北京市' },

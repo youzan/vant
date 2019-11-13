@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Tab from '..';
 import Tabs from '../../tabs';
-import { mount, later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test';
 
 Vue.use(Tab);
 Vue.use(Tabs);

@@ -1,6 +1,6 @@
 import Button from '../../goods-action-button';
 import Icon from '../../goods-action-icon';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('Button click event', () => {
   const wrapper = mount(Button);

@@ -1,5 +1,5 @@
 import Notify from '..';
-import { later } from '../../../test/utils';
+import { later } from '../../../test';
 
 test('create a notify', async () => {
   // should not cause error when call clear before show notify

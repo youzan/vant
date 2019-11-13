@@ -2,9 +2,9 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx'],
   transform: {
     '\\.(vue)$': 'vue-jest',
-    '\\.(js|jsx|ts|tsx)$': '<rootDir>/test/jest.transform.js',
+    '\\.(js|jsx|ts|tsx)$': '<rootDir>/test/transformer.js',
   },
-  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
+  snapshotSerializers: ['jest-serializer-vue'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx,vue}',
     '!**/style/**',

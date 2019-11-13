@@ -1,5 +1,5 @@
 import List from '..';
-import { mount, later, mockGetBoundingClientRect } from '../../../test/utils';
+import { mount, later, mockGetBoundingClientRect } from '../../../test';
 
 test('load event', async () => {
   const wrapper = mount(List);

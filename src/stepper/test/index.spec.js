@@ -1,5 +1,5 @@
 import Stepper from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('disabled stepper', () => {
   const wrapper = mount(Stepper, {
