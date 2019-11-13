@@ -11,5 +11,7 @@ snapshotDemo(Demo, {
       height: 100
     });
   },
-  afterTest: restore
+  afterTest: () => {
+    restore();
+  }
 });
