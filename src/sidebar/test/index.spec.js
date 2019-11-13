@@ -1,4 +1,4 @@
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 import Vue from 'vue';
 import Sidebar from '..';
 import SidebarItem from '../../sidebar-item';

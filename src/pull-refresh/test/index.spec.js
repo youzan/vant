@@ -1,5 +1,5 @@
 import PullRefresh from '..';
-import { mount, later, trigger, triggerDrag } from '../../../test/utils';
+import { mount, later, trigger, triggerDrag } from '../../../test';
 
 test('change head content when pulling down', async () => {
   const wrapper = mount(PullRefresh, {

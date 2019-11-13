@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import CountDown from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 Vue.use(CountDown);
 

@@ -1,4 +1,4 @@
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 import Vue from 'vue';
 import DropdownMenu from '..';
 import DropdownItem from '../../dropdown-item';

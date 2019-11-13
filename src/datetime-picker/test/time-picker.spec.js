@@ -1,5 +1,5 @@
 import TimePicker from '../TimePicker';
-import { mount, later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test';
 
 function filter(type, options) {
   const mod = type === 'minute' ? 10 : 5;

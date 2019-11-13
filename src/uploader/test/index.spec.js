@@ -1,5 +1,5 @@
 import Uploader from '..';
-import { mount, later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test';
 
 window.File = function() {
   this.size = 10000;

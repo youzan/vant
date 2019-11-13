@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Dialog from '..';
 import DialogComponent from '../Dialog';
-import { mount, later, trigger } from '../../../test/utils';
+import { mount, later, trigger } from '../../../test';
 
 test('Dialog function call', async () => {
   Dialog.close();

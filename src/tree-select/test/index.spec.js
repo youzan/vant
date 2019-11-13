@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import TreeSelect from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 Vue.use(TreeSelect);
 

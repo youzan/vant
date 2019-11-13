@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Collapse from '..';
 import CollapseItem from '../../collapse-item';
-import { later, mount } from '../../../test/utils';
+import { later, mount } from '../../../test';
 
 Vue.use(Collapse);
 Vue.use(CollapseItem);

@@ -1,4 +1,4 @@
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 import ActionSheet from '..';
 
 test('callback events', () => {
