@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import './transition';
 import { mount, TransitionStub } from '@vue/test-utils';
 import { trigger, triggerDrag } from './event';
 import { mockScrollTop, mockGetBoundingClientRect } from './dom';
