@@ -96,6 +96,7 @@ test('disable lazy-render', () => {
 test('render title and default slot', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
+      value: true,
       title: 'Title'
     },
     scopedSlots: {
@@ -169,6 +170,18 @@ test('description prop', () => {
       value: true,
       description: 'This is a description',
       actions: [{ name: 'Option' }]
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('close-icon prop', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      title: 'Title',
+      closeIcon: 'cross'
     }
   });
 
