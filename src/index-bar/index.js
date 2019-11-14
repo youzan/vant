@@ -4,6 +4,7 @@ import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/constant';
 import { preventDefault } from '../utils/dom/event';
+import { isHidden } from '../utils/dom/style';
 import {
   getScrollTop,
   getElementTop,
@@ -83,12 +84,12 @@ export default createComponent({
     }
   },
 
-  updated() {
-    this.$nextTick(this.onScroll);
-  },
-
   methods: {
     onScroll() {
+      if (isHidden(this.$el)) {
+        return;
+      }
+
       const scrollTop = getScrollTop(this.scroller);
       const scrollerRect = this.getScrollerRect();
       const rects = this.children.map(item => ({
