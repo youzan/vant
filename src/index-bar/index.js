@@ -83,6 +83,10 @@ export default createComponent({
     }
   },
 
+  updated() {
+    this.$nextTick(this.onScroll);
+  },
+
   methods: {
     onScroll() {
       const scrollTop = getScrollTop(this.scroller);
