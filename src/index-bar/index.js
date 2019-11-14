@@ -101,7 +101,7 @@ export default createComponent({
         let isReachEdge = false;
 
         if (active !== -1) {
-          activeItemTop = rects[active].top - scrollTop;
+          activeItemTop = rects[active].top - scrollTop - this.stickyOffsetTop;
           isReachEdge = activeItemTop <= 0;
         }
 
