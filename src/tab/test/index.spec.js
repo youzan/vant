@@ -173,7 +173,6 @@ test('click event', async () => {
   expect(onDisabled).toHaveBeenCalledWith(1, 'title2');
 });
 
-
 test('name prop', async () => {
   const onClick = jest.fn();
   const onChange = jest.fn();
@@ -207,4 +206,24 @@ test('name prop', async () => {
   tabs.at(2).trigger('click');
   expect(onDisabled).toHaveBeenCalledWith('c', 'title3');
   expect(onChange).toHaveBeenCalledTimes(1);
+});
+
+test('set name to zero', async () => {
+  const onClick = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <van-tabs @click="onClick">
+        <van-tab title="title1" :name="1">Text</van-tab>
+        <van-tab title="title2" :name="0">Text</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onClick
+    }
+  });
+
+  const tabs = wrapper.findAll('.van-tab');
+  tabs.at(1).trigger('click');
+  expect(onClick).toHaveBeenCalledWith(0, 'title2');
 });
