@@ -1,5 +1,29 @@
 # Changelog
 
+### [v2.2.13](https://github.com/youzan/vant/tree/v2.2.13)
+`2019-11-14`
+
+**Features**
+
+- Area: add swipe-duration prop [\#5014](https://github.com/youzan/vant/pull/5014)
+- Swipe: add stop-propagation prop [\#4972](https://github.com/youzan/vant/pull/4972)
+- Toast: add overlay option [\#4969](https://github.com/youzan/vant/pull/4969)
+- Toast: add clickOnClickOverlay option [\#4967](https://github.com/youzan/vant/pull/4967)
+- SwipeCell: add opened event [\#4986](https://github.com/youzan/vant/pull/4986)
+- ActionSheet: add close-icon prop [\#5016](https://github.com/youzan/vant/pull/5016)
+- DropdownItem: add title slot [\#4975](https://github.com/youzan/vant/pull/4975)
+- DatetimePicker: add swipe-duration prop [\#5015](https://github.com/youzan/vant/pull/5015)
+
+**Bug Fixes**
+
+- fix Tab can't match when name is 0 [\#5017](https://github.com/youzan/vant/pull/5017)
+- fix Indexbar incorrect anchor position when hidden [\#5012](https://github.com/youzan/vant/pull/5012)
+- fix Indexbar incorrect anchor position when set sticky-offset-top [\#5012](https://github.com/youzan/vant/pull/5012)
+- fix DatetimePicker can't change when filter when empty array [\#4973](https://github.com/youzan/vant/pull/4973)
+- fix DateTimePicker incorrect value when set max-hour or max-minute [\#5006](https://github.com/youzan/vant/pull/5006)
+- fix ImagePreview missing swipeDuration type definition [\#4968](https://github.com/youzan/vant/pull/4968)
+
+
 ### [v2.2.12](https://github.com/youzan/vant/tree/v2.2.12)
 `2019-11-07`
 
