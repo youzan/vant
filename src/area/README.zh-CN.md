@@ -68,6 +68,7 @@ Vue.use(Area);
 | confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
 | is-oversea-code | 根据`code`校验海外地址，海外地址会划分至单独的分类 | *() => boolean* | - | 2.1.4 |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 
