@@ -153,8 +153,9 @@ export default createComponent({
     getActiveAnchorIndex(scrollTop, rects) {
       for (let i = this.children.length - 1; i >= 0; i--) {
         const prevHeight = i > 0 ? rects[i - 1].height : 0;
+        const reachTop = this.sticky ? prevHeight + this.stickyOffsetTop : 0;
 
-        if (scrollTop + prevHeight + this.stickyOffsetTop >= rects[i].top) {
+        if (scrollTop + reachTop >= rects[i].top) {
           return i;
         }
       }
@@ -195,7 +196,7 @@ export default createComponent({
       if (match[0]) {
         match[0].scrollIntoView();
 
-        if (this.stickyOffsetTop) {
+        if (this.sticky && this.stickyOffsetTop) {
           setRootScrollTop(getRootScrollTop() - this.stickyOffsetTop);
         }
 
