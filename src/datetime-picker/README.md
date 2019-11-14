@@ -165,6 +165,7 @@ export default {
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 

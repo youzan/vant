@@ -69,7 +69,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
 | is-oversea-code | The method to validate oversea code | *() => boolean* | - | 2.1.4 |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.10` |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 

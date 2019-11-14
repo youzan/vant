@@ -169,6 +169,7 @@ export default {
 | confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 
