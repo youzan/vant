@@ -80,6 +80,8 @@ Locale.add({
 
 export function demoWrapper(module, name) {
   const component = module.default;
+  name = 'demo-' + name;
+  component.name = name;
 
   const { i18n: config } = component;
   if (config) {
