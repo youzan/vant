@@ -107,3 +107,19 @@ test('change min-minute and emit correct value', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual('12:30');
 });
+
+test('set max-hour & max-minute smaller than current then emit correct value', async () => {
+  const wrapper = mount(TimePicker, {
+    propsData: {
+      value: '23:59',
+    }
+  });
+  await later();
+  wrapper.setProps({
+    maxHour: 2,
+    maxMinute: 2,
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('00:00');
+});
