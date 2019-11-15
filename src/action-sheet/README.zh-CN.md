@@ -130,6 +130,7 @@ export default {
 | description | 选项上方的描述信息 | *string* | - | 2.2.8 |
 | overlay | 是否显示遮罩层 | *boolean* | `true` | - |
 | round | 是否显示圆角 | *boolean* | `true` | 2.0.9 |
+| close-icon | 关闭图标名称或图片链接 | *string* | `close` | 2.2.13 |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
