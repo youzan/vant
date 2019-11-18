@@ -1,11 +1,11 @@
-const path = require('path');
-const shelljs = require('shelljs');
+import { join } from 'path';
+import { exec } from 'shelljs';
 
-function changelog(dist, cmd) {
+export function changelog(dist: string, cmd: { tag?: string }) {
   const basepath = process.cwd();
   const tag = cmd.tag || 'v1.0.0';
 
-  shelljs.exec(`
+  exec(`
     basepath=${basepath}
 
     github_changelog_generator \
@@ -18,9 +18,6 @@ function changelog(dist, cmd) {
       --no-author \
       --no-unreleased \
       --since-tag ${tag} \
-      -o ${path.join(basepath, dist)}
-    `
-  );
+      -o ${join(basepath, dist)}
+    `);
 }
-
-module.exports = changelog;

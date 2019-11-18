@@ -1,11 +1,11 @@
-const fs = require('fs');
-const signale = require('signale');
+import signale from 'signale';
+import { readFileSync } from 'fs';
 
 const commitRE = /^(revert: )?(fix|feat|docs|perf|test|types|build|chore|refactor|breaking change)(\(.+\))?: .{1,50}/;
 
-function commitLint() {
-  const gitParams = process.env.HUSKY_GIT_PARAMS;
-  const commitMsg = fs.readFileSync(gitParams, 'utf-8').trim();
+export function commitLint() {
+  const gitParams = process.env.HUSKY_GIT_PARAMS as string;
+  const commitMsg = readFileSync(gitParams, 'utf-8').trim();
 
   if (!commitRE.test(commitMsg)) {
     signale.error(`Error: invalid commit message: "${commitMsg}".
@@ -34,5 +34,3 @@ Allowed Types:
     process.exit(1);
   }
 }
-
-module.exports = commitLint;
