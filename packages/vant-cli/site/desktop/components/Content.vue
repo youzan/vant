@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../style/variable';
+@import '../../common/style/index';
 
 .van-doc-content {
   position: relative;
@@ -188,7 +188,7 @@ export default {
   blockquote {
     margin: 20px 0 0;
     padding: 16px;
-    color: rgba(52, 73, 94, .8);
+    color: rgba(52, 73, 94, 0.8);
     font-size: 14px;
     background-color: #ecf9ff;
     border-left: 5px solid #50bfff;

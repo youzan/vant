@@ -1,12 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VantDoc from '@vant/doc';
 import App from './App';
 import routes from './router';
 import { isMobile } from '../common';
 import '../common/iframe-router';
 
-Vue.use(VantDoc);
 Vue.use(VueRouter);
 
 if (isMobile) {

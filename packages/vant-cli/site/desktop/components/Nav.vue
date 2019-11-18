@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue';
+import NavLink from './NavLink';
 
 export default {
   name: 'van-doc-nav',
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../style/variable';
+@import '../../common/style/index';
 
 .van-doc-nav {
   position: fixed;

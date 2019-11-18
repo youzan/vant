@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../style/variable';
+@import '../../common/style/index';
 
 .van-doc-simulator {
   position: absolute;
@@ -71,7 +71,7 @@ export default {
 
   @media (min-width: @van-doc-row-max-width) {
     right: 50%;
-    margin-right: calc(-@van-doc-row-max-width / 2 + 40px);
+    margin-right: -@van-doc-row-max-width / 2 + 40px;
   }
 
   &-fixed {
