@@ -2,7 +2,6 @@
   <div class="van-doc">
     <van-doc-header
       :lang="lang"
-      :github="github"
       :versions="versions"
       :config="config.header"
       :search-config="searchConfig"
@@ -30,7 +29,6 @@ export default {
 
   props: {
     lang: String,
-    github: String,
     versions: Array,
     searchConfig: Object,
     currentSimulator: Number,

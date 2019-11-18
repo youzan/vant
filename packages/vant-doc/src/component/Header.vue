@@ -53,7 +53,6 @@ export default {
   props: {
     lang: String,
     config: Object,
-    github: String,
     versions: Array,
     searchConfig: Object
   },

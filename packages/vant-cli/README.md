@@ -19,7 +19,7 @@ yarn add @vant/cli --dev
 #### Build Changelog
 
 ```shell
-vant changelog ./name.md
+vant-cli changelog ./name.md
 ```
 
 #### Commit Lint
@@ -27,7 +27,7 @@ vant changelog ./name.md
 ```json
 "husky": {
   "hooks": {
-    "commit-msg": "vant commit-lint"
+    "commit-msg": "vant-cli commit-lint"
   }
 }
 ```

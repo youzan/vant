@@ -1398,8 +1398,8 @@
 
 "@vant/cli@^1.0.6":
   version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-1.0.6.tgz#05f0836107431f7358d59fc3d22a512f6fec13f8"
-  integrity sha512-WC9ZFWIcwqlxtVA9gEzSqkpxL9sirNCmYUTRfkHvkZ70GNG4WPlyx9uHQlBbaM+Bv6zbDp5goG0mTXsCfGq5Aw==
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-1.0.6.tgz#05f0836107431f7358d59fc3d22a512f6fec13f8"
+  integrity sha1-BfCDYQdDH3NY1Z/D0ipRL2/sE/g=
   dependencies:
     commander "^2.17.1"
     husky "^3.0.4"

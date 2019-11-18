@@ -1,0 +1,32 @@
+<template>
+  <div class="app">
+    <van-doc :config="config" :simulator="simulator">
+      <router-view />
+    </van-doc>
+  </div>
+</template>
+
+<script>
+import { config } from '../../dist/desktop-config';
+
+export default {
+  data() {
+    return {
+      config,
+      simulator: `mobile.html${location.hash}`
+    };
+  }
+};
+</script>
+
+<style lang="less">
+.van-doc-intro {
+  padding-top: 20px;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+</style>
