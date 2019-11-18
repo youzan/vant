@@ -96,6 +96,12 @@
     "webpack-dev-server": "3.9.0",
     "webpack-merge": "^4.2.2"
   },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "chore: Release @vant/cli@${version}"
+    }
+  },
   "eslintConfig": {
     "root": true,
     "extends": [
