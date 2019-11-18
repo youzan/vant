@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-bar />
+    <demo-nav />
     <keep-alive>
       <router-view />
     </keep-alive>

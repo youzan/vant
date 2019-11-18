@@ -7,9 +7,14 @@
 </template>
 
 <script>
+import VanDoc from './components';
 import { config } from '../../dist/desktop-config';
 
 export default {
+  components: {
+    VanDoc
+  },
+
   data() {
     return {
       config,

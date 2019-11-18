@@ -1421,11 +1421,6 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/doc@^2.6.1":
-  version "2.6.1"
-  resolved "https://registry.npm.taobao.org/@vant/doc/download/@vant/doc-2.6.1.tgz#667db2ca32cd86f3def452a03c66076c1b97c969"
-  integrity sha1-Zn2yyjLNhvPe9FKgPGYHbBuXyWk=
-
 "@vant/eslint-config@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-1.4.0.tgz#c9464beeea842a5ec64e5af714923a0cadf523b3"

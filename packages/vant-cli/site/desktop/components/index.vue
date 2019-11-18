@@ -1,20 +1,20 @@
 <template>
   <div class="van-doc">
-    <van-doc-header
+    <doc-header
       :lang="lang"
       :versions="versions"
       :config="config.header"
       :search-config="searchConfig"
       @switch-version="$emit('switch-version', $event)"
     />
-    <van-doc-nav :base="base" :nav-config="config.nav" />
-    <van-doc-container :has-simulator="!!(simulator || simulators.length)">
-      <van-doc-content>
+    <doc-nav :base="base" :nav-config="config.nav" />
+    <doc-container :has-simulator="!!(simulator || simulators.length)">
+      <doc-content>
         <slot />
-      </van-doc-content>
-    </van-doc-container>
-    <van-doc-simulator v-if="simulator" :src="simulator" />
-    <van-doc-simulator
+      </doc-content>
+    </doc-container>
+    <doc-simulator v-if="simulator" :src="simulator" />
+    <doc-simulator
       v-for="(url, index) in simulators"
       v-show="index === currentSimulator"
       :src="url"
@@ -24,8 +24,22 @@
 </template>
 
 <script>
+import DocNav from './Nav';
+import DocHeader from './Header';
+import DocContent from './Content';
+import DocContainer from './Container';
+import DocSimulator from './Simulator';
+
 export default {
   name: 'van-doc',
+
+  components: {
+    DocNav,
+    DocHeader,
+    DocContent,
+    DocContainer,
+    DocSimulator
+  },
 
   props: {
     lang: String,
@@ -124,5 +138,5 @@ export default {
 </script>
 
 <style lang="less">
-@import './style/index';
+@import '../../common/style/index';
 </style>

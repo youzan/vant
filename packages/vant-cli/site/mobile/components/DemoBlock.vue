@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../style/variable';
+@import '../../common/style/index';
 
 .van-doc-demo-block {
   &__title {
