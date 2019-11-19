@@ -2,11 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-tabs v-model="active">
-        <van-tab
-          :title="$t('tab') + index"
-          v-for="index in tabs"
-          :key="index"
-        >
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -14,22 +10,13 @@
 
     <demo-block :title="$t('matchByName')">
       <van-tabs v-model="activeName">
-        <van-tab
-          name="a"
-          :title="$t('tab') + 1"
-        >
+        <van-tab name="a" :title="$t('tab') + 1">
           {{ $t('content') }} 1
         </van-tab>
-        <van-tab
-          name="b"
-          :title="$t('tab') + 2"
-        >
+        <van-tab name="b" :title="$t('tab') + 2">
           {{ $t('content') }} 2
         </van-tab>
-        <van-tab
-          name="c"
-          :title="$t('tab') + 3"
-        >
+        <van-tab name="c" :title="$t('tab') + 3">
           {{ $t('content') }} 3
         </van-tab>
       </van-tabs>
@@ -37,11 +24,7 @@
 
     <demo-block :title="$t('title2')">
       <van-tabs>
-        <van-tab
-          v-for="index in 8"
-          :title="$t('tab') + index"
-          :key="index"
-        >
+        <van-tab v-for="index in 8" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -62,11 +45,7 @@
 
     <demo-block :title="$t('title4')">
       <van-tabs type="card">
-        <van-tab
-          v-for="index in 3"
-          :title="$t('tab') + index"
-          :key="index"
-        >
+        <van-tab v-for="index in 3" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -74,26 +53,15 @@
 
     <demo-block :title="$t('title5')">
       <van-tabs @click="onClick">
-        <van-tab
-          v-for="index in 2"
-          :title="$t('tab') + index"
-          :key="index"
-        >
+        <van-tab v-for="index in 2" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
     </demo-block>
 
     <demo-block :title="$t('title6')">
-      <van-tabs
-        :active="active"
-        sticky
-      >
-        <van-tab
-          :title="$t('tab') + index"
-          v-for="index in tabs"
-          :key="index"
-        >
+      <van-tabs :active="active" sticky>
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -101,10 +69,7 @@
 
     <demo-block v-if="!$attrs.weapp" :title="$t('title7')">
       <van-tabs :active="active">
-        <van-tab
-          v-for="index in 2"
-          :key="index"
-        >
+        <van-tab v-for="index in 2" :key="index">
           <template #title>
             <van-icon name="more-o" />{{ $t('tab') }}
           </template>
@@ -115,26 +80,15 @@
 
     <demo-block :title="$t('title8')">
       <van-tabs animated>
-        <van-tab
-          :title="$t('tab') + index"
-          v-for="index in tabs"
-          :key="index"
-        >
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
     </demo-block>
 
     <demo-block :title="$t('title9')">
-      <van-tabs
-        :active="active"
-        swipeable
-      >
-        <van-tab
-          :title="$t('tab') + index"
-          v-for="index in tabs"
-          :key="index"
-        >
+      <van-tabs :active="active" swipeable>
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>

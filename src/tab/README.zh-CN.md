@@ -204,6 +204,7 @@ export default {
 |------|------|------|------|------|
 | name | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 | 2.0.6 |
 | title | 标题 | *string* | - | - |
+| title-style | 自定义标题样式 | *any*  | - | 2.2.14 |
 | disabled | 是否禁用标签 | *boolean* | `false` | - |
 | url | 点击后跳转的链接地址 | *string* | - | 2.2.1 |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.2.1 |

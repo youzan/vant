@@ -200,6 +200,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 |------|------|------|------|------|
 | name | Identifier | *string \| number* | Index of tab | - |
 | title | Title | *string* | - | - |
+| title-style | Custom title style | *any*  | - | 2.2.14 |
 | disabled | Whether to disable tab | *boolean* | `false` | - |
 | url | Link | *string* | - | 2.2.1 |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.2.1 |
