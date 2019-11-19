@@ -1,36 +1,55 @@
 import { join, relative } from 'path';
 import { existsSync, ensureDirSync, writeFileSync } from 'fs-extra';
-import { pascalize, removeExt, getComponents } from '../common';
-import { SRC_DIR, DIST_DIR, MOBILE_CONFIG_FILE } from '../common/constant';
+import { decamelize, pascalize, removeExt, getComponents } from '../common';
+import {
+  SRC_DIR,
+  DIST_DIR,
+  MOBILE_CONFIG_FILE,
+  CONFIG_FILE
+} from '../common/constant';
 
-function checkDemoExists(component: string) {
-  const absolutePath = join(SRC_DIR, component, 'demo/index.vue');
-  return existsSync(absolutePath);
-}
+type DemoItem = {
+  name: string;
+  path: string;
+};
 
-function genImports(components: string[]) {
-  return components
-    .filter(component => checkDemoExists(component))
-    .map(component => {
-      const absolutePath = join(SRC_DIR, component, 'demo/index.vue');
-      const relativePath = relative(DIST_DIR, absolutePath);
-
-      return `import ${pascalize(component)} from '${removeExt(
-        relativePath
-      )}';`;
+function genImports(demos: DemoItem[]) {
+  return demos
+    .map(item => {
+      const relativePath = relative(DIST_DIR, item.path);
+      return `import ${item.name} from '${removeExt(relativePath)}';`;
     })
     .join('\n');
 }
 
-function genExports(components: string[]) {
-  return `export const demos = {\n  ${components
-    .filter(component => checkDemoExists(component))
-    .map(component => pascalize(component))
+function genExports(demos: DemoItem[]) {
+  return `export const demos = {\n  ${demos
+    .map(item => item.name)
     .join(',\n  ')}\n};`;
 }
 
+function genConfig(demos: DemoItem[]) {
+  // eslint-disable-next-line
+  const config = require(CONFIG_FILE);
+  const demoNames = demos.map(item => decamelize(item.name, '-'));
+
+  config.nav = config.nav.filter((group: any) => {
+    group.items = group.items.filter((item: any) => (demoNames.includes(item.path)));
+    return group.items.length;
+  });
+
+  return `export const config = ${JSON.stringify(config, null, 2)}`;
+}
+
 function genCode(components: string[]) {
-  return `${genImports(components)}\n\n${genExports(components)}\n`;
+  const demos = components
+    .map(component => ({
+      name: pascalize(component),
+      path: join(SRC_DIR, component, 'demo/index.vue')
+    }))
+    .filter(item => existsSync(item.path));
+
+  return `${genImports(demos)}\n\n${genExports(demos)}\n${genConfig(demos)}\n`;
 }
 
 export function genMobileConfig() {

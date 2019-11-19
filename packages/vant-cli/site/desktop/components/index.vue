@@ -2,8 +2,8 @@
   <div class="van-doc">
     <doc-header
       :lang="lang"
+      :config="config"
       :versions="versions"
-      :config="config.header"
       :search-config="searchConfig"
       @switch-version="$emit('switch-version', $event)"
     />

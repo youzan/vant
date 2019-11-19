@@ -67,6 +67,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "csso": "^4.0.2",
+    "decamelize": "^3.2.0",
     "dependency-tree": "^7.0.2",
     "eslint": "^6.6.0",
     "gh-pages": "2.0.1",

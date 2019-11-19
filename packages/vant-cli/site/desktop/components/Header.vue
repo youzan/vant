@@ -2,15 +2,15 @@
   <div class="van-doc-header">
     <div class="van-doc-row">
       <div class="van-doc-header__top">
-        <a class="van-doc-header__logo" :href="config.logo.href">
-          <img :src="config.logo.image">
-          <span>{{ config.logo.title }}</span>
+        <a class="van-doc-header__logo">
+          <img :src="config.logo">
+          <span>{{ config.title }}</span>
         </a>
 
         <search-input v-if="searchConfig" :lang="lang" :search-config="searchConfig" />
 
         <ul class="van-doc-header__top-nav">
-          <li v-for="item in config.nav.logoLink" class="van-doc-header__top-nav-item">
+          <li v-for="item in config.iconLinks" class="van-doc-header__top-nav-item">
             <a class="van-doc-header__logo-link" target="_blank" :href="item.url">
               <img :src="item.image">
             </a>
@@ -30,10 +30,10 @@
               </transition>
             </span>
           </li>
-
+        <!--
           <li v-if="config.nav.lang" class="van-doc-header__top-nav-item">
             <a class="van-doc-header__cube" :href="langLink">{{ config.nav.lang.text }}</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

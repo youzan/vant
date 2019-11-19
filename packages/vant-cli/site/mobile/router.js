@@ -1,24 +1,29 @@
+import decamelize from 'decamelize';
+import DemoHome from './components/DemoHome';
 import { demos } from '../../dist/mobile-config';
 
 const routes = [];
 const names = Object.keys(demos);
 
-Object.keys(demos).forEach((name, index) => {
-  if (index === 0) {
-    routes.push({
-      path: '*',
-      redirect: () => `/${names[0]}`
-    });
-  }
+routes.push({
+  path: '/home',
+  component: DemoHome
+});
 
+routes.push({
+  path: '*',
+  redirect: '/home'
+});
+
+names.forEach(name => {
   routes.push({
     name,
     component: demos[name],
-    path: `/${name}`,
+    path: `/${decamelize(name, '-')}`,
     meta: {
       name
     }
   });
 });
 
-export default routes;
+export { routes };

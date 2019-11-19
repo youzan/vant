@@ -1,7 +1,7 @@
 <template>
-  <div v-show="title" class="van-doc-demo-nav">
-    <div class="van-doc-demo-nav__title">{{ title }}</div>
-    <svg class="van-doc-demo-nav__back" viewBox="0 0 1000 1000" @click="onBack">
+  <div v-show="title" class="demo-nav">
+    <div class="demo-nav__title">{{ title }}</div>
+    <svg class="demo-nav__back" viewBox="0 0 1000 1000" @click="onBack">
       <path fill="#969799" fill-rule="evenodd" :d="path" />
     </svg>
   </div>
@@ -19,7 +19,8 @@ export default {
 
   computed: {
     title() {
-      const { name } = this.$route.meta || {};
+      const route = this.$route || {};
+      const { name } = route.meta || {};
       return name ? name.replace(/-/g, '') : '';
     }
   },
@@ -33,7 +34,7 @@ export default {
 </script>
 
 <style lang="less">
-.van-doc-demo-nav {
+.demo-nav {
   position: relative;
   height: 56px;
   line-height: 56px;

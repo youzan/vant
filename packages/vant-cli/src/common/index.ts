@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import decamelize from 'decamelize';
 import { join } from 'path';
 import { SRC_DIR } from './constant';
 
@@ -65,3 +66,5 @@ export function pascalize(str: string): string {
     (_, c1, c2) => c1.toUpperCase() + c2
   );
 }
+
+export { decamelize };
