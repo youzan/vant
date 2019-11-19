@@ -2,10 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-field
-          v-model="value"
-          :placeholder="$t('usernamePlaceholder')"
-        />
+        <van-field v-model="value" :placeholder="$t('usernamePlaceholder')" />
       </van-cell-group>
     </demo-block>
 
@@ -69,10 +66,7 @@
           :placeholder="$t('smsPlaceholder')"
         >
           <template #button>
-            <van-button
-              size="small"
-              type="primary"
-            >
+            <van-button size="small" type="primary">
               {{ $t('sendSMS') }}
             </van-button>
           </template>

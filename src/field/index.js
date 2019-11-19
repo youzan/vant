@@ -18,8 +18,9 @@ export default createComponent({
     leftIcon: String,
     rightIcon: String,
     clearable: Boolean,
-    labelClass: null,
+    maxlength: [Number, String],
     labelWidth: [Number, String],
+    labelClass: null,
     labelAlign: String,
     inputAlign: String,
     errorMessage: String,
@@ -101,9 +102,9 @@ export default createComponent({
       }
 
       let { value } = target;
-      const { maxlength } = this.$attrs;
+      const { maxlength } = this;
 
-      if (this.type === 'number' && isDef(maxlength) && value.length > maxlength) {
+      if (isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
         target.value = value;
       }
@@ -264,10 +265,10 @@ export default createComponent({
     },
 
     genWordLimit() {
-      if (this.showWordLimit && this.$attrs.maxlength) {
+      if (this.showWordLimit && this.maxlength) {
         return (
           <div class={bem('word-limit')}>
-            {this.value.length}/{this.$attrs.maxlength}
+            {this.value.length}/{this.maxlength}
           </div>
         );
       }
