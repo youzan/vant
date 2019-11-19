@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App';
-import routes from './router';
+import { routes } from './router';
 import { isMobile } from '../common';
 import '../common/iframe-router';
 

@@ -29,7 +29,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "vant commit-lint"
+      "commit-msg": "vant-cli commit-lint"
     }
   },
   "lint-staged": {
@@ -70,7 +70,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-typescript": "^7.7.2",
     "@types/jest": "^24.0.22",
-    "@vant/cli": "^1.0.6",
+    "@vant/cli": "^2.0.0-beta.2",
     "@vant/doc": "^2.6.1",
     "@vant/eslint-config": "^1.4.0",
     "@vant/markdown-loader": "^2.2.0",

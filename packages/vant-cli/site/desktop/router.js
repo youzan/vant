@@ -1,24 +1,28 @@
+import decamelize from 'decamelize';
 import { documents } from '../../dist/desktop-config';
 
 const routes = [];
 const names = Object.keys(documents);
 
-Object.keys(documents).forEach((name, index) => {
-  if (index === 0) {
-    routes.push({
-      path: '*',
-      redirect: () => `/${names[0]}`
-    });
-  }
+routes.push({
+  path: '/home',
+  component: documents.Home
+});
 
+routes.push({
+  path: '*',
+  redirect: '/home'
+});
+
+names.forEach(name => {
   routes.push({
     name,
     component: documents[name],
-    path: `/${name}`,
+    path: `/${decamelize(name, '-')}`,
     meta: {
       name
     }
   });
 });
 
-export default routes;
+export { routes };

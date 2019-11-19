@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import DemoBlock from './components/DemoBlock';
 import DemoSection from './components/DemoSection';
-import routes from './router';
+import { routes } from './router';
 import App from './App';
 import '@vant/touch-emulator';
 import '../common/iframe-router';
@@ -18,7 +18,9 @@ const router = new VueRouter({
 });
 
 router.afterEach(() => {
-  Vue.nextTick(window.syncPath);
+  if (!router.currentRoute.redirectedFrom) {
+    Vue.nextTick(window.syncPath);
+  }
 });
 
 window.vueRouter = router;
