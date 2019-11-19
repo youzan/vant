@@ -1,26 +1,20 @@
 <template>
   <div class="van-doc-nav" :style="style">
-    <div v-for="(item, index) in navConfig" class="van-doc-nav__item" :key="index">
-      <van-doc-nav-link :item="item" :base="base" />
-      <div v-if="item.children">
-        <div
-          class="nav-item van-doc-nav__group-title van-doc-nav__group-title"
-          v-for="(navItem, navIndex) in item.children"
-          :key="navIndex"
-        >
-          <van-doc-nav-link :item="navItem" :base="base" />
-        </div>
+    <div
+      v-for="(group, index) in navConfig"
+      class="van-doc-nav__group"
+      :key="index"
+    >
+      <div class="van-doc-nav__title">
+        {{ group.title }}
       </div>
-      <template v-if="item.groups">
-        <div v-for="(group, groupIndex) in item.groups" :key="groupIndex">
-          <div class="van-doc-nav__group-title">{{ group.groupName }}</div>
-          <div>
-            <template v-for="(navItem, navItemIndex) in group.list">
-              <div v-if="!navItem.disabled" :key="navItemIndex" class="van-doc-nav__subitem">
-                <van-doc-nav-link :item="navItem" :base="base" />
-              </div>
-            </template>
-          </div>
+      <template v-if="group.items">
+        <div
+          v-for="(item, groupIndex) in group.items"
+          :key="groupIndex"
+          class="van-doc-nav__item"
+        >
+          <van-doc-nav-link :item="item" :base="base" />
         </div>
       </template>
     </div>
@@ -86,10 +80,9 @@ export default {
   z-index: 1;
   min-width: @van-doc-nav-width;
   max-width: @van-doc-nav-width;
-  padding: 25px 0 75px;
+  padding: 24px 0 72px;
   overflow-y: scroll;
   background-color: #fff;
-  border-right: 1px solid @van-doc-border-color;
   box-shadow: 0 8px 12px #ebedf0;
 
   @media (min-width: @van-doc-row-max-width) {
@@ -112,64 +105,46 @@ export default {
     background-color: rgba(69, 90, 100, 0.2);
   }
 
-  &__item,
-  &__subitem {
+  &__group {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    padding: 8px 0 8px @van-doc-padding;
+    color: #455a64;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  &__item {
     a {
       display: block;
       margin: 0;
-      padding: 10px 0 10px @van-doc-padding;
+      padding: 8px 0 8px @van-doc-padding;
       color: #455a64;
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 14px;
+      line-height: 28px;
       transition: all 0.3s;
+
+      &:hover {
+        color: #000;
+      }
 
       &.active {
         color: #000;
         font-weight: 500;
         font-size: 15px;
       }
-    }
-  }
 
-  &__item {
-    > a {
-      font-weight: 500;
-    }
-  }
-
-  &__subitem {
-    a {
-      font-size: 14px;
-
-      &:hover {
-        color: #000;
+      span {
+        font-size: 13px;
       }
     }
-
-    span {
-      font-size: 13px;
-    }
-  }
-
-  &__group-title {
-    padding-left: @van-doc-padding;
-    color: @van-doc-text-light-blue;
-    font-size: 12px;
-    line-height: 40px;
   }
 
   @media (max-width: 1300px) {
-    min-width: 220px;
-    max-width: 220px;
-
-    &__item,
-    &__subitem {
-      a {
-        line-height: 22px;
-      }
-    }
-
-    &__subitem {
+    &__item {
       a {
         font-size: 13px;
       }
