@@ -10,7 +10,7 @@
     <demo-block :title="$t('customContent')">
       <van-dropdown-menu>
         <van-dropdown-item v-model="value1" :options="option1" />
-        <van-dropdown-item class="my-class" :title="$t('itemTitle')" ref="item" get-container="body">
+        <van-dropdown-item :title="$t('itemTitle')" ref="item">
           <van-switch-cell v-model="switch1" :title="$t('switchTitle1')" />
           <van-switch-cell v-model="switch2" :title="$t('switchTitle2')" />
           <van-button type="info" block @click="onConfirm">{{ $t('confirm') }}</van-button>
