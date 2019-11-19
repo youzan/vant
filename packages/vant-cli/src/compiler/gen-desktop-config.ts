@@ -4,7 +4,7 @@ import { existsSync, writeFileSync } from 'fs-extra';
 import { pascalize, removeExt, getComponents } from '../common';
 import {
   SRC_DIR,
-  DOC_DIR,
+  DOCS_DIR,
   DIST_DIR,
   CONFIG_FILE,
   DESKTOP_CONFIG_FILE
@@ -26,7 +26,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
       path: join(SRC_DIR, component, 'README.md')
     }));
 
-  const staticDocs = glob.sync(join(DOC_DIR, '**/*.md')).map(path => ({
+  const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => ({
     name: pascalize(parse(path).name),
     path
   }));
