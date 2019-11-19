@@ -64,6 +64,7 @@ export default createComponent({
     },
 
     onClickWrapper(event) {
+      // prevent being identified as clicking outside and closed when use get-contaienr
       if (this.getContainer) {
         event.stopPropagation();
       }

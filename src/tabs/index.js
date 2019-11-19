@@ -266,6 +266,7 @@ export default createComponent({
         type={type}
         title={item.title}
         color={this.color}
+        style={item.titleStyle}
         isActive={index === this.currentIndex}
         ellipsis={ellipsis}
         disabled={item.disabled}

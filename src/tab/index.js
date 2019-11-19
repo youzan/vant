@@ -11,6 +11,7 @@ export default createComponent({
     ...routeProps,
     name: [Number, String],
     title: String,
+    titleStyle: null,
     disabled: Boolean
   },
 
