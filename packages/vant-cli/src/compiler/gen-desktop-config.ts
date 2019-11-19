@@ -1,35 +1,51 @@
-import { join, relative } from 'path';
+import glob from 'fast-glob';
+import { join, parse, relative } from 'path';
 import { existsSync, writeFileSync } from 'fs-extra';
 import { pascalize, removeExt, getComponents } from '../common';
 import {
   SRC_DIR,
-  CONFIG_FILE,
+  DOC_DIR,
   DIST_DIR,
+  CONFIG_FILE,
   DESKTOP_CONFIG_FILE
 } from '../common/constant';
 
-function checkDocumentExists(component: string) {
-  const absolutePath = join(SRC_DIR, component, 'README.md');
-  return existsSync(absolutePath);
+type DocumentItem = {
+  name: string;
+  path: string;
+};
+
+function resolveDocuments(components: string[]): DocumentItem[] {
+  const componentDocs = components
+    .filter(component => {
+      const absolutePath = join(SRC_DIR, component, 'README.md');
+      return existsSync(absolutePath);
+    })
+    .map(component => ({
+      name: pascalize(component),
+      path: join(SRC_DIR, component, 'README.md')
+    }));
+
+  const staticDocs = glob.sync(join(DOC_DIR, '**/*.md')).map(path => ({
+    name: pascalize(parse(path).name),
+    path
+  }));
+
+  return [...componentDocs, ...staticDocs];
 }
 
-function genImportDocuments(components: string[]) {
-  return components
-    .filter(component => checkDocumentExists(component))
-    .map(component => {
-      const absolutePath = join(SRC_DIR, component, 'README.md');
-      const relativePath = relative(DIST_DIR, absolutePath);
-      return `import ${pascalize(component)} from '${relativePath}';`;
+function genImportDocuments(items: DocumentItem[]) {
+  return items
+    .map(item => {
+      const relativePath = relative(DIST_DIR, item.path);
+      return `import ${item.name} from '${relativePath}';`;
     })
     .join('\n');
 }
 
-function genExportDocuments(components: string[]) {
+function genExportDocuments(items: DocumentItem[]) {
   return `export const documents = {
-  ${components
-    .filter(component => checkDocumentExists(component))
-    .map(component => pascalize(component))
-    .join(',\n  ')}
+  ${items.map(item => item.name).join(',\n  ')}
 };`;
 }
 
@@ -44,11 +60,13 @@ function genExportConfig() {
 
 export function genDesktopConfig() {
   const components = getComponents();
+  const documents = resolveDocuments(components);
+
   const code = `${genImportConfig()}
-${genImportDocuments(components)}
+${genImportDocuments(documents)}
 
 ${genExportConfig()}
-${genExportDocuments(components)}
+${genExportDocuments(documents)}
 `;
 
   writeFileSync(DESKTOP_CONFIG_FILE, code);

@@ -1,10 +1,11 @@
 import { join } from 'path';
 
 export const CWD = process.cwd();
-export const SRC_DIR = join(CWD, 'src');
-export const CONFIG_FILE = join(CWD, 'components.config.js');
 export const ES_DIR = join(CWD, 'es');
 export const LIB_DIR = join(CWD, 'lib');
+export const SRC_DIR = join(CWD, 'src');
+export const DOC_DIR = join(CWD, 'doc');
+export const CONFIG_FILE = join(CWD, 'components.config.js');
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
 export const MOBILE_CONFIG_FILE = join(DIST_DIR, 'mobile-config.js');
