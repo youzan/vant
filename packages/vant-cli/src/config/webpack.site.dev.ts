@@ -1,14 +1,14 @@
-import { join } from 'path';
 import merge from 'webpack-merge';
-import baseConfig from './webpack.base';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { join } from 'path';
+import { baseConfig } from './webpack.base';
 import { CONFIG_FILE } from '../common/constant';
 
 // eslint-disable-next-line
 const config = require(CONFIG_FILE);
 const title = `${config.title} - ${config.description}`;
 
-module.exports = merge(baseConfig, {
+export const siteDevConfig = merge(baseConfig as any, {
   entry: {
     'site-desktop': join(__dirname, '../../site/desktop/main.js'),
     'site-mobile': join(__dirname, '../../site/mobile/main.js')
@@ -53,5 +53,3 @@ module.exports = merge(baseConfig, {
     })
   ]
 });
-
-export default module.exports;
