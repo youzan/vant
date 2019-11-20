@@ -1,9 +1,13 @@
+import webpack from 'webpack';
+import { start, error, success } from 'signale';
+import { packageConfig } from '../config/webpack.package';
 import { join } from 'path';
-import { remove, copy, readdirSync } from 'fs-extra';
 import { clean } from './clean';
+import { remove, copy, readdirSync } from 'fs-extra';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
+import { genPackageEntry } from '../compiler/gen-package-entry';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
 import {
   isDir,
@@ -40,15 +44,49 @@ function setModuleEnv(value: string) {
   process.env.BABEL_MODULE = value;
 }
 
+function buildPackage(isMinify: boolean) {
+  return new Promise((resolve, reject) => {
+    webpack(packageConfig(isMinify), (err, stats) => {
+      if (err || stats.hasErrors()) {
+        reject();
+      } else {
+        resolve();
+      }
+    });
+  });
+}
+
 export async function build() {
   clean();
 
   await copy(SRC_DIR, ES_DIR);
   await copy(SRC_DIR, LIB_DIR);
 
-  setModuleEnv('esmodule');
-  await compileDir(ES_DIR);
+  start('Build esmodule outputs');
+  try {
+    setModuleEnv('esmodule');
+    await compileDir(ES_DIR);
+    success('Build esmodule outputs');
+  } catch (err) {
+    error('Build esmodule outputs');
+  }
 
-  setModuleEnv('commonjs');
-  await compileDir(LIB_DIR);
+  start('Build commonjs outputs');
+  try {
+    setModuleEnv('commonjs');
+    await compileDir(LIB_DIR);
+    success('Build commonjs outputs');
+  } catch (err) {
+    error('Build commonjs outputs');
+  }
+
+  start('Build packed outputs');
+  try {
+    genPackageEntry();
+    await buildPackage(false);
+    await buildPackage(true);
+    success('Build packed outputs');
+  } catch (err) {
+    error('Build packed outputs');
+  }
 }

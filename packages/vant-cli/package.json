@@ -52,6 +52,7 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-typescript": "^7.7.2",
+    "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/jest": "^24.0.22",
     "@vant/eslint-config": "^1.4.0",
     "@vant/markdown-loader": "^2.2.0",
