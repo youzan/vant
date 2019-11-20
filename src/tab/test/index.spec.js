@@ -227,3 +227,15 @@ test('set name to zero', async () => {
   tabs.at(1).trigger('click');
   expect(onClick).toHaveBeenCalledWith(0, 'title2');
 });
+
+test('title-style prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs>
+        <van-tab title="title1" title-style="color: red;">Text</van-tab>
+      </van-tabs>
+    `
+  });
+
+  expect(wrapper.find('.van-tab').element.style.color).toEqual('red');
+});
