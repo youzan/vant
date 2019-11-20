@@ -83,9 +83,9 @@ export default {
 </van-swipe>
 ```
 
-### 控制滑块大小
+### 自定义滑块大小
 
-滑块默认宽度为`100%`，可以通过`width`属性设置滑块的宽度，此属性不能与循环播放同时使用
+滑块默认宽度为`100%`，可以通过`width`属性设置单个滑块的宽度。纵向滚动模式下，可以通过`height`属性设置单个滑块的高度。
 
 ```html
 <van-swipe :loop="false" :width="300">
@@ -95,6 +95,8 @@ export default {
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
 ```
+
+> 目前不支持在循环滚动模式下自定义滑块大小，因此需要将 loop 设置为 false
 
 ### 自定义指示器
 

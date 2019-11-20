@@ -49,7 +49,7 @@ export default {
 }
 ```
 
-### change event
+### Change Event
 
 ```html
 <van-swipe @change="onChange">
@@ -81,7 +81,7 @@ export default {
 </van-swipe>
 ```
 
-### Set Swiper Item Size
+### Set SwipeItem Size
 
 ```html
 <van-swipe :loop="false" :width="300">
@@ -91,6 +91,8 @@ export default {
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
 ```
+
+> It's not supported to set SwipeItem size in the loop mode
 
 ### Custom Indicator
 
