@@ -1,10 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-swipe
-        :autoplay="3000"
-        indicator-color="white"
-      >
+      <van-swipe :autoplay="3000" indicator-color="white">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -14,20 +11,14 @@
 
     <demo-block :title="$t('title2')">
       <van-swipe :autoplay="3000">
-        <van-swipe-item
-          v-for="(image, index) in images"
-          :key="index"
-        >
+        <van-swipe-item v-for="(image, index) in images" :key="index">
           <img v-lazy="image">
         </van-swipe-item>
       </van-swipe>
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-swipe
-        indicator-color="white"
-        @change="onChange1"
-      >
+      <van-swipe indicator-color="white" @change="onChange1">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -51,11 +42,7 @@
     </demo-block>
 
     <demo-block :title="$t('title5')">
-      <van-swipe
-        :width="300"
-        :loop="false"
-        indicator-color="white"
-      >
+      <van-swipe :width="300" :loop="false" indicator-color="white">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -85,7 +72,7 @@ export default {
       title2: '图片懒加载',
       title3: '监听 change 事件',
       title4: '纵向滚动',
-      title5: '设置滑块大小',
+      title5: '自定义滑块大小',
       title6: '自定义指示器',
       message: '当前 Swipe 索引：'
     },
@@ -93,7 +80,7 @@ export default {
       title2: 'Image Lazyload',
       title3: 'Change Event',
       title4: 'Vertical Scrolling',
-      title5: 'Set Swiper Item Size',
+      title5: 'Set SwipeItem Size',
       title6: 'Custom indicator',
       message: 'Current Swipe index:'
     }
@@ -171,7 +158,7 @@ export default {
     padding: 2px 5px;
     color: @white;
     font-size: 12px;
-    background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, 0.1);
   }
 }
 </style>
