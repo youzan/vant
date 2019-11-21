@@ -103,7 +103,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 address-edit 实例并调用实例方法
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 AddressEdit 实例并调用实例方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

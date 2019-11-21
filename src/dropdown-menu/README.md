@@ -149,7 +149,7 @@ Use `active-color` prop to custom active color of the title and options
 
 ### DropdownItem Methods
 
-Use ref to get DropdownItem instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get DropdownItem instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
