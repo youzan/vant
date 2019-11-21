@@ -166,7 +166,8 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| swipeTo | 滚动到目标位置 | index: 目标位置的索引, options: 选项 | void |
+| swipeTo | 滚动到目标位置 | index: number, options: Options | void |
+| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
 
 ### swipeTo Options 格式
 
