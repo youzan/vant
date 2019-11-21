@@ -161,6 +161,7 @@ Use ref to get swipe instance and call instance methods
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | swipeTo | Swipe to target index | index: target index, options: Options | void |
+| resize | Resize swipe when container element resized | - | void |
 
 ### swipeTo Options
 
