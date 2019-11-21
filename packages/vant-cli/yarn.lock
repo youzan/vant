@@ -1089,6 +1089,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/dependency-tree@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@types/dependency-tree/-/dependency-tree-6.1.0.tgz#12d30efd39b6caad29928d7ab3c39149feff09a5"
+  integrity sha512-x9b+ZZ9GSCGJq/0Hza0UMiNyxhUB3O2FOcSIDu95O+tmFQ/AhAY6bMhmktUsnPDOucBlQ6dPLUsdEZoejLNtdg==
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/@types/eslint-visitor-keys/download/@types/eslint-visitor-keys-1.0.0.tgz?cache=0&sync_timestamp=1572470950582&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Feslint-visitor-keys%2Fdownload%2F%40types%2Feslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"

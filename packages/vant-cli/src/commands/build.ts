@@ -7,6 +7,7 @@ import { remove, copy, readdirSync } from 'fs-extra';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
+import { genStyleEntry } from '../compiler/gen-style-entry';
 import { genPackageEntry } from '../compiler/gen-package-entry';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
 import {
@@ -21,23 +22,33 @@ import {
 async function compileDir(dir: string) {
   const files = readdirSync(dir);
 
-  files.forEach(async filename => {
-    const filePath = join(dir, filename);
+  await Promise.all(
+    files.map(filename => {
+      const filePath = join(dir, filename);
 
-    if (isDemoDir(filePath) || isTestDir(filePath)) {
-      await remove(filePath);
-    } else if (isDir(filePath)) {
-      await compileDir(filePath);
-    } else if (isSfc(filePath)) {
-      await compileSfc(filePath);
-    } else if (isScript(filePath)) {
-      await compileJs(filePath);
-    } else if (isStyle(filePath)) {
-      await compileStyle(filePath);
-    } else {
-      await remove(filePath);
-    }
-  });
+      if (isDemoDir(filePath) || isTestDir(filePath)) {
+        return remove(filePath);
+      }
+
+      if (isDir(filePath)) {
+        return compileDir(filePath);
+      }
+
+      if (isSfc(filePath)) {
+        return compileSfc(filePath);
+      }
+
+      if (isScript(filePath)) {
+        return compileJs(filePath);
+      }
+
+      if (isStyle(filePath)) {
+        return compileStyle(filePath);
+      }
+
+      return remove(filePath);
+    })
+  );
 }
 
 function setModuleEnv(value: string) {
@@ -78,6 +89,14 @@ export async function build() {
     success('Build commonjs outputs');
   } catch (err) {
     error('Build commonjs outputs');
+  }
+
+  start('Build style entry');
+  try {
+    genStyleEntry();
+    success('Build style entry');
+  } catch (err) {
+    error('Build style entry');
   }
 
   start('Build packed outputs');

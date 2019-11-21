@@ -88,13 +88,15 @@ export async function compileSfc(filePath: string) {
   }
 
   // compile style part
-  styles.forEach(async (style, index: number) => {
-    const prefix = index !== 0 ? `-${index + 1}` : '';
-    const ext = style.lang || 'css';
-    const cssFilePath = replaceExt(filePath, `${prefix}.${ext}`);
+  await Promise.all(
+    styles.map((style, index: number) => {
+      const prefix = index !== 0 ? `-${index + 1}` : '';
+      const ext = style.lang || 'css';
+      const cssFilePath = replaceExt(filePath, `-sfc${prefix}.${ext}`);
 
-    writeFileSync(cssFilePath, trim(style.content));
+      writeFileSync(cssFilePath, trim(style.content));
 
-    await compileStyle(cssFilePath);
-  });
+      return compileStyle(cssFilePath);
+    })
+  );
 }
