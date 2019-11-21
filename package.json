@@ -18,11 +18,10 @@
     "lint": "vant-cli lint",
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant-cli changelog ./docs/markdown/changelog.generated.md --tag v2.2.0",
-    "build:lib": "node build/build-lib.js",
     "test": "vant-cli test",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html",
-    "release": "sh build/release.sh",
+    "release": "vant-cli release",
     "release:site": "sh build/release-site.sh"
   },
   "husky": {
