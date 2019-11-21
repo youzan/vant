@@ -81,7 +81,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 
 ### Methods
 
-Use ref to get area instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|

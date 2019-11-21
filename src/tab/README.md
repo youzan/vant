@@ -217,7 +217,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ### Tabs Methods
 
-Use ref to get Tabs instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
