@@ -25,7 +25,7 @@ exports[`create a AddressEdit 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@ exports[`create a AddressEdit with props 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@ exports[`create a AddressEdit with props 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label"><span>邮政编码</span></div>
     <div class="van-cell__value">
-      <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" class="van-field__control"></div>
+      <div class="van-field__body"><input type="tel" placeholder="邮政编码" class="van-field__control"></div>
     </div>
   </div>
   <div class="van-cell van-cell--center van-switch-cell">
@@ -107,7 +107,7 @@ exports[`set-default 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea></div>
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@ exports[`set-default 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label"><span>邮政编码</span></div>
     <div class="van-cell__value">
-      <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" class="van-field__control"></div>
+      <div class="van-field__body"><input type="tel" placeholder="邮政编码" class="van-field__control"></div>
     </div>
   </div>
   <div class="van-cell van-cell--center van-switch-cell">
@@ -155,7 +155,7 @@ exports[`show area component 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
         </div>
       </div>
     </div>
@@ -163,7 +163,7 @@ exports[`show area component 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label"><span>邮政编码</span></div>
     <div class="van-cell__value">
-      <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" class="van-field__control"></div>
+      <div class="van-field__body"><input type="tel" placeholder="邮政编码" class="van-field__control"></div>
     </div>
   </div>
   <div class="van-cell van-cell--center van-switch-cell">
@@ -203,7 +203,7 @@ exports[`show area component 2`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
         </div>
       </div>
     </div>
@@ -211,7 +211,7 @@ exports[`show area component 2`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label"><span>邮政编码</span></div>
     <div class="van-cell__value">
-      <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" class="van-field__control"></div>
+      <div class="van-field__body"><input type="tel" placeholder="邮政编码" class="van-field__control"></div>
     </div>
   </div>
   <div class="van-cell van-cell--center van-switch-cell">
@@ -251,7 +251,7 @@ exports[`valid area placeholder confirm 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>详细地址</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
+          <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
         </div>
       </div>
     </div>
