@@ -2,8 +2,8 @@
 
 import { command, parse } from 'commander';
 import { dev } from './commands/dev';
-import { test } from './commands/test';
 import { lint } from './commands/lint';
+import { test } from './commands/jest';
 import { clean } from './commands/clean';
 import { build } from './commands/build';
 import { release } from './commands/release';
