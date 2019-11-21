@@ -15,13 +15,12 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.site.dev.js",
-    "lint": "eslint ./src --ext .js,.vue,.ts,.tsx && stylelint \"src/**/*.less\" --fix",
+    "lint": "vant-cli lint",
     "build:entry": "node build/build-entry.js",
-    "build:changelog": "vant changelog ./docs/markdown/changelog.generated.md --tag v2.1.0",
+    "build:changelog": "vant-cli changelog ./docs/markdown/changelog.generated.md --tag v2.2.0",
     "build:lib": "node build/build-lib.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:clear-cache": "jest --clearCache",
+    "test": "vant-cli test",
+    "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh"
