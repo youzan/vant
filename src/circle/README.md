@@ -121,7 +121,7 @@ export default {
 | speed | Animate speed（rate/s）| *number* | `0` | - |
 | text | Text | *string* | - | - |
 | stroke-width | Stroke width | *number* | `40` | - |
-| stroke-linecap | Stroke linecap，can be set to `sqaure` | *string* | `round` | 2.2.15 |
+| stroke-linecap | Stroke linecap，can be set to `sqaure` `butt` | *string* | `round` | 2.2.15 |
 | clockwise | Whether to be clockwise | *boolean* | `true` | - |
 
 ### Slots
