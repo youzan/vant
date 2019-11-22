@@ -91,7 +91,6 @@ export default createComponent({
         return;
       }
 
-      this.dragging = true;
       this.startOffset = this.offset;
       this.touchStart(event);
     },
@@ -104,6 +103,9 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.direction === 'horizontal') {
+        this.dragging = true;
+        this.lockClick = true;
+
         const isPrevent = !this.opened || this.deltaX * this.startOffset < 0;
 
         if (isPrevent) {
@@ -121,9 +123,13 @@ export default createComponent({
 
       if (this.dragging) {
         this.toggle(this.offset > 0 ? 'left' : 'right');
-      }
+        this.dragging = false;
 
-      this.dragging = false;
+        // compatible with desktop scenario
+        setTimeout(() => {
+          this.lockClick = false;
+        }, 0);
+      }
     },
 
     toggle(direction) {
@@ -151,14 +157,12 @@ export default createComponent({
     onClick(position = 'outside') {
       this.$emit('click', position);
 
-      if (!this.offset) {
-        return;
-      }
-
-      if (this.onClose) {
-        this.onClose(position, this, { name: this.name });
-      } else {
-        this.swipeMove(0);
+      if (this.opened && !this.lockClick) {
+        if (this.onClose) {
+          this.onClose(position, this, { name: this.name });
+        } else {
+          this.swipeMove(0);
+        }
       }
     },
 

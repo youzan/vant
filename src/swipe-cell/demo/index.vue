@@ -1,7 +1,6 @@
 <template>
   <div>
     <demo-section>
-      <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
         <van-swipe-cell>
           <template #left>
@@ -67,8 +66,7 @@ export default {
       collect: '收藏',
       title: '单元格',
       title2: '异步关闭',
-      confirm: '确定删除吗？',
-      tips: '建议在手机模式下浏览本示例'
+      confirm: '确定删除吗？'
     },
     'en-US': {
       select: 'Select',
@@ -76,8 +74,7 @@ export default {
       collect: 'Collect',
       title: 'Cell',
       title2: 'Async close',
-      confirm: 'Are you sure to delete?',
-      tips: 'Please try this demo in mobile mode'
+      confirm: 'Are you sure to delete?'
     }
   },
 
