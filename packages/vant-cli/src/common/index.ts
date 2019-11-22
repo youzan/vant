@@ -1,7 +1,7 @@
-import fs from 'fs-extra';
 import decamelize from 'decamelize';
+import { readdirSync, existsSync, lstatSync } from 'fs-extra';
 import { join } from 'path';
-import { SRC_DIR } from './constant';
+import { SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -21,16 +21,16 @@ export function replaceExt(path: string, ext: string) {
 
 export function getComponents() {
   const EXCLUDES = ['.DS_Store'];
-  const dirs = fs.readdirSync(SRC_DIR);
+  const dirs = readdirSync(SRC_DIR);
   return dirs
     .filter(dir => !EXCLUDES.includes(dir))
     .filter(dir =>
-      ENTRY_EXTS.some(ext => fs.existsSync(join(SRC_DIR, dir, `index.${ext}`)))
+      ENTRY_EXTS.some(ext => existsSync(join(SRC_DIR, dir, `index.${ext}`)))
     );
 }
 
 export function isDir(dir: string) {
-  return fs.lstatSync(dir).isDirectory();
+  return lstatSync(dir).isDirectory();
 }
 
 export function isDemoDir(dir: string) {
@@ -65,6 +65,21 @@ export function pascalize(str: string): string {
     pascalizeRE,
     (_, c1, c2) => c1.toUpperCase() + c2
   );
+}
+
+export function getWebpackConfig(): object {
+  if (existsSync(WEBPACK_CONFIG_FILE)) {
+    // eslint-disable-next-line
+    const config = require(WEBPACK_CONFIG_FILE);
+
+    if (typeof config === 'function') {
+      return config();
+    }
+
+    return config;
+  }
+
+  return {};
 }
 
 export { decamelize };
