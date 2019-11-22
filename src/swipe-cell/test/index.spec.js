@@ -59,7 +59,7 @@ it('on-close prop', () => {
   wrapper.trigger('click');
   expect(position).toEqual(undefined);
 
-  wrapper.setData({ offset: 100 });
+  wrapper.vm.open('left');
   wrapper.trigger('click');
   expect(position).toEqual('cell');
 
