@@ -3,6 +3,7 @@ import { RED } from '../utils/constant';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
+import Tag from '../tag';
 import Button from '../button';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
@@ -15,12 +16,14 @@ export type ContactListItem = {
   id: string | number;
   tel: string | number;
   name: string;
+  isDefault: boolean;
 };
 
 export type ContactListProps = {
   value?: any;
   list?: ContactListItem[];
   addText?: string;
+  defaultTagText?: string;
 };
 
 const [createComponent, bem, t] = createNamespace('contact-list');
@@ -39,15 +42,18 @@ function ContactList(
         emit(ctx, 'select', item, index);
       }
 
-      function Content() {
+      function RightIcon() {
         return (
-          <Radio name={item.id} iconSize={16} checkedColor={RED} onClick={onClick}>
-            <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
-          </Radio>
+          <Radio
+            name={item.id}
+            iconSize={16}
+            checkedColor={RED}
+            onClick={onClick}
+          />
         );
       }
 
-      function RightIcon() {
+      function LeftIcon() {
         return (
           <Icon
             name="edit"
@@ -60,15 +66,29 @@ function ContactList(
         );
       }
 
+      function Content() {
+        return [
+          `${item.name}，${item.tel}`,
+          item.isDefault && props.defaultTagText && (
+            <Tag type="danger" round class={bem('item-tag')}>
+              {props.defaultTagText}
+            </Tag>
+          )
+        ];
+      }
+
       return (
         <Cell
           key={item.id}
           isLink
+          center
           class={bem('item')}
           valueClass={bem('item-value')}
+          // @ts-ignore
           scopedSlots={{
             default: Content,
-            'right-icon': RightIcon
+            'right-icon': RightIcon,
+            icon: LeftIcon
           }}
           onClick={onClick}
         />
@@ -80,16 +100,18 @@ function ContactList(
       <RadioGroup value={props.value} class={bem('group')}>
         {List}
       </RadioGroup>
-      <Button
-        square
-        size="large"
-        type="danger"
-        class={bem('add')}
-        text={props.addText || t('addText')}
-        onClick={() => {
-          emit(ctx, 'add');
-        }}
-      />
+      <div class={bem('bottom')}>
+        <Button
+          round
+          block
+          type="danger"
+          class={bem('add')}
+          text={props.addText || t('addText')}
+          onClick={() => {
+            emit(ctx, 'add');
+          }}
+        />
+      </div>
     </div>
   );
 }
@@ -97,7 +119,8 @@ function ContactList(
 ContactList.props = {
   value: null as any,
   list: Array,
-  addText: String
+  addText: String,
+  defaultTagText: String
 };
 
 export default createComponent(ContactList);
