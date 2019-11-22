@@ -39,7 +39,7 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <div class="van-cell van-cell--center van-switch-cell">
+        <div class="van-cell van-cell--borderless van-contact-edit__switch-cell">
           <div class="van-cell__title"><span>设为默认联系人</span></div>
           <div class="van-cell__value">
             <div role="switch" aria-checked="false" class="van-switch" style="font-size: 24px;">
