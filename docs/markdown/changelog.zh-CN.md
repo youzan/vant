@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
+`2019-11-22`
+
+**Features**
+
+- Tabs: 新增 title-style 属性 [\#5048](https://github.com/youzan/vant/pull/5048)
+- Tabs: 新增 resize 方法 [\#5071](https://github.com/youzan/vant/pull/5071)
+- Swipe: 新增 resize 方法 [\#5070](https://github.com/youzan/vant/pull/5070)
+
+**Bug Fixes**
+
+- 修复 Cell value 过长时不换行的问题 [\#5029](https://github.com/youzan/vant/pull/5029)
+- 修复 SwipeCell 在桌面端无法使用的问题 [\#5077](https://github.com/youzan/vant/pull/5077)
+- 修复 Field 在 Safari 下输入换行符时字数统计错误的问题 [\#5049](https://github.com/youzan/vant/pull/5049)
+- 修复 Tabbar 设置 safe-area-inset-bottom 后可能出现样式错位的问题 [\#5079](https://github.com/youzan/vant/pull/5079)
+- 修复 DropdownMenu 使用 get-container 属性时点击后会立即关闭的问题 [\#5047](https://github.com/youzan/vant/pull/5047)
+
+
 ### [v2.2.13](https://github.com/youzan/vant/tree/v2.2.13)
 `2019-11-14`
 

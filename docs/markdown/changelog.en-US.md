@@ -1,5 +1,23 @@
 # Changelog
 
+### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
+`2019-11-22`
+
+**Features**
+
+- Tabs: add title-style prop [\#5048](https://github.com/youzan/vant/pull/5048)
+- Tabs: add resize method [\#5071](https://github.com/youzan/vant/pull/5071)
+- Swipe: add resize method [\#5070](https://github.com/youzan/vant/pull/5070)
+
+**Bug Fixes**
+
+- fix Cell should break word of value [\#5029](https://github.com/youzan/vant/pull/5029)
+- fix Field incorrect count of line break in safari [\#5049](https://github.com/youzan/vant/pull/5049)
+- fix Tabbar incorrect style when using safe-area-inset-bottom [\#5079](https://github.com/youzan/vant/pull/5079)
+- fix SwipeCell compatible with desktop scenario [\#5077](https://github.com/youzan/vant/pull/5077)
+- fix DropdownMenu should't close when custom container and get clicked [\#5047](https://github.com/youzan/vant/pull/5047)
+
+
 ### [v2.2.13](https://github.com/youzan/vant/tree/v2.2.13)
 `2019-11-14`
 
