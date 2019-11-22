@@ -123,6 +123,8 @@ export default {
 }
 ```
 
+> 注意：使用 get-container 属性的组件不能为根节点
+
 ## API
 
 ### Props
