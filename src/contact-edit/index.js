@@ -3,7 +3,8 @@ import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
-import SwitchCell from '../switch-cell';
+import Switch from '../switch';
+import Cell from '../cell';
 import { isMobile } from '../utils/validate/mobile';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
@@ -19,6 +20,7 @@ export default createComponent({
     isSaving: Boolean,
     isDeleting: Boolean,
     showSetDefault: Boolean,
+    setDefaultLabel: String,
     contactInfo: {
       type: Object,
       default: () => ({ ...defaultContact })
@@ -117,13 +119,19 @@ export default createComponent({
           />
         </div>
         {this.showSetDefault && (
-          <SwitchCell
-            vModel={data.isDefault}
-            title={t('defaultAddress')}
-            onChange={event => {
-              this.$emit('change-default', event);
-            }}
-          />
+          <Cell
+            title={this.setDefaultLabel}
+            class={bem('switch-cell')}
+            border={false}
+          >
+            <Switch
+              vModel={data.isDefault}
+              size={24}
+              onChange={event => {
+                this.$emit('change-default', event);
+              }}
+            />
+          </Cell>
         )}
         <div class={bem('buttons')}>
           <Button
@@ -135,7 +143,13 @@ export default createComponent({
             onClick={this.onSave}
           />
           {this.isEdit && (
-            <Button block round text={t('delete')} loading={this.isDeleting} onClick={this.onDelete} />
+            <Button
+              block
+              round
+              text={t('delete')}
+              loading={this.isDeleting}
+              onClick={this.onDelete}
+            />
           )}
         </div>
       </div>

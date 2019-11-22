@@ -29,6 +29,7 @@
       >
         <van-contact-edit
           show-set-default
+          :set-default-label="$t('defaultLabel')"
           :contact-info="editingContact"
           :is-edit="isEdit"
           @save="onSave"
@@ -52,10 +53,12 @@
 export default {
   i18n: {
     'zh-CN': {
-      name: '张三'
+      name: '张三',
+      defaultLabel: '设为默认联系人'
     },
     'en-US': {
-      name: 'John Snow'
+      name: 'John Snow',
+      defaultLabel: 'Set as the default contact'
     }
   },
 
