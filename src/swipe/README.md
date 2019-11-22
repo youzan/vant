@@ -156,11 +156,12 @@ export default {
 
 ### Swipe Methods
 
-Use ref to get swipe instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | swipeTo | Swipe to target index | index: target index, options: Options | void |
+| resize | Resize Swipe when container element resized | - | void |
 
 ### swipeTo Options
 

@@ -16,7 +16,7 @@ export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
     BindEventMixin(function(bind) {
-      bind(window, 'resize', this.setLine, true);
+      bind(window, 'resize', this.resize, true);
     })
   ],
 
@@ -139,6 +139,11 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
+    resize() {
+      this.setLine();
+    },
+
     onShow() {
       this.$nextTick(() => {
         this.inited = true;

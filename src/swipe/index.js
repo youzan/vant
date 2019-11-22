@@ -11,7 +11,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     BindEventMixin(function(bind, isBind) {
-      bind(window, 'resize', this.onResize, true);
+      bind(window, 'resize', this.resize, true);
 
       if (isBind) {
         this.initialize();
@@ -154,7 +154,8 @@ export default createComponent({
       this.autoPlay();
     },
 
-    onResize() {
+    // @exposed-api
+    resize() {
       this.initialize(this.activeIndicator);
     },
 
@@ -252,6 +253,7 @@ export default createComponent({
       }
     },
 
+    // @exposed-api
     swipeTo(index, options = {}) {
       this.swiping = true;
       this.resetTouchStatus();

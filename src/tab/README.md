@@ -206,6 +206,23 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.2.1 |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.2.1 |
 
+### Tabs Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when click tab | name：name of current tab，title: tab title |
+| change | Triggered when active tab changed | name：name of current tab，title: tab title |
+| disabled | Triggered when click disabled tab | name：name of current tab, title: tab title |
+| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+
+### Tabs Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance methods
+
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| resize | Resize Tabs when container element resized | - | void |
+
 ### Tabs Slots
 
 | Name | Description |
@@ -219,12 +236,3 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 |------|------|
 | default | Content of tab |
 | title | Custom tab title |
-
-### Tabs Events
-
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when click tab | name：name of current tab，title: tab title |
-| change | Triggered when active tab changed | name：name of current tab，title: tab title |
-| disabled | Triggered when click disabled tab | name：name of current tab, title: tab title |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |

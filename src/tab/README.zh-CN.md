@@ -210,6 +210,23 @@ export default {
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.2.1 |
 | replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | 2.2.1 |
 
+### Tabs Events
+
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| click | 点击标签时触发 | name：标签标识符，title：标题 |
+| change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
+| disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
+| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+
+### Tabs 方法
+
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Tabs 实例并调用实例方法
+
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
+
 ### Tabs Slots
 
 | 名称 | 说明 |
@@ -223,12 +240,3 @@ export default {
 |------|------|
 | default | 标签页内容 |
 | title | 自定义标题，不支持动态渲染 |
-
-### Tabs Events
-
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击标签时触发 | name：标签标识符，title：标题 |
-| change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
-| disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
-| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
