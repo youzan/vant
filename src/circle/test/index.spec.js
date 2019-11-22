@@ -47,3 +47,13 @@ test('size prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('stroke-linecap prop', () => {
+  const wrapper = mount(Circle, {
+    propsData: {
+      strokeLinecap: 'square'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
