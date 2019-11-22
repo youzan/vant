@@ -185,6 +185,12 @@ export default {
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
 
+### ContactEdit Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 在电话下方插入内容 |
+
 ### Contact 数据结构
 
 | 键名 | 说明 | 类型 |

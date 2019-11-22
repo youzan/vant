@@ -94,34 +94,38 @@ export default createComponent({
 
     return (
       <div class={bem()}>
-        <Field
-          vModel={data.name}
-          clearable
-          maxlength="30"
-          label={t('name')}
-          placeholder={t('nameEmpty')}
-          error={errorInfo.name}
-          onFocus={onFocus('name')}
-        />
-        <Field
-          vModel={data.tel}
-          clearable
-          type="tel"
-          label={t('tel')}
-          placeholder={t('telEmpty')}
-          error={errorInfo.tel}
-          onFocus={onFocus('tel')}
-        />
+        <div class={bem('fields')}>
+          <Field
+            vModel={data.name}
+            clearable
+            maxlength="30"
+            label={t('name')}
+            placeholder={t('nameEmpty')}
+            error={errorInfo.name}
+            onFocus={onFocus('name')}
+          />
+          <Field
+            vModel={data.tel}
+            clearable
+            type="tel"
+            label={t('tel')}
+            placeholder={t('telEmpty')}
+            error={errorInfo.tel}
+            onFocus={onFocus('tel')}
+          />
+        </div>
+        {this.slots()}
         <div class={bem('buttons')}>
           <Button
             block
+            round
             type="danger"
             text={t('save')}
             loading={this.isSaving}
             onClick={this.onSave}
           />
           {this.isEdit && (
-            <Button block text={t('delete')} loading={this.isDeleting} onClick={this.onDelete} />
+            <Button block round text={t('delete')} loading={this.isDeleting} onClick={this.onDelete} />
           )}
         </div>
       </div>

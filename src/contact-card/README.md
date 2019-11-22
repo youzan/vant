@@ -181,6 +181,12 @@ export default {
 | save | Triggered when click save button | content：contact info |
 | delete | Triggered when click delete button | content：contact info |
 
+### ContactEdit Slots
+
+| Name | Description |
+|------|------|
+| default | Custom content below tel |
+
 ### Data Structure of Contact
 
 | key | Description | Type |
