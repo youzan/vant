@@ -17,6 +17,9 @@ export default {
   vanContactList: {
     addText: 'Yeni kişi ekle'
   },
+  vanContactEdit: {
+    defaultAddress: 'Varsayılan kişi olarak ayarla'
+  },
   vanPagination: {
     prev: 'Önceki',
     next: 'Sonraki'

@@ -28,6 +28,7 @@
         :lazy-render="false"
       >
         <van-contact-edit
+          show-set-default
           :contact-info="editingContact"
           :is-edit="isEdit"
           @save="onSave"

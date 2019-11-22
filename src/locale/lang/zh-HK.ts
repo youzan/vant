@@ -17,6 +17,9 @@ export default {
   vanContactList: {
     addText: '新建聯系人'
   },
+  vanContactEdit: {
+    defaultAddress: '設為默認聯繫人'
+  },
   vanPagination: {
     prev: '上一頁',
     next: '下一頁'

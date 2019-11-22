@@ -3,6 +3,7 @@ import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
+import SwitchCell from '../switch-cell';
 import { isMobile } from '../utils/validate/mobile';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
@@ -17,6 +18,7 @@ export default createComponent({
     isEdit: Boolean,
     isSaving: Boolean,
     isDeleting: Boolean,
+    showSetDefault: Boolean,
     contactInfo: {
       type: Object,
       default: () => ({ ...defaultContact })
@@ -114,7 +116,15 @@ export default createComponent({
             onFocus={onFocus('tel')}
           />
         </div>
-        {this.slots()}
+        {this.showSetDefault && (
+          <SwitchCell
+            vModel={data.isDefault}
+            title={t('defaultAddress')}
+            onChange={event => {
+              this.$emit('change-default', event);
+            }}
+          />
+        )}
         <div class={bem('buttons')}>
           <Button
             block

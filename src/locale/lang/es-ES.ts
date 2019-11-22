@@ -17,6 +17,9 @@ export default {
   vanContactList: {
     addText: 'Añadir nuevo contacto'
   },
+  vanContactEdit: {
+    defaultAddress: 'Establecer como contacto predeterminado',
+  },
   vanPagination: {
     prev: 'Anterior',
     next: 'Siguiente'

@@ -177,6 +177,7 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` | - |
 | tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - | - |
+| show-set-default | 是否显示默认联系人栏 | *boolean* | `false` | - |
 
 ### ContactEdit Events
 
@@ -184,12 +185,6 @@ export default {
 |------|------|------|
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
-
-### ContactEdit Slots
-
-| 名称 | 说明 |
-|------|------|
-| default | 在电话下方插入内容 |
 
 ### Contact 数据结构
 

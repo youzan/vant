@@ -173,6 +173,7 @@ export default {
 | is-saving | Whether to show save button loading status | *boolean* | `false` | - |
 | is-deleting | Whether to show delete button loading status | *boolean* | `false` | - |
 | tel-validator | The method to validate tel | *(tel: string) => boolean* | - | - |
+| show-set-default | Whether to show default contact switch | *boolean* | `false` | - |
 
 ### ContactEdit Events
 
@@ -180,12 +181,6 @@ export default {
 |------|------|------|
 | save | Triggered when click save button | content：contact info |
 | delete | Triggered when click delete button | content：contact info |
-
-### ContactEdit Slots
-
-| Name | Description |
-|------|------|
-| default | Custom content below tel |
 
 ### Data Structure of Contact
 
