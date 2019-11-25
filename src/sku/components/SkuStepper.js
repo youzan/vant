@@ -95,6 +95,10 @@ export default createComponent({
     },
   },
 
+  created() {
+    this.checkState(this.stepperMinLimit, this.stepperLimit);
+  },
+
   methods: {
     setCurrentNum(num) {
       this.currentNum = num;
