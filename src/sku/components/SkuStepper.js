@@ -16,6 +16,7 @@ export default createComponent({
     stepperTitle: String,
     disableStepperInput: Boolean,
     customStepperConfig: Object,
+    hideQuotaText: Boolean,
     quota: {
       type: Number,
       default: 0
@@ -23,7 +24,11 @@ export default createComponent({
     quotaUsed: {
       type: Number,
       default: 0
-    }
+    },
+    startSaleNum: {
+      type: Number,
+      default: 1,
+    },
   },
 
   data() {
@@ -40,9 +45,17 @@ export default createComponent({
     },
 
     stepperLimit(limit) {
-      if (limit < this.currentNum) {
+      if (limit < this.currentNum && this.stepperMinLimit <= limit) {
         this.currentNum = limit;
       }
+      this.checkState(this.stepperMinLimit, limit);
+    },
+
+    stepperMinLimit(start) {
+      if (start > this.currentNum || start > this.stepperLimit) {
+        this.currentNum = start;
+      }
+      this.checkState(start, this.stepperLimit);
     }
   },
 
@@ -62,7 +75,24 @@ export default createComponent({
       }
 
       return limit;
-    }
+    },
+    stepperMinLimit() {
+      return this.startSaleNum < 1 ? 1 : this.startSaleNum;
+    },
+    quotaText() {
+      const { quotaText, hideQuotaText } = this.customStepperConfig;
+      if (hideQuotaText) return '';
+
+      let text = '';
+
+      if (quotaText) {
+        text = quotaText;
+      } else if (this.quota > 0 || this.startSaleNum > 1) {
+        text = t('quotaLimit', this.quota, this.startSaleNum);
+      }
+
+      return text;
+    },
   },
 
   methods: {
@@ -75,7 +105,8 @@ export default createComponent({
         action,
         limitType: this.limitType,
         quota: this.quota,
-        quotaUsed: this.quotaUsed
+        quotaUsed: this.quotaUsed,
+        startSaleNum: this.startSaleNum,
       });
     },
 
@@ -83,7 +114,27 @@ export default createComponent({
       const { handleStepperChange } = this.customStepperConfig;
       handleStepperChange && handleStepperChange(currentValue);
       this.$emit('change', currentValue);
-    }
+    },
+
+    checkState(min, max) {
+      // 如果选择小于起售，则强制变为起售
+      if (this.currentNum < min || min > max) {
+        this.currentNum = min;
+      } else if (this.currentNum > max) {
+        // 当前选择数量大于最大可选时，需要重置已选数量
+        this.currentNum = max;
+      }
+
+      this.skuEventBus.$emit('sku:stepperState', {
+        valid: min <= max,
+        min,
+        max,
+        limitType: this.limitType,
+        quota: this.quota,
+        quotaUsed: this.quotaUsed,
+        startSaleNum: this.startSaleNum,
+      });
+    },
   },
 
   render() {
@@ -94,11 +145,13 @@ export default createComponent({
           <Stepper
             vModel={this.currentNum}
             class="van-sku__stepper"
+            min={this.stepperMinLimit}
             max={this.stepperLimit}
             disableInput={this.disableStepperInput}
             onOverlimit={this.onOverLimit}
             onChange={this.onChange}
           />
+          {!this.hideQuotaText && this.quotaText && <span class="van-sku__stepper-quota">({this.quotaText})</span>}
         </div>
       </div>
     );
