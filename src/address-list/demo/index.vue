@@ -3,6 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <van-address-list
         v-model="chosenAddressId"
+        :default-tag-text="$t('defaultTagText')"
         :list="$t('list')"
         :disabled-list="$t('disabledList')"
         :disabled-text="$t('disabledText')"
@@ -22,7 +23,8 @@ export default {
           id: '1',
           name: '张三',
           tel: '13000000000',
-          address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室'
+          address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室',
+          isDefault: true
         },
         {
           id: '2',
@@ -41,7 +43,8 @@ export default {
       ],
       add: '新增地址',
       edit: '编辑地址',
-      disabledText: '以下地址超出配送范围'
+      disabledText: '以下地址超出配送范围',
+      defaultTagText: '默认'
     },
     'en-US': {
       list: [
@@ -49,7 +52,8 @@ export default {
           id: '1',
           name: 'John Snow',
           tel: '13000000000',
-          address: 'Somewhere'
+          address: 'Somewhere',
+          isDefault: true
         },
         {
           id: '2',
@@ -68,7 +72,8 @@ export default {
       ],
       add: 'Add',
       edit: 'Edit',
-      disabledText: 'The following address is out of range'
+      disabledText: 'The following address is out of range',
+      defaultTagText: 'Default'
     }
   },
 
