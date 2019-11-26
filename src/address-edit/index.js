@@ -251,64 +251,68 @@ export default createComponent({
 
     return (
       <div class={bem()}>
-        <Field
-          vModel={data.name}
-          clearable
-          label={t('name')}
-          placeholder={t('namePlaceholder')}
-          error={errorInfo.name}
-          onFocus={onFocus('name')}
-        />
-        <Field
-          vModel={data.tel}
-          clearable
-          type="tel"
-          label={t('tel')}
-          placeholder={t('telPlaceholder')}
-          error={errorInfo.tel}
-          onFocus={onFocus('tel')}
-        />
-        <Field
-          vShow={this.showArea}
-          readonly
-          label={t('area')}
-          placeholder={t('areaPlaceholder')}
-          value={this.areaText}
-          onClick={() => {
-            this.showAreaPopup = true;
-          }}
-        />
-        <Detail
-          vShow={this.showDetail}
-          focused={this.detailFocused}
-          value={data.addressDetail}
-          error={errorInfo.addressDetail}
-          detailRows={this.detailRows}
-          detailMaxlength={this.detailMaxlength}
-          searchResult={this.searchResult}
-          showSearchResult={this.showSearchResult}
-          onFocus={onFocus('addressDetail')}
-          onBlur={this.onDetailBlur}
-          onInput={this.onChangeDetail}
-          onSelect-search={event => {
-            this.$emit('select-search', event);
-          }}
-        />
-        {this.showPostal && (
+        <div class={bem('fields')}>
           <Field
-            vShow={!hideBottomFields}
-            vModel={data.postalCode}
-            type="tel"
-            maxlength="6"
-            label={t('postal')}
-            placeholder={t('postal')}
-            error={errorInfo.postalCode}
-            onFocus={onFocus('postalCode')}
+            vModel={data.name}
+            clearable
+            label={t('name')}
+            placeholder={t('namePlaceholder')}
+            error={errorInfo.name}
+            onFocus={onFocus('name')}
           />
-        )}
-        {this.slots()}
+          <Field
+            vModel={data.tel}
+            clearable
+            type="tel"
+            label={t('tel')}
+            placeholder={t('telPlaceholder')}
+            error={errorInfo.tel}
+            onFocus={onFocus('tel')}
+          />
+          <Field
+            vShow={this.showArea}
+            readonly
+            label={t('area')}
+            placeholder={t('areaPlaceholder')}
+            rightIcon="arrow"
+            value={this.areaText}
+            onClick={() => {
+              this.showAreaPopup = true;
+            }}
+          />
+          <Detail
+            vShow={this.showDetail}
+            focused={this.detailFocused}
+            value={data.addressDetail}
+            error={errorInfo.addressDetail}
+            detailRows={this.detailRows}
+            detailMaxlength={this.detailMaxlength}
+            searchResult={this.searchResult}
+            showSearchResult={this.showSearchResult}
+            onFocus={onFocus('addressDetail')}
+            onBlur={this.onDetailBlur}
+            onInput={this.onChangeDetail}
+            onSelect-search={event => {
+              this.$emit('select-search', event);
+            }}
+          />
+          {this.showPostal && (
+            <Field
+              vShow={!hideBottomFields}
+              vModel={data.postalCode}
+              type="tel"
+              maxlength="6"
+              label={t('postal')}
+              placeholder={t('postal')}
+              error={errorInfo.postalCode}
+              onFocus={onFocus('postalCode')}
+            />
+          )}
+          {this.slots()}
+        </div>
         {this.showSetDefault && (
           <SwitchCell
+            class={bem('default')}
             vModel={data.isDefault}
             vShow={!hideBottomFields}
             title={t('defaultAddress')}
@@ -320,6 +324,7 @@ export default createComponent({
         <div vShow={!hideBottomFields} class={bem('buttons')}>
           <Button
             block
+            round
             loading={this.isSaving}
             type="danger"
             text={this.saveButtonText || t('save')}
@@ -328,6 +333,7 @@ export default createComponent({
           {this.showDelete && (
             <Button
               block
+              round
               loading={this.isDeleting}
               text={this.deleteButtonText || t('delete')}
               onClick={this.onDelete}
