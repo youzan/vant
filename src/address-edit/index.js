@@ -272,6 +272,7 @@ export default createComponent({
           <Field
             vShow={this.showArea}
             readonly
+            clickable
             label={t('area')}
             placeholder={t('areaPlaceholder')}
             rightIcon="arrow"

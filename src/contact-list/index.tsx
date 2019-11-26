@@ -9,7 +9,7 @@ import Radio from '../radio';
 import RadioGroup from '../radio-group';
 
 // Types
-import { CreateElement, RenderContext } from 'vue/types';
+import { CreateElement, RenderContext, VNode } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type ContactListItem = {
@@ -67,14 +67,17 @@ function ContactList(
       }
 
       function Content() {
-        return [
-          `${item.name}，${item.tel}`,
-          item.isDefault && props.defaultTagText && (
+        const nodes = ([`${item.name}，${item.tel}`] as unknown[]) as VNode[];
+
+        if (item.isDefault && props.defaultTagText) {
+          nodes.push(
             <Tag type="danger" round class={bem('item-tag')}>
               {props.defaultTagText}
             </Tag>
-          )
-        ];
+          );
+        }
+
+        return nodes;
       }
 
       return (
@@ -84,11 +87,10 @@ function ContactList(
           center
           class={bem('item')}
           valueClass={bem('item-value')}
-          // @ts-ignore
           scopedSlots={{
+            icon: LeftIcon,
             default: Content,
             'right-icon': RightIcon,
-            icon: LeftIcon
           }}
           onClick={onClick}
         />

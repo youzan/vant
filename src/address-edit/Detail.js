@@ -53,24 +53,25 @@ export default createComponent({
         return searchResult.map(express => (
           <Cell
             key={express.name + express.address}
-            class={bem('search-item')}
-            label={express.address}
+            clickable
             border={false}
             icon="location-o"
-            clickable
+            label={express.address}
+            class={bem('search-item')}
             onClick={() => {
               this.onSelect(express);
             }}
             scopedSlots={{
-              title: () =>
-                express.name && (
-                  <div
-                    domPropsInnerHTML={express.name.replace(
-                      value,
-                      `<span class=${bem('keyword')}>${value}</span>`
-                    )}
-                  />
-                )
+              title: () => {
+                if (express.name) {
+                  const text = express.name.replace(
+                    value,
+                    `<span class=${bem('keyword')}>${value}</span>`
+                  );
+
+                  return <div domPropsInnerHTML={text} />;
+                }
+              }
             }}
           />
         ));
