@@ -15,6 +15,7 @@ export type AddressListProps = {
   addButtonText?: string;
   list?: AddressItemData[];
   disabledList?: AddressItemData[];
+  defaultTagText?: string;
 };
 
 export type AddressListSlots = DefaultSlots & {
@@ -40,6 +41,7 @@ function AddressList(
         key={item.id}
         disabled={disabled}
         switchable={props.switchable}
+        defaultTagText={props.defaultTagText}
         onSelect={() => {
           emit(ctx, disabled ? 'select-disabled' : 'select', item, index);
 
@@ -67,16 +69,18 @@ function AddressList(
       {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
       {DisabledList}
       {slots.default && slots.default()}
-      <Button
-        square
-        size="large"
-        type="danger"
-        class={bem('add')}
-        text={props.addButtonText || t('add')}
-        onClick={() => {
-          emit(ctx, 'add');
-        }}
-      />
+      <div class={bem('bottom')}>
+        <Button
+          round
+          block
+          type="danger"
+          class={bem('add')}
+          text={props.addButtonText || t('add')}
+          onClick={() => {
+            emit(ctx, 'add');
+          }}
+        />
+      </div>
     </div>
   );
 }
@@ -90,7 +94,8 @@ AddressList.props = {
   switchable: {
     type: Boolean,
     default: true
-  }
+  },
+  defaultTagText: String
 };
 
 export default createComponent<AddressListProps>(AddressList);

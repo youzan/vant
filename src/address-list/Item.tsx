@@ -3,6 +3,7 @@ import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
+import Tag from '../tag';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -13,12 +14,14 @@ export type AddressItemData = {
   tel: string | number;
   name: string;
   address: string;
+  isDefault: boolean;
 };
 
 export type AddressItemProps = {
   data: AddressItemData;
   disabled?: boolean;
   switchable?: boolean;
+  defaultTagText?: string;
 };
 
 export type AddressItemEvents = {
@@ -60,7 +63,14 @@ function AddressItem(
   const genContent = () => {
     const { data } = props;
     const Info = [
-      <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
+      <div class={bem('name')}>
+        {`${data.name} ${data.tel}`}
+        {data.isDefault && props.defaultTagText && (
+          <Tag type="danger" round class={bem('tag')}>
+            {props.defaultTagText}
+          </Tag>
+        )}
+      </div>,
       <div class={bem('address')}>{data.address}</div>
     ];
 
@@ -77,6 +87,7 @@ function AddressItem(
     <Cell
       class={bem({ disabled })}
       valueClass={bem('value')}
+      border={false}
       clickable={switchable && !disabled}
       scopedSlots={{
         default: genContent,
@@ -91,7 +102,8 @@ function AddressItem(
 AddressItem.props = {
   data: Object,
   disabled: Boolean,
-  switchable: Boolean
+  switchable: Boolean,
+  defaultTagText: String
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(AddressItem);
