@@ -87,20 +87,20 @@ function TouchList() {
  */
 
  
-var inited = false;
+var initiated = false;
 function onMouse(touchType) {
   return function(ev) {
     // prevent mouse events
 
     if (ev.type === 'mousedown') {
-      inited = true;
+      initiated = true;
     }
 
     if (ev.type === 'mouseup') {
-      inited = false;
+      initiated = false;
     }
 
-    if (ev.type === 'mousemove' && !inited) {
+    if (ev.type === 'mousemove' && !initiated) {
       return
     }
 
