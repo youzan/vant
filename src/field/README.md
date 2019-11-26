@@ -152,6 +152,7 @@ Textarea Field can be auto resize when has `autosize` prop
 | clearable | Whether to be clearable | *boolean* | `false` | - |
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
 | is-link | Whether to show link icon | *boolean* | `false` | - |
+| autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` | - |
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` | 2.2.8 |
 | error | Whether to show error info | *boolean* | `false` | - |
 | arrow-direction | Can be set to `left` `up` `down` | *string* | - | 2.0.4 |
