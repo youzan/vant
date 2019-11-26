@@ -4,9 +4,7 @@ exports[`render bottom slot 1`] = `
 <div class="van-card">
   <div class="van-card__header">
     <div class="van-card__content">
-      <div class="van-card__bottom">
-        <div class="van-card__price">¥ 100</div>Custom Bottom
-      </div>
+      <div class="van-card__bottom">Custom Bottom</div>
     </div>
   </div>
 </div>
