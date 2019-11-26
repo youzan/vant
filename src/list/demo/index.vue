@@ -130,7 +130,7 @@ export default {
   .page-desc {
     margin: 0;
     padding: 5px 0;
-    color: @gray-darker;
+    color: @gray-7;
     font-size: 14px;
     text-align: center;
 
@@ -144,7 +144,7 @@ export default {
   }
 
   .van-checkbox__label {
-    color: @gray-darker;
+    color: @gray-7;
   }
 }
 </style>
