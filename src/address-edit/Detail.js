@@ -62,14 +62,15 @@ export default createComponent({
               this.onSelect(express);
             }}
             scopedSlots={{
-              title: () => (
-                <div
-                  domPropsInnerHTML={express.name.replace(
-                    value,
-                    `<span class=${bem('keyword')}>${value}</span>`
-                  )}
-                />
-              )
+              title: () =>
+                express.name && (
+                  <div
+                    domPropsInnerHTML={express.name.replace(
+                      value,
+                      `<span class=${bem('keyword')}>${value}</span>`
+                    )}
+                  />
+                )
             }}
           />
         ));
