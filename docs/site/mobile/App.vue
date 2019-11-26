@@ -89,7 +89,7 @@ body {
   }
 
   .van-icon {
-    color: @gray-dark;
+    color: @gray-6;
     font-size: 24px;
     cursor: pointer;
   }

@@ -149,7 +149,7 @@ export default {
 
   .text {
     margin-top: 5px;
-    color: @gray-darker;
+    color: @gray-7;
     font-size: 14px;
     text-align: center;
   }
