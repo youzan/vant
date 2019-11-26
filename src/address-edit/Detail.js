@@ -17,6 +17,12 @@ export default createComponent({
     showSearchResult: Boolean
   },
 
+  computed: {
+    shouldShowSearchResult() {
+      return this.focused && this.searchResult && this.showSearchResult;
+    }
+  },
+
   methods: {
     onSelect(express) {
       this.$emit('select-search', express);
@@ -42,18 +48,28 @@ export default createComponent({
     },
 
     genSearchResult() {
-      const { searchResult } = this;
-      const show = this.focused && searchResult && this.showSearchResult;
-      if (show) {
+      const { value, shouldShowSearchResult, searchResult } = this;
+      if (shouldShowSearchResult) {
         return searchResult.map(express => (
           <Cell
             key={express.name + express.address}
-            title={express.name}
+            class={bem('search-item')}
             label={express.address}
+            border={false}
             icon="location-o"
             clickable
             onClick={() => {
               this.onSelect(express);
+            }}
+            scopedSlots={{
+              title: () => (
+                <div
+                  domPropsInnerHTML={express.name.replace(
+                    value,
+                    `<span class=${bem('keyword')}>${value}</span>`
+                  )}
+                />
+              )
             }}
           />
         ));
@@ -72,6 +88,7 @@ export default createComponent({
           type="textarea"
           value={this.value}
           error={this.error}
+          border={!this.shouldShowSearchResult}
           label={t('label')}
           maxlength={this.detailMaxlength}
           placeholder={t('placeholder')}
