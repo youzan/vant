@@ -7,7 +7,7 @@ import {
   DOCS_DIR,
   DIST_DIR,
   CONFIG_FILE,
-  DESKTOP_CONFIG_FILE
+  DESKTOP_ENTRY_FILE
 } from '../common/constant';
 
 type DocumentItem = {
@@ -58,7 +58,7 @@ function genExportConfig() {
   return 'export { config };';
 }
 
-export function genDesktopConfig() {
+export function genDesktopEntry() {
   const components = getComponents();
   const documents = resolveDocuments(components);
 
@@ -69,5 +69,5 @@ ${genExportConfig()}
 ${genExportDocuments(documents)}
 `;
 
-  writeFileSync(DESKTOP_CONFIG_FILE, code);
+  writeFileSync(DESKTOP_ENTRY_FILE, code);
 }

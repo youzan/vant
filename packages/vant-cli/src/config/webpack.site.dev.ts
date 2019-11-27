@@ -2,7 +2,7 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
-import { CONFIG_FILE } from '../common/constant';
+import { CONFIG_FILE, MOBILE_ENTRY_FILE, DESKTOP_ENTRY_FILE } from '../common/constant';
 import { getWebpackConfig } from '../common';
 
 // eslint-disable-next-line
@@ -21,6 +21,12 @@ export const siteDevConfig = merge(
       host: '0.0.0.0',
       stats: 'errors-only',
       disableHostCheck: true
+    },
+    resolve: {
+      alias: {
+        'mobile-entry': MOBILE_ENTRY_FILE,
+        'desktop-entry': DESKTOP_ENTRY_FILE
+      }
     },
     output: {
       path: join(__dirname, '../../site/dist'),

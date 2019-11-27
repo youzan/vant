@@ -1,5 +1,5 @@
 import decamelize from 'decamelize';
-import { documents } from '../../dist/desktop-config';
+import { documents } from 'desktop-entry';
 
 const routes = [];
 const names = Object.keys(documents);

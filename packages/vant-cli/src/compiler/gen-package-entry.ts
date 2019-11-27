@@ -36,7 +36,7 @@ const components = [
   ${names.join(',\n  ')}
 ];
 
-function install() {
+function install(Vue) {
   components.forEach(item => {
     if (item.install) {
       Vue.use(Component);

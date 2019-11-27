@@ -1,8 +1,7 @@
 import merge from 'webpack-merge';
-import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { getWebpackConfig } from '../common';
-import { LIB_DIR, DIST_DIR, CONFIG_FILE } from '../common/constant';
+import { LIB_DIR, CONFIG_FILE, PACKAGE_ENTRY_FILE } from '../common/constant';
 
 // eslint-disable-next-line
 const config = require(CONFIG_FILE);
@@ -14,7 +13,7 @@ export function packageConfig(isMinify: boolean) {
     {
       mode: 'production',
       entry: {
-        [name]: join(DIST_DIR, 'index.js')
+        [name]: PACKAGE_ENTRY_FILE
       },
       stats: 'none',
       output: {

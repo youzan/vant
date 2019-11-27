@@ -12,9 +12,9 @@ export const WEBPACK_CONFIG_FILE = join(CWD, 'webpack.config.js');
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
 
-export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'index.js');
-export const MOBILE_CONFIG_FILE = join(DIST_DIR, 'mobile-config.js');
-export const DESKTOP_CONFIG_FILE = join(DIST_DIR, 'desktop-config.js');
+export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
+export const MOBILE_ENTRY_FILE = join(DIST_DIR, 'mobile-entry.js');
+export const DESKTOP_ENTRY_FILE = join(DIST_DIR, 'desktop-entry.js');
 
 export const JEST_CONFIG_FILE = join(CONFIG_DIR, 'jest.config.js');
 export const BABEL_CONFIG_FILE = join(CONFIG_DIR, 'babel.config.js');

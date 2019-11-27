@@ -3,8 +3,9 @@ import WebpackDevServer from 'webpack-dev-server';
 import { getPort } from 'portfinder';
 import { clean } from '../commands/clean';
 import { siteDevConfig } from '../config/webpack.site.dev';
-import { genMobileConfig } from '../compiler/gen-mobile-config';
-import { genDesktopConfig } from '../compiler/gen-desktop-config';
+import { genPackageEntry } from '../compiler/gen-package-entry';
+import { genMobileEntry } from '../compiler/gen-mobile-entry';
+import { genDesktopEntry } from '../compiler/gen-desktop-entry';
 
 function runWebpack() {
   const server = new WebpackDevServer(
@@ -33,7 +34,8 @@ function runWebpack() {
 
 export function dev() {
   clean();
-  genMobileConfig();
-  genDesktopConfig();
+  genPackageEntry();
+  genMobileEntry();
+  genDesktopEntry();
   runWebpack();
 }

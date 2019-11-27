@@ -7,6 +7,10 @@ import App from './App';
 import '@vant/touch-emulator';
 import '../common/iframe-router';
 
+if (process.env.NODE_ENV !== 'production') {
+  Vue.config.productionTip = false;
+}
+
 Vue.use(VueRouter);
 Vue.component(DemoBlock.name, DemoBlock);
 Vue.component(DemoSection.name, DemoSection);

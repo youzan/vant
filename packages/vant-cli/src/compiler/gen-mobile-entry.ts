@@ -4,7 +4,7 @@ import { decamelize, pascalize, removeExt, getComponents } from '../common';
 import {
   SRC_DIR,
   DIST_DIR,
-  MOBILE_CONFIG_FILE,
+  MOBILE_ENTRY_FILE,
   CONFIG_FILE
 } from '../common/constant';
 
@@ -12,6 +12,14 @@ type DemoItem = {
   name: string;
   path: string;
 };
+
+function genInstall() {
+  return `import Vue from 'vue';
+import PackageEntry from './package-entry';
+
+Vue.use(PackageEntry);
+`;
+}
 
 function genImports(demos: DemoItem[]) {
   return demos
@@ -49,13 +57,13 @@ function genCode(components: string[]) {
     }))
     .filter(item => existsSync(item.path));
 
-  return `${genImports(demos)}\n\n${genExports(demos)}\n${genConfig(demos)}\n`;
+  return `${genInstall()}\n${genImports(demos)}\n\n${genExports(demos)}\n${genConfig(demos)}\n`;
 }
 
-export function genMobileConfig() {
+export function genMobileEntry() {
   const components = getComponents();
   const code = genCode(components);
 
   ensureDirSync(DIST_DIR);
-  writeFileSync(MOBILE_CONFIG_FILE, code);
+  writeFileSync(MOBILE_ENTRY_FILE, code);
 }

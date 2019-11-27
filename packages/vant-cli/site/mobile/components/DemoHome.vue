@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { config } from '../../../dist/mobile-config';
+import { config } from 'mobile-entry';
 import DemoHomeNav from './DemoHomeNav';
 
 export default {

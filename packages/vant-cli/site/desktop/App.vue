@@ -8,7 +8,7 @@
 
 <script>
 import VanDoc from './components';
-import { config } from '../../dist/desktop-config';
+import { config } from 'desktop-entry';
 
 export default {
   components: {
