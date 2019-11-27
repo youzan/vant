@@ -32,6 +32,7 @@ export type CardSlots = DefaultSlots & {
   bottom?: ScopedSlot;
   footer?: ScopedSlot;
   'origin-price'?: ScopedSlot;
+  'price-top'?: ScopedSlot;
 };
 
 export type CardEvents = {
@@ -114,11 +115,22 @@ function Card(
     }
   }
 
+  function PriceContent() {
+    if (props.price) {
+      const priceArr = (props.price).toString().split('.');
+      return (
+        <div>
+          {props.currency}<span class={bem('price', 'integer')}>{priceArr[0]}</span>.{priceArr[1]}
+        </div>
+      );
+    }
+  }
+
   function Price() {
     if (showPrice) {
       return (
         <div class={bem('price')}>
-          {slots.price ? slots.price() : `${props.currency} ${props.price}`}
+          {slots.price ? slots.price() : PriceContent()}
         </div>
       );
     }
@@ -157,6 +169,7 @@ function Card(
           {slots.tags && slots.tags()}
           {showBottom && (
             <div class="van-card__bottom">
+              {slots['price-top'] && slots['price-top']()}
               {Price()}
               {OriginPrice()}
               {Num()}
