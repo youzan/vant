@@ -1,6 +1,19 @@
 @import '../style/var';
 
 .van-address-edit {
+  padding: @address-edit-padding;
+
+  &__fields {
+    overflow: hidden;
+    border-radius: @padding-xs;
+  }
+
+  &__default {
+    margin-top: @padding-sm;
+    overflow: hidden;
+    border-radius: @padding-xs;
+  }
+
   &__buttons {
     padding: @address-edit-buttons-padding;
 
@@ -11,6 +24,14 @@
 
   &-detail {
     padding: 0;
+
+    &__search-item {
+      background-color: @gray-2;
+    }
+
+    &__keyword {
+      color: @red;
+    }
 
     &__finish {
       color: @address-edit-detail-finish-color;

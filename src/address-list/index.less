@@ -3,17 +3,26 @@
 .van-address-list {
   box-sizing: border-box;
   height: 100%;
-  padding-bottom: 100px;
+  padding: @address-list-padding;
 
-  &__add {
+  &__bottom {
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: @address-list-add-button-z-index;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px @padding-md;
+    background-color: @white;
+  }
+
+  &__add {
+    height: 40px;
+    line-height: 38px;
   }
 
   &__disabled-text {
-    padding: 0 @padding-md;
+    padding: @address-list-disabled-text-padding;
     color: @address-list-disabled-text-color;
     font-size: @address-list-disabled-text-font-size;
     line-height: @address-list-disabled-text-line-height;
@@ -22,16 +31,30 @@
 
 .van-address-item {
   padding: @address-list-item-padding;
+  border-radius: @border-radius-md;
+
+  &:not(:last-child) {
+    margin-bottom: @padding-sm;
+  }
 
   &__value {
-    padding-right: @padding-xl;
+    padding-right: 44px;
   }
 
   &__name {
-    margin-bottom: @padding-base;
-    font-weight: @font-weight-bold;
-    font-size: @font-size-md;
-    line-height: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: @padding-xs;
+    font-size: @font-size-lg;
+    line-height: 22px;
+  }
+
+  &__tag {
+    flex: none;
+    margin-left: @padding-xs;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.4em;
   }
 
   &__address {
@@ -51,12 +74,21 @@
     position: absolute;
     top: 50%;
     right: @padding-md;
+    color: @gray-6;
     font-size: @address-list-edit-icon-size;
     transform: translate(0, -50%);
+  }
+
+  .van-radio__label {
+    margin-left: @padding-sm;
   }
 
   .van-radio__icon--checked .van-icon {
     background-color: @address-list-item-radio-icon-color;
     border-color: @address-list-item-radio-icon-color;
+  }
+
+  .van-radio__icon:not(.van-radio__icon--checked) {
+    visibility: hidden;
   }
 }

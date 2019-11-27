@@ -29,6 +29,17 @@ npm i vant -S
 yarn add vant
 ```
 
+### 示例工程
+
+我们提供了一个基于 Vue Cli 的[示例工程](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+
+- 基于 Vant 搭建单页面应用，配置按需引入组件
+- 配置基于 Rem 的适配方案
+- 配置基于 Viewport 的适配方案
+- 配置基于 TypeScript 的工程
+- 配置自定义主题色方案
+
+
 ## 引入组件
 
 ### 方式一. 自动按需引入组件 (推荐)

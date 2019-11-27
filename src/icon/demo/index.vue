@@ -123,7 +123,7 @@ export default {
     span {
       display: block;
       padding: 0 5px;
-      color: @gray-darker;
+      color: @gray-7;
       font-size: 12px;
       line-height: 18px;
     }

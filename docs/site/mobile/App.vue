@@ -70,7 +70,7 @@ body {
   color: @text-color;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
-  background-color: #f8f8f8;
+  background-color: #f7f8fa;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -89,7 +89,7 @@ body {
   }
 
   .van-icon {
-    color: @gray-dark;
+    color: @gray-6;
     font-size: 24px;
     cursor: pointer;
   }

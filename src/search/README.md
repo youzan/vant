@@ -70,6 +70,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 | maxlength | Max length of value | *string \| number* | - | - |
 | placeholder | Placeholder | *string* | - | - |
 | clearable | Whether to be clearable | *boolean* | `true` | - |
+| autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` | - |
 | show-action | Whether to show right action button | *boolean* | `false` | - |
 | action-text | Text of action button | *boolean* | `Cancel` | 2.2.2 |
 | disabled | Whether to disable field | *boolean* | `false` | - |

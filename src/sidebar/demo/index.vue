@@ -67,7 +67,7 @@ export default {
 
   &-title {
     margin-bottom: 16px;
-    color: @gray-dark;
+    color: @gray-6;
     font-weight: normal;
     font-size: 14px;
   }

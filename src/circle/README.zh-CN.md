@@ -133,6 +133,7 @@ export default {
 | speed | 动画速度（单位为 rate/s）| *number* | `0` | - |
 | text | 文字 | *string* | - | - |
 | stroke-width | 进度条宽度 | *number* | `40` | - |
+| stroke-linecap | 进度条端点的形状，可选值为`sqaure` `butt` | *string* | `round` | 2.2.15 |
 | clockwise | 是否顺时针增加 | *boolean* | `true` | - |
 
 ### Slots

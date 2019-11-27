@@ -51,7 +51,7 @@ function Card(
   const showNum = slots.num || isDef(props.num);
   const showPrice = slots.price || isDef(props.price);
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
-  const showBottom = showNum || showPrice || showOriginPrice;
+  const showBottom = showNum || showPrice || showOriginPrice || slots.bottom;
 
   function onThumbClick(event: MouseEvent) {
     emit(ctx, 'click-thumb', event);

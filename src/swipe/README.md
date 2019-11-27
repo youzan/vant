@@ -144,34 +144,34 @@ export default {
 
 ### Swipe Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| change | Triggered when current swipe change | index: index of current swipe |
+| Event | Description | Arguments | Version |
+|------|------|------|------|
+| change | Triggered when current swipe change | index: index of current swipe | - |
 
 ### SwipeItem Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | event: Event |
+| Event | Description | Arguments | Version |
+|------|------|------|------|
+| click | Triggered when clicked | event: Event | - |
 
 ### Swipe Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| swipeTo | Swipe to target index | index: target index, options: Options | void |
-| resize | Resize Swipe when container element resized | - | void |
+| Name | Description | Attribute | Return value | Version |
+|------|------|------|------|------|
+| swipeTo | Swipe to target index | index: target index, options: Options | void | - |
+| resize | Resize Swipe when container element resized | - | void | 2.2.14 |
 
 ### swipeTo Options
 
 | Name | Description | Type |
-|------|------|------|
+|------|------|------|------|
 | immediate | Whether to skip animation | *boolean* |
 
 ### Swipe Slots
 
-| Name | Description |
-|------|------|
-| default | Content |
-| indicator | Custom indicator |
+| Name | Description | Version |
+|------|------|------|
+| default | Content | - |
+| indicator | Custom indicator | - |

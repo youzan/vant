@@ -78,6 +78,7 @@ export default {
 | disabled-text | 不可配送提示文案 | *string* | - | - |
 | switchable | 是否允许切换地址 | *boolean* | `true` | - |
 | add-button-text | 底部按钮文字 | *string* | `新增地址` | - |
+| default-tag-text | 默认地址标签文字 | *string* | - | - |
 
 ### Events
 
@@ -98,6 +99,7 @@ export default {
 | name | 收货人姓名 | *string* |
 | tel | 收货人手机号 | *string \| number* |
 | address | 收货地址 | *string* |
+| isDefault | 是否为默认地址 | *boolean* |
 
 ### Slots
 

@@ -14,12 +14,14 @@ function format(rate) {
 
 function getPath(clockwise, viewBoxSize) {
   const sweepFlag = clockwise ? 1 : 0;
-  return `M ${viewBoxSize / 2} ${viewBoxSize / 2} m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
+  return `M ${viewBoxSize / 2} ${viewBoxSize /
+    2} m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
 export default createComponent({
   props: {
     text: String,
+    strokeLinecap: String,
     value: {
       type: Number,
       default: 0
@@ -85,6 +87,7 @@ export default createComponent({
       return {
         stroke: `${this.color}`,
         strokeWidth: `${this.strokeWidth + 1}px`,
+        strokeLinecap: this.strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`
       };
     },
@@ -129,7 +132,9 @@ export default createComponent({
         this.startRate = this.value;
         this.endRate = format(this.rate);
         this.increase = this.endRate > this.startRate;
-        this.duration = Math.abs(((this.startRate - this.endRate) * 1000) / this.speed);
+        this.duration = Math.abs(
+          ((this.startRate - this.endRate) * 1000) / this.speed
+        );
 
         if (this.speed) {
           cancelRaf(this.rafId);
@@ -168,7 +173,8 @@ export default createComponent({
             stroke={this.gradient ? `url(#${this.uid})` : this.color}
           />
         </svg>
-        {this.slots() || (this.text && <div class={bem('text')}>{this.text}</div>)}
+        {this.slots() ||
+          (this.text && <div class={bem('text')}>{this.text}</div>)}
       </div>
     );
   }

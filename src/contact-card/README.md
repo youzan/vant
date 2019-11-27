@@ -155,6 +155,7 @@ export default {
 | v-model | Id of chosen contact | *string \| number* | - | - |
 | list | Contact list | *Contact[]* | `[]` | - |
 | add-text | Add button text | *string* | `Add new contact` | - |
+| default-tag-text | Default tag text | *string* | - | - |
 
 ### ContactList Events
 
@@ -163,6 +164,7 @@ export default {
 | add | Triggered when click add button | - |
 | edit | Triggered when click edit button | item: contact object，index |
 | select | Triggered when select contact | item: contact object |
+
 
 ### ContactEdit Props
 
@@ -173,6 +175,8 @@ export default {
 | is-saving | Whether to show save button loading status | *boolean* | `false` | - |
 | is-deleting | Whether to show delete button loading status | *boolean* | `false` | - |
 | tel-validator | The method to validate tel | *(tel: string) => boolean* | - | - |
+| show-set-default | Whether to show default contact switch | *boolean* | `false` | - |
+| set-default-label | default contact switch label | *string* | - | - |
 
 ### ContactEdit Events
 
@@ -188,3 +192,4 @@ export default {
 | id | ID | *string \| number* |
 | name | Name | *string* |
 | tel | Phone | *string* |
+| isDefault | Is default contact | *boolean* |

@@ -150,24 +150,24 @@ export default {
 
 ### Swipe Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| change | 每一页轮播结束后触发 | index, 当前页的索引 |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| change | 每一页轮播结束后触发 | index, 当前页的索引 | - |
 
 ### SwipeItem Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击时触发 | event: Event |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| click | 点击时触发 | event: Event | - |
 
 ### Swipe 方法
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Swipe 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| swipeTo | 滚动到目标位置 | index: number, options: Options | void |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
+| 方法名 | 说明 | 参数 | 返回值 | 版本 |
+|------|------|------|------|------|
+| swipeTo | 滚动到目标位置 | index: number, options: Options | void | - |
+| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void | 2.2.14 |
 
 ### swipeTo Options 格式
 
@@ -177,7 +177,7 @@ export default {
 
 ### Swipe Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 轮播内容 |
-| indicator | 自定义指示器 |
+| 名称 | 说明 | 版本 |
+|------|------|------|
+| default | 轮播内容 | - |
+| indicator | 自定义指示器 | - |

@@ -2,20 +2,23 @@ import Vue from 'vue';
 import { VanPopupMixin } from './mixins/popup';
 
 type ToastMessage = string | number;
+type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
+type ToastPosition = 'top' | 'middle' | 'bottom';
+type ToastLoadingType = 'circular' | 'spinner';
 
 export type ToastOptions = {
   icon?: string;
-  type?: string;
+  type?: ToastType;
   mask?: boolean;
   message?: ToastMessage;
   onClose?: () => void;
   onOpened?: () => void;
   overlay?: boolean;
   duration?: number;
-  position?: string;
+  position?: ToastPosition;
   className?: any;
   transition?: string;
-  loadingType?: string;
+  loadingType?: ToastLoadingType;
   forbidClick?: boolean;
   closeOnClick?: boolean;
   closeOnClickOverlay?: boolean;
@@ -23,9 +26,9 @@ export type ToastOptions = {
 };
 
 export interface VanToast extends Vue, VanPopupMixin {
-  type: string;
-  position: string;
-  loadingType: string;
+  type: ToastType;
+  position: ToastPosition;
+  loadingType: ToastLoadingType;
   forbidClick: boolean;
   message: ToastMessage;
   clear(): void;
@@ -38,8 +41,8 @@ export interface Toast {
   fail(options?: ToastOptions | ToastMessage): VanToast;
   clear(all?: boolean): void;
   install(): void;
-  setDefaultOptions(options: ToastOptions): void;
-  resetDefaultOptions(): void;
+  setDefaultOptions(options: string | ToastOptions): void;
+  resetDefaultOptions(options?: string): void;
   allowMultiple(allow: boolean): void;
 }
 

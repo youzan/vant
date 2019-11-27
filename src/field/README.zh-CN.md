@@ -158,6 +158,7 @@ Vue.use(Field);
 | clearable | 是否启用清除控件 | *boolean* | `false` | - |
 | clickable | 是否开启点击反馈 | *boolean* | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |
+| autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` | - |
 | show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` | 2.2.8 |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | 2.0.4 |

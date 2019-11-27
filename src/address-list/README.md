@@ -77,6 +77,7 @@ export default {
 | disabled-text | Disabled text | *string* | - | - |
 | switchable | Whether to allow switch address | *boolean* | `true` | - |
 | add-button-text | Add button text | *string* | `Add new address` | - |
+| default-tag-text | Default tag text | *string* | - | - |
 
 ### Events
 
@@ -97,6 +98,7 @@ export default {
 | name | Name | *string* |
 | tel | Phone | *string \| number* |
 | address | Address | *string* |
+| isDefault | Is default address | *boolean* |
 
 ### Slots
 
