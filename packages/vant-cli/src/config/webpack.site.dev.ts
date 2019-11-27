@@ -13,8 +13,8 @@ export const siteDevConfig = merge(
   baseConfig as any,
   {
     entry: {
-      'site-desktop': join(__dirname, '../../site/desktop/main.js'),
-      'site-mobile': join(__dirname, '../../site/mobile/main.js')
+      'site-desktop': [join(__dirname, '../../site/desktop/main.js')],
+      'site-mobile': [join(__dirname, '../../site/mobile/main.js')]
     },
     devServer: {
       open: true,
