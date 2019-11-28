@@ -6,6 +6,7 @@ import { siteDevConfig } from '../config/webpack.site.dev';
 import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genMobileEntry } from '../compiler/gen-mobile-entry';
 import { genDesktopEntry } from '../compiler/gen-desktop-entry';
+import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 
 function runWebpack() {
   const server = new WebpackDevServer(
@@ -34,6 +35,7 @@ function runWebpack() {
 
 export function dev() {
   clean();
+  genStyleDepsMap();
   genPackageEntry();
   genMobileEntry();
   genDesktopEntry();

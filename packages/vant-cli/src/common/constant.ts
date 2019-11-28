@@ -15,6 +15,7 @@ export const CONFIG_DIR = join(__dirname, '../config');
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
 export const MOBILE_ENTRY_FILE = join(DIST_DIR, 'mobile-entry.js');
 export const DESKTOP_ENTRY_FILE = join(DIST_DIR, 'desktop-entry.js');
+export const STYPE_DEPS_MAP_FILE = join(DIST_DIR, 'style-deps-map.json');
 
 export const JEST_CONFIG_FILE = join(CONFIG_DIR, 'jest.config.js');
 export const BABEL_CONFIG_FILE = join(CONFIG_DIR, 'babel.config.js');
