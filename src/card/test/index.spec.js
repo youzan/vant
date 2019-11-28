@@ -94,3 +94,14 @@ test('render title & desc slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('render price & price-top slot', () => {
+  const wrapper = mount(Card, {
+    scopedSlots: {
+      price: () => 'Custom Price',
+      'price-top': () => 'Custom Price-top'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

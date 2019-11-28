@@ -5,11 +5,7 @@ exports[`render bottom slot 1`] = `
   <div class="van-card__header">
     <div class="van-card__content">
       <div></div>
-      <div class="van-card__bottom">
-        <div class="van-card__price">
-          <div>¥<span class="van-card__price van-card__price--integer">100</span>.</div>
-        </div>Custom Bottom
-      </div>
+      <div class="van-card__bottom">Custom Bottom</div>
     </div>
   </div>
 </div>
@@ -57,6 +53,18 @@ exports[`render title & desc slot 1`] = `
   <div class="van-card__header">
     <div class="van-card__content">
       <div>Custom TitleCustom desc</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render price & price-top slot 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div></div>
+      <div class="van-card__bottom">Custom Price-top<div class="van-card__price">Custom Price</div>
+      </div>
     </div>
   </div>
 </div>

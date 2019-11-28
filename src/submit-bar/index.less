@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: flex-end;
     height: @submit-bar-height;
+    padding: @submit-bar-padding;
     font-size: @submit-bar-text-font-size;
   }
 
@@ -53,15 +54,23 @@
 
   &__price {
     color: @submit-bar-price-color;
-    font-size: @submit-bar-price-font-size;
+    font-size: @font-size-sm;
 
-    &::first-letter {
-      font-size: @submit-bar-currency-font-size;
+    &--integer {
+      font-size: @submit-bar-price-integer-font-size;
+      font-family: @submit-bar-price-font-family;
     }
   }
 
   &__button {
     width: @submit-bar-button-width;
+    height: @submit-bar-button-height;
+    line-height: @submit-bar-button-height;
+    border: none;
+
+    &--danger {
+      background: @goods-action-button-danger-color;
+    }
   }
 
   &--safe-area-inset-bottom {
