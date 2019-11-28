@@ -49,6 +49,10 @@ export default createComponent({
     };
   },
 
+  updated() {
+    this.innerLoading = this.loading;
+  },
+
   mounted() {
     if (this.immediateCheck) {
       this.check();
@@ -56,11 +60,8 @@ export default createComponent({
   },
 
   watch: {
-    finished: 'check',
-    loading(val) {
-      this.innerLoading = val;
-      this.check();
-    }
+    loading: 'check',
+    finished: 'check'
   },
 
   methods: {
