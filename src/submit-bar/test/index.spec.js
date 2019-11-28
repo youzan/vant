@@ -49,7 +49,6 @@ test('without price', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-
 test('top slot', () => {
   const wrapper = mount(SubmitBar, {
     scopedSlots: {

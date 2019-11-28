@@ -24,6 +24,14 @@ exports[`suffix-label prop 1`] = `
 </div>
 `;
 
+exports[`text-align prop 1`] = `
+<div class="van-submit-bar">
+  <div class="van-submit-bar__bar">
+    <div class="van-submit-bar__text" style="text-align: left;"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.11</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
+  </div>
+</div>
+`;
+
 exports[`top slot 1`] = `
 <div class="van-submit-bar">top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button></div>
 </div>
@@ -32,13 +40,5 @@ exports[`top slot 1`] = `
 exports[`without price 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button></div>
-</div>
-`;
-
-exports[`text-align prop 1`]=`
-<div class="van-submit-bar">
- <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text" style="text-align: left;"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.1</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
-  </div>
 </div>
 `;
