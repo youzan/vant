@@ -41,7 +41,6 @@
     padding-right: @padding-sm;
     color: @submit-bar-text-color;
     font-weight: @font-weight-bold;
-    text-align: left;
 
     span {
       display: inline-block;
@@ -66,6 +65,11 @@
     width: @submit-bar-button-width;
     height: @submit-bar-button-height;
     line-height: @submit-bar-button-line-height;
+    border: none;
+
+    &--danger {
+      background: @goods-action-button-danger-color;
+    }
   }
 
   &--safe-area-inset-bottom {

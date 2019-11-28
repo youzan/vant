@@ -20,6 +20,7 @@ export type SubmitBarProps = {
   suffixLabel?: string;
   decimalLength: number;
   safeAreaInsetBottom?: boolean;
+  textAlign?: 'right'|'left';
 };
 
 export type SubmitBarSlots = DefaultSlots & {
@@ -40,8 +41,14 @@ function SubmitBar(
   function Text() {
     if (typeof price === 'number') {
       const priceArr = (price / 100).toFixed(props.decimalLength).split('.');
+      const style = {
+        textAlign: props.textAlign
+      };
       return (
-        <div class={bem('text')}>
+        <div
+          style={style}
+          class={bem('text')}
+        >
           <span>{props.label || t('label')}</span>
           <span class={bem('price')}>{props.currency}<span class={bem('price', 'integer')}>{priceArr[0]}</span>.{priceArr[1]}</span>
           {props.suffixLabel && (
@@ -76,7 +83,7 @@ function SubmitBar(
         {Text()}
         <Button
           round
-          class={bem('button')}
+          class={bem('button', props.buttonType)}
           type={props.buttonType}
           loading={props.loading}
           disabled={props.disabled}
@@ -111,6 +118,10 @@ SubmitBar.props = {
   buttonType: {
     type: String,
     default: 'danger'
+  },
+  textAlign: {
+    type: String,
+    default: 'right'
   }
 };
 
