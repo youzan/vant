@@ -164,9 +164,11 @@ function Card(
       <div class={bem('header')}>
         {Thumb()}
         <div class={bem('content', { centered: props.centered })}>
-          {Title()}
-          {Desc()}
-          {slots.tags && slots.tags()}
+          <div>
+            {Title()}
+            {Desc()}
+            {slots.tags && slots.tags()}
+          </div>
           {showBottom && (
             <div class="van-card__bottom">
               {slots['price-top'] && slots['price-top']()}
