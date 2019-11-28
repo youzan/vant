@@ -112,7 +112,7 @@ export default createComponent({
     },
 
     genLoading() {
-      if (this.innerLoading) {
+      if (this.innerLoading && !this.finished) {
         return (
           <div class={bem('loading')} key="loading">
             {this.slots('loading') || (
