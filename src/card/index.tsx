@@ -116,14 +116,14 @@ function Card(
   }
 
   function PriceContent() {
-    if (props.price) {
-      const priceArr = (props.price).toString().split('.');
-      return (
+    const priceArr = props.price!.toString().split('.');
+    return (
         <div>
-          {props.currency}<span class={bem('price', 'integer')}>{priceArr[0]}</span>.{priceArr[1]}
+          {props.currency}
+          <span class={bem('price', 'integer')}>{priceArr[0]}</span>.
+          {priceArr[1]}
         </div>
-      );
-    }
+    );
   }
 
   function Price() {
