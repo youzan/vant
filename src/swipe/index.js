@@ -11,7 +11,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     BindEventMixin(function(bind, isBind) {
-      bind(window, 'resize', this.onResize, true);
+      bind(window, 'resize', this.resize, true);
 
       if (isBind) {
         this.initialize();
@@ -44,6 +44,10 @@ export default createComponent({
       default: 0
     },
     showIndicators: {
+      type: Boolean,
+      default: true
+    },
+    stopPropagation: {
       type: Boolean,
       default: true
     }
@@ -150,7 +154,8 @@ export default createComponent({
       this.autoPlay();
     },
 
-    onResize() {
+    // @exposed-api
+    resize() {
       this.initialize(this.activeIndicator);
     },
 
@@ -169,7 +174,7 @@ export default createComponent({
       this.touchMove(event);
 
       if (this.isCorrectDirection) {
-        preventDefault(event, true);
+        preventDefault(event, this.stopPropagation);
         this.move({ offset: this.delta });
       }
     },
@@ -248,6 +253,7 @@ export default createComponent({
       }
     },
 
+    // @exposed-api
     swipeTo(index, options = {}) {
       this.swiping = true;
       this.resetTouchStatus();
@@ -312,7 +318,7 @@ export default createComponent({
       }
     },
 
-    renderIndicator() {
+    genIndicator() {
       const { count, activeIndicator } = this;
       const slot = this.slots('indicator');
 
@@ -349,7 +355,7 @@ export default createComponent({
         >
           {this.slots()}
         </div>
-        {this.renderIndicator()}
+        {this.genIndicator()}
       </div>
     );
   }

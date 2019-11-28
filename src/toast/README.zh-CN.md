@@ -146,11 +146,12 @@ Toast.resetDefaultOptions('loading');
 | message | 文本内容，支持通过`\n`换行 | *string* | `''` | - | - |
 | icon | 自定义图标，支持传入图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | 2.0.1 |
 | iconPrefix | 图标类名前缀 | *string* | `van-icon` | 2.0.9 |
-| mask | 是否显示背景遮罩层 | *boolean* | `false` | - |
+| overlay | 是否显示背景遮罩层 | *boolean* | `false` | 2.2.13 |
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` | - |
 | closeOnClick | 是否在点击后关闭 | *boolean* | `false` | 2.1.5 |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | 2.2.13 |
 | loadingType | 加载图标类型, 可选值为 `spinner` | *string* | `circular` | - |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `3000` | - |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `2000` | - |
 | className | 自定义类名 | *any* | - | - |
 | onOpened | 完全展示后的回调函数 | *Function* | - | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |

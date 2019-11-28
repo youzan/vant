@@ -141,10 +141,11 @@ export default {
 | stepper-title | 数量选择组件左侧文案 | *string* | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | *object* | `{}` | - |
 | message-config | 留言相关配置 | *object* | `{}` | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
+| start-sale-num | 起售数量 | *number* | `1` | 2.2.15 |
 
 ### Events
 
@@ -159,7 +160,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 sku 实例并调用实例方法
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Sku 实例并调用实例方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -270,10 +271,10 @@ customStepperConfig: {
   quotaText: '每次限购xxx件',
   // 自定义步进器超过限制时的回调
   handleOverLimit: (data) => {
-    const { action, limitType, quota, quotaUsed } = data;
+    const { action, limitType, quota, quotaUsed, startSaleNum } = data;
 
     if (action === 'minus') {
-      Toast('至少选择一件商品');
+      Toast(startSaleNum > 1  ? `${startSaleNum}件起售` : '至少选择一件商品');
     } else if (action === 'plus') {
       // const { LIMIT_TYPE } = Sku.skuConstants;
       if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {

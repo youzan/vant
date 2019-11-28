@@ -32,12 +32,14 @@ function mockHTMLElementOffset() {
 
 mockHTMLElementOffset();
 
-export function mockGetBoundingClientRect(rect: ClientRect | DOMRect): Function {
+export function mockGetBoundingClientRect(
+  rect: ClientRect | DOMRect
+): Function {
   const originMethod = Element.prototype.getBoundingClientRect;
 
   Element.prototype.getBoundingClientRect = <any>jest.fn(() => rect);
 
-  return function () {
+  return function() {
     Element.prototype.getBoundingClientRect = originMethod;
   };
 }

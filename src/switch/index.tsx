@@ -1,5 +1,5 @@
-import { createNamespace } from '../utils';
-import { BLUE, GRAY_DARK } from '../utils/constant';
+import { createNamespace, addUnit } from '../utils';
+import { BLUE } from '../utils/constant';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import Loading from '../loading';
@@ -34,13 +34,15 @@ function Switch(
   const checked = value === activeValue;
 
   const switchStyle = {
-    fontSize: size,
+    fontSize: addUnit(size),
     backgroundColor: checked ? activeColor : inactiveColor
   };
 
-  const loadingColor = checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
+  const loadingColor = checked ? activeColor || BLUE : inactiveColor || '';
 
-  function onClick() {
+  function onClick(event: PointerEvent) {
+    emit(ctx, 'click', event);
+
     if (!disabled && !loading) {
       const newValue = checked ? inactiveValue : activeValue;
       emit(ctx, 'input', newValue);

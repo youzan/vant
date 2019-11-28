@@ -1,5 +1,5 @@
 import SwitchCell from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('change event', () => {
   const onChange = jest.fn();

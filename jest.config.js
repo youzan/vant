@@ -1,17 +1,12 @@
 module.exports = {
-  preset: 'ts-jest',
-  setupFiles: ['<rootDir>/test/jest.init.js'],
-  moduleFileExtensions: ['js', 'vue', 'ts', 'tsx'],
+  moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx'],
   transform: {
-    '^.+\\.(js|ts|tsx)$': '<rootDir>/test/jest.transform.js',
-    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
+    '\\.(vue)$': 'vue-jest',
+    '\\.(js|jsx|ts|tsx)$': '<rootDir>/test/transformer.js',
   },
-  moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1'
-  },
-  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
+  snapshotSerializers: ['jest-serializer-vue'],
   collectCoverageFrom: [
-    'src/**/*.{js,ts,tsx,vue}',
+    'src/**/*.{js,jsx,ts,tsx,vue}',
     '!**/style/**',
     '!**/demo/**',
     '!**/locale/lang/**',

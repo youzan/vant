@@ -120,7 +120,7 @@ export default {
 
 ### Methods
 
-Use ref to get list instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get List instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|

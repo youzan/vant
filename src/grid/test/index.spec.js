@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Grid from '..';
 import GridItem from '../../grid-item';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 Vue.use(Grid);
 Vue.use(GridItem);
@@ -44,6 +44,20 @@ test('icon-size prop', () => {
     template: `
       <van-grid icon-size="10">
         <van-grid-item icon="success" />
+      </van-grid>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render icon-slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-grid icon-size="10">
+        <van-grid-item info="1">
+          <div slot="icon" />
+        </van-grid-item>
       </van-grid>
     `
   });

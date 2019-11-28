@@ -33,6 +33,33 @@ export default {
 },
 ```
 
+### 嵌入内容
+
+通过默认插槽可以在遮罩层上嵌入任意内容
+
+```html
+<van-overlay :show="show" @click="show = false">
+  <div class="wrapper" @click.stop>
+    <div class="block" />
+  </div>
+</van-overlay>
+
+<style>
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
+</style>
+```
+
 ## API
 
 ### Props
@@ -43,16 +70,16 @@ export default {
 | z-index | z-index 层级 | *string \| number* | `1` | - |
 | duration | 动画时长，单位秒 | *string \| number* | `0.3` | - |
 | class-name | 自定义类名 | *string* | - | - |
-| custom-style | 自定义样式 | *object* | - | - |
+| custom-style | 自定义样式 | *object* | - | 2.2.5 |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击时触发 | event: Event |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| click | 点击时触发 | event: Event | - |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 默认插槽 |
+| 名称 | 说明 | 版本 |
+|------|------|------|
+| default | 默认插槽，用于在遮罩层上方嵌入内容 | 2.0.5 |

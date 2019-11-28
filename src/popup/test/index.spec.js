@@ -1,5 +1,5 @@
 import Popup from '..';
-import { mount, triggerDrag, later } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test';
 
 let wrapper;
 afterEach(() => {

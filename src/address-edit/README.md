@@ -21,7 +21,7 @@ Vue.use(AddressEdit);
   show-set-default
   show-search-result
   :search-result="searchResult"
-  area-columns-placeholder="['Choose', 'Choose', 'Choose']"
+  :area-columns-placeholder="['Choose', 'Choose', 'Choose']"
   @save="onSave"
   @delete="onDelete"
   @change-detail="onChangeDetail"
@@ -65,7 +65,7 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | area-list | Area List | *object* | - | - |
-| area-columns-placeholder | placeholder of area columns | *string[]* | `[]` | - |
+| area-columns-placeholder | placeholder of area columns | *string[]* | `[]` | 2.2.5 |
 | address-info | Address Info | *AddressInfo* | `{}` | - |
 | search-result | Address search result | *SearchResult[]* | `[]` | - |
 | show-postal | Whether to show postal field | *boolean* | `false` | - |
@@ -103,7 +103,7 @@ export default {
 
 ### Methods
 
-Use ref to get address-edit instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get AddressEdit instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|

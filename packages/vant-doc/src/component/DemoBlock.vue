@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'van-doc-demo-block',
+  name: 'demo-block',
 
   props: {
     title: String

@@ -1,4 +1,4 @@
 import Demo from '../demo';
-import demoTest from '../../../test/demo-test';
+import { snapshotDemo } from '../../../test/demo';
 
-demoTest(Demo);
+snapshotDemo(Demo);

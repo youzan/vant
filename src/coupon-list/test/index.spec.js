@@ -1,7 +1,7 @@
 import Coupon from '../../coupon';
 import CouponList from '..';
 import CouponCell from '../../coupon-cell';
-import { later, mount } from '../../../test/utils';
+import { later, mount } from '../../../test';
 
 const coupon = {
   id: 1,

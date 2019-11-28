@@ -134,6 +134,7 @@ export default {
 | preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` | 2.1.5 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` | - |
 | disabled | 是否禁用文件上传 | *boolean* | `false` | - |
+| deletable | 是否展示删除按钮 | *boolean* | `true` | 2.2.12 |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | *string* | - | - |
 | after-read | 文件读取完成后的回调函数 | *Function* | - | - |
 | before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | *Function* | - | - |
@@ -177,3 +178,11 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | file | 结果仅包含 File 对象 |
 | text | 结果包含 File 对象，以及文件的文本内容 |
 | dataUrl | 结果包含 File 对象，以及文件对应的 base64 编码 |
+
+### 方法
+
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Uploader 实例并调用实例方法
+
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| closeImagePreview | 关闭全屏的图片预览 | - | - |

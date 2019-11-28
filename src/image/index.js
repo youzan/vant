@@ -104,7 +104,7 @@ export default createComponent({
       this.$emit('click', event);
     },
 
-    renderPlaceholder() {
+    genPlaceholder() {
       if (this.loading && this.showLoading) {
         return (
           <div class={bem('loading')}>
@@ -122,7 +122,7 @@ export default createComponent({
       }
     },
 
-    renderImage() {
+    genImage() {
       const imgData = {
         class: bem('img'),
         attrs: {
@@ -150,8 +150,8 @@ export default createComponent({
   render() {
     return (
       <div class={bem({ round: this.round })} style={this.style} onClick={this.onClick}>
-        {this.renderImage()}
-        {this.renderPlaceholder()}
+        {this.genImage()}
+        {this.genPlaceholder()}
       </div>
     );
   }

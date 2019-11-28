@@ -133,7 +133,7 @@ export default {
 | options | 选项数组 | *Option[]* | `[]` | - |
 | disabled | 是否禁用菜单 | *boolean* | `false` | - |
 | title-class | 标题额外类名 | *string* | - | - |
-| get-container | 指定弹出菜单挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | 2.2.4 |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - | 2.2.4 |
 
 ### DropdownItem Events
 
@@ -144,9 +144,16 @@ export default {
 | opened | 打开菜单栏且动画结束后触发 | - |
 | close | 关闭菜单栏时触发 | - |
 
+### DropdownItem Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 菜单内容 |
+| title | 自定义标题，不支持动态渲染 |
+
 ### DropdownItem 方法
 
-通过 ref 可以获取到 DropdownItem 实例并调用实例方法
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 DropdownItem 实例并调用实例方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

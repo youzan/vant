@@ -40,6 +40,10 @@ export default createComponent({
       type: Number,
       default: Number.MAX_VALUE
     },
+    deletable: {
+      type: Boolean,
+      default: true
+    },
     previewImage: {
       type: Boolean,
       default: true
@@ -197,7 +201,7 @@ export default createComponent({
       const imageFiles = this.fileList.filter(item => isImageFile(item));
       const imageContents = imageFiles.map(item => item.content || item.url);
 
-      ImagePreview({
+      this.imagePreview = ImagePreview({
         images: imageContents,
         closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item),
@@ -207,8 +211,14 @@ export default createComponent({
       });
     },
 
-    renderPreviewItem(item, index) {
-      const DeleteIcon = (
+    closeImagePreview() {
+      if (this.imagePreview) {
+        this.imagePreview.close();
+      }
+    },
+
+    genPreviewItem(item, index) {
+      const DeleteIcon = this.deletable && (
         <Icon
           name="clear"
           class={bem('preview-delete')}
@@ -259,13 +269,13 @@ export default createComponent({
       );
     },
 
-    renderPreviewList() {
+    genPreviewList() {
       if (this.previewImage) {
-        return this.fileList.map(this.renderPreviewItem);
+        return this.fileList.map(this.genPreviewItem);
       }
     },
 
-    renderUpload() {
+    genUpload() {
       if (this.fileList.length >= this.maxCount) {
         return;
       }
@@ -316,8 +326,8 @@ export default createComponent({
     return (
       <div class={bem()}>
         <div class={bem('wrapper')}>
-          {this.renderPreviewList()}
-          {this.renderUpload()}
+          {this.genPreviewList()}
+          {this.genUpload()}
         </div>
       </div>
     );

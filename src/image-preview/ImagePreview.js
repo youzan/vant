@@ -272,8 +272,8 @@ export default createComponent({
           ref="swipe"
           loop={this.loop}
           class={bem('swipe')}
-          duration={this.swipeDuration}
           indicatorColor="white"
+          duration={this.swipeDuration}
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
           onChange={this.setActive}

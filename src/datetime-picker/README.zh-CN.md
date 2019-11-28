@@ -163,12 +163,13 @@ export default {
 | filter | 选项过滤函数 | *(type, values) => values* | - | - |
 | formatter | 选项格式化函数 | *(type, value) => value* | - | - |
 | title | 顶部栏标题 | *string* | `''` | - |
-| show-toolbar | 是否显示顶部栏 | *boolean* | `false` | - |
+| show-toolbar | 是否显示顶部栏 | *boolean* | `true` | - |
 | loading | 是否显示加载状态 | *boolean* | `false` | - |
 | item-height | 选项高度 | *number* | `44` | - |
 | confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 

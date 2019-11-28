@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 import Vue from 'vue';
 import Tabbar from '..';
 import TabbarItem from '../../tabbar-item';

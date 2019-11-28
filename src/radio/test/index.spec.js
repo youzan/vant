@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Radio from '..';
 import RadioGroup from '../../radio-group';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 Vue.use(Radio);
 Vue.use(RadioGroup);

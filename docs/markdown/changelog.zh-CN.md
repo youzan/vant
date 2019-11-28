@@ -10,6 +10,81 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
+`2019-11-22`
+
+**Features**
+
+- Tabs: 新增 title-style 属性 [\#5048](https://github.com/youzan/vant/pull/5048)
+- Tabs: 新增 resize 方法 [\#5071](https://github.com/youzan/vant/pull/5071)
+- Swipe: 新增 resize 方法 [\#5070](https://github.com/youzan/vant/pull/5070)
+
+**Bug Fixes**
+
+- 修复 Cell value 过长时不换行的问题 [\#5029](https://github.com/youzan/vant/pull/5029)
+- 修复 SwipeCell 在桌面端无法使用的问题 [\#5077](https://github.com/youzan/vant/pull/5077)
+- 修复 Field 在 Safari 下输入换行符时字数统计错误的问题 [\#5049](https://github.com/youzan/vant/pull/5049)
+- 修复 Tabbar 设置 safe-area-inset-bottom 后可能出现样式错位的问题 [\#5079](https://github.com/youzan/vant/pull/5079)
+- 修复 DropdownMenu 使用 get-container 属性时点击后会立即关闭的问题 [\#5047](https://github.com/youzan/vant/pull/5047)
+
+
+### [v2.2.13](https://github.com/youzan/vant/tree/v2.2.13)
+`2019-11-14`
+
+**Features**
+
+- Area: 新增 swipe-duration 属性 [\#5014](https://github.com/youzan/vant/pull/5014)
+- Swipe: 新增 stop-propagation 属性 [\#4972](https://github.com/youzan/vant/pull/4972)
+- Toast: 新增 overlay 选项 [\#4969](https://github.com/youzan/vant/pull/4969)
+- Toast: 新增 clickOnClickOverlay 选项 [\#4967](https://github.com/youzan/vant/pull/4967)
+- SwipeCell: 新增 opened 事件 [\#4986](https://github.com/youzan/vant/pull/4986)
+- ActionSheet: 新增 close-icon 属性 [\#5016](https://github.com/youzan/vant/pull/5016)
+- DropdownItem: 新增 title 插槽 [\#4975](https://github.com/youzan/vant/pull/4975)
+- DatetimePicker: 新增 swipe-duration 属性 [\#5015](https://github.com/youzan/vant/pull/5015)
+
+**Bug Fixes**
+
+- 修复 Tab name 设置为 0 时无法正确匹配的问题 [\#5017](https://github.com/youzan/vant/pull/5017)
+- 修复 Indexbar 隐藏时可能出现锚点位置错误的问题 [\#5012](https://github.com/youzan/vant/pull/5012)
+- 修复 Indexbar 设置 sticky-offset-top 后可能出现锚点位置错误的问题 [\#5012](https://github.com/youzan/vant/pull/5012)
+- 修复 DatetimePicker 使用 filter 并返回空数组时无法切换时间的问题 [\#4973](https://github.com/youzan/vant/pull/4973)
+- 修复 DateTimePicker 动态设置 max-hour 并小于 v-model 绑定的时间时出现错误的问题 [\#5006](https://github.com/youzan/vant/pull/5006)
+- 修复 ImagePreview 类型中定义缺少 swipeDuration 选项的问题 [\#4968](https://github.com/youzan/vant/pull/4968)
+
+
+### [v2.2.12](https://github.com/youzan/vant/tree/v2.2.12)
+`2019-11-07`
+
+**Features**
+
+- Stepper: 新增 name 属性 [\#4931](https://github.com/youzan/vant/pull/4931)
+- Uploader: 新增 deletable 属性 [\#4925](https://github.com/youzan/vant/pull/4925)
+
+**Bug Fixes**
+
+- 修复 Sku 内容最小高度错误的问题 [\#4942](https://github.com/youzan/vant/pull/4942)
+- 修复 List 在初始化时可能同时触发两次 load 事件的问题 [\#4953](https://github.com/youzan/vant/pull/4953)
+- 修复 @border-color 变量无法定制某些组件边框颜色的问题 [\#4939](https://github.com/youzan/vant/pull/4939)
+
+
+### [v2.2.11](https://github.com/youzan/vant/tree/v2.2.11)
+`2019-11-04`
+
+**Features**
+
+- Switch: 新增 click 事件 [\#4915](https://github.com/youzan/vant/pull/4915)
+- Switch: size 属性支持 number 类型 [\#4913](https://github.com/youzan/vant/pull/4913)
+- Toast: 默认持续时间由 3 秒调整为 2 秒 [\#4886](https://github.com/youzan/vant/pull/4886)
+- Uploader: 新增 closeImagePreview 方法 [\#4901](https://github.com/youzan/vant/pull/4901)
+
+**Bug Fixes**
+
+- 修复 Button 加载图标颜色不正确的问题 [\#4868](https://github.com/youzan/vant/pull/4868)
+- 修复 CountDown 在销毁时未清除定时器的问题 [\#4918](https://github.com/youzan/vant/pull/4918)
+- 修复 CountDown 在 keep-alive 状态下未暂停定时器的问题 [\#4919](https://github.com/youzan/vant/pull/4919)
+- 修复 Grid 使用 icon 插槽时 info、dot 属性不生效的问题 [\#4902](https://github.com/youzan/vant/pull/4902)
+
+
 ### [v2.2.10](https://github.com/youzan/vant/tree/v2.2.10)
 `2019-10-27`
 

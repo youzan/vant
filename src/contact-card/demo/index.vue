@@ -16,6 +16,7 @@
         <van-contact-list
           v-model="chosenContactId"
           :list="list"
+          :default-tag-text="$t('defaultTagText')"
           @add="onAdd"
           @edit="onEdit"
           @select="onSelect"
@@ -28,6 +29,8 @@
         :lazy-render="false"
       >
         <van-contact-edit
+          show-set-default
+          :set-default-label="$t('defaultLabel')"
           :contact-info="editingContact"
           :is-edit="isEdit"
           @save="onSave"
@@ -51,10 +54,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      name: '张三'
+      name: '张三',
+      defaultLabel: '设为默认联系人',
+      defaultTagText: '默认'
     },
     'en-US': {
-      name: 'John Snow'
+      name: 'John Snow',
+      defaultLabel: 'Set as the default contact',
+      defaultTagText: 'default'
     }
   },
 
@@ -74,7 +81,8 @@ export default {
       return {
         name: this.$t('name'),
         tel: '13000000000',
-        id: 0
+        id: 0,
+        isDefault: 1
       };
     },
 

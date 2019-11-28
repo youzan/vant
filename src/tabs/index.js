@@ -16,7 +16,7 @@ export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
     BindEventMixin(function(bind) {
-      bind(window, 'resize', this.setLine, true);
+      bind(window, 'resize', this.resize, true);
     })
   ],
 
@@ -139,6 +139,11 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
+    resize() {
+      this.setLine();
+    },
+
     onShow() {
       this.$nextTick(() => {
         this.inited = true;
@@ -203,7 +208,11 @@ export default createComponent({
         this.$emit('input', this.currentName);
 
         if (shouldEmitChange) {
-          this.$emit('change', this.currentName, this.children[currentIndex].title);
+          this.$emit(
+            'change',
+            this.currentName,
+            this.children[currentIndex].title
+          );
         }
       }
     },
@@ -246,13 +255,6 @@ export default createComponent({
       scrollLeftTo(nav, to, immediate ? 0 : this.duration);
     },
 
-    // render title slot of child tab
-    renderTitle(el, index) {
-      this.$nextTick(() => {
-        this.$refs.titles[index].renderTitle(el);
-      });
-    },
-
     onScroll(params) {
       this.stickyFixed = params.isFixed;
       this.$emit('scroll', params);
@@ -269,6 +271,7 @@ export default createComponent({
         type={type}
         title={item.title}
         color={this.color}
+        style={item.titleStyle}
         isActive={index === this.currentIndex}
         ellipsis={ellipsis}
         disabled={item.disabled}
@@ -276,6 +279,9 @@ export default createComponent({
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
         swipeThreshold={this.swipeThreshold}
+        scopedSlots={{
+          default: () => item.slots('title')
+        }}
         onClick={() => {
           this.onClick(index);
           route(item.$router, item);
@@ -291,10 +297,17 @@ export default createComponent({
           { [BORDER_TOP_BOTTOM]: type === 'line' && this.border }
         ]}
       >
-        <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
+        <div
+          ref="nav"
+          role="tablist"
+          class={bem('nav', [type])}
+          style={this.navStyle}
+        >
           {this.slots('nav-left')}
           {Nav}
-          {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
+          {type === 'line' && (
+            <div class={bem('line')} style={this.lineStyle} />
+          )}
           {this.slots('nav-right')}
         </div>
       </div>

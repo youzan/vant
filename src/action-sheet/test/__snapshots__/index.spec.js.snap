@@ -6,6 +6,13 @@ exports[`callback events 1`] = `
   </button><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span><span class="van-action-sheet__subname">Subname</span></button><button class="van-action-sheet__cancel">Cancel</button></div>
 `;
 
+exports[`close-icon prop 1`] = `
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__header van-hairline--bottom">Title<i class="van-icon van-icon-cross van-action-sheet__close">
+      <!----></i></div>
+</div>
+`;
+
 exports[`color option 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button class="van-action-sheet__item van-hairline--top" style="color: red;"><span class="van-action-sheet__name">Option</span></button></div>`;
 
 exports[`description prop 1`] = `
@@ -16,6 +23,12 @@ exports[`description prop 1`] = `
 
 exports[`disable lazy-render 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" style="display: none;" name="van-popup-slide-bottom"><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button class="van-action-sheet__cancel">Cancel</button></div>`;
 
-exports[`render title and default slot 1`] = ``;
+exports[`render title and default slot 1`] = `
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__header van-hairline--bottom">Title<i class="van-icon van-icon-close van-action-sheet__close">
+      <!----></i></div>
+  <div class="van-action-sheet__content">Default</div>
+</div>
+`;
 
 exports[`round prop 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button></div>`;

@@ -118,6 +118,7 @@ export default {
 | preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` | - |
 | multiple | Whether to enable multiple selection pictures | *boolean* | `false` | - |
 | disabled | Whether to disabled the upload | *boolean* | `false` | - |
+| deletable | Whether to show delete icon | *boolean* | `true` | 2.2.12 |
 | capture | Capture，can be set to `camera` | *string* | - | - |
 | after-read | Hook after reading the file | *Function* | - | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - | - |
@@ -157,3 +158,11 @@ export default {
 | file | Result contains File object |
 | text | Result contains File object and text content |
 | dataUrl | Result contains File object and base64 content |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods
+
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| closeImagePreview | Close full screen image preview | - | - |

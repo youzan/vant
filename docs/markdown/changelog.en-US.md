@@ -1,5 +1,80 @@
 # Changelog
 
+### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
+`2019-11-22`
+
+**Features**
+
+- Tabs: add title-style prop [\#5048](https://github.com/youzan/vant/pull/5048)
+- Tabs: add resize method [\#5071](https://github.com/youzan/vant/pull/5071)
+- Swipe: add resize method [\#5070](https://github.com/youzan/vant/pull/5070)
+
+**Bug Fixes**
+
+- fix Cell should break word of value [\#5029](https://github.com/youzan/vant/pull/5029)
+- fix Field incorrect count of line break in safari [\#5049](https://github.com/youzan/vant/pull/5049)
+- fix Tabbar incorrect style when using safe-area-inset-bottom [\#5079](https://github.com/youzan/vant/pull/5079)
+- fix SwipeCell compatible with desktop scenario [\#5077](https://github.com/youzan/vant/pull/5077)
+- fix DropdownMenu should't close when custom container and get clicked [\#5047](https://github.com/youzan/vant/pull/5047)
+
+
+### [v2.2.13](https://github.com/youzan/vant/tree/v2.2.13)
+`2019-11-14`
+
+**Features**
+
+- Area: add swipe-duration prop [\#5014](https://github.com/youzan/vant/pull/5014)
+- Swipe: add stop-propagation prop [\#4972](https://github.com/youzan/vant/pull/4972)
+- Toast: add overlay option [\#4969](https://github.com/youzan/vant/pull/4969)
+- Toast: add clickOnClickOverlay option [\#4967](https://github.com/youzan/vant/pull/4967)
+- SwipeCell: add opened event [\#4986](https://github.com/youzan/vant/pull/4986)
+- ActionSheet: add close-icon prop [\#5016](https://github.com/youzan/vant/pull/5016)
+- DropdownItem: add title slot [\#4975](https://github.com/youzan/vant/pull/4975)
+- DatetimePicker: add swipe-duration prop [\#5015](https://github.com/youzan/vant/pull/5015)
+
+**Bug Fixes**
+
+- fix Tab can't match when name is 0 [\#5017](https://github.com/youzan/vant/pull/5017)
+- fix Indexbar incorrect anchor position when hidden [\#5012](https://github.com/youzan/vant/pull/5012)
+- fix Indexbar incorrect anchor position when set sticky-offset-top [\#5012](https://github.com/youzan/vant/pull/5012)
+- fix DatetimePicker can't change when filter when empty array [\#4973](https://github.com/youzan/vant/pull/4973)
+- fix DateTimePicker incorrect value when set max-hour or max-minute [\#5006](https://github.com/youzan/vant/pull/5006)
+- fix ImagePreview missing swipeDuration type definition [\#4968](https://github.com/youzan/vant/pull/4968)
+
+
+### [v2.2.12](https://github.com/youzan/vant/tree/v2.2.12)
+`2019-11-07`
+
+**Features**
+
+- Stepper: add name prop [\#4931](https://github.com/youzan/vant/pull/4931)
+- Uploader: add deletable prop [\#4925](https://github.com/youzan/vant/pull/4925)
+
+**Bug Fixes**
+
+- fix Sku set min-height for sku body [\#4942](https://github.com/youzan/vant/pull/4942)
+- fix List may trigger load event repeatedly [\#4953](https://github.com/youzan/vant/pull/4953)
+- fix can't custom hairline border color [\#4939](https://github.com/youzan/vant/pull/4939)
+
+
+### [v2.2.11](https://github.com/youzan/vant/tree/v2.2.11)
+`2019-11-04`
+
+**Features**
+
+- Switch: add click event [\#4915](https://github.com/youzan/vant/pull/4915)
+- Switch: support number type of size prop [\#4913](https://github.com/youzan/vant/pull/4913)
+- Toast: change default duration to 2s [\#4886](https://github.com/youzan/vant/pull/4886)
+- Uploader: add closeImagePreview method [\#4901](https://github.com/youzan/vant/pull/4901)
+
+**Bug Fixes**
+
+- fix Button loading color [\#4868](https://github.com/youzan/vant/pull/4868)
+- fix CountDown should clear timer when destroyed [\#4918](https://github.com/youzan/vant/pull/4918)
+- fix CountDown should pause timer when deactivated [\#4919](https://github.com/youzan/vant/pull/4919)
+- fix Grid info、dot prop not work when use icon slot [\#4902](https://github.com/youzan/vant/pull/4902)
+
+
 ### [v2.2.10](https://github.com/youzan/vant/tree/v2.2.10)
 `2019-10-27`
 

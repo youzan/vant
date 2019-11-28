@@ -30,47 +30,31 @@ export default {
 ### Disabled
 
 ```html
-<van-switch
-  v-model="checked"
-  disabled
-/>
+<van-switch v-model="checked" disabled />
 ```
 
 ### Loading
 
 ```html
-<van-switch
-  v-model="checked"
-  loading
-/>
+<van-switch v-model="checked" loading />
 ```
 
 ### Custom Size
 
 ```html
-<van-switch
-  v-model="checked"
-  size="24px"
-/>
+<van-switch v-model="checked" size="24px" />
 ```
 
 ### Custom Color
 
 ```html
-<van-switch
-  v-model="checked"
-  active-color="#07c160"
-  inactive-color="#ee0a24"
-/>
+<van-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />
 ```
 
 ### Async Control
 
 ```html
-<van-switch
-  :value="checked"
-  @input="onInput"
-/>
+<van-switch :value="checked" @input="onInput" />
 ```
 
 ```js
@@ -103,7 +87,7 @@ export default {
 | v-model | Check status of Switch | *any* | `false` | - |
 | loading | Whether to show loading icon | *boolean* | `false` | - |
 | disabled | Whether to disable switch | *boolean* | `false` | - |
-| size | Size of switch | *string* | `30px` | - |
+| size | Size of switch | *string \| number* | `30px` | 2.2.11 |
 | active-color | Background color when active | *string* | `#1989fa` | - |
 | inactive-color | Background color when inactive | *string* | `#fff` | - |
 | active-value | Value when active | *any* | `true` | - |
@@ -111,6 +95,7 @@ export default {
 
 ### Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| change | Triggered when check status changed | checked: is switch checked |
+| Event | Description | Parameters | Version |
+|------|------|------|------|
+| change | Triggered when check status changed | checked: is switch checked | - |
+| click | Triggered when clicked | event: Event | 2.2.11 |

@@ -42,6 +42,13 @@ export default createComponent({
     }
   },
 
+  data() {
+    return {
+      // use sync innerLoading state to avoid repeated loading in some edge cases
+      innerLoading: this.loading
+    };
+  },
+
   mounted() {
     if (this.immediateCheck) {
       this.check();
@@ -49,14 +56,17 @@ export default createComponent({
   },
 
   watch: {
-    loading: 'check',
-    finished: 'check'
+    finished: 'check',
+    loading(val) {
+      this.innerLoading = val;
+      this.check();
+    }
   },
 
   methods: {
     check() {
       this.$nextTick(() => {
-        if (this.loading || this.finished || this.error) {
+        if (this.innerLoading || this.finished || this.error) {
           return;
         }
 
@@ -89,6 +99,7 @@ export default createComponent({
         }
 
         if (isReachEdge) {
+          this.innerLoading = true;
           this.$emit('input', true);
           this.$emit('load');
         }
@@ -98,6 +109,36 @@ export default createComponent({
     clickErrorText() {
       this.$emit('update:error', false);
       this.check();
+    },
+
+    genLoading() {
+      if (this.innerLoading) {
+        return (
+          <div class={bem('loading')} key="loading">
+            {this.slots('loading') || (
+              <Loading size="16">{this.loadingText || t('loading')}</Loading>
+            )}
+          </div>
+        );
+      }
+    },
+
+    genFinishedText() {
+      if (this.finished && this.finishedText) {
+        return (
+          <div class={bem('finished-text')}>{this.finishedText}</div>
+        );
+      }
+    },
+
+    genErrorText() {
+      if (this.error && this.errorText) {
+        return (
+          <div onClick={this.clickErrorText} class={bem('error-text')}>
+            {this.errorText}
+          </div>
+        );
+      }
     }
   },
 
@@ -105,23 +146,11 @@ export default createComponent({
     const Placeholder = <div ref="placeholder" class={bem('placeholder')} />;
 
     return (
-      <div class={bem()} role="feed" aria-busy={this.loading}>
+      <div class={bem()} role="feed" aria-busy={this.innerLoading}>
         {this.direction === 'down' ? this.slots() : Placeholder}
-        {this.loading && (
-          <div class={bem('loading')} key="loading">
-            {this.slots('loading') || (
-              <Loading size="16">{this.loadingText || t('loading')}</Loading>
-            )}
-          </div>
-        )}
-        {this.finished && this.finishedText && (
-          <div class={bem('finished-text')}>{this.finishedText}</div>
-        )}
-        {this.error && this.errorText && (
-          <div onClick={this.clickErrorText} class={bem('error-text')}>
-            {this.errorText}
-          </div>
-        )}
+        {this.genLoading()}
+        {this.genFinishedText()}
+        {this.genErrorText()}
         {this.direction === 'up' ? this.slots() : Placeholder}
       </div>
     );

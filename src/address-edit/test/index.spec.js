@@ -1,6 +1,6 @@
 import AddressEdit from '..';
 import areaList from '../../area/demo/area.simple';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 const addressInfo = {
   name: '测试',

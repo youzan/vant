@@ -112,6 +112,8 @@ export default {
 }
 ```
 
+> Tips: The get-container prop cannot be used on the root node
+
 ## API
 
 ### Props

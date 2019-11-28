@@ -1,5 +1,5 @@
 import PasswordInput from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('focus event', () => {
   const focus = jest.fn();

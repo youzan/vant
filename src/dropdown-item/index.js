@@ -40,6 +40,14 @@ export default createComponent({
     }
   },
 
+  beforeCreate() {
+    const createEmitter = eventName => () => this.$emit(eventName);
+
+    this.onOpen = createEmitter('open');
+    this.onClose = createEmitter('close');
+    this.onOpened = createEmitter('opened');
+  },
+
   methods: {
     toggle(show = !this.showPopup, options = {}) {
       if (show === this.showPopup) {
@@ -53,15 +61,14 @@ export default createComponent({
         this.parent.updateOffset();
         this.showWrapper = true;
       }
+    },
+
+    onClickWrapper(event) {
+      // prevent being identified as clicking outside and closed when use get-contaienr
+      if (this.getContainer) {
+        event.stopPropagation();
+      }
     }
-  },
-
-  beforeCreate() {
-    const createEmitter = eventName => () => this.$emit(eventName);
-
-    this.onOpen = createEmitter('open');
-    this.onClose = createEmitter('close');
-    this.onOpened = createEmitter('opened');
   },
 
   render() {
@@ -113,6 +120,7 @@ export default createComponent({
           ref="wrapper"
           style={style}
           class={bem([direction])}
+          onClick={this.onClickWrapper}
         >
           <Popup
             vModel={this.showPopup}

@@ -76,10 +76,6 @@ export default {
                 title: '风格指南'
               },
               {
-                path: '/demo',
-                title: '示例工程'
-              },
-              {
                 path: '/locale',
                 title: '国际化'
               }

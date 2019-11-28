@@ -268,6 +268,7 @@ export default createComponent({
         loading={this.loading}
         columns={this.displayColumns}
         itemHeight={this.itemHeight}
+        swipeDuration={this.swipeDuration}
         visibleItemCount={this.visibleItemCount}
         cancelButtonText={this.cancelButtonText}
         confirmButtonText={this.confirmButtonText}

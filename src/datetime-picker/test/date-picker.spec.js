@@ -1,5 +1,5 @@
 import DatePicker from '../DatePicker';
-import { mount, later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test';
 
 function filter(type, options) {
   const mod = type === 'year' ? 10 : 5;

@@ -1,5 +1,5 @@
 import Stepper from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('disabled stepper', () => {
   const wrapper = mount(Stepper, {
@@ -228,4 +228,17 @@ test('should limit decimal-length when input', () => {
   input.trigger('input');
 
   expect(input.element.value).toEqual('1.2');
+});
+
+test('name prop', () => {
+  const wrapper = mount(Stepper);
+
+  const plus = wrapper.find('.van-stepper__plus');
+
+  plus.trigger('click');
+  expect(wrapper.emitted('change')[0][1]).toEqual({ name: '' });
+
+  wrapper.setProps({ name: 'name' });
+  plus.trigger('click');
+  expect(wrapper.emitted('change')[1][1]).toEqual({ name: 'name' });
 });

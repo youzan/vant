@@ -93,6 +93,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
+| open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
 
 ### onClose Params
 
@@ -104,7 +105,7 @@ export default {
 
 ### Methods
 
-Use ref to get SwipeCell instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get SwipeCell instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
