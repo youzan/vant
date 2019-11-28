@@ -40,6 +40,7 @@
     flex: 1;
     padding-right: @padding-sm;
     color: @submit-bar-text-color;
+    text-align: right;
     font-weight: @font-weight-bold;
 
     span {
@@ -56,7 +57,7 @@
     font-size: @font-size-sm;
 
     &--integer {
-      font-size: @submit-bar-text-price-integer;
+      font-size: @submit-bar-price-integer-font-size;
       font-family: 'Avenir-Heavy';
     }
   }
@@ -64,7 +65,7 @@
   &__button {
     width: @submit-bar-button-width;
     height: @submit-bar-button-height;
-    line-height: @submit-bar-button-line-height;
+    line-height: @submit-bar-button-height;
     border: none;
 
     &--danger {
