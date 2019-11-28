@@ -34,7 +34,7 @@ export default createComponent({
   computed: {
     validPeriod() {
       const { startAt, endAt } = this.coupon;
-      return `${t('valid')}：${getDate(startAt)} - ${getDate(endAt)}`;
+      return `${getDate(startAt)} - ${getDate(endAt)}`;
     },
 
     faceAmount() {
@@ -70,13 +70,13 @@ export default createComponent({
         <div class={bem('content')}>
           <div class={bem('head')}>
             <h2 class={bem('amount')} domPropsInnerHTML={this.faceAmount} />
-            <p>{this.coupon.condition || this.conditionMessage}</p>
+            <p class={bem('condition')}>{this.coupon.condition || this.conditionMessage}</p>
           </div>
           <div class={bem('body')}>
-            <h2 class={bem('name')}>{coupon.name}</h2>
-            <p>{this.validPeriod}</p>
-            {this.chosen && (
-              <Checkbox value={true} class={bem('corner')} checked-color={RED} />
+            <p class={bem('name')}>{coupon.name}</p>
+            <p class={bem('valid')}>{this.validPeriod}</p>
+            {!this.disabled && (
+              <Checkbox value={this.chosen} class={bem('corner')} size={18} checked-color={RED} />
             )}
           </div>
         </div>
