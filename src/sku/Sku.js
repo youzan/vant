@@ -400,10 +400,18 @@ export default createComponent({
       }
 
       if (action === 'minus') {
-        Toast(t('minusTip', this.startSaleNum));
+        if (this.startSaleNum > 1) {
+          Toast(t('minusStartTip', this.startSaleNum));
+        } else {
+          Toast(t('minusTip'));
+        }
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
-          Toast(t('quotaTip', quota, quotaUsed));
+          if (quotaUsed > 0) {
+            Toast(t('quotaUsedTip', quota, quotaUsed));
+          } else {
+            Toast(t('quotaTip', quota));
+          }
         } else {
           Toast(t('soldout'));
         }

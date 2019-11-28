@@ -87,8 +87,15 @@ export default createComponent({
 
       if (quotaText) {
         text = quotaText;
-      } else if (this.quota > 0 || this.startSaleNum > 1) {
-        text = t('quotaLimit', this.quota, this.startSaleNum);
+      } else {
+        const textArr = [];
+        if (this.startSaleNum > 1) {
+          textArr.push(t('quotaStart', this.startSaleNum));
+        }
+        if (this.quota > 0) {
+          textArr.push(t('quotaLimit', this.quota));
+        }
+        text = textArr.join(t('comma'));
       }
 
       return text;
