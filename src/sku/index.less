@@ -198,6 +198,7 @@
     &-container {
       height: 30px;
       margin-right: 20px;
+      overflow: hidden;
     }
   }
 
@@ -206,6 +207,14 @@
 
     &-title {
       float: left;
+      line-height: 30px;
+    }
+
+    &-quota {
+      display: inline-block;
+      float: right;
+      color: @red;
+      font-size: @font-size-sm;
       line-height: 30px;
     }
   }
@@ -219,12 +228,6 @@
     &-num--highlight {
       color: @red;
     }
-  }
-
-  &__quota {
-    display: inline-block;
-    color: @red;
-    font-size: @font-size-sm;
   }
 
   &-messages {

@@ -45,6 +45,10 @@ export default createComponent({
       type: Number,
       default: 0
     },
+    startSaleNum: {
+      type: Number,
+      default: 1
+    },
     initialSku: {
       type: Object,
       default: () => ({})
@@ -236,22 +240,6 @@ export default createComponent({
       ];
     },
 
-    quotaText() {
-      const { quotaText, hideQuotaText } = this.customStepperConfig;
-
-      if (hideQuotaText) return '';
-
-      let text = '';
-
-      if (quotaText) {
-        text = quotaText;
-      } else if (this.quota > 0) {
-        text = t('quotaLimit', this.quota);
-      }
-
-      return text;
-    },
-
     selectedText() {
       if (this.selectedSkuComb) {
         return `${t('selected')} ${this.selectedSkuValues.map(item => item.name).join('；')}`;
@@ -274,6 +262,7 @@ export default createComponent({
     skuEventBus.$on('sku:numChange', this.onNumChange);
     skuEventBus.$on('sku:previewImage', this.onPreviewImage);
     skuEventBus.$on('sku:overLimit', this.onOverLimit);
+    skuEventBus.$on('sku:stepperState', this.onStepperState);
     skuEventBus.$on('sku:addCart', this.onAddCart);
     skuEventBus.$on('sku:buy', this.onBuy);
 
@@ -289,6 +278,8 @@ export default createComponent({
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
       const num = isDef(selectedNum) ? selectedNum : 1;
+      // 用来缓存不合法的情况
+      this.stepperError = null;
 
       if (skuStepper) {
         skuStepper.setCurrentNum(num);
@@ -409,15 +400,32 @@ export default createComponent({
       }
 
       if (action === 'minus') {
-        Toast(t('minusTip'));
+        if (this.startSaleNum > 1) {
+          Toast(t('minusStartTip', this.startSaleNum));
+        } else {
+          Toast(t('minusTip'));
+        }
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
-          let msg = t('quotaLimit', quota);
-          if (quotaUsed > 0) msg += `，${t('quotaCount', quotaUsed)}`;
-          Toast(msg);
+          if (quotaUsed > 0) {
+            Toast(t('quotaUsedTip', quota, quotaUsed));
+          } else {
+            Toast(t('quotaTip', quota));
+          }
         } else {
           Toast(t('soldout'));
         }
+      }
+    },
+
+    onStepperState(data) {
+      if (data.valid) {
+        this.stepperError = null;
+      } else {
+        this.stepperError = {
+          ...data,
+          action: 'plus',
+        };
       }
     },
 
@@ -430,6 +438,10 @@ export default createComponent({
     },
 
     onBuyOrAddCart(type) {
+      // 有信息表示该sku根本不符合购买条件
+      if (this.stepperError) {
+        return this.onOverLimit(this.stepperError);
+      }
       const error = this.validateSku();
       if (error) {
         Toast(error);
@@ -463,7 +475,6 @@ export default createComponent({
       selectedSku,
       selectedNum,
       stepperTitle,
-      hideQuotaText,
       selectedSkuComb
     } = this;
 
@@ -494,7 +505,6 @@ export default createComponent({
         {!this.hideStock && (
           <SkuHeaderItem>
             <span class="van-sku__stock">{this.stockText}</span>
-            {!hideQuotaText && this.quotaText && <span class="van-sku__quota">({this.quotaText})</span>}
           </SkuHeaderItem>
         )}
         {this.hasSku && !this.hideSelectedText && (
@@ -530,6 +540,7 @@ export default createComponent({
         stock={this.stock}
         quota={this.quota}
         quotaUsed={this.quotaUsed}
+        startSaleNum={this.startSaleNum}
         skuEventBus={skuEventBus}
         selectedNum={selectedNum}
         selectedSku={selectedSku}
@@ -537,6 +548,7 @@ export default createComponent({
         skuStockNum={sku.stock_num}
         disableStepperInput={this.disableStepperInput}
         customStepperConfig={this.customStepperConfig}
+        hideQuotaText={this.hideQuotaText}
         onChange={event => {
           this.$emit('stepper-change', event);
         }}

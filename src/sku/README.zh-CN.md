@@ -145,6 +145,7 @@ export default {
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
+| start-sale-num | 起售数量 | *number* | `1` | 2.2.15 |
 
 ### Events
 
@@ -270,10 +271,10 @@ customStepperConfig: {
   quotaText: '每次限购xxx件',
   // 自定义步进器超过限制时的回调
   handleOverLimit: (data) => {
-    const { action, limitType, quota, quotaUsed } = data;
+    const { action, limitType, quota, quotaUsed, startSaleNum } = data;
 
     if (action === 'minus') {
-      Toast('至少选择一件商品');
+      Toast(startSaleNum > 1  ? `${startSaleNum}件起售` : '至少选择一件商品');
     } else if (action === 'plus') {
       // const { LIMIT_TYPE } = Sku.skuConstants;
       if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
