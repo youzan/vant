@@ -15,6 +15,7 @@
 
   &-body {
     flex: 1 1 auto;
+    min-height: 44px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
@@ -61,7 +62,7 @@
 
   &-header-item {
     margin-top: @padding-xs;
-    color: @gray-dark;
+    color: @gray-6;
     font-size: @font-size-sm;
     line-height: 16px;
   }
@@ -177,7 +178,7 @@
       }
 
       &--disabled {
-        color: @gray;
+        color: @gray-5;
         background: @active-color;
 
         .van-sku-row__item-img {
@@ -195,16 +196,26 @@
     }
 
     &-container {
-      height: 30px;
+      min-height: 30px;
       margin-right: 20px;
+      overflow: hidden;
     }
   }
 
   &__stepper {
     float: right;
+    padding-left: @padding-base;
 
     &-title {
       float: left;
+      line-height: 30px;
+    }
+
+    &-quota {
+      display: inline-block;
+      float: right;
+      color: @red;
+      font-size: @font-size-sm;
       line-height: 30px;
     }
   }
@@ -212,18 +223,12 @@
   &__stock {
     display: inline-block;
     margin-right: @padding-xs;
-    color: @gray-dark;
+    color: @gray-6;
     font-size: @font-size-sm;
 
     &-num--highlight {
       color: @red;
     }
-  }
-
-  &__quota {
-    display: inline-block;
-    color: @red;
-    font-size: @font-size-sm;
   }
 
   &-messages {
@@ -333,11 +338,11 @@
       }
 
       &--warning {
-        background: linear-gradient(to right, #ffd01e, #ff8917);
+        background: @gradient-orange;
       }
 
       &--danger {
-        background: linear-gradient(to right, #ff6034, #ee0a24);
+        background: @gradient-red;
       }
     }
   }

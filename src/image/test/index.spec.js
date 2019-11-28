@@ -1,5 +1,5 @@
 
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 import Image from '..';
 
 test('click event', () => {

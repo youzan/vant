@@ -303,6 +303,19 @@ exports[`title prop 1`] = `
 </div>
 `;
 
+exports[`title slot 1`] = `
+<div class="van-dropdown-menu van-hairline--top-bottom">
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title"><div class="van-ellipsis">
+            Custom Title
+          </div></span></div>
+  <div>
+    <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`toggle method 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--active van-dropdown-menu__title--down"><div class="van-ellipsis"></div></span></div>

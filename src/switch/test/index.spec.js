@@ -1,5 +1,5 @@
 import Switch from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('emit event', () => {
   const input = jest.fn();
@@ -71,4 +71,29 @@ test('inactive-color prop', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('size prop', () => {
+  const wrapper = mount(Switch, {
+    propsData: {
+      size: 20
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('click event', () => {
+  const click = jest.fn();
+  const wrapper = mount(Switch, {
+    context: {
+      on: {
+        click
+      }
+    }
+  });
+
+  wrapper.trigger('click');
+
+  expect(click).toHaveBeenCalledTimes(1);
 });

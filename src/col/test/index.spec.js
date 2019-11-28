@@ -1,6 +1,6 @@
 import Col from '..';
 import Row from '../../row';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('Col click event', () => {
   const wrapper = mount(Col);

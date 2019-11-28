@@ -44,7 +44,7 @@ export default createComponent({
       this.$toast(t('oversize', this.maxSize));
     },
 
-    renderUploader(content, disabled = false) {
+    genUploader(content, disabled = false) {
       return (
         <Uploader
           class={bem('uploader')}
@@ -60,7 +60,7 @@ export default createComponent({
       );
     },
 
-    renderMask() {
+    genMask() {
       return (
         <div class={bem('mask')}>
           {this.uploadFail
@@ -80,7 +80,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        {this.value && this.renderUploader(
+        {this.value && this.genUploader(
           [
             <img src={this.value} />,
             <Icon
@@ -94,15 +94,15 @@ export default createComponent({
           true
         )}
 
-        {this.paddingImg && this.renderUploader(
+        {this.paddingImg && this.genUploader(
           [
             <img src={this.paddingImg} />,
-            this.renderMask()
+            this.genMask()
           ],
           !this.uploadFail
         )}
 
-        {!this.value && !this.paddingImg && this.renderUploader(
+        {!this.value && !this.paddingImg && this.genUploader(
           <div class={bem('trigger')}>
             <Icon name="photograph" size="22px" />
           </div>

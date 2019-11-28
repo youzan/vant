@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import docConfig from './doc.config';
 import DemoList from './components/DemoList';
-import DemoPages from './components/DemoPages';
 import { demoWrapper } from './mobile/demo-common';
 import { initIframeRouter } from './utils/iframe-router';
 
@@ -35,9 +34,7 @@ const registerRoute = ({ mobile, componentMap }) => {
         path = path.replace('/', '');
 
         let component;
-        if (path === 'demo') {
-          component = DemoPages;
-        } else if (mobile) {
+        if (mobile) {
           const module = componentMap[`./${path}/demo/index.vue`];
 
           if (module) {
@@ -57,13 +54,13 @@ const registerRoute = ({ mobile, componentMap }) => {
         }
 
         route.push({
-          name: lang + '/' + path,
           component,
+          name: `${lang}/${path}`,
           path: `/${lang}/${path}`,
           meta: {
             lang,
-            path,
-            name: page.title
+            name: path,
+            title: page.title
           }
         });
       }

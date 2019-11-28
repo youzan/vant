@@ -74,9 +74,9 @@ export default createComponent({
     },
 
     updateInnerValue() {
-      const indexes = this.$refs.picker.getIndexes();
-      const hour = this.originColumns[0].values[indexes[0]];
-      const minute = this.originColumns[1].values[indexes[1]];
+      const [hourIndex, minuteIndex] = this.$refs.picker.getIndexes();
+      const hour = this.originColumns[0].values[hourIndex] || this.originColumns[0].values[0];
+      const minute = this.originColumns[1].values[minuteIndex] || this.originColumns[1].values[0];
       const value = `${hour}:${minute}`;
 
       this.innerValue = this.formatValue(value);

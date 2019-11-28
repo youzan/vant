@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Circle from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('speed is 0', async () => {
   const wrapper = mount(Circle, {
@@ -42,6 +42,16 @@ test('size prop', () => {
   const wrapper = mount(Circle, {
     propsData: {
       size: 100
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('stroke-linecap prop', () => {
+  const wrapper = mount(Circle, {
+    propsData: {
+      strokeLinecap: 'square'
     }
   });
 

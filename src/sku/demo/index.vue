@@ -11,6 +11,7 @@
           :hide-stock="skuData.sku.hide_stock"
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
           :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           :custom-sku-validator="customSkuValidator"
@@ -42,6 +43,7 @@
           :hide-stock="skuData.sku.hide_stock"
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
           hide-quota-text
@@ -70,6 +72,7 @@
           :hide-stock="skuData.sku.hide_stock"
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
           :show-soldout-sku="false"
@@ -99,6 +102,7 @@
           :hide-stock="skuData.sku.hide_stock"
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
           show-add-cart-btn
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -126,7 +130,7 @@
                 square
                 size="large"
                 type="danger"
-                @click="props.skuEventBus.$emit('sku:buy')"
+                @click="skuEventBus.$emit('sku:buy')"
               >
                 {{ $t('button2') }}
               </van-button>
@@ -185,10 +189,10 @@ export default {
         quotaText: '单次限购100件',
         stockFormatter: (stock) => `剩余${stock}件`,
         handleOverLimit: (data) => {
-          const { action, limitType, quota } = data;
+          const { action, limitType, quota, startSaleNum = 1 } = data;
 
           if (action === 'minus') {
-            this.$toast('至少选择一件商品');
+            this.$toast(startSaleNum > 1 ? `${startSaleNum}件起售` : '至少选择一件商品');
           } else if (action === 'plus') {
             if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
               this.$toast(`限购${quota}件`);

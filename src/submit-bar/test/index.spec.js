@@ -1,5 +1,5 @@
 import SubmitBar from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('submit event', () => {
   const submit = jest.fn();

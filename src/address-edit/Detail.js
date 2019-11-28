@@ -17,6 +17,12 @@ export default createComponent({
     showSearchResult: Boolean
   },
 
+  computed: {
+    shouldShowSearchResult() {
+      return this.focused && this.searchResult && this.showSearchResult;
+    }
+  },
+
   methods: {
     onSelect(express) {
       this.$emit('select-search', express);
@@ -30,7 +36,7 @@ export default createComponent({
       this.$refs.field.blur();
     },
 
-    renderFinish() {
+    genFinish() {
       const show = this.value && this.focused && android;
       if (show) {
         return (
@@ -41,19 +47,31 @@ export default createComponent({
       }
     },
 
-    renderSearchResult() {
-      const { searchResult } = this;
-      const show = this.focused && searchResult && this.showSearchResult;
-      if (show) {
+    genSearchResult() {
+      const { value, shouldShowSearchResult, searchResult } = this;
+      if (shouldShowSearchResult) {
         return searchResult.map(express => (
           <Cell
             key={express.name + express.address}
-            title={express.name}
-            label={express.address}
-            icon="location-o"
             clickable
+            border={false}
+            icon="location-o"
+            label={express.address}
+            class={bem('search-item')}
             onClick={() => {
               this.onSelect(express);
+            }}
+            scopedSlots={{
+              title: () => {
+                if (express.name) {
+                  const text = express.name.replace(
+                    value,
+                    `<span class=${bem('keyword')}>${value}</span>`
+                  );
+
+                  return <div domPropsInnerHTML={text} />;
+                }
+              }
             }}
           />
         ));
@@ -72,13 +90,14 @@ export default createComponent({
           type="textarea"
           value={this.value}
           error={this.error}
+          border={!this.shouldShowSearchResult}
           label={t('label')}
           maxlength={this.detailMaxlength}
           placeholder={t('placeholder')}
-          scopedSlots={{ icon: this.renderFinish }}
+          scopedSlots={{ icon: this.genFinish }}
           {...{ on: this.$listeners }}
         />
-        {this.renderSearchResult()}
+        {this.genSearchResult()}
       </Cell>
     );
   }

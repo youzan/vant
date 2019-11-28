@@ -1,5 +1,8 @@
+import Vue from 'vue';
 import CountDown from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
+
+Vue.use(CountDown);
 
 test('macro task finish event', async () => {
   const wrapper = mount(CountDown, {
@@ -148,4 +151,44 @@ test('incomplate format prop', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('pause when destroyed', () => {
+  const wrapper = mount(CountDown);
+  expect(wrapper.vm.counting).toBeTruthy();
+  wrapper.destroy();
+  expect(wrapper.vm.counting).toBeFalsy();
+});
+
+test('pause when deactivated', async () => {
+  const wrapper = mount({
+    template: `
+      <keep-alive>
+        <van-count-down v-if="render" ref="countDown" time="100" />
+      </keep-alive>
+    `,
+    data() {
+      return {
+        render: true
+      };
+    },
+    methods: {
+      getCountDown() {
+        return this.$refs.countDown;
+      }
+    }
+  });
+
+  const countDown = wrapper.vm.getCountDown();
+  expect(countDown.counting).toBeTruthy();
+
+  wrapper.setData({ render: false });
+  expect(countDown.counting).toBeFalsy();
+  wrapper.setData({ render: true });
+  expect(countDown.counting).toBeTruthy();
+
+  countDown.pause();
+  wrapper.setData({ render: false });
+  wrapper.setData({ render: true });
+  expect(countDown.counting).toBeFalsy();
 });

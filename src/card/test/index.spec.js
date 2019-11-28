@@ -1,5 +1,5 @@
 import Card from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('click event', () => {
   const onClick = jest.fn();
@@ -65,9 +65,6 @@ test('render origin-price slot', () => {
 
 test('render bottom slot', () => {
   const wrapper = mount(Card, {
-    propsData: {
-      price: 100
-    },
     scopedSlots: {
       bottom: () => 'Custom Bottom'
     }

@@ -1,19 +1,19 @@
+import Vue from 'vue';
 import Swipe from '..';
 import SwipeItem from '../../swipe-item';
-import { mount, triggerDrag, later } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test';
+
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 
 const Component = {
   template: `
-    <swipe ref="swipe" v-bind="$props">
-      <swipe-item :style="style">1</swipe-item>
-      <swipe-item :style="style">2</swipe-item>
-      <swipe-item :style="style">3</swipe-item>
-    </swipe>
+    <van-swipe ref="swipe" v-bind="$props">
+      <van-swipe-item :style="style">1</van-swipe-item>
+      <van-swipe-item :style="style">2</van-swipe-item>
+      <van-swipe-item :style="style">3</van-swipe-item>
+    </van-swipe>
   `,
-  components: {
-    Swipe,
-    SwipeItem
-  },
   props: {
     vertical: Boolean,
     loop: {

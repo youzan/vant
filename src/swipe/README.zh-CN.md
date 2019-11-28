@@ -83,9 +83,9 @@ export default {
 </van-swipe>
 ```
 
-### 控制滑块大小
+### 自定义滑块大小
 
-滑块默认宽度为`100%`，可以通过`width`属性设置滑块的宽度，此属性不能与循环播放同时使用
+滑块默认宽度为`100%`，可以通过`width`属性设置单个滑块的宽度。纵向滚动模式下，可以通过`height`属性设置单个滑块的高度。
 
 ```html
 <van-swipe :loop="false" :width="300">
@@ -95,6 +95,8 @@ export default {
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
 ```
+
+> 目前不支持在循环滚动模式下自定义滑块大小，因此需要将 loop 设置为 false
 
 ### 自定义指示器
 
@@ -137,33 +139,35 @@ export default {
 | autoplay | 自动轮播间隔，单位为 ms | *number* | - | - |
 | duration | 动画时长，单位为 ms | *number* | `500` | - |
 | initial-swipe | 初始位置索引值 | *number* | `0` | - |
+| width | 滑块宽度 | *number* | `auto` | - |
+| height | 滑块高度 | *number* | `auto` | - |
 | loop | 是否开启循环播放 | *boolean* | `true` | - |
 | show-indicators | 是否显示指示器 | *boolean* | `true` | - |
 | indicator-color | 指示器颜色 | *string* | `#1989fa` | - |
 | vertical | 是否为纵向滚动 | *boolean* | `false` | - |
 | touchable | 是否可以通过手势滑动 | *boolean* | `true` | - |
-| width | 滑块宽度 | *number* | `auto` | - |
-| height | 滑块高度 | *number* | `auto` | - |
+| stop-propagation | 是否阻止滑动事件冒泡 | *boolean* | `true` | 2.2.13 |
 
 ### Swipe Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| change | 每一页轮播结束后触发 | index, 当前页的索引 |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| change | 每一页轮播结束后触发 | index, 当前页的索引 | - |
 
 ### SwipeItem Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击时触发 | event: Event |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| click | 点击时触发 | event: Event | - |
 
 ### Swipe 方法
 
-通过 ref 可以获取到 swipe 实例并调用实例方法
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Swipe 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| swipeTo | 滚动到目标位置 | index: 目标位置的索引, options: 选项 | void |
+| 方法名 | 说明 | 参数 | 返回值 | 版本 |
+|------|------|------|------|------|
+| swipeTo | 滚动到目标位置 | index: number, options: Options | void | - |
+| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void | 2.2.14 |
 
 ### swipeTo Options 格式
 
@@ -173,7 +177,7 @@ export default {
 
 ### Swipe Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 轮播内容 |
-| indicator | 自定义指示器 |
+| 名称 | 说明 | 版本 |
+|------|------|------|
+| default | 轮播内容 | - |
+| indicator | 自定义指示器 | - |

@@ -1,5 +1,5 @@
 import NavBar from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('render left & right slot', () => {
   const wrapper = mount(NavBar, {

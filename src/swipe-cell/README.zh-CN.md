@@ -98,6 +98,7 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
+| open | 打开时触发 | { position: 'left' \| 'right' , name: string } |
 
 ### onClose 参数
 
@@ -109,7 +110,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 SwipeCell 实例并调用实例方法
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 SwipeCell 实例并调用实例方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

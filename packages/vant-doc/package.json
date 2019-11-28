@@ -1,6 +1,6 @@
 {
   "name": "@vant/doc",
-  "version": "2.5.7",
+  "version": "2.6.1",
   "description": "vant document template",
   "main": "./lib/index.js",
   "publishConfig": {
@@ -14,5 +14,8 @@
     "release": "npm run build && npm publish"
   },
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-doc"
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-doc",
+  "devDependencies": {
+    "decamelize": "^3.2.0"
+  }
 }

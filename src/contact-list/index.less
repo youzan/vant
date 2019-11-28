@@ -10,7 +10,18 @@
   }
 
   &__item-value {
+    display: flex;
+    align-items: center;
     padding-right: @padding-xl;
+    padding-left: @padding-xs;
+  }
+
+  &__item-tag {
+    flex: none;
+    margin-left: @padding-xs;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.4em;
   }
 
   &__group {
@@ -20,24 +31,22 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  &__name {
-    font-weight: @font-weight-bold;
-    font-size: @font-size-md;
-    line-height: 20px;
-  }
-
   &__edit {
-    position: absolute;
-    top: 50%;
-    right: @padding-md;
     font-size: @contact-list-edit-icon-size;
-    transform: translate(0, -50%);
   }
 
-  &__add {
+  &__bottom {
     position: fixed;
+    right: 0;
     bottom: 0;
     left: 0;
     z-index: @contact-list-add-button-z-index;
+    padding: 5px 16px;
+    background-color: @white;
+  }
+
+  &__add {
+    height: 40px;
+    line-height: 38px;
   }
 }

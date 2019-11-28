@@ -3,6 +3,8 @@ import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
+import Switch from '../switch';
+import Cell from '../cell';
 import { isMobile } from '../utils/validate/mobile';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
@@ -17,6 +19,8 @@ export default createComponent({
     isEdit: Boolean,
     isSaving: Boolean,
     isDeleting: Boolean,
+    showSetDefault: Boolean,
+    setDefaultLabel: String,
     contactInfo: {
       type: Object,
       default: () => ({ ...defaultContact })
@@ -94,34 +98,58 @@ export default createComponent({
 
     return (
       <div class={bem()}>
-        <Field
-          vModel={data.name}
-          clearable
-          maxlength="30"
-          label={t('name')}
-          placeholder={t('nameEmpty')}
-          error={errorInfo.name}
-          onFocus={onFocus('name')}
-        />
-        <Field
-          vModel={data.tel}
-          clearable
-          type="tel"
-          label={t('tel')}
-          placeholder={t('telEmpty')}
-          error={errorInfo.tel}
-          onFocus={onFocus('tel')}
-        />
+        <div class={bem('fields')}>
+          <Field
+            vModel={data.name}
+            clearable
+            maxlength="30"
+            label={t('name')}
+            placeholder={t('nameEmpty')}
+            error={errorInfo.name}
+            onFocus={onFocus('name')}
+          />
+          <Field
+            vModel={data.tel}
+            clearable
+            type="tel"
+            label={t('tel')}
+            placeholder={t('telEmpty')}
+            error={errorInfo.tel}
+            onFocus={onFocus('tel')}
+          />
+        </div>
+        {this.showSetDefault && (
+          <Cell
+            title={this.setDefaultLabel}
+            class={bem('switch-cell')}
+            border={false}
+          >
+            <Switch
+              vModel={data.isDefault}
+              size={24}
+              onChange={event => {
+                this.$emit('change-default', event);
+              }}
+            />
+          </Cell>
+        )}
         <div class={bem('buttons')}>
           <Button
             block
+            round
             type="danger"
             text={t('save')}
             loading={this.isSaving}
             onClick={this.onSave}
           />
           {this.isEdit && (
-            <Button block text={t('delete')} loading={this.isDeleting} onClick={this.onDelete} />
+            <Button
+              block
+              round
+              text={t('delete')}
+              loading={this.isDeleting}
+              onClick={this.onDelete}
+            />
           )}
         </div>
       </div>

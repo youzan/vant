@@ -123,6 +123,8 @@ export default {
 }
 ```
 
+> 注意：使用 get-container 属性的组件不能为根节点
+
 ## API
 
 ### Props
@@ -142,9 +144,9 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
 | closeable | 是否显示关闭图标 | *boolean* | `false` | 2.2.0 |
 | close-icon | 关闭图标名称或图片链接 | *string* | `cross` | 2.2.0 |
-| close-icon-position | 关闭图标位置，可选值为`top-left` `bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
+| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | - |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | - | - |
+| get-container | 指定挂载的节点 | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
 
 ### Events

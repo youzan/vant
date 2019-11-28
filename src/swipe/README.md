@@ -49,7 +49,7 @@ export default {
 }
 ```
 
-### change event
+### Change Event
 
 ```html
 <van-swipe @change="onChange">
@@ -81,7 +81,7 @@ export default {
 </van-swipe>
 ```
 
-### Set Swiper Item Size
+### Set SwipeItem Size
 
 ```html
 <van-swipe :loop="false" :width="300">
@@ -91,6 +91,8 @@ export default {
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
 ```
+
+> It's not supported to set SwipeItem size in the loop mode
 
 ### Custom Indicator
 
@@ -130,44 +132,46 @@ export default {
 |------|------|------|------|------|
 | autoplay | Autoplay interval (ms) | *number* | - | - |
 | duration | Animation duration (ms) | *number* | `500` | - |
-| loop | Whether to enable loop | *boolean* | `true` | - |
-| vertical | Vertical Scrolling | *boolean* | `false` | - |
-| touchable | Whether to allow swipe by touch gesture | *boolean* | `true` | - |
-| show-indicators | Whether to show indicators | *boolean* | `true` | - |
-| indicator-color | Indicator color | *string* | `#1989fa` | - |
 | initial-swipe | Index of initial swipe, start from 0 | *number* | `0` | - |
 | width | Set Swiper Item Width | *number* | `0` | - |
 | height | Set Swiper Item Height | *number* | `0` | - |
+| loop | Whether to enable loop | *boolean* | `true` | - |
+| show-indicators | Whether to show indicators | *boolean* | `true` | - |
+| indicator-color | Indicator color | *string* | `#1989fa` | - |
+| vertical | Whether to be vertical Scrolling | *boolean* | `false` | - |
+| touchable | Whether to allow swipe by touch gesture | *boolean* | `true` | - |
+| stop-propagation | Whether to stop touchmove event propagation | *boolean* | `false` | 2.1.0 |
 
 ### Swipe Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| change | Triggered when current swipe change | index: index of current swipe |
+| Event | Description | Arguments | Version |
+|------|------|------|------|
+| change | Triggered when current swipe change | index: index of current swipe | - |
 
 ### SwipeItem Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | event: Event |
+| Event | Description | Arguments | Version |
+|------|------|------|------|
+| click | Triggered when clicked | event: Event | - |
 
 ### Swipe Methods
 
-Use ref to get swipe instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| swipeTo | Swipe to target index | index: target index, options: Options | void |
+| Name | Description | Attribute | Return value | Version |
+|------|------|------|------|------|
+| swipeTo | Swipe to target index | index: target index, options: Options | void | - |
+| resize | Resize Swipe when container element resized | - | void | 2.2.14 |
 
 ### swipeTo Options
 
 | Name | Description | Type |
-|------|------|------|
+|------|------|------|------|
 | immediate | Whether to skip animation | *boolean* |
 
 ### Swipe Slots
 
-| Name | Description |
-|------|------|
-| default | Content |
-| indicator | Custom indicator |
+| Name | Description | Version |
+|------|------|------|
+| default | Content | - |
+| indicator | Custom indicator | - |

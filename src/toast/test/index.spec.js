@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Toast from '..';
 import ToastVue from '../Toast';
-import { later } from '../../../test/utils';
+import { later } from '../../../test';
 
 test('create a forbidClick toast', async () => {
   const toast = Toast({

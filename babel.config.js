@@ -27,7 +27,7 @@ module.exports = function (api) {
         {
           corejs: false,
           helpers: true,
-          regenerator: false,
+          regenerator: NODE_ENV === 'test',
           useESModules
         }
       ],

@@ -62,13 +62,14 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | title | Toolbar title | *string* | - | - |
 | area-list | Area data | *object* | - | - |
 | columns-num | level of picker | *string \| number* | `3` | - |
-| columns-placeholder | placeholder of columns | *string[]* | `[]` | - |
+| columns-placeholder | placeholder of columns | *string[]* | `[]` | 2.2.5 |
 | item-height | Option height | *number* | `44` | - |
 | loading | Whether to show loading prompt | *boolean* | `false` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
 | is-oversea-code | The method to validate oversea code | *() => boolean* | - | 2.1.4 |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.13` |
 
 ### Events
 
@@ -80,7 +81,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 
 ### Methods
 
-Use ref to get area instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance methods
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|

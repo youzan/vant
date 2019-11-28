@@ -105,7 +105,7 @@ export default createComponent({
 
   methods: {
     onBlur() {
-      this.$emit('blur');
+      this.show && this.$emit('blur');
     },
 
     onClose() {

@@ -1,5 +1,5 @@
 import Progress from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('calc width', async () => {
   const wrapper = mount(Progress, {

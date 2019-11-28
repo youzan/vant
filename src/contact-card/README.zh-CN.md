@@ -159,6 +159,7 @@ export default {
 | v-model | 当前选中联系人的 id | *string \| number* | - | - |
 | list | 联系人列表 | *Contact[]* | `[]` | - |
 | add-text | 新建按钮文案 | *string* | `新建联系人` | - |
+| default-tag-text | 默认联系人标签文案 | *string* | - | - |
 
 ### ContactList Events
 
@@ -177,6 +178,8 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` | - |
 | tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - | - |
+| show-set-default | 是否显示默认联系人栏 | *boolean* | `false` | - |
+| set-default-label | 默认联系人栏文案 | *string* | - | - |
 
 ### ContactEdit Events
 
@@ -192,3 +195,4 @@ export default {
 | id | 每位联系人的唯一标识 | *string \| number* |
 | name | 联系人姓名 | *string* |
 | tel | 联系人手机号 | *string \| number* |
+| isDefault | 是否为默认联系人 | *boolean* |

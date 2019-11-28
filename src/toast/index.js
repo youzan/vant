@@ -5,13 +5,15 @@ import { isObj, isServer } from '../utils';
 const defaultOptions = {
   icon: '',
   type: 'text',
+  // @deprecated
   mask: false,
   value: true,
   message: '',
   className: '',
+  overlay: false,
   onClose: null,
   onOpened: null,
-  duration: 3000,
+  duration: 2000,
   iconPrefix: undefined,
   position: 'middle',
   transition: 'van-fade',
@@ -19,7 +21,8 @@ const defaultOptions = {
   loadingType: undefined,
   getContainer: 'body',
   overlayStyle: null,
-  closeOnClick: false
+  closeOnClick: false,
+  closeOnClickOverlay: false
 };
 
 // default options of specific type
@@ -62,13 +65,12 @@ function createInstance() {
 
 // transform toast options to popup props
 function transformOptions(options) {
-  options = { ...options };
-  options.overlay = options.mask;
-
-  delete options.mask;
-  delete options.duration;
-
-  return options;
+  return {
+    ...options,
+    overlay: options.mask || options.overlay,
+    mask: undefined,
+    duration: undefined
+  };
 }
 
 function Toast(options = {}) {

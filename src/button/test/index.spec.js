@@ -1,4 +1,4 @@
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 import Button from '..';
 
 test('loading size', () => {

@@ -1,4 +1,4 @@
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 import Skeleton from '..';
 
 test('row-width array', () => {

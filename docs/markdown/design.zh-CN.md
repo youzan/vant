@@ -12,6 +12,8 @@
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/docs/assets/design.sketch?raw=true">下载</a>
 
+> 提示：目前 Sketch 中部分组件仍为旧版样式，我们正在梳理新版设计规范，尽请期待！
+
 ### 图标
 
 包含 Sketch 格式的图标库资源。

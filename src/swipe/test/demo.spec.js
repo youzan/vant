@@ -1,17 +1,17 @@
 import Demo from '../demo';
-import demoTest from '../../../test/demo-test';
-import { mockGetBoundingClientRect } from '../../../test/utils';
+import { snapshotDemo } from '../../../test/demo';
+import { mockGetBoundingClientRect } from '../../../test';
 
 let restore;
 
-demoTest(Demo, {
-  hookBeforeTest: () => {
+snapshotDemo(Demo, {
+  beforeTest: () => {
     restore = mockGetBoundingClientRect({
       width: 100,
       height: 100
     });
   },
-  hookAfterTest: () => {
+  afterTest: () => {
     restore();
   }
 });

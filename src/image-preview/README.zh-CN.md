@@ -107,7 +107,7 @@ export default {
 | showIndex | 是否显示页码 | *boolean* | `true` | - |
 | showIndicators | 是否显示轮播指示器 | *boolean* | `false` | - |
 | loop | 是否开启循环播放 | *boolean* | `true` | - |
-| swipeDuration | 动画时长，单位为 ms | *number* | `500` | - |
+| swipeDuration | 动画时长，单位为`ms` | *number* | `500` | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | *Function* | - | 2.0.3 |
 | asyncClose | 是否开启异步关闭 | *boolean* | `false` | - |

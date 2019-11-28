@@ -1,4 +1,4 @@
-import { mount, mockScrollTop } from '../../../test/utils';
+import { mount, mockScrollTop } from '../../../test';
 import Vue from 'vue';
 import Sticky from '..';
 

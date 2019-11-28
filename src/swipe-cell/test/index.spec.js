@@ -1,5 +1,10 @@
 import SwipeCell from '..';
-import { mount, triggerDrag, later, mockGetBoundingClientRect } from '../../../test/utils';
+import {
+  mount,
+  triggerDrag,
+  later,
+  mockGetBoundingClientRect
+} from '../../../test';
 
 const THRESHOLD = 0.15;
 const defaultProps = {
@@ -54,7 +59,7 @@ it('on-close prop', () => {
   wrapper.trigger('click');
   expect(position).toEqual(undefined);
 
-  wrapper.setData({ offset: 100 });
+  wrapper.vm.open('left');
   wrapper.trigger('click');
   expect(position).toEqual('cell');
 
@@ -92,7 +97,7 @@ it('name prop', done => {
 it('should reset after drag', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
-  triggerDrag(wrapper, (defaultProps.leftWidth * THRESHOLD - 1), 0);
+  triggerDrag(wrapper, defaultProps.leftWidth * THRESHOLD - 1, 0);
   expect(wrapper.vm.offset).toEqual(0);
 });
 
@@ -100,7 +105,7 @@ it('disabled prop', () => {
   const wrapper = mount(SwipeCell, {
     propsData: {
       ...defaultProps.propsData,
-      disabled: true,
+      disabled: true
     }
   });
 
@@ -140,4 +145,24 @@ it('render one side', async () => {
   expect(wrapper).toMatchSnapshot();
 
   restoreMock();
+});
+
+it('trigger open event when open left side', () => {
+  const wrapper = mount(SwipeCell, defaultProps);
+
+  triggerDrag(wrapper, 50, 0);
+  expect(wrapper.emitted('open')[0][0]).toEqual({
+    detail: '',
+    position: 'left'
+  });
+});
+
+it('trigger open event when open right side', () => {
+  const wrapper = mount(SwipeCell, defaultProps);
+
+  triggerDrag(wrapper, -50, 0);
+  expect(wrapper.emitted('open')[0][0]).toEqual({
+    detail: '',
+    position: 'right'
+  });
 });

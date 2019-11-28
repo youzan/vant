@@ -26,6 +26,7 @@ export type ActionSheetProps = PopupMixinProps & {
   title?: string;
   actions?: ActionSheetItem[];
   duration: number;
+  closeIcon: string;
   cancelText?: string;
   description?: string;
   closeOnClickAction?: boolean;
@@ -52,7 +53,7 @@ function ActionSheet(
       return (
         <div class={[bem('header'), BORDER_BOTTOM]}>
           {title}
-          <Icon name="close" class={bem('close')} onClick={onCancel} />
+          <Icon name={props.closeIcon} class={bem('close')} onClick={onCancel} />
         </div>
       );
     }
@@ -157,6 +158,10 @@ ActionSheet.props = {
   round: {
     type: Boolean,
     default: true
+  },
+  closeIcon: {
+    type: String,
+    default: 'close'
   },
   safeAreaInsetBottom: {
     type: Boolean,

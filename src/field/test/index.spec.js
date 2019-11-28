@@ -1,5 +1,5 @@
 import Field from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later } from '../../../test';
 
 test('input event', () => {
   const wrapper = mount(Field);

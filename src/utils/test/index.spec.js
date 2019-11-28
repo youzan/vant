@@ -2,7 +2,7 @@ import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
 import { isDef, get } from '..';
 import { raf, cancelRaf } from '../dom/raf';
-import { later } from '../../../test/utils';
+import { later } from '../../../test';
 import { isEmail } from '../validate/email';
 import { isMobile } from '../validate/mobile';
 import { isNumber } from '../validate/number';

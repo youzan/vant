@@ -1,5 +1,5 @@
 import NoticeBar from '..';
-import { mount } from '../../../test/utils';
+import { mount } from '../../../test';
 
 test('click event', () => {
   const wrapper = mount(NoticeBar);

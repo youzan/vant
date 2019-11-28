@@ -159,6 +159,7 @@ export default {
 | overlay-style | Custom overlay style | *object* | - | 2.2.7 |
 | close-on-popstate | Whether to close when popstate | *boolean* | `false` | 2.0.5 |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `false` | - |
+| lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | 2.2.6 |
