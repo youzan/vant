@@ -1,5 +1,13 @@
 # Changelog
 
+### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
+`2019-11-28`
+
+**Bug Fixes**
+
+- fix List incorrect list status in some cases
+
+
 ### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
 `2019-11-22`
 
