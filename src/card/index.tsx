@@ -149,7 +149,7 @@ function Card(
 
   function Num() {
     if (showNum) {
-      return <div class={bem('num')}>{slots.num ? slots.num() : `x ${props.num}`}</div>;
+      return <div class={bem('num')}>{slots.num ? slots.num() : `x${props.num}`}</div>;
     }
   }
 
