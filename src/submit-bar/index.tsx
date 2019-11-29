@@ -43,7 +43,7 @@ function SubmitBar(
       const priceArr = (price / 100).toFixed(props.decimalLength).split('.');
       return (
         <div style={{ textAlign: props.textAlign ? props.textAlign : '' }} class={bem('text')}>
-          <span>{props.label || t('label')}</span>
+          <span class={bem('text-label')}>{props.label || t('label')}</span>
           <span class={bem('price')}>
             {props.currency}
             <span class={bem('price', 'integer')}>{priceArr[0]}</span>.{priceArr[1]}
