@@ -88,4 +88,12 @@ export function getWebpackConfig(): object {
   return {};
 }
 
+export function setModuleEnv(value: 'esmodule' | 'commonjs') {
+  process.env.BABEL_MODULE = value;
+}
+
+export function setNodeEnv(value: 'production' | 'development') {
+  process.env.NODE_ENV = value;
+}
+
 export { decamelize };

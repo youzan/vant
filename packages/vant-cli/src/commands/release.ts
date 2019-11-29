@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
-import { build } from './build';
 // @ts-ignore
 import releaseIt from 'release-it';
+import { build } from './build';
 
 export async function release() {
   await build();

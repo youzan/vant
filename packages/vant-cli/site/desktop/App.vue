@@ -16,9 +16,10 @@ export default {
   },
 
   data() {
+    const publicPath = (config.site && config.site.publicPath) || '/';
     return {
       config: config.site,
-      simulator: `mobile.html${location.hash}`
+      simulator: `${publicPath}mobile.html${location.hash}`
     };
   }
 };

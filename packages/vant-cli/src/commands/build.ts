@@ -1,12 +1,11 @@
-import webpack from 'webpack';
 import { start, error, success } from 'signale';
-import { packageConfig } from '../config/webpack.package';
 import { join } from 'path';
 import { clean } from './clean';
 import { remove, copy, readdirSync } from 'fs-extra';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
+import { compilePackage } from '../compiler/compile-package';
 import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
@@ -14,10 +13,12 @@ import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
 import {
   isDir,
   isSfc,
+  isStyle,
+  isScript,
   isDemoDir,
   isTestDir,
-  isScript,
-  isStyle
+  setNodeEnv,
+  setModuleEnv
 } from '../common';
 
 async function compileDir(dir: string) {
@@ -50,22 +51,6 @@ async function compileDir(dir: string) {
       return remove(filePath);
     })
   );
-}
-
-function setModuleEnv(value: string) {
-  process.env.BABEL_MODULE = value;
-}
-
-function buildPackage(isMinify: boolean) {
-  return new Promise((resolve, reject) => {
-    webpack(packageConfig(isMinify), (err, stats) => {
-      if (err || stats.hasErrors()) {
-        reject();
-      } else {
-        resolve();
-      }
-    });
-  });
 }
 
 export async function buildESModuleOutputs() {
@@ -113,8 +98,8 @@ export async function buildPackedOutputs() {
 
   try {
     genPackageEntry();
-    await buildPackage(false);
-    await buildPackage(true);
+    await compilePackage(false);
+    await compilePackage(true);
     success('Build packed outputs');
   } catch (err) {
     error('Build packed outputs');
@@ -122,6 +107,7 @@ export async function buildPackedOutputs() {
 }
 
 export async function build() {
+  setNodeEnv('production');
   await clean();
   await buildESModuleOutputs();
   await buildCommonjsOutputs();
