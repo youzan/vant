@@ -61,52 +61,53 @@ function analyzeDeps(component: string) {
 
 type DepsMap = Record<string, string[]>;
 
-function sortComponentsByDeps(depsMap: DepsMap) {
-  const result: string[] = [];
-  const record: string[] = [];
+function getSequence(depsMap: DepsMap) {
+  const sequence: string[] = [];
+  const record = new Set();
 
   function add(item: string) {
     const deps = depsMap[item];
 
-    if (result.includes(item) || !deps) {
+    if (sequence.includes(item) || !deps) {
       return;
     }
 
-    if (record.includes(item)) {
-      result.push(item);
+    if (record.has(item)) {
+      sequence.push(item);
       return;
     }
 
-    record.push(item);
+    record.add(item);
 
     if (!deps.length) {
-      result.push(item);
+      sequence.push(item);
       return;
     }
 
     deps.forEach(add);
 
-    if (result.includes(item)) {
+    if (sequence.includes(item)) {
       return;
     }
 
-    const maxIndex = Math.max(...deps.map(dep => result.indexOf(dep)));
+    const maxIndex = Math.max(...deps.map(dep => sequence.indexOf(dep)));
 
-    result.splice(maxIndex + 1, 0, item);
+    sequence.splice(maxIndex + 1, 0, item);
   }
 
   components.forEach(add);
 
-  return result;
+  return sequence;
 }
 
-export function genDepsMap() {
-  const map = components.filter(checkStyleExists).reduce((map, component) => {
-    map[component] = analyzeDeps(component);
-    return map;
-  }, {} as DepsMap);
+export function genStyleDepsMap() {
+  const map = {} as DepsMap;
 
-  const sequence = sortComponentsByDeps(map);
+  components.filter(checkStyleExists).forEach(component => {
+    map[component] = analyzeDeps(component);
+  });
+
+  const sequence = getSequence(map);
 
   Object.keys(map).forEach(key => {
     map[key] = map[key].sort(

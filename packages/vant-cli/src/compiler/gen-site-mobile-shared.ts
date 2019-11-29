@@ -61,7 +61,7 @@ function genCode(components: string[]) {
   )}\n${genConfig(demos)}\n`;
 }
 
-export function genMobileEntry() {
+export function genSiteMobileShared() {
   const components = getComponents();
   const code = genCode(components);
 

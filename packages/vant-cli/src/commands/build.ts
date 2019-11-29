@@ -7,8 +7,9 @@ import { remove, copy, readdirSync } from 'fs-extra';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
-import { genStyleEntry } from '../compiler/gen-style-entry';
 import { genPackageEntry } from '../compiler/gen-package-entry';
+import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
+import { genComponentStyle } from '../compiler/gen-component-style';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
 import {
   isDir,
@@ -99,7 +100,8 @@ export async function buildStyleEntry() {
   start('Build style entry');
 
   try {
-    genStyleEntry();
+    genStyleDepsMap();
+    genComponentStyle();
     success('Build style entry');
   } catch (err) {
     error('Build style entry');

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { config } from 'mobile-entry';
+import { config } from 'site-mobile-shared';
 import DemoHomeNav from './DemoHomeNav';
 
 export default {

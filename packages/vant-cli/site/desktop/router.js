@@ -1,5 +1,5 @@
 import decamelize from 'decamelize';
-import { documents } from 'desktop-entry';
+import { documents } from 'site-desktop-shared';
 
 const routes = [];
 const names = Object.keys(documents);

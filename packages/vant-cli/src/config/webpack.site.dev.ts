@@ -23,8 +23,8 @@ export const siteDevConfig = merge(
     },
     resolve: {
       alias: {
-        'mobile-entry': MOBILE_ENTRY_FILE,
-        'desktop-entry': DESKTOP_ENTRY_FILE
+        'site-mobile-shared': MOBILE_ENTRY_FILE,
+        'site-desktop-shared': DESKTOP_ENTRY_FILE
       }
     },
     output: {

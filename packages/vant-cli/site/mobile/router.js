@@ -1,6 +1,6 @@
 import decamelize from 'decamelize';
 import DemoHome from './components/DemoHome';
-import { demos } from 'mobile-entry';
+import { demos } from 'site-mobile-shared';
 
 const routes = [];
 const names = Object.keys(demos);

@@ -9,21 +9,22 @@ import {
   STYPE_DEPS_JSON_FILE
 } from '../common/constant';
 
-// eslint-disable-next-line
-const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
-
-function getStyleExt(): string {
+export function getStyleExt(): string {
   const preprocessor = get(CONFIG, 'build.css.preprocessor', 'less');
 
   if (preprocessor === 'sass') {
-    return '.scss';
+    return 'scss';
   }
 
-  return `.${preprocessor}`;
+  return preprocessor;
 }
 
 export function genPacakgeStyle() {
-  const ext = getStyleExt();
+  // eslint-disable-next-line
+  const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
+
+  const ext = '.' + getStyleExt();
+
   const content = styleDepsJson.sequence
     .map((name: string) => `@import "${join(SRC_DIR, `${name}/index${ext}`)}";`)
     .join('\n');

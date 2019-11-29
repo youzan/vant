@@ -53,7 +53,7 @@ function genExportConfig() {
   return 'export { config };';
 }
 
-export function genDesktopEntry() {
+export function genSiteDesktopShared() {
   const components = getComponents();
   const documents = resolveDocuments(components);
 

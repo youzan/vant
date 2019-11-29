@@ -8,7 +8,7 @@
 
 <script>
 import VanDoc from './components';
-import { config } from 'desktop-entry';
+import { config } from 'site-desktop-shared';
 
 export default {
   components: {
