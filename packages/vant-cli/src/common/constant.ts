@@ -27,3 +27,5 @@ export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
 
 // eslint-disable-next-line
 export const CONFIG = require(CONFIG_FILE);
+// eslint-disable-next-line
+export const PACKAGE_JSON = require(PACKAGE_JSON_FILE);

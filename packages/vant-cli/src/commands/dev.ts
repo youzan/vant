@@ -5,6 +5,7 @@ import { clean } from '../commands/clean';
 import { buildESModuleOutputs } from './build';
 import { siteDevConfig } from '../config/webpack.site.dev';
 import { genPackageEntry } from '../compiler/gen-package-entry';
+import { genPacakgeStyle } from '../compiler/gen-package-style';
 import { genMobileEntry } from '../compiler/gen-mobile-entry';
 import { genDesktopEntry } from '../compiler/gen-desktop-entry';
 import { genDepsMap } from '../compiler/gen-style-deps-map';
@@ -39,6 +40,7 @@ export async function dev() {
   await buildESModuleOutputs();
   genDepsMap();
   genPackageEntry();
+  genPacakgeStyle();
   genMobileEntry();
   genDesktopEntry();
   runWebpack();

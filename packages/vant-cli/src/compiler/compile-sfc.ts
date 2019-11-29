@@ -84,7 +84,7 @@ export async function compileSfc(filePath: string) {
     }
 
     writeFileSync(jsFilePath, script);
-    await compileJs(jsFilePath);
+    compileJs(jsFilePath);
   }
 
   // compile style part
