@@ -1,11 +1,10 @@
 import glob from 'fast-glob';
-import { join, parse, relative } from 'path';
+import { join, parse } from 'path';
 import { existsSync, writeFileSync } from 'fs-extra';
 import { pascalize, removeExt, getComponents } from '../common';
 import {
   SRC_DIR,
   DOCS_DIR,
-  DIST_DIR,
   CONFIG_FILE,
   DESKTOP_ENTRY_FILE
 } from '../common/constant';
@@ -36,10 +35,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map(item => {
-      const relativePath = relative(DIST_DIR, item.path);
-      return `import ${item.name} from '${relativePath}';`;
-    })
+    .map(item => `import ${item.name} from '${item.path}';`)
     .join('\n');
 }
 
@@ -50,8 +46,7 @@ function genExportDocuments(items: DocumentItem[]) {
 }
 
 function genImportConfig() {
-  const configRelative = relative(DIST_DIR, CONFIG_FILE);
-  return `import config from '${removeExt(configRelative)}';`;
+  return `import config from '${removeExt(CONFIG_FILE)}';`;
 }
 
 function genExportConfig() {

@@ -1,4 +1,4 @@
-import { join, relative } from 'path';
+import { join } from 'path';
 import { existsSync, ensureDirSync, writeFileSync } from 'fs-extra';
 import { decamelize, pascalize, removeExt, getComponents } from '../common';
 import {
@@ -16,6 +16,7 @@ type DemoItem = {
 function genInstall() {
   return `import Vue from 'vue';
 import PackageEntry from './package-entry';
+import './package-style';
 
 Vue.use(PackageEntry);
 `;
@@ -23,10 +24,7 @@ Vue.use(PackageEntry);
 
 function genImports(demos: DemoItem[]) {
   return demos
-    .map(item => {
-      const relativePath = relative(DIST_DIR, item.path);
-      return `import ${item.name} from '${removeExt(relativePath)}';`;
-    })
+    .map(item => `import ${item.name} from '${removeExt(item.path)}';`)
     .join('\n');
 }
 
@@ -41,7 +39,9 @@ function genConfig(demos: DemoItem[]) {
   const demoNames = demos.map(item => decamelize(item.name, '-'));
 
   CONFIG.site.nav = CONFIG.site.nav.filter((group: any) => {
-    group.items = group.items.filter((item: any) => (demoNames.includes(item.path)));
+    group.items = group.items.filter((item: any) =>
+      demoNames.includes(item.path)
+    );
     return group.items.length;
   });
 
@@ -56,7 +56,9 @@ function genCode(components: string[]) {
     }))
     .filter(item => existsSync(item.path));
 
-  return `${genInstall()}\n${genImports(demos)}\n\n${genExports(demos)}\n${genConfig(demos)}\n`;
+  return `${genInstall()}\n${genImports(demos)}\n\n${genExports(
+    demos
+  )}\n${genConfig(demos)}\n`;
 }
 
 export function genMobileEntry() {

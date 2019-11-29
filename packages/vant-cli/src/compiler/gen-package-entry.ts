@@ -1,11 +1,10 @@
 import { get } from 'lodash';
-import { join, relative } from 'path';
+import { join } from 'path';
 import { writeFileSync } from 'fs-extra';
 import { pascalize, getComponents, replaceExt } from '../common';
 import {
   CONFIG,
   SRC_DIR,
-  DIST_DIR,
   PACKAGE_JSON_FILE,
   PACKAGE_ENTRY_FILE,
   PACKAGE_STYLE_FILE,
@@ -20,10 +19,7 @@ const version = process.env.PACKAGE_VERSION || packageJson.version;
 
 function genImports(components: string[]): string {
   return components
-    .map(name => {
-      const relativePath = relative(DIST_DIR, join(SRC_DIR, name));
-      return `import ${pascalize(name)} from '${relativePath}';`;
-    })
+    .map(name => `import ${pascalize(name)} from '${join(SRC_DIR, name)}';`)
     .join('\n');
 }
 
@@ -44,7 +40,7 @@ function getStyleExt(): string {
 function genStyleEntry() {
   const ext = getStyleExt();
   const content = styleDepsJson.sequence
-    .map((item: string) => `@import "./${item}/index${ext}";`)
+    .map((name: string) => `@import "${join(SRC_DIR, `${name}/index${ext}`)}";`)
     .join('\n');
 
   writeFileSync(replaceExt(PACKAGE_STYLE_FILE, ext), content);
