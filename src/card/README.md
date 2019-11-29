@@ -45,7 +45,7 @@ Use slot to custom content.
 <van-card
   num="2"
   title="Title"
-  desc="Description"  
+  desc="Description"
   price="2.00"
   thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 >
@@ -94,6 +94,7 @@ Use slot to custom content.
 | num | Custom num |
 | price | Custom price |
 | origin-price | Custom origin price |
+| price-top | Custom price top |
 | bottom | Custom price bottom |
 | thumb | Custom thumb |
 | tag | Custom thumb tag |
