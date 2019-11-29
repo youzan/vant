@@ -5,7 +5,7 @@ import {
   CONFIG,
   SRC_DIR,
   DIST_DIR,
-  MOBILE_ENTRY_FILE
+  SITE_MODILE_SHARED_FILE
 } from '../common/constant';
 
 type DemoItem = {
@@ -35,7 +35,6 @@ function genExports(demos: DemoItem[]) {
 }
 
 function genConfig(demos: DemoItem[]) {
-  // eslint-disable-next-line
   const demoNames = demos.map(item => decamelize(item.name, '-'));
 
   CONFIG.site.nav = CONFIG.site.nav.filter((group: any) => {
@@ -66,5 +65,5 @@ export function genSiteMobileShared() {
   const code = genCode(components);
 
   ensureDirSync(DIST_DIR);
-  writeFileSync(MOBILE_ENTRY_FILE, code);
+  writeFileSync(SITE_MODILE_SHARED_FILE, code);
 }

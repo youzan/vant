@@ -5,6 +5,7 @@ export const ES_DIR = join(CWD, 'es');
 export const LIB_DIR = join(CWD, 'lib');
 export const SRC_DIR = join(CWD, 'src');
 export const DOCS_DIR = join(CWD, 'docs');
+export const SITE_DIST_DIR = join(CWD, 'site');
 export const CONFIG_FILE = join(CWD, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(CWD, 'package.json');
 export const WEBPACK_CONFIG_FILE = join(CWD, 'webpack.config.js');
@@ -14,8 +15,8 @@ export const CONFIG_DIR = join(__dirname, '../config');
 
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
 export const PACKAGE_STYLE_FILE = join(DIST_DIR, 'package-style.css');
-export const MOBILE_ENTRY_FILE = join(DIST_DIR, 'site-mobile-shared.js');
-export const DESKTOP_ENTRY_FILE = join(DIST_DIR, 'site-desktop-shared.js');
+export const SITE_MODILE_SHARED_FILE = join(DIST_DIR, 'site-mobile-shared.js');
+export const SITE_DESKTOP_SHARED_FILE = join(DIST_DIR, 'site-desktop-shared.js');
 export const STYPE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 
 export const JEST_CONFIG_FILE = join(CONFIG_DIR, 'jest.config.js');
@@ -28,7 +29,5 @@ export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
 export const SCRIPT_EXTS = ['.js', '.jsx', '.vue', '.ts', '.tsx'];
 export const STYLE_EXTS = ['.css', '.less', '.scss'];
 
-// eslint-disable-next-line
 export const CONFIG = require(CONFIG_FILE);
-// eslint-disable-next-line
 export const PACKAGE_JSON = require(PACKAGE_JSON_FILE);

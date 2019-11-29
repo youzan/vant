@@ -20,7 +20,6 @@ export function getStyleExt(): string {
 }
 
 export function genPacakgeStyle() {
-  // eslint-disable-next-line
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
 
   const ext = '.' + getStyleExt();

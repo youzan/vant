@@ -9,7 +9,6 @@ import { getStyleExt } from './gen-package-style';
 import { ES_DIR, LIB_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 function getDeps(component: string): string[] {
-  // eslint-disable-next-line
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
 
   if (styleDepsJson.map[component]) {

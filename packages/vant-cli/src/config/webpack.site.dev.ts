@@ -2,8 +2,12 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
-import { CONFIG, MOBILE_ENTRY_FILE, DESKTOP_ENTRY_FILE } from '../common/constant';
 import { getWebpackConfig } from '../common';
+import {
+  CONFIG,
+  SITE_MODILE_SHARED_FILE,
+  SITE_DESKTOP_SHARED_FILE
+} from '../common/constant';
 
 const siteConfig = CONFIG.site;
 const title = `${siteConfig.title} - ${siteConfig.description}`;
@@ -23,8 +27,8 @@ export const siteDevConfig = merge(
     },
     resolve: {
       alias: {
-        'site-mobile-shared': MOBILE_ENTRY_FILE,
-        'site-desktop-shared': DESKTOP_ENTRY_FILE
+        'site-mobile-shared': SITE_MODILE_SHARED_FILE,
+        'site-desktop-shared': SITE_DESKTOP_SHARED_FILE
       }
     },
     output: {

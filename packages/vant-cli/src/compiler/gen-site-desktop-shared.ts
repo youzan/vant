@@ -6,7 +6,7 @@ import {
   SRC_DIR,
   DOCS_DIR,
   CONFIG_FILE,
-  DESKTOP_ENTRY_FILE
+  SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
 
 type DocumentItem = {
@@ -64,5 +64,5 @@ ${genExportConfig()}
 ${genExportDocuments(documents)}
 `;
 
-  writeFileSync(DESKTOP_ENTRY_FILE, code);
+  writeFileSync(SITE_DESKTOP_SHARED_FILE, code);
 }

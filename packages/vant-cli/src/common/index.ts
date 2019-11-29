@@ -76,7 +76,6 @@ export function pascalize(str: string): string {
 
 export function getWebpackConfig(): object {
   if (existsSync(WEBPACK_CONFIG_FILE)) {
-    // eslint-disable-next-line
     const config = require(WEBPACK_CONFIG_FILE);
 
     if (typeof config === 'function') {
