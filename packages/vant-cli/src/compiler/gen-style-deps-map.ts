@@ -2,38 +2,17 @@
  * Build style entry of all components
  */
 
-import { join } from 'path';
-import { existsSync, writeFileSync } from 'fs-extra';
-import { getComponents } from '../common';
-import { ES_DIR, STYPE_DEPS_MAP_FILE } from '../common/constant';
 import dependencyTree from 'dependency-tree';
+import { join } from 'path';
+import { existsSync, writeFileSync } from 'fs';
+import { getComponents } from '../common';
+import { ES_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 interface DependencyObj {
   [k: string]: DependencyObj;
 }
 
 const components = getComponents();
-const STYLE_EXTS = ['.css', '.less', '.scss'];
-const JS_EXTS = ['.js', '.jsx', '.ts', '.tsx', '.vue'];
-
-function getStylePath(component: string, ext = '.css'): string {
-  return join(ES_DIR, `${component}/index${ext}`);
-}
-
-function checkStyleExists(component: string): boolean {
-  return STYLE_EXTS.some(ext => existsSync(getStylePath(component, ext)));
-}
-
-function getScriptPath(component: string): string {
-  for (let i = 0; i < JS_EXTS.length; i++) {
-    const path = join(ES_DIR, component, `index${JS_EXTS[i]}`);
-    if (existsSync(path)) {
-      return path;
-    }
-  }
-
-  return '';
-}
 
 function matchPath(path: string, component: string): boolean {
   return path
@@ -55,42 +34,88 @@ function search(tree: DependencyObj, component: string, checkList: string[]) {
   });
 }
 
+function getStylePath(component: string) {
+  return join(ES_DIR, `${component}/index.css`);
+}
+
+function checkStyleExists(component: string) {
+  return existsSync(getStylePath(component));
+}
+
 // analyze component dependencies
 function analyzeDeps(component: string) {
   const checkList: string[] = [];
-  const filename = getScriptPath(component);
-
-  if (!filename) {
-    return [];
-  }
 
   search(
     dependencyTree({
-      filename,
       directory: ES_DIR,
-      filter: path => !~path.indexOf('node_modules'),
-      detective: {
-        es6: {
-          mixedImports: true
-        }
-      }
+      filename: join(ES_DIR, component, 'index.js'),
+      filter: path => !~path.indexOf('node_modules')
     }),
     component,
     checkList
   );
 
-  checkList.push(component);
-
   return checkList.filter(checkStyleExists);
 }
 
-export function genStyleDepsMap() {
-  const map = components.reduce((map, component) => {
+type DepsMap = Record<string, string[]>;
+
+function sortComponentsByDeps(depsMap: DepsMap) {
+  const result: string[] = [];
+  const record: string[] = [];
+
+  function add(item: string) {
+    const deps = depsMap[item];
+
+    if (result.includes(item) || !deps) {
+      return;
+    }
+
+    if (record.includes(item)) {
+      result.push(item);
+      return;
+    }
+
+    record.push(item);
+
+    if (!deps.length) {
+      result.push(item);
+      return;
+    }
+
+    deps.forEach(add);
+
+    if (result.includes(item)) {
+      return;
+    }
+
+    const maxIndex = Math.max(...deps.map(dep => result.indexOf(dep)));
+
+    result.splice(maxIndex + 1, 0, item);
+  }
+
+  components.forEach(add);
+
+  return result;
+}
+
+export function genDepsMap() {
+  const map = components.filter(checkStyleExists).reduce((map, component) => {
     map[component] = analyzeDeps(component);
     return map;
-  }, {} as Record<string, string[]>);
+  }, {} as DepsMap);
 
-  const content = JSON.stringify(map, null, 2);
+  const sequence = sortComponentsByDeps(map);
 
-  writeFileSync(STYPE_DEPS_MAP_FILE, content);
+  Object.keys(map).forEach(key => {
+    map[key] = map[key].sort(
+      (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
+    );
+  });
+
+  writeFileSync(
+    STYPE_DEPS_JSON_FILE,
+    JSON.stringify({ map, sequence }, null, 2)
+  );
 }
