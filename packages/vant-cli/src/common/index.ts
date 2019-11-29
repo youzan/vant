@@ -1,5 +1,5 @@
 import decamelize from 'decamelize';
-import { readdirSync, existsSync, lstatSync } from 'fs-extra';
+import { readdirSync, existsSync, lstatSync, readFileSync } from 'fs-extra';
 import { join } from 'path';
 import { SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
 
@@ -25,7 +25,14 @@ export function getComponents() {
   return dirs
     .filter(dir => !EXCLUDES.includes(dir))
     .filter(dir =>
-      ENTRY_EXTS.some(ext => existsSync(join(SRC_DIR, dir, `index.${ext}`)))
+      ENTRY_EXTS.some(ext => {
+        const path = join(SRC_DIR, dir, `index.${ext}`);
+        if (existsSync(path)) {
+          return readFileSync(path, 'utf-8').indexOf('export default') !== -1;
+        }
+
+        return false;
+      })
     );
 }
 
