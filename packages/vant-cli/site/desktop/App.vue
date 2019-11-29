@@ -16,7 +16,8 @@ export default {
   },
 
   data() {
-    const publicPath = (config.site && config.site.publicPath) || '/';
+    const { site } = config.build || {};
+    const publicPath = (site && site.publicPath) || '/';
     return {
       config: config.site,
       simulator: `${publicPath}mobile.html${location.hash}`
