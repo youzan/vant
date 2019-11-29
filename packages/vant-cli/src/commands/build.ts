@@ -67,13 +67,11 @@ function buildPackage(isMinify: boolean) {
   });
 }
 
-export async function build() {
-  clean();
-
+export async function buildESModuleOutputs() {
   await copy(SRC_DIR, ES_DIR);
-  await copy(SRC_DIR, LIB_DIR);
 
   start('Build esmodule outputs');
+
   try {
     setModuleEnv('esmodule');
     await compileDir(ES_DIR);
@@ -81,8 +79,13 @@ export async function build() {
   } catch (err) {
     error('Build esmodule outputs');
   }
+}
+
+export async function buildCommonjsOutputs() {
+  await copy(SRC_DIR, LIB_DIR);
 
   start('Build commonjs outputs');
+
   try {
     setModuleEnv('commonjs');
     await compileDir(LIB_DIR);
@@ -90,16 +93,22 @@ export async function build() {
   } catch (err) {
     error('Build commonjs outputs');
   }
+}
 
+export async function buildStyleEntry() {
   start('Build style entry');
+
   try {
     genStyleEntry();
     success('Build style entry');
   } catch (err) {
     error('Build style entry');
   }
+}
 
+export async function buildPackedOutputs() {
   start('Build packed outputs');
+
   try {
     genPackageEntry();
     await buildPackage(false);
@@ -108,4 +117,12 @@ export async function build() {
   } catch (err) {
     error('Build packed outputs');
   }
+}
+
+export async function build() {
+  await clean();
+  await buildESModuleOutputs();
+  await buildCommonjsOutputs();
+  await buildStyleEntry();
+  await buildPackedOutputs();
 }
