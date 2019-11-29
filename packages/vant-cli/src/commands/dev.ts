@@ -1,4 +1,3 @@
-
 import { clean } from '../commands/clean';
 import { setNodeEnv } from '../common';
 import { compileSite } from '../compiler/compile-site';
