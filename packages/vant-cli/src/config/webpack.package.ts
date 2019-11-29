@@ -1,11 +1,9 @@
 import merge from 'webpack-merge';
 import { baseConfig } from './webpack.base';
 import { getWebpackConfig } from '../common';
-import { LIB_DIR, CONFIG_FILE, PACKAGE_ENTRY_FILE } from '../common/constant';
+import { LIB_DIR, CONFIG, PACKAGE_ENTRY_FILE } from '../common/constant';
 
-// eslint-disable-next-line
-const config = require(CONFIG_FILE);
-const { name } = config;
+const { name } = CONFIG;
 
 export function packageConfig(isMinify: boolean) {
   return merge(

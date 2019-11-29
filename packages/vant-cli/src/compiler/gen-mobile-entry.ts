@@ -2,10 +2,10 @@ import { join, relative } from 'path';
 import { existsSync, ensureDirSync, writeFileSync } from 'fs-extra';
 import { decamelize, pascalize, removeExt, getComponents } from '../common';
 import {
+  CONFIG,
   SRC_DIR,
   DIST_DIR,
-  MOBILE_ENTRY_FILE,
-  CONFIG_FILE
+  MOBILE_ENTRY_FILE
 } from '../common/constant';
 
 type DemoItem = {
@@ -38,15 +38,14 @@ function genExports(demos: DemoItem[]) {
 
 function genConfig(demos: DemoItem[]) {
   // eslint-disable-next-line
-  const config = require(CONFIG_FILE);
   const demoNames = demos.map(item => decamelize(item.name, '-'));
 
-  config.nav = config.nav.filter((group: any) => {
+  CONFIG.site.nav = CONFIG.site.nav.filter((group: any) => {
     group.items = group.items.filter((item: any) => (demoNames.includes(item.path)));
     return group.items.length;
   });
 
-  return `export const config = ${JSON.stringify(config, null, 2)}`;
+  return `export const config = ${JSON.stringify(CONFIG, null, 2)}`;
 }
 
 function genCode(components: string[]) {

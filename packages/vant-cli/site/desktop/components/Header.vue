@@ -10,9 +10,9 @@
         <search-input v-if="searchConfig" :lang="lang" :search-config="searchConfig" />
 
         <ul class="van-doc-header__top-nav">
-          <li v-for="item in config.iconLinks" class="van-doc-header__top-nav-item">
+          <li v-for="item in config.links" class="van-doc-header__top-nav-item">
             <a class="van-doc-header__logo-link" target="_blank" :href="item.url">
-              <img :src="item.image">
+              <img :src="item.logo">
             </a>
           </li>
 

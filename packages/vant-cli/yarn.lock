@@ -1221,6 +1221,11 @@
   resolved "https://registry.npm.taobao.org/@types/less/download/@types/less-3.0.1.tgz#625694093c72f8356c4042754e222407e50d6b08"
   integrity sha1-YlaUCTxy+DVsQEJ1TiIkB+UNawg=
 
+"@types/lodash@^4.14.149":
+  version "4.14.149"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
+  integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
+
 "@types/mime@*":
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/@types/mime/download/@types/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"

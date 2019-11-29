@@ -2,12 +2,11 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
-import { CONFIG_FILE, MOBILE_ENTRY_FILE, DESKTOP_ENTRY_FILE } from '../common/constant';
+import { CONFIG, MOBILE_ENTRY_FILE, DESKTOP_ENTRY_FILE } from '../common/constant';
 import { getWebpackConfig } from '../common';
 
-// eslint-disable-next-line
-const config = require(CONFIG_FILE);
-const title = `${config.title} - ${config.description}`;
+const siteConfig = CONFIG.site;
+const title = `${siteConfig.title} - ${siteConfig.description}`;
 
 export const siteDevConfig = merge(
   baseConfig as any,
@@ -48,14 +47,14 @@ export const siteDevConfig = merge(
     plugins: [
       new HtmlWebpackPlugin({
         title,
-        logo: config.logo,
+        logo: siteConfig.logo,
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html'
       }),
       new HtmlWebpackPlugin({
         title,
-        logo: config.logo,
+        logo: siteConfig.logo,
         chunks: ['chunks', 'site-mobile'],
         template: join(__dirname, '../../site/mobile/index.html'),
         filename: 'mobile.html'

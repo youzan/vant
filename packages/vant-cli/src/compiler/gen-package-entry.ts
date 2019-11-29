@@ -1,15 +1,21 @@
+import { get } from 'lodash';
 import { join, relative } from 'path';
 import { writeFileSync } from 'fs-extra';
-import { pascalize, getComponents } from '../common';
+import { pascalize, getComponents, replaceExt } from '../common';
 import {
+  CONFIG,
   SRC_DIR,
   DIST_DIR,
   PACKAGE_JSON_FILE,
-  PACKAGE_ENTRY_FILE
+  PACKAGE_ENTRY_FILE,
+  PACKAGE_STYLE_FILE,
+  STYPE_DEPS_JSON_FILE
 } from '../common/constant';
 
 // eslint-disable-next-line
 const packageJson = require(PACKAGE_JSON_FILE);
+// eslint-disable-next-line
+const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
 const version = process.env.PACKAGE_VERSION || packageJson.version;
 
 function genImports(components: string[]): string {
@@ -25,7 +31,26 @@ function genExports(names: string[]): string {
   return names.map(name => `${name}`).join(',\n  ');
 }
 
-export function genPackageEntry() {
+function getStyleExt(): string {
+  const preprocessor = get(CONFIG, 'build.css.preprocessor', 'less');
+
+  if (preprocessor === 'sass') {
+    return '.scss';
+  }
+
+  return `.${preprocessor}`;
+}
+
+function genStyleEntry() {
+  const ext = getStyleExt();
+  const content = styleDepsJson.sequence
+    .map((item: string) => `@import "./${item}/index${ext}";`)
+    .join('\n');
+
+  writeFileSync(replaceExt(PACKAGE_STYLE_FILE, ext), content);
+}
+
+function genScriptEntry() {
   const components = getComponents();
   const names = components.map(item => pascalize(item));
 
@@ -63,4 +88,9 @@ export default {
 `;
 
   writeFileSync(PACKAGE_ENTRY_FILE, content);
+}
+
+export function genPackageEntry() {
+  genStyleEntry();
+  genScriptEntry();
 }

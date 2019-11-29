@@ -26,7 +26,7 @@ export default {
 
   data() {
     return {
-      config
+      config: config.site
     };
   }
 };

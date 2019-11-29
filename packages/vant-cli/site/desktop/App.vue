@@ -17,7 +17,7 @@ export default {
 
   data() {
     return {
-      config,
+      config: config.site,
       simulator: `mobile.html${location.hash}`
     };
   }
