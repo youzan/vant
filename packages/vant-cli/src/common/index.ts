@@ -88,11 +88,14 @@ export function getWebpackConfig(): object {
   return {};
 }
 
-export function setModuleEnv(value: 'esmodule' | 'commonjs') {
+export type ModuleEnv = 'esmodule' | 'commonjs';
+export type NodeEnv = 'production' | 'development' | 'test';
+
+export function setModuleEnv(value: ModuleEnv) {
   process.env.BABEL_MODULE = value;
 }
 
-export function setNodeEnv(value: 'production' | 'development') {
+export function setNodeEnv(value: NodeEnv) {
   process.env.NODE_ENV = value;
 }
 

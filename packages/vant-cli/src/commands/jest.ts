@@ -1,8 +1,9 @@
 import { runCLI } from 'jest';
+import { setNodeEnv } from '../common';
 import { CWD, JEST_CONFIG_FILE } from '../common/constant';
 
 export function test(command: any) {
-  process.env.NODE_ENV = 'test';
+  setNodeEnv('test');
 
   const config = {
     rootDir: CWD,
