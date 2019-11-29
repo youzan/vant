@@ -4,9 +4,9 @@
 
 import dependencyTree from 'dependency-tree';
 import { join } from 'path';
-import { existsSync, writeFileSync } from 'fs';
 import { getComponents } from '../common';
-import { ES_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
+import { existsSync, writeFileSync, ensureDirSync } from 'fs-extra';
+import { ES_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 interface DependencyObj {
   [k: string]: DependencyObj;
@@ -114,6 +114,8 @@ export function genStyleDepsMap() {
       (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
     );
   });
+
+  ensureDirSync(DIST_DIR);
 
   writeFileSync(
     STYPE_DEPS_JSON_FILE,
