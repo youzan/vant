@@ -17,7 +17,7 @@ Vue.use(Card);
 <van-card
   num="2"
   price="2.00"
-  desc="描述信息"  
+  desc="描述信息"
   title="商品标题"
   thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 />
@@ -32,7 +32,7 @@ Vue.use(Card);
   num="2"
   tag="标签"
   price="2.00"
-  desc="描述信息"  
+  desc="描述信息"
   title="商品标题"
   thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
   origin-price="10.00"
@@ -47,7 +47,7 @@ Vue.use(Card);
 <van-card
   num="2"
   price="2.00"
-  desc="描述信息"  
+  desc="描述信息"
   title="商品标题"
   thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 >
@@ -96,6 +96,7 @@ Vue.use(Card);
 | num | 自定义数量 |
 | price | 自定义价格 |
 | origin-price | 自定义商品原价 |
+| price-top | 自定义价格上方区域 |
 | bottom | 自定义价格下方区域 |
 | thumb | 自定义图片 |
 | tag | 自定义图片角标 |
