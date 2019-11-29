@@ -25,6 +25,9 @@ export const JEST_TRANSFORM_FILE = join(CONFIG_DIR, 'jest.transform.js');
 export const JEST_FILE_MOCK_FILE = join(CONFIG_DIR, 'jest.file-mock.js');
 export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
 
+export const SCRIPT_EXTS = ['.js', '.jsx', '.vue', '.ts', '.tsx'];
+export const STYLE_EXTS = ['.css', '.less', '.scss'];
+
 // eslint-disable-next-line
 export const CONFIG = require(CONFIG_FILE);
 // eslint-disable-next-line

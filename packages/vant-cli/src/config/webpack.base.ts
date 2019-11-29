@@ -1,8 +1,12 @@
-import sass from 'sass';
 // @ts-ignore
 import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
+import sass from 'sass';
 import { VueLoaderPlugin } from 'vue-loader';
-import { POSTCSS_CONFIG_FILE } from '../common/constant';
+import {
+  STYLE_EXTS,
+  SCRIPT_EXTS,
+  POSTCSS_CONFIG_FILE
+} from '../common/constant';
 
 const CSS_LOADERS = [
   'style-loader',
@@ -20,7 +24,7 @@ const CSS_LOADERS = [
 export const baseConfig = {
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.jsx', '.vue', '.less']
+    extensions: [...SCRIPT_EXTS, ...STYLE_EXTS]
   },
   module: {
     rules: [

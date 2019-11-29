@@ -1,13 +1,14 @@
 import { start, error, success } from 'signale';
 import { lint as stylelint } from 'stylelint';
 import { CLIEngine } from 'eslint';
+import { SCRIPT_EXTS } from '../common/constant';
 
 function lintScript() {
   start('ESLint Start');
 
   const cli = new CLIEngine({
     fix: true,
-    extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx']
+    extensions: SCRIPT_EXTS
   });
 
   const report = cli.executeOnFiles(['src/']);
