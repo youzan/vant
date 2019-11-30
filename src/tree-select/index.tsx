@@ -97,9 +97,8 @@ function TreeSelect(
               }
             }
 
-            emit(ctx, 'click-item', item);
             emit(ctx, 'update:active-id', newActiveId);
-
+            emit(ctx, 'click-item', item);
             // compatible for old usage, should be removed in next major version
             emit(ctx, 'itemclick', item);
           }
@@ -119,9 +118,8 @@ function TreeSelect(
         class={bem('nav')}
         activeKey={mainActiveIndex}
         onChange={(index: number) => {
-          emit(ctx, 'click-nav', index);
           emit(ctx, 'update:main-active-index', index);
-
+          emit(ctx, 'click-nav', index);
           // compatible for old usage, should be removed in next major version
           emit(ctx, 'navclick', index);
         }}
