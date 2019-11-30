@@ -15,7 +15,7 @@
       <van-count-down
         millisecond
         :time="time"
-        format="HH:mm:ss:SSS"
+        format="HH:mm:ss:SS"
       />
     </demo-block>
 
