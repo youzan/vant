@@ -57,7 +57,19 @@ export function parseFormat(format: string, timeData: TimeData): string {
     format = format.replace('ss', padZero(seconds));
   }
 
-  return format.replace('SSS', padZero(milliseconds, 3));
+  if (format.indexOf('S') !== -1) {
+    const ms = padZero(milliseconds, 3);
+
+    if (format.indexOf('SSS') !== -1) {
+      format = format.replace('SSS', ms);
+    } else if (format.indexOf('SS') !== -1) {
+      format = format.replace('SS', ms.slice(0, 2));
+    } else {
+      format = format.replace('S', ms.charAt(0));
+    }
+  }
+
+  return format;
 }
 
 export function isSameSecond(time1: number, time2: number): boolean {

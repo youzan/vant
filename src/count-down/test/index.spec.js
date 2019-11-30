@@ -141,6 +141,30 @@ test('complete format prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('milliseconds format SS', () => {
+  const wrapper = mount(CountDown, {
+    propsData: {
+      time: 1500,
+      autoStart: false,
+      format: 'ss-SS'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('milliseconds format S', () => {
+  const wrapper = mount(CountDown, {
+    propsData: {
+      time: 1500,
+      autoStart: false,
+      format: 'ss-S'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('incomplate format prop', () => {
   const wrapper = mount(CountDown, {
     propsData: {
