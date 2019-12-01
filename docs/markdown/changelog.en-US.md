@@ -1,5 +1,39 @@
 # Changelog
 
+### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
+`2019-11-30`
+
+**Style**
+
+Upgrading the style of business components:
+
+- AddressEdit
+- Card
+- ContactList
+- ContactCard
+- ContactEdit
+- SubmitBar
+
+**Features**
+
+- Card: add price-top slot [\#5134](https://github.com/youzan/vant/pull/5134)
+- Circle: add stroke-linecap prop [\#5087](https://github.com/youzan/vant/pull/5087)
+- CountDown: support SS and S format [\#5154](https://github.com/youzan/vant/pull/5154)
+- Sku: add new startSaleNum prop [\#5105](https://github.com/youzan/vant/pull/5105)
+- SubmitBar: add text-align prop [\#5130](https://github.com/youzan/vant/pull/5130)
+- AddressList: add default-tag-text prop [\#5106](https://github.com/youzan/vant/pull/5106)
+- ContactList: add default-tag-text prop [\#5089](https://github.com/youzan/vant/pull/5089)
+- ContactCard: add show-set-default prop [\#5083](https://github.com/youzan/vant/pull/5083)
+- Toast: improve type definitions [\#5086](https://github.com/youzan/vant/pull/5086)
+
+**Bug Fixes**
+
+- fix TreeSelect should sync value before trigger click-item event [\#5153](https://github.com/youzan/vant/pull/5153)
+- fix TouchEmulator compatibility issues on firefox [\#5118](https://github.com/youzan/vant/pull/5118)
+- fix Card allow use bottom slot without price or num [\#5116](https://github.com/youzan/vant/pull/5116)
+- fix NumberKeyboard should not trigger blur event when hidden [\#5110](https://github.com/youzan/vant/pull/5110)
+
+
 ### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
 `2019-11-28`
 
