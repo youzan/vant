@@ -67,6 +67,7 @@
     "autoprefixer": "^9.7.2",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
     "codecov": "^3.6.1",
     "commander": "^4.0.1",
     "cross-env": "^6.0.3",

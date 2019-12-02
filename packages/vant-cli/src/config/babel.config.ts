@@ -33,6 +33,15 @@ module.exports = function(api: any) {
           useESModules
         }
       ],
+      [
+        'import',
+        {
+          libraryName: 'vant',
+          libraryDirectory: 'es',
+          style: true
+        },
+        'vant'
+      ],
       '@babel/plugin-transform-object-assign',
       '@babel/plugin-proposal-optional-chaining'
     ]
