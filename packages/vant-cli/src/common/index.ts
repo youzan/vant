@@ -1,7 +1,8 @@
 import decamelize from 'decamelize';
-import { readdirSync, existsSync, lstatSync, readFileSync } from 'fs-extra';
 import { join } from 'path';
-import { SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
+import { get } from 'lodash';
+import { readdirSync, existsSync, lstatSync, readFileSync } from 'fs-extra';
+import { CONFIG, SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -101,6 +102,16 @@ export function setNodeEnv(value: NodeEnv) {
 
 export function isDev() {
   return process.env.NODE_ENV === 'development';
+}
+
+export function getCssLang(): string {
+  const preprocessor = get(CONFIG, 'build.css.preprocessor', 'less');
+
+  if (preprocessor === 'sass') {
+    return 'scss';
+  }
+
+  return preprocessor;
 }
 
 export { decamelize };

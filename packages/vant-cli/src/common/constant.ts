@@ -10,6 +10,8 @@ export const CONFIG_FILE = join(CWD, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(CWD, 'package.json');
 export const WEBPACK_CONFIG_FILE = join(CWD, 'webpack.config.js');
 
+export const STYLE_DIR = join(SRC_DIR, 'style');
+
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
 

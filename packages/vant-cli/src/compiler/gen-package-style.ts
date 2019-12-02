@@ -1,30 +1,25 @@
-import { get } from 'lodash';
 import { join } from 'path';
 import { writeFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
+import { CSS_LANG, getCssBaseFile } from '../common/css';
 import {
-  CONFIG,
   SRC_DIR,
   PACKAGE_STYLE_FILE,
   STYPE_DEPS_JSON_FILE
 } from '../common/constant';
 
-export function getStyleExt(): string {
-  const preprocessor = get(CONFIG, 'build.css.preprocessor', 'less');
-
-  if (preprocessor === 'sass') {
-    return 'scss';
-  }
-
-  return preprocessor;
-}
-
 export function genPacakgeStyle() {
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
+  const ext = '.' + CSS_LANG;
 
-  const ext = '.' + getStyleExt();
+  let content = '';
 
-  const content = styleDepsJson.sequence
+  const baseFile = getCssBaseFile();
+  if (baseFile) {
+    content += `@import "${baseFile}";\n`;
+  }
+
+  content += styleDepsJson.sequence
     .map((name: string) => `@import "${join(SRC_DIR, `${name}/index${ext}`)}";`)
     .join('\n');
 
