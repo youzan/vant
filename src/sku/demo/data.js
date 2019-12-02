@@ -2,6 +2,7 @@ export default {
   goods_id: '946755',
   quota: 15,
   quota_used: 0,
+  start_sale_num: 10,
   goods_info: {
     title: '测试商品',
     picture:

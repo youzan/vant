@@ -141,6 +141,7 @@ export default {
 | message-config | Message related config | *object* | `{}` | - |
 | get-container | Return the mount node for sku | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
+| start-sale-num | Minimum quantity | *number* | `1` | 2.2.15 |
 
 ### Events
 
@@ -258,10 +259,10 @@ customStepperConfig: {
   quotaText: 'only 5 can buy',
   // custom callback when over limit
   handleOverLimit: (data) => {
-    const { action, limitType, quota, quotaUsed } = data;
+    const { action, limitType, quota, quotaUsed, startSaleNum } = data;
 
     if (action === 'minus') {
-      Toast('at least select one');
+      Toast(`at least select ${startSaleNum > 1 ? startSaleNum : 'one'}`);
     } else if (action === 'plus') {
       // const { LIMIT_TYPE } = Sku.skuConstants;
       if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {

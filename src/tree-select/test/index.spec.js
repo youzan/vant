@@ -295,3 +295,37 @@ test('className of nav', () => {
   const items = wrapper.findAll('.van-tree-select__nav-item');
   expect(items.at(0).element.classList.contains('my-class')).toBeTruthy();
 });
+
+test('should sync value before trigger click-item event', done => {
+  const wrapper = mount({
+    template: `
+      <van-tree-select
+        :items="items"
+        :main-active-index="0"
+        :active-id.sync="activeId"
+        @click-item="onClickItem"
+      />
+    `,
+    data() {
+      return {
+        activeId: mockItem.id,
+        mainActiveIndex: 0,
+        items: [
+          {
+            text: 'group1',
+            children: [mockItem, mockItem2]
+          }
+        ]
+      };
+    },
+    methods: {
+      onClickItem() {
+        expect(wrapper.vm.activeId).toEqual(mockItem2.id);
+        done();
+      }
+    }
+  });
+
+  const items = wrapper.findAll('.van-tree-select__item');
+  items.at(1).trigger('click');
+});

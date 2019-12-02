@@ -10,6 +10,49 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
+`2019-11-30`
+
+**Style**
+
+在 2.3.0 版本中，我们对业务组件的样式进行了全新升级，涉及以下组件：
+
+- AddressEdit
+- Card
+- ContactList
+- ContactCard
+- ContactEdit
+- SubmitBar
+
+**Features**
+
+- Card: 新增 price-top 插槽 [\#5134](https://github.com/youzan/vant/pull/5134)
+- Circle: 新增 stroke-linecap 属性 [\#5087](https://github.com/youzan/vant/pull/5087)
+- CountDown: 支持 SS 和 S 格式 [\#5154](https://github.com/youzan/vant/pull/5154)
+- Sku: 新增 new startSaleNum 属性 [\#5105](https://github.com/youzan/vant/pull/5105)
+- SubmitBar: 新增 text-align 属性 [\#5130](https://github.com/youzan/vant/pull/5130)
+- AddressList: 新增 default-tag-text 属性 [\#5106](https://github.com/youzan/vant/pull/5106)
+- ContactList: 新增 default-tag-text 属性 [\#5089](https://github.com/youzan/vant/pull/5089)
+- ContactCard: 新增 show-set-default 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
+- Toast: 完善 TS 类型定义 [\#5086](https://github.com/youzan/vant/pull/5086)
+
+**Bug Fixes**
+
+- 修复 TreeSelect 事件触发顺序错误的问题 [\#5153](https://github.com/youzan/vant/pull/5153)
+- 修复 TouchEmulator 在 Firefox 上的兼容性问题 [\#5118](https://github.com/youzan/vant/pull/5118)
+- 修复 Card 在未使用 price 属性的情况下 bottom 插槽不生效的问题 [\#5116](https://github.com/youzan/vant/pull/5116)
+- 修复 NumberKeyboard 在隐藏状态下也会触发 blur 事件的问题 [\#5110](https://github.com/youzan/vant/pull/5110)
+
+
+### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
+`2019-11-28`
+
+**Bug Fixes**
+
+- 修复 List 组件在部分情况下加载状态未重置的问题
+
+
 ### [v2.2.14](https://github.com/youzan/vant/tree/v2.2.14)
 `2019-11-22`
 

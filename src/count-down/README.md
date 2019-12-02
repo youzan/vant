@@ -42,7 +42,7 @@ export default {
 <van-count-down
   millisecond
   :time="time"
-  format="HH:mm:ss:SSS"
+  format="HH:mm:ss:SS"
 />
 ```
 
@@ -114,9 +114,21 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | time | Total time | *number* | - | - |
-| format | Time format，DD-day，HH-hour，mm-minute，ss-second，SSS-millisecond | *string* | `HH:mm:ss` | - |
+| format | Time format | *string* | `HH:mm:ss` | - |
 | auto-start | Whether to auto start count down | *boolean* | `true` | - |
 | millisecond | Whether to enable millisecond render | *boolean* | `false` | - |
+
+### Available formats
+
+| Format | Description |
+|------|------|
+| DD | Day |
+| HH | Hour |
+| mm | Minute |
+| ss | Second |
+| S | Millisecond, 1-digit |
+| SS | Millisecond, 2-digits |
+| SSS | Millisecond, 3-digits |
 
 ### Events
 
