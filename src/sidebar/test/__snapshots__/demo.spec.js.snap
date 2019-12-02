@@ -54,6 +54,24 @@ exports[`renders demo correctly 1`] = `
           </a></div>
       </div>
     </div>
+    <div class="van-grid-item" style="flex-basis: 50%;">
+      <div class="van-grid-item__content van-grid-item__content--center">
+        <h3 class="demo-sidebar-title">切换事件</h3>
+        <div class="van-sidebar"><a class="van-sidebar-item van-sidebar-item--select">
+            <div class="van-sidebar-item__text">标签名1
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名2
+              <!---->
+            </div>
+          </a> <a class="van-sidebar-item">
+            <div class="van-sidebar-item__text">标签名3
+              <!---->
+            </div>
+          </a></div>
+      </div>
+    </div>
   </div>
 </div>
 `;

@@ -27,6 +27,15 @@
           <van-sidebar-item :title="$t('title')" />
         </van-sidebar>
       </van-grid-item>
+
+      <van-grid-item>
+        <h3 class="demo-sidebar-title">{{ $t('eventChange') }}</h3>
+        <van-sidebar v-model="activeKey4" @change="onChange">
+          <van-sidebar-item :title="$t('title') + 1" />
+          <van-sidebar-item :title="$t('title') + 2" />
+          <van-sidebar-item :title="$t('title') + 3" />
+        </van-sidebar>
+      </van-grid-item>
     </van-grid>
   </demo-section>
 </template>
@@ -37,11 +46,15 @@ export default {
     'zh-CN': {
       title: '标签名',
       showInfo: '提示信息',
-      disabled: '禁用选项'
+      disabled: '禁用选项',
+      eventChange: '切换事件',
+      selectTip: '你切换到了'
     },
     'en-US': {
       showInfo: 'Show Info',
-      disabled: 'Disabled'
+      disabled: 'Disabled',
+      eventChange: 'Change Event',
+      selectTip: 'You select '
     }
   },
 
@@ -49,8 +62,18 @@ export default {
     return {
       activeKey1: 0,
       activeKey2: 0,
-      activeKey3: 0
+      activeKey3: 0,
+      activeKey4: 0
     };
+  },
+
+  methods: {
+    onChange(index) {
+      this.$notify({
+        type: 'primary',
+        message: `${this.$t('selectTip')} ${this.$t('title')}${index + 1}`
+      });
+    }
   }
 };
 </script>

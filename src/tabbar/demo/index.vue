@@ -32,7 +32,7 @@
         <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
           <template #icon="{ active }">
-            <img :src="active ? icon.active : icon.inactive">
+            <img :src="active ? icon.active : icon.inactive" />
           </template>
         </van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
@@ -48,6 +48,15 @@
         <van-tabbar-item icon="setting-o">{{ $t('tab') }}</van-tabbar-item>
       </van-tabbar>
     </demo-block>
+
+    <demo-block :title="$t('switchEvent')">
+      <van-tabbar v-model="active5" @change="onChange">
+        <van-tabbar-item icon="home-o">{{ $t('tab') + 1 }}</van-tabbar-item>
+        <van-tabbar-item icon="search">{{ $t('tab') + 2 }}</van-tabbar-item>
+        <van-tabbar-item icon="friends-o">{{ $t('tab') + 3 }}</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">{{ $t('tab') + 4 }}</van-tabbar-item>
+      </van-tabbar>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -58,13 +67,17 @@ export default {
       badge: '提示信息',
       customIcon: '自定义图标',
       customColor: '自定义颜色',
-      matchByName: '通过名称匹配'
+      matchByName: '通过名称匹配',
+      switchEvent: '切换标签事件',
+      selectTip: '你切换到了'
     },
     'en-US': {
       badge: 'Show Badge',
       customIcon: 'Custom Icon',
       customColor: 'Custom Color',
-      matchByName: 'Match by name'
+      matchByName: 'Match by name',
+      switchEvent: 'Change Event',
+      selectTip: 'You select '
     }
   },
 
@@ -74,12 +87,22 @@ export default {
       active2: 0,
       active3: 0,
       active4: 0,
+      active5: 0,
       activeName: 'home',
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
         inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
       }
     };
+  },
+
+  methods: {
+    onChange(index) {
+      this.$notify({
+        type: 'primary',
+        message: `${this.$t('selectTip')} ${this.$t('tab')}${index + 1}`
+      });
+    }
   }
 };
 </script>
