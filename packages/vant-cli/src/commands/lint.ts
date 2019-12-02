@@ -1,10 +1,10 @@
-import { start, error, success } from 'signale';
 import { lint as stylelint } from 'stylelint';
 import { CLIEngine } from 'eslint';
+import { logger } from '../common';
 import { SCRIPT_EXTS } from '../common/constant';
 
 function lintScript() {
-  start('ESLint Start');
+  logger.start('ESLint Start');
 
   const cli = new CLIEngine({
     fix: true,
@@ -19,15 +19,15 @@ function lintScript() {
   // output lint errors
   const formatted = formatter(report.results);
   if (formatted) {
-    error('ESLint Failed');
+    logger.error('ESLint Failed');
     console.log(formatter(report.results));
   } else {
-    success('ESLint Passed');
+    logger.success('ESLint Passed');
   }
 }
 
 function lintStyle() {
-  start('Stylelint Start');
+  logger.start('Stylelint Start');
 
   stylelint({
     fix: true,
@@ -35,10 +35,10 @@ function lintStyle() {
     files: ['src/**/*.css', 'src/**/*.less', 'src/**/*.scss', 'src/**/*.vue']
   }).then(result => {
     if (result.errored) {
-      error('Stylelint Failed');
+      logger.error('Stylelint Failed');
       console.log(result.output);
     } else {
-      success('Stylelint Passed');
+      logger.success('Stylelint Passed');
     }
   });
 }

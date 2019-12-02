@@ -1,8 +1,13 @@
+import logger from 'signale';
 import decamelize from 'decamelize';
 import { join } from 'path';
 import { get } from 'lodash';
 import { readdirSync, existsSync, lstatSync, readFileSync } from 'fs-extra';
 import { CONFIG, SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
+
+logger.config({
+  displayTimestamp: true
+});
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -114,4 +119,4 @@ export function getCssLang(): string {
   return preprocessor;
 }
 
-export { decamelize };
+export { logger, decamelize };

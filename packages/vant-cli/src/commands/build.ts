@@ -1,4 +1,3 @@
-import { start, error, success } from 'signale';
 import { join } from 'path';
 import { clean } from './clean';
 import { remove, copy, readdirSync } from 'fs-extra';
@@ -11,6 +10,7 @@ import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
 import {
+  logger,
   isDir,
   isSfc,
   isStyle,
@@ -53,56 +53,56 @@ async function compileDir(dir: string) {
   );
 }
 
-export async function buildESModuleOutputs() {
+async function buildESModuleOutputs() {
   await copy(SRC_DIR, ES_DIR);
 
-  start('Build esmodule outputs');
+  logger.start('Build esmodule outputs');
 
   try {
     setModuleEnv('esmodule');
     await compileDir(ES_DIR);
-    success('Build esmodule outputs');
+    logger.success('Build esmodule outputs');
   } catch (err) {
-    error('Build esmodule outputs');
+    logger.error('Build esmodule outputs');
   }
 }
 
-export async function buildCommonjsOutputs() {
+async function buildCommonjsOutputs() {
   await copy(SRC_DIR, LIB_DIR);
 
-  start('Build commonjs outputs');
+  logger.start('Build commonjs outputs');
 
   try {
     setModuleEnv('commonjs');
     await compileDir(LIB_DIR);
-    success('Build commonjs outputs');
+    logger.success('Build commonjs outputs');
   } catch (err) {
-    error('Build commonjs outputs');
+    logger.error('Build commonjs outputs');
   }
 }
 
-export async function buildStyleEntry() {
-  start('Build style entry');
+async function buildStyleEntry() {
+  logger.start('Build style entry');
 
   try {
-    genStyleDepsMap();
+    await genStyleDepsMap();
     genComponentStyle();
-    success('Build style entry');
+    logger.success('Build style entry');
   } catch (err) {
-    error('Build style entry');
+    logger.error('Build style entry');
   }
 }
 
-export async function buildPackedOutputs() {
-  start('Build packed outputs');
+async function buildPackedOutputs() {
+  logger.start('Build packed outputs');
 
   try {
     genPackageEntry();
     await compilePackage(false);
     await compilePackage(true);
-    success('Build packed outputs');
+    logger.success('Build packed outputs');
   } catch (err) {
-    error('Build packed outputs');
+    logger.error('Build packed outputs');
   }
 }
 

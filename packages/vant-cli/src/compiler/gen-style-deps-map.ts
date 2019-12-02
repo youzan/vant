@@ -4,19 +4,66 @@
 
 import dependencyTree from 'dependency-tree';
 import { join } from 'path';
-import { getComponents } from '../common';
-import { existsSync, writeFileSync, ensureDirSync } from 'fs-extra';
-import { ES_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
+import { compileJs } from './compile-js';
+import { compileSfc } from './compile-sfc';
+import { compileStyle } from './compile-style';
+import {
+  logger,
+  isDir,
+  isSfc,
+  isStyle,
+  isScript,
+  getComponents
+} from '../common';
+import { SRC_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
+import {
+  copy,
+  existsSync,
+  readdirSync,
+  writeFileSync,
+  ensureDirSync
+} from 'fs-extra';
 
 interface DependencyObj {
   [k: string]: DependencyObj;
 }
 
 const components = getComponents();
+const TEMP_DIR = join(DIST_DIR, 'temp');
+
+async function compileTempDir(dir: string) {
+  const files = readdirSync(dir);
+
+  await Promise.all(
+    files.map(filename => {
+      const filePath = join(dir, filename);
+
+      if (isDir(filePath)) {
+        return compileTempDir(filePath);
+      }
+
+      if (filename.indexOf('index') !== -1) {
+        if (isSfc(filePath)) {
+          return compileSfc(filePath);
+        }
+
+        if (isScript(filePath)) {
+          return compileJs(filePath);
+        }
+
+        if (isStyle(filePath)) {
+          return compileStyle(filePath);
+        }
+      }
+
+      return Promise.resolve();
+    })
+  );
+}
 
 function matchPath(path: string, component: string): boolean {
   return path
-    .replace(ES_DIR, '')
+    .replace(TEMP_DIR, '')
     .split('/')
     .includes(component);
 }
@@ -35,7 +82,7 @@ function search(tree: DependencyObj, component: string, checkList: string[]) {
 }
 
 function getStylePath(component: string) {
-  return join(ES_DIR, `${component}/index.css`);
+  return join(TEMP_DIR, `${component}/index.css`);
 }
 
 function checkStyleExists(component: string) {
@@ -48,8 +95,8 @@ function analyzeDeps(component: string) {
 
   search(
     dependencyTree({
-      directory: ES_DIR,
-      filename: join(ES_DIR, component, 'index.js'),
+      directory: TEMP_DIR,
+      filename: join(TEMP_DIR, component, 'index.js'),
       filter: path => !~path.indexOf('node_modules')
     }),
     component,
@@ -100,8 +147,13 @@ function getSequence(depsMap: DepsMap) {
   return sequence;
 }
 
-export function genStyleDepsMap() {
+export async function genStyleDepsMap() {
+  logger.start('Analyze dependencies');
+
   const map = {} as DepsMap;
+
+  await copy(SRC_DIR, TEMP_DIR);
+  await compileTempDir(TEMP_DIR);
 
   components.filter(checkStyleExists).forEach(component => {
     map[component] = analyzeDeps(component);
@@ -121,4 +173,6 @@ export function genStyleDepsMap() {
     STYPE_DEPS_JSON_FILE,
     JSON.stringify({ map, sequence }, null, 2)
   );
+
+  logger.success('Analyze dependencies');
 }

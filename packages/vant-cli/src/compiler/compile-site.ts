@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { getPort } from 'portfinder';
-import { buildESModuleOutputs } from '../commands/build';
+import { logger } from '../common';
 import { genPackageEntry } from './gen-package-entry';
 import { genPacakgeStyle } from './gen-package-style';
 import { genSiteMobileShared } from './gen-site-mobile-shared';
@@ -11,6 +11,8 @@ import { siteDevConfig } from '../config/webpack.site.dev';
 import { sitePrdConfig } from '../config/webpack.site.prd';
 
 function watch() {
+  logger.start('Start development');
+
   const server = new WebpackDevServer(
     webpack(siteDevConfig),
     (siteDevConfig as any).devServer
@@ -48,8 +50,7 @@ function build() {
 }
 
 export async function compileSite(production = false) {
-  await buildESModuleOutputs();
-  genStyleDepsMap();
+  await genStyleDepsMap();
   genPackageEntry();
   genPacakgeStyle();
   genSiteMobileShared();
