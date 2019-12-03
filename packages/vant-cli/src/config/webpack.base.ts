@@ -43,7 +43,7 @@ export const baseConfig = {
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
-        exclude: /node_modules\/(?!(@youzan\/create-vue-components))/,
+        exclude: /node_modules\/(?!(@vant\/cli))/,
         use: {
           loader: 'babel-loader'
         }
