@@ -144,12 +144,13 @@ export default createComponent({
     },
 
     onAfterRead(files, oversize) {
+      this.resetInput();
+
       if (oversize) {
         this.$emit('oversize', files, this.getDetail());
         return;
       }
 
-      this.resetInput();
       this.$emit('input', [...this.fileList, ...toArray(files)]);
 
       if (this.afterRead) {
