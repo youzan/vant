@@ -118,6 +118,20 @@ export default {
 </van-tabbar>
 ```
 
+### Change 事件
+
+```html
+<van-tabbar 
+  v-model="active" 
+  @change="onChange"
+>
+  <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
+  <van-tabbar-item icon="search">标签2</van-tabbar-item>
+  <van-tabbar-item icon="freinds-o">标签3</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
+</van-tabbar>
+```
+
 ### 路由模式
 
 标签栏支持路由模式，用于搭配`vue-router`使用。路由模式下会匹配页面路径和标签的`to`属性，并自动选中对应的标签
