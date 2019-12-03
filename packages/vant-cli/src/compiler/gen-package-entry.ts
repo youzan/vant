@@ -33,7 +33,7 @@ const components = [
 function install(Vue) {
   components.forEach(item => {
     if (item.install) {
-      Vue.use(Component);
+      Vue.use(item);
     } else if (item.name) {
       Vue.component(item.name, item);
     }
