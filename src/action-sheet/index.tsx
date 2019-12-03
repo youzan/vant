@@ -116,7 +116,7 @@ function ActionSheet(
   function CancelText() {
     if (cancelText) {
       return (
-        <button class={bem('cancel')} onClick={onCancel}>
+        <button type="button" class={bem('cancel')} onClick={onCancel}>
           {cancelText}
         </button>
       );
