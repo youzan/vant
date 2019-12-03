@@ -52,6 +52,16 @@ export default {
 </van-sidebar>
 ```
 
+### Change Event
+
+```html
+<van-sidebar v-model="activeKey" @change="onChange">
+  <van-sidebar-item title="Title1" />
+  <van-sidebar-item title="Title2" />
+  <van-sidebar-item title="Title3" />
+</van-sidebar>
+```
+
 ## API
 
 ### Sidebar Props

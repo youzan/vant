@@ -58,6 +58,19 @@ export default {
 </van-sidebar>
 ```
 
+
+### Change 事件
+
+设置`change`方法来监听切换导航项时的事件
+
+```html
+<van-sidebar v-model="activeKey" @change="onChange">
+  <van-sidebar-item title="标签名1" />
+  <van-sidebar-item title="标签名2" />
+  <van-sidebar-item title="标签名3" />
+</van-sidebar>
+```
+
 ## API
 
 ### Sidebar Props
