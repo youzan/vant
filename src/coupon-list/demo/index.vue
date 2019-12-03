@@ -15,6 +15,7 @@
           :coupons="coupons"
           :chosen-coupon="chosenCoupon"
           :disabled-coupons="disabledCoupons"
+          :show-count="false"
           @change="onChange"
           @exchange="onExchange"
         />

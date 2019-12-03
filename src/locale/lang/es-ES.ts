@@ -29,7 +29,6 @@ export default {
     label: 'Total：'
   },
   vanCoupon: {
-    valid: 'Valido',
     unlimited: 'Ilimitado',
     discount: (discount: number) => `${discount * 10}% de descuento`,
     condition: (condition: number) => `Al menos ${condition}`

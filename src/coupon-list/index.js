@@ -50,6 +50,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    showCount: {
+      type: Boolean,
+      default: true
+    },
     currency: {
       type: String,
       default: '¥'
@@ -139,7 +143,7 @@ export default createComponent({
     genExchangeButton() {
       return (
         <Button
-          size="small"
+          plain
           type="danger"
           class={bem('exchange')}
           text={this.exchangeButtonText || t('exchange')}
@@ -153,10 +157,12 @@ export default createComponent({
 
   render() {
     const { coupons, disabledCoupons } = this;
-    const title = `${this.enabledTitle || t('enable')} (${coupons.length})`;
-    const disabledTitle = `${this.disabledTitle || t('disabled')} (${
-      disabledCoupons.length
-    })`;
+
+    const count = this.showCount ? ` (${coupons.length})` : '';
+    const title = (this.enabledTitle || t('enable')) + count;
+
+    const disabledCount = this.showCount ? ` (${disabledCoupons.length})` : '';
+    const disabledTitle = (this.disabledTitle || t('disabled')) + disabledCount;
 
     const ExchangeBar = this.showExchangeBar && (
       <Field
@@ -196,7 +202,12 @@ export default createComponent({
       <Tab title={disabledTitle}>
         <div class={bem('list')} style={this.listStyle}>
           {disabledCoupons.map(coupon => (
-            <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
+            <Coupon
+              disabled
+              key={coupon.id}
+              coupon={coupon}
+              currency={this.currency}
+            />
           ))}
           {!disabledCoupons.length && this.genEmpty()}
         </div>
@@ -206,7 +217,7 @@ export default createComponent({
     return (
       <div class={bem()}>
         {ExchangeBar}
-        <Tabs vModel={this.tab} class={bem('tab')} line-width={120}>
+        <Tabs vModel={this.tab} class={bem('tab')} border={false}>
           {CouponTab}
           {DisabledCouponTab}
         </Tabs>

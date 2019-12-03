@@ -29,7 +29,6 @@ export default {
     label: '合计：'
   },
   vanCoupon: {
-    valid: '有效期',
     unlimited: '无使用门槛',
     discount: (discount: number) => `${discount}折`,
     condition: (condition: number) => `满${condition}元可用`
@@ -42,9 +41,9 @@ export default {
   vanCouponList: {
     empty: '暂无优惠券',
     exchange: '兑换',
-    close: '不使用优惠',
-    enable: '可使用优惠券',
-    disabled: '不可使用优惠券',
+    close: '不使用优惠券',
+    enable: '可用',
+    disabled: '不可用',
     placeholder: '请输入优惠码'
   },
   vanAddressEdit: {
