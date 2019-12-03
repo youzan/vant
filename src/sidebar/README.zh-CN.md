@@ -71,6 +71,21 @@ export default {
 </van-sidebar>
 ```
 
+```js
+export default {
+  data() {
+    return {
+      activeKey: 0
+    };
+  },
+  methods: {
+    onChange(msg) {
+      Notify({ type: 'primary', message: msg });
+    }
+  }
+}
+```
+
 ## API
 
 ### Sidebar Props
