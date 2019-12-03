@@ -181,3 +181,11 @@ export default {
 |------|------|------|
 | default | 轮播内容 | - |
 | indicator | 自定义指示器 | - |
+
+## 常见问题
+
+### 滑动轮播时为什么触发了 click 事件？
+
+这种情况通常是由于项目中引入了`fastclick`库导致的，`fastclick`会在滑动过程中触发`click`事件。
+
+将 Swipe 组件的 stop-propagation 属性设置为 false 即可避免这个问题。
