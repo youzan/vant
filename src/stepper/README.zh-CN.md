@@ -49,6 +49,19 @@ export default {
 <van-stepper v-model="value" min="5" max="8" />
 ```
 
+### 取消自动设置
+
+通过`autoSetValue`取消自动改变不符合范围的输入值
+
+```html
+<van-stepper
+  :value="1"
+  :auto-set-value="false"
+  :min="5"
+  :max="10"
+/>
+```
+
 ### 限制输入整数
 
 设置`integer`属性后，输入框将限制只能输入整数
@@ -136,6 +149,7 @@ export default {
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | 2.1.2 |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | 2.1.2 |
 | decimal-length | 固定显示的小数位数 | *number* | - | 2.2.1 |
+| auto-set-value | 自动设置不符合输入范围的值 | *boolean* | `true` | 2.3.0 |
 
 ### Events
 

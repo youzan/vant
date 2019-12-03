@@ -39,6 +39,17 @@ export default {
 <van-stepper v-model="value" min="5" max="8" />
 ```
 
+### Cancel AutoSetValue
+
+```html
+<van-stepper
+  :value="1"
+  :auto-set-value="false"
+  :min="5"
+  :max="10"
+/>
+```
+
 ### Integer
 
 ```html
@@ -114,6 +125,7 @@ export default {
 | show-plus | Whether to show plus button | *boolean* | `true` | 2.1.2 |
 | show-minus | Whether to show minus button | *boolean* | `true` | 2.1.2 |
 | decimal-length | Decimal length | *number* | - | 2.2.1 |
+| auto-set-value | Automatically set values that do not fit into the input range | *boolean* | `true` | 2.3.0 |
 
 ### Events
 

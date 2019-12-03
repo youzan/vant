@@ -39,6 +39,10 @@ export default createComponent({
       type: [Number, String],
       default: Infinity
     },
+    autoSetValue: {
+      type: Boolean,
+      default: true,
+    },
     step: {
       type: [Number, String],
       default: 1
@@ -135,7 +139,9 @@ export default createComponent({
 
       // format range
       value = value === '' ? 0 : +value;
-      value = Math.max(Math.min(this.max, value), this.min);
+      if (this.autoSetValue) {
+        value = Math.max(Math.min(this.max, value), this.min);
+      }
 
       // format decimal
       if (isDef(this.decimalLength)) {

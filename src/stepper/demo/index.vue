@@ -12,6 +12,15 @@
       <van-stepper v-model="stepper3" :min="5" :max="8" />
     </van-cell>
 
+    <van-cell center :title="$t('notAuaoSetValue')">
+      <van-stepper
+        :value="stepper9"
+        :auto-set-value="false"
+        :min="5"
+        :max="10"
+      />
+    </van-cell>
+
     <van-cell center :title="$t('integer')">
       <van-stepper v-model="stepper4" integer />
     </van-cell>
@@ -43,7 +52,8 @@ export default {
       integer: '限制输入整数',
       asyncChange: '异步变更',
       customSize: '自定义大小',
-      decimalLength: '固定小数位数'
+      decimalLength: '固定小数位数',
+      notAuaoSetValue: '取消自动设置',
     },
     'en-US': {
       step: 'Step',
@@ -51,7 +61,8 @@ export default {
       integer: 'Integer',
       asyncChange: 'Async Change',
       customSize: 'Custom Size',
-      decimalLength: 'Decimal Length'
+      decimalLength: 'Decimal Length',
+      notAuaoSetValue: 'Cancel AutoSetValue',
     }
   },
 
@@ -64,7 +75,8 @@ export default {
       stepper5: 1,
       stepper6: 1,
       stepper7: 1,
-      stepper8: 1
+      stepper8: 1,
+      stepper9: 1,
     };
   },
 
