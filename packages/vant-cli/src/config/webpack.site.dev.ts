@@ -30,8 +30,6 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     }
   },
   output: {
-    path: join(__dirname, '../../site/dist'),
-    publicPath: '/',
     chunkFilename: 'async_[name].js'
   },
   optimization: {

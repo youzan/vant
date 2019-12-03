@@ -17,7 +17,10 @@ export default {
 
   data() {
     const { site } = config.build || {};
-    const publicPath = (site && site.publicPath) || '/';
+    const isProd = process.env.NODE_ENV === 'production';
+    const prodPublicPath = (site && site.publicPath) || '/';
+    const publicPath = isProd ? prodPublicPath : '/';
+
     return {
       config: config.site,
       simulator: `${publicPath}mobile.html${location.hash}`
