@@ -8,7 +8,7 @@ export function commitLint() {
   const gitParams = process.env.HUSKY_GIT_PARAMS as string;
   const commitMsg = readFileSync(gitParams, 'utf-8').trim();
 
-  if (!commitRE.test(commitMsg) || !mergeRE.test(commitMsg)) {
+  if (!commitRE.test(commitMsg) && !mergeRE.test(commitMsg)) {
     logger.error(`Error: invalid commit message: "${commitMsg}".
 
 Proper commit message format is required for automated changelog generation.
