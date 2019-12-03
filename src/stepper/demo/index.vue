@@ -12,7 +12,7 @@
       <van-stepper v-model="stepper3" :min="5" :max="8" />
     </van-cell>
 
-    <van-cell center :title="$t('notAuaoSetValue')">
+    <van-cell center :title="$t('autoSetValueToFalse')">
       <van-stepper
         :value="stepper9"
         :auto-set-value="false"
@@ -53,7 +53,7 @@ export default {
       asyncChange: '异步变更',
       customSize: '自定义大小',
       decimalLength: '固定小数位数',
-      notAuaoSetValue: '取消自动设置',
+      autoSetValueToFalse: '取消自动设置',
     },
     'en-US': {
       step: 'Step',
@@ -62,7 +62,7 @@ export default {
       asyncChange: 'Async Change',
       customSize: 'Custom Size',
       decimalLength: 'Decimal Length',
-      notAuaoSetValue: 'Cancel AutoSetValue',
+      autoSetValueToFalse: 'Cancel AutoSetValue',
     }
   },
 
