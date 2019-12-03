@@ -114,6 +114,8 @@ export default {
 | show-plus | Whether to show plus button | *boolean* | `true` | 2.1.2 |
 | show-minus | Whether to show minus button | *boolean* | `true` | 2.1.2 |
 | decimal-length | Decimal length | *number* | - | 2.2.1 |
+| disable-plus | Whether to disable plus button | *boolean* | - | 2.3.0 |
+| disable-minus | Whether to disable minus button | *boolean* | - | 2.3.0 |
 
 ### Events
 

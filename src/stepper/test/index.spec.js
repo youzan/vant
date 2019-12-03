@@ -19,6 +19,35 @@ test('disable stepper input', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('disable button', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 5
+    }
+  });
+
+  const plus = wrapper.find('.van-stepper__plus');
+  const minus = wrapper.find('.van-stepper__minus');
+
+  minus.trigger('click');
+
+  expect(wrapper.emitted('overlimit')).toBeFalsy();
+  expect(wrapper.emitted('minus')).toBeTruthy();
+  expect(wrapper.emitted('change')[0]).toEqual([4, { name: '' }]);
+
+  wrapper.setProps({
+    disablePlus: true,
+    disableMinus: true
+  });
+
+  await later();
+
+  minus.trigger('click');
+  expect(wrapper.emitted('overlimit')[0][0]).toBe('minus');
+  plus.trigger('click');
+  expect(wrapper.emitted('overlimit')[1][0]).toBe('plus');
+});
+
 test('click button', () => {
   const wrapper = mount(Stepper, {
     propsData: {

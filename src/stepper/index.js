@@ -54,6 +54,12 @@ export default createComponent({
     showMinus: {
       type: Boolean,
       default: true
+    },
+    disablePlus: {
+      type: Boolean
+    },
+    disableMinus: {
+      type: Boolean
     }
   },
 
@@ -72,11 +78,11 @@ export default createComponent({
 
   computed: {
     minusDisabled() {
-      return this.disabled || this.currentValue <= this.min;
+      return this.disabled || this.disableMinus || this.currentValue <= this.min;
     },
 
     plusDisabled() {
-      return this.disabled || this.currentValue >= this.max;
+      return this.disabled || this.disablePlus || this.currentValue >= this.max;
     },
 
     inputStyle() {
