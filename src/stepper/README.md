@@ -107,15 +107,15 @@ export default {
 | name | Stepper name | *string \| number* | - | 2.0.3 |
 | integer | Whether to allow only integers | *boolean* | `false` | - |
 | disabled | Disable value change | *boolean* | `false` | - |
-| disable-input | Disable input | *boolean* | `false` | - |
+| disable-plus | Whether to disable plus button | *boolean* | `false` | 2.2.16 |
+| disable-minus | Whether to disable minus button | *boolean* | `false` | 2.2.16 |
+| disable-input | Whether to disable input | *boolean* | `false` | - |
 | async-change | Whether to enable async change | *boolean* | `false` | - | - |
 | input-width | Input width | *string \| number* | `32px` | - |
 | button-size | Button size | *string \| number* | `28px` | 2.0.5 |
 | show-plus | Whether to show plus button | *boolean* | `true` | 2.1.2 |
 | show-minus | Whether to show minus button | *boolean* | `true` | 2.1.2 |
 | decimal-length | Decimal length | *number* | - | 2.2.1 |
-| disable-plus | Whether to disable plus button | *boolean* | - | 2.3.0 |
-| disable-minus | Whether to disable minus button | *boolean* | - | 2.3.0 |
 
 ### Events
 

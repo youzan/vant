@@ -25,6 +25,8 @@ export default createComponent({
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
+    disablePlus: Boolean,
+    disableMinus: Boolean,
     disableInput: Boolean,
     decimalLength: Number,
     name: {
@@ -54,12 +56,6 @@ export default createComponent({
     showMinus: {
       type: Boolean,
       default: true
-    },
-    disablePlus: {
-      type: Boolean
-    },
-    disableMinus: {
-      type: Boolean
     }
   },
 
@@ -259,6 +255,7 @@ export default createComponent({
       <div class={bem()}>
         <button
           vShow={this.showMinus}
+          type="button"
           style={this.buttonStyle}
           class={bem('minus', { disabled: this.minusDisabled })}
           {...createListeners('minus')}
@@ -279,6 +276,7 @@ export default createComponent({
         />
         <button
           vShow={this.showPlus}
+          type="button"
           style={this.buttonStyle}
           class={bem('plus', { disabled: this.plusDisabled })}
           {...createListeners('plus')}
