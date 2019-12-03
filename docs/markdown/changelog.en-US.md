@@ -1,5 +1,14 @@
 # Changelog
 
+### [v2.2.16](https://github.com/youzan/vant/tree/v2.2.16)
+`2019-12-03`
+
+**Features**
+
+- Stepper: add disable-plus props [\#5180](https://github.com/youzan/vant/pull/5180)
+- Stepper: add disable-minus props [\#5180](https://github.com/youzan/vant/pull/5180)
+
+
 ### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
 `2019-11-28`
 

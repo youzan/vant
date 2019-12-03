@@ -10,6 +10,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.2.16](https://github.com/youzan/vant/tree/v2.2.16)
+`2019-12-03`
+
+**Features**
+
+- Stepper: 新增 disable-plus 属性 [\#5180](https://github.com/youzan/vant/pull/5180)
+- Stepper: 新增 disable-minus 属性 [\#5180](https://github.com/youzan/vant/pull/5180)
+
+
 ### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
 `2019-11-28`
 
