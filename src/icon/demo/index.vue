@@ -21,6 +21,49 @@
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
+
+      <van-tab :title="$t('demo')">
+        <demo-block :title="$t('dot')">
+          <van-col span="6">
+            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+          <van-col span="6">
+            <van-icon :name="demoIcon" dot @click="copy(demoIcon, { dot: true })" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+        </demo-block>
+        <demo-block :title="$t('message')">
+          <van-col span="6">
+            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+          <van-col span="6">
+            <van-icon :name="demoIcon" info="123" @click="copy(demoIcon, { info: '123' })" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+        </demo-block>
+        <demo-block :title="$t('color')">
+          <van-col span="6">
+            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+          <van-col span="6">
+            <van-icon :name="demoIcon" color="#ff0000" @click="copy(demoIcon, { color: '#ff0000' })" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+        </demo-block>
+        <demo-block :title="$t('size')">
+          <van-col span="6">
+            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+          <van-col span="6">
+            <van-icon :name="demoIcon" size="40px" @click="copy(demoIcon, { size: '40px' })" />
+            <span>{{ demoIcon }}</span>
+          </van-col>
+        </demo-block>
+      </van-tab>
     </van-tabs>
   </demo-section>
 </template>
@@ -61,7 +104,12 @@ export default {
       basic: '基础图标',
       copied: '复制成功',
       outline: '线框风格',
-      filled: '实底风格'
+      filled: '实底风格',
+      demo: '用法示例',
+      dot: '图标右上角小红点',
+      message: '图标右上角徽标的内容',
+      color: '图标颜色',
+      size: '图标大小'
     },
     'en-US': {
       title: 'Icon List',
@@ -69,7 +117,12 @@ export default {
       basic: 'Basic',
       copied: 'Copied',
       outline: 'Outline',
-      filled: 'Filled'
+      filled: 'Filled',
+      demo: 'Demo',
+      dot: 'Show Red Dot',
+      message: 'Show Info',
+      color: 'Icon Color',
+      size: 'Icon Size'
     }
   },
 
@@ -77,13 +130,27 @@ export default {
     this.BLUE = BLUE;
     this.icons = icons;
     return {
-      tab: 0
+      tab: 0,
+      demoIcon: 'location-o'
     };
   },
 
   methods: {
-    copy(icon) {
-      const tag = `<van-icon name="${icon}" />`;
+    copy(icon, option = {}) {
+      let tag = `<van-icon name="${icon}"`;
+      if ('dot' in option) {
+        tag = `${tag} ${option.dot ? 'dot' : ''}`;
+      }
+      if ('info' in option) {
+        tag = `${tag} info="${option.info}"`;
+      }
+      if ('color' in option) {
+        tag = `${tag} color="${option.color}"`;
+      }
+      if ('size' in option) {
+        tag = `${tag} size="${option.size}"`;
+      }
+      tag = `${tag} />`;
       copyToClipboard(tag);
 
       this.$notify({

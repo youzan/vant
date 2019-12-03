@@ -34,6 +34,25 @@ Vue.use(Icon);
 <van-icon name="chat" info="99+" />
 ```
 
+
+### 图标颜色
+
+`Icon`的`color`属性用来设置图标的颜色
+
+```html
+<van-icon name="location-o" color="#ff0000" />
+<van-icon name="chat" color="#00ff00" />
+```
+
+### 图标大小
+
+`Icon`的`size`属性用来设置图标的尺寸大小
+
+```html
+<van-icon name="location-o" size="40px" />
+<van-icon name="chat" size="20px" />
+```
+
 ### 使用本地字体文件
 
 Icon 组件默认引用有赞 CDN 提供的字体文件，并通过网络下载。如果需要在项目中使用本地字体文件，请引入下面的 CSS 文件，并在项目中配置`url-loader`

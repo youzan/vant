@@ -22,10 +22,32 @@ Use `name` prop to set icon name or icon URL
 
 ### Show Info
 
+Use `dot` prop, a small red dot will be displayed in the upper right corner of the icon. 
+
+Use `info` prop, the info will be displayed in the upper right corner of the icon.
+
 ```html
 <van-icon name="chat" dot />
 <van-icon name="chat" info="9" />
 <van-icon name="chat" info="99+" />
+```
+
+### Icon Color
+
+Use `color` prop to set icon color
+
+```html
+<van-icon name="location-o" color="#ff0000" />
+<van-icon name="chat" color="#00ff00" />
+```
+
+### Icon Size
+
+Use `size` prop to set icon size
+
+```html
+<van-icon name="location-o" size="40px" />
+<van-icon name="chat" size="20px" />
 ```
 
 ### Use local font file
