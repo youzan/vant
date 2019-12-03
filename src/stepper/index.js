@@ -55,13 +55,11 @@ export default createComponent({
       type: Boolean,
       default: true
     },
-    disabledPlus: {
-      type: Boolean,
-      default: false
+    disablePlus: {
+      type: Boolean
     },
-    disabledMinus: {
-      type: Boolean,
-      default: false
+    disableMinus: {
+      type: Boolean
     }
   },
 
