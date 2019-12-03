@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
@@ -79,7 +79,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
@@ -159,8 +159,8 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button>
-        <div class="van-ellipsis van-picker__title">标题</div><button class="van-picker__confirm">确认</button>
+      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+        <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
       </div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
@@ -216,8 +216,8 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button>
-        <div class="van-ellipsis van-picker__title">标题</div><button class="van-picker__confirm">确认</button>
+      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+        <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
       </div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">

@@ -63,7 +63,12 @@ export default createComponent({
 
     onChange(columnIndex) {
       if (this.simple) {
-        this.$emit('change', this, this.getColumnValue(0), this.getColumnIndex(0));
+        this.$emit(
+          'change',
+          this,
+          this.getColumnValue(0),
+          this.getColumnIndex(0)
+        );
       } else {
         this.$emit('change', this, this.getValues(), columnIndex);
       }
@@ -105,7 +110,10 @@ export default createComponent({
     // set options of column by index
     setColumnValues(index, options) {
       const column = this.children[index];
-      if (column && JSON.stringify(column.options) !== JSON.stringify(options)) {
+      if (
+        column &&
+        JSON.stringify(column.options) !== JSON.stringify(options)
+      ) {
         column.options = options;
         column.setIndex(0);
       }
@@ -142,13 +150,70 @@ export default createComponent({
 
     onCancel() {
       this.emit('cancel');
+    },
+
+    genTitle() {
+      const titleSlot = this.slots('title');
+
+      if (titleSlot) {
+        return titleSlot;
+      }
+
+      if (this.title) {
+        return <div class={['van-ellipsis', bem('title')]}>{this.title}</div>;
+      }
+    },
+
+    genToolbar() {
+      if (this.showToolbar) {
+        return (
+          <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
+            {this.slots() || [
+              <button
+                type="button"
+                class={bem('cancel')}
+                onClick={this.onCancel}
+              >
+                {this.cancelButtonText || t('cancel')}
+              </button>,
+              this.genTitle(),
+              <button
+                type="button"
+                class={bem('confirm')}
+                onClick={this.onConfirm}
+              >
+                {this.confirmButtonText || t('confirm')}
+              </button>
+            ]}
+          </div>
+        );
+      }
+    },
+
+    genColumns() {
+      const columns = this.simple ? [this.columns] : this.columns;
+
+      return columns.map((item, index) => (
+        <PickerColumn
+          valueKey={this.valueKey}
+          allowHtml={this.allowHtml}
+          className={item.className}
+          itemHeight={this.itemHeight}
+          defaultIndex={item.defaultIndex || this.defaultIndex}
+          swipeDuration={this.swipeDuration}
+          visibleItemCount={this.visibleItemCount}
+          initialOptions={this.simple ? item : item.values}
+          onChange={() => {
+            this.onChange(index);
+          }}
+        />
+      ));
     }
   },
 
   render(h) {
     const { itemHeight } = this;
     const wrapHeight = itemHeight * this.visibleItemCount;
-    const columns = this.simple ? [this.columns] : this.columns;
 
     const frameStyle = {
       height: `${itemHeight}px`
@@ -162,49 +227,25 @@ export default createComponent({
       backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`
     };
 
-    const Toolbar = this.showToolbar && (
-      <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
-        {this.slots() || [
-          <button class={bem('cancel')} onClick={this.onCancel}>
-            {this.cancelButtonText || t('cancel')}
-          </button>,
-          this.slots('title') ||
-            (this.title && (
-              <div class={['van-ellipsis', bem('title')]}>{this.title}</div>
-            )),
-          <button class={bem('confirm')} onClick={this.onConfirm}>
-            {this.confirmButtonText || t('confirm')}
-          </button>
-        ]}
-      </div>
-    );
-
     return (
       <div class={bem()}>
-        {this.toolbarPosition === 'top' ? Toolbar : h()}
+        {this.toolbarPosition === 'top' ? this.genToolbar() : h()}
         {this.loading ? <Loading class={bem('loading')} /> : h()}
         {this.slots('columns-top')}
-        <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
-          {columns.map((item, index) => (
-            <PickerColumn
-              valueKey={this.valueKey}
-              allowHtml={this.allowHtml}
-              className={item.className}
-              itemHeight={this.itemHeight}
-              defaultIndex={item.defaultIndex || this.defaultIndex}
-              swipeDuration={this.swipeDuration}
-              visibleItemCount={this.visibleItemCount}
-              initialOptions={this.simple ? item : item.values}
-              onChange={() => {
-                this.onChange(index);
-              }}
-            />
-          ))}
+        <div
+          class={bem('columns')}
+          style={columnsStyle}
+          onTouchmove={preventDefault}
+        >
+          {this.genColumns()}
           <div class={bem('mask')} style={maskStyle} />
-          <div class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]} style={frameStyle} />
+          <div
+            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
+            style={frameStyle}
+          />
         </div>
         {this.slots('columns-bottom')}
-        {this.toolbarPosition === 'bottom' ? Toolbar : h()}
+        {this.toolbarPosition === 'bottom' ? this.genToolbar() : h()}
       </div>
     );
   }
