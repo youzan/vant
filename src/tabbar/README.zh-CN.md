@@ -132,6 +132,15 @@ export default {
 </van-tabbar>
 ```
 
+```js
+export default {
+  methods: {
+    onChange(msg) {
+      Notify({ type: 'primary', message: msg });
+    }
+  }
+}
+
 ### 路由模式
 
 标签栏支持路由模式，用于搭配`vue-router`使用。路由模式下会匹配页面路径和标签的`to`属性，并自动选中对应的标签

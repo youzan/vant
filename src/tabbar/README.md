@@ -127,6 +127,16 @@ export default {
 </van-tabbar>
 ```
 
+```js
+export default {
+  methods: {
+    onChange(msg) {
+      Notify({ type: 'primary', message: msg });
+    }
+  }
+}
+```
+
 ### Route Mode
 
 ```html

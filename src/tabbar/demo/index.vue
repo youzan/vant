@@ -32,7 +32,7 @@
         <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
           <template #icon="{ active }">
-            <img :src="active ? icon.active : icon.inactive" />
+            <img :src="active ? icon.active : icon.inactive">
           </template>
         </van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
