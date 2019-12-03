@@ -53,7 +53,11 @@ function ActionSheet(
       return (
         <div class={[bem('header'), BORDER_BOTTOM]}>
           {title}
-          <Icon name={props.closeIcon} class={bem('close')} onClick={onCancel} />
+          <Icon
+            name={props.closeIcon}
+            class={bem('close')}
+            onClick={onCancel}
+          />
         </div>
       );
     }
@@ -99,6 +103,7 @@ function ActionSheet(
 
     return (
       <button
+        type="button"
         class={[bem('item', { disabled }), item.className, BORDER_TOP]}
         style={{ color: item.color }}
         onClick={onClickOption}
@@ -111,7 +116,7 @@ function ActionSheet(
   function CancelText() {
     if (cancelText) {
       return (
-        <button class={bem('cancel')} onClick={onCancel}>
+        <button type="button" class={bem('cancel')} onClick={onCancel}>
           {cancelText}
         </button>
       );
