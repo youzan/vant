@@ -136,6 +136,8 @@ export default {
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | 2.1.2 |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | 2.1.2 |
 | decimal-length | 固定显示的小数位数 | *number* | - | 2.2.1 |
+| disabled-plus | 禁用增加按钮 | *boolean* | - | 2.3.0 |
+| disabled-minus | 禁用减少按钮 | *boolean* | - | 2.3.0 |
 
 ### Events
 
