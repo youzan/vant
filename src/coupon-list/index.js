@@ -157,12 +157,12 @@ export default createComponent({
 
   render() {
     const { coupons, disabledCoupons } = this;
-    const title = this.showCount
-      ? `${this.enabledTitle || t('enable')} (${coupons.length})`
-      : `${this.enabledTitle || t('enable')}`;
-    const disabledTitle = this.showCount
-      ? `${this.disabledTitle || t('disabled')} (${disabledCoupons.length})`
-      : `${this.disabledTitle || t('disabled')}`;
+
+    const count = this.showCount ? ` (${coupons.length})` : '';
+    const title = (this.enabledTitle || t('enable')) + count;
+
+    const disabledCount = this.showCount ? ` (${disabledCoupons.length})` : '';
+    const disabledTitle = (this.disabledTitle || t('disabled')) + disabledCount;
 
     const ExchangeBar = this.showExchangeBar && (
       <Field
