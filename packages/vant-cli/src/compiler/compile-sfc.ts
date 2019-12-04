@@ -15,6 +15,11 @@ function trim(code: string) {
   return code.replace(/\/\/\n/g, '').trim();
 }
 
+function getSfcStylePath(filePath: string, ext: string, index: number) {
+  const number = index !== 0 ? `-${index + 1}` : '';
+  return replaceExt(filePath, `-sfc${number}.${ext}`);
+}
+
 // inject render fn to script
 function injectRender(script: string, render: string) {
   script = trim(script);
@@ -37,8 +42,7 @@ function injectStyle(
   if (styles.length) {
     const imports = styles
       .map((style, index) => {
-        const prefix = index !== 0 ? `-${index + 1}` : '';
-        const { base } = parse(replaceExt(filePath, `${prefix}.css`));
+        const { base } = parse(getSfcStylePath(filePath, 'css', index));
         return `import './${base}';`;
       })
       .join('\n');
@@ -90,9 +94,7 @@ export async function compileSfc(filePath: string) {
   // compile style part
   await Promise.all(
     styles.map((style, index: number) => {
-      const prefix = index !== 0 ? `-${index + 1}` : '';
-      const ext = style.lang || 'css';
-      const cssFilePath = replaceExt(filePath, `-sfc${prefix}.${ext}`);
+      const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
 
       writeFileSync(cssFilePath, trim(style.content));
 
