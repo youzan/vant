@@ -1,10 +1,9 @@
 import { join } from 'path';
-import { existsSync, ensureDirSync, writeFileSync } from 'fs-extra';
-import { decamelize, pascalize, removeExt, getComponents } from '../common';
+import { existsSync } from 'fs-extra';
+import { decamelize, pascalize, removeExt, getComponents, smartOutputFile } from '../common';
 import {
   CONFIG,
   SRC_DIR,
-  DIST_DIR,
   SITE_MODILE_SHARED_FILE
 } from '../common/constant';
 
@@ -64,6 +63,5 @@ export function genSiteMobileShared() {
   const components = getComponents();
   const code = genCode(components);
 
-  ensureDirSync(DIST_DIR);
-  writeFileSync(SITE_MODILE_SHARED_FILE, code);
+  smartOutputFile(SITE_MODILE_SHARED_FILE, code);
 }

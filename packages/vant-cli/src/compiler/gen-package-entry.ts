@@ -1,11 +1,6 @@
 import { join } from 'path';
-import { writeFileSync } from 'fs-extra';
-import { pascalize, getComponents } from '../common';
-import {
-  SRC_DIR,
-  PACKAGE_JSON,
-  PACKAGE_ENTRY_FILE
-} from '../common/constant';
+import { pascalize, getComponents, smartOutputFile } from '../common';
+import { SRC_DIR, PACKAGE_JSON, PACKAGE_ENTRY_FILE } from '../common/constant';
 
 const version = process.env.PACKAGE_VERSION || PACKAGE_JSON.version;
 
@@ -56,5 +51,5 @@ export default {
 };
 `;
 
-  writeFileSync(PACKAGE_ENTRY_FILE, content);
+  smartOutputFile(PACKAGE_ENTRY_FILE, content);
 }

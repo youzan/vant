@@ -1,7 +1,7 @@
 import * as compiler from 'vue-template-compiler';
 import * as compileUtils from '@vue/component-compiler-utils';
 import { parse } from 'path';
-import { removeSync, writeFileSync, readFileSync } from 'fs-extra';
+import { remove, writeFileSync, readFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
 import { compileJs } from './compile-js';
 import { compileStyle } from './compile-style';
@@ -63,7 +63,14 @@ function compileTemplate(template: string) {
   return result.code;
 }
 
-export async function compileSfc(filePath: string) {
+type CompileSfcOptions = {
+  skipStyle?: boolean;
+};
+
+export async function compileSfc(
+  filePath: string,
+  options: CompileSfcOptions = {}
+): Promise<any> {
   const source = readFileSync(filePath, 'utf-8');
   const jsFilePath = replaceExt(filePath, '.js');
 
@@ -75,30 +82,44 @@ export async function compileSfc(filePath: string) {
 
   const { template, styles } = descriptor;
 
-  removeSync(filePath);
+  const tasks = [remove(filePath)];
 
   // compile js part
   if (descriptor.script) {
-    let script = descriptor.script.content;
-    script = injectStyle(script, styles, filePath);
+    tasks.push(
+      new Promise((resolve, reject) => {
+        let script = descriptor.script!.content;
+        script = injectStyle(script, styles, filePath);
 
-    if (template) {
-      const render = compileTemplate(template.content);
-      script = injectRender(script, render);
-    }
+        if (template) {
+          const render = compileTemplate(template.content);
+          script = injectRender(script, render);
+        }
 
-    writeFileSync(jsFilePath, script);
-    compileJs(jsFilePath);
+        writeFileSync(jsFilePath, script);
+        compileJs(jsFilePath)
+          .then(resolve)
+          .catch(reject);
+      })
+    );
   }
 
   // compile style part
-  await Promise.all(
-    styles.map((style, index: number) => {
-      const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
+  if (!options.skipStyle) {
+    tasks.push(
+      ...styles.map((style, index: number) => {
+        const cssFilePath = getSfcStylePath(
+          filePath,
+          style.lang || 'css',
+          index
+        );
 
-      writeFileSync(cssFilePath, trim(style.content));
+        writeFileSync(cssFilePath, trim(style.content));
 
-      return compileStyle(cssFilePath);
-    })
-  );
+        return compileStyle(cssFilePath);
+      })
+    );
+  }
+
+  return Promise.all(tasks);
 }

@@ -6,22 +6,16 @@ import dependencyTree from 'dependency-tree';
 import { join } from 'path';
 import { compileJs } from './compile-js';
 import { compileSfc } from './compile-sfc';
-import { compileStyle } from './compile-style';
+import { CSS_LANG } from '../common/css';
+import { SRC_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
+import { copySync, existsSync, readdirSync } from 'fs-extra';
 import {
   isDir,
   isSfc,
-  isStyle,
   isScript,
-  getComponents
+  getComponents,
+  smartOutputFile
 } from '../common';
-import { SRC_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
-import {
-  copy,
-  existsSync,
-  readdirSync,
-  writeFileSync,
-  ensureDirSync
-} from 'fs-extra';
 
 interface DependencyObj {
   [k: string]: DependencyObj;
@@ -30,10 +24,10 @@ interface DependencyObj {
 const components = getComponents();
 const TEMP_DIR = join(DIST_DIR, 'temp');
 
-async function compileTempDir(dir: string) {
+function compileTempDir(dir: string): Promise<unknown> {
   const files = readdirSync(dir);
 
-  await Promise.all(
+  return Promise.all(
     files.map(filename => {
       const filePath = join(dir, filename);
 
@@ -43,15 +37,11 @@ async function compileTempDir(dir: string) {
 
       if (filename.indexOf('index') !== -1) {
         if (isSfc(filePath)) {
-          return compileSfc(filePath);
+          return compileSfc(filePath, { skipStyle: true });
         }
 
         if (isScript(filePath)) {
           return compileJs(filePath);
-        }
-
-        if (isStyle(filePath)) {
-          return compileStyle(filePath);
         }
       }
 
@@ -81,7 +71,7 @@ function search(tree: DependencyObj, component: string, checkList: string[]) {
 }
 
 function getStylePath(component: string) {
-  return join(TEMP_DIR, `${component}/index.css`);
+  return join(TEMP_DIR, `${component}/index.${CSS_LANG}`);
 }
 
 function checkStyleExists(component: string) {
@@ -147,27 +137,29 @@ function getSequence(depsMap: DepsMap) {
 }
 
 export async function genStyleDepsMap() {
-  const map = {} as DepsMap;
+  return new Promise(resolve => {
+    const map = {} as DepsMap;
 
-  await copy(SRC_DIR, TEMP_DIR);
-  await compileTempDir(TEMP_DIR);
+    copySync(SRC_DIR, TEMP_DIR);
+    compileTempDir(TEMP_DIR).then(() => {
+      components.filter(checkStyleExists).forEach(component => {
+        map[component] = analyzeDeps(component);
+      });
 
-  components.filter(checkStyleExists).forEach(component => {
-    map[component] = analyzeDeps(component);
+      const sequence = getSequence(map);
+
+      Object.keys(map).forEach(key => {
+        map[key] = map[key].sort(
+          (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
+        );
+      });
+
+      smartOutputFile(
+        STYPE_DEPS_JSON_FILE,
+        JSON.stringify({ map, sequence }, null, 2)
+      );
+
+      resolve();
+    });
   });
-
-  const sequence = getSequence(map);
-
-  Object.keys(map).forEach(key => {
-    map[key] = map[key].sort(
-      (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
-    );
-  });
-
-  ensureDirSync(DIST_DIR);
-
-  writeFileSync(
-    STYPE_DEPS_JSON_FILE,
-    JSON.stringify({ map, sequence }, null, 2)
-  );
 }

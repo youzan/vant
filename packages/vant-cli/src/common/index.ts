@@ -1,7 +1,13 @@
 import decamelize from 'decamelize';
 import { join } from 'path';
 import { get } from 'lodash';
-import { readdirSync, existsSync, lstatSync, readFileSync } from 'fs-extra';
+import {
+  lstatSync,
+  existsSync,
+  readdirSync,
+  readFileSync,
+  outputFileSync
+} from 'fs-extra';
 import { CONFIG, SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
@@ -112,6 +118,20 @@ export function getCssLang(): string {
   }
 
   return preprocessor;
+}
+
+// Smarter outputFileSync
+// Skip if content unchanged
+export function smartOutputFile(filePath: string, content: string) {
+  if (existsSync(filePath)) {
+    const previousContent = readFileSync(filePath, 'utf-8');
+
+    if (previousContent === content) {
+      return;
+    }
+  }
+
+  outputFileSync(filePath, content);
 }
 
 export { decamelize };

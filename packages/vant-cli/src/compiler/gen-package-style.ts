@@ -1,6 +1,5 @@
 import { join } from 'path';
-import { writeFileSync } from 'fs-extra';
-import { replaceExt } from '../common';
+import { replaceExt, smartOutputFile } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
 import {
   SRC_DIR,
@@ -23,5 +22,5 @@ export function genPacakgeStyle() {
     .map((name: string) => `@import "${join(SRC_DIR, `${name}/index${ext}`)}";`)
     .join('\n');
 
-  writeFileSync(replaceExt(PACKAGE_STYLE_FILE, ext), content);
+  smartOutputFile(replaceExt(PACKAGE_STYLE_FILE, ext), content);
 }

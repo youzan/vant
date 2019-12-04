@@ -1,7 +1,12 @@
 import glob from 'fast-glob';
 import { join, parse } from 'path';
-import { existsSync, writeFileSync } from 'fs-extra';
-import { pascalize, removeExt, getComponents } from '../common';
+import { existsSync } from 'fs-extra';
+import {
+  pascalize,
+  removeExt,
+  getComponents,
+  smartOutputFile
+} from '../common';
 import {
   SRC_DIR,
   DOCS_DIR,
@@ -64,5 +69,5 @@ ${genExportConfig()}
 ${genExportDocuments(documents)}
 `;
 
-  writeFileSync(SITE_DESKTOP_SHARED_FILE, code);
+  smartOutputFile(SITE_DESKTOP_SHARED_FILE, code);
 }

@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { getWebpackConfig } from '../common';
+import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
   CONFIG,
   SITE_MODILE_SHARED_FILE,
@@ -45,6 +46,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     }
   },
   plugins: [
+    new VantCliSitePlugin(),
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
