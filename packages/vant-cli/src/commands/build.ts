@@ -9,8 +9,8 @@ import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
+import { getStepper } from '../common/logger';
 import {
-  logger,
   isDir,
   isSfc,
   isStyle,
@@ -20,6 +20,8 @@ import {
   setNodeEnv,
   setModuleEnv
 } from '../common';
+
+const stepper = getStepper(8);
 
 async function compileDir(dir: string) {
   const files = readdirSync(dir);
@@ -56,53 +58,53 @@ async function compileDir(dir: string) {
 async function buildESModuleOutputs() {
   await copy(SRC_DIR, ES_DIR);
 
-  logger.start('Build esmodule outputs');
+  stepper.start('Build ESModule Outputs');
 
   try {
     setModuleEnv('esmodule');
     await compileDir(ES_DIR);
-    logger.success('Build esmodule outputs');
+    stepper.success('Build ESModule Outputs');
   } catch (err) {
-    logger.error('Build esmodule outputs');
+    stepper.error('Build ESModule Outputs', err);
   }
 }
 
 async function buildCommonjsOutputs() {
   await copy(SRC_DIR, LIB_DIR);
 
-  logger.start('Build commonjs outputs');
+  stepper.start('Build Commonjs Outputs');
 
   try {
     setModuleEnv('commonjs');
     await compileDir(LIB_DIR);
-    logger.success('Build commonjs outputs');
+    stepper.success('Build Commonjs Outputs');
   } catch (err) {
-    logger.error('Build commonjs outputs');
+    stepper.error('Build Commonjs Outputs', err);
   }
 }
 
 async function buildStyleEntry() {
-  logger.start('Build style entry');
+  await genStyleDepsMap();
 
+  stepper.start('Build Style Entry');
   try {
-    await genStyleDepsMap();
     genComponentStyle();
-    logger.success('Build style entry');
+    stepper.success('Build Style Entry');
   } catch (err) {
-    logger.error('Build style entry');
+    stepper.error('Build Style Entry', err);
   }
 }
 
 async function buildPackedOutputs() {
-  logger.start('Build packed outputs');
+  stepper.start('Build Packed Outputs');
 
   try {
     genPackageEntry();
     await compilePackage(false);
     await compilePackage(true);
-    logger.success('Build packed outputs');
+    stepper.success('Build Packed Outputs');
   } catch (err) {
-    logger.error('Build packed outputs');
+    stepper.error('Build Packed Outputs', err);
   }
 }
 

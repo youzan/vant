@@ -1,5 +1,5 @@
-import { logger } from '../common';
 import { readFileSync } from 'fs-extra';
+import { logger } from '../common/logger';
 
 const commitRE = /^(revert: )?(fix|feat|docs|perf|test|types|build|chore|refactor|breaking change)(\(.+\))?: .{1,50}/;
 const mergeRE = /Merge branch /;

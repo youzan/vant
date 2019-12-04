@@ -1,10 +1,12 @@
 import { lint as stylelint } from 'stylelint';
 import { CLIEngine } from 'eslint';
-import { logger } from '../common';
+import { getStepper } from '../common/logger';
 import { SCRIPT_EXTS } from '../common/constant';
 
+const stepper = getStepper(4);
+
 function lintScript() {
-  logger.start('ESLint Start');
+  stepper.start('ESLint Start');
 
   const cli = new CLIEngine({
     fix: true,
@@ -19,15 +21,14 @@ function lintScript() {
   // output lint errors
   const formatted = formatter(report.results);
   if (formatted) {
-    logger.error('ESLint Failed');
-    console.log(formatter(report.results));
+    stepper.error('ESLint Failed', '\n' + formatter(report.results));
   } else {
-    logger.success('ESLint Passed');
+    stepper.success('ESLint Passed');
   }
 }
 
 function lintStyle() {
-  logger.start('Stylelint Start');
+  stepper.start('Stylelint Start');
 
   stylelint({
     fix: true,
@@ -35,10 +36,9 @@ function lintStyle() {
     files: ['src/**/*.css', 'src/**/*.less', 'src/**/*.scss', 'src/**/*.vue']
   }).then(result => {
     if (result.errored) {
-      logger.error('Stylelint Failed');
-      console.log(result.output);
+      stepper.error('Stylelint Failed', '\n' + result.output);
     } else {
-      logger.success('Stylelint Passed');
+      stepper.success('Stylelint Passed');
     }
   });
 }

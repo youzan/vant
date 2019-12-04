@@ -8,7 +8,6 @@ import { compileJs } from './compile-js';
 import { compileSfc } from './compile-sfc';
 import { compileStyle } from './compile-style';
 import {
-  logger,
   isDir,
   isSfc,
   isStyle,
@@ -148,8 +147,6 @@ function getSequence(depsMap: DepsMap) {
 }
 
 export async function genStyleDepsMap() {
-  logger.start('Analyze dependencies');
-
   const map = {} as DepsMap;
 
   await copy(SRC_DIR, TEMP_DIR);
@@ -173,6 +170,4 @@ export async function genStyleDepsMap() {
     STYPE_DEPS_JSON_FILE,
     JSON.stringify({ map, sequence }, null, 2)
   );
-
-  logger.success('Analyze dependencies');
 }
