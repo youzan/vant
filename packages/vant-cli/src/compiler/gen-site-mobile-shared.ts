@@ -1,11 +1,14 @@
 import { join } from 'path';
 import { existsSync } from 'fs-extra';
-import { decamelize, pascalize, removeExt, getComponents, smartOutputFile } from '../common';
+import { SRC_DIR, SITE_MODILE_SHARED_FILE } from '../common/constant';
 import {
-  CONFIG,
-  SRC_DIR,
-  SITE_MODILE_SHARED_FILE
-} from '../common/constant';
+  pascalize,
+  removeExt,
+  decamelize,
+  getVantConfig,
+  getComponents,
+  smartOutputFile
+} from '../common';
 
 type DemoItem = {
   name: string;
@@ -34,16 +37,17 @@ function genExports(demos: DemoItem[]) {
 }
 
 function genConfig(demos: DemoItem[]) {
+  const vantConfig = getVantConfig();
   const demoNames = demos.map(item => decamelize(item.name, '-'));
 
-  CONFIG.site.nav = CONFIG.site.nav.filter((group: any) => {
+  vantConfig.site.nav = vantConfig.site.nav.filter((group: any) => {
     group.items = group.items.filter((item: any) =>
       demoNames.includes(item.path)
     );
     return group.items.length;
   });
 
-  return `export const config = ${JSON.stringify(CONFIG, null, 2)}`;
+  return `export const config = ${JSON.stringify(vantConfig, null, 2)}`;
 }
 
 function genCode(components: string[]) {

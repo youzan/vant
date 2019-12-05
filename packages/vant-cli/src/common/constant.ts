@@ -6,7 +6,7 @@ export const LIB_DIR = join(CWD, 'lib');
 export const SRC_DIR = join(CWD, 'src');
 export const DOCS_DIR = join(CWD, 'docs');
 export const SITE_DIST_DIR = join(CWD, 'site');
-export const CONFIG_FILE = join(CWD, 'vant.config.js');
+export const VANT_CONFIG_FILE = join(CWD, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(CWD, 'package.json');
 export const WEBPACK_CONFIG_FILE = join(CWD, 'webpack.config.js');
 
@@ -31,5 +31,4 @@ export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
 export const SCRIPT_EXTS = ['.js', '.jsx', '.vue', '.ts', '.tsx'];
 export const STYLE_EXTS = ['.css', '.less', '.scss'];
 
-export const CONFIG = require(CONFIG_FILE);
 export const PACKAGE_JSON = require(PACKAGE_JSON_FILE);

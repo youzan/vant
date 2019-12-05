@@ -2,15 +2,14 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
-import { getWebpackConfig } from '../common';
+import { getVantConfig, getWebpackConfig } from '../common';
 import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
-  CONFIG,
   SITE_MODILE_SHARED_FILE,
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
 
-const siteConfig = CONFIG.site;
+const siteConfig = getVantConfig().site;
 const title = `${siteConfig.title} - ${siteConfig.description}`;
 
 export const siteDevBaseConfig = merge(baseConfig as any, {

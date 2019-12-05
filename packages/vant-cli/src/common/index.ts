@@ -1,6 +1,5 @@
 import decamelize from 'decamelize';
 import { join } from 'path';
-import { get } from 'lodash';
 import {
   lstatSync,
   existsSync,
@@ -8,7 +7,7 @@ import {
   readFileSync,
   outputFileSync
 } from 'fs-extra';
-import { CONFIG, SRC_DIR, WEBPACK_CONFIG_FILE } from './constant';
+import { SRC_DIR, WEBPACK_CONFIG_FILE, VANT_CONFIG_FILE } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -81,6 +80,12 @@ export function pascalize(str: string): string {
   );
 }
 
+export function getVantConfig() {
+  delete require.cache[VANT_CONFIG_FILE];
+
+  return require(VANT_CONFIG_FILE);
+}
+
 export function getWebpackConfig(): object {
   if (existsSync(WEBPACK_CONFIG_FILE)) {
     const config = require(WEBPACK_CONFIG_FILE);
@@ -108,16 +113,6 @@ export function setNodeEnv(value: NodeEnv) {
 
 export function isDev() {
   return process.env.NODE_ENV === 'development';
-}
-
-export function getCssLang(): string {
-  const preprocessor = get(CONFIG, 'build.css.preprocessor', 'less');
-
-  if (preprocessor === 'sass') {
-    return 'scss';
-  }
-
-  return preprocessor;
 }
 
 // Smarter outputFileSync

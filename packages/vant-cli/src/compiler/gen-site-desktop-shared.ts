@@ -10,7 +10,7 @@ import {
 import {
   SRC_DIR,
   DOCS_DIR,
-  CONFIG_FILE,
+  VANT_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
 
@@ -51,7 +51,7 @@ function genExportDocuments(items: DocumentItem[]) {
 }
 
 function genImportConfig() {
-  return `import config from '${removeExt(CONFIG_FILE)}';`;
+  return `import config from '${removeExt(VANT_CONFIG_FILE)}';`;
 }
 
 function genExportConfig() {

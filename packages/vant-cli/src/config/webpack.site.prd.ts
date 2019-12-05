@@ -1,12 +1,12 @@
 import merge from 'webpack-merge';
 import { get } from 'lodash';
-import { getWebpackConfig } from '../common';
+import { getVantConfig, getWebpackConfig } from '../common';
 import { siteDevBaseConfig } from './webpack.site.dev';
-import { CONFIG, SITE_DIST_DIR } from '../common/constant';
+import { SITE_DIST_DIR } from '../common/constant';
 
-const outputDir = get(CONFIG, 'build.site.outputDir', SITE_DIST_DIR);
-
-const publicPath = get(CONFIG, 'build.site.publicPath', '/');
+const vantConfig = getVantConfig();
+const outputDir = get(vantConfig, 'build.site.outputDir', SITE_DIST_DIR);
+const publicPath = get(vantConfig, 'build.site.publicPath', '/');
 
 export const sitePrdConfig = merge(
   siteDevBaseConfig,
