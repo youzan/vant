@@ -129,6 +129,8 @@ export default {
 | name | 标识符，可以在`change`事件回调参数中获取 | *string \| number* | - | 2.2.11 |
 | integer | 是否只允许输入整数 | *boolean* | `false` | - |
 | disabled | 是否禁用步进器 | *boolean* | `false` | - |
+| disable-plus | 是否禁用增加按钮 | *boolean* | `false` | 2.2.16 |
+| disable-minus | 是否禁用减少按钮 | *boolean* | `false` | 2.2.16 |
 | disable-input | 是否禁用输入框 | *boolean* | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
 | input-width | 输入框宽度，默认单位为`px` | *string \| number* | `32px` | - |

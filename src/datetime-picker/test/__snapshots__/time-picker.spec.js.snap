@@ -2,7 +2,7 @@
 
 exports[`filter prop 1`] = `
 <div class="van-picker">
-  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
@@ -33,7 +33,7 @@ exports[`filter prop 1`] = `
 
 exports[`format initial value 1`] = `
 <div class="van-picker">
-  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
@@ -57,7 +57,7 @@ exports[`format initial value 1`] = `
 
 exports[`formatter prop 1`] = `
 <div class="van-picker">
-  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
@@ -88,7 +88,7 @@ exports[`formatter prop 1`] = `
 
 exports[`max-hour & max-minute 1`] = `
 <div class="van-picker">
-  <div class="van-hairline--top-bottom van-picker__toolbar"><button class="van-picker__cancel">取消</button><button class="van-picker__confirm">确认</button></div>
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">

@@ -45,6 +45,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 修复 NumberKeyboard 在隐藏状态下也会触发 blur 事件的问题 [\#5110](https://github.com/youzan/vant/pull/5110)
 
 
+### [v2.2.16](https://github.com/youzan/vant/tree/v2.2.16)
+`2019-12-03`
+
+**Features**
+
+- Stepper: 新增 disable-plus 属性 [\#5180](https://github.com/youzan/vant/pull/5180)
+- Stepper: 新增 disable-minus 属性 [\#5180](https://github.com/youzan/vant/pull/5180)
+
+
 ### [v2.2.15](https://github.com/youzan/vant/tree/v2.2.15)
 `2019-11-28`
 

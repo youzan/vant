@@ -29,7 +29,6 @@ export default {
     label: '合計：'
   },
   vanCoupon: {
-    valid: '有效期限',
     unlimited: '無使用門檻',
     discount: (discount: number) => `${discount}折`,
     condition: (condition: number) => `滿${condition}元可用`

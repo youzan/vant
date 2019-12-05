@@ -25,6 +25,8 @@ export default createComponent({
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
+    disablePlus: Boolean,
+    disableMinus: Boolean,
     disableInput: Boolean,
     decimalLength: Number,
     name: {
@@ -72,11 +74,11 @@ export default createComponent({
 
   computed: {
     minusDisabled() {
-      return this.disabled || this.currentValue <= this.min;
+      return this.disabled || this.disableMinus || this.currentValue <= this.min;
     },
 
     plusDisabled() {
-      return this.disabled || this.currentValue >= this.max;
+      return this.disabled || this.disablePlus || this.currentValue >= this.max;
     },
 
     inputStyle() {
@@ -253,6 +255,7 @@ export default createComponent({
       <div class={bem()}>
         <button
           vShow={this.showMinus}
+          type="button"
           style={this.buttonStyle}
           class={bem('minus', { disabled: this.minusDisabled })}
           {...createListeners('minus')}
@@ -273,6 +276,7 @@ export default createComponent({
         />
         <button
           vShow={this.showPlus}
+          type="button"
           style={this.buttonStyle}
           class={bem('plus', { disabled: this.plusDisabled })}
           {...createListeners('plus')}

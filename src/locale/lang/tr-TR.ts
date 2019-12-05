@@ -29,7 +29,6 @@ export default {
     label: 'Toplam:'
   },
   vanCoupon: {
-    valid: 'Geçerli',
     unlimited: 'Sınırsız',
     discount: (discount: number) => `%${discount * 10} indirim`,
     condition: (condition: number) => `En az ${condition}`
