@@ -22,7 +22,10 @@ export class VantCliSitePlugin {
           genSiteDesktopShared();
           resolve();
         })
-        .catch(reject);
+        .catch(err => {
+          console.log(err);
+          reject(err);
+        });
     });
   }
 }

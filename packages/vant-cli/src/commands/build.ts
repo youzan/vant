@@ -56,11 +56,10 @@ async function compileDir(dir: string) {
 }
 
 async function buildESModuleOutputs() {
-  await copy(SRC_DIR, ES_DIR);
-
   stepper.start('Build ESModule Outputs');
 
   try {
+    await copy(SRC_DIR, ES_DIR);
     setModuleEnv('esmodule');
     await compileDir(ES_DIR);
     stepper.success('Build ESModule Outputs');
@@ -70,11 +69,10 @@ async function buildESModuleOutputs() {
 }
 
 async function buildCommonjsOutputs() {
-  await copy(SRC_DIR, LIB_DIR);
-
   stepper.start('Build Commonjs Outputs');
 
   try {
+    await copy(SRC_DIR, LIB_DIR);
     setModuleEnv('commonjs');
     await compileDir(LIB_DIR);
     stepper.success('Build Commonjs Outputs');
@@ -84,10 +82,10 @@ async function buildCommonjsOutputs() {
 }
 
 async function buildStyleEntry() {
-  await genStyleDepsMap();
-
   stepper.start('Build Style Entry');
+
   try {
+    await genStyleDepsMap();
     genComponentStyle();
     stepper.success('Build Style Entry');
   } catch (err) {
