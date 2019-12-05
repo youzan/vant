@@ -120,8 +120,8 @@ function Card(
     return (
         <div>
           {props.currency}
-          <span class={bem('price', 'integer')}>{priceArr[0]}</span>.
-          {priceArr[1]}
+          <span class={bem('price', 'integer')}>{ priceArr[0] }</span>.
+          <span class={bem('price', 'decimal')}>{ priceArr[1] }</span>
         </div>
     );
   }
