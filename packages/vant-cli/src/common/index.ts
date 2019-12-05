@@ -7,7 +7,7 @@ import {
   readFileSync,
   outputFileSync
 } from 'fs-extra';
-import { SRC_DIR, WEBPACK_CONFIG_FILE, VANT_CONFIG_FILE } from './constant';
+import { SRC_DIR, getVantConfig, WEBPACK_CONFIG_FILE } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -80,12 +80,6 @@ export function pascalize(str: string): string {
   );
 }
 
-export function getVantConfig() {
-  delete require.cache[VANT_CONFIG_FILE];
-
-  return require(VANT_CONFIG_FILE);
-}
-
 export function getWebpackConfig(): object {
   if (existsSync(WEBPACK_CONFIG_FILE)) {
     const config = require(WEBPACK_CONFIG_FILE);
@@ -129,4 +123,4 @@ export function smartOutputFile(filePath: string, content: string) {
   outputFileSync(filePath, content);
 }
 
-export { decamelize };
+export { decamelize, getVantConfig };
