@@ -32,10 +32,14 @@ function compileTempDir(dir: string): Promise<unknown> {
       const filePath = join(dir, filename);
 
       if (isDir(filePath)) {
+        if (filePath.includes('/test') || filePath.includes('/demo')) {
+          return Promise.resolve();
+        }
+
         return compileTempDir(filePath);
       }
 
-      if (filename.indexOf('index') !== -1) {
+      if (filename.includes('index')) {
         if (isSfc(filePath)) {
           return compileSfc(filePath, { skipStyle: true });
         }
