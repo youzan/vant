@@ -14,13 +14,12 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "dev": "npm run build:entry && webpack-dev-server --config build/webpack.site.dev.js",
+    "dev": "vant-cli dev",
     "lint": "vant-cli lint",
-    "build:entry": "node build/build-entry.js",
-    "build:changelog": "vant-cli changelog ./docs/markdown/changelog.generated.md --tag v2.2.0",
     "test": "vant-cli test",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html",
+    "changelog": "vant-cli changelog ./docs/changelog.generated.md",
     "release": "vant-cli release",
     "release:site": "sh build/release-site.sh"
   },
@@ -32,11 +31,11 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,vue}": [
-      "eslint",
+      "eslint --fix",
       "git add"
     ],
     "*.{vue,css,less}": [
-      "stylelint",
+      "stylelint --fix",
       "git add"
     ]
   },
