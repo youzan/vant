@@ -9,7 +9,7 @@ const PLUGIN_NAME = 'VantCliSitePlugin';
 
 export class VantCliSitePlugin {
   apply(compiler: Compiler) {
-    compiler.hooks.beforeCompile.tapPromise(PLUGIN_NAME, this.genSiteEntry);
+    compiler.hooks.watchRun.tapPromise(PLUGIN_NAME, this.genSiteEntry);
   }
 
   genSiteEntry() {
