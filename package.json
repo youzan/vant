@@ -17,11 +17,12 @@
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
-    "test:watch": "vant-cli test --watch",
-    "test:coverage": "open test/coverage/index.html",
-    "changelog": "vant-cli changelog ./docs/changelog.generated.md",
+    "build": "vant-cli build",
     "release": "vant-cli release",
-    "release:site": "sh build/release-site.sh"
+    "test:watch": "vant-cli test --watch",
+    "release:site": "sh build/release-site.sh",
+    "test:coverage": "open test/coverage/index.html",
+    "changelog": "vant-cli changelog ./docs/changelog.generated.md"
   },
   "husky": {
     "hooks": {
