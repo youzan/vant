@@ -70,8 +70,8 @@ export default {
     };
   },
   methods: {
-    onChange(msg) {
-      Notify({ type: 'primary', message: msg });
+    onChange(index) {
+      Notify({ type: 'primary', message: index });
     }
   }
 }
