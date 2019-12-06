@@ -79,7 +79,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `primary` `info` `warning` | *string* | `danger` | 2.1.6 |
+| type | 类型，可选值为 `primary` `success` `warning` | *string* | `danger` | 2.1.6 |
 | message | 展示文案，支持通过`\n`换行 | *string* | - | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | *number* | `3000` | - |
 | color | 字体颜色 | *string* | `#fff` | - |
