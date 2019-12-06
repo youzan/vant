@@ -1,81 +1,21 @@
-/**
- * Build style entry of all components
- */
-
-import dependencyTree from 'dependency-tree';
 import { join } from 'path';
-import { compileJs } from './compile-js';
-import { compileSfc } from './compile-sfc';
 import { CSS_LANG } from '../common/css';
-import { SRC_DIR, DIST_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
-import { copySync, existsSync, readdirSync } from 'fs-extra';
-import {
-  isDir,
-  isSfc,
-  isScript,
-  getComponents,
-  smartOutputFile
-} from '../common';
-
-interface DependencyObj {
-  [k: string]: DependencyObj;
-}
+import { existsSync } from 'fs-extra';
+import { getDeps, clearDepsCache, fillExt } from './get-deps';
+import { getComponents, smartOutputFile } from '../common';
+import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 const components = getComponents();
-const TEMP_DIR = join(DIST_DIR, 'temp');
-
-function compileTempDir(dir: string): Promise<unknown> {
-  const files = readdirSync(dir);
-
-  return Promise.all(
-    files.map(filename => {
-      const filePath = join(dir, filename);
-
-      if (isDir(filePath)) {
-        if (filePath.includes('/test') || filePath.includes('/demo')) {
-          return Promise.resolve();
-        }
-
-        return compileTempDir(filePath);
-      }
-
-      if (filename.includes('index')) {
-        if (isSfc(filePath)) {
-          return compileSfc(filePath, { skipStyle: true });
-        }
-
-        if (isScript(filePath)) {
-          return compileJs(filePath);
-        }
-      }
-
-      return Promise.resolve();
-    })
-  );
-}
 
 function matchPath(path: string, component: string): boolean {
   return path
-    .replace(TEMP_DIR, '')
+    .replace(SRC_DIR, '')
     .split('/')
     .includes(component);
 }
 
-function search(tree: DependencyObj, component: string, checkList: string[]) {
-  Object.keys(tree).forEach(key => {
-    search(tree[key], component, checkList);
-    components
-      .filter(item => matchPath(key, item))
-      .forEach(item => {
-        if (!checkList.includes(item) && item !== component) {
-          checkList.push(item);
-        }
-      });
-  });
-}
-
 function getStylePath(component: string) {
-  return join(TEMP_DIR, `${component}/index.${CSS_LANG}`);
+  return join(SRC_DIR, `${component}/index.${CSS_LANG}`);
 }
 
 function checkStyleExists(component: string) {
@@ -83,18 +23,31 @@ function checkStyleExists(component: string) {
 }
 
 // analyze component dependencies
-function analyzeDeps(component: string) {
+function analyzeComponentDeps(component: string) {
   const checkList: string[] = [];
+  const componentEntry = fillExt(join(SRC_DIR, component, 'index'));
+  const record = new Set();
 
-  search(
-    dependencyTree({
-      directory: TEMP_DIR,
-      filename: join(TEMP_DIR, component, 'index.js'),
-      filter: path => !~path.indexOf('node_modules')
-    }),
-    component,
-    checkList
-  );
+  function search(filePath: string) {
+    record.add(filePath);
+
+    getDeps(filePath).forEach(key => {
+      if (record.has(key)) {
+        return;
+      }
+
+      search(key);
+      components
+        .filter(item => matchPath(key, item))
+        .forEach(item => {
+          if (!checkList.includes(item) && item !== component) {
+            checkList.push(item);
+          }
+        });
+    });
+  }
+
+  search(componentEntry);
 
   return checkList.filter(checkStyleExists);
 }
@@ -142,28 +95,27 @@ function getSequence(depsMap: DepsMap) {
 
 export async function genStyleDepsMap() {
   return new Promise(resolve => {
+    clearDepsCache();
+
     const map = {} as DepsMap;
 
-    copySync(SRC_DIR, TEMP_DIR);
-    compileTempDir(TEMP_DIR).then(() => {
-      components.filter(checkStyleExists).forEach(component => {
-        map[component] = analyzeDeps(component);
-      });
-
-      const sequence = getSequence(map);
-
-      Object.keys(map).forEach(key => {
-        map[key] = map[key].sort(
-          (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
-        );
-      });
-
-      smartOutputFile(
-        STYPE_DEPS_JSON_FILE,
-        JSON.stringify({ map, sequence }, null, 2)
-      );
-
-      resolve();
+    components.filter(checkStyleExists).forEach(component => {
+      map[component] = analyzeComponentDeps(component);
     });
+
+    const sequence = getSequence(map);
+
+    Object.keys(map).forEach(key => {
+      map[key] = map[key].sort(
+        (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
+      );
+    });
+
+    smartOutputFile(
+      STYPE_DEPS_JSON_FILE,
+      JSON.stringify({ map, sequence }, null, 2)
+    );
+
+    resolve();
   });
 }

@@ -27,7 +27,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
-    "@types/dependency-tree": "^6.1.0",
     "@types/eslint": "^6.1.3",
     "@types/fs-extra": "^8.0.1",
     "@types/html-webpack-plugin": "^3.2.1",
@@ -74,7 +73,6 @@
     "css-loader": "^3.2.0",
     "csso": "^4.0.2",
     "decamelize": "^3.2.0",
-    "dependency-tree": "^7.1.0",
     "eslint": "^6.7.1",
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",

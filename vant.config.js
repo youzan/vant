@@ -1,18 +1,3 @@
-const sharedSiteConfig = {
-  title: 'Vant',
-  logo: 'https://img.yzcdn.cn/vant/logo.png',
-  links: [
-    {
-      image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-      url: 'vant-weapp'
-    },
-    {
-      image: 'https://b.yzcdn.cn/vant/logo/github.svg',
-      url: 'https://github.com/youzan/vant'
-    }
-  ]
-};
-
 module.exports = {
   title: 'vant',
   build: {
@@ -24,8 +9,19 @@ module.exports = {
     defaultLang: 'en-US',
     locales: {
       'zh-CN': {
-        ...sharedSiteConfig,
+        title: 'Vant',
         description: '轻量、可靠的移动端 Vue 组件库',
+        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        links: [
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: 'vant-weapp'
+          },
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            url: 'https://github.com/youzan/vant'
+          }
+        ],
         nav: [
           {
             title: '开发指南',
@@ -351,8 +347,19 @@ module.exports = {
         ]
       },
       'en-US': {
-        ...sharedSiteConfig,
+        title: 'Vant',
         description: 'Mobile UI Components built on Vue',
+        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        links: [
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: 'vant-weapp'
+          },
+          {
+            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            url: 'https://github.com/youzan/vant'
+          }
+        ],
         nav: [
           {
             title: 'Essentials',
