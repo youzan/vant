@@ -14,11 +14,11 @@ module.exports = {
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         links: [
           {
-            image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: 'vant-weapp'
+            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: '/vant-weapp'
           },
           {
-            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant'
           }
         ],
@@ -27,7 +27,7 @@ module.exports = {
             title: '开发指南',
             items: [
               {
-                path: 'intro',
+                path: 'home',
                 title: '介绍'
               },
               {
@@ -352,11 +352,11 @@ module.exports = {
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         links: [
           {
-            image: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: 'vant-weapp'
+            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: '/vant-weapp'
           },
           {
-            image: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant'
           }
         ],
@@ -365,7 +365,7 @@ module.exports = {
             title: 'Essentials',
             items: [
               {
-                path: 'intro',
+                path: 'home',
                 title: 'Introduction'
               },
               {

@@ -67,12 +67,8 @@ type CompileSfcOptions = {
   skipStyle?: boolean;
 };
 
-export async function compileSfc(
-  filePath: string,
-  options: CompileSfcOptions = {}
-): Promise<any> {
+export function parseSfc(filePath: string) {
   const source = readFileSync(filePath, 'utf-8');
-  const jsFilePath = replaceExt(filePath, '.js');
 
   const descriptor = compileUtils.parse({
     source,
@@ -80,9 +76,17 @@ export async function compileSfc(
     needMap: false
   } as any);
 
-  const { template, styles } = descriptor;
+  return descriptor;
+}
 
+export async function compileSfc(
+  filePath: string,
+  options: CompileSfcOptions = {}
+): Promise<any> {
   const tasks = [remove(filePath)];
+  const jsFilePath = replaceExt(filePath, '.js');
+  const descriptor = parseSfc(filePath);
+  const { template, styles } = descriptor;
 
   // compile js part
   if (descriptor.script) {

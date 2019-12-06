@@ -18,7 +18,7 @@
       <template v-for="(navItem, index) in group.items">
         <van-cell
           :key="index"
-          :to="'/' + navItem.path"
+          :to="`${base}/${navItem.path}`"
           :title="navItem.title"
           is-link
         />
@@ -39,7 +39,7 @@ export default {
   },
 
   props: {
-    base: String,
+    lang: String,
     group: Object
   },
 
@@ -47,6 +47,12 @@ export default {
     return {
       active: []
     };
+  },
+
+  computed: {
+    base() {
+      return this.lang ? `/${this.lang}` : '';
+    }
   }
 };
 </script>

@@ -19,8 +19,7 @@ export default {
 
   computed: {
     title() {
-      const route = this.$route || {};
-      const { name } = route.meta || {};
+      const { name } = this.$route.meta || {};
       return name ? name.replace(/-/g, '') : '';
     }
   },

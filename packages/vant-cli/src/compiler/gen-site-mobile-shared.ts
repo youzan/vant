@@ -40,12 +40,25 @@ function genConfig(demos: DemoItem[]) {
   const vantConfig = getVantConfig();
   const demoNames = demos.map(item => decamelize(item.name, '-'));
 
-  vantConfig.site.nav = vantConfig.site.nav.filter((group: any) => {
-    group.items = group.items.filter((item: any) =>
-      demoNames.includes(item.path)
-    );
-    return group.items.length;
-  });
+  function demoFilter(nav: any[]) {
+    return nav.filter(group => {
+      group.items = group.items.filter((item: any) =>
+        demoNames.includes(item.path)
+      );
+      return group.items.length;
+    });
+  }
+
+  const { nav, locales } = vantConfig.site;
+  if (locales) {
+    Object.keys(locales).forEach((lang: string) => {
+      if (locales[lang].nav) {
+        locales[lang].nav = demoFilter(locales[lang].nav);
+      }
+    });
+  } else if (nav) {
+    vantConfig.site.nav = demoFilter(nav);
+  }
 
   return `export const config = ${JSON.stringify(vantConfig, null, 2)}`;
 }

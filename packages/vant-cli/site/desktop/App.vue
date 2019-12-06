@@ -10,21 +10,38 @@
 import VanDoc from './components';
 import { config } from 'site-desktop-shared';
 
+function getPublicPath() {
+  const { site } = config.build || {};
+
+  if (process.env.NODE_ENV === 'production') {
+    return (site && site.publicPath) || '/';
+  }
+
+  return '/';
+}
+
 export default {
   components: {
     VanDoc
   },
 
   data() {
-    const { site } = config.build || {};
-    const isProd = process.env.NODE_ENV === 'production';
-    const prodPublicPath = (site && site.publicPath) || '/';
-    const publicPath = isProd ? prodPublicPath : '/';
-
     return {
-      config: config.site,
-      simulator: `${publicPath}mobile.html${location.hash}`
+      simulator: `${getPublicPath()}mobile.html${location.hash}`
     };
+  },
+
+  computed: {
+    config() {
+      const { locales } = config.site;
+
+      if (locales) {
+        const { lang } = this.$route.meta;
+        return locales[lang];
+      }
+
+      return config.site;
+    }
   }
 };
 </script>
@@ -32,7 +49,7 @@ export default {
 <style lang="less">
 .van-doc-intro {
   padding-top: 20px;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
   p {

@@ -8,7 +8,7 @@
     <template v-for="(group, index) in config.nav">
       <demo-home-nav
         :group="group"
-        :base="$vantLang"
+        :lang="lang"
         :key="index"
       />
     </template>
@@ -24,10 +24,21 @@ export default {
     DemoHomeNav
   },
 
-  data() {
-    return {
-      config: config.site
-    };
+  computed: {
+    lang() {
+      const { lang } = this.$route.meta || {};
+      return lang;
+    },
+
+    config() {
+      const { locales } = config.site;
+
+      if (locales) {
+        return locales[this.lang];
+      }
+
+      return config.site;
+    }
   }
 };
 </script>
