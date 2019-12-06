@@ -61,10 +61,8 @@
   },
   "devDependencies": {
     "@vant/cli": "^2.0.0-beta.16",
-    "@vant/doc": "^2.6.1",
     "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10",
-    "webpack-cli": "^3.3.10"
+    "vue-template-compiler": "^2.6.10"
   },
   "sideEffects": [
     "es/**/style/*",
