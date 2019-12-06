@@ -42,7 +42,9 @@ export default createComponent({
   watch: {
     currentNum(num) {
       const intValue = parseInt(num, 10);
-      this.skuEventBus.$emit('sku:numChange', intValue);
+      if (intValue >= this.stepperMinLimit && intValue <= this.stepperLimit) {
+        this.skuEventBus.$emit('sku:numChange', intValue);
+      }
     },
 
     stepperLimit(limit) {
