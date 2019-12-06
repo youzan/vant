@@ -58,7 +58,6 @@ export default {
   },
 
   data() {
-    console.log(this.config);
     return {
       showVersionPop: false
     };

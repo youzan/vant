@@ -1,23 +1,22 @@
-/**
- * Demo Common Mixin && i18n
- */
-
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import VantDoc from '@vant/doc';
-import i18n from '../utils/i18n';
-import Vant, { Lazyload, Locale } from '../../../src';
-import { camelize } from '../../../src/utils/format/string';
+import Locale from '../../src/locale';
+import { get } from '../../src/utils';
+import { camelize } from '../../src/utils/format/string';
 
-Vue
-  .use(Vant)
-  .use(VantDoc)
-  .use(VueRouter)
-  .use(Lazyload, {
-    lazyComponent: true
-  });
+Vue.mixin({
+  computed: {
+    $t() {
+      const { name } = this.$options;
+      const prefix = name ? camelize(name) + '.' : '';
+      const messages = this.$vantMessages[this.$vantLang];
 
-Vue.mixin(i18n);
+      return (path, ...args) => {
+        const message = get(messages, prefix + path) || get(messages, path);
+        return typeof message === 'function' ? message(...args) : message;
+      };
+    }
+  }
+});
 
 Locale.add({
   'zh-CN': {
@@ -77,21 +76,3 @@ Locale.add({
     passwordPlaceholder: 'Password'
   }
 });
-
-export function demoWrapper(module, name) {
-  const component = module.default;
-  name = 'demo-' + name;
-  component.name = name;
-
-  const { i18n: config } = component;
-  if (config) {
-    const formattedI18n = {};
-    const camelizedName = camelize(name);
-    Object.keys(config).forEach(key => {
-      formattedI18n[key] = { [camelizedName]: config[key] };
-    });
-    Locale.add(formattedI18n);
-  }
-
-  return component;
-}

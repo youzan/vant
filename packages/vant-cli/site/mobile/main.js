@@ -12,8 +12,10 @@ if (process.env.NODE_ENV !== 'production') {
 Vue.component(DemoBlock.name, DemoBlock);
 Vue.component(DemoSection.name, DemoSection);
 
-new Vue({
-  el: '#app',
-  render: h => h(App),
-  router
-});
+setTimeout(() => {
+  new Vue({
+    el: '#app',
+    render: h => h(App),
+    router
+  });
+}, 0);

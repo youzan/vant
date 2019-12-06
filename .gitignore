@@ -12,7 +12,7 @@ package-lock.json
 es
 lib
 dist
-docs/dist
+./site
 changelog.generated.md
 test/coverage
 vetur
