@@ -1,5 +1,31 @@
 # Changelog
 
+### [v2.3.0-beta.2](https://github.com/youzan/vant/tree/v2.3.0-beta.2)
+`2019-12-06`
+
+**Style**
+
+Upgrading the style of business components:
+
+- CouponList
+
+**Features**
+
+- CouponList: add show-count prop [\#5139](https://github.com/youzan/vant/pull/5139)
+
+**Bug Fixes**
+
+- fix Sku stepper value must be integer [\#5202](https://github.com/youzan/vant/pull/5202)
+- fix Sku stepper should not emit invalid num [\#5210](https://github.com/youzan/vant/pull/5210)
+- fix Card incorrect price font-family [\#5194](https://github.com/youzan/vant/pull/5194)
+- fix AddressList incorrect horizontal padding [\#5204](https://github.com/youzan/vant/pull/5204)
+- fix Picker should not submit form [\#5182](https://github.com/youzan/vant/pull/5182)
+- fix Stepper should not submit form [\#5183](https://github.com/youzan/vant/pull/5183)
+- fix ActionSheet should not submit form [\#5181](https://github.com/youzan/vant/pull/5181)
+- fix Uploader not trigger oversize event when upload same file [\#5177](https://github.com/youzan/vant/pull/5177)
+- fix less import issue [\#5157](https://github.com/youzan/vant/pull/5157)
+
+
 ### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
 `2019-11-30`
 
@@ -19,11 +45,11 @@ Upgrading the style of business components:
 - Card: add price-top slot [\#5134](https://github.com/youzan/vant/pull/5134)
 - Circle: add stroke-linecap prop [\#5087](https://github.com/youzan/vant/pull/5087)
 - CountDown: support SS and S format [\#5154](https://github.com/youzan/vant/pull/5154)
-- Sku: add new startSaleNum prop [\#5105](https://github.com/youzan/vant/pull/5105)
+- Sku: add new start-sale-num prop [\#5105](https://github.com/youzan/vant/pull/5105)
 - SubmitBar: add text-align prop [\#5130](https://github.com/youzan/vant/pull/5130)
 - AddressList: add default-tag-text prop [\#5106](https://github.com/youzan/vant/pull/5106)
 - ContactList: add default-tag-text prop [\#5089](https://github.com/youzan/vant/pull/5089)
-- ContactCard: add show-set-default prop [\#5083](https://github.com/youzan/vant/pull/5083)
+- ContactCard: add show-set-default、set-default-label prop [\#5083](https://github.com/youzan/vant/pull/5083)
 - Toast: improve type definitions [\#5086](https://github.com/youzan/vant/pull/5086)
 
 **Bug Fixes**

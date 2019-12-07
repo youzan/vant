@@ -77,7 +77,7 @@ export default {
 | disabled-text | Disabled text | *string* | - | - |
 | switchable | Whether to allow switch address | *boolean* | `true` | - |
 | add-button-text | Add button text | *string* | `Add new address` | - |
-| default-tag-text | Default tag text | *string* | - | - |
+| default-tag-text | Default tag text | *string* | - | 2.3.0 |
 
 ### Events
 

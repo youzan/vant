@@ -99,7 +99,7 @@ export default {
 | input-placeholder | Input placeholder | *string* | `Coupon code` | - |
 | currency | Currency symbol |  *string* | `¥` | - |
 | empty-image | Placeholder image when list is empty | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` | - |
-| show-count | Whether to show coupon count in tab title | *boolean* | `true` | - |
+| show-count | Whether to show coupon count in tab title | *boolean* | `true` | 2.3.0 |
 
 ### CouponList Events
 

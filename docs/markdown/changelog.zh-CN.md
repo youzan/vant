@@ -11,6 +11,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.3.0-beta.2](https://github.com/youzan/vant/tree/v2.3.0-beta.2)
+`2019-12-06`
+
+**Style**
+
+升级以下业务组件的样式：
+
+- CouponList
+
+**Features**
+
+- CouponList: 新增 show-count 属性 [\#5139](https://github.com/youzan/vant/pull/5139)
+
+**Bug Fixes**
+
+- 修复 Sku 步进器可能输入小数的问题 [\#5202](https://github.com/youzan/vant/pull/5202)
+- 修复 Sku 步进器事件可能抛出小数的问题 [\#5210](https://github.com/youzan/vant/pull/5210)
+- 修复 Card 价格字体错误的问题 [\#5194](https://github.com/youzan/vant/pull/5194)
+- 修复 AddressList 左右边距错误的问题 [\#5204](https://github.com/youzan/vant/pull/5204)
+- 修复 Picker 按钮会提交表单的问题 [\#5182](https://github.com/youzan/vant/pull/5182)
+- 修复 Stepper 按钮会提交表单的问题 [\#5183](https://github.com/youzan/vant/pull/5183)
+- 修复 ActionSheet 按钮会提交表单的问题 [\#5181](https://github.com/youzan/vant/pull/5181)
+- 修复 Uploader 重复上传同张图片时不会触发 oversize 事件的问题 [\#5177](https://github.com/youzan/vant/pull/5177)
+- 修复主题定制时使用低版本 Less 会报错的问题 [\#5157](https://github.com/youzan/vant/pull/5157)
+
+
 ### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
 `2019-11-30`
 
@@ -34,7 +60,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - SubmitBar: 新增 text-align 属性 [\#5130](https://github.com/youzan/vant/pull/5130)
 - AddressList: 新增 default-tag-text 属性 [\#5106](https://github.com/youzan/vant/pull/5106)
 - ContactList: 新增 default-tag-text 属性 [\#5089](https://github.com/youzan/vant/pull/5089)
-- ContactCard: 新增 show-set-default 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
+- ContactCard: 新增 show-set-default、set-default-label 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
 - Toast: 完善 TS 类型定义 [\#5086](https://github.com/youzan/vant/pull/5086)
 
 **Bug Fixes**

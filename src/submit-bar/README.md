@@ -75,7 +75,7 @@ Use slot to add custom contents.
 | price | Price | *number* | - | - |
 | label | Price left label | *string* | `Total：` | - |
 | suffix-label | Price right label | *string* | - | - |
-| text-align | Price label text align can be set to `right` `left` | *string* | `right` | - |
+| text-align | Price label text align can be set to `right` `left` | *string* | `right` | 2.3.0 |
 | button-text | Button text | *string* | - | - |
 | button-type | Button type | *string* | `danger` | - |
 | tip | Tip | *string* | - | - |
