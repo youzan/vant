@@ -68,7 +68,7 @@ export default {
       customIcon: '自定义图标',
       customColor: '自定义颜色',
       matchByName: '通过名称匹配',
-      switchEvent: '切换标签事件',
+      switchEvent: '监听切换事件',
       selectTip: '你切换到了'
     },
     'en-US': {

@@ -20,7 +20,7 @@ Vue.use(Icon);
 `Icon`的`name`属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例
 
 ```html
-<van-icon name="close" />
+<van-icon name="chat-o" />
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
@@ -29,28 +29,27 @@ Vue.use(Icon);
 设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-icon name="chat" dot />
-<van-icon name="chat" info="9" />
-<van-icon name="chat" info="99+" />
+<van-icon name="chat-o" dot />
+<van-icon name="chat-o" info="9" />
+<van-icon name="chat-o" info="99+" />
 ```
-
 
 ### 图标颜色
 
 `Icon`的`color`属性用来设置图标的颜色
 
 ```html
-<van-icon name="location-o" color="#ff0000" />
-<van-icon name="chat" color="#00ff00" />
+<van-icon name="chat-o" color="#1989fa" />
+<van-icon name="chat-o" color="#07c160" />
 ```
 
 ### 图标大小
 
-`Icon`的`size`属性用来设置图标的尺寸大小
+`Icon`的`size`属性用来设置图标的尺寸大小，默认单位为`px`
 
 ```html
-<van-icon name="location-o" size="40px" />
-<van-icon name="chat" size="20px" />
+<van-icon name="chat-o" size="40" />
+<van-icon name="chat-o" size="3rem" />
 ```
 
 ### 使用本地字体文件
