@@ -11,23 +11,27 @@
 
     <demo-block :title="$t('title2')">
       <van-cell-group>
-        <van-field
-          v-model="username"
-          :label="$t('username')"
-          :placeholder="$t('usernamePlaceholder')"
-          clearable
-          right-icon="question-o"
-          required
-          @click-right-icon="$toast('question')"
-        />
+        <van-cell>
+          <van-field
+            v-model="username"
+            :label="$t('username')"
+            :placeholder="$t('usernamePlaceholder')"
+            clearable
+            right-icon="question-o"
+            required
+            @click-right-icon="$toast('question')"
+          />
+        </van-cell>
 
-        <van-field
-          v-model="password"
-          type="password"
-          :label="$t('password')"
-          :placeholder="$t('passwordPlaceholder')"
-          required
-        />
+        <van-cell>
+          <van-field
+            v-model="password"
+            type="password"
+            :label="$t('password')"
+            :placeholder="$t('passwordPlaceholder')"
+            required
+          />
+        </van-cell>
       </van-cell-group>
     </demo-block>
 
