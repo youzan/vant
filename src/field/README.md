@@ -27,23 +27,27 @@ Use `type` prop to custom different type fields.
 
 ```html
 <van-cell-group>
-  <van-field
-    v-model="username"
-    required
-    clearable
-    label="Username"
-    right-icon="question-o"
-    placeholder="Username"
-    @click-right-icon="$toast('question')"
-  />
+  <van-cell>
+    <van-field
+      v-model="username"
+      required
+      clearable
+      label="Username"
+      right-icon="question-o"
+      placeholder="Username"
+      @click-right-icon="$toast('question')"
+    />
+  </van-cell>
 
-  <van-field
-    v-model="password"
-    type="password"
-    label="Password"
-    placeholder="Password"
-    required
-  />
+  <van-cell>
+    <van-field
+      v-model="password"
+      type="password"
+      label="Password"
+      placeholder="Password"
+      required
+    />
+  </van-cell>
 </van-cell-group>
 ```
 
