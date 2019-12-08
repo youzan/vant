@@ -29,7 +29,7 @@
       </van-grid-item>
 
       <van-grid-item>
-        <h3 class="demo-sidebar-title">{{ $t('eventChange') }}</h3>
+        <h3 class="demo-sidebar-title">{{ $t('changeEvent') }}</h3>
         <van-sidebar v-model="activeKey4" @change="onChange">
           <van-sidebar-item :title="$t('title') + 1" />
           <van-sidebar-item :title="$t('title') + 2" />
@@ -47,13 +47,13 @@ export default {
       title: '标签名',
       showInfo: '提示信息',
       disabled: '禁用选项',
-      eventChange: '切换事件',
+      changeEvent: '监听切换事件',
       selectTip: '你切换到了'
     },
     'en-US': {
       showInfo: 'Show Info',
       disabled: 'Disabled',
-      eventChange: 'Change Event',
+      changeEvent: 'Change Event',
       selectTip: 'You select '
     }
   },

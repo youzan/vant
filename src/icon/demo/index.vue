@@ -1,68 +1,81 @@
 <template>
   <demo-section>
     <van-tabs v-model="tab" sticky :color="BLUE">
+      <van-tab :title="$t('demo')">
+        <demo-block :title="$t('basicUsage')">
+          <van-col span="6" @click="copy(demoIcon)">
+            <van-icon :name="demoIcon" />
+          </van-col>
+          <van-col span="6" @click="copy(demoImage)">
+            <van-icon :name="demoImage" />
+          </van-col>
+        </demo-block>
+
+        <demo-block :title="$t('info')">
+          <van-col span="6" @click="copy(demoIcon, { dot: true })">
+            <van-icon :name="demoIcon" dot />
+          </van-col>
+          <van-col span="6" @click="copy(demoIcon, { info: '9' })">
+            <van-icon :name="demoIcon" info="9" />
+          </van-col>
+          <van-col span="6" @click="copy(demoIcon, { info: '99+' })">
+            <van-icon :name="demoIcon" info="99+" />
+          </van-col>
+        </demo-block>
+
+        <demo-block :title="$t('color')">
+          <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
+            <van-icon :name="demoIcon" :color="BLUE" />
+          </van-col>
+          <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
+            <van-icon :name="demoIcon" :color="GREEN" />
+          </van-col>
+        </demo-block>
+
+        <demo-block :title="$t('size')">
+          <van-col span="6" @click="copy(demoIcon, { size: '40' })">
+            <van-icon :name="demoIcon" size="40" />
+          </van-col>
+          <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
+            <van-icon :name="demoIcon" size="3rem" />
+          </van-col>
+        </demo-block>
+      </van-tab>
+
       <van-tab :title="$t('basic')">
-        <van-col v-for="icon in icons.basic" :key="icon" span="6" @click="copy(icon)">
+        <van-col
+          v-for="icon in icons.basic"
+          :key="icon"
+          span="6"
+          @click="copy(icon)"
+        >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
 
       <van-tab :title="$t('outline')">
-        <van-col v-for="icon in icons.outline" :key="icon" span="6" @click="copy(icon)">
+        <van-col
+          v-for="icon in icons.outline"
+          :key="icon"
+          span="6"
+          @click="copy(icon)"
+        >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
 
       <van-tab :title="$t('filled')">
-        <van-col v-for="icon in icons.filled" :key="icon" span="6" @click="copy(icon)">
+        <van-col
+          v-for="icon in icons.filled"
+          :key="icon"
+          span="6"
+          @click="copy(icon)"
+        >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
-      </van-tab>
-
-      <van-tab :title="$t('demo')">
-        <demo-block :title="$t('dot')">
-          <van-col span="6">
-            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-          <van-col span="6">
-            <van-icon :name="demoIcon" dot @click="copy(demoIcon, { dot: true })" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-        </demo-block>
-        <demo-block :title="$t('message')">
-          <van-col span="6">
-            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-          <van-col span="6">
-            <van-icon :name="demoIcon" info="123" @click="copy(demoIcon, { info: '123' })" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-        </demo-block>
-        <demo-block :title="$t('color')">
-          <van-col span="6">
-            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-          <van-col span="6">
-            <van-icon :name="demoIcon" color="#ff0000" @click="copy(demoIcon, { color: '#ff0000' })" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-        </demo-block>
-        <demo-block :title="$t('size')">
-          <van-col span="6">
-            <van-icon :name="demoIcon" @click="copy(demoIcon)" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-          <van-col span="6">
-            <van-icon :name="demoIcon" size="40px" @click="copy(demoIcon, { size: '40px' })" />
-            <span>{{ demoIcon }}</span>
-          </van-col>
-        </demo-block>
       </van-tab>
     </van-tabs>
   </demo-section>
@@ -70,7 +83,7 @@
 
 <script>
 import icons from '@vant/icons';
-import { BLUE } from '../../utils/constant';
+import { BLUE, GREEN } from '../../utils/constant';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
@@ -106,8 +119,6 @@ export default {
       outline: '线框风格',
       filled: '实底风格',
       demo: '用法示例',
-      dot: '图标右上角小红点',
-      message: '图标右上角徽标的内容',
       color: '图标颜色',
       size: '图标大小'
     },
@@ -119,8 +130,6 @@ export default {
       outline: 'Outline',
       filled: 'Filled',
       demo: 'Demo',
-      dot: 'Show Red Dot',
-      message: 'Show Info',
       color: 'Icon Color',
       size: 'Icon Size'
     }
@@ -128,10 +137,12 @@ export default {
 
   data() {
     this.BLUE = BLUE;
+    this.GREEN = GREEN;
     this.icons = icons;
     return {
       tab: 0,
-      demoIcon: 'location-o'
+      demoIcon: 'chat-o',
+      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png'
     };
   },
 
@@ -183,12 +194,12 @@ export default {
   .van-col {
     display: inline-block;
     float: none;
-    height: 100px;
     text-align: center;
     vertical-align: middle;
 
     span {
       display: block;
+      margin: -4px 0 16px;
       padding: 0 5px;
       color: @gray-7;
       font-size: 12px;
@@ -201,7 +212,7 @@ export default {
   }
 
   .van-icon {
-    margin: 20px 0 10px;
+    margin: 16px 0 16px;
     color: @text-color;
     font-size: 32px;
   }
