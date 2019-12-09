@@ -51,63 +51,40 @@ export default {
     }
   },
 
-  data() {
-    return {
-      nav: [],
-      currentPath: null,
-      leftNav: null,
-      rightNav: null
-    };
-  },
-
   watch: {
     // eslint-disable-next-line
     '$route.path'() {
       this.setNav();
-      this.updateNav();
     }
   },
 
   created() {
     this.setNav();
-    this.updateNav();
     this.keyboardHandler();
   },
 
   methods: {
     setNav() {
       const { nav } = this.config;
-      for (let i = 0; i < nav.length; i++) {
-        const navItem = nav[i];
-        if (!navItem.groups) {
-          this.nav.push(nav[i]);
-        } else {
-          for (let j = 0; j < navItem.groups.length; j++) {
-            this.nav = this.nav.concat(navItem.groups[j].list);
-          }
-        }
-      }
-    },
+      const items = nav.reduce((list, item) => list.concat(item.items), []);
+      const currentPath = this.$route.path.split('/').pop();
 
-    updateNav() {
       let currentIndex;
-      this.currentPath = '/' + this.$route.path.split('/').pop();
-      for (let i = 0, len = this.nav.length; i < len; i++) {
-        if (this.nav[i].path === this.currentPath) {
+      for (let i = 0, len = items.length; i < len; i++) {
+        if (items[i].path === currentPath) {
           currentIndex = i;
           break;
         }
       }
-      this.leftNav = this.nav[currentIndex - 1];
-      this.rightNav = this.nav[currentIndex + 1];
+
+      this.leftNav = items[currentIndex - 1];
+      this.rightNav = items[currentIndex + 1];
     },
 
-    handleNavClick(direction) {
+    keyboardNav(direction) {
       const nav = direction === 'prev' ? this.leftNav : this.rightNav;
       if (nav.path) {
         this.$router.push(this.base + nav.path);
-      } else if (nav.link) {
-        window.location.href = nav.link;
       }
     },
 
@@ -115,10 +92,10 @@ export default {
       window.addEventListener('keyup', event => {
         switch (event.keyCode) {
           case 37: // left
-            this.handleNavClick('prev');
+            this.keyboardNav('prev');
             break;
           case 39: // right
-            this.handleNavClick('next');
+            this.keyboardNav('next');
             break;
         }
       });
