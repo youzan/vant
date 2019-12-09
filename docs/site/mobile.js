@@ -8,8 +8,9 @@ Vue.mixin({
   computed: {
     $t() {
       const { name } = this.$options;
+      const { lang } = this.$route.meta || {};
       const prefix = name ? camelize(name) + '.' : '';
-      const messages = this.$vantMessages[this.$vantLang];
+      const messages = this.$vantMessages[lang];
 
       return (path, ...args) => {
         const message = get(messages, prefix + path) || get(messages, path);
@@ -20,6 +21,7 @@ Vue.mixin({
 
   beforeCreate() {
     const { i18n, name } = this.$options;
+
     if (i18n) {
       const locales = {};
       const camelizedName = camelize(name);

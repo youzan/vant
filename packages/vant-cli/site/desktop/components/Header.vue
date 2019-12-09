@@ -30,10 +30,10 @@
               </transition>
             </span>
           </li>
-        <!--
-          <li v-if="config.nav.lang" class="van-doc-header__top-nav-item">
-            <a class="van-doc-header__cube" :href="langLink">{{ config.nav.lang.text }}</a>
-          </li> -->
+
+          <li v-if="langLabel && langLink" class="van-doc-header__top-nav-item">
+            <a class="van-doc-header__cube" :href="langLink">{{ langLabel }}</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -53,7 +53,8 @@ export default {
   props: {
     lang: String,
     config: Object,
-    versions: Array
+    versions: Array,
+    langConfigs: Array
   },
 
   data() {
@@ -64,8 +65,20 @@ export default {
 
   computed: {
     langLink() {
-      const { lang } = this.config.nav;
-      return `#${this.$route.path.replace(lang.from, lang.to)}`;
+      return `#${this.$route.path.replace(this.lang, this.anotherLang.lang)}`;
+    },
+
+    langLabel() {
+      return this.anotherLang.label;
+    },
+
+    anotherLang() {
+      const items = this.langConfigs.filter(item => item.lang !== this.lang);
+      if (items.length) {
+        return items[0];
+      }
+
+      return {};
     },
 
     searchConfig() {

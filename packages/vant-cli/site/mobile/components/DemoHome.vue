@@ -26,7 +26,7 @@ export default {
 
   computed: {
     lang() {
-      const { lang } = this.$route.meta || {};
+      const { lang } = this.$route.meta;
       return lang;
     },
 

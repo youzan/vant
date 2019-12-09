@@ -4,21 +4,16 @@
       :lang="lang"
       :config="config"
       :versions="versions"
+      :lang-configs="langConfigs"
       @switch-version="$emit('switch-version', $event)"
     />
     <doc-nav :base="base" :nav-config="config.nav" />
-    <doc-container :has-simulator="!!(simulator || simulators.length)">
+    <doc-container :has-simulator="!!simulator ">
       <doc-content>
         <slot />
       </doc-content>
     </doc-container>
-    <doc-simulator v-if="simulator" :src="simulator" />
-    <doc-simulator
-      v-for="(url, index) in simulators"
-      v-show="index === currentSimulator"
-      :src="url"
-      :key="url"
-    />
+    <doc-simulator v-if="simulator" :src="simulator" :lang="lang" />
   </div>
 </template>
 
@@ -43,15 +38,12 @@ export default {
   props: {
     lang: String,
     versions: Array,
-    currentSimulator: Number,
     simulator: String,
+    langConfigs: Array,
+    currentSimulator: Number,
     config: {
       type: Object,
       required: true
-    },
-    simulators: {
-      type: Array,
-      default: () => []
     },
     base: {
       type: String,

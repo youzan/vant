@@ -12,6 +12,7 @@ module.exports = {
         title: 'Vant',
         description: '轻量、可靠的移动端 Vue 组件库',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
+        langLabel: '中文',
         links: [
           {
             logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
@@ -355,6 +356,7 @@ module.exports = {
         title: 'Vant',
         description: 'Mobile UI Components built on Vue',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
+        langLabel: 'En',
         links: [
           {
             logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
