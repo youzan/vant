@@ -60,28 +60,36 @@ function AddressItem(
     />
   );
 
-  const genContent = () => {
+  function genTag() {
+    if (props.data.isDefault && props.defaultTagText) {
+      return (
+        <Tag type="danger" round class={bem('tag')}>
+          {props.defaultTagText}
+        </Tag>
+      );
+    }
+  }
+
+  function genContent() {
     const { data } = props;
     const Info = [
       <div class={bem('name')}>
         {`${data.name} ${data.tel}`}
-        {data.isDefault && props.defaultTagText && (
-          <Tag type="danger" round class={bem('tag')}>
-            {props.defaultTagText}
-          </Tag>
-        )}
+        {genTag()}
       </div>,
       <div class={bem('address')}>{data.address}</div>
     ];
 
-    return switchable && !disabled ? (
-      <Radio name={data.id} iconSize={16}>
-        {Info}
-      </Radio>
-    ) : (
-      Info
-    );
-  };
+    if (switchable && !disabled) {
+      return (
+        <Radio name={data.id} iconSize={16}>
+          {Info}
+        </Radio>
+      );
+    }
+
+    return Info;
+  }
 
   return (
     <Cell
@@ -106,4 +114,6 @@ AddressItem.props = {
   defaultTagText: String
 };
 
-export default createComponent<AddressItemProps, AddressItemEvents>(AddressItem);
+export default createComponent<AddressItemProps, AddressItemEvents>(
+  AddressItem
+);
