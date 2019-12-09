@@ -1,5 +1,5 @@
 <template>
-  <input class="van-doc-search" :placeholder="searchPlaceholder">
+  <input class="van-doc-search" :placeholder="placeholder">
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
   },
 
   computed: {
-    searchPlaceholder() {
-      return this.lang === 'zh-CN' ? '搜索文档...' : 'Search...';
+    placeholder() {
+      return this.searchConfig.placeholder || 'Search...';
     }
   },
 

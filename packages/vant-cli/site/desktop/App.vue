@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <van-doc :config="config" :simulator="simulator">
+    <van-doc :lang="lang" :config="config" :simulator="simulator">
       <router-view />
     </van-doc>
   </div>
@@ -32,6 +32,11 @@ export default {
   },
 
   computed: {
+    lang() {
+      const { lang } = this.$route.meta;
+      return lang || '';
+    },
+
     config() {
       const { locales } = config.site;
 

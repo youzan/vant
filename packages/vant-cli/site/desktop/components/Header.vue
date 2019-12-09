@@ -53,8 +53,7 @@ export default {
   props: {
     lang: String,
     config: Object,
-    versions: Array,
-    searchConfig: Object
+    versions: Array
   },
 
   data() {
@@ -67,6 +66,10 @@ export default {
     langLink() {
       const { lang } = this.config.nav;
       return `#${this.$route.path.replace(lang.from, lang.to)}`;
+    },
+
+    searchConfig() {
+      return this.config.searchConfig;
     }
   },
 

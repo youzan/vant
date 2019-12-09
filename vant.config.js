@@ -22,6 +22,11 @@ module.exports = {
             url: 'https://github.com/youzan/vant'
           }
         ],
+        searchConfig: {
+          apiKey: '90067aecdaa2c85220e2783cd305caac',
+          indexName: 'vant',
+          placeholder: '搜索文档...'
+        },
         nav: [
           {
             title: '开发指南',
@@ -360,6 +365,11 @@ module.exports = {
             url: 'https://github.com/youzan/vant'
           }
         ],
+        searchConfig: {
+          apiKey: '90067aecdaa2c85220e2783cd305caac',
+          indexName: 'vant',
+          placeholder: 'Search...'
+        },
         nav: [
           {
             title: 'Essentials',

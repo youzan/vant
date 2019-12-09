@@ -4,7 +4,6 @@
       :lang="lang"
       :config="config"
       :versions="versions"
-      :search-config="searchConfig"
       @switch-version="$emit('switch-version', $event)"
     />
     <doc-nav :base="base" :nav-config="config.nav" />
@@ -44,7 +43,6 @@ export default {
   props: {
     lang: String,
     versions: Array,
-    searchConfig: Object,
     currentSimulator: Number,
     simulator: String,
     config: {
