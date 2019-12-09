@@ -3,7 +3,7 @@
  */
 
 export type SharedSwitchProps = {
-  size: string;
+  size?: string | number;
   value?: any;
   loading?: boolean;
   disabled?: boolean;
@@ -14,7 +14,7 @@ export type SharedSwitchProps = {
 };
 
 export const switchProps = {
-  size: String,
+  size: [String, Number],
   value: null as any,
   loading: Boolean,
   disabled: Boolean,
