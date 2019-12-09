@@ -277,13 +277,15 @@ export default createComponent({
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
-      const num = isDef(selectedNum) ? selectedNum : 1;
+      const { startSaleNum = 1 } = this;
+      const num = isDef(selectedNum) ? selectedNum : startSaleNum;
       // 用来缓存不合法的情况
       this.stepperError = null;
 
       if (skuStepper) {
         skuStepper.setCurrentNum(num);
       } else {
+        // TODO 存在本身传入 num 不合法的情况，需要后续做考虑处理
         this.selectedNum = num;
       }
     },
