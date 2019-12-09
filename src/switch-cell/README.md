@@ -65,7 +65,7 @@ use `loading` property to keep component in loading state
 | cell-size | Cell size，can be set to `large` | *string* | - | - |
 | loading | whether switch is loading | *boolean* | `false` | - |
 | disabled | whether to disable switch | *boolean* | `false` | - |
-| size | Size of switch | *string* | `24px` | - |
+| size | Size of switch | *string \| number* | `24px` | - |
 | active-color | Background of switch color when active | *string* | `#1989fa` | - |
 | inactive-color | Background of switch color when inactive | *string* | `#fff` | - |
 | active-value | Value when active | *any* | `true` | - |
