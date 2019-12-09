@@ -65,6 +65,23 @@ export default {
   watch: {
     lang(val) {
       setLang(val);
+      this.setTitle();
+    }
+  },
+
+  created() {
+    this.setTitle();
+  },
+
+  methods: {
+    setTitle() {
+      let { title } = this.config;
+
+      if (this.config.description) {
+        title += ` - ${this.config.description}`;
+      }
+
+      document.title = title;
     }
   }
 };

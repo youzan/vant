@@ -1,11 +1,10 @@
 import glob from 'fast-glob';
 import { join, parse } from 'path';
-import { existsSync } from 'fs-extra';
+import { existsSync, readdirSync } from 'fs-extra';
 import {
   pascalize,
   removeExt,
   getVantConfig,
-  getComponents,
   smartOutputFile
 } from '../common';
 import {
@@ -96,8 +95,8 @@ function genExportConfig() {
 }
 
 export function genSiteDesktopShared() {
-  const components = getComponents();
-  const documents = resolveDocuments(components);
+  const dirs = readdirSync(SRC_DIR);
+  const documents = resolveDocuments(dirs);
 
   const code = `${genImportConfig()}
 ${genImportDocuments(documents)}

@@ -9,8 +9,28 @@ import {
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
 
-const siteConfig = getVantConfig().site;
-const title = `${siteConfig.title} - ${siteConfig.description}`;
+function getSiteConfig() {
+  const siteConfig = getVantConfig().site;
+
+  if (siteConfig.locales) {
+    return siteConfig.locales[siteConfig.defaultLang || 'en-US'];
+  }
+
+  return siteConfig;
+}
+
+function getTitle(config: { title: string, description?: string }) {
+  let { title } = config;
+
+  if (config.description) {
+    title += ` - ${config.description}`;
+  }
+
+  return title;
+}
+
+const siteConfig = getSiteConfig();
+const title = getTitle(siteConfig);
 
 export const siteDevBaseConfig = merge(baseConfig as any, {
   entry: {

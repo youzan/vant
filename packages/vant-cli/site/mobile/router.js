@@ -10,6 +10,17 @@ const { locales, defaultLang } = config.site;
 
 setDefaultLang(defaultLang);
 
+function getLangFromRoute(route) {
+  const lang = route.path.split('/')[1];
+  const langs = Object.keys(locales);
+
+  if (langs.indexOf(lang) !== -1) {
+    return lang;
+  }
+
+  return getLang();
+}
+
 function getRoutes() {
   const routes = [];
   const names = Object.keys(demos);
@@ -18,7 +29,7 @@ function getRoutes() {
   if (langs.length) {
     routes.push({
       path: '*',
-      redirect: () => `/${getLang()}/`
+      redirect: route => `/${getLangFromRoute(route)}/`
     });
 
     langs.forEach(lang => {

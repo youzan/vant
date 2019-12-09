@@ -31,6 +31,17 @@ function parseName(name) {
   };
 }
 
+function getLangFromRoute(route) {
+  const lang = route.path.split('/')[1];
+  const langs = Object.keys(locales);
+
+  if (langs.indexOf(lang) !== -1) {
+    return lang;
+  }
+
+  return getLang();
+}
+
 function getRoutes() {
   const routes = [];
   const names = Object.keys(documents);
@@ -38,7 +49,7 @@ function getRoutes() {
   if (locales) {
     routes.push({
       path: '*',
-      redirect: `/${getLang()}/`
+      redirect: route => `/${getLangFromRoute(route)}/`
     });
   } else {
     routes.push({

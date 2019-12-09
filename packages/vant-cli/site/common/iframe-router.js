@@ -10,18 +10,18 @@ window.syncPath = function () {
   const currentDir = router.history.current.path;
 
   if (isInIframe) {
-    window.top.changePath(currentDir);
+    window.top.replacePath(currentDir);
   } else if (!isMobile) {
     const iframe = document.querySelector('iframe');
     if (iframe) {
       iframeReady(iframe, () => {
-        iframe.contentWindow.changePath(currentDir);
+        iframe.contentWindow.replacePath(currentDir);
       });
     }
   }
 };
 
-window.changePath = function (path = '') {
+window.replacePath = function (path = '') {
   // should preserve hash for anchor
   if (window.vueRouter.currentRoute.path !== path) {
     window.vueRouter.replace(path).catch(() => {});

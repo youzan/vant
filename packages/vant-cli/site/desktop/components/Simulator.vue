@@ -9,8 +9,7 @@ export default {
   name: 'van-doc-simulator',
 
   props: {
-    src: String,
-    lang: String
+    src: String
   },
 
   data() {
@@ -30,12 +29,6 @@ export default {
       return {
         height: height + 'px'
       };
-    }
-  },
-
-  watch: {
-    lang(val) {
-      location.hash = `#${location.hash.replace(this.lang, val)}`;
     }
   },
 

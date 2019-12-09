@@ -1,7 +1,7 @@
 function iframeReady(iframe, callback) {
   const doc = iframe.contentDocument || iframe.contentWindow.document;
   const interval = () => {
-    if (iframe.contentWindow.changePath) {
+    if (iframe.contentWindow.replacePath) {
       callback();
     } else {
       setTimeout(() => {

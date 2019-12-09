@@ -13,7 +13,7 @@
         <slot />
       </doc-content>
     </doc-container>
-    <doc-simulator v-if="simulator" :src="simulator" :lang="lang" />
+    <doc-simulator v-if="simulator" :src="simulator" />
   </div>
 </template>
 
