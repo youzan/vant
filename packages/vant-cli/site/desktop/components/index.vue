@@ -40,7 +40,6 @@ export default {
     versions: Array,
     simulator: String,
     langConfigs: Array,
-    currentSimulator: Number,
     config: {
       type: Object,
       required: true
