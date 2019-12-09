@@ -60,6 +60,7 @@ function SubmitBar(
       );
     }
   }
+
   function Tip() {
     if (slots.tip || tip) {
       return (
