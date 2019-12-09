@@ -60,7 +60,7 @@ function AddressItem(
     />
   );
 
-  const genTag = () => {
+  function genTag() {
     if (props.data.isDefault && props.defaultTagText) {
       return (
         <Tag type="danger" round class={bem('tag')}>
@@ -68,9 +68,9 @@ function AddressItem(
         </Tag>
       );
     }
-  };
+  }
 
-  const genContent = () => {
+  function genContent() {
     const { data } = props;
     const Info = [
       <div class={bem('name')}>
@@ -89,7 +89,7 @@ function AddressItem(
     }
 
     return Info;
-  };
+  }
 
   return (
     <Cell
