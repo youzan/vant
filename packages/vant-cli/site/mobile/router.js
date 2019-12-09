@@ -50,7 +50,8 @@ function getRoutes() {
           path: `/${lang}/${component}`,
           component: demos[name],
           meta: {
-            name
+            name,
+            lang
           }
         });
       });
