@@ -112,6 +112,7 @@ export default createComponent({
   methods: {
     setCurrentNum(num) {
       this.currentNum = num;
+      this.checkState(this.stepperMinLimit, this.stepperLimit);
     },
 
     onOverLimit(action) {
