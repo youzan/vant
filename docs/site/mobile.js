@@ -3,6 +3,7 @@ import Locale from '../../src/locale';
 import { get } from '../../src/utils';
 import { camelize } from '../../src/utils/format/string';
 
+// helper for demo locales
 Vue.mixin({
   computed: {
     $t() {
@@ -15,9 +16,24 @@ Vue.mixin({
         return typeof message === 'function' ? message(...args) : message;
       };
     }
+  },
+
+  beforeCreate() {
+    const { i18n, name } = this.$options;
+    if (i18n) {
+      const locales = {};
+      const camelizedName = camelize(name);
+
+      Object.keys(i18n).forEach(key => {
+        locales[key] = { [camelizedName]: i18n[key] };
+      });
+
+      Locale.add(locales);
+    }
   }
 });
 
+// add some basic locale messages
 Locale.add({
   'zh-CN': {
     add: '增加',

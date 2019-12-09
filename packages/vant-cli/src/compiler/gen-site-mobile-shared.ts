@@ -13,14 +13,13 @@ import {
 type DemoItem = {
   name: string;
   path: string;
+  component: string;
 };
 
 function genInstall() {
   return `import Vue from 'vue';
 import PackageEntry from './package-entry';
 import './package-style';
-
-Vue.use(PackageEntry);
 `;
 }
 
@@ -34,6 +33,12 @@ function genExports(demos: DemoItem[]) {
   return `export const demos = {\n  ${demos
     .map(item => item.name)
     .join(',\n  ')}\n};`;
+}
+
+function getSetName(demos: DemoItem[]) {
+  return demos
+    .map(item => `${item.name}.name = 'demo-${item.component}';`)
+    .join('\n');
 }
 
 function genConfig(demos: DemoItem[]) {
@@ -66,14 +71,22 @@ function genConfig(demos: DemoItem[]) {
 function genCode(components: string[]) {
   const demos = components
     .map(component => ({
+      component,
       name: pascalize(component),
       path: join(SRC_DIR, component, 'demo/index.vue')
     }))
     .filter(item => existsSync(item.path));
 
-  return `${genInstall()}\n${genImports(demos)}\n\n${genExports(
-    demos
-  )}\n${genConfig(demos)}\n`;
+  return `${genInstall()}
+${genImports(demos)}
+
+Vue.use(PackageEntry);
+
+${getSetName(demos)}
+
+${genExports(demos)}
+${genConfig(demos)}
+`;
 }
 
 export function genSiteMobileShared() {
