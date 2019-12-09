@@ -101,7 +101,11 @@ function Card(
     }
 
     if (props.title) {
-      return <div class={[bem('title'), 'van-multi-ellipsis--l2']}>{props.title}</div>;
+      return (
+        <div class={[bem('title'), 'van-multi-ellipsis--l2']}>
+          {props.title}
+        </div>
+      );
     }
   }
 
@@ -118,11 +122,11 @@ function Card(
   function PriceContent() {
     const priceArr = props.price!.toString().split('.');
     return (
-        <div>
-          {props.currency}
-          <span class={bem('price', 'integer')}>{priceArr[0]}</span>.
-          {priceArr[1]}
-        </div>
+      <div>
+        {props.currency}
+        <span class={bem('price-integer')}>{priceArr[0]}</span>.
+        <span class={bem('price-decimal')}>{priceArr[1]}</span>
+      </div>
     );
   }
 
@@ -149,7 +153,11 @@ function Card(
 
   function Num() {
     if (showNum) {
-      return <div class={bem('num')}>{slots.num ? slots.num() : `x${props.num}`}</div>;
+      return (
+        <div class={bem('num')}>
+          {slots.num ? slots.num() : `x${props.num}`}
+        </div>
+      );
     }
   }
 

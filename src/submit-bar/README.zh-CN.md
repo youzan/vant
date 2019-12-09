@@ -75,7 +75,7 @@ Vue.use(SubmitBar);
 | price | 价格（单位分） | *number* | - | - |
 | label | 价格左侧文案 | *string* | `合计：` | - |
 | suffix-label | 价格右侧文案 | *string* | - | - |
-| text-align | 价格文案对齐方向，可选值为 `right` `left` | *string* | `right` | - |
+| text-align | 价格文案对齐方向，可选值为 `right` `left` | *string* | `right` | 2.3.0 |
 | button-text | 按钮文字 | *string* | - | - |
 | button-type | 按钮类型 | *string* | `danger` | - |
 | tip | 提示文案 |  *string* | - | - |

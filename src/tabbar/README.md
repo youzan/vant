@@ -116,10 +116,7 @@ export default {
 ### Change Event
 
 ```html
-<van-tabbar 
-  v-model="active" 
-  @change="onChange"
->
+<van-tabbar v-model="active" @change="onChange">
   <van-tabbar-item icon="home-o">Tab1</van-tabbar-item>
   <van-tabbar-item icon="search">Tab2</van-tabbar-item>
   <van-tabbar-item icon="freinds-o">Tab3</van-tabbar-item>

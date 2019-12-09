@@ -59,7 +59,7 @@ export default {
 ```
 
 
-### Change 事件
+### 监听切换事件
 
 设置`change`方法来监听切换导航项时的事件
 

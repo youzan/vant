@@ -78,7 +78,7 @@ export default {
 | disabled-text | 不可配送提示文案 | *string* | - | - |
 | switchable | 是否允许切换地址 | *boolean* | `true` | - |
 | add-button-text | 底部按钮文字 | *string* | `新增地址` | - |
-| default-tag-text | 默认地址标签文字 | *string* | - | - |
+| default-tag-text | 默认地址标签文字 | *string* | - | 2.3.0 |
 
 ### Events
 

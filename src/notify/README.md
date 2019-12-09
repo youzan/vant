@@ -68,7 +68,7 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| type | Can be set to `primary` `info` `warning` | *string* | `danger` | 2.1.6 |
+| type | Can be set to `primary` `success` `warning` | *string* | `danger` | 2.1.6 |
 | message | Message | *string* | - | - |
 | duration | Duration(ms), won't disappear if value is 0 | *number* | `3000` | - |
 | color | Message color | *string* | `#fff` | | - |

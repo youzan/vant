@@ -41,7 +41,10 @@ export default createComponent({
 
   watch: {
     currentNum(num) {
-      this.skuEventBus.$emit('sku:numChange', num);
+      const intValue = parseInt(num, 10);
+      if (intValue >= this.stepperMinLimit && intValue <= this.stepperLimit) {
+        this.skuEventBus.$emit('sku:numChange', intValue);
+      }
     },
 
     stepperLimit(limit) {
@@ -122,9 +125,10 @@ export default createComponent({
     },
 
     onChange(currentValue) {
+      const intValue = parseInt(currentValue, 10);
       const { handleStepperChange } = this.customStepperConfig;
-      handleStepperChange && handleStepperChange(currentValue);
-      this.$emit('change', currentValue);
+      handleStepperChange && handleStepperChange(intValue);
+      this.$emit('change', intValue);
     },
 
     checkState(min, max) {
@@ -159,6 +163,7 @@ export default createComponent({
             min={this.stepperMinLimit}
             max={this.stepperLimit}
             disableInput={this.disableStepperInput}
+            integer
             onOverlimit={this.onOverLimit}
             onChange={this.onChange}
           />

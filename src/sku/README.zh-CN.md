@@ -145,7 +145,7 @@ export default {
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
-| start-sale-num | 起售数量 | *number* | `1` | 2.2.15 |
+| start-sale-num | 起售数量 | *number* | `1` | 2.3.0 |
 
 ### Events
 
