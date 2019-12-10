@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <div class="van-card__bottom">
             <div class="van-card__price">
-              <div>¥<span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
+              <div><span class="van-card__price-currency">¥</span><span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
             </div>
             <div class="van-card__num">x2</div>
           </div>
@@ -41,7 +41,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <div class="van-card__bottom">
             <div class="van-card__price">
-              <div>¥<span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
+              <div><span class="van-card__price-currency">¥</span><span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
             </div>
             <div class="van-card__origin-price">¥ 10.00</div>
             <div class="van-card__num">x2</div>
@@ -70,7 +70,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <div class="van-card__bottom">
             <div class="van-card__price">
-              <div>¥<span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
+              <div><span class="van-card__price-currency">¥</span><span class="van-card__price-integer">2</span>.<span class="van-card__price-decimal">00</span></div>
             </div>
             <div class="van-card__num">x2</div>
           </div>
