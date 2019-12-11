@@ -4,6 +4,7 @@ import { genPacakgeStyle } from './gen-package-style';
 import { genSiteMobileShared } from './gen-site-mobile-shared';
 import { genSiteDesktopShared } from './gen-site-desktop-shared';
 import { genStyleDepsMap } from './gen-style-deps-map';
+import { PACKAGE_ENTRY_FILE } from '../common/constant';
 
 const PLUGIN_NAME = 'VantCliSitePlugin';
 
@@ -16,7 +17,9 @@ export class VantCliSitePlugin {
     return new Promise((resolve, reject) => {
       genStyleDepsMap()
         .then(() => {
-          genPackageEntry();
+          genPackageEntry({
+            outputPath: PACKAGE_ENTRY_FILE
+          });
           genPacakgeStyle();
           genSiteMobileShared();
           genSiteDesktopShared();

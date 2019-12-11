@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join, relative } from 'path';
 import { clean } from './clean';
 import { remove, copy, readdirSync } from 'fs-extra';
 import { compileJs } from '../compiler/compile-js';
@@ -21,7 +21,7 @@ import {
   setModuleEnv
 } from '../common';
 
-const stepper = getStepper(8);
+const stepper = getStepper(10);
 
 async function compileDir(dir: string) {
   const files = readdirSync(dir);
@@ -59,8 +59,8 @@ async function buildESModuleOutputs() {
   stepper.start('Build ESModule Outputs');
 
   try {
-    await copy(SRC_DIR, ES_DIR);
     setModuleEnv('esmodule');
+    await copy(SRC_DIR, ES_DIR);
     await compileDir(ES_DIR);
     stepper.success('Build ESModule Outputs');
   } catch (err) {
@@ -72,8 +72,8 @@ async function buildCommonjsOutputs() {
   stepper.start('Build Commonjs Outputs');
 
   try {
-    await copy(SRC_DIR, LIB_DIR);
     setModuleEnv('commonjs');
+    await copy(SRC_DIR, LIB_DIR);
     await compileDir(LIB_DIR);
     stepper.success('Build Commonjs Outputs');
   } catch (err) {
@@ -97,7 +97,7 @@ async function buildPackedOutputs() {
   stepper.start('Build Packed Outputs');
 
   try {
-    genPackageEntry();
+    setModuleEnv('esmodule');
     await compilePackage(false);
     await compilePackage(true);
     stepper.success('Build Packed Outputs');
@@ -106,11 +106,35 @@ async function buildPackedOutputs() {
   }
 }
 
+async function buildPackageEntry() {
+  stepper.start('Build Package Entry');
+
+  try {
+    const esEntryFile = join(ES_DIR, 'index.js');
+    const libEntryFile = join(LIB_DIR, 'index.js');
+
+    genPackageEntry({
+      outputPath: esEntryFile,
+      pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
+    });
+    setModuleEnv('commonjs');
+
+    await copy(esEntryFile, libEntryFile);
+    await compileJs(libEntryFile);
+
+    stepper.success('Build Package Entry');
+  } catch (err) {
+    stepper.error('Build Package Entry', err);
+  }
+}
+
 export async function build() {
   setNodeEnv('production');
+
   await clean();
   await buildESModuleOutputs();
   await buildCommonjsOutputs();
   await buildStyleEntry();
+  await buildPackageEntry();
   await buildPackedOutputs();
 }

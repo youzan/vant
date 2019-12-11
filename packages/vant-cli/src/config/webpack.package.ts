@@ -1,7 +1,8 @@
 import merge from 'webpack-merge';
+import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig, setBuildTarget } from '../common';
-import { LIB_DIR, PACKAGE_ENTRY_FILE } from '../common/constant';
+import { LIB_DIR, ES_DIR } from '../common/constant';
 
 export function packageConfig(isMinify: boolean) {
   const { name } = getVantConfig();
@@ -13,7 +14,7 @@ export function packageConfig(isMinify: boolean) {
     {
       mode: 'production',
       entry: {
-        [name]: PACKAGE_ENTRY_FILE
+        [name]: join(ES_DIR, 'index.js')
       },
       stats: 'none',
       output: {

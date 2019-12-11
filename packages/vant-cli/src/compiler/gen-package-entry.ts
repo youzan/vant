@@ -1,12 +1,24 @@
 import { join } from 'path';
 import { pascalize, getComponents, smartOutputFile } from '../common';
-import { SRC_DIR, PACKAGE_JSON, PACKAGE_ENTRY_FILE } from '../common/constant';
+import { SRC_DIR, PACKAGE_JSON } from '../common/constant';
 
 const version = process.env.PACKAGE_VERSION || PACKAGE_JSON.version;
 
-function genImports(components: string[]): string {
+type Options = {
+  outputPath: string;
+  pathResolver?: Function
+};
+
+function genImports(components: string[], options: Options): string {
   return components
-    .map(name => `import ${pascalize(name)} from '${join(SRC_DIR, name)}';`)
+    .map(name => {
+      let path = join(SRC_DIR, name);
+      if (options.pathResolver) {
+        path = options.pathResolver(path);
+      }
+
+      return `import ${pascalize(name)} from '${path}';`;
+    })
     .join('\n');
 }
 
@@ -14,11 +26,11 @@ function genExports(names: string[]): string {
   return names.map(name => `${name}`).join(',\n  ');
 }
 
-export function genPackageEntry() {
+export function genPackageEntry(options: Options) {
   const components = getComponents();
   const names = components.map(item => pascalize(item));
 
-  const content = `${genImports(components)}
+  const content = `${genImports(components, options)}
 
 const version = '${version}';
 const components = [
@@ -33,7 +45,7 @@ function install(Vue) {
       Vue.component(item.name, item);
     }
   });
-};
+}
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
@@ -51,5 +63,5 @@ export default {
 };
 `;
 
-  smartOutputFile(PACKAGE_ENTRY_FILE, content);
+  smartOutputFile(options.outputPath, content);
 }
