@@ -99,7 +99,7 @@ function TreeSelect(
 
             emit(ctx, 'update:active-id', newActiveId);
             emit(ctx, 'click-item', item);
-            // compatible for old usage, should be removed in next major version
+            // compatible with legacy usage, should be removed in next major version
             emit(ctx, 'itemclick', item);
           }
         }}
@@ -120,7 +120,7 @@ function TreeSelect(
         onChange={(index: number) => {
           emit(ctx, 'update:main-active-index', index);
           emit(ctx, 'click-nav', index);
-          // compatible for old usage, should be removed in next major version
+          // compatible with legacy usage, should be removed in next major version
           emit(ctx, 'navclick', index);
         }}
       >

@@ -1,5 +1,16 @@
 # Changelog
 
+### [v2.3.0-beta.3](https://github.com/youzan/vant/tree/v2.3.0-beta.3)
+`2019-12-09`
+
+**Bug Fixes**
+
+- fix Sku should check state when reset [\#5231](https://github.com/youzan/vant/pull/5231)
+- fix Switch incorrect size prop type [\#5229](https://github.com/youzan/vant/pull/5229)
+- fix SubmitBar incorrect decimal when price is integer [\#5224](https://github.com/youzan/vant/pull/5224)
+- fix AddressList incorrect tel when isDefault is 0 [\#5232](https://github.com/youzan/vant/pull/5232)
+
+
 ### [v2.3.0-beta.2](https://github.com/youzan/vant/tree/v2.3.0-beta.2)
 `2019-12-06`
 

@@ -41,12 +41,17 @@ function SubmitBar(
   function Text() {
     if (typeof price === 'number') {
       const priceArr = (price / 100).toFixed(props.decimalLength).split('.');
+      const decimalStr = props.decimalLength ? `.${priceArr[1]}` : '';
       return (
-        <div style={{ textAlign: props.textAlign ? props.textAlign : '' }} class={bem('text')}>
+        <div
+          style={{ textAlign: props.textAlign ? props.textAlign : '' }}
+          class={bem('text')}
+        >
           <span>{props.label || t('label')}</span>
           <span class={bem('price')}>
             {props.currency}
-            <span class={bem('price', 'integer')}>{priceArr[0]}</span>.{priceArr[1]}
+            <span class={bem('price', 'integer')}>{priceArr[0]}</span>
+            {decimalStr}
           </span>
           {props.suffixLabel && (
             <span class={bem('suffix-label')}>{props.suffixLabel}</span>
