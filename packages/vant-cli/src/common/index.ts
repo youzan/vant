@@ -96,6 +96,7 @@ export function getWebpackConfig(): object {
 
 export type ModuleEnv = 'esmodule' | 'commonjs';
 export type NodeEnv = 'production' | 'development' | 'test';
+export type BuildTarget = 'site' | 'package';
 
 export function setModuleEnv(value: ModuleEnv) {
   process.env.BABEL_MODULE = value;
@@ -103,6 +104,10 @@ export function setModuleEnv(value: ModuleEnv) {
 
 export function setNodeEnv(value: NodeEnv) {
   process.env.NODE_ENV = value;
+}
+
+export function setBuildTarget(value: BuildTarget) {
+  process.env.BUILD_TARGET = value;
 }
 
 export function isDev() {

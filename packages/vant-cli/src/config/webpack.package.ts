@@ -1,10 +1,12 @@
 import merge from 'webpack-merge';
 import { baseConfig } from './webpack.base';
-import { getVantConfig, getWebpackConfig } from '../common';
+import { getVantConfig, getWebpackConfig, setBuildTarget } from '../common';
 import { LIB_DIR, PACKAGE_ENTRY_FILE } from '../common/constant';
 
 export function packageConfig(isMinify: boolean) {
   const { name } = getVantConfig();
+
+  setBuildTarget('package');
 
   return merge(
     baseConfig as any,
