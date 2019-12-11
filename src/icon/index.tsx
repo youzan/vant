@@ -10,7 +10,7 @@ import { DefaultSlots } from '../utils/types';
 export type IconProps = {
   dot?: boolean;
   tag: keyof HTMLElementTagNameMap | string;
-  name: string;
+  name?: string;
   size?: string | number;
   color?: string;
   info?: string | number;
@@ -27,17 +27,23 @@ function isImage(name?: string): boolean {
   return name ? name.indexOf('/') !== -1 : false;
 }
 
+// compatible with legacy usage, should be removed in next major version
+function correctName(name?: string) {
+  return name === 'medel' ? 'medal' : name;
+}
+
 function Icon(
   h: CreateElement,
   props: IconProps,
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const imageIcon = isImage(props.name);
+  const name = correctName(props.name);
+  const imageIcon = isImage(name);
 
   return (
     <props.tag
-      class={[props.classPrefix, imageIcon ? '' : `${props.classPrefix}-${props.name}`]}
+      class={[props.classPrefix, imageIcon ? '' : `${props.classPrefix}-${name}`]}
       style={{
         color: props.color,
         fontSize: addUnit(props.size)
@@ -46,7 +52,7 @@ function Icon(
     >
       {slots.default && slots.default()}
       {imageIcon && (
-        <Image class={bem('image')} fit="contain" src={props.name} showLoading={false} />
+        <Image class={bem('image')} fit="contain" src={name} showLoading={false} />
       )}
       <Info dot={props.dot} info={props.info} />
     </props.tag>
