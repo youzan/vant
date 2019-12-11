@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'vant',
+  name: 'vant',
   build: {
     site: {
       publicPath: 'vant/'
@@ -46,10 +46,6 @@ module.exports = {
               {
                 path: 'changelog',
                 title: '更新日志'
-              },
-              {
-                path: 'style',
-                title: '内置样式'
               },
               {
                 path: 'theme',
@@ -100,6 +96,10 @@ module.exports = {
               {
                 path: 'popup',
                 title: 'Popup 弹出层'
+              },
+              {
+                path: 'style',
+                title: 'Style 内置样式'
               }
             ]
           },
@@ -392,10 +392,6 @@ module.exports = {
                 title: 'Changelog'
               },
               {
-                path: 'style',
-                title: 'Built-in style'
-              },
-              {
                 path: 'theme',
                 title: 'Custom Theme'
               },
@@ -432,7 +428,11 @@ module.exports = {
               {
                 path: 'popup',
                 title: 'Popup'
-              }
+              },
+              {
+                path: 'style',
+                title: 'Built-in style'
+              },
             ]
           },
           {
