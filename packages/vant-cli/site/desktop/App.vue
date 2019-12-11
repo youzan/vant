@@ -3,6 +3,7 @@
     <van-doc
       :lang="lang"
       :config="config"
+      :versions="versions"
       :simulator="simulator"
       :lang-configs="langConfigs"
     >
@@ -13,7 +14,7 @@
 
 <script>
 import VanDoc from './components';
-import { config } from 'site-desktop-shared';
+import { config, packageVersion } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
 
 function getPublicPath() {
@@ -33,6 +34,7 @@ export default {
 
   data() {
     return {
+      packageVersion,
       simulator: `${getPublicPath()}mobile.html${location.hash}`
     };
   },
@@ -59,6 +61,14 @@ export default {
       }
 
       return config.site;
+    },
+
+    versions() {
+      if (config.site.versions) {
+        return [{ label: packageVersion }, ...config.site.versions];
+      }
+
+      return null;
     }
   },
 

@@ -18,14 +18,16 @@
 
           <li ref="version" v-if="versions" class="van-doc-header__top-nav-item">
             <span class="van-doc-header__cube van-doc-header__version" @click="toggleVersionPop">
-              {{ versions[0] }}
+              {{ versions[0].label }}
               <transition name="van-doc-dropdown">
                 <div v-if="showVersionPop" class="van-doc-header__version-pop">
                   <div
                     v-for="item in versions"
                     class="van-doc-header__version-pop-item"
                     @click="onSwitchVersion(item)"
-                  >{{ item }}</div>
+                  >
+                    {{ item.label }}
+                  </div>
                 </div>
               </transition>
             </span>
@@ -107,7 +109,7 @@ export default {
     },
 
     onSwitchVersion(version) {
-      this.$emit('switch-version', version);
+      location.href = version.link;
     }
   }
 };

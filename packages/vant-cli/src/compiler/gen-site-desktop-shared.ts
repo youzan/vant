@@ -10,6 +10,7 @@ import {
 import {
   SRC_DIR,
   DOCS_DIR,
+  PACKAGE_JSON,
   VANT_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
@@ -94,6 +95,10 @@ function genExportConfig() {
   return 'export { config };';
 }
 
+function genExportVersion() {
+  return `export const packageVersion = '${PACKAGE_JSON.version}';`;
+}
+
 export function genSiteDesktopShared() {
   const dirs = readdirSync(SRC_DIR);
   const documents = resolveDocuments(dirs);
@@ -103,6 +108,7 @@ ${genImportDocuments(documents)}
 
 ${genExportConfig()}
 ${genExportDocuments(documents)}
+${genExportVersion()}
 `;
 
   smartOutputFile(SITE_DESKTOP_SHARED_FILE, code);
