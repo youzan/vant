@@ -45,7 +45,7 @@ async function compileDir(dir: string) {
       }
 
       if (isScript(filePath)) {
-        return compileJs(filePath);
+        return compileJs(filePath, { reloadConfig: true });
       }
 
       if (isStyle(filePath)) {
@@ -129,7 +129,7 @@ async function buildPackageEntry() {
     setModuleEnv('commonjs');
 
     await copy(esEntryFile, libEntryFile);
-    await compileJs(libEntryFile);
+    await compileJs(libEntryFile, { reloadConfig: true });
     await compileStyle(styleEntryFile);
 
     stepper.success('Build Package Entry');

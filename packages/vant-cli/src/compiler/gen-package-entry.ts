@@ -39,7 +39,7 @@ const version = '${version}';
 
 function install(Vue) {
   const components = [
-    ${components.filter(item => !skipInstall.includes(item)).join(',\n  ')}
+    ${components.filter(item => !skipInstall.includes(item)).join(',\n    ')}
   ];
 
   components.forEach(item => {

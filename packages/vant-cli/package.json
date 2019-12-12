@@ -73,6 +73,7 @@
     "csso": "^4.0.2",
     "decamelize": "^3.2.0",
     "eslint": "^6.7.1",
+    "find-babel-config": "^1.2.0",
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",
     "husky": "^3.1.0",
