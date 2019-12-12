@@ -4,7 +4,7 @@ import { join } from 'path';
 import { transformFileAsync } from '@babel/core';
 import { removeSync, outputFileSync, existsSync } from 'fs-extra';
 import { replaceExt } from '../common';
-import { CWD, DIST_DIR } from '../common/constant';
+import { ROOT, DIST_DIR } from '../common/constant';
 
 type Options = {
   // whether to fouce reload babel config
@@ -14,7 +14,7 @@ type Options = {
 const TEMP_BABEL_CONFIG = join(DIST_DIR, 'babel.config.js');
 
 function genTempBabelConfig() {
-  const { config } = findBabelConfig.sync(CWD);
+  const { config } = findBabelConfig.sync(ROOT);
   const content = `module.exports = function (api) {
   api.cache.never();
 

@@ -1,7 +1,7 @@
 import { runCLI } from 'jest';
 import { setNodeEnv } from '../common';
 import { genPackageEntry } from '../compiler/gen-package-entry';
-import { CWD, JEST_CONFIG_FILE, PACKAGE_ENTRY_FILE } from '../common/constant';
+import { ROOT, JEST_CONFIG_FILE, PACKAGE_ENTRY_FILE } from '../common/constant';
 
 export function test(command: any) {
   setNodeEnv('test');
@@ -11,10 +11,10 @@ export function test(command: any) {
   });
 
   const config = {
-    rootDir: CWD,
+    rootDir: ROOT,
     watch: command.watch,
     config: JEST_CONFIG_FILE
   } as any;
 
-  runCLI(config, [CWD]);
+  runCLI(config, [ROOT]);
 }
