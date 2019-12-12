@@ -28,22 +28,20 @@ function genExports(names: string[]): string {
 }
 
 export function genPackageEntry(options: Options) {
+  const names = getComponents();
   const vantConfig = getVantConfig();
-  const components = getComponents();
-  const skipInstall = get(vantConfig, 'build.skipInstall', []);
+  const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
 
-  const names = components
-    .filter(item => !skipInstall.includes(item))
-    .map(item => pascalize(item));
-
-  const content = `${genImports(components, options)}
+  const components = names.map(pascalize);
+  const content = `${genImports(names, options)}
 
 const version = '${version}';
-const components = [
-  ${names.join(',\n  ')}
-];
 
 function install(Vue) {
+  const components = [
+    ${components.filter(item => !skipInstall.includes(item)).join(',\n  ')}
+  ];
+
   components.forEach(item => {
     if (item.install) {
       Vue.use(item);
@@ -60,7 +58,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  ${genExports(names)}
+  ${genExports(components)}
 };
 
 export default {
