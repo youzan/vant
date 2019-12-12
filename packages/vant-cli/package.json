@@ -1,20 +1,126 @@
 {
   "name": "@vant/cli",
-  "version": "1.0.6",
-  "description": "vant cli tools",
-  "main": "./src/index.js",
+  "version": "2.0.0-beta.20",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "bin": {
-    "vant": "./src/index.js"
+    "vant-cli": "./lib/index.js"
   },
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "dev": "tsc --watch",
+    "release": "tsc & release-it"
+  },
+  "files": [
+    "lib",
+    "site",
+    "preset.js"
+  ],
+  "author": "chenjiahan",
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-cli",
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "devDependencies": {
+    "@types/csso": "^3.5.1",
+    "@types/eslint": "^6.1.3",
+    "@types/fs-extra": "^8.0.1",
+    "@types/html-webpack-plugin": "^3.2.1",
+    "@types/less": "^3.0.1",
+    "@types/lodash": "^4.14.149",
+    "@types/postcss-load-config": "^2.0.1",
+    "@types/sass": "^1.16.0",
+    "@types/shelljs": "^0.8.6",
+    "@types/signale": "^1.2.1",
+    "@types/source-map": "^0.5.7",
+    "@types/stylelint": "^9.10.1",
+    "@types/webpack": "^4.41.0",
+    "@types/webpack-dev-server": "^3.9.0",
+    "@types/webpack-merge": "^4.1.5"
+  },
   "dependencies": {
-    "commander": "^2.17.1",
-    "husky": "^3.0.4",
-    "shelljs": "^0.8.2",
-    "signale": "^1.4.0"
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/plugin-syntax-jsx": "^7.7.4",
+    "@babel/plugin-transform-object-assign": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
+    "@types/jest": "^24.0.23",
+    "@vant/eslint-config": "^1.4.0",
+    "@vant/markdown-loader": "^2.3.0",
+    "@vant/markdown-vetur": "^1.0.0",
+    "@vant/stylelint-config": "^1.0.0",
+    "@vant/touch-emulator": "^1.2.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/component-compiler-utils": "^3.0.2",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "autoprefixer": "^9.7.2",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
+    "codecov": "^3.6.1",
+    "commander": "^4.0.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "csso": "^4.0.2",
+    "decamelize": "^3.2.0",
+    "eslint": "^6.7.1",
+    "find-babel-config": "^1.2.0",
+    "gh-pages": "2.0.1",
+    "html-webpack-plugin": "3.2.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-serializer-vue": "^2.0.2",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.5.0",
+    "lodash": "^4.17.15",
+    "portfinder": "^1.0.25",
+    "postcss": "^7.0.23",
+    "postcss-loader": "^3.0.0",
+    "release-it": "^12.4.3",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "shelljs": "^0.8.3",
+    "signale": "^1.4.0",
+    "style-loader": "^1.0.1",
+    "stylelint": "^12.0.0",
+    "typescript": "^3.7.2",
+    "vue-jest": "4.0.0-beta.2",
+    "vue-loader": "^15.7.2",
+    "vue-router": "^3.1.3",
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "3.9.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "chore: Release @vant/cli@${version}"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@vant"
+    ],
+    "rules": {
+      "global-require": 0,
+      "import/no-dynamic-require": 0
+    }
+  },
+  "stylelint": {
+    "extends": [
+      "@vant/stylelint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
