@@ -35,6 +35,24 @@ export default {
 
       return false;
     }
+  },
+
+  watch: {
+    active() {
+      this.scrollIntoView();
+    }
+  },
+
+  mounted() {
+    this.scrollIntoView();
+  },
+
+  methods: {
+    scrollIntoView() {
+      if (this.active && this.$el && this.$el.scrollIntoViewIfNeeded) {
+        this.$el.scrollIntoViewIfNeeded();
+      }
+    }
   }
 };
 </script>
