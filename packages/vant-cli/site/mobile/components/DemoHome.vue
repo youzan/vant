@@ -82,7 +82,7 @@ export default {
 
   &__desc {
     margin: 0 0 40px;
-    color: #7d7e80;
+    color: rgba(69, 90, 100, 0.6);
     font-size: 14px;
   }
 }

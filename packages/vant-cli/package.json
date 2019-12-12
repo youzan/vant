@@ -22,7 +22,6 @@
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
-    "vant": "^2.2.15",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
@@ -41,8 +40,7 @@
     "@types/stylelint": "^9.10.1",
     "@types/webpack": "^4.41.0",
     "@types/webpack-dev-server": "^3.9.0",
-    "@types/webpack-merge": "^4.1.5",
-    "vant": "^2.2.15"
+    "@types/webpack-merge": "^4.1.5"
   },
   "dependencies": {
     "@babel/core": "^7.7.4",

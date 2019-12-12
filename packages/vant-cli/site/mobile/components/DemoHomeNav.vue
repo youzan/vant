@@ -1,41 +1,26 @@
 <template>
-  <van-collapse
-    v-model="active"
-    :border="false"
-    class="demo-home-nav"
-  >
-    <van-collapse-item
-      class="demo-home-nav__item"
-      :title="group.title"
-      :name="group.title"
-    >
-      <van-icon
-        v-if="group.icon"
-        :name="group.icon"
-        slot="right-icon"
-        class="demo-home-nav__icon"
-      />
-      <template v-for="(navItem, index) in group.items">
-        <van-cell
-          :key="index"
-          :to="`${base}/${navItem.path}`"
-          :title="navItem.title"
-          is-link
-        />
-      </template>
-    </van-collapse-item>
-  </van-collapse>
+  <div class="demo-home-nav">
+    <div class="demo-home-nav__title">{{ group.title }}</div>
+    <div class="demo-home-nav__group">
+      <router-link
+        class="demo-home-nav__block"
+        v-for="navItem in group.items"
+        :key="navItem.path"
+        :to="`${base}/${navItem.path}`"
+      >
+        {{ navItem.title }}
+        <arrow-right class="demo-home-nav__icon" />
+      </router-link>
+    </div>
+  </div>
 </template>
 
 <script>
-import { Cell, Icon, Collapse, CollapseItem } from 'vant';
+import ArrowRight from './ArrowRight';
 
 export default {
   components: {
-    [Cell.name]: Cell,
-    [Icon.name]: Icon,
-    [Collapse.name]: Collapse,
-    [CollapseItem.name]: CollapseItem
+    ArrowRight
   },
 
   props: {
@@ -61,31 +46,41 @@ export default {
 @import '../../common/style/index';
 
 .demo-home-nav {
-  &__item {
-    margin-bottom: 16px;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 1px 5px #ebedf0;
+  &__title {
+    margin: 24px 0 12px 16px;
+    color: rgba(69, 90, 100, 0.6);
+    font-size: 14px;
   }
 
-  &__icon {
-    font-size: 24px;
+  &__block {
+    position: relative;
+    display: flex;
+    margin: 0 0 12px;
+    padding-left: 20px;
+    color: #323233;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    background: #f7f8fa;
+    border-radius: 99px;
+    transition: background 0.3s;
 
-    img {
-      width: 100%;
+    &:hover {
+      background: darken(#f7f8fa, 3%);
+    }
+
+    &:active {
+      background: darken(#f7f8fa, 6%);
     }
   }
 
-  .van-collapse-item__content {
-    padding: 0;
-  }
-
-  .van-collapse-item__title {
-    align-items: center;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 40px;
-    border-radius: 2px;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
   }
 }
 </style>
