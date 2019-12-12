@@ -1,6 +1,7 @@
 module.exports = {
   name: 'vant',
   build: {
+    skipInstall: ['lazyload'],
     site: {
       publicPath: 'vant/'
     }

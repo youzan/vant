@@ -1,12 +1,13 @@
+import { get } from 'lodash';
 import { join } from 'path';
 import { pascalize, getComponents, smartOutputFile } from '../common';
-import { SRC_DIR, PACKAGE_JSON } from '../common/constant';
+import { SRC_DIR, PACKAGE_JSON, getVantConfig } from '../common/constant';
 
 const version = process.env.PACKAGE_VERSION || PACKAGE_JSON.version;
 
 type Options = {
   outputPath: string;
-  pathResolver?: Function
+  pathResolver?: Function;
 };
 
 function genImports(components: string[], options: Options): string {
@@ -27,8 +28,13 @@ function genExports(names: string[]): string {
 }
 
 export function genPackageEntry(options: Options) {
+  const vantConfig = getVantConfig();
   const components = getComponents();
-  const names = components.map(item => pascalize(item));
+  const skipInstall = get(vantConfig, 'build.skipInstall', []);
+
+  const names = components
+    .filter(item => !skipInstall.includes(item))
+    .map(item => pascalize(item));
 
   const content = `${genImports(components, options)}
 

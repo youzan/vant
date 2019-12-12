@@ -1,7 +1,12 @@
 import Vue from 'vue';
 import Locale from '../../src/locale';
+import Lazyload from '../../src/lazyload';
 import { get } from '../../src/utils';
 import { camelize } from '../../src/utils/format/string';
+
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 
 // helper for demo locales
 Vue.mixin({
