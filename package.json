@@ -20,7 +20,7 @@
     "build": "vant-cli build",
     "release": "vant-cli release",
     "test:watch": "vant-cli test --watch",
-    "release:site": "sh build/release-site.sh",
+    "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html",
     "changelog": "vant-cli changelog ./docs/changelog.generated.md"
   },
