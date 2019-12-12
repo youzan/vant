@@ -8,7 +8,7 @@ Vue.mixin({
   computed: {
     $t() {
       const { name } = this.$options;
-      const { lang } = this.$route.meta || {};
+      const { lang = 'zh-CN' } = (this.$route && this.$route.meta) || {};
       const prefix = name ? camelize(name) + '.' : '';
       const messages = this.$vantMessages[lang];
 
@@ -22,7 +22,7 @@ Vue.mixin({
   beforeCreate() {
     const { i18n, name } = this.$options;
 
-    if (i18n) {
+    if (i18n && name) {
       const locales = {};
       const camelizedName = camelize(name);
 

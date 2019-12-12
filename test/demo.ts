@@ -1,5 +1,5 @@
 import Vue, { CreateElement } from 'vue';
-import '../docs/site/mobile/demo-common';
+import '../docs/site/mobile';
 import Locale from '../src/locale';
 import { mount, later } from '.';
 

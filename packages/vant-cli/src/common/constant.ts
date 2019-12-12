@@ -22,6 +22,7 @@ export const STYPE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 export const JEST_CONFIG_FILE = join(CONFIG_DIR, 'jest.config.js');
 export const BABEL_CONFIG_FILE = join(CONFIG_DIR, 'babel.config.js');
 export const POSTCSS_CONFIG_FILE = join(CONFIG_DIR, 'postcss.config.js');
+export const JEST_INIT_FILE = join(CONFIG_DIR, 'jest.init.js');
 export const JEST_TRANSFORM_FILE = join(CONFIG_DIR, 'jest.transform.js');
 export const JEST_FILE_MOCK_FILE = join(CONFIG_DIR, 'jest.file-mock.js');
 export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
