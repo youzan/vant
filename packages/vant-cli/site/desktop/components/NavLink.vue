@@ -1,5 +1,5 @@
 <template>
-  <router-link v-if="item.path" active-class="active" :to="base + item.path" v-html="itemName" />
+  <router-link v-if="item.path" :class="{ active }" :to="path" v-html="itemName" />
   <a v-else-if="item.link" :href="item.link" v-html="itemName" />
   <a v-else v-html="itemName " />
 </template>
@@ -17,6 +17,23 @@ export default {
     itemName() {
       const name = (this.item.title || this.item.name).split(' ');
       return `${name[0]} <span>${name.slice(1).join(' ')}</span>`;
+    },
+
+    path() {
+      const { path } = this.item;
+      return this.base ? `${this.base}/${path}` : path;
+    },
+
+    active() {
+      if (this.$route.path === this.path) {
+        return true;
+      }
+
+      if (this.item.path === 'home') {
+        return this.$route.path === this.base;
+      }
+
+      return false;
     }
   }
 };

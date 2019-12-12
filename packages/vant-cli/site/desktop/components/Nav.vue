@@ -32,11 +32,8 @@ export default {
   },
 
   props: {
-    navConfig: Array,
-    base: {
-      type: String,
-      default: ''
-    }
+    lang: String,
+    navConfig: Array
   },
 
   data() {
@@ -52,6 +49,10 @@ export default {
         top: this.top + 'px',
         bottom: this.bottom + 'px'
       };
+    },
+
+    base() {
+      return this.lang ? `/${this.lang}` : '';
     }
   },
 

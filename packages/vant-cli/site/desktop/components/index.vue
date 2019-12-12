@@ -7,7 +7,7 @@
       :lang-configs="langConfigs"
       @switch-version="$emit('switch-version', $event)"
     />
-    <doc-nav :base="base" :nav-config="config.nav" />
+    <doc-nav :lang="lang" :nav-config="config.nav" />
     <doc-container :has-simulator="!!simulator ">
       <doc-content>
         <slot />
