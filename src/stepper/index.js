@@ -114,6 +114,11 @@ export default createComponent({
       }
     },
 
+    max: 'check',
+    min: 'check',
+    integer: 'check',
+    decimalLength: 'check',
+
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, { name: this.name });
@@ -121,6 +126,12 @@ export default createComponent({
   },
 
   methods: {
+    check() {
+      const val = this.format(this.currentValue);
+      if (!equal(val, this.currentValue)) {
+        this.currentValue = val;
+      }
+    },
     // filter illegal characters
     filter(value) {
       value = String(value).replace(/[^0-9.-]/g, '');
