@@ -27,6 +27,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
+    "@types/csso": "^3.5.1",
     "@types/eslint": "^6.1.3",
     "@types/fs-extra": "^8.0.1",
     "@types/html-webpack-plugin": "^3.2.1",

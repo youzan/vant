@@ -23,7 +23,7 @@ async function compileFile(filePath: string) {
 }
 
 export async function compileStyle(filePath: string) {
-  const content = await compileFile(filePath);
+  const css = await compileFile(filePath);
 
-  writeFileSync(replaceExt(filePath, '.css'), content);
+  writeFileSync(replaceExt(filePath, '.css'), css);
 }
