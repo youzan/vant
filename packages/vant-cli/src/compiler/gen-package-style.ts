@@ -1,26 +1,39 @@
 import { join } from 'path';
-import { replaceExt, smartOutputFile } from '../common';
+import { smartOutputFile } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
-import {
-  SRC_DIR,
-  PACKAGE_STYLE_FILE,
-  STYPE_DEPS_JSON_FILE
-} from '../common/constant';
+import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
-export function genPacakgeStyle() {
+type Options = {
+  outputPath: string;
+  pathResolver?: Function;
+};
+
+export function genPacakgeStyle(options: Options) {
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
   const ext = '.' + CSS_LANG;
 
   let content = '';
 
-  const baseFile = getCssBaseFile();
+  let baseFile = getCssBaseFile();
   if (baseFile) {
+    if (options.pathResolver) {
+      baseFile = options.pathResolver(baseFile);
+    }
+
     content += `@import "${baseFile}";\n`;
   }
 
   content += styleDepsJson.sequence
-    .map((name: string) => `@import "${join(SRC_DIR, `${name}/index${ext}`)}";`)
+    .map((name: string) => {
+      let path = join(SRC_DIR, `${name}/index${ext}`);
+
+      if (options.pathResolver) {
+        path = options.pathResolver(path);
+      }
+
+      return `@import "${path}";`;
+    })
     .join('\n');
 
-  smartOutputFile(replaceExt(PACKAGE_STYLE_FILE, ext), content);
+  smartOutputFile(options.outputPath, content);
 }

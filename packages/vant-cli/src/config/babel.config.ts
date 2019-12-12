@@ -1,13 +1,7 @@
-module.exports = function(api: any) {
+module.exports = function() {
   const { BABEL_MODULE, NODE_ENV } = process.env;
   const isTest = NODE_ENV === 'test';
   const useESModules = BABEL_MODULE !== 'commonjs' && !isTest;
-
-  console.log('cache ??', useESModules, api);
-  if (api) {
-    console.log('never ed');
-    api.cache.never();
-  }
 
   return {
     presets: [

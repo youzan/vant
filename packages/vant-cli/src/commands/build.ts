@@ -20,6 +20,8 @@ import {
   setNodeEnv,
   setModuleEnv
 } from '../common';
+import { genPacakgeStyle } from '../compiler/gen-package-style';
+import { CSS_LANG } from '../common/css';
 
 const stepper = getStepper(10);
 
@@ -112,15 +114,23 @@ async function buildPackageEntry() {
   try {
     const esEntryFile = join(ES_DIR, 'index.js');
     const libEntryFile = join(LIB_DIR, 'index.js');
+    const styleEntryFile = join(LIB_DIR, `index.${CSS_LANG}`);
 
     genPackageEntry({
       outputPath: esEntryFile,
       pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
     });
+
+    genPacakgeStyle({
+      outputPath: styleEntryFile,
+      pathResolver: (path: string) => path.replace(SRC_DIR, '.')
+    });
+
     setModuleEnv('commonjs');
 
     await copy(esEntryFile, libEntryFile);
     await compileJs(libEntryFile);
+    await compileStyle(styleEntryFile);
 
     stepper.success('Build Package Entry');
   } catch (err) {

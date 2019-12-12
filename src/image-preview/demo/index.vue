@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { ImagePreview } from '../..';
+import ImagePreview from '..';
 
 const images = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',
