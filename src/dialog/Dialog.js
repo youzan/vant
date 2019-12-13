@@ -56,6 +56,11 @@ export default createComponent({
     handleAction(action) {
       this.$emit(action);
 
+      // show not trigger close event when hidden
+      if (!this.value) {
+        return;
+      }
+
       if (this.beforeClose) {
         this.loading[action] = true;
         this.beforeClose(action, state => {
