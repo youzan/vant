@@ -132,6 +132,7 @@ export default createComponent({
         this.currentValue = val;
       }
     },
+
     // filter illegal characters
     filter(value) {
       value = String(value).replace(/[^0-9.-]/g, '');
