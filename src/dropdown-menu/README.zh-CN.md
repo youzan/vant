@@ -143,6 +143,7 @@ export default {
 | open | 打开菜单栏时触发 | - |
 | opened | 打开菜单栏且动画结束后触发 | - |
 | close | 关闭菜单栏时触发 | - |
+| opened | 关闭菜单栏且动画结束后触发 | - |
 
 ### DropdownItem Slots
 
