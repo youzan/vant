@@ -271,3 +271,61 @@ test('name prop', () => {
   plus.trigger('click');
   expect(wrapper.emitted('change')[1][1]).toEqual({ name: 'name' });
 });
+
+test('change min and max', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1
+    }
+  });
+
+  wrapper.setProps({
+    min: 10,
+  });
+
+  await later();
+
+  expect(wrapper.emitted('input')[0][0]).toEqual(10);
+
+  wrapper.setProps({
+    min: 3,
+    max: 8,
+  });
+
+  await later();
+
+  expect(wrapper.emitted('input')[1][0]).toEqual(8);
+});
+
+
+test('change decimal-length', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1.33
+    }
+  });
+
+  wrapper.setProps({
+    decimalLength: 1
+  });
+
+  await later();
+
+  expect(wrapper.emitted('input')[0][0]).toEqual('1.3');
+});
+
+test('change integer', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1.33
+    }
+  });
+
+  wrapper.setProps({
+    integer: true
+  });
+
+  await later();
+
+  expect(wrapper.emitted('input')[0][0]).toEqual(1);
+});
