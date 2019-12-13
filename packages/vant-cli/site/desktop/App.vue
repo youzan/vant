@@ -17,25 +17,17 @@ import VanDoc from './components';
 import { config, packageVersion } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
 
-function getPublicPath() {
-  const { site } = config.build || {};
-
-  if (process.env.NODE_ENV === 'production') {
-    return (site && site.publicPath) || '/';
-  }
-
-  return '/';
-}
-
 export default {
   components: {
     VanDoc
   },
 
   data() {
+    const path = location.pathname.replace('/index', '/');
+
     return {
       packageVersion,
-      simulator: `${getPublicPath()}mobile.html${location.hash}`
+      simulator: `${path}mobile.html${location.hash}`
     };
   },
 
