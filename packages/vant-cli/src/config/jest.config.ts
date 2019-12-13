@@ -15,7 +15,7 @@ module.exports = {
     '\\.(vue)$': 'vue-jest',
     '\\.(js|jsx|ts|tsx)$': 'babel-jest'
   },
-  transformIgnorePatterns: ['node_modules/(?!(vant|@babel\\/runtime)/)'],
+  transformIgnorePatterns: ['/node_modules/(?!(@vant/cli))/'],
   snapshotSerializers: ['jest-serializer-vue'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx,vue}',
