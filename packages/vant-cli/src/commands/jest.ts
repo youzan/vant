@@ -13,7 +13,8 @@ export function test(command: any) {
   const config = {
     rootDir: ROOT,
     watch: command.watch,
-    config: JEST_CONFIG_FILE
+    config: JEST_CONFIG_FILE,
+    clearCache: command.clearCache
   } as any;
 
   runCLI(config, [ROOT]);

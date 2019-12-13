@@ -31,6 +31,7 @@ command('commit-lint').action(commitLint);
 
 command('test')
   .option('--watch')
+  .option('--clearCache')
   .action(test);
 
 parse(process.argv);
