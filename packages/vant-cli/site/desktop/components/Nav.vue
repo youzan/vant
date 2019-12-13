@@ -52,7 +52,7 @@ export default {
     },
 
     base() {
-      return this.lang ? `/${this.lang}` : '';
+      return this.lang ? `/${this.lang}/` : '/';
     }
   },
 

@@ -46,7 +46,7 @@ function getRoutes() {
     });
 
     routes.push({
-      path: '',
+      path: '/',
       component: DemoHome
     });
   }

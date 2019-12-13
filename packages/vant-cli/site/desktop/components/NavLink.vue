@@ -20,8 +20,7 @@ export default {
     },
 
     path() {
-      const { path } = this.item;
-      return this.base ? `${this.base}/${path}` : path;
+      return `${this.base}${this.item.path}`;
     },
 
     active() {
