@@ -3,7 +3,7 @@ module.exports = {
   build: {
     skipInstall: ['lazyload'],
     site: {
-      publicPath: 'vant/'
+      publicPath: '/vant/'
     },
     vetur: {
       tagPrefix: 'van-'

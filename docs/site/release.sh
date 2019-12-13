@@ -1,10 +1,8 @@
 #!/usr/bin/env sh
-rm -rf docs/dist
-
 vant-cli build-site
 
-superman-cdn /vant ./docs/dist/*.js
+superman-cdn /vant ./site/*.js
 
-rm -rf docs/dist/*.js
+rm -rf site/*.js
 
-gh-pages -d docs/dist --add
+gh-pages -d site --add
