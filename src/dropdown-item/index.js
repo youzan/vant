@@ -101,7 +101,9 @@ export default createComponent({
             }
           }}
         >
-          {active && <Icon class={bem('icon')} color={activeColor} name="success" />}
+          {active && (
+            <Icon class={bem('icon')} color={activeColor} name="success" />
+          )}
         </Cell>
       );
     });
