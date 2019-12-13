@@ -102,7 +102,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "chore: Release @vant/cli@${version}"
+      "commitMessage": "chore: release @vant/cli@${version}"
     }
   },
   "eslintConfig": {
