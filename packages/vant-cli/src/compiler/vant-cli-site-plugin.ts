@@ -12,7 +12,11 @@ const PLUGIN_NAME = 'VantCliSitePlugin';
 
 export class VantCliSitePlugin {
   apply(compiler: Compiler) {
-    compiler.hooks.watchRun.tapPromise(PLUGIN_NAME, this.genSiteEntry);
+    if (process.env.NODE_ENV === 'production') {
+      compiler.hooks.beforeCompile.tapPromise(PLUGIN_NAME, this.genSiteEntry);
+    } else {
+      compiler.hooks.watchRun.tapPromise(PLUGIN_NAME, this.genSiteEntry);
+    }
   }
 
   genSiteEntry() {
