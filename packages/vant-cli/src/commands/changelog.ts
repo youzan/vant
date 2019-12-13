@@ -5,7 +5,8 @@ import { ROOT } from '../common/constant';
 export function changelog(dist: string, cmd: { tag?: string }) {
   const tag = cmd.tag || 'v1.0.0';
 
-  exec(`
+  exec(
+    `
     basepath=${ROOT}
 
     github_changelog_generator \
@@ -19,5 +20,9 @@ export function changelog(dist: string, cmd: { tag?: string }) {
       --no-unreleased \
       --since-tag ${tag} \
       -o ${join(ROOT, dist)}
-    `);
+    `,
+    {
+      silent: false
+    }
+  );
 }
