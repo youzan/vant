@@ -1,6 +1,8 @@
 import { join, relative } from 'path';
-import { clean } from './clean';
 import { remove, copy, readdirSync } from 'fs-extra';
+import { clean } from './clean';
+import { CSS_LANG } from '../common/css';
+import { getStepper } from '../common/logger';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
@@ -9,7 +11,8 @@ import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
-import { getStepper } from '../common/logger';
+import { genPacakgeStyle } from '../compiler/gen-package-style';
+import { genVeturConfig } from '../compiler/gen-vetur-config';
 import {
   isDir,
   isSfc,
@@ -20,8 +23,6 @@ import {
   setNodeEnv,
   setModuleEnv
 } from '../common';
-import { genPacakgeStyle } from '../compiler/gen-package-style';
-import { CSS_LANG } from '../common/css';
 
 const stepper = getStepper(10);
 
@@ -102,6 +103,7 @@ async function buildPackedOutputs() {
     setModuleEnv('esmodule');
     await compilePackage(false);
     await compilePackage(true);
+    genVeturConfig();
     stepper.success('Build Packed Outputs');
   } catch (err) {
     stepper.error('Build Packed Outputs', err);
