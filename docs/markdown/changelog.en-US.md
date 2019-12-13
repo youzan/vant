@@ -1,5 +1,19 @@
 # Changelog
 
+### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
+`2019-12-13`
+
+**Features**
+
+- use @vant/cli to build pacakge
+
+**Bug Fixes**
+
+- fix Icon medal typo [\#5242](https://github.com/youzan/vant/pull/5242)
+- fix Dialog show not trigger close event when hidden [\#5267](https://github.com/youzan/vant/pull/5267)
+- fix Stepper should format value when max、min changed [\#5257](https://github.com/youzan/vant/pull/5257)
+
+
 ### [v2.3.0-beta.3](https://github.com/youzan/vant/tree/v2.3.0-beta.3)
 `2019-12-09`
 

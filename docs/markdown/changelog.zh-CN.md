@@ -11,6 +11,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
+`2019-12-13`
+
+**Features**
+
+- 构建流程升级，采用 @vant/cli 进行构建
+
+**Bug Fixes**
+
+- 修复 Icon medal 图标名称拼写错误的问题 [\#5242](https://github.com/youzan/vant/pull/5242)
+- 修复 Dialog 快速点击按钮时可能重复触发 before-close 的问题 [\#5267](https://github.com/youzan/vant/pull/5267)
+- 修复 Stepper 在 max、min 属性变化时未更新输入框值的问题 [\#5257](https://github.com/youzan/vant/pull/5257)
+
+
 ### [v2.3.0-beta.3](https://github.com/youzan/vant/tree/v2.3.0-beta.3)
 `2019-12-09`
 
