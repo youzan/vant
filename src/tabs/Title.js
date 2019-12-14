@@ -1,9 +1,11 @@
 import { createNamespace } from '../utils';
+import Info from '../info';
 
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
   props: {
+    dot: Boolean,
     type: String,
     color: String,
     title: String,
@@ -59,16 +61,22 @@ export default createComponent({
       <div
         role="tab"
         aria-selected={this.isActive}
-        class={bem({
-          active: this.isActive,
-          disabled: this.disabled,
-          complete: !this.ellipsis
-        })}
+        class={[
+          bem({
+            active: this.isActive,
+            disabled: this.disabled,
+            complete: !this.ellipsis
+          }),
+          {
+            'van-ellipsis': this.ellipsis
+          }
+        ]}
         style={this.style}
         onClick={this.onClick}
       >
-        <span class={{ 'van-ellipsis': this.ellipsis }}>
+        <span class={bem('text')}>
           {this.slots() || this.title}
+          <Info dot={this.dot} />
         </span>
       </div>
     );
