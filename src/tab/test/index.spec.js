@@ -239,3 +239,15 @@ test('title-style prop', () => {
 
   expect(wrapper.find('.van-tab').element.style.color).toEqual('red');
 });
+
+test('dot prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs>
+        <van-tab dot>Text</van-tab>
+      </van-tabs>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

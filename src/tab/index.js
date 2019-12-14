@@ -9,6 +9,7 @@ export default createComponent({
 
   props: {
     ...routeProps,
+    dot: Boolean,
     name: [Number, String],
     title: String,
     titleStyle: null,
