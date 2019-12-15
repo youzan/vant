@@ -251,3 +251,15 @@ test('dot prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('info prop', () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs>
+        <van-tab info="10">Text</van-tab>
+      </van-tabs>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
