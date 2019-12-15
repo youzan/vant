@@ -7,6 +7,7 @@ export default createComponent({
   props: {
     dot: Boolean,
     type: String,
+    info: [Number, String],
     color: String,
     title: String,
     isActive: Boolean,
@@ -76,7 +77,7 @@ export default createComponent({
       >
         <span class={bem('text')}>
           {this.slots() || this.title}
-          <Info dot={this.dot} />
+          <Info dot={this.dot} info={this.info} />
         </span>
       </div>
     );

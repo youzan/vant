@@ -202,6 +202,8 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | title | Title | *string* | - | - |
 | title-style | Custom title style | *any*  | - | 2.2.14 |
 | disabled | Whether to disable tab | *boolean* | `false` | - |
+| dot | Whether to show red dot on the title | *boolean* | `false` | 2.3.0 |
+| info | Content of the badge on the title | *string \| number* | - | 2.3.0 |
 | url | Link | *string* | - | 2.2.1 |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.2.1 |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.2.1 |

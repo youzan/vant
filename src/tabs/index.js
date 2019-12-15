@@ -268,8 +268,9 @@ export default createComponent({
       <Title
         ref="titles"
         refInFor
-        dot={item.dot}
         type={type}
+        dot={item.dot}
+        info={item.info}
         title={item.title}
         color={this.color}
         style={item.titleStyle}

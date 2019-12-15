@@ -116,7 +116,7 @@ Vue.use(Grid).use(GridItem);
 | text | Text | *string* | - | - |
 | icon | Icon name or URL | *string* | - | - |
 | dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
-| info | Content of the badge | *string \| number* | `''` | 2.2.1 |
+| info | Content of the badge | *string \| number* | - | 2.2.1 |
 | url | Link URL | *string* | - | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
