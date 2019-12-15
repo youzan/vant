@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.3.0-beta.3",
+  "version": "2.3.0-beta.4",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -22,7 +22,7 @@
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html",
-    "changelog": "vant-cli changelog ./docs/changelog.generated.md"
+    "changelog": "vant-cli changelog ./changelog.generated.md --tag 2.3.0"
   },
   "husky": {
     "hooks": {

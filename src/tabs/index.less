@@ -12,10 +12,6 @@
   text-align: center;
   cursor: pointer;
 
-  span {
-    display: block;
-  }
-
   &--active {
     color: @tab-active-text-color;
     font-weight: @font-weight-bold;
@@ -23,6 +19,10 @@
 
   &--disabled {
     color: @tab-disabled-text-color;
+  }
+
+  &__text {
+    position: relative;
   }
 }
 
