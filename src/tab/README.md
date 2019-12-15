@@ -170,6 +170,18 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 </van-tabs>
 ```
 
+### Elevator Mode
+
+In elevator mode, the list of content will be tiled
+
+```html
+<van-tabs v-model="active" elevator>
+  <van-tab v-for="index in 10" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ## API
 
 ### Tabs Props
@@ -193,6 +205,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | sticky | Whether to use sticky mode | *boolean* | `false` | - |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | *boolean* | `false` | - |
 | lazy-render | Whether to enable tab content lazy render | *boolean* | `true` | - |
+| elevator | Whether to use elevator mode | *boolean* | `false` | - |
 
 ### Tab Props
 

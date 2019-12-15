@@ -1,11 +1,11 @@
 import { createNamespace, isDef, addUnit } from '../utils';
-import { scrollLeftTo } from './utils';
+import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { setRootScrollTop, getElementTop } from '../utils/dom/scroll';
+import { setRootScrollTop, getElementTop, getVisibleHeight, getVisibleTop } from '../utils/dom/scroll';
 import Title from './Title';
 import Content from './Content';
 import Sticky from '../sticky';
@@ -17,6 +17,9 @@ export default createComponent({
     ParentMixin('vanTabs'),
     BindEventMixin(function(bind) {
       bind(window, 'resize', this.resize, true);
+      if (this.elevator) {
+        bind(window, 'scroll', this.onElevatorScroll, true);
+      }
     })
   ],
 
@@ -65,6 +68,10 @@ export default createComponent({
     swipeThreshold: {
       type: Number,
       default: 4
+    },
+    elevator: {
+      type: Boolean,
+      default: false,
     }
   },
 
@@ -97,6 +104,14 @@ export default createComponent({
       if (activeTab) {
         return activeTab.computedName;
       }
+    },
+
+    scrollOffset() {
+      let offset = 0;
+      if (this.sticky) {
+        offset = this.offsetTop + this.tabHeight;
+      }
+      return offset;
     }
   },
 
@@ -123,7 +138,7 @@ export default createComponent({
       this.setLine();
 
       // scroll to correct position
-      if (this.stickyFixed) {
+      if (this.stickyFixed && !this.elevator) {
         setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTop));
       }
     }
@@ -147,6 +162,7 @@ export default createComponent({
     onShow() {
       this.$nextTick(() => {
         this.inited = true;
+        this.tabHeight = getVisibleHeight(this.$refs.wrap);
         this.scrollIntoView(true);
       });
     },
@@ -236,6 +252,7 @@ export default createComponent({
         this.$emit('disabled', computedName, title);
       } else {
         this.setCurrentIndex(index);
+        this.scrollToCurrentContent();
         this.$emit('click', computedName, title);
       }
     },
@@ -258,6 +275,43 @@ export default createComponent({
     onScroll(params) {
       this.stickyFixed = params.isFixed;
       this.$emit('scroll', params);
+    },
+
+    scrollToCurrentContent() {
+      if (this.elevator && this.inited) {
+        this.clickedScroll = true;
+        const instance = this.children[this.currentIndex];
+        const el = instance && instance.$el;
+        if (el) {
+          const to = Math.ceil(getElementTop(el)) - this.scrollOffset;
+          scrollTopTo(to, this.duration, () => {
+            this.clickedScroll = false;
+          });
+        }
+      }
+    },
+
+    onElevatorScroll() {
+      if (!this.clickedScroll) {
+        const index = this.getCurrentIndexOnScroll();
+        this.setCurrentIndex(index);
+      }
+    },
+
+    getCurrentIndexOnScroll() {
+      let flag = true;
+      let currentIndex = 0;
+      this.children.forEach((instance, index) => {
+        if (flag) {
+          const top = getVisibleTop(instance.$el);
+          if (top <= this.scrollOffset) {
+            currentIndex = index;
+          } else {
+            flag = false;
+          }
+        }
+      });
+      return currentIndex;
     }
   },
 

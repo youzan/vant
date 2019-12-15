@@ -174,6 +174,18 @@ export default {
 </van-tabs>
 ```
 
+### 电梯模式
+
+通过`elevator`属性可以开启电梯模式，电梯模式下，内容将会平铺展示
+
+```html
+<van-tabs v-model="active" elevator>
+  <van-tab v-for="index in 10" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ## API
 
 ### Tabs Props
@@ -197,6 +209,7 @@ export default {
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
+| elevator | 是否使用电梯模式 | *boolean* | `false` | - |
 
 ### Tab Props
 
