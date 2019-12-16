@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Tab from '..';
 import Tabs from '../../tabs';
-import { mount, later, triggerDrag } from '../../../test';
+import { mount, later, triggerDrag, mockScrollTop } from '../../../test';
 
 Vue.use(Tab);
 Vue.use(Tabs);
@@ -262,4 +262,34 @@ test('info prop', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('scrollspy', async () => {
+  const onChange = jest.fn();
+  window.scrollTo = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <van-tabs scrollspy sticky @change="onChange">
+        <van-tab name="a" title="title1">Text</van-tab>
+        <van-tab name="b" title="title2">Text</van-tab>
+        <van-tab name="c" title="title3">Text</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onChange
+    }
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+
+  const tabs = wrapper.findAll('.van-tab');
+  tabs.at(2).trigger('click');
+  expect(onChange).toHaveBeenCalledWith('c', 'title3');
+
+  await later();
+  mockScrollTop(100);
+  expect(wrapper).toMatchSnapshot();
+  expect(onChange).toHaveBeenCalledWith('c', 'title3');
 });
