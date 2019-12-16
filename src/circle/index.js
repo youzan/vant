@@ -152,6 +152,7 @@ export default createComponent({
       const now = Date.now();
       const progress = Math.min((now - this.startTime) / this.duration, 1);
       const rate = progress * (this.endRate - this.startRate) + this.startRate;
+
       this.$emit('input', format(parseFloat(rate.toFixed(1))));
 
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
