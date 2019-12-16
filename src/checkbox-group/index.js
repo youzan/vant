@@ -24,10 +24,20 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     toggleAll(checked) {
-      this.children.forEach(item => {
-        item.toggle(checked);
-      });
+      if (checked === false) {
+        this.$emit('input', []);
+        return;
+      }
+
+      let { children } = this;
+      if (!checked) {
+        children = children.filter(item => !item.checked);
+      }
+
+      const names = children.map(item => item.name);
+      this.$emit('input', names);
     }
   },
 
