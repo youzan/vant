@@ -1,10 +1,10 @@
 import { createNamespace } from '../utils';
-import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
+import Picker from '../picker';
 
 const [createComponent, bem] = createNamespace('area');
 
-const COLUMNSPLACEHOLDERCODE = '000000';
+const PLACEHOLDER_CODE = '000000';
 
 function isOverseaCode(code) {
   return code[0] === '9';
@@ -56,11 +56,11 @@ export default createComponent({
       return this.columns.slice(0, +this.columnsNum);
     },
 
-    typeToColumnsPlaceholder() {
+    placeholderMap() {
       return {
         province: this.columnsPlaceholder[0] || '',
         city: this.columnsPlaceholder[1] || '',
-        county: this.columnsPlaceholder[2] || '',
+        county: this.columnsPlaceholder[2] || ''
       };
     }
   },
@@ -110,12 +110,18 @@ export default createComponent({
         result = result.filter(item => item.code.indexOf(code) === 0);
       }
 
-      if (this.typeToColumnsPlaceholder[type] && result.length) {
+      if (this.placeholderMap[type] && result.length) {
         // set columns placeholder
-        const codeFill = type === 'province' ? '' : type === 'city' ? COLUMNSPLACEHOLDERCODE.slice(2, 4) : COLUMNSPLACEHOLDERCODE.slice(4, 6);
+        const codeFill =
+          type === 'province'
+            ? ''
+            : type === 'city'
+              ? PLACEHOLDER_CODE.slice(2, 4)
+              : PLACEHOLDER_CODE.slice(4, 6);
+
         result.unshift({
           code: `${code}${codeFill}`,
-          name: this.typeToColumnsPlaceholder[type]
+          name: this.placeholderMap[type]
         });
       }
 
@@ -150,10 +156,12 @@ export default createComponent({
         if (!value) return value;
 
         value = JSON.parse(JSON.stringify(value));
+
         if (!value.code || value.name === this.columnsPlaceholder[index]) {
           value.code = '';
           value.name = '';
         }
+
         return value;
       });
     },
@@ -161,8 +169,10 @@ export default createComponent({
     onChange(picker, values, index) {
       this.code = values[index].code;
       this.setValues();
+
       let getValues = picker.getValues();
       getValues = this.parseOutputValues(getValues);
+
       this.$emit('change', picker, getValues, index);
     },
 
@@ -177,7 +187,7 @@ export default createComponent({
 
       if (!code) {
         if (this.columnsPlaceholder.length) {
-          code = COLUMNSPLACEHOLDERCODE;
+          code = PLACEHOLDER_CODE;
         } else if (Object.keys(this.county)[0]) {
           code = Object.keys(this.county)[0];
         } else {
@@ -196,7 +206,11 @@ export default createComponent({
       picker.setColumnValues(0, province);
       picker.setColumnValues(1, city);
 
-      if (city.length && code.slice(2, 4) === '00' && !this.isOverseaCode(code)) {
+      if (
+        city.length &&
+        code.slice(2, 4) === '00' &&
+        !this.isOverseaCode(code)
+      ) {
         [{ code }] = city;
       }
 
@@ -230,8 +244,11 @@ export default createComponent({
       }
 
       const names = values.map(item => item.name);
-      const filterCodeValues = values.filter(value => !!value.code);
-      area.code = filterCodeValues.length ? filterCodeValues[filterCodeValues.length - 1].code : '';
+      const validValues = values.filter(value => !!value.code);
+
+      area.code = validValues.length
+        ? validValues[validValues.length - 1].code
+        : '';
 
       if (this.isOverseaCode(area.code)) {
         area.country = names[1] || '';

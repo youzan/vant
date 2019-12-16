@@ -31,44 +31,72 @@ function Cell(
   slots: CellSlots,
   ctx: RenderContext<CellProps>
 ) {
-  const { icon, size, title, label, value, isLink, arrowDirection } = props;
-
+  const { icon, size, title, label, value, isLink } = props;
   const showTitle = slots.title || isDef(title);
-  const showValue = slots.default || isDef(value);
-  const showLabel = slots.label || isDef(label);
 
-  const Label = showLabel && (
-    <div class={[bem('label'), props.labelClass]}>
-      {slots.label ? slots.label() : label}
-    </div>
-  );
+  function Label() {
+    const showLabel = slots.label || isDef(label);
 
-  const Title = showTitle && (
-    <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
-      {slots.title ? slots.title() : <span>{title}</span>}
-      {Label}
-    </div>
-  );
+    if (showLabel) {
+      return (
+        <div class={[bem('label'), props.labelClass]}>
+          {slots.label ? slots.label() : label}
+        </div>
+      );
+    }
+  }
 
-  const Value = showValue && (
-    <div class={[bem('value', { alone: !slots.title && !title }), props.valueClass]}>
-      {slots.default ? slots.default() : <span>{value}</span>}
-    </div>
-  );
+  function Title() {
+    if (showTitle) {
+      return (
+        <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
+          {slots.title ? slots.title() : <span>{title}</span>}
+          {Label()}
+        </div>
+      );
+    }
+  }
 
-  const LeftIcon = slots.icon
-    ? slots.icon()
-    : icon && <Icon class={bem('left-icon')} name={icon} />;
+  function Value() {
+    const showValue = slots.default || isDef(value);
 
-  const rightIconSlot = slots['right-icon'];
-  const RightIcon = rightIconSlot
-    ? rightIconSlot()
-    : isLink && (
+    if (showValue) {
+      return (
+        <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
+          {slots.default ? slots.default() : <span>{value}</span>}
+        </div>
+      );
+    }
+  }
+
+  function LeftIcon() {
+    if (slots.icon) {
+      return slots.icon();
+    }
+
+    if (icon) {
+      return <Icon class={bem('left-icon')} name={icon} />;
+    }
+  }
+
+  function RightIcon() {
+    const rightIconSlot = slots['right-icon'];
+
+    if (rightIconSlot) {
+      return rightIconSlot();
+    }
+
+    if (isLink) {
+      const { arrowDirection } = props;
+
+      return (
         <Icon
           class={bem('right-icon')}
           name={arrowDirection ? `arrow-${arrowDirection}` : 'arrow'}
         />
-    );
+      );
+    }
+  }
 
   function onClick(event: Event) {
     emit(ctx, 'click', event);
@@ -76,6 +104,7 @@ function Cell(
   }
 
   const clickable = isLink || props.clickable;
+
   const classes: Mods = {
     clickable,
     center: props.center,
@@ -95,11 +124,11 @@ function Cell(
       onClick={onClick}
       {...inherit(ctx)}
     >
-      {LeftIcon}
-      {Title}
-      {Value}
-      {RightIcon}
-      {slots.extra && slots.extra()}
+      {LeftIcon()}
+      {Title()}
+      {Value()}
+      {RightIcon()}
+      {slots.extra?.()}
     </div>
   );
 }

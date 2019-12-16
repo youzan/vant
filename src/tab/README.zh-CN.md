@@ -220,6 +220,7 @@ export default {
 | title-style | 自定义标题样式 | *any*  | - | 2.2.14 |
 | disabled | 是否禁用标签 | *boolean* | `false` | - |
 | dot | 是否在标题右上角显示小红点 | *boolean* | `false` | 2.3.0 |
+| info | 标题右上角徽标的内容 | *string \| number* | - | 2.3.0 |
 | url | 点击后跳转的链接地址 | *string* | - | 2.2.1 |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.2.1 |
 | replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | 2.2.1 |

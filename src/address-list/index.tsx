@@ -64,11 +64,11 @@ function AddressList(
 
   return (
     <div class={bem()} {...inherit(ctx)}>
-      {slots.top && slots.top()}
+      {slots.top?.()}
       <RadioGroup value={props.value}>{List}</RadioGroup>
       {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
       {DisabledList}
-      {slots.default && slots.default()}
+      {slots.default?.()}
       <div class={bem('bottom')}>
         <Button
           round
@@ -87,15 +87,15 @@ function AddressList(
 
 AddressList.props = {
   list: Array,
+  value: [Number, String],
   disabledList: Array,
   disabledText: String,
   addButtonText: String,
-  value: [Number, String],
+  defaultTagText: String,
   switchable: {
     type: Boolean,
     default: true
-  },
-  defaultTagText: String
+  }
 };
 
 export default createComponent<AddressListProps>(AddressList);

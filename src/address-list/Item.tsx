@@ -94,8 +94,8 @@ function AddressItem(
   return (
     <Cell
       class={bem({ disabled })}
-      valueClass={bem('value')}
       border={false}
+      valueClass={bem('value')}
       clickable={switchable && !disabled}
       scopedSlots={{
         default: genContent,

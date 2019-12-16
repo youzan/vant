@@ -175,15 +175,15 @@ function Card(
           <div>
             {Title()}
             {Desc()}
-            {slots.tags && slots.tags()}
+            {slots.tags?.()}
           </div>
           {showBottom && (
             <div class="van-card__bottom">
-              {slots['price-top'] && slots['price-top']()}
+              {slots['price-top']?.()}
               {Price()}
               {OriginPrice()}
               {Num()}
-              {slots.bottom && slots.bottom()}
+              {slots.bottom?.()}
             </div>
           )}
         </div>
