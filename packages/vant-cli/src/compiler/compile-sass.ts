@@ -1,6 +1,6 @@
-import { renderSync as renderSass } from 'sass';
+import { renderSync } from 'sass';
 
 export async function compileSass(filePath: string) {
-  const { css } = renderSass({ file: filePath });
+  const { css } = renderSync({ file: filePath });
   return css;
 }

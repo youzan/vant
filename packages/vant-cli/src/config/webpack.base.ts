@@ -1,10 +1,8 @@
 // @ts-ignore
 import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import sass from 'sass';
-import { resolve } from 'path';
 import { VueLoaderPlugin } from 'vue-loader';
 import {
-  ROOT,
   STYLE_EXTS,
   SCRIPT_EXTS,
   POSTCSS_CONFIG_FILE
@@ -61,10 +59,7 @@ export const baseConfig = {
         use: [
           ...CSS_LOADERS,
           {
-            loader: 'less-loader',
-            options: {
-              paths: [resolve(ROOT, 'node_modules')]
-            }
+            loader: 'less-loader'
           }
         ]
       },
