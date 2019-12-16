@@ -1,11 +1,12 @@
 import { createNamespace, isDef, addUnit } from '../utils';
-import { scrollLeftTo } from './utils';
+import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
+import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { setRootScrollTop, getElementTop } from '../utils/dom/scroll';
+import { setRootScrollTop, getElementTop, getVisibleHeight, getVisibleTop } from '../utils/dom/scroll';
 import Title from './Title';
 import Content from './Content';
 import Sticky from '../sticky';
@@ -17,6 +18,9 @@ export default createComponent({
     ParentMixin('vanTabs'),
     BindEventMixin(function(bind) {
       bind(window, 'resize', this.resize, true);
+      if (this.scrollspy) {
+        bind(window, 'scroll', this.onScrollspyScroll, true);
+      }
     })
   ],
 
@@ -29,6 +33,7 @@ export default createComponent({
     sticky: Boolean,
     animated: Boolean,
     swipeable: Boolean,
+    scrollspy: Boolean,
     background: String,
     lineWidth: [Number, String],
     lineHeight: [Number, String],
@@ -97,6 +102,13 @@ export default createComponent({
       if (activeTab) {
         return activeTab.computedName;
       }
+    },
+
+    scrollOffset() {
+      if (this.sticky) {
+        return this.offsetTop + this.tabHeight;
+      }
+      return 0;
     }
   },
 
@@ -123,8 +135,16 @@ export default createComponent({
       this.setLine();
 
       // scroll to correct position
-      if (this.stickyFixed) {
+      if (this.stickyFixed && !this.scrollspy) {
         setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTop));
+      }
+    },
+
+    scrollspy(val) {
+      if (val) {
+        on(window, 'scroll', this.onScrollspyScroll, true);
+      } else {
+        off(window, 'scroll', this.onScrollspyScroll);
       }
     }
   },
@@ -147,6 +167,7 @@ export default createComponent({
     onShow() {
       this.$nextTick(() => {
         this.inited = true;
+        this.tabHeight = getVisibleHeight(this.$refs.wrap);
         this.scrollIntoView(true);
       });
     },
@@ -236,6 +257,7 @@ export default createComponent({
         this.$emit('disabled', computedName, title);
       } else {
         this.setCurrentIndex(index);
+        this.scrollToCurrentContent();
         this.$emit('click', computedName, title);
       }
     },
@@ -258,6 +280,44 @@ export default createComponent({
     onScroll(params) {
       this.stickyFixed = params.isFixed;
       this.$emit('scroll', params);
+    },
+
+    scrollToCurrentContent() {
+      if (this.scrollspy) {
+        this.clickedScroll = true;
+        const instance = this.children[this.currentIndex];
+        const el = instance && instance.$el;
+        if (el) {
+          const to = Math.ceil(getElementTop(el)) - this.scrollOffset;
+          scrollTopTo(to, this.duration, () => {
+            this.clickedScroll = false;
+          });
+        }
+      }
+    },
+
+    onScrollspyScroll() {
+      if (this.scrollspy && !this.clickedScroll) {
+        const index = this.getCurrentIndexOnScroll();
+        this.setCurrentIndex(index);
+      }
+    },
+
+    getCurrentIndexOnScroll() {
+      let i;
+
+      for (i = 0; i < this.children.length; i++) {
+        const top = getVisibleTop(this.children[i].$el);
+
+        if (top > this.scrollOffset) {
+          if (i === 0) {
+            return 0;
+          }
+          return i - 1;
+        }
+      }
+
+      return i - 1;
     }
   },
 

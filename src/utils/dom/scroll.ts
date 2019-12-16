@@ -59,3 +59,7 @@ export function getVisibleHeight(element: ScrollElement) {
     ? element.innerHeight
     : (<HTMLElement>element).getBoundingClientRect().height;
 }
+
+export function getVisibleTop(element: ScrollElement) {
+  return element === window ? 0 : (<HTMLElement>element).getBoundingClientRect().top;
+}

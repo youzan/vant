@@ -46,7 +46,8 @@ export default createComponent({
 
   render(h) {
     const { slots, isActive } = this;
-    const shouldRender = this.inited || !this.parent.lazyRender;
+    const shouldRender = this.inited || this.parent.scrollspy || !this.parent.lazyRender;
+    const show = this.parent.scrollspy || isActive;
     const Content = shouldRender ? slots() : h();
 
     if (this.parent.animated) {
@@ -62,7 +63,7 @@ export default createComponent({
     }
 
     return (
-      <div vShow={isActive} role="tabpanel" class={bem('pane')}>
+      <div vShow={show} role="tabpanel" class={bem('pane')}>
         {Content}
       </div>
     );
