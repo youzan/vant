@@ -1452,10 +1452,10 @@
     lodash.unescape "4.0.1"
     semver "^6.3.0"
 
-"@vant/cli@^2.0.0-beta.23":
-  version "2.0.0-beta.23"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.0.0-beta.23.tgz#21895b3d805e77b8a433215b27f0153937a67fc2"
-  integrity sha512-QkMaKxydT7Adg0/4I0dScL7S5LdnGa6mHu5tdrJN3ImfXEjn/0Iyz55ktH4dkr+ht0HeThddeKquyno88T0YCw==
+"@vant/cli@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.0.0-rc.0.tgz#4584d76ccc7e84bbc6b8ddcd7e190b4647499f02"
+  integrity sha512-M14C0qaqWY4S8g1gokzCbmHIQ2d8oO0JDQQxPWVdCp4v/LipqmzNYdM8/cUg+K2gG76p/Lzuk5r8zlFtz8u2uQ==
   dependencies:
     "@babel/core" "^7.7.4"
     "@babel/plugin-proposal-optional-chaining" "^7.7.4"
