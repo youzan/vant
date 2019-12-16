@@ -11,6 +11,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.3.0-beta.5](https://github.com/youzan/vant/tree/v2.3.0-beta.5)
+`2019-12-16`
+
+**Features**
+
+- Tab: 新增 dot 属性 [\#5272](https://github.com/youzan/vant/pull/5272)
+- Tab: 新增 info 属性 [\#5274](https://github.com/youzan/vant/pull/5274)
+- Tab: 新增 scrollspy 属性 [\#5273](https://github.com/youzan/vant/pull/5273)
+- Checkbox: 优化 toggleAll 性能 [\#5285](https://github.com/youzan/vant/pull/5285)
+
+**Bug Fixes**
+
+- 修复 Popup 在 activated 后未重新打开的问题 [\#5286](https://github.com/youzan/vant/pull/5286)
+
+
 ### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
 `2019-12-13`
 

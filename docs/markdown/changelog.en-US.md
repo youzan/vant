@@ -1,5 +1,20 @@
 # Changelog
 
+### [v2.3.0-beta.5](https://github.com/youzan/vant/tree/v2.3.0-beta.5)
+`2019-12-16`
+
+**Features**
+
+- Tab: add dot prop [\#5272](https://github.com/youzan/vant/pull/5272)
+- Tab: add info prop [\#5274](https://github.com/youzan/vant/pull/5274)
+- Tab: add scrollspy prop [\#5273](https://github.com/youzan/vant/pull/5273)
+- Checkbox: improve toggleAll perf [\#5285](https://github.com/youzan/vant/pull/5285)
+
+**Bug Fixes**
+
+- fix Popup should reopen when activated [\#5286](https://github.com/youzan/vant/pull/5286)
+
+
 ### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
 `2019-12-13`
 
