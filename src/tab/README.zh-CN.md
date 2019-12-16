@@ -174,12 +174,12 @@ export default {
 </van-tabs>
 ```
 
-### 电梯模式
+### 滚动导航
 
-通过`elevator`属性可以开启电梯模式，电梯模式下，内容将会平铺展示
+通过`scrollspy`属性可以开启滚动导航模式，该模式下，内容将会平铺展示
 
 ```html
-<van-tabs v-model="active" elevator>
+<van-tabs v-model="active" scrollspy sticky>
   <van-tab v-for="index in 10" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -209,7 +209,7 @@ export default {
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
-| elevator | 是否使用电梯模式 | *boolean* | `false` | - |
+| scrollspy | 是否开启滚动导航 | *boolean* | `false` | - |
 
 ### Tab Props
 

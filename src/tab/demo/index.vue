@@ -95,7 +95,7 @@
     </demo-block>
 
     <demo-block :title="$t('title10')">
-      <van-tabs :active="active" elevator sticky>
+      <van-tabs :scrollspy="scrollspy" sticky>
         <van-tab :title="$t('tab') + index" v-for="index in 10" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
@@ -117,7 +117,7 @@ export default {
       title7: '自定义标签',
       title8: '切换动画',
       title9: '滑动切换',
-      title10: '电梯模式',
+      title10: '滚动导航',
       disabled: ' 已被禁用',
       matchByName: '通过名称匹配'
     },
@@ -132,7 +132,7 @@ export default {
       title7: 'Custom Tab',
       title8: 'Switch Animation',
       title9: 'Swipeable',
-      title10: 'Elevator Mode',
+      title10: 'Scrollspy',
       disabled: ' is disabled',
       matchByName: 'Match By Name'
     }

@@ -45,8 +45,8 @@ export default createComponent({
 
   render(h) {
     const { slots, isActive } = this;
-    const shouldRender = this.inited || this.parent.elevator || !this.parent.lazyRender;
-    const show = this.parent.elevator || isActive;
+    const shouldRender = this.inited || this.parent.scrollspy || !this.parent.lazyRender;
+    const show = this.parent.scrollspy || isActive;
     const Content = shouldRender ? slots() : h();
 
     if (this.parent.animated) {
