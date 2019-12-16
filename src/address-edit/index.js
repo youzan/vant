@@ -140,10 +140,12 @@ export default createComponent({
 
     onAreaConfirm(values) {
       values = values.filter(value => !!value);
+
       if (values.some(value => !value.code)) {
         Toast(t('areaEmpty'));
         return;
       }
+
       this.showAreaPopup = false;
       this.assignAreaValues();
       this.$emit('change-area', values);
@@ -151,6 +153,7 @@ export default createComponent({
 
     assignAreaValues() {
       const { area } = this.$refs;
+
       if (area) {
         const detail = area.getArea();
         detail.areaCode = detail.code;
@@ -247,7 +250,8 @@ export default createComponent({
     const onFocus = name => () => this.onFocus(name);
 
     // hide bottom field when use search && detail get focused
-    const hideBottomFields = searchResult && searchResult.length && this.detailFocused;
+    const hideBottomFields =
+      searchResult && searchResult.length && this.detailFocused;
 
     return (
       <div class={bem()}>
