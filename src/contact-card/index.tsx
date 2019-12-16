@@ -30,6 +30,17 @@ function ContactCard(
     }
   }
 
+  function Content() {
+    if (type === 'add') {
+      return props.addText || t('addText');
+    }
+
+    return [
+      <div>{`${t('name')}：${props.name}`}</div>,
+      <div>{`${t('tel')}：${props.tel}`}</div>
+    ];
+  }
+
   return (
     <Cell
       center
@@ -41,12 +52,7 @@ function ContactCard(
       onClick={onClick}
       {...inherit(ctx)}
     >
-      {type === 'add'
-        ? props.addText || t('addText')
-        : [
-            <div>{`${t('name')}：${props.name}`}</div>,
-            <div>{`${t('tel')}：${props.tel}`}</div>
-        ]}
+      {Content()}
     </Cell>
   );
 }

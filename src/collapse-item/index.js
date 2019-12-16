@@ -6,6 +6,7 @@ import { cellProps } from '../cell/shared';
 import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('collapse-item');
+
 const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
 export default createComponent({
@@ -40,7 +41,11 @@ export default createComponent({
 
       const { value, accordion } = this.parent;
 
-      if (process.env.NODE_ENV !== 'production' && !accordion && !Array.isArray(value)) {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        !accordion &&
+        !Array.isArray(value)
+      ) {
         console.error('[Vant] Collapse: type of prop "value" should be Array');
         return;
       }
@@ -73,6 +78,7 @@ export default createComponent({
 
       nextTick(() => {
         const { content, wrapper } = this.$refs;
+
         if (!content || !wrapper) {
           return;
         }
@@ -99,9 +105,9 @@ export default createComponent({
         return;
       }
 
-      const { parent } = this;
-      const name =
-        parent.accordion && this.currentName === parent.value ? '' : this.currentName;
+      const { parent, currentName } = this;
+      const name = parent.accordion && currentName === parent.value ? '' : currentName;
+
       this.parent.switch(name, !this.expanded);
     },
 
@@ -111,52 +117,59 @@ export default createComponent({
       } else {
         this.$refs.wrapper.style.height = '';
       }
+    },
+
+    genTitle() {
+      const { disabled, expanded } = this;
+
+      const titleSlots = CELL_SLOTS.reduce((slots, name) => {
+        if (this.slots(name)) {
+          slots[name] = () => this.slots(name);
+        }
+
+        return slots;
+      }, {});
+
+      if (this.slots('value')) {
+        titleSlots.default = () => this.slots('value');
+      }
+
+      return (
+        <Cell
+          role="button"
+          class={bem('title', { disabled, expanded })}
+          onClick={this.onClick}
+          scopedSlots={titleSlots}
+          tabindex={disabled ? -1 : 0}
+          aria-expanded={String(expanded)}
+          {...{ props: this.$props }}
+        />
+      );
+    },
+
+    genContent() {
+      if (this.inited) {
+        return (
+          <div
+            vShow={this.show}
+            ref="wrapper"
+            class={bem('wrapper')}
+            onTransitionend={this.onTransitionEnd}
+          >
+            <div ref="content" class={bem('content')}>
+              {this.slots()}
+            </div>
+          </div>
+        );
+      }
     }
   },
 
   render() {
-    const { disabled, expanded } = this;
-
-    const titleSlots = CELL_SLOTS.reduce((slots, name) => {
-      if (this.slots(name)) {
-        slots[name] = () => this.slots(name);
-      }
-      return slots;
-    }, {});
-
-    if (this.slots('value')) {
-      titleSlots.default = () => this.slots('value');
-    }
-
-    const Title = (
-      <Cell
-        role="button"
-        class={bem('title', { disabled, expanded })}
-        onClick={this.onClick}
-        scopedSlots={titleSlots}
-        tabindex={disabled ? -1 : 0}
-        aria-expanded={String(expanded)}
-        {...{ props: this.$props }}
-      />
-    );
-
-    const Content = this.inited && (
-      <div
-        vShow={this.show}
-        ref="wrapper"
-        class={bem('wrapper')}
-        onTransitionend={this.onTransitionEnd}
-      >
-        <div ref="content" class={bem('content')}>
-          {this.slots()}
-        </div>
-      </div>
-    );
-
     return (
       <div class={[bem(), { [BORDER_TOP]: this.index }]}>
-        {Title}
-        {Content}
+        {this.genTitle()}
+        {this.genContent()}
       </div>
     );
   }
