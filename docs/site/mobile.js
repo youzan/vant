@@ -3,9 +3,14 @@ import Locale from '../../src/locale';
 import Lazyload from '../../src/lazyload';
 import { get } from '../../src/utils';
 import { camelize } from '../../src/utils/format/string';
+import enUS from '../../src/locale/lang/en-US';
 
 Vue.use(Lazyload, {
   lazyComponent: true
+});
+
+Locale.add({
+  'en-US': enUS
 });
 
 // helper for demo locales
@@ -37,6 +42,14 @@ Vue.mixin({
 
       Locale.add(locales);
     }
+  }
+});
+
+window.vueRouter.afterEach(to => {
+  const { lang } = (to.meta) || {};
+
+  if (lang) {
+    Locale.use(lang);
   }
 });
 
