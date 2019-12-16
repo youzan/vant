@@ -75,8 +75,9 @@ export const PopupMixin = {
 
   /* istanbul ignore next */
   activated() {
-    if (this.value) {
-      this.open();
+    if (this.shouldReopen) {
+      this.$emit('input', true);
+      this.shouldReopen = false;
     }
   },
 
@@ -90,7 +91,10 @@ export const PopupMixin = {
 
   /* istanbul ignore next */
   deactivated() {
-    this.close();
+    if (this.value) {
+      this.close();
+      this.shouldReopen = true;
+    }
   },
 
   methods: {
