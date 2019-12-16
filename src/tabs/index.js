@@ -105,11 +105,10 @@ export default createComponent({
     },
 
     scrollOffset() {
-      let offset = 0;
       if (this.sticky) {
-        offset = this.offsetTop + this.tabHeight;
+        return this.offsetTop + this.tabHeight;
       }
-      return offset;
+      return 0;
     }
   },
 
@@ -284,7 +283,7 @@ export default createComponent({
     },
 
     scrollToCurrentContent() {
-      if (this.scrollspy && this.inited) {
+      if (this.scrollspy) {
         this.clickedScroll = true;
         const instance = this.children[this.currentIndex];
         const el = instance && instance.$el;
@@ -305,19 +304,20 @@ export default createComponent({
     },
 
     getCurrentIndexOnScroll() {
-      let flag = true;
-      let currentIndex = 0;
-      this.children.forEach((instance, index) => {
-        if (flag) {
-          const top = getVisibleTop(instance.$el);
-          if (top <= this.scrollOffset) {
-            currentIndex = index;
-          } else {
-            flag = false;
+      let i;
+
+      for (i = 0; i < this.children.length; i++) {
+        const top = getVisibleTop(this.children[i].$el);
+
+        if (top > this.scrollOffset) {
+          if (i === 0) {
+            return 0;
           }
+          return i - 1;
         }
-      });
-      return currentIndex;
+      }
+
+      return i - 1;
     }
   },
 
