@@ -45,12 +45,12 @@ export default createComponent({
   },
 
   render(h) {
-    const { slots, isActive } = this;
-    const shouldRender = this.inited || this.parent.scrollspy || !this.parent.lazyRender;
-    const show = this.parent.scrollspy || isActive;
+    const { slots, parent, isActive } = this;
+    const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
+    const show = parent.scrollspy || isActive;
     const Content = shouldRender ? slots() : h();
 
-    if (this.parent.animated) {
+    if (parent.animated) {
       return (
         <div
           role="tabpanel"

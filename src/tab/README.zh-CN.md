@@ -209,7 +209,7 @@ export default {
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
-| scrollspy | 是否开启滚动导航 | *boolean* | `false` | - |
+| scrollspy | 是否开启滚动导航 | *boolean* | `false` | 2.3.0 |
 
 ### Tab Props
 

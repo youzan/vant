@@ -6,7 +6,13 @@ import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { setRootScrollTop, getElementTop, getVisibleHeight, getVisibleTop } from '../utils/dom/scroll';
+import {
+  setRootScrollTop,
+  getElementTop,
+  getVisibleHeight,
+  getVisibleTop
+} from '../utils/dom/scroll';
+
 import Title from './Title';
 import Content from './Content';
 import Sticky from '../sticky';
@@ -19,7 +25,7 @@ export default createComponent({
     BindEventMixin(function(bind) {
       bind(window, 'resize', this.resize, true);
       if (this.scrollspy) {
-        bind(window, 'scroll', this.onScrollspyScroll, true);
+        bind(window, 'scroll', this.onScroll, true);
       }
     })
   ],
@@ -142,9 +148,9 @@ export default createComponent({
 
     scrollspy(val) {
       if (val) {
-        on(window, 'scroll', this.onScrollspyScroll, true);
+        on(window, 'scroll', this.onScroll, true);
       } else {
-        off(window, 'scroll', this.onScrollspyScroll);
+        off(window, 'scroll', this.onScroll);
       }
     }
   },
@@ -277,7 +283,7 @@ export default createComponent({
       scrollLeftTo(nav, to, immediate ? 0 : this.duration);
     },
 
-    onScroll(params) {
+    onSticktScroll(params) {
       this.stickyFixed = params.isFixed;
       this.$emit('scroll', params);
     },
@@ -296,7 +302,7 @@ export default createComponent({
       }
     },
 
-    onScrollspyScroll() {
+    onScroll() {
       if (this.scrollspy && !this.clickedScroll) {
         const index = this.getCurrentIndexOnScroll();
         this.setCurrentIndex(index);
@@ -304,20 +310,17 @@ export default createComponent({
     },
 
     getCurrentIndexOnScroll() {
-      let i;
+      const { children } = this;
 
-      for (i = 0; i < this.children.length; i++) {
-        const top = getVisibleTop(this.children[i].$el);
+      for (let index = 0; index < children.length; index++) {
+        const top = getVisibleTop(children[index].$el);
 
         if (top > this.scrollOffset) {
-          if (i === 0) {
-            return 0;
-          }
-          return i - 1;
+          return index === 0 ? 0 : index - 1;
         }
       }
 
-      return i - 1;
+      return children.length - 1;
     }
   },
 
@@ -381,7 +384,7 @@ export default createComponent({
           <Sticky
             container={this.$el}
             offsetTop={this.offsetTop}
-            onScroll={this.onScroll}
+            onScroll={this.onSticktScroll}
           >
             {Wrap}
           </Sticky>

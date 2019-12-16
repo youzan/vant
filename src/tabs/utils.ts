@@ -1,7 +1,11 @@
-import { raf } from '../utils/dom/raf';
+import { raf, cancelRaf } from '../utils/dom/raf';
 import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
 
+let scrollLeftRafId: number;
+
 export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
+  cancelRaf(scrollLeftRafId);
+
   let count = 0;
   const from = el.scrollLeft;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
@@ -10,7 +14,7 @@ export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
     el.scrollLeft += (to - from) / frames;
 
     if (++count < frames) {
-      raf(animate);
+      scrollLeftRafId = raf(animate);
     }
   }
 
@@ -19,20 +23,20 @@ export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
 
 export function scrollTopTo(to: number, duration: number, cb: Function) {
   let current = getRootScrollTop();
-  const toDown = current < to;
+  const isDown = current < to;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
-  const pxPerFrames = (to - current) / frames;
+  const step = (to - current) / frames;
 
   function animate() {
-    current += pxPerFrames;
+    current += step;
 
-    if ((toDown && current > to) || (!toDown && current < to)) {
+    if ((isDown && current > to) || (!isDown && current < to)) {
       current = to;
     }
 
     setRootScrollTop(current);
 
-    if ((toDown && current < to) || (!toDown && current > to)) {
+    if ((isDown && current < to) || (!isDown && current > to)) {
       raf(animate);
     } else {
       cb && cb();

@@ -205,7 +205,7 @@ In scrollspy mode, the list of content will be tiled
 | sticky | Whether to use sticky mode | *boolean* | `false` | - |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | *boolean* | `false` | - |
 | lazy-render | Whether to enable tab content lazy render | *boolean* | `true` | - |
-| scrollspy | Whether to use scrollspy mode | *boolean* | `false` | - |
+| scrollspy | Whether to use scrollspy mode | *boolean* | `false` | 2.3.0 |
 
 ### Tab Props
 
