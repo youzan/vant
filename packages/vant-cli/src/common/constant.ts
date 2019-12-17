@@ -44,7 +44,11 @@ export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
 export const SCRIPT_EXTS = ['.js', '.jsx', '.vue', '.ts', '.tsx'];
 export const STYLE_EXTS = ['.css', '.less', '.scss'];
 
-export const PACKAGE_JSON = require(PACKAGE_JSON_FILE);
+export function getPackageJson() {
+  delete require.cache[PACKAGE_JSON_FILE];
+
+  return require(PACKAGE_JSON_FILE);
+}
 
 export function getVantConfig() {
   delete require.cache[VANT_CONFIG_FILE];

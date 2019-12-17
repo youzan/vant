@@ -10,7 +10,7 @@ import {
 import {
   SRC_DIR,
   DOCS_DIR,
-  PACKAGE_JSON,
+  getPackageJson,
   VANT_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
@@ -96,7 +96,7 @@ function genExportConfig() {
 }
 
 function genExportVersion() {
-  return `export const packageVersion = '${PACKAGE_JSON.version}';`;
+  return `export const packageVersion = '${getPackageJson().version}';`;
 }
 
 export function genSiteDesktopShared() {

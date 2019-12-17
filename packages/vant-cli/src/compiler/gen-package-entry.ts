@@ -1,9 +1,7 @@
 import { get } from 'lodash';
 import { join } from 'path';
 import { pascalize, getComponents, smartOutputFile } from '../common';
-import { SRC_DIR, PACKAGE_JSON, getVantConfig } from '../common/constant';
-
-const version = process.env.PACKAGE_VERSION || PACKAGE_JSON.version;
+import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
 
 type Options = {
   outputPath: string;
@@ -31,6 +29,7 @@ export function genPackageEntry(options: Options) {
   const names = getComponents();
   const vantConfig = getVantConfig();
   const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
+  const version = process.env.PACKAGE_VERSION || getPackageJson().version;
 
   const components = names.map(pascalize);
   const content = `${genImports(names, options)}
