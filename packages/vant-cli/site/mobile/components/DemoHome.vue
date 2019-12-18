@@ -1,6 +1,9 @@
 <template>
   <div class="demo-home">
-    <h1 class="demo-home__title">
+    <h1
+      class="demo-home__title"
+      :class="{ 'demo-home__title--small': smallTitle }"
+    >
       <img :src="config.logo">
       <span>{{ config.title }}</span>
     </h1>
@@ -38,6 +41,10 @@ export default {
       }
 
       return config.site;
+    },
+
+    smallTitle() {
+      return this.config.title.length >= 8;
     }
   }
 };
@@ -62,6 +69,7 @@ export default {
 
   &__title {
     margin: 0 0 16px;
+    font-size: 32px;
 
     img,
     span {
@@ -70,13 +78,16 @@ export default {
     }
 
     img {
-      width: 36px;
+      width: 32px;
     }
 
     span {
       margin-left: 16px;
       font-weight: 500;
-      font-size: 36px;
+    }
+
+    &--small {
+      font-size: 24px;
     }
   }
 
