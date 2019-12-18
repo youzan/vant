@@ -1,5 +1,7 @@
 import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+// @ts-ignore
+import WebpackBar from 'webpackbar';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig } from '../common';
@@ -39,6 +41,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
   },
   devServer: {
     open: true,
+    quiet: true,
     host: '0.0.0.0',
     stats: 'errors-only',
     disableHostCheck: true
@@ -65,6 +68,10 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     }
   },
   plugins: [
+    new WebpackBar({
+      name: 'Vant Cli',
+      color: '#07c160'
+    }),
     new VantCliSitePlugin(),
     new HtmlWebpackPlugin({
       title,
