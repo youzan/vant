@@ -2,7 +2,7 @@ import { join, relative } from 'path';
 import { remove, copy, readdirSync } from 'fs-extra';
 import { clean } from './clean';
 import { CSS_LANG } from '../common/css';
-import { getStepper } from '../common/logger';
+import { getStepper, logger } from '../common/logger';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
@@ -68,6 +68,7 @@ async function buildESModuleOutputs() {
     stepper.success('Build ESModule Outputs');
   } catch (err) {
     stepper.error('Build ESModule Outputs', err);
+    throw err;
   }
 }
 
@@ -81,6 +82,7 @@ async function buildCommonjsOutputs() {
     stepper.success('Build Commonjs Outputs');
   } catch (err) {
     stepper.error('Build Commonjs Outputs', err);
+    throw err;
   }
 }
 
@@ -93,6 +95,7 @@ async function buildStyleEntry() {
     stepper.success('Build Style Entry');
   } catch (err) {
     stepper.error('Build Style Entry', err);
+    throw err;
   }
 }
 
@@ -107,6 +110,7 @@ async function buildPackedOutputs() {
     stepper.success('Build Packed Outputs');
   } catch (err) {
     stepper.error('Build Packed Outputs', err);
+    throw err;
   }
 }
 
@@ -137,16 +141,21 @@ async function buildPackageEntry() {
     stepper.success('Build Package Entry');
   } catch (err) {
     stepper.error('Build Package Entry', err);
+    throw err;
   }
 }
 
 export async function build() {
   setNodeEnv('production');
 
-  await clean();
-  await buildESModuleOutputs();
-  await buildCommonjsOutputs();
-  await buildStyleEntry();
-  await buildPackageEntry();
-  await buildPackedOutputs();
+  try {
+    await clean();
+    await buildESModuleOutputs();
+    await buildCommonjsOutputs();
+    await buildStyleEntry();
+    await buildPackageEntry();
+    await buildPackedOutputs();
+  } catch (err) {
+    logger.error('Build failed');
+  }
 }
