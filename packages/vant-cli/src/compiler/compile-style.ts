@@ -4,22 +4,28 @@ import { replaceExt } from '../common';
 import { compileCss } from './compile-css';
 import { compileLess } from './compile-less';
 import { compileSass } from './compile-sass';
+import { logger } from '../common/logger';
 
 async function compileFile(filePath: string) {
   const parsedPath = parse(filePath);
 
-  if (parsedPath.ext === '.less') {
-    const source = await compileLess(filePath);
-    return compileCss(source);
-  }
+  try {
+    if (parsedPath.ext === '.less') {
+      const source = await compileLess(filePath);
+      return await compileCss(source);
+    }
 
-  if (parsedPath.ext === '.scss') {
-    const source = await compileSass(filePath);
-    return compileCss(source);
-  }
+    if (parsedPath.ext === '.scss') {
+      const source = await compileSass(filePath);
+      return await compileCss(source);
+    }
 
-  const source = readFileSync(filePath, 'utf-8');
-  return compileCss(source);
+    const source = readFileSync(filePath, 'utf-8');
+    return await compileCss(source);
+  } catch (err) {
+    logger.error('Compile style failed: ' + filePath);
+    throw err;
+  }
 }
 
 export async function compileStyle(filePath: string) {
