@@ -106,7 +106,7 @@ export default createComponent({
         }
 
         if (this.resetSelectedSkuOnHide) {
-          this.resetSelectedSku(this.skuTree);
+          this.resetSelectedSku();
         }
       }
     },
@@ -119,7 +119,7 @@ export default createComponent({
 
     initialSku() {
       this.resetStepper();
-      this.resetSelectedSku(this.skuTree);
+      this.resetSelectedSku();
     },
   },
 
@@ -267,7 +267,7 @@ export default createComponent({
     skuEventBus.$on('sku:buy', this.onBuy);
 
     this.resetStepper();
-    this.resetSelectedSku(this.skuTree);
+    this.resetSelectedSku();
 
     // 组件初始化后的钩子，抛出skuEventBus
     this.$emit('after-sku-create', skuEventBus);
@@ -289,16 +289,17 @@ export default createComponent({
       }
     },
 
-    resetSelectedSku(skuTree) {
+    // @exposed-api
+    resetSelectedSku() {
       this.selectedSku = {};
 
       // 重置 selectedSku
-      skuTree.forEach(item => {
+      this.skuTree.forEach(item => {
         this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
       });
 
       // 只有一个 sku 规格值时默认选中
-      skuTree.forEach(item => {
+      this.skuTree.forEach(item => {
         const key = item.k_s;
         const valueId = item.v[0].id;
         if (
@@ -451,6 +452,7 @@ export default createComponent({
       }
     },
 
+    // @exposed-api
     getSkuData() {
       return {
         goodsId: this.goodsId,

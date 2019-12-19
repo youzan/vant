@@ -161,6 +161,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | getSkuData | Get current skuData | - | skuData |
+| resetSelectedSku | Reset selected sku to initial sku | - | - | 2.3.0 |
 
 ### Slots
 

@@ -162,9 +162,10 @@ export default {
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Sku 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| getSkuData | 获取当前 skuData | - | skuData |
+| 方法名 | 说明 | 参数 | 返回值 | 版本 |
+|------|------|------|------|------|
+| getSkuData | 获取当前 skuData | - | skuData | - |
+| resetSelectedSku | 重置选中规格到初始状态 | - | - | 2.3.0 |
 
 ### Slots
 

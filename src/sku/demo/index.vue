@@ -150,7 +150,7 @@
 </template>
 
 <script>
-import skuData from './data';
+import { skuData, initialSku } from './data';
 import { LIMIT_TYPE } from '../constants';
 
 export default {
@@ -173,17 +173,14 @@ export default {
 
   data() {
     this.skuData = skuData;
+    this.initialSku = initialSku;
+
     return {
       showBase: false,
       showCustom: false,
       showStepper: false,
       showSoldout: false,
       closeOnClickOverlay: true,
-      initialSku: {
-        s1: '30349',
-        s2: '1193',
-        selectedNum: 3
-      },
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
