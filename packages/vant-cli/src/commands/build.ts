@@ -178,5 +178,6 @@ export async function build() {
     await buildPackedOutputs();
   } catch (err) {
     logger.error('Build failed');
+    process.exit(1);
   }
 }
