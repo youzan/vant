@@ -32,7 +32,7 @@ test('error loaded, click error-text and reload', async () => {
   expect(wrapper.emitted('load')).toBeFalsy();
   expect(wrapper.emitted('input')).toBeFalsy();
 
-  // 模拟点击error-text的行为
+  // simulate the behavior of clicking error-text
   wrapper.vm.$on('update:error', val => {
     wrapper.setProps({
       error: val

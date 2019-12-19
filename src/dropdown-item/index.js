@@ -1,9 +1,10 @@
 import { createNamespace } from '../utils';
+import { PortalMixin } from '../mixins/portal';
+import { ChildrenMixin } from '../mixins/relation';
+import { on, off } from '../utils/dom/event';
 import Cell from '../cell';
 import Icon from '../icon';
 import Popup from '../popup';
-import { PortalMixin } from '../mixins/portal';
-import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('dropdown-item');
 
@@ -40,6 +41,12 @@ export default createComponent({
     }
   },
 
+  watch: {
+    showPopup(val) {
+      this.bindScroll(val);
+    }
+  },
+
   beforeCreate() {
     const createEmitter = eventName => () => this.$emit(eventName);
 
@@ -61,6 +68,16 @@ export default createComponent({
         this.parent.updateOffset();
         this.showWrapper = true;
       }
+    },
+
+    bindScroll(bind) {
+      const { scroller } = this.parent;
+      const action = bind ? on : off;
+      action(scroller, 'scroll', this.onScroll, true);
+    },
+
+    onScroll() {
+      this.parent.updateOffset();
     },
 
     onClickWrapper(event) {
