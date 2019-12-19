@@ -1,6 +1,6 @@
 name: Node CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run:
@@ -10,12 +10,16 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+
     - name: Install dependencies
       run: yarn
+
     - name: Run linter
       run: npm run lint
+
     - name: Run test cases
       run: npm test
+
     - name: Upload coverage to Codecov  
       uses: codecov/codecov-action@v1
       with:
