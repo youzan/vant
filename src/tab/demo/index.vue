@@ -162,7 +162,7 @@ export default {
 @import '../../style/var';
 
 .demo-tab {
-  margin-bottom: 300px;
+  margin-bottom: 80vh;
 
   .van-tab .van-icon {
     margin-right: 5px;

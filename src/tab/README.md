@@ -223,12 +223,13 @@ In scrollspy mode, the list of content will be tiled
 
 ### Tabs Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when click tab | name：name of current tab，title: tab title |
-| change | Triggered when active tab changed | name：name of current tab，title: tab title |
-| disabled | Triggered when click disabled tab | name：name of current tab, title: tab title |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+| Event | Description | Arguments | Version |
+|------|------|------|------|
+| click | Triggered when click tab | name，title | - |
+| change | Triggered when active tab changed | name，title | - |
+| disabled | Triggered when click disabled tab | name，title | - |
+| rendered | Triggered when content first rendered in lazy-render mode | name，title | 2.3.0 |
+| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } | - |
 
 ### Tabs Methods
 
