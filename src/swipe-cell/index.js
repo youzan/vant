@@ -17,7 +17,10 @@ export default createComponent({
   ],
 
   props: {
+    // @deprecated
+    // should be removed in next major version, use beforeClose instead
     onClose: Function,
+    beforeClose: Function,
     disabled: Boolean,
     leftWidth: Number,
     rightWidth: Number,
@@ -158,7 +161,13 @@ export default createComponent({
       this.$emit('click', position);
 
       if (this.opened && !this.lockClick) {
-        if (this.onClose) {
+        if (this.beforeClose) {
+          this.beforeClose({
+            position,
+            name: this.name,
+            instance: this
+          });
+        } else if (this.onClose) {
           this.onClose(position, this, { name: this.name });
         } else {
           this.swipeMove(0);

@@ -32,10 +32,10 @@ Vue.use(SwipeCell);
 
 ### 异步关闭
 
-通过传入`on-close`回调函数，可以自定义两侧滑动内容关闭时的行为
+通过传入`before-close`回调函数，可以自定义两侧滑动内容关闭时的行为
 
 ```html
-<van-swipe-cell :on-close="onClose">
+<van-swipe-cell :before-close="beforeClose">
   <template slot="left">
     <van-button square type="primary" text="选择" />
   </template>
@@ -51,9 +51,10 @@ Vue.use(SwipeCell);
 ```js
 export default {
   methods: {
-    // clickPosition 表示关闭时点击的位置
-    onClose(clickPosition, instance) {
-      switch (clickPosition) {
+    // position 为关闭时点击的位置
+    // instance 为对应的 SwipeCell 实例
+    beforeClose({ position, instance }) {
+      switch (position) {
         case 'left':
         case 'cell':
         case 'outside':
@@ -78,8 +79,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标识符，可以在 onClose 的参数中获取到 | *string \| number* | - | 2.0.4 |
-| on-close | 关闭时的回调函数 | *Function* | - | - |
+| name | 标识符，可以在事件参数中获取到 | *string \| number* | - | 2.0.4 |
+| before-close | 关闭前的回调函数 | *Function* | - | 2.3.0 |
 | disabled | 是否禁用滑动 | *boolean* | `false` | - |
 | left-width | 指定左侧滑动区域宽度 | *number* | `auto` | - |
 | right-width | 指定右侧滑动区域宽度 | *number* | `auto` | - |
@@ -100,13 +101,15 @@ export default {
 | click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
 | open | 打开时触发 | { position: 'left' \| 'right' , name: string } |
 
-### onClose 参数
+### beforeClose 参数
+
+beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 | 参数名 | 说明 | 类型 |
 |------|------|------|
-| clickPosition | 关闭时的点击位置 (`left` `right` `cell` `outside`) | *string* |
-| instance | SwipeCell 实例，用于调用实例方法 | *object* |
-| detail | 额外信息，包含 name 字段 | *object* |
+| name | 标识符 | *string* |
+| position | 关闭时的点击位置 (`left` `right` `cell` `outside`) | *string* |
+| instance | SwipeCell 实例，用于调用实例方法 | *SwipeCell* |
 
 ### 方法
 

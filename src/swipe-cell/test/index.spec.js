@@ -18,7 +18,7 @@ const defaultProps = {
   }
 };
 
-it('drag and show left part', () => {
+test('drag and show left part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, 10, 0);
@@ -34,14 +34,14 @@ it('drag and show left part', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('drag and show right part', () => {
+test('drag and show right part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, -50, 0);
   expect(wrapper).toMatchSnapshot();
 });
 
-it('on-close prop', () => {
+test('on-close prop', () => {
   let position;
   let instance;
 
@@ -77,7 +77,43 @@ it('on-close prop', () => {
   expect(wrapper.vm.offset).toEqual(0);
 });
 
-it('name prop', done => {
+test('before-close prop', () => {
+  let position;
+  let instance;
+
+  const wrapper = mount(SwipeCell, {
+    ...defaultProps,
+    propsData: {
+      ...defaultProps.propsData,
+      beforeClose(params) {
+        ({ position } = params);
+        ({ instance } = params);
+      }
+    }
+  });
+
+  wrapper.trigger('click');
+  expect(position).toEqual(undefined);
+
+  wrapper.vm.open('left');
+  wrapper.trigger('click');
+  expect(position).toEqual('cell');
+
+  wrapper.find('.van-swipe-cell__left').trigger('click');
+  expect(position).toEqual('left');
+
+  wrapper.find('.van-swipe-cell__right').trigger('click');
+  expect(position).toEqual('right');
+
+  instance.close();
+  expect(wrapper.vm.offset).toEqual(0);
+
+  wrapper.setData({ offset: 100, beforeClose: null });
+  wrapper.trigger('click');
+  expect(wrapper.vm.offset).toEqual(0);
+});
+
+test('name prop', done => {
   const wrapper = mount(SwipeCell, {
     ...defaultProps,
     propsData: {
@@ -94,14 +130,14 @@ it('name prop', done => {
   wrapper.trigger('click');
 });
 
-it('should reset after drag', () => {
+test('should reset after drag', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, defaultProps.leftWidth * THRESHOLD - 1, 0);
   expect(wrapper.vm.offset).toEqual(0);
 });
 
-it('disabled prop', () => {
+test('disabled prop', () => {
   const wrapper = mount(SwipeCell, {
     propsData: {
       ...defaultProps.propsData,
@@ -113,7 +149,7 @@ it('disabled prop', () => {
   expect(wrapper.vm.offset).toEqual(0);
 });
 
-it('auto calc width', async () => {
+test('auto calc width', async () => {
   const restoreMock = mockGetBoundingClientRect({
     width: 50
   });
@@ -129,7 +165,7 @@ it('auto calc width', async () => {
   restoreMock();
 });
 
-it('render one side', async () => {
+test('render one side', async () => {
   const restoreMock = mockGetBoundingClientRect({
     width: 50
   });
@@ -147,7 +183,7 @@ it('render one side', async () => {
   restoreMock();
 });
 
-it('trigger open event when open left side', () => {
+test('trigger open event when open left side', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, 50, 0);
@@ -157,7 +193,7 @@ it('trigger open event when open left side', () => {
   });
 });
 
-it('trigger open event when open right side', () => {
+test('trigger open event when open right side', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, -50, 0);

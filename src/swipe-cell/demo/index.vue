@@ -31,7 +31,7 @@
       </demo-block>
 
       <demo-block :title="$t('title2')">
-        <van-swipe-cell :on-close="onClose">
+        <van-swipe-cell :before-close="beforeClose">
           <template #left>
             <van-button
               square
@@ -79,8 +79,8 @@ export default {
   },
 
   methods: {
-    onClose(clickPosition, instance) {
-      switch (clickPosition) {
+    beforeClose({ position, instance }) {
+      switch (position) {
         case 'left':
         case 'cell':
         case 'outside':

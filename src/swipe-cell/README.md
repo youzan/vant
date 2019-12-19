@@ -31,7 +31,7 @@ Vue.use(SwipeCell);
 ### Async close
 
 ```html
-<van-swipe-cell :on-close="onClose">
+<van-swipe-cell :before-close="beforeClose">
   <template slot="left">
     <van-button square type="primary" text="Select" />
   </template>
@@ -47,8 +47,8 @@ Vue.use(SwipeCell);
 ```js
 export default {
   methods: {
-    onClose(clickPosition, instance) {
-      switch (clickPosition) {
+    beforeClose({ position, instance }) {
+      switch (position) {
         case 'left':
         case 'cell':
         case 'outside':
@@ -74,7 +74,7 @@ export default {
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
 | name | Identifier of SwipeCell | *string \| number* | - | 2.0.4 |
-| on-close | Callback function before close | *Function* | - | - |
+| before-close | Callback function before close | *Function* | - | 2.3.0 |
 | disabled | Whether to disabled swipe | *boolean* | `false` | - |
 | left-width | Width of the left swipe area | *number* | `auto` | - |
 | right-width | Width of the right swipe area | *number* | `auto` | - |
@@ -95,13 +95,13 @@ export default {
 | click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
 | open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
 
-### onClose Params
+### beforeClose Params
 
 | Attribute | Description | Type |
 |------|------|------|
-| clickPosition | Click positon (`left` `right` `cell` `outside`) | *string* |
-| instance | SwipeCell instance | *object* |
-| detail | Detail info | *object* |
+| name | Name | *string* |
+| position | Click positon (`left` `right` `cell` `outside`) | *string* |
+| instance | SwipeCell instance | *SwipeCell* |
 
 ### Methods
 
