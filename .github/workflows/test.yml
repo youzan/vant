@@ -12,7 +12,17 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+
+    - name: Install dependencies
     - run: yarn
+
+    - name: Run linter
     - run: npm run lint
+
+    - name: Run test cases
     - run: npm test
-    - run: cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+
+    - name: Upload coverage to Codecov  
+    - uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
