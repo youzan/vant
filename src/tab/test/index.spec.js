@@ -293,3 +293,49 @@ test('scrollspy', async () => {
   expect(wrapper).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledWith('c', 'title3');
 });
+
+test('rendered event', () => {
+  const onRendered = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <van-tabs v-model="active" @rendered="onRendered">
+        <van-tab name="a" title="title1">Text</van-tab>
+        <van-tab name="b" title="title2">Title2</van-tab>
+      </van-tabs>
+    `,
+    data() {
+      return {
+        active: 'a'
+      };
+    },
+    methods: {
+      onRendered
+    }
+  });
+
+  expect(onRendered).toHaveBeenCalledWith('a', 'title1');
+
+  const tabs = wrapper.findAll('.van-tab');
+  tabs.at(1).trigger('click');
+  tabs.at(0).trigger('click');
+  expect(onRendered).toHaveBeenCalledTimes(2);
+});
+
+test('should not trigger rendered event when disable lazy-render', () => {
+  const onRendered = jest.fn();
+
+  mount({
+    template: `
+      <van-tabs :lazy-render="false" @rendered="onRendered">
+        <van-tab>Text</van-tab>
+        <van-tab>Title2</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onRendered
+    }
+  });
+
+  expect(onRendered).toHaveBeenCalledTimes(0);
+});

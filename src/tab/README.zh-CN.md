@@ -208,7 +208,7 @@ export default {
 | ellipsis | 是否省略过长的标题文字 | *boolean* | `true` | - |
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
-| lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
+| lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | *boolean* | `true` | - |
 | scrollspy | 是否开启滚动导航 | *boolean* | `false` | 2.3.0 |
 
 ### Tab Props
@@ -227,12 +227,13 @@ export default {
 
 ### Tabs Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击标签时触发 | name：标签标识符，title：标题 |
-| change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
-| disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
-| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| 事件名 | 说明 | 回调参数 | 版本 |
+|------|------|------|------|
+| click | 点击标签时触发 | name：标识符，title：标题 | - |
+| change | 当前激活的标签改变时触发 | name：标识符，title：标题 | - |
+| disabled | 点击被禁用的标签时触发 | name：标识符，title：标题 | - |
+| rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 | 2.3.0 |
+| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } | - |
 
 ### Tabs 方法
 

@@ -41,6 +41,12 @@ export default createComponent({
 
     title() {
       this.parent.setLine();
+    },
+
+    inited(val) {
+      if (this.parent.lazyRender && val) {
+        this.parent.$emit('rendered', this.computedName, this.title);
+      }
     }
   },
 
