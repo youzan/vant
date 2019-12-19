@@ -22,28 +22,36 @@ function lintScript() {
   const formatted = formatter(report.results);
   if (formatted) {
     stepper.error('ESLint Failed', '\n' + formatter(report.results));
-  } else {
-    stepper.success('ESLint Passed');
+    return false;
   }
+
+  stepper.success('ESLint Passed');
+  return true;
 }
 
-function lintStyle() {
+async function lintStyle(): Promise<boolean> {
   stepper.start('Stylelint Start');
 
-  stylelint({
+  return stylelint({
     fix: true,
     formatter: 'string',
     files: ['src/**/*.css', 'src/**/*.less', 'src/**/*.scss', 'src/**/*.vue']
   }).then(result => {
     if (result.errored) {
       stepper.error('Stylelint Failed', '\n' + result.output);
-    } else {
-      stepper.success('Stylelint Passed');
+      return false;
     }
+
+    stepper.success('Stylelint Passed');
+    return true;
   });
 }
 
-export function lint() {
-  lintScript();
-  lintStyle();
+export async function lint() {
+  const scriptPassed = lintScript();
+  const stylePassed = await lintStyle();
+
+  if (!scriptPassed || !stylePassed) {
+    process.exit(1);
+  }
 }
