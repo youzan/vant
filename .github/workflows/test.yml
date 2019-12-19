@@ -3,7 +3,7 @@ name: Node CI
 on: [push, pull_request]
 
 jobs:
-  run:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -16,6 +16,17 @@ jobs:
 
     - name: Run linter
       run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
 
     - name: Run test cases
       run: npm test
