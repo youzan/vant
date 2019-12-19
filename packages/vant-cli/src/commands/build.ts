@@ -66,10 +66,10 @@ async function installDependencies() {
 
   try {
     const manager = hasYarn() ? 'yarn' : 'npm';
-    const installProcess = execa(manager, ['install']);
 
-    installProcess.stdout.pipe(process.stdout);
-    await installProcess;
+    await execa(manager, ['install', '--prod=false'], {
+      stdio: 'inherit'
+    });
 
     stepper.success('Install Dependencies');
   } catch (err) {
