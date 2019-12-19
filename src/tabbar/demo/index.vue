@@ -31,8 +31,8 @@
       <van-tabbar v-model="active3">
         <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
-          <template #icon="{ active }">
-            <img :src="active ? icon.active : icon.inactive">
+          <template #icon="props">
+            <img :src="props.active ? icon.active : icon.inactive">
           </template>
         </van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
