@@ -93,6 +93,14 @@
         </van-tab>
       </van-tabs>
     </demo-block>
+
+    <demo-block :title="$t('title10')">
+      <van-tabs @rendered="onRenderd">
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
+          {{ $t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -109,6 +117,7 @@ export default {
       title7: '自定义标签',
       title8: '切换动画',
       title9: '滑动切换',
+      title10: '渲染事件',
       disabled: ' 已被禁用',
       matchByName: '通过名称匹配'
     },
@@ -123,6 +132,7 @@ export default {
       title7: 'Custom Tab',
       title8: 'Switch Animation',
       title9: 'Swipeable',
+      title10: 'Rendered Event',
       disabled: ' is disabled',
       matchByName: 'Match By Name'
     }
@@ -143,6 +153,10 @@ export default {
 
     onClick(index, title) {
       this.$toast(title);
+    },
+
+    onRenderd(index, title) {
+      this.$toast(`tab ${title}-${index} rendered`);
     }
   }
 };

@@ -174,6 +174,28 @@ export default {
 </van-tabs>
 ```
 
+### Rendered Event
+
+`rendered` 事件只有当 tab 初始化完成后才会触发，这意味着在每个 tab 的完整生命周期内，只会触发一次 `rendered` 事件.
+
+```html
+<van-tabs @rendered="onRenderd">
+  <van-tab v-for="index in 4" :title="'tab' + index">
+    content of tab {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    onRenderd(index, title) {
+      this.$toast(`tab ${index} rendered`);
+    }
+  }
+};
+```
+
 ## API
 
 ### Tabs Props
@@ -218,6 +240,7 @@ export default {
 | change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
 | disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
 | scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| rendered | 在每个 Tab 初次渲染完成时触发. | name：标签标识符，title：标题 |
 
 ### Tabs 方法
 

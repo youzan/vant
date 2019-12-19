@@ -67,7 +67,7 @@ By default more than 4 tabs, you can scroll through the tabs. You can set `swipe
 
 ### Disabled Tab
 
-You can set `disabled` attribute on the corresponding `van-tab`. 
+You can set `disabled` attribute on the corresponding `van-tab`.
 
 ```html
 <van-tabs @disabled="onClickDisabled">
@@ -170,6 +170,28 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 </van-tabs>
 ```
 
+### Rendered Event
+
+`rendered` Event only triggered after tab's initialization. That means every tab only trigger `rendered` event once.
+
+```html
+<van-tabs @rendered="onRenderd">
+  <van-tab v-for="index in 4" :title="'tab' + index">
+    content of tab {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+```javascript
+export default {
+  methods: {
+    onRenderd(index, title) {
+      this.$toast(`tab ${index} rendered`);
+    }
+  }
+};
+```
+
 ## API
 
 ### Tabs Props
@@ -214,6 +236,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | change | Triggered when active tab changed | name：name of current tab，title: tab title |
 | disabled | Triggered when click disabled tab | name：name of current tab, title: tab title |
 | scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+| rendered | Triggerd when tab first rendering completed. | name：name of current tab，title: tab title |
 
 ### Tabs Methods
 

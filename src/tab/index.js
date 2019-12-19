@@ -39,6 +39,12 @@ export default createComponent({
 
     title() {
       this.parent.setLine();
+    },
+
+    inited() {
+      this.$nextTick(() => {
+        this.parent.$emit('rendered', this.computedName, this.title);
+      });
     }
   },
 

@@ -239,3 +239,31 @@ test('title-style prop', () => {
 
   expect(wrapper.find('.van-tab').element.style.color).toEqual('red');
 });
+
+test('rendered event', async () => {
+  const onRendered = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <van-tabs @rendered="onRendered">
+        <van-tab title="title1">Text</van-tab>
+        <van-tab title="title2">Text</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onRendered
+    }
+  });
+
+  const tabs = wrapper.findAll('.van-tab');
+
+  await later();
+
+  expect(onRendered).toHaveBeenCalledWith(0, 'title1');
+
+  tabs.at(1).trigger('click');
+
+  await later();
+
+  expect(onRendered).toHaveBeenCalledWith(1, 'title2');
+});
