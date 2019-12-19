@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "^7.7.4",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/jest": "^24.0.23",
-    "@vant/eslint-config": "^1.5.0",
+    "@vant/eslint-config": "^1.5.1",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/markdown-vetur": "^1.0.0",
     "@vant/stylelint-config": "^1.1.0",

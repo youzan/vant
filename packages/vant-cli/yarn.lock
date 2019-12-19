@@ -1632,10 +1632,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/eslint-config@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.5.0.tgz#05d9b2e78d41d570fa411ec82ff0e09996ea69fd"
-  integrity sha512-TO0ab7zsZCq3NPFtjND4BBFBLuzB3sQcgqBk56K9NEMc83xjp6f3wGdUXdYtYqkPtXVx7U1QyLNkDUACMILgRQ==
+"@vant/eslint-config@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.5.1.tgz#cfa4418b0b43ca0afb7dbda6973b2b1450306fb2"
+  integrity sha512-jGN4GJw+MYeXGH9XsYeaWJMpD8TwS1fx4qw4kGXoud8VM6tMdUToxodzJRERoHlDgnpxsqwd4bOf1aztoVuuHg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.12.0"
     "@typescript-eslint/parser" "^2.12.0"

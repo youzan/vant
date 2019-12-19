@@ -1,3 +1,5 @@
+// @ts-ignore
+import execa from 'execa';
 import { join, relative } from 'path';
 import { remove, copy, readdirSync } from 'fs-extra';
 import { clean } from './clean';
@@ -20,11 +22,12 @@ import {
   isScript,
   isDemoDir,
   isTestDir,
+  hasYarn,
   setNodeEnv,
   setModuleEnv
 } from '../common';
 
-const stepper = getStepper(10);
+const stepper = getStepper(12);
 
 async function compileDir(dir: string) {
   const files = readdirSync(dir);
@@ -56,6 +59,23 @@ async function compileDir(dir: string) {
       return remove(filePath);
     })
   );
+}
+
+async function installDependencies() {
+  stepper.start('Install Dependencies');
+
+  try {
+    const manager = hasYarn() ? 'yarn' : 'npm';
+    const installProcess = execa(manager, ['install']);
+
+    installProcess.stdout.pipe(process.stdout);
+    await installProcess;
+
+    stepper.success('Install Dependencies');
+  } catch (err) {
+    stepper.error('Install Dependencies', err);
+    throw err;
+  }
 }
 
 async function buildESModuleOutputs() {
@@ -150,6 +170,7 @@ export async function build() {
 
   try {
     await clean();
+    await installDependencies();
     await buildESModuleOutputs();
     await buildCommonjsOutputs();
     await buildStyleEntry();
