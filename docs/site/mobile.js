@@ -45,13 +45,15 @@ Vue.mixin({
   }
 });
 
-window.vueRouter.afterEach(to => {
-  const { lang } = (to.meta) || {};
+if (window.vueRouter) {
+  window.vueRouter.afterEach(to => {
+    const { lang } = to.meta || {};
 
-  if (lang) {
-    Locale.use(lang);
-  }
-});
+    if (lang) {
+      Locale.use(lang);
+    }
+  });
+}
 
 // add some basic locale messages
 Locale.add({
