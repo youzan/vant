@@ -1,4 +1,4 @@
-export default {
+export const skuData = {
   goods_id: '946755',
   quota: 15,
   quota_used: 0,
@@ -180,4 +180,10 @@ export default {
       }
     ]
   }
+};
+
+export const initialSku = {
+  s1: '30349',
+  s2: '1193',
+  selectedNum: 3
 };
