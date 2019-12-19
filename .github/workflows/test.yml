@@ -12,7 +12,7 @@ jobs:
         node-version: '12.x'
 
     - name: Install dependencies
-      run: yarn
+      uses: bahmutov/npm-install@v1
 
     - name: Run linter
       run: npm run lint
