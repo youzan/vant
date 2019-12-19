@@ -17,5 +17,17 @@ export function test(command: any) {
     clearCache: command.clearCache
   } as any;
 
-  runCLI(config, [ROOT]);
+  runCLI(config, [ROOT])
+    .then(response => {
+      if (!response.results.success && !command.watch) {
+        process.exit(1);
+      }
+    })
+    .catch(err => {
+      console.log(err);
+
+      if (!command.watch) {
+        process.exit(1);
+      }
+    });
 }
