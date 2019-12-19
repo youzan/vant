@@ -1452,10 +1452,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.0.0-rc.4":
-  version "2.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.0.0-rc.4.tgz#645f47b91c476d04170d730229eddc8ad9828de9"
-  integrity sha512-YKPIuLm1JHL75aIS+m8X4lAUbiK1ORo5R9+APrbRKZv2ObrU29v6KmwQz3GcLsztrQWS+OgH3PROggrX406kPg==
+"@vant/cli@^2.0.0-rc.5":
+  version "2.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.0.0-rc.5.tgz#cec2b74bbf3650c1f45475e93ee90bceccd7136b"
+  integrity sha512-qfwOcJCLsK1jI9pfLzyJfI7QS0oTRR9eZipq7JL3anc0FG/0BTDCHckgvuvcVM9fTkYViKrGciG79wirA9ktCg==
   dependencies:
     "@babel/core" "^7.7.5"
     "@babel/plugin-proposal-optional-chaining" "^7.7.5"
