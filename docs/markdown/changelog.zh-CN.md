@@ -11,6 +11,17 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.3.2](https://github.com/youzan/vant/tree/v2.3.2)
+`2019-12-20`
+
+**Bug Fixes**
+
+- 修复 Area 未自动引入依赖的 Picker 样式的问题
+- 修复 DatetimePicker 未自动引入依赖的 Picker 样式的问题
+- 修复 CountDown 在特定情况下内部计时器未清除的问题 [\#5340](https://github.com/youzan/vant/pull/5340)
+- 修复 ImagePreview 在特定情况下会重复 onClose 回调的问题 [\#5341](https://github.com/youzan/vant/pull/5341)
+
+
 ### [v2.3.1](https://github.com/youzan/vant/tree/v2.3.1)
 `2019-12-20`
 

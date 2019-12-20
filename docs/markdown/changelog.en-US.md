@@ -1,5 +1,16 @@
 # Changelog
 
+### [v2.3.2](https://github.com/youzan/vant/tree/v2.3.2)
+`2019-12-20`
+
+**Bug Fixes**
+
+- fix Area missing style
+- fix DatetimePicker missing style
+- fix CountDown infinite tick if call reset after finish [\#5340](https://github.com/youzan/vant/pull/5340)
+- fix ImagePreview onClose should only trigger once [\#5341](https://github.com/youzan/vant/pull/5341)
+
+
 ### [v2.3.1](https://github.com/youzan/vant/tree/v2.3.1)
 `2019-12-20`
 
