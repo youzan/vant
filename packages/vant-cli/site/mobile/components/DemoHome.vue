@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/index';
+@import '../../common/style/var';
 
 .demo-home {
   box-sizing: border-box;
@@ -64,6 +64,7 @@ export default {
   &__desc {
     padding-left: 16px;
     font-weight: normal;
+    line-height: 1;
     user-select: none;
   }
 

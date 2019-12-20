@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/index';
+@import '../../common/style/var';
 
 .van-doc-demo-block {
   &__title {
@@ -25,6 +25,7 @@ export default {
     color: @van-doc-text-light-blue;
     font-weight: normal;
     font-size: 14px;
+    line-height: 16px;
   }
 
   &:first-of-type {

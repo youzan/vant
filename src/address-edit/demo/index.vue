@@ -70,3 +70,11 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+.demo-address-edit {
+  .van-doc-demo-block__title {
+    padding-bottom: 0;
+  }
+}
+</style>

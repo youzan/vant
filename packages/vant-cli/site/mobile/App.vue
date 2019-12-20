@@ -16,13 +16,11 @@ export default {
 </script>
 
 <style lang="less">
+@import '../common/style/var';
+@import '../common/style/base';
+
 body {
   min-width: 100vw;
-  color: #323233;
-  font-family: 'PingFang SC', Helvetica, Tohoma, Arial, sans-serif;
-  line-height: 1;
-  background-color: #f8f8f8;
-  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {

@@ -94,3 +94,11 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+.demo-address-list {
+  .van-doc-demo-block__title {
+    padding-bottom: 0;
+  }
+}
+</style>

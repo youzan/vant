@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/index';
+@import '../../common/style/var';
 
 .van-doc-simulator {
   position: absolute;

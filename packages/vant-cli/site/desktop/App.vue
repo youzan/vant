@@ -90,6 +90,9 @@ export default {
 </script>
 
 <style lang="less">
+@import '../common/style/base';
+@import '../common/style/highlight';
+
 .van-doc-intro {
   padding-top: 20px;
   font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
