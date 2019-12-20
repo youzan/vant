@@ -147,13 +147,15 @@ async function buildPackageEntry() {
       pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
     });
 
+    setModuleEnv('esmodule');
+    await compileJs(esEntryFile, { reloadConfig: true });
+
     genPacakgeStyle({
       outputPath: styleEntryFile,
       pathResolver: (path: string) => path.replace(SRC_DIR, '.')
     });
 
     setModuleEnv('commonjs');
-
     await copy(esEntryFile, libEntryFile);
     await compileJs(libEntryFile, { reloadConfig: true });
     await compileStyle(styleEntryFile);
