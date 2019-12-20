@@ -79,7 +79,7 @@ export default {
   :time="3000"
   :auto-start="false"
   format="ss:SSS"
-  @finish="finished"
+  @finish="finish"
 />
 <van-grid clickable :column-num="3">
   <van-grid-item text="Start" icon="play-circle-o" @click="start" />
