@@ -102,6 +102,26 @@ test('onClose option', async done => {
   done();
 });
 
+test('onClose should only trigger once', async done => {
+  const onClose = jest.fn();
+  const instance = ImagePreview({
+    images,
+    startPostion: 1,
+    onClose
+  });
+
+  ImagePreview({
+    images,
+    startPostion: 1,
+    onClose
+  });
+
+  instance.close();
+
+  expect(onClose).toHaveBeenCalledTimes(1);
+  done();
+});
+
 test('onChange option', async done => {
   const instance = ImagePreview({
     images,
