@@ -54,6 +54,7 @@ const ImagePreview = (images, startPosition = 0) => {
   });
 
   if (options.onClose) {
+    instance.$off('close');
     instance.$once('close', options.onClose);
   }
 
