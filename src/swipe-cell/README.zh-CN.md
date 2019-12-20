@@ -100,6 +100,7 @@ export default {
 |------|------|------|
 | click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
 | open | 打开时触发 | { position: 'left' \| 'right' , name: string } |
+| close | 关闭时触发 | { position: string , name: string } |
 
 ### beforeClose 参数
 

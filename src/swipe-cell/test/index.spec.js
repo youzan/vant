@@ -70,9 +70,10 @@ test('on-close prop', () => {
   expect(position).toEqual('right');
 
   instance.close();
-  expect(wrapper.vm.offset).toEqual(0);
+  expect(instance.offset).toEqual(0);
 
-  wrapper.setData({ offset: 100, onClose: null });
+  instance.open('left');
+  wrapper.setData({ onClose: null });
   wrapper.trigger('click');
   expect(wrapper.vm.offset).toEqual(0);
 });
@@ -108,7 +109,8 @@ test('before-close prop', () => {
   instance.close();
   expect(wrapper.vm.offset).toEqual(0);
 
-  wrapper.setData({ offset: 100, beforeClose: null });
+  instance.open('left');
+  wrapper.setData({ beforeClose: null });
   wrapper.trigger('click');
   expect(wrapper.vm.offset).toEqual(0);
 });
@@ -188,6 +190,7 @@ test('trigger open event when open left side', () => {
 
   triggerDrag(wrapper, 50, 0);
   expect(wrapper.emitted('open')[0][0]).toEqual({
+    name: '',
     detail: '',
     position: 'left'
   });
@@ -198,7 +201,29 @@ test('trigger open event when open right side', () => {
 
   triggerDrag(wrapper, -50, 0);
   expect(wrapper.emitted('open')[0][0]).toEqual({
+    name: '',
     detail: '',
     position: 'right'
   });
+});
+
+test('trigger close event when closed', () => {
+  const wrapper = mount(SwipeCell, defaultProps);
+
+  wrapper.vm.open('left');
+  wrapper.vm.close();
+
+  expect(wrapper.emitted('close')[0][0]).toEqual({
+    name: '',
+    position: undefined
+  });
+});
+
+test('should not trigger close event again when already closed', () => {
+  const wrapper = mount(SwipeCell, defaultProps);
+
+  wrapper.vm.open('left');
+  wrapper.vm.close();
+  wrapper.vm.close();
+  expect(wrapper.emitted('close').length).toEqual(1);
 });

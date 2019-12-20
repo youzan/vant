@@ -94,6 +94,7 @@ export default {
 |------|------|------|
 | click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
 | open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
+| close | Triggered when closed | { position: string , name: string } |
 
 ### beforeClose Params
 
