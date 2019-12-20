@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { getPort } from 'portfinder';
 import { siteDevConfig } from '../config/webpack.site.dev';
 import { sitePrdConfig } from '../config/webpack.site.prd';
