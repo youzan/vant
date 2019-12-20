@@ -45,7 +45,9 @@ export default createComponent({
 
     inited(val) {
       if (this.parent.lazyRender && val) {
-        this.parent.$emit('rendered', this.computedName, this.title);
+        this.$nextTick(() => {
+          this.parent.$emit('rendered', this.computedName, this.title);
+        });
       }
     }
   },
