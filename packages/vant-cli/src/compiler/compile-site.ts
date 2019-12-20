@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
+import { get } from 'lodash';
 import { getPort } from 'portfinder';
 import { siteDevConfig } from '../config/webpack.site.dev';
 import { sitePrdConfig } from '../config/webpack.site.prd';
@@ -20,7 +21,8 @@ function watch() {
         return;
       }
 
-      server.listen(port, 'localhost', (err?: Error) => {
+      const host = get(siteDevConfig.devServer, 'host', 'localhost');
+      server.listen(port, host, (err?: Error) => {
         if (err) {
           console.log(err);
         }
