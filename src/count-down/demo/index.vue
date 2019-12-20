@@ -5,24 +5,15 @@
     </demo-block>
 
     <demo-block :title="$t('customFormat')">
-      <van-count-down
-        :time="time"
-        :format="$t('formatWithDay')"
-      />
+      <van-count-down :time="time" :format="$t('formatWithDay')" />
     </demo-block>
 
     <demo-block :title="$t('millisecond')">
-      <van-count-down
-        millisecond
-        :time="time"
-        format="HH:mm:ss:SS"
-      />
+      <van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
-      <van-count-down
-        :time="time"
-      >
+      <van-count-down :time="time">
         <template v-slot="currentTime">
           <span class="item">{{ currentTime.hours }}</span>
           <span class="item">{{ currentTime.minutes }}</span>
@@ -40,10 +31,7 @@
         format="ss:SSS"
         @finish="$toast($t('finished'))"
       />
-      <van-grid
-        clickable
-        :column-num="3"
-      >
+      <van-grid clickable :column-num="3">
         <van-grid-item
           icon="play-circle-o"
           :text="$t('start')"
@@ -54,11 +42,7 @@
           :text="$t('pause')"
           @click="pause"
         />
-        <van-grid-item
-          icon="replay"
-          :text="$t('reset')"
-          @click="reset"
-        />
+        <van-grid-item icon="replay" :text="$t('reset')" @click="reset" />
       </van-grid>
     </demo-block>
   </demo-section>

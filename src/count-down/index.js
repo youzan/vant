@@ -64,6 +64,7 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     start() {
       if (this.counting) {
         return;
@@ -74,11 +75,13 @@ export default createComponent({
       this.tick();
     },
 
+    // @exposed-api
     pause() {
       this.counting = false;
       cancelRaf(this.rafId);
     },
 
+    // @exposed-api
     reset() {
       this.pause();
       this.remain = this.time;
@@ -98,9 +101,15 @@ export default createComponent({
 
     microTick() {
       this.rafId = raf(() => {
+        /* istanbul ignore if */
+        // in case of call reset immediately after finish
+        if (!this.counting) {
+          return;
+        }
+
         this.setRemain(this.getRemain());
 
-        if (this.remain !== 0) {
+        if (this.remain > 0) {
           this.microTick();
         }
       });
@@ -108,13 +117,19 @@ export default createComponent({
 
     macroTick() {
       this.rafId = raf(() => {
+        /* istanbul ignore if */
+        // in case of call reset immediately after finish
+        if (!this.counting) {
+          return;
+        }
+
         const remain = this.getRemain();
 
         if (!isSameSecond(remain, this.remain) || remain === 0) {
           this.setRemain(remain);
         }
 
-        if (this.remain !== 0) {
+        if (this.remain > 0) {
           this.macroTick();
         }
       });
