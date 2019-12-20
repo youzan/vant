@@ -99,7 +99,7 @@ export async function genStyleDepsMap() {
 
     const map = {} as DepsMap;
 
-    components.filter(checkStyleExists).forEach(component => {
+    components.forEach(component => {
       map[component] = analyzeComponentDeps(component);
     });
 

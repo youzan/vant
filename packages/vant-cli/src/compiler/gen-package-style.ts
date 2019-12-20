@@ -1,4 +1,5 @@
 import { join } from 'path';
+import { existsSync } from 'fs-extra';
 import { smartOutputFile } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
 import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
@@ -27,12 +28,17 @@ export function genPacakgeStyle(options: Options) {
     .map((name: string) => {
       let path = join(SRC_DIR, `${name}/index${ext}`);
 
+      if (!existsSync(path)) {
+        return '';
+      }
+
       if (options.pathResolver) {
         path = options.pathResolver(path);
       }
 
       return `@import "${path}";`;
     })
+    .filter((item: string) => !!item)
     .join('\n');
 
   smartOutputFile(options.outputPath, content);
