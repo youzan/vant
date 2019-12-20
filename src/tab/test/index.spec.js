@@ -294,7 +294,7 @@ test('scrollspy', async () => {
   expect(onChange).toHaveBeenCalledWith('c', 'title3');
 });
 
-test('rendered event', () => {
+test('rendered event', async () => {
   const onRendered = jest.fn();
 
   const wrapper = mount({
@@ -314,15 +314,19 @@ test('rendered event', () => {
     }
   });
 
+  await later();
   expect(onRendered).toHaveBeenCalledWith('a', 'title1');
+  expect(wrapper.find('.van-tab__pane')).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
   tabs.at(1).trigger('click');
   tabs.at(0).trigger('click');
+
+  await later();
   expect(onRendered).toHaveBeenCalledTimes(2);
 });
 
-test('should not trigger rendered event when disable lazy-render', () => {
+test('should not trigger rendered event when disable lazy-render', async () => {
   const onRendered = jest.fn();
 
   mount({
@@ -337,5 +341,6 @@ test('should not trigger rendered event when disable lazy-render', () => {
     }
   });
 
+  await later();
   expect(onRendered).toHaveBeenCalledTimes(0);
 });

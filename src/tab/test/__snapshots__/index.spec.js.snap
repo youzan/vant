@@ -223,6 +223,8 @@ exports[`render nav-left & nav-right slot 1`] = `
 </div>
 `;
 
+exports[`rendered event 1`] = `<div role="tabpanel" class="van-tab__pane" style="">Text</div>`;
+
 exports[`scrollspy 1`] = `
 <div class="van-tabs van-tabs--line">
   <div>
