@@ -1,5 +1,13 @@
 # Changelog
 
+### [v2.3.1](https://github.com/youzan/vant/tree/v2.3.1)
+`2019-12-20`
+
+**Bug Fixes**
+
+- Fix uncompiled ES6 code in the entry file
+
+
 ### [v2.3.0](https://github.com/youzan/vant/tree/v2.3.0)
 `2019-12-20`
 
