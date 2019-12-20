@@ -94,7 +94,7 @@
       </van-tabs>
     </demo-block>
 
-    <demo-block :title="$t('title10')">
+    <demo-block v-if="!$attrs.weapp" :title="$t('title10')">
       <van-tabs scrollspy sticky>
         <van-tab :title="$t('tab') + index" v-for="index in 10" :key="index">
           {{ $t('content') }} {{ index }}

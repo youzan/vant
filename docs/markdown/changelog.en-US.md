@@ -1,73 +1,7 @@
 # Changelog
 
-### [v2.3.0-beta.5](https://github.com/youzan/vant/tree/v2.3.0-beta.5)
-`2019-12-16`
-
-**Features**
-
-- Tab: add dot prop [\#5272](https://github.com/youzan/vant/pull/5272)
-- Tab: add info prop [\#5274](https://github.com/youzan/vant/pull/5274)
-- Tab: add scrollspy prop [\#5273](https://github.com/youzan/vant/pull/5273)
-- Checkbox: improve toggleAll perf [\#5285](https://github.com/youzan/vant/pull/5285)
-
-**Bug Fixes**
-
-- fix Popup should reopen when activated [\#5286](https://github.com/youzan/vant/pull/5286)
-
-
-### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
-`2019-12-13`
-
-**Features**
-
-- use @vant/cli to build pacakge
-
-**Bug Fixes**
-
-- fix Icon medal typo [\#5242](https://github.com/youzan/vant/pull/5242)
-- fix Dialog show not trigger close event when hidden [\#5267](https://github.com/youzan/vant/pull/5267)
-- fix Stepper should format value when max、min changed [\#5257](https://github.com/youzan/vant/pull/5257)
-
-
-### [v2.3.0-beta.3](https://github.com/youzan/vant/tree/v2.3.0-beta.3)
-`2019-12-09`
-
-**Bug Fixes**
-
-- fix Sku should check state when reset [\#5231](https://github.com/youzan/vant/pull/5231)
-- fix Switch incorrect size prop type [\#5229](https://github.com/youzan/vant/pull/5229)
-- fix SubmitBar incorrect decimal when price is integer [\#5224](https://github.com/youzan/vant/pull/5224)
-- fix AddressList incorrect tel when isDefault is 0 [\#5232](https://github.com/youzan/vant/pull/5232)
-
-
-### [v2.3.0-beta.2](https://github.com/youzan/vant/tree/v2.3.0-beta.2)
-`2019-12-06`
-
-**Style**
-
-Upgrading the style of business components:
-
-- CouponList
-
-**Features**
-
-- CouponList: add show-count prop [\#5139](https://github.com/youzan/vant/pull/5139)
-
-**Bug Fixes**
-
-- fix Sku stepper value must be integer [\#5202](https://github.com/youzan/vant/pull/5202)
-- fix Sku stepper should not emit invalid num [\#5210](https://github.com/youzan/vant/pull/5210)
-- fix Card incorrect price font-family [\#5194](https://github.com/youzan/vant/pull/5194)
-- fix AddressList incorrect horizontal padding [\#5204](https://github.com/youzan/vant/pull/5204)
-- fix Picker should not submit form [\#5182](https://github.com/youzan/vant/pull/5182)
-- fix Stepper should not submit form [\#5183](https://github.com/youzan/vant/pull/5183)
-- fix ActionSheet should not submit form [\#5181](https://github.com/youzan/vant/pull/5181)
-- fix Uploader not trigger oversize event when upload same file [\#5177](https://github.com/youzan/vant/pull/5177)
-- fix less import issue [\#5157](https://github.com/youzan/vant/pull/5157)
-
-
-### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
-`2019-11-30`
+### [v2.3.0](https://github.com/youzan/vant/tree/v2.3.0)
+`2019-12-20`
 
 **Style**
 
@@ -75,29 +9,58 @@ Upgrading the style of business components:
 
 - AddressEdit
 - Card
+- CouponList
 - ContactList
 - ContactCard
 - ContactEdit
 - SubmitBar
 
+![](https://b.yzcdn.cn/vant/style-update-2.3.0-2.png)
+
 **Features**
 
-- Card: add price-top slot [\#5134](https://github.com/youzan/vant/pull/5134)
-- Circle: add stroke-linecap prop [\#5087](https://github.com/youzan/vant/pull/5087)
-- CountDown: support SS and S format [\#5154](https://github.com/youzan/vant/pull/5154)
-- Sku: add new start-sale-num prop [\#5105](https://github.com/youzan/vant/pull/5105)
-- SubmitBar: add text-align prop [\#5130](https://github.com/youzan/vant/pull/5130)
+- use [@vant/cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) to build pacakge
 - AddressList: add default-tag-text prop [\#5106](https://github.com/youzan/vant/pull/5106)
+- Card: add price-top slot [\#5134](https://github.com/youzan/vant/pull/5134)
+- Checkbox: improve toggleAll perf [\#5285](https://github.com/youzan/vant/pull/5285)
+- Circle: add stroke-linecap prop [\#5087](https://github.com/youzan/vant/pull/5087)
+- CouponList: add show-count prop [\#5139](https://github.com/youzan/vant/pull/5139)
+- CountDown: support SS and S format [\#5154](https://github.com/youzan/vant/pull/5154)
 - ContactList: add default-tag-text prop [\#5089](https://github.com/youzan/vant/pull/5089)
-- ContactCard: add show-set-default、set-default-label prop [\#5083](https://github.com/youzan/vant/pull/5083)
+- ContactCard: add show-set-default prop [\#5083](https://github.com/youzan/vant/pull/5083)
+- ContactCard: add set-default-label prop [\#5083](https://github.com/youzan/vant/pull/5083)
+- Sku: add start-sale-num prop [\#5105](https://github.com/youzan/vant/pull/5105)
+- Sku: add resetSelectedSku method [\#5318](https://github.com/youzan/vant/pull/5318)
+- SubmitBar: add text-align prop [\#5130](https://github.com/youzan/vant/pull/5130)
+- SwipeCell: add open event [\#5324](https://github.com/youzan/vant/pull/5324)
+- SwipeCell: add before-close prop [\#5320](https://github.com/youzan/vant/pull/5320)
+- Tab: add dot prop [\#5272](https://github.com/youzan/vant/pull/5272)
+- Tab: add info prop [\#5274](https://github.com/youzan/vant/pull/5274)
+- Tab: add rendered event [\#5315](https://github.com/youzan/vant/pull/5315)
+- Tab: add scrollspy prop [\#5273](https://github.com/youzan/vant/pull/5273)
 - Toast: improve type definitions [\#5086](https://github.com/youzan/vant/pull/5086)
 
 **Bug Fixes**
 
+- fix ActionSheet should not submit form [\#5181](https://github.com/youzan/vant/pull/5181)
+- fix Card allow use bottom slot without price or num [\#5116](https://github.com/youzan/vant/pull/5116)
+- fix Dialog show not trigger close event when hidden [\#5267](https://github.com/youzan/vant/pull/5267)
+- fix DropdownMenu incorrect menu position when scroll [\#5313](https://github.com/youzan/vant/pull/5313)
+- fix Icon medal typo [\#5242](https://github.com/youzan/vant/pull/5242)
+- fix NumberKeyboard should not trigger blur event when hidden [\#5110](https://github.com/youzan/vant/pull/5110)
+- fix Picker should not submit form [\#5182](https://github.com/youzan/vant/pull/5182)
+- fix Popup should reopen when activated [\#5286](https://github.com/youzan/vant/pull/5286)
+- fix Stepper should format value when max、min changed [\#5257](https://github.com/youzan/vant/pull/5257)
+- fix Sku should check state when reset [\#5231](https://github.com/youzan/vant/pull/5231)
+- fix Switch incorrect size prop type [\#5229](https://github.com/youzan/vant/pull/5229)
+- fix SubmitBar incorrect decimal when price is integer [\#5224](https://github.com/youzan/vant/pull/5224)
+- fix Sku stepper value must be integer [\#5202](https://github.com/youzan/vant/pull/5202)
+- fix Sku stepper should not emit invalid num [\#5210](https://github.com/youzan/vant/pull/5210)
+- fix Stepper should not submit form [\#5183](https://github.com/youzan/vant/pull/5183)
 - fix TreeSelect should sync value before trigger click-item event [\#5153](https://github.com/youzan/vant/pull/5153)
 - fix TouchEmulator compatibility issues on firefox [\#5118](https://github.com/youzan/vant/pull/5118)
-- fix Card allow use bottom slot without price or num [\#5116](https://github.com/youzan/vant/pull/5116)
-- fix NumberKeyboard should not trigger blur event when hidden [\#5110](https://github.com/youzan/vant/pull/5110)
+- fix Uploader not trigger oversize event when upload same file [\#5177](https://github.com/youzan/vant/pull/5177)
+- fix less import issue [\#5157](https://github.com/youzan/vant/pull/5157)
 
 
 ### [v2.2.16](https://github.com/youzan/vant/tree/v2.2.16)

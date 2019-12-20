@@ -22,7 +22,12 @@ Vue.use(CouponCell).use(CouponList);
 />
 
 <!-- Coupon List -->
-<van-popup v-model="showList" position="bottom">
+<van-popup
+  v-model="showList"
+  round
+  position="bottom"
+  style="height: 90%; padding-top: 4px;"
+>
   <van-coupon-list
     :coupons="coupons"
     :chosen-coupon="chosenCoupon"

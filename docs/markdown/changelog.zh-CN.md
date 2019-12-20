@@ -10,75 +10,8 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-
-### [v2.3.0-beta.5](https://github.com/youzan/vant/tree/v2.3.0-beta.5)
-`2019-12-16`
-
-**Features**
-
-- Tab: 新增 dot 属性 [\#5272](https://github.com/youzan/vant/pull/5272)
-- Tab: 新增 info 属性 [\#5274](https://github.com/youzan/vant/pull/5274)
-- Tab: 新增 scrollspy 属性 [\#5273](https://github.com/youzan/vant/pull/5273)
-- Checkbox: 优化 toggleAll 性能 [\#5285](https://github.com/youzan/vant/pull/5285)
-
-**Bug Fixes**
-
-- 修复 Popup 在 activated 后未重新打开的问题 [\#5286](https://github.com/youzan/vant/pull/5286)
-
-
-### [v2.3.0-beta.4](https://github.com/youzan/vant/tree/v2.3.0-beta.4)
-`2019-12-13`
-
-**Features**
-
-- 构建流程升级，采用 @vant/cli 进行构建
-
-**Bug Fixes**
-
-- 修复 Icon medal 图标名称拼写错误的问题 [\#5242](https://github.com/youzan/vant/pull/5242)
-- 修复 Dialog 快速点击按钮时可能重复触发 before-close 的问题 [\#5267](https://github.com/youzan/vant/pull/5267)
-- 修复 Stepper 在 max、min 属性变化时未更新输入框值的问题 [\#5257](https://github.com/youzan/vant/pull/5257)
-
-
-### [v2.3.0-beta.3](https://github.com/youzan/vant/tree/v2.3.0-beta.3)
-`2019-12-09`
-
-**Bug Fixes**
-
-- 修复 Sku 重置时未校验数量的问题 [\#5231](https://github.com/youzan/vant/pull/5231)
-- 修复 Switch size 属性未定义 Number 类型的问题 [\#5229](https://github.com/youzan/vant/pull/5229)
-- 修复 SubmitBar 价格为整数时显示错误的问题 [\#5224](https://github.com/youzan/vant/pull/5224)
-- 修复 AddressList isDefault 设置为 0 时显示错误的问题 [\#5232](https://github.com/youzan/vant/pull/5232)
-
-
-### [v2.3.0-beta.2](https://github.com/youzan/vant/tree/v2.3.0-beta.2)
-`2019-12-06`
-
-**Style**
-
-升级以下业务组件的样式：
-
-- CouponList
-
-**Features**
-
-- CouponList: 新增 show-count 属性 [\#5139](https://github.com/youzan/vant/pull/5139)
-
-**Bug Fixes**
-
-- 修复 Sku 步进器可能输入小数的问题 [\#5202](https://github.com/youzan/vant/pull/5202)
-- 修复 Sku 步进器事件可能抛出小数的问题 [\#5210](https://github.com/youzan/vant/pull/5210)
-- 修复 Card 价格字体错误的问题 [\#5194](https://github.com/youzan/vant/pull/5194)
-- 修复 AddressList 左右边距错误的问题 [\#5204](https://github.com/youzan/vant/pull/5204)
-- 修复 Picker 按钮会提交表单的问题 [\#5182](https://github.com/youzan/vant/pull/5182)
-- 修复 Stepper 按钮会提交表单的问题 [\#5183](https://github.com/youzan/vant/pull/5183)
-- 修复 ActionSheet 按钮会提交表单的问题 [\#5181](https://github.com/youzan/vant/pull/5181)
-- 修复 Uploader 重复上传同张图片时不会触发 oversize 事件的问题 [\#5177](https://github.com/youzan/vant/pull/5177)
-- 修复主题定制时使用低版本 Less 会报错的问题 [\#5157](https://github.com/youzan/vant/pull/5157)
-
-
-### [v2.3.0-beta.1](https://github.com/youzan/vant/tree/v2.3.0-beta.1)
-`2019-11-30`
+### [v2.3.0](https://github.com/youzan/vant/tree/v2.3.0)
+`2019-12-20`
 
 **Style**
 
@@ -86,29 +19,58 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - AddressEdit
 - Card
+- CouponList
 - ContactList
 - ContactCard
 - ContactEdit
 - SubmitBar
 
+![](https://b.yzcdn.cn/vant/style-update-2.3.0-2.png)
+
 **Features**
 
+- 内部构建流程升级，使用 [@vant/cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) 进行构建
+- AddressList: 新增 default-tag-text 属性 [\#5106](https://github.com/youzan/vant/pull/5106)
 - Card: 新增 price-top 插槽 [\#5134](https://github.com/youzan/vant/pull/5134)
+- Checkbox: 优化 toggleAll 性能 [\#5285](https://github.com/youzan/vant/pull/5285)
 - Circle: 新增 stroke-linecap 属性 [\#5087](https://github.com/youzan/vant/pull/5087)
+- CouponList: 新增 show-count 属性 [\#5139](https://github.com/youzan/vant/pull/5139)
+- ContactList: 新增 default-tag-text 属性 [\#5089](https://github.com/youzan/vant/pull/5089)
+- ContactCard: 新增 show-set-default 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
+- ContactCard: 新增 set-default-label 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
 - CountDown: 支持 SS 和 S 格式 [\#5154](https://github.com/youzan/vant/pull/5154)
 - Sku: 新增 new startSaleNum 属性 [\#5105](https://github.com/youzan/vant/pull/5105)
+- Sku: 新增 resetSelectedSku 方法 [\#5318](https://github.com/youzan/vant/pull/5318)
 - SubmitBar: 新增 text-align 属性 [\#5130](https://github.com/youzan/vant/pull/5130)
-- AddressList: 新增 default-tag-text 属性 [\#5106](https://github.com/youzan/vant/pull/5106)
-- ContactList: 新增 default-tag-text 属性 [\#5089](https://github.com/youzan/vant/pull/5089)
-- ContactCard: 新增 show-set-default、set-default-label 属性 [\#5083](https://github.com/youzan/vant/pull/5083)
+- SwipeCell: 新增 open 事件 [\#5324](https://github.com/youzan/vant/pull/5324)
+- SwipeCell: 新增 before-close 属性 [\#5320](https://github.com/youzan/vant/pull/5320)
+- Tab: 新增 dot 属性 [\#5272](https://github.com/youzan/vant/pull/5272)
+- Tab: 新增 info 属性 [\#5274](https://github.com/youzan/vant/pull/5274)
+- Tab: 新增 rendered 事件 [\#5315](https://github.com/youzan/vant/pull/5315)
+- Tab: 新增 scrollspy 属性 [\#5273](https://github.com/youzan/vant/pull/5273)
 - Toast: 完善 TS 类型定义 [\#5086](https://github.com/youzan/vant/pull/5086)
 
 **Bug Fixes**
 
+- 修复 ActionSheet 按钮会提交表单的问题 [\#5181](https://github.com/youzan/vant/pull/5181)
+- 修复 Card 在未使用 price 属性的情况下 bottom 插槽不生效的问题 [\#5116](https://github.com/youzan/vant/pull/5116)
+- 修复 Dialog 快速点击按钮时可能重复触发 before-close 的问题 [\#5267](https://github.com/youzan/vant/pull/5267)
+- 修复 DropdownMenu 在页面滚动时菜单位置错误的问题 [\#5313](https://github.com/youzan/vant/pull/5313)
+- 修复 Icon medal 图标名称拼写错误的问题 [\#5242](https://github.com/youzan/vant/pull/5242)
+- 修复 NumberKeyboard 在隐藏状态下也会触发 blur 事件的问题 [\#5110](https://github.com/youzan/vant/pull/5110)
+- 修复 Picker 按钮会提交表单的问题 [\#5182](https://github.com/youzan/vant/pull/5182)
+- 修复 Popup 在 activated 后未重新打开的问题 [\#5286](https://github.com/youzan/vant/pull/5286)
+- 修复 Switch size 属性未定义 Number 类型的问题 [\#5229](https://github.com/youzan/vant/pull/5229)
+- 修复 SubmitBar 价格为整数时显示错误的问题 [\#5224](https://github.com/youzan/vant/pull/5224)
+- 修复 Sku 重置时未校验数量的问题 [\#5231](https://github.com/youzan/vant/pull/5231)
+- 修复 Sku 步进器可能输入小数的问题 [\#5202](https://github.com/youzan/vant/pull/5202)
+- 修复 Sku 步进器事件可能抛出小数的问题 [\#5210](https://github.com/youzan/vant/pull/5210)
+- 修复 Stepper 按钮会提交表单的问题 [\#5183](https://github.com/youzan/vant/pull/5183)
+- 修复 Stepper 在 max、min 属性变化时未更新输入框值的问题 [\#5257](https://github.com/youzan/vant/pull/5257)
 - 修复 TreeSelect 事件触发顺序错误的问题 [\#5153](https://github.com/youzan/vant/pull/5153)
 - 修复 TouchEmulator 在 Firefox 上的兼容性问题 [\#5118](https://github.com/youzan/vant/pull/5118)
-- 修复 Card 在未使用 price 属性的情况下 bottom 插槽不生效的问题 [\#5116](https://github.com/youzan/vant/pull/5116)
-- 修复 NumberKeyboard 在隐藏状态下也会触发 blur 事件的问题 [\#5110](https://github.com/youzan/vant/pull/5110)
+- 修复 Uploader 重复上传同张图片时不会触发 oversize 事件的问题 [\#5177](https://github.com/youzan/vant/pull/5177)
+- 修复主题定制时使用低版本 Less 会报错的问题 [\#5157](https://github.com/youzan/vant/pull/5157)
 
 
 ### [v2.2.16](https://github.com/youzan/vant/tree/v2.2.16)

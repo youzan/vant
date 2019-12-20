@@ -9,7 +9,9 @@
 
       <van-popup
         v-model="showList"
+        round
         position="bottom"
+        style="height: 90%; padding-top: 4px;"
       >
         <van-coupon-list
           :coupons="coupons"
@@ -124,11 +126,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-.demo-coupon-list {
-  .van-popup {
-    height: 100%;
-  }
-}
-</style>
