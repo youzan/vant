@@ -1,5 +1,13 @@
 # Changelog
 
+### [v2.3.3](https://github.com/youzan/vant/tree/v2.3.3)
+`2019-12-21`
+
+**Bug Fixes**
+
+- fix compile error when using babel-plugin-import
+
+
 ### [v2.3.2](https://github.com/youzan/vant/tree/v2.3.2)
 `2019-12-20`
 

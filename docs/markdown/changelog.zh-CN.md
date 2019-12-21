@@ -11,6 +11,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.3.3](https://github.com/youzan/vant/tree/v2.3.3)
+`2019-12-21`
+
+**Bug Fixes**
+
+- 修复 babel-plugin-import 按需引入部分组件时编译报错的问题
+
+
 ### [v2.3.2](https://github.com/youzan/vant/tree/v2.3.2)
 `2019-12-20`
 
