@@ -6,6 +6,7 @@ import { join, relative } from 'path';
 import { outputFileSync } from 'fs-extra';
 import { getComponents, replaceExt } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
+import { checkStyleExists } from './gen-style-deps-map';
 import {
   ES_DIR,
   SRC_DIR,
@@ -17,7 +18,13 @@ function getDeps(component: string): string[] {
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
 
   if (styleDepsJson.map[component]) {
-    return [...styleDepsJson.map[component], component];
+    const deps = styleDepsJson.map[component].slice(0);
+
+    if (checkStyleExists(component)) {
+      deps.push(component);
+    }
+
+    return deps;
   }
 
   return [];
