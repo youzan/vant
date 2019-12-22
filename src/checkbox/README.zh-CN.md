@@ -232,7 +232,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggleAll | 切换所有复选框的选中状态 | checked?: boolean | - |
+| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
 
 ### Checkbox 方法
 
@@ -240,4 +240,4 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggle | 切换选中状态 | checked?: boolean | - |
+| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
