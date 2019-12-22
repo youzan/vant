@@ -51,6 +51,15 @@ export default {
 </van-radio-group>
 ```
 
+### Custom Shape
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" shape="square">Radio 1</van-radio>
+  <van-radio name="2" shape="square">Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Custom Color
 
 ```html

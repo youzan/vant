@@ -21,6 +21,13 @@
       </van-radio-group>
     </demo-block>
 
+    <demo-block :title="$t('customShape')">
+      <van-radio-group v-model="radioShape" class="demo-radio-group">
+        <van-radio name="1" shape="square">{{ $t('radio') }} 1</van-radio>
+        <van-radio name="2" shape="square">{{ $t('radio') }} 2</van-radio>
+      </van-radio-group>
+    </demo-block>
+
     <demo-block :title="$t('customColor')">
       <van-radio-group v-model="radio3" class="demo-radio-group">
         <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
@@ -77,6 +84,7 @@ export default {
       customIcon: '自定义图标',
       customIconSize: '自定义大小',
       customColor: '自定义颜色',
+      customShape: '自定义形状',
       withCell: '与 Cell 组件一起使用',
       disabledLabelClick: '禁用单选框文本点击'
     },
@@ -87,6 +95,7 @@ export default {
       customIcon: 'Custom Icon',
       customIconSize: 'Custom Icon Size',
       customColor: 'Custom Color',
+      customShape: 'Custom Shape',
       withCell: 'Inside a Cell',
       disabledLabelClick: 'Disable the click event of label'
     }
@@ -101,6 +110,7 @@ export default {
       radio5: '1',
       radioLabel: '1',
       radioIconSize: '1',
+      radioShape: '1',
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
         inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
