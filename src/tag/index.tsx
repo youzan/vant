@@ -50,12 +50,13 @@ function Tag(
       class={[bem([classes, type]), { [BORDER_SURROUND]: plain }]}
       {...inherit(ctx, true)}
     >
-      {slots.default && slots.default()}
+      {slots.default?.()}
       {props.closeable && (
         <Icon
           name="cross"
           class={bem('close')}
-          onClick={() => {
+          onClick={(event: PointerEvent) => {
+            event.stopPropagation();
             emit(ctx, 'close');
           }}
         />
