@@ -13,6 +13,12 @@
       </van-checkbox>
     </demo-block>
 
+    <demo-block :title="$t('disabledLabelClick')">
+      <van-checkbox v-model="checkboxLabel" label-disabled>
+        {{ $t('checkbox') }}
+      </van-checkbox>
+    </demo-block>
+
     <demo-block :title="$t('customShape')">
       <van-checkbox v-model="checkboxShape" shape="square">
         {{ $t('customColor') }}
@@ -22,6 +28,12 @@
     <demo-block :title="$t('customColor')">
       <van-checkbox v-model="checkbox2" checked-color="#07c160">
         {{ $t('customColor') }}
+      </van-checkbox>
+    </demo-block>
+
+    <demo-block :title="$t('customIconSize')">
+      <van-checkbox v-model="checboxIcon" icon-size="25px">
+        {{ $t('customIconSize') }}
       </van-checkbox>
     </demo-block>
 
@@ -89,6 +101,7 @@ export default {
     'zh-CN': {
       checkbox: '复选框',
       customIcon: '自定义图标',
+      customIconSize: '自定义大小',
       customColor: '自定义颜色',
       customShape: '自定义形状',
       title3: '复选框组',
@@ -96,11 +109,13 @@ export default {
       title5: '搭配单元格组件使用',
       toggleAll: '全选与反选',
       checkAll: '全选',
-      inverse: '反选'
+      inverse: '反选',
+      disabledLabelClick: '禁用复选框文本点击'
     },
     'en-US': {
       checkbox: 'Checkbox',
       customIcon: 'Custom Icon',
+      customIconSize: 'Custom Icon Size',
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
       title3: 'Checkbox Group',
@@ -108,7 +123,8 @@ export default {
       title5: 'Inside a Cell',
       toggleAll: 'Toggle All',
       checkAll: 'Check All',
-      inverse: 'Inverse'
+      inverse: 'Inverse',
+      disabledLabelClick: 'Disable the click event of label'
     }
   },
 
@@ -118,6 +134,8 @@ export default {
       checkbox2: true,
       checkbox3: true,
       checkboxShape: true,
+      checkboxLabel: true,
+      checboxIcon: true,
       list: [
         'a',
         'b',

@@ -64,6 +64,13 @@
       <van-button plain color="#7232dd" :text="$t('pure')" />
       <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" :text="$t('gradient')" />
     </demo-block>
+
+    <demo-block :title="$t('blockElement')">
+      <div class="demo-button-row">
+        <van-button type="primary">{{ $t('normal') }}</van-button>
+      </div>
+      <van-button type="primary" block>{{ $t('blockElement') }}</van-button>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -96,7 +103,8 @@ export default {
       vueRoute: '路由跳转',
       customColor: '自定义颜色',
       pure: '单色按钮',
-      gradient: '渐变色按钮'
+      gradient: '渐变色按钮',
+      blockElement: '块级元素按钮'
     },
     'en-US': {
       type: 'Type',
@@ -124,7 +132,8 @@ export default {
       vueRoute: 'Vue Router',
       customColor: 'Custom Color',
       pure: 'Pure',
-      gradient: 'Gradient'
+      gradient: 'Gradient',
+      blockElement: 'Display as a block element'
     }
   }
 };

@@ -33,6 +33,12 @@ export default {
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
+### Disabled Label Click
+
+```html
+<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
+```
+
 ### Custom Shape
 
 ```html
@@ -43,6 +49,12 @@ export default {
 
 ```html
 <van-checkbox v-model="checked" checked-color="#07c160">Checkbox</van-checkbox>
+```
+
+### Custom Icon Size
+
+```html
+<van-checkbox v-model="checked" icon-size="25px">Checkbox</van-checkbox>
 ```
 
 ### Custom Icon

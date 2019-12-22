@@ -42,12 +42,30 @@ export default {
 </van-radio-group>
 ```
 
+### Disabled Label Click
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" icon-disabled>Radio 1</van-radio>
+  <van-radio name="2" icon-disabled>Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Custom Color
 
 ```html
 <van-radio-group v-model="radio">
   <van-radio name="1" checked-color="#07c160">Radio 1</van-radio>
   <van-radio name="2" checked-color="#07c160">Radio 2</van-radio>
+</van-radio-group>
+```
+
+### Custom Icon Size
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2" icon-size="25px">Radio 2</van-radio>
 </van-radio-group>
 ```
 

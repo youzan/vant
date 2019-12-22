@@ -94,6 +94,12 @@ Vue.use(Cell).use(CellGroup);
 </van-cell>
 ```
 
+### Vertical Center
+
+```html
+<van-cell center title="Cell title" value="Multiple lines content, multiple lines content" />
+```
+
 ## API
 
 ### CellGroup Props

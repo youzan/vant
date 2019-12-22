@@ -44,6 +44,17 @@ export default {
 </van-radio-group>
 ```
 
+### 禁用文本点击
+
+通过设置`label-disabled`属性可以禁用单选框文本点击
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" icon-disabled>单选框 1</van-radio>
+  <van-radio name="2" icon-disabled>单选框 2</van-radio>
+</van-radio-group>
+```
+
 ### 自定义颜色
 
 通过`checked-color`属性设置选中状态的图标颜色
@@ -52,6 +63,17 @@ export default {
 <van-radio-group v-model="radio">
   <van-radio name="1" checked-color="#07c160">单选框 1</van-radio>
   <van-radio name="2" checked-color="#07c160">单选框 2</van-radio>
+</van-radio-group>
+```
+
+### 自定义大小
+
+通过`icon-size`属性可以自定义图标的大小
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2" icon-size="25px">单选框 2</van-radio>
 </van-radio-group>
 ```
 
