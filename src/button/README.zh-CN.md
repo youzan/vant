@@ -109,6 +109,15 @@ Vue.use(Button);
 <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
+### 块级元素按钮
+
+通过`block`属性可以设置按钮的元素类型
+
+```html
+<van-button type="primary" block>块级元素按钮</van-button>
+```
+
+
 ## API
 
 ### Props

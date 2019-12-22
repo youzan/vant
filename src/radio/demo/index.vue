@@ -14,6 +14,13 @@
       </van-radio-group>
     </demo-block>
 
+    <demo-block :title="$t('disabledLabelClick')">
+      <van-radio-group v-model="radioLabel" class="demo-radio-group">
+        <van-radio name="1" label-disabled>{{ $t('radio') }} 1</van-radio>
+        <van-radio name="2" label-disabled>{{ $t('radio') }} 2</van-radio>
+      </van-radio-group>
+    </demo-block>
+
     <demo-block :title="$t('customColor')">
       <van-radio-group v-model="radio3" class="demo-radio-group">
         <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
@@ -35,6 +42,13 @@
             <img :src="checked ? icon.active : icon.inactive">
           </template>
         </van-radio>
+      </van-radio-group>
+    </demo-block>
+
+    <demo-block :title="$t('customIconSize')">
+      <van-radio-group v-model="radioIconSize" class="demo-radio-group">
+        <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
+        <van-radio name="2" checked-color="#07c160" icon-size="25px">{{ $t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -61,16 +75,20 @@ export default {
       text1: '未选中禁用',
       text2: '选中且禁用',
       customIcon: '自定义图标',
+      customIconSize: '自定义大小',
       customColor: '自定义颜色',
-      withCell: '与 Cell 组件一起使用'
+      withCell: '与 Cell 组件一起使用',
+      disabledLabelClick: '禁用单选框文本点击'
     },
     'en-US': {
       radio: 'Radio',
       text1: 'Disabled',
       text2: 'Disabled and checked',
       customIcon: 'Custom Icon',
+      customIconSize: 'Custom Icon Size',
       customColor: 'Custom Color',
-      withCell: 'Inside a Cell'
+      withCell: 'Inside a Cell',
+      disabledLabelClick: 'Disable the click event of label'
     }
   },
 
@@ -81,6 +99,8 @@ export default {
       radio3: '1',
       radio4: '1',
       radio5: '1',
+      radioLabel: '1',
+      radioIconSize: '1',
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
         inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'

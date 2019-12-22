@@ -89,6 +89,11 @@ Vue.use(Button);
 <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">Gradient</van-button>
 ```
 
+### Block Element
+```html
+<van-button type="primary" block>Display as a block element</van-button>
+```
+
 ## API
 
 ### Props
