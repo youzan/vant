@@ -262,6 +262,7 @@ export default createComponent({
       return area;
     },
 
+    // @exposed-api
     reset(code) {
       this.code = code || '';
       this.setValues();
