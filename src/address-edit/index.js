@@ -233,6 +233,7 @@ export default createComponent({
       }
     },
 
+    // @exposed-api
     setAddressDetail(value) {
       this.data.addressDetail = value;
     },

@@ -10,7 +10,7 @@ import { ImagePreview } from './image-preview';
 export const version: string;
 export function install (vue: typeof Vue): void
 export class ActionSheet extends VanComponent {}
-export class AddressEdit extends VanComponent {}
+
 export class AddressList extends VanComponent {}
 export class Area extends VanComponent {}
 export class Button extends VanComponent {}
@@ -84,6 +84,7 @@ export class Tabs extends VanComponent {}
 export class Tag extends VanComponent {}
 export class TreeSelect extends VanComponent {}
 export class Uploader extends VanComponent {}
+
 export {
   Toast,
   Dialog,

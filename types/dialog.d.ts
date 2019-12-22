@@ -1,3 +1,5 @@
+import { VanComponent } from './component';
+
 type DialogAction = 'confirm' | 'cancel';
 type DialogDone = (close?: boolean) => void;
 
@@ -32,7 +34,7 @@ export interface Dialog {
   install(): void;
   setDefaultOptions(options: DialogOptions): void;
   resetDefaultOptions(): void;
-  Component: any;
+  Component: VanComponent;
 }
 
 declare module 'vue/types/vue' {
