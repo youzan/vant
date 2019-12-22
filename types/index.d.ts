@@ -15,6 +15,7 @@ import { Locale } from './locale';
 import { Notify } from './notify';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
+import { Tabs } from './tabs';
 import { Toast } from './toast';
 
 export const version: string;
@@ -81,7 +82,6 @@ export class SwitchCell extends VanComponent {}
 export class Tab extends VanComponent {}
 export class Tabbar extends VanComponent {}
 export class TabbarItem extends VanComponent {}
-export class Tabs extends VanComponent {}
 export class Tag extends VanComponent {}
 export class TreeSelect extends VanComponent {}
 export class Uploader extends VanComponent {}
@@ -102,5 +102,6 @@ export {
   Notify,
   Swipe,
   SwipeCell,
+  Tabs,
   Toast
 };
