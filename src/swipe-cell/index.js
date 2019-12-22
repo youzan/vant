@@ -48,6 +48,10 @@ export default createComponent({
     }
   },
 
+  mounted() {
+    this.bindTouchEvent(this.$el);
+  },
+
   methods: {
     getWidthByRef(ref) {
       if (this.$refs[ref]) {
@@ -227,14 +231,7 @@ export default createComponent({
     };
 
     return (
-      <div
-        class={bem()}
-        onClick={this.getClickHandler('cell')}
-        onTouchstart={this.onTouchStart}
-        onTouchmove={this.onTouchMove}
-        onTouchend={this.onTouchEnd}
-        onTouchcancel={this.onTouchEnd}
-      >
+      <div class={bem()} onClick={this.getClickHandler('cell')}>
         <div class={bem('wrapper')} style={wrapperStyle}>
           {this.genLeftPart()}
           {this.slots()}
