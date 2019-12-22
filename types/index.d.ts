@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import { VanComponent } from './component';
+import { AddressEdit } from './address-edit';
+import { Area } from './area';
 import { Toast } from './toast';
 import { Dialog } from './dialog';
 import { Notify } from './notify';
@@ -8,11 +10,9 @@ import { Lazyload } from './lazyload';
 import { ImagePreview } from './image-preview';
 
 export const version: string;
-export function install (vue: typeof Vue): void
+export function install(vue: typeof Vue): void;
 export class ActionSheet extends VanComponent {}
-
 export class AddressList extends VanComponent {}
-export class Area extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
@@ -86,10 +86,12 @@ export class TreeSelect extends VanComponent {}
 export class Uploader extends VanComponent {}
 
 export {
-  Toast,
+  AddressEdit,
+  Area,
   Dialog,
-  Notify,
-  Locale,
+  ImagePreview,
   Lazyload,
-  ImagePreview
+  Locale,
+  Notify,
+  Toast
 };

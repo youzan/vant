@@ -85,7 +85,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance 
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| reset | Reset all options by code | code: string | - |
+| reset | Reset all options by code | code?: string | - |
 
 ### areaList Data Structure
 
