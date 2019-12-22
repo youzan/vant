@@ -4,6 +4,7 @@ import { AddressEdit } from './address-edit';
 import { Area } from './area';
 import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
+import { CountDown } from './count-down';
 import { Dialog } from './dialog';
 import { ImagePreview } from './image-preview';
 import { Lazyload } from './lazyload';
@@ -19,9 +20,6 @@ export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
 export class CellGroup extends VanComponent {}
-export class CountDown extends VanComponent {}
-export class Divider extends VanComponent {}
-export class SwipeCell extends VanComponent {}
 export class Circle extends VanComponent {}
 export class Col extends VanComponent {}
 export class Collapse extends VanComponent {}
@@ -32,6 +30,7 @@ export class ContactList extends VanComponent {}
 export class CouponCell extends VanComponent {}
 export class CouponList extends VanComponent {}
 export class DatetimePicker extends VanComponent {}
+export class Divider extends VanComponent {}
 export class DropdownItem extends VanComponent {}
 export class DropdownMenu extends VanComponent {}
 export class Field extends VanComponent {}
@@ -75,6 +74,7 @@ export class Sticky extends VanComponent {}
 export class SubmitBar extends VanComponent {}
 export class Swipe extends VanComponent {}
 export class SwipeItem extends VanComponent {}
+export class SwipeCell extends VanComponent {}
 export class Switch extends VanComponent {}
 export class SwitchCell extends VanComponent {}
 export class Tab extends VanComponent {}
@@ -90,6 +90,7 @@ export {
   Area,
   Checkbox,
   CheckboxGroup,
+  CountDown,
   Dialog,
   ImagePreview,
   Lazyload,
