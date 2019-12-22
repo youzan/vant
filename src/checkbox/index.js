@@ -33,6 +33,7 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     toggle(checked = !this.checked) {
       // When toggle method is called multiple times at the same time,
       // only the last call is valid.

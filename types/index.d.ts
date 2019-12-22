@@ -2,12 +2,14 @@ import Vue from 'vue';
 import { VanComponent } from './component';
 import { AddressEdit } from './address-edit';
 import { Area } from './area';
-import { Toast } from './toast';
+import { Checkbox } from './checkbox';
+import { CheckboxGroup } from './checkbox-group';
 import { Dialog } from './dialog';
-import { Notify } from './notify';
-import { Locale } from './locale';
-import { Lazyload } from './lazyload';
 import { ImagePreview } from './image-preview';
+import { Lazyload } from './lazyload';
+import { Locale } from './locale';
+import { Notify } from './notify';
+import { Toast } from './toast';
 
 export const version: string;
 export function install(vue: typeof Vue): void;
@@ -20,8 +22,6 @@ export class CellGroup extends VanComponent {}
 export class CountDown extends VanComponent {}
 export class Divider extends VanComponent {}
 export class SwipeCell extends VanComponent {}
-export class Checkbox extends VanComponent {}
-export class CheckboxGroup extends VanComponent {}
 export class Circle extends VanComponent {}
 export class Col extends VanComponent {}
 export class Collapse extends VanComponent {}
@@ -88,6 +88,8 @@ export class Uploader extends VanComponent {}
 export {
   AddressEdit,
   Area,
+  Checkbox,
+  CheckboxGroup,
   Dialog,
   ImagePreview,
   Lazyload,
