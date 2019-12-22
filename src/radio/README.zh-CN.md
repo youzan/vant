@@ -55,6 +55,17 @@ export default {
 </van-radio-group>
 ```
 
+### 自定义形状
+
+通过`square`属性设置选中状态的图标颜色
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" shape="square">单选框 1</van-radio>
+  <van-radio name="2" shape="square">单选框 2</van-radio>
+</van-radio-group>
+```
+
 ### 自定义颜色
 
 通过`checked-color`属性设置选中状态的图标颜色
