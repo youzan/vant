@@ -130,8 +130,14 @@ export default createComponent({
 
     minOffset() {
       const rect = this.$el.getBoundingClientRect();
-      return (this.vertical ? rect.height : rect.width) - this.size * this.count;
+      return (
+        (this.vertical ? rect.height : rect.width) - this.size * this.count
+      );
     }
+  },
+
+  mounted() {
+    this.bindTouchEvent(this.$refs.track);
   },
 
   methods: {
@@ -344,15 +350,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div
-          ref="track"
-          style={this.trackStyle}
-          class={bem('track')}
-          onTouchstart={this.onTouchStart}
-          onTouchmove={this.onTouchMove}
-          onTouchend={this.onTouchEnd}
-          onTouchcancel={this.onTouchEnd}
-        >
+        <div ref="track" style={this.trackStyle} class={bem('track')}>
           {this.slots()}
         </div>
         {this.genIndicator()}

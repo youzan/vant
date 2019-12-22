@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { on } from '../utils/dom/event';
 
 const MIN_DISTANCE = 10;
 
@@ -42,7 +43,8 @@ export const TouchMixin = Vue.extend({
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);
-      this.direction = this.direction || getDirection(this.offsetX, this.offsetY);
+      this.direction =
+        this.direction || getDirection(this.offsetX, this.offsetY);
     },
 
     resetTouchStatus() {
@@ -51,6 +53,16 @@ export const TouchMixin = Vue.extend({
       this.deltaY = 0;
       this.offsetX = 0;
       this.offsetY = 0;
+    },
+
+    // avoid Vue 2.6 event bubble issues by manually binding events
+    // https://github.com/youzan/vant/issues/3015
+    bindTouchEvent(el: HTMLElement) {
+      const { onTouchStart, onTouchMove, onTouchEnd } = (this as any);
+      on(el, 'touchstart', onTouchStart);
+      on(el, 'touchmove', onTouchMove);
+      on(el, 'touchend', onTouchEnd);
+      on(el, 'touchcancel', onTouchEnd);
     }
   }
 });
