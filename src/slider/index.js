@@ -51,6 +51,10 @@ export default createComponent({
     this.updateValue(this.value);
   },
 
+  mounted() {
+    this.bindTouchEvent(this.$refs.wrapper);
+  },
+
   methods: {
     onTouchStart(event) {
       if (this.disabled) {
@@ -157,6 +161,7 @@ export default createComponent({
       >
         <div class={bem('bar')} style={barStyle}>
           <div
+            ref="wrapper"
             role="slider"
             tabindex={this.disabled ? -1 : 0}
             aria-valuemin={this.min}
@@ -164,10 +169,6 @@ export default createComponent({
             aria-valuemax={this.max}
             aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
             class={bem('button-wrapper')}
-            onTouchstart={this.onTouchStart}
-            onTouchmove={this.onTouchMove}
-            onTouchend={this.onTouchEnd}
-            onTouchcancel={this.onTouchEnd}
           >
             {this.slots('button') || <div class={bem('button')} />}
           </div>
