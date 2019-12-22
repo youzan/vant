@@ -79,34 +79,40 @@ export default createComponent({
       return this.children[index];
     },
 
+    // @exposed-api
     // get column value by index
     getColumnValue(index) {
       const column = this.getColumn(index);
       return column && column.getValue();
     },
 
+    // @exposed-api
     // set column value by index
     setColumnValue(index, value) {
       const column = this.getColumn(index);
       column && column.setValue(value);
     },
 
+    // @exposed-api
     // get column option index by column index
     getColumnIndex(columnIndex) {
       return (this.getColumn(columnIndex) || {}).currentIndex;
     },
 
+    // @exposed-api
     // set column option index by column index
     setColumnIndex(columnIndex, optionIndex) {
       const column = this.getColumn(columnIndex);
       column && column.setIndex(optionIndex);
     },
 
+    // @exposed-api
     // get options of column by index
     getColumnValues(index) {
       return (this.children[index] || {}).options;
     },
 
+    // @exposed-api
     // set options of column by index
     setColumnValues(index, options) {
       const column = this.children[index];
@@ -119,11 +125,13 @@ export default createComponent({
       }
     },
 
+    // @exposed-api
     // get values of all columns
     getValues() {
       return this.children.map(child => child.getValue());
     },
 
+    // @exposed-api
     // set values of all columns
     setValues(values) {
       values.forEach((value, index) => {
@@ -131,11 +139,13 @@ export default createComponent({
       });
     },
 
+    // @exposed-api
     // get indexes of all columns
     getIndexes() {
       return this.children.map(child => child.currentIndex);
     },
 
+    // @exposed-api
     // set indexes of all columns
     setIndexes(indexes) {
       indexes.forEach((optionIndex, columnIndex) => {
