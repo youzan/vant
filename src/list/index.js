@@ -65,6 +65,7 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     check() {
       this.$nextTick(() => {
         if (this.innerLoading || this.finished || this.error) {

@@ -10,6 +10,7 @@ import { DropdownItem } from './dropdown-item';
 import { Field } from './field';
 import { ImagePreview } from './image-preview';
 import { Lazyload } from './lazyload';
+import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
 import { Toast } from './toast';
@@ -44,7 +45,6 @@ export class Image extends VanComponent {}
 export class IndexAnchor extends VanComponent {}
 export class IndexBar extends VanComponent {}
 export class Info extends VanComponent {}
-export class List extends VanComponent {}
 export class Loading extends VanComponent {}
 export class NavBar extends VanComponent {}
 export class NoticeBar extends VanComponent {}
@@ -96,6 +96,7 @@ export {
   Field,
   ImagePreview,
   Lazyload,
+  List,
   Locale,
   Notify,
   Toast
