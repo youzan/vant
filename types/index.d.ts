@@ -6,6 +6,8 @@ import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
 import { CountDown } from './count-down';
 import { Dialog } from './dialog';
+import { DropdownItem } from './dropdown-item';
+import { Field } from './field';
 import { ImagePreview } from './image-preview';
 import { Lazyload } from './lazyload';
 import { Locale } from './locale';
@@ -31,9 +33,7 @@ export class CouponCell extends VanComponent {}
 export class CouponList extends VanComponent {}
 export class DatetimePicker extends VanComponent {}
 export class Divider extends VanComponent {}
-export class DropdownItem extends VanComponent {}
 export class DropdownMenu extends VanComponent {}
-export class Field extends VanComponent {}
 export class Grid extends VanComponent {}
 export class GridItem extends VanComponent {}
 export class GoodsAction extends VanComponent {}
@@ -92,6 +92,8 @@ export {
   CheckboxGroup,
   CountDown,
   Dialog,
+  DropdownItem,
+  Field,
   ImagePreview,
   Lazyload,
   Locale,
