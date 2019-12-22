@@ -56,6 +56,7 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     toggle(show = !this.showPopup, options = {}) {
       if (show === this.showPopup) {
         return;
