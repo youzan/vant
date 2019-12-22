@@ -64,6 +64,7 @@ export default createComponent({
   },
 
   mounted() {
+    this.bindTouchEvent(this.$refs.track);
     this.scrollEl = getScrollEventTarget(this.$el);
   },
 
@@ -162,14 +163,7 @@ export default createComponent({
 
     return (
       <div class={bem()}>
-        <div
-          class={bem('track')}
-          style={style}
-          onTouchstart={this.onTouchStart}
-          onTouchmove={this.onTouchMove}
-          onTouchend={this.onTouchEnd}
-          onTouchcancel={this.onTouchEnd}
-        >
+        <div ref="track" class={bem('track')} style={style}>
           <div class={bem('head')}>{Status}</div>
           {this.slots()}
         </div>
