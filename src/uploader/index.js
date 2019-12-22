@@ -212,6 +212,7 @@ export default createComponent({
       });
     },
 
+    // @exposed-api
     closeImagePreview() {
       if (this.imagePreview) {
         this.imagePreview.close();

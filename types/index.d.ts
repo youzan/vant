@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import Vue from 'vue';
 import { VanComponent } from './component';
 import { AddressEdit } from './address-edit';
@@ -17,6 +18,7 @@ import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
 import { Tabs } from './tabs';
 import { Toast } from './toast';
+import { Uploader } from './uploader';
 
 export const version: string;
 export function install(vue: typeof Vue): void;
@@ -84,7 +86,6 @@ export class Tabbar extends VanComponent {}
 export class TabbarItem extends VanComponent {}
 export class Tag extends VanComponent {}
 export class TreeSelect extends VanComponent {}
-export class Uploader extends VanComponent {}
 
 export {
   AddressEdit,
@@ -103,5 +104,6 @@ export {
   Swipe,
   SwipeCell,
   Tabs,
-  Toast
+  Toast,
+  Uploader
 };
