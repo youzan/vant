@@ -83,12 +83,14 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
     focus() {
       if (this.$refs.input) {
         this.$refs.input.focus();
       }
     },
 
+    // @exposed-api
     blur() {
       if (this.$refs.input) {
         this.$refs.input.blur();
