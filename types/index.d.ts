@@ -14,6 +14,8 @@ import { Lazyload } from './lazyload';
 import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
+import { Picker } from './picker';
+import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
 import { Tabs } from './tabs';
@@ -59,7 +61,6 @@ export class Overlay extends VanComponent {}
 export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
-export class Picker extends VanComponent {}
 export class Popup extends VanComponent {}
 export class Progress extends VanComponent {}
 export class PullRefresh extends VanComponent {}
@@ -71,7 +72,6 @@ export class Search extends VanComponent {}
 export class Sidebar extends VanComponent {}
 export class SidebarItem extends VanComponent {}
 export class Skeleton extends VanComponent {}
-export class Sku extends VanComponent {}
 export class Slider extends VanComponent {}
 export class Step extends VanComponent {}
 export class Stepper extends VanComponent {}
@@ -101,6 +101,8 @@ export {
   List,
   Locale,
   Notify,
+  Picker,
+  Sku,
   Swipe,
   SwipeCell,
   Tabs,
