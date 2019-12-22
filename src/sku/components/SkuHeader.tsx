@@ -5,7 +5,7 @@ import { BORDER_BOTTOM } from '../../utils/constant';
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../../utils/types';
-import { SkuData, SkuGoodsData, SelectedSkuData } from '../type';
+import { SkuData, SkuGoodsData, SelectedSkuData } from '../../../types/sku';
 
 export type SkuHeaderProps = {
   sku: SkuData;

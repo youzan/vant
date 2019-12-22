@@ -5,7 +5,7 @@ import { BORDER_BOTTOM } from '../../utils/constant';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../../utils/types';
-import { SkuTreeItemData } from '../type';
+import { SkuTreeItemData } from '../../../types/sku';
 
 export type SkuRowProps = {
   skuRow: SkuTreeItemData;
