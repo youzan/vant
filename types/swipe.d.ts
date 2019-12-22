@@ -6,5 +6,6 @@ export type SwipeToOptions = {
 
 export class Swipe extends VanComponent {
   swipeTo(index: number, options?: SwipeToOptions): void;
+
   resize(): void;
 }

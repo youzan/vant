@@ -13,7 +13,7 @@ export type NotifyOptions = {
   onClose?: (() => void) | null;
   onOpened?: (() => void) | null;
   onClick?: ((event: Event) => void) | null;
-}
+};
 
 export interface VanNotify extends Vue {
   message: NotifyMessage;
@@ -34,7 +34,7 @@ export interface Notify {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $notify: Notify
+    $notify: Notify;
   }
 }
 
