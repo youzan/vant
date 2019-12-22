@@ -79,6 +79,10 @@ export default createComponent({
     }
   },
 
+  mounted() {
+    this.bindTouchEvent(this.$el);
+  },
+
   methods: {
     select(index) {
       if (!this.disabled && !this.readonly && index !== this.value) {
@@ -137,7 +141,15 @@ export default createComponent({
     },
 
     genStar(status, index) {
-      const { icon, color, count, voidIcon, disabled, voidColor, disabledColor } = this;
+      const {
+        icon,
+        color,
+        count,
+        voidIcon,
+        disabled,
+        voidColor,
+        disabledColor
+      } = this;
       const score = index + 1;
       const isFull = status === 'full';
       const isVoid = status === 'void';
@@ -189,13 +201,7 @@ export default createComponent({
 
   render() {
     return (
-      <div
-        class={bem()}
-        tabindex="0"
-        role="radiogroup"
-        onTouchstart={this.onTouchStart}
-        onTouchmove={this.onTouchMove}
-      >
+      <div class={bem()} tabindex="0" role="radiogroup">
         {this.list.map((status, index) => this.genStar(status, index))}
       </div>
     );

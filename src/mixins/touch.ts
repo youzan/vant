@@ -61,8 +61,11 @@ export const TouchMixin = Vue.extend({
       const { onTouchStart, onTouchMove, onTouchEnd } = (this as any);
       on(el, 'touchstart', onTouchStart);
       on(el, 'touchmove', onTouchMove);
-      on(el, 'touchend', onTouchEnd);
-      on(el, 'touchcancel', onTouchEnd);
+
+      if (onTouchEnd) {
+        on(el, 'touchend', onTouchEnd);
+        on(el, 'touchcancel', onTouchEnd);
+      }
     }
   }
 });
