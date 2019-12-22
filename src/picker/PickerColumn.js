@@ -1,7 +1,7 @@
 import { deepClone } from '../utils/deep-clone';
 import { createNamespace, isObj } from '../utils';
 import { range } from '../utils/format/number';
-import { on, preventDefault } from '../utils/dom/event';
+import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
@@ -61,12 +61,7 @@ export default createComponent({
   },
 
   mounted() {
-    // avoid Vue 2.6 event bubble issues by manually binding events
-    // https://github.com/youzan/vant/issues/3015
-    on(this.$el, 'touchstart', this.onTouchStart);
-    on(this.$el, 'touchmove', this.onTouchMove);
-    on(this.$el, 'touchend', this.onTouchEnd);
-    on(this.$el, 'touchcancel', this.onTouchEnd);
+    this.bindTouchEvent(this.$el);
   },
 
   destroyed() {
