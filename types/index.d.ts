@@ -13,11 +13,13 @@ import { Lazyload } from './lazyload';
 import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
+import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
 import { Toast } from './toast';
 
 export const version: string;
 export function install(vue: typeof Vue): void;
+
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
 export class Button extends VanComponent {}
@@ -73,7 +75,6 @@ export class Stepper extends VanComponent {}
 export class Steps extends VanComponent {}
 export class Sticky extends VanComponent {}
 export class SubmitBar extends VanComponent {}
-export class Swipe extends VanComponent {}
 export class SwipeItem extends VanComponent {}
 export class Switch extends VanComponent {}
 export class SwitchCell extends VanComponent {}
@@ -99,6 +100,7 @@ export {
   List,
   Locale,
   Notify,
+  Swipe,
   SwipeCell,
   Toast
 };
