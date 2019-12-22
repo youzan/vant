@@ -1,7 +1,7 @@
 import { deepClone } from '../utils/deep-clone';
 import { createNamespace, isObj } from '../utils';
 import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { on, preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
@@ -58,6 +58,15 @@ export default createComponent({
     }
 
     this.setIndex(this.currentIndex);
+  },
+
+  mounted() {
+    // avoid Vue 2.6 event bubble issues by manually binding events
+    // https://github.com/youzan/vant/issues/3015
+    on(this.$el, 'touchstart', this.onTouchStart);
+    on(this.$el, 'touchmove', this.onTouchMove);
+    on(this.$el, 'touchend', this.onTouchEnd);
+    on(this.$el, 'touchcancel', this.onTouchEnd);
   },
 
   destroyed() {
@@ -127,7 +136,8 @@ export default createComponent({
       const distance = this.offset - this.momentumOffset;
       const duration = Date.now() - this.touchStartTime;
       const allowMomentum =
-        duration < MOMENTUM_LIMIT_TIME && Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
+        duration < MOMENTUM_LIMIT_TIME &&
+        Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
 
       if (allowMomentum) {
         this.momentum(distance, duration);
@@ -166,7 +176,9 @@ export default createComponent({
     },
 
     getOptionText(option) {
-      return isObj(option) && this.valueKey in option ? option[this.valueKey] : option;
+      return isObj(option) && this.valueKey in option
+        ? option[this.valueKey]
+        : option;
     },
 
     setIndex(index, userAction) {
@@ -279,13 +291,7 @@ export default createComponent({
     };
 
     return (
-      <div
-        class={[bem(), this.className]}
-        onTouchstart={this.onTouchStart}
-        onTouchmove={this.onTouchMove}
-        onTouchend={this.onTouchEnd}
-        onTouchcancel={this.onTouchEnd}
-      >
+      <div class={[bem(), this.className]}>
         <ul
           ref="wrapper"
           style={wrapperStyle}
