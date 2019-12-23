@@ -17,7 +17,9 @@ command('lint').action(lint);
 
 command('clean').action(clean);
 
-command('build').action(build);
+command('build')
+  .option('--watch', 'Watch file watch')
+  .action(build);
 
 command('release').action(release);
 

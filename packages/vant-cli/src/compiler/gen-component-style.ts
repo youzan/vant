@@ -77,7 +77,13 @@ function genEntry(params: {
   });
 }
 
-export function genComponentStyle() {
+export function genComponentStyle(
+  options: { cache: boolean } = { cache: true }
+) {
+  if (!options.cache) {
+    delete require.cache[STYPE_DEPS_JSON_FILE];
+  }
+
   const components = getComponents();
   const baseFile = getCssBaseFile();
 
