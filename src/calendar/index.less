@@ -1,0 +1,37 @@
+@import '../style/var';
+
+.van-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+
+  &__title,
+  &__weekdays {
+    flex-shrink: 0;
+  }
+
+  &__title {
+    height: 44px;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-lg;
+    line-height: 44px;
+    text-align: center;
+  }
+
+  &__weekdays {
+    display: flex;
+  }
+
+  &__weekday {
+    flex: 1;
+    font-size: @font-size-sm;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__body {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
