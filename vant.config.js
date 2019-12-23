@@ -112,6 +112,10 @@ module.exports = {
             icon: 'orders-o',
             items: [
               {
+                path: 'calendar',
+                title: 'Calendar 日历'
+              },
+              {
                 path: 'checkbox',
                 title: 'Checkbox 复选框'
               },
@@ -443,6 +447,10 @@ module.exports = {
             title: 'Form Components',
             icon: 'orders-o',
             items: [
+              {
+                path: 'calendar',
+                title: 'Calendar'
+              },
               {
                 path: 'checkbox',
                 title: 'Checkbox'
