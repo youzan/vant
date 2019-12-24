@@ -20,12 +20,8 @@ const DEFAULT_CONFIG = {
   },
   transformIgnorePatterns: ['/node_modules/(?!(@vant/cli))/'],
   snapshotSerializers: ['jest-serializer-vue'],
-  collectCoverageFrom: [
-    'src/**/*.{js,jsx,ts,tsx,vue}',
-    '!**/style/**',
-    '!**/demo/**'
-  ],
   collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx,vue}', '!**/demo/**'],
   coverageReporters: ['html', 'lcov', 'text-summary'],
   coverageDirectory: './test/coverage'
 };
