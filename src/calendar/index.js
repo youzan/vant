@@ -90,6 +90,7 @@ export default createComponent({
         <div class={bem('month')} ref="month" refInFor>
           {showTitle && <div class={bem('month-title')}>{month.title}</div>}
           <div class={bem('days')}>
+            <div class={bem('month-mark')}>{month.date.getMonth() + 1}</div>
             {month.days.map(item => (
               <div class={bem('day')}>{item.day}</div>
             ))}
