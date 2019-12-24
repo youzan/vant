@@ -3,18 +3,18 @@
     <demo-block :title="$t('basicUsage')">
       <van-cell
         :title="$t('selectDate')"
+        :value="formatDate(date.selectDate)"
         is-link
         @click="toggle('selectDate', true)"
       />
     </demo-block>
 
-    <van-popup
-      v-model="show.selectDate"
-      round
-      closeable
-      position="bottom"
-    >
-      <van-calendar v-model="date.selectDate" :title="$t('title')" />
+    <van-popup v-model="show.selectDate" round closeable position="bottom">
+      <van-calendar
+        v-model="date.selectDate"
+        :title="$t('title')"
+        @select="show.selectDate = false"
+      />
     </van-popup>
   </demo-section>
 </template>
@@ -46,6 +46,12 @@ export default {
   methods: {
     toggle(type, show) {
       this.show[type] = show;
+    },
+
+    formatDate(date) {
+      if (date) {
+        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+      }
     }
   }
 };

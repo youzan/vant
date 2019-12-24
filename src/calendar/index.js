@@ -172,6 +172,7 @@ export default createComponent({
 
       if (this.type === 'single') {
         this.$emit('input', item.date);
+        this.$emit('select', item.date);
       }
     }
   },
