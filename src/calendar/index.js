@@ -1,4 +1,5 @@
 import { isDate } from '../utils/validate/date';
+import { getScrollTop } from '../utils/dom/scroll';
 import { createComponent, bem, compareMonth, formatMonthTitle } from './utils';
 import Header from './Header';
 
@@ -42,6 +43,8 @@ export default createComponent({
   },
 
   data() {
+    this.monthsHeight = [];
+
     return {
       currentMonth: this.minDate
     };
@@ -69,12 +72,22 @@ export default createComponent({
     }
   },
 
+  mounted() {
+    this.getMonthsHeight();
+  },
+
   methods: {
+    getMonthsHeight() {
+      this.$refs.month.forEach((month, index) => {
+        this.monthsHeight[index] = month.getBoundingClientRect().height;
+      });
+    },
+
     genMonth(month, index) {
       const showTitle = index !== 0;
 
       return (
-        <div class={bem('month')}>
+        <div class={bem('month')} ref="month" refInFor>
           {showTitle && <div class={bem('month-title')}>{month.title}</div>}
           <div class={bem('days')}>
             {month.days.map(item => (
@@ -83,6 +96,20 @@ export default createComponent({
           </div>
         </div>
       );
+    },
+
+    onScroll() {
+      const scrollTop = getScrollTop(this.$refs.body);
+      let height = 0;
+
+      for (let i = 0; i < this.months.length; i++) {
+        if (scrollTop < height) {
+          this.currentMonth = this.months[i - 1].date;
+          return;
+        }
+
+        height += this.monthsHeight[i];
+      }
     }
   },
 
@@ -90,7 +117,9 @@ export default createComponent({
     return (
       <div class={bem()}>
         <Header title={this.title} currentMonth={this.currentMonth} />
-        <div class={bem('body')}>{this.months.map(this.genMonth)}</div>
+        <div ref="body" class={bem('body')} onScroll={this.onScroll}>
+          {this.months.map(this.genMonth)}
+        </div>
       </div>
     );
   }
