@@ -49,8 +49,20 @@
   }
 
   &__days {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &__month-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    color: @gray-2;
+    font-size: 160px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 
   &__day {
