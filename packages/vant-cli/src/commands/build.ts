@@ -176,6 +176,10 @@ function watchFileChange() {
   logger.watch('Compiled successfully, watching file changes...');
 
   chokidar.watch(SRC_DIR).on('change', async path => {
+    if (isDemoDir(path) || isTestDir(path)) {
+      return;
+    }
+
     const logger = getInteractiveLogger();
     const esPath = path.replace(SRC_DIR, ES_DIR);
     const libPath = path.replace(SRC_DIR, LIB_DIR);
