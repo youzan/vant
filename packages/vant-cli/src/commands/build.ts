@@ -173,6 +173,8 @@ async function buildPackageEntry() {
 }
 
 function watchFileChange() {
+  logger.watch('Compiled successfully, watching file changes...');
+
   chokidar.watch(SRC_DIR).on('change', async path => {
     const logger = getInteractiveLogger();
     const esPath = path.replace(SRC_DIR, ES_DIR);
