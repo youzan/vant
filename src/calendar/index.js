@@ -3,27 +3,6 @@ import { getScrollTop } from '../utils/dom/scroll';
 import { createComponent, bem, compareMonth, formatMonthTitle } from './utils';
 import Header from './Header';
 
-function getDays(date) {
-  const days = [];
-  const cursor = new Date(date);
-  const placeholderCount = cursor.getDay() === 0 ? 6 : cursor.getDay() - 1;
-
-  for (let i = 1; i <= placeholderCount; i++) {
-    days.push({ day: '' });
-  }
-
-  do {
-    days.push({
-      day: cursor.getDate(),
-      date: new Date(cursor)
-    });
-
-    cursor.setDate(cursor.getDate() + 1);
-  } while (compareMonth(cursor, date) === 0);
-
-  return days;
-}
-
 export default createComponent({
   props: {
     title: String,
@@ -61,7 +40,7 @@ export default createComponent({
       do {
         months.push({
           date: new Date(cursor),
-          days: getDays(cursor),
+          days: this.getDays(cursor),
           title: formatMonthTitle(cursor)
         });
 
@@ -83,17 +62,60 @@ export default createComponent({
       });
     },
 
+    getDays(date) {
+      const days = [];
+      const { minDate, maxDate } = this;
+      const checkMinDate = compareMonth(date, minDate) === 0;
+      const checkMaxDate = compareMonth(date, maxDate) === 0;
+
+      function isDisabled(date) {
+        if (checkMaxDate && date.getDate() > maxDate.getDate()) {
+          return true;
+        }
+
+        if (checkMinDate && date.getDate() < minDate.getDate()) {
+          return true;
+        }
+
+        return false;
+      }
+
+      const placeholderCount = date.getDay() === 0 ? 6 : date.getDay() - 1;
+
+      for (let i = 1; i <= placeholderCount; i++) {
+        days.push({ day: '' });
+      }
+
+      const cursor = new Date(date);
+
+      do {
+        days.push({
+          day: cursor.getDate(),
+          date: new Date(cursor),
+          disabled: isDisabled(cursor)
+        });
+
+        cursor.setDate(cursor.getDate() + 1);
+      } while (compareMonth(cursor, date) === 0);
+
+      return days;
+    },
+
     genMonth(month, index) {
-      const showTitle = index !== 0;
+      const Title = index !== 0 && (
+        <div class={bem('month-title')}>{month.title}</div>
+      );
+
+      const Days = month.days.map(item => (
+        <div class={bem('day', { disabled: item.disabled })}>{item.day}</div>
+      ));
 
       return (
         <div class={bem('month')} ref="month" refInFor>
-          {showTitle && <div class={bem('month-title')}>{month.title}</div>}
+          {Title}
           <div class={bem('days')}>
             <div class={bem('month-mark')}>{month.date.getMonth() + 1}</div>
-            {month.days.map(item => (
-              <div class={bem('day')}>{item.day}</div>
-            ))}
+            {Days}
           </div>
         </div>
       );
