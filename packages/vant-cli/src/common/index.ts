@@ -26,6 +26,10 @@ export function replaceExt(path: string, ext: string) {
   return path.replace(EXT_REGEXP, ext);
 }
 
+export function hasDefaultExport(code: string) {
+  return code.includes('export default') || code.includes('export { default }');
+}
+
 export function getComponents() {
   const EXCLUDES = ['.DS_Store'];
   const dirs = readdirSync(SRC_DIR);
@@ -35,7 +39,7 @@ export function getComponents() {
       ENTRY_EXTS.some(ext => {
         const path = join(SRC_DIR, dir, `index.${ext}`);
         if (existsSync(path)) {
-          return readFileSync(path, 'utf-8').indexOf('export default') !== -1;
+          return hasDefaultExport(readFileSync(path, 'utf-8'));
         }
 
         return false;
