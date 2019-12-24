@@ -5,7 +5,12 @@ import Header from './Header';
 
 export default createComponent({
   props: {
+    value: Date,
     title: String,
+    type: {
+      type: String,
+      default: 'single'
+    },
     minDate: {
       type: Date,
       default: () => new Date(),
@@ -22,8 +27,6 @@ export default createComponent({
   },
 
   data() {
-    this.monthsHeight = [];
-
     return {
       currentMonth: this.minDate
     };
@@ -52,14 +55,14 @@ export default createComponent({
   },
 
   mounted() {
-    this.getMonthsHeight();
+    this.initRects();
   },
 
   methods: {
-    getMonthsHeight() {
-      this.$refs.month.forEach((month, index) => {
-        this.monthsHeight[index] = month.getBoundingClientRect().height;
-      });
+    initRects() {
+      this.monthsHeight = this.$refs.month.map(
+        month => month.getBoundingClientRect().height
+      );
     },
 
     getDays(date) {
@@ -67,8 +70,12 @@ export default createComponent({
       const { minDate, maxDate } = this;
       const checkMinDate = compareMonth(date, minDate) === 0;
       const checkMaxDate = compareMonth(date, maxDate) === 0;
+      const checkSelected =
+        this.value &&
+        this.type === 'single' &&
+        compareMonth(date, this.value) === 0;
 
-      function isDisabled(date) {
+      const isDisabled = date => {
         if (checkMaxDate && date.getDate() > maxDate.getDate()) {
           return true;
         }
@@ -78,7 +85,10 @@ export default createComponent({
         }
 
         return false;
-      }
+      };
+
+      const isSelected = date =>
+        checkSelected && date.getDate() === this.value.getDate();
 
       const placeholderCount = date.getDay() === 0 ? 6 : date.getDay() - 1;
 
@@ -92,7 +102,8 @@ export default createComponent({
         days.push({
           day: cursor.getDate(),
           date: new Date(cursor),
-          disabled: isDisabled(cursor)
+          disabled: isDisabled(cursor),
+          selected: isSelected(cursor)
         });
 
         cursor.setDate(cursor.getDate() + 1);
@@ -106,9 +117,28 @@ export default createComponent({
         <div class={bem('month-title')}>{month.title}</div>
       );
 
-      const Days = month.days.map(item => (
-        <div class={bem('day', { disabled: item.disabled })}>{item.day}</div>
-      ));
+      const Days = month.days.map(item => {
+        const onClick = () => {
+          this.onClickDay(item);
+        };
+
+        if (item.selected) {
+          return (
+            <div class={bem('day')} onClick={onClick}>
+              <div class={bem('selected-day')}>{item.day}</div>
+            </div>
+          );
+        }
+
+        return (
+          <div
+            class={bem('day', { disabled: item.disabled })}
+            onClick={onClick}
+          >
+            {item.day}
+          </div>
+        );
+      });
 
       return (
         <div class={bem('month')} ref="month" refInFor>
@@ -132,6 +162,16 @@ export default createComponent({
         }
 
         height += this.monthsHeight[i];
+      }
+    },
+
+    onClickDay(item) {
+      if (item.disabled) {
+        return;
+      }
+
+      if (this.type === 'single') {
+        this.$emit('input', item.date);
       }
     }
   },

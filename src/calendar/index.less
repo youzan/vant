@@ -65,10 +65,14 @@
     pointer-events: none;
   }
 
-  &__day {
+  &__day,
+  &__selected-day {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__day {
     width: 14.285%;
     height: 64px;
     font-size: @font-size-lg;
@@ -76,5 +80,13 @@
     &--disabled {
       color: @gray-5;
     }
+  }
+
+  &__selected-day {
+    width: 54px;
+    height: 54px;
+    color: @white;
+    background: @red;
+    border-radius: @border-radius-md;
   }
 }

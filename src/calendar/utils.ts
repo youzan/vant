@@ -1,11 +1,12 @@
 import { createNamespace } from '../utils';
+import { padZero } from '../utils/format/string';
 
 const [createComponent, bem, t] = createNamespace('calendar');
 
 export { createComponent, bem, t };
 
 export function formatMonthTitle(date: Date) {
-  return t('monthTitle', date.getFullYear(), date.getMonth() + 1);
+  return t('monthTitle', date.getFullYear(), padZero(date.getMonth() + 1));
 }
 
 export function compareMonth(date1: Date, date2: Date) {
