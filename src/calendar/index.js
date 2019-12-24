@@ -1,12 +1,6 @@
-import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
-import { compareMonth } from './utils';
-
-const [createComponent, bem, t] = createNamespace('calendar');
-
-function formatMonthTitle(date) {
-  return t('monthTitle', date.getFullYear(), date.getMonth() + 1);
-}
+import { createComponent, bem, compareMonth, formatMonthTitle } from './utils';
+import Header from './Header';
 
 function getDays(date) {
   const days = [];
@@ -49,7 +43,7 @@ export default createComponent({
 
   data() {
     return {
-      currentDate: this.minDate
+      currentMonth: this.minDate
     };
   },
 
@@ -64,7 +58,8 @@ export default createComponent({
       do {
         months.push({
           date: new Date(cursor),
-          days: getDays(cursor)
+          days: getDays(cursor),
+          title: formatMonthTitle(cursor)
         });
 
         cursor.setMonth(cursor.getMonth() + 1);
@@ -75,37 +70,15 @@ export default createComponent({
   },
 
   methods: {
-    genTitle() {
-      if (this.title) {
-        return <div class={bem('title')}>{this.title}</div>;
-      }
-    },
-
-    genWeekDays() {
-      const weekdays = t('weekdays');
-
-      return (
-        <div class={bem('weekdays')}>
-          {weekdays.map(item => (
-            <span class={bem('weekday')}>{item}</span>
-          ))}
-        </div>
-      );
-    },
-
-    genMonthTitle(date) {
-      return <div class={bem('month-title')}>{formatMonthTitle(date)}</div>;
-    },
-
-    genMonth(monthItem, index) {
-      const Title = index !== 0 ? this.genMonthTitle(monthItem.date) : null;
+    genMonth(month, index) {
+      const showTitle = index !== 0;
 
       return (
         <div class={bem('month')}>
-          {Title}
+          {showTitle && <div class={bem('month-title')}>{month.title}</div>}
           <div class={bem('days')}>
-            {monthItem.days.map(dayItem => (
-              <div class={bem('day')}>{dayItem.day}</div>
+            {month.days.map(item => (
+              <div class={bem('day')}>{item.day}</div>
             ))}
           </div>
         </div>
@@ -116,11 +89,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div class={bem('header')}>
-          {this.genTitle()}
-          {this.genMonthTitle(this.currentDate)}
-          {this.genWeekDays()}
-        </div>
+        <Header title={this.title} currentMonth={this.currentMonth} />
         <div class={bem('body')}>{this.months.map(this.genMonth)}</div>
       </div>
     );
