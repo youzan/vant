@@ -5,17 +5,25 @@
   flex-direction: column;
   height: 80vh;
 
-  &__title,
-  &__weekdays {
+  &__header {
     flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(125, 126, 128, .16);
+  }
+
+  &__title,
+  &__month-title {
+    height: 44px;
+    font-weight: @font-weight-bold;
+    line-height: 44px;
+    text-align: center;
   }
 
   &__title {
-    height: 44px;
-    font-weight: @font-weight-bold;
     font-size: @font-size-lg;
-    line-height: 44px;
-    text-align: center;
+  }
+
+  &__month-title {
+    font-size: @font-size-md;
   }
 
   &__weekdays {
@@ -33,5 +41,19 @@
     flex: 1;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  &__days {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14.285%;
+    height: 64px;
+    font-size: @font-size-lg;
   }
 }
