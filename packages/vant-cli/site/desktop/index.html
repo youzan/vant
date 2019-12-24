@@ -9,6 +9,17 @@
   <meta http-Equiv="Pragma" Content="no-cache" />
   <meta http-Equiv="Expires" Content="0" />
   <link href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" rel="stylesheet" />
+  <% if (htmlWebpackPlugin.options.baiduAnalytics) { %>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= htmlWebpackPlugin.options.baiduAnalytics.seed %>";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <% } %>
 </head>
 <body ontouchstart>
   <div id="app"></div>

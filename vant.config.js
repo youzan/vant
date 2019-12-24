@@ -14,6 +14,9 @@ module.exports = {
     versions: [
       { label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }
     ],
+    baiduAnalytics: {
+      seed: 'ad6b5732c36321f2dafed737ac2da92f'
+    },
     locales: {
       'zh-CN': {
         title: 'Vant',

@@ -2,6 +2,7 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 // @ts-ignore
 import WebpackBar from 'webpackbar';
+import { get } from 'lodash';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig } from '../common';
@@ -11,8 +12,11 @@ import {
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
 
+const vantConfig = getVantConfig();
+const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
+
 function getSiteConfig() {
-  const siteConfig = getVantConfig().site;
+  const siteConfig = vantConfig.site;
 
   if (siteConfig.locales) {
     return siteConfig.locales[siteConfig.defaultLang || 'en-US'];
@@ -78,14 +82,16 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
       logo: siteConfig.logo,
       chunks: ['chunks', 'site-desktop'],
       template: join(__dirname, '../../site/desktop/index.html'),
-      filename: 'index.html'
+      filename: 'index.html',
+      baiduAnalytics
     }),
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
       chunks: ['chunks', 'site-mobile'],
       template: join(__dirname, '../../site/mobile/index.html'),
-      filename: 'mobile.html'
+      filename: 'mobile.html',
+      baiduAnalytics
     })
   ]
 });
