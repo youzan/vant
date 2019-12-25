@@ -1467,10 +1467,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.0.0-rc.10":
-  version "2.0.0-rc.10"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.0.0-rc.10.tgz?cache=0&sync_timestamp=1577168858746&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.0.0-rc.10.tgz#5c990180b93cb12b3710cc2b569151568c23bd02"
-  integrity sha1-XJkBgLk8sSs3EMwrVpFRVowjvQI=
+"@vant/cli@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.0.0.tgz?cache=0&sync_timestamp=1577264971057&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.0.0.tgz#4ccc5d0fcc28a4868d2b16602f39c83927df6cc5"
+  integrity sha1-TMxdD8wopIaNKxZgLznIOSffbMU=
   dependencies:
     "@babel/core" "^7.7.5"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.7.4"
