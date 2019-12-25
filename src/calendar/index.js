@@ -40,6 +40,10 @@ export default createComponent({
     showMark: {
       type: Boolean,
       default: true
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -214,26 +218,42 @@ export default createComponent({
       );
     },
 
-    genFooter() {
+    genFooterContent() {
+      const slot = this.slots('footer');
+
+      if (slot) {
+        return slot;
+      }
+
       if (this.type === 'range') {
         const disabled = !this.currentValue[1];
         const text = disabled ? this.buttonDisabledText : this.buttonText;
 
         return (
-          <div class={bem('footer')}>
-            <Button
-              round
-              block
-              type="danger"
-              disabled={disabled}
-              class={bem('confirm')}
-              onClick={this.onConfirmRange}
-            >
-              {text || t('confirm')}
-            </Button>
-          </div>
+          <Button
+            round
+            block
+            type="danger"
+            disabled={disabled}
+            class={bem('confirm')}
+            onClick={this.onConfirmRange}
+          >
+            {text || t('confirm')}
+          </Button>
         );
       }
+    },
+
+    genFooter() {
+      return (
+        <div
+          class={bem('footer', {
+            'safe-area-inset-bottom': this.safeAreaInsetBottom
+          })}
+        >
+          {this.genFooterContent()}
+        </div>
+      );
     }
   },
 

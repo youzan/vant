@@ -118,11 +118,18 @@
   }
 
   &__footer {
-    padding: 7px @padding-md;
+    flex-shrink: 0;
+    padding: 0 @padding-md;
+
+    &--safe-area-inset-bottom {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
   }
 
   &__confirm {
     height: 36px;
+    margin: 7px 0;
     line-height: 34px;
   }
 }
