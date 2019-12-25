@@ -19,6 +19,7 @@
           reset-stepper-on-hide
           safe-area-inset-bottom
           reset-selected-sku-on-hide
+          enable-item-sale-prop
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />

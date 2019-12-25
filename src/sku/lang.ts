@@ -52,6 +52,9 @@ export default {
         textarea: '点击填写段落文本',
         mobile: '输入手机号码'
       }
-    }
+    },
+    vanSkuRow: {
+      multiple: '可多选',
+    },
   }
 };
