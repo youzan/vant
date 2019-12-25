@@ -35,6 +35,7 @@ Vue.use(Calendar);
 | button-text | 选择日期区间时，确认按钮的文字 | `string` | `确定` | - |
 | button-disabled-text | 选择日期区间时，确认按钮处于禁用状态时的文字 | `string` | `确定` | - |
 | show-mark | 是否显示月份背景水印 | `boolean` | `true` | - |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
 
 ### Events
 
@@ -47,6 +48,7 @@ Vue.use(Calendar);
 | 名称 | 说明 |
 |------|------|
 | title | 自定义标题 |
+| footer | 自定义底部区域内容 |
 
 ### 方法
 
