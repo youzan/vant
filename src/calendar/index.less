@@ -3,10 +3,14 @@
 .van-calendar {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 100%;
 
-  &-header__title,
-  &-header__month,
+  &__header {
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
+  }
+
+  &__header-title,
   &__month-title {
     height: 44px;
     font-weight: @font-weight-bold;
@@ -14,32 +18,23 @@
     text-align: center;
   }
 
-  &-header {
-    flex-shrink: 0;
-    box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
-
-    &__title {
-      font-size: @font-size-lg;
-    }
-
-    &__month {
-      font-size: @font-size-md;
-    }
-
-    &__weekdays {
-      display: flex;
-    }
-
-    &__weekday {
-      flex: 1;
-      font-size: @font-size-sm;
-      line-height: 30px;
-      text-align: center;
-    }
+  &__header-title {
+    font-size: @font-size-lg;
   }
 
   &__month-title {
     font-size: @font-size-md;
+  }
+
+  &__weekdays {
+    display: flex;
+  }
+
+  &__weekday {
+    flex: 1;
+    font-size: @font-size-sm;
+    line-height: 30px;
+    text-align: center;
   }
 
   &__body {
@@ -73,15 +68,45 @@
   }
 
   &__day {
+    position: relative;
     width: 14.285%;
     height: 64px;
     font-size: @font-size-lg;
     cursor: pointer;
 
+    &--end,
+    &--start {
+      color: @white;
+      background-color: @red;
+    }
+
+    &--start {
+      border-radius: @border-radius-md 0 0 @border-radius-md;
+    }
+
+    &--end {
+      border-radius: 0 @border-radius-md @border-radius-md 0;
+    }
+
+    &--middle {
+      color: @red;
+      background-color: fade(@red, 10%);
+    }
+
     &--disabled {
       color: @gray-5;
       cursor: default;
     }
+  }
+
+  &__day-label {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    left: 0;
+    font-size: @font-size-xs;
+    line-height: 14px;
+    text-align: center;
   }
 
   &__selected-day {
@@ -90,5 +115,14 @@
     color: @white;
     background: @red;
     border-radius: @border-radius-md;
+  }
+
+  &__footer {
+    padding: 7px @padding-md;
+  }
+
+  &__confirm {
+    height: 36px;
+    line-height: 34px;
   }
 }

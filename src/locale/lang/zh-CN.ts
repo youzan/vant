@@ -12,6 +12,10 @@ export default {
   confirmDelete: '确定要删除么',
   telInvalid: '请填写正确的电话',
   vanCalendar: {
+    end: '结束',
+    start: '开始',
+    title: '日期选择',
+    confirm: '确定',
     weekdays: ['日', '一', '二', '三', '四', '五', '六'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`
   },

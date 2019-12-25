@@ -21,3 +21,23 @@ export function compareMonth(date1: Date, date2: Date) {
 
   return year1 > year2 ? 1 : -1;
 }
+
+export function compareDay(day1: Date, day2: Date) {
+  const compareMonthResult = compareMonth(day1, day2);
+
+  if (compareMonthResult === 0) {
+    const date1 = day1.getDate();
+    const date2 = day2.getDate();
+
+    return date1 === date2 ? 0 : date1 > date2 ? 1 : -1;
+  }
+
+  return compareMonthResult;
+}
+
+export function getNextDay(date: Date) {
+  date = new Date(date);
+  date.setDate(date.getDate() + 1);
+
+  return date;
+}

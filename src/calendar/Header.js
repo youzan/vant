@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
-import { t, formatMonthTitle } from './utils';
+import { t, bem, formatMonthTitle } from './utils';
 
-const [createComponent, bem] = createNamespace('calendar-header');
+const [createComponent] = createNamespace('calendar-header');
 
 export default createComponent({
   props: {
@@ -11,14 +11,16 @@ export default createComponent({
 
   methods: {
     genTitle() {
-      if (this.title) {
-        return <div class={bem('title')}>{this.title}</div>;
+      const title = this.slots('title') || this.title || t('title');
+
+      if (title) {
+        return <div class={bem('header-title')}>{title}</div>;
       }
     },
 
     genMonth() {
       return (
-        <div class={bem('month')}>
+        <div class={bem('month-title')}>
           {formatMonthTitle(this.currentMonth)}
         </div>
       );
@@ -39,7 +41,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem()}>
+      <div class={bem('header')}>
         {this.genTitle()}
         {this.genMonth()}
         {this.genWeekDays()}
