@@ -7,7 +7,8 @@ export default createComponent({
   props: {
     date: Date,
     days: Array,
-    title: String
+    title: String,
+    showMark: Boolean
   },
 
   mounted() {
@@ -28,6 +29,12 @@ export default createComponent({
     genTitle() {
       if (this.title) {
         return <div class={bem('month-title')}>{this.title}</div>;
+      }
+    },
+
+    genMark() {
+      if (this.showMark) {
+        return <div class={bem('month-mark')}>{this.date.getMonth() + 1}</div>;
       }
     },
 
@@ -65,7 +72,7 @@ export default createComponent({
       <div class={bem('month')}>
         {this.genTitle()}
         <div class={bem('days')}>
-          <div class={bem('month-mark')}>{this.date.getMonth() + 1}</div>
+          {this.genMark()}
           {this.days.map(this.genDay)}
         </div>
       </div>
