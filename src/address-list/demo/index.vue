@@ -3,10 +3,10 @@
     <demo-block :title="$t('basicUsage')">
       <van-address-list
         v-model="chosenAddressId"
-        :default-tag-text="$t('defaultTagText')"
         :list="$t('list')"
         :disabled-list="$t('disabledList')"
         :disabled-text="$t('disabledText')"
+        :default-tag-text="$t('defaultTagText')"
         @add="onAdd"
         @edit="onEdit"
       />

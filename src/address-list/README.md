@@ -19,6 +19,7 @@ Vue.use(AddressList);
   :list="list"
   :disabled-list="disabledList"
   disabled-text="The following address is out of range"
+  default-tag-text="Default"
   @add="onAdd"
   @edit="onEdit"
 />
