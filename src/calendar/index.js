@@ -1,12 +1,24 @@
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
-import { createComponent, bem, compareMonth, formatMonthTitle } from './utils';
+import {
+  t,
+  bem,
+  getNextDay,
+  compareDay,
+  compareMonth,
+  createComponent,
+  formatMonthTitle
+} from './utils';
+import Month from './Month';
 import Header from './Header';
+import Button from '../button';
 
 export default createComponent({
   props: {
-    value: Date,
     title: String,
+    value: [Date, Array],
+    confirmText: String,
+    confirmDisabledText: String,
     type: {
       type: String,
       default: 'single'
@@ -28,7 +40,8 @@ export default createComponent({
 
   data() {
     return {
-      currentMonth: this.minDate
+      currentMonth: this.minDate,
+      currentValue: this.getDefaultValue()
     };
   },
 
@@ -54,42 +67,64 @@ export default createComponent({
     }
   },
 
-  mounted() {
-    this.initRects();
+  watch: {
+    value(val) {
+      this.currentValue = val;
+    }
   },
 
   methods: {
-    initRects() {
-      this.monthsHeight = this.$refs.month.map(
-        month => month.getBoundingClientRect().height
-      );
+    getDefaultValue() {
+      const { type, value, minDate } = this;
+
+      if (type === 'single') {
+        return value || minDate;
+      }
+
+      if (type === 'range') {
+        const range = value || [];
+        return [range[0] || minDate, range[1] || getNextDay(minDate)];
+      }
+    },
+
+    getDayType(day) {
+      const { type, minDate, maxDate, currentValue } = this;
+
+      if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
+        return 'disabled';
+      }
+
+      if (type === 'single') {
+        return compareDay(day, currentValue) === 0 ? 'selected' : '';
+      }
+
+      if (type === 'range') {
+        if (!currentValue[0]) {
+          return;
+        }
+
+        const compareWithStart = compareDay(day, currentValue[0]);
+        if (compareWithStart === 0) {
+          return 'start';
+        }
+
+        if (!currentValue[1]) {
+          return;
+        }
+
+        const compareWithEnd = compareDay(day, currentValue[1]);
+        if (compareWithEnd === 0) {
+          return 'end';
+        }
+
+        if (compareWithStart > 0 && compareWithEnd < 0) {
+          return 'middle';
+        }
+      }
     },
 
     getDays(date) {
       const days = [];
-      const { minDate, maxDate } = this;
-      const checkMinDate = compareMonth(date, minDate) === 0;
-      const checkMaxDate = compareMonth(date, maxDate) === 0;
-      const checkSelected =
-        this.value &&
-        this.type === 'single' &&
-        compareMonth(date, this.value) === 0;
-
-      const isDisabled = date => {
-        if (checkMaxDate && date.getDate() > maxDate.getDate()) {
-          return true;
-        }
-
-        if (checkMinDate && date.getDate() < minDate.getDate()) {
-          return true;
-        }
-
-        return false;
-      };
-
-      const isSelected = date =>
-        checkSelected && date.getDate() === this.value.getDate();
-
       const placeholderCount = date.getDay() === 0 ? 6 : date.getDay() - 1;
 
       for (let i = 1; i <= placeholderCount; i++) {
@@ -102,8 +137,7 @@ export default createComponent({
         days.push({
           day: cursor.getDate(),
           date: new Date(cursor),
-          disabled: isDisabled(cursor),
-          selected: isSelected(cursor)
+          type: this.getDayType(cursor)
         });
 
         cursor.setDate(cursor.getDate() + 1);
@@ -113,46 +147,21 @@ export default createComponent({
     },
 
     genMonth(month, index) {
-      const Title = index !== 0 && (
-        <div class={bem('month-title')}>{month.title}</div>
-      );
-
-      const Days = month.days.map(item => {
-        const onClick = () => {
-          this.onClickDay(item);
-        };
-
-        if (item.selected) {
-          return (
-            <div class={bem('day')} onClick={onClick}>
-              <div class={bem('selected-day')}>{item.day}</div>
-            </div>
-          );
-        }
-
-        return (
-          <div
-            class={bem('day', { disabled: item.disabled })}
-            onClick={onClick}
-          >
-            {item.day}
-          </div>
-        );
-      });
-
       return (
-        <div class={bem('month')} ref="month" refInFor>
-          {Title}
-          <div class={bem('days')}>
-            <div class={bem('month-mark')}>{month.date.getMonth() + 1}</div>
-            {Days}
-          </div>
-        </div>
+        <Month
+          ref="month"
+          refInFor
+          days={month.days}
+          date={month.date}
+          title={index !== 0 ? month.title : ''}
+          onClick={this.onClickDay}
+        />
       );
     },
 
     onScroll() {
       const scrollTop = getScrollTop(this.$refs.body);
+      const monthsHeight = this.$refs.month.map(item => item.height);
       let height = 0;
 
       for (let i = 0; i < this.months.length; i++) {
@@ -161,18 +170,65 @@ export default createComponent({
           return;
         }
 
-        height += this.monthsHeight[i];
+        height += monthsHeight[i];
       }
     },
 
     onClickDay(item) {
-      if (item.disabled) {
-        return;
-      }
+      const { date } = item;
 
       if (this.type === 'single') {
-        this.$emit('input', item.date);
-        this.$emit('select', item.date);
+        this.$emit('input', date);
+        this.$emit('select', date);
+      }
+
+      if (this.type === 'range') {
+        const startDay = this.currentValue[0];
+        const endDay = this.currentValue[1];
+
+        if (startDay && endDay) {
+          this.$emit('input', [date, null]);
+          return;
+        }
+
+        if (startDay) {
+          const compareWithStart = compareDay(date, startDay);
+
+          if (compareWithStart === 1) {
+            this.$emit('input', [startDay, date]);
+          }
+
+          if (compareWithStart === -1) {
+            this.$emit('input', [date, null]);
+          }
+        }
+      }
+    },
+
+    onConfirmRange() {
+      this.$emit('input', this.currentValue);
+      this.$emit('select', this.currentValue);
+    },
+
+    genFooter() {
+      if (this.type === 'range') {
+        const disabled = !this.currentValue[1];
+        const text = disabled ? this.confirmDisabledText : this.confirmText;
+
+        return (
+          <div class={bem('footer')}>
+            <Button
+              round
+              block
+              type="danger"
+              disabled={disabled}
+              class={bem('confirm')}
+              onClick={this.onConfirmRange}
+            >
+              {text || t('confirm')}
+            </Button>
+          </div>
+        );
       }
     }
   },
@@ -180,10 +236,17 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <Header title={this.title} currentMonth={this.currentMonth} />
+        <Header
+          title={this.title}
+          currentMonth={this.currentMonth}
+          scopedSlots={{
+            title: () => this.slots('title')
+          }}
+        />
         <div ref="body" class={bem('body')} onScroll={this.onScroll}>
           {this.months.map(this.genMonth)}
         </div>
+        {this.genFooter()}
       </div>
     );
   }
