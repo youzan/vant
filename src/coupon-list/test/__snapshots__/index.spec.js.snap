@@ -19,7 +19,7 @@ exports[`empty-image prop 1`] = `
     </div>
     <div class="van-tabs__content">
       <div role="tabpanel" class="van-tab__pane">
-        <div class="van-coupon-list__list" style="height: 628px;">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
           <div class="van-coupon-list__empty"><img src="https://img.yzcdn.com/xxx.png">
             <p>暂无优惠券</p>
           </div>
@@ -29,7 +29,8 @@ exports[`empty-image prop 1`] = `
         <!---->
       </div>
     </div>
-  </div><button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button>
+  </div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
 </div>
 `;
 
@@ -68,7 +69,7 @@ exports[`render coupon list 1`] = `
     </div>
     <div class="van-tabs__content">
       <div role="tabpanel" class="van-tab__pane">
-        <div class="van-coupon-list__list" style="height: 628px;">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
@@ -174,7 +175,8 @@ exports[`render coupon list 1`] = `
         <!---->
       </div>
     </div>
-  </div><button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button>
+  </div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
 </div>
 `;
 
@@ -213,20 +215,21 @@ exports[`render empty coupon list 1`] = `
     </div>
     <div class="van-tabs__content">
       <div role="tabpanel" class="van-tab__pane" style="display: none;">
-        <div class="van-coupon-list__list" style="height: 628px;">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
           <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>
       </div>
       <div role="tabpanel" class="van-tab__pane" style="">
-        <div class="van-coupon-list__list" style="height: 628px;">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
           <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>
       </div>
     </div>
-  </div><button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button>
+  </div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
 </div>
 `;
