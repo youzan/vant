@@ -6,7 +6,9 @@ import {
   getNextDay,
   compareDay,
   compareMonth,
-  createComponent
+  createComponent,
+  ROW_HEIGHT,
+  RENDER_OFFSET
 } from './utils';
 
 import Button from '../button';
@@ -38,7 +40,7 @@ export default createComponent({
     },
     rowHeight: {
       type: Number,
-      default: 64
+      default: ROW_HEIGHT
     },
     showMark: {
       type: Boolean,
@@ -98,10 +100,13 @@ export default createComponent({
       }
     },
 
+    // calculate the position of the elements
+    // and find the elements that needs to be rendered
     onScroll() {
       const { body, months } = this.$refs;
-      const top = getScrollTop(body);
-      const bottom = top + this.bodyHeight;
+      const scrollTop = getScrollTop(body);
+      const top = scrollTop - RENDER_OFFSET;
+      const bottom = scrollTop + this.bodyHeight + RENDER_OFFSET;
       const heights = months.map(item => item.height);
 
       let height = 0;

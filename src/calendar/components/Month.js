@@ -1,5 +1,5 @@
 import { createNamespace } from '../../utils';
-import { t, bem, compareDay, formatMonthTitle } from '../utils';
+import { t, bem, compareDay, formatMonthTitle, ROW_HEIGHT } from '../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
 
 const [createComponent] = createNamespace('calendar-month');
@@ -123,6 +123,20 @@ export default createComponent({
       }
     },
 
+    getDayStyle(index) {
+      const style = {};
+
+      if (index === 0) {
+        style.marginLeft = `${(100 * this.offset) / 7}%`;
+      }
+
+      if (this.rowHeight !== ROW_HEIGHT) {
+        style.height = `${this.rowHeight}px`;
+      }
+
+      return style;
+    },
+
     genTitle() {
       if (this.showTitle) {
         return <div class={bem('month-title')}>{this.title}</div>;
@@ -148,13 +162,7 @@ export default createComponent({
 
     genDay(item, index) {
       const { type } = item;
-
-      let style;
-      if (index === 0) {
-        style = {
-          marginLeft: `${(100 * this.offset) / 7}%`
-        };
-      }
+      const style = this.getDayStyle(index);
 
       const onClick = () => {
         if (type !== 'disabled') {
