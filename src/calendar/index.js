@@ -36,6 +36,10 @@ export default createComponent({
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
       validator: isDate
+    },
+    showMark: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -203,6 +207,7 @@ export default createComponent({
           refInFor
           days={month.days}
           date={month.date}
+          showMark={this.showMark}
           title={index !== 0 ? month.title : ''}
           onClick={this.onClickDay}
         />

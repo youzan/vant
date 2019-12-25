@@ -34,6 +34,7 @@ Vue.use(Calendar);
 | max-date | 最大日期 | `Date` | 当前日期的六个月后 | - |
 | button-text | 选择日期区间时，确认按钮的文字 | `string` | `确定` | - |
 | button-disabled-text | 选择日期区间时，确认按钮处于禁用状态时的文字 | `string` | `确定` | - |
+| show-mark | 是否显示月份背景水印 | `boolean` | `true` | - |
 
 ### Events
 
