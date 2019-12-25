@@ -99,20 +99,27 @@ export default createComponent({
     },
 
     onScroll() {
-      const scrollTop = getScrollTop(this.$refs.body);
-      const monthsHeight = this.$refs.month.map(item => item.height);
-      const bodyTop = scrollTop;
-      const bodyBottom = scrollTop + this.bodyHeight;
+      const { body, months } = this.$refs;
+      const top = getScrollTop(body);
+      const bottom = top + this.bodyHeight;
+      const heights = months.map(item => item.height);
+
       let height = 0;
+      let firstMonth;
 
-      for (let i = 0; i < this.months.length; i++) {
-        const monthTop = height;
-        const monthBottom = height + monthsHeight[i];
-        const visible = monthTop <= bodyBottom && monthBottom >= bodyTop;
+      for (let i = 0; i < months.length; i++) {
+        const visible = height <= bottom && height + heights[i] >= top;
 
-        this.$refs.month[i].visible = visible;
+        if (visible && !firstMonth) {
+          firstMonth = months[i];
+        }
 
-        height += monthsHeight[i];
+        months[i].visible = visible;
+        height += heights[i];
+      }
+
+      if (firstMonth) {
+        this.monthTitle = firstMonth.title;
       }
     },
 
@@ -151,7 +158,7 @@ export default createComponent({
     genMonth(date, index) {
       return (
         <Month
-          ref="month"
+          ref="months"
           refInFor
           type={this.type}
           date={date}
