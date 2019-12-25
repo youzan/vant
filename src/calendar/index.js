@@ -6,8 +6,7 @@ import {
   getNextDay,
   compareDay,
   compareMonth,
-  createComponent,
-  formatMonthTitle
+  createComponent
 } from './utils';
 
 import Button from '../button';
@@ -37,6 +36,10 @@ export default createComponent({
       },
       validator: isDate
     },
+    rowHeight: {
+      type: Number,
+      default: 64
+    },
     showMark: {
       type: Boolean,
       default: true
@@ -49,7 +52,7 @@ export default createComponent({
 
   data() {
     return {
-      currentMonth: this.minDate,
+      monthTitle: '',
       currentValue: this.getDefaultValue()
     };
   },
@@ -57,20 +60,14 @@ export default createComponent({
   computed: {
     months() {
       const months = [];
-      const { minDate, maxDate } = this;
-      const cursor = new Date(minDate);
+      const cursor = new Date(this.minDate);
 
       cursor.setDate(1);
 
       do {
-        months.push({
-          date: new Date(cursor),
-          days: this.getDays(cursor),
-          title: formatMonthTitle(cursor)
-        });
-
+        months.push(new Date(cursor));
         cursor.setMonth(cursor.getMonth() + 1);
-      } while (compareMonth(cursor, maxDate) !== 1);
+      } while (compareMonth(cursor, this.maxDate) !== 1);
 
       return months;
     }
@@ -80,6 +77,11 @@ export default createComponent({
     value(val) {
       this.currentValue = val;
     }
+  },
+
+  mounted() {
+    this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
+    this.onScroll();
   },
 
   methods: {
@@ -96,77 +98,19 @@ export default createComponent({
       }
     },
 
-    getDayType(day) {
-      const { type, minDate, maxDate, currentValue } = this;
-
-      if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
-        return 'disabled';
-      }
-
-      if (type === 'single') {
-        return compareDay(day, currentValue) === 0 ? 'selected' : '';
-      }
-
-      if (type === 'range') {
-        const [startDay, endDay] = this.currentValue;
-
-        if (!startDay) {
-          return;
-        }
-
-        const compareToStart = compareDay(day, startDay);
-        if (compareToStart === 0) {
-          return 'start';
-        }
-
-        if (!endDay) {
-          return;
-        }
-
-        const compareToEnd = compareDay(day, endDay);
-        if (compareToEnd === 0) {
-          return 'end';
-        }
-
-        if (compareToStart > 0 && compareToEnd < 0) {
-          return 'middle';
-        }
-      }
-    },
-
-    getDays(date) {
-      const days = [];
-      const placeholderCount = date.getDay() === 0 ? 6 : date.getDay() - 1;
-
-      for (let i = 1; i <= placeholderCount; i++) {
-        days.push({ day: '' });
-      }
-
-      const cursor = new Date(date);
-
-      do {
-        days.push({
-          day: cursor.getDate(),
-          date: new Date(cursor),
-          type: this.getDayType(cursor)
-        });
-
-        cursor.setDate(cursor.getDate() + 1);
-      } while (compareMonth(cursor, date) === 0);
-
-      return days;
-    },
-
     onScroll() {
       const scrollTop = getScrollTop(this.$refs.body);
       const monthsHeight = this.$refs.month.map(item => item.height);
+      const bodyTop = scrollTop;
+      const bodyBottom = scrollTop + this.bodyHeight;
       let height = 0;
 
       for (let i = 0; i < this.months.length; i++) {
-        if (scrollTop < height) {
-          this.currentMonth = this.months[i - 1].date;
-          return;
-        }
+        const monthTop = height;
+        const monthBottom = height + monthsHeight[i];
+        const visible = monthTop <= bodyBottom && monthBottom >= bodyTop;
+
+        this.$refs.month[i].visible = visible;
 
         height += monthsHeight[i];
       }
@@ -204,15 +148,19 @@ export default createComponent({
       this.$emit('select', this.currentValue);
     },
 
-    genMonth(month, index) {
+    genMonth(date, index) {
       return (
         <Month
           ref="month"
           refInFor
-          days={month.days}
-          date={month.date}
+          type={this.type}
+          date={date}
+          minDate={this.minDate}
+          maxDate={this.maxDate}
           showMark={this.showMark}
-          title={index !== 0 ? month.title : ''}
+          rowHeight={this.rowHeight}
+          showTitle={index !== 0}
+          currentValue={this.currentValue}
           onClick={this.onClickDay}
         />
       );
@@ -262,7 +210,7 @@ export default createComponent({
       <div class={bem()}>
         <Header
           title={this.title}
-          currentMonth={this.currentMonth}
+          monthTitle={this.monthTitle}
           scopedSlots={{
             title: () => this.slots('title')
           }}

@@ -1,12 +1,12 @@
 import { createNamespace } from '../../utils';
-import { t, bem, formatMonthTitle } from '../utils';
+import { t, bem } from '../utils';
 
 const [createComponent] = createNamespace('calendar-header');
 
 export default createComponent({
   props: {
     title: String,
-    currentMonth: Date
+    monthTitle: String
   },
 
   methods: {
@@ -19,11 +19,7 @@ export default createComponent({
     },
 
     genMonth() {
-      return (
-        <div class={bem('month-title')}>
-          {formatMonthTitle(this.currentMonth)}
-        </div>
-      );
+      return <div class={bem('month-title')}>{this.monthTitle}</div>;
     },
 
     genWeekDays() {
