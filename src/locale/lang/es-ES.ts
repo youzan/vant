@@ -11,6 +11,13 @@ export default {
   nameEmpty: 'Por favor rellena el nombre',
   confirmDelete: 'Estás seguro de eliminarlo?',
   telInvalid: 'Teléfono inválido',
+  vanCalendar: {
+    end: 'Fin',
+    start: 'Comienzo',
+    title: 'Calendario',
+    weekdays: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+    monthTitle: (year: number, month: number) => `${year}/${month}`
+  },
   vanContactCard: {
     addText: 'Añadir información de contacto'
   },

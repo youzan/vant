@@ -11,6 +11,13 @@ export default {
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
+  vanCalendar: {
+    end: 'Son',
+    start: 'Başlat',
+    title: 'Takvim',
+    weekdays: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
+    monthTitle: (year: number, month: number) => `${year}/${month}`
+  },
   vanContactCard: {
     addText: 'Kişi bilgisi ekle'
   },
