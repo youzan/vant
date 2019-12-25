@@ -1,5 +1,5 @@
-import { createNamespace } from '../utils';
-import { t, bem, formatMonthTitle } from './utils';
+import { createNamespace } from '../../utils';
+import { t, bem, formatMonthTitle } from '../utils';
 
 const [createComponent] = createNamespace('calendar-header');
 

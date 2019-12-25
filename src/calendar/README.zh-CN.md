@@ -32,14 +32,14 @@ Vue.use(Calendar);
 | title | 日历标题 | `string` | - | - |
 | min-date | 最小日期 | `Date` | 当前日期 | - |
 | max-date | 最大日期 | `Date` | 当前日期的六个月后 | - |
-| confirm-text | 选择日期区间时，确认按钮的文字 | `string` | `确定` | - |
-| confirm-disabled-text | 选择日期区间时，确认按钮处于禁用状态时的文字 | `string` | `确定` | - |
+| button-text | 选择日期区间时，确认按钮的文字 | `string` | `确定` | - |
+| button-disabled-text | 选择日期区间时，确认按钮处于禁用状态时的文字 | `string` | `确定` | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 选择日期时触发 | value: Date |
+| select | 选择日期时触发 | value: Date | Date[] |
 
 ### Slots
 
