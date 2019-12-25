@@ -4,7 +4,7 @@
       <van-cell
         is-link
         :title="$t('selectSingleDate')"
-        :value="formatDate(date.selectSingleDate)"
+        :value="formatFullDate(date.selectSingleDate)"
         @click="toggle('selectSingleDate', true)"
       />
 
@@ -78,15 +78,20 @@ export default {
 
     formatDate(date) {
       if (date) {
-        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+        return `${date.getMonth() + 1}/${date.getDate()}`;
+      }
+    },
+
+    formatFullDate(date) {
+      if (date) {
+        return `${date.getFullYear()}/${this.formatDate(date)}`;
       }
     },
 
     formatDateRange(dateRange) {
       if (dateRange.length) {
-        return `${this.formatDate(dateRange[0])} - ${this.formatDate(
-          dateRange[1]
-        )}`;
+        const [start, end] = dateRange;
+        return `${this.formatDate(start)} - ${this.formatDate(end)}`;
       }
     }
   }
