@@ -9,16 +9,17 @@ import {
   createComponent,
   formatMonthTitle
 } from './utils';
-import Month from './Month';
-import Header from './Header';
+
 import Button from '../button';
+import Month from './components/Month';
+import Header from './components/Header';
 
 export default createComponent({
   props: {
     title: String,
     value: [Date, Array],
-    confirmText: String,
-    confirmDisabledText: String,
+    buttonText: String,
+    buttonDisabledText: String,
     type: {
       type: String,
       default: 'single'
@@ -30,7 +31,7 @@ export default createComponent({
     },
     maxDate: {
       type: Date,
-      default: () => {
+      default() {
         const now = new Date();
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
@@ -49,8 +50,8 @@ export default createComponent({
     months() {
       const months = [];
       const { minDate, maxDate } = this;
-
       const cursor = new Date(minDate);
+
       cursor.setDate(1);
 
       do {
@@ -99,25 +100,27 @@ export default createComponent({
       }
 
       if (type === 'range') {
-        if (!currentValue[0]) {
+        const [startDay, endDay] = this.currentValue;
+
+        if (!startDay) {
           return;
         }
 
-        const compareWithStart = compareDay(day, currentValue[0]);
-        if (compareWithStart === 0) {
+        const compareToStart = compareDay(day, startDay);
+        if (compareToStart === 0) {
           return 'start';
         }
 
-        if (!currentValue[1]) {
+        if (!endDay) {
           return;
         }
 
-        const compareWithEnd = compareDay(day, currentValue[1]);
-        if (compareWithEnd === 0) {
+        const compareToEnd = compareDay(day, endDay);
+        if (compareToEnd === 0) {
           return 'end';
         }
 
-        if (compareWithStart > 0 && compareWithEnd < 0) {
+        if (compareToStart > 0 && compareToEnd < 0) {
           return 'middle';
         }
       }
@@ -146,19 +149,6 @@ export default createComponent({
       return days;
     },
 
-    genMonth(month, index) {
-      return (
-        <Month
-          ref="month"
-          refInFor
-          days={month.days}
-          date={month.date}
-          title={index !== 0 ? month.title : ''}
-          onClick={this.onClickDay}
-        />
-      );
-    },
-
     onScroll() {
       const scrollTop = getScrollTop(this.$refs.body);
       const monthsHeight = this.$refs.month.map(item => item.height);
@@ -183,24 +173,20 @@ export default createComponent({
       }
 
       if (this.type === 'range') {
-        const startDay = this.currentValue[0];
-        const endDay = this.currentValue[1];
+        const [startDay, endDay] = this.currentValue;
 
-        if (startDay && endDay) {
-          this.$emit('input', [date, null]);
-          return;
-        }
+        if (startDay && !endDay) {
+          const compareToStart = compareDay(date, startDay);
 
-        if (startDay) {
-          const compareWithStart = compareDay(date, startDay);
-
-          if (compareWithStart === 1) {
+          if (compareToStart === 1) {
             this.$emit('input', [startDay, date]);
           }
 
-          if (compareWithStart === -1) {
+          if (compareToStart === -1) {
             this.$emit('input', [date, null]);
           }
+        } else {
+          this.$emit('input', [date, null]);
         }
       }
     },
@@ -210,10 +196,23 @@ export default createComponent({
       this.$emit('select', this.currentValue);
     },
 
+    genMonth(month, index) {
+      return (
+        <Month
+          ref="month"
+          refInFor
+          days={month.days}
+          date={month.date}
+          title={index !== 0 ? month.title : ''}
+          onClick={this.onClickDay}
+        />
+      );
+    },
+
     genFooter() {
       if (this.type === 'range') {
         const disabled = !this.currentValue[1];
-        const text = disabled ? this.confirmDisabledText : this.confirmText;
+        const text = disabled ? this.buttonDisabledText : this.buttonText;
 
         return (
           <div class={bem('footer')}>
