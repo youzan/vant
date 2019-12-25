@@ -11,6 +11,14 @@ export default {
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除麽',
   telInvalid: '請填寫正確的電話',
+  vanCalendar: {
+    end: '結束',
+    start: '開始',
+    title: '日期選擇',
+    confirm: '確定',
+    weekdays: ['日', '壹', '二', '三', '四', '五', '六'],
+    monthTitle: (year: number, month: number) => `${year}年${month}月`
+  },
   vanContactCard: {
     addText: '添加聯系人'
   },
