@@ -15,10 +15,7 @@
         position="bottom"
         style="height: 80vh;"
       >
-        <van-calendar
-          v-model="date.selectSingleDate"
-          @select="show.selectSingleDate = false"
-        />
+        <van-calendar @select="onSelect($event, 'selectSingleDate')" />
       </van-popup>
 
       <van-cell
@@ -36,9 +33,8 @@
         style="height: 80vh;"
       >
         <van-calendar
-          v-model="date.selectDateRange"
           type="range"
-          @select="show.selectDateRange = false"
+          @select="onSelect($event, 'selectDateRange')"
         />
       </van-popup>
     </demo-block>
@@ -93,6 +89,11 @@ export default {
         const [start, end] = dateRange;
         return `${this.formatDate(start)} - ${this.formatDate(end)}`;
       }
+    },
+
+    onSelect(date, type) {
+      this.date[type] = date;
+      this.show[type] = false;
     }
   }
 };

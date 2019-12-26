@@ -23,7 +23,7 @@ Vue.use(Calendar);
 <!-- 点击单元格后唤起日历组件 -->
 <van-cell
   title="选择单个日期"
-  :value="formattedDate"
+  :value="selectedDate"
   @click="showCalendar = true"
 />
 
@@ -35,7 +35,7 @@ Vue.use(Calendar);
   position="bottom"
   style="height: 80vh;"
 >
-  <van-calendar v-model="currentDate" />
+  <van-calendar @select="onSelect" />
 </van-popup>
 ```
 
@@ -44,18 +44,14 @@ export default {
   data() {
     return {
       // 当前选中的日期
-      currentDate: null,
+      selectedDate: '',
       showCalendar: false
     };
   },
 
   computed: {
-    // 将 Date 格式化为 YYYY/MM/DD 的格式
-    formattedDate() {
-      const date = this.currentDate;
-      if (date) {
-        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-      }
+    onSelect(date) {
+      this.selectedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
     }
   }
 }
@@ -63,28 +59,23 @@ export default {
 
 ### 选择日期区间
 
-设置`type`为`range`后可以选择日期区间，此时`v-model`绑定的 currrentDate 为数组结构，数组第一项为开始时间，第二项为结束时间。
+设置`type`为`range`后可以选择日期区间，此时`select`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
 
 ```html
-<van-calendar
-  v-model="currentDate"
-  type="range"
-  @select="onSelect"
-/>
+<van-calendar type="range" @select="onSelect" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      currrentDate: []
+      selectedDate: []
     };
   },
 
   methods: {
     onSelect(date) {
-      console.log('开始时间: ' + date[0]);
-      console.log('结束时间: ' + date[1]);
+      this.selectedDate = date;
     }
   }
 }
@@ -96,11 +87,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中的日期 | *Date* | - | - |
 | type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` | - |
 | title | 日历标题 | *string* | `日期选择` | - |
 | min-date | 最小日期 | *Date*  | 当前日期 | - |
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
+| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |
 | row-height | 日期所在行的高度 | *number* | `64` | - |
 | button-text | 确认按钮的文字 | *string* | `确定` | - |
 | button-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |

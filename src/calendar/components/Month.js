@@ -13,7 +13,7 @@ export default createComponent({
     showMark: Boolean,
     showTitle: Boolean,
     rowHeight: Number,
-    currentValue: [Date, Array]
+    currentDate: [Date, Array]
   },
 
   data() {
@@ -76,18 +76,18 @@ export default createComponent({
 
   methods: {
     getDayType(day) {
-      const { type, minDate, maxDate, currentValue } = this;
+      const { type, minDate, maxDate, currentDate } = this;
 
       if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
         return 'disabled';
       }
 
       if (type === 'single') {
-        return compareDay(day, currentValue) === 0 ? 'selected' : '';
+        return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
 
       if (type === 'range') {
-        const [startDay, endDay] = this.currentValue;
+        const [startDay, endDay] = this.currentDate;
 
         if (!startDay) {
           return;
