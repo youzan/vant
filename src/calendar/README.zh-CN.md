@@ -2,7 +2,7 @@
 
 ### 介绍
 
-日历组件用于选择日期或日期区间，可以与 [弹出层](#/zh-CN/popup)、[单元格](#/zh-CN/cell)、[输入框](#/zh-CN/field) 等组件配合使用
+日历组件用于选择日期或日期区间
 
 ### 引入
 
@@ -17,26 +17,19 @@ Vue.use(Calendar);
 
 ### 选择单个日期
 
-下面演示了结合单元格、弹出层来使用日历组件的用法。
+下面演示了结合单元格来使用日历组件的用法，点击单元格后唤起日历组件。
 
 ```html
-<!-- 点击单元格后唤起日历组件 -->
 <van-cell
   title="选择单个日期"
   :value="selectedDate"
   @click="showCalendar = true"
 />
 
-<!-- 使用弹出层组件作为日历的容器 -->
-<van-popup
+<van-calendar
   v-model="showCalendar"
-  round
-  closeable
-  position="bottom"
-  style="height: 80vh;"
->
-  <van-calendar @select="onSelect" />
-</van-popup>
+  @select="onSelect"
+/>
 ```
 
 ```js
@@ -87,6 +80,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| v-model | 是否显示日历弹窗 | *boolean* | `false` | - |
 | type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` | - |
 | title | 日历标题 | *string* | `日期选择` | - |
 | min-date | 最小日期 | *Date*  | 当前日期 | - |
@@ -95,6 +89,7 @@ export default {
 | row-height | 日期所在行的高度 | *number* | `64` | - |
 | button-text | 确认按钮的文字 | *string* | `确定` | - |
 | button-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
+| poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
 
