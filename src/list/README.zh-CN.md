@@ -139,6 +139,7 @@ export default {
 |------|------|
 | default | 列表内容 |
 | loading | 自定义底部加载中提示 |
+| finished | 自定义加载完成后的提示文案 |
 
 ## 常见问题
 

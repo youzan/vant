@@ -126,10 +126,12 @@ export default createComponent({
     },
 
     genFinishedText() {
-      if (this.finished && this.finishedText) {
-        return (
-          <div class={bem('finished-text')}>{this.finishedText}</div>
-        );
+      if (this.finished) {
+        const text = this.slots('finished') || this.finishedText;
+
+        if (text) {
+          return <div class={bem('finished-text')}>{text}</div>;
+        }
       }
     },
 

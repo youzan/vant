@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`finished slot 1`] = `
+<div role="feed" class="van-list">
+  <div class="van-list__finished-text">Custom Finished</div>
+  <div class="van-list__placeholder"></div>
+</div>
+`;

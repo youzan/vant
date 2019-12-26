@@ -70,6 +70,19 @@ test('finished', async () => {
   expect(wrapper.contains('.van-list__finished-text')).toBeFalsy();
 });
 
+test('finished slot', async () => {
+  const wrapper = mount(List, {
+    propsData: {
+      finished: true
+    },
+    scopedSlots: {
+      finished: () => 'Custom Finished'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('immediate check false', async () => {
   const wrapper = mount(List, {
     propsData: {
