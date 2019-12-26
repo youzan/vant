@@ -75,6 +75,51 @@ export default {
 }
 ```
 
+### 快捷选择
+
+将`show-confirm`设置为`false`可以隐藏确认按钮，这种情况下选择完成后会立即触发`confirm`事件
+
+```html
+<van-calendar v-model="show" :show-confirm="false" />
+```
+
+### 自定义日期范围
+
+通过`min-date`和`max-date`定义日历的范围
+
+```html
+<van-calendar
+  v-model="show"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      minDate: new Date(2010, 0, 1),
+      maxDate: new Date(2010, 0, 31)
+    };
+  }
+};
+```
+
+### 自定义按钮文字
+
+通过`confirm-text`设置按钮文字，通过`confirm-disabled-text`设置按钮禁用时的文字
+
+```html
+<van-calendar
+  v-model="show"
+  type="range"
+  confirm-text="完成"
+  confirm-disabled-text="请选择结束时间"
+/>
+```
+
 ## API
 
 ### Props
@@ -87,10 +132,10 @@ export default {
 | min-date | 最小日期 | *Date*  | 当前日期 | - |
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
 | default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |
-| row-height | 日期所在行的高度 | *number* | `64` | - |
+| row-height | 日期行高 | *number* | `64` | - |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
-| show-confirm | 是否展示确认按钮 | *boolean* | `false` | - |
+| show-confirm | 是否展示确认按钮 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
 | confirm-text | 确认按钮的文字 | *string* | `确定` | - |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
@@ -115,3 +160,4 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
+| reset | 重置选中的日期到默认值 | - | - |

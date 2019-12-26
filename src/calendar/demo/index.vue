@@ -3,46 +3,60 @@
     <demo-block :title="$t('basicUsage')">
       <van-cell
         is-link
-        :title="$t('selectSingleDate')"
-        :value="formatFullDate(date.selectSingleDate)"
-        @click="toggle('selectSingleDate', true)"
+        :title="$t('selectSingle')"
+        :value="formatFullDate(date.selectSingle)"
+        @click="show('single', 'selectSingle')"
       />
 
       <van-cell
         is-link
-        :title="$t('selectDateRange')"
-        :value="formatDateRange(date.selectDateRange)"
-        @click="toggle('selectDateRange', true)"
+        :title="$t('selectRange')"
+        :value="formatRange(date.selectRange)"
+        @click="show('range', 'selectRange')"
       />
     </demo-block>
 
-    <demo-block :title="$t('showConfirm')">
+    <demo-block :title="$t('quickSelect')">
       <van-cell
         is-link
-        :title="$t('selectSingleDate')"
-        :value="formatFullDate(date.selectSingleDate)"
-        @click="toggle('selectSingleDate', true, 'showConfirm')"
+        :title="$t('selectSingle')"
+        :value="formatFullDate(date.quickSelect1)"
+        @click="show('single', 'quickSelect1')"
       />
 
       <van-cell
         is-link
-        :title="$t('selectDateRange')"
-        :value="formatDateRange(date.selectDateRange)"
-        @click="toggle('selectDateRange', true, 'showConfirm')"
+        :title="$t('selectRange')"
+        :value="formatRange(date.quickSelect2)"
+        @click="show('range', 'quickSelect2')"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('customCalendar')">
+      <van-cell
+        is-link
+        :title="$t('customRange')"
+        :value="formatFullDate(date.customRange)"
+        @click="show('single', 'customRange')"
+      />
+
+      <van-cell
+        is-link
+        :title="$t('customConfirm')"
+        :value="formatRange(date.customConfirm)"
+        @click="show('range', 'customConfirm')"
       />
     </demo-block>
 
     <van-calendar
-      v-model="show.selectSingleDate"
+      v-model="showCalendar"
+      :type="type"
+      :min-date="minDate"
+      :max-date="maxDate"
       :show-confirm="showConfirm"
-      @confirm="onConfirm($event, 'selectSingleDate')"
-    />
-
-    <van-calendar
-      v-model="show.selectDateRange"
-      type="range"
-      :show-confirm="showConfirm"
-      @confirm="onConfirm($event, 'selectDateRange')"
+      :confirm-text="confirmText"
+      :confirm-disabled-text="confirmDisabledText"
+      @confirm="onConfirm"
     />
   </demo-section>
 </template>
@@ -51,39 +65,75 @@
 export default {
   i18n: {
     'zh-CN': {
-      selectSingleDate: '选择单个日期',
-      selectDateRange: '选择日期区间',
-      showConfirm: '展示确认按钮'
+      selectSingle: '选择单个日期',
+      selectRange: '选择日期区间',
+      quickSelect: '快捷选择',
+      confirmText: '完成',
+      customRange: '自定义范围',
+      customConfirm: '自定义按钮文字',
+      customCalendar: '自定义日历',
+      confirmDisabledText: '请选择结束时间'
     },
     'en-US': {
-      selectSingleDate: 'Select Single Date',
-      selectDateRange: 'Select Date Range',
-      showConfirm: 'Show Confirm Button'
+      selectSingle: 'Select Single Date',
+      selectRange: 'Select Date Range',
+      quickSelect: 'Quick Select',
+      confirmText: 'OK',
+      customRange: 'Custom Range',
+      customConfirm: 'Custom Confirm Text',
+      customCalendar: 'Custom Calendar',
+      confirmDisabledText: 'Select End Time'
     }
   },
 
   data() {
     return {
-      showConfirm: false,
       date: {
-        selectSingleDate: null,
-        selectDateRange: []
+        selectSingle: null,
+        selectRange: [],
+        quickSelect1: null,
+        quickSelect2: [],
+        customConfirm: [],
+        customRange: null
       },
-      show: {
-        selectSingleDate: false,
-        selectDateRange: false
-      }
+      type: 'single',
+      minDate: undefined,
+      maxDate: undefined,
+      showConfirm: false,
+      showCalendar: false,
+      confirmText: undefined,
+      confirmDisabledText: undefined,
     };
   },
 
   methods: {
-    toggle(type, show, setting) {
-      this.show[type] = show;
+    resetSettings() {
+      this.minDate = undefined;
+      this.maxDate = undefined;
+      this.showConfirm = true;
+      this.confirmText = undefined;
+      this.confirmDisabledText = undefined;
+    },
 
-      if (setting === 'showConfirm') {
-        this.showConfirm = true;
-      } else {
-        this.showConfirm = false;
+    show(type, id) {
+      this.resetSettings();
+      this.id = id;
+      this.type = type;
+      this.showCalendar = true;
+
+      switch (id) {
+        case 'quickSelect1':
+        case 'quickSelect2':
+          this.showConfirm = false;
+          break;
+        case 'customConfirm':
+          this.confirmText = this.$t('confirmText');
+          this.confirmDisabledText = this.$t('confirmDisabledText');
+          break;
+        case 'customRange':
+          this.minDate = new Date(2010, 0, 1);
+          this.maxDate = new Date(2010, 0, 31);
+          break;
       }
     },
 
@@ -99,16 +149,16 @@ export default {
       }
     },
 
-    formatDateRange(dateRange) {
+    formatRange(dateRange) {
       if (dateRange.length) {
         const [start, end] = dateRange;
         return `${this.formatDate(start)} - ${this.formatDate(end)}`;
       }
     },
 
-    onConfirm(date, type) {
-      this.date[type] = date;
-      this.show[type] = false;
+    onConfirm(date) {
+      this.showCalendar = false;
+      this.date[this.id] = date;
     }
   }
 };
