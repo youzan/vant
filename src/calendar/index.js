@@ -7,8 +7,7 @@ import {
   compareDay,
   compareMonth,
   createComponent,
-  ROW_HEIGHT,
-  RENDER_OFFSET
+  ROW_HEIGHT
 } from './utils';
 
 import Popup from '../popup';
@@ -135,10 +134,15 @@ export default createComponent({
     // and find the elements that needs to be rendered
     onScroll() {
       const { body, months } = this.$refs;
-      const scrollTop = getScrollTop(body);
-      const top = scrollTop - RENDER_OFFSET;
-      const bottom = scrollTop + this.bodyHeight + RENDER_OFFSET;
+      const top = getScrollTop(body);
+      const bottom = top + this.bodyHeight;
       const heights = months.map(item => item.height);
+      const heightSum = heights.reduce((a, b) => a + b, 0);
+
+      // iOS scroll bounce may exceed the range
+      if (top < 0 || bottom > heightSum) {
+        return;
+      }
 
       let height = 0;
       let firstMonth;
