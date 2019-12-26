@@ -13,6 +13,7 @@ export default createComponent({
     showMark: Boolean,
     showTitle: Boolean,
     rowHeight: Number,
+    formatter: Function,
     currentDate: [Date, Array]
   },
 
@@ -56,14 +57,22 @@ export default createComponent({
       const year = this.date.getFullYear();
       const month = this.date.getMonth();
 
-      for (let i = 1; i <= this.totalDay; i++) {
-        const date = new Date(year, month, i);
+      for (let day = 1; day <= this.totalDay; day++) {
+        const date = new Date(year, month, day);
+        const type = this.getDayType(date);
 
-        days.push({
-          day: i,
+        let config = {
           date,
-          type: this.getDayType(date)
-        });
+          type,
+          text: day,
+          bottomInfo: this.getBottomInfo(type)
+        };
+
+        if (this.formatter) {
+          config = this.formatter(config);
+        }
+
+        days.push(config);
       }
 
       return days;
@@ -113,12 +122,12 @@ export default createComponent({
       }
     },
 
-    getLabel(item) {
-      if (item.type === 'start') {
+    getBottomInfo(type) {
+      if (type === 'start') {
         return t('start');
       }
 
-      if (item.type === 'end') {
+      if (type === 'end') {
         return t('end');
       }
     },
@@ -161,7 +170,7 @@ export default createComponent({
     },
 
     genDay(item, index) {
-      const { type } = item;
+      const { type, topInfo, bottomInfo } = item;
       const style = this.getDayStyle(index);
 
       const onClick = () => {
@@ -173,18 +182,26 @@ export default createComponent({
       if (type === 'selected') {
         return (
           <div style={style} class={bem('day')} onClick={onClick}>
-            <div class={bem('selected-day')}>{item.day}</div>
+            <div class={bem('selected-day')}>{item.text}</div>
           </div>
         );
       }
 
-      const label = this.getLabel(item);
-      const Label = label && <div class={bem('day-label')}>{label}</div>;
+      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
+
+      const BottomInfo = bottomInfo && (
+        <div class={bem('bottom-info')}>{bottomInfo}</div>
+      );
 
       return (
-        <div style={style} class={bem('day', [type])} onClick={onClick}>
-          {item.day}
-          {Label}
+        <div
+          style={style}
+          class={[bem('day', [type]), item.className]}
+          onClick={onClick}
+        >
+          {TopInfo}
+          {item.text}
+          {BottomInfo}
         </div>
       );
     }

@@ -120,6 +120,60 @@ export default {
 />
 ```
 
+### 自定义日期文案
+
+通过传入`formatter`函数来对日历上每一格的内容进行格式化
+
+```html
+<van-calendar
+  v-model="show"
+  type="range"
+  :formatter="formatter"
+/>
+```
+
+```js
+export default {
+  methods: {
+    formatter(day) {
+      const month = day.date.getMonth();
+      const date = day.date.getDate();
+
+      if (month === 4) {
+        if (date === 1) {
+          day.topInfo = '劳动节';
+        } else if (date === 4) {
+          day.topInfo = '五四青年节';
+        } else if (date === 11) {
+          day.text = '今天';
+        }
+      }
+
+      if (day.type === 'start') {
+        day.bottomInfo = '入住';
+      } else if (day.type === 'end') {
+        day.bottomInfo = '离店';
+      }
+
+      return day;
+    }
+  }
+}
+```
+
+### 平铺展示
+
+将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现
+
+```html
+<van-calendar
+  title="日历"
+  :popable="false"
+  :show-confirm="false"
+  :style="{ height: '500px' }"
+/>
+```
+
 ## API
 
 ### Props
@@ -133,12 +187,26 @@ export default {
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
 | default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |
 | row-height | 日期行高 | *number* | `64` | - |
+| formatter | 日期格式化函数 | *(day: Day) => Day* | - | - |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
 | confirm-text | 确认按钮的文字 | *string* | `确定` | - |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
+
+### Day 数据结构
+
+日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容
+
+| 键名 | 说明 | 类型 |
+|------|------|------|
+| date | 日期对应的 Date 对象 | *Date* |
+| type | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | *string* |
+| text | 中间显示的文字 | *string* |
+| topInfo | 上方的提示信息 | *string* |
+| bottomInfo | 下方的提示信息 | *string* |
+| className | 额外类名 | *string* |
 
 ### Events
 

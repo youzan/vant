@@ -71,6 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   &__day {
@@ -105,14 +106,21 @@
     }
   }
 
-  &__day-label {
+  &__top-info,
+  &__bottom-info {
     position: absolute;
     right: 0;
-    bottom: 6px;
     left: 0;
     font-size: @font-size-xs;
     line-height: 14px;
-    text-align: center;
+  }
+
+  &__top-info {
+    top: 6px;
+  }
+
+  &__bottom-info {
+    bottom: 6px;
   }
 
   &__selected-day {

@@ -19,6 +19,7 @@ export default createComponent({
   props: {
     title: String,
     value: Boolean,
+    formatter: Function,
     defaultDate: [Date, Array],
     confirmText: String,
     confirmDisabledText: String,
@@ -221,11 +222,12 @@ export default createComponent({
         <Month
           ref="months"
           refInFor
-          type={this.type}
           date={date}
+          type={this.type}
           minDate={this.minDate}
           maxDate={this.maxDate}
           showMark={this.showMark}
+          formatter={this.formatter}
           rowHeight={this.rowHeight}
           showTitle={index !== 0}
           currentDate={this.currentDate}

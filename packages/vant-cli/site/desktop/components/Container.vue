@@ -27,10 +27,6 @@ export default {
 
   &--with-simulator {
     padding-right: @van-doc-simulator-width + @van-doc-padding;
-
-    @media (max-width: 1300px) {
-      padding-right: @van-doc-simulator-small-width + @van-doc-padding;
-    }
   }
 }
 </style>
