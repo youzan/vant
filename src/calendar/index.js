@@ -18,8 +18,8 @@ import Header from './components/Header';
 export default createComponent({
   props: {
     title: String,
-    value: [Date, Array],
     buttonText: String,
+    defaultDate: [Date, Array],
     buttonDisabledText: String,
     type: {
       type: String,
@@ -27,16 +27,16 @@ export default createComponent({
     },
     minDate: {
       type: Date,
-      default: () => new Date(),
-      validator: isDate
+      validator: isDate,
+      default: () => new Date()
     },
     maxDate: {
       type: Date,
+      validator: isDate,
       default() {
         const now = new Date();
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
-      },
-      validator: isDate
+      }
     },
     rowHeight: {
       type: Number,
@@ -55,7 +55,7 @@ export default createComponent({
   data() {
     return {
       monthTitle: '',
-      currentValue: this.getDefaultValue()
+      currentDate: this.getInitialDate()
     };
   },
 
@@ -76,8 +76,8 @@ export default createComponent({
   },
 
   watch: {
-    value(val) {
-      this.currentValue = val;
+    defaultDate(val) {
+      this.currentDate = val;
     }
   },
 
@@ -87,16 +87,16 @@ export default createComponent({
   },
 
   methods: {
-    getDefaultValue() {
-      const { type, value, minDate } = this;
+    getInitialDate() {
+      const { type, defaultDate, minDate } = this;
 
       if (type === 'single') {
-        return value || minDate;
+        return defaultDate || minDate;
       }
 
       if (type === 'range') {
-        const range = value || [];
-        return [range[0] || minDate, range[1] || getNextDay(minDate)];
+        const [startDay, endDay] = defaultDate || [];
+        return [startDay || minDate, endDay || getNextDay(minDate)];
       }
     },
 
@@ -132,32 +132,31 @@ export default createComponent({
       const { date } = item;
 
       if (this.type === 'single') {
-        this.$emit('input', date);
+        this.currentDate = date;
         this.$emit('select', date);
       }
 
       if (this.type === 'range') {
-        const [startDay, endDay] = this.currentValue;
+        const [startDay, endDay] = this.currentDate;
 
         if (startDay && !endDay) {
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            this.$emit('input', [startDay, date]);
+            this.currentDate = [startDay, date];
           }
 
           if (compareToStart === -1) {
-            this.$emit('input', [date, null]);
+            this.currentDate = [date, null];
           }
         } else {
-          this.$emit('input', [date, null]);
+          this.currentDate = [date, null];
         }
       }
     },
 
     onConfirmRange() {
-      this.$emit('input', this.currentValue);
-      this.$emit('select', this.currentValue);
+      this.$emit('select', this.currentDate);
     },
 
     genMonth(date, index) {
@@ -172,7 +171,7 @@ export default createComponent({
           showMark={this.showMark}
           rowHeight={this.rowHeight}
           showTitle={index !== 0}
-          currentValue={this.currentValue}
+          currentDate={this.currentDate}
           onClick={this.onClickDay}
         />
       );
@@ -186,7 +185,7 @@ export default createComponent({
       }
 
       if (this.type === 'range') {
-        const disabled = !this.currentValue[1];
+        const disabled = !this.currentDate[1];
         const text = disabled ? this.buttonDisabledText : this.buttonText;
 
         return (
