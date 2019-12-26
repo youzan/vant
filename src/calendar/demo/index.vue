@@ -60,6 +60,8 @@
         :title="$t('calendar')"
         :poppable="false"
         :show-confirm="false"
+        :min-date="tiledMinDate"
+        :max-date="tiledMaxDate"
         :style="{ height: '500px' }"
       />
     </demo-block>
@@ -136,6 +138,8 @@ export default {
       formatter: undefined,
       showConfirm: false,
       showCalendar: false,
+      tiledMinDate: new Date(2012, 0, 10),
+      tiledMaxDate: new Date(2012, 2, 20),
       confirmText: undefined,
       confirmDisabledText: undefined,
     };

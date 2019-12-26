@@ -89,6 +89,7 @@ export default createComponent({
         return !this.currentDate;
       }
 
+      /* istanbul ignore else */
       if (this.type === 'range') {
         return !this.currentDate[0] || !this.currentDate[1];
       }
@@ -137,6 +138,7 @@ export default createComponent({
         return defaultDate || minDate;
       }
 
+      /* istanbul ignore else */
       if (type === 'range') {
         const [startDay, endDay] = defaultDate || [];
         return [startDay || minDate, endDay || getNextDay(minDate)];
@@ -153,6 +155,7 @@ export default createComponent({
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
+      /* istanbul ignore next */
       if (top < 0 || (bottom > heightSum && top > 0)) {
         return;
       }
@@ -171,6 +174,7 @@ export default createComponent({
         height += heights[i];
       }
 
+      /* istanbul ignore else */
       if (firstMonth) {
         this.monthTitle = firstMonth.title;
       }
