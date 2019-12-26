@@ -8,15 +8,11 @@
         @click="toggle('selectSingleDate', true)"
       />
 
-      <van-popup
+      <van-calendar
         v-model="show.selectSingleDate"
-        round
-        closeable
-        position="bottom"
-        style="height: 80vh;"
-      >
-        <van-calendar @select="onSelect($event, 'selectSingleDate')" />
-      </van-popup>
+        :poppable="false"
+        @select="onSelect($event, 'selectSingleDate')"
+      />
 
       <van-cell
         is-link
@@ -25,18 +21,11 @@
         @click="toggle('selectDateRange', true)"
       />
 
-      <van-popup
+      <van-calendar
         v-model="show.selectDateRange"
-        round
-        closeable
-        position="bottom"
-        style="height: 80vh;"
-      >
-        <van-calendar
-          type="range"
-          @select="onSelect($event, 'selectDateRange')"
-        />
-      </van-popup>
+        type="range"
+        @select="onSelect($event, 'selectDateRange')"
+      />
     </demo-block>
   </demo-section>
 </template>

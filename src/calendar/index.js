@@ -11,6 +11,7 @@ import {
   RENDER_OFFSET
 } from './utils';
 
+import Popup from '../popup';
 import Button from '../button';
 import Month from './components/Month';
 import Header from './components/Header';
@@ -18,6 +19,7 @@ import Header from './components/Header';
 export default createComponent({
   props: {
     title: String,
+    value: Boolean,
     buttonText: String,
     defaultDate: [Date, Array],
     buttonDisabledText: String,
@@ -41,6 +43,10 @@ export default createComponent({
     rowHeight: {
       type: Number,
       default: ROW_HEIGHT
+    },
+    poppable: {
+      type: Boolean,
+      default: true
     },
     showMark: {
       type: Boolean,
@@ -76,17 +82,31 @@ export default createComponent({
   },
 
   watch: {
+    value(val) {
+      if (val) {
+        this.initRect();
+      }
+    },
+
     defaultDate(val) {
       this.currentDate = val;
     }
   },
 
   mounted() {
-    this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
-    this.onScroll();
+    if (!this.poppable) {
+      this.initRect();
+    }
   },
 
   methods: {
+    initRect() {
+      this.$nextTick(() => {
+        this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
+        this.onScroll();
+      });
+    },
+
     getInitialDate() {
       const { type, defaultDate, minDate } = this;
 
@@ -155,6 +175,10 @@ export default createComponent({
       }
     },
 
+    togglePopup(val) {
+      this.$emit('input', val);
+    },
+
     onConfirmRange() {
       this.$emit('select', this.currentDate);
     },
@@ -213,24 +237,43 @@ export default createComponent({
           {this.genFooterContent()}
         </div>
       );
+    },
+
+    genCalendar() {
+      return (
+        <div class={bem()}>
+          <Header
+            title={this.title}
+            monthTitle={this.monthTitle}
+            scopedSlots={{
+              title: () => this.slots('title')
+            }}
+          />
+          <div ref="body" class={bem('body')} onScroll={this.onScroll}>
+            {this.months.map(this.genMonth)}
+          </div>
+          {this.genFooter()}
+        </div>
+      );
     }
   },
 
   render() {
-    return (
-      <div class={bem()}>
-        <Header
-          title={this.title}
-          monthTitle={this.monthTitle}
-          scopedSlots={{
-            title: () => this.slots('title')
-          }}
-        />
-        <div ref="body" class={bem('body')} onScroll={this.onScroll}>
-          {this.months.map(this.genMonth)}
-        </div>
-        {this.genFooter()}
-      </div>
-    );
+    if (this.poppable) {
+      return (
+        <Popup
+          round
+          closeable
+          value={this.value}
+          position="bottom"
+          class={bem('popup')}
+          onInput={this.togglePopup}
+        >
+          {this.genCalendar()}
+        </Popup>
+      );
+    }
+
+    return this.genCalendar();
   }
 });
