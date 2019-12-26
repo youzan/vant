@@ -49,10 +49,6 @@ export default createComponent({
     },
 
     days() {
-      if (!this.visible) {
-        return null;
-      }
-
       const days = [];
       const year = this.date.getFullYear();
       const month = this.date.getMonth();
@@ -95,6 +91,7 @@ export default createComponent({
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
 
+      /* istanbul ignore else */
       if (type === 'range') {
         const [startDay, endDay] = this.currentDate;
 

@@ -12,10 +12,7 @@ export default createComponent({
   methods: {
     genTitle() {
       const title = this.slots('title') || this.title || t('title');
-
-      if (title) {
-        return <div class={bem('header-title')}>{title}</div>;
-      }
+      return <div class={bem('header-title')}>{title}</div>;
     },
 
     genMonth() {
