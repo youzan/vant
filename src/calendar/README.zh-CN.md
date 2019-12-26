@@ -29,7 +29,6 @@ Vue.use(Calendar);
 export default {
   data() {
     return {
-      // 当前选中的日期
       date: '',
       show: false
     };
@@ -136,10 +135,10 @@ export default {
 export default {
   methods: {
     formatter(day) {
-      const month = day.date.getMonth();
+      const month = day.date.getMonth() + 1;
       const date = day.date.getDate();
 
-      if (month === 4) {
+      if (month === 5) {
         if (date === 1) {
           day.topInfo = '劳动节';
         } else if (date === 4) {

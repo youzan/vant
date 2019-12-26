@@ -8,6 +8,10 @@
 
   &__popup {
     height: 80%;
+
+    .van-popup__close-icon {
+      top: 13px;
+    }
   }
 
   &__header {
@@ -59,8 +63,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: -1;
-    color: @gray-2;
+    z-index: 0;
+    color: fade(@gray-2, 80%);
     font-size: 160px;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -113,6 +117,10 @@
     left: 0;
     font-size: @font-size-xs;
     line-height: 14px;
+
+    @media (max-width: 350px) {
+      font-size: 9px;
+    }
   }
 
   &__top-info {
