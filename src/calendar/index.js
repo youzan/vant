@@ -20,7 +20,6 @@ export default createComponent({
     title: String,
     value: Boolean,
     defaultDate: [Date, Array],
-    showConfirm: Boolean,
     confirmText: String,
     confirmDisabledText: String,
     type: {
@@ -49,6 +48,10 @@ export default createComponent({
       default: true
     },
     showMark: {
+      type: Boolean,
+      default: true
+    },
+    showConfirm: {
       type: Boolean,
       default: true
     },
@@ -92,6 +95,10 @@ export default createComponent({
   },
 
   watch: {
+    type() {
+      this.reset();
+    },
+
     value(val) {
       if (val) {
         this.initRect();
@@ -110,6 +117,11 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
+    reset() {
+      this.currentDate = this.getInitialDate();
+    },
+
     initRect() {
       this.$nextTick(() => {
         this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
@@ -140,7 +152,7 @@ export default createComponent({
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      if (top < 0 || bottom > heightSum) {
+      if (top < 0 || (bottom > heightSum && top > 0)) {
         return;
       }
 
@@ -178,9 +190,7 @@ export default createComponent({
 
           if (compareToStart === 1) {
             this.select([startDay, date], true);
-          }
-
-          if (compareToStart === -1) {
+          } else if (compareToStart === -1) {
             this.select([date, null]);
           }
         } else {
