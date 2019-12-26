@@ -133,3 +133,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get List instance and call instance 
 | default | List content |
 | loading | Custom loading tips |
 | finished | Custom finished tips |
+| error | Custom error tips |

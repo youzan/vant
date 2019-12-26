@@ -136,12 +136,16 @@ export default createComponent({
     },
 
     genErrorText() {
-      if (this.error && this.errorText) {
-        return (
-          <div onClick={this.clickErrorText} class={bem('error-text')}>
-            {this.errorText}
-          </div>
-        );
+      if (this.error) {
+        const text = this.slots('error') || this.errorText;
+
+        if (text) {
+          return (
+            <div onClick={this.clickErrorText} class={bem('error-text')}>
+              {text}
+            </div>
+          );
+        }
       }
     }
   },
