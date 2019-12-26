@@ -82,6 +82,11 @@
 export default {
   i18n: {
     'zh-CN': {
+      in: '入店',
+      out: '离店',
+      today: '今天',
+      laborDay: '劳动节',
+      youthDay: '五四青年节',
       calendar: '日历',
       selectSingle: '选择单个日期',
       selectRange: '选择日期区间',
@@ -95,6 +100,11 @@ export default {
       tiledDisplay: '平铺展示'
     },
     'en-US': {
+      in: 'In',
+      out: 'Out',
+      today: 'Today',
+      laborDay: 'Labor day',
+      youthDay: 'Youth Day',
       calendar: 'Calendar',
       selectSingle: 'Select Single Date',
       selectRange: 'Select Date Range',
@@ -169,23 +179,23 @@ export default {
     },
 
     dayFormatter(day) {
-      const month = day.date.getMonth();
+      const month = day.date.getMonth() + 1;
       const date = day.date.getDate();
 
-      if (month === 4) {
+      if (month === 5) {
         if (date === 1) {
-          day.topInfo = '劳动节';
+          day.topInfo = this.$t('laborDay');
         } else if (date === 4) {
-          day.topInfo = '五四青年节';
+          day.topInfo = this.$t('youthDay');
         } else if (date === 11) {
-          day.text = '今天';
+          day.text = this.$t('today');
         }
       }
 
       if (day.type === 'start') {
-        day.bottomInfo = '入住';
+        day.bottomInfo = this.$t('in');
       } else if (day.type === 'end') {
-        day.bottomInfo = '离店';
+        day.bottomInfo = this.$t('out');
       }
 
       return day;
