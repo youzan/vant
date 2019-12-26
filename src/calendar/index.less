@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: @white;
+  background-color: @calendar-background-color;
 
   &__popup {
-    height: 80%;
+    height: @calendar-popup-height;
 
     .van-popup__close-icon {
       top: 13px;
@@ -16,23 +16,23 @@
 
   &__header {
     flex-shrink: 0;
-    box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
+    box-shadow: @calendar-header-box-shadow;
   }
 
   &__header-title,
   &__month-title {
-    height: 44px;
+    height: @calendar-header-title-height;
     font-weight: @font-weight-bold;
-    line-height: 44px;
+    line-height: @calendar-header-title-height;
     text-align: center;
   }
 
   &__header-title {
-    font-size: @font-size-lg;
+    font-size: @calendar-header-title-font-size;
   }
 
   &__month-title {
-    font-size: @font-size-md;
+    font-size: @calendar-month-title-font-size;
   }
 
   &__weekdays {
@@ -41,8 +41,8 @@
 
   &__weekday {
     flex: 1;
-    font-size: @font-size-sm;
-    line-height: 30px;
+    font-size: @calendar-weekdays-font-size;
+    line-height: @calendar-weekdays-height;
     text-align: center;
   }
 
@@ -64,8 +64,8 @@
     top: 50%;
     left: 50%;
     z-index: 0;
-    color: fade(@gray-2, 80%);
-    font-size: 160px;
+    color: @calendar-month-mark-color;
+    font-size: @calendar-month-mark-font-size;
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
@@ -81,14 +81,14 @@
   &__day {
     position: relative;
     width: 14.285%;
-    height: 64px;
-    font-size: @font-size-lg;
+    height: @calendar-day-height;
+    font-size: @calendar-day-font-size;
     cursor: pointer;
 
     &--end,
     &--start {
-      color: @white;
-      background-color: @red;
+      color: @calendar-range-edge-color;
+      background-color: @calendar-range-edge-background-color;
     }
 
     &--start {
@@ -100,12 +100,12 @@
     }
 
     &--middle {
-      color: @red;
-      background-color: fade(@red, 10%);
+      color: @calendar-range-middle-color;
+      background-color: @calendar-range-middle-background-color;
     }
 
     &--disabled {
-      color: @gray-5;
+      color: @calendar-day-disabled-color;
       cursor: default;
     }
   }
@@ -115,8 +115,8 @@
     position: absolute;
     right: 0;
     left: 0;
-    font-size: @font-size-xs;
-    line-height: 14px;
+    font-size: @calendar-info-font-size;
+    line-height: @calendar-info-line-height;
 
     @media (max-width: 350px) {
       font-size: 9px;
@@ -132,10 +132,10 @@
   }
 
   &__selected-day {
-    width: 54px;
-    height: 54px;
-    color: @white;
-    background: @red;
+    width: @calendar-selected-day-size;
+    height: @calendar-selected-day-size;
+    color: @calendar-selected-day-color;
+    background-color: @calendar-selected-day-background-color;
     border-radius: @border-radius-md;
   }
 
@@ -150,8 +150,8 @@
   }
 
   &__confirm {
-    height: 36px;
-    margin: 7px 0;
-    line-height: 34px;
+    height: @calendar-confirm-button-height;
+    margin: @calendar-confirm-button-margin;
+    line-height: @calendar-confirm-button-line-height;
   }
 }
