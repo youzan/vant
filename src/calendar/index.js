@@ -20,9 +20,10 @@ export default createComponent({
   props: {
     title: String,
     value: Boolean,
-    buttonText: String,
     defaultDate: [Date, Array],
-    buttonDisabledText: String,
+    showConfirm: Boolean,
+    confirmText: String,
+    confirmDisabledText: String,
     type: {
       type: String,
       default: 'single'
@@ -78,6 +79,16 @@ export default createComponent({
       } while (compareMonth(cursor, this.maxDate) !== 1);
 
       return months;
+    },
+
+    buttonDisabled() {
+      if (this.type === 'single') {
+        return !this.currentDate;
+      }
+
+      if (this.type === 'range') {
+        return !this.currentDate[0] || !this.currentDate[1];
+      }
     }
   },
 
@@ -152,8 +163,7 @@ export default createComponent({
       const { date } = item;
 
       if (this.type === 'single') {
-        this.currentDate = date;
-        this.$emit('select', date);
+        this.select(date, true);
       }
 
       if (this.type === 'range') {
@@ -163,14 +173,14 @@ export default createComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            this.currentDate = [startDay, date];
+            this.select([startDay, date], true);
           }
 
           if (compareToStart === -1) {
-            this.currentDate = [date, null];
+            this.select([date, null]);
           }
         } else {
-          this.currentDate = [date, null];
+          this.select([date, null]);
         }
       }
     },
@@ -179,8 +189,17 @@ export default createComponent({
       this.$emit('input', val);
     },
 
-    onConfirmRange() {
+    select(date, complete) {
+      this.currentDate = date;
       this.$emit('select', this.currentDate);
+
+      if (complete && !this.showConfirm) {
+        this.onConfirm();
+      }
+    },
+
+    onConfirm() {
+      this.$emit('confirm', this.currentDate);
     },
 
     genMonth(date, index) {
@@ -208,18 +227,19 @@ export default createComponent({
         return slot;
       }
 
-      if (this.type === 'range') {
-        const disabled = !this.currentDate[1];
-        const text = disabled ? this.buttonDisabledText : this.buttonText;
+      if (this.showConfirm) {
+        const text = this.buttonDisabled
+          ? this.confirmDisabledText
+          : this.confirmText;
 
         return (
           <Button
             round
             block
             type="danger"
-            disabled={disabled}
             class={bem('confirm')}
-            onClick={this.onConfirmRange}
+            disabled={this.buttonDisabled}
+            onClick={this.onConfirm}
           >
             {text || t('confirm')}
           </Button>

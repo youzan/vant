@@ -8,25 +8,42 @@
         @click="toggle('selectSingleDate', true)"
       />
 
-      <van-calendar
-        v-model="show.selectSingleDate"
-        :poppable="false"
-        @select="onSelect($event, 'selectSingleDate')"
-      />
-
       <van-cell
         is-link
         :title="$t('selectDateRange')"
         :value="formatDateRange(date.selectDateRange)"
         @click="toggle('selectDateRange', true)"
       />
+    </demo-block>
 
-      <van-calendar
-        v-model="show.selectDateRange"
-        type="range"
-        @select="onSelect($event, 'selectDateRange')"
+    <demo-block :title="$t('showConfirm')">
+      <van-cell
+        is-link
+        :title="$t('selectSingleDate')"
+        :value="formatFullDate(date.selectSingleDate)"
+        @click="toggle('selectSingleDate', true, 'showConfirm')"
+      />
+
+      <van-cell
+        is-link
+        :title="$t('selectDateRange')"
+        :value="formatDateRange(date.selectDateRange)"
+        @click="toggle('selectDateRange', true, 'showConfirm')"
       />
     </demo-block>
+
+    <van-calendar
+      v-model="show.selectSingleDate"
+      :show-confirm="showConfirm"
+      @confirm="onConfirm($event, 'selectSingleDate')"
+    />
+
+    <van-calendar
+      v-model="show.selectDateRange"
+      type="range"
+      :show-confirm="showConfirm"
+      @confirm="onConfirm($event, 'selectDateRange')"
+    />
   </demo-section>
 </template>
 
@@ -35,16 +52,19 @@ export default {
   i18n: {
     'zh-CN': {
       selectSingleDate: '选择单个日期',
-      selectDateRange: '选择日期区间'
+      selectDateRange: '选择日期区间',
+      showConfirm: '展示确认按钮'
     },
     'en-US': {
       selectSingleDate: 'Select Single Date',
-      selectDateRange: 'Select Date Range'
+      selectDateRange: 'Select Date Range',
+      showConfirm: 'Show Confirm Button'
     }
   },
 
   data() {
     return {
+      showConfirm: false,
       date: {
         selectSingleDate: null,
         selectDateRange: []
@@ -57,8 +77,14 @@ export default {
   },
 
   methods: {
-    toggle(type, show) {
+    toggle(type, show, setting) {
       this.show[type] = show;
+
+      if (setting === 'showConfirm') {
+        this.showConfirm = true;
+      } else {
+        this.showConfirm = false;
+      }
     },
 
     formatDate(date) {
@@ -80,7 +106,7 @@ export default {
       }
     },
 
-    onSelect(date, type) {
+    onConfirm(date, type) {
       this.date[type] = date;
       this.show[type] = false;
     }

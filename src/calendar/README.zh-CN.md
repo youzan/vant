@@ -17,19 +17,12 @@ Vue.use(Calendar);
 
 ### 选择单个日期
 
-下面演示了结合单元格来使用日历组件的用法，点击单元格后唤起日历组件。
+下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发`confirm`事件
 
 ```html
-<van-cell
-  title="选择单个日期"
-  :value="selectedDate"
-  @click="showCalendar = true"
-/>
+<van-cell title="选择单个日期" :value="date" @click="show = true" />
 
-<van-calendar
-  v-model="showCalendar"
-  @select="onSelect"
-/>
+<van-calendar v-model="show" @confirm="onConfirm" />
 ```
 
 ```js
@@ -37,14 +30,19 @@ export default {
   data() {
     return {
       // 当前选中的日期
-      selectedDate: '',
-      showCalendar: false
+      date: '',
+      show: false
     };
   },
 
-  computed: {
-    onSelect(date) {
-      this.selectedDate = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+  methods: {
+    formatDate() {
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    },
+    onConfirm(date) {
+      const [start, end] = date;
+      this.show = false;
+      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
     }
   }
 }
@@ -52,23 +50,26 @@ export default {
 
 ### 选择日期区间
 
-设置`type`为`range`后可以选择日期区间，此时`select`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
+设置`type`为`range`后可以选择日期区间，此时`confirm`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
 
 ```html
-<van-calendar type="range" @select="onSelect" />
+<van-cell title="选择日期区间" :value="date" @click="show = true" />
+
+<van-calendar v-model="show" type="range" @confirm="onConfirm" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      selectedDate: []
+      show: false,
+      date: []
     };
   },
-
   methods: {
-    onSelect(date) {
-      this.selectedDate = date;
+    onConfirm(date) {
+      this.show = false;
+      this.date = date;
     }
   }
 }
@@ -87,17 +88,19 @@ export default {
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
 | default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |
 | row-height | 日期所在行的高度 | *number* | `64` | - |
-| button-text | 确认按钮的文字 | *string* | `确定` | - |
-| button-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
+| show-confirm | 是否展示确认按钮 | *boolean* | `false` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
+| confirm-text | 确认按钮的文字 | *string* | `确定` | - |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 确认选择日期时触发 | value: Date \| Date[] |
+| select | 点击任意日期时触发 | value: Date \| Date[] |
+| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | value: Date \| Date[] |
 
 ### Slots
 
