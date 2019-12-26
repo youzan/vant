@@ -83,6 +83,19 @@ test('finished slot', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('error slot', async () => {
+  const wrapper = mount(List, {
+    propsData: {
+      error: true
+    },
+    scopedSlots: {
+      error: () => 'Custom Error'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('immediate check false', async () => {
   const wrapper = mount(List, {
     propsData: {
