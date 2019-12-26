@@ -6,7 +6,6 @@ const [createComponent, bem, t] = createNamespace('calendar');
 export { createComponent, bem, t };
 
 export const ROW_HEIGHT = 64;
-export const RENDER_OFFSET = 150;
 
 export function formatMonthTitle(date: Date) {
   return t('monthTitle', date.getFullYear(), padZero(date.getMonth() + 1));
