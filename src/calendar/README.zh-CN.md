@@ -82,6 +82,14 @@ export default {
 <van-calendar v-model="show" :show-confirm="false" />
 ```
 
+### 自定义颜色
+
+通过`color`属性可以自定义日历的颜色，对选中日期和底部按钮生效
+
+```html
+<van-calendar v-model="show" color="#07c160" />
+```
+
 ### 自定义日期范围
 
 通过`min-date`和`max-date`定义日历的范围
@@ -182,6 +190,7 @@ export default {
 | v-model | 是否显示日历弹窗 | *boolean* | `false` | - |
 | type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` | - |
 | title | 日历标题 | *string* | `日期选择` | - |
+| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` | - |
 | min-date | 最小日期 | *Date*  | 当前日期 | - |
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
 | default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |

@@ -82,6 +82,14 @@ Set `show-confirm` to` false` to hide the confirm button. In this case, the `con
 <van-calendar v-model="show" :show-confirm="false" />
 ```
 
+### Custom Color
+
+Use `color` prop to custom calendar color
+
+```html
+<van-calendar v-model="show" color="#07c160" />
+```
+
 ### Custom Date Range
 
 Use `min-date` and `max-date` to custom date range
@@ -182,6 +190,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | v-model | Whether to show calendar | *boolean* | `false` | - |
 | type | Type，can be set to `single` `range` | *string* | `single` | - |
 | title | Title of calendar | *string* | `Calendar` | - |
+| color | Color for the bottom button and selected date | *string* | `#ee0a24` | - |
 | min-date | Min date | *Date*  | Today | - |
 | max-date | Max date | *Date*  | Six months after the today | - |
 | default-date | Default selected date | *Date \| Date[]* | Today | - |

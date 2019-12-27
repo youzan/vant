@@ -35,6 +35,13 @@
     <demo-block :title="$t('customCalendar')">
       <van-cell
         is-link
+        :title="$t('customColor')"
+        :value="formatRange(date.customColor)"
+        @click="show('range', 'customColor')"
+      />
+
+      <van-cell
+        is-link
         :title="$t('customRange')"
         :value="formatFullDate(date.customRange)"
         @click="show('single', 'customRange')"
@@ -69,6 +76,7 @@
     <van-calendar
       v-model="showCalendar"
       :type="type"
+      :color="color"
       :min-date="minDate"
       :max-date="maxDate"
       :formatter="formatter"
@@ -81,6 +89,8 @@
 </template>
 
 <script>
+import { GREEN } from '../../utils/constant';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -94,6 +104,7 @@ export default {
       selectRange: '选择日期区间',
       quickSelect: '快捷选择',
       confirmText: '完成',
+      customColor: '自定义颜色',
       customRange: '自定义日期范围',
       customConfirm: '自定义按钮文字',
       customDayText: '自定义日期文案',
@@ -112,6 +123,7 @@ export default {
       selectRange: 'Select Date Range',
       quickSelect: 'Quick Select',
       confirmText: 'OK',
+      customColor: 'Custom Color',
       customRange: 'Custom Date Range',
       customConfirm: 'Custom Confirm Text',
       customDayText: 'Custom Day Text',
@@ -128,11 +140,13 @@ export default {
         selectRange: [],
         quickSelect1: null,
         quickSelect2: [],
+        customColor: [],
         customConfirm: [],
         customRange: null,
         customDayText: []
       },
       type: 'single',
+      color: undefined,
       minDate: undefined,
       maxDate: undefined,
       formatter: undefined,
@@ -147,6 +161,7 @@ export default {
 
   methods: {
     resetSettings() {
+      this.color = undefined;
       this.minDate = undefined;
       this.maxDate = undefined;
       this.formatter = undefined;
@@ -165,6 +180,9 @@ export default {
         case 'quickSelect1':
         case 'quickSelect2':
           this.showConfirm = false;
+          break;
+        case 'customColor':
+          this.color = GREEN;
           break;
         case 'customConfirm':
           this.confirmText = this.$t('confirmText');
