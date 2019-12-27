@@ -80,6 +80,14 @@ exports[`not in page top 1`] = `
 </div>
 `;
 
+exports[`render success slot 1`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track" style="transition-duration: 300ms; transform: translate3d(0,50px, 0);">
+    <div class="van-pull-refresh__head">Custom Success</div>
+  </div>
+</div>
+`;
+
 exports[`render success text 1`] = `
 <div class="van-pull-refresh">
   <div class="van-pull-refresh__track" style="transition-duration: 300ms; transform: translate3d(0,50px, 0);">

@@ -54,14 +54,12 @@ export default createComponent({
     value(loading) {
       this.duration = this.animationDuration;
 
-      if (!loading && this.successText) {
-        this.status = 'success';
-
-        setTimeout(() => {
-          this.setStatus(0);
-        }, this.successDuration);
+      if (loading) {
+        this.setStatus(this.headHeight, true);
+      } else if (this.slots('success') || this.successText) {
+        this.showSuccessTip();
       } else {
-        this.setStatus(loading ? this.headHeight : 0, loading);
+        this.setStatus(0, false);
       }
     }
   },
@@ -173,6 +171,14 @@ export default createComponent({
       }
 
       return nodes;
+    },
+
+    showSuccessTip() {
+      this.status = 'success';
+
+      setTimeout(() => {
+        this.setStatus(0);
+      }, this.successDuration);
     }
   },
 

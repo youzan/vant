@@ -42,6 +42,20 @@ export default {
 }
 ```
 
+### Success Tip
+
+Use `success-text` to set the success prompt after the refresh is successful
+
+```html
+<van-pull-refresh
+  v-model="isLoading"
+  success-text="Refresh success"
+  @refresh="onRefresh"
+>
+  <p>Refresh Count: {{ count }}</p>
+</van-pull-refresh>
+```
+
 ## API
 
 ### Props
@@ -66,10 +80,11 @@ export default {
 
 ### Slots
 
-| Name | Description | scoped-slot |
+| Name | Description | SlotProps |
 |------|------|------|
 | default | Default slot | - |
 | normal | Content of head when at normal status | - |
 | pulling | Content of head when at pulling | { distance } |
 | loosing | Content of head when at loosing | { distance } |
 | loading | Content of head when at loading | { distance } |
+| success | Content of head when succeed | - |
