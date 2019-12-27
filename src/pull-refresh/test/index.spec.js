@@ -5,11 +5,12 @@ test('change head content when pulling down', async () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
       value: false
+    },
+    listeners: {
+      input(value) {
+        wrapper.setProps({ value });
+      }
     }
-  });
-
-  wrapper.vm.$on('input', value => {
-    wrapper.vm.value = value;
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -65,6 +66,7 @@ test('custom content by slots', async () => {
   expect(wrapper).toMatchSnapshot();
 
   // loosing
+  trigger(track, 'touchmove', 0, 75);
   trigger(track, 'touchmove', 0, 100);
   expect(wrapper).toMatchSnapshot();
 
@@ -100,5 +102,37 @@ test('not in page top', () => {
   window.scrollTop = 0;
   trigger(track, 'touchmove', 0, 100);
 
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render success text', async () => {
+  const wrapper = mount(PullRefresh, {
+    propsData: {
+      successText: 'success',
+      successDuration: 0
+    },
+    listeners: {
+      input(value) {
+        wrapper.setProps({ value });
+      }
+    }
+  });
+
+  const track = wrapper.find('.van-pull-refresh__track');
+  trigger(track, 'touchstart', 0, 0);
+  trigger(track, 'touchmove', 0, 100);
+  trigger(track, 'touchend', 0, 100);
+
+  await later();
+
+  // loading
+  expect(wrapper.vm.value).toBeTruthy();
+  wrapper.setProps({ value: false });
+
+  // success
+  expect(wrapper).toMatchSnapshot();
+
+  // normal
+  await later();
   expect(wrapper).toMatchSnapshot();
 });
