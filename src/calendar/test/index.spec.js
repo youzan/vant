@@ -375,3 +375,35 @@ test('set show-mark prop to false', async () => {
 
   expect(wrapper.find('.van-calendar__month-mark').element).toBeFalsy();
 });
+
+test('color prop when type is single', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      minDate,
+      maxDate,
+      color: 'blue',
+      poppable: false
+    }
+  });
+
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('color prop when type is range', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      defaultDate: [minDate, maxDate],
+      type: 'range',
+      minDate,
+      maxDate,
+      color: 'blue',
+      poppable: false
+    }
+  });
+
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});

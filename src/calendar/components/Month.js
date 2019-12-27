@@ -8,6 +8,7 @@ export default createComponent({
   props: {
     date: Date,
     type: String,
+    color: String,
     minDate: Date,
     maxDate: Date,
     showMark: Boolean,
@@ -129,7 +130,7 @@ export default createComponent({
       }
     },
 
-    getDayStyle(index) {
+    getDayStyle(type, index) {
       const style = {};
 
       if (index === 0) {
@@ -138,6 +139,14 @@ export default createComponent({
 
       if (this.rowHeight !== ROW_HEIGHT) {
         style.height = `${this.rowHeight}px`;
+      }
+
+      if (this.color) {
+        if (type === 'start' || type === 'end') {
+          style.background = this.color;
+        } else if (type === 'middle') {
+          style.color = this.color;
+        }
       }
 
       return style;
@@ -168,7 +177,7 @@ export default createComponent({
 
     genDay(item, index) {
       const { type, topInfo, bottomInfo } = item;
-      const style = this.getDayStyle(index);
+      const style = this.getDayStyle(type, index);
 
       const onClick = () => {
         if (type !== 'disabled') {
@@ -179,7 +188,9 @@ export default createComponent({
       if (type === 'selected') {
         return (
           <div style={style} class={bem('day')} onClick={onClick}>
-            <div class={bem('selected-day')}>{item.text}</div>
+            <div class={bem('selected-day')} style={{ background: this.color }}>
+              {item.text}
+            </div>
           </div>
         );
       }

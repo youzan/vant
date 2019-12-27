@@ -18,6 +18,7 @@ import Header from './components/Header';
 export default createComponent({
   props: {
     title: String,
+    color: String,
     value: Boolean,
     formatter: Function,
     defaultDate: [Date, Array],
@@ -228,6 +229,7 @@ export default createComponent({
           refInFor
           date={date}
           type={this.type}
+          color={this.color}
           minDate={this.minDate}
           maxDate={this.maxDate}
           showMark={this.showMark}
@@ -257,6 +259,7 @@ export default createComponent({
             round
             block
             type="danger"
+            color={this.color}
             class={bem('confirm')}
             disabled={this.buttonDisabled}
             onClick={this.onConfirm}
