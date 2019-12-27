@@ -1,13 +1,22 @@
 <template>
   <demo-section name="pull-refresh">
-    <van-pull-refresh
-      v-model="isLoading"
-      @refresh="onRefresh"
-    >
-      <demo-block :title="$t('basicUsage')">
-        <p>{{ $t('text') }}: {{ count }}</p>
-      </demo-block>
-    </van-pull-refresh>
+    <van-tabs>
+      <van-tab :title="$t('basicUsage')">
+        <van-pull-refresh v-model="isLoading" @refresh="onRefresh(true)">
+          <p>{{ tips }}</p>
+        </van-pull-refresh>
+      </van-tab>
+
+      <van-tab :title="$t('successTip')">
+        <van-pull-refresh
+          v-model="isLoading"
+          :success-text="$t('success')"
+          @refresh="onRefresh(false)"
+        >
+          <p>{{ tips }}</p>
+        </van-pull-refresh>
+      </van-tab>
+    </van-tabs>
   </demo-section>
 </template>
 
@@ -16,11 +25,15 @@ export default {
   i18n: {
     'zh-CN': {
       text: '刷新次数',
-      success: '刷新成功'
+      success: '刷新成功',
+      successTip: '刷新成功提示',
+      try: '下拉试试'
     },
     'en-US': {
       text: 'Refresh Count',
-      success: 'Refresh success'
+      success: 'Refresh success',
+      successTip: 'Success Tip',
+      try: 'Try it down'
     }
   },
 
@@ -31,10 +44,23 @@ export default {
     };
   },
 
+  computed: {
+    tips() {
+      if (this.count) {
+        return `${this.$t('text')}: ${this.count}`;
+      }
+
+      return this.$t('try');
+    }
+  },
+
   methods: {
-    onRefresh() {
+    onRefresh(showToast) {
       setTimeout(() => {
-        this.$toast(this.$t('success'));
+        if (showToast) {
+          this.$toast(this.$t('success'));
+        }
+
         this.isLoading = false;
         this.count++;
       }, 500);
@@ -44,7 +70,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-pull-refresh {
   background-color: @white;
@@ -57,7 +83,8 @@ export default {
   }
 
   p {
-    margin: @padding-xs 0 0 @padding-md;
+    margin: 0;
+    padding: @padding-md 0 0 @padding-md;
   }
 }
 </style>

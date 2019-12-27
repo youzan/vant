@@ -119,9 +119,7 @@ test('render success text', async () => {
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
-  trigger(track, 'touchstart', 0, 0);
-  trigger(track, 'touchmove', 0, 100);
-  trigger(track, 'touchend', 0, 100);
+  triggerDrag(track, 0, 100);
 
   await later();
 
@@ -134,5 +132,27 @@ test('render success text', async () => {
 
   // normal
   await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render success slot', async () => {
+  const wrapper = mount(PullRefresh, {
+    scopedSlots: {
+      success: () => 'Custom Success'
+    },
+    listeners: {
+      input(value) {
+        wrapper.setProps({ value });
+      }
+    }
+  });
+
+  const track = wrapper.find('.van-pull-refresh__track');
+  triggerDrag(track, 0, 100);
+
+  await later();
+
+  expect(wrapper.vm.value).toBeTruthy();
+  wrapper.setProps({ value: false });
   expect(wrapper).toMatchSnapshot();
 });
