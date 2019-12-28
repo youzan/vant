@@ -168,6 +168,18 @@ export default {
 }
 ```
 
+### 自定义弹出位置
+
+通过`position`属性自定义弹出层的弹出位置，可选值为`top`、`left`、`right`
+
+```html
+<van-calendar
+  v-model="show"
+  :round="false"
+  position="right"
+/>
+```
+
 ### 平铺展示
 
 将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现

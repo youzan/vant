@@ -60,6 +60,13 @@
         :value="formatRange(date.customDayText)"
         @click="show('range', 'customDayText')"
       />
+
+      <van-cell
+        is-link
+        :title="$t('customPosition')"
+        :value="formatFullDate(date.customPosition)"
+        @click="show('single', 'customPosition')"
+      />
     </demo-block>
 
     <demo-block :title="$t('tiledDisplay')">
@@ -77,8 +84,10 @@
       v-model="showCalendar"
       :type="type"
       :color="color"
+      :round="round"
       :min-date="minDate"
       :max-date="maxDate"
+      :position="position"
       :formatter="formatter"
       :show-confirm="showConfirm"
       :confirm-text="confirmText"
@@ -108,6 +117,7 @@ export default {
       customRange: '自定义日期范围',
       customConfirm: '自定义按钮文字',
       customDayText: '自定义日期文案',
+      customPosition: '自定义弹出位置',
       customCalendar: '自定义日历',
       confirmDisabledText: '请选择结束时间',
       tiledDisplay: '平铺展示'
@@ -127,6 +137,7 @@ export default {
       customRange: 'Custom Date Range',
       customConfirm: 'Custom Confirm Text',
       customDayText: 'Custom Day Text',
+      customPosition: 'Custom Position',
       customCalendar: 'Custom Calendar',
       confirmDisabledText: 'Select End Time',
       tiledDisplay: 'Tiled display'
@@ -143,12 +154,15 @@ export default {
         customColor: [],
         customConfirm: [],
         customRange: null,
-        customDayText: []
+        customDayText: [],
+        customPosition: null
       },
       type: 'single',
+      round: true,
       color: undefined,
       minDate: undefined,
       maxDate: undefined,
+      position: undefined,
       formatter: undefined,
       showConfirm: false,
       showCalendar: false,
@@ -161,9 +175,11 @@ export default {
 
   methods: {
     resetSettings() {
+      this.round = true;
       this.color = undefined;
       this.minDate = undefined;
       this.maxDate = undefined;
+      this.position = undefined;
       this.formatter = undefined;
       this.showConfirm = true;
       this.confirmText = undefined;
@@ -196,6 +212,10 @@ export default {
           this.minDate = new Date(2010, 4, 1);
           this.maxDate = new Date(2010, 4, 31);
           this.formatter = this.dayFormatter;
+          break;
+        case 'customPosition':
+          this.round = false;
+          this.position = 'right';
           break;
       }
     },
