@@ -23,9 +23,7 @@ command('build')
 
 command('release').action(release);
 
-command('changelog <dir>')
-  .option('--tag [tag]', 'Since tag')
-  .action(changelog);
+command('changelog').action(changelog);
 
 command('build-site').action(buildSite);
 

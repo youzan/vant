@@ -17,6 +17,7 @@
   "files": [
     "lib",
     "site",
+    "template",
     "preset.js"
   ],
   "author": "chenjiahan",

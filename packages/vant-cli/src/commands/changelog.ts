@@ -1,41 +1,18 @@
 import { join } from 'path';
 import { ROOT } from '../common/constant';
 import { logger } from '../common/logger';
-import { createWriteStream } from 'fs-extra';
+import { createWriteStream, readFileSync } from 'fs-extra';
 // @ts-ignore
 import conventionalChangelog from 'conventional-changelog';
 
-const file = join(ROOT, './changelog.generated.md');
+const DIST_FILE = join(ROOT, './changelog.generated.md');
+const MAIN_TEMPLATE = join(__dirname, '../../template/changelog-main.hbs');
+const HEADER_TEMPALTE = join(__dirname, '../../template/changelog-header.hbs');
+const COMMIT_TEMPALTE = join(__dirname, '../../template/changelog-commit.hbs');
 
-const mainTemplate = `{{> header}}
-
-{{#each commitGroups}}
-
-{{#if title}}
-**{{title}}**
-
-{{/if}}
-{{#each commits}}
-{{> commit root=@root}}
-{{/each}}
-{{/each}}
-{{> footer}}`;
-
-const headerPartial = `### [v{{version}}]({{~@root.repoUrl}}/compare/{{previousTag}}...{{currentTag}})
-\`{{date}}\``;
-
-const commitPartial = `*{{#if scope}} {{scope}}:
-{{~/if}} {{#if subject}}
-  {{~subject}}
-{{~else}}
-  {{~header}}
-{{~/if}}
-{{#if references~}}
-  {{~#each references}} [{{~this.repository}}#{{this.issue}}]({{~@root.repoUrl}}/{{~@root.issue}}/{{this.issue}}){{/each}}
-{{~else}} [{{shortHash}}]({{~@root.repoUrl}}/{{~@root.commit}}/{{hash}})
-{{~/if}}
-
-`;
+const mainTemplate = readFileSync(MAIN_TEMPLATE, 'utf-8');
+const headerPartial = readFileSync(HEADER_TEMPALTE, 'utf-8');
+const commitPartial = readFileSync(COMMIT_TEMPALTE, 'utf-8');
 
 function formatType(type: string) {
   const MAP: Record<string, string> = {
@@ -87,8 +64,8 @@ export function changelog() {
       transform
     }
   )
-    .pipe(createWriteStream(file))
+    .pipe(createWriteStream(DIST_FILE))
     .on('close', () => {
-      logger.success(`Generated changelog at ${file}`);
+      logger.success(`Generated changelog at ${DIST_FILE}`);
     });
 }

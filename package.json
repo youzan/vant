@@ -19,10 +19,10 @@
     "test": "vant-cli test",
     "build": "vant-cli build",
     "release": "vant-cli release",
+    "changelog": "vant-cli changelog",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
-    "test:coverage": "open test/coverage/index.html",
-    "changelog": "vant-cli changelog ./changelog.generated.md --tag 2.3.0"
+    "test:coverage": "open test/coverage/index.html"
   },
   "husky": {
     "hooks": {
