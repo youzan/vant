@@ -36,20 +36,31 @@ test('render image', async () => {
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
-test('async close', () => {
+test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {
       images,
       value: true,
       asyncClose: true
+    },
+    listeners: {
+      input(value) {
+        wrapper.setProps({ value });
+      }
     }
   });
 
   const swipe = wrapper.find('.van-swipe__track');
+
+  // should not emit input or close event when tapped
   triggerDrag(swipe, 0, 0);
+  await later(300);
   expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('close')).toBeFalsy();
+
   wrapper.vm.close();
-  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+  expect(wrapper.emitted('input')[0]).toBeTruthy();
+  expect(wrapper.emitted('close')[0]).toBeTruthy();
 });
 
 test('function call', done => {
