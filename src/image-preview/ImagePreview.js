@@ -118,12 +118,12 @@ export default createComponent({
           this.doubleClickTimer = setTimeout(() => {
             const index = this.active;
 
-            this.$emit('close', {
-              index,
-              url: this.images[index]
-            });
-
             if (!this.asyncClose) {
+              this.$emit('close', {
+                index,
+                url: this.images[index]
+              });
+
               this.$emit('input', false);
             }
 
