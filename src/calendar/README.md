@@ -168,6 +168,18 @@ export default {
 }
 ```
 
+### Custom Position
+
+Use `position` to custom popup position，can be set to `top`、`left`、`right`
+
+```html
+<van-calendar
+  v-model="show"
+  :round="false"
+  position="right"
+/>
+```
+
 ### Tiled display
 
 Set `poppable` to `false`, the calendar will be displayed directly on the page instead of appearing as a popup
