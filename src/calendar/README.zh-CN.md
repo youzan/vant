@@ -198,6 +198,7 @@ export default {
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - | - |
 | position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` | - |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
+| round | 是否显示圆角 | *boolean* | `true` | - |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |

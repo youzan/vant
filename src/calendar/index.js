@@ -49,6 +49,10 @@ export default createComponent({
       type: Number,
       default: ROW_HEIGHT
     },
+    round: {
+      type: Boolean,
+      default: true
+    },
     poppable: {
       type: Boolean,
       default: true
@@ -317,6 +321,7 @@ export default createComponent({
           closeable
           class={bem('popup')}
           value={this.value}
+          round={this.round}
           position={this.position}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
