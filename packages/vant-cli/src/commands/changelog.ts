@@ -30,9 +30,9 @@ const commitPartial = `*{{#if scope}} {{scope}}:
 {{~else}}
   {{~header}}
 {{~/if}}
-{{#if references~}},
-  {{~#each references}} [{{~this.repository}}#{{this.issue}}]({{~@root.repoUrl}}/{{~@root.issue}}/{{this.issue}}) {{/each}}
-{{~else}}, [{{shortHash}}]({{~@root.repoUrl}}/{{~@root.commit}}/{{hash}})
+{{#if references~}}
+  {{~#each references}} [{{~this.repository}}#{{this.issue}}]({{~@root.repoUrl}}/{{~@root.issue}}/{{this.issue}}){{/each}}
+{{~else}} [{{shortHash}}]({{~@root.repoUrl}}/{{~@root.commit}}/{{hash}})
 {{~/if}}
 
 `;
