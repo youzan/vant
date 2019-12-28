@@ -6,7 +6,7 @@ import Button from '../button';
 const [createComponent, bem, t] = createNamespace('dialog');
 
 export default createComponent({
-  mixins: [PopupMixin],
+  mixins: [PopupMixin()],
 
   props: {
     title: String,

@@ -18,7 +18,12 @@ function getDistance(touches) {
 }
 
 export default createComponent({
-  mixins: [PopupMixin, TouchMixin],
+  mixins: [
+    PopupMixin({
+      skipToggleEvent: true
+    }),
+    TouchMixin
+  ],
 
   props: {
     className: null,
@@ -83,8 +88,8 @@ export default createComponent({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX /
-          scale}px, ${this.moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this
+          .moveX / scale}px, ${this.moveY / scale}px)`;
       }
 
       return style;
@@ -92,8 +97,15 @@ export default createComponent({
   },
 
   watch: {
-    value() {
+    value(val) {
       this.setActive(this.startPosition);
+
+      if (!val) {
+        this.$emit('close', {
+          index: this.active,
+          url: this.images[this.active]
+        });
+      }
     },
 
     startPosition(active) {
@@ -116,14 +128,7 @@ export default createComponent({
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
         if (!this.doubleClickTimer) {
           this.doubleClickTimer = setTimeout(() => {
-            const index = this.active;
-
             if (!this.asyncClose) {
-              this.$emit('close', {
-                index,
-                url: this.images[index]
-              });
-
               this.$emit('input', false);
             }
 
@@ -248,7 +253,8 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') || `${this.active + 1} / ${this.images.length}`}
+            {this.slots('index') ||
+              `${this.active + 1} / ${this.images.length}`}
           </div>
         );
       }

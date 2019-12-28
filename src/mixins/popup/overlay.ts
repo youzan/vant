@@ -31,13 +31,17 @@ function onClickOverlay(): void {
   }
 }
 
+function mountOverlay() {
+  overlay = mount(Overlay, {
+    on: {
+      click: onClickOverlay
+    }
+  });
+}
+
 export function updateOverlay(): void {
   if (!overlay) {
-    overlay = mount(Overlay, {
-      on: {
-        click: onClickOverlay
-      }
-    });
+    mountOverlay();
   }
 
   if (context.top) {

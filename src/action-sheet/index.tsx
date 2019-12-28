@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_TOP, BORDER_BOTTOM } from '../utils/constant';
-import { PopupMixin } from '../mixins/popup';
+import { popupMixinProps } from '../mixins/popup';
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';
@@ -152,7 +152,7 @@ function ActionSheet(
 }
 
 ActionSheet.props = {
-  ...PopupMixin.props,
+  ...popupMixinProps,
   title: String,
   actions: Array,
   duration: Number,

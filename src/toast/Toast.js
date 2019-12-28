@@ -7,7 +7,7 @@ import Loading from '../loading';
 const [createComponent, bem] = createNamespace('toast');
 
 export default createComponent({
-  mixins: [PopupMixin],
+  mixins: [PopupMixin()],
 
   props: {
     icon: String,
