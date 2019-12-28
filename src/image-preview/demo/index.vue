@@ -86,9 +86,6 @@ export default {
         swipeDuration: 300,
         asyncClose: !!timer,
         closeOnPopstate: true,
-        onClose(index) {
-          console.log('close!', index);
-        },
         startPosition: typeof position === 'number' ? position : 0
       });
 
