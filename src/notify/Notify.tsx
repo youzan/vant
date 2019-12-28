@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { WHITE } from '../utils/constant';
 import { inherit } from '../utils/functional';
-import { PopupMixin } from '../mixins/popup';
+import { popupMixinProps } from '../mixins/popup';
 import Popup from '../popup';
 
 // Types
@@ -48,7 +48,7 @@ function Notify(
 }
 
 Notify.props = {
-  ...PopupMixin.props,
+  ...popupMixinProps,
   background: String,
   className: null as any,
   message: [Number, String],

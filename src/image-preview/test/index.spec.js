@@ -92,36 +92,9 @@ test('double click', async done => {
   done();
 });
 
-test('onClose option', async done => {
+test('onClose option', () => {
   const onClose = jest.fn();
   const instance = ImagePreview({
-    images,
-    startPostion: 1,
-    onClose
-  });
-
-  instance.$emit('input', true);
-  expect(onClose).toHaveBeenCalledTimes(0);
-
-  await later(300);
-
-  const wrapper = document.querySelector('.van-image-preview');
-  const swipe = wrapper.querySelector('.van-swipe__track');
-  triggerDrag(swipe, 0, 0);
-  expect(onClose).toHaveBeenCalledTimes(1);
-  expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
-  done();
-});
-
-test('onClose should only trigger once', async done => {
-  const onClose = jest.fn();
-  const instance = ImagePreview({
-    images,
-    startPostion: 1,
-    onClose
-  });
-
-  ImagePreview({
     images,
     startPostion: 1,
     onClose
@@ -130,7 +103,7 @@ test('onClose should only trigger once', async done => {
   instance.close();
 
   expect(onClose).toHaveBeenCalledTimes(1);
-  done();
+  expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
 });
 
 test('onChange option', async done => {

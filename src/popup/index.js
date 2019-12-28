@@ -5,7 +5,7 @@ import Icon from '../icon';
 const [createComponent, bem] = createNamespace('popup');
 
 export default createComponent({
-  mixins: [PopupMixin],
+  mixins: [PopupMixin()],
 
   props: {
     round: Boolean,

@@ -19,7 +19,9 @@ export type ImagePreviewOptions = string[] | {
 
 export class VanImagePreview extends VanPopupMixin {
   images: string[];
+
   showIndex: boolean;
+
   startPosition: number;
 }
 
