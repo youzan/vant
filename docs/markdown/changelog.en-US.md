@@ -1,5 +1,56 @@
 # Changelog
 
+### [v2.4.0-beta.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0-beta.0)
+`2019-12-28`
+
+**New Component**
+
+* add Calendar component
+
+![](https://img.yzcdn.cn/vant/calendar-12282.png)
+
+**Feature**
+
+* List: add error slot [e9a938](https://github.com/youzan/vant/commit/e9a938820232194ad5f62b2b6588fa5d604016ae)
+* List: add finished slot [8a0705](https://github.com/youzan/vant/commit/8a0705d7610890c0da47e9e7eb0ef5665a3dca0d)
+* PullRefresh: add success slot [56e450](https://github.com/youzan/vant/commit/56e450f29e67a5e66b26cf9937c458270f462bdc)
+* CouponList: update button style [#5368](https://github.com/youzan/vant/issues/5368)
+
+**Compatibility**
+
+* NumberKeyboard: avoid Vue 2.6 event bubble issues [#5349](https://github.com/youzan/vant/issues/5349)
+* Picker: avoid Vue 2.6 event bubble issues by manually binding events [#5345](https://github.com/youzan/vant/issues/5345)
+* PullRefresh: avoid Vue 2.6 event bubble issues [#5347](https://github.com/youzan/vant/issues/5347)
+* Rate、Slider: avoid Vue 2.6 event bubble issues [#5350](https://github.com/youzan/vant/issues/5350)
+* Swipe: avoid Vue 2.6 event bubble issues [#5346](https://github.com/youzan/vant/issues/5346)
+* SwipeCell: avoid Vue 2.6 event bubble issues [#5348](https://github.com/youzan/vant/issues/5348)
+
+**Bug Fixes**
+
+* ImagePreview: close event triggered twice [#5411](https://github.com/youzan/vant/issues/5411)
+* ImagePreview: should not emit close event after tapped when using async-close [#5410](https://github.com/youzan/vant/issues/5410)
+* PullRefresh: failed to trigger pull refresh when scrolling [e00058](https://github.com/youzan/vant/commit/e00058b681d8796feaaaa4a9f2c4083a18b61fe9)
+* Tag: incorrect transition when set closeable dynamically [fe6e2f](https://github.com/youzan/vant/commit/fe6e2f29ba289206138fe17df046a55000b218ad)
+* Tag: should not trigger click event when close [#5351](https://github.com/youzan/vant/issues/5351)
+* Toast: may lose forbid click when has multiple toasts [#5398](https://github.com/youzan/vant/issues/5398)
+
+**Types**
+
+* AddressEdit: add setAddressDetail method type [#5352](https://github.com/youzan/vant/issues/5352)
+* Area: add reset method type [#5353](https://github.com/youzan/vant/issues/5353)
+* Checkbox: add toggle method type [#5354](https://github.com/youzan/vant/issues/5354)
+* CountDown: add methods types [0438bd](https://github.com/youzan/vant/commit/0438bdbc97a81ad8b7de18ef8784d9907ce641c6)
+* DropdownItem: add toggle method type [5c1883](https://github.com/youzan/vant/commit/5c1883f77c36d5026c60c873197dab98d4ca42f5)
+* Field: add focus、blur method type [0b5c8e](https://github.com/youzan/vant/commit/0b5c8e5f3df570292e8599e7c2ff997fbee120ce)
+* List: add check method type [285bce](https://github.com/youzan/vant/commit/285bce677c8997d55515a760f4d12b05349ebd3f)
+* Picker: add method types [46d2b0](https://github.com/youzan/vant/commit/46d2b094477b52a96e85d18ec6fc42051a832e10)
+* Sku: add methods types [d2bb9f](https://github.com/youzan/vant/commit/d2bb9fa81b401e429296003e4c2ec8c0e544d2af)
+* Swipe: add swipeTo、resize method types [a1831b](https://github.com/youzan/vant/commit/a1831b86387f1127325b9952d2d18349d41dc5c7)
+* SwipeCell: add open、close method type [9a9676](https://github.com/youzan/vant/commit/9a9676d6af7d29ac2221761ad680cecd4e929a39)
+* Tabs: add resize method type [3c526e](https://github.com/youzan/vant/commit/3c526ec1a26b5a38bc6a6ba2ded7a3db94bbcced)
+* Uploader: add closeImagePreview method type [cf191e](https://github.com/youzan/vant/commit/cf191e09cbc8093bb72f5d1e9381b263cdf9f0d2)
+
+
 ### [v2.3.3](https://github.com/youzan/vant/tree/v2.3.3)
 `2019-12-21`
 

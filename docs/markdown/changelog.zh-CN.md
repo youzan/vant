@@ -11,6 +11,64 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.0-beta.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0-beta.0)
+`2019-12-28`
+
+**New Component**
+
+* 新增 Calendar 日历组件
+
+![](https://img.yzcdn.cn/vant/calendar-12282.png)
+
+**Feature**
+
+* List: 新增 error 插槽 [e9a938](https://github.com/youzan/vant/commit/e9a938820232194ad5f62b2b6588fa5d604016ae)
+* List: 新增 finished 插槽 [8a0705](https://github.com/youzan/vant/commit/8a0705d7610890c0da47e9e7eb0ef5665a3dca0d)
+* PullRefresh: 新增 success 插槽 [56e450](https://github.com/youzan/vant/commit/56e450f29e67a5e66b26cf9937c458270f462bdc)
+* CouponList: 更新底部按钮样式 [#5368](https://github.com/youzan/vant/issues/5368)
+
+**Compatibility**
+
+在之前的版本中，有较多同学反馈在 iOS 10 ~ 11 上会偶现组件无法操作的情况，该问题的原因是 Vue 2.6.x 版本在绑定事件时存在事件无法冒泡的兼容性问题。[相关 issue](https://github.com/youzan/vant/issues/3015)
+
+从 2.4 版本开始，我们通过手动绑定事件的方式来规避这个问题，涉及以下组件：
+
+* Area
+* DatetimePicker
+* Rate
+* Slider
+* Swipe
+* SwipeCell
+* NumberKeyboard
+* Picker
+* PullRefresh
+
+**Bug Fixes**
+
+* ImagePreview: 修复 close 事件重复触发的问题 [#5410](https://github.com/youzan/vant/issues/5410)
+* PullRefresh: 修复下拉到顶部时可能不触发下拉刷新的问题 [e00058](https://github.com/youzan/vant/commit/e00058b681d8796feaaaa4a9f2c4083a18b61fe9)
+
+* Tag: 修复动态设置 closeable 时动画错误的问题 [fe6e2f](https://github.com/youzan/vant/commit/fe6e2f29ba289206138fe17df046a55000b218ad)
+* Tag: 修复 close 时会触发 click 事件的问题 [#5351](https://github.com/youzan/vant/issues/5351)
+* Toast: 修复同时存在多个 Toast 时 forbidClick 可能失效的问题 [#5398](https://github.com/youzan/vant/issues/5398)
+
+**Types**
+
+* AddressEdit: 新增 setAddressDetail 方法的类型定义 [#5352](https://github.com/youzan/vant/issues/5352)
+* Area: 新增 reset 方法的类型定义 [#5353](https://github.com/youzan/vant/issues/5353)
+* Checkbox: 新增 toggle 方法的类型定义 [#5354](https://github.com/youzan/vant/issues/5354)
+* CountDown: 新增 start、end、reset 方法的类型定义 [0438bd](https://github.com/youzan/vant/commit/0438bdbc97a81ad8b7de18ef8784d9907ce641c6)
+* DropdownItem: 新增 toggle 方法的类型定义 [5c1883](https://github.com/youzan/vant/commit/5c1883f77c36d5026c60c873197dab98d4ca42f5)
+* Field: 新增 focus、blur 方法的类型定义 [0b5c8e](https://github.com/youzan/vant/commit/0b5c8e5f3df570292e8599e7c2ff997fbee120ce)
+* List: 新增 check 方法的类型定义 [285bce](https://github.com/youzan/vant/commit/285bce677c8997d55515a760f4d12b05349ebd3f)
+* Picker: 新增 方法的类型定义s [46d2b0](https://github.com/youzan/vant/commit/46d2b094477b52a96e85d18ec6fc42051a832e10)
+* Sku: 新增 methods types [d2bb9f](https://github.com/youzan/vant/commit/d2bb9fa81b401e429296003e4c2ec8c0e544d2af)
+* Swipe: 新增 swipeTo、resize 方法的类型定义s [a1831b](https://github.com/youzan/vant/commit/a1831b86387f1127325b9952d2d18349d41dc5c7)
+* SwipeCell: 新增 open、close 方法的类型定义 [9a9676](https://github.com/youzan/vant/commit/9a9676d6af7d29ac2221761ad680cecd4e929a39)
+* Tabs: 新增 resize 方法的类型定义 [3c526e](https://github.com/youzan/vant/commit/3c526ec1a26b5a38bc6a6ba2ded7a3db94bbcced)
+* Uploader: 新增 closeImagePreview 方法的类型定义 [cf191e](https://github.com/youzan/vant/commit/cf191e09cbc8093bb72f5d1e9381b263cdf9f0d2)
+
+
 ### [v2.3.3](https://github.com/youzan/vant/tree/v2.3.3)
 `2019-12-21`
 
