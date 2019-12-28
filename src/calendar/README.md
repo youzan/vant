@@ -198,6 +198,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | formatter | Day formatter | *(day: Day) => Day* | - | - |
 | position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` | - |
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` | - |
+| round | Whether to show round corner | *boolean* | `true` | - |
 | show-mark | Whether to show background month mark | *boolean* | `true` | - |
 | show-confirm | Whether to show confirm button | *boolean* | `true` | - |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
