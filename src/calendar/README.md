@@ -200,6 +200,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` | - |
 | show-mark | Whether to show background month mark | *boolean* | `true` | - |
 | show-confirm | Whether to show confirm button | *boolean* | `true` | - |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` | - |
 | confirm-text | Confirm button text | *string* | `Confirm` | - |
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` | - |

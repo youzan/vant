@@ -64,6 +64,10 @@ export default createComponent({
     safeAreaInsetBottom: {
       type: Boolean,
       default: true
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -314,6 +318,7 @@ export default createComponent({
           class={bem('popup')}
           value={this.value}
           position={this.position}
+          closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
         >
           {this.genCalendar()}
