@@ -41,6 +41,10 @@ export default createComponent({
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       }
     },
+    position: {
+      type: String,
+      default: 'bottom'
+    },
     rowHeight: {
       type: Number,
       default: ROW_HEIGHT
@@ -307,9 +311,9 @@ export default createComponent({
         <Popup
           round
           closeable
-          value={this.value}
-          position="bottom"
           class={bem('popup')}
+          value={this.value}
+          position={this.position}
           onInput={this.togglePopup}
         >
           {this.genCalendar()}

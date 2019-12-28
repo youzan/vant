@@ -7,7 +7,10 @@
   background-color: @calendar-background-color;
 
   &__popup {
-    height: @calendar-popup-height;
+    &.van-popup--top,
+    &.van-popup--bottom {
+      height: @calendar-popup-height;
+    }
 
     .van-popup__close-icon {
       top: 13px;

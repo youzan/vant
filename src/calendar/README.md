@@ -196,6 +196,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | default-date | Default selected date | *Date \| Date[]* | Today | - |
 | row-height | Row height | *number* | `64` | - |
 | formatter | Day formatter | *(day: Day) => Day* | - | - |
+| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` | - |
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` | - |
 | show-mark | Whether to show background month mark | *boolean* | `true` | - |
 | show-confirm | Whether to show confirm button | *boolean* | `true` | - |
