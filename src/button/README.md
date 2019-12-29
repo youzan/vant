@@ -91,7 +91,7 @@ Vue.use(Button);
 
 ### Block Element
 ```html
-<van-button type="primary" block>Display as a block element</van-button>
+<van-button type="primary" block>Block Element</van-button>
 ```
 
 ## API
