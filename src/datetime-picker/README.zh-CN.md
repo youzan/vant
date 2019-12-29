@@ -204,3 +204,7 @@ export default {
 ### 在桌面端无法操作组件？
 
 参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+
+### 是否有年份或月份选择器？
+
+如果仅需要选择年份或者月份，建议直接使用 [Picker](#/zh-CN/picker) 组件。
