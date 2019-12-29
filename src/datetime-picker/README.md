@@ -174,3 +174,11 @@ export default {
 | change | Triggered when value changed | picker: picker instance |
 | confirm | Triggered when click confirm button | value: current value |
 | cancel | Triggered when click cancel button | - |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call instance methods
+
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| getPicker | get Picker instance | - | - |

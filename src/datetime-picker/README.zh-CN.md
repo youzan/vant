@@ -179,18 +179,13 @@ export default {
 | confirm | 点击完成按钮时触发的事件 | 当前 value |
 | cancel | 点击取消按钮时触发的事件 | - |
 
-### change 事件
+### 方法
 
-在`change`事件中，可以获取到`picker`实例，对`picker`进行相应的更新等操作：
+通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 DatetimePicker 实例并调用实例方法
 
-| 函数 | 说明 |
-|------|------|
-| getColumnValue(index) | 获取对应列中选中的值 |
-| setColumnValue(index, value) | 设置对应列中选中的值 |
-| getColumnValues(index) | 获取对应列中所有的备选值 |
-| setColumnValues(index, values) | 设置对应列中所有的备选值 |
-| getValues() | 获取所有列中被选中的值，返回一个数组 |
-| setValues(values) | `values`为一个数组，设置所有列中被选中的值 |
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| getPicker | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
 
 ## 常见问题
 

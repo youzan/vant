@@ -74,7 +74,7 @@ export default createComponent({
     },
 
     updateInnerValue() {
-      const [hourIndex, minuteIndex] = this.$refs.picker.getIndexes();
+      const [hourIndex, minuteIndex] = this.getPicker().getIndexes();
       const hour = this.originColumns[0].values[hourIndex] || this.originColumns[0].values[0];
       const minute = this.originColumns[1].values[minuteIndex] || this.originColumns[1].values[0];
       const value = `${hour}:${minute}`;
@@ -98,7 +98,7 @@ export default createComponent({
       const values = [formatter('hour', pair[0]), formatter('minute', pair[1])];
 
       this.$nextTick(() => {
-        this.$refs.picker.setValues(values);
+        this.getPicker().setValues(values);
       });
     }
   }

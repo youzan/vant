@@ -67,6 +67,11 @@ export const TimePickerMixin = {
   },
 
   methods: {
+    // @exposed-api
+    getPicker() {
+      return this.$refs.picker;
+    },
+
     onConfirm() {
       this.$emit('confirm', this.innerValue);
     },
