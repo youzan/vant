@@ -1,7 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
-import Image from '../image';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -43,7 +42,10 @@ function Icon(
 
   return (
     <props.tag
-      class={[props.classPrefix, imageIcon ? '' : `${props.classPrefix}-${name}`]}
+      class={[
+        props.classPrefix,
+        imageIcon ? '' : `${props.classPrefix}-${name}`
+      ]}
       style={{
         color: props.color,
         fontSize: addUnit(props.size)
@@ -51,9 +53,7 @@ function Icon(
       {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}
-      {imageIcon && (
-        <Image class={bem('image')} fit="contain" src={name} showLoading={false} />
-      )}
+      {imageIcon && <img class={bem('image')} src={name} />}
       <Info dot={props.dot} info={props.info} />
     </props.tag>
   );
