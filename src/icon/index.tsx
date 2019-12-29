@@ -27,8 +27,13 @@ function isImage(name?: string): boolean {
 }
 
 // compatible with legacy usage, should be removed in next major version
+const LEGACY_MAP: Record<string, string> = {
+  medel: 'medal',
+  'medel-o': 'medal-o'
+};
+
 function correctName(name?: string) {
-  return name === 'medel' ? 'medal' : name;
+  return (name && LEGACY_MAP[name]) || name;
 }
 
 function Icon(

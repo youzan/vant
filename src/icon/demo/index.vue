@@ -199,7 +199,8 @@ export default {
 
     span {
       display: block;
-      margin: -4px 0 16px;
+      height: 36px;
+      margin: -4px 0 4px;
       padding: 0 5px;
       color: @gray-7;
       font-size: 12px;
