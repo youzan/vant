@@ -23,7 +23,7 @@ exports[`image-fit prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: contain;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
             <!----></i></div>
       </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
         <!----></i>
@@ -39,7 +39,7 @@ exports[`max-count prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
             <!----></i></div>
       </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
         <!----></i>
@@ -53,7 +53,7 @@ exports[`preview-size prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview" style="">
       <div class="van-image van-uploader__preview-image" style="width: 30px; height: 30px; overflow: hidden; border-radius: 4px;"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
             <!----></i></div>
       </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
         <!----></i>
@@ -69,7 +69,7 @@ exports[`render preview image 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
             <!----></i></div>
       </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
         <!----></i>
@@ -90,7 +90,7 @@ exports[`render preview image 1`] = `
     </div>
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
             <!----></i></div>
       </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
         <!----></i>
