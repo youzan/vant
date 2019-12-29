@@ -104,7 +104,7 @@ export default {
       customColor: '自定义颜色',
       pure: '单色按钮',
       gradient: '渐变色按钮',
-      blockElement: '块级元素按钮'
+      blockElement: '块级元素'
     },
     'en-US': {
       type: 'Type',
@@ -133,7 +133,7 @@ export default {
       customColor: 'Custom Color',
       pure: 'Pure',
       gradient: 'Gradient',
-      blockElement: 'Display as a block element'
+      blockElement: 'Block Element'
     }
   }
 };

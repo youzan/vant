@@ -100,8 +100,10 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell van-cell--center">
-      <div class="van-cell__title"><span>单元格</span></div>
-      <div class="van-cell__value"><span>多行内容多行内容多行内容多行内容</span></div>
+      <div class="van-cell__title"><span>单元格</span>
+        <div class="van-cell__label">描述信息</div>
+      </div>
+      <div class="van-cell__value"><span>内容</span></div>
     </div>
   </div>
 </div>

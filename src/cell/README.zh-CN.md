@@ -104,10 +104,10 @@ Vue.use(Cell).use(CellGroup);
 
 ### 垂直居中
 
-通过`center`属性在多行文本时控制左侧标题垂直居中
+通过`center`属性可以让`Cell`的左右内容都垂直居中
 
 ```html
-<van-cell center title="单元格" value="多行内容多行内容多行内容多行内容" />
+<van-cell center title="单元格" value="内容" label="描述信息" />
 ```
 
 
