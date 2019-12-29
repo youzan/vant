@@ -51,8 +51,7 @@ export function changelog() {
 
   conventionalChangelog(
     {
-      preset: 'angular',
-      releaseCount: 2
+      preset: 'angular'
     },
     null,
     null,

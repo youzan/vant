@@ -1,6 +1,7 @@
 // @ts-ignore
 import releaseIt from 'release-it';
 import { build } from '../commands/build';
+import { changelog } from '../commands/changelog';
 
 class VantCliReleasePlugin extends releaseIt.Plugin {
   async beforeRelease() {
@@ -8,6 +9,7 @@ class VantCliReleasePlugin extends releaseIt.Plugin {
     console.log('');
 
     await build();
+    changelog();
   }
 }
 
