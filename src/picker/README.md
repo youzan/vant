@@ -241,3 +241,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Picker instance and call instanc
 | setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
 | getColumnValues | Get columns data of the column | columnIndex | values |
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
+| confirm | Stop scrolling and emit confirm event | - | - |

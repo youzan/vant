@@ -153,12 +153,13 @@ export default createComponent({
       });
     },
 
-    onConfirm() {
-      this.children.map(child => child.stopMomentum());
+    // @exposed-api
+    confirm() {
+      this.children.forEach(child => child.stopMomentum());
       this.emit('confirm');
     },
 
-    onCancel() {
+    cancel() {
       this.emit('cancel');
     },
 
@@ -182,7 +183,7 @@ export default createComponent({
               <button
                 type="button"
                 class={bem('cancel')}
-                onClick={this.onCancel}
+                onClick={this.cancel}
               >
                 {this.cancelButtonText || t('cancel')}
               </button>,
@@ -190,7 +191,7 @@ export default createComponent({
               <button
                 type="button"
                 class={bem('confirm')}
-                onClick={this.onConfirm}
+                onClick={this.confirm}
               >
                 {this.confirmButtonText || t('confirm')}
               </button>

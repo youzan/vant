@@ -253,6 +253,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | setColumnIndex | 设置对应列选中项的索引 | columnIndex, optionIndex | - |
 | getColumnValues | 获取对应列中所有选项 | columnIndex | values |
 | setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |
+| confirm | 停止惯性滚动并触发 confirm 事件 | - | - |
 
 ## 常见问题
 

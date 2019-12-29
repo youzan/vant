@@ -20,4 +20,6 @@ export class Picker extends VanComponent {
   getColumnValues(columnIndex: number): string[];
 
   setColumnValues(columnIndex: number, values: string[]): void;
+
+  confirm(): void;
 }
