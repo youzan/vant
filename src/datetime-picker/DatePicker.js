@@ -133,7 +133,7 @@ export default createComponent({
     },
 
     updateInnerValue() {
-      const indexes = this.$refs.picker.getIndexes();
+      const indexes = this.getPicker().getIndexes();
       const getValue = index => getTrueValue(this.originColumns[index].values[indexes[index]]);
 
       const year = getValue(0);
@@ -194,7 +194,7 @@ export default createComponent({
       }
 
       this.$nextTick(() => {
-        this.$refs.picker.setValues(values);
+        this.getPicker().setValues(values);
       });
     }
   }
