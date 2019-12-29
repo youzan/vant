@@ -9,7 +9,7 @@ class VantCliReleasePlugin extends releaseIt.Plugin {
     console.log('');
 
     await build();
-    changelog();
+    await changelog();
   }
 }
 

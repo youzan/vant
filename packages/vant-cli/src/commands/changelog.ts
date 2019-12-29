@@ -46,25 +46,28 @@ function transform(item: any) {
   return item;
 }
 
-export function changelog() {
+export async function changelog() {
   logger.start('Generating changelog...');
 
-  conventionalChangelog(
-    {
-      preset: 'angular'
-    },
-    null,
-    null,
-    null,
-    {
-      mainTemplate,
-      headerPartial,
-      commitPartial,
-      transform
-    }
-  )
-    .pipe(createWriteStream(DIST_FILE))
-    .on('close', () => {
-      logger.success(`Generated changelog at ${DIST_FILE}`);
-    });
+  return new Promise(resolve => {
+    conventionalChangelog(
+      {
+        preset: 'angular'
+      },
+      null,
+      null,
+      null,
+      {
+        mainTemplate,
+        headerPartial,
+        commitPartial,
+        transform
+      }
+    )
+      .pipe(createWriteStream(DIST_FILE))
+      .on('close', () => {
+        logger.success(`Generated changelog at ${DIST_FILE}`);
+        resolve();
+      });
+  });
 }
