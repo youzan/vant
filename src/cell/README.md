@@ -97,7 +97,7 @@ Vue.use(Cell).use(CellGroup);
 ### Vertical Center
 
 ```html
-<van-cell center title="Cell title" value="Multiple lines content, multiple lines content" />
+<van-cell center title="Cell title" value="Content" label="Description" />
 ```
 
 ## API

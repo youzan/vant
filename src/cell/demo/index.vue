@@ -56,7 +56,7 @@
     </demo-block>
 
     <demo-block :title="$t('verticalCenter')">
-      <van-cell center :title="$t('cell')" :value="$t('multipleLinesContent')" />
+      <van-cell center :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
     </demo-block>
   </demo-section>
 </template>
@@ -76,8 +76,7 @@ export default {
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
       useSlots: '使用插槽',
-      verticalCenter: '垂直居中',
-      multipleLinesContent: '多行内容多行内容多行内容多行内容',
+      verticalCenter: '垂直居中'
     },
     'en-US': {
       cell: 'Cell title',
@@ -91,8 +90,7 @@ export default {
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
       useSlots: 'Use Slots',
-      verticalCenter: 'Vertical center',
-      multipleLinesContent: 'Multiple lines content, multiple lines content'
+      verticalCenter: 'Vertical center'
     }
   }
 };
