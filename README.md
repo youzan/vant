@@ -63,7 +63,7 @@ Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) bef
 
 ## Browser Support
 
-Modern browsers and Android 4.0+, iOS 7+.
+Modern browsers and Android 4.0+, iOS 8.0+.
 
 ## Links
 

@@ -27,7 +27,7 @@ Please make sure to read the [Contributing Guide](https://github.com/youzan/vant
 
 ### Browser Support
 
-Modern browsers and Android 4.0+, iOS 7+.
+Modern browsers and Android 4.0+, iOS 8.0+.
 
 ### Links
 
