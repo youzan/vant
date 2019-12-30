@@ -187,7 +187,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 ```html
 <van-calendar
   title="Calendar"
-  :popable="false"
+  :poppable="false"
   :show-confirm="false"
   :style="{ height: '500px' }"
 />

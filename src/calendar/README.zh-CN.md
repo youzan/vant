@@ -187,7 +187,7 @@ export default {
 ```html
 <van-calendar
   title="日历"
-  :popable="false"
+  :poppable="false"
   :show-confirm="false"
   :style="{ height: '500px' }"
 />
