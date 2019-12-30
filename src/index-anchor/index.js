@@ -14,8 +14,9 @@ export default createComponent({
   data() {
     return {
       top: 0,
-      active: false,
-      position: 'static'
+      left: null,
+      width: null,
+      active: false
     };
   },
 
@@ -27,10 +28,11 @@ export default createComponent({
     anchorStyle() {
       if (this.sticky) {
         return {
-          position: this.position,
           zIndex: `${this.parent.zIndex}`,
+          left: this.left ? `${this.left}px` : null,
+          width: this.width ? `${this.width}px` : null,
           transform: `translate3d(0, ${this.top}px, 0)`,
-          color: this.parent.highlightColor,
+          color: this.parent.highlightColor
         };
       }
     }
