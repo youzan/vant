@@ -16,7 +16,7 @@
       <van-cell :title="$t('cell')" :value="$t('content')" icon="location-o" />
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('valueOnly')">
+    <demo-block v-if="!isWeapp" :title="$t('valueOnly')">
       <van-cell :value="$t('content')" />
     </demo-block>
 

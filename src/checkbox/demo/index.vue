@@ -62,7 +62,7 @@
       </van-checkbox-group>
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('toggleAll')">
+    <demo-block v-if="!isWeapp" :title="$t('toggleAll')">
       <van-checkbox-group v-model="checkAllResult" ref="group">
         <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
         <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>

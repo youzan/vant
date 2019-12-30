@@ -13,6 +13,9 @@ Locale.add({
   'en-US': enUS
 });
 
+// flag for vant-weapp demos
+const isWeapp = location.search.indexOf('weapp=1') !== -1;
+
 // helper for demo locales
 Vue.mixin({
   computed: {
@@ -26,6 +29,10 @@ Vue.mixin({
         const message = get(messages, prefix + path) || get(messages, path);
         return typeof message === 'function' ? message(...args) : message;
       };
+    },
+
+    isWeapp() {
+      return isWeapp;
     }
   },
 
@@ -45,6 +52,7 @@ Vue.mixin({
   }
 });
 
+// switch lang after routing
 if (window.vueRouter) {
   window.vueRouter.afterEach(to => {
     const { lang } = to.meta || {};

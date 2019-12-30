@@ -15,7 +15,7 @@
       <van-button type="danger" :text="$t('fail')" @click="showFailToast" />
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('customIcon')">
+    <demo-block v-if="!isWeapp" :title="$t('customIcon')">
       <van-button type="primary" :text="$t('customIcon')" @click="showIconToast" />
       <van-button type="primary" :text="$t('customImage')" @click="showImageToast" />
     </demo-block>

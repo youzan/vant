@@ -36,7 +36,7 @@
     </demo-block>
 
     <demo-block
-      v-if="!$attrs.weapp"
+      v-if="!isWeapp"
       :title="$t('title3')"
     >
       <van-row type="flex">

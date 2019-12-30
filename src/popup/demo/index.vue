@@ -44,7 +44,7 @@
       <van-popup v-model="showRoundCorner" round position="bottom" :style="{ height: '20%' }" />
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('getContainer')">
+    <demo-block v-if="!isWeapp" :title="$t('getContainer')">
       <van-cell :title="$t('getContainer')" is-link @click="showGetContainer = true" />
       <van-popup v-model="showGetContainer" get-container="body" :style="{ padding: '30px 50px' }" />
     </demo-block>

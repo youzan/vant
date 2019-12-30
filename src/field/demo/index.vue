@@ -87,7 +87,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block v-if="!$attrs.weapp" :title="$t('showWordLimit')">
+    <demo-block v-if="!isWeapp" :title="$t('showWordLimit')">
       <van-cell-group>
         <van-field
           v-model="message2"
