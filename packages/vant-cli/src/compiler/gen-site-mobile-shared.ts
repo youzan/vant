@@ -42,7 +42,7 @@ function getSetName(demos: DemoItem[]) {
 
 function genConfig(demos: DemoItem[]) {
   const vantConfig = getVantConfig();
-  const demoNames = demos.map(item => decamelize(item.name, '-'));
+  const demoNames = demos.map(item => decamelize(item.name));
 
   function demoFilter(nav: any[]) {
     return nav.filter(group => {

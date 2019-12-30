@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import decamelize from 'decamelize';
+import { decamelize } from '../../common';
 
 export default {
   name: 'demo-section',
@@ -14,7 +14,7 @@ export default {
     demoName() {
       const { meta } = this.$route || {};
       if (meta && meta.name) {
-        return `demo-${decamelize(meta.name, '-')}`;
+        return `demo-${decamelize(meta.name)}`;
       }
 
       return '';

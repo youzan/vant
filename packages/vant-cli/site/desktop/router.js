@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import decamelize from 'decamelize';
-import { isMobile } from '../common';
+import { isMobile, decamelize } from '../common';
 import { config, documents } from 'site-desktop-shared';
 import { getLang, setDefaultLang } from '../common/locales';
 import '../common/iframe-router';
@@ -20,13 +19,13 @@ function parseName(name) {
     const component = pairs.shift();
 
     return {
-      component: `${decamelize(component, '-')}`,
+      component: `${decamelize(component)}`,
       lang: pairs.join('-')
     };
   }
 
   return {
-    component: `${decamelize(name, '-')}`,
+    component: `${decamelize(name)}`,
     lang: ''
   };
 }

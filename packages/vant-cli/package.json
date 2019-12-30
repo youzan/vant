@@ -72,7 +72,6 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.0",
     "csso": "^4.0.2",
-    "decamelize": "^3.2.0",
     "eslint": "^6.7.2",
     "find-babel-config": "^1.2.0",
     "gh-pages": "2.0.1",

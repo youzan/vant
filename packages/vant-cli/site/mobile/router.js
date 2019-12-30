@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import decamelize from 'decamelize';
 import DemoHome from './components/DemoHome';
+import { decamelize } from '../common';
 import { demos, config } from 'site-mobile-shared';
 import { getLang, setDefaultLang } from '../common/locales';
 import '../common/iframe-router';
@@ -52,7 +52,7 @@ function getRoutes() {
   }
 
   names.forEach(name => {
-    const component = decamelize(name, '-');
+    const component = decamelize(name);
 
     if (langs.length) {
       langs.forEach(lang => {
