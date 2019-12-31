@@ -42,7 +42,7 @@ export default {
   },
   vanCouponCell: {
     title: 'Kupon',
-    tips: 'Kupon seç',
+    tips: 'Kupon yok',
     count: (count: number) => `${count} adet teklif var`
   },
   vanCouponList: {
