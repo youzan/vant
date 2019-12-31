@@ -81,9 +81,11 @@
     border-radius: 0;
     -webkit-appearance: none;
 
-    &[disabled] {
+    &:disabled {
       color: @stepper-input-disabled-text-color;
       background-color: @stepper-input-disabled-background-color;
+      -webkit-text-fill-color: @stepper-input-disabled-text-color; // fix disabled color in iOS
+      opacity: 1;
     }
   }
 

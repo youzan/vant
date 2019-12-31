@@ -19,7 +19,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),
-    BindEventMixin(function (bind) {
+    BindEventMixin(function(bind) {
       if (!this.scroller) {
         this.scroller = getScrollEventTarget(this.$el);
       }
@@ -102,28 +102,27 @@ export default createComponent({
       this.activeAnchorIndex = this.indexList[active];
 
       if (this.sticky) {
-        let activeItemTop = 0;
-        let isReachEdge = false;
-
-        if (active !== -1) {
-          activeItemTop = rects[active].top - scrollTop - this.stickyOffsetTop;
-          isReachEdge = activeItemTop <= 0;
-        }
-
         this.children.forEach((item, index) => {
+          if (index === active || index === active - 1) {
+            const rect = item.$el.getBoundingClientRect();
+            item.left = rect.left;
+            item.width = rect.width;
+          } else {
+            item.left = null;
+            item.width = null;
+          }
+
           if (index === active) {
             item.active = true;
-            item.position = isReachEdge ? 'fixed' : 'relative';
-            item.top = isReachEdge
-              ? this.stickyOffsetTop + scrollerRect.top
-              : 0;
+            item.top =
+              Math.max(this.stickyOffsetTop, rects[index].top - scrollTop) +
+              scrollerRect.top;
           } else if (index === active - 1) {
-            item.active = !isReachEdge;
-            item.position = 'relative';
-            item.top = item.$el.parentElement.offsetHeight - item.height;
+            const activeItemTop = rects[active].top - scrollTop;
+            item.active = activeItemTop > 0;
+            item.top = activeItemTop + scrollerRect.top - item.height;
           } else {
             item.active = false;
-            item.position = 'static';
           }
         });
       }
@@ -133,7 +132,7 @@ export default createComponent({
       const { scroller } = this;
       let scrollerRect = {
         top: 0,
-        left: 0,
+        left: 0
       };
 
       if (scroller.getBoundingClientRect) {
