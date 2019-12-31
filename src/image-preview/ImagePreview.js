@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { on, preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import Image from '../image';
@@ -99,10 +99,7 @@ export default createComponent({
   watch: {
     value(val) {
       if (val) {
-        this.setActive(this.startPosition);
-        this.$nextTick(() => {
-          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
-        });
+        this.onShow();
       } else {
         this.$emit('close', {
           index: this.active,
@@ -116,7 +113,34 @@ export default createComponent({
     }
   },
 
+  mounted() {
+    if (this.value) {
+      this.bindEvent();
+    }
+  },
+
   methods: {
+    onShow() {
+      this.bindEvent();
+      this.setActive(this.startPosition);
+      this.$nextTick(() => {
+        this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+      });
+    },
+
+    bindEvent() {
+      if (!this.eventBinded) {
+        this.eventBinded = true;
+        this.$nextTick(() => {
+          const swipe = this.$refs.swipe.$el;
+          on(swipe, 'touchstart', this.onWrapperTouchStart);
+          on(swipe, 'touchmove', preventDefault);
+          on(swipe, 'touchend', this.onWrapperTouchEnd);
+          on(swipe, 'touchcancel', this.onWrapperTouchEnd);
+        });
+      }
+    },
+
     onWrapperTouchStart() {
       this.touchStartTime = new Date();
     },
@@ -286,10 +310,6 @@ export default createComponent({
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
           onChange={this.setActive}
-          nativeOnTouchstart={this.onWrapperTouchStart}
-          nativeOnTouchMove={preventDefault}
-          nativeOnTouchend={this.onWrapperTouchEnd}
-          nativeOnTouchcancel={this.onWrapperTouchEnd}
         >
           {this.images.map((image, index) => (
             <SwipeItem>
