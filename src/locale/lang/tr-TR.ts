@@ -9,6 +9,7 @@ export default {
   loading: 'Yükleniyor...',
   telEmpty: 'Lütfen tel. no giriniz',
   nameEmpty: 'Lütfen isim giriniz',
+  nameInvalid: 'Geçersiz isim',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
   vanCalendar: {

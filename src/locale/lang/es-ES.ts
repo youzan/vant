@@ -9,6 +9,7 @@ export default {
   loading: 'Cargando...',
   telEmpty: 'Por favor rellena el teléfono',
   nameEmpty: 'Por favor rellena el nombre',
+  nameInvalid: 'nombre inválido',
   confirmDelete: 'Estás seguro de eliminarlo?',
   telInvalid: 'Teléfono inválido',
   vanCalendar: {

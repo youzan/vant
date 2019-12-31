@@ -9,8 +9,9 @@ export default {
   loading: '加载中...',
   telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
+  nameInvalid: '请输入正确的姓名',
   confirmDelete: '确定要删除么',
-  telInvalid: '请填写正确的电话',
+  telInvalid: '请输入正确的手机号',
   vanCalendar: {
     end: '结束',
     start: '开始',
