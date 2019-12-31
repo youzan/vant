@@ -1,5 +1,23 @@
 # Changelog
 
+### [v2.4.0-beta.1](https://github.com/youzan/vant/compare/v2.4.0-beta.0...v2.4.0-beta.1)
+`2019-12-31`
+
+**Feature**
+
+* DatetimePicker: add getPicker method [1dc1fe](https://github.com/youzan/vant/commit/1dc1feae40b8ca11df980aa1d5ecf108151938e4)
+* Image: add @image-loading-icon-size、@image-error-icon-size var [d7ae8c](https://github.com/youzan/vant/commit/d7ae8c5a26dcb6b7b79b4ca7a2ed3842673c2ea0)
+* Picker: add confirm method [5eb2a4](https://github.com/youzan/vant/commit/5eb2a4012ae3e9d90a29a924ae454e54408b1235)
+* TreeSelect: add @tree-select-item-selected-size var [373159](https://github.com/youzan/vant/commit/37315975203f28d36634d9ad8388a7f4dc8a44ea)
+
+**Bug Fixes**
+
+* Icon: should compatible with medel-o [7b905a](https://github.com/youzan/vant/commit/7b905a6de85b895e2226c35875ee3633c2ae7e79)
+* IndexBar: incorrect anchor position when anchor doesn't have a parent node [#5429](https://github.com/youzan/vant/issues/5429)
+* Picker: compatible with desktop scenario [#5430](https://github.com/youzan/vant/issues/5430)
+* Stepper: input disabled text color in safari [#5428](https://github.com/youzan/vant/issues/5428)
+
+
 ### [v2.4.0-beta.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0-beta.0)
 `2019-12-28`
 
