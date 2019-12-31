@@ -99,7 +99,10 @@ export default createComponent({
   watch: {
     value(val) {
       if (val) {
-        this.onShow();
+        this.setActive(this.startPosition);
+        this.$nextTick(() => {
+          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+        });
       } else {
         this.$emit('close', {
           index: this.active,
@@ -108,39 +111,27 @@ export default createComponent({
       }
     },
 
-    startPosition(active) {
-      this.setActive(active);
-    }
-  },
+    startPosition(val) {
+      this.setActive(val);
+    },
 
-  mounted() {
-    if (this.value) {
-      this.bindEvent();
+    shouldRender: {
+      handler(val) {
+        if (val) {
+          this.$nextTick(() => {
+            const swipe = this.$refs.swipe.$el;
+            on(swipe, 'touchstart', this.onWrapperTouchStart);
+            on(swipe, 'touchmove', preventDefault);
+            on(swipe, 'touchend', this.onWrapperTouchEnd);
+            on(swipe, 'touchcancel', this.onWrapperTouchEnd);
+          });
+        }
+      },
+      immediate: true
     }
   },
 
   methods: {
-    onShow() {
-      this.bindEvent();
-      this.setActive(this.startPosition);
-      this.$nextTick(() => {
-        this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
-      });
-    },
-
-    bindEvent() {
-      if (!this.eventBinded) {
-        this.eventBinded = true;
-        this.$nextTick(() => {
-          const swipe = this.$refs.swipe.$el;
-          on(swipe, 'touchstart', this.onWrapperTouchStart);
-          on(swipe, 'touchmove', preventDefault);
-          on(swipe, 'touchend', this.onWrapperTouchEnd);
-          on(swipe, 'touchcancel', this.onWrapperTouchEnd);
-        });
-      }
-    },
-
     onWrapperTouchStart() {
       this.touchStartTime = new Date();
     },
