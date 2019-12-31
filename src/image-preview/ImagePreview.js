@@ -98,9 +98,12 @@ export default createComponent({
 
   watch: {
     value(val) {
-      this.setActive(this.startPosition);
-
-      if (!val) {
+      if (val) {
+        this.setActive(this.startPosition);
+        this.$nextTick(() => {
+          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+        });
+      } else {
         this.$emit('close', {
           index: this.active,
           url: this.images[this.active]
@@ -310,13 +313,13 @@ export default createComponent({
   },
 
   render() {
-    if (!this.value) {
+    if (!this.shouldRender) {
       return;
     }
 
     return (
       <transition name="van-fade">
-        <div class={[bem(), this.className]}>
+        <div vShow={this.value} class={[bem(), this.className]}>
           {this.genImages()}
           {this.genIndex()}
           {this.genCover()}
