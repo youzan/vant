@@ -252,3 +252,11 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
 | reset | 重置选中的日期到默认值 | - | - |
+
+## 常见问题
+
+### 在 iOS 系统上初始化组件失败？
+
+如果你遇到了在 iOS 上无法渲染组件的问题，请确认在创建 Date 对象时没有使用`new Date('2020-01-01')`这样的写法，iOS 不支持以中划线分隔的日期格式，正确写法是`new Date('2020/01/01')`。
+
+对此问题的详细解释：[stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios)。
