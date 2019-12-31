@@ -140,9 +140,14 @@ export default createComponent({
       }
 
       const index = this.getIndexByOffset(this.offset);
-      this.moving = false;
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
+
+      // compatible with desktop scenario
+      // use setTimeout to skip the click event triggered after touchstart
+      setTimeout(() => {
+        this.moving = false;
+      }, 0);
     },
 
     onTransitionEnd() {
