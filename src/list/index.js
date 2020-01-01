@@ -95,7 +95,7 @@ export default createComponent({
         const placeholderRect = this.$refs.placeholder.getBoundingClientRect();
 
         if (direction === 'up') {
-          isReachEdge = placeholderRect.top - scrollerRect.top <= offset;
+          isReachEdge = scrollerRect.top - placeholderRect.top <= offset;
         } else {
           isReachEdge = placeholderRect.bottom - scrollerRect.bottom <= offset;
         }
