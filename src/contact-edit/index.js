@@ -103,7 +103,7 @@ export default createComponent({
             maxlength="30"
             label={t('name')}
             placeholder={t('nameEmpty')}
-            error-message={errorInfo.name}
+            errorMessage={errorInfo.name}
             onFocus={onFocus('name')}
           />
           <Field
@@ -112,7 +112,7 @@ export default createComponent({
             type="tel"
             label={t('tel')}
             placeholder={t('telEmpty')}
-            error-message={errorInfo.tel}
+            errorMessage={errorInfo.tel}
             onFocus={onFocus('tel')}
           />
         </div>
