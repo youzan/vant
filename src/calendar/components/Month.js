@@ -30,8 +30,7 @@ export default createComponent({
     },
 
     offset() {
-      const day = this.date.getDay();
-      return day > 0 ? day - 1 : 6;
+      return this.date.getDay();
     },
 
     totalDay() {
