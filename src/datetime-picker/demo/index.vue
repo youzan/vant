@@ -14,6 +14,7 @@
         v-model="currentDate2"
         type="date"
         :min-date="minDate"
+        :max-date="maxDate"
       />
     </demo-block>
 
@@ -22,6 +23,7 @@
         v-model="currentDate3"
         type="year-month"
         :min-date="minDate"
+        :max-date="maxDate"
         :formatter="formatter"
       />
     </demo-block>
@@ -70,11 +72,11 @@ export default {
 
   data() {
     return {
-      minDate: new Date(2018, 0, 1),
-      maxDate: new Date(2019, 10, 1),
-      currentDate1: new Date(2018, 0, 1),
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate1: new Date(2020, 0, 1),
       currentDate2: null,
-      currentDate3: new Date(2018, 0, 1),
+      currentDate3: new Date(2020, 0, 1),
       currentTime1: '12:00',
       currentTime2: '12:00',
     };

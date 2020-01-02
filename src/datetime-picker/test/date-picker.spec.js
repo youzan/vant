@@ -14,7 +14,9 @@ test('filter prop', () => {
   const wrapper = mount(DatePicker, {
     propsData: {
       filter,
-      value: new Date(2019, 10, 1, 0, 0)
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      value: new Date(2020, 10, 1, 0, 0)
     }
   });
 
@@ -26,7 +28,9 @@ test('formatter prop', async () => {
     propsData: {
       filter,
       formatter,
-      value: new Date(2019, 10, 1, 0, 0)
+      minDate: new Date(2010, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      value: new Date(2020, 10, 1, 0, 0)
     }
   });
 
@@ -46,20 +50,22 @@ test('formatter prop', async () => {
 });
 
 test('confirm event', () => {
-  const date = new Date(2019, 10, 1, 0, 0);
+  const date = new Date(2020, 10, 1, 0, 0);
 
   const wrapper = mount(DatePicker, {
     propsData: {
-      value: date
+      value: date,
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1)
     }
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0].getFullYear()).toEqual(2019);
+  expect(wrapper.emitted('confirm')[0][0].getFullYear()).toEqual(2020);
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0].getFullYear()).toEqual(2029);
+  expect(wrapper.emitted('confirm')[1][0].getFullYear()).toEqual(2025);
 });
 
 test('cancel event', () => {

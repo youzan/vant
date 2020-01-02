@@ -30,10 +30,8 @@ Vue.use(DatetimePicker);
 export default {
   data() {
     return {
-      minHour: 10,
-      maxHour: 20,
-      minDate: new Date(),
-      maxDate: new Date(2019, 10, 1),
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
       currentDate: new Date()
     };
   }
@@ -47,6 +45,7 @@ export default {
   v-model="currentDate"
   type="date"
   :min-date="minDate"
+  :max-date="maxDate"
 />
 ```
 
@@ -54,6 +53,8 @@ export default {
 export default {
   data() {
     return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
       currentDate: new Date()
     };
   }
@@ -67,6 +68,7 @@ export default {
   v-model="currentDate"
   type="year-month"
   :min-date="minDate"
+  :max-date="maxDate"
   :formatter="formatter"
 />
 ```
@@ -75,6 +77,8 @@ export default {
 export default {
   data() {
     return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
       currentDate: new Date()
     };
   },
