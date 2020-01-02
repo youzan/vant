@@ -65,19 +65,18 @@ function resolveDocuments(components: string[]): DocumentItem[] {
   }
 
   const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => {
-    const pairs = parse(path).name.split('.');
+    const pairs = parse(path.toString()).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
       path
     };
   });
-
-  return [...staticDocs, ...docs.filter(item => existsSync(item.path))];
+  return [...staticDocs, ...docs.filter(item => existsSync(item.path))] as DocumentItem[];
 }
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map(item => `import ${item.name} from '${item.path}';`)
+    .map(item => `import ${item.name} from '${item.path.replace(/\\/ig, '\\\\')}';`)
     .join('\n');
 }
 
@@ -88,7 +87,7 @@ function genExportDocuments(items: DocumentItem[]) {
 }
 
 function genImportConfig() {
-  return `import config from '${removeExt(VANT_CONFIG_FILE)}';`;
+  return `import config from '${removeExt(VANT_CONFIG_FILE.replace(/\\/ig, '\\\\'))}';`;
 }
 
 function genExportConfig() {

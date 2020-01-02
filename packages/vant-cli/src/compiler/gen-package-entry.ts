@@ -16,7 +16,7 @@ function genImports(components: string[], options: Options): string {
         path = options.pathResolver(path);
       }
 
-      return `import ${pascalize(name)} from '${path}';`;
+      return `import ${pascalize(name)} from '${path.replace(/\\/ig, '\\\\')}';`;
     })
     .join('\n');
 }

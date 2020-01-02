@@ -18,6 +18,8 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
+    "build-site:local": "node ./packages/vant-cli/lib/index.js build-site",
+    "dev:local": "node ./packages/vant-cli/lib/index.js dev",
     "release": "vant-cli release",
     "changelog": "vant-cli changelog",
     "test:watch": "vant-cli test --watch",

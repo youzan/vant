@@ -21,7 +21,7 @@ export function genPacakgeStyle(options: Options) {
       baseFile = options.pathResolver(baseFile);
     }
 
-    content += `@import "${baseFile}";\n`;
+    content += `@import "${(baseFile || '').replace(/\\/ig, '\\\\')}";\n`;
   }
 
   content += styleDepsJson.sequence
@@ -36,7 +36,7 @@ export function genPacakgeStyle(options: Options) {
         path = options.pathResolver(path);
       }
 
-      return `@import "${path}";`;
+      return `@import "${path.replace(/\\/ig, '\\\\')}";`;
     })
     .filter((item: string) => !!item)
     .join('\n');
