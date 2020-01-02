@@ -1,7 +1,9 @@
 import postcss from 'postcss';
 import postcssrc from 'postcss-load-config';
-import { minify } from 'csso';
+import CleanCss from 'clean-css';
 import { POSTCSS_CONFIG_FILE } from '../common/constant';
+
+const cleanCss = new CleanCss();
 
 export async function compileCss(source: string | Buffer) {
   const config = await postcssrc({}, POSTCSS_CONFIG_FILE);
@@ -9,5 +11,5 @@ export async function compileCss(source: string | Buffer) {
     from: undefined
   });
 
-  return minify(css).css;
+  return cleanCss.minify(css).styles;
 }
