@@ -1,5 +1,19 @@
 # Changelog
 
+### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
+`2020-01-02`
+
+**Feature**
+
+* ContactEdit: show error message in field [#5437](https://github.com/youzan/vant/issues/5437)
+* CouponCell: prefer to use value over denominations [#5438](https://github.com/youzan/vant/issues/5438)
+
+**Bug Fixes**
+
+* Calendar: fix incorrect day offset [#5452](https://github.com/youzan/vant/issues/5452)
+* List: fix incorrect reaching edge condition when direction is up [#5439](https://github.com/youzan/vant/issues/5439)
+
+
 ### [v2.4.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0)
 `2020-01-01`
 

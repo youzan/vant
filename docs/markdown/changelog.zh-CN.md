@@ -11,6 +11,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
+`2020-01-02`
+
+**Feature**
+
+* ContactEdit: 优化错误提示展示方式 [#5437](https://github.com/youzan/vant/issues/5437)
+* CouponCell: 优先展示 value 字段的数值 [#5438](https://github.com/youzan/vant/issues/5438)
+
+**Bug Fixes**
+
+* Calendar: 修复日期对应的星期数展示错误的问题 [#5452](https://github.com/youzan/vant/issues/5452)
+* List: 修复 direction 为 up 时加载事件触发时机错误的问题 [#5439](https://github.com/youzan/vant/issues/5439)
+
+
 ### [v2.4.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0)
 `2020-01-01`
 
