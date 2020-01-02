@@ -1,7 +1,6 @@
 import { createNamespace } from '../utils';
 import Button from '../button';
 import Field from '../field';
-import Toast from '../toast';
 import Dialog from '../dialog';
 import Switch from '../switch';
 import Cell from '../cell';
@@ -38,8 +37,8 @@ export default createComponent({
         ...this.contactInfo
       },
       errorInfo: {
-        name: false,
-        tel: false
+        name: '',
+        tel: ''
       }
     };
   },
@@ -55,14 +54,14 @@ export default createComponent({
 
   methods: {
     onFocus(key) {
-      this.errorInfo[key] = false;
+      this.errorInfo[key] = '';
     },
 
     getErrorMessageByKey(key) {
       const value = this.data[key].trim();
       switch (key) {
         case 'name':
-          return value ? '' : t('nameEmpty');
+          return value ? '' : t('nameInvalid');
         case 'tel':
           return this.telValidator(value) ? '' : t('telInvalid');
       }
@@ -72,8 +71,7 @@ export default createComponent({
       const isValid = ['name', 'tel'].every(item => {
         const msg = this.getErrorMessageByKey(item);
         if (msg) {
-          this.errorInfo[item] = true;
-          Toast(msg);
+          this.errorInfo[item] = msg;
         }
         return !msg;
       });
@@ -105,7 +103,7 @@ export default createComponent({
             maxlength="30"
             label={t('name')}
             placeholder={t('nameEmpty')}
-            error={errorInfo.name}
+            errorMessage={errorInfo.name}
             onFocus={onFocus('name')}
           />
           <Field
@@ -114,7 +112,7 @@ export default createComponent({
             type="tel"
             label={t('tel')}
             placeholder={t('telEmpty')}
-            error={errorInfo.tel}
+            errorMessage={errorInfo.tel}
             onFocus={onFocus('tel')}
           />
         </div>
