@@ -11,26 +11,8 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
-### [v2.4.0-beta.1](https://github.com/youzan/vant/compare/v2.4.0-beta.0...v2.4.0-beta.1)
-`2019-12-31`
-
-**Feature**
-
-* Picker: 新增 confirm 方法 [5eb2a4](https://github.com/youzan/vant/commit/5eb2a4012ae3e9d90a29a924ae454e54408b1235)
-* DatetimePicker: 新增 getPicker 方法 [1dc1fe](https://github.com/youzan/vant/commit/1dc1feae40b8ca11df980aa1d5ecf108151938e4)
-* TreeSelect: 新增 @tree-select-item-selected-size 变量 [373159](https://github.com/youzan/vant/commit/37315975203f28d36634d9ad8388a7f4dc8a44ea)
-* Image: 新增 @image-loading-icon-size、@image-error-icon-size 变量 [d7ae8c](https://github.com/youzan/vant/commit/d7ae8c5a26dcb6b7b79b4ca7a2ed3842673c2ea0)
-
-**Bug Fixes**
-
-* Icon: 修复 medel-o 图标不展示的问题 [7b905a](https://github.com/youzan/vant/commit/7b905a6de85b895e2226c35875ee3633c2ae7e79)
-* Picker: 修复在桌面端使用时拖动后回弹的问题 [#5430](https://github.com/youzan/vant/issues/5430)
-* Stepper: 修复在 safari 上禁用时文字颜色不正确的问题 [#5428](https://github.com/youzan/vant/issues/5428)
-* IndexBar: 修复 IndexAnchor 没有父容器时定位错误的问题 [#5429](https://github.com/youzan/vant/issues/5429)
-
-
-### [v2.4.0-beta.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0-beta.0)
-`2019-12-28`
+### [v2.4.0](https://github.com/youzan/vant/compare/v2.3.3...v2.4.0)
+`2020-01-01`
 
 **New Component**
 
@@ -42,8 +24,12 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 * List: 新增 error 插槽 [e9a938](https://github.com/youzan/vant/commit/e9a938820232194ad5f62b2b6588fa5d604016ae)
 * List: 新增 finished 插槽 [8a0705](https://github.com/youzan/vant/commit/8a0705d7610890c0da47e9e7eb0ef5665a3dca0d)
+* Picker: 新增 confirm 方法 [5eb2a4](https://github.com/youzan/vant/commit/5eb2a4012ae3e9d90a29a924ae454e54408b1235)
 * PullRefresh: 新增 success 插槽 [56e450](https://github.com/youzan/vant/commit/56e450f29e67a5e66b26cf9937c458270f462bdc)
 * CouponList: 更新底部按钮样式 [#5368](https://github.com/youzan/vant/issues/5368)
+* DatetimePicker: 新增 getPicker 方法 [1dc1fe](https://github.com/youzan/vant/commit/1dc1feae40b8ca11df980aa1d5ecf108151938e4)
+* TreeSelect: 新增 @tree-select-item-selected-size 变量 [373159](https://github.com/youzan/vant/commit/37315975203f28d36634d9ad8388a7f4dc8a44ea)
+* Image: 新增 @image-loading-icon-size、@image-error-icon-size 变量 [d7ae8c](https://github.com/youzan/vant/commit/d7ae8c5a26dcb6b7b79b4ca7a2ed3842673c2ea0)
 
 **Compatibility**
 
@@ -53,6 +39,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 * Area
 * DatetimePicker
+* ImagePreview
 * Rate
 * Slider
 * Swipe
@@ -63,12 +50,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
+* Icon: 修复 medel-o 图标不展示的问题 [7b905a](https://github.com/youzan/vant/commit/7b905a6de85b895e2226c35875ee3633c2ae7e79)
 * ImagePreview: 修复 close 事件重复触发的问题 [#5410](https://github.com/youzan/vant/issues/5410)
 * PullRefresh: 修复下拉到顶部时可能不触发下拉刷新的问题 [e00058](https://github.com/youzan/vant/commit/e00058b681d8796feaaaa4a9f2c4083a18b61fe9)
-
 * Tag: 修复动态设置 closeable 时动画错误的问题 [fe6e2f](https://github.com/youzan/vant/commit/fe6e2f29ba289206138fe17df046a55000b218ad)
 * Tag: 修复 close 时会触发 click 事件的问题 [#5351](https://github.com/youzan/vant/issues/5351)
 * Toast: 修复同时存在多个 Toast 时 forbidClick 可能失效的问题 [#5398](https://github.com/youzan/vant/issues/5398)
+* Picker: 修复在桌面端使用时拖动后回弹的问题 [#5430](https://github.com/youzan/vant/issues/5430)
+* Stepper: 修复在 safari 上禁用时文字颜色不正确的问题 [#5428](https://github.com/youzan/vant/issues/5428)
+* IndexBar: 修复 IndexAnchor 没有父容器时定位错误的问题 [#5429](https://github.com/youzan/vant/issues/5429)
 
 **Types**
 

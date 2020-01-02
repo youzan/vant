@@ -25,6 +25,8 @@ test('render image', async () => {
 
   expect(wrapper).toMatchSnapshot();
 
+  await later();
+
   const swipe = wrapper.find('.van-swipe__track');
   triggerDrag(swipe, 500, 0);
   expect(wrapper.emitted('input')).toBeFalsy();

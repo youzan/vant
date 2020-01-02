@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { on, preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import Image from '../image';
@@ -98,9 +98,12 @@ export default createComponent({
 
   watch: {
     value(val) {
-      this.setActive(this.startPosition);
-
-      if (!val) {
+      if (val) {
+        this.setActive(this.startPosition);
+        this.$nextTick(() => {
+          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+        });
+      } else {
         this.$emit('close', {
           index: this.active,
           url: this.images[this.active]
@@ -108,8 +111,23 @@ export default createComponent({
       }
     },
 
-    startPosition(active) {
-      this.setActive(active);
+    startPosition(val) {
+      this.setActive(val);
+    },
+
+    shouldRender: {
+      handler(val) {
+        if (val) {
+          this.$nextTick(() => {
+            const swipe = this.$refs.swipe.$el;
+            on(swipe, 'touchstart', this.onWrapperTouchStart);
+            on(swipe, 'touchmove', preventDefault);
+            on(swipe, 'touchend', this.onWrapperTouchEnd);
+            on(swipe, 'touchcancel', this.onWrapperTouchEnd);
+          });
+        }
+      },
+      immediate: true
     }
   },
 
@@ -283,10 +301,6 @@ export default createComponent({
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
           onChange={this.setActive}
-          nativeOnTouchstart={this.onWrapperTouchStart}
-          nativeOnTouchMove={preventDefault}
-          nativeOnTouchend={this.onWrapperTouchEnd}
-          nativeOnTouchcancel={this.onWrapperTouchEnd}
         >
           {this.images.map((image, index) => (
             <SwipeItem>
@@ -310,13 +324,13 @@ export default createComponent({
   },
 
   render() {
-    if (!this.value) {
+    if (!this.shouldRender) {
       return;
     }
 
     return (
       <transition name="van-fade">
-        <div class={[bem(), this.className]}>
+        <div vShow={this.value} class={[bem(), this.className]}>
           {this.genImages()}
           {this.genIndex()}
           {this.genCover()}
