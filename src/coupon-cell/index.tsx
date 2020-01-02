@@ -23,7 +23,7 @@ function formatValue(props: CouponCellProps) {
   const coupon = coupons[chosenCoupon];
 
   if (coupon) {
-    const value = coupon.denominations || coupon.value;
+    const value = coupon.value || coupon.denominations || 0;
     return `-${currency}${(value / 100).toFixed(2)}`;
   }
 

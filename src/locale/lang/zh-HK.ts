@@ -43,7 +43,7 @@ export default {
   },
   vanCouponCell: {
     title: '優惠券',
-    tips: '使用優惠',
+    tips: '暫無可用',
     count: (count: number) => `${count}張可用`
   },
   vanCouponList: {
