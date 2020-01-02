@@ -24,7 +24,7 @@ import './package-style';
 
 function genImports(demos: DemoItem[]) {
   return demos
-    .map(item => `import ${item.name} from '${removeExt(item.path)}';`)
+    .map(item => `import ${item.name} from '${removeExt(item.path.replace(/\\/ig, '\\\\'))}';`)
     .join('\n');
 }
 
