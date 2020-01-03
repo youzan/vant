@@ -125,6 +125,19 @@ test('show-error prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('error-icon prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      errorIcon: 'error',
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+    }
+  });
+
+  wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('loading-icon prop', () => {
   const wrapper = mount(Image, {
     propsData: {
