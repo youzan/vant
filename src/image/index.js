@@ -21,6 +21,10 @@ export default createComponent({
       type: Boolean,
       default: true
     },
+    errorIcon: {
+      type: String,
+      default: 'warning-o'
+    },
     loadingIcon: {
       type: String,
       default: 'photo-o'
@@ -123,7 +127,7 @@ export default createComponent({
         return (
           <div class={bem('error')}>
             {this.slots('error') || (
-              <Icon name="warning-o" class={bem('error-icon')} />
+              <Icon name={this.errorIcon} class={bem('error-icon')} />
             )}
           </div>
         );
