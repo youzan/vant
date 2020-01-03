@@ -125,6 +125,16 @@ test('show-error prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('loading-icon prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      loadingIcon: 'success'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('radius prop', () => {
   const wrapper = mount(Image, {
     propsData: {

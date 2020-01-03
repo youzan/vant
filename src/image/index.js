@@ -20,6 +20,10 @@ export default createComponent({
     showLoading: {
       type: Boolean,
       default: true
+    },
+    loadingIcon: {
+      type: String,
+      default: 'photo-o'
     }
   },
 
@@ -109,7 +113,7 @@ export default createComponent({
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || (
-              <Icon name="photo-o" class={bem('loading-icon')} />
+              <Icon name={this.loadingIcon} class={bem('loading-icon')} />
             )}
           </div>
         );
