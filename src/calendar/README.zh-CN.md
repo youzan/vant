@@ -35,16 +35,15 @@ export default {
   },
 
   methods: {
-    formatDate() {
+    formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
     },
     onConfirm(date) {
-      const [start, end] = date;
       this.show = false;
-      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
+      this.date = this.formatDate(date);
     }
   }
-}
+};
 ```
 
 ### 选择日期区间
@@ -61,17 +60,22 @@ export default {
 export default {
   data() {
     return {
-      show: false,
-      date: []
+      date: '',
+      show: false
     };
   },
+
   methods: {
+    formatDate(date) {
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    },
     onConfirm(date) {
+      const [start, end] = date;
       this.show = false;
-      this.date = date;
+      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
     }
   }
-}
+};
 ```
 
 ### 快捷选择
