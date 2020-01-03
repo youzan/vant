@@ -78,7 +78,7 @@ Vue.use(Lazyload);
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` | - |
 | show-error | Whether to show error placeholder | *boolean* | `true` | 2.0.9 |
 | show-loading | Whether to show loading placeholder | *boolean* | `true` | 2.0.9 |
-| loading-icon | Loading icon | *string* | `photo-o` | 2.4.1 |
+| loading-icon | Loading icon | *string* | `photo-o` | 2.4.2 |
 
 ### fit optional value
 
