@@ -35,16 +35,15 @@ export default {
   },
 
   methods: {
-    formatDate() {
+    formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
     },
     onConfirm(date) {
-      const [start, end] = date;
       this.show = false;
-      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
+      this.date = this.formatDate(date);
     }
   }
-}
+};
 ```
 
 ### Select Date Range
@@ -61,17 +60,22 @@ You can select a date range after setting `type` to` range`. In range mode, the 
 export default {
   data() {
     return {
-      show: false,
-      date: []
+      date: '',
+      show: false
     };
   },
+
   methods: {
+    formatDate(date) {
+      return `${date.getMonth() + 1}/${date.getDate()}`;
+    },
     onConfirm(date) {
+      const [start, end] = date;
       this.show = false;
-      this.date = date;
+      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
     }
   }
-}
+};
 ```
 
 ### Quick Select
