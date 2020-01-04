@@ -131,7 +131,7 @@ Vue.use(Vant);
 </script>
 ```
 
-## 其他
+## 进阶用法
 
 ### Rem 适配
 

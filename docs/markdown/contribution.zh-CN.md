@@ -2,14 +2,65 @@
 
 ### 介绍
 
-首先感谢你使用 Vant。
+感谢你使用 Vant。
 
-以下是关于向 Vant 提交代码的指南。在向 Vant 提交 Issue 或者 PR 之前，请先花几分钟时间阅读以下文字。
+以下是关于向 Vant 提交反馈或代码的指南。在向 Vant 提交 issue 或者 PR 之前，请先花几分钟时间阅读以下文字。
 
 ### Issue 规范
 
-- 遇到问题时，请先确认这个问题已经在 issue 中有记录或者已被修复
-- 提 Issue 时，请用简短的语言描述遇到的问题，并添加出现问题时的环境和复现步骤
+- 遇到问题时，请先确认这个问题是否已经在 issue 中有记录或者已被修复
+- 提 issue 时，请用简短的语言描述遇到的问题，并添加出现问题时的环境和复现步骤
+
+## 参与开发
+
+### 本地开发
+
+按照下面的步骤操作，即可在本地开发 Vant 组件
+
+```bash
+# 克隆仓库
+git clone git@github.com:youzan/vant.git
+
+# 安装依赖
+cd vant && npm run bootstrap
+
+# 进入开发模式，浏览器访问 http://localhost:8080
+npm run dev
+```
+
+### 目录结构
+
+- 仓库的组件代码位于 src 下，每个组件一个文件夹
+- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
+
+项目主要目录如下：
+
+```
+vant
+├─ build     # 构建
+├─ docs      # 文档
+├─ src       # 组件
+├─ packages  # 子包
+├─ test      # 单测
+└─ types     # 类型
+```
+
+### 添加新组件
+
+添加新组件时，请按照下面的目录结构组织文件，并在 `vant.config.js` 中配置组件名称
+
+```
+src
+└─ button
+   ├─ demo             # 示例代码
+   ├─ test             # 单元测试
+   ├─ index.js         # 组件入口
+   ├─ index.less       # 组件样式
+   ├─ README.md        # 英文文档
+   └─ README.zh-CN.md  # 中文文档
+```
+
+## 提交 PR
 
 ### Pull Request 规范
 
@@ -25,7 +76,7 @@
 4. Pull Request 会在 Review 通过后被合并到主仓库
 5. 等待 Vant 发布版本，一般是每周一次
 
-### 同步教程
+### 同步最新代码
 
 提 Pull Request 前，请依照下面的流程同步主仓库的最新代码
 
@@ -41,55 +92,4 @@ git checkout dev
 
 # 合并主仓库代码
 git merge upstream/dev
-```
-
-### 初始化项目
-
-```bash
-git clone git@github.com:youzan/vant.git
-
-cd vant
-
-# 安装依赖
-npm run bootstrap
-
-# 本地开发模式
-npm run dev
-```
-
-浏览器访问 [http://localhost:8080](http://localhost:8080) 就可以看到所有组件的示例了。
-
-### 目录结构
-
-- 仓库的组件代码位于 src 下，每个组件一个文件夹
-- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
-
-项目目录大致如下：
-
-```
-vant
-├─ build     # 构建
-├─ docs      # 文档
-├─ src       # 组件
-├─ packages  # 子包
-├─ test      # 单测
-└─ types     # 类型
-```
-
-### 添加新组件
-
-添加新组件时，请按照下面的目录结构组织文件，并在 `docs/site/doc.config.js` 中配置组件名称
-
-```
-src
-|- button
-|  ├─ demo             # 示例代码
-|  ├─ test             # 单元测试
-|  ├─ index.js         # 组件入口
-|  ├─ index.less       # 组件样式
-|  ├─ README.md        # 英文文档
-|  └─ README.zh-CN.md  # 中文文档
-|
-├─ index.js            # 所有组件入口
-└─ index.less          # 所有组件样式
 ```
