@@ -56,7 +56,7 @@ export default {
   min-width: @van-doc-simulator-width;
   overflow: hidden;
   background: #fafafa;
-  border-radius: 6px;
+  border-radius: @van-doc-border-radius;
   box-shadow: #ebedf0 0 4px 12px;
 
   @media (max-width: 1100px) {

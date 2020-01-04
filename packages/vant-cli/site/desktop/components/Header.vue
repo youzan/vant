@@ -156,7 +156,7 @@ export default {
   &__cube {
     position: relative;
     display: block;
-    padding: 0 10px;
+    padding: 0 12px;
     color: #fff;
     font-size: 14px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -194,13 +194,13 @@ export default {
       line-height: 36px;
       text-align: left;
       background-color: #fff;
-      border-radius: 3px;
+      border-radius: @van-doc-border-radius;
       box-shadow: 0 4px 12px #ebedf0;
       transform-origin: top;
       transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &-item {
-        padding-left: 7px;
+        padding-left: 12px;
         transition: 0.2s;
 
         &:hover {

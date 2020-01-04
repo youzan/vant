@@ -8,7 +8,7 @@
 
 包含 Sketch 格式的组件设计规范、色彩规范。
 
-<img src="https://img.yzcdn.cn/vant/design-components-0321.png" style="width: 80%; box-shadow: 0 1px 3px rgba(0, 0, 0, .3);">
+<img src="https://img.yzcdn.cn/vant/design-components-0321.png" style="width: 80%;">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/docs/assets/design.sketch?raw=true">下载</a>
 
@@ -18,7 +18,7 @@
 
 包含 Sketch 格式的图标库资源。
 
-<img src="https://img.yzcdn.cn/vant/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 3px rgba(0, 0, 0, .3);">
+<img src="https://img.yzcdn.cn/vant/design-icons-0321.png" style="width: 80%;">
 
 <a class="design-download" href="https://github.com/youzan/vant-icons/blob/master/assets/icons.sketch?raw=true">下载</a>
 

@@ -32,7 +32,7 @@ export default {
     margin-bottom: 24px;
     padding: 24px;
     background-color: #fff;
-    border-radius: 6px;
+    border-radius: @van-doc-border-radius;
     box-shadow: 0 8px 12px #ebedf0;
   }
 
@@ -96,7 +96,6 @@ export default {
     color: @van-doc-text-color;
     font-size: 13px;
     line-height: 1.5;
-    border-radius: 6px;
     border-collapse: collapse;
 
     th {
@@ -148,7 +147,7 @@ export default {
     padding-left: 15px;
     color: @van-doc-text-color;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 26px;
 
     &::before {
       position: absolute;
@@ -177,7 +176,7 @@ export default {
     margin: 2px 3px;
     padding: 2px 5px;
     background-color: #f0f2f5;
-    box-shadow: none;
+    border-radius: 4px;
   }
 
   section {
@@ -189,22 +188,22 @@ export default {
     margin: 20px 0 0;
     padding: 16px;
     color: rgba(52, 73, 94, 0.8);
+    font-weight: 500;
     font-size: 14px;
     background-color: #ecf9ff;
-    border-left: 5px solid #50bfff;
-    border-radius: 4px;
+    border-radius: @van-doc-border-radius;
   }
 
   img {
     width: 100%;
-    margin: 15px 0;
-    box-shadow: 0 2px 4px #ebedf0;
+    margin: 16px 0;
+    border-radius: @van-doc-border-radius;
   }
 
   &--changelog {
     strong {
       display: block;
-      margin: 12px 0;
+      margin: 24px 0 12px;
       font-weight: 500;
       font-size: 15px;
     }
