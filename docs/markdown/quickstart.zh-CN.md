@@ -2,7 +2,7 @@
 
 ### 脚手架
 
-推荐使用 Vue 官方提供的脚手架 [Vue Cli 3](https://cli.vuejs.org/zh/) 创建项目
+推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
 
 ```bash
 # 安装 Vue Cli
@@ -105,7 +105,7 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 
-> 注意：配置 babel-plugin-import 插件后，将不允许以这种方式导入组件
+> 配置按需引入后，将不允许直接导入所有组件
 
 ### 方式四. 通过 CDN 引入
 
@@ -120,14 +120,14 @@ Vue.use(Vant);
 <script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
 
 <script>
-  // 在 #app 标签下渲染一个按钮组件
-  new Vue({
-    el: '#app',
-    template: `<van-button>按钮</van-button>`
-  });
+// 在 #app 标签下渲染一个按钮组件
+new Vue({
+  el: '#app',
+  template: `<van-button>按钮</van-button>`
+});
 
-  // 调用函数组件，弹出一个 Toast
-  vant.Toast('提示');
+// 调用函数组件，弹出一个 Toast
+vant.Toast('提示');
 </script>
 ```
 
@@ -158,7 +158,7 @@ module.exports = {
 }
 ```
 
-> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+> 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译
 
 ### 在桌面端使用
 

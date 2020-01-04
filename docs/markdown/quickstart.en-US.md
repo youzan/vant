@@ -2,7 +2,7 @@
 
 ### Starter kit
 
-We recomment to use [Vue Cli 3](https://cli.vuejs.org/zh/) to create a project.
+We recomment to use [Vue Cli](https://cli.vuejs.org/zh/) to create a project.
 
 ```bash
 # Install Vue Cli
