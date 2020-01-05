@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 import { join } from 'path';
-import { pascalize, getComponents, smartOutputFile } from '../common';
+import { pascalize, getComponents, smartOutputFile, normalizePath } from '../common';
 import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
 
 type Options = {
@@ -16,7 +16,7 @@ function genImports(components: string[], options: Options): string {
         path = options.pathResolver(path);
       }
 
-      return `import ${pascalize(name)} from '${path}';`;
+      return `import ${pascalize(name)} from '${normalizePath(path)}';`;
     })
     .join('\n');
 }

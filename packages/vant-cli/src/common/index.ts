@@ -91,6 +91,10 @@ export function decamelize(str: string, sep = '-') {
     .toLowerCase();
 }
 
+export function normalizePath(path: string): string {
+  return path.replace(/\\/g, '/');
+}
+
 export function getWebpackConfig(): object {
   if (existsSync(WEBPACK_CONFIG_FILE)) {
     const config = require(WEBPACK_CONFIG_FILE);
