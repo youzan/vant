@@ -26,6 +26,7 @@ export const WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
 
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
+export const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
 export const PACKAGE_STYLE_FILE = join(DIST_DIR, 'package-style.css');

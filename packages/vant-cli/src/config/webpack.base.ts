@@ -3,10 +3,18 @@ import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import sass from 'sass';
 import { VueLoaderPlugin } from 'vue-loader';
 import {
+  CACHE_DIR,
   STYLE_EXTS,
   SCRIPT_EXTS,
   POSTCSS_CONFIG_FILE
 } from '../common/constant';
+
+const CACHE_LOADER = {
+  loader: 'cache-loader',
+  options: {
+    cacheDirectory: CACHE_DIR
+  }
+};
 
 const CSS_LOADERS = [
   'style-loader',
@@ -31,6 +39,7 @@ export const baseConfig = {
       {
         test: /\.vue$/,
         use: [
+          CACHE_LOADER,
           {
             loader: 'vue-loader',
             options: {
@@ -44,9 +53,7 @@ export const baseConfig = {
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules\/(?!(@vant\/cli))/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [CACHE_LOADER, 'babel-loader']
       },
       {
         test: /\.css$/,
@@ -56,12 +63,7 @@ export const baseConfig = {
       {
         test: /\.less$/,
         sideEffects: true,
-        use: [
-          ...CSS_LOADERS,
-          {
-            loader: 'less-loader'
-          }
-        ]
+        use: [...CSS_LOADERS, 'less-loader']
       },
       {
         test: /\.scss$/,
@@ -78,7 +80,7 @@ export const baseConfig = {
       },
       {
         test: /\.md$/,
-        use: ['vue-loader', '@vant/markdown-loader']
+        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader']
       }
     ]
   },

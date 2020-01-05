@@ -64,6 +64,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.13.0",
+    "cache-loader": "^4.1.0",
     "chokidar": "^3.3.1",
     "clean-css": "^4.2.1",
     "codecov": "^3.6.1",
