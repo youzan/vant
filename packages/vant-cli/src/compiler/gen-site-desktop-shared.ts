@@ -66,14 +66,14 @@ function resolveDocuments(components: string[]): DocumentItem[] {
   }
 
   const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => {
-    const pairs = parse(path.toString()).name.split('.');
+    const pairs = parse(path).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
       path
     };
   });
 
-  return [...staticDocs, ...docs.filter(item => existsSync(item.path))] as DocumentItem[];
+  return [...staticDocs, ...docs.filter(item => existsSync(item.path))];
 }
 
 function genImportDocuments(items: DocumentItem[]) {
