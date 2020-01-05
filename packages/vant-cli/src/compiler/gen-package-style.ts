@@ -6,7 +6,7 @@ import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 type Options = {
   outputPath: string;
-  pathResolver?: Function;
+  pathResolver?: (path: string) => string;
 };
 
 export function genPacakgeStyle(options: Options) {
