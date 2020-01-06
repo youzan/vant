@@ -81,10 +81,11 @@ export default createComponent({
       showAreaPopup: false,
       detailFocused: false,
       errorInfo: {
-        tel: false,
-        name: false,
-        postalCode: false,
-        addressDetail: false
+        tel: '',
+        name: '',
+        areaCode: '',
+        postalCode: '',
+        addressDetail: ''
       }
     };
   },
@@ -128,7 +129,7 @@ export default createComponent({
 
   methods: {
     onFocus(key) {
-      this.errorInfo[key] = false;
+      this.errorInfo[key] = '';
       this.detailFocused = key === 'addressDetail';
       this.$emit('focus', key);
     },
@@ -172,8 +173,7 @@ export default createComponent({
       const isValid = items.every(item => {
         const msg = this.getErrorMessage(item);
         if (msg) {
-          this.errorInfo[item] = true;
-          Toast(msg);
+          this.errorInfo[item] = msg;
         }
         return !msg;
       });
@@ -262,7 +262,7 @@ export default createComponent({
             clearable
             label={t('name')}
             placeholder={t('namePlaceholder')}
-            error={errorInfo.name}
+            errorMessage={errorInfo.name}
             onFocus={onFocus('name')}
           />
           <Field
@@ -271,7 +271,7 @@ export default createComponent({
             type="tel"
             label={t('tel')}
             placeholder={t('telPlaceholder')}
-            error={errorInfo.tel}
+            errorMessage={errorInfo.tel}
             onFocus={onFocus('tel')}
           />
           <Field
@@ -280,8 +280,10 @@ export default createComponent({
             clickable
             label={t('area')}
             placeholder={t('areaPlaceholder')}
+            errorMessage={errorInfo.areaCode}
             rightIcon="arrow"
             value={this.areaText}
+            onFocus={onFocus('areaCode')}
             onClick={() => {
               this.showAreaPopup = true;
             }}
@@ -290,7 +292,7 @@ export default createComponent({
             vShow={this.showDetail}
             focused={this.detailFocused}
             value={data.addressDetail}
-            error={errorInfo.addressDetail}
+            errorMessage={errorInfo.addressDetail}
             detailRows={this.detailRows}
             detailMaxlength={this.detailMaxlength}
             searchResult={this.searchResult}
@@ -310,7 +312,7 @@ export default createComponent({
               maxlength="6"
               label={t('postal')}
               placeholder={t('postal')}
-              error={errorInfo.postalCode}
+              errorMessage={errorInfo.postalCode}
               onFocus={onFocus('postalCode')}
             />
           )}

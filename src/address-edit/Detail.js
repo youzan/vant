@@ -9,7 +9,7 @@ const android = isAndroid();
 export default createComponent({
   props: {
     value: String,
-    error: Boolean,
+    errorMessage: String,
     focused: Boolean,
     detailRows: Number,
     searchResult: Array,
@@ -89,7 +89,7 @@ export default createComponent({
           clearable={!android}
           type="textarea"
           value={this.value}
-          error={this.error}
+          errorMessage={this.errorMessage}
           border={!this.shouldShowSearchResult}
           label={t('label')}
           maxlength={this.detailMaxlength}
