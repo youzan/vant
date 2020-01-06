@@ -198,7 +198,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | visible-item-count | Count of visible columns | *number* | `5` | - |
 | allow-html | Whether to allow HTML in option text | *boolean* | `true` | 2.1.8 |
 | default-index | Default value index of single column picker | *number* | `0` | - |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.10` |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | 2.2.10 |
 
 ### Events
 
@@ -229,16 +229,16 @@ Picker events will pass different parameters according to the columns are single
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Picker instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| getValues | Get current values of all columns | - | values |
-| setValues | Set current values of all columns | values | - |
-| getIndexes | Get current indexes of all columns | - | indexes |
-| setIndexes | Set current indexes of all columns | indexes | - |
-| getColumnValue | Get current value of the column | columnIndex | value |
-| setColumnValue | Set current value of the column | columnIndex, value | - |
-| getColumnIndex | Get current index of the column | columnIndex | optionIndex |
-| setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
-| getColumnValues | Get columns data of the column | columnIndex | values |
-| setColumnValues | Set columns data of the column | columnIndex, values | - |
-| confirm | Stop scrolling and emit confirm event | - | - |
+| Name | Description | Attribute | Return value | Version |
+|------|------|------|------|------|
+| getValues | Get current values of all columns | - | values | - |
+| setValues | Set current values of all columns | values | - | - |
+| getIndexes | Get current indexes of all columns | - | indexes | - |
+| setIndexes | Set current indexes of all columns | indexes | - | - |
+| getColumnValue | Get current value of the column | columnIndex | value | - |
+| setColumnValue | Set current value of the column | columnIndex, value | - | - |
+| getColumnIndex | Get current index of the column | columnIndex | optionIndex | - |
+| setColumnIndex | Set current index of the column | columnIndex, optionIndex | - | - |
+| getColumnValues | Get columns data of the column | columnIndex | values | - |
+| setColumnValues | Set columns data of the column | columnIndex, values | - | - |
+| confirm | Stop scrolling and emit confirm event | - | - | 2.4.0 |

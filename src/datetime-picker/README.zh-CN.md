@@ -173,7 +173,7 @@ export default {
 | confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
-| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.13` |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | 2.2.13 |
 
 ### Events
 
@@ -187,9 +187,9 @@ export default {
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 DatetimePicker 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| getPicker | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
+| 方法名 | 说明 | 参数 | 返回值 | 版本 |
+|------|------|------|------|------|
+| getPicker | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - | 2.4.0 |
 
 ## 常见问题
 

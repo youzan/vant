@@ -206,7 +206,7 @@ export default {
 | visible-item-count | 可见的选项个数 | *number* | `5` | - |
 | allow-html | 是否允许选项内容中渲染 HTML | *boolean* | `true` | 2.1.8 |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` | - |
-| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.10` |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | 2.2.10 |
 
 ### Events
 
@@ -241,19 +241,19 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Picker 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| getValues | 获取所有列选中的值 | - | values |
-| setValues | 设置所有列选中的值 | values | - |
-| getIndexes | 获取所有列选中值对应的索引 | - | indexes |
-| setIndexes | 设置所有列选中值对应的索引 | indexes | - |
-| getColumnValue | 获取对应列选中的值 | columnIndex | value |
-| setColumnValue | 设置对应列选中的值 | columnIndex, value | - |
-| getColumnIndex | 获取对应列选中项的索引 | columnIndex | optionIndex |
-| setColumnIndex | 设置对应列选中项的索引 | columnIndex, optionIndex | - |
-| getColumnValues | 获取对应列中所有选项 | columnIndex | values |
-| setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |
-| confirm | 停止惯性滚动并触发 confirm 事件 | - | - |
+| 方法名 | 说明 | 参数 | 返回值 | 版本 |
+|------|------|------|------|------|
+| getValues | 获取所有列选中的值 | - | values | - |
+| setValues | 设置所有列选中的值 | values | - | - |
+| getIndexes | 获取所有列选中值对应的索引 | - | indexes | - |
+| setIndexes | 设置所有列选中值对应的索引 | indexes | - | - |
+| getColumnValue | 获取对应列选中的值 | columnIndex | value | - |
+| setColumnValue | 设置对应列选中的值 | columnIndex, value | - | - |
+| getColumnIndex | 获取对应列选中项的索引 | columnIndex | optionIndex | - |
+| setColumnIndex | 设置对应列选中项的索引 | columnIndex, optionIndex | - | - |
+| getColumnValues | 获取对应列中所有选项 | columnIndex | values | - |
+| setColumnValues | 设置对应列中所有选项 | columnIndex, values | - | - |
+| confirm | 停止惯性滚动并触发 confirm 事件 | - | - | 2.4.0 |
 
 ## 常见问题
 

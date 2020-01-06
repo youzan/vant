@@ -169,7 +169,7 @@ export default {
 | confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
 | visible-item-count | Count of visible columns | *number* | `5` | - |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.13` |
+| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | 2.2.13 |
 
 ### Events
 
@@ -183,6 +183,6 @@ export default {
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| getPicker | get Picker instance | - | - |
+| Name | Description | Attribute | Return value | Version |
+|------|------|------|------|------|
+| getPicker | get Picker instance | - | - | 2.4.0 |
