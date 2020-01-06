@@ -11,6 +11,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
+`2020-01-06`
+
+**Feature**
+
+* Image: 新增 error-icon 属性 [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: 新增 loading-icon 属性 [#5469](https://github.com/youzan/vant/issues/5469)
+* AddressEdit: 优化错误提示展示方式 [#5479](https://github.com/youzan/vant/issues/5479)
+
+**Bug Fixes**
+
+* Card: 修复图片圆角样式未生效的问题 [#5480](https://github.com/youzan/vant/issues/5480)
+
+
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
 `2020-01-02`
 

@@ -1,5 +1,19 @@
 # Changelog
 
+### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
+`2020-01-06`
+
+**Feature**
+
+* Image: add error-icon prop [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: add loading-icon prop [#5469](https://github.com/youzan/vant/issues/5469)
+* AddressEdit: show error message in field [#5479](https://github.com/youzan/vant/issues/5479)
+
+**Bug Fixes**
+
+* Card: thumb image border-radius become effective [#5480](https://github.com/youzan/vant/issues/5480)
+
+
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
 `2020-01-02`
 
