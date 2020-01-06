@@ -171,3 +171,11 @@ export default {
 | start | 开始倒计时 | - | - |
 | pause | 暂停倒计时 | - | - |
 | reset | 重设倒计时，若`auto-start`为`true`，重设后会自动开始倒计时 | - | - |
+
+## 常见问题
+
+### 在 iOS 系统上倒计时不生效？
+
+如果你遇到了在 iOS 上倒计时不生效的问题，请确认在创建 Date 对象时没有使用`new Date('2020-01-01')`这样的写法，iOS 不支持以中划线分隔的日期格式，正确写法是`new Date('2020/01/01')`。
+
+对此问题的详细解释：[stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios)。
