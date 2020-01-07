@@ -23,8 +23,8 @@
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "vue": "^2.5.22",
+    "vue-template-compiler": "^2.5.22"
   },
   "devDependencies": {
     "@types/eslint": "^6.1.3",
