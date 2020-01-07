@@ -32,7 +32,7 @@ module.exports = function() {
         'import',
         {
           libraryName: 'vant',
-          libraryDirectory: 'es',
+          libraryDirectory: useESModules ? 'es' : 'lib',
           style: true
         },
         'vant'
