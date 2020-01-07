@@ -122,9 +122,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前输入值 | *string \| number* | min | - |
+| v-model | 当前输入值 | *string \| number* | - | - |
 | min | 最小值 | *string \| number* | `1` | - |
 | max | 最大值 | *string \| number* | - | - |
+| default-value | 初始值，当 v-model 为空时生效 | *string \| number* | `1` | - |
 | step | 步长，每次点击时改变的值 | *string \| number* | `1` | - |
 | name | 标识符，可以在`change`事件回调参数中获取 | *string \| number* | - | 2.2.11 |
 | integer | 是否只允许输入整数 | *boolean* | `false` | - |
