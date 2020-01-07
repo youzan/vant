@@ -100,9 +100,10 @@ export default {
 
 | Attribute | Description | Type | Default | Version |
 |------|------|------|------|------|
-| v-model | Current value | *string \| number* | Min value | - |
+| v-model | Current value | *string \| number* | - | - |
 | min | Min value | *string \| number* | `1` | - |
 | max | Max value | *string \| number* | - | - |
+| default-value | Default value, valid when v-model is empty | *string \| number* | `1` | - |
 | step | Value change step | *string \| number* | `1` | - |
 | name | Stepper name | *string \| number* | - | 2.0.3 |
 | integer | Whether to allow only integers | *boolean* | `false` | - |
