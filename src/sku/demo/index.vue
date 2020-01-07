@@ -19,6 +19,7 @@
           reset-stepper-on-hide
           safe-area-inset-bottom
           reset-selected-sku-on-hide
+          :before-action-hook="beforeAction"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -219,6 +220,14 @@ export default {
 
     onPointClicked() {
       this.$toast('积分兑换');
+    },
+
+    beforeAction() {
+      if (Math.random() < 0.4) {
+        this.$toast('按钮前置拦截');
+        return true;
+      }
+      return false;
     }
   }
 };

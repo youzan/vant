@@ -37,6 +37,7 @@ export default createComponent({
     disableStepperInput: Boolean,
     safeAreaInsetBottom: Boolean,
     resetSelectedSkuOnHide: Boolean,
+    beforeActionHook: Function,
     quota: {
       type: Number,
       default: 0
@@ -440,6 +441,10 @@ export default createComponent({
     },
 
     onBuyOrAddCart(type) {
+      // 如果有按钮前置拦截，且返回true，则完全不继续走后续流程
+      if (this.beforeActionHook && this.beforeActionHook(type)) {
+        return;
+      }
       // 有信息表示该sku根本不符合购买条件
       if (this.stepperError) {
         return this.onOverLimit(this.stepperError);

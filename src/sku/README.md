@@ -142,6 +142,7 @@ export default {
 | get-container | Return the mount node for sku | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 | start-sale-num | Minimum quantity | *number* | `1` | 2.3.0 |
+| before-action-hook | Before action hook | *function* | - | 2.3.4 |
 
 ### Events
 
