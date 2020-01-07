@@ -184,8 +184,10 @@ export default createComponent({
             stock_num: this.sku.stock_num
           };
         }
-        skuComb.properties = this.selectedPropValues;
-        skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
+        if (skuComb) {
+          skuComb.properties = this.selectedPropValues;
+          skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
+        }
       }
       console.log('selectedSkuComb', skuComb);
       return skuComb;
@@ -275,11 +277,11 @@ export default createComponent({
       const unselectedSku = this.skuTree
         .filter(item => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID)
         .map(item => item.k);
-      const unselectedAttr = this.propList
+      const unselectedProp = this.propList
         .filter(item => (this.selectedProp[item.k_id] || []).length < 1)
         .map(item => item.k);
 
-      return `${t('select')} ${unselectedSku.concat(unselectedAttr).join('；')}`;
+      return `${t('select')} ${unselectedSku.concat(unselectedProp).join('；')}`;
     }
   },
 
@@ -416,7 +418,7 @@ export default createComponent({
     },
 
     onPropSelect(propValue) {
-      console.log('onAttrSelect', propValue);
+      console.log('onPropSelect', propValue);
       const arr = this.selectedProp[propValue.skuKeyStr] || [];
       const pos = arr.indexOf(propValue.id);
       if (pos > -1) {
