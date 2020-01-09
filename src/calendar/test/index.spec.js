@@ -407,3 +407,23 @@ test('color prop when type is range', async () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should scroll to current month when show', async done => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      type: 'range',
+      minDate: new Date(2010, 0, 10),
+      maxDate: new Date(2010, 11, 10),
+      defaultDate: [new Date(2010, 3, 1), new Date(2010, 5, 1)]
+    }
+  });
+
+  Element.prototype.scrollIntoView = function() {
+    expect(this).toEqual(wrapper.findAll('.van-calendar__month').at(3).element);
+    done();
+  };
+
+  wrapper.setProps({ value: true });
+
+  await later();
+});
