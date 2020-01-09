@@ -44,6 +44,12 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
         <div class="van-cell__value">
+          <div class="van-field__body"><input type="text" readonly="readonly" class="van-field__control"></div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
+        <div class="van-cell__value">
           <div class="van-field__body"><input type="text" disabled="disabled" class="van-field__control"></div>
         </div>
       </div>
@@ -51,13 +57,36 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
-      <div class="van-cell van-field van-field--error">
+      <div class="van-cell van-field">
+        <div class="van-field__left-icon"><i class="van-icon van-icon-smile-o">
+            <!----></i></div>
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body"><input type="text" placeholder="显示图标" class="van-field__control">
+            <div class="van-field__right-icon"><i class="van-icon van-icon-warning-o">
+                <!----></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-field__left-icon"><i class="van-icon van-icon-music-o">
+            <!----></i></div>
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body"><input type="text" placeholder="显示清除图标" class="van-field__control"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-cell-group van-hairline--top-bottom">
+      <div class="van-cell van-cell--required van-field van-field--error">
         <div class="van-cell__title van-field__label"><span>用户名</span></div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入用户名" class="van-field__control"></div>
         </div>
       </div>
-      <div class="van-cell van-field">
+      <div class="van-cell van-cell--required van-field">
         <div class="van-cell__title van-field__label"><span>手机号</span></div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入手机号" class="van-field__control"></div>

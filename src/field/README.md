@@ -107,12 +107,14 @@ Use `error` or `error-message` to show error info
 <van-cell-group>
   <van-field
     v-model="username"
+    error
+    required
     label="Username"
     placeholder="Username"
-    error
   />
   <van-field
     v-model="phone"
+    required
     label="Phone"
     placeholder="Phone"
     error-message="Invalid phone"

@@ -114,18 +114,20 @@ export default {
 
 ### 错误提示
 
-通过`error`或者`error-message`属性增加对应的错误提示
+设置`required`属性表示这是一个必填项，可以配合`error`或`error-message`属性显示对应的错误提示
 
 ```html
 <van-cell-group>
   <van-field
     v-model="username"
+    error
+    required
     label="用户名"
     placeholder="请输入用户名"
-    error
   />
   <van-field
     v-model="phone"
+    required
     label="手机号"
     placeholder="请输入手机号"
     error-message="手机号格式错误"

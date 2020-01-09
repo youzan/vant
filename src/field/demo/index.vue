@@ -67,12 +67,14 @@
       <van-cell-group>
         <van-field
           v-model="username"
+          required
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
           error
         />
         <van-field
           v-model="phone2"
+          required
           :label="$t('phone')"
           :placeholder="$t('phonePlaceholder')"
           :error-message="$t('phoneError')"
