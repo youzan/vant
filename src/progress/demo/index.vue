@@ -43,7 +43,11 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-progress {
+  background: @white;
+
   .van-progress {
     margin: 20px;
 

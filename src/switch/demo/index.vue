@@ -73,6 +73,8 @@ export default {
 @import '../../style/var';
 
 .demo-switch {
+  background: @white;
+
   .van-switch {
     margin: 0 @padding-md;
   }

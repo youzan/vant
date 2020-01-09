@@ -121,7 +121,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-radio {
+  background: @white;
+
   &-group {
     padding: 0 17px;
 

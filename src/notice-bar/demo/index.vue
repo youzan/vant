@@ -66,13 +66,17 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-notice-bar {
+  background: @white;
+
   .van-notice-bar:not(:first-of-type) {
-    margin-top: 5px;
+    margin-top: 4px;
   }
 
   .van-doc-demo-block__title {
-    padding-top: 25px;
+    padding-top: 24px;
   }
 }
 </style>
