@@ -66,9 +66,9 @@ export default {
     padding: @padding-md;
     background-color: white;
     background-repeat: no-repeat;
-    background-position: @padding-md;
-    background-size: 315px 250px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-size: 100% 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px #ebedf0;
   }
 
   .van-doc-demo-block__title,

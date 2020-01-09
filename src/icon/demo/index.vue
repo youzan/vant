@@ -222,6 +222,7 @@ export default {
     width: auto;
     margin: 20px;
     background-color: #fff;
+    border-radius: 12px;
   }
 }
 </style>

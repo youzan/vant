@@ -170,6 +170,8 @@ export default {
 @import "../../style/var";
 
 .demo-checkbox {
+  background: @white;
+
   .van-checkbox {
     margin: 10px 0 0 20px;
   }

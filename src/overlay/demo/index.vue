@@ -51,7 +51,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-overlay {
+  background: @white;
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -62,7 +66,7 @@ export default {
   .block {
     width: 120px;
     height: 120px;
-    background-color: #fff;
+    background-color: @white;
   }
 }
 </style>

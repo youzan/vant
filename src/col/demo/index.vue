@@ -103,6 +103,8 @@ export default {
 @import '../../style/var';
 
 .demo-col {
+  background: @white;
+
   .van-doc-demo-block {
     padding: 0 @padding-md;
   }

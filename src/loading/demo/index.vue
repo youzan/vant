@@ -50,7 +50,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-loading {
+  background: @white;
+
   .van-loading {
     display: inline-block;
     margin: 5px 0 5px 20px;
