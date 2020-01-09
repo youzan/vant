@@ -113,11 +113,11 @@ Vue.use(Vant);
 
 ```html
 <!-- 引入样式文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.4/lib/index.css">
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.4/lib/vant.min.js"></script>
 
 <script>
 // 在 #app 标签下渲染一个按钮组件
@@ -148,7 +148,7 @@ Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，
 module.exports = {
   plugins: {
     'autoprefixer': {
-      browsers: ['Android >= 4.0', 'iOS >= 7']
+      browsers: ['Android >= 4.0', 'iOS >= 8']
     },
     'postcss-pxtorem': {
       rootValue: 37.5,

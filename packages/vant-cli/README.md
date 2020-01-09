@@ -56,7 +56,7 @@ yarn add @vant/cli --dev
   "prettier": {
     "singleQuote": true
   },
-  "browserslist": ["Android >= 4.0", "iOS >= 7"]
+  "browserslist": ["Android >= 4.0", "iOS >= 8"]
 }
 ```
 
