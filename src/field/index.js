@@ -20,6 +20,7 @@ export default createComponent({
     leftIcon: String,
     rightIcon: String,
     clearable: Boolean,
+    formatter: Function,
     maxlength: [Number, String],
     labelWidth: [Number, String],
     labelClass: null,
@@ -99,7 +100,6 @@ export default createComponent({
       }
     },
 
-    // native maxlength not work when type = number
     format(target = this.$refs.input) {
       if (!target) {
         return;
@@ -108,6 +108,7 @@ export default createComponent({
       let { value } = target;
       const { maxlength } = this;
 
+      // native maxlength not work when type is number
       if (isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
         target.value = value;
@@ -118,6 +119,16 @@ export default createComponent({
         const allowDot = this.type === 'number';
 
         value = formatNumber(value, allowDot);
+
+        if (value !== originValue) {
+          target.value = value;
+        }
+      }
+
+      if (this.formatter) {
+        const originValue = value;
+
+        value = this.formatter(value);
 
         if (value !== originValue) {
           target.value = value;

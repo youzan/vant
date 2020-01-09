@@ -6,7 +6,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="$t('customType')">
       <van-cell-group>
         <van-field
           v-model="text"
@@ -44,7 +44,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('disabled')">
       <van-cell-group>
         <van-field :value="$t('inputReadonly')" :label="$t('text')" readonly />
         <van-field :value="$t('inputDisabled')" :label="$t('text')" disabled />
@@ -70,7 +70,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block :title="$t('title4')">
+    <demo-block :title="$t('errorInfo')">
       <van-cell-group>
         <van-field
           v-model="username"
@@ -89,7 +89,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block :title="$t('title6')">
+    <demo-block :title="$t('insertButton')">
       <van-cell-group>
         <van-field
           center
@@ -104,6 +104,17 @@
             </van-button>
           </template>
         </van-field>
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block v-if="!isWeapp" :title="$t('formatValue')">
+      <van-cell-group>
+        <van-field
+          v-model="formatValue"
+          :label="$t('text')"
+          :formatter="formatter"
+          :placeholder="$t('formatValue')"
+        />
       </van-cell-group>
     </demo-block>
 
@@ -141,58 +152,60 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '自定义类型',
-      title3: '禁用输入框',
-      title4: '错误提示',
-      title6: '插入按钮',
-      sms: '短信验证码',
       tel: '手机号',
+      sms: '短信验证码',
       text: '文本',
       digit: '整数',
       phone: '手机号',
       number: '数字',
       message: '留言',
       sendSMS: '发送验证码',
+      disabled: '禁用输入框',
       showIcon: '显示图标',
+      errorInfo: '错误提示',
+      customType: '自定义类型',
+      phoneError: '手机号格式错误',
+      formatValue: '格式化输入内容',
+      insertButton: '插入按钮',
       showClearIcon: '显示清除图标',
       showWordLimit: '显示字数统计',
-      textareaAutosize: '高度自适应',
+      inputReadonly: '输入框只读',
+      inputDisabled: '输入框已禁用',
       smsPlaceholder: '请输入短信验证码',
       textPlaceholder: '请输入文本',
       digitPlaceholder: '请输入整数',
-      numberPlaceholder: '请输入数字（支持小数）',
       phonePlaceholder: '请输入手机号',
-      messagePlaceholder: '请输入留言',
-      inputReadonly: '输入框只读',
-      inputDisabled: '输入框已禁用',
-      phoneError: '手机号格式错误'
+      textareaAutosize: '高度自适应',
+      numberPlaceholder: '请输入数字（支持小数）',
+      messagePlaceholder: '请输入留言'
     },
     'en-US': {
-      title2: 'Custom Type',
-      title3: 'Disabled',
-      title4: 'Error Info',
-      title6: 'Insert Button',
-      sms: 'SMS',
       tel: 'Tel',
+      sms: 'SMS',
       text: 'Text',
       digit: 'Digit',
       phone: 'Phone',
       number: 'Number',
       message: 'Message',
       sendSMS: 'Send SMS',
+      disabled: 'Disabled',
       showIcon: 'Show Icon',
+      errorInfo: 'Error Info',
+      customType: 'Custom Type',
+      phoneError: 'Invalid phone',
+      formatValue: 'Format Value',
+      insertButton: 'Insert Button',
       showClearIcon: 'Show Clear Icon',
       showWordLimit: 'Show Word Limit',
-      textareaAutosize: 'Auto Resize',
+      inputReadonly: 'Input Readonly',
+      inputDisabled: 'Input Disabled',
       smsPlaceholder: 'SMS',
       textPlaceholder: 'Text',
       digitPlaceholder: 'Digit',
       phonePlaceholder: 'Phone',
+      textareaAutosize: 'Auto Resize',
       numberPlaceholder: 'Number',
-      messagePlaceholder: 'Message',
-      inputReadonly: 'Input Readonly',
-      inputDisabled: 'Input Disabled',
-      phoneError: 'Invalid phone'
+      messagePlaceholder: 'Message'
     }
   },
 
@@ -211,8 +224,15 @@ export default {
       message: '',
       message2: '',
       phone: '',
-      phone2: '12345'
+      phone2: '12345',
+      formatValue: ''
     };
+  },
+
+  methods: {
+    formatter(value) {
+      return value.replace(/\d/g, '');
+    }
   }
 };
 </script>
