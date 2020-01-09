@@ -7,6 +7,16 @@ import { createNamespace, isObj, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('field');
 
+function formatNumber(value) {
+  const dotIndex = value.indexOf('.');
+
+  if (dotIndex > -1) {
+    value = value.slice(0, dotIndex + 1) + value.slice(dotIndex).replace(/\./g, '');
+  }
+
+  return value.replace(/[^0-9.]/g, '');
+}
+
 export default createComponent({
   inheritAttrs: false,
 
@@ -111,6 +121,16 @@ export default createComponent({
         target.value = value;
       }
 
+      if (this.type === 'number') {
+        const originValue = value;
+
+        value = formatNumber(value);
+
+        if (value !== originValue) {
+          target.value = value;
+        }
+      }
+
       return value;
     },
 
@@ -159,19 +179,6 @@ export default createComponent({
     },
 
     onKeypress(event) {
-      if (this.type === 'number') {
-        const { keyCode } = event;
-        const allowPoint = String(this.value).indexOf('.') === -1;
-        const isValidKey =
-          (keyCode >= 48 && keyCode <= 57) ||
-          (keyCode === 46 && allowPoint) ||
-          keyCode === 45;
-
-        if (!isValidKey) {
-          preventDefault(event);
-        }
-      }
-
       // trigger blur after click keyboard search button
       /* istanbul ignore next */
       if (this.type === 'search' && event.keyCode === 13) {
@@ -209,11 +216,7 @@ export default createComponent({
       const inputSlot = this.slots('input');
 
       if (inputSlot) {
-        return (
-          <div class={bem('control', this.inputAlign)}>
-            {inputSlot}
-          </div>
-        );
+        return <div class={bem('control', this.inputAlign)}>{inputSlot}</div>;
       }
 
       const inputProps = {
@@ -240,7 +243,10 @@ export default createComponent({
         return <textarea {...inputProps} />;
       }
 
-      return <input type={this.type} {...inputProps} />;
+      // type="number" is weired in iOS
+      const inputType = this.type === 'number' ? 'text' : this.type;
+
+      return <input type={inputType} {...inputProps} />;
     },
 
     genLeftIcon() {
@@ -311,10 +317,16 @@ export default createComponent({
         <div class={bem('body')}>
           {this.genInput()}
           {this.showClear && (
-            <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
+            <Icon
+              name="clear"
+              class={bem('clear')}
+              onTouchstart={this.onClear}
+            />
           )}
           {this.genRightIcon()}
-          {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
+          {slots('button') && (
+            <div class={bem('button')}>{slots('button')}</div>
+          )}
         </div>
         {this.genWordLimit()}
         {this.errorMessage && (

@@ -17,8 +17,18 @@ The value of field is bound with v-model.
 
 ```html
 <van-cell-group>
-  <van-field v-model="value" placeholder="Username" />
+  <van-field v-model="value" placeholder="Text" />
 </van-cell-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  }
+}
 ```
 
 ### Custom Type
@@ -26,25 +36,26 @@ The value of field is bound with v-model.
 Use `type` prop to custom different type fields.
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="username"
-    required
-    clearable
-    label="Username"
-    right-icon="question-o"
-    placeholder="Username"
-    @click-right-icon="$toast('question')"
-  />
+<van-field v-model="text" label="Text" />
 
-  <van-field
-    v-model="password"
-    type="password"
-    label="Password"
-    placeholder="Password"
-    required
-  />
-</van-cell-group>
+<van-field v-model="password" type="password" label="Password" />
+
+<van-field v-model="number" type="number" label="Number" />
+
+<van-field v-model="tel" type="tel" label="Phone" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      tel: '',
+      number: '',
+      username: '',
+      password: ''
+    };
+  }
+}
 ```
 
 ### Disabled
@@ -52,9 +63,8 @@ Use `type` prop to custom different type fields.
 ```html
 <van-cell-group>
   <van-field
+    label="Text"
     value="Disabled"
-    label="Username"
-    left-icon="contact"
     disabled
   />
 </van-cell-group>

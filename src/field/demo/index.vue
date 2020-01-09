@@ -2,20 +2,16 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-field v-model="value" :placeholder="$t('usernamePlaceholder')" />
+        <van-field v-model="value" :placeholder="$t('textPlaceholder')" />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-cell-group>
         <van-field
-          v-model="username"
-          :label="$t('username')"
-          :placeholder="$t('usernamePlaceholder')"
-          required
-          clearable
-          right-icon="question-o"
-          @click-right-icon="$toast('question')"
+          v-model="text"
+          :label="$t('text')"
+          :placeholder="$t('textPlaceholder')"
         />
 
         <van-field
@@ -23,32 +19,40 @@
           type="password"
           :label="$t('password')"
           :placeholder="$t('passwordPlaceholder')"
-          required
+        />
+
+        <van-field
+          v-model="number"
+          type="number"
+          :label="$t('number')"
+          :placeholder="$t('numberPlaceholder')"
+        />
+
+        <van-field
+          v-model="phone"
+          type="tel"
+          :label="$t('phone')"
+          :placeholder="$t('phonePlaceholder')"
         />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title3')">
       <van-cell-group>
-        <van-field
-          :value="$t('inputDisabled')"
-          :label="$t('username')"
-          left-icon="contact"
-          disabled
-        />
+        <van-field :value="$t('inputDisabled')" :label="$t('text')" disabled />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title4')">
       <van-cell-group>
         <van-field
-          v-model="username2"
+          v-model="username"
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
           error
         />
         <van-field
-          v-model="phone"
+          v-model="phone2"
           :label="$t('phone')"
           :placeholder="$t('phonePlaceholder')"
           :error-message="$t('phoneError')"
@@ -112,13 +116,18 @@ export default {
       title3: '禁用输入框',
       title4: '错误提示',
       title6: '插入按钮',
-      message: '留言',
-      phone: '手机号',
       sms: '短信验证码',
+      tel: '手机号',
+      text: '文本',
+      phone: '手机号',
+      number: '数字',
+      message: '留言',
       sendSMS: '发送验证码',
       showWordLimit: '显示字数统计',
       textareaAutosize: '高度自适应',
       smsPlaceholder: '请输入短信验证码',
+      textPlaceholder: '请输入文本',
+      numberPlaceholder: '请输入数字',
       phonePlaceholder: '请输入手机号',
       messagePlaceholder: '请输入留言',
       inputDisabled: '输入框已禁用',
@@ -129,14 +138,19 @@ export default {
       title3: 'Disabled',
       title4: 'Error Info',
       title6: 'Insert Button',
-      message: 'Message',
-      phone: 'Phone',
       sms: 'SMS',
+      tel: 'Tel',
+      text: 'Text',
+      phone: 'Phone',
+      number: 'Number',
+      message: 'Message',
       sendSMS: 'Send SMS',
       showWordLimit: 'Show Word Limit',
       textareaAutosize: 'Auto Resize',
       smsPlaceholder: 'SMS',
+      textPlaceholder: 'Text',
       phonePlaceholder: 'Phone',
+      numberPlaceholder: 'Number',
       messagePlaceholder: 'Message',
       inputDisabled: 'Disabled',
       phoneError: 'Invalid phone'
@@ -146,13 +160,16 @@ export default {
   data() {
     return {
       sms: '',
+      text: '',
       value: '',
+      number: '',
       password: '',
       username: '',
       username2: '',
       message: '',
       message2: '',
-      phone: '1365577'
+      phone: '',
+      phone2: '12345'
     };
   }
 };
