@@ -1,6 +1,6 @@
 import { createNamespace } from '../../utils';
 
-const [createComponent] = createNamespace('sku-row-attr-item');
+const [createComponent] = createNamespace('sku-row-prop-item');
 
 export default createComponent({
   props: {
