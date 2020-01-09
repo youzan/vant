@@ -82,7 +82,7 @@ function AddressItem(
 
     if (switchable && !disabled) {
       return (
-        <Radio name={data.id} iconSize={16}>
+        <Radio name={data.id} iconSize={18}>
           {Info}
         </Radio>
       );
