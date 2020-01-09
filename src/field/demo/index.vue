@@ -39,7 +39,27 @@
 
     <demo-block :title="$t('title3')">
       <van-cell-group>
+        <van-field :value="$t('inputReadonly')" :label="$t('text')" readonly />
         <van-field :value="$t('inputDisabled')" :label="$t('text')" disabled />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('showIcon')">
+      <van-cell-group>
+        <van-field
+          v-model="icon1"
+          :label="$t('text')"
+          left-icon="smile-o"
+          right-icon="warning-o"
+          :placeholder="$t('showIcon')"
+        />
+        <van-field
+          v-model="icon2"
+          clearable
+          :label="$t('text')"
+          left-icon="music-o"
+          :placeholder="$t('showClearIcon')"
+        />
       </van-cell-group>
     </demo-block>
 
@@ -123,6 +143,8 @@ export default {
       number: '数字',
       message: '留言',
       sendSMS: '发送验证码',
+      showIcon: '显示图标',
+      showClearIcon: '显示清除图标',
       showWordLimit: '显示字数统计',
       textareaAutosize: '高度自适应',
       smsPlaceholder: '请输入短信验证码',
@@ -130,6 +152,7 @@ export default {
       numberPlaceholder: '请输入数字',
       phonePlaceholder: '请输入手机号',
       messagePlaceholder: '请输入留言',
+      inputReadonly: '输入框只读',
       inputDisabled: '输入框已禁用',
       phoneError: '手机号格式错误'
     },
@@ -145,6 +168,8 @@ export default {
       number: 'Number',
       message: 'Message',
       sendSMS: 'Send SMS',
+      showIcon: 'Show Icon',
+      showClearIcon: 'Show Clear Icon',
       showWordLimit: 'Show Word Limit',
       textareaAutosize: 'Auto Resize',
       smsPlaceholder: 'SMS',
@@ -152,7 +177,8 @@ export default {
       phonePlaceholder: 'Phone',
       numberPlaceholder: 'Number',
       messagePlaceholder: 'Message',
-      inputDisabled: 'Disabled',
+      inputReadonly: 'Input Readonly',
+      inputDisabled: 'Input Disabled',
       phoneError: 'Invalid phone'
     }
   },
@@ -163,6 +189,8 @@ export default {
       text: '',
       value: '',
       number: '',
+      icon1: '',
+      icon2: '123',
       password: '',
       username: '',
       username2: '',
@@ -180,9 +208,5 @@ export default {
 
 .demo-field {
   padding-bottom: 30px;
-
-  .van-field__right-icon .van-icon {
-    color: @blue;
-  }
 }
 </style>

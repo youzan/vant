@@ -69,14 +69,47 @@ export default {
 
 ### 禁用输入框
 
+通过`readonly`将输入框设置为只读状态，通过`disabled`将输入框设置为禁用状态
+
+```html
+<van-cell-group>
+  <van-field label="文本" value="输入框只读" readonly />
+  <van-field label="文本" value="输入框已禁用" disabled />
+</van-cell-group>
+```
+
+### 显示图标
+
+通过`left-icon`和`right-icon`配置输入框两侧的图标，通过设置`clearable`在输入过程中展示清除图标
+
 ```html
 <van-cell-group>
   <van-field
+    v-model="value1"
     label="文本"
-    value="输入框已禁用"
-    disabled
+    left-icon="smile-o"
+    right-icon="warning-o"
+    placeholder="显示图标"
+  />
+  <van-field
+    v-model="value2"
+    clearable
+    label="文本"
+    left-icon="music-o"
+    placeholder="显示清除图标"
   />
 </van-cell-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value1: '',
+      value2: '123'
+    };
+  }
+};
 ```
 
 ### 错误提示

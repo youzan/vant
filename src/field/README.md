@@ -62,12 +62,41 @@ export default {
 
 ```html
 <van-cell-group>
+  <van-field label="Text" value="Input Readonly" readonly />
+  <van-field label="Text" value="Input Disabled" disabled />
+</van-cell-group>
+```
+
+### Show Icon
+
+```html
+<van-cell-group>
   <van-field
+    v-model="value1"
     label="Text"
-    value="Disabled"
-    disabled
+    left-icon="smile-o"
+    right-icon="warning-o"
+    placeholder="Show Icon"
+  />
+  <van-field
+    v-model="value2"
+    clearable
+    label="Text"
+    left-icon="music-o"
+    placeholder="Show Clear Icon"
   />
 </van-cell-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value1: '',
+      value2: '123'
+    };
+  }
+};
 ```
 
 ### Error Info
