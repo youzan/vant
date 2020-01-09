@@ -198,11 +198,11 @@ export const skuData = {
       },
       {
         k_id: 133,
-        k: '不知道',
+        k: '打包',
         v: [
           {
             id: 1244,
-            name: '什么',
+            name: '分开打包',
             price: 9,
           }
         ],
