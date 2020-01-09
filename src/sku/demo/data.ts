@@ -236,5 +236,10 @@ export const skuData = {
 export const initialSku = {
   s1: '30349',
   s2: '1193',
-  selectedNum: 3
+  selectedNum: 3,
+  selectedProp: {
+    123: [1222],
+    133: [1244],
+    124: [1225, 1226],
+  },
 };

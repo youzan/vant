@@ -355,10 +355,13 @@ export default createComponent({
 
       // 重置商品属性
       this.selectedProp = {};
-      // 只有一个属性值时，默认选中
+      const { selectedProp = {} } = this.initialSku;
+      // 只有一个属性值时，默认选中，且选中外部传入信息
       this.propList.forEach(item => {
         if (item.v && item.v.length === 1) {
           this.selectedProp[item.k_id] = [item.v[0].id];
+        } else if (selectedProp[item.k_id]) {
+          this.selectedProp[item.k_id] = selectedProp[item.k_id];
         }
       });
 
