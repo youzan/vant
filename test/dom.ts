@@ -30,6 +30,11 @@ function mockHTMLElementOffset() {
   });
 }
 
+function mockScrollIntoView() {
+  Element.prototype.scrollIntoView = function() {};
+}
+
+mockScrollIntoView();
 mockHTMLElementOffset();
 
 export function mockGetBoundingClientRect(

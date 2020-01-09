@@ -117,6 +117,7 @@ export default createComponent({
     value(val) {
       if (val) {
         this.initRect();
+        this.scrollIntoView();
       }
     },
 
@@ -126,7 +127,7 @@ export default createComponent({
   },
 
   mounted() {
-    if (!this.poppable) {
+    if (this.value || !this.poppable) {
       this.initRect();
     }
   },
@@ -141,6 +142,28 @@ export default createComponent({
       this.$nextTick(() => {
         this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
         this.onScroll();
+      });
+    },
+
+    // scroll to current month
+    scrollIntoView() {
+      this.$nextTick(() => {
+        const { type, currentDate } = this;
+        const targetDate = type === 'range' ? currentDate[0] : currentDate;
+
+        /* istanbul ignore if */
+        if (!targetDate) {
+          return;
+        }
+
+        this.months.some((month, index) => {
+          if (compareMonth(month, targetDate) === 0) {
+            this.$refs.months[index].$el.scrollIntoView();
+            return true;
+          }
+
+          return false;
+        });
       });
     },
 
