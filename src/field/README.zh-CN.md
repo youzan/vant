@@ -142,17 +142,44 @@ export default {
 通过 button 插槽可以在输入框尾部插入按钮
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="sms"
-    center
-    clearable
-    label="短信验证码"
-    placeholder="请输入短信验证码"
-  >
-    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
-  </van-field>
-</van-cell-group>
+<van-field
+  v-model="sms"
+  center
+  clearable
+  label="短信验证码"
+  placeholder="请输入短信验证码"
+>
+  <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+</van-field>
+```
+
+### 格式化输入内容
+
+通过`formatter`属性可以对输入的内容进行格式化
+
+```html
+<van-field
+  v-model="value"
+  label="文本"
+  :formatter="formatter"
+  placeholder="格式化输入内容"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    formatter(value) {
+      // 过滤输入的数字
+      return value.replace(/\d/g, '');
+    }
+  }
+}
 ```
 
 ### 高度自适应
@@ -160,16 +187,14 @@ export default {
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="message"
-    rows="1"
-    autosize
-    label="留言"
-    type="textarea"
-    placeholder="请输入留言"
-  />
-</van-cell-group>
+<van-field
+  v-model="message"
+  rows="1"
+  autosize
+  label="留言"
+  type="textarea"
+  placeholder="请输入留言"
+/>
 ```
 
 ### 显示字数统计
@@ -177,18 +202,16 @@ export default {
 设置`maxlength`和`show-word-limit`属性后会在底部显示字数统计
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="message"
-    rows="2"
-    autosize
-    label="留言"
-    type="textarea"
-    maxlength="50"
-    placeholder="请输入留言"
-    show-word-limit
-  />
-</van-cell-group>
+<van-field
+  v-model="message"
+  rows="2"
+  autosize
+  label="留言"
+  type="textarea"
+  maxlength="50"
+  placeholder="请输入留言"
+  show-word-limit
+/>
 ```
 
 ## API
@@ -213,6 +236,7 @@ export default {
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` | - |
 | show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` | 2.2.8 |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
+| formatter | 输入内容格式化函数 | *Function* | - | 2.4.2 |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | 2.0.4 |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` | - 
 | label-class | 左侧文本额外类名 | *any* | - | - |
@@ -220,7 +244,7 @@ export default {
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` | - |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为`px` | *boolean \| object* | `false` | - |
+| autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` | - |
 | left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
 | right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
 

@@ -126,17 +126,43 @@ Use `error` or `error-message` to show error info
 Use button slot to insert button
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="sms"
-    center
-    clearable
-    label="SMS"
-    placeholder="SMS"
-  >
-    <van-button slot="button" size="small" type="primary">Send SMS</van-button>
-  </van-field>
-</van-cell-group>
+<van-field
+  v-model="sms"
+  center
+  clearable
+  label="SMS"
+  placeholder="SMS"
+>
+  <van-button slot="button" size="small" type="primary">Send SMS</van-button>
+</van-field>
+```
+
+### Format Value
+
+Use `formatter` prop to format the input value
+
+```html
+<van-field
+  v-model="value"
+  label="Text"
+  :formatter="formatter"
+  placeholder="Format Value"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    formatter(value) {
+      return value.replace(/\d/g, '');
+    }
+  }
+}
 ```
 
 ### Auto Resize
@@ -144,33 +170,29 @@ Use button slot to insert button
 Textarea Field can be auto resize when has `autosize` prop
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="message"
-    label="Message"
-    type="textarea"
-    placeholder="Message"
-    rows="1"
-    autosize
-  />
-</van-cell-group>
+<van-field
+  v-model="message"
+  label="Message"
+  type="textarea"
+  placeholder="Message"
+  rows="1"
+  autosize
+/>
 ```
 
 ### Show Word Limit
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="message"
-    rows="2"
-    autosize
-    label="留言"
-    type="textarea"
-    maxlength="50"
-    placeholder="请输入留言"
-    show-word-limit
-  />
-</van-cell-group>
+<van-field
+  v-model="message"
+  rows="2"
+  autosize
+  label="Message"
+  type="textarea"
+  maxlength="50"
+  placeholder="Message"
+  show-word-limit
+/>
 ```
 
 ## API
@@ -195,6 +217,7 @@ Textarea Field can be auto resize when has `autosize` prop
 | autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` | - |
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` | 2.2.8 |
 | error | Whether to show error info | *boolean* | `false` | - |
+| formatter | Input value formatter | *Function* | - | 2.4.2 |
 | arrow-direction | Can be set to `left` `up` `down` | *string* | - | 2.0.4 |
 | error-message | Error message | *string* | `''` | - |
 | label-class | Label className | *any* | - | - |
