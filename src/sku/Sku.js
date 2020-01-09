@@ -189,7 +189,6 @@ export default createComponent({
           skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
         }
       }
-      console.log('selectedSkuComb', skuComb);
       return skuComb;
     },
 
@@ -418,7 +417,6 @@ export default createComponent({
     },
 
     onPropSelect(propValue) {
-      console.log('onPropSelect', propValue);
       const arr = this.selectedProp[propValue.skuKeyStr] || [];
       const pos = arr.indexOf(propValue.id);
       if (pos > -1) {
