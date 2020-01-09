@@ -11,6 +11,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
+`2020-01-09`
+
+**Feature**
+
+* Field: 新增 digit 类型 [#5524](https://github.com/youzan/vant/issues/5524)
+* Sku: 支持 properties 数据结构 [#5525](https://github.com/youzan/vant/issues/5525)
+* Calendar: 弹出时自动滚动到当前选中的日期 [#5526](https://github.com/youzan/vant/issues/5526)
+
+**Improvement**
+
+* CouponList: 优化样式细节 [#5501](https://github.com/youzan/vant/issues/5501)
+* AddressList: 优化样式细节 [#5507](https://github.com/youzan/vant/issues/5507)
+
+**Bug Fixes**
+
+* CouponList: 修复点击反馈区域错误的问题 [#5521](https://github.com/youzan/vant/issues/5521)
+* Tabs: 修复容器设置 fixed 布局时无法渲染底部条的问题 [#5496](https://github.com/youzan/vant/issues/5496)
+* Field: 修复 type 为 number 时在 iOS 上仍然能输入非数字字符的问题 [#5520](https://github.com/youzan/vant/issues/5520)
+
+
 ### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
 `2020-01-06`
 
