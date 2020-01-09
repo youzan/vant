@@ -15,10 +15,17 @@
         />
 
         <van-field
-          v-model="password"
-          type="password"
-          :label="$t('password')"
-          :placeholder="$t('passwordPlaceholder')"
+          v-model="phone"
+          type="tel"
+          :label="$t('phone')"
+          :placeholder="$t('phonePlaceholder')"
+        />
+
+        <van-field
+          v-model="digit"
+          type="digit"
+          :label="$t('digit')"
+          :placeholder="$t('digitPlaceholder')"
         />
 
         <van-field
@@ -29,10 +36,10 @@
         />
 
         <van-field
-          v-model="phone"
-          type="tel"
-          :label="$t('phone')"
-          :placeholder="$t('phonePlaceholder')"
+          v-model="password"
+          type="password"
+          :label="$t('password')"
+          :placeholder="$t('passwordPlaceholder')"
         />
       </van-cell-group>
     </demo-block>
@@ -141,6 +148,7 @@ export default {
       sms: '短信验证码',
       tel: '手机号',
       text: '文本',
+      digit: '整数',
       phone: '手机号',
       number: '数字',
       message: '留言',
@@ -151,7 +159,8 @@ export default {
       textareaAutosize: '高度自适应',
       smsPlaceholder: '请输入短信验证码',
       textPlaceholder: '请输入文本',
-      numberPlaceholder: '请输入数字',
+      digitPlaceholder: '请输入整数',
+      numberPlaceholder: '请输入数字（支持小数）',
       phonePlaceholder: '请输入手机号',
       messagePlaceholder: '请输入留言',
       inputReadonly: '输入框只读',
@@ -166,6 +175,7 @@ export default {
       sms: 'SMS',
       tel: 'Tel',
       text: 'Text',
+      digit: 'Digit',
       phone: 'Phone',
       number: 'Number',
       message: 'Message',
@@ -176,6 +186,7 @@ export default {
       textareaAutosize: 'Auto Resize',
       smsPlaceholder: 'SMS',
       textPlaceholder: 'Text',
+      digitPlaceholder: 'Digit',
       phonePlaceholder: 'Phone',
       numberPlaceholder: 'Number',
       messagePlaceholder: 'Message',
@@ -190,6 +201,7 @@ export default {
       sms: '',
       text: '',
       value: '',
+      digit: '',
       number: '',
       icon1: '',
       icon2: '123',

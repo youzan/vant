@@ -41,17 +41,16 @@ export default {
 根据`type`属性定义不同类型的输入框，默认值为`text`
 
 ```html
-<!-- type="text" 可以输入任意文本 -->
+<!-- 输入任意文本 -->
 <van-field v-model="text" label="文本" />
-
-<!-- type="password" 表示输入密码 -->
-<van-field v-model="password" type="password" label="密码" />
-
-<!-- type="number" 允许输入数字和小数点，调起全键盘 -->
-<van-field v-model="number" type="number" label="数字" />
-
-<!-- type="tel" 输入手机号，调起手机号键盘 -->
+<!-- 输入手机号，调起手机号键盘 -->
 <van-field v-model="tel" type="tel" label="手机号" />
+<!-- 允许输入整数，调起数字键盘 -->
+<van-field v-model="digit" type="digit" label="整数" />
+<!-- 允许输入数字，调起全键盘 -->
+<van-field v-model="number" type="number" label="数字" />
+<!-- 输入密码 -->
+<van-field v-model="password" type="password" label="密码" />
 ```
 
 ```js
@@ -60,12 +59,15 @@ export default {
     return {
       tel: '',
       text: '',
+      digit: '',
       number: '',
       password: ''
     };
   }
 }
 ```
+
+> Tips: digit 类型从 2.4.2 版本开始支持
 
 ### 禁用输入框
 
@@ -197,7 +199,7 @@ export default {
 |------|------|------|------|------|
 | label | 输入框左侧文本 | *string* | - | - |
 | value | 当前输入的值 | *string \| number* | - | - |
-| type | 输入框类型, 可选值为 `tel` `number`<br>`textarea` `password` 等 | *string* | `text` | - |
+| type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | *string* | `text` | - |
 | size | 大小，可选值为 `large` | *string* | - | - |
 | maxlength | 输入的最大字符数 | *string \| number* | - | - |
 | placeholder | 占位提示文字 | *string* | - | - |

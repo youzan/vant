@@ -3,19 +3,11 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
+import { isIOS } from '../utils/validate/system';
+import { formatNumber } from './utils';
 import { createNamespace, isObj, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('field');
-
-function formatNumber(value) {
-  const dotIndex = value.indexOf('.');
-
-  if (dotIndex > -1) {
-    value = value.slice(0, dotIndex + 1) + value.slice(dotIndex).replace(/\./g, '');
-  }
-
-  return value.replace(/[^0-9.]/g, '');
-}
 
 export default createComponent({
   inheritAttrs: false,
@@ -121,10 +113,11 @@ export default createComponent({
         target.value = value;
       }
 
-      if (this.type === 'number') {
+      if (this.type === 'number' || this.type === 'digit') {
         const originValue = value;
+        const allowDot = this.type === 'number';
 
-        value = formatNumber(value);
+        value = formatNumber(value, allowDot);
 
         if (value !== originValue) {
           target.value = value;
@@ -213,6 +206,7 @@ export default createComponent({
     },
 
     genInput() {
+      const { type } = this;
       const inputSlot = this.slots('input');
 
       if (inputSlot) {
@@ -239,18 +233,34 @@ export default createComponent({
         ]
       };
 
-      if (this.type === 'textarea') {
+      if (type === 'textarea') {
         return <textarea {...inputProps} />;
       }
 
+      let inputType = type;
+
       // type="number" is weired in iOS
-      const inputType = this.type === 'number' ? 'text' : this.type;
+      if (type === 'number') {
+        inputType = 'text';
+      }
+
+      if (type === 'digit') {
+        // set pattern to show number keyboard in iOS
+        if (isIOS()) {
+          inputType = 'number';
+          inputProps.attrs.pattern = '\\d*';
+          // cannot prevent dot when type is number in Android, so use tel
+        } else {
+          inputType = 'tel';
+        }
+      }
 
       return <input type={inputType} {...inputProps} />;
     },
 
     genLeftIcon() {
       const showLeftIcon = this.slots('left-icon') || this.leftIcon;
+
       if (showLeftIcon) {
         return (
           <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
@@ -263,6 +273,7 @@ export default createComponent({
     genRightIcon() {
       const { slots } = this;
       const showRightIcon = slots('right-icon') || this.rightIcon;
+
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
@@ -289,6 +300,7 @@ export default createComponent({
     const scopedSlots = {
       icon: this.genLeftIcon
     };
+
     if (slots('label')) {
       scopedSlots.title = () => slots('label');
     }
