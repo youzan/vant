@@ -8,14 +8,7 @@ export default createComponent({
     skuKeyStr: String,
     skuEventBus: Object,
     selectedProp: Object,
-    multiple: {
-      type: Boolean,
-      default: false,
-    },
-  },
-
-  computed: {
-
+    multiple: Boolean,
   },
 
   methods: {

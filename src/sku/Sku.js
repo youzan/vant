@@ -270,7 +270,8 @@ export default createComponent({
 
     selectedText() {
       if (this.selectedSkuComb) {
-        return `${t('selected')} ${this.selectedSkuValues.concat(this.selectedPropValues).map(item => item.name).join('；')}`;
+        const values = this.selectedSkuValues.concat(this.selectedPropValues);
+        return `${t('selected')} ${values.map(item => item.name).join('；')}`;
       }
 
       const unselectedSku = this.skuTree
