@@ -17,38 +17,54 @@ Vue.use(Field);
 
 ### 基础用法
 
-通过`v-model`绑定输入框的值
+可以通过`v-model`双向绑定输入框的值，通过`placeholder`设置占位提示文字
 
 ```html
+<!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为父元素来提供外边框。 -->
 <van-cell-group>
   <van-field v-model="value" placeholder="请输入用户名" />
 </van-cell-group>
 ```
 
+```js
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  }
+}
+```
+
 ### 自定义类型
 
-根据`type`属性定义不同类型的输入框
+根据`type`属性定义不同类型的输入框，默认值为`text`
 
 ```html
-<van-cell-group>
-  <van-field
-    v-model="username"
-    required
-    clearable
-    label="用户名"
-    right-icon="question-o"
-    placeholder="请输入用户名"
-    @click-right-icon="$toast('question')"
-  />
+<!-- type="text" 可以输入任意文本 -->
+<van-field v-model="text" label="文本" />
 
-  <van-field
-    v-model="password"
-    type="password"
-    label="密码"
-    placeholder="请输入密码"
-    required
-  />
-</van-cell-group>
+<!-- type="password" 表示输入密码 -->
+<van-field v-model="password" type="password" label="密码" />
+
+<!-- type="number" 允许输入数字和小数点，调起全键盘 -->
+<van-field v-model="number" type="number" label="数字" />
+
+<!-- type="tel" 输入手机号，调起手机号键盘 -->
+<van-field v-model="tel" type="tel" label="手机号" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      tel: '',
+      text: '',
+      number: '',
+      password: ''
+    };
+  }
+}
 ```
 
 ### 禁用输入框
@@ -56,9 +72,8 @@ Vue.use(Field);
 ```html
 <van-cell-group>
   <van-field
+    label="文本"
     value="输入框已禁用"
-    label="用户名"
-    left-icon="contact"
     disabled
   />
 </van-cell-group>
