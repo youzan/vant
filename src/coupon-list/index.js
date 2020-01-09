@@ -165,17 +165,17 @@ export default createComponent({
     const disabledTitle = (this.disabledTitle || t('disabled')) + disabledCount;
 
     const ExchangeBar = this.showExchangeBar && (
-      <Field
-        vModel={this.currentCode}
-        clearable
-        border={false}
-        class={bem('field')}
-        placeholder={this.inputPlaceholder || t('placeholder')}
-        maxlength="20"
-        scopedSlots={{
-          button: this.genExchangeButton
-        }}
-      />
+      <div class={bem('exchange-bar')}>
+        <Field
+          vModel={this.currentCode}
+          clearable
+          border={false}
+          class={bem('field')}
+          placeholder={this.inputPlaceholder || t('placeholder')}
+          maxlength="20"
+        />
+        {this.genExchangeButton()}
+      </div>
     );
 
     const onChange = index => () => this.$emit('change', index);
