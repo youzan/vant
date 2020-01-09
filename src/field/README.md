@@ -37,12 +37,10 @@ Use `type` prop to custom different type fields.
 
 ```html
 <van-field v-model="text" label="Text" />
-
-<van-field v-model="password" type="password" label="Password" />
-
-<van-field v-model="number" type="number" label="Number" />
-
 <van-field v-model="tel" type="tel" label="Phone" />
+<van-field v-model="digit" type="digit" label="Digit" />
+<van-field v-model="number" type="number" label="Number" />
+<van-field v-model="password" type="password" label="Password" />
 ```
 
 ```js
@@ -50,8 +48,9 @@ export default {
   data() {
     return {
       tel: '',
+      text: '',
+      digit: '',
       number: '',
-      username: '',
       password: ''
     };
   }
@@ -182,7 +181,7 @@ Textarea Field can be auto resize when has `autosize` prop
 |------|------|------|------|------|
 | value | Field value | *string \| number* | - | - |
 | label | Field label | *string* | - | - |
-| type | Input type, can be set to `tel` `number`<br>`textarea` `password` | *string* | `text` | - |
+| type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | *string* | `text` | - |
 | size | Size，can be set to `large` | *string* | - | - |
 | maxlength | Max length of value | *string \| number* | - | - |
 | placeholder | Placeholder | *string* | - | - |

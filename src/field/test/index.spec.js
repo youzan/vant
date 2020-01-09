@@ -56,6 +56,29 @@ test('number type', () => {
   expect(wrapper.emitted('input')[2][0]).toEqual('123');
 });
 
+test('digit type', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: '',
+      type: 'digit'
+    }
+  });
+
+  const input = wrapper.find('input');
+
+  input.element.value = '1';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[0][0]).toEqual('1');
+
+  input.element.value = '1.';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('1');
+
+  input.element.value = '123abc';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[2][0]).toEqual('123');
+});
+
 test('render textarea', async () => {
   const wrapper = mount(Field, {
     propsData: {
