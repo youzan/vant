@@ -8,6 +8,7 @@ import SkuMessages from './components/SkuMessages';
 import SkuStepper from './components/SkuStepper';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
+import SkuRowPropItem from './components/SkuRowPropItem';
 import skuHelper from './utils/skuHelper';
 import constants from './constants';
 
@@ -20,6 +21,7 @@ Sku.SkuMessages = SkuMessages;
 Sku.SkuStepper = SkuStepper;
 Sku.SkuRow = SkuRow;
 Sku.SkuRowItem = SkuRowItem;
+Sku.SkuRowPropItem = SkuRowPropItem;
 Sku.skuHelper = skuHelper;
 Sku.skuConstants = constants;
 

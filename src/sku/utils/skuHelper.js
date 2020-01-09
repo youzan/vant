@@ -42,6 +42,18 @@ export const normalizeSkuTree = skuTree => {
   return normalizedTree;
 };
 
+export const normalizePropList = propList => {
+  const normalizedProp = {};
+  propList.forEach(item => {
+    const itemObj = {};
+    item.v.forEach(it => {
+      itemObj[it.id] = it;
+    });
+    normalizedProp[item.k_id] = itemObj;
+  });
+  return normalizedProp;
+};
+
 // 判断是否所有的sku都已经选中
 export const isAllSelected = (skuTree, selectedSku) => {
   // 筛选selectedSku对象中key值不为空的值
@@ -104,10 +116,21 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
   return stock > 0;
 };
 
+export const getSelectedPropValues = (propList, selectedProp) => {
+  const normalizeProp = normalizePropList(propList);
+  return Object.keys(selectedProp).reduce((acc, cur) => {
+    selectedProp[cur].forEach(it => {
+      acc.push(normalizeProp[cur][it]);
+    });
+    return acc;
+  }, []);
+};
+
 export default {
   normalizeSkuTree,
   getSkuComb,
   getSelectedSkuValues,
   isAllSelected,
-  isSkuChoosable
+  isSkuChoosable,
+  getSelectedPropValues,
 };

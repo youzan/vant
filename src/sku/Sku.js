@@ -6,11 +6,12 @@ import SkuHeader from './components/SkuHeader';
 import SkuHeaderItem from './components/SkuHeaderItem';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
+import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
 import { createNamespace, isDef } from '../utils';
-import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from './utils/skuHelper';
+import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues, getSelectedPropValues } from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
 const namespace = createNamespace('sku');
@@ -86,6 +87,7 @@ export default createComponent({
   data() {
     return {
       selectedSku: {},
+      selectedProp: {},
       selectedNum: 1,
       show: this.value
     };
@@ -147,7 +149,15 @@ export default createComponent({
     },
 
     isSkuCombSelected() {
-      return isAllSelected(this.sku.tree, this.selectedSku);
+      // SKU 未选完
+      if (this.hasSku && !isAllSelected(this.skuTree, this.selectedSku)) {
+        return false;
+      }
+      // 属性未全选
+      if (this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)) {
+        return false;
+      }
+      return true;
     },
 
     isSkuEmpty() {
@@ -158,27 +168,41 @@ export default createComponent({
       return !this.sku.none_sku;
     },
 
+    hasSkuOrAttr() {
+      return this.hasSku || this.propList.length > 0;
+    },
+
     selectedSkuComb() {
-      if (!this.hasSku) {
-        return {
-          id: this.sku.collection_id,
-          price: Math.round(this.sku.price * 100),
-          stock_num: this.sku.stock_num
-        };
-      }
+      let skuComb = null;
       if (this.isSkuCombSelected) {
-        return getSkuComb(this.sku.list, this.selectedSku);
+        if (this.hasSku) {
+          skuComb = getSkuComb(this.sku.list, this.selectedSku);
+        } else {
+          skuComb = {
+            id: this.sku.collection_id,
+            price: Math.round(this.sku.price * 100),
+            stock_num: this.sku.stock_num
+          };
+        }
+        if (skuComb) {
+          skuComb.properties = this.selectedPropValues;
+          skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
+        }
       }
-      return null;
+      return skuComb;
     },
 
     selectedSkuValues() {
       return getSelectedSkuValues(this.skuTree, this.selectedSku);
     },
 
+    selectedPropValues() {
+      return getSelectedPropValues(this.propList, this.selectedProp);
+    },
+
     price() {
       if (this.selectedSkuComb) {
-        return (this.selectedSkuComb.price / 100).toFixed(2);
+        return ((this.selectedSkuComb.price + this.selectedSkuComb.property_price) / 100).toFixed(2);
       }
       // sku.price是一个格式化好的价格区间
       return this.sku.price;
@@ -186,13 +210,17 @@ export default createComponent({
 
     originPrice() {
       if (this.selectedSkuComb && this.selectedSkuComb.origin_price) {
-        return (this.selectedSkuComb.origin_price / 100).toFixed(2);
+        return ((this.selectedSkuComb.origin_price + this.selectedSkuComb.property_price) / 100).toFixed(2);
       }
       return this.sku.origin_price;
     },
 
     skuTree() {
       return this.sku.tree || [];
+    },
+
+    propList() {
+      return this.sku.properties || [];
     },
 
     imageList() {
@@ -242,15 +270,18 @@ export default createComponent({
 
     selectedText() {
       if (this.selectedSkuComb) {
-        return `${t('selected')} ${this.selectedSkuValues.map(item => item.name).join('；')}`;
+        const values = this.selectedSkuValues.concat(this.selectedPropValues);
+        return `${t('selected')} ${values.map(item => item.name).join('；')}`;
       }
 
-      const unselected = this.skuTree
+      const unselectedSku = this.skuTree
         .filter(item => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID)
-        .map(item => item.k)
-        .join('；');
+        .map(item => item.k);
+      const unselectedProp = this.propList
+        .filter(item => (this.selectedProp[item.k_id] || []).length < 1)
+        .map(item => item.k);
 
-      return `${t('select')} ${unselected}`;
+      return `${t('select')} ${unselectedSku.concat(unselectedProp).join('；')}`;
     }
   },
 
@@ -259,6 +290,7 @@ export default createComponent({
     this.skuEventBus = skuEventBus;
 
     skuEventBus.$on('sku:select', this.onSelect);
+    skuEventBus.$on('sku:propSelect', this.onPropSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
     skuEventBus.$on('sku:previewImage', this.onPreviewImage);
     skuEventBus.$on('sku:overLimit', this.onOverLimit);
@@ -321,6 +353,27 @@ export default createComponent({
           });
         });
       }
+
+      // 重置商品属性
+      this.selectedProp = {};
+      const { selectedProp = {} } = this.initialSku;
+      // 只有一个属性值时，默认选中，且选中外部传入信息
+      this.propList.forEach(item => {
+        if (item.v && item.v.length === 1) {
+          this.selectedProp[item.k_id] = [item.v[0].id];
+        } else if (selectedProp[item.k_id]) {
+          this.selectedProp[item.k_id] = selectedProp[item.k_id];
+        }
+      });
+
+      const propValues = this.selectedPropValues;
+      if (propValues.length > 0) {
+        this.$emit('sku-prop-selected', {
+          propValue: propValues[propValues.length - 1],
+          selectedProp: this.selectedProp,
+          selectedSkuComb: this.selectedSkuComb,
+        });
+      }
     },
 
     getSkuMessages() {
@@ -363,7 +416,28 @@ export default createComponent({
       this.$emit('sku-selected', {
         skuValue,
         selectedSku: this.selectedSku,
-        selectedSkuComb: this.selectedSkuComb
+        selectedSkuComb: this.selectedSkuComb,
+      });
+    },
+
+    onPropSelect(propValue) {
+      const arr = this.selectedProp[propValue.skuKeyStr] || [];
+      const pos = arr.indexOf(propValue.id);
+      if (pos > -1) {
+        arr.splice(pos, 1);
+      } else if (propValue.multiple) {
+        arr.push(propValue.id);
+      } else {
+        arr.splice(0, 1, propValue.id);
+      }
+      this.selectedProp = {
+        ...this.selectedProp,
+        [propValue.skuKeyStr]: arr,
+      };
+      this.$emit('sku-prop-selected', {
+        propValue,
+        selectedProp: this.selectedProp,
+        selectedSkuComb: this.selectedSkuComb,
       });
     },
 
@@ -476,6 +550,7 @@ export default createComponent({
       originPrice,
       skuEventBus,
       selectedSku,
+      selectedProp,
       selectedNum,
       stepperTitle,
       selectedSkuComb
@@ -510,7 +585,7 @@ export default createComponent({
             <span class="van-sku__stock">{this.stockText}</span>
           </SkuHeaderItem>
         )}
-        {this.hasSku && !this.hideSelectedText && (
+        {this.hasSkuOrAttr && !this.hideSelectedText && (
           <SkuHeaderItem>{this.selectedText}</SkuHeaderItem>
         )}
         {slots('sku-header-extra')}
@@ -519,7 +594,7 @@ export default createComponent({
 
     const Group =
       slots('sku-group') ||
-      (this.hasSku && (
+      (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
           {this.skuTree.map(skuTreeItem => (
             <SkuRow skuRow={skuTreeItem}>
@@ -530,6 +605,19 @@ export default createComponent({
                   selectedSku={selectedSku}
                   skuEventBus={skuEventBus}
                   skuKeyStr={skuTreeItem.k_s}
+                />
+              ))}
+            </SkuRow>
+          ))}
+          {this.propList.map(skuTreeItem => (
+            <SkuRow skuRow={skuTreeItem}>
+              {skuTreeItem.v.map(skuValue => (
+                <SkuRowPropItem
+                  skuValue={skuValue}
+                  skuKeyStr={skuTreeItem.k_id + ''}
+                  selectedProp={selectedProp}
+                  skuEventBus={skuEventBus}
+                  multiple={skuTreeItem.is_multiple}
                 />
               ))}
             </SkuRow>
