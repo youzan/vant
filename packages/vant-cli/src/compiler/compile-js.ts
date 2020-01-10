@@ -1,23 +1,13 @@
-// @ts-ignore
 import { transformAsync } from '@babel/core';
 import { readFileSync, removeSync, outputFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
-import { CSS_LANG } from '../common/css';
-
-const IMPORT_STYLE_RE = /import\s+?(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
-
-// "import 'a.less';" => "import 'a.css';"
-function replaceStyleImport(code: string) {
-  return code.replace(IMPORT_STYLE_RE, str =>
-    str.replace(`.${CSS_LANG}`, '.css')
-  );
-}
+import { replaceCssImport } from '../common/css';
 
 export function compileJs(filePath: string): Promise<undefined> {
   return new Promise((resolve, reject) => {
     let code = readFileSync(filePath, 'utf-8');
 
-    code = replaceStyleImport(code);
+    code = replaceCssImport(code);
 
     transformAsync(code, { filename: filePath })
       .then(result => {
