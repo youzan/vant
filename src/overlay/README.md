@@ -58,22 +58,22 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| show | Whether to show overlay | *boolean* | `false` | - |
-| z-index | z-index | *string \| number* | `1` | - |
-| duration | Animation duration | *string \| number* | `0.3` | - |
-| class-name | ClassName | *string* | - | - |
-| custom-class | Custom style | *object* | - | 2.2.5 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| show | Whether to show overlay | *boolean* | `false` |
+| z-index | z-index | *string \| number* | `1` |
+| duration | Animation duration | *string \| number* | `0.3` |
+| class-name | ClassName | *string* | - |
+| custom-class `v2.2.5` | Custom style | *object* | - |
 
 ### Events
 
-| Event | Description | Arguments | Version |
-|------|------|------|------|
-| click | Triggered when clicked | event: Event | - |
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when clicked | event: Event |
 
 ### Slots
 
-| Name | Description | Version |
-|------|------|------|
-| default | Default slot | 2.2.5 |
+| Name | Description |
+|------|------|
+| default `v2.2.5` | Default slot |

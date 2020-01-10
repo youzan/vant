@@ -61,14 +61,14 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| inactive | Whether to be gray | *boolean* | `false` | - |
-| percentage | Percentage | *number* | `0` | - |
-| stroke-width | Stroke width | *string \| number* | `4px` | 2.2.1 |
-| show-pivot | Whether to show text | *boolean* | `true` | - |
-| color | Color | *string* | `#1989fa` | - |
-| text-color | Text color | *string* | `#fff` | - |
-| track-color | Track color | *string* | `#e5e5e5` | 2.2.9 |
-| pivot-text | Text | *string* | percentage | - |
-| pivot-color | Text background color | *string* | inherit progress color | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| inactive | Whether to be gray | *boolean* | `false` |
+| percentage | Percentage | *number* | `0` |
+| stroke-width `v2.2.1` | Stroke width | *string \| number* | `4px` |
+| show-pivot | Whether to show text | *boolean* | `true` |
+| color | Color | *string* | `#1989fa` |
+| text-color | Text color | *string* | `#fff` |
+| track-color `v2.2.9` | Track color | *string* | `#e5e5e5` |
+| pivot-text | Text | *string* | percentage |
+| pivot-color | Text background color | *string* | inherit progress color |

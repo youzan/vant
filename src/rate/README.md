@@ -92,21 +92,21 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current rate | *number* | - | - |
-| count | Count | *number* | `5` | - |
-| size | Icon size| *string \| number* | `20px` | - |
-| gutter | Icon gutter | *string \| number* | `4px` | - |
-| color | Selected color | *string* | `#ffd21e` | - |
-| void-color | Void color | *string* | `#c7c7c7` | - |
-| disabled-color | Disabled color | *string* | `#bdbdbd` | - |
-| icon | Selected icon | *string* | `star` | - |
-| void-icon | Void icon | *string* | `star-o` | - |
-| allow-half | Whether to allow half star | *boolean* | `false` | - |
-| readonly | Whether to be readonly | *boolean* | `false` | - |
-| disabled | Whether to disable rate | *boolean* | `false` | - |
-| touchable | Whether to allow select rate by touch gesture | *boolean* | `true` | 2.2.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Current rate | *number* | - |
+| count | Count | *number* | `5` |
+| size | Icon size| *string \| number* | `20px` |
+| gutter | Icon gutter | *string \| number* | `4px` |
+| color | Selected color | *string* | `#ffd21e` |
+| void-color | Void color | *string* | `#c7c7c7` |
+| disabled-color | Disabled color | *string* | `#bdbdbd` |
+| icon | Selected icon | *string* | `star` |
+| void-icon | Void icon | *string* | `star-o` |
+| allow-half | Whether to allow half star | *boolean* | `false` |
+| readonly | Whether to be readonly | *boolean* | `false` |
+| disabled | Whether to disable rate | *boolean* | `false` |
+| touchable `v2.2.0` | Whether to allow select rate by touch gesture | *boolean* | `true` |
 
 ### Events
 

@@ -94,21 +94,21 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current value | *string* | - | 2.0.2 |
-| show | Whether to show keyboard | *boolean* | - | - |
-| theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` | - |
-| title | Keyboard title | *string* | - | - |
-| maxlength | Value maxlength | *string \| number* | - | 2.0.2 |
-| transition | Whether to show transition animation | *boolean* | `true` | - |
-| z-index | Keyboard z-index | *number* | `100` | - |
-| extra-key | Content of bottom left key | *string* | `''` | - |
-| close-button-text | Close button text | *string* | `-` | - |
-| delete-button-text | Delete button text | *string* | `delete` | - |
-| show-delete-key | Whether to show delete button | *boolean* | `true` | - |
-| hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model `v2.0.2` | Current value | *string* | - |
+| show | Whether to show keyboard | *boolean* | - |
+| theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` |
+| title | Keyboard title | *string* | - |
+| maxlength `v2.0.2` | Value maxlength | *string \| number* | - |
+| transition | Whether to show transition animation | *boolean* | `true` |
+| z-index | Keyboard z-index | *number* | `100` |
+| extra-key | Content of bottom left key | *string* | `''` |
+| close-button-text | Close button text | *string* | `-` |
+| delete-button-text | Delete button text | *string* | `delete` |
+| show-delete-key | Whether to show delete button | *boolean* | `true` |
+| hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 
 ### Events
 

@@ -82,15 +82,15 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| value | Password value | *string* | `''` | - |
-| length | Maxlength of password | *number* | `6` | - |
-| mask | Whether to mask value | *boolean* | `true` | - |
-| focused | Whether to show focused cursor | *boolean* | `false` | 2.1.8 |
-| info | Bottom info | *string* | - | - |
-| error-info | Bottom error info | *string* | - | - |
-| gutter | Gutter of input | *string \| number* | `0` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| value | Password value | *string* | `''` |
+| length | Maxlength of password | *number* | `6` |
+| mask | Whether to mask value | *boolean* | `true` |
+| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
+| info | Bottom info | *string* | - |
+| error-info | Bottom error info | *string* | - |
+| gutter | Gutter of input | *string \| number* | `0` |
 
 ### Events
 

@@ -90,9 +90,9 @@ export default {
 
 ### Sidebar Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前导航项的索引 | *string \| number* | `0` | 2.0.4 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model `v2.0.4` | 当前导航项的索引 | *string \| number* | `0` |
 
 ### Sidebar Events
 
@@ -102,15 +102,15 @@ export default {
 
 ### SidebarItem Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| title | 内容 | *string* | `''` | - |
-| dot | 是否显示右上角小红点 | *boolean* | `false` | 2.2.1 |
-| info | 右上角徽标的内容 | *string \| number* | - | - |
-| disabled | 是否禁用该项 | *boolean* | `false` | 2.2.0 |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.0.4 |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | 2.0.4 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| title | 内容 | *string* | `''` |
+| dot `v2.2.1` | 是否显示右上角小红点 | *boolean* | `false` |
+| info | 右上角徽标的内容 | *string \| number* | - |
+| disabled `v2.2.0` | 是否禁用该项 | *boolean* | `false` |
+| url | 点击后跳转的链接地址 | *string* | - |
+| to `v2.0.4` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| replace `v2.0.4` | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
 
 ### SidebarItem Events
 

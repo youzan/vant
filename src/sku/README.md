@@ -116,32 +116,32 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show sku | *boolean* | `false` | - |
-| sku | Sku data | *object* | - | - |
-| goods | Goods info | *object* | - | - |
-| goods-id | Goods id | `string | *number* | - | - |
-| price-tag | Tag behind the price | *string* | - | - |
-| hide-stock | Whether to hide stock | *boolean* | `false` | - |
-| hide-quota-text | Whether to hide quota text | *boolean* | `false` | - |
-| hide-selected-text | Whether to hide selected text | *boolean* | `false` | - |
-| stock-threshold | stock threshold | *boolean* | `50` | - |
-| show-add-cart-btn | Whether to show cart button | *boolean* | `true` | - |
-| buy-text | Buy button text | *string* | - | - | - |
-| add-cart-text | Add cart button text | *string* | - | - | - |
-| quota | Quota (0 as no limit) | *number* | `0` | - |
-| quota-used | Used quota | *number* | `0` | - |
-| reset-stepper-on-hide | Whether to reset stepper when hide | *boolean* | `false` | - |
-| reset-selected-sku-on-hide | Whether to reset selected sku when hide | *boolean* | `false` | - |
-| disable-stepper-input | Whether to disable stepper input | *boolean* | `false` | - |
-| close-on-click-overlay | Whether to close sku popup when click overlay | *boolean* | `false` | - |
-| stepper-title | Quantity title | *string* | `Quantity` | - |
-| custom-stepper-config | Custom stepper related config | *object* | `{}` | - |
-| message-config | Message related config | *object* | `{}` | - |
-| get-container | Return the mount node for sku | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
-| start-sale-num | Minimum quantity | *number* | `1` | 2.3.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show sku | *boolean* | `false` |
+| sku | Sku data | *object* | - |
+| goods | Goods info | *object* | - |
+| goods-id | Goods id | `string | *number* | - |
+| price-tag | Tag behind the price | *string* | - |
+| hide-stock | Whether to hide stock | *boolean* | `false` |
+| hide-quota-text | Whether to hide quota text | *boolean* | `false` |
+| hide-selected-text | Whether to hide selected text | *boolean* | `false` |
+| stock-threshold | stock threshold | *boolean* | `50` |
+| show-add-cart-btn | Whether to show cart button | *boolean* | `true` |
+| buy-text | Buy button text | *string* | - | - |
+| add-cart-text | Add cart button text | *string* | - | - |
+| quota | Quota (0 as no limit) | *number* | `0` |
+| quota-used | Used quota | *number* | `0` |
+| reset-stepper-on-hide | Whether to reset stepper when hide | *boolean* | `false` |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | *boolean* | `false` |
+| disable-stepper-input | Whether to disable stepper input | *boolean* | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | *boolean* | `false` |
+| stepper-title | Quantity title | *string* | `Quantity` |
+| custom-stepper-config | Custom stepper related config | *object* | `{}` |
+| message-config | Message related config | *object* | `{}` |
+| get-container | Return the mount node for sku | *string \| () => Element* | - |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
 
 ### Events
 

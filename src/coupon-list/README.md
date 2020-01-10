@@ -76,35 +76,35 @@ export default {
 
 ### CouponCell Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| title | Cell title | *string* | `Coupon` | - |
-| chosen-coupon | Index of chosen coupon | *number* | `-1` | - |
-| coupons | Coupon list | *Coupon[]* | `[]` | - |
-| editable | Cell editable | *boolean* | `true` | - |
-| border | Whether to show innner border | *boolean* | `true` | - |
-| currency | Currency symbol |  *string* | `¥` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| title | Cell title | *string* | `Coupon` |
+| chosen-coupon | Index of chosen coupon | *number* | `-1` |
+| coupons | Coupon list | *Coupon[]* | `[]` |
+| editable | Cell editable | *boolean* | `true` |
+| border | Whether to show innner border | *boolean* | `true` |
+| currency | Currency symbol |  *string* | `¥` |
 
 ### CouponList Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current exchange code | *string* | - | - |
-| chosen-coupon | Index of chosen coupon | *number* | `-1` | - |
-| coupons | Coupon list | *Coupon[]* | `[]` | - |
-| disabled-coupons | Disabled coupon list | *Coupon[]* | `[]` | - |
-| enabled-title | Title of coupon list | *string* | `Available` | - | - |
-| disabled-title | Title of disabled coupon list | *string* | `Unavailable` | - | - |
-| exchange-button-text | Exchange button text | *string* | `Exchange` | - |
-| exchange-button-loading | Whether to show loading in exchange button | *boolean* | `false` | - |
-| exchange-button-disabled | Whether to disable exchange button | *boolean* | `false` | - |
-| exchange-min-length | Min length to enable exchange button | *number* | `1` | - |
-| displayed-coupon-index | Index of displayed coupon | *number* | - | - |
-| close-button-text | Close button text | *string* | `Close` | - |
-| input-placeholder | Input placeholder | *string* | `Coupon code` | - |
-| currency | Currency symbol |  *string* | `¥` | - |
-| empty-image | Placeholder image when list is empty | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` | - |
-| show-count | Whether to show coupon count in tab title | *boolean* | `true` | 2.3.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Current exchange code | *string* | - |
+| chosen-coupon | Index of chosen coupon | *number* | `-1` |
+| coupons | Coupon list | *Coupon[]* | `[]` |
+| disabled-coupons | Disabled coupon list | *Coupon[]* | `[]` |
+| enabled-title | Title of coupon list | *string* | `Available` | - |
+| disabled-title | Title of disabled coupon list | *string* | `Unavailable` | - |
+| exchange-button-text | Exchange button text | *string* | `Exchange` |
+| exchange-button-loading | Whether to show loading in exchange button | *boolean* | `false` |
+| exchange-button-disabled | Whether to disable exchange button | *boolean* | `false` |
+| exchange-min-length | Min length to enable exchange button | *number* | `1` |
+| displayed-coupon-index | Index of displayed coupon | *number* | - |
+| close-button-text | Close button text | *string* | `Close` |
+| input-placeholder | Input placeholder | *string* | `Coupon code` |
+| currency | Currency symbol |  *string* | `¥` |
+| empty-image | Placeholder image when list is empty | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| show-count `v2.3.0` | Whether to show coupon count in tab title | *boolean* | `true` |
 
 ### CouponList Events
 

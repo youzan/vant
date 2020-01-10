@@ -71,15 +71,15 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前选中地址的 id | *string* | - | - |
-| list | 地址列表 | *Address[]* | `[]` | - |
-| disabled-list | 不可配送地址列表 | *Address[]* | `[]` | - |
-| disabled-text | 不可配送提示文案 | *string* | - | - |
-| switchable | 是否允许切换地址 | *boolean* | `true` | - |
-| add-button-text | 底部按钮文字 | *string* | `新增地址` | - |
-| default-tag-text | 默认地址标签文字 | *string* | - | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前选中地址的 id | *string* | - |
+| list | 地址列表 | *Address[]* | `[]` |
+| disabled-list | 不可配送地址列表 | *Address[]* | `[]` |
+| disabled-text | 不可配送提示文案 | *string* | - |
+| switchable | 是否允许切换地址 | *boolean* | `true` |
+| add-button-text | 底部按钮文字 | *string* | `新增地址` |
+| default-tag-text `v2.3.0` | 默认地址标签文字 | *string* | - |
 
 ### Events
 

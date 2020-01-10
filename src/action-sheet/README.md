@@ -112,22 +112,22 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| actions | Options | *Action[]* | `[]` | - |
-| title | Title | *string* | - | - |
-| cancel-text | Text of cancel button | *string* | - | - |
-| description | Description above the options | *string* | - | 2.2.8 |
-| overlay | Whether to show overlay | *boolean* | `true` | - |
-| round | Whether to show round corner | *boolean* | `true` | 2.0.9 |
-| close-icon | Close icon name | *string* | `close` | 2.2.13 |
-| close-on-click-action | Whether to close when click action | *boolean* | `false` | - |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
-| lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
-| lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
-| duration | Transition duration, unit second | *number* | `0.3` | 2.0.3 |
-| get-container | Return the mount node for action-sheet | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| actions | Options | *Action[]* | `[]` |
+| title | Title | *string* | - |
+| cancel-text | Text of cancel button | *string* | - |
+| description `v2.2.8` | Description above the options | *string* | - |
+| overlay | Whether to show overlay | *boolean* | `true` |
+| round `v2.0.9` | Whether to show round corner | *boolean* | `true` |
+| close-icon `v2.2.13` | Close icon name | *string* | `close` |
+| close-on-click-action | Whether to close when click action | *boolean* | `false` |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
+| lazy-render | Whether to lazy render util appeared | *boolean* | `true` |
+| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
+| duration `v2.0.3` | Transition duration, unit second | *number* | `0.3` |
+| get-container | Return the mount node for action-sheet | *string \| () => Element* | - |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 
 ### Events
 

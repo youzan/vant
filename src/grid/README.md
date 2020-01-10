@@ -99,27 +99,27 @@ Vue.use(Grid).use(GridItem);
 
 ### Grid Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| column-num | Column Num | *number* | `4` | 2.0.4 |
-| gutter | Gutter | *string \| number* | `0` | - |
-| border | Whether to show border | *boolean* | `true` | - |
-| center | Whether to center content | *boolean* | `true` | - |
-| square | Whether to be square shape | *boolean* | `false` | - |
-| clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
-| icon-size | Icon size | *string \| number* | `28px` | 2.2.6 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| column-num `v2.0.4` | Column Num | *number* | `4` |
+| gutter | Gutter | *string \| number* | `0` |
+| border | Whether to show border | *boolean* | `true` |
+| center | Whether to center content | *boolean* | `true` |
+| square | Whether to be square shape | *boolean* | `false` |
+| clickable | Whether to show click feedback when clicked | *boolean* | `false` |
+| icon-size `v2.2.6` | Icon size | *string \| number* | `28px` |
 
 ### GridItem Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| text | Text | *string* | - | - |
-| icon | Icon name or URL | *string* | - | - |
-| dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
-| info | Content of the badge | *string \| number* | - | 2.2.1 |
-| url | Link URL | *string* | - | - |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| text | Text | *string* | - |
+| icon | Icon name or URL | *string* | - |
+| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
+| info `v2.2.1` | Content of the badge | *string \| number* | - |
+| url | Link URL | *string* | - |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` |
 
 ### GridItem Events
 

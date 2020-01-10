@@ -57,23 +57,23 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| label | 搜索框左侧文本 | *string* | - | - |
-| shape | 搜索框形状，可选值为 `round` | *string* | `square` | - |
-| background | 搜索框背景色 | *string* | `#f2f2f2` | - |
-| maxlength | 输入的最大字符数 | *string \| number* | - | - |
-| placeholder | 占位提示文字 | *string* | - | - |
-| clearable | 是否启用清除控件 | *boolean* | `true` | - |
-| autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` | - |
-| show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` | - |
-| action-text | 取消按钮文字 | *boolean* | `取消` | 2.2.2 |
-| disabled | 是否禁用输入框 | *boolean* | `false` | - |
-| readonly | 是否将输入框设为只读 | *boolean* | `false` | - |
-| error | 是否将输入内容标红 | *boolean* | `false` | - |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `search` | - |
-| right-icon | 输入框右侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| label | 搜索框左侧文本 | *string* | - |
+| shape | 搜索框形状，可选值为 `round` | *string* | `square` |
+| background | 搜索框背景色 | *string* | `#f2f2f2` |
+| maxlength | 输入的最大字符数 | *string \| number* | - |
+| placeholder | 占位提示文字 | *string* | - |
+| clearable | 是否启用清除控件 | *boolean* | `true` |
+| autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` |
+| show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` |
+| action-text `v2.2.2` | 取消按钮文字 | *boolean* | `取消` |
+| disabled | 是否禁用输入框 | *boolean* | `false` |
+| readonly | 是否将输入框设为只读 | *boolean* | `false` |
+| error | 是否将输入内容标红 | *boolean* | `false` |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `search` |
+| right-icon | 输入框右侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
 
 ### Events
 

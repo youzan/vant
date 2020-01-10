@@ -98,25 +98,25 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current value | *string \| number* | - | - |
-| min | Min value | *string \| number* | `1` | - |
-| max | Max value | *string \| number* | - | - |
-| default-value | Default value, valid when v-model is empty | *string \| number* | `1` | - |
-| step | Value change step | *string \| number* | `1` | - |
-| name | Stepper name | *string \| number* | - | 2.0.3 |
-| integer | Whether to allow only integers | *boolean* | `false` | - |
-| disabled | Disable value change | *boolean* | `false` | - |
-| disable-plus | Whether to disable plus button | *boolean* | `false` | 2.2.16 |
-| disable-minus | Whether to disable minus button | *boolean* | `false` | 2.2.16 |
-| disable-input | Whether to disable input | *boolean* | `false` | - |
-| async-change | Whether to enable async change | *boolean* | `false` | - | - |
-| input-width | Input width | *string \| number* | `32px` | - |
-| button-size | Button size | *string \| number* | `28px` | 2.0.5 |
-| show-plus | Whether to show plus button | *boolean* | `true` | 2.1.2 |
-| show-minus | Whether to show minus button | *boolean* | `true` | 2.1.2 |
-| decimal-length | Decimal length | *number* | - | 2.2.1 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Current value | *string \| number* | - |
+| min | Min value | *string \| number* | `1` |
+| max | Max value | *string \| number* | - |
+| default-value | Default value, valid when v-model is empty | *string \| number* | `1` |
+| step | Value change step | *string \| number* | `1` |
+| name `v2.0.3` | Stepper name | *string \| number* | - |
+| integer | Whether to allow only integers | *boolean* | `false` |
+| disabled | Disable value change | *boolean* | `false` |
+| disable-plus `v2.2.16` | Whether to disable plus button | *boolean* | `false` |
+| disable-minus `v2.2.16` | Whether to disable minus button | *boolean* | `false` |
+| disable-input | Whether to disable input | *boolean* | `false` |
+| async-change | Whether to enable async change | *boolean* | `false` | - |
+| input-width | Input width | *string \| number* | `32px` |
+| button-size `v2.0.5` | Button size | *string \| number* | `28px` |
+| show-plus `v2.1.2` | Whether to show plus button | *boolean* | `true` |
+| show-minus `v2.1.2` | Whether to show minus button | *boolean* | `true` |
+| decimal-length `v2.2.1` | Decimal length | *number* | - |
 
 ### Events
 

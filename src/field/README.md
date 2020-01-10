@@ -199,35 +199,35 @@ Textarea Field can be auto resize when has `autosize` prop
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| value | Field value | *string \| number* | - | - |
-| label | Field label | *string* | - | - |
-| type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | *string* | `text` | - |
-| size | Size，can be set to `large` | *string* | - | - |
-| maxlength | Max length of value | *string \| number* | - | - |
-| placeholder | Placeholder | *string* | - | - |
-| border | Whether to show inner border | *boolean* | `true` | - |
-| disabled | Whether to disable field | *boolean* | `false` | - |
-| readonly | Whether to be readonly | *boolean* | `false` | - |
-| required | Whether to show required mark | *boolean* | `false` | - |
-| clearable | Whether to be clearable | *boolean* | `false` | - |
-| clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
-| is-link | Whether to show link icon | *boolean* | `false` | - |
-| autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` | - |
-| show-word-limit | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` | 2.2.8 |
-| error | Whether to show error info | *boolean* | `false` | - |
-| formatter | Input value formatter | *Function* | - | 2.4.2 |
-| arrow-direction | Can be set to `left` `up` `down` | *string* | - | 2.0.4 |
-| error-message | Error message | *string* | `''` | - |
-| label-class | Label className | *any* | - | - |
-| label-width | Label width | *string \| number* | `90px` | - |
-| label-align | Label text align, can be set to `center` `right` | *string* | `left` | - |
-| input-align | Input text align, can be set to `center` `right` | *string* | `left` | - |
-| error-message-align | Error message text align, can be set to `center` `right` | *string* | `left` | - |
-| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | *boolean \| object* | `false` | - |
-| left-icon | Left side icon name | *string* | - | - |
-| right-icon | Right side icon name | *string* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| value | Field value | *string \| number* | - |
+| label | Field label | *string* | - |
+| type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | *string* | `text` |
+| size | Size，can be set to `large` | *string* | - |
+| maxlength | Max length of value | *string \| number* | - |
+| placeholder | Placeholder | *string* | - |
+| border | Whether to show inner border | *boolean* | `true` |
+| disabled | Whether to disable field | *boolean* | `false` |
+| readonly | Whether to be readonly | *boolean* | `false` |
+| required | Whether to show required mark | *boolean* | `false` |
+| clearable | Whether to be clearable | *boolean* | `false` |
+| clickable | Whether to show click feedback when clicked | *boolean* | `false` |
+| is-link | Whether to show link icon | *boolean* | `false` |
+| autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` |
+| show-word-limit `v2.2.8` | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` |
+| error | Whether to show error info | *boolean* | `false` |
+| formatter `v2.4.2` | Input value formatter | *Function* | - |
+| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | - |
+| error-message | Error message | *string* | `''` |
+| label-class | Label className | *any* | - |
+| label-width | Label width | *string \| number* | `90px` |
+| label-align | Label text align, can be set to `center` `right` | *string* | `left` |
+| input-align | Input text align, can be set to `center` `right` | *string* | `left` |
+| error-message-align | Error message text align, can be set to `center` `right` | *string* | `left` |
+| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | *boolean \| object* | `false` |
+| left-icon | Left side icon name | *string* | - |
+| right-icon | Right side icon name | *string* | - |
 
 ### Events
 

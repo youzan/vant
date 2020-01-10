@@ -121,12 +121,12 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| time | 倒计时时长，单位毫秒 | *number* | - | - |
-| format | 时间格式 | *string* | `HH:mm:ss` | - |
-| auto-start | 是否自动开始倒计时 | *boolean* | `true` | - |
-| millisecond | 是否开启毫秒级渲染 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| time | 倒计时时长，单位毫秒 | *number* | - |
+| format | 时间格式 | *string* | `HH:mm:ss` |
+| auto-start | 是否自动开始倒计时 | *boolean* | `true` |
+| millisecond | 是否开启毫秒级渲染 | *boolean* | `false` |
 
 ### format 格式
 

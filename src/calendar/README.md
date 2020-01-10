@@ -201,26 +201,26 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show calendar | *boolean* | `false` | - |
-| type | Type，can be set to `single` `range` | *string* | `single` | - |
-| title | Title of calendar | *string* | `Calendar` | - |
-| color | Color for the bottom button and selected date | *string* | `#ee0a24` | - |
-| min-date | Min date | *Date*  | Today | - |
-| max-date | Max date | *Date*  | Six months after the today | - |
-| default-date | Default selected date | *Date \| Date[]* | Today | - |
-| row-height | Row height | *number* | `64` | - |
-| formatter | Day formatter | *(day: Day) => Day* | - | - |
-| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` | - |
-| poppable | Whether to show the calendar inside a popup | *boolean* | `true` | - |
-| round | Whether to show round corner | *boolean* | `true` | - |
-| show-mark | Whether to show background month mark | *boolean* | `true` | - |
-| show-confirm | Whether to show confirm button | *boolean* | `true` | - |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` | - |
-| confirm-text | Confirm button text | *string* | `Confirm` | - |
-| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show calendar | *boolean* | `false` |
+| type | Type，can be set to `single` `range` | *string* | `single` |
+| title | Title of calendar | *string* | `Calendar` |
+| color | Color for the bottom button and selected date | *string* | `#ee0a24` |
+| min-date | Min date | *Date*  | Today |
+| max-date | Max date | *Date*  | Six months after the today |
+| default-date | Default selected date | *Date \| Date[]* | Today |
+| row-height | Row height | *number* | `64` |
+| formatter | Day formatter | *(day: Day) => Day* | - |
+| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
+| poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
+| round | Whether to show round corner | *boolean* | `true` |
+| show-mark | Whether to show background month mark | *boolean* | `true` |
+| show-confirm | Whether to show confirm button | *boolean* | `true` |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| confirm-text | Confirm button text | *string* | `Confirm` |
+| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
 
 ### Data Structure of Day
 

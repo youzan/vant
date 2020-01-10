@@ -70,21 +70,21 @@ Vue.use(SubmitBar);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| price | 价格（单位分） | *number* | - | - |
-| label | 价格左侧文案 | *string* | `合计：` | - |
-| suffix-label | 价格右侧文案 | *string* | - | - |
-| text-align | 价格文案对齐方向，可选值为 `right` `left` | *string* | `right` | 2.3.0 |
-| button-text | 按钮文字 | *string* | - | - |
-| button-type | 按钮类型 | *string* | `danger` | - |
-| tip | 提示文案 |  *string* | - | - |
-| tip-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) |  *string* | - | - |
-| disabled | 是否禁用按钮 | *boolean* | `false` | - |
-| loading | 是否显示加载中的按钮 |  *boolean* | `false` | - |
-| currency | 货币符号 | *string* | `¥` | - |
-| decimal-length | 价格小数点后位数 | *number* | `2` | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| price | 价格（单位分） | *number* | - |
+| label | 价格左侧文案 | *string* | `合计：` |
+| suffix-label | 价格右侧文案 | *string* | - |
+| text-align `v2.3.0` | 价格文案对齐方向，可选值为 `right` `left` | *string* | `right` |
+| button-text | 按钮文字 | *string* | - |
+| button-type | 按钮类型 | *string* | `danger` |
+| tip | 提示文案 |  *string* | - |
+| tip-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) |  *string* | - |
+| disabled | 是否禁用按钮 | *boolean* | `false` |
+| loading | 是否显示加载中的按钮 |  *boolean* | `false` |
+| currency | 货币符号 | *string* | `¥` |
+| decimal-length | 价格小数点后位数 | *number* | `2` |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Events
 

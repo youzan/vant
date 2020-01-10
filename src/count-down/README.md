@@ -111,12 +111,12 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| time | Total time | *number* | - | - |
-| format | Time format | *string* | `HH:mm:ss` | - |
-| auto-start | Whether to auto start count down | *boolean* | `true` | - |
-| millisecond | Whether to enable millisecond render | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| time | Total time | *number* | - |
+| format | Time format | *string* | `HH:mm:ss` |
+| auto-start | Whether to auto start count down | *boolean* | `true` |
+| millisecond | Whether to enable millisecond render | *boolean* | `false` |
 
 ### Available formats
 

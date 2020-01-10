@@ -155,25 +155,25 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| type | 类型，可选值为 `date` <br> `time` `year-month` | *string* | `datetime` | - |
-| min-date | 可选的最小时间，精确到分钟 | *Date* | 十年前 | - |
-| max-date | 可选的最大时间，精确到分钟 | *Date* | 十年后 | - |
-| min-hour | 可选的最小小时，针对 time 类型 | *number* | `0` | - |
-| max-hour | 可选的最大小时，针对 time 类型 | *number* | `23` | - |
-| min-minute | 可选的最小分钟，针对 time 类型 | *number* | `0` | - |
-| max-minute | 可选的最大分钟，针对 time 类型 | *number* | `59` | - |
-| filter | 选项过滤函数 | *(type, values) => values* | - | - |
-| formatter | 选项格式化函数 | *(type, value) => value* | - | - |
-| title | 顶部栏标题 | *string* | `''` | - |
-| show-toolbar | 是否显示顶部栏 | *boolean* | `true` | - |
-| loading | 是否显示加载状态 | *boolean* | `false` | - |
-| item-height | 选项高度 | *number* | `44` | - |
-| confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
-| cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
-| visible-item-count | 可见的选项个数 | *number* | `5` | - |
-| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | 2.2.13 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| type | 类型，可选值为 `date` <br> `time` `year-month` | *string* | `datetime` |
+| min-date | 可选的最小时间，精确到分钟 | *Date* | 十年前 |
+| max-date | 可选的最大时间，精确到分钟 | *Date* | 十年后 |
+| min-hour | 可选的最小小时，针对 time 类型 | *number* | `0` |
+| max-hour | 可选的最大小时，针对 time 类型 | *number* | `23` |
+| min-minute | 可选的最小分钟，针对 time 类型 | *number* | `0` |
+| max-minute | 可选的最大分钟，针对 time 类型 | *number* | `59` |
+| filter | 选项过滤函数 | *(type, values) => values* | - |
+| formatter | 选项格式化函数 | *(type, value) => value* | - |
+| title | 顶部栏标题 | *string* | `''` |
+| show-toolbar | 是否显示顶部栏 | *boolean* | `true` |
+| loading | 是否显示加载状态 | *boolean* | `false` |
+| item-height | 选项高度 | *number* | `44` |
+| confirm-button-text | 确认按钮文字 | *string* | `确认` |
+| cancel-button-text | 取消按钮文字 | *string* | `取消` |
+| visible-item-count | 可见的选项个数 | *number* | `5` |
+| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` |
 
 ### Events
 
@@ -187,9 +187,9 @@ export default {
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 DatetimePicker 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 | 版本 |
-|------|------|------|------|------|
-| getPicker | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - | 2.4.0 |
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| getPicker `v2.4.0` | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
 
 ## 常见问题
 

@@ -129,25 +129,25 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前组件是否显示 | *boolean* | `false` | - |
-| overlay | 是否显示遮罩层 | *boolean* | `true` | - |
-| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` | - |
-| overlay-class | 自定义遮罩层类名 | *string* | - | - |
-| overlay-style | 自定义遮罩层样式 | *object* | - | - |
-| duration | 动画时长，单位秒 | *number* | `0.3` | - |
-| round | 是否显示圆角 | *boolean* | `false` | 2.0.7 |
-| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
-| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
-| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.2.10 |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
-| closeable | 是否显示关闭图标 | *boolean* | `false` | 2.2.0 |
-| close-icon | 关闭图标名称或图片链接 | *string* | `cross` | 2.2.0 |
-| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
-| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | - |
-| get-container | 指定挂载的节点 | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前组件是否显示 | *boolean* | `false` |
+| overlay | 是否显示遮罩层 | *boolean* | `true` |
+| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
+| overlay-class | 自定义遮罩层类名 | *string* | - |
+| overlay-style | 自定义遮罩层样式 | *object* | - |
+| duration | 动画时长，单位秒 | *number* | `0.3` |
+| round `v2.0.7` | 是否显示圆角 | *boolean* | `false` |
+| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
+| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
+| close-on-popstate `v2.2.10` | 是否在页面回退时自动关闭 | *boolean* | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
+| closeable `v2.2.0` | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon `v2.2.0` | 关闭图标名称或图片链接 | *string* | `cross` |
+| close-icon-position `v2.2.2` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
+| get-container | 指定挂载的节点 | *string \| () => Element* | - |
+| safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Events
 

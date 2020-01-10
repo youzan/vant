@@ -56,17 +56,17 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current page number | *number* | - | - |
-| mode | Mode, can be set to `simple` `multi` | *string* | `multi` | - |
-| total-items | Total items | *number* | `0` | - |
-| items-per-page | Item number per page | *number* | `10` | - |
-| page-count | The total number of pages, if not set, will be calculated based on `total-items` and `items-per-page` | *number* | `-` | - |
-| prev-text | Previous text | *string* | `Previous` | - |
-| next-text | Next text | *string* | `Next` | - |
-| show-page-size | Count of page size to show | *number* | `5` | - |
-| force-ellipses | Whether to show ellipses | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Current page number | *number* | - |
+| mode | Mode, can be set to `simple` `multi` | *string* | `multi` |
+| total-items | Total items | *number* | `0` |
+| items-per-page | Item number per page | *number* | `10` |
+| page-count | The total number of pages, if not set, will be calculated based on `total-items` and `items-per-page` | *number* | `-` |
+| prev-text | Previous text | *string* | `Previous` |
+| next-text | Next text | *string* | `Next` |
+| show-page-size | Count of page size to show | *number* | `5` |
+| force-ellipses | Whether to show ellipses | *boolean* | `false` |
 
 ### Events
 

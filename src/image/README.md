@@ -66,20 +66,20 @@ Vue.use(Lazyload);
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| src | Src | *string* | - | - |
-| fit | Fit mode | *string* | `fill` | - |
-| alt | Alt | *string* | - | - |
-| width | Width | *string \| number* | - | - |
-| height | Height | *string \| number* | - | - |
-| radius | Border Radius | *string \| number* | `0` | 2.1.6 |
-| round | Whether to be round | *boolean* | `false` | - |
-| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` | - |
-| show-error | Whether to show error placeholder | *boolean* | `true` | 2.0.9 |
-| show-loading | Whether to show loading placeholder | *boolean* | `true` | 2.0.9 |
-| error-icon | Error icon | *string* | `warning-o` | 2.4.2 |
-| loading-icon | Loading icon | *string* | `photo-o` | 2.4.2 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| src | Src | *string* | - |
+| fit | Fit mode | *string* | `fill` |
+| alt | Alt | *string* | - |
+| width | Width | *string \| number* | - |
+| height | Height | *string \| number* | - |
+| radius `v2.1.6` | Border Radius | *string \| number* | `0` |
+| round | Whether to be round | *boolean* | `false` |
+| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
+| show-error `v2.0.9` | Whether to show error placeholder | *boolean* | `true` |
+| show-loading `v2.0.9` | Whether to show loading placeholder | *boolean* | `true` |
+| error-icon `v2.4.2` | Error icon | *string* | `warning-o` |
+| loading-icon `v2.4.2` | Loading icon | *string* | `photo-o` |
 
 ### fit optional value
 

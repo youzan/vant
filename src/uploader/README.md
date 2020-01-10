@@ -109,25 +109,25 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Input name | *string \| number* | - | 2.0.3 |
-| accept | Accepted file type | *string* | `image/*` | - |
-| preview-size | Size of preview image | *string \| number* | `80px` | - |
-| preview-image | Whether to show image preview | *boolean* | `true` | 2.1.5 |
-| preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` | - |
-| multiple | Whether to enable multiple selection pictures | *boolean* | `false` | - |
-| disabled | Whether to disabled the upload | *boolean* | `false` | - |
-| deletable | Whether to show delete icon | *boolean* | `true` | 2.2.12 |
-| capture | Capture，can be set to `camera` | *string* | - | - |
-| after-read | Hook after reading the file | *Function* | - | - |
-| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - | - |
-| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - | - |
-| max-size | Max size of file | *number* | - | - |
-| max-count | Max count of image | *number* | - | - |
-| result-type | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` | 2.2.7 |
-| upload-text | Upload text | *string* | - | - |
-| image-fit | Preview image fit mode | *string* | `cover` | 2.1.5 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| name `v2.0.3` | Input name | *string \| number* | - |
+| accept | Accepted file type | *string* | `image/*` |
+| preview-size | Size of preview image | *string \| number* | `80px` |
+| preview-image `v2.1.5` | Whether to show image preview | *boolean* | `true` |
+| preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` |
+| multiple | Whether to enable multiple selection pictures | *boolean* | `false` |
+| disabled | Whether to disabled the upload | *boolean* | `false` |
+| deletable `v2.2.12` | Whether to show delete icon | *boolean* | `true` |
+| capture | Capture，can be set to `camera` | *string* | - |
+| after-read | Hook after reading the file | *Function* | - |
+| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - |
+| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - |
+| max-size | Max size of file | *number* | - |
+| max-count | Max count of image | *number* | - |
+| result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` |
+| upload-text | Upload text | *string* | - |
+| image-fit `v2.1.5` | Preview image fit mode | *string* | `cover` |
 
 ### Events
 

@@ -92,20 +92,20 @@ Vue.use(Image);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| src | 图片链接 | *string* | - | - |
-| fit | 图片填充模式 | *string* | `fill` | - |
-| alt | 替代文本 | *string* | - | - |
-| width | 宽度，默认单位为`px` | *string \| number* | - | - |
-| height | 高度，默认单位为`px` | *string \| number* | - | - |
-| radius | 圆角大小，默认单位为`px` | *string \| number* | `0` | 2.1.6 |
-| round | 是否显示为圆形 | *boolean* | `false` | - |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` | - |
-| show-error | 是否展示图片加载失败提示 | *boolean* | `true` | 2.0.9 |
-| show-loading | 是否展示图片加载中提示 | *boolean* | `true` | 2.0.9 |
-| error-icon | 失败时提示的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `warning-o` | 2.4.2 |
-| loading-icon | 加载时提示的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `photo-o` | 2.4.2 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| src | 图片链接 | *string* | - |
+| fit | 图片填充模式 | *string* | `fill` |
+| alt | 替代文本 | *string* | - |
+| width | 宽度，默认单位为`px` | *string \| number* | - |
+| height | 高度，默认单位为`px` | *string \| number* | - |
+| radius `v2.1.6` | 圆角大小，默认单位为`px` | *string \| number* | `0` |
+| round | 是否显示为圆形 | *boolean* | `false` |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
+| show-error `v2.0.9` | 是否展示图片加载失败提示 | *boolean* | `true` |
+| show-loading `v2.0.9` | 是否展示图片加载中提示 | *boolean* | `true` |
+| error-icon `v2.4.2` | 失败时提示的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `warning-o` |
+| loading-icon `v2.4.2` | 加载时提示的图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `photo-o` |
 
 ### 图片填充模式
 

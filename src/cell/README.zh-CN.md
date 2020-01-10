@@ -115,33 +115,33 @@ Vue.use(Cell).use(CellGroup);
 
 ### CellGroup Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| title | 分组标题 | *string* | `-` | - |
-| border | 是否显示外边框 | *boolean* | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| title | 分组标题 | *string* | `-` |
+| border | 是否显示外边框 | *boolean* | `true` |
 
 ### Cell Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
-| title | 左侧标题 | *string \| number* | - | - |
-| value | 右侧内容 | *string \| number* | - | - |
-| label | 标题下方的描述信息 | *string* | - | - |
-| size | 单元格大小，可选值为 `large` | *string* | - | - |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| border | 是否显示内边框 | *boolean* | `true` | - |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
-| clickable | 是否开启点击反馈 | *boolean* | `false` | - |
-| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |
-| required | 是否显示表单必填星号 | *boolean* | `false` | - |
-| center | 是否使内容垂直居中 | *boolean* | `false` | - |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | -|
-| title-style | 左侧标题额外样式 | *any* | - | - |
-| title-class | 左侧标题额外类名 | *any* | - | - |
-| value-class | 右侧内容额外类名 | *any* | - | - |
-| label-class | 描述信息额外类名 | *any* | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| title | 左侧标题 | *string \| number* | - |
+| value | 右侧内容 | *string \| number* | - |
+| label | 标题下方的描述信息 | *string* | - |
+| size | 单元格大小，可选值为 `large` | *string* | - |
+| url | 点击后跳转的链接地址 | *string* | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| border | 是否显示内边框 | *boolean* | `true` |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
+| clickable | 是否开启点击反馈 | *boolean* | `false` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
+| required | 是否显示表单必填星号 | *boolean* | `false` |
+| center | 是否使内容垂直居中 | *boolean* | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| title-style | 左侧标题额外样式 | *any* | - |
+| title-class | 左侧标题额外类名 | *any* | - |
+| value-class | 右侧内容额外类名 | *any* | - |
+| label-class | 描述信息额外类名 | *any* | - |
 
 ### Cell Events
 

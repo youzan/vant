@@ -94,20 +94,20 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 开关选中状态 | *any* | `false` | - |
-| loading | 是否为加载状态 | *boolean* | `false` | - |
-| disabled | 是否为禁用状态 | *boolean* | `false` | - |
-| size | 开关尺寸，默认单位为`px` | *string \| number* | `30px` | 2.2.11 |
-| active-color | 打开时的背景色 | *string* | `#1989fa` | - |
-| inactive-color | 关闭时的背景色 | *string* | `#fff` | - |
-| active-value | 打开时的值 | *any* | `true` | - |
-| inactive-value | 关闭时的值 | *any* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 开关选中状态 | *any* | `false` |
+| loading | 是否为加载状态 | *boolean* | `false` |
+| disabled | 是否为禁用状态 | *boolean* | `false` |
+| size `v2.2.11` | 开关尺寸，默认单位为`px` | *string \| number* | `30px` |
+| active-color | 打开时的背景色 | *string* | `#1989fa` |
+| inactive-color | 关闭时的背景色 | *string* | `#fff` |
+| active-value | 打开时的值 | *any* | `true` |
+| inactive-value | 关闭时的值 | *any* | `false` |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| change | 开关状态切换回调 | checked: 是否选中开关 | - |
-| click | 点击时触发 | event: Event | 2.2.11 |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| change | 开关状态切换回调 | checked: 是否选中开关 |
+| click `v2.2.11` | 点击时触发 | event: Event |
