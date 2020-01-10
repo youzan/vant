@@ -1,5 +1,19 @@
 # Changelog
 
+### [v2.4.2-beta.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2-beta.2)
+`2020-01-10`
+
+**Feature**
+
+* Field: add formatter prop [#5534](https://github.com/youzan/vant/issues/5534)
+* Swipe: add prev、next method [#5548](https://github.com/youzan/vant/issues/5548)
+
+**Bug Fixes**
+
+* Calendar: missing info when selected [#5536](https://github.com/youzan/vant/issues/5536)
+* PullRefresh: should set height when using head-height [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+
+
 ### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
 `2020-01-09`
 
