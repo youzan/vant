@@ -7,6 +7,9 @@
   "bin": {
     "vant-cli": "./lib/index.js"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "publishConfig": {
     "access": "public"
   },
