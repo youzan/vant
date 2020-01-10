@@ -5,6 +5,8 @@ import { getScrollTop, getScrollEventTarget } from '../utils/dom/scroll';
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('pull-refresh');
+
+const DEFAULT_HEAD_HEIGHT = 50;
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
 export default createComponent({
@@ -30,7 +32,7 @@ export default createComponent({
     },
     headHeight: {
       type: Number,
-      default: 50
+      default: DEFAULT_HEAD_HEIGHT
     }
   },
 
@@ -47,6 +49,14 @@ export default createComponent({
       return (
         this.status !== 'loading' && this.status !== 'success' && !this.disabled
       );
+    },
+
+    headStyle() {
+      if (this.headHeight !== DEFAULT_HEAD_HEIGHT) {
+        return {
+          height: `${this.headHeight}px`
+        };
+      }
     }
   },
 
@@ -191,12 +201,12 @@ export default createComponent({
     return (
       <div class={bem()}>
         <div ref="track" class={bem('track')} style={style}>
-          <div class={bem('head')}>{this.genStatus()}</div>
+          <div class={bem('head')} style={this.headStyle}>
+            {this.genStatus()}
+          </div>
           {this.slots()}
         </div>
       </div>
     );
   }
 });
-
-//
