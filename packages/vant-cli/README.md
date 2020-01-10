@@ -85,3 +85,7 @@ yarn add @vant/cli --dev
 ### commit-lint
 
 校验 commit message 的格式是否符合规范，需要配合`husky`在提交 commit 时触发
+
+## 配置
+
+参见[配置](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config)。
