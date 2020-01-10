@@ -123,6 +123,7 @@ export default {
           margin: 0;
           padding: 2px 6px;
           color: @van-doc-blue;
+          font-weight: 500;
           font-size: 10px;
           background-color: fade(@van-doc-blue, 10%);
           border-radius: 20px;

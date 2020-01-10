@@ -96,7 +96,7 @@
 
     <demo-block v-if="!isWeapp" :title="$t('title10')">
       <van-tabs scrollspy sticky>
-        <van-tab :title="$t('tab') + index" v-for="index in 10" :key="index">
+        <van-tab :title="$t('tab') + index" v-for="index in 8" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>

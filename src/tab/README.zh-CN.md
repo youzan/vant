@@ -180,7 +180,7 @@ export default {
 
 ```html
 <van-tabs v-model="active" scrollspy sticky>
-  <van-tab v-for="index in 10" :title="'选项 ' + index">
+  <van-tab v-for="index in 8" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -193,16 +193,12 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | v-model | 绑定当前选中标签的标识符 | *string \| number* | `0` |
-| type | 样式类型，可选值为`card` | *string* | `line` |
+| type | 样式风格类型，可选值为`card` | *string* | `line` |
+| color | 标签主题色 | *string* | `#ee0a24` |
 | duration | 动画时间，单位秒 | *number* | `0.3` |
 | background | 标签栏背景色 | *string* | `white` |
 | line-width | 底部条宽度，默认单位 px | *string \| number* | `auto` |
 | line-height | 底部条高度，默认单位 px | *string \| number* | `3px` |
-| color | 标签主题色 | *string* | `#ee0a24` |
-| title-active-color | 标题选中态颜色 | *string* | - |
-| title-inactive-color | 标题默认态颜色 | *string* | - |
-| swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | *number* | `4` |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | *number* | `0` |
 | animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` |
 | border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` |
 | ellipsis | 是否省略过长的标题文字 | *boolean* | `true` |
@@ -210,20 +206,24 @@ export default {
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | *boolean* | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | *boolean* | `false` |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | *number* | `0` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | *number* | `4` |
+| title-active-color | 标题选中态颜色 | *string* | - |
+| title-inactive-color | 标题默认态颜色 | *string* | - |
 
 ### Tab Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name `v2.0.6` | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 |
 | title | 标题 | *string* | - |
-| title-style `v2.2.14` | 自定义标题样式 | *any*  | - |
 | disabled | 是否禁用标签 | *boolean* | `false` |
 | dot `v2.3.0` | 是否在标题右上角显示小红点 | *boolean* | `false` |
 | info `v2.3.0` | 标题右上角徽标的内容 | *string \| number* | - |
+| name `v2.0.6` | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 |
 | url `v2.2.1` | 点击后跳转的链接地址 | *string* | - |
 | to `v2.2.1` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | replace `v2.2.1` | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
+| title-style `v2.2.14` | 自定义标题样式 | *any*  | - |
 
 ### Tabs Events
 
