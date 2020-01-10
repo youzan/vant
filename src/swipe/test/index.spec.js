@@ -43,7 +43,7 @@ const Component = {
   }
 };
 
-test('swipeTo', async () => {
+test('swipeTo method', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
@@ -52,7 +52,7 @@ test('swipeTo', async () => {
   expect(swipe.active).toEqual(2);
 });
 
-test('swipeTo immediate', async () => {
+test('swipeTo method with immediate option', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2, {
@@ -61,6 +61,19 @@ test('swipeTo immediate', async () => {
 
   await later(100);
   expect(swipe.active).toEqual(2);
+});
+
+test('prev and next method', async () => {
+  const wrapper = mount(Component);
+  const { swipe } = wrapper.vm.$refs;
+
+  swipe.next();
+  await later(50);
+  expect(swipe.active).toEqual(1);
+
+  swipe.prev();
+  await later(50);
+  expect(swipe.active).toEqual(0);
 });
 
 test('initial swipe', () => {

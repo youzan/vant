@@ -169,7 +169,6 @@ export default createComponent({
       if (!this.touchable) return;
 
       this.clear();
-      this.swiping = true;
       this.touchStart(event);
       this.correctPosition();
     },
@@ -260,10 +259,37 @@ export default createComponent({
     },
 
     // @exposed-api
-    swipeTo(index, options = {}) {
-      this.swiping = true;
-      this.resetTouchStatus();
+    prev() {
       this.correctPosition();
+      this.resetTouchStatus();
+
+      doubleRaf(() => {
+        this.swiping = false;
+        this.move({
+          pace: -1,
+          emitChange: true
+        });
+      });
+    },
+
+    // @exposed-api
+    next() {
+      this.correctPosition();
+      this.resetTouchStatus();
+
+      doubleRaf(() => {
+        this.swiping = false;
+        this.move({
+          pace: 1,
+          emitChange: true
+        });
+      });
+    },
+
+    // @exposed-api
+    swipeTo(index, options = {}) {
+      this.correctPosition();
+      this.resetTouchStatus();
 
       doubleRaf(() => {
         let targetIndex;
@@ -273,11 +299,6 @@ export default createComponent({
           targetIndex = index % this.count;
         }
 
-        this.move({
-          pace: targetIndex - this.active,
-          emitChange: true
-        });
-
         if (options.immediate) {
           doubleRaf(() => {
             this.swiping = false;
@@ -285,10 +306,17 @@ export default createComponent({
         } else {
           this.swiping = false;
         }
+
+        this.move({
+          pace: targetIndex - this.active,
+          emitChange: true
+        });
       });
     },
 
     correctPosition() {
+      this.swiping = true;
+
       if (this.active <= -1) {
         this.move({ pace: this.count });
       }
@@ -308,18 +336,8 @@ export default createComponent({
       if (autoplay && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {
-          this.swiping = true;
-          this.resetTouchStatus();
-          this.correctPosition();
-
-          doubleRaf(() => {
-            this.swiping = false;
-            this.move({
-              pace: 1,
-              emitChange: true
-            });
-            this.autoPlay();
-          });
+          this.next();
+          this.autoPlay();
         }, autoplay);
       }
     },
