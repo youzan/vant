@@ -6,7 +6,8 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs__wrap van-hairline--top-bottom">
       <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
         <div role="tab" aria-selected="true" class="van-tab van-tab--active van-ellipsis"><span class="van-tab__text">基础用法<!----></span></div>
-        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">刷新成功提示<!----></span></div>
+        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">成功提示<!----></span></div>
+        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">自定义提示<!----></span></div>
         <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
       </div>
     </div>
@@ -18,6 +19,9 @@ exports[`renders demo correctly 1`] = `
             <p>下拉试试</p>
           </div>
         </div>
+      </div>
+      <div role="tabpanel" class="van-tab__pane" style="display: none;">
+        <!---->
       </div>
       <div role="tabpanel" class="van-tab__pane" style="display: none;">
         <!---->

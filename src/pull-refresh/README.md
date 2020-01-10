@@ -36,7 +36,7 @@ export default {
         this.$toast('Refresh Success');
         this.isLoading = false;
         this.count++;
-      }, 500);
+      }, 1000);
     }
   }
 }
@@ -56,6 +56,42 @@ Use `success-text` to set the success prompt after the refresh is successful
 </van-pull-refresh>
 ```
 
+### Custom Tips
+
+Use slots to custom tips
+
+```html
+<van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
+  <img
+    class="doge"
+    slot="pulling"
+    slot-scope="props"
+    src="https://img.yzcdn.cn/vant/doge.png"
+    :style="{ transform: `scale(${props.distance / 80})` }"
+  >
+  <img
+    class="doge"
+    slot="loosing"
+    src="https://img.yzcdn.cn/vant/doge.png"
+  >
+  <img
+    class="doge"
+    slot="loading"
+    src="https://img.yzcdn.cn/vant/doge-fire.jpg"
+  >
+  <p>Refresh Count: {{ count }}</p>
+</van-pull-refresh>
+
+<style>
+.doge {
+  width: 140px;
+  height: 72px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+</style>
+```
+
 ## API
 
 ### Props
@@ -69,7 +105,7 @@ Use `success-text` to set the success prompt after the refresh is successful
 | success-text | Text to show when loading success | *string* | - | - |
 | success-duration | Success text display duration(ms) | *number* | `500` | - |
 | animation-duration | Animation duration | *number* | `300` | - |
-| head-height | Height of head | *number* | `50` | - |
+| head-height | Height of head | *number* | `50` | 2.4.2 |
 | disabled | Whether to disable pull refresh | *boolean* | `false` | - |
 
 ### Events
