@@ -10,7 +10,7 @@ module.exports = {
     }
   },
   site: {
-    defaultLang: 'en-US',
+    defaultLang: 'zh-CN',
     versions: [
       { label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }
     ],

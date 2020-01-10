@@ -80,6 +80,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
+      description: siteConfig.description,
       chunks: ['chunks', 'site-desktop'],
       template: join(__dirname, '../../site/desktop/index.html'),
       filename: 'index.html',
@@ -88,6 +89,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
+      description: siteConfig.description,
       chunks: ['chunks', 'site-mobile'],
       template: join(__dirname, '../../site/mobile/index.html'),
       filename: 'mobile.html',
