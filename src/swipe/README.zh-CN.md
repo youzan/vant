@@ -166,7 +166,9 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 | 版本 |
 |------|------|------|------|------|
-| swipeTo | 滚动到目标位置 | index: number, options: Options | void | - |
+| prev | 切换到上一轮播 | - | - | 2.4.2 |
+| next | 切换到下一轮播 | - | - | 2.4.2 |
+| swipeTo | 切换到指定位置 | index: number, options: Options | void | - |
 | resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void | 2.2.14 |
 
 ### swipeTo Options 格式
