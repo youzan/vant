@@ -36,7 +36,7 @@ async function compileFile(filePath: string) {
   }
 
   if (isScript(filePath)) {
-    return compileJs(filePath, { reloadConfig: true });
+    return compileJs(filePath);
   }
 
   if (isStyle(filePath)) {
@@ -153,7 +153,7 @@ async function buildPackageEntry() {
     });
 
     setModuleEnv('esmodule');
-    await compileJs(esEntryFile, { reloadConfig: true });
+    await compileJs(esEntryFile);
 
     genPacakgeStyle({
       outputPath: styleEntryFile,
@@ -162,7 +162,7 @@ async function buildPackageEntry() {
 
     setModuleEnv('commonjs');
     await copy(esEntryFile, libEntryFile);
-    await compileJs(libEntryFile, { reloadConfig: true });
+    await compileJs(libEntryFile);
     await compileStyle(styleEntryFile);
 
     stepper.success('Build Package Entry');
