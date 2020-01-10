@@ -184,21 +184,23 @@ export default createComponent({
         }
       };
 
-      if (type === 'selected') {
-        return (
-          <div style={style} class={bem('day')} onClick={onClick}>
-            <div class={bem('selected-day')} style={{ background: this.color }}>
-              {item.text}
-            </div>
-          </div>
-        );
-      }
-
       const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
 
       const BottomInfo = bottomInfo && (
         <div class={bem('bottom-info')}>{bottomInfo}</div>
       );
+
+      if (type === 'selected') {
+        return (
+          <div style={style} class={bem('day')} onClick={onClick}>
+            <div class={bem('selected-day')} style={{ background: this.color }}>
+              {TopInfo}
+              {item.text}
+              {BottomInfo}
+            </div>
+          </div>
+        );
+      }
 
       return (
         <div
