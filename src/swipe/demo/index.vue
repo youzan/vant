@@ -117,8 +117,6 @@ export default {
   padding-bottom: 30px;
 
   .van-swipe {
-    cursor: pointer;
-
     &-item {
       color: @white;
       font-size: 20px;

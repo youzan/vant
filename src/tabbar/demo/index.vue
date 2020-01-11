@@ -111,10 +111,6 @@ export default {
 .demo-tabbar {
   .van-tabbar {
     position: relative;
-
-    &-item {
-      cursor: pointer;
-    }
   }
 }
 </style>
