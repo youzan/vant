@@ -107,10 +107,10 @@ export default createComponent({
     },
 
     onTouchMove(event) {
-      this.moving = true;
       this.touchMove(event);
 
       if (this.direction === 'vertical') {
+        this.moving = true;
         preventDefault(event, true);
       }
 
@@ -195,8 +195,7 @@ export default createComponent({
         }
       };
 
-      // 若有触发过 `touchmove` 事件，那应该
-      // 在 `transitionend` 后再触发 `change` 事件
+      // trigger the change event after transitionend when moving
       if (this.moving) {
         this.transitionEndTrigger = trigger;
       } else {
