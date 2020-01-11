@@ -110,7 +110,7 @@ export default {
       toggleAll: '全选与反选',
       checkAll: '全选',
       inverse: '反选',
-      disabledLabelClick: '禁用复选框文本点击'
+      disabledLabelClick: '禁用文本点击'
     },
     'en-US': {
       checkbox: 'Checkbox',

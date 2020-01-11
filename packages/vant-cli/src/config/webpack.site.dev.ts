@@ -57,7 +57,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     }
   },
   output: {
-    chunkFilename: 'async_[name].js'
+    chunkFilename: '[name].js'
   },
   optimization: {
     splitChunks: {

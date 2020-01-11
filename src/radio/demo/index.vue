@@ -86,7 +86,7 @@ export default {
       customColor: '自定义颜色',
       customShape: '自定义形状',
       withCell: '与 Cell 组件一起使用',
-      disabledLabelClick: '禁用单选框文本点击'
+      disabledLabelClick: '禁用文本点击'
     },
     'en-US': {
       radio: 'Radio',
