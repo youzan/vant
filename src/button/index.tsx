@@ -92,6 +92,7 @@ function Button(
       props.size,
       {
         plain,
+        loading,
         disabled,
         hairline,
         block: props.block,
