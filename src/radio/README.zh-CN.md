@@ -46,7 +46,7 @@ export default {
 
 ### 禁用文本点击
 
-通过设置`label-disabled`属性可以禁用单选框文本点击
+设置`label-disabled`属性后，点击单选框图标以外的内容不会触发切换
 
 ```html
 <van-radio-group v-model="radio">
@@ -83,8 +83,8 @@ export default {
 
 ```html
 <van-radio-group v-model="radio">
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2" icon-size="25px">单选框 2</van-radio>
+  <van-radio name="1" icon-size="24px">单选框 1</van-radio>
+  <van-radio name="2" icon-size="24px">单选框 2</van-radio>
 </van-radio-group>
 ```
 

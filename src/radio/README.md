@@ -73,8 +73,8 @@ export default {
 
 ```html
 <van-radio-group v-model="radio">
-  <van-radio name="1">Radio 1</van-radio>
-  <van-radio name="2" icon-size="25px">Radio 2</van-radio>
+  <van-radio name="1" icon-size="24px">Radio 1</van-radio>
+  <van-radio name="2" icon-size="24px">Radio 2</van-radio>
 </van-radio-group>
 ```
 

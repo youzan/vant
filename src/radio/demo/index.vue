@@ -54,8 +54,12 @@
 
     <demo-block :title="$t('customIconSize')">
       <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
-        <van-radio name="2" checked-color="#07c160" icon-size="25px">{{ $t('radio') }} 2</van-radio>
+        <van-radio name="1" checked-color="#07c160" icon-size="24px">
+          {{ $t('radio') }} 1
+        </van-radio>
+        <van-radio name="2" checked-color="#07c160" icon-size="24px">
+          {{ $t('radio') }} 2
+        </van-radio>
       </van-radio-group>
     </demo-block>
 

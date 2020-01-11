@@ -39,7 +39,7 @@ export default {
 
 ### 禁用文本点击
 
-通过设置`label-disabled`属性可以禁用复选框文本点击
+设置`label-disabled`属性后，点击复选框图标以外的内容不会触发切换
 
 ```html
 <van-checkbox v-model="checked" icon-disabled>复选框</van-checkbox>
@@ -66,7 +66,7 @@ export default {
 通过`icon-size`属性可以自定义图标的大小
 
 ```html
-<van-checkbox v-model="checked" icon-size="25px">复选框</van-checkbox>
+<van-checkbox v-model="checked" icon-size="24px">复选框</van-checkbox>
 ```
 
 ### 自定义图标

@@ -32,7 +32,7 @@
     </demo-block>
 
     <demo-block :title="$t('customIconSize')">
-      <van-checkbox v-model="checboxIcon" icon-size="25px">
+      <van-checkbox v-model="checboxIcon" icon-size="24px">
         {{ $t('customIconSize') }}
       </van-checkbox>
     </demo-block>

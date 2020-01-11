@@ -54,7 +54,7 @@ export default {
 ### Custom Icon Size
 
 ```html
-<van-checkbox v-model="checked" icon-size="25px">Checkbox</van-checkbox>
+<van-checkbox v-model="checked" icon-size="24px">Checkbox</van-checkbox>
 ```
 
 ### Custom Icon
