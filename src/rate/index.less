@@ -2,6 +2,7 @@
 
 .van-rate {
   display: inline-flex;
+  cursor: pointer;
   user-select: none;
 
   &__item {
@@ -24,5 +25,13 @@
       width: .5em;
       overflow: hidden;
     }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    cursor: default;
   }
 }

@@ -201,7 +201,14 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem()} tabindex="0" role="radiogroup">
+      <div
+        class={bem({
+          readonly: this.readonly,
+          disabled: this.disabled
+        })}
+        tabindex="0"
+        role="radiogroup"
+      >
         {this.list.map((status, index) => this.genStar(status, index))}
       </div>
     );

@@ -70,17 +70,17 @@ function ActionSheet(
   }
 
   function Option(item: ActionSheetItem, index: number) {
-    const disabled = item.disabled || item.loading;
+    const { disabled, loading, callback } = item;
 
     function onClickOption(event: MouseEvent) {
       event.stopPropagation();
 
-      if (item.disabled || item.loading) {
+      if (disabled || loading) {
         return;
       }
 
-      if (item.callback) {
-        item.callback(item);
+      if (callback) {
+        callback(item);
       }
 
       emit(ctx, 'select', item, index);
@@ -91,7 +91,7 @@ function ActionSheet(
     }
 
     function OptionContent() {
-      if (item.loading) {
+      if (loading) {
         return <Loading size="20px" />;
       }
 
@@ -104,7 +104,7 @@ function ActionSheet(
     return (
       <button
         type="button"
-        class={[bem('item', { disabled }), item.className, BORDER_TOP]}
+        class={[bem('item', { disabled, loading }), item.className, BORDER_TOP]}
         style={{ color: item.color }}
         onClick={onClickOption}
       >

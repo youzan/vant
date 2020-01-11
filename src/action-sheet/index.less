@@ -14,6 +14,7 @@
     text-align: center;
     background-color: @action-sheet-item-background;
     border: none;
+    cursor: pointer;
 
     &:active {
       background-color: @active-color;
@@ -23,12 +24,21 @@
   &__item {
     height: @action-sheet-item-height;
 
+    &--loading,
     &--disabled {
       color: @action-sheet-item-disabled-text-color;
 
       &:active {
         background-color: @action-sheet-item-background;
       }
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &--loading {
+      cursor: default;
     }
   }
 

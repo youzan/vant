@@ -11,6 +11,7 @@
   word-wrap: break-word;
   background-color: @sidebar-background-color;
   border-left: 3px solid transparent;
+  cursor: pointer;
   user-select: none;
 
   &__text {
@@ -43,6 +44,7 @@
 
   &--disabled {
     color: @sidebar-disabled-text-color;
+    cursor: not-allowed;
 
     &:active {
       background-color: @sidebar-background-color;

@@ -16,6 +16,7 @@
     vertical-align: middle;
     background-color: @stepper-background-color;
     border: 0;
+    cursor: pointer;
 
     &::before {
       width: 13px;
@@ -46,6 +47,7 @@
     &--disabled {
       color: @stepper-button-disabled-icon-color;
       background-color: @stepper-button-disabled-color;
+      cursor: not-allowed;
 
       &:active {
         background-color: @stepper-button-disabled-color;

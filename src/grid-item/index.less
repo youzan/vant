@@ -39,8 +39,12 @@
       }
     }
 
-    &--clickable:active {
-      background-color: @grid-item-content-active-color;
+    &--clickable {
+      cursor: pointer;
+
+      &:active {
+        background-color: @grid-item-content-active-color;
+      }
     }
   }
 

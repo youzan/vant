@@ -80,7 +80,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div tabindex="0" role="radiogroup" class="van-rate">
+    <div tabindex="0" role="radiogroup" class="van-rate van-rate--disabled">
       <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon" style="color: rgb(189, 189, 189);">
           <!----></i></div>
       <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon" style="color: rgb(189, 189, 189);">
@@ -94,7 +94,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div tabindex="0" role="radiogroup" class="van-rate">
+    <div tabindex="0" role="radiogroup" class="van-rate van-rate--readonly">
       <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon" style="color: rgb(255, 210, 30);">
           <!----></i></div>
       <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon" style="color: rgb(255, 210, 30);">
