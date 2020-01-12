@@ -179,3 +179,15 @@ module.exports = {
   }
 };
 ```
+
+## Webpack
+
+根目录下的`webpack.config.js`文件会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。因此可以灵活地自定义 Webpack 配置，比如修改 devServer 端口：
+
+```js
+module.exports = {
+  devServer: {
+    port: 9000
+  }
+};
+```
