@@ -9,16 +9,16 @@ import {
 } from 'vue';
 
 export function useHandler(
-  target: HTMLElement | Document | Window,
+  target: EventTarget,
   event: string,
-  handler: any,
+  handler: EventListener,
   passive = false,
-  ref?: Ref<boolean>
+  flag?: Ref<boolean>
 ) {
   let binded: boolean;
 
   function add() {
-    if (binded || (ref && !ref.value)) {
+    if (binded || (flag && !flag.value)) {
       return;
     }
 
@@ -33,9 +33,9 @@ export function useHandler(
     }
   }
 
-  if (ref) {
+  if (flag) {
     watch(() => {
-      ref.value ? add() : remove();
+      flag.value ? add() : remove();
     });
   }
 
