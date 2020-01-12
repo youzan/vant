@@ -195,6 +195,19 @@ Textarea Field can be auto resize when has `autosize` prop
 />
 ```
 
+### Input Align
+
+Use `input-align` prop to align the input value
+
+```html
+<van-field
+  v-model="value"
+  :label="Text"
+  :placeholder="Input Align Right"
+  input-align="right"
+/>
+```
+
 ## API
 
 ### Props

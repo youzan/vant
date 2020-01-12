@@ -43,6 +43,33 @@
         @blur="keyboard = ''"
       />
     </demo-block>
+
+    <demo-block :title="$t('extraKey')">
+      <van-button plain type="primary" @touchstart.stop="keyboard = 'extraKey'">{{ $t('button3') }}</van-button>
+
+      <van-number-keyboard
+        :show="keyboard === 'extraKey'"
+        :close-button-text="$t('close')"
+        extra-key="X"
+        @blur="keyboard = ''"
+        @input="onInput"
+        @delete="onDelete"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('title')">
+      <van-button plain type="info" @touchstart.stop="keyboard = 'title'">{{ $t('button4') }}</van-button>
+
+      <van-number-keyboard
+        :show="keyboard === 'title'"
+        :close-button-text="$t('close')"
+        :title="$t('title')"
+        extra-key="."
+        @blur="keyboard = ''"
+        @input="onInput"
+        @delete="onDelete"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -54,20 +81,28 @@ export default {
       custom: '自定义样式',
       button1: '弹出默认键盘',
       button2: '弹出自定义键盘',
+      button3: '弹出身份证号码键盘',
+      button4: '弹出自定义标题键盘',
       close: '完成',
       input: '输入',
       bindValue: '双向绑定',
-      clickToInput: '点此输入'
+      clickToInput: '点此输入',
+      extraKey: '左下角按键内容',
+      title: '键盘标题'
     },
     'en-US': {
       default: 'Default style',
       custom: 'Custom style',
       button1: 'Show Default Keyboard',
       button2: 'Show Custom Keyboard',
+      button3: 'Show Id Card Number Keyboard',
+      button4: 'Show Custom Title Keyboard',
       close: 'Close',
       input: 'Input',
       bindValue: 'Bind Value',
-      clickToInput: 'Click To Input'
+      clickToInput: 'Click To Input',
+      extraKey: 'Bottom Left Button Content',
+      title: 'Keyboard Title'
     }
   },
 
