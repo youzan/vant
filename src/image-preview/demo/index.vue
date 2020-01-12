@@ -109,10 +109,4 @@ export default {
     margin-left: @padding-md;
   }
 }
-
-.van-image-preview {
-  img {
-    -webkit-user-drag: none;
-  }
-}
 </style>
