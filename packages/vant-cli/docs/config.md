@@ -1,4 +1,6 @@
-# 配置
+# 配置指南
+
+[toc]
 
 ## vant.config.js
 
@@ -198,7 +200,7 @@ module.exports = {
 
 通过根目录下的`babel.config.js`文件可以对 Babel 进行配置。
 
-### Preset
+### 默认配置
 
 推荐使用`vant-cli`内置的 preset，配置如下：
 
@@ -218,7 +220,7 @@ module.exports = {
 - @babel/plugin-proposal-nullish-coalescing-operator
 - @vue/babel-preset-jsx
 
-### Dependencies
+### 依赖
 
 由于使用了`@babel/plugin-transform-runtime`来优化 Babel 的 helper 函数，你需要将`@babel/runtime`添加到`package.json`的依赖项：
 
