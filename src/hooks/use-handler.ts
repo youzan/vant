@@ -1,26 +1,42 @@
-import { on, off } from '../utils';
-import { onMounted, onActivated, onUnmounted, onDeactivated } from 'vue';
+import { on, off } from '../utils/dom/event';
+import {
+  Ref,
+  watch,
+  onMounted,
+  onActivated,
+  onUnmounted,
+  onDeactivated
+} from 'vue';
 
 export function useHandler(
   target: HTMLElement | Document | Window,
   event: string,
   handler: any,
-  passive = false
+  passive = false,
+  ref?: Ref<boolean>
 ) {
-  let added: boolean;
+  let binded: boolean;
 
   function add() {
-    if (!added) {
-      on(target, event, handler, passive);
-      added = true;
+    if (binded || (ref && !ref.value)) {
+      return;
     }
+
+    on(target, event, handler, passive);
+    binded = true;
   }
 
   function remove() {
-    if (added) {
+    if (binded) {
       off(target, event, handler);
-      added = false;
+      binded = false;
     }
+  }
+
+  if (ref) {
+    watch(() => {
+      ref.value ? add() : remove();
+    });
   }
 
   onMounted(add);
