@@ -22,7 +22,8 @@ export const DOCS_DIR = join(ROOT, 'docs');
 export const SITE_DIST_DIR = join(ROOT, 'site');
 export const VANT_CONFIG_FILE = join(ROOT, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(ROOT, 'package.json');
-export const WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
+export const ROOT_WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
+export const ROOT_POSTCSS_CONFIG_FILE = join(ROOT, 'postcss.config.js');
 
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');

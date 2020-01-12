@@ -210,7 +210,7 @@ module.exports = {
 
 `@vant/cli/preset`中默认包含了以下插件：
 
-- @babel/preset-env
+- @babel/preset-env（不含 core-js）
 - @babel/preset-typescript
 - @babel/plugin-transform-runtime
 - @babel/plugin-transform-object-assign
@@ -237,5 +237,33 @@ module.exports = {
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0"
   }
+}
+```
+
+## Postcss
+
+通过根目录下的`postcss.config.js`文件可以对 Postcss 进行配置。
+
+### 默认配置
+
+`vant-cli`中默认的 Postcss 配置如下：
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {}
+  }
+};
+```
+
+## browserslist
+
+推荐在`package.json`文件里添加 browserslist 字段，这个值会被`@babel/preset-env`和`autoprefixer`用来确定目标浏览器的版本，保证编译后代码的兼容性。
+
+在移动端浏览器中使用，可以添加如下配置：
+
+```json
+{
+  "browserslist": ["Android >= 4.0", "iOS >= 8"]
 }
 ```

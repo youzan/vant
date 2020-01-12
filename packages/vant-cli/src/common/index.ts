@@ -7,7 +7,12 @@ import {
   readFileSync,
   outputFileSync
 } from 'fs-extra';
-import { SRC_DIR, getVantConfig, WEBPACK_CONFIG_FILE } from './constant';
+import {
+  SRC_DIR,
+  getVantConfig,
+  ROOT_WEBPACK_CONFIG_FILE,
+  ROOT_POSTCSS_CONFIG_FILE
+} from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -96,14 +101,22 @@ export function normalizePath(path: string): string {
 }
 
 export function getWebpackConfig(): object {
-  if (existsSync(WEBPACK_CONFIG_FILE)) {
-    const config = require(WEBPACK_CONFIG_FILE);
+  if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
+    const config = require(ROOT_WEBPACK_CONFIG_FILE);
 
     if (typeof config === 'function') {
       return config();
     }
 
     return config;
+  }
+
+  return {};
+}
+
+export function getPostcssConfig(): object {
+  if (existsSync(ROOT_POSTCSS_CONFIG_FILE)) {
+    return require(ROOT_POSTCSS_CONFIG_FILE);
   }
 
   return {};
@@ -129,8 +142,8 @@ export function isDev() {
   return process.env.NODE_ENV === 'development';
 }
 
-// Smarter outputFileSync
-// Skip if content unchanged
+// smarter outputFileSync
+// skip output if file content unchanged
 export function smartOutputFile(filePath: string, content: string) {
   if (existsSync(filePath)) {
     const previousContent = readFileSync(filePath, 'utf-8');
