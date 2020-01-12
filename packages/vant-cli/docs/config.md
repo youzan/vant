@@ -182,7 +182,9 @@ module.exports = {
 
 ## Webpack
 
-根目录下的`webpack.config.js`文件会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。因此可以灵活地自定义 Webpack 配置，比如修改 devServer 端口：
+通过根目录下的`webpack.config.js`文件可以修改 Webpack 配置，配置内容会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。
+
+比如修改 devServer 端口：
 
 ```js
 module.exports = {
@@ -190,4 +192,50 @@ module.exports = {
     port: 9000
   }
 };
+```
+
+## Babel
+
+通过根目录下的`babel.config.js`文件可以对 Babel 进行配置。
+
+### Preset
+
+推荐使用`vant-cli`内置的 preset，配置如下：
+
+```js
+module.exports = {
+  presets: ['@vant/cli/preset']
+};
+```
+
+`@vant/cli/preset`中默认包含了以下插件：
+
+- @babel/preset-env
+- @babel/preset-typescript
+- @babel/plugin-transform-runtime
+- @babel/plugin-transform-object-assign
+- @babel/plugin-proposal-optional-chaining
+- @babel/plugin-proposal-nullish-coalescing-operator
+- @vue/babel-preset-jsx
+
+### Dependencies
+
+由于使用了`@babel/plugin-transform-runtime`来优化 Babel 的 helper 函数，你需要将`@babel/runtime`添加到`package.json`的依赖项：
+
+```json
+{
+  "dependencies": {
+    "@babel/runtime": "7.x"
+  }
+}
+```
+
+如果使用了 JSX 的语法，还需要将`@vue/babel-helper-vue-jsx-merge-props`添加到依赖中：
+
+```json
+{
+  "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0"
+  }
+}
 ```
