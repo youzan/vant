@@ -1,6 +1,23 @@
 # 配置指南
 
-[toc]
+- [配置指南](#)
+  - [vant.config.js](#vantconfigjs)
+    - [name](#name)
+    - [build.css](#buildcss)
+    - [build.site](#buildsite)
+    - [site.title](#sitetitle)
+    - [site.logo](#sitelogo)
+    - [site.description](#sitedescription)
+    - [site.nav](#sitenav)
+    - [site.versions](#siteversions)
+    - [site.baiduAnalytics](#sitebaiduanalytics)
+  - [Webpack](#webpack)
+  - [Babel](#babel)
+    - [默认配置](#-1)
+    - [依赖](#-2)
+  - [Postcss](#postcss)
+    - [默认配置](#-3)
+  - [browserslist](#browserslist)
 
 ## vant.config.js
 
