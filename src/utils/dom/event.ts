@@ -20,7 +20,7 @@ if (!isServer) {
 }
 
 export function on(
-  target: HTMLElement | Document | Window,
+  target: EventTarget,
   event: string,
   handler: EventHandler,
   passive = false
@@ -35,7 +35,7 @@ export function on(
 }
 
 export function off(
-  target: HTMLElement | Document | Window,
+  target: EventTarget,
   event: string,
   handler: EventHandler
 ) {
