@@ -88,7 +88,7 @@ yarn add @vant/cli --dev
 
 ## 配置
 
-参见[配置](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
+参见[配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
 
 ## 更新日志
 
