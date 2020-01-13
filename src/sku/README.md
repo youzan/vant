@@ -142,6 +142,8 @@ export default {
 | get-container | Return the mount node for sku | *string \| () => Element* | - | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
 | start-sale-num | Minimum quantity | *number* | `1` | 2.3.0 |
+| properties | Goods properties | *array* | - | 2.4.0 |
+| header-price | Control the price | *object* | - | 2.4.0 |
 
 ### Events
 
@@ -247,6 +249,39 @@ sku: {
       ],
     }
   ]
+}
+```
+
+### properties Data Structure
+
+```javascript
+  [
+    {
+      k_id: 123,
+      k: 'More',
+      is_multiple: true,
+      v: [
+        {
+          id: 1222,
+          name: 'Tea',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: 'Water',
+          price: 1,
+        }
+      ],
+    }
+  ]
+```
+
+### headerPrice Data Structure
+
+```javascript
+{
+  price: '1.00',
+  origin_price: '2.00'
 }
 ```
 

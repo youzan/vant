@@ -179,57 +179,61 @@ export const skuData = {
         required: 0
       }
     ],
-    properties: [
-      {
-        k_id: 123,
-        k: '加冰',
-        v: [
-          {
-            id: 1222,
-            name: '少冰',
-            price: 1,
-          },
-          {
-            id: 1223,
-            name: '去冰',
-            price: 1,
-          }
-        ],
-      },
-      {
-        k_id: 133,
-        k: '打包',
-        v: [
-          {
-            id: 1244,
-            name: '分开打包',
-            price: 9,
-          }
-        ],
-      },
-      {
-        k_id: 124,
-        k: '加料',
-        is_multiple: true,
-        v: [
-          {
-            id: 1224,
-            name: '布丁',
-            price: 3,
-          },
-          {
-            id: 1225,
-            name: '波霸',
-            price: 4,
-          },
-          {
-            id: 1226,
-            name: '珍珠',
-            price: 5,
-          }
-        ],
-      }
-    ],
+  },
+  properties: [
+    {
+      k_id: 123,
+      k: '加冰',
+      v: [
+        {
+          id: 1222,
+          name: '少冰',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: '去冰',
+          price: 1,
+        }
+      ],
+    },
+    {
+      k_id: 133,
+      k: '打包',
+      v: [
+        {
+          id: 1244,
+          name: '分开打包',
+          price: 9,
+        }
+      ],
+    },
+    {
+      k_id: 124,
+      k: '加料',
+      is_multiple: true,
+      v: [
+        {
+          id: 1224,
+          name: '布丁',
+          price: 3,
+        },
+        {
+          id: 1225,
+          name: '波霸',
+          price: 4,
+        },
+        {
+          id: 1226,
+          name: '珍珠',
+          price: 5,
+        }
+      ],
+    }
+  ],
+  header_price: {
+    price: '1.00',
+    origin_price: '2.00'
   },
 };
 

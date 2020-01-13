@@ -146,6 +146,8 @@ export default {
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
 | start-sale-num | 起售数量 | *number* | `1` | 2.3.0 |
+| properties | 商品属性 | *array* | - | 2.4.0 |
+| header-price | 显示外部传入价格 | *object* | - | 2.4.0 |
 
 ### Events
 
@@ -237,8 +239,14 @@ sku: {
       placeholder: '' // 可选值，占位文本
     }
   ],
-  hide_stock: false, // 是否隐藏剩余库存
-  properties: [ // 商品属性
+  hide_stock: false // 是否隐藏剩余库存
+}
+```
+
+### properties 对象结构
+
+```javascript
+  [ // 商品属性
     {
       k_id: 123, // 属性id
       k: '加料', // 属性名
@@ -257,6 +265,14 @@ sku: {
       ],
     }
   ]
+```
+
+### headerPrice 对象结构
+
+```javascript
+{
+  price: '1.00',
+  origin_price: '2.00'
 }
 ```
 
