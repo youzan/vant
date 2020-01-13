@@ -151,25 +151,25 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| type | Can be set to `date` `time`<br> `year-month` | *string* | `datetime` | - |
-| min-date | Min date | *Date* | Ten years ago on January 1 | - |
-| max-date | Max date | *Date* | Ten years later on December 31 | - |
-| min-hour | Min hour for `time` type | *number* | `0` | - |
-| max-hour | Max hour for `time` type | *number* | `23` | - |
-| min-minute | Max minute for `time` type | *number* | `0` | - |
-| max-minute | Max minute for `time` type | *number* | `59` | - |
-| filter | Option filter | *(type, values) => values* | - | - |
-| formatter | Option text formatter | *(type, value) => value* | - | - |
-| title | Toolbar title | *string* | `''` | - |
-| show-toolbar | Whether to show toolbar | *boolean* | `true` | - |
-| loading | Whether to show loading prompt | *boolean* | `false` | - |
-| item-height | Option height | *number* | `44` | - |
-| confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
-| cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
-| visible-item-count | Count of visible columns | *number* | `5` | - |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | 2.2.13 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| type | Can be set to `date` `time`<br> `year-month` | *string* | `datetime` |
+| min-date | Min date | *Date* | Ten years ago on January 1 |
+| max-date | Max date | *Date* | Ten years later on December 31 |
+| min-hour | Min hour for `time` type | *number* | `0` |
+| max-hour | Max hour for `time` type | *number* | `23` |
+| min-minute | Max minute for `time` type | *number* | `0` |
+| max-minute | Max minute for `time` type | *number* | `59` |
+| filter | Option filter | *(type, values) => values* | - |
+| formatter | Option text formatter | *(type, value) => value* | - |
+| title | Toolbar title | *string* | `''` |
+| show-toolbar | Whether to show toolbar | *boolean* | `true` |
+| loading | Whether to show loading prompt | *boolean* | `false` |
+| item-height | Option height | *number* | `44` |
+| confirm-button-text | Text of confirm button | *string* | `Confirm` |
+| cancel-button-text | Text of cancel button | *string* | `Cancel` |
+| visible-item-count | Count of visible columns | *number* | `5` |
+| swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | *number*  | `1000` |
 
 ### Events
 
@@ -183,6 +183,6 @@ export default {
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call instance methods
 
-| Name | Description | Attribute | Return value | Version |
-|------|------|------|------|------|
-| getPicker | get Picker instance | - | - | 2.4.0 |
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| getPicker `v2.4.0` | get Picker instance | - | - |

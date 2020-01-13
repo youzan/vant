@@ -289,8 +289,6 @@ exports[`renders demo correctly 1`] = `
               <div role="tab" class="van-tab van-ellipsis" style="flex-basis: 22%;"><span class="van-tab__text">标签 6<!----></span></div>
               <div role="tab" class="van-tab van-ellipsis" style="flex-basis: 22%;"><span class="van-tab__text">标签 7<!----></span></div>
               <div role="tab" class="van-tab van-ellipsis" style="flex-basis: 22%;"><span class="van-tab__text">标签 8<!----></span></div>
-              <div role="tab" class="van-tab van-ellipsis" style="flex-basis: 22%;"><span class="van-tab__text">标签 9<!----></span></div>
-              <div role="tab" class="van-tab van-ellipsis" style="flex-basis: 22%;"><span class="van-tab__text">标签 10<!----></span></div>
               <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
             </div>
           </div>
@@ -320,12 +318,6 @@ exports[`renders demo correctly 1`] = `
         </div>
         <div role="tabpanel" class="van-tab__pane">
           内容 8
-        </div>
-        <div role="tabpanel" class="van-tab__pane">
-          内容 9
-        </div>
-        <div role="tabpanel" class="van-tab__pane">
-          内容 10
         </div>
       </div>
     </div>

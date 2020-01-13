@@ -100,41 +100,41 @@ export default {
 
 通过函数调用 `ImagePreview` 时，支持传入以下选项：
 
-| 参数名 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| images | 需要预览的图片 URL 数组 | *string[]* | `[]` | - |
-| startPosition | 图片预览起始位置索引 | *number* | `0` | - |
-| showIndex | 是否显示页码 | *boolean* | `true` | - |
-| showIndicators | 是否显示轮播指示器 | *boolean* | `false` | - |
-| loop | 是否开启循环播放 | *boolean* | `true` | - |
-| swipeDuration | 动画时长，单位为`ms` | *number* | `500` | - |
-| onClose | 关闭时的回调函数 | *Function* | - | - |
-| onChange | 切换图片时的回调函数，回调参数为当前索引 | *Function* | - | 2.0.3 |
-| asyncClose | 是否开启异步关闭 | *boolean* | `false` | - |
-| closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` | - |
-| className | 自定义类名 | *any* | - | - |
-| lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` | - |
-| maxZoom | 手势缩放时，最大缩放比例 | *number* | `3` | - |
-| minZoom | 手势缩放时，最小缩放比例 | *number* | `1/3` | - |
+| 参数名 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| images | 需要预览的图片 URL 数组 | *string[]* | `[]` |
+| startPosition | 图片预览起始位置索引 | *number* | `0` |
+| showIndex | 是否显示页码 | *boolean* | `true` |
+| showIndicators | 是否显示轮播指示器 | *boolean* | `false` |
+| loop | 是否开启循环播放 | *boolean* | `true` |
+| swipeDuration | 动画时长，单位为`ms` | *number* | `500` |
+| onClose | 关闭时的回调函数 | *Function* | - |
+| onChange `v2.0.3` | 切换图片时的回调函数，回调参数为当前索引 | *Function* | - |
+| asyncClose | 是否开启异步关闭 | *boolean* | `false` |
+| closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` |
+| className | 自定义类名 | *any* | - |
+| lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
+| maxZoom | 手势缩放时，最大缩放比例 | *number* | `3` |
+| minZoom | 手势缩放时，最小缩放比例 | *number* | `1/3` |
 
 ### Props
 
 通过组件调用 `ImagePreview` 时，支持以下 Props：
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| images | 需要预览的图片 URL 数组 | *string[]* | `[]` | - |
-| start-position | 图片预览起始位置索引 | *number* | `0` | - |
-| show-index | 是否显示页码 | *boolean* | `true` | - |
-| show-indicators | 是否显示轮播指示器 | *boolean* | `false` | - |
-| loop | 是否开启循环播放 | *boolean* | `true` | - |
-| swipe-duration | 动画时长，单位为 ms | *number* | `500` | - |
-| async-close | 是否开启异步关闭 | *boolean* | `false` | - |
-| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | - |
-| class-name | 自定义类名 | *any* | - | - |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` | - |
-| max-zoom | 手势缩放时，最大缩放比例 | *number* | `3` | - |
-| min-zoom | 手势缩放时，最小缩放比例 | *number* | `1/3` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| images | 需要预览的图片 URL 数组 | *string[]* | `[]` |
+| start-position | 图片预览起始位置索引 | *number* | `0` |
+| show-index | 是否显示页码 | *boolean* | `true` |
+| show-indicators | 是否显示轮播指示器 | *boolean* | `false` |
+| loop | 是否开启循环播放 | *boolean* | `true` |
+| swipe-duration | 动画时长，单位为 ms | *number* | `500` |
+| async-close | 是否开启异步关闭 | *boolean* | `false` |
+| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` |
+| class-name | 自定义类名 | *any* | - |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
+| max-zoom | 手势缩放时，最大缩放比例 | *number* | `3` |
+| min-zoom | 手势缩放时，最小缩放比例 | *number* | `1/3` |
 
 ### Events
 

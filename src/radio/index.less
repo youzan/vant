@@ -4,13 +4,23 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  cursor: pointer;
   user-select: none;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--label-disabled {
+    cursor: default;
+  }
 
   &__icon {
     flex: none;
     height: 1em;
     font-size: @radio-size;
     line-height: 1em;
+    cursor: pointer;
 
     .van-icon {
       display: block;
@@ -41,6 +51,8 @@
     }
 
     &--disabled {
+      cursor: not-allowed;
+
       .van-icon {
         background-color: @radio-disabled-background-color;
         border-color: @radio-disabled-icon-color;

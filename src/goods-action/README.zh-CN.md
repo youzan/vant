@@ -73,34 +73,34 @@ export default {
 
 ### GoodsAction Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### GoodsActionIcon Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| text | 按钮文字 | *string* | - | - |
-| icon | 图标 | *string* | - | - |
-| icon-class | 图标额外类名 | *any* | - | - |
-| info | 图标右上角徽标的内容 | *string \| number* | - | - |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| text | 按钮文字 | *string* | - |
+| icon | 图标 | *string* | - |
+| icon-class | 图标额外类名 | *any* | - |
+| info | 图标右上角徽标的内容 | *string \| number* | - |
+| url | 点击后跳转的链接地址 | *string* | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
 
 ### GoodsActionButton Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| text | 按钮文字 | *string* | - | - |
-| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 2.1.8 |
-| disabled | 是否禁用按钮 | *boolean* | `false` | - | - |
-| loading | 是否显示为加载状态 | *boolean* | `false` | - | - |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| text | 按钮文字 | *string* | - |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` |
+| color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - |
+| disabled | 是否禁用按钮 | *boolean* | `false` | - |
+| loading | 是否显示为加载状态 | *boolean* | `false` | - |
+| url | 点击后跳转的链接地址 | *string* | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
 
 ### GoodsActionIcon Slots
 

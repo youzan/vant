@@ -110,19 +110,19 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Current rate | *number* | - | - |
-| rate | Target rate | *number* | `100` | - |
-| size | Circle size | *string \| number* | `100px` | - |
-| color | Progress color, passing object to render gradient | *string \| object* | `#1989fa` | 2.1.4 |
-| layer-color | Layer color | *string* | `#fff` | - |
-| fill | Fill color | *string* | `none` | - |
-| speed | Animate speed（rate/s）| *number* | `0` | - |
-| text | Text | *string* | - | - |
-| stroke-width | Stroke width | *number* | `40` | - |
-| stroke-linecap | Stroke linecap，can be set to `sqaure` `butt` | *string* | `round` | 2.2.15 |
-| clockwise | Whether to be clockwise | *boolean* | `true` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Current rate | *number* | - |
+| rate | Target rate | *number* | `100` |
+| size | Circle size | *string \| number* | `100px` |
+| color `v2.1.4` | Progress color, passing object to render gradient | *string \| object* | `#1989fa` |
+| layer-color | Layer color | *string* | `#fff` |
+| fill | Fill color | *string* | `none` |
+| speed | Animate speed（rate/s）| *number* | `0` |
+| text | Text | *string* | - |
+| stroke-width | Stroke width | *number* | `40` |
+| stroke-linecap `v2.2.15` | Stroke linecap，can be set to `sqaure` `butt` | *string* | `round` |
+| clockwise | Whether to be clockwise | *boolean* | `true` |
 
 ### Slots
 

@@ -54,6 +54,7 @@ function Switch(
     <div
       class={bem({
         on: checked,
+        loading,
         disabled
       })}
       role="switch"

@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.4.2-beta.1",
+  "version": "2.4.2-beta.2",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -60,7 +60,7 @@
     "vue": ">= 2.5.22"
   },
   "devDependencies": {
-    "@vant/cli": "^2.1.4",
+    "@vant/cli": "^2.1.6",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },

@@ -134,40 +134,42 @@ export default {
 
 ### Swipe Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| autoplay | 自动轮播间隔，单位为 ms | *number* | - | - |
-| duration | 动画时长，单位为 ms | *number* | `500` | - |
-| initial-swipe | 初始位置索引值 | *number* | `0` | - |
-| width | 滑块宽度 | *number* | `auto` | - |
-| height | 滑块高度 | *number* | `auto` | - |
-| loop | 是否开启循环播放 | *boolean* | `true` | - |
-| show-indicators | 是否显示指示器 | *boolean* | `true` | - |
-| indicator-color | 指示器颜色 | *string* | `#1989fa` | - |
-| vertical | 是否为纵向滚动 | *boolean* | `false` | - |
-| touchable | 是否可以通过手势滑动 | *boolean* | `true` | - |
-| stop-propagation | 是否阻止滑动事件冒泡 | *boolean* | `true` | 2.2.13 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| autoplay | 自动轮播间隔，单位为 ms | *number* | - |
+| duration | 动画时长，单位为 ms | *number* | `500` |
+| initial-swipe | 初始位置索引值 | *number* | `0` |
+| width | 滑块宽度 | *number* | `auto` |
+| height | 滑块高度 | *number* | `auto` |
+| loop | 是否开启循环播放 | *boolean* | `true` |
+| show-indicators | 是否显示指示器 | *boolean* | `true` |
+| indicator-color | 指示器颜色 | *string* | `#1989fa` |
+| vertical | 是否为纵向滚动 | *boolean* | `false` |
+| touchable | 是否可以通过手势滑动 | *boolean* | `true` |
+| stop-propagation `v2.2.13` | 是否阻止滑动事件冒泡 | *boolean* | `true` |
 
 ### Swipe Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| change | 每一页轮播结束后触发 | index, 当前页的索引 | - |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| change | 每一页轮播结束后触发 | index, 当前页的索引 |
 
 ### SwipeItem Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| click | 点击时触发 | event: Event | - |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| click | 点击时触发 | event: Event |
 
 ### Swipe 方法
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Swipe 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 | 版本 |
-|------|------|------|------|------|
-| swipeTo | 滚动到目标位置 | index: number, options: Options | void | - |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void | 2.2.14 |
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| prev `v2.4.2` | 切换到上一轮播 | - | - |
+| next `v2.4.2` | 切换到下一轮播 | - | - |
+| swipeTo | 切换到指定位置 | index: number, options: Options | void |
+| resize `v2.2.14` | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
 
 ### swipeTo Options 格式
 
@@ -177,10 +179,10 @@ export default {
 
 ### Swipe Slots
 
-| 名称 | 说明 | 版本 |
-|------|------|------|
-| default | 轮播内容 | - |
-| indicator | 自定义指示器 | - |
+| 名称 | 说明 |
+|------|------|
+| default | 轮播内容 |
+| indicator | 自定义指示器 |
 
 ## 常见问题
 

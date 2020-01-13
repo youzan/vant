@@ -10,6 +10,41 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.4.2-beta.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2-beta.2)
+`2020-01-10`
+
+**Feature**
+
+* Field: 新增 formatter 属性 [#5534](https://github.com/youzan/vant/issues/5534)
+* Swipe: 新增 prev、next 方法 [#5548](https://github.com/youzan/vant/issues/5548)
+
+**Bug Fixes**
+
+* Calendar: 修复选中的日期无法展示提示信息的问题 [#5536](https://github.com/youzan/vant/issues/5536)
+* PullRefresh:修复 head-height 属性未正确设置高度的问题 [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+
+
+
+### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
+`2020-01-09`
+
+**Feature**
+
+* Field: 新增 digit 类型 [#5524](https://github.com/youzan/vant/issues/5524)
+* Sku: 支持 properties 数据结构 [#5525](https://github.com/youzan/vant/issues/5525)
+* Calendar: 弹出时自动滚动到当前选中的日期 [#5526](https://github.com/youzan/vant/issues/5526)
+
+**Improvement**
+
+* CouponList: 优化样式细节 [#5501](https://github.com/youzan/vant/issues/5501)
+* AddressList: 优化样式细节 [#5507](https://github.com/youzan/vant/issues/5507)
+
+**Bug Fixes**
+
+* CouponList: 修复点击反馈区域错误的问题 [#5521](https://github.com/youzan/vant/issues/5521)
+* Tabs: 修复容器设置 fixed 布局时无法渲染底部条的问题 [#5496](https://github.com/youzan/vant/issues/5496)
+* Field: 修复 type 为 number 时在 iOS 上仍然能输入非数字字符的问题 [#5520](https://github.com/youzan/vant/issues/5520)
+
 
 ### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
 `2020-01-06`

@@ -156,3 +156,13 @@ test('render success slot', async () => {
   wrapper.setProps({ value: false });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should set height when using head-height', async () => {
+  const wrapper = mount(PullRefresh, {
+    propsData: {
+      headHeight: 100
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

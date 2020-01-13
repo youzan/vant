@@ -76,12 +76,20 @@ yarn add @vant/cli --dev
 
 ### release
 
-发布组件库，发布前会自动执行 build 命令
+发布组件库，发布前会自动执行 build 和 changelog 命令
 
 ### changelog
 
-基于 Github 的 Pull Request 生成更新日志，仅对 Github 仓库有效
+基于 commit 记录生成更新日志
 
 ### commit-lint
 
 校验 commit message 的格式是否符合规范，需要配合`husky`在提交 commit 时触发
+
+## 配置
+
+参见[配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
+
+## 更新日志
+
+参见[更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)。

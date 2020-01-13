@@ -105,3 +105,11 @@ exports[`render success text 2`] = `
   </div>
 </div>
 `;
+
+exports[`should set height when using head-height 1`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track" style="transition-duration: 0ms;">
+    <div class="van-pull-refresh__head" style="height: 100px;"></div>
+  </div>
+</div>
+`;

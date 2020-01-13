@@ -25,6 +25,11 @@
     left: 0;
     transition-property: transform;
 
+    img {
+      // disable desktop browser image drag
+      -webkit-user-drag: none;
+    }
+
     .van-image__loading {
       background-color: transparent;
     }

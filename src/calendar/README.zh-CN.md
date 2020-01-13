@@ -201,26 +201,26 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 是否显示日历弹窗 | *boolean* | `false` | - |
-| type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` | - |
-| title | 日历标题 | *string* | `日期选择` | - |
-| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` | - |
-| min-date | 最小日期 | *Date*  | 当前日期 | - |
-| max-date | 最大日期 | *Date*  | 当前日期的六个月后 | - |
-| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 | - |
-| row-height | 日期行高 | *number* | `64` | - |
-| formatter | 日期格式化函数 | *(day: Day) => Day* | - | - |
-| position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` | - |
-| poppable | 是否以弹层的形式展示日历 | *boolean* | `true` | - |
-| round | 是否显示圆角弹窗 | *boolean* | `true` | - |
-| show-mark | 是否显示月份背景水印 | *boolean* | `true` | - |
-| show-confirm | 是否展示确认按钮 | *boolean* | `true` | - |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
-| confirm-text | 确认按钮的文字 | *string* | `确定` | - |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 是否显示日历弹窗 | *boolean* | `false` |
+| type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` |
+| title | 日历标题 | *string* | `日期选择` |
+| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
+| min-date | 最小日期 | *Date*  | 当前日期 |
+| max-date | 最大日期 | *Date*  | 当前日期的六个月后 |
+| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 |
+| row-height | 日期行高 | *number* | `64` |
+| formatter | 日期格式化函数 | *(day: Day) => Day* | - |
+| position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
+| poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
+| round | 是否显示圆角弹窗 | *boolean* | `true` |
+| show-mark | 是否显示月份背景水印 | *boolean* | `true` |
+| show-confirm | 是否展示确认按钮 | *boolean* | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| confirm-text | 确认按钮的文字 | *string* | `确定` |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
 
 ### Day 数据结构
 

@@ -1,11 +1,14 @@
 {
   "name": "@vant/cli",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
     "vant-cli": "./lib/index.js"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "publishConfig": {
     "access": "public"
@@ -37,7 +40,7 @@
     "@types/signale": "^1.2.1",
     "@types/source-map": "^0.5.7",
     "@types/stylelint": "^9.10.1",
-    "@types/webpack": "^4.41.1",
+    "@types/webpack": "^4.41.2",
     "@types/webpack-dev-server": "^3.9.0",
     "@types/webpack-merge": "^4.1.5"
   },
@@ -58,7 +61,7 @@
     "@vant/stylelint-config": "^1.1.0",
     "@vant/touch-emulator": "^1.2.0",
     "@vue/babel-preset-jsx": "^1.1.2",
-    "@vue/component-compiler-utils": "^3.1.0",
+    "@vue/component-compiler-utils": "^3.1.1",
     "@vue/test-utils": "1.0.0-beta.29",
     "autoprefixer": "^9.7.3",
     "babel-jest": "^24.9.0",
@@ -68,15 +71,14 @@
     "chokidar": "^3.3.1",
     "clean-css": "^4.2.1",
     "codecov": "^3.6.1",
-    "commander": "^4.0.1",
+    "commander": "^4.1.0",
     "conventional-changelog": "^3.1.18",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
-    "find-babel-config": "^1.2.0",
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",
-    "husky": "^3.1.0",
+    "husky": "^4.0.4",
     "jest": "^24.9.0",
     "jest-canvas-mock": "^2.2.0",
     "jest-serializer-vue": "^2.0.2",
@@ -88,7 +90,7 @@
     "postcss": "^7.0.26",
     "postcss-loader": "^3.0.0",
     "release-it": "^12.4.3",
-    "sass": "^1.24.2",
+    "sass": "^1.24.4",
     "sass-loader": "^8.0.0",
     "shelljs": "^0.8.3",
     "signale": "^1.4.0",

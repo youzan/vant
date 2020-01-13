@@ -71,14 +71,14 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Identifier of SwipeCell | *string \| number* | - | 2.0.4 |
-| before-close | Callback function before close | *Function* | - | 2.3.0 |
-| disabled | Whether to disabled swipe | *boolean* | `false` | - |
-| left-width | Width of the left swipe area | *number* | `auto` | - |
-| right-width | Width of the right swipe area | *number* | `auto` | - |
-| stop-propagation | Whether to stop touchmove event propagation | *boolean* | `false` | 2.1.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| name `v2.0.4` | Identifier of SwipeCell | *string \| number* | - |
+| before-close `v2.3.0` | Callback function before close | *Function* | - |
+| disabled | Whether to disabled swipe | *boolean* | `false` |
+| left-width | Width of the left swipe area | *number* | `auto` |
+| right-width | Width of the right swipe area | *number* | `auto` |
+| stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
 
 ### Slots
 

@@ -54,8 +54,12 @@
 
     <demo-block :title="$t('customIconSize')">
       <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
-        <van-radio name="2" checked-color="#07c160" icon-size="25px">{{ $t('radio') }} 2</van-radio>
+        <van-radio name="1" checked-color="#07c160" icon-size="24px">
+          {{ $t('radio') }} 1
+        </van-radio>
+        <van-radio name="2" checked-color="#07c160" icon-size="24px">
+          {{ $t('radio') }} 2
+        </van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -86,7 +90,7 @@ export default {
       customColor: '自定义颜色',
       customShape: '自定义形状',
       withCell: '与 Cell 组件一起使用',
-      disabledLabelClick: '禁用单选框文本点击'
+      disabledLabelClick: '禁用文本点击'
     },
     'en-US': {
       radio: 'Radio',
@@ -121,7 +125,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-radio {
+  background: @white;
+
   &-group {
     padding: 0 17px;
 

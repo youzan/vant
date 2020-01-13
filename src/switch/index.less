@@ -10,6 +10,7 @@
   background-color: @switch-background-color;
   border: @switch-border;
   border-radius: @switch-node-size;
+  cursor: pointer;
   transition: background-color @switch-transition-duration;
 
   &__node {
@@ -42,6 +43,11 @@
   }
 
   &--disabled {
+    cursor: not-allowed;
     opacity: @switch-disabled-opacity;
+  }
+
+  &--loading {
+    cursor: default;
   }
 }

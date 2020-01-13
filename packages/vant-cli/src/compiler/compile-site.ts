@@ -13,7 +13,7 @@ function watch() {
 
   getPort(
     {
-      port: 8080
+      port: siteDevConfig.devServer!.port
     },
     (err, port) => {
       if (err) {

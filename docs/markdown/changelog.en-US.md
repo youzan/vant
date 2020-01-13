@@ -1,5 +1,40 @@
 # Changelog
 
+### [v2.4.2-beta.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2-beta.2)
+`2020-01-10`
+
+**Feature**
+
+* Field: add formatter prop [#5534](https://github.com/youzan/vant/issues/5534)
+* Swipe: add prev、next method [#5548](https://github.com/youzan/vant/issues/5548)
+
+**Bug Fixes**
+
+* Calendar: missing info when selected [#5536](https://github.com/youzan/vant/issues/5536)
+* PullRefresh: should set height when using head-height [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+
+
+### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
+`2020-01-09`
+
+**Feature**
+
+* Field: add digit type [#5524](https://github.com/youzan/vant/issues/5524)
+* Sku: add properties support [#5525](https://github.com/youzan/vant/issues/5525)
+* Calendar: scroll to current month when show [#5526](https://github.com/youzan/vant/issues/5526)
+
+**Bug Fixes**
+
+* CouponList: incorrect click feedback [#5521](https://github.com/youzan/vant/issues/5521)
+* Field: should limit number input in iOS [#5520](https://github.com/youzan/vant/issues/5520)
+* Tabs: can not render line when wrapper is fixed [#5496](https://github.com/youzan/vant/issues/5496)
+
+**Improvement**
+
+* CouponList: update style [#5501](https://github.com/youzan/vant/issues/5501)
+* AddressList: update style [#5507](https://github.com/youzan/vant/issues/5507)
+
+
 ### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
 `2020-01-06`
 

@@ -82,20 +82,20 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Check status of Switch | *any* | `false` | - |
-| loading | Whether to show loading icon | *boolean* | `false` | - |
-| disabled | Whether to disable switch | *boolean* | `false` | - |
-| size | Size of switch | *string \| number* | `30px` | 2.2.11 |
-| active-color | Background color when active | *string* | `#1989fa` | - |
-| inactive-color | Background color when inactive | *string* | `#fff` | - |
-| active-value | Value when active | *any* | `true` | - |
-| inactive-value | Value when inactive | *any* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Check status of Switch | *any* | `false` |
+| loading | Whether to show loading icon | *boolean* | `false` |
+| disabled | Whether to disable switch | *boolean* | `false` |
+| size `v2.2.11` | Size of switch | *string \| number* | `30px` |
+| active-color | Background color when active | *string* | `#1989fa` |
+| inactive-color | Background color when inactive | *string* | `#fff` |
+| active-value | Value when active | *any* | `true` |
+| inactive-value | Value when inactive | *any* | `false` |
 
 ### Events
 
-| Event | Description | Parameters | Version |
-|------|------|------|------|
-| change | Triggered when check status changed | checked: is switch checked | - |
-| click | Triggered when clicked | event: Event | 2.2.11 |
+| Event | Description | Parameters |
+|------|------|------|
+| change | Triggered when check status changed | checked: is switch checked |
+| click `v2.2.11` | Triggered when clicked | event: Event |

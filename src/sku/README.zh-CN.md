@@ -118,36 +118,36 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 是否显示sku | *boolean* | `false` | - |
-| sku | 商品sku数据 | *object* | - | - |
-| goods | 商品信息 | *object* | - | - |
-| goods-id | 商品 id | *string \| number* | - | - |
-| price-tag | 显示在价格后面的标签 | *string* | - | - |
-| hide-stock | 是否显示商品剩余库存 | *boolean* | `false` | - |
-| hide-quota-text | 是否显示限购提示 | *boolean* | `false` | - |
-| hide-selected-text | 是否隐藏已选提示 | *boolean* | `false` | - |
-| stock-threshold | 库存阈值。低于这个值会把库存数高亮显示 | *boolean* | `50` | - |
-| show-add-cart-btn | 是否显示加入购物车按钮 | *boolean* | `true` | - |
-| buy-text | 购买按钮文字 | *string* | `立即购买` | - |
-| add-cart-text | 加入购物车按钮文字 | *string* | `加入购物车` | - |
-| quota | 限购数，0 表示不限购 | *number* | `0` | - |
-| quota-used | 已经购买过的数量 | *number* | `0` | - |
-| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | *boolean* | `false` | - |
-| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | *boolean* | `false` | - |
-| disable-stepper-input | 是否禁用步进器输入 | *boolean* | `false` | - |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` | - |
-| stepper-title | 数量选择组件左侧文案 | *string* | `购买数量` | - |
-| custom-stepper-config | 步进器相关自定义配置 | *object* | `{}` | - |
-| message-config | 留言相关配置 | *object* | `{}` | - |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - | - |
-| initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` | - |
-| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` | 2.2.1 |
-| start-sale-num | 起售数量 | *number* | `1` | 2.3.0 |
-| properties | 商品属性 | *array* | - | 2.4.0 |
-| header-price | 显示外部传入价格 | *object* | - | 2.4.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 是否显示sku | *boolean* | `false` |
+| sku | 商品sku数据 | *object* | - |
+| goods | 商品信息 | *object* | - |
+| goods-id | 商品 id | *string \| number* | - |
+| price-tag | 显示在价格后面的标签 | *string* | - |
+| hide-stock | 是否显示商品剩余库存 | *boolean* | `false` |
+| hide-quota-text | 是否显示限购提示 | *boolean* | `false` |
+| hide-selected-text | 是否隐藏已选提示 | *boolean* | `false` |
+| stock-threshold | 库存阈值。低于这个值会把库存数高亮显示 | *boolean* | `50` |
+| show-add-cart-btn | 是否显示加入购物车按钮 | *boolean* | `true` |
+| buy-text | 购买按钮文字 | *string* | `立即购买` |
+| add-cart-text | 加入购物车按钮文字 | *string* | `加入购物车` |
+| quota | 限购数，0 表示不限购 | *number* | `0` |
+| quota-used | 已经购买过的数量 | *number* | `0` |
+| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | *boolean* | `false` |
+| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | *boolean* | `false` |
+| disable-stepper-input | 是否禁用步进器输入 | *boolean* | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` |
+| stepper-title | 数量选择组件左侧文案 | *string* | `购买数量` |
+| custom-stepper-config | 步进器相关自定义配置 | *object* | `{}` |
+| message-config | 留言相关配置 | *object* | `{}` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
+| initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` |
+| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
+| properties `2.4.0` | 商品属性 | *array* | - |
+| header-price `2.4.0` | 显示外部传入价格 | *object* | - |
 
 ### Events
 
@@ -165,10 +165,10 @@ export default {
 
 通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Sku 实例并调用实例方法
 
-| 方法名 | 说明 | 参数 | 返回值 | 版本 |
-|------|------|------|------|------|
-| getSkuData | 获取当前 skuData | - | skuData | - |
-| resetSelectedSku | 重置选中规格到初始状态 | - | - | 2.3.0 |
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| getSkuData | 获取当前 skuData | - | skuData |
+| resetSelectedSku `v2.3.0` | 重置选中规格到初始状态 | - | - |
 
 ### Slots
 

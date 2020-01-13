@@ -44,6 +44,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     'site-mobile': [join(__dirname, '../../site/mobile/main.js')]
   },
   devServer: {
+    port: 8080,
     quiet: true,
     host: '0.0.0.0',
     stats: 'errors-only',
@@ -57,7 +58,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     }
   },
   output: {
-    chunkFilename: 'async_[name].js'
+    chunkFilename: '[name].js'
   },
   optimization: {
     splitChunks: {
@@ -80,6 +81,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
+      description: siteConfig.description,
       chunks: ['chunks', 'site-desktop'],
       template: join(__dirname, '../../site/desktop/index.html'),
       filename: 'index.html',
@@ -88,6 +90,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     new HtmlWebpackPlugin({
       title,
       logo: siteConfig.logo,
+      description: siteConfig.description,
       chunks: ['chunks', 'site-mobile'],
       template: join(__dirname, '../../site/mobile/index.html'),
       filename: 'mobile.html',

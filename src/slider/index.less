@@ -4,6 +4,7 @@
   position: relative;
   background-color: @slider-inactive-background-color;
   border-radius: @border-radius-max;
+  cursor: pointer;
 
   // use pseudo element to expand click area
   &::before {
@@ -34,11 +35,17 @@
       top: 50%;
       right: 0;
       transform: translate3d(50%, -50%, 0);
+      cursor: grab;
     }
   }
 
   &--disabled {
+    cursor: not-allowed;
     opacity: @slider-disabled-opacity;
+
+    .van-slider__button-wrapper {
+      cursor: not-allowed;
+    }
   }
 
   &--vertical {

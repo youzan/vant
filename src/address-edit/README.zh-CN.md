@@ -62,25 +62,25 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| area-list | 地区列表 | *object* | - | - |
-| area-columns-placeholder | 地区选择列占位提示文字 | *string[]* | `[]` | 2.2.5 |
-| address-info | 收货人信息初始值 | *AddressInfo* | `{}` | - |
-| search-result | 详细地址搜索结果 | *SearchResult[]* | `[]` | - |
-| show-postal | 是否显示邮政编码 | *boolean* | `false` | - |
-| show-delete | 是否显示删除按钮 | *boolean* | `false` | - |
-| show-set-default | 是否显示默认地址栏 | *boolean* | `false` | - |
-| show-search-result | 是否显示搜索结果 | *boolean* | `false` | - |
-| save-button-text | 保存按钮文字 | *string* | `保存` | - |
-| delete-button-text | 删除按钮文字 | *string* | `删除` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| area-list | 地区列表 | *object* | - |
+| area-columns-placeholder `v2.2.5` | 地区选择列占位提示文字 | *string[]* | `[]` |
+| address-info | 收货人信息初始值 | *AddressInfo* | `{}` |
+| search-result | 详细地址搜索结果 | *SearchResult[]* | `[]` |
+| show-postal | 是否显示邮政编码 | *boolean* | `false` |
+| show-delete | 是否显示删除按钮 | *boolean* | `false` |
+| show-set-default | 是否显示默认地址栏 | *boolean* | `false` |
+| show-search-result | 是否显示搜索结果 | *boolean* | `false` |
+| save-button-text | 保存按钮文字 | *string* | `保存` |
+| delete-button-text | 删除按钮文字 | *string* | `删除` |
 | detail-rows | 详细地址输入框行数 | *number* | `1` |
-| detail-maxlength | 详细地址最大长度 | *number* | `200` | 2.0.4 |
-| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` | - |
-| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` | - |
-| tel-validator | 手机号格式校验函数 | *string => boolean* | - | - |
-| postal-validator | 邮政编码格式校验函数 | *string => boolean* | - | 2.1.2 |
-| validator | 自定义校验函数 | *(key, value) => string* | - | - |
+| detail-maxlength `v2.0.4` | 详细地址最大长度 | *number* | `200` |
+| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` |
+| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` |
+| tel-validator | 手机号格式校验函数 | *string => boolean* | - |
+| postal-validator `v2.1.2` | 邮政编码格式校验函数 | *string => boolean* | - |
+| validator | 自定义校验函数 | *(key, value) => string* | - |
 
 ### Events
 

@@ -55,20 +55,20 @@ Vue.use(Area);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| value | 当前选中的省市区`code` | *string* | - | - |
-| title | 顶部栏标题 | *string* | - | - |
-| area-list | 省市区数据，格式见下方 | *object* | - | - |
-| columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` | - |
-| columns-placeholder | 列占位提示文字 | *string[]* | `[]` | 2.2.5 |
-| loading | 是否显示加载状态 | *boolean* | `false` | - |
-| item-height | 选项高度 | *number* | `44` | - |
-| visible-item-count | 可见的选项个数 | *number* | `5` | - |
-| confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
-| cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
-| is-oversea-code | 根据`code`校验海外地址，海外地址会划分至单独的分类 | *() => boolean* | - | 2.1.4 |
-| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` | `2.2.13` |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| value | 当前选中的省市区`code` | *string* | - |
+| title | 顶部栏标题 | *string* | - |
+| area-list | 省市区数据，格式见下方 | *object* | - |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` |
+| columns-placeholder `v2.2.5` | 列占位提示文字 | *string[]* | `[]` |
+| loading | 是否显示加载状态 | *boolean* | `false` |
+| item-height | 选项高度 | *number* | `44` |
+| visible-item-count | 可见的选项个数 | *number* | `5` |
+| confirm-button-text | 确认按钮文字 | *string* | `确认` |
+| cancel-button-text | 取消按钮文字 | *string* | `取消` |
+| is-oversea-code `v2.1.4` | 根据`code`校验海外地址，海外地址会划分至单独的分类 | *() => boolean* | - |
+| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` |
 
 ### Events
 

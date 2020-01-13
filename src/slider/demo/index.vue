@@ -112,6 +112,7 @@ export default {
 @import '../../style/var';
 
 .demo-slider {
+  background: @white;
   user-select: none;
 
   .van-slider {

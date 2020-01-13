@@ -176,7 +176,7 @@ In scrollspy mode, the list of content will be tiled
 
 ```html
 <van-tabs v-model="active" scrollspy sticky>
-  <van-tab v-for="index in 10" :title="'tab ' + index">
+  <van-tab v-for="index in 8" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
 </van-tabs>
@@ -186,50 +186,50 @@ In scrollspy mode, the list of content will be tiled
 
 ### Tabs Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Index of active tab | *string \| number* | `0` | - |
-| type | Can be set to `line` `card` | *string* | `line` | - |
-| duration | Toggle tab's animation time | *number* | `0.3` | - | - |
-| background | Background color | *string* | `white` | - |
-| line-width | Width of tab line | *string \| number* | Width of active tab | - |
-| line-height | Height of tab line | *string \| number* | `3px` | - |
-| color | Tab color | *string* | `#ee0a24` | - |
-| title-active-color | Title active color | *string* | - | - |
-| title-inactive-color | Title inactive color | *string* | - | - |
-| swipe-threshold | Set swipe tabs threshold | *number* | `4` | - | - |
-| offset-top | Offset top when use sticky mode | *number* | `0` | - |
-| animated | Whether to change tabs with animation | *boolean* | `false` | - |
-| border | Whether to show border when `type="line"` | *boolean* | `true` | - |
-| ellipsis | Whether to ellipsis too long title | *boolean* | `true` | - |
-| sticky | Whether to use sticky mode | *boolean* | `false` | - |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | *boolean* | `false` | - |
-| lazy-render | Whether to enable tab content lazy render | *boolean* | `true` | - |
-| scrollspy | Whether to use scrollspy mode | *boolean* | `false` | 2.3.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Index of active tab | *string \| number* | `0` |
+| type | Can be set to `line` `card` | *string* | `line` |
+| color | Tab color | *string* | `#ee0a24` |
+| duration | Toggle tab's animation time | *number* | `0.3` | - |
+| background | Background color | *string* | `white` |
+| line-width | Width of tab line | *string \| number* | Width of active tab |
+| line-height | Height of tab line | *string \| number* | `3px` |
+| animated | Whether to change tabs with animation | *boolean* | `false` |
+| border | Whether to show border when `type="line"` | *boolean* | `true` |
+| ellipsis | Whether to ellipsis too long title | *boolean* | `true` |
+| sticky | Whether to use sticky mode | *boolean* | `false` |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | *boolean* | `false` |
+| lazy-render | Whether to enable tab content lazy render | *boolean* | `true` |
+| scrollspy `v2.3.0` | Whether to use scrollspy mode | *boolean* | `false` |
+| offset-top | Offset top when use sticky mode | *number* | `0` |
+| swipe-threshold | Set swipe tabs threshold | *number* | `4` | - |
+| title-active-color | Title active color | *string* | - |
+| title-inactive-color | Title inactive color | *string* | - |
 
 ### Tab Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Identifier | *string \| number* | Index of tab | - |
-| title | Title | *string* | - | - |
-| title-style | Custom title style | *any*  | - | 2.2.14 |
-| disabled | Whether to disable tab | *boolean* | `false` | - |
-| dot | Whether to show red dot on the title | *boolean* | `false` | 2.3.0 |
-| info | Content of the badge on the title | *string \| number* | - | 2.3.0 |
-| url | Link | *string* | - | 2.2.1 |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.2.1 |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.2.1 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| title | Title | *string* | - |
+| disabled | Whether to disable tab | *boolean* | `false` |
+| dot `v2.3.0` | Whether to show red dot on the title | *boolean* | `false` |
+| info `v2.3.0` | Content of the badge on the title | *string \| number* | - |
+| name `v2.0.6` | Identifier | *string \| number* | Index of tab |
+| url `v2.2.1` | Link | *string* | - |
+| to `v2.2.1` | Target route of the link, same as to of vue-router | *string \| object* | - |
+| replace `v2.2.1` | If true, the navigation will not leave a history record | *boolean* | `false` |
+| title-style `v2.2.14` | Custom title style | *any*  | - |
 
 ### Tabs Events
 
-| Event | Description | Arguments | Version |
-|------|------|------|------|
-| click | Triggered when click tab | name，title | - |
-| change | Triggered when active tab changed | name，title | - |
-| disabled | Triggered when click disabled tab | name，title | - |
-| rendered | Triggered when content first rendered in lazy-render mode | name，title | 2.3.0 |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } | - |
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when click tab | name，title |
+| change | Triggered when active tab changed | name，title |
+| disabled | Triggered when click disabled tab | name，title |
+| rendered `v2.3.0` | Triggered when content first rendered in lazy-render mode | name，title |
+| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods
 

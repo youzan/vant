@@ -13,6 +13,7 @@
     height: @pagination-height;
     color: @pagination-item-default-color;
     background-color: @pagination-background-color;
+    cursor: pointer;
     user-select: none;
 
     &:active {
@@ -28,13 +29,6 @@
       border-right-width: @border-width-base;
     }
 
-    &--disabled,
-    &--disabled:active {
-      color: @pagination-item-disabled-color;
-      background-color: @pagination-item-disabled-background-color;
-      opacity: @pagination-disabled-opacity;
-    }
-
     &--active {
       color: @white;
       background-color: @pagination-item-default-color;
@@ -44,6 +38,17 @@
   &__prev,
   &__next {
     padding: 0 @padding-base;
+    cursor: pointer;
+  }
+
+  &__item--disabled {
+    &,
+    &:active {
+      color: @pagination-item-disabled-color;
+      background-color: @pagination-item-disabled-background-color;
+      cursor: not-allowed;
+      opacity: @pagination-disabled-opacity;
+    }
   }
 
   &__page {

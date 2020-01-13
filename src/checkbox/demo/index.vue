@@ -32,7 +32,7 @@
     </demo-block>
 
     <demo-block :title="$t('customIconSize')">
-      <van-checkbox v-model="checboxIcon" icon-size="25px">
+      <van-checkbox v-model="checboxIcon" icon-size="24px">
         {{ $t('customIconSize') }}
       </van-checkbox>
     </demo-block>
@@ -110,7 +110,7 @@ export default {
       toggleAll: '全选与反选',
       checkAll: '全选',
       inverse: '反选',
-      disabledLabelClick: '禁用复选框文本点击'
+      disabledLabelClick: '禁用文本点击'
     },
     'en-US': {
       checkbox: 'Checkbox',
@@ -170,6 +170,8 @@ export default {
 @import "../../style/var";
 
 .demo-checkbox {
+  background: @white;
+
   .van-checkbox {
     margin: 10px 0 0 20px;
   }

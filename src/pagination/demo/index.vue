@@ -39,7 +39,7 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '简单模式',
-      title3: '',
+      title3: '显示省略号',
       prevText: '上一页',
       nextText: '下一页'
     },
