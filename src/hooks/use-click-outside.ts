@@ -1,5 +1,5 @@
-import { Ref, onMounted } from 'vue';
-import { useHandler } from './use-handler';
+import { Ref } from 'vue';
+import { useGlobalEvent } from './use-global-event';
 
 export type UseClickOutsideOpitons = {
   event: string;
@@ -17,7 +17,5 @@ export function useClickOutside(options: UseClickOutsideOpitons) {
     }
   }
 
-  onMounted(() => {
-    useHandler(document, event, onClick, false, flag);
-  });
+  useGlobalEvent(document, event, onClick, false, flag);
 }

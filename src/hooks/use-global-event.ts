@@ -8,7 +8,7 @@ import {
   onDeactivated
 } from 'vue';
 
-export function useHandler(
+export function useGlobalEvent(
   target: EventTarget,
   event: string,
   handler: EventListener,
