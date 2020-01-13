@@ -4,7 +4,7 @@ type ScrollElement = HTMLElement | Window;
 // http://w3help.org/zh-cn/causes/SD9013
 // http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
 const overflowScrollReg = /scroll|auto/i;
-export function getScrollEventTarget(element: HTMLElement, rootParent: ScrollElement = window) {
+export function getScroller(element: HTMLElement, rootParent: ScrollElement = window) {
   let node = element;
   while (
     node &&

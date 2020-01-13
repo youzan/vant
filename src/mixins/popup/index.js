@@ -4,7 +4,7 @@ import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
 import { on, off, preventDefault } from '../../utils/dom/event';
 import { openOverlay, closeOverlay, updateOverlay } from './overlay';
-import { getScrollEventTarget } from '../../utils/dom/scroll';
+import { getScroller } from '../../utils/dom/scroll';
 
 export const popupMixinProps = {
   // whether to show popup
@@ -152,7 +152,7 @@ export function PopupMixin(options = {}) {
       onTouchMove(event) {
         this.touchMove(event);
         const direction = this.deltaY > 0 ? '10' : '01';
-        const el = getScrollEventTarget(event.target, this.$el);
+        const el = getScroller(event.target, this.$el);
         const { scrollHeight, offsetHeight, scrollTop } = el;
         let status = '11';
 

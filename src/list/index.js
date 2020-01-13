@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
 import { BindEventMixin } from '../mixins/bind-event';
-import { getScrollEventTarget } from '../utils/dom/scroll';
+import { getScroller } from '../utils/dom/scroll';
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('list');
@@ -10,7 +10,7 @@ export default createComponent({
   mixins: [
     BindEventMixin(function(bind) {
       if (!this.scroller) {
-        this.scroller = getScrollEventTarget(this.$el);
+        this.scroller = getScroller(this.$el);
       }
 
       bind(this.scroller, 'scroll', this.check);
