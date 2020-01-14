@@ -63,6 +63,7 @@
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/component-compiler-utils": "^3.1.1",
     "@vue/test-utils": "1.0.0-beta.29",
+    "address": "^1.1.2",
     "autoprefixer": "^9.7.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",

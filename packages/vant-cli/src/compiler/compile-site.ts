@@ -1,3 +1,5 @@
+import chalk from 'chalk';
+import address from 'address';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { get } from 'lodash';
@@ -5,12 +7,33 @@ import { getPort } from 'portfinder';
 import { siteDevConfig } from '../config/webpack.site.dev';
 import { sitePrdConfig } from '../config/webpack.site.prd';
 
-function watch() {
+function logServerInfo(port: number) {
+  const local = `http://localhost:${port}/`;
+  const network = `http://${address.ip()}:${port}/`;
+
+  console.log('\n  Site running at:\n');
+  console.log(`  ${chalk.bold('Local')}:    ${chalk.cyan.bold(local)} `);
+  console.log(`  ${chalk.bold('Network')}:  ${chalk.cyan.bold(network)}`);
+}
+
+function runDevServer(port: number) {
   const server = new WebpackDevServer(
     webpack(siteDevConfig),
     siteDevConfig.devServer
   );
 
+  // this is a hack to disable wds status log
+  (server as any).showStatus = function() {};
+
+  const host = get(siteDevConfig.devServer, 'host', 'localhost');
+  server.listen(port, host, (err?: Error) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
+
+function watch() {
   getPort(
     {
       port: siteDevConfig.devServer!.port
@@ -21,12 +44,8 @@ function watch() {
         return;
       }
 
-      const host = get(siteDevConfig.devServer, 'host', 'localhost');
-      server.listen(port, host, (err?: Error) => {
-        if (err) {
-          console.log(err);
-        }
-      });
+      logServerInfo(port);
+      runDevServer(port);
     }
   );
 }
