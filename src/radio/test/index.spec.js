@@ -1,10 +1,4 @@
-import Vue from 'vue';
-import Radio from '..';
-import RadioGroup from '../../radio-group';
 import { mount } from '../../../test';
-
-Vue.use(Radio);
-Vue.use(RadioGroup);
 
 test('radio-group change', () => {
   const wrapper = mount({

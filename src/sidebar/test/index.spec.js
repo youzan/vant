@@ -1,10 +1,5 @@
 import { mount } from '../../../test';
-import Vue from 'vue';
 import Sidebar from '..';
-import SidebarItem from '../../sidebar-item';
-
-Vue.use(Sidebar);
-Vue.use(SidebarItem);
 
 test('click event & change event', () => {
   const onClick = jest.fn();

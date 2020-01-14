@@ -1,10 +1,4 @@
-import Vue from 'vue';
-import Grid from '..';
-import GridItem from '../../grid-item';
 import { mount } from '../../../test';
-
-Vue.use(Grid);
-Vue.use(GridItem);
 
 test('click grid item', () => {
   const onClick = jest.fn();

@@ -2,10 +2,7 @@ import VueRouter from 'vue-router';
 import { mount, later } from '../../../test';
 import Vue from 'vue';
 import Tabbar from '..';
-import TabbarItem from '../../tabbar-item';
 
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
 Vue.use(VueRouter);
 
 test('route mode', async () => {

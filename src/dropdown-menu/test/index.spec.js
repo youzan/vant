@@ -1,10 +1,4 @@
 import { mount, later } from '../../../test';
-import Vue from 'vue';
-import DropdownMenu from '..';
-import DropdownItem from '../../dropdown-item';
-
-Vue.use(DropdownMenu);
-Vue.use(DropdownItem);
 
 function renderWrapper(options = {}) {
   return mount({

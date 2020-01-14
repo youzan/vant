@@ -1,8 +1,5 @@
-import Vue from 'vue';
 import CountDown from '..';
 import { mount, later } from '../../../test';
-
-Vue.use(CountDown);
 
 test('macro task finish event', async () => {
   const wrapper = mount(CountDown, {

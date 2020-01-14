@@ -1,10 +1,4 @@
-import Vue from 'vue';
-import Swipe from '..';
-import SwipeItem from '../../swipe-item';
 import { mount, triggerDrag, later } from '../../../test';
-
-Vue.use(Swipe);
-Vue.use(SwipeItem);
 
 const Component = {
   template: `

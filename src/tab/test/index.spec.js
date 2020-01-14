@@ -1,10 +1,5 @@
-import Vue from 'vue';
-import Tab from '..';
 import Tabs from '../../tabs';
 import { mount, later, triggerDrag, mockScrollTop } from '../../../test';
-
-Vue.use(Tab);
-Vue.use(Tabs);
 
 function createWrapper(options = {}) {
   return mount({

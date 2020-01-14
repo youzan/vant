@@ -1,10 +1,4 @@
-import Vue from 'vue';
-import IndexBar from '..';
-import IndexAnchor from '../../index-anchor';
 import { mount, trigger, triggerDrag } from '../../../test';
-
-Vue.use(IndexBar);
-Vue.use(IndexAnchor);
 
 function mockScrollIntoView() {
   const fn = jest.fn();

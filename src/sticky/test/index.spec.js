@@ -1,8 +1,4 @@
 import { mount, mockScrollTop } from '../../../test';
-import Vue from 'vue';
-import Sticky from '..';
-
-Vue.use(Sticky);
 
 test('sticky to top', () => {
   const wrapper = mount({
