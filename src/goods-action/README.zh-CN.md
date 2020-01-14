@@ -56,9 +56,23 @@ export default {
 </van-goods-action>
 ```
 
+### 自定义图标颜色
+
+通过 GoodsActionIcon 的`color`属性可以自定义图标的颜色
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" color="#07c160" />
+  <van-goods-action-icon icon="cart-o" text="购物车" />
+  <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
+  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
+```
+
 ### 自定义按钮颜色
 
-通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+通过 GoodsActionButton 的`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
 
 ```html
 <van-goods-action>
@@ -83,6 +97,7 @@ export default {
 |------|------|------|------|
 | text | 按钮文字 | *string* | - |
 | icon | 图标 | *string* | - |
+| color `v2.4.2` | 图标颜色 | *string* | `#323233` |
 | icon-class | 图标额外类名 | *any* | - |
 | info | 图标右上角徽标的内容 | *string \| number* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
