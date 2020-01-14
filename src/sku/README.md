@@ -143,7 +143,6 @@ export default {
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
 | properties `2.4.0` | Goods properties | *array* | - |
-| header-price `2.4.0` | Control the price | *object* | - |
 
 ### Events
 
@@ -274,15 +273,6 @@ sku: {
       ],
     }
   ]
-```
-
-### headerPrice Data Structure
-
-```javascript
-{
-  price: '1.00',
-  origin_price: '2.00'
-}
 ```
 
 ### initialSku Data Structure

@@ -147,7 +147,6 @@ export default {
 | safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `2.4.0` | 商品属性 | *array* | - |
-| header-price `2.4.0` | 显示外部传入价格 | *object* | - |
 
 ### Events
 
@@ -265,15 +264,6 @@ sku: {
       ],
     }
   ]
-```
-
-### headerPrice 对象结构
-
-```javascript
-{
-  price: '1.00',
-  origin_price: '2.00'
-}
 ```
 
 ### initialSku 对象结构

@@ -39,7 +39,6 @@ export default createComponent({
     safeAreaInsetBottom: Boolean,
     resetSelectedSkuOnHide: Boolean,
     properties: Array,
-    headerPrice: Object,
     quota: {
       type: Number,
       default: 0
@@ -203,9 +202,6 @@ export default createComponent({
     },
 
     price() {
-      if (this.headerPrice) {
-        return this.headerPrice.price;
-      }
       if (this.selectedSkuComb) {
         return ((this.selectedSkuComb.price + this.selectedSkuComb.property_price) / 100).toFixed(2);
       }
@@ -214,9 +210,6 @@ export default createComponent({
     },
 
     originPrice() {
-      if (this.headerPrice) {
-        return this.headerPrice.origin_price;
-      }
       if (this.selectedSkuComb && this.selectedSkuComb.origin_price) {
         return ((this.selectedSkuComb.origin_price + this.selectedSkuComb.property_price) / 100).toFixed(2);
       }
