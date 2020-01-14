@@ -120,7 +120,7 @@ export default {
 | description `v2.2.8` | Description above the options | *string* | - |
 | overlay | Whether to show overlay | *boolean* | `true` |
 | round `v2.0.9` | Whether to show round corner | *boolean* | `true` |
-| close-icon `v2.2.13` | Close icon name | *string* | `close` |
+| close-icon `v2.2.13` | Close icon name | *string* | `cross` |
 | close-on-click-action | Whether to close when click action | *boolean* | `false` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` |
