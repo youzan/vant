@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { ROOT } from '../common/constant';
-import { logger } from '../common/logger';
+import { logger, simplifyPath } from '../common/logger';
 import { createWriteStream, readFileSync } from 'fs-extra';
 // @ts-ignore
 import conventionalChangelog from 'conventional-changelog';
@@ -66,7 +66,7 @@ export async function changelog() {
     )
       .pipe(createWriteStream(DIST_FILE))
       .on('close', () => {
-        logger.success(`Generated changelog at ${DIST_FILE}`);
+        logger.success(`Changelog generated successfully at ${simplifyPath(DIST_FILE)}`);
         resolve();
       });
   });

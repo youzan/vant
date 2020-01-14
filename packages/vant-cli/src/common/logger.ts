@@ -1,4 +1,6 @@
+import chalk from 'chalk';
 import logger from 'signale';
+import { ROOT } from '../common/constant';
 
 logger.config({
   displayTimestamp: true
@@ -31,6 +33,10 @@ export function getInteractiveLogger() {
   });
 
   return interactive;
+}
+
+export function simplifyPath(path: string) {
+  return chalk.yellow(path.replace(ROOT, '.'));
 }
 
 export { logger };
