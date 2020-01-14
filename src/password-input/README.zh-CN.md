@@ -78,6 +78,54 @@ export default {
 />
 ```
 
+### 错误提示
+
+通过`error-info`属性可以设置错误提示信息，例如当输入六位时提示密码错误
+
+```html
+<!-- 密码输入框 -->
+<van-password-input
+  :value="value"
+  :error-info="errorInfo"
+  :focused="showKeyboard"
+  @focus="showKeyboard = true"
+/>
+
+<!-- 数字键盘 -->
+<van-number-keyboard
+  :show="showKeyboard"
+  @input="onInput"
+  @delete="onDelete"
+  @blur="showKeyboard = false"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: '123',
+      showKeyboard: true,
+      errorInfo: ''
+    };
+  },
+
+  methods: {
+    onInput(key) {
+      this.value = (this.value + key).slice(0, 6);
+      if (this.value.length === 6) {
+        this.errorInfo = '密码错误';
+      } else {
+        this.errorInfo = '';
+      }
+    },
+    onDelete() {
+      this.value = this.value.slice(0, this.value.length - 1);
+    }
+  }
+}
+```
+
 ## API
 
 ### Props

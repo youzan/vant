@@ -214,6 +214,19 @@ export default {
 />
 ```
 
+### 输入框内容对齐
+
+通过`input-align`属性可以设置输入框内容的对齐方式
+
+```html
+<van-field
+  v-model="value"
+  :label="文本"
+  :placeholder="输入框内容右对齐"
+  input-align="right"
+/>
+```
+
 ## API
 
 ### Props

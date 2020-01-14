@@ -78,6 +78,53 @@ export default {
 />
 ```
 
+### Hint Error
+
+Use `error-info` prop to set error message. For example, a password error is prompted when entering 6 bits
+
+```html
+<!-- PasswordInput -->
+<van-password-input
+  :value="value"
+  :error-info="errorInfo"
+  :focused="showKeyboard"
+  @focus="showKeyboard = true"
+/>
+
+<!-- NumberKeyboard -->
+<van-number-keyboard
+  :show="showKeyboard"
+  @input="onInput"
+  @delete="onDelete"
+  @blur="showKeyboard = false"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: '123',
+      showKeyboard: true,
+      errorInfo: ''
+    };
+  },
+
+  methods: {
+    onInput(key) {
+      this.value = (this.value + key).slice(0, 6);
+      if (this.value.length === 6) {
+        this.errorInfo = 'Password Mistake';
+      } else {
+        this.errorInfo = '';
+      }
+    },
+    onDelete() {
+      this.value = this.value.slice(0, this.value.length - 1);
+    }
+  }
+}
+```
 ## API
 
 ### Props
