@@ -376,9 +376,16 @@ skuData: {
     stock_num: 111,
     properties: [
       {
-        id: 1223,
-        name: '椰果',
-        price: 1,
+        k_id: 123,
+        k: '加料',
+        is_multiple: true,
+        v: [
+          {
+            id: 1223,
+            name: '椰果',
+            price: 1
+          }
+        ]
       }
     ],
     property_price: 1

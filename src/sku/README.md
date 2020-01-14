@@ -375,9 +375,16 @@ skuData: {
     stock_num: 111,
     properties: [
       {
-        id: 1223,
-        name: 'Water',
-        price: 1,
+        k_id: 123,
+        k: 'More',
+        is_multiple: true,
+        v: [
+          {
+            id: 1223,
+            name: 'Water',
+            price: 1
+          }
+        ]
       }
     ],
     property_price: 1
