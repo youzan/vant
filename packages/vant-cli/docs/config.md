@@ -1,4 +1,23 @@
-# 配置
+# 配置指南
+
+- [配置指南](#)
+  - [vant.config.js](#vantconfigjs)
+    - [name](#name)
+    - [build.css](#buildcss)
+    - [build.site](#buildsite)
+    - [site.title](#sitetitle)
+    - [site.logo](#sitelogo)
+    - [site.description](#sitedescription)
+    - [site.nav](#sitenav)
+    - [site.versions](#siteversions)
+    - [site.baiduAnalytics](#sitebaiduanalytics)
+  - [Webpack](#webpack)
+  - [Babel](#babel)
+    - [默认配置](#-1)
+    - [依赖](#-2)
+  - [Postcss](#postcss)
+    - [默认配置](#-3)
+  - [browserslist](#browserslist)
 
 ## vant.config.js
 
@@ -178,4 +197,92 @@ module.exports = {
     }
   }
 };
+```
+
+## Webpack
+
+通过根目录下的`webpack.config.js`文件可以修改 Webpack 配置，配置内容会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。
+
+比如修改 devServer 端口：
+
+```js
+module.exports = {
+  devServer: {
+    port: 9000
+  }
+};
+```
+
+## Babel
+
+通过根目录下的`babel.config.js`文件可以对 Babel 进行配置。
+
+### 默认配置
+
+推荐使用`vant-cli`内置的 preset，配置如下：
+
+```js
+module.exports = {
+  presets: ['@vant/cli/preset']
+};
+```
+
+`@vant/cli/preset`中默认包含了以下插件：
+
+- @babel/preset-env（不含 core-js）
+- @babel/preset-typescript
+- @babel/plugin-transform-runtime
+- @babel/plugin-transform-object-assign
+- @babel/plugin-proposal-optional-chaining
+- @babel/plugin-proposal-nullish-coalescing-operator
+- @vue/babel-preset-jsx
+
+### 依赖
+
+由于使用了`@babel/plugin-transform-runtime`来优化 Babel 的 helper 函数，你需要将`@babel/runtime`添加到`package.json`的依赖项：
+
+```json
+{
+  "dependencies": {
+    "@babel/runtime": "7.x"
+  }
+}
+```
+
+如果使用了 JSX 的语法，还需要将`@vue/babel-helper-vue-jsx-merge-props`添加到依赖中：
+
+```json
+{
+  "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0"
+  }
+}
+```
+
+## Postcss
+
+通过根目录下的`postcss.config.js`文件可以对 Postcss 进行配置。
+
+### 默认配置
+
+`vant-cli`中默认的 Postcss 配置如下：
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {}
+  }
+};
+```
+
+## browserslist
+
+推荐在`package.json`文件里添加 browserslist 字段，这个值会被`@babel/preset-env`和`autoprefixer`用来确定目标浏览器的版本，保证编译后代码的兼容性。
+
+在移动端浏览器中使用，可以添加如下配置：
+
+```json
+{
+  "browserslist": ["Android >= 4.0", "iOS >= 8"]
+}
 ```

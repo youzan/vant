@@ -44,6 +44,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
     'site-mobile': [join(__dirname, '../../site/mobile/main.js')]
   },
   devServer: {
+    port: 8080,
     quiet: true,
     host: '0.0.0.0',
     stats: 'errors-only',

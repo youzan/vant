@@ -145,6 +145,17 @@
         />
       </van-cell-group>
     </demo-block>
+
+    <demo-block :title="$t('inputAlign')">
+      <van-cell-group>
+        <van-field
+          v-model="value"
+          :label="$t('text')"
+          :placeholder="$t('alignPlaceHolder')"
+          input-align="right"
+        />
+      </van-cell-group>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -171,13 +182,15 @@ export default {
       showWordLimit: '显示字数统计',
       inputReadonly: '输入框只读',
       inputDisabled: '输入框已禁用',
+      inputAlign: '输入框内容对齐',
       smsPlaceholder: '请输入短信验证码',
       textPlaceholder: '请输入文本',
       digitPlaceholder: '请输入整数',
       phonePlaceholder: '请输入手机号',
       textareaAutosize: '高度自适应',
       numberPlaceholder: '请输入数字（支持小数）',
-      messagePlaceholder: '请输入留言'
+      messagePlaceholder: '请输入留言',
+      alignPlaceHolder: '输入框内容右对齐',
     },
     'en-US': {
       tel: 'Tel',
@@ -199,13 +212,15 @@ export default {
       showWordLimit: 'Show Word Limit',
       inputReadonly: 'Input Readonly',
       inputDisabled: 'Input Disabled',
+      inputAlign: 'Input Align',
       smsPlaceholder: 'SMS',
       textPlaceholder: 'Text',
       digitPlaceholder: 'Digit',
       phonePlaceholder: 'Phone',
       textareaAutosize: 'Auto Resize',
       numberPlaceholder: 'Number',
-      messagePlaceholder: 'Message'
+      messagePlaceholder: 'Message',
+      alignPlaceHolder: 'Input Align Right',
     }
   },
 

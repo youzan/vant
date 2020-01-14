@@ -42,5 +42,17 @@ exports[`renders demo correctly 1`] = `
       </ul>
     </div>
   </div>
+  <div>
+    <div class="van-password-input">
+      <ul class="van-password-input__security van-hairline--surround">
+        <li class=""><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+      </ul>
+    </div>
+  </div>
 </div>
 `;

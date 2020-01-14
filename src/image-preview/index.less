@@ -25,8 +25,24 @@
     left: 0;
     transition-property: transform;
 
-    .van-image__loading {
-      background-color: transparent;
+    img {
+      // disable desktop browser image drag
+      -webkit-user-drag: none;
+    }
+
+    .van-image {
+      &__error {
+        top: 30%;
+        height: 40%;
+      }
+
+      &__error-icon {
+        font-size: 36px;
+      }
+
+      &__loading {
+        background-color: transparent;
+      }
     }
   }
 

@@ -10,7 +10,7 @@ export default {
   telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
   nameInvalid: '请输入正确的姓名',
-  confirmDelete: '确定要删除么',
+  confirmDelete: '确定要删除吗',
   telInvalid: '请输入正确的手机号',
   vanCalendar: {
     end: '结束',
