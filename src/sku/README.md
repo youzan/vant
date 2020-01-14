@@ -142,6 +142,7 @@ export default {
 | get-container | Return the mount node for sku | *string \| () => Element* | - |
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
+| properties `2.4.0` | Goods properties | *array* | - |
 
 ### Events
 
@@ -151,6 +152,7 @@ export default {
 | buy-clicked | Triggered when click buy button | data: object |
 | stepper-change | Triggered when stepper value changed | value: number |
 | sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | Triggered when open image preview | data: object |
 | close-preview | Triggered when close image preview | data: object |
 
@@ -161,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku | Reset selected sku to initial sku | - | - | 2.3.0 |
+| resetSelectedSku `2.3.0` | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
@@ -226,8 +228,51 @@ sku: {
       placeholder: ''
     }
   ],
-  hide_stock: false
+  hide_stock: false,
+  properties: [
+    {
+      k_id: 123,
+      k: 'More',
+      is_multiple: true,
+      v: [
+        {
+          id: 1222,
+          name: 'Tea',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: 'Water',
+          price: 1,
+        }
+      ],
+    }
+  ]
 }
+```
+
+### properties Data Structure
+
+```javascript
+  [
+    {
+      k_id: 123,
+      k: 'More',
+      is_multiple: true,
+      v: [
+        {
+          id: 1222,
+          name: 'Tea',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: 'Water',
+          price: 1,
+        }
+      ],
+    }
+  ]
 ```
 
 ### initialSku Data Structure
@@ -238,7 +283,10 @@ sku: {
   // Value：skuValueId
   s1: '30349',
   s2: '1193',
-  selectedNum: 3
+  selectedNum: 3,
+  selectedProp: {
+    123: [1222]
+  }
 }
 ```
 
@@ -324,7 +372,22 @@ skuData: {
     s1: '30349',
     s2: '1193',
     s3: '0',
-    stock_num: 111
+    stock_num: 111,
+    properties: [
+      {
+        k_id: 123,
+        k: 'More',
+        is_multiple: true,
+        v: [
+          {
+            id: 1223,
+            name: 'Water',
+            price: 1
+          }
+        ]
+      }
+    ],
+    property_price: 1
   }
 }
 ```

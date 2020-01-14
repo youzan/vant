@@ -120,10 +120,31 @@ export const getSelectedPropValues = (propList, selectedProp) => {
   const normalizeProp = normalizePropList(propList);
   return Object.keys(selectedProp).reduce((acc, cur) => {
     selectedProp[cur].forEach(it => {
-      acc.push(normalizeProp[cur][it]);
+      acc.push({
+        ...normalizeProp[cur][it],
+      });
     });
     return acc;
   }, []);
+};
+
+export const getSelectedProperties = (propList, selectedProp) => {
+  const list = [];
+  (propList || []).forEach(prop => {
+    if (selectedProp[prop.k_id] && selectedProp[prop.k_id].length > 0) {
+      const v = [];
+      prop.v.forEach(it => {
+        if (selectedProp[prop.k_id].indexOf(it.id) > -1) {
+          v.push({ ...it });
+        }
+      });
+      list.push({
+        ...prop,
+        v,
+      });
+    }
+  });
+  return list;
 };
 
 export default {
@@ -133,4 +154,5 @@ export default {
   isAllSelected,
   isSkuChoosable,
   getSelectedPropValues,
+  getSelectedProperties,
 };

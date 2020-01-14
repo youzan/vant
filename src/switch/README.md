@@ -78,6 +78,14 @@ export default {
 };  
 ```
 
+### Inside a Cell
+
+```html
+<van-cell center title="Title">
+  <van-switch v-model="checked" slot="right-icon" size="24" />
+</van-cell>
+```
+
 ## API
 
 ### Props

@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_TOP, BORDER_BOTTOM } from '../utils/constant';
+import { BORDER_TOP } from '../utils/constant';
 import { popupMixinProps } from '../mixins/popup';
 import Icon from '../icon';
 import Popup from '../popup';
@@ -51,7 +51,7 @@ function ActionSheet(
   function Header() {
     if (title) {
       return (
-        <div class={[bem('header'), BORDER_BOTTOM]}>
+        <div class={bem('header')}>
           {title}
           <Icon
             name={props.closeIcon}
@@ -166,7 +166,7 @@ ActionSheet.props = {
   },
   closeIcon: {
     type: String,
-    default: 'close'
+    default: 'cross'
   },
   safeAreaInsetBottom: {
     type: Boolean,
