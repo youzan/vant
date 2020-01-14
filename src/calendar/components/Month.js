@@ -80,6 +80,10 @@ export default createComponent({
   },
 
   methods: {
+    scrollIntoView() {
+      this.$refs.days.scrollIntoView();
+    },
+
     getDayType(day) {
       const { type, minDate, maxDate, currentDate } = this;
 
@@ -166,12 +170,14 @@ export default createComponent({
     genDays() {
       if (this.visible) {
         return (
-          <div class={bem('days')}>
+          <div ref="days" class={bem('days')}>
             {this.genMark()}
             {this.days.map(this.genDay)}
           </div>
         );
       }
+
+      return <div ref="days" />;
     },
 
     genDay(item, index) {
