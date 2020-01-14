@@ -48,7 +48,7 @@ test('swipeTo method', async () => {
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
 
-  await later(50);
+  await later(100);
   expect(swipe.active).toEqual(2);
 });
 
