@@ -10,11 +10,21 @@
       </van-goods-action>
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="$t('iconInfo')">
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" :text="$t('icon1')" />
         <van-goods-action-icon icon="cart-o" info="5" :text="$t('icon2')" />
         <van-goods-action-icon icon="shop-o" info="12" :text="$t('icon3')" />
+        <van-goods-action-button type="warning" :text="$t('button1')" />
+        <van-goods-action-button type="danger" :text="$t('button2')" />
+      </van-goods-action>
+    </demo-block>
+
+    <demo-block v-if="!isWeapp" :title="$t('customIconColor')">
+      <van-goods-action>
+        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" color="#07c160" />
+        <van-goods-action-icon icon="cart-o" :text="$t('icon2')" />
+        <van-goods-action-icon icon="star" :text="$t('collected')" color="#ff5000" />
         <van-goods-action-button type="warning" :text="$t('button1')" />
         <van-goods-action-button type="danger" :text="$t('button2')" />
       </van-goods-action>
@@ -35,25 +45,29 @@
 export default {
   i18n: {
     'zh-CN': {
-      clickIcon: '点击图标',
-      clickButton: '点击按钮',
       icon1: '客服',
       icon2: '购物车',
       icon3: '店铺',
       button1: '加入购物车',
       button2: '立即购买',
-      title2: '徽标提示',
+      iconInfo: '徽标提示',
+      collected: '已收藏',
+      clickIcon: '点击图标',
+      clickButton: '点击按钮',
+      customIconColor: '自定义图标颜色',
       customButtonColor: '自定义按钮颜色'
     },
     'en-US': {
-      clickIcon: 'Click Icon',
-      clickButton: 'Click Button',
       icon1: 'Icon1',
       icon2: 'Icon2',
       icon3: 'Icon3',
       button1: 'Button1',
       button2: 'Button2',
-      title2: 'Icon info',
+      iconInfo: 'Icon info',
+      collected: 'Collected',
+      clickIcon: 'Click Icon',
+      clickButton: 'Click Button',
+      customIconColor: 'Custom Icon Color',
       customButtonColor: 'Custom Button Color'
     }
   },
