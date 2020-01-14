@@ -158,7 +158,7 @@ export default createComponent({
 
         this.months.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
-            this.$refs.months[index].$el.scrollIntoView();
+            this.$refs.months[index].scrollIntoView();
             return true;
           }
 
