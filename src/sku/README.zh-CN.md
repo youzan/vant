@@ -146,6 +146,7 @@ export default {
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
 | safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
+| properties `2.4.0` | 商品属性 | *array* | - |
 
 ### Events
 
@@ -155,6 +156,7 @@ export default {
 | buy-clicked | 点击购买回调 | skuData: object |
 | stepper-change | 购买数量变化时触发 | value: number |
 | sku-selected | 切换规格类目时触发 | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | 切换商品属性时触发 | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | 打开商品图片预览时触发 | data: object |
 | close-preview | 关闭商品图片预览时触发 | data: object |
 
@@ -240,6 +242,30 @@ sku: {
 }
 ```
 
+### properties 对象结构
+
+```javascript
+  [ // 商品属性
+    {
+      k_id: 123, // 属性id
+      k: '加料', // 属性名
+      is_multiple: true, // 是否可多选
+      v: [
+        {
+          id: 1222, // 属性值id
+          name: '珍珠', // 属性值名
+          price: 1, // 属性值加价
+        },
+        {
+          id: 1223,
+          name: '椰果',
+          price: 1,
+        }
+      ],
+    }
+  ]
+```
+
 ### initialSku 对象结构
 
 ```javascript
@@ -249,7 +275,13 @@ sku: {
   s1: '30349',
   s2: '1193',
   // 初始选中数量
-  selectedNum: 3
+  selectedNum: 3,
+  // 初始选中的商品属性
+  // 键：属性id
+  // 值：属性值id列表
+  selectedProp: {
+    123: [1222]
+  }
 }
 ```
 
@@ -341,7 +373,22 @@ skuData: {
     s1: '30349',
     s2: '1193',
     s3: '0',
-    stock_num: 111
-  }
+    stock_num: 111,
+    properties: [
+      {
+        k_id: 123,
+        k: '加料',
+        is_multiple: true,
+        v: [
+          {
+            id: 1223,
+            name: '椰果',
+            price: 1
+          }
+        ]
+      }
+    ],
+    property_price: 1
+  },
 }
 ```
