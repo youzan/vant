@@ -44,8 +44,6 @@ const images = [
   'https://img.yzcdn.cn/vant/apple-4.jpg'
 ];
 
-const errorImage = ['xxx', 'xxx'];
-
 export default {
   i18n: {
     'zh-CN': {
@@ -70,12 +68,6 @@ export default {
       images,
       index: 0
     };
-  },
-
-  mounted() {
-    ImagePreview({
-      images: errorImage
-    });
   },
 
   methods: {
