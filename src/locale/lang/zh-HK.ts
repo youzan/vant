@@ -10,7 +10,7 @@ export default {
   telEmpty: '請填寫電話',
   nameEmpty: '請填寫姓名',
   nameInvalid: '請輸入正確的姓名',
-  confirmDelete: '確定要刪除麽',
+  confirmDelete: '確定要刪除嗎',
   telInvalid: '請填寫正確的電話',
   vanCalendar: {
     end: '結束',
