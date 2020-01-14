@@ -15,6 +15,7 @@
           :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           :custom-sku-validator="customSkuValidator"
+          :properties="skuData.properties"
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -46,6 +47,7 @@
           :start-sale-num="skuData.start_sale_num"
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
+          :properties="skuData.properties"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
@@ -76,6 +78,7 @@
           :custom-stepper-config="customStepperConfig"
           :message-config="messageConfig"
           :show-soldout-sku="false"
+          :properties="skuData.properties"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
@@ -103,6 +106,7 @@
           :quota="skuData.quota"
           :quota-used="skuData.quota_used"
           :start-sale-num="skuData.start_sale_num"
+          :properties="skuData.properties"
           show-add-cart-btn
           reset-stepper-on-hide
           safe-area-inset-bottom
