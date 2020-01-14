@@ -10,7 +10,7 @@ import {
   getElementTop,
   getRootScrollTop,
   setRootScrollTop,
-  getScrollEventTarget
+  getScroller
 } from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('index-bar');
@@ -21,7 +21,7 @@ export default createComponent({
     ParentMixin('vanIndexBar'),
     BindEventMixin(function(bind) {
       if (!this.scroller) {
-        this.scroller = getScrollEventTarget(this.$el);
+        this.scroller = getScroller(this.$el);
       }
 
       bind(this.scroller, 'scroll', this.onScroll);

@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
-import { getScrollTop, getScrollEventTarget } from '../utils/dom/scroll';
+import { getScrollTop, getScroller } from '../utils/dom/scroll';
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('pull-refresh');
@@ -76,7 +76,7 @@ export default createComponent({
 
   mounted() {
     this.bindTouchEvent(this.$refs.track);
-    this.scrollEl = getScrollEventTarget(this.$el);
+    this.scrollEl = getScroller(this.$el);
   },
 
   methods: {

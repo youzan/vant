@@ -1,6 +1,6 @@
 import { createNamespace, isDef } from '../utils';
 import { BindEventMixin } from '../mixins/bind-event';
-import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/dom/scroll';
+import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('sticky');
 
@@ -8,7 +8,7 @@ export default createComponent({
   mixins: [
     BindEventMixin(function(bind) {
       if (!this.scroller) {
-        this.scroller = getScrollEventTarget(this.$el);
+        this.scroller = getScroller(this.$el);
       }
 
       bind(this.scroller, 'scroll', this.onScroll, true);

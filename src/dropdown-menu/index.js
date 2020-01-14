@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
-import { getScrollEventTarget } from '../utils/dom/scroll';
+import { getScroller } from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
@@ -47,7 +47,7 @@ export default createComponent({
 
   computed: {
     scroller() {
-      return getScrollEventTarget(this.$el);
+      return getScroller(this.$el);
     }
   },
 
