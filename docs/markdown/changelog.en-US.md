@@ -1,52 +1,41 @@
 # Changelog
 
-### [v2.4.2-beta.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2-beta.2)
-`2020-01-10`
+### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
+`2020-01-14`
 
 **Feature**
 
+* Sku: add properties prop [#5525](https://github.com/youzan/vant/issues/5525)
+* Field: add digit type [#5524](https://github.com/youzan/vant/issues/5524)
+* Image: add error-icon prop [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: add loading-icon prop [#5469](https://github.com/youzan/vant/issues/5469)
 * Field: add formatter prop [#5534](https://github.com/youzan/vant/issues/5534)
 * Swipe: add prev、next method [#5548](https://github.com/youzan/vant/issues/5548)
-
-**Bug Fixes**
-
-* Calendar: missing info when selected [#5536](https://github.com/youzan/vant/issues/5536)
-* PullRefresh: should set height when using head-height [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
-
-
-### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
-`2020-01-09`
-
-**Feature**
-
-* Field: add digit type [#5524](https://github.com/youzan/vant/issues/5524)
-* Sku: add properties support [#5525](https://github.com/youzan/vant/issues/5525)
-* Calendar: scroll to current month when show [#5526](https://github.com/youzan/vant/issues/5526)
-
-**Bug Fixes**
-
-* CouponList: incorrect click feedback [#5521](https://github.com/youzan/vant/issues/5521)
-* Field: should limit number input in iOS [#5520](https://github.com/youzan/vant/issues/5520)
-* Tabs: can not render line when wrapper is fixed [#5496](https://github.com/youzan/vant/issues/5496)
+* GoodsAcitonIcon: add color prop [#5576](https://github.com/youzan/vant/issues/5576)
 
 **Improvement**
 
-* CouponList: update style [#5501](https://github.com/youzan/vant/issues/5501)
-* AddressList: update style [#5507](https://github.com/youzan/vant/issues/5507)
-
-
-### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
-`2020-01-06`
-
-**Feature**
-
-* Image: add error-icon prop [#5470](https://github.com/youzan/vant/issues/5470)
-* Image: add loading-icon prop [#5469](https://github.com/youzan/vant/issues/5469)
 * AddressEdit: show error message in field [#5479](https://github.com/youzan/vant/issues/5479)
+* ActionSheet: update close icon style [#5574](https://github.com/youzan/vant/issues/5574)
+* AddressList: update style [#5507](https://github.com/youzan/vant/issues/5507)
+* CouponList: update style [#5501](https://github.com/youzan/vant/issues/5501)
+* Calendar: scroll to current month when show [#5526](https://github.com/youzan/vant/issues/5526)
+* ImagePreview: improve error image style [#5570](https://github.com/youzan/vant/issues/5570)
+* improve cursor of all components [c1a535](https://github.com/youzan/vant/commit/c1a535b0dd9470f8eb526e86aa59cf6dec022f3a)
 
 **Bug Fixes**
 
+* Button: should not have click feedback when loading [0a70d3](https://github.com/youzan/vant/commit/0a70d344124ef756a73ea9edfee07303f394d880)
 * Card: thumb image border-radius become effective [#5480](https://github.com/youzan/vant/issues/5480)
+* Calendar: incorrect month title after auto scroll [#5569](https://github.com/youzan/vant/issues/5569)
+* Calendar: missing info when selected [#5536](https://github.com/youzan/vant/issues/5536)
+* Checkbox: only the icon is clickable when label-disabled [3d10d4](https://github.com/youzan/vant/commit/3d10d42fccadd1b9df46860d758a91f7825073e9)
+* CouponList: incorrect click feedback [#5521](https://github.com/youzan/vant/issues/5521)
+* Field: should limit number input in iOS [#5520](https://github.com/youzan/vant/issues/5520)
+* ImagePreview: disable desktop browser image drag [#4487](https://github.com/youzan/vant/issues/4487)
+* Picker: optimize the click experience [5cbb9e](https://github.com/youzan/vant/commit/5cbb9e29989ac58d44a4ec503cbb984269c8f18e)
+* PullRefresh: should set height when using head-height [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+* Tabs: can not render line when wrapper is fixed [#5496](https://github.com/youzan/vant/issues/5496)
 
 
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)

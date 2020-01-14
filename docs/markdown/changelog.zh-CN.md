@@ -10,54 +10,41 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.4.2-beta.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2-beta.2)
-`2020-01-10`
+### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
+`2020-01-14`
 
 **Feature**
 
-* Field: 新增 formatter 属性 [#5534](https://github.com/youzan/vant/issues/5534)
-* Swipe: 新增 prev、next 方法 [#5548](https://github.com/youzan/vant/issues/5548)
-
-**Bug Fixes**
-
-* Calendar: 修复选中的日期无法展示提示信息的问题 [#5536](https://github.com/youzan/vant/issues/5536)
-* PullRefresh:修复 head-height 属性未正确设置高度的问题 [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
-
-
-
-### [v2.4.2-beta.1](https://github.com/youzan/vant/compare/v2.4.2-beta.0...v2.4.2-beta.1)
-`2020-01-09`
-
-**Feature**
-
+* Sku: 新增 properties 属性 [#5525](https://github.com/youzan/vant/issues/5525)
 * Field: 新增 digit 类型 [#5524](https://github.com/youzan/vant/issues/5524)
-* Sku: 支持 properties 数据结构 [#5525](https://github.com/youzan/vant/issues/5525)
-* Calendar: 弹出时自动滚动到当前选中的日期 [#5526](https://github.com/youzan/vant/issues/5526)
+* Field: 新增 formatter 属性 [#5534](https://github.com/youzan/vant/issues/5534)
+* Image: 新增 error-icon 属性 [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: 新增 loading-icon 属性 [#5469](https://github.com/youzan/vant/issues/5469)
+* Swipe: 新增 prev、next 方法 [#5548](https://github.com/youzan/vant/issues/5548)
+* GoodsAcitonIcon: 新增 color 属性 [#5576](https://github.com/youzan/vant/issues/5576)
 
 **Improvement**
 
-* CouponList: 优化样式细节 [#5501](https://github.com/youzan/vant/issues/5501)
 * AddressList: 优化样式细节 [#5507](https://github.com/youzan/vant/issues/5507)
-
-**Bug Fixes**
-
-* CouponList: 修复点击反馈区域错误的问题 [#5521](https://github.com/youzan/vant/issues/5521)
-* Tabs: 修复容器设置 fixed 布局时无法渲染底部条的问题 [#5496](https://github.com/youzan/vant/issues/5496)
-* Field: 修复 type 为 number 时在 iOS 上仍然能输入非数字字符的问题 [#5520](https://github.com/youzan/vant/issues/5520)
-
-
-### [v2.4.2-beta.0](https://github.com/youzan/vant/compare/v2.4.1...v2.4.2-beta.0)
-`2020-01-06`
-
-**Feature**
-
-* Image: 新增 error-icon 属性 [#5470](https://github.com/youzan/vant/issues/5470)
-* Image: 新增 loading-icon 属性 [#5469](https://github.com/youzan/vant/issues/5469)
 * AddressEdit: 优化错误提示展示方式 [#5479](https://github.com/youzan/vant/issues/5479)
+* ActionSheet: 优化关闭按钮样式 [#5574](https://github.com/youzan/vant/issues/5574)
+* CouponList: 优化样式细节 [#5501](https://github.com/youzan/vant/issues/5501)
+* Calendar: 弹出时自动滚动到当前选中的日期 [#5526](https://github.com/youzan/vant/issues/5526)
+* ImagePreview: 优化图片加载失败提示样式 [#5570](https://github.com/youzan/vant/issues/5570)
+* 优化所有组件的光标类型 [c1a535](https://github.com/youzan/vant/commit/c1a535b0dd9470f8eb526e86aa59cf6dec022f3a)
 
 **Bug Fixes**
 
+* Button: 修复加载状态下仍会有点击反馈的问题 [0a70d3](https://github.com/youzan/vant/commit/0a70d344124ef756a73ea9edfee07303f394d880)
 * Card: 修复图片圆角样式未生效的问题 [#5480](https://github.com/youzan/vant/issues/5480)
+* Calendar: 修复选中的日期无法展示提示信息的问题 [#5536](https://github.com/youzan/vant/issues/5536)
+* Checkbox: 修复设置 label-disabled 后空白区域仍然可以点击的问题 [3d10d4](https://github.com/youzan/vant/commit/3d10d42fccadd1b9df46860d758a91f7825073e9)
+* CouponList: 修复点击反馈区域错误的问题 [#5521](https://github.com/youzan/vant/issues/5521)
+* Field: 修复 type 为 number 时在 iOS 上仍然能输入非数字字符的问题 [#5520](https://github.com/youzan/vant/issues/5520)
+* ImagePreview: 修复在桌面端使用时无法拖拽的问题 [#4487](https://github.com/youzan/vant/issues/4487)
+* Picker: 修复点击事件偶尔会丢失的问题 [5cbb9e](https://github.com/youzan/vant/commit/5cbb9e29989ac58d44a4ec503cbb984269c8f18e)
+* PullRefresh:修复 head-height 属性未正确设置高度的问题 [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+* Tabs: 修复容器设置 fixed 布局时无法渲染底部条的问题 [#5496](https://github.com/youzan/vant/issues/5496)
 
 
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
