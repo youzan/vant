@@ -90,6 +90,14 @@ export default {
 }; 
 ```
 
+### 搭配单元格使用
+
+```html
+<van-cell center title="标题">
+  <van-switch v-model="checked" slot="right-icon" size="24" />
+</van-cell>
+```
+
 ## API
 
 ### Props
