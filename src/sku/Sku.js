@@ -11,7 +11,14 @@ import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
 import { createNamespace, isDef } from '../utils';
-import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues, getSelectedPropValues } from './utils/skuHelper';
+import {
+  isAllSelected,
+  isSkuChoosable,
+  getSkuComb,
+  getSelectedSkuValues,
+  getSelectedPropValues,
+  getSelectedProperties,
+} from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
 const namespace = createNamespace('sku');
@@ -186,7 +193,7 @@ export default createComponent({
           };
         }
         if (skuComb) {
-          skuComb.properties = this.selectedPropValues;
+          skuComb.properties = getSelectedProperties(this.propList, this.selectedProp);
           skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
         }
       }

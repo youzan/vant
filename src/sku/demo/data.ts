@@ -231,10 +231,6 @@ export const skuData = {
       ],
     }
   ],
-  header_price: {
-    price: '1.00',
-    origin_price: '2.00'
-  },
 };
 
 export const initialSku = {
