@@ -19,7 +19,6 @@
     "test": "vant-cli test",
     "build": "vant-cli build",
     "release": "vant-cli release",
-    "changelog": "vant-cli changelog",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html"

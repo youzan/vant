@@ -4,7 +4,7 @@ import { replaceExt } from '../common';
 import { compileCss } from './compile-css';
 import { compileLess } from './compile-less';
 import { compileSass } from './compile-sass';
-import { logger } from '../common/logger';
+import { consola } from '../common/logger';
 
 async function compileFile(filePath: string) {
   const parsedPath = parse(filePath);
@@ -23,7 +23,7 @@ async function compileFile(filePath: string) {
     const source = readFileSync(filePath, 'utf-8');
     return await compileCss(source);
   } catch (err) {
-    logger.error('Compile style failed: ' + filePath);
+    consola.error('Compile style failed: ' + filePath);
     throw err;
   }
 }
