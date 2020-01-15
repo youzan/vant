@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import { get } from 'lodash';
 import { getPort } from 'portfinder';
+import { GREEN } from '../common/constant';
 import { siteDevConfig } from '../config/webpack.site.dev';
 import { sitePrdConfig } from '../config/webpack.site.prd';
 
@@ -12,8 +13,8 @@ function logServerInfo(port: number) {
   const network = `http://${address.ip()}:${port}/`;
 
   console.log('\n  Site running at:\n');
-  console.log(`  ${chalk.bold('Local')}:    ${chalk.cyan.bold(local)} `);
-  console.log(`  ${chalk.bold('Network')}:  ${chalk.cyan.bold(network)}`);
+  console.log(`  ${chalk.bold('Local')}:    ${chalk.hex(GREEN)(local)} `);
+  console.log(`  ${chalk.bold('Network')}:  ${chalk.hex(GREEN)(network)}`);
 }
 
 function runDevServer(port: number) {

@@ -8,6 +8,7 @@ import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig } from '../common';
 import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
+  GREEN,
   SITE_MODILE_SHARED_FILE,
   SITE_DESKTOP_SHARED_FILE
 } from '../common/constant';
@@ -75,7 +76,7 @@ export const siteDevBaseConfig = merge(baseConfig as any, {
   plugins: [
     new WebpackBar({
       name: 'Vant Cli',
-      color: '#07c160'
+      color: GREEN
     }),
     new VantCliSitePlugin(),
     new HtmlWebpackPlugin({
