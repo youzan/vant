@@ -1628,10 +1628,10 @@
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
-"@vant/markdown-vetur@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-1.0.0.tgz#04774bc45cb6e11c734b8985925558ed8d3aab61"
-  integrity sha1-BHdLxFy24RxzS4mFklVY7Y06q2E=
+"@vant/markdown-vetur@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.1.0.tgz#e02d29f3180e47dd588d7dcacaa06b66724915c9"
+  integrity sha512-abdWeVzCmVMwYzzFoqKtiLb1SVlWNoF3lgDXE0/gGBxkNXSN3XWeGXSaq7LNReyEjpRmfqqEIuP18NvkhBk4DQ==
 
 "@vant/stylelint-config@^1.1.0":
   version "1.1.0"
