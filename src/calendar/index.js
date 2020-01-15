@@ -7,11 +7,13 @@ import {
   compareDay,
   compareMonth,
   createComponent,
+  calDateNum,
   ROW_HEIGHT
 } from './utils';
 
 import Popup from '../popup';
 import Button from '../button';
+import Toast from '../toast';
 import Month from './components/Month';
 import Header from './components/Header';
 
@@ -72,6 +74,16 @@ export default createComponent({
     closeOnClickOverlay: {
       type: Boolean,
       default: true
+    },
+    maxTime: {
+      type: Number,
+      default: 3
+    },
+    errMessage: {
+      type: String,
+      default() {
+        return `选择天数不能超过 ${this.maxTime} 天`;
+      }
     }
   },
 
@@ -254,7 +266,12 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', this.currentDate);
+      const DateNum = calDateNum(this.currentDate);
+      if (this.maxTime && DateNum > this.maxTime) {
+        Toast(this.errMessage);
+      } else {
+        this.$emit('confirm', this.currentDate);
+      }
     },
 
     genMonth(date, index) {
