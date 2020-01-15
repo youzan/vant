@@ -17,7 +17,8 @@ export default {
     start: 'Start',
     title: 'Calendar',
     weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    monthTitle: (year: number, month: number) => `${year}/${month}`
+    monthTitle: (year: number, month: number) => `${year}/${month}`,
+    rangePromptText: (maxRange: Number) => `Choose no more than ${maxRange} days`
   },
   vanContactCard: {
     addText: 'Add contact info'

@@ -7,11 +7,13 @@ import {
   compareDay,
   compareMonth,
   createComponent,
+  calcDateNum,
   ROW_HEIGHT
 } from './utils';
 
 import Popup from '../popup';
 import Button from '../button';
+import Toast from '../toast';
 import Month from './components/Month';
 import Header from './components/Header';
 
@@ -72,6 +74,16 @@ export default createComponent({
     closeOnClickOverlay: {
       type: Boolean,
       default: true
+    },
+    maxRange: {
+      type: Number,
+      default: null
+    },
+    rangePrompt: {
+      type: String,
+      default() {
+        return t('rangePromptText', this.maxRange);
+      }
     }
   },
 
@@ -254,7 +266,11 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', this.currentDate);
+      if (this.maxRange && calcDateNum(this.currentDate) > this.maxRange) {
+        Toast(this.rangePrompt);
+      } else {
+        this.$emit('confirm', this.currentDate);
+      }
     },
 
     genMonth(date, index) {
