@@ -23,8 +23,9 @@ export default createComponent({
     color: String,
     value: Boolean,
     formatter: Function,
-    defaultDate: [Date, Array],
     confirmText: String,
+    rangePrompt: String,
+    defaultDate: [Date, Array],
     confirmDisabledText: String,
     type: {
       type: String,
@@ -78,12 +79,6 @@ export default createComponent({
     maxRange: {
       type: Number,
       default: null
-    },
-    rangePrompt: {
-      type: String,
-      default() {
-        return t('rangePromptText', this.maxRange);
-      }
     }
   },
 
@@ -260,15 +255,32 @@ export default createComponent({
       this.currentDate = date;
       this.$emit('select', this.currentDate);
 
+      if (complete && this.type === 'range') {
+        const valid = this.checkRange();
+
+        if (!valid) {
+          return;
+        }
+      }
+
       if (complete && !this.showConfirm) {
         this.onConfirm();
       }
     },
 
+    checkRange() {
+      const { maxRange, currentDate, rangePrompt } = this;
+
+      if (maxRange && calcDateNum(currentDate) > maxRange) {
+        Toast(rangePrompt || t('rangePrompt', maxRange));
+        return false;
+      }
+
+      return true;
+    },
+
     onConfirm() {
-      if (this.maxRange && calcDateNum(this.currentDate) > this.maxRange) {
-        Toast(this.rangePrompt);
-      } else {
+      if (this.checkRange()) {
         this.$emit('confirm', this.currentDate);
       }
     },
