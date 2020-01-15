@@ -138,6 +138,7 @@ export default {
 | button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | *string \| number* | `28px` |
 | show-plus `v2.1.2` | 是否显示增加按钮 | *boolean* | `true` |
 | show-minus `v2.1.2` | 是否显示减少按钮 | *boolean* | `true` |
+| long-press `v2.4.3` | 是否开启长按手势 | *boolean* | `true` |
 | decimal-length `v2.2.1` | 固定显示的小数位数 | *number* | - |
 
 ### Events

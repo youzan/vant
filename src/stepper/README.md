@@ -116,6 +116,7 @@ export default {
 | button-size `v2.0.5` | Button size | *string \| number* | `28px` |
 | show-plus `v2.1.2` | Whether to show plus button | *boolean* | `true` |
 | show-minus `v2.1.2` | Whether to show minus button | *boolean* | `true` |
+| long-press `v2.4.3` | Whether to allow long press | *boolean* | `true` |
 | decimal-length `v2.2.1` | Decimal length | *number* | - |
 
 ### Events

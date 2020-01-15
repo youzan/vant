@@ -89,6 +89,22 @@ test('long press', async () => {
   expect(wrapper.emitted('input')).toEqual([[2], [3], [4]]);
 });
 
+test('disable long press', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1,
+      longPress: false
+    }
+  });
+
+  const plus = wrapper.find('.van-stepper__plus');
+  plus.trigger('touchstart');
+  await later(800);
+  plus.trigger('touchend');
+
+  expect(wrapper.emitted('input')).toBeFalsy();
+});
+
 test('filter value during user input', () => {
   const wrapper = mount(Stepper, {
     propsData: {
@@ -173,6 +189,15 @@ test('input-width prop', () => {
   const wrapper = mount(Stepper, {
     propsData: {
       inputWidth: '10rem'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('button-size prop', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      buttonSize: '2rem'
     }
   });
   expect(wrapper).toMatchSnapshot();

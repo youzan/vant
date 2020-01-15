@@ -56,6 +56,10 @@ export default createComponent({
     showMinus: {
       type: Boolean,
       default: true
+    },
+    longPress: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -222,12 +226,16 @@ export default createComponent({
 
     longPressStep() {
       this.longPressTimer = setTimeout(() => {
-        this.onChange(this.type);
+        this.onChange();
         this.longPressStep(this.type);
       }, LONG_PRESS_INTERVAL);
     },
 
     onTouchStart() {
+      if (!this.longPress) {
+        return;
+      }
+
       clearTimeout(this.longPressTimer);
       this.isLongPress = false;
 
@@ -239,6 +247,10 @@ export default createComponent({
     },
 
     onTouchEnd(event) {
+      if (!this.longPress) {
+        return;
+      }
+
       clearTimeout(this.longPressTimer);
 
       if (this.isLongPress) {
@@ -256,7 +268,7 @@ export default createComponent({
         },
         touchstart: () => {
           this.type = type;
-          this.onTouchStart(type);
+          this.onTouchStart();
         },
         touchend: this.onTouchEnd,
         touchcancel: this.onTouchEnd
