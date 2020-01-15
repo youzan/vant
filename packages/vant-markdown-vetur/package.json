@@ -13,6 +13,7 @@
     "lib"
   ],
   "scripts": {
+    "dev": "tsc --watch",
     "build": "tsc",
     "release": "npm run build && npm publish"
   }
