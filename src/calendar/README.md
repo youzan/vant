@@ -221,8 +221,8 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 | confirm-text | Confirm button text | *string* | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
-| maxTime | max range of day  | *number* | `0（null）` |
-| errMessage | err message when the select range over max range | *string* | `选择天数不能超过 xx 天` |
+| max-range | max range of day  | *number* | `null` |
+| range-prompt | err message when the select range over max range | *string* | `选择天数不能超过 xx 天` |
 
 ### Data Structure of Day
 

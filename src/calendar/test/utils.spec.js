@@ -1,4 +1,4 @@
-import { compareDay, compareMonth, getNextDay } from '../utils';
+import { compareDay, compareMonth, getNextDay, calcDateNum } from '../utils';
 
 const date1 = new Date(2010, 0, 1);
 const date2 = new Date(2010, 0, 2);
@@ -23,4 +23,9 @@ test('compareDay', () => {
 test('getNextDay', () => {
   expect(getNextDay(date1).getDate()).toEqual(2);
   expect(getNextDay(date2).getDate()).toEqual(3);
+});
+
+test('calcDateNum', () => {
+  expect(calcDateNum([date1, date2])).toEqual(2);
+  expect(calcDateNum([date1, date3])).toEqual(32);
 });

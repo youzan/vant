@@ -7,7 +7,7 @@ import {
   compareDay,
   compareMonth,
   createComponent,
-  calDateNum,
+  calcDateNum,
   ROW_HEIGHT
 } from './utils';
 
@@ -75,14 +75,14 @@ export default createComponent({
       type: Boolean,
       default: true
     },
-    maxTime: {
+    maxRange: {
       type: Number,
-      default: 0
+      default: null
     },
-    errMessage: {
+    rangePrompt: {
       type: String,
       default() {
-        return `选择天数不能超过 ${this.maxTime} 天`;
+        return t('rangePromptText', this.maxRange);
       }
     }
   },
@@ -266,9 +266,8 @@ export default createComponent({
     },
 
     onConfirm() {
-      const DateNum = calDateNum(this.currentDate);
-      if (this.maxTime && DateNum > this.maxTime) {
-        Toast(this.errMessage);
+      if (this.maxRange && calcDateNum(this.currentDate) > this.maxRange) {
+        Toast(this.rangePrompt);
       } else {
         this.$emit('confirm', this.currentDate);
       }

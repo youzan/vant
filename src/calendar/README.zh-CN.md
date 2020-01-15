@@ -221,8 +221,8 @@ export default {
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
-| maxTime | 日期区间最大范围天数 | *number* | `0（无限制）` |
-| errMessage | 选择超过区间最大范围天数时错误提示 | *string* | `选择天数不能超过 xx 天` |
+| max-range | 日期区间最大范围天数 | *number* | `null` |
+| range-prompt | 选择超过区间最大范围天数时错误提示 | *string* | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构
 

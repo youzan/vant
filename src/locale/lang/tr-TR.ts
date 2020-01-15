@@ -17,7 +17,8 @@ export default {
     start: 'Başlat',
     title: 'Takvim',
     weekdays: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
-    monthTitle: (year: number, month: number) => `${year}/${month}`
+    monthTitle: (year: number, month: number) => `${year}/${month}`,
+    rangePromptText: (maxRange: Number) => `En fazla ${maxRange} gün seçin`
   },
   vanContactCard: {
     addText: 'Kişi bilgisi ekle'
