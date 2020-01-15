@@ -1,5 +1,4 @@
 import { join } from 'path';
-import { execSync } from 'child_process';
 import {
   lstatSync,
   existsSync,
@@ -154,21 +153,6 @@ export function smartOutputFile(filePath: string, content: string) {
   }
 
   outputFileSync(filePath, content);
-}
-
-let hasYarnCache: boolean;
-
-export function hasYarn() {
-  if (hasYarnCache === undefined) {
-    try {
-      execSync('yarn --version', { stdio: 'ignore' });
-      hasYarnCache = true;
-    } catch (e) {
-      hasYarnCache = false;
-    }
-  }
-
-  return hasYarnCache;
 }
 
 export { getVantConfig };

@@ -1,11 +1,10 @@
-// @ts-ignore
-import execa from 'execa';
 import chokidar from 'chokidar';
 import { join, relative } from 'path';
 import { remove, copy, readdirSync } from 'fs-extra';
 import { clean } from './clean';
 import { CSS_LANG } from '../common/css';
 import { ora, consola, slimPath } from '../common/logger';
+import { installDependencies } from '../common/manager';
 import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
@@ -23,7 +22,6 @@ import {
   isScript,
   isDemoDir,
   isTestDir,
-  hasYarn,
   setNodeEnv,
   setModuleEnv
 } from '../common';
@@ -64,116 +62,95 @@ async function compileDir(dir: string) {
   );
 }
 
-async function installDependencies() {
-  consola.info('Install Dependencies');
-  console.log('');
 
-  try {
-    const manager = hasYarn() ? 'yarn' : 'npm';
-
-    await execa(manager, ['install', '--prod=false'], {
-      stdio: 'inherit'
-    });
-
-    console.log('');
-  } catch (err) {
-    console.log(err);
-    throw err;
-  }
+async function buildEs() {
+  setModuleEnv('esmodule');
+  await copy(SRC_DIR, ES_DIR);
+  await compileDir(ES_DIR);
 }
 
-async function buildESModuleOutputs() {
-  const spinner = ora('Build ESModule Outputs').start();
-
-  try {
-    setModuleEnv('esmodule');
-    await copy(SRC_DIR, ES_DIR);
-    await compileDir(ES_DIR);
-    spinner.succeed('Build ESModule Outputs');
-  } catch (err) {
-    spinner.fail('Build ESModule Outputs');
-    console.log(err);
-    throw err;
-  }
-}
-
-async function buildCommonjsOutputs() {
-  const spinner = ora('Build Commonjs Outputs').start();
-
-  try {
-    setModuleEnv('commonjs');
-    await copy(SRC_DIR, LIB_DIR);
-    await compileDir(LIB_DIR);
-    spinner.succeed('Build Commonjs Outputs');
-  } catch (err) {
-    spinner.fail('Build Commonjs Outputs');
-    console.log(err);
-    throw err;
-  }
+async function buildLib() {
+  setModuleEnv('commonjs');
+  await copy(SRC_DIR, LIB_DIR);
+  await compileDir(LIB_DIR);
 }
 
 async function buildStyleEntry() {
-  const spinner = ora('Build Style Entry').start();
-
-  try {
-    await genStyleDepsMap();
-    genComponentStyle();
-    spinner.succeed('Build Style Entry');
-  } catch (err) {
-    spinner.fail('Build Style Entry');
-    console.log(err);
-    throw err;
-  }
+  await genStyleDepsMap();
+  genComponentStyle();
 }
 
-async function buildPackedOutputs() {
-  const spinner = ora('Build Packed Outputs').start();
+async function buildPacakgeEntry() {
+  const esEntryFile = join(ES_DIR, 'index.js');
+  const libEntryFile = join(LIB_DIR, 'index.js');
+  const styleEntryFile = join(LIB_DIR, `index.${CSS_LANG}`);
 
-  try {
-    setModuleEnv('esmodule');
-    await compilePackage(false);
-    await compilePackage(true);
-    genVeturConfig();
-    spinner.succeed('Build Packed Outputs');
-  } catch (err) {
-    spinner.fail('Build Packed Outputs');
-    console.log(err);
-    throw err;
-  }
+  genPackageEntry({
+    outputPath: esEntryFile,
+    pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
+  });
+
+  setModuleEnv('esmodule');
+  await compileJs(esEntryFile);
+
+  genPacakgeStyle({
+    outputPath: styleEntryFile,
+    pathResolver: (path: string) => path.replace(SRC_DIR, '.')
+  });
+
+  setModuleEnv('commonjs');
+  await copy(esEntryFile, libEntryFile);
+  await compileJs(libEntryFile);
+  await compileStyle(styleEntryFile);
 }
 
-async function buildPackageEntry() {
-  const spinner = ora('Build Package Entry').start();
+async function buildPackages() {
+  setModuleEnv('esmodule');
+  await compilePackage(false);
+  await compilePackage(true);
+  genVeturConfig();
+}
 
-  try {
-    const esEntryFile = join(ES_DIR, 'index.js');
-    const libEntryFile = join(LIB_DIR, 'index.js');
-    const styleEntryFile = join(LIB_DIR, `index.${CSS_LANG}`);
-
-    genPackageEntry({
-      outputPath: esEntryFile,
-      pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
-    });
-
-    setModuleEnv('esmodule');
-    await compileJs(esEntryFile);
-
-    genPacakgeStyle({
-      outputPath: styleEntryFile,
-      pathResolver: (path: string) => path.replace(SRC_DIR, '.')
-    });
-
-    setModuleEnv('commonjs');
-    await copy(esEntryFile, libEntryFile);
-    await compileJs(libEntryFile);
-    await compileStyle(styleEntryFile);
-
-    spinner.succeed('Build Package Entry');
-  } catch (err) {
-    spinner.fail('Build Package Entry');
-    console.log(err);
-    throw err;
+const tasks = [
+  {
+    text: 'Build ESModule Outputs',
+    task: buildEs
+  },
+  {
+    text: 'Build Commonjs Outputs',
+    task: buildLib
+  },
+  {
+    text: 'Build Style Entry',
+    task: buildStyleEntry
+  },
+  {
+    text: 'Build Package Entry',
+    task: buildPacakgeEntry
+  },
+  {
+    text: 'Build Packed Outputs',
+    task: buildPackages
   }
+];
+
+async function runBuildTasks() {
+  for (let i = 0; i < tasks.length; i++) {
+    const { task, text } = tasks[i];
+    const spinner = ora(text).start();
+
+    try {
+      /* eslint-disable no-await-in-loop */
+      await task();
+      spinner.succeed(text);
+    } catch (err) {
+      spinner.fail(text);
+      console.log(err);
+      throw err;
+    }
+  }
+
+  consola.success('Compile successfully');
 }
 
 function watchFileChange() {
@@ -209,13 +186,7 @@ export async function build(cmd: { watch?: boolean } = {}) {
   try {
     await clean();
     await installDependencies();
-    await buildESModuleOutputs();
-    await buildCommonjsOutputs();
-    await buildStyleEntry();
-    await buildPackageEntry();
-    await buildPackedOutputs();
-
-    consola.success('Compile successfully');
+    await runBuildTasks();
 
     if (cmd.watch) {
       watchFileChange();
