@@ -1464,10 +1464,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.1.6.tgz#67d4ab2d7aca2396acf0a44d388dacbe8d6ff9d2"
-  integrity sha512-45LLDdTXEFIlQvwRvkrGWVWnN8BVi+ESPLn6LBCvNjCd7sNBbGZsdC1fjFrBH6cocvDxyIzXKhX1E2OdqJ7Gpg==
+"@vant/cli@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.1.7.tgz#a0eb3544976c6c9cf6be138ba1239b22753d1d91"
+  integrity sha512-UvgyHce4TgHKqE3Y2iaPZ9YX8HR9TNOknCyYZ1Lv3icPk9FYiUA1UshU7Y1xp4CXLbBEPFJr1bAbdALchxdeuQ==
   dependencies:
     "@babel/core" "^7.7.7"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.7.4"
@@ -1487,6 +1487,7 @@
     "@vue/babel-preset-jsx" "^1.1.2"
     "@vue/component-compiler-utils" "^3.1.1"
     "@vue/test-utils" "1.0.0-beta.29"
+    address "^1.1.2"
     autoprefixer "^9.7.3"
     babel-jest "^24.9.0"
     babel-loader "^8.0.6"
@@ -1496,6 +1497,7 @@
     clean-css "^4.2.1"
     codecov "^3.6.1"
     commander "^4.1.0"
+    consola "^2.11.3"
     conventional-changelog "^3.1.18"
     cross-env "^6.0.3"
     css-loader "^3.4.1"
@@ -1510,6 +1512,7 @@
     less-loader "^5.0.0"
     lint-staged "^9.5.0"
     lodash "^4.17.15"
+    ora "^4.0.3"
     portfinder "^1.0.25"
     postcss "^7.0.26"
     postcss-loader "^3.0.0"
@@ -1517,7 +1520,6 @@
     sass "^1.24.4"
     sass-loader "^8.0.0"
     shelljs "^0.8.3"
-    signale "^1.4.0"
     style-loader "^1.1.2"
     stylelint "^12.0.1"
     typescript "^3.7.4"
@@ -1927,6 +1929,11 @@ add-stream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/add-stream/-/add-stream-1.0.0.tgz#6a7990437ca736d5e1288db92bd3266d5f5cb2aa"
   integrity sha1-anmQQ3ynNtXhKI25K9MmbV9csqo=
+
+address@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/address/-/address-1.1.2.tgz#bf1116c9c758c51b7a933d296b72c221ed9428b6"
+  integrity sha512-aT6camzM4xEA54YVJYSqxz1kv4IHnQZRtThJJHhUMRExaU5spC7jX5ugSwTaTgJliIgs4VhZOk7htClvQ/LmRA==
 
 agent-base@^4.1.0:
   version "4.2.1"
@@ -3325,6 +3332,11 @@ consola@^2.10.0:
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/consola/-/consola-2.11.1.tgz#1df259c0a7aef44c9eb4f448e3a20ba0850a65e7"
   integrity sha512-zFH/xFAE/KHJiWqwyTEDmdFe34Swc0pqMKJeowTvR3irepx8kKPu8bjaKzRd+RLjLH+0TvFxFBnohbSUQ+hOsw==
+
+consola@^2.11.3:
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-2.11.3.tgz#f7315836224c143ac5094b47fd4c816c2cd1560e"
+  integrity sha512-aoW0YIIAmeftGR8GSpw6CGQluNdkWMWh3yEFjH/hmynTYnMtibXszii3lxCXmk8YxJtI3FAK5aTiquA5VH68Gw==
 
 consola@^2.6.0:
   version "2.11.0"
@@ -8342,6 +8354,20 @@ ora@4.0.2:
     strip-ansi "^5.2.0"
     wcwidth "^1.0.1"
 
+ora@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-4.0.3.tgz#752a1b7b4be4825546a7a3d59256fa523b6b6d05"
+  integrity sha512-fnDebVFyz309A73cqCipVL1fBZewq4vwgSHfxh43vVy31mbyoQ8sCH3Oeaog/owYOs/lLlGVPCISQonTneg6Pg==
+  dependencies:
+    chalk "^3.0.0"
+    cli-cursor "^3.1.0"
+    cli-spinners "^2.2.0"
+    is-interactive "^1.0.0"
+    log-symbols "^3.0.0"
+    mute-stream "0.0.8"
+    strip-ansi "^6.0.0"
+    wcwidth "^1.0.1"
+
 original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/original/-/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
@@ -8766,14 +8792,6 @@ pirates@^4.0.1:
   integrity sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==
   dependencies:
     node-modules-regexp "^1.0.0"
-
-pkg-conf@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/pkg-conf/-/pkg-conf-2.1.0.tgz#2126514ca6f2abfebd168596df18ba57867f0058"
-  integrity sha1-ISZRTKbyq/69FoWW3xi6V4Z/AFg=
-  dependencies:
-    find-up "^2.0.0"
-    load-json-file "^4.0.0"
 
 pkg-dir@^2.0.0:
   version "2.0.0"
@@ -10179,15 +10197,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
-
-signale@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/signale/-/signale-1.4.0.tgz#c4be58302fb0262ac00fc3d886a7c113759042f1"
-  integrity sha512-iuh+gPf28RkltuJC7W5MRi6XAjTDCAPC/prJUpQoG4vIP3MJZ+GTydVnodXA7pwvTKb2cA0m9OFZW/cdWy/I/w==
-  dependencies:
-    chalk "^2.3.2"
-    figures "^2.0.0"
-    pkg-conf "^2.1.0"
 
 sisteransi@^1.0.3:
   version "1.0.3"
