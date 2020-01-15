@@ -10,6 +10,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.4.3-beta.0](https://github.com/youzan/vant/compare/v2.4.2...v2.4.3-beta.0)
+`2020-01-15`
+
+**Feature**
+
+* Calendar: 新增 max-range、range-prompt 属性 [#5583](https://github.com/youzan/vant/issues/5583)
+
+**Types**
+
+* Toast: 修复 setDefaultOptions 方法参数定义错误 [#5582](https://github.com/youzan/vant/issues/5582)
+
+
 ### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
 `2020-01-14`
 

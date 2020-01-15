@@ -1,5 +1,17 @@
 # Changelog
 
+### [v2.4.3-beta.0](https://github.com/youzan/vant/compare/v2.4.2...v2.4.3-beta.0)
+`2020-01-15`
+
+**Feature**
+
+* Calendar: add max-range、range-prompt prop [#5583](https://github.com/youzan/vant/issues/5583)
+
+**Types**
+
+* Toast: incorrect definition of setDefaultOptions method [#5582](https://github.com/youzan/vant/issues/5582)
+
+
 ### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
 `2020-01-14`
 
