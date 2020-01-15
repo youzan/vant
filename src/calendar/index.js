@@ -90,6 +90,10 @@ export default createComponent({
   },
 
   computed: {
+    range() {
+      return this.type === 'range';
+    },
+
     months() {
       const months = [];
       const cursor = new Date(this.minDate);
@@ -105,14 +109,11 @@ export default createComponent({
     },
 
     buttonDisabled() {
-      if (this.type === 'single') {
-        return !this.currentDate;
-      }
-
-      /* istanbul ignore else */
-      if (this.type === 'range') {
+      if (this.range) {
         return !this.currentDate[0] || !this.currentDate[1];
       }
+
+      return !this.currentDate;
     }
   },
 
@@ -155,8 +156,8 @@ export default createComponent({
     // scroll to current month
     scrollIntoView() {
       this.$nextTick(() => {
-        const { type, currentDate } = this;
-        const targetDate = type === 'range' ? currentDate[0] : currentDate;
+        const { currentDate } = this;
+        const targetDate = this.range ? currentDate[0] : currentDate;
 
         /* istanbul ignore if */
         if (!targetDate) {
@@ -177,15 +178,12 @@ export default createComponent({
     getInitialDate() {
       const { type, defaultDate, minDate } = this;
 
-      if (type === 'single') {
-        return defaultDate || minDate;
-      }
-
-      /* istanbul ignore else */
       if (type === 'range') {
         const [startDay, endDay] = defaultDate || [];
         return [startDay || minDate, endDay || getNextDay(minDate)];
       }
+
+      return defaultDate || minDate;
     },
 
     // calculate the position of the elements
@@ -226,11 +224,7 @@ export default createComponent({
     onClickDay(item) {
       const { date } = item;
 
-      if (this.type === 'single') {
-        this.select(date, true);
-      }
-
-      if (this.type === 'range') {
+      if (this.range) {
         const [startDay, endDay] = this.currentDate;
 
         if (startDay && !endDay) {
@@ -244,6 +238,8 @@ export default createComponent({
         } else {
           this.select([date, null]);
         }
+      } else {
+        this.select(date, true);
       }
     },
 
@@ -255,7 +251,7 @@ export default createComponent({
       this.currentDate = date;
       this.$emit('select', this.currentDate);
 
-      if (complete && this.type === 'range') {
+      if (complete && this.range) {
         const valid = this.checkRange();
 
         if (!valid) {
@@ -385,5 +381,3 @@ export default createComponent({
     return this.genCalendar();
   }
 });
-
-// todo
