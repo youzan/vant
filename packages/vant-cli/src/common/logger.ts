@@ -1,3 +1,4 @@
+import ora from 'ora';
 import chalk from 'chalk';
 import logger from 'signale';
 import { ROOT } from '../common/constant';
@@ -35,8 +36,8 @@ export function getInteractiveLogger() {
   return interactive;
 }
 
-export function simplifyPath(path: string) {
+export function slimPath(path: string) {
   return chalk.yellow(path.replace(ROOT, '.'));
 }
 
-export { logger };
+export { ora, logger };

@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { ROOT } from '../common/constant';
-import { logger, simplifyPath } from '../common/logger';
+import { ora, slimPath } from '../common/logger';
 import { createWriteStream, readFileSync } from 'fs-extra';
 // @ts-ignore
 import conventionalChangelog from 'conventional-changelog';
@@ -47,7 +47,7 @@ function transform(item: any) {
 }
 
 export async function changelog() {
-  logger.start('Generating changelog...');
+  const spinner = ora('Generating changelog...').start();
 
   return new Promise(resolve => {
     conventionalChangelog(
@@ -66,7 +66,7 @@ export async function changelog() {
     )
       .pipe(createWriteStream(DIST_FILE))
       .on('close', () => {
-        logger.success(`Changelog generated successfully at ${simplifyPath(DIST_FILE)}`);
+        spinner.succeed(`Changelog generated at ${slimPath(DIST_FILE)}`);
         resolve();
       });
   });
