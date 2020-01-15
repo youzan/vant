@@ -67,6 +67,13 @@
         :value="formatFullDate(date.customPosition)"
         @click="show('single', 'customPosition')"
       />
+
+      <van-cell
+        is-link
+        :title="$t('maxRange')"
+        :value="formatRange(date.maxRange)"
+        @click="show('range', 'maxRange')"
+      />
     </demo-block>
 
     <demo-block :title="$t('tiledDisplay')">
@@ -85,9 +92,10 @@
       :type="type"
       :color="color"
       :round="round"
+      :position="position"
       :min-date="minDate"
       :max-date="maxDate"
-      :position="position"
+      :max-range="maxRange"
       :formatter="formatter"
       :show-confirm="showConfirm"
       :confirm-text="confirmText"
@@ -109,6 +117,7 @@ export default {
       laborDay: '劳动节',
       youthDay: '五四青年节',
       calendar: '日历',
+      maxRange: '日期区间最大范围',
       selectSingle: '选择单个日期',
       selectRange: '选择日期区间',
       quickSelect: '快捷选择',
@@ -129,6 +138,7 @@ export default {
       laborDay: 'Labor day',
       youthDay: 'Youth Day',
       calendar: 'Calendar',
+      maxRange: 'Max Range',
       selectSingle: 'Select Single Date',
       selectRange: 'Select Date Range',
       quickSelect: 'Quick Select',
@@ -147,6 +157,7 @@ export default {
   data() {
     return {
       date: {
+        maxRange: [],
         selectSingle: null,
         selectRange: [],
         quickSelect1: null,
@@ -162,6 +173,7 @@ export default {
       color: undefined,
       minDate: undefined,
       maxDate: undefined,
+      maxRange: undefined,
       position: undefined,
       formatter: undefined,
       showConfirm: false,
@@ -179,6 +191,7 @@ export default {
       this.color = undefined;
       this.minDate = undefined;
       this.maxDate = undefined;
+      this.maxRange = undefined;
       this.position = undefined;
       this.formatter = undefined;
       this.showConfirm = true;
@@ -216,6 +229,9 @@ export default {
         case 'customPosition':
           this.round = false;
           this.position = 'right';
+          break;
+        case 'maxRange':
+          this.maxRange = 3;
           break;
       }
     },

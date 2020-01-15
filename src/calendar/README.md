@@ -184,6 +184,18 @@ Use `position` to custom popup position，can be set to `top`、`left`、`right`
 />
 ```
 
+### Max Range
+
+When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days
+
+```html
+<van-calendar
+  type="range"
+  :max-range="3"
+  :style="{ height: '500px' }"
+/>
+```
+
 ### Tiled display
 
 Set `poppable` to `false`, the calendar will be displayed directly on the page instead of appearing as a popup
@@ -221,8 +233,8 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 | confirm-text | Confirm button text | *string* | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
-| max-range | max range of day  | *number* | `null` |
-| range-prompt | err message when the select range over max range | *string* | `选择天数不能超过 xx 天` |
+| max-range`2.4.3` | Number of selectable days | *number* | - |
+| range-prompt`2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
 
 ### Data Structure of Day
 
