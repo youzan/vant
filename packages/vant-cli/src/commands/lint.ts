@@ -1,57 +1,66 @@
-import { lint as stylelint } from 'stylelint';
-import { CLIEngine } from 'eslint';
-import { getStepper } from '../common/logger';
+// @ts-ignore
+import execa from 'execa';
+import { ora } from '../common/logger';
 import { SCRIPT_EXTS } from '../common/constant';
 
-const stepper = getStepper(4);
+type RunCommandMessages = {
+  start: string;
+  succeed: string;
+  failed: string;
+};
 
-function lintScript() {
-  stepper.start('ESLint Start');
+function runCommand(
+  cmd: string,
+  options: string[],
+  messages: RunCommandMessages
+) {
+  const spinner = ora(messages.start).start();
 
-  const cli = new CLIEngine({
-    fix: true,
-    extensions: SCRIPT_EXTS
+  return new Promise(resolve => {
+    execa(cmd, options, {
+      env: { FORCE_COLOR: true }
+    })
+      .then(() => {
+        spinner.succeed(messages.succeed);
+        resolve(true);
+      })
+      .catch((err: any) => {
+        spinner.fail(messages.failed);
+        console.log(err.stdout);
+        resolve(false);
+      });
   });
-
-  const report = cli.executeOnFiles(['src/']);
-  const formatter = cli.getFormatter();
-
-  CLIEngine.outputFixes(report);
-
-  // output lint errors
-  const formatted = formatter(report.results);
-  if (formatted) {
-    stepper.error('ESLint Failed', '\n' + formatter(report.results));
-    return false;
-  }
-
-  stepper.success('ESLint Passed');
-  return true;
 }
 
-async function lintStyle(): Promise<boolean> {
-  stepper.start('Stylelint Start');
-
-  return stylelint({
-    fix: true,
-    formatter: 'string',
-    files: ['src/**/*.css', 'src/**/*.less', 'src/**/*.scss', 'src/**/*.vue']
-  }).then(result => {
-    if (result.errored) {
-      stepper.error('Stylelint Failed', '\n' + result.output);
-      return false;
+function eslint() {
+  return runCommand(
+    'eslint',
+    ['./src', '--fix', '--ext', SCRIPT_EXTS.join(',')],
+    {
+      start: 'Running eslint...',
+      succeed: 'ESLint Passed.',
+      failed: 'ESLint failed!'
     }
+  );
+}
 
-    stepper.success('Stylelint Passed');
-    return true;
-  });
+function stylelint() {
+  return runCommand(
+    'stylelint',
+    ['src/**/*.css', 'src/**/*.vue', 'src/**/*.less', 'src/**/*.sass', '--fix'],
+    {
+      start: 'Running stylelint...',
+      succeed: 'Stylelint Passed.',
+      failed: 'Stylelint failed!'
+    }
+  );
 }
 
 export async function lint() {
-  const scriptPassed = lintScript();
-  const stylePassed = await lintStyle();
+  const eslintPassed = await eslint();
+  const stylelintPassed = await stylelint();
 
-  if (!scriptPassed || !stylePassed) {
+  if (!eslintPassed || !stylelintPassed) {
     process.exit(1);
   }
 }
