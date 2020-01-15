@@ -65,6 +65,14 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+### 禁用输入框
+
+通过设置`disabled-input`属性来禁用输入框，此时按钮仍然可以点击
+
+```html
+<van-stepper v-model="value" disabled-input />
+```
+
 ### 固定小数位数
 
 通过设置`decimal-length`属性可以保留固定的小数位数

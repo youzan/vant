@@ -289,11 +289,12 @@ export default createComponent({
           role="spinbutton"
           class={bem('input')}
           value={this.currentValue}
+          style={this.inputStyle}
+          disabled={this.disabled}
+          readonly={this.disableInput}
           aria-valuemax={this.max}
           aria-valuemin={this.min}
           aria-valuenow={this.currentValue}
-          disabled={this.disabled || this.disableInput}
-          style={this.inputStyle}
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
