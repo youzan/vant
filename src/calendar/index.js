@@ -77,7 +77,7 @@ export default createComponent({
     },
     maxTime: {
       type: Number,
-      default: 3
+      default: 0
     },
     errMessage: {
       type: String,
