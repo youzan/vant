@@ -89,6 +89,10 @@
       -webkit-text-fill-color: @stepper-input-disabled-text-color; // fix disabled color in iOS
       opacity: 1;
     }
+
+    &:read-only {
+      cursor: default;
+    }
   }
 
   input[type="number"]::-webkit-inner-spin-button,
