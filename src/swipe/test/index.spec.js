@@ -1,8 +1,19 @@
-import { mount, triggerDrag, later } from '../../../test';
+import { mount, triggerDrag, later, trigger } from '../../../test';
+
+function mockPageHidden() {
+  let hidden = true;
+
+  Object.defineProperty(document, 'hidden', {
+    get: () => hidden
+  });
+
+  trigger(window, 'visibilitychange');
+  hidden = false;
+}
 
 const Component = {
   template: `
-    <van-swipe ref="swipe" v-bind="$props">
+    <van-swipe ref="swipe" v-bind="$props" v-on="$listeners">
       <van-swipe-item :style="style">1</van-swipe-item>
       <van-swipe-item :style="style">2</van-swipe-item>
       <van-swipe-item :style="style">3</van-swipe-item>
@@ -141,4 +152,22 @@ test('not loop', () => {
   expect(swipe.active).toEqual(2);
   triggerDrag(track, -100, 0);
   expect(swipe.active).toEqual(2);
+});
+
+test('should pause auto play when page hidden', async () => {
+  const change = jest.fn();
+  mount(Component, {
+    propsData: {
+      loop: true,
+      autoplay: 1
+    },
+    listeners: {
+      change
+    }
+  });
+
+  mockPageHidden();
+  await later(50);
+
+  expect(change).toHaveBeenCalledTimes(0);
 });

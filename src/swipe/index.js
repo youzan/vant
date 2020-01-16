@@ -12,6 +12,7 @@ export default createComponent({
     TouchMixin,
     BindEventMixin(function(bind, isBind) {
       bind(window, 'resize', this.resize, true);
+      bind(window, 'visibilitychange', this.onVisibilityChange);
 
       if (isBind) {
         this.initialize();
@@ -163,6 +164,14 @@ export default createComponent({
     // @exposed-api
     resize() {
       this.initialize(this.activeIndicator);
+    },
+
+    onVisibilityChange() {
+      if (document.hidden) {
+        this.clear();
+      } else {
+        this.autoPlay();
+      }
     },
 
     onTouchStart(event) {
