@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { Step, Steps } from 'vant';
 
-Vue.use(Step).use(Steps);
+Vue.use(Step);
+Vue.use(Steps);
 ```
 
 ## 代码演示

@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
-Vue.use(Collapse).use(CollapseItem);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
 ```
 
 ## Usage

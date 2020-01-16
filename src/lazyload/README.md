@@ -6,7 +6,12 @@
 import Vue from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload, options);
+Vue.use(Lazyload);
+
+// with options
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 ```
 
 ## Usage

@@ -8,9 +8,10 @@ Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
 
 ``` javascript
 import Vue from 'vue';
-import { Row, Col } from 'vant';
+import { Col, Row } from 'vant';
 
-Vue.use(Row).use(Col);
+Vue.use(Col);
+Vue.use(Row);
 ```
 
 ## 代码演示

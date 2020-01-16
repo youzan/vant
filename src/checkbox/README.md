@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox).use(CheckboxGroup);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 ```
 
 ## Usage

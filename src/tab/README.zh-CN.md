@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab).use(Tabs);
+Vue.use(Tab);
+Vue.use(Tabs);
 ```
 
 ## 代码演示

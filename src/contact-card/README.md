@@ -6,10 +6,9 @@
 import Vue from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue
-  .use(ContactCard)
-  .use(ContactList)
-  .use(ContactEdit);
+Vue.use(ContactCard);
+Vue.use(ContactList);
+Vue.use(ContactEdit);
 ```
 
 ## Usage

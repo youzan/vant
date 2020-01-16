@@ -10,7 +10,8 @@ The PasswordInput component is usually used with [NumberKeyboard](#/en-US/number
 import Vue from 'vue';
 import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput).use(NumberKeyboard);
+Vue.use(PasswordInput);
+Vue.use(NumberKeyboard);
 ```
 
 ## Usage

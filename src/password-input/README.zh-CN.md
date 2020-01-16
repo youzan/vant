@@ -10,7 +10,8 @@
 import Vue from 'vue';
 import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput).use(NumberKeyboard);
+Vue.use(PasswordInput);
+Vue.use(NumberKeyboard);
 ```
 
 ## 代码演示

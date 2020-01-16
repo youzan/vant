@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { IndexBar, IndexAnchor } from 'vant';
 
-Vue.use(IndexBar).use(IndexAnchor);
+Vue.use(IndexBar);
+Vue.use(IndexAnchor);
 ```
 
 ## 代码演示

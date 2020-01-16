@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe).use(SwipeItem);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 ```
 
 ## 代码演示

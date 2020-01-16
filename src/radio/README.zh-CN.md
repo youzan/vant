@@ -6,8 +6,8 @@
 import Vue from 'vue';
 import { RadioGroup, Radio } from 'vant';
 
-Vue.use(RadioGroup);
 Vue.use(Radio);
+Vue.use(RadioGroup);
 ```
 
 ## 代码演示

@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell).use(CouponList);
+Vue.use(CouponCell);
+Vue.use(CouponList);
 ```
 
 ## Usage

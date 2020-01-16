@@ -6,7 +6,8 @@
 import Vue from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 
-Vue.use(DropdownMenu).use(DropdownItem);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
 ```
 
 ## 代码演示

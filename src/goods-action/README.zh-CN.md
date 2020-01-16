@@ -4,16 +4,11 @@
 
 ``` javascript
 import Vue from 'vue';
-import {
-  GoodsAction,
-  GoodsActionIcon,
-  GoodsActionButton
-} from 'vant';
+import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
 
-Vue
-  .use(GoodsAction)
-  .use(GoodsActionIcon)
-  .use(GoodsActionButton);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
 ```
 
 ## 代码演示
