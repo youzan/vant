@@ -29,6 +29,7 @@ export function install(vue: typeof Vue): void;
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
 export class Button extends VanComponent {}
+export class Calendar extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
 export class CellGroup extends VanComponent {}
