@@ -1,12 +1,12 @@
 module.exports = {
-  name: 'demo-ui',
+  name: '<%= name %>',
   build: {
     site: {
-      publicPath: '/demo-ui/'
+      publicPath: '/<%= name %>/'
     }
   },
   site: {
-    title: 'Demo UI',
+    title: '<%= name %>',
     logo: 'https://img.yzcdn.cn/vant/logo.png',
     nav: [
       {
@@ -28,19 +28,6 @@ module.exports = {
           {
             path: 'my-button',
             title: 'MyButton 按钮'
-          },
-          {
-            path: 'my-icon',
-            title: 'MyIcon 图标'
-          }
-        ]
-      },
-      {
-        title: '展示组件',
-        items: [
-          {
-            path: 'my-cell',
-            title: 'MyCell 单元格'
           }
         ]
       }

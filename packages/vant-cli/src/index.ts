@@ -6,6 +6,7 @@ import { lint } from './commands/lint';
 import { test } from './commands/jest';
 import { clean } from './commands/clean';
 import { build } from './commands/build';
+import { create } from './commands/create';
 import { release } from './commands/release';
 import { changelog } from './commands/changelog';
 import { buildSite } from './commands/build-site';
@@ -39,6 +40,10 @@ command('build')
   .description('Compile components in production mode')
   .option('--watch', 'Watch file change')
   .action(build);
+
+command('create')
+  .description('Create a new project')
+  .action(create);
 
 command('release')
   .description('Compile components and release it')

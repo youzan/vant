@@ -33,6 +33,7 @@ export const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 // Relative paths
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
+export const GENERATOR_DIR = join(__dirname, '../../generators');
 
 // Dist files
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');

@@ -1,9 +1,9 @@
 {
-  "name": "@youzan/demo-ui",
+  "name": "<%= name %>",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/demo-ui.js",
-  "style": "lib/demo-ui.css",
+  "main": "lib/<%= name %>.js",
+  "style": "lib/index.css",
   "files": [
     "lib",
     "es"
@@ -36,14 +36,12 @@
     ]
   },
   "peerDependencies": {
-    "vant": "^2.2.16",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
     "@vant/cli": "^2.0.0",
     "babel-plugin-import": "^1.13.0",
-    "vant": "^2.2.16",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },

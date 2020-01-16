@@ -21,7 +21,8 @@
     "lib",
     "site",
     "template",
-    "preset.js"
+    "preset.js",
+    "generators"
   ],
   "author": "chenjiahan",
   "license": "MIT",
@@ -30,6 +31,8 @@
     "vue-template-compiler": "^2.5.22"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/yeoman-generator": "^3.1.4",
     "@types/fs-extra": "^8.0.1",
     "@types/html-webpack-plugin": "^3.2.1",
     "@types/lodash": "^4.14.149",
@@ -51,7 +54,6 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-typescript": "^7.7.7",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
-    "@types/jest": "^24.0.25",
     "@vant/eslint-config": "^1.5.1",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/markdown-vetur": "^1.1.0",
@@ -75,6 +77,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
+    "fast-glob": "^3.1.1",
     "gh-pages": "2.0.1",
     "html-webpack-plugin": "3.2.0",
     "husky": "^4.0.4",
@@ -102,7 +105,8 @@
     "webpack": "^4.41.5",
     "webpack-dev-server": "3.10.1",
     "webpack-merge": "^4.2.2",
-    "webpackbar": "^4.0.0"
+    "webpackbar": "^4.0.0",
+    "yeoman-generator": "^4.4.0"
   },
   "release-it": {
     "git": {

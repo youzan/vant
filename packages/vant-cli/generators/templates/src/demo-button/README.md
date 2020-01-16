@@ -18,23 +18,17 @@ Vue.use(MyButton);
 ### 基础用法
 
 ```html
-<my-button type="primary" />
-```
-
-### 自定义颜色
-
-```html
-<my-button color="#03a9f4" />
+<demo-button type="primary" />
 ```
 
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| type | 按钮类型 | *string* | `primary` | - |
-| color | 按钮颜色 | *string* | - | 1.0.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| type | 按钮类型 | *string* | `primary` |
+| color `1.0.0` | 按钮颜色 | *string* | - |
 
 ### Events
 
