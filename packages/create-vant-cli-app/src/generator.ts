@@ -1,31 +1,44 @@
 import chalk from 'chalk';
+import consola from 'consola';
 import { join } from 'path';
-import { consola, slimPath } from '../common/logger';
-import { CWD, GENERATOR_DIR } from '../common/constant';
+import { CWD, GENERATOR_DIR } from './constant';
 import Generator from 'yeoman-generator';
 
 const TEMPLATES = join(GENERATOR_DIR, 'templates');
 const PROMPTS = [
   {
-    type: 'input',
-    name: 'name',
-    message: 'Your package name'
+    name: 'preprocessor',
+    message: 'Select css preprocessor',
+    type: 'list',
+    choices: ['Less', 'Sass']
   }
 ];
 
-export class VantCliGenerator extends Generator {
+export class VanGenerator extends Generator {
   inputs = {
-    name: ''
+    name: '',
+    preprocessor: ''
   };
+
+  constructor(name: string) {
+    super([], {
+      env: {
+        cwd: join(CWD, name)
+      },
+      resolved: GENERATOR_DIR
+    });
+
+    this.inputs.name = name;
+  }
 
   async prompting() {
     return this.prompt(PROMPTS).then(inputs => {
-      this.inputs = inputs as any;
+      this.inputs.preprocessor = inputs.preprocessor as string;
     });
   }
 
   writing() {
-    consola.info(`Creating project in ${slimPath(CWD)}\n`);
+    consola.info(`Creating project in ${join(CWD, this.inputs.name)}\n`);
 
     const copy = (from: string, to?: string) => {
       this.fs.copy(join(TEMPLATES, from), this.destinationPath(to || from));
@@ -52,6 +65,8 @@ export class VantCliGenerator extends Generator {
     console.log();
     consola.info('Install dependencies...\n');
 
+    process.chdir(this.inputs.name);
+
     this.installDependencies({
       npm: false,
       bower: false,
@@ -61,12 +76,12 @@ export class VantCliGenerator extends Generator {
   }
 
   end() {
+    const { name } = this.inputs;
+
     console.log();
+    consola.success(`Successfully created ${chalk.yellow(name)}.`);
     consola.success(
-      `Successfully created project ${chalk.yellow(this.inputs.name)}.`
-    );
-    consola.success(
-      `Now you can run ${chalk.yellow('yarn dev')} to start development!`
+      `Run ${chalk.yellow(`cd ${name} && yarn dev`)} to start development!`
     );
   }
 }

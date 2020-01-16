@@ -7,7 +7,7 @@
     "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext"]
   },
-  "include": ["src/**/*", "site"]
+  "include": ["src/**/*"]
 }

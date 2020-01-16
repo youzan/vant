@@ -26,8 +26,8 @@ module.exports = {
         title: '基础组件',
         items: [
           {
-            path: 'my-button',
-            title: 'MyButton 按钮'
+            path: 'demo-button',
+            title: 'DemoButton 按钮'
           }
         ]
       }

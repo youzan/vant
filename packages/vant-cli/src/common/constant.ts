@@ -33,13 +33,15 @@ export const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 // Relative paths
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
-export const GENERATOR_DIR = join(__dirname, '../../generators');
 
 // Dist files
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
 export const PACKAGE_STYLE_FILE = join(DIST_DIR, 'package-style.css');
 export const SITE_MODILE_SHARED_FILE = join(DIST_DIR, 'site-mobile-shared.js');
-export const SITE_DESKTOP_SHARED_FILE = join(DIST_DIR, 'site-desktop-shared.js');
+export const SITE_DESKTOP_SHARED_FILE = join(
+  DIST_DIR,
+  'site-desktop-shared.js'
+);
 export const STYPE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 
 // Config files
@@ -63,7 +65,11 @@ export function getPackageJson() {
 export function getVantConfig() {
   delete require.cache[VANT_CONFIG_FILE];
 
-  return require(VANT_CONFIG_FILE);
+  try {
+    return require(VANT_CONFIG_FILE);
+  } catch (err) {
+    return {};
+  }
 }
 
 function getSrcDir() {

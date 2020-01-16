@@ -4,7 +4,7 @@ import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig, setBuildTarget } from '../common';
 import { LIB_DIR, ES_DIR } from '../common/constant';
 
-export function packageConfig(isMinify: boolean) {
+export function getPackageConfig(isMinify: boolean) {
   const { name } = getVantConfig();
 
   setBuildTarget('package');

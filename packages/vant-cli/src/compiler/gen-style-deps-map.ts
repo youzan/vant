@@ -5,8 +5,6 @@ import { getDeps, clearDepsCache, fillExt } from './get-deps';
 import { getComponents, smartOutputFile } from '../common';
 import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
-const components = getComponents();
-
 function matchPath(path: string, component: string): boolean {
   return path
     .replace(SRC_DIR, '')
@@ -23,7 +21,7 @@ export function checkStyleExists(component: string) {
 }
 
 // analyze component dependencies
-function analyzeComponentDeps(component: string) {
+function analyzeComponentDeps(components: string[], component: string) {
   const checkList: string[] = [];
   const componentEntry = fillExt(join(SRC_DIR, component, 'index'));
   const record = new Set();
@@ -54,7 +52,7 @@ function analyzeComponentDeps(component: string) {
 
 type DepsMap = Record<string, string[]>;
 
-function getSequence(depsMap: DepsMap) {
+function getSequence(components: string[], depsMap: DepsMap) {
   const sequence: string[] = [];
   const record = new Set();
 
@@ -94,16 +92,18 @@ function getSequence(depsMap: DepsMap) {
 }
 
 export async function genStyleDepsMap() {
+  const components = getComponents();
+
   return new Promise(resolve => {
     clearDepsCache();
 
     const map = {} as DepsMap;
 
     components.forEach(component => {
-      map[component] = analyzeComponentDeps(component);
+      map[component] = analyzeComponentDeps(components, component);
     });
 
-    const sequence = getSequence(map);
+    const sequence = getSequence(components, map);
 
     Object.keys(map).forEach(key => {
       map[key] = map[key].sort(

@@ -24,6 +24,9 @@
     "preset.js",
     "generators"
   ],
+  "keywords": [
+    "vant"
+  ],
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
@@ -31,10 +34,9 @@
     "vue-template-compiler": "^2.5.22"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.25",
-    "@types/yeoman-generator": "^3.1.4",
     "@types/fs-extra": "^8.0.1",
     "@types/html-webpack-plugin": "^3.2.1",
+    "@types/jest": "^24.0.25",
     "@types/lodash": "^4.14.149",
     "@types/postcss-load-config": "^2.0.1",
     "@types/sass": "^1.16.0",
@@ -105,8 +107,7 @@
     "webpack": "^4.41.5",
     "webpack-dev-server": "3.10.1",
     "webpack-merge": "^4.2.2",
-    "webpackbar": "^4.0.0",
-    "yeoman-generator": "^4.4.0"
+    "webpackbar": "^4.0.0"
   },
   "release-it": {
     "git": {
