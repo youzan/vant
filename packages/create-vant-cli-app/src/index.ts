@@ -1,5 +1,7 @@
+#!/usr/bin/env node
+
 import inquirer from 'inquirer';
-import { mkdirSync, existsSync } from 'fs-extra';
+import { ensureDir } from 'fs-extra';
 import { VanGenerator } from './generator';
 
 const PROMPTS = [
@@ -13,15 +15,10 @@ const PROMPTS = [
 export default async function run() {
   const { name } = await inquirer.prompt(PROMPTS);
 
-  if (!existsSync(name)) {
-    mkdirSync(name);
-  }
+  ensureDir(name);
 
   const generator = new VanGenerator(name);
-
-  return new Promise(resolve => {
-    generator.run(resolve);
-  });
+  generator.run();
 }
 
 run();

@@ -44,21 +44,21 @@ export class VanGenerator extends Generator {
       this.fs.copy(join(TEMPLATES, from), this.destinationPath(to || from));
     };
 
-    const copyTpl = (name: string) => {
+    const copyTpl = (name: string, target?: string) => {
       this.fs.copyTpl(
         join(TEMPLATES, name),
-        this.destinationPath(name),
+        this.destinationPath(target || name),
         this.inputs
       );
     };
 
-    copy('.gitignore');
-    copy('.eslintignore');
+    copyTpl('package.json.tpl', 'package.json');
+    copyTpl('vant.config.js');
     copy('babel.config.js');
+    copy('gitignore.tpl', '.gitignore');
+    copy('eslintignore.tpl', '.eslintignore');
     copy('src/**/*', 'src');
     copy('docs/**/*', 'docs');
-    copyTpl('package.json');
-    copyTpl('vant.config.js');
   }
 
   install() {

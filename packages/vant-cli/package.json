@@ -21,8 +21,7 @@
     "lib",
     "site",
     "template",
-    "preset.js",
-    "generators"
+    "preset.js"
   ],
   "keywords": [
     "vant"
@@ -41,7 +40,6 @@
     "@types/postcss-load-config": "^2.0.1",
     "@types/sass": "^1.16.0",
     "@types/shelljs": "^0.8.6",
-    "@types/source-map": "^0.5.7",
     "@types/webpack": "^4.41.2",
     "@types/webpack-dev-server": "^3.9.0",
     "@types/webpack-merge": "^4.1.5"
@@ -124,13 +122,5 @@
       "global-require": 0,
       "import/no-dynamic-require": 0
     }
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true
   }
 }
