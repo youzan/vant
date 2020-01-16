@@ -15,6 +15,7 @@ export default createComponent({
   props: {
     ...cellProps,
     error: Boolean,
+    disabled: Boolean,
     readonly: Boolean,
     autosize: [Boolean, Object],
     leftIcon: String,
@@ -232,6 +233,7 @@ export default createComponent({
         },
         attrs: {
           ...this.$attrs,
+          disabled: this.disabled,
           readonly: this.readonly
         },
         on: this.listeners,
