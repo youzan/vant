@@ -87,6 +87,8 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 | [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | 微信小程序组件库 |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
+| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
+| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
 
 ## 链接
 
