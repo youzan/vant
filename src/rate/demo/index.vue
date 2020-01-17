@@ -52,6 +52,13 @@
         readonly
       />
     </demo-block>
+
+    <demo-block :title="$t('changeEvent')">
+      <van-rate
+        v-model="value7"
+        @change="onChange"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -65,6 +72,7 @@ export default {
       customStyle: '自定义样式',
       customCount: '自定义数量',
       readonly: '只读状态',
+      changeEvent: '监听切换事件'
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -73,7 +81,8 @@ export default {
       customStyle: 'Custom Style',
       customCount: 'Custom Count',
       readonly: 'Readonly',
-    },
+      changeEvent: 'Change Event'
+    }
   },
 
   data() {
@@ -84,8 +93,16 @@ export default {
       value4: 2.5,
       value5: 4,
       value6: 3,
+      value7: 2
     };
   },
+
+  methods: {
+    onChange(value) {
+      this.value7 = value;
+      this.$toast(this.$t('changeEvent'));
+    }
+  }
 };
 </script>
 
