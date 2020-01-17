@@ -1,6 +1,10 @@
 #!/usr/bin/env node
+import { command, parse, version } from 'commander';
 
-import { command, parse } from 'commander';
+// @ts-ignore
+import packageJson from '../package.json';
+
+// commands
 import { dev } from './commands/dev';
 import { lint } from './commands/lint';
 import { test } from './commands/jest';
@@ -10,6 +14,8 @@ import { release } from './commands/release';
 import { changelog } from './commands/changelog';
 import { buildSite } from './commands/build-site';
 import { commitLint } from './commands/commit-lint';
+
+version(`@vant/cli ${packageJson.version}`);
 
 command('dev')
   .description('Run webpack dev server')
