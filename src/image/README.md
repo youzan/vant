@@ -57,6 +57,7 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`
 ```
 
 ```js
+import Vue from 'vue';
 import { Lazyload } from 'vant';
 
 Vue.use(Lazyload);

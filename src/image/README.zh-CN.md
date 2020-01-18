@@ -66,6 +66,13 @@ Vue.use(Image);
 />
 ```
 
+```js
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+```
+
 ### 加载中提示
 
 `Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
