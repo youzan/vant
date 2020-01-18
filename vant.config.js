@@ -11,9 +11,7 @@ module.exports = {
   },
   site: {
     defaultLang: 'en-US',
-    versions: [
-      { label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }
-    ],
+    versions: [{ label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f'
     },
@@ -78,7 +76,6 @@ module.exports = {
           },
           {
             title: '基础组件',
-            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
             items: [
               {
                 path: 'button',
@@ -112,7 +109,6 @@ module.exports = {
           },
           {
             title: '表单组件',
-            icon: 'orders-o',
             items: [
               {
                 path: 'calendar',
@@ -167,10 +163,6 @@ module.exports = {
                 title: 'Switch 开关'
               },
               {
-                path: 'switch-cell',
-                title: 'SwitchCell 开关单元格'
-              },
-              {
                 path: 'uploader',
                 title: 'Uploader 文件上传'
               }
@@ -178,7 +170,6 @@ module.exports = {
           },
           {
             title: '反馈组件',
-            icon: 'gift-card-o',
             items: [
               {
                 path: 'action-sheet',
@@ -220,7 +211,6 @@ module.exports = {
           },
           {
             title: '展示组件',
-            icon: 'photo-o',
             items: [
               {
                 path: 'circle',
@@ -286,7 +276,6 @@ module.exports = {
           },
           {
             title: '导航组件',
-            icon: 'peer-pay',
             items: [
               {
                 path: 'grid',
@@ -324,7 +313,6 @@ module.exports = {
           },
           {
             title: '业务组件',
-            icon: 'other-pay',
             items: [
               {
                 path: 'address-edit',
@@ -361,6 +349,15 @@ module.exports = {
               {
                 path: 'sku',
                 title: 'Sku 商品规格'
+              }
+            ]
+          },
+          {
+            title: '废弃',
+            items: [
+              {
+                path: 'switch-cell',
+                title: 'SwitchCell 开关单元格'
               }
             ]
           }
@@ -414,7 +411,6 @@ module.exports = {
           },
           {
             title: 'Basic Components',
-            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
             items: [
               {
                 path: 'button',
@@ -443,12 +439,11 @@ module.exports = {
               {
                 path: 'style',
                 title: 'Built-in style'
-              },
+              }
             ]
           },
           {
             title: 'Form Components',
-            icon: 'orders-o',
             items: [
               {
                 path: 'calendar',
@@ -514,7 +509,6 @@ module.exports = {
           },
           {
             title: 'Action Components',
-            icon: 'gift-card-o',
             items: [
               {
                 path: 'action-sheet',
@@ -556,7 +550,6 @@ module.exports = {
           },
           {
             title: 'Display Components',
-            icon: 'photo-o',
             items: [
               {
                 path: 'circle',
@@ -622,7 +615,6 @@ module.exports = {
           },
           {
             title: 'Navigation Components',
-            icon: 'peer-pay',
             items: [
               {
                 path: 'grid',
@@ -660,7 +652,6 @@ module.exports = {
           },
           {
             title: 'Business Components',
-            icon: 'other-pay',
             items: [
               {
                 path: 'address-edit',
@@ -697,6 +688,15 @@ module.exports = {
               {
                 path: 'sku',
                 title: 'Sku'
+              }
+            ]
+          },
+          {
+            title: 'Deprecated',
+            items: [
+              {
+                path: 'switch-cell',
+                title: 'SwitchCell'
               }
             ]
           }
