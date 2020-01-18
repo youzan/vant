@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 

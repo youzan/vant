@@ -6,7 +6,7 @@ DemoButton 是一个示例按钮组件
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { DemoButton } from '<%= name %>';
 

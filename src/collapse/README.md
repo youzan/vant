@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
@@ -24,7 +24,7 @@ Use `v-model` to control the name of active panels
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -46,7 +46,7 @@ In accordion mode, only one panel can be expanded at the same time.
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -74,7 +74,7 @@ export default {
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {

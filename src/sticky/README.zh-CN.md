@@ -6,7 +6,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Sticky } from 'vant';
 

@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
@@ -50,7 +50,7 @@ Vue.use(ContactEdit);
 </van-popup>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {

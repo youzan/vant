@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
 

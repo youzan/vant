@@ -6,7 +6,7 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Area } from 'vant';
 

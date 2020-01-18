@@ -6,7 +6,7 @@ The SwitchCell component will be deprecated in version 3.0. Please use the Cell 
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { SwitchCell } from 'vant';
 

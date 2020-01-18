@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
@@ -24,7 +24,7 @@ Vue.use(CollapseItem);
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -75,7 +75,7 @@ export default {
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {

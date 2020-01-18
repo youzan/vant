@@ -6,7 +6,7 @@ Used to select time, support date and time dimensions, usually used with the [Po
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { DatetimePicker } from 'vant';
 

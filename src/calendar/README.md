@@ -6,7 +6,7 @@ Calendar component for selecting dates or date ranges
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Calendar } from 'vant';
 

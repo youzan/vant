@@ -189,6 +189,10 @@ export default {
     -webkit-font-smoothing: antialiased;
   }
 
+  p > code {
+    font-size: 14px;
+  }
+
   section {
     padding: 30px;
     overflow: hidden;

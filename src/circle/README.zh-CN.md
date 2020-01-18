@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Circle } from 'vant';
 
@@ -24,7 +24,7 @@ Vue.use(Circle);
 />
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -78,7 +78,7 @@ export default {
 />
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {

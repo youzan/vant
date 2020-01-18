@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
@@ -22,7 +22,7 @@ Vue.use(SidebarItem);
 </van-sidebar>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
