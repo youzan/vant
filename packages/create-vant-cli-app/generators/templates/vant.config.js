@@ -1,6 +1,9 @@
 module.exports = {
   name: '<%= name %>',
   build: {
+    css: {
+      preprocessor: '<%= preprocessor %>',
+    },
     site: {
       publicPath: '/<%= name %>/'
     }

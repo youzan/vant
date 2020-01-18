@@ -17,6 +17,7 @@ const PROMPTS = [
 export class VanGenerator extends Generator {
   inputs = {
     name: '',
+    cssLang: '',
     preprocessor: ''
   };
 
@@ -32,8 +33,12 @@ export class VanGenerator extends Generator {
   }
 
   async prompting() {
-    return this.prompt(PROMPTS).then(inputs => {
-      this.inputs.preprocessor = inputs.preprocessor as string;
+    return this.prompt<Record<string, string>>(PROMPTS).then(inputs => {
+      const preprocessor = inputs.preprocessor.toLowerCase();
+      const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
+
+      this.inputs.cssLang = cssLang;
+      this.inputs.preprocessor = preprocessor;
     });
   }
 
@@ -44,21 +49,21 @@ export class VanGenerator extends Generator {
       this.fs.copy(join(TEMPLATES, from), this.destinationPath(to || from));
     };
 
-    const copyTpl = (name: string, target?: string) => {
+    const copyTpl = (from: string, to?: string) => {
       this.fs.copyTpl(
-        join(TEMPLATES, name),
-        this.destinationPath(target || name),
+        join(TEMPLATES, from),
+        this.destinationPath(to || from),
         this.inputs
       );
     };
 
     copyTpl('package.json.tpl', 'package.json');
     copyTpl('vant.config.js');
+    copyTpl('src/**/*', 'src');
+    copyTpl('docs/**/*', 'docs');
     copy('babel.config.js');
     copy('gitignore.tpl', '.gitignore');
     copy('eslintignore.tpl', '.eslintignore');
-    copy('src/**/*', 'src');
-    copy('docs/**/*', 'docs');
   }
 
   install() {

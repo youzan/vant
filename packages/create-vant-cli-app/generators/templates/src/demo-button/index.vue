@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="<%= cssLang %>">
 .demo-button {
   min-width: 120px;
   color: #fff;
