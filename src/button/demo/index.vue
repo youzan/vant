@@ -54,6 +54,10 @@
       <van-button type="primary" size="mini">{{ $t('mini') }}</van-button>
     </demo-block>
 
+    <demo-block :title="$t('blockElement')">
+      <van-button type="primary" block>{{ $t('blockElement') }}</van-button>
+    </demo-block>
+
     <demo-block :title="$t('router')">
       <van-button :text="$t('urlRoute')" type="primary" url="/vant/mobile.html" />
       <van-button :text="$t('vueRoute')" type="primary" to="index" />
@@ -63,13 +67,6 @@
       <van-button color="#7232dd" :text="$t('pure')" />
       <van-button plain color="#7232dd" :text="$t('pure')" />
       <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" :text="$t('gradient')" />
-    </demo-block>
-
-    <demo-block :title="$t('blockElement')">
-      <div class="demo-button-row">
-        <van-button type="primary">{{ $t('normal') }}</van-button>
-      </div>
-      <van-button type="primary" block>{{ $t('blockElement') }}</van-button>
     </demo-block>
   </demo-section>
 </template>

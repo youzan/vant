@@ -90,6 +90,14 @@ Vue.use(Button);
 <van-button type="primary" size="mini">迷你按钮</van-button>
 ```
 
+### 块级元素
+
+按钮在默认情况下为行内块级元素，通过`block`属性可以将按钮的元素类型设置为块级元素
+
+```html
+<van-button type="primary" block>块级元素</van-button>
+```
+
 ### 页面导航
 
 可以通过`url`属性进行 URL 跳转，或通过`to`属性进行路由跳转
@@ -108,15 +116,6 @@ Vue.use(Button);
 <van-button color="#7232dd" plain>单色按钮</van-button>
 <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
-
-### 块级元素
-
-通过`block`属性可以将按钮的元素类型设置为块级元素
-
-```html
-<van-button type="primary" block>块级元素</van-button>
-```
-
 
 ## API
 
