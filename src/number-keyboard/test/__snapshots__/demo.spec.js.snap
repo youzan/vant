@@ -18,7 +18,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__value van-cell__value--alone">
-        <div class="van-field__body"><input type="text" placeholder="点此输入" readonly="readonly" class="van-field__control"></div>
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="点此输入" class="van-field__control"></div>
       </div>
     </div>
     <div class="van-number-keyboard van-number-keyboard--default van-number-keyboard--safe-area-inset-bottom" style="z-index: 100; display: none;" name="van-slide-up">
