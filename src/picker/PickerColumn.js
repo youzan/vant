@@ -73,8 +73,8 @@ export default createComponent({
   },
 
   watch: {
-    defaultIndex() {
-      this.setIndex(this.defaultIndex);
+    defaultIndex(val) {
+      this.setIndex(val);
     }
   },
 

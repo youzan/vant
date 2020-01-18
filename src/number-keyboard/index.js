@@ -65,9 +65,9 @@ export default createComponent({
   },
 
   watch: {
-    show() {
+    show(val) {
       if (!this.transition) {
-        this.$emit(this.show ? 'show' : 'hide');
+        this.$emit(val ? 'show' : 'hide');
       }
     }
   },

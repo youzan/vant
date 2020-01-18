@@ -66,8 +66,8 @@ export default createComponent({
   },
 
   watch: {
-    value() {
-      this.code = this.value;
+    value(val) {
+      this.code = val;
       this.setValues();
     },
 

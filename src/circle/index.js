@@ -127,10 +127,10 @@ export default createComponent({
 
   watch: {
     rate: {
-      handler() {
+      handler(rate) {
         this.startTime = Date.now();
         this.startRate = this.value;
-        this.endRate = format(this.rate);
+        this.endRate = format(rate);
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs(
           ((this.startRate - this.endRate) * 1000) / this.speed

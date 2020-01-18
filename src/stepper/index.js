@@ -112,16 +112,16 @@ export default createComponent({
   },
 
   watch: {
+    max: 'check',
+    min: 'check',
+    integer: 'check',
+    decimalLength: 'check',
+
     value(val) {
       if (!equal(val, this.currentValue)) {
         this.currentValue = this.format(val);
       }
     },
-
-    max: 'check',
-    min: 'check',
-    integer: 'check',
-    decimalLength: 'check',
 
     currentValue(val) {
       this.$emit('input', val);

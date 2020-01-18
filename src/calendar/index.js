@@ -118,9 +118,7 @@ export default createComponent({
   },
 
   watch: {
-    type() {
-      this.reset();
-    },
+    type: 'reset',
 
     value(val) {
       if (val) {
