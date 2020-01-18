@@ -1,16 +1,16 @@
-# MyButton 按钮
+# DemoButton 按钮
 
 ### 介绍
 
-MyButton 是一个示例按钮组件
+DemoButton 是一个示例按钮组件
 
 ### 引入
 
 ``` javascript
 import Vue from 'vue';
-import { MyButton } from 'demo-ui';
+import { DemoButton } from '<%= name %>';
 
-Vue.use(MyButton);
+Vue.use(DemoButton);
 ```
 
 ## 代码演示

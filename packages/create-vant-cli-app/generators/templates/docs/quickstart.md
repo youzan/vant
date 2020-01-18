@@ -4,8 +4,8 @@
 
 ```bash
 # 通过 npm 安装
-npm i vant -S
+npm i <%= name %> -S
 
 # 通过 yarn 安装
-yarn add vant
+yarn add <%= name %>
 ```
