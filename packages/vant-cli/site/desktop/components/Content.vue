@@ -37,7 +37,7 @@ export default {
   }
 
   a {
-    color: @van-doc-blue;
+    color: @van-doc-green;
     -webkit-font-smoothing: auto;
   }
 

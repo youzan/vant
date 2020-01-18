@@ -126,16 +126,15 @@ export default {
       color: #455a64;
       font-size: 14px;
       line-height: 28px;
-      transition: all 0.3s;
+      transition: color 0.2s;
 
-      &:hover {
-        color: #000;
+      &:hover,
+      &.active {
+        color: @van-doc-green;
       }
 
       &.active {
-        color: #000;
-        font-weight: 500;
-        font-size: 15px;
+        -webkit-font-smoothing: auto;
       }
 
       span {
