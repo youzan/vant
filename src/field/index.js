@@ -27,6 +27,7 @@ export default createComponent({
     labelClass: null,
     labelAlign: String,
     inputAlign: String,
+    placeholder: String,
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
@@ -234,7 +235,8 @@ export default createComponent({
         attrs: {
           ...this.$attrs,
           disabled: this.disabled,
-          readonly: this.readonly
+          readonly: this.readonly,
+          placeholder: this.placeholder
         },
         on: this.listeners,
         // add model directive to skip IME composition
