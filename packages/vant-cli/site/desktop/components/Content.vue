@@ -38,6 +38,7 @@ export default {
 
   a {
     color: @van-doc-blue;
+    -webkit-font-smoothing: auto;
   }
 
   h1,
@@ -67,9 +68,9 @@ export default {
   }
 
   h3 {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 18px;
   }
 
   h4 {
@@ -119,6 +120,7 @@ export default {
       &:first-child {
         padding-left: 0;
 
+        // version tag
         code {
           margin: 0;
           padding: 2px 6px;
@@ -135,18 +137,12 @@ export default {
       }
     }
 
-    code {
-      padding: 0 8px;
-      font-size: 13px;
-      font-family: inherit;
-      word-break: keep-all;
-    }
-
     em {
-      color: @van-doc-fuchsia;
-      font-size: 12px;
+      color: @van-doc-green;
+      font-size: 12.5px;
       font-family: @van-doc-code-font-family;
       font-style: normal;
+      -webkit-font-smoothing: auto;
     }
   }
 
@@ -185,8 +181,12 @@ export default {
     display: inline;
     margin: 2px 3px;
     padding: 2px 5px;
+    font-size: 13px;
+    font-family: inherit;
+    word-break: keep-all;
     background-color: #f0f2f5;
     border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
   }
 
   section {
