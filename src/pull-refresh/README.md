@@ -21,7 +21,9 @@ The `refresh` event will be triggered when pull refresh, you should set `v-model
 </van-pull-refresh>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -29,11 +31,10 @@ export default {
       isLoading: false
     }
   },
-
   methods: {
     onRefresh() {
       setTimeout(() => {
-        this.$toast('Refresh Success');
+        Toast('Refresh Success');
         this.isLoading = false;
         this.count++;
       }, 1000);

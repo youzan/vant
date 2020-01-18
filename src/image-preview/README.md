@@ -13,7 +13,7 @@ Vue.use(ImagePreview);
 
 ### Basic Usage
 
-```javascript
+```js
 ImagePreview([
   'https://img.yzcdn.cn/vant/apple-1.jpg',
   'https://img.yzcdn.cn/vant/apple-2.jpg'
@@ -22,7 +22,7 @@ ImagePreview([
 
 ### Custom config
 
-```javascript
+```js
 ImagePreview({
   images: [
     'https://img.yzcdn.cn/vant/apple-1.jpg',
@@ -37,7 +37,7 @@ ImagePreview({
 
 ### Async Close
 
-```javascript
+```js
 const instance = ImagePreview({
   images: [
     'https://img.yzcdn.cn/vant/apple-1.jpg',

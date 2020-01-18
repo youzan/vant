@@ -37,7 +37,7 @@ Vue.use(SwipeItem);
 </van-swipe>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -62,6 +62,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onChange(index) {

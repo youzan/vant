@@ -21,7 +21,9 @@ Vue.use(PullRefresh);
 </van-pull-refresh>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -29,11 +31,10 @@ export default {
       isLoading: false
     }
   },
-
   methods: {
     onRefresh() {
       setTimeout(() => {
-        this.$toast('刷新成功');
+        Toast('刷新成功');
         this.isLoading = false;
         this.count++;
       }, 1000);

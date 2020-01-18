@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Toast } from 'vant';
 
@@ -13,13 +13,13 @@ Vue.use(Toast);
 
 ### Text
 
-```javascript
+```js
 Toast('Some messages');
 ```
 
 ### Loading
 
-```javascript
+```js
 Toast.loading({
   message: 'Loading...',
   forbidClick: true
@@ -34,7 +34,7 @@ Toast.loading({
 
 ### Success/Fail
 
-```javascript
+```js
 Toast.success('Success');
 Toast.fail('Fail');
 ```
@@ -55,7 +55,7 @@ Toast({
 
 ### Update Message
 
-```javascript
+```js
 const toast = Toast.loading({
   duration: 0, // continuous display toast
   forbidClick: true,

@@ -18,7 +18,7 @@ Vue.use(CheckboxGroup);
 <van-checkbox v-model="checked">Checkbox</van-checkbox>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -97,7 +97,7 @@ When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an 
 </van-checkbox-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

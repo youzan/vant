@@ -24,7 +24,9 @@ Vue.use(GoodsActionIcon);
 </van-goods-action>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickIcon() {

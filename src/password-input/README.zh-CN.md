@@ -36,7 +36,7 @@ Vue.use(NumberKeyboard);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -101,7 +101,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

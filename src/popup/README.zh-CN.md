@@ -25,7 +25,7 @@ Vue.use(Popup);
 <van-popup v-model="show">内容</van-popup>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

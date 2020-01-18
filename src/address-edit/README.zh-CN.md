@@ -28,7 +28,9 @@ Vue.use(AddressEdit);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -36,7 +38,6 @@ export default {
       searchResult: []
     }
   },
-
   methods: {
     onSave() {
       Toast('save');

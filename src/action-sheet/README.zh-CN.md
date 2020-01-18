@@ -19,7 +19,9 @@ Vue.use(ActionSheet);
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -31,7 +33,6 @@ export default {
       ]
     };
   },
-
   methods: {
     onSelect(item) {
       // 默认情况下，点击选项时不会自动关闭菜单
@@ -51,7 +52,7 @@ export default {
 <van-action-sheet v-model="show" :actions="actions" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -80,13 +81,14 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       show: false
     };
   },
-
   methods: {
     onCancel() {
       this.show = false;

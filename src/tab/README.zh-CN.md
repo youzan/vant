@@ -81,11 +81,13 @@ export default {
 </van-tabs>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickDisabled(name, title) {
-      this.$toast(name + '已被禁用');
+      Toast(name + '已被禁用');
     }
   }
 };
@@ -114,11 +116,13 @@ export default {
 </van-tabs>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClick(name, title) {
-      this.$toast(title);
+      Toast(title);
     }
   }
 };

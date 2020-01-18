@@ -17,7 +17,7 @@ Vue.use(Rate);
 <van-rate v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

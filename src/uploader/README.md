@@ -17,7 +17,7 @@ Vue.use(Uploader);
 <van-uploader :after-read="afterRead" />
 ```
 
-```javascript
+```js
 export default {
   methods: {
     afterRead(file) {
@@ -33,7 +33,7 @@ export default {
 <van-uploader v-model="fileList" multiple />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -80,6 +80,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     beforeRead(file) {
@@ -90,7 +92,6 @@ export default {
     
       return true;
     },
-
     asyncBeforeRead(file) {
       return new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {

@@ -23,7 +23,7 @@ Vue.use(TreeSelect);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -47,7 +47,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -142,7 +142,7 @@ export default {
 
 `items` 整体为一个数组，数组内包含一系列描述分类的对象，每个分类里，`text`表示当前分类的名称，`children`表示分类里的可选项。
 
-```javascript
+```js
 [
   {
     // 导航名称

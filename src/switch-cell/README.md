@@ -23,7 +23,7 @@ Vue.use(SwitchCell);
 </van-cell-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

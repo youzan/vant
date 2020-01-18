@@ -37,7 +37,7 @@ Use [Lazyload](#/en-US/lazyload) component to lazyload image
 </van-swipe>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -62,6 +62,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onChange(index) {

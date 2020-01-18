@@ -23,7 +23,7 @@ Vue.use(Steps);
 </van-steps>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

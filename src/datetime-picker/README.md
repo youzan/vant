@@ -26,7 +26,7 @@ Vue.use(DatetimePicker);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

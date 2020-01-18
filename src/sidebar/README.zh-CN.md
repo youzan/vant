@@ -72,6 +72,8 @@ export default {
 ```
 
 ```js
+import { Notify } from 'vant';
+
 export default {
   data() {
     return {

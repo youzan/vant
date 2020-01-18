@@ -23,7 +23,7 @@ Use `v-model` to bind the name of checked radio
 </van-radio-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

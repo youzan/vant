@@ -19,7 +19,9 @@ Use `actions` prop to set options of action-sheet.
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -31,7 +33,6 @@ export default {
       ]
     };
   },
-
   methods: {
     onSelect(item) {
       this.show = false;
@@ -47,7 +48,7 @@ export default {
 <van-action-sheet v-model="show" :actions="actions" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -74,13 +75,14 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       show: false
     };
   },
-
   methods: {
     onCancel() {
       this.show = false;

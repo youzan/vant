@@ -23,7 +23,7 @@ Vue.use(RadioGroup);
 </van-radio-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

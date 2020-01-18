@@ -28,14 +28,15 @@ Vue.use(NumberKeyboard);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       show: true
     }
   },
-
   methods: {
     onInput(value) {
       Toast(value);
@@ -79,7 +80,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

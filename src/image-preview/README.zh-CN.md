@@ -17,7 +17,7 @@ Vue.use(ImagePreview);
 
 直接传入图片数组，即可展示图片预览
 
-```javascript
+```js
 ImagePreview([
   'https://img.yzcdn.cn/1.jpg',
   'https://img.yzcdn.cn/2.jpg'
@@ -28,7 +28,7 @@ ImagePreview([
 
 通过传入配置对象，可以指定初始图片的位置、监听关闭事件
 
-```javascript
+```js
 ImagePreview({
   images: [
     'https://img.yzcdn.cn/1.jpg',
@@ -45,7 +45,7 @@ ImagePreview({
 
 通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览
 
-```javascript
+```js
 const instance = ImagePreview({
   images: [
     'https://img.yzcdn.cn/1.jpg',

@@ -23,7 +23,9 @@ Vue.use(Picker);
 <van-picker :columns="columns" @change="onChange" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -64,7 +66,9 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -130,7 +134,7 @@ export default {
 <van-picker :columns="columns" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -150,7 +154,7 @@ export default {
 <van-picker :columns="columns" @change="onChange" />
 ```
 
-```javascript
+```js
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州']

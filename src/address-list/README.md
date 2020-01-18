@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,7 +56,6 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('Add');

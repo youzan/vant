@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,12 +56,10 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('新增地址');
     },
-
     onEdit(item, index) {
       Toast('编辑地址:' + index);
     }

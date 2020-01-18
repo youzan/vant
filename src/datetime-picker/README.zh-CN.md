@@ -6,7 +6,7 @@
 
 ### 引入
 
-```javascript
+```js
 import Vue from 'vue';
 import { DatetimePicker } from 'vant';
 
@@ -26,7 +26,7 @@ Vue.use(DatetimePicker);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

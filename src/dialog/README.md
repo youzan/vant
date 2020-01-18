@@ -15,7 +15,7 @@ Vue.use(Dialog);
 
 Used to prompt for some messages, only including one confirm button
 
-```javascript
+```js
 Dialog.alert({
   title: 'Title',
   message: 'Content'
@@ -34,7 +34,7 @@ Dialog.alert({
 
 Used to confirm some messages, including a confirm button and a cancel button
 
-```javascript
+```js
  Dialog.confirm({
   title: 'Title',
   message: 'Content'

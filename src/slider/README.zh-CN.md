@@ -18,16 +18,17 @@ Vue.use(Slider);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       value: 50
     };
   },
-
   methods: {
     onChange(value) {
-      this.$toast('当前值：' + value);
+      Toast('当前值：' + value);
     }
   }
 };

@@ -6,7 +6,7 @@
 
 ### 引入
 
-```javascript
+```js
 import Vue from 'vue';
 import { Area } from 'vant';
 
@@ -94,7 +94,7 @@ Vue.use(Area);
 
 `AreaList`具体格式如下：
 
-```javascript
+```js
 {
   province_list: {
     110000: '北京市',
@@ -129,7 +129,7 @@ Vue.use(Area);
 
 `code` 代表被选中的地区编码， `name` 代表被选中的地区名称
 
-```javascript
+```js
 [
   {
     code: '110000',

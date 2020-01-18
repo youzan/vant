@@ -94,7 +94,7 @@ Each property is a simple key-value object, key is a 6-bit code of the area of w
 
 Example of `AreaList`
 
-```javascript
+```js
 {
   province_list: {
     110000: 'Beijing',
@@ -123,7 +123,7 @@ All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/
 An array contains selected area objects.
 
 `code` - code of selected area, `name` - name of selected area
-```javascript
+```js
 [{
   code: '330000',
   name: 'Zhejiang Province'

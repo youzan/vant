@@ -26,7 +26,7 @@ Vue.use(Lazyload, {
 <img v-for="img in imageList" v-lazy="img" >
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

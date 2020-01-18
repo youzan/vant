@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Sku } from 'vant';
 
@@ -182,7 +182,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 
 ### Sku Data Structure
 
-```javascript
+```js
 sku: {
   tree: [
     {
@@ -253,7 +253,7 @@ sku: {
 
 ### properties Data Structure
 
-```javascript
+```js
   [
     {
       k_id: 123,
@@ -277,7 +277,7 @@ sku: {
 
 ### initialSku Data Structure
 
-```javascript
+```js
 {
   // Key：skuKeyStr
   // Value：skuValueId
@@ -292,7 +292,7 @@ sku: {
 
 ### Goods Data Structure
 
-```javascript
+```js
 goods: {
   title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
@@ -302,7 +302,7 @@ goods: {
 
 ### customStepperConfig Data Structure
 
-```javascript
+```js
 customStepperConfig: {
   // custom quota text
   quotaText: 'only 5 can buy',
@@ -334,7 +334,7 @@ customStepperConfig: {
 
 ### messageConfig Data Structure
 
-```javascript
+```js
 messageConfig: {
   // the upload image callback
   uploadImg: () => {
@@ -355,7 +355,7 @@ messageConfig: {
 
 ### Events Params Data Structure
 
-```javascript
+```js
 skuData: {
   goodsId: '946755',
   messages: {

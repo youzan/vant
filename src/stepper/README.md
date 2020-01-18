@@ -17,7 +17,7 @@ Vue.use(Stepper);
 <van-stepper v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -79,14 +79,15 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       value: 1
     }
   },
-
   methods: {
     onChange(value) {
       Toast.loading({ forbidClick: true });

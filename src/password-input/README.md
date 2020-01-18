@@ -36,7 +36,7 @@ Vue.use(NumberKeyboard);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -101,7 +101,7 @@ Use `error-info` prop to set error message. For example, a password error is pro
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

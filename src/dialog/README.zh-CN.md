@@ -41,7 +41,7 @@ export default {
 
 用于提示一些消息，只包含一个确认按钮
 
-```javascript
+```js
 Dialog.alert({
   title: '标题',
   message: '弹窗内容'
@@ -60,7 +60,7 @@ Dialog.alert({
 
 用于确认消息，包含取消和确认按钮
 
-```javascript
+```js
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容'

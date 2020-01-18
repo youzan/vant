@@ -21,7 +21,9 @@ Vue.use(Picker);
 <van-picker :columns="columns" @change="onChange" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -58,7 +60,9 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -122,7 +126,7 @@ export default {
 <van-picker :columns="columns" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -142,7 +146,7 @@ export default {
 <van-picker :columns="columns" @change="onChange" />
 ```
 
-```javascript
+```js
 const states = {
   'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
   'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']

@@ -25,6 +25,8 @@ Vue.use(NavBar);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickLeft() {

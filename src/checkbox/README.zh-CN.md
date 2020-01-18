@@ -20,7 +20,7 @@ Vue.use(CheckboxGroup);
 <van-checkbox v-model="checked">复选框</van-checkbox>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -107,7 +107,7 @@ export default {
 </van-checkbox-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

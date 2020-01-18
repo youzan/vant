@@ -99,6 +99,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     start() {
@@ -111,7 +113,7 @@ export default {
       this.$refs.countDown.reset();
     },
     finish() {
-      this.$toast('倒计时结束');
+      Toast('倒计时结束');
     }
   }
 }

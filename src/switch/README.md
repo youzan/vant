@@ -17,7 +17,7 @@ Vue.use(Switch);
 <van-switch v-model="checked" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

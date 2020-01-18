@@ -19,7 +19,7 @@ Vue.use(Uploader);
 <van-uploader :after-read="afterRead" />
 ```
 
-```javascript
+```js
 export default {
   methods: {
     afterRead(file) {
@@ -38,7 +38,7 @@ export default {
 <van-uploader v-model="fileList" multiple />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -65,7 +65,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -94,6 +94,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     // 返回布尔值
@@ -105,7 +107,6 @@ export default {
     
       return true;
     },
-
     // 返回 Promise
     asyncBeforeRead(file) {
       return new Promise((resolve, reject) => {

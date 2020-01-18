@@ -25,7 +25,7 @@ Vue.use(TabbarItem);
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -48,7 +48,7 @@ export default {
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -90,7 +90,7 @@ export default {
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -131,6 +131,8 @@ export default {
 ```
 
 ```js
+import { Notify } from 'vant';
+
 export default {
   methods: {
     onChange(index) {

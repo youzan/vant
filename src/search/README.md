@@ -17,7 +17,7 @@ Vue.use(Search);
 <van-search placeholder="Placeholder" v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     value: ''

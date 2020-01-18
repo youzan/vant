@@ -21,7 +21,7 @@ Vue.use(TreeSelect);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -136,7 +136,7 @@ export default {
 
 In every tree object, `text` property defines `id` stands for the unique key while the `children` contains sub-tree objects.
 
-```javascript
+```js
 [
   {
     // name of the parent node

@@ -39,7 +39,7 @@ Vue.use(CouponList);
 </van-popup>
 ```
 
-```javascript
+```js
 const coupon = {
   available: 1,
   originCondition: 0,

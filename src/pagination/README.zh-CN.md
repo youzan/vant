@@ -22,7 +22,7 @@ Vue.use(Pagination);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return  {
