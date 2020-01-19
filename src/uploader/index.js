@@ -117,19 +117,21 @@ export default createComponent({
           files = files.slice(0, maxCount);
         }
 
-        Promise.all(files.map(file => readFile(file, this.resultType))).then(contents => {
-          const fileList = files.map((file, index) => {
-            const result = { file };
+        Promise.all(files.map(file => readFile(file, this.resultType))).then(
+          contents => {
+            const fileList = files.map((file, index) => {
+              const result = { file };
 
-            if (contents[index]) {
-              result.content = contents[index];
-            }
+              if (contents[index]) {
+                result.content = contents[index];
+              }
 
-            return result;
-          });
+              return result;
+            });
 
-          this.onAfterRead(fileList, oversize);
-        });
+            this.onAfterRead(fileList, oversize);
+          }
+        );
       } else {
         readFile(files, this.resultType).then(content => {
           const result = { file: files };
@@ -317,7 +319,9 @@ export default createComponent({
       return (
         <div class={bem('upload')} style={style}>
           <Icon name="plus" class={bem('upload-icon')} />
-          {this.uploadText && <span class={bem('upload-text')}>{this.uploadText}</span>}
+          {this.uploadText && (
+            <span class={bem('upload-text')}>{this.uploadText}</span>
+          )}
           {Input}
         </div>
       );

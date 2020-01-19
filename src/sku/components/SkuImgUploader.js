@@ -53,9 +53,7 @@ export default createComponent({
           maxSize={this.maxSize * 1024 * 1024}
           onOversize={this.onOversize}
         >
-          <div class={bem('img')}>
-            {content}
-          </div>
+          <div class={bem('img')}>{content}</div>
         </Uploader>
       );
     },
@@ -63,15 +61,14 @@ export default createComponent({
     genMask() {
       return (
         <div class={bem('mask')}>
-          {this.uploadFail
-            ? (
-              [
-                <Icon name="warning-o" size="20px" />,
-                <div class={bem('warn-text')} domPropsInnerHTML={t('fail')} />,
-              ]
-            ) : (
-              <Loading type="spinner" size="20px" color="white" />
-            )}
+          {this.uploadFail ? (
+            [
+              <Icon name="warning-o" size="20px" />,
+              <div class={bem('warn-text')} domPropsInnerHTML={t('fail')} />,
+            ]
+          ) : (
+            <Loading type="spinner" size="20px" color="white" />
+          )}
         </div>
       );
     },
@@ -80,33 +77,34 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        {this.value && this.genUploader(
-          [
-            <img src={this.value} />,
-            <Icon
-              name="clear"
-              class={bem('delete')}
-              onClick={() => {
-                this.$emit('input', '');
-              }}
-            />,
-          ],
-          true
-        )}
+        {this.value &&
+          this.genUploader(
+            [
+              <img src={this.value} />,
+              <Icon
+                name="clear"
+                class={bem('delete')}
+                onClick={() => {
+                  this.$emit('input', '');
+                }}
+              />,
+            ],
+            true
+          )}
 
-        {this.paddingImg && this.genUploader(
-          [
-            <img src={this.paddingImg} />,
-            this.genMask(),
-          ],
-          !this.uploadFail
-        )}
+        {this.paddingImg &&
+          this.genUploader(
+            [<img src={this.paddingImg} />, this.genMask()],
+            !this.uploadFail
+          )}
 
-        {!this.value && !this.paddingImg && this.genUploader(
-          <div class={bem('trigger')}>
-            <Icon name="photograph" size="22px" />
-          </div>
-        )}
+        {!this.value &&
+          !this.paddingImg &&
+          this.genUploader(
+            <div class={bem('trigger')}>
+              <Icon name="photograph" size="22px" />
+            </div>
+          )}
       </div>
     );
   },

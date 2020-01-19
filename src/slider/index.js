@@ -107,7 +107,9 @@ export default createComponent({
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
-      const delta = this.vertical ? event.clientY - rect.top : event.clientX - rect.left;
+      const delta = this.vertical
+        ? event.clientY - rect.top
+        : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
       const value = (delta / total) * this.range + this.min;
 
@@ -129,7 +131,8 @@ export default createComponent({
 
     format(value) {
       return (
-        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step
+        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) *
+        this.step
       );
     },
   },

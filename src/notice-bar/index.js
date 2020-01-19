@@ -109,9 +109,21 @@ export default createComponent({
         return slot;
       }
 
-      const iconName = mode === 'closeable' ? 'cross' : mode === 'link' ? 'arrow' : '';
+      let iconName;
+      if (mode === 'closeable') {
+        iconName = 'cross';
+      } else if (mode === 'link') {
+        iconName = 'arrow';
+      }
+
       if (iconName) {
-        return <Icon class={bem('right-icon')} name={iconName} onClick={onClickIcon} />;
+        return (
+          <Icon
+            class={bem('right-icon')}
+            name={iconName}
+            onClick={onClickIcon}
+          />
+        );
       }
     }
 

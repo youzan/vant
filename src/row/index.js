@@ -27,7 +27,9 @@ export default createComponent({
     const { align, justify } = this;
     const flex = this.type === 'flex';
     const margin = `-${Number(this.gutter) / 2}px`;
-    const style = this.gutter ? { marginLeft: margin, marginRight: margin } : {};
+    const style = this.gutter
+      ? { marginLeft: margin, marginRight: margin }
+      : {};
 
     return (
       <this.tag

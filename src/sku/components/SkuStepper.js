@@ -157,7 +157,9 @@ export default createComponent({
     return (
       <div class="van-sku-stepper-stock">
         <div class="van-sku-stepper-container">
-          <div class="van-sku__stepper-title">{this.stepperTitle || t('num')}</div>
+          <div class="van-sku__stepper-title">
+            {this.stepperTitle || t('num')}
+          </div>
           <Stepper
             vModel={this.currentNum}
             class="van-sku__stepper"
@@ -168,7 +170,9 @@ export default createComponent({
             onOverlimit={this.onOverLimit}
             onChange={this.onChange}
           />
-          {!this.hideQuotaText && this.quotaText && <span class="van-sku__stepper-quota">({this.quotaText})</span>}
+          {!this.hideQuotaText && this.quotaText && (
+            <span class="van-sku__stepper-quota">({this.quotaText})</span>
+          )}
         </div>
       </div>
     );

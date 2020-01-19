@@ -106,9 +106,10 @@ export default createComponent({
       }
 
       const { parent, currentName } = this;
-      const name = parent.accordion && currentName === parent.value ? '' : currentName;
+      const close = parent.accordion && currentName === parent.value;
+      const name = close ? '' : currentName;
 
-      this.parent.switch(name, !this.expanded);
+      parent.switch(name, !this.expanded);
     },
 
     onTransitionEnd() {

@@ -85,10 +85,16 @@ export default createComponent({
 
     genIcon() {
       const { icon, type, iconPrefix, loadingType } = this;
-      const hasIcon = icon || (type === 'success' || type === 'fail');
+      const hasIcon = icon || type === 'success' || type === 'fail';
 
       if (hasIcon) {
-        return <Icon class={bem('icon')} classPrefix={iconPrefix} name={icon || type} />;
+        return (
+          <Icon
+            class={bem('icon')}
+            classPrefix={iconPrefix}
+            name={icon || type}
+          />
+        );
       }
 
       if (type === 'loading') {
@@ -120,7 +126,10 @@ export default createComponent({
       >
         <div
           vShow={this.value}
-          class={[bem([this.position, { [this.type]: !this.icon }]), this.className]}
+          class={[
+            bem([this.position, { [this.type]: !this.icon }]),
+            this.className,
+          ]}
           onClick={this.onClick}
         >
           {this.genIcon()}

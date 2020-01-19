@@ -162,7 +162,9 @@ export default createComponent({
         return false;
       }
       // 属性未全选
-      if (this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)) {
+      if (
+        this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)
+      ) {
         return false;
       }
       return true;
@@ -193,8 +195,14 @@ export default createComponent({
           };
         }
         if (skuComb) {
-          skuComb.properties = getSelectedProperties(this.propList, this.selectedProp);
-          skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
+          skuComb.properties = getSelectedProperties(
+            this.propList,
+            this.selectedProp
+          );
+          skuComb.property_price = this.selectedPropValues.reduce(
+            (acc, cur) => acc + (cur.price || 0),
+            0
+          );
         }
       }
       return skuComb;
@@ -210,7 +218,10 @@ export default createComponent({
 
     price() {
       if (this.selectedSkuComb) {
-        return ((this.selectedSkuComb.price + this.selectedSkuComb.property_price) / 100).toFixed(2);
+        return (
+          (this.selectedSkuComb.price + this.selectedSkuComb.property_price) /
+          100
+        ).toFixed(2);
       }
       // sku.price是一个格式化好的价格区间
       return this.sku.price;
@@ -218,7 +229,11 @@ export default createComponent({
 
     originPrice() {
       if (this.selectedSkuComb && this.selectedSkuComb.origin_price) {
-        return ((this.selectedSkuComb.origin_price + this.selectedSkuComb.property_price) / 100).toFixed(2);
+        return (
+          (this.selectedSkuComb.origin_price +
+            this.selectedSkuComb.property_price) /
+          100
+        ).toFixed(2);
       }
       return this.sku.origin_price;
     },
@@ -269,7 +284,11 @@ export default createComponent({
 
       return [
         `${t('stock')} `,
-        <span class={bem('stock-num', { highlight: this.stock < this.stockThreshold })}>
+        <span
+          class={bem('stock-num', {
+            highlight: this.stock < this.stockThreshold,
+          })}
+        >
           {this.stock}
         </span>,
         ` ${t('stockUnit')}`,
@@ -289,7 +308,9 @@ export default createComponent({
         .filter(item => (this.selectedProp[item.k_id] || []).length < 1)
         .map(item => item.k);
 
-      return `${t('select')} ${unselectedSku.concat(unselectedProp).join('；')}`;
+      return `${t('select')} ${unselectedSku
+        .concat(unselectedProp)
+        .join('；')}`;
     },
   },
 
@@ -335,7 +356,8 @@ export default createComponent({
 
       // 重置 selectedSku
       this.skuTree.forEach(item => {
-        this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+        this.selectedSku[item.k_s] =
+          this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
       });
 
       // 只有一个 sku 规格值时默认选中
@@ -389,11 +411,15 @@ export default createComponent({
     },
 
     getSkuCartMessages() {
-      return this.$refs.skuMessages ? this.$refs.skuMessages.getCartMessages() : {};
+      return this.$refs.skuMessages
+        ? this.$refs.skuMessages.getCartMessages()
+        : {};
     },
 
     validateSkuMessages() {
-      return this.$refs.skuMessages ? this.$refs.skuMessages.validateMessages() : '';
+      return this.$refs.skuMessages
+        ? this.$refs.skuMessages.validateMessages()
+        : '';
     },
 
     validateSku() {
@@ -418,7 +444,10 @@ export default createComponent({
       // 点击已选中的sku时则取消选中
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? { ...this.selectedSku, [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID }
+          ? {
+            ...this.selectedSku,
+            [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
+          }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {
@@ -575,19 +604,27 @@ export default createComponent({
     const slots = name => this.slots(name, slotsProps);
 
     const Header = slots('sku-header') || (
-      <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>
+      <SkuHeader
+        sku={sku}
+        goods={goods}
+        skuEventBus={skuEventBus}
+        selectedSku={selectedSku}
+      >
         {slots('sku-header-price') || (
           <div class="van-sku__goods-price">
             <span class="van-sku__price-symbol">￥</span>
             <span class="van-sku__price-num">{price}</span>
-            {this.priceTag && <span class="van-sku__price-tag">{this.priceTag}</span>}
+            {this.priceTag && (
+              <span class="van-sku__price-tag">{this.priceTag}</span>
+            )}
           </div>
         )}
-        {slots('sku-header-origin-price') || (
-          originPrice && (
-            <SkuHeaderItem>{t('originPrice')} ￥{originPrice}</SkuHeaderItem>
-          )
-        )}
+        {slots('sku-header-origin-price') ||
+          (originPrice && (
+            <SkuHeaderItem>
+              {t('originPrice')} ￥{originPrice}
+            </SkuHeaderItem>
+          ))}
         {!this.hideStock && (
           <SkuHeaderItem>
             <span class="van-sku__stock">{this.stockText}</span>

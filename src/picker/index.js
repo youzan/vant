@@ -180,11 +180,7 @@ export default createComponent({
         return (
           <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
             {this.slots() || [
-              <button
-                type="button"
-                class={bem('cancel')}
-                onClick={this.cancel}
-              >
+              <button type="button" class={bem('cancel')} onClick={this.cancel}>
                 {this.cancelButtonText || t('cancel')}
               </button>,
               this.genTitle(),

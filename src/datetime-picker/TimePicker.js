@@ -75,11 +75,12 @@ export default createComponent({
 
     updateInnerValue() {
       const [hourIndex, minuteIndex] = this.getPicker().getIndexes();
-      const hour = this.originColumns[0].values[hourIndex] || this.originColumns[0].values[0];
-      const minute = this.originColumns[1].values[minuteIndex] || this.originColumns[1].values[0];
-      const value = `${hour}:${minute}`;
+      const [hourColumn, minuteColumn] = this.originColumns;
 
-      this.innerValue = this.formatValue(value);
+      const hour = hourColumn.values[hourIndex] || hourColumn.values[0];
+      const minute = minuteColumn.values[minuteIndex] || minuteColumn.values[0];
+
+      this.innerValue = this.formatValue(`${hour}:${minute}`);
     },
 
     onChange(picker) {

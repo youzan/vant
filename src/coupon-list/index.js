@@ -182,7 +182,10 @@ export default createComponent({
 
     const CouponTab = (
       <Tab title={title}>
-        <div class={bem('list', { 'with-bottom': this.showCloseButton })} style={this.listStyle}>
+        <div
+          class={bem('list', { 'with-bottom': this.showCloseButton })}
+          style={this.listStyle}
+        >
           {coupons.map((coupon, index) => (
             <Coupon
               ref="card"
@@ -200,7 +203,10 @@ export default createComponent({
 
     const DisabledCouponTab = (
       <Tab title={disabledTitle}>
-        <div class={bem('list', { 'with-bottom': this.showCloseButton })} style={this.listStyle}>
+        <div
+          class={bem('list', { 'with-bottom': this.showCloseButton })}
+          style={this.listStyle}
+        >
           {disabledCoupons.map(coupon => (
             <Coupon
               disabled

@@ -17,7 +17,9 @@ function formatDiscount(discount) {
 }
 
 function formatAmount(amount) {
-  return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
+  return (amount / 100).toFixed(
+    amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2
+  );
 }
 
 export default createComponent({
@@ -45,7 +47,8 @@ export default createComponent({
       }
 
       if (coupon.denominations) {
-        return `<span>${this.currency}</span> ${formatAmount(this.coupon.denominations)}`;
+        const denominations = formatAmount(this.coupon.denominations);
+        return `<span>${this.currency}</span> ${denominations}`;
       }
 
       if (coupon.discount) {
@@ -70,13 +73,20 @@ export default createComponent({
         <div class={bem('content')}>
           <div class={bem('head')}>
             <h2 class={bem('amount')} domPropsInnerHTML={this.faceAmount} />
-            <p class={bem('condition')}>{this.coupon.condition || this.conditionMessage}</p>
+            <p class={bem('condition')}>
+              {this.coupon.condition || this.conditionMessage}
+            </p>
           </div>
           <div class={bem('body')}>
             <p class={bem('name')}>{coupon.name}</p>
             <p class={bem('valid')}>{this.validPeriod}</p>
             {!this.disabled && (
-              <Checkbox value={this.chosen} class={bem('corner')} size={18} checked-color={RED} />
+              <Checkbox
+                value={this.chosen}
+                class={bem('corner')}
+                size={18}
+                checked-color={RED}
+              />
             )}
           </div>
         </div>

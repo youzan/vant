@@ -44,15 +44,21 @@ export default createComponent({
 
   computed: {
     ranges() {
-      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary(
-        'max',
-        this.innerValue
-      );
+      const {
+        maxYear,
+        maxDate,
+        maxMonth,
+        maxHour,
+        maxMinute,
+      } = this.getBoundary('max', this.innerValue);
 
-      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary(
-        'min',
-        this.innerValue
-      );
+      const {
+        minYear,
+        minDate,
+        minMonth,
+        minHour,
+        minMinute,
+      } = this.getBoundary('min', this.innerValue);
 
       const result = [
         {
@@ -134,7 +140,11 @@ export default createComponent({
 
     updateInnerValue() {
       const indexes = this.getPicker().getIndexes();
-      const getValue = index => getTrueValue(this.originColumns[index].values[indexes[index]]);
+
+      const getValue = index => {
+        const { values } = this.originColumns[index];
+        return getTrueValue(values[indexes[index]]);
+      };
 
       const year = getValue(0);
       const month = getValue(1);

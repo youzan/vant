@@ -40,7 +40,8 @@ export default createComponent({
 
   computed: {
     count() {
-      const count = this.pageCount || Math.ceil(this.totalItems / this.itemsPerPage);
+      const count =
+        this.pageCount || Math.ceil(this.totalItems / this.itemsPerPage);
       return Math.max(1, count);
     },
 
@@ -55,7 +56,8 @@ export default createComponent({
       // Default page limits
       let startPage = 1;
       let endPage = pageCount;
-      const isMaxSized = this.showPageSize !== undefined && this.showPageSize < pageCount;
+      const isMaxSized =
+        this.showPageSize !== undefined && this.showPageSize < pageCount;
 
       // recompute if showPageSize
       if (isMaxSized) {
@@ -140,10 +142,16 @@ export default createComponent({
           </li>
         ))}
         {simple && (
-          <li class={bem('page-desc')}>{this.slots('pageDesc') || `${value}/${this.count}`}</li>
+          <li class={bem('page-desc')}>
+            {this.slots('pageDesc') || `${value}/${this.count}`}
+          </li>
         )}
         <li
-          class={[bem('item', { disabled: value === this.count }), bem('next'), BORDER]}
+          class={[
+            bem('item', { disabled: value === this.count }),
+            bem('next'),
+            BORDER,
+          ]}
           onClick={onSelect(value + 1)}
         >
           {this.nextText || t('next')}

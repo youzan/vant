@@ -78,7 +78,9 @@ export default createComponent({
 
   computed: {
     minusDisabled() {
-      return this.disabled || this.disableMinus || this.currentValue <= this.min;
+      return (
+        this.disabled || this.disableMinus || this.currentValue <= this.min
+      );
     },
 
     plusDisabled() {

@@ -103,7 +103,9 @@ export default createComponent({
     const title = this.slots('title') || this.title;
 
     const Title = title && (
-      <div class={bem('header', { isolated: !message && !messageSlot })}>{title}</div>
+      <div class={bem('header', { isolated: !message && !messageSlot })}>
+        {title}
+      </div>
     );
 
     const Content = (messageSlot || message) && (
@@ -111,7 +113,10 @@ export default createComponent({
         {messageSlot || (
           <div
             domPropsInnerHTML={message}
-            class={bem('message', { 'has-title': title, [messageAlign]: messageAlign })}
+            class={bem('message', {
+              'has-title': title,
+              [messageAlign]: messageAlign,
+            })}
           />
         )}
       </div>

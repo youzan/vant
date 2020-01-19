@@ -112,12 +112,12 @@ export default createComponent({
 
       if (this.placeholderMap[type] && result.length) {
         // set columns placeholder
-        const codeFill =
-          type === 'province'
-            ? ''
-            : type === 'city'
-              ? PLACEHOLDER_CODE.slice(2, 4)
-              : PLACEHOLDER_CODE.slice(4, 6);
+        let codeFill = '';
+        if (type === 'city') {
+          codeFill = PLACEHOLDER_CODE.slice(2, 4);
+        } else if (type === 'county') {
+          codeFill = PLACEHOLDER_CODE.slice(4, 6);
+        }
 
         result.unshift({
           code: `${code}${codeFill}`,

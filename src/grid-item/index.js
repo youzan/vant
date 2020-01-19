@@ -87,6 +87,18 @@ export default createComponent({
       }
     },
 
+    getText() {
+      const textSlot = this.slots('text');
+
+      if (textSlot) {
+        return textSlot;
+      }
+
+      if (this.text) {
+        return <span class={bem('text')}>{this.text}</span>;
+      }
+    },
+
     genContent() {
       const slot = this.slots();
 
@@ -94,10 +106,7 @@ export default createComponent({
         return slot;
       }
 
-      return [
-        this.genIcon(),
-        this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>),
-      ];
+      return [this.genIcon(), this.getText()];
     },
   },
 

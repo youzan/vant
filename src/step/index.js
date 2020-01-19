@@ -34,7 +34,9 @@ export default createComponent({
       const inactiveIconSlot = this.slots('inactive-icon');
 
       if (inactiveIcon || inactiveIconSlot) {
-        return inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />;
+        return (
+          inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />
+        );
       }
 
       return <i class={bem('circle')} />;

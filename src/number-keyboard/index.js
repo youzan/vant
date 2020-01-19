@@ -145,10 +145,17 @@ export default createComponent({
 
     const Title = showTitle && (
       <div class={[bem('title'), BORDER_TOP]}>
-        {titleLeftSlot && <span class={bem('title-left')}>{titleLeftSlot}</span>}
+        {titleLeftSlot && (
+          <span class={bem('title-left')}>{titleLeftSlot}</span>
+        )}
         {title && <span>{title}</span>}
         {showTitleClose && (
-          <span role="button" tabindex="0" class={bem('close')} onClick={this.onClose}>
+          <span
+            role="button"
+            tabindex="0"
+            class={bem('close')}
+            onClick={this.onClose}
+          >
             {closeButtonText}
           </span>
         )}
@@ -192,7 +199,10 @@ export default createComponent({
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
-          class={bem([theme, { 'safe-area-inset-bottom': this.safeAreaInsetBottom }])}
+          class={bem([
+            theme,
+            { 'safe-area-inset-bottom': this.safeAreaInsetBottom },
+          ])}
           onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
