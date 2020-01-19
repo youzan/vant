@@ -72,7 +72,8 @@ export default {
       customStyle: '自定义样式',
       customCount: '自定义数量',
       readonly: '只读状态',
-      changeEvent: '监听 change 事件'
+      changeEvent: '监听 change 事件',
+      toastContent: (value) => `当前值：${value}`
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -81,7 +82,8 @@ export default {
       customStyle: 'Custom Style',
       customCount: 'Custom Count',
       readonly: 'Readonly',
-      changeEvent: 'Change Event'
+      changeEvent: 'Change Event',
+      toastContent: (value) => `current value：${value}`
     }
   },
 
@@ -100,7 +102,7 @@ export default {
   methods: {
     onChange(value) {
       this.value7 = value;
-      this.$toast(this.$t('changeEvent'));
+      this.$toast(this.$t('toastContent', value));
     }
   }
 };
