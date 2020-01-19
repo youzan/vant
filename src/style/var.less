@@ -23,8 +23,8 @@
 // Component Colors
 @text-color: @gray-8;
 @active-color: @gray-2;
-@active-opacity: .7;
-@disabled-opacity: .5;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
 @background-color: @gray-1;
 @background-color-light: #fafafa;
 
@@ -42,11 +42,12 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
-@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
 
 // Animation
-@animation-duration-base: .3s;
-@animation-duration-fast: .2s;
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
 
 // Border
 @border-color: @gray-3;
@@ -150,7 +151,7 @@
 @calendar-range-edge-color: @white;
 @calendar-range-edge-background-color: @red;
 @calendar-range-middle-color: @red;
-@calendar-range-middle-background-opacity: .1;
+@calendar-range-middle-background-opacity: 0.1;
 @calendar-selected-day-size: 54px;
 @calendar-selected-day-color: @white;
 @calendar-info-font-size: @font-size-xs;
@@ -402,7 +403,7 @@
 @image-preview-index-text-color: @white;
 @image-preview-index-font-size: @font-size-md;
 @image-preview-index-text-shadow: 0 1px 1px @gray-8;
-@image-preview-overlay-background-color: rgba(0, 0, 0, .9);
+@image-preview-overlay-background-color: rgba(0, 0, 0, 0.9);
 
 // List
 @list-icon-margin-right: 5px;
@@ -415,7 +416,7 @@
 @loading-text-font-size: @font-size-md;
 @loading-spinner-color: @gray-5;
 @loading-spinner-size: 30px;
-@loading-spinner-animation-duration: .8s;
+@loading-spinner-animation-duration: 0.8s;
 
 // NavBar
 @nav-bar-height: 46px;
@@ -507,9 +508,9 @@
 @picker-action-active-color: @active-color;
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
-@picker-option-disabled-opacity: .3;
+@picker-option-disabled-opacity: 0.3;
 @picker-loading-icon-color: @blue;
-@picker-loading-mask-color: rgba(255, 255, 255, .9);
+@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
 
 // Popup
 @popup-background-color: @white;
@@ -552,7 +553,7 @@
 
 // Search
 @search-padding: 10px @padding-sm;
-@search-background-color: #f7f8fA;
+@search-background-color: @gray-1;
 @search-input-height: 34px;
 @search-label-padding: 0 5px;
 @search-label-color: @text-color;
@@ -593,7 +594,7 @@
 @slider-button-height: 24px;
 @slider-button-border-radius: 50%;
 @slider-button-background-color: @white;
-@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 
 // Step
 @step-text-color: @gray-6;
@@ -652,7 +653,7 @@
 @swipe-indicator-size: 6px;
 @swipe-indicator-margin: @padding-sm;
 @swipe-indicator-active-opacity: 1;
-@swipe-indicator-inactive-opacity: .3;
+@swipe-indicator-inactive-opacity: 0.3;
 @swipe-indicator-active-background-color: @blue;
 @swipe-indicator-inactive-background-color: @border-color;
 
@@ -663,12 +664,13 @@
 @switch-node-size: 1em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
 @switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: @disabled-opacity;
-@switch-border: @border-width-base solid rgba(0, 0, 0, .1);
+@switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
 
 // SwitchCell
 @switch-cell-padding-top: @cell-vertical-padding - 1px;
@@ -703,12 +705,12 @@
 @tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
-@tag-padding: .2em .5em;
+@tag-padding: 0.2em 0.5em;
 @tag-font-size: @font-size-xs;
 @tag-medium-font-size: @font-size-sm;
 @tag-large-font-size: @font-size-md;
 @tag-text-color: @white;
-@tag-border-radius: .2em;
+@tag-border-radius: 0.2em;
 @tag-round-border-radius: @border-radius-max;
 @tag-danger-color: @red;
 @tag-primary-color: @blue;
@@ -767,4 +769,4 @@
 // Sku
 @sku-item-background-color: @background-color;
 @sku-icon-gray-color: #dcdde0;
-@sku-upload-mask-color: rgba(50, 50, 51, .8);
+@sku-upload-mask-color: rgba(50, 50, 51, 0.8);
