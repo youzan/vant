@@ -85,7 +85,8 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "browserslist": [
     "Android >= 4.0",
