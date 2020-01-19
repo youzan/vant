@@ -110,5 +110,5 @@ export {
   SwipeCell,
   Tabs,
   Toast,
-  Uploader
+  Uploader,
 };

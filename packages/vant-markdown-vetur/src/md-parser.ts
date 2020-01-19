@@ -43,7 +43,7 @@ function tableParse(input: string) {
   const end = input.length;
   const table: TableContent = {
     head: [],
-    body: []
+    body: [],
   };
 
   while (start < end) {
@@ -69,7 +69,7 @@ function tableParse(input: string) {
 
   return {
     table,
-    usedLength: start
+    usedLength: start,
   };
 }
 
@@ -86,7 +86,7 @@ export function mdParser(input: string): Array<SimpleMdAst> {
       artical.push({
         type: 'title',
         content: match[2],
-        level: match[1].length
+        level: match[1].length,
       });
 
       start += match.index + match[0].length;
@@ -94,7 +94,7 @@ export function mdParser(input: string): Array<SimpleMdAst> {
       const { table, usedLength } = tableParse(target.substr(match.index));
       artical.push({
         type: 'table',
-        table
+        table,
       });
 
       start += match.index + usedLength;

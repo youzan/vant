@@ -65,7 +65,7 @@ export function codegen(artical: Artical) {
       const key = camelCaseToKebabCase(match[1] || 'default');
       const tag: Tag = tags[key] || {
         description: tagDescription,
-        attributes: {}
+        attributes: {},
       };
 
       tags[key] = tag;
@@ -77,7 +77,7 @@ export function codegen(artical: Artical) {
 
         const attr: Attribute = {
           description: getDescription(td, isProp),
-          type: isProp ? td[2].replace(/`/g, '').toLowerCase() : 'event'
+          type: isProp ? td[2].replace(/`/g, '').toLowerCase() : 'event',
         };
 
         tag.attributes[name] = attr;
