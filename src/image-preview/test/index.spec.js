@@ -105,7 +105,10 @@ test('onClose option', () => {
   instance.close();
 
   expect(onClose).toHaveBeenCalledTimes(1);
-  expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
+  expect(onClose).toHaveBeenCalledWith({
+    index: 0,
+    url: 'https://img.yzcdn.cn/1.png',
+  });
 });
 
 test('onChange option', async done => {

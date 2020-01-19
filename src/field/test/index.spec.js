@@ -120,7 +120,7 @@ test('autosize object', async () => {
   const textarea = wrapper.find('.van-field__control');
 
   await later();
-  expect(textarea.element.style.height).toEqual(('50px'));
+  expect(textarea.element.style.height).toEqual('50px');
 });
 
 test('blur method', () => {
@@ -267,7 +267,7 @@ test('formatter prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'abc123',
-      formatter: (value) => value.replace(/\d/g, ''),
+      formatter: value => value.replace(/\d/g, ''),
     },
   });
 

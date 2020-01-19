@@ -322,7 +322,6 @@ test('change min and max', async () => {
   expect(wrapper.emitted('input')[1][0]).toEqual(8);
 });
 
-
 test('change decimal-length', async () => {
   const wrapper = mount(Stepper, {
     propsData: {

@@ -1,4 +1,3 @@
-
 import { mount } from '../../../test';
 import Image from '..';
 

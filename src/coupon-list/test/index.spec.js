@@ -83,7 +83,14 @@ test('render coupon list', async () => {
   const wrapper = mount(CouponList, {
     propsData: {
       chosenCoupon: 1,
-      coupons: [emptyCoupon, coupon, coupon2, coupon3, discountCoupon, discountCoupon2],
+      coupons: [
+        emptyCoupon,
+        coupon,
+        coupon2,
+        coupon3,
+        discountCoupon,
+        discountCoupon2,
+      ],
       disabledCoupons: [disabledCoupon, disabledDiscountCoupon],
     },
   });
@@ -98,7 +105,10 @@ test('render empty coupon list', () => {
       disabledCoupons: [],
     },
   });
-  wrapper.findAll('.van-tab').at(1).trigger('click');
+  wrapper
+    .findAll('.van-tab')
+    .at(1)
+    .trigger('click');
   expect(wrapper).toMatchSnapshot();
 });
 

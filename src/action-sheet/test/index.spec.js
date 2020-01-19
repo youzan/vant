@@ -82,10 +82,7 @@ test('disable lazy-render', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       lazyRender: false,
-      actions: [
-        { name: 'Option' },
-        { name: 'Option' },
-      ],
+      actions: [{ name: 'Option' }, { name: 'Option' }],
       cancelText: 'Cancel',
     },
   });

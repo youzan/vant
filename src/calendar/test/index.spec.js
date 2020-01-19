@@ -419,7 +419,9 @@ test('should scroll to current month when show', async done => {
   });
 
   Element.prototype.scrollIntoView = function() {
-    expect(this.parentNode).toEqual(wrapper.findAll('.van-calendar__month').at(3).element);
+    expect(this.parentNode).toEqual(
+      wrapper.findAll('.van-calendar__month').at(3).element
+    );
     done();
   };
 

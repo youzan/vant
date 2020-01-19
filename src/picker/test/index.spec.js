@@ -168,7 +168,7 @@ test('simulation finger swipe again before transitionend', () => {
   expect(wrapper.emitted('change')[0][1]).toEqual('1995');
 });
 
-test('click column\'s item', () => {
+test('click column item', () => {
   const columns = [
     { text: '杭州' },
     { text: '宁波' },
@@ -181,7 +181,10 @@ test('click column\'s item', () => {
     },
   });
 
-  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  wrapper
+    .findAll('.van-picker-column__item')
+    .at(3)
+    .trigger('click');
   expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });
 

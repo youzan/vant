@@ -29,14 +29,14 @@ test('deepAssign', () => {
   expect(deepAssign({}, { foo: undefined })).toEqual({});
   expect(deepAssign({ fn: null }, { fn })).toEqual({ fn });
   expect(deepAssign({ foo: 0 }, { bar: 1 })).toEqual({ foo: 0, bar: 1 });
-  expect(deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })).toEqual(
-    {
-      foo: {
-        bar: true,
-        foo: false,
-      },
-    }
-  );
+  expect(
+    deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })
+  ).toEqual({
+    foo: {
+      bar: true,
+      foo: false,
+    },
+  });
 });
 
 test('isDef', () => {

@@ -70,11 +70,17 @@ test('change option', () => {
   expect(wrapper).toMatchSnapshot();
 
   triggerDrag(columns.at(0), 0, -100);
-  columns.at(0).find('ul').trigger('transitionend');
+  columns
+    .at(0)
+    .find('ul')
+    .trigger('transitionend');
   expect(wrapper).toMatchSnapshot();
 
   triggerDrag(columns.at(2), 0, -100);
-  columns.at(2).find('ul').trigger('transitionend');
+  columns
+    .at(2)
+    .find('ul')
+    .trigger('transitionend');
   expect(wrapper).toMatchSnapshot();
 
   expect(onChange.mock.calls[0][1]).toEqual(secondOption);

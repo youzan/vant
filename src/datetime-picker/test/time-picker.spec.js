@@ -59,7 +59,10 @@ test('formatter prop', async () => {
   wrapper.find('.van-picker-column ul').trigger('transitionend');
   await later();
 
-  expect(wrapper.emitted('change')[0][0].getValues()).toEqual(['20 hour', '00 minute']);
+  expect(wrapper.emitted('change')[0][0].getValues()).toEqual([
+    '20 hour',
+    '00 minute',
+  ]);
 });
 
 test('confirm event', () => {

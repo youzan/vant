@@ -369,7 +369,10 @@ it('click to preview image', () => {
   wrapper.find('.van-image').trigger('click');
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode2.querySelectorAll('.van-image-preview__image').length).toEqual(1);
+  const images = imagePreviewNode2.querySelectorAll(
+    '.van-image-preview__image'
+  );
+  expect(images.length).toEqual(1);
 });
 
 it('closeImagePreview method', () => {
@@ -400,7 +403,10 @@ it('click-preview event', () => {
 
   wrapper.find('.van-image').trigger('click');
   expect(wrapper.emitted('click-preview')[0][0]).toEqual({ url: IMAGE });
-  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '', index: 0 });
+  expect(wrapper.emitted('click-preview')[0][1]).toEqual({
+    name: '',
+    index: 0,
+  });
 });
 
 it('close-preview event', async () => {

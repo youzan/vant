@@ -141,7 +141,6 @@ test('border props', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-
 test('click event', async () => {
   const onClick = jest.fn();
   const onDisabled = jest.fn();
