@@ -10,16 +10,29 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-
-### [v2.4.3-beta.0](https://github.com/youzan/vant/compare/v2.4.2...v2.4.3-beta.0)
-`2020-01-15`
+### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
+`2020-01-19`
 
 **Feature**
 
+* Swipe: 页面隐藏时暂停自动轮播 [113157](https://github.com/youzan/vant/commit/11315787ec980767973a3fded50fb5858e51e298)
+* Stepper: 新增 long-press 属性 [2f3ec6](https://github.com/youzan/vant/commit/2f3ec6a3d48a9d56f8127d27d51c3337f6e72cab)
 * Calendar: 新增 max-range、range-prompt 属性 [#5583](https://github.com/youzan/vant/issues/5583)
+* ImagePreview: 新增 @image-preview-index-text-shadow 变量 [e2f302](https://github.com/youzan/vant/commit/e2f30242eaaebd36d9816e2746fe6c44323e6aca)
+
+**Improvement**
+
+* Icon: 更新 share 图标 [2f77ac](https://github.com/youzan/vant/commit/2f77acfc6cef23ea664defc38c4cd806ceca1ee4)
+* Field: 优化 readonly 状态下的光标类型 [60173d](https://github.com/youzan/vant/commit/60173dd6bc004339333c50218d7c6b2f6c1bc07b)
+* Stepper: 优化 disable-input 状态下的输入框颜色 [959eca](https://github.com/youzan/vant/commit/959eca136c4ca6a39e22d36512db74b93ad100c6)
+
+**Bug Fixes**
+
+* GoodsAction: 修复未设置容器高度的问题 [#5593](https://github.com/youzan/vant/issues/5593)
 
 **Types**
 
+* Calendar: 新增类型定义 [dac60c](https://github.com/youzan/vant/commit/dac60c8a37d3b2b3686dc25c1c34b4029a963d1b)
 * Toast: 修复 setDefaultOptions 方法参数定义错误 [#5582](https://github.com/youzan/vant/issues/5582)
 
 

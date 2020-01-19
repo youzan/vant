@@ -1,14 +1,29 @@
 # Changelog
 
-### [v2.4.3-beta.0](https://github.com/youzan/vant/compare/v2.4.2...v2.4.3-beta.0)
-`2020-01-15`
+### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
+`2020-01-19`
 
 **Feature**
 
 * Calendar: add max-range、range-prompt prop [#5583](https://github.com/youzan/vant/issues/5583)
+* ImagePreview: add @image-preview-index-text-shadow var [e2f302](https://github.com/youzan/vant/commit/e2f30242eaaebd36d9816e2746fe6c44323e6aca)
+* Stepper: add long-press prop [2f3ec6](https://github.com/youzan/vant/commit/2f3ec6a3d48a9d56f8127d27d51c3337f6e72cab)
+* Swipe: pause autoplay when page hidden [113157](https://github.com/youzan/vant/commit/11315787ec980767973a3fded50fb5858e51e298)
+
+**Improvement**
+
+* Icon: update share icon [2f77ac](https://github.com/youzan/vant/commit/2f77acfc6cef23ea664defc38c4cd806ceca1ee4)
+* Field: imporve readonly cursor [60173d](https://github.com/youzan/vant/commit/60173dd6bc004339333c50218d7c6b2f6c1bc07b)
+* Stepper: improve disable-input behavior [959eca](https://github.com/youzan/vant/commit/959eca136c4ca6a39e22d36512db74b93ad100c6)
+
+**Bug Fixes**
+
+* Calendar: should show range prompt after select [ff0901](https://github.com/youzan/vant/commit/ff09011e0ef18ab29dd70b51f412625dd10bb4cb)
+* GoodsAction: should set wrapper height [#5593](https://github.com/youzan/vant/issues/5593)
 
 **Types**
 
+* Calendar: fix missing type definition [#5588](https://github.com/youzan/vant/issues/5588)
 * Toast: incorrect definition of setDefaultOptions method [#5582](https://github.com/youzan/vant/issues/5582)
 
 
