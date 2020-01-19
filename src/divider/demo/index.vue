@@ -21,16 +21,15 @@
     </demo-block>
 
     <demo-block :title="$t('dashed')">
-      <van-divider
-        dashed
-        :hairline="false"
-      >
+      <van-divider dashed :hairline="false">
         {{ $t('text') }}
       </van-divider>
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
-      <van-divider :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }">
+      <van-divider
+        :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }"
+      >
         {{ $t('text') }}
       </van-divider>
     </demo-block>
@@ -67,7 +66,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-divider {
   background-color: @white;

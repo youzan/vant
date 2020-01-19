@@ -1,21 +1,36 @@
 <template>
   <demo-section>
     <demo-block :title="$t('alert1')">
-      <van-button type="primary" @click="onClickAlert">{{ $t('alert1') }}</van-button>
-      <van-button type="primary" @click="onClickAlert2">{{ $t('alert2') }}</van-button>
+      <van-button type="primary" @click="onClickAlert">
+        {{ $t('alert1') }}
+      </van-button>
+      <van-button type="primary" @click="onClickAlert2">
+        {{ $t('alert2') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('confirm')">
-      <van-button type="primary" @click="onClickConfirm">{{ $t('confirm') }}</van-button>
+      <van-button type="primary" @click="onClickConfirm">
+        {{ $t('confirm') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('asyncClose')">
-      <van-button type="primary" @click="onClickAsyncClose">{{ $t('asyncClose') }}</van-button>
+      <van-button type="primary" @click="onClickAsyncClose">
+        {{ $t('asyncClose') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('componentCall')">
-      <van-button type="primary" @click="show = true">{{ $t('componentCall') }}</van-button>
-      <van-dialog v-model="show" :title="$t('title')" show-cancel-button :lazy-render="false">
+      <van-button type="primary" @click="show = true">
+        {{ $t('componentCall') }}
+      </van-button>
+      <van-dialog
+        v-model="show"
+        :title="$t('title')"
+        show-cancel-button
+        :lazy-render="false"
+      >
         <img :src="image" />
       </van-dialog>
     </demo-block>

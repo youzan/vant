@@ -2,30 +2,20 @@
   <demo-section>
     <van-tabs>
       <van-tab :title="$t('basicUsage')">
-        <van-pull-refresh
-          v-model="list[0].refreshing"
-          @refresh="onRefresh(0)"
-        >
+        <van-pull-refresh v-model="list[0].refreshing" @refresh="onRefresh(0)">
           <van-list
             v-model="list[0].loading"
             :finished="list[0].finished"
             :finished-text="$t('finishedText')"
             @load="onLoad(0)"
           >
-            <van-cell
-              v-for="item in list[0].items"
-              :key="item"
-              :title="item"
-            />
+            <van-cell v-for="item in list[0].items" :key="item" :title="item" />
           </van-list>
         </van-pull-refresh>
       </van-tab>
 
       <van-tab :title="$t('errorInfo')">
-        <van-pull-refresh
-          v-model="list[1].refreshing"
-          @refresh="onRefresh(1)"
-        >
+        <van-pull-refresh v-model="list[1].refreshing" @refresh="onRefresh(1)">
           <van-list
             v-model="list[1].loading"
             :finished="list[1].finished"
@@ -33,11 +23,7 @@
             :error-text="$t('errorText')"
             @load="onLoad(1)"
           >
-            <van-cell
-              v-for="item in list[1].items"
-              :key="item"
-              :title="item"
-            />
+            <van-cell v-for="item in list[1].items" :key="item" :title="item" />
           </van-list>
         </van-pull-refresh>
       </van-tab>
@@ -62,19 +48,22 @@ export default {
 
   data() {
     return {
-      list: [{
-        items: [],
-        refreshing: false,
-        loading: false,
-        error: false,
-        finished: false,
-      }, {
-        items: [],
-        refreshing: false,
-        loading: false,
-        error: false,
-        finished: false,
-      }],
+      list: [
+        {
+          items: [],
+          refreshing: false,
+          loading: false,
+          error: false,
+          finished: false,
+        },
+        {
+          items: [],
+          refreshing: false,
+          loading: false,
+          error: false,
+          finished: false,
+        },
+      ],
     };
   },
 

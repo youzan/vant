@@ -23,11 +23,7 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button
-          block
-          type="primary"
-          @click="showBase = true"
-        >
+        <van-button block type="primary" @click="showBase = true">
           {{ $t('basicUsage') }}
         </van-button>
       </div>
@@ -53,11 +49,7 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button
-          block
-          type="primary"
-          @click="showStepper = true"
-        >
+        <van-button block type="primary" @click="showStepper = true">
           {{ $t('title2') }}
         </van-button>
       </div>
@@ -84,11 +76,7 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button
-          block
-          type="primary"
-          @click="showSoldout = true"
-        >
+        <van-button block type="primary" @click="showSoldout = true">
           {{ $t('hideSoldoutSku') }}
         </van-button>
       </div>
@@ -117,7 +105,8 @@
         >
           <template #sku-header-price="{ price }">
             <div class="van-sku__goods-price">
-              <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
+              <span class="van-sku__price-symbol">￥</span>
+              <span class="van-sku__price-num">{{ price }}</span>
             </div>
           </template>
           <template #sku-actions="{ skuEventBus }">
@@ -141,11 +130,7 @@
             </div>
           </template>
         </van-sku>
-        <van-button
-          block
-          type="primary"
-          @click="showCustom = true"
-        >
+        <van-button block type="primary" @click="showCustom = true">
           {{ $t('advancedUsage') }}
         </van-button>
       </div>
@@ -188,12 +173,14 @@ export default {
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
-        stockFormatter: (stock) => `剩余${stock}件`,
-        handleOverLimit: (data) => {
+        stockFormatter: stock => `剩余${stock}件`,
+        handleOverLimit: data => {
           const { action, limitType, quota, startSaleNum = 1 } = data;
 
           if (action === 'minus') {
-            this.$toast(startSaleNum > 1 ? `${startSaleNum}件起售` : '至少选择一件商品');
+            this.$toast(
+              startSaleNum > 1 ? `${startSaleNum}件起售` : '至少选择一件商品'
+            );
           } else if (action === 'plus') {
             if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
               this.$toast(`限购${quota}件`);
@@ -204,9 +191,10 @@ export default {
         },
       },
       messageConfig: {
-        uploadImg: (file, img) => new Promise(resolve => {
-          setTimeout(() => resolve(img), 1000);
-        }),
+        uploadImg: (file, img) =>
+          new Promise(resolve => {
+            setTimeout(() => resolve(img), 1000);
+          }),
         uploadMaxSize: 3,
       },
     };
@@ -229,7 +217,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-sku {
   background-color: @white;

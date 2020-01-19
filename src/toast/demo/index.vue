@@ -1,13 +1,29 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button type="primary" :text="$t('title1')" @click="$toast($t('text'))" />
-      <van-button type="primary" :text="$t('longTextButton')" @click="$toast($t('longText'))" />
+      <van-button
+        type="primary"
+        :text="$t('title1')"
+        @click="$toast($t('text'))"
+      />
+      <van-button
+        type="primary"
+        :text="$t('longTextButton')"
+        @click="$toast($t('longText'))"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button type="primary" :text="$t('title2')" @click="showLoadingToast()" />
-      <van-button type="primary" :text="$t('loadingType')" @click="showLoadingToast('spinner')" />
+      <van-button
+        type="primary"
+        :text="$t('title2')"
+        @click="showLoadingToast()"
+      />
+      <van-button
+        type="primary"
+        :text="$t('loadingType')"
+        @click="showLoadingToast('spinner')"
+      />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -16,12 +32,24 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="$t('customIcon')">
-      <van-button type="primary" :text="$t('customIcon')" @click="showIconToast" />
-      <van-button type="primary" :text="$t('customImage')" @click="showImageToast" />
+      <van-button
+        type="primary"
+        :text="$t('customIcon')"
+        @click="showIconToast"
+      />
+      <van-button
+        type="primary"
+        :text="$t('customImage')"
+        @click="showImageToast"
+      />
     </demo-block>
 
     <demo-block :title="$t('updateMessage')">
-      <van-button type="primary" :text="$t('updateMessage')" @click="showCustomizedToast" />
+      <van-button
+        type="primary"
+        :text="$t('updateMessage')"
+        @click="showCustomizedToast"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -53,7 +81,8 @@ export default {
       success: 'Success',
       fail: 'Fail',
       text: 'Some messages',
-      longText: 'This is a long message, text will wrap when over a certain length',
+      longText:
+        'This is a long message, text will wrap when over a certain length',
       text2: 'Success',
       text3: 'Fail',
       customIcon: 'Custom Icon',

@@ -10,7 +10,9 @@ exports[`renders demo correctly 1`] = `
             <!----></i>
         </div>
         <div class="van-collapse-item__wrapper">
-          <div class="van-collapse-item__content">代码是写出来给人看的，附带能在机器上运行</div>
+          <div class="van-collapse-item__content">
+            代码是写出来给人看的，附带能在机器上运行
+          </div>
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
@@ -35,7 +37,9 @@ exports[`renders demo correctly 1`] = `
             <!----></i>
         </div>
         <div class="van-collapse-item__wrapper">
-          <div class="van-collapse-item__content">代码是写出来给人看的，附带能在机器上运行</div>
+          <div class="van-collapse-item__content">
+            代码是写出来给人看的，附带能在机器上运行
+          </div>
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">

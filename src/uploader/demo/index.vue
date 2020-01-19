@@ -14,7 +14,9 @@
 
     <demo-block :title="$t('uploadStyle')">
       <van-uploader>
-        <van-button type="primary" icon="photo">{{ this.$t('upload') }}</van-button>
+        <van-button type="primary" icon="photo">
+          {{ this.$t('upload') }}
+        </van-button>
       </van-uploader>
     </demo-block>
 

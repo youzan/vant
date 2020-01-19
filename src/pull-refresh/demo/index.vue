@@ -27,9 +27,7 @@
             <img
               class="doge"
               src="https://b.yzcdn.cn/vant/doge.png"
-              :style="{
-                transform: `scale(${distance / 80})`
-              }"
+              :style="{ transform: `scale(${distance / 80})` }"
             />
           </template>
           <template #loosing>

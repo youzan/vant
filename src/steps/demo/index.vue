@@ -26,10 +26,7 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-steps
-        :active="0"
-        direction="vertical"
-      >
+      <van-steps :active="0" direction="vertical">
         <van-step>
           <h3>{{ $t('status1') }}</h3>
           <p>2016-07-12 12:40</p>

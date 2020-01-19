@@ -70,8 +70,12 @@
       </van-checkbox-group>
 
       <div class="demo-checkbox-buttons">
-        <van-button type="primary" @click="checkAll">{{ $t('checkAll') }}</van-button>
-        <van-button type="info" @click="toggleAll">{{ $t('inverse') }}</van-button>
+        <van-button type="primary" @click="checkAll">
+          {{ $t('checkAll') }}
+        </van-button>
+        <van-button type="info" @click="toggleAll">
+          {{ $t('inverse') }}
+        </van-button>
       </div>
     </demo-block>
 
@@ -136,11 +140,7 @@ export default {
       checkboxShape: true,
       checkboxLabel: true,
       checboxIcon: true,
-      list: [
-        'a',
-        'b',
-        'c',
-      ],
+      list: ['a', 'b', 'c'],
       result: ['a', 'b'],
       result2: [],
       result3: [],
@@ -167,7 +167,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-checkbox {
   background: @white;

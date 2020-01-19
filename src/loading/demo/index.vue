@@ -7,10 +7,7 @@
 
     <demo-block :title="$t('color')">
       <van-loading color="#1989fa" />
-      <van-loading
-        type="spinner"
-        color="#1989fa"
-      />
+      <van-loading type="spinner" color="#1989fa" />
     </demo-block>
 
     <demo-block :title="$t('text')">
@@ -20,10 +17,7 @@
     </demo-block>
 
     <demo-block :title="$t('vertical')">
-      <van-loading
-        size="24px"
-        vertical
-      >
+      <van-loading size="24px" vertical>
         {{ $t('loading') }}
       </van-loading>
     </demo-block>
@@ -50,7 +44,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-loading {
   background: @white;

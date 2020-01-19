@@ -11,10 +11,18 @@
 
     <demo-block :title="$t('matchByName')">
       <van-tabbar v-model="activeName">
-        <van-tabbar-item name="home" icon="home-o">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item name="search" icon="search">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item name="friends" icon="friends-o">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item name="setting" icon="setting-o">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item name="home" icon="home-o">
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item name="search" icon="search">
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item name="friends" icon="friends-o">
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item name="setting" icon="setting-o">
+          {{ $t('tab') }}
+        </van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
@@ -22,8 +30,12 @@
       <van-tabbar v-model="active2">
         <van-tabbar-item icon="home-o">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="search" dot>{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" info="5">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" info="20">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="friends-o" info="5">
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item icon="setting-o" info="20">
+          {{ $t('tab') }}
+        </van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
@@ -41,7 +53,11 @@
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-tabbar v-model="active4" active-color="#07c160" inactive-color="#000">
+      <van-tabbar
+        v-model="active4"
+        active-color="#07c160"
+        inactive-color="#000"
+      >
         <van-tabbar-item icon="home-o">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="friends-o">{{ $t('tab') }}</van-tabbar-item>

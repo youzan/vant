@@ -58,12 +58,7 @@
     </demo-block>
 
     <div style="margin-top: 15px;">
-      <van-button
-        :text="$t('add')"
-        type="primary"
-        size="small"
-        @click="add"
-      />
+      <van-button :text="$t('add')" type="primary" size="small" @click="add" />
       <van-button
         :text="$t('decrease')"
         type="danger"
@@ -124,7 +119,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-circle {
   .van-circle {

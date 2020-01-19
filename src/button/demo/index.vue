@@ -59,14 +59,21 @@
     </demo-block>
 
     <demo-block :title="$t('router')">
-      <van-button :text="$t('urlRoute')" type="primary" url="/vant/mobile.html" />
+      <van-button
+        :text="$t('urlRoute')"
+        type="primary"
+        url="/vant/mobile.html"
+      />
       <van-button :text="$t('vueRoute')" type="primary" to="index" />
     </demo-block>
 
     <demo-block :title="$t('customColor')">
       <van-button color="#7232dd" :text="$t('pure')" />
       <van-button plain color="#7232dd" :text="$t('pure')" />
-      <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" :text="$t('gradient')" />
+      <van-button
+        color="linear-gradient(to right, #4bb0ff, #6149f6)"
+        :text="$t('gradient')"
+      />
     </demo-block>
   </demo-section>
 </template>

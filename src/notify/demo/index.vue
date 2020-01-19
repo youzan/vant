@@ -6,17 +6,41 @@
 
     <demo-block :title="$t('notifyType')">
       <div style="margin-bottom: 15px;">
-        <van-button type="info" :text="$t('primary')" @click="showType('primary')" />
-        <van-button type="primary" :text="$t('success')" @click="showType('success')" />
+        <van-button
+          type="info"
+          :text="$t('primary')"
+          @click="showType('primary')"
+        />
+        <van-button
+          type="primary"
+          :text="$t('success')"
+          @click="showType('success')"
+        />
       </div>
 
-      <van-button type="danger" :text="$t('danger')" @click="showType('danger')" />
-      <van-button type="warning" :text="$t('warning')" @click="showType('warning')" />
+      <van-button
+        type="danger"
+        :text="$t('danger')"
+        @click="showType('danger')"
+      />
+      <van-button
+        type="warning"
+        :text="$t('warning')"
+        @click="showType('warning')"
+      />
     </demo-block>
 
     <demo-block :title="$t('customNotify')">
-      <van-button type="primary" :text="$t('customColor')" @click="showCustomColor" />
-      <van-button type="primary" :text="$t('customDuration')" @click="showCustomDuration" />
+      <van-button
+        type="primary"
+        :text="$t('customColor')"
+        @click="showCustomColor"
+      />
+      <van-button
+        type="primary"
+        :text="$t('customDuration')"
+        @click="showCustomDuration"
+      />
     </demo-block>
   </demo-section>
 </template>

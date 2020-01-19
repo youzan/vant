@@ -32,17 +32,10 @@
       >
         <template #tags>
           <div>
-            <van-tag
-              plain
-              type="danger"
-              style="margin-right: 5px;"
-            >
+            <van-tag plain type="danger" style="margin-right: 5px;">
               标签
             </van-tag>
-            <van-tag
-              plain
-              type="danger"
-            >
+            <van-tag plain type="danger">
               标签
             </van-tag>
           </div>
@@ -50,16 +43,10 @@
 
         <template #footer>
           <div>
-            <van-button
-              round
-              size="mini"
-            >
+            <van-button round size="mini">
               {{ $t('button') }}
             </van-button>
-            <van-button
-              round
-              size="mini"
-            >
+            <van-button round size="mini">
               {{ $t('button') }}
             </van-button>
           </div>

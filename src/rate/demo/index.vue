@@ -5,11 +5,7 @@
     </demo-block>
 
     <demo-block :title="$t('customIcon')">
-      <van-rate
-        v-model="value2"
-        icon="like"
-        void-icon="like-o"
-      />
+      <van-rate v-model="value2" icon="like" void-icon="like-o" />
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
@@ -33,24 +29,15 @@
     </demo-block>
 
     <demo-block :title="$t('customCount')">
-      <van-rate
-        v-model="value5"
-        :count="6"
-      />
+      <van-rate v-model="value5" :count="6" />
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-rate
-        v-model="value6"
-        disabled
-      />
+      <van-rate v-model="value6" disabled />
     </demo-block>
 
     <demo-block :title="$t('readonly')">
-      <van-rate
-        v-model="value6"
-        readonly
-      />
+      <van-rate v-model="value6" readonly />
     </demo-block>
   </demo-section>
 </template>
@@ -90,7 +77,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-rate {
   padding-bottom: 20px;

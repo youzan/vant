@@ -4,11 +4,7 @@
       <demo-block :title="$t('basicUsage')">
         <van-swipe-cell>
           <template #left>
-            <van-button
-              square
-              type="primary"
-              :text="$t('select')"
-            />
+            <van-button square type="primary" :text="$t('select')" />
           </template>
           <van-cell
             :border="false"
@@ -16,16 +12,8 @@
             :value="$t('content')"
           />
           <template #right>
-            <van-button
-              square
-              type="danger"
-              :text="$t('delete')"
-            />
-            <van-button
-              square
-              type="primary"
-              :text="$t('collect')"
-            />
+            <van-button square type="danger" :text="$t('delete')" />
+            <van-button square type="primary" :text="$t('collect')" />
           </template>
         </van-swipe-cell>
       </demo-block>
@@ -33,11 +21,7 @@
       <demo-block :title="$t('title2')">
         <van-swipe-cell :before-close="beforeClose">
           <template #left>
-            <van-button
-              square
-              type="primary"
-              :text="$t('select')"
-            />
+            <van-button square type="primary" :text="$t('select')" />
           </template>
           <van-cell
             :border="false"
@@ -45,11 +29,7 @@
             :value="$t('content')"
           />
           <template #right>
-            <van-button
-              square
-              type="danger"
-              :text="$t('delete')"
-            />
+            <van-button square type="danger" :text="$t('delete')" />
           </template>
         </van-swipe-cell>
       </demo-block>
@@ -87,11 +67,13 @@ export default {
           instance.close();
           break;
         case 'right':
-          this.$dialog.confirm({
-            message: this.$t('confirm'),
-          }).then(() => {
-            instance.close();
-          });
+          this.$dialog
+            .confirm({
+              message: this.$t('confirm'),
+            })
+            .then(() => {
+              instance.close();
+            });
           break;
       }
     },

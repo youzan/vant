@@ -30,8 +30,12 @@
 
     <demo-block :title="$t('customColor')">
       <van-radio-group v-model="radio3" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160">{{ $t('radio') }} 1</van-radio>
-        <van-radio name="2" checked-color="#07c160">{{ $t('radio') }} 2</van-radio>
+        <van-radio name="1" checked-color="#07c160">
+          {{ $t('radio') }} 1
+        </van-radio>
+        <van-radio name="2" checked-color="#07c160">
+          {{ $t('radio') }} 2
+        </van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -125,7 +129,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-radio {
   background: @white;

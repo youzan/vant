@@ -5,10 +5,7 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-area
-        :area-list="$t('areaList')"
-        :value="value"
-      />
+      <van-area :area-list="$t('areaList')" :value="value" />
     </demo-block>
 
     <demo-block :title="$t('title3')">

@@ -3,13 +3,22 @@
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
         <van-cell :title="$t('cell')" :value="$t('content')" />
-        <van-cell :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+          :label="$t('desc')"
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('largeSize')">
       <van-cell :title="$t('cell')" :value="$t('content')" size="large" />
-      <van-cell :title="$t('cell')" :value="$t('content')" size="large" :label="$t('desc')" />
+      <van-cell
+        :title="$t('cell')"
+        :value="$t('content')"
+        size="large"
+        :label="$t('desc')"
+      />
     </demo-block>
 
     <demo-block :title="$t('showIcon')">
@@ -23,7 +32,12 @@
     <demo-block :title="$t('showArrow')">
       <van-cell :title="$t('cell')" is-link />
       <van-cell :title="$t('cell')" is-link :value="$t('content')" />
-      <van-cell :title="$t('cell')" is-link arrow-direction="down" :value="$t('content')" />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        arrow-direction="down"
+        :value="$t('content')"
+      />
     </demo-block>
 
     <demo-block :title="$t('router')">
@@ -56,7 +70,12 @@
     </demo-block>
 
     <demo-block :title="$t('verticalCenter')">
-      <van-cell center :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+      <van-cell
+        center
+        :title="$t('cell')"
+        :value="$t('content')"
+        :label="$t('desc')"
+      />
     </demo-block>
   </demo-section>
 </template>

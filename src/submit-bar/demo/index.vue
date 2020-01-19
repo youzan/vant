@@ -37,10 +37,7 @@
         <van-checkbox v-model="checked">{{ $t('check') }}</van-checkbox>
         <template #tip>
           {{ $t('tip2') }}
-          <span
-            class="edit-address"
-            @click="onClickLink"
-          >
+          <span class="edit-address" @click="onClickLink">
             {{ $t('tip3') }}
           </span>
         </template>
