@@ -30,13 +30,13 @@ export default {
 <van-search placeholder="Placeholder" v-model="value" background="#c8c9cc"/>
 ```
 
-### Disabled
+### Disable Search Bar
 
 ```html
 <van-search placeholder="Placeholder" v-model="value" disabled/>
 ```
 
-### Custom Input Content Alignment
+### Search Bar Content Alignment
 
 ```html
 <van-search placeholder="Placeholder" v-model="value" input-align="center"/>
