@@ -8,8 +8,8 @@ const PROMPTS = [
   {
     type: 'input',
     name: 'name',
-    message: 'Your package name'
-  }
+    message: 'Your package name',
+  },
 ];
 
 export default async function run() {

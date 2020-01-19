@@ -12,9 +12,9 @@ export default {
     color: String,
     type: {
       type: String,
-      default: 'primary'
-    }
-  }
+      default: 'primary',
+    },
+  },
 };
 </script>
 

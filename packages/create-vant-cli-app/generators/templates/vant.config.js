@@ -5,8 +5,8 @@ module.exports = {
       preprocessor: '<%= preprocessor %>',
     },
     site: {
-      publicPath: '/<%= name %>/'
-    }
+      publicPath: '/<%= name %>/',
+    },
   },
   site: {
     title: '<%= name %>',
@@ -17,23 +17,23 @@ module.exports = {
         items: [
           {
             path: 'home',
-            title: '介绍'
+            title: '介绍',
           },
           {
             path: 'quickstart',
-            title: '快速上手'
-          }
-        ]
+            title: '快速上手',
+          },
+        ],
       },
       {
         title: '基础组件',
         items: [
           {
             path: 'demo-button',
-            title: 'DemoButton 按钮'
-          }
-        ]
-      }
-    ]
-  }
+            title: 'DemoButton 按钮',
+          },
+        ],
+      },
+    ],
+  },
 };

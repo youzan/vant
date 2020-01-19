@@ -10,23 +10,23 @@ const PROMPTS = [
     name: 'preprocessor',
     message: 'Select css preprocessor',
     type: 'list',
-    choices: ['Less', 'Sass']
-  }
+    choices: ['Less', 'Sass'],
+  },
 ];
 
 export class VanGenerator extends Generator {
   inputs = {
     name: '',
     cssLang: '',
-    preprocessor: ''
+    preprocessor: '',
   };
 
   constructor(name: string) {
     super([], {
       env: {
-        cwd: join(CWD, name)
+        cwd: join(CWD, name),
       },
-      resolved: GENERATOR_DIR
+      resolved: GENERATOR_DIR,
     });
 
     this.inputs.name = name;
@@ -76,7 +76,7 @@ export class VanGenerator extends Generator {
       npm: false,
       bower: false,
       yarn: true,
-      skipMessage: true
+      skipMessage: true,
     });
   }
 
