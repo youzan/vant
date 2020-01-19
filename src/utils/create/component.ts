@@ -2,6 +2,7 @@
  * Create a basic component with common options
  */
 import '../../locale';
+import { isFunction } from '..';
 import { camelize } from '../format/string';
 import { SlotsMixin } from '../../mixins/slots';
 import Vue, {
@@ -68,7 +69,7 @@ export function createComponent(name: string) {
   return function<Props = DefaultProps, Events = {}, Slots = {}>(
     sfc: VantComponentOptions | FunctionComponent
   ): TsxComponent<Props, Events, Slots> {
-    if (typeof sfc === 'function') {
+    if (isFunction(sfc)) {
       sfc = transformFunctionComponent(sfc);
     }
 

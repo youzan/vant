@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isObj, isDef } from '../utils';
+import { createNamespace, isObject, isDef } from '../utils';
 import { route, routeProps } from '../utils/router';
 
 // Mixins
@@ -32,7 +32,7 @@ export default createComponent({
     routeActive() {
       const { to, $route } = this;
       if (to && $route) {
-        const config = isObj(to) ? to : { path: to };
+        const config = isObject(to) ? to : { path: to };
         const pathMatched = config.path === $route.path;
         const nameMatched = isDef(config.name) && config.name === $route.name;
 

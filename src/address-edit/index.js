@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isObj } from '../utils';
+import { createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
 // Components
@@ -95,7 +95,7 @@ export default createComponent({
 
   computed: {
     areaListLoaded() {
-      return isObj(this.areaList) && Object.keys(this.areaList).length;
+      return isObject(this.areaList) && Object.keys(this.areaList).length;
     },
 
     areaText() {

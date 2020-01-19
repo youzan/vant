@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueToast from './Toast';
-import { isObj, isServer } from '../utils';
+import { isObject, isServer } from '../utils';
 
 const defaultOptions = {
   icon: '',
@@ -35,7 +35,7 @@ let currentOptions = {
 };
 
 function parseOptions(message) {
-  if (isObj(message)) {
+  if (isObject(message)) {
     return message;
   }
 

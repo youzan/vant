@@ -1,4 +1,4 @@
-import { createNamespace, isObj, addUnit } from '../utils';
+import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
@@ -101,7 +101,7 @@ export default createComponent({
     },
 
     gradient() {
-      return isObj(this.color);
+      return isObject(this.color);
     },
 
     LinearGradient() {

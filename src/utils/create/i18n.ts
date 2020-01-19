@@ -1,4 +1,4 @@
-import { get } from '..';
+import { get, isFunction } from '..';
 import { camelize } from '../format/string';
 import locale from '../../locale';
 
@@ -9,7 +9,7 @@ export function createI18N(name: string) {
     const messages = locale.messages();
     const message = get(messages, prefix + path) || get(messages, path);
 
-    return typeof message === 'function' ? message(...args) : message;
+    return isFunction(message) ? message(...args) : message;
   };
 }
 

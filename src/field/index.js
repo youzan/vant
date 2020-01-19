@@ -3,7 +3,7 @@ import { formatNumber } from './utils';
 import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
-import { createNamespace, isObj, isDef, addUnit } from '../utils';
+import { createNamespace, isObject, isDef, addUnit } from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -206,7 +206,7 @@ export default createComponent({
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
-      if (isObj(this.autosize)) {
+      if (isObject(this.autosize)) {
         const { maxHeight, minHeight } = this.autosize;
         if (maxHeight) {
           height = Math.min(height, maxHeight);

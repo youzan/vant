@@ -1,5 +1,5 @@
 import { deepClone } from '../utils/deep-clone';
-import { createNamespace, isObj } from '../utils';
+import { createNamespace, isObject } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
@@ -23,7 +23,7 @@ function getElementTranslateY(element) {
 }
 
 function isOptionDisabled(option) {
-  return isObj(option) && option.disabled;
+  return isObject(option) && option.disabled;
 }
 
 export default createComponent({
@@ -176,9 +176,10 @@ export default createComponent({
     },
 
     getOptionText(option) {
-      return isObj(option) && this.valueKey in option
-        ? option[this.valueKey]
-        : option;
+      if (isObject(option) && this.valueKey in option) {
+        return option[this.valueKey];
+      }
+      return option;
     },
 
     setIndex(index, userAction) {
