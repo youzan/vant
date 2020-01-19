@@ -196,6 +196,7 @@ export default {
     float: none;
     text-align: center;
     vertical-align: middle;
+    cursor: pointer;
 
     span {
       display: block;
