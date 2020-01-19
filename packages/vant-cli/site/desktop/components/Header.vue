@@ -138,7 +138,6 @@ export default {
 
 .van-doc-header {
   width: 100%;
-  box-shadow: 0 4px 12px #ebedf0;
   user-select: none;
 
   &__top {
