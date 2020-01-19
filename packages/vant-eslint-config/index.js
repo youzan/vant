@@ -73,6 +73,14 @@ module.exports = {
     'vue/name-property-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'vue/html-closing-bracket-newline': 2,
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+        },
+      },
+    ],
     '@typescript-eslint/no-unused-vars': ['error'],
   },
 };
