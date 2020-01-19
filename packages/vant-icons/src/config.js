@@ -103,7 +103,6 @@ module.exports = {
     'desktop-o',
     'apps-o',
     'home-o',
-    'share',
     'search',
     'points',
     'edit',
@@ -212,6 +211,7 @@ module.exports = {
     'goods-collect',
     'eye',
     // without corresponding outline icon
+    'share',
     'alipay',
     'wechat',
     'photograph',
