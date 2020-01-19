@@ -35,7 +35,6 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
     "@types/html-webpack-plugin": "^3.2.1",
-    "@types/jest": "^24.0.25",
     "@types/lodash": "^4.14.149",
     "@types/postcss-load-config": "^2.0.1",
     "@types/sass": "^1.16.0",
@@ -54,6 +53,7 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-typescript": "^7.7.7",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
+    "@types/jest": "^24.9.0",
     "@vant/eslint-config": "^2.0.0",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/markdown-vetur": "^1.1.0",
