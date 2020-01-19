@@ -88,6 +88,22 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
+### Change Event
+
+```html
+<van-rate v-model="value" @change="onChange" />
+```
+
+```javascript
+export default {
+  method: {
+    onChange(value) {
+       Toast('current value:'+ value);
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
