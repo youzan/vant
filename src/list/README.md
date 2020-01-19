@@ -24,11 +24,7 @@ Vue.use(List);
   finished-text="Finished"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -68,11 +64,7 @@ export default {
   error-text="Request failed. Click to reload"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 

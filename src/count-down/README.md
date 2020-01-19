@@ -30,20 +30,13 @@ export default {
 ### Custom Format
 
 ```html
-<van-count-down
-  :time="time"
-  format="DD Day, HH:mm:ss"
-/>
+<van-count-down :time="time" format="DD Day, HH:mm:ss" />
 ```
 
 ### Millisecond
 
 ```html
-<van-count-down
-  millisecond
-  :time="time"
-  format="HH:mm:ss:SS"
-/>
+<van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
 ```
 
 ### Custom Style

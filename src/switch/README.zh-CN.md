@@ -76,7 +76,6 @@ export default {
       checked: true
     };
   },
-
   methods: {
     onInput(checked) {
       Dialog.confirm({

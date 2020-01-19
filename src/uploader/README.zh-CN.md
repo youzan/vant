@@ -104,7 +104,6 @@ export default {
         Toast('请上传 jpg 格式图片');
         return false;
       }
-    
       return true;
     },
     // 返回 Promise

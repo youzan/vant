@@ -64,12 +64,7 @@ export default {
     <div slot="title">标题1 <van-icon name="question-o" /></div>
     内容
   </van-collapse-item>
-
-  <van-collapse-item
-    title="标题2"
-    name="2"
-    icon="shop-o"
-  >
+  <van-collapse-item title="标题2" name="2" icon="shop-o">
     内容
   </van-collapse-item>
 </van-collapse>

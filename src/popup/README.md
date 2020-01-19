@@ -15,7 +15,6 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">Show Popup</van-cell>
-
 <van-popup v-model="show">Content</van-popup>
 ```
 
@@ -56,7 +55,6 @@ Use `position` prop to set popup display position
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- Custom Icon -->
 <van-popup
   v-model="show"
@@ -65,7 +63,6 @@ Use `position` prop to set popup display position
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- Icon Position -->
 <van-popup
   v-model="show"

@@ -21,7 +21,6 @@ Vue.use(CouponList);
   :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
-
 <!-- Coupon List -->
 <van-popup
   v-model="showList"
@@ -60,7 +59,6 @@ export default {
       disabledCoupons: [coupon]
     }
   },
-
   methods: {
     onChange(index) {
       this.showList = false;

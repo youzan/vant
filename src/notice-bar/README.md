@@ -14,10 +14,7 @@ Vue.use(NoticeBar);
 ### Basic Usage
 
 ```html
-<van-notice-bar
-  text="Notice Content"
-  left-icon="volume-o"
-/>
+<van-notice-bar text="Notice Content" left-icon="volume-o" />
 ```
 
 ### Disable scroll

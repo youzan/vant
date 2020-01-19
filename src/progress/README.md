@@ -42,13 +42,11 @@ Use `pivot-text` to custom text，use `color` to custom bar color
   color="#f2826a"
   :percentage="25"
 />
-
 <van-progress
   pivot-text="Red"
   color="#ee0a24"
   :percentage="50"
 />
-
 <van-progress
   :percentage="75"
   pivot-text="Purple"

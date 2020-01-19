@@ -26,11 +26,7 @@ List 组件通过`loading`和`finished`两个变量控制加载状态，当组�
   finished-text="没有更多了"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -75,11 +71,7 @@ export default {
   error-text="请求失败，点击重新加载"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 

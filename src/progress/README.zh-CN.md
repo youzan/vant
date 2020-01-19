@@ -45,13 +45,11 @@ Vue.use(Progress);
   color="#f2826a"
   :percentage="25"
 />
-
 <van-progress
   pivot-text="红色"
   color="#ee0a24"
   :percentage="50"
 />
-
 <van-progress
   :percentage="75"
   pivot-text="紫色"

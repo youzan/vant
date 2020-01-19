@@ -21,7 +21,6 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">展示弹出层</van-cell>
-
 <van-popup v-model="show">内容</van-popup>
 ```
 
@@ -64,7 +63,6 @@ export default {
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- 自定义图标 -->
 <van-popup
   v-model="show"
@@ -73,7 +71,6 @@ export default {
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- 图标位置 -->
 <van-popup
   v-model="show"

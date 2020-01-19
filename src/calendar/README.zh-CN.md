@@ -21,7 +21,6 @@ Vue.use(Calendar);
 
 ```html
 <van-cell title="选择单个日期" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" @confirm="onConfirm" />
 ```
 
@@ -33,7 +32,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -52,7 +50,6 @@ export default {
 
 ```html
 <van-cell title="选择日期区间" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" type="range" @confirm="onConfirm" />
 ```
 
@@ -64,7 +61,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;

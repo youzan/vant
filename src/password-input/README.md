@@ -26,7 +26,6 @@ Vue.use(NumberKeyboard);
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
-
 <!-- NumberKeyboard -->
 <van-number-keyboard
   :show="showKeyboard"
@@ -44,7 +43,6 @@ export default {
       showKeyboard: true
     };
   },
-
   methods: {
     onInput(key) {
       this.value = (this.value + key).slice(0, 6);
@@ -110,7 +108,6 @@ export default {
       errorInfo: ''
     };
   },
-
   methods: {
     onInput(key) {
       this.value = (this.value + key).slice(0, 6);

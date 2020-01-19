@@ -91,7 +91,6 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-
 <van-popup v-model="showPicker" position="bottom">
   <van-picker
     show-toolbar

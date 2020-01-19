@@ -21,7 +21,6 @@ Vue.use(NumberKeyboard);
 <van-button @touchstart.stop="show = true">
   弹出默认键盘
 </van-button>
-
 <van-number-keyboard
   :show="show"
   extra-key="."

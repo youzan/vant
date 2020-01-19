@@ -71,7 +71,6 @@ export default {
       ]
     }
   },
-
   methods: {
     onConfirm() {
       this.$refs.item.toggle();

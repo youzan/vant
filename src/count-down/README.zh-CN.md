@@ -34,10 +34,7 @@ export default {
 通过`format`属性设置倒计时文本的内容
 
 ```html
-<van-count-down
-  :time="time"
-  format="DD 天 HH 时 mm 分 ss 秒"
-/>
+<van-count-down :time="time" format="DD 天 HH 时 mm 分 ss 秒" />
 ```
 
 ### 毫秒级渲染
@@ -45,11 +42,7 @@ export default {
 倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染
 
 ```html
-<van-count-down
-  millisecond
-  :time="time"
-  format="HH:mm:ss:SS"
-/>
+<van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
 ```
 
 ### 自定义样式

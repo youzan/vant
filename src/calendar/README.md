@@ -21,7 +21,6 @@ The `confirm` event will be triggered after the date selection is completed
 
 ```html
 <van-cell title="Select Single Date" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" @confirm="onConfirm" />
 ```
 
@@ -33,7 +32,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -52,7 +50,6 @@ You can select a date range after setting `type` to` range`. In range mode, the 
 
 ```html
 <van-cell title="Select Date Range" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" type="range" @confirm="onConfirm" />
 ```
 
@@ -64,7 +61,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;

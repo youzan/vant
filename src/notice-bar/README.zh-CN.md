@@ -14,10 +14,7 @@ Vue.use(NoticeBar);
 ### 基础用法
 
 ```html
-<van-notice-bar
-  text="通知内容"
-  left-icon="volume-o"
-/>
+<van-notice-bar text="通知内容" left-icon="volume-o" />
 ```
 
 ### 禁用滚动

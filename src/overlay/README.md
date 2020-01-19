@@ -15,7 +15,6 @@ Vue.use(Overlay);
 
 ```html
 <van-button type="primary" text="Show Overlay" @click="show = true" />
-
 <van-overlay :show="show" @click="show = false" />
 ```
 

@@ -89,7 +89,6 @@ export default {
         Toast('Please upload an image in jpg format');
         return false;
       }
-    
       return true;
     },
     asyncBeforeRead(file) {

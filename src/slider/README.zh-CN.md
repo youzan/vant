@@ -65,17 +65,23 @@ export default {
 ### 自定义按钮
 
 ```html
-<van-slider
-  v-model="value"
-  active-color="#ee0a24"
->
-  <div
-    slot="button"
-    class="custom-button"
-  >
+<van-slider v-model="value" active-color="#ee0a24">
+  <div slot="button" class="custom-button">
     {{ value }}
   </div>
 </van-slider>
+
+<style>
+.custom-button {
+  width: 26px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  background-color: #ee0a24;
+  border-radius: 100px;
+}
+</style>
 ```
 
 ### 垂直方向

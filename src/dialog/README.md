@@ -82,11 +82,7 @@ export default {
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog
-  v-model="show"
-  title="Title"
-  show-cancel-button
->
+<van-dialog v-model="show" title="Title" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
 </van-dialog>
 ```

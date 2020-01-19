@@ -17,7 +17,6 @@ Vue.use(NumberKeyboard);
 <van-button @touchstart.stop="show = true">
   Show Keyboard
 </van-button>
-
 <van-number-keyboard
   :show="show"
   extra-key="."

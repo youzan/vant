@@ -19,7 +19,6 @@ Vue.use(Overlay);
 
 ```html
 <van-button type="primary" text="显示遮罩层" @click="show = true" />
-
 <van-overlay :show="show" @click="show = false" />
 ```
 
