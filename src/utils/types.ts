@@ -5,7 +5,9 @@ export type EventHandler = (event: Event) => void;
 
 export type ObjectIndex = Record<string, any>;
 
-export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
+export type ScopedSlot<Props = any> = (
+  props?: Props
+) => VNode[] | VNode | undefined;
 
 export type DefaultSlots = {
   default?: ScopedSlot;
@@ -22,10 +24,16 @@ export type ModelOptions = {
 
 export type DefaultProps = ObjectIndex;
 
-export type FunctionComponent<Props = DefaultProps, PropDefs = PropsDefinition<Props>> = {
-  (h: CreateElement, props: Props, slots: ScopedSlots, context: RenderContext<Props>):
-    | VNode
-    | undefined;
+export type FunctionComponent<
+  Props = DefaultProps,
+  PropDefs = PropsDefinition<Props>
+> = {
+  (
+    h: CreateElement,
+    props: Props,
+    slots: ScopedSlots,
+    context: RenderContext<Props>
+  ): VNode | undefined;
   props?: PropDefs;
   model?: ModelOptions;
   inject?: InjectOptions;

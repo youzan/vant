@@ -4,7 +4,12 @@
 import '../../locale';
 import { camelize } from '../format/string';
 import { SlotsMixin } from '../../mixins/slots';
-import Vue, { VNode, VueConstructor, ComponentOptions, RenderContext } from 'vue';
+import Vue, {
+  VNode,
+  VueConstructor,
+  ComponentOptions,
+  RenderContext,
+} from 'vue';
 import { DefaultProps, FunctionComponent } from '../types';
 
 export interface VantComponentOptions extends ComponentOptions<Vue> {
@@ -47,17 +52,20 @@ export function unifySlots(context: RenderContext) {
 }
 
 // should be removed after Vue 3
-function transformFunctionComponent(pure: FunctionComponent): VantComponentOptions {
+function transformFunctionComponent(
+  pure: FunctionComponent
+): VantComponentOptions {
   return {
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context): any => pure(h, context.props, unifySlots(context), context),
+    render: (h, context): any =>
+      pure(h, context.props, unifySlots(context), context),
   };
 }
 
 export function createComponent(name: string) {
-  return function<Props = DefaultProps, Events = {}, Slots = {}> (
+  return function<Props = DefaultProps, Events = {}, Slots = {}>(
     sfc: VantComponentOptions | FunctionComponent
   ): TsxComponent<Props, Events, Slots> {
     if (typeof sfc === 'function') {

@@ -14,7 +14,7 @@ export type SharedCellProps = {
   value?: string | number;
   label?: string | number;
   arrowDirection?: 'up' | 'down' | 'left' | 'right';
-}
+};
 
 export const cellProps = {
   icon: String,

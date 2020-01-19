@@ -16,14 +16,16 @@ export default {
       stock: '剩余',
       stockUnit: '件',
       quotaTip: (quota: number) => `每人限购${quota}件`,
-      quotaUsedTip: (quota: number, count: number) => `每人限购${quota}件，你已购买${count}件`,
+      quotaUsedTip: (quota: number, count: number) =>
+        `每人限购${quota}件，你已购买${count}件`,
     },
     vanSkuActions: {
       buy: '立即购买',
       addCart: '加入购物车',
     },
     vanSkuImgUploader: {
-      oversize: (maxSize: number) => `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
+      oversize: (maxSize: number) =>
+        `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
       fail: '上传失败<br />重新上传',
     },
     vanSkuStepper: {

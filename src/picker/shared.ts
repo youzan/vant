@@ -6,7 +6,7 @@ export type SharedPickerProps = {
   visibleItemCount: number;
   cancelButtonText?: string;
   confirmButtonText?: string;
-}
+};
 
 export const pickerProps = {
   title: String,

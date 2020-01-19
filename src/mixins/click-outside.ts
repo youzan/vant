@@ -20,7 +20,10 @@ export const ClickOutsideMixin = (config: ClickOutsideMixinConfig) =>
 
     data() {
       const clickOutsideHandler = (event: Event) => {
-        if (this.closeOnClickOutside && !this.$el.contains(event.target as Node)) {
+        if (
+          this.closeOnClickOutside &&
+          !this.$el.contains(event.target as Node)
+        ) {
           (this as any)[config.method]();
         }
       };

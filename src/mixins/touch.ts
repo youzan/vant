@@ -58,7 +58,8 @@ export const TouchMixin = Vue.extend({
     // avoid Vue 2.6 event bubble issues by manually binding events
     // https://github.com/youzan/vant/issues/3015
     bindTouchEvent(el: HTMLElement) {
-      const { onTouchStart, onTouchMove, onTouchEnd } = (this as any);
+      const { onTouchStart, onTouchMove, onTouchEnd } = this as any;
+
       on(el, 'touchstart', onTouchStart);
       on(el, 'touchmove', onTouchMove);
 

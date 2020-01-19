@@ -48,7 +48,6 @@ const group3 = [
   },
 ];
 
-
 export const enUSData = [
   {
     text: 'Group 1',
