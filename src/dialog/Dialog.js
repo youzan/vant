@@ -91,6 +91,39 @@ export default createComponent({
     onClosed() {
       this.$emit('closed');
     },
+
+    genButtons() {
+      const multiple = this.showCancelButton && this.showConfirmButton;
+
+      return (
+        <div class={[BORDER_TOP, bem('footer', { buttons: multiple })]}>
+          {this.showCancelButton && (
+            <Button
+              size="large"
+              class={bem('cancel')}
+              loading={this.loading.cancel}
+              text={this.cancelButtonText || t('cancel')}
+              style={{ color: this.cancelButtonColor }}
+              onClick={() => {
+                this.handleAction('cancel');
+              }}
+            />
+          )}
+          {this.showConfirmButton && (
+            <Button
+              size="large"
+              class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
+              loading={this.loading.confirm}
+              text={this.confirmButtonText || t('confirm')}
+              style={{ color: this.confirmButtonColor }}
+              onClick={() => {
+                this.handleAction('confirm');
+              }}
+            />
+          )}
+        </div>
+      );
+    },
   },
 
   render() {
@@ -122,36 +155,6 @@ export default createComponent({
       </div>
     );
 
-    const hasButtons = this.showCancelButton && this.showConfirmButton;
-    const ButtonGroup = (
-      <div class={[BORDER_TOP, bem('footer', { buttons: hasButtons })]}>
-        {this.showCancelButton && (
-          <Button
-            size="large"
-            class={bem('cancel')}
-            loading={this.loading.cancel}
-            text={this.cancelButtonText || t('cancel')}
-            style={{ color: this.cancelButtonColor }}
-            onClick={() => {
-              this.handleAction('cancel');
-            }}
-          />
-        )}
-        {this.showConfirmButton && (
-          <Button
-            size="large"
-            class={[bem('confirm'), { [BORDER_LEFT]: hasButtons }]}
-            loading={this.loading.confirm}
-            text={this.confirmButtonText || t('confirm')}
-            style={{ color: this.confirmButtonColor }}
-            onClick={() => {
-              this.handleAction('confirm');
-            }}
-          />
-        )}
-      </div>
-    );
-
     return (
       <transition
         name={this.transition}
@@ -167,7 +170,7 @@ export default createComponent({
         >
           {Title}
           {Content}
-          {ButtonGroup}
+          {this.genButtons()}
         </div>
       </transition>
     );

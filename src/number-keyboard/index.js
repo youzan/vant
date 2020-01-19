@@ -134,83 +134,92 @@ export default createComponent({
         this.$emit('update:value', value + text);
       }
     },
+
+    genTitle() {
+      const { title, theme, closeButtonText } = this;
+      const titleLeft = this.slots('title-left');
+      const showClose = closeButtonText && theme === 'default';
+      const showTitle = title || showClose || titleLeft;
+
+      if (!showTitle) {
+        return;
+      }
+
+      return (
+        <div class={[bem('title'), BORDER_TOP]}>
+          {titleLeft && <span class={bem('title-left')}>{titleLeft}</span>}
+          {title && <span>{title}</span>}
+          {showClose && (
+            <span
+              role="button"
+              tabindex="0"
+              class={bem('close')}
+              onClick={this.onClose}
+            >
+              {closeButtonText}
+            </span>
+          )}
+        </div>
+      );
+    },
+
+    genKeys() {
+      return this.keys.map(key => (
+        <Key
+          key={key.text}
+          text={key.text}
+          type={key.type}
+          theme={key.theme}
+          onPress={this.onPress}
+        >
+          {key.type === 'delete' && this.slots('delete')}
+          {key.type === 'extra' && this.slots('extra-key')}
+        </Key>
+      ));
+    },
+
+    genSidebar() {
+      if (this.theme === 'custom') {
+        return (
+          <div class={bem('sidebar')}>
+            <Key
+              text={this.deleteText}
+              type="delete"
+              theme={DELETE_KEY_THEME}
+              onPress={this.onPress}
+            >
+              {this.slots('delete')}
+            </Key>
+            <Key
+              text={this.closeButtonText}
+              type="close"
+              theme={CLOSE_KEY_THEME}
+              onPress={this.onPress}
+            />
+          </div>
+        );
+      }
+    },
   },
 
   render() {
-    const { title, theme, onPress, closeButtonText } = this;
-
-    const titleLeftSlot = this.slots('title-left');
-    const showTitleClose = closeButtonText && theme === 'default';
-    const showTitle = title || showTitleClose || titleLeftSlot;
-
-    const Title = showTitle && (
-      <div class={[bem('title'), BORDER_TOP]}>
-        {titleLeftSlot && (
-          <span class={bem('title-left')}>{titleLeftSlot}</span>
-        )}
-        {title && <span>{title}</span>}
-        {showTitleClose && (
-          <span
-            role="button"
-            tabindex="0"
-            class={bem('close')}
-            onClick={this.onClose}
-          >
-            {closeButtonText}
-          </span>
-        )}
-      </div>
-    );
-
-    const Keys = this.keys.map(key => (
-      <Key
-        key={key.text}
-        text={key.text}
-        type={key.type}
-        theme={key.theme}
-        onPress={onPress}
-      >
-        {key.type === 'delete' && this.slots('delete')}
-        {key.type === 'extra' && this.slots('extra-key')}
-      </Key>
-    ));
-
-    const Sidebar = theme === 'custom' && (
-      <div class={bem('sidebar')}>
-        <Key
-          text={this.deleteText}
-          type="delete"
-          theme={DELETE_KEY_THEME}
-          onPress={onPress}
-        >
-          {this.slots('delete')}
-        </Key>
-        <Key
-          text={closeButtonText}
-          type="close"
-          theme={CLOSE_KEY_THEME}
-          onPress={onPress}
-        />
-      </div>
-    );
-
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
           class={bem([
-            theme,
+            this.theme,
             { 'safe-area-inset-bottom': this.safeAreaInsetBottom },
           ])}
           onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
         >
-          {Title}
+          {this.genTitle()}
           <div class={bem('body')}>
-            {Keys}
-            {Sidebar}
+            {this.genKeys()}
+            {this.genSidebar()}
           </div>
         </div>
       </transition>
