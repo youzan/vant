@@ -98,7 +98,7 @@ export default {
 export default {
   method: {
     onChange(value) {
-       Toast('current value：' + value);
+       Toast('Change Event');
     }
   }
 }

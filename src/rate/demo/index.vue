@@ -72,7 +72,7 @@ export default {
       customStyle: '自定义样式',
       customCount: '自定义数量',
       readonly: '只读状态',
-      changeEvent: '监听切换事件'
+      changeEvent: '监听 change 事件'
     },
     'en-US': {
       halfStar: 'Half Star',

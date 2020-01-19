@@ -98,7 +98,7 @@ export default {
 export default {
   method: {
     onChange(value) {
-      Toast('当前值：' + value);
+      Toast('监听 change 事件');
     }
   }
 }
