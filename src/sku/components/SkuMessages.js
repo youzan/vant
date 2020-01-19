@@ -3,7 +3,7 @@ import Cell from '../../cell';
 import CellGroup from '../../cell-group';
 import Field from '../../field';
 import { isEmail } from '../../utils/validate/email';
-import { isNumber } from '../../utils/validate/number';
+import { isNumeric } from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');
@@ -94,7 +94,7 @@ export default createComponent({
             return textType + message.name;
           }
         } else {
-          if (message.type === 'tel' && !isNumber(value)) {
+          if (message.type === 'tel' && !isNumeric(value)) {
             return t('invalid.tel');
           }
           if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {

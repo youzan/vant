@@ -1,5 +1,9 @@
 type ScrollElement = HTMLElement | Window;
 
+function isWindow(val: unknown): val is Window {
+  return val === window;
+}
+
 // get nearest scroll element
 // http://w3help.org/zh-cn/causes/SD9013
 // http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
@@ -63,24 +67,22 @@ export function setRootScrollTop(value: number) {
 
 // get distance from element top to page top
 export function getElementTop(el: ScrollElement) {
-  if (el === window) {
+  if (isWindow(el)) {
     return 0;
   }
-
-  return (el as HTMLElement).getBoundingClientRect().top + getRootScrollTop();
+  return el.getBoundingClientRect().top + getRootScrollTop();
 }
 
 export function getVisibleHeight(el: ScrollElement) {
-  if (el === window) {
+  if (isWindow(el)) {
     return el.innerHeight;
   }
-
-  return (el as HTMLElement).getBoundingClientRect().height;
+  return el.getBoundingClientRect().height;
 }
 
 export function getVisibleTop(el: ScrollElement) {
-  if (el === window) {
+  if (isWindow(el)) {
     return 0;
   }
-  return (el as HTMLElement).getBoundingClientRect().top;
+  return el.getBoundingClientRect().top;
 }
