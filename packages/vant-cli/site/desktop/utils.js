@@ -5,7 +5,7 @@ export function scrollToAnchor(selector) {
     const el = document.querySelector(selector);
     if (el) {
       el.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
       clearInterval(timer);
     } else {

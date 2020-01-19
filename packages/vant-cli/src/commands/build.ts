@@ -23,7 +23,7 @@ import {
   isDemoDir,
   isTestDir,
   setNodeEnv,
-  setModuleEnv
+  setModuleEnv,
 } from '../common';
 
 async function compileFile(filePath: string) {
@@ -62,7 +62,6 @@ async function compileDir(dir: string) {
   );
 }
 
-
 async function buildEs() {
   setModuleEnv('esmodule');
   await copy(SRC_DIR, ES_DIR);
@@ -87,7 +86,7 @@ async function buildPacakgeEntry() {
 
   genPackageEntry({
     outputPath: esEntryFile,
-    pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`
+    pathResolver: (path: string) => `./${relative(SRC_DIR, path)}`,
   });
 
   setModuleEnv('esmodule');
@@ -95,7 +94,7 @@ async function buildPacakgeEntry() {
 
   genPacakgeStyle({
     outputPath: styleEntryFile,
-    pathResolver: (path: string) => path.replace(SRC_DIR, '.')
+    pathResolver: (path: string) => path.replace(SRC_DIR, '.'),
   });
 
   setModuleEnv('commonjs');
@@ -114,24 +113,24 @@ async function buildPackages() {
 const tasks = [
   {
     text: 'Build ESModule Outputs',
-    task: buildEs
+    task: buildEs,
   },
   {
     text: 'Build Commonjs Outputs',
-    task: buildLib
+    task: buildLib,
   },
   {
     text: 'Build Style Entry',
-    task: buildStyleEntry
+    task: buildStyleEntry,
   },
   {
     text: 'Build Package Entry',
-    task: buildPacakgeEntry
+    task: buildPacakgeEntry,
   },
   {
     text: 'Build Packed Outputs',
-    task: buildPackages
-  }
+    task: buildPackages,
+  },
 ];
 
 async function runBuildTasks() {

@@ -19,7 +19,7 @@ function formatType(type: string) {
     fix: 'Bug Fixes',
     feat: 'Feature',
     docs: 'Document',
-    types: 'Types'
+    types: 'Types',
   };
 
   return MAP[type] || type;
@@ -52,7 +52,7 @@ export async function changelog() {
   return new Promise(resolve => {
     conventionalChangelog(
       {
-        preset: 'angular'
+        preset: 'angular',
       },
       null,
       null,
@@ -61,7 +61,7 @@ export async function changelog() {
         mainTemplate,
         headerPartial,
         commitPartial,
-        transform
+        transform,
       }
     )
       .pipe(createWriteStream(DIST_FILE))

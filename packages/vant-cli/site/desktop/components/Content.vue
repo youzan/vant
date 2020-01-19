@@ -15,8 +15,8 @@ export default {
         return path.split('/').slice(-1)[0];
       }
       return this.$route.name;
-    }
-  }
+    },
+  },
 };
 </script>
 

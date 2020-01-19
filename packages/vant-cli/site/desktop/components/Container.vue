@@ -12,8 +12,8 @@ export default {
   name: 'van-doc-container',
 
   props: {
-    hasSimulator: Boolean
-  }
+    hasSimulator: Boolean,
+  },
 };
 </script>
 

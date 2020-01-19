@@ -7,7 +7,7 @@ import {
   decamelize,
   getVantConfig,
   smartOutputFile,
-  normalizePath
+  normalizePath,
 } from '../common';
 
 type DemoItem = {
@@ -25,7 +25,10 @@ import './package-style';
 
 function genImports(demos: DemoItem[]) {
   return demos
-    .map(item => `import ${item.name} from '${removeExt(normalizePath(item.path))}';`)
+    .map(
+      item =>
+        `import ${item.name} from '${removeExt(normalizePath(item.path))}';`
+    )
     .join('\n');
 }
 
@@ -73,7 +76,7 @@ function genCode(components: string[]) {
     .map(component => ({
       component,
       name: pascalize(component),
-      path: join(SRC_DIR, component, 'demo/index.vue')
+      path: join(SRC_DIR, component, 'demo/index.vue'),
     }))
     .filter(item => existsSync(item.path));
 

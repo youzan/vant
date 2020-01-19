@@ -1,7 +1,12 @@
 <template>
-  <router-link v-if="item.path" :class="{ active }" :to="path" v-html="itemName" />
+  <router-link
+    v-if="item.path"
+    :class="{ active }"
+    :to="path"
+    v-html="itemName"
+  />
   <a v-else-if="item.link" :href="item.link" v-html="itemName" />
-  <a v-else v-html="itemName " />
+  <a v-else v-html="itemName" />
 </template>
 
 <script>
@@ -10,7 +15,7 @@ export default {
 
   props: {
     base: String,
-    item: Object
+    item: Object,
   },
 
   computed: {
@@ -33,13 +38,13 @@ export default {
       }
 
       return false;
-    }
+    },
   },
 
   watch: {
     active() {
       this.scrollIntoView();
-    }
+    },
   },
 
   mounted() {
@@ -51,7 +56,7 @@ export default {
       if (this.active && this.$el && this.$el.scrollIntoViewIfNeeded) {
         this.$el.scrollIntoViewIfNeeded();
       }
-    }
-  }
+    },
+  },
 };
 </script>

@@ -39,7 +39,7 @@ function watch() {
 
   getPort(
     {
-      port: config.devServer!.port
+      port: config.devServer!.port,
     },
     (err, port) => {
       if (err) {

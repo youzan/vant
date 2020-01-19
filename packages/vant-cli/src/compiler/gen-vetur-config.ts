@@ -14,7 +14,7 @@ export function genVeturConfig() {
       path: SRC_DIR,
       test: /zh-CN\.md/,
       outputDir: join(ROOT, 'vetur'),
-      ...options
+      ...options,
     });
   }
 }

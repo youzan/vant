@@ -25,7 +25,7 @@ export async function installDependencies() {
     const manager = hasYarn() ? 'yarn' : 'npm';
 
     await execa(manager, ['install', '--prod=false'], {
-      stdio: 'inherit'
+      stdio: 'inherit',
     });
 
     console.log('');

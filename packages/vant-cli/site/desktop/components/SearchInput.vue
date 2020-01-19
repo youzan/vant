@@ -1,5 +1,5 @@
 <template>
-  <input class="van-doc-search" :placeholder="placeholder">
+  <input class="van-doc-search" :placeholder="placeholder" />
 </template>
 
 <script>
@@ -8,13 +8,13 @@ export default {
 
   props: {
     lang: String,
-    searchConfig: Object
+    searchConfig: Object,
   },
 
   computed: {
     placeholder() {
       return this.searchConfig.placeholder || 'Search...';
-    }
+    },
   },
 
   watch: {
@@ -22,7 +22,7 @@ export default {
       if (this.docsearchInstance) {
         this.docsearchInstance.algoliaOptions.facetFilters = [`lang:${lang}`];
       }
-    }
+    },
   },
 
   mounted() {
@@ -31,11 +31,11 @@ export default {
         ...this.searchConfig,
         inputSelector: '.van-doc-search',
         algoliaOptions: {
-          facetFilters: [`lang:${this.lang}`]
-        }
+          facetFilters: [`lang:${this.lang}`],
+        },
       });
     }
-  }
+  },
 };
 </script>
 

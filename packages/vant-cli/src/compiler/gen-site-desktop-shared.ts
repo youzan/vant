@@ -6,14 +6,14 @@ import {
   removeExt,
   getVantConfig,
   smartOutputFile,
-  normalizePath
+  normalizePath,
 } from '../common';
 import {
   SRC_DIR,
   DOCS_DIR,
   getPackageJson,
   VANT_CONFIG_FILE,
-  SITE_DESKTOP_SHARED_FILE
+  SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
 type DocumentItem = {
@@ -52,7 +52,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
       components.forEach(component => {
         docs.push({
           name: formatName(component, lang),
-          path: join(SRC_DIR, component, fileName)
+          path: join(SRC_DIR, component, fileName),
         });
       });
     });
@@ -60,7 +60,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     components.forEach(component => {
       docs.push({
         name: formatName(component),
-        path: join(SRC_DIR, component, 'README.md')
+        path: join(SRC_DIR, component, 'README.md'),
       });
     });
   }
@@ -69,7 +69,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     const pairs = parse(path).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
-      path
+      path,
     };
   });
 

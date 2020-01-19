@@ -14,7 +14,7 @@ export function getPackageConfig(isMinify: boolean) {
     {
       mode: 'production',
       entry: {
-        [name]: join(ES_DIR, 'index.js')
+        [name]: join(ES_DIR, 'index.js'),
       },
       stats: 'none',
       output: {
@@ -24,20 +24,20 @@ export function getPackageConfig(isMinify: boolean) {
         filename: isMinify ? '[name].min.js' : '[name].js',
         umdNamedDefine: true,
         // https://github.com/webpack/webpack/issues/6522
-        globalObject: "typeof self !== 'undefined' ? self : this"
+        globalObject: "typeof self !== 'undefined' ? self : this",
       },
       externals: {
         vue: {
           root: 'Vue',
           commonjs: 'vue',
           commonjs2: 'vue',
-          amd: 'vue'
-        }
+          amd: 'vue',
+        },
       },
       performance: false,
       optimization: {
-        minimize: isMinify
-      }
+        minimize: isMinify,
+      },
     },
     getWebpackConfig()
   );

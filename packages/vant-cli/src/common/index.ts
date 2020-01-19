@@ -4,13 +4,13 @@ import {
   existsSync,
   readdirSync,
   readFileSync,
-  outputFileSync
+  outputFileSync,
 } from 'fs-extra';
 import {
   SRC_DIR,
   getVantConfig,
   ROOT_WEBPACK_CONFIG_FILE,
-  ROOT_POSTCSS_CONFIG_FILE
+  ROOT_POSTCSS_CONFIG_FILE,
 } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;

@@ -18,8 +18,8 @@ export function getSitePrdConfig() {
         publicPath,
         path: outputDir,
         filename: '[name].[hash:8].js',
-        chunkFilename: 'async_[name].[chunkhash:8].js'
-      }
+        chunkFilename: 'async_[name].[chunkhash:8].js',
+      },
     },
     getWebpackConfig()
   );

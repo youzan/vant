@@ -11,7 +11,7 @@
 import DemoNav from './components/DemoNav';
 
 export default {
-  components: { DemoNav }
+  components: { DemoNav },
 };
 </script>
 

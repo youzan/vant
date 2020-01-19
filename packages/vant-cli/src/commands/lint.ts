@@ -18,7 +18,7 @@ function runCommand(
 
   return new Promise(resolve => {
     execa(cmd, options, {
-      env: { FORCE_COLOR: true }
+      env: { FORCE_COLOR: true },
     })
       .then(() => {
         spinner.succeed(messages.succeed);
@@ -39,7 +39,7 @@ function eslint() {
     {
       start: 'Running eslint...',
       succeed: 'ESLint Passed.',
-      failed: 'ESLint failed!'
+      failed: 'ESLint failed!',
     }
   );
 }
@@ -51,7 +51,7 @@ function stylelint() {
     {
       start: 'Running stylelint...',
       succeed: 'Stylelint Passed.',
-      failed: 'Stylelint failed!'
+      failed: 'Stylelint failed!',
     }
   );
 }

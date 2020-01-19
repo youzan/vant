@@ -20,25 +20,25 @@ import ArrowRight from './ArrowRight';
 
 export default {
   components: {
-    ArrowRight
+    ArrowRight,
   },
 
   props: {
     lang: String,
-    group: Object
+    group: Object,
   },
 
   data() {
     return {
-      active: []
+      active: [],
     };
   },
 
   computed: {
     base() {
       return this.lang ? `/${this.lang}` : '';
-    }
-  }
+    },
+  },
 };
 </script>
 

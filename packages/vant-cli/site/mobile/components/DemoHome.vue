@@ -4,16 +4,14 @@
       class="demo-home__title"
       :class="{ 'demo-home__title--small': smallTitle }"
     >
-      <img :src="config.logo">
+      <img :src="config.logo" />
       <span>{{ config.title }}</span>
     </h1>
-    <h2 v-if="config.description" class="demo-home__desc">{{ config.description }}</h2>
+    <h2 v-if="config.description" class="demo-home__desc">
+      {{ config.description }}
+    </h2>
     <template v-for="(group, index) in config.nav">
-      <demo-home-nav
-        :group="group"
-        :lang="lang"
-        :key="index"
-      />
+      <demo-home-nav :group="group" :lang="lang" :key="index" />
     </template>
   </div>
 </template>
@@ -24,7 +22,7 @@ import DemoHomeNav from './DemoHomeNav';
 
 export default {
   components: {
-    DemoHomeNav
+    DemoHomeNav,
   },
 
   computed: {
@@ -45,8 +43,8 @@ export default {
 
     smallTitle() {
       return this.config.title.length >= 8;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -15,10 +15,10 @@ export async function genSiteEntry() {
     genStyleDepsMap()
       .then(() => {
         genPackageEntry({
-          outputPath: PACKAGE_ENTRY_FILE
+          outputPath: PACKAGE_ENTRY_FILE,
         });
         genPacakgeStyle({
-          outputPath: replaceExt(PACKAGE_STYLE_FILE, `.${CSS_LANG}`)
+          outputPath: replaceExt(PACKAGE_STYLE_FILE, `.${CSS_LANG}`),
         });
         genSiteMobileShared();
         genSiteDesktopShared();

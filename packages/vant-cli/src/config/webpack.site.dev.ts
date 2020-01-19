@@ -10,7 +10,7 @@ import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
   GREEN,
   SITE_MODILE_SHARED_FILE,
-  SITE_DESKTOP_SHARED_FILE
+  SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
 export function getSiteDevBaseConfig() {
@@ -43,7 +43,7 @@ export function getSiteDevBaseConfig() {
   return merge(baseConfig as any, {
     entry: {
       'site-desktop': [join(__dirname, '../../site/desktop/main.js')],
-      'site-mobile': [join(__dirname, '../../site/mobile/main.js')]
+      'site-mobile': [join(__dirname, '../../site/mobile/main.js')],
     },
     devServer: {
       port: 8080,
@@ -51,16 +51,16 @@ export function getSiteDevBaseConfig() {
       host: '0.0.0.0',
       stats: 'errors-only',
       publicPath: '/',
-      disableHostCheck: true
+      disableHostCheck: true,
     },
     resolve: {
       alias: {
         'site-mobile-shared': SITE_MODILE_SHARED_FILE,
-        'site-desktop-shared': SITE_DESKTOP_SHARED_FILE
-      }
+        'site-desktop-shared': SITE_DESKTOP_SHARED_FILE,
+      },
     },
     output: {
-      chunkFilename: '[name].js'
+      chunkFilename: '[name].js',
     },
     optimization: {
       splitChunks: {
@@ -69,15 +69,15 @@ export function getSiteDevBaseConfig() {
             chunks: 'all',
             minChunks: 2,
             minSize: 0,
-            name: 'chunks'
-          }
-        }
-      }
+            name: 'chunks',
+          },
+        },
+      },
     },
     plugins: [
       new WebpackBar({
         name: 'Vant Cli',
-        color: GREEN
+        color: GREEN,
       }),
       new VantCliSitePlugin(),
       new HtmlWebpackPlugin({
@@ -87,7 +87,7 @@ export function getSiteDevBaseConfig() {
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html',
-        baiduAnalytics
+        baiduAnalytics,
       }),
       new HtmlWebpackPlugin({
         title,
@@ -96,9 +96,9 @@ export function getSiteDevBaseConfig() {
         chunks: ['chunks', 'site-mobile'],
         template: join(__dirname, '../../site/mobile/index.html'),
         filename: 'mobile.html',
-        baiduAnalytics
-      })
-    ]
+        baiduAnalytics,
+      }),
+    ],
   });
 }
 
