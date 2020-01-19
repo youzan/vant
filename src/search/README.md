@@ -24,6 +24,23 @@ export default {
   }
 }
 ```
+### Custom Background Color
+
+```html
+<van-search placeholder="Placeholder" v-model="value" background="#c8c9cc"/>
+```
+
+### Disable Search Bar
+
+```html
+<van-search placeholder="Placeholder" v-model="value" disabled/>
+```
+
+### Search Bar Content Alignment
+
+```html
+<van-search placeholder="Placeholder" v-model="value" input-align="center"/>
+```
 
 ### Listen to Events
 

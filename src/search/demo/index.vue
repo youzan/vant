@@ -4,6 +4,18 @@
       <van-search v-model="value" :placeholder="$t('placeholder')" />
     </demo-block>
 
+    <demo-block :title="$t('background')">
+      <van-search v-model="value" :placeholder="$t('placeholder')" background="#c8c9cc" />
+    </demo-block>
+
+    <demo-block :title="$t('disabled')">
+      <van-search v-model="value" :placeholder="$t('placeholder')" disabled />
+    </demo-block>
+
+    <demo-block :title="$t('inputAlign')">
+      <van-search placeholder="Placeholder" v-model="value" input-align="center" />
+    </demo-block>
+
     <demo-block :title="$t('listenToEvents')">
       <form action="/">
         <van-search
@@ -40,14 +52,20 @@ export default {
       label: '地址',
       placeholder: '请输入搜索关键词',
       customButton: '自定义按钮',
+      background: '自定义背景色',
+      inputAlign: '搜索框内容对齐',
       listenToEvents: '事件监听',
+      disabled: '禁用搜索框'
     },
     'en-US': {
       label: 'Address',
       placeholder: 'Placeholder',
       customButton: 'Custom Action Button',
+      background: 'Custom Background Color',
+      inputAlign: 'Search Bar Content Alignment',
       listenToEvents: 'Listen to Events',
-    },
+      disabled: 'Disable Search Bar'
+    }
   },
 
   data() {
