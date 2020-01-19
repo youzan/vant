@@ -39,7 +39,11 @@ function PasswordInput(
 
     Points.push(
       <li class={{ [BORDER_LEFT]: showBorder }} style={style}>
-        {props.mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }} /> : char}
+        {props.mask ? (
+          <i style={{ visibility: char ? 'visible' : 'hidden' }} />
+        ) : (
+          char
+        )}
         {showCursor && <div class={bem('cursor')} />}
       </li>
     );
@@ -57,7 +61,9 @@ function PasswordInput(
       >
         {Points}
       </ul>
-      {info && <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>}
+      {info && (
+        <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>
+      )}
     </div>
   );
 }

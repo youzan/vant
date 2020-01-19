@@ -24,7 +24,10 @@ function SkuRow(
   );
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
-      <div class={bem('title')}>{props.skuRow.k}{multipleNode}</div>
+      <div class={bem('title')}>
+        {props.skuRow.k}
+        {multipleNode}
+      </div>
       {slots.default && slots.default()}
     </div>
   );

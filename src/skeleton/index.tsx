@@ -33,7 +33,9 @@ function Skeleton(
 
   function Title() {
     if (props.title) {
-      return <h3 class={bem('title')} style={{ width: addUnit(props.titleWidth) }} />;
+      return (
+        <h3 class={bem('title')} style={{ width: addUnit(props.titleWidth) }} />
+      );
     }
   }
 
@@ -54,7 +56,9 @@ function Skeleton(
     }
 
     for (let i = 0; i < props.row; i++) {
-      Rows.push(<div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />);
+      Rows.push(
+        <div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />
+      );
     }
 
     return Rows;

@@ -33,7 +33,11 @@ function LoadingIcon(h: CreateElement, props: LoadingProps) {
   );
 }
 
-function LoadingText(h: CreateElement, props: LoadingProps, slots: DefaultSlots) {
+function LoadingText(
+  h: CreateElement,
+  props: LoadingProps,
+  slots: DefaultSlots
+) {
   if (slots.default) {
     const style = props.textSize && {
       fontSize: addUnit(props.textSize),
@@ -63,7 +67,10 @@ function Loading(
   }
 
   return (
-    <div class={bem([type, { vertical: props.vertical }])} {...inherit(ctx, true)}>
+    <div
+      class={bem([type, { vertical: props.vertical }])}
+      {...inherit(ctx, true)}
+    >
       <span class={bem('spinner', type)} style={style}>
         {LoadingIcon(h, props)}
       </span>

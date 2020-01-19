@@ -24,7 +24,10 @@ function CellGroup(
   ctx: RenderContext<CellGroupProps>
 ) {
   const Group = (
-    <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]} {...inherit(ctx, true)}>
+    <div
+      class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}
+      {...inherit(ctx, true)}
+    >
       {slots.default?.()}
     </div>
   );
@@ -32,7 +35,9 @@ function CellGroup(
   if (props.title || slots.title) {
     return (
       <div>
-        <div class={bem('title')}>{slots.title ? slots.title() : props.title}</div>
+        <div class={bem('title')}>
+          {slots.title ? slots.title() : props.title}
+        </div>
         {Group}
       </div>
     );

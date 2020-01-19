@@ -16,7 +16,10 @@ export type SkuHeaderProps = {
 
 const [createComponent, bem] = createNamespace('sku-header');
 
-function getSkuImg(sku: SkuData, selectedSku: SelectedSkuData): string | undefined {
+function getSkuImg(
+  sku: SkuData,
+  selectedSku: SelectedSkuData
+): string | undefined {
   let img;
 
   sku.tree.some(item => {

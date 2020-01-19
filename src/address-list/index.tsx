@@ -66,7 +66,9 @@ function AddressList(
     <div class={bem()} {...inherit(ctx)}>
       {slots.top?.()}
       <RadioGroup value={props.value}>{List}</RadioGroup>
-      {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
+      {props.disabledText && (
+        <div class={bem('disabled-text')}>{props.disabledText}</div>
+      )}
       {DisabledList}
       {slots.default?.()}
       <div class={bem('bottom')}>

@@ -43,7 +43,11 @@ function Search(
 ) {
   function Label() {
     if (slots.label || props.label) {
-      return <div class={bem('label')}>{slots.label ? slots.label() : props.label}</div>;
+      return (
+        <div class={bem('label')}>
+          {slots.label ? slots.label() : props.label}
+        </div>
+      );
     }
   }
 
