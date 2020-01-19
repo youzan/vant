@@ -48,13 +48,13 @@ export default {
       title4: 'Columns Placeholder',
       columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
       areaList: AreaListEn,
-    }
+    },
   },
 
   data() {
     return {
-      value: '330302'
+      value: '330302',
     };
-  }
+  },
 };
 </script>

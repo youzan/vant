@@ -78,7 +78,7 @@ export default {
       mark: '标记样式',
       closeable: '可关闭标签',
       customColor: '自定义颜色',
-      customSize: '标签大小'
+      customSize: '标签大小',
     },
     'en-US': {
       plain: 'Plain style',
@@ -86,24 +86,24 @@ export default {
       mark: 'Mark style',
       closeable: 'Closeable',
       customColor: 'Custom Color',
-      customSize: 'Custom Size'
-    }
+      customSize: 'Custom Size',
+    },
   },
 
   data() {
     return {
       show: {
         primary: true,
-        success: true
-      }
+        success: true,
+      },
     };
   },
 
   methods: {
     close(tag) {
       this.show[tag] = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -12,13 +12,13 @@ export default createComponent({
     text: [Number, String],
     theme: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
     return {
-      active: false
+      active: false,
     };
   },
 
@@ -35,7 +35,7 @@ export default createComponent({
       }
 
       return bem(classNames);
-    }
+    },
   },
 
   mounted() {
@@ -64,7 +64,7 @@ export default createComponent({
         this.active = false;
         this.$emit('press', this.text, this.type);
       }
-    }
+    },
   },
 
   render() {
@@ -73,5 +73,5 @@ export default createComponent({
         {this.slots('default') || this.text}
       </i>
     );
-  }
+  },
 });

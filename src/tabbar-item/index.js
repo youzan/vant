@@ -14,12 +14,12 @@ export default createComponent({
     dot: Boolean,
     icon: String,
     name: [Number, String],
-    info: [Number, String]
+    info: [Number, String],
   },
 
   data() {
     return {
-      active: false
+      active: false,
     };
   },
 
@@ -33,7 +33,7 @@ export default createComponent({
 
         return pathMatched || nameMatched;
       }
-    }
+    },
   },
 
   methods: {
@@ -41,7 +41,7 @@ export default createComponent({
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
       route(this.$router, this);
-    }
+    },
   },
 
   render() {
@@ -58,5 +58,5 @@ export default createComponent({
         <div class={bem('text')}>{slots('default', { active })}</div>
       </div>
     );
-  }
+  },
 });

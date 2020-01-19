@@ -12,8 +12,8 @@ export default createComponent({
     value: [String, Number, Array],
     border: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   methods: {
@@ -25,7 +25,7 @@ export default createComponent({
       }
       this.$emit('change', name);
       this.$emit('input', name);
-    }
+    },
   },
 
   render() {
@@ -34,5 +34,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

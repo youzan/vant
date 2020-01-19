@@ -14,8 +14,8 @@ export const ClickOutsideMixin = (config: ClickOutsideMixinConfig) =>
     props: {
       closeOnClickOutside: {
         type: Boolean,
-        default: true
-      }
+        default: true,
+      },
     },
 
     data() {
@@ -34,5 +34,5 @@ export const ClickOutsideMixin = (config: ClickOutsideMixinConfig) =>
 
     beforeDestroy() {
       off(document, config.event, this.clickOutsideHandler);
-    }
+    },
   });

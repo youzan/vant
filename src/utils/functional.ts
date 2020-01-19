@@ -13,7 +13,7 @@ const inheritKey = [
   'nativeOn',
   'directives',
   'staticClass',
-  'staticStyle'
+  'staticStyle',
 ];
 
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
@@ -60,9 +60,9 @@ export function mount(Component: any, data?: VNodeData) {
     render(h) {
       return h(Component, {
         props: this.$props,
-        ...data
+        ...data,
       });
-    }
+    },
   });
 
   document.body.appendChild(instance.$el);

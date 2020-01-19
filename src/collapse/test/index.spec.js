@@ -14,14 +14,14 @@ const component = {
     accordion: Boolean,
     border: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
-      active: this.accordion ? '' : []
+      active: this.accordion ? '' : [],
     };
-  }
+  },
 };
 
 test('basic mode', async () => {
@@ -45,8 +45,8 @@ test('basic mode', async () => {
 test('accordion', async () => {
   const wrapper = mount(component, {
     propsData: {
-      accordion: true
-    }
+      accordion: true,
+    },
   });
 
   const titles = wrapper.findAll('.van-collapse-item__title');
@@ -78,9 +78,9 @@ test('render collapse-item slot', () => {
       `,
     data() {
       return {
-        active: []
+        active: [],
       };
-    }
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -89,8 +89,8 @@ test('render collapse-item slot', () => {
 test('disable border', () => {
   const wrapper = mount(component, {
     propsData: {
-      border: false
-    }
+      border: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -106,14 +106,14 @@ test('lazy render collapse content', async () => {
     `,
     components: {
       Collapse,
-      CollapseItem
+      CollapseItem,
     },
     data() {
       return {
         content: '',
-        active: []
+        active: [],
       };
-    }
+    },
   });
 
   const titles = wrapper.findAll('.van-collapse-item__title');
@@ -136,9 +136,9 @@ test('warn when value type is incorrect', () => {
     `,
     data() {
       return {
-        active: 0
+        active: 0,
       };
-    }
+    },
   });
 
   expect(error).toHaveBeenCalledTimes(1);

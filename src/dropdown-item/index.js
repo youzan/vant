@@ -18,15 +18,15 @@ export default createComponent({
     titleClass: String,
     options: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
     return {
       transition: true,
       showPopup: false,
-      showWrapper: false
+      showWrapper: false,
     };
   },
 
@@ -38,13 +38,13 @@ export default createComponent({
 
       const match = this.options.filter(option => option.value === this.value);
       return match.length ? match[0].text : '';
-    }
+    },
   },
 
   watch: {
     showPopup(val) {
       this.bindScroll(val);
-    }
+    },
   },
 
   beforeCreate() {
@@ -86,7 +86,7 @@ export default createComponent({
       if (this.getContainer) {
         event.stopPropagation();
       }
-    }
+    },
   },
 
   render() {
@@ -97,7 +97,7 @@ export default createComponent({
       duration,
       direction,
       activeColor,
-      closeOnClickOverlay
+      closeOnClickOverlay,
     } = this.parent;
 
     const Options = this.options.map(option => {
@@ -164,5 +164,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

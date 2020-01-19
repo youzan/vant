@@ -36,7 +36,7 @@ function LoadingIcon(h: CreateElement, props: LoadingProps) {
 function LoadingText(h: CreateElement, props: LoadingProps, slots: DefaultSlots) {
   if (slots.default) {
     const style = props.textSize && {
-      fontSize: addUnit(props.textSize)
+      fontSize: addUnit(props.textSize),
     };
 
     return (
@@ -79,8 +79,8 @@ Loading.props = {
   textSize: [Number, String],
   type: {
     type: String,
-    default: 'circular'
-  }
+    default: 'circular',
+  },
 };
 
 export default createComponent<LoadingProps>(Loading);

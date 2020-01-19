@@ -28,7 +28,7 @@ function Notify(
 ) {
   const style = {
     color: props.color,
-    background: props.background
+    background: props.background,
   };
 
   return (
@@ -55,16 +55,16 @@ Notify.props = {
   getContainer: [String, Function],
   type: {
     type: String,
-    default: 'danger'
+    default: 'danger',
   },
   color: {
     type: String,
-    default: WHITE
+    default: WHITE,
   },
   duration: {
     type: Number,
-    default: 3000
-  }
+    default: 3000,
+  },
 };
 
 export default createComponent<NotifyProps>(Notify);

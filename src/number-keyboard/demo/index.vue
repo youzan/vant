@@ -88,7 +88,7 @@ export default {
       bindValue: '双向绑定',
       clickToInput: '点此输入',
       extraKey: '左下角按键内容',
-      title: '键盘标题'
+      title: '键盘标题',
     },
     'en-US': {
       default: 'Default style',
@@ -102,14 +102,14 @@ export default {
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'Bottom Left Button Content',
-      title: 'Keyboard Title'
-    }
+      title: 'Keyboard Title',
+    },
   },
 
   data() {
     return {
       value: '',
-      keyboard: 'default'
+      keyboard: 'default',
     };
   },
 
@@ -120,8 +120,8 @@ export default {
 
     onDelete() {
       this.$toast(this.$t('delete'));
-    }
-  }
+    },
+  },
 };
 </script>
 

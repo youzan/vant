@@ -11,17 +11,17 @@ export default createComponent({
     selectedSku: Object,
     skuList: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   computed: {
     choosable() {
       return isSkuChoosable(this.skuList, this.selectedSku, {
         key: this.skuKeyStr,
-        valueId: this.skuValue.id
+        valueId: this.skuValue.id,
       });
-    }
+    },
   },
 
   methods: {
@@ -29,10 +29,10 @@ export default createComponent({
       if (this.choosable) {
         this.skuEventBus.$emit('sku:select', {
           ...this.skuValue,
-          skuKeyStr: this.skuKeyStr
+          skuKeyStr: this.skuKeyStr,
         });
       }
-    }
+    },
   },
 
   render() {
@@ -45,8 +45,8 @@ export default createComponent({
           'van-sku-row__item',
           {
             'van-sku-row__item--active': choosed,
-            'van-sku-row__item--disabled': !this.choosable
-          }
+            'van-sku-row__item--disabled': !this.choosable,
+          },
         ]}
         onClick={this.onSelect}
       >
@@ -54,5 +54,5 @@ export default createComponent({
         <span class="van-sku-row__item-name">{this.skuValue.name}</span>
       </span>
     );
-  }
+  },
 });

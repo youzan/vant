@@ -49,7 +49,7 @@ SkuActions.props = {
   buyText: String,
   addCartText: String,
   skuEventBus: Object,
-  showAddCartBtn: Boolean
+  showAddCartBtn: Boolean,
 };
 
 export default createComponent<SkuActionsProps>(SkuActions);

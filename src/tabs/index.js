@@ -10,7 +10,7 @@ import {
   setRootScrollTop,
   getElementTop,
   getVisibleHeight,
-  getVisibleTop
+  getVisibleTop,
 } from '../utils/dom/scroll';
 
 import Title from './Title';
@@ -27,11 +27,11 @@ export default createComponent({
       if (this.scrollspy) {
         bind(window, 'scroll', this.onScroll, true);
       }
-    })
+    }),
   ],
 
   model: {
-    prop: 'active'
+    prop: 'active',
   },
 
   props: {
@@ -47,36 +47,36 @@ export default createComponent({
     titleInactiveColor: String,
     type: {
       type: String,
-      default: 'line'
+      default: 'line',
     },
     active: {
       type: [Number, String],
-      default: 0
+      default: 0,
     },
     border: {
       type: Boolean,
-      default: true
+      default: true,
     },
     ellipsis: {
       type: Boolean,
-      default: true
+      default: true,
     },
     duration: {
       type: Number,
-      default: 0.3
+      default: 0.3,
     },
     offsetTop: {
       type: Number,
-      default: 0
+      default: 0,
     },
     lazyRender: {
       type: Boolean,
-      default: true
+      default: true,
     },
     swipeThreshold: {
       type: Number,
-      default: 4
-    }
+      default: 4,
+    },
   },
 
   data() {
@@ -84,8 +84,8 @@ export default createComponent({
       position: '',
       currentIndex: null,
       lineStyle: {
-        backgroundColor: this.color
-      }
+        backgroundColor: this.color,
+      },
     };
   },
 
@@ -98,7 +98,7 @@ export default createComponent({
     navStyle() {
       return {
         borderColor: this.color,
-        background: this.background
+        background: this.background,
       };
     },
 
@@ -115,7 +115,7 @@ export default createComponent({
         return this.offsetTop + this.tabHeight;
       }
       return 0;
-    }
+    },
   },
 
   watch: {
@@ -152,7 +152,7 @@ export default createComponent({
       } else {
         off(window, 'scroll', this.onScroll);
       }
-    }
+    },
   },
 
   mounted() {
@@ -202,7 +202,7 @@ export default createComponent({
         const lineStyle = {
           width: addUnit(width),
           backgroundColor: this.color,
-          transform: `translateX(${left}px) translateX(-50%)`
+          transform: `translateX(${left}px) translateX(-50%)`,
         };
 
         if (shouldAnimate) {
@@ -321,7 +321,7 @@ export default createComponent({
       }
 
       return children.length - 1;
-    }
+    },
   },
 
   render() {
@@ -345,7 +345,7 @@ export default createComponent({
         inactiveColor={this.titleInactiveColor}
         swipeThreshold={this.swipeThreshold}
         scopedSlots={{
-          default: () => item.slots('title')
+          default: () => item.slots('title'),
         }}
         onClick={() => {
           this.onClick(index);
@@ -359,7 +359,7 @@ export default createComponent({
         ref="wrap"
         class={[
           bem('wrap', { scrollable }),
-          { [BORDER_TOP_BOTTOM]: type === 'line' && this.border }
+          { [BORDER_TOP_BOTTOM]: type === 'line' && this.border },
         ]}
       >
         <div
@@ -403,5 +403,5 @@ export default createComponent({
         </Content>
       </div>
     );
-  }
+  },
 });

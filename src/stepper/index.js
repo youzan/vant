@@ -31,36 +31,36 @@ export default createComponent({
     decimalLength: Number,
     name: {
       type: [Number, String],
-      default: ''
+      default: '',
     },
     min: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     max: {
       type: [Number, String],
-      default: Infinity
+      default: Infinity,
     },
     step: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     defaultValue: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     showPlus: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showMinus: {
       type: Boolean,
-      default: true
+      default: true,
     },
     longPress: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
@@ -72,7 +72,7 @@ export default createComponent({
     }
 
     return {
-      currentValue: value
+      currentValue: value,
     };
   },
 
@@ -105,10 +105,10 @@ export default createComponent({
 
         return {
           width: size,
-          height: size
+          height: size,
         };
       }
-    }
+    },
   },
 
   watch: {
@@ -126,7 +126,7 @@ export default createComponent({
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, { name: this.name });
-    }
+    },
   },
 
   methods: {
@@ -256,7 +256,7 @@ export default createComponent({
       if (this.isLongPress) {
         preventDefault(event);
       }
-    }
+    },
   },
 
   render() {
@@ -271,8 +271,8 @@ export default createComponent({
           this.onTouchStart();
         },
         touchend: this.onTouchEnd,
-        touchcancel: this.onTouchEnd
-      }
+        touchcancel: this.onTouchEnd,
+      },
     });
 
     return (
@@ -308,5 +308,5 @@ export default createComponent({
         />
       </div>
     );
-  }
+  },
 });

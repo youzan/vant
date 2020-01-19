@@ -74,7 +74,7 @@ export default {
       customStyle: '自定义样式',
       customButton: '自定义按钮',
       text: '当前值：',
-      vertical: '垂直方向'
+      vertical: '垂直方向',
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -84,8 +84,8 @@ export default {
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
       text: 'Current value: ',
-      vertical: 'Vertical'
-    }
+      vertical: 'Vertical',
+    },
   },
 
   data() {
@@ -96,15 +96,15 @@ export default {
       value4: 50,
       value5: 50,
       value6: 50,
-      value7: 50
+      value7: 50,
     };
   },
 
   methods: {
     onChange(value) {
       this.$toast(this.$t('text') + value);
-    }
-  }
+    },
+  },
 };
 </script>
 

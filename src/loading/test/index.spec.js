@@ -4,8 +4,8 @@ import Loading from '..';
 test('size prop', () => {
   const wrapper = mount(Loading, {
     propsData: {
-      size: 20
-    }
+      size: 20,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -14,11 +14,11 @@ test('size prop', () => {
 test('text-size prop', () => {
   const wrapper = mount(Loading, {
     propsData: {
-      textSize: 20
+      textSize: 20,
     },
     scopedSlots: {
-      default: () => 'Text'
-    }
+      default: () => 'Text',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

@@ -11,20 +11,20 @@ export default createComponent({
     inactiveIcon: String,
     active: {
       type: Number,
-      default: 0
+      default: 0,
     },
     direction: {
       type: String,
-      default: 'horizontal'
+      default: 'horizontal',
     },
     activeColor: {
       type: String,
-      default: GREEN
+      default: GREEN,
     },
     activeIcon: {
       type: String,
-      default: 'checked'
-    }
+      default: 'checked',
+    },
   },
 
   render() {
@@ -33,5 +33,5 @@ export default createComponent({
         <div class={bem('items')}>{this.slots()}</div>
       </div>
     );
-  }
+  },
 });

@@ -11,8 +11,8 @@ test('click event', () => {
 test('close event', () => {
   const wrapper = mount(NoticeBar, {
     propsData: {
-      mode: 'closeable'
-    }
+      mode: 'closeable',
+    },
   });
   const close = wrapper.find('.van-notice-bar__right-icon');
 
@@ -30,8 +30,8 @@ test('icon slot', () => {
       </notice-bar>
     `,
     components: {
-      NoticeBar
-    }
+      NoticeBar,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

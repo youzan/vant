@@ -66,7 +66,7 @@ export default {
       collect: '收藏',
       title: '单元格',
       title2: '异步关闭',
-      confirm: '确定删除吗？'
+      confirm: '确定删除吗？',
     },
     'en-US': {
       select: 'Select',
@@ -74,8 +74,8 @@ export default {
       collect: 'Collect',
       title: 'Cell',
       title2: 'Async close',
-      confirm: 'Are you sure to delete?'
-    }
+      confirm: 'Are you sure to delete?',
+    },
   },
 
   methods: {
@@ -88,14 +88,14 @@ export default {
           break;
         case 'right':
           this.$dialog.confirm({
-            message: this.$t('confirm')
+            message: this.$t('confirm'),
           }).then(() => {
             instance.close();
           });
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

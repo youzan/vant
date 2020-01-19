@@ -89,13 +89,13 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '在列元素之间增加间距',
-      title3: 'Flex 布局'
+      title3: 'Flex 布局',
     },
     'en-US': {
       title2: 'Column Spacing',
-      title3: 'Flex Layout'
-    }
-  }
+      title3: 'Flex Layout',
+    },
+  },
 };
 </script>
 

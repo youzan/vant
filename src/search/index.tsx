@@ -79,8 +79,8 @@ function Search(
           emit(ctx, 'search', props.value);
         }
         emit(ctx, 'keypress', event);
-      }
-    }
+      },
+    },
   };
 
   const inheritData = inherit(ctx);
@@ -103,7 +103,7 @@ function Search(
           clearable={props.clearable}
           scopedSlots={{
             'left-icon': slots['left-icon'],
-            'right-icon': slots['right-icon']
+            'right-icon': slots['right-icon'],
           }}
           {...fieldData}
         />
@@ -121,20 +121,20 @@ Search.props = {
   showAction: Boolean,
   shape: {
     type: String,
-    default: 'square'
+    default: 'square',
   },
   clearable: {
     type: Boolean,
-    default: true
+    default: true,
   },
   background: {
     type: String,
-    default: '#fff'
+    default: '#fff',
   },
   leftIcon: {
     type: String,
-    default: 'search'
-  }
+    default: 'search',
+  },
 };
 
 export default createComponent<SearchProps, SearchEvents, SearchSlots>(Search);

@@ -16,7 +16,7 @@ export default createComponent({
       if (this.index === this.parent.active) {
         return 'process';
       }
-    }
+    },
   },
 
   methods: {
@@ -38,7 +38,7 @@ export default createComponent({
       }
 
       return <i class={bem('circle')} />;
-    }
+    },
   },
 
   render() {
@@ -55,5 +55,5 @@ export default createComponent({
         <div class={bem('line')} />
       </div>
     );
-  }
+  },
 });

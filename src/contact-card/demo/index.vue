@@ -56,13 +56,13 @@ export default {
     'zh-CN': {
       name: '张三',
       defaultLabel: '设为默认联系人',
-      defaultTagText: '默认'
+      defaultTagText: '默认',
     },
     'en-US': {
       name: 'John Snow',
       defaultLabel: 'Set as the default contact',
-      defaultTagText: 'default'
-    }
+      defaultTagText: 'default',
+    },
   },
 
   data() {
@@ -72,7 +72,7 @@ export default {
       showList: false,
       showEdit: false,
       isEdit: false,
-      list: []
+      list: [],
     };
   },
 
@@ -82,7 +82,7 @@ export default {
         name: this.$t('name'),
         tel: '13000000000',
         id: 0,
-        isDefault: 1
+        isDefault: 1,
       };
     },
 
@@ -93,7 +93,7 @@ export default {
     currentContact() {
       const id = this.chosenContactId;
       return id !== null ? this.list.filter(item => item.id === id)[0] : {};
-    }
+    },
   },
 
   created() {
@@ -135,8 +135,8 @@ export default {
       if (this.chosenContactId === info.id) {
         this.chosenContactId = null;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

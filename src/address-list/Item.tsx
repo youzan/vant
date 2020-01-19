@@ -77,7 +77,7 @@ function AddressItem(
         {`${data.name} ${data.tel}`}
         {genTag()}
       </div>,
-      <div class={bem('address')}>{data.address}</div>
+      <div class={bem('address')}>{data.address}</div>,
     ];
 
     if (switchable && !disabled) {
@@ -99,7 +99,7 @@ function AddressItem(
       clickable={switchable && !disabled}
       scopedSlots={{
         default: genContent,
-        'right-icon': genRightIcon
+        'right-icon': genRightIcon,
       }}
       onClick={onClick}
       {...inherit(ctx)}
@@ -111,7 +111,7 @@ AddressItem.props = {
   data: Object,
   disabled: Boolean,
   switchable: Boolean,
-  defaultTagText: String
+  defaultTagText: String,
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(

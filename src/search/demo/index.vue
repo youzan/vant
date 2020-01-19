@@ -40,19 +40,19 @@ export default {
       label: '地址',
       placeholder: '请输入搜索关键词',
       customButton: '自定义按钮',
-      listenToEvents: '事件监听'
+      listenToEvents: '事件监听',
     },
     'en-US': {
       label: 'Address',
       placeholder: 'Placeholder',
       customButton: 'Custom Action Button',
-      listenToEvents: 'Listen to Events'
-    }
+      listenToEvents: 'Listen to Events',
+    },
   },
 
   data() {
     return {
-      value: ''
+      value: '',
     };
   },
 
@@ -63,7 +63,7 @@ export default {
 
     onCancel() {
       this.$toast(this.$t('cancel'));
-    }
-  }
+    },
+  },
 };
 </script>

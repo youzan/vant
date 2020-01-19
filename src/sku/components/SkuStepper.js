@@ -19,11 +19,11 @@ export default createComponent({
     hideQuotaText: Boolean,
     quota: {
       type: Number,
-      default: 0
+      default: 0,
     },
     quotaUsed: {
       type: Number,
-      default: 0
+      default: 0,
     },
     startSaleNum: {
       type: Number,
@@ -35,7 +35,7 @@ export default createComponent({
     return {
       currentNum: this.selectedNum,
       // 购买限制类型: 限购/库存
-      limitType: STOCK_LIMIT
+      limitType: STOCK_LIMIT,
     };
   },
 
@@ -59,7 +59,7 @@ export default createComponent({
         this.currentNum = start;
       }
       this.checkState(start, this.stepperLimit);
-    }
+    },
   },
 
   computed: {
@@ -172,5 +172,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

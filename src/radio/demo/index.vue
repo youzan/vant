@@ -40,13 +40,13 @@
         <van-radio name="1">
           {{ $t('radio') }} 1
           <template #icon="{ checked }">
-            <img :src="checked ? icon.active : icon.inactive">
+            <img :src="checked ? icon.active : icon.inactive" />
           </template>
         </van-radio>
         <van-radio name="2">
           {{ $t('radio') }} 2
           <template #icon="{ checked }">
-            <img :src="checked ? icon.active : icon.inactive">
+            <img :src="checked ? icon.active : icon.inactive" />
           </template>
         </van-radio>
       </van-radio-group>
@@ -90,7 +90,7 @@ export default {
       customColor: '自定义颜色',
       customShape: '自定义形状',
       withCell: '与 Cell 组件一起使用',
-      disabledLabelClick: '禁用文本点击'
+      disabledLabelClick: '禁用文本点击',
     },
     'en-US': {
       radio: 'Radio',
@@ -101,8 +101,8 @@ export default {
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
       withCell: 'Inside a Cell',
-      disabledLabelClick: 'Disable the click event of label'
-    }
+      disabledLabelClick: 'Disable the click event of label',
+    },
   },
 
   data() {
@@ -117,10 +117,10 @@ export default {
       radioShape: '1',
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-      }
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      },
     };
-  }
+  },
 };
 </script>
 

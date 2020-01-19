@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [CheckboxMixin({
     bem,
     role: 'checkbox',
-    parent: 'vanCheckbox'
+    parent: 'vanCheckbox',
   })],
 
   computed: {
@@ -22,14 +22,14 @@ export default createComponent({
         } else {
           this.$emit('input', val);
         }
-      }
-    }
+      },
+    },
   },
 
   watch: {
     value(val) {
       this.$emit('change', val);
-    }
+    },
   },
 
   methods: {
@@ -67,6 +67,6 @@ export default createComponent({
           parent.$emit('input', value);
         }
       }
-    }
-  }
+    },
+  },
 });

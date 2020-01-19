@@ -43,12 +43,12 @@ SwitchCell.props = {
   cellSize: String,
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
   size: {
     type: String,
-    default: '24px'
-  }
+    default: '24px',
+  },
 };
 
 export default createComponent<SwitchCellProps, SwitchEvents>(SwitchCell);

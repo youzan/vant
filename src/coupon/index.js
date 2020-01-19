@@ -27,8 +27,8 @@ export default createComponent({
     disabled: Boolean,
     currency: {
       type: String,
-      default: '¥'
-    }
+      default: '¥',
+    },
   },
 
   computed: {
@@ -58,7 +58,7 @@ export default createComponent({
     conditionMessage() {
       const condition = formatAmount(this.coupon.originCondition);
       return condition === '0' ? t('unlimited') : t('condition', condition);
-    }
+    },
   },
 
   render() {
@@ -83,5 +83,5 @@ export default createComponent({
         {description && <p class={bem('description')}>{description}</p>}
       </div>
     );
-  }
+  },
 });

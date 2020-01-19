@@ -3,19 +3,19 @@ import {
   mount,
   triggerDrag,
   later,
-  mockGetBoundingClientRect
+  mockGetBoundingClientRect,
 } from '../../../test';
 
 const THRESHOLD = 0.15;
 const defaultProps = {
   propsData: {
     leftWidth: 100,
-    rightWidth: 100
+    rightWidth: 100,
   },
   scopedSlots: {
     left: () => 'Left',
-    right: () => 'Right'
-  }
+    right: () => 'Right',
+  },
 };
 
 test('drag and show left part', () => {
@@ -52,8 +52,8 @@ test('on-close prop', () => {
       onClose(pos, ins) {
         position = pos;
         instance = ins;
-      }
-    }
+      },
+    },
   });
 
   wrapper.trigger('click');
@@ -89,8 +89,8 @@ test('before-close prop', () => {
       beforeClose(params) {
         ({ position } = params);
         ({ instance } = params);
-      }
-    }
+      },
+    },
   });
 
   wrapper.trigger('click');
@@ -124,8 +124,8 @@ test('name prop', done => {
       onClose(position, instance, detail) {
         expect(detail.name).toEqual('test');
         done();
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.open('left');
@@ -143,8 +143,8 @@ test('disabled prop', () => {
   const wrapper = mount(SwipeCell, {
     propsData: {
       ...defaultProps.propsData,
-      disabled: true
-    }
+      disabled: true,
+    },
   });
 
   triggerDrag(wrapper, 50, 0);
@@ -153,11 +153,11 @@ test('disabled prop', () => {
 
 test('auto calc width', async () => {
   const restoreMock = mockGetBoundingClientRect({
-    width: 50
+    width: 50,
   });
 
   const wrapper = mount(SwipeCell, {
-    scopedSlots: defaultProps.scopedSlots
+    scopedSlots: defaultProps.scopedSlots,
   });
 
   await later();
@@ -169,13 +169,13 @@ test('auto calc width', async () => {
 
 test('render one side', async () => {
   const restoreMock = mockGetBoundingClientRect({
-    width: 50
+    width: 50,
   });
 
   const wrapper = mount(SwipeCell, {
     scopedSlots: {
-      left: defaultProps.scopedSlots.left
-    }
+      left: defaultProps.scopedSlots.left,
+    },
   });
 
   await later();
@@ -192,7 +192,7 @@ test('trigger open event when open left side', () => {
   expect(wrapper.emitted('open')[0][0]).toEqual({
     name: '',
     detail: '',
-    position: 'left'
+    position: 'left',
   });
 });
 
@@ -203,7 +203,7 @@ test('trigger open event when open right side', () => {
   expect(wrapper.emitted('open')[0][0]).toEqual({
     name: '',
     detail: '',
-    position: 'right'
+    position: 'right',
   });
 });
 
@@ -215,7 +215,7 @@ test('trigger close event when closed', () => {
 
   expect(wrapper.emitted('close')[0][0]).toEqual({
     name: '',
-    position: undefined
+    position: undefined,
   });
 });
 

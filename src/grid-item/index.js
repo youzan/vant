@@ -15,7 +15,7 @@ export default createComponent({
     dot: Boolean,
     text: String,
     icon: String,
-    info: [Number, String]
+    info: [Number, String],
   },
 
   computed: {
@@ -24,7 +24,7 @@ export default createComponent({
       const percent = `${100 / columnNum}%`;
 
       const style = {
-        flexBasis: percent
+        flexBasis: percent,
       };
 
       if (square) {
@@ -50,10 +50,10 @@ export default createComponent({
         return {
           right: gutterValue,
           bottom: gutterValue,
-          height: 'auto'
+          height: 'auto',
         };
       }
-    }
+    },
   },
 
   methods: {
@@ -96,9 +96,9 @@ export default createComponent({
 
       return [
         this.genIcon(),
-        this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>)
+        this.slots('text') || (this.text && <span class={bem('text')}>{this.text}</span>),
       ];
-    }
+    },
   },
 
   render() {
@@ -115,9 +115,9 @@ export default createComponent({
               center,
               square,
               clickable,
-              surround: border && gutter
+              surround: border && gutter,
             }),
-            { [BORDER]: border }
+            { [BORDER]: border },
           ]}
           onClick={this.onClick}
         >
@@ -125,5 +125,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

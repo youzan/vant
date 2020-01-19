@@ -12,20 +12,20 @@ export default createComponent({
     ...sharedProps,
     minHour: {
       type: Number,
-      default: 0
+      default: 0,
     },
     maxHour: {
       type: Number,
-      default: 23
+      default: 23,
     },
     minMinute: {
       type: Number,
-      default: 0
+      default: 0,
     },
     maxMinute: {
       type: Number,
-      default: 59
-    }
+      default: 59,
+    },
   },
 
   computed: {
@@ -33,14 +33,14 @@ export default createComponent({
       return [
         {
           type: 'hour',
-          range: [this.minHour, this.maxHour]
+          range: [this.minHour, this.maxHour],
         },
         {
           type: 'minute',
-          range: [this.minMinute, this.maxMinute]
-        }
+          range: [this.minMinute, this.maxMinute],
+        },
       ];
-    }
+    },
   },
 
   watch: {
@@ -57,7 +57,7 @@ export default createComponent({
         this.innerValue = val;
         this.updateColumnValue(val);
       }
-    }
+    },
   },
 
   methods: {
@@ -100,6 +100,6 @@ export default createComponent({
       this.$nextTick(() => {
         this.getPicker().setValues(values);
       });
-    }
-  }
+    },
+  },
 });

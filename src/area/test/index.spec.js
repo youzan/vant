@@ -5,13 +5,13 @@ import { mount, later, triggerDrag } from '../../../test';
 const firstOption = [
   { code: '110000', name: '北京市' },
   { code: '110100', name: '北京市' },
-  { code: '110101', name: '东城区' }
+  { code: '110101', name: '东城区' },
 ];
 
 const secondOption = [
   { code: '120000', name: '天津市' },
   { code: '120100', name: '天津市' },
-  { code: '120101', name: '和平区' }
+  { code: '120101', name: '和平区' },
 ];
 
 test('confirm & cancel event', async () => {
@@ -19,12 +19,12 @@ test('confirm & cancel event', async () => {
   const onCancel = jest.fn();
   const wrapper = mount(Area, {
     propsData: {
-      areaList
+      areaList,
     },
     listeners: {
       confirm: onConfirm,
-      cancel: onCancel
-    }
+      cancel: onCancel,
+    },
   });
 
   await later();
@@ -39,8 +39,8 @@ test('confirm & cancel event', async () => {
 test('watch areaList & code', async () => {
   const wrapper = mount(Area, {
     propsData: {
-      areaList
-    }
+      areaList,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -50,7 +50,7 @@ test('watch areaList & code', async () => {
   expect(wrapper).toMatchSnapshot();
 
   wrapper.setProps({
-    value: ''
+    value: '',
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -59,11 +59,11 @@ test('change option', () => {
   const onChange = jest.fn();
   const wrapper = mount(Area, {
     propsData: {
-      areaList
+      areaList,
     },
     listeners: {
-      change: onChange
-    }
+      change: onChange,
+    },
   });
 
   const columns = wrapper.findAll('.van-picker-column');
@@ -83,11 +83,11 @@ test('change option', () => {
 test('getValues method', () => {
   const wrapper = mount(Area, {
     propsData: {
-      areaList
+      areaList,
     },
     created() {
       expect(this.getValues()).toEqual([]);
-    }
+    },
   });
 
   expect(wrapper.vm.getValues()).toEqual(firstOption);
@@ -97,8 +97,8 @@ test('reset method', async () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList,
-      value: '120225'
-    }
+      value: '120225',
+    },
   });
 
   await later();
@@ -111,12 +111,12 @@ test('columns-num prop', async () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList,
-      columnsNum: 3
-    }
+      columnsNum: 3,
+    },
   });
 
   wrapper.setProps({
-    columnsNum: 2
+    columnsNum: 2,
   });
 
   await later();

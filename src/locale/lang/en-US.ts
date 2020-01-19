@@ -18,34 +18,34 @@ export default {
     title: 'Calendar',
     weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: Number) => `Choose no more than ${maxRange} days`
+    rangePrompt: (maxRange: Number) => `Choose no more than ${maxRange} days`,
   },
   vanContactCard: {
-    addText: 'Add contact info'
+    addText: 'Add contact info',
   },
   vanContactList: {
-    addText: 'Add new contact'
+    addText: 'Add new contact',
   },
   vanPagination: {
     prev: 'Previous',
-    next: 'Next'
+    next: 'Next',
   },
   vanPullRefresh: {
     pulling: 'Pull to refresh...',
-    loosing: 'Loose to refresh...'
+    loosing: 'Loose to refresh...',
   },
   vanSubmitBar: {
-    label: 'Total：'
+    label: 'Total：',
   },
   vanCoupon: {
     unlimited: 'Unlimited',
     discount: (discount: number) => `${discount * 10}% off`,
-    condition: (condition: number) => `At least ${condition}`
+    condition: (condition: number) => `At least ${condition}`,
   },
   vanCouponCell: {
     title: 'Coupon',
     tips: 'No coupons',
-    count: (count: number) => `You have ${count} coupons`
+    count: (count: number) => `You have ${count} coupons`,
   },
   vanCouponList: {
     empty: 'No coupons',
@@ -53,7 +53,7 @@ export default {
     close: 'Close',
     enable: 'Available',
     disabled: 'Unavailable',
-    placeholder: 'Coupon code'
+    placeholder: 'Coupon code',
   },
   vanAddressEdit: {
     area: 'Area',
@@ -64,13 +64,13 @@ export default {
     defaultAddress: 'Set as the default address',
     telPlaceholder: 'Phone',
     namePlaceholder: 'Name',
-    areaPlaceholder: 'Area'
+    areaPlaceholder: 'Area',
   },
   vanAddressEditDetail: {
     label: 'Address',
-    placeholder: 'Address'
+    placeholder: 'Address',
   },
   vanAddressList: {
-    add: 'Add new address'
-  }
+    add: 'Add new address',
+  },
 };

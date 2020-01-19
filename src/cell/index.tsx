@@ -109,7 +109,7 @@ function Cell(
     clickable,
     center: props.center,
     required: props.required,
-    borderless: !props.border
+    borderless: !props.border,
   };
 
   if (size) {
@@ -135,7 +135,7 @@ function Cell(
 
 Cell.props = {
   ...cellProps,
-  ...routeProps
+  ...routeProps,
 };
 
 export default createComponent<CellProps, CellEvents, CellSlots>(Cell);

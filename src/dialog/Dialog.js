@@ -23,28 +23,28 @@ export default createComponent({
     showCancelButton: Boolean,
     transition: {
       type: String,
-      default: 'van-dialog-bounce'
+      default: 'van-dialog-bounce',
     },
     showConfirmButton: {
       type: Boolean,
-      default: true
+      default: true,
     },
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
       loading: {
         confirm: false,
-        cancel: false
-      }
+        cancel: false,
+      },
     };
   },
 
@@ -90,7 +90,7 @@ export default createComponent({
 
     onClosed() {
       this.$emit('closed');
-    }
+    },
   },
 
   render() {
@@ -166,5 +166,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

@@ -94,8 +94,8 @@ AddressList.props = {
   defaultTagText: String,
   switchable: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<AddressListProps>(AddressList);

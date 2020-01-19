@@ -70,7 +70,7 @@ export default {
       error: '加载失败提示',
       defaultTip: '默认提示',
       customTip: '自定义提示',
-      loadFail: '加载失败'
+      loadFail: '加载失败',
     },
     'en-US': {
       fitMode: 'Fit Mode',
@@ -79,16 +79,16 @@ export default {
       error: 'Error',
       defaultTip: 'Default Tip',
       customTip: 'Custom Tip',
-      loadFail: 'Load failed'
-    }
+      loadFail: 'Load failed',
+    },
   },
 
   data() {
     return {
       image: 'https://img.yzcdn.cn/vant/cat.jpeg',
-      fits: ['contain', 'cover', 'fill', 'none', 'scale-down']
+      fits: ['contain', 'cover', 'fill', 'none', 'scale-down'],
     };
-  }
+  },
 };
 </script>
 

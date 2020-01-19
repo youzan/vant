@@ -37,7 +37,7 @@ function ContactCard(
 
     return [
       <div>{`${t('name')}：${props.name}`}</div>,
-      <div>{`${t('tel')}：${props.tel}`}</div>
+      <div>{`${t('tel')}：${props.tel}`}</div>,
     ];
   }
 
@@ -63,12 +63,12 @@ ContactCard.props = {
   addText: String,
   editable: {
     type: Boolean,
-    default: true
+    default: true,
   },
   type: {
     type: String,
-    default: 'add'
-  }
+    default: 'add',
+  },
 };
 
 export default createComponent<ContactCardProps>(ContactCard);

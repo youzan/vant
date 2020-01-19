@@ -206,8 +206,8 @@ Card.props = {
   originPrice: [Number, String],
   currency: {
     type: String,
-    default: '¥'
-  }
+    default: '¥',
+  },
 };
 
 export default createComponent<CardProps, CardEvents>(Card);

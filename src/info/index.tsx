@@ -34,7 +34,7 @@ function Info(
 
 Info.props = {
   dot: Boolean,
-  info: [Number, String]
+  info: [Number, String],
 };
 
 export default createComponent<InfoProps>(Info);

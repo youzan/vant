@@ -7,7 +7,7 @@ test('Dialog function call', async () => {
   Dialog.close();
   Dialog.alert({
     message: '1',
-    showCancelButton: true
+    showCancelButton: true,
   });
 
   await later();
@@ -38,8 +38,8 @@ test('before close', () => {
       value: true,
       showCancelButton: true,
       closeOnClickOverlay: true,
-      beforeClose: (action, done) => done(false)
-    }
+      beforeClose: (action, done) => done(false),
+    },
   });
 
   const cancel = wrapper.find('.van-dialog__cancel');
@@ -52,7 +52,7 @@ test('before close', () => {
       if (action === 'cancel') {
         done();
       }
-    }
+    },
   });
 
   const overlay = document.querySelector('.van-overlay');
@@ -81,8 +81,8 @@ test('button color', () => {
       value: true,
       showCancelButton: true,
       cancelButtonColor: 'white',
-      confirmButtonColor: 'red'
-    }
+      confirmButtonColor: 'red',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -93,8 +93,8 @@ test('button text', () => {
       value: true,
       showCancelButton: true,
       cancelButtonText: 'Custom cancel',
-      confirmButtonText: 'Custom confirm'
-    }
+      confirmButtonText: 'Custom confirm',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -106,11 +106,11 @@ test('dialog component', () => {
 test('default slot', () => {
   const wrapper = mount(DialogComponent, {
     propsData: {
-      value: true
+      value: true,
     },
     scopedSlots: {
-      default: () => 'Custom Message'
-    }
+      default: () => 'Custom Message',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -118,11 +118,11 @@ test('default slot', () => {
 test('title slot', () => {
   const wrapper = mount(DialogComponent, {
     propsData: {
-      value: true
+      value: true,
     },
     scopedSlots: {
-      title: () => 'Custom Title'
-    }
+      title: () => 'Custom Title',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -139,8 +139,8 @@ test('width prop', () => {
   const wrapper = mount(DialogComponent, {
     propsData: {
       value: true,
-      width: 200
-    }
+      width: 200,
+    },
   });
 
   expect(wrapper.element.style.width).toEqual('200px');

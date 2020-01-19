@@ -15,24 +15,24 @@ export default createComponent({
     safeAreaInsetBottom: Boolean,
     closeIcon: {
       type: String,
-      default: 'cross'
+      default: 'cross',
     },
     closeIconPosition: {
       type: String,
-      default: 'top-right'
+      default: 'top-right',
     },
     position: {
       type: String,
-      default: 'center'
+      default: 'center',
     },
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   beforeCreate() {
@@ -71,7 +71,7 @@ export default createComponent({
           class={bem({
             round,
             [position]: position,
-            'safe-area-inset-bottom': this.safeAreaInsetBottom
+            'safe-area-inset-bottom': this.safeAreaInsetBottom,
           })}
           onClick={this.onClick}
         >
@@ -88,5 +88,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

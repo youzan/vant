@@ -29,12 +29,12 @@ export default createComponent({
           'van-sku-row__item',
           {
             'van-sku-row__item--active': choosed,
-          }
+          },
         ]}
         onClick={this.onSelect}
       >
         <span class="van-sku-row__item-name">{this.skuValue.name}</span>
       </span>
     );
-  }
+  },
 });

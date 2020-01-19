@@ -129,7 +129,7 @@ export default {
       customPosition: '自定义弹出位置',
       customCalendar: '自定义日历',
       confirmDisabledText: '请选择结束时间',
-      tiledDisplay: '平铺展示'
+      tiledDisplay: '平铺展示',
     },
     'en-US': {
       in: 'In',
@@ -150,8 +150,8 @@ export default {
       customPosition: 'Custom Position',
       customCalendar: 'Custom Calendar',
       confirmDisabledText: 'Select End Time',
-      tiledDisplay: 'Tiled display'
-    }
+      tiledDisplay: 'Tiled display',
+    },
   },
 
   data() {
@@ -166,7 +166,7 @@ export default {
         customConfirm: [],
         customRange: null,
         customDayText: [],
-        customPosition: null
+        customPosition: null,
       },
       type: 'single',
       round: true,
@@ -281,7 +281,7 @@ export default {
     onConfirm(date) {
       this.showCalendar = false;
       this.date[this.id] = date;
-    }
-  }
+    },
+  },
 };
 </script>

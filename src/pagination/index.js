@@ -14,28 +14,28 @@ export default createComponent({
     forceEllipses: Boolean,
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     pageCount: {
       type: Number,
-      default: 0
+      default: 0,
     },
     totalItems: {
       type: Number,
-      default: 0
+      default: 0,
     },
     mode: {
       type: String,
-      default: 'multi'
+      default: 'multi',
     },
     itemsPerPage: {
       type: Number,
-      default: 10
+      default: 10,
     },
     showPageSize: {
       type: Number,
-      default: 5
-    }
+      default: 5,
+    },
   },
 
   computed: {
@@ -90,7 +90,7 @@ export default createComponent({
       }
 
       return pages;
-    }
+    },
   },
 
   watch: {
@@ -98,8 +98,8 @@ export default createComponent({
       handler(page) {
         this.select(page || this.value);
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -112,7 +112,7 @@ export default createComponent({
           this.$emit('change', page);
         }
       }
-    }
+    },
   },
 
   render() {
@@ -150,5 +150,5 @@ export default createComponent({
         </li>
       </ul>
     );
-  }
+  },
 });

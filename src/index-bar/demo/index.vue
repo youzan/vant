@@ -41,12 +41,12 @@ export default {
   i18n: {
     'zh-CN': {
       text: '文本',
-      customIndexList: '自定义索引列表'
+      customIndexList: '自定义索引列表',
     },
     'en-US': {
       text: 'Text',
-      customIndexList: 'Custom Index List'
-    }
+      customIndexList: 'Custom Index List',
+    },
   },
 
   data() {
@@ -60,8 +60,8 @@ export default {
       BLUE,
       activeTab: 0,
       indexList,
-      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10]
+      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
     };
-  }
+  },
 };
 </script>

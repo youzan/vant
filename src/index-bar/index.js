@@ -10,7 +10,7 @@ import {
   getElementTop,
   getRootScrollTop,
   setRootScrollTop,
-  getScroller
+  getScroller,
 } from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('index-bar');
@@ -25,25 +25,25 @@ export default createComponent({
       }
 
       bind(this.scroller, 'scroll', this.onScroll);
-    })
+    }),
   ],
 
   props: {
     sticky: {
       type: Boolean,
-      default: true
+      default: true,
     },
     zIndex: {
       type: Number,
-      default: 1
+      default: 1,
     },
     highlightColor: {
       type: String,
-      default: GREEN
+      default: GREEN,
     },
     stickyOffsetTop: {
       type: Number,
-      default: 0
+      default: 0,
     },
     indexList: {
       type: Array,
@@ -56,13 +56,13 @@ export default createComponent({
         }
 
         return indexList;
-      }
-    }
+      },
+    },
   },
 
   data() {
     return {
-      activeAnchorIndex: null
+      activeAnchorIndex: null,
     };
   },
 
@@ -72,16 +72,16 @@ export default createComponent({
       if (highlightColor) {
         /* istanbul ignore else */
         return {
-          color: highlightColor
+          color: highlightColor,
         };
       }
-    }
+    },
   },
 
   watch: {
     indexList() {
       this.$nextTick(this.onScroll);
-    }
+    },
   },
 
   methods: {
@@ -94,7 +94,7 @@ export default createComponent({
       const scrollerRect = this.getScrollerRect();
       const rects = this.children.map(item => ({
         height: item.height,
-        top: this.getElementTop(item.$el, scrollerRect)
+        top: this.getElementTop(item.$el, scrollerRect),
       }));
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
@@ -132,7 +132,7 @@ export default createComponent({
       const { scroller } = this;
       let scrollerRect = {
         top: 0,
-        left: 0
+        left: 0,
       };
 
       if (scroller.getBoundingClientRect) {
@@ -210,7 +210,7 @@ export default createComponent({
 
     onTouchEnd() {
       this.active = null;
-    }
+    },
   },
 
   render() {
@@ -244,5 +244,5 @@ export default createComponent({
         {this.slots('default')}
       </div>
     );
-  }
+  },
 });

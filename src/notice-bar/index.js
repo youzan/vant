@@ -13,16 +13,16 @@ export default createComponent({
     background: String,
     delay: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     scrollable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     speed: {
       type: Number,
-      default: 50
-    }
+      default: 50,
+    },
   },
 
   data() {
@@ -32,7 +32,7 @@ export default createComponent({
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
-      animationClass: ''
+      animationClass: '',
     };
   },
 
@@ -55,8 +55,8 @@ export default createComponent({
           }
         });
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -73,7 +73,7 @@ export default createComponent({
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = bem('play--infinite');
       });
-    }
+    },
   },
 
   render() {
@@ -81,13 +81,13 @@ export default createComponent({
 
     const barStyle = {
       color: this.color,
-      background: this.background
+      background: this.background,
     };
 
     const contentStyle = {
       paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
       animationDelay: (this.firstRound ? this.delay : 0) + 's',
-      animationDuration: this.duration + 's'
+      animationDuration: this.duration + 's',
     };
 
     function LeftIcon() {
@@ -132,7 +132,7 @@ export default createComponent({
             class={[
               bem('content'),
               this.animationClass,
-              { 'van-ellipsis': !this.scrollable && !this.wrapable }
+              { 'van-ellipsis': !this.scrollable && !this.wrapable },
             ]}
             style={contentStyle}
             onAnimationend={this.onAnimationEnd}
@@ -144,5 +144,5 @@ export default createComponent({
         {RightIcon()}
       </div>
     );
-  }
+  },
 });

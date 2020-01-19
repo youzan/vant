@@ -4,8 +4,8 @@ import { mount, later } from '../../../test';
 test('macro task finish event', async () => {
   const wrapper = mount(CountDown, {
     propsData: {
-      time: 1
-    }
+      time: 1,
+    },
   });
 
   expect(wrapper.emitted('finish')).toBeFalsy();
@@ -17,8 +17,8 @@ test('micro task finish event', async () => {
   const wrapper = mount(CountDown, {
     propsData: {
       time: 1,
-      millisecond: true
-    }
+      millisecond: true,
+    },
   });
 
   expect(wrapper.emitted('finish')).toBeFalsy();
@@ -30,8 +30,8 @@ test('macro task re-render', async () => {
   const wrapper = mount(CountDown, {
     propsData: {
       time: 1000,
-      format: 'SSS'
-    }
+      format: 'SSS',
+    },
   });
 
   const prevSnapShot = wrapper.html();
@@ -46,8 +46,8 @@ test('micro task re-render', async () => {
     propsData: {
       time: 100,
       format: 'SSS',
-      millisecond: true
-    }
+      millisecond: true,
+    },
   });
 
   const prevSnapShot = wrapper.html();
@@ -62,8 +62,8 @@ test('disable auto-start prop', async () => {
     propsData: {
       time: 100,
       format: 'SSS',
-      autoStart: false
-    }
+      autoStart: false,
+    },
   });
 
   await later(50);
@@ -76,8 +76,8 @@ test('start method', async () => {
       time: 100,
       format: 'SSS',
       autoStart: false,
-      millisecond: true
-    }
+      millisecond: true,
+    },
   });
 
   const prevSnapShot = wrapper.html();
@@ -97,8 +97,8 @@ test('pause method', async () => {
     propsData: {
       time: 100,
       format: 'SSS',
-      millisecond: true
-    }
+      millisecond: true,
+    },
   });
 
   const prevSnapShot = wrapper.html();
@@ -114,8 +114,8 @@ test('reset method', async () => {
     propsData: {
       time: 100,
       format: 'SSS',
-      millisecond: true
-    }
+      millisecond: true,
+    },
   });
 
   const prevSnapShot = wrapper.html();
@@ -131,8 +131,8 @@ test('complete format prop', () => {
     propsData: {
       time: 30 * 60 * 60 * 1000 - 1,
       autoStart: false,
-      format: 'DD-HH-mm-ss-SSS'
-    }
+      format: 'DD-HH-mm-ss-SSS',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -143,8 +143,8 @@ test('milliseconds format SS', () => {
     propsData: {
       time: 1500,
       autoStart: false,
-      format: 'ss-SS'
-    }
+      format: 'ss-SS',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -155,8 +155,8 @@ test('milliseconds format S', () => {
     propsData: {
       time: 1500,
       autoStart: false,
-      format: 'ss-S'
-    }
+      format: 'ss-S',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -167,8 +167,8 @@ test('incomplate format prop', () => {
     propsData: {
       time: 30 * 60 * 60 * 1000 - 1,
       autoStart: false,
-      format: 'HH-mm-ss-SSS'
-    }
+      format: 'HH-mm-ss-SSS',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -190,14 +190,14 @@ test('pause when deactivated', async () => {
     `,
     data() {
       return {
-        render: true
+        render: true,
       };
     },
     methods: {
       getCountDown() {
         return this.$refs.countDown;
-      }
-    }
+      },
+    },
   });
 
   const countDown = wrapper.vm.getCountDown();

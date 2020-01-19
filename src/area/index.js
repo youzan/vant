@@ -16,26 +16,26 @@ export default createComponent({
     value: String,
     areaList: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     columnsNum: {
       type: [Number, String],
-      default: 3
+      default: 3,
     },
     isOverseaCode: {
       type: Function,
-      default: isOverseaCode
+      default: isOverseaCode,
     },
     columnsPlaceholder: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
     return {
       code: this.value,
-      columns: [{ values: [] }, { values: [] }, { values: [] }]
+      columns: [{ values: [] }, { values: [] }, { values: [] }],
     };
   },
 
@@ -60,9 +60,9 @@ export default createComponent({
       return {
         province: this.columnsPlaceholder[0] || '',
         city: this.columnsPlaceholder[1] || '',
-        county: this.columnsPlaceholder[2] || ''
+        county: this.columnsPlaceholder[2] || '',
       };
-    }
+    },
   },
 
   watch: {
@@ -73,14 +73,14 @@ export default createComponent({
 
     areaList: {
       deep: true,
-      handler: 'setValues'
+      handler: 'setValues',
     },
 
     columnsNum() {
       this.$nextTick(() => {
         this.setValues();
       });
-    }
+    },
   },
 
   mounted() {
@@ -98,7 +98,7 @@ export default createComponent({
       const list = this[type];
       result = Object.keys(list).map(listCode => ({
         code: listCode,
-        name: list[listCode]
+        name: list[listCode],
       }));
 
       if (code) {
@@ -121,7 +121,7 @@ export default createComponent({
 
         result.unshift({
           code: `${code}${codeFill}`,
-          name: this.placeholderMap[type]
+          name: this.placeholderMap[type],
         });
       }
 
@@ -218,7 +218,7 @@ export default createComponent({
       picker.setIndexes([
         this.getIndex('province', code),
         this.getIndex('city', code),
-        this.getIndex('county', code)
+        this.getIndex('county', code),
       ]);
     },
 
@@ -236,7 +236,7 @@ export default createComponent({
         country: '',
         province: '',
         city: '',
-        county: ''
+        county: '',
       };
 
       if (!values.length) {
@@ -266,14 +266,14 @@ export default createComponent({
     reset(code) {
       this.code = code || '';
       this.setValues();
-    }
+    },
   },
 
   render() {
     const on = {
       ...this.$listeners,
       change: this.onChange,
-      confirm: this.onConfirm
+      confirm: this.onConfirm,
     };
 
     return (
@@ -293,5 +293,5 @@ export default createComponent({
         {...{ on }}
       />
     );
-  }
+  },
 });

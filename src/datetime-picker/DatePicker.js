@@ -14,18 +14,18 @@ export default createComponent({
     ...sharedProps,
     type: {
       type: String,
-      default: 'datetime'
+      default: 'datetime',
     },
     minDate: {
       type: Date,
       default: () => new Date(currentYear - 10, 0, 1),
-      validator: isDate
+      validator: isDate,
     },
     maxDate: {
       type: Date,
       default: () => new Date(currentYear + 10, 11, 31),
-      validator: isDate
-    }
+      validator: isDate,
+    },
   },
 
   watch: {
@@ -39,7 +39,7 @@ export default createComponent({
       if (val.valueOf() !== this.innerValue.valueOf()) {
         this.innerValue = val;
       }
-    }
+    },
   },
 
   computed: {
@@ -57,30 +57,30 @@ export default createComponent({
       const result = [
         {
           type: 'year',
-          range: [minYear, maxYear]
+          range: [minYear, maxYear],
         },
         {
           type: 'month',
-          range: [minMonth, maxMonth]
+          range: [minMonth, maxMonth],
         },
         {
           type: 'day',
-          range: [minDate, maxDate]
+          range: [minDate, maxDate],
         },
         {
           type: 'hour',
-          range: [minHour, maxHour]
+          range: [minHour, maxHour],
         },
         {
           type: 'minute',
-          range: [minMinute, maxMinute]
-        }
+          range: [minMinute, maxMinute],
+        },
       ];
 
       if (this.type === 'date') result.splice(3, 2);
       if (this.type === 'year-month') result.splice(2, 3);
       return result;
-    }
+    },
   },
 
   methods: {
@@ -128,7 +128,7 @@ export default createComponent({
         [`${type}Month`]: month,
         [`${type}Date`]: date,
         [`${type}Hour`]: hour,
-        [`${type}Minute`]: minute
+        [`${type}Minute`]: minute,
       };
     },
 
@@ -179,7 +179,7 @@ export default createComponent({
       let values = [
         formatter('year', `${value.getFullYear()}`),
         formatter('month', padZero(value.getMonth() + 1)),
-        formatter('day', padZero(value.getDate()))
+        formatter('day', padZero(value.getDate())),
       ];
 
       if (this.type === 'datetime') {
@@ -196,6 +196,6 @@ export default createComponent({
       this.$nextTick(() => {
         this.getPicker().setValues(values);
       });
-    }
-  }
+    },
+  },
 });

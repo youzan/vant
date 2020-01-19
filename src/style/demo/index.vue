@@ -55,7 +55,7 @@ export default {
       animation: '动画',
       toggle: '切换动画',
       text1: '这是一段最多显示一行的文字，后面的内容会省略',
-      text2: '这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略'
+      text2: '这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略',
     },
     'en-US': {
       hairline: 'Hairline',
@@ -63,14 +63,14 @@ export default {
       animation: 'Animation',
       toggle: 'Switch animation',
       text1: 'This is a paragraph that displays up to one line of text, and the rest of the text will be omitted.',
-      text2: 'This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.'
-    }
+      text2: 'This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.',
+    },
   },
 
   data() {
     return {
       show: false,
-      transitionName: ''
+      transitionName: '',
     };
   },
 
@@ -82,8 +82,8 @@ export default {
       setTimeout(() => {
         this.show = false;
       }, 500);
-    }
-  }
+    },
+  },
 };
 </script>
 

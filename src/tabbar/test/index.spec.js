@@ -24,7 +24,7 @@ test('route mode', async () => {
           Tab
         </van-tabbar-item>
       </van-tabbar>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -47,8 +47,8 @@ test('route mode match by name', async () => {
   const router = new VueRouter({
     routes: [
       { path: '/foo', component: Foo, name: 'foo' },
-      { path: '/bar', component: Bar, name: 'bar' }
-    ]
+      { path: '/bar', component: Bar, name: 'bar' },
+    ],
   });
 
   const wrapper = mount({
@@ -62,7 +62,7 @@ test('route mode match by name', async () => {
           Tab
         </van-tabbar-item>
       </van-tabbar>
-    `
+    `,
   });
 
   const items = wrapper.findAll('.van-tabbar-item');
@@ -86,7 +86,7 @@ test('router NavigationDuplicated', async done => {
           Tab
         </van-tabbar-item>
       </van-tabbar>
-    `
+    `,
     });
 
     const item = wrapper.find('.van-tabbar-item');
@@ -108,9 +108,9 @@ test('watch tabbar value', () => {
     `,
     data() {
       return {
-        value: 0
+        value: 0,
       };
-    }
+    },
   });
 
   wrapper.setData({ value: 1 });
@@ -129,8 +129,8 @@ test('click event', () => {
     `,
     methods: {
       onClick,
-      onChange
-    }
+      onChange,
+    },
   });
 
   wrapper.find('.van-tabbar-item').trigger('click');
@@ -149,12 +149,12 @@ test('name prop', () => {
     `,
     data() {
       return {
-        value: 'a'
+        value: 'a',
       };
     },
     methods: {
-      onChange
-    }
+      onChange,
+    },
   });
 
   wrapper
@@ -168,8 +168,8 @@ test('name prop', () => {
 test('disable border', () => {
   const wrapper = mount(Tabbar, {
     propsData: {
-      border: false
-    }
+      border: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

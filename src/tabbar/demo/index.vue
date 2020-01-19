@@ -32,7 +32,7 @@
         <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
           <template #icon="props">
-            <img :src="props.active ? icon.active : icon.inactive">
+            <img :src="props.active ? icon.active : icon.inactive" />
           </template>
         </van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
@@ -69,7 +69,7 @@ export default {
       customColor: '自定义颜色',
       matchByName: '通过名称匹配',
       switchEvent: '监听切换事件',
-      selectTip: '你切换到了'
+      selectTip: '你切换到了',
     },
     'en-US': {
       badge: 'Show Badge',
@@ -77,8 +77,8 @@ export default {
       customColor: 'Custom Color',
       matchByName: 'Match by name',
       switchEvent: 'Change Event',
-      selectTip: 'You select '
-    }
+      selectTip: 'You select ',
+    },
   },
 
   data() {
@@ -91,8 +91,8 @@ export default {
       activeName: 'home',
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
-      }
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      },
     };
   },
 
@@ -100,10 +100,10 @@ export default {
     onChange(index) {
       this.$notify({
         type: 'primary',
-        message: `${this.$t('selectTip')} ${this.$t('tab')}${index + 1}`
+        message: `${this.$t('selectTip')} ${this.$t('tab')}${index + 1}`,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

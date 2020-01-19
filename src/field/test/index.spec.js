@@ -22,8 +22,8 @@ test('click icon event', () => {
     propsData: {
       value: 'a',
       leftIcon: 'contact',
-      rightIcon: 'search'
-    }
+      rightIcon: 'search',
+    },
   });
 
   wrapper.find('.van-field__left-icon').trigger('click');
@@ -37,8 +37,8 @@ test('number type', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: '',
-      type: 'number'
-    }
+      type: 'number',
+    },
   });
 
   const input = wrapper.find('input');
@@ -60,8 +60,8 @@ test('digit type', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: '',
-      type: 'digit'
-    }
+      type: 'digit',
+    },
   });
 
   const input = wrapper.find('input');
@@ -83,8 +83,8 @@ test('render textarea', async () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
-      autosize: true
-    }
+      autosize: true,
+    },
   });
 
   await later();
@@ -95,8 +95,8 @@ test('autosize textarea field', () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
-      autosize: {}
-    }
+      autosize: {},
+    },
   });
 
   const value = '1'.repeat(20);
@@ -112,9 +112,9 @@ test('autosize object', async () => {
       type: 'textarea',
       autosize: {
         maxHeight: 100,
-        minHeight: 50
-      }
-    }
+        minHeight: 50,
+      },
+    },
   });
 
   const textarea = wrapper.find('.van-field__control');
@@ -147,12 +147,12 @@ test('focus method', () => {
 test('maxlength', async () => {
   const wrapper = mount(Field, {
     attrs: {
-      maxlength: 3
+      maxlength: 3,
     },
     propsData: {
       value: 1234,
-      type: 'number'
-    }
+      type: 'number',
+    },
   });
 
   const input = wrapper.find('input');
@@ -170,8 +170,8 @@ test('clearable', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'test',
-      clearable: true
-    }
+      clearable: true,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -192,8 +192,8 @@ test('render input slot', () => {
       </field>
     `,
     components: {
-      Field
-    }
+      Field,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -207,8 +207,8 @@ test('render label slot', () => {
       </field>
     `,
     components: {
-      Field
-    }
+      Field,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -217,8 +217,8 @@ test('render label slot', () => {
 test('size prop', () => {
   const wrapper = mount(Field, {
     propsData: {
-      size: 'large'
-    }
+      size: 'large',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -227,8 +227,8 @@ test('label-width prop with unit', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelWidth: '10rem'
-    }
+      labelWidth: '10rem',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -237,8 +237,8 @@ test('label-width prop without unit', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelWidth: 100
-    }
+      labelWidth: 100,
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -247,8 +247,8 @@ test('label-class prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelClass: 'custom-label-class'
-    }
+      labelClass: 'custom-label-class',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -257,8 +257,8 @@ test('arrow-direction prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       isLink: true,
-      arrowDirection: 'up'
-    }
+      arrowDirection: 'up',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -267,8 +267,8 @@ test('formatter prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'abc123',
-      formatter: (value) => value.replace(/\d/g, '')
-    }
+      formatter: (value) => value.replace(/\d/g, ''),
+    },
   });
 
   const input = wrapper.find('input');

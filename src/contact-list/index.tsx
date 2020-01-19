@@ -122,7 +122,7 @@ ContactList.props = {
   value: null as any,
   list: Array,
   addText: String,
-  defaultTagText: String
+  defaultTagText: String,
 };
 
 export default createComponent(ContactList);

@@ -64,7 +64,7 @@ export default {
       customIcon: '自定义图标',
       customStyle: '自定义样式',
       customCount: '自定义数量',
-      readonly: '只读状态'
+      readonly: '只读状态',
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -72,8 +72,8 @@ export default {
       customIcon: 'Custom Icon',
       customStyle: 'Custom Style',
       customCount: 'Custom Count',
-      readonly: 'Readonly'
-    }
+      readonly: 'Readonly',
+    },
   },
 
   data() {
@@ -83,9 +83,9 @@ export default {
       value3: 3,
       value4: 2.5,
       value5: 4,
-      value6: 3
+      value6: 3,
     };
-  }
+  },
 };
 </script>
 

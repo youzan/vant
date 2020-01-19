@@ -111,15 +111,15 @@ SubmitBar.props = {
   safeAreaInsetBottom: Boolean,
   decimalLength: {
     type: Number,
-    default: 2
+    default: 2,
   },
   currency: {
     type: String,
-    default: '¥'
+    default: '¥',
   },
   buttonType: {
     type: String,
-    default: 'danger'
+    default: 'danger',
   },
   textAlign: String,
 };

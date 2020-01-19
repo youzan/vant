@@ -11,44 +11,44 @@ export default createComponent({
     ParentMixin('vanDropdownMenu'),
     ClickOutsideMixin({
       event: 'click',
-      method: 'onClickOutside'
-    })
+      method: 'onClickOutside',
+    }),
   ],
 
   props: {
     activeColor: String,
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     zIndex: {
       type: Number,
-      default: 10
+      default: 10,
     },
     duration: {
       type: Number,
-      default: 0.2
+      default: 0.2,
     },
     direction: {
       type: String,
-      default: 'down'
+      default: 'down',
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
-      offset: 0
+      offset: 0,
     };
   },
 
   computed: {
     scroller() {
       return getScroller(this.$el);
-    }
+    },
   },
 
   methods: {
@@ -77,7 +77,7 @@ export default createComponent({
       this.children.forEach(item => {
         item.toggle(false);
       });
-    }
+    },
   },
 
   render() {
@@ -96,9 +96,9 @@ export default createComponent({
           class={[
             bem('title', {
               active: item.showPopup,
-              down: item.showPopup === (this.direction === 'down')
+              down: item.showPopup === (this.direction === 'down'),
             }),
-            item.titleClass
+            item.titleClass,
           ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
@@ -113,5 +113,5 @@ export default createComponent({
         {this.slots('default')}
       </div>
     );
-  }
+  },
 });

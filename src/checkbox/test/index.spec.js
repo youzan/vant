@@ -20,8 +20,8 @@ test('switch checkbox', async () => {
 test('disabled', () => {
   const wrapper = mount(Checkbox, {
     propsData: {
-      disabled: true
-    }
+      disabled: true,
+    },
   });
 
   wrapper.find('.van-checkbox__icon').trigger('click');
@@ -31,11 +31,11 @@ test('disabled', () => {
 test('label disabled', () => {
   const wrapper = mount(Checkbox, {
     scopedSlots: {
-      default: () => 'Label'
+      default: () => 'Label',
     },
     propsData: {
-      labelDisabled: true
-    }
+      labelDisabled: true,
+    },
   });
 
   wrapper.find('.van-checkbox__label').trigger('click');
@@ -54,9 +54,9 @@ test('checkbox group', async () => {
     `,
     data() {
       return {
-        result: []
+        result: [],
       };
-    }
+    },
   });
 
   const icons = wrapper.findAll('.van-checkbox__icon');
@@ -77,8 +77,8 @@ test('click event', () => {
   const onClick = jest.fn();
   const wrapper = mount(Checkbox, {
     listeners: {
-      click: onClick
-    }
+      click: onClick,
+    },
   });
 
   wrapper.trigger('click');
@@ -92,11 +92,11 @@ test('click event', () => {
 test('label-position prop', () => {
   const wrapper = mount(Checkbox, {
     scopedSlots: {
-      default: () => 'Label'
+      default: () => 'Label',
     },
     propsData: {
-      labelPosition: 'left'
-    }
+      labelPosition: 'left',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -109,7 +109,7 @@ test('icon-size prop', () => {
         <van-checkbox>label</van-checkbox>
         <van-checkbox icon-size="5rem">label</van-checkbox>
       </van-checkbox-group>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -122,7 +122,7 @@ test('checked-color prop', () => {
         <van-checkbox name="a" :value="true">label</van-checkbox>
         <van-checkbox name="b" :value="true" checked-color="white">label</van-checkbox>
       </van-checkbox-group>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -140,9 +140,9 @@ test('bind-group prop', async () => {
       return {
         value: false,
         result: [],
-        list: ['a', 'b', 'c']
+        list: ['a', 'b', 'c'],
       };
-    }
+    },
   });
 
   const icons = wrapper.findAll('.van-checkbox__icon');
@@ -163,14 +163,14 @@ test('toggleAll method', async () => {
     `,
     data() {
       return {
-        result: ['a']
+        result: ['a'],
       };
     },
     methods: {
       toggleAll(checked) {
         this.$refs.group.toggleAll(checked);
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.toggleAll();

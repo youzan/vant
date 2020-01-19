@@ -47,22 +47,22 @@ export default {
       dashed: '虚线',
       withText: '展示文本',
       contentPosition: '内容位置',
-      customStyle: '自定义样式'
+      customStyle: '自定义样式',
     },
     'en-US': {
       text: 'Text',
       dashed: 'Dashed',
       withText: 'With Text',
       contentPosition: 'Content Position',
-      customStyle: 'Custom Style'
-    }
+      customStyle: 'Custom Style',
+    },
   },
 
   data() {
     return {
-      BLUE
+      BLUE,
     };
-  }
+  },
 };
 </script>
 

@@ -26,32 +26,32 @@ export default {
       areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
       searchResult: [{
         name: '黄龙万科中心',
-        address: '杭州市西湖区'
+        address: '杭州市西湖区',
       }, {
-        name: '黄龙万科中心G座'
+        name: '黄龙万科中心G座',
       }, {
         name: '黄龙万科中心H座',
-        address: '杭州市西湖区'
-      }]
+        address: '杭州市西湖区',
+      }],
     },
     'en-US': {
       areaColumnsPlaceholder: ['Choose', 'Choose', 'Choose'],
       searchResult: [{
         name: 'Name1',
-        address: 'Address'
+        address: 'Address',
       }, {
-        name: 'Name2'
+        name: 'Name2',
       }, {
         name: 'Name3',
-        address: 'Address'
-      }]
-    }
+        address: 'Address',
+      }],
+    },
   },
 
   data() {
     return {
       areaList,
-      searchResult: []
+      searchResult: [],
     };
   },
 
@@ -66,8 +66,8 @@ export default {
 
     onChangeDetail(val) {
       this.searchResult = val ? this.$t('searchResult') : [];
-    }
-  }
+    },
+  },
 };
 </script>
 

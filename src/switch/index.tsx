@@ -28,14 +28,14 @@ function Switch(
     activeColor,
     activeValue,
     inactiveColor,
-    inactiveValue
+    inactiveValue,
   } = props;
 
   const checked = value === activeValue;
 
   const switchStyle = {
     fontSize: addUnit(size),
-    backgroundColor: checked ? activeColor : inactiveColor
+    backgroundColor: checked ? activeColor : inactiveColor,
   };
 
   const loadingColor = checked ? activeColor || BLUE : inactiveColor || '';
@@ -55,7 +55,7 @@ function Switch(
       class={bem({
         on: checked,
         loading,
-        disabled
+        disabled,
       })}
       role="switch"
       style={switchStyle}

@@ -33,6 +33,6 @@ export const cellProps = {
   arrowDirection: String,
   border: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };

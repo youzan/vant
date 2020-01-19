@@ -14,36 +14,36 @@ export default createComponent({
     inactiveColor: String,
     min: {
       type: Number,
-      default: 0
+      default: 0,
     },
     max: {
       type: Number,
-      default: 100
+      default: 100,
     },
     step: {
       type: Number,
-      default: 1
+      default: 1,
     },
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     barHeight: {
       type: [Number, String],
-      default: 2
-    }
+      default: 2,
+    },
   },
 
   data() {
     return {
-      dragStatus: ''
+      dragStatus: '',
     };
   },
 
   computed: {
     range() {
       return this.max - this.min;
-    }
+    },
   },
 
   created() {
@@ -131,13 +131,13 @@ export default createComponent({
       return (
         Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step
       );
-    }
+    },
   },
 
   render() {
     const { vertical } = this;
     const style = {
-      background: this.inactiveColor
+      background: this.inactiveColor,
     };
 
     const mainAxis = vertical ? 'height' : 'width';
@@ -146,7 +146,7 @@ export default createComponent({
     const barStyle = {
       [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
       [crossAxis]: addUnit(this.barHeight),
-      background: this.activeColor
+      background: this.activeColor,
     };
 
     if (this.dragStatus) {
@@ -175,5 +175,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

@@ -76,7 +76,7 @@ export default {
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
       useSlots: '使用插槽',
-      verticalCenter: '垂直居中'
+      verticalCenter: '垂直居中',
     },
     'en-US': {
       cell: 'Cell title',
@@ -90,9 +90,9 @@ export default {
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
       useSlots: 'Use Slots',
-      verticalCenter: 'Vertical center'
-    }
-  }
+      verticalCenter: 'Vertical center',
+    },
+  },
 };
 </script>
 

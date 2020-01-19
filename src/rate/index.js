@@ -28,36 +28,36 @@ export default createComponent({
     allowHalf: Boolean,
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     icon: {
       type: String,
-      default: 'star'
+      default: 'star',
     },
     voidIcon: {
       type: String,
-      default: 'star-o'
+      default: 'star-o',
     },
     color: {
       type: String,
-      default: '#ffd21e'
+      default: '#ffd21e',
     },
     voidColor: {
       type: String,
-      default: '#c7c7c7'
+      default: '#c7c7c7',
     },
     disabledColor: {
       type: String,
-      default: '#bdbdbd'
+      default: '#bdbdbd',
     },
     count: {
       type: Number,
-      default: 5
+      default: 5,
     },
     touchable: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
@@ -76,7 +76,7 @@ export default createComponent({
 
     gutterWithUnit() {
       return addUnit(this.gutter);
-    }
+    },
   },
 
   mounted() {
@@ -148,7 +148,7 @@ export default createComponent({
         voidIcon,
         disabled,
         voidColor,
-        disabledColor
+        disabledColor,
       } = this;
       const score = index + 1;
       const isFull = status === 'full';
@@ -196,7 +196,7 @@ export default createComponent({
           )}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -204,7 +204,7 @@ export default createComponent({
       <div
         class={bem({
           readonly: this.readonly,
-          disabled: this.disabled
+          disabled: this.disabled,
         })}
         tabindex="0"
         role="radiogroup"
@@ -212,5 +212,5 @@ export default createComponent({
         {this.list.map((status, index) => this.genStar(status, index))}
       </div>
     );
-  }
+  },
 });

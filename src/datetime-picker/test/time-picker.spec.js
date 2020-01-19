@@ -14,8 +14,8 @@ test('format initial value', () => {
   const wrapper = mount(TimePicker, {
     propsData: {
       minHour: 22,
-      minMinute: 58
-    }
+      minMinute: 58,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -26,8 +26,8 @@ test('max-hour & max-minute', () => {
     propsData: {
       value: '23:59',
       maxHour: 2,
-      maxMinute: 2
-    }
+      maxMinute: 2,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -37,8 +37,8 @@ test('filter prop', () => {
   const wrapper = mount(TimePicker, {
     propsData: {
       filter,
-      value: '12:00'
-    }
+      value: '12:00',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -49,8 +49,8 @@ test('formatter prop', async () => {
     propsData: {
       filter,
       formatter,
-      value: '12:00'
-    }
+      value: '12:00',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -65,8 +65,8 @@ test('formatter prop', async () => {
 test('confirm event', () => {
   const wrapper = mount(TimePicker, {
     propsData: {
-      value: '12:00'
-    }
+      value: '12:00',
+    },
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
@@ -97,8 +97,8 @@ test('change min-minute and emit correct value', async () => {
   const wrapper = mount(TimePicker, {
     propsData: {
       value: '12:00',
-      minMinute: 0
-    }
+      minMinute: 0,
+    },
   });
 
   await later();
@@ -112,7 +112,7 @@ test('set max-hour & max-minute smaller than current then emit correct value', a
   const wrapper = mount(TimePicker, {
     propsData: {
       value: '23:59',
-    }
+    },
   });
   await later();
   wrapper.setProps({

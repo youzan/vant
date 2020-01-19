@@ -31,8 +31,8 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
   return Vue.extend({
     inject: {
       [parent]: {
-        default: null
-      }
+        default: null,
+      },
     },
 
     computed: {
@@ -47,7 +47,7 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
       [indexKey]() {
         this.bindRelation();
         return this.parent.children.indexOf(this);
-      }
+      },
     },
 
     mounted() {
@@ -71,8 +71,8 @@ export function ChildrenMixin(parent: string, options: ChildrenMixinOptions = {}
         children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
 
         this.parent.children = children;
-      }
-    }
+      },
+    },
   });
 }
 
@@ -80,14 +80,14 @@ export function ParentMixin(parent: string) {
   return {
     provide() {
       return {
-        [parent]: this
+        [parent]: this,
       };
     },
 
     data() {
       return {
-        children: []
+        children: [],
       };
-    }
+    },
   };
 }

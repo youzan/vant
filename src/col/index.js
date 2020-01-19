@@ -8,8 +8,8 @@ export default createComponent({
     offset: [Number, String],
     tag: {
       type: String,
-      default: 'div'
-    }
+      default: 'div',
+    },
   },
 
   computed: {
@@ -20,13 +20,13 @@ export default createComponent({
     style() {
       const padding = `${this.gutter / 2}px`;
       return this.gutter ? { paddingLeft: padding, paddingRight: padding } : {};
-    }
+    },
   },
 
   methods: {
     onClick(event) {
       this.$emit('click', event);
-    }
+    },
   },
 
   render() {
@@ -40,5 +40,5 @@ export default createComponent({
         {this.slots()}
       </this.tag>
     );
-  }
+  },
 });

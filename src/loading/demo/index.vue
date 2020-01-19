@@ -37,15 +37,15 @@ export default {
       type: '加载类型',
       color: '自定义颜色',
       text: '加载文案',
-      vertical: '垂直排列'
+      vertical: '垂直排列',
     },
     'en-US': {
       type: 'Type',
       color: 'Color',
       text: 'Text',
-      vertical: 'Vertical'
-    }
-  }
+      vertical: 'Vertical',
+    },
+  },
 };
 </script>
 

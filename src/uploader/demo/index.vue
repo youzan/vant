@@ -33,7 +33,7 @@ export default {
       maxCount: '限制上传数量',
       beforeRead: '上传前校验',
       uploadStyle: '自定义上传样式',
-      invalidType: '请上传 jpg 格式图片'
+      invalidType: '请上传 jpg 格式图片',
     },
     'en-US': {
       upload: 'Upload File',
@@ -41,18 +41,18 @@ export default {
       maxCount: 'Max Count',
       beforeRead: 'Before Read',
       uploadStyle: 'Upload Style',
-      invalidType: 'Please upload an image in jpg format'
-    }
+      invalidType: 'Please upload an image in jpg format',
+    },
   },
 
   data() {
     return {
       fileList: [
         { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-        { url: 'https://img.yzcdn.cn/vant/tree.jpg' }
+        { url: 'https://img.yzcdn.cn/vant/tree.jpg' },
       ],
       fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
-      fileList3: []
+      fileList3: [],
     };
   },
 
@@ -68,8 +68,8 @@ export default {
 
     afterRead(file, detail) {
       console.log(file, detail);
-    }
-  }
+    },
+  },
 };
 </script>
 

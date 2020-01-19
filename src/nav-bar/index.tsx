@@ -40,7 +40,7 @@ function NavBar(
     <div
       class={[
         bem({ fixed: props.fixed }),
-        { [BORDER_BOTTOM]: props.border }
+        { [BORDER_BOTTOM]: props.border },
       ]}
       style={{ zIndex: props.zIndex }}
       {...inherit(ctx)}
@@ -54,7 +54,7 @@ function NavBar(
             ),
             props.leftText && (
               <span class={bem('text')}>{props.leftText}</span>
-            )
+            ),
           ]}
       </div>
       <div class={[bem('title'), 'van-ellipsis']}>
@@ -79,12 +79,12 @@ NavBar.props = {
   leftArrow: Boolean,
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
   zIndex: {
     type: Number,
-    default: 1
-  }
+    default: 1,
+  },
 };
 
 export default createComponent<NavBarProps, NavBarEvents>(NavBar);

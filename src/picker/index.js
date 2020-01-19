@@ -13,36 +13,36 @@ export default createComponent({
     ...pickerProps,
     defaultIndex: {
       type: Number,
-      default: 0
+      default: 0,
     },
     columns: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     toolbarPosition: {
       type: String,
-      default: 'top'
+      default: 'top',
     },
     valueKey: {
       type: String,
-      default: 'text'
-    }
+      default: 'text',
+    },
   },
 
   data() {
     return {
-      children: []
+      children: [],
     };
   },
 
   computed: {
     simple() {
       return this.columns.length && !this.columns[0].values;
-    }
+    },
   },
 
   watch: {
-    columns: 'setColumns'
+    columns: 'setColumns',
   },
 
   methods: {
@@ -194,7 +194,7 @@ export default createComponent({
                 onClick={this.confirm}
               >
                 {this.confirmButtonText || t('confirm')}
-              </button>
+              </button>,
             ]}
           </div>
         );
@@ -219,7 +219,7 @@ export default createComponent({
           }}
         />
       ));
-    }
+    },
   },
 
   render(h) {
@@ -227,15 +227,15 @@ export default createComponent({
     const wrapHeight = itemHeight * this.visibleItemCount;
 
     const frameStyle = {
-      height: `${itemHeight}px`
+      height: `${itemHeight}px`,
     };
 
     const columnsStyle = {
-      height: `${wrapHeight}px`
+      height: `${wrapHeight}px`,
     };
 
     const maskStyle = {
-      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`
+      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`,
     };
 
     return (
@@ -259,5 +259,5 @@ export default createComponent({
         {this.toolbarPosition === 'bottom' ? this.genToolbar() : h()}
       </div>
     );
-  }
+  },
 });

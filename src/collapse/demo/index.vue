@@ -50,22 +50,22 @@ export default {
     'zh-CN': {
       accordion: '手风琴',
       titleSlot: '自定义标题内容',
-      text: '代码是写出来给人看的，附带能在机器上运行'
+      text: '代码是写出来给人看的，附带能在机器上运行',
     },
     'en-US': {
       accordion: 'Accordion',
       titleSlot: 'Custom title',
-      text: 'Content'
-    }
+      text: 'Content',
+    },
   },
 
   data() {
     return {
       active1: [0],
       active2: 0,
-      active3: []
+      active3: [],
     };
-  }
+  },
 };
 </script>
 

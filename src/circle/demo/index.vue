@@ -85,7 +85,7 @@ export default {
       customStyle: '样式定制',
       customColor: '颜色定制',
       customWidth: '宽度定制',
-      counterClockwise: '逆时针'
+      counterClockwise: '逆时针',
     },
     'en-US': {
       gradient: 'Gradient',
@@ -93,8 +93,8 @@ export default {
       customStyle: 'Custom Style',
       customColor: 'Custom Color',
       customWidth: 'Custom Width',
-      counterClockwise: 'Counter Clockwise'
-    }
+      counterClockwise: 'Counter Clockwise',
+    },
   },
 
   data() {
@@ -106,8 +106,8 @@ export default {
       currentRate4: 70,
       gradientColor: {
         '0%': '#3fecff',
-        '100%': '#6149f6'
-      }
+        '100%': '#6149f6',
+      },
     };
   },
 
@@ -118,8 +118,8 @@ export default {
 
     reduce() {
       this.rate = format(this.rate - 20);
-    }
-  }
+    },
+  },
 };
 </script>
 

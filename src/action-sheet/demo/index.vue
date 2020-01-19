@@ -53,7 +53,7 @@ export default {
       showTitle: '展示标题栏',
       showCancel: '展示取消按钮',
       showDescription: '展示描述信息',
-      description: '这是一段描述信息'
+      description: '这是一段描述信息',
     },
     'en-US': {
       buttonText: 'Show ActionSheet',
@@ -63,8 +63,8 @@ export default {
       showTitle: 'ActionSheet with title',
       showCancel: 'ActionSheet with cancel button',
       showDescription: 'ActionSheet with description',
-      description: 'Description'
-    }
+      description: 'Description',
+    },
   },
 
   data() {
@@ -73,7 +73,7 @@ export default {
       show2: false,
       show3: false,
       show4: false,
-      show5: false
+      show5: false,
     };
   },
 
@@ -82,7 +82,7 @@ export default {
       return [
         { name: this.$t('option') },
         { name: this.$t('option') },
-        { name: this.$t('option'), subname: this.$t('subname') }
+        { name: this.$t('option'), subname: this.$t('subname') },
       ];
     },
 
@@ -90,9 +90,9 @@ export default {
       return [
         { name: this.$t('option'), color: GREEN },
         { loading: true },
-        { name: this.$t('disabledOption'), disabled: true }
+        { name: this.$t('disabledOption'), disabled: true },
       ];
-    }
+    },
   },
 
   methods: {
@@ -103,8 +103,8 @@ export default {
 
     onCancel() {
       this.$toast('cancel');
-    }
-  }
+    },
+  },
 };
 </script>
 

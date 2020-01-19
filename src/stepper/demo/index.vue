@@ -48,7 +48,7 @@ export default {
       asyncChange: '异步变更',
       customSize: '自定义大小',
       disableInput: '禁用输入框',
-      decimalLength: '固定小数位数'
+      decimalLength: '固定小数位数',
     },
     'en-US': {
       step: 'Step',
@@ -57,8 +57,8 @@ export default {
       asyncChange: 'Async Change',
       customSize: 'Custom Size',
       disableInput: 'Disable Input',
-      decimalLength: 'Decimal Length'
-    }
+      decimalLength: 'Decimal Length',
+    },
   },
 
   data() {
@@ -71,7 +71,7 @@ export default {
       stepper6: 1,
       stepper7: 1,
       stepper8: 1,
-      disabledInput: 1
+      disabledInput: 1,
     };
   },
 
@@ -83,7 +83,7 @@ export default {
         this.stepper6 = value;
         this.$toast.clear();
       }, 500);
-    }
-  }
+    },
+  },
 };
 </script>

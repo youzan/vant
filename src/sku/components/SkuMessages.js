@@ -12,22 +12,22 @@ export default createComponent({
   props: {
     messages: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     messageConfig: Object,
-    goodsId: [Number, String]
+    goodsId: [Number, String],
   },
 
   data() {
     return {
-      messageValues: this.resetMessageValues(this.messages)
+      messageValues: this.resetMessageValues(this.messages),
     };
   },
 
   watch: {
     messages(val) {
       this.messageValues = this.resetMessageValues(val);
-    }
+    },
   },
 
   methods: {
@@ -108,7 +108,7 @@ export default createComponent({
           }
         }
       }
-    }
+    },
   },
 
   render() {
@@ -142,5 +142,5 @@ export default createComponent({
         )))}
       </CellGroup>
     );
-  }
+  },
 });

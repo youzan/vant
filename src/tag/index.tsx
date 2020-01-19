@@ -80,8 +80,8 @@ Tag.props = {
   closeable: Boolean,
   type: {
     type: String,
-    default: 'default'
-  }
+    default: 'default',
+  },
 };
 
 export default createComponent<TagProps>(Tag);

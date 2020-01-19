@@ -23,8 +23,8 @@ test('select event when type is single', async () => {
     propsData: {
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -43,8 +43,8 @@ test('select event when type is range', async () => {
       type: 'range',
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -68,8 +68,8 @@ test('should not trigger select event when click disabled day', async () => {
     propsData: {
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -87,8 +87,8 @@ test('confirm event when type is single', async () => {
     propsData: {
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -110,8 +110,8 @@ test('confirm event when type is range', async () => {
       type: 'range',
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -131,8 +131,8 @@ test('confirm event when type is range', async () => {
 test('default single date', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -145,8 +145,8 @@ test('default range date', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       type: 'range',
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -163,8 +163,8 @@ test('reset method', async () => {
       minDate,
       maxDate,
       type: 'range',
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -188,8 +188,8 @@ test('set show-confirm to false', async () => {
       maxDate,
       type: 'range',
       poppable: false,
-      showConfirm: false
-    }
+      showConfirm: false,
+    },
   });
 
   await later();
@@ -209,8 +209,8 @@ test('row-height prop', async () => {
       minDate,
       maxDate,
       poppable: false,
-      rowHeight: 50
-    }
+      rowHeight: 50,
+    },
   });
 
   await later();
@@ -243,8 +243,8 @@ test('formatter prop', async () => {
         }
 
         return day;
-      }
-    }
+      },
+    },
   });
 
   await later();
@@ -257,12 +257,12 @@ test('title & footer slot', async () => {
     propsData: {
       minDate,
       maxDate,
-      poppable: false
+      poppable: false,
     },
     scopedSlots: {
       title: () => 'Custom Title',
-      footer: () => 'Custom Footer'
-    }
+      footer: () => 'Custom Footer',
+    },
   });
 
   await later();
@@ -275,8 +275,8 @@ test('should reset when type changed', async () => {
     propsData: {
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -297,8 +297,8 @@ test('default-date prop in single type', async () => {
       minDate,
       maxDate,
       defaultDate: getNextDay(minDate),
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -317,8 +317,8 @@ test('default-date prop in range type', async () => {
       type: 'range',
       minDate,
       maxDate,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -340,13 +340,13 @@ test('popup wrapper', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       minDate,
-      maxDate
+      maxDate,
     },
     listeners: {
       input(value) {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   await later();
@@ -367,8 +367,8 @@ test('set show-mark prop to false', async () => {
       minDate,
       maxDate,
       showMark: false,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -382,8 +382,8 @@ test('color prop when type is single', async () => {
       minDate,
       maxDate,
       color: 'blue',
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -399,8 +399,8 @@ test('color prop when type is range', async () => {
       minDate,
       maxDate,
       color: 'blue',
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();
@@ -414,8 +414,8 @@ test('should scroll to current month when show', async done => {
       type: 'range',
       minDate: new Date(2010, 0, 10),
       maxDate: new Date(2010, 11, 10),
-      defaultDate: [new Date(2010, 3, 1), new Date(2010, 5, 1)]
-    }
+      defaultDate: [new Date(2010, 3, 1), new Date(2010, 5, 1)],
+    },
   });
 
   Element.prototype.scrollIntoView = function() {
@@ -435,8 +435,8 @@ test('max-range prop', async () => {
       minDate,
       maxDate,
       maxRange: 1,
-      poppable: false
-    }
+      poppable: false,
+    },
   });
 
   await later();

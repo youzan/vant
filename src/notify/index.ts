@@ -35,14 +35,14 @@ function Notify(options: NotifyOptions) {
           if (instance.onOpened) {
             instance.onOpened();
           }
-        }
-      }
+        },
+      },
     });
   }
 
   options = {
     ...Notify.currentOptions,
-    ...parseOptions(options)
+    ...parseOptions(options),
   };
 
   Object.assign(instance, options);
@@ -66,7 +66,7 @@ function defaultOptions(): NotifyOptions {
     className: '',
     onClose: null,
     onClick: null,
-    onOpened: null
+    onOpened: null,
   };
 }
 

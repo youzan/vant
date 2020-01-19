@@ -13,14 +13,14 @@ export default createComponent({
     checkedColor: String,
     value: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   watch: {
     value(val) {
       this.$emit('change', val);
-    }
+    },
   },
 
   methods: {
@@ -38,10 +38,10 @@ export default createComponent({
 
       const names = children.map(item => item.name);
       this.$emit('input', names);
-    }
+    },
   },
 
   render() {
     return <div class={bem()}>{this.slots()}</div>;
-  }
+  },
 });

@@ -14,25 +14,25 @@ export default createComponent({
     safeAreaInsetBottom: Boolean,
     value: {
       type: [Number, String],
-      default: 0
+      default: 0,
     },
     border: {
       type: Boolean,
-      default: true
+      default: true,
     },
     fixed: {
       type: Boolean,
-      default: true
+      default: true,
     },
     zIndex: {
       type: Number,
-      default: 1
-    }
+      default: 1,
+    },
   },
 
   watch: {
     value: 'setActiveItem',
-    children: 'setActiveItem'
+    children: 'setActiveItem',
   },
 
   methods: {
@@ -47,7 +47,7 @@ export default createComponent({
         this.$emit('input', active);
         this.$emit('change', active);
       }
-    }
+    },
   },
 
   render() {
@@ -58,12 +58,12 @@ export default createComponent({
           { [BORDER_TOP_BOTTOM]: this.border },
           bem({
             fixed: this.fixed,
-            'safe-area-inset-bottom': this.safeAreaInsetBottom
-          })
+            'safe-area-inset-bottom': this.safeAreaInsetBottom,
+          }),
         ]}
       >
         {this.slots()}
       </div>
     );
-  }
+  },
 });

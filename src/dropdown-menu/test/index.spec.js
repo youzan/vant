@@ -16,10 +16,10 @@ function renderWrapper(options = {}) {
         closeOnClickOutside: options.closeOnClickOutside,
         options: [
           { text: 'A', value: 0, icon: options.icon },
-          { text: 'B', value: 1, icon: options.icon }
-        ]
+          { text: 'B', value: 1, icon: options.icon },
+        ],
       };
-    }
+    },
   });
 }
 
@@ -42,7 +42,7 @@ test('show dropdown item', async () => {
 
 test('render option icon', async () => {
   const wrapper = renderWrapper({
-    icon: 'success'
+    icon: 'success',
   });
 
   await later();
@@ -55,7 +55,7 @@ test('render option icon', async () => {
 
 test('close-on-click-outside', async () => {
   const wrapper = renderWrapper({
-    closeOnClickOutside: true
+    closeOnClickOutside: true,
   });
 
   await later();
@@ -69,7 +69,7 @@ test('close-on-click-outside', async () => {
 
 test('disable close-on-click-outside', async () => {
   const wrapper = renderWrapper({
-    closeOnClickOutside: false
+    closeOnClickOutside: false,
   });
 
   await later();
@@ -86,7 +86,7 @@ test('direction up', async () => {
   window.innerHeight = 1000;
 
   const wrapper = renderWrapper({
-    direction: 'up'
+    direction: 'up',
   });
 
   await later();
@@ -140,10 +140,10 @@ test('destroy one item', async () => {
         render: true,
         options: [
           { text: 'A', value: 0 },
-          { text: 'B', value: 1 }
-        ]
+          { text: 'B', value: 1 },
+        ],
       };
-    }
+    },
   });
 
   await later();
@@ -163,10 +163,10 @@ test('disable dropdown item', async () => {
         value: 0,
         options: [
           { text: 'A', value: 0 },
-          { text: 'B', value: 1 }
-        ]
+          { text: 'B', value: 1 },
+        ],
       };
-    }
+    },
   });
 
   const title = wrapper.find('.van-dropdown-menu__title');
@@ -189,13 +189,13 @@ test('change event', async () => {
         value: 0,
         options: [
           { text: 'A', value: 0 },
-          { text: 'B', value: 1 }
-        ]
+          { text: 'B', value: 1 },
+        ],
       };
     },
     methods: {
-      onChange
-    }
+      onChange,
+    },
   });
 
   await later();
@@ -232,7 +232,7 @@ test('toggle method', async done => {
       expect(wrapper).toMatchSnapshot();
 
       done();
-    }
+    },
   });
 });
 
@@ -246,7 +246,7 @@ test('title slot', () => {
           </template>
         </van-dropdown-item>
       </van-dropdown-menu>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();

@@ -44,7 +44,7 @@ export default {
       text4: second => `倒计时 ${second} 秒`,
       longTextButton: '长文字提示',
       updateMessage: '动态更新提示',
-      loadingType: '自定义加载图标'
+      loadingType: '自定义加载图标',
     },
     'en-US': {
       title1: 'Text',
@@ -61,8 +61,8 @@ export default {
       text4: second => `${second} seconds`,
       longTextButton: 'Long Text',
       updateMessage: 'Update Message',
-      loadingType: 'Loading Type'
-    }
+      loadingType: 'Loading Type',
+    },
   },
 
   methods: {
@@ -70,7 +70,7 @@ export default {
       this.$toast.loading({
         forbidClick: true,
         message: this.$t('loading'),
-        loadingType
+        loadingType,
       });
     },
 
@@ -85,14 +85,14 @@ export default {
     showIconToast() {
       this.$toast({
         message: this.$t('customIcon'),
-        icon: 'like-o'
+        icon: 'like-o',
       });
     },
 
     showImageToast() {
       this.$toast({
         message: this.$t('customImage'),
-        icon: 'https://img.yzcdn.cn/vant/logo.png'
+        icon: 'https://img.yzcdn.cn/vant/logo.png',
       });
     },
 
@@ -100,7 +100,7 @@ export default {
       const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,
-        message: this.$t('text4', 3)
+        message: this.$t('text4', 3),
       });
 
       let second = 3;
@@ -113,8 +113,8 @@ export default {
           this.$toast.clear();
         }
       }, 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -15,26 +15,26 @@ export default createComponent({
     lazyLoad: Boolean,
     showError: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLoading: {
       type: Boolean,
-      default: true
+      default: true,
     },
     errorIcon: {
       type: String,
-      default: 'warning-o'
+      default: 'warning-o',
     },
     loadingIcon: {
       type: String,
-      default: 'photo-o'
-    }
+      default: 'photo-o',
+    },
   },
 
   data() {
     return {
       loading: true,
-      error: false
+      error: false,
     };
   },
 
@@ -42,7 +42,7 @@ export default createComponent({
     src() {
       this.loading = true;
       this.error = false;
-    }
+    },
   },
 
   computed: {
@@ -63,7 +63,7 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   created() {
@@ -138,11 +138,11 @@ export default createComponent({
       const imgData = {
         class: bem('img'),
         attrs: {
-          alt: this.alt
+          alt: this.alt,
         },
         style: {
-          objectFit: this.fit
-        }
+          objectFit: this.fit,
+        },
       };
 
       if (this.error) {
@@ -161,7 +161,7 @@ export default createComponent({
           {...imgData}
         />
       );
-    }
+    },
   },
 
   render() {
@@ -175,5 +175,5 @@ export default createComponent({
         {this.genPlaceholder()}
       </div>
     );
-  }
+  },
 });

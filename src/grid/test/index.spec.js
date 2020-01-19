@@ -9,8 +9,8 @@ test('click grid item', () => {
       </van-grid>
     `,
     methods: {
-      onClick
-    }
+      onClick,
+    },
   });
 
   const Item = wrapper.find('.van-grid-item__content');
@@ -27,7 +27,7 @@ test('sqaure and set gutter', () => {
         <van-grid-item />
         <van-grid-item />
       </van-grid>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -39,7 +39,7 @@ test('icon-size prop', () => {
       <van-grid icon-size="10">
         <van-grid-item icon="success" />
       </van-grid>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -53,7 +53,7 @@ test('render icon-slot', () => {
           <div slot="icon" />
         </van-grid-item>
       </van-grid>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();

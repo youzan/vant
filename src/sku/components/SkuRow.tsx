@@ -31,7 +31,7 @@ function SkuRow(
 }
 
 SkuRow.props = {
-  skuRow: Object
+  skuRow: Object,
 };
 
 export default createComponent<SkuRowProps>(SkuRow);

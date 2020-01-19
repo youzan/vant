@@ -16,18 +16,18 @@ export const pickerProps = {
   confirmButtonText: String,
   allowHtml: {
     type: Boolean,
-    default: true
+    default: true,
   },
   visibleItemCount: {
     type: Number,
-    default: 5
+    default: 5,
   },
   itemHeight: {
     type: Number,
-    default: 44
+    default: 44,
   },
   swipeDuration: {
     type: Number,
-    default: 1000
-  }
+    default: 1000,
+  },
 };

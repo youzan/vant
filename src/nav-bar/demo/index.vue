@@ -33,7 +33,7 @@ export default {
     },
     onClickRight() {
       this.$toast(this.$t('button'));
-    }
-  }
+    },
+  },
 };
 </script>

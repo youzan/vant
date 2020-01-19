@@ -66,7 +66,7 @@ export default {
       customContent: '自定义内容',
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
-      showInfo: '提示信息'
+      showInfo: '提示信息',
     },
     'en-US': {
       text: 'Text',
@@ -77,9 +77,9 @@ export default {
       customContent: 'Custom Content',
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
-      showInfo: 'Show Info'
-    }
-  }
+      showInfo: 'Show Info',
+    },
+  },
 };
 </script>
 

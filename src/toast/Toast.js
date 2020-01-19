@@ -19,25 +19,25 @@ export default createComponent({
     message: [Number, String],
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     position: {
       type: String,
-      default: 'middle'
+      default: 'middle',
     },
     transition: {
       type: String,
-      default: 'van-fade'
+      default: 'van-fade',
     },
     lockScroll: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
-      clickable: false
+      clickable: false,
     };
   },
 
@@ -51,7 +51,7 @@ export default createComponent({
 
   watch: {
     value: 'toggleClickable',
-    forbidClick: 'toggleClickable'
+    forbidClick: 'toggleClickable',
   },
 
   methods: {
@@ -108,7 +108,7 @@ export default createComponent({
       }
 
       return <div class={bem('text')}>{message}</div>;
-    }
+    },
   },
 
   render() {
@@ -128,5 +128,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

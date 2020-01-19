@@ -6,9 +6,9 @@ test('change event', () => {
   const wrapper = mount(SwitchCell, {
     context: {
       on: {
-        change: onChange
-      }
-    }
+        change: onChange,
+      },
+    },
   });
 
   wrapper.find('.van-switch').trigger('click');
@@ -19,8 +19,8 @@ test('change event', () => {
 test('border prop', () => {
   const wrapper = mount(SwitchCell, {
     propsData: {
-      border: false
-    }
+      border: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -29,8 +29,8 @@ test('border prop', () => {
 test('cell-size prop', () => {
   const wrapper = mount(SwitchCell, {
     propsData: {
-      cellSize: 'large'
-    }
+      cellSize: 'large',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

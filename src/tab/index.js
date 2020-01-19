@@ -14,12 +14,12 @@ export default createComponent({
     name: [Number, String],
     title: String,
     titleStyle: null,
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   data() {
     return {
-      inited: false
+      inited: false,
     };
   },
 
@@ -30,7 +30,7 @@ export default createComponent({
 
     isActive() {
       return this.computedName === this.parent.currentName;
-    }
+    },
   },
 
   watch: {
@@ -49,7 +49,7 @@ export default createComponent({
           this.parent.$emit('rendered', this.computedName, this.title);
         });
       }
-    }
+    },
   },
 
   render(h) {
@@ -75,5 +75,5 @@ export default createComponent({
         {Content}
       </div>
     );
-  }
+  },
 });

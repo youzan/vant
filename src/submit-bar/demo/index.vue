@@ -59,7 +59,7 @@ export default {
       tip3: '修改地址',
       check: '全选',
       clickButton: '点击按钮',
-      clickLink: '修改地址'
+      clickLink: '修改地址',
     },
     'en-US': {
       submit: 'Submit',
@@ -68,13 +68,13 @@ export default {
       tip3: 'Link',
       check: 'Label',
       clickButton: 'Click button',
-      clickLink: 'Click Link'
-    }
+      clickLink: 'Click Link',
+    },
   },
 
   data() {
     return {
-      checked: true
+      checked: true,
     };
   },
 
@@ -84,8 +84,8 @@ export default {
     },
     onClickLink() {
       this.$toast(this.$t('clickLink'));
-    }
-  }
+    },
+  },
 };
 </script>
 

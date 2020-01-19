@@ -39,8 +39,8 @@ export default createComponent({
     visibleItemCount: Number,
     initialOptions: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
@@ -48,7 +48,7 @@ export default createComponent({
       offset: 0,
       duration: 0,
       options: deepClone(this.initialOptions),
-      currentIndex: this.defaultIndex
+      currentIndex: this.defaultIndex,
     };
   },
 
@@ -75,7 +75,7 @@ export default createComponent({
   watch: {
     defaultIndex(val) {
       this.setIndex(val);
-    }
+    },
   },
 
   computed: {
@@ -85,7 +85,7 @@ export default createComponent({
 
     baseOffset() {
       return (this.itemHeight * (this.visibleItemCount - 1)) / 2;
-    }
+    },
   },
 
   methods: {
@@ -243,7 +243,7 @@ export default createComponent({
 
     genOptions() {
       const optionStyle = {
-        height: `${this.itemHeight}px`
+        height: `${this.itemHeight}px`,
       };
 
       return this.options.map((option, index) => {
@@ -254,31 +254,31 @@ export default createComponent({
           style: optionStyle,
           attrs: {
             role: 'button',
-            tabindex: disabled ? -1 : 0
+            tabindex: disabled ? -1 : 0,
           },
           class: [
             'van-ellipsis',
             bem('item', {
               disabled,
-              selected: index === this.currentIndex
-            })
+              selected: index === this.currentIndex,
+            }),
           ],
           on: {
             click: () => {
               this.onClickItem(index);
-            }
-          }
+            },
+          },
         };
 
         if (this.allowHtml) {
           data.domProps = {
-            innerHTML: text
+            innerHTML: text,
           };
         }
 
         return <li {...data}>{this.allowHtml ? '' : text}</li>;
       });
-    }
+    },
   },
 
   render() {
@@ -286,7 +286,7 @@ export default createComponent({
       transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
       transitionProperty: this.duration ? 'all' : 'none',
-      lineHeight: `${this.itemHeight}px`
+      lineHeight: `${this.itemHeight}px`,
     };
 
     return (
@@ -301,5 +301,5 @@ export default createComponent({
         </ul>
       </div>
     );
-  }
+  },
 });

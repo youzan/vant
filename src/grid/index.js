@@ -14,16 +14,16 @@ export default createComponent({
     clickable: Boolean,
     columnNum: {
       type: Number,
-      default: 4
+      default: 4,
     },
     center: {
       type: Boolean,
-      default: true
+      default: true,
     },
     border: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
@@ -32,10 +32,10 @@ export default createComponent({
 
       if (gutter) {
         return {
-          paddingLeft: addUnit(gutter)
+          paddingLeft: addUnit(gutter),
         };
       }
-    }
+    },
   },
 
   render() {
@@ -47,5 +47,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

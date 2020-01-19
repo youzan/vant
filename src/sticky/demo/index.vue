@@ -27,23 +27,23 @@ export default {
   i18n: {
     'zh-CN': {
       offsetTop: '吸顶距离',
-      setContainer: '指定容器'
+      setContainer: '指定容器',
     },
     'en-US': {
       offsetTop: 'Offset Top',
-      setContainer: 'Set Container'
-    }
+      setContainer: 'Set Container',
+    },
   },
 
   data() {
     return {
-      container: null
+      container: null,
     };
   },
 
   mounted() {
     this.container = this.$refs.container;
-  }
+  },
 };
 </script>
 

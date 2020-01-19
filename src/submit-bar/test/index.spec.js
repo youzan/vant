@@ -6,10 +6,10 @@ test('submit event', () => {
   const wrapper = mount(SubmitBar, {
     context: {
       props: {
-        price: 1
+        price: 1,
       },
-      on: { submit }
-    }
+      on: { submit },
+    },
   });
 
   const button = wrapper.find('.van-button');
@@ -23,10 +23,10 @@ test('disable submit', () => {
     context: {
       props: {
         price: 1,
-        disabled: true
+        disabled: true,
       },
-      on: { submit }
-    }
+      on: { submit },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -41,9 +41,9 @@ test('without price', () => {
   const wrapper = mount(SubmitBar, {
     context: {
       props: {
-        label: 'Label'
-      }
-    }
+        label: 'Label',
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -52,8 +52,8 @@ test('without price', () => {
 test('top slot', () => {
   const wrapper = mount(SubmitBar, {
     scopedSlots: {
-      top: () => 'top'
-    }
+      top: () => 'top',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -64,9 +64,9 @@ test('decimal-length prop', () => {
     context: {
       props: {
         price: 111,
-        decimalLength: 1
-      }
-    }
+        decimalLength: 1,
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -78,9 +78,9 @@ test('suffix-label prop', () => {
       props: {
         price: 111,
         label: 'Label',
-        suffixLabel: 'Suffix Label'
-      }
-    }
+        suffixLabel: 'Suffix Label',
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -91,9 +91,9 @@ test('text-align prop', () => {
     context: {
       props: {
         price: 111,
-        textAlign: 'left'
-      }
-    }
+        textAlign: 'left',
+      },
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });

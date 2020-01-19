@@ -55,7 +55,7 @@ export default {
       clickIcon: '点击图标',
       clickButton: '点击按钮',
       customIconColor: '自定义图标颜色',
-      customButtonColor: '自定义按钮颜色'
+      customButtonColor: '自定义按钮颜色',
     },
     'en-US': {
       icon1: 'Icon1',
@@ -68,8 +68,8 @@ export default {
       clickIcon: 'Click Icon',
       clickButton: 'Click Button',
       customIconColor: 'Custom Icon Color',
-      customButtonColor: 'Custom Button Color'
-    }
+      customButtonColor: 'Custom Button Color',
+    },
   },
   methods: {
     onClickIcon() {
@@ -77,8 +77,8 @@ export default {
     },
     onClickButton() {
       this.$toast(this.$t('clickButton'));
-    }
-  }
+    },
+  },
 };
 </script>
 

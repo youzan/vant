@@ -18,34 +18,34 @@ export default {
     title: 'Calendario',
     weekdays: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: Number) => `Elija no más de ${maxRange} días`
+    rangePrompt: (maxRange: Number) => `Elija no más de ${maxRange} días`,
   },
   vanContactCard: {
-    addText: 'Añadir información de contacto'
+    addText: 'Añadir información de contacto',
   },
   vanContactList: {
-    addText: 'Añadir nuevo contacto'
+    addText: 'Añadir nuevo contacto',
   },
   vanPagination: {
     prev: 'Anterior',
-    next: 'Siguiente'
+    next: 'Siguiente',
   },
   vanPullRefresh: {
     pulling: 'Tira para recargar...',
-    loosing: 'Suelta para recargar...'
+    loosing: 'Suelta para recargar...',
   },
   vanSubmitBar: {
-    label: 'Total：'
+    label: 'Total：',
   },
   vanCoupon: {
     unlimited: 'Ilimitado',
     discount: (discount: number) => `${discount * 10}% de descuento`,
-    condition: (condition: number) => `Al menos ${condition}`
+    condition: (condition: number) => `Al menos ${condition}`,
   },
   vanCouponCell: {
     title: 'Cupón',
     tips: 'Sin cupones',
-    count: (count: number) => `You have ${count} coupons`
+    count: (count: number) => `You have ${count} coupons`,
   },
   vanCouponList: {
     empty: 'Sin cupones',
@@ -53,7 +53,7 @@ export default {
     close: 'Cerrar',
     enable: 'Disponible',
     disabled: 'No disponible',
-    placeholder: 'Código del cupón'
+    placeholder: 'Código del cupón',
   },
   vanAddressEdit: {
     area: 'Área',
@@ -64,13 +64,13 @@ export default {
     defaultAddress: 'Establecer como dirección por defecto',
     telPlaceholder: 'Teléfono',
     namePlaceholder: 'Nombre',
-    areaPlaceholder: 'Área'
+    areaPlaceholder: 'Área',
   },
   vanAddressEditDetail: {
     label: 'Dirección',
-    placeholder: 'Dirección'
+    placeholder: 'Dirección',
   },
   vanAddressList: {
-    add: 'Anadir dirección'
-  }
+    add: 'Anadir dirección',
+  },
 };

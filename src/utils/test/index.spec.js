@@ -33,8 +33,8 @@ test('deepAssign', () => {
     {
       foo: {
         bar: true,
-        foo: false
-      }
+        foo: false,
+      },
     }
   );
 });

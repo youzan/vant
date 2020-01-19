@@ -221,7 +221,7 @@ export default {
       numberPlaceholder: 'Number',
       messagePlaceholder: 'Message',
       alignPlaceHolder: 'Input Align Right',
-    }
+    },
   },
 
   data() {
@@ -240,15 +240,15 @@ export default {
       message2: '',
       phone: '',
       phone2: '12345',
-      formatValue: ''
+      formatValue: '',
     };
   },
 
   methods: {
     formatter(value) {
       return value.replace(/\d/g, '');
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -44,7 +44,7 @@ function Panel(
     <div class={bem('content')}>{slots.default && slots.default()}</div>,
     slots.footer && (
       <div class={[bem('footer'), BORDER_TOP]}>{slots.footer()}</div>
-    )
+    ),
   ];
 
   return (
@@ -60,7 +60,7 @@ Panel.props = {
   icon: String,
   desc: String,
   title: String,
-  status: String
+  status: String,
 };
 
 export default createComponent<PanelProps>(Panel);

@@ -69,16 +69,16 @@ PasswordInput.props = {
   errorInfo: String,
   mask: {
     type: Boolean,
-    default: true
+    default: true,
   },
   value: {
     type: String,
-    default: ''
+    default: '',
   },
   length: {
     type: Number,
-    default: 6
-  }
+    default: 6,
+  },
 };
 
 export default createComponent<PasswordInputProps>(PasswordInput);

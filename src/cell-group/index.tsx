@@ -45,8 +45,8 @@ CellGroup.props = {
   title: String,
   border: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<CellGroupProps>(CellGroup);

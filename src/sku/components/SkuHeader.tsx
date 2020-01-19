@@ -61,7 +61,7 @@ SkuHeader.props = {
   sku: Object,
   goods: Object,
   skuEventBus: Object,
-  selectedSku: Object
+  selectedSku: Object,
 };
 
 export default createComponent<SkuHeaderProps>(SkuHeader);

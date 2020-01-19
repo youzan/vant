@@ -11,15 +11,15 @@ export default createComponent({
     uploadImg: Function,
     maxSize: {
       type: Number,
-      default: 6
-    }
+      default: 6,
+    },
   },
 
   data() {
     return {
       // 正在上传的图片 base64
       paddingImg: '',
-      uploadFail: false
+      uploadFail: false,
     };
   },
 
@@ -67,14 +67,14 @@ export default createComponent({
             ? (
               [
                 <Icon name="warning-o" size="20px" />,
-                <div class={bem('warn-text')} domPropsInnerHTML={t('fail')} />
+                <div class={bem('warn-text')} domPropsInnerHTML={t('fail')} />,
               ]
             ) : (
               <Loading type="spinner" size="20px" color="white" />
             )}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -89,7 +89,7 @@ export default createComponent({
               onClick={() => {
                 this.$emit('input', '');
               }}
-            />
+            />,
           ],
           true
         )}
@@ -97,7 +97,7 @@ export default createComponent({
         {this.paddingImg && this.genUploader(
           [
             <img src={this.paddingImg} />,
-            this.genMask()
+            this.genMask(),
           ],
           !this.uploadFail
         )}
@@ -109,5 +109,5 @@ export default createComponent({
         )}
       </div>
     );
-  }
+  },
 });

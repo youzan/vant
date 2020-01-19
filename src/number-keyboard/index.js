@@ -14,11 +14,11 @@ export default createComponent({
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);
       }
-    })
+    }),
   ],
 
   model: {
-    event: 'update:value'
+    event: 'update:value',
   },
 
   props: {
@@ -28,40 +28,40 @@ export default createComponent({
     deleteButtonText: String,
     theme: {
       type: String,
-      default: 'default'
+      default: 'default',
     },
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     extraKey: {
       type: String,
-      default: ''
+      default: '',
     },
     maxlength: {
       type: [Number, String],
-      default: Number.MAX_VALUE
+      default: Number.MAX_VALUE,
     },
     zIndex: {
       type: Number,
-      default: 100
+      default: 100,
     },
     transition: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showDeleteKey: {
       type: Boolean,
-      default: true
+      default: true,
     },
     hideOnClickOutside: {
       type: Boolean,
-      default: true
+      default: true,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   watch: {
@@ -69,7 +69,7 @@ export default createComponent({
       if (!this.transition) {
         this.$emit(val ? 'show' : 'hide');
       }
-    }
+    },
   },
 
   computed: {
@@ -100,7 +100,7 @@ export default createComponent({
 
     deleteText() {
       return this.deleteButtonText || t('delete');
-    }
+    },
   },
 
   methods: {
@@ -133,7 +133,7 @@ export default createComponent({
         this.$emit('input', text);
         this.$emit('update:value', value + text);
       }
-    }
+    },
   },
 
   render() {
@@ -205,5 +205,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

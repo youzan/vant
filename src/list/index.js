@@ -14,11 +14,11 @@ export default createComponent({
       }
 
       bind(this.scroller, 'scroll', this.check);
-    })
+    }),
   ],
 
   model: {
-    prop: 'loading'
+    prop: 'loading',
   },
 
   props: {
@@ -30,22 +30,22 @@ export default createComponent({
     finishedText: String,
     immediateCheck: {
       type: Boolean,
-      default: true
+      default: true,
     },
     offset: {
       type: Number,
-      default: 300
+      default: 300,
     },
     direction: {
       type: String,
-      default: 'down'
-    }
+      default: 'down',
+    },
   },
 
   data() {
     return {
       // use sync innerLoading state to avoid repeated loading in some edge cases
-      innerLoading: this.loading
+      innerLoading: this.loading,
     };
   },
 
@@ -61,7 +61,7 @@ export default createComponent({
 
   watch: {
     loading: 'check',
-    finished: 'check'
+    finished: 'check',
   },
 
   methods: {
@@ -80,7 +80,7 @@ export default createComponent({
         } else {
           scrollerRect = {
             top: 0,
-            bottom: scroller.innerHeight
+            bottom: scroller.innerHeight,
           };
         }
 
@@ -147,7 +147,7 @@ export default createComponent({
           );
         }
       }
-    }
+    },
   },
 
   render() {
@@ -162,5 +162,5 @@ export default createComponent({
         {this.direction === 'up' ? this.slots() : Placeholder}
       </div>
     );
-  }
+  },
 });

@@ -79,8 +79,8 @@ function TreeSelect(
           'van-ellipsis',
           bem('item', {
             active: isActiveItem(item.id),
-            disabled: item.disabled
-          })
+            disabled: item.disabled,
+          }),
         ]}
         onClick={() => {
           if (!item.disabled) {
@@ -134,24 +134,24 @@ function TreeSelect(
 TreeSelect.props = {
   max: {
     type: Number,
-    default: Infinity
+    default: Infinity,
   },
   items: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   height: {
     type: [Number, String],
-    default: 300
+    default: 300,
   },
   activeId: {
     type: [Number, String, Array],
-    default: 0
+    default: 0,
   },
   mainActiveIndex: {
     type: Number,
-    default: 0
-  }
+    default: 0,
+  },
 };
 
 export default createComponent<TreeSelectProps>(TreeSelect);

@@ -164,15 +164,15 @@ export default {
       hideSoldoutSku: '隐藏售罄规格',
       stepperTitle: '我要买',
       button1: '积分兑换',
-      button2: '买买买'
+      button2: '买买买',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
       hideSoldoutSku: 'Hide Soldout Sku',
       stepperTitle: 'Stepper title',
       button1: 'Button',
-      button2: 'Button'
-    }
+      button2: 'Button',
+    },
   },
 
   data() {
@@ -201,14 +201,14 @@ export default {
               this.$toast('库存不够了');
             }
           }
-        }
+        },
       },
       messageConfig: {
         uploadImg: (file, img) => new Promise(resolve => {
           setTimeout(() => resolve(img), 1000);
         }),
-        uploadMaxSize: 3
-      }
+        uploadMaxSize: 3,
+      },
     };
   },
 
@@ -223,8 +223,8 @@ export default {
 
     onPointClicked() {
       this.$toast('积分兑换');
-    }
-  }
+    },
+  },
 };
 </script>
 

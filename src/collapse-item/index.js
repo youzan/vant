@@ -18,14 +18,14 @@ export default createComponent({
     disabled: Boolean,
     isLink: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
       show: null,
-      inited: null
+      inited: null,
     };
   },
 
@@ -53,7 +53,7 @@ export default createComponent({
       return accordion
         ? value === this.currentName
         : value.some(name => name === this.currentName);
-    }
+    },
   },
 
   created() {
@@ -96,7 +96,7 @@ export default createComponent({
           this.onTransitionEnd();
         }
       });
-    }
+    },
   },
 
   methods: {
@@ -162,7 +162,7 @@ export default createComponent({
           </div>
         );
       }
-    }
+    },
   },
 
   render() {
@@ -172,5 +172,5 @@ export default createComponent({
         {this.genContent()}
       </div>
     );
-  }
+  },
 });

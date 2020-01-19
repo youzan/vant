@@ -66,6 +66,6 @@ export const TouchMixin = Vue.extend({
         on(el, 'touchend', onTouchEnd);
         on(el, 'touchcancel', onTouchEnd);
       }
-    }
-  }
+    },
+  },
 });

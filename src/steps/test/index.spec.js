@@ -22,8 +22,8 @@ test('icon slot', () => {
     `,
     components: {
       Steps,
-      Step
-    }
+      Step,
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });

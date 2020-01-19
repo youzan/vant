@@ -29,7 +29,7 @@ function isImage(name?: string): boolean {
 // compatible with legacy usage, should be removed in next major version
 const LEGACY_MAP: Record<string, string> = {
   medel: 'medal',
-  'medel-o': 'medal-o'
+  'medel-o': 'medal-o',
 };
 
 function correctName(name?: string) {
@@ -49,11 +49,11 @@ function Icon(
     <props.tag
       class={[
         props.classPrefix,
-        imageIcon ? '' : `${props.classPrefix}-${name}`
+        imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
       style={{
         color: props.color,
-        fontSize: addUnit(props.size)
+        fontSize: addUnit(props.size),
       }}
       {...inherit(ctx, true)}
     >
@@ -72,12 +72,12 @@ Icon.props = {
   color: String,
   tag: {
     type: String,
-    default: 'i'
+    default: 'i',
   },
   classPrefix: {
     type: String,
-    default: bem()
-  }
+    default: bem(),
+  },
 };
 
 export default createComponent<IconProps, IconEvents>(Icon);

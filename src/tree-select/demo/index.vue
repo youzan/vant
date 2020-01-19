@@ -44,7 +44,7 @@ export default {
       multipleMode: '多选模式',
       customContent: '自定义内容',
       data: zhCNData,
-      dataSimple: [{ text: '分组 1' }, { text: '分组 2' }]
+      dataSimple: [{ text: '分组 1' }, { text: '分组 2' }],
     },
     'en-US': {
       showInfo: 'Show Info',
@@ -52,8 +52,8 @@ export default {
       multipleMode: 'Multiple Mode',
       customContent: 'Custom Content',
       data: enUSData,
-      dataSimple: [{ text: 'Group 1' }, { text: 'Group 2' }]
-    }
+      dataSimple: [{ text: 'Group 1' }, { text: 'Group 2' }],
+    },
   },
 
   data() {
@@ -64,7 +64,7 @@ export default {
       activeIndex: 0,
       activeIndex2: 0,
       activeIndex3: 0,
-      activeIndex4: 0
+      activeIndex4: 0,
     };
   },
 
@@ -84,7 +84,7 @@ export default {
       data[1].info = 5;
 
       return data;
-    }
-  }
+    },
+  },
 };
 </script>

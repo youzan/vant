@@ -14,13 +14,13 @@ export default createComponent({
     detailRows: Number,
     searchResult: Array,
     detailMaxlength: Number,
-    showSearchResult: Boolean
+    showSearchResult: Boolean,
   },
 
   computed: {
     shouldShowSearchResult() {
       return this.focused && this.searchResult && this.showSearchResult;
-    }
+    },
   },
 
   methods: {
@@ -71,12 +71,12 @@ export default createComponent({
 
                   return <div domPropsInnerHTML={text} />;
                 }
-              }
+              },
             }}
           />
         ));
       }
-    }
+    },
   },
 
   render() {
@@ -100,5 +100,5 @@ export default createComponent({
         {this.genSearchResult()}
       </Cell>
     );
-  }
+  },
 });

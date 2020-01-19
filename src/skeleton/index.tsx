@@ -88,32 +88,32 @@ Skeleton.props = {
   avatar: Boolean,
   row: {
     type: Number,
-    default: 0
+    default: 0,
   },
   loading: {
     type: Boolean,
-    default: true
+    default: true,
   },
   animate: {
     type: Boolean,
-    default: true
+    default: true,
   },
   avatarSize: {
     type: String,
-    default: '32px'
+    default: '32px',
   },
   avatarShape: {
     type: String,
-    default: 'round'
+    default: 'round',
   },
   titleWidth: {
     type: [Number, String],
-    default: '40%'
+    default: '40%',
   },
   rowWidth: {
     type: [Number, String, Array],
-    default: DEFAULT_ROW_WIDTH
-  }
+    default: DEFAULT_ROW_WIDTH,
+  },
 };
 
 export default createComponent<SkeletonProps>(Skeleton);

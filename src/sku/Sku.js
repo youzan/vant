@@ -48,19 +48,19 @@ export default createComponent({
     properties: Array,
     quota: {
       type: Number,
-      default: 0
+      default: 0,
     },
     quotaUsed: {
       type: Number,
-      default: 0
+      default: 0,
     },
     startSaleNum: {
       type: Number,
-      default: 1
+      default: 1,
     },
     initialSku: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     stockThreshold: {
       type: Number,
@@ -68,27 +68,27 @@ export default createComponent({
     },
     showSoldoutSku: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showAddCartBtn: {
       type: Boolean,
-      default: true
+      default: true,
     },
     bodyOffsetTop: {
       type: Number,
-      default: 200
+      default: 200,
     },
     messageConfig: {
       type: Object,
       default: () => ({
         placeholderMap: {},
         uploadImg: () => Promise.resolve(),
-        uploadMaxSize: 5
-      })
+        uploadMaxSize: 5,
+      }),
     },
     customStepperConfig: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
   },
 
@@ -97,7 +97,7 @@ export default createComponent({
       selectedSku: {},
       selectedProp: {},
       selectedNum: 1,
-      show: this.value
+      show: this.value,
     };
   },
 
@@ -108,7 +108,7 @@ export default createComponent({
         this.$emit('sku-close', {
           selectedSkuValues: this.selectedSkuValues,
           selectedNum: this.selectedNum,
-          selectedSkuComb: this.selectedSkuComb
+          selectedSkuComb: this.selectedSkuComb,
         });
 
         if (this.resetStepperOnHide) {
@@ -138,8 +138,8 @@ export default createComponent({
       return [
         'van-sku-group-container',
         {
-          'van-sku-group-container--hide-soldout': !this.showSoldoutSku
-        }
+          'van-sku-group-container--hide-soldout': !this.showSoldoutSku,
+        },
       ];
     },
 
@@ -152,7 +152,7 @@ export default createComponent({
       const maxHeight = window.innerHeight - this.bodyOffsetTop;
 
       return {
-        maxHeight: maxHeight + 'px'
+        maxHeight: maxHeight + 'px',
       };
     },
 
@@ -189,7 +189,7 @@ export default createComponent({
           skuComb = {
             id: this.sku.collection_id,
             price: Math.round(this.sku.price * 100),
-            stock_num: this.sku.stock_num
+            stock_num: this.sku.stock_num,
           };
         }
         if (skuComb) {
@@ -272,7 +272,7 @@ export default createComponent({
         <span class={bem('stock-num', { highlight: this.stock < this.stockThreshold })}>
           {this.stock}
         </span>,
-        ` ${t('stockUnit')}`
+        ` ${t('stockUnit')}`,
       ];
     },
 
@@ -290,7 +290,7 @@ export default createComponent({
         .map(item => item.k);
 
       return `${t('select')} ${unselectedSku.concat(unselectedProp).join('；')}`;
-    }
+    },
   },
 
   created() {
@@ -459,7 +459,7 @@ export default createComponent({
       const params = {
         index,
         imageList: this.imageList,
-        indexImage
+        indexImage,
       };
 
       this.$emit('open-preview', params);
@@ -470,7 +470,7 @@ export default createComponent({
         closeOnPopstate: true,
         onClose: () => {
           this.$emit('close-preview', params);
-        }
+        },
       });
     },
 
@@ -541,9 +541,9 @@ export default createComponent({
         selectedNum: this.selectedNum,
         selectedSkuComb: this.selectedSkuComb,
         messages: this.getSkuMessages(),
-        cartMessages: this.getSkuCartMessages()
+        cartMessages: this.getSkuCartMessages(),
       };
-    }
+    },
   },
 
   render() {
@@ -561,7 +561,7 @@ export default createComponent({
       selectedProp,
       selectedNum,
       stepperTitle,
-      selectedSkuComb
+      selectedSkuComb,
     } = this;
 
     const slotsProps = {
@@ -570,7 +570,7 @@ export default createComponent({
       selectedNum,
       skuEventBus,
       selectedSku,
-      selectedSkuComb
+      selectedSkuComb,
     };
     const slots = name => this.slots(name, slotsProps);
 
@@ -694,5 +694,5 @@ export default createComponent({
         {Actions}
       </Popup>
     );
-  }
+  },
 });

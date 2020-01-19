@@ -16,8 +16,8 @@ test('filter prop', () => {
       filter,
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      value: new Date(2020, 10, 1, 0, 0)
-    }
+      value: new Date(2020, 10, 1, 0, 0),
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -30,8 +30,8 @@ test('formatter prop', async () => {
       formatter,
       minDate: new Date(2010, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      value: new Date(2020, 10, 1, 0, 0)
-    }
+      value: new Date(2020, 10, 1, 0, 0),
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('formatter prop', async () => {
     '05 month',
     '05 day',
     '00 hour',
-    '00 minute'
+    '00 minute',
   ]);
 });
 
@@ -56,8 +56,8 @@ test('confirm event', () => {
     propsData: {
       value: date,
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1)
-    }
+      maxDate: new Date(2025, 10, 1),
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
@@ -80,8 +80,8 @@ test('max-date prop', () => {
   const wrapper = mount(DatePicker, {
     propsData: {
       value: new Date(2020, 10, 30, 30, 30),
-      maxDate
-    }
+      maxDate,
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
@@ -93,8 +93,8 @@ test('min-date prop', () => {
   const wrapper = mount(DatePicker, {
     propsData: {
       value: new Date(2020, 0, 0, 0, 0),
-      minDate
-    }
+      minDate,
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
@@ -104,8 +104,8 @@ test('min-date prop', () => {
 test('dynamic set value', () => {
   const wrapper = mount(DatePicker, {
     propsData: {
-      value: new Date(2019, 1, 1)
-    }
+      value: new Date(2019, 1, 1),
+    },
   });
 
   wrapper.setProps({ value: new Date(2019, 1, 1) });
@@ -132,8 +132,8 @@ test('use min-date with filter', async () => {
         }
 
         return values;
-      }
-    }
+      },
+    },
   });
 
   await later();

@@ -20,9 +20,9 @@ function getDistance(touches) {
 export default createComponent({
   mixins: [
     PopupMixin({
-      skipToggleEvent: true
+      skipToggleEvent: true,
     }),
-    TouchMixin
+    TouchMixin,
   ],
 
   props: {
@@ -32,40 +32,40 @@ export default createComponent({
     showIndicators: Boolean,
     images: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     },
     swipeDuration: {
       type: Number,
-      default: 500
+      default: 500,
     },
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showIndex: {
       type: Boolean,
-      default: true
+      default: true,
     },
     startPosition: {
       type: Number,
-      default: 0
+      default: 0,
     },
     minZoom: {
       type: Number,
-      default: 1 / 3
+      default: 1 / 3,
     },
     maxZoom: {
       type: Number,
-      default: 3
+      default: 3,
     },
     overlayClass: {
       type: String,
-      default: bem('overlay')
-    }
+      default: bem('overlay'),
+    },
   },
 
   data() {
@@ -76,7 +76,7 @@ export default createComponent({
       active: 0,
       moving: false,
       zooming: false,
-      doubleClickTimer: null
+      doubleClickTimer: null,
     };
   },
 
@@ -84,7 +84,7 @@ export default createComponent({
     imageStyle() {
       const { scale } = this;
       const style = {
-        transitionDuration: this.zooming || this.moving ? '0s' : '.3s'
+        transitionDuration: this.zooming || this.moving ? '0s' : '.3s',
       };
 
       if (scale !== 1) {
@@ -93,7 +93,7 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   watch: {
@@ -106,7 +106,7 @@ export default createComponent({
       } else {
         this.$emit('close', {
           index: this.active,
-          url: this.images[this.active]
+          url: this.images[this.active],
         });
       }
     },
@@ -127,8 +127,8 @@ export default createComponent({
           });
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -288,7 +288,7 @@ export default createComponent({
 
     genImages() {
       const imageSlots = {
-        loading: () => <Loading type="spinner" />
+        loading: () => <Loading type="spinner" />,
       };
 
       return (
@@ -320,7 +320,7 @@ export default createComponent({
           ))}
         </Swipe>
       );
-    }
+    },
   },
 
   render() {
@@ -337,5 +337,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

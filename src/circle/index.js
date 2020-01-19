@@ -24,40 +24,40 @@ export default createComponent({
     strokeLinecap: String,
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     speed: {
       type: Number,
-      default: 0
+      default: 0,
     },
     size: {
       type: [String, Number],
-      default: 100
+      default: 100,
     },
     fill: {
       type: String,
-      default: 'none'
+      default: 'none',
     },
     rate: {
       type: Number,
-      default: 100
+      default: 100,
     },
     layerColor: {
       type: String,
-      default: WHITE
+      default: WHITE,
     },
     color: {
       type: [String, Object],
-      default: BLUE
+      default: BLUE,
     },
     strokeWidth: {
       type: Number,
-      default: 40
+      default: 40,
     },
     clockwise: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   beforeCreate() {
@@ -69,7 +69,7 @@ export default createComponent({
       const size = addUnit(this.size);
       return {
         width: size,
-        height: size
+        height: size,
       };
     },
 
@@ -88,7 +88,7 @@ export default createComponent({
         stroke: `${this.color}`,
         strokeWidth: `${this.strokeWidth + 1}px`,
         strokeLinecap: this.strokeLinecap,
-        strokeDasharray: `${offset}px ${PERIMETER}px`
+        strokeDasharray: `${offset}px ${PERIMETER}px`,
       };
     },
 
@@ -96,7 +96,7 @@ export default createComponent({
       return {
         fill: `${this.fill}`,
         stroke: `${this.layerColor}`,
-        strokeWidth: `${this.strokeWidth}px`
+        strokeWidth: `${this.strokeWidth}px`,
       };
     },
 
@@ -122,7 +122,7 @@ export default createComponent({
           </linearGradient>
         </defs>
       );
-    }
+    },
   },
 
   watch: {
@@ -143,8 +143,8 @@ export default createComponent({
           this.$emit('input', this.endRate);
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -158,7 +158,7 @@ export default createComponent({
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
         this.rafId = raf(this.animate);
       }
-    }
+    },
   },
 
   render() {
@@ -178,5 +178,5 @@ export default createComponent({
           (this.text && <div class={bem('text')}>{this.text}</div>)}
       </div>
     );
-  }
+  },
 });

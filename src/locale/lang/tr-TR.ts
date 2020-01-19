@@ -18,34 +18,34 @@ export default {
     title: 'Takvim',
     weekdays: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: Number) => `En fazla ${maxRange} gün seçin`
+    rangePrompt: (maxRange: Number) => `En fazla ${maxRange} gün seçin`,
   },
   vanContactCard: {
-    addText: 'Kişi bilgisi ekle'
+    addText: 'Kişi bilgisi ekle',
   },
   vanContactList: {
-    addText: 'Yeni kişi ekle'
+    addText: 'Yeni kişi ekle',
   },
   vanPagination: {
     prev: 'Önceki',
-    next: 'Sonraki'
+    next: 'Sonraki',
   },
   vanPullRefresh: {
     pulling: 'Yenilemek için çekin...',
-    loosing: 'Yenilemek için bırakın...'
+    loosing: 'Yenilemek için bırakın...',
   },
   vanSubmitBar: {
-    label: 'Toplam:'
+    label: 'Toplam:',
   },
   vanCoupon: {
     unlimited: 'Sınırsız',
     discount: (discount: number) => `%${discount * 10} indirim`,
-    condition: (condition: number) => `En az ${condition}`
+    condition: (condition: number) => `En az ${condition}`,
   },
   vanCouponCell: {
     title: 'Kupon',
     tips: 'Kupon yok',
-    count: (count: number) => `${count} adet teklif var`
+    count: (count: number) => `${count} adet teklif var`,
   },
   vanCouponList: {
     empty: 'Kupon yok',
@@ -53,7 +53,7 @@ export default {
     close: 'Kapat',
     enable: 'Mevcut',
     disabled: 'Mevcut değil',
-    placeholder: 'Kupon kodu'
+    placeholder: 'Kupon kodu',
   },
   vanAddressEdit: {
     area: 'Alan',
@@ -64,13 +64,13 @@ export default {
     defaultAddress: 'Varsayılan adres olarak ayarla',
     telPlaceholder: 'Telefone',
     namePlaceholder: 'İsim',
-    areaPlaceholder: 'Alan'
+    areaPlaceholder: 'Alan',
   },
   vanAddressEditDetail: {
     label: 'Adres',
-    placeholder: 'Adres'
+    placeholder: 'Adres',
   },
   vanAddressList: {
-    add: 'Yeni adres ekle'
-  }
+    add: 'Yeni adres ekle',
+  },
 };

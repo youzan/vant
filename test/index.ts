@@ -21,5 +21,5 @@ export {
   trigger,
   triggerDrag,
   mockScrollTop,
-  mockGetBoundingClientRect
+  mockGetBoundingClientRect,
 };

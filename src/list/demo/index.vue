@@ -51,13 +51,13 @@ export default {
     'zh-CN': {
       errorInfo: '错误提示',
       finishedText: '没有更多了',
-      errorText: '请求失败，点击重新加载'
+      errorText: '请求失败，点击重新加载',
     },
     'en-US': {
       errorInfo: 'Error Info',
       finishedText: 'Finished',
-      errorText: 'Request failed. Click to reload'
-    }
+      errorText: 'Request failed. Click to reload',
+    },
   },
 
   data() {
@@ -67,14 +67,14 @@ export default {
         refreshing: false,
         loading: false,
         error: false,
-        finished: false
+        finished: false,
       }, {
         items: [],
         refreshing: false,
         loading: false,
         error: false,
-        finished: false
-      }]
+        finished: false,
+      }],
     };
   },
 
@@ -114,8 +114,8 @@ export default {
         list.refreshing = false;
         this.onLoad(index, true);
       }, 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

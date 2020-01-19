@@ -9,21 +9,21 @@ export default createComponent({
     millisecond: Boolean,
     time: {
       type: Number,
-      default: 0
+      default: 0,
     },
     format: {
       type: String,
-      default: 'HH:mm:ss'
+      default: 'HH:mm:ss',
     },
     autoStart: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
-      remain: 0
+      remain: 0,
     };
   },
 
@@ -34,14 +34,14 @@ export default createComponent({
 
     formattedTime() {
       return parseFormat(this.format, this.timeData);
-    }
+    },
   },
 
   watch: {
     time: {
       immediate: true,
-      handler: 'reset'
-    }
+      handler: 'reset',
+    },
   },
 
   activated() {
@@ -146,7 +146,7 @@ export default createComponent({
         this.pause();
         this.$emit('finish');
       }
-    }
+    },
   },
 
   render() {
@@ -155,5 +155,5 @@ export default createComponent({
         {this.slots('default', this.timeData) || this.formattedTime}
       </div>
     );
-  }
+  },
 });

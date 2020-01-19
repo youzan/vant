@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [CheckboxMixin({
     bem,
     role: 'radio',
-    parent: 'vanRadio'
+    parent: 'vanRadio',
   })],
 
   computed: {
@@ -18,17 +18,17 @@ export default createComponent({
 
       set(val) {
         (this.parent || this).$emit('input', val);
-      }
+      },
     },
 
     checked() {
       return this.currentValue === this.name;
-    }
+    },
   },
 
   methods: {
     toggle() {
       this.currentValue = this.name;
-    }
-  }
+    },
+  },
 });

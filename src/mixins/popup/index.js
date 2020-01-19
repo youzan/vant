@@ -22,13 +22,13 @@ export const popupMixinProps = {
   // prevent body scroll
   lockScroll: {
     type: Boolean,
-    default: true
+    default: true,
   },
   // whether to lazy render
   lazyRender: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export function PopupMixin(options = {}) {
@@ -41,22 +41,22 @@ export function PopupMixin(options = {}) {
           if (this.overlay) {
             updateOverlay();
           }
-        }
-      })
+        },
+      }),
     ],
 
     props: popupMixinProps,
 
     data() {
       return {
-        inited: this.value
+        inited: this.value,
       };
     },
 
     computed: {
       shouldRender() {
         return this.inited || !this.lazyRender;
-      }
+      },
     },
 
     watch: {
@@ -70,7 +70,7 @@ export function PopupMixin(options = {}) {
         }
       },
 
-      overlay: 'renderOverlay'
+      overlay: 'renderOverlay',
     },
 
     mounted() {
@@ -186,7 +186,7 @@ export function PopupMixin(options = {}) {
               zIndex: context.zIndex++,
               duration: this.duration,
               className: this.overlayClass,
-              customStyle: this.overlayStyle
+              customStyle: this.overlayStyle,
             });
           } else {
             closeOverlay(this);
@@ -196,7 +196,7 @@ export function PopupMixin(options = {}) {
 
       updateZIndex(value = 0) {
         this.$el.style.zIndex = ++context.zIndex + value;
-      }
-    }
+      },
+    },
   };
 }

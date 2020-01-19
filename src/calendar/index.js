@@ -8,7 +8,7 @@ import {
   compareMonth,
   createComponent,
   calcDateNum,
-  ROW_HEIGHT
+  ROW_HEIGHT,
 } from './utils';
 
 import Popup from '../popup';
@@ -29,12 +29,12 @@ export default createComponent({
     confirmDisabledText: String,
     type: {
       type: String,
-      default: 'single'
+      default: 'single',
     },
     minDate: {
       type: Date,
       validator: isDate,
-      default: () => new Date()
+      default: () => new Date(),
     },
     maxDate: {
       type: Date,
@@ -42,50 +42,50 @@ export default createComponent({
       default() {
         const now = new Date();
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
-      }
+      },
     },
     position: {
       type: String,
-      default: 'bottom'
+      default: 'bottom',
     },
     rowHeight: {
       type: Number,
-      default: ROW_HEIGHT
+      default: ROW_HEIGHT,
     },
     round: {
       type: Boolean,
-      default: true
+      default: true,
     },
     poppable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showMark: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showConfirm: {
       type: Boolean,
-      default: true
+      default: true,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     maxRange: {
       type: Number,
-      default: null
-    }
+      default: null,
+    },
   },
 
   data() {
     return {
       monthTitle: '',
-      currentDate: this.getInitialDate()
+      currentDate: this.getInitialDate(),
     };
   },
 
@@ -114,7 +114,7 @@ export default createComponent({
       }
 
       return !this.currentDate;
-    }
+    },
   },
 
   watch: {
@@ -129,7 +129,7 @@ export default createComponent({
 
     defaultDate(val) {
       this.currentDate = val;
-    }
+    },
   },
 
   mounted() {
@@ -331,7 +331,7 @@ export default createComponent({
       return (
         <div
           class={bem('footer', {
-            'safe-area-inset-bottom': this.safeAreaInsetBottom
+            'safe-area-inset-bottom': this.safeAreaInsetBottom,
           })}
         >
           {this.genFooterContent()}
@@ -346,7 +346,7 @@ export default createComponent({
             title={this.title}
             monthTitle={this.monthTitle}
             scopedSlots={{
-              title: () => this.slots('title')
+              title: () => this.slots('title'),
             }}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
@@ -355,7 +355,7 @@ export default createComponent({
           {this.genFooter()}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -377,5 +377,5 @@ export default createComponent({
     }
 
     return this.genCalendar();
-  }
+  },
 });

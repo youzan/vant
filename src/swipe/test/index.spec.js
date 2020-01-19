@@ -4,7 +4,7 @@ function mockPageHidden() {
   let hidden = true;
 
   Object.defineProperty(document, 'hidden', {
-    get: () => hidden
+    get: () => hidden,
   });
 
   trigger(window, 'visibilitychange');
@@ -23,29 +23,29 @@ const Component = {
     vertical: Boolean,
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     },
     touchable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     autoplay: {
       type: Number,
-      default: 0
+      default: 0,
     },
     initialSwipe: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
       style: {
         width: '100px',
-        height: '100px'
-      }
+        height: '100px',
+      },
     };
-  }
+  },
 };
 
 test('swipeTo method', async () => {
@@ -61,7 +61,7 @@ test('swipeTo method with immediate option', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2, {
-    immediate: true
+    immediate: true,
   });
 
   await later(100);
@@ -93,8 +93,8 @@ test('initial swipe', () => {
 test('vertical swipe', () => {
   const wrapper = mount(Component, {
     propsData: {
-      vertical: true
-    }
+      vertical: true,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -106,8 +106,8 @@ test('vertical swipe', () => {
 test('untouchable', () => {
   const wrapper = mount(Component, {
     propsData: {
-      touchable: false
-    }
+      touchable: false,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -140,8 +140,8 @@ test('loop', () => {
 test('not loop', () => {
   const wrapper = mount(Component, {
     propsData: {
-      loop: false
-    }
+      loop: false,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -159,11 +159,11 @@ test('should pause auto play when page hidden', async () => {
   mount(Component, {
     propsData: {
       loop: true,
-      autoplay: 1
+      autoplay: 1,
     },
     listeners: {
-      change
-    }
+      change,
+    },
   });
 
   mockPageHidden();

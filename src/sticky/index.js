@@ -13,7 +13,7 @@ export default createComponent({
 
       bind(this.scroller, 'scroll', this.onScroll, true);
       this.onScroll();
-    })
+    }),
   ],
 
   props: {
@@ -21,15 +21,15 @@ export default createComponent({
     container: null,
     offsetTop: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   data() {
     return {
       fixed: false,
       height: 0,
-      transform: 0
+      transform: 0,
     };
   },
 
@@ -54,7 +54,7 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   methods: {
@@ -68,7 +68,7 @@ export default createComponent({
       const emitScrollEvent = () => {
         this.$emit('scroll', {
           scrollTop,
-          isFixed: this.fixed
+          isFixed: this.fixed,
         });
       };
 
@@ -99,13 +99,13 @@ export default createComponent({
       }
 
       emitScrollEvent();
-    }
+    },
   },
 
   render() {
     const { fixed } = this;
     const style = {
-      height: fixed ? `${this.height}px` : null
+      height: fixed ? `${this.height}px` : null,
     };
 
     return (
@@ -115,5 +115,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

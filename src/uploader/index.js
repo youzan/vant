@@ -10,7 +10,7 @@ export default createComponent({
   inheritAttrs: false,
 
   model: {
-    prop: 'fileList'
+    prop: 'fileList',
   },
 
   props: {
@@ -22,57 +22,57 @@ export default createComponent({
     previewSize: [Number, String],
     name: {
       type: [Number, String],
-      default: ''
+      default: '',
     },
     accept: {
       type: String,
-      default: 'image/*'
+      default: 'image/*',
     },
     fileList: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     maxSize: {
       type: Number,
-      default: Number.MAX_VALUE
+      default: Number.MAX_VALUE,
     },
     maxCount: {
       type: Number,
-      default: Number.MAX_VALUE
+      default: Number.MAX_VALUE,
     },
     deletable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     previewImage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     previewFullImage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     imageFit: {
       type: String,
-      default: 'cover'
+      default: 'cover',
     },
     resultType: {
       type: String,
-      default: 'dataUrl'
-    }
+      default: 'dataUrl',
+    },
   },
 
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
-    }
+    },
   },
 
   methods: {
     getDetail(index = this.fileList.length) {
       return {
         name: this.name,
-        index
+        index,
       };
     },
 
@@ -208,7 +208,7 @@ export default createComponent({
         startPosition: imageFiles.indexOf(item),
         onClose: () => {
           this.$emit('close-preview');
-        }
+        },
       });
     },
 
@@ -248,7 +248,7 @@ export default createComponent({
           class={bem('file')}
           style={{
             width: this.previewSizeWithUnit,
-            height: this.previewSizeWithUnit
+            height: this.previewSizeWithUnit,
           }}
         >
           <Icon class={bem('file-icon')} name="description" />
@@ -310,7 +310,7 @@ export default createComponent({
         const size = this.previewSizeWithUnit;
         style = {
           width: size,
-          height: size
+          height: size,
         };
       }
 
@@ -321,7 +321,7 @@ export default createComponent({
           {Input}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -333,5 +333,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

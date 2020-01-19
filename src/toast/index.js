@@ -22,7 +22,7 @@ const defaultOptions = {
   getContainer: 'body',
   overlayStyle: null,
   closeOnClick: false,
-  closeOnClickOverlay: false
+  closeOnClickOverlay: false,
 };
 
 // default options of specific type
@@ -31,7 +31,7 @@ let defaultOptionsMap = {};
 let queue = [];
 let multiple = false;
 let currentOptions = {
-  ...defaultOptions
+  ...defaultOptions,
 };
 
 function parseOptions(message) {
@@ -50,7 +50,7 @@ function createInstance() {
 
   if (!queue.length || multiple) {
     const toast = new (Vue.extend(VueToast))({
-      el: document.createElement('div')
+      el: document.createElement('div'),
     });
 
     toast.$on('input', value => {
@@ -69,7 +69,7 @@ function transformOptions(options) {
     ...options,
     overlay: options.mask || options.overlay,
     mask: undefined,
-    duration: undefined
+    duration: undefined,
   };
 }
 
@@ -85,7 +85,7 @@ function Toast(options = {}) {
   options = {
     ...currentOptions,
     ...defaultOptionsMap[options.type || currentOptions.type],
-    ...options
+    ...options,
   };
 
   options.clear = () => {
@@ -125,7 +125,7 @@ function Toast(options = {}) {
 const createMethod = type => options =>
   Toast({
     type,
-    ...parseOptions(options)
+    ...parseOptions(options),
   });
 
 ['loading', 'success', 'fail'].forEach(method => {

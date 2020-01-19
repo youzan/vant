@@ -52,16 +52,16 @@ export default {
       mode: '通知栏模式',
       wrapable: '多行展示',
       text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
-      customStyle: '自定义样式'
+      customStyle: '自定义样式',
     },
     'en-US': {
       mode: 'Mode',
       wrapable: 'Wrapable',
       unscrollable: 'Disable scroll',
       text: 'Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.',
-      customStyle: 'Custom Style'
-    }
-  }
+      customStyle: 'Custom Style',
+    },
+  },
 };
 </script>
 

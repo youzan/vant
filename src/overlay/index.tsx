@@ -32,7 +32,7 @@ function Overlay(
 ) {
   const style: { [key: string]: any } = {
     zIndex: props.zIndex,
-    ...props.customStyle
+    ...props.customStyle,
   };
 
   if (isDef(props.duration)) {
@@ -61,7 +61,7 @@ Overlay.props = {
   customStyle: Object,
   zIndex: {
     type: [Number, String],
-    default: 1
+    default: 1,
   },
 };
 

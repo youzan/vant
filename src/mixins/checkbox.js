@@ -18,12 +18,12 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     labelDisabled: Boolean,
     shape: {
       type: String,
-      default: 'round'
+      default: 'round',
     },
     bindGroup: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
@@ -42,7 +42,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       if (checkedColor && this.checked && !this.isDisabled) {
         return {
           borderColor: checkedColor,
-          backgroundColor: checkedColor
+          backgroundColor: checkedColor,
         };
       }
     },
@@ -53,7 +53,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       }
 
       return 0;
-    }
+    },
   },
 
   methods: {
@@ -78,7 +78,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
           ref="icon"
           class={bem('icon', [
             this.shape,
-            { disabled: this.isDisabled, checked }
+            { disabled: this.isDisabled, checked },
           ])}
           style={{ fontSize: addUnit(iconSize) }}
         >
@@ -97,14 +97,14 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
           <span
             class={bem('label', [
               this.labelPosition,
-              { disabled: this.isDisabled }
+              { disabled: this.isDisabled },
             ])}
           >
             {slot}
           </span>
         );
       }
-    }
+    },
   },
 
   render() {
@@ -121,7 +121,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
         role={role}
         class={bem({
           disabled: this.isDisabled,
-          'label-disabled': this.labelDisabled
+          'label-disabled': this.labelDisabled,
         })}
         tabindex={this.tabindex}
         aria-checked={String(this.checked)}
@@ -130,5 +130,5 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
         {Children}
       </div>
     );
-  }
+  },
 });

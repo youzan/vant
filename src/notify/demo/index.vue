@@ -33,7 +33,7 @@ export default {
       notifyType: '通知类型',
       customColor: '自定义颜色',
       customNotify: '自定义配置',
-      customDuration: '自定义时长'
+      customDuration: '自定义时长',
     },
     'en-US': {
       primary: 'Primary',
@@ -44,8 +44,8 @@ export default {
       notifyType: 'Notify Type',
       customColor: 'Custom Color',
       customNotify: 'Custom Notify',
-      customDuration: 'Custom Duration'
-    }
+      customDuration: 'Custom Duration',
+    },
   },
 
   methods: {
@@ -57,24 +57,24 @@ export default {
       this.$notify({
         message: this.$t('customColor'),
         color: '#ad0000',
-        background: '#ffe1e1'
+        background: '#ffe1e1',
       });
     },
 
     showCustomDuration() {
       this.$notify({
         message: this.$t('customDuration'),
-        duration: 1000
+        duration: 1000,
       });
     },
 
     showType(type) {
       this.$notify({
         message: this.$t('content'),
-        type
+        type,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

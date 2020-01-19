@@ -65,7 +65,7 @@ export default {
       roundCorner: '圆角弹窗',
       closeIcon: '关闭图标',
       customCloseIcon: '自定义图标',
-      customIconPosition: '图标位置'
+      customIconPosition: '图标位置',
     },
     'en-US': {
       position: 'Position',
@@ -78,8 +78,8 @@ export default {
       roundCorner: 'Round Corner',
       closeIcon: 'Close Icon',
       customCloseIcon: 'Custom Icon',
-      customIconPosition: 'Icon Position'
-    }
+      customIconPosition: 'Icon Position',
+    },
   },
 
   data() {
@@ -93,9 +93,9 @@ export default {
       showRoundCorner: false,
       showGetContainer: false,
       showCustomCloseIcon: false,
-      showCustomIconPosition: false
+      showCustomIconPosition: false,
     };
-  }
+  },
 };
 </script>
 

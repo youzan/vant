@@ -55,31 +55,31 @@ function CouponCell(
 }
 
 CouponCell.model = {
-  prop: 'chosenCoupon'
+  prop: 'chosenCoupon',
 };
 
 CouponCell.props = {
   title: String,
   coupons: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   currency: {
     type: String,
-    default: '¥'
+    default: '¥',
   },
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
   editable: {
     type: Boolean,
-    default: true
+    default: true,
   },
   chosenCoupon: {
     type: Number,
-    default: -1
-  }
+    default: -1,
+  },
 };
 
 export default createComponent<CouponCellProps>(CouponCell);

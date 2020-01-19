@@ -97,7 +97,7 @@ function ActionSheet(
 
       return [
         <span class={bem('name')}>{item.name}</span>,
-        item.subname && <span class={bem('subname')}>{item.subname}</span>
+        item.subname && <span class={bem('subname')}>{item.subname}</span>,
       ];
     }
 
@@ -162,24 +162,24 @@ ActionSheet.props = {
   closeOnClickAction: Boolean,
   round: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeIcon: {
     type: String,
-    default: 'cross'
+    default: 'cross',
   },
   safeAreaInsetBottom: {
     type: Boolean,
-    default: true
+    default: true,
   },
   overlay: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeOnClickOverlay: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<ActionSheetProps>(ActionSheet);

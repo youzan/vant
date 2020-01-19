@@ -10,7 +10,7 @@ const [createComponent, bem, t] = createNamespace('contact-edit');
 
 const defaultContact = {
   tel: '',
-  name: ''
+  name: '',
 };
 
 export default createComponent({
@@ -22,24 +22,24 @@ export default createComponent({
     setDefaultLabel: String,
     contactInfo: {
       type: Object,
-      default: () => ({ ...defaultContact })
+      default: () => ({ ...defaultContact }),
     },
     telValidator: {
       type: Function,
-      default: isMobile
-    }
+      default: isMobile,
+    },
   },
 
   data() {
     return {
       data: {
         ...defaultContact,
-        ...this.contactInfo
+        ...this.contactInfo,
       },
       errorInfo: {
         name: '',
-        tel: ''
-      }
+        tel: '',
+      },
     };
   },
 
@@ -47,9 +47,9 @@ export default createComponent({
     contactInfo(val) {
       this.data = {
         ...defaultContact,
-        ...val
+        ...val,
       };
-    }
+    },
   },
 
   methods: {
@@ -83,11 +83,11 @@ export default createComponent({
 
     onDelete() {
       Dialog.confirm({
-        message: t('confirmDelete')
+        message: t('confirmDelete'),
       }).then(() => {
         this.$emit('delete', this.data);
       });
-    }
+    },
   },
 
   render() {
@@ -152,5 +152,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

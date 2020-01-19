@@ -12,8 +12,8 @@ export default createComponent({
     TouchMixin,
     ClickOutsideMixin({
       event: 'touchstart',
-      method: 'onClick'
-    })
+      method: 'onClick',
+    }),
   ],
 
   props: {
@@ -27,14 +27,14 @@ export default createComponent({
     stopPropagation: Boolean,
     name: {
       type: [Number, String],
-      default: ''
-    }
+      default: '',
+    },
   },
 
   data() {
     return {
       offset: 0,
-      dragging: false
+      dragging: false,
     };
   },
 
@@ -45,7 +45,7 @@ export default createComponent({
 
     computedRightWidth() {
       return this.rightWidth || this.getWidthByRef('right');
-    }
+    },
   },
 
   mounted() {
@@ -75,7 +75,7 @@ export default createComponent({
         name: this.name,
         // @deprecated
         // should be removed in next major version
-        detail: this.name
+        detail: this.name,
       });
     },
 
@@ -87,7 +87,7 @@ export default createComponent({
         this.opened = false;
         this.$emit('close', {
           position,
-          name: this.name
+          name: this.name,
         });
       }
     },
@@ -172,7 +172,7 @@ export default createComponent({
           this.beforeClose({
             position,
             name: this.name,
-            instance: this
+            instance: this,
           });
         } else if (this.onClose) {
           this.onClose(position, this, { name: this.name });
@@ -221,13 +221,13 @@ export default createComponent({
           </div>
         );
       }
-    }
+    },
   },
 
   render() {
     const wrapperStyle = {
       transform: `translate3d(${this.offset}px, 0, 0)`,
-      transitionDuration: this.dragging ? '0s' : '.6s'
+      transitionDuration: this.dragging ? '0s' : '.6s',
     };
 
     return (
@@ -239,5 +239,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

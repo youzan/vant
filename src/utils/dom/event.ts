@@ -12,7 +12,7 @@ if (!isServer) {
       get() {
         /* istanbul ignore next */
         supportsPassive = true;
-      }
+      },
     });
     window.addEventListener('test-passive', null as any, opts);
   // eslint-disable-next-line no-empty

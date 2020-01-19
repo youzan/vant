@@ -48,14 +48,14 @@ export default {
       showInfo: '提示信息',
       disabled: '禁用选项',
       changeEvent: '监听切换事件',
-      selectTip: '你切换到了'
+      selectTip: '你切换到了',
     },
     'en-US': {
       showInfo: 'Show Info',
       disabled: 'Disabled',
       changeEvent: 'Change Event',
-      selectTip: 'You select '
-    }
+      selectTip: 'You select ',
+    },
   },
 
   data() {
@@ -63,7 +63,7 @@ export default {
       activeKey1: 0,
       activeKey2: 0,
       activeKey3: 0,
-      activeKey4: 0
+      activeKey4: 0,
     };
   },
 
@@ -71,10 +71,10 @@ export default {
     onChange(index) {
       this.$notify({
         type: 'primary',
-        message: `${this.$t('selectTip')} ${this.$t('title')}${index + 1}`
+        message: `${this.$t('selectTip')} ${this.$t('title')}${index + 1}`,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

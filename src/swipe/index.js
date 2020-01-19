@@ -19,7 +19,7 @@ export default createComponent({
       } else {
         this.clear();
       }
-    })
+    }),
   ],
 
   props: {
@@ -30,28 +30,28 @@ export default createComponent({
     indicatorColor: String,
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     },
     duration: {
       type: Number,
-      default: 500
+      default: 500,
     },
     touchable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     initialSwipe: {
       type: Number,
-      default: 0
+      default: 0,
     },
     showIndicators: {
       type: Boolean,
-      default: true
+      default: true,
     },
     stopPropagation: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
@@ -63,7 +63,7 @@ export default createComponent({
       deltaX: 0,
       deltaY: 0,
       swipes: [],
-      swiping: false
+      swiping: false,
     };
   },
 
@@ -82,7 +82,7 @@ export default createComponent({
       } else {
         this.autoPlay();
       }
-    }
+    },
   },
 
   computed: {
@@ -119,13 +119,13 @@ export default createComponent({
         [mainAxis]: `${this.trackSize}px`,
         [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
         transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
-        transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`
+        transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`,
       };
     },
 
     indicatorStyle() {
       return {
-        backgroundColor: this.indicatorColor
+        backgroundColor: this.indicatorColor,
       };
     },
 
@@ -134,7 +134,7 @@ export default createComponent({
       return (
         (this.vertical ? rect.height : rect.width) - this.size * this.count
       );
-    }
+    },
   },
 
   mounted() {
@@ -200,7 +200,7 @@ export default createComponent({
         const offset = this.vertical ? this.offsetY : this.offsetX;
         this.move({
           pace: offset > 0 ? (this.delta > 0 ? -1 : 1) : 0,
-          emitChange: true
+          emitChange: true,
         });
       }
 
@@ -276,7 +276,7 @@ export default createComponent({
         this.swiping = false;
         this.move({
           pace: -1,
-          emitChange: true
+          emitChange: true,
         });
       });
     },
@@ -290,7 +290,7 @@ export default createComponent({
         this.swiping = false;
         this.move({
           pace: 1,
-          emitChange: true
+          emitChange: true,
         });
       });
     },
@@ -318,7 +318,7 @@ export default createComponent({
 
         this.move({
           pace: targetIndex - this.active,
-          emitChange: true
+          emitChange: true,
         });
       });
     },
@@ -371,7 +371,7 @@ export default createComponent({
           </div>
         );
       }
-    }
+    },
   },
 
   render() {
@@ -383,5 +383,5 @@ export default createComponent({
         {this.genIndicator()}
       </div>
     );
-  }
+  },
 });

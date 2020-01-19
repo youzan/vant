@@ -5,8 +5,8 @@ test('z-index prop', () => {
   const wrapper = mount(Overlay, {
     propsData: {
       show: true,
-      zIndex: 99
-    }
+      zIndex: 99,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -16,8 +16,8 @@ test('class-name prop', () => {
   const wrapper = mount(Overlay, {
     propsData: {
       show: true,
-      className: 'my-overlay'
-    }
+      className: 'my-overlay',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -28,9 +28,9 @@ test('custom style prop', () => {
     propsData: {
       show: true,
       customStyle: {
-        backgroundColor: 'red'
-      }
-    }
+        backgroundColor: 'red',
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -40,8 +40,8 @@ test('duration prop', () => {
   const wrapper = mount(Overlay, {
     propsData: {
       show: true,
-      duration: 1
-    }
+      duration: 1,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -52,9 +52,9 @@ test('click event', () => {
   const wrapper = mount(Overlay, {
     context: {
       on: {
-        click: onClick
-      }
-    }
+        click: onClick,
+      },
+    },
   });
 
   wrapper.trigger('click');
@@ -64,8 +64,8 @@ test('click event', () => {
 test('default slot', () => {
   const wrapper = mount(Overlay, {
     scopedSlots: {
-      default: () => 'Custom Default'
-    }
+      default: () => 'Custom Default',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

@@ -75,19 +75,19 @@ export default {
     'zh-CN': {
       title: '商品名称',
       discountInfo: '营销信息',
-      customContent: '自定义内容'
+      customContent: '自定义内容',
     },
     'en-US': {
       discountInfo: 'Discount Info',
-      customContent: 'Custom Content'
-    }
+      customContent: 'Custom Content',
+    },
   },
 
   data() {
     return {
-      imageURL: 'https://img.yzcdn.cn/vant/t-thirt.jpg'
+      imageURL: 'https://img.yzcdn.cn/vant/t-thirt.jpg',
     };
-  }
+  },
 };
 </script>
 

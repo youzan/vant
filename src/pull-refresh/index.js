@@ -20,27 +20,27 @@ export default createComponent({
     loadingText: String,
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     successDuration: {
       type: Number,
-      default: 500
+      default: 500,
     },
     animationDuration: {
       type: Number,
-      default: 300
+      default: 300,
     },
     headHeight: {
       type: Number,
-      default: DEFAULT_HEAD_HEIGHT
-    }
+      default: DEFAULT_HEAD_HEIGHT,
+    },
   },
 
   data() {
     return {
       status: 'normal',
       distance: 0,
-      duration: 0
+      duration: 0,
     };
   },
 
@@ -54,10 +54,10 @@ export default createComponent({
     headStyle() {
       if (this.headHeight !== DEFAULT_HEAD_HEIGHT) {
         return {
-          height: `${this.headHeight}px`
+          height: `${this.headHeight}px`,
         };
       }
-    }
+    },
   },
 
   watch: {
@@ -71,7 +71,7 @@ export default createComponent({
       } else {
         this.setStatus(0, false);
       }
-    }
+    },
   },
 
   mounted() {
@@ -189,13 +189,13 @@ export default createComponent({
       setTimeout(() => {
         this.setStatus(0);
       }, this.successDuration);
-    }
+    },
   },
 
   render() {
     const style = {
       transitionDuration: `${this.duration}ms`,
-      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : ''
+      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : '',
     };
 
     return (
@@ -208,5 +208,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

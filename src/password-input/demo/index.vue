@@ -54,15 +54,15 @@ export default {
       customLength: '自定义长度',
       removeMask: '明文展示',
       hintError: '错误提示',
-      errorInfo: '密码错误'
+      errorInfo: '密码错误',
     },
     'en-US': {
       info: 'Some tips',
       customLength: 'Custom Length',
       removeMask: 'Remove Mask',
       hintError: 'Hint Error',
-      errorInfo: 'Password Mistake'
-    }
+      errorInfo: 'Password Mistake',
+    },
   },
 
   data() {
@@ -72,7 +72,7 @@ export default {
       value3: '123',
       value4: '123',
       keyboard: 'value1',
-      errorInfo: ''
+      errorInfo: '',
     };
   },
 
@@ -90,7 +90,7 @@ export default {
     onDelete() {
       const { keyboard } = this;
       this[keyboard] = this[keyboard].slice(0, this[keyboard].length - 1);
-    }
-  }
+    },
+  },
 };
 </script>
