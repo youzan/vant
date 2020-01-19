@@ -25,13 +25,15 @@ v-model 用于控制搜索框中的文字，background 可以自定义搜索框�
 <van-search placeholder="Placeholder" v-model="value" background="#c8c9cc"/>
 ```
 
-### 禁用
+### 禁用搜索框
 
 ```html
 <van-search placeholder="请输入搜索关键词" v-model="value" disabled/>
 ```
 
-### 自定义输入内容对齐方式
+###  搜索框内容对齐
+
+通过 `input-align` 属性可以设置搜索框内容的对齐方式
 
 ```html
 <van-search placeholder="Placeholder" v-model="value" input-align="center"/>

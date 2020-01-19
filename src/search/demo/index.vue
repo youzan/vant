@@ -53,18 +53,18 @@ export default {
       placeholder: '请输入搜索关键词',
       customButton: '自定义按钮',
       background: '自定义背景色',
-      inputAlign: '自定义输入内容对齐方式',
+      inputAlign: '搜索框内容对齐',
       listenToEvents: '事件监听',
-      disabled: '禁用'
+      disabled: '禁用搜索框'
     },
     'en-US': {
       label: 'Address',
       placeholder: 'Placeholder',
       customButton: 'Custom Action Button',
       background: 'Custom Background Color',
-      inputAlign: 'Custom Input Content Alignment',
+      inputAlign: 'Search Bar Content Alignment',
       listenToEvents: 'Listen to Events',
-      disabled: 'Disabled'
+      disabled: 'Disable Search Bar'
     }
   },
 
