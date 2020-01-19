@@ -30,6 +30,10 @@
     }
   },
   "lint-staged": {
+    "*.{ts,tsx,js,vue,less}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.{ts,tsx,js,vue}": [
       "eslint --fix",
       "git add"
