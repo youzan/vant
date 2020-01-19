@@ -1,10 +1,9 @@
+// Utils
 import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
-import { ParentMixin } from '../mixins/relation';
-import { BindEventMixin } from '../mixins/bind-event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import {
   setRootScrollTop,
@@ -13,9 +12,14 @@ import {
   getVisibleTop,
 } from '../utils/dom/scroll';
 
+// Mixins
+import { ParentMixin } from '../mixins/relation';
+import { BindEventMixin } from '../mixins/bind-event';
+
+// Components
 import Title from './Title';
-import Content from './Content';
 import Sticky from '../sticky';
+import Content from './Content';
 
 const [createComponent, bem] = createNamespace('tabs');
 

@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
 import { getScrollTop, getScroller } from '../utils/dom/scroll';
+
+// Mixins
+import { TouchMixin } from '../mixins/touch';
+
+// Components
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('pull-refresh');

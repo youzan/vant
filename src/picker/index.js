@@ -1,8 +1,11 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
-import { pickerProps } from './shared';
 import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { pickerProps } from './shared';
+
+// Components
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 

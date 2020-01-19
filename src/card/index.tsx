@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Tag from '../tag';
 import Image from '../image';
 

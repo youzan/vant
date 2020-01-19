@@ -1,9 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
-import { BindEventMixin } from '../mixins/bind-event';
 import { doubleRaf } from '../utils/dom/raf';
 import { range } from '../utils/format/number';
+
+// Mixins
+import { TouchMixin } from '../mixins/touch';
+import { BindEventMixin } from '../mixins/bind-event';
 
 const [createComponent, bem] = createNamespace('swipe');
 

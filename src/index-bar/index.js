@@ -1,17 +1,31 @@
+// Utils
 import { createNamespace } from '../utils';
-import { TouchMixin } from '../mixins/touch';
-import { ParentMixin } from '../mixins/relation';
-import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/constant';
-import { preventDefault } from '../utils/dom/event';
 import { isHidden } from '../utils/dom/style';
+import { preventDefault } from '../utils/dom/event';
 import {
+  getScroller,
   getScrollTop,
   getElementTop,
   getRootScrollTop,
   setRootScrollTop,
-  getScroller,
 } from '../utils/dom/scroll';
+
+// Mixins
+import { TouchMixin } from '../mixins/touch';
+import { ParentMixin } from '../mixins/relation';
+import { BindEventMixin } from '../mixins/bind-event';
+
+function genAlphabet() {
+  const indexList = [];
+  const charCodeOfA = 'A'.charCodeAt(0);
+
+  for (let i = 0; i < 26; i++) {
+    indexList.push(String.fromCharCode(charCodeOfA + i));
+  }
+
+  return indexList;
+}
 
 const [createComponent, bem] = createNamespace('index-bar');
 
@@ -47,16 +61,7 @@ export default createComponent({
     },
     indexList: {
       type: Array,
-      default() {
-        const indexList = [];
-        const charCodeOfA = 'A'.charCodeAt(0);
-
-        for (let i = 0; i < 26; i++) {
-          indexList.push(String.fromCharCode(charCodeOfA + i));
-        }
-
-        return indexList;
-      },
+      default: genAlphabet,
     },
   },
 

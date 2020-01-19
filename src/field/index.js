@@ -1,11 +1,14 @@
+// Utils
+import { formatNumber } from './utils';
+import { isIOS } from '../utils/validate/system';
+import { preventDefault } from '../utils/dom/event';
+import { resetScroll } from '../utils/dom/reset-scroll';
+import { createNamespace, isObj, isDef, addUnit } from '../utils';
+
+// Components
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { preventDefault } from '../utils/dom/event';
-import { resetScroll } from '../utils/dom/reset-scroll';
-import { isIOS } from '../utils/validate/system';
-import { formatNumber } from './utils';
-import { createNamespace, isObj, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('field');
 

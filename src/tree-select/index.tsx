@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Icon from '../icon';
 import Sidebar from '../sidebar';
 import SidebarItem from '../sidebar-item';

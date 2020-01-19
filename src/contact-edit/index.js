@@ -1,10 +1,13 @@
+// Utils
 import { createNamespace } from '../utils';
-import Button from '../button';
+import { isMobile } from '../utils/validate/mobile';
+
+// Components
+import Cell from '../cell';
 import Field from '../field';
+import Button from '../button';
 import Dialog from '../dialog';
 import Switch from '../switch';
-import Cell from '../cell';
-import { isMobile } from '../utils/validate/mobile';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
 

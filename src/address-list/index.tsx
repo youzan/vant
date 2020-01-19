@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Button from '../button';
 import RadioGroup from '../radio-group';
 import AddressItem, { AddressItemData } from './Item';

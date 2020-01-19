@@ -1,8 +1,11 @@
+// Utils
 import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { getScroller } from '../utils/dom/scroll';
+
+// Mixins
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
-import { getScroller } from '../utils/dom/scroll';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 

@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
+
+// Components
 import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
 

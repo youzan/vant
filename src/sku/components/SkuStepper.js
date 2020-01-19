@@ -1,6 +1,6 @@
 import { createNamespace } from '../../utils';
-import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
+import Stepper from '../../stepper';
 
 const namespace = createNamespace('sku-stepper');
 const createComponent = namespace[0];

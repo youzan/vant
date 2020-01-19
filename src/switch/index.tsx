@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { BLUE } from '../utils/constant';
-import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
+import { switchProps, SharedSwitchProps } from './shared';
+
+// Components
 import Loading from '../loading';
 
 // Types

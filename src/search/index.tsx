@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
+
+// Components
 import Field from '../field';
 
 // Types

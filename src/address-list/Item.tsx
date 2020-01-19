@@ -1,9 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
+import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
-import Tag from '../tag';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';

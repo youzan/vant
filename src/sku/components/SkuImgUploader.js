@@ -1,4 +1,7 @@
+// Utils
 import { createNamespace } from '../../utils';
+
+// Components
 import Icon from '../../icon';
 import Loading from '../../loading';
 import Uploader from '../../uploader';

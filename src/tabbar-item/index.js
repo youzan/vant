@@ -1,8 +1,13 @@
+// Utils
 import { createNamespace, isObj, isDef } from '../utils';
+import { route, routeProps } from '../utils/router';
+
+// Mixins
+import { ChildrenMixin } from '../mixins/relation';
+
+// Components
 import Icon from '../icon';
 import Info from '../info';
-import { route, routeProps } from '../utils/router';
-import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
 

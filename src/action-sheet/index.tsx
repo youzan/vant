@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_TOP } from '../utils/constant';
+
+// Mixins
 import { popupMixinProps } from '../mixins/popup';
+
+// Components
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';

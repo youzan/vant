@@ -1,4 +1,7 @@
+// Utils
 import { createNamespace } from '../utils';
+
+// Components
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Field from '../field';

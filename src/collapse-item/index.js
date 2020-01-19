@@ -1,9 +1,14 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { raf, doubleRaf } from '../utils/dom/raf';
+
+// Mixins
+import { ChildrenMixin } from '../mixins/relation';
+
+// Components
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 

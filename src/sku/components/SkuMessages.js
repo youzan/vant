@@ -1,9 +1,12 @@
+// Utils
 import { createNamespace } from '../../utils';
-import Cell from '../../cell';
-import CellGroup from '../../cell-group';
-import Field from '../../field';
 import { isEmail } from '../../utils/validate/email';
 import { isNumeric } from '../../utils/validate/number';
+
+// Components
+import Cell from '../../cell';
+import Field from '../../field';
+import CellGroup from '../../cell-group';
 import SkuImgUploader from './SkuImgUploader';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');

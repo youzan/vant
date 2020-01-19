@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
-import { BindEventMixin } from '../mixins/bind-event';
 import { getScroller } from '../utils/dom/scroll';
+
+// Mixins
+import { BindEventMixin } from '../mixins/bind-event';
+
+// Components
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('list');

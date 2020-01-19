@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { inherit } from '../utils/functional';
+
+// Components
 import Info from '../info';
 
 // Types

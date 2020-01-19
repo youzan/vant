@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
-import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
+import { cellProps, SharedCellProps } from './shared';
+
+// Components
 import Icon from '../icon';
 
 // Types

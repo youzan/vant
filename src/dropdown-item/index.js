@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
+import { on, off } from '../utils/dom/event';
+
+// Mixins
 import { PortalMixin } from '../mixins/portal';
 import { ChildrenMixin } from '../mixins/relation';
-import { on, off } from '../utils/dom/event';
+
+// Components
 import Cell from '../cell';
 import Icon from '../icon';
 import Popup from '../popup';

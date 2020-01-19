@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace, noop } from '../utils';
 import { inherit } from '../utils/functional';
 import { BORDER_BOTTOM } from '../utils/constant';
+
+// Components
 import Icon from '../icon';
 
 // Types

@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
+
+// Components
 import Cell from '../cell';
 import Field from '../field';
 

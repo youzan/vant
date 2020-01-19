@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, addUnit, noop } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
+
+// Components
 import Icon from '../icon';
 import Image from '../image';
 import ImagePreview from '../image-preview';

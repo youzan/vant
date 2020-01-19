@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Cell from '../cell';
 
 // Types

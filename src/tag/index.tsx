@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
 import { BORDER_SURROUND } from '../utils/constant';
+
+// Components
 import Icon from '../icon';
 
 // Types

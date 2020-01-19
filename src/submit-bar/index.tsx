@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import Button, { ButtonType } from '../button';
+
+// Components
 import Icon from '../icon';
+import Button, { ButtonType } from '../button';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';

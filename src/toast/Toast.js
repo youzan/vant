@@ -1,6 +1,11 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
-import { PopupMixin } from '../mixins/popup';
 import { lockClick } from './lock-click';
+
+// Mixins
+import { PopupMixin } from '../mixins/popup';
+
+// Components
 import Icon from '../icon';
 import Loading from '../loading';
 

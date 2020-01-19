@@ -1,11 +1,16 @@
+// Utils
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { on, preventDefault } from '../utils/dom/event';
+
+// Mixins
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
+
+// Components
 import Image from '../image';
-import Loading from '../loading';
 import Swipe from '../swipe';
+import Loading from '../loading';
 import SwipeItem from '../swipe-item';
 
 const [createComponent, bem] = createNamespace('image-preview');

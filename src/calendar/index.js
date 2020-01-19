@@ -1,3 +1,4 @@
+// Utils
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -11,6 +12,7 @@ import {
   ROW_HEIGHT,
 } from './utils';
 
+// Components
 import Popup from '../popup';
 import Button from '../button';
 import Toast from '../toast';

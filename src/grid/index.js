@@ -1,6 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 import { BORDER_TOP } from '../utils/constant';
+import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('grid');
 

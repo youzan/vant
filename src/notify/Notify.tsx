@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { WHITE } from '../utils/constant';
 import { inherit } from '../utils/functional';
+
+// Mixins
 import { popupMixinProps } from '../mixins/popup';
+
+// Components
 import Popup from '../popup';
 
 // Types

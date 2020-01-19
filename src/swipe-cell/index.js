@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
+
+// Mixins
 import { TouchMixin } from '../mixins/touch';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 

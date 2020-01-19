@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, isObj } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
+
+// Components
 import Area from '../area';
 import Field from '../field';
 import Popup from '../popup';
