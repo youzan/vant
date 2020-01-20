@@ -231,6 +231,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
 | max-range`2.4.3` | Number of selectable days | *number* | - |
 | range-prompt`2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
+| get-container`2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 
 ### Data Structure of Day
 

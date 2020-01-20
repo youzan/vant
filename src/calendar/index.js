@@ -28,6 +28,7 @@ export default createComponent({
     confirmText: String,
     rangePrompt: String,
     defaultDate: [Date, Array],
+    getContainer: [String, Function],
     confirmDisabledText: String,
     type: {
       type: String,
@@ -370,6 +371,7 @@ export default createComponent({
           value={this.value}
           round={this.round}
           position={this.position}
+          getContainer={this.getContainer}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
         >
