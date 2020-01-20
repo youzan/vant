@@ -36,7 +36,7 @@ export default createComponent({
     hideStock: Boolean,
     addCartText: String,
     stepperTitle: String,
-    getContainer: Function,
+    getContainer: [String, Function],
     hideQuotaText: Boolean,
     hideSelectedText: Boolean,
     resetStepperOnHide: Boolean,
