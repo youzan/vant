@@ -17,12 +17,22 @@ Vue.use(SwipeItem);
 Use `autoplay` prop to set autoplay interval
 
 ```html
-<van-swipe :autoplay="3000" indicator-color="white">
+<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
+
+<style>
+.my-swipe .van-swipe-item {
+  color: #fff;
+  font-size: 20px;
+  line-height: 150px;
+  text-align: center;
+  background-color: #39a9ed;
+}
+</style>
 ```
 
 ### Image Lazyload
@@ -38,6 +48,11 @@ Use [Lazyload](#/en-US/lazyload) component to lazyload image
 ```
 
 ```js
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+
 export default {
   data() {
     return {

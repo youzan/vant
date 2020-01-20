@@ -14,20 +14,30 @@ Vue.use(SwipeItem);
 
 ### 基础用法
 
-通过`autoplay`属性设置自动轮播间隔
+每个 SwipeItem 代表一张轮播卡片，可以通过`autoplay`属性设置自动轮播的间隔
 
 ```html
-<van-swipe :autoplay="3000" indicator-color="white">
+<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
+
+<style>
+.my-swipe .van-swipe-item {
+  color: #fff;
+  font-size: 20px;
+  line-height: 150px;
+  text-align: center;
+  background-color: #39a9ed;
+}
+</style>
 ```
 
 ### 图片懒加载
 
-配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载
+当 Swipe 中含有图片时，可以配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载
 
 ```html
 <van-swipe :autoplay="3000">
@@ -38,6 +48,11 @@ Vue.use(SwipeItem);
 ```
 
 ```js
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+
 export default {
   data() {
     return {
@@ -194,3 +209,7 @@ export default {
 这种情况通常是由于项目中引入了`fastclick`库导致的。`fastclick`的原理是通过 Touch 事件模拟出 click 事件，而 Swipe 内部默认会阻止 touchmove 事件冒泡，干扰了 fastclick 的判断，导致出现这个问题。
 
 将 Swipe 组件的 stop-propagation 属性设置为 false 即可避免该问题。
+
+### 在桌面端无法操作组件？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
