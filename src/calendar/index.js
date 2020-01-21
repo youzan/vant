@@ -29,6 +29,7 @@ export default createComponent({
     rangePrompt: String,
     defaultDate: [Date, Array],
     getContainer: [String, Function],
+    closeOnPopstate: Boolean,
     confirmDisabledText: String,
     type: {
       type: String,
@@ -372,6 +373,7 @@ export default createComponent({
           round={this.round}
           position={this.position}
           getContainer={this.getContainer}
+          closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
         >

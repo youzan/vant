@@ -225,6 +225,7 @@ export default {
 | round | 是否显示圆角弹窗 | *boolean* | `true` |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
+| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
 | safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
