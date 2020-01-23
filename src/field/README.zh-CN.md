@@ -258,8 +258,8 @@ export default {
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
-| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
-| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 
 ### Events
 

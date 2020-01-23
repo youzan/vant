@@ -125,7 +125,7 @@ Vue.use(CellGroup);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | title | 左侧标题 | *string \| number* | - |
 | value | 右侧内容 | *string \| number* | - |
 | label | 标题下方的描述信息 | *string* | - |

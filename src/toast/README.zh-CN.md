@@ -144,7 +144,7 @@ Toast.resetDefaultOptions('loading');
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | *string* | `text` |
 | position | 位置，可选值为 `top` `bottom` | *string* | `middle` |
 | message | 文本内容，支持通过`\n`换行 | *string* | `''` | - |
-| icon `v2.0.1` | 自定义图标，支持传入图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| icon `v2.0.1` | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | iconPrefix `v2.0.9` | 图标类名前缀 | *string* | `van-icon` |
 | overlay `v2.2.13` | 是否显示背景遮罩层 | *boolean* | `false` |
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` |
@@ -155,5 +155,5 @@ Toast.resetDefaultOptions('loading');
 | className | 自定义类名 | *any* | - |
 | onOpened | 完全展示后的回调函数 | *Function* | - |
 | onClose | 关闭时的回调函数 | *Function* | - |
-| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
+| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | `van-fade` |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | *string \| () => Element* | `body` |
