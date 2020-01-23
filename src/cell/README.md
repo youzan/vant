@@ -127,7 +127,7 @@ Vue.use(CellGroup);
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` |
 | is-link | Whether to show link icon | *boolean* | `false` |
 | required | Whether to show required mark | *boolean* | `false` |
-| arrow-direction | Can be set to `left` `up` `down` | *string* | - |
+| arrow-direction | Can be set to `left` `up` `down` | *string* | `right` |
 | title-style | Title style | *any* | - |
 | title-class | Title className | *any* | - |
 | value-class | Value className | *any* | - |

@@ -79,7 +79,7 @@ Vue.use(SubmitBar);
 | button-text | 按钮文字 | *string* | - |
 | button-type | 按钮类型 | *string* | `danger` |
 | tip | 提示文案 |  *string* | - |
-| tip-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 |  *string* | - |
+| tip-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 |  *string* | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` |
 | loading | 是否显示加载中的按钮 |  *boolean* | `false` |
 | currency | 货币符号 | *string* | `¥` |

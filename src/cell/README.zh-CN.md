@@ -125,7 +125,7 @@ Vue.use(CellGroup);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 | title | 左侧标题 | *string \| number* | - |
 | value | 右侧内容 | *string \| number* | - |
 | label | 标题下方的描述信息 | *string* | - |
@@ -138,7 +138,7 @@ Vue.use(CellGroup);
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
 | required | 是否显示表单必填星号 | *boolean* | `false` |
 | center | 是否使内容垂直居中 | *boolean* | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
 | title-style | 左侧标题额外样式 | *any* | - |
 | title-class | 左侧标题额外类名 | *any* | - |
 | value-class | 右侧内容额外类名 | *any* | - |

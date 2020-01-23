@@ -166,4 +166,4 @@ export default {
 |------|------|------|
 | text | 文字 | *string* |
 | value | 标识符 | *string \| number* |
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* |
+| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* |

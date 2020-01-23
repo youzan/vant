@@ -231,7 +231,7 @@ Use `input-align` prop to align the input value
 | show-word-limit `v2.2.8` | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` |
 | error | Whether to show error info | *boolean* | `false` |
 | formatter `v2.4.2` | Input value formatter | *Function* | - |
-| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | - |
+| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | `right` |
 | error-message | Error message | *string* | `''` |
 | label-class | Label className | *any* | - |
 | label-width | Label width | *string \| number* | `90px` |

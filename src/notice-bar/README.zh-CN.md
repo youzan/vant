@@ -77,7 +77,7 @@ Vue.use(NoticeBar);
 | speed | 滚动速率 (px/s) | *number* | `50` |
 | scrollable | 是否在长度溢出时滚动播放 | *boolean* | `true` |
 | wrapable | 是否开启文本换行，只在禁用滚动时生效 | *boolean* | `false` |
-| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| left-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 | color | 文本颜色 | *string* | `#f60` |
 | background | 滚动条背景 | *string* | `#fff7cc` |
 

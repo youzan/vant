@@ -101,7 +101,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | name | 唯一标识符，默认为索引值 | *string \| number* | `index` |
-| icon | 标题栏左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon | 标题栏左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 | size | 标题栏大小，可选值为 `large` | *string* | - |
 | title | 标题栏左侧内容 | *string \| number* | - |
 | value | 标题栏右侧内容 | *string \| number* | - |

@@ -250,7 +250,7 @@ export default {
 | show-word-limit `v2.2.8` | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
 | formatter `v2.4.2` | 输入内容格式化函数 | *Function* | - |
-| arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | label-class | 左侧文本额外类名 | *any* | - |
 | label-width | 左侧文本宽度，默认单位为`px` | *string \| number* | `90px` |
@@ -258,8 +258,8 @@ export default {
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
-| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
-| right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| left-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| right-icon | 右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 
 ### Events
 
