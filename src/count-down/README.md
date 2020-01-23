@@ -130,6 +130,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | finish | Triggered when count down finished | - |
+| change `2.4.4` | Triggered when count down changed | timeData |
 
 ### Slots
 

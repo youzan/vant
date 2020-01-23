@@ -141,6 +141,7 @@ export default createComponent({
 
     setRemain(remain) {
       this.remain = remain;
+      this.$emit('change', this.timeData);
 
       if (remain === 0) {
         this.pause();

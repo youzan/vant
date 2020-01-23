@@ -213,3 +213,21 @@ test('pause when deactivated', async () => {
   wrapper.setData({ render: true });
   expect(countDown.counting).toBeFalsy();
 });
+
+test('change event', async () => {
+  const wrapper = mount(CountDown, {
+    propsData: {
+      time: 1,
+    },
+  });
+
+  expect(wrapper.emitted('change')).toBeFalsy();
+  await later(50);
+  expect(wrapper.emitted('change')[0][0]).toEqual({
+    days: 0,
+    hours: 0,
+    milliseconds: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+});
