@@ -227,7 +227,7 @@ export default {
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
 | max-range`2.4.3` | 日期区间最多可选天数，默认无限制 | *number* | - |
