@@ -1,5 +1,21 @@
 # Changelog
 
+### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4)
+`2020-01-24`
+
+**Feature**
+
+* Card: change thumb fit mode to cover [e766d5](https://github.com/youzan/vant/commit/e766d5d5743e7f492b3601ce4010b8524fb2b016)
+* Calendar: add get-contaienr prop [#5609](https://github.com/youzan/vant/issues/5609)
+* Calendar: add close-on-popstate prop [2b82dc](https://github.com/youzan/vant/commit/2b82dcc3dd2dba678aba5e0533e0ff6af7c55b11)
+* CountDown: add change event [#5599](https://github.com/youzan/vant/issues/5599)
+* GoodsActionButton: add icon prop [b83bed](https://github.com/youzan/vant/commit/b83bed3b6c41d0896386b3c4b6380c9568bd3ef2)
+
+**Bug Fixes**
+
+* Sku: get-container can be string type [#5608](https://github.com/youzan/vant/issues/5608)
+
+
 ### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
 `2020-01-19`
 

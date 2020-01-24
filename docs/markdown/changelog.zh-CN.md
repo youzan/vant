@@ -10,6 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4) 🐭
+`2020-01-24`
+
+**Feature**
+
+* Card: 优化图片拉伸模式 [e766d5](https://github.com/youzan/vant/commit/e766d5d5743e7f492b3601ce4010b8524fb2b016)
+* Calendar: 新增 get-contaienr 属性 [#5609](https://github.com/youzan/vant/issues/5609)
+* Calendar: 新增 close-on-popstate 属性 [2b82dc](https://github.com/youzan/vant/commit/2b82dcc3dd2dba678aba5e0533e0ff6af7c55b11)
+* CountDown: 新增 change 事件 [#5599](https://github.com/youzan/vant/issues/5599)
+* GoodsActionButton: 新增 icon 属性 [b83bed](https://github.com/youzan/vant/commit/b83bed3b6c41d0896386b3c4b6380c9568bd3ef2)
+
+**Bug Fixes**
+
+* Sku: 修复 get-container 属性不能为 string 类型的问题 [#5608](https://github.com/youzan/vant/issues/5608)
+
+
 ### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
 `2020-01-19`
 
