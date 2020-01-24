@@ -138,7 +138,7 @@ Vue.use(Button);
 | hairline | 是否使用 0.5px 边框 | *boolean* | `false` |
 | loading | 是否显示为加载状态 | *boolean* | `false` |
 | loading-text | 加载状态提示文字 | *string* | - |
-| loading-type | 加载图标类型，可选值为`spinner` | *string* | `circular` |
+| loading-type | [加载图标类型](#/zh-CN/loading)，可选值为`spinner` | *string* | `circular` |
 | loading-size | 加载图标大小 | *string* | `20px` |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |

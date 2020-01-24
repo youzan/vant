@@ -25,6 +25,13 @@ Vue.use(Loading);
 <van-loading type="spinner" color="#1989fa" />
 ```
 
+### Size
+
+```html
+<van-loading size="24" />
+<van-loading type="spinner" size="24px" />
+```
+
 ### Text
 
 ```html
