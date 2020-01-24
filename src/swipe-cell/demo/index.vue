@@ -18,6 +18,26 @@
         </van-swipe-cell>
       </demo-block>
 
+      <demo-block :title="$t('customContent')">
+        <van-swipe-cell>
+          <van-card
+            num="2"
+            price="2.00"
+            :desc="$t('desc')"
+            :title="$t('cardTitle')"
+            :thumb="imageURL"
+          />
+          <template #right>
+            <van-button
+              square
+              type="danger"
+              class="delete-button"
+              :text="$t('delete')"
+            />
+          </template>
+        </van-swipe-cell>
+      </demo-block>
+
       <demo-block :title="$t('beforeClose')">
         <van-swipe-cell :before-close="beforeClose">
           <template #left>
@@ -46,7 +66,9 @@ export default {
       collect: '收藏',
       title: '单元格',
       confirm: '确定删除吗？',
+      cardTitle: '商品标题',
       beforeClose: '异步关闭',
+      customContent: '自定义内容',
     },
     'en-US': {
       select: 'Select',
@@ -54,8 +76,16 @@ export default {
       collect: 'Collect',
       title: 'Cell',
       confirm: 'Are you sure to delete?',
+      cardTitle: 'Title',
       beforeClose: 'Before Close',
+      customContent: 'Custom Content',
     },
+  },
+
+  data() {
+    return {
+      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
+    };
   },
 
   methods: {
@@ -86,5 +116,14 @@ export default {
 
 .demo-swipe-cell {
   user-select: none;
+
+  .van-card {
+    margin: 0;
+    background-color: @white;
+  }
+
+  .delete-button {
+    height: 100%;
+  }
 }
 </style>

@@ -28,6 +28,41 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
+### 自定义内容
+
+`SwipeCell`内容可以嵌套任意内容，比如嵌套一个商品卡片
+
+```html
+<van-swipe-cell>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="描述信息"
+    title="商品标题"
+    class="goods-card"
+    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+  />
+  <van-button
+    slot="right"
+    square
+    text="删除"
+    type="danger"
+    class="delete-button"
+  />
+</van-swipe-cell>
+
+<style>
+.goods-card {
+  margin: 0;
+  background-color: @white;
+}
+
+.delete-button {
+  height: 100%;
+}
+</style>
+```
+
 ### 异步关闭
 
 通过传入`before-close`回调函数，可以自定义两侧滑动内容关闭时的行为

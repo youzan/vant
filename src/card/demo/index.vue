@@ -72,7 +72,7 @@ export default {
 
   data() {
     return {
-      imageURL: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
     };
   },
 };

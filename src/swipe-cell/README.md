@@ -26,6 +26,39 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
+### Custom Content
+
+```html
+<van-swipe-cell>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="Description"
+    title="Title"
+    class="goods-card"
+    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+  />
+  <van-button
+    slot="right"
+    square
+    text="Delete"
+    type="danger"
+    class="delete-button"
+  />
+</van-swipe-cell>
+
+<style>
+.goods-card {
+  margin: 0;
+  background-color: @white;
+}
+
+.delete-button {
+  height: 100%;
+}
+</style>
+```
+
 ### Before Close
 
 ```html
