@@ -14,7 +14,7 @@ Vue.use(Search);
 ### Basic Usage
 
 ```html
-<van-search placeholder="Placeholder" v-model="value" />
+<van-search v-model="value" placeholder="Placeholder" />
 ```
 
 ```js
@@ -23,23 +23,6 @@ export default {
     value: ''
   }
 }
-```
-### Custom Background Color
-
-```html
-<van-search placeholder="Placeholder" v-model="value" background="#c8c9cc"/>
-```
-
-### Disable Search Bar
-
-```html
-<van-search placeholder="Placeholder" v-model="value" disabled/>
-```
-
-### Search Bar Content Alignment
-
-```html
-<van-search placeholder="Placeholder" v-model="value" input-align="center"/>
 ```
 
 ### Listen to Events
@@ -50,15 +33,66 @@ export default {
 <form action="/">
   <van-search
     v-model="value"
-    placeholder="Placeholder"
     show-action
+    placeholder="Placeholder"
     @search="onSearch"
     @cancel="onCancel"
   />
 </form>
 ```
 
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    onSearch(val) {
+      Toast(val);
+    },
+    onCancel() {
+      Toast('Cancel');
+    }
+  }
+}
+```
+
 > Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
+
+### Input Align
+
+```html
+<van-search
+  v-model="value"
+  input-align="center"
+  placeholder="Placeholder"
+/>
+```
+
+### Disabled
+
+```html
+<van-search
+  v-model="value"
+  disabled
+  placeholder="Placeholder"
+/>
+```
+
+### Custom Background Color
+
+```html
+<van-search
+  v-model="value" 
+  shape="round"
+  background="#4fc08d"
+  placeholder="Placeholder"
+/>
+```
 
 ### Custom Action Button
 

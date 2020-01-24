@@ -16,26 +16,7 @@ Vue.use(Search);
 v-model 用于控制搜索框中的文字，background 可以自定义搜索框外部背景色
 
 ```html
-<van-search placeholder="请输入搜索关键词" v-model="value" />
-```
-
-### 自定义背景色
-
-```html
-<van-search placeholder="Placeholder" v-model="value" background="#c8c9cc"/>
-```
-
-### 禁用搜索框
-
-```html
-<van-search placeholder="请输入搜索关键词" v-model="value" disabled/>
-```
-
-### 搜索框内容对齐
-通过 `input-align` 属性可以设置搜索框内容的对齐方式
-
-```html
-<van-search placeholder="Placeholder" v-model="value" input-align="center"/>
+<van-search v-model="value" placeholder="请输入搜索关键词" />
 ```
 
 ### 事件监听
@@ -46,26 +27,82 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 <form action="/">
   <van-search
     v-model="value"
-    placeholder="请输入搜索关键词"
     show-action
+    placeholder="请输入搜索关键词"
     @search="onSearch"
     @cancel="onCancel"
   />
 </form>
 ```
 
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    onSearch(val) {
+      Toast(val);
+    },
+    onCancel() {
+      Toast('取消');
+    }
+  }
+}
+```
+
 > Tips: 在 van-search 外层增加 form 标签，且 action 不为空，即可在 iOS 输入法中显示搜索按钮
 
-### 自定义按钮
+### 搜索框内容对齐
 
-使用`action`插槽可以自定义右侧按钮的内容。使用插槽后，cancel 事件将不再触发
+通过 `input-align` 属性设置搜索框内容的对齐方式，可选值为`center`、`right`
 
 ```html
 <van-search
   v-model="value"
   placeholder="请输入搜索关键词"
-  show-action
+  input-align="center"
+/>
+```
+
+### 禁用搜索框
+
+通过`disabled`属性禁用搜索框
+
+```html
+<van-search
+  v-model="value"
+  disabled
+  placeholder="请输入搜索关键词"
+/>
+```
+
+### 自定义背景色
+
+通过`background`属性可以设置搜索框外部的背景色，通过`shape`属性设置搜索框的形状，可选值为`round`
+
+```html
+<van-search
+  v-model="value"
   shape="round"
+  background="#4fc08d"
+  placeholder="请输入搜索关键词"
+/>
+```
+
+### 自定义按钮
+
+使用`action`插槽可以自定义右侧按钮的内容。使用插槽后，`cancel`事件将不再触发
+
+```html
+<van-search
+  v-model="value"
+  show-action
+  placeholder="请输入搜索关键词"
   @search="onSearch"
 >
   <div slot="action" @click="onSearch">搜索</div>
@@ -80,7 +117,7 @@ Search 组件提供了`search`和`cancel`事件，`search`事件在点击键盘�
 |------|------|------|------|
 | label | 搜索框左侧文本 | *string* | - |
 | shape | 搜索框形状，可选值为 `round` | *string* | `square` |
-| background | 搜索框背景色 | *string* | `#f2f2f2` |
+| background | 搜索框外部背景色 | *string* | `#f2f2f2` |
 | maxlength | 输入的最大字符数 | *string \| number* | - |
 | placeholder | 占位提示文字 | *string* | - |
 | clearable | 是否启用清除控件 | *boolean* | `true` |
