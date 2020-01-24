@@ -88,7 +88,7 @@ function Card(
               src={thumb}
               width="100%"
               height="100%"
-              fit="contain"
+              fit="cover"
               lazy-load={props.lazyLoad}
             />
           )}

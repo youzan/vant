@@ -19,7 +19,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -34,7 +34,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/cat.jpeg"
   origin-price="10.00"
 />
 ```
@@ -49,7 +49,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/cat.jpeg"
 >
   <div slot="tags">
     <van-tag plain type="danger">标签</van-tag>

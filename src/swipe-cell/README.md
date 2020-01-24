@@ -18,9 +18,7 @@ Vue.use(SwipeCell);
   <template slot="left">
     <van-button square type="primary" text="Select" />
   </template>
-
   <van-cell :border="false" title="Cell" value="Cell Content" />
-
   <template slot="right">
     <van-button square type="danger" text="Delete" />
     <van-button square type="primary" text="Collect"/>
@@ -28,16 +26,14 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
-### Async close
+### Before Close
 
 ```html
 <van-swipe-cell :before-close="beforeClose">
   <template slot="left">
     <van-button square type="primary" text="Select" />
   </template>
-
   <van-cell :border="false" title="Cell" value="Cell Content" />
-
   <template slot="right">
     <van-button square type="danger" text="Delete" />
   </template>

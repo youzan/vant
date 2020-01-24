@@ -72,7 +72,7 @@ export default {
 
   data() {
     return {
-      imageURL: 'https://img.yzcdn.cn/vant/t-thirt.jpg',
+      imageURL: 'https://img.yzcdn.cn/vant/cat.jpeg',
     };
   },
 };

@@ -216,7 +216,7 @@ export default {
 
 ### 输入框内容对齐
 
-通过`input-align`属性可以设置输入框内容的对齐方式
+通过`input-align`属性可以设置输入框内容的对齐方式，可选值为`center`、`right`
 
 ```html
 <van-field

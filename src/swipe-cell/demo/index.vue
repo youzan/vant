@@ -18,7 +18,7 @@
         </van-swipe-cell>
       </demo-block>
 
-      <demo-block :title="$t('title2')">
+      <demo-block :title="$t('beforeClose')">
         <van-swipe-cell :before-close="beforeClose">
           <template #left>
             <van-button square type="primary" :text="$t('select')" />
@@ -45,16 +45,16 @@ export default {
       delete: '删除',
       collect: '收藏',
       title: '单元格',
-      title2: '异步关闭',
       confirm: '确定删除吗？',
+      beforeClose: '异步关闭',
     },
     'en-US': {
       select: 'Select',
       delete: 'Delete',
       collect: 'Collect',
       title: 'Cell',
-      title2: 'Async close',
       confirm: 'Are you sure to delete?',
+      beforeClose: 'Before Close',
     },
   },
 
