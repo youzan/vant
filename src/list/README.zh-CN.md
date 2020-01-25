@@ -219,3 +219,27 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 ### 使用 float 布局后一直触发加载？
 
 若 List 的内容使用了 float 布局，可以在容器上添加`van-clearfix`类名来清除浮动，使得 List 能正确判断元素位置
+
+```html
+<van-list>
+  <div class="van-clearfix">
+    <div class="float-item" />
+    <div class="float-item" />
+    <div class="float-item" />
+  </div>
+</van-list>
+```
+
+### 在 html、body 上设置 overflow 后一直触发加载？
+
+如果在 html 和 body 标签上设置了`overflow-x: hidden`样式，会导致 List 一直触发加载。
+
+```css
+html,
+body {
+  overflow-x: hidden;
+}
+
+```
+
+这个问题的原因是当元素设置了`overflow-x: hidden`样式时，该元素的`overflow-y`会被浏览器设置为`auto`，而不是默认值`visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加`height: 100%`样式。
