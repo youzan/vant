@@ -242,7 +242,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Picker 实例并调用实例方法
+通过 ref 可以获取到 Picker 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
