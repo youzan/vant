@@ -146,7 +146,7 @@ export default {
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
 | safe-area-inset-bottom `v2.2.1` | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
-| properties `2.4.0` | 商品属性 | *array* | - |
+| properties `v2.4.2` | 商品属性 | *array* | - |
 
 ### Events
 

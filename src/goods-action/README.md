@@ -104,7 +104,7 @@ Use `info` prop to show badge in icon
 | text | Button text | *string* | - |
 | type | Button type, Can be set to `primary` `info` `warning` `danger` | *string* | `default` |
 | color `v2.1.8` | Button color, support linear-gradient | *string* | - |
-| icon `2.4.4` | Left Icon | *string* | - |
+| icon `v2.4.4` | Left Icon | *string* | - |
 | primary | Is primary button (red color) | *boolean* | `false` |
 | disabled | Whether to disable button | *boolean* | `false` |
 | loading | Whether show loading status | *boolean* | `false` |

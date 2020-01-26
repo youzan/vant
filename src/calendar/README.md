@@ -230,9 +230,9 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 | confirm-text | Confirm button text | *string* | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
-| max-range `2.4.3` | Number of selectable days | *number* | - |
-| range-prompt `2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
-| get-container `2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
+| max-range `v2.4.3` | Number of selectable days | *number* | - |
+| range-prompt `v2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
+| get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 
 ### Data Structure of Day
 

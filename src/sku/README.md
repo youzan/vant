@@ -142,7 +142,7 @@ export default {
 | get-container | Return the mount node for sku | *string \| () => Element* | - |
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
-| properties `2.4.0` | Goods properties | *array* | - |
+| properties `v2.4.2` | Goods properties | *array* | - |
 
 ### Events
 
@@ -163,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku `2.3.0` | Reset selected sku to initial sku | - | - |
+| resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
 
 ### Slots
 

@@ -314,7 +314,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | values | 列中对应的备选值 | *string[]*
 | defaultIndex | 初始选中项的索引，默认为 0 | *number* |
 | className | 为对应列添加额外的类名 | *any* |
-| children | 级联选项 | *Column* |
+| children `v2.4.5` | 级联选项 | *Column* |
 
 ### 方法
 
