@@ -82,6 +82,35 @@ export default {
 };
 ```
 
+### 多列选择
+
+通过`columns`属性可以配置多列选择
+
+```html
+<van-picker show-toolbar title="标题" :columns="columns" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [
+        // 第一列
+        {
+          values: ['周一', '周二', '周三', '周四', '周五'],
+          defaultIndex: 2
+        },
+        // 第二列
+        {
+          values: ['上午', '下午', '晚上'],
+          defaultIndex: 1
+        }
+      ]
+    };
+  }
+};
+```
+
 ### 级联选择
 
 使用`columns`的`children`字段可以实现选项级联的效果（从 2.4.5 版本开始支持）
@@ -155,17 +184,14 @@ const citys = {
 export default {
   data() {
     return {
-      columns: [
-        {
-          values: Object.keys(citys),
-          className: 'column1'
-        },
-        {
-          values: citys['浙江'],
-          className: 'column2',
-          defaultIndex: 2
-        }
-      ]
+      columns: [{
+        values: Object.keys(citys),
+        className: 'column1'
+      }, {
+        values: citys['浙江'],
+        className: 'column2',
+        defaultIndex: 2
+      }]
     };
   },
   methods: {
@@ -273,6 +299,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | values | 列中对应的备选值 | *string[]*
 | defaultIndex | 初始选中项的索引，默认为 0 | *number* |
 | className | 为对应列添加额外的类名 | *any* |
+| children | 级联选项 | *Column* |
 
 ### 方法
 

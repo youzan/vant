@@ -1,3 +1,26 @@
+export const dateColumns = {
+  'zh-CN': [
+    {
+      values: ['周一', '周二', '周三', '周四', '周五'],
+      defaultIndex: 2,
+    },
+    {
+      values: ['上午', '下午', '晚上'],
+      defaultIndex: 1,
+    },
+  ],
+  'en-US': [
+    {
+      values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
+      defaultIndex: 2,
+    },
+    {
+      values: ['Morging', 'Afternoon', 'Evening'],
+      defaultIndex: 1,
+    },
+  ],
+};
+
 export const cascadeColumns = {
   'zh-CN': [
     {

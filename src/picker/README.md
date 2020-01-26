@@ -80,6 +80,31 @@ export default {
 };
 ```
 
+### Multiple Columns
+
+```html
+<van-picker show-toolbar title="Title" :columns="columns" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [
+        {
+          values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
+          defaultIndex: 2
+        },
+        {
+          values: ['Morging', 'Afternoon', 'Evening'],
+          defaultIndex: 1
+        }
+      ]
+    };
+  }
+};
+```
+
 ### Cascade
 
 ```html
@@ -261,6 +286,7 @@ Picker events will pass different parameters according to the columns are single
 | values | Value of column | *string[]* |
 | defaultIndex | Default value index | *number* |
 | className | ClassName for this column | *any* |
+| children | Cascade children | *Column* |
 
 ### Methods
 

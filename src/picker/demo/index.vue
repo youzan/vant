@@ -1,12 +1,12 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-picker :columns="$t('column1')" @change="onChange1" />
+      <van-picker :columns="$t('textColumns')" @change="onChange1" />
     </demo-block>
 
     <demo-block :title="$t('defaultIndex')">
       <van-picker
-        :columns="$t('column1')"
+        :columns="$t('textColumns')"
         :default-index="2"
         @change="onChange1"
       />
@@ -16,7 +16,17 @@
       <van-picker
         show-toolbar
         :title="$t('title')"
-        :columns="$t('column1')"
+        :columns="$t('textColumns')"
+        @cancel="onCancel"
+        @confirm="onConfirm"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('multipleColumns')">
+      <van-picker
+        show-toolbar
+        :title="$t('title')"
+        :columns="$t('dateColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
@@ -33,7 +43,7 @@
     </demo-block>
 
     <demo-block :title="$t('disableOption')">
-      <van-picker :columns="$t('column2')" />
+      <van-picker :columns="$t('disabledColumns')" />
     </demo-block>
 
     <demo-block :title="$t('title4')">
@@ -56,7 +66,7 @@
       <van-popup v-model="showPicker" position="bottom">
         <van-picker
           show-toolbar
-          :columns="$t('column1')"
+          :columns="$t('textColumns')"
           @cancel="onCancel2"
           @confirm="onConfirm2"
         />
@@ -66,7 +76,7 @@
 </template>
 
 <script>
-import { cascadeColumns } from './data';
+import { dateColumns, cascadeColumns } from './data';
 
 export default {
   i18n: {
@@ -77,11 +87,13 @@ export default {
       withPopup: '搭配弹出层使用',
       chooseCity: '选择城市',
       showToolbar: '展示顶部栏',
+      dateColumns: dateColumns['zh-CN'],
       defaultIndex: '默认选中项',
       disableOption: '禁用选项',
       cascadeColumns: cascadeColumns['zh-CN'],
-      column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-      column2: [
+      multipleColumns: '多列选择',
+      textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      disabledColumns: [
         { text: '杭州', disabled: true },
         { text: '宁波' },
         { text: '温州' },
@@ -99,11 +111,13 @@ export default {
       withPopup: 'With Popup',
       chooseCity: 'Choose City',
       showToolbar: 'Show Toolbar',
+      dateColumns: dateColumns['en-US'],
       defaultIndex: 'Default Index',
       disableOption: 'Disable Option',
       cascadeColumns: cascadeColumns['en-US'],
-      column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-      column2: [
+      multipleColumns: 'Multiple Columns',
+      textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      disabledColumns: [
         { text: 'Delaware', disabled: true },
         { text: 'Florida' },
         { text: 'Georqia' },
