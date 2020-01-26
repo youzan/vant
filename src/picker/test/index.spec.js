@@ -1,5 +1,6 @@
 import Picker from '..';
 import PickerColumn from '../PickerColumn';
+import { cascadeColumns } from '../demo/data';
 import { mount, triggerDrag, later } from '../../../test';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
@@ -229,4 +230,35 @@ test('columns-top、columns-bottom prop', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('cascade columns', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: cascadeColumns['en-US'],
+    },
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual([
+    'Zhejiang',
+    'Hangzhou',
+    'Xihu',
+  ]);
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  expect(wrapper.emitted('change')[0][1]).toEqual([
+    'Fujian',
+    'Fuzhou',
+    'Gulou',
+  ]);
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual([
+    'Fujian',
+    'Fuzhou',
+    'Gulou',
+  ]);
 });
