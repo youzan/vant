@@ -2,7 +2,7 @@
 
 ### 介绍
 
-选择器组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Picker);
 
 ### 基础用法
 
-对于单列选择器，传入数值格式的 columns 即可，同时可以监听选项改变的 change 事件
+Picker 组件通过`columns`属性配置选项数据，`columns`是一个包含字符串或对象的数组
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -42,19 +42,15 @@ export default {
 
 ### 默认选中项
 
-单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
+单列选择时，可以通过`default-index`属性设置初始选中项的索引
 
 ```html
-<van-picker
-  :columns="columns"
-  :default-index="2"
-  @change="onChange"
-/>
+<van-picker :columns="columns" :default-index="2" />
 ```
 
 ### 展示顶部栏
 
-通常选择器组件会传入`show-toolbar`属性以展示顶部操作栏，并可以监听对应的`confirm`和`cancel`事件
+设置`show-toolbar`属性后会展示顶部操作栏，点击确认按钮触发`confirm`事件，点击取消按钮触发`cancel`事件
 
 ```html
 <van-picker
@@ -86,41 +82,38 @@ export default {
 };
 ```
 
-### 搭配弹出层使用
+### 级联选择
+
+使用`columns`的`children`字段可以实现选项级联的效果（从 2.4.5 版本开始支持）
 
 ```html
-<van-field
-  readonly
-  clickable
-  label="城市"
-  :value="value"
-  placeholder="选择城市"
-  @click="showPicker = true"
-/>
-<van-popup v-model="showPicker" position="bottom">
-  <van-picker
-    show-toolbar
-    :columns="columns"
-    @cancel="showPicker = false"
-    @confirm="onConfirm"
-  />
-</van-popup>
+<van-picker show-toolbar title="标题" :columns="columns" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      value: '',
-      showPicker: false,
-      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
-    }
-  },
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    }
+      columns: [{
+        text: '浙江',
+        children: [{
+          text: '杭州',
+          children: [{ text: '西湖区' }, { text: '余杭区' }]
+        }, {
+          text: '温州',
+          children: [{ text: '鹿城区' }, { text: '瓯海区' }]
+        }]
+      }, {
+        text: '福建',
+        children: [{
+          text: '福州',
+          children: [{ text: '鼓楼区' }, { text: '台江区' }]
+        }, {
+          text: '厦门',
+          children: [{ text: '思明区' }, { text: '海沧区' }]
+        }]
+      }]
+    };
   }
 };
 ```
@@ -189,6 +182,47 @@ export default {
 
 ```html
 <van-picker :columns="columns" loading />
+```
+
+### 搭配弹出层使用
+
+在实际场景中，Picker 通常作为用于辅助表单填写，可以搭配 Popup 和 Field 实现该效果
+
+```html
+<van-field
+  readonly
+  clickable
+  label="城市"
+  :value="value"
+  placeholder="选择城市"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-picker
+    show-toolbar
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showPicker: false,
+      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    }
+  },
+  methods: {
+    onConfirm(value) {
+      this.value = value;
+      this.showPicker = false;
+    }
+  }
+};
 ```
 
 ## API

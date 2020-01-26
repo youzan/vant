@@ -1,7 +1,6 @@
 // Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { deepClone } from '../utils/deep-clone';
 import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
 
@@ -35,37 +34,101 @@ export default createComponent({
   data() {
     return {
       children: [],
+      formattedColumns: [],
     };
   },
 
   computed: {
-    simple() {
-      return this.columns.length && !this.columns[0].values;
+    dataType() {
+      const { columns } = this;
+      const firstColumn = columns[0] || {};
+
+      if (firstColumn.children) {
+        return 'cascade';
+      }
+
+      if (firstColumn.values) {
+        return 'object';
+      }
+
+      return 'text';
     },
   },
 
   watch: {
-    columns: 'setColumns',
+    columns: {
+      handler: 'format',
+      immediate: true,
+    },
   },
 
   methods: {
-    setColumns() {
-      const columns = this.simple ? [{ values: this.columns }] : this.columns;
-      columns.forEach((column, index) => {
-        this.setColumnValues(index, deepClone(column.values));
-      });
+    format() {
+      const { columns, dataType } = this;
+
+      if (dataType === 'text') {
+        this.formattedColumns = [{ values: columns }];
+      } else if (dataType === 'cascade') {
+        this.formatCascade();
+      } else {
+        this.formattedColumns = columns;
+      }
+    },
+
+    formatCascade() {
+      const formatted = [];
+
+      let cursor = { children: this.columns };
+
+      while (cursor && cursor.children) {
+        const defaultIndex = cursor.defaultIndex || this.defaultIndex;
+
+        formatted.push({
+          values: cursor.children.map(item => item[this.valueKey]),
+          className: cursor.className,
+          defaultIndex,
+        });
+
+        cursor = cursor.children[defaultIndex];
+      }
+
+      this.formattedColumns = formatted;
     },
 
     emit(event) {
-      if (this.simple) {
+      if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
       } else {
         this.$emit(event, this.getValues(), this.getIndexes());
       }
     },
 
+    onCascadeChange(columnIndex) {
+      let cursor = { children: this.columns };
+      const indexes = this.getIndexes();
+
+      for (let i = 0; i <= columnIndex; i++) {
+        cursor = cursor.children[indexes[i]];
+      }
+
+      while (cursor.children) {
+        columnIndex++;
+
+        this.setColumnValues(
+          columnIndex,
+          cursor.children.map(item => item[this.valueKey])
+        );
+
+        cursor = cursor.children[cursor.defaultIndex || 0];
+      }
+    },
+
     onChange(columnIndex) {
-      if (this.simple) {
+      if (this.dataType === 'cascade') {
+        this.onCascadeChange(columnIndex);
+      }
+
+      if (this.dataType === 'text') {
         this.$emit(
           'change',
           this,
@@ -201,9 +264,7 @@ export default createComponent({
     },
 
     genColumns() {
-      const columns = this.simple ? [this.columns] : this.columns;
-
-      return columns.map((item, index) => (
+      return this.formattedColumns.map((item, columnIndex) => (
         <PickerColumn
           valueKey={this.valueKey}
           allowHtml={this.allowHtml}
@@ -212,9 +273,9 @@ export default createComponent({
           defaultIndex={item.defaultIndex || this.defaultIndex}
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
-          initialOptions={this.simple ? item : item.values}
+          initialOptions={item.values}
           onChange={() => {
-            this.onChange(index);
+            this.onChange(columnIndex);
           }}
         />
       ));

@@ -33,13 +33,20 @@ test('multiple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
     propsData: {
       showToolbar: true,
+      columns,
     },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
   wrapper.find('.van-picker__cancel').trigger('click');
-  expect(wrapper.emitted('confirm')[0]).toEqual([[], []]);
-  expect(wrapper.emitted('cancel')[0]).toEqual([[], []]);
+
+  const params = [
+    ['vip', '1990'],
+    [0, 0],
+  ];
+
+  expect(wrapper.emitted('confirm')[0]).toEqual(params);
+  expect(wrapper.emitted('cancel')[0]).toEqual(params);
 });
 
 test('set picker values', () => {

@@ -12,7 +12,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('showToolbar')">
       <van-picker
         show-toolbar
         :title="$t('title')"
@@ -20,6 +20,28 @@
         @cancel="onCancel"
         @confirm="onConfirm"
       />
+    </demo-block>
+
+    <demo-block :title="$t('cascade')">
+      <van-picker
+        show-toolbar
+        :title="$t('title')"
+        :columns="$t('cascadeColumns')"
+        @cancel="onCancel"
+        @confirm="onConfirm"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('disableOption')">
+      <van-picker :columns="$t('column2')" />
+    </demo-block>
+
+    <demo-block :title="$t('title4')">
+      <van-picker :columns="columns" @change="onChange2" />
+    </demo-block>
+
+    <demo-block :title="$t('loadingStatus')">
+      <van-picker loading :columns="columns" />
     </demo-block>
 
     <demo-block :title="$t('withPopup')">
@@ -40,32 +62,24 @@
         />
       </van-popup>
     </demo-block>
-
-    <demo-block :title="$t('title2')">
-      <van-picker :columns="$t('column2')" />
-    </demo-block>
-
-    <demo-block :title="$t('title4')">
-      <van-picker :columns="columns" @change="onChange2" />
-    </demo-block>
-
-    <demo-block :title="$t('loadingStatus')">
-      <van-picker loading :columns="columns" />
-    </demo-block>
   </demo-section>
 </template>
 
 <script>
+import { cascadeColumns } from './data';
+
 export default {
   i18n: {
     'zh-CN': {
       city: '城市',
-      title2: '禁用选项',
-      title3: '展示顶部栏',
       title4: '多列联动',
-      defaultIndex: '默认选中项',
+      cascade: '级联选择',
       withPopup: '搭配弹出层使用',
       chooseCity: '选择城市',
+      showToolbar: '展示顶部栏',
+      defaultIndex: '默认选中项',
+      disableOption: '禁用选项',
+      cascadeColumns: cascadeColumns['zh-CN'],
       column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       column2: [
         { text: '杭州', disabled: true },
@@ -80,12 +94,14 @@ export default {
     },
     'en-US': {
       city: 'City',
-      title2: 'Disable Option',
-      title3: 'Show Toolbar',
       title4: 'Multi Columns',
-      defaultIndex: 'Default Index',
+      cascade: 'Cascade',
       withPopup: 'With Popup',
       chooseCity: 'Choose City',
+      showToolbar: 'Show Toolbar',
+      defaultIndex: 'Default Index',
+      disableOption: 'Disable Option',
+      cascadeColumns: cascadeColumns['en-US'],
       column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       column2: [
         { text: 'Delaware', disabled: true },

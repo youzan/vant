@@ -80,41 +80,36 @@ export default {
 };
 ```
 
-### With Popup
+### Cascade
 
 ```html
-<van-field
-  readonly
-  clickable
-  label="City"
-  :value="value"
-  placeholder="Choose City"
-  @click="showPicker = true"
-/>
-<van-popup v-model="showPicker" position="bottom">
-  <van-picker
-    show-toolbar
-    :columns="columns"
-    @cancel="showPicker = false"
-    @confirm="onConfirm"
-  />
-</van-popup>
+<van-picker show-toolbar title="Title" :columns="columns" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      value: '',
-      showPicker: false,
-      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
-    }
-  },
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    }
+      columns: [{
+        text: 'Zhejiang',
+        children: [{
+          text: 'Hangzhou',
+          children: [{ text: 'Xihu' }, { text: 'Yuhang' }]
+        }, {
+          text: 'Wenzhou',
+          children: [{ text: 'Lucheng' }, { text: 'Ouhai' }]
+        }]
+      }, {
+        text: 'Fujian',
+        children: [{
+          text: 'Fuzhou',
+          children: [{ text: 'Gulou' }, { text: 'Taijiang' }]
+        }, {
+          text: 'Xiamen',
+          children: [{ text: 'Siming' }, { text: 'Haicang' }]
+        }]
+      }]
+    };
   }
 };
 ```
@@ -181,6 +176,45 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 
 ```html
 <van-picker :columns="columns" loading />
+```
+
+### With Popup
+
+```html
+<van-field
+  readonly
+  clickable
+  label="City"
+  :value="value"
+  placeholder="Choose City"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-picker
+    show-toolbar
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showPicker: false,
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
+    }
+  },
+  methods: {
+    onConfirm(value) {
+      this.value = value;
+      this.showPicker = false;
+    }
+  }
+};
 ```
 
 ## API
