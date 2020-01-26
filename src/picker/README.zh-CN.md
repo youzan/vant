@@ -169,7 +169,9 @@ export default {
 };
 ```
 
-### 多列联动
+### 动态设置选项
+
+通过 Picker 上的实例方法可以更灵活地控制选择器，比如使用`setColumnValues`方法实现多列联动
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -184,14 +186,10 @@ const citys = {
 export default {
   data() {
     return {
-      columns: [{
-        values: Object.keys(citys),
-        className: 'column1'
-      }, {
-        values: citys['浙江'],
-        className: 'column2',
-        defaultIndex: 2
-      }]
+      columns: [
+        { values: Object.keys(citys) },
+        { values: citys['浙江'] }
+      ]
     };
   },
   methods: {
@@ -207,7 +205,24 @@ export default {
 若选择器数据是异步获取的，可以通过 `loading` 属性显示加载提示
 
 ```html
-<van-picker :columns="columns" loading />
+<van-picker :columns="columns" :loading="loading" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [],
+      loading: true
+    };
+  },
+  created() {
+    setTimeout(() => {
+      this.loading = false;
+      this.columns = ['选项'];
+    }, 1000);
+  }
+};
 ```
 
 ### 搭配弹出层使用

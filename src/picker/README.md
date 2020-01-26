@@ -159,7 +159,7 @@ export default {
 };
 ```
 
-### Multi columns
+### Set Column Values
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -175,15 +175,8 @@ export default {
   data() {
     return {
       columns: [
-        {
-          values: Object.keys(states),
-          className: 'column1'
-        },
-        {
-          values: states.Group1,
-          className: 'column2',
-          defaultIndex: 2
-        }
+        { values: Object.keys(states) },
+        { values: states.Group1 }
       ]
     };
   },
@@ -200,7 +193,24 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
 
 ```html
-<van-picker :columns="columns" loading />
+<van-picker :columns="columns" :loading="loading" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [],
+      loading: true
+    };
+  },
+  created() {
+    setTimeout(() => {
+      this.loading = false;
+      this.columns = ['Option'];
+    }, 1000);
+  }
+};
 ```
 
 ### With Popup

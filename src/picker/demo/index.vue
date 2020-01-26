@@ -46,7 +46,7 @@
       <van-picker :columns="$t('disabledColumns')" />
     </demo-block>
 
-    <demo-block :title="$t('title4')">
+    <demo-block :title="$t('setColumnValues')">
       <van-picker :columns="columns" @change="onChange2" />
     </demo-block>
 
@@ -82,7 +82,6 @@ export default {
   i18n: {
     'zh-CN': {
       city: '城市',
-      title4: '多列联动',
       cascade: '级联选择',
       withPopup: '搭配弹出层使用',
       chooseCity: '选择城市',
@@ -92,6 +91,7 @@ export default {
       disableOption: '禁用选项',
       cascadeColumns: cascadeColumns['zh-CN'],
       multipleColumns: '多列选择',
+      setColumnValues: '动态设置选项',
       textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       disabledColumns: [
         { text: '杭州', disabled: true },
@@ -106,7 +106,6 @@ export default {
     },
     'en-US': {
       city: 'City',
-      title4: 'Multi Columns',
       cascade: 'Cascade',
       withPopup: 'With Popup',
       chooseCity: 'Choose City',
@@ -116,6 +115,7 @@ export default {
       disableOption: 'Disable Option',
       cascadeColumns: cascadeColumns['en-US'],
       multipleColumns: 'Multiple Columns',
+      setColumnValues: 'Set Column Values',
       textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       disabledColumns: [
         { text: 'Delaware', disabled: true },
