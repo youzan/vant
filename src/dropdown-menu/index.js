@@ -19,14 +19,11 @@ export default createComponent({
   ],
 
   props: {
+    zIndex: Number,
     activeColor: String,
     overlay: {
       type: Boolean,
       default: true,
-    },
-    zIndex: {
-      type: Number,
-      default: 10,
     },
     duration: {
       type: Number,
