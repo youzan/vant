@@ -126,6 +126,7 @@ Search.props = {
   rightIcon: String,
   actionText: String,
   showAction: Boolean,
+  background: String,
   shape: {
     type: String,
     default: 'square',
@@ -133,10 +134,6 @@ Search.props = {
   clearable: {
     type: Boolean,
     default: true,
-  },
-  background: {
-    type: String,
-    default: '#fff',
   },
   leftIcon: {
     type: String,
