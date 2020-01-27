@@ -22,6 +22,7 @@ export default createComponent({
 
   props: {
     size: [Number, String],
+    color: String,
     gutter: [Number, String],
     readonly: Boolean,
     disabled: Boolean,
@@ -38,10 +39,6 @@ export default createComponent({
     voidIcon: {
       type: String,
       default: 'star-o',
-    },
-    color: {
-      type: String,
-      default: '#ffd21e',
     },
     voidColor: {
       type: String,
@@ -172,7 +169,7 @@ export default createComponent({
           <Icon
             size={this.sizeWithUnit}
             name={isFull ? icon : voidIcon}
-            class={bem('icon', { disabled })}
+            class={bem('icon', { disabled, full: isFull })}
             data-score={score}
             color={disabled ? disabledColor : isFull ? color : voidColor}
             onClick={() => {
@@ -183,7 +180,7 @@ export default createComponent({
             <Icon
               size={this.sizeWithUnit}
               name={isVoid ? voidIcon : icon}
-              class={bem('icon', ['half', { disabled }])}
+              class={bem('icon', ['half', { disabled, full: !isVoid }])}
               data-score={score - 0.5}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
               onClick={() => {
