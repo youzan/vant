@@ -41,10 +41,7 @@
     </demo-block>
 
     <demo-block :title="$t('changeEvent')">
-      <van-rate
-        v-model="value7"
-        @change="onChange"
-      />
+      <van-rate v-model="value7" @change="onChange" />
     </demo-block>
   </demo-section>
 </template>
@@ -60,7 +57,7 @@ export default {
       customCount: '自定义数量',
       readonly: '只读状态',
       changeEvent: '监听 change 事件',
-      toastContent: (value) => `当前值：${value}`
+      toastContent: value => `当前值：${value}`,
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -70,8 +67,8 @@ export default {
       customCount: 'Custom Count',
       readonly: 'Readonly',
       changeEvent: 'Change Event',
-      toastContent: (value) => `current value：${value}`
-    }
+      toastContent: value => `current value：${value}`,
+    },
   },
 
   data() {
@@ -82,7 +79,7 @@ export default {
       value4: 2.5,
       value5: 4,
       value6: 3,
-      value7: 2
+      value7: 2,
     };
   },
 
@@ -90,8 +87,8 @@ export default {
     onChange(value) {
       this.value7 = value;
       this.$toast(this.$t('toastContent', value));
-    }
-  }
+    },
+  },
 };
 </script>
 

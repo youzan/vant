@@ -26,6 +26,7 @@ export default createComponent({
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
+    disabledColor: String,
     value: {
       type: Number,
       default: 0,
@@ -45,10 +46,6 @@ export default createComponent({
     voidColor: {
       type: String,
       default: '#c7c7c7',
-    },
-    disabledColor: {
-      type: String,
-      default: '#bdbdbd',
     },
     count: {
       type: Number,
@@ -175,7 +172,7 @@ export default createComponent({
           <Icon
             size={this.sizeWithUnit}
             name={isFull ? icon : voidIcon}
-            class={bem('icon')}
+            class={bem('icon', { disabled })}
             data-score={score}
             color={disabled ? disabledColor : isFull ? color : voidColor}
             onClick={() => {
@@ -186,7 +183,7 @@ export default createComponent({
             <Icon
               size={this.sizeWithUnit}
               name={isVoid ? voidIcon : icon}
-              class={bem('icon', 'half')}
+              class={bem('icon', ['half', { disabled }])}
               data-score={score - 0.5}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
               onClick={() => {
