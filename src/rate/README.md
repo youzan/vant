@@ -115,7 +115,7 @@ export default {
 | size | Icon size| *string \| number* | `20px` |
 | gutter | Icon gutter | *string \| number* | `4px` |
 | color | Selected color | *string* | `#ffd21e` |
-| void-color | Void color | *string* | `#c7c7c7` |
+| void-color | Void color | *string* | `#c8c9cc` |
 | disabled-color | Disabled color | *string* | `#bdbdbd` |
 | icon | Selected icon | *string* | `star` |
 | void-icon | Void icon | *string* | `star-o` |

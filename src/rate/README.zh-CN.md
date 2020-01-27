@@ -115,7 +115,7 @@ export default {
 | size | 图标大小，默认单位为`px` | *string \| number* | `20px` |
 | gutter | 图标间距，默认单位为`px` | *string \| number* | `4px` |
 | color | 选中时的颜色 | *string* | `#ffd21e` |
-| void-color | 未选中时的颜色 | *string* | `#c7c7c7` |
+| void-color | 未选中时的颜色 | *string* | `#c8c9cc` |
 | disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` |
 | icon | 选中时的 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `star` |
 | void-icon | 未选中时的 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `star-o`  |

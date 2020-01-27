@@ -27,6 +27,7 @@ export default createComponent({
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
+    voidColor: String,
     disabledColor: String,
     value: {
       type: Number,
@@ -39,10 +40,6 @@ export default createComponent({
     voidIcon: {
       type: String,
       default: 'star-o',
-    },
-    voidColor: {
-      type: String,
-      default: '#c7c7c7',
     },
     count: {
       type: Number,
