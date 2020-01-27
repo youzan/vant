@@ -10,6 +10,7 @@ export default createComponent({
   props: {
     disabled: Boolean,
     vertical: Boolean,
+    barHeight: [Number, String],
     buttonSize: [Number, String],
     activeColor: String,
     inactiveColor: String,
@@ -29,10 +30,6 @@ export default createComponent({
       type: Number,
       default: 0,
     },
-    barHeight: {
-      type: [Number, String],
-      default: 2,
-    },
   },
 
   data() {
@@ -49,7 +46,6 @@ export default createComponent({
     buttonStyle() {
       if (this.buttonSize) {
         const size = addUnit(this.buttonSize);
-
         return {
           width: size,
           height: size,
