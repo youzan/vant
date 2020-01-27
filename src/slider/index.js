@@ -10,6 +10,7 @@ export default createComponent({
   props: {
     disabled: Boolean,
     vertical: Boolean,
+    buttonSize: [Number, String],
     activeColor: String,
     inactiveColor: String,
     min: {
@@ -43,6 +44,17 @@ export default createComponent({
   computed: {
     range() {
       return this.max - this.min;
+    },
+
+    buttonStyle() {
+      if (this.buttonSize) {
+        const size = addUnit(this.buttonSize);
+
+        return {
+          width: size,
+          height: size,
+        };
+      }
     },
   },
 
@@ -173,7 +185,9 @@ export default createComponent({
             aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
             class={bem('button-wrapper')}
           >
-            {this.slots('button') || <div class={bem('button')} />}
+            {this.slots('button') || (
+              <div class={bem('button')} style={this.buttonStyle} />
+            )}
           </div>
         </div>
       </div>

@@ -111,11 +111,22 @@ it('click vertical', () => {
   restoreMock();
 });
 
-it('bar height', () => {
+it('bar-height prop', () => {
   const wrapper = mount(Slider, {
     propsData: {
       value: 50,
       barHeight: 10,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('button-size prop', () => {
+  const wrapper = mount(Slider, {
+    propsData: {
+      value: 50,
+      buttonSize: 10,
     },
   });
 
