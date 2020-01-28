@@ -53,7 +53,9 @@ export default createComponent({
   render() {
     const { status, active } = this;
     const { activeColor, direction } = this.parent;
+
     const titleStyle = active && { color: activeColor };
+    const lineStyle = status === 'finish' && { background: activeColor };
 
     return (
       <div class={[BORDER, bem([direction, { [status]: status }])]}>
@@ -61,7 +63,7 @@ export default createComponent({
           {this.slots()}
         </div>
         <div class={bem('circle-container')}>{this.genCircle()}</div>
-        <div class={bem('line')} />
+        <div class={bem('line')} style={lineStyle} />
       </div>
     );
   },
