@@ -17,16 +17,23 @@ export default createComponent({
         return 'process';
       }
     },
+    active() {
+      return this.status === 'process';
+    },
   },
 
   methods: {
     genCircle() {
       const { activeIcon, activeColor, inactiveIcon } = this.parent;
 
-      if (this.status === 'process') {
+      if (this.active) {
         return (
           this.slots('active-icon') || (
-            <Icon class={bem('icon')} name={activeIcon} color={activeColor} />
+            <Icon
+              class={bem('icon', 'active')}
+              name={activeIcon}
+              color={activeColor}
+            />
           )
         );
       }
@@ -44,13 +51,13 @@ export default createComponent({
   },
 
   render() {
-    const { status } = this;
+    const { status, active } = this;
     const { activeColor, direction } = this.parent;
-    const titleStyle = status === 'process' && { color: activeColor };
+    const titleStyle = active && { color: activeColor };
 
     return (
       <div class={[BORDER, bem([direction, { [status]: status }])]}>
-        <div class={bem('title')} style={titleStyle}>
+        <div class={bem('title', { active })} style={titleStyle}>
           {this.slots()}
         </div>
         <div class={bem('circle-container')}>{this.genCircle()}</div>

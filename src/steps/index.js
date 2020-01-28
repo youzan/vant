@@ -1,5 +1,4 @@
 import { createNamespace } from '../utils';
-import { GREEN } from '../utils/constant';
 import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('steps');
@@ -8,6 +7,7 @@ export default createComponent({
   mixins: [ParentMixin('vanSteps')],
 
   props: {
+    activeColor: String,
     inactiveIcon: String,
     active: {
       type: Number,
@@ -16,10 +16,6 @@ export default createComponent({
     direction: {
       type: String,
       default: 'horizontal',
-    },
-    activeColor: {
-      type: String,
-      default: GREEN,
     },
     activeIcon: {
       type: String,

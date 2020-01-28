@@ -11,7 +11,7 @@ exports[`icon slot 1`] = `
       <div class="van-step__line"></div>
     </div>
     <div class="van-hairline van-step van-step--horizontal van-step--process">
-      <div class="van-step__title" style="color: rgb(7, 193, 96);">
+      <div class="van-step__title van-step__title--active">
         B
       </div>
       <div class="van-step__circle-container">Custim Active Icon</div>
