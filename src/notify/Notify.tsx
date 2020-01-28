@@ -1,6 +1,5 @@
 // Utils
 import { createNamespace } from '../utils';
-import { WHITE } from '../utils/constant';
 import { inherit } from '../utils/functional';
 
 // Mixins
@@ -54,6 +53,7 @@ function Notify(
 
 Notify.props = {
   ...popupMixinProps,
+  color: String,
   background: String,
   className: null as any,
   message: [Number, String],
@@ -61,10 +61,6 @@ Notify.props = {
   type: {
     type: String,
     default: 'danger',
-  },
-  color: {
-    type: String,
-    default: WHITE,
   },
   duration: {
     type: Number,

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VanNotify from './Notify';
-import { WHITE } from '../utils/constant';
 import { isObject, isServer } from '../utils';
 import { mount } from '../utils/functional';
 import { NotifyOptions } from 'types/notify';
@@ -60,7 +59,7 @@ function defaultOptions(): NotifyOptions {
     type: 'danger',
     value: true,
     message: '',
-    color: WHITE,
+    color: undefined,
     background: undefined,
     duration: 3000,
     className: '',
