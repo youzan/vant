@@ -24,6 +24,7 @@ export default createComponent({
   props: {
     show: Boolean,
     title: String,
+    zIndex: Number,
     closeButtonText: String,
     deleteButtonText: String,
     theme: {
@@ -41,10 +42,6 @@ export default createComponent({
     maxlength: {
       type: [Number, String],
       default: Number.MAX_VALUE,
-    },
-    zIndex: {
-      type: Number,
-      default: 100,
     },
     transition: {
       type: Boolean,
