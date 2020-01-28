@@ -14,9 +14,9 @@ export default createComponent({
     value: String,
     errorMessage: String,
     focused: Boolean,
-    detailRows: Number,
+    detailRows: [Number, String],
     searchResult: Array,
-    detailMaxlength: Number,
+    detailMaxlength: [Number, String],
     showSearchResult: Boolean,
   },
 

@@ -75,8 +75,8 @@ export default {
 | show-search-result | 是否显示搜索结果 | *boolean* | `false` |
 | save-button-text | 保存按钮文字 | *string* | `保存` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |
-| detail-rows | 详细地址输入框行数 | *number* | `1` |
-| detail-maxlength `v2.0.4` | 详细地址最大长度 | *number* | `200` |
+| detail-rows | 详细地址输入框行数 | *string \| number* | `1` |
+| detail-maxlength `v2.0.4` | 详细地址最大长度 | *string \| number* | `200` |
 | is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` |
 | tel-validator | 手机号格式校验函数 | *string => boolean* | - |

@@ -53,11 +53,11 @@ export default createComponent({
       default: true,
     },
     detailRows: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     detailMaxlength: {
-      type: Number,
+      type: [Number, String],
       default: 200,
     },
     addressInfo: {

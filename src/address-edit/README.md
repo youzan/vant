@@ -75,8 +75,8 @@ export default {
 | show-search-result | Whether to show address search result | *boolean* | `false` |
 | save-button-text | Save button text | *string* | `Save` |
 | delete-button-text | Delete button text | *string* | `Delete` |
-| detail-rows | Detail input rows | *number* | `1` |
-| detail-maxlength `v2.0.4` | Detail maxlength | *number* | `200` |
+| detail-rows | Detail input rows | *string \| number* | `1` |
+| detail-maxlength `v2.0.4` | Detail maxlength | *string \| number* | `200` |
 | is-saving | Whether to show save button loading status | *boolean* | `false` |
 | is-deleting | Whether to show delete button loading status | *boolean* | `false` |
 | tel-validator | The method to validate tel | *(tel: string) => boolean* | - |
