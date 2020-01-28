@@ -160,7 +160,7 @@ ActionSheet.props = {
   ...popupMixinProps,
   title: String,
   actions: Array,
-  duration: Number,
+  duration: [Number, String],
   cancelText: String,
   description: String,
   getContainer: [String, Function],

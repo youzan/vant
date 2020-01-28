@@ -9,7 +9,7 @@ export default createComponent({
 
   props: {
     round: Boolean,
-    duration: Number,
+    duration: [Number, String],
     closeable: Boolean,
     transition: String,
     safeAreaInsetBottom: Boolean,

@@ -142,7 +142,7 @@ export default {
 | cancel-text | 取消按钮文字 | *string* | - |
 | description `v2.2.8` | 选项上方的描述信息 | *string* | - |
 | close-icon `v2.2.13` | 关闭 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `cross` |
-| duration `v2.0.3` | 动画时长，单位秒 | *number* | `0.3` |
+| duration `v2.0.3` | 动画时长，单位秒 | *string \| number* | `0.3` |
 | round `v2.0.9` | 是否显示圆角 | *boolean* | `true` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
