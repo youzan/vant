@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [ParentMixin('vanCheckbox')],
 
   props: {
-    max: Number,
+    max: [Number, String],
     disabled: Boolean,
     iconSize: [Number, String],
     checkedColor: String,

@@ -202,7 +202,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Names of all checked checkboxes | *any[]* | - |
-| max | Maximum amount of checked options | *number* | `0`(Unlimited) |
+| max | Maximum amount of checked options | *string \| number* | `0`(Unlimited) |
 | disabled | Disable all checkboxes | *boolean* | `false` |
 | icon-size `v2.2.3` | Icon size of all checkboxes | *string \| number* | `20px` |
 | checked-color `v2.2.3` | Checked color of all checkboxes | *string* | `#1989fa` | - |
