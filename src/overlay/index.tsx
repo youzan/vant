@@ -57,13 +57,10 @@ function Overlay(
 
 Overlay.props = {
   show: Boolean,
+  zIndex: [Number, String],
   duration: [Number, String],
   className: null as any,
   customStyle: Object,
-  zIndex: {
-    type: [Number, String],
-    default: 1,
-  },
 };
 
 export default createComponent<OverlayProps, OverlayEvents>(Overlay);
