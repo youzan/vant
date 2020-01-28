@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { GREEN } from '../utils/constant';
 import { isHidden } from '../utils/dom/style';
 import { preventDefault } from '../utils/dom/event';
@@ -43,13 +43,10 @@ export default createComponent({
   ],
 
   props: {
+    zIndex: Number,
     sticky: {
       type: Boolean,
       default: true,
-    },
-    zIndex: {
-      type: Number,
-      default: 1,
     },
     highlightColor: {
       type: String,
@@ -72,6 +69,14 @@ export default createComponent({
   },
 
   computed: {
+    sidebarStyle() {
+      if (isDef(this.zIndex)) {
+        return {
+          zIndex: this.zIndex + 1,
+        };
+      }
+    },
+
     highlightStyle() {
       const { highlightColor } = this;
       if (highlightColor) {
@@ -237,7 +242,7 @@ export default createComponent({
       <div class={bem()}>
         <div
           class={bem('sidebar')}
-          style={{ zIndex: this.zIndex + 1 }}
+          style={this.sidebarStyle}
           onClick={this.onClick}
           onTouchstart={this.touchStart}
           onTouchmove={this.onTouchMove}
