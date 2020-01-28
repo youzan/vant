@@ -5,7 +5,9 @@ exports[`close-icon prop 1`] = `
     <!----></i></div>
 `;
 
-exports[`duration prop 1`] = `<div class="van-popup van-popup--center" style="transition-duration: 0.5s;" name="van-fade"></div>`;
+exports[`duration prop when position is center 1`] = `<div class="van-popup van-popup--center" style="animation-duration: 0.5s;" name="van-fade"></div>`;
+
+exports[`duration prop when position is top 1`] = `<div class="van-popup van-popup--top" style="transition-duration: 0.5s;" name="van-popup-slide-top"></div>`;
 
 exports[`reset z-index 1`] = `<div class="van-popup van-popup--center" name="van-fade"></div>`;
 

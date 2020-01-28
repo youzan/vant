@@ -30,7 +30,7 @@ export type ActionSheetProps = PopupMixinProps & {
   round: boolean;
   title?: string;
   actions?: ActionSheetItem[];
-  duration: number;
+  duration: number | string;
   closeIcon: string;
   cancelText?: string;
   description?: string;

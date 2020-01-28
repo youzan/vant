@@ -206,11 +206,23 @@ test('click event', () => {
   expect(wrapper.emitted('click')).toBeTruthy();
 });
 
-test('duration prop', () => {
+test('duration prop when position is center', () => {
   const wrapper = mount(Popup, {
     propsData: {
       value: true,
       duration: 0.5,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('duration prop when position is top', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      duration: 0.5,
+      position: 'top',
     },
   });
 

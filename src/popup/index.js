@@ -49,14 +49,16 @@ export default createComponent({
     }
 
     const { round, position, duration } = this;
+    const isCenter = position === 'center';
 
     const transitionName =
       this.transition ||
-      (position === 'center' ? 'van-fade' : `van-popup-slide-${position}`);
+      (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
     const style = {};
     if (isDef(duration)) {
-      style.transitionDuration = `${duration}s`;
+      const key = isCenter ? 'animationDuration' : 'transitionDuration';
+      style[key] = `${duration}s`;
     }
 
     return (
