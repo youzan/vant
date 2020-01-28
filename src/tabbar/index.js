@@ -9,6 +9,7 @@ export default createComponent({
 
   props: {
     route: Boolean,
+    zIndex: Number,
     activeColor: String,
     inactiveColor: String,
     safeAreaInsetBottom: Boolean,
@@ -23,10 +24,6 @@ export default createComponent({
     fixed: {
       type: Boolean,
       default: true,
-    },
-    zIndex: {
-      type: Number,
-      default: 1,
     },
   },
 
