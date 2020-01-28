@@ -82,7 +82,7 @@ function NavBar(
 NavBar.props = {
   title: String,
   fixed: Boolean,
-  zIndex: Number,
+  zIndex: [Number, String],
   leftText: String,
   rightText: String,
   leftArrow: Boolean,

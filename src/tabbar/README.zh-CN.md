@@ -168,7 +168,7 @@ export default {
 | v-model | 当前选中标签的名称或索引值 | *string \| number* | `0` |
 | fixed | 是否固定在底部 | *boolean* | `true` |
 | border | 是否显示外边框 | *boolean* | `true` |
-| z-index | 元素 z-index | *number* | `1` |
+| z-index | 元素 z-index | *string \| number* | `1` |
 | active-color | 选中标签的颜色 | *string* | `#1989fa` |
 | inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` |
 | route | 是否开启路由模式 | *boolean* | `false` |

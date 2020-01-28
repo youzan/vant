@@ -161,7 +161,7 @@ export default {
 | v-model | Identifier of current tab | *string \| number* | `0` |
 | fixed | Whether to fixed bottom | *boolean* | `true` |
 | border | Whether to show border | *boolean* | `true` |
-| z-index | Z-index | *number* | `1` |
+| z-index | Z-index | *string \| number* | `1` |
 | active-color | Color of active tab item | *string* | `#1989fa` |
 | inactive-color | Color of inactive tab item | *string* | `#7d7e80` |
 | route | Whether to enable route mode | *boolean* | `false` |

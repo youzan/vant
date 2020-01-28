@@ -61,7 +61,7 @@ export default {
 | left-arrow | 是否显示左侧箭头 | *boolean* | `false` |
 | fixed | 是否固定在顶部 | *boolean* | `false` |
 | border | 是否显示下边框 | *boolean* | `true` |
-| z-index | 元素 z-index | *number* | `1` |
+| z-index | 元素 z-index | *string \| number* | `1` |
 
 ### Slots
 

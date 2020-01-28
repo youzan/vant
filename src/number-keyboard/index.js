@@ -24,7 +24,7 @@ export default createComponent({
   props: {
     show: Boolean,
     title: String,
-    zIndex: Number,
+    zIndex: [Number, String],
     closeButtonText: String,
     deleteButtonText: String,
     theme: {

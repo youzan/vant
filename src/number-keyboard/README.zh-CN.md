@@ -147,7 +147,7 @@ export default {
 | title | 键盘标题 | *string* | - |
 | maxlength `v2.0.2` | 输入值最大长度 | *string \| number* | - |
 | transition | 是否开启过场动画 | *boolean* | `true` |
-| z-index | 键盘 z-index | *number* | `100` |
+| z-index | 键盘 z-index | *string \| number* | `100` |
 | extra-key | 左下角按键内容 | *string* | `''` |
 | close-button-text | 关闭按钮文字，空则不展示 | *string* | `-` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |

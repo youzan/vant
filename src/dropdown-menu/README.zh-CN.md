@@ -117,7 +117,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | active-color | 菜单标题和选项的选中态颜色 | *string* | `#1989fa` |
-| z-index | 菜单栏 z-index 层级 | *number* | `10` |
+| z-index | 菜单栏 z-index 层级 | *string \| number* | `10` |
 | duration | 动画时长，单位秒 | *number* | `0.2` |
 | direction `v2.0.1` | 菜单展开方向，可选值为`up` | *string* | `down` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |

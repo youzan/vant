@@ -17,7 +17,7 @@ export default createComponent({
   ],
 
   props: {
-    zIndex: Number,
+    zIndex: [Number, String],
     container: null,
     offsetTop: {
       type: Number,

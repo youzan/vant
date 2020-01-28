@@ -42,7 +42,7 @@ export default createComponent({
   ],
 
   props: {
-    zIndex: Number,
+    zIndex: [Number, String],
     highlightColor: String,
     sticky: {
       type: Boolean,

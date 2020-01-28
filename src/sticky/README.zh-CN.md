@@ -67,7 +67,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | offset-top | 吸顶时与顶部的距离，单位`px` | *number* | `0` |
-| z-index | 吸顶时的 z-index | *number* | `99` |
+| z-index | 吸顶时的 z-index | *string \| number* | `99` |
 | container | 容器对应的 HTML 节点 | *HTMLElement* | - |
 
 ### Events

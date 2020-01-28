@@ -141,7 +141,7 @@ Use `title` prop to set keyboard title
 | title | Keyboard title | *string* | - |
 | maxlength `v2.0.2` | Value maxlength | *string \| number* | - |
 | transition | Whether to show transition animation | *boolean* | `true` |
-| z-index | Keyboard z-index | *number* | `100` |
+| z-index | Keyboard z-index | *string \| number* | `100` |
 | extra-key | Content of bottom left key | *string* | `''` |
 | close-button-text | Close button text | *string* | `-` |
 | delete-button-text | Delete button text | *string* | `delete` |

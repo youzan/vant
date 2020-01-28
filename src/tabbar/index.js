@@ -9,7 +9,7 @@ export default createComponent({
 
   props: {
     route: Boolean,
-    zIndex: Number,
+    zIndex: [Number, String],
     activeColor: String,
     inactiveColor: String,
     safeAreaInsetBottom: Boolean,
