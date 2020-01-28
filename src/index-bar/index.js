@@ -1,6 +1,5 @@
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { GREEN } from '../utils/constant';
 import { isHidden } from '../utils/dom/style';
 import { preventDefault } from '../utils/dom/event';
 import {
@@ -44,13 +43,10 @@ export default createComponent({
 
   props: {
     zIndex: Number,
+    highlightColor: String,
     sticky: {
       type: Boolean,
       default: true,
-    },
-    highlightColor: {
-      type: String,
-      default: GREEN,
     },
     stickyOffsetTop: {
       type: Number,
