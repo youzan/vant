@@ -218,7 +218,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | min-date | Min date | *Date*  | Today |
 | max-date | Max date | *Date*  | Six months after the today |
 | default-date | Default selected date | *Date \| Date[]* | Today |
-| row-height | Row height | *number* | `64` |
+| row-height | Row height | *string \| number* | `64` |
 | formatter | Day formatter | *(day: Day) => Day* | - |
 | position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
@@ -230,7 +230,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 | confirm-text | Confirm button text | *string* | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
-| max-range `v2.4.3` | Number of selectable days | *number* | - |
+| max-range `v2.4.3` | Number of selectable days | *string \| number* | - |
 | range-prompt `v2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
 | get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 

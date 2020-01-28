@@ -13,7 +13,7 @@ export default createComponent({
     maxDate: Date,
     showMark: Boolean,
     showTitle: Boolean,
-    rowHeight: Number,
+    rowHeight: [Number, String],
     formatter: Function,
     currentDate: [Date, Array],
   },

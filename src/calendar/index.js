@@ -53,7 +53,7 @@ export default createComponent({
       default: 'bottom',
     },
     rowHeight: {
-      type: Number,
+      type: [Number, String],
       default: ROW_HEIGHT,
     },
     round: {
@@ -81,7 +81,7 @@ export default createComponent({
       default: true,
     },
     maxRange: {
-      type: Number,
+      type: [Number, String],
       default: null,
     },
   },

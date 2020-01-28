@@ -218,7 +218,7 @@ export default {
 | min-date | 最小日期 | *Date*  | 当前日期 |
 | max-date | 最大日期 | *Date*  | 当前日期的六个月后 |
 | default-date | 默认选中的日期 | *Date \| Date[]* | 今天 |
-| row-height | 日期行高 | *number* | `64` |
+| row-height | 日期行高 | *string \| number* | `64` |
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - |
 | position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
@@ -230,7 +230,7 @@ export default {
 | safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
-| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number* | - |
+| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *string \| number* | - |
 | range-prompt `v2.4.3` | 选择超过区间范围时的提示文案 | *string* | `选择天数不能超过 xx 天` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
