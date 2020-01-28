@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render left & right slot 1`] = `
-<div class="van-nav-bar van-hairline--bottom" style="z-index: 1;">
+<div class="van-nav-bar van-hairline--bottom">
   <div class="van-nav-bar__left">Custom Left</div>
   <div class="van-nav-bar__title van-ellipsis"></div>
   <div class="van-nav-bar__right">Custom Right</div>
@@ -9,7 +9,7 @@ exports[`render left & right slot 1`] = `
 `;
 
 exports[`render title slot 1`] = `
-<div class="van-nav-bar van-hairline--bottom" style="z-index: 1;">
+<div class="van-nav-bar van-hairline--bottom">
   <div class="van-nav-bar__left"></div>
   <div class="van-nav-bar__title van-ellipsis">Custom Title</div>
   <div class="van-nav-bar__right"></div>
