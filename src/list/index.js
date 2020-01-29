@@ -38,7 +38,7 @@ export default createComponent({
       default: true,
     },
     offset: {
-      type: Number,
+      type: [Number, String],
       default: 300,
     },
     direction: {
