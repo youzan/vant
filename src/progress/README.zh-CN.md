@@ -70,6 +70,6 @@ Vue.use(Progress);
 | track-color `v2.2.9` | 轨道颜色 | *string* | `#e5e5e5` |
 | pivot-text | 进度文字内容 | *string* | 百分比 |
 | pivot-color | 进度文字背景色 | *string* | 同进度条颜色 |
-| text-color | 进度文字颜色 | *string* | `#fff` |
+| text-color | 进度文字颜色 | *string* | `white` |
 | inactive | 是否置灰 | *boolean* | `false` |
 | show-pivot | 是否显示进度文字 | *boolean* | `true` |

@@ -153,7 +153,7 @@ export default {
 | confirmButtonText | 确认按钮文案 | *string* | `确认` |
 | confirmButtonColor | 确认按钮颜色 | *string* | `#1989fa` |
 | cancelButtonText | 取消按钮文案 | *string* | `取消` |
-| cancelButtonColor | 取消按钮颜色 | *string* | `#000` |
+| cancelButtonColor | 取消按钮颜色 | *string* | `black` |
 | overlay | 是否展示遮罩层 | *boolean* | `true` |
 | overlayClass `v2.2.7` | 自定义遮罩层类名 | *string* | - |
 | overlayStyle `v2.2.7` | 自定义遮罩层样式 | *object* | - |
@@ -180,7 +180,7 @@ export default {
 | confirm-button-text | 确认按钮文案 | *string* | `确认` |
 | confirm-button-color | 确认按钮颜色 | *string* | `#1989fa` |
 | cancel-button-text | 取消按钮文案 | *string* | `取消` |
-| cancel-button-color | 取消按钮颜色 | *string* | `#000` |
+| cancel-button-color | 取消按钮颜色 | *string* | `black` |
 | overlay | 是否展示遮罩层 | *boolean* | `true` |
 | overlay-class `v2.2.7` | 自定义遮罩层类名 | *string* | - |
 | overlay-style `v2.2.7` | 自定义遮罩层样式 | *object* | - |

@@ -116,7 +116,7 @@ export default {
 | rate | Target rate | *number \| string* | `100` |
 | size | Circle size | *number \| string* | `100px` |
 | color `v2.1.4` | Progress color, passing object to render gradient | *string \| object* | `#1989fa` |
-| layer-color | Layer color | *string* | `#fff` |
+| layer-color | Layer color | *string* | `white` |
 | fill | Fill color | *string* | `none` |
 | speed | Animate speed（rate/s）| *number \| string* | `0` |
 | text | Text | *string* | - |

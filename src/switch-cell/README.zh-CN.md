@@ -67,7 +67,7 @@ export default {
 | disabled | 是否为禁用状态 |  *boolean* | `false` |
 | size | 开关尺寸 | *number \| string* | `24px` |
 | active-color | 开关时的背景色 | *string* | `#1989fa` |
-| inactive-color | 开关时的背景色 | *string* | `#fff` |
+| inactive-color | 开关时的背景色 | *string* | `white` |
 | active-value | 打开时的值 | *any* | `true` |
 | inactive-value | 关闭时的值 | *any* | `false` |
 

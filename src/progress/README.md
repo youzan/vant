@@ -67,6 +67,6 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 | track-color `v2.2.9` | Track color | *string* | `#e5e5e5` |
 | pivot-text | Pivot text | *string* | percentage |
 | pivot-color | Pivot text background color | *string* | inherit progress color |
-| text-color | Pivot text color | *string* | `#fff` |
+| text-color | Pivot text color | *string* | `white` |
 | inactive | Whether to be gray | *boolean* | `false` |
 | show-pivot | Whether to show text | *boolean* | `true` |

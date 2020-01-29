@@ -128,7 +128,7 @@ export default {
 | rate | 目标进度 | *number \| string* | `100` |
 | size | 圆环直径，默认单位为 `px` | *number \| string* | `100px` |
 | color `v2.1.4` | 进度条颜色，传入对象格式可以定义渐变色 | *string \| object* | `#1989fa` |
-| layer-color | 轨道颜色 | *string* | `#fff` |
+| layer-color | 轨道颜色 | *string* | `white` |
 | fill | 填充颜色 | *string* | `none` |
 | speed | 动画速度（单位为 rate/s）| *number \| string* | `0` |
 | text | 文字 | *string* | - |

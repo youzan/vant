@@ -122,7 +122,7 @@ export default {
 | showConfirmButton | Whether to show confirm button | *boolean* | `true` |
 | showCancelButton | Whether to show cancel button | *boolean* | `false` |
 | cancelButtonText | Cancel button text | *string* | `Cancel` |
-| cancelButtonColor | Cancel button color | *string* | `#000` |
+| cancelButtonColor | Cancel button color | *string* | `black` |
 | confirmButtonText | Confirm button text | *string* | `Confirm` |
 | confirmButtonColor | Confirm button color | *string* | `#1989fa` |
 | overlay | Whether to show overlay | *boolean* | `true` |
@@ -147,7 +147,7 @@ export default {
 | show-confirm-button | Whether to show confirm button | *boolean* |  `true` |
 | show-cancel-button | Whether to show cancel button | *boolean* | `false` |
 | cancel-button-text | Cancel button text | *string* | `Cancel` |
-| cancel-button-color | Cancel button color | *string* | `#000` |
+| cancel-button-color | Cancel button color | *string* | `black` |
 | confirm-button-text | Confirm button text | *string* | `Confirm` |
 | confirm-button-color | Confirm button color | *string* | `#1989fa` |
 | overlay | Whether to show overlay | *boolean* | `true` |

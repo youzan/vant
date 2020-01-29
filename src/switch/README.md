@@ -96,7 +96,7 @@ export default {
 | disabled | Whether to disable switch | *boolean* | `false` |
 | size `v2.2.11` | Size of switch | *number \| string* | `30px` |
 | active-color | Background color when active | *string* | `#1989fa` |
-| inactive-color | Background color when inactive | *string* | `#fff` |
+| inactive-color | Background color when inactive | *string* | `white` |
 | active-value | Value when active | *any* | `true` |
 | inactive-value | Value when inactive | *any* | `false` |
 
