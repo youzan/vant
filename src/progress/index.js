@@ -10,7 +10,7 @@ export default createComponent({
     textColor: String,
     pivotColor: String,
     trackColor: String,
-    strokeWidth: [String, Number],
+    strokeWidth: [Number, String],
     percentage: {
       type: Number,
       required: true,

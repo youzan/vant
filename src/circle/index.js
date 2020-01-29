@@ -27,11 +27,11 @@ export default createComponent({
       default: 0,
     },
     speed: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     size: {
-      type: [String, Number],
+      type: [Number, String],
       default: 100,
     },
     fill: {
@@ -39,7 +39,7 @@ export default createComponent({
       default: 'none',
     },
     rate: {
-      type: Number,
+      type: [Number, String],
       default: 100,
     },
     layerColor: {
@@ -51,7 +51,7 @@ export default createComponent({
       default: BLUE,
     },
     strokeWidth: {
-      type: Number,
+      type: [Number, String],
       default: 40,
     },
     clockwise: {
@@ -78,7 +78,7 @@ export default createComponent({
     },
 
     viewBoxSize() {
-      return 1000 + this.strokeWidth;
+      return +this.strokeWidth + 1000;
     },
 
     layerStyle() {
@@ -86,7 +86,7 @@ export default createComponent({
 
       return {
         stroke: `${this.color}`,
-        strokeWidth: `${this.strokeWidth + 1}px`,
+        strokeWidth: `${+this.strokeWidth + 1}px`,
         strokeLinecap: this.strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`,
       };
