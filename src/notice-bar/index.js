@@ -11,16 +11,16 @@ export default createComponent({
     leftIcon: String,
     wrapable: Boolean,
     background: String,
-    delay: {
-      type: [Number, String],
-      default: 1,
-    },
     scrollable: {
       type: Boolean,
       default: true,
     },
+    delay: {
+      type: [Number, String],
+      default: 1,
+    },
     speed: {
-      type: Number,
+      type: [Number, String],
       default: 50,
     },
   },
