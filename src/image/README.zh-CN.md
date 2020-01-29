@@ -104,9 +104,9 @@ Vue.use(Lazyload);
 | src | 图片链接 | *string* | - |
 | fit | 图片填充模式 | *string* | `fill` |
 | alt | 替代文本 | *string* | - |
-| width | 宽度，默认单位为`px` | *string \| number* | - |
-| height | 高度，默认单位为`px` | *string \| number* | - |
-| radius `v2.1.6` | 圆角大小，默认单位为`px` | *string \| number* | `0` |
+| width | 宽度，默认单位为`px` | *number \| string* | - |
+| height | 高度，默认单位为`px` | *number \| string* | - |
+| radius `v2.1.6` | 圆角大小，默认单位为`px` | *number \| string* | `0` |
 | round | 是否显示为圆形 | *boolean* | `false` |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | show-error `v2.0.9` | 是否展示图片加载失败提示 | *boolean* | `true` |

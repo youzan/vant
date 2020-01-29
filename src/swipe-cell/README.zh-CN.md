@@ -110,7 +110,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name `v2.0.4` | 标识符，可以在事件参数中获取到 | *string \| number* | - |
+| name `v2.0.4` | 标识符，可以在事件参数中获取到 | *number \| string* | - |
 | before-close `v2.3.0` | 关闭前的回调函数 | *Function* | - |
 | disabled | 是否禁用滑动 | *boolean* | `false` |
 | left-width | 指定左侧滑动区域宽度 | *number* | `auto` |

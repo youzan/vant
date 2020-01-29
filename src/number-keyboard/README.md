@@ -139,9 +139,9 @@ Use `title` prop to set keyboard title
 | show | Whether to show keyboard | *boolean* | - |
 | theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` |
 | title | Keyboard title | *string* | - |
-| maxlength `v2.0.2` | Value maxlength | *string \| number* | - |
+| maxlength `v2.0.2` | Value maxlength | *number \| string* | - |
 | transition | Whether to show transition animation | *boolean* | `true` |
-| z-index | Keyboard z-index | *string \| number* | `100` |
+| z-index | Keyboard z-index | *number \| string* | `100` |
 | extra-key | Content of bottom left key | *string* | `''` |
 | close-button-text | Close button text | *string* | `-` |
 | delete-button-text | Delete button text | *string* | `delete` |

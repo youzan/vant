@@ -66,7 +66,7 @@ Vue.use(Progress);
 |------|------|------|------|
 | inactive | 是否置灰 | *boolean* | `false` |
 | percentage | 进度百分比 | *number* | `0` |
-| stroke-width `v2.2.1` | 进度条粗细，默认单位为`px` | *string \| number* | `4px` |
+| stroke-width `v2.2.1` | 进度条粗细，默认单位为`px` | *number \| string* | `4px` |
 | show-pivot | 是否显示进度文字 | *boolean* | `true` |
 | color | 进度条颜色 | *string* | `#1989fa` |
 | text-color | 进度文字颜色 | *string* | `#fff` |

@@ -65,7 +65,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | index-list | Index List | *string[] \| number[]* | `A-Z` |
-| z-index | z-index | *string \| number* | `1` |
+| z-index | z-index | *number \| string* | `1` |
 | sticky | Whether to enable anchor sticky top | *boolean* | `true` |
 | sticky-offset-top `v2.0.7` | Anchor offset top when sticky | *number* | `0` |
 | highlight-color | Index character highlight color | *string* | `#07c160` | - |
@@ -74,7 +74,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| index | Index | *string \| number* | - |
+| index | Index | *number \| string* | - |
 
 ### IndexBar Events
 

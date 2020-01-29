@@ -96,9 +96,9 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每条地址的唯一标识 | *string \| number* |
+| id | 每条地址的唯一标识 | *number \| string* |
 | name | 收货人姓名 | *string* |
-| tel | 收货人手机号 | *string \| number* |
+| tel | 收货人手机号 | *number \| string* |
 | address | 收货地址 | *string* |
 | isDefault | 是否为默认地址 | *boolean* |
 

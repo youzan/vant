@@ -85,7 +85,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Index of chosen item | *string \| number* | `0` |
+| v-model | Index of chosen item | *number \| string* | `0` |
 
 ### Sidebar Events
 
@@ -99,7 +99,7 @@ export default {
 |------|------|------|------|
 | title | Content | *string* | `''` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info | Content of the badge | *string \| number* | `''` |
+| info | Content of the badge | *number \| string* | `''` |
 | disabled `v2.2.0` | Whether to be disabled | *boolean* | `false` |
 | url | Link | *string* | - |
 | to `v2.0.4` | Target route of the link, same as to of vue-router | *string \| object* | - |

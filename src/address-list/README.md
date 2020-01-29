@@ -96,9 +96,9 @@ export default {
 
 | Key | Description | Type |
 |------|------|------|
-| id | Id | *string \| number* |
+| id | Id | *number \| string* |
 | name | Name | *string* |
-| tel | Phone | *string \| number* |
+| tel | Phone | *number \| string* |
 | address | Address | *string* |
 | isDefault | Is default address | *boolean* |
 

@@ -113,7 +113,7 @@ Use `active-color` prop to custom active color of the title and options
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | active-color | Active color of title and option | *string* | `#1989fa` |
-| z-index | z-index of menu item | *string \| number* | `10` |
+| z-index | z-index of menu item | *number \| string* | `10` |
 | duration | Transition duration, unit second | *number* | `0.2` |
 | direction `v2.0.1` | Expand direction, can be set to `up` | *string* | `down` |
 | overlay | Whether to show overlay | *boolean* | `true` |
@@ -124,7 +124,7 @@ Use `active-color` prop to custom active color of the title and options
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| value | Value of current option，can use `v-model` | *string \| number* | - |
+| value | Value of current option，can use `v-model` | *number \| string* | - |
 | title | Item title | *string* | Text of selected option |
 | options | Options | *Option[]* | `[]` |
 | disabled | Whether to disable dropdown item | *boolean* | `false` |
@@ -161,5 +161,5 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get DropdownItem instance and call i
 | Key | Description | Type |
 |------|------|------|
 | text | Text | *string* |
-| value | Value | *string \| number* |
+| value | Value | *number \| string* |
 | icon | Left icon | *string* |

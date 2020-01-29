@@ -234,10 +234,10 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | label | 输入框左侧文本 | *string* | - |
-| value | 当前输入的值 | *string \| number* | - |
+| value | 当前输入的值 | *number \| string* | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | *string* | `text` |
 | size | 大小，可选值为 `large` | *string* | - |
-| maxlength | 输入的最大字符数 | *string \| number* | - |
+| maxlength | 输入的最大字符数 | *number \| string* | - |
 | placeholder | 占位提示文字 | *string* | - |
 | border | 是否显示内边框 | *boolean* | `true` |
 | disabled | 是否禁用输入框 | *boolean* | `false` |
@@ -253,7 +253,7 @@ export default {
 | arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | label-class | 左侧文本额外类名 | *any* | - |
-| label-width | 左侧文本宽度，默认单位为`px` | *string \| number* | `90px` |
+| label-width | 左侧文本宽度，默认单位为`px` | *number \| string* | `90px` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |

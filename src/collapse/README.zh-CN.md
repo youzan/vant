@@ -86,7 +86,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前展开面板的 name | 手风琴模式：*string \| number*<br>非手风琴模式：*(string \| number)[]* | - |
+| v-model | 当前展开面板的 name | 手风琴模式：*number \| string*<br>非手风琴模式：*(number \| string)[]* | - |
 | accordion | 是否开启手风琴模式 | *boolean* | `false` |
 | border | 是否显示外边框 | *boolean* | `true` |
 
@@ -100,12 +100,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name | 唯一标识符，默认为索引值 | *string \| number* | `index` |
+| name | 唯一标识符，默认为索引值 | *number \| string* | `index` |
 | icon | 标题栏左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 | size | 标题栏大小，可选值为 `large` | *string* | - |
-| title | 标题栏左侧内容 | *string \| number* | - |
-| value | 标题栏右侧内容 | *string \| number* | - |
-| label | 标题栏描述信息 | *string \| number*  | - |
+| title | 标题栏左侧内容 | *number \| string* | - |
+| value | 标题栏右侧内容 | *number \| string* | - |
+| label | 标题栏描述信息 | *number \| string*  | - |
 | border | 是否显示内边框 | *boolean* | `true` |
 | is-link | 是否展示标题栏右侧箭头并开启点击反馈 | *boolean* | `true` |
 | disabled | 是否禁用面板 | *boolean* | `false` |

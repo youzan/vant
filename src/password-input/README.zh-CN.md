@@ -135,7 +135,7 @@ export default {
 | focused `v2.1.8` | 是否已聚焦，聚焦时会显示光标 | *boolean* | `false` |
 | info | 输入框下方文字提示 | *string* | - |
 | error-info | 输入框下方错误提示 | *string* | - |
-| gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | *string \| number* | `0` |
+| gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | *number \| string* | `0` |
 
 ### Events
 

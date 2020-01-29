@@ -60,7 +60,7 @@ Vue.use(Area);
 | value | 当前选中的省市区`code` | *string* | - |
 | title | 顶部栏标题 | *string* | - |
 | area-list | 省市区数据，格式见下方 | *object* | - |
-| columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | *number \| string* | `3` |
 | columns-placeholder `v2.2.5` | 列占位提示文字 | *string[]* | `[]` |
 | loading | 是否显示加载状态 | *boolean* | `false` |
 | item-height | 选项高度 | *number* | `44` |

@@ -118,7 +118,7 @@ export default {
 | label | 搜索框左侧文本 | *string* | - |
 | shape | 搜索框形状，可选值为 `round` | *string* | `square` |
 | background | 搜索框外部背景色 | *string* | `#f2f2f2` |
-| maxlength | 输入的最大字符数 | *string \| number* | - |
+| maxlength | 输入的最大字符数 | *number \| string* | - |
 | placeholder | 占位提示文字 | *string* | - |
 | clearable | 是否启用清除控件 | *boolean* | `true` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` |

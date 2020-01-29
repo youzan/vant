@@ -197,13 +197,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 绑定当前选中标签的标识符 | *string \| number* | `0` |
+| v-model | 绑定当前选中标签的标识符 | *number \| string* | `0` |
 | type | 样式风格类型，可选值为`card` | *string* | `line` |
 | color | 标签主题色 | *string* | `#ee0a24` |
 | duration | 动画时间，单位秒 | *number* | `0.3` |
 | background | 标签栏背景色 | *string* | `white` |
-| line-width | 底部条宽度，默认单位 px | *string \| number* | `auto` |
-| line-height | 底部条高度，默认单位 px | *string \| number* | `3px` |
+| line-width | 底部条宽度，默认单位 px | *number \| string* | `auto` |
+| line-height | 底部条高度，默认单位 px | *number \| string* | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` |
 | border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` |
 | ellipsis | 是否省略过长的标题文字 | *boolean* | `true` |
@@ -223,8 +223,8 @@ export default {
 | title | 标题 | *string* | - |
 | disabled | 是否禁用标签 | *boolean* | `false` |
 | dot `v2.3.0` | 是否在标题右上角显示小红点 | *boolean* | `false` |
-| info `v2.3.0` | 标题右上角徽标的内容 | *string \| number* | - |
-| name `v2.0.6` | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 |
+| info `v2.3.0` | 标题右上角徽标的内容 | *number \| string* | - |
+| name `v2.0.6` | 标签名称，作为匹配的标识符 | *number \| string* | 标签的索引值 |
 | url `v2.2.1` | 点击后跳转的链接地址 | *string* | - |
 | to `v2.2.1` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | replace `v2.2.1` | 是否在跳转时替换当前页面历史 | *boolean* | `false` |

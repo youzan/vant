@@ -111,9 +111,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name `v2.0.3` | Input name | *string \| number* | - |
+| name `v2.0.3` | Input name | *number \| string* | - |
 | accept | Accepted file type | *string* | `image/*` |
-| preview-size | Size of preview image | *string \| number* | `80px` |
+| preview-size | Size of preview image | *number \| string* | `80px` |
 | preview-image `v2.1.5` | Whether to show image preview | *boolean* | `true` |
 | preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` |
 | multiple | Whether to enable multiple selection pictures | *boolean* | `false` |

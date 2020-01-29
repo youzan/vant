@@ -75,13 +75,13 @@ export default {
 | show-search-result | Whether to show address search result | *boolean* | `false` |
 | save-button-text | Save button text | *string* | `Save` |
 | delete-button-text | Delete button text | *string* | `Delete` |
-| detail-rows | Detail input rows | *string \| number* | `1` |
-| detail-maxlength `v2.0.4` | Detail maxlength | *string \| number* | `200` |
+| detail-rows | Detail input rows | *number \| string* | `1` |
+| detail-maxlength `v2.0.4` | Detail maxlength | *number \| string* | `200` |
 | is-saving | Whether to show save button loading status | *boolean* | `false` |
 | is-deleting | Whether to show delete button loading status | *boolean* | `false` |
 | tel-validator | The method to validate tel | *(tel: string) => boolean* | - |
 | postal-validator `v2.1.2` | The method to validate postal | *(tel: string) => boolean* | - |
-| validator | Custom validator | *(key, value) => string* | - |
+| validator | Custom validator | *(key, val) => string* | - |
 
 ### Events
 
@@ -114,7 +114,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get AddressEdit instance and call in
 
 | key | Description | Type |
 |------|------|------|
-| id | Address Id | *string \| number* |
+| id | Address Id | *number \| string* |
 | name | Name | *string* |
 | tel | Phone | *string* |
 | province | Province | *string* |

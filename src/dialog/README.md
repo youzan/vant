@@ -115,7 +115,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Title | *string* | - |
-| width `v2.2.7` | Width | *string \| number* | `320px` |
+| width `v2.2.7` | Width | *number \| string* | `320px` |
 | message | Message | *string* | - |
 | messageAlign | Message text align，can be set to `left` `right` | *string* | `center` |
 | className | Custom className | *any* | - |
@@ -141,7 +141,7 @@ export default {
 |------|------|------|------|
 | v-model | Whether to show dialog | *boolean* | - |
 | title | Title | *string* | - |
-| width `v2.2.7` | Width | *string \| number* | `320px` |
+| width `v2.2.7` | Width | *number \| string* | `320px` |
 | message | Message | *string* | - |
 | message-align | Message align，can be set to `left` `right` | *string* | `center` |
 | show-confirm-button | Whether to show confirm button | *boolean* |  `true` |

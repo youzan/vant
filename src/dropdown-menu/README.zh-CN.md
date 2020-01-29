@@ -117,7 +117,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | active-color | 菜单标题和选项的选中态颜色 | *string* | `#1989fa` |
-| z-index | 菜单栏 z-index 层级 | *string \| number* | `10` |
+| z-index | 菜单栏 z-index 层级 | *number \| string* | `10` |
 | duration | 动画时长，单位秒 | *number* | `0.2` |
 | direction `v2.0.1` | 菜单展开方向，可选值为`up` | *string* | `down` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
@@ -128,7 +128,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| value | 当前选中项对应的 value，可以通过`v-model`双向绑定 | *string \| number* | - |
+| value | 当前选中项对应的 value，可以通过`v-model`双向绑定 | *number \| string* | - |
 | title | 菜单项标题 | *string* | 当前选中项文字 |
 | options | 选项数组 | *Option[]* | `[]` |
 | disabled | 是否禁用菜单 | *boolean* | `false` |
@@ -165,5 +165,5 @@ export default {
 | 键名 | 说明 | 类型 |
 |------|------|------|
 | text | 文字 | *string* |
-| value | 标识符 | *string \| number* |
+| value | 标识符 | *number \| string* |
 | icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* |

@@ -59,7 +59,7 @@ export default {
 | left-arrow | Whether to show left arrow | *boolean* | `false` |
 | fixed | Whether to fixed top | *boolean* | `false` |
 | border | Whether to show bottom border | *boolean* | `true` |
-| z-index | Z-index | *string \| number* | `1` |
+| z-index | Z-index | *number \| string* | `1` |
 
 ### Slots
 

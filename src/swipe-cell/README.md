@@ -102,7 +102,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name `v2.0.4` | Identifier of SwipeCell | *string \| number* | - |
+| name `v2.0.4` | Identifier of SwipeCell | *number \| string* | - |
 | before-close `v2.3.0` | Callback function before close | *Function* | - |
 | disabled | Whether to disabled swipe | *boolean* | `false` |
 | left-width | Width of the left swipe area | *number* | `auto` |

@@ -115,8 +115,8 @@ Vue.use(CellGroup);
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | icon | Left Icon | *string* | - |
-| title | Title | *string \| number* | - |
-| value | Right text | *string \| number* | - |
+| title | Title | *number \| string* | - |
+| value | Right text | *number \| string* | - |
 | label | Description below the title | *string* | - |
 | size | Size，can be set to `large` | *string* | - |
 | border | Whether to show inner border | *boolean* | `true` |

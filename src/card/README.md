@@ -70,9 +70,9 @@ Use slot to custom content.
 | title | Title | *string* | - |
 | desc | Description | *string* | - |
 | tag | Tag | *string* | - |
-| num | number | *string \| number* | - |
-| price | Price | *string \| number* | - |
-| origin-price | Origin price | *string \| number* | - |
+| num | number | *number \| string* | - |
+| price | Price | *number \| string* | - |
+| origin-price | Origin price | *number \| string* | - |
 | centered | Whether content vertical centered | *boolean* | `false` |
 | currency | Currency symbol |  *string* | `¥` |
 | thumb-link | Thumb link URL | *string* | - |

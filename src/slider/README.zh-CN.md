@@ -104,8 +104,8 @@ Slider 垂直展示时，高度为 100% 父元素高度
 | max | 最大值 | *number* | `100` |
 | min | 最小值 | *number* | `0` |
 | step | 步长 | *number* | `1` |
-| bar-height | 进度条高度，默认单位为`px` | *string \| number* | `2px` |
-| button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | *string \| number* | `24px` |
+| bar-height | 进度条高度，默认单位为`px` | *number \| string* | `2px` |
+| button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | *number \| string* | `24px` |
 | active-color | 进度条激活态颜色 | *string* | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | *string* | `#e5e5e5` |
 | disabled | 是否禁用滑块 | *boolean* | `false` |

@@ -112,8 +112,8 @@ export default {
 |------|------|------|------|
 | v-model | Current rate | *number* | - |
 | count | Count | *number* | `5` |
-| size | Icon size| *string \| number* | `20px` |
-| gutter | Icon gutter | *string \| number* | `4px` |
+| size | Icon size| *number \| string* | `20px` |
+| gutter | Icon gutter | *number \| string* | `4px` |
 | color | Selected color | *string* | `#ffd21e` |
 | void-color | Void color | *string* | `#c8c9cc` |
 | disabled-color | Disabled color | *string* | `#bdbdbd` |

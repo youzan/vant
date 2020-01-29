@@ -118,7 +118,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 | label | Left side label | *string* | - |
 | shape | Shape of field, can be set to `round` | *string* | `square` |
 | background | Background color of field | *string* | `#f2f2f2` |
-| maxlength | Max length of value | *string \| number* | - |
+| maxlength | Max length of value | *number \| string* | - |
 | placeholder | Placeholder | *string* | - |
 | clearable | Whether to be clearable | *boolean* | `true` |
 | autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` |

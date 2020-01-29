@@ -57,7 +57,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | offset-top | Offset top | *number* | `0` |
-| z-index | z-index when sticky | *string \| number* | `99` |
+| z-index | z-index when sticky | *number \| string* | `99` |
 | container | Container DOM | *HTMLElement* | - |
 
 ### Events

@@ -133,7 +133,7 @@ export default {
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | 自定义遮罩层类名 | *string* | - |
 | overlay-style | 自定义遮罩层样式 | *object* | - |
-| duration | 动画时长，单位秒 | *string \| number* | `0.3` |
+| duration | 动画时长，单位秒 | *number \| string* | `0.3` |
 | round `v2.0.7` | 是否显示圆角 | *boolean* | `false` |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |

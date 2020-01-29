@@ -122,7 +122,7 @@ export default {
 | position | Can be set to `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | Custom overlay class | *string* | - |
 | overlay-style | Custom overlay style | *object* | - |
-| duration | Transition duration, unit second | *string \| number* | `0.3` |
+| duration | Transition duration, unit second | *number \| string* | `0.3` |
 | round `v2.0.7` | Whether to show round corner | *boolean* | `false` |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` |

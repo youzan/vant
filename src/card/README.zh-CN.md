@@ -72,9 +72,9 @@ Vue.use(Card);
 | title | 标题 | *string* | - |
 | desc | 描述 | *string* | - |
 | tag | 图片角标 | *string* | - |
-| num | 商品数量 | *string \| number* | - |
-| price | 商品价格 | *string \| number* | - |
-| origin-price | 商品划线原价 | *string \| number* | - |
+| num | 商品数量 | *number \| string* | - |
+| price | 商品价格 | *number \| string* | - |
+| origin-price | 商品划线原价 | *number \| string* | - |
 | centered | 内容是否垂直居中 | *boolean* | `false` |
 | currency | 货币符号 |  *string* | `¥` |
 | thumb-link | 点击左侧图片后跳转的链接地址 | *string* | - |

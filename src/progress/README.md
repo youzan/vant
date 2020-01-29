@@ -63,7 +63,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 |------|------|------|------|
 | inactive | Whether to be gray | *boolean* | `false` |
 | percentage | Percentage | *number* | `0` |
-| stroke-width `v2.2.1` | Stroke width | *string \| number* | `4px` |
+| stroke-width `v2.2.1` | Stroke width | *number \| string* | `4px` |
 | show-pivot | Whether to show text | *boolean* | `true` |
 | color | Color | *string* | `#1989fa` |
 | text-color | Text color | *string* | `#fff` |

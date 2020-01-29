@@ -86,7 +86,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of current active panels | accordion mode： *string \| number*<br>non-accordion mode：*(string \| number)[]* | - |
+| v-model | Names of current active panels | accordion mode： *number \| string*<br>non-accordion mode：*(number \| string)[]* | - |
 | accordion | Whether to be accordion mode | *boolean* | `false` |
 | border | Whether to show outer border | *boolean* | `true` |
 
@@ -100,11 +100,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Name | *string \| number* | `index` |
+| name | Name | *number \| string* | `index` |
 | icon | Left Icon | *string* | - |
 | size | Title size，can be set to `large` | *string* | - |
-| title | Title | *string \| number* | - |
-| value | Right text | *string \| number* | - |
+| title | Title | *number \| string* | - |
+| value | Right text | *number \| string* | - |
 | label | Description below the title | *string* | - |
 | border | Whether to show inner border | *boolean* | `true` |
 | disabled | Whether to disabled collapse | *boolean* | `false` |

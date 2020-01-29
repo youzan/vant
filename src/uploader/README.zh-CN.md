@@ -127,9 +127,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name `v2.0.3` | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - |
+| name `v2.0.3` | 标识符，可以在回调函数的第二项参数中获取 | *number \| string* | - |
 | accept | 接受的文件类型 | *string* | `image/*` |
-| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` |
+| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *number \| string* | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` |
 | preview-full-image `v2.1.5` | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` |

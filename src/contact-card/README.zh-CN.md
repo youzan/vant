@@ -155,7 +155,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前选中联系人的 id | *string \| number* | - |
+| v-model | 当前选中联系人的 id | *number \| string* | - |
 | list | 联系人列表 | *Contact[]* | `[]` |
 | add-text | 新建按钮文案 | *string* | `新建联系人` |
 | default-tag-text `v2.3.0` | 默认联系人标签文案 | *string* | - |
@@ -191,7 +191,7 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每位联系人的唯一标识 | *string \| number* |
+| id | 每位联系人的唯一标识 | *number \| string* |
 | name | 联系人姓名 | *string* |
-| tel | 联系人手机号 | *string \| number* |
+| tel | 联系人手机号 | *number \| string* |
 | isDefault | 是否为默认联系人 | *boolean* |

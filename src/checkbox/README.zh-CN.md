@@ -209,7 +209,7 @@ export default {
 | disabled | 是否禁用复选框 | *boolean* | `false` |
 | label-disabled | 是否禁用复选框文本点击 | *boolean* | `false` |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` |
-| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` |
+| icon-size | 图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color | 选中状态颜色 | *string* | `#1989fa` |
 | bind-group `v2.2.4` | 是否与复选框组绑定 | *boolean* | `true` |
 
@@ -219,8 +219,8 @@ export default {
 |------|------|------|------|
 | v-model | 所有选中项的标识符 | *any[]* | - |
 | disabled | 是否禁用所有复选框 | *boolean* | `false` |
-| max | 最大可选数，0 为无限制 | *string \| number* | `0` |
-| icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *string \| number* | `20px` |
+| max | 最大可选数，0 为无限制 | *number \| string* | `0` |
+| icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有复选框的选中状态颜色 | *string* | `#1989fa` |
 
 ### Checkbox Events

@@ -102,8 +102,8 @@ export default {
 | max | Max value | *number* | `100` |
 | min | Min value | *number* | `0` |
 | step | Step size | *number* | `1` |
-| bar-height | Height of bar | *string \| number* | `2px` |
-| button-size `v2.4.5` | Button size | *string \| number* | `24px` |
+| bar-height | Height of bar | *number \| string* | `2px` |
+| button-size `v2.4.5` | Button size | *number \| string* | `24px` |
 | active-color | Active color of bar | *string* | `#1989fa` |
 | inactive-color | Inactive color of bar | *string* | `#e5e5e5` |
 | disabled | Whether to disable slider | *boolean* | `false` |

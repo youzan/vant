@@ -128,7 +128,7 @@ export default {
 | cancel-text | Text of cancel button | *string* | - |
 | description `v2.2.8` | Description above the options | *string* | - |
 | close-icon `v2.2.13` | Close icon name | *string* | `cross` |
-| duration `v2.0.3` | Transition duration, unit second | *string \| number* | `0.3` |
+| duration `v2.0.3` | Transition duration, unit second | *number \| string* | `0.3` |
 | round `v2.0.9` | Whether to show round corner | *boolean* | `true` |
 | overlay | Whether to show overlay | *boolean* | `true` |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` |

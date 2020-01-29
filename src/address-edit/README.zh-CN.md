@@ -75,13 +75,13 @@ export default {
 | show-search-result | 是否显示搜索结果 | *boolean* | `false` |
 | save-button-text | 保存按钮文字 | *string* | `保存` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |
-| detail-rows | 详细地址输入框行数 | *string \| number* | `1` |
-| detail-maxlength `v2.0.4` | 详细地址最大长度 | *string \| number* | `200` |
+| detail-rows | 详细地址输入框行数 | *number \| string* | `1` |
+| detail-maxlength `v2.0.4` | 详细地址最大长度 | *number \| string* | `200` |
 | is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` |
 | tel-validator | 手机号格式校验函数 | *string => boolean* | - |
 | postal-validator `v2.1.2` | 邮政编码格式校验函数 | *string => boolean* | - |
-| validator | 自定义校验函数 | *(key, value) => string* | - |
+| validator | 自定义校验函数 | *(key, val) => string* | - |
 
 ### Events
 
@@ -116,7 +116,7 @@ export default {
 
 | key | 说明 | 类型 |
 |------|------|------|
-| id | 每条地址的唯一标识 | *string \| number* |
+| id | 每条地址的唯一标识 | *number \| string* |
 | name | 收货人姓名 | *string* |
 | tel | 收货人手机号 | *string* |
 | province | 省份 | *string* |

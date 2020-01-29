@@ -135,7 +135,7 @@ export default {
 | focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
 | info | Bottom info | *string* | - |
 | error-info | Bottom error info | *string* | - |
-| gutter | Gutter of input | *string \| number* | `0` |
+| gutter | Gutter of input | *number \| string* | `0` |
 
 ### Events
 
