@@ -130,12 +130,12 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | value | Password value | *string* | `''` |
-| length | Maxlength of password | *number* | `6` |
-| mask | Whether to mask value | *boolean* | `true` |
-| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
 | info | Bottom info | *string* | - |
 | error-info | Bottom error info | *string* | - |
+| length | Maxlength of password | *number \| string* | `6` |
 | gutter | Gutter of input | *number \| string* | `0` |
+| mask | Whether to mask value | *boolean* | `true` |
+| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
 
 ### Events
 
