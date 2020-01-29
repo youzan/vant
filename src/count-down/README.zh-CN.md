@@ -118,7 +118,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| time | 倒计时时长，单位毫秒 | *number* | - |
+| time | 倒计时时长，单位毫秒 | *number \| string* | `0` |
 | format | 时间格式 | *string* | `HH:mm:ss` |
 | auto-start | 是否自动开始倒计时 | *boolean* | `true` |
 | millisecond | 是否开启毫秒级渲染 | *boolean* | `false` |

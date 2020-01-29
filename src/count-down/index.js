@@ -8,7 +8,7 @@ export default createComponent({
   props: {
     millisecond: Boolean,
     time: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     format: {
@@ -84,7 +84,7 @@ export default createComponent({
     // @exposed-api
     reset() {
       this.pause();
-      this.remain = this.time;
+      this.remain = +this.time;
 
       if (this.autoStart) {
         this.start();

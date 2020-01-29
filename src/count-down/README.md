@@ -108,7 +108,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| time | Total time | *number* | - |
+| time | Total time | *number \| string* | `0` |
 | format | Time format | *string* | `HH:mm:ss` |
 | auto-start | Whether to auto start count down | *boolean* | `true` |
 | millisecond | Whether to enable millisecond render | *boolean* | `false` |
