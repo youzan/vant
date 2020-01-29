@@ -104,9 +104,9 @@ Use slots to custom tips
 | loosing-text | Text to show when loosing | *string* | `Loose to refresh...` |
 | loading-text | Text to show when loading | *string* | `Loading...` |
 | success-text | Text to show when loading success | *string* | - |
-| success-duration | Success text display duration(ms) | *number* | `500` |
-| animation-duration | Animation duration | *number* | `300` |
-| head-height `v2.4.2` | Height of head | *number* | `50` |
+| success-duration | Success text display duration(ms) | *number \| string* | `500` |
+| animation-duration | Animation duration | *number \| string* | `300` |
+| head-height `v2.4.2` | Height of head | *number \| string* | `50` |
 | disabled | Whether to disable pull refresh | *boolean* | `false` |
 
 ### Events

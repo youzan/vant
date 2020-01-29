@@ -20,7 +20,7 @@
       <van-tab :title="$t('customTips')">
         <van-pull-refresh
           v-model="isLoading"
-          :head-height="80"
+          head-height="80"
           @refresh="onRefresh(true)"
         >
           <template #pulling="{ distance }">

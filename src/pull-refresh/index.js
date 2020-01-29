@@ -28,15 +28,15 @@ export default createComponent({
       required: true,
     },
     successDuration: {
-      type: Number,
+      type: [Number, String],
       default: 500,
     },
     animationDuration: {
-      type: Number,
+      type: [Number, String],
       default: 300,
     },
     headHeight: {
-      type: Number,
+      type: [Number, String],
       default: DEFAULT_HEAD_HEIGHT,
     },
   },
@@ -70,7 +70,7 @@ export default createComponent({
       this.duration = this.animationDuration;
 
       if (loading) {
-        this.setStatus(this.headHeight, true);
+        this.setStatus(+this.headHeight, true);
       } else if (this.slots('success') || this.successText) {
         this.showSuccessTip();
       } else {
@@ -122,7 +122,7 @@ export default createComponent({
         this.duration = this.animationDuration;
 
         if (this.status === 'loosing') {
-          this.setStatus(this.headHeight, true);
+          this.setStatus(+this.headHeight, true);
           this.$emit('input', true);
 
           // ensure value change can be watched
@@ -136,7 +136,7 @@ export default createComponent({
     },
 
     ease(distance) {
-      const { headHeight } = this;
+      const headHeight = +this.headHeight;
 
       if (distance > headHeight) {
         if (distance < headHeight * 2) {
