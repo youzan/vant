@@ -11,19 +11,19 @@ export default createComponent({
   props: {
     ...sharedProps,
     minHour: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     maxHour: {
-      type: Number,
+      type: [Number, String],
       default: 23,
     },
     minMinute: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     maxMinute: {
-      type: Number,
+      type: [Number, String],
       default: 59,
     },
   },
@@ -33,11 +33,11 @@ export default createComponent({
       return [
         {
           type: 'hour',
-          range: [this.minHour, this.maxHour],
+          range: [+this.minHour, +this.maxHour],
         },
         {
           type: 'minute',
-          range: [this.minMinute, this.maxMinute],
+          range: [+this.minMinute, +this.maxMinute],
         },
       ];
     },
