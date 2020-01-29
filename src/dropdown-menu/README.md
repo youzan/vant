@@ -113,9 +113,9 @@ Use `active-color` prop to custom active color of the title and options
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | active-color | Active color of title and option | *string* | `#1989fa` |
-| z-index | z-index of menu item | *number \| string* | `10` |
-| duration | Transition duration, unit second | *number* | `0.2` |
 | direction `v2.0.1` | Expand direction, can be set to `up` | *string* | `down` |
+| z-index | z-index of menu item | *number \| string* | `10` |
+| duration | Transition duration, unit second | *number \| string* | `0.2` |
 | overlay | Whether to show overlay | *boolean* | `true` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
 | close-on-click-outside `v2.0.7` | Whether to close when click outside | *boolean* | `true` |

@@ -26,7 +26,7 @@ export default createComponent({
       default: true,
     },
     duration: {
-      type: Number,
+      type: [Number, String],
       default: 0.2,
     },
     direction: {
