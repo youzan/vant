@@ -33,10 +33,10 @@ export default createComponent({
     valueKey: String,
     allowHtml: Boolean,
     className: String,
-    itemHeight: Number,
+    itemHeight: [Number, String],
     defaultIndex: Number,
-    swipeDuration: Number,
-    visibleItemCount: Number,
+    swipeDuration: [Number, String],
+    visibleItemCount: [Number, String],
     initialOptions: {
       type: Array,
       default: () => [],
@@ -228,7 +228,7 @@ export default createComponent({
 
       const index = this.getIndexByOffset(distance);
 
-      this.duration = this.swipeDuration;
+      this.duration = +this.swipeDuration;
       this.setIndex(index, true);
     },
 

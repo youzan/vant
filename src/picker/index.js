@@ -283,7 +283,7 @@ export default createComponent({
   },
 
   render(h) {
-    const { itemHeight } = this;
+    const itemHeight = +this.itemHeight;
     const wrapHeight = itemHeight * this.visibleItemCount;
 
     const frameStyle = {

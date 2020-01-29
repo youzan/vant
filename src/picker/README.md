@@ -259,18 +259,18 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | columns | Columns data | *Column[]* | `[]` |
-| show-toolbar | Whether to show toolbar | *boolean* | `false` |
-| toolbar-position | Toolbar position, cat be set to `bottom` | *string* | `top` |
-| title | Toolbar title | *string* | `''` |
-| loading | Whether to show loading prompt | *boolean* | `false` |
-| value-key | Key of option text | *string* | `text` |
-| item-height | Option height | *number* | `44` |
+| title | Toolbar title | *string* | - |
 | confirm-button-text | Text of confirm button | *string* | `Confirm` |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` |
-| visible-item-count | Count of visible columns | *number* | `5` |
+| value-key | Key of option text | *string* | `text` |
+| toolbar-position | Toolbar position, cat be set to `bottom` | *string* | `top` |
+| loading | Whether to show loading prompt | *boolean* | `false` |
+| show-toolbar | Whether to show toolbar | *boolean* | `false` |
 | allow-html `v2.1.8` | Whether to allow HTML in option text | *boolean* | `true` |
 | default-index | Default value index of single column picker | *number* | `0` |
-| swipe-duration `v2.2.10` | Duration of the momentum animation，unit `ms` | *number*  | `1000` |
+| item-height | Option height | *number \| string* | `44` |
+| visible-item-count | Count of visible columns | *number \| string* | `5` |
+| swipe-duration `v2.2.10` | Duration of the momentum animation，unit `ms` | *number \| string*  | `1000` |
 
 ### Events
 

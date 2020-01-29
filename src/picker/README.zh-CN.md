@@ -273,22 +273,22 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | columns | 对象数组，配置每一列显示的数据 | *Column[]* | `[]` |
-| show-toolbar | 是否显示顶部栏 | *boolean* | `false` |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | *string* | `top` |
-| title | 顶部栏标题 | *string* | `''` |
-| loading | 是否显示加载状态 | *boolean* | `false` |
-| value-key | 选项对象中，文字对应的 key | *string* | `text` |
-| item-height | 选项高度 | *number* | `44` |
+| title | 顶部栏标题 | *string* | - |
 | confirm-button-text | 确认按钮文字 | *string* | `确认` |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` |
-| visible-item-count | 可见的选项个数 | *number* | `5` |
+| value-key | 选项对象中，选项文字对应的键名 | *string* | `text` |
+| toolbar-position | 顶部栏位置，可选值为`bottom` | *string* | `top` |
+| loading | 是否显示加载状态 | *boolean* | `false` |
+| show-toolbar | 是否显示顶部栏 | *boolean* | `false` |
 | allow-html `v2.1.8` | 是否允许选项内容中渲染 HTML | *boolean* | `true` |
-| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` |
-| swipe-duration `v2.2.10` | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` |
+| default-index | 单列选择时，默认选中项的索引 | *number* | `0` |
+| item-height | 选项高度 | *number \| string* | `44` |
+| visible-item-count | 可见的选项个数 | *number \| string* | `5` |
+| swipe-duration `v2.2.10` | 快速滑动时惯性滚动的时长，单位`ms` | *number \| string*  | `1000` |
 
 ### Events
 
-Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
+当选择器有多列时，事件回调参数会返回数组
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
