@@ -12,7 +12,7 @@ export default createComponent({
     trackColor: String,
     strokeWidth: [Number, String],
     percentage: {
-      type: Number,
+      type: [Number, String],
       required: true,
       validator: value => value >= 0 && value <= 100,
     },
