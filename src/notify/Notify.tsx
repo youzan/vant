@@ -16,8 +16,8 @@ import { PopupMixinProps } from '../mixins/popup/type';
 export type NotifyProps = PopupMixinProps & {
   type: 'primary' | 'success' | 'danger' | 'warning';
   color: string;
-  message: string | number;
-  duration: number;
+  message: number | string;
+  duration: number | string;
   className?: any;
   background: string;
 };
@@ -54,17 +54,14 @@ function Notify(
 Notify.props = {
   ...popupMixinProps,
   color: String,
-  background: String,
-  className: null as any,
   message: [Number, String],
+  duration: [Number, String],
+  className: null as any,
+  background: String,
   getContainer: [String, Function],
   type: {
     type: String,
     default: 'danger',
-  },
-  duration: {
-    type: Number,
-    default: 3000,
   },
 };
 

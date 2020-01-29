@@ -70,7 +70,7 @@ export default {
 |------|------|------|------|
 | type `v2.1.6` | Can be set to `primary` `success` `warning` | *string* | `danger` |
 | message | Message | *string* | - |
-| duration | Duration(ms), won't disappear if value is 0 | *number* | `3000` |
+| duration | Duration(ms), won't disappear if value is 0 | *number \| string* | `3000` |
 | color | Message color | *string* | `#fff` | |
 | background | Background color | *string* | - |
 | className | Custom className | *any* | - |
