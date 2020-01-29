@@ -13,7 +13,7 @@ export default createComponent({
     iconSize: [Number, String],
     clickable: Boolean,
     columnNum: {
-      type: Number,
+      type: [Number, String],
       default: 4,
     },
     center: {

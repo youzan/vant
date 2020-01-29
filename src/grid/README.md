@@ -102,13 +102,13 @@ Vue.use(GridItem);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| column-num `v2.0.4` | Column Num | *number* | `4` |
+| column-num `v2.0.4` | Column Num | *number \| string* | `4` |
+| icon-size `v2.2.6` | Icon size | *number \| string* | `28px` |
 | gutter | Gutter | *number \| string* | `0` |
 | border | Whether to show border | *boolean* | `true` |
 | center | Whether to center content | *boolean* | `true` |
 | square | Whether to be square shape | *boolean* | `false` |
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` |
-| icon-size `v2.2.6` | Icon size | *number \| string* | `28px` |
 
 ### GridItem Props
 

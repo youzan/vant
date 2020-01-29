@@ -120,13 +120,13 @@ Vue.use(GridItem);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| column-num `v2.0.4` | 列数 | *number* | `4` |
+| column-num `v2.0.4` | 列数 | *number \| string* | `4` |
+| icon-size `v2.2.6` | 图标大小，默认单位为`px` | *number \| string* | `28px` |
 | gutter | 格子之间的间距，默认单位为`px` | *number \| string* | `0` |
 | border | 是否显示边框 | *boolean* | `true` |
 | center | 是否将格子内容居中显示 | *boolean* | `true` |
 | square | 是否将格子固定为正方形 | *boolean* | `false` |
 | clickable | 是否开启格子点击反馈 | *boolean* | `false` |
-| icon-size `v2.2.6` | 图标大小，默认单位为`px` | *number \| string* | `28px` |
 
 ### GridItem Props
 
