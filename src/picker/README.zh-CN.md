@@ -281,7 +281,7 @@ export default {
 | loading | 是否显示加载状态 | *boolean* | `false` |
 | show-toolbar | 是否显示顶部栏 | *boolean* | `false` |
 | allow-html `v2.1.8` | 是否允许选项内容中渲染 HTML | *boolean* | `true` |
-| default-index | 单列选择时，默认选中项的索引 | *number* | `0` |
+| default-index | 单列选择时，默认选中项的索引 | *number \| string* | `0` |
 | item-height | 选项高度 | *number \| string* | `44` |
 | visible-item-count | 可见的选项个数 | *number \| string* | `5` |
 | swipe-duration `v2.2.10` | 快速滑动时惯性滚动的时长，单位`ms` | *number \| string*  | `1000` |

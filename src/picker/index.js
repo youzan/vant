@@ -14,7 +14,7 @@ export default createComponent({
   props: {
     ...pickerProps,
     defaultIndex: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     columns: {
@@ -81,7 +81,7 @@ export default createComponent({
       let cursor = { children: this.columns };
 
       while (cursor && cursor.children) {
-        const defaultIndex = cursor.defaultIndex || this.defaultIndex;
+        const defaultIndex = cursor.defaultIndex || +this.defaultIndex;
 
         formatted.push({
           values: cursor.children.map(item => item[this.valueKey]),
@@ -270,7 +270,7 @@ export default createComponent({
           allowHtml={this.allowHtml}
           className={item.className}
           itemHeight={this.itemHeight}
-          defaultIndex={item.defaultIndex || this.defaultIndex}
+          defaultIndex={item.defaultIndex || +this.defaultIndex}
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}

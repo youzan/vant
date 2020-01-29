@@ -267,7 +267,7 @@ export default {
 | loading | Whether to show loading prompt | *boolean* | `false` |
 | show-toolbar | Whether to show toolbar | *boolean* | `false` |
 | allow-html `v2.1.8` | Whether to allow HTML in option text | *boolean* | `true` |
-| default-index | Default value index of single column picker | *number* | `0` |
+| default-index | Default value index of single column picker | *number \| string* | `0` |
 | item-height | Option height | *number \| string* | `44` |
 | visible-item-count | Count of visible columns | *number \| string* | `5` |
 | swipe-duration `v2.2.10` | Duration of the momentum animation，unit `ms` | *number \| string*  | `1000` |
