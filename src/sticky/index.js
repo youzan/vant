@@ -20,7 +20,7 @@ export default createComponent({
     zIndex: [Number, String],
     container: null,
     offsetTop: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
   },
@@ -61,7 +61,8 @@ export default createComponent({
     onScroll() {
       this.height = this.$el.offsetHeight;
 
-      const { container, offsetTop } = this;
+      const { container } = this;
+      const offsetTop = +this.offsetTop;
       const scrollTop = getScrollTop(window);
       const topToPageTop = getElementTop(this.$el);
 
