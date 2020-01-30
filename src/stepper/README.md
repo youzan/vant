@@ -113,18 +113,18 @@ export default {
 | default-value | Default value, valid when v-model is empty | *number \| string* | `1` |
 | step | Value change step | *number \| string* | `1` |
 | name `v2.0.3` | Stepper name | *number \| string* | - |
+| input-width | Input width | *number \| string* | `32px` |
+| button-size `v2.0.5` | Button size | *number \| string* | `28px` |
+| decimal-length `v2.2.1` | Decimal length | *number \| string* | - |
 | integer | Whether to allow only integers | *boolean* | `false` |
 | disabled | Disable value change | *boolean* | `false` |
 | disable-plus `v2.2.16` | Whether to disable plus button | *boolean* | `false` |
 | disable-minus `v2.2.16` | Whether to disable minus button | *boolean* | `false` |
 | disable-input | Whether to disable input | *boolean* | `false` |
 | async-change | Whether to enable async change | *boolean* | `false` | - |
-| input-width | Input width | *number \| string* | `32px` |
-| button-size `v2.0.5` | Button size | *number \| string* | `28px` |
 | show-plus `v2.1.2` | Whether to show plus button | *boolean* | `true` |
 | show-minus `v2.1.2` | Whether to show minus button | *boolean* | `true` |
 | long-press `v2.4.3` | Whether to allow long press | *boolean* | `true` |
-| decimal-length `v2.2.1` | Decimal length | *number* | - |
 
 ### Events
 

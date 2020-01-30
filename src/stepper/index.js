@@ -28,7 +28,7 @@ export default createComponent({
     disablePlus: Boolean,
     disableMinus: Boolean,
     disableInput: Boolean,
-    decimalLength: Number,
+    decimalLength: [Number, String],
     name: {
       type: [Number, String],
       default: '',
