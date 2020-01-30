@@ -15,15 +15,15 @@ export default createComponent({
     activeColor: String,
     inactiveColor: String,
     min: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     max: {
-      type: Number,
+      type: [Number, String],
       default: 100,
     },
     step: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     value: {
@@ -119,7 +119,7 @@ export default createComponent({
         ? event.clientY - rect.top
         : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
-      const value = (delta / total) * this.range + this.min;
+      const value = +this.min + (delta / total) * this.range;
 
       this.startValue = this.value;
       this.updateValue(value, true);

@@ -99,9 +99,9 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | value | Current value | *number* | `0` |
-| max | Max value | *number* | `100` |
-| min | Min value | *number* | `0` |
-| step | Step size | *number* | `1` |
+| max | Max value | *number \| string* | `100` |
+| min | Min value | *number \| string* | `0` |
+| step | Step size | *number \| string* | `1` |
 | bar-height | Height of bar | *number \| string* | `2px` |
 | button-size `v2.4.5` | Button size | *number \| string* | `24px` |
 | active-color | Active color of bar | *string* | `#1989fa` |
