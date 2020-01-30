@@ -7,7 +7,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type SkeletonProps = {
-  row: number;
+  row: number | string;
   title?: boolean;
   avatar?: boolean;
   loading: boolean;
@@ -45,7 +45,7 @@ function Skeleton(
     const { rowWidth } = props;
 
     function getRowWidth(index: number) {
-      if (rowWidth === DEFAULT_ROW_WIDTH && index === props.row - 1) {
+      if (rowWidth === DEFAULT_ROW_WIDTH && index === +props.row - 1) {
         return DEFAULT_LAST_ROW_WIDTH;
       }
 
@@ -92,7 +92,7 @@ Skeleton.props = {
   title: Boolean,
   avatar: Boolean,
   row: {
-    type: Number,
+    type: [Number, String],
     default: 0,
   },
   loading: {
