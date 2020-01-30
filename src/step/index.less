@@ -17,6 +17,7 @@
   &__line {
     position: absolute;
     background-color: @step-line-color;
+    transition: background-color @animation-duration-base;
   }
 
   &--horizontal {
@@ -141,6 +142,8 @@
 
   &__icon,
   &__title {
+    transition: color @animation-duration-base;
+
     &--active {
       color: @step-active-color;
     }
