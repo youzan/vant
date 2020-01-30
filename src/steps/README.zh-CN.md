@@ -14,6 +14,8 @@ Vue.use(Steps);
 
 ### 基础用法
 
+`active`属性表示当前步骤的索引，从 0 起计
+
 ```html
 <van-steps :active="active">
   <van-step>买家下单</van-step>
@@ -77,7 +79,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| active | 当前步骤 | *number* | 0 |
+| active | 当前步骤 | *number \| string* | `0` |
 | direction | 显示方向，可选值为 `vertical` | *string* | `horizontal` |
 | active-color | 激活状态颜色 | *string* | `#07c160` |
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `checked` |

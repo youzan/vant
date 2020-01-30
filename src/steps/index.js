@@ -10,7 +10,7 @@ export default createComponent({
     activeColor: String,
     inactiveIcon: String,
     active: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     direction: {

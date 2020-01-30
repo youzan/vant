@@ -13,7 +13,7 @@ export default createComponent({
       if (this.index < this.parent.active) {
         return 'finish';
       }
-      if (this.index === this.parent.active) {
+      if (this.index === +this.parent.active) {
         return 'process';
       }
     },

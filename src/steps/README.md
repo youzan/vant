@@ -73,8 +73,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| active | Active step | *number* | 0 |
-| description | Description | *string* | - |
+| active | Active step | *number \| string* | `0` |
 | direction | Can be set to `vertical` | *string* | `horizontal` |
 | active-color | Active step color | *string* | `#07c160` |
 | active-icon | Active icon name | *string* | `checked` |
