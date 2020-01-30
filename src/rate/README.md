@@ -111,7 +111,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Current rate | *number* | - |
-| count | Count | *number* | `5` |
+| count | Count | *number \| string* | `5` |
 | size | Icon size| *number \| string* | `20px` |
 | gutter | Icon gutter | *number \| string* | `4px` |
 | color | Selected color | *string* | `#ffd21e` |

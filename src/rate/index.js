@@ -42,7 +42,7 @@ export default createComponent({
       default: 'star-o',
     },
     count: {
-      type: Number,
+      type: [Number, String],
       default: 5,
     },
     touchable: {
@@ -146,7 +146,7 @@ export default createComponent({
       const isVoid = status === 'void';
 
       let style;
-      if (this.gutterWithUnit && score !== count) {
+      if (this.gutterWithUnit && score !== +count) {
         style = { paddingRight: this.gutterWithUnit };
       }
 

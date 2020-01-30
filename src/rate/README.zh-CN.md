@@ -111,7 +111,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | v-model | 当前分值 | *number* | - |
-| count | 图标总数 | *number* | `5` |
+| count | 图标总数 | *number \| string* | `5` |
 | size | 图标大小，默认单位为`px` | *number \| string* | `20px` |
 | gutter | 图标间距，默认单位为`px` | *number \| string* | `4px` |
 | color | 选中时的颜色 | *string* | `#ffd21e` |
