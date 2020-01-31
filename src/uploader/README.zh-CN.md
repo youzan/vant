@@ -127,8 +127,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| accept | 允许上传的文件类型，[详细说明](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%85%81%E8%AE%B8%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B) | *string* | `image/*` |
 | name `v2.0.3` | 标识符，可以在回调函数的第二项参数中获取 | *number \| string* | - |
-| accept | 接受的文件类型 | *string* | `image/*` |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *number \| string* | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` |
 | preview-full-image `v2.1.5` | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` |
