@@ -123,8 +123,8 @@ export default {
 | after-read | Hook after reading the file | *Function* | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - |
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - |
-| max-size | Max size of file | *number* | - |
-| max-count | Max count of image | *number* | - |
+| max-size | Max size of file | *number \| string* | - |
+| max-count | Max count of image | *number \| string* | - |
 | result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` |
 | upload-text | Upload text | *string* | - |
 | image-fit `v2.1.5` | Preview image fit mode | *string* | `cover` |

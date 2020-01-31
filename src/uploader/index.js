@@ -36,11 +36,11 @@ export default createComponent({
       default: () => [],
     },
     maxSize: {
-      type: Number,
+      type: [Number, String],
       default: Number.MAX_VALUE,
     },
     maxCount: {
-      type: Number,
+      type: [Number, String],
       default: Number.MAX_VALUE,
     },
     deletable: {

@@ -29,7 +29,10 @@ export function readFile(file: File, resultType: ResultType) {
   });
 }
 
-export function isOversize(files: File | File[], maxSize: number): boolean {
+export function isOversize(
+  files: File | File[],
+  maxSize: number | string
+): boolean {
   return toArray(files).some(file => file.size > maxSize);
 }
 
