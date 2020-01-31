@@ -113,9 +113,9 @@ export default {
 |------|------|------|------|
 | items | Required datasets for the component | *Item[]* | `[]` |
 | height | Height | *number \| string* | `300` |
-| main-Active-index | The index of selected parent node | *number* | `0` |
-| active-id | Id of selected item | *number \| string \| (number \| string)[]* | `0` |
-| max `v2.2.0` | Maximum number of selected items | *number* | `Infinity` |
+| main-active-index | The index of selected parent node | *number \| string* | `0` |
+| active-id | Id of selected item | *number \| string \|<br>(number \| string)[]* | `0` |
+| max `v2.2.0` | Maximum number of selected items | *number \| string* | `Infinity` |
 
 ### Events
 

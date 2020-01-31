@@ -121,9 +121,9 @@ export default {
 |------|------|------|------|
 | items | 分类显示所需的数据 | *Item[]* | `[]` |
 | height | 高度，默认单位为`px` | *number \| string* | `300` |
-| main-active-index | 左侧选中项的索引 | *number* | `0` |
-| active-id | 右侧选中项的 id，支持传入数组 | *number \| string \| (number \| string)[]* | `0` |
-| max `v2.2.0` | 右侧项最大选中个数 | *number* | `Infinity` |
+| main-active-index | 左侧选中项的索引 | *number \| string* | `0` |
+| active-id | 右侧选中项的 id，支持传入数组 | *number \| string \|<br>(number \| string)[]* | `0` |
+| max `v2.2.0` | 右侧项最大选中个数 | *number \| string* | `Infinity` |
 
 ### Events
 
