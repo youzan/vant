@@ -23,10 +23,10 @@ export default createComponent({
     // @deprecated
     // should be removed in next major version, use beforeClose instead
     onClose: Function,
-    beforeClose: Function,
     disabled: Boolean,
-    leftWidth: Number,
-    rightWidth: Number,
+    leftWidth: [Number, String],
+    rightWidth: [Number, String],
+    beforeClose: Function,
     stopPropagation: Boolean,
     name: {
       type: [Number, String],
@@ -43,11 +43,11 @@ export default createComponent({
 
   computed: {
     computedLeftWidth() {
-      return this.leftWidth || this.getWidthByRef('left');
+      return +this.leftWidth || this.getWidthByRef('left');
     },
 
     computedRightWidth() {
-      return this.rightWidth || this.getWidthByRef('right');
+      return +this.rightWidth || this.getWidthByRef('right');
     },
   },
 

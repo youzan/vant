@@ -103,10 +103,10 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | name `v2.0.4` | Identifier of SwipeCell | *number \| string* | - |
+| left-width | Width of the left swipe area | *number \| string* | `auto` |
+| right-width | Width of the right swipe area | *number \| string* | `auto` |
 | before-close `v2.3.0` | Callback function before close | *Function* | - |
 | disabled | Whether to disabled swipe | *boolean* | `false` |
-| left-width | Width of the left swipe area | *number* | `auto` |
-| right-width | Width of the right swipe area | *number* | `auto` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
 
 ### Slots
