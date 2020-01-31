@@ -200,10 +200,10 @@ export default {
 | v-model | 绑定当前选中标签的标识符 | *number \| string* | `0` |
 | type | 样式风格类型，可选值为`card` | *string* | `line` |
 | color | 标签主题色 | *string* | `#ee0a24` |
-| duration | 动画时间，单位秒 | *number* | `0.3` |
 | background | 标签栏背景色 | *string* | `white` |
-| line-width | 底部条宽度，默认单位 px | *number \| string* | `auto` |
-| line-height | 底部条高度，默认单位 px | *number \| string* | `3px` |
+| duration | 动画时间，单位秒 | *number \| string* | `0.3` |
+| line-width | 底部条宽度，默认单位`px` | *number \| string* | `auto` |
+| line-height | 底部条高度，默认单位`px` | *number \| string* | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` |
 | border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` |
 | ellipsis | 是否省略过长的标题文字 | *boolean* | `true` |
@@ -211,8 +211,8 @@ export default {
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | *boolean* | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | *boolean* | `false` |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | *number* | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | *number* | `4` |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位`px` | *number \| string* | `0` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | *number \| string* | `4` |
 | title-active-color | 标题选中态颜色 | *string* | - |
 | title-inactive-color | 标题默认态颜色 | *string* | - |
 

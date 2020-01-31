@@ -9,7 +9,7 @@ export default createComponent({
 
   props: {
     count: Number,
-    duration: Number,
+    duration: [Number, String],
     animated: Boolean,
     swipeable: Boolean,
     currentIndex: Number,

@@ -196,8 +196,8 @@ In scrollspy mode, the list of content will be tiled
 | v-model | Index of active tab | *number \| string* | `0` |
 | type | Can be set to `line` `card` | *string* | `line` |
 | color | Tab color | *string* | `#ee0a24` |
-| duration | Toggle tab's animation time | *number* | `0.3` | - |
 | background | Background color | *string* | `white` |
+| duration | Toggle tab's animation time | *number \| string* | `0.3` | - |
 | line-width | Width of tab line | *number \| string* | Width of active tab |
 | line-height | Height of tab line | *number \| string* | `3px` |
 | animated | Whether to change tabs with animation | *boolean* | `false` |
@@ -207,8 +207,8 @@ In scrollspy mode, the list of content will be tiled
 | swipeable | Whether to switch tabs with swipe gestrue in the content | *boolean* | `false` |
 | lazy-render | Whether to enable tab content lazy render | *boolean* | `true` |
 | scrollspy `v2.3.0` | Whether to use scrollspy mode | *boolean* | `false` |
-| offset-top | Offset top when use sticky mode | *number* | `0` |
-| swipe-threshold | Set swipe tabs threshold | *number* | `4` | - |
+| offset-top | Offset top when use sticky mode | *number \| string* | `0` |
+| swipe-threshold | Set swipe tabs threshold | *number \| string* | `4` | - |
 | title-active-color | Title active color | *string* | - |
 | title-inactive-color | Title inactive color | *string* | - |
 

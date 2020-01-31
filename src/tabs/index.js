@@ -66,11 +66,11 @@ export default createComponent({
       default: true,
     },
     duration: {
-      type: Number,
+      type: [Number, String],
       default: 0.3,
     },
     offsetTop: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     lazyRender: {
@@ -78,7 +78,7 @@ export default createComponent({
       default: true,
     },
     swipeThreshold: {
-      type: Number,
+      type: [Number, String],
       default: 4,
     },
   },
@@ -116,7 +116,7 @@ export default createComponent({
 
     scrollOffset() {
       if (this.sticky) {
-        return this.offsetTop + this.tabHeight;
+        return +this.offsetTop + this.tabHeight;
       }
       return 0;
     },
@@ -284,7 +284,7 @@ export default createComponent({
       const title = titles[this.currentIndex].$el;
       const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
-      scrollLeftTo(nav, to, immediate ? 0 : this.duration);
+      scrollLeftTo(nav, to, immediate ? 0 : +this.duration);
     },
 
     onSticktScroll(params) {
@@ -299,7 +299,7 @@ export default createComponent({
         const el = instance && instance.$el;
         if (el) {
           const to = Math.ceil(getElementTop(el)) - this.scrollOffset;
-          scrollTopTo(to, this.duration, () => {
+          scrollTopTo(to, +this.duration, () => {
             this.clickedScroll = false;
           });
         }
