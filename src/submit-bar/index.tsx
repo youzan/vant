@@ -109,11 +109,12 @@ SubmitBar.props = {
   tipIcon: String,
   loading: Boolean,
   disabled: Boolean,
+  textAlign: String,
   buttonText: String,
   suffixLabel: String,
   safeAreaInsetBottom: Boolean,
   decimalLength: {
-    type: Number,
+    type: [Number, String],
     default: 2,
   },
   currency: {
@@ -124,7 +125,6 @@ SubmitBar.props = {
     type: String,
     default: 'danger',
   },
-  textAlign: String,
 };
 
 export default createComponent<SubmitBarProps, {}, SubmitBarSlots>(SubmitBar);

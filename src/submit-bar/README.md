@@ -75,15 +75,15 @@ Use slot to add custom contents.
 | price | Price | *number* | - |
 | label | Price left label | *string* | `Total：` |
 | suffix-label | Price right label | *string* | - |
-| text-align `v2.3.0` | Price label text align can be set to `right` `left` | *string* | `right` |
+| text-align `v2.3.0` | Price label text align can be set to `left` | *string* | `right` |
 | button-text | Button text | *string* | - |
 | button-type | Button type | *string* | `danger` |
 | tip | Tip | *string* | - |
 | tip-icon | Icon |  *string* | - |
+| currency | Currency symbol | *string* | `¥` |
+| decimal-length | number of digits to appear after the decimal point | *number \| string* | `2` |
 | disabled | Whether to disable button | *boolean* | `false` |
 | loading | Whether to show loading icon | *boolean* | `false` |
-| currency | Currency symbol | *string* | `¥` |
-| decimal-length | number of digits to appear after the decimal point | *number* | `2` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 
 ### Events
