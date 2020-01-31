@@ -19,7 +19,7 @@ export default {
     confirm: '確定',
     weekdays: ['日', '壹', '二', '三', '四', '五', '六'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
-    rangePrompt: (maxRange: Number) => `選擇天數不能超過 ${maxRange} 天`,
+    rangePrompt: (maxRange: number) => `選擇天數不能超過 ${maxRange} 天`,
   },
   vanContactCard: {
     addText: '添加聯系人',
