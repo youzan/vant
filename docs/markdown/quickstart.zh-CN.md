@@ -2,7 +2,7 @@
 
 ### 脚手架
 
-推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
 
 ```bash
 # 安装 Vue Cli
@@ -19,7 +19,9 @@ vue ui
 
 在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
-### 安装
+### 通过 npm 安装
+
+在现有项目中使用 Vant 时，可以通过`npm`或`yarn`安装
 
 ```bash
 # 通过 npm 安装
