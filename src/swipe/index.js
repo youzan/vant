@@ -26,9 +26,9 @@ export default createComponent({
   ],
 
   props: {
-    width: Number,
-    height: Number,
-    autoplay: Number,
+    width: [Number, String],
+    height: [Number, String],
+    autoplay: [Number, String],
     vertical: Boolean,
     indicatorColor: String,
     loop: {
@@ -36,7 +36,7 @@ export default createComponent({
       default: true,
     },
     duration: {
-      type: Number,
+      type: [Number, String],
       default: 500,
     },
     touchable: {
@@ -44,7 +44,7 @@ export default createComponent({
       default: true,
     },
     initialSwipe: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     showIndicators: {
@@ -80,10 +80,10 @@ export default createComponent({
     },
 
     autoplay(autoplay) {
-      if (!autoplay) {
-        this.clear();
-      } else {
+      if (autoplay > 0) {
         this.autoPlay();
+      } else {
+        this.clear();
       }
     },
   },
@@ -146,13 +146,13 @@ export default createComponent({
 
   methods: {
     // initialize swipe position
-    initialize(active = this.initialSwipe) {
+    initialize(active = +this.initialSwipe) {
       clearTimeout(this.timer);
 
       if (this.$el) {
         const rect = this.$el.getBoundingClientRect();
-        this.computedWidth = this.width || rect.width;
-        this.computedHeight = this.height || rect.height;
+        this.computedWidth = +this.width || rect.width;
+        this.computedHeight = +this.height || rect.height;
       }
 
       this.swiping = true;
@@ -345,7 +345,7 @@ export default createComponent({
     autoPlay() {
       const { autoplay } = this;
 
-      if (autoplay && this.count > 1) {
+      if (autoplay > 0 && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {
           this.next();

@@ -148,17 +148,17 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| autoplay | Autoplay interval (ms) | *number* | - |
-| duration | Animation duration (ms) | *number* | `500` |
-| initial-swipe | Index of initial swipe, start from 0 | *number* | `0` |
-| width | Set Swiper Item Width | *number* | `0` |
-| height | Set Swiper Item Height | *number* | `0` |
+| autoplay | Autoplay interval (ms) | *number \| string* | - |
+| duration | Animation duration (ms) | *number \| string* | `500` |
+| initial-swipe | Index of initial swipe, start from 0 | *number \| string* | `0` |
+| width | Set Swiper Item Width | *number \| string* | `0` |
+| height | Set Swiper Item Height | *number \| string* | `0` |
 | loop | Whether to enable loop | *boolean* | `true` |
 | show-indicators | Whether to show indicators | *boolean* | `true` |
-| indicator-color | Indicator color | *string* | `#1989fa` |
 | vertical | Whether to be vertical Scrolling | *boolean* | `false` |
 | touchable | Whether to allow swipe by touch gesture | *boolean* | `true` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
+| indicator-color | Indicator color | *string* | `#1989fa` |
 
 ### Swipe Events
 
