@@ -214,7 +214,8 @@ export default createComponent({
       if (this.zooming && touches.length === 2) {
         const distance = getDistance(touches);
         const scale = (this.startScale * distance) / this.startDistance;
-        this.scale = range(scale, +this.minZoom, +this.maxZoom);
+
+        this.setScale(scale);
       }
     },
 
