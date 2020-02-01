@@ -11,6 +11,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.6](https://github.com/youzan/vant/compare/v2.4.5...v2.4.6)
+`2020-02-01`
+
+**Bug Fixes**
+
+* Picker: 修复更新 columns 数据不生效的问题 [#5614](https://github.com/youzan/vant/issues/5614)
+
+
 ### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
 `2020-02-01`
 

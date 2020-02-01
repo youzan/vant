@@ -1,5 +1,13 @@
 # Changelog
 
+### [v2.4.6](https://github.com/youzan/vant/compare/v2.4.5...v2.4.6)
+`2020-02-01`
+
+**Bug Fixes**
+
+* Picker: should watch columns change [#5614](https://github.com/youzan/vant/issues/5614)
+
+
 ### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
 `2020-02-01`
 
