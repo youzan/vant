@@ -1,5 +1,39 @@
 # Changelog
 
+### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
+`2020-02-01`
+
+**Feature**
+
+* Picker: support cascade columns [#4247](https://github.com/youzan/vant/issues/4247)
+* Slider: add button-size prop [1e9b8c](https://github.com/youzan/vant/commit/1e9b8c846674562d56ab638a0982baab4bb6870e)
+* Optimize the props type. The original number type props now support string.
+
+**Style**
+
+* DropdownItem: add @dropdown-item-z-index less var [6f4c6f](https://github.com/youzan/vant/commit/6f4c6f5aa6614559cfc24bc361e68c9c938bbb61)
+* IndexBar: add @index-anchor-z-index less var [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: add @index-bar-sidebar-z-index less var [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: add @index-bar-index-active-color less var [0011db](https://github.com/youzan/vant/commit/0011db75365b60699ae140d85e54b9e477f46a22)
+* Notify: add @notify-text-color less var [9dcf57](https://github.com/youzan/vant/commit/9dcf57c65f5e046318e953f2e8ce87918b1cb312)
+* Overlay: add @overlay-z-index less var [95d19f](https://github.com/youzan/vant/commit/95d19f70d1c90efc752074ff764b07787d89cf1e)
+* Rate: add @rate-icon-disabled-color less var [8b8471](https://github.com/youzan/vant/commit/8b8471945c4313735a5fe59402212f37a31acfea)
+* Rate: add @rate-icon-full-color less var [5c804c](https://github.com/youzan/vant/commit/5c804cf920b75c5bdf962fa49eae31363783f32f)
+* Rate: add @rate-icon-void-color less var [f90015](https://github.com/youzan/vant/commit/f90015efe7619af055b9ebd4c8be7da1f17b8da0)
+* Slider: add @slider-bar-height less var [a5819c](https://github.com/youzan/vant/commit/a5819c286e06469bc41e8aa9e0ed44cc21625dad)
+* Search: add @search-content-background-color less var [ea7419](https://github.com/youzan/vant/commit/ea74194990314bd1ff1e8237c221be92fdb8ae37)
+* Step: add @step-active-color less var [9e7a68](https://github.com/youzan/vant/commit/9e7a6874141fa05f0158ca8006c268d0a3d92679)
+* Tabbar: add @tabbar-z-index less var [0441f7](https://github.com/youzan/vant/commit/0441f7ba098aca24b797de29d10af8f47cf32d15)
+* NavBar: add @nav-bar-z-index less var [a2d870](https://github.com/youzan/vant/commit/a2d870ad8ee4912226ec8871cc4c2d56ef870902)
+* NumberKeyboard: add @number-keyboard-z-index less var [760938](https://github.com/youzan/vant/commit/760938962399e0589b4a258ff29e7fe2f3ba90f1)
+
+**Bug Fixes**
+
+* ImagePreview: limit max-zoom when double clicking [1baa60](https://github.com/youzan/vant/commit/1baa60f2244b4605dc82f6dcf564671f5c623023)
+* Popup: duration prop not work when position is center [44072e](https://github.com/youzan/vant/commit/44072e8c3f548cff78401780213ab7ef213372c3)
+* Step: active-color should be effective for line [cfadce](https://github.com/youzan/vant/commit/cfadcefb0a1c29dfb1d940fbb7add746595158bd)
+
+
 ### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4)
 `2020-01-24`
 

@@ -11,6 +11,40 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 
+### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
+`2020-02-01`
+
+**Feature**
+
+* Picker: 支持级联选择 [#4247](https://github.com/youzan/vant/issues/4247)
+* Slider: 新增 button-size 属性 [1e9b8c](https://github.com/youzan/vant/commit/1e9b8c846674562d56ab638a0982baab4bb6870e)
+* 优化 props 类型，原有 number 类型的 props 现在支持传入 string
+
+**Style**
+
+* DropdownItem: 新增 @dropdown-item-z-index 变量 [6f4c6f](https://github.com/youzan/vant/commit/6f4c6f5aa6614559cfc24bc361e68c9c938bbb61)
+* IndexBar: 新增 @index-anchor-z-index 变量 [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: 新增 @index-bar-sidebar-z-index 变量 [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: 新增 @index-bar-index-active-color 变量 [0011db](https://github.com/youzan/vant/commit/0011db75365b60699ae140d85e54b9e477f46a22)
+* Notify: 新增 @notify-text-color 变量 [9dcf57](https://github.com/youzan/vant/commit/9dcf57c65f5e046318e953f2e8ce87918b1cb312)
+* Overlay: 新增 @overlay-z-index 变量 [95d19f](https://github.com/youzan/vant/commit/95d19f70d1c90efc752074ff764b07787d89cf1e)
+* Rate: 新增 @rate-icon-disabled-color 变量 [8b8471](https://github.com/youzan/vant/commit/8b8471945c4313735a5fe59402212f37a31acfea)
+* Rate: 新增 @rate-icon-full-color 变量 [5c804c](https://github.com/youzan/vant/commit/5c804cf920b75c5bdf962fa49eae31363783f32f)
+* Rate: 新增 @rate-icon-void-color 变量 [f90015](https://github.com/youzan/vant/commit/f90015efe7619af055b9ebd4c8be7da1f17b8da0)
+* Slider: 新增 @slider-bar-height 变量 [a5819c](https://github.com/youzan/vant/commit/a5819c286e06469bc41e8aa9e0ed44cc21625dad)
+* Search: 新增 @search-content-background-color 变量 [ea7419](https://github.com/youzan/vant/commit/ea74194990314bd1ff1e8237c221be92fdb8ae37)
+* Step: 新增 @step-active-color 变量 [9e7a68](https://github.com/youzan/vant/commit/9e7a6874141fa05f0158ca8006c268d0a3d92679)
+* Tabbar: 新增 @tabbar-z-index 变量 [0441f7](https://github.com/youzan/vant/commit/0441f7ba098aca24b797de29d10af8f47cf32d15)
+* NavBar: 新增 @nav-bar-z-index 变量 [a2d870](https://github.com/youzan/vant/commit/a2d870ad8ee4912226ec8871cc4c2d56ef870902)
+* NumberKeyboard: 新增 @number-keyboard-z-index 变量 [760938](https://github.com/youzan/vant/commit/760938962399e0589b4a258ff29e7fe2f3ba90f1)
+
+**Bug Fixes**
+
+* ImagePreview: 修复双击缩放时 max-zoom 属性不生效的问题 [1baa60](https://github.com/youzan/vant/commit/1baa60f2244b4605dc82f6dcf564671f5c623023)
+* Popup: 修复 position 为 center 时 duration 属性不生效的问题 [44072e](https://github.com/youzan/vant/commit/44072e8c3f548cff78401780213ab7ef213372c3)
+* Step: 修复 active-color 未改变分隔线颜色的问题 [cfadce](https://github.com/youzan/vant/commit/cfadcefb0a1c29dfb1d940fbb7add746595158bd)
+
+
 ### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4) 🐭
 `2020-01-24`
 
