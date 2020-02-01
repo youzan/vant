@@ -44,7 +44,7 @@ export default createComponent({
       default: true,
     },
     swipeDuration: {
-      type: Number,
+      type: [Number, String],
       default: 500,
     },
     overlay: {
@@ -56,15 +56,15 @@ export default createComponent({
       default: true,
     },
     startPosition: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     minZoom: {
-      type: Number,
+      type: [Number, String],
       default: 1 / 3,
     },
     maxZoom: {
-      type: Number,
+      type: [Number, String],
       default: 3,
     },
     overlayClass: {
@@ -104,9 +104,9 @@ export default createComponent({
   watch: {
     value(val) {
       if (val) {
-        this.setActive(this.startPosition);
+        this.setActive(+this.startPosition);
         this.$nextTick(() => {
-          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+          this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
         });
       } else {
         this.$emit('close', {
@@ -214,7 +214,7 @@ export default createComponent({
       if (this.zooming && touches.length === 2) {
         const distance = getDistance(touches);
         const scale = (this.startScale * distance) / this.startDistance;
-        this.scale = range(scale, this.minZoom, this.maxZoom);
+        this.scale = range(scale, +this.minZoom, +this.maxZoom);
       }
     },
 

@@ -22,12 +22,7 @@
       <van-button type="primary" @click="componentCall">
         {{ $t('componentCall') }}
       </van-button>
-      <van-image-preview
-        v-model="show"
-        :images="images"
-        :swipe-duration="300"
-        @change="onChange"
-      >
+      <van-image-preview v-model="show" :images="images" @change="onChange">
         <template #index>{{ $t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
