@@ -258,8 +258,12 @@ export default createComponent({
       }
     },
 
+    setScale(scale) {
+      this.scale = range(scale, +this.minZoom, +this.maxZoom);
+    },
+
     resetScale() {
-      this.scale = 1;
+      this.setScale(1);
       this.moveX = 0;
       this.moveY = 0;
     },
@@ -267,7 +271,7 @@ export default createComponent({
     toggleScale() {
       const scale = this.scale > 1 ? 1 : 2;
 
-      this.scale = scale;
+      this.setScale(scale);
       this.moveX = 0;
       this.moveY = 0;
     },
