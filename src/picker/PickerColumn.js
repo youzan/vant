@@ -73,6 +73,8 @@ export default createComponent({
   },
 
   watch: {
+    initialOptions: 'setOptions',
+
     defaultIndex(val) {
       this.setIndex(val);
     },
@@ -89,6 +91,13 @@ export default createComponent({
   },
 
   methods: {
+    setOptions(options) {
+      if (JSON.stringify(options) !== JSON.stringify(this.options)) {
+        this.options = deepClone(options);
+        this.setIndex(this.defaultIndex);
+      }
+    },
+
     onTouchStart(event) {
       this.touchStart(event);
 

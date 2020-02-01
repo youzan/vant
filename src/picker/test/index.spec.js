@@ -262,3 +262,37 @@ test('cascade columns', () => {
     'Gulou',
   ]);
 });
+
+test('watch columns change', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: ['1', '2'],
+      defaultIndex: 1,
+    },
+  });
+
+  wrapper.setProps({
+    columns: ['2', '3'],
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0]).toEqual(['3', 1]);
+});
+
+test('should not reset index when columns unchanged', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: ['1', '2'],
+    },
+  });
+
+  wrapper.vm.setIndexes([1]);
+  wrapper.setProps({
+    columns: ['1', '2'],
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0]).toEqual(['2', 1]);
+});

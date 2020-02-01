@@ -182,12 +182,9 @@ export default createComponent({
     // set options of column by index
     setColumnValues(index, options) {
       const column = this.children[index];
-      if (
-        column &&
-        JSON.stringify(column.options) !== JSON.stringify(options)
-      ) {
-        column.options = options;
-        column.setIndex(0);
+
+      if (column) {
+        column.setOptions(options);
       }
     },
 
