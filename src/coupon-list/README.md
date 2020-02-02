@@ -78,7 +78,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Cell title | *string* | `Coupon` |
-| chosen-coupon | Index of chosen coupon | *number* | `-1` |
+| chosen-coupon | Index of chosen coupon | *number \| string* | `-1` |
 | coupons | Coupon list | *Coupon[]* | `[]` |
 | editable | Cell editable | *boolean* | `true` |
 | border | Whether to show innner border | *boolean* | `true` |

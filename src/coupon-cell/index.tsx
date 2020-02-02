@@ -16,14 +16,14 @@ export type CouponCellProps = {
   coupons: Coupon[];
   currency: string;
   editable: boolean;
-  chosenCoupon: number;
+  chosenCoupon: number | string;
 };
 
 const [createComponent, bem, t] = createNamespace('coupon-cell');
 
 function formatValue(props: CouponCellProps) {
   const { coupons, chosenCoupon, currency } = props;
-  const coupon = coupons[chosenCoupon];
+  const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
     const value = coupon.value || coupon.denominations || 0;
@@ -39,7 +39,7 @@ function CouponCell(
   slots: DefaultSlots,
   ctx: RenderContext<CouponCellProps>
 ) {
-  const valueClass = props.coupons[props.chosenCoupon]
+  const valueClass = props.coupons[+props.chosenCoupon]
     ? 'van-coupon-cell--selected'
     : '';
   const value = formatValue(props);
@@ -80,7 +80,7 @@ CouponCell.props = {
     default: true,
   },
   chosenCoupon: {
-    type: Number,
+    type: [Number, String],
     default: -1,
   },
 };
