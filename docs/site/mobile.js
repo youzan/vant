@@ -16,6 +16,8 @@ Locale.add({
 // flag for vant-weapp demos
 const isWeapp = location.search.indexOf('weapp=1') !== -1;
 
+let demoUid = 0;
+
 // helper for demo locales
 Vue.mixin({
   computed: {
@@ -37,6 +39,10 @@ Vue.mixin({
   },
 
   beforeCreate() {
+    if (!this.$options.name) {
+      this.$options.name = `demo-${demoUid++}`;
+    }
+
     const { i18n, name } = this.$options;
 
     if (i18n && name) {
