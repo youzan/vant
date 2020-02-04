@@ -1680,19 +1680,7 @@
     "@types/source-list-map" "*"
     source-map "^0.6.1"
 
-"@types/webpack@*":
-  version "4.41.2"
-  resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.2.tgz?cache=0&sync_timestamp=1578441659523&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.2.tgz#c6faf0111de27afdffe1158dac559e447c273516"
-  integrity sha1-xvrwER3iev3/4RWNrFWeRHwnNRY=
-  dependencies:
-    "@types/anymatch" "*"
-    "@types/node" "*"
-    "@types/tapable" "*"
-    "@types/uglify-js" "*"
-    "@types/webpack-sources" "*"
-    source-map "^0.6.0"
-
-"@types/webpack@^4.41.4":
+"@types/webpack@*", "@types/webpack@^4.41.4":
   version "4.41.4"
   resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.4.tgz#6cd2d651d214c344640cbab1c82037289b0154cd"
   integrity sha1-bNLWUdIUw0RkDLqxyCA3KJsBVM0=
