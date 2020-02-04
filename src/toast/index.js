@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueToast from './Toast';
 import { isObject, isServer } from '../utils';
+import { removeNode } from '../utils/dom/node';
 
 const defaultOptions = {
   icon: '',
@@ -100,11 +101,7 @@ function Toast(options = {}) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
 
-        const parent = toast.$el.parentNode;
-        if (parent) {
-          parent.removeChild(toast.$el);
-        }
-
+        removeNode(toast.$el);
         toast.$destroy();
       });
     }
