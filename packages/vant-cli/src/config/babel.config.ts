@@ -44,8 +44,6 @@ module.exports = function(api?: ConfigAPI) {
         'vant',
       ],
       '@babel/plugin-transform-object-assign',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-proposal-nullish-coalescing-operator',
     ],
   };
 };
