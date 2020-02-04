@@ -728,6 +728,7 @@ export default createComponent({
           {Stepper}
           {Messages}
         </div>
+        {slots('sku-actions-top')}
         {Actions}
       </Popup>
     );

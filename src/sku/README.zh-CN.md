@@ -184,6 +184,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，�
 | extra-sku-group | 额外商品 sku 展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
 | sku-messages | 商品留言区 |
+| sku-actions-top | 操作按钮区顶部内容，无默认展示内容，按需使用 |
 | sku-actions | 操作按钮区 |
 
 ### sku 对象结构

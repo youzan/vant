@@ -109,6 +109,11 @@
               <span class="van-sku__price-num">{{ price }}</span>
             </div>
           </template>
+          <template #sku-actions-top>
+            <div class="van-sku-header-item text-center">
+              {{ $t('actionsTop') }}
+            </div>
+          </template>
           <template #sku-actions="{ skuEventBus }">
             <div class="van-sku-actions">
               <van-button
@@ -150,6 +155,7 @@ export default {
       stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买',
+      actionsTop: '商品不多，赶快购买吧',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
@@ -157,6 +163,7 @@ export default {
       stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button',
+      actionsTop: 'action top info',
     },
   },
 
@@ -224,6 +231,10 @@ export default {
 
   .sku-container {
     padding: 0 @padding-md;
+  }
+
+  .text-center {
+    text-align: center;
   }
 }
 </style>
