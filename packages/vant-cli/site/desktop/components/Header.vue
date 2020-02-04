@@ -127,7 +127,9 @@ export default {
     },
 
     onSwitchVersion(version) {
-      location.href = version.link;
+      if(version.link){
+        location.href = version.link;
+      }
     },
   },
 };
