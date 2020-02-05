@@ -65,7 +65,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     });
   }
 
-  const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => {
+  const staticDocs = glob.sync(normalizePath(join(DOCS_DIR, '**/*.md'))).map(path => {
     const pairs = parse(path).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
