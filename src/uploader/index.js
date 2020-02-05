@@ -5,6 +5,7 @@ import { toArray, readFile, isOversize, isImageFile } from './utils';
 // Components
 import Icon from '../icon';
 import Image from '../image';
+import Loading from '../loading';
 import ImagePreview from '../image-preview';
 
 const [createComponent, bem] = createNamespace('uploader');
@@ -224,8 +225,32 @@ export default createComponent({
       }
     },
 
+    genPreviewMask(item) {
+      const { status } = item;
+
+      if (status === 'uploading' || status === 'failed') {
+        const MaskIcon =
+          status === 'failed' ? (
+            <Icon name="warning-o" class={bem('mask-icon')} />
+          ) : (
+            <Loading class={bem('loading')} />
+          );
+
+        return (
+          <div class={bem('mask')}>
+            {MaskIcon}
+            {item.message && (
+              <div class={bem('mask-message')}>{item.message}</div>
+            )}
+          </div>
+        );
+      }
+    },
+
     genPreviewItem(item, index) {
-      const DeleteIcon = this.deletable && (
+      const showDelete = item.status !== 'uploading' && this.deletable;
+
+      const DeleteIcon = showDelete && (
         <Icon
           name="clear"
           class={bem('preview-delete')}
@@ -263,15 +288,6 @@ export default createComponent({
         </div>
       );
 
-      const Mask = item.status === 'failed' && (
-        <div class={bem('mask')}>
-          <Icon name="warning-o" class={bem('mask-icon')} />
-          {item.message && (
-            <div class={bem('mask-message')}>{item.message}</div>
-          )}
-        </div>
-      );
-
       return (
         <div
           class={bem('preview')}
@@ -280,7 +296,7 @@ export default createComponent({
           }}
         >
           {Preview}
-          {Mask}
+          {this.genPreviewMask(item)}
           {DeleteIcon}
         </div>
       );
