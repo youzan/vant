@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Button } from 'vant';
 
@@ -74,6 +74,12 @@ Vue.use(Button);
 <van-button type="primary" size="mini">Mini</van-button>
 ```
 
+### Block Element
+
+```html
+<van-button type="primary" block>Block Element</van-button>
+```
+
 ### Route
 
 ```html
@@ -87,11 +93,6 @@ Vue.use(Button);
 <van-button color="#7232dd">Pure</van-button>
 <van-button color="#7232dd" plain>Pure</van-button>
 <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">Gradient</van-button>
-```
-
-### Block Element
-```html
-<van-button type="primary" block>Block Element</van-button>
 ```
 
 ## API

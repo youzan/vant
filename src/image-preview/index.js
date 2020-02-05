@@ -19,12 +19,12 @@ const defaultConfig = {
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,
-  closeOnPopstate: false
+  closeOnPopstate: false,
 };
 
 const initInstance = () => {
   instance = new (Vue.extend(VueImagePreview))({
-    el: document.createElement('div')
+    el: document.createElement('div'),
   });
   document.body.appendChild(instance.$el);
 

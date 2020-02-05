@@ -1,9 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
+import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
-import Tag from '../tag';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -77,7 +80,7 @@ function AddressItem(
         {`${data.name} ${data.tel}`}
         {genTag()}
       </div>,
-      <div class={bem('address')}>{data.address}</div>
+      <div class={bem('address')}>{data.address}</div>,
     ];
 
     if (switchable && !disabled) {
@@ -99,7 +102,7 @@ function AddressItem(
       clickable={switchable && !disabled}
       scopedSlots={{
         default: genContent,
-        'right-icon': genRightIcon
+        'right-icon': genRightIcon,
       }}
       onClick={onClick}
       {...inherit(ctx)}
@@ -111,7 +114,7 @@ AddressItem.props = {
   data: Object,
   disabled: Boolean,
   switchable: Boolean,
-  defaultTagText: String
+  defaultTagText: String,
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(

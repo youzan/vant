@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { SwipeCell } from 'vant';
 
@@ -20,14 +20,47 @@ Vue.use(SwipeCell);
   <template slot="left">
     <van-button square type="primary" text="选择" />
   </template>
-
   <van-cell :border="false" title="单元格" value="内容" />
-
   <template slot="right">
     <van-button square type="danger" text="删除" />
     <van-button square type="primary" text="收藏"/>
   </template>
 </van-swipe-cell>
+```
+
+### 自定义内容
+
+`SwipeCell`内容可以嵌套任意内容，比如嵌套一个商品卡片
+
+```html
+<van-swipe-cell>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="描述信息"
+    title="商品标题"
+    class="goods-card"
+    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+  />
+  <van-button
+    slot="right"
+    square
+    text="删除"
+    type="danger"
+    class="delete-button"
+  />
+</van-swipe-cell>
+
+<style>
+.goods-card {
+  margin: 0;
+  background-color: @white;
+}
+
+.delete-button {
+  height: 100%;
+}
+</style>
 ```
 
 ### 异步关闭
@@ -39,9 +72,7 @@ Vue.use(SwipeCell);
   <template slot="left">
     <van-button square type="primary" text="选择" />
   </template>
-
   <van-cell :border="false" title="单元格" value="内容" />
-
   <template slot="right">
     <van-button square type="danger" text="删除" />
   </template>
@@ -79,11 +110,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name `v2.0.4` | 标识符，可以在事件参数中获取到 | *string \| number* | - |
+| name `v2.0.4` | 标识符，可以在事件参数中获取到 | *number \| string* | - |
+| left-width | 指定左侧滑动区域宽度，单位为`px` | *number \| string* | `auto` |
+| right-width | 指定右侧滑动区域宽度，单位为`px` | *number \| string* | `auto` |
 | before-close `v2.3.0` | 关闭前的回调函数 | *Function* | - |
 | disabled | 是否禁用滑动 | *boolean* | `false` |
-| left-width | 指定左侧滑动区域宽度 | *number* | `auto` |
-| right-width | 指定右侧滑动区域宽度 | *number* | `auto` |
 | stop-propagation `v2.1.0` | 是否阻止滑动事件冒泡 | *boolean* | `false` |
 
 ### Slots
@@ -114,7 +145,7 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 SwipeCell 实例并调用实例方法
+通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

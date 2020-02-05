@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { AddressList } from 'vant';
 
@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,12 +56,10 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('新增地址');
     },
-
     onEdit(item, index) {
       Toast('编辑地址:' + index);
     }
@@ -96,9 +96,9 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每条地址的唯一标识 | *string \| number* |
+| id | 每条地址的唯一标识 | *number \| string* |
 | name | 收货人姓名 | *string* |
-| tel | 收货人手机号 | *string \| number* |
+| tel | 收货人手机号 | *number \| string* |
 | address | 收货地址 | *string* |
 | isDefault | 是否为默认地址 | *boolean* |
 

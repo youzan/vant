@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
-import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
+import { cellProps, SharedCellProps } from './shared';
+
+// Components
 import Icon from '../icon';
 
 // Types
@@ -109,7 +112,7 @@ function Cell(
     clickable,
     center: props.center,
     required: props.required,
-    borderless: !props.border
+    borderless: !props.border,
   };
 
   if (size) {
@@ -135,7 +138,7 @@ function Cell(
 
 Cell.props = {
   ...cellProps,
-  ...routeProps
+  ...routeProps,
 };
 
 export default createComponent<CellProps, CellEvents, CellSlots>(Cell);

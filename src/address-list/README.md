@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { AddressList } from 'vant';
 
@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,7 +56,6 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('Add');
@@ -95,9 +96,9 @@ export default {
 
 | Key | Description | Type |
 |------|------|------|
-| id | Id | *string \| number* |
+| id | Id | *number \| string* |
 | name | Name | *string* |
-| tel | Phone | *string \| number* |
+| tel | Phone | *number \| string* |
 | address | Address | *string* |
 | isDefault | Is default address | *boolean* |
 

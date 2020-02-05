@@ -27,7 +27,4 @@ export function decamelize(str, sep = '-') {
     .toLowerCase();
 }
 
-export {
-  isMobile,
-  iframeReady
-};
+export { isMobile, iframeReady };

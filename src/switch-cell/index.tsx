@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
+
+// Components
 import Cell from '../cell';
 import Switch, { SwitchEvents } from '../switch';
 import { switchProps, SharedSwitchProps } from '../switch/shared';
@@ -43,12 +46,12 @@ SwitchCell.props = {
   cellSize: String,
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
   size: {
     type: String,
-    default: '24px'
-  }
+    default: '24px',
+  },
 };
 
 export default createComponent<SwitchCellProps, SwitchEvents>(SwitchCell);

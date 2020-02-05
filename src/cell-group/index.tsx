@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
@@ -24,7 +25,10 @@ function CellGroup(
   ctx: RenderContext<CellGroupProps>
 ) {
   const Group = (
-    <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]} {...inherit(ctx, true)}>
+    <div
+      class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}
+      {...inherit(ctx, true)}
+    >
       {slots.default?.()}
     </div>
   );
@@ -32,7 +36,9 @@ function CellGroup(
   if (props.title || slots.title) {
     return (
       <div>
-        <div class={bem('title')}>{slots.title ? slots.title() : props.title}</div>
+        <div class={bem('title')}>
+          {slots.title ? slots.title() : props.title}
+        </div>
         {Group}
       </div>
     );
@@ -45,8 +51,8 @@ CellGroup.props = {
   title: String,
   border: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<CellGroupProps>(CellGroup);

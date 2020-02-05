@@ -29,25 +29,25 @@ function getRoutes() {
   if (langs.length) {
     routes.push({
       path: '*',
-      redirect: route => `/${getLangFromRoute(route)}/`
+      redirect: route => `/${getLangFromRoute(route)}/`,
     });
 
     langs.forEach(lang => {
       routes.push({
         path: `/${lang}`,
         component: DemoHome,
-        meta: { lang }
+        meta: { lang },
       });
     });
   } else {
     routes.push({
       path: '*',
-      redirect: () => '/'
+      redirect: () => '/',
     });
 
     routes.push({
       path: '/',
-      component: DemoHome
+      component: DemoHome,
     });
   }
 
@@ -62,8 +62,8 @@ function getRoutes() {
           component: demos[name],
           meta: {
             name,
-            lang
-          }
+            lang,
+          },
         });
       });
     } else {
@@ -72,8 +72,8 @@ function getRoutes() {
         path: `/${component}`,
         component: demos[name],
         meta: {
-          name
-        }
+          name,
+        },
       });
     }
   });
@@ -86,7 +86,7 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
   mode: 'hash',
   routes: getRoutes(),
-  scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 }
+  scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });
 
 router.afterEach(() => {

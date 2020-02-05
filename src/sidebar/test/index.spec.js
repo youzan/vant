@@ -1,10 +1,5 @@
 import { mount } from '../../../test';
-import Vue from 'vue';
 import Sidebar from '..';
-import SidebarItem from '../../sidebar-item';
-
-Vue.use(Sidebar);
-Vue.use(SidebarItem);
 
 test('click event & change event', () => {
   const onClick = jest.fn();
@@ -17,8 +12,8 @@ test('click event & change event', () => {
     `,
     methods: {
       onClick,
-      onChange
-    }
+      onChange,
+    },
   });
 
   wrapper.find('.van-sidebar-item').trigger('click');
@@ -37,12 +32,15 @@ test('v-model', () => {
     `,
     data() {
       return {
-        active: 0
+        active: 0,
       };
-    }
+    },
   });
 
-  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
+  wrapper
+    .findAll('.van-sidebar-item')
+    .at(1)
+    .trigger('click');
   expect(wrapper.vm.active).toEqual(1);
 });
 
@@ -56,12 +54,15 @@ test('disabled prop', () => {
     `,
     data() {
       return {
-        active: 0
+        active: 0,
       };
-    }
+    },
   });
 
-  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
+  wrapper
+    .findAll('.van-sidebar-item')
+    .at(1)
+    .trigger('click');
   expect(wrapper.vm.active).toEqual(0);
 });
 

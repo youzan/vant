@@ -1,7 +1,7 @@
-import Vue, { PluginFunction } from 'vue';
+import { PluginFunction } from 'vue';
 
 export interface Lazyload {
-  install: PluginFunction<void>
+  install: PluginFunction<void>;
 }
 
 export const Lazyload: Lazyload;

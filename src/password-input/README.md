@@ -6,11 +6,12 @@ The PasswordInput component is usually used with [NumberKeyboard](#/en-US/number
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput).use(NumberKeyboard);
+Vue.use(PasswordInput);
+Vue.use(NumberKeyboard);
 ```
 
 ## Usage
@@ -25,7 +26,6 @@ Vue.use(PasswordInput).use(NumberKeyboard);
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
-
 <!-- NumberKeyboard -->
 <van-number-keyboard
   :show="showKeyboard"
@@ -35,7 +35,7 @@ Vue.use(PasswordInput).use(NumberKeyboard);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -43,7 +43,6 @@ export default {
       showKeyboard: true
     };
   },
-
   methods: {
     onInput(key) {
       this.value = (this.value + key).slice(0, 6);
@@ -100,7 +99,7 @@ Use `error-info` prop to set error message. For example, a password error is pro
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -109,7 +108,6 @@ export default {
       errorInfo: ''
     };
   },
-
   methods: {
     onInput(key) {
       this.value = (this.value + key).slice(0, 6);
@@ -132,12 +130,12 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | value | Password value | *string* | `''` |
-| length | Maxlength of password | *number* | `6` |
-| mask | Whether to mask value | *boolean* | `true` |
-| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
 | info | Bottom info | *string* | - |
 | error-info | Bottom error info | *string* | - |
-| gutter | Gutter of input | *string \| number* | `0` |
+| length | Maxlength of password | *number \| string* | `6` |
+| gutter | Gutter of input | *number \| string* | `0` |
+| mask | Whether to mask value | *boolean* | `true` |
+| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
 
 ### Events
 

@@ -22,6 +22,10 @@
     &-wrapper {
       position: relative;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__upload {
@@ -70,6 +74,38 @@
       background-color: @uploader-delete-background-color;
       border-radius: 100%;
     }
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: @white;
+    background-color: @uploader-mask-background-color;
+    border-radius: @uploader-upload-border-radius;
+
+    &-icon {
+      font-size: @uploader-mask-icon-size;
+    }
+
+    &-message {
+      margin-top: 6px;
+      padding: 0 @padding-base;
+      font-size: @uploader-mask-message-font-size;
+      line-height: @uploader-mask-message-line-height;
+    }
+  }
+
+  &__loading {
+    width: @uploader-loading-icon-size;
+    height: @uploader-loading-icon-size;
+    color: @uploader-loading-icon-color;
   }
 
   &__file {

@@ -6,14 +6,14 @@ import {
   CACHE_DIR,
   STYLE_EXTS,
   SCRIPT_EXTS,
-  POSTCSS_CONFIG_FILE
+  POSTCSS_CONFIG_FILE,
 } from '../common/constant';
 
 const CACHE_LOADER = {
   loader: 'cache-loader',
   options: {
-    cacheDirectory: CACHE_DIR
-  }
+    cacheDirectory: CACHE_DIR,
+  },
 };
 
 const CSS_LOADERS = [
@@ -23,16 +23,16 @@ const CSS_LOADERS = [
     loader: 'postcss-loader',
     options: {
       config: {
-        path: POSTCSS_CONFIG_FILE
-      }
-    }
-  }
+        path: POSTCSS_CONFIG_FILE,
+      },
+    },
+  },
 ];
 
 export const baseConfig = {
   mode: 'development',
   resolve: {
-    extensions: [...SCRIPT_EXTS, ...STYLE_EXTS]
+    extensions: [...SCRIPT_EXTS, ...STYLE_EXTS],
   },
   module: {
     rules: [
@@ -44,26 +44,26 @@ export const baseConfig = {
             loader: 'vue-loader',
             options: {
               compilerOptions: {
-                preserveWhitespace: false
-              }
-            }
-          }
-        ]
+                preserveWhitespace: false,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules\/(?!(@vant\/cli))/,
-        use: [CACHE_LOADER, 'babel-loader']
+        use: [CACHE_LOADER, 'babel-loader'],
       },
       {
         test: /\.css$/,
         sideEffects: true,
-        use: CSS_LOADERS
+        use: CSS_LOADERS,
       },
       {
         test: /\.less$/,
         sideEffects: true,
-        use: [...CSS_LOADERS, 'less-loader']
+        use: [...CSS_LOADERS, 'less-loader'],
       },
       {
         test: /\.scss$/,
@@ -73,22 +73,22 @@ export const baseConfig = {
           {
             loader: 'sass-loader',
             options: {
-              implementation: sass
-            }
-          }
-        ]
+              implementation: sass,
+            },
+          },
+        ],
       },
       {
         test: /\.md$/,
-        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader']
-      }
-    ]
+        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader'],
+      },
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
     new FriendlyErrorsPlugin({
       clearConsole: false,
-      logLevel: 'WARNING'
-    })
-  ]
+      logLevel: 'WARNING',
+    }),
+  ],
 };

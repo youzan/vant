@@ -29,7 +29,13 @@ exports[`renders demo correctly 1`] = `
   <div class="van-cell van-cell--center">
     <div class="van-cell__title"><span>禁用状态</span></div>
     <div class="van-cell__value">
-      <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" disabled="disabled" class="van-stepper__input"><button type="button" class="van-stepper__plus van-stepper__plus--disabled"></button></div>
+      <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" disabled="disabled" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus van-stepper__plus--disabled"></button></div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>禁用输入框</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" readonly="readonly" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
     </div>
   </div>
   <div class="van-cell van-cell--center">

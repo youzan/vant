@@ -1,11 +1,14 @@
+// Utils
+import { formatNumber } from './utils';
+import { isIOS } from '../utils/validate/system';
+import { preventDefault } from '../utils/dom/event';
+import { resetScroll } from '../utils/dom/reset-scroll';
+import { createNamespace, isObject, isDef, addUnit } from '../utils';
+
+// Components
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { preventDefault } from '../utils/dom/event';
-import { resetScroll } from '../utils/dom/reset-scroll';
-import { isIOS } from '../utils/validate/system';
-import { formatNumber } from './utils';
-import { createNamespace, isObj, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('field');
 
@@ -15,6 +18,7 @@ export default createComponent({
   props: {
     ...cellProps,
     error: Boolean,
+    disabled: Boolean,
     readonly: Boolean,
     autosize: [Boolean, Object],
     leftIcon: String,
@@ -26,25 +30,26 @@ export default createComponent({
     labelClass: null,
     labelAlign: String,
     inputAlign: String,
+    placeholder: String,
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
     type: {
       type: String,
-      default: 'text'
-    }
+      default: 'text',
+    },
   },
 
   data() {
     return {
-      focused: false
+      focused: false,
     };
   },
 
   watch: {
     value() {
       this.$nextTick(this.adjustSize);
-    }
+    },
   },
 
   mounted() {
@@ -69,7 +74,7 @@ export default createComponent({
         input: this.onInput,
         keypress: this.onKeypress,
         focus: this.onFocus,
-        blur: this.onBlur
+        blur: this.onBlur,
       };
 
       delete listeners.click;
@@ -82,7 +87,7 @@ export default createComponent({
       if (labelWidth) {
         return { width: addUnit(labelWidth) };
       }
-    }
+    },
   },
 
   methods: {
@@ -201,7 +206,7 @@ export default createComponent({
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
-      if (isObj(this.autosize)) {
+      if (isObject(this.autosize)) {
         const { maxHeight, minHeight } = this.autosize;
         if (maxHeight) {
           height = Math.min(height, maxHeight);
@@ -228,20 +233,22 @@ export default createComponent({
         ref: 'input',
         class: bem('control', this.inputAlign),
         domProps: {
-          value: this.value
+          value: this.value,
         },
         attrs: {
           ...this.$attrs,
-          readonly: this.readonly
+          disabled: this.disabled,
+          readonly: this.readonly,
+          placeholder: this.placeholder,
         },
         on: this.listeners,
         // add model directive to skip IME composition
         directives: [
           {
             name: 'model',
-            value: this.value
-          }
-        ]
+            value: this.value,
+          },
+        ],
       };
 
       if (type === 'textarea') {
@@ -296,20 +303,24 @@ export default createComponent({
 
     genWordLimit() {
       if (this.showWordLimit && this.maxlength) {
+        const count = this.value.length;
+        const full = count >= this.maxlength;
+
         return (
           <div class={bem('word-limit')}>
-            {this.value.length}/{this.maxlength}
+            <span class={bem('word-num', { full })}>{count}</span>/
+            {this.maxlength}
           </div>
         );
       }
-    }
+    },
   },
 
   render() {
     const { slots, labelAlign } = this;
 
     const scopedSlots = {
-      icon: this.genLeftIcon
+      icon: this.genLeftIcon,
     };
 
     if (slots('label')) {
@@ -332,7 +343,7 @@ export default createComponent({
         class={bem({
           error: this.error,
           [`label-${labelAlign}`]: labelAlign,
-          'min-height': this.type === 'textarea' && !this.autosize
+          'min-height': this.type === 'textarea' && !this.autosize,
         })}
         scopedSlots={scopedSlots}
         onClick={this.onClick}
@@ -359,5 +370,5 @@ export default createComponent({
         )}
       </Cell>
     );
-  }
+  },
 });

@@ -5,7 +5,7 @@ import { raf, cancelRaf } from '../dom/raf';
 import { later } from '../../../test';
 import { isEmail } from '../validate/email';
 import { isMobile } from '../validate/mobile';
-import { isNumber } from '../validate/number';
+import { isNumeric } from '../validate/number';
 import { isAndroid } from '../validate/system';
 import { camelize } from '../format/string';
 
@@ -29,14 +29,14 @@ test('deepAssign', () => {
   expect(deepAssign({}, { foo: undefined })).toEqual({});
   expect(deepAssign({ fn: null }, { fn })).toEqual({ fn });
   expect(deepAssign({ foo: 0 }, { bar: 1 })).toEqual({ foo: 0, bar: 1 });
-  expect(deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })).toEqual(
-    {
-      foo: {
-        bar: true,
-        foo: false
-      }
-    }
-  );
+  expect(
+    deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })
+  ).toEqual({
+    foo: {
+      bar: true,
+      foo: false,
+    },
+  });
 });
 
 test('isDef', () => {
@@ -92,9 +92,9 @@ test('is-mobile', () => {
 });
 
 test('is-number', () => {
-  expect(isNumber('1')).toBeTruthy();
-  expect(isNumber('1.2')).toBeTruthy();
-  expect(isNumber('1..2')).toBeFalsy();
-  expect(isNumber('abc')).toBeFalsy();
-  expect(isNumber('1b2')).toBeFalsy();
+  expect(isNumeric('1')).toBeTruthy();
+  expect(isNumeric('1.2')).toBeTruthy();
+  expect(isNumeric('1..2')).toBeFalsy();
+  expect(isNumeric('abc')).toBeFalsy();
+  expect(isNumeric('1b2')).toBeFalsy();
 });

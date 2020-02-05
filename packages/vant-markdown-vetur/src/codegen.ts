@@ -8,19 +8,35 @@ export type Tag = {
   description: string;
   defaults?: Array<string>;
   subtags?: Array<string>;
-}
+};
 
 export type Attribute = {
   description: string;
   type?: string;
   options?: Array<string>;
-}
+};
 
 function camelCaseToKebabCase(input: string): string {
   return input.replace(
     /[A-Z]/g,
     (val, index) => (index === 0 ? '' : '-') + val.toLowerCase()
   );
+}
+
+function removeVersionTag(str: string) {
+  return str.replace(/`(\w|\.)+`/g, '').trim();
+}
+
+function getDescription(td: string[], isProp: boolean) {
+  const desc = td[1] ? td[1].replace('<br>', '') : '';
+  const type = td[2] ? td[2].replace(/\*/g, '') : '';
+  const defaultVal = td[3] ? td[3].replace(/`/g, '') : '';
+
+  if (isProp) {
+    return `${desc}, 默认值: ${defaultVal}, 类型: ${type}`;
+  }
+
+  return desc;
 }
 
 export function codegen(artical: Artical) {
@@ -49,7 +65,7 @@ export function codegen(artical: Artical) {
       const key = camelCaseToKebabCase(match[1] || 'default');
       const tag: Tag = tags[key] || {
         description: tagDescription,
-        attributes: {}
+        attributes: {},
       };
 
       tags[key] = tag;
@@ -57,16 +73,14 @@ export function codegen(artical: Artical) {
       const isProp = /Props/i.test(match[2]);
 
       table.body.forEach(td => {
-        const attrName = td[0];
+        const name = removeVersionTag(td[0]);
 
         const attr: Attribute = {
-          description: `${td[1]}, ${
-            isProp ? 'default: ' + td[3].replace(/`/g, '') : 'params: ' + td[2]
-          }`,
-          type: isProp ? td[2].replace(/`/g, '').toLowerCase() : 'event'
+          description: getDescription(td, isProp),
+          type: isProp ? td[2].replace(/`/g, '').toLowerCase() : 'event',
         };
 
-        tag.attributes[attrName] = attr;
+        tag.attributes[name] = attr;
       });
     }
   }

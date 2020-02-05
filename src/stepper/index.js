@@ -28,35 +28,39 @@ export default createComponent({
     disablePlus: Boolean,
     disableMinus: Boolean,
     disableInput: Boolean,
-    decimalLength: Number,
+    decimalLength: [Number, String],
     name: {
       type: [Number, String],
-      default: ''
+      default: '',
     },
     min: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     max: {
       type: [Number, String],
-      default: Infinity
+      default: Infinity,
     },
     step: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     defaultValue: {
       type: [Number, String],
-      default: 1
+      default: 1,
     },
     showPlus: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showMinus: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
+    longPress: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -68,13 +72,15 @@ export default createComponent({
     }
 
     return {
-      currentValue: value
+      currentValue: value,
     };
   },
 
   computed: {
     minusDisabled() {
-      return this.disabled || this.disableMinus || this.currentValue <= this.min;
+      return (
+        this.disabled || this.disableMinus || this.currentValue <= this.min
+      );
     },
 
     plusDisabled() {
@@ -101,28 +107,28 @@ export default createComponent({
 
         return {
           width: size,
-          height: size
+          height: size,
         };
       }
-    }
+    },
   },
 
   watch: {
+    max: 'check',
+    min: 'check',
+    integer: 'check',
+    decimalLength: 'check',
+
     value(val) {
       if (!equal(val, this.currentValue)) {
         this.currentValue = this.format(val);
       }
     },
 
-    max: 'check',
-    min: 'check',
-    integer: 'check',
-    decimalLength: 'check',
-
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, { name: this.name });
-    }
+    },
   },
 
   methods: {
@@ -222,12 +228,16 @@ export default createComponent({
 
     longPressStep() {
       this.longPressTimer = setTimeout(() => {
-        this.onChange(this.type);
+        this.onChange();
         this.longPressStep(this.type);
       }, LONG_PRESS_INTERVAL);
     },
 
     onTouchStart() {
+      if (!this.longPress) {
+        return;
+      }
+
       clearTimeout(this.longPressTimer);
       this.isLongPress = false;
 
@@ -239,12 +249,16 @@ export default createComponent({
     },
 
     onTouchEnd(event) {
+      if (!this.longPress) {
+        return;
+      }
+
       clearTimeout(this.longPressTimer);
 
       if (this.isLongPress) {
         preventDefault(event);
       }
-    }
+    },
   },
 
   render() {
@@ -256,11 +270,11 @@ export default createComponent({
         },
         touchstart: () => {
           this.type = type;
-          this.onTouchStart(type);
+          this.onTouchStart();
         },
         touchend: this.onTouchEnd,
-        touchcancel: this.onTouchEnd
-      }
+        touchcancel: this.onTouchEnd,
+      },
     });
 
     return (
@@ -277,11 +291,12 @@ export default createComponent({
           role="spinbutton"
           class={bem('input')}
           value={this.currentValue}
+          style={this.inputStyle}
+          disabled={this.disabled}
+          readonly={this.disableInput}
           aria-valuemax={this.max}
           aria-valuemin={this.min}
           aria-valuenow={this.currentValue}
-          disabled={this.disabled || this.disableInput}
-          style={this.inputStyle}
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
@@ -295,5 +310,5 @@ export default createComponent({
         />
       </div>
     );
-  }
+  },
 });

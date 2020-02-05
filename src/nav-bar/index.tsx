@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace, noop } from '../utils';
 import { inherit } from '../utils/functional';
 import { BORDER_BOTTOM } from '../utils/constant';
+
+// Components
 import Icon from '../icon';
 
 // Types
@@ -36,36 +39,41 @@ function NavBar(
   slots: NavBarSlots,
   ctx: RenderContext<NavBarProps>
 ) {
+  function LeftPart() {
+    if (slots.left) {
+      return slots.left();
+    }
+
+    return [
+      props.leftArrow && <Icon class={bem('arrow')} name="arrow-left" />,
+      props.leftText && <span class={bem('text')}>{props.leftText}</span>,
+    ];
+  }
+
+  function RightPart() {
+    if (slots.right) {
+      return slots.right();
+    }
+
+    if (props.rightText) {
+      return <span class={bem('text')}>{props.rightText}</span>;
+    }
+  }
+
   return (
     <div
-      class={[
-        bem({ fixed: props.fixed }),
-        { [BORDER_BOTTOM]: props.border }
-      ]}
       style={{ zIndex: props.zIndex }}
+      class={[bem({ fixed: props.fixed }), { [BORDER_BOTTOM]: props.border }]}
       {...inherit(ctx)}
     >
       <div class={bem('left')} onClick={ctx.listeners['click-left'] || noop}>
-        {slots.left
-          ? slots.left()
-          : [
-            props.leftArrow && (
-              <Icon class={bem('arrow')} name="arrow-left" />
-            ),
-            props.leftText && (
-              <span class={bem('text')}>{props.leftText}</span>
-            )
-          ]}
+        {LeftPart()}
       </div>
       <div class={[bem('title'), 'van-ellipsis']}>
         {slots.title ? slots.title() : props.title}
       </div>
       <div class={bem('right')} onClick={ctx.listeners['click-right'] || noop}>
-        {slots.right
-          ? slots.right()
-          : props.rightText && (
-              <span class={bem('text')}>{props.rightText}</span>
-          )}
+        {RightPart()}
       </div>
     </div>
   );
@@ -74,17 +82,14 @@ function NavBar(
 NavBar.props = {
   title: String,
   fixed: Boolean,
+  zIndex: [Number, String],
   leftText: String,
   rightText: String,
   leftArrow: Boolean,
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
-  zIndex: {
-    type: Number,
-    default: 1
-  }
 };
 
 export default createComponent<NavBarProps, NavBarEvents>(NavBar);

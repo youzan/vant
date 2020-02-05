@@ -7,14 +7,14 @@ export function test(command: any) {
   setNodeEnv('test');
 
   genPackageEntry({
-    outputPath: PACKAGE_ENTRY_FILE
+    outputPath: PACKAGE_ENTRY_FILE,
   });
 
   const config = {
     rootDir: ROOT,
     watch: command.watch,
     config: JEST_CONFIG_FILE,
-    clearCache: command.clearCache
+    clearCache: command.clearCache,
   } as any;
 
   runCLI(config, [ROOT])

@@ -3,7 +3,7 @@ import {
   getScrollTop,
   getElementTop,
   getVisibleHeight,
-  getScrollEventTarget
+  getScrollEventTarget,
 } from './scroll';
 
 const CONTEXT = '@@Waterfall';
@@ -27,14 +27,18 @@ function handleScrollEvent() {
   // 判断是否到了底
   let needLoadMoreToLower = false;
   if (element === scrollEventTarget) {
-    needLoadMoreToLower = scrollEventTarget.scrollHeight - targetBottom < this.offset;
+    needLoadMoreToLower =
+      scrollEventTarget.scrollHeight - targetBottom < this.offset;
   } else {
     const elementBottom =
-      getElementTop(element) - getElementTop(scrollEventTarget) + getVisibleHeight(element);
+      getElementTop(element) -
+      getElementTop(scrollEventTarget) +
+      getVisibleHeight(element);
     needLoadMoreToLower = elementBottom - targetVisibleHeight < this.offset;
   }
   if (needLoadMoreToLower) {
-    this.cb.lower && this.cb.lower({ target: scrollEventTarget, top: targetScrollTop });
+    this.cb.lower &&
+      this.cb.lower({ target: scrollEventTarget, top: targetScrollTop });
   }
 
   // 判断是否到了顶
@@ -42,11 +46,13 @@ function handleScrollEvent() {
   if (element === scrollEventTarget) {
     needLoadMoreToUpper = targetScrollTop < this.offset;
   } else {
-    const elementTop = getElementTop(element) - getElementTop(scrollEventTarget);
+    const elementTop =
+      getElementTop(element) - getElementTop(scrollEventTarget);
     needLoadMoreToUpper = elementTop + this.offset > 0;
   }
   if (needLoadMoreToUpper) {
-    this.cb.upper && this.cb.upper({ target: scrollEventTarget, top: targetScrollTop });
+    this.cb.upper &&
+      this.cb.upper({ target: scrollEventTarget, top: targetScrollTop });
   }
 }
 
@@ -103,14 +109,14 @@ function doCheckStartBind(el) {
   }
 }
 
-export default function (type) {
+export default function(type) {
   return {
     bind(el, binding, vnode) {
       if (!el[CONTEXT]) {
         el[CONTEXT] = {
           el,
           vm: vnode.context,
-          cb: {}
+          cb: {},
         };
       }
       el[CONTEXT].cb[type] = binding.value;
@@ -128,6 +134,6 @@ export default function (type) {
       if (context.scrollEventTarget) {
         off(context.scrollEventTarget, 'scroll', context.scrollEventListener);
       }
-    }
+    },
   };
 }

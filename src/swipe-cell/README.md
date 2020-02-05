@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { SwipeCell } from 'vant';
 
@@ -18,9 +18,7 @@ Vue.use(SwipeCell);
   <template slot="left">
     <van-button square type="primary" text="Select" />
   </template>
-
   <van-cell :border="false" title="Cell" value="Cell Content" />
-
   <template slot="right">
     <van-button square type="danger" text="Delete" />
     <van-button square type="primary" text="Collect"/>
@@ -28,16 +26,47 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
-### Async close
+### Custom Content
+
+```html
+<van-swipe-cell>
+  <van-card
+    num="2"
+    price="2.00"
+    desc="Description"
+    title="Title"
+    class="goods-card"
+    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+  />
+  <van-button
+    slot="right"
+    square
+    text="Delete"
+    type="danger"
+    class="delete-button"
+  />
+</van-swipe-cell>
+
+<style>
+.goods-card {
+  margin: 0;
+  background-color: @white;
+}
+
+.delete-button {
+  height: 100%;
+}
+</style>
+```
+
+### Before Close
 
 ```html
 <van-swipe-cell :before-close="beforeClose">
   <template slot="left">
     <van-button square type="primary" text="Select" />
   </template>
-
   <van-cell :border="false" title="Cell" value="Cell Content" />
-
   <template slot="right">
     <van-button square type="danger" text="Delete" />
   </template>
@@ -73,11 +102,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name `v2.0.4` | Identifier of SwipeCell | *string \| number* | - |
+| name `v2.0.4` | Identifier of SwipeCell | *number \| string* | - |
+| left-width | Width of the left swipe area | *number \| string* | `auto` |
+| right-width | Width of the right swipe area | *number \| string* | `auto` |
 | before-close `v2.3.0` | Callback function before close | *Function* | - |
 | disabled | Whether to disabled swipe | *boolean* | `false` |
-| left-width | Width of the left swipe area | *number* | `auto` |
-| right-width | Width of the right swipe area | *number* | `auto` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
 
 ### Slots

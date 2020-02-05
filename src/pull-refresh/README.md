@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { PullRefresh } from 'vant';
 
@@ -21,7 +21,9 @@ The `refresh` event will be triggered when pull refresh, you should set `v-model
 </van-pull-refresh>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -29,11 +31,10 @@ export default {
       isLoading: false
     }
   },
-
   methods: {
     onRefresh() {
       setTimeout(() => {
-        this.$toast('Refresh Success');
+        Toast('Refresh Success');
         this.isLoading = false;
         this.count++;
       }, 1000);
@@ -103,9 +104,9 @@ Use slots to custom tips
 | loosing-text | Text to show when loosing | *string* | `Loose to refresh...` |
 | loading-text | Text to show when loading | *string* | `Loading...` |
 | success-text | Text to show when loading success | *string* | - |
-| success-duration | Success text display duration(ms) | *number* | `500` |
-| animation-duration | Animation duration | *number* | `300` |
-| head-height `v2.4.2` | Height of head | *number* | `50` |
+| success-duration | Success text display duration(ms) | *number \| string* | `500` |
+| animation-duration | Animation duration | *number \| string* | `300` |
+| head-height `v2.4.2` | Height of head | *number \| string* | `50` |
 | disabled | Whether to disable pull refresh | *boolean* | `false` |
 
 ### Events

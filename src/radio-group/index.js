@@ -10,13 +10,13 @@ export default createComponent({
     value: null,
     disabled: Boolean,
     checkedColor: String,
-    iconSize: [Number, String]
+    iconSize: [Number, String],
   },
 
   watch: {
     value(value) {
       this.$emit('change', value);
-    }
+    },
   },
 
   render() {
@@ -25,5 +25,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

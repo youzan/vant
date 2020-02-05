@@ -1,4 +1,4 @@
-import { createNamespace, isObj, addUnit } from '../utils';
+import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
@@ -24,40 +24,40 @@ export default createComponent({
     strokeLinecap: String,
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     speed: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: 0,
     },
     size: {
-      type: [String, Number],
-      default: 100
+      type: [Number, String],
+      default: 100,
     },
     fill: {
       type: String,
-      default: 'none'
+      default: 'none',
     },
     rate: {
-      type: Number,
-      default: 100
+      type: [Number, String],
+      default: 100,
     },
     layerColor: {
       type: String,
-      default: WHITE
+      default: WHITE,
     },
     color: {
       type: [String, Object],
-      default: BLUE
+      default: BLUE,
     },
     strokeWidth: {
-      type: Number,
-      default: 40
+      type: [Number, String],
+      default: 40,
     },
     clockwise: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   beforeCreate() {
@@ -69,7 +69,7 @@ export default createComponent({
       const size = addUnit(this.size);
       return {
         width: size,
-        height: size
+        height: size,
       };
     },
 
@@ -78,7 +78,7 @@ export default createComponent({
     },
 
     viewBoxSize() {
-      return 1000 + this.strokeWidth;
+      return +this.strokeWidth + 1000;
     },
 
     layerStyle() {
@@ -86,9 +86,9 @@ export default createComponent({
 
       return {
         stroke: `${this.color}`,
-        strokeWidth: `${this.strokeWidth + 1}px`,
+        strokeWidth: `${+this.strokeWidth + 1}px`,
         strokeLinecap: this.strokeLinecap,
-        strokeDasharray: `${offset}px ${PERIMETER}px`
+        strokeDasharray: `${offset}px ${PERIMETER}px`,
       };
     },
 
@@ -96,12 +96,12 @@ export default createComponent({
       return {
         fill: `${this.fill}`,
         stroke: `${this.layerColor}`,
-        strokeWidth: `${this.strokeWidth}px`
+        strokeWidth: `${this.strokeWidth}px`,
       };
     },
 
     gradient() {
-      return isObj(this.color);
+      return isObject(this.color);
     },
 
     LinearGradient() {
@@ -122,15 +122,15 @@ export default createComponent({
           </linearGradient>
         </defs>
       );
-    }
+    },
   },
 
   watch: {
     rate: {
-      handler() {
+      handler(rate) {
         this.startTime = Date.now();
         this.startRate = this.value;
-        this.endRate = format(this.rate);
+        this.endRate = format(rate);
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs(
           ((this.startRate - this.endRate) * 1000) / this.speed
@@ -143,8 +143,8 @@ export default createComponent({
           this.$emit('input', this.endRate);
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -158,7 +158,7 @@ export default createComponent({
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
         this.rafId = raf(this.animate);
       }
-    }
+    },
   },
 
   render() {
@@ -178,5 +178,5 @@ export default createComponent({
           (this.text && <div class={bem('text')}>{this.text}</div>)}
       </div>
     );
-  }
+  },
 });

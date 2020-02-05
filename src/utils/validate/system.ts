@@ -7,5 +7,7 @@ export function isAndroid(): boolean {
 
 export function isIOS(): boolean {
   /* istanbul ignore next */
-  return isServer ? false : /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+  return isServer
+    ? false
+    : /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
 }

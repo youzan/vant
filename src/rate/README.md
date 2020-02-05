@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Rate } from 'vant';
 
@@ -17,7 +17,7 @@ Vue.use(Rate);
 <van-rate v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -88,6 +88,22 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
+### Change Event
+
+```html
+<van-rate v-model="value" @change="onChange" />
+```
+
+```javascript
+export default {
+  method: {
+    onChange(value) {
+       Toast('current value:'+ value);
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -95,11 +111,11 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Current rate | *number* | - |
-| count | Count | *number* | `5` |
-| size | Icon size| *string \| number* | `20px` |
-| gutter | Icon gutter | *string \| number* | `4px` |
+| count | Count | *number \| string* | `5` |
+| size | Icon size| *number \| string* | `20px` |
+| gutter | Icon gutter | *number \| string* | `4px` |
 | color | Selected color | *string* | `#ffd21e` |
-| void-color | Void color | *string* | `#c7c7c7` |
+| void-color | Void color | *string* | `#c8c9cc` |
 | disabled-color | Disabled color | *string* | `#bdbdbd` |
 | icon | Selected icon | *string* | `star` |
 | void-icon | Void icon | *string* | `star-o` |

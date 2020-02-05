@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Icon from '../icon';
 import Sidebar from '../sidebar';
 import SidebarItem from '../sidebar-item';
@@ -26,11 +29,11 @@ export type TreeSelectChildren = {
 export type TreeSelectActiveId = number | string | (number | string)[];
 
 export type TreeSelectProps = {
-  max: number;
+  max: number | string;
   height: number | string;
   items: TreeSelectItem[];
   activeId: TreeSelectActiveId;
-  mainActiveIndex: number;
+  mainActiveIndex: number | string;
 };
 
 export type TreeSelectSlots = DefaultSlots & {
@@ -47,7 +50,7 @@ function TreeSelect(
 ) {
   const { height, items, mainActiveIndex, activeId } = props;
 
-  const selectedItem: Partial<TreeSelectItem> = items[mainActiveIndex] || {};
+  const selectedItem: Partial<TreeSelectItem> = items[+mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
   const isMultiple = Array.isArray(activeId);
 
@@ -79,8 +82,8 @@ function TreeSelect(
           'van-ellipsis',
           bem('item', {
             active: isActiveItem(item.id),
-            disabled: item.disabled
-          })
+            disabled: item.disabled,
+          }),
         ]}
         onClick={() => {
           if (!item.disabled) {
@@ -133,25 +136,25 @@ function TreeSelect(
 
 TreeSelect.props = {
   max: {
-    type: Number,
-    default: Infinity
+    type: [Number, String],
+    default: Infinity,
   },
   items: {
     type: Array,
-    default: () => []
+    default: () => [],
   },
   height: {
     type: [Number, String],
-    default: 300
+    default: 300,
   },
   activeId: {
     type: [Number, String, Array],
-    default: 0
+    default: 0,
   },
   mainActiveIndex: {
-    type: Number,
-    default: 0
-  }
+    type: [Number, String],
+    default: 0,
+  },
 };
 
 export default createComponent<TreeSelectProps>(TreeSelect);

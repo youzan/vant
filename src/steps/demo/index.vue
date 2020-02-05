@@ -26,10 +26,7 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-steps
-        :active="0"
-        direction="vertical"
-      >
+      <van-steps :active="0" direction="vertical">
         <van-step>
           <h3>{{ $t('status1') }}</h3>
           <p>2016-07-12 12:40</p>
@@ -61,7 +58,7 @@ export default {
       status1: '【城市】物流状态1',
       status2: '【城市】物流状态',
       status3: '快件已发货',
-      customStyle: '自定义样式'
+      customStyle: '自定义样式',
     },
     'en-US': {
       nextStep: 'Next Step',
@@ -74,21 +71,21 @@ export default {
       status1: '【City】Status1',
       status2: '【City】Status2',
       status3: '【City】Status3',
-      customStyle: 'Custom Style'
-    }
+      customStyle: 'Custom Style',
+    },
   },
 
   data() {
     return {
-      active: 1
+      active: 1,
     };
   },
 
   methods: {
     nextStep() {
       this.active = ++this.active % 4;
-    }
-  }
+    },
+  },
 };
 </script>
 

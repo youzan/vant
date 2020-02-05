@@ -13,14 +13,14 @@ export default createComponent({
     maxDate: Date,
     showMark: Boolean,
     showTitle: Boolean,
-    rowHeight: Number,
+    rowHeight: [Number, String],
     formatter: Function,
-    currentDate: [Date, Array]
+    currentDate: [Date, Array],
   },
 
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
 
@@ -43,7 +43,7 @@ export default createComponent({
           Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
 
         return {
-          paddingBottom: `${padding}px`
+          paddingBottom: `${padding}px`,
         };
       }
     },
@@ -61,7 +61,7 @@ export default createComponent({
           date,
           type,
           text: day,
-          bottomInfo: this.getBottomInfo(type)
+          bottomInfo: this.getBottomInfo(type),
         };
 
         if (this.formatter) {
@@ -72,7 +72,7 @@ export default createComponent({
       }
 
       return days;
-    }
+    },
   },
 
   mounted() {
@@ -219,7 +219,7 @@ export default createComponent({
           {BottomInfo}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -229,5 +229,5 @@ export default createComponent({
         {this.genDays()}
       </div>
     );
-  }
+  },
 });

@@ -41,7 +41,7 @@ export default {
 
 用于提示一些消息，只包含一个确认按钮
 
-```javascript
+```js
 Dialog.alert({
   title: '标题',
   message: '弹窗内容'
@@ -60,7 +60,7 @@ Dialog.alert({
 
 用于确认消息，包含取消和确认按钮
 
-```javascript
+```js
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容'
@@ -108,11 +108,7 @@ export default {
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式
 
 ```html
-<van-dialog
-  v-model="show"
-  title="标题"
-  show-cancel-button
->
+<van-dialog v-model="show" title="标题" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
 </van-dialog>
 ```
@@ -148,7 +144,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | title | 标题 | *string* | - |
-| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` |
+| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *number \| string* | `320px` |
 | message | 文本内容，支持通过`\n`换行 | *string* | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
 | className | 自定义类名 | *any* | - |
@@ -157,7 +153,7 @@ export default {
 | confirmButtonText | 确认按钮文案 | *string* | `确认` |
 | confirmButtonColor | 确认按钮颜色 | *string* | `#1989fa` |
 | cancelButtonText | 取消按钮文案 | *string* | `取消` |
-| cancelButtonColor | 取消按钮颜色 | *string* | `#000` |
+| cancelButtonColor | 取消按钮颜色 | *string* | `black` |
 | overlay | 是否展示遮罩层 | *boolean* | `true` |
 | overlayClass `v2.2.7` | 自定义遮罩层类名 | *string* | - |
 | overlayStyle `v2.2.7` | 自定义遮罩层样式 | *object* | - |
@@ -176,7 +172,7 @@ export default {
 |------|------|------|------|
 | v-model | 是否显示弹窗 | *boolean* | - |
 | title | 标题 | *string* | - |
-| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` |
+| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *number \| string* | `320px` |
 | message | 文本内容，支持通过`\n`换行 | *string* | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
 | show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` |
@@ -184,7 +180,7 @@ export default {
 | confirm-button-text | 确认按钮文案 | *string* | `确认` |
 | confirm-button-color | 确认按钮颜色 | *string* | `#1989fa` |
 | cancel-button-text | 取消按钮文案 | *string* | `取消` |
-| cancel-button-color | 取消按钮颜色 | *string* | `#000` |
+| cancel-button-color | 取消按钮颜色 | *string* | `black` |
 | overlay | 是否展示遮罩层 | *boolean* | `true` |
 | overlay-class `v2.2.7` | 自定义遮罩层类名 | *string* | - |
 | overlay-style `v2.2.7` | 自定义遮罩层样式 | *object* | - |

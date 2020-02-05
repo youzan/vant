@@ -4,16 +4,21 @@ import { CheckboxMixin } from '../mixins/checkbox';
 const [createComponent, bem] = createNamespace('checkbox');
 
 export default createComponent({
-  mixins: [CheckboxMixin({
-    bem,
-    role: 'checkbox',
-    parent: 'vanCheckbox'
-  })],
+  mixins: [
+    CheckboxMixin({
+      bem,
+      role: 'checkbox',
+      parent: 'vanCheckbox',
+    }),
+  ],
 
   computed: {
     checked: {
       get() {
-        return this.parent ? this.parent.value.indexOf(this.name) !== -1 : this.value;
+        if (this.parent) {
+          return this.parent.value.indexOf(this.name) !== -1;
+        }
+        return this.value;
       },
 
       set(val) {
@@ -22,14 +27,14 @@ export default createComponent({
         } else {
           this.$emit('input', val);
         }
-      }
-    }
+      },
+    },
   },
 
   watch: {
     value(val) {
       this.$emit('change', val);
-    }
+    },
   },
 
   methods: {
@@ -67,6 +72,6 @@ export default createComponent({
           parent.$emit('input', value);
         }
       }
-    }
-  }
+    },
+  },
 });

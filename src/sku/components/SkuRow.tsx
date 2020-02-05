@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import { BORDER_BOTTOM } from '../../utils/constant';
@@ -24,14 +25,17 @@ function SkuRow(
   );
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
-      <div class={bem('title')}>{props.skuRow.k}{multipleNode}</div>
+      <div class={bem('title')}>
+        {props.skuRow.k}
+        {multipleNode}
+      </div>
       {slots.default && slots.default()}
     </div>
   );
 }
 
 SkuRow.props = {
-  skuRow: Object
+  skuRow: Object,
 };
 
 export default createComponent<SkuRowProps>(SkuRow);

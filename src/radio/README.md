@@ -2,12 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { RadioGroup, Radio } from 'vant';
 
-Vue.use(RadioGroup);
 Vue.use(Radio);
+Vue.use(RadioGroup);
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Use `v-model` to bind the name of checked radio
 </van-radio-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -141,7 +141,7 @@ export default {
 | disabled | Whether to disable radio | *boolean* | `false` |
 | label-disabled | Whether to disable label click | *boolean* | `false` |
 | label-position | Can be set to `left` | *string* | `right` |
-| icon-size | Icon size | *string \| number* | `20px` |
+| icon-size | Icon size | *number \| string* | `20px` |
 | checked-color | Checked color | *string* | `#1989fa` | - |
 
 ### RadioGroup Props
@@ -150,7 +150,7 @@ export default {
 |------|------|------|------|
 | v-model | Name of checked radio | *any* | - |
 | disabled | Disable all radios | *boolean* | `false` |
-| icon-size `v2.2.3` | Icon size of all radios | *string \| number* | `20px` |
+| icon-size `v2.2.3` | Icon size of all radios | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all radios | *string* | `#1989fa` | - |
 
 ### Radio Events

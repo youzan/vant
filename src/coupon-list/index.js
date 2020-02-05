@@ -1,4 +1,7 @@
+// Utils
 import { createNamespace } from '../utils';
+
+// Components
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Field from '../field';
@@ -10,7 +13,7 @@ const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default createComponent({
   model: {
-    prop: 'code'
+    prop: 'code',
   },
 
   props: {
@@ -24,51 +27,51 @@ export default createComponent({
     exchangeButtonDisabled: Boolean,
     exchangeMinLength: {
       type: Number,
-      default: 1
+      default: 1,
     },
     chosenCoupon: {
       type: Number,
-      default: -1
+      default: -1,
     },
     coupons: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     disabledCoupons: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     displayedCouponIndex: {
       type: Number,
-      default: -1
+      default: -1,
     },
     showExchangeBar: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showCloseButton: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showCount: {
       type: Boolean,
-      default: true
+      default: true,
     },
     currency: {
       type: String,
-      default: '¥'
+      default: '¥',
     },
     emptyImage: {
       type: String,
-      default: EMPTY_IMAGE
-    }
+      default: EMPTY_IMAGE,
+    },
   },
 
   data() {
     return {
       tab: 0,
       winHeight: window.innerHeight,
-      currentCode: this.code || ''
+      currentCode: this.code || '',
     };
   },
 
@@ -84,9 +87,9 @@ export default createComponent({
 
     listStyle() {
       return {
-        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px'
+        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px',
       };
-    }
+    },
   },
 
   watch: {
@@ -98,7 +101,7 @@ export default createComponent({
       this.$emit('input', code);
     },
 
-    displayedCouponIndex: 'scrollToShowCoupon'
+    displayedCouponIndex: 'scrollToShowCoupon',
   },
 
   mounted() {
@@ -152,7 +155,7 @@ export default createComponent({
           onClick={this.onClickExchangeButton}
         />
       );
-    }
+    },
   },
 
   render() {
@@ -182,7 +185,10 @@ export default createComponent({
 
     const CouponTab = (
       <Tab title={title}>
-        <div class={bem('list', { 'with-bottom': this.showCloseButton })} style={this.listStyle}>
+        <div
+          class={bem('list', { 'with-bottom': this.showCloseButton })}
+          style={this.listStyle}
+        >
           {coupons.map((coupon, index) => (
             <Coupon
               ref="card"
@@ -200,7 +206,10 @@ export default createComponent({
 
     const DisabledCouponTab = (
       <Tab title={disabledTitle}>
-        <div class={bem('list', { 'with-bottom': this.showCloseButton })} style={this.listStyle}>
+        <div
+          class={bem('list', { 'with-bottom': this.showCloseButton })}
+          style={this.listStyle}
+        >
           {disabledCoupons.map(coupon => (
             <Coupon
               disabled
@@ -234,5 +243,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

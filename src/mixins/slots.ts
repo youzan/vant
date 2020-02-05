@@ -15,6 +15,6 @@ export const SlotsMixin = Vue.extend({
       }
 
       return $slots[name];
-    }
-  }
+    },
+  },
 });

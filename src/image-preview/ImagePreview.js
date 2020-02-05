@@ -1,11 +1,16 @@
+// Utils
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { on, preventDefault } from '../utils/dom/event';
+
+// Mixins
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
+
+// Components
 import Image from '../image';
-import Loading from '../loading';
 import Swipe from '../swipe';
+import Loading from '../loading';
 import SwipeItem from '../swipe-item';
 
 const [createComponent, bem] = createNamespace('image-preview');
@@ -20,9 +25,9 @@ function getDistance(touches) {
 export default createComponent({
   mixins: [
     PopupMixin({
-      skipToggleEvent: true
+      skipToggleEvent: true,
     }),
-    TouchMixin
+    TouchMixin,
   ],
 
   props: {
@@ -32,40 +37,40 @@ export default createComponent({
     showIndicators: Boolean,
     images: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     },
     swipeDuration: {
-      type: Number,
-      default: 500
+      type: [Number, String],
+      default: 500,
     },
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showIndex: {
       type: Boolean,
-      default: true
+      default: true,
     },
     startPosition: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: 0,
     },
     minZoom: {
-      type: Number,
-      default: 1 / 3
+      type: [Number, String],
+      default: 1 / 3,
     },
     maxZoom: {
-      type: Number,
-      default: 3
+      type: [Number, String],
+      default: 3,
     },
     overlayClass: {
       type: String,
-      default: bem('overlay')
-    }
+      default: bem('overlay'),
+    },
   },
 
   data() {
@@ -76,7 +81,7 @@ export default createComponent({
       active: 0,
       moving: false,
       zooming: false,
-      doubleClickTimer: null
+      doubleClickTimer: null,
     };
   },
 
@@ -84,7 +89,7 @@ export default createComponent({
     imageStyle() {
       const { scale } = this;
       const style = {
-        transitionDuration: this.zooming || this.moving ? '0s' : '.3s'
+        transitionDuration: this.zooming || this.moving ? '0s' : '.3s',
       };
 
       if (scale !== 1) {
@@ -93,20 +98,20 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   watch: {
     value(val) {
       if (val) {
-        this.setActive(this.startPosition);
+        this.setActive(+this.startPosition);
         this.$nextTick(() => {
-          this.$refs.swipe.swipeTo(this.startPosition, { immediate: true });
+          this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
         });
       } else {
         this.$emit('close', {
           index: this.active,
-          url: this.images[this.active]
+          url: this.images[this.active],
         });
       }
     },
@@ -127,8 +132,8 @@ export default createComponent({
           });
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -209,7 +214,8 @@ export default createComponent({
       if (this.zooming && touches.length === 2) {
         const distance = getDistance(touches);
         const scale = (this.startScale * distance) / this.startDistance;
-        this.scale = range(scale, this.minZoom, this.maxZoom);
+
+        this.setScale(scale);
       }
     },
 
@@ -253,8 +259,12 @@ export default createComponent({
       }
     },
 
+    setScale(scale) {
+      this.scale = range(scale, +this.minZoom, +this.maxZoom);
+    },
+
     resetScale() {
-      this.scale = 1;
+      this.setScale(1);
       this.moveX = 0;
       this.moveY = 0;
     },
@@ -262,7 +272,7 @@ export default createComponent({
     toggleScale() {
       const scale = this.scale > 1 ? 1 : 2;
 
-      this.scale = scale;
+      this.setScale(scale);
       this.moveX = 0;
       this.moveY = 0;
     },
@@ -288,7 +298,7 @@ export default createComponent({
 
     genImages() {
       const imageSlots = {
-        loading: () => <Loading type="spinner" />
+        loading: () => <Loading type="spinner" />,
       };
 
       return (
@@ -320,7 +330,7 @@ export default createComponent({
           ))}
         </Swipe>
       );
-    }
+    },
   },
 
   render() {
@@ -337,5 +347,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

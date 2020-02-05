@@ -5,8 +5,8 @@ test('calc width', async () => {
   const wrapper = mount(Progress, {
     propsData: {
       showPivot: false,
-      percentage: 100
-    }
+      percentage: 100,
+    },
   });
   await later();
   expect(wrapper).toMatchSnapshot();
@@ -20,8 +20,8 @@ test('calc width', async () => {
 test('track color prop', async () => {
   const wrapper = mount(Progress, {
     propsData: {
-      trackColor: 'green'
-    }
+      trackColor: 'green',
+    },
   });
 
   expect(wrapper.element.style.background).toEqual('green');

@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe).use(SwipeItem);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 ```
 
 ## Usage
@@ -16,12 +17,22 @@ Vue.use(Swipe).use(SwipeItem);
 Use `autoplay` prop to set autoplay interval
 
 ```html
-<van-swipe :autoplay="3000" indicator-color="white">
+<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
 </van-swipe>
+
+<style>
+.my-swipe .van-swipe-item {
+  color: #fff;
+  font-size: 20px;
+  line-height: 150px;
+  text-align: center;
+  background-color: #39a9ed;
+}
+</style>
 ```
 
 ### Image Lazyload
@@ -36,7 +47,12 @@ Use [Lazyload](#/en-US/lazyload) component to lazyload image
 </van-swipe>
 ```
 
-```javascript
+```js
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+
 export default {
   data() {
     return {
@@ -61,6 +77,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onChange(index) {
@@ -130,17 +148,17 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| autoplay | Autoplay interval (ms) | *number* | - |
-| duration | Animation duration (ms) | *number* | `500` |
-| initial-swipe | Index of initial swipe, start from 0 | *number* | `0` |
-| width | Set Swiper Item Width | *number* | `0` |
-| height | Set Swiper Item Height | *number* | `0` |
+| autoplay | Autoplay interval (ms) | *number \| string* | - |
+| duration | Animation duration (ms) | *number \| string* | `500` |
+| initial-swipe | Index of initial swipe, start from 0 | *number \| string* | `0` |
+| width | Set Swiper Item Width | *number \| string* | `0` |
+| height | Set Swiper Item Height | *number \| string* | `0` |
 | loop | Whether to enable loop | *boolean* | `true` |
 | show-indicators | Whether to show indicators | *boolean* | `true` |
-| indicator-color | Indicator color | *string* | `#1989fa` |
 | vertical | Whether to be vertical Scrolling | *boolean* | `false` |
 | touchable | Whether to allow swipe by touch gesture | *boolean* | `true` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
+| indicator-color | Indicator color | *string* | `#1989fa` |
 
 ### Swipe Events
 

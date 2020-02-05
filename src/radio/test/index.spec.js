@@ -1,10 +1,4 @@
-import Vue from 'vue';
-import Radio from '..';
-import RadioGroup from '../../radio-group';
 import { mount } from '../../../test';
-
-Vue.use(Radio);
-Vue.use(RadioGroup);
 
 test('radio-group change', () => {
   const wrapper = mount({
@@ -23,9 +17,9 @@ test('radio-group change', () => {
     data() {
       return {
         result: 'a',
-        list: ['a', 'b', 'c', 'd']
+        list: ['a', 'b', 'c', 'd'],
       };
-    }
+    },
   });
 
   const icons = wrapper.findAll('.van-radio__icon');
@@ -60,9 +54,9 @@ test('radio group disabled', () => {
     data() {
       return {
         result: 'a',
-        list: ['a', 'b', 'c', 'd']
+        list: ['a', 'b', 'c', 'd'],
       };
-    }
+    },
   });
 
   const icons = wrapper.findAll('.van-radio__icon');
@@ -78,7 +72,7 @@ test('icon-size prop', () => {
         <van-radio>label</van-radio>
         <van-radio icon-size="5rem">label</van-radio>
       </van-radio-group>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -91,7 +85,7 @@ test('checked-color prop', () => {
         <van-radio :value="true">label</van-radio>
         <van-radio :value="true" checked-color="white">label</van-radio>
       </van-radio-group>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();

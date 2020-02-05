@@ -17,11 +17,11 @@ function getElement(selector: string | GetContainer): Element | null {
 export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
   return Vue.extend({
     props: {
-      getContainer: [String, Function] as (PropType<string | GetContainer>)
+      getContainer: [String, Function] as PropType<string | GetContainer>,
     },
 
     watch: {
-      getContainer: 'portal'
+      getContainer: 'portal',
     },
 
     mounted() {
@@ -33,7 +33,7 @@ export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
     methods: {
       portal() {
         const { getContainer } = this;
-        const el = ref ? this.$refs[ref] as HTMLElement : this.$el;
+        const el = ref ? (this.$refs[ref] as HTMLElement) : this.$el;
 
         let container;
         if (getContainer) {
@@ -49,7 +49,7 @@ export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
         if (afterPortal) {
           afterPortal.call(this);
         }
-      }
-    }
+      },
+    },
   });
 }

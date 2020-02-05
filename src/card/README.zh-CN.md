@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Card } from 'vant';
 
@@ -19,7 +19,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -34,7 +34,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
   origin-price="10.00"
 />
 ```
@@ -49,7 +49,7 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <div slot="tags">
     <van-tag plain type="danger">标签</van-tag>
@@ -72,9 +72,9 @@ Vue.use(Card);
 | title | 标题 | *string* | - |
 | desc | 描述 | *string* | - |
 | tag | 图片角标 | *string* | - |
-| num | 商品数量 | *string \| number* | - |
-| price | 商品价格 | *string \| number* | - |
-| origin-price | 商品划线原价 | *string \| number* | - |
+| num | 商品数量 | *number \| string* | - |
+| price | 商品价格 | *number \| string* | - |
+| origin-price | 商品划线原价 | *number \| string* | - |
 | centered | 内容是否垂直居中 | *boolean* | `false` |
 | currency | 货币符号 |  *string* | `¥` |
 | thumb-link | 点击左侧图片后跳转的链接地址 | *string* | - |

@@ -2,11 +2,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox).use(CheckboxGroup);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 ```
 
 ## 代码演示
@@ -19,7 +20,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 <van-checkbox v-model="checked">复选框</van-checkbox>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -106,7 +107,7 @@ export default {
 </van-checkbox-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -208,7 +209,7 @@ export default {
 | disabled | 是否禁用复选框 | *boolean* | `false` |
 | label-disabled | 是否禁用复选框文本点击 | *boolean* | `false` |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` |
-| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` |
+| icon-size | 图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color | 选中状态颜色 | *string* | `#1989fa` |
 | bind-group `v2.2.4` | 是否与复选框组绑定 | *boolean* | `true` |
 
@@ -218,8 +219,8 @@ export default {
 |------|------|------|------|
 | v-model | 所有选中项的标识符 | *any[]* | - |
 | disabled | 是否禁用所有复选框 | *boolean* | `false` |
-| max | 最大可选数，0 为无限制 | *number* | `0` |
-| icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *string \| number* | `20px` |
+| max | 最大可选数，0 为无限制 | *number \| string* | `0` |
+| icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有复选框的选中状态颜色 | *string* | `#1989fa` |
 
 ### Checkbox Events
@@ -244,7 +245,7 @@ export default {
 
 ### CheckboxGroup 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 CheckboxGroup 实例并调用实例方法
+通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -252,7 +253,7 @@ export default {
 
 ### Checkbox 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Checkbox 实例并调用实例方法
+通过 ref 可以获取到 Checkbox 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

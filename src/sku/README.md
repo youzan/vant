@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Sku } from 'vant';
 
@@ -142,7 +142,7 @@ export default {
 | get-container | Return the mount node for sku | *string \| () => Element* | - |
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
-| properties `2.4.0` | Goods properties | *array* | - |
+| properties `v2.4.2` | Goods properties | *array* | - |
 
 ### Events
 
@@ -163,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku `2.3.0` | Reset selected sku to initial sku | - | - |
+| resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
@@ -178,11 +178,12 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | extra-sku-group | Extra custom content |
 | sku-stepper | Custom stepper |
 | sku-messages | Custom messages |
+| sku-actions-top | Custom content before sku-actions |
 | sku-actions | Custom button actions |
 
 ### Sku Data Structure
 
-```javascript
+```js
 sku: {
   tree: [
     {
@@ -253,7 +254,7 @@ sku: {
 
 ### properties Data Structure
 
-```javascript
+```js
   [
     {
       k_id: 123,
@@ -277,7 +278,7 @@ sku: {
 
 ### initialSku Data Structure
 
-```javascript
+```js
 {
   // Key：skuKeyStr
   // Value：skuValueId
@@ -292,7 +293,7 @@ sku: {
 
 ### Goods Data Structure
 
-```javascript
+```js
 goods: {
   title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
@@ -302,7 +303,7 @@ goods: {
 
 ### customStepperConfig Data Structure
 
-```javascript
+```js
 customStepperConfig: {
   // custom quota text
   quotaText: 'only 5 can buy',
@@ -334,7 +335,7 @@ customStepperConfig: {
 
 ### messageConfig Data Structure
 
-```javascript
+```js
 messageConfig: {
   // the upload image callback
   uploadImg: () => {
@@ -355,7 +356,7 @@ messageConfig: {
 
 ### Events Params Data Structure
 
-```javascript
+```js
 skuData: {
   goodsId: '946755',
   messages: {

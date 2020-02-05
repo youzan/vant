@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { List } from 'vant';
 
@@ -26,11 +26,7 @@ List 组件通过`loading`和`finished`两个变量控制加载状态，当组�
   finished-text="没有更多了"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -43,14 +39,15 @@ export default {
       finished: false
     };
   },
-
   methods: {
     onLoad() {
       // 异步更新数据
+      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
           this.list.push(this.list.length + 1);
         }
+
         // 加载状态结束
         this.loading = false;
 
@@ -58,7 +55,7 @@ export default {
         if (this.list.length >= 40) {
           this.finished = true;
         }
-      }, 500);
+      }, 1000);
     }
   }
 }
@@ -75,11 +72,7 @@ export default {
   error-text="请求失败，点击重新加载"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -92,12 +85,69 @@ export default {
       loading: false
     };
   },
-
   methods: {
     onLoad() {
       fetchSomeThing().catch(() => {
         this.error = true;
       })
+    }
+  }
+}
+```
+
+### 下拉刷新
+
+List 组件可以与 [PullRefresh](#/zh-CN/pull-refresh) 组件结合使用，实现下拉刷新的效果
+
+```html
+<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+  <van-list
+    v-model="loading"
+    :finished="finished"
+    finished-text="没有更多了"
+    @load="onLoad"
+  >
+    <van-cell v-for="item in list" :key="item" :title="item" />
+  </van-list>
+</van-pull-refresh>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [],
+      loading: false,
+      finished: false,
+      refreshing: false
+    };
+  },
+  methods: {
+    onLoad() {
+      setTimeout(() => {
+        if (this.refreshing) {
+          this.list = [];
+          this.refreshing = false;
+        }
+
+        for (let i = 0; i < 10; i++) {
+          this.list.push(this.list.length + 1);
+        }
+        this.loading = false;
+
+        if (this.list.length >= 40) {
+          this.finished = true;
+        }
+      }, 1000);
+    },
+    onRefresh() {
+      // 清空列表数据
+      this.finished = false;
+
+      // 重新加载数据
+      // 将 loading 设置为 true，表示处于加载状态
+      this.loading = true;
+      this.onLoad();
     }
   }
 }
@@ -112,7 +162,7 @@ export default {
 | v-model | 是否处于加载状态，加载过程中不触发`load`事件 | *boolean* | `false` |
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | *boolean* | `false` |
 | error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | *boolean* | `false` |
-| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | *number* | `300` |
+| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | *number \| string* | `300` |
 | loading-text | 加载过程中的提示文案 | *string* | `加载中...` |
 | finished-text | 加载完成后的提示文案 | *string* | - |
 | error-text | 加载失败后的提示文案 | *string* | - |
@@ -127,7 +177,7 @@ export default {
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 List 实例并调用实例方法
+通过 ref 可以获取到 List 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -169,3 +219,27 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 ### 使用 float 布局后一直触发加载？
 
 若 List 的内容使用了 float 布局，可以在容器上添加`van-clearfix`类名来清除浮动，使得 List 能正确判断元素位置
+
+```html
+<van-list>
+  <div class="van-clearfix">
+    <div class="float-item" />
+    <div class="float-item" />
+    <div class="float-item" />
+  </div>
+</van-list>
+```
+
+### 在 html、body 上设置 overflow 后一直触发加载？
+
+如果在 html 和 body 标签上设置了`overflow-x: hidden`样式，会导致 List 一直触发加载。
+
+```css
+html,
+body {
+  overflow-x: hidden;
+}
+
+```
+
+这个问题的原因是当元素设置了`overflow-x: hidden`样式时，该元素的`overflow-y`会被浏览器设置为`auto`，而不是默认值`visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加`height: 100%`样式。

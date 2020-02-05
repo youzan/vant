@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
+
+// Components
 import Cell from '../cell';
 import Field from '../field';
 
@@ -11,16 +14,16 @@ export default createComponent({
     value: String,
     errorMessage: String,
     focused: Boolean,
-    detailRows: Number,
+    detailRows: [Number, String],
     searchResult: Array,
-    detailMaxlength: Number,
-    showSearchResult: Boolean
+    detailMaxlength: [Number, String],
+    showSearchResult: Boolean,
   },
 
   computed: {
     shouldShowSearchResult() {
       return this.focused && this.searchResult && this.showSearchResult;
-    }
+    },
   },
 
   methods: {
@@ -71,12 +74,12 @@ export default createComponent({
 
                   return <div domPropsInnerHTML={text} />;
                 }
-              }
+              },
             }}
           />
         ));
       }
-    }
+    },
   },
 
   render() {
@@ -100,5 +103,5 @@ export default createComponent({
         {this.genSearchResult()}
       </Cell>
     );
-  }
+  },
 });

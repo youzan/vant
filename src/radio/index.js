@@ -4,11 +4,13 @@ import { CheckboxMixin } from '../mixins/checkbox';
 const [createComponent, bem] = createNamespace('radio');
 
 export default createComponent({
-  mixins: [CheckboxMixin({
-    bem,
-    role: 'radio',
-    parent: 'vanRadio'
-  })],
+  mixins: [
+    CheckboxMixin({
+      bem,
+      role: 'radio',
+      parent: 'vanRadio',
+    }),
+  ],
 
   computed: {
     currentValue: {
@@ -18,17 +20,17 @@ export default createComponent({
 
       set(val) {
         (this.parent || this).$emit('input', val);
-      }
+      },
     },
 
     checked() {
       return this.currentValue === this.name;
-    }
+    },
   },
 
   methods: {
     toggle() {
       this.currentValue = this.name;
-    }
-  }
+    },
+  },
 });

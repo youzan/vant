@@ -2,14 +2,13 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue
-  .use(ContactCard)
-  .use(ContactList)
-  .use(ContactEdit);
+Vue.use(ContactCard);
+Vue.use(ContactList);
+Vue.use(ContactEdit);
 ```
 
 ## Usage
@@ -47,7 +46,7 @@ Vue
 </van-popup>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -152,7 +151,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Id of chosen contact | *string \| number* | - |
+| v-model | Id of chosen contact | *number \| string* | - |
 | list | Contact list | *Contact[]* | `[]` |
 | add-text | Add button text | *string* | `Add new contact` |
 | default-tag-text `v2.3.0` | Default tag text | *string* | - |
@@ -189,7 +188,7 @@ export default {
 
 | key | Description | Type |
 |------|------|------|
-| id | ID | *string \| number* |
+| id | ID | *number \| string* |
 | name | Name | *string* |
 | tel | Phone | *string* |
 | isDefault | Is default contact | *boolean* |

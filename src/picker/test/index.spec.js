@@ -1,25 +1,26 @@
 import Picker from '..';
 import PickerColumn from '../PickerColumn';
+import { cascadeColumns } from '../demo/data';
 import { mount, triggerDrag, later } from '../../../test';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
 const columns = [
   {
     values: ['vip', 'normal'],
-    className: 'column1'
+    className: 'column1',
   },
   {
     values: simpleColumn,
-    className: 'column2'
-  }
+    className: 'column2',
+  },
 ];
 
 test('simple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
     propsData: {
       showToolbar: true,
-      columns: simpleColumn
-    }
+      columns: simpleColumn,
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
@@ -32,21 +33,28 @@ test('simple columns confirm & cancel event', () => {
 test('multiple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
     propsData: {
-      showToolbar: true
-    }
+      showToolbar: true,
+      columns,
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
   wrapper.find('.van-picker__cancel').trigger('click');
-  expect(wrapper.emitted('confirm')[0]).toEqual([[], []]);
-  expect(wrapper.emitted('cancel')[0]).toEqual([[], []]);
+
+  const params = [
+    ['vip', '1990'],
+    [0, 0],
+  ];
+
+  expect(wrapper.emitted('confirm')[0]).toEqual(params);
+  expect(wrapper.emitted('cancel')[0]).toEqual(params);
 });
 
 test('set picker values', () => {
   const wrapper = mount(Picker, {
     propsData: {
-      columns
-    }
+      columns,
+    },
   });
   const { vm } = wrapper;
 
@@ -83,8 +91,8 @@ test('set picker values', () => {
 test('drag columns', () => {
   const wrapper = mount(Picker, {
     propsData: {
-      columns
-    }
+      columns,
+    },
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
@@ -98,8 +106,8 @@ test('drag columns', () => {
 test('drag simple columns', () => {
   const wrapper = mount(Picker, {
     propsData: {
-      columns: simpleColumn
-    }
+      columns: simpleColumn,
+    },
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
@@ -117,8 +125,8 @@ test('column watch default index', async () => {
       initialOptions: [disabled, ...simpleColumn],
       valueKey: 'text',
       itemHeight: 50,
-      visibleItemCount: 5
-    }
+      visibleItemCount: 5,
+    },
   });
 
   await later();
@@ -136,8 +144,8 @@ test('render title slot', () => {
       </picker>
     `,
     components: {
-      Picker
-    }
+      Picker,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -152,14 +160,14 @@ test('simulation finger swipe again before transitionend', () => {
 
     return {
       ...style,
-      transform: 'matrix(1, 0, 0, 1, 0, -5)'
+      transform: 'matrix(1, 0, 0, 1, 0, -5)',
     };
   };
 
   const wrapper = mount(Picker, {
     propsData: {
-      columns: simpleColumn
-    }
+      columns: simpleColumn,
+    },
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -5);
@@ -168,20 +176,23 @@ test('simulation finger swipe again before transitionend', () => {
   expect(wrapper.emitted('change')[0][1]).toEqual('1995');
 });
 
-test('click column\'s item', () => {
+test('click column item', () => {
   const columns = [
     { text: '杭州' },
     { text: '宁波' },
     { text: '温州', disabled: true },
-    { text: '嘉兴', disabled: true }
+    { text: '嘉兴', disabled: true },
   ];
   const wrapper = mount(Picker, {
     propsData: {
-      columns
-    }
+      columns,
+    },
   });
 
-  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  wrapper
+    .findAll('.van-picker-column__item')
+    .at(3)
+    .trigger('click');
   expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });
 
@@ -189,8 +200,8 @@ test('toolbar-position prop', () => {
   const wrapper = mount(Picker, {
     propsData: {
       showToolbar: true,
-      toolbarPosition: 'bottom'
-    }
+      toolbarPosition: 'bottom',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -200,8 +211,8 @@ test('not allow html', () => {
   const wrapper = mount(Picker, {
     propsData: {
       allowHtml: false,
-      columns: ['<div>option</div>']
-    }
+      columns: ['<div>option</div>'],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -210,13 +221,78 @@ test('not allow html', () => {
 test('columns-top、columns-bottom prop', () => {
   const wrapper = mount(Picker, {
     propsData: {
-      showToolbar: true
+      showToolbar: true,
     },
     scopedSlots: {
       'columns-top': () => 'Custom Columns Top',
       'columns-bottom': () => 'Custom Columns Bottom',
-    }
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('cascade columns', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: cascadeColumns['en-US'],
+    },
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual([
+    'Zhejiang',
+    'Hangzhou',
+    'Xihu',
+  ]);
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  expect(wrapper.emitted('change')[0][1]).toEqual([
+    'Fujian',
+    'Fuzhou',
+    'Gulou',
+  ]);
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual([
+    'Fujian',
+    'Fuzhou',
+    'Gulou',
+  ]);
+});
+
+test('watch columns change', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: ['1', '2'],
+      defaultIndex: 1,
+    },
+  });
+
+  wrapper.setProps({
+    columns: ['2', '3'],
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0]).toEqual(['3', 1]);
+});
+
+test('should not reset index when columns unchanged', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: ['1', '2'],
+    },
+  });
+
+  wrapper.vm.setIndexes([1]);
+  wrapper.setProps({
+    columns: ['1', '2'],
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0]).toEqual(['2', 1]);
 });

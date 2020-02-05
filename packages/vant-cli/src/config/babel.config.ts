@@ -15,38 +15,36 @@ module.exports = function(api?: ConfigAPI) {
         '@babel/preset-env',
         {
           loose: true,
-          modules: useESModules ? false : 'commonjs'
-        }
+          modules: useESModules ? false : 'commonjs',
+        },
       ],
       [
         '@vue/babel-preset-jsx',
         {
-          functional: false
-        }
+          functional: false,
+        },
       ],
-      '@babel/preset-typescript'
+      '@babel/preset-typescript',
     ],
     plugins: [
       [
         '@babel/plugin-transform-runtime',
         {
           corejs: false,
-          useESModules
-        }
+          useESModules,
+        },
       ],
       [
         'import',
         {
           libraryName: 'vant',
           libraryDirectory: useESModules ? 'es' : 'lib',
-          style: true
+          style: true,
         },
-        'vant'
+        'vant',
       ],
       '@babel/plugin-transform-object-assign',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-proposal-nullish-coalescing-operator'
-    ]
+    ],
   };
 };
 

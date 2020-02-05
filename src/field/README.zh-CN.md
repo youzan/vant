@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Field } from 'vant';
 
@@ -216,7 +216,7 @@ export default {
 
 ### 输入框内容对齐
 
-通过`input-align`属性可以设置输入框内容的对齐方式
+通过`input-align`属性可以设置输入框内容的对齐方式，可选值为`center`、`right`
 
 ```html
 <van-field
@@ -234,10 +234,10 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | label | 输入框左侧文本 | *string* | - |
-| value | 当前输入的值 | *string \| number* | - |
+| value | 当前输入的值 | *number \| string* | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | *string* | `text` |
 | size | 大小，可选值为 `large` | *string* | - |
-| maxlength | 输入的最大字符数 | *string \| number* | - |
+| maxlength | 输入的最大字符数 | *number \| string* | - |
 | placeholder | 占位提示文字 | *string* | - |
 | border | 是否显示内边框 | *boolean* | `true` |
 | disabled | 是否禁用输入框 | *boolean* | `false` |
@@ -250,16 +250,16 @@ export default {
 | show-word-limit `v2.2.8` | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
 | formatter `v2.4.2` | 输入内容格式化函数 | *Function* | - |
-| arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | label-class | 左侧文本额外类名 | *any* | - |
-| label-width | 左侧文本宽度，默认单位为`px` | *string \| number* | `90px` |
+| label-width | 左侧文本宽度，默认单位为`px` | *number \| string* | `90px` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
-| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
-| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| left-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| right-icon | 右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 
 ### Events
 
@@ -277,7 +277,7 @@ export default {
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Field 实例并调用实例方法
+通过 ref 可以获取到 Field 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

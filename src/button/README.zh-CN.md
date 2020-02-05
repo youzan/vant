@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Button } from 'vant';
 
@@ -90,6 +90,14 @@ Vue.use(Button);
 <van-button type="primary" size="mini">迷你按钮</van-button>
 ```
 
+### 块级元素
+
+按钮在默认情况下为行内块级元素，通过`block`属性可以将按钮的元素类型设置为块级元素
+
+```html
+<van-button type="primary" block>块级元素</van-button>
+```
+
 ### 页面导航
 
 可以通过`url`属性进行 URL 跳转，或通过`to`属性进行路由跳转
@@ -109,15 +117,6 @@ Vue.use(Button);
 <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
-### 块级元素
-
-通过`block`属性可以将按钮的元素类型设置为块级元素
-
-```html
-<van-button type="primary" block>块级元素</van-button>
-```
-
-
 ## API
 
 ### Props
@@ -128,7 +127,7 @@ Vue.use(Button);
 | size | 尺寸，可选值为 `large` `small` `mini` | *string* | `normal` |
 | text | 按钮文字 | *string* | - |
 | color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - |
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 | tag | HTML 标签 | *string* | `button` |
 | native-type | 原生 button 标签 type 属性 | *string* | - |
 | block | 是否为块级元素 | *boolean* | `false` |
@@ -139,7 +138,7 @@ Vue.use(Button);
 | hairline | 是否使用 0.5px 边框 | *boolean* | `false` |
 | loading | 是否显示为加载状态 | *boolean* | `false` |
 | loading-text | 加载状态提示文字 | *string* | - |
-| loading-type | 加载图标类型，可选值为`spinner` | *string* | `circular` |
+| loading-type | [加载图标类型](#/zh-CN/loading)，可选值为`spinner` | *string* | `circular` |
 | loading-size | 加载图标大小 | *string* | `20px` |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |

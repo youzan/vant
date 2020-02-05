@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Icon } from 'vant';
 
@@ -87,9 +87,9 @@ import 'vant/lib/icon/local.css';
 |------|------|------|------|
 | name | Icon name or URL | *string* | `''` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info | Content of the badge | *string \| number* | `''` |
+| info | Content of the badge | *number \| string* | `''` |
 | color | Icon color | *string* | `inherit` |
-| size | Icon size | *string \| number* | `inherit` |
+| size | Icon size | *number \| string* | `inherit` |
 | class-prefix | ClassName prefix | *string* | `van-icon` |
 | tag | HTML Tag | *string* | `i` |
 

@@ -8,8 +8,12 @@
 import Vue from 'vue';
 import { Lazyload } from 'vant';
 
-// options 为可选参数，无则不传
-Vue.use(Lazyload, options);
+Vue.use(Lazyload);
+
+// 注册时可以配置额外的选项
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 ```
 
 ## 代码演示
@@ -22,7 +26,7 @@ Vue.use(Lazyload, options);
 <img v-for="img in imageList" v-lazy="img" >
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {

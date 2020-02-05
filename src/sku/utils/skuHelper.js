@@ -65,11 +65,11 @@ export const isAllSelected = (skuTree, selectedSku) => {
 
 // 根据已选择的 sku 获取 skuComb
 export const getSkuComb = (skuList, selectedSku) => {
-  const skuComb = skuList.filter(item => (
+  const skuComb = skuList.filter(item =>
     Object.keys(selectedSku).every(
       skuKeyStr => String(item[skuKeyStr]) === String(selectedSku[skuKeyStr])
     )
-  ));
+  );
   return skuComb[0];
 };
 
@@ -95,7 +95,7 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
   // 先假设sku已选中，拼入已选中sku对象中
   const matchedSku = {
     ...selectedSku,
-    [key]: valueId
+    [key]: valueId,
   };
 
   // 再判断剩余sku是否全部不可选，若不可选则当前sku不可选中
@@ -103,11 +103,11 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
     skuKey => matchedSku[skuKey] !== UNSELECTED_SKU_VALUE_ID
   );
 
-  const filteredSku = skuList.filter(sku => (
+  const filteredSku = skuList.filter(sku =>
     skusToCheck.every(
       skuKey => String(matchedSku[skuKey]) === String(sku[skuKey])
     )
-  ));
+  );
 
   const stock = filteredSku.reduce((total, sku) => {
     total += sku.stock_num;

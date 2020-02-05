@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
@@ -24,7 +24,7 @@ Vue.use(SidebarItem);
 </van-sidebar>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -72,6 +72,8 @@ export default {
 ```
 
 ```js
+import { Notify } from 'vant';
+
 export default {
   data() {
     return {
@@ -92,7 +94,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model `v2.0.4` | 当前导航项的索引 | *string \| number* | `0` |
+| v-model `v2.0.4` | 当前导航项的索引 | *number \| string* | `0` |
 
 ### Sidebar Events
 
@@ -106,7 +108,7 @@ export default {
 |------|------|------|------|
 | title | 内容 | *string* | `''` |
 | dot `v2.2.1` | 是否显示右上角小红点 | *boolean* | `false` |
-| info | 右上角徽标的内容 | *string \| number* | - |
+| info | 右上角徽标的内容 | *number \| string* | - |
 | disabled `v2.2.0` | 是否禁用该项 | *boolean* | `false` |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to `v2.0.4` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |

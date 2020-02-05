@@ -1,7 +1,11 @@
+// Utils
 import { createNamespace, addUnit, noop } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
+
+// Components
 import Icon from '../icon';
 import Image from '../image';
+import Loading from '../loading';
 import ImagePreview from '../image-preview';
 
 const [createComponent, bem] = createNamespace('uploader');
@@ -10,7 +14,7 @@ export default createComponent({
   inheritAttrs: false,
 
   model: {
-    prop: 'fileList'
+    prop: 'fileList',
   },
 
   props: {
@@ -22,57 +26,57 @@ export default createComponent({
     previewSize: [Number, String],
     name: {
       type: [Number, String],
-      default: ''
+      default: '',
     },
     accept: {
       type: String,
-      default: 'image/*'
+      default: 'image/*',
     },
     fileList: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     maxSize: {
-      type: Number,
-      default: Number.MAX_VALUE
+      type: [Number, String],
+      default: Number.MAX_VALUE,
     },
     maxCount: {
-      type: Number,
-      default: Number.MAX_VALUE
+      type: [Number, String],
+      default: Number.MAX_VALUE,
     },
     deletable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     previewImage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     previewFullImage: {
       type: Boolean,
-      default: true
+      default: true,
     },
     imageFit: {
       type: String,
-      default: 'cover'
+      default: 'cover',
     },
     resultType: {
       type: String,
-      default: 'dataUrl'
-    }
+      default: 'dataUrl',
+    },
   },
 
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
-    }
+    },
   },
 
   methods: {
     getDetail(index = this.fileList.length) {
       return {
         name: this.name,
-        index
+        index,
       };
     },
 
@@ -117,22 +121,24 @@ export default createComponent({
           files = files.slice(0, maxCount);
         }
 
-        Promise.all(files.map(file => readFile(file, this.resultType))).then(contents => {
-          const fileList = files.map((file, index) => {
-            const result = { file };
+        Promise.all(files.map(file => readFile(file, this.resultType))).then(
+          contents => {
+            const fileList = files.map((file, index) => {
+              const result = { file, status: '' };
 
-            if (contents[index]) {
-              result.content = contents[index];
-            }
+              if (contents[index]) {
+                result.content = contents[index];
+              }
 
-            return result;
-          });
+              return result;
+            });
 
-          this.onAfterRead(fileList, oversize);
-        });
+            this.onAfterRead(fileList, oversize);
+          }
+        );
       } else {
         readFile(files, this.resultType).then(content => {
-          const result = { file: files };
+          const result = { file: files, status: '' };
 
           if (content) {
             result.content = content;
@@ -208,7 +214,7 @@ export default createComponent({
         startPosition: imageFiles.indexOf(item),
         onClose: () => {
           this.$emit('close-preview');
-        }
+        },
       });
     },
 
@@ -219,8 +225,32 @@ export default createComponent({
       }
     },
 
+    genPreviewMask(item) {
+      const { status } = item;
+
+      if (status === 'uploading' || status === 'failed') {
+        const MaskIcon =
+          status === 'failed' ? (
+            <Icon name="warning-o" class={bem('mask-icon')} />
+          ) : (
+            <Loading class={bem('loading')} />
+          );
+
+        return (
+          <div class={bem('mask')}>
+            {MaskIcon}
+            {item.message && (
+              <div class={bem('mask-message')}>{item.message}</div>
+            )}
+          </div>
+        );
+      }
+    },
+
     genPreviewItem(item, index) {
-      const DeleteIcon = this.deletable && (
+      const showDelete = item.status !== 'uploading' && this.deletable;
+
+      const DeleteIcon = showDelete && (
         <Icon
           name="clear"
           class={bem('preview-delete')}
@@ -248,7 +278,7 @@ export default createComponent({
           class={bem('file')}
           style={{
             width: this.previewSizeWithUnit,
-            height: this.previewSizeWithUnit
+            height: this.previewSizeWithUnit,
           }}
         >
           <Icon class={bem('file-icon')} name="description" />
@@ -266,6 +296,7 @@ export default createComponent({
           }}
         >
           {Preview}
+          {this.genPreviewMask(item)}
           {DeleteIcon}
         </div>
       );
@@ -310,18 +341,20 @@ export default createComponent({
         const size = this.previewSizeWithUnit;
         style = {
           width: size,
-          height: size
+          height: size,
         };
       }
 
       return (
         <div class={bem('upload')} style={style}>
           <Icon name="plus" class={bem('upload-icon')} />
-          {this.uploadText && <span class={bem('upload-text')}>{this.uploadText}</span>}
+          {this.uploadText && (
+            <span class={bem('upload-text')}>{this.uploadText}</span>
+          )}
           {Input}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -333,5 +366,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

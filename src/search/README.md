@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Search } from 'vant';
 
@@ -14,10 +14,10 @@ Vue.use(Search);
 ### Basic Usage
 
 ```html
-<van-search placeholder="Placeholder" v-model="value" />
+<van-search v-model="value" placeholder="Placeholder" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     value: ''
@@ -33,15 +33,66 @@ export default {
 <form action="/">
   <van-search
     v-model="value"
-    placeholder="Placeholder"
     show-action
+    placeholder="Placeholder"
     @search="onSearch"
     @cancel="onCancel"
   />
 </form>
 ```
 
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      value: ''
+    };
+  },
+  methods: {
+    onSearch(val) {
+      Toast(val);
+    },
+    onCancel() {
+      Toast('Cancel');
+    }
+  }
+}
+```
+
 > Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
+
+### Input Align
+
+```html
+<van-search
+  v-model="value"
+  input-align="center"
+  placeholder="Placeholder"
+/>
+```
+
+### Disabled
+
+```html
+<van-search
+  v-model="value"
+  disabled
+  placeholder="Placeholder"
+/>
+```
+
+### Custom Background Color
+
+```html
+<van-search
+  v-model="value" 
+  shape="round"
+  background="#4fc08d"
+  placeholder="Placeholder"
+/>
+```
 
 ### Custom Action Button
 
@@ -67,7 +118,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 | label | Left side label | *string* | - |
 | shape | Shape of field, can be set to `round` | *string* | `square` |
 | background | Background color of field | *string* | `#f2f2f2` |
-| maxlength | Max length of value | *string \| number* | - |
+| maxlength | Max length of value | *number \| string* | - |
 | placeholder | Placeholder | *string* | - |
 | clearable | Whether to be clearable | *boolean* | `true` |
 | autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` |

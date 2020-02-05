@@ -14,7 +14,7 @@ export default createComponent({
     icon: String,
     color: String,
     info: [Number, String],
-    iconClass: null
+    iconClass: null,
   },
 
   methods: {
@@ -39,7 +39,7 @@ export default createComponent({
           color={this.color}
         />
       );
-    }
+    },
   },
 
   render() {
@@ -49,5 +49,5 @@ export default createComponent({
         {this.slots() || this.text}
       </div>
     );
-  }
+  },
 });

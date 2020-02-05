@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_TOP } from '../utils/constant';
+
+// Mixins
 import { popupMixinProps } from '../mixins/popup';
+
+// Components
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';
@@ -25,7 +30,7 @@ export type ActionSheetProps = PopupMixinProps & {
   round: boolean;
   title?: string;
   actions?: ActionSheetItem[];
-  duration: number;
+  duration: number | string;
   closeIcon: string;
   cancelText?: string;
   description?: string;
@@ -97,7 +102,7 @@ function ActionSheet(
 
       return [
         <span class={bem('name')}>{item.name}</span>,
-        item.subname && <span class={bem('subname')}>{item.subname}</span>
+        item.subname && <span class={bem('subname')}>{item.subname}</span>,
       ];
     }
 
@@ -155,31 +160,31 @@ ActionSheet.props = {
   ...popupMixinProps,
   title: String,
   actions: Array,
-  duration: Number,
+  duration: [Number, String],
   cancelText: String,
   description: String,
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
   round: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeIcon: {
     type: String,
-    default: 'cross'
+    default: 'cross',
   },
   safeAreaInsetBottom: {
     type: Boolean,
-    default: true
+    default: true,
   },
   overlay: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeOnClickOverlay: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<ActionSheetProps>(ActionSheet);

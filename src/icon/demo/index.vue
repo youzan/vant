@@ -120,7 +120,7 @@ export default {
       filled: '实底风格',
       demo: '用法示例',
       color: '图标颜色',
-      size: '图标大小'
+      size: '图标大小',
     },
     'en-US': {
       title: 'Icon List',
@@ -131,8 +131,8 @@ export default {
       filled: 'Filled',
       demo: 'Demo',
       color: 'Icon Color',
-      size: 'Icon Size'
-    }
+      size: 'Icon Size',
+    },
   },
 
   data() {
@@ -142,7 +142,7 @@ export default {
     return {
       tab: 0,
       demoIcon: 'chat-o',
-      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png'
+      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
     };
   },
 
@@ -168,10 +168,10 @@ export default {
         type: 'success',
         duration: 1500,
         className: 'demo-icon-notify',
-        message: `${this.$t('copied')}：${tag}`
+        message: `${this.$t('copied')}：${tag}`,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -196,6 +196,7 @@ export default {
     float: none;
     text-align: center;
     vertical-align: middle;
+    cursor: pointer;
 
     span {
       display: block;

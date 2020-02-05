@@ -1,7 +1,8 @@
 import { isNaN } from './number';
 
-export function isDate(date: Date): boolean {
+export function isDate(val: Date): val is Date {
   return (
-    Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime())
+    Object.prototype.toString.call(val) === '[object Date]' &&
+    !isNaN(val.getTime())
   );
 }

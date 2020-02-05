@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Card } from 'vant';
 
@@ -19,7 +19,7 @@ Vue.use(Card);
   price="2.00"
   title="Title"
   desc="Description"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -33,7 +33,7 @@ Vue.use(Card);
   title="Title"
   desc="Description"
   origin-price="10.00"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -47,7 +47,7 @@ Use slot to custom content.
   title="Title"
   desc="Description"
   price="2.00"
-  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <div slot="tags">
     <van-tag plain type="danger">Tag</van-tag>
@@ -70,9 +70,9 @@ Use slot to custom content.
 | title | Title | *string* | - |
 | desc | Description | *string* | - |
 | tag | Tag | *string* | - |
-| num | number | *string \| number* | - |
-| price | Price | *string \| number* | - |
-| origin-price | Origin price | *string \| number* | - |
+| num | number | *number \| string* | - |
+| price | Price | *number \| string* | - |
+| origin-price | Origin price | *number \| string* | - |
 | centered | Whether content vertical centered | *boolean* | `false` |
 | currency | Currency symbol |  *string* | `¥` |
 | thumb-link | Thumb link URL | *string* | - |

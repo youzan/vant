@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell).use(CouponList);
+Vue.use(CouponCell);
+Vue.use(CouponList);
 ```
 
 ## Usage
@@ -20,7 +21,6 @@ Vue.use(CouponCell).use(CouponList);
   :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
-
 <!-- Coupon List -->
 <van-popup
   v-model="showList"
@@ -38,7 +38,7 @@ Vue.use(CouponCell).use(CouponList);
 </van-popup>
 ```
 
-```javascript
+```js
 const coupon = {
   available: 1,
   originCondition: 0,
@@ -59,7 +59,6 @@ export default {
       disabledCoupons: [coupon]
     }
   },
-
   methods: {
     onChange(index) {
       this.showList = false;
@@ -79,7 +78,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Cell title | *string* | `Coupon` |
-| chosen-coupon | Index of chosen coupon | *number* | `-1` |
+| chosen-coupon | Index of chosen coupon | *number \| string* | `-1` |
 | coupons | Coupon list | *Coupon[]* | `[]` |
 | editable | Cell editable | *boolean* | `true` |
 | border | Whether to show innner border | *boolean* | `true` |

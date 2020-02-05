@@ -10,22 +10,22 @@ export default createComponent({
     textColor: String,
     pivotColor: String,
     trackColor: String,
-    strokeWidth: [String, Number],
+    strokeWidth: [Number, String],
     percentage: {
-      type: Number,
+      type: [Number, String],
       required: true,
-      validator: value => value >= 0 && value <= 100
+      validator: value => value >= 0 && value <= 100,
     },
     showPivot: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
       pivotWidth: 0,
-      progressWidth: 0
+      progressWidth: 0,
     };
   },
 
@@ -35,7 +35,7 @@ export default createComponent({
 
   watch: {
     showPivot: 'setWidth',
-    pivotText: 'setWidth'
+    pivotText: 'setWidth',
   },
 
   methods: {
@@ -44,7 +44,7 @@ export default createComponent({
         this.progressWidth = this.$el.offsetWidth;
         this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
       });
-    }
+    },
   },
 
   render() {
@@ -56,17 +56,17 @@ export default createComponent({
     const pivotStyle = {
       color: this.textColor,
       left: `${((this.progressWidth - this.pivotWidth) * percentage) / 100}px`,
-      background: this.pivotColor || background
+      background: this.pivotColor || background,
     };
 
     const portionStyle = {
       background,
-      width: (this.progressWidth * percentage) / 100 + 'px'
+      width: (this.progressWidth * percentage) / 100 + 'px',
     };
 
     const wrapperStyle = {
       background: this.trackColor,
-      height: addUnit(this.strokeWidth)
+      height: addUnit(this.strokeWidth),
     };
 
     return (
@@ -80,5 +80,5 @@ export default createComponent({
         </span>
       </div>
     );
-  }
+  },
 });

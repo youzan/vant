@@ -8,7 +8,7 @@ import {
   existsSync,
   readdirSync,
   readFileSync,
-  writeFileSync
+  writeFileSync,
 } from 'fs';
 
 export function parseText(input: string) {
@@ -43,18 +43,18 @@ export type ParseResult = {
 
 const defaultOptions = {
   maxDeep: Infinity,
-  tagPrefix: ''
+  tagPrefix: '',
 };
 
 export function parse(options: Options) {
   options = {
     ...defaultOptions,
-    ...options
+    ...options,
   };
 
   const result: ParseResult = {
     tags: {},
-    attributes: {}
+    attributes: {},
   };
 
   function putResult(componentName: string, component: Tag) {
@@ -62,7 +62,7 @@ export function parse(options: Options) {
     const attributes = Object.keys(component.attributes);
     const tag = {
       description: component.description,
-      attributes
+      attributes,
     };
 
     result.tags[componentName] = tag;
@@ -85,7 +85,7 @@ export function parse(options: Options) {
         recursiveParse(
           {
             ...options,
-            path: currentPath
+            path: currentPath,
           },
           deep
         );
@@ -123,7 +123,10 @@ export function parseAndWrite(options: Options) {
     mkdirSync(options.outputDir);
   }
 
-  writeFileSync(join(options.outputDir, 'tags.json'), JSON.stringify(tags, null, 2));
+  writeFileSync(
+    join(options.outputDir, 'tags.json'),
+    JSON.stringify(tags, null, 2)
+  );
   writeFileSync(
     join(options.outputDir, 'attributes.json'),
     JSON.stringify(attributes, null, 2)
@@ -133,5 +136,5 @@ export function parseAndWrite(options: Options) {
 export default {
   parse,
   parseText,
-  parseAndWrite
+  parseAndWrite,
 };

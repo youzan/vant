@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Field } from 'vant';
 
@@ -214,11 +214,11 @@ Use `input-align` prop to align the input value
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| value | Field value | *string \| number* | - |
+| value | Field value | *number \| string* | - |
 | label | Field label | *string* | - |
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | *string* | `text` |
 | size | Size，can be set to `large` | *string* | - |
-| maxlength | Max length of value | *string \| number* | - |
+| maxlength | Max length of value | *number \| string* | - |
 | placeholder | Placeholder | *string* | - |
 | border | Whether to show inner border | *boolean* | `true` |
 | disabled | Whether to disable field | *boolean* | `false` |
@@ -231,10 +231,10 @@ Use `input-align` prop to align the input value
 | show-word-limit `v2.2.8` | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` |
 | error | Whether to show error info | *boolean* | `false` |
 | formatter `v2.4.2` | Input value formatter | *Function* | - |
-| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | - |
+| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | `right` |
 | error-message | Error message | *string* | `''` |
 | label-class | Label className | *any* | - |
-| label-width | Label width | *string \| number* | `90px` |
+| label-width | Label width | *number \| string* | `90px` |
 | label-align | Label text align, can be set to `center` `right` | *string* | `left` |
 | input-align | Input text align, can be set to `center` `right` | *string* | `left` |
 | error-message-align | Error message text align, can be set to `center` `right` | *string* | `left` |

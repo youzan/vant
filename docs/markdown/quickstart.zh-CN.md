@@ -2,7 +2,7 @@
 
 ### 脚手架
 
-推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
 
 ```bash
 # 安装 Vue Cli
@@ -19,7 +19,9 @@ vue ui
 
 在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
-### 安装
+### 通过 npm 安装
+
+在现有项目中使用 Vant 时，可以通过`npm`或`yarn`安装
 
 ```bash
 # 通过 npm 安装
@@ -189,3 +191,28 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 ```
 
 <img src="https://b.yzcdn.cn/vant/safearea.png" style="margin-top: 30px;">
+
+### 组件实例方法
+
+Vant 中的许多组件提供了实例方法，调用实例方法时，我们需要通过 [ref](https://cn.vuejs.org/v2/api/#ref) 来注册组件引用信息，引用信息将会注册在父组件的`$refs`对象上。注册完成后，我们可以通过`this.$refs.xxx`访问到对应的组件实例，并调用上面的实例方法。
+
+```html
+<!-- 将该组件绑定到 this.$refs.checkbox 上 -->
+<van-checkbox v-model="checked" ref="checkbox">
+  复选框
+</van-checkbox>
+```
+
+```js
+export default {
+  data() {
+    return {
+      checked: false
+    };
+  },
+  // 注意：组件挂载后才能访问到 ref 对象
+  mounted() {
+    this.$refs.checkbox.toggle();
+  }
+}
+```

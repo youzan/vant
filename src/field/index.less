@@ -40,7 +40,12 @@
       color: @field-input-disabled-text-color;
       -webkit-text-fill-color: @field-input-disabled-text-color; // fix disabled color in iOS
       background-color: transparent;
+      cursor: not-allowed;
       opacity: 1;
+    }
+
+    &:read-only {
+      cursor: default;
     }
 
     &--center {
@@ -52,14 +57,14 @@
     }
 
     // for ios wechat
-    &[type="date"],
-    &[type="time"],
-    &[type="datetime-local"] {
+    &[type='date'],
+    &[type='time'],
+    &[type='datetime-local'] {
       min-height: @cell-line-height;
     }
 
     // for safari
-    &[type="search"] {
+    &[type='search'] {
       -webkit-appearance: none;
     }
   }
@@ -124,6 +129,12 @@
     font-size: @field-word-limit-font-size;
     line-height: @field-word-limit-line-height;
     text-align: right;
+  }
+
+  &__word-num {
+    &--full {
+      color: @field-word-num-full-color;
+    }
   }
 
   &--error {

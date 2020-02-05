@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Stepper } from 'vant';
 
@@ -23,7 +23,7 @@ Vue.use(Stepper);
 <van-stepper v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -65,6 +65,14 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+### 禁用输入框
+
+通过设置`disabled-input`属性来禁用输入框，此时按钮仍然可以点击
+
+```html
+<van-stepper v-model="value" disabled-input />
+```
+
 ### 固定小数位数
 
 通过设置`decimal-length`属性可以保留固定的小数位数
@@ -93,14 +101,15 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       value: 1
     }
   },
-
   methods: {
     onChange(value) {
       Toast.loading({ forbidClick: true });
@@ -122,23 +131,24 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前输入值 | *string \| number* | - |
-| min | 最小值 | *string \| number* | `1` |
-| max | 最大值 | *string \| number* | - |
-| default-value | 初始值，当 v-model 为空时生效 | *string \| number* | `1` |
-| step | 步长，每次点击时改变的值 | *string \| number* | `1` |
-| name `v2.2.11` | 标识符，可以在`change`事件回调参数中获取 | *string \| number* | - |
+| v-model | 当前输入值 | *number \| string* | - |
+| min | 最小值 | *number \| string* | `1` |
+| max | 最大值 | *number \| string* | - |
+| default-value | 初始值，当 v-model 为空时生效 | *number \| string* | `1` |
+| step | 步长，每次点击时改变的值 | *number \| string* | `1` |
+| name `v2.2.11` | 标识符，可以在`change`事件回调参数中获取 | *number \| string* | - |
+| input-width | 输入框宽度，默认单位为`px` | *number \| string* | `32px` |
+| button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | *number \| string* | `28px` |
+| decimal-length `v2.2.1` | 固定显示的小数位数 | *number \| string* | - |
 | integer | 是否只允许输入整数 | *boolean* | `false` |
 | disabled | 是否禁用步进器 | *boolean* | `false` |
 | disable-plus `v2.2.16` | 是否禁用增加按钮 | *boolean* | `false` |
 | disable-minus `v2.2.16` | 是否禁用减少按钮 | *boolean* | `false` |
 | disable-input | 是否禁用输入框 | *boolean* | `false` |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` |
-| input-width | 输入框宽度，默认单位为`px` | *string \| number* | `32px` |
-| button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | *string \| number* | `28px` |
 | show-plus `v2.1.2` | 是否显示增加按钮 | *boolean* | `true` |
 | show-minus `v2.1.2` | 是否显示减少按钮 | *boolean* | `true` |
-| decimal-length `v2.2.1` | 固定显示的小数位数 | *number* | - |
+| long-press `v2.4.3` | 是否开启长按手势 | *boolean* | `true` |
 
 ### Events
 

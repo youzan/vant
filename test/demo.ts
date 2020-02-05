@@ -7,7 +7,7 @@ const Empty = {
   render(h: CreateElement): ReturnType<CreateElement> {
     return h('div', [(this as any).$slots.default]);
   },
-  inheritAttrs: false
+  inheritAttrs: false,
 };
 
 Vue.component('demo-block', Empty);

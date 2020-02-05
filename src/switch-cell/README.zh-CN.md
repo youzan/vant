@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { SwitchCell } from 'vant';
 
@@ -23,7 +23,7 @@ Vue.use(SwitchCell);
 </van-cell-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -62,12 +62,12 @@ export default {
 | v-model | 开关状态 | *any* | `false` |
 | title | 左侧标题 |  *string* | `''` |
 | border | 是否展示单元格内边框 | *boolean* | `true` |
-| cell-size | 单元格大小，可选值为 `large` | *string* |
+| cell-size | 单元格大小，可选值为 `large` | *string* | - |
 | loading | 是否为加载状态 |  *boolean* | `false` |
 | disabled | 是否为禁用状态 |  *boolean* | `false` |
-| size | 开关尺寸 | *string \| number* | `24px` |
+| size | 开关尺寸 | *number \| string* | `24px` |
 | active-color | 开关时的背景色 | *string* | `#1989fa` |
-| inactive-color | 开关时的背景色 | *string* | `#fff` |
+| inactive-color | 开关时的背景色 | *string* | `white` |
 | active-value | 打开时的值 | *any* | `true` |
 | inactive-value | 关闭时的值 | *any* | `false` |
 

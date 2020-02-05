@@ -8,7 +8,7 @@
       @switch-version="$emit('switch-version', $event)"
     />
     <doc-nav :lang="lang" :nav-config="config.nav" />
-    <doc-container :has-simulator="!!simulator ">
+    <doc-container :has-simulator="!!simulator">
       <doc-content>
         <slot />
       </doc-content>
@@ -32,7 +32,7 @@ export default {
     DocHeader,
     DocContent,
     DocContainer,
-    DocSimulator
+    DocSimulator,
   },
 
   props: {
@@ -42,19 +42,19 @@ export default {
     langConfigs: Array,
     config: {
       type: Object,
-      required: true
+      required: true,
     },
     base: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
 
   watch: {
     // eslint-disable-next-line
     '$route.path'() {
       this.setNav();
-    }
+    },
   },
 
   created() {
@@ -98,8 +98,8 @@ export default {
             break;
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Toast } from 'vant';
 
@@ -13,13 +13,13 @@ Vue.use(Toast);
 
 ### Text
 
-```javascript
+```js
 Toast('Some messages');
 ```
 
 ### Loading
 
-```javascript
+```js
 Toast.loading({
   message: 'Loading...',
   forbidClick: true
@@ -34,7 +34,7 @@ Toast.loading({
 
 ### Success/Fail
 
-```javascript
+```js
 Toast.success('Success');
 Toast.fail('Fail');
 ```
@@ -55,7 +55,7 @@ Toast({
 
 ### Update Message
 
-```javascript
+```js
 const toast = Toast.loading({
   duration: 0, // continuous display toast
   forbidClick: true,
@@ -152,5 +152,5 @@ Toast.resetDefaultOptions('loading');
 | className | Custom className | *any* | - |
 | onOpened | Callback function after opened | *Function* | - |
 | onClose | Callback function after close | *Function* | - |
-| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - |
+| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | `van-fade` |
 | getContainer | Return the mount node for Toast | *string \| () => Element* | `body` |

@@ -1,5 +1,8 @@
-import { createNamespace, isObj } from '../utils';
+// Utils
+import { createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
+
+// Components
 import Area from '../area';
 import Field from '../field';
 import Popup from '../popup';
@@ -21,7 +24,7 @@ const defaultData = {
   areaCode: '',
   postalCode: '',
   addressDetail: '',
-  isDefault: false
+  isDefault: false,
 };
 
 function isPostal(value) {
@@ -43,36 +46,36 @@ export default createComponent({
     deleteButtonText: String,
     showArea: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showDetail: {
       type: Boolean,
-      default: true
+      default: true,
     },
     detailRows: {
-      type: Number,
-      default: 1
+      type: [Number, String],
+      default: 1,
     },
     detailMaxlength: {
-      type: Number,
-      default: 200
+      type: [Number, String],
+      default: 200,
     },
     addressInfo: {
       type: Object,
-      default: () => ({ ...defaultData })
+      default: () => ({ ...defaultData }),
     },
     telValidator: {
       type: Function,
-      default: isMobile
+      default: isMobile,
     },
     postalValidator: {
       type: Function,
-      default: isPostal
+      default: isPostal,
     },
     areaColumnsPlaceholder: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
 
   data() {
@@ -85,14 +88,14 @@ export default createComponent({
         name: '',
         areaCode: '',
         postalCode: '',
-        addressDetail: ''
-      }
+        addressDetail: '',
+      },
     };
   },
 
   computed: {
     areaListLoaded() {
-      return isObj(this.areaList) && Object.keys(this.areaList).length;
+      return isObject(this.areaList) && Object.keys(this.areaList).length;
     },
 
     areaText() {
@@ -105,7 +108,7 @@ export default createComponent({
         return arr.filter(text => text).join('/');
       }
       return '';
-    }
+    },
   },
 
   watch: {
@@ -113,18 +116,18 @@ export default createComponent({
       handler(val) {
         this.data = {
           ...defaultData,
-          ...val
+          ...val,
         };
 
         this.setAreaCode(val.areaCode);
       },
       deep: true,
-      immediate: true
+      immediate: true,
     },
 
     areaList() {
       this.setAreaCode(this.data.areaCode);
-    }
+    },
   },
 
   methods: {
@@ -209,7 +212,7 @@ export default createComponent({
 
     onDelete() {
       Dialog.confirm({
-        title: t('confirmDelete')
+        title: t('confirmDelete'),
       })
         .then(() => {
           this.$emit('delete', this.data);
@@ -243,7 +246,7 @@ export default createComponent({
       setTimeout(() => {
         this.detailFocused = false;
       });
-    }
+    },
   },
 
   render() {
@@ -368,5 +371,5 @@ export default createComponent({
         </Popup>
       </div>
     );
-  }
+  },
 });

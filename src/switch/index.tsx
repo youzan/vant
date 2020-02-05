@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { BLUE } from '../utils/constant';
-import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
+import { switchProps, SharedSwitchProps } from './shared';
+
+// Components
 import Loading from '../loading';
 
 // Types
@@ -28,14 +31,14 @@ function Switch(
     activeColor,
     activeValue,
     inactiveColor,
-    inactiveValue
+    inactiveValue,
   } = props;
 
   const checked = value === activeValue;
 
   const switchStyle = {
     fontSize: addUnit(size),
-    backgroundColor: checked ? activeColor : inactiveColor
+    backgroundColor: checked ? activeColor : inactiveColor,
   };
 
   const loadingColor = checked ? activeColor || BLUE : inactiveColor || '';
@@ -55,7 +58,7 @@ function Switch(
       class={bem({
         on: checked,
         loading,
-        disabled
+        disabled,
       })}
       role="switch"
       style={switchStyle}

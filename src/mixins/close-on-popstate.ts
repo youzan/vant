@@ -6,23 +6,23 @@ export const CloseOnPopstateMixin = Vue.extend({
   mixins: [
     BindEventMixin(function(this: any, bind, isBind) {
       this.handlePopstate(isBind && this.closeOnPopstate);
-    })
+    }),
   ],
 
   props: {
-    closeOnPopstate: Boolean
+    closeOnPopstate: Boolean,
   },
 
   data() {
     return {
-      bindStatus: false
+      bindStatus: false,
     };
   },
 
   watch: {
     closeOnPopstate(val: boolean) {
       this.handlePopstate(val);
-    }
+    },
   },
 
   methods: {
@@ -37,6 +37,6 @@ export const CloseOnPopstateMixin = Vue.extend({
         const action = bind ? on : off;
         action(window, 'popstate', (this as any).close);
       }
-    }
-  }
+    },
+  },
 });

@@ -1,8 +1,10 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { deepClone } from '../utils/deep-clone';
-import { pickerProps } from './shared';
 import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { pickerProps } from './shared';
+
+// Components
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
@@ -12,57 +14,121 @@ export default createComponent({
   props: {
     ...pickerProps,
     defaultIndex: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: 0,
     },
     columns: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     toolbarPosition: {
       type: String,
-      default: 'top'
+      default: 'top',
     },
     valueKey: {
       type: String,
-      default: 'text'
-    }
+      default: 'text',
+    },
   },
 
   data() {
     return {
-      children: []
+      children: [],
+      formattedColumns: [],
     };
   },
 
   computed: {
-    simple() {
-      return this.columns.length && !this.columns[0].values;
-    }
+    dataType() {
+      const { columns } = this;
+      const firstColumn = columns[0] || {};
+
+      if (firstColumn.children) {
+        return 'cascade';
+      }
+
+      if (firstColumn.values) {
+        return 'object';
+      }
+
+      return 'text';
+    },
   },
 
   watch: {
-    columns: 'setColumns'
+    columns: {
+      handler: 'format',
+      immediate: true,
+    },
   },
 
   methods: {
-    setColumns() {
-      const columns = this.simple ? [{ values: this.columns }] : this.columns;
-      columns.forEach((column, index) => {
-        this.setColumnValues(index, deepClone(column.values));
-      });
+    format() {
+      const { columns, dataType } = this;
+
+      if (dataType === 'text') {
+        this.formattedColumns = [{ values: columns }];
+      } else if (dataType === 'cascade') {
+        this.formatCascade();
+      } else {
+        this.formattedColumns = columns;
+      }
+    },
+
+    formatCascade() {
+      const formatted = [];
+
+      let cursor = { children: this.columns };
+
+      while (cursor && cursor.children) {
+        const defaultIndex = cursor.defaultIndex || +this.defaultIndex;
+
+        formatted.push({
+          values: cursor.children.map(item => item[this.valueKey]),
+          className: cursor.className,
+          defaultIndex,
+        });
+
+        cursor = cursor.children[defaultIndex];
+      }
+
+      this.formattedColumns = formatted;
     },
 
     emit(event) {
-      if (this.simple) {
+      if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
       } else {
         this.$emit(event, this.getValues(), this.getIndexes());
       }
     },
 
+    onCascadeChange(columnIndex) {
+      let cursor = { children: this.columns };
+      const indexes = this.getIndexes();
+
+      for (let i = 0; i <= columnIndex; i++) {
+        cursor = cursor.children[indexes[i]];
+      }
+
+      while (cursor.children) {
+        columnIndex++;
+
+        this.setColumnValues(
+          columnIndex,
+          cursor.children.map(item => item[this.valueKey])
+        );
+
+        cursor = cursor.children[cursor.defaultIndex || 0];
+      }
+    },
+
     onChange(columnIndex) {
-      if (this.simple) {
+      if (this.dataType === 'cascade') {
+        this.onCascadeChange(columnIndex);
+      }
+
+      if (this.dataType === 'text') {
         this.$emit(
           'change',
           this,
@@ -116,12 +182,9 @@ export default createComponent({
     // set options of column by index
     setColumnValues(index, options) {
       const column = this.children[index];
-      if (
-        column &&
-        JSON.stringify(column.options) !== JSON.stringify(options)
-      ) {
-        column.options = options;
-        column.setIndex(0);
+
+      if (column) {
+        column.setOptions(options);
       }
     },
 
@@ -180,11 +243,7 @@ export default createComponent({
         return (
           <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
             {this.slots() || [
-              <button
-                type="button"
-                class={bem('cancel')}
-                onClick={this.cancel}
-              >
+              <button type="button" class={bem('cancel')} onClick={this.cancel}>
                 {this.cancelButtonText || t('cancel')}
               </button>,
               this.genTitle(),
@@ -194,7 +253,7 @@ export default createComponent({
                 onClick={this.confirm}
               >
                 {this.confirmButtonText || t('confirm')}
-              </button>
+              </button>,
             ]}
           </div>
         );
@@ -202,40 +261,38 @@ export default createComponent({
     },
 
     genColumns() {
-      const columns = this.simple ? [this.columns] : this.columns;
-
-      return columns.map((item, index) => (
+      return this.formattedColumns.map((item, columnIndex) => (
         <PickerColumn
           valueKey={this.valueKey}
           allowHtml={this.allowHtml}
           className={item.className}
           itemHeight={this.itemHeight}
-          defaultIndex={item.defaultIndex || this.defaultIndex}
+          defaultIndex={item.defaultIndex || +this.defaultIndex}
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
-          initialOptions={this.simple ? item : item.values}
+          initialOptions={item.values}
           onChange={() => {
-            this.onChange(index);
+            this.onChange(columnIndex);
           }}
         />
       ));
-    }
+    },
   },
 
   render(h) {
-    const { itemHeight } = this;
+    const itemHeight = +this.itemHeight;
     const wrapHeight = itemHeight * this.visibleItemCount;
 
     const frameStyle = {
-      height: `${itemHeight}px`
+      height: `${itemHeight}px`,
     };
 
     const columnsStyle = {
-      height: `${wrapHeight}px`
+      height: `${wrapHeight}px`,
     };
 
     const maskStyle = {
-      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`
+      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`,
     };
 
     return (
@@ -259,5 +316,5 @@ export default createComponent({
         {this.toolbarPosition === 'bottom' ? this.genToolbar() : h()}
       </div>
     );
-  }
+  },
 });

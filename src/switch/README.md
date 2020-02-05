@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Switch } from 'vant';
 
@@ -17,7 +17,7 @@ Vue.use(Switch);
 <van-switch v-model="checked" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -64,7 +64,6 @@ export default {
       checked: true
     };
   },
-
   methods: {
     onInput(checked) {
       Dialog.confirm({
@@ -95,9 +94,9 @@ export default {
 | v-model | Check status of Switch | *any* | `false` |
 | loading | Whether to show loading icon | *boolean* | `false` |
 | disabled | Whether to disable switch | *boolean* | `false` |
-| size `v2.2.11` | Size of switch | *string \| number* | `30px` |
+| size `v2.2.11` | Size of switch | *number \| string* | `30px` |
 | active-color | Background color when active | *string* | `#1989fa` |
-| inactive-color | Background color when inactive | *string* | `#fff` |
+| inactive-color | Background color when inactive | *string* | `white` |
 | active-value | Value when active | *any* | `true` |
 | inactive-value | Value when inactive | *any* | `false` |
 

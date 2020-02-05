@@ -1,9 +1,12 @@
+// Utils
 import { createNamespace } from '../../utils';
-import Cell from '../../cell';
-import CellGroup from '../../cell-group';
-import Field from '../../field';
 import { isEmail } from '../../utils/validate/email';
-import { isNumber } from '../../utils/validate/number';
+import { isNumeric } from '../../utils/validate/number';
+
+// Components
+import Cell from '../../cell';
+import Field from '../../field';
+import CellGroup from '../../cell-group';
 import SkuImgUploader from './SkuImgUploader';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');
@@ -12,22 +15,22 @@ export default createComponent({
   props: {
     messages: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     messageConfig: Object,
-    goodsId: [Number, String]
+    goodsId: [Number, String],
   },
 
   data() {
     return {
-      messageValues: this.resetMessageValues(this.messages)
+      messageValues: this.resetMessageValues(this.messages),
     };
   },
 
   watch: {
     messages(val) {
       this.messageValues = this.resetMessageValues(val);
-    }
+    },
   },
 
   methods: {
@@ -94,7 +97,7 @@ export default createComponent({
             return textType + message.name;
           }
         } else {
-          if (message.type === 'tel' && !isNumber(value)) {
+          if (message.type === 'tel' && !isNumeric(value)) {
             return t('invalid.tel');
           }
           if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {
@@ -103,44 +106,55 @@ export default createComponent({
           if (message.type === 'email' && !isEmail(value)) {
             return t('invalid.email');
           }
-          if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
+          if (
+            message.type === 'id_no' &&
+            (value.length < 15 || value.length > 18)
+          ) {
             return t('invalid.id_no');
           }
         }
       }
-    }
+    },
+
+    genMessage(message, index) {
+      if (message.type === 'image') {
+        return (
+          <Cell
+            key={`${this.goodsId}-${index}`}
+            title={message.name}
+            label={t('imageLabel')}
+            class={bem('image-cell')}
+            required={String(message.required) === '1'}
+            valueClass={bem('image-cell-value')}
+          >
+            <SkuImgUploader
+              vModel={this.messageValues[index].value}
+              maxSize={this.messageConfig.uploadMaxSize}
+              uploadImg={this.messageConfig.uploadImg}
+            />
+          </Cell>
+        );
+      }
+
+      return (
+        <Field
+          vModel={this.messageValues[index].value}
+          maxlength="200"
+          label={message.name}
+          key={`${this.goodsId}-${index}`}
+          required={String(message.required) === '1'}
+          placeholder={this.getPlaceholder(message)}
+          type={this.getType(message)}
+        />
+      );
+    },
   },
 
   render() {
     return (
       <CellGroup class={bem()} border={this.messages.length > 0}>
-        {this.messages.map((message, index) => (message.type === 'image' ? (
-          <Cell
-            class={bem('image-cell')}
-            value-class={bem('image-cell-value')}
-            label={t('imageLabel')}
-            title={message.name}
-            key={`${this.goodsId}-${index}`}
-            required={String(message.required) === '1'}
-          >
-            <SkuImgUploader
-              vModel={this.messageValues[index].value}
-              uploadImg={this.messageConfig.uploadImg}
-              maxSize={this.messageConfig.uploadMaxSize}
-            />
-          </Cell>
-        ) : (
-          <Field
-            vModel={this.messageValues[index].value}
-            maxlength="200"
-            label={message.name}
-            key={`${this.goodsId}-${index}`}
-            required={String(message.required) === '1'}
-            placeholder={this.getPlaceholder(message)}
-            type={this.getType(message)}
-          />
-        )))}
+        {this.messages.map(this.genMessage)}
       </CellGroup>
     );
-  }
+  },
 });

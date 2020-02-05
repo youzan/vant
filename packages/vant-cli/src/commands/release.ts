@@ -8,11 +8,11 @@ const PLUGIN_PATH = join(__dirname, '../compiler/vant-cli-release-plugin.js');
 export async function release() {
   await releaseIt({
     plugins: {
-      [PLUGIN_PATH]: {}
+      [PLUGIN_PATH]: {},
     },
     git: {
       tagName: 'v${version}',
-      commitMessage: 'chore: release ${version}'
-    }
+      commitMessage: 'chore: release ${version}',
+    },
   });
 }

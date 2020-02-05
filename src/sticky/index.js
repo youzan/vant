@@ -13,23 +13,23 @@ export default createComponent({
 
       bind(this.scroller, 'scroll', this.onScroll, true);
       this.onScroll();
-    })
+    }),
   ],
 
   props: {
-    zIndex: Number,
+    zIndex: [Number, String],
     container: null,
     offsetTop: {
-      type: Number,
-      default: 0
-    }
+      type: [Number, String],
+      default: 0,
+    },
   },
 
   data() {
     return {
       fixed: false,
       height: 0,
-      transform: 0
+      transform: 0,
     };
   },
 
@@ -54,21 +54,22 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   methods: {
     onScroll() {
       this.height = this.$el.offsetHeight;
 
-      const { container, offsetTop } = this;
+      const { container } = this;
+      const offsetTop = +this.offsetTop;
       const scrollTop = getScrollTop(window);
       const topToPageTop = getElementTop(this.$el);
 
       const emitScrollEvent = () => {
         this.$emit('scroll', {
           scrollTop,
-          isFixed: this.fixed
+          isFixed: this.fixed,
         });
       };
 
@@ -99,13 +100,13 @@ export default createComponent({
       }
 
       emitScrollEvent();
-    }
+    },
   },
 
   render() {
     const { fixed } = this;
     const style = {
-      height: fixed ? `${this.height}px` : null
+      height: fixed ? `${this.height}px` : null,
     };
 
     return (
@@ -115,5 +116,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Popup } from 'vant';
 
@@ -15,11 +15,10 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">Show Popup</van-cell>
-
 <van-popup v-model="show">Content</van-popup>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -56,7 +55,6 @@ Use `position` prop to set popup display position
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- Custom Icon -->
 <van-popup
   v-model="show"
@@ -65,7 +63,6 @@ Use `position` prop to set popup display position
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- Icon Position -->
 <van-popup
   v-model="show"
@@ -125,7 +122,7 @@ export default {
 | position | Can be set to `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | Custom overlay class | *string* | - |
 | overlay-style | Custom overlay style | *object* | - |
-| duration | Transition duration, unit second | *number* | `0.3` |
+| duration | Transition duration, unit second | *number \| string* | `0.3` |
 | round `v2.0.7` | Whether to show round corner | *boolean* | `false` |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true` |

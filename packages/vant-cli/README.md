@@ -9,7 +9,15 @@ Vant Cli 是一个 Vue 组件库构建工具，通过 Vant Cli 可以快速搭�
 - 内置 ESlint、Stylelint 校验规则，提交代码时自动执行校验
 - 构建后的组件库默认支持按需引入、主题定制、Tree Shaking
 
-### 安装
+### 快速上手
+
+执行以下命令可以快速创建一个基于 Vant Cli 的项目：
+
+```bash
+npx create-vant-cli-app
+```
+
+### 手动安装
 
 ```shell
 # 通过 npm 安装

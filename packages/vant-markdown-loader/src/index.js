@@ -47,10 +47,10 @@ export default {
 
 const parser = new MarkdownIt({
   html: true,
-  highlight
+  highlight,
 }).use(markdownItAnchor, {
   level: 2,
-  slugify
+  slugify,
 });
 
 module.exports = function(source) {
@@ -60,7 +60,7 @@ module.exports = function(source) {
   options = {
     wrapper,
     linkOpen: true,
-    ...options
+    ...options,
   };
 
   let fm;

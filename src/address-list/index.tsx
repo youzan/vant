@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Button from '../button';
 import RadioGroup from '../radio-group';
 import AddressItem, { AddressItemData } from './Item';
@@ -66,7 +69,9 @@ function AddressList(
     <div class={bem()} {...inherit(ctx)}>
       {slots.top?.()}
       <RadioGroup value={props.value}>{List}</RadioGroup>
-      {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
+      {props.disabledText && (
+        <div class={bem('disabled-text')}>{props.disabledText}</div>
+      )}
       {DisabledList}
       {slots.default?.()}
       <div class={bem('bottom')}>
@@ -94,8 +99,8 @@ AddressList.props = {
   defaultTagText: String,
   switchable: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<AddressListProps>(AddressList);

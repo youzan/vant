@@ -8,9 +8,9 @@ test('emit event', () => {
     context: {
       on: {
         input,
-        change
-      }
-    }
+        change,
+      },
+    },
   });
   wrapper.trigger('click');
 
@@ -25,12 +25,12 @@ test('disabled', () => {
     context: {
       on: {
         input,
-        change
-      }
+        change,
+      },
     },
     propsData: {
-      disabled: true
-    }
+      disabled: true,
+    },
   });
   wrapper.trigger('click');
 
@@ -45,14 +45,14 @@ test('active-value & inactive-value prop', () => {
     propsData: {
       value: '1',
       activeValue: '1',
-      inactiveValue: '2'
+      inactiveValue: '2',
     },
     context: {
       on: {
         input,
-        change
-      }
-    }
+        change,
+      },
+    },
   });
 
   wrapper.trigger('click');
@@ -66,8 +66,8 @@ test('inactive-color prop', () => {
     propsData: {
       value: '2',
       inactiveValue: '2',
-      inactiveColor: 'black'
-    }
+      inactiveColor: 'black',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -76,8 +76,8 @@ test('inactive-color prop', () => {
 test('size prop', () => {
   const wrapper = mount(Switch, {
     propsData: {
-      size: 20
-    }
+      size: 20,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -88,9 +88,9 @@ test('click event', () => {
   const wrapper = mount(Switch, {
     context: {
       on: {
-        click
-      }
-    }
+        click,
+      },
+    },
   });
 
   wrapper.trigger('click');

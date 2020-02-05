@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Tag from '../tag';
 import Image from '../image';
 
@@ -85,7 +88,7 @@ function Card(
               src={thumb}
               width="100%"
               height="100%"
-              fit="contain"
+              fit="cover"
               lazy-load={props.lazyLoad}
             />
           )}
@@ -206,8 +209,8 @@ Card.props = {
   originPrice: [Number, String],
   currency: {
     type: String,
-    default: '¥'
-  }
+    default: '¥',
+  },
 };
 
 export default createComponent<CardProps, CardEvents>(Card);

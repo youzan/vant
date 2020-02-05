@@ -10,26 +10,10 @@
     </demo-block>
 
     <demo-block :title="$t('animation')">
-      <van-cell
-        is-link
-        title="Fade"
-        @click="animate('van-fade')"
-      />
-      <van-cell
-        is-link
-        title="Slide Up"
-        @click="animate('van-slide-up')"
-      />
-      <van-cell
-        is-link
-        title="Slide Down"
-        @click="animate('van-slide-down')"
-      />
-      <van-cell
-        is-link
-        title="Slide Left"
-        @click="animate('van-slide-left')"
-      />
+      <van-cell is-link title="Fade" @click="animate('van-fade')" />
+      <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
+      <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
+      <van-cell is-link title="Slide Left" @click="animate('van-slide-left')" />
       <van-cell
         is-link
         title="Slide Right"
@@ -38,10 +22,7 @@
     </demo-block>
 
     <transition :name="transitionName">
-      <div
-        v-show="show"
-        class="demo-animate-block"
-      />
+      <div v-show="show" class="demo-animate-block" />
     </transition>
   </demo-section>
 </template>
@@ -55,22 +36,25 @@ export default {
       animation: '动画',
       toggle: '切换动画',
       text1: '这是一段最多显示一行的文字，后面的内容会省略',
-      text2: '这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略'
+      text2:
+        '这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略',
     },
     'en-US': {
       hairline: 'Hairline',
       ellipsis: 'Text Ellipsis',
       animation: 'Animation',
       toggle: 'Switch animation',
-      text1: 'This is a paragraph that displays up to one line of text, and the rest of the text will be omitted.',
-      text2: 'This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.'
-    }
+      text1:
+        'This is a paragraph that displays up to one line of text, and the rest of the text will be omitted.',
+      text2:
+        'This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.',
+    },
   },
 
   data() {
     return {
       show: false,
-      transitionName: ''
+      transitionName: '',
     };
   },
 
@@ -82,8 +66,8 @@ export default {
       setTimeout(() => {
         this.show = false;
       }, 500);
-    }
-  }
+    },
+  },
 };
 </script>
 

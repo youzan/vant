@@ -16,8 +16,6 @@
 <p align="center">
   🔥 <a href="https://youzan.github.io/vant">文档网站</a>
   &nbsp;
-  🇬🇧 <a href="./README.md">英文版介绍</a>
-  &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
 </p>
 
@@ -80,13 +78,21 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
 - <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
+## 生态
+
+| 项目 | 描述 |
+|-----|------|
+| [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
+| [vant-weapp](https://github.com/youzan/vant-weapp) | 微信小程序组件库 |
+| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
+| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
+| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+
 ## 链接
 
 * [详细文档](https://youzan.github.io/vant)
 * [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
 * [码云镜像](https://gitee.com/organizations/vant-contrib)
-* [Vant 示例仓库](https://github.com/youzan/vant-demo)
-* [VantWeapp 小程序组件](https://github.com/youzan/vant-weapp)
 
 ## 手机预览
 

@@ -1,16 +1,19 @@
+// Utils
 import { createNamespace } from '../utils';
 import { RED } from '../utils/constant';
 import { emit, inherit } from '../utils/functional';
+
+// Components
+import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
-import Tag from '../tag';
-import Button from '../button';
 import Radio from '../radio';
+import Button from '../button';
 import RadioGroup from '../radio-group';
 
 // Types
-import { CreateElement, RenderContext, VNode } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
+import { CreateElement, RenderContext, VNode } from 'vue/types';
 
 export type ContactListItem = {
   id: string | number;
@@ -122,7 +125,7 @@ ContactList.props = {
   value: null as any,
   list: Array,
   addText: String,
-  defaultTagText: String
+  defaultTagText: String,
 };
 
 export default createComponent(ContactList);

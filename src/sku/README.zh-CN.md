@@ -2,7 +2,7 @@
 
 ### 引入
 
-```javascript
+```js
 import Vue from 'vue';
 import { Sku } from 'vant';
 
@@ -123,7 +123,7 @@ export default {
 | v-model | 是否显示sku | *boolean* | `false` |
 | sku | 商品sku数据 | *object* | - |
 | goods | 商品信息 | *object* | - |
-| goods-id | 商品 id | *string \| number* | - |
+| goods-id | 商品 id | *number \| string* | - |
 | price-tag | 显示在价格后面的标签 | *string* | - |
 | hide-stock | 是否显示商品剩余库存 | *boolean* | `false` |
 | hide-quota-text | 是否显示限购提示 | *boolean* | `false` |
@@ -144,9 +144,9 @@ export default {
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
-| safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
-| properties `2.4.0` | 商品属性 | *array* | - |
+| properties `v2.4.2` | 商品属性 | *array* | - |
 
 ### Events
 
@@ -162,7 +162,7 @@ export default {
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Sku 实例并调用实例方法
+通过 ref 可以获取到 Sku 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -184,11 +184,12 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，�
 | extra-sku-group | 额外商品 sku 展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
 | sku-messages | 商品留言区 |
+| sku-actions-top | 操作按钮区顶部内容，无默认展示内容，按需使用 |
 | sku-actions | 操作按钮区 |
 
 ### sku 对象结构
 
-```javascript
+```js
 sku: {
   // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
   // 可以理解为一个商品可以有多个规格类目，一个规格类目下可以有多个规格值。
@@ -244,7 +245,7 @@ sku: {
 
 ### properties 对象结构
 
-```javascript
+```js
   [ // 商品属性
     {
       k_id: 123, // 属性id
@@ -268,7 +269,7 @@ sku: {
 
 ### initialSku 对象结构
 
-```javascript
+```js
 {
   // 键：skuKeyStr（sku 组合列表中当前类目对应的 key 值）
   // 值：skuValueId（规格值 id）
@@ -287,7 +288,7 @@ sku: {
 
 ### goods 对象结构
 
-```javascript
+```js
 goods: {
   // 商品标题
   title: '测试商品',
@@ -298,7 +299,7 @@ goods: {
 
 ### customStepperConfig 对象结构
 
-```javascript
+```js
 customStepperConfig: {
   // 自定义限购文案
   quotaText: '每次限购xxx件',
@@ -330,7 +331,7 @@ customStepperConfig: {
 
 ### messageConfig Data Structure
 
-```javascript
+```js
 messageConfig: {
   // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
   uploadImg: () => {
@@ -351,7 +352,7 @@ messageConfig: {
 
 ### 添加购物车和点击购买回调函数接收的 skuData 对象结构
 
-```javascript
+```js
 skuData: {
   // 商品 id
   goodsId: '946755',

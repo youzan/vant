@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Progress } from 'vant';
 
@@ -45,13 +45,11 @@ Vue.use(Progress);
   color="#f2826a"
   :percentage="25"
 />
-
 <van-progress
   pivot-text="红色"
   color="#ee0a24"
   :percentage="50"
 />
-
 <van-progress
   :percentage="75"
   pivot-text="紫色"
@@ -66,12 +64,12 @@ Vue.use(Progress);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| inactive | 是否置灰 | *boolean* | `false` |
-| percentage | 进度百分比 | *number* | `0` |
-| stroke-width `v2.2.1` | 进度条粗细，默认单位为`px` | *string \| number* | `4px` |
-| show-pivot | 是否显示进度文字 | *boolean* | `true` |
+| percentage | 进度百分比 | *number \| string* | `0` |
+| stroke-width `v2.2.1` | 进度条粗细，默认单位为`px` | *number \| string* | `4px` |
 | color | 进度条颜色 | *string* | `#1989fa` |
-| text-color | 进度文字颜色 | *string* | `#fff` |
 | track-color `v2.2.9` | 轨道颜色 | *string* | `#e5e5e5` |
-| pivot-text | 文字显示 | *string* | 百分比文字 |
-| pivot-color | 文字背景色 | *string* | 与进度条颜色一致 |
+| pivot-text | 进度文字内容 | *string* | 百分比 |
+| pivot-color | 进度文字背景色 | *string* | 同进度条颜色 |
+| text-color | 进度文字颜色 | *string* | `white` |
+| inactive | 是否置灰 | *boolean* | `false` |
+| show-pivot | 是否显示进度文字 | *boolean* | `true` |

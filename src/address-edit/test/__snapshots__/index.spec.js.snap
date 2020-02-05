@@ -18,7 +18,7 @@ exports[`create a AddressEdit 1`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>
@@ -57,7 +57,7 @@ exports[`create a AddressEdit with props 1`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>
@@ -110,7 +110,7 @@ exports[`set-default 1`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>
@@ -163,7 +163,7 @@ exports[`show area component 1`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>
@@ -216,7 +216,7 @@ exports[`show area component 2`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>
@@ -269,7 +269,7 @@ exports[`valid area placeholder confirm 1`] = `
     <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
       <div class="van-cell__title van-field__label"><span>地区</span></div>
       <div class="van-cell__value">
-        <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
               <!----></i></div>
         </div>

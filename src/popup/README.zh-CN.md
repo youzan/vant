@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Popup } from 'vant';
 
@@ -21,11 +21,10 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">展示弹出层</van-cell>
-
 <van-popup v-model="show">内容</van-popup>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -64,7 +63,6 @@ export default {
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- 自定义图标 -->
 <van-popup
   v-model="show"
@@ -73,7 +71,6 @@ export default {
   position="bottom"
   :style="{ height: '20%' }"
 />
-
 <!-- 图标位置 -->
 <van-popup
   v-model="show"
@@ -136,7 +133,7 @@ export default {
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | 自定义遮罩层类名 | *string* | - |
 | overlay-style | 自定义遮罩层样式 | *object* | - |
-| duration | 动画时长，单位秒 | *number* | `0.3` |
+| duration | 动画时长，单位秒 | *number \| string* | `0.3` |
 | round `v2.0.7` | 是否显示圆角 | *boolean* | `false` |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
@@ -147,7 +144,7 @@ export default {
 | close-icon-position `v2.2.2` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
 | get-container | 指定挂载的节点 | *string \| () => Element* | - |
-| safe-area-inset-bottom `v2.2.1` | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Events
 

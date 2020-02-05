@@ -14,13 +14,16 @@ export const ClickOutsideMixin = (config: ClickOutsideMixinConfig) =>
     props: {
       closeOnClickOutside: {
         type: Boolean,
-        default: true
-      }
+        default: true,
+      },
     },
 
     data() {
       const clickOutsideHandler = (event: Event) => {
-        if (this.closeOnClickOutside && !this.$el.contains(event.target as Node)) {
+        if (
+          this.closeOnClickOutside &&
+          !this.$el.contains(event.target as Node)
+        ) {
           (this as any)[config.method]();
         }
       };
@@ -34,5 +37,5 @@ export const ClickOutsideMixin = (config: ClickOutsideMixinConfig) =>
 
     beforeDestroy() {
       off(document, config.event, this.clickOutsideHandler);
-    }
+    },
   });

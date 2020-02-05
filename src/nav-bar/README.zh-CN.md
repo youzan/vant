@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { NavBar } from 'vant';
 
@@ -25,6 +25,8 @@ Vue.use(NavBar);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickLeft() {
@@ -59,7 +61,7 @@ export default {
 | left-arrow | 是否显示左侧箭头 | *boolean* | `false` |
 | fixed | 是否固定在顶部 | *boolean* | `false` |
 | border | 是否显示下边框 | *boolean* | `true` |
-| z-index | 元素 z-index | *number* | `1` |
+| z-index | 元素 z-index | *number \| string* | `1` |
 
 ### Slots
 

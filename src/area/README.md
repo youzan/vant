@@ -6,7 +6,7 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Area } from 'vant';
 
@@ -60,16 +60,16 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 |------|------|------|------|
 | value | the `code` of selected area | *string* | - |
 | title | Toolbar title | *string* | - |
-| area-list | Area data | *object* | - |
-| columns-num | level of picker | *string \| number* | `3` |
-| columns-placeholder `v2.2.5` | placeholder of columns | *string[]* | `[]` |
-| item-height | Option height | *number* | `44` |
-| loading | Whether to show loading prompt | *boolean* | `false` |
-| visible-item-count | Count of visible columns | *number* | `5` |
 | confirm-button-text | Text of confirm button | *string* | `Confirm` |
 | cancel-button-text | Text of cancel button | *string* | `Cancel` |
+| area-list | Area list data | *object* | - |
+| columns-placeholder `v2.2.5` | Placeholder of columns | *string[]* | `[]` |
+| loading | Whether to show loading prompt | *boolean* | `false` |
+| item-height | Option height | *number \| string* | `44` |
+| columns-num | Level of picker | *number \| string* | `3` |
+| visible-item-count | Count of visible columns | *number \| string* | `5` |
+| swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | *number \| string*  | `1000` |
 | is-oversea-code `v2.1.4` | The method to validate oversea code | *() => boolean* | - |
-| swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | *number*  | `1000` |
 
 ### Events
 
@@ -94,7 +94,7 @@ Each property is a simple key-value object, key is a 6-bit code of the area of w
 
 Example of `AreaList`
 
-```javascript
+```js
 {
   province_list: {
     110000: 'Beijing',
@@ -123,7 +123,7 @@ All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/
 An array contains selected area objects.
 
 `code` - code of selected area, `name` - name of selected area
-```javascript
+```js
 [{
   code: '330000',
   name: 'Zhejiang Province'

@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Panel } from 'vant';
 
@@ -44,7 +44,7 @@ Vue.use(Panel);
 | title | 标题 | *string* | - |
 | desc | 描述 | *string* | - |
 | status | 状态 | *string* | - |
-| icon | 标题左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+| icon | 标题左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
 
 ### Slots
 

@@ -1,6 +1,6 @@
 import { createNamespace } from '../../utils';
-import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
+import Stepper from '../../stepper';
 
 const namespace = createNamespace('sku-stepper');
 const createComponent = namespace[0];
@@ -19,11 +19,11 @@ export default createComponent({
     hideQuotaText: Boolean,
     quota: {
       type: Number,
-      default: 0
+      default: 0,
     },
     quotaUsed: {
       type: Number,
-      default: 0
+      default: 0,
     },
     startSaleNum: {
       type: Number,
@@ -35,7 +35,7 @@ export default createComponent({
     return {
       currentNum: this.selectedNum,
       // 购买限制类型: 限购/库存
-      limitType: STOCK_LIMIT
+      limitType: STOCK_LIMIT,
     };
   },
 
@@ -59,7 +59,7 @@ export default createComponent({
         this.currentNum = start;
       }
       this.checkState(start, this.stepperLimit);
-    }
+    },
   },
 
   computed: {
@@ -157,7 +157,9 @@ export default createComponent({
     return (
       <div class="van-sku-stepper-stock">
         <div class="van-sku-stepper-container">
-          <div class="van-sku__stepper-title">{this.stepperTitle || t('num')}</div>
+          <div class="van-sku__stepper-title">
+            {this.stepperTitle || t('num')}
+          </div>
           <Stepper
             vModel={this.currentNum}
             class="van-sku__stepper"
@@ -168,9 +170,11 @@ export default createComponent({
             onOverlimit={this.onOverLimit}
             onChange={this.onChange}
           />
-          {!this.hideQuotaText && this.quotaText && <span class="van-sku__stepper-quota">({this.quotaText})</span>}
+          {!this.hideQuotaText && this.quotaText && (
+            <span class="van-sku__stepper-quota">({this.quotaText})</span>
+          )}
         </div>
       </div>
     );
-  }
+  },
 });

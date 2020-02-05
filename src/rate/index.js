@@ -22,42 +22,33 @@ export default createComponent({
 
   props: {
     size: [Number, String],
+    color: String,
     gutter: [Number, String],
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
+    voidColor: String,
+    disabledColor: String,
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
     icon: {
       type: String,
-      default: 'star'
+      default: 'star',
     },
     voidIcon: {
       type: String,
-      default: 'star-o'
-    },
-    color: {
-      type: String,
-      default: '#ffd21e'
-    },
-    voidColor: {
-      type: String,
-      default: '#c7c7c7'
-    },
-    disabledColor: {
-      type: String,
-      default: '#bdbdbd'
+      default: 'star-o',
     },
     count: {
-      type: Number,
-      default: 5
+      type: [Number, String],
+      default: 5,
     },
     touchable: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
@@ -76,7 +67,7 @@ export default createComponent({
 
     gutterWithUnit() {
       return addUnit(this.gutter);
-    }
+    },
   },
 
   mounted() {
@@ -148,14 +139,14 @@ export default createComponent({
         voidIcon,
         disabled,
         voidColor,
-        disabledColor
+        disabledColor,
       } = this;
       const score = index + 1;
       const isFull = status === 'full';
       const isVoid = status === 'void';
 
       let style;
-      if (this.gutterWithUnit && score !== count) {
+      if (this.gutterWithUnit && score !== +count) {
         style = { paddingRight: this.gutterWithUnit };
       }
 
@@ -175,7 +166,7 @@ export default createComponent({
           <Icon
             size={this.sizeWithUnit}
             name={isFull ? icon : voidIcon}
-            class={bem('icon')}
+            class={bem('icon', { disabled, full: isFull })}
             data-score={score}
             color={disabled ? disabledColor : isFull ? color : voidColor}
             onClick={() => {
@@ -186,7 +177,7 @@ export default createComponent({
             <Icon
               size={this.sizeWithUnit}
               name={isVoid ? voidIcon : icon}
-              class={bem('icon', 'half')}
+              class={bem('icon', ['half', { disabled, full: !isVoid }])}
               data-score={score - 0.5}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
               onClick={() => {
@@ -196,7 +187,7 @@ export default createComponent({
           )}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -204,7 +195,7 @@ export default createComponent({
       <div
         class={bem({
           readonly: this.readonly,
-          disabled: this.disabled
+          disabled: this.disabled,
         })}
         tabindex="0"
         role="radiogroup"
@@ -212,5 +203,5 @@ export default createComponent({
         {this.list.map((status, index) => this.genStar(status, index))}
       </div>
     );
-  }
+  },
 });

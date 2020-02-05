@@ -5,8 +5,8 @@ test('render left & right slot', () => {
   const wrapper = mount(NavBar, {
     scopedSlots: {
       left: () => 'Custom Left',
-      right: () => 'Custom Right'
-    }
+      right: () => 'Custom Right',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -15,8 +15,8 @@ test('render left & right slot', () => {
 test('render title slot', () => {
   const wrapper = mount(NavBar, {
     scopedSlots: {
-      title: () => 'Custom Title'
-    }
+      title: () => 'Custom Title',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

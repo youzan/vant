@@ -15,8 +15,8 @@ test('resetSelectedSku method', () => {
       goodsId: skuData.goods_id,
       quotaUsed: skuData.quota_used,
       hideStock: skuData.sku.hide_stock,
-      startSaleNum: skuData.start_sale_num
-    }
+      startSaleNum: skuData.start_sale_num,
+    },
   });
 
   wrapper.find('.van-button--danger').trigger('click');

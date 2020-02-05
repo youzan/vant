@@ -1,6 +1,11 @@
 import { get } from 'lodash';
 import { join } from 'path';
-import { pascalize, getComponents, smartOutputFile, normalizePath } from '../common';
+import {
+  pascalize,
+  getComponents,
+  smartOutputFile,
+  normalizePath,
+} from '../common';
 import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
 
 type Options = {

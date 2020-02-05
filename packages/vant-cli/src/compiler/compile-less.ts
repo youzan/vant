@@ -13,14 +13,14 @@ class TildeResolver extends FileManager {
 const TildeResolverPlugin = {
   install(lessInstance: unknown, pluginManager: any) {
     pluginManager.addFileManager(new TildeResolver());
-  }
+  },
 };
 
 export async function compileLess(filePath: string) {
   const source = readFileSync(filePath, 'utf-8');
   const { css } = await render(source, {
     filename: filePath,
-    plugins: [TildeResolverPlugin]
+    plugins: [TildeResolverPlugin],
   });
 
   return css;

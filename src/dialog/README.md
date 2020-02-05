@@ -15,7 +15,7 @@ Vue.use(Dialog);
 
 Used to prompt for some messages, only including one confirm button
 
-```javascript
+```js
 Dialog.alert({
   title: 'Title',
   message: 'Content'
@@ -34,7 +34,7 @@ Dialog.alert({
 
 Used to confirm some messages, including a confirm button and a cancel button
 
-```javascript
+```js
  Dialog.confirm({
   title: 'Title',
   message: 'Content'
@@ -82,11 +82,7 @@ export default {
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog
-  v-model="show"
-  title="Title"
-  show-cancel-button
->
+<van-dialog v-model="show" title="Title" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
 </van-dialog>
 ```
@@ -119,14 +115,14 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Title | *string* | - |
-| width `v2.2.7` | Width | *string \| number* | `320px` |
+| width `v2.2.7` | Width | *number \| string* | `320px` |
 | message | Message | *string* | - |
 | messageAlign | Message text align，can be set to `left` `right` | *string* | `center` |
 | className | Custom className | *any* | - |
 | showConfirmButton | Whether to show confirm button | *boolean* | `true` |
 | showCancelButton | Whether to show cancel button | *boolean* | `false` |
 | cancelButtonText | Cancel button text | *string* | `Cancel` |
-| cancelButtonColor | Cancel button color | *string* | `#000` |
+| cancelButtonColor | Cancel button color | *string* | `black` |
 | confirmButtonText | Confirm button text | *string* | `Confirm` |
 | confirmButtonColor | Confirm button color | *string* | `#1989fa` |
 | overlay | Whether to show overlay | *boolean* | `true` |
@@ -145,13 +141,13 @@ export default {
 |------|------|------|------|
 | v-model | Whether to show dialog | *boolean* | - |
 | title | Title | *string* | - |
-| width `v2.2.7` | Width | *string \| number* | `320px` |
+| width `v2.2.7` | Width | *number \| string* | `320px` |
 | message | Message | *string* | - |
 | message-align | Message align，can be set to `left` `right` | *string* | `center` |
 | show-confirm-button | Whether to show confirm button | *boolean* |  `true` |
 | show-cancel-button | Whether to show cancel button | *boolean* | `false` |
 | cancel-button-text | Cancel button text | *string* | `Cancel` |
-| cancel-button-color | Cancel button color | *string* | `#000` |
+| cancel-button-color | Cancel button color | *string* | `black` |
 | confirm-button-text | Confirm button text | *string* | `Confirm` |
 | confirm-button-color | Confirm button color | *string* | `#1989fa` |
 | overlay | Whether to show overlay | *boolean* | `true` |

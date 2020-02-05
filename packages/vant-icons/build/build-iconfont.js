@@ -36,13 +36,13 @@ function font() {
         targetPath: '../src/index.less',
         normalize: true,
         firstGlyph: 0xf000,
-        cssClass: fontName // this is a trick to pass fontName to template
+        cssClass: fontName, // this is a trick to pass fontName to template
       })
     )
     .pipe(
       iconfont({
         fontName,
-        formats
+        formats,
       })
     )
     .pipe(dest(srcDir));

@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { PullRefresh } from 'vant';
 
@@ -21,7 +21,9 @@ Vue.use(PullRefresh);
 </van-pull-refresh>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -29,11 +31,10 @@ export default {
       isLoading: false
     }
   },
-
   methods: {
     onRefresh() {
       setTimeout(() => {
-        this.$toast('刷新成功');
+        Toast('刷新成功');
         this.isLoading = false;
         this.count++;
       }, 1000);
@@ -106,9 +107,9 @@ export default {
 | loosing-text | 释放过程提示文案 | *string* | `释放即可刷新...` |
 | loading-text | 加载过程提示文案 | *string* | `加载中...` |
 | success-text | 刷新成功提示文案 | *string* | - |
-| success-duration | 刷新成功提示展示时长(ms) | *number* | `500` |
-| animation-duration | 动画时长 | *number* | `300` |
-| head-height `v2.4.2` | 顶部内容高度 | *number* | `50` |
+| success-duration | 刷新成功提示展示时长(ms) | *number \| string* | `500` |
+| animation-duration | 动画时长 | *number \| string* | `300` |
+| head-height `v2.4.2` | 顶部内容高度 | *number \| string* | `50` |
 | disabled | 是否禁用下拉刷新 | *boolean* | `false` |
 
 ### Events

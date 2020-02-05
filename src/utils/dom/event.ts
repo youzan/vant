@@ -12,10 +12,10 @@ if (!isServer) {
       get() {
         /* istanbul ignore next */
         supportsPassive = true;
-      }
+      },
     });
     window.addEventListener('test-passive', null as any, opts);
-  // eslint-disable-next-line no-empty
+    // eslint-disable-next-line no-empty
   } catch (e) {}
 }
 
@@ -34,11 +34,7 @@ export function on(
   }
 }
 
-export function off(
-  target: EventTarget,
-  event: string,
-  handler: EventHandler
-) {
+export function off(target: EventTarget, event: string, handler: EventHandler) {
   if (!isServer) {
     target.removeEventListener(event, handler);
   }

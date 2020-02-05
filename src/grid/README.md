@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Grid, GridItem } from 'vant';
 
-Vue.use(Grid).use(GridItem);
+Vue.use(Grid);
+Vue.use(GridItem);
 ```
 
 ## Usage
@@ -101,13 +102,13 @@ Vue.use(Grid).use(GridItem);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| column-num `v2.0.4` | Column Num | *number* | `4` |
-| gutter | Gutter | *string \| number* | `0` |
+| column-num `v2.0.4` | Column Num | *number \| string* | `4` |
+| icon-size `v2.2.6` | Icon size | *number \| string* | `28px` |
+| gutter | Gutter | *number \| string* | `0` |
 | border | Whether to show border | *boolean* | `true` |
 | center | Whether to center content | *boolean* | `true` |
 | square | Whether to be square shape | *boolean* | `false` |
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` |
-| icon-size `v2.2.6` | Icon size | *string \| number* | `28px` |
 
 ### GridItem Props
 
@@ -116,7 +117,7 @@ Vue.use(Grid).use(GridItem);
 | text | Text | *string* | - |
 | icon | Icon name or URL | *string* | - |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info `v2.2.1` | Content of the badge | *string \| number* | - |
+| info `v2.2.1` | Content of the badge | *number \| string* | - |
 | url | Link URL | *string* | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` |

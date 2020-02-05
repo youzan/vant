@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
@@ -10,7 +11,7 @@ export type PasswordInputProps = {
   mask: boolean;
   info?: string;
   value: string;
-  length: number;
+  length: number | string;
   gutter: number;
   focused?: boolean;
   errorInfo?: string;
@@ -24,22 +25,27 @@ function PasswordInput(
   slots: DefaultSlots,
   ctx: RenderContext<PasswordInputProps>
 ) {
-  const info = props.errorInfo || props.info;
+  const { mask, value, length, gutter, focused, errorInfo } = props;
+  const info = errorInfo || props.info;
 
   const Points = [];
-  for (let i = 0; i < props.length; i++) {
-    const char = props.value[i];
-    const showBorder = i !== 0 && !props.gutter;
-    const showCursor = props.focused && i === props.value.length;
+  for (let i = 0; i < length; i++) {
+    const char = value[i];
+    const showBorder = i !== 0 && !gutter;
+    const showCursor = focused && i === value.length;
 
     let style;
-    if (i !== 0 && props.gutter) {
-      style = { marginLeft: addUnit(props.gutter) };
+    if (i !== 0 && gutter) {
+      style = { marginLeft: addUnit(gutter) };
     }
 
     Points.push(
       <li class={{ [BORDER_LEFT]: showBorder }} style={style}>
-        {props.mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }} /> : char}
+        {mask ? (
+          <i style={{ visibility: char ? 'visible' : 'hidden' }} />
+        ) : (
+          char
+        )}
         {showCursor && <div class={bem('cursor')} />}
       </li>
     );
@@ -48,7 +54,7 @@ function PasswordInput(
   return (
     <div class={bem()}>
       <ul
-        class={[bem('security'), { [BORDER_SURROUND]: !props.gutter }]}
+        class={[bem('security'), { [BORDER_SURROUND]: !gutter }]}
         onTouchstart={(event: TouchEvent) => {
           event.stopPropagation();
           emit(ctx, 'focus', event);
@@ -57,7 +63,7 @@ function PasswordInput(
       >
         {Points}
       </ul>
-      {info && <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>}
+      {info && <div class={bem(errorInfo ? 'error-info' : 'info')}>{info}</div>}
     </div>
   );
 }
@@ -69,16 +75,16 @@ PasswordInput.props = {
   errorInfo: String,
   mask: {
     type: Boolean,
-    default: true
+    default: true,
   },
   value: {
     type: String,
-    default: ''
+    default: '',
   },
   length: {
-    type: Number,
-    default: 6
-  }
+    type: [Number, String],
+    default: 6,
+  },
 };
 
 export default createComponent<PasswordInputProps>(PasswordInput);

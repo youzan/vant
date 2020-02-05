@@ -17,8 +17,8 @@ window.FileReader = function() {
     this.onload &&
       this.onload({
         target: {
-          result: mockFileDataUrl
-        }
+          result: mockFileDataUrl,
+        },
       });
   };
   this.readAsDataURL = this.readAsText;
@@ -29,8 +29,8 @@ test('disabled', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       disabled: true,
-      afterRead
-    }
+      afterRead,
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -44,8 +44,8 @@ it('result-type as text', done => {
       afterRead: readFile => {
         expect(readFile.content).toEqual(mockFileDataUrl);
         done();
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -59,8 +59,8 @@ it('result-type as file', done => {
         expect(readFile.file).toBeTruthy();
         expect(readFile.content).toBeFalsy();
         done();
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -77,8 +77,8 @@ it('set input name', done => {
       afterRead: (readFile, detail) => {
         expect(detail.name).toEqual('uploader');
         done();
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -89,8 +89,8 @@ it('unknown resultType', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'xxxx',
-      afterRead
-    }
+      afterRead,
+    },
   });
   wrapper.vm.onChange(file);
   expect(afterRead).toHaveBeenCalledTimes(0);
@@ -101,8 +101,8 @@ it('before read return false', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       beforeRead: () => false,
-      afterRead
-    }
+      afterRead,
+    },
   });
 
   const input = wrapper.find('input');
@@ -120,8 +120,8 @@ it('before read return promise and resolve', async () => {
         new Promise(resolve => {
           resolve();
         }),
-      afterRead
-    }
+      afterRead,
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -138,8 +138,8 @@ it('before read return promise and reject', async () => {
         new Promise((resolve, reject) => {
           reject();
         }),
-      afterRead
-    }
+      afterRead,
+    },
   });
 
   const input = wrapper.find('input');
@@ -153,8 +153,8 @@ it('before read return promise and reject', async () => {
 test('file size overlimit', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      maxSize: 1
-    }
+      maxSize: 1,
+    },
   });
   wrapper.vm.onChange(file);
   wrapper.vm.onChange(multiFile);
@@ -173,8 +173,8 @@ test('file size overlimit', async () => {
 it('render upload-text', () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      uploadText: 'Text'
-    }
+      uploadText: 'Text',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -186,14 +186,14 @@ it('render preview image', async () => {
       fileList: [
         { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
         { url: 'https://img.yzcdn.cn/vant/test.pdf' },
-        { file: { name: 'test.pdf' } }
-      ]
+        { file: { name: 'test.pdf' } },
+      ],
     },
     listeners: {
       input(fileList) {
         wrapper.setProps({ fileList });
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -206,8 +206,8 @@ it('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       imageFit: 'contain',
-      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }]
-    }
+      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -217,13 +217,13 @@ it('disable preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [],
-      previewImage: false
+      previewImage: false,
     },
     listeners: {
       input(fileList) {
         wrapper.setProps({ fileList });
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -236,13 +236,13 @@ it('max-count prop', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [],
-      maxCount: 1
+      maxCount: 1,
     },
     listeners: {
       input(fileList) {
         wrapper.setProps({ fileList });
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(multiFile);
@@ -255,13 +255,13 @@ it('preview-size prop', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [],
-      previewSize: 30
+      previewSize: 30,
     },
     listeners: {
       input(fileList) {
         wrapper.setProps({ fileList });
-      }
-    }
+      },
+    },
   });
 
   wrapper.vm.onChange(file);
@@ -273,8 +273,8 @@ it('preview-size prop', async () => {
 it('deletable prop', () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: [{ url: IMAGE }]
-    }
+      fileList: [{ url: IMAGE }],
+    },
   });
 
   expect(wrapper.find('.van-uploader__preview-delete').element).toBeTruthy();
@@ -287,13 +287,13 @@ it('delete preview image', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      previewSize: 30
+      previewSize: 30,
     },
     listeners: {
       input(fileList) {
         wrapper.setProps({ fileList });
-      }
-    }
+      },
+    },
   });
 
   wrapper.find('.van-uploader__preview-delete').trigger('click');
@@ -307,8 +307,8 @@ it('before-delete prop return false', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => false
-    }
+      beforeDelete: () => false,
+    },
   });
 
   wrapper.find('.van-uploader__preview-delete').trigger('click');
@@ -319,8 +319,8 @@ it('before-delete prop return true', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => true
-    }
+      beforeDelete: () => true,
+    },
   });
 
   wrapper.find('.van-uploader__preview-delete').trigger('click');
@@ -331,8 +331,8 @@ it('before-delete prop resolved', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => new Promise(resolve => resolve())
-    }
+      beforeDelete: () => new Promise(resolve => resolve()),
+    },
   });
 
   wrapper.find('.van-uploader__preview-delete').trigger('click');
@@ -344,8 +344,8 @@ it('before-delete prop rejected', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => new Promise((resolve, reject) => reject())
-    }
+      beforeDelete: () => new Promise((resolve, reject) => reject()),
+    },
   });
 
   wrapper.find('.van-uploader__preview-delete').trigger('click');
@@ -357,8 +357,8 @@ it('click to preview image', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       previewFullImage: false,
-      fileList: [{ url: IMAGE }, { url: PDF }]
-    }
+      fileList: [{ url: IMAGE }, { url: PDF }],
+    },
   });
 
   wrapper.find('.van-image').trigger('click');
@@ -369,7 +369,10 @@ it('click to preview image', () => {
   wrapper.find('.van-image').trigger('click');
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
-  expect(imagePreviewNode2.querySelectorAll('.van-image-preview__image').length).toEqual(1);
+  const images = imagePreviewNode2.querySelectorAll(
+    '.van-image-preview__image'
+  );
+  expect(images.length).toEqual(1);
 });
 
 it('closeImagePreview method', () => {
@@ -377,9 +380,9 @@ it('closeImagePreview method', () => {
   const wrapper = mount(Uploader, {
     mocks: {
       imagePreview: {
-        close
-      }
-    }
+        close,
+      },
+    },
   });
 
   wrapper.vm.closeImagePreview();
@@ -394,20 +397,23 @@ it('click-preview event', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       previewFullImage: false,
-      fileList: [{ url: IMAGE }, { url: PDF }]
-    }
+      fileList: [{ url: IMAGE }, { url: PDF }],
+    },
   });
 
   wrapper.find('.van-image').trigger('click');
   expect(wrapper.emitted('click-preview')[0][0]).toEqual({ url: IMAGE });
-  expect(wrapper.emitted('click-preview')[0][1]).toEqual({ name: '', index: 0 });
+  expect(wrapper.emitted('click-preview')[0][1]).toEqual({
+    name: '',
+    index: 0,
+  });
 });
 
 it('close-preview event', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      fileList: [{ url: IMAGE }]
-    }
+      fileList: [{ url: IMAGE }],
+    },
   });
 
   wrapper.find('.van-image').trigger('click');

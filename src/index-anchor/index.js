@@ -8,7 +8,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanIndexBar', { indexKey: 'childrenIndex' })],
 
   props: {
-    index: [Number, String]
+    index: [Number, String],
   },
 
   data() {
@@ -16,7 +16,7 @@ export default createComponent({
       top: 0,
       left: null,
       width: null,
-      active: false
+      active: false,
     };
   },
 
@@ -32,10 +32,10 @@ export default createComponent({
           left: this.left ? `${this.left}px` : null,
           width: this.width ? `${this.width}px` : null,
           transform: `translate3d(0, ${this.top}px, 0)`,
-          color: this.parent.highlightColor
+          color: this.parent.highlightColor,
         };
       }
-    }
+    },
   },
 
   mounted() {
@@ -45,7 +45,7 @@ export default createComponent({
   methods: {
     scrollIntoView() {
       this.$el.scrollIntoView();
-    }
+    },
   },
 
   render() {
@@ -61,5 +61,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

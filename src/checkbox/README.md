@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox).use(CheckboxGroup);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 ```
 
 ## Usage
@@ -17,7 +18,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 <van-checkbox v-model="checked">Checkbox</van-checkbox>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -96,7 +97,7 @@ When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an 
 </van-checkbox-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -192,7 +193,7 @@ export default {
 | disabled | Disable checkbox | *boolean* | `false` |
 | label-disabled | Whether to disable label click | *boolean* | `false` |
 | label-position | Can be set to `left` | *string* | `right` |
-| icon-size | Icon size | *string \| number* | `20px` |
+| icon-size | Icon size | *number \| string* | `20px` |
 | checked-color | Checked color | *string* | `#1989fa` | - |
 | bind-group `v2.2.4` | Whether to bind with CheckboxGroup | *boolean* | `true` |
 
@@ -201,9 +202,9 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Names of all checked checkboxes | *any[]* | - |
-| max | Maximum amount of checked options | *number* | `0`(Unlimited) |
+| max | Maximum amount of checked options | *number \| string* | `0`(Unlimited) |
 | disabled | Disable all checkboxes | *boolean* | `false` |
-| icon-size `v2.2.3` | Icon size of all checkboxes | *string \| number* | `20px` |
+| icon-size `v2.2.3` | Icon size of all checkboxes | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all checkboxes | *string* | `#1989fa` | - |
 
 ### Checkbox Events

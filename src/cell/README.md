@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell).use(CellGroup);
+Vue.use(Cell);
+Vue.use(CellGroup);
 ```
 
 ## Usage
@@ -114,8 +115,8 @@ Vue.use(Cell).use(CellGroup);
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | icon | Left Icon | *string* | - |
-| title | Title | *string \| number* | - |
-| value | Right text | *string \| number* | - |
+| title | Title | *number \| string* | - |
+| value | Right text | *number \| string* | - |
 | label | Description below the title | *string* | - |
 | size | Size，can be set to `large` | *string* | - |
 | border | Whether to show inner border | *boolean* | `true` |
@@ -126,7 +127,7 @@ Vue.use(Cell).use(CellGroup);
 | clickable | Whether to show click feedback when clicked | *boolean* | `false` |
 | is-link | Whether to show link icon | *boolean* | `false` |
 | required | Whether to show required mark | *boolean* | `false` |
-| arrow-direction | Can be set to `left` `up` `down` | *string* | - |
+| arrow-direction | Can be set to `left` `up` `down` | *string* | `right` |
 | title-style | Title style | *any* | - |
 | title-class | Title className | *any* | - |
 | value-class | Value className | *any* | - |

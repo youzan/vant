@@ -60,7 +60,7 @@ export default {
       reset: '重置',
       pause: '暂停',
       start: '开始',
-      finished: '倒计时结束'
+      finished: '倒计时结束',
     },
     'en-US': {
       millisecond: 'Millisecond',
@@ -71,13 +71,13 @@ export default {
       reset: 'Reset',
       pause: 'Pause',
       start: 'Start',
-      finished: 'Finished'
-    }
+      finished: 'Finished',
+    },
   },
 
   data() {
     return {
-      time: 30 * 60 * 60 * 1000
+      time: 30 * 60 * 60 * 1000,
     };
   },
 
@@ -92,8 +92,8 @@ export default {
 
     reset() {
       this.$refs.countDown.reset();
-    }
-  }
+    },
+  },
 };
 </script>
 

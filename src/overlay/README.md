@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Overlay } from 'vant';
 
@@ -15,7 +15,6 @@ Vue.use(Overlay);
 
 ```html
 <van-button type="primary" text="Show Overlay" @click="show = true" />
-
 <van-overlay :show="show" @click="show = false" />
 ```
 
@@ -61,8 +60,8 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | show | Whether to show overlay | *boolean* | `false` |
-| z-index | z-index | *string \| number* | `1` |
-| duration | Animation duration | *string \| number* | `0.3` |
+| z-index | z-index | *number \| string* | `1` |
+| duration | Animation duration | *number \| string* | `0.3` |
 | class-name | ClassName | *string* | - |
 | custom-class `v2.2.5` | Custom style | *object* | - |
 

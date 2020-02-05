@@ -13,7 +13,9 @@
         <van-dropdown-item :title="$t('itemTitle')" ref="item">
           <van-switch-cell v-model="switch1" :title="$t('switchTitle1')" />
           <van-switch-cell v-model="switch2" :title="$t('switchTitle2')" />
-          <van-button type="info" block @click="onConfirm">{{ $t('confirm') }}</van-button>
+          <van-button type="info" block @click="onConfirm">
+            {{ $t('confirm') }}
+          </van-button>
         </van-dropdown-item>
       </van-dropdown-menu>
     </demo-block>
@@ -55,13 +57,13 @@ export default {
       option1: [
         { text: '全部商品', value: 0 },
         { text: '新款商品', value: 1 },
-        { text: '活动商品', value: 2 }
+        { text: '活动商品', value: 2 },
       ],
       option2: [
         { text: '默认排序', value: 'a' },
         { text: '好评排序', value: 'b' },
-        { text: '销量排序', value: 'c' }
-      ]
+        { text: '销量排序', value: 'c' },
+      ],
     },
     'en-US': {
       disableMenu: 'Disable Menu',
@@ -74,14 +76,14 @@ export default {
       option1: [
         { text: 'Option1', value: 0 },
         { text: 'Option2', value: 1 },
-        { text: 'Option3', value: 2 }
+        { text: 'Option3', value: 2 },
       ],
       option2: [
         { text: 'Option A', value: 'a' },
         { text: 'Option B', value: 'b' },
-        { text: 'Option C', value: 'c' }
-      ]
-    }
+        { text: 'Option C', value: 'c' },
+      ],
+    },
   },
 
   data() {
@@ -89,7 +91,7 @@ export default {
       switch1: true,
       switch2: false,
       value1: 0,
-      value2: 'a'
+      value2: 'a',
     };
   },
 
@@ -100,13 +102,13 @@ export default {
 
     option2() {
       return this.$t('option2');
-    }
+    },
   },
 
   methods: {
     onConfirm() {
       this.$refs.item.toggle();
-    }
-  }
+    },
+  },
 };
 </script>

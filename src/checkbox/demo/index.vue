@@ -41,7 +41,7 @@
       <van-checkbox v-model="checkbox3">
         {{ $t('customIcon') }}
         <template #icon="{ checked }">
-          <img :src="checked ? activeIcon : inactiveIcon">
+          <img :src="checked ? activeIcon : inactiveIcon" />
         </template>
       </van-checkbox>
     </demo-block>
@@ -70,8 +70,12 @@
       </van-checkbox-group>
 
       <div class="demo-checkbox-buttons">
-        <van-button type="primary" @click="checkAll">{{ $t('checkAll') }}</van-button>
-        <van-button type="info" @click="toggleAll">{{ $t('inverse') }}</van-button>
+        <van-button type="primary" @click="checkAll">
+          {{ $t('checkAll') }}
+        </van-button>
+        <van-button type="info" @click="toggleAll">
+          {{ $t('inverse') }}
+        </van-button>
       </div>
     </demo-block>
 
@@ -110,7 +114,7 @@ export default {
       toggleAll: '全选与反选',
       checkAll: '全选',
       inverse: '反选',
-      disabledLabelClick: '禁用文本点击'
+      disabledLabelClick: '禁用文本点击',
     },
     'en-US': {
       checkbox: 'Checkbox',
@@ -124,8 +128,8 @@ export default {
       toggleAll: 'Toggle All',
       checkAll: 'Check All',
       inverse: 'Inverse',
-      disabledLabelClick: 'Disable the click event of label'
-    }
+      disabledLabelClick: 'Disable the click event of label',
+    },
   },
 
   data() {
@@ -136,17 +140,13 @@ export default {
       checkboxShape: true,
       checkboxLabel: true,
       checboxIcon: true,
-      list: [
-        'a',
-        'b',
-        'c'
-      ],
+      list: ['a', 'b', 'c'],
       result: ['a', 'b'],
       result2: [],
       result3: [],
       checkAllResult: [],
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
   },
 
@@ -161,13 +161,13 @@ export default {
 
     toggleAll() {
       this.$refs.group.toggleAll();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-checkbox {
   background: @white;

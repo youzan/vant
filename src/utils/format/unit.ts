@@ -1,5 +1,5 @@
 import { isDef } from '..';
-import { isNumber } from '../validate/number';
+import { isNumeric } from '../validate/number';
 
 export function addUnit(value?: string | number): string | undefined {
   if (!isDef(value)) {
@@ -7,5 +7,5 @@ export function addUnit(value?: string | number): string | undefined {
   }
 
   value = String(value);
-  return isNumber(value) ? `${value}px` : value;
+  return isNumeric(value) ? `${value}px` : value;
 }

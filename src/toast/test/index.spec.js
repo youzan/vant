@@ -7,7 +7,7 @@ import { lockClick } from '../lock-click';
 test('create a forbidClick toast', async () => {
   const toast = Toast({
     forbidClick: true,
-    type: 'success'
+    type: 'success',
   });
 
   await later();
@@ -27,7 +27,7 @@ test('create a forbidClick toast', async () => {
 
 it('toast disappeared after duration', async () => {
   const toast = Toast({
-    duration: 10
+    duration: 10,
   });
 
   await later(50);
@@ -36,7 +36,7 @@ it('toast disappeared after duration', async () => {
 
 test('show loading toast', async () => {
   const toast = Toast.loading({
-    message: 'Message'
+    message: 'Message',
   });
 
   await later();
@@ -46,7 +46,7 @@ test('show loading toast', async () => {
 test('show html toast', async () => {
   const toast = Toast({
     type: 'html',
-    message: '<div>Message</div>'
+    message: '<div>Message</div>',
   });
 
   await later();
@@ -56,7 +56,7 @@ test('show html toast', async () => {
 test('icon prop', async () => {
   const toast = Toast({
     message: 'Message',
-    icon: 'star-o'
+    icon: 'star-o',
   });
 
   await later();
@@ -67,7 +67,7 @@ test('icon-prefix prop', async () => {
   const toast = Toast({
     message: 'Message',
     icon: 'star-o',
-    iconPrefix: 'my-icon'
+    iconPrefix: 'my-icon',
   });
 
   await later();
@@ -139,7 +139,7 @@ test('toast duration 0', () => {
   Toast.allowMultiple();
   const toast = Toast({
     message: 'toast',
-    duration: 0
+    duration: 0,
   });
   expect(toast.timer).toBeFalsy();
   Toast.allowMultiple(false);
@@ -150,7 +150,7 @@ test('onClose callback', () => {
   const onClose = jest.fn();
   const toast = Toast({
     message: 'toast',
-    onClose
+    onClose,
   });
 
   toast.clear();
@@ -161,7 +161,7 @@ test('onClose callback', () => {
 test('closeOnClick option', async () => {
   Toast.allowMultiple();
   const toast = Toast({
-    message: 'toast'
+    message: 'toast',
   });
 
   await later();

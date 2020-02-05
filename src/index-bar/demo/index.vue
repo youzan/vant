@@ -3,10 +3,7 @@
     <van-tabs v-model="activeTab" :color="BLUE">
       <van-tab :title="$t('basicUsage')">
         <van-index-bar>
-          <div
-            v-for="index in indexList"
-            :key="index"
-          >
+          <div v-for="index in indexList" :key="index">
             <van-index-anchor :index="index" />
             <van-cell :title="$t('text')" />
             <van-cell :title="$t('text')" />
@@ -17,10 +14,7 @@
 
       <van-tab :title="$t('customIndexList')">
         <van-index-bar :index-list="customIndexList">
-          <div
-            v-for="index in customIndexList"
-            :key="index"
-          >
+          <div v-for="index in customIndexList" :key="index">
             <van-index-anchor :index="index">
               {{ $t('title') + index }}
             </van-index-anchor>
@@ -41,12 +35,12 @@ export default {
   i18n: {
     'zh-CN': {
       text: '文本',
-      customIndexList: '自定义索引列表'
+      customIndexList: '自定义索引列表',
     },
     'en-US': {
       text: 'Text',
-      customIndexList: 'Custom Index List'
-    }
+      customIndexList: 'Custom Index List',
+    },
   },
 
   data() {
@@ -60,8 +54,8 @@ export default {
       BLUE,
       activeTab: 0,
       indexList,
-      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10]
+      customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
     };
-  }
+  },
 };
 </script>

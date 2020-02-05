@@ -2,11 +2,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell).use(CouponList);
+Vue.use(CouponCell);
+Vue.use(CouponList);
 ```
 
 ## 代码演示
@@ -20,7 +21,6 @@ Vue.use(CouponCell).use(CouponList);
   :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
-
 <!-- 优惠券列表 -->
 <van-popup
   v-model="showList"
@@ -38,7 +38,7 @@ Vue.use(CouponCell).use(CouponList);
 </van-popup>
 ```
 
-```javascript
+```js
 const coupon = {
   available: 1,
   condition: '无使用门槛\n最多优惠12元',
@@ -59,7 +59,6 @@ export default {
       disabledCoupons: [coupon]
     }
   },
-
   methods: {
     onChange(index) {
       this.showList = false;
@@ -79,7 +78,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | title | 单元格标题 | *string* | `优惠券` |
-| chosen-coupon | 当前选中优惠券的索引 | *number* | `-1` |
+| chosen-coupon | 当前选中优惠券的索引 | *number \| string* | `-1` |
 | coupons | 可用优惠券列表 | *Coupon[]* | `[]` |
 | editable | 能否切换优惠券 | *boolean* | `true` |
 | border | 是否显示内边框 | *boolean* | `true` |

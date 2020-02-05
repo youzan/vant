@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Switch } from 'vant';
 
@@ -19,7 +19,7 @@ Vue.use(Switch);
 <van-switch v-model="checked" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -76,7 +76,6 @@ export default {
       checked: true
     };
   },
-
   methods: {
     onInput(checked) {
       Dialog.confirm({
@@ -107,9 +106,9 @@ export default {
 | v-model | 开关选中状态 | *any* | `false` |
 | loading | 是否为加载状态 | *boolean* | `false` |
 | disabled | 是否为禁用状态 | *boolean* | `false` |
-| size `v2.2.11` | 开关尺寸，默认单位为`px` | *string \| number* | `30px` |
+| size `v2.2.11` | 开关尺寸，默认单位为`px` | *number \| string* | `30px` |
 | active-color | 打开时的背景色 | *string* | `#1989fa` |
-| inactive-color | 关闭时的背景色 | *string* | `#fff` |
+| inactive-color | 关闭时的背景色 | *string* | `white` |
 | active-value | 打开时的值 | *any* | `true` |
 | inactive-value | 关闭时的值 | *any* | `false` |
 

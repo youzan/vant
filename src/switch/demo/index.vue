@@ -46,7 +46,7 @@ export default {
       withCell: '搭配单元格使用',
       customSize: '自定义大小',
       customColor: '自定义颜色',
-      asyncControl: '异步控制'
+      asyncControl: '异步控制',
     },
     'en-US': {
       title: 'Title',
@@ -55,8 +55,8 @@ export default {
       withCell: 'Inside a Cell',
       customSize: 'Custom Size',
       customColor: 'Custom Color',
-      asyncControl: 'Async Control'
-    }
+      asyncControl: 'Async Control',
+    },
   },
 
   data() {
@@ -66,7 +66,7 @@ export default {
       checked3: true,
       checked4: true,
       checked5: true,
-      checked6: false
+      checked6: false,
     };
   },
 
@@ -75,13 +75,13 @@ export default {
       this.$dialog
         .confirm({
           title: this.$t('title'),
-          message: this.$t('message')
+          message: this.$t('message'),
         })
         .then(() => {
           this.checked4 = checked;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

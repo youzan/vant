@@ -2,18 +2,13 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
-import {
-  GoodsAction,
-  GoodsActionButton,
-  GoodsActionIcon
-} from 'vant';
+import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
 
-Vue
-  .use(GoodsAction)
-  .use(GoodsActionButton)
-  .use(GoodsActionIcon);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
 ```
 
 ## Usage
@@ -29,7 +24,9 @@ Vue
 </van-goods-action>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickIcon() {
@@ -95,7 +92,7 @@ Use `info` prop to show badge in icon
 | icon | Icon | *string* | - |
 | color `v2.4.2` | Icon color | *string* | `#323233` |
 | icon-class | Icon class name | *any* | `''` |
-| info | Content of the badge | *string \| number* | - |
+| info | Content of the badge | *number \| string* | - |
 | url | Link | *string* | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` |
@@ -107,6 +104,7 @@ Use `info` prop to show badge in icon
 | text | Button text | *string* | - |
 | type | Button type, Can be set to `primary` `info` `warning` `danger` | *string* | `default` |
 | color `v2.1.8` | Button color, support linear-gradient | *string* | - |
+| icon `v2.4.4` | Left Icon | *string* | - |
 | primary | Is primary button (red color) | *boolean* | `false` |
 | disabled | Whether to disable button | *boolean* | `false` |
 | loading | Whether show loading status | *boolean* | `false` |

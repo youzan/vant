@@ -2,11 +2,11 @@
 
 ### 介绍
 
-省市区选择组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+省市区三级联动选择，通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 引入
 
-```javascript
+```js
 import Vue from 'vue';
 import { Area } from 'vant';
 
@@ -59,16 +59,16 @@ Vue.use(Area);
 |------|------|------|------|
 | value | 当前选中的省市区`code` | *string* | - |
 | title | 顶部栏标题 | *string* | - |
-| area-list | 省市区数据，格式见下方 | *object* | - |
-| columns-num | 显示列数，3-省市区，2-省市，1-省 | *string \| number* | `3` |
-| columns-placeholder `v2.2.5` | 列占位提示文字 | *string[]* | `[]` |
-| loading | 是否显示加载状态 | *boolean* | `false` |
-| item-height | 选项高度 | *number* | `44` |
-| visible-item-count | 可见的选项个数 | *number* | `5` |
 | confirm-button-text | 确认按钮文字 | *string* | `确认` |
 | cancel-button-text | 取消按钮文字 | *string* | `取消` |
+| area-list | 省市区数据，格式见下方 | *object* | - |
+| columns-placeholder `v2.2.5` | 列占位提示文字 | *string[]* | `[]` |
+| loading | 是否显示加载状态 | *boolean* | `false` |
+| item-height | 选项高度 | *number \| string* | `44` |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | *number \| string* | `3` |
+| visible-item-count | 可见的选项个数 | *number \| string* | `5` |
+| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number \| string*  | `1000` |
 | is-oversea-code `v2.1.4` | 根据`code`校验海外地址，海外地址会划分至单独的分类 | *() => boolean* | - |
-| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number*  | `1000` |
 
 ### Events
 
@@ -80,7 +80,7 @@ Vue.use(Area);
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Area 实例并调用实例方法
+通过 ref 可以获取到 Area 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -94,7 +94,7 @@ Vue.use(Area);
 
 `AreaList`具体格式如下：
 
-```javascript
+```js
 {
   province_list: {
     110000: '北京市',
@@ -129,7 +129,7 @@ Vue.use(Area);
 
 `code` 代表被选中的地区编码， `name` 代表被选中的地区名称
 
-```javascript
+```js
 [
   {
     code: '110000',

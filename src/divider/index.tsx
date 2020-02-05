@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 
@@ -27,7 +28,7 @@ function Divider(
       class={bem({
         dashed: props.dashed,
         hairline: props.hairline,
-        [`content-${props.contentPosition}`]: slots.default
+        [`content-${props.contentPosition}`]: slots.default,
       })}
       {...inherit(ctx, true)}
     >
@@ -40,12 +41,12 @@ Divider.props = {
   dashed: Boolean,
   hairline: {
     type: Boolean,
-    default: true
+    default: true,
   },
   contentPosition: {
     type: String,
-    default: 'center'
-  }
+    default: 'center',
+  },
 };
 
 export default createComponent<DividerProps>(Divider);

@@ -9,25 +9,27 @@ export default createComponent({
     justify: String,
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
     gutter: {
       type: [Number, String],
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   methods: {
     onClick(event) {
       this.$emit('click', event);
-    }
+    },
   },
 
   render() {
     const { align, justify } = this;
     const flex = this.type === 'flex';
     const margin = `-${Number(this.gutter) / 2}px`;
-    const style = this.gutter ? { marginLeft: margin, marginRight: margin } : {};
+    const style = this.gutter
+      ? { marginLeft: margin, marginRight: margin }
+      : {};
 
     return (
       <this.tag
@@ -35,12 +37,12 @@ export default createComponent({
         class={bem({
           flex,
           [`align-${align}`]: flex && align,
-          [`justify-${justify}`]: flex && justify
+          [`justify-${justify}`]: flex && justify,
         })}
         onClick={this.onClick}
       >
         {this.slots()}
       </this.tag>
     );
-  }
+  },
 });

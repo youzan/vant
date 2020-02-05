@@ -8,8 +8,8 @@ test('confirm & cancel event', () => {
   const wrapper = mount(DatetimePicker, {
     listeners: {
       confirm: onConfirm,
-      cancel: onCancel
-    }
+      cancel: onCancel,
+    },
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
@@ -24,8 +24,8 @@ test('time type', () => {
     propsData: {
       type: 'time',
       minHour: 22,
-      minMinute: 58
-    }
+      minMinute: 58,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

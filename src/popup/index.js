@@ -9,30 +9,30 @@ export default createComponent({
 
   props: {
     round: Boolean,
-    duration: Number,
+    duration: [Number, String],
     closeable: Boolean,
     transition: String,
     safeAreaInsetBottom: Boolean,
     closeIcon: {
       type: String,
-      default: 'cross'
+      default: 'cross',
     },
     closeIconPosition: {
       type: String,
-      default: 'top-right'
+      default: 'top-right',
     },
     position: {
       type: String,
-      default: 'center'
+      default: 'center',
     },
     overlay: {
       type: Boolean,
-      default: true
+      default: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   beforeCreate() {
@@ -49,14 +49,16 @@ export default createComponent({
     }
 
     const { round, position, duration } = this;
+    const isCenter = position === 'center';
 
     const transitionName =
       this.transition ||
-      (position === 'center' ? 'van-fade' : `van-popup-slide-${position}`);
+      (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
     const style = {};
     if (isDef(duration)) {
-      style.transitionDuration = `${duration}s`;
+      const key = isCenter ? 'animationDuration' : 'transitionDuration';
+      style[key] = `${duration}s`;
     }
 
     return (
@@ -71,7 +73,7 @@ export default createComponent({
           class={bem({
             round,
             [position]: position,
-            'safe-area-inset-bottom': this.safeAreaInsetBottom
+            'safe-area-inset-bottom': this.safeAreaInsetBottom,
           })}
           onClick={this.onClick}
         >
@@ -88,5 +90,5 @@ export default createComponent({
         </div>
       </transition>
     );
-  }
+  },
 });

@@ -1,7 +1,9 @@
 <template>
   <demo-section>
     <demo-block :title="$t('default')">
-      <van-button type="primary" @touchstart.stop="keyboard = 'default'">{{ $t('button1') }}</van-button>
+      <van-button type="primary" @touchstart.stop="keyboard = 'default'">
+        {{ $t('button1') }}
+      </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'default'"
@@ -14,7 +16,9 @@
     </demo-block>
 
     <demo-block :title="$t('custom')">
-      <van-button type="info" @touchstart.stop="keyboard = 'custom'">{{ $t('button2') }}</van-button>
+      <van-button type="info" @touchstart.stop="keyboard = 'custom'">
+        {{ $t('button2') }}
+      </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'custom'"
@@ -45,7 +49,9 @@
     </demo-block>
 
     <demo-block :title="$t('extraKey')">
-      <van-button plain type="primary" @touchstart.stop="keyboard = 'extraKey'">{{ $t('button3') }}</van-button>
+      <van-button plain type="primary" @touchstart.stop="keyboard = 'extraKey'">
+        {{ $t('button3') }}
+      </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'extraKey'"
@@ -58,7 +64,9 @@
     </demo-block>
 
     <demo-block :title="$t('title')">
-      <van-button plain type="info" @touchstart.stop="keyboard = 'title'">{{ $t('button4') }}</van-button>
+      <van-button plain type="info" @touchstart.stop="keyboard = 'title'">
+        {{ $t('button4') }}
+      </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'title'"
@@ -88,7 +96,7 @@ export default {
       bindValue: '双向绑定',
       clickToInput: '点此输入',
       extraKey: '左下角按键内容',
-      title: '键盘标题'
+      title: '键盘标题',
     },
     'en-US': {
       default: 'Default style',
@@ -102,14 +110,14 @@ export default {
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'Bottom Left Button Content',
-      title: 'Keyboard Title'
-    }
+      title: 'Keyboard Title',
+    },
   },
 
   data() {
     return {
       value: '',
-      keyboard: 'default'
+      keyboard: 'default',
     };
   },
 
@@ -120,8 +128,8 @@ export default {
 
     onDelete() {
       this.$toast(this.$t('delete'));
-    }
-  }
+    },
+  },
 };
 </script>
 

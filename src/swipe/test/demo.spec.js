@@ -8,10 +8,10 @@ snapshotDemo(Demo, {
   beforeTest: () => {
     restore = mockGetBoundingClientRect({
       width: 100,
-      height: 100
+      height: 100,
     });
   },
   afterTest: () => {
     restore();
-  }
+  },
 });

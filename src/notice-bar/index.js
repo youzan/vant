@@ -11,18 +11,18 @@ export default createComponent({
     leftIcon: String,
     wrapable: Boolean,
     background: String,
-    delay: {
-      type: [Number, String],
-      default: 1
-    },
     scrollable: {
       type: Boolean,
-      default: true
+      default: true,
+    },
+    delay: {
+      type: [Number, String],
+      default: 1,
     },
     speed: {
-      type: Number,
-      default: 50
-    }
+      type: [Number, String],
+      default: 50,
+    },
   },
 
   data() {
@@ -32,7 +32,7 @@ export default createComponent({
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
-      animationClass: ''
+      animationClass: '',
     };
   },
 
@@ -55,8 +55,8 @@ export default createComponent({
           }
         });
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
 
   methods: {
@@ -73,7 +73,7 @@ export default createComponent({
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = bem('play--infinite');
       });
-    }
+    },
   },
 
   render() {
@@ -81,13 +81,13 @@ export default createComponent({
 
     const barStyle = {
       color: this.color,
-      background: this.background
+      background: this.background,
     };
 
     const contentStyle = {
       paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
       animationDelay: (this.firstRound ? this.delay : 0) + 's',
-      animationDuration: this.duration + 's'
+      animationDuration: this.duration + 's',
     };
 
     function LeftIcon() {
@@ -109,9 +109,21 @@ export default createComponent({
         return slot;
       }
 
-      const iconName = mode === 'closeable' ? 'cross' : mode === 'link' ? 'arrow' : '';
+      let iconName;
+      if (mode === 'closeable') {
+        iconName = 'cross';
+      } else if (mode === 'link') {
+        iconName = 'arrow';
+      }
+
       if (iconName) {
-        return <Icon class={bem('right-icon')} name={iconName} onClick={onClickIcon} />;
+        return (
+          <Icon
+            class={bem('right-icon')}
+            name={iconName}
+            onClick={onClickIcon}
+          />
+        );
       }
     }
 
@@ -132,7 +144,7 @@ export default createComponent({
             class={[
               bem('content'),
               this.animationClass,
-              { 'van-ellipsis': !this.scrollable && !this.wrapable }
+              { 'van-ellipsis': !this.scrollable && !this.wrapable },
             ]}
             style={contentStyle}
             onAnimationend={this.onAnimationEnd}
@@ -144,5 +156,5 @@ export default createComponent({
         {RightIcon()}
       </div>
     );
-  }
+  },
 });

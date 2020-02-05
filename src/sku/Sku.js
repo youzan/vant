@@ -36,7 +36,7 @@ export default createComponent({
     hideStock: Boolean,
     addCartText: String,
     stepperTitle: String,
-    getContainer: Function,
+    getContainer: [String, Function],
     hideQuotaText: Boolean,
     hideSelectedText: Boolean,
     resetStepperOnHide: Boolean,
@@ -48,19 +48,19 @@ export default createComponent({
     properties: Array,
     quota: {
       type: Number,
-      default: 0
+      default: 0,
     },
     quotaUsed: {
       type: Number,
-      default: 0
+      default: 0,
     },
     startSaleNum: {
       type: Number,
-      default: 1
+      default: 1,
     },
     initialSku: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     stockThreshold: {
       type: Number,
@@ -68,27 +68,27 @@ export default createComponent({
     },
     showSoldoutSku: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showAddCartBtn: {
       type: Boolean,
-      default: true
+      default: true,
     },
     bodyOffsetTop: {
       type: Number,
-      default: 200
+      default: 200,
     },
     messageConfig: {
       type: Object,
       default: () => ({
         placeholderMap: {},
         uploadImg: () => Promise.resolve(),
-        uploadMaxSize: 5
-      })
+        uploadMaxSize: 5,
+      }),
     },
     customStepperConfig: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
   },
 
@@ -97,7 +97,7 @@ export default createComponent({
       selectedSku: {},
       selectedProp: {},
       selectedNum: 1,
-      show: this.value
+      show: this.value,
     };
   },
 
@@ -108,7 +108,7 @@ export default createComponent({
         this.$emit('sku-close', {
           selectedSkuValues: this.selectedSkuValues,
           selectedNum: this.selectedNum,
-          selectedSkuComb: this.selectedSkuComb
+          selectedSkuComb: this.selectedSkuComb,
         });
 
         if (this.resetStepperOnHide) {
@@ -138,8 +138,8 @@ export default createComponent({
       return [
         'van-sku-group-container',
         {
-          'van-sku-group-container--hide-soldout': !this.showSoldoutSku
-        }
+          'van-sku-group-container--hide-soldout': !this.showSoldoutSku,
+        },
       ];
     },
 
@@ -152,7 +152,7 @@ export default createComponent({
       const maxHeight = window.innerHeight - this.bodyOffsetTop;
 
       return {
-        maxHeight: maxHeight + 'px'
+        maxHeight: maxHeight + 'px',
       };
     },
 
@@ -162,7 +162,9 @@ export default createComponent({
         return false;
       }
       // 属性未全选
-      if (this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)) {
+      if (
+        this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)
+      ) {
         return false;
       }
       return true;
@@ -189,12 +191,18 @@ export default createComponent({
           skuComb = {
             id: this.sku.collection_id,
             price: Math.round(this.sku.price * 100),
-            stock_num: this.sku.stock_num
+            stock_num: this.sku.stock_num,
           };
         }
         if (skuComb) {
-          skuComb.properties = getSelectedProperties(this.propList, this.selectedProp);
-          skuComb.property_price = this.selectedPropValues.reduce((acc, cur) => acc + (cur.price || 0), 0);
+          skuComb.properties = getSelectedProperties(
+            this.propList,
+            this.selectedProp
+          );
+          skuComb.property_price = this.selectedPropValues.reduce(
+            (acc, cur) => acc + (cur.price || 0),
+            0
+          );
         }
       }
       return skuComb;
@@ -210,7 +218,10 @@ export default createComponent({
 
     price() {
       if (this.selectedSkuComb) {
-        return ((this.selectedSkuComb.price + this.selectedSkuComb.property_price) / 100).toFixed(2);
+        return (
+          (this.selectedSkuComb.price + this.selectedSkuComb.property_price) /
+          100
+        ).toFixed(2);
       }
       // sku.price是一个格式化好的价格区间
       return this.sku.price;
@@ -218,7 +229,11 @@ export default createComponent({
 
     originPrice() {
       if (this.selectedSkuComb && this.selectedSkuComb.origin_price) {
-        return ((this.selectedSkuComb.origin_price + this.selectedSkuComb.property_price) / 100).toFixed(2);
+        return (
+          (this.selectedSkuComb.origin_price +
+            this.selectedSkuComb.property_price) /
+          100
+        ).toFixed(2);
       }
       return this.sku.origin_price;
     },
@@ -269,10 +284,14 @@ export default createComponent({
 
       return [
         `${t('stock')} `,
-        <span class={bem('stock-num', { highlight: this.stock < this.stockThreshold })}>
+        <span
+          class={bem('stock-num', {
+            highlight: this.stock < this.stockThreshold,
+          })}
+        >
           {this.stock}
         </span>,
-        ` ${t('stockUnit')}`
+        ` ${t('stockUnit')}`,
       ];
     },
 
@@ -289,8 +308,10 @@ export default createComponent({
         .filter(item => (this.selectedProp[item.k_id] || []).length < 1)
         .map(item => item.k);
 
-      return `${t('select')} ${unselectedSku.concat(unselectedProp).join('；')}`;
-    }
+      return `${t('select')} ${unselectedSku
+        .concat(unselectedProp)
+        .join('；')}`;
+    },
   },
 
   created() {
@@ -335,7 +356,8 @@ export default createComponent({
 
       // 重置 selectedSku
       this.skuTree.forEach(item => {
-        this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+        this.selectedSku[item.k_s] =
+          this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
       });
 
       // 只有一个 sku 规格值时默认选中
@@ -389,11 +411,15 @@ export default createComponent({
     },
 
     getSkuCartMessages() {
-      return this.$refs.skuMessages ? this.$refs.skuMessages.getCartMessages() : {};
+      return this.$refs.skuMessages
+        ? this.$refs.skuMessages.getCartMessages()
+        : {};
     },
 
     validateSkuMessages() {
-      return this.$refs.skuMessages ? this.$refs.skuMessages.validateMessages() : '';
+      return this.$refs.skuMessages
+        ? this.$refs.skuMessages.validateMessages()
+        : '';
     },
 
     validateSku() {
@@ -418,7 +444,10 @@ export default createComponent({
       // 点击已选中的sku时则取消选中
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? { ...this.selectedSku, [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID }
+          ? {
+            ...this.selectedSku,
+            [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
+          }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {
@@ -459,7 +488,7 @@ export default createComponent({
       const params = {
         index,
         imageList: this.imageList,
-        indexImage
+        indexImage,
       };
 
       this.$emit('open-preview', params);
@@ -470,7 +499,7 @@ export default createComponent({
         closeOnPopstate: true,
         onClose: () => {
           this.$emit('close-preview', params);
-        }
+        },
       });
     },
 
@@ -541,9 +570,9 @@ export default createComponent({
         selectedNum: this.selectedNum,
         selectedSkuComb: this.selectedSkuComb,
         messages: this.getSkuMessages(),
-        cartMessages: this.getSkuCartMessages()
+        cartMessages: this.getSkuCartMessages(),
       };
-    }
+    },
   },
 
   render() {
@@ -561,7 +590,7 @@ export default createComponent({
       selectedProp,
       selectedNum,
       stepperTitle,
-      selectedSkuComb
+      selectedSkuComb,
     } = this;
 
     const slotsProps = {
@@ -570,24 +599,32 @@ export default createComponent({
       selectedNum,
       skuEventBus,
       selectedSku,
-      selectedSkuComb
+      selectedSkuComb,
     };
     const slots = name => this.slots(name, slotsProps);
 
     const Header = slots('sku-header') || (
-      <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>
+      <SkuHeader
+        sku={sku}
+        goods={goods}
+        skuEventBus={skuEventBus}
+        selectedSku={selectedSku}
+      >
         {slots('sku-header-price') || (
           <div class="van-sku__goods-price">
             <span class="van-sku__price-symbol">￥</span>
             <span class="van-sku__price-num">{price}</span>
-            {this.priceTag && <span class="van-sku__price-tag">{this.priceTag}</span>}
+            {this.priceTag && (
+              <span class="van-sku__price-tag">{this.priceTag}</span>
+            )}
           </div>
         )}
-        {slots('sku-header-origin-price') || (
-          originPrice && (
-            <SkuHeaderItem>{t('originPrice')} ￥{originPrice}</SkuHeaderItem>
-          )
-        )}
+        {slots('sku-header-origin-price') ||
+          (originPrice && (
+            <SkuHeaderItem>
+              {t('originPrice')} ￥{originPrice}
+            </SkuHeaderItem>
+          ))}
         {!this.hideStock && (
           <SkuHeaderItem>
             <span class="van-sku__stock">{this.stockText}</span>
@@ -691,8 +728,9 @@ export default createComponent({
           {Stepper}
           {Messages}
         </div>
+        {slots('sku-actions-top')}
         {Actions}
       </Popup>
     );
-  }
+  },
 });

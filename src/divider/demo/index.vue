@@ -21,16 +21,15 @@
     </demo-block>
 
     <demo-block :title="$t('dashed')">
-      <van-divider
-        dashed
-        :hairline="false"
-      >
+      <van-divider dashed :hairline="false">
         {{ $t('text') }}
       </van-divider>
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
-      <van-divider :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }">
+      <van-divider
+        :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }"
+      >
         {{ $t('text') }}
       </van-divider>
     </demo-block>
@@ -47,27 +46,27 @@ export default {
       dashed: '虚线',
       withText: '展示文本',
       contentPosition: '内容位置',
-      customStyle: '自定义样式'
+      customStyle: '自定义样式',
     },
     'en-US': {
       text: 'Text',
       dashed: 'Dashed',
       withText: 'With Text',
       contentPosition: 'Content Position',
-      customStyle: 'Custom Style'
-    }
+      customStyle: 'Custom Style',
+    },
   },
 
   data() {
     return {
-      BLUE
+      BLUE,
     };
-  }
+  },
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-divider {
   background-color: @white;

@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
 import { getScrollTop, getScroller } from '../utils/dom/scroll';
+
+// Mixins
+import { TouchMixin } from '../mixins/touch';
+
+// Components
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('pull-refresh');
@@ -20,27 +25,27 @@ export default createComponent({
     loadingText: String,
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     successDuration: {
-      type: Number,
-      default: 500
+      type: [Number, String],
+      default: 500,
     },
     animationDuration: {
-      type: Number,
-      default: 300
+      type: [Number, String],
+      default: 300,
     },
     headHeight: {
-      type: Number,
-      default: DEFAULT_HEAD_HEIGHT
-    }
+      type: [Number, String],
+      default: DEFAULT_HEAD_HEIGHT,
+    },
   },
 
   data() {
     return {
       status: 'normal',
       distance: 0,
-      duration: 0
+      duration: 0,
     };
   },
 
@@ -54,10 +59,10 @@ export default createComponent({
     headStyle() {
       if (this.headHeight !== DEFAULT_HEAD_HEIGHT) {
         return {
-          height: `${this.headHeight}px`
+          height: `${this.headHeight}px`,
         };
       }
-    }
+    },
   },
 
   watch: {
@@ -65,13 +70,13 @@ export default createComponent({
       this.duration = this.animationDuration;
 
       if (loading) {
-        this.setStatus(this.headHeight, true);
+        this.setStatus(+this.headHeight, true);
       } else if (this.slots('success') || this.successText) {
         this.showSuccessTip();
       } else {
         this.setStatus(0, false);
       }
-    }
+    },
   },
 
   mounted() {
@@ -117,7 +122,7 @@ export default createComponent({
         this.duration = this.animationDuration;
 
         if (this.status === 'loosing') {
-          this.setStatus(this.headHeight, true);
+          this.setStatus(+this.headHeight, true);
           this.$emit('input', true);
 
           // ensure value change can be watched
@@ -131,7 +136,7 @@ export default createComponent({
     },
 
     ease(distance) {
-      const { headHeight } = this;
+      const headHeight = +this.headHeight;
 
       if (distance > headHeight) {
         if (distance < headHeight * 2) {
@@ -189,13 +194,13 @@ export default createComponent({
       setTimeout(() => {
         this.setStatus(0);
       }, this.successDuration);
-    }
+    },
   },
 
   render() {
     const style = {
       transitionDuration: `${this.duration}ms`,
-      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : ''
+      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : '',
     };
 
     return (
@@ -208,5 +213,5 @@ export default createComponent({
         </div>
       </div>
     );
-  }
+  },
 });

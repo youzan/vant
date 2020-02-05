@@ -20,23 +20,21 @@
       <van-tab :title="$t('customTips')">
         <van-pull-refresh
           v-model="isLoading"
-          :head-height="80"
+          head-height="80"
           @refresh="onRefresh(true)"
         >
           <template #pulling="{ distance }">
             <img
               class="doge"
               src="https://b.yzcdn.cn/vant/doge.png"
-              :style="{
-                transform: `scale(${distance / 80})`
-              }"
-            >
+              :style="{ transform: `scale(${distance / 80})` }"
+            />
           </template>
           <template #loosing>
-            <img src="https://b.yzcdn.cn/vant/doge.png" class="doge">
+            <img src="https://b.yzcdn.cn/vant/doge.png" class="doge" />
           </template>
           <template #loading>
-            <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge">
+            <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge" />
           </template>
           <p>{{ tips }}</p>
         </van-pull-refresh>
@@ -53,21 +51,21 @@ export default {
       text: '刷新次数',
       success: '刷新成功',
       successTip: '成功提示',
-      customTips: '自定义提示'
+      customTips: '自定义提示',
     },
     'en-US': {
       try: 'Try it down',
       text: 'Refresh Count',
       success: 'Refresh success',
       successTip: 'Success Tip',
-      customTips: 'Custom Tips'
-    }
+      customTips: 'Custom Tips',
+    },
   },
 
   data() {
     return {
       count: 0,
-      isLoading: false
+      isLoading: false,
     };
   },
 
@@ -78,7 +76,7 @@ export default {
       }
 
       return this.$t('try');
-    }
+    },
   },
 
   mounted() {
@@ -104,8 +102,8 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

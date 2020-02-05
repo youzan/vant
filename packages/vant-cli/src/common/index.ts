@@ -1,17 +1,16 @@
 import { join } from 'path';
-import { execSync } from 'child_process';
 import {
   lstatSync,
   existsSync,
   readdirSync,
   readFileSync,
-  outputFileSync
+  outputFileSync,
 } from 'fs-extra';
 import {
   SRC_DIR,
   getVantConfig,
   ROOT_WEBPACK_CONFIG_FILE,
-  ROOT_POSTCSS_CONFIG_FILE
+  ROOT_POSTCSS_CONFIG_FILE,
 } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
@@ -154,21 +153,6 @@ export function smartOutputFile(filePath: string, content: string) {
   }
 
   outputFileSync(filePath, content);
-}
-
-let hasYarnCache: boolean;
-
-export function hasYarn() {
-  if (hasYarnCache === undefined) {
-    try {
-      execSync('yarn --version', { stdio: 'ignore' });
-      hasYarnCache = true;
-    } catch (e) {
-      hasYarnCache = false;
-    }
-  }
-
-  return hasYarnCache;
 }
 
 export { getVantConfig };

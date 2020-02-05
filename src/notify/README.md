@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Notify } from 'vant';
 
@@ -70,8 +70,8 @@ export default {
 |------|------|------|------|
 | type `v2.1.6` | Can be set to `primary` `success` `warning` | *string* | `danger` |
 | message | Message | *string* | - |
-| duration | Duration(ms), won't disappear if value is 0 | *number* | `3000` |
-| color | Message color | *string* | `#fff` | |
+| duration | Duration(ms), won't disappear if value is 0 | *number \| string* | `3000` |
+| color | Message color | *string* | `white` | |
 | background | Background color | *string* | - |
 | className | Custom className | *any* | - |
 | onClick | Callback function after click | *Function* | - |

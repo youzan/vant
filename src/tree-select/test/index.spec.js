@@ -1,8 +1,5 @@
-import Vue from 'vue';
 import TreeSelect from '..';
 import { mount } from '../../../test';
-
-Vue.use(TreeSelect);
 
 test('empty list', () => {
   expect(mount(TreeSelect)).toMatchSnapshot();
@@ -10,19 +7,19 @@ test('empty list', () => {
 
 const mockItem = {
   text: 'city1',
-  id: 1
+  id: 1,
 };
 
 const mockItem2 = {
   text: 'city2',
-  id: 2
+  id: 2,
 };
 
 const mockItems = [
   {
     text: 'group1',
-    children: [mockItem]
-  }
+    children: [mockItem],
+  },
 ];
 
 test('click-nav event', () => {
@@ -31,14 +28,14 @@ test('click-nav event', () => {
 
   const wrapper = mount(TreeSelect, {
     propsData: {
-      items: mockItems
+      items: mockItems,
     },
     context: {
       on: {
         navclick: onNavClick,
-        'click-nav': onClickNav
-      }
-    }
+        'click-nav': onClickNav,
+      },
+    },
   });
 
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
@@ -54,14 +51,14 @@ test('click-item event', () => {
 
   const wrapper = mount(TreeSelect, {
     propsData: {
-      items: mockItems
+      items: mockItems,
     },
     context: {
       on: {
         itemclick: onItemClick,
-        'click-item': onClickItem
-      }
-    }
+        'click-item': onClickItem,
+      },
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
@@ -79,15 +76,15 @@ test('click disabled nav', () => {
         {
           text: 'group1',
           children: [mockItem],
-          disabled: true
-        }
-      ]
+          disabled: true,
+        },
+      ],
     },
     context: {
       on: {
-        'click-nav': onClickNav
-      }
-    }
+        'click-nav': onClickNav,
+      },
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__nav-item');
@@ -105,17 +102,17 @@ test('click disabled item', () => {
           children: [
             {
               ...mockItem,
-              disabled: true
-            }
-          ]
-        }
-      ]
+              disabled: true,
+            },
+          ],
+        },
+      ],
     },
     context: {
       on: {
-        'click-item': onClickItem
-      }
-    }
+        'click-item': onClickItem,
+      },
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
@@ -128,13 +125,13 @@ test('content slot', () => {
     propsData: {
       items: [
         {
-          text: 'group1'
-        }
-      ]
+          text: 'group1',
+        },
+      ],
     },
     scopedSlots: {
-      content: () => 'Custom Content'
-    }
+      content: () => 'Custom Content',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -143,8 +140,8 @@ test('content slot', () => {
 test('height prop', () => {
   const wrapper = mount(TreeSelect, {
     propsData: {
-      height: '100vh'
-    }
+      height: '100vh',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -156,10 +153,10 @@ test('nav info', () => {
       items: [
         {
           text: 'group1',
-          info: 3
-        }
-      ]
-    }
+          info: 3,
+        },
+      ],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -176,9 +173,9 @@ test('use sync modifier in main-active-index', () => {
     data() {
       return {
         mainActiveIndex: -1,
-        items: mockItems
+        items: mockItems,
       };
-    }
+    },
   });
 
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
@@ -203,11 +200,11 @@ test('use sync modifier in active-id', () => {
         items: [
           {
             text: 'group1',
-            children: [mockItem, mockItem2]
-          }
-        ]
+            children: [mockItem, mockItem2],
+          },
+        ],
       };
-    }
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
@@ -232,11 +229,11 @@ test('multiple select', () => {
         items: [
           {
             text: 'group1',
-            children: [mockItem, mockItem2]
-          }
-        ]
+            children: [mockItem, mockItem2],
+          },
+        ],
       };
-    }
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
@@ -265,11 +262,11 @@ test('max prop', () => {
         items: [
           {
             text: 'group1',
-            children: [mockItem, mockItem2]
-          }
-        ]
+            children: [mockItem, mockItem2],
+          },
+        ],
       };
-    }
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
@@ -286,10 +283,10 @@ test('className of nav', () => {
         {
           text: 'group1',
           className: 'my-class',
-          children: []
-        }
-      ]
-    }
+          children: [],
+        },
+      ],
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__nav-item');
@@ -313,17 +310,17 @@ test('should sync value before trigger click-item event', done => {
         items: [
           {
             text: 'group1',
-            children: [mockItem, mockItem2]
-          }
-        ]
+            children: [mockItem, mockItem2],
+          },
+        ],
       };
     },
     methods: {
       onClickItem() {
         expect(wrapper.vm.activeId).toEqual(mockItem2.id);
         done();
-      }
-    }
+      },
+    },
   });
 
   const items = wrapper.findAll('.van-tree-select__item');

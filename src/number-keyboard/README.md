@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { NumberKeyboard } from 'vant';
 
@@ -17,7 +17,6 @@ Vue.use(NumberKeyboard);
 <van-button @touchstart.stop="show = true">
   Show Keyboard
 </van-button>
-
 <van-number-keyboard
   :show="show"
   extra-key="."
@@ -28,14 +27,15 @@ Vue.use(NumberKeyboard);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       show: true
     }
   },
-
   methods: {
     onInput(value) {
       Toast(value);
@@ -79,7 +79,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -139,9 +139,9 @@ Use `title` prop to set keyboard title
 | show | Whether to show keyboard | *boolean* | - |
 | theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` |
 | title | Keyboard title | *string* | - |
-| maxlength `v2.0.2` | Value maxlength | *string \| number* | - |
+| maxlength `v2.0.2` | Value maxlength | *number \| string* | - |
 | transition | Whether to show transition animation | *boolean* | `true` |
-| z-index | Keyboard z-index | *number* | `100` |
+| z-index | Keyboard z-index | *number \| string* | `100` |
 | extra-key | Content of bottom left key | *string* | `''` |
 | close-button-text | Close button text | *string* | `-` |
 | delete-button-text | Delete button text | *string* | `delete` |

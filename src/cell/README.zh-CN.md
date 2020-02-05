@@ -2,11 +2,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell).use(CellGroup);
+Vue.use(Cell);
+Vue.use(CellGroup);
 ```
 
 ## 代码演示
@@ -124,9 +125,9 @@ Vue.use(Cell).use(CellGroup);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
-| title | 左侧标题 | *string \| number* | - |
-| value | 右侧内容 | *string \| number* | - |
+| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| title | 左侧标题 | *number \| string* | - |
+| value | 右侧内容 | *number \| string* | - |
 | label | 标题下方的描述信息 | *string* | - |
 | size | 单元格大小，可选值为 `large` | *string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
@@ -137,7 +138,7 @@ Vue.use(Cell).use(CellGroup);
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
 | required | 是否显示表单必填星号 | *boolean* | `false` |
 | center | 是否使内容垂直居中 | *boolean* | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
 | title-style | 左侧标题额外样式 | *any* | - |
 | title-class | 左侧标题额外类名 | *any* | - |
 | value-class | 右侧内容额外类名 | *any* | - |

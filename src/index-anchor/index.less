@@ -1,6 +1,7 @@
 @import '../style/var';
 
 .van-index-anchor {
+  z-index: @index-anchor-z-index;
   box-sizing: border-box;
   padding: @index-anchor-padding;
   color: @index-anchor-text-color;
@@ -14,6 +15,7 @@
     top: 0;
     right: 0;
     left: 0;
+    color: @index-anchor-sticky-text-color;
     background-color: @index-anchor-sticky-background-color;
   }
 }

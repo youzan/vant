@@ -29,7 +29,10 @@ export function readFile(file: File, resultType: ResultType) {
   });
 }
 
-export function isOversize(files: File | File[], maxSize: number): boolean {
+export function isOversize(
+  files: File | File[],
+  maxSize: number | string
+): boolean {
   return toArray(files).some(file => file.size > maxSize);
 }
 
@@ -38,6 +41,8 @@ export type FileListItem = {
   file?: File;
   content?: string; // dataUrl
   isImage?: boolean;
+  status?: '' | 'uploading' | 'done' | 'failed';
+  message?: string;
 };
 
 const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
