@@ -45,6 +45,28 @@ export default {
 };
 ```
 
+### Failed
+
+```html
+<van-uploader v-model="fileList" :after-read="afterRead" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  },
+  methods: {
+    afterRead(file) {
+      file.status = 'failed';
+      file.message = 'Failed';
+    }
+  }
+};
+```
+
 ### Max Count
 
 ```html

@@ -30,9 +30,9 @@ export default {
 };
 ```
 
-### 图片预览
+### 文件预览
 
-通过`v-model`可以绑定已经上传的图片列表，并展示图片列表的预览图
+通过`v-model`可以绑定已经上传的文件列表，并展示文件列表的预览图
 
 ```html
 <van-uploader v-model="fileList" multiple />
@@ -48,6 +48,30 @@ export default {
         // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
         { url: 'https://cloud-image', isImage: true }
       ]
+    }
+  }
+};
+```
+
+### 上传失败
+
+将 file 的`status`设置为`failed`表示文件上传失败
+
+```html
+<van-uploader v-model="fileList" :after-read="afterRead" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  },
+  methods: {
+    afterRead(file) {
+      file.status = 'failed';
+      file.message = '上传失败';
     }
   }
 };
@@ -81,7 +105,7 @@ export default {
 
 ```html
 <van-uploader>
-  <van-button icon="photo" type="primary">上传图片</van-button>
+  <van-button icon="photo" type="primary">上传文件</van-button>
 </van-uploader>
 ```
 

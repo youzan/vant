@@ -123,7 +123,7 @@ export default createComponent({
         Promise.all(files.map(file => readFile(file, this.resultType))).then(
           contents => {
             const fileList = files.map((file, index) => {
-              const result = { file };
+              const result = { file, status: '' };
 
               if (contents[index]) {
                 result.content = contents[index];
@@ -137,7 +137,7 @@ export default createComponent({
         );
       } else {
         readFile(files, this.resultType).then(content => {
-          const result = { file: files };
+          const result = { file: files, status: '' };
 
           if (content) {
             result.content = content;
@@ -263,6 +263,15 @@ export default createComponent({
         </div>
       );
 
+      const Mask = item.status === 'failed' && (
+        <div class={bem('mask')}>
+          <Icon name="warning-o" class={bem('mask-icon')} />
+          {item.message && (
+            <div class={bem('mask-message')}>{item.message}</div>
+          )}
+        </div>
+      );
+
       return (
         <div
           class={bem('preview')}
@@ -271,6 +280,7 @@ export default createComponent({
           }}
         >
           {Preview}
+          {Mask}
           {DeleteIcon}
         </div>
       );

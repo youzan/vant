@@ -41,6 +41,8 @@ export type FileListItem = {
   file?: File;
   content?: string; // dataUrl
   isImage?: boolean;
+  status?: '' | 'uploading' | 'done' | 'failed';
+  message?: string;
 };
 
 const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
