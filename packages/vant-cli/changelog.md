@@ -1,7 +1,13 @@
 # 更新日志
 
+### [v2.2.2]
+`2020-02-05`
+
+- 修复在 windows 上获取 markdown 路径错误的问题 ([#5626](https://github.com/youzan/vant/pull/5626))
+
+
 ### [v2.2.1]
-`2020-01-19`
+`2020-02-04`
 
 - 升级 babel@7.8
 - 修复切换版本时跳转 undefined 的问题 ([#5620](https://github.com/youzan/vant/pull/5620))
