@@ -53,9 +53,9 @@ export default {
 };
 ```
 
-### 上传失败
+### 上传状态
 
-将 file 的`status`设置为`failed`表示文件上传失败
+通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成（从 2.4.7 版本开始支持）
 
 ```html
 <van-uploader v-model="fileList" :after-read="afterRead" />
@@ -65,13 +65,29 @@ export default {
 export default {
   data() {
     return {
-      fileList: []
+      fileList: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          status: 'uploading',
+          message: '上传中...'
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          status: 'failed',
+          message: '上传失败'
+        }
+      ]
     }
   },
   methods: {
     afterRead(file) {
-      file.status = 'failed';
-      file.message = '上传失败';
+      file.status = 'uploading';
+      file.message = '上传中...';
+
+      setTimeout(() => {
+        file.status = 'failed';
+        file.message = '上传失败';
+      }, 1000);
     }
   }
 };

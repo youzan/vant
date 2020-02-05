@@ -45,7 +45,7 @@ export default {
 };
 ```
 
-### Failed
+### Upload Status
 
 ```html
 <van-uploader v-model="fileList" :after-read="afterRead" />
@@ -55,13 +55,29 @@ export default {
 export default {
   data() {
     return {
-      fileList: []
+      fileList: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          status: 'uploading',
+          message: 'Uploading...'
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          status: 'failed',
+          message: 'Failed'
+        }
+      ]
     }
   },
   methods: {
     afterRead(file) {
-      file.status = 'failed';
-      file.message = 'Failed';
+      file.status = 'uploading';
+      file.message = 'Uploading...';
+
+      setTimeout(() => {
+        file.status = 'failed';
+        file.message = 'Failed';
+      }, 1000);
     }
   }
 };
