@@ -30,6 +30,7 @@ function formatName(component: string, lang?: string) {
 
   return component;
 }
+
 /**
  * i18n mode:
  *   - action-sheet/README.md       => ActionSheet_EnUS
