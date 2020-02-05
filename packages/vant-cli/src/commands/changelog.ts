@@ -46,7 +46,7 @@ function transform(item: any) {
   return item;
 }
 
-export async function changelog() {
+export async function changelog(): Promise<any> {
   const spinner = ora('Generating changelog...').start();
 
   return new Promise(resolve => {

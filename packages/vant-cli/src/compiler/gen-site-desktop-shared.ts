@@ -1,6 +1,6 @@
-import glob from 'fast-glob';
-import { join, parse } from 'path';
-import { existsSync, readdirSync } from 'fs-extra';
+// import glob from 'fast-glob';
+import path, { join, parse } from 'path';
+import { existsSync, readdirSync, lstatSync } from 'fs-extra';
 import {
   pascalize,
   removeExt,
@@ -31,6 +31,24 @@ function formatName(component: string, lang?: string) {
   return component;
 }
 
+function getStaticPath(defPath: string): any[] {
+  const arr = [];
+  const first = readdirSync(defPath);
+  for (let i = 0; i < first.length; i++) {
+    const childPath = defPath + '/' + first[i];
+    const stat = lstatSync(childPath);
+    if (stat.isDirectory()) {
+      const arr2 = readdirSync(childPath);
+      for (let q = 0; q < arr2.length; q++) {
+        const childChildPath = childPath + '/' + arr2[q];
+        if (path.extname(childChildPath) === '.md') {
+          arr.push(childChildPath);
+        }
+      }
+    }
+  }
+  return arr;
+}
 /**
  * i18n mode:
  *   - action-sheet/README.md       => ActionSheet_EnUS
@@ -65,7 +83,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     });
   }
 
-  const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => {
+  const staticDocs = getStaticPath(DOCS_DIR).map(path => {
     const pairs = parse(path).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
