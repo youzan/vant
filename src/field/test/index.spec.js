@@ -280,3 +280,14 @@ test('formatter prop', () => {
   input.trigger('input');
   expect(wrapper.emitted('input')[1][0]).toEqual('efg');
 });
+
+test('reach max word-limit', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'foo',
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});

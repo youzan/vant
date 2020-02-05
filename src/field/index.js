@@ -303,9 +303,13 @@ export default createComponent({
 
     genWordLimit() {
       if (this.showWordLimit && this.maxlength) {
+        const count = this.value.length;
+        const full = count >= this.maxlength;
+
         return (
           <div class={bem('word-limit')}>
-            {this.value.length}/{this.maxlength}
+            <span class={bem('word-num', { full })}>{count}</span>/
+            {this.maxlength}
           </div>
         );
       }
