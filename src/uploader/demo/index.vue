@@ -8,6 +8,10 @@
       <van-uploader v-model="fileList" multiple accept="*" />
     </demo-block>
 
+    <demo-block v-if="!isWeapp" :title="$t('failed')">
+      <van-uploader v-model="failedFileList" :after-read="afterReadFailed" />
+    </demo-block>
+
     <demo-block :title="$t('maxCount')">
       <van-uploader v-model="fileList2" multiple :max-count="2" />
     </demo-block>
@@ -30,6 +34,7 @@
 export default {
   i18n: {
     'zh-CN': {
+      failed: '上传失败',
       upload: '上传文件',
       preview: '文件预览',
       maxCount: '限制上传数量',
@@ -38,6 +43,7 @@ export default {
       invalidType: '请上传 jpg 格式图片',
     },
     'en-US': {
+      failed: 'Failed',
       upload: 'Upload File',
       preview: 'Preview File',
       maxCount: 'Max Count',
@@ -55,7 +61,16 @@ export default {
       ],
       fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
+      failedFileList: [],
     };
+  },
+
+  created() {
+    this.failedFileList.push({
+      url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+      status: 'failed',
+      message: this.$t('failed'),
+    });
   },
 
   methods: {
@@ -70,6 +85,11 @@ export default {
 
     afterRead(file, detail) {
       console.log(file, detail);
+    },
+
+    afterReadFailed(item) {
+      item.status = 'failed';
+      item.message = this.$t('failed');
     },
   },
 };
