@@ -360,7 +360,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div class={bem('wrapper')}>
+        <div class={bem('wrapper', { disabled: this.disabled })}>
           {this.genPreviewList()}
           {this.genUpload()}
         </div>
