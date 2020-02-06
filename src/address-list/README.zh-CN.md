@@ -104,8 +104,8 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 | 插槽prop |
+| 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 在列表下方插入内容 | - |
 | top | 在顶部插入内容 | - |
-| itemBottom | 在列表项底部插入内容 | 列表项的值 |
+| item-bottom | 在列表项底部插入内容 | 列表项的值 |
