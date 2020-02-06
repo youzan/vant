@@ -48,7 +48,7 @@ export default {
 <van-popup
   v-model="show"
   position="top"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -61,7 +61,7 @@ export default {
   v-model="show"
   closeable
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- 自定义图标 -->
 <van-popup
@@ -69,7 +69,7 @@ export default {
   closeable
   close-icon="close"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- 图标位置 -->
 <van-popup
@@ -77,7 +77,7 @@ export default {
   closeable
   close-icon-position="top-left"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -90,7 +90,7 @@ export default {
   v-model="show"
   round
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
