@@ -202,7 +202,7 @@ export default createComponent({
           <div
             role="gridcell"
             style={style}
-            class={bem('day')}
+            class={[bem('day'), item.className]}
             tabindex={disabled ? null : -1}
             onClick={onClick}
           >
@@ -219,7 +219,7 @@ export default createComponent({
         <div
           role="gridcell"
           style={style}
-          class={[bem('day', [type]), item.className]}
+          class={[bem('day', type), item.className]}
           tabindex={disabled ? null : -1}
           onClick={onClick}
         >
