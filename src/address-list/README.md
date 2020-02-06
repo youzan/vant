@@ -104,7 +104,8 @@ export default {
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| default | Custom content after list |
-| top | Custom content before list |
+| Name | Description | slot prop |
+|------|------|------|
+| default | Custom content after list | - |
+| top | Custom content before list | - |
+| itemBottom | Custom content after list item | item |
