@@ -1,5 +1,27 @@
 # Changelog
 
+### [v2.4.7](https://github.com/youzan/vant/compare/v2.4.7-beta.0...v2.4.7)
+`2020-02-06`
+
+**Feature**
+
+* Calendar: improve accessibility [2124cc](https://github.com/youzan/vant/commit/2124cc5261be4a7d666cf6f70d4295309f3705d9)
+* Field: highlight word num when reaching maxlength [61093e](https://github.com/youzan/vant/commit/61093ef00f2dc421eb94ec7690093c1d565a296c)
+* Sku: add sku-actions-top slot [#5617](https://github.com/youzan/vant/issues/5617)
+* Uploader: support failed status [#5624](https://github.com/youzan/vant/issues/5624)
+* Uploader: support uploading status [#5625](https://github.com/youzan/vant/issues/5625)
+
+**Style**
+
+* ActionSheet: add @action-sheet-close-icon-active-color less var [265bfe](https://github.com/youzan/vant/commit/265bfeaac756e05803858062ab1ece2092a08e17)
+* Popup: add @popup-close-icon-active-color less var [660b03](https://github.com/youzan/vant/commit/660b0399512d3deddcdfb99af5cff1674617c515)
+
+**Bug Fixes**
+
+* Calendar: missing className when selected [0b7c56](https://github.com/youzan/vant/commit/0b7c567a78c85fbf1c3d59fcd3ce76c691040ff1)
+* Popup: may throw error when using get-container and destroyed
+
+
 ### [v2.4.6](https://github.com/youzan/vant/compare/v2.4.5...v2.4.6)
 `2020-02-01`
 
