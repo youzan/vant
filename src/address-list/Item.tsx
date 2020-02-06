@@ -99,16 +99,14 @@ function AddressItem(
   }
 
   return (
-    <div class={bem({ disabled })}>
+    <div class={bem({ disabled })} onClick={onClick}>
       <Cell
         border={false}
         valueClass={bem('value')}
-        clickable={switchable && !disabled}
         scopedSlots={{
           default: genContent,
           'right-icon': genRightIcon,
         }}
-        onClick={onClick}
         {...inherit(ctx)}
       />
       {slots.bottom?.({ ...props.data, disabled })}
