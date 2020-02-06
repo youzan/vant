@@ -8,6 +8,10 @@
       <van-uploader v-model="fileList" multiple accept="*" />
     </demo-block>
 
+    <demo-block :title="$t('disabled')">
+      <van-uploader :after-read="afterRead" disabled />
+    </demo-block>
+
     <demo-block v-if="!isWeapp" :title="$t('status')">
       <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
     </demo-block>
@@ -38,6 +42,7 @@ export default {
       failed: '上传失败',
       upload: '上传文件',
       preview: '文件预览',
+      disabled: '禁用',
       maxCount: '限制上传数量',
       uploading: '上传中...',
       beforeRead: '上传前校验',
@@ -49,6 +54,7 @@ export default {
       failed: 'Failed',
       upload: 'Upload File',
       preview: 'Preview File',
+      disabled: 'Disabled',
       maxCount: 'Max Count',
       uploading: 'Uploading...',
       beforeRead: 'Before Read',

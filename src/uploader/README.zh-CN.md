@@ -53,6 +53,14 @@ export default {
 };
 ```
 
+### 禁用
+
+通过`disabled`属性禁用文件上传
+
+```html
+<van-uploader disabled />
+```
+
 ### 上传状态
 
 通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成（从 2.4.7 版本开始支持）
@@ -190,7 +198,7 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同`after-read` |
-| click-preview | 点击预览图时触发 | 同`after-read` | 
+| click-preview | 点击预览图时触发 | 同`after-read` |
 | close-preview | 关闭全屏图片预览时触发 | - |
 | delete | 删除文件预览时触发 | 同`after-read` |
 

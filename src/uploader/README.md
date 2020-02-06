@@ -44,6 +44,11 @@ export default {
   }
 };
 ```
+### Disabled
+
+```html
+<van-uploader disabled />
+```
 
 ### Upload Status
 

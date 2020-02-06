@@ -34,6 +34,14 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-uploader">
+      <div class="van-uploader__wrapper van-uploader__wrapper--disabled">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+            <!----></i><input type="file" accept="image/*" disabled="disabled" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
