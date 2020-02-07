@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <form class="van-form">
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>username</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body"><input type="text" name="username" placeholder="username" class="van-field__control"></div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>password</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body"><input type="password" name="password" placeholder="password" class="van-field__control"></div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>agree</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body">
+            <div class="van-field__control">
+              <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
+                <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
+                    <!----></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">submit</span></button>
+    </form>
+  </div>
+</div>
+`;

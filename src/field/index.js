@@ -15,9 +15,16 @@ const [createComponent, bem] = createNamespace('field');
 export default createComponent({
   inheritAttrs: false,
 
+  inject: {
+    vanForm: {
+      default: null,
+    },
+  },
+
   props: {
     ...cellProps,
     name: String,
+    rules: Array,
     error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
@@ -44,6 +51,8 @@ export default createComponent({
   data() {
     return {
       focused: false,
+      validateError: false,
+      validateMessage: '',
     };
   },
 
@@ -56,6 +65,16 @@ export default createComponent({
   mounted() {
     this.format();
     this.$nextTick(this.adjustSize);
+
+    if (this.vanForm) {
+      this.vanForm.fields.push(this);
+    }
+  },
+
+  beforeDestroy() {
+    if (this.vanForm) {
+      this.vanForm.fields = this.vanForm.fields.fiilter(item => item !== this);
+    }
   },
 
   computed: {
@@ -104,6 +123,23 @@ export default createComponent({
       if (this.$refs.input) {
         this.$refs.input.blur();
       }
+    },
+
+    // @exposed-api
+    validate() {
+      if (!this.rules) {
+        return true;
+      }
+
+      return !this.rules.some(rule => {
+        if (rule.required && !this.value) {
+          this.validateError = true;
+          this.validateMessage = rule.message;
+          return true;
+        }
+
+        return false;
+      });
     },
 
     format(target = this.$refs.input) {
@@ -316,6 +352,18 @@ export default createComponent({
         );
       }
     },
+
+    genMessage() {
+      const message = this.errorMessage || this.validateMessage;
+
+      if (message) {
+        return (
+          <div class={bem('error-message', this.errorMessageAlign)}>
+            {message}
+          </div>
+        );
+      }
+    },
   },
 
   render() {
@@ -343,7 +391,7 @@ export default createComponent({
         titleClass={[bem('label', labelAlign), this.labelClass]}
         arrowDirection={this.arrowDirection}
         class={bem({
-          error: this.error,
+          error: this.error || this.validateError,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
@@ -365,11 +413,7 @@ export default createComponent({
           )}
         </div>
         {this.genWordLimit()}
-        {this.errorMessage && (
-          <div class={bem('error-message', this.errorMessageAlign)}>
-            {this.errorMessage}
-          </div>
-        )}
+        {this.genMessage()}
       </Cell>
     );
   },
