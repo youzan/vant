@@ -291,3 +291,12 @@ test('reach max word-limit', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('name prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      name: 'foo',
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});

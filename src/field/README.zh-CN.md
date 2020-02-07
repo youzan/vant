@@ -233,8 +233,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| v-model (value) | 当前输入的值 | *number \| string* | - |
 | label | 输入框左侧文本 | *string* | - |
-| value | 当前输入的值 | *number \| string* | - |
+| name | 名称，提交表单的标识符 | *string* | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | *string* | `text` |
 | size | 大小，可选值为 `large` | *string* | - |
 | maxlength | 输入的最大字符数 | *number \| string* | - |

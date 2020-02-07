@@ -53,6 +53,14 @@ exports[`label-width prop without unit 1`] = `
 </div>
 `;
 
+exports[`name prop 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" name="foo" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
 exports[`reach max word-limit 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone">
