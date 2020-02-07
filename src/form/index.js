@@ -17,12 +17,28 @@ export default createComponent({
   },
 
   methods: {
+    // @exposed-api
+    validate() {
+      return this.fields.map(item => item.validate()).every(item => item);
+    },
+
+    getFormData() {
+      return this.fields.reduce((form, field) => {
+        form[field.name] = field.value;
+        return form;
+      }, {});
+    },
+
     onSubmit(event) {
       event.preventDefault();
 
-      const results = this.fields.map(item => item.validate());
+      const valid = this.validate();
 
-      console.log(results);
+      if (valid) {
+        this.$emit('submit', this.getFormData());
+      } else {
+        this.$emit('failed');
+      }
     },
   },
 

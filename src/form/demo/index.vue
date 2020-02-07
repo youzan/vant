@@ -42,7 +42,9 @@ export default {
   },
 
   methods: {
-    onSubmit() {},
+    onSubmit(values) {
+      console.log(values);
+    },
   },
 };
 </script>

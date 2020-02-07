@@ -51,7 +51,6 @@ export default createComponent({
   data() {
     return {
       focused: false,
-      validateError: false,
       validateMessage: '',
     };
   },
@@ -59,6 +58,10 @@ export default createComponent({
   watch: {
     value() {
       this.$nextTick(this.adjustSize);
+
+      if (this.validateMessage) {
+        this.validateMessage = '';
+      }
     },
   },
 
@@ -133,7 +136,6 @@ export default createComponent({
 
       return !this.rules.some(rule => {
         if (rule.required && !this.value) {
-          this.validateError = true;
           this.validateMessage = rule.message;
           return true;
         }
@@ -395,7 +397,7 @@ export default createComponent({
         titleClass={[bem('label', labelAlign), this.labelClass]}
         arrowDirection={this.arrowDirection}
         class={bem({
-          error: this.error || this.validateError,
+          error: this.error || this.validateMessage,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
