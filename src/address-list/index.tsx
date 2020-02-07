@@ -39,8 +39,6 @@ function AddressList(
       return;
     }
 
-    console.log(slots);
-
     return list.map((item, index) => (
       <AddressItem
         data={item}
