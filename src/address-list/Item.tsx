@@ -10,7 +10,7 @@ import Radio from '../radio';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type AddressItemData = {
   id: string | number;
@@ -27,6 +27,10 @@ export type AddressItemProps = {
   defaultTagText?: string;
 };
 
+export type AddressItemSlots = DefaultSlots & {
+  bottom?: ScopedSlot;
+};
+
 export type AddressItemEvents = {
   onEdit(): void;
   onClick(): void;
@@ -38,7 +42,7 @@ const [createComponent, bem] = createNamespace('address-item');
 function AddressItem(
   h: CreateElement,
   props: AddressItemProps,
-  slots: DefaultSlots,
+  slots: AddressItemSlots,
   ctx: RenderContext<AddressItemProps>
 ) {
   const { disabled, switchable } = props;
@@ -95,18 +99,18 @@ function AddressItem(
   }
 
   return (
-    <Cell
-      class={bem({ disabled })}
-      border={false}
-      valueClass={bem('value')}
-      clickable={switchable && !disabled}
-      scopedSlots={{
-        default: genContent,
-        'right-icon': genRightIcon,
-      }}
-      onClick={onClick}
-      {...inherit(ctx)}
-    />
+    <div class={bem({ disabled })} onClick={onClick}>
+      <Cell
+        border={false}
+        valueClass={bem('value')}
+        scopedSlots={{
+          default: genContent,
+          'right-icon': genRightIcon,
+        }}
+        {...inherit(ctx)}
+      />
+      {slots.bottom?.({ ...props.data, disabled })}
+    </div>
   );
 }
 

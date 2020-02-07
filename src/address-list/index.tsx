@@ -23,6 +23,7 @@ export type AddressListProps = {
 
 export type AddressListSlots = DefaultSlots & {
   top?: ScopedSlot;
+  'item-bottom'?: ScopedSlot;
 };
 
 const [createComponent, bem, t] = createNamespace('address-list');
@@ -45,6 +46,9 @@ function AddressList(
         disabled={disabled}
         switchable={props.switchable}
         defaultTagText={props.defaultTagText}
+        scopedSlots={{
+          bottom: slots['item-bottom'],
+        }}
         onSelect={() => {
           emit(ctx, disabled ? 'select-disabled' : 'select', item, index);
 
