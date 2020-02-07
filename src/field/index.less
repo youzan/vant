@@ -17,7 +17,6 @@
   &__body {
     display: flex;
     align-items: center;
-    height: 100%;
   }
 
   &__control {
@@ -55,6 +54,12 @@
 
     &--right {
       text-align: right;
+    }
+
+    &--custom {
+      display: flex;
+      align-items: center;
+      min-height: @cell-line-height;
     }
 
     // for ios wechat

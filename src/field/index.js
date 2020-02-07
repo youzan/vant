@@ -263,7 +263,11 @@ export default createComponent({
       const inputSlot = this.slots('input');
 
       if (inputSlot) {
-        return <div class={bem('control', this.inputAlign)}>{inputSlot}</div>;
+        return (
+          <div class={bem('control', [this.inputAlign, 'custom'])}>
+            {inputSlot}
+          </div>
+        );
       }
 
       const inputProps = {
