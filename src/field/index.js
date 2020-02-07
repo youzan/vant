@@ -17,6 +17,7 @@ export default createComponent({
 
   props: {
     ...cellProps,
+    name: String,
     error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
@@ -237,6 +238,7 @@ export default createComponent({
         },
         attrs: {
           ...this.$attrs,
+          name: this.name,
           disabled: this.disabled,
           readonly: this.readonly,
           placeholder: this.placeholder,
