@@ -6,10 +6,11 @@ import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import {
-  setRootScrollTop,
+  getScroller,
+  getVisibleTop,
   getElementTop,
   getVisibleHeight,
-  getVisibleTop,
+  setRootScrollTop,
 } from '../utils/dom/scroll';
 
 // Mixins
@@ -27,9 +28,14 @@ export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
     BindEventMixin(function(bind) {
+      if (!this.scroller) {
+        this.scroller = getScroller(this.$el);
+      }
+
       bind(window, 'resize', this.resize, true);
+
       if (this.scrollspy) {
-        bind(window, 'scroll', this.onScroll, true);
+        bind(this.scroller, 'scroll', this.onScroll, true);
       }
     }),
   ],
@@ -152,9 +158,9 @@ export default createComponent({
 
     scrollspy(val) {
       if (val) {
-        on(window, 'scroll', this.onScroll, true);
+        on(this.scroller, 'scroll', this.onScroll, true);
       } else {
-        off(window, 'scroll', this.onScroll);
+        off(this.scroller, 'scroll', this.onScroll);
       }
     },
   },
