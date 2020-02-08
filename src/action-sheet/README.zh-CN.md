@@ -141,7 +141,7 @@ export default {
 | title | 顶部标题 | *string* | - |
 | cancel-text | 取消按钮文字 | *string* | - |
 | description `v2.2.8` | 选项上方的描述信息 | *string* | - |
-| close-icon `v2.2.13` | 关闭 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `cross` |
+| close-icon `v2.2.13` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | *string* | `cross` |
 | duration `v2.0.3` | 动画时长，单位秒 | *number \| string* | `0.3` |
 | round `v2.0.9` | 是否显示圆角 | *boolean* | `true` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
@@ -149,7 +149,7 @@ export default {
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Action 数据结构

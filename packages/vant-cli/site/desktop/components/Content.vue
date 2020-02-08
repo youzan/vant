@@ -37,6 +37,7 @@ export default {
   }
 
   a {
+    margin: 0 1px;
     color: @van-doc-green;
     -webkit-font-smoothing: auto;
   }
@@ -162,7 +163,7 @@ export default {
       box-sizing: border-box;
       width: 6px;
       height: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
       border: 1px solid @van-doc-dark-grey;
       border-radius: 50%;
       content: '';

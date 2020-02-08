@@ -144,7 +144,7 @@ Toast.resetDefaultOptions('loading');
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | *string* | `text` |
 | position | 位置，可选值为 `top` `bottom` | *string* | `middle` |
 | message | 文本内容，支持通过`\n`换行 | *string* | `''` | - |
-| icon `v2.0.1` | 自定义图标，支持传入 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| icon `v2.0.1` | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | iconPrefix `v2.0.9` | 图标类名前缀 | *string* | `van-icon` |
 | overlay `v2.2.13` | 是否显示背景遮罩层 | *boolean* | `false` |
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` |

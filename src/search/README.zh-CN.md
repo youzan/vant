@@ -128,8 +128,8 @@ export default {
 | readonly | 是否将输入框设为只读 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
-| left-icon | 输入框左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `search` |
-| right-icon | 输入框右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | `search` |
+| right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 
 ### Events
 

@@ -172,7 +172,7 @@ export default {
 | active-color | 选中标签的颜色 | *string* | `#1989fa` |
 | inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` |
 | route | 是否开启路由模式 | *boolean* | `false` |
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Tabbar Events
 
@@ -185,7 +185,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | name | 标签名称，作为匹配的标识符 | *number \| string* | 当前标签的索引值 |
-| icon |  [图标名称](#/zh-CN/icon) 或图片链接| *string* | - |
+| icon | [图标名称](#/zh-CN/icon)或图片链接| *string* | - |
 | dot | 是否显示图标右上角小红点 | *boolean* | `false` |
 | info | 图标右上角徽标的内容 | *number \| string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
