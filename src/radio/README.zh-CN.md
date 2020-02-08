@@ -158,7 +158,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前选中项的标识符 | *any* | - |
+| v-model (value) | 当前选中项的标识符 | *any* | - |
 | disabled | 是否禁用所有单选框 | *boolean* | `false` |
 | icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有单选框的选中状态颜色 | *string* | `#1989fa` |
@@ -167,17 +167,17 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击单选框时触发 | event: Event |
+| click | 点击单选框时触发 | *event: Event* |
 
 ### RadioGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前选中项的 name |
+| change | 当绑定值变化时触发的事件 | *name: string* |
 
 ### Radio Slots
 
 | 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义文本 | - |
-| icon | 自定义图标 | checked: 是否为选中状态 |
+| icon | 自定义图标 | *checked: boolean* |

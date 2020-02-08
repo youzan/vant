@@ -225,7 +225,7 @@ export default {
 | Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
-| icon | Custom icon | checked: whether to be checked |
+| icon | Custom icon | *checked: boolean* |
 
 ### CheckboxGroup Methods
 

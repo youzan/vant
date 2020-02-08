@@ -241,7 +241,7 @@ export default {
 | 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义文本 | - |
-| icon | 自定义图标 | checked: 是否为选中状态 |
+| icon | 自定义图标 | *checked: boolean* |
 
 ### CheckboxGroup 方法
 
