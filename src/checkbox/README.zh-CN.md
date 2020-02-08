@@ -203,9 +203,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| v-model (value) | 是否为选中状态 | *boolean* | `false` |
 | name | 标识符 | *any* | - |
 | shape | 形状，可选值为 `square` | *string* | `round` |
-| v-model | 是否为选中状态 | *boolean* | `false` |
 | disabled | 是否禁用复选框 | *boolean* | `false` |
 | label-disabled | 是否禁用复选框文本点击 | *boolean* | `false` |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` |
@@ -217,7 +217,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 所有选中项的标识符 | *any[]* | - |
+| v-model (value) | 所有选中项的标识符 | *any[]* | - |
 | disabled | 是否禁用所有复选框 | *boolean* | `false` |
 | max | 最大可选数，0 为无限制 | *number \| string* | `0` |
 | icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
@@ -227,14 +227,14 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
-| click | 点击复选框时触发 | event: Event |
+| change | 当绑定值变化时触发的事件 | *checked: boolean* |
+| click | 点击复选框时触发 | *event: Event* |
 
 ### CheckboxGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| change | 当绑定值变化时触发的事件 | *names: any[]* |
 
 ### Checkbox Slots
 
@@ -249,7 +249,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
+| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | *checked?: boolean* | - |
 
 ### Checkbox 方法
 
@@ -257,4 +257,4 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
+| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | *checked?: boolean* | - |
