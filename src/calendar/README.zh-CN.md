@@ -251,8 +251,8 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 点击任意日期时触发 | value: Date \| Date[] |
-| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | value: Date \| Date[] |
+| select | 点击任意日期时触发 | *value: Date \| Date[]* |
+| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | *value: Date \| Date[]* |
 
 ### Slots
 

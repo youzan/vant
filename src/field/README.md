@@ -249,13 +249,13 @@ Field support all native events of input tag
 
 | Event | Description | Parameters |
 |------|------|------|
-| input | Triggered when input value changed | value: current value |
-| focus | Triggered when input gets focus | event: Event |
-| blur | Triggered when input loses focus | event: Event |
-| clear | Triggered when click clear icon | event: Event |
-| click | Triggered when click Field | event: Event |
-| click-left-icon | Triggered when click the left icon of Field | event: Event |
-| click-right-icon | Triggered when click the right icon of Field | event: Event |
+| input | Triggered when input value changed | *value: string* |
+| focus | Triggered when input gets focus | *event: Event* |
+| blur | Triggered when input loses focus | *event: Event* |
+| clear | Triggered when click clear icon | *event: Event* |
+| click | Triggered when click Field | *event: Event* |
+| click-left-icon | Triggered when click the left icon of Field | *event: Event* |
+| click-right-icon | Triggered when click the right icon of Field | *event: Event* |
 
 ### Methods
 

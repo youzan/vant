@@ -150,7 +150,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击弹出层时触发 | event: Event |
+| click | 点击弹出层时触发 | *event: Event* |
 | open | 打开弹出层时触发 | - |
 | opened | 打开弹出层且动画结束后触发 | - |
 | close | 关闭弹出层时触发 | - |

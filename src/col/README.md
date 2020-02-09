@@ -112,10 +112,10 @@ Setting `type` to `flex` to enable flex layout
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click row | event: Event |
+| click | Triggered when click row | *event: Event* |
 
 ### Col Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click col | event: Event |
+| click | Triggered when click col | *event: Event* |

@@ -268,13 +268,13 @@ export default {
 
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
-| input | 输入框内容变化时触发 | value: 输入框当前值 |
-| focus | 输入框获得焦点时触发 | event: Event |
-| blur | 输入框失去焦点时触发 | event: Event |
-| clear | 点击清除按钮时触发 | event: Event |
-| click | 点击时触发 | event: Event |
-| click-left-icon | 点击左侧图标时触发 | event: Event |
-| click-right-icon | 点击右侧图标时触发 | event: Event |
+| input | 输入框内容变化时触发 | *value: string (当前输入的值)* |
+| focus | 输入框获得焦点时触发 | *event: Event* |
+| blur | 输入框失去焦点时触发 | *event: Event* |
+| clear | 点击清除按钮时触发 | *event: Event* |
+| click | 点击时触发 | *event: Event* |
+| click-left-icon | 点击左侧图标时触发 | *event: Event* |
+| click-right-icon | 点击右侧图标时触发 | *event: Event* |
 
 ### 方法
 

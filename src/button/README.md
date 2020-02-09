@@ -125,5 +125,5 @@ Vue.use(Button);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click button and not disabled or loading | event: Event |
-| touchstart | Triggered when touch start | event: TouchEvent |
+| click | Triggered when click button and not disabled or loading | *event: Event* |
+| touchstart | Triggered when touch start | *event: TouchEvent* |

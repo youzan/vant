@@ -137,7 +137,7 @@ Vue.use(CellGroup);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click cell | event: Event |
+| click | Triggered when click cell | *event: Event* |
 
 ### CellGroup Slots
 

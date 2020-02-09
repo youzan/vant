@@ -82,8 +82,8 @@ Use slot to custom content.
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | event: Event |
-| click-thumb | Triggered when thumb clicked | event: Event |
+| click | Triggered when clicked | *event: Event* |
+| click-thumb | Triggered when thumb clicked | *event: Event* |
 
 ### Slots
 

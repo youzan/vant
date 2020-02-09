@@ -85,8 +85,8 @@ Vue.use(NoticeBar);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击通知栏时触发 | event: Event |
-| close | 关闭通知栏时触发 | event: Event |
+| click | 点击通知栏时触发 | *event: Event* |
+| close | 关闭通知栏时触发 | *event: Event* |
 
 ### Slots
 

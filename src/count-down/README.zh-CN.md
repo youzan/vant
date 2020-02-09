@@ -140,15 +140,15 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | finish | 倒计时结束时触发 | - |
-| change `v2.4.4` | 倒计时变化时触发 | timeData |
+| change `v2.4.4` | 倒计时变化时触发 | *timeData: TimeData* |
 
 ### Slots
 
 | 名称 | 说明 | SlotProps |
 |------|------|------|
-| default | 自定义内容 | timeData |
+| default | 自定义内容 | *timeData: TimeData* |
 
-### timeData 格式
+### TimeData 格式
 
 | 名称 | 说明 | 类型 |
 |------|------|------|

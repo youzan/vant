@@ -148,7 +148,7 @@ Vue.use(CellGroup);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击单元格时触发 | event: Event |
+| click | 点击单元格时触发 | *event: Event* |
 
 ### CellGroup Slots
 
