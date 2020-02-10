@@ -227,7 +227,7 @@ export default {
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
 | max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number \| string* | - |
@@ -251,8 +251,8 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 点击任意日期时触发 | value: Date \| Date[] |
-| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | value: Date \| Date[] |
+| select | 点击任意日期时触发 | *value: Date \| Date[]* |
+| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | *value: Date \| Date[]* |
 
 ### Slots
 
@@ -263,7 +263,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Calendar 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Calendar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

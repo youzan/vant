@@ -130,9 +130,9 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when value change | value: current value, detail: Detail info, contains name |
+| change | Triggered when value change | *value: string, detail: { name: string }* |
 | overlimit | Triggered when click disabled button | - |
 | plus | Triggered when click plus button | - |
 | minus | Triggered when click minus button | - |
-| focus | Triggered when input focused | event: Event |
-| blur | Triggered when input blured | event: Event |
+| focus | Triggered when input focused | *event: Event* |
+| blur | Triggered when input blured | *event: Event* |

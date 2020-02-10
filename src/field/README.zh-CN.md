@@ -259,8 +259,8 @@ export default {
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
-| left-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
-| right-icon | 右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 
 ### Events
 
@@ -268,17 +268,17 @@ export default {
 
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
-| input | 输入框内容变化时触发 | value: 输入框当前值 |
-| focus | 输入框获得焦点时触发 | event: Event |
-| blur | 输入框失去焦点时触发 | event: Event |
-| clear | 点击清除按钮时触发 | event: Event |
-| click | 点击时触发 | event: Event |
-| click-left-icon | 点击左侧图标时触发 | event: Event |
-| click-right-icon | 点击右侧图标时触发 | event: Event |
+| input | 输入框内容变化时触发 | *value: string (当前输入的值)* |
+| focus | 输入框获得焦点时触发 | *event: Event* |
+| blur | 输入框失去焦点时触发 | *event: Event* |
+| clear | 点击清除按钮时触发 | *event: Event* |
+| click | 点击时触发 | *event: Event* |
+| click-left-icon | 点击左侧图标时触发 | *event: Event* |
+| click-right-icon | 点击右侧图标时触发 | *event: Event* |
 
 ### 方法
 
-通过 ref 可以获取到 Field 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

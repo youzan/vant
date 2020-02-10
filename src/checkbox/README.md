@@ -187,9 +187,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| v-model (value) | Check status | *boolean* | `false` |
 | name | Checkbox name | *any* | - |
 | shape | Can be set to `square` | *string* | `round` |
-| v-model | Check status | *boolean* | `false` |
 | disabled | Disable checkbox | *boolean* | `false` |
 | label-disabled | Whether to disable label click | *boolean* | `false` |
 | label-position | Can be set to `left` | *string* | `right` |
@@ -201,7 +201,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of all checked checkboxes | *any[]* | - |
+| v-model (value) | Names of all checked checkboxes | *any[]* | - |
 | max | Maximum amount of checked options | *number \| string* | `0`(Unlimited) |
 | disabled | Disable all checkboxes | *boolean* | `false` |
 | icon-size `v2.2.3` | Icon size of all checkboxes | *number \| string* | `20px` |
@@ -211,21 +211,21 @@ export default {
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
-| click | Triggered when click checkbox | event: Event |
+| change | Triggered when value changed | *checked: boolean* |
+| click | Triggered when click checkbox | *event: Event* |
 
 ### CheckboxGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
+| change | Triggered when value changed | *names: any[]* |
 
 ### Checkbox Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
-| icon | Custom icon | checked: whether to be checked |
+| icon | Custom icon | *checked: boolean* |
 
 ### CheckboxGroup Methods
 
@@ -233,7 +233,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call 
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggleAll | Toggle check status of all checkboxes | checked?: boolean | - |
+| toggleAll | Toggle check status of all checkboxes | *checked?: boolean* | - |
 
 ### Checkbox Methods
 
@@ -241,4 +241,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call insta
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggle | Toggle check status | checked?: boolean | - |
+| toggle | Toggle check status | *checked?: boolean* | - |

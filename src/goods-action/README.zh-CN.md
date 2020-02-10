@@ -86,7 +86,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### GoodsActionIcon Props
 
@@ -108,7 +108,7 @@ export default {
 | text | 按钮文字 | *string* | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` |
 | color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - |
-| icon `v2.4.4` | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| icon `v2.4.4` | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - |
 | loading | 是否显示为加载状态 | *boolean* | `false` | - |
 | url | 点击后跳转的链接地址 | *string* | - |

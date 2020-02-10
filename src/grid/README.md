@@ -126,7 +126,7 @@ Vue.use(GridItem);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | event: Event |
+| click | Triggered when clicked | *event: Event* |
 
 ### GridItem Slots
 

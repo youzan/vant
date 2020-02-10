@@ -145,7 +145,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | event: Event |
+| click | Triggered when clicked | *event: Event* |
 
 ### ContactList Props
 

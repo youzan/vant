@@ -2,7 +2,7 @@
 
 ### 介绍
 
-省市区三级联动选择，通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+省市区三级联动选择，通常与[弹出层](#/zh-CN/popup)组件配合使用
 
 ### 引入
 
@@ -80,7 +80,7 @@ Vue.use(Area);
 
 ### 方法
 
-通过 ref 可以获取到 Area 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Area 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

@@ -148,7 +148,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Name of checked radio | *any* | - |
+| v-model (v-model) | Name of checked radio | *any* | - |
 | disabled | Disable all radios | *boolean* | `false` |
 | icon-size `v2.2.3` | Icon size of all radios | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all radios | *string* | `#1989fa` | - |
@@ -157,17 +157,17 @@ export default {
 
 | Event | Description | Parameters |
 |------|------|------|
-| click | Triggered when click radio | event: Event |
+| click | Triggered when click radio | *event: Event* |
 
 ### RadioGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
+| change | Triggered when value changed | *name: string* |
 
 ### Radio Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
-| icon | Custom icon | checked: whether to be checked |
+| icon | Custom icon | *checked: boolean* |

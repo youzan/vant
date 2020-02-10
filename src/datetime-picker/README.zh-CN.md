@@ -2,7 +2,7 @@
 
 ### 介绍
 
-时间选择器，支持日期、年月、时分等维度，通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+时间选择器，支持日期、年月、时分等维度，通常与[弹出层](#/zh-CN/popup)组件配合使用
 
 ### 引入
 
@@ -199,7 +199,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

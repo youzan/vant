@@ -135,11 +135,11 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 
 | Event | Description | Arguments |
 |------|------|------|
-| search | Triggered when confirm search | value: current value |
-| input | Triggered when input value changed | value: current value |
-| focus | Triggered when input gets focus | event: Event |
-| blur | Triggered when input loses focus | event: Event |
-| clear | Triggered when click clear icon | event: Event |
+| search | Triggered when confirm search | *value: string* |
+| input | Triggered when input value changed | *value: string* |
+| focus | Triggered when input gets focus | *event: Event* |
+| blur | Triggered when input loses focus | *event: Event* |
+| clear | Triggered when click clear icon | *event: Event* |
 | cancel | Triggered when click cancel button | - |
 
 ### Slots

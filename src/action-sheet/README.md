@@ -153,7 +153,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| select | Triggered when click option | item, index |
+| select | Triggered when click option | *action: Action, index: number* |
 | cancel | Triggered when cancel click | - |
 | click-overlay | Triggered when click overlay | - |
 | open | Triggered when open ActionSheet | - |
