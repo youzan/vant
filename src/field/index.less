@@ -38,7 +38,7 @@
 
     &:disabled {
       color: @field-input-disabled-text-color;
-      -webkit-text-fill-color: @field-input-disabled-text-color; // fix disabled color in iOS
+      -webkit-text-fill-color: currentColor; // fix disabled color in iOS
       background-color: transparent;
       cursor: not-allowed;
       opacity: 1;
@@ -148,7 +148,7 @@
       &,
       &::placeholder {
         color: @field-input-error-text-color;
-        -webkit-text-fill-color: @field-input-error-text-color;
+        -webkit-text-fill-color: currentColor;
       }
     }
   }
