@@ -51,15 +51,6 @@ export default {
 </van-radio-group>
 ```
 
-### Disabled Label Click
-
-```html
-<van-radio-group v-model="radio">
-  <van-radio name="1" icon-disabled>Radio 1</van-radio>
-  <van-radio name="2" icon-disabled>Radio 2</van-radio>
-</van-radio-group>
-```
-
 ### Custom Shape
 
 ```html
@@ -122,6 +113,15 @@ export default {
     };
   }
 };
+```
+
+### Disable Label Click
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" label-disabled>Radio 1</van-radio>
+  <van-radio name="2" label-disabled>Radio 2</van-radio>
+</van-radio-group>
 ```
 
 ### Inside a Cell

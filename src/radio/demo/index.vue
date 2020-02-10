@@ -25,13 +25,6 @@
       </van-radio-group>
     </demo-block>
 
-    <demo-block :title="$t('disabledLabelClick')">
-      <van-radio-group v-model="radioLabel" class="demo-radio-group">
-        <van-radio name="1" label-disabled>{{ $t('radio') }} 1</van-radio>
-        <van-radio name="2" label-disabled>{{ $t('radio') }} 2</van-radio>
-      </van-radio-group>
-    </demo-block>
-
     <demo-block :title="$t('customShape')">
       <van-radio-group v-model="radioShape" class="demo-radio-group">
         <van-radio name="1" shape="square">{{ $t('radio') }} 1</van-radio>
@@ -45,6 +38,17 @@
           {{ $t('radio') }} 1
         </van-radio>
         <van-radio name="2" checked-color="#07c160">
+          {{ $t('radio') }} 2
+        </van-radio>
+      </van-radio-group>
+    </demo-block>
+
+    <demo-block :title="$t('customIconSize')">
+      <van-radio-group v-model="radioIconSize" class="demo-radio-group">
+        <van-radio name="1" checked-color="#07c160" icon-size="24px">
+          {{ $t('radio') }} 1
+        </van-radio>
+        <van-radio name="2" checked-color="#07c160" icon-size="24px">
           {{ $t('radio') }} 2
         </van-radio>
       </van-radio-group>
@@ -67,14 +71,10 @@
       </van-radio-group>
     </demo-block>
 
-    <demo-block :title="$t('customIconSize')">
-      <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160" icon-size="24px">
-          {{ $t('radio') }} 1
-        </van-radio>
-        <van-radio name="2" checked-color="#07c160" icon-size="24px">
-          {{ $t('radio') }} 2
-        </van-radio>
+    <demo-block :title="$t('disableLabel')">
+      <van-radio-group v-model="radioLabel" class="demo-radio-group">
+        <van-radio name="1" label-disabled>{{ $t('radio') }} 1</van-radio>
+        <van-radio name="2" label-disabled>{{ $t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -106,7 +106,7 @@ export default {
       customColor: '自定义颜色',
       customShape: '自定义形状',
       customIconSize: '自定义大小',
-      disabledLabelClick: '禁用文本点击',
+      disableLabel: '禁用文本点击',
     },
     'en-US': {
       radio: 'Radio',
@@ -118,7 +118,7 @@ export default {
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
       customIconSize: 'Custom Icon Size',
-      disabledLabelClick: 'Disable the click event of label',
+      disableLabel: 'Disable label click',
     },
   },
 

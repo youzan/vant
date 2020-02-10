@@ -34,12 +34,6 @@ export default {
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
-### Disabled Label Click
-
-```html
-<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
-```
-
 ### Custom Shape
 
 ```html
@@ -83,6 +77,12 @@ export default {
     };
   }
 };
+```
+
+### Disable Label Click
+
+```html
+<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
 ```
 
 ### Checkbox Group
@@ -137,7 +137,6 @@ export default {
       result: []
     }
   },
-
   methods: {
     checkAll() {
       this.$refs.checkboxGroup.toggleAll(true);
@@ -161,11 +160,7 @@ export default {
       :title="`Checkbox ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox
-        :name="item"
-        ref="checkboxes"
-        slot="right-icon"
-      />
+      <van-checkbox slot="right-icon" :name="item" ref="checkboxes" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -173,6 +168,12 @@ export default {
 
 ```js
 export default {
+  data() {
+    return {
+      list: ['a', 'b']
+      result: []
+    };
+  },
   methods: {
     toggle(index) {
       this.$refs.checkboxes[index].toggle();
@@ -202,8 +203,9 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model (value) | Names of all checked checkboxes | *any[]* | - |
+| disabled | Whether to disable all checkboxes | *boolean* | `false` |
 | max | Maximum amount of checked options | *number \| string* | `0`(Unlimited) |
-| disabled | Disable all checkboxes | *boolean* | `false` |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | Icon size of all checkboxes | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all checkboxes | *string* | `#1989fa` | - |
 

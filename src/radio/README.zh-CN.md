@@ -55,17 +55,6 @@ export default {
 </van-radio-group>
 ```
 
-### 禁用文本点击
-
-设置`label-disabled`属性后，点击单选框图标以外的内容不会触发切换
-
-```html
-<van-radio-group v-model="radio">
-  <van-radio name="1" icon-disabled>单选框 1</van-radio>
-  <van-radio name="2" icon-disabled>单选框 2</van-radio>
-</van-radio-group>
-```
-
 ### 自定义形状
 
 通过`square`属性设置选中状态的图标颜色
@@ -132,6 +121,17 @@ export default {
     inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
   }
 }
+```
+
+### 禁用文本点击
+
+设置`label-disabled`属性后，点击图标以外的内容不会触发单选框切换
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" label-disabled>单选框 1</van-radio>
+  <van-radio name="2" label-disabled>单选框 2</van-radio>
+</van-radio-group>
 ```
 
 ### 与 Cell 组件一起使用

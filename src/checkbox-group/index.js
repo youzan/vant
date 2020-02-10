@@ -9,6 +9,7 @@ export default createComponent({
   props: {
     max: [Number, String],
     disabled: Boolean,
+    direction: String,
     iconSize: [Number, String],
     checkedColor: String,
     value: {
@@ -42,6 +43,6 @@ export default createComponent({
   },
 
   render() {
-    return <div class={bem()}>{this.slots()}</div>;
+    return <div class={bem([this.direction])}>{this.slots()}</div>;
   },
 });
