@@ -9,6 +9,10 @@
         <van-switch v-model="switchChecked" slot="input" size="24" />
       </van-field>
 
+      <van-field name="rate" :label="$t('rate')">
+        <van-rate v-model="rate" slot="input" />
+      </van-field>
+
       <div style="margin: 16px;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
@@ -20,6 +24,7 @@
 export default {
   i18n: {
     'zh-CN': {
+      rate: '评分',
       submit: '提交',
       switch: '开关',
       checkbox: '复选框',
@@ -27,6 +32,7 @@ export default {
       requireCheckbox: '请勾选复选框',
     },
     'en-US': {
+      rate: 'Rate',
       submit: 'Submit',
       switch: 'Switch',
       checkbox: 'Checkbox',
@@ -37,6 +43,7 @@ export default {
 
   data() {
     return {
+      rate: 3,
       checkbox: false,
       switchChecked: false,
     };

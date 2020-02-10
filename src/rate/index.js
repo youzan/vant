@@ -1,6 +1,12 @@
+// Utils
 import { createNamespace, addUnit } from '../utils';
 import { preventDefault } from '../utils/dom/event';
+
+// Mixins
 import { TouchMixin } from '../mixins/touch';
+import { FieldMixin } from '../mixins/field';
+
+// Components
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('rate');
@@ -18,7 +24,7 @@ function getRateStatus(value, index, allowHalf) {
 }
 
 export default createComponent({
-  mixins: [TouchMixin],
+  mixins: [TouchMixin, FieldMixin],
 
   props: {
     size: [Number, String],
