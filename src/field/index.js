@@ -135,19 +135,29 @@ export default createComponent({
       }
     },
 
-    // @exposed-api
     validate() {
-      if (!this.rules) {
-        return true;
-      }
-
-      return !this.rules.some(rule => {
-        if (rule.required && !this.formValue) {
-          this.validateMessage = rule.message;
-          return true;
+      return new Promise(resolve => {
+        if (!this.rules) {
+          resolve();
         }
 
-        return false;
+        const messages = [];
+
+        this.rules.forEach(rule => {
+          if (rule.required && !this.formValue) {
+            messages.push(rule.message);
+          }
+        });
+
+        if (messages.length) {
+          this.validateMessage = messages[0];
+          resolve({
+            name: this.name,
+            messages,
+          });
+        } else {
+          resolve();
+        }
       });
     },
 

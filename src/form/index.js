@@ -19,10 +19,20 @@ export default createComponent({
   methods: {
     // @exposed-api
     validate() {
-      return this.fields.map(item => item.validate()).every(item => item);
+      return new Promise((resolve, reject) => {
+        Promise.all(this.fields.map(item => item.validate())).then(errors => {
+          errors = errors.filter(item => item);
+
+          if (errors.length) {
+            reject(errors);
+          } else {
+            resolve();
+          }
+        });
+      });
     },
 
-    getFormData() {
+    getValues() {
       return this.fields.reduce((form, field) => {
         form[field.name] = field.formValue;
         return form;
@@ -32,13 +42,18 @@ export default createComponent({
     onSubmit(event) {
       event.preventDefault();
 
-      const valid = this.validate();
+      const values = this.getValues();
 
-      if (valid) {
-        this.$emit('submit', this.getFormData());
-      } else {
-        this.$emit('failed');
-      }
+      this.validate()
+        .then(() => {
+          this.$emit('submit', values);
+        })
+        .catch(errors => {
+          this.$emit('failed', {
+            values,
+            errors,
+          });
+        });
     },
   },
 
