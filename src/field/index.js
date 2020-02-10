@@ -63,11 +63,8 @@ export default createComponent({
 
   watch: {
     value() {
+      this.resetValidate();
       this.$nextTick(this.adjustSize);
-
-      if (this.validateMessage) {
-        this.validateMessage = '';
-      }
     },
   },
 
@@ -152,6 +149,12 @@ export default createComponent({
 
         return false;
       });
+    },
+
+    resetValidate() {
+      if (this.validateMessage) {
+        this.validateMessage = '';
+      }
     },
 
     format(target = this.$refs.input) {
