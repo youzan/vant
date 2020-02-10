@@ -5,11 +5,9 @@ test('emit event', () => {
   const input = jest.fn();
   const change = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        input,
-        change,
-      },
+    listeners: {
+      input,
+      change,
     },
   });
   wrapper.trigger('click');
@@ -22,11 +20,9 @@ test('disabled', () => {
   const input = jest.fn();
   const change = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        input,
-        change,
-      },
+    listeners: {
+      input,
+      change,
     },
     propsData: {
       disabled: true,
@@ -47,11 +43,9 @@ test('active-value & inactive-value prop', () => {
       activeValue: '1',
       inactiveValue: '2',
     },
-    context: {
-      on: {
-        input,
-        change,
-      },
+    listeners: {
+      input,
+      change,
     },
   });
 
@@ -86,10 +80,8 @@ test('size prop', () => {
 test('click event', () => {
   const click = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        click,
-      },
+    listeners: {
+      click,
     },
   });
 

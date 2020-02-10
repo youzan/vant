@@ -5,22 +5,27 @@ exports[`renders demo correctly 1`] = `
   <div>
     <form class="van-form">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>username</span></div>
+        <div class="van-cell__title van-field__label"><span>用户名</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><input type="text" name="username" placeholder="username" class="van-field__control"></div>
+          <div class="van-field__body"><input type="text" name="username" placeholder="用户名" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>password</span></div>
+        <div class="van-cell__title van-field__label"><span>密码</span></div>
         <div class="van-cell__value">
-          <div class="van-field__body"><input type="password" name="password" placeholder="password" class="van-field__control"></div>
+          <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>
         </div>
       </div>
+      <div style="margin: 16px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
+    </form>
+  </div>
+  <div>
+    <form class="van-form">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>agree</span></div>
+        <div class="van-cell__title van-field__label"><span>复选框</span></div>
         <div class="van-cell__value">
           <div class="van-field__body">
-            <div class="van-field__control">
+            <div class="van-field__control van-field__control--custom">
               <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
                 <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
                     <!----></i></div>
@@ -28,7 +33,20 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-      </div> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">submit</span></button>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>开关</span></div>
+        <div class="van-cell__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div role="switch" aria-checked="false" class="van-switch" style="font-size: 24px;">
+                <div class="van-switch__node"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin: 16px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
     </form>
   </div>
 </div>
