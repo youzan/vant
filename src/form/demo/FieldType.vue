@@ -13,6 +13,10 @@
         <van-rate v-model="rate" slot="input" />
       </van-field>
 
+      <van-field name="slider" :label="$t('slider')">
+        <van-slider v-model="slider" slot="input" />
+      </van-field>
+
       <van-field name="stepper" :label="$t('stepper')">
         <van-stepper v-model="stepper" slot="input" />
       </van-field>
@@ -31,6 +35,7 @@ export default {
       rate: '评分',
       submit: '提交',
       switch: '开关',
+      slider: '滑块',
       stepper: '步进器',
       checkbox: '复选框',
       fieldType: '表单项类型',
@@ -40,6 +45,7 @@ export default {
       rate: 'Rate',
       submit: 'Submit',
       switch: 'Switch',
+      slider: 'Slider',
       stepper: 'Stepper',
       checkbox: 'Checkbox',
       fieldType: 'Field Type',
@@ -50,6 +56,7 @@ export default {
   data() {
     return {
       rate: 3,
+      slider: 50,
       stepper: 1,
       checkbox: false,
       switchChecked: false,

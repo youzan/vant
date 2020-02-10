@@ -93,8 +93,12 @@ export default {
   background: @white;
   user-select: none;
 
-  .van-slider {
-    margin: 0 @padding-md @padding-xl;
+  .van-doc-demo-block {
+    padding: 0 @padding-md 20px;
+  }
+
+  .van-doc-demo-block__title {
+    padding-left: 0;
   }
 
   .custom-button {
@@ -105,10 +109,6 @@ export default {
     text-align: center;
     background-color: @red;
     border-radius: 100px;
-  }
-
-  .van-doc-demo-block__title {
-    padding-top: 25px;
   }
 }
 </style>

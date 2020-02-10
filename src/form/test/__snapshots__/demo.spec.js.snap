@@ -6,13 +6,13 @@ exports[`renders demo correctly 1`] = `
     <form class="van-form">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>用户名</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" name="username" placeholder="用户名" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>密码</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>
         </div>
       </div>
@@ -23,7 +23,7 @@ exports[`renders demo correctly 1`] = `
     <form class="van-form">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>复选框</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
@@ -36,12 +36,59 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>开关</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <div role="switch" aria-checked="false" class="van-switch" style="font-size: 24px;">
                 <div class="van-switch__node"></div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>评分</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div tabindex="0" role="radiogroup" class="van-rate">
+                <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                    <!----></i></div>
+                <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                    <!----></i></div>
+                <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                    <!----></i></div>
+                <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star-o van-rate__icon">
+                    <!----></i></div>
+                <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon">
+                    <!----></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>滑块</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-slider">
+                <div class="van-slider__bar" style="width: 50%;">
+                  <div role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" aria-orientation="horizontal" class="van-slider__button-wrapper">
+                    <div class="van-slider__button"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>步进器</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
             </div>
           </div>
         </div>

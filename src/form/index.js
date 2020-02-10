@@ -1,4 +1,3 @@
-// Utils
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('form');

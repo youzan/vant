@@ -417,6 +417,7 @@ export default createComponent({
         required={this.required}
         clickable={this.clickable}
         titleStyle={this.labelStyle}
+        valueClass={bem('value')}
         titleClass={[bem('label', labelAlign), this.labelClass]}
         arrowDirection={this.arrowDirection}
         class={bem({
