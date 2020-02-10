@@ -2,11 +2,12 @@
  * Common part of Checkbox & Radio
  */
 import Icon from '../icon';
+import { FieldMixin } from './field';
 import { ChildrenMixin } from './relation';
 import { addUnit } from '../utils';
 
 export const CheckboxMixin = ({ parent, bem, role }) => ({
-  mixins: [ChildrenMixin(parent)],
+  mixins: [ChildrenMixin(parent), FieldMixin],
 
   props: {
     name: null,

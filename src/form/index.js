@@ -24,7 +24,7 @@ export default createComponent({
 
     getFormData() {
       return this.fields.reduce((form, field) => {
-        form[field.name] = field.value;
+        form[field.name] = field.formValue;
         return form;
       }, {});
     },

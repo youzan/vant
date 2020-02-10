@@ -17,7 +17,11 @@
           :rules="[{ required: true, message: 'password is required' }]"
           placeholder="password"
         />
-        <van-field name="agree" label="agree">
+        <van-field
+          name="agree"
+          label="agree"
+          :rules="[{ required: true, message: 'need agree' }]"
+        >
           <van-checkbox v-model="agree" slot="input" shape="square" />
         </van-field>
         <van-button type="primary">submit</van-button>

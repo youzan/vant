@@ -15,6 +15,12 @@ const [createComponent, bem] = createNamespace('field');
 export default createComponent({
   inheritAttrs: false,
 
+  provide() {
+    return {
+      vanField: this,
+    };
+  },
+
   inject: {
     vanForm: {
       default: null,
@@ -111,6 +117,10 @@ export default createComponent({
         return { width: addUnit(labelWidth) };
       }
     },
+
+    formValue() {
+      return this.children ? this.children.value : this.value;
+    },
   },
 
   methods: {
@@ -135,7 +145,7 @@ export default createComponent({
       }
 
       return !this.rules.some(rule => {
-        if (rule.required && !this.value) {
+        if (rule.required && !this.formValue) {
           this.validateMessage = rule.message;
           return true;
         }
