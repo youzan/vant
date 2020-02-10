@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
-        <div class="van-cell__value van-cell__value--alone">
+        <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入文本" class="van-field__control"></div>
         </div>
       </div>
@@ -15,31 +15,31 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入文本" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>手机号</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="tel" placeholder="请输入手机号" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>整数</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="tel" placeholder="请输入整数" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>数字</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入数字（支持小数）" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>密码</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="password" placeholder="请输入密码" class="van-field__control"></div>
         </div>
       </div>
@@ -49,13 +49,13 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" readonly="readonly" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" disabled="disabled" class="van-field__control"></div>
         </div>
       </div>
@@ -67,7 +67,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-field__left-icon"><i class="van-icon van-icon-smile-o">
             <!----></i></div>
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="显示图标" class="van-field__control">
             <div class="van-field__right-icon"><i class="van-icon van-icon-warning-o">
                 <!----></i></div>
@@ -78,7 +78,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-field__left-icon"><i class="van-icon van-icon-music-o">
             <!----></i></div>
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="显示清除图标" class="van-field__control"></div>
         </div>
       </div>
@@ -88,13 +88,13 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--required van-field van-field--error">
         <div class="van-cell__title van-field__label"><span>用户名</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入用户名" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-cell--required van-field">
         <div class="van-cell__title van-field__label"><span>手机号</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入手机号" class="van-field__control"></div>
           <div class="van-field__error-message">手机号格式错误</div>
         </div>
@@ -105,7 +105,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-field">
         <div class="van-cell__title van-field__label"><span>短信验证码</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入短信验证码" class="van-field__control">
             <div class="van-field__button"><button class="van-button van-button--primary van-button--small"><span class="van-button__text">
           发送验证码
@@ -119,7 +119,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="格式化输入内容" class="van-field__control"></div>
         </div>
       </div>
@@ -129,7 +129,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>留言</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><textarea rows="1" placeholder="请输入留言" class="van-field__control" style="height: auto;"></textarea></div>
         </div>
       </div>
@@ -139,7 +139,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>留言</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><textarea rows="2" placeholder="请输入留言" class="van-field__control" style="height: auto;"></textarea></div>
           <div class="van-field__word-limit"><span class="van-field__word-num">0</span>/50</div>
         </div>
@@ -150,7 +150,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="输入框内容右对齐" class="van-field__control van-field__control--right"></div>
         </div>
       </div>
