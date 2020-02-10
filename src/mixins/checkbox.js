@@ -36,6 +36,10 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       return (this.parent && this.parent.disabled) || this.disabled;
     },
 
+    direction() {
+      return (this.parent && this.parent.direction) || null;
+    },
+
     iconStyle() {
       const checkedColor =
         this.checkedColor || (this.parent && this.parent.checkedColor);
@@ -120,10 +124,13 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     return (
       <div
         role={role}
-        class={bem({
-          disabled: this.isDisabled,
-          'label-disabled': this.labelDisabled,
-        })}
+        class={bem([
+          {
+            disabled: this.isDisabled,
+            'label-disabled': this.labelDisabled,
+          },
+          this.direction,
+        ])}
         tabindex={this.tabindex}
         aria-checked={String(this.checked)}
         onClick={this.onClick}

@@ -33,6 +33,15 @@ export default {
 };
 ```
 
+### Horizontal
+
+```html
+<van-radio-group v-model="radio" direction="horizontal">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Disabled
 
 ```html
@@ -150,6 +159,7 @@ export default {
 |------|------|------|------|
 | v-model (v-model) | Name of checked radio | *any* | - |
 | disabled | Disable all radios | *boolean* | `false` |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | Icon size of all radios | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all radios | *string* | `#1989fa` | - |
 

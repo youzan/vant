@@ -33,6 +33,17 @@ export default {
 };
 ```
 
+### 水平排列
+
+将`direction`属性设置为`horizontal`后，单选框组会变成水平排列
+
+```html
+<van-radio-group v-model="radio" direction="horizontal">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
+</van-radio-group>
+```
+
 ### 禁用状态
 
 通过`disabled`属性禁止选项切换，在`Radio`上设置`disabled`可以禁用单个选项
@@ -160,6 +171,7 @@ export default {
 |------|------|------|------|
 | v-model (value) | 当前选中项的标识符 | *any* | - |
 | disabled | 是否禁用所有单选框 | *boolean* | `false` |
+| direction `v2.5.0` | 排列方向，可选值为`horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有单选框的选中状态颜色 | *string* | `#1989fa` |
 
