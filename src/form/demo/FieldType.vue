@@ -13,6 +13,10 @@
         <van-rate v-model="rate" slot="input" />
       </van-field>
 
+      <van-field name="stepper" :label="$t('stepper')">
+        <van-stepper v-model="stepper" slot="input" />
+      </van-field>
+
       <div style="margin: 16px;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
@@ -27,6 +31,7 @@ export default {
       rate: '评分',
       submit: '提交',
       switch: '开关',
+      stepper: '步进器',
       checkbox: '复选框',
       fieldType: '表单项类型',
       requireCheckbox: '请勾选复选框',
@@ -35,6 +40,7 @@ export default {
       rate: 'Rate',
       submit: 'Submit',
       switch: 'Switch',
+      stepper: 'Stepper',
       checkbox: 'Checkbox',
       fieldType: 'Field Type',
       requireCheckbox: 'Checkbox is required',
@@ -44,6 +50,7 @@ export default {
   data() {
     return {
       rate: 3,
+      stepper: 1,
       checkbox: false,
       switchChecked: false,
     };

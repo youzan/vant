@@ -1,6 +1,7 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
+import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -18,6 +19,8 @@ function add(num1, num2) {
 }
 
 export default createComponent({
+  mixins: [FieldMixin],
+
   props: {
     value: null,
     integer: Boolean,
