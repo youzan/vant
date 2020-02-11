@@ -157,6 +157,14 @@ export default createComponent({
           if (rule.required && this.formValueEmpty) {
             messages.push(rule.message);
           }
+
+          if (rule.validator) {
+            const result = rule.validator(this.formValue);
+
+            if (!result) {
+              messages.push(rule.message);
+            }
+          }
         });
 
         if (messages.length) {

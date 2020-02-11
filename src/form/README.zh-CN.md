@@ -20,7 +20,7 @@ Vue.use(Form);
 在表单中，每个 [Field](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性可以定义校验规则
 
 ```html
-<van-form @submit="onSubmit" @failed="onFailed">
+<van-form @submit="onSubmit">
   <van-field
     v-model="username"
     name="用户名"
@@ -49,6 +49,43 @@ export default {
       username: '',
       password: '',
     };
+  },
+  methods: {
+    onSubmit(values) {
+      console.log('submit', values);
+    },
+  },
+};
+```
+
+### 校验规则
+
+在`rules`中，可以通过`validator`字段定义校验函数，校验函数返回`false`时表示校验不通过
+
+```html
+<van-form>
+  <van-field
+    v-model="value"
+    label="手机号"
+    :rules="rules"
+    placeholder="手机号"
+    @submit="onSubmit"
+    @failed="onFailed"
+  />
+  <div style="margin: 16px;">
+    <van-button round block type="info">提交</van-button>
+  </div>
+</van-form>
+```
+
+```js
+export default {
+  data() {
+    this.rules = [
+      { required: true, message: '请输入手机号' },
+      { validator: val => /1\d{10}/.test(val), message: '手机号格式错误' },
+    ];
+    return { value: '' };
   },
   methods: {
     onSubmit(values) {

@@ -14,7 +14,7 @@ Vue.use(Form);
 ### Basic Usage
 
 ```html
-<van-form @submit="onSubmit" @failed="onFailed">
+<van-form @submit="onSubmit">
   <van-field
     v-model="username"
     name="Username"
@@ -47,9 +47,6 @@ export default {
   methods: {
     onSubmit(values) {
       console.log('submit', values);
-    },
-    onFailed(errorInfo) {
-      console.log('failed', errorInfo);
     },
   },
 }
