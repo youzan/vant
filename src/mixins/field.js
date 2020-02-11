@@ -14,7 +14,7 @@ export const FieldMixin = {
   },
 
   created() {
-    if (this.vanField) {
+    if (this.vanField && !this.vanField.children) {
       this.vanField.children = this;
     }
   },

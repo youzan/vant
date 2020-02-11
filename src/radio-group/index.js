@@ -1,10 +1,11 @@
 import { createNamespace } from '../utils';
+import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('radio-group');
 
 export default createComponent({
-  mixins: [ParentMixin('vanRadio')],
+  mixins: [ParentMixin('vanRadio'), FieldMixin],
 
   props: {
     value: null,
