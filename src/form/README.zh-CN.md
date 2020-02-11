@@ -218,7 +218,7 @@ export default {
     show-toolbar
     :columns="columns"
     @confirm="onConfirm"
-    @cancel="onCancel"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
@@ -235,9 +235,6 @@ export default {
   methods: {
     onConfirm(value) {
       this.value = value;
-      this.showPicker = false;
-    },
-    onCancel() {
       this.showPicker = false;
     },
   },
@@ -258,10 +255,9 @@ export default {
 />
 <van-popup v-model="showPicker" position="bottom">
   <van-datetime-picker
-    v-model="currentDate"
-    type="date"
+    type="time"
     @confirm="onConfirm"
-    @cancel="onCancel"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
@@ -272,18 +268,11 @@ export default {
     return {
       value: '',
       showPicker: false,
-      currentDate: new Date(),
     };
   },
   methods: {
-    formatDate(date) {
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-    },
-    onConfirm(date) {
-      this.value = this.formatDate(date);
-      this.showPicker = false;
-    },
-    onCancel() {
+    onConfirm(time) {
+      this.value = time;
       this.showPicker = false;
     },
   },
@@ -306,7 +295,7 @@ export default {
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"
-    @cancel="onCancel"
+    @cancel="showArea = false"
   />
 </van-popup>
 ```
@@ -317,7 +306,7 @@ export default {
     return {
       value: '',
       showArea: false,
-      areaList: {} // 数据格式见 Area 组件文档
+      areaList: {}, // 数据格式见 Area 组件文档
     };
   },
   methods: {
@@ -325,8 +314,37 @@ export default {
       this.value = values.map(item => item.name).join('/');
       this.showArea = false;
     },
-    onCancel() {
-      this.showArea = false;
+  },
+};
+```
+
+### 表单项类型 - 日历
+
+```html
+<van-field
+  readonly
+  clickable
+  name="calendar"
+  :value="value"
+  label="日历"
+  placeholder="点击选择日期"
+  @click="showCalendar = true"
+/>
+<van-calendar v-model="showCalendar" @confirm="onConfirm" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showCalendar: false,
+    };
+  },
+  methods: {
+    onConfirm(date) {
+      this.value = `${date.getMonth() + 1}/${date.getDate()}`;
+      this.showCalendar = false;
     },
   },
 };

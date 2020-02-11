@@ -11,8 +11,7 @@
     />
     <van-popup v-model="showPicker" position="bottom">
       <van-datetime-picker
-        v-model="currentDate"
-        type="date"
+        type="time"
         @confirm="onConfirm"
         @cancel="onCancel"
       />
@@ -37,16 +36,13 @@ export default {
     return {
       value: '',
       showPicker: false,
-      currentDate: new Date(),
     };
   },
 
   methods: {
-    formatDate(date) {
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-    },
-    onConfirm(date) {
-      this.value = this.formatDate(date);
+    onConfirm(time) {
+      console.log('time', time);
+      this.value = time;
       this.showPicker = false;
     },
     onCancel() {
