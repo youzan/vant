@@ -2,6 +2,9 @@
 import { createNamespace, addUnit, noop } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 
+// Mixins
+import { FieldMixin } from '../mixins/field';
+
 // Components
 import Icon from '../icon';
 import Image from '../image';
@@ -12,6 +15,8 @@ const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
   inheritAttrs: false,
+
+  mixins: [FieldMixin],
 
   model: {
     prop: 'fileList',
@@ -69,6 +74,11 @@ export default createComponent({
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
+    },
+
+    // for form
+    value() {
+      return this.fileList;
     },
   },
 

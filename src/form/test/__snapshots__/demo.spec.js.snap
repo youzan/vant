@@ -47,6 +47,29 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>复选框组</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-checkbox-group van-checkbox-group--horizontal">
+                <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
+                  <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
+                      <!----></i></div><span class="van-checkbox__label">
+          复选框 1
+        </span>
+                </div>
+                <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
+                  <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
+                      <!----></i></div><span class="van-checkbox__label">
+          复选框 2
+        </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>单选框</span></div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">

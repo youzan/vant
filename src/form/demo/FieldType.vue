@@ -43,6 +43,10 @@
         <van-stepper v-model="stepper" slot="input" />
       </van-field>
 
+      <van-field name="uploader" :label="$t('uploader')">
+        <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
+      </van-field>
+
       <div style="margin: 16px;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
@@ -61,6 +65,7 @@ export default {
       slider: '滑块',
       stepper: '步进器',
       checkbox: '复选框',
+      uploader: '文件上传',
       fieldType: '表单项类型',
       checkboxGroup: '复选框组',
       requireCheckbox: '请勾选复选框',
@@ -73,6 +78,7 @@ export default {
       slider: 'Slider',
       stepper: 'Stepper',
       checkbox: 'Checkbox',
+      uploader: 'Uploader',
       fieldType: 'Field Type',
       checkboxGroup: 'Checkbox Group',
       requireCheckbox: 'Checkbox is required',
@@ -85,6 +91,7 @@ export default {
       radio: '1',
       slider: 50,
       stepper: 1,
+      uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
       checkbox: false,
       checkboxGroup: [],
       switchChecked: false,
