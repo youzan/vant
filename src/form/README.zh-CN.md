@@ -201,6 +201,49 @@ export default {
 };
 ```
 
+### 表单项类型 - 选择器
+
+```html
+<van-field
+  readonly
+  clickable
+  name="picker"
+  :value="value"
+  label="选择器"
+  placeholder="点击选择城市"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-picker
+    show-toolbar
+    :columns="columns"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      showPicker: false,
+    };
+  },
+  methods: {
+    onConfirm(value) {
+      this.value = value;
+      this.showPicker = false;
+    },
+    onCancel() {
+      this.showPicker = false;
+    },
+  },
+};
+```
+
 ## API
 
 ### Props

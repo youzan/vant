@@ -195,6 +195,49 @@ export default {
 };
 ```
 
+### Field Type - Picker
+
+```html
+<van-field
+  readonly
+  clickable
+  name="picker"
+  :value="value"
+  label="Picker"
+  placeholder="Picker"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-picker
+    show-toolbar
+    :columns="columns"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      showPicker: false,
+    };
+  },
+  methods: {
+    onConfirm(value) {
+      this.value = value;
+      this.showPicker = false;
+    },
+    onCancel() {
+      this.showPicker = false;
+    },
+  },
+};
+```
+
 ## API
 
 ### Props

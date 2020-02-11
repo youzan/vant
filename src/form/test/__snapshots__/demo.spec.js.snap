@@ -16,7 +16,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
+      <div style="margin: 16px 16px 0px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
     </form>
   </div>
   <div>
@@ -26,7 +26,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div role="switch" aria-checked="false" class="van-switch" style="font-size: 24px;">
+              <div role="switch" aria-checked="false" class="van-switch" style="font-size: 20px;">
                 <div class="van-switch__node"></div>
               </div>
             </div>
@@ -75,7 +75,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <div role="radiogroup" class="van-radio-group van-radio-group--horizontal">
-                <div role="radio" tabindex="0" aria-checked="true" class="demo-radio van-radio van-radio--horizontal">
+                <div role="radio" tabindex="0" aria-checked="true" class="van-radio van-radio--horizontal">
                   <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success">
                       <!----></i></div><span class="van-radio__label">单选框 1</span>
                 </div>
@@ -84,6 +84,16 @@ exports[`renders demo correctly 1`] = `
                       <!----></i></div><span class="van-radio__label">单选框 2</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>步进器</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
             </div>
           </div>
         </div>
@@ -126,16 +136,6 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>步进器</span></div>
-        <div class="van-cell__value van-field__value">
-          <div class="van-field__body">
-            <div class="van-field__control van-field__control--custom">
-              <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文件上传</span></div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
@@ -157,7 +157,16 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div style="margin: 16px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
+      <div>
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+          <div class="van-cell__title van-field__label"><span>选择器</span></div>
+          <div class="van-cell__value van-field__value">
+            <div class="van-field__body"><input type="text" name="picker" readonly="readonly" placeholder="点击选择城市" class="van-field__control"></div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div style="margin: 16px 16px 0px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
     </form>
   </div>
 </div>

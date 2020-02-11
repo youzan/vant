@@ -47,6 +47,8 @@
         <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
       </van-field>
 
+      <field-type-picker />
+
       <div style="margin: 16px 16px 0;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
@@ -55,6 +57,8 @@
 </template>
 
 <script>
+import FieldTypePicker from './FieldTypePicker';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -63,6 +67,7 @@ export default {
       submit: '提交',
       switch: '开关',
       slider: '滑块',
+      picker: '选择器',
       stepper: '步进器',
       checkbox: '复选框',
       uploader: '文件上传',
@@ -76,6 +81,7 @@ export default {
       submit: 'Submit',
       switch: 'Switch',
       slider: 'Slider',
+      picker: 'Picker',
       stepper: 'Stepper',
       checkbox: 'Checkbox',
       uploader: 'Uploader',
@@ -83,6 +89,10 @@ export default {
       checkboxGroup: 'Checkbox Group',
       requireCheckbox: 'Checkbox is required',
     },
+  },
+
+  components: {
+    FieldTypePicker,
   },
 
   data() {
