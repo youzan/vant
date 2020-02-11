@@ -118,6 +118,16 @@ export default createComponent({
     formValue() {
       return this.children ? this.children.value : this.value;
     },
+
+    formValueEmpty() {
+      const { formValue } = this;
+
+      if (Array.isArray(formValue)) {
+        return !formValue.length;
+      }
+
+      return !formValue;
+    },
   },
 
   methods: {
@@ -144,7 +154,7 @@ export default createComponent({
         const messages = [];
 
         this.rules.forEach(rule => {
-          if (rule.required && !this.formValue) {
+          if (rule.required && this.formValueEmpty) {
             messages.push(rule.message);
           }
         });

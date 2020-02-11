@@ -9,6 +9,21 @@
         <van-checkbox v-model="checkbox" slot="input" shape="square" />
       </van-field>
 
+      <van-field name="checkboxGroup" :label="$t('checkboxGroup')">
+        <van-checkbox-group
+          v-model="checkboxGroup"
+          slot="input"
+          direction="horizontal"
+        >
+          <van-checkbox name="1" shape="square">
+            {{ $t('checkbox') }} 1
+          </van-checkbox>
+          <van-checkbox name="2" shape="square">
+            {{ $t('checkbox') }} 2
+          </van-checkbox>
+        </van-checkbox-group>
+      </van-field>
+
       <van-field name="radio" :label="$t('radio')">
         <van-radio-group v-model="radio" direction="horizontal" slot="input">
           <van-radio name="1" class="demo-radio">{{ $t('radio') }} 1</van-radio>
@@ -47,6 +62,7 @@ export default {
       stepper: '步进器',
       checkbox: '复选框',
       fieldType: '表单项类型',
+      checkboxGroup: '复选框组',
       requireCheckbox: '请勾选复选框',
     },
     'en-US': {
@@ -58,6 +74,7 @@ export default {
       stepper: 'Stepper',
       checkbox: 'Checkbox',
       fieldType: 'Field Type',
+      checkboxGroup: 'Checkbox Group',
       requireCheckbox: 'Checkbox is required',
     },
   },
@@ -69,6 +86,7 @@ export default {
       slider: 50,
       stepper: 1,
       checkbox: false,
+      checkboxGroup: [],
       switchChecked: false,
     };
   },
