@@ -244,6 +244,52 @@ export default {
 };
 ```
 
+### 表单项类型 - 时间选择器
+
+```html
+<van-field
+  readonly
+  clickable
+  name="picker"
+  :value="value"
+  label="时间选择"
+  placeholder="点击选择时间"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-datetime-picker
+    v-model="currentDate"
+    type="date"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showPicker: false,
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatDate(date) {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    },
+    onConfirm(date) {
+      this.value = this.formatDate(date);
+      this.showPicker = false;
+    },
+    onCancel() {
+      this.showPicker = false;
+    },
+  },
+};
+```
+
 ## API
 
 ### Props

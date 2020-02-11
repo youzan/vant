@@ -84,7 +84,6 @@ export default {
       currentDate: new Date()
     };
   },
-
   methods: {
     formatter(type, val) {
       if (type === 'year') {
@@ -138,7 +137,6 @@ export default {
       currentTime: '12:00'
     };
   },
-
   methods: {
     filter(type, options) {
       if (type === 'minute') {

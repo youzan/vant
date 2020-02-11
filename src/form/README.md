@@ -204,7 +204,7 @@ export default {
   name="picker"
   :value="value"
   label="Picker"
-  placeholder="Picker"
+  placeholder="Select city"
   @click="showPicker = true"
 />
 <van-popup v-model="showPicker" position="bottom">
@@ -229,6 +229,52 @@ export default {
   methods: {
     onConfirm(value) {
       this.value = value;
+      this.showPicker = false;
+    },
+    onCancel() {
+      this.showPicker = false;
+    },
+  },
+};
+```
+
+### Field Type - DatetimePicker
+
+```html
+<van-field
+  readonly
+  clickable
+  name="picker"
+  :value="value"
+  label="DatetimePicker"
+  placeholder="Select time"
+  @click="showPicker = true"
+/>
+<van-popup v-model="showPicker" position="bottom">
+  <van-datetime-picker
+    v-model="currentDate"
+    type="date"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showPicker: false,
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatDate(date) {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    },
+    onConfirm(date) {
+      this.value = this.formatDate(date);
       this.showPicker = false;
     },
     onCancel() {

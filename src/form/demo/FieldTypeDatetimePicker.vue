@@ -5,14 +5,14 @@
       clickable
       name="picker"
       :value="value"
-      :label="$t('picker')"
+      :label="$t('label')"
       :placeholder="$t('placeholder')"
       @click="showPicker = true"
     />
     <van-popup v-model="showPicker" position="bottom">
-      <van-picker
-        show-toolbar
-        :columns="$t('textColumns')"
+      <van-datetime-picker
+        v-model="currentDate"
+        type="date"
         @confirm="onConfirm"
         @cancel="onCancel"
       />
@@ -24,14 +24,12 @@
 export default {
   i18n: {
     'zh-CN': {
-      picker: '选择器',
-      placeholder: '点击选择城市',
-      textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      label: '时间选择',
+      placeholder: '点击选择时间',
     },
     'en-US': {
-      picker: 'Picker',
-      placeholder: 'Select city',
-      textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      label: 'Datetime Picker',
+      placeholder: 'Select time',
     },
   },
 
@@ -39,15 +37,18 @@ export default {
     return {
       value: '',
       showPicker: false,
+      currentDate: new Date(),
     };
   },
 
   methods: {
-    onConfirm(value) {
-      this.value = value;
+    formatDate(date) {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    },
+    onConfirm(date) {
+      this.value = this.formatDate(date);
       this.showPicker = false;
     },
-
     onCancel() {
       this.showPicker = false;
     },
