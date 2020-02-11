@@ -181,7 +181,7 @@ export default {
 
 ```html
 <van-field name="uploader" label="Uploader">
-  <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
+  <van-uploader v-model="uploader" slot="input" />
 </van-field>
 ```
 

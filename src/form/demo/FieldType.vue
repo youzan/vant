@@ -44,7 +44,7 @@
       </van-field>
 
       <van-field name="uploader" :label="$t('uploader')">
-        <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
+        <van-uploader v-model="uploader" slot="input" max-count="2" />
       </van-field>
 
       <field-type-picker />

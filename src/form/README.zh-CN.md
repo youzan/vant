@@ -63,6 +63,8 @@ export default {
 
 ### 表单项类型 - 开关
 
+在表单中使用 [Switch](#/zh-CN/switch) 组件
+
 ```html
 <van-field name="switch" label="开关">
   <van-switch v-model="switchChecked" slot="input" size="20" />
@@ -80,6 +82,8 @@ export default {
 ```
 
 ### 表单项类型 - 复选框
+
+在表单中使用 [Checkbox](#/zh-CN/checkbox) 组件
 
 ```html
 <van-field name="checkbox" label="复选框">
@@ -110,6 +114,8 @@ export default {
 
 ### 表单项类型 - 单选框
 
+在表单中使用 [Radio](#/zh-CN/radio) 组件
+
 ```html
 <van-field name="radio" label="单选框">
   <van-radio-group v-model="radio" direction="horizontal" slot="input">
@@ -131,6 +137,8 @@ export default {
 
 ### 表单项类型 - 步进器
 
+在表单中使用 [Stepper](#/zh-CN/stepper) 组件
+
 ```html
 <van-field name="stepper" label="步进器">
   <van-stepper v-model="stepper" slot="input" />
@@ -148,6 +156,8 @@ export default {
 ```
 
 ### 表单项类型 - 评分
+
+在表单中使用 [Rate](#/zh-CN/rate) 组件
 
 ```html
 <van-field name="rate" label="评分">
@@ -167,6 +177,8 @@ export default {
 
 ### 表单项类型 - 滑块
 
+在表单中使用 [Slider](#/zh-CN/slider) 组件
+
 ```html
 <van-field name="slider" label="滑块">
   <van-slider v-model="slider" slot="input" />
@@ -185,9 +197,11 @@ export default {
 
 ### 表单项类型 - 文件上传
 
+在表单中使用 [Uploader](#/zh-CN/uploader) 组件
+
 ```html
 <van-field name="uploader" label="文件上传">
-  <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
+  <van-uploader v-model="uploader" slot="input" />
 </van-field>
 ```
 
@@ -202,6 +216,8 @@ export default {
 ```
 
 ### 表单项类型 - 选择器
+
+在表单中使用 [Picker](#/zh-CN/picker) 组件
 
 ```html
 <van-field
@@ -243,6 +259,8 @@ export default {
 
 ### 表单项类型 - 时间选择器
 
+在表单中使用 [DatetimePicker](#/zh-CN/datetime-picker) 组件
+
 ```html
 <van-field
   readonly
@@ -280,6 +298,8 @@ export default {
 ```
 
 ### 表单项类型 - 省市区选择器
+
+在表单中使用 [Area](#/zh-CN/area) 组件
 
 ```html
 <van-field
@@ -319,6 +339,8 @@ export default {
 ```
 
 ### 表单项类型 - 日历
+
+在表单中使用 [Calendar](#/zh-CN/calendar) 组件
 
 ```html
 <van-field
