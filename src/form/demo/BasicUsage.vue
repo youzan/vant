@@ -16,7 +16,7 @@
         :rules="[{ required: true, message: $t('requirePassword') }]"
         :placeholder="$t('password')"
       />
-      <div style="margin: 16px;">
+      <div style="margin: 16px 16px 0;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
     </van-form>

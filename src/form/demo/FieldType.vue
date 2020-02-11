@@ -2,7 +2,7 @@
   <demo-block :title="$t('fieldType')">
     <van-form @submit="onSubmit">
       <van-field name="switch" :label="$t('switch')">
-        <van-switch v-model="switchChecked" slot="input" size="24" />
+        <van-switch v-model="switchChecked" slot="input" size="20" />
       </van-field>
 
       <van-field name="checkbox" :label="$t('checkbox')">
@@ -26,9 +26,13 @@
 
       <van-field name="radio" :label="$t('radio')">
         <van-radio-group v-model="radio" direction="horizontal" slot="input">
-          <van-radio name="1" class="demo-radio">{{ $t('radio') }} 1</van-radio>
+          <van-radio name="1">{{ $t('radio') }} 1</van-radio>
           <van-radio name="2">{{ $t('radio') }} 2</van-radio>
         </van-radio-group>
+      </van-field>
+
+      <van-field name="stepper" :label="$t('stepper')">
+        <van-stepper v-model="stepper" slot="input" />
       </van-field>
 
       <van-field name="rate" :label="$t('rate')">
@@ -39,15 +43,11 @@
         <van-slider v-model="slider" slot="input" />
       </van-field>
 
-      <van-field name="stepper" :label="$t('stepper')">
-        <van-stepper v-model="stepper" slot="input" />
-      </van-field>
-
       <van-field name="uploader" :label="$t('uploader')">
         <van-uploader v-model="uploader" slot="input" multiple max-count="2" />
       </van-field>
 
-      <div style="margin: 16px;">
+      <div style="margin: 16px 16px 0;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
       </div>
     </van-form>

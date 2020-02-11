@@ -135,6 +135,28 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>文件上传</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-uploader">
+                <div class="van-uploader__wrapper">
+                  <div class="van-uploader__preview">
+                    <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+                      <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+                          <!----></i></div>
+                    </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
+                      <!----></i>
+                  </div>
+                  <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+                      <!----></i><input multiple="multiple" type="file" accept="image/*" class="van-uploader__input"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div style="margin: 16px;"><button class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">提交</span></button></div>
     </form>
   </div>
