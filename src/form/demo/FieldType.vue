@@ -49,6 +49,7 @@
 
       <field-type-picker />
       <field-type-datetime-picker />
+      <field-type-area />
 
       <div style="margin: 16px 16px 0;">
         <van-button type="info" round block>{{ $t('submit') }}</van-button>
@@ -58,6 +59,7 @@
 </template>
 
 <script>
+import FieldTypeArea from './FieldTypeArea';
 import FieldTypePicker from './FieldTypePicker';
 import FieldTypeDatetimePicker from './FieldTypeDatetimePicker';
 
@@ -94,6 +96,7 @@ export default {
   },
 
   components: {
+    FieldTypeArea,
     FieldTypePicker,
     FieldTypeDatetimePicker,
   },

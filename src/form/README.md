@@ -244,9 +244,9 @@ export default {
 <van-field
   readonly
   clickable
-  name="picker"
+  name="datetimePicker"
   :value="value"
-  label="DatetimePicker"
+  label="Datetime Picker"
   placeholder="Select time"
   @click="showPicker = true"
 />
@@ -279,6 +279,48 @@ export default {
     },
     onCancel() {
       this.showPicker = false;
+    },
+  },
+};
+```
+
+### Field Type - Area
+
+```html
+<van-field
+  readonly
+  clickable
+  name="area"
+  :value="value"
+  label="Area Picker"
+  placeholder="Select area"
+  @click="showArea = true"
+/>
+<van-popup v-model="showArea" position="bottom">
+  <van-area
+    :area-list="areaList"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showArea: false,
+      areaList: {}
+    };
+  },
+  methods: {
+    onConfirm(values) {
+      this.value = values.map(item => item.name).join('/');
+      this.showArea = false;
+    },
+    onCancel() {
+      this.showArea = false;
     },
   },
 };

@@ -3,7 +3,7 @@
     <van-field
       readonly
       clickable
-      name="picker"
+      name="datetimePicker"
       :value="value"
       :label="$t('label')"
       :placeholder="$t('placeholder')"

@@ -250,7 +250,7 @@ export default {
 <van-field
   readonly
   clickable
-  name="picker"
+  name="datetimePicker"
   :value="value"
   label="时间选择"
   placeholder="点击选择时间"
@@ -285,6 +285,48 @@ export default {
     },
     onCancel() {
       this.showPicker = false;
+    },
+  },
+};
+```
+
+### 表单项类型 - 省市区选择器
+
+```html
+<van-field
+  readonly
+  clickable
+  name="area"
+  :value="value"
+  label="地区选择"
+  placeholder="点击选择省市区"
+  @click="showArea = true"
+/>
+<van-popup v-model="showArea" position="bottom">
+  <van-area
+    :area-list="areaList"
+    @confirm="onConfirm"
+    @cancel="onCancel"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showArea: false,
+      areaList: {} // 数据格式见 Area 组件文档
+    };
+  },
+  methods: {
+    onConfirm(values) {
+      this.value = values.map(item => item.name).join('/');
+      this.showArea = false;
+    },
+    onCancel() {
+      this.showArea = false;
     },
   },
 };

@@ -170,7 +170,16 @@ exports[`renders demo correctly 1`] = `
         <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
           <div class="van-cell__title van-field__label"><span>时间选择</span></div>
           <div class="van-cell__value van-field__value">
-            <div class="van-field__body"><input type="text" name="picker" readonly="readonly" placeholder="点击选择时间" class="van-field__control"></div>
+            <div class="van-field__body"><input type="text" name="datetimePicker" readonly="readonly" placeholder="点击选择时间" class="van-field__control"></div>
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div>
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+          <div class="van-cell__title van-field__label"><span>地区选择</span></div>
+          <div class="van-cell__value van-field__value">
+            <div class="van-field__body"><input type="text" name="area" readonly="readonly" placeholder="点击选择省市区" class="van-field__control"></div>
           </div>
         </div>
         <!---->
