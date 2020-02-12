@@ -53,7 +53,9 @@
       <field-type-calendar />
 
       <div style="margin: 16px 16px 0;">
-        <van-button type="info" round block>{{ $t('submit') }}</van-button>
+        <van-button round block type="info" native-type="submit">
+          {{ $t('submit') }}
+        </van-button>
       </div>
     </van-form>
   </demo-block>

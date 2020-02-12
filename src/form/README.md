@@ -31,7 +31,9 @@ Vue.use(Form);
     :rules="[{ required: true, message: 'Password is required' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info">Submit</van-button>
+    <van-button round block type="info" native-type="submit">
+      Submit
+    </van-button>
   </div>
 </van-form>
 ```
@@ -55,11 +57,13 @@ export default {
 ### Validate Rules
 
 ```html
-<van-form @submit="onSubmit" @failed="onFailed">
-  <van-field v-model="value" name="phone" label="Phone" :rules="rules.phone" />
-  <van-field v-model="code" name="code" label="Code" :rules="rules.code" />
+<van-form validate-first @submit="onSubmit" @failed="onFailed">
+  <van-field v-model="phone" name="phone" label="Phone" :rules="phoneRules" />
+  <van-field v-model="code" name="code" label="Code" :rules="codeRules" />
   <div style="margin: 16px;">
-    <van-button round block type="info">Submit</van-button>
+    <van-button round block type="info" native-type="submit">
+      Submit
+    </van-button>
   </div>
 </van-form>
 ```
@@ -69,23 +73,24 @@ import { Toast } from 'vant';
 
 export default {
   data() {
-    this.rules = {
-      phone: [
-        { required: true, message: 'Phone is required' },
-        { validator: val => this.validatePhone, message: 'Incorrect phone' },
-      ],
-      code: [
-        { required: true, message: 'Code is required' },
-        { validator: this.validateCode, message: 'Incorrect code' },
-      ],
+    this.phoneRules = [
+      { required: true, message: 'Phone is required' },
+      { validator: this.phoneValidator, message: 'Incorrect phone' },
+    ];
+    this.codeRules = [
+      { required: true, message: 'Code is required' },
+      { validator: this.codeValidator, message: 'Incorrect code' },
+    ];
+    return {
+      code: '',
+      phone: '',
     };
-    return { value: '' };
   },
   methods: {
-    validatePhone(val) {
+    phoneValidator(val) {
       return /1\d{10}/.test(val);
     },
-    validateCode(val) {
+    codeValidator(val) {
       return new Promise(resolve => {
         Toast.loading('Validating...');
 

@@ -5,18 +5,20 @@
         v-model="phone"
         name="phone"
         :label="$t('phone')"
-        :rules="rules.phone"
+        :rules="phoneRules"
         :placeholder="$t('phone')"
       />
       <van-field
         v-model="code"
         name="code"
         :label="$t('code')"
-        :rules="rules.code"
+        :rules="codeRules"
         :placeholder="$t('code')"
       />
       <div style="margin: 16px 16px 0;">
-        <van-button type="info" round block>{{ $t('submit') }}</van-button>
+        <van-button round block type="info" native-type="submit">
+          {{ $t('submit') }}
+        </van-button>
       </div>
     </van-form>
   </demo-block>
@@ -57,30 +59,29 @@ export default {
   },
 
   created() {
-    this.rules = {
-      phone: [
-        { required: true, message: this.$t('requirePhone') },
-        {
-          validator: this.validatePhone,
-          message: this.$t('incorrectPhone'),
-        },
-      ],
-      code: [
-        { required: true, message: this.$t('requireCode') },
-        {
-          validator: this.validateCode,
-          message: this.$t('incorrectCode'),
-        },
-      ],
-    };
+    this.phoneRules = [
+      { required: true, message: this.$t('requirePhone') },
+      {
+        validator: this.phoneValidator,
+        message: this.$t('incorrectPhone'),
+      },
+    ];
+
+    this.codeRules = [
+      { required: true, message: this.$t('requireCode') },
+      {
+        validator: this.codeValidator,
+        message: this.$t('incorrectCode'),
+      },
+    ];
   },
 
   methods: {
-    validatePhone(val) {
+    phoneValidator(val) {
       return /1\d{10}/.test(val);
     },
 
-    validateCode(val) {
+    codeValidator(val) {
       return new Promise(resolve => {
         this.$toast.loading(this.$t('validating'));
 

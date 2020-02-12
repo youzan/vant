@@ -37,7 +37,9 @@ Vue.use(Form);
     :rules="[{ required: true, message: '请填写密码' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info">提交</van-button>
+    <van-button round block type="info" native-type="submit">
+      提交
+    </van-button>
   </div>
 </van-form>
 ```
@@ -60,14 +62,16 @@ export default {
 
 ### 校验规则
 
-在`rules`中，可以通过`validator`字段定义校验函数
+通过`rules`中的`validator`字段定义校验函数
 
 ```html
-<van-form @submit="onSubmit" @failed="onFailed">
-  <van-field v-model="value" name="phone" label="手机号" :rules="rules.phone" />
-  <van-field v-model="code" name="code" label="验证码" :rules="rules.code" />
+<van-form validate-first @submit="onSubmit" @failed="onFailed">
+  <van-field v-model="phone" name="phone" label="手机号" :rules="phoneRules" />
+  <van-field v-model="code" name="code" label="验证码" :rules="codeRules" />
   <div style="margin: 16px;">
-    <van-button round block type="info">提交</van-button>
+    <van-button round block type="info" native-type="submit">
+      提交
+    </van-button>
   </div>
 </van-form>
 ```
@@ -77,25 +81,26 @@ import { Toast } from 'vant';
 
 export default {
   data() {
-    this.rules = {
-      phone: [
-        { required: true, message: '请输入手机号' },
-        { validator: val => this.validatePhone, message: '手机号格式错误' },
-      ],
-      code: [
-        { required: true, message: '请输入验证码' },
-        { validator: this.validateCode, message: '验证码错误' },
-      ],
+    this.phoneRules = [
+      { required: true, message: '请输入手机号' },
+      { validator: this.phoneValidator, message: '手机号格式错误' },
+    ];
+    this.codeRules = [
+      { required: true, message: '请输入验证码' },
+      { validator: this.codeValidator, message: '验证码错误' },
+    ];
+    return {
+      code: '',
+      phone: '',
     };
-    return { value: '' };
   },
   methods: {
     // 校验函数返回 true 表示校验通过，false 表示不通过
-    validatePhone(val) {
+    phoneValidator(val) {
       return /1\d{10}/.test(val);
     },
     // 校验函数返回 Promise 来实现异步校验
-    validateCode(val) {
+    codeValidator(val) {
       return new Promise(resolve => {
         Toast.loading('验证中...');
 
