@@ -63,7 +63,7 @@ export default createComponent({
 
   watch: {
     value() {
-      this.resetValidate();
+      this.resetValidation();
       this.$nextTick(this.adjustSize);
     },
   },
@@ -145,61 +145,63 @@ export default createComponent({
       }
     },
 
+    runValidator(validator) {
+      return new Promise(resolve => {
+        const returnVal = validator(this.formValue);
+
+        if (isPromise(returnVal)) {
+          return returnVal.then(resolve);
+        }
+
+        resolve(returnVal);
+      });
+    },
+
+    runRules() {
+      return this.rules.reduce(
+        (promise, rule) =>
+          promise.then(() => {
+            if (this.validateMessage) {
+              return;
+            }
+
+            if (rule.required && this.formValueEmpty) {
+              this.validateMessage = rule.message;
+              return;
+            }
+
+            if (rule.validator) {
+              return this.runValidator(rule.validator).then(result => {
+                if (result === false) {
+                  this.validateMessage = rule.message;
+                }
+              });
+            }
+          }),
+        Promise.resolve()
+      );
+    },
+
     validate() {
       return new Promise(resolve => {
         if (!this.rules) {
           resolve();
         }
 
-        let message;
-
-        this.rules
-          .reduce(
-            (promise, rule) =>
-              promise.then(() => {
-                if (message) {
-                  return;
-                }
-
-                if (rule.required && this.formValueEmpty) {
-                  ({ message } = rule);
-                  return;
-                }
-
-                if (rule.validator) {
-                  const returnVal = rule.validator(this.formValue);
-
-                  if (returnVal === false) {
-                    ({ message } = rule);
-                    return;
-                  }
-
-                  if (isPromise(returnVal)) {
-                    return returnVal.then(result => {
-                      if (result === false) {
-                        ({ message } = rule);
-                      }
-                    });
-                  }
-                }
-              }),
-            Promise.resolve()
-          )
-          .then(() => {
-            if (message) {
-              this.validateMessage = message;
-              resolve({
-                name: this.name,
-                message,
-              });
-            } else {
-              resolve();
-            }
-          });
+        this.runRules().then(() => {
+          if (this.validateMessage) {
+            resolve({
+              name: this.name,
+              message: this.validateMessage,
+            });
+          } else {
+            resolve();
+          }
+        });
       });
     },
 
-    resetValidate() {
+    resetValidation() {
       if (this.validateMessage) {
         this.validateMessage = '';
       }

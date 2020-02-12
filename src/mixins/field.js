@@ -8,7 +8,7 @@ export const FieldMixin = {
   watch: {
     value() {
       if (this.vanField) {
-        this.vanField.resetValidate();
+        this.vanField.resetValidation();
       }
     },
   },
