@@ -67,6 +67,13 @@ export default createComponent({
       return this.validateFirst ? this.validateSeq() : this.validateAll();
     },
 
+    // @exposed-api
+    resetValidation() {
+      this.fields.forEach(item => {
+        item.resetValidation();
+      });
+    },
+
     getValues() {
       return this.fields.reduce((form, field) => {
         form[field.name] = field.formValue;
