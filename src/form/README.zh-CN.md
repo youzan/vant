@@ -60,17 +60,16 @@ export default {
 
 ### 校验规则
 
-在`rules`中，可以通过`validator`字段定义校验函数，校验函数返回`false`时表示校验不通过
+在`rules`中，可以通过`validator`字段定义校验函数，校验函数返回`false`时表示校验不通过，返回`Promise`时表示异步校验
 
 ```html
-<van-form>
+<van-form @submit="onSubmit" @failed="onFailed">
   <van-field
     v-model="value"
+    name="phone"
     label="手机号"
     :rules="rules"
     placeholder="手机号"
-    @submit="onSubmit"
-    @failed="onFailed"
   />
   <div style="margin: 16px;">
     <van-button round block type="info">提交</van-button>

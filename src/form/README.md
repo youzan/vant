@@ -52,6 +52,43 @@ export default {
 }
 ```
 
+### Validate Rules
+
+```html
+<van-form @submit="onSubmit" @failed="onFailed">
+  <van-field
+    v-model="value"
+    name="phone"
+    label="Phone"
+    :rules="rules"
+    placeholder="Phone"
+  />
+  <div style="margin: 16px;">
+    <van-button round block type="info">Submit</van-button>
+  </div>
+</van-form>
+```
+
+```js
+export default {
+  data() {
+    this.rules = [
+      { required: true, message: 'Phone is required' },
+      { validator: val => /1\d{10}/.test(val), message: 'Incorrect format' },
+    ];
+    return { value: '' };
+  },
+  methods: {
+    onSubmit(values) {
+      console.log('submit', values);
+    },
+    onFailed(errorInfo) {
+      console.log('failed', errorInfo);
+    },
+  },
+};
+```
+
 ### Field Type - Switch
 
 ```html

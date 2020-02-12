@@ -3,7 +3,7 @@ import { formatNumber } from './utils';
 import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
-import { createNamespace, isObject, isDef, addUnit } from '../utils';
+import { createNamespace, isObject, isDef, addUnit, isPromise } from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -151,31 +151,41 @@ export default createComponent({
           resolve();
         }
 
-        const messages = [];
-
-        this.rules.forEach(rule => {
-          if (rule.required && this.formValueEmpty) {
-            messages.push(rule.message);
-          }
-
-          if (rule.validator) {
-            const result = rule.validator(this.formValue);
-
-            if (!result) {
-              messages.push(rule.message);
+        Promise.all(
+          this.rules.map(rule => {
+            if (rule.required && this.formValueEmpty) {
+              return Promise.resolve(rule.message);
             }
+
+            if (rule.validator) {
+              const returnVal = rule.validator(this.formValue);
+
+              if (returnVal === false) {
+                return Promise.resolve(rule.message);
+              }
+
+              if (isPromise(returnVal)) {
+                return returnVal.then(
+                  result => result === false && rule.message
+                );
+              }
+            }
+
+            return Promise.resolve();
+          })
+        ).then(messages => {
+          messages = messages.filter(item => item);
+
+          if (messages.length) {
+            this.validateMessage = messages[0];
+            resolve({
+              name: this.name,
+              messages,
+            });
+          } else {
+            resolve();
           }
         });
-
-        if (messages.length) {
-          this.validateMessage = messages[0];
-          resolve({
-            name: this.name,
-            messages,
-          });
-        } else {
-          resolve();
-        }
       });
     },
 
