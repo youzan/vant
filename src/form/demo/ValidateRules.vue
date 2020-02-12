@@ -61,7 +61,7 @@ export default {
       phone: [
         { required: true, message: this.$t('requirePhone') },
         {
-          validator: val => /1\d{10}/.test(val),
+          validator: this.validatePhone,
           message: this.$t('incorrectPhone'),
         },
       ],
@@ -76,6 +76,10 @@ export default {
   },
 
   methods: {
+    validatePhone(val) {
+      return /1\d{10}/.test(val);
+    },
+
     validateCode(val) {
       return new Promise(resolve => {
         this.$toast.loading(this.$t('validating'));

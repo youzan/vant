@@ -60,17 +60,12 @@ export default {
 
 ### 校验规则
 
-在`rules`中，可以通过`validator`字段定义校验函数，校验函数返回`false`时表示校验不通过，返回`Promise`时表示异步校验
+在`rules`中，可以通过`validator`字段定义校验函数
 
 ```html
 <van-form @submit="onSubmit" @failed="onFailed">
-  <van-field
-    v-model="value"
-    name="phone"
-    label="手机号"
-    :rules="rules"
-    placeholder="手机号"
-  />
+  <van-field v-model="value" name="phone" label="手机号" :rules="rules.phone" />
+  <van-field v-model="code" name="code" label="验证码" :rules="rules.code" />
   <div style="margin: 16px;">
     <van-button round block type="info">提交</van-button>
   </div>
@@ -78,15 +73,38 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
-    this.rules = [
-      { required: true, message: '请输入手机号' },
-      { validator: val => /1\d{10}/.test(val), message: '手机号格式错误' },
-    ];
+    this.rules = {
+      phone: [
+        { required: true, message: '请输入手机号' },
+        { validator: val => this.validatePhone, message: '手机号格式错误' },
+      ],
+      code: [
+        { required: true, message: '请输入验证码' },
+        { validator: this.validateCode, message: '验证码错误' },
+      ],
+    };
     return { value: '' };
   },
   methods: {
+    // 校验函数返回 true 表示校验通过，false 表示不通过
+    validatePhone(val) {
+      return /1\d{10}/.test(val);
+    },
+    // 校验函数返回 Promise 来实现异步校验
+    validateCode(val) {
+      return new Promise(resolve => {
+        Toast.loading('验证中...');
+
+        setTimeout(() => {
+          Toast.clear();
+          resolve(/\d{6}/.test(val));
+        }, 1000);
+      });
+    },
     onSubmit(values) {
       console.log('submit', values);
     },

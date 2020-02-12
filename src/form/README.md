@@ -49,20 +49,15 @@ export default {
       console.log('submit', values);
     },
   },
-}
+};
 ```
 
 ### Validate Rules
 
 ```html
 <van-form @submit="onSubmit" @failed="onFailed">
-  <van-field
-    v-model="value"
-    name="phone"
-    label="Phone"
-    :rules="rules"
-    placeholder="Phone"
-  />
+  <van-field v-model="value" name="phone" label="Phone" :rules="rules.phone" />
+  <van-field v-model="code" name="code" label="Code" :rules="rules.code" />
   <div style="margin: 16px;">
     <van-button round block type="info">Submit</van-button>
   </div>
@@ -70,15 +65,36 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
-    this.rules = [
-      { required: true, message: 'Phone is required' },
-      { validator: val => /1\d{10}/.test(val), message: 'Incorrect format' },
-    ];
+    this.rules = {
+      phone: [
+        { required: true, message: 'Phone is required' },
+        { validator: val => this.validatePhone, message: 'Incorrect phone' },
+      ],
+      code: [
+        { required: true, message: 'Code is required' },
+        { validator: this.validateCode, message: 'Incorrect code' },
+      ],
+    };
     return { value: '' };
   },
   methods: {
+    validatePhone(val) {
+      return /1\d{10}/.test(val);
+    },
+    validateCode(val) {
+      return new Promise(resolve => {
+        Toast.loading('Validating...');
+
+        setTimeout(() => {
+          Toast.clear();
+          resolve(/\d{6}/.test(val));
+        }, 1000);
+      });
+    },
     onSubmit(values) {
       console.log('submit', values);
     },
@@ -334,7 +350,7 @@ export default {
     return {
       value: '',
       showArea: false,
-      areaList: {}
+      areaList: {},
     };
   },
   methods: {
@@ -383,7 +399,8 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
+| --------- | ----------- | ---- | ------- |
+
 
 ### Events
 
@@ -392,4 +409,5 @@ export default {
 ### Slots
 
 | Name | Description |
-|------|------|
+| ---- | ----------- |
+
