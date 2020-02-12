@@ -30,8 +30,9 @@ export default {
       phone: '手机号',
       title: '校验规则',
       submit: '提交',
-      required: '请输入手机号',
       validating: '验证中...',
+      requireCode: '请输入验证码',
+      requirePhone: '请输入手机号',
       incorrectCode: '验证码错误',
       incorrectPhone: '手机号格式错误',
     },
@@ -41,6 +42,8 @@ export default {
       title: 'Validate Rules',
       submit: 'Submit',
       validating: 'Validating...',
+      requireCode: 'Code is required',
+      requirePhone: 'Phone is required',
       incorrectCode: 'Incorrect code',
       incorrectPhone: 'Incorrect phone',
     },
@@ -56,23 +59,16 @@ export default {
   created() {
     this.rules = {
       phone: [
-        { required: true, message: this.$t('required') },
+        { required: true, message: this.$t('requirePhone') },
         {
           validator: val => /1\d{10}/.test(val),
           message: this.$t('incorrectPhone'),
         },
       ],
       code: [
+        { required: true, message: this.$t('requireCode') },
         {
-          validator: val =>
-            new Promise(resolve => {
-              this.$toast.loading(this.$t('validating'));
-
-              setTimeout(() => {
-                this.$toast.clear();
-                resolve(/\d{6}/.test(val));
-              }, 1000);
-            }),
+          validator: this.validateCode,
           message: this.$t('incorrectCode'),
         },
       ],
@@ -80,6 +76,17 @@ export default {
   },
 
   methods: {
+    validateCode(val) {
+      return new Promise(resolve => {
+        this.$toast.loading(this.$t('validating'));
+
+        setTimeout(() => {
+          this.$toast.clear();
+          resolve(/\d{6}/.test(val));
+        }, 1000);
+      });
+    },
+
     onSubmit(values) {
       console.log('submit', values);
     },
