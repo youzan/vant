@@ -151,41 +151,51 @@ export default createComponent({
           resolve();
         }
 
-        Promise.all(
-          this.rules.map(rule => {
-            if (rule.required && this.formValueEmpty) {
-              return Promise.resolve(rule.message);
+        let message;
+
+        this.rules
+          .reduce(
+            (promise, rule) =>
+              promise.then(() => {
+                if (message) {
+                  return;
+                }
+
+                if (rule.required && this.formValueEmpty) {
+                  ({ message } = rule);
+                  return;
+                }
+
+                if (rule.validator) {
+                  const returnVal = rule.validator(this.formValue);
+
+                  if (returnVal === false) {
+                    ({ message } = rule);
+                    return;
+                  }
+
+                  if (isPromise(returnVal)) {
+                    return returnVal.then(result => {
+                      if (result === false) {
+                        ({ message } = rule);
+                      }
+                    });
+                  }
+                }
+              }),
+            Promise.resolve()
+          )
+          .then(() => {
+            if (message) {
+              this.validateMessage = message;
+              resolve({
+                name: this.name,
+                message,
+              });
+            } else {
+              resolve();
             }
-
-            if (rule.validator) {
-              const returnVal = rule.validator(this.formValue);
-
-              if (returnVal === false) {
-                return Promise.resolve(rule.message);
-              }
-
-              if (isPromise(returnVal)) {
-                return returnVal.then(
-                  result => result === false && rule.message
-                );
-              }
-            }
-
-            return Promise.resolve();
-          })
-        ).then(messages => {
-          messages = messages.filter(item => item);
-
-          if (messages.length) {
-            this.validateMessage = messages[0];
-            resolve({
-              name: this.name,
-              messages,
-            });
-          } else {
-            resolve();
-          }
-        });
+          });
       });
     },
 
