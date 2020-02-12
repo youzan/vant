@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, noop } from '../utils';
+import { createNamespace, addUnit, noop, isPromise } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 
 // Mixins
@@ -107,7 +107,7 @@ export default createComponent({
           return;
         }
 
-        if (response.then) {
+        if (isPromise(response)) {
           response
             .then(() => {
               this.readFile(files);
@@ -182,7 +182,7 @@ export default createComponent({
           return;
         }
 
-        if (response.then) {
+        if (isPromise(response)) {
           response
             .then(() => {
               this.deleteFile(file, index);

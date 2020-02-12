@@ -19,6 +19,10 @@ export function isObject(val: any): val is Record<any, any> {
   return val !== null && typeof val === 'object';
 }
 
+export function isPromise<T = any>(val: unknown): val is Promise<T> {
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
+}
+
 export function get(object: any, path: string): any {
   const keys = path.split('.');
   let result = object;
