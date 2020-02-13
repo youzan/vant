@@ -1,6 +1,75 @@
 import { mount, later } from '../../../test';
 import { mountForm, getSimpleRules } from './shared';
 
+test('rules prop - execute order', async () => {
+  const onFailed = jest.fn();
+  const wrapper = mountForm({
+    template: `
+      <van-form @failed="onFailed">
+        <van-field name="A" :rules="rules" value="123" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        rules: [
+          { required: true, message: 'A' },
+          { validator: val => val.length > 6, message: 'B' },
+          { validator: val => val !== 'foo', message: 'C' },
+        ],
+      };
+    },
+    methods: {
+      onFailed,
+    },
+  });
+
+  wrapper.find('.van-button').trigger('click');
+  await later();
+
+  expect(onFailed).toHaveBeenCalledWith({
+    errors: [{ message: 'B', name: 'A' }],
+    values: { A: '123' },
+  });
+});
+
+test('rules prop - async validator', async () => {
+  const onFailed = jest.fn();
+  const wrapper = mountForm({
+    template: `
+      <van-form @failed="onFailed">
+        <van-field name="A" :rules="rules" value="123" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        rules: [
+          {
+            validator: () => new Promise(resolve => resolve(true)),
+            message: 'should pass',
+          },
+          {
+            validator: () => new Promise(resolve => resolve(false)),
+            message: 'should fail',
+          },
+        ],
+      };
+    },
+    methods: {
+      onFailed,
+    },
+  });
+
+  wrapper.find('.van-button').trigger('click');
+  await later(10);
+
+  expect(onFailed).toHaveBeenCalledWith({
+    errors: [{ message: 'should fail', name: 'A' }],
+    values: { A: '123' },
+  });
+});
+
 test('validate-first prop', async () => {
   const onFailed = jest.fn();
   const wrapper = mountForm({
