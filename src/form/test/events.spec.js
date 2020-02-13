@@ -1,8 +1,5 @@
-import { mount, later } from '../../../test';
-
-function mountForm(options) {
-  return mount(options, { attachToDocument: true });
-}
+import { later } from '../../../test';
+import { mountForm } from './shared';
 
 test('submit event', async () => {
   const onSubmit = jest.fn();
@@ -46,8 +43,9 @@ test('failed event', async () => {
   });
 
   wrapper.find('.van-button').trigger('click');
-
   await later();
+
+  expect(wrapper).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({
     errors: [
       { name: 'A', message: 'A failed' },
