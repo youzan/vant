@@ -452,9 +452,8 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| validate | 验证所有表单项，返回 Promise，验证不通过时 reject | - | *Promise* |
-| validateField | 验证单个表单项，返回 Promise，验证不通过时 reject | *name: string* | *Promise* |
-| resetValidation | 重置所有表单验证提示 | - | - |
+| validate | 验证表单，支持传入`name`来验证单个表单项 | *name?: string* | *Promise* |
+| resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | *name?: string* | - |
 
 ### Slots
 

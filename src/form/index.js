@@ -63,11 +63,13 @@ export default createComponent({
     },
 
     // @exposed-api
-    validate() {
+    validate(name) {
+      if (name) {
+        return this.validateField(name);
+      }
       return this.validateFirst ? this.validateSeq() : this.validateAll();
     },
 
-    // @exposed-api
     validateField(name) {
       const matched = this.fields.filter(item => item.name === name);
 
@@ -87,9 +89,11 @@ export default createComponent({
     },
 
     // @exposed-api
-    resetValidation() {
+    resetValidation(name) {
       this.fields.forEach(item => {
-        item.resetValidation();
+        if (!name || item.name === name) {
+          item.resetValidation();
+        }
       });
     },
 
