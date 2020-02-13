@@ -1,4 +1,4 @@
-import nodePath, { join } from 'path';
+import { relative, sep, join } from 'path';
 import { CSS_LANG } from '../common/css';
 import { existsSync } from 'fs-extra';
 import { getDeps, clearDepsCache, fillExt } from './get-deps';
@@ -6,8 +6,8 @@ import { getComponents, smartOutputFile } from '../common';
 import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 function matchPath(path: string, component: string): boolean {
-  const p = nodePath.relative(SRC_DIR, path);
-  const arr = p.split(nodePath.sep);
+  const p = relative(SRC_DIR, path);
+  const arr = p.split(sep);
   return arr.includes(component);
 }
 
