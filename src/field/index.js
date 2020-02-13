@@ -109,7 +109,8 @@ export default createComponent({
     },
 
     labelStyle() {
-      const { labelWidth } = this;
+      const labelWidth = this.getProp('labelWidth');
+
       if (labelWidth) {
         return { width: addUnit(labelWidth) };
       }

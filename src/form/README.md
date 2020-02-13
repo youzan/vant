@@ -405,8 +405,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| label-align | Label text align, can be set to `center` `right` | *string* | `left` |
-| input-align | Input text align, can be set to `center` `right` | *string* | `left` |
+| label-width | Field label width | *number \| string* | `90px` |
+| label-align | Field label text align, can be set to `center` `right` | *string* | `left` |
+| input-align | Field input text align, can be set to `center` `right` | *string* | `left` |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 
 ### Events
