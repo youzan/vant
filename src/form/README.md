@@ -408,6 +408,7 @@ export default {
 | label-width | Field label width | *number \| string* | `90px` |
 | label-align | Field label text align, can be set to `center` `right` | *string* | `left` |
 | input-align | Field input text align, can be set to `center` `right` | *string* | `left` |
+| error-message-align | Error message align, can be set to `center` `right` | *string* | `left` |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 
 ### Events

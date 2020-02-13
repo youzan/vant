@@ -250,9 +250,9 @@ export default {
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` |
 | show-word-limit `v2.2.8` | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
+| error-message | 底部错误提示文案，为空时不展示 | *string* | - |
 | formatter `v2.4.2` | 输入内容格式化函数 | *Function* | - |
 | arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
-| error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | label-class | 左侧文本额外类名 | *any* | - |
 | label-width | 左侧文本宽度，默认单位为`px` | *number \| string* | `90px` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` |

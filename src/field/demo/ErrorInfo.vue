@@ -3,10 +3,10 @@
     <van-cell-group>
       <van-field
         v-model="username"
+        error
         required
         :label="$t('username')"
         :placeholder="$t('usernamePlaceholder')"
-        error
       />
       <van-field
         v-model="phone"

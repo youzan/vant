@@ -231,14 +231,14 @@ Use `input-align` prop to align the input value
 | autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` |
 | show-word-limit `v2.2.8` | Whether to show word limit, need to set the `maxlength` prop | *boolean* | `false` |
 | error | Whether to show error info | *boolean* | `false` |
+| error-message | Error message | *string* | - |
 | formatter `v2.4.2` | Input value formatter | *Function* | - |
 | arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | `right` |
-| error-message | Error message | *string* | `''` |
 | label-class | Label className | *any* | - |
 | label-width | Label width | *number \| string* | `90px` |
 | label-align | Label text align, can be set to `center` `right` | *string* | `left` |
 | input-align | Input text align, can be set to `center` `right` | *string* | `left` |
-| error-message-align | Error message text align, can be set to `center` `right` | *string* | `left` |
+| error-message-align | Error message align, can be set to `center` `right` | *string* | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | *boolean \| object* | `false` |
 | left-icon | Left side icon name | *string* | - |
 | right-icon | Right side icon name | *string* | - |

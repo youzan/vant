@@ -426,10 +426,10 @@ export default createComponent({
       const message = this.errorMessage || this.validateMessage;
 
       if (message) {
+        const errorMessageAlign = this.getProp('errorMessageAlign');
+
         return (
-          <div class={bem('error-message', this.errorMessageAlign)}>
-            {message}
-          </div>
+          <div class={bem('error-message', errorMessageAlign)}>{message}</div>
         );
       }
     },
