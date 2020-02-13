@@ -112,6 +112,9 @@ export default {
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | maxZoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
+| closeable | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon | 关闭图标名称或图片链接 | *string* | `cross` |
+| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Props
 
@@ -131,6 +134,10 @@ export default {
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | max-zoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
+| closeable | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon | 关闭图标名称或图片链接 | *string* | `cross` |
+| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
+
 
 ### Events
 

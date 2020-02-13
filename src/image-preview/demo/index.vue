@@ -19,7 +19,7 @@
     </demo-block>
 
     <demo-block :title="$t('button4')">
-      <van-button type="primary" @click="showImagePreview(0, 3000, true)">
+      <van-button type="primary" @click="showImagePreview(0, 0, true)">
         {{ $t('button4') }}
       </van-button>
     </demo-block>

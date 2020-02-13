@@ -100,6 +100,9 @@ export default {
 | lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
 | maxZoom | Max zoom | *number \| string* | `3` |
 | minZoom | Min zoom | *number \| string* | `1/3` |
+| closeable | Whether to show close icon | *boolean* | `false` |
+| close-icon | Close icon name | *string* | `cross` |
+| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Props
 
@@ -117,6 +120,9 @@ export default {
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
 | max-zoom | Max zoom | *number \| string* | `3` |
 | min-zoom | Min zoom | *number \| string* | `1/3` |
+| closeable | Whether to show close icon | *boolean* | `false` |
+| close-icon | Close icon name | *string* | `cross` |
+| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Events
 
