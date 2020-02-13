@@ -59,4 +59,36 @@
   &__overlay {
     background-color: @image-preview-overlay-background-color;
   }
+
+  &__close-icon {
+    position: absolute;
+    z-index: @sku-close-icon-z-index;
+    color: @sku-close-icon-color;
+    font-size: @sku-close-icon-size;
+    cursor: pointer;
+
+    &:active {
+      color: @sku-close-icon-active-color;
+    }
+
+    &--top-left {
+      top: @sku-close-icon-margin;
+      left: @sku-close-icon-margin;
+    }
+
+    &--top-right {
+      top: @sku-close-icon-margin;
+      right: @sku-close-icon-margin;
+    }
+
+    &--bottom-left {
+      bottom: @sku-close-icon-margin;
+      left: @sku-close-icon-margin;
+    }
+
+    &--bottom-right {
+      right: @sku-close-icon-margin;
+      bottom: @sku-close-icon-margin;
+    }
+  }
 }
