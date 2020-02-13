@@ -326,18 +326,17 @@ export default createComponent({
     genInput() {
       const { type } = this;
       const inputSlot = this.slots('input');
+      const inputAlign = this.getProp('inputAlign');
 
       if (inputSlot) {
         return (
-          <div class={bem('control', [this.inputAlign, 'custom'])}>
-            {inputSlot}
-          </div>
+          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
         );
       }
 
       const inputProps = {
         ref: 'input',
-        class: bem('control', this.inputAlign),
+        class: bem('control', inputAlign),
         domProps: {
           value: this.value,
         },
@@ -435,11 +434,13 @@ export default createComponent({
     },
 
     getProp(key) {
+      if (isDef(this[key])) {
+        return this[key];
+      }
+
       if (this.vanForm && isDef(this.vanForm[key])) {
         return this.vanForm[key];
       }
-
-      return this[key];
     },
   },
 

@@ -1,6 +1,6 @@
 <template>
   <demo-block :title="$t('basicUsage')">
-    <van-form ref="form" @submit="onSubmit" @failed="onFailed">
+    <van-form @submit="onSubmit" @failed="onFailed">
       <van-field
         v-model="username"
         name="username"
