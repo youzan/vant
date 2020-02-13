@@ -420,6 +420,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance 
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
+| submit | Submit form | - | - |
 | validate | Validate form | *name?: string* | *Promise* |
 | resetValidation | Reset validation | *name?: string* | - |
 

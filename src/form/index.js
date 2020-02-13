@@ -106,7 +106,11 @@ export default createComponent({
 
     onSubmit(event) {
       event.preventDefault();
+      this.submit();
+    },
 
+    // @exposed-api
+    submit() {
       const values = this.getValues();
 
       this.validate()
