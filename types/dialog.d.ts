@@ -34,7 +34,7 @@ export interface Dialog {
   install(): void;
   setDefaultOptions(options: DialogOptions): void;
   resetDefaultOptions(): void;
-  Component: VanComponent;
+  Component: typeof VanComponent;
 }
 
 declare module 'vue/types/vue' {
