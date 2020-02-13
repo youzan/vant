@@ -38,8 +38,16 @@ export default {
 
   a {
     margin: 0 1px;
-    color: @van-doc-green;
+    color: @van-doc-blue;
     -webkit-font-smoothing: auto;
+
+    &:hover {
+      color: darken(@van-doc-blue, 10%);
+    }
+
+    &:active {
+      color: darken(@van-doc-blue, 20%);
+    }
   }
 
   h1,
