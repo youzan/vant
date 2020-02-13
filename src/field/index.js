@@ -433,10 +433,19 @@ export default createComponent({
         );
       }
     },
+
+    getProp(key) {
+      if (this.vanForm && isDef(this.vanForm[key])) {
+        return this.vanForm[key];
+      }
+
+      return this[key];
+    },
   },
 
   render() {
-    const { slots, labelAlign } = this;
+    const { slots } = this;
+    const labelAlign = this.getProp('labelAlign');
 
     const scopedSlots = {
       icon: this.genLeftIcon,

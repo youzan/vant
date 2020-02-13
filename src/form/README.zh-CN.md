@@ -437,6 +437,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| label-align | 表单项左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 
 ### Events

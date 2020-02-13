@@ -405,6 +405,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| label-align | Label text align, can be set to `center` `right` | *string* | `left` |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 
 ### Events
