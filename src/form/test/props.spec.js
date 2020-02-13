@@ -1,21 +1,18 @@
 import { mount, later } from '../../../test';
-import { mountForm } from './shared';
+import { mountForm, getSimpleRules } from './shared';
 
 test('validate-first prop', async () => {
   const onFailed = jest.fn();
   const wrapper = mountForm({
     template: `
-        <van-form validate-first @failed="onFailed">
-          <van-field name="A" :rules="rulesA" value="" />
-          <van-field name="B" :rules="rulesB" value="" />
-          <van-button native-type="submit" />
-        </van-form>
-      `,
+      <van-form validate-first @failed="onFailed">
+        <van-field name="A" :rules="rulesA" value="" />
+        <van-field name="B" :rules="rulesB" value="" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
     data() {
-      return {
-        rulesA: [{ required: true, message: 'A failed' }],
-        rulesB: [{ required: true, message: 'B failed' }],
-      };
+      return getSimpleRules();
     },
     methods: {
       onFailed,

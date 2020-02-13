@@ -1,5 +1,5 @@
 import { later } from '../../../test';
-import { mountForm } from './shared';
+import { mountForm, mountSimpleRulesForm } from './shared';
 
 test('submit event', async () => {
   const onSubmit = jest.fn();
@@ -23,20 +23,7 @@ test('submit event', async () => {
 
 test('failed event', async () => {
   const onFailed = jest.fn();
-  const wrapper = mountForm({
-    template: `
-        <van-form @failed="onFailed">
-          <van-field name="A" :rules="rulesA" value="" />
-          <van-field name="B" :rules="rulesB" value="" />
-          <van-button native-type="submit" />
-        </van-form>
-      `,
-    data() {
-      return {
-        rulesA: [{ required: true, message: 'A failed' }],
-        rulesB: [{ required: true, message: 'B failed' }],
-      };
-    },
+  const wrapper = mountSimpleRulesForm({
     methods: {
       onFailed,
     },
