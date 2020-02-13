@@ -420,7 +420,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance 
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| validate | Trigger validation | - | *Promise\<void\>* |
+| validate | Validate all fields | - | *Promise* |
+| validateField | Validate a filed | *name: string* | *Promise* |
 | resetValidation | Reset all validation | - | - |
 
 ### Slots

@@ -68,6 +68,25 @@ export default createComponent({
     },
 
     // @exposed-api
+    validateField(name) {
+      const matched = this.fields.filter(item => item.name === name);
+
+      if (matched.length) {
+        return new Promise((resolve, reject) => {
+          matched[0].validate().then(error => {
+            if (error) {
+              reject(error);
+            } else {
+              resolve();
+            }
+          });
+        });
+      }
+
+      return Promise.reject();
+    },
+
+    // @exposed-api
     resetValidation() {
       this.fields.forEach(item => {
         item.resetValidation();
