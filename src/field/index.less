@@ -3,6 +3,7 @@
 .van-field {
   &__label {
     flex: none;
+    box-sizing: border-box;
     width: @field-label-width;
 
     &--center {
@@ -10,6 +11,7 @@
     }
 
     &--right {
+      padding-right: @padding-md;
       text-align: right;
     }
   }
