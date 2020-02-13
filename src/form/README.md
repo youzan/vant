@@ -404,15 +404,27 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-| --------- | ----------- | ---- | ------- |
-
+|------|------|------|------|
+| validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 
 ### Events
 
 | Event | Description | Arguments |
+|------|------|------|
+| submit | Triggered after submitting the form and validation passed | *values: object* |
+| failed | Triggered after submitting the form and validation failed |  *errorInfo: { values: object, errors: object[] }* |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods
+
+| Name | Description | Attribute | Return value |
+|------|------|------|------|
+| validate | Trigger validation | - | *Promise\<void\>* |
+| resetValidation | Reset all validation | - | - |
 
 ### Slots
 
 | Name | Description |
 | ---- | ----------- |
-
+| default | Form content |

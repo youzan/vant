@@ -17,7 +17,7 @@ Vue.use(Form);
 
 ### 基础用法
 
-在表单中，每个 [Field](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性可以定义校验规则
+在表单中，每个 [Field 组件](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性可以定义校验规则
 
 ```html
 <van-form @submit="onSubmit">
@@ -122,7 +122,7 @@ export default {
 
 ### 表单项类型 - 开关
 
-在表单中使用 [Switch](#/zh-CN/switch) 组件
+在表单中使用 [Switch 组件](#/zh-CN/switch)
 
 ```html
 <van-field name="switch" label="开关">
@@ -142,7 +142,7 @@ export default {
 
 ### 表单项类型 - 复选框
 
-在表单中使用 [Checkbox](#/zh-CN/checkbox) 组件
+在表单中使用 [Checkbox 组件](#/zh-CN/checkbox)
 
 ```html
 <van-field name="checkbox" label="复选框">
@@ -173,7 +173,7 @@ export default {
 
 ### 表单项类型 - 单选框
 
-在表单中使用 [Radio](#/zh-CN/radio) 组件
+在表单中使用 [Radio 组件](#/zh-CN/radio)
 
 ```html
 <van-field name="radio" label="单选框">
@@ -196,7 +196,7 @@ export default {
 
 ### 表单项类型 - 步进器
 
-在表单中使用 [Stepper](#/zh-CN/stepper) 组件
+在表单中使用 [Stepper 组件](#/zh-CN/stepper)
 
 ```html
 <van-field name="stepper" label="步进器">
@@ -216,7 +216,7 @@ export default {
 
 ### 表单项类型 - 评分
 
-在表单中使用 [Rate](#/zh-CN/rate) 组件
+在表单中使用 [Rate 组件](#/zh-CN/rate)
 
 ```html
 <van-field name="rate" label="评分">
@@ -236,7 +236,7 @@ export default {
 
 ### 表单项类型 - 滑块
 
-在表单中使用 [Slider](#/zh-CN/slider) 组件
+在表单中使用 [Slider 组件](#/zh-CN/slider)
 
 ```html
 <van-field name="slider" label="滑块">
@@ -256,7 +256,7 @@ export default {
 
 ### 表单项类型 - 文件上传
 
-在表单中使用 [Uploader](#/zh-CN/uploader) 组件
+在表单中使用 [Uploader 组件](#/zh-CN/uploader)
 
 ```html
 <van-field name="uploader" label="文件上传">
@@ -276,7 +276,7 @@ export default {
 
 ### 表单项类型 - 选择器
 
-在表单中使用 [Picker](#/zh-CN/picker) 组件
+在表单中使用 [Picker 组件](#/zh-CN/picker)
 
 ```html
 <van-field
@@ -318,7 +318,7 @@ export default {
 
 ### 表单项类型 - 时间选择器
 
-在表单中使用 [DatetimePicker](#/zh-CN/datetime-picker) 组件
+在表单中使用 [DatetimePicker 组件](#/zh-CN/datetime-picker)
 
 ```html
 <van-field
@@ -358,7 +358,7 @@ export default {
 
 ### 表单项类型 - 省市区选择器
 
-在表单中使用 [Area](#/zh-CN/area) 组件
+在表单中使用 [Area 组件](#/zh-CN/area)
 
 ```html
 <van-field
@@ -399,7 +399,7 @@ export default {
 
 ### 表单项类型 - 日历
 
-在表单中使用 [Calendar](#/zh-CN/calendar) 组件
+在表单中使用 [Calendar 组件](#/zh-CN/calendar)
 
 ```html
 <van-field
@@ -436,17 +436,27 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |
-
+|------|------|------|------|
+| validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
-| ------ | ---- | -------- |
+|------|------|------|
+| submit | 提交表单且验证通过后触发 | *values: object* |
+| failed | 提交表单且验证不通过后触发 |  *errorInfo: { values: object, errors: object[] }* |
 
+### 方法
+
+通过 ref 可以获取到 Form 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+
+| 方法名 | 说明 | 参数 | 返回值 |
+|------|------|------|------|
+| validate | 触发表单验证 | - | *Promise\<void\>* |
+| resetValidation | 重置所有表单验证提示 | - | - |
 
 ### Slots
 
 | 名称 | 说明 |
-| ---- | ---- |
-
+|------|------|
+| default | 表单内容 |
