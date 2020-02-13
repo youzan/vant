@@ -443,6 +443,8 @@ export default {
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 
+> 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
+
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
