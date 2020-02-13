@@ -236,8 +236,8 @@ Use `input-align` prop to align the input value
 | arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | *string* | `right` |
 | label-class | Label className | *any* | - |
 | label-width | Label width | *number \| string* | `90px` |
-| label-align | Label text align, can be set to `center` `right` | *string* | `left` |
-| input-align | Input text align, can be set to `center` `right` | *string* | `left` |
+| label-align | Label align, can be set to `center` `right` | *string* | `left` |
+| input-align | Input align, can be set to `center` `right` | *string* | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | *string* | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | *boolean \| object* | `false` |
 | left-icon | Left side icon name | *string* | - |

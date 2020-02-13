@@ -439,7 +439,7 @@ export default {
 |------|------|------|------|
 | label-width | 表单项文本宽度，默认单位为`px` | *number \| string* | `90px` |
 | label-align | 表单项文本对齐方式，可选值为 `center` `right` | *string* | `left` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
+| input-align | 输入框对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 
