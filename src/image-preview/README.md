@@ -35,6 +35,21 @@ ImagePreview({
 });
 ```
 
+### display close icon
+
+After setting the `closeable` attribute, the close icon will be displayed in the upper right corner of the pop-up layer, and the icon can be customized through the `close-icon` attribute, and the icon location can be customized by using the `close-icon-position` attribute
+
+```js
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/1.jpg',
+    'https://img.yzcdn.cn/2.jpg'
+  ],
+  closeable: true
+});
+
+```
+
 ### Async Close
 
 ```js
@@ -101,8 +116,8 @@ export default {
 | maxZoom | Max zoom | *number \| string* | `3` |
 | minZoom | Min zoom | *number \| string* | `1/3` |
 | closeable | Whether to show close icon | *boolean* | `false` |
-| closeIcon | Close icon name | *string* | `cross` |
-| closeIconPosition | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
+| closeIcon | Close icon name | *string* | `clear` |
+| closeIconPosition | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Props
 
@@ -121,8 +136,8 @@ export default {
 | max-zoom | Max zoom | *number \| string* | `3` |
 | min-zoom | Min zoom | *number \| string* | `1/3` |
 | closeable | Whether to show close icon | *boolean* | `false` |
-| close-icon | Close icon name | *string* | `cross` |
-| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
+| close-icon | Close icon name | *string* | `clear` |
+| close-icon-position | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Events
 

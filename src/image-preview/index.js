@@ -21,6 +21,8 @@ const defaultConfig = {
   showIndicators: false,
   closeOnPopstate: false,
   closeable: false,
+  closeIcon: 'clear',
+  closeIconPosition: 'top-right',
 };
 
 const initInstance = () => {
