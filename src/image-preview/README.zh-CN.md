@@ -53,7 +53,6 @@ ImagePreview({
   ],
   closeable: true
 });
-
 ```
 
 ### 异步关闭
