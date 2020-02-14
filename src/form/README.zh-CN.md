@@ -437,10 +437,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| label-width | 表单项文本宽度，默认单位为`px` | *number \| string* | `90px` |
-| label-align | 表单项文本对齐方式，可选值为 `center` `right` | *string* | `left` |
+| label-width | 表单项 label 宽度，默认单位为`px` | *number \| string* | `90px` |
+| label-align | 表单项 label 对齐方式，可选值为 `center` `right` | *string* | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
+| colon | 是否在 label 后面添加冒号 | *boolean* | *false* |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)

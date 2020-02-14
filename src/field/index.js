@@ -443,6 +443,18 @@ export default createComponent({
         return this.vanForm[key];
       }
     },
+
+    genLabel() {
+      const colon = this.getProp('colon') ? ':' : '';
+
+      if (this.slots('label')) {
+        return [this.slots('label'), colon];
+      }
+
+      if (this.label) {
+        return <span>{this.label + colon}</span>;
+      }
+    },
   },
 
   render() {
@@ -453,15 +465,15 @@ export default createComponent({
       icon: this.genLeftIcon,
     };
 
-    if (slots('label')) {
-      scopedSlots.title = () => slots('label');
+    const Label = this.genLabel();
+    if (Label) {
+      scopedSlots.title = () => Label;
     }
 
     return (
       <Cell
         icon={this.leftIcon}
         size={this.size}
-        title={this.label}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
@@ -470,13 +482,13 @@ export default createComponent({
         titleStyle={this.labelStyle}
         valueClass={bem('value')}
         titleClass={[bem('label', labelAlign), this.labelClass]}
+        scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
         class={bem({
           error: this.error || this.validateMessage,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
-        scopedSlots={scopedSlots}
         onClick={this.onClick}
       >
         <div class={bem('body')}>

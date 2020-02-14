@@ -105,6 +105,20 @@ test('validate-first prop', async () => {
   expect(onSubmit).toHaveBeenCalledWith({ A: 'foo', B: 'foo' });
 });
 
+test('colon prop', () => {
+  const wrapper = mountForm({
+    template: `
+      <van-form colon>
+        <van-field label="Label" />
+        <van-field>
+          <template #label>Custom Label</template>
+        </van-field>
+      </van-form>
+    `,
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('label-align prop', () => {
   const wrapper = mountForm({
     template: `

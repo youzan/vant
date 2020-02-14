@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`colon prop 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label"><span>Label:</span></div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body"><input type="text" class="van-field__control"></div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label">Custom Label:</div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body"><input type="text" class="van-field__control"></div>
+    </div>
+  </div>
+</form>
+`;
+
 exports[`error-message-align prop 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
