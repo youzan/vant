@@ -59,7 +59,7 @@ export default {
       button1: 'Show Images',
       button2: 'Custom Start Position',
       button3: 'Async Close',
-      button4: 'display close button',
+      button4: 'Show Close Icon',
       componentCall: 'Component Call',
       index: index => `Page: ${index}`,
     },
