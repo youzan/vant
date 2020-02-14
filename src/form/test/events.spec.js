@@ -1,5 +1,4 @@
-import { later } from '../../../test';
-import { mountForm, mountSimpleRulesForm } from './shared';
+import { mountForm, submitForm, mountSimpleRulesForm } from './shared';
 
 test('submit event', async () => {
   const onSubmit = jest.fn();
@@ -15,9 +14,8 @@ test('submit event', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
+  await submitForm(wrapper);
 
-  await later();
   expect(onSubmit).toHaveBeenCalledWith({ A: 'bar' });
 });
 
@@ -29,8 +27,7 @@ test('failed event', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
-  await later();
+  await submitForm(wrapper);
 
   expect(wrapper).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({

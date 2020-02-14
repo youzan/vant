@@ -1,5 +1,4 @@
-import { mount, later } from '../../../test';
-import { mountForm, getSimpleRules } from './shared';
+import { mountForm, submitForm, getSimpleRules } from './shared';
 
 test('rules prop - execute order', async () => {
   const onFailed = jest.fn();
@@ -24,8 +23,7 @@ test('rules prop - execute order', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
-  await later();
+  await submitForm(wrapper);
 
   expect(onFailed).toHaveBeenCalledWith({
     errors: [{ message: 'B', name: 'A' }],
@@ -61,8 +59,7 @@ test('rules prop - async validator', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
-  await later(10);
+  await submitForm(wrapper);
 
   expect(onFailed).toHaveBeenCalledWith({
     errors: [{ message: 'should fail', name: 'A' }],
@@ -94,8 +91,7 @@ test('validate-first prop', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
-  await later();
+  await submitForm(wrapper);
 
   expect(wrapper).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({
@@ -104,14 +100,13 @@ test('validate-first prop', async () => {
   });
 
   wrapper.setData({ value: 'foo' });
-  wrapper.find('.van-button').trigger('click');
-  await later();
+  await submitForm(wrapper);
 
   expect(onSubmit).toHaveBeenCalledWith({ A: 'foo', B: 'foo' });
 });
 
 test('label-align prop', () => {
-  const wrapper = mount({
+  const wrapper = mountForm({
     template: `
       <van-form label-align="right">
         <van-field label="Label" />
@@ -123,7 +118,7 @@ test('label-align prop', () => {
 });
 
 test('label-width prop', () => {
-  const wrapper = mount({
+  const wrapper = mountForm({
     template: `
       <van-form label-width="5rem">
         <van-field label="Label" />
@@ -135,7 +130,7 @@ test('label-width prop', () => {
 });
 
 test('input-align prop', () => {
-  const wrapper = mount({
+  const wrapper = mountForm({
     template: `
       <van-form input-align="right">
         <van-field />
@@ -149,7 +144,7 @@ test('input-align prop', () => {
 });
 
 test('error-message-align prop', () => {
-  const wrapper = mount({
+  const wrapper = mountForm({
     template: `
       <van-form error-message-align="right">
         <van-field error-message="Error" />

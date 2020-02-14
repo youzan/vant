@@ -1,5 +1,4 @@
-import { later } from '../../../test';
-import { mountForm } from './shared';
+import { mountForm, submitForm } from './shared';
 
 test('dynamic add/remove fileds', async () => {
   const onSubmit = jest.fn();
@@ -23,17 +22,16 @@ test('dynamic add/remove fileds', async () => {
     },
   });
 
-  wrapper.find('.van-button').trigger('click');
-  await later();
+  await submitForm(wrapper);
   expect(onSubmit).toHaveBeenCalledWith({ A: '' });
 
   wrapper.setData({ list: ['A', 'B'] });
-  wrapper.find('.van-button').trigger('click');
-  await later();
+
+  await submitForm(wrapper);
   expect(onSubmit).toHaveBeenCalledWith({ A: '', B: '' });
 
   wrapper.setData({ list: ['B'] });
-  wrapper.find('.van-button').trigger('click');
-  await later();
+
+  await submitForm(wrapper);
   expect(onSubmit).toHaveBeenCalledWith({ B: '' });
 });
