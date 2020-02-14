@@ -20,6 +20,7 @@ const defaultConfig = {
   swipeDuration: 500,
   showIndicators: false,
   closeOnPopstate: false,
+  closeable: false,
 };
 
 const initInstance = () => {
