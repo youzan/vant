@@ -345,6 +345,7 @@ export default createComponent({
         </Swipe>
       );
     },
+
     genClose() {
       if (this.closeable) {
         return (
