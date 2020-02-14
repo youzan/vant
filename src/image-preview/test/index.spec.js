@@ -38,6 +38,44 @@ test('render image', async () => {
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
+test('closeable prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      closeable: true,
+    },
+  });
+
+  wrapper.find('.van-image-preview__close-icon').trigger('click');
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+});
+
+test('close-icon prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('close-icon-position prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+      closeIconPosition: 'top-left',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {

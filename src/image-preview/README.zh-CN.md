@@ -41,6 +41,20 @@ ImagePreview({
 });
 ```
 
+### 展示关闭按钮
+
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置
+
+```js
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/1.jpg',
+    'https://img.yzcdn.cn/2.jpg'
+  ],
+  closeable: true
+});
+```
+
 ### 异步关闭
 
 通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览
@@ -112,6 +126,9 @@ export default {
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | maxZoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
+| closeable | 是否显示关闭图标 | *boolean* | `false` |
+| closeIcon | 关闭图标名称或图片链接 | *string* | `clear` |
+| closeIconPosition | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Props
 
@@ -131,6 +148,10 @@ export default {
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | max-zoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
+| closeable | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon | 关闭图标名称或图片链接 | *string* | `clear` |
+| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
+
 
 ### Events
 

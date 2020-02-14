@@ -20,6 +20,9 @@ const defaultConfig = {
   swipeDuration: 500,
   showIndicators: false,
   closeOnPopstate: false,
+  closeable: false,
+  closeIcon: 'clear',
+  closeIconPosition: 'top-right',
 };
 
 const initInstance = () => {
