@@ -108,6 +108,7 @@ export default {
 | swipeDuration | Animation duration (ms) | *number \| string* | `500` |
 | onClose | Triggered when close | *Function* | - |
 | onChange `v2.0.3` | Triggered when current image change | *Function* | - |
+| onScale | Triggered when current image scale | *Function* | - |
 | closeOnPopstate | Whether to close when popstate | *boolean* | `false` |
 | asyncClose | Whether to enable async close | *boolean* | `false` |
 | className | Custom className | *any* | - |
@@ -144,6 +145,7 @@ export default {
 |------|------|------|
 | close | Triggered when close | { index, url } |
 | change | Triggered when current image change | index: index of current image |
+| scale | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
 
 ### Slots
 
@@ -157,4 +159,11 @@ export default {
 | Attribute | Description | Type |
 |------|------|------|
 | url | Url of current image | *number* |
-| index | Index of current image | *string* |
+| index | Index of current image | *number* |
+
+### onScale Parematers
+
+| Attribute | Description | Type |
+|------|------|------|
+| index | Index of current image | *number* |
+| scale | scale of current image | *number* |

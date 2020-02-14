@@ -36,6 +36,12 @@ const initInstance = () => {
       instance.onChange(index);
     }
   });
+
+  instance.$on('scale', data => {
+    if (instance.onScale) {
+      instance.onScale(data);
+    }
+  });
 };
 
 const ImagePreview = (images, startPosition = 0) => {
