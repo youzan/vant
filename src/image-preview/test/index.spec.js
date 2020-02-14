@@ -171,7 +171,7 @@ test('onScale option', async done => {
     images,
     startPosition: 0,
     onScale({ index, scale }) {
-      expect(index).toEqual(0);
+      expect(index).toEqual(2);
       expect(scale <= 2).toBeTruthy();
       done();
     },
