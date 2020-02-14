@@ -79,7 +79,7 @@ export default createComponent({
 
   beforeDestroy() {
     if (this.vanForm) {
-      this.vanForm.fields = this.vanForm.fields.fiilter(item => item !== this);
+      this.vanForm.fields = this.vanForm.fields.filter(item => item !== this);
     }
   },
 
