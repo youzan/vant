@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { sep, join } from 'path';
 import {
   lstatSync,
   existsSync,
@@ -15,8 +15,8 @@ import {
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
-export const DEMO_REGEXP = /\/demo$/;
-export const TEST_REGEXP = /\/test$/;
+export const DEMO_REGEXP = new RegExp('\\' + sep + 'demo$');
+export const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
 export const STYLE_REGEXP = /\.(css|less|scss)$/;
 export const SCRIPT_REGEXP = /\.(js|ts|jsx|tsx)$/;
 export const ENTRY_EXTS = ['js', 'ts', 'tsx', 'jsx', 'vue'];
