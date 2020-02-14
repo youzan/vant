@@ -274,7 +274,10 @@ export default createComponent({
     },
 
     setScale(scale) {
-      this.scale = range(scale, +this.minZoom, +this.maxZoom);
+      const value = range(scale, +this.minZoom, +this.maxZoom);
+
+      this.scale = value;
+      this.$emit('scale', { index: this.active, scale: value });
     },
 
     resetScale() {

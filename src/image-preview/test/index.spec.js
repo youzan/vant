@@ -163,6 +163,25 @@ test('onChange option', async done => {
   triggerDrag(swipe, 1000, 0);
 });
 
+test('onScale option', async done => {
+  const { getBoundingClientRect } = Element.prototype;
+  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
+  const instance = ImagePreview({
+    images,
+    startPosition: 0,
+    onScale({ index, scale }) {
+      expect(index).toEqual(0);
+      expect(scale <= 2).toBeTruthy();
+      done();
+    },
+  });
+
+  const image = instance.$el.getElementsByTagName('img')[0];
+  triggerZoom(image, 300, 300);
+  Element.prototype.getBoundingClientRect = getBoundingClientRect;
+});
+
 test('register component', () => {
   Vue.use(ImagePreview);
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();

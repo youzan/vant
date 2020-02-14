@@ -120,6 +120,7 @@ export default {
 | loop | 是否开启循环播放 | *boolean* | `true` |
 | onClose | 关闭时的回调函数 | *Function* | - |
 | onChange `v2.0.3` | 切换图片时的回调函数，回调参数为当前索引 | *Function* | - |
+| onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | *Function* | - |
 | asyncClose | 是否开启异步关闭 | *boolean* | `false` |
 | closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | className | 自定义类名 | *any* | - |
@@ -160,7 +161,8 @@ export default {
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
-| change | 切换当前图片时触发 | index, 当前图片的索引 |
+| change | 切换当前图片时触发 | index: 当前图片的索引 |
+| scale | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
 
 ### Slots
 
@@ -177,6 +179,13 @@ export default {
 |------|------|------|
 | url | 当前图片 URL | *string* |
 | index | 当前图片的索引值 | *number* |
+
+### onScale 回调参数
+
+| 参数名 | 说明 | 类型 |
+|------|------|------|
+| index | 当前图片的索引值 | *number* |
+| scale | 当前图片的缩放值 | *number* |
 
 ## 常见问题
 
