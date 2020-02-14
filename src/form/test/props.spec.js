@@ -71,19 +71,25 @@ test('rules prop - async validator', async () => {
 });
 
 test('validate-first prop', async () => {
+  const onSubmit = jest.fn();
   const onFailed = jest.fn();
+
   const wrapper = mountForm({
     template: `
-      <van-form validate-first @failed="onFailed">
-        <van-field name="A" :rules="rulesA" value="" />
-        <van-field name="B" :rules="rulesB" value="" />
+      <van-form validate-first @submit="onSubmit" @failed="onFailed">
+        <van-field name="A" :rules="rulesA" :value="value" />
+        <van-field name="B" :rules="rulesB" :value="value" />
         <van-button native-type="submit" />
       </van-form>
     `,
     data() {
-      return getSimpleRules();
+      return {
+        ...getSimpleRules(),
+        value: '',
+      };
     },
     methods: {
+      onSubmit,
       onFailed,
     },
   });
@@ -96,6 +102,12 @@ test('validate-first prop', async () => {
     errors: [{ message: 'A failed', name: 'A' }],
     values: { A: '', B: '' },
   });
+
+  wrapper.setData({ value: 'foo' });
+  wrapper.find('.van-button').trigger('click');
+  await later();
+
+  expect(onSubmit).toHaveBeenCalledWith({ A: 'foo', B: 'foo' });
 });
 
 test('label-align prop', () => {

@@ -300,3 +300,17 @@ test('name prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('call focus method before mounted', done => {
+  mount(Field, {
+    created() {
+      this.focus();
+      this.blur();
+      done();
+    },
+  });
+});
+
+test('destroy field', () => {
+  mount(Field).destroy();
+});

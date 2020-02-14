@@ -1,4 +1,9 @@
-import { mount } from '../../../test';
+import { mount, later } from '../../../test';
+
+export async function submitForm(wrapper) {
+  wrapper.find('.van-button').trigger('click');
+  return later();
+}
 
 export function mountForm(options) {
   return mount(options, { attachToDocument: true });
@@ -20,9 +25,7 @@ export function mountSimpleRulesForm(options) {
         <van-button native-type="submit" />
       </van-form>
     `,
-    data() {
-      return getSimpleRules();
-    },
+    data: getSimpleRules,
     ...options,
   });
 }
