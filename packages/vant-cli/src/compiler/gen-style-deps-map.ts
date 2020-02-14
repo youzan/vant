@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { relative, sep, join } from 'path';
 import { CSS_LANG } from '../common/css';
 import { existsSync } from 'fs-extra';
 import { getDeps, clearDepsCache, fillExt } from './get-deps';
@@ -6,10 +6,9 @@ import { getComponents, smartOutputFile } from '../common';
 import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 function matchPath(path: string, component: string): boolean {
-  return path
-    .replace(SRC_DIR, '')
-    .split('/')
-    .includes(component);
+  const p = relative(SRC_DIR, path);
+  const arr = p.split(sep);
+  return arr.includes(component);
 }
 
 function getStylePath(component: string) {
