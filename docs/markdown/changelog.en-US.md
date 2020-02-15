@@ -1,5 +1,39 @@
 # Changelog
 
+### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
+`2020-02-15`
+
+**New Component**
+
+* add Form component
+
+**Feature**
+
+* Field: add name prop [f3398d](https://github.com/youzan/vant/commit/f3398dc2cdd1191613b97454b4725275458bde1b)
+* Field: add rules prop [0ed7aa](https://github.com/youzan/vant/commit/0ed7aaac88f769549b688259b8e6e1050a10cb99)
+* AddressEdit: add disable-area prop [#5630](https://github.com/youzan/vant/issues/5630)
+* AddressList: add item-bottom slot [#5629](https://github.com/youzan/vant/issues/5629)
+* RadioGroup: add direction prop [4dd41b](https://github.com/youzan/vant/commit/4dd41b23decbaf86c8812e0afcc1d72773f223f6)
+* CheckboxGroup: add direction prop [153902](https://github.com/youzan/vant/commit/15390241d8d4252a828aa0e9d8c61377ba07512a)
+* ImagePreview: add scale event [#5658](https://github.com/youzan/vant/issues/5658)
+* ImagePreview: add closeable prop [#5654](https://github.com/youzan/vant/issues/5654)
+
+**Style**
+
+* Field: input slot vertical align center [03c826](https://github.com/youzan/vant/commit/03c826c4d44efd95a5ee509b5f183d8ded574fd7)
+* Field: improve label right padding [2d6445](https://github.com/youzan/vant/commit/2d64458776df87625db9e8b07d83a7044a2bcf53)
+* Uploader: add uploader disabled style [#5628](https://github.com/youzan/vant/issues/5628)
+
+**Bug Fixes**
+
+* Calendar: fix render issues in some devices [#5640](https://github.com/youzan/vant/issues/5640)
+* Dialog: fix Dialog.Component typing [#5646](https://github.com/youzan/vant/issues/5646)
+* Field: text-fill-color may affect child element [e17a4a](https://github.com/youzan/vant/commit/e17a4a24993822b0f35114dacbbb3bebc5b51a60)
+* Picker: change event untriggered without a transition [#5662](https://github.com/youzan/vant/issues/5662)
+* Tabs: scrollspy not work when custom scroller [#5637](https://github.com/youzan/vant/issues/5637)
+* Calendar: should not submit form when click button [e93fcb](https://github.com/youzan/vant/commit/e93fcb0603b988a2ffb5b1651588f7e4ad8aa92d)
+
+
 ### [v2.4.7](https://github.com/youzan/vant/compare/v2.4.7-beta.0...v2.4.7)
 `2020-02-06`
 

@@ -10,6 +10,39 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
+`2020-02-15`
+
+**New Component**
+
+* 新增 [Form 表单](#/zh-CN/form)组件
+
+**Feature**
+
+* Field: 新增 name 属性 [f3398d](https://github.com/youzan/vant/commit/f3398dc2cdd1191613b97454b4725275458bde1b)
+* Field: 新增 rules 属性 [0ed7aa](https://github.com/youzan/vant/commit/0ed7aaac88f769549b688259b8e6e1050a10cb99)
+* AddressEdit: 新增 disable-area 属性 [#5630](https://github.com/youzan/vant/issues/5630)
+* AddressList: 新增 item-bottom 插槽 [#5629](https://github.com/youzan/vant/issues/5629)
+* RadioGroup: 新增 direction 属性 [4dd41b](https://github.com/youzan/vant/commit/4dd41b23decbaf86c8812e0afcc1d72773f223f6)
+* CheckboxGroup: 新增 direction 属性 [153902](https://github.com/youzan/vant/commit/15390241d8d4252a828aa0e9d8c61377ba07512a)
+* ImagePreview: 新增 scale 事件 [#5658](https://github.com/youzan/vant/issues/5658)
+* ImagePreview: 新增 closeable 属性 [#5654](https://github.com/youzan/vant/issues/5654)
+
+**Style**
+
+* Field: input 插槽的内容默认在垂直方向居中 [03c826](https://github.com/youzan/vant/commit/03c826c4d44efd95a5ee509b5f183d8ded574fd7)
+* Field: 优化 label-position 为 right 时的右边距 [2d6445](https://github.com/youzan/vant/commit/2d64458776df87625db9e8b07d83a7044a2bcf53)
+* Uploader: 优化禁用态上传区域颜色 [#5628](https://github.com/youzan/vant/issues/5628)
+
+**Bug Fixes**
+
+* Calendar: 修复特定情况下未正确渲染日历内容的问题 [#5640](https://github.com/youzan/vant/issues/5640)
+* Dialog: 修复 Dialog.Component 类型定义错误的问题 [#5646](https://github.com/youzan/vant/issues/5646)
+* Field: 修复子元素文字颜色错误的问题 [e17a4a](https://github.com/youzan/vant/commit/e17a4a24993822b0f35114dacbbb3bebc5b51a60)
+* Picker: 修复未触发弹性滚动时 change 事件不生效的问题 [#5662](https://github.com/youzan/vant/issues/5662)
+* Tabs: 修复自定义滚动容器时 scrollspy 属性无效的问题 [#5637](https://github.com/youzan/vant/issues/5637)
+* Calendar: 修复底部按钮会触发表单提交的问题 [e93fcb](https://github.com/youzan/vant/commit/e93fcb0603b988a2ffb5b1651588f7e4ad8aa92d)
+
 
 ### [v2.4.7](https://github.com/youzan/vant/compare/v2.4.7-beta.0...v2.4.7)
 `2020-02-06`
