@@ -191,26 +191,29 @@ export default createComponent({
       return option;
     },
 
-    setIndex(index, userAction) {
+    setIndex(index, emitChange) {
       index = this.adjustIndex(index) || 0;
-      this.offset = -index * this.itemHeight;
+
+      const offset = -index * this.itemHeight;
 
       const trigger = () => {
         if (index !== this.currentIndex) {
           this.currentIndex = index;
 
-          if (userAction) {
+          if (emitChange) {
             this.$emit('change', index);
           }
         }
       };
 
       // trigger the change event after transitionend when moving
-      if (this.moving) {
+      if (this.moving && offset !== this.offset) {
         this.transitionEndTrigger = trigger;
       } else {
         trigger();
       }
+
+      this.offset = offset;
     },
 
     setValue(value) {
