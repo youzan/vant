@@ -135,9 +135,9 @@ export default {
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
 | max-zoom | Max zoom | *number \| string* | `3` |
 | min-zoom | Min zoom | *number \| string* | `1/3` |
-| closeable | Whether to show close icon | *boolean* | `false` |
-| close-icon | Close icon name | *string* | `clear` |
-| close-icon-position | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
+| closeable `v2.5.0` | Whether to show close icon | *boolean* | `false` |
+| close-icon `v2.5.0` | Close icon name | *string* | `clear` |
+| close-icon-position `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
 
 ### Events
 
@@ -145,7 +145,7 @@ export default {
 |------|------|------|
 | close | Triggered when close | { index, url } |
 | change | Triggered when current image change | index: index of current image |
-| scale | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
+| scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
 
 ### Slots
 

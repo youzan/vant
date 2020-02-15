@@ -75,7 +75,7 @@ export default {
 | show-search-result | 是否显示搜索结果 | *boolean* | `false` |
 | show-area | 是否显示地区 | *boolean* | `true` |
 | show-detail | 是否显示详细地址 | *boolean* | `true` |
-| disable-area | 是否禁用地区选择 | *boolean* | `false` |
+| disable-area `v2.5.0` | 是否禁用地区选择 | *boolean* | `false` |
 | save-button-text | 保存按钮文字 | *string* | `保存` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |
 | detail-rows | 详细地址输入框行数 | *number \| string* | `1` |

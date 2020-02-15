@@ -149,9 +149,9 @@ export default {
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | max-zoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
-| closeable | 是否显示关闭图标 | *boolean* | `false` |
-| close-icon | 关闭图标名称或图片链接 | *string* | `clear` |
-| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
+| closeable `v2.5.0` | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon `v2.5.0` | 关闭图标名称或图片链接 | *string* | `clear` |
+| close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 
 
 ### Events
@@ -162,7 +162,7 @@ export default {
 |------|------|------|
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
-| scale | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
+| scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
 
 ### Slots
 

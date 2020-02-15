@@ -108,4 +108,4 @@ export default {
 |------|------|------|
 | default | Custom content after list | - |
 | top | Custom content before list | - |
-| item-bottom | Custom content after list item | item |
+| item-bottom `v2.5.0` | Custom content after list item | item |
