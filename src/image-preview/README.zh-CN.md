@@ -153,7 +153,6 @@ export default {
 | close-icon `v2.5.0` | 关闭图标名称或图片链接 | *string* | `clear` |
 | close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 
-
 ### Events
 
 通过组件调用 `ImagePreview` 时，支持以下事件：

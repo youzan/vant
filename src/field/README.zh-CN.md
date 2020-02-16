@@ -295,3 +295,9 @@ export default {
 | left-icon | 自定义输入框头部图标 |
 | right-icon | 自定义输入框尾部图标 |
 | button | 自定义输入框尾部按钮 |
+
+## 常见问题
+
+### 在桌面端点击清除按钮无效？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
