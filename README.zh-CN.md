@@ -6,7 +6,7 @@
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square" alt="Coverage Status" />
-    <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
+    <img src="https://github.com/youzan/vant/workflows/CI/badge.svg" alt="CI" />
     <img src="https://img.shields.io/npm/dt/vant.svg?style=flat-square" alt="downloads" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square" alt="downloads" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
