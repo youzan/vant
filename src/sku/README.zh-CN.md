@@ -282,12 +282,6 @@ sku: {
   // 值：属性值id列表
   selectedProp: {
     123: [1222]
-  },
-  // 初始留言信息
-  // 键：留言 name
-  // 值：留言内容
-  messages: {
-    留言1: '商品留言'
   }
 }
 ```
@@ -352,6 +346,12 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // 初始留言信息
+  // 键：留言 name
+  // 值：留言内容
+  initialMessages: {
+    留言: '留言信息'
   }
 }
 ```

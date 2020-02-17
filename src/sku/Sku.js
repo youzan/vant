@@ -81,6 +81,7 @@ export default createComponent({
     messageConfig: {
       type: Object,
       default: () => ({
+        initialMessages: {},
         placeholderMap: {},
         uploadImg: () => Promise.resolve(),
         uploadMaxSize: 5,
@@ -94,7 +95,6 @@ export default createComponent({
 
   data() {
     return {
-      initMessages: {},
       selectedSku: {},
       selectedProp: {},
       selectedNum: 1,
@@ -131,7 +131,6 @@ export default createComponent({
     initialSku() {
       this.resetStepper();
       this.resetSelectedSku();
-      this.resetInitMessages();
     },
   },
 
@@ -331,7 +330,6 @@ export default createComponent({
 
     this.resetStepper();
     this.resetSelectedSku();
-    this.resetInitMessages();
 
     // 组件初始化后的钩子，抛出skuEventBus
     this.$emit('after-sku-create', skuEventBus);
@@ -407,10 +405,6 @@ export default createComponent({
           selectedSkuComb: this.selectedSkuComb,
         });
       }
-    },
-
-    resetInitMessages() {
-      this.initMessages = this.initialSku.messages || {};
     },
 
     getSkuMessages() {
@@ -597,7 +591,6 @@ export default createComponent({
       selectedProp,
       selectedNum,
       stepperTitle,
-      initMessages,
       selectedSkuComb,
     } = this;
 
@@ -705,7 +698,6 @@ export default createComponent({
         goodsId={this.goodsId}
         messageConfig={this.messageConfig}
         messages={sku.messages}
-        initMessages={initMessages}
       />
     );
 

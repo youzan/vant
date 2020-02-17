@@ -287,11 +287,6 @@ sku: {
   selectedNum: 3,
   selectedProp: {
     123: [1222]
-  },
-  // Key：message name
-  // Value：message value
-  messages: {
-    message: 'message value'
   }
 }
 ```
@@ -355,6 +350,11 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // Key：message name
+  // Value：message value
+  initialMessages: {
+    message: 'message value'
   }
 }
 ```

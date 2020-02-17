@@ -242,7 +242,4 @@ export const initialSku = {
     133: [1244],
     124: [1225, 1226],
   },
-  messages: {
-    留言1: '商品留言'
-  }
 };

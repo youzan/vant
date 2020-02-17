@@ -17,7 +17,6 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
-    initMessages: Object,
     messageConfig: Object,
     goodsId: [Number, String],
   },
@@ -36,8 +35,10 @@ export default createComponent({
 
   methods: {
     resetMessageValues(messages) {
-      const { initMessages } = this;
-      return (messages || []).map((message) => ({ value: initMessages[message.name] || '' }));
+      const { messageConfig } = this;
+      return (messages || []).map(message => ({
+        value: messageConfig.initialMessages[message.name] || '',
+      }));
     },
 
     getType(message) {
