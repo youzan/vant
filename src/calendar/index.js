@@ -147,6 +147,7 @@ export default createComponent({
     // @exposed-api
     reset() {
       this.currentDate = this.getInitialDate();
+      this.scrollIntoView();
     },
 
     initRect() {
