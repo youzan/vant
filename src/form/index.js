@@ -9,7 +9,7 @@ export default createComponent({
     labelAlign: String,
     inputAlign: String,
     validateFirst: Boolean,
-    errorMessageAlign: Boolean,
+    errorMessageAlign: String,
   },
 
   provide() {
