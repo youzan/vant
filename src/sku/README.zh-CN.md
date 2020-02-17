@@ -290,8 +290,6 @@ sku: {
 
 ```js
 goods: {
-  // 商品标题
-  title: '测试商品',
   // 默认商品 sku 缩略图
   picture: 'https://img.yzcdn.cn/1.jpg'
 }

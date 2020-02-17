@@ -295,7 +295,6 @@ sku: {
 
 ```js
 goods: {
-  title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
 }
 ```
