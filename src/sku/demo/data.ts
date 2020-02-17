@@ -185,5 +185,8 @@ export const skuData = {
 export const initialSku = {
   s1: '30349',
   s2: '1193',
-  selectedNum: 3
+  selectedNum: 3,
+  messages: {
+    留言1: '商品留言'
+  }
 };

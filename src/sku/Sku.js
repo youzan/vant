@@ -85,6 +85,7 @@ export default createComponent({
 
   data() {
     return {
+      initMessages: {},
       selectedSku: {},
       selectedNum: 1,
       show: this.value
@@ -120,6 +121,7 @@ export default createComponent({
     initialSku() {
       this.resetStepper();
       this.resetSelectedSku();
+      this.resetInitMessages();
     },
   },
 
@@ -268,6 +270,7 @@ export default createComponent({
 
     this.resetStepper();
     this.resetSelectedSku();
+    this.resetInitMessages();
 
     // 组件初始化后的钩子，抛出skuEventBus
     this.$emit('after-sku-create', skuEventBus);
@@ -321,6 +324,10 @@ export default createComponent({
           });
         });
       }
+    },
+
+    resetInitMessages() {
+      this.initMessages = this.initialSku.messages || {};
     },
 
     getSkuMessages() {
@@ -478,7 +485,8 @@ export default createComponent({
       selectedSku,
       selectedNum,
       stepperTitle,
-      selectedSkuComb
+      initMessages,
+      selectedSkuComb,
     } = this;
 
     const slotsProps = {
@@ -564,6 +572,7 @@ export default createComponent({
         goodsId={this.goodsId}
         messageConfig={this.messageConfig}
         messages={sku.messages}
+        initMessages={initMessages}
       />
     );
 
