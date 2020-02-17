@@ -36,8 +36,9 @@ export default createComponent({
   methods: {
     resetMessageValues(messages) {
       const { messageConfig } = this;
+      const { initialMessages = {} } = messageConfig;
       return (messages || []).map(message => ({
-        value: messageConfig.initialMessages[message.name] || '',
+        value: initialMessages[message.name] || '',
       }));
     },
 
