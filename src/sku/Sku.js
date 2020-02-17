@@ -81,6 +81,7 @@ export default createComponent({
     messageConfig: {
       type: Object,
       default: () => ({
+        initialMessages: {},
         placeholderMap: {},
         uploadImg: () => Promise.resolve(),
         uploadMaxSize: 5,

@@ -346,6 +346,12 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // 初始留言信息
+  // 键：留言 name
+  // 值：留言内容
+  initialMessages: {
+    留言: '留言信息'
   }
 }
 ```

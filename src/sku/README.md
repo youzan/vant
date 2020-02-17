@@ -350,6 +350,11 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // Key：message name
+  // Value：message value
+  initialMessages: {
+    message: 'message value'
   }
 }
 ```
