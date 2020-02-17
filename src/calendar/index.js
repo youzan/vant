@@ -281,9 +281,11 @@ export default createComponent({
     },
 
     onConfirm() {
-      if (this.checkRange()) {
-        this.$emit('confirm', this.currentDate);
+      if (this.range && !this.checkRange()) {
+        return;
       }
+
+      this.$emit('confirm', this.currentDate);
     },
 
     genMonth(date, index) {
