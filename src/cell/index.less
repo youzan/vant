@@ -1,5 +1,5 @@
 @import '../style/var';
-@import "../style/mixins/hairline";
+@import '../style/mixins/hairline';
 
 .van-cell {
   position: relative;
@@ -65,6 +65,8 @@
   }
 
   &--clickable {
+    cursor: pointer;
+
     &:active {
       background-color: @cell-active-color;
     }

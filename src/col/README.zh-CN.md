@@ -6,11 +6,12 @@ Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
-import { Row, Col } from 'vant';
+import { Col, Row } from 'vant';
 
-Vue.use(Row).use(Col);
+Vue.use(Col);
+Vue.use(Row);
 ```
 
 ## 代码演示
@@ -94,30 +95,30 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 
 ### Row Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| type | 布局方式，可选值为`flex` | *string* | - | - |
-| gutter | 列元素之间的间距（单位为px） | *string \| number* | - | - |
-| tag | 自定义元素标签 | *string* | `div` | - |
-| justify | Flex 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | *string* | `start` | - |
-| align | Flex 交叉轴对齐方式，可选值为 `center` `bottom` | *string* | `top` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| type | 布局方式，可选值为`flex` | *string* | - |
+| gutter | 列元素之间的间距（单位为px） | *number \| string* | - |
+| tag | 自定义元素标签 | *string* | `div` |
+| justify | Flex 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | *string* | `start` |
+| align | Flex 交叉轴对齐方式，可选值为 `center` `bottom` | *string* | `top` |
 
 ### Col Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| span | 列元素宽度 | *string \| number* | - | - |
-| offset | 列元素偏移距离 | *string \| number* | - | - |
-| tag | 自定义元素标签 | *string* | `div` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| span | 列元素宽度 | *number \| string* | - |
+| offset | 列元素偏移距离 | *number \| string* | - |
+| tag | 自定义元素标签 | *string* | `div` |
 
 ### Row Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | event: Event |
+| click | 点击时触发 | *event: Event* |
 
 ### Col Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | event: Event |
+| click | 点击时触发 | *event: Event* |

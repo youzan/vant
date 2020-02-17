@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { TreeSelect } from 'vant';
 
@@ -23,7 +23,7 @@ Vue.use(TreeSelect);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -47,7 +47,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -67,11 +67,11 @@ export default {
 <van-tree-select
   height="55vw"
   :items="items"
-  :main-active-index.sync="activeIndex"
+  :main-active-index.sync="active"
 >
   <template slot="content">
-    <van-image v-if="activeIndex === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
-    <van-image v-if="activeIndex === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image v-if="active === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image v-if="active === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
 </van-tree-select>
 ```
@@ -80,7 +80,7 @@ export default {
 export default {
   data() {
     return {
-      activeIndex: 0,
+      active: 0,
       items: [{ text: '分组 1' }, { text: '分组 2' }]
     }
   }
@@ -117,13 +117,13 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| items | 分类显示所需的数据 | *Item[]* | `[]` | - |
-| height | 高度，默认单位为`px` | *string \| number* | `300` | - |
-| main-active-index | 左侧选中项的索引 | *number* | `0` | - |
-| active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| (string \| number)[]* | `0` | - |
-| max | 右侧项最大选中个数 | *number* | `Infinity` | 2.2.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| items | 分类显示所需的数据 | *Item[]* | `[]` |
+| height | 高度，默认单位为`px` | *number \| string* | `300` |
+| main-active-index | 左侧选中项的索引 | *number \| string* | `0` |
+| active-id | 右侧选中项的 id，支持传入数组 | *number \| string \|<br>(number \| string)[]* | `0` |
+| max `v2.2.0` | 右侧项最大选中个数 | *number \| string* | `Infinity` |
 
 ### Events
 
@@ -142,7 +142,7 @@ export default {
 
 `items` 整体为一个数组，数组内包含一系列描述分类的对象，每个分类里，`text`表示当前分类的名称，`children`表示分类里的可选项。
 
-```javascript
+```js
 [
   {
     // 导航名称

@@ -7,20 +7,20 @@ exports[`renders demo correctly 1`] = `
       <div class="van-address-edit__fields">
         <div class="van-cell van-field">
           <div class="van-cell__title van-field__label"><span>姓名</span></div>
-          <div class="van-cell__value">
+          <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="text" placeholder="收货人姓名" class="van-field__control"></div>
           </div>
         </div>
         <div class="van-cell van-field">
           <div class="van-cell__title van-field__label"><span>电话</span></div>
-          <div class="van-cell__value">
+          <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="tel" placeholder="收货人手机号" class="van-field__control"></div>
           </div>
         </div>
         <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
           <div class="van-cell__title van-field__label"><span>地区</span></div>
-          <div class="van-cell__value">
-            <div class="van-field__body"><input type="text" placeholder="选择省 / 市 / 区" readonly="readonly" class="van-field__control">
+          <div class="van-cell__value van-field__value">
+            <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" class="van-field__control">
               <div class="van-field__right-icon"><i class="van-icon van-icon-arrow">
                   <!----></i></div>
             </div>
@@ -30,7 +30,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-cell__value van-cell__value--alone">
             <div class="van-cell van-field">
               <div class="van-cell__title van-field__label"><span>详细地址</span></div>
-              <div class="van-cell__value">
+              <div class="van-cell__value van-field__value">
                 <div class="van-field__body"><textarea rows="1" placeholder="街道门牌、楼层房间号等信息" class="van-field__control" style="height: auto;"></textarea></div>
               </div>
             </div>
@@ -38,7 +38,7 @@ exports[`renders demo correctly 1`] = `
         </div>
         <div class="van-cell van-field">
           <div class="van-cell__title van-field__label"><span>邮政编码</span></div>
-          <div class="van-cell__value">
+          <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="tel" placeholder="邮政编码" class="van-field__control"></div>
           </div>
         </div>

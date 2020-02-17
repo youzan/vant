@@ -19,18 +19,27 @@ const defaultConfig = {
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,
-  closeOnPopstate: false
+  closeOnPopstate: false,
+  closeable: false,
+  closeIcon: 'clear',
+  closeIconPosition: 'top-right',
 };
 
 const initInstance = () => {
   instance = new (Vue.extend(VueImagePreview))({
-    el: document.createElement('div')
+    el: document.createElement('div'),
   });
   document.body.appendChild(instance.$el);
 
   instance.$on('change', index => {
     if (instance.onChange) {
       instance.onChange(index);
+    }
+  });
+
+  instance.$on('scale', data => {
+    if (instance.onScale) {
+      instance.onScale(data);
     }
   });
 };

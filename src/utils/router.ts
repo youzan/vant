@@ -43,5 +43,5 @@ export type RouteProps = {
 export const routeProps = {
   url: String,
   replace: Boolean,
-  to: [String, Object]
+  to: [String, Object],
 };

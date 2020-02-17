@@ -4,8 +4,8 @@ import { mount } from '../../../test';
 test('should not render when info is empty string', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: ''
-    }
+      info: '',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -14,8 +14,8 @@ test('should not render when info is empty string', () => {
 test('should not render when info is empty undefined', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: undefined
-    }
+      info: undefined,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -24,8 +24,8 @@ test('should not render when info is empty undefined', () => {
 test('should render when info is zero', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: 0
-    }
+      info: 0,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

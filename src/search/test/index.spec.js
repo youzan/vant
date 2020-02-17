@@ -6,9 +6,9 @@ test('input event', () => {
   const wrapper = mount(Search, {
     context: {
       on: {
-        input: onInput
-      }
-    }
+        input: onInput,
+      },
+    },
   });
 
   const input = wrapper.find('input');
@@ -25,14 +25,14 @@ test('cancel event', () => {
   const wrapper = mount(Search, {
     propsData: {
       value: 'test',
-      showAction: true
+      showAction: true,
     },
     context: {
       on: {
         input: onInput,
-        cancel: onCancel
-      }
-    }
+        cancel: onCancel,
+      },
+    },
   });
 
   const cancel = wrapper.find('.van-search__action');
@@ -50,9 +50,9 @@ test('search event', () => {
     context: {
       on: {
         search: onSearch,
-        keypress: onKeypress
-      }
-    }
+        keypress: onKeypress,
+      },
+    },
   });
 
   const input = wrapper.find('input');
@@ -68,8 +68,8 @@ test('label slot', () => {
     scopedSlots: {
       label() {
         return 'Custom Label';
-      }
-    }
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -78,8 +78,8 @@ test('label slot', () => {
 test('left-icon prop', () => {
   const wrapper = mount(Search, {
     propsData: {
-      leftIcon: 'setting-o'
-    }
+      leftIcon: 'setting-o',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -88,8 +88,8 @@ test('left-icon prop', () => {
 test('right-icon prop', () => {
   const wrapper = mount(Search, {
     propsData: {
-      rightIcon: 'setting-o'
-    }
+      rightIcon: 'setting-o',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -98,8 +98,8 @@ test('right-icon prop', () => {
 test('right-icon slot', () => {
   const wrapper = mount(Search, {
     scopedSlots: {
-      'right-icon': () => 'Custom Right Icon'
-    }
+      'right-icon': () => 'Custom Right Icon',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -109,8 +109,8 @@ test('action-text prop', () => {
   const wrapper = mount(Search, {
     propsData: {
       actionText: 'Custom Text',
-      showAction: true
-    }
+      showAction: true,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

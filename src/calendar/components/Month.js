@@ -13,14 +13,14 @@ export default createComponent({
     maxDate: Date,
     showMark: Boolean,
     showTitle: Boolean,
-    rowHeight: Number,
+    rowHeight: [Number, String],
     formatter: Function,
-    currentDate: [Date, Array]
+    currentDate: [Date, Array],
   },
 
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
 
@@ -43,7 +43,7 @@ export default createComponent({
           Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
 
         return {
-          paddingBottom: `${padding}px`
+          paddingBottom: `${padding}px`,
         };
       }
     },
@@ -61,7 +61,7 @@ export default createComponent({
           date,
           type,
           text: day,
-          bottomInfo: this.getBottomInfo(type)
+          bottomInfo: this.getBottomInfo(type),
         };
 
         if (this.formatter) {
@@ -72,7 +72,7 @@ export default createComponent({
       }
 
       return days;
-    }
+    },
   },
 
   mounted() {
@@ -80,6 +80,10 @@ export default createComponent({
   },
 
   methods: {
+    scrollIntoView() {
+      this.$refs.days.scrollIntoView();
+    },
+
     getDayType(day) {
       const { type, minDate, maxDate, currentDate } = this;
 
@@ -166,33 +170,26 @@ export default createComponent({
     genDays() {
       if (this.visible) {
         return (
-          <div class={bem('days')}>
+          <div ref="days" role="grid" class={bem('days')}>
             {this.genMark()}
             {this.days.map(this.genDay)}
           </div>
         );
       }
+
+      return <div ref="days" />;
     },
 
     genDay(item, index) {
       const { type, topInfo, bottomInfo } = item;
       const style = this.getDayStyle(type, index);
+      const disabled = type === 'disabled';
 
       const onClick = () => {
-        if (type !== 'disabled') {
+        if (!disabled) {
           this.$emit('click', item);
         }
       };
-
-      if (type === 'selected') {
-        return (
-          <div style={style} class={bem('day')} onClick={onClick}>
-            <div class={bem('selected-day')} style={{ background: this.color }}>
-              {item.text}
-            </div>
-          </div>
-        );
-      }
 
       const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
 
@@ -200,10 +197,30 @@ export default createComponent({
         <div class={bem('bottom-info')}>{bottomInfo}</div>
       );
 
+      if (type === 'selected') {
+        return (
+          <div
+            role="gridcell"
+            style={style}
+            class={[bem('day'), item.className]}
+            tabindex={disabled ? null : -1}
+            onClick={onClick}
+          >
+            <div class={bem('selected-day')} style={{ background: this.color }}>
+              {TopInfo}
+              {item.text}
+              {BottomInfo}
+            </div>
+          </div>
+        );
+      }
+
       return (
         <div
+          role="gridcell"
           style={style}
-          class={[bem('day', [type]), item.className]}
+          class={[bem('day', type), item.className]}
+          tabindex={disabled ? null : -1}
           onClick={onClick}
         >
           {TopInfo}
@@ -211,7 +228,7 @@ export default createComponent({
           {BottomInfo}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -221,5 +238,5 @@ export default createComponent({
         {this.genDays()}
       </div>
     );
-  }
+  },
 });

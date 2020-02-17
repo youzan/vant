@@ -10,6 +10,7 @@ export type SkuData = {
   tree: SkuTreeItemData[];
   list: SkuListItemData[];
   messages: SkuMessageData[];
+  properties: SkuPropItemData[];
 };
 
 export type SkuTreeItemData = {
@@ -24,6 +25,19 @@ export type SkuTreeItemValueData = {
   imgUrl?: string;
   img_url?: string;
   previewImgUrl?: string;
+};
+
+export type SkuPropItemData = {
+  k: string;
+  v: SkuPropItemValueData[];
+  k_id: number;
+  is_multiple?: boolean;
+};
+
+export type SkuPropItemValueData = {
+  id: string;
+  name: string;
+  price?: number;
 };
 
 export type SkuListItemData = {

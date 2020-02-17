@@ -57,7 +57,7 @@ function compileTemplate(template: string) {
   const result = compileUtils.compileTemplate({
     compiler,
     source: template,
-    isProduction: true
+    isProduction: true,
   } as any);
 
   return result.code;
@@ -73,7 +73,7 @@ export function parseSfc(filePath: string) {
   const descriptor = compileUtils.parse({
     source,
     compiler,
-    needMap: false
+    needMap: false,
   } as any);
 
   return descriptor;

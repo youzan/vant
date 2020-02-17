@@ -34,6 +34,15 @@
         @focus="keyboard = 'value3'"
       />
     </demo-block>
+
+    <demo-block :title="$t('hintError')">
+      <van-password-input
+        :value="value4"
+        :error-info="errorInfo"
+        :focused="keyboard === 'value4'"
+        @focus="keyboard = 'value4'"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -43,13 +52,17 @@ export default {
     'zh-CN': {
       info: '密码为 6 位数字',
       customLength: '自定义长度',
-      removeMask: '明文展示'
+      removeMask: '明文展示',
+      hintError: '错误提示',
+      errorInfo: '密码错误',
     },
     'en-US': {
       info: 'Some tips',
       customLength: 'Custom Length',
-      removeMask: 'Remove Mask'
-    }
+      removeMask: 'Remove Mask',
+      hintError: 'Hint Error',
+      errorInfo: 'Password Mistake',
+    },
   },
 
   data() {
@@ -57,7 +70,9 @@ export default {
       value1: '123',
       value2: '123',
       value3: '123',
-      keyboard: 'value1'
+      value4: '123',
+      keyboard: 'value1',
+      errorInfo: '',
     };
   },
 
@@ -65,12 +80,17 @@ export default {
     onInput(key) {
       const { keyboard } = this;
       this[keyboard] = (this[keyboard] + key).slice(0, 6);
+      if (this[keyboard].length === 6) {
+        this.errorInfo = this.$t('errorInfo');
+      } else {
+        this.errorInfo = '';
+      }
     },
 
     onDelete() {
       const { keyboard } = this;
       this[keyboard] = this[keyboard].slice(0, this[keyboard].length - 1);
-    }
-  }
+    },
+  },
 };
 </script>

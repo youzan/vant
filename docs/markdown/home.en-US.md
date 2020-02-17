@@ -1,6 +1,6 @@
 <div class="card">
   <div class="van-doc-intro">
-    <img class="van-doc-intro__logo" style="width: 120px; height: 120px; box-shadow: none;" src="https://img.yzcdn.cn/vant/logo.png">
+    <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://img.yzcdn.cn/vant/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
     <p>Mobile UI Components built on Vue</p>
   </div>
@@ -29,12 +29,20 @@ Please make sure to read the [Contributing Guide](https://github.com/youzan/vant
 
 Modern browsers and Android 4.0+, iOS 8.0+.
 
+### Ecosystem
+
+| Project | Description |
+|-----|------|
+| [vant-demo](https://github.com/youzan/vant-demo) | Official vant demo collection |
+| [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI  |
+| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
+| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
+| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
+
 ### Links
 
 * [Feedback](https://github.com/youzan/vant/issues)
 * [Changelog](#/en-US/changelog)
-* [Vant Demo](https://github.com/youzan/vant-demo)
-* [Vant Weapp](https://github.com/youzan/vant-weapp)
 
 ### LICENSE
 

@@ -15,18 +15,26 @@ export default createComponent({
     lazyLoad: Boolean,
     showError: {
       type: Boolean,
-      default: true
+      default: true,
     },
     showLoading: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
+    errorIcon: {
+      type: String,
+      default: 'warning-o',
+    },
+    loadingIcon: {
+      type: String,
+      default: 'photo-o',
+    },
   },
 
   data() {
     return {
       loading: true,
-      error: false
+      error: false,
     };
   },
 
@@ -34,7 +42,7 @@ export default createComponent({
     src() {
       this.loading = true;
       this.error = false;
-    }
+    },
   },
 
   computed: {
@@ -55,7 +63,7 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   created() {
@@ -109,7 +117,7 @@ export default createComponent({
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || (
-              <Icon name="photo-o" class={bem('loading-icon')} />
+              <Icon name={this.loadingIcon} class={bem('loading-icon')} />
             )}
           </div>
         );
@@ -119,7 +127,7 @@ export default createComponent({
         return (
           <div class={bem('error')}>
             {this.slots('error') || (
-              <Icon name="warning-o" class={bem('error-icon')} />
+              <Icon name={this.errorIcon} class={bem('error-icon')} />
             )}
           </div>
         );
@@ -130,11 +138,11 @@ export default createComponent({
       const imgData = {
         class: bem('img'),
         attrs: {
-          alt: this.alt
+          alt: this.alt,
         },
         style: {
-          objectFit: this.fit
-        }
+          objectFit: this.fit,
+        },
       };
 
       if (this.error) {
@@ -153,7 +161,7 @@ export default createComponent({
           {...imgData}
         />
       );
-    }
+    },
   },
 
   render() {
@@ -167,5 +175,5 @@ export default createComponent({
         {this.genPlaceholder()}
       </div>
     );
-  }
+  },
 });

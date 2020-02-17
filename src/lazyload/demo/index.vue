@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <img v-for="img in imageList" v-lazy="img">
+      <img v-for="img in imageList" v-lazy="img" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -10,7 +10,7 @@
 
     <demo-block :title="$t('title3')">
       <lazy-component>
-        <img v-for="img in componentImageList" v-lazy="img">
+        <img v-for="img in componentImageList" v-lazy="img" />
       </lazy-component>
     </demo-block>
   </demo-section>
@@ -21,12 +21,12 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '背景图懒加载',
-      title3: '懒加载模块'
+      title3: '懒加载模块',
     },
     'en-US': {
       title2: 'Lazyload Background Image',
-      title3: 'Lazyload Component'
-    }
+      title3: 'Lazyload Component',
+    },
   },
 
   data() {
@@ -35,23 +35,23 @@ export default {
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg',
         'https://img.yzcdn.cn/vant/apple-3.jpg',
-        'https://img.yzcdn.cn/vant/apple-4.jpg'
+        'https://img.yzcdn.cn/vant/apple-4.jpg',
       ],
       backgroundImageList: [
         'https://img.yzcdn.cn/vant/apple-5.jpg',
-        'https://img.yzcdn.cn/vant/apple-6.jpg'
+        'https://img.yzcdn.cn/vant/apple-6.jpg',
       ],
       componentImageList: [
         'https://img.yzcdn.cn/vant/apple-8.jpg',
-        'https://img.yzcdn.cn/vant/apple-7.jpg'
-      ]
+        'https://img.yzcdn.cn/vant/apple-7.jpg',
+      ],
     };
-  }
+  },
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-lazyload {
   padding-right: @padding-md;
@@ -66,9 +66,9 @@ export default {
     padding: @padding-md;
     background-color: white;
     background-repeat: no-repeat;
-    background-position: @padding-md;
-    background-size: 315px 250px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-size: 100% 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px #ebedf0;
   }
 
   .van-doc-demo-block__title,

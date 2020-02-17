@@ -5,7 +5,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2018,
     sourceType: 'module',
-    extraFileExtensions: ['.vue']
+    extraFileExtensions: ['.vue'],
   },
 
   plugins: ['@typescript-eslint'],
@@ -14,13 +14,13 @@ module.exports = {
     es6: true,
     node: true,
     jest: true,
-    browser: true
+    browser: true,
   },
 
   globals: {
     window: false,
     document: false,
-    navigator: false
+    navigator: false,
   },
 
   rules: {
@@ -32,8 +32,17 @@ module.exports = {
     'no-console': 0,
     'no-plusplus': 0,
     'arrow-parens': 0,
-    'comma-dangle': 0,
     'default-case': 0,
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'always-multiline',
+        functions: 'never',
+      },
+    ],
     'prefer-template': 0,
     'consistent-return': 0,
     'no-param-reassign': 0,
@@ -64,6 +73,14 @@ module.exports = {
     'vue/name-property-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'vue/html-closing-bracket-newline': 2,
-    '@typescript-eslint/no-unused-vars': ['error']
-  }
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+        },
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
+  },
 };

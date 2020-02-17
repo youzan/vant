@@ -1,8 +1,4 @@
 import { mount, mockScrollTop } from '../../../test';
-import Vue from 'vue';
-import Sticky from '..';
-
-Vue.use(Sticky);
 
 test('sticky to top', () => {
   const wrapper = mount({
@@ -10,7 +6,7 @@ test('sticky to top', () => {
       <van-sticky style="height: 10px;">
         Content
       </van-sticky>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -25,7 +21,7 @@ test('z-index prop', () => {
       <van-sticky style="height: 10px;" :z-index="0">
         Content
       </van-sticky>
-    `
+    `,
   });
 
   mockScrollTop(100);
@@ -39,7 +35,7 @@ test('offset-top prop', () => {
       <van-sticky style="height: 10px;" :offset-top="10">
         Content
       </van-sticky>
-    `
+    `,
   });
 
   mockScrollTop(100);
@@ -58,12 +54,12 @@ test('container prop', () => {
     `,
     data() {
       return {
-        container: null
+        container: null,
       };
     },
     mounted() {
       this.container = this.$refs.container;
-    }
+    },
   });
 
   mockScrollTop(15);

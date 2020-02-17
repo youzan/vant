@@ -23,8 +23,8 @@
 // Component Colors
 @text-color: @gray-8;
 @active-color: @gray-2;
-@active-opacity: .7;
-@disabled-opacity: .5;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
 @background-color: @gray-1;
 @background-color-light: #fafafa;
 
@@ -42,11 +42,12 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
-@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
 
 // Animation
-@animation-duration-base: .3s;
-@animation-duration-fast: .2s;
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
 
 // Border
 @border-color: @gray-3;
@@ -57,7 +58,7 @@
 @border-radius-max: 999px;
 
 // ActionSheet
-@action-sheet-max-height: 90%;
+@action-sheet-max-height: 80%;
 @action-sheet-header-height: 44px;
 @action-sheet-header-font-size: @font-size-lg;
 @action-sheet-description-color: @gray-7;
@@ -70,9 +71,10 @@
 @action-sheet-item-disabled-text-color: @gray-5;
 @action-sheet-subname-color: @gray-7;
 @action-sheet-subname-font-size: @font-size-sm;
-@action-sheet-close-icon-size: 18px;
-@action-sheet-close-icon-color: @gray-6;
-@action-sheet-close-icon-padding: 0 @padding-sm;
+@action-sheet-close-icon-size: 22px;
+@action-sheet-close-icon-color: @gray-5;
+@action-sheet-close-icon-active-color: @gray-6;
+@action-sheet-close-icon-padding: 0 @padding-md;
 @action-sheet-cancel-padding-top: @padding-xs;
 @action-sheet-cancel-padding-color: @background-color;
 
@@ -96,7 +98,7 @@
 @address-list-item-font-size: 13px;
 @address-list-item-line-height: 18px;
 @address-list-item-radio-icon-color: @red;
-@address-list-edit-icon-size: 18px;
+@address-list-edit-icon-size: 20px;
 
 // Button
 @button-mini-height: 22px;
@@ -150,7 +152,7 @@
 @calendar-range-edge-color: @white;
 @calendar-range-edge-background-color: @red;
 @calendar-range-middle-color: @red;
-@calendar-range-middle-background-opacity: .1;
+@calendar-range-middle-background-opacity: 0.1;
 @calendar-selected-day-size: 54px;
 @calendar-selected-day-color: @white;
 @calendar-info-font-size: @font-size-xs;
@@ -258,12 +260,12 @@
 @count-down-line-height: 20px;
 
 // Coupon
-@coupon-margin: 0 @padding-md @padding-md;
+@coupon-margin: 0 @padding-sm @padding-sm;
 @coupon-content-height: 84px;
 @coupon-content-padding: 14px 0;
 @coupon-background-color: @white;
 @coupon-active-background-color: @active-color;
-@coupon-border-radius: @border-radius-md;
+@coupon-border-radius: @border-radius-lg;
 @coupon-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 @coupon-head-width: 96px;
 @coupon-amount-color: @red;
@@ -272,7 +274,6 @@
 @coupon-name-font-size: @font-size-md;
 @coupon-disabled-text-color: @gray-6;
 @coupon-description-padding: @padding-xs @padding-md;
-@coupon-description-background-color: @white;
 @coupon-description-border-color: @border-color;
 
 // CouponCell
@@ -327,6 +328,7 @@
 @dropdown-menu-title-line-height: 18px;
 @dropdown-menu-option-active-color: @blue;
 @dropdown-menu-content-max-height: 80%;
+@dropdown-item-z-index: 10;
 
 // Field
 @field-label-width: 90px;
@@ -344,6 +346,7 @@
 @field-word-limit-color: @gray-7;
 @field-word-limit-font-size: @font-size-sm;
 @field-word-limit-line-height: 16px;
+@field-word-num-full-color: @red;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
@@ -355,8 +358,9 @@
 
 // GoodsAction
 @goods-action-background-color: @white;
+@goods-action-height: 50px;
 @goods-action-icon-width: 48px;
-@goods-action-icon-height: 50px;
+@goods-action-icon-height: 100%;
 @goods-action-icon-color: @text-color;
 @goods-action-icon-size: 18px;
 @goods-action-icon-font-size: @font-size-xs;
@@ -367,17 +371,21 @@
 @goods-action-button-danger-color: @gradient-red;
 
 // IndexAnchor
+@index-anchor-z-index: 1;
 @index-anchor-padding: 0 @padding-md;
 @index-anchor-text-color: @text-color;
 @index-anchor-font-weight: @font-weight-bold;
 @index-anchor-font-size: @font-size-md;
 @index-anchor-line-height: 32px;
 @index-anchor-background-color: transparent;
+@index-anchor-sticky-text-color: @green;
 @index-anchor-sticky-background-color: @white;
 
 // IndexBar
+@index-bar-sidebar-z-index: 2;
 @index-bar-index-font-size: @font-size-xs;
 @index-bar-index-line-height: 14px;
+@index-bar-index-active-color: @green;
 
 // Info
 @info-size: 16px;
@@ -401,7 +409,13 @@
 // ImagePreview
 @image-preview-index-text-color: @white;
 @image-preview-index-font-size: @font-size-md;
-@image-preview-overlay-background-color: rgba(0, 0, 0, .9);
+@image-preview-index-text-shadow: 0 1px 1px @gray-8;
+@image-preview-overlay-background-color: rgba(0, 0, 0, 0.9);
+@image-preview-close-icon-size: 22px;
+@image-preview-close-icon-color: @gray-5;
+@image-preview-close-icon-active-color: @gray-6;
+@image-preview-close-icon-margin: @padding-md;
+@image-preview-close-icon-z-index: 1;
 
 // List
 @list-icon-margin-right: 5px;
@@ -414,7 +428,7 @@
 @loading-text-font-size: @font-size-md;
 @loading-spinner-color: @gray-5;
 @loading-spinner-size: 30px;
-@loading-spinner-animation-duration: .8s;
+@loading-spinner-animation-duration: 0.8s;
 
 // NavBar
 @nav-bar-height: 46px;
@@ -424,6 +438,7 @@
 @nav-bar-text-color: @blue;
 @nav-bar-title-font-size: @font-size-lg;
 @nav-bar-title-text-color: @text-color;
+@nav-bar-z-index: 1;
 
 // NoticeBar
 @notice-bar-height: 40px;
@@ -437,6 +452,7 @@
 @notice-bar-icon-min-width: 22px;
 
 // Notify
+@notify-text-color: @white;
 @notify-padding: @padding-xs @padding-md;
 @notify-font-size: @font-size-md;
 @notify-line-height: 20px;
@@ -464,8 +480,10 @@
 @number-keyboard-cursor-width: 1px;
 @number-keyboard-cursor-height: 40%;
 @number-keyboard-cursor-animation-duration: 1s;
+@number-keyboard-z-index: 100;
 
 // Overlay
+@overlay-z-index: 1;
 @overlay-background-color: rgba(0, 0, 0, 0.7);
 
 // Pagination
@@ -506,16 +524,17 @@
 @picker-action-active-color: @active-color;
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
-@picker-option-disabled-opacity: .3;
+@picker-option-disabled-opacity: 0.3;
 @picker-loading-icon-color: @blue;
-@picker-loading-mask-color: rgba(255, 255, 255, .9);
+@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
 
 // Popup
 @popup-background-color: @white;
 @popup-transition: transform @animation-duration-base ease-out;
 @popup-round-border-radius: 20px;
-@popup-close-icon-size: 18px;
-@popup-close-icon-color: @gray-6;
+@popup-close-icon-size: 22px;
+@popup-close-icon-color: @gray-5;
+@popup-close-icon-active-color: @gray-6;
 @popup-close-icon-margin: 16px;
 @popup-close-icon-z-index: 1;
 
@@ -548,10 +567,14 @@
 // Rate
 @rate-icon-size: 20px;
 @rate-icon-gutter: 4px;
+@rate-icon-void-color: @gray-5;
+@rate-icon-full-color: #ffd21e;
+@rate-icon-disabled-color: #bdbdbd;
 
 // Search
 @search-padding: 10px @padding-sm;
-@search-background-color: #f7f8fA;
+@search-background-color: @white;
+@search-content-background-color: @gray-1;
 @search-input-height: 34px;
 @search-label-padding: 0 5px;
 @search-label-color: @text-color;
@@ -588,14 +611,16 @@
 @slider-active-background-color: @blue;
 @slider-inactive-background-color: @gray-3;
 @slider-disabled-opacity: @disabled-opacity;
+@slider-bar-height: 2px;
 @slider-button-width: 24px;
 @slider-button-height: 24px;
 @slider-button-border-radius: 50%;
 @slider-button-background-color: @white;
-@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 
 // Step
 @step-text-color: @gray-6;
+@step-active-color: @green;
 @step-process-text-color: @text-color;
 @step-font-size: @font-size-md;
 @step-line-color: @border-color;
@@ -651,7 +676,7 @@
 @swipe-indicator-size: 6px;
 @swipe-indicator-margin: @padding-sm;
 @swipe-indicator-active-opacity: 1;
-@swipe-indicator-inactive-opacity: .3;
+@swipe-indicator-inactive-opacity: 0.3;
 @swipe-indicator-active-background-color: @blue;
 @swipe-indicator-inactive-background-color: @border-color;
 
@@ -662,12 +687,13 @@
 @switch-node-size: 1em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
 @switch-transition-duration: @animation-duration-base;
 @switch-disabled-opacity: @disabled-opacity;
-@switch-border: @border-width-base solid rgba(0, 0, 0, .1);
+@switch-border: @border-width-base solid rgba(0, 0, 0, 0.1);
 
 // SwitchCell
 @switch-cell-padding-top: @cell-vertical-padding - 1px;
@@ -677,6 +703,7 @@
 
 // Tabbar
 @tabbar-height: 50px;
+@tabbar-z-index: 1;
 @tabbar-background-color: @white;
 
 // TabbarItem
@@ -702,12 +729,12 @@
 @tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
-@tag-padding: .2em .5em;
+@tag-padding: 0.2em 0.5em;
 @tag-font-size: @font-size-xs;
 @tag-medium-font-size: @font-size-sm;
 @tag-large-font-size: @font-size-md;
 @tag-text-color: @white;
-@tag-border-radius: .2em;
+@tag-border-radius: 0.2em;
 @tag-round-border-radius: @border-radius-max;
 @tag-danger-color: @red;
 @tag-primary-color: @blue;
@@ -762,8 +789,15 @@
 @uploader-file-name-margin-top: @padding-xs;
 @uploader-file-name-font-size: @font-size-sm;
 @uploader-file-name-text-color: @gray-7;
+@uploader-mask-background-color: fade(@gray-8, 88%);
+@uploader-mask-icon-size: 22px;
+@uploader-mask-message-font-size: @font-size-sm;
+@uploader-mask-message-line-height: 14px;
+@uploader-loading-icon-size: 22px;
+@uploader-loading-icon-color: @white;
+@uploader-disabled-opacity: @disabled-opacity;
 
 // Sku
 @sku-item-background-color: @background-color;
-@sku-icon-gray-color: #dcdde0;
-@sku-upload-mask-color: rgba(50, 50, 51, .8);
+@sku-icon-gray-color: @gray-4;
+@sku-upload-mask-color: rgba(50, 50, 51, 0.8);

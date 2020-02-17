@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { ROOT } from '../common/constant';
-import { logger } from '../common/logger';
+import { ora, slimPath } from '../common/logger';
 import { createWriteStream, readFileSync } from 'fs-extra';
 // @ts-ignore
 import conventionalChangelog from 'conventional-changelog';
@@ -19,7 +19,7 @@ function formatType(type: string) {
     fix: 'Bug Fixes',
     feat: 'Feature',
     docs: 'Document',
-    types: 'Types'
+    types: 'Types',
   };
 
   return MAP[type] || type;
@@ -46,13 +46,13 @@ function transform(item: any) {
   return item;
 }
 
-export async function changelog() {
-  logger.start('Generating changelog...');
+export async function changelog(): Promise<void> {
+  const spinner = ora('Generating changelog...').start();
 
   return new Promise(resolve => {
     conventionalChangelog(
       {
-        preset: 'angular'
+        preset: 'angular',
       },
       null,
       null,
@@ -61,12 +61,12 @@ export async function changelog() {
         mainTemplate,
         headerPartial,
         commitPartial,
-        transform
+        transform,
       }
     )
       .pipe(createWriteStream(DIST_FILE))
       .on('close', () => {
-        logger.success(`Generated changelog at ${DIST_FILE}`);
+        spinner.succeed(`Changelog generated at ${slimPath(DIST_FILE)}`);
         resolve();
       });
   });

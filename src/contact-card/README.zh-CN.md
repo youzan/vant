@@ -6,14 +6,13 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue
-  .use(ContactCard)
-  .use(ContactList)
-  .use(ContactEdit);
+Vue.use(ContactCard);
+Vue.use(ContactList);
+Vue.use(ContactEdit);
 ```
 
 ## 代码演示
@@ -51,7 +50,7 @@ Vue
 </van-popup>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -139,27 +138,27 @@ export default {
 
 ### ContactCard Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| type | 类型，可选值为 `add` `edit` | *string* | `add` | - |
-| name | 联系人姓名 | *string* | - | - |
-| tel | 联系人手机号 | *string* | - | - |
-| add-text | 添加时的文案提示 | *string* | `添加订单联系人信息` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| type | 类型，可选值为 `add` `edit` | *string* | `add` |
+| name | 联系人姓名 | *string* | - |
+| tel | 联系人手机号 | *string* | - |
+| add-text | 添加时的文案提示 | *string* | `添加订单联系人信息` |
 
 ### ContactCard Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | event: Event |
+| click | 点击时触发 | *event: Event* |
 
 ### ContactList Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前选中联系人的 id | *string \| number* | - | - |
-| list | 联系人列表 | *Contact[]* | `[]` | - |
-| add-text | 新建按钮文案 | *string* | `新建联系人` | - |
-| default-tag-text | 默认联系人标签文案 | *string* | - | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前选中联系人的 id | *number \| string* | - |
+| list | 联系人列表 | *Contact[]* | `[]` |
+| add-text | 新建按钮文案 | *string* | `新建联系人` |
+| default-tag-text `v2.3.0` | 默认联系人标签文案 | *string* | - |
 
 ### ContactList Events
 
@@ -171,15 +170,15 @@ export default {
 
 ### ContactEdit Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| contact-info | 联系人信息 | *object* | `[]` | - |
-| is-edit | 是否为编辑联系人 | *boolean* | `false` | - |
-| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` | - |
-| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` | - |
-| tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - | - |
-| show-set-default | 是否显示默认联系人栏 | *boolean* | `false` | 2.3.0 |
-| set-default-label | 默认联系人栏文案 | *string* | - | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| contact-info | 联系人信息 | *object* | `[]` |
+| is-edit | 是否为编辑联系人 | *boolean* | `false` |
+| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` |
+| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` |
+| tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - |
+| show-set-default `v2.3.0` | 是否显示默认联系人栏 | *boolean* | `false` |
+| set-default-label `v2.3.0` | 默认联系人栏文案 | *string* | - |
 
 ### ContactEdit Events
 
@@ -192,7 +191,7 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每位联系人的唯一标识 | *string \| number* |
+| id | 每位联系人的唯一标识 | *number \| string* |
 | name | 联系人姓名 | *string* |
-| tel | 联系人手机号 | *string \| number* |
+| tel | 联系人手机号 | *number \| string* |
 | isDefault | 是否为默认联系人 | *boolean* |

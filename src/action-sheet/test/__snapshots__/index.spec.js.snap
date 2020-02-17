@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`callback events 1`] = `
-<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button type="button" class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button type="button" class="van-action-sheet__item van-action-sheet__item--disabled van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button type="button" class="van-action-sheet__item van-action-sheet__item--disabled van-hairline--top">
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button type="button" class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button type="button" class="van-action-sheet__item van-action-sheet__item--disabled van-hairline--top"><span class="van-action-sheet__name">Option</span></button><button type="button" class="van-action-sheet__item van-action-sheet__item--loading van-hairline--top">
     <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
   </button><button type="button" class="van-action-sheet__item van-hairline--top"><span class="van-action-sheet__name">Option</span><span class="van-action-sheet__subname">Subname</span></button><button type="button" class="van-action-sheet__cancel">Cancel</button></div>
 `;
 
 exports[`close-icon prop 1`] = `
 <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
-  <div class="van-action-sheet__header van-hairline--bottom">Title<i class="van-icon van-icon-cross van-action-sheet__close">
+  <div class="van-action-sheet__header">Title<i class="van-icon van-icon-cross van-action-sheet__close">
       <!----></i></div>
 </div>
 `;
@@ -25,7 +25,7 @@ exports[`disable lazy-render 1`] = `<div class="van-popup van-popup--round van-p
 
 exports[`render title and default slot 1`] = `
 <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
-  <div class="van-action-sheet__header van-hairline--bottom">Title<i class="van-icon van-icon-close van-action-sheet__close">
+  <div class="van-action-sheet__header">Title<i class="van-icon van-icon-cross van-action-sheet__close">
       <!----></i></div>
   <div class="van-action-sheet__content">Default</div>
 </div>

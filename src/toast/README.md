@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Toast } from 'vant';
 
@@ -13,13 +13,13 @@ Vue.use(Toast);
 
 ### Text
 
-```javascript
+```js
 Toast('Some messages');
 ```
 
 ### Loading
 
-```javascript
+```js
 Toast.loading({
   message: 'Loading...',
   forbidClick: true
@@ -34,7 +34,7 @@ Toast.loading({
 
 ### Success/Fail
 
-```javascript
+```js
 Toast.success('Success');
 Toast.fail('Fail');
 ```
@@ -55,7 +55,7 @@ Toast({
 
 ### Update Message
 
-```javascript
+```js
 const toast = Toast.loading({
   duration: 0, // continuous display toast
   forbidClick: true,
@@ -136,21 +136,21 @@ Toast.resetDefaultOptions('loading');
 
 ### Options
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| type | Can be set to `loading` `success` `fail` `html` | *string* | `text` | - |
-| position | Can be set to `top` `middle` `bottom` | *string* | `middle` | - |
-| message | Message | *string* | `''` | - |
-| icon | Custom icon | *string* | - | 2.0.1 |
-| iconPrefix | Icon className prefix | *string* | `van-icon` | 2.0.9 |
-| overlay | Whether to show overlay | *boolean* | `false` | 2.2.13 |
-| forbidClick | Whether to forbid click background | *boolean* | `false` | - |
-| closeOnClick | Whether to close after clicked | *boolean* | `false` | 2.1.5 |
-| closeOnClickOverlay | Whether to close when click overlay | *boolean* | `false` | 2.2.13 |
-| loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` | - |
-| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `2000` | - |
-| className | Custom className | *any* | - | - |
-| onOpened | Callback function after opened | *Function* | - | - |
-| onClose | Callback function after close | *Function* | - | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | 2.2.6 |
-| getContainer | Return the mount node for Toast | *string \| () => Element* | `body` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| type | Can be set to `loading` `success` `fail` `html` | *string* | `text` |
+| position | Can be set to `top` `middle` `bottom` | *string* | `middle` |
+| message | Message | *string* | `''` |
+| icon `v2.0.1` | Custom icon | *string* | - |
+| iconPrefix `v2.0.9` | Icon className prefix | *string* | `van-icon` |
+| overlay `v2.2.13` | Whether to show overlay | *boolean* | `false` |
+| forbidClick | Whether to forbid click background | *boolean* | `false` |
+| closeOnClick `v2.1.5` | Whether to close after clicked | *boolean* | `false` |
+| closeOnClickOverlay `v2.2.13` | Whether to close when click overlay | *boolean* | `false` |
+| loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` |
+| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `2000` |
+| className | Custom className | *any* | - |
+| onOpened | Callback function after opened | *Function* | - |
+| onClose | Callback function after close | *Function* | - |
+| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | `van-fade` |
+| getContainer | Return the mount node for Toast | *string \| () => Element* | `body` |

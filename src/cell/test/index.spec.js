@@ -7,9 +7,9 @@ test('click event', () => {
   const wrapper = mount(Cell, {
     context: {
       on: {
-        click
-      }
-    }
+        click,
+      },
+    },
   });
 
   wrapper.trigger('click');
@@ -20,8 +20,8 @@ test('arrow direction', () => {
   const wrapper = mount(Cell, {
     propsData: {
       isLink: true,
-      arrowDirection: 'down'
-    }
+      arrowDirection: 'down',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -38,8 +38,8 @@ test('render slot', () => {
       </cell>
     `,
     components: {
-      Cell
-    }
+      Cell,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -50,9 +50,9 @@ test('title-style prop', () => {
     propsData: {
       title: 'title',
       titleStyle: {
-        color: 'red'
-      }
-    }
+        color: 'red',
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -61,8 +61,8 @@ test('title-style prop', () => {
 test('CellGroup title slot', () => {
   const wrapper = mount(CellGroup, {
     scopedSlots: {
-      title: () => 'CustomTitle'
-    }
+      title: () => 'CustomTitle',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

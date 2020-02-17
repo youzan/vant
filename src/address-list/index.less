@@ -31,7 +31,8 @@
 
 .van-address-item {
   padding: @address-list-item-padding;
-  border-radius: @border-radius-md;
+  background-color: @white;
+  border-radius: @border-radius-lg;
 
   &:not(:last-child) {
     margin-bottom: @padding-sm;
@@ -79,6 +80,10 @@
     transform: translate(0, -50%);
   }
 
+  .van-cell {
+    padding: 0;
+  }
+
   .van-radio__label {
     margin-left: @padding-sm;
   }
@@ -86,9 +91,5 @@
   .van-radio__icon--checked .van-icon {
     background-color: @address-list-item-radio-icon-color;
     border-color: @address-list-item-radio-icon-color;
-  }
-
-  .van-radio__icon:not(.van-radio__icon--checked) {
-    visibility: hidden;
   }
 }

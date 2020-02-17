@@ -24,7 +24,7 @@ test('error loaded, click error-text and reload', async () => {
     propsData: {
       errorText: 'Request failed. Click to reload...',
       error: true,
-    }
+    },
   });
 
   await later();
@@ -35,7 +35,7 @@ test('error loaded, click error-text and reload', async () => {
   // simulate the behavior of clicking error-text
   wrapper.vm.$on('update:error', val => {
     wrapper.setProps({
-      error: val
+      error: val,
     });
   });
 
@@ -54,8 +54,8 @@ test('finished', async () => {
   const wrapper = mount(List, {
     propsData: {
       finished: true,
-      finishedText: 'Finished'
-    }
+      finishedText: 'Finished',
+    },
   });
 
   await later();
@@ -73,11 +73,11 @@ test('finished', async () => {
 test('finished slot', async () => {
   const wrapper = mount(List, {
     propsData: {
-      finished: true
+      finished: true,
     },
     scopedSlots: {
-      finished: () => 'Custom Finished'
-    }
+      finished: () => 'Custom Finished',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -86,11 +86,11 @@ test('finished slot', async () => {
 test('error slot', async () => {
   const wrapper = mount(List, {
     propsData: {
-      error: true
+      error: true,
     },
     scopedSlots: {
-      error: () => 'Custom Error'
-    }
+      error: () => 'Custom Error',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -99,8 +99,8 @@ test('error slot', async () => {
 test('immediate check false', async () => {
   const wrapper = mount(List, {
     propsData: {
-      immediateCheck: false
-    }
+      immediateCheck: false,
+    },
   });
 
   await later();
@@ -111,7 +111,7 @@ test('immediate check false', async () => {
 test('check the case that scroller is not window', async () => {
   const restoreMock = mockGetBoundingClientRect({
     top: 0,
-    bottom: 200
+    bottom: 200,
   });
 
   const wrapper = mount({
@@ -120,11 +120,11 @@ test('check the case that scroller is not window', async () => {
         <list ref="list"/>
       </div>
     `,
-    components: { List }
+    components: { List },
   });
 
   const listRef = wrapper.find({
-    ref: 'list'
+    ref: 'list',
   });
 
   await later();
@@ -137,11 +137,11 @@ test('check the case that scroller is not window', async () => {
 test('check the direction props', () => {
   const wrapper = mount(List, {
     slots: {
-      default: '<div class="list-item">list item</div>'
+      default: '<div class="list-item">list item</div>',
     },
     propsData: {
-      direction: 'up'
-    }
+      direction: 'up',
+    },
   });
 
   let children = wrapper.findAll('.van-list > div');
@@ -150,7 +150,7 @@ test('check the direction props', () => {
 
   // change the direction's value
   wrapper.setProps({
-    direction: 'down'
+    direction: 'down',
   });
 
   children = wrapper.findAll('.van-list > div');

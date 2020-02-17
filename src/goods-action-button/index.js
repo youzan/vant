@@ -12,9 +12,10 @@ export default createComponent({
     ...routeProps,
     type: String,
     text: String,
+    icon: String,
     color: String,
     loading: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   computed: {
@@ -26,14 +27,14 @@ export default createComponent({
     isLast() {
       const next = this.parent && this.parent.children[this.index + 1];
       return !next || next.$options.name !== this.$options.name;
-    }
+    },
   },
 
   methods: {
     onClick(event) {
       this.$emit('click', event);
       route(this.$router, this);
-    }
+    },
   },
 
   render() {
@@ -42,13 +43,14 @@ export default createComponent({
         class={bem([
           {
             first: this.isFirst,
-            last: this.isLast
+            last: this.isLast,
           },
-          this.type
+          this.type,
         ])}
         square
         size="large"
         type={this.type}
+        icon={this.icon}
         color={this.color}
         loading={this.loading}
         disabled={this.disabled}
@@ -57,5 +59,5 @@ export default createComponent({
         {this.slots() || this.text}
       </Button>
     );
-  }
+  },
 });

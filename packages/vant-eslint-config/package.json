@@ -1,7 +1,7 @@
 {
   "name": "@vant/eslint-config",
-  "version": "1.5.1",
-  "description": "eslint config of vant.",
+  "version": "2.0.0",
+  "description": "eslint config of vant",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -9,16 +9,16 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
   "peerDependencies": {
-    "eslint": "^6.7.2"
+    "eslint": "^6.8.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.12.0",
-    "@typescript-eslint/parser": "^2.12.0",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-vue": "^6.0.1"
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-vue": "^6.1.2"
   },
   "devDependencies": {
-    "eslint": "^6.7.2"
+    "eslint": "^6.8.0"
   }
 }

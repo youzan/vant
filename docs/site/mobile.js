@@ -6,15 +6,17 @@ import { camelize } from '../../src/utils/format/string';
 import enUS from '../../src/locale/lang/en-US';
 
 Vue.use(Lazyload, {
-  lazyComponent: true
+  lazyComponent: true,
 });
 
 Locale.add({
-  'en-US': enUS
+  'en-US': enUS,
 });
 
 // flag for vant-weapp demos
 const isWeapp = location.search.indexOf('weapp=1') !== -1;
+
+let demoUid = 0;
 
 // helper for demo locales
 Vue.mixin({
@@ -33,10 +35,14 @@ Vue.mixin({
 
     isWeapp() {
       return isWeapp;
-    }
+    },
   },
 
   beforeCreate() {
+    if (!this.$options.name) {
+      this.$options.name = `demo-${demoUid++}`;
+    }
+
     const { i18n, name } = this.$options;
 
     if (i18n && name) {
@@ -49,7 +55,7 @@ Vue.mixin({
 
       Locale.add(locales);
     }
-  }
+  },
 });
 
 // switch lang after routing
@@ -91,7 +97,7 @@ Locale.add({
     advancedUsage: '高级用法',
     loadingStatus: '加载状态',
     usernamePlaceholder: '请输入用户名',
-    passwordPlaceholder: '请输入密码'
+    passwordPlaceholder: '请输入密码',
   },
   'en-US': {
     add: 'Add',
@@ -119,6 +125,6 @@ Locale.add({
     basicUsage: 'Basic Usage',
     advancedUsage: 'Advanced Usage',
     usernamePlaceholder: 'Username',
-    passwordPlaceholder: 'Password'
-  }
+    passwordPlaceholder: 'Password',
+  },
 });

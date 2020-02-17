@@ -3,13 +3,22 @@
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
         <van-cell :title="$t('cell')" :value="$t('content')" />
-        <van-cell :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+          :label="$t('desc')"
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('largeSize')">
       <van-cell :title="$t('cell')" :value="$t('content')" size="large" />
-      <van-cell :title="$t('cell')" :value="$t('content')" size="large" :label="$t('desc')" />
+      <van-cell
+        :title="$t('cell')"
+        :value="$t('content')"
+        size="large"
+        :label="$t('desc')"
+      />
     </demo-block>
 
     <demo-block :title="$t('showIcon')">
@@ -23,7 +32,12 @@
     <demo-block :title="$t('showArrow')">
       <van-cell :title="$t('cell')" is-link />
       <van-cell :title="$t('cell')" is-link :value="$t('content')" />
-      <van-cell :title="$t('cell')" is-link arrow-direction="down" :value="$t('content')" />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        arrow-direction="down"
+        :value="$t('content')"
+      />
     </demo-block>
 
     <demo-block :title="$t('router')">
@@ -56,7 +70,12 @@
     </demo-block>
 
     <demo-block :title="$t('verticalCenter')">
-      <van-cell center :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+      <van-cell
+        center
+        :title="$t('cell')"
+        :value="$t('content')"
+        :label="$t('desc')"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -76,7 +95,7 @@ export default {
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
       useSlots: '使用插槽',
-      verticalCenter: '垂直居中'
+      verticalCenter: '垂直居中',
     },
     'en-US': {
       cell: 'Cell title',
@@ -90,9 +109,9 @@ export default {
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
       useSlots: 'Use Slots',
-      verticalCenter: 'Vertical center'
-    }
-  }
+      verticalCenter: 'Vertical center',
+    },
+  },
 };
 </script>
 

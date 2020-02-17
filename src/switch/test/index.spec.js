@@ -5,12 +5,10 @@ test('emit event', () => {
   const input = jest.fn();
   const change = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        input,
-        change
-      }
-    }
+    listeners: {
+      input,
+      change,
+    },
   });
   wrapper.trigger('click');
 
@@ -22,15 +20,13 @@ test('disabled', () => {
   const input = jest.fn();
   const change = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        input,
-        change
-      }
+    listeners: {
+      input,
+      change,
     },
     propsData: {
-      disabled: true
-    }
+      disabled: true,
+    },
   });
   wrapper.trigger('click');
 
@@ -45,14 +41,12 @@ test('active-value & inactive-value prop', () => {
     propsData: {
       value: '1',
       activeValue: '1',
-      inactiveValue: '2'
+      inactiveValue: '2',
     },
-    context: {
-      on: {
-        input,
-        change
-      }
-    }
+    listeners: {
+      input,
+      change,
+    },
   });
 
   wrapper.trigger('click');
@@ -66,8 +60,8 @@ test('inactive-color prop', () => {
     propsData: {
       value: '2',
       inactiveValue: '2',
-      inactiveColor: 'black'
-    }
+      inactiveColor: 'black',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -76,8 +70,8 @@ test('inactive-color prop', () => {
 test('size prop', () => {
   const wrapper = mount(Switch, {
     propsData: {
-      size: 20
-    }
+      size: 20,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -86,11 +80,9 @@ test('size prop', () => {
 test('click event', () => {
   const click = jest.fn();
   const wrapper = mount(Switch, {
-    context: {
-      on: {
-        click
-      }
-    }
+    listeners: {
+      click,
+    },
   });
 
   wrapper.trigger('click');

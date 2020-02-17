@@ -13,7 +13,11 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-progress color="#f2826a" :percentage="25" :pivot-text="$t('orange')" />
+      <van-progress
+        color="#f2826a"
+        :percentage="25"
+        :pivot-text="$t('orange')"
+      />
       <van-progress color="#ee0a24" :percentage="50" :pivot-text="$t('red')" />
       <van-progress
         :percentage="75"
@@ -31,19 +35,23 @@ export default {
     'zh-CN': {
       title2: '置灰',
       title3: '样式定制',
-      strokeWidth: '线条粗细'
+      strokeWidth: '线条粗细',
     },
     'en-US': {
       title2: 'Inactive',
       title3: 'Custom Style',
-      strokeWidth: 'Stroke Width'
-    }
-  }
+      strokeWidth: 'Stroke Width',
+    },
+  },
 };
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-progress {
+  background: @white;
+
   .van-progress {
     margin: 20px;
 

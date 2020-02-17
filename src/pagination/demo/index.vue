@@ -39,30 +39,30 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '简单模式',
-      title3: '',
+      title3: '显示省略号',
       prevText: '上一页',
-      nextText: '下一页'
+      nextText: '下一页',
     },
     'en-US': {
       title2: 'Simple Mode',
       title3: 'Show ellipses',
       prevText: 'Prev',
-      nextText: 'Next'
-    }
+      nextText: 'Next',
+    },
   },
 
   data() {
     return {
       currentPage1: 1,
       currentPage2: 1,
-      currentPage3: 1
+      currentPage3: 1,
     };
-  }
+  },
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-pagination {
   .van-pagination {

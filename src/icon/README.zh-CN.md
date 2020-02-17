@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Icon } from 'vant';
 
@@ -89,18 +89,18 @@ import 'vant/lib/icon/local.css';
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| name | 图标名称或图片链接 | *string* | - | - |
-| dot | 是否显示图标右上角小红点 | *boolean* | `false` | 2.2.1 |
-| info | 图标右上角徽标的内容 | *string \| number* | - | - |
-| color | 图标颜色 | *string* | `inherit` | - |
-| size | 图标大小，如 `20px` `2em`，默认单位为`px` | *string \| number* | `inherit` | - |
-| class-prefix | 类名前缀 | *string* | `van-icon` | - |
-| tag | HTML 标签 | *string* | `i` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| name | 图标名称或图片链接 | *string* | - |
+| dot `v2.2.1` | 是否显示图标右上角小红点 | *boolean* | `false` |
+| info | 图标右上角徽标的内容 | *number \| string* | - |
+| color | 图标颜色 | *string* | `inherit` |
+| size | 图标大小，如 `20px` `2em`，默认单位为`px` | *number \| string* | `inherit` |
+| class-prefix | 类名前缀 | *string* | `van-icon` |
+| tag | HTML 标签 | *string* | `i` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击图标时触发 | event: Event |
+| click | 点击图标时触发 | *event: Event* |

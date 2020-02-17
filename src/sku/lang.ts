@@ -16,21 +16,23 @@ export default {
       stock: '剩余',
       stockUnit: '件',
       quotaTip: (quota: number) => `每人限购${quota}件`,
-      quotaUsedTip: (quota: number, count: number) => `每人限购${quota}件，你已购买${count}件`
+      quotaUsedTip: (quota: number, count: number) =>
+        `每人限购${quota}件，你已购买${count}件`,
     },
     vanSkuActions: {
       buy: '立即购买',
-      addCart: '加入购物车'
+      addCart: '加入购物车',
     },
     vanSkuImgUploader: {
-      oversize: (maxSize: number) => `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
-      fail: '上传失败<br />重新上传'
+      oversize: (maxSize: number) =>
+        `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
+      fail: '上传失败<br />重新上传',
     },
     vanSkuStepper: {
       quotaLimit: (quota: number) => `限购${quota}件`,
       quotaStart: (start: number) => `${start}件起售`,
       comma: '，',
-      num: '购买数量'
+      num: '购买数量',
     },
     vanSkuMessages: {
       fill: '请填写',
@@ -40,7 +42,7 @@ export default {
         tel: '请填写正确的数字格式留言',
         mobile: '手机号长度为6-20位数字',
         email: '请填写正确的邮箱',
-        id_no: '请填写正确的身份证号码'
+        id_no: '请填写正确的身份证号码',
       },
       placeholder: {
         id_no: '输入身份证号码',
@@ -50,8 +52,11 @@ export default {
         date: '点击选择日期',
         time: '点击选择时间',
         textarea: '点击填写段落文本',
-        mobile: '输入手机号码'
-      }
-    }
-  }
+        mobile: '输入手机号码',
+      },
+    },
+    vanSkuRow: {
+      multiple: '可多选',
+    },
+  },
 };

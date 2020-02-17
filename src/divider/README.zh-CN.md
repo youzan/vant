@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Divider } from 'vant';
 
@@ -58,11 +58,11 @@ Vue.use(Divider);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| dashed | 是否使用虚线 | *boolean* | `false` | - |
-| hairline | 是否使用 0.5px 线 | *boolean* | `true` | - |
-| content-position | 内容位置，可选值为`left` `right` | *string* | `center` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| dashed | 是否使用虚线 | *boolean* | `false` |
+| hairline | 是否使用 0.5px 线 | *boolean* | `true` |
+| content-position | 内容位置，可选值为`left` `right` | *string* | `center` |
 
 ### Slots
 

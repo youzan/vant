@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Stepper } from 'vant';
 
@@ -23,7 +23,7 @@ Vue.use(Stepper);
 <van-stepper v-model="value" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -65,6 +65,14 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+### 禁用输入框
+
+通过设置`disabled-input`属性来禁用输入框，此时按钮仍然可以点击
+
+```html
+<van-stepper v-model="value" disabled-input />
+```
+
 ### 固定小数位数
 
 通过设置`decimal-length`属性可以保留固定的小数位数
@@ -93,14 +101,15 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       value: 1
     }
   },
-
   methods: {
     onChange(value) {
       Toast.loading({ forbidClick: true });
@@ -120,32 +129,34 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前输入值 | *string \| number* | min | - |
-| min | 最小值 | *string \| number* | `1` | - |
-| max | 最大值 | *string \| number* | - | - |
-| step | 步长，每次点击时改变的值 | *string \| number* | `1` | - |
-| name | 标识符，可以在`change`事件回调参数中获取 | *string \| number* | - | 2.2.11 |
-| integer | 是否只允许输入整数 | *boolean* | `false` | - |
-| disabled | 是否禁用步进器 | *boolean* | `false` | - |
-| disable-plus | 是否禁用增加按钮 | *boolean* | `false` | 2.2.16 |
-| disable-minus | 是否禁用减少按钮 | *boolean* | `false` | 2.2.16 |
-| disable-input | 是否禁用输入框 | *boolean* | `false` | - |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
-| input-width | 输入框宽度，默认单位为`px` | *string \| number* | `32px` | - |
-| button-size | 按钮大小以及输入框高度，默认单位为`px` | *string \| number* | `28px` | 2.0.5 |
-| show-plus | 是否显示增加按钮 | *boolean* | `true` | 2.1.2 |
-| show-minus | 是否显示减少按钮 | *boolean* | `true` | 2.1.2 |
-| decimal-length | 固定显示的小数位数 | *number* | - | 2.2.1 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前输入的值 | *number \| string* | - |
+| min | 最小值 | *number \| string* | `1` |
+| max | 最大值 | *number \| string* | - |
+| default-value | 初始值，当 v-model 为空时生效 | *number \| string* | `1` |
+| step | 步长，每次点击时改变的值 | *number \| string* | `1` |
+| name `v2.2.11` | 标识符，可以在`change`事件回调参数中获取 | *number \| string* | - |
+| input-width | 输入框宽度，默认单位为`px` | *number \| string* | `32px` |
+| button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | *number \| string* | `28px` |
+| decimal-length `v2.2.1` | 固定显示的小数位数 | *number \| string* | - |
+| integer | 是否只允许输入整数 | *boolean* | `false` |
+| disabled | 是否禁用步进器 | *boolean* | `false` |
+| disable-plus `v2.2.16` | 是否禁用增加按钮 | *boolean* | `false` |
+| disable-minus `v2.2.16` | 是否禁用减少按钮 | *boolean* | `false` |
+| disable-input | 是否禁用输入框 | *boolean* | `false` |
+| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` |
+| show-plus `v2.1.2` | 是否显示增加按钮 | *boolean* | `true` |
+| show-minus `v2.1.2` | 是否显示减少按钮 | *boolean* | `true` |
+| long-press `v2.4.3` | 是否开启长按手势 | *boolean* | `true` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | value: 当前组件的值, detail: 额外信息，包含 name 的字段 |
+| change | 当绑定值变化时触发的事件 | *value: string, detail: { name: string }* |
 | overlimit | 点击不可用的按钮时触发 | - |
 | plus | 点击增加按钮时触发 | - |
 | minus | 点击减少按钮时触发 | - |
-| focus | 输入框聚焦时触发 | event: Event |
-| blur | 输入框失焦时触发 | event: Event |
+| focus | 输入框聚焦时触发 | *event: Event* |
+| blur | 输入框失焦时触发 | *event: Event* |

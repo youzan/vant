@@ -12,7 +12,7 @@
     <demo-block :title="$t('title2')">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in images" :key="index">
-          <img v-lazy="image">
+          <img v-lazy="image" />
         </van-swipe-item>
       </van-swipe>
     </demo-block>
@@ -74,7 +74,7 @@ export default {
       title4: '纵向滚动',
       title5: '自定义滑块大小',
       title6: '自定义指示器',
-      message: '当前 Swipe 索引：'
+      message: '当前 Swipe 索引：',
     },
     'en-US': {
       title2: 'Image Lazyload',
@@ -82,8 +82,8 @@ export default {
       title4: 'Vertical Scrolling',
       title5: 'Set SwipeItem Size',
       title6: 'Custom indicator',
-      message: 'Current Swipe index:'
-    }
+      message: 'Current Swipe index:',
+    },
   },
 
   data() {
@@ -93,8 +93,8 @@ export default {
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg',
         'https://img.yzcdn.cn/vant/apple-3.jpg',
-        'https://img.yzcdn.cn/vant/apple-4.jpg'
-      ]
+        'https://img.yzcdn.cn/vant/apple-4.jpg',
+      ],
     };
   },
 
@@ -105,8 +105,8 @@ export default {
 
     onChange2(index) {
       this.current = index;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -117,8 +117,6 @@ export default {
   padding-bottom: 30px;
 
   .van-swipe {
-    cursor: pointer;
-
     &-item {
       color: @white;
       font-size: 20px;

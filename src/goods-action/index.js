@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [ParentMixin('vanGoodsAction')],
 
   props: {
-    safeAreaInsetBottom: Boolean
+    safeAreaInsetBottom: Boolean,
   },
 
   render() {
@@ -16,5 +16,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

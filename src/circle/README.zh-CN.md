@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Circle } from 'vant';
 
@@ -24,7 +24,7 @@ Vue.use(Circle);
 />
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -78,7 +78,7 @@ export default {
 />
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -122,19 +122,19 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前进度 | *number* | - | - |
-| rate | 目标进度 | *number* | `100` | - |
-| size | 圆环直径，默认单位为 `px` | *string \| number* | `100px` | - |
-| color | 进度条颜色，传入对象格式可以定义渐变色 | *string \| object* | `#1989fa` | 2.1.4 |
-| layer-color | 轨道颜色 | *string* | `#fff` | - |
-| fill | 填充颜色 | *string* | `none` | - |
-| speed | 动画速度（单位为 rate/s）| *number* | `0` | - |
-| text | 文字 | *string* | - | - |
-| stroke-width | 进度条宽度 | *number* | `40` | - |
-| stroke-linecap | 进度条端点的形状，可选值为`sqaure` `butt` | *string* | `round` | 2.2.15 |
-| clockwise | 是否顺时针增加 | *boolean* | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前进度 | *number* | - |
+| rate | 目标进度 | *number \| string* | `100` |
+| size | 圆环直径，默认单位为 `px` | *number \| string* | `100px` |
+| color `v2.1.4` | 进度条颜色，传入对象格式可以定义渐变色 | *string \| object* | `#1989fa` |
+| layer-color | 轨道颜色 | *string* | `white` |
+| fill | 填充颜色 | *string* | `none` |
+| speed | 动画速度（单位为 rate/s）| *number \| string* | `0` |
+| text | 文字 | *string* | - |
+| stroke-width | 进度条宽度 | *number \| string* | `40` |
+| stroke-linecap `v2.2.15` | 进度条端点的形状，可选值为`sqaure` `butt` | *string* | `round` |
+| clockwise | 是否顺时针增加 | *boolean* | `true` |
 
 ### Slots
 

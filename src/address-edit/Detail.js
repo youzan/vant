@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
+
+// Components
 import Cell from '../cell';
 import Field from '../field';
 
@@ -9,18 +12,18 @@ const android = isAndroid();
 export default createComponent({
   props: {
     value: String,
-    error: Boolean,
+    errorMessage: String,
     focused: Boolean,
-    detailRows: Number,
+    detailRows: [Number, String],
     searchResult: Array,
-    detailMaxlength: Number,
-    showSearchResult: Boolean
+    detailMaxlength: [Number, String],
+    showSearchResult: Boolean,
   },
 
   computed: {
     shouldShowSearchResult() {
       return this.focused && this.searchResult && this.showSearchResult;
-    }
+    },
   },
 
   methods: {
@@ -71,12 +74,12 @@ export default createComponent({
 
                   return <div domPropsInnerHTML={text} />;
                 }
-              }
+              },
             }}
           />
         ));
       }
-    }
+    },
   },
 
   render() {
@@ -89,7 +92,7 @@ export default createComponent({
           clearable={!android}
           type="textarea"
           value={this.value}
-          error={this.error}
+          errorMessage={this.errorMessage}
           border={!this.shouldShowSearchResult}
           label={t('label')}
           maxlength={this.detailMaxlength}
@@ -100,5 +103,5 @@ export default createComponent({
         {this.genSearchResult()}
       </Cell>
     );
-  }
+  },
 });

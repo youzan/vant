@@ -8,22 +8,22 @@ export default createComponent({
   props: {
     millisecond: Boolean,
     time: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: 0,
     },
     format: {
       type: String,
-      default: 'HH:mm:ss'
+      default: 'HH:mm:ss',
     },
     autoStart: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
-      remain: 0
+      remain: 0,
     };
   },
 
@@ -34,14 +34,14 @@ export default createComponent({
 
     formattedTime() {
       return parseFormat(this.format, this.timeData);
-    }
+    },
   },
 
   watch: {
     time: {
       immediate: true,
-      handler: 'reset'
-    }
+      handler: 'reset',
+    },
   },
 
   activated() {
@@ -84,7 +84,7 @@ export default createComponent({
     // @exposed-api
     reset() {
       this.pause();
-      this.remain = this.time;
+      this.remain = +this.time;
 
       if (this.autoStart) {
         this.start();
@@ -141,12 +141,13 @@ export default createComponent({
 
     setRemain(remain) {
       this.remain = remain;
+      this.$emit('change', this.timeData);
 
       if (remain === 0) {
         this.pause();
         this.$emit('finish');
       }
-    }
+    },
   },
 
   render() {
@@ -155,5 +156,5 @@ export default createComponent({
         {this.slots('default', this.timeData) || this.formattedTime}
       </div>
     );
-  }
+  },
 });

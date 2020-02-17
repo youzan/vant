@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Uploader } from 'vant';
 
@@ -17,7 +17,7 @@ Vue.use(Uploader);
 <van-uploader :after-read="afterRead" />
 ```
 
-```javascript
+```js
 export default {
   methods: {
     afterRead(file) {
@@ -33,13 +33,56 @@ export default {
 <van-uploader v-model="fileList" multiple />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
       fileList: [
         { url: 'https://img.yzcdn.cn/vant/leaf.jpg' }
       ]
+    }
+  }
+};
+```
+### Disabled
+
+```html
+<van-uploader disabled />
+```
+
+### Upload Status
+
+```html
+<van-uploader v-model="fileList" :after-read="afterRead" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      fileList: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          status: 'uploading',
+          message: 'Uploading...'
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          status: 'failed',
+          message: 'Failed'
+        }
+      ]
+    }
+  },
+  methods: {
+    afterRead(file) {
+      file.status = 'uploading';
+      file.message = 'Uploading...';
+
+      setTimeout(() => {
+        file.status = 'failed';
+        file.message = 'Failed';
+      }, 1000);
     }
   }
 };
@@ -55,7 +98,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -80,6 +123,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     beforeRead(file) {
@@ -87,10 +132,8 @@ export default {
         Toast('Please upload an image in jpg format');
         return false;
       }
-    
       return true;
     },
-
     asyncBeforeRead(file) {
       return new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
@@ -109,25 +152,25 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Input name | *string \| number* | - | 2.0.3 |
-| accept | Accepted file type | *string* | `image/*` | - |
-| preview-size | Size of preview image | *string \| number* | `80px` | - |
-| preview-image | Whether to show image preview | *boolean* | `true` | 2.1.5 |
-| preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` | - |
-| multiple | Whether to enable multiple selection pictures | *boolean* | `false` | - |
-| disabled | Whether to disabled the upload | *boolean* | `false` | - |
-| deletable | Whether to show delete icon | *boolean* | `true` | 2.2.12 |
-| capture | Capture，can be set to `camera` | *string* | - | - |
-| after-read | Hook after reading the file | *Function* | - | - |
-| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - | - |
-| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - | - |
-| max-size | Max size of file | *number* | - | - |
-| max-count | Max count of image | *number* | - | - |
-| result-type | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` | 2.2.7 |
-| upload-text | Upload text | *string* | - | - |
-| image-fit | Preview image fit mode | *string* | `cover` | 2.1.5 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | *string* | `image/*` |
+| name `v2.0.3` | Input name | *number \| string* | - |
+| preview-size | Size of preview image | *number \| string* | `80px` |
+| preview-image `v2.1.5` | Whether to show image preview | *boolean* | `true` |
+| preview-full-image | Whethe to show full screen image preview when click image | *boolean* | `true` |
+| multiple | Whether to enable multiple selection pictures | *boolean* | `false` |
+| disabled | Whether to disabled the upload | *boolean* | `false` |
+| deletable `v2.2.12` | Whether to show delete icon | *boolean* | `true` |
+| capture | Capture，can be set to `camera` | *string* | - |
+| after-read | Hook after reading the file | *Function* | - |
+| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - |
+| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | *Function* | - |
+| max-size | Max size of file | *number \| string* | - |
+| max-count | Max count of image | *number \| string* | - |
+| result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` |
+| upload-text | Upload text | *string* | - |
+| image-fit `v2.1.5` | Preview image fit mode | *string* | `cover` |
 
 ### Events
 

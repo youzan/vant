@@ -8,8 +8,12 @@
 import Vue from 'vue';
 import { Lazyload } from 'vant';
 
-// options 为可选参数，无则不传
-Vue.use(Lazyload, options);
+Vue.use(Lazyload);
+
+// 注册时可以配置额外的选项
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 ```
 
 ## 代码演示
@@ -22,7 +26,7 @@ Vue.use(Lazyload, options);
 <img v-for="img in imageList" v-lazy="img" >
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -64,15 +68,15 @@ Vue.use(Lazyload, {
 
 ### Options
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| loading | 加载时的图片 | *string* | - | - |
-| error | 错误时的图片 | *string* | - | - |
-| preload | 预加载高度的比例 | *string* | - | - |
-| attempt | 尝试次数 | *number* | `3` | - |
-| listenEvents | 监听的事件 | *string[]* | `scroll`等 | - |
-| adapter | 适配器 | *object* | - | - |
-| filter | 图片 URL 过滤 | *object* | - | - |
-| lazyComponent | 是否能懒加载模块 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| loading | 加载时的图片 | *string* | - |
+| error | 错误时的图片 | *string* | - |
+| preload | 预加载高度的比例 | *string* | - |
+| attempt | 尝试次数 | *number* | `3` |
+| listenEvents | 监听的事件 | *string[]* | `scroll`等 |
+| adapter | 适配器 | *object* | - |
+| filter | 图片 URL 过滤 | *object* | - |
+| lazyComponent | 是否能懒加载模块 | *boolean* | `false` |
 
 > 更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)

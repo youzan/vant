@@ -2,7 +2,7 @@
  * Build style entry of all components
  */
 
-import { join, relative } from 'path';
+import { sep, join, relative } from 'path';
 import { outputFileSync } from 'fs-extra';
 import { getComponents, replaceExt } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
@@ -11,7 +11,7 @@ import {
   ES_DIR,
   SRC_DIR,
   LIB_DIR,
-  STYPE_DEPS_JSON_FILE
+  STYPE_DEPS_JSON_FILE,
 } from '../common/constant';
 
 function getDeps(component: string): string[] {
@@ -41,12 +41,12 @@ function getRelativePath(component: string, style: string, ext: string) {
 const OUTPUT_CONFIG = [
   {
     dir: ES_DIR,
-    template: (dep: string) => `import '${dep}';`
+    template: (dep: string) => `import '${dep}';`,
   },
   {
     dir: LIB_DIR,
-    template: (dep: string) => `require('${dep}');`
-  }
+    template: (dep: string) => `require('${dep}');`,
+  },
 ];
 
 function genEntry(params: {
@@ -72,7 +72,7 @@ function genEntry(params: {
     }
 
     content += depsPath.map(template).join('\n');
-
+    content = content.replace(new RegExp('\\' + sep, 'g'), '/');
     outputFileSync(outputFile, content);
   });
 }
@@ -92,7 +92,7 @@ export function genComponentStyle(
       baseFile,
       component,
       filename: 'index.js',
-      ext: '.css'
+      ext: '.css',
     });
 
     if (CSS_LANG !== 'css') {
@@ -100,7 +100,7 @@ export function genComponentStyle(
         baseFile,
         component,
         filename: CSS_LANG + '.js',
-        ext: '.' + CSS_LANG
+        ext: '.' + CSS_LANG,
       });
     }
   });

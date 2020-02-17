@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { AddressList } from 'vant';
 
@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,7 +56,6 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('Add');
@@ -70,15 +71,15 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Id of chosen address | *string* | - | - |
-| list | Address list | *Address[]* | `[]` | - |
-| disabled-list | Disabled address list | *Address[]* | `[]` | - |
-| disabled-text | Disabled text | *string* | - | - |
-| switchable | Whether to allow switch address | *boolean* | `true` | - |
-| add-button-text | Add button text | *string* | `Add new address` | - |
-| default-tag-text | Default tag text | *string* | - | 2.3.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Id of chosen address | *string* | - |
+| list | Address list | *Address[]* | `[]` |
+| disabled-list | Disabled address list | *Address[]* | `[]` |
+| disabled-text | Disabled text | *string* | - |
+| switchable | Whether to allow switch address | *boolean* | `true` |
+| add-button-text | Add button text | *string* | `Add new address` |
+| default-tag-text `v2.3.0` | Default tag text | *string* | - |
 
 ### Events
 
@@ -95,15 +96,16 @@ export default {
 
 | Key | Description | Type |
 |------|------|------|
-| id | Id | *string \| number* |
+| id | Id | *number \| string* |
 | name | Name | *string* |
-| tel | Phone | *string \| number* |
+| tel | Phone | *number \| string* |
 | address | Address | *string* |
 | isDefault | Is default address | *boolean* |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| default | Custom content after list |
-| top | Custom content before list |
+| Name | Description | SlotProps |
+|------|------|------|
+| default | Custom content after list | - |
+| top | Custom content before list | - |
+| item-bottom `v2.5.0` | Custom content after list item | item |

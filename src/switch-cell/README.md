@@ -6,7 +6,7 @@ The SwitchCell component will be deprecated in version 3.0. Please use the Cell 
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { SwitchCell } from 'vant';
 
@@ -23,7 +23,7 @@ Vue.use(SwitchCell);
 </van-cell-group>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -57,19 +57,19 @@ use `loading` property to keep component in loading state
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | on-off state of the switch | *any* | `false` | - |
-| title | the left side title | *string* | `''` | - |
-| border | whether to show cell border | *boolean* | `true` | - |
-| cell-size | Cell size，can be set to `large` | *string* | - | - |
-| loading | whether switch is loading | *boolean* | `false` | - |
-| disabled | whether to disable switch | *boolean* | `false` | - |
-| size | Size of switch | *string \| number* | `24px` | - |
-| active-color | Background of switch color when active | *string* | `#1989fa` | - |
-| inactive-color | Background of switch color when inactive | *string* | `#fff` | - |
-| active-value | Value when active | *any* | `true` | - |
-| inactive-value | Value when inactive | *any* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | on-off state of the switch | *any* | `false` |
+| title | the left side title | *string* | `''` |
+| border | whether to show cell border | *boolean* | `true` |
+| cell-size | Cell size，can be set to `large` | *string* | - |
+| loading | whether switch is loading | *boolean* | `false` |
+| disabled | whether to disable switch | *boolean* | `false` |
+| size | Size of switch | *number \| string* | `24px` |
+| active-color | Background of switch color when active | *string* | `#1989fa` |
+| inactive-color | Background of switch color when inactive | *string* | `white` |
+| active-value | Value when active | *any* | `true` |
+| inactive-value | Value when inactive | *any* | `false` |
 
 ### Events
 

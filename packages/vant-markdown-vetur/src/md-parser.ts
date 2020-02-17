@@ -24,6 +24,18 @@ function readLine(input: string) {
   return input.substr(0, end !== -1 ? end : input.length);
 }
 
+function splitTableLine(line: string) {
+  line = line.replace('\\|', 'JOIN');
+
+  const items = line.split('|').map(item => item.trim().replace('JOIN', '|'));
+
+  // remove pipe character on both sides
+  items.pop();
+  items.shift();
+
+  return items;
+}
+
 function tableParse(input: string) {
   let start = 0;
   let isHead = true;
@@ -31,7 +43,7 @@ function tableParse(input: string) {
   const end = input.length;
   const table: TableContent = {
     head: [],
-    body: []
+    body: [],
   };
 
   while (start < end) {
@@ -44,25 +56,11 @@ function tableParse(input: string) {
 
     if (TABLE_SPLIT_LINE_REG.test(target)) {
       isHead = false;
-    } else if (isHead) {
-      // temp do nothing
-    } else {
+    } else if (!isHead && line.includes('|')) {
       const matched = line.trim().match(TD_REG);
 
       if (matched) {
-        table.body.push(
-          matched.map(i => {
-            if (i.indexOf('|') !== 0) {
-              return i
-                .trim()
-                .toLowerCase()
-                .split('|')
-                .map(s => s.trim())
-                .join('|');
-            }
-            return i.trim();
-          })
-        );
+        table.body.push(splitTableLine(line));
       }
     }
 
@@ -71,7 +69,7 @@ function tableParse(input: string) {
 
   return {
     table,
-    usedLength: start
+    usedLength: start,
   };
 }
 
@@ -88,7 +86,7 @@ export function mdParser(input: string): Array<SimpleMdAst> {
       artical.push({
         type: 'title',
         content: match[2],
-        level: match[1].length
+        level: match[1].length,
       });
 
       start += match.index + match[0].length;
@@ -96,7 +94,7 @@ export function mdParser(input: string): Array<SimpleMdAst> {
       const { table, usedLength } = tableParse(target.substr(match.index));
       artical.push({
         type: 'table',
-        table
+        table,
       });
 
       start += match.index + usedLength;

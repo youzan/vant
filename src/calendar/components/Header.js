@@ -6,7 +6,7 @@ const [createComponent] = createNamespace('calendar-header');
 export default createComponent({
   props: {
     title: String,
-    monthTitle: String
+    monthTitle: String,
   },
 
   methods: {
@@ -29,7 +29,7 @@ export default createComponent({
           ))}
         </div>
       );
-    }
+    },
   },
 
   render() {
@@ -40,5 +40,5 @@ export default createComponent({
         {this.genWeekDays()}
       </div>
     );
-  }
+  },
 });

@@ -18,15 +18,15 @@ test('callback events', () => {
     propsData: {
       value: true,
       actions,
-      cancelText: 'Cancel'
+      cancelText: 'Cancel',
     },
     context: {
       on: {
         input: onInput,
         cancel: onCancel,
-        select: onSelect
-      }
-    }
+        select: onSelect,
+      },
+    },
   });
 
   const options = wrapper.findAll('.van-action-sheet__item');
@@ -58,17 +58,17 @@ test('click overlay and close', async () => {
       </div>
     `,
     components: {
-      ActionSheet
+      ActionSheet,
     },
     data() {
       return {
-        getContainer: () => div
+        getContainer: () => div,
       };
     },
     methods: {
       onInput,
-      onClickOverlay
-    }
+      onClickOverlay,
+    },
   });
 
   await later();
@@ -82,12 +82,9 @@ test('disable lazy-render', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       lazyRender: false,
-      actions: [
-        { name: 'Option' },
-        { name: 'Option' }
-      ],
-      cancelText: 'Cancel'
-    }
+      actions: [{ name: 'Option' }, { name: 'Option' }],
+      cancelText: 'Cancel',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -97,13 +94,13 @@ test('render title and default slot', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
-      title: 'Title'
+      title: 'Title',
     },
     scopedSlots: {
       default() {
         return 'Default';
-      }
-    }
+      },
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -113,8 +110,8 @@ test('get container', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
-      getContainer: 'body'
-    }
+      getContainer: 'body',
+    },
   });
 
   expect(wrapper.vm.$el.parentNode).toEqual(document.body);
@@ -126,13 +123,13 @@ test('close-on-click-action prop', () => {
     propsData: {
       value: true,
       actions: [{ name: 'Option' }],
-      closeOnClickAction: true
+      closeOnClickAction: true,
     },
     context: {
       on: {
-        input: onInput
-      }
-    }
+        input: onInput,
+      },
+    },
   });
 
   const option = wrapper.find('.van-action-sheet__item');
@@ -146,8 +143,8 @@ test('round prop', () => {
     propsData: {
       value: true,
       round: true,
-      actions: [{ name: 'Option' }]
-    }
+      actions: [{ name: 'Option' }],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -157,8 +154,8 @@ test('color option', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
-      actions: [{ name: 'Option', color: 'red' }]
-    }
+      actions: [{ name: 'Option', color: 'red' }],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -169,8 +166,8 @@ test('description prop', () => {
     propsData: {
       value: true,
       description: 'This is a description',
-      actions: [{ name: 'Option' }]
-    }
+      actions: [{ name: 'Option' }],
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -181,8 +178,8 @@ test('close-icon prop', () => {
     propsData: {
       value: true,
       title: 'Title',
-      closeIcon: 'cross'
-    }
+      closeIcon: 'cross',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

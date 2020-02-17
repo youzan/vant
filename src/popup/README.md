@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Popup } from 'vant';
 
@@ -15,11 +15,10 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">Show Popup</van-cell>
-
 <van-popup v-model="show">Content</van-popup>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -43,7 +42,7 @@ Use `position` prop to set popup display position
 <van-popup
   v-model="show"
   position="top"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -54,25 +53,23 @@ Use `position` prop to set popup display position
   v-model="show"
   closeable
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
-
 <!-- Custom Icon -->
 <van-popup
   v-model="show"
   closeable
   close-icon="close"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
-
 <!-- Icon Position -->
 <van-popup
   v-model="show"
   closeable
   close-icon-position="top-left"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -83,7 +80,7 @@ Use `position` prop to set popup display position
   v-model="show"
   round
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -118,31 +115,31 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show popup | *boolean* | `false` | - |
-| overlay | Whether to show overlay | *boolean* | `true` | - |
-| position | Can be set to `top` `bottom` `right` `left` | *string* | `center` | - |
-| overlay-class | Custom overlay class | *string* | - | - |
-| overlay-style | Custom overlay style | *object* | - | - |
-| duration | Transition duration, unit second | *number* | `0.3` | - |
-| round | Whether to show round corner | *boolean* | `false` | 2.0.7 |
-| lock-scroll | Whether to lock background scroll | *boolean* | `true` | - |
-| lazy-render | Whether to lazy render util appeared | *boolean* | `true` | - |
-| close-on-popstate | Whether to close when popstate | *boolean* | `false` | 2.2.10 |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
-| closeable | Whether to show close icon | *boolean* | `false` | 2.2.0 |
-| close-icon | Close icon name | *string* | `cross` | 2.2.0 |
-| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` | 2.2.2 |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - | - |
-| get-container | Return the mount node for Popup | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show popup | *boolean* | `false` |
+| overlay | Whether to show overlay | *boolean* | `true` |
+| position | Can be set to `top` `bottom` `right` `left` | *string* | `center` |
+| overlay-class | Custom overlay class | *string* | - |
+| overlay-style | Custom overlay style | *object* | - |
+| duration | Transition duration, unit second | *number \| string* | `0.3` |
+| round `v2.0.7` | Whether to show round corner | *boolean* | `false` |
+| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
+| lazy-render | Whether to lazy render util appeared | *boolean* | `true` |
+| close-on-popstate `v2.2.10` | Whether to close when popstate | *boolean* | `false` |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
+| closeable `v2.2.0` | Whether to show close icon | *boolean* | `false` |
+| close-icon `v2.2.0` | Close icon name | *string* | `cross` |
+| close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - |
+| get-container | Return the mount node for Popup | *string \| () => Element* | - |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 
 ### Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click Popup | event: Event |
+| click | Triggered when click Popup | *event: Event* |
 | open | Triggered when open Popup | - |
 | opened | Triggered when opened Popup | - |
 | close | Triggered when close Popup | - |

@@ -1,6 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 import { BORDER_TOP } from '../utils/constant';
+import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('grid');
 
@@ -13,17 +13,17 @@ export default createComponent({
     iconSize: [Number, String],
     clickable: Boolean,
     columnNum: {
-      type: Number,
-      default: 4
+      type: [Number, String],
+      default: 4,
     },
     center: {
       type: Boolean,
-      default: true
+      default: true,
     },
     border: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   computed: {
@@ -32,10 +32,10 @@ export default createComponent({
 
       if (gutter) {
         return {
-          paddingLeft: addUnit(gutter)
+          paddingLeft: addUnit(gutter),
         };
       }
-    }
+    },
   },
 
   render() {
@@ -47,5 +47,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

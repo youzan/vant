@@ -2,11 +2,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab).use(Tabs);
+Vue.use(Tab);
+Vue.use(Tabs);
 ```
 
 ## 代码演示
@@ -80,11 +81,13 @@ export default {
 </van-tabs>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickDisabled(name, title) {
-      this.$toast(name + '已被禁用');
+      Toast(name + '已被禁用');
     }
   }
 };
@@ -113,11 +116,13 @@ export default {
 </van-tabs>
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClick(name, title) {
-      this.$toast(title);
+      Toast(title);
     }
   }
 };
@@ -180,7 +185,7 @@ export default {
 
 ```html
 <van-tabs v-model="active" scrollspy sticky>
-  <van-tab v-for="index in 10" :title="'选项 ' + index">
+  <van-tab v-for="index in 8" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -190,54 +195,54 @@ export default {
 
 ### Tabs Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 绑定当前选中标签的标识符 | *string \| number* | `0` | - |
-| type | 样式类型，可选值为`card` | *string* | `line` | - |
-| duration | 动画时间，单位秒 | *number* | `0.3` | - |
-| background | 标签栏背景色 | *string* | `white` | - |
-| line-width | 底部条宽度，默认单位 px | *string \| number* | `auto` | - |
-| line-height | 底部条高度，默认单位 px | *string \| number* | `3px` | - |
-| color | 标签主题色 | *string* | `#ee0a24` | - |
-| title-active-color | 标题选中态颜色 | *string* | - | - |
-| title-inactive-color | 标题默认态颜色 | *string* | - | - |
-| swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | *number* | `4` | - |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | *number* | `0` | - |
-| animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` | - |
-| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` | - |
-| ellipsis | 是否省略过长的标题文字 | *boolean* | `true` | - |
-| sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
-| swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
-| lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | *boolean* | `true` | - |
-| scrollspy | 是否开启滚动导航 | *boolean* | `false` | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 绑定当前选中标签的标识符 | *number \| string* | `0` |
+| type | 样式风格类型，可选值为`card` | *string* | `line` |
+| color | 标签主题色 | *string* | `#ee0a24` |
+| background | 标签栏背景色 | *string* | `white` |
+| duration | 动画时间，单位秒 | *number \| string* | `0.3` |
+| line-width | 底部条宽度，默认单位`px` | *number \| string* | `auto` |
+| line-height | 底部条高度，默认单位`px` | *number \| string* | `3px` |
+| animated | 是否开启切换标签内容时的转场动画 | *boolean* | `false` |
+| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | *boolean* | `true` |
+| ellipsis | 是否省略过长的标题文字 | *boolean* | `true` |
+| sticky | 是否使用粘性定位布局 | *boolean* | `false` |
+| swipeable | 是否开启手势滑动切换 | *boolean* | `false` |
+| lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | *boolean* | `true` |
+| scrollspy `v2.3.0` | 是否开启滚动导航 | *boolean* | `false` |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位`px` | *number \| string* | `0` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | *number \| string* | `4` |
+| title-active-color | 标题选中态颜色 | *string* | - |
+| title-inactive-color | 标题默认态颜色 | *string* | - |
 
 ### Tab Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| name | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 | 2.0.6 |
-| title | 标题 | *string* | - | - |
-| title-style | 自定义标题样式 | *any*  | - | 2.2.14 |
-| disabled | 是否禁用标签 | *boolean* | `false` | - |
-| dot | 是否在标题右上角显示小红点 | *boolean* | `false` | 2.3.0 |
-| info | 标题右上角徽标的内容 | *string \| number* | - | 2.3.0 |
-| url | 点击后跳转的链接地址 | *string* | - | 2.2.1 |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | 2.2.1 |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | 2.2.1 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| title | 标题 | *string* | - |
+| disabled | 是否禁用标签 | *boolean* | `false` |
+| dot `v2.3.0` | 是否在标题右上角显示小红点 | *boolean* | `false` |
+| info `v2.3.0` | 标题右上角徽标的内容 | *number \| string* | - |
+| name `v2.0.6` | 标签名称，作为匹配的标识符 | *number \| string* | 标签的索引值 |
+| url `v2.2.1` | 点击后跳转的链接地址 | *string* | - |
+| to `v2.2.1` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| replace `v2.2.1` | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
+| title-style `v2.2.14` | 自定义标题样式 | *any*  | - |
 
 ### Tabs Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| click | 点击标签时触发 | name：标识符，title：标题 | - |
-| change | 当前激活的标签改变时触发 | name：标识符，title：标题 | - |
-| disabled | 点击被禁用的标签时触发 | name：标识符，title：标题 | - |
-| rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 | 2.3.0 |
-| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } | - |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| click | 点击标签时触发 | name：标识符，title：标题 |
+| change | 当前激活的标签改变时触发 | name：标识符，title：标题 |
+| disabled | 点击被禁用的标签时触发 | name：标识符，title：标题 |
+| rendered `v2.3.0` | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 |
+| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### Tabs 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 Tabs 实例并调用实例方法
+通过 ref 可以获取到 Tabs 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

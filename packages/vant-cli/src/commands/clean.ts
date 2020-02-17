@@ -6,6 +6,6 @@ export async function clean() {
     emptyDir(ES_DIR),
     emptyDir(LIB_DIR),
     emptyDir(DIST_DIR),
-    emptyDir(SITE_DIST_DIR)
+    emptyDir(SITE_DIST_DIR),
   ]);
 }

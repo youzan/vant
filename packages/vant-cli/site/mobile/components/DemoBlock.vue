@@ -10,8 +10,8 @@ export default {
   name: 'demo-block',
 
   props: {
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 

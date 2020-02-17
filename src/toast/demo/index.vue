@@ -1,13 +1,29 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button type="primary" :text="$t('title1')" @click="$toast($t('text'))" />
-      <van-button type="primary" :text="$t('longTextButton')" @click="$toast($t('longText'))" />
+      <van-button
+        type="primary"
+        :text="$t('title1')"
+        @click="$toast($t('text'))"
+      />
+      <van-button
+        type="primary"
+        :text="$t('longTextButton')"
+        @click="$toast($t('longText'))"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button type="primary" :text="$t('title2')" @click="showLoadingToast()" />
-      <van-button type="primary" :text="$t('loadingType')" @click="showLoadingToast('spinner')" />
+      <van-button
+        type="primary"
+        :text="$t('title2')"
+        @click="showLoadingToast()"
+      />
+      <van-button
+        type="primary"
+        :text="$t('loadingType')"
+        @click="showLoadingToast('spinner')"
+      />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -16,12 +32,24 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="$t('customIcon')">
-      <van-button type="primary" :text="$t('customIcon')" @click="showIconToast" />
-      <van-button type="primary" :text="$t('customImage')" @click="showImageToast" />
+      <van-button
+        type="primary"
+        :text="$t('customIcon')"
+        @click="showIconToast"
+      />
+      <van-button
+        type="primary"
+        :text="$t('customImage')"
+        @click="showImageToast"
+      />
     </demo-block>
 
     <demo-block :title="$t('updateMessage')">
-      <van-button type="primary" :text="$t('updateMessage')" @click="showCustomizedToast" />
+      <van-button
+        type="primary"
+        :text="$t('updateMessage')"
+        @click="showCustomizedToast"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -44,7 +72,7 @@ export default {
       text4: second => `倒计时 ${second} 秒`,
       longTextButton: '长文字提示',
       updateMessage: '动态更新提示',
-      loadingType: '自定义加载图标'
+      loadingType: '自定义加载图标',
     },
     'en-US': {
       title1: 'Text',
@@ -53,7 +81,8 @@ export default {
       success: 'Success',
       fail: 'Fail',
       text: 'Some messages',
-      longText: 'This is a long message, text will wrap when over a certain length',
+      longText:
+        'This is a long message, text will wrap when over a certain length',
       text2: 'Success',
       text3: 'Fail',
       customIcon: 'Custom Icon',
@@ -61,8 +90,8 @@ export default {
       text4: second => `${second} seconds`,
       longTextButton: 'Long Text',
       updateMessage: 'Update Message',
-      loadingType: 'Loading Type'
-    }
+      loadingType: 'Loading Type',
+    },
   },
 
   methods: {
@@ -70,7 +99,7 @@ export default {
       this.$toast.loading({
         forbidClick: true,
         message: this.$t('loading'),
-        loadingType
+        loadingType,
       });
     },
 
@@ -85,14 +114,14 @@ export default {
     showIconToast() {
       this.$toast({
         message: this.$t('customIcon'),
-        icon: 'like-o'
+        icon: 'like-o',
       });
     },
 
     showImageToast() {
       this.$toast({
         message: this.$t('customImage'),
-        icon: 'https://img.yzcdn.cn/vant/logo.png'
+        icon: 'https://img.yzcdn.cn/vant/logo.png',
       });
     },
 
@@ -100,7 +129,7 @@ export default {
       const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,
-        message: this.$t('text4', 3)
+        message: this.$t('text4', 3),
       });
 
       let second = 3;
@@ -113,8 +142,8 @@ export default {
           this.$toast.clear();
         }
       }, 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

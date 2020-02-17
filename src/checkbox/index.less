@@ -4,13 +4,27 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  cursor: pointer;
   user-select: none;
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--label-disabled {
+    cursor: default;
+  }
+
+  &--horizontal {
+    margin-right: @padding-sm;
+  }
 
   &__icon {
     flex: none;
     height: 1em;
     font-size: @checkbox-size;
     line-height: 1em;
+    cursor: pointer;
 
     .van-icon {
       display: block;
@@ -18,7 +32,7 @@
       width: 1.25em;
       height: 1.25em;
       color: transparent;
-      font-size: .8em;
+      font-size: 0.8em;
       line-height: inherit;
       text-align: center;
       border: 1px solid @checkbox-border-color;
@@ -41,6 +55,8 @@
     }
 
     &--disabled {
+      cursor: not-allowed;
+
       .van-icon {
         background-color: @checkbox-disabled-background-color;
         border-color: @checkbox-disabled-icon-color;

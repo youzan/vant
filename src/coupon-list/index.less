@@ -8,7 +8,7 @@
   &__field {
     padding: @coupon-list-field-padding;
 
-    .van-field__control {
+    .van-field__body {
       height: 34px;
       padding-left: @padding-sm;
       line-height: 34px;
@@ -19,18 +19,33 @@
         color: @gray-5;
       }
     }
+
+    .van-field__clear {
+      margin-right: 0;
+    }
+  }
+
+  &__exchange-bar {
+    display: flex;
+    align-items: center;
+    background-color: @white;
   }
 
   &__exchange {
+    flex: none;
     height: @coupon-list-exchange-button-height;
     font-size: @font-size-lg;
     line-height: @coupon-list-exchange-button-height - 2px;
     border: 0;
   }
 
+  .van-tabs__wrap {
+    box-shadow: 0 6px 12px -12px @gray-6;
+  }
+
   &__list {
     box-sizing: border-box;
-    padding: @padding-md 0;
+    padding: @padding-md 0 @padding-lg;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 

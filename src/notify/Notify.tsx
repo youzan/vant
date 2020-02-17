@@ -1,7 +1,11 @@
+// Utils
 import { createNamespace } from '../utils';
-import { WHITE } from '../utils/constant';
 import { inherit } from '../utils/functional';
+
+// Mixins
 import { popupMixinProps } from '../mixins/popup';
+
+// Components
 import Popup from '../popup';
 
 // Types
@@ -12,8 +16,8 @@ import { PopupMixinProps } from '../mixins/popup/type';
 export type NotifyProps = PopupMixinProps & {
   type: 'primary' | 'success' | 'danger' | 'warning';
   color: string;
-  message: string | number;
-  duration: number;
+  message: number | string;
+  duration: number | string;
   className?: any;
   background: string;
 };
@@ -28,7 +32,7 @@ function Notify(
 ) {
   const style = {
     color: props.color,
-    background: props.background
+    background: props.background,
   };
 
   return (
@@ -49,22 +53,16 @@ function Notify(
 
 Notify.props = {
   ...popupMixinProps,
-  background: String,
-  className: null as any,
+  color: String,
   message: [Number, String],
+  duration: [Number, String],
+  className: null as any,
+  background: String,
   getContainer: [String, Function],
   type: {
     type: String,
-    default: 'danger'
+    default: 'danger',
   },
-  color: {
-    type: String,
-    default: WHITE
-  },
-  duration: {
-    type: Number,
-    default: 3000
-  }
 };
 
 export default createComponent<NotifyProps>(Notify);

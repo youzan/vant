@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { NoticeBar } from 'vant';
 
@@ -14,10 +14,7 @@ Vue.use(NoticeBar);
 ### 基础用法
 
 ```html
-<van-notice-bar
-  text="通知内容"
-  left-icon="volume-o"
-/>
+<van-notice-bar text="通知内容" left-icon="volume-o" />
 ```
 
 ### 禁用滚动
@@ -72,24 +69,24 @@ Vue.use(NoticeBar);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| mode | 通知栏模式，可选值为 `closeable` `link` | *string* | `''` | - |
-| text | 通知文本内容 | *string* | `''` | - |
-| delay | 动画延迟时间 (s) | *number* | `1` | - |
-| speed | 滚动速率 (px/s) | *number* | `50` | - |
-| scrollable | 是否在长度溢出时滚动播放 | *boolean* | `true` | - |
-| wrapable | 是否开启文本换行，只在禁用滚动时生效 | *boolean* | `false` | - |
-| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
-| color | 文本颜色 | *string* | `#f60` | - |
-| background | 滚动条背景 | *string* | `#fff7cc` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| mode | 通知栏模式，可选值为 `closeable` `link` | *string* | `''` |
+| text | 通知文本内容 | *string* | `''` |
+| color | 文本颜色 | *string* | `#f60` |
+| background | 滚动条背景 | *string* | `#fff7cc` |
+| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| delay | 动画延迟时间 (s) | *number \| string* | `1` |
+| speed | 滚动速率 (px/s) | *number \| string* | `50` |
+| scrollable | 是否在长度溢出时滚动播放 | *boolean* | `true` |
+| wrapable | 是否开启文本换行，只在禁用滚动时生效 | *boolean* | `false` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击通知栏时触发 | event: Event |
-| close | 关闭通知栏时触发 | event: Event |
+| click | 点击通知栏时触发 | *event: Event* |
+| close | 关闭通知栏时触发 | *event: Event* |
 
 ### Slots
 

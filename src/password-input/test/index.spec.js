@@ -6,9 +6,9 @@ test('focus event', () => {
   const wrapper = mount(PasswordInput, {
     context: {
       on: {
-        focus
-      }
-    }
+        focus,
+      },
+    },
   });
 
   wrapper.find('.van-password-input__security').trigger('touchstart');

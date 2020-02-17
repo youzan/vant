@@ -2,6 +2,7 @@
 
 .van-rate {
   display: inline-flex;
+  cursor: pointer;
   user-select: none;
 
   &__item {
@@ -15,14 +16,31 @@
   &__icon {
     display: block;
     width: 1em;
+    color: @rate-icon-void-color;
     font-size: @rate-icon-size;
 
     &--half {
       position: absolute;
       top: 0;
       left: 0;
-      width: .5em;
+      width: 0.5em;
       overflow: hidden;
     }
+
+    &--full {
+      color: @rate-icon-full-color;
+    }
+
+    &--disabled {
+      color: @rate-icon-disabled-color;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    cursor: default;
   }
 }

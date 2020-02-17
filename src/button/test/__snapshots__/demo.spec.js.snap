@@ -8,11 +8,11 @@ exports[`renders demo correctly 1`] = `
   <div><button class="van-button van-button--primary van-button--normal van-button--plain"><span class="van-button__text">朴素按钮</span></button> <button class="van-button van-button--info van-button--normal van-button--plain"><span class="van-button__text">朴素按钮</span></button></div>
   <div><button class="van-button van-button--primary van-button--normal van-button--plain van-button--hairline van-hairline--surround"><span class="van-button__text">细边框按钮</span></button> <button class="van-button van-button--info van-button--normal van-button--plain van-button--hairline van-hairline--surround"><span class="van-button__text">细边框按钮</span></button></div>
   <div><button disabled="disabled" class="van-button van-button--primary van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button> <button disabled="disabled" class="van-button van-button--info van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal">
+  <div><button class="van-button van-button--primary van-button--normal van-button--loading">
       <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
-    </button> <button class="van-button van-button--primary van-button--normal">
+    </button> <button class="van-button van-button--primary van-button--normal van-button--loading">
       <div class="van-loading van-loading--spinner van-button__loading"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: currentColor; width: 20px; height: 20px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-    </button> <button class="van-button van-button--info van-button--normal">
+    </button> <button class="van-button van-button--info van-button--normal van-button--loading">
       <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div><span class="van-button__text">加载中...</span>
     </button></div>
   <div><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">方形按钮</span></button> <button class="van-button van-button--info van-button--normal van-button--round"><span class="van-button__text">圆形按钮</span></button></div>
@@ -21,10 +21,8 @@ exports[`renders demo correctly 1`] = `
         <!----></i><span class="van-button__text">按钮</span></button> <button class="van-button van-button--primary van-button--normal van-button--plain"><i class="van-icon van-button__icon"><img src="https://img.yzcdn.cn/vant/logo.png" class="van-icon__image">
         <!----></i><span class="van-button__text">按钮</span></button></div>
   <div><button class="van-button van-button--primary van-button--large"><span class="van-button__text">大号按钮</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">普通按钮</span></button> <button class="van-button van-button--primary van-button--small"><span class="van-button__text">小型按钮</span></button> <button class="van-button van-button--primary van-button--mini"><span class="van-button__text">迷你按钮</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">块级元素</span></button></div>
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">URL 跳转</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">路由跳转</span></button></div>
   <div><button class="van-button van-button--default van-button--normal" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;"><span class="van-button__text">单色按钮</span></button> <button class="van-button van-button--default van-button--normal van-button--plain" style="color: rgb(114, 50, 221); border-color: #7232dd;"><span class="van-button__text">单色按钮</span></button> <button class="van-button van-button--default van-button--normal" style="color: rgb(255, 255, 255); border: 0px;"><span class="van-button__text">渐变色按钮</span></button></div>
-  <div>
-    <div class="demo-button-row"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">普通按钮</span></button></div> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">块级元素</span></button>
-  </div>
 </div>
 `;

@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_TOP, BORDER_BOTTOM } from '../utils/constant';
+import { BORDER_TOP } from '../utils/constant';
+
+// Mixins
 import { popupMixinProps } from '../mixins/popup';
+
+// Components
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';
@@ -25,7 +30,7 @@ export type ActionSheetProps = PopupMixinProps & {
   round: boolean;
   title?: string;
   actions?: ActionSheetItem[];
-  duration: number;
+  duration: number | string;
   closeIcon: string;
   cancelText?: string;
   description?: string;
@@ -51,7 +56,7 @@ function ActionSheet(
   function Header() {
     if (title) {
       return (
-        <div class={[bem('header'), BORDER_BOTTOM]}>
+        <div class={bem('header')}>
           {title}
           <Icon
             name={props.closeIcon}
@@ -70,17 +75,17 @@ function ActionSheet(
   }
 
   function Option(item: ActionSheetItem, index: number) {
-    const disabled = item.disabled || item.loading;
+    const { disabled, loading, callback } = item;
 
     function onClickOption(event: MouseEvent) {
       event.stopPropagation();
 
-      if (item.disabled || item.loading) {
+      if (disabled || loading) {
         return;
       }
 
-      if (item.callback) {
-        item.callback(item);
+      if (callback) {
+        callback(item);
       }
 
       emit(ctx, 'select', item, index);
@@ -91,20 +96,20 @@ function ActionSheet(
     }
 
     function OptionContent() {
-      if (item.loading) {
+      if (loading) {
         return <Loading size="20px" />;
       }
 
       return [
         <span class={bem('name')}>{item.name}</span>,
-        item.subname && <span class={bem('subname')}>{item.subname}</span>
+        item.subname && <span class={bem('subname')}>{item.subname}</span>,
       ];
     }
 
     return (
       <button
         type="button"
-        class={[bem('item', { disabled }), item.className, BORDER_TOP]}
+        class={[bem('item', { disabled, loading }), item.className, BORDER_TOP]}
         style={{ color: item.color }}
         onClick={onClickOption}
       >
@@ -155,31 +160,31 @@ ActionSheet.props = {
   ...popupMixinProps,
   title: String,
   actions: Array,
-  duration: Number,
+  duration: [Number, String],
   cancelText: String,
   description: String,
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
   round: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeIcon: {
     type: String,
-    default: 'close'
+    default: 'cross',
   },
   safeAreaInsetBottom: {
     type: Boolean,
-    default: true
+    default: true,
   },
   overlay: {
     type: Boolean,
-    default: true
+    default: true,
   },
   closeOnClickOverlay: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<ActionSheetProps>(ActionSheet);

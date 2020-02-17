@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Image } from 'vant';
 
@@ -66,6 +66,13 @@ Vue.use(Image);
 />
 ```
 
+```js
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+```
+
 ### 加载中提示
 
 `Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
@@ -92,18 +99,20 @@ Vue.use(Image);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| src | 图片链接 | *string* | - | - |
-| fit | 图片填充模式 | *string* | `fill` | - |
-| alt | 替代文本 | *string* | - | - |
-| width | 宽度，默认单位为`px` | *string \| number* | - | - |
-| height | 高度，默认单位为`px` | *string \| number* | - | - |
-| radius | 圆角大小，默认单位为`px` | *string \| number* | `0` | 2.1.6 |
-| round | 是否显示为圆形 | *boolean* | `false` | - |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` | - |
-| show-error | 是否展示图片加载失败提示 | *boolean* | `true` | 2.0.9 |
-| show-loading | 是否展示图片加载中提示 | *boolean* | `true` | 2.0.9 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| src | 图片链接 | *string* | - |
+| fit | 图片填充模式 | *string* | `fill` |
+| alt | 替代文本 | *string* | - |
+| width | 宽度，默认单位为`px` | *number \| string* | - |
+| height | 高度，默认单位为`px` | *number \| string* | - |
+| radius `v2.1.6` | 圆角大小，默认单位为`px` | *number \| string* | `0` |
+| round | 是否显示为圆形 | *boolean* | `false` |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
+| show-error `v2.0.9` | 是否展示图片加载失败提示 | *boolean* | `true` |
+| show-loading `v2.0.9` | 是否展示图片加载中提示 | *boolean* | `true` |
+| error-icon `v2.4.2` | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | *string* | `warning-o` |
+| loading-icon `v2.4.2` | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | *string* | `photo-o` |
 
 ### 图片填充模式
 
@@ -119,7 +128,7 @@ Vue.use(Image);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击图片时触发 | event: Event |
+| click | 点击图片时触发 | *event: Event* |
 | load | 图片加载完毕时触发 | - |
 | error | 图片加载失败时触发 | - |
 

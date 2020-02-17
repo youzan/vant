@@ -1,4 +1,10 @@
-module.exports = function() {
+import { ConfigAPI } from '@babel/core';
+
+module.exports = function(api?: ConfigAPI) {
+  if (api) {
+    api.cache.never();
+  }
+
   const { BABEL_MODULE, NODE_ENV } = process.env;
   const isTest = NODE_ENV === 'test';
   const useESModules = BABEL_MODULE !== 'commonjs' && !isTest;
@@ -9,38 +15,36 @@ module.exports = function() {
         '@babel/preset-env',
         {
           loose: true,
-          modules: useESModules ? false : 'commonjs'
-        }
+          modules: useESModules ? false : 'commonjs',
+        },
       ],
       [
         '@vue/babel-preset-jsx',
         {
-          functional: false
-        }
+          functional: false,
+        },
       ],
-      '@babel/preset-typescript'
+      '@babel/preset-typescript',
     ],
     plugins: [
       [
         '@babel/plugin-transform-runtime',
         {
           corejs: false,
-          useESModules
-        }
+          useESModules,
+        },
       ],
       [
         'import',
         {
           libraryName: 'vant',
-          libraryDirectory: 'es',
-          style: true
+          libraryDirectory: useESModules ? 'es' : 'lib',
+          style: true,
         },
-        'vant'
+        'vant',
       ],
       '@babel/plugin-transform-object-assign',
-      '@babel/plugin-proposal-optional-chaining',
-      '@babel/plugin-proposal-nullish-coalescing-operator'
-    ]
+    ],
   };
 };
 

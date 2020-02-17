@@ -10,6 +10,182 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
+`2020-02-15`
+
+**New Component**
+
+* 新增 [Form 表单](#/zh-CN/form)组件
+
+**Feature**
+
+* Field: 新增 name 属性 [f3398d](https://github.com/youzan/vant/commit/f3398dc2cdd1191613b97454b4725275458bde1b)
+* Field: 新增 rules 属性 [0ed7aa](https://github.com/youzan/vant/commit/0ed7aaac88f769549b688259b8e6e1050a10cb99)
+* AddressEdit: 新增 disable-area 属性 [#5630](https://github.com/youzan/vant/issues/5630)
+* AddressList: 新增 item-bottom 插槽 [#5629](https://github.com/youzan/vant/issues/5629)
+* RadioGroup: 新增 direction 属性 [4dd41b](https://github.com/youzan/vant/commit/4dd41b23decbaf86c8812e0afcc1d72773f223f6)
+* CheckboxGroup: 新增 direction 属性 [153902](https://github.com/youzan/vant/commit/15390241d8d4252a828aa0e9d8c61377ba07512a)
+* ImagePreview: 新增 scale 事件 [#5658](https://github.com/youzan/vant/issues/5658)
+* ImagePreview: 新增 closeable 属性 [#5654](https://github.com/youzan/vant/issues/5654)
+
+**Style**
+
+* Field: input 插槽的内容默认在垂直方向居中 [03c826](https://github.com/youzan/vant/commit/03c826c4d44efd95a5ee509b5f183d8ded574fd7)
+* Field: 优化 label-position 为 right 时的右边距 [2d6445](https://github.com/youzan/vant/commit/2d64458776df87625db9e8b07d83a7044a2bcf53)
+* Uploader: 优化禁用态上传区域颜色 [#5628](https://github.com/youzan/vant/issues/5628)
+
+**Bug Fixes**
+
+* Calendar: 修复特定情况下未正确渲染日历内容的问题 [#5640](https://github.com/youzan/vant/issues/5640)
+* Dialog: 修复 Dialog.Component 类型定义错误的问题 [#5646](https://github.com/youzan/vant/issues/5646)
+* Field: 修复子元素文字颜色错误的问题 [e17a4a](https://github.com/youzan/vant/commit/e17a4a24993822b0f35114dacbbb3bebc5b51a60)
+* Picker: 修复未触发弹性滚动时 change 事件不生效的问题 [#5662](https://github.com/youzan/vant/issues/5662)
+* Tabs: 修复自定义滚动容器时 scrollspy 属性无效的问题 [#5637](https://github.com/youzan/vant/issues/5637)
+* Calendar: 修复底部按钮会触发表单提交的问题 [e93fcb](https://github.com/youzan/vant/commit/e93fcb0603b988a2ffb5b1651588f7e4ad8aa92d)
+
+
+### [v2.4.7](https://github.com/youzan/vant/compare/v2.4.7-beta.0...v2.4.7)
+`2020-02-06`
+
+**Feature**
+
+* Calendar: 优化无障碍访问 [2124cc](https://github.com/youzan/vant/commit/2124cc5261be4a7d666cf6f70d4295309f3705d9)
+* Field: 字数统计达到上限时高亮展示 [61093e](https://github.com/youzan/vant/commit/61093ef00f2dc421eb94ec7690093c1d565a296c)
+* Sku: 新增 sku-actions-top 插槽 [#5617](https://github.com/youzan/vant/issues/5617)
+* Uploader: 支持展示上传中状态 [#5625](https://github.com/youzan/vant/issues/5625)
+* Uploader: 支持展示上传失败状态 [#5624](https://github.com/youzan/vant/issues/5624)
+
+**Style**
+
+* ActionSheet: 新增 @action-sheet-close-icon-active-color 变量 [265bfe](https://github.com/youzan/vant/commit/265bfeaac756e05803858062ab1ece2092a08e17)
+* Popup: 新增 @popup-close-icon-active-color 变量 [660b03](https://github.com/youzan/vant/commit/660b0399512d3deddcdfb99af5cff1674617c515)
+
+**Bug Fixes**
+
+* Calendar: 修复选中日期 className 属性未生效的问题 [0b7c56](https://github.com/youzan/vant/commit/0b7c567a78c85fbf1c3d59fcd3ce76c691040ff1)
+* Popup: 修复使用 get-container 属性后 destroy 时抛出错误的问题
+
+
+### [v2.4.6](https://github.com/youzan/vant/compare/v2.4.5...v2.4.6)
+`2020-02-01`
+
+**Bug Fixes**
+
+* Picker: 修复更新 columns 数据不生效的问题 [#5614](https://github.com/youzan/vant/issues/5614)
+
+
+### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
+`2020-02-01`
+
+**Feature**
+
+* Picker: 支持级联选择 [#4247](https://github.com/youzan/vant/issues/4247)
+* Slider: 新增 button-size 属性 [1e9b8c](https://github.com/youzan/vant/commit/1e9b8c846674562d56ab638a0982baab4bb6870e)
+* 优化 props 类型，原有 number 类型的 props 现在支持传入 string
+
+**Style**
+
+* DropdownItem: 新增 @dropdown-item-z-index 变量 [6f4c6f](https://github.com/youzan/vant/commit/6f4c6f5aa6614559cfc24bc361e68c9c938bbb61)
+* IndexBar: 新增 @index-anchor-z-index 变量 [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: 新增 @index-bar-sidebar-z-index 变量 [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: 新增 @index-bar-index-active-color 变量 [0011db](https://github.com/youzan/vant/commit/0011db75365b60699ae140d85e54b9e477f46a22)
+* Notify: 新增 @notify-text-color 变量 [9dcf57](https://github.com/youzan/vant/commit/9dcf57c65f5e046318e953f2e8ce87918b1cb312)
+* Overlay: 新增 @overlay-z-index 变量 [95d19f](https://github.com/youzan/vant/commit/95d19f70d1c90efc752074ff764b07787d89cf1e)
+* Rate: 新增 @rate-icon-disabled-color 变量 [8b8471](https://github.com/youzan/vant/commit/8b8471945c4313735a5fe59402212f37a31acfea)
+* Rate: 新增 @rate-icon-full-color 变量 [5c804c](https://github.com/youzan/vant/commit/5c804cf920b75c5bdf962fa49eae31363783f32f)
+* Rate: 新增 @rate-icon-void-color 变量 [f90015](https://github.com/youzan/vant/commit/f90015efe7619af055b9ebd4c8be7da1f17b8da0)
+* Slider: 新增 @slider-bar-height 变量 [a5819c](https://github.com/youzan/vant/commit/a5819c286e06469bc41e8aa9e0ed44cc21625dad)
+* Search: 新增 @search-content-background-color 变量 [ea7419](https://github.com/youzan/vant/commit/ea74194990314bd1ff1e8237c221be92fdb8ae37)
+* Step: 新增 @step-active-color 变量 [9e7a68](https://github.com/youzan/vant/commit/9e7a6874141fa05f0158ca8006c268d0a3d92679)
+* Tabbar: 新增 @tabbar-z-index 变量 [0441f7](https://github.com/youzan/vant/commit/0441f7ba098aca24b797de29d10af8f47cf32d15)
+* NavBar: 新增 @nav-bar-z-index 变量 [a2d870](https://github.com/youzan/vant/commit/a2d870ad8ee4912226ec8871cc4c2d56ef870902)
+* NumberKeyboard: 新增 @number-keyboard-z-index 变量 [760938](https://github.com/youzan/vant/commit/760938962399e0589b4a258ff29e7fe2f3ba90f1)
+
+**Bug Fixes**
+
+* ImagePreview: 修复双击缩放时 max-zoom 属性不生效的问题 [1baa60](https://github.com/youzan/vant/commit/1baa60f2244b4605dc82f6dcf564671f5c623023)
+* Popup: 修复 position 为 center 时 duration 属性不生效的问题 [44072e](https://github.com/youzan/vant/commit/44072e8c3f548cff78401780213ab7ef213372c3)
+* Step: 修复 active-color 未改变分隔线颜色的问题 [cfadce](https://github.com/youzan/vant/commit/cfadcefb0a1c29dfb1d940fbb7add746595158bd)
+
+
+### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4) 🐭
+`2020-01-24`
+
+**Feature**
+
+* Card: 优化图片拉伸模式 [e766d5](https://github.com/youzan/vant/commit/e766d5d5743e7f492b3601ce4010b8524fb2b016)
+* Calendar: 新增 get-contaienr 属性 [#5609](https://github.com/youzan/vant/issues/5609)
+* Calendar: 新增 close-on-popstate 属性 [2b82dc](https://github.com/youzan/vant/commit/2b82dcc3dd2dba678aba5e0533e0ff6af7c55b11)
+* CountDown: 新增 change 事件 [#5599](https://github.com/youzan/vant/issues/5599)
+* GoodsActionButton: 新增 icon 属性 [b83bed](https://github.com/youzan/vant/commit/b83bed3b6c41d0896386b3c4b6380c9568bd3ef2)
+
+**Bug Fixes**
+
+* Sku: 修复 get-container 属性不能为 string 类型的问题 [#5608](https://github.com/youzan/vant/issues/5608)
+
+
+### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
+`2020-01-19`
+
+**Feature**
+
+* Swipe: 页面隐藏时暂停自动轮播 [113157](https://github.com/youzan/vant/commit/11315787ec980767973a3fded50fb5858e51e298)
+* Stepper: 新增 long-press 属性 [2f3ec6](https://github.com/youzan/vant/commit/2f3ec6a3d48a9d56f8127d27d51c3337f6e72cab)
+* Calendar: 新增 max-range、range-prompt 属性 [#5583](https://github.com/youzan/vant/issues/5583)
+* ImagePreview: 新增 @image-preview-index-text-shadow 变量 [e2f302](https://github.com/youzan/vant/commit/e2f30242eaaebd36d9816e2746fe6c44323e6aca)
+
+**Improvement**
+
+* Icon: 更新 share 图标 [2f77ac](https://github.com/youzan/vant/commit/2f77acfc6cef23ea664defc38c4cd806ceca1ee4)
+* Field: 优化 readonly 状态下的光标类型 [60173d](https://github.com/youzan/vant/commit/60173dd6bc004339333c50218d7c6b2f6c1bc07b)
+* Stepper: 优化 disable-input 状态下的输入框颜色 [959eca](https://github.com/youzan/vant/commit/959eca136c4ca6a39e22d36512db74b93ad100c6)
+
+**Bug Fixes**
+
+* GoodsAction: 修复未设置容器高度的问题 [#5593](https://github.com/youzan/vant/issues/5593)
+
+**Types**
+
+* Calendar: 新增类型定义 [dac60c](https://github.com/youzan/vant/commit/dac60c8a37d3b2b3686dc25c1c34b4029a963d1b)
+* Toast: 修复 setDefaultOptions 方法参数定义错误 [#5582](https://github.com/youzan/vant/issues/5582)
+
+
+### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
+`2020-01-14`
+
+**Feature**
+
+* Sku: 新增 properties 属性 [#5525](https://github.com/youzan/vant/issues/5525)
+* Field: 新增 digit 类型 [#5524](https://github.com/youzan/vant/issues/5524)
+* Field: 新增 formatter 属性 [#5534](https://github.com/youzan/vant/issues/5534)
+* Image: 新增 error-icon 属性 [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: 新增 loading-icon 属性 [#5469](https://github.com/youzan/vant/issues/5469)
+* Swipe: 新增 prev、next 方法 [#5548](https://github.com/youzan/vant/issues/5548)
+* GoodsAcitonIcon: 新增 color 属性 [#5576](https://github.com/youzan/vant/issues/5576)
+
+**Improvement**
+
+* AddressList: 优化样式细节 [#5507](https://github.com/youzan/vant/issues/5507)
+* AddressEdit: 优化错误提示展示方式 [#5479](https://github.com/youzan/vant/issues/5479)
+* ActionSheet: 优化关闭按钮样式 [#5574](https://github.com/youzan/vant/issues/5574)
+* CouponList: 优化样式细节 [#5501](https://github.com/youzan/vant/issues/5501)
+* Calendar: 弹出时自动滚动到当前选中的日期 [#5526](https://github.com/youzan/vant/issues/5526)
+* ImagePreview: 优化图片加载失败提示样式 [#5570](https://github.com/youzan/vant/issues/5570)
+* 优化所有组件的光标类型 [c1a535](https://github.com/youzan/vant/commit/c1a535b0dd9470f8eb526e86aa59cf6dec022f3a)
+
+**Bug Fixes**
+
+* Button: 修复加载状态下仍会有点击反馈的问题 [0a70d3](https://github.com/youzan/vant/commit/0a70d344124ef756a73ea9edfee07303f394d880)
+* Card: 修复图片圆角样式未生效的问题 [#5480](https://github.com/youzan/vant/issues/5480)
+* Calendar: 修复选中的日期无法展示提示信息的问题 [#5536](https://github.com/youzan/vant/issues/5536)
+* Checkbox: 修复设置 label-disabled 后空白区域仍然可以点击的问题 [3d10d4](https://github.com/youzan/vant/commit/3d10d42fccadd1b9df46860d758a91f7825073e9)
+* CouponList: 修复点击反馈区域错误的问题 [#5521](https://github.com/youzan/vant/issues/5521)
+* Field: 修复 type 为 number 时在 iOS 上仍然能输入非数字字符的问题 [#5520](https://github.com/youzan/vant/issues/5520)
+* ImagePreview: 修复在桌面端使用时无法拖拽的问题 [#4487](https://github.com/youzan/vant/issues/4487)
+* Picker: 修复点击事件偶尔会丢失的问题 [5cbb9e](https://github.com/youzan/vant/commit/5cbb9e29989ac58d44a4ec503cbb984269c8f18e)
+* PullRefresh:修复 head-height 属性未正确设置高度的问题 [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+* Tabs: 修复容器设置 fixed 布局时无法渲染底部条的问题 [#5496](https://github.com/youzan/vant/issues/5496)
+
 
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
 `2020-01-02`

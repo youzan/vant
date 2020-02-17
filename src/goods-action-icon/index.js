@@ -12,32 +12,42 @@ export default createComponent({
     ...routeProps,
     text: String,
     icon: String,
+    color: String,
     info: [Number, String],
-    iconClass: null
+    iconClass: null,
   },
 
   methods: {
     onClick(event) {
       this.$emit('click', event);
       route(this.$router, this);
-    }
+    },
+
+    genIcon() {
+      const slot = this.slots('icon');
+
+      if (slot) {
+        return <div class={bem('icon')}>{slot}</div>;
+      }
+
+      return (
+        <Icon
+          class={[bem('icon'), this.iconClass]}
+          tag="div"
+          info={this.info}
+          name={this.icon}
+          color={this.color}
+        />
+      );
+    },
   },
 
   render() {
     return (
       <div role="button" tabindex="0" class={bem()} onClick={this.onClick}>
-        {this.slots('icon') ? (
-          <div class={bem('icon')}>{this.slots('icon')}</div>
-        ) : (
-          <Icon
-            class={[bem('icon'), this.iconClass]}
-            tag="div"
-            info={this.info}
-            name={this.icon}
-          />
-        )}
+        {this.genIcon()}
         {this.slots() || this.text}
       </div>
     );
-  }
+  },
 });

@@ -1,10 +1,13 @@
+// Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
+
+// Components
 import Button from '../../button';
 
 // Types
-import Vue, { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../../utils/types';
+import Vue, { CreateElement, RenderContext } from 'vue/types';
 
 export type SkuActionsProps = {
   buyText?: string;
@@ -49,7 +52,7 @@ SkuActions.props = {
   buyText: String,
   addCartText: String,
   skuEventBus: Object,
-  showAddCartBtn: Boolean
+  showAddCartBtn: Boolean,
 };
 
 export default createComponent<SkuActionsProps>(SkuActions);

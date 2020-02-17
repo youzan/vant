@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import { BORDER_BOTTOM } from '../../utils/constant';
@@ -16,7 +17,10 @@ export type SkuHeaderProps = {
 
 const [createComponent, bem] = createNamespace('sku-header');
 
-function getSkuImg(sku: SkuData, selectedSku: SelectedSkuData): string | undefined {
+function getSkuImg(
+  sku: SkuData,
+  selectedSku: SelectedSkuData
+): string | undefined {
   let img;
 
   sku.tree.some(item => {
@@ -61,7 +65,7 @@ SkuHeader.props = {
   sku: Object,
   goods: Object,
   skuEventBus: Object,
-  selectedSku: Object
+  selectedSku: Object,
 };
 
 export default createComponent<SkuHeaderProps>(SkuHeader);

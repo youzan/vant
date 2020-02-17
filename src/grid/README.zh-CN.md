@@ -6,11 +6,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Grid, GridItem } from 'vant';
 
-Vue.use(Grid).use(GridItem);
+Vue.use(Grid);
+Vue.use(GridItem);
 ```
 
 ## 代码演示
@@ -117,33 +118,33 @@ Vue.use(Grid).use(GridItem);
 
 ### Grid Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| column-num | 列数 | *number* | `4` | 2.0.4 |
-| gutter | 格子之间的间距，默认单位为`px` | *string \| number* | `0` | - |
-| border | 是否显示边框 | *boolean* | `true` | - |
-| center | 是否将格子内容居中显示 | *boolean* | `true` | - |
-| square | 是否将格子固定为正方形 | *boolean* | `false` | - |
-| clickable | 是否开启格子点击反馈 | *boolean* | `false` | - |
-| icon-size | 图标大小，默认单位为`px` | *string \| number* | `28px` | 2.2.6 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| column-num `v2.0.4` | 列数 | *number \| string* | `4` |
+| icon-size `v2.2.6` | 图标大小，默认单位为`px` | *number \| string* | `28px` |
+| gutter | 格子之间的间距，默认单位为`px` | *number \| string* | `0` |
+| border | 是否显示边框 | *boolean* | `true` |
+| center | 是否将格子内容居中显示 | *boolean* | `true` |
+| square | 是否将格子固定为正方形 | *boolean* | `false` |
+| clickable | 是否开启格子点击反馈 | *boolean* | `false` |
 
 ### GridItem Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| text | 文字 | *string* | - | - |
-| icon | 图标名称或图片链接，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - | - |
-| dot | 是否显示图标右上角小红点 | *boolean* | `false` | 2.2.1 |
-| info | 图标右上角徽标的内容 | *string \| number* | - | 2.2.1 |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - | - |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| text | 文字 | *string* | - |
+| icon | [图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| dot `v2.2.1` | 是否显示图标右上角小红点 | *boolean* | `false` |
+| info `v2.2.1` | 图标右上角徽标的内容 | *number \| string* | - |
+| url | 点击后跳转的链接地址 | *string* | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
+| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
 
 ### GridItem Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击格子时触发 | event: Event |
+| click | 点击格子时触发 | *event: Event* |
 
 ### GridItem Slots
 

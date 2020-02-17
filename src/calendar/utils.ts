@@ -42,3 +42,9 @@ export function getNextDay(date: Date) {
 
   return date;
 }
+
+export function calcDateNum(date: [Date, Date]) {
+  const day1 = date[0].getTime();
+  const day2 = date[1].getTime();
+  return (day2 - day1) / (1000 * 60 * 60 * 24) + 1;
+}

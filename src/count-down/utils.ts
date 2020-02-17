@@ -25,7 +25,7 @@ export function parseTimeData(time: number): TimeData {
     hours,
     minutes,
     seconds,
-    milliseconds
+    milliseconds,
   };
 }
 

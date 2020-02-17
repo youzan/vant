@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell).use(CellGroup);
+Vue.use(Cell);
+Vue.use(CellGroup);
 ```
 
 ## Usage
@@ -104,39 +105,39 @@ Vue.use(Cell).use(CellGroup);
 
 ### CellGroup Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| title | Group title | *string* | - | - |
-| border | Whether to show outer border | *boolean* | `true` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| title | Group title | *string* | - |
+| border | Whether to show outer border | *boolean* | `true` |
 
 ### Cell Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| icon | Left Icon | *string* | - | - |
-| title | Title | *string \| number* | - | - |
-| value | Right text | *string \| number* | - | - |
-| label | Description below the title | *string* | - | - |
-| size | Size，can be set to `large` | *string* | - | - |
-| border | Whether to show inner border | *boolean* | `true` | - |
-| center | Whether to center content vertically | *boolean* | `true` | - |
-| url | Link URL | *string* | - | - |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
-| clickable | Whether to show click feedback when clicked | *boolean* | `false` | - |
-| is-link | Whether to show link icon | *boolean* | `false` | - |
-| required | Whether to show required mark | *boolean* | `false` | - |
-| arrow-direction | Can be set to `left` `up` `down` | *string* | - | - |
-| title-style | Title style | *any* | - | - |
-| title-class | Title className | *any* | - | - |
-| value-class | Value className | *any* | - | - |
-| label-class | Label className | *any* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| icon | Left Icon | *string* | - |
+| title | Title | *number \| string* | - |
+| value | Right text | *number \| string* | - |
+| label | Description below the title | *string* | - |
+| size | Size，can be set to `large` | *string* | - |
+| border | Whether to show inner border | *boolean* | `true` |
+| center | Whether to center content vertically | *boolean* | `true` |
+| url | Link URL | *string* | - |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` |
+| clickable | Whether to show click feedback when clicked | *boolean* | `false` |
+| is-link | Whether to show link icon | *boolean* | `false` |
+| required | Whether to show required mark | *boolean* | `false` |
+| arrow-direction | Can be set to `left` `up` `down` | *string* | `right` |
+| title-style | Title style | *any* | - |
+| title-class | Title className | *any* | - |
+| value-class | Value className | *any* | - |
+| label-class | Label className | *any* | - |
 
 ### Cell Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click cell | event: Event |
+| click | Triggered when click cell | *event: Event* |
 
 ### CellGroup Slots
 

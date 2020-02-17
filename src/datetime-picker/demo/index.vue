@@ -57,7 +57,7 @@ export default {
       title4: '选择时间',
       year: '年',
       month: '月',
-      optionFilter: '选项过滤器'
+      optionFilter: '选项过滤器',
     },
     'en-US': {
       title1: 'Choose DateTime',
@@ -66,8 +66,8 @@ export default {
       title4: 'Choose Time',
       year: ' Year',
       month: ' Month',
-      optionFilter: 'Option Filter'
-    }
+      optionFilter: 'Option Filter',
+    },
   },
 
   data() {
@@ -99,7 +99,7 @@ export default {
       }
 
       return values;
-    }
-  }
+    },
+  },
 };
 </script>

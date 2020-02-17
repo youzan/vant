@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Icon } from 'vant';
 
@@ -83,18 +83,18 @@ import 'vant/lib/icon/local.css';
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Icon name or URL | *string* | `''` | - |
-| dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
-| info | Content of the badge | *string \| number* | `''` | - |
-| color | Icon color | *string* | `inherit` | - |
-| size | Icon size | *string \| number* | `inherit` | - |
-| class-prefix | ClassName prefix | *string* | `van-icon` | - |
-| tag | HTML Tag | *string* | `i` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| name | Icon name or URL | *string* | `''` |
+| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
+| info | Content of the badge | *number \| string* | `''` |
+| color | Icon color | *string* | `inherit` |
+| size | Icon size | *number \| string* | `inherit` |
+| class-prefix | ClassName prefix | *string* | `van-icon` |
+| tag | HTML Tag | *string* | `i` |
 
 ### Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click icon | event: Event |
+| click | Triggered when click icon | *event: Event* |

@@ -8,10 +8,10 @@ try {
     get() {
       /* istanbul ignore next */
       supportsPassive = true;
-    }
+    },
   });
   window.addEventListener('test-passive', null, opts);
-// eslint-disable-next-line no-empty
+  // eslint-disable-next-line no-empty
 } catch (e) {}
 
 export function on(target, event, handler, passive = false) {

@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 

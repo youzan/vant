@@ -1,4 +1,3 @@
-
 import { mount } from '../../../test';
 import Image from '..';
 
@@ -13,8 +12,8 @@ test('click event', () => {
 test('load event', () => {
   const wrapper = mount(Image, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
-    }
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
   });
 
   wrapper.find('img').trigger('load');
@@ -29,8 +28,8 @@ test('load event', () => {
 test('error event', () => {
   const wrapper = mount(Image, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
-    }
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
   });
 
   wrapper.find('img').trigger('error');
@@ -42,8 +41,8 @@ test('lazy load', () => {
   const wrapper = mount(Image, {
     propsData: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
-      lazyLoad: true
-    }
+      lazyLoad: true,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -53,7 +52,7 @@ test('lazy-load load event', done => {
   const wrapper = mount(Image, {
     propsData: {
       lazyLoad: true,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
     mocks: {
       $Lazyload: {
@@ -70,16 +69,16 @@ test('lazy-load load event', done => {
         },
         $off() {
           done();
-        }
-      }
-    }
+        },
+      },
+    },
   });
 });
 
 test('lazy-load error event', done => {
   const wrapper = mount(Image, {
     propsData: {
-      lazyLoad: true
+      lazyLoad: true,
     },
     mocks: {
       $Lazyload: {
@@ -96,17 +95,17 @@ test('lazy-load error event', done => {
         },
         $off() {
           done();
-        }
-      }
-    }
+        },
+      },
+    },
   });
 });
 
 test('show-loading prop', () => {
   const wrapper = mount(Image, {
     propsData: {
-      showLoading: false
-    }
+      showLoading: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -116,11 +115,34 @@ test('show-error prop', () => {
   const wrapper = mount(Image, {
     propsData: {
       showError: false,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
-    }
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
   });
 
   wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('error-icon prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      errorIcon: 'error',
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
+  });
+
+  wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('loading-icon prop', () => {
+  const wrapper = mount(Image, {
+    propsData: {
+      loadingIcon: 'success',
+    },
+  });
 
   expect(wrapper).toMatchSnapshot();
 });
@@ -129,8 +151,8 @@ test('radius prop', () => {
   const wrapper = mount(Image, {
     propsData: {
       radius: 3,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
-    }
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

@@ -9,23 +9,15 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div role="checkbox" tabindex="-1" aria-checked="false" class="van-checkbox">
+    <div role="checkbox" tabindex="-1" aria-checked="false" class="van-checkbox van-checkbox--disabled">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled"><i class="van-icon van-icon-success">
           <!----></i></div><span class="van-checkbox__label van-checkbox__label--disabled">
       复选框
     </span>
     </div>
-    <div role="checkbox" tabindex="-1" aria-checked="true" class="van-checkbox">
+    <div role="checkbox" tabindex="-1" aria-checked="true" class="van-checkbox van-checkbox--disabled">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked"><i class="van-icon van-icon-success">
           <!----></i></div><span class="van-checkbox__label van-checkbox__label--disabled">
-      复选框
-    </span>
-    </div>
-  </div>
-  <div>
-    <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
-          <!----></i></div><span class="van-checkbox__label">
       复选框
     </span>
     </div>
@@ -48,7 +40,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked" style="font-size: 25px;"><i class="van-icon van-icon-success">
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked" style="font-size: 24px;"><i class="van-icon van-icon-success">
           <!----></i></div><span class="van-checkbox__label">
       自定义大小
     </span>
@@ -62,6 +54,14 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
+    <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox van-checkbox--label-disabled">
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
+          <!----></i></div><span class="van-checkbox__label">
+      复选框
+    </span>
+    </div>
+  </div>
+  <div>
     <div class="van-checkbox-group">
       <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
@@ -71,9 +71,17 @@ exports[`renders demo correctly 1`] = `
         <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
             <!----></i></div><span class="van-checkbox__label">复选框 b</span>
       </div>
-      <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
+    </div>
+  </div>
+  <div>
+    <div class="van-checkbox-group van-checkbox-group--horizontal">
+      <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
         <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-checkbox__label">复选框 c</span>
+            <!----></i></div><span class="van-checkbox__label">复选框 a</span>
+      </div>
+      <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
+        <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
+            <!----></i></div><span class="van-checkbox__label">复选框 b</span>
       </div>
     </div>
   </div>
@@ -108,27 +116,24 @@ exports[`renders demo correctly 1`] = `
             <!----></i></div><span class="van-checkbox__label">复选框 c</span>
       </div>
     </div>
-    <div class="demo-checkbox-buttons"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">全选</span></button> <button class="van-button van-button--info van-button--normal"><span class="van-button__text">反选</span></button></div>
+    <div class="demo-checkbox-buttons"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+        全选
+      </span></button> <button class="van-button van-button--info van-button--normal"><span class="van-button__text">
+        反选
+      </span></button></div>
   </div>
   <div>
     <div class="van-checkbox-group">
       <div class="van-cell-group van-hairline--top-bottom">
         <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-          <div class="van-cell__title"><span>复选框a</span></div>
+          <div class="van-cell__title"><span>复选框 a</span></div>
           <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
             <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
                 <!----></i></div>
           </div>
         </div>
         <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-          <div class="van-cell__title"><span>复选框b</span></div>
-          <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
-            <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
-                <!----></i></div>
-          </div>
-        </div>
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-          <div class="van-cell__title"><span>复选框c</span></div>
+          <div class="van-cell__title"><span>复选框 b</span></div>
           <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox">
             <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
                 <!----></i></div>

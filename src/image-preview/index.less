@@ -25,8 +25,24 @@
     left: 0;
     transition-property: transform;
 
-    .van-image__loading {
-      background-color: transparent;
+    img {
+      // disable desktop browser image drag
+      -webkit-user-drag: none;
+    }
+
+    .van-image {
+      &__error {
+        top: 30%;
+        height: 40%;
+      }
+
+      &__error-icon {
+        font-size: 36px;
+      }
+
+      &__loading {
+        background-color: transparent;
+      }
     }
   }
 
@@ -36,10 +52,43 @@
     left: 50%;
     color: @image-preview-index-text-color;
     font-size: @image-preview-index-font-size;
+    text-shadow: @image-preview-index-text-shadow;
     transform: translate(-50%, 0);
   }
 
   &__overlay {
     background-color: @image-preview-overlay-background-color;
+  }
+
+  &__close-icon {
+    position: absolute;
+    z-index: @image-preview-close-icon-z-index;
+    color: @image-preview-close-icon-color;
+    font-size: @image-preview-close-icon-size;
+    cursor: pointer;
+
+    &:active {
+      color: @image-preview-close-icon-active-color;
+    }
+
+    &--top-left {
+      top: @image-preview-close-icon-margin;
+      left: @image-preview-close-icon-margin;
+    }
+
+    &--top-right {
+      top: @image-preview-close-icon-margin;
+      right: @image-preview-close-icon-margin;
+    }
+
+    &--bottom-left {
+      bottom: @image-preview-close-icon-margin;
+      left: @image-preview-close-icon-margin;
+    }
+
+    &--bottom-right {
+      right: @image-preview-close-icon-margin;
+      bottom: @image-preview-close-icon-margin;
+    }
   }
 }

@@ -12,11 +12,7 @@
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-nav-bar
-        :title="$t('title')"
-        :left-text="$t('back')"
-        left-arrow
-      >
+      <van-nav-bar :title="$t('title')" :left-text="$t('back')" left-arrow>
         <template #right>
           <van-icon name="search" />
         </template>
@@ -33,7 +29,7 @@ export default {
     },
     onClickRight() {
       this.$toast(this.$t('button'));
-    }
-  }
+    },
+  },
 };
 </script>

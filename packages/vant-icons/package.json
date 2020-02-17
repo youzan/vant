@@ -1,6 +1,6 @@
 {
   "name": "@vant/icons",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "vant icons",
   "main": "./src/config.js",
   "files": [
@@ -23,6 +23,7 @@
     "gulp-iconfont": "^10.0.3",
     "gulp-iconfont-css": "^3.0.0",
     "md5-file": "^4.0.0",
+    "release-it": "^12.4.3",
     "shelljs": "^0.8.3",
     "svgo": "1.2.2"
   },

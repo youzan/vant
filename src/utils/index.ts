@@ -7,13 +7,20 @@ export const isServer: boolean = Vue.prototype.$isServer;
 
 export function noop() {}
 
-export function isDef(value: any): boolean {
-  return value !== undefined && value !== null;
+export function isDef(val: any): boolean {
+  return val !== undefined && val !== null;
 }
 
-export function isObj(x: any): boolean {
-  const type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
+export function isFunction(val: unknown): val is Function {
+  return typeof val === 'function';
+}
+
+export function isObject(val: any): val is Record<any, any> {
+  return val !== null && typeof val === 'object';
+}
+
+export function isPromise<T = any>(val: unknown): val is Promise<T> {
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
 }
 
 export function get(object: any, path: string): any {

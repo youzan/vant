@@ -14,7 +14,7 @@ test('create a notify', async () => {
 test('type prop', async () => {
   const notify = Notify({
     message: 'test',
-    type: 'primary'
+    type: 'primary',
   });
 
   await later();
@@ -28,7 +28,7 @@ test('notify disappear', async () => {
     color: 'red',
     background: 'blue',
     duration: 10,
-    onClose
+    onClose,
   });
 
   await later();
@@ -40,7 +40,7 @@ test('notify disappear', async () => {
 
   Notify({
     message: 'text2',
-    duration: 0
+    duration: 0,
   });
 
   await later();
@@ -63,7 +63,7 @@ test('onClick prop', async () => {
   const onClick = jest.fn();
   const notify = Notify({
     message: 'test',
-    onClick
+    onClick,
   });
 
   notify.$el.click();

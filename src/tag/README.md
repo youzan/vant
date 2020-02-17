@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Tag } from 'vant';
 
@@ -114,16 +114,16 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` `warning` | *string* | `default` | - |
-| size | Size, can be set to `large` `medium` | *string* | - | - |
-| color | Custom color | *string* | - | - |
-| plain | Whether to be plain style | *boolean* | `false` | - |
-| round | Whether to be round style | *boolean* | `false` | - |
-| mark | Whether to be mark style | *boolean* | `false` | - |
-| text-color | Text color | *string* | `white` | - |
-| closeable | Whether to be closeable | *boolean* | `false` | 2.2.9 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| type | Type, can be set to `primary` `success` `danger` `warning` | *string* | `default` |
+| size | Size, can be set to `large` `medium` | *string* | - |
+| color | Custom color | *string* | - |
+| plain | Whether to be plain style | *boolean* | `false` |
+| round | Whether to be round style | *boolean* | `false` |
+| mark | Whether to be mark style | *boolean* | `false` |
+| text-color | Text color | *string* | `white` |
+| closeable `v2.2.9` | Whether to be closeable | *boolean* | `false` |
 
 ### Slots
 
@@ -135,5 +135,5 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | event: Event |
+| click | Triggered when clicked | *event: Event* |
 | close | Triggered when click close icon | - |

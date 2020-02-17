@@ -5,12 +5,13 @@
   align-items: center;
   box-sizing: border-box;
   padding: @search-padding;
+  background-color: @search-background-color;
 
   &__content {
     display: flex;
     flex: 1;
     padding-left: @padding-xs;
-    background-color: @search-background-color;
+    background-color: @search-content-background-color;
     border-radius: @border-radius-sm;
 
     &--round {
@@ -53,6 +54,8 @@
     color: @search-action-text-color;
     font-size: @search-action-font-size;
     line-height: @search-input-height;
+    cursor: pointer;
+    user-select: none;
 
     &:active {
       background-color: @active-color;

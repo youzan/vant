@@ -16,7 +16,7 @@ exports[`renders demo correctly 1`] = `
       </ul>
       <div class="van-password-input__info">密码为 6 位数字</div>
     </div>
-    <div class="van-number-keyboard van-number-keyboard--default van-number-keyboard--safe-area-inset-bottom" style="z-index: 100;" name="van-slide-up">
+    <div class="van-number-keyboard van-number-keyboard--default van-number-keyboard--safe-area-inset-bottom" name="van-slide-up">
       <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--extra"></i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
     </div>
   </div>
@@ -39,6 +39,18 @@ exports[`renders demo correctly 1`] = `
         <li class="van-hairline--left"></li>
         <li class="van-hairline--left"></li>
         <li class="van-hairline--left"></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="van-password-input">
+      <ul class="van-password-input__security van-hairline--surround">
+        <li class=""><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
       </ul>
     </div>
   </div>

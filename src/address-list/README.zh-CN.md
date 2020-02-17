@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { AddressList } from 'vant';
 
@@ -25,7 +25,9 @@ Vue.use(AddressList);
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -54,12 +56,10 @@ export default {
       ]
     }
   },
-
   methods: {
     onAdd() {
       Toast('新增地址');
     },
-
     onEdit(item, index) {
       Toast('编辑地址:' + index);
     }
@@ -71,15 +71,15 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前选中地址的 id | *string* | - | - |
-| list | 地址列表 | *Address[]* | `[]` | - |
-| disabled-list | 不可配送地址列表 | *Address[]* | `[]` | - |
-| disabled-text | 不可配送提示文案 | *string* | - | - |
-| switchable | 是否允许切换地址 | *boolean* | `true` | - |
-| add-button-text | 底部按钮文字 | *string* | `新增地址` | - |
-| default-tag-text | 默认地址标签文字 | *string* | - | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前选中地址的 id | *string* | - |
+| list | 地址列表 | *Address[]* | `[]` |
+| disabled-list | 不可配送地址列表 | *Address[]* | `[]` |
+| disabled-text | 不可配送提示文案 | *string* | - |
+| switchable | 是否允许切换地址 | *boolean* | `true` |
+| add-button-text | 底部按钮文字 | *string* | `新增地址` |
+| default-tag-text `v2.3.0` | 默认地址标签文字 | *string* | - |
 
 ### Events
 
@@ -96,15 +96,16 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| id | 每条地址的唯一标识 | *string \| number* |
+| id | 每条地址的唯一标识 | *number \| string* |
 | name | 收货人姓名 | *string* |
-| tel | 收货人手机号 | *string \| number* |
+| tel | 收货人手机号 | *number \| string* |
 | address | 收货地址 | *string* |
 | isDefault | 是否为默认地址 | *boolean* |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 在列表下方插入内容 |
-| top | 在顶部插入内容 |
+| 名称 | 说明 | SlotProps |
+|------|------|------|
+| default | 在列表下方插入内容 | - |
+| top | 在顶部插入内容 | - |
+| item-bottom `v2.5.0` | 在列表项底部插入内容 | 列表项的值 |

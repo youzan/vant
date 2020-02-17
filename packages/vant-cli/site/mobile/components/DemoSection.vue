@@ -18,8 +18,8 @@ export default {
       }
 
       return '';
-    }
-  }
+    },
+  },
 };
 </script>
 

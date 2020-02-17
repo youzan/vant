@@ -7,7 +7,7 @@ export const skuData = {
     title: '测试商品',
     picture:
       'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-    price: 1
+    price: 1,
   },
   sku: {
     price: '1.00',
@@ -24,15 +24,15 @@ export const skuData = {
             id: '30349',
             name: '天蓝色',
             imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
+              'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg',
           },
           {
             id: '1215',
-            name: '白色'
-          }
+            name: '白色',
+          },
         ],
         k_s: 's1',
-        count: 2
+        count: 2,
       },
       {
         k: '尺寸',
@@ -40,16 +40,16 @@ export const skuData = {
         v: [
           {
             id: '1193',
-            name: '1'
+            name: '1',
           },
           {
             id: '1194',
-            name: '2'
-          }
+            name: '2',
+          },
         ],
         k_s: 's2',
-        count: 2
-      }
+        count: 2,
+      },
     ],
     list: [
       {
@@ -63,7 +63,7 @@ export const skuData = {
         s4: '0',
         s5: '0',
         stock_num: 110,
-        goods_id: 946755
+        goods_id: 946755,
       },
       {
         id: 2260,
@@ -76,7 +76,7 @@ export const skuData = {
         s4: '0',
         s5: '0',
         stock_num: 0,
-        goods_id: 946755
+        goods_id: 946755,
       },
       {
         id: 2257,
@@ -89,7 +89,7 @@ export const skuData = {
         s4: '0',
         s5: '0',
         stock_num: 111,
-        goods_id: 946755
+        goods_id: 946755,
       },
       {
         id: 2258,
@@ -102,8 +102,8 @@ export const skuData = {
         s4: '0',
         s5: '0',
         stock_num: 6,
-        goods_id: 946755
-      }
+        goods_id: 946755,
+      },
     ],
     messages: [
       {
@@ -112,7 +112,7 @@ export const skuData = {
         multiple: '0',
         name: '留言1',
         type: 'text',
-        required: '1'
+        required: '1',
       },
       {
         datetime: '0',
@@ -120,7 +120,7 @@ export const skuData = {
         multiple: 0,
         name: '留言2',
         type: 'id_no',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -128,7 +128,7 @@ export const skuData = {
         multiple: 0,
         name: '留言3',
         type: 'image',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -136,7 +136,7 @@ export const skuData = {
         multiple: 1,
         name: '留言4',
         type: 'text',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -144,7 +144,7 @@ export const skuData = {
         name: '数字',
         multiple: 0,
         type: 'tel',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -152,7 +152,7 @@ export const skuData = {
         name: '邮件',
         multiple: 0,
         type: 'email',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -160,7 +160,7 @@ export const skuData = {
         name: '日期',
         multiple: 0,
         type: 'date',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -168,7 +168,7 @@ export const skuData = {
         name: '时间含日期',
         multiple: 0,
         type: 'time',
-        required: 0
+        required: 0,
       },
       {
         datetime: '0',
@@ -176,16 +176,72 @@ export const skuData = {
         name: '时间',
         multiple: 0,
         type: 'time',
-        required: 0
-      }
-    ]
-  }
+        required: 0,
+      },
+    ],
+  },
+  properties: [
+    {
+      k_id: 123,
+      k: '加冰',
+      v: [
+        {
+          id: 1222,
+          name: '少冰',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: '去冰',
+          price: 1,
+        },
+      ],
+    },
+    {
+      k_id: 133,
+      k: '打包',
+      v: [
+        {
+          id: 1244,
+          name: '分开打包',
+          price: 9,
+        },
+      ],
+    },
+    {
+      k_id: 124,
+      k: '加料',
+      is_multiple: true,
+      v: [
+        {
+          id: 1224,
+          name: '布丁',
+          price: 3,
+        },
+        {
+          id: 1225,
+          name: '波霸',
+          price: 4,
+        },
+        {
+          id: 1226,
+          name: '珍珠',
+          price: 5,
+        },
+      ],
+    },
+  ],
 };
 
 export const initialSku = {
   s1: '30349',
   s2: '1193',
   selectedNum: 3,
+  selectedProp: {
+    123: [1222],
+    133: [1244],
+    124: [1225, 1226],
+  },
   messages: {
     留言1: '商品留言'
   }

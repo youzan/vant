@@ -16,7 +16,7 @@ export default createComponent({
     scrollable: Boolean,
     activeColor: String,
     inactiveColor: String,
-    swipeThreshold: Number
+    swipeThreshold: [Number, String],
   },
 
   computed: {
@@ -48,13 +48,13 @@ export default createComponent({
       }
 
       return style;
-    }
+    },
   },
 
   methods: {
     onClick() {
       this.$emit('click');
-    }
+    },
   },
 
   render() {
@@ -66,11 +66,11 @@ export default createComponent({
           bem({
             active: this.isActive,
             disabled: this.disabled,
-            complete: !this.ellipsis
+            complete: !this.ellipsis,
           }),
           {
-            'van-ellipsis': this.ellipsis
-          }
+            'van-ellipsis': this.ellipsis,
+          },
         ]}
         style={this.style}
         onClick={this.onClick}
@@ -81,5 +81,5 @@ export default createComponent({
         </span>
       </div>
     );
-  }
+  },
 });

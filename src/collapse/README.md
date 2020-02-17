@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
-Vue.use(Collapse).use(CollapseItem);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
 ```
 
 ## Usage
@@ -23,7 +24,7 @@ Use `v-model` to control the name of active panels
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -45,7 +46,7 @@ In accordion mode, only one panel can be expanded at the same time.
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -63,17 +64,13 @@ export default {
     <div slot="title">Title1 <van-icon name="question-o" /></div>
     Content
   </van-collapse-item>
-  <van-collapse-item
-    title="Title2"
-    name="2"
-    icon="shop-o"
-  >
+  <van-collapse-item title="Title2" name="2" icon="shop-o">
     Content
   </van-collapse-item>
 </van-collapse>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -87,11 +84,11 @@ export default {
 
 ### Collapse Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Names of current active panels | accordion mode： *string \| number*<br>non-accordion mode：*(string \| number)[]* | - | - |
-| accordion | Whether to be accordion mode | *boolean* | `false` | - |
-| border | Whether to show outer border | *boolean* | `true` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Names of current active panels | accordion mode： *number \| string*<br>non-accordion mode：*(number \| string)[]* | - |
+| accordion | Whether to be accordion mode | *boolean* | `false` |
+| border | Whether to show outer border | *boolean* | `true` |
 
 ### Collapse Events
 
@@ -101,20 +98,20 @@ export default {
 
 ### CollapseItem Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Name | *string \| number* | `index` | - |
-| icon | Left Icon | *string* | - | - |
-| size | Title size，can be set to `large` | *string* | - | - |
-| title | Title | *string \| number* | - | - |
-| value | Right text | *string \| number* | - | - |
-| label | Description below the title | *string* | - | - |
-| border | Whether to show inner border | *boolean* | `true` | - |
-| disabled | Whether to disabled collapse | *boolean* | `false` | - |
-| is-link | Whether to show link icon | *boolean* | `true` | - |
-| title-class | Title className | *string* | - | - |
-| value-class | Value className | *string* | - | - |
-| label-class | Label className | *string* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| name | Name | *number \| string* | `index` |
+| icon | Left Icon | *string* | - |
+| size | Title size，can be set to `large` | *string* | - |
+| title | Title | *number \| string* | - |
+| value | Right text | *number \| string* | - |
+| label | Description below the title | *string* | - |
+| border | Whether to show inner border | *boolean* | `true` |
+| disabled | Whether to disabled collapse | *boolean* | `false` |
+| is-link | Whether to show link icon | *boolean* | `true` |
+| title-class | Title className | *string* | - |
+| value-class | Value className | *string* | - |
+| label-class | Label className | *string* | - |
 
 ### CollapseItem Slots
 

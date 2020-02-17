@@ -6,7 +6,7 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Picker } from 'vant';
 
@@ -21,7 +21,9 @@ Vue.use(Picker);
 <van-picker :columns="columns" @change="onChange" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -58,7 +60,9 @@ export default {
 />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -76,6 +80,139 @@ export default {
 };
 ```
 
+### Multiple Columns
+
+```html
+<van-picker show-toolbar title="Title" :columns="columns" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [
+        {
+          values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
+          defaultIndex: 2
+        },
+        {
+          values: ['Morging', 'Afternoon', 'Evening'],
+          defaultIndex: 1
+        }
+      ]
+    };
+  }
+};
+```
+
+### Cascade
+
+```html
+<van-picker show-toolbar title="Title" :columns="columns" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [{
+        text: 'Zhejiang',
+        children: [{
+          text: 'Hangzhou',
+          children: [{ text: 'Xihu' }, { text: 'Yuhang' }]
+        }, {
+          text: 'Wenzhou',
+          children: [{ text: 'Lucheng' }, { text: 'Ouhai' }]
+        }]
+      }, {
+        text: 'Fujian',
+        children: [{
+          text: 'Fuzhou',
+          children: [{ text: 'Gulou' }, { text: 'Taijiang' }]
+        }, {
+          text: 'Xiamen',
+          children: [{ text: 'Siming' }, { text: 'Haicang' }]
+        }]
+      }]
+    };
+  }
+};
+```
+
+### Disable option
+
+```html
+<van-picker :columns="columns" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [
+        { text: 'Delaware', disabled: true },
+        { text: 'Florida' },
+        { text: 'Georqia' }
+      ]
+    };
+  }
+};
+```
+
+### Set Column Values
+
+```html
+<van-picker :columns="columns" @change="onChange" />
+```
+
+```js
+const states = {
+  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
+};
+
+export default {
+  data() {
+    return {
+      columns: [
+        { values: Object.keys(states) },
+        { values: states.Group1 }
+      ]
+    };
+  },
+  methods: {
+    onChange(picker, values) {
+      picker.setColumnValues(1, states[values[0]]);
+    }
+  }
+};
+```
+
+### Loading
+
+When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
+
+```html
+<van-picker :columns="columns" :loading="loading" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      columns: [],
+      loading: true
+    };
+  },
+  created() {
+    setTimeout(() => {
+      this.loading = false;
+      this.columns = ['Option'];
+    }, 1000);
+  }
+};
+```
+
 ### With Popup
 
 ```html
@@ -87,7 +224,6 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-
 <van-popup v-model="showPicker" position="bottom">
   <van-picker
     show-toolbar
@@ -116,89 +252,25 @@ export default {
 };
 ```
 
-### Disable option
-
-```html
-<van-picker :columns="columns" />
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      columns: [
-        { text: 'Delaware', disabled: true },
-        { text: 'Florida' },
-        { text: 'Georqia' }
-      ]
-    };
-  }
-};
-```
-
-### Multi columns
-
-```html
-<van-picker :columns="columns" @change="onChange" />
-```
-
-```javascript
-const states = {
-  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
-};
-
-export default {
-  data() {
-    return {
-      columns: [
-        {
-          values: Object.keys(states),
-          className: 'column1'
-        },
-        {
-          values: states.Group1,
-          className: 'column2',
-          defaultIndex: 2
-        }
-      ]
-    };
-  },
-  methods: {
-    onChange(picker, values) {
-      picker.setColumnValues(1, states[values[0]]);
-    }
-  }
-};
-```
-
-### Loading
-
-When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
-
-```html
-<van-picker :columns="columns" loading />
-```
-
 ## API
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| columns | Columns data | *Column[]* | `[]` | - |
-| show-toolbar | Whether to show toolbar | *boolean* | `false` | - |
-| toolbar-position | Toolbar position, cat be set to `bottom` | *string* | `top` | - |
-| title | Toolbar title | *string* | `''` | - |
-| loading | Whether to show loading prompt | *boolean* | `false` | - |
-| value-key | Key of option text | *string* | `text` | - |
-| item-height | Option height | *number* | `44` | - |
-| confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
-| cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
-| visible-item-count | Count of visible columns | *number* | `5` | - |
-| allow-html | Whether to allow HTML in option text | *boolean* | `true` | 2.1.8 |
-| default-index | Default value index of single column picker | *number* | `0` | - |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.10` |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| columns | Columns data | *Column[]* | `[]` |
+| title | Toolbar title | *string* | - |
+| confirm-button-text | Text of confirm button | *string* | `Confirm` |
+| cancel-button-text | Text of cancel button | *string* | `Cancel` |
+| value-key | Key of option text | *string* | `text` |
+| toolbar-position | Toolbar position, cat be set to `bottom` | *string* | `top` |
+| loading | Whether to show loading prompt | *boolean* | `false` |
+| show-toolbar | Whether to show toolbar | *boolean* | `false` |
+| allow-html `v2.1.8` | Whether to allow HTML in option text | *boolean* | `true` |
+| default-index | Default value index of single column picker | *number \| string* | `0` |
+| item-height | Option height | *number \| string* | `44` |
+| visible-item-count | Count of visible columns | *number \| string* | `5` |
+| swipe-duration `v2.2.10` | Duration of the momentum animation，unit `ms` | *number \| string*  | `1000` |
 
 ### Events
 
@@ -224,6 +296,7 @@ Picker events will pass different parameters according to the columns are single
 | values | Value of column | *string[]* |
 | defaultIndex | Default value index | *number* |
 | className | ClassName for this column | *any* |
+| children `v2.4.5` | Cascade children | *Column* |
 
 ### Methods
 
@@ -241,4 +314,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Picker instance and call instanc
 | setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
 | getColumnValues | Get columns data of the column | columnIndex | values |
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
-| confirm | Stop scrolling and emit confirm event | - | - |
+| confirm `v2.4.0` | Stop scrolling and emit confirm event | - | - |

@@ -2,7 +2,7 @@
 
 ### Install
 
-```javascript
+```js
 import Vue from 'vue';
 import { Sku } from 'vant';
 
@@ -116,32 +116,33 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show sku | *boolean* | `false` | - |
-| sku | Sku data | *object* | - | - |
-| goods | Goods info | *object* | - | - |
-| goods-id | Goods id | `string | *number* | - | - |
-| price-tag | Tag behind the price | *string* | - | - |
-| hide-stock | Whether to hide stock | *boolean* | `false` | - |
-| hide-quota-text | Whether to hide quota text | *boolean* | `false` | - |
-| hide-selected-text | Whether to hide selected text | *boolean* | `false` | - |
-| stock-threshold | stock threshold | *boolean* | `50` | - |
-| show-add-cart-btn | Whether to show cart button | *boolean* | `true` | - |
-| buy-text | Buy button text | *string* | - | - | - |
-| add-cart-text | Add cart button text | *string* | - | - | - |
-| quota | Quota (0 as no limit) | *number* | `0` | - |
-| quota-used | Used quota | *number* | `0` | - |
-| reset-stepper-on-hide | Whether to reset stepper when hide | *boolean* | `false` | - |
-| reset-selected-sku-on-hide | Whether to reset selected sku when hide | *boolean* | `false` | - |
-| disable-stepper-input | Whether to disable stepper input | *boolean* | `false` | - |
-| close-on-click-overlay | Whether to close sku popup when click overlay | *boolean* | `false` | - |
-| stepper-title | Quantity title | *string* | `Quantity` | - |
-| custom-stepper-config | Custom stepper related config | *object* | `{}` | - |
-| message-config | Message related config | *object* | `{}` | - |
-| get-container | Return the mount node for sku | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | 2.2.1 |
-| start-sale-num | Minimum quantity | *number* | `1` | 2.3.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show sku | *boolean* | `false` |
+| sku | Sku data | *object* | - |
+| goods | Goods info | *object* | - |
+| goods-id | Goods id | `string | *number* | - |
+| price-tag | Tag behind the price | *string* | - |
+| hide-stock | Whether to hide stock | *boolean* | `false` |
+| hide-quota-text | Whether to hide quota text | *boolean* | `false` |
+| hide-selected-text | Whether to hide selected text | *boolean* | `false` |
+| stock-threshold | stock threshold | *boolean* | `50` |
+| show-add-cart-btn | Whether to show cart button | *boolean* | `true` |
+| buy-text | Buy button text | *string* | - | - |
+| add-cart-text | Add cart button text | *string* | - | - |
+| quota | Quota (0 as no limit) | *number* | `0` |
+| quota-used | Used quota | *number* | `0` |
+| reset-stepper-on-hide | Whether to reset stepper when hide | *boolean* | `false` |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | *boolean* | `false` |
+| disable-stepper-input | Whether to disable stepper input | *boolean* | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | *boolean* | `false` |
+| stepper-title | Quantity title | *string* | `Quantity` |
+| custom-stepper-config | Custom stepper related config | *object* | `{}` |
+| message-config | Message related config | *object* | `{}` |
+| get-container | Return the mount node for sku | *string \| () => Element* | - |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
+| properties `v2.4.2` | Goods properties | *array* | - |
 
 ### Events
 
@@ -151,6 +152,7 @@ export default {
 | buy-clicked | Triggered when click buy button | data: object |
 | stepper-change | Triggered when stepper value changed | value: number |
 | sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | Triggered when open image preview | data: object |
 | close-preview | Triggered when close image preview | data: object |
 
@@ -161,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku | Reset selected sku to initial sku | - | - | 2.3.0 |
+| resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
@@ -176,11 +178,12 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | extra-sku-group | Extra custom content |
 | sku-stepper | Custom stepper |
 | sku-messages | Custom messages |
+| sku-actions-top `v2.4.7` | Custom content before sku-actions |
 | sku-actions | Custom button actions |
 
 ### Sku Data Structure
 
-```javascript
+```js
 sku: {
   tree: [
     {
@@ -226,28 +229,76 @@ sku: {
       placeholder: ''
     }
   ],
-  hide_stock: false
+  hide_stock: false,
+  properties: [
+    {
+      k_id: 123,
+      k: 'More',
+      is_multiple: true,
+      v: [
+        {
+          id: 1222,
+          name: 'Tea',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: 'Water',
+          price: 1,
+        }
+      ],
+    }
+  ]
 }
+```
+
+### properties Data Structure
+
+```js
+  [
+    {
+      k_id: 123,
+      k: 'More',
+      is_multiple: true,
+      v: [
+        {
+          id: 1222,
+          name: 'Tea',
+          price: 1,
+        },
+        {
+          id: 1223,
+          name: 'Water',
+          price: 1,
+        }
+      ],
+    }
+  ]
 ```
 
 ### initialSku Data Structure
 
-```javascript
+```js
 {
   // Key：skuKeyStr
   // Value：skuValueId
   s1: '30349',
   s2: '1193',
   selectedNum: 3,
+  selectedProp: {
+    123: [1222]
+  },
+  // Key：message name
+  // Value：message value
   messages: {
-    留言1: '商品留言'
+    message: 'message value'
   }
 }
 ```
 
 ### Goods Data Structure
 
-```javascript
+```js
 goods: {
   title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
@@ -257,7 +308,7 @@ goods: {
 
 ### customStepperConfig Data Structure
 
-```javascript
+```js
 customStepperConfig: {
   // custom quota text
   quotaText: 'only 5 can buy',
@@ -289,7 +340,7 @@ customStepperConfig: {
 
 ### messageConfig Data Structure
 
-```javascript
+```js
 messageConfig: {
   // the upload image callback
   uploadImg: () => {
@@ -310,7 +361,7 @@ messageConfig: {
 
 ### Events Params Data Structure
 
-```javascript
+```js
 skuData: {
   goodsId: '946755',
   messages: {
@@ -327,7 +378,22 @@ skuData: {
     s1: '30349',
     s2: '1193',
     s3: '0',
-    stock_num: 111
+    stock_num: 111,
+    properties: [
+      {
+        k_id: 123,
+        k: 'More',
+        is_multiple: true,
+        v: [
+          {
+            id: 1223,
+            name: 'Water',
+            price: 1
+          }
+        ]
+      }
+    ],
+    property_price: 1
   }
 }
 ```

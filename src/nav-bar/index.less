@@ -2,6 +2,7 @@
 
 .van-nav-bar {
   position: relative;
+  z-index: @nav-bar-z-index;
   height: @nav-bar-height;
   line-height: @nav-bar-height;
   text-align: center;
@@ -43,6 +44,7 @@
     position: absolute;
     bottom: 0;
     font-size: @font-size-md;
+    cursor: pointer;
   }
 
   &__left {

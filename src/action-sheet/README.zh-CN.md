@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { ActionSheet } from 'vant';
 
@@ -19,7 +19,9 @@ Vue.use(ActionSheet);
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
-```javascript
+```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -31,37 +33,13 @@ export default {
       ]
     };
   },
-
   methods: {
     onSelect(item) {
-      // 默认情况下，点击选项时不会自动关闭菜单
-      // 可以通过 close-on-click-action 属性开启自动关闭
+      // 默认情况下点击选项时不会自动收起
+      // 可以通过 close-on-click-action 属性开启自动收起
       this.show = false;
       Toast(item.name);
     }
-  }
-}
-```
-
-### 选项状态
-
-选项可以设置为加载状态或禁用状态，也可以通过`color`设置选项颜色
-
-```html
-<van-action-sheet v-model="show" :actions="actions" />
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      show: false,
-      actions: [
-        { name: '选项', color: '#07c160' },
-        { loading: true },
-        { name: '禁用选项', disabled: true }
-      ]
-    };
   }
 }
 ```
@@ -80,13 +58,14 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
       show: false
     };
   },
-
   methods: {
     onCancel() {
       this.show = false;
@@ -108,48 +87,70 @@ export default {
 />
 ```
 
-### 展示标题栏
+### 选项状态
 
-通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
+可以将选项设置为加载状态或禁用状态，或者通过`color`设置选项颜色
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="取消"
+  @cancel="onCancel"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: '选项', color: '#07c160' },
+        { loading: true },
+        { name: '禁用选项', disabled: true }
+      ]
+    };
+  }
+}
+```
+
+### 自定义面板
+
+通过插槽可以自定义菜单的展示内容，同时可以使用`title`属性展示标题栏
 
 ```html
 <van-action-sheet v-model="show" title="标题">
-  <p>内容</p>
+  <div class="content">内容</div>
 </van-action-sheet>
+
+<style>
+.content {
+  padding: 16px 16px 160px;
+}
+</style>
 ```
 
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| actions | 菜单选项 | *Action[]* | `[]` | - |
-| title | 顶部标题 | *string* | - | - |
-| cancel-text | 取消按钮文字 | *string* | - | - |
-| description | 选项上方的描述信息 | *string* | - | 2.2.8 |
-| overlay | 是否显示遮罩层 | *boolean* | `true` | - |
-| round | 是否显示圆角 | *boolean* | `true` | 2.0.9 |
-| close-icon | 关闭图标名称或图片链接 | *string* | `close` | 2.2.13 |
-| close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` | - |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
-| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
-| duration | 动画时长，单位秒 | *number* | `0.3` | 2.0.3 |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - | - |
-| safe-area-inset-bottom | 是否开启底部安全区适配，[详细说明](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` | - |
-
-### Events
-
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| select | 选中选项时触发，禁用或加载状态下不会触发 | item: 选项对应的对象, index: 选择对应的索引 |
-| cancel | 取消按钮点击时触发 | - |
-| click-overlay | 点击遮罩层时触发 | - |
-| open | 打开菜单时触发 | - |
-| opened | 打开菜单且动画结束后触发 | - |
-| close | 关闭菜单时触发 | - |
-| closed | 关闭菜单且动画结束后触发 | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| actions | 菜单选项 | *Action[]* | `[]` |
+| title | 顶部标题 | *string* | - |
+| cancel-text | 取消按钮文字 | *string* | - |
+| description `v2.2.8` | 选项上方的描述信息 | *string* | - |
+| close-icon `v2.2.13` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | *string* | `cross` |
+| duration `v2.0.3` | 动画时长，单位秒 | *number \| string* | `0.3` |
+| round `v2.0.9` | 是否显示圆角 | *boolean* | `true` |
+| overlay | 是否显示遮罩层 | *boolean* | `true` |
+| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
+| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
+| close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Action 数据结构
 
@@ -163,6 +164,18 @@ export default {
 | className | 为对应列添加额外的 class | *any* |
 | loading | 是否为加载状态 | *boolean* |
 | disabled | 是否为禁用状态 | *boolean* |
+
+### Events
+
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| select | 选中选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
+| cancel | 取消按钮点击时触发 | - |
+| click-overlay | 点击遮罩层时触发 | - |
+| open | 打开菜单时触发 | - |
+| opened | 打开菜单且动画结束后触发 | - |
+| close | 关闭菜单时触发 | - |
+| closed | 关闭菜单且动画结束后触发 | - |
 
 ## 常见问题
 

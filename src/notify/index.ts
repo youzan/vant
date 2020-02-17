@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VanNotify from './Notify';
-import { WHITE } from '../utils/constant';
-import { isObj, isServer } from '../utils';
+import { isObject, isServer } from '../utils';
 import { mount } from '../utils/functional';
 import { NotifyOptions } from 'types/notify';
 
@@ -9,7 +8,7 @@ let timer: number | NodeJS.Timeout;
 let instance: any;
 
 function parseOptions(message: NotifyOptions): NotifyOptions {
-  return isObj(message) ? message : ({ message } as NotifyOptions);
+  return isObject(message) ? message : { message };
 }
 
 function Notify(options: NotifyOptions) {
@@ -35,14 +34,14 @@ function Notify(options: NotifyOptions) {
           if (instance.onOpened) {
             instance.onOpened();
           }
-        }
-      }
+        },
+      },
     });
   }
 
   options = {
     ...Notify.currentOptions,
-    ...parseOptions(options)
+    ...parseOptions(options),
   };
 
   Object.assign(instance, options);
@@ -60,13 +59,13 @@ function defaultOptions(): NotifyOptions {
     type: 'danger',
     value: true,
     message: '',
-    color: WHITE,
+    color: undefined,
     background: undefined,
     duration: 3000,
     className: '',
     onClose: null,
     onClick: null,
-    onOpened: null
+    onOpened: null,
   };
 }
 

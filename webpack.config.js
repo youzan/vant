@@ -5,7 +5,7 @@ module.exports = function() {
 
   return {
     entry: {
-      'site-mobile': ['./docs/site/mobile']
-    }
+      'site-mobile': ['./docs/site/mobile'],
+    },
   };
 };

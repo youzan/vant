@@ -11,8 +11,8 @@ exports[`renders demo correctly 1`] = `
           <div class="van-step__line"></div>
         </div>
         <div class="van-hairline van-step van-step--horizontal van-step--process">
-          <div class="van-step__title" style="color: rgb(7, 193, 96);">商家接单</div>
-          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon" style="color: rgb(7, 193, 96);">
+          <div class="van-step__title van-step__title--active">商家接单</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon van-step__icon--active">
               <!----></i></div>
           <div class="van-step__line"></div>
         </div>
@@ -36,11 +36,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-step__title">买家下单</div>
           <div class="van-step__circle-container"><i class="van-icon van-icon-arrow van-step__icon">
               <!----></i></div>
-          <div class="van-step__line"></div>
+          <div class="van-step__line" style="background: rgb(51, 136, 255);"></div>
         </div>
         <div class="van-hairline van-step van-step--horizontal van-step--process">
-          <div class="van-step__title" style="color: rgb(51, 136, 255);">商家接单</div>
-          <div class="van-step__circle-container"><i class="van-icon van-icon-success van-step__icon" style="color: rgb(51, 136, 255);">
+          <div class="van-step__title van-step__title--active" style="color: rgb(51, 136, 255);">商家接单</div>
+          <div class="van-step__circle-container"><i class="van-icon van-icon-success van-step__icon van-step__icon--active" style="color: rgb(51, 136, 255);">
               <!----></i></div>
           <div class="van-step__line"></div>
         </div>
@@ -63,11 +63,11 @@ exports[`renders demo correctly 1`] = `
     <div class="van-steps van-steps--vertical">
       <div class="van-steps__items">
         <div class="van-hairline van-step van-step--vertical van-step--process">
-          <div class="van-step__title" style="color: rgb(7, 193, 96);">
+          <div class="van-step__title van-step__title--active">
             <h3>【城市】物流状态1</h3>
             <p>2016-07-12 12:40</p>
           </div>
-          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon" style="color: rgb(7, 193, 96);">
+          <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon van-step__icon--active">
               <!----></i></div>
           <div class="van-step__line"></div>
         </div>

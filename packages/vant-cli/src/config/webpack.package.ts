@@ -4,7 +4,7 @@ import { baseConfig } from './webpack.base';
 import { getVantConfig, getWebpackConfig, setBuildTarget } from '../common';
 import { LIB_DIR, ES_DIR } from '../common/constant';
 
-export function packageConfig(isMinify: boolean) {
+export function getPackageConfig(isMinify: boolean) {
   const { name } = getVantConfig();
 
   setBuildTarget('package');
@@ -14,7 +14,7 @@ export function packageConfig(isMinify: boolean) {
     {
       mode: 'production',
       entry: {
-        [name]: join(ES_DIR, 'index.js')
+        [name]: join(ES_DIR, 'index.js'),
       },
       stats: 'none',
       output: {
@@ -24,20 +24,20 @@ export function packageConfig(isMinify: boolean) {
         filename: isMinify ? '[name].min.js' : '[name].js',
         umdNamedDefine: true,
         // https://github.com/webpack/webpack/issues/6522
-        globalObject: "typeof self !== 'undefined' ? self : this"
+        globalObject: "typeof self !== 'undefined' ? self : this",
       },
       externals: {
         vue: {
           root: 'Vue',
           commonjs: 'vue',
           commonjs2: 'vue',
-          amd: 'vue'
-        }
+          amd: 'vue',
+        },
       },
       performance: false,
       optimization: {
-        minimize: isMinify
-      }
+        minimize: isMinify,
+      },
     },
     getWebpackConfig()
   );

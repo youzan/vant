@@ -7,11 +7,12 @@ code {
   overflow-x: auto;
   color: @van-doc-code-color;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 13.4px;
   font-family: @van-doc-code-font-family;
-  line-height: 24px;
+  line-height: 26px;
   white-space: pre-wrap;
   word-wrap: break-word;
+  -webkit-font-smoothing: auto;
 }
 
 pre {
@@ -35,7 +36,7 @@ pre {
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: @van-doc-purple;
+  color: @van-doc-green;
 }
 
 .hljs-comment,
@@ -43,21 +44,23 @@ pre {
   color: #999;
 }
 
+.hljs-params,
+.hljs-keyword,
+.hljs-attribute {
+  color: @van-doc-purple;
+}
+
+.hljs-deletion,
+.hljs-variable,
 .hljs-number,
 .hljs-regexp,
 .hljs-literal,
 .hljs-bullet,
 .hljs-link {
-  color: #07c160;
-}
-
-.hljs-deletion,
-.hljs-variable {
-  color: #88f;
+  color: #eb6f6f;
 }
 
 .hljs-attr,
-.hljs-keyword,
 .hljs-selector-tag,
 .hljs-title,
 .hljs-section,
@@ -68,13 +71,9 @@ pre {
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-strong {
-  color: @van-doc-blue;
+  color: #4994df;
 }
 
 .hljs-emphasis {
   font-style: italic;
-}
-
-.hljs-attribute {
-  color: #e6550d;
 }

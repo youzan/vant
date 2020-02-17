@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Switch } from 'vant';
 
@@ -19,7 +19,7 @@ Vue.use(Switch);
 <van-switch v-model="checked" />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -76,7 +76,6 @@ export default {
       checked: true
     };
   },
-
   methods: {
     onInput(checked) {
       Dialog.confirm({
@@ -90,24 +89,32 @@ export default {
 }; 
 ```
 
+### 搭配单元格使用
+
+```html
+<van-cell center title="标题">
+  <van-switch v-model="checked" slot="right-icon" size="24" />
+</van-cell>
+```
+
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 开关选中状态 | *any* | `false` | - |
-| loading | 是否为加载状态 | *boolean* | `false` | - |
-| disabled | 是否为禁用状态 | *boolean* | `false` | - |
-| size | 开关尺寸，默认单位为`px` | *string \| number* | `30px` | 2.2.11 |
-| active-color | 打开时的背景色 | *string* | `#1989fa` | - |
-| inactive-color | 关闭时的背景色 | *string* | `#fff` | - |
-| active-value | 打开时的值 | *any* | `true` | - |
-| inactive-value | 关闭时的值 | *any* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 开关选中状态 | *any* | `false` |
+| loading | 是否为加载状态 | *boolean* | `false` |
+| disabled | 是否为禁用状态 | *boolean* | `false` |
+| size `v2.2.11` | 开关尺寸，默认单位为`px` | *number \| string* | `30px` |
+| active-color | 打开时的背景色 | *string* | `#1989fa` |
+| inactive-color | 关闭时的背景色 | *string* | `white` |
+| active-value | 打开时对应的值 | *any* | `true` |
+| inactive-value | 关闭时对应的值 | *any* | `false` |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| change | 开关状态切换回调 | checked: 是否选中开关 | - |
-| click | 点击时触发 | event: Event | 2.2.11 |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| change | 开关状态切换时触发 | *value: any* |
+| click `v2.2.11` | 点击时触发 | *event: Event* |

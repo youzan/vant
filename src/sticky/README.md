@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Sticky } from 'vant';
 
@@ -54,11 +54,11 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| offset-top | Offset top | *number* | `0` | - |
-| z-index | z-index when sticky | *number* | `99` | - |
-| container | Container DOM | *HTMLElement* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| offset-top | Offset top | *number \| string* | `0` |
+| z-index | z-index when sticky | *number \| string* | `99` |
+| container | Container DOM | *Element* | - |
 
 ### Events
 

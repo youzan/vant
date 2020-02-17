@@ -1,12 +1,12 @@
 import { join } from 'path';
 import { existsSync } from 'fs-extra';
-import { smartOutputFile } from '../common';
+import { smartOutputFile, normalizePath } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
 import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
 
 type Options = {
   outputPath: string;
-  pathResolver?: Function;
+  pathResolver?: (path: string) => string;
 };
 
 export function genPacakgeStyle(options: Options) {
@@ -21,7 +21,7 @@ export function genPacakgeStyle(options: Options) {
       baseFile = options.pathResolver(baseFile);
     }
 
-    content += `@import "${baseFile}";\n`;
+    content += `@import "${normalizePath(baseFile)}";\n`;
   }
 
   content += styleDepsJson.sequence
@@ -36,7 +36,7 @@ export function genPacakgeStyle(options: Options) {
         path = options.pathResolver(path);
       }
 
-      return `@import "${path}";`;
+      return `@import "${normalizePath(path)}";`;
     })
     .filter((item: string) => !!item)
     .join('\n');

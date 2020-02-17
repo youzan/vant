@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { TreeSelect } from 'vant';
 
@@ -21,7 +21,7 @@ Vue.use(TreeSelect);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -43,7 +43,7 @@ export default {
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -61,11 +61,11 @@ export default {
 <van-tree-select
   height="55vw"
   :items="items"
-  :main-active-index.sync="activeIndex"
+  :main-active-index.sync="active"
 >
   <template slot="content">
-    <van-image v-if="activeIndex === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
-    <van-image v-if="activeIndex === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image v-if="active === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image v-if="active === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
 </van-tree-select>
 ```
@@ -74,7 +74,7 @@ export default {
 export default {
   data() {
     return {
-      activeIndex: 0,
+      active: 0,
       items: [{ text: 'Group 1' }, { text: 'Group 2' }]
     }
   }
@@ -109,13 +109,13 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| items | Required datasets for the component | *Item[]* | `[]` | - |
-| height | Height | *string \| number* | `300` | - |
-| main-Active-index | The index of selected parent node | *number* | `0` | - |
-| active-id | Id of selected item | *string \| number \| (string \| number)[]* | `0` | - |
-| max | Maximum number of selected items | *number* | `Infinity` | 2.2.0 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| items | Required datasets for the component | *Item[]* | `[]` |
+| height | Height | *number \| string* | `300` |
+| main-active-index | The index of selected parent node | *number \| string* | `0` |
+| active-id | Id of selected item | *number \| string \|<br>(number \| string)[]* | `0` |
+| max `v2.2.0` | Maximum number of selected items | *number \| string* | `Infinity` |
 
 ### Events
 
@@ -136,7 +136,7 @@ export default {
 
 In every tree object, `text` property defines `id` stands for the unique key while the `children` contains sub-tree objects.
 
-```javascript
+```js
 [
   {
     // name of the parent node

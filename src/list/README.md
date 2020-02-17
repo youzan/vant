@@ -6,7 +6,7 @@ A list component to show items and control loading status.
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { List } from 'vant';
 
@@ -24,11 +24,7 @@ Vue.use(List);
   finished-text="Finished"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -41,7 +37,6 @@ export default {
       finished: false
     };
   },
-
   methods: {
     onLoad() {
       setTimeout(() => {
@@ -53,7 +48,7 @@ export default {
         if (this.list.length >= 40) {
           this.finished = true;
         }
-      }, 500);
+      }, 1000);
     }
   }
 }
@@ -68,11 +63,7 @@ export default {
   error-text="Request failed. Click to reload"
   @load="onLoad"
 >
-  <van-cell
-    v-for="item in list"
-    :key="item"
-    :title="item"
-  />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
@@ -85,7 +76,6 @@ export default {
       loading: false
     };
   },
-
   methods: {
     onLoad() {
       fetchSomeThing().catch(() => {
@@ -96,21 +86,73 @@ export default {
 }
 ```
 
+### PullRefresh
+
+```html
+<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+  <van-list
+    v-model="loading"
+    :finished="finished"
+    finished-text="Finished"
+    @load="onLoad"
+  >
+    <van-cell v-for="item in list" :key="item" :title="item" />
+  </van-list>
+</van-pull-refresh>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [],
+      loading: false,
+      finished: false,
+      refreshing: false
+    };
+  },
+  methods: {
+    onLoad() {
+      setTimeout(() => {
+        if (this.refreshing) {
+          this.list = [];
+          this.refreshing = false;
+        }
+
+        for (let i = 0; i < 10; i++) {
+          this.list.push(this.list.length + 1);
+        }
+        this.loading = false;
+
+        if (this.list.length >= 40) {
+          this.finished = true;
+        }
+      }, 1000);
+    },
+    onRefresh() {
+      this.finished = false;
+      this.loading = true;
+      this.onLoad();
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show loading info，the `load` event will not be triggered when loading | *boolean* | `false` | - |
-| finished | Whether loading is finished，the `load` event will not be triggered when finished | *boolean* | `false` | - |
-| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | *boolean* | `false` | - |
-| offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | *number* | `300` | - |
-| loading-text | Loading text | *string* | `Loading...` | - |
-| finished-text | Finished text | *string* | - | - |
-| error-text | Error loaded text | *string* | - | - |
-| immediate-check | Whether to check loading position immediately after mounted | *boolean* | `true` | - |
-| direction | Scroll direction，can be set to `up` | *string* | `down` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show loading info，the `load` event will not be triggered when loading | *boolean* | `false` |
+| finished | Whether loading is finished，the `load` event will not be triggered when finished | *boolean* | `false` |
+| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | *boolean* | `false` |
+| offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | *number \| string* | `300` |
+| loading-text | Loading text | *string* | `Loading...` |
+| finished-text | Finished text | *string* | - |
+| error-text | Error loaded text | *string* | - |
+| immediate-check | Whether to check loading position immediately after mounted | *boolean* | `true` |
+| direction | Scroll direction，can be set to `up` | *string* | `down` |
 
 ### Events
 

@@ -2,7 +2,7 @@ export default {
   province_list: {
     110000: 'Beijing',
     330000: 'Zhejiang',
-    810000: 'Hong Kong'
+    810000: 'Hong Kong',
   },
   city_list: {
     110100: 'Beijing City',
@@ -13,7 +13,7 @@ export default {
     331100: 'Lishui',
     810100: 'Hong Kong Island',
     810200: 'Kowloon',
-    810300: 'New Territories'
+    810300: 'New Territories',
   },
   county_list: {
     110101: 'Dongcheng',
@@ -66,6 +66,6 @@ export default {
     810305: 'Yuen Long',
     810306: 'Tuen Mun',
     810307: 'Tsuen Wan',
-    810309: 'Lantau Island'
-  }
+    810309: 'Lantau Island',
+  },
 };

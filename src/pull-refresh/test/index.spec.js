@@ -4,13 +4,13 @@ import { mount, later, trigger, triggerDrag } from '../../../test';
 test('change head content when pulling down', async () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
-      value: false
+      value: false,
     },
     listeners: {
       input(value) {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -54,8 +54,8 @@ test('custom content by slots', async () => {
       },
       loading({ distance }) {
         return `loading ${distance}`;
-      }
-    }
+      },
+    },
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -78,8 +78,8 @@ test('custom content by slots', async () => {
 test('pull a short distance', () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
-      value: false
-    }
+      value: false,
+    },
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -90,8 +90,8 @@ test('pull a short distance', () => {
 test('not in page top', () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
-      value: false
-    }
+      value: false,
+    },
   });
 
   window.scrollTop = 100;
@@ -109,13 +109,13 @@ test('render success text', async () => {
   const wrapper = mount(PullRefresh, {
     propsData: {
       successText: 'success',
-      successDuration: 0
+      successDuration: 0,
     },
     listeners: {
       input(value) {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -138,13 +138,13 @@ test('render success text', async () => {
 test('render success slot', async () => {
   const wrapper = mount(PullRefresh, {
     scopedSlots: {
-      success: () => 'Custom Success'
+      success: () => 'Custom Success',
     },
     listeners: {
       input(value) {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const track = wrapper.find('.van-pull-refresh__track');
@@ -154,5 +154,15 @@ test('render success slot', async () => {
 
   expect(wrapper.vm.value).toBeTruthy();
   wrapper.setProps({ value: false });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('should set height when using head-height', async () => {
+  const wrapper = mount(PullRefresh, {
+    propsData: {
+      headHeight: 100,
+    },
+  });
+
   expect(wrapper).toMatchSnapshot();
 });

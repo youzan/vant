@@ -6,7 +6,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Overlay } from 'vant';
 
@@ -19,7 +19,6 @@ Vue.use(Overlay);
 
 ```html
 <van-button type="primary" text="显示遮罩层" @click="show = true" />
-
 <van-overlay :show="show" @click="show = false" />
 ```
 
@@ -64,22 +63,22 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| show | 是否展示遮罩层 | *boolean* | `false` | - |
-| z-index | z-index 层级 | *string \| number* | `1` | - |
-| duration | 动画时长，单位秒 | *string \| number* | `0.3` | - |
-| class-name | 自定义类名 | *string* | - | - |
-| custom-style | 自定义样式 | *object* | - | 2.2.5 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| show | 是否展示遮罩层 | *boolean* | `false` |
+| z-index | z-index 层级 | *number \| string* | `1` |
+| duration | 动画时长，单位秒 | *number \| string* | `0.3` |
+| class-name | 自定义类名 | *string* | - |
+| custom-style `v2.2.5` | 自定义样式 | *object* | - |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
-|------|------|------|------|
-| click | 点击时触发 | event: Event | - |
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| click | 点击时触发 | *event: Event* |
 
 ### Slots
 
-| 名称 | 说明 | 版本 |
-|------|------|------|
-| default | 默认插槽，用于在遮罩层上方嵌入内容 | 2.0.5 |
+| 名称 | 说明 |
+|------|------|
+| default `v2.0.5` | 默认插槽，用于在遮罩层上方嵌入内容 |

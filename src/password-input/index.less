@@ -24,6 +24,7 @@
     display: flex;
     width: 100%;
     height: @password-input-height;
+    cursor: pointer;
 
     &::after {
       border-radius: @password-input-border-radius;
@@ -45,9 +46,9 @@
       left: 50%;
       width: @password-input-dot-size;
       height: @password-input-dot-size;
-      margin: -(@password-input-dot-size / 2) 0 0 -(@password-input-dot-size / 2);
       background-color: @password-input-dot-color;
       border-radius: 100%;
+      transform: translate(-50%, -50%);
       visibility: hidden;
     }
   }
@@ -60,7 +61,8 @@
     height: @number-keyboard-cursor-height;
     background-color: @number-keyboard-cursor-color;
     transform: translate(-50%, -50%);
-    animation: @number-keyboard-cursor-animation-duration van-cursor-flicker infinite;
+    animation: @number-keyboard-cursor-animation-duration van-cursor-flicker
+      infinite;
   }
 }
 

@@ -1,33 +1,18 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-skeleton
-        title
-        :row="3"
-      />
+      <van-skeleton title :row="3" />
     </demo-block>
 
     <demo-block :title="$t('showAvatar')">
-      <van-skeleton
-        title
-        avatar
-        :row="3"
-      />
+      <van-skeleton title avatar :row="3" />
     </demo-block>
 
     <demo-block :title="$t('showChildren')">
-      <van-switch
-        v-model="show"
-        size="24px"
-      />
-      <van-skeleton
-        title
-        avatar
-        :row="3"
-        :loading="!show"
-      >
+      <van-switch v-model="show" size="24px" />
+      <van-skeleton title avatar :row="3" :loading="!show">
         <div class="demo-preview">
-          <img src="https://img.yzcdn.cn/vant/logo.png">
+          <img src="https://img.yzcdn.cn/vant/logo.png" />
           <div class="demo-content">
             <h3>{{ $t('title') }}</h3>
             <p>{{ $t('desc') }}</p>
@@ -45,26 +30,27 @@ export default {
       showAvatar: '显示头像',
       showChildren: '显示子组件',
       title: '关于 Vant',
-      desc: 'Vant 是一套轻量、可靠的移动端 Vue 组件库，提供了丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。'
+      desc:
+        'Vant 是一套轻量、可靠的移动端 Vue 组件库，提供了丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。',
     },
     'en-US': {
       showAvatar: 'Show Avatar',
       showChildren: 'Show Children',
       title: 'About Vant',
-      desc: 'Vant is a set of Mobile UI Components built on Vue.'
-    }
+      desc: 'Vant is a set of Mobile UI Components built on Vue.',
+    },
   },
 
   data() {
     return {
-      show: false
+      show: false,
     };
-  }
+  },
 };
 </script>
 
 <style lang="less">
-@import "../../style/var";
+@import '../../style/var';
 
 .demo-skeleton {
   background-color: @white;

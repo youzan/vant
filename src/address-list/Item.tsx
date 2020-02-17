@@ -1,13 +1,16 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
+import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
-import Tag from '../tag';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type AddressItemData = {
   id: string | number;
@@ -24,6 +27,10 @@ export type AddressItemProps = {
   defaultTagText?: string;
 };
 
+export type AddressItemSlots = DefaultSlots & {
+  bottom?: ScopedSlot;
+};
+
 export type AddressItemEvents = {
   onEdit(): void;
   onClick(): void;
@@ -35,7 +42,7 @@ const [createComponent, bem] = createNamespace('address-item');
 function AddressItem(
   h: CreateElement,
   props: AddressItemProps,
-  slots: DefaultSlots,
+  slots: AddressItemSlots,
   ctx: RenderContext<AddressItemProps>
 ) {
   const { disabled, switchable } = props;
@@ -77,12 +84,12 @@ function AddressItem(
         {`${data.name} ${data.tel}`}
         {genTag()}
       </div>,
-      <div class={bem('address')}>{data.address}</div>
+      <div class={bem('address')}>{data.address}</div>,
     ];
 
     if (switchable && !disabled) {
       return (
-        <Radio name={data.id} iconSize={16}>
+        <Radio name={data.id} iconSize={18}>
           {Info}
         </Radio>
       );
@@ -92,18 +99,18 @@ function AddressItem(
   }
 
   return (
-    <Cell
-      class={bem({ disabled })}
-      border={false}
-      valueClass={bem('value')}
-      clickable={switchable && !disabled}
-      scopedSlots={{
-        default: genContent,
-        'right-icon': genRightIcon
-      }}
-      onClick={onClick}
-      {...inherit(ctx)}
-    />
+    <div class={bem({ disabled })} onClick={onClick}>
+      <Cell
+        border={false}
+        valueClass={bem('value')}
+        scopedSlots={{
+          default: genContent,
+          'right-icon': genRightIcon,
+        }}
+        {...inherit(ctx)}
+      />
+      {slots.bottom?.({ ...props.data, disabled })}
+    </div>
   );
 }
 
@@ -111,7 +118,7 @@ AddressItem.props = {
   data: Object,
   disabled: Boolean,
   switchable: Boolean,
-  defaultTagText: String
+  defaultTagText: String,
 };
 
 export default createComponent<AddressItemProps, AddressItemEvents>(

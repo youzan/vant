@@ -2,11 +2,12 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell).use(CouponList);
+Vue.use(CouponCell);
+Vue.use(CouponList);
 ```
 
 ## 代码演示
@@ -20,7 +21,6 @@ Vue.use(CouponCell).use(CouponList);
   :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
-
 <!-- 优惠券列表 -->
 <van-popup
   v-model="showList"
@@ -38,7 +38,7 @@ Vue.use(CouponCell).use(CouponList);
 </van-popup>
 ```
 
-```javascript
+```js
 const coupon = {
   available: 1,
   condition: '无使用门槛\n最多优惠12元',
@@ -59,7 +59,6 @@ export default {
       disabledCoupons: [coupon]
     }
   },
-
   methods: {
     onChange(index) {
       this.showList = false;
@@ -76,37 +75,37 @@ export default {
 
 ### CouponCell Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| title | 单元格标题 | *string* | `优惠券` | - |
-| chosen-coupon | 当前选中优惠券的索引 | *number* | `-1` | - |
-| coupons | 可用优惠券列表 | *Coupon[]* | `[]` | - |
-| editable | 能否切换优惠券 | *boolean* | `true` | - |
-| border | 是否显示内边框 | *boolean* | `true` | - |
-| currency | 货币符号 |  *string* | `¥` | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| title | 单元格标题 | *string* | `优惠券` |
+| chosen-coupon | 当前选中优惠券的索引 | *number \| string* | `-1` |
+| coupons | 可用优惠券列表 | *Coupon[]* | `[]` |
+| editable | 能否切换优惠券 | *boolean* | `true` |
+| border | 是否显示内边框 | *boolean* | `true` |
+| currency | 货币符号 |  *string* | `¥` | - |
 
 ### CouponList Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 当前输入的兑换码 | *string* | - | - |
-| chosen-coupon | 当前选中优惠券的索引 | *number* | `-1` | - |
-| coupons | 可用优惠券列表 | *Coupon[]* | `[]` | - |
-| disabled-coupons | 不可用优惠券列表 | *Coupon[]* | `[]` | - |
-| enabled-title | 可用优惠券列表标题 | *string* | `可使用优惠券` | - |
-| disabled-title | 不可用优惠券列表标题 | *string* | `不可使用优惠券` | - |
-| exchange-button-text | 兑换按钮文字 | *string* | `兑换` | - |
-| exchange-button-loading | 是否显示兑换按钮加载动画 | *boolean* | `false` | - |
-| exchange-button-disabled | 是否禁用兑换按钮 | *boolean* | `false` | - |
-| exchange-min-length | 兑换码最小长度 | *number* | `1` | - |
-| displayed-coupon-index | 滚动至特定优惠券位置 | *number* | - | - |
-| show-close-button | 是否显示列表底部按钮 | *boolean* | `true` | - |
-| close-button-text | 列表底部按钮文字 | *string* | `不使用优惠` | - |
-| input-placeholder | 输入框文字提示 | *string* | `请输入优惠码` | - |
-| show-exchange-bar | 是否展示兑换栏 | *boolean* | `true` | - |
-| currency | 货币符号 |  *string* | `¥` | - |
-| empty-image | 列表为空时的占位图 | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` | 2.1.0 |
-| show-count | 是否展示可用 / 不可用数量 | *boolean* | `true` | 2.3.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 当前输入的兑换码 | *string* | - |
+| chosen-coupon | 当前选中优惠券的索引 | *number* | `-1` |
+| coupons | 可用优惠券列表 | *Coupon[]* | `[]` |
+| disabled-coupons | 不可用优惠券列表 | *Coupon[]* | `[]` |
+| enabled-title | 可用优惠券列表标题 | *string* | `可使用优惠券` |
+| disabled-title | 不可用优惠券列表标题 | *string* | `不可使用优惠券` |
+| exchange-button-text | 兑换按钮文字 | *string* | `兑换` |
+| exchange-button-loading | 是否显示兑换按钮加载动画 | *boolean* | `false` |
+| exchange-button-disabled | 是否禁用兑换按钮 | *boolean* | `false` |
+| exchange-min-length | 兑换码最小长度 | *number* | `1` |
+| displayed-coupon-index | 滚动至特定优惠券位置 | *number* | - |
+| show-close-button | 是否显示列表底部按钮 | *boolean* | `true` |
+| close-button-text | 列表底部按钮文字 | *string* | `不使用优惠` |
+| input-placeholder | 输入框文字提示 | *string* | `请输入优惠码` |
+| show-exchange-bar | 是否展示兑换栏 | *boolean* | `true` |
+| currency | 货币符号 |  *string* | `¥` |
+| empty-image `v2.1.0` | 列表为空时的占位图 | *string* | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| show-count `v2.3.0` | 是否展示可用 / 不可用数量 | *boolean* | `true` |
 
 ### CouponList Events
 

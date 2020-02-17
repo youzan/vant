@@ -10,8 +10,8 @@ test('click number key', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       theme: 'custom',
-      closeButtonText: 'close'
-    }
+      closeButtonText: 'close',
+    },
   });
 
   clickKey(wrapper.findAll('.van-key').at(0));
@@ -37,8 +37,8 @@ test('click close button', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       theme: 'custom',
-      closeButtonText: 'close'
-    }
+      closeButtonText: 'close',
+    },
   });
 
   clickKey(wrapper.findAll('.van-key').at(12));
@@ -58,8 +58,8 @@ test('listen to show/hide event when has transtion', () => {
 test('listen to show event when no transtion', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
-      transition: false
-    }
+      transition: false,
+    },
   });
   wrapper.vm.show = true;
   wrapper.vm.show = false;
@@ -71,8 +71,8 @@ test('render title', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       title: 'Title',
-      closeButtonText: 'Close'
-    }
+      closeButtonText: 'Close',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -81,8 +81,8 @@ test('render title', () => {
 test('title-left slot', () => {
   const wrapper = mount(NumberKeyboard, {
     scopedSlots: {
-      'title-left': () => 'Custom Title Left'
-    }
+      'title-left': () => 'Custom Title Left',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -91,8 +91,8 @@ test('title-left slot', () => {
 test('extra-key slot', () => {
   const wrapper = mount(NumberKeyboard, {
     scopedSlots: {
-      'extra-key': () => 'Custom Extra Key'
-    }
+      'extra-key': () => 'Custom Extra Key',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -101,8 +101,8 @@ test('extra-key slot', () => {
 test('hideOnClickOutside', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
-      show: true
-    }
+      show: true,
+    },
   });
 
   trigger(document.body, 'touchstart');
@@ -113,8 +113,8 @@ test('disable hideOnClickOutside', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       show: true,
-      hideOnClickOutside: false
-    }
+      hideOnClickOutside: false,
+    },
   });
 
   trigger(document.body, 'touchstart');
@@ -148,13 +148,13 @@ test('move and blur key', () => {
 test('bind value', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
-      value: ''
+      value: '',
     },
     listeners: {
       'update:value': value => {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const keys = wrapper.findAll('.van-key');
@@ -172,14 +172,14 @@ test('maxlength', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       value: '',
-      maxlength: 1
+      maxlength: 1,
     },
     listeners: {
       input: onInput,
       'update:value': value => {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const keys = wrapper.findAll('.van-key');

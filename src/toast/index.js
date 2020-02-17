@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueToast from './Toast';
-import { isObj, isServer } from '../utils';
+import { isObject, isServer } from '../utils';
+import { removeNode } from '../utils/dom/node';
 
 const defaultOptions = {
   icon: '',
@@ -22,7 +23,7 @@ const defaultOptions = {
   getContainer: 'body',
   overlayStyle: null,
   closeOnClick: false,
-  closeOnClickOverlay: false
+  closeOnClickOverlay: false,
 };
 
 // default options of specific type
@@ -31,11 +32,11 @@ let defaultOptionsMap = {};
 let queue = [];
 let multiple = false;
 let currentOptions = {
-  ...defaultOptions
+  ...defaultOptions,
 };
 
 function parseOptions(message) {
-  if (isObj(message)) {
+  if (isObject(message)) {
     return message;
   }
 
@@ -50,7 +51,7 @@ function createInstance() {
 
   if (!queue.length || multiple) {
     const toast = new (Vue.extend(VueToast))({
-      el: document.createElement('div')
+      el: document.createElement('div'),
     });
 
     toast.$on('input', value => {
@@ -69,7 +70,7 @@ function transformOptions(options) {
     ...options,
     overlay: options.mask || options.overlay,
     mask: undefined,
-    duration: undefined
+    duration: undefined,
   };
 }
 
@@ -85,7 +86,7 @@ function Toast(options = {}) {
   options = {
     ...currentOptions,
     ...defaultOptionsMap[options.type || currentOptions.type],
-    ...options
+    ...options,
   };
 
   options.clear = () => {
@@ -100,11 +101,7 @@ function Toast(options = {}) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
 
-        const parent = toast.$el.parentNode;
-        if (parent) {
-          parent.removeChild(toast.$el);
-        }
-
+        removeNode(toast.$el);
         toast.$destroy();
       });
     }
@@ -125,7 +122,7 @@ function Toast(options = {}) {
 const createMethod = type => options =>
   Toast({
     type,
-    ...parseOptions(options)
+    ...parseOptions(options),
   });
 
 ['loading', 'success', 'fail'].forEach(method => {

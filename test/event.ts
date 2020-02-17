@@ -12,7 +12,7 @@ function getTouch(el: HTMLElement | Window, x: number, y: number) {
     radiusX: 2.5,
     radiusY: 2.5,
     rotationAngle: 10,
-    force: 0.5
+    force: 0.5,
   };
 }
 
@@ -39,14 +39,18 @@ export function trigger(
     clientY: y,
     touches: touchList,
     targetTouches: touchList,
-    changedTouches: touchList
+    changedTouches: touchList,
   });
 
   el.dispatchEvent(event);
 }
 
 // simulate drag gesture
-export function triggerDrag(el: Wrapper<Vue> | HTMLElement, x = 0, y = 0): void {
+export function triggerDrag(
+  el: Wrapper<Vue> | HTMLElement,
+  x = 0,
+  y = 0
+): void {
   trigger(el, 'touchstart', 0, 0);
   trigger(el, 'touchmove', x / 4, y / 4);
   trigger(el, 'touchmove', x / 3, y / 3);

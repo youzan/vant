@@ -16,6 +16,29 @@
           <p>{{ tips }}</p>
         </van-pull-refresh>
       </van-tab>
+
+      <van-tab :title="$t('customTips')">
+        <van-pull-refresh
+          v-model="isLoading"
+          head-height="80"
+          @refresh="onRefresh(true)"
+        >
+          <template #pulling="{ distance }">
+            <img
+              class="doge"
+              src="https://b.yzcdn.cn/vant/doge.png"
+              :style="{ transform: `scale(${distance / 80})` }"
+            />
+          </template>
+          <template #loosing>
+            <img src="https://b.yzcdn.cn/vant/doge.png" class="doge" />
+          </template>
+          <template #loading>
+            <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge" />
+          </template>
+          <p>{{ tips }}</p>
+        </van-pull-refresh>
+      </van-tab>
     </van-tabs>
   </demo-section>
 </template>
@@ -24,23 +47,25 @@
 export default {
   i18n: {
     'zh-CN': {
+      try: '下拉试试',
       text: '刷新次数',
       success: '刷新成功',
-      successTip: '刷新成功提示',
-      try: '下拉试试'
+      successTip: '成功提示',
+      customTips: '自定义提示',
     },
     'en-US': {
+      try: 'Try it down',
       text: 'Refresh Count',
       success: 'Refresh success',
       successTip: 'Success Tip',
-      try: 'Try it down'
-    }
+      customTips: 'Custom Tips',
+    },
   },
 
   data() {
     return {
       count: 0,
-      isLoading: false
+      isLoading: false,
     };
   },
 
@@ -51,10 +76,23 @@ export default {
       }
 
       return this.$t('try');
-    }
+    },
+  },
+
+  mounted() {
+    this.preloadImage();
   },
 
   methods: {
+    preloadImage() {
+      // preload doge image
+      const doge = new Image();
+      const dogeFire = new Image();
+
+      doge.src = 'https://b.yzcdn.cn/vant/doge.png';
+      dogeFire.src = 'https://b.yzcdn.cn/vant/doge-fire.jpg';
+    },
+
     onRefresh(showToast) {
       setTimeout(() => {
         if (showToast) {
@@ -63,9 +101,9 @@ export default {
 
         this.isLoading = false;
         this.count++;
-      }, 500);
-    }
-  }
+      }, 1000);
+    },
+  },
 };
 </script>
 
@@ -80,6 +118,13 @@ export default {
     &__track {
       height: calc(100vh - 50px);
     }
+  }
+
+  .doge {
+    width: 140px;
+    height: 72px;
+    margin-top: 8px;
+    border-radius: 4px;
   }
 
   p {

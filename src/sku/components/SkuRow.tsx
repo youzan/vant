@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import { BORDER_BOTTOM } from '../../utils/constant';
@@ -11,7 +12,7 @@ export type SkuRowProps = {
   skuRow: SkuTreeItemData;
 };
 
-const [createComponent, bem] = createNamespace('sku-row');
+const [createComponent, bem, t] = createNamespace('sku-row');
 
 function SkuRow(
   h: CreateElement,
@@ -19,16 +20,22 @@ function SkuRow(
   slots: DefaultSlots,
   ctx: RenderContext<SkuRowProps>
 ) {
+  const multipleNode = props.skuRow.is_multiple && (
+    <span class={bem('title-multiple')}>（{t('multiple')}）</span>
+  );
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
-      <div class={bem('title')}>{props.skuRow.k}</div>
+      <div class={bem('title')}>
+        {props.skuRow.k}
+        {multipleNode}
+      </div>
       {slots.default && slots.default()}
     </div>
   );
 }
 
 SkuRow.props = {
-  skuRow: Object
+  skuRow: Object,
 };
 
 export default createComponent<SkuRowProps>(SkuRow);

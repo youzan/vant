@@ -1,21 +1,57 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-picker :columns="$t('column1')" @change="onChange1" />
+      <van-picker :columns="$t('textColumns')" @change="onChange1" />
     </demo-block>
 
     <demo-block :title="$t('defaultIndex')">
-      <van-picker :columns="$t('column1')" :default-index="2" @change="onChange1" />
+      <van-picker
+        :columns="$t('textColumns')"
+        :default-index="2"
+        @change="onChange1"
+      />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('showToolbar')">
       <van-picker
         show-toolbar
         :title="$t('title')"
-        :columns="$t('column1')"
+        :columns="$t('textColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
+    </demo-block>
+
+    <demo-block :title="$t('multipleColumns')">
+      <van-picker
+        show-toolbar
+        :title="$t('title')"
+        :columns="$t('dateColumns')"
+        @cancel="onCancel"
+        @confirm="onConfirm"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('cascade')">
+      <van-picker
+        show-toolbar
+        :title="$t('title')"
+        :columns="$t('cascadeColumns')"
+        @cancel="onCancel"
+        @confirm="onConfirm"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('disableOption')">
+      <van-picker :columns="$t('disabledColumns')" />
+    </demo-block>
+
+    <demo-block :title="$t('setColumnValues')">
+      <van-picker :columns="columns" @change="onChange2" />
+    </demo-block>
+
+    <demo-block :title="$t('loadingStatus')">
+      <van-picker loading :columns="columns" />
     </demo-block>
 
     <demo-block :title="$t('withPopup')">
@@ -30,72 +66,74 @@
       <van-popup v-model="showPicker" position="bottom">
         <van-picker
           show-toolbar
-          :columns="$t('column1')"
+          :columns="$t('textColumns')"
           @cancel="onCancel2"
           @confirm="onConfirm2"
         />
       </van-popup>
     </demo-block>
-
-    <demo-block :title="$t('title2')">
-      <van-picker :columns="$t('column2')" />
-    </demo-block>
-
-    <demo-block :title="$t('title4')">
-      <van-picker :columns="columns" @change="onChange2" />
-    </demo-block>
-
-    <demo-block :title="$t('loadingStatus')">
-      <van-picker loading :columns="columns" />
-    </demo-block>
   </demo-section>
 </template>
 
 <script>
+import { dateColumns, cascadeColumns } from './data';
+
 export default {
   i18n: {
     'zh-CN': {
       city: '城市',
-      title2: '禁用选项',
-      title3: '展示顶部栏',
-      title4: '多列联动',
-      defaultIndex: '默认选中项',
+      cascade: '级联选择',
       withPopup: '搭配弹出层使用',
       chooseCity: '选择城市',
-      column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-      column2: [{ text: '杭州', disabled: true }, { text: '宁波' }, { text: '温州' }],
+      showToolbar: '展示顶部栏',
+      dateColumns: dateColumns['zh-CN'],
+      defaultIndex: '默认选中项',
+      disableOption: '禁用选项',
+      cascadeColumns: cascadeColumns['zh-CN'],
+      multipleColumns: '多列选择',
+      setColumnValues: '动态设置选项',
+      textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      disabledColumns: [
+        { text: '杭州', disabled: true },
+        { text: '宁波' },
+        { text: '温州' },
+      ],
       column3: {
         浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-        福建: ['福州', '厦门', '莆田', '三明', '泉州']
+        福建: ['福州', '厦门', '莆田', '三明', '泉州'],
       },
-      toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`
+      toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
     },
     'en-US': {
       city: 'City',
-      title2: 'Disable Option',
-      title3: 'Show Toolbar',
-      title4: 'Multi Columns',
-      defaultIndex: 'Default Index',
+      cascade: 'Cascade',
       withPopup: 'With Popup',
       chooseCity: 'Choose City',
-      column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-      column2: [
+      showToolbar: 'Show Toolbar',
+      dateColumns: dateColumns['en-US'],
+      defaultIndex: 'Default Index',
+      disableOption: 'Disable Option',
+      cascadeColumns: cascadeColumns['en-US'],
+      multipleColumns: 'Multiple Columns',
+      setColumnValues: 'Set Column Values',
+      textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      disabledColumns: [
         { text: 'Delaware', disabled: true },
         { text: 'Florida' },
-        { text: 'Georqia' }
+        { text: 'Georqia' },
       ],
       column3: {
         Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-        Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas']
+        Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
       },
-      toastContent: (value, index) => `Value: ${value}, Index：${index}`
-    }
+      toastContent: (value, index) => `Value: ${value}, Index：${index}`,
+    },
   },
 
   data() {
     return {
       showPicker: false,
-      fieldValue: ''
+      fieldValue: '',
     };
   },
 
@@ -105,15 +143,15 @@ export default {
       return [
         {
           values: Object.keys(column),
-          className: 'column1'
+          className: 'column1',
         },
         {
           values: column[Object.keys(column)[0]],
           className: 'column2',
-          defaultIndex: 2
-        }
+          defaultIndex: 2,
+        },
       ];
-    }
+    },
   },
 
   methods: {
@@ -144,7 +182,7 @@ export default {
 
     onCancel2() {
       this.showPicker = false;
-    }
-  }
+    },
+  },
 };
 </script>

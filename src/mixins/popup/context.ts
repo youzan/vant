@@ -12,5 +12,5 @@ export const context = {
 
   get top(): StackItem {
     return this.stack[this.stack.length - 1];
-  }
+  },
 };

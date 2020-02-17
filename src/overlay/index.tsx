@@ -1,3 +1,4 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
@@ -32,7 +33,7 @@ function Overlay(
 ) {
   const style: { [key: string]: any } = {
     zIndex: props.zIndex,
-    ...props.customStyle
+    ...props.customStyle,
   };
 
   if (isDef(props.duration)) {
@@ -56,13 +57,10 @@ function Overlay(
 
 Overlay.props = {
   show: Boolean,
+  zIndex: [Number, String],
   duration: [Number, String],
   className: null as any,
   customStyle: Object,
-  zIndex: {
-    type: [Number, String],
-    default: 1
-  },
 };
 
 export default createComponent<OverlayProps, OverlayEvents>(Overlay);

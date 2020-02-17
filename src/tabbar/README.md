@@ -2,11 +2,12 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Tabbar, TabbarItem } from 'vant';
 
-Vue.use(Tabbar).use(TabbarItem);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
 ```
 
 ## Usage
@@ -22,7 +23,7 @@ Vue.use(Tabbar).use(TabbarItem);
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -43,7 +44,7 @@ export default {
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -83,7 +84,7 @@ Use `icon` slot to custom icon
 </van-tabbar>
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -125,6 +126,8 @@ export default {
 ```
 
 ```js
+import { Notify } from 'vant';
+
 export default {
   methods: {
     onChange(index) {
@@ -140,18 +143,10 @@ export default {
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item
-    replace
-    to="/home"
-    icon="home-o"
-  >
+  <van-tabbar-item replace to="/home" icon="home-o">
     Tab
   </van-tabbar-item>
-  <van-tabbar-item
-    replace
-    to="/search"
-    icon="search"
-  >
+  <van-tabbar-item replace to="/search" icon="search">
     Tab
   </van-tabbar-item>
 </van-tabbar>
@@ -161,16 +156,16 @@ export default {
 
 ### Tabbar Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Identifier of current tab | *string \| number* | `0` | - |
-| fixed | Whether to fixed bottom | *boolean* | `true` | - |
-| border | Whether to show border | *boolean* | `true` | - |
-| z-index | Z-index | *number* | `1` | - |
-| active-color | Color of active tab item | *string* | `#1989fa` | - |
-| inactive-color | Color of inactive tab item | *string* | `#7d7e80` | - |
-| route | Whether to enable route mode | *boolean* | `false` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Identifier of current tab | *number \| string* | `0` |
+| fixed | Whether to fixed bottom | *boolean* | `true` |
+| border | Whether to show border | *boolean* | `true` |
+| z-index | Z-index | *number \| string* | `1` |
+| active-color | Color of active tab item | *string* | `#1989fa` |
+| inactive-color | Color of inactive tab item | *string* | `#7d7e80` |
+| route | Whether to enable route mode | *boolean* | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 
 ### Tabbar Events
 
@@ -180,15 +175,15 @@ export default {
 
 ### TabbarItem Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| name | Identifier | *string \| number* | Item index | - |
-| icon | Icon name | *string* | - | - |
-| dot | Whether to show red dot | *boolean* | - | - |
-| info | Content of the badge | *string \| number* | - | - |
-| url | Link | *string* | - | - |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - | - |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| name | Identifier | *number \| string* | Item index |
+| icon | Icon name | *string* | - |
+| dot | Whether to show red dot | *boolean* | - |
+| info | Content of the badge | *number \| string* | - |
+| url | Link | *string* | - |
+| to | Target route of the link, same as to of vue-router | *string \| object* | - |
+| replace | If true, the navigation will not leave a history record | *boolean* | `false` |
 
 ### TabbarItem Slots
 

@@ -2,8 +2,10 @@
 
 .van-slider {
   position: relative;
+  width: 100%;
   background-color: @slider-inactive-background-color;
   border-radius: @border-radius-max;
+  cursor: pointer;
 
   // use pseudo element to expand click area
   &::before {
@@ -17,6 +19,7 @@
 
   &__bar {
     position: relative;
+    height: @slider-bar-height;
     background-color: @slider-active-background-color;
     border-radius: inherit;
     transition: width @animation-duration-fast;
@@ -34,15 +37,22 @@
       top: 50%;
       right: 0;
       transform: translate3d(50%, -50%, 0);
+      cursor: grab;
     }
   }
 
   &--disabled {
+    cursor: not-allowed;
     opacity: @slider-disabled-opacity;
+
+    .van-slider__button-wrapper {
+      cursor: not-allowed;
+    }
   }
 
   &--vertical {
     display: inline-block;
+    width: @slider-bar-height;
     height: 100%;
 
     .van-slider__button-wrapper {

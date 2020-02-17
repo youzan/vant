@@ -1,34 +1,19 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-slider
-        v-model="value1"
-        @change="onChange"
-      />
+      <van-slider v-model="value1" @change="onChange" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-slider
-        v-model="value2"
-        :min="-50"
-        :max="50"
-        @change="onChange"
-      />
+      <van-slider v-model="value2" :min="-50" :max="50" @change="onChange" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-slider
-        v-model="value3"
-        disabled
-      />
+      <van-slider v-model="value3" disabled />
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-slider
-        v-model="value4"
-        :step="10"
-        @change="onChange"
-      />
+      <van-slider v-model="value4" :step="10" @change="onChange" />
     </demo-block>
 
     <demo-block :title="$t('customStyle')">
@@ -41,10 +26,7 @@
     </demo-block>
 
     <demo-block :title="$t('customButton')">
-      <van-slider
-        v-model="value6"
-        active-color="#ee0a24"
-      >
+      <van-slider v-model="value6" active-color="#ee0a24">
         <template #button>
           <div class="custom-button">{{ value6 }}</div>
         </template>
@@ -53,11 +35,7 @@
 
     <demo-block v-if="!isWeapp" :title="$t('vertical')">
       <div :style="{ height: '120px', paddingLeft: '30px' }">
-        <van-slider
-          v-model="value7"
-          vertical
-          @change="onChange"
-        />
+        <van-slider v-model="value7" vertical @change="onChange" />
       </div>
     </demo-block>
   </demo-section>
@@ -74,7 +52,7 @@ export default {
       customStyle: '自定义样式',
       customButton: '自定义按钮',
       text: '当前值：',
-      vertical: '垂直方向'
+      vertical: '垂直方向',
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -84,8 +62,8 @@ export default {
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
       text: 'Current value: ',
-      vertical: 'Vertical'
-    }
+      vertical: 'Vertical',
+    },
   },
 
   data() {
@@ -96,15 +74,15 @@ export default {
       value4: 50,
       value5: 50,
       value6: 50,
-      value7: 50
+      value7: 50,
     };
   },
 
   methods: {
     onChange(value) {
       this.$toast(this.$t('text') + value);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -112,10 +90,15 @@ export default {
 @import '../../style/var';
 
 .demo-slider {
+  background: @white;
   user-select: none;
 
-  .van-slider {
-    margin: 0 @padding-md @padding-xl;
+  .van-doc-demo-block {
+    padding: 0 @padding-md 20px;
+  }
+
+  .van-doc-demo-block__title {
+    padding-left: 0;
   }
 
   .custom-button {
@@ -126,10 +109,6 @@ export default {
     text-align: center;
     background-color: @red;
     border-radius: 100px;
-  }
-
-  .van-doc-demo-block__title {
-    padding-top: 25px;
   }
 }
 </style>

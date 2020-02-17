@@ -28,13 +28,13 @@ exports[`renders demo correctly 1`] = `
         <div class="van-contact-edit__fields">
           <div class="van-cell van-field">
             <div class="van-cell__title van-field__label"><span>张三</span></div>
-            <div class="van-cell__value">
+            <div class="van-cell__value van-field__value">
               <div class="van-field__body"><input type="text" placeholder="请填写姓名" class="van-field__control"></div>
             </div>
           </div>
           <div class="van-cell van-field">
             <div class="van-cell__title van-field__label"><span>电话</span></div>
-            <div class="van-cell__value">
+            <div class="van-cell__value van-field__value">
               <div class="van-field__body"><input type="tel" placeholder="请填写电话" class="van-field__control"></div>
             </div>
           </div>

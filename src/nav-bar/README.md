@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { NavBar } from 'vant';
 
@@ -25,6 +25,8 @@ Vue.use(NavBar);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onClickLeft() {
@@ -49,15 +51,15 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| title | Title | *string* | `''` | - |
-| left-text | Left Text | *string* | `''` | - |
-| right-text | Right Text | *string* | `''` | - |
-| left-arrow | Whether to show left arrow | *boolean* | `false` | - |
-| fixed | Whether to fixed top | *boolean* | `false` | - |
-| border | Whether to show bottom border | *boolean* | `true` | - |
-| z-index | Z-index | *number* | `1` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| title | Title | *string* | `''` |
+| left-text | Left Text | *string* | `''` |
+| right-text | Right Text | *string* | `''` |
+| left-arrow | Whether to show left arrow | *boolean* | `false` |
+| fixed | Whether to fixed top | *boolean* | `false` |
+| border | Whether to show bottom border | *boolean* | `true` |
+| z-index | Z-index | *number \| string* | `1` |
 
 ### Slots
 

@@ -2,7 +2,7 @@
 
 ### 引入
 
-``` javascript
+```js
 import Vue from 'vue';
 import { CountDown } from 'vant';
 
@@ -34,10 +34,7 @@ export default {
 通过`format`属性设置倒计时文本的内容
 
 ```html
-<van-count-down
-  :time="time"
-  format="DD 天 HH 时 mm 分 ss 秒"
-/>
+<van-count-down :time="time" format="DD 天 HH 时 mm 分 ss 秒" />
 ```
 
 ### 毫秒级渲染
@@ -45,11 +42,7 @@ export default {
 倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染
 
 ```html
-<van-count-down
-  millisecond
-  :time="time"
-  format="HH:mm:ss:SS"
-/>
+<van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
 ```
 
 ### 自定义样式
@@ -99,6 +92,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     start() {
@@ -111,7 +106,7 @@ export default {
       this.$refs.countDown.reset();
     },
     finish() {
-      this.$toast('倒计时结束');
+      Toast('倒计时结束');
     }
   }
 }
@@ -121,12 +116,12 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| time | 倒计时时长，单位毫秒 | *number* | - | - |
-| format | 时间格式 | *string* | `HH:mm:ss` | - |
-| auto-start | 是否自动开始倒计时 | *boolean* | `true` | - |
-| millisecond | 是否开启毫秒级渲染 | *boolean* | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| time | 倒计时时长，单位毫秒 | *number \| string* | `0` |
+| format | 时间格式 | *string* | `HH:mm:ss` |
+| auto-start | 是否自动开始倒计时 | *boolean* | `true` |
+| millisecond | 是否开启毫秒级渲染 | *boolean* | `false` |
 
 ### format 格式
 
@@ -145,14 +140,15 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | finish | 倒计时结束时触发 | - |
+| change `v2.4.4` | 倒计时变化时触发 | *timeData: TimeData* |
 
 ### Slots
 
 | 名称 | 说明 | SlotProps |
 |------|------|------|
-| default | 自定义内容 | timeData |
+| default | 自定义内容 | *timeData: TimeData* |
 
-### timeData 格式
+### TimeData 格式
 
 | 名称 | 说明 | 类型 |
 |------|------|------|
@@ -164,10 +160,18 @@ export default {
 
 ### 方法
 
-通过 [ref](https://cn.vuejs.org/v2/api/#ref) 可以获取到 CountDown 实例并调用实例方法
+通过 ref 可以获取到 CountDown 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
 | start | 开始倒计时 | - | - |
 | pause | 暂停倒计时 | - | - |
 | reset | 重设倒计时，若`auto-start`为`true`，重设后会自动开始倒计时 | - | - |
+
+## 常见问题
+
+### 在 iOS 系统上倒计时不生效？
+
+如果你遇到了在 iOS 上倒计时不生效的问题，请确认在创建 Date 对象时没有使用`new Date('2020-01-01')`这样的写法，iOS 不支持以中划线分隔的日期格式，正确写法是`new Date('2020/01/01')`。
+
+对此问题的详细解释：[stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios)。

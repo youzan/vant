@@ -1,6 +1,9 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
+
+// Components
 import Field from '../field';
 
 // Types
@@ -43,7 +46,11 @@ function Search(
 ) {
   function Label() {
     if (slots.label || props.label) {
-      return <div class={bem('label')}>{slots.label ? slots.label() : props.label}</div>;
+      return (
+        <div class={bem('label')}>
+          {slots.label ? slots.label() : props.label}
+        </div>
+      );
     }
   }
 
@@ -79,8 +86,8 @@ function Search(
           emit(ctx, 'search', props.value);
         }
         emit(ctx, 'keypress', event);
-      }
-    }
+      },
+    },
   };
 
   const inheritData = inherit(ctx);
@@ -103,7 +110,7 @@ function Search(
           clearable={props.clearable}
           scopedSlots={{
             'left-icon': slots['left-icon'],
-            'right-icon': slots['right-icon']
+            'right-icon': slots['right-icon'],
           }}
           {...fieldData}
         />
@@ -119,22 +126,19 @@ Search.props = {
   rightIcon: String,
   actionText: String,
   showAction: Boolean,
+  background: String,
   shape: {
     type: String,
-    default: 'square'
+    default: 'square',
   },
   clearable: {
     type: Boolean,
-    default: true
-  },
-  background: {
-    type: String,
-    default: '#fff'
+    default: true,
   },
   leftIcon: {
     type: String,
-    default: 'search'
-  }
+    default: 'search',
+  },
 };
 
 export default createComponent<SearchProps, SearchEvents, SearchSlots>(Search);

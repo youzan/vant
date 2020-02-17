@@ -1,36 +1,10 @@
-import logger from 'signale';
+import ora from 'ora';
+import chalk from 'chalk';
+import consola from 'consola';
+import { ROOT } from '../common/constant';
 
-logger.config({
-  displayTimestamp: true
-});
-
-const methods = ['success', 'start', 'error'] as const;
-
-type Stepper = Pick<typeof logger, typeof methods[number]>;
-
-export function getStepper(totalStep: number) {
-  const stepper = {} as Stepper;
-  let currentStep = 0;
-
-  methods.forEach(key => {
-    stepper[key] = (message, ...args) => {
-      const prefix = `[${++currentStep}/${totalStep}] `;
-      return logger[key](prefix + message, ...args);
-    };
-  });
-
-  return stepper;
+export function slimPath(path: string) {
+  return chalk.yellow(path.replace(ROOT, ''));
 }
 
-export function getInteractiveLogger() {
-  const interactive = new logger.Signale({
-    interactive: true,
-    config: {
-      displayTimestamp: true
-    }
-  });
-
-  return interactive;
-}
-
-export { logger };
+export { ora, consola };

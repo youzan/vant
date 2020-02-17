@@ -7,10 +7,12 @@
 
     <demo-block :title="$t('color')">
       <van-loading color="#1989fa" />
-      <van-loading
-        type="spinner"
-        color="#1989fa"
-      />
+      <van-loading type="spinner" color="#1989fa" />
+    </demo-block>
+
+    <demo-block :title="$t('size')">
+      <van-loading size="24" />
+      <van-loading type="spinner" size="24" />
     </demo-block>
 
     <demo-block :title="$t('text')">
@@ -20,10 +22,7 @@
     </demo-block>
 
     <demo-block :title="$t('vertical')">
-      <van-loading
-        size="24px"
-        vertical
-      >
+      <van-loading size="24px" vertical>
         {{ $t('loading') }}
       </van-loading>
     </demo-block>
@@ -35,22 +34,28 @@ export default {
   i18n: {
     'zh-CN': {
       type: '加载类型',
-      color: '自定义颜色',
       text: '加载文案',
-      vertical: '垂直排列'
+      size: '自定义大小',
+      color: '自定义颜色',
+      vertical: '垂直排列',
     },
     'en-US': {
       type: 'Type',
-      color: 'Color',
       text: 'Text',
-      vertical: 'Vertical'
-    }
-  }
+      size: 'Size',
+      color: 'Color',
+      vertical: 'Vertical',
+    },
+  },
 };
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-loading {
+  background: @white;
+
   .van-loading {
     display: inline-block;
     margin: 5px 0 5px 20px;

@@ -9,7 +9,15 @@ Vant Cli 是一个 Vue 组件库构建工具，通过 Vant Cli 可以快速搭�
 - 内置 ESlint、Stylelint 校验规则，提交代码时自动执行校验
 - 构建后的组件库默认支持按需引入、主题定制、Tree Shaking
 
-### 安装
+### 快速上手
+
+执行以下命令可以快速创建一个基于 Vant Cli 的项目：
+
+```bash
+npx create-vant-cli-app
+```
+
+### 手动安装
 
 ```shell
 # 通过 npm 安装
@@ -56,7 +64,7 @@ yarn add @vant/cli --dev
   "prettier": {
     "singleQuote": true
   },
-  "browserslist": ["Android >= 4.0", "iOS >= 7"]
+  "browserslist": ["Android >= 4.0", "iOS >= 8"]
 }
 ```
 
@@ -76,12 +84,20 @@ yarn add @vant/cli --dev
 
 ### release
 
-发布组件库，发布前会自动执行 build 命令
+发布组件库，发布前会自动执行 build 和 changelog 命令
 
 ### changelog
 
-基于 Github 的 Pull Request 生成更新日志，仅对 Github 仓库有效
+基于 commit 记录生成更新日志
 
 ### commit-lint
 
 校验 commit message 的格式是否符合规范，需要配合`husky`在提交 commit 时触发
+
+## 配置
+
+参见[配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
+
+## 更新日志
+
+参见[更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)。

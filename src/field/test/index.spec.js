@@ -22,8 +22,8 @@ test('click icon event', () => {
     propsData: {
       value: 'a',
       leftIcon: 'contact',
-      rightIcon: 'search'
-    }
+      rightIcon: 'search',
+    },
   });
 
   wrapper.find('.van-field__left-icon').trigger('click');
@@ -33,42 +33,58 @@ test('click icon event', () => {
   expect(wrapper.emitted('click-right-icon')[0][0]).toBeTruthy();
 });
 
-test('keypress event', () => {
+test('number type', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: '',
-      type: 'number'
-    }
+      type: 'number',
+    },
   });
 
-  const fn = jest.fn();
-  const { calls } = fn.mock;
-  const press = keyCode => wrapper.vm.onKeypress({
-    keyCode,
-    preventDefault: fn
+  const input = wrapper.find('input');
+
+  input.element.value = '1';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[0][0]).toEqual('1');
+
+  input.element.value = '1.2.';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('1.2');
+
+  input.element.value = '123abc';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[2][0]).toEqual('123');
+});
+
+test('digit type', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: '',
+      type: 'digit',
+    },
   });
 
-  press(0);
-  expect(calls.length).toBe(1);
+  const input = wrapper.find('input');
 
-  press(50);
-  expect(calls.length).toBe(1);
+  input.element.value = '1';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[0][0]).toEqual('1');
 
-  wrapper.setProps({ value: '0.1' });
-  press(46);
-  expect(calls.length).toBe(2);
+  input.element.value = '1.';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('1');
 
-  wrapper.setProps({ type: 'text' });
-  press(0);
-  expect(calls.length).toBe(2);
+  input.element.value = '123abc';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[2][0]).toEqual('123');
 });
 
 test('render textarea', async () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
-      autosize: true
-    }
+      autosize: true,
+    },
   });
 
   await later();
@@ -79,8 +95,8 @@ test('autosize textarea field', () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
-      autosize: {}
-    }
+      autosize: {},
+    },
   });
 
   const value = '1'.repeat(20);
@@ -96,15 +112,15 @@ test('autosize object', async () => {
       type: 'textarea',
       autosize: {
         maxHeight: 100,
-        minHeight: 50
-      }
-    }
+        minHeight: 50,
+      },
+    },
   });
 
   const textarea = wrapper.find('.van-field__control');
 
   await later();
-  expect(textarea.element.style.height).toEqual(('50px'));
+  expect(textarea.element.style.height).toEqual('50px');
 });
 
 test('blur method', () => {
@@ -131,12 +147,12 @@ test('focus method', () => {
 test('maxlength', async () => {
   const wrapper = mount(Field, {
     attrs: {
-      maxlength: 3
+      maxlength: 3,
     },
     propsData: {
       value: 1234,
-      type: 'number'
-    }
+      type: 'number',
+    },
   });
 
   const input = wrapper.find('input');
@@ -154,8 +170,8 @@ test('clearable', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'test',
-      clearable: true
-    }
+      clearable: true,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -176,8 +192,8 @@ test('render input slot', () => {
       </field>
     `,
     components: {
-      Field
-    }
+      Field,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -191,8 +207,8 @@ test('render label slot', () => {
       </field>
     `,
     components: {
-      Field
-    }
+      Field,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -201,8 +217,8 @@ test('render label slot', () => {
 test('size prop', () => {
   const wrapper = mount(Field, {
     propsData: {
-      size: 'large'
-    }
+      size: 'large',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -211,8 +227,8 @@ test('label-width prop with unit', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelWidth: '10rem'
-    }
+      labelWidth: '10rem',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -221,8 +237,8 @@ test('label-width prop without unit', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelWidth: 100
-    }
+      labelWidth: 100,
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -231,8 +247,8 @@ test('label-class prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       label: 'Label',
-      labelClass: 'custom-label-class'
-    }
+      labelClass: 'custom-label-class',
+    },
   });
   expect(wrapper).toMatchSnapshot();
 });
@@ -241,8 +257,60 @@ test('arrow-direction prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       isLink: true,
-      arrowDirection: 'up'
-    }
+      arrowDirection: 'up',
+    },
   });
   expect(wrapper).toMatchSnapshot();
+});
+
+test('formatter prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'abc123',
+      formatter: value => value.replace(/\d/g, ''),
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  input.trigger('input');
+  expect(wrapper.emitted('input')[0][0]).toEqual('abc');
+
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('efg');
+});
+
+test('reach max word-limit', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'foo',
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('name prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      name: 'foo',
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('call focus method before mounted', done => {
+  mount(Field, {
+    created() {
+      this.focus();
+      this.blur();
+      done();
+    },
+  });
+});
+
+test('destroy field', () => {
+  mount(Field).destroy();
 });

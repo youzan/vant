@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Notify } from 'vant';
 
@@ -66,14 +66,14 @@ export default {
 
 ### Options
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| type | Can be set to `primary` `success` `warning` | *string* | `danger` | 2.1.6 |
-| message | Message | *string* | - | - |
-| duration | Duration(ms), won't disappear if value is 0 | *number* | `3000` | - |
-| color | Message color | *string* | `#fff` | | - |
-| background | Background color | *string* | - | - |
-| className | Custom className | *any* | - | - |
-| onClick | Callback function after click | *Function* | - | - |
-| onOpened | Callback function after opened | *Function* | - | - |
-| onClose | Callback function after close | *Function* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| type `v2.1.6` | Can be set to `primary` `success` `warning` | *string* | `danger` |
+| message | Message | *string* | - |
+| duration | Duration(ms), won't disappear if value is 0 | *number \| string* | `3000` |
+| color | Message color | *string* | `white` | |
+| background | Background color | *string* | - |
+| className | Custom className | *any* | - |
+| onClick | Callback function after click | *Function* | - |
+| onOpened | Callback function after opened | *Function* | - |
+| onClose | Callback function after close | *Function* | - |

@@ -6,7 +6,7 @@ Calendar component for selecting dates or date ranges
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Calendar } from 'vant';
 
@@ -21,7 +21,6 @@ The `confirm` event will be triggered after the date selection is completed
 
 ```html
 <van-cell title="Select Single Date" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" @confirm="onConfirm" />
 ```
 
@@ -33,7 +32,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -52,7 +50,6 @@ You can select a date range after setting `type` to` range`. In range mode, the 
 
 ```html
 <van-cell title="Select Date Range" :value="date" @click="show = true" />
-
 <van-calendar v-model="show" type="range" @confirm="onConfirm" />
 ```
 
@@ -64,7 +61,6 @@ export default {
       show: false
     };
   },
-
   methods: {
     formatDate(date) {
       return `${date.getMonth() + 1}/${date.getDate()}`;
@@ -184,6 +180,18 @@ Use `position` to custom popup position，can be set to `top`、`left`、`right`
 />
 ```
 
+### Max Range
+
+When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days
+
+```html
+<van-calendar
+  type="range"
+  :max-range="3"
+  :style="{ height: '500px' }"
+/>
+```
+
 ### Tiled display
 
 Set `poppable` to `false`, the calendar will be displayed directly on the page instead of appearing as a popup
@@ -201,26 +209,30 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Whether to show calendar | *boolean* | `false` | - |
-| type | Type，can be set to `single` `range` | *string* | `single` | - |
-| title | Title of calendar | *string* | `Calendar` | - |
-| color | Color for the bottom button and selected date | *string* | `#ee0a24` | - |
-| min-date | Min date | *Date*  | Today | - |
-| max-date | Max date | *Date*  | Six months after the today | - |
-| default-date | Default selected date | *Date \| Date[]* | Today | - |
-| row-height | Row height | *number* | `64` | - |
-| formatter | Day formatter | *(day: Day) => Day* | - | - |
-| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` | - |
-| poppable | Whether to show the calendar inside a popup | *boolean* | `true` | - |
-| round | Whether to show round corner | *boolean* | `true` | - |
-| show-mark | Whether to show background month mark | *boolean* | `true` | - |
-| show-confirm | Whether to show confirm button | *boolean* | `true` | - |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` | - |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` | - |
-| confirm-text | Confirm button text | *string* | `Confirm` | - |
-| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show calendar | *boolean* | `false` |
+| type | Type，can be set to `single` `range` | *string* | `single` |
+| title | Title of calendar | *string* | `Calendar` |
+| color | Color for the bottom button and selected date | *string* | `#ee0a24` |
+| min-date | Min date | *Date*  | Today |
+| max-date | Max date | *Date*  | Six months after the today |
+| default-date | Default selected date | *Date \| Date[]* | Today |
+| row-height | Row height | *number \| string* | `64` |
+| formatter | Day formatter | *(day: Day) => Day* | - |
+| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
+| poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
+| round | Whether to show round corner | *boolean* | `true` |
+| show-mark | Whether to show background month mark | *boolean* | `true` |
+| show-confirm | Whether to show confirm button | *boolean* | `true` |
+| close-on-popstate `v2.4.4` | Whether to close when popstate | *boolean* | `false` |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| confirm-text | Confirm button text | *string* | `Confirm` |
+| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
+| max-range `v2.4.3` | Number of selectable days | *number \| string* | - |
+| range-prompt `v2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
+| get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 
 ### Data Structure of Day
 
@@ -237,8 +249,8 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 | Event | Description | Arguments |
 |------|------|------|
-| select | Triggered when select date | value: Date \| Date[] |
-| confirm | Triggered after date selection is complete，if `show-confirm` is` true`, it is triggered after clicking the confirm button | value: Date \| Date[] |
+| select | Triggered when select date | *value: Date \| Date[]* |
+| confirm | Triggered after date selection is complete，if `show-confirm` is` true`, it is triggered after clicking the confirm button | *value: Date \| Date[]* |
 
 ### Slots
 

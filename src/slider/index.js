@@ -1,49 +1,58 @@
 import { createNamespace, addUnit } from '../utils';
-import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/dom/event';
+import { TouchMixin } from '../mixins/touch';
+import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('slider');
 
 export default createComponent({
-  mixins: [TouchMixin],
+  mixins: [TouchMixin, FieldMixin],
 
   props: {
     disabled: Boolean,
     vertical: Boolean,
+    barHeight: [Number, String],
+    buttonSize: [Number, String],
     activeColor: String,
     inactiveColor: String,
     min: {
-      type: Number,
-      default: 0
+      type: [Number, String],
+      default: 0,
     },
     max: {
-      type: Number,
-      default: 100
+      type: [Number, String],
+      default: 100,
     },
     step: {
-      type: Number,
-      default: 1
+      type: [Number, String],
+      default: 1,
     },
     value: {
       type: Number,
-      default: 0
+      default: 0,
     },
-    barHeight: {
-      type: [Number, String],
-      default: 2
-    }
   },
 
   data() {
     return {
-      dragStatus: ''
+      dragStatus: '',
     };
   },
 
   computed: {
     range() {
       return this.max - this.min;
-    }
+    },
+
+    buttonStyle() {
+      if (this.buttonSize) {
+        const size = addUnit(this.buttonSize);
+        return {
+          width: size,
+          height: size,
+        };
+      }
+    },
   },
 
   created() {
@@ -107,9 +116,11 @@ export default createComponent({
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
-      const delta = this.vertical ? event.clientY - rect.top : event.clientX - rect.left;
+      const delta = this.vertical
+        ? event.clientY - rect.top
+        : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
-      const value = (delta / total) * this.range + this.min;
+      const value = +this.min + (delta / total) * this.range;
 
       this.startValue = this.value;
       this.updateValue(value, true);
@@ -129,15 +140,16 @@ export default createComponent({
 
     format(value) {
       return (
-        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step
+        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) *
+        this.step
       );
-    }
+    },
   },
 
   render() {
     const { vertical } = this;
     const style = {
-      background: this.inactiveColor
+      background: this.inactiveColor,
     };
 
     const mainAxis = vertical ? 'height' : 'width';
@@ -146,7 +158,7 @@ export default createComponent({
     const barStyle = {
       [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
       [crossAxis]: addUnit(this.barHeight),
-      background: this.activeColor
+      background: this.activeColor,
     };
 
     if (this.dragStatus) {
@@ -170,10 +182,12 @@ export default createComponent({
             aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
             class={bem('button-wrapper')}
           >
-            {this.slots('button') || <div class={bem('button')} />}
+            {this.slots('button') || (
+              <div class={bem('button')} style={this.buttonStyle} />
+            )}
           </div>
         </div>
       </div>
     );
-  }
+  },
 });

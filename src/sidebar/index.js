@@ -7,17 +7,17 @@ export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
   model: {
-    prop: 'activeKey'
+    prop: 'activeKey',
   },
 
   props: {
     activeKey: {
       type: [Number, String],
-      default: 0
-    }
+      default: 0,
+    },
   },
 
   render() {
     return <div class={bem()}>{this.slots()}</div>;
-  }
+  },
 });

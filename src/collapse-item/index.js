@@ -1,9 +1,14 @@
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { raf, doubleRaf } from '../utils/dom/raf';
+
+// Mixins
+import { ChildrenMixin } from '../mixins/relation';
+
+// Components
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
@@ -18,14 +23,14 @@ export default createComponent({
     disabled: Boolean,
     isLink: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
 
   data() {
     return {
       show: null,
-      inited: null
+      inited: null,
     };
   },
 
@@ -53,7 +58,7 @@ export default createComponent({
       return accordion
         ? value === this.currentName
         : value.some(name => name === this.currentName);
-    }
+    },
   },
 
   created() {
@@ -96,7 +101,7 @@ export default createComponent({
           this.onTransitionEnd();
         }
       });
-    }
+    },
   },
 
   methods: {
@@ -106,9 +111,10 @@ export default createComponent({
       }
 
       const { parent, currentName } = this;
-      const name = parent.accordion && currentName === parent.value ? '' : currentName;
+      const close = parent.accordion && currentName === parent.value;
+      const name = close ? '' : currentName;
 
-      this.parent.switch(name, !this.expanded);
+      parent.switch(name, !this.expanded);
     },
 
     onTransitionEnd() {
@@ -162,7 +168,7 @@ export default createComponent({
           </div>
         );
       }
-    }
+    },
   },
 
   render() {
@@ -172,5 +178,5 @@ export default createComponent({
         {this.genContent()}
       </div>
     );
-  }
+  },
 });

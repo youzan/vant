@@ -3,6 +3,7 @@
 .van-field {
   &__label {
     flex: none;
+    box-sizing: border-box;
     width: @field-label-width;
 
     &--center {
@@ -10,8 +11,13 @@
     }
 
     &--right {
+      padding-right: @padding-md;
       text-align: right;
     }
+  }
+
+  &__value {
+    overflow: visible;
   }
 
   &__body {
@@ -38,28 +44,41 @@
 
     &:disabled {
       color: @field-input-disabled-text-color;
-      -webkit-text-fill-color: @field-input-disabled-text-color; // fix disabled color in iOS
+      -webkit-text-fill-color: currentColor; // fix disabled color in iOS
       background-color: transparent;
+      cursor: not-allowed;
       opacity: 1;
     }
 
+    &:read-only {
+      cursor: default;
+    }
+
     &--center {
+      justify-content: center;
       text-align: center;
     }
 
     &--right {
+      justify-content: flex-end;
       text-align: right;
     }
 
+    &--custom {
+      display: flex;
+      align-items: center;
+      min-height: @cell-line-height;
+    }
+
     // for ios wechat
-    &[type="date"],
-    &[type="time"],
-    &[type="datetime-local"] {
+    &[type='date'],
+    &[type='time'],
+    &[type='datetime-local'] {
       min-height: @cell-line-height;
     }
 
     // for safari
-    &[type="search"] {
+    &[type='search'] {
       -webkit-appearance: none;
     }
   }
@@ -81,6 +100,7 @@
   &__clear {
     color: @field-clear-icon-color;
     font-size: @field-clear-icon-size;
+    cursor: pointer;
   }
 
   &__left-icon .van-icon,
@@ -125,12 +145,18 @@
     text-align: right;
   }
 
+  &__word-num {
+    &--full {
+      color: @field-word-num-full-color;
+    }
+  }
+
   &--error {
     .van-field__control {
       &,
       &::placeholder {
         color: @field-input-error-text-color;
-        -webkit-text-fill-color: @field-input-error-text-color;
+        -webkit-text-fill-color: currentColor;
       }
     }
   }

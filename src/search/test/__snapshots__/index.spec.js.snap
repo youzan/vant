@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`action-text prop 1`] = `
-<div class="van-search van-search--show-action" style="background: rgb(255, 255, 255);">
+<div class="van-search van-search--show-action">
   <div class="van-search__content van-search__content--square">
     <div class="van-cell van-cell--borderless van-field">
       <div class="van-field__left-icon"><i class="van-icon van-icon-search">
           <!----></i></div>
-      <div class="van-cell__value van-cell__value--alone">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="search" class="van-field__control"></div>
       </div>
     </div>
@@ -16,13 +16,13 @@ exports[`action-text prop 1`] = `
 `;
 
 exports[`label slot 1`] = `
-<div class="van-search" style="background: rgb(255, 255, 255);">
+<div class="van-search">
   <div class="van-search__content van-search__content--square">
     <div class="van-search__label">Custom Label</div>
     <div class="van-cell van-cell--borderless van-field">
       <div class="van-field__left-icon"><i class="van-icon van-icon-search">
           <!----></i></div>
-      <div class="van-cell__value van-cell__value--alone">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="search" class="van-field__control"></div>
       </div>
     </div>
@@ -31,12 +31,12 @@ exports[`label slot 1`] = `
 `;
 
 exports[`left-icon prop 1`] = `
-<div class="van-search" style="background: rgb(255, 255, 255);">
+<div class="van-search">
   <div class="van-search__content van-search__content--square">
     <div class="van-cell van-cell--borderless van-field">
       <div class="van-field__left-icon"><i class="van-icon van-icon-setting-o">
           <!----></i></div>
-      <div class="van-cell__value van-cell__value--alone">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="search" class="van-field__control"></div>
       </div>
     </div>
@@ -45,12 +45,12 @@ exports[`left-icon prop 1`] = `
 `;
 
 exports[`right-icon prop 1`] = `
-<div class="van-search" style="background: rgb(255, 255, 255);">
+<div class="van-search">
   <div class="van-search__content van-search__content--square">
     <div class="van-cell van-cell--borderless van-field">
       <div class="van-field__left-icon"><i class="van-icon van-icon-search">
           <!----></i></div>
-      <div class="van-cell__value van-cell__value--alone">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="search" class="van-field__control">
           <div class="van-field__right-icon"><i class="van-icon van-icon-setting-o">
               <!----></i></div>
@@ -62,12 +62,12 @@ exports[`right-icon prop 1`] = `
 `;
 
 exports[`right-icon slot 1`] = `
-<div class="van-search" style="background: rgb(255, 255, 255);">
+<div class="van-search">
   <div class="van-search__content van-search__content--square">
     <div class="van-cell van-cell--borderless van-field">
       <div class="van-field__left-icon"><i class="van-icon van-icon-search">
           <!----></i></div>
-      <div class="van-cell__value van-cell__value--alone">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="search" class="van-field__control">
           <div class="van-field__right-icon">Custom Right Icon</div>
         </div>

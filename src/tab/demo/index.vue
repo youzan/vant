@@ -96,7 +96,7 @@
 
     <demo-block v-if="!isWeapp" :title="$t('title10')">
       <van-tabs scrollspy sticky>
-        <van-tab :title="$t('tab') + index" v-for="index in 10" :key="index">
+        <van-tab :title="$t('tab') + index" v-for="index in 8" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -119,7 +119,7 @@ export default {
       title9: '滑动切换',
       title10: '滚动导航',
       disabled: ' 已被禁用',
-      matchByName: '通过名称匹配'
+      matchByName: '通过名称匹配',
     },
     'en-US': {
       tab: 'Tab ',
@@ -134,15 +134,15 @@ export default {
       title9: 'Swipeable',
       title10: 'Scrollspy',
       disabled: ' is disabled',
-      matchByName: 'Match By Name'
-    }
+      matchByName: 'Match By Name',
+    },
   },
 
   data() {
     return {
       active: 2,
       activeName: 'b',
-      tabs: [1, 2, 3, 4]
+      tabs: [1, 2, 3, 4],
     };
   },
 
@@ -153,8 +153,8 @@ export default {
 
     onClick(index, title) {
       this.$toast(title);
-    }
-  }
+    },
+  },
 };
 </script>
 

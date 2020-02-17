@@ -13,13 +13,13 @@ export default createComponent({
     dot: Boolean,
     info: [Number, String],
     title: String,
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   computed: {
     select() {
       return this.index === +this.parent.activeKey;
-    }
+    },
   },
 
   methods: {
@@ -32,7 +32,7 @@ export default createComponent({
       this.parent.$emit('input', this.index);
       this.parent.$emit('change', this.index);
       route(this.$router, this);
-    }
+    },
   },
 
   render() {
@@ -47,5 +47,5 @@ export default createComponent({
         </div>
       </a>
     );
-  }
+  },
 });

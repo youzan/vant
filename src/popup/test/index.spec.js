@@ -18,8 +18,8 @@ test('reset z-index', () => {
     propsData: {
       value: true,
       zIndex: 10,
-      lockScroll: false
-    }
+      lockScroll: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -28,8 +28,8 @@ test('reset z-index', () => {
 test('popup lock scroll', () => {
   const wrapper1 = mount(Popup, {
     propsData: {
-      value: true
-    }
+      value: true,
+    },
   });
   expect(document.body.classList.contains('van-overflow-hidden')).toBeTruthy();
   triggerDrag(document, 0, 100);
@@ -37,8 +37,8 @@ test('popup lock scroll', () => {
 
   const wrapper2 = mount(Popup, {
     propsData: {
-      value: true
-    }
+      value: true,
+    },
   });
   wrapper1.vm.$destroy();
   expect(document.body.classList.contains('van-overflow-hidden')).toBeTruthy();
@@ -57,13 +57,13 @@ test('get container with parent', () => {
       </div>
     `,
     components: {
-      Popup
+      Popup,
     },
     data() {
       return {
-        getContainer: () => div1
+        getContainer: () => div1,
       };
-    }
+    },
   });
   const popup = wrapper.find('.van-popup').element;
 
@@ -83,8 +83,8 @@ test('get container with selector', () => {
       </div>
     `,
     components: {
-      Popup
-    }
+      Popup,
+    },
   });
 
   const dom1 = document.querySelector('.get-container-selector-1');
@@ -103,13 +103,13 @@ test('render overlay', async () => {
       </div>
     `,
     components: {
-      Popup
+      Popup,
     },
     data() {
       return {
-        getContainer: () => div
+        getContainer: () => div,
       };
-    }
+    },
   });
 
   await later();
@@ -126,15 +126,15 @@ test('watch overlay prop', async () => {
       </div>
     `,
     components: {
-      Popup
+      Popup,
     },
     data() {
       return {
         show: false,
         overlay: false,
-        getContainer: () => div
+        getContainer: () => div,
       };
-    }
+    },
   });
 
   await later();
@@ -164,17 +164,17 @@ test('close on click overlay', async () => {
       </div>
     `,
     components: {
-      Popup
+      Popup,
     },
     data() {
       return {
         value: true,
-        getContainer: () => div
+        getContainer: () => div,
       };
     },
     methods: {
-      onClickOverlay
-    }
+      onClickOverlay,
+    },
   });
 
   await later();
@@ -198,20 +198,32 @@ test('open & close event', () => {
 test('click event', () => {
   const wrapper = mount(Popup, {
     propsData: {
-      value: true
-    }
+      value: true,
+    },
   });
 
   wrapper.trigger('click');
   expect(wrapper.emitted('click')).toBeTruthy();
 });
 
-test('duration prop', () => {
+test('duration prop when position is center', () => {
   const wrapper = mount(Popup, {
     propsData: {
       value: true,
-      duration: 0.5
-    }
+      duration: 0.5,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('duration prop when position is top', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      duration: 0.5,
+      position: 'top',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -221,8 +233,8 @@ test('round prop', () => {
   const wrapper = mount(Popup, {
     propsData: {
       value: true,
-      round: true
-    }
+      round: true,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -232,8 +244,8 @@ test('closeable prop', () => {
   const wrapper = mount(Popup, {
     propsData: {
       value: true,
-      closeable: true
-    }
+      closeable: true,
+    },
   });
 
   wrapper.find('.van-popup__close-icon').trigger('click');
@@ -245,8 +257,8 @@ test('close-icon prop', () => {
     propsData: {
       value: true,
       closeable: true,
-      closeIcon: 'success'
-    }
+      closeIcon: 'success',
+    },
   });
 
   expect(wrapper).toMatchSnapshot();

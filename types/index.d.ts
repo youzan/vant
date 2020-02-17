@@ -3,6 +3,7 @@ import Vue from 'vue';
 import { VanComponent } from './component';
 import { AddressEdit } from './address-edit';
 import { Area } from './area';
+import { Calendar } from './calendar';
 import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
 import { CountDown } from './count-down';
@@ -10,6 +11,7 @@ import { DatetimePicker } from './datetime-picker';
 import { Dialog } from './dialog';
 import { DropdownItem } from './dropdown-item';
 import { Field } from './field';
+import { Form } from './form';
 import { ImagePreview } from './image-preview';
 import { Lazyload } from './lazyload';
 import { List } from './list';
@@ -90,12 +92,14 @@ export class TreeSelect extends VanComponent {}
 export {
   AddressEdit,
   Area,
+  Calendar,
   Checkbox,
   CheckboxGroup,
   CountDown,
   DatetimePicker,
   Dialog,
   DropdownItem,
+  Form,
   Field,
   ImagePreview,
   Lazyload,
@@ -108,5 +112,5 @@ export {
   SwipeCell,
   Tabs,
   Toast,
-  Uploader
+  Uploader,
 };

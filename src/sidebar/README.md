@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
@@ -22,7 +22,7 @@ Vue.use(SidebarItem);
 </van-sidebar>
 ```
 
-``` javascript
+```js
 export default {
   data() {
     return {
@@ -63,6 +63,8 @@ export default {
 ```
 
 ```js
+import { Notify } from 'vant';
+
 export default {
   data() {
     return {
@@ -81,9 +83,9 @@ export default {
 
 ### Sidebar Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| v-model | Index of chosen item | *string \| number* | `0` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Index of chosen item | *number \| string* | `0` |
 
 ### Sidebar Events
 
@@ -93,15 +95,15 @@ export default {
 
 ### SidebarItem Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| title | Content | *string* | `''` | - |
-| dot | Whether to show red dot | *boolean* | `false` | 2.2.1 |
-| info | Content of the badge | *string \| number* | `''` | - |
-| disabled | Whether to be disabled | *boolean* | `false` | 2.2.0 |
-| url | Link | *string* | - | - |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - | 2.0.4 |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` | 2.0.4 |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| title | Content | *string* | `''` |
+| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
+| info | Content of the badge | *number \| string* | `''` |
+| disabled `v2.2.0` | Whether to be disabled | *boolean* | `false` |
+| url | Link | *string* | - |
+| to `v2.0.4` | Target route of the link, same as to of vue-router | *string \| object* | - |
+| replace `v2.0.4` | If true, the navigation will not leave a history record | *boolean* | `false` |
 
 ### SidebarItem Events
 

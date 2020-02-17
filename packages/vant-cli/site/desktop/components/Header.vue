@@ -3,21 +3,36 @@
     <div class="van-doc-row">
       <div class="van-doc-header__top">
         <a class="van-doc-header__logo">
-          <img :src="config.logo">
+          <img :src="config.logo" />
           <span>{{ config.title }}</span>
         </a>
 
-        <search-input v-if="searchConfig" :lang="lang" :search-config="searchConfig" />
+        <search-input
+          v-if="searchConfig"
+          :lang="lang"
+          :search-config="searchConfig"
+        />
 
         <ul class="van-doc-header__top-nav">
           <li v-for="item in config.links" class="van-doc-header__top-nav-item">
-            <a class="van-doc-header__logo-link" target="_blank" :href="item.url">
-              <img :src="item.logo">
+            <a
+              class="van-doc-header__logo-link"
+              target="_blank"
+              :href="item.url"
+            >
+              <img :src="item.logo" />
             </a>
           </li>
 
-          <li ref="version" v-if="versions" class="van-doc-header__top-nav-item">
-            <span class="van-doc-header__cube van-doc-header__version" @click="toggleVersionPop">
+          <li
+            ref="version"
+            v-if="versions"
+            class="van-doc-header__top-nav-item"
+          >
+            <span
+              class="van-doc-header__cube van-doc-header__version"
+              @click="toggleVersionPop"
+            >
               {{ versions[0].label }}
               <transition name="van-doc-dropdown">
                 <div v-if="showVersionPop" class="van-doc-header__version-pop">
@@ -49,19 +64,19 @@ export default {
   name: 'van-doc-header',
 
   components: {
-    SearchInput
+    SearchInput,
   },
 
   props: {
     lang: String,
     config: Object,
     versions: Array,
-    langConfigs: Array
+    langConfigs: Array,
   },
 
   data() {
     return {
-      showVersionPop: false
+      showVersionPop: false,
     };
   },
 
@@ -85,7 +100,7 @@ export default {
 
     searchConfig() {
       return this.config.searchConfig;
-    }
+    },
   },
 
   methods: {
@@ -93,7 +108,10 @@ export default {
       const val = !this.showVersionPop;
 
       const action = val ? 'add' : 'remove';
-      document.body[`${action}EventListener`]('click', this.checkHideVersionPop);
+      document.body[`${action}EventListener`](
+        'click',
+        this.checkHideVersionPop
+      );
 
       this.showVersionPop = val;
     },
@@ -109,9 +127,11 @@ export default {
     },
 
     onSwitchVersion(version) {
-      location.href = version.link;
-    }
-  }
+      if (version.link) {
+        location.href = version.link;
+      }
+    },
+  },
 };
 </script>
 
@@ -120,7 +140,6 @@ export default {
 
 .van-doc-header {
   width: 100%;
-  box-shadow: 0 4px 12px #ebedf0;
   user-select: none;
 
   &__top {
@@ -156,7 +175,7 @@ export default {
   &__cube {
     position: relative;
     display: block;
-    padding: 0 10px;
+    padding: 0 12px;
     color: #fff;
     font-size: 14px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -194,13 +213,13 @@ export default {
       line-height: 36px;
       text-align: left;
       background-color: #fff;
-      border-radius: 3px;
+      border-radius: @van-doc-border-radius;
       box-shadow: 0 4px 12px #ebedf0;
       transform-origin: top;
       transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &-item {
-        padding-left: 7px;
+        padding-left: 12px;
         transition: 0.2s;
 
         &:hover {

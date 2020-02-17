@@ -1,7 +1,12 @@
+// Utils
 import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
+import { getScroller } from '../utils/dom/scroll';
+
+// Mixins
 import { BindEventMixin } from '../mixins/bind-event';
-import { getScrollEventTarget } from '../utils/dom/scroll';
+
+// Components
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('list');
@@ -10,15 +15,15 @@ export default createComponent({
   mixins: [
     BindEventMixin(function(bind) {
       if (!this.scroller) {
-        this.scroller = getScrollEventTarget(this.$el);
+        this.scroller = getScroller(this.$el);
       }
 
       bind(this.scroller, 'scroll', this.check);
-    })
+    }),
   ],
 
   model: {
-    prop: 'loading'
+    prop: 'loading',
   },
 
   props: {
@@ -30,22 +35,22 @@ export default createComponent({
     finishedText: String,
     immediateCheck: {
       type: Boolean,
-      default: true
+      default: true,
     },
     offset: {
-      type: Number,
-      default: 300
+      type: [Number, String],
+      default: 300,
     },
     direction: {
       type: String,
-      default: 'down'
-    }
+      default: 'down',
+    },
   },
 
   data() {
     return {
       // use sync innerLoading state to avoid repeated loading in some edge cases
-      innerLoading: this.loading
+      innerLoading: this.loading,
     };
   },
 
@@ -61,7 +66,7 @@ export default createComponent({
 
   watch: {
     loading: 'check',
-    finished: 'check'
+    finished: 'check',
   },
 
   methods: {
@@ -80,7 +85,7 @@ export default createComponent({
         } else {
           scrollerRect = {
             top: 0,
-            bottom: scroller.innerHeight
+            bottom: scroller.innerHeight,
           };
         }
 
@@ -147,7 +152,7 @@ export default createComponent({
           );
         }
       }
-    }
+    },
   },
 
   render() {
@@ -162,5 +167,5 @@ export default createComponent({
         {this.direction === 'up' ? this.slots() : Placeholder}
       </div>
     );
-  }
+  },
 });

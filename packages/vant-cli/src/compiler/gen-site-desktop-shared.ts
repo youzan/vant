@@ -5,14 +5,15 @@ import {
   pascalize,
   removeExt,
   getVantConfig,
-  smartOutputFile
+  smartOutputFile,
+  normalizePath,
 } from '../common';
 import {
   SRC_DIR,
   DOCS_DIR,
   getPackageJson,
   VANT_CONFIG_FILE,
-  SITE_DESKTOP_SHARED_FILE
+  SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
 type DocumentItem = {
@@ -51,7 +52,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
       components.forEach(component => {
         docs.push({
           name: formatName(component, lang),
-          path: join(SRC_DIR, component, fileName)
+          path: join(SRC_DIR, component, fileName),
         });
       });
     });
@@ -59,16 +60,16 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     components.forEach(component => {
       docs.push({
         name: formatName(component),
-        path: join(SRC_DIR, component, 'README.md')
+        path: join(SRC_DIR, component, 'README.md'),
       });
     });
   }
 
-  const staticDocs = glob.sync(join(DOCS_DIR, '**/*.md')).map(path => {
+  const staticDocs = glob.sync(normalizePath(join(DOCS_DIR, '**/*.md'))).map(path => {
     const pairs = parse(path).name.split('.');
     return {
       name: formatName(pairs[0], pairs[1] || defaultLang),
-      path
+      path,
     };
   });
 
@@ -77,7 +78,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map(item => `import ${item.name} from '${item.path}';`)
+    .map(item => `import ${item.name} from '${normalizePath(item.path)}';`)
     .join('\n');
 }
 
@@ -88,7 +89,7 @@ function genExportDocuments(items: DocumentItem[]) {
 }
 
 function genImportConfig() {
-  return `import config from '${removeExt(VANT_CONFIG_FILE)}';`;
+  return `import config from '${removeExt(normalizePath(VANT_CONFIG_FILE))}';`;
 }
 
 function genExportConfig() {

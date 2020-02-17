@@ -3,6 +3,7 @@
 .van-swipe {
   position: relative;
   overflow: hidden;
+  cursor: grab;
   user-select: none;
 
   &__track {
@@ -35,7 +36,7 @@
     background-color: @swipe-indicator-inactive-background-color;
     border-radius: 100%;
     opacity: @swipe-indicator-inactive-opacity;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
 
     &:not(:last-child) {
       margin-right: @swipe-indicator-size;

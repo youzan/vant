@@ -1,5 +1,184 @@
 # Changelog
 
+### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
+`2020-02-15`
+
+**New Component**
+
+* add Form component
+
+**Feature**
+
+* Field: add name prop [f3398d](https://github.com/youzan/vant/commit/f3398dc2cdd1191613b97454b4725275458bde1b)
+* Field: add rules prop [0ed7aa](https://github.com/youzan/vant/commit/0ed7aaac88f769549b688259b8e6e1050a10cb99)
+* AddressEdit: add disable-area prop [#5630](https://github.com/youzan/vant/issues/5630)
+* AddressList: add item-bottom slot [#5629](https://github.com/youzan/vant/issues/5629)
+* RadioGroup: add direction prop [4dd41b](https://github.com/youzan/vant/commit/4dd41b23decbaf86c8812e0afcc1d72773f223f6)
+* CheckboxGroup: add direction prop [153902](https://github.com/youzan/vant/commit/15390241d8d4252a828aa0e9d8c61377ba07512a)
+* ImagePreview: add scale event [#5658](https://github.com/youzan/vant/issues/5658)
+* ImagePreview: add closeable prop [#5654](https://github.com/youzan/vant/issues/5654)
+
+**Style**
+
+* Field: input slot vertical align center [03c826](https://github.com/youzan/vant/commit/03c826c4d44efd95a5ee509b5f183d8ded574fd7)
+* Field: improve label right padding [2d6445](https://github.com/youzan/vant/commit/2d64458776df87625db9e8b07d83a7044a2bcf53)
+* Uploader: add uploader disabled style [#5628](https://github.com/youzan/vant/issues/5628)
+
+**Bug Fixes**
+
+* Calendar: fix render issues in some devices [#5640](https://github.com/youzan/vant/issues/5640)
+* Dialog: fix Dialog.Component typing [#5646](https://github.com/youzan/vant/issues/5646)
+* Field: text-fill-color may affect child element [e17a4a](https://github.com/youzan/vant/commit/e17a4a24993822b0f35114dacbbb3bebc5b51a60)
+* Picker: change event untriggered without a transition [#5662](https://github.com/youzan/vant/issues/5662)
+* Tabs: scrollspy not work when custom scroller [#5637](https://github.com/youzan/vant/issues/5637)
+* Calendar: should not submit form when click button [e93fcb](https://github.com/youzan/vant/commit/e93fcb0603b988a2ffb5b1651588f7e4ad8aa92d)
+
+
+### [v2.4.7](https://github.com/youzan/vant/compare/v2.4.7-beta.0...v2.4.7)
+`2020-02-06`
+
+**Feature**
+
+* Calendar: improve accessibility [2124cc](https://github.com/youzan/vant/commit/2124cc5261be4a7d666cf6f70d4295309f3705d9)
+* Field: highlight word num when reaching maxlength [61093e](https://github.com/youzan/vant/commit/61093ef00f2dc421eb94ec7690093c1d565a296c)
+* Sku: add sku-actions-top slot [#5617](https://github.com/youzan/vant/issues/5617)
+* Uploader: support failed status [#5624](https://github.com/youzan/vant/issues/5624)
+* Uploader: support uploading status [#5625](https://github.com/youzan/vant/issues/5625)
+
+**Style**
+
+* ActionSheet: add @action-sheet-close-icon-active-color less var [265bfe](https://github.com/youzan/vant/commit/265bfeaac756e05803858062ab1ece2092a08e17)
+* Popup: add @popup-close-icon-active-color less var [660b03](https://github.com/youzan/vant/commit/660b0399512d3deddcdfb99af5cff1674617c515)
+
+**Bug Fixes**
+
+* Calendar: missing className when selected [0b7c56](https://github.com/youzan/vant/commit/0b7c567a78c85fbf1c3d59fcd3ce76c691040ff1)
+* Popup: may throw error when using get-container and destroyed
+
+
+### [v2.4.6](https://github.com/youzan/vant/compare/v2.4.5...v2.4.6)
+`2020-02-01`
+
+**Bug Fixes**
+
+* Picker: should watch columns change [#5614](https://github.com/youzan/vant/issues/5614)
+
+
+### [v2.4.5](https://github.com/youzan/vant/compare/v2.4.4...v2.4.5)
+`2020-02-01`
+
+**Feature**
+
+* Picker: support cascade columns [#4247](https://github.com/youzan/vant/issues/4247)
+* Slider: add button-size prop [1e9b8c](https://github.com/youzan/vant/commit/1e9b8c846674562d56ab638a0982baab4bb6870e)
+* Optimize the props type. The original number type props now support string.
+
+**Style**
+
+* DropdownItem: add @dropdown-item-z-index less var [6f4c6f](https://github.com/youzan/vant/commit/6f4c6f5aa6614559cfc24bc361e68c9c938bbb61)
+* IndexBar: add @index-anchor-z-index less var [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: add @index-bar-sidebar-z-index less var [89ee8e](https://github.com/youzan/vant/commit/89ee8e38723dadb2daa6ee31c325cdd2ad03ba99)
+* IndexBar: add @index-bar-index-active-color less var [0011db](https://github.com/youzan/vant/commit/0011db75365b60699ae140d85e54b9e477f46a22)
+* Notify: add @notify-text-color less var [9dcf57](https://github.com/youzan/vant/commit/9dcf57c65f5e046318e953f2e8ce87918b1cb312)
+* Overlay: add @overlay-z-index less var [95d19f](https://github.com/youzan/vant/commit/95d19f70d1c90efc752074ff764b07787d89cf1e)
+* Rate: add @rate-icon-disabled-color less var [8b8471](https://github.com/youzan/vant/commit/8b8471945c4313735a5fe59402212f37a31acfea)
+* Rate: add @rate-icon-full-color less var [5c804c](https://github.com/youzan/vant/commit/5c804cf920b75c5bdf962fa49eae31363783f32f)
+* Rate: add @rate-icon-void-color less var [f90015](https://github.com/youzan/vant/commit/f90015efe7619af055b9ebd4c8be7da1f17b8da0)
+* Slider: add @slider-bar-height less var [a5819c](https://github.com/youzan/vant/commit/a5819c286e06469bc41e8aa9e0ed44cc21625dad)
+* Search: add @search-content-background-color less var [ea7419](https://github.com/youzan/vant/commit/ea74194990314bd1ff1e8237c221be92fdb8ae37)
+* Step: add @step-active-color less var [9e7a68](https://github.com/youzan/vant/commit/9e7a6874141fa05f0158ca8006c268d0a3d92679)
+* Tabbar: add @tabbar-z-index less var [0441f7](https://github.com/youzan/vant/commit/0441f7ba098aca24b797de29d10af8f47cf32d15)
+* NavBar: add @nav-bar-z-index less var [a2d870](https://github.com/youzan/vant/commit/a2d870ad8ee4912226ec8871cc4c2d56ef870902)
+* NumberKeyboard: add @number-keyboard-z-index less var [760938](https://github.com/youzan/vant/commit/760938962399e0589b4a258ff29e7fe2f3ba90f1)
+
+**Bug Fixes**
+
+* ImagePreview: limit max-zoom when double clicking [1baa60](https://github.com/youzan/vant/commit/1baa60f2244b4605dc82f6dcf564671f5c623023)
+* Popup: duration prop not work when position is center [44072e](https://github.com/youzan/vant/commit/44072e8c3f548cff78401780213ab7ef213372c3)
+* Step: active-color should be effective for line [cfadce](https://github.com/youzan/vant/commit/cfadcefb0a1c29dfb1d940fbb7add746595158bd)
+
+
+### [v2.4.4](https://github.com/youzan/vant/compare/v2.4.3...v2.4.4)
+`2020-01-24`
+
+**Feature**
+
+* Card: change thumb fit mode to cover [e766d5](https://github.com/youzan/vant/commit/e766d5d5743e7f492b3601ce4010b8524fb2b016)
+* Calendar: add get-contaienr prop [#5609](https://github.com/youzan/vant/issues/5609)
+* Calendar: add close-on-popstate prop [2b82dc](https://github.com/youzan/vant/commit/2b82dcc3dd2dba678aba5e0533e0ff6af7c55b11)
+* CountDown: add change event [#5599](https://github.com/youzan/vant/issues/5599)
+* GoodsActionButton: add icon prop [b83bed](https://github.com/youzan/vant/commit/b83bed3b6c41d0896386b3c4b6380c9568bd3ef2)
+
+**Bug Fixes**
+
+* Sku: get-container can be string type [#5608](https://github.com/youzan/vant/issues/5608)
+
+
+### [v2.4.3](https://github.com/youzan/vant/compare/v2.4.3-beta.0...v2.4.3)
+`2020-01-19`
+
+**Feature**
+
+* Calendar: add max-range、range-prompt prop [#5583](https://github.com/youzan/vant/issues/5583)
+* ImagePreview: add @image-preview-index-text-shadow var [e2f302](https://github.com/youzan/vant/commit/e2f30242eaaebd36d9816e2746fe6c44323e6aca)
+* Stepper: add long-press prop [2f3ec6](https://github.com/youzan/vant/commit/2f3ec6a3d48a9d56f8127d27d51c3337f6e72cab)
+* Swipe: pause autoplay when page hidden [113157](https://github.com/youzan/vant/commit/11315787ec980767973a3fded50fb5858e51e298)
+
+**Improvement**
+
+* Icon: update share icon [2f77ac](https://github.com/youzan/vant/commit/2f77acfc6cef23ea664defc38c4cd806ceca1ee4)
+* Field: imporve readonly cursor [60173d](https://github.com/youzan/vant/commit/60173dd6bc004339333c50218d7c6b2f6c1bc07b)
+* Stepper: improve disable-input behavior [959eca](https://github.com/youzan/vant/commit/959eca136c4ca6a39e22d36512db74b93ad100c6)
+
+**Bug Fixes**
+
+* Calendar: should show range prompt after select [ff0901](https://github.com/youzan/vant/commit/ff09011e0ef18ab29dd70b51f412625dd10bb4cb)
+* GoodsAction: should set wrapper height [#5593](https://github.com/youzan/vant/issues/5593)
+
+**Types**
+
+* Calendar: fix missing type definition [#5588](https://github.com/youzan/vant/issues/5588)
+* Toast: incorrect definition of setDefaultOptions method [#5582](https://github.com/youzan/vant/issues/5582)
+
+
+### [v2.4.2](https://github.com/youzan/vant/compare/v2.4.2-beta.1...v2.4.2)
+`2020-01-14`
+
+**Feature**
+
+* Sku: add properties prop [#5525](https://github.com/youzan/vant/issues/5525)
+* Field: add digit type [#5524](https://github.com/youzan/vant/issues/5524)
+* Image: add error-icon prop [#5470](https://github.com/youzan/vant/issues/5470)
+* Image: add loading-icon prop [#5469](https://github.com/youzan/vant/issues/5469)
+* Field: add formatter prop [#5534](https://github.com/youzan/vant/issues/5534)
+* Swipe: add prev、next method [#5548](https://github.com/youzan/vant/issues/5548)
+* GoodsAcitonIcon: add color prop [#5576](https://github.com/youzan/vant/issues/5576)
+
+**Improvement**
+
+* AddressEdit: show error message in field [#5479](https://github.com/youzan/vant/issues/5479)
+* ActionSheet: update close icon style [#5574](https://github.com/youzan/vant/issues/5574)
+* AddressList: update style [#5507](https://github.com/youzan/vant/issues/5507)
+* CouponList: update style [#5501](https://github.com/youzan/vant/issues/5501)
+* Calendar: scroll to current month when show [#5526](https://github.com/youzan/vant/issues/5526)
+* ImagePreview: improve error image style [#5570](https://github.com/youzan/vant/issues/5570)
+* improve cursor of all components [c1a535](https://github.com/youzan/vant/commit/c1a535b0dd9470f8eb526e86aa59cf6dec022f3a)
+
+**Bug Fixes**
+
+* Button: should not have click feedback when loading [0a70d3](https://github.com/youzan/vant/commit/0a70d344124ef756a73ea9edfee07303f394d880)
+* Card: thumb image border-radius become effective [#5480](https://github.com/youzan/vant/issues/5480)
+* Calendar: incorrect month title after auto scroll [#5569](https://github.com/youzan/vant/issues/5569)
+* Calendar: missing info when selected [#5536](https://github.com/youzan/vant/issues/5536)
+* Checkbox: only the icon is clickable when label-disabled [3d10d4](https://github.com/youzan/vant/commit/3d10d42fccadd1b9df46860d758a91f7825073e9)
+* CouponList: incorrect click feedback [#5521](https://github.com/youzan/vant/issues/5521)
+* Field: should limit number input in iOS [#5520](https://github.com/youzan/vant/issues/5520)
+* ImagePreview: disable desktop browser image drag [#4487](https://github.com/youzan/vant/issues/4487)
+* Picker: optimize the click experience [5cbb9e](https://github.com/youzan/vant/commit/5cbb9e29989ac58d44a4ec503cbb984269c8f18e)
+* PullRefresh: should set height when using head-height [028747](https://github.com/youzan/vant/commit/028747c35471f33e8c2b0baa6fb8915510daac22)
+* Tabs: can not render line when wrapper is fixed [#5496](https://github.com/youzan/vant/issues/5496)
+
+
 ### [v2.4.1](https://github.com/youzan/vant/compare/v2.4.0...v2.4.1)
 `2020-01-02`
 

@@ -2,7 +2,7 @@
 
 ### 介绍
 
-Vant 提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以使用下面提供的方法
+Vant 提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以使用下面提供的方法。
 
 ### 示例工程
 
@@ -25,7 +25,7 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 
 ## 定制方法
 
-### 步骤一. 引入样式源文件
+### 步骤一 引入样式源文件
 
 定制主题时，需要引入组件对应的 Less 样式文件，支持按需引入和手动引入两种方式。
 
@@ -60,7 +60,7 @@ import 'vant/lib/index.less';
 import 'vant/lib/button/style/less';
 ```
 
-### 步骤二. 修改样式变量
+### 步骤二 修改样式变量
 
 使用 Less 提供的 [modifyVars](http://lesscss.org/usage/#using-less-in-the-browser-modify-variables) 即可对变量进行修改，下面是参考的 webpack 配置。
 

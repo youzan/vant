@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { Panel } from 'vant';
 
@@ -35,12 +35,12 @@ Vue.use(Panel);
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| icon | Left Icon | *string* | - | - |
-| title | Title | *string* | - | - |
-| desc | Description | *string* | - | - |
-| status | Status | *string* | - | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| icon | Left Icon | *string* | - |
+| title | Title | *string* | - |
+| desc | Description | *string* | - |
+| status | Status | *string* | - |
 
 ### Slots
 

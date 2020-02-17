@@ -5,7 +5,7 @@ const [createComponent, bem] = createNamespace('swipe-item');
 export default createComponent({
   data() {
     return {
-      offset: 0
+      offset: 0,
     };
   },
 
@@ -23,7 +23,7 @@ export default createComponent({
     const style = {
       width: computedWidth + 'px',
       height: vertical ? computedHeight + 'px' : '100%',
-      transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
+      transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`,
     };
 
     return (
@@ -31,5 +31,5 @@ export default createComponent({
         {this.slots()}
       </div>
     );
-  }
+  },
 });

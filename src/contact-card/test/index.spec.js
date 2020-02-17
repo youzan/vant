@@ -5,7 +5,7 @@ import { mount, later } from '../../../test';
 
 const contactInfo = {
   name: 'test',
-  tel: '123123213'
+  tel: '123123213',
 };
 
 describe('ContactCard', () => {
@@ -14,9 +14,9 @@ describe('ContactCard', () => {
     const wrapper = mount(ContactCard, {
       context: {
         on: {
-          click
-        }
-      }
+          click,
+        },
+      },
     });
 
     wrapper.trigger('click');
@@ -27,13 +27,13 @@ describe('ContactCard', () => {
     const click = jest.fn();
     const wrapper = mount(ContactCard, {
       propsData: {
-        editable: false
+        editable: false,
       },
       context: {
         on: {
-          click
-        }
-      }
+          click,
+        },
+      },
     });
 
     wrapper.trigger('click');
@@ -45,8 +45,8 @@ describe('ContactList', () => {
   test('render', () => {
     const wrapper = mount(ContactList, {
       propsData: {
-        list: [contactInfo]
-      }
+        list: [contactInfo],
+      },
     });
     expect(wrapper).toMatchSnapshot();
   });
@@ -55,13 +55,13 @@ describe('ContactList', () => {
     const onSelect = jest.fn();
     const wrapper = mount(ContactList, {
       propsData: {
-        list: [contactInfo]
+        list: [contactInfo],
       },
       context: {
         on: {
-          select: onSelect
-        }
-      }
+          select: onSelect,
+        },
+      },
     });
 
     wrapper.find('.van-radio__icon').trigger('click');
@@ -74,8 +74,8 @@ describe('ContactEdit', () => {
   const createComponent = () => {
     const wrapper = mount(ContactEdit, {
       propsData: {
-        contactInfo
-      }
+        contactInfo,
+      },
     });
 
     const button = wrapper.find('.van-button');
@@ -86,7 +86,7 @@ describe('ContactEdit', () => {
       data,
       field,
       button,
-      errorInfo
+      errorInfo,
     };
   };
 
@@ -114,7 +114,7 @@ describe('ContactEdit', () => {
     expect(errorInfo.tel).toBeFalsy();
     expect(wrapper.emitted('save')[0][0]).toEqual({
       name: 'test',
-      tel: '13000000000'
+      tel: '13000000000',
     });
   });
 
@@ -127,8 +127,8 @@ describe('ContactEdit', () => {
   test('delete contact', async () => {
     const wrapper = mount(ContactEdit, {
       propsData: {
-        isEdit: true
-      }
+        isEdit: true,
+      },
     });
 
     const deleteButton = wrapper.findAll('.van-button').at(1);

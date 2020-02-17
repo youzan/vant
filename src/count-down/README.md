@@ -2,7 +2,7 @@
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { CountDown } from 'vant';
 
@@ -30,20 +30,13 @@ export default {
 ### Custom Format
 
 ```html
-<van-count-down
-  :time="time"
-  format="DD Day, HH:mm:ss"
-/>
+<van-count-down :time="time" format="DD Day, HH:mm:ss" />
 ```
 
 ### Millisecond
 
 ```html
-<van-count-down
-  millisecond
-  :time="time"
-  format="HH:mm:ss:SS"
-/>
+<van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
 ```
 
 ### Custom Style
@@ -89,6 +82,8 @@ export default {
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     start() {
@@ -101,7 +96,7 @@ export default {
       this.$refs.countDown.reset();
     },
     finish() {
-      this.$toast('Finished');
+      Toast('Finished');
     }
   }
 }
@@ -111,12 +106,12 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| time | Total time | *number* | - | - |
-| format | Time format | *string* | `HH:mm:ss` | - |
-| auto-start | Whether to auto start count down | *boolean* | `true` | - |
-| millisecond | Whether to enable millisecond render | *boolean* | `false` | - |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| time | Total time | *number \| string* | `0` |
+| format | Time format | *string* | `HH:mm:ss` |
+| auto-start | Whether to auto start count down | *boolean* | `true` |
+| millisecond | Whether to enable millisecond render | *boolean* | `false` |
 
 ### Available formats
 
@@ -135,14 +130,15 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | finish | Triggered when count down finished | - |
+| change `v2.4.4` | Triggered when count down changed | *timeData: TimeData* |
 
 ### Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
-| default | Custom Content | timeData |
+| default | Custom Content | *timeData: TimeData* |
 
-### timeData Structure
+### TimeData Structure
 
 | Name | Description | Type |
 |------|------|------|

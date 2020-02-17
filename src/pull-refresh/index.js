@@ -1,10 +1,17 @@
+// Utils
 import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
+import { getScrollTop, getScroller } from '../utils/dom/scroll';
+
+// Mixins
 import { TouchMixin } from '../mixins/touch';
-import { getScrollTop, getScrollEventTarget } from '../utils/dom/scroll';
+
+// Components
 import Loading from '../loading';
 
 const [createComponent, bem, t] = createNamespace('pull-refresh');
+
+const DEFAULT_HEAD_HEIGHT = 50;
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
 export default createComponent({
@@ -18,27 +25,27 @@ export default createComponent({
     loadingText: String,
     value: {
       type: Boolean,
-      required: true
+      required: true,
     },
     successDuration: {
-      type: Number,
-      default: 500
+      type: [Number, String],
+      default: 500,
     },
     animationDuration: {
-      type: Number,
-      default: 300
+      type: [Number, String],
+      default: 300,
     },
     headHeight: {
-      type: Number,
-      default: 50
-    }
+      type: [Number, String],
+      default: DEFAULT_HEAD_HEIGHT,
+    },
   },
 
   data() {
     return {
       status: 'normal',
       distance: 0,
-      duration: 0
+      duration: 0,
     };
   },
 
@@ -47,7 +54,15 @@ export default createComponent({
       return (
         this.status !== 'loading' && this.status !== 'success' && !this.disabled
       );
-    }
+    },
+
+    headStyle() {
+      if (this.headHeight !== DEFAULT_HEAD_HEIGHT) {
+        return {
+          height: `${this.headHeight}px`,
+        };
+      }
+    },
   },
 
   watch: {
@@ -55,18 +70,18 @@ export default createComponent({
       this.duration = this.animationDuration;
 
       if (loading) {
-        this.setStatus(this.headHeight, true);
+        this.setStatus(+this.headHeight, true);
       } else if (this.slots('success') || this.successText) {
         this.showSuccessTip();
       } else {
         this.setStatus(0, false);
       }
-    }
+    },
   },
 
   mounted() {
     this.bindTouchEvent(this.$refs.track);
-    this.scrollEl = getScrollEventTarget(this.$el);
+    this.scrollEl = getScroller(this.$el);
   },
 
   methods: {
@@ -107,7 +122,7 @@ export default createComponent({
         this.duration = this.animationDuration;
 
         if (this.status === 'loosing') {
-          this.setStatus(this.headHeight, true);
+          this.setStatus(+this.headHeight, true);
           this.$emit('input', true);
 
           // ensure value change can be watched
@@ -121,7 +136,7 @@ export default createComponent({
     },
 
     ease(distance) {
-      const { headHeight } = this;
+      const headHeight = +this.headHeight;
 
       if (distance > headHeight) {
         if (distance < headHeight * 2) {
@@ -179,24 +194,24 @@ export default createComponent({
       setTimeout(() => {
         this.setStatus(0);
       }, this.successDuration);
-    }
+    },
   },
 
   render() {
     const style = {
       transitionDuration: `${this.duration}ms`,
-      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : ''
+      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : '',
     };
 
     return (
       <div class={bem()}>
         <div ref="track" class={bem('track')} style={style}>
-          <div class={bem('head')}>{this.genStatus()}</div>
+          <div class={bem('head')} style={this.headStyle}>
+            {this.genStatus()}
+          </div>
           {this.slots()}
         </div>
       </div>
     );
-  }
+  },
 });
-
-//

@@ -41,7 +41,7 @@ export default {
 
 用于提示一些消息，只包含一个确认按钮
 
-```javascript
+```js
 Dialog.alert({
   title: '标题',
   message: '弹窗内容'
@@ -60,7 +60,7 @@ Dialog.alert({
 
 用于确认消息，包含取消和确认按钮
 
-```javascript
+```js
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容'
@@ -108,11 +108,7 @@ export default {
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式
 
 ```html
-<van-dialog
-  v-model="show"
-  title="标题"
-  show-cancel-button
->
+<van-dialog v-model="show" title="标题" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
 </van-dialog>
 ```
@@ -145,56 +141,56 @@ export default {
 
 通过函数调用 `Dialog` 时，支持传入以下选项：
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| title | 标题 | *string* | - | - |
-| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 2.2.7 |
-| message | 文本内容，支持通过`\n`换行 | *string* | - | - |
-| messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
-| className | 自定义类名 | *any* | - | - |
-| showConfirmButton | 是否展示确认按钮 | *boolean* | `true` | - |
-| showCancelButton | 是否展示取消按钮 | *boolean* | `false` | - |
-| confirmButtonText | 确认按钮文案 | *string* | `确认` | - |
-| confirmButtonColor | 确认按钮颜色 | *string* | `#1989fa` | - |
-| cancelButtonText | 取消按钮文案 | *string* | `取消` | - |
-| cancelButtonColor | 取消按钮颜色 | *string* | `#000` | - |
-| overlay | 是否展示遮罩层 | *boolean* | `true` | - |
-| overlayClass | 自定义遮罩层类名 | *string* | - | 2.2.7 |
-| overlayStyle | 自定义遮罩层样式 | *object* | - | 2.2.7 |
-| closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
-| closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
-| lockScroll | 是否锁定背景滚动 | *boolean* | `true` | - |
-| beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
-| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | 2.2.6 |
-| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | `body` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| title | 标题 | *string* | - |
+| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *number \| string* | `320px` |
+| message | 文本内容，支持通过`\n`换行 | *string* | - |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
+| className | 自定义类名 | *any* | - |
+| showConfirmButton | 是否展示确认按钮 | *boolean* | `true` |
+| showCancelButton | 是否展示取消按钮 | *boolean* | `false` |
+| confirmButtonText | 确认按钮文案 | *string* | `确认` |
+| confirmButtonColor | 确认按钮颜色 | *string* | `#1989fa` |
+| cancelButtonText | 取消按钮文案 | *string* | `取消` |
+| cancelButtonColor | 取消按钮颜色 | *string* | `black` |
+| overlay | 是否展示遮罩层 | *boolean* | `true` |
+| overlayClass `v2.2.7` | 自定义遮罩层类名 | *string* | - |
+| overlayStyle `v2.2.7` | 自定义遮罩层样式 | *object* | - |
+| closeOnPopstate `v2.0.5` | 是否在页面回退时自动关闭 | *boolean* | `false` |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` |
+| lockScroll | 是否锁定背景滚动 | *boolean* | `true` |
+| beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - |
+| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
+| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | `body` |
 
 ### Props
 
 通过组件调用 `Dialog` 时，支持以下 Props：
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-model | 是否显示弹窗 | *boolean* | - | - |
-| title | 标题 | *string* | - | - |
-| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 2.2.7 |
-| message | 文本内容，支持通过`\n`换行 | *string* | - | - |
-| message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
-| show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` | - |
-| show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` | - |
-| confirm-button-text | 确认按钮文案 | *string* | `确认` | - |
-| confirm-button-color | 确认按钮颜色 | *string* | `#1989fa` | - |
-| cancel-button-text | 取消按钮文案 | *string* | `取消` | - |
-| cancel-button-color | 取消按钮颜色 | *string* | `#000` | - |
-| overlay | 是否展示遮罩层 | *boolean* | `true` | - |
-| overlay-class | 自定义遮罩层类名 | *string* | - | 2.2.7 |
-| overlay-style | 自定义遮罩层样式 | *object* | - | 2.2.7 |
-| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` | 2.0.5 |
-| close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` | - |
-| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` | - |
-| before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - | - |
-| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - | 2.2.6 |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 是否显示弹窗 | *boolean* | - |
+| title | 标题 | *string* | - |
+| width `v2.2.7` | 弹窗宽度，默认单位为`px` | *number \| string* | `320px` |
+| message | 文本内容，支持通过`\n`换行 | *string* | - |
+| message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
+| show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` |
+| show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` |
+| confirm-button-text | 确认按钮文案 | *string* | `确认` |
+| confirm-button-color | 确认按钮颜色 | *string* | `#1989fa` |
+| cancel-button-text | 取消按钮文案 | *string* | `取消` |
+| cancel-button-color | 取消按钮颜色 | *string* | `black` |
+| overlay | 是否展示遮罩层 | *boolean* | `true` |
+| overlay-class `v2.2.7` | 自定义遮罩层类名 | *string* | - |
+| overlay-style `v2.2.7` | 自定义遮罩层样式 | *object* | - |
+| close-on-popstate `v2.0.5` | 是否在页面回退时自动关闭 | *boolean* | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | *boolean* | `false` |
+| lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
+| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
+| before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | *(action, done) => void* | - |
+| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Events
 

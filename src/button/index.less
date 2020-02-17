@@ -11,6 +11,7 @@
   line-height: @button-default-line-height;
   text-align: center;
   border-radius: @button-border-radius;
+  cursor: pointer;
   transition: opacity @animation-duration-fast;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
@@ -31,7 +32,7 @@
   }
 
   &:active::before {
-    opacity: .1;
+    opacity: 0.1;
   }
 
   &--loading,
@@ -134,7 +135,12 @@
   }
 
   &--disabled {
+    cursor: not-allowed;
     opacity: @button-disabled-opacity;
+  }
+
+  &--loading {
+    cursor: default;
   }
 
   &--round {

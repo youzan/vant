@@ -4,7 +4,8 @@ const shell = require('shelljs');
 
 const svgDir = path.join(__dirname, '../assets/svg');
 const sketch = path.join(__dirname, '../assets/icons.sketch');
-const SKETCH_TOOL_DIR = '/Applications/Sketch.app/Contents/Resources/sketchtool/bin/sketchtool';
+const SKETCH_TOOL_DIR =
+  '/Applications/Sketch.app/Contents/Resources/sketchtool/bin/sketchtool';
 
 fs.removeSync(svgDir);
 

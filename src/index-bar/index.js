@@ -1,17 +1,30 @@
-import { createNamespace } from '../utils';
-import { TouchMixin } from '../mixins/touch';
-import { ParentMixin } from '../mixins/relation';
-import { BindEventMixin } from '../mixins/bind-event';
-import { GREEN } from '../utils/constant';
-import { preventDefault } from '../utils/dom/event';
+// Utils
+import { createNamespace, isDef } from '../utils';
 import { isHidden } from '../utils/dom/style';
+import { preventDefault } from '../utils/dom/event';
 import {
+  getScroller,
   getScrollTop,
   getElementTop,
   getRootScrollTop,
   setRootScrollTop,
-  getScrollEventTarget
 } from '../utils/dom/scroll';
+
+// Mixins
+import { TouchMixin } from '../mixins/touch';
+import { ParentMixin } from '../mixins/relation';
+import { BindEventMixin } from '../mixins/bind-event';
+
+function genAlphabet() {
+  const indexList = [];
+  const charCodeOfA = 'A'.charCodeAt(0);
+
+  for (let i = 0; i < 26; i++) {
+    indexList.push(String.fromCharCode(charCodeOfA + i));
+  }
+
+  return indexList;
+}
 
 const [createComponent, bem] = createNamespace('index-bar');
 
@@ -21,67 +34,60 @@ export default createComponent({
     ParentMixin('vanIndexBar'),
     BindEventMixin(function(bind) {
       if (!this.scroller) {
-        this.scroller = getScrollEventTarget(this.$el);
+        this.scroller = getScroller(this.$el);
       }
 
       bind(this.scroller, 'scroll', this.onScroll);
-    })
+    }),
   ],
 
   props: {
+    zIndex: [Number, String],
+    highlightColor: String,
     sticky: {
       type: Boolean,
-      default: true
-    },
-    zIndex: {
-      type: Number,
-      default: 1
-    },
-    highlightColor: {
-      type: String,
-      default: GREEN
+      default: true,
     },
     stickyOffsetTop: {
       type: Number,
-      default: 0
+      default: 0,
     },
     indexList: {
       type: Array,
-      default() {
-        const indexList = [];
-        const charCodeOfA = 'A'.charCodeAt(0);
-
-        for (let i = 0; i < 26; i++) {
-          indexList.push(String.fromCharCode(charCodeOfA + i));
-        }
-
-        return indexList;
-      }
-    }
+      default: genAlphabet,
+    },
   },
 
   data() {
     return {
-      activeAnchorIndex: null
+      activeAnchorIndex: null,
     };
   },
 
   computed: {
+    sidebarStyle() {
+      if (isDef(this.zIndex)) {
+        return {
+          zIndex: this.zIndex + 1,
+        };
+      }
+    },
+
     highlightStyle() {
       const { highlightColor } = this;
       if (highlightColor) {
         /* istanbul ignore else */
         return {
-          color: highlightColor
+          color: highlightColor,
         };
       }
-    }
+    },
   },
 
   watch: {
     indexList() {
       this.$nextTick(this.onScroll);
-    }
+    },
   },
 
   methods: {
@@ -94,7 +100,7 @@ export default createComponent({
       const scrollerRect = this.getScrollerRect();
       const rects = this.children.map(item => ({
         height: item.height,
-        top: this.getElementTop(item.$el, scrollerRect)
+        top: this.getElementTop(item.$el, scrollerRect),
       }));
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
@@ -132,7 +138,7 @@ export default createComponent({
       const { scroller } = this;
       let scrollerRect = {
         top: 0,
-        left: 0
+        left: 0,
       };
 
       if (scroller.getBoundingClientRect) {
@@ -210,7 +216,7 @@ export default createComponent({
 
     onTouchEnd() {
       this.active = null;
-    }
+    },
   },
 
   render() {
@@ -232,7 +238,7 @@ export default createComponent({
       <div class={bem()}>
         <div
           class={bem('sidebar')}
-          style={{ zIndex: this.zIndex + 1 }}
+          style={this.sidebarStyle}
           onClick={this.onClick}
           onTouchstart={this.touchStart}
           onTouchmove={this.onTouchMove}
@@ -244,5 +250,5 @@ export default createComponent({
         {this.slots('default')}
       </div>
     );
-  }
+  },
 });

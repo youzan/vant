@@ -1,7 +1,10 @@
+// Utils
 import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
+
+// Components
 import Cell from '../cell';
-import Switch, { SwitchEvents } from '../switch';
+import Switch from '../switch';
 import { switchProps, SharedSwitchProps } from '../switch/shared';
 
 // Types
@@ -13,6 +16,10 @@ export type SwitchCellProps = SharedSwitchProps & {
   title?: string;
   border?: boolean;
   cellSize?: string;
+};
+
+export type SwitchCellEvents = {
+  onChange?(checked: boolean): void;
 };
 
 const [createComponent, bem] = createNamespace('switch-cell');
@@ -43,12 +50,12 @@ SwitchCell.props = {
   cellSize: String,
   border: {
     type: Boolean,
-    default: true
+    default: true,
   },
   size: {
     type: String,
-    default: '24px'
-  }
+    default: '24px',
+  },
 };
 
-export default createComponent<SwitchCellProps, SwitchEvents>(SwitchCell);
+export default createComponent<SwitchCellProps, SwitchCellEvents>(SwitchCell);

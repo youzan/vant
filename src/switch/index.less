@@ -10,6 +10,7 @@
   background-color: @switch-background-color;
   border: @switch-border;
   border-radius: @switch-node-size;
+  cursor: pointer;
   transition: background-color @switch-transition-duration;
 
   &__node {
@@ -22,7 +23,8 @@
     background-color: @switch-node-background-color;
     border-radius: 100%;
     box-shadow: @switch-node-box-shadow;
-    transition: transform @switch-transition-duration cubic-bezier(.3, 1.05, .4, 1.05);
+    transition: transform @switch-transition-duration
+      cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
   &__loading {
@@ -42,6 +44,11 @@
   }
 
   &--disabled {
+    cursor: not-allowed;
     opacity: @switch-disabled-opacity;
+  }
+
+  &--loading {
+    cursor: default;
   }
 }

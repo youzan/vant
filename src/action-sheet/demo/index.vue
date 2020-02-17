@@ -1,42 +1,58 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button type="primary" @click="show1 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet v-model="show1" :actions="simpleActions" @select="onSelect" />
-    </demo-block>
-
-    <demo-block :title="$t('status')">
-      <van-button type="primary" @click="show2 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet v-model="show2" close-on-click-action :actions="statusActions" />
-    </demo-block>
-
-    <demo-block :title="$t('showCancel')">
-      <van-button type="primary" @click="show3 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet
-        v-model="show3"
-        :actions="simpleActions"
-        close-on-click-action
-        :cancel-text="$t('cancel')"
-        @cancel="onCancel"
+      <van-cell is-link :title="$t('basicUsage')" @click="show.basic = true" />
+      <van-cell is-link :title="$t('showCancel')" @click="show.cancel = true" />
+      <van-cell
+        is-link
+        :title="$t('showDescription')"
+        @click="show.description = true"
       />
     </demo-block>
 
-    <demo-block :title="$t('showDescription')">
-      <van-button type="primary" @click="show4 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet
-        v-model="show4"
-        :actions="simpleActions"
-        close-on-click-action
-        :description="$t('description')"
+    <demo-block :title="$t('optionStatus')">
+      <van-cell
+        is-link
+        :title="$t('optionStatus')"
+        @click="show.status = true"
       />
     </demo-block>
 
-    <demo-block :title="$t('showTitle')">
-      <van-button type="primary" @click="show5 = true">{{ $t('buttonText') }}</van-button>
-      <van-action-sheet v-model="show5" :title="$t('title')">
-        <p>{{ $t('content') }}</p>
-      </van-action-sheet>
+    <demo-block :title="$t('customPanel')">
+      <van-cell is-link :title="$t('customPanel')" @click="show.title = true" />
     </demo-block>
+
+    <van-action-sheet
+      v-model="show.basic"
+      :actions="simpleActions"
+      @select="onSelect"
+    />
+
+    <van-action-sheet
+      v-model="show.status"
+      close-on-click-action
+      :actions="statusActions"
+      :cancel-text="$t('cancel')"
+    />
+
+    <van-action-sheet
+      v-model="show.cancel"
+      :actions="simpleActions"
+      close-on-click-action
+      :cancel-text="$t('cancel')"
+      @cancel="onCancel"
+    />
+
+    <van-action-sheet
+      v-model="show.description"
+      :actions="simpleActions"
+      close-on-click-action
+      :description="$t('description')"
+    />
+
+    <van-action-sheet v-model="show.title" :title="$t('title')">
+      <div class="demo-action-sheet-content">{{ $t('content') }}</div>
+    </van-action-sheet>
   </demo-section>
 </template>
 
@@ -46,34 +62,36 @@ import { GREEN } from '../../utils/constant';
 export default {
   i18n: {
     'zh-CN': {
-      buttonText: '弹出菜单',
-      status: '选项状态',
       subname: '副文本',
-      disabledOption: '禁用选项',
-      showTitle: '展示标题栏',
       showCancel: '展示取消按钮',
+      buttonText: '弹出菜单',
+      customPanel: '自定义面板',
+      description: '这是一段描述信息',
+      optionStatus: '选项状态',
+      disabledOption: '禁用选项',
       showDescription: '展示描述信息',
-      description: '这是一段描述信息'
     },
     'en-US': {
-      buttonText: 'Show ActionSheet',
-      status: 'Status',
       subname: 'Subname',
+      showCancel: 'Show Cancel Button',
+      buttonText: 'Show ActionSheet',
+      customPanel: 'Custom Panel',
+      description: 'Description',
+      optionStatus: 'Option Status',
       disabledOption: 'Disabled Option',
-      showTitle: 'ActionSheet with title',
-      showCancel: 'ActionSheet with cancel button',
-      showDescription: 'ActionSheet with description',
-      description: 'Description'
-    }
+      showDescription: 'Show Description',
+    },
   },
 
   data() {
     return {
-      show1: false,
-      show2: false,
-      show3: false,
-      show4: false,
-      show5: false
+      show: {
+        basic: false,
+        cancel: false,
+        title: false,
+        status: false,
+        description: false,
+      },
     };
   },
 
@@ -82,7 +100,7 @@ export default {
       return [
         { name: this.$t('option') },
         { name: this.$t('option') },
-        { name: this.$t('option'), subname: this.$t('subname') }
+        { name: this.$t('option'), subname: this.$t('subname') },
       ];
     },
 
@@ -90,21 +108,21 @@ export default {
       return [
         { name: this.$t('option'), color: GREEN },
         { loading: true },
-        { name: this.$t('disabledOption'), disabled: true }
+        { name: this.$t('disabledOption'), disabled: true },
       ];
-    }
+    },
   },
 
   methods: {
     onSelect(item) {
-      this.show1 = false;
+      this.show.basic = false;
       this.$toast(item.name);
     },
 
     onCancel() {
       this.$toast('cancel');
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -112,13 +130,7 @@ export default {
 @import '../../style/var';
 
 .demo-action-sheet {
-  background-color: @white;
-
-  .van-button {
-    margin-left: @padding-md;
-  }
-
-  p {
+  &-content {
     padding: @padding-md @padding-md @padding-md * 10;
   }
 }

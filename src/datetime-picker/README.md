@@ -6,7 +6,7 @@ Used to select time, support date and time dimensions, usually used with the [Po
 
 ### Install
 
-``` javascript
+```js
 import Vue from 'vue';
 import { DatetimePicker } from 'vant';
 
@@ -26,7 +26,7 @@ Vue.use(DatetimePicker);
 />
 ```
 
-```javascript
+```js
 export default {
   data() {
     return {
@@ -82,15 +82,14 @@ export default {
       currentDate: new Date()
     };
   },
-
   methods: {
-    formatter(type, value) {
+    formatter(type, val) {
       if (type === 'year') {
-        return `${value} Year`;
+        return `${val} Year`;
       } else if (type === 'month') {
-        return `${value} Month`
+        return `${val} Month`
       }
-      return value;
+      return val;
     }
   }
 }
@@ -134,7 +133,6 @@ export default {
       currentTime: '12:00'
     };
   },
-
   methods: {
     filter(type, options) {
       if (type === 'minute') {
@@ -151,31 +149,45 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default | Version |
-|------|------|------|------|------|
-| type | Can be set to `date` `time`<br> `year-month` | *string* | `datetime` | - |
-| min-date | Min date | *Date* | Ten years ago on January 1 | - |
-| max-date | Max date | *Date* | Ten years later on December 31 | - |
-| min-hour | Min hour for `time` type | *number* | `0` | - |
-| max-hour | Max hour for `time` type | *number* | `23` | - |
-| min-minute | Max minute for `time` type | *number* | `0` | - |
-| max-minute | Max minute for `time` type | *number* | `59` | - |
-| filter | Option filter | *(type, values) => values* | - | - |
-| formatter | Option text formatter | *(type, value) => value* | - | - |
-| title | Toolbar title | *string* | `''` | - |
-| show-toolbar | Whether to show toolbar | *boolean* | `true` | - |
-| loading | Whether to show loading prompt | *boolean* | `false` | - |
-| item-height | Option height | *number* | `44` | - |
-| confirm-button-text | Text of confirm button | *string* | `Confirm` | - |
-| cancel-button-text | Text of cancel button | *string* | `Cancel` | - |
-| visible-item-count | Count of visible columns | *number* | `5` | - |
-| swipe-duration | Duration of the momentum animation，unit `ms` | *number*  | `1000` | `2.2.13` |
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| type | Can be set to `date` `time`<br> `year-month` | *string* | `datetime` |
+| title | Toolbar title | *string* | `''` |
+| confirm-button-text | Text of confirm button | *string* | `Confirm` |
+| cancel-button-text | Text of cancel button | *string* | `Cancel` |
+| show-toolbar | Whether to show toolbar | *boolean* | `true` |
+| loading | Whether to show loading prompt | *boolean* | `false` |
+| filter | Option filter | *(type, vals) => vals* | - |
+| formatter | Option text formatter | *(type, val) => val* | - |
+| item-height | Option height | *number \| string* | `44` |
+| visible-item-count | Count of visible columns | *number \| string* | `5` |
+| swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | *number \| string*  | `1000` |
+
+### DatePicker Props
+
+Following props are supported when the type is date or datetime
+
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| min-date | Min date | *Date* | Ten years ago on January 1 |
+| max-date | Max date | *Date* | Ten years later on December 31 |
+
+### TimePicker Props
+
+Following props are supported when the type is time
+
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| min-hour | Min hour for `time` type | *number \| string* | `0` |
+| max-hour | Max hour for `time` type | *number \| string* | `23` |
+| min-minute | Max minute for `time` type | *number \| string* | `0` |
+| max-minute | Max minute for `time` type | *number \| string* | `59` |
 
 ### Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when value changed | picker: picker instance |
+| change | Triggered when value changed | picker: Picker instance |
 | confirm | Triggered when click confirm button | value: current value |
 | cancel | Triggered when click cancel button | - |
 
@@ -185,4 +197,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| getPicker | get Picker instance | - | - |
+| getPicker `v2.4.0` | get Picker instance | - | - |

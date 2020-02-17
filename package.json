@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,7 +19,6 @@
     "test": "vant-cli test",
     "build": "vant-cli build",
     "release": "vant-cli release",
-    "changelog": "vant-cli changelog",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html"
@@ -31,6 +30,10 @@
     }
   },
   "lint-staged": {
+    "*.{ts,tsx,js,vue,less}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.{ts,tsx,js,vue}": [
       "eslint --fix",
       "git add"
@@ -52,7 +55,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.2.0",
+    "@vant/icons": "1.2.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
@@ -60,7 +63,7 @@
     "vue": ">= 2.5.22"
   },
   "devDependencies": {
-    "@vant/cli": "^2.1.0",
+    "@vant/cli": "^2.2.4",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
@@ -86,10 +89,11 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "browserslist": [
     "Android >= 4.0",
-    "iOS >= 7"
+    "iOS >= 8"
   ]
 }

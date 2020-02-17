@@ -15,12 +15,12 @@ function triggerZoom(el, x, y) {
 const images = [
   'https://img.yzcdn.cn/1.png',
   'https://img.yzcdn.cn/2.png',
-  'https://img.yzcdn.cn/3.png'
+  'https://img.yzcdn.cn/3.png',
 ];
 
 test('render image', async () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images, value: true }
+    propsData: { images, value: true },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -38,18 +38,56 @@ test('render image', async () => {
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
+test('closeable prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      closeable: true,
+    },
+  });
+
+  wrapper.find('.van-image-preview__close-icon').trigger('click');
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+});
+
+test('close-icon prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('close-icon-position prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+      closeIconPosition: 'top-left',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {
       images,
       value: true,
-      asyncClose: true
+      asyncClose: true,
     },
     listeners: {
       input(value) {
         wrapper.setProps({ value });
-      }
-    }
+      },
+    },
   });
 
   const swipe = wrapper.find('.van-swipe__track');
@@ -99,13 +137,16 @@ test('onClose option', () => {
   const instance = ImagePreview({
     images,
     startPostion: 1,
-    onClose
+    onClose,
   });
 
   instance.close();
 
   expect(onClose).toHaveBeenCalledTimes(1);
-  expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
+  expect(onClose).toHaveBeenCalledWith({
+    index: 0,
+    url: 'https://img.yzcdn.cn/1.png',
+  });
 });
 
 test('onChange option', async done => {
@@ -115,11 +156,30 @@ test('onChange option', async done => {
     onChange(index) {
       expect(index).toEqual(2);
       done();
-    }
+    },
   });
 
   const swipe = instance.$el.querySelector('.van-swipe__track');
   triggerDrag(swipe, 1000, 0);
+});
+
+test('onScale option', async done => {
+  const { getBoundingClientRect } = Element.prototype;
+  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
+  const instance = ImagePreview({
+    images,
+    startPosition: 0,
+    onScale({ index, scale }) {
+      expect(index).toEqual(2);
+      expect(scale <= 2).toBeTruthy();
+      done();
+    },
+  });
+
+  const image = instance.$el.getElementsByTagName('img')[0];
+  triggerZoom(image, 300, 300);
+  Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
 
 test('register component', () => {
@@ -132,7 +192,7 @@ test('zoom', async () => {
   Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
 
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images, value: true }
+    propsData: { images, value: true },
   });
 
   const image = wrapper.find('img');
@@ -146,8 +206,8 @@ test('set show-index prop to false', () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {
       value: true,
-      showIndex: false
-    }
+      showIndex: false,
+    },
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -159,7 +219,7 @@ test('index slot', () => {
       <van-image-preview :value="true">
         <template #index>Custom Index</template>
       </van-image-preview>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -171,7 +231,7 @@ test('cover slot', () => {
       <van-image-preview :value="true">
         <template #cover>Custom Cover Content</template>
       </van-image-preview>
-    `
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -182,8 +242,8 @@ test('closeOnPopstate', () => {
     propsData: {
       images,
       value: true,
-      closeOnPopstate: true
-    }
+      closeOnPopstate: true,
+    },
   });
 
   trigger(window, 'popstate');
@@ -191,7 +251,7 @@ test('closeOnPopstate', () => {
 
   wrapper.setProps({
     value: true,
-    closeOnPopstate: false
+    closeOnPopstate: false,
   });
 
   trigger(window, 'popstate');
@@ -202,12 +262,12 @@ test('lazy-load prop', () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {
       images,
-      lazyLoad: true
-    }
+      lazyLoad: true,
+    },
   });
 
   wrapper.setProps({
-    value: true
+    value: true,
   });
 
   expect(wrapper).toMatchSnapshot();

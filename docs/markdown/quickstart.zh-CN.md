@@ -2,7 +2,7 @@
 
 ### 脚手架
 
-推荐使用 Vue 官方提供的脚手架 [Vue Cli 3](https://cli.vuejs.org/zh/) 创建项目
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
 
 ```bash
 # 安装 Vue Cli
@@ -19,7 +19,9 @@ vue ui
 
 在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
-### 安装
+### 通过 npm 安装
+
+在现有项目中使用 Vant 时，可以通过`npm`或`yarn`安装
 
 ```bash
 # 通过 npm 安装
@@ -105,7 +107,7 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 
-> 注意：配置 babel-plugin-import 插件后，将不允许以这种方式导入组件
+> 配置按需引入后，将不允许直接导入所有组件
 
 ### 方式四. 通过 CDN 引入
 
@@ -113,25 +115,25 @@ Vue.use(Vant);
 
 ```html
 <!-- 引入样式文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.2/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.4/lib/index.css">
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.2/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.4/lib/vant.min.js"></script>
 
 <script>
-  // 在 #app 标签下渲染一个按钮组件
-  new Vue({
-    el: '#app',
-    template: `<van-button>按钮</van-button>`
-  });
+// 在 #app 标签下渲染一个按钮组件
+new Vue({
+  el: '#app',
+  template: `<van-button>按钮</van-button>`
+});
 
-  // 调用函数组件，弹出一个 Toast
-  vant.Toast('提示');
+// 调用函数组件，弹出一个 Toast
+vant.Toast('提示');
 </script>
 ```
 
-## 其他
+## 进阶用法
 
 ### Rem 适配
 
@@ -148,7 +150,7 @@ Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，
 module.exports = {
   plugins: {
     'autoprefixer': {
-      browsers: ['Android >= 4.0', 'iOS >= 7']
+      browsers: ['Android >= 4.0', 'iOS >= 8']
     },
     'postcss-pxtorem': {
       rootValue: 37.5,
@@ -158,7 +160,7 @@ module.exports = {
 }
 ```
 
-> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+> 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译
 
 ### 在桌面端使用
 
@@ -189,3 +191,28 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 ```
 
 <img src="https://b.yzcdn.cn/vant/safearea.png" style="margin-top: 30px;">
+
+### 组件实例方法
+
+Vant 中的许多组件提供了实例方法，调用实例方法时，我们需要通过 [ref](https://cn.vuejs.org/v2/api/#ref) 来注册组件引用信息，引用信息将会注册在父组件的`$refs`对象上。注册完成后，我们可以通过`this.$refs.xxx`访问到对应的组件实例，并调用上面的实例方法。
+
+```html
+<!-- 将该组件绑定到 this.$refs.checkbox 上 -->
+<van-checkbox v-model="checked" ref="checkbox">
+  复选框
+</van-checkbox>
+```
+
+```js
+export default {
+  data() {
+    return {
+      checked: false
+    };
+  },
+  // 注意：组件挂载后才能访问到 ref 对象
+  mounted() {
+    this.$refs.checkbox.toggle();
+  }
+}
+```

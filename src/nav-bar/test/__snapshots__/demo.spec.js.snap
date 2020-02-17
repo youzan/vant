@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-nav-bar van-hairline--bottom" style="z-index: 1;">
+    <div class="van-nav-bar van-hairline--bottom">
       <div class="van-nav-bar__left"><i class="van-icon van-icon-arrow-left van-nav-bar__arrow">
           <!----></i><span class="van-nav-bar__text">返回</span></div>
       <div class="van-nav-bar__title van-ellipsis">标题</div>
@@ -11,7 +11,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-nav-bar van-hairline--bottom" style="z-index: 1;">
+    <div class="van-nav-bar van-hairline--bottom">
       <div class="van-nav-bar__left"><i class="van-icon van-icon-arrow-left van-nav-bar__arrow">
           <!----></i><span class="van-nav-bar__text">返回</span></div>
       <div class="van-nav-bar__title van-ellipsis">标题</div>

@@ -18,34 +18,35 @@ export default {
     title: '日期選擇',
     confirm: '確定',
     weekdays: ['日', '壹', '二', '三', '四', '五', '六'],
-    monthTitle: (year: number, month: number) => `${year}年${month}月`
+    monthTitle: (year: number, month: number) => `${year}年${month}月`,
+    rangePrompt: (maxRange: number) => `選擇天數不能超過 ${maxRange} 天`,
   },
   vanContactCard: {
-    addText: '新增聯絡人'
+    addText: '新增聯絡人',
   },
   vanContactList: {
-    addText: '建立聯絡人'
+    addText: '建立聯絡人',
   },
   vanPagination: {
     prev: '上一頁',
-    next: '下一頁'
+    next: '下一頁',
   },
   vanPullRefresh: {
     pulling: '下拉即可刷新...',
-    loosing: '釋放即可刷新...'
+    loosing: '釋放即可刷新...',
   },
   vanSubmitBar: {
-    label: '合計：'
+    label: '合計：',
   },
   vanCoupon: {
     unlimited: '無使用門檻',
     discount: (discount: number) => `${discount}折`,
-    condition: (condition: number) => `滿${condition}元可用`
+    condition: (condition: number) => `滿${condition}元可用`,
   },
   vanCouponCell: {
     title: '優惠券',
     tips: '暫無可用',
-    count: (count: number) => `${count}張可用`
+    count: (count: number) => `${count}張可用`,
   },
   vanCouponList: {
     empty: '暫無優惠券',
@@ -53,7 +54,7 @@ export default {
     close: '不使用優惠',
     enable: '可使用優惠券',
     disabled: '不可使用優惠券',
-    placeholder: '請輸入優惠代碼'
+    placeholder: '請輸入優惠代碼',
   },
   vanAddressEdit: {
     area: '地區',
@@ -64,13 +65,13 @@ export default {
     defaultAddress: '設為預設收貨地址',
     telPlaceholder: '收貨人手機號碼',
     namePlaceholder: '收貨人姓名',
-    areaPlaceholder: '選擇縣 / 市'
+    areaPlaceholder: '選擇縣 / 市',
   },
   vanAddressEditDetail: {
     label: '詳細地址',
-    placeholder: '街道門牌、樓層房號等資訊'
+    placeholder: '街道門牌、樓層房號等資訊',
   },
   vanAddressList: {
-    add: '新增地址'
-  }
+    add: '新增地址',
+  },
 };

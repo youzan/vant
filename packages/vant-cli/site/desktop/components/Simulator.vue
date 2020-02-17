@@ -9,13 +9,13 @@ export default {
   name: 'van-doc-simulator',
 
   props: {
-    src: String
+    src: String,
   },
 
   data() {
     return {
       scrollTop: window.scrollY,
-      windowHeight: window.innerHeight
+      windowHeight: window.innerHeight,
     };
   },
 
@@ -27,9 +27,9 @@ export default {
     simulatorStyle() {
       const height = Math.min(640, this.windowHeight - 90);
       return {
-        height: height + 'px'
+        height: height + 'px',
       };
-    }
+    },
   },
 
   mounted() {
@@ -39,7 +39,7 @@ export default {
     window.addEventListener('resize', () => {
       this.windowHeight = window.innerHeight;
     });
-  }
+  },
 };
 </script>
 
@@ -56,7 +56,7 @@ export default {
   min-width: @van-doc-simulator-width;
   overflow: hidden;
   background: #fafafa;
-  border-radius: 6px;
+  border-radius: @van-doc-border-radius;
   box-shadow: #ebedf0 0 4px 12px;
 
   @media (max-width: 1100px) {

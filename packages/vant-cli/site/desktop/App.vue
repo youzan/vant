@@ -19,7 +19,7 @@ import { setLang } from '../common/locales';
 
 export default {
   components: {
-    VanDoc
+    VanDoc,
   },
 
   data() {
@@ -27,7 +27,7 @@ export default {
 
     return {
       packageVersion,
-      simulator: `${path}mobile.html${location.hash}`
+      simulator: `${path}mobile.html${location.hash}`,
     };
   },
 
@@ -41,7 +41,7 @@ export default {
       const { locales = {} } = config.site;
       return Object.keys(locales).map(key => ({
         lang: key,
-        label: locales[key].langLabel || ''
+        label: locales[key].langLabel || '',
       }));
     },
 
@@ -61,14 +61,14 @@ export default {
       }
 
       return null;
-    }
+    },
   },
 
   watch: {
     lang(val) {
       setLang(val);
       this.setTitle();
-    }
+    },
   },
 
   created() {
@@ -84,8 +84,8 @@ export default {
       }
 
       document.title = title;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -17,8 +17,8 @@ function initInstance() {
     el: document.createElement('div'),
     // avoid missing animation when first rendered
     propsData: {
-      lazyRender: false
-    }
+      lazyRender: false,
+    },
   });
 
   instance.$on('input', value => {
@@ -39,7 +39,7 @@ function Dialog(options) {
 
     Object.assign(instance, Dialog.currentOptions, options, {
       resolve,
-      reject
+      reject,
     });
   });
 }
@@ -68,15 +68,16 @@ Dialog.defaultOptions = {
   closeOnClickOverlay: false,
   callback: action => {
     instance[action === 'confirm' ? 'resolve' : 'reject'](action);
-  }
+  },
 };
 
 Dialog.alert = Dialog;
 
-Dialog.confirm = options => Dialog({
-  showCancelButton: true,
-  ...options
-});
+Dialog.confirm = options =>
+  Dialog({
+    showCancelButton: true,
+    ...options,
+  });
 
 Dialog.close = () => {
   if (instance) {

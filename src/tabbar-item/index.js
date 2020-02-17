@@ -1,8 +1,13 @@
-import { createNamespace, isObj, isDef } from '../utils';
+// Utils
+import { createNamespace, isObject, isDef } from '../utils';
+import { route, routeProps } from '../utils/router';
+
+// Mixins
+import { ChildrenMixin } from '../mixins/relation';
+
+// Components
 import Icon from '../icon';
 import Info from '../info';
-import { route, routeProps } from '../utils/router';
-import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
 
@@ -14,12 +19,12 @@ export default createComponent({
     dot: Boolean,
     icon: String,
     name: [Number, String],
-    info: [Number, String]
+    info: [Number, String],
   },
 
   data() {
     return {
-      active: false
+      active: false,
     };
   },
 
@@ -27,13 +32,13 @@ export default createComponent({
     routeActive() {
       const { to, $route } = this;
       if (to && $route) {
-        const config = isObj(to) ? to : { path: to };
+        const config = isObject(to) ? to : { path: to };
         const pathMatched = config.path === $route.path;
         const nameMatched = isDef(config.name) && config.name === $route.name;
 
         return pathMatched || nameMatched;
       }
-    }
+    },
   },
 
   methods: {
@@ -41,7 +46,7 @@ export default createComponent({
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
       route(this.$router, this);
-    }
+    },
   },
 
   render() {
@@ -58,5 +63,5 @@ export default createComponent({
         <div class={bem('text')}>{slots('default', { active })}</div>
       </div>
     );
-  }
+  },
 });

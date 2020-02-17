@@ -32,6 +32,9 @@ exports[`columns-top、columns-bottom prop 1`] = `
 <div class="van-picker">
   <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
   <!---->Custom Columns Top<div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>Custom Columns Bottom
@@ -60,6 +63,9 @@ exports[`render title slot 1`] = `
   <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>Custom title<button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
@@ -72,6 +78,9 @@ exports[`toolbar-position prop 1`] = `
   <!---->
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>

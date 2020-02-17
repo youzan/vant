@@ -28,18 +28,18 @@ export default {
   name: 'van-doc-nav',
 
   components: {
-    [NavLink.name]: NavLink
+    [NavLink.name]: NavLink,
   },
 
   props: {
     lang: String,
-    navConfig: Array
+    navConfig: Array,
   },
 
   data() {
     return {
       top: 60,
-      bottom: 0
+      bottom: 0,
     };
   },
 
@@ -47,13 +47,13 @@ export default {
     style() {
       return {
         top: this.top + 'px',
-        bottom: this.bottom + 'px'
+        bottom: this.bottom + 'px',
       };
     },
 
     base() {
       return this.lang ? `/${this.lang}/` : '/';
-    }
+    },
   },
 
   created() {
@@ -65,8 +65,8 @@ export default {
     onScroll() {
       const { pageYOffset: offset } = window;
       this.top = Math.max(0, 60 - offset);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -126,16 +126,15 @@ export default {
       color: #455a64;
       font-size: 14px;
       line-height: 28px;
-      transition: all 0.3s;
+      transition: color 0.2s;
 
-      &:hover {
-        color: #000;
+      &:hover,
+      &.active {
+        color: @van-doc-green;
       }
 
       &.active {
-        color: #000;
-        font-weight: 500;
-        font-size: 15px;
+        -webkit-font-smoothing: auto;
       }
 
       span {

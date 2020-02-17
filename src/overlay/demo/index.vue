@@ -33,25 +33,29 @@ export default {
   i18n: {
     'zh-CN': {
       showOverlay: '显示遮罩层',
-      embeddedContent: '嵌入内容'
+      embeddedContent: '嵌入内容',
     },
     'en-US': {
       showOverlay: 'Show Overlay',
-      embeddedContent: 'Embedded Content'
-    }
+      embeddedContent: 'Embedded Content',
+    },
   },
 
   data() {
     return {
       show: false,
-      showEmbedded: false
+      showEmbedded: false,
     };
-  }
+  },
 };
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-overlay {
+  background: @white;
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -62,7 +66,7 @@ export default {
   .block {
     width: 120px;
     height: 120px;
-    background-color: #fff;
+    background-color: @white;
   }
 }
 </style>

@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
+
+// Components
 import Button from '../button';
 import RadioGroup from '../radio-group';
 import AddressItem, { AddressItemData } from './Item';
@@ -20,6 +23,7 @@ export type AddressListProps = {
 
 export type AddressListSlots = DefaultSlots & {
   top?: ScopedSlot;
+  'item-bottom'?: ScopedSlot;
 };
 
 const [createComponent, bem, t] = createNamespace('address-list');
@@ -42,6 +46,9 @@ function AddressList(
         disabled={disabled}
         switchable={props.switchable}
         defaultTagText={props.defaultTagText}
+        scopedSlots={{
+          bottom: slots['item-bottom'],
+        }}
         onSelect={() => {
           emit(ctx, disabled ? 'select-disabled' : 'select', item, index);
 
@@ -66,7 +73,9 @@ function AddressList(
     <div class={bem()} {...inherit(ctx)}>
       {slots.top?.()}
       <RadioGroup value={props.value}>{List}</RadioGroup>
-      {props.disabledText && <div class={bem('disabled-text')}>{props.disabledText}</div>}
+      {props.disabledText && (
+        <div class={bem('disabled-text')}>{props.disabledText}</div>
+      )}
       {DisabledList}
       {slots.default?.()}
       <div class={bem('bottom')}>
@@ -94,8 +103,8 @@ AddressList.props = {
   defaultTagText: String,
   switchable: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export default createComponent<AddressListProps>(AddressList);

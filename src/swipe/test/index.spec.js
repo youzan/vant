@@ -1,14 +1,19 @@
-import Vue from 'vue';
-import Swipe from '..';
-import SwipeItem from '../../swipe-item';
-import { mount, triggerDrag, later } from '../../../test';
+import { mount, triggerDrag, later, trigger } from '../../../test';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+function mockPageHidden() {
+  let hidden = true;
+
+  Object.defineProperty(document, 'hidden', {
+    get: () => hidden,
+  });
+
+  trigger(window, 'visibilitychange');
+  hidden = false;
+}
 
 const Component = {
   template: `
-    <van-swipe ref="swipe" v-bind="$props">
+    <van-swipe ref="swipe" v-bind="$props" v-on="$listeners">
       <van-swipe-item :style="style">1</van-swipe-item>
       <van-swipe-item :style="style">2</van-swipe-item>
       <van-swipe-item :style="style">3</van-swipe-item>
@@ -18,49 +23,62 @@ const Component = {
     vertical: Boolean,
     loop: {
       type: Boolean,
-      default: true
+      default: true,
     },
     touchable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     autoplay: {
       type: Number,
-      default: 0
+      default: 0,
     },
     initialSwipe: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
       style: {
         width: '100px',
-        height: '100px'
-      }
+        height: '100px',
+      },
     };
-  }
+  },
 };
 
-test('swipeTo', async () => {
+test('swipeTo method', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
 
-  await later(50);
+  await later(100);
   expect(swipe.active).toEqual(2);
 });
 
-test('swipeTo immediate', async () => {
+test('swipeTo method with immediate option', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2, {
-    immediate: true
+    immediate: true,
   });
 
   await later(100);
   expect(swipe.active).toEqual(2);
+});
+
+test('prev and next method', async () => {
+  const wrapper = mount(Component);
+  const { swipe } = wrapper.vm.$refs;
+
+  swipe.next();
+  await later(50);
+  expect(swipe.active).toEqual(1);
+
+  swipe.prev();
+  await later(50);
+  expect(swipe.active).toEqual(0);
 });
 
 test('initial swipe', () => {
@@ -75,8 +93,8 @@ test('initial swipe', () => {
 test('vertical swipe', () => {
   const wrapper = mount(Component, {
     propsData: {
-      vertical: true
-    }
+      vertical: true,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -88,8 +106,8 @@ test('vertical swipe', () => {
 test('untouchable', () => {
   const wrapper = mount(Component, {
     propsData: {
-      touchable: false
-    }
+      touchable: false,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -122,8 +140,8 @@ test('loop', () => {
 test('not loop', () => {
   const wrapper = mount(Component, {
     propsData: {
-      loop: false
-    }
+      loop: false,
+    },
   });
   const { swipe } = wrapper.vm.$refs;
   const track = wrapper.find('.van-swipe__track');
@@ -134,4 +152,22 @@ test('not loop', () => {
   expect(swipe.active).toEqual(2);
   triggerDrag(track, -100, 0);
   expect(swipe.active).toEqual(2);
+});
+
+test('should pause auto play when page hidden', async () => {
+  const change = jest.fn();
+  mount(Component, {
+    propsData: {
+      loop: true,
+      autoplay: 1,
+    },
+    listeners: {
+      change,
+    },
+  });
+
+  mockPageHidden();
+  await later(50);
+
+  expect(change).toHaveBeenCalledTimes(0);
 });

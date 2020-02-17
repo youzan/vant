@@ -1,10 +1,16 @@
+// Context
 import { context } from './context';
+import { openOverlay, closeOverlay, updateOverlay } from './overlay';
+
+// Utils
+import { on, off, preventDefault } from '../../utils/dom/event';
+import { removeNode } from '../../utils/dom/node';
+import { getScroller } from '../../utils/dom/scroll';
+
+// Mixins
 import { TouchMixin } from '../touch';
 import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
-import { on, off, preventDefault } from '../../utils/dom/event';
-import { openOverlay, closeOverlay, updateOverlay } from './overlay';
-import { getScrollEventTarget } from '../../utils/dom/scroll';
 
 export const popupMixinProps = {
   // whether to show popup
@@ -22,13 +28,13 @@ export const popupMixinProps = {
   // prevent body scroll
   lockScroll: {
     type: Boolean,
-    default: true
+    default: true,
   },
   // whether to lazy render
   lazyRender: {
     type: Boolean,
-    default: true
-  }
+    default: true,
+  },
 };
 
 export function PopupMixin(options = {}) {
@@ -41,22 +47,22 @@ export function PopupMixin(options = {}) {
           if (this.overlay) {
             updateOverlay();
           }
-        }
-      })
+        },
+      }),
     ],
 
     props: popupMixinProps,
 
     data() {
       return {
-        inited: this.value
+        inited: this.value,
       };
     },
 
     computed: {
       shouldRender() {
         return this.inited || !this.lazyRender;
-      }
+      },
     },
 
     watch: {
@@ -70,7 +76,7 @@ export function PopupMixin(options = {}) {
         }
       },
 
-      overlay: 'renderOverlay'
+      overlay: 'renderOverlay',
     },
 
     mounted() {
@@ -90,8 +96,8 @@ export function PopupMixin(options = {}) {
     beforeDestroy() {
       this.close();
 
-      if (this.getContainer && this.$parent && this.$parent.$el) {
-        this.$parent.$el.appendChild(this.$el);
+      if (this.getContainer) {
+        removeNode(this.$el);
       }
     },
 
@@ -152,7 +158,7 @@ export function PopupMixin(options = {}) {
       onTouchMove(event) {
         this.touchMove(event);
         const direction = this.deltaY > 0 ? '10' : '01';
-        const el = getScrollEventTarget(event.target, this.$el);
+        const el = getScroller(event.target, this.$el);
         const { scrollHeight, offsetHeight, scrollTop } = el;
         let status = '11';
 
@@ -186,7 +192,7 @@ export function PopupMixin(options = {}) {
               zIndex: context.zIndex++,
               duration: this.duration,
               className: this.overlayClass,
-              customStyle: this.overlayStyle
+              customStyle: this.overlayStyle,
             });
           } else {
             closeOverlay(this);
@@ -196,7 +202,7 @@ export function PopupMixin(options = {}) {
 
       updateZIndex(value = 0) {
         this.$el.style.zIndex = ++context.zIndex + value;
-      }
-    }
+      },
+    },
   };
 }
