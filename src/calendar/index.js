@@ -133,6 +133,7 @@ export default createComponent({
 
     defaultDate(val) {
       this.currentDate = val;
+      this.scrollIntoView();
     },
   },
 
