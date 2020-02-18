@@ -152,7 +152,11 @@ export default createComponent({
 
     initRect() {
       this.$nextTick(() => {
-        this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
+        // add Math.floor to avoid decimal height issues
+        // https://github.com/youzan/vant/issues/5640
+        this.bodyHeight = Math.floor(
+          this.$refs.body.getBoundingClientRect().height
+        );
         this.onScroll();
       });
     },
@@ -176,8 +180,6 @@ export default createComponent({
 
           return false;
         });
-
-        this.onScroll();
       });
     },
 
@@ -208,13 +210,13 @@ export default createComponent({
       }
 
       let height = 0;
-      let firstMonth;
+      let currentMonth;
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !firstMonth) {
-          firstMonth = months[i];
+        if (visible && !currentMonth) {
+          currentMonth = months[i];
         }
 
         months[i].visible = visible;
@@ -222,8 +224,8 @@ export default createComponent({
       }
 
       /* istanbul ignore else */
-      if (firstMonth) {
-        this.monthTitle = firstMonth.title;
+      if (currentMonth) {
+        this.monthTitle = currentMonth.title;
       }
     },
 
