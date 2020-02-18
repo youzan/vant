@@ -152,8 +152,8 @@ export default createComponent({
 
       if (this.$el && !isHidden(this.$el)) {
         const rect = this.$el.getBoundingClientRect();
-        this.computedWidth = +this.width || rect.width;
-        this.computedHeight = +this.height || rect.height;
+        this.computedWidth = Math.round(+this.width || rect.width);
+        this.computedHeight = Math.round(+this.height || rect.height);
       }
 
       this.swiping = true;
