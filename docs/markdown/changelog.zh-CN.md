@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+
+### [v2.5.1](https://github.com/youzan/vant/compare/v2.5.1-beta.0...v2.5.1)
+`2020-02-18`
+
+**Feature**
+
+* Sku: 新增 initialMessages 字段
+* Calendar: 在调用 reset 方法后自动定位到当前月份 [407b7d](https://github.com/youzan/vant/commit/407b7ded43bc87c98605444dbbb829f5f05744b6)
+* Calendar: 在修改 default-date 属性后自动定位到当前月份 [#5664](https://github.com/youzan/vant/issues/5664)
+
+**Bug Fixes**
+
+* Calendar: 修复在个别情况下日历渲染为空白的问题 [#5640](https://github.com/youzan/vant/issues/5640)
+* Calendar: 修复在单选情况下使用 max-range 属性导致报错的问题 [79d2c3](https://github.com/youzan/vant/commit/79d2c344f9ee9945b09434b35cbe63a3816410ad)
+* Form: 修复 error-message-align 属性类型定义报错的问题 [#5674](https://github.com/youzan/vant/issues/5674)
+* Swipe: 修复在隐藏状态下触发浏览器缩放时元素宽度错误的问题 [#5678](https://github.com/youzan/vant/issues/5678)
+
+
 ### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
 `2020-02-15`
 

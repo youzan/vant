@@ -1,5 +1,22 @@
 # Changelog
 
+### [v2.5.1](https://github.com/youzan/vant/compare/v2.5.1-beta.0...v2.5.1)
+`2020-02-18`
+
+**Feature**
+
+* Sku: support define initialMessages
+* Calendar: scroll to current month after reset [407b7d](https://github.com/youzan/vant/commit/407b7ded43bc87c98605444dbbb829f5f05744b6)
+* Calendar: scroll to currecnt month when default-date changed [#5664](https://github.com/youzan/vant/issues/5664)
+
+**Bug Fixes**
+
+* Calendar: add Math.floor to avoid decimal height issues [#5640](https://github.com/youzan/vant/issues/5640)
+* Calendar: should not check range in single mode [79d2c3](https://github.com/youzan/vant/commit/79d2c344f9ee9945b09434b35cbe63a3816410ad)
+* Form: error-message-align prop type [#5674](https://github.com/youzan/vant/issues/5674)
+* Swipe: incorrect width when resize in invisible state [#5678](https://github.com/youzan/vant/issues/5678)
+
+
 ### [v2.5.0](https://github.com/youzan/vant/compare/v2.4.7...v2.5.0)
 `2020-02-15`
 
