@@ -64,6 +64,7 @@ export default createComponent({
   watch: {
     value() {
       this.resetValidation();
+      this.validateWithTrigger('onChange');
       this.$nextTick(this.adjustSize);
     },
   },
@@ -158,8 +159,8 @@ export default createComponent({
       });
     },
 
-    runRules() {
-      return this.rules.reduce(
+    runRules(rules) {
+      return rules.reduce(
         (promise, rule) =>
           promise.then(() => {
             if (this.validateMessage) {
@@ -183,13 +184,13 @@ export default createComponent({
       );
     },
 
-    validate() {
+    validate(rules = this.rules) {
       return new Promise(resolve => {
-        if (!this.rules) {
+        if (!rules) {
           resolve();
         }
 
-        this.runRules().then(() => {
+        this.runRules(rules).then(() => {
           if (this.validateMessage) {
             resolve({
               name: this.name,
@@ -200,6 +201,21 @@ export default createComponent({
           }
         });
       });
+    },
+
+    validateWithTrigger(trigger) {
+      if (this.vanForm && this.rules) {
+        const defaultTrigger = this.vanForm.validateTrigger === trigger;
+        const rules = this.rules.filter(rule => {
+          if (rule.trigger) {
+            return rule.trigger === trigger;
+          }
+
+          return defaultTrigger;
+        });
+
+        this.validate(rules);
+      }
     },
 
     resetValidation() {
@@ -269,6 +285,7 @@ export default createComponent({
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', event);
+      this.validateWithTrigger('onBlur');
       resetScroll();
     },
 

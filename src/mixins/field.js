@@ -7,15 +7,20 @@ export const FieldMixin = {
 
   watch: {
     value() {
-      if (this.vanField) {
-        this.vanField.resetValidation();
+      const field = this.vanField;
+
+      if (field) {
+        field.resetValidation();
+        field.validateWithTrigger('onChange');
       }
     },
   },
 
   created() {
-    if (this.vanField && !this.vanField.children) {
-      this.vanField.children = this;
+    const field = this.vanField;
+
+    if (field && !field.children) {
+      field.children = this;
     }
   },
 };

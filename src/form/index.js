@@ -10,6 +10,10 @@ export default createComponent({
     inputAlign: String,
     validateFirst: Boolean,
     errorMessageAlign: String,
+    validateTrigger: {
+      type: String,
+      default: 'onBlur',
+    },
   },
 
   provide() {

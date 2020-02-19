@@ -1,3 +1,4 @@
+import { later } from '../../../test';
 import { mountForm, submitForm, getSimpleRules } from './shared';
 
 test('rules prop - execute order', async () => {
@@ -166,4 +167,55 @@ test('error-message-align prop', () => {
     `,
   });
   expect(wrapper).toMatchSnapshot();
+});
+
+test('validate-trigger - onBlur', async () => {
+  const wrapper = mountForm({
+    template: `
+      <van-form ref="form">
+        <van-field name="A" :rules="rulesA" value="" />
+      </van-form>
+    `,
+    data: getSimpleRules,
+  });
+
+  const input = wrapper.find('input');
+
+  input.trigger('input');
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeFalsy();
+
+  input.trigger('blur');
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeTruthy();
+});
+
+test('validate-trigger - onChange', async () => {
+  const wrapper = mountForm({
+    template: `
+      <van-form validate-trigger="onChange" ref="form">
+        <van-field v-model="value" name="A" :rules="rulesA" />
+      </van-form>
+    `,
+    data() {
+      return {
+        ...getSimpleRules(),
+        value: '',
+      };
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  input.trigger('blur');
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeFalsy();
+
+  wrapper.setData({ value: '1' });
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeFalsy();
+
+  wrapper.setData({ value: '' });
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeTruthy();
 });

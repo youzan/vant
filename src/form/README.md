@@ -411,6 +411,7 @@ export default {
 | error-message-align | Error message align, can be set to `center` `right` | *string* | `left` |
 | colon | Whether to display `:` after label | *boolean* | *false* |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
+| validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | *string* | `onBlur` |
 
 ### Events
 
