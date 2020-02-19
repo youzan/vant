@@ -147,6 +147,7 @@ export default {
 | safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `v2.4.2` | 商品属性 | *array* | - |
+| preview-on-click-image | 是否在点击商品图片时自动预览 | *boolean* | `true` |
 
 ### Events
 
