@@ -91,6 +91,10 @@ export default createComponent({
       type: Object,
       default: () => ({}),
     },
+    previewOnClickImage: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -484,6 +488,8 @@ export default createComponent({
     },
 
     onPreviewImage(indexImage) {
+      const { previewOnClickImage } = this;
+
       const index = this.imageList.findIndex(image => image === indexImage);
 
       const params = {
@@ -493,6 +499,10 @@ export default createComponent({
       };
 
       this.$emit('open-preview', params);
+
+      if (!previewOnClickImage) {
+        return;
+      }
 
       ImagePreview({
         images: this.imageList,
