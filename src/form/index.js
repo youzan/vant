@@ -8,6 +8,7 @@ export default createComponent({
     labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,
+    scrollToError: Boolean,
     validateFirst: Boolean,
     errorMessageAlign: String,
     validateTrigger: {
@@ -140,6 +141,10 @@ export default createComponent({
             values,
             errors,
           });
+
+          if (this.scrollToError) {
+            this.scrollToField(errors[0].name);
+          }
         });
     },
   },

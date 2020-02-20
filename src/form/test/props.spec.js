@@ -1,4 +1,4 @@
-import { later } from '../../../test';
+import { later, mockScrollIntoView } from '../../../test';
 import { mountForm, submitForm, getSimpleRules } from './shared';
 
 test('rules prop - execute order', async () => {
@@ -267,4 +267,21 @@ test('validate-trigger - custom trigger in rules', async () => {
   expect(
     wrapper.element.querySelectorAll('.van-field__error-message').length
   ).toEqual(2);
+});
+
+test('scroll-to-error prop', async () => {
+  const fn = mockScrollIntoView();
+  const wrapper = mountForm({
+    template: `
+      <van-form scroll-to-error>
+        <van-field name="A" :rules="rulesA" value="" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data: getSimpleRules,
+  });
+
+  await submitForm(wrapper);
+
+  expect(fn).toHaveBeenCalledTimes(1);
 });
