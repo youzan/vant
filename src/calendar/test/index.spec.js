@@ -450,3 +450,14 @@ test('max-range prop', async () => {
 
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
+
+test('close event', () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      value: true,
+    },
+  });
+
+  wrapper.setProps({ value: false });
+  expect(wrapper.emitted('close')).toBeTruthy();
+});

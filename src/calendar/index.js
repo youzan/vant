@@ -373,6 +373,8 @@ export default createComponent({
 
   render() {
     if (this.poppable) {
+      const createListener = name => () => this.$emit(name);
+
       return (
         <Popup
           round
@@ -385,6 +387,8 @@ export default createComponent({
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
+          onClose={createListener('close')}
+          onClosed={createListener('closed')}
         >
           {this.genCalendar()}
         </Popup>
