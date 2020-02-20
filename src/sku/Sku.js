@@ -621,6 +621,9 @@ export default createComponent({
         skuEventBus={skuEventBus}
         selectedSku={selectedSku}
       >
+        <template slot="sku-header-image-extra">
+          {slots('sku-header-image-extra')}
+        </template>
         {slots('sku-header-price') || (
           <div class="van-sku__goods-price">
             <span class="van-sku__price-symbol">￥</span>

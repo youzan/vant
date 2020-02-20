@@ -163,7 +163,7 @@ export default {
       stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button',
-      actionsTop: 'action top info',
+      actionsTop: 'Action top info',
     },
   },
 

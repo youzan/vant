@@ -174,6 +174,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | sku-header-price | Custom header price area |
 | sku-header-origin-price | Custom header origin price area |
 | sku-header-extra | Extra header area |
+| sku-header-image-extra  | Custom header image extra area |
 | sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |
