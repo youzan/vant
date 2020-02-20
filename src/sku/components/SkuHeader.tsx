@@ -5,7 +5,7 @@ import { BORDER_BOTTOM } from '../../utils/constant';
 
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
-import { ScopedSlots } from '../../utils/types';
+import { DefaultSlots, ScopedSlot } from '../../utils/types';
 import { SkuData, SkuGoodsData, SelectedSkuData } from '../../../types/sku';
 
 export type SkuHeaderProps = {
@@ -13,6 +13,10 @@ export type SkuHeaderProps = {
   goods: SkuGoodsData;
   skuEventBus: Vue;
   selectedSku: SelectedSkuData;
+};
+
+export type SkuHeaderSlots = DefaultSlots & {
+  'sku-header-image-extra'?: ScopedSlot;
 };
 
 const [createComponent, bem] = createNamespace('sku-header');
@@ -41,7 +45,7 @@ function getSkuImg(
 function SkuHeader(
   h: CreateElement,
   props: SkuHeaderProps,
-  slots: ScopedSlots,
+  slots: SkuHeaderSlots,
   ctx: RenderContext<SkuHeaderProps>
 ) {
   const { sku, goods, skuEventBus, selectedSku } = props;
@@ -55,7 +59,7 @@ function SkuHeader(
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
       <div class={bem('img-wrap')} onClick={previewImage}>
         <img src={goodsImg} />
-        {slots['sku-header-image-extra'] && slots['sku-header-image-extra']()}
+        {slots['sku-header-image-extra']?.()}
       </div>
       <div class={bem('goods-info')}>{slots.default && slots.default()}</div>
     </div>
