@@ -1,10 +1,4 @@
-import { mount, trigger, triggerDrag } from '../../../test';
-
-function mockScrollIntoView() {
-  const fn = jest.fn();
-  Element.prototype.scrollIntoView = fn;
-  return fn;
-}
+import { mount, trigger, triggerDrag, mockScrollIntoView } from '../../../test';
 
 function mockOffsetHeight(offsetHeight) {
   Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
