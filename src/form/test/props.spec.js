@@ -150,7 +150,9 @@ test('input-align prop', () => {
       <van-form input-align="right">
         <van-field />
         <van-field>
-          <div slot="input" />
+          <template #input>
+            <div />
+          </template>
         </van-field>
       </van-form>
     `,

@@ -114,7 +114,9 @@ export default {
 
 ```html
 <van-field name="switch" label="Switch">
-  <van-switch v-model="switchChecked" slot="input" size="20" />
+  <template #input>
+    <van-switch v-model="switchChecked" size="20" />
+  </template>
 </van-field>
 ```
 
@@ -132,17 +134,17 @@ export default {
 
 ```html
 <van-field name="checkbox" label="Checkbox">
-  <van-checkbox v-model="checkbox" slot="input" shape="square" />
+  <template #input>
+    <van-checkbox v-model="checkbox" shape="square" />
+  </template>
 </van-field>
 <van-field name="checkboxGroup" label="CheckboxGroup">
-  <van-checkbox-group
-    v-model="checkboxGroup"
-    slot="input"
-    direction="horizontal"
-  >
-    <van-checkbox name="1" shape="square">Checkbox 1</van-checkbox>
-    <van-checkbox name="2" shape="square">Checkbox 2</van-checkbox>
-  </van-checkbox-group>
+  <template #input>
+    <van-checkbox-group v-model="checkboxGroup" direction="horizontal">
+      <van-checkbox name="1" shape="square">Checkbox 1</van-checkbox>
+      <van-checkbox name="2" shape="square">Checkbox 2</van-checkbox>
+    </van-checkbox-group>
+  </template>
 </van-field>
 ```
 
@@ -161,10 +163,12 @@ export default {
 
 ```html
 <van-field name="radio" label="Radio">
-  <van-radio-group v-model="radio" direction="horizontal" slot="input">
-    <van-radio name="1">Radio 1</van-radio>
-    <van-radio name="2">Radio 2</van-radio>
-  </van-radio-group>
+  <template #input>
+    <van-radio-group v-model="radio" direction="horizontal">
+      <van-radio name="1">Radio 1</van-radio>
+      <van-radio name="2">Radio 2</van-radio>
+    </van-radio-group>
+  </template>
 </van-field>
 ```
 
@@ -182,7 +186,9 @@ export default {
 
 ```html
 <van-field name="stepper" label="Stepper">
-  <van-stepper v-model="stepper" slot="input" />
+  <template #input>
+    <van-stepper v-model="stepper"/>
+  </template>
 </van-field>
 ```
 
@@ -200,7 +206,9 @@ export default {
 
 ```html
 <van-field name="rate" label="Rate">
-  <van-rate v-model="rate" slot="input" />
+  <template #input>
+    <van-rate v-model="rate" />
+  </template>
 </van-field>
 ```
 
@@ -218,7 +226,9 @@ export default {
 
 ```html
 <van-field name="slider" label="Slider">
-  <van-slider v-model="slider" slot="input" />
+  <template #input>
+    <van-slider v-model="slider" />
+  </template>
 </van-field>
 ```
 
@@ -236,7 +246,9 @@ export default {
 
 ```html
 <van-field name="uploader" label="Uploader">
-  <van-uploader v-model="uploader" slot="input" />
+  <template #input>
+    <van-uploader v-model="uploader" />
+  </template>
 </van-field>
 ```
 

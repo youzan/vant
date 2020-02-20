@@ -76,14 +76,14 @@ exports[`renders demo correctly 1`] = `
                 <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
                   <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
                       <!----></i></div><span class="van-checkbox__label">
-          复选框 1
-        </span>
+            复选框 1
+          </span>
                 </div>
                 <div role="checkbox" tabindex="0" aria-checked="false" class="van-checkbox van-checkbox--horizontal">
                   <div class="van-checkbox__icon van-checkbox__icon--square"><i class="van-icon van-icon-success">
                       <!----></i></div><span class="van-checkbox__label">
-          复选框 2
-        </span>
+            复选框 2
+          </span>
                 </div>
               </div>
             </div>
