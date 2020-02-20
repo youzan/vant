@@ -219,3 +219,52 @@ test('validate-trigger - onChange', async () => {
   await later();
   expect(wrapper.contains('.van-field__error-message')).toBeTruthy();
 });
+
+test('validate-trigger - custom trigger in rules', async () => {
+  const wrapper = mountForm({
+    template: `
+      <van-form validate-trigger="none" ref="form">
+        <van-field name="A" :rules="rulesA" :value="valueA" />
+        <van-field name="B" :rules="rulesB" :value="valueB" />
+      </van-form>
+    `,
+    data() {
+      return {
+        valueA: '',
+        valueB: '',
+        rulesA: [
+          {
+            message: 'A',
+            required: true,
+            trigger: 'onChange',
+          },
+        ],
+        rulesB: [
+          {
+            message: 'B',
+            required: true,
+            trigger: 'onBlur',
+          },
+        ],
+      };
+    },
+  });
+
+  const inputs = wrapper.findAll('input');
+
+  inputs.at(0).trigger('blur');
+  wrapper.setData({ valueB: '1' });
+  await later();
+  wrapper.setData({ valueB: '' });
+  await later();
+  expect(wrapper.contains('.van-field__error-message')).toBeFalsy();
+
+  inputs.at(1).trigger('blur');
+  wrapper.setData({ valueA: '1' });
+  await later();
+  wrapper.setData({ valueA: '' });
+  await later();
+  expect(
+    wrapper.element.querySelectorAll('.van-field__error-message').length
+  ).toEqual(2);
+});
