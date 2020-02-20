@@ -413,6 +413,15 @@ export default {
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 | validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | *string* | `onBlur` |
 
+### Data Structure of Rule 
+
+| Key | Description | Type |
+|------|------|------|
+| message | Error message | *string* |
+| required | Whether to be a required field | *boolean* |
+| validator | Custom validator | *() => boolean \| Promise* |
+| trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | *string* |
+
 ### Events
 
 | Event | Description | Arguments |

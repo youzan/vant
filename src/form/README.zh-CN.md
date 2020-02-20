@@ -443,9 +443,20 @@ export default {
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | colon | 是否在 label 后面添加冒号 | *boolean* | *false* |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
-| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为`onChange`、`onSubmit` | *string* | `onBlur` |
+| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为`onChange` | *string* | `onBlur` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
+
+### Rule 数据结构
+
+使用 Field 的`rules`属性可以定义校验规则，可选属性如下:
+
+| 键名 | 说明 | 类型 |
+|------|------|------|
+| message | 错误提示文案 | *string* |
+| required | 是否为必选字段 | *boolean* |
+| validator | 自定义校验函数 | *() => boolean \| Promise* |
+| trigger `v2.5.2` | 本项规则的校验触发时机，可选值为`onChange`、`onBlur` | *string* |
 
 ### Events
 
