@@ -103,11 +103,6 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         >
-          <template #sku-header-image-extra>
-            <div class="van-sku-header-image text-center">
-              {{ $t('previewImage') }}
-            </div>
-          </template>
           <template #sku-header-price="{ price }">
             <div class="van-sku__goods-price">
               <span class="van-sku__price-symbol">￥</span>
@@ -161,7 +156,6 @@ export default {
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
-      previewImage: '查看大图',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
@@ -170,7 +164,6 @@ export default {
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
-      previewImage: 'Preview sku image',
     },
   },
 
@@ -241,16 +234,6 @@ export default {
 
   .sku-container {
     padding: 0 @padding-md;
-  }
-
-  .van-sku-header-image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0.6);
   }
 
   .text-center {
