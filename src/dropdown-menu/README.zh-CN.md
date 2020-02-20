@@ -141,8 +141,8 @@ export default {
 |------|------|------|
 | change | 点击选项导致 value 变化时触发 | value |
 | open | 打开菜单栏时触发 | - |
-| opened | 打开菜单栏且动画结束后触发 | - |
 | close | 关闭菜单栏时触发 | - |
+| opened | 打开菜单栏且动画结束后触发 | - |
 | closed | 关闭菜单栏且动画结束后触发 | - |
 
 ### DropdownItem Slots

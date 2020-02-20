@@ -141,7 +141,7 @@ export default {
 |------|------|------|
 | click | Triggered when click Popup | *event: Event* |
 | open | Triggered when open Popup | - |
-| opened | Triggered when opened Popup | - |
 | close | Triggered when close Popup | - |
+| opened | Triggered when opened Popup | - |
 | closed | Triggered when closed Popup | - |
 | click-overlay | Triggered when click overlay | - |

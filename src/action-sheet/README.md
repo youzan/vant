@@ -155,8 +155,8 @@ export default {
 |------|------|------|
 | select | Triggered when click option | *action: Action, index: number* |
 | cancel | Triggered when cancel click | - |
-| click-overlay | Triggered when click overlay | - |
 | open | Triggered when open ActionSheet | - |
-| opened | Triggered when opened ActionSheet | - |
 | close | Triggered when close ActionSheet | - |
+| opened | Triggered when opened ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
+| click-overlay | Triggered when click overlay | - |

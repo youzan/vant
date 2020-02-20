@@ -251,8 +251,10 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 |------|------|------|
 | select | Triggered when select date | *value: Date \| Date[]* |
 | confirm | Triggered after date selection is complete，if `show-confirm` is` true`, it is triggered after clicking the confirm button | *value: Date \| Date[]* |
-| close `v2.5.2` | Triggered when close Calendar Popup | - |
-| closed `v2.5.2` | Triggered when closed Calendar Popup | - |
+| open `v2.5.2` | Triggered when open Popup | - |
+| close `v2.5.2` | Triggered when close Popup | - |
+| opened `v2.5.2` | Triggered when opened Popup | - |
+| closed `v2.5.2` | Triggered when closed Popup | - |
 
 ### Slots
 

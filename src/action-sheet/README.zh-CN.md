@@ -171,11 +171,11 @@ export default {
 |------|------|------|
 | select | 选中选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
 | cancel | 取消按钮点击时触发 | - |
-| click-overlay | 点击遮罩层时触发 | - |
 | open | 打开菜单时触发 | - |
-| opened | 打开菜单且动画结束后触发 | - |
 | close | 关闭菜单时触发 | - |
+| opened | 打开菜单且动画结束后触发 | - |
 | closed | 关闭菜单且动画结束后触发 | - |
+| click-overlay | 点击遮罩层时触发 | - |
 
 ## 常见问题
 

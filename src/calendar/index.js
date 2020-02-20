@@ -387,6 +387,8 @@ export default createComponent({
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
+          onOpen={createListener('open')}
+          onOpened={createListener('opened')}
           onClose={createListener('close')}
           onClosed={createListener('closed')}
         >

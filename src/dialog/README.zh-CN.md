@@ -201,8 +201,8 @@ export default {
 | confirm | 点击确认按钮时触发 | - |
 | cancel | 点击取消按钮时触发 | - |
 | open | 打开弹窗时触发 | - |
-| opened | 打开弹窗且动画结束后触发 | - |
 | close | 关闭弹窗时触发 | - |
+| opened | 打开弹窗且动画结束后触发 | - |
 | closed | 关闭弹窗且动画结束后触发 | - |
 
 ### Slots

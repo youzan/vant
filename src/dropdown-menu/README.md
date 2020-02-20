@@ -137,8 +137,8 @@ Use `active-color` prop to custom active color of the title and options
 |------|------|------|
 | change | Triggered select option and value changed | value |
 | open | Triggered when open menu | - |
-| opened | Triggered when menu opened | - |
 | close | Triggered when close menu | - |
+| opened | Triggered when menu opened | - |
 | closed | Triggered when menu closed | - |
 
 ### DropdownItem Slots
