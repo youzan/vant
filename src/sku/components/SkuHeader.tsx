@@ -1,3 +1,4 @@
+import Icon from '../../icon';
 // Utils
 import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
@@ -13,6 +14,7 @@ export type SkuHeaderProps = {
   goods: SkuGoodsData;
   skuEventBus: Vue;
   selectedSku: SelectedSkuData;
+  previewIcon?: string;
 };
 
 const [createComponent, bem] = createNamespace('sku-header');
@@ -44,7 +46,7 @@ function SkuHeader(
   slots: DefaultSlots,
   ctx: RenderContext<SkuHeaderProps>
 ) {
-  const { sku, goods, skuEventBus, selectedSku } = props;
+  const { sku, goods, skuEventBus, selectedSku, previewIcon } = props;
   const goodsImg = getSkuImg(sku, selectedSku) || goods.picture;
 
   const previewImage = () => {
@@ -55,6 +57,11 @@ function SkuHeader(
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
       <div class={bem('img-wrap')} onClick={previewImage}>
         <img src={goodsImg} />
+        {previewIcon && (
+          <div class={bem('icon-wrap')}>
+            <Icon class={bem('icon')} name={previewIcon} />
+          </div>
+        )}
       </div>
       <div class={bem('goods-info')}>{slots.default && slots.default()}</div>
     </div>
@@ -66,6 +73,7 @@ SkuHeader.props = {
   goods: Object,
   skuEventBus: Object,
   selectedSku: Object,
+  previewIcon: String,
 };
 
 export default createComponent<SkuHeaderProps>(SkuHeader);

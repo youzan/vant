@@ -148,6 +148,7 @@ export default {
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `v2.4.2` | 商品属性 | *array* | - |
 | preview-on-click-image | 是否在点击商品图片时自动预览 | *boolean* | `true` |
+| preview-icon | 预览图片图标名称或图片链接 | *string* | - |
 
 ### Events
 

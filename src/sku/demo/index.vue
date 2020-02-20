@@ -98,6 +98,7 @@
           show-add-cart-btn
           reset-stepper-on-hide
           safe-area-inset-bottom
+          preview-icon="expand-o"
           :initial-sku="initialSku"
           :message-config="messageConfig"
           @buy-clicked="onBuyClicked"

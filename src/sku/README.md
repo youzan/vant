@@ -144,6 +144,7 @@ export default {
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
 | properties `v2.4.2` | Goods properties | *array* | - |
 | preview-on-click-image | Whether to preview image when click goods image | *boolean* | `true` |
+| preview-icon | Preview icon name | *string* | - |
 
 ### Events
 

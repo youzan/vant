@@ -95,6 +95,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    previewIcon: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {
@@ -602,6 +606,7 @@ export default createComponent({
       selectedNum,
       stepperTitle,
       selectedSkuComb,
+      previewIcon,
     } = this;
 
     const slotsProps = {
@@ -620,6 +625,7 @@ export default createComponent({
         goods={goods}
         skuEventBus={skuEventBus}
         selectedSku={selectedSku}
+        previewIcon={previewIcon}
       >
         {slots('sku-header-price') || (
           <div class="van-sku__goods-price">
