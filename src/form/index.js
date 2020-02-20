@@ -106,6 +106,15 @@ export default createComponent({
       });
     },
 
+    // @exposed-api
+    scrollToField(name) {
+      this.fields.forEach(item => {
+        if (item.name === name) {
+          item.$el.scrollIntoView();
+        }
+      });
+    },
+
     getValues() {
       return this.fields.reduce((form, field) => {
         form[field.name] = field.formValue;

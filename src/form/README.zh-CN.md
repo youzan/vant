@@ -474,6 +474,7 @@ export default {
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
 | validate | 验证表单，支持传入`name`来验证单个表单项 | *name?: string* | *Promise* |
 | resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | *name?: string* | - |
+| scrollToField `v2.5.2` | 滚动到对应表单项的位置 | *name: string* | - |
 
 ### Slots
 

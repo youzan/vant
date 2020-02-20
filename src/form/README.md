@@ -438,6 +438,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance 
 | submit | Submit form | - | - |
 | validate | Validate form | *name?: string* | *Promise* |
 | resetValidation | Reset validation | *name?: string* | - |
+| scrollToField `v2.5.2` | Scroll to field | *name: string* | - |
 
 ### Slots
 

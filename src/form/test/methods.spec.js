@@ -1,4 +1,4 @@
-import { later } from '../../../test';
+import { later, mockScrollIntoView } from '../../../test';
 import { mountForm, mountSimpleRulesForm, getSimpleRules } from './shared';
 
 test('submit method', async () => {
@@ -93,6 +93,20 @@ test('resetValidation method - reset one field', done => {
         expect(wrapper).toMatchSnapshot();
         done();
       });
+    },
+  });
+});
+
+test('scrollToField method', done => {
+  const fn = mockScrollIntoView();
+  mountSimpleRulesForm({
+    mounted() {
+      this.$refs.form.scrollToField('unknown');
+      expect(fn).toHaveBeenCalledTimes(0);
+
+      this.$refs.form.scrollToField('A');
+      expect(fn).toHaveBeenCalledTimes(1);
+      done();
     },
   });
 });
