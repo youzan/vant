@@ -10,6 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.2](https://github.com/youzan/vant/compare/v2.5.1...v2.5.2)
+`2020-02-21`
+
+**Feature**
+
+* Calendar: 新增 close、closed 事件 [556f33](https://github.com/youzan/vant/commit/556f335cc224a40ab27bda863a67601c36339ea9)
+* Calendar: 新增 open、opened 事件 [a83082](https://github.com/youzan/vant/commit/a83082f599362456d85864904cb5f47b44138e43)
+* Form: 新增 scroll-to-error 属性 [#5680](https://github.com/youzan/vant/issues/5680)
+* Form: 新增 validate-trigger 属性 [c08db7](https://github.com/youzan/vant/commit/c08db724a3ed6440da5d5faebfa08561312f4d3a)
+* Form: 新增 scrollToField 方法 [#5680](https://github.com/youzan/vant/issues/5680)
+* Sku: 新增 preview-on-click-image 属性 [#5684](https://github.com/youzan/vant/issues/5684)
+* Sku: 新增 sku-header-image-extra 插槽 [#5696](https://github.com/youzan/vant/issues/5696)
+
+**Bug Fixes**
+
+* Swipe: 修复容器宽度为小数时在部分安卓设备上出现换行的问题 [02afe7](https://github.com/youzan/vant/commit/02afe720c6aaeeb58036cde3072b6373e3b9254f)
+
 
 ### [v2.5.1](https://github.com/youzan/vant/compare/v2.5.1-beta.0...v2.5.1)
 `2020-02-18`

@@ -1,5 +1,23 @@
 # Changelog
 
+### [v2.5.2](https://github.com/youzan/vant/compare/v2.5.1...v2.5.2)
+`2020-02-21`
+
+**Feature**
+
+* Calendar: add close、closed event [556f33](https://github.com/youzan/vant/commit/556f335cc224a40ab27bda863a67601c36339ea9)
+* Calendar: add open、opened event [a83082](https://github.com/youzan/vant/commit/a83082f599362456d85864904cb5f47b44138e43)
+* Form: add scroll-to-error prop [#5680](https://github.com/youzan/vant/issues/5680)
+* Form: add validate-trigger prop [c08db7](https://github.com/youzan/vant/commit/c08db724a3ed6440da5d5faebfa08561312f4d3a)
+* Form: add scrollToField method [#5680](https://github.com/youzan/vant/issues/5680)
+* Sku: add preview-on-click-image prop [#5684](https://github.com/youzan/vant/issues/5684)
+* Sku: add sku-header-image-extra slot [#5696](https://github.com/youzan/vant/issues/5696)
+
+**Bug Fixes**
+
+* Swipe: fix wrap problems caused by decimal width in some android devices [02afe7](https://github.com/youzan/vant/commit/02afe720c6aaeeb58036cde3072b6373e3b9254f)
+
+
 ### [v2.5.1](https://github.com/youzan/vant/compare/v2.5.1-beta.0...v2.5.1)
 `2020-02-18`
 

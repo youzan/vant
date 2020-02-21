@@ -147,7 +147,7 @@ export default {
 | safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `v2.4.2` | 商品属性 | *array* | - |
-| preview-on-click-image | 是否在点击商品图片时自动预览 | *boolean* | `true` |
+| preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | *boolean* | `true` |
 
 ### Events
 
@@ -180,7 +180,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，�
 | sku-header-price | 自定义 sku 头部价格展示 |
 | sku-header-origin-price | 自定义 sku 头部原价展示 |
 | sku-header-extra | 额外 sku 头部区域 |
-| sku-header-image-extra | 自定义 sku 头部图片额外的展示 |
+| sku-header-image-extra `v2.5.2` | 自定义 sku 头部图片额外的展示 |
 | sku-body-top |  sku 展示区上方的内容，无默认展示内容，按需使用 |
 | sku-group | 商品 sku 展示区 |
 | extra-sku-group | 额外商品 sku 展示区，一般用不到 |
