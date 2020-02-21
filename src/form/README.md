@@ -439,7 +439,7 @@ export default {
 |------|------|------|
 | message | Error message | *string* |
 | required | Whether to be a required field | *boolean* |
-| validator | Custom validator | *(value, rule) => boolean \| Promise* |
+| validator `v2.5.3` | Custom validator | *(value, rule) => boolean \| Promise* |
 | pattern `v2.5.3` | Regex pattern | *RegExp* |
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | *string* |
 
