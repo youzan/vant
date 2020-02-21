@@ -147,9 +147,9 @@ export default createComponent({
       }
     },
 
-    runValidator(validator) {
+    runValidator(rule) {
       return new Promise(resolve => {
-        const returnVal = validator(this.formValue);
+        const returnVal = rule.validator(this.formValue, rule);
 
         if (isPromise(returnVal)) {
           return returnVal.then(resolve);
@@ -183,7 +183,7 @@ export default createComponent({
             }
 
             if (rule.validator) {
-              return this.runValidator(rule.validator).then(result => {
+              return this.runValidator(rule).then(result => {
                 if (result === false) {
                   this.validateMessage = rule.message;
                 }
