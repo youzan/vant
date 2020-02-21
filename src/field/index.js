@@ -159,6 +159,16 @@ export default createComponent({
       });
     },
 
+    runRuleSync(rule) {
+      if (rule.required && this.formValueEmpty) {
+        return false;
+      }
+      if (rule.pattern && !rule.pattern.test(this.formValue)) {
+        return false;
+      }
+      return true;
+    },
+
     runRules(rules) {
       return rules.reduce(
         (promise, rule) =>
@@ -167,7 +177,7 @@ export default createComponent({
               return;
             }
 
-            if (rule.required && this.formValueEmpty) {
+            if (!this.runRuleSync(rule)) {
               this.validateMessage = rule.message;
               return;
             }

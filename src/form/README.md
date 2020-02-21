@@ -57,9 +57,25 @@ export default {
 ### Validate Rules
 
 ```html
-<van-form validate-first @submit="onSubmit" @failed="onFailed">
-  <van-field v-model="phone" name="phone" label="Phone" :rules="phoneRules" />
-  <van-field v-model="code" name="code" label="Code" :rules="codeRules" />
+<van-form validate-first @failed="onFailed">
+  <van-field
+    v-model="value1"
+    name="pattern"
+    placeholder="USe pattern"
+    :rules="[{ pattern, message: 'Error message }]"
+  />
+  <van-field
+    v-model="value2"
+    name="validator"
+    placeholder="Use validator"
+    :rules="[{ validator, message: 'Error message }]"
+  />
+  <van-field
+    v-model="value3"
+    name="asyncValidator"
+    placeholder="Use async validator"
+    :rules="[{ validator: asyncValidator, message: 'Error message }]"
+  />
   <div style="margin: 16px;">
     <van-button round block type="info" native-type="submit">
       Submit
@@ -73,24 +89,18 @@ import { Toast } from 'vant';
 
 export default {
   data() {
-    this.phoneRules = [
-      { required: true, message: 'Phone is required' },
-      { validator: this.phoneValidator, message: 'Incorrect phone' },
-    ];
-    this.codeRules = [
-      { required: true, message: 'Code is required' },
-      { validator: this.codeValidator, message: 'Incorrect code' },
-    ];
     return {
-      code: '',
-      phone: '',
+      value1: '',
+      value2: '',
+      value3: '',
+      pattern: /\d{6}/,
     };
   },
   methods: {
-    phoneValidator(val) {
+    validator(val) {
       return /1\d{10}/.test(val);
     },
-    codeValidator(val) {
+    asyncValidator(val) {
       return new Promise(resolve => {
         Toast.loading('Validating...');
 
@@ -99,9 +109,6 @@ export default {
           resolve(/\d{6}/.test(val));
         }, 1000);
       });
-    },
-    onSubmit(values) {
-      console.log('submit', values);
     },
     onFailed(errorInfo) {
       console.log('failed', errorInfo);
@@ -433,6 +440,7 @@ export default {
 | message | Error message | *string* |
 | required | Whether to be a required field | *boolean* |
 | validator | Custom validator | *() => boolean \| Promise* |
+| pattern `v2.5.3` | Regex pattern | *RegExp* |
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | *string* |
 
 ### Events

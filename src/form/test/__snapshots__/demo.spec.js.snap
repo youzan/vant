@@ -24,15 +24,21 @@ exports[`renders demo correctly 1`] = `
   <div>
     <form class="van-form">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>手机号</span></div>
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
         <div class="van-cell__value van-field__value">
-          <div class="van-field__body"><input type="text" name="phone" placeholder="手机号" class="van-field__control"></div>
+          <div class="van-field__body"><input type="text" name="pattern" placeholder="正则校验" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>验证码</span></div>
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
         <div class="van-cell__value van-field__value">
-          <div class="van-field__body"><input type="text" name="code" placeholder="验证码" class="van-field__control"></div>
+          <div class="van-field__body"><input type="text" name="validator" placeholder="函数校验" class="van-field__control"></div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body"><input type="text" name="asyncValidator" placeholder="异步函数校验" class="van-field__control"></div>
         </div>
       </div>
       <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">

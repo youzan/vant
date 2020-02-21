@@ -17,7 +17,7 @@ Vue.use(Form);
 
 ### 基础用法
 
-在表单中，每个 [Field 组件](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性可以定义校验规则
+在表单中，每个 [Field 组件](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性定义校验规则
 
 ```html
 <van-form @submit="onSubmit">
@@ -62,12 +62,31 @@ export default {
 
 ### 校验规则
 
-通过`rules`中的`validator`字段定义校验函数
+通过`rules`定义表单校验规则，可用字段见[下方表格](#/zh-CN/form#rule-shu-ju-jie-gou)
 
 ```html
-<van-form validate-first @submit="onSubmit" @failed="onFailed">
-  <van-field v-model="phone" name="phone" label="手机号" :rules="phoneRules" />
-  <van-field v-model="code" name="code" label="验证码" :rules="codeRules" />
+<van-form validate-first @failed="onFailed">
+  <!-- 通过 pattern 进行正则校验 -->
+  <van-field
+    v-model="value1"
+    name="pattern"
+    placeholder="正则校验"
+    :rules="[{ pattern, message: '请输入正确内容 }]"
+  />
+  <!-- 通过 validator 进行函数校验 -->
+  <van-field
+    v-model="value2"
+    name="validator"
+    placeholder="函数校验"
+    :rules="[{ validator, message: '请输入正确内容 }]"
+  />
+  <!-- 通过 validator 进行异步函数校验 -->
+  <van-field
+    v-model="value3"
+    name="asyncValidator"
+    placeholder="异步函数校验"
+    :rules="[{ validator: asyncValidator, message: '请输入正确内容 }]"
+  />
   <div style="margin: 16px;">
     <van-button round block type="info" native-type="submit">
       提交
@@ -81,26 +100,20 @@ import { Toast } from 'vant';
 
 export default {
   data() {
-    this.phoneRules = [
-      { required: true, message: '请输入手机号' },
-      { validator: this.phoneValidator, message: '手机号格式错误' },
-    ];
-    this.codeRules = [
-      { required: true, message: '请输入验证码' },
-      { validator: this.codeValidator, message: '验证码错误' },
-    ];
     return {
-      code: '',
-      phone: '',
+      value1: '',
+      value2: '',
+      value3: '',
+      pattern: /\d{6}/,
     };
   },
   methods: {
     // 校验函数返回 true 表示校验通过，false 表示不通过
-    phoneValidator(val) {
+    validator(val) {
       return /1\d{10}/.test(val);
     },
-    // 校验函数返回 Promise 来实现异步校验
-    codeValidator(val) {
+    // 异步校验函数返回 Promise
+    asyncValidator(val) {
       return new Promise(resolve => {
         Toast.loading('验证中...');
 
@@ -109,9 +122,6 @@ export default {
           resolve(/\d{6}/.test(val));
         }, 1000);
       });
-    },
-    onSubmit(values) {
-      console.log('submit', values);
     },
     onFailed(errorInfo) {
       console.log('failed', errorInfo);
@@ -468,8 +478,9 @@ export default {
 |------|------|------|
 | message | 错误提示文案 | *string* |
 | required | 是否为必选字段 | *boolean* |
-| validator | 自定义校验函数 | *() => boolean \| Promise* |
-| trigger `v2.5.2` | 本项规则的校验触发时机，可选值为`onChange`、`onBlur` | *string* |
+| validator | 通过函数进行校验 | *() => boolean \| Promise* |
+| pattern `v2.5.3` | 通过正则表达式进行校验 | *RegExp* |
+| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | *string* |
 
 ### Events
 
