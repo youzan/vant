@@ -201,7 +201,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| getPicker `v2.4.0` | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
+| getPicker `v2.5.3` | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
 
 ## 常见问题
 
