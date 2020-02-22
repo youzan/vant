@@ -166,9 +166,10 @@ export default createComponent({
       this.$nextTick(() => {
         const { currentDate } = this;
         const targetDate = this.range ? currentDate[0] : currentDate;
+        const displayed = this.value || !this.poppable;
 
         /* istanbul ignore if */
-        if (!targetDate) {
+        if (!targetDate || !displayed) {
           return;
         }
 
