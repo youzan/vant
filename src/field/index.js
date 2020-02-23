@@ -178,7 +178,7 @@ export default createComponent({
             let value = this.formValue;
 
             if (rule.formatter) {
-              value = rule.formatter(value);
+              value = rule.formatter(value, rule);
             }
 
             if (!this.runSyncRule(rule, value)) {

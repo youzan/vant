@@ -442,7 +442,7 @@ export default {
 | validator `v2.5.3` | Custom validator | *(value, rule) => boolean \| Promise* |
 | pattern `v2.5.3` | Regex pattern | *RegExp* |
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | *string* |
-| formatter `v2.5.3` | Format value before validate | *(value) => any* |
+| formatter `v2.5.3` | Format value before validate | *(value, rule) => any* |
 
 ### Events
 

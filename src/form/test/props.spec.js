@@ -71,7 +71,14 @@ test('rules prop - formatter', async () => {
     data() {
       return {
         rules: [
-          { required: true, formatter: val => val.trim(), message: 'foo' },
+          {
+            message: 'foo',
+            required: true,
+            formatter: (val, rule) => {
+              expect(rule.message).toEqual('foo');
+              return val.trim();
+            },
+          },
         ],
       };
     },
