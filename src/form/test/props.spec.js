@@ -59,6 +59,35 @@ test('rules prop - pattern', async () => {
   });
 });
 
+test('rules prop - formatter', async () => {
+  const onFailed = jest.fn();
+  const wrapper = mountForm({
+    template: `
+      <van-form @failed="onFailed">
+        <van-field name="A" :rules="rules" value=" " />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        rules: [
+          { required: true, formatter: val => val.trim(), message: 'foo' },
+        ],
+      };
+    },
+    methods: {
+      onFailed,
+    },
+  });
+
+  await submitForm(wrapper);
+
+  expect(onFailed).toHaveBeenCalledWith({
+    errors: [{ message: 'foo', name: 'A' }],
+    values: { A: ' ' },
+  });
+});
+
 test('rules prop - async validator', async () => {
   const onFailed = jest.fn();
   const wrapper = mountForm({

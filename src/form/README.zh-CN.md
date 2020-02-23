@@ -481,6 +481,7 @@ export default {
 | validator `v2.5.3` | 通过函数进行校验 | *(value, rule) => boolean \| Promise* |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | *RegExp* |
 | trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | *string* |
+| formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | *(value) => any* |
 
 ### Events
 

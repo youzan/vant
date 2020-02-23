@@ -120,16 +120,6 @@ export default createComponent({
     formValue() {
       return this.children ? this.children.value : this.value;
     },
-
-    formValueEmpty() {
-      const { formValue } = this;
-
-      if (Array.isArray(formValue)) {
-        return !formValue.length;
-      }
-
-      return !formValue;
-    },
   },
 
   methods: {
@@ -147,9 +137,9 @@ export default createComponent({
       }
     },
 
-    runValidator(rule) {
+    runValidator(rule, value) {
       return new Promise(resolve => {
-        const returnVal = rule.validator(this.formValue, rule);
+        const returnVal = rule.validator(value, rule);
 
         if (isPromise(returnVal)) {
           return returnVal.then(resolve);
@@ -159,11 +149,19 @@ export default createComponent({
       });
     },
 
-    runRuleSync(rule) {
-      if (rule.required && this.formValueEmpty) {
+    isEmptyValue(value) {
+      if (Array.isArray(value)) {
+        return !value.length;
+      }
+
+      return !value;
+    },
+
+    runSyncRule(rule, value) {
+      if (rule.required && this.isEmptyValue(value)) {
         return false;
       }
-      if (rule.pattern && !rule.pattern.test(this.formValue)) {
+      if (rule.pattern && !rule.pattern.test(value)) {
         return false;
       }
       return true;
@@ -177,13 +175,19 @@ export default createComponent({
               return;
             }
 
-            if (!this.runRuleSync(rule)) {
+            let value = this.formValue;
+
+            if (rule.formatter) {
+              value = rule.formatter(value);
+            }
+
+            if (!this.runSyncRule(rule, value)) {
               this.validateMessage = rule.message;
               return;
             }
 
             if (rule.validator) {
-              return this.runValidator(rule).then(result => {
+              return this.runValidator(rule, value).then(result => {
                 if (result === false) {
                   this.validateMessage = rule.message;
                 }
