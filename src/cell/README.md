@@ -132,6 +132,7 @@ Vue.use(CellGroup);
 | title-class | Title className | *any* | - |
 | value-class | Value className | *any* | - |
 | label-class | Label className | *any* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 
 ### Cell Events
 

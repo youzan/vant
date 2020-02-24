@@ -12,6 +12,11 @@ exports[`arrow direction 1`] = `
     <!----></i></div>
 `;
 
+exports[`icon-prefix prop 1`] = `
+<div class="van-cell"><i class="my-icon my-icon-success van-cell__left-icon">
+    <!----></i></div>
+`;
+
 exports[`render slot 1`] = `
 <div class="van-cell">Custom Icon<div class="van-cell__title">Custom Title<div class="van-cell__label">Custom Label</div>
   </div>Custom Extra</div>

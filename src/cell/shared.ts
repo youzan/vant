@@ -6,6 +6,7 @@ export type SharedCellProps = {
   isLink?: boolean;
   required?: boolean;
   clickable?: boolean;
+  iconPrefix?: string;
   titleStyle?: any;
   titleClass?: any;
   valueClass?: any;
@@ -23,6 +24,7 @@ export const cellProps = {
   isLink: Boolean,
   required: Boolean,
   clickable: Boolean,
+  iconPrefix: String,
   titleStyle: null as any,
   titleClass: null as any,
   valueClass: null as any,

@@ -143,6 +143,7 @@ Vue.use(CellGroup);
 | title-class | 左侧标题额外类名 | *any* | - |
 | value-class | 右侧内容额外类名 | *any* | - |
 | label-class | 描述信息额外类名 | *any* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀 | *string* | `van-icon` |
 
 ### Cell Events
 

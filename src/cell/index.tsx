@@ -78,7 +78,13 @@ function Cell(
     }
 
     if (icon) {
-      return <Icon class={bem('left-icon')} name={icon} />;
+      return (
+        <Icon
+          class={bem('left-icon')}
+          name={icon}
+          classPrefix={props.iconPrefix}
+        />
+      );
     }
   }
 
