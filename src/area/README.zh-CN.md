@@ -78,6 +78,12 @@ Vue.use(Area);
 | cancel | 点击取消按钮时 | - |
 | change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
 
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| title `v2.5.3` | 自定义标题内容 |
+
 ### 方法
 
 通过 ref 可以获取到 Area 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)

@@ -466,7 +466,7 @@ export default {
 | validate-trigger `v2.5.2` | 表单校验触发时机，可选值为`onChange` | *string* | `onBlur` |
 | colon | 是否在 label 后面添加冒号 | *boolean* | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
-| scroll-to-error `2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | *boolean* | `false` |
+| scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | *boolean* | `false` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
 

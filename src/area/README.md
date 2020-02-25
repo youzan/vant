@@ -79,6 +79,12 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | cancel | triggers when clicking the cancel button | - |
 | change | Triggered when current option changed | Picker instance, current values，column index |
 
+### Slots
+
+| Name | Description |
+|------|------|
+| title `v2.5.3` | Custom title |
+
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance methods
