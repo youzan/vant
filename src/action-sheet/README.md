@@ -133,6 +133,7 @@ export default {
 | overlay | Whether to show overlay | *boolean* | `true` |
 | lock-scroll | Whether to lock background scroll | *boolean* | `true` |
 | lazy-render | Whether to lazy render util appeared | *boolean* | `true`  |
+| close-on-popstate `v2.5.3` | Whether to close when popstate | *boolean* | `false` |
 | close-on-click-action | Whether to close when click action | *boolean* | `false` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
