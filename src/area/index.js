@@ -305,7 +305,11 @@ export default createComponent({
         visibleItemCount={this.visibleItemCount}
         cancelButtonText={this.cancelButtonText}
         confirmButtonText={this.confirmButtonText}
-        scopedSlots={pickSlots(this, ['title'])}
+        scopedSlots={pickSlots(this, [
+          'title',
+          'columns-top',
+          'columns-bottom',
+        ])}
         {...{ on }}
       />
     );

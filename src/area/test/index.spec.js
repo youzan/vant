@@ -139,3 +139,15 @@ test('title slot', async () => {
   await later();
   expect(wrapper).toMatchSnapshot();
 });
+
+test('columns-top、columns-bottom slot', async () => {
+  const wrapper = mount(Area, {
+    slots: {
+      'columns-top': 'Top',
+      'columns-bottom': 'Bottom',
+    },
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});

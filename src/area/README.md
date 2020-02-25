@@ -84,6 +84,8 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | Name | Description |
 |------|------|
 | title `v2.5.3` | Custom title |
+| columns-top `v2.5.3` | Custom content above columns |
+| columns-bottom `v2.5.3` | Custom content below columns |
 
 ### Methods
 
