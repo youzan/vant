@@ -59,6 +59,33 @@ test('rules prop - pattern', async () => {
   });
 });
 
+test('rules prop - message function', async () => {
+  const onFailed = jest.fn();
+  const wrapper = mountForm({
+    template: `
+      <van-form @failed="onFailed">
+        <van-field name="A" :rules="rules" value="123" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        rules: [{ pattern: /\d{6}/, message: val => val }],
+      };
+    },
+    methods: {
+      onFailed,
+    },
+  });
+
+  await submitForm(wrapper);
+
+  expect(onFailed).toHaveBeenCalledWith({
+    errors: [{ message: '123', name: 'A' }],
+    values: { A: '123' },
+  });
+});
+
 test('rules prop - formatter', async () => {
   const onFailed = jest.fn();
   const wrapper = mountForm({

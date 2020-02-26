@@ -3,7 +3,14 @@ import { formatNumber } from './utils';
 import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
-import { createNamespace, isObject, isDef, addUnit, isPromise } from '../utils';
+import {
+  createNamespace,
+  isObject,
+  isDef,
+  addUnit,
+  isPromise,
+  isFunction,
+} from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -137,7 +144,7 @@ export default createComponent({
       }
     },
 
-    runValidator(rule, value) {
+    runValidator(value, rule) {
       return new Promise(resolve => {
         const returnVal = rule.validator(value, rule);
 
@@ -157,7 +164,7 @@ export default createComponent({
       return !value;
     },
 
-    runSyncRule(rule, value) {
+    runSyncRule(value, rule) {
       if (rule.required && this.isEmptyValue(value)) {
         return false;
       }
@@ -165,6 +172,16 @@ export default createComponent({
         return false;
       }
       return true;
+    },
+
+    getRuleMessage(value, rule) {
+      const { message } = rule;
+
+      if (isFunction(message)) {
+        return message(value, rule);
+      }
+
+      return message;
     },
 
     runRules(rules) {
@@ -181,15 +198,15 @@ export default createComponent({
               value = rule.formatter(value, rule);
             }
 
-            if (!this.runSyncRule(rule, value)) {
-              this.validateMessage = rule.message;
+            if (!this.runSyncRule(value, rule)) {
+              this.validateMessage = this.getRuleMessage(value, rule);
               return;
             }
 
             if (rule.validator) {
-              return this.runValidator(rule, value).then(result => {
+              return this.runValidator(value, rule).then(result => {
                 if (result === false) {
-                  this.validateMessage = rule.message;
+                  this.validateMessage = this.getRuleMessage(value, rule);
                 }
               });
             }

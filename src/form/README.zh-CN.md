@@ -476,8 +476,8 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| message | 错误提示文案 | *string* |
 | required | 是否为必选字段 | *boolean* |
+| message `v2.5.3` | 错误提示文案 | *string \| (value, rule) => string* |
 | validator `v2.5.3` | 通过函数进行校验 | *(value, rule) => boolean \| Promise* |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | *RegExp* |
 | trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | *string* |
