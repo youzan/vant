@@ -139,6 +139,7 @@ Vue.use(GridItem);
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
+| icon-prefix `v2.5.3` | 图标类名前缀 | *string* | `van-icon` |
 
 ### GridItem Events
 
