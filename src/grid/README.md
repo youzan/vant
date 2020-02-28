@@ -116,12 +116,12 @@ Vue.use(GridItem);
 |------|------|------|------|
 | text | Text | *string* | - |
 | icon | Icon name or URL | *string* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
 | info `v2.2.1` | Content of the badge | *number \| string* | - |
 | url | Link URL | *string* | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` |
-| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 
 ### GridItem Events
 

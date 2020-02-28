@@ -114,11 +114,12 @@ Vue.use(CellGroup);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| icon | Left Icon | *string* | - |
 | title | Title | *number \| string* | - |
 | value | Right text | *number \| string* | - |
 | label | Description below the title | *string* | - |
 | size | Size，can be set to `large` | *string* | - |
+| icon | Left Icon | *string* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | border | Whether to show inner border | *boolean* | `true` |
 | center | Whether to center content vertically | *boolean* | `true` |
 | url | Link URL | *string* | - |
@@ -132,7 +133,6 @@ Vue.use(CellGroup);
 | title-class | Title className | *any* | - |
 | value-class | Value className | *any* | - |
 | label-class | Label className | *any* | - |
-| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 
 ### Cell Events
 
