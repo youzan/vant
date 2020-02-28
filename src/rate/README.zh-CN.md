@@ -118,7 +118,8 @@ export default {
 | void-color | 未选中时的颜色 | *string* | `#c8c9cc` |
 | disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` |
 | icon | 选中时的[图标名称](#/zh-CN/icon)或图片链接 | *string* | `star` |
-| void-icon | 未选中时的[图标名称](#/zh-CN/icon)或图片链接 | *string* | `star-o`  |
+| void-icon | 未选中时的[图标名称](#/zh-CN/icon)或图片链接 | *string* | `star-o` |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | allow-half | 是否允许半选 | *boolean* | `false` |
 | readonly | 是否为只读状态 | *boolean* | `false` |
 | disabled | 是否禁用评分 | *boolean* | `false` |
