@@ -20,6 +20,7 @@ export default createComponent({
     icon: String,
     name: [Number, String],
     info: [Number, String],
+    iconPrefix: String,
   },
 
   data() {
@@ -47,20 +48,31 @@ export default createComponent({
       this.$emit('click', event);
       route(this.$router, this);
     },
+
+    genIcon(active) {
+      const slot = this.slots('icon', { active });
+
+      if (slot) {
+        return slot;
+      }
+
+      if (this.icon) {
+        return <Icon name={this.icon} classPrefix={this.iconPrefix} />;
+      }
+    },
   },
 
   render() {
-    const { icon, slots } = this;
     const active = this.parent.route ? this.routeActive : this.active;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
     return (
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
-          {slots('icon', { active }) || (icon && <Icon name={icon} />)}
+          {this.genIcon(active)}
           <Info dot={this.dot} info={this.info} />
         </div>
-        <div class={bem('text')}>{slots('default', { active })}</div>
+        <div class={bem('text')}>{this.slots('default', { active })}</div>
       </div>
     );
   },
