@@ -261,6 +261,7 @@ export default {
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | *Rule[]* | - |
 
 ### Events

@@ -437,7 +437,9 @@ export default createComponent({
       if (showLeftIcon) {
         return (
           <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-            {this.slots('left-icon') || <Icon name={this.leftIcon} />}
+            {this.slots('left-icon') || (
+              <Icon name={this.leftIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }
@@ -450,7 +452,9 @@ export default createComponent({
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-            {slots('right-icon') || <Icon name={this.rightIcon} />}
+            {slots('right-icon') || (
+              <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }
