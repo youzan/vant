@@ -1,5 +1,31 @@
 # Changelog
 
+### [v2.5.3](https://github.com/youzan/vant/compare/v2.5.2...v2.5.3)
+`2020-02-28`
+
+**Feature**
+
+* ActionSheet: add close-on-popstate prop [#5716](https://github.com/youzan/vant/issues/5716)
+* Area: add columns-top、columns-bottom prop [#5719](https://github.com/youzan/vant/issues/5719)
+* Area: add title slot [#5719](https://github.com/youzan/vant/issues/5719)
+* Button: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+* Cell: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+* Field: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+* Form: rule message can be function [#5704](https://github.com/youzan/vant/issues/5704)
+* Form: rule validator add rule param [#5704](https://github.com/youzan/vant/issues/5704)
+* Form: support pattern rule [#5700](https://github.com/youzan/vant/issues/5700)
+* Form: support rule formatter [d87835](https://github.com/youzan/vant/commit/d878354ebf8eedf849764480c11a90c4cdd2fbe3)
+* GridItem: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+* Rate: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+* TabbarItem: add icon-prefix prop [#5666](https://github.com/youzan/vant/issues/5666)
+
+**Bug Fixes**
+
+* Calendar: scrollIntoView error when hidden [#5708](https://github.com/youzan/vant/issues/5708)
+* DatetimePicker: getPicker method not work [#5710](https://github.com/youzan/vant/issues/5710)
+* Popup: close-on-popstate not work when deactivated [f07077](https://github.com/youzan/vant/commit/f070773b42b86dd98d1f3989651e735895db78ee)
+
+
 ### [v2.5.2](https://github.com/youzan/vant/compare/v2.5.1...v2.5.2)
 `2020-02-21`
 

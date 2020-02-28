@@ -10,6 +10,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.3](https://github.com/youzan/vant/compare/v2.5.2...v2.5.3)
+`2020-02-28`
+
+**Feature**
+
+* ActionSheet: 新增 close-on-popstate 属性 [#5716](https://github.com/youzan/vant/issues/5716)
+* Area: 新增 columns-top、columns-bottom 属性 [#5719](https://github.com/youzan/vant/issues/5719)
+* Area: 新增 title 插槽 [#5719](https://github.com/youzan/vant/issues/5719)
+* Button: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+* Cell: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+* Field: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+* Form: validator 新增 rule 参数 [#5704](https://github.com/youzan/vant/issues/5704)
+* Form: 支持将 message 定义为函数 [#5704](https://github.com/youzan/vant/issues/5704)
+* Form: 支持在 rule 中定义 pattern [#5700](https://github.com/youzan/vant/issues/5700)
+* Form: 支持在 rule 中定义 formatter [d87835](https://github.com/youzan/vant/commit/d878354ebf8eedf849764480c11a90c4cdd2fbe3)
+* GridItem: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+* Rate: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+* TabbarItem: 新增 icon-prefix 属性 [#5666](https://github.com/youzan/vant/issues/5666)
+
+**Bug Fixes**
+
+* Calendar: 修复隐藏状态下 scrollIntoView 函数报错的问题 [#5708](https://github.com/youzan/vant/issues/5708)
+* DatetimePicker: 修复 getPicker 方法无法调用的问题 [#5710](https://github.com/youzan/vant/issues/5710)
+* Popup: 修复 close-on-popstate 在 keep-alive 下无效的问题 [f07077](https://github.com/youzan/vant/commit/f070773b42b86dd98d1f3989651e735895db78ee)
+
+
 ### [v2.5.2](https://github.com/youzan/vant/compare/v2.5.1...v2.5.2)
 `2020-02-21`
 
