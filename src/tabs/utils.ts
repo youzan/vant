@@ -3,15 +3,19 @@ import { getScrollTop, setScrollTop } from '../utils/dom/scroll';
 
 let scrollLeftRafId: number;
 
-export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
+export function scrollLeftTo(
+  scroller: HTMLElement,
+  to: number,
+  duration: number
+) {
   cancelRaf(scrollLeftRafId);
 
   let count = 0;
-  const from = el.scrollLeft;
+  const from = scroller.scrollLeft;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
 
   function animate() {
-    el.scrollLeft += (to - from) / frames;
+    scroller.scrollLeft += (to - from) / frames;
 
     if (++count < frames) {
       scrollLeftRafId = raf(animate);
@@ -22,12 +26,12 @@ export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
 }
 
 export function scrollTopTo(
-  el: HTMLElement,
+  scroller: HTMLElement,
   to: number,
   duration: number,
   callback: Function
 ) {
-  let current = getScrollTop(el);
+  let current = getScrollTop(scroller);
 
   const isDown = current < to;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
@@ -40,7 +44,7 @@ export function scrollTopTo(
       current = to;
     }
 
-    setScrollTop(el, current);
+    setScrollTop(scroller, current);
 
     if ((isDown && current < to) || (!isDown && current > to)) {
       raf(animate);
