@@ -170,7 +170,7 @@ exports[`renders demo correctly 1`] = `
               <div class="van-uploader">
                 <div class="van-uploader__wrapper">
                   <div class="van-uploader__preview">
-                    <div class="van-image van-uploader__preview-image" style="overflow: hidden; border-radius: 4px;"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+                    <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
                       <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
                           <!----></i></div>
                     </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
