@@ -357,7 +357,7 @@ export default createComponent({
 
       return (
         <div class={bem('upload')} style={style}>
-          <Icon name="plus" class={bem('upload-icon')} />
+          <Icon name="photograph" class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
           )}

@@ -176,7 +176,7 @@ exports[`renders demo correctly 1`] = `
                     </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
                       <!----></i>
                   </div>
-                  <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+                  <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
                       <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
                 </div>
               </div>
