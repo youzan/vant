@@ -1,5 +1,5 @@
 import { raf, cancelRaf } from '../utils/dom/raf';
-import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
+import { getScrollTop, setScrollTop } from '../utils/dom/scroll';
 
 let scrollLeftRafId: number;
 
@@ -21,8 +21,14 @@ export function scrollLeftTo(el: HTMLElement, to: number, duration: number) {
   animate();
 }
 
-export function scrollTopTo(to: number, duration: number, cb: Function) {
-  let current = getRootScrollTop();
+export function scrollTopTo(
+  el: HTMLElement,
+  to: number,
+  duration: number,
+  callback: Function
+) {
+  let current = getScrollTop(el);
+
   const isDown = current < to;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
   const step = (to - current) / frames;
@@ -34,12 +40,12 @@ export function scrollTopTo(to: number, duration: number, cb: Function) {
       current = to;
     }
 
-    setRootScrollTop(current);
+    setScrollTop(el, current);
 
     if ((isDown && current < to) || (!isDown && current > to)) {
       raf(animate);
-    } else {
-      cb && cb();
+    } else if (callback) {
+      callback();
     }
   }
 

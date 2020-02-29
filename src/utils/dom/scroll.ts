@@ -65,12 +65,14 @@ export function setRootScrollTop(value: number) {
   setScrollTop(document.body, value);
 }
 
-// get distance from element top to page top
-export function getElementTop(el: ScrollElement) {
+// get distance from element top to page top or scroller top
+export function getElementTop(el: ScrollElement, scroller?: HTMLElement) {
   if (isWindow(el)) {
     return 0;
   }
-  return el.getBoundingClientRect().top + getRootScrollTop();
+
+  const scrollTop = scroller ? getScrollTop(scroller) : getRootScrollTop();
+  return el.getBoundingClientRect().top + scrollTop;
 }
 
 export function getVisibleHeight(el: ScrollElement) {
