@@ -213,6 +213,16 @@ it('image-fit prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('upload-icon prop', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      uploadIcon: 'add',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('disable preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {

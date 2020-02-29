@@ -109,3 +109,12 @@ exports[`render upload-text 1`] = `
   </div>
 </div>
 `;
+
+exports[`upload-icon prop 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__upload"><i class="van-icon van-icon-add van-uploader__upload-icon">
+        <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;

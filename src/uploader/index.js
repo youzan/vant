@@ -69,6 +69,10 @@ export default createComponent({
       type: String,
       default: 'dataUrl',
     },
+    uploadIcon: {
+      type: String,
+      default: 'photograph',
+    },
   },
 
   computed: {
@@ -356,7 +360,7 @@ export default createComponent({
 
       return (
         <div class={bem('upload')} style={style}>
-          <Icon name="photograph" class={bem('upload-icon')} />
+          <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
           )}

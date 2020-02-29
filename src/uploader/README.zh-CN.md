@@ -192,6 +192,7 @@ export default {
 | result-type `v2.2.7` | 文件读取结果类型，可选值为`file` `text` | *string* | `dataUrl` |
 | upload-text | 上传区域文字提示 | *string* | - |
 | image-fit `v2.1.5` | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | *string* | `cover` |
+| upload-icon `v2.5.4` | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | *string* | `photograph` |
 
 ### Events
 
