@@ -15,13 +15,13 @@ const defaultConfig = {
   onChange: null,
   lazyLoad: false,
   showIndex: true,
+  closeable: false,
+  closeIcon: 'clear',
   asyncClose: false,
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,
   closeOnPopstate: false,
-  closeable: false,
-  closeIcon: 'clear',
   closeIconPosition: 'top-right',
 };
 
