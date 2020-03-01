@@ -73,6 +73,9 @@ export default {
 | show-delete | Whether to show delete button | *boolean* | `false` |
 | show-set-default | Whether to show default address switch | *boolean* | `false` |
 | show-search-result | Whether to show address search result | *boolean* | `false` |
+| show-area | Whether to show area cell | *boolean* | `true` |
+| show-detail | Whether to show detail field | *boolean* | `true` |
+| disable-area `v2.5.0` | Whether to disable area select | *boolean* | `false` |
 | save-button-text | Save button text | *string* | `Save` |
 | delete-button-text | Delete button text | *string* | `Delete` |
 | detail-rows | Detail input rows | *number \| string* | `1` |

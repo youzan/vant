@@ -53,6 +53,14 @@ export default {
 };
 ```
 
+### 禁用
+
+通过`disabled`属性禁用文件上传
+
+```html
+<van-uploader disabled />
+```
+
 ### 上传状态
 
 通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成（从 2.4.7 版本开始支持）
@@ -184,13 +192,14 @@ export default {
 | result-type `v2.2.7` | 文件读取结果类型，可选值为`file` `text` | *string* | `dataUrl` |
 | upload-text | 上传区域文字提示 | *string* | - |
 | image-fit `v2.1.5` | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | *string* | `cover` |
+| upload-icon `v2.5.4` | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | *string* | `photograph` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同`after-read` |
-| click-preview | 点击预览图时触发 | 同`after-read` | 
+| click-preview | 点击预览图时触发 | 同`after-read` |
 | close-preview | 关闭全屏图片预览时触发 | - |
 | delete | 删除文件预览时触发 | 同`after-read` |
 
@@ -221,7 +230,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 ### 方法
 
-通过 ref 可以获取到 Uploader 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Uploader 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

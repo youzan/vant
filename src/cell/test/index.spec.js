@@ -67,3 +67,14 @@ test('CellGroup title slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('icon-prefix prop', () => {
+  const wrapper = mount(Cell, {
+    propsData: {
+      iconPrefix: 'my-icon',
+      icon: 'success',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

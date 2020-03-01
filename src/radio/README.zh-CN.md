@@ -33,6 +33,17 @@ export default {
 };
 ```
 
+### 水平排列
+
+将`direction`属性设置为`horizontal`后，单选框组会变成水平排列
+
+```html
+<van-radio-group v-model="radio" direction="horizontal">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
+</van-radio-group>
+```
+
 ### 禁用状态
 
 通过`disabled`属性禁止选项切换，在`Radio`上设置`disabled`可以禁用单个选项
@@ -41,17 +52,6 @@ export default {
 <van-radio-group v-model="radio" disabled>
   <van-radio name="1">单选框 1</van-radio>
   <van-radio name="2">单选框 2</van-radio>
-</van-radio-group>
-```
-
-### 禁用文本点击
-
-设置`label-disabled`属性后，点击单选框图标以外的内容不会触发切换
-
-```html
-<van-radio-group v-model="radio">
-  <van-radio name="1" icon-disabled>单选框 1</van-radio>
-  <van-radio name="2" icon-disabled>单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -123,6 +123,17 @@ export default {
 }
 ```
 
+### 禁用文本点击
+
+设置`label-disabled`属性后，点击图标以外的内容不会触发单选框切换
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" label-disabled>单选框 1</van-radio>
+  <van-radio name="2" label-disabled>单选框 2</van-radio>
+</van-radio-group>
+```
+
 ### 与 Cell 组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件
@@ -158,8 +169,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前选中项的标识符 | *any* | - |
+| v-model (value) | 当前选中项的标识符 | *any* | - |
 | disabled | 是否禁用所有单选框 | *boolean* | `false` |
+| direction `v2.5.0` | 排列方向，可选值为`horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有单选框的选中状态颜色 | *string* | `#1989fa` |
 
@@ -167,17 +179,17 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击单选框时触发 | event: Event |
+| click | 点击单选框时触发 | *event: Event* |
 
 ### RadioGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前选中项的 name |
+| change | 当绑定值变化时触发的事件 | *name: string* |
 
 ### Radio Slots
 
 | 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义文本 | - |
-| icon | 自定义图标 | checked: 是否为选中状态 |
+| icon | 自定义图标 | *checked: boolean* |

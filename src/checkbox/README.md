@@ -34,12 +34,6 @@ export default {
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
-### Disabled Label Click
-
-```html
-<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
-```
-
 ### Custom Shape
 
 ```html
@@ -83,6 +77,12 @@ export default {
     };
   }
 };
+```
+
+### Disable Label Click
+
+```html
+<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
 ```
 
 ### Checkbox Group
@@ -137,7 +137,6 @@ export default {
       result: []
     }
   },
-
   methods: {
     checkAll() {
       this.$refs.checkboxGroup.toggleAll(true);
@@ -161,11 +160,7 @@ export default {
       :title="`Checkbox ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox
-        :name="item"
-        ref="checkboxes"
-        slot="right-icon"
-      />
+      <van-checkbox slot="right-icon" :name="item" ref="checkboxes" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -173,6 +168,12 @@ export default {
 
 ```js
 export default {
+  data() {
+    return {
+      list: ['a', 'b']
+      result: []
+    };
+  },
   methods: {
     toggle(index) {
       this.$refs.checkboxes[index].toggle();
@@ -187,9 +188,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| v-model (value) | Check status | *boolean* | `false` |
 | name | Checkbox name | *any* | - |
 | shape | Can be set to `square` | *string* | `round` |
-| v-model | Check status | *boolean* | `false` |
 | disabled | Disable checkbox | *boolean* | `false` |
 | label-disabled | Whether to disable label click | *boolean* | `false` |
 | label-position | Can be set to `left` | *string* | `right` |
@@ -201,9 +202,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Names of all checked checkboxes | *any[]* | - |
+| v-model (value) | Names of all checked checkboxes | *any[]* | - |
+| disabled | Whether to disable all checkboxes | *boolean* | `false` |
 | max | Maximum amount of checked options | *number \| string* | `0`(Unlimited) |
-| disabled | Disable all checkboxes | *boolean* | `false` |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | Icon size of all checkboxes | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all checkboxes | *string* | `#1989fa` | - |
 
@@ -211,21 +213,21 @@ export default {
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
-| click | Triggered when click checkbox | event: Event |
+| change | Triggered when value changed | *checked: boolean* |
+| click | Triggered when click checkbox | *event: Event* |
 
 ### CheckboxGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
+| change | Triggered when value changed | *names: any[]* |
 
 ### Checkbox Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
-| icon | Custom icon | checked: whether to be checked |
+| icon | Custom icon | *checked: boolean* |
 
 ### CheckboxGroup Methods
 
@@ -233,7 +235,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call 
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggleAll | Toggle check status of all checkboxes | checked?: boolean | - |
+| toggleAll | Toggle check status of all checkboxes | *checked?: boolean* | - |
 
 ### Checkbox Methods
 
@@ -241,4 +243,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call insta
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| toggle | Toggle check status | checked?: boolean | - |
+| toggle | Toggle check status | *checked?: boolean* | - |

@@ -1,11 +1,12 @@
 import { createNamespace, addUnit } from '../utils';
-import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/dom/event';
+import { TouchMixin } from '../mixins/touch';
+import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('slider');
 
 export default createComponent({
-  mixins: [TouchMixin],
+  mixins: [TouchMixin, FieldMixin],
 
   props: {
     disabled: Boolean,

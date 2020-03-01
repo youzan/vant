@@ -31,6 +31,7 @@ export type ButtonProps = RouteProps & {
   hairline?: boolean;
   disabled?: boolean;
   nativeType?: string;
+  iconPrefix?: string;
   loadingSize: string;
   loadingType?: LoadingType;
   loadingText?: string;
@@ -119,7 +120,9 @@ function Button(
         />
       );
     } else if (icon) {
-      content.push(<Icon name={icon} class={bem('icon')} />);
+      content.push(
+        <Icon name={icon} class={bem('icon')} classPrefix={props.iconPrefix} />
+      );
     }
 
     let text;

@@ -96,7 +96,7 @@ Vue.use(Lazyload);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click image | event: Event |
+| click | Triggered when click image | *event: Event* |
 | load | Triggered when image loaded | - |
 | error | Triggered when image load failed | - |
 

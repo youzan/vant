@@ -141,9 +141,9 @@ export default {
 |------|------|------|
 | change | 点击选项导致 value 变化时触发 | value |
 | open | 打开菜单栏时触发 | - |
-| opened | 打开菜单栏且动画结束后触发 | - |
 | close | 关闭菜单栏时触发 | - |
-| opened | 关闭菜单栏且动画结束后触发 | - |
+| opened | 打开菜单栏且动画结束后触发 | - |
+| closed | 关闭菜单栏且动画结束后触发 | - |
 
 ### DropdownItem Slots
 
@@ -154,7 +154,7 @@ export default {
 
 ### DropdownItem 方法
 
-通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -166,4 +166,4 @@ export default {
 |------|------|------|
 | text | 文字 | *string* |
 | value | 标识符 | *number \| string* |
-| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* |
+| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* |

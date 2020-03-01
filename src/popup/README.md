@@ -42,7 +42,7 @@ Use `position` prop to set popup display position
 <van-popup
   v-model="show"
   position="top"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -53,7 +53,7 @@ Use `position` prop to set popup display position
   v-model="show"
   closeable
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- Custom Icon -->
 <van-popup
@@ -61,7 +61,7 @@ Use `position` prop to set popup display position
   closeable
   close-icon="close"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- Icon Position -->
 <van-popup
@@ -69,7 +69,7 @@ Use `position` prop to set popup display position
   closeable
   close-icon-position="top-left"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -80,7 +80,7 @@ Use `position` prop to set popup display position
   v-model="show"
   round
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -139,9 +139,9 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click Popup | event: Event |
+| click | Triggered when click Popup | *event: Event* |
 | open | Triggered when open Popup | - |
-| opened | Triggered when opened Popup | - |
 | close | Triggered when close Popup | - |
+| opened | Triggered when opened Popup | - |
 | closed | Triggered when closed Popup | - |
 | click-overlay | Triggered when click overlay | - |

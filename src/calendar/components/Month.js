@@ -170,7 +170,7 @@ export default createComponent({
     genDays() {
       if (this.visible) {
         return (
-          <div ref="days" class={bem('days')}>
+          <div ref="days" role="grid" class={bem('days')}>
             {this.genMark()}
             {this.days.map(this.genDay)}
           </div>
@@ -183,9 +183,10 @@ export default createComponent({
     genDay(item, index) {
       const { type, topInfo, bottomInfo } = item;
       const style = this.getDayStyle(type, index);
+      const disabled = type === 'disabled';
 
       const onClick = () => {
-        if (type !== 'disabled') {
+        if (!disabled) {
           this.$emit('click', item);
         }
       };
@@ -198,7 +199,13 @@ export default createComponent({
 
       if (type === 'selected') {
         return (
-          <div style={style} class={bem('day')} onClick={onClick}>
+          <div
+            role="gridcell"
+            style={style}
+            class={[bem('day'), item.className]}
+            tabindex={disabled ? null : -1}
+            onClick={onClick}
+          >
             <div class={bem('selected-day')} style={{ background: this.color }}>
               {TopInfo}
               {item.text}
@@ -210,8 +217,10 @@ export default createComponent({
 
       return (
         <div
+          role="gridcell"
           style={style}
-          class={[bem('day', [type]), item.className]}
+          class={[bem('day', type), item.className]}
+          tabindex={disabled ? null : -1}
           onClick={onClick}
         >
           {TopInfo}

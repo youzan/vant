@@ -37,8 +37,17 @@ export default {
   }
 
   a {
-    color: @van-doc-green;
+    margin: 0 1px;
+    color: @van-doc-blue;
     -webkit-font-smoothing: auto;
+
+    &:hover {
+      color: darken(@van-doc-blue, 10%);
+    }
+
+    &:active {
+      color: darken(@van-doc-blue, 20%);
+    }
   }
 
   h1,
@@ -162,7 +171,7 @@ export default {
       box-sizing: border-box;
       width: 6px;
       height: 6px;
-      margin-top: 8px;
+      margin-top: 10px;
       border: 1px solid @van-doc-dark-grey;
       border-radius: 50%;
       content: '';

@@ -81,6 +81,7 @@ export default createComponent({
     messageConfig: {
       type: Object,
       default: () => ({
+        initialMessages: {},
         placeholderMap: {},
         uploadImg: () => Promise.resolve(),
         uploadMaxSize: 5,
@@ -89,6 +90,10 @@ export default createComponent({
     customStepperConfig: {
       type: Object,
       default: () => ({}),
+    },
+    previewOnClickImage: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -483,6 +488,8 @@ export default createComponent({
     },
 
     onPreviewImage(indexImage) {
+      const { previewOnClickImage } = this;
+
       const index = this.imageList.findIndex(image => image === indexImage);
 
       const params = {
@@ -492,6 +499,10 @@ export default createComponent({
       };
 
       this.$emit('open-preview', params);
+
+      if (!previewOnClickImage) {
+        return;
+      }
 
       ImagePreview({
         images: this.imageList,
@@ -610,6 +621,9 @@ export default createComponent({
         skuEventBus={skuEventBus}
         selectedSku={selectedSku}
       >
+        <template slot="sku-header-image-extra">
+          {slots('sku-header-image-extra')}
+        </template>
         {slots('sku-header-price') || (
           <div class="van-sku__goods-price">
             <span class="van-sku__price-symbol">￥</span>

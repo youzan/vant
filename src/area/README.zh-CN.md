@@ -2,7 +2,7 @@
 
 ### 介绍
 
-省市区三级联动选择，通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+省市区三级联动选择，通常与[弹出层](#/zh-CN/popup)组件配合使用
 
 ### 引入
 
@@ -78,9 +78,17 @@ Vue.use(Area);
 | cancel | 点击取消按钮时 | - |
 | change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
 
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| title `v2.5.3` | 自定义标题内容 |
+| columns-top `v2.5.3` | 自定义选项上方内容 |
+| columns-bottom `v2.5.3` | 自定义选项下方内容 |
+
 ### 方法
 
-通过 ref 可以获取到 Area 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Area 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

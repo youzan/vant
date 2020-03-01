@@ -48,7 +48,7 @@ export default {
 <van-popup
   v-model="show"
   position="top"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -61,7 +61,7 @@ export default {
   v-model="show"
   closeable
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- 自定义图标 -->
 <van-popup
@@ -69,7 +69,7 @@ export default {
   closeable
   close-icon="close"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 <!-- 图标位置 -->
 <van-popup
@@ -77,7 +77,7 @@ export default {
   closeable
   close-icon-position="top-left"
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -90,7 +90,7 @@ export default {
   v-model="show"
   round
   position="bottom"
-  :style="{ height: '20%' }"
+  :style="{ height: '30%' }"
 />
 ```
 
@@ -144,15 +144,15 @@ export default {
 | close-icon-position `v2.2.2` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | *string* | `top-right` |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | - |
 | get-container | 指定挂载的节点 | *string \| () => Element* | - |
-| safe-area-inset-bottom `v2.2.1` | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击弹出层时触发 | event: Event |
+| click | 点击弹出层时触发 | *event: Event* |
 | open | 打开弹出层时触发 | - |
-| opened | 打开弹出层且动画结束后触发 | - |
 | close | 关闭弹出层时触发 | - |
+| opened | 打开弹出层且动画结束后触发 | - |
 | closed | 关闭弹出层且动画结束后触发 | - |
 | click-overlay | 点击遮罩层时触发 | - |

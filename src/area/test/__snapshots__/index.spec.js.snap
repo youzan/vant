@@ -114,6 +114,26 @@ exports[`columns-num prop 1`] = `
 </div>
 `;
 
+exports[`columns-top、columns-bottom slot 1`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
+  <!---->Top<div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>Bottom
+  <!---->
+</div>
+`;
+
 exports[`reset method 1`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
@@ -165,6 +185,27 @@ exports[`reset method 2`] = `
         <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
         <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
+    </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`title slot 1`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>Custom Title<button type="button" class="van-picker__confirm">确认</button></div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
     </div>
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>

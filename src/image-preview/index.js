@@ -15,11 +15,14 @@ const defaultConfig = {
   onChange: null,
   lazyLoad: false,
   showIndex: true,
+  closeable: false,
+  closeIcon: 'clear',
   asyncClose: false,
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,
   closeOnPopstate: false,
+  closeIconPosition: 'top-right',
 };
 
 const initInstance = () => {
@@ -31,6 +34,12 @@ const initInstance = () => {
   instance.$on('change', index => {
     if (instance.onChange) {
       instance.onChange(index);
+    }
+  });
+
+  instance.$on('scale', data => {
+    if (instance.onScale) {
+      instance.onScale(data);
     }
   });
 };

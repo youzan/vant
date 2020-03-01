@@ -131,7 +131,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前输入值 | *number \| string* | - |
+| v-model | 当前输入的值 | *number \| string* | - |
 | min | 最小值 | *number \| string* | `1` |
 | max | 最大值 | *number \| string* | - |
 | default-value | 初始值，当 v-model 为空时生效 | *number \| string* | `1` |
@@ -154,9 +154,9 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | value: 当前组件的值, detail: 额外信息，包含 name 的字段 |
+| change | 当绑定值变化时触发的事件 | *value: string, detail: { name: string }* |
 | overlimit | 点击不可用的按钮时触发 | - |
 | plus | 点击增加按钮时触发 | - |
 | minus | 点击减少按钮时触发 | - |
-| focus | 输入框聚焦时触发 | event: Event |
-| blur | 输入框失焦时触发 | event: Event |
+| focus | 输入框聚焦时触发 | *event: Event* |
+| blur | 输入框失焦时触发 | *event: Event* |

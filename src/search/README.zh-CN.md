@@ -128,18 +128,18 @@ export default {
 | readonly | 是否将输入框设为只读 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
-| left-icon | 输入框左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `search` |
-| right-icon | 输入框右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | `search` |
+| right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| search | 确定搜索时触发 | value: 输入框当前值 |
-| input | 输入框内容变化时触发 | value: 输入框当前值 |
-| focus | 输入框获得焦点时触发 | event: Event |
-| blur | 输入框失去焦点时触发 | event: Event |
-| clear | 点击清除按钮后触发 | event: Event |
+| search | 确定搜索时触发 | *value: string (当前输入的值)* |
+| input | 输入框内容变化时触发 | *value: string (当前输入的值)* |
+| focus | 输入框获得焦点时触发 | *event: Event* |
+| blur | 输入框失去焦点时触发 | *event: Event* |
+| clear | 点击清除按钮后触发 | *event: Event* |
 | cancel | 点击取消按钮时触发 | - |
 
 ### Slots

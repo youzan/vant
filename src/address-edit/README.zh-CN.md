@@ -73,6 +73,9 @@ export default {
 | show-delete | 是否显示删除按钮 | *boolean* | `false` |
 | show-set-default | 是否显示默认地址栏 | *boolean* | `false` |
 | show-search-result | 是否显示搜索结果 | *boolean* | `false` |
+| show-area | 是否显示地区 | *boolean* | `true` |
+| show-detail | 是否显示详细地址 | *boolean* | `true` |
+| disable-area `v2.5.0` | 是否禁用地区选择 | *boolean* | `false` |
 | save-button-text | 保存按钮文字 | *string* | `保存` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |
 | detail-rows | 详细地址输入框行数 | *number \| string* | `1` |
@@ -104,7 +107,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|

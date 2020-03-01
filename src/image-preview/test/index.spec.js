@@ -38,6 +38,44 @@ test('render image', async () => {
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
+test('closeable prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      closeable: true,
+    },
+  });
+
+  wrapper.find('.van-image-preview__close-icon').trigger('click');
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+});
+
+test('close-icon prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('close-icon-position prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      value: true,
+      closeable: true,
+      closeIcon: 'close',
+      closeIconPosition: 'top-left',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
     propsData: {
@@ -123,6 +161,25 @@ test('onChange option', async done => {
 
   const swipe = instance.$el.querySelector('.van-swipe__track');
   triggerDrag(swipe, 1000, 0);
+});
+
+test('onScale option', async done => {
+  const { getBoundingClientRect } = Element.prototype;
+  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
+  const instance = ImagePreview({
+    images,
+    startPosition: 0,
+    onScale({ index, scale }) {
+      expect(index).toEqual(2);
+      expect(scale <= 2).toBeTruthy();
+      done();
+    },
+  });
+
+  const image = instance.$el.getElementsByTagName('img')[0];
+  triggerZoom(image, 300, 300);
+  Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
 
 test('register component', () => {

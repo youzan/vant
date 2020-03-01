@@ -82,7 +82,6 @@ export default {
       currentDate: new Date()
     };
   },
-
   methods: {
     formatter(type, val) {
       if (type === 'year') {
@@ -134,7 +133,6 @@ export default {
       currentTime: '12:00'
     };
   },
-
   methods: {
     filter(type, options) {
       if (type === 'minute') {
@@ -199,4 +197,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call
 
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
-| getPicker `v2.4.0` | get Picker instance | - | - |
+| getPicker `v2.5.3` | get Picker instance | - | - |

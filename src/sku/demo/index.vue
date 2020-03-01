@@ -163,7 +163,7 @@ export default {
       stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button',
-      actionsTop: 'action top info',
+      actionsTop: 'Action top info',
     },
   },
 
@@ -198,6 +198,9 @@ export default {
         },
       },
       messageConfig: {
+        initialMessages: {
+          留言1: '商品留言',
+        },
         uploadImg: (file, img) =>
           new Promise(resolve => {
             setTimeout(() => resolve(img), 1000);

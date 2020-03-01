@@ -52,6 +52,7 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    disableArea: Boolean,
     detailRows: {
       type: [Number, String],
       default: 1,
@@ -250,7 +251,7 @@ export default createComponent({
   },
 
   render() {
-    const { data, errorInfo, searchResult } = this;
+    const { data, errorInfo, searchResult, disableArea } = this;
     const onFocus = name => () => this.onFocus(name);
 
     // hide bottom field when use search && detail get focused
@@ -280,15 +281,15 @@ export default createComponent({
           <Field
             vShow={this.showArea}
             readonly
-            clickable
+            clickable={!disableArea}
             label={t('area')}
             placeholder={t('areaPlaceholder')}
             errorMessage={errorInfo.areaCode}
-            rightIcon="arrow"
+            rightIcon={!disableArea ? 'arrow' : null}
             value={this.areaText}
             onFocus={onFocus('areaCode')}
             onClick={() => {
-              this.showAreaPopup = true;
+              this.showAreaPopup = !disableArea;
             }}
           />
           <Detail

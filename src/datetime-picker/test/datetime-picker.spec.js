@@ -30,3 +30,8 @@ test('time type', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('getPicker method', () => {
+  const wrapper = mount(DatetimePicker);
+  expect(wrapper.vm.getPicker()).toBeTruthy();
+});

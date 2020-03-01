@@ -44,6 +44,11 @@ export default {
   }
 };
 ```
+### Disabled
+
+```html
+<van-uploader disabled />
+```
 
 ### Upload Status
 
@@ -166,6 +171,7 @@ export default {
 | result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | *string* | `dataUrl` |
 | upload-text | Upload text | *string* | - |
 | image-fit `v2.1.5` | Preview image fit mode | *string* | `cover` |
+| upload-icon `v2.5.4` | Upload icon | *string* | `photograph` |
 
 ### Events
 

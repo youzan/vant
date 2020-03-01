@@ -133,6 +133,7 @@ export default createComponent({
 
     defaultDate(val) {
       this.currentDate = val;
+      this.scrollIntoView();
     },
   },
 
@@ -146,11 +147,16 @@ export default createComponent({
     // @exposed-api
     reset() {
       this.currentDate = this.getInitialDate();
+      this.scrollIntoView();
     },
 
     initRect() {
       this.$nextTick(() => {
-        this.bodyHeight = this.$refs.body.getBoundingClientRect().height;
+        // add Math.floor to avoid decimal height issues
+        // https://github.com/youzan/vant/issues/5640
+        this.bodyHeight = Math.floor(
+          this.$refs.body.getBoundingClientRect().height
+        );
         this.onScroll();
       });
     },
@@ -160,9 +166,10 @@ export default createComponent({
       this.$nextTick(() => {
         const { currentDate } = this;
         const targetDate = this.range ? currentDate[0] : currentDate;
+        const displayed = this.value || !this.poppable;
 
         /* istanbul ignore if */
-        if (!targetDate) {
+        if (!targetDate || !displayed) {
           return;
         }
 
@@ -204,13 +211,13 @@ export default createComponent({
       }
 
       let height = 0;
-      let firstMonth;
+      let currentMonth;
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !firstMonth) {
-          firstMonth = months[i];
+        if (visible && !currentMonth) {
+          currentMonth = months[i];
         }
 
         months[i].visible = visible;
@@ -218,8 +225,8 @@ export default createComponent({
       }
 
       /* istanbul ignore else */
-      if (firstMonth) {
-        this.monthTitle = firstMonth.title;
+      if (currentMonth) {
+        this.monthTitle = currentMonth.title;
       }
     },
 
@@ -278,9 +285,11 @@ export default createComponent({
     },
 
     onConfirm() {
-      if (this.checkRange()) {
-        this.$emit('confirm', this.currentDate);
+      if (this.range && !this.checkRange()) {
+        return;
       }
+
+      this.$emit('confirm', this.currentDate);
     },
 
     genMonth(date, index) {
@@ -323,6 +332,7 @@ export default createComponent({
             color={this.color}
             class={bem('confirm')}
             disabled={this.buttonDisabled}
+            nativeType="text"
             onClick={this.onConfirm}
           >
             {text || t('confirm')}
@@ -364,6 +374,8 @@ export default createComponent({
 
   render() {
     if (this.poppable) {
+      const createListener = name => () => this.$emit(name);
+
       return (
         <Popup
           round
@@ -376,6 +388,10 @@ export default createComponent({
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
           onInput={this.togglePopup}
+          onOpen={createListener('open')}
+          onOpened={createListener('opened')}
+          onClose={createListener('close')}
+          onClosed={createListener('closed')}
         >
           {this.genCalendar()}
         </Popup>

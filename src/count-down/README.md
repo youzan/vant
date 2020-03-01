@@ -130,15 +130,15 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | finish | Triggered when count down finished | - |
-| change `v2.4.4` | Triggered when count down changed | timeData |
+| change `v2.4.4` | Triggered when count down changed | *timeData: TimeData* |
 
 ### Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
-| default | Custom Content | timeData |
+| default | Custom Content | *timeData: TimeData* |
 
-### timeData Structure
+### TimeData Structure
 
 | Name | Description | Type |
 |------|------|------|

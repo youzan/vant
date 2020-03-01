@@ -10,6 +10,21 @@ function isOverseaCode(code) {
   return code[0] === '9';
 }
 
+function pickSlots(instance, keys) {
+  const { $slots, $scopedSlots } = instance;
+  const scopedSlots = {};
+
+  keys.forEach(key => {
+    if ($scopedSlots[key]) {
+      scopedSlots[key] = $scopedSlots[key];
+    } else if ($slots[key]) {
+      scopedSlots[key] = () => $slots[key];
+    }
+  });
+
+  return scopedSlots;
+}
+
 export default createComponent({
   props: {
     ...pickerProps,
@@ -290,6 +305,11 @@ export default createComponent({
         visibleItemCount={this.visibleItemCount}
         cancelButtonText={this.cancelButtonText}
         confirmButtonText={this.confirmButtonText}
+        scopedSlots={pickSlots(this, [
+          'title',
+          'columns-top',
+          'columns-bottom',
+        ])}
         {...{ on }}
       />
     );

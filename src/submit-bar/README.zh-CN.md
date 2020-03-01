@@ -79,12 +79,12 @@ Vue.use(SubmitBar);
 | button-text | 按钮文字 | *string* | - |
 | button-type | 按钮类型 | *string* | `danger` |
 | tip | 提示文案 |  *string* | - |
-| tip-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 |  *string* | - |
+| tip-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 |  *string* | - |
 | currency | 货币符号 | *string* | `¥` |
 | decimal-length | 价格小数点后位数 | *number \| string* | `2` |
 | disabled | 是否禁用按钮 | *boolean* | `false` |
 | loading | 是否显示加载中的按钮 |  *boolean* | `false` |
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 
 ### Events
 

@@ -127,9 +127,10 @@ Vue.use(Button);
 | size | 尺寸，可选值为 `large` `small` `mini` | *string* | `normal` |
 | text | 按钮文字 | *string* | - |
 | color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - |
-| icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
-| tag | HTML 标签 | *string* | `button` |
-| native-type | 原生 button 标签 type 属性 | *string* | - |
+| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
+| tag | 根节点的 HTML 标签 | *string* | `button` |
+| native-type | 原生 button 标签的 type 属性 | *string* | - |
 | block | 是否为块级元素 | *boolean* | `false` |
 | plain | 是否为朴素按钮 | *boolean* | `false` |
 | square | 是否为方形按钮 | *boolean* | `false` |
@@ -148,5 +149,5 @@ Vue.use(Button);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: Event |
-| touchstart | 开始触摸按钮时触发 | event: TouchEvent |
+| click | 点击按钮，且按钮状态不为加载或禁用时触发 | *event: Event* |
+| touchstart | 开始触摸按钮时触发 | *event: TouchEvent* |

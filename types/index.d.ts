@@ -11,6 +11,7 @@ import { DatetimePicker } from './datetime-picker';
 import { Dialog } from './dialog';
 import { DropdownItem } from './dropdown-item';
 import { Field } from './field';
+import { Form } from './form';
 import { ImagePreview } from './image-preview';
 import { Lazyload } from './lazyload';
 import { List } from './list';
@@ -98,6 +99,7 @@ export {
   DatetimePicker,
   Dialog,
   DropdownItem,
+  Form,
   Field,
   ImagePreview,
   Lazyload,

@@ -12,6 +12,12 @@
       </van-button>
     </demo-block>
 
+    <demo-block :title="$t('button4')">
+      <van-button type="primary" @click="showImagePreview(0, 0, true)">
+        {{ $t('button4') }}
+      </van-button>
+    </demo-block>
+
     <demo-block :title="$t('button3')">
       <van-button type="primary" @click="showImagePreview(0, 3000)">
         {{ $t('button3') }}
@@ -45,6 +51,7 @@ export default {
       button1: '预览图片',
       button2: '指定初始位置',
       button3: '异步关闭',
+      button4: '展示关闭按钮',
       componentCall: '组件调用',
       index: index => `第${index + 1}页`,
     },
@@ -52,6 +59,7 @@ export default {
       button1: 'Show Images',
       button2: 'Custom Start Position',
       button3: 'Async Close',
+      button4: 'Show Close Icon',
       componentCall: 'Component Call',
       index: index => `Page: ${index}`,
     },
@@ -74,12 +82,13 @@ export default {
       this.index = index;
     },
 
-    showImagePreview(position, timer) {
+    showImagePreview(position, timer, closeable) {
       const instance = ImagePreview({
         images,
         lazyLoad: true,
         swipeDuration: 300,
         asyncClose: !!timer,
+        closeable,
         closeOnPopstate: true,
         startPosition: typeof position === 'number' ? position : 0,
       });

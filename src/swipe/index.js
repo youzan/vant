@@ -1,5 +1,6 @@
 // Utils
 import { createNamespace } from '../utils';
+import { isHidden } from '../utils/dom/style';
 import { preventDefault } from '../utils/dom/event';
 import { doubleRaf } from '../utils/dom/raf';
 import { range } from '../utils/format/number';
@@ -149,10 +150,10 @@ export default createComponent({
     initialize(active = +this.initialSwipe) {
       clearTimeout(this.timer);
 
-      if (this.$el) {
+      if (this.$el && !isHidden(this.$el)) {
         const rect = this.$el.getBoundingClientRect();
-        this.computedWidth = +this.width || rect.width;
-        this.computedHeight = +this.height || rect.height;
+        this.computedWidth = Math.round(+this.width || rect.width);
+        this.computedHeight = Math.round(+this.height || rect.height);
       }
 
       this.swiping = true;

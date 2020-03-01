@@ -3,7 +3,14 @@ import { formatNumber } from './utils';
 import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
-import { createNamespace, isObject, isDef, addUnit } from '../utils';
+import {
+  createNamespace,
+  isObject,
+  isDef,
+  addUnit,
+  isPromise,
+  isFunction,
+} from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -15,8 +22,22 @@ const [createComponent, bem] = createNamespace('field');
 export default createComponent({
   inheritAttrs: false,
 
+  provide() {
+    return {
+      vanField: this,
+    };
+  },
+
+  inject: {
+    vanForm: {
+      default: null,
+    },
+  },
+
   props: {
     ...cellProps,
+    name: String,
+    rules: Array,
     error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
@@ -43,11 +64,14 @@ export default createComponent({
   data() {
     return {
       focused: false,
+      validateMessage: '',
     };
   },
 
   watch: {
     value() {
+      this.resetValidation();
+      this.validateWithTrigger('onChange');
       this.$nextTick(this.adjustSize);
     },
   },
@@ -55,6 +79,16 @@ export default createComponent({
   mounted() {
     this.format();
     this.$nextTick(this.adjustSize);
+
+    if (this.vanForm) {
+      this.vanForm.fields.push(this);
+    }
+  },
+
+  beforeDestroy() {
+    if (this.vanForm) {
+      this.vanForm.fields = this.vanForm.fields.filter(item => item !== this);
+    }
   },
 
   computed: {
@@ -83,10 +117,15 @@ export default createComponent({
     },
 
     labelStyle() {
-      const { labelWidth } = this;
+      const labelWidth = this.getProp('labelWidth');
+
       if (labelWidth) {
         return { width: addUnit(labelWidth) };
       }
+    },
+
+    formValue() {
+      return this.children ? this.children.value : this.value;
     },
   },
 
@@ -102,6 +141,117 @@ export default createComponent({
     blur() {
       if (this.$refs.input) {
         this.$refs.input.blur();
+      }
+    },
+
+    runValidator(value, rule) {
+      return new Promise(resolve => {
+        const returnVal = rule.validator(value, rule);
+
+        if (isPromise(returnVal)) {
+          return returnVal.then(resolve);
+        }
+
+        resolve(returnVal);
+      });
+    },
+
+    isEmptyValue(value) {
+      if (Array.isArray(value)) {
+        return !value.length;
+      }
+
+      return !value;
+    },
+
+    runSyncRule(value, rule) {
+      if (rule.required && this.isEmptyValue(value)) {
+        return false;
+      }
+      if (rule.pattern && !rule.pattern.test(value)) {
+        return false;
+      }
+      return true;
+    },
+
+    getRuleMessage(value, rule) {
+      const { message } = rule;
+
+      if (isFunction(message)) {
+        return message(value, rule);
+      }
+
+      return message;
+    },
+
+    runRules(rules) {
+      return rules.reduce(
+        (promise, rule) =>
+          promise.then(() => {
+            if (this.validateMessage) {
+              return;
+            }
+
+            let value = this.formValue;
+
+            if (rule.formatter) {
+              value = rule.formatter(value, rule);
+            }
+
+            if (!this.runSyncRule(value, rule)) {
+              this.validateMessage = this.getRuleMessage(value, rule);
+              return;
+            }
+
+            if (rule.validator) {
+              return this.runValidator(value, rule).then(result => {
+                if (result === false) {
+                  this.validateMessage = this.getRuleMessage(value, rule);
+                }
+              });
+            }
+          }),
+        Promise.resolve()
+      );
+    },
+
+    validate(rules = this.rules) {
+      return new Promise(resolve => {
+        if (!rules) {
+          resolve();
+        }
+
+        this.runRules(rules).then(() => {
+          if (this.validateMessage) {
+            resolve({
+              name: this.name,
+              message: this.validateMessage,
+            });
+          } else {
+            resolve();
+          }
+        });
+      });
+    },
+
+    validateWithTrigger(trigger) {
+      if (this.vanForm && this.rules) {
+        const defaultTrigger = this.vanForm.validateTrigger === trigger;
+        const rules = this.rules.filter(rule => {
+          if (rule.trigger) {
+            return rule.trigger === trigger;
+          }
+
+          return defaultTrigger;
+        });
+
+        this.validate(rules);
+      }
+    },
+
+    resetValidation() {
+      if (this.validateMessage) {
+        this.validateMessage = '';
       }
     },
 
@@ -166,6 +316,7 @@ export default createComponent({
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', event);
+      this.validateWithTrigger('onBlur');
       resetScroll();
     },
 
@@ -224,19 +375,23 @@ export default createComponent({
     genInput() {
       const { type } = this;
       const inputSlot = this.slots('input');
+      const inputAlign = this.getProp('inputAlign');
 
       if (inputSlot) {
-        return <div class={bem('control', this.inputAlign)}>{inputSlot}</div>;
+        return (
+          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
+        );
       }
 
       const inputProps = {
         ref: 'input',
-        class: bem('control', this.inputAlign),
+        class: bem('control', inputAlign),
         domProps: {
           value: this.value,
         },
         attrs: {
           ...this.$attrs,
+          name: this.name,
           disabled: this.disabled,
           readonly: this.readonly,
           placeholder: this.placeholder,
@@ -282,7 +437,9 @@ export default createComponent({
       if (showLeftIcon) {
         return (
           <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-            {this.slots('left-icon') || <Icon name={this.leftIcon} />}
+            {this.slots('left-icon') || (
+              <Icon name={this.leftIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }
@@ -295,7 +452,9 @@ export default createComponent({
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-            {slots('right-icon') || <Icon name={this.rightIcon} />}
+            {slots('right-icon') || (
+              <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }
@@ -314,38 +473,74 @@ export default createComponent({
         );
       }
     },
+
+    genMessage() {
+      const message = this.errorMessage || this.validateMessage;
+
+      if (message) {
+        const errorMessageAlign = this.getProp('errorMessageAlign');
+
+        return (
+          <div class={bem('error-message', errorMessageAlign)}>{message}</div>
+        );
+      }
+    },
+
+    getProp(key) {
+      if (isDef(this[key])) {
+        return this[key];
+      }
+
+      if (this.vanForm && isDef(this.vanForm[key])) {
+        return this.vanForm[key];
+      }
+    },
+
+    genLabel() {
+      const colon = this.getProp('colon') ? ':' : '';
+
+      if (this.slots('label')) {
+        return [this.slots('label'), colon];
+      }
+
+      if (this.label) {
+        return <span>{this.label + colon}</span>;
+      }
+    },
   },
 
   render() {
-    const { slots, labelAlign } = this;
+    const { slots } = this;
+    const labelAlign = this.getProp('labelAlign');
 
     const scopedSlots = {
       icon: this.genLeftIcon,
     };
 
-    if (slots('label')) {
-      scopedSlots.title = () => slots('label');
+    const Label = this.genLabel();
+    if (Label) {
+      scopedSlots.title = () => Label;
     }
 
     return (
       <Cell
         icon={this.leftIcon}
         size={this.size}
-        title={this.label}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
         required={this.required}
         clickable={this.clickable}
         titleStyle={this.labelStyle}
+        valueClass={bem('value')}
         titleClass={[bem('label', labelAlign), this.labelClass]}
+        scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
         class={bem({
-          error: this.error,
+          error: this.error || this.validateMessage,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
-        scopedSlots={scopedSlots}
         onClick={this.onClick}
       >
         <div class={bem('body')}>
@@ -363,11 +558,7 @@ export default createComponent({
           )}
         </div>
         {this.genWordLimit()}
-        {this.errorMessage && (
-          <div class={bem('error-message', this.errorMessageAlign)}>
-            {this.errorMessage}
-          </div>
-        )}
+        {this.genMessage()}
       </Cell>
     );
   },

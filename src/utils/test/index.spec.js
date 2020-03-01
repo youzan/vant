@@ -76,14 +76,14 @@ test('raf', async () => {
   cancelRaf(1);
 });
 
-test('is-email', () => {
+test('isEmail', () => {
   expect(isEmail('abc@gmail.com')).toBeTruthy();
   expect(isEmail('abc@@gmail.com')).toBeFalsy();
   expect(isEmail('@gmail.com')).toBeFalsy();
   expect(isEmail('abc@')).toBeFalsy();
 });
 
-test('is-mobile', () => {
+test('isMobile', () => {
   expect(isMobile('13000000000')).toBeTruthy();
   expect(isMobile('+8613000000000')).toBeTruthy();
   expect(isMobile('8613000000000')).toBeTruthy();
@@ -91,7 +91,7 @@ test('is-mobile', () => {
   expect(isMobile('abc')).toBeFalsy();
 });
 
-test('is-number', () => {
+test('isNumeric', () => {
   expect(isNumeric('1')).toBeTruthy();
   expect(isNumeric('1.2')).toBeTruthy();
   expect(isNumeric('1..2')).toBeFalsy();

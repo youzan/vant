@@ -1,14 +1,16 @@
 import { createNamespace } from '../utils';
+import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
 export default createComponent({
-  mixins: [ParentMixin('vanCheckbox')],
+  mixins: [ParentMixin('vanCheckbox'), FieldMixin],
 
   props: {
     max: [Number, String],
     disabled: Boolean,
+    direction: String,
     iconSize: [Number, String],
     checkedColor: String,
     value: {
@@ -42,6 +44,6 @@ export default createComponent({
   },
 
   render() {
-    return <div class={bem()}>{this.slots()}</div>;
+    return <div class={bem([this.direction])}>{this.slots()}</div>;
   },
 });

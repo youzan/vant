@@ -2,7 +2,7 @@
  * Build style entry of all components
  */
 
-import { join, relative } from 'path';
+import { sep, join, relative } from 'path';
 import { outputFileSync } from 'fs-extra';
 import { getComponents, replaceExt } from '../common';
 import { CSS_LANG, getCssBaseFile } from '../common/css';
@@ -72,7 +72,7 @@ function genEntry(params: {
     }
 
     content += depsPath.map(template).join('\n');
-
+    content = content.replace(new RegExp('\\' + sep, 'g'), '/');
     outputFileSync(outputFile, content);
   });
 }

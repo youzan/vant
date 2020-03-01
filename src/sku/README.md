@@ -143,6 +143,7 @@ export default {
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
 | properties `v2.4.2` | Goods properties | *array* | - |
+| preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | *boolean* | `true` |
 
 ### Events
 
@@ -173,12 +174,13 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | sku-header-price | Custom header price area |
 | sku-header-origin-price | Custom header origin price area |
 | sku-header-extra | Extra header area |
+| sku-header-image-extra `v2.5.2` | Custom header image extra area |
 | sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |
 | sku-stepper | Custom stepper |
 | sku-messages | Custom messages |
-| sku-actions-top | Custom content before sku-actions |
+| sku-actions-top `v2.4.7` | Custom content before sku-actions |
 | sku-actions | Custom button actions |
 
 ### Sku Data Structure
@@ -295,7 +297,6 @@ sku: {
 
 ```js
 goods: {
-  title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
 }
 ```
@@ -350,6 +351,11 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // Key：message name
+  // Value：message value
+  initialMessages: {
+    message: 'message value'
   }
 }
 ```

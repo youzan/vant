@@ -34,6 +34,7 @@ export type ActionSheetProps = PopupMixinProps & {
   closeIcon: string;
   cancelText?: string;
   description?: string;
+  closeOnPopstate?: boolean;
   closeOnClickAction?: boolean;
   safeAreaInsetBottom?: boolean;
 };
@@ -143,6 +144,7 @@ function ActionSheet(
       lazyRender={props.lazyRender}
       lockScroll={props.lockScroll}
       getContainer={props.getContainer}
+      closeOnPopstate={props.closeOnPopstate}
       closeOnClickOverlay={props.closeOnClickOverlay}
       safeAreaInsetBottom={props.safeAreaInsetBottom}
       {...inherit(ctx, true)}
@@ -164,6 +166,7 @@ ActionSheet.props = {
   cancelText: String,
   description: String,
   getContainer: [String, Function],
+  closeOnPopstate: Boolean,
   closeOnClickAction: Boolean,
   round: {
     type: Boolean,

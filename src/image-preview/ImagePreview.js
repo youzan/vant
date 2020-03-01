@@ -12,6 +12,7 @@ import Image from '../image';
 import Swipe from '../swipe';
 import Loading from '../loading';
 import SwipeItem from '../swipe-item';
+import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image-preview');
 
@@ -70,6 +71,15 @@ export default createComponent({
     overlayClass: {
       type: String,
       default: bem('overlay'),
+    },
+    closeable: Boolean,
+    closeIcon: {
+      type: String,
+      default: 'clear',
+    },
+    closeIconPosition: {
+      type: String,
+      default: 'top-right',
     },
   },
 
@@ -137,6 +147,12 @@ export default createComponent({
   },
 
   methods: {
+    emitClose() {
+      if (!this.asyncClose) {
+        this.$emit('input', false);
+      }
+    },
+
     onWrapperTouchStart() {
       this.touchStartTime = new Date();
     },
@@ -151,9 +167,7 @@ export default createComponent({
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
         if (!this.doubleClickTimer) {
           this.doubleClickTimer = setTimeout(() => {
-            if (!this.asyncClose) {
-              this.$emit('input', false);
-            }
+            this.emitClose();
 
             this.doubleClickTimer = null;
           }, 300);
@@ -260,7 +274,10 @@ export default createComponent({
     },
 
     setScale(scale) {
-      this.scale = range(scale, +this.minZoom, +this.maxZoom);
+      const value = range(scale, +this.minZoom, +this.maxZoom);
+
+      this.scale = value;
+      this.$emit('scale', { index: this.active, scale: value });
     },
 
     resetScale() {
@@ -331,6 +348,19 @@ export default createComponent({
         </Swipe>
       );
     },
+
+    genClose() {
+      if (this.closeable) {
+        return (
+          <Icon
+            role="button"
+            name={this.closeIcon}
+            class={bem('close-icon', this.closeIconPosition)}
+            onClick={this.emitClose}
+          />
+        );
+      }
+    },
   },
 
   render() {
@@ -341,6 +371,7 @@ export default createComponent({
     return (
       <transition name="van-fade">
         <div vShow={this.value} class={[bem(), this.className]}>
+          {this.genClose()}
           {this.genImages()}
           {this.genIndex()}
           {this.genCover()}

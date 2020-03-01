@@ -288,6 +288,8 @@ Picker events will pass different parameters according to the columns are single
 |------|------|
 | default | Custom toolbar content |
 | title | Custom title |
+| columns-top | Custom content above columns |
+| columns-bottom | Custom content below columns |
 
 ### Data Structure of Column
 

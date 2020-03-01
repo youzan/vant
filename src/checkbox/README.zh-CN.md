@@ -38,14 +38,6 @@ export default {
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
 
-### 禁用文本点击
-
-设置`label-disabled`属性后，点击复选框图标以外的内容不会触发切换
-
-```html
-<van-checkbox v-model="checked" icon-disabled>复选框</van-checkbox>
-```
-
 ### 自定义形状
 
 将`shape`属性设置为`square`，复选框的形状会变成方形
@@ -95,9 +87,17 @@ export default {
 }
 ```
 
+### 禁用文本点击
+
+设置`label-disabled`属性后，点击图标以外的内容不会触发复选框切换
+
+```html
+<van-checkbox v-model="checked" label-disabled>复选框</van-checkbox>
+```
+
 ### 复选框组
 
-复选框可以与复选框组一起使用，选中值是一个数组，通过`v-model`绑定在`CheckboxGroup`上，数组中的值为选中的复选框的`name`
+复选框可以与复选框组一起使用，复选框组通过`v-model`数组绑定复选框的勾选状态
 
 ```html
 <van-checkbox-group v-model="result">
@@ -117,9 +117,9 @@ export default {
 };
 ```
 
-### 设置最大可选数
+### 限制最大可选数
 
-通过`max`属性可以限制最大可选数
+通过`max`属性可以限制复选框组的最大可选数
 
 ```html
 <van-checkbox-group v-model="result" :max="2">
@@ -151,7 +151,6 @@ export default {
       result: []
     }
   },
-
   methods: {
     checkAll() {
       this.$refs.checkboxGroup.toggleAll(true);
@@ -177,11 +176,7 @@ export default {
       :title="`复选框 ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox
-        :name="item"
-        ref="checkboxes"
-        slot="right-icon"
-      />
+      <van-checkbox slot="right-icon" :name="item" ref="checkboxes" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -189,6 +184,12 @@ export default {
 
 ```js
 export default {
+  data() {
+    return {
+      list: ['a', 'b']
+      result: []
+    };
+  },
   methods: {
     toggle(index) {
       this.$refs.checkboxes[index].toggle();
@@ -203,9 +204,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| v-model (value) | 是否为选中状态 | *boolean* | `false` |
 | name | 标识符 | *any* | - |
 | shape | 形状，可选值为 `square` | *string* | `round` |
-| v-model | 是否为选中状态 | *boolean* | `false` |
 | disabled | 是否禁用复选框 | *boolean* | `false` |
 | label-disabled | 是否禁用复选框文本点击 | *boolean* | `false` |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` |
@@ -217,9 +218,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 所有选中项的标识符 | *any[]* | - |
+| v-model (value) | 所有选中项的标识符 | *any[]* | - |
 | disabled | 是否禁用所有复选框 | *boolean* | `false` |
-| max | 最大可选数，0 为无限制 | *number \| string* | `0` |
+| max | 最大可选数，`0`为无限制 | *number \| string* | `0` |
+| direction `v2.5.0` | 排列方向，可选值为`horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | 所有复选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
 | checked-color `v2.2.3` | 所有复选框的选中状态颜色 | *string* | `#1989fa` |
 
@@ -227,34 +229,34 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
-| click | 点击复选框时触发 | event: Event |
+| change | 当绑定值变化时触发的事件 | *checked: boolean* |
+| click | 点击复选框时触发 | *event: Event* |
 
 ### CheckboxGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| change | 当绑定值变化时触发的事件 | *names: any[]* |
 
 ### Checkbox Slots
 
 | 名称 | 说明 | SlotProps |
 |------|------|------|
 | default | 自定义文本 | - |
-| icon | 自定义图标 | checked: 是否为选中状态 |
+| icon | 自定义图标 | *checked: boolean* |
 
 ### CheckboxGroup 方法
 
-通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
+| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | *checked?: boolean* | - |
 
 ### Checkbox 方法
 
-通过 ref 可以获取到 Checkbox 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Checkbox 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
-| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | checked?: boolean | - |
+| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | *checked?: boolean* | - |

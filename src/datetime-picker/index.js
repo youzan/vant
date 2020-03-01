@@ -10,11 +10,19 @@ export default createComponent({
     ...DatePicker.props,
   },
 
+  methods: {
+    // @exposed-api
+    getPicker() {
+      return this.$refs.root.getPicker();
+    },
+  },
+
   render() {
     const Component = this.type === 'time' ? TimePicker : DatePicker;
 
     return (
       <Component
+        ref="root"
         class={bem()}
         {...{
           props: this.$props,

@@ -233,8 +233,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
+| v-model (value) | 当前输入的值 | *number \| string* | - |
 | label | 输入框左侧文本 | *string* | - |
-| value | 当前输入的值 | *number \| string* | - |
+| name `v2.5.0` | 名称，提交表单的标识符 | *string* | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | *string* | `text` |
 | size | 大小，可选值为 `large` | *string* | - |
 | maxlength | 输入的最大字符数 | *number \| string* | - |
@@ -249,17 +250,19 @@ export default {
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` |
 | show-word-limit `v2.2.8` | 是否显示字数统计，需要设置`maxlength`属性 | *boolean* | `false` |
 | error | 是否将输入内容标红 | *boolean* | `false` |
+| error-message | 底部错误提示文案，为空时不展示 | *string* | - |
 | formatter `v2.4.2` | 输入内容格式化函数 | *Function* | - |
 | arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | *string* | `right` |
-| error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | label-class | 左侧文本额外类名 | *any* | - |
 | label-width | 左侧文本宽度，默认单位为`px` | *number \| string* | `90px` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | *string* | `left` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
+| input-align | 输入框对齐方式，可选值为 `center` `right` | *string* | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
-| left-icon | 左侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
-| right-icon | 右侧 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | - |
+| left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
+| rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | *Rule[]* | - |
 
 ### Events
 
@@ -267,17 +270,17 @@ export default {
 
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
-| input | 输入框内容变化时触发 | value: 输入框当前值 |
-| focus | 输入框获得焦点时触发 | event: Event |
-| blur | 输入框失去焦点时触发 | event: Event |
-| clear | 点击清除按钮时触发 | event: Event |
-| click | 点击时触发 | event: Event |
-| click-left-icon | 点击左侧图标时触发 | event: Event |
-| click-right-icon | 点击右侧图标时触发 | event: Event |
+| input | 输入框内容变化时触发 | *value: string (当前输入的值)* |
+| focus | 输入框获得焦点时触发 | *event: Event* |
+| blur | 输入框失去焦点时触发 | *event: Event* |
+| clear | 点击清除按钮时触发 | *event: Event* |
+| click | 点击时触发 | *event: Event* |
+| click-left-icon | 点击左侧图标时触发 | *event: Event* |
+| click-right-icon | 点击右侧图标时触发 | *event: Event* |
 
 ### 方法
 
-通过 ref 可以获取到 Field 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -293,3 +296,9 @@ export default {
 | left-icon | 自定义输入框头部图标 |
 | right-icon | 自定义输入框尾部图标 |
 | button | 自定义输入框尾部按钮 |
+
+## 常见问题
+
+### 在桌面端点击清除按钮无效？
+
+参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。

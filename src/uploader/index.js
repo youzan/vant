@@ -1,6 +1,9 @@
 // Utils
-import { createNamespace, addUnit, noop } from '../utils';
+import { createNamespace, addUnit, noop, isPromise } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
+
+// Mixins
+import { FieldMixin } from '../mixins/field';
 
 // Components
 import Icon from '../icon';
@@ -12,6 +15,8 @@ const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
   inheritAttrs: false,
+
+  mixins: [FieldMixin],
 
   model: {
     prop: 'fileList',
@@ -64,11 +69,20 @@ export default createComponent({
       type: String,
       default: 'dataUrl',
     },
+    uploadIcon: {
+      type: String,
+      default: 'photograph',
+    },
   },
 
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
+    },
+
+    // for form
+    value() {
+      return this.fileList;
     },
   },
 
@@ -97,7 +111,7 @@ export default createComponent({
           return;
         }
 
-        if (response.then) {
+        if (isPromise(response)) {
           response
             .then(() => {
               this.readFile(files);
@@ -172,7 +186,7 @@ export default createComponent({
           return;
         }
 
-        if (response.then) {
+        if (isPromise(response)) {
           response
             .then(() => {
               this.deleteFile(file, index);
@@ -268,7 +282,6 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
-          radius={4}
           onClick={() => {
             this.onPreviewImage(item);
           }}
@@ -347,7 +360,7 @@ export default createComponent({
 
       return (
         <div class={bem('upload')} style={style}>
-          <Icon name="plus" class={bem('upload-icon')} />
+          <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
           )}
@@ -360,7 +373,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div class={bem('wrapper')}>
+        <div class={bem('wrapper', { disabled: this.disabled })}>
           {this.genPreviewList()}
           {this.genUpload()}
         </div>

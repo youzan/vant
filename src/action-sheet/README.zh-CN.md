@@ -141,15 +141,16 @@ export default {
 | title | 顶部标题 | *string* | - |
 | cancel-text | 取消按钮文字 | *string* | - |
 | description `v2.2.8` | 选项上方的描述信息 | *string* | - |
-| close-icon `v2.2.13` | 关闭 [图标名称](#/zh-CN/icon) 或图片链接 | *string* | `cross` |
+| close-icon `v2.2.13` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | *string* | `cross` |
 | duration `v2.0.3` | 动画时长，单位秒 | *number \| string* | `0.3` |
 | round `v2.0.9` | 是否显示圆角 | *boolean* | `true` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
 | lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | *boolean* | `true` |
+| close-on-popstate `v2.5.3` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Action 数据结构
@@ -169,13 +170,13 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 选中选项时触发，禁用或加载状态下不会触发 | item: 选项对应的对象, index: 选择对应的索引 |
+| select | 选中选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
 | cancel | 取消按钮点击时触发 | - |
-| click-overlay | 点击遮罩层时触发 | - |
 | open | 打开菜单时触发 | - |
-| opened | 打开菜单且动画结束后触发 | - |
 | close | 关闭菜单时触发 | - |
+| opened | 打开菜单且动画结束后触发 | - |
 | closed | 关闭菜单且动画结束后触发 | - |
+| click-overlay | 点击遮罩层时触发 | - |
 
 ## 常见问题
 

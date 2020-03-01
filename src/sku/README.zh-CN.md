@@ -144,9 +144,10 @@ export default {
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
-| safe-area-inset-bottom `v2.2.1` | 是否开启 [底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `v2.4.2` | 商品属性 | *array* | - |
+| preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | *boolean* | `true` |
 
 ### Events
 
@@ -162,7 +163,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Sku 实例并调用实例方法，详见 [组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Sku 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
 |------|------|------|------|
@@ -179,12 +180,13 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，�
 | sku-header-price | 自定义 sku 头部价格展示 |
 | sku-header-origin-price | 自定义 sku 头部原价展示 |
 | sku-header-extra | 额外 sku 头部区域 |
+| sku-header-image-extra `v2.5.2` | 自定义 sku 头部图片额外的展示 |
 | sku-body-top |  sku 展示区上方的内容，无默认展示内容，按需使用 |
 | sku-group | 商品 sku 展示区 |
 | extra-sku-group | 额外商品 sku 展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
 | sku-messages | 商品留言区 |
-| sku-actions-top | 操作按钮区顶部内容，无默认展示内容，按需使用 |
+| sku-actions-top `v2.4.7` | 操作按钮区顶部内容，无默认展示内容，按需使用 |
 | sku-actions | 操作按钮区 |
 
 ### sku 对象结构
@@ -290,8 +292,6 @@ sku: {
 
 ```js
 goods: {
-  // 商品标题
-  title: '测试商品',
   // 默认商品 sku 缩略图
   picture: 'https://img.yzcdn.cn/1.jpg'
 }
@@ -346,6 +346,12 @@ messageConfig: {
     text: 'xxx',
     tel: 'xxx',
     ...
+  },
+  // 初始留言信息
+  // 键：留言 name
+  // 值：留言内容
+  initialMessages: {
+    留言: '留言信息'
   }
 }
 ```

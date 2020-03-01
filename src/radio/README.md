@@ -33,21 +33,21 @@ export default {
 };
 ```
 
+### Horizontal
+
+```html
+<van-radio-group v-model="radio" direction="horizontal">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Disabled
 
 ```html
 <van-radio-group v-model="radio" disabled>
   <van-radio name="1">Radio 1</van-radio>
   <van-radio name="2">Radio 2</van-radio>
-</van-radio-group>
-```
-
-### Disabled Label Click
-
-```html
-<van-radio-group v-model="radio">
-  <van-radio name="1" icon-disabled>Radio 1</van-radio>
-  <van-radio name="2" icon-disabled>Radio 2</van-radio>
 </van-radio-group>
 ```
 
@@ -115,6 +115,15 @@ export default {
 };
 ```
 
+### Disable Label Click
+
+```html
+<van-radio-group v-model="radio">
+  <van-radio name="1" label-disabled>Radio 1</van-radio>
+  <van-radio name="2" label-disabled>Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Inside a Cell
 
 ```html
@@ -148,8 +157,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Name of checked radio | *any* | - |
+| v-model (v-model) | Name of checked radio | *any* | - |
 | disabled | Disable all radios | *boolean* | `false` |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
 | icon-size `v2.2.3` | Icon size of all radios | *number \| string* | `20px` |
 | checked-color `v2.2.3` | Checked color of all radios | *string* | `#1989fa` | - |
 
@@ -157,17 +167,17 @@ export default {
 
 | Event | Description | Parameters |
 |------|------|------|
-| click | Triggered when click radio | event: Event |
+| click | Triggered when click radio | *event: Event* |
 
 ### RadioGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when value changed | current value |
+| change | Triggered when value changed | *name: string* |
 
 ### Radio Slots
 
 | Name | Description | SlotProps |
 |------|------|------|
 | default | Custom label | - |
-| icon | Custom icon | checked: whether to be checked |
+| icon | Custom icon | *checked: boolean* |

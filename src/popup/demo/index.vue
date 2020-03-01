@@ -17,21 +17,21 @@
       <van-cell :title="$t('buttonLeft')" is-link @click="showLeft = true" />
       <van-cell :title="$t('buttonRight')" is-link @click="showRight = true" />
 
-      <van-popup v-model="showTop" position="top" :style="{ height: '20%' }" />
+      <van-popup v-model="showTop" position="top" :style="{ height: '30%' }" />
       <van-popup
         v-model="showBottom"
         position="bottom"
-        :style="{ height: '20%' }"
+        :style="{ height: '30%' }"
       />
       <van-popup
         v-model="showLeft"
         position="left"
-        :style="{ width: '20%', height: '100%' }"
+        :style="{ width: '30%', height: '100%' }"
       />
       <van-popup
         v-model="showRight"
         position="right"
-        :style="{ width: '20%', height: '100%' }"
+        :style="{ width: '30%', height: '100%' }"
       />
     </demo-block>
 
@@ -56,21 +56,21 @@
         v-model="showCloseIcon"
         closeable
         position="bottom"
-        :style="{ height: '20%' }"
+        :style="{ height: '30%' }"
       />
       <van-popup
         v-model="showCustomCloseIcon"
         closeable
         close-icon="close"
         position="bottom"
-        :style="{ height: '20%' }"
+        :style="{ height: '30%' }"
       />
       <van-popup
         v-model="showCustomIconPosition"
         closeable
         close-icon-position="top-left"
         position="bottom"
-        :style="{ height: '20%' }"
+        :style="{ height: '30%' }"
       />
     </demo-block>
 
@@ -84,7 +84,7 @@
         v-model="showRoundCorner"
         round
         position="bottom"
-        :style="{ height: '20%' }"
+        :style="{ height: '30%' }"
       />
     </demo-block>
 

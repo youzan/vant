@@ -128,3 +128,26 @@ test('columns-num prop', async () => {
   await later();
   expect(wrapper).toMatchSnapshot();
 });
+
+test('title slot', async () => {
+  const wrapper = mount(Area, {
+    scopedSlots: {
+      title: () => 'Custom Title',
+    },
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('columns-top、columns-bottom slot', async () => {
+  const wrapper = mount(Area, {
+    slots: {
+      'columns-top': 'Top',
+      'columns-bottom': 'Bottom',
+    },
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});

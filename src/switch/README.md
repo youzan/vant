@@ -91,7 +91,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Check status of Switch | *any* | `false` |
+| v-model | Check status of Switch | *ActiveValue \| InactiveValue* | `false` |
 | loading | Whether to show loading icon | *boolean* | `false` |
 | disabled | Whether to disable switch | *boolean* | `false` |
 | size `v2.2.11` | Size of switch | *number \| string* | `30px` |
@@ -104,5 +104,5 @@ export default {
 
 | Event | Description | Parameters |
 |------|------|------|
-| change | Triggered when check status changed | checked: is switch checked |
-| click `v2.2.11` | Triggered when clicked | event: Event |
+| change | Triggered when check status changed | *value: any* |
+| click `v2.2.11` | Triggered when clicked | *event: Event* |
