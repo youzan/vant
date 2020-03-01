@@ -20,7 +20,7 @@ Vue.use(Field);
 可以通过`v-model`双向绑定输入框的值，通过`placeholder`设置占位提示文字
 
 ```html
-<!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为父元素来提供外边框。 -->
+<!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为容器来提供外边框。 -->
 <van-cell-group>
   <van-field v-model="value" placeholder="请输入用户名" />
 </van-cell-group>

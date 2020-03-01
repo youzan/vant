@@ -40,19 +40,19 @@ export default createComponent({
     },
 
     faceAmount() {
-      const { coupon } = this;
+      const { coupon } = this.coupon;
 
       if (coupon.valueDesc) {
         return `${coupon.valueDesc}<span>${coupon.unitDesc || ''}</span>`;
       }
 
       if (coupon.denominations) {
-        const denominations = formatAmount(this.coupon.denominations);
+        const denominations = formatAmount(coupon.denominations);
         return `<span>${this.currency}</span> ${denominations}`;
       }
 
       if (coupon.discount) {
-        return t('discount', formatDiscount(this.coupon.discount));
+        return t('discount', formatDiscount(coupon.discount));
       }
 
       return '';
@@ -82,9 +82,9 @@ export default createComponent({
             <p class={bem('valid')}>{this.validPeriod}</p>
             {!this.disabled && (
               <Checkbox
+                size={18}
                 value={this.chosen}
                 class={bem('corner')}
-                size={18}
                 checkedColor={RED}
               />
             )}
