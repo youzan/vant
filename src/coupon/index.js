@@ -85,7 +85,7 @@ export default createComponent({
                 value={this.chosen}
                 class={bem('corner')}
                 size={18}
-                checked-color={RED}
+                checkedColor={RED}
               />
             )}
           </div>
