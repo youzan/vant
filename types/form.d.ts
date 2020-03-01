@@ -6,4 +6,6 @@ export class Form extends VanComponent {
   validate(name?: string): Promise<void>;
 
   resetValidation(name?: string): void;
+
+  scrollToField(name: string): void;
 }
