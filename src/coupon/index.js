@@ -40,7 +40,7 @@ export default createComponent({
     },
 
     faceAmount() {
-      const { coupon } = this.coupon;
+      const { coupon } = this;
 
       if (coupon.valueDesc) {
         return `${coupon.valueDesc}<span>${coupon.unitDesc || ''}</span>`;
