@@ -306,16 +306,16 @@ export default createComponent({
         if (el) {
           const to = getElementTop(el, this.scroller) - this.scrollOffset;
 
-          this.clickedScroll = true;
+          this.lockScroll = true;
           scrollTopTo(this.scroller, to, +this.duration, () => {
-            this.clickedScroll = false;
+            this.lockScroll = false;
           });
         }
       }
     },
 
     onScroll() {
-      if (this.scrollspy && !this.clickedScroll) {
+      if (this.scrollspy && !this.lockScroll) {
         const index = this.getCurrentIndexOnScroll();
         this.setCurrentIndex(index);
       }
