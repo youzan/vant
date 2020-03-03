@@ -8,6 +8,10 @@ exports[`renders demo correctly 1`] = `
         <!----></i>
     </div>
     <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>选择多个日期</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>选择日期区间</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>

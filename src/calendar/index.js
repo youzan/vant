@@ -4,6 +4,7 @@ import { getScrollTop } from '../utils/dom/scroll';
 import {
   t,
   bem,
+  copyDates,
   getNextDay,
   compareDay,
   compareMonth,
@@ -94,10 +95,6 @@ export default createComponent({
   },
 
   computed: {
-    range() {
-      return this.type === 'range';
-    },
-
     months() {
       const months = [];
       const cursor = new Date(this.minDate);
@@ -113,11 +110,17 @@ export default createComponent({
     },
 
     buttonDisabled() {
-      if (this.range) {
-        return !this.currentDate[0] || !this.currentDate[1];
+      const { type, currentDate } = this;
+
+      if (type === 'range') {
+        return !currentDate[0] || !currentDate[1];
       }
 
-      return !this.currentDate;
+      if (type === 'multiple') {
+        return !currentDate.length;
+      }
+
+      return !currentDate;
     },
   },
 
@@ -165,7 +168,8 @@ export default createComponent({
     scrollIntoView() {
       this.$nextTick(() => {
         const { currentDate } = this;
-        const targetDate = this.range ? currentDate[0] : currentDate;
+        const targetDate =
+          this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.value || !this.poppable;
 
         /* istanbul ignore if */
@@ -190,6 +194,10 @@ export default createComponent({
       if (type === 'range') {
         const [startDay, endDay] = defaultDate || [];
         return [startDay || minDate, endDay || getNextDay(minDate)];
+      }
+
+      if (type === 'multiple') {
+        return [defaultDate || minDate];
       }
 
       return defaultDate || minDate;
@@ -232,9 +240,10 @@ export default createComponent({
 
     onClickDay(item) {
       const { date } = item;
+      const { type, currentDate } = this;
 
-      if (this.range) {
-        const [startDay, endDay] = this.currentDate;
+      if (type === 'range') {
+        const [startDay, endDay] = currentDate;
 
         if (startDay && !endDay) {
           const compareToStart = compareDay(date, startDay);
@@ -247,6 +256,22 @@ export default createComponent({
         } else {
           this.select([date, null]);
         }
+      } else if (type === 'multiple') {
+        let selectedIndex;
+
+        const selected = this.currentDate.some((dateItem, index) => {
+          const equal = compareDay(dateItem, date) === 0;
+          if (equal) {
+            selectedIndex = index;
+          }
+          return equal;
+        });
+
+        if (selected) {
+          currentDate.splice(selectedIndex, 1);
+        } else {
+          this.select([...currentDate, date]);
+        }
       } else {
         this.select(date, true);
       }
@@ -258,9 +283,9 @@ export default createComponent({
 
     select(date, complete) {
       this.currentDate = date;
-      this.$emit('select', this.currentDate);
+      this.$emit('select', copyDates(this.currentDate));
 
-      if (complete && this.range) {
+      if (complete && this.type === 'range') {
         const valid = this.checkRange();
 
         if (!valid) {
@@ -285,11 +310,11 @@ export default createComponent({
     },
 
     onConfirm() {
-      if (this.range && !this.checkRange()) {
+      if (this.type === 'range' && !this.checkRange()) {
         return;
       }
 
-      this.$emit('confirm', this.currentDate);
+      this.$emit('confirm', copyDates(this.currentDate));
     },
 
     genMonth(date, index) {

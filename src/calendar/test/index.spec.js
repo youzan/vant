@@ -18,6 +18,10 @@ function formatRange([start, end]) {
   return `${formatDate(start)}-${formatDate(end)}`;
 }
 
+function formatMultiple(dates) {
+  return dates.map(formatDate).join(',');
+}
+
 test('select event when type is single', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
@@ -61,6 +65,36 @@ test('select event when type is range', async () => {
   expect(formatRange(emittedSelect[1][0])).toEqual('2010/1/16-2010/1/17');
   expect(formatRange(emittedSelect[2][0])).toEqual('2010/1/16-');
   expect(formatRange(emittedSelect[3][0])).toEqual('2010/1/13-');
+});
+
+test('select event when type is multiple', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      type: 'multiple',
+      minDate,
+      maxDate,
+      poppable: false,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days.at(15).trigger('click');
+  days.at(16).trigger('click');
+
+  await later();
+  days.at(15).trigger('click');
+  days.at(12).trigger('click');
+
+  const emittedSelect = wrapper.emitted('select');
+  expect(formatMultiple(emittedSelect[0][0])).toEqual('2010/1/10,2010/1/16');
+  expect(formatMultiple(emittedSelect[1][0])).toEqual(
+    '2010/1/10,2010/1/16,2010/1/17'
+  );
+  expect(formatMultiple(emittedSelect[2][0])).toEqual(
+    '2010/1/10,2010/1/17,2010/1/13'
+  );
 });
 
 test('should not trigger select event when click disabled day', async () => {

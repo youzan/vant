@@ -44,6 +44,32 @@ export default {
 };
 ```
 
+### 选择多个日期
+
+设置`type`为`multiple`后可以选择多个日期，此时`confirm`事件返回的 date 为数组结构，数组包含若干个选中的日期。
+
+```html
+<van-cell title="选择多个日期" :value="text" @click="show = true" />
+<van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      text: '',
+      show: false
+    };
+  },
+  methods: {
+    onConfirm(date) {
+      this.show = false;
+      this.text = `选择了 ${date.length} 个日期`;
+    }
+  }
+};
+```
+
 ### 选择日期区间
 
 设置`type`为`range`后可以选择日期区间，此时`confirm`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
@@ -212,7 +238,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | v-model | 是否显示日历弹窗 | *boolean* | `false` |
-| type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` |
+| type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | *string* | `single` |
 | title | 日历标题 | *string* | `日期选择` |
 | color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
 | min-date | 最小日期 | *Date*  | 当前日期 |

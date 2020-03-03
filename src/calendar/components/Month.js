@@ -1,5 +1,13 @@
 import { createNamespace } from '../../utils';
-import { t, bem, compareDay, formatMonthTitle, ROW_HEIGHT } from '../utils';
+import {
+  t,
+  bem,
+  compareDay,
+  ROW_HEIGHT,
+  getPrevDay,
+  getNextDay,
+  formatMonthTitle,
+} from '../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
 
 const [createComponent] = createNamespace('calendar-month');
@@ -84,6 +92,56 @@ export default createComponent({
       this.$refs.days.scrollIntoView();
     },
 
+    getMultipleDayType(day) {
+      const isSelected = date =>
+        this.currentDate.some(item => compareDay(item, date) === 0);
+
+      if (isSelected(day)) {
+        const prevDay = getPrevDay(day);
+        const nextDay = getNextDay(day);
+        const prevSelected = isSelected(prevDay);
+        const nextSelected = isSelected(nextDay);
+
+        if (prevSelected && nextSelected) {
+          return 'multiple-middle';
+        }
+
+        if (prevSelected) {
+          return 'end';
+        }
+
+        return nextSelected ? 'start' : 'multiple-selected';
+      }
+
+      return '';
+    },
+
+    getRangeDayType(day) {
+      const [startDay, endDay] = this.currentDate;
+
+      if (!startDay) {
+        return;
+      }
+
+      const compareToStart = compareDay(day, startDay);
+      if (compareToStart === 0) {
+        return 'start';
+      }
+
+      if (!endDay) {
+        return;
+      }
+
+      const compareToEnd = compareDay(day, endDay);
+      if (compareToEnd === 0) {
+        return 'end';
+      }
+
+      if (compareToStart > 0 && compareToEnd < 0) {
+        return 'middle';
+      }
+    },
+
     getDayType(day) {
       const { type, minDate, maxDate, currentDate } = this;
 
@@ -95,41 +153,24 @@ export default createComponent({
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
 
+      if (type === 'multiple') {
+        return this.getMultipleDayType(day);
+      }
+
       /* istanbul ignore else */
       if (type === 'range') {
-        const [startDay, endDay] = this.currentDate;
-
-        if (!startDay) {
-          return;
-        }
-
-        const compareToStart = compareDay(day, startDay);
-        if (compareToStart === 0) {
-          return 'start';
-        }
-
-        if (!endDay) {
-          return;
-        }
-
-        const compareToEnd = compareDay(day, endDay);
-        if (compareToEnd === 0) {
-          return 'end';
-        }
-
-        if (compareToStart > 0 && compareToEnd < 0) {
-          return 'middle';
-        }
+        return this.getRangeDayType(day);
       }
     },
 
     getBottomInfo(type) {
-      if (type === 'start') {
-        return t('start');
-      }
-
-      if (type === 'end') {
-        return t('end');
+      if (this.type === 'range') {
+        if (type === 'start') {
+          return t('start');
+        }
+        if (type === 'end') {
+          return t('end');
+        }
       }
     },
 
