@@ -93,7 +93,6 @@ When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an 
 <van-checkbox-group v-model="result">
   <van-checkbox name="a">Checkbox a</van-checkbox>
   <van-checkbox name="b">Checkbox b</van-checkbox>
-  <van-checkbox name="c">Checkbox c</van-checkbox>
 </van-checkbox-group>
 ```
 
@@ -102,6 +101,25 @@ export default {
   data() {
     return {
       result: ['a', 'b']
+    };
+  }
+};
+```
+
+### Horizontal
+
+```html
+<van-checkbox-group v-model="result" direction="horizontal">
+  <van-checkbox name="a">Checkbox a</van-checkbox>
+  <van-checkbox name="b">Checkbox b</van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      result: []
     };
   }
 };

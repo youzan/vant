@@ -103,7 +103,6 @@ export default {
 <van-checkbox-group v-model="result">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
-  <van-checkbox name="c">复选框 c</van-checkbox>
 </van-checkbox-group>
 ```
 
@@ -112,6 +111,27 @@ export default {
   data() {
     return {
       result: ['a', 'b']
+    };
+  }
+};
+```
+
+### 水平排列
+
+将`direction`属性设置为`horizontal`后，复选框组会变成水平排列
+
+```html
+<van-checkbox-group v-model="result" direction="horizontal">
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      result: []
     };
   }
 };
