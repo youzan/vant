@@ -240,10 +240,10 @@ export default {
 | v-model | 是否显示日历弹窗 | *boolean* | `false` |
 | type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | *string* | `single` |
 | title | 日历标题 | *string* | `日期选择` |
-| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
-| min-date | 最小日期 | *Date*  | 当前日期 |
-| max-date | 最大日期 | *Date*  | 当前日期的六个月后 |
-| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 |
+| color | 主题色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
+| min-date | 可选择的最小日期 | *Date*  | 当前日期 |
+| max-date | 可选择的最大日期 | *Date*  | 当前日期的六个月后 |
+| default-date | 默认选中的日期，`type`为`multiple`或`range`时须传入数组 | *Date \| Date[]* | 今天 |
 | row-height | 日期行高 | *number \| string* | `64` |
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - |
 | position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
