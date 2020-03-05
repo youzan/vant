@@ -143,6 +143,7 @@ export default createComponent({
   mounted() {
     if (this.value || !this.poppable) {
       this.initRect();
+      this.scrollIntoView();
     }
   },
 
