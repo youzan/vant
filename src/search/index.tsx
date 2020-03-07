@@ -25,6 +25,7 @@ export type SearchProps = {
 };
 
 export type SearchSlots = DefaultSlots & {
+  left?: ScopedSlot;
   label?: ScopedSlot;
   action?: ScopedSlot;
   'left-icon'?: ScopedSlot;
@@ -99,6 +100,7 @@ function Search(
       style={{ background: props.background }}
       {...inheritData}
     >
+      {slots.left?.()}
       <div class={bem('content', props.shape)}>
         {Label()}
         <Field

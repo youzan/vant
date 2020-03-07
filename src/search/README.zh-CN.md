@@ -146,7 +146,8 @@ export default {
 
 | 名称 | 说明 |
 |------|------|
-| label | 自定义搜索框左侧文本 |
-| action | 自定义搜索框右侧按钮，设置`show-action`属性后展示 |
-| left-icon | 自定义输入框左侧图标 |
-| right-icon | 自定义输入框右侧图标 |
+| left | 自定义左侧内容（搜索框外） |
+| action | 自定义右侧内容（搜索框外），设置`show-action`属性后展示 |
+| label | 自定义左侧文本（搜索框内） |
+| left-icon | 自定义左侧图标（搜索框内） |
+| right-icon | 自定义右侧图标（搜索框内） |

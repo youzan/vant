@@ -146,7 +146,8 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 
 | Name | Description |
 |------|------|
-| label | Custom Search label |
+| left | Custom left side content |
 | action | Custom right button, displayed when `show-action` is `true` |
+| label | Custom Search label |
 | left-icon | Custom left icon |
 | right-icon | Custom right icon |
