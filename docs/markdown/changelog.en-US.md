@@ -1,5 +1,32 @@
 # Changelog
 
+### [v2.5.4](https://github.com/youzan/vant/compare/v2.5.3...v2.5.4)
+
+`2020-03-08`
+
+**Feature**
+
+- Calendar: add multiple type [#5705](https://github.com/youzan/vant/issues/5705)
+- Field: input inherit line-height [#5737](https://github.com/youzan/vant/issues/5737)
+- Search: add left slot [#5771](https://github.com/youzan/vant/issues/5771)
+- Uploader: add upload-icon prop [b3b46c](https://github.com/youzan/vant/commit/b3b46cde45f885b746a2a633e5fc0e87e1881abe)
+- Uploader: increase border-radius to 8px [c67918](https://github.com/youzan/vant/commit/c6791841f4b06e699a684da0243526147438d852)
+- Uploader: update upload area style [bd4e64](https://github.com/youzan/vant/commit/bd4e64190e63eea30c342ea5255d8603a70385f9)
+
+**Bug Fixes**
+
+- Calendar: incorrect position when poppable is false [#5760](https://github.com/youzan/vant/issues/5760)
+- DropdownMenu: menu ref may not exist in some cases [#5770](https://github.com/youzan/vant/issues/5770)
+- Tabs: incorrect scrollspy position while inside a scroller [0993b3](https://github.com/youzan/vant/commit/0993b394b16fdbf92bdf02d39090e631bba1f471)
+- Tabs: lock scroll not work when using scrollspy [#5727](https://github.com/youzan/vant/issues/5727)
+- TimePicker: incorrect value when set min-minute dynamically [#5767](https://github.com/youzan/vant/issues/5767)
+
+**Types**
+
+- Form: fix missing scrollToField method [df4439](https://github.com/youzan/vant/commit/df4439e9f6759a446b522652233703601093e99d)
+- ImagePreview: fix missing closeable option [d5438d](https://github.com/youzan/vant/commit/d5438dfe0dc9df22e94881b57def33207eca44e6)
+- Toast: fix missing iconPrefix option [3237e5](https://github.com/youzan/vant/commit/3237e56561e1b6b80ea3431f3b8a9f30f61d4b08)
+
 ### [v2.5.3](https://github.com/youzan/vant/compare/v2.5.2...v2.5.3)
 
 `2020-02-28`

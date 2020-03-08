@@ -10,6 +10,33 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.4](https://github.com/youzan/vant/compare/v2.5.3...v2.5.4)
+
+`2020-03-08`
+
+**Feature**
+
+- Calendar: 新增 multiple 类型 [#5705](https://github.com/youzan/vant/issues/5705)
+- Field: 输入框增加 `line-height: inherit` 样式 [#5737](https://github.com/youzan/vant/issues/5737)
+- Search: 新增 left 插槽 [#5771](https://github.com/youzan/vant/issues/5771)
+- Uploader: 新增 upload-icon 属性 [b3b46c](https://github.com/youzan/vant/commit/b3b46cde45f885b746a2a633e5fc0e87e1881abe)
+- Uploader: 圆角大小由 4px 调整为 8px [c67918](https://github.com/youzan/vant/commit/c6791841f4b06e699a684da0243526147438d852)
+- Uploader: 优化上传区域样式 [bd4e64](https://github.com/youzan/vant/commit/bd4e64190e63eea30c342ea5255d8603a70385f9)
+
+**Bug Fixes**
+
+- Calendar: 修复 poppable 为 false 无法自动定位到当前日期的问题 [#5760](https://github.com/youzan/vant/issues/5760)
+- DropdownMenu: 修复个别情况下 scrollIntoView 报错的问题 [#5770](https://github.com/youzan/vant/issues/5770)
+- Tabs: 修复 scrollspy 在自定义的滚动容器中无法跳转的问题 [0993b3](https://github.com/youzan/vant/commit/0993b394b16fdbf92bdf02d39090e631bba1f471)
+- Tabs: 修复 scrollspy 开启时在 safari 上可能出现标签弹回的问题 [#5727](https://github.com/youzan/vant/issues/5727)
+- TimePicker: 修复动态设置 min-date 时可能出现选中项错误的问题 [#5767](https://github.com/youzan/vant/issues/5767)
+
+**Types**
+
+- Form: 修复缺少 scrollToField 方法类型定义的问题 [df4439](https://github.com/youzan/vant/commit/df4439e9f6759a446b522652233703601093e99d)
+- ImagePreview: 修复缺少 closeable 选项类型定义的问题 [d5438d](https://github.com/youzan/vant/commit/d5438dfe0dc9df22e94881b57def33207eca44e6)
+- Toast: 修复缺少 iconPrefix 选项类型定义的问题 [3237e5](https://github.com/youzan/vant/commit/3237e56561e1b6b80ea3431f3b8a9f30f61d4b08)
+
 ### [v2.5.3](https://github.com/youzan/vant/compare/v2.5.2...v2.5.3)
 
 `2020-02-28`
