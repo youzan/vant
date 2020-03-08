@@ -190,7 +190,7 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 <van-number-keyboard safe-area-inset-bottom />
 ```
 
-<img src="https://b.yzcdn.cn/vant/safearea.png" style="margin-top: 30px;">
+<img src="https://b.yzcdn.cn/vant/safearea.png">
 
 ### 组件实例方法
 
