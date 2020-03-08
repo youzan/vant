@@ -1911,14 +1911,14 @@
   resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.1.0.tgz#e02d29f3180e47dd588d7dcacaa06b66724915c9"
   integrity sha512-abdWeVzCmVMwYzzFoqKtiLb1SVlWNoF3lgDXE0/gGBxkNXSN3XWeGXSaq7LNReyEjpRmfqqEIuP18NvkhBk4DQ==
 
-"@vant/stylelint-config@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.1.0.tgz#cd7bb82fb6e6491853521fd98247979df1a34094"
-  integrity sha512-d94V2cMrJRQYScJUd3HzKplmDIusRVCjIF0wTnizH/iRYLo2WPEvF+ULVEuuIJ3I8FqQtMlJdNCLDy4ZcSlVwQ==
+"@vant/stylelint-config@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.2.0.tgz#435cac883489c2bb7dbdb2403a6838ec6a15f9c7"
+  integrity sha512-hmsLX1/FGO4Dy+3UDZSK/YJNgl5ZY8l7P0r/PhXXQ5u+5wYOuvVEKb0qL4FVGjf2C7zR7zkMtRUSnIn8uU7/Cw==
   dependencies:
     stylelint-config-rational-order "^0.1.2"
-    stylelint-config-standard "^19.0.0"
-    stylelint-order "^3.1.1"
+    stylelint-config-standard "^20.0.0"
+    stylelint-order "^4.0.0"
 
 "@vant/touch-emulator@^1.2.0":
   version "1.2.0"
@@ -11038,10 +11038,10 @@ stylelint-config-recommended@^3.0.0:
   resolved "https://registry.npm.taobao.org/stylelint-config-recommended/download/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
   integrity sha1-4OVHQ0AWxVOf4mUK/VgEmi/R1lc=
 
-stylelint-config-standard@^19.0.0:
-  version "19.0.0"
-  resolved "https://registry.npm.taobao.org/stylelint-config-standard/download/stylelint-config-standard-19.0.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstylelint-config-standard%2Fdownload%2Fstylelint-config-standard-19.0.0.tgz#66f0cf13f33b8a9e34965881493b38fc1313693a"
-  integrity sha1-ZvDPE/M7ip40lliBSTs4/BMTaTo=
+stylelint-config-standard@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-20.0.0.tgz#06135090c9e064befee3d594289f50e295b5e20d"
+  integrity sha512-IB2iFdzOTA/zS4jSVav6z+wGtin08qfj+YyExHB3LF9lnouQht//YyB0KZq9gGz5HNPkddHOzcY8HsUey6ZUlA==
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
@@ -11054,13 +11054,13 @@ stylelint-order@^2.2.1:
     postcss "^7.0.2"
     postcss-sorting "^4.1.0"
 
-stylelint-order@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npm.taobao.org/stylelint-order/download/stylelint-order-3.1.1.tgz?cache=0&sync_timestamp=1568644934943&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fstylelint-order%2Fdownload%2Fstylelint-order-3.1.1.tgz#ba9ea6844d1482f97f31204e7c9605c7b792c294"
-  integrity sha1-up6mhE0Ugvl/MSBOfJYFx7eSwpQ=
+stylelint-order@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-4.0.0.tgz#2a945c2198caac3ff44687d7c8582c81d044b556"
+  integrity sha512-bXV0v+jfB0+JKsqIn3mLglg1Dj2QCYkFHNfL1c+rVMEmruZmW5LUqT/ARBERfBm8SFtCuXpEdatidw/3IkcoiA==
   dependencies:
     lodash "^4.17.15"
-    postcss "^7.0.17"
+    postcss "^7.0.26"
     postcss-sorting "^5.0.1"
 
 stylelint@^13.2.0:
