@@ -20,10 +20,11 @@ export default createComponent({
     minDate: Date,
     maxDate: Date,
     showMark: Boolean,
-    showTitle: Boolean,
     rowHeight: [Number, String],
     formatter: Function,
     currentDate: [Date, Array],
+    showSubtitle: Boolean,
+    showMonthTitle: Boolean,
   },
 
   data() {
@@ -89,7 +90,11 @@ export default createComponent({
 
   methods: {
     scrollIntoView() {
-      this.$refs.days.scrollIntoView();
+      if (this.showSubtitle) {
+        this.$refs.days.scrollIntoView();
+      } else {
+        this.$refs.month.scrollIntoView();
+      }
     },
 
     getMultipleDayType(day) {
@@ -202,7 +207,7 @@ export default createComponent({
     },
 
     genTitle() {
-      if (this.showTitle) {
+      if (this.showMonthTitle) {
         return <div class={bem('month-title')}>{this.title}</div>;
       }
     },
@@ -279,7 +284,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem('month')} style={this.monthStyle}>
+      <div class={bem('month')} ref="month" style={this.monthStyle}>
         {this.genTitle()}
         {this.genDays()}
       </div>

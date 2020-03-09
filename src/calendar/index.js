@@ -327,6 +327,7 @@ export default createComponent({
     },
 
     genMonth(date, index) {
+      const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
         <Month
           ref="months"
@@ -339,8 +340,9 @@ export default createComponent({
           showMark={this.showMark}
           formatter={this.formatter}
           rowHeight={this.rowHeight}
-          showTitle={index !== 0}
           currentDate={this.currentDate}
+          showSubtitle={this.showSubtitle}
+          showMonthTitle={showMonthTitle}
           onClick={this.onClickDay}
         />
       );
