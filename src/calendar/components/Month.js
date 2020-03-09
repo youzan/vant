@@ -186,7 +186,12 @@ export default createComponent({
       }
 
       if (this.color) {
-        if (type === 'start' || type === 'end') {
+        if (
+          type === 'start' ||
+          type === 'end' ||
+          type === 'multiple-selected' ||
+          type === 'multiple-middle'
+        ) {
           style.background = this.color;
         } else if (type === 'middle') {
           style.color = this.color;
