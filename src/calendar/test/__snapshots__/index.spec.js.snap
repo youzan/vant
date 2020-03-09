@@ -4,7 +4,7 @@ exports[`color prop when type is range 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">
     <div class="van-calendar__header-title">日期选择</div>
-    <div class="van-calendar__month-title">2010年1月</div>
+    <div class="van-calendar__header-subtitle">2010年1月</div>
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
@@ -55,7 +55,7 @@ exports[`color prop when type is single 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">
     <div class="van-calendar__header-title">日期选择</div>
-    <div class="van-calendar__month-title">2010年1月</div>
+    <div class="van-calendar__header-subtitle">2010年1月</div>
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
@@ -106,7 +106,7 @@ exports[`formatter prop 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">
     <div class="van-calendar__header-title">日期选择</div>
-    <div class="van-calendar__month-title">2010年1月</div>
+    <div class="van-calendar__header-subtitle">2010年1月</div>
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
@@ -163,7 +163,7 @@ exports[`popup wrapper 2`] = `
   <div class="van-calendar">
     <div class="van-calendar__header">
       <div class="van-calendar__header-title">日期选择</div>
-      <div class="van-calendar__month-title">2010年1月</div>
+      <div class="van-calendar__header-subtitle">2010年1月</div>
       <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
     </div>
     <div class="van-calendar__body">
@@ -216,7 +216,7 @@ exports[`row-height prop 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">
     <div class="van-calendar__header-title">日期选择</div>
-    <div class="van-calendar__month-title">2010年1月</div>
+    <div class="van-calendar__header-subtitle">2010年1月</div>
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
@@ -267,7 +267,7 @@ exports[`title & footer slot 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">
     <div class="van-calendar__header-title">Custom Title</div>
-    <div class="van-calendar__month-title">2010年1月</div>
+    <div class="van-calendar__header-subtitle">2010年1月</div>
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">

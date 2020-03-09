@@ -249,6 +249,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | round | Whether to show round corner | *boolean* | `true` |
 | show-mark | Whether to show background month mark | *boolean* | `true` |
 | show-title `v2.5.5` | Whether to show title | *boolean* | `true` |
+| show-subtitle `v2.5.5` | Whether to show subtitle | *boolean* | `true` |
 | show-confirm | Whether to show confirm button | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | Whether to close when popstate | *boolean* | `false` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |

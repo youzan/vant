@@ -77,6 +77,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    showSubtitle: {
+      type: Boolean,
+      default: true,
+    },
     safeAreaInsetBottom: {
       type: Boolean,
       default: true,
@@ -93,7 +97,7 @@ export default createComponent({
 
   data() {
     return {
-      monthTitle: '',
+      subtitle: '',
       currentDate: this.getInitialDate(),
     };
   },
@@ -239,7 +243,7 @@ export default createComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
-        this.monthTitle = currentMonth.title;
+        this.subtitle = currentMonth.title;
       }
     },
 
@@ -389,7 +393,8 @@ export default createComponent({
           <Header
             title={this.title}
             showTitle={this.showTitle}
-            monthTitle={this.monthTitle}
+            subtitle={this.subtitle}
+            showSubtitle={this.showSubtitle}
             scopedSlots={{
               title: () => this.slots('title'),
             }}
@@ -410,11 +415,11 @@ export default createComponent({
       return (
         <Popup
           round
-          closeable
           class={bem('popup')}
           value={this.value}
           round={this.round}
           position={this.position}
+          closeable={this.showTitle || this.showSubtitle}
           getContainer={this.getContainer}
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}

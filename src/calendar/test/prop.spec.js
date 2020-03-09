@@ -25,15 +25,42 @@ test('max-range prop', async () => {
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
-test('show-title prop', async () => {
+test('show-title prop', () => {
   const wrapper = mount(Calendar, {
     propsData: {
       value: true,
     },
   });
 
-  await later();
   expect(wrapper.contains('.van-calendar__header-title')).toBeTruthy();
   wrapper.setProps({ showTitle: false });
   expect(wrapper.contains('.van-calendar__header-title')).toBeFalsy();
+});
+
+test('show-subtitle prop', () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      value: true,
+    },
+  });
+
+  expect(wrapper.contains('.van-calendar__header-subtitle')).toBeTruthy();
+  wrapper.setProps({ showSubtitle: false });
+  expect(wrapper.contains('.van-calendar__header-subtitle')).toBeFalsy();
+});
+
+test('hide close icon when there is no title', () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      value: true,
+    },
+  });
+
+  expect(wrapper.contains('.van-popup__close-icon')).toBeTruthy();
+
+  wrapper.setProps({
+    showTitle: false,
+    showSubtitle: false,
+  });
+  expect(wrapper.contains('.van-popup__close-icon')).toBeFalsy();
 });

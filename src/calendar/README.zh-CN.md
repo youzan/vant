@@ -251,6 +251,7 @@ export default {
 | round | 是否显示圆角弹窗 | *boolean* | `true` |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` |
 | show-title `v2.5.5` | 是否展示日历标题 | *boolean* | `true` |
+| show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | *boolean* | `true` |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
