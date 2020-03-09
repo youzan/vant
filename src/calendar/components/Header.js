@@ -6,11 +6,16 @@ const [createComponent] = createNamespace('calendar-header');
 export default createComponent({
   props: {
     title: String,
+    showTitle: Boolean,
     monthTitle: String,
   },
 
   methods: {
     genTitle() {
+      if (!this.showTitle) {
+        return;
+      }
+
       const title = this.slots('title') || this.title || t('title');
       return <div class={bem('header-title')}>{title}</div>;
     },

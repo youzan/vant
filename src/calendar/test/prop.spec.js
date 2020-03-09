@@ -24,3 +24,16 @@ test('max-range prop', async () => {
 
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
+
+test('show-title prop', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      value: true,
+    },
+  });
+
+  await later();
+  expect(wrapper.contains('.van-calendar__header-title')).toBeTruthy();
+  wrapper.setProps({ showTitle: false });
+  expect(wrapper.contains('.van-calendar__header-title')).toBeFalsy();
+});

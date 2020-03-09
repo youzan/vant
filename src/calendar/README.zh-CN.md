@@ -243,13 +243,14 @@ export default {
 | color | 主题色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
 | min-date | 可选择的最小日期 | *Date*  | 当前日期 |
 | max-date | 可选择的最大日期 | *Date*  | 当前日期的六个月后 |
-| default-date | 默认选中的日期，`type`为`multiple`或`range`时须传入数组 | *Date \| Date[]* | 今天 |
+| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | *Date \| Date[]* | 今天 |
 | row-height | 日期行高 | *number \| string* | `64` |
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - |
 | position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
 | round | 是否显示圆角弹窗 | *boolean* | `true` |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` |
+| show-title `v2.5.5` | 是否展示日历标题 | *boolean* | `true` |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
@@ -257,7 +258,7 @@ export default {
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
 | max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number \| string* | - |
-| range-prompt `v2.4.3` | 选择超过区间范围时的提示文案 | *string* | `选择天数不能超过 xx 天` |
+| range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | *string* | `选择天数不能超过 xx 天` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Day 数据结构

@@ -69,6 +69,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    showTitle: {
+      type: Boolean,
+      default: true,
+    },
     showConfirm: {
       type: Boolean,
       default: true,
@@ -384,6 +388,7 @@ export default createComponent({
         <div class={bem()}>
           <Header
             title={this.title}
+            showTitle={this.showTitle}
             monthTitle={this.monthTitle}
             scopedSlots={{
               title: () => this.slots('title'),
