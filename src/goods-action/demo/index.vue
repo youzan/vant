@@ -27,7 +27,7 @@
 
     <demo-block :title="$t('iconInfo')">
       <van-goods-action>
-        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" />
+        <van-goods-action-icon icon="chat-o" dot :text="$t('icon1')" />
         <van-goods-action-icon icon="cart-o" info="5" :text="$t('icon2')" />
         <van-goods-action-icon icon="shop-o" info="12" :text="$t('icon3')" />
         <van-goods-action-button type="warning" :text="$t('button1')" />

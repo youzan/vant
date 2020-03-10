@@ -11,6 +11,7 @@ export default createComponent({
 
   props: {
     ...routeProps,
+    dot: Boolean,
     text: String,
     icon: String,
     color: String,
@@ -31,7 +32,7 @@ export default createComponent({
         return (
           <div class={bem('icon')}>
             {slot}
-            <Info info={this.info} />
+            <Info dot={this.dot} info={this.info} />
           </div>
         );
       }
@@ -40,6 +41,7 @@ export default createComponent({
         <Icon
           class={[bem('icon'), this.iconClass]}
           tag="div"
+          dot={this.dot}
           info={this.info}
           name={this.icon}
           color={this.color}

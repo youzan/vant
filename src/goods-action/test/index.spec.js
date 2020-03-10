@@ -66,3 +66,21 @@ test('Icon render icon slot with info', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('Icon render icon slot with dot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(Icon, {
+        props: {
+          dot: true,
+        },
+        scopedSlots: {
+          default: () => 'Text',
+          icon: () => 'Custom Icon',
+        },
+      });
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
