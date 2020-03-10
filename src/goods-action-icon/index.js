@@ -1,6 +1,7 @@
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
+import Info from '../info';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('goods-action-icon');
@@ -27,7 +28,12 @@ export default createComponent({
       const slot = this.slots('icon');
 
       if (slot) {
-        return <div class={bem('icon')}>{slot}</div>;
+        return (
+          <div class={bem('icon')}>
+            {slot}
+            <Info info={this.info} />
+          </div>
+        );
       }
 
       return (
