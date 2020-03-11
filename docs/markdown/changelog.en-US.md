@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.5.5](https://github.com/youzan/vant/compare/v2.5.4...v2.5.5)
+
+`2020-03-11`
+
+**Feature**
+
+- Calendar: add show-title prop [#5779](https://github.com/youzan/vant/issues/5779)
+- Calendar: add show-subtitle prop [#5779](https://github.com/youzan/vant/issues/5779)
+- Field: improve number keyboard [e89baa](https://github.com/youzan/vant/commit/e89baa12ae24dbd27466bd6ec694074ab99acf5d)
+- Stepper: improve number keyboard [58e74a](https://github.com/youzan/vant/commit/58e74a9e8bfc36f69103c6a301170c5f6ada03dd)
+- GoodsActionIcon: add dot prop [b983ac](https://github.com/youzan/vant/commit/b983ac08919056e1095767d1deb3f78e5274b41c)
+
+**Bug Fixes**
+
+- AddressEdit: check addressDetail only when showDetail is true [#5803](https://github.com/youzan/vant/issues/5803)
+- Calendar: color not work in multiple mode [#5786](https://github.com/youzan/vant/issues/5786)
+- Field: should not get formValue from button slot [#5785](https://github.com/youzan/vant/issues/5785)
+- GoodsActionIcon: info not work with icon slot [#5788](https://github.com/youzan/vant/issues/5788)
+- Stepper: skip form number validation [#5792](https://github.com/youzan/vant/issues/5792)
+- Sticky: should not detect scroll when hidden [41e5c0](https://github.com/youzan/vant/commit/41e5c035dcf75c1f1d4c04673d3db255e439d452)
+
 ### [v2.5.4](https://github.com/youzan/vant/compare/v2.5.3...v2.5.4)
 
 `2020-03-08`

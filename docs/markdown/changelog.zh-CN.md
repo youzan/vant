@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.5](https://github.com/youzan/vant/compare/v2.5.4...v2.5.5)
+
+`2020-03-11`
+
+**Feature**
+
+- Calendar: 新增 show-title 属性 [#5779](https://github.com/youzan/vant/issues/5779)
+- Calendar: 新增 show-subtitle 属性 [#5779](https://github.com/youzan/vant/issues/5779)
+- Field: 优化虚拟键盘，type="number" 调起数字键盘 [e89baa](https://github.com/youzan/vant/commit/e89baa12ae24dbd27466bd6ec694074ab99acf5d)
+- Stepper: 优化虚拟键盘，调起数字键盘 [58e74a](https://github.com/youzan/vant/commit/58e74a9e8bfc36f69103c6a301170c5f6ada03dd)
+- GoodsActionIcon: 新增 dot 属性 [b983ac](https://github.com/youzan/vant/commit/b983ac08919056e1095767d1deb3f78e5274b41c)
+
+**Bug Fixes**
+
+- AddressEdit: 修复 showDetail 为 false 时仍然会校验地址的问题 [#5803](https://github.com/youzan/vant/issues/5803)
+- Calendar: 修复在 multiple 模式下 color 属性不生效的问题 [#5786](https://github.com/youzan/vant/issues/5786)
+- Field: 修复 button 插槽可能导致表单校验失败的问题 [#5785](https://github.com/youzan/vant/issues/5785)
+- GoodsActionIcon: 修复使用 icon 插槽时 info 属性不生效的问题 [#5788](https://github.com/youzan/vant/issues/5788)
+- Stepper: 修复在 Form 中使用时必须输入整数的问题 [#5792](https://github.com/youzan/vant/issues/5792)
+- Sticky: 修复 Sticky 切换显隐导致位置错误的问题 [41e5c0](https://github.com/youzan/vant/commit/41e5c035dcf75c1f1d4c04673d3db255e439d452)
+
 ### [v2.5.4](https://github.com/youzan/vant/compare/v2.5.3...v2.5.4)
 
 `2020-03-08`
