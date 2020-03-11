@@ -1,6 +1,7 @@
+import { isHidden } from '../utils/dom/style';
 import { createNamespace, isDef } from '../utils';
-import { BindEventMixin } from '../mixins/bind-event';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
+import { BindEventMixin } from '../mixins/bind-event';
 
 const [createComponent, bem] = createNamespace('sticky');
 
@@ -59,6 +60,10 @@ export default createComponent({
 
   methods: {
     onScroll() {
+      if (isHidden(this.$el)) {
+        return;
+      }
+
       this.height = this.$el.offsetHeight;
 
       const { container } = this;
