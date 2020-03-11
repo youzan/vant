@@ -1,6 +1,5 @@
 // Utils
 import { formatNumber } from './utils';
-import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import {
@@ -419,24 +418,21 @@ export default createComponent({
       }
 
       let inputType = type;
+      let inputMode;
 
-      // type="number" is weired in iOS
+      // type="number" is weired in iOS, and can't prevent dot in Android
+      // so use inputmode to set keyboard in mordern browers
       if (type === 'number') {
         inputType = 'text';
+        inputMode = 'decimal';
       }
 
       if (type === 'digit') {
-        // set pattern to show number keyboard in iOS
-        if (isIOS()) {
-          inputType = 'number';
-          inputProps.attrs.pattern = '\\d*';
-          // cannot prevent dot when type is number in Android, so use tel
-        } else {
-          inputType = 'tel';
-        }
+        inputType = 'tel';
+        inputMode = 'numeric';
       }
 
-      return <input type={inputType} {...inputProps} />;
+      return <input type={inputType} inputmode={inputMode} {...inputProps} />;
     },
 
     genLeftIcon() {
