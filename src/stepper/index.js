@@ -293,6 +293,10 @@ export default createComponent({
           type="number"
           role="spinbutton"
           class={bem('input')}
+          // set keyboard in mordern browers
+          inputmode={this.integer ? 'numeric' : 'decimal'}
+          // set keyboard in iOS 8 ~ 12
+          pattern={this.integer ? '\\d*' : null}
           value={this.currentValue}
           style={this.inputStyle}
           disabled={this.disabled}
