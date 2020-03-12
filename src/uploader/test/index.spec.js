@@ -145,7 +145,7 @@ it('before read return promise and resolve no value', async () => {
   const input = wrapper.find('input');
   wrapper.vm.onChange(file);
   await later();
-  expect(afterRead).toHaveBeenCalledTimes(0);
+  expect(afterRead).toHaveBeenCalledTimes(1);
   expect(input.element.value).toEqual('');
 });
 
