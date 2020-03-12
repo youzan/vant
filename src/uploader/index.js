@@ -113,7 +113,7 @@ export default createComponent({
 
         if (isPromise(response)) {
           response
-            .then(() => {
+            .then(files => {
               this.readFile(files);
             })
             .catch(this.resetInput);

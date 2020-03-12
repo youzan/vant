@@ -118,7 +118,7 @@ it('before read return promise and resolve', async () => {
     propsData: {
       beforeRead: () =>
         new Promise(resolve => {
-          resolve();
+          resolve(file);
         }),
       afterRead,
     },
@@ -128,6 +128,25 @@ it('before read return promise and resolve', async () => {
 
   await later();
   expect(afterRead).toHaveBeenCalledTimes(1);
+});
+
+it('before read return promise and resolve no value', async () => {
+  const afterRead = jest.fn();
+  const wrapper = mount(Uploader, {
+    propsData: {
+      beforeRead: () =>
+        new Promise(resolve => {
+          resolve();
+        }),
+      afterRead,
+    },
+  });
+
+  const input = wrapper.find('input');
+  wrapper.vm.onChange(file);
+  await later();
+  expect(afterRead).toHaveBeenCalledTimes(0);
+  expect(input.element.value).toEqual('');
 });
 
 it('before read return promise and reject', async () => {

@@ -140,7 +140,10 @@ export default {
           Toast('Please upload an image in jpg format');
           reject();
         } else {
-          resolve();
+          let img = new File(["foo"], "bar.jpg", {
+            type: "image/jpeg",
+          });
+          resolve(img);
         }
       });
     }
