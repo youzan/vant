@@ -162,9 +162,9 @@ it('before read return promise and reject', async () => {
   });
 
   const input = wrapper.find('input');
+  wrapper.vm.onChange(file);
 
   await later();
-  wrapper.vm.onChange(file);
   expect(afterRead).toHaveBeenCalledTimes(0);
   expect(input.element.value).toEqual('');
 });
