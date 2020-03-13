@@ -1,0 +1,15 @@
+{
+  "name": "@vant/vuepress-theme-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/markdown-loader": "^2.3.0",
+    "vant": "^2.5.5"
+  }
+}
