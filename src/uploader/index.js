@@ -242,6 +242,16 @@ export default createComponent({
         this.imagePreview.close();
       }
     },
+    // @exposed-api
+    chooseFile() {
+      if (this.disabled) {
+        return;
+      }
+      /* istanbul ignore else */
+      if (this.$refs.input) {
+        this.$refs.input.click();
+      }
+    },
 
     genPreviewMask(item) {
       const { status } = item;

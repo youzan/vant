@@ -213,3 +213,4 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call insta
 | Name | Description | Attribute | Return value |
 |------|------|------|------|
 | closeImagePreview | Close full screen image preview | - | - |
+| chooseFile | Choose file, works with the user action context only because of browser security | - | - |
