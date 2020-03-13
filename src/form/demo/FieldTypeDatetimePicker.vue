@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="van-hairline--bottom">
     <van-field
       readonly
       clickable
       name="datetimePicker"
       :value="value"
+      :border="false"
       :label="$t('label')"
       :placeholder="$t('placeholder')"
       @click="showPicker = true"

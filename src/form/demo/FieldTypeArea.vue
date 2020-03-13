@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="van-hairline--bottom">
     <van-field
       readonly
       clickable
       name="area"
       :value="value"
+      :border="false"
       :label="$t('picker')"
       :placeholder="$t('placeholder')"
       @click="showArea = true"
