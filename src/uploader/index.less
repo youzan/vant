@@ -43,8 +43,11 @@
     height: @uploader-size;
     margin: 0 @padding-xs @padding-xs 0;
     background-color: @uploader-upload-background-color;
-    border: 1px dashed @uploader-upload-border-color;
     border-radius: @uploader-upload-border-radius;
+
+    &:active {
+      background-color: @uploader-upload-active-color;
+    }
 
     &-icon {
       color: @uploader-icon-color;
@@ -67,6 +70,8 @@
       display: block;
       width: @uploader-size;
       height: @uploader-size;
+      overflow: hidden;
+      border-radius: @uploader-upload-border-radius;
     }
 
     &-delete {

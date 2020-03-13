@@ -20,7 +20,7 @@ Vue.use(Field);
 可以通过`v-model`双向绑定输入框的值，通过`placeholder`设置占位提示文字
 
 ```html
-<!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为父元素来提供外边框。 -->
+<!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为容器来提供外边框。 -->
 <van-cell-group>
   <van-field v-model="value" placeholder="请输入用户名" />
 </van-cell-group>
@@ -45,9 +45,9 @@ export default {
 <van-field v-model="text" label="文本" />
 <!-- 输入手机号，调起手机号键盘 -->
 <van-field v-model="tel" type="tel" label="手机号" />
-<!-- 允许输入整数，调起数字键盘 -->
+<!-- 允许输入整数，调起纯数字键盘 -->
 <van-field v-model="digit" type="digit" label="整数" />
-<!-- 允许输入数字，调起全键盘 -->
+<!-- 允许输入数字，调起带符号的纯数字键盘 -->
 <van-field v-model="number" type="number" label="数字" />
 <!-- 输入密码 -->
 <van-field v-model="password" type="password" label="密码" />
@@ -261,6 +261,7 @@ export default {
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | *boolean \| object* | `false` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | *Rule[]* | - |
 
 ### Events

@@ -14,6 +14,10 @@ export function getSitePrdConfig() {
     {
       mode: 'production',
       stats: 'none',
+      performance: {
+        maxAssetSize: 5 * 1024 * 1024,
+        maxEntrypointSize: 5 * 1024 * 1024,
+      },
       output: {
         publicPath,
         path: outputDir,

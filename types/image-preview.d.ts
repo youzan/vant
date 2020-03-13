@@ -10,11 +10,14 @@ export type ImagePreviewOptions =
       className?: any;
       lazyLoad?: boolean;
       showIndex?: boolean;
+      closeable?: boolean;
+      closeIcon?: string;
       asyncClose?: boolean;
       swipeDuration?: number;
       startPosition?: number;
       showIndicators?: boolean;
       closeOnPopstate?: boolean;
+      closeIconPosition?: string;
       onClose?: () => void;
       onChange?: (index: number) => void;
     };

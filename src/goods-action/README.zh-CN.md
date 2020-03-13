@@ -41,11 +41,11 @@ export default {
 
 ### 徽标提示
 
-通过`info`属性在图标右上角显示徽标
+在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="chat-o" text="客服" dot />
   <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
   <van-goods-action-icon icon="shop-o" text="店铺" info="12" />
   <van-goods-action-button type="warning" text="加入购物车" />
@@ -96,6 +96,7 @@ export default {
 | icon | 图标 | *string* | - |
 | color `v2.4.2` | 图标颜色 | *string* | `#323233` |
 | icon-class | 图标额外类名 | *any* | - |
+| dot `2.5.5` | 是否显示图标右上角小红点 | *boolean* | `false` |
 | info | 图标右上角徽标的内容 | *number \| string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |

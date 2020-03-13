@@ -30,6 +30,19 @@ exports[`label slot 1`] = `
 </div>
 `;
 
+exports[`left slot 1`] = `
+<div class="van-search">Custom Left Content<div class="van-search__content van-search__content--square">
+    <div class="van-cell van-cell--borderless van-field">
+      <div class="van-field__left-icon"><i class="van-icon van-icon-search">
+          <!----></i></div>
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body"><input type="search" class="van-field__control"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`left-icon prop 1`] = `
 <div class="van-search">
   <div class="van-search__content van-search__content--square">

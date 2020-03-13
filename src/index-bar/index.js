@@ -76,7 +76,6 @@ export default createComponent({
     highlightStyle() {
       const { highlightColor } = this;
       if (highlightColor) {
-        /* istanbul ignore else */
         return {
           color: highlightColor,
         };
@@ -135,17 +134,14 @@ export default createComponent({
     },
 
     getScrollerRect() {
-      const { scroller } = this;
-      let scrollerRect = {
+      if (this.scroller.getBoundingClientRect) {
+        return this.scroller.getBoundingClientRect();
+      }
+
+      return {
         top: 0,
         left: 0,
       };
-
-      if (scroller.getBoundingClientRect) {
-        scrollerRect = scroller.getBoundingClientRect();
-      }
-
-      return scrollerRect;
     },
 
     getElementTop(ele, scrollerRect) {

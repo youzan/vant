@@ -179,6 +179,7 @@ export default {
 |------|------|------|------|
 | name | Identifier | *number \| string* | Item index |
 | icon | Icon name | *string* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | dot | Whether to show red dot | *boolean* | - |
 | info | Content of the badge | *number \| string* | - |
 | url | Link | *string* | - |

@@ -14,8 +14,8 @@ export type IconProps = {
   tag: keyof HTMLElementTagNameMap | string;
   name?: string;
   size?: string | number;
-  color?: string;
   info?: string | number;
+  color?: string;
   classPrefix: string;
 };
 

@@ -1,9 +1,15 @@
 // Utils
 import { formatNumber } from './utils';
-import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
-import { createNamespace, isObject, isDef, addUnit, isPromise } from '../utils';
+import {
+  createNamespace,
+  isObject,
+  isDef,
+  addUnit,
+  isPromise,
+  isFunction,
+} from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -118,7 +124,14 @@ export default createComponent({
     },
 
     formValue() {
-      return this.children ? this.children.value : this.value;
+      if (this.children && this.inputSlot) {
+        return this.children.value;
+      }
+      return this.value;
+    },
+
+    inputSlot() {
+      return this.slots('input');
     },
   },
 
@@ -137,7 +150,7 @@ export default createComponent({
       }
     },
 
-    runValidator(rule, value) {
+    runValidator(value, rule) {
       return new Promise(resolve => {
         const returnVal = rule.validator(value, rule);
 
@@ -157,7 +170,7 @@ export default createComponent({
       return !value;
     },
 
-    runSyncRule(rule, value) {
+    runSyncRule(value, rule) {
       if (rule.required && this.isEmptyValue(value)) {
         return false;
       }
@@ -165,6 +178,16 @@ export default createComponent({
         return false;
       }
       return true;
+    },
+
+    getRuleMessage(value, rule) {
+      const { message } = rule;
+
+      if (isFunction(message)) {
+        return message(value, rule);
+      }
+
+      return message;
     },
 
     runRules(rules) {
@@ -181,15 +204,15 @@ export default createComponent({
               value = rule.formatter(value, rule);
             }
 
-            if (!this.runSyncRule(rule, value)) {
-              this.validateMessage = rule.message;
+            if (!this.runSyncRule(value, rule)) {
+              this.validateMessage = this.getRuleMessage(value, rule);
               return;
             }
 
             if (rule.validator) {
-              return this.runValidator(rule, value).then(result => {
+              return this.runValidator(value, rule).then(result => {
                 if (result === false) {
-                  this.validateMessage = rule.message;
+                  this.validateMessage = this.getRuleMessage(value, rule);
                 }
               });
             }
@@ -357,12 +380,13 @@ export default createComponent({
 
     genInput() {
       const { type } = this;
-      const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
-      if (inputSlot) {
+      if (this.inputSlot) {
         return (
-          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
+          <div class={bem('control', [inputAlign, 'custom'])}>
+            {this.inputSlot}
+          </div>
         );
       }
 
@@ -394,24 +418,21 @@ export default createComponent({
       }
 
       let inputType = type;
+      let inputMode;
 
-      // type="number" is weired in iOS
+      // type="number" is weired in iOS, and can't prevent dot in Android
+      // so use inputmode to set keyboard in mordern browers
       if (type === 'number') {
         inputType = 'text';
+        inputMode = 'decimal';
       }
 
       if (type === 'digit') {
-        // set pattern to show number keyboard in iOS
-        if (isIOS()) {
-          inputType = 'number';
-          inputProps.attrs.pattern = '\\d*';
-          // cannot prevent dot when type is number in Android, so use tel
-        } else {
-          inputType = 'tel';
-        }
+        inputType = 'tel';
+        inputMode = 'numeric';
       }
 
-      return <input type={inputType} {...inputProps} />;
+      return <input type={inputType} inputmode={inputMode} {...inputProps} />;
     },
 
     genLeftIcon() {
@@ -420,7 +441,9 @@ export default createComponent({
       if (showLeftIcon) {
         return (
           <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-            {this.slots('left-icon') || <Icon name={this.leftIcon} />}
+            {this.slots('left-icon') || (
+              <Icon name={this.leftIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }
@@ -433,7 +456,9 @@ export default createComponent({
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-            {slots('right-icon') || <Icon name={this.rightIcon} />}
+            {slots('right-icon') || (
+              <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
+            )}
           </div>
         );
       }

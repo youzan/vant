@@ -36,15 +36,37 @@ export function compareDay(day1: Date, day2: Date) {
   return compareMonthResult;
 }
 
-export function getNextDay(date: Date) {
+function getDayByOffset(date: Date, offset: number) {
   date = new Date(date);
-  date.setDate(date.getDate() + 1);
+  date.setDate(date.getDate() + offset);
 
   return date;
+}
+
+export function getPrevDay(date: Date) {
+  return getDayByOffset(date, -1);
+}
+
+export function getNextDay(date: Date) {
+  return getDayByOffset(date, 1);
 }
 
 export function calcDateNum(date: [Date, Date]) {
   const day1 = date[0].getTime();
   const day2 = date[1].getTime();
   return (day2 - day1) / (1000 * 60 * 60 * 24) + 1;
+}
+
+export function copyDates(dates: Date | Date[]) {
+  if (Array.isArray(dates)) {
+    return dates.map(date => {
+      if (date === null) {
+        return date;
+      }
+
+      return new Date(date);
+    });
+  }
+
+  return new Date(dates);
 }

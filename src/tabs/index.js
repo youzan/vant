@@ -300,20 +300,22 @@ export default createComponent({
 
     scrollToCurrentContent() {
       if (this.scrollspy) {
-        this.clickedScroll = true;
-        const instance = this.children[this.currentIndex];
-        const el = instance && instance.$el;
+        const target = this.children[this.currentIndex];
+        const el = target?.$el;
+
         if (el) {
-          const to = Math.ceil(getElementTop(el)) - this.scrollOffset;
-          scrollTopTo(to, +this.duration, () => {
-            this.clickedScroll = false;
+          const to = getElementTop(el, this.scroller) - this.scrollOffset;
+
+          this.lockScroll = true;
+          scrollTopTo(this.scroller, to, +this.duration, () => {
+            this.lockScroll = false;
           });
         }
       }
     },
 
     onScroll() {
-      if (this.scrollspy && !this.clickedScroll) {
+      if (this.scrollspy && !this.lockScroll) {
         const index = this.getCurrentIndexOnScroll();
         this.setCurrentIndex(index);
       }

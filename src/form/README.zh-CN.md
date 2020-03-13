@@ -476,8 +476,8 @@ export default {
 
 | 键名 | 说明 | 类型 |
 |------|------|------|
-| message | 错误提示文案 | *string* |
 | required | 是否为必选字段 | *boolean* |
+| message `v2.5.3` | 错误提示文案 | *string \| (value, rule) => string* |
 | validator `v2.5.3` | 通过函数进行校验 | *(value, rule) => boolean \| Promise* |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | *RegExp* |
 | trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | *string* |
@@ -506,3 +506,17 @@ export default {
 | 名称 | 说明 |
 |------|------|
 | default | 表单内容 |
+
+## 常见问题
+
+### 点击表单中的普通按钮为什么会触发表单提交？
+
+在表单中，除了提交按钮外，可能还有一些其他的功能性按钮，如发送验证码按钮。在使用这些按钮时，要注意将`native-type`设置为`button`，否则会触发表单提交。
+
+```html
+<van-button native-type="button">
+  发送验证码
+</van-button>
+```
+
+这个问题的原因是浏览器中 button 标签 type 属性的默认值为`submit`，导致触发表单提交。我们会在下个大版本中将 type 的默认值调整为`button`来避免这个问题。

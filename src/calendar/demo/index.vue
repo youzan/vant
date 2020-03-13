@@ -10,6 +10,13 @@
 
       <van-cell
         is-link
+        :title="$t('selectMultiple')"
+        :value="formatMultiple(date.selectMultiple)"
+        @click="show('multiple', 'selectMultiple')"
+      />
+
+      <van-cell
+        is-link
         :title="$t('selectRange')"
         :value="formatRange(date.selectRange)"
         @click="show('range', 'selectRange')"
@@ -118,7 +125,9 @@ export default {
       youthDay: '五四青年节',
       calendar: '日历',
       maxRange: '日期区间最大范围',
+      selectCount: count => `选择了 ${count} 个日期`,
       selectSingle: '选择单个日期',
+      selectMultiple: '选择多个日期',
       selectRange: '选择日期区间',
       quickSelect: '快捷选择',
       confirmText: '完成',
@@ -139,7 +148,9 @@ export default {
       youthDay: 'Youth Day',
       calendar: 'Calendar',
       maxRange: 'Max Range',
+      selectCount: count => `${count} dates selected`,
       selectSingle: 'Select Single Date',
+      selectMultiple: 'Select Multiple Date',
       selectRange: 'Select Date Range',
       quickSelect: 'Quick Select',
       confirmText: 'OK',
@@ -160,6 +171,7 @@ export default {
         maxRange: [],
         selectSingle: null,
         selectRange: [],
+        selectMultiple: [],
         quickSelect1: null,
         quickSelect2: [],
         customColor: [],
@@ -268,6 +280,12 @@ export default {
     formatFullDate(date) {
       if (date) {
         return `${date.getFullYear()}/${this.formatDate(date)}`;
+      }
+    },
+
+    formatMultiple(dates) {
+      if (dates.length) {
+        return this.$t('selectCount', dates.length);
       }
     },
 

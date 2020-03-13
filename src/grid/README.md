@@ -116,6 +116,7 @@ Vue.use(GridItem);
 |------|------|------|------|
 | text | Text | *string* | - |
 | icon | Icon name or URL | *string* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
 | info `v2.2.1` | Content of the badge | *number \| string* | - |
 | url | Link URL | *string* | - |

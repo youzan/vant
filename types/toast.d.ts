@@ -18,6 +18,7 @@ export type ToastOptions = {
   position?: ToastPosition;
   className?: any;
   transition?: string;
+  iconPrefix?: string;
   loadingType?: ToastLoadingType;
   forbidClick?: boolean;
   closeOnClick?: boolean;

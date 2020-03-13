@@ -1717,6 +1717,15 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.13, postcss@^7.0.14, postcss@^7.0.1
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+postcss@^7.0.26:
+  version "7.0.27"
+  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.27.tgz?cache=0&sync_timestamp=1581994853208&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.27.tgz#cc67cdc6b0daa375105b7c424a85567345fc54d9"
+  integrity sha1-zGfNxrDao3UQW3xCSoVWc0X8VNk=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
@@ -2097,10 +2106,10 @@ stylelint-config-recommended@^3.0.0:
   resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
   integrity sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
 
-stylelint-config-standard@^19.0.0:
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-19.0.0.tgz#66f0cf13f33b8a9e34965881493b38fc1313693a"
-  integrity sha512-VvcODsL1PryzpYteWZo2YaA5vU/pWfjqBpOvmeA8iB2MteZ/ZhI1O4hnrWMidsS4vmEJpKtjdhLdfGJmmZm6Cg==
+stylelint-config-standard@^20.0.0:
+  version "20.0.0"
+  resolved "https://registry.npm.taobao.org/stylelint-config-standard/download/stylelint-config-standard-20.0.0.tgz#06135090c9e064befee3d594289f50e295b5e20d"
+  integrity sha1-BhNQkMngZL7+49WUKJ9Q4pW14g0=
   dependencies:
     stylelint-config-recommended "^3.0.0"
 
@@ -2113,13 +2122,13 @@ stylelint-order@^2.2.1:
     postcss "^7.0.2"
     postcss-sorting "^4.1.0"
 
-stylelint-order@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-3.1.1.tgz#ba9ea6844d1482f97f31204e7c9605c7b792c294"
-  integrity sha512-4gP/r8j/6JGZ/LL41b2sYtQqfwZl4VSqTp7WeIwI67v/OXNQ08dnn64BGXNwAUSgb2+YIvIOxQaMzqMyQMzoyQ==
+stylelint-order@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/stylelint-order/download/stylelint-order-4.0.0.tgz#2a945c2198caac3ff44687d7c8582c81d044b556"
+  integrity sha1-KpRcIZjKrD/0RofXyFgsgdBEtVY=
   dependencies:
     lodash "^4.17.15"
-    postcss "^7.0.17"
+    postcss "^7.0.26"
     postcss-sorting "^5.0.1"
 
 stylelint@^9.10.1:

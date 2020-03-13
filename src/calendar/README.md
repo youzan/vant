@@ -44,6 +44,30 @@ export default {
 };
 ```
 
+### Select Multiple Date
+
+```html
+<van-cell title="Select Multiple Date" :value="text" @click="show = true" />
+<van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      text: '',
+      show: false
+    };
+  },
+  methods: {
+    onConfirm(date) {
+      this.show = false;
+      this.text = `${date.length} dates selected`;
+    }
+  }
+};
+```
+
 ### Select Date Range
 
 You can select a date range after setting `type` to` range`. In range mode, the date returned by the `confirm` event is an array, the first item in the array is the start time and the second item is the end time.
@@ -212,7 +236,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Whether to show calendar | *boolean* | `false` |
-| type | Type，can be set to `single` `range` | *string* | `single` |
+| type `v2.5.4` | Type，can be set to `range` `multiple` | *string* | `single` |
 | title | Title of calendar | *string* | `Calendar` |
 | color | Color for the bottom button and selected date | *string* | `#ee0a24` |
 | min-date | Min date | *Date*  | Today |
@@ -224,6 +248,8 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
 | round | Whether to show round corner | *boolean* | `true` |
 | show-mark | Whether to show background month mark | *boolean* | `true` |
+| show-title `v2.5.5` | Whether to show title | *boolean* | `true` |
+| show-subtitle `v2.5.5` | Whether to show subtitle | *boolean* | `true` |
 | show-confirm | Whether to show confirm button | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | Whether to close when popstate | *boolean* | `false` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |

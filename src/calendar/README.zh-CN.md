@@ -44,6 +44,32 @@ export default {
 };
 ```
 
+### 选择多个日期
+
+设置`type`为`multiple`后可以选择多个日期，此时`confirm`事件返回的 date 为数组结构，数组包含若干个选中的日期。
+
+```html
+<van-cell title="选择多个日期" :value="text" @click="show = true" />
+<van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      text: '',
+      show: false
+    };
+  },
+  methods: {
+    onConfirm(date) {
+      this.show = false;
+      this.text = `选择了 ${date.length} 个日期`;
+    }
+  }
+};
+```
+
 ### 选择日期区间
 
 设置`type`为`range`后可以选择日期区间，此时`confirm`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
@@ -212,18 +238,20 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
 | v-model | 是否显示日历弹窗 | *boolean* | `false` |
-| type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` |
+| type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | *string* | `single` |
 | title | 日历标题 | *string* | `日期选择` |
-| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
-| min-date | 最小日期 | *Date*  | 当前日期 |
-| max-date | 最大日期 | *Date*  | 当前日期的六个月后 |
-| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 |
+| color | 主题色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
+| min-date | 可选择的最小日期 | *Date*  | 当前日期 |
+| max-date | 可选择的最大日期 | *Date*  | 当前日期的六个月后 |
+| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | *Date \| Date[]* | 今天 |
 | row-height | 日期行高 | *number \| string* | `64` |
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - |
 | position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
 | round | 是否显示圆角弹窗 | *boolean* | `true` |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` |
+| show-title `v2.5.5` | 是否展示日历标题 | *boolean* | `true` |
+| show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | *boolean* | `true` |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
@@ -231,7 +259,7 @@ export default {
 | confirm-text | 确认按钮的文字 | *string* | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
 | max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number \| string* | - |
-| range-prompt `v2.4.3` | 选择超过区间范围时的提示文案 | *string* | `选择天数不能超过 xx 天` |
+| range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | *string* | `选择天数不能超过 xx 天` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Day 数据结构

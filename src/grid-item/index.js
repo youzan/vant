@@ -20,6 +20,7 @@ export default createComponent({
     dot: Boolean,
     text: String,
     icon: String,
+    iconPrefix: String,
     info: [Number, String],
   },
 
@@ -87,6 +88,7 @@ export default createComponent({
             info={this.info}
             size={this.parent.iconSize}
             class={bem('icon')}
+            classPrefix={this.iconPrefix}
           />
         );
       }

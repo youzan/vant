@@ -138,3 +138,19 @@ Vue.use(Lazyload);
 |------|------|
 | loading | 自定义加载中的提示内容 |
 | error | 自定义加载失败时的提示内容 |
+
+## 常见问题
+
+### 如何引用本地图片？
+
+在 .vue 文件中通过相对路径引用本地图片时，需要在图片的链接外包上一层 `require()`，将图片 URL 转换为 webpack 模块请求，并结合 [file-loader](https://github.com/webpack-contrib/file-loader) 或者 [url-loader](https://github.com/webpack-contrib/url-loader) 进行处理。
+
+```html
+<!-- 错误写法 -->
+<van-image src="./image.png" />
+
+<!-- 正确写法 -->
+<van-image :src="require('./image.png')" />
+```
+
+> 对此更详细的解释可以参考 vue-loader 的[处理资源路径](https://vue-loader.vuejs.org/zh/guide/asset-url.html)章节。

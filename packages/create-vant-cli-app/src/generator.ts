@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import consola from 'consola';
 import { join } from 'path';
 import { CWD, GENERATOR_DIR } from './constant';
+import Yeoman from 'yeoman-environment';
 import Generator from 'yeoman-generator';
 
 const TEMPLATES = join(GENERATOR_DIR, 'templates');
@@ -23,9 +24,9 @@ export class VanGenerator extends Generator {
 
   constructor(name: string) {
     super([], {
-      env: {
+      env: Yeoman.createEnv([], {
         cwd: join(CWD, name),
-      },
+      }),
       resolved: GENERATOR_DIR,
     });
 

@@ -196,3 +196,26 @@ test('use uploader', async () => {
   await submitForm(wrapper);
   expect(onSubmit).toHaveBeenCalledWith({ A: [{ url: 'foo' }] });
 });
+
+test('should not get formValue from button slot', async () => {
+  const onSubmit = jest.fn();
+
+  const wrapper = mountForm({
+    template: `
+      <van-form @submit="onSubmit">
+        <van-field name="A" value="foo" :rules="[{ required: true, message: 'foo' }]">
+          <template #button>
+            <van-checkbox :value="false" />
+          </template>
+        </van-field>
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    methods: {
+      onSubmit,
+    },
+  });
+
+  await submitForm(wrapper);
+  expect(onSubmit).toHaveBeenCalledWith({ A: 'foo' });
+});

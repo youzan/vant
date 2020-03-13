@@ -125,11 +125,12 @@ Vue.use(CellGroup);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
 | title | 左侧标题 | *number \| string* | - |
 | value | 右侧内容 | *number \| string* | - |
 | label | 标题下方的描述信息 | *string* | - |
 | size | 单元格大小，可选值为 `large` | *string* | - |
+| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | border | 是否显示内边框 | *boolean* | `true` |
@@ -143,7 +144,6 @@ Vue.use(CellGroup);
 | title-class | 左侧标题额外类名 | *any* | - |
 | value-class | 右侧内容额外类名 | *any* | - |
 | label-class | 描述信息额外类名 | *any* | - |
-| icon-prefix `v2.5.3` | 图标类名前缀 | *string* | `van-icon` |
 
 ### Cell Events
 

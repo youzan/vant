@@ -242,6 +242,7 @@ Use `input-align` prop to align the input value
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | *boolean \| object* | `false` |
 | left-icon | Left side icon name | *string* | - |
 | right-icon | Right side icon name | *string* | - |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | rules `v2.5.0` | Form validation rules | *Rule[]* | - |
 
 ### Events

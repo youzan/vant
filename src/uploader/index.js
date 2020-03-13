@@ -69,6 +69,10 @@ export default createComponent({
       type: String,
       default: 'dataUrl',
     },
+    uploadIcon: {
+      type: String,
+      default: 'photograph',
+    },
   },
 
   computed: {
@@ -109,8 +113,12 @@ export default createComponent({
 
         if (isPromise(response)) {
           response
-            .then(() => {
-              this.readFile(files);
+            .then(data => {
+              if (data) {
+                this.readFile(data);
+              } else {
+                this.readFile(files);
+              }
             })
             .catch(this.resetInput);
 
@@ -278,7 +286,6 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
-          radius={4}
           onClick={() => {
             this.onPreviewImage(item);
           }}
@@ -357,7 +364,7 @@ export default createComponent({
 
       return (
         <div class={bem('upload')} style={style}>
-          <Icon name="plus" class={bem('upload-icon')} />
+          <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
           )}

@@ -12,6 +12,22 @@ exports[`Icon render default slot 1`] = `
 
 exports[`Icon render icon slot 1`] = `
 <div role="button" tabindex="0" class="van-goods-action-icon">
-  <div class="van-goods-action-icon__icon">Custom Icon</div>Text
+  <div class="van-goods-action-icon__icon">Custom Icon
+    <!---->
+  </div>Text
+</div>
+`;
+
+exports[`Icon render icon slot with dot 1`] = `
+<div role="button" tabindex="0" class="van-goods-action-icon">
+  <div class="van-goods-action-icon__icon">Custom Icon<div class="van-info van-info--dot"></div>
+  </div>Text
+</div>
+`;
+
+exports[`Icon render icon slot with info 1`] = `
+<div role="button" tabindex="0" class="van-goods-action-icon">
+  <div class="van-goods-action-icon__icon">Custom Icon<div class="van-info">1</div>
+  </div>Text
 </div>
 `;

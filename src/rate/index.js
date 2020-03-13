@@ -34,6 +34,7 @@ export default createComponent({
     disabled: Boolean,
     allowHalf: Boolean,
     voidColor: String,
+    iconPrefix: String,
     disabledColor: String,
     value: {
       type: Number,
@@ -173,8 +174,9 @@ export default createComponent({
             size={this.sizeWithUnit}
             name={isFull ? icon : voidIcon}
             class={bem('icon', { disabled, full: isFull })}
-            data-score={score}
             color={disabled ? disabledColor : isFull ? color : voidColor}
+            classPrefix={this.iconPrefix}
+            data-score={score}
             onClick={() => {
               this.select(score);
             }}
@@ -184,8 +186,9 @@ export default createComponent({
               size={this.sizeWithUnit}
               name={isVoid ? voidIcon : icon}
               class={bem('icon', ['half', { disabled, full: !isVoid }])}
-              data-score={score - 0.5}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
+              classPrefix={this.iconPrefix}
+              data-score={score - 0.5}
               onClick={() => {
                 this.select(score - 0.5);
               }}

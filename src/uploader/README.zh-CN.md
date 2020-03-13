@@ -133,9 +133,9 @@ export default {
 </van-uploader>
 ```
 
-### 上传前校验
+### 上传前自定义处理
 
-通过传入`beforeRead`函数可以在上传前进行校验，返回`true`表示校验通过，返回`false`表示校验失败。支持返回`Promise`进行异步校验
+通过传入`beforeRead`函数可以在上传前进行校验，返回`true`表示校验通过，返回`false`表示校验失败。支持返回`Promise`对 file 对象进行自定义处理，例如压缩图片。
 
 ```html
 <van-uploader :before-read="beforeRead" />
@@ -161,7 +161,10 @@ export default {
           Toast('请上传 jpg 格式图片');
           reject();
         } else {
-          resolve();
+          let img = new File(["foo"], "bar.jpg", {
+            type: "image/jpeg",
+          });
+          resolve(img);
         }
       });
     }
@@ -192,6 +195,7 @@ export default {
 | result-type `v2.2.7` | 文件读取结果类型，可选值为`file` `text` | *string* | `dataUrl` |
 | upload-text | 上传区域文字提示 | *string* | - |
 | image-fit `v2.1.5` | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | *string* | `cover` |
+| upload-icon `v2.5.4` | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | *string* | `photograph` |
 
 ### Events
 

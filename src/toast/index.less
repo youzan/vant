@@ -27,9 +27,12 @@
   border-radius: @toast-border-radius;
   transform: translate3d(-50%, -50%, 0);
 
-  // should not add pointer-events: none directly to body tag
-  // that will cause unexpected tap-highlight-color in mobile safari
   &--unclickable {
+    // lock scroll
+    overflow: hidden;
+
+    // should not add pointer-events: none directly to body tag
+    // that will cause unexpected tap-highlight-color in mobile safari
     * {
       pointer-events: none;
     }

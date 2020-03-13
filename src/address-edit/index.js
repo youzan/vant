@@ -168,7 +168,15 @@ export default createComponent({
     },
 
     onSave() {
-      const items = ['name', 'tel', 'areaCode', 'addressDetail'];
+      const items = ['name', 'tel'];
+
+      if (this.showArea) {
+        items.push('areaCode');
+      }
+
+      if (this.showDetail) {
+        items.push('addressDetail');
+      }
 
       if (this.showPostal) {
         items.push('postalCode');

@@ -186,6 +186,7 @@ export default {
 |------|------|------|------|
 | name | 标签名称，作为匹配的标识符 | *number \| string* | 当前标签的索引值 |
 | icon | [图标名称](#/zh-CN/icon)或图片链接| *string* | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | dot | 是否显示图标右上角小红点 | *boolean* | `false` |
 | info | 图标右上角徽标的内容 | *number \| string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |

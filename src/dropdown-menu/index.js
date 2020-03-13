@@ -53,8 +53,11 @@ export default createComponent({
 
   methods: {
     updateOffset() {
-      const { menu } = this.$refs;
-      const rect = menu.getBoundingClientRect();
+      if (!this.$refs.menu) {
+        return;
+      }
+
+      const rect = this.$refs.menu.getBoundingClientRect();
 
       if (this.direction === 'down') {
         this.offset = rect.bottom;

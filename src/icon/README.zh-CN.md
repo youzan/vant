@@ -96,7 +96,7 @@ import 'vant/lib/icon/local.css';
 | info | 图标右上角徽标的内容 | *number \| string* | - |
 | color | 图标颜色 | *string* | `inherit` |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | *number \| string* | `inherit` |
-| class-prefix | 类名前缀 | *string* | `van-icon` |
+| class-prefix | 类名前缀，用于使用自定义图标 | *string* | `van-icon` |
 | tag | HTML 标签 | *string* | `i` |
 
 ### Events

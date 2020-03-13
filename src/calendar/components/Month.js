@@ -1,5 +1,13 @@
 import { createNamespace } from '../../utils';
-import { t, bem, compareDay, formatMonthTitle, ROW_HEIGHT } from '../utils';
+import {
+  t,
+  bem,
+  compareDay,
+  ROW_HEIGHT,
+  getPrevDay,
+  getNextDay,
+  formatMonthTitle,
+} from '../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
 
 const [createComponent] = createNamespace('calendar-month');
@@ -12,10 +20,11 @@ export default createComponent({
     minDate: Date,
     maxDate: Date,
     showMark: Boolean,
-    showTitle: Boolean,
     rowHeight: [Number, String],
     formatter: Function,
     currentDate: [Date, Array],
+    showSubtitle: Boolean,
+    showMonthTitle: Boolean,
   },
 
   data() {
@@ -81,7 +90,61 @@ export default createComponent({
 
   methods: {
     scrollIntoView() {
-      this.$refs.days.scrollIntoView();
+      if (this.showSubtitle) {
+        this.$refs.days.scrollIntoView();
+      } else {
+        this.$refs.month.scrollIntoView();
+      }
+    },
+
+    getMultipleDayType(day) {
+      const isSelected = date =>
+        this.currentDate.some(item => compareDay(item, date) === 0);
+
+      if (isSelected(day)) {
+        const prevDay = getPrevDay(day);
+        const nextDay = getNextDay(day);
+        const prevSelected = isSelected(prevDay);
+        const nextSelected = isSelected(nextDay);
+
+        if (prevSelected && nextSelected) {
+          return 'multiple-middle';
+        }
+
+        if (prevSelected) {
+          return 'end';
+        }
+
+        return nextSelected ? 'start' : 'multiple-selected';
+      }
+
+      return '';
+    },
+
+    getRangeDayType(day) {
+      const [startDay, endDay] = this.currentDate;
+
+      if (!startDay) {
+        return;
+      }
+
+      const compareToStart = compareDay(day, startDay);
+      if (compareToStart === 0) {
+        return 'start';
+      }
+
+      if (!endDay) {
+        return;
+      }
+
+      const compareToEnd = compareDay(day, endDay);
+      if (compareToEnd === 0) {
+        return 'end';
+      }
+
+      if (compareToStart > 0 && compareToEnd < 0) {
+        return 'middle';
+      }
     },
 
     getDayType(day) {
@@ -95,41 +158,24 @@ export default createComponent({
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
 
+      if (type === 'multiple') {
+        return this.getMultipleDayType(day);
+      }
+
       /* istanbul ignore else */
       if (type === 'range') {
-        const [startDay, endDay] = this.currentDate;
-
-        if (!startDay) {
-          return;
-        }
-
-        const compareToStart = compareDay(day, startDay);
-        if (compareToStart === 0) {
-          return 'start';
-        }
-
-        if (!endDay) {
-          return;
-        }
-
-        const compareToEnd = compareDay(day, endDay);
-        if (compareToEnd === 0) {
-          return 'end';
-        }
-
-        if (compareToStart > 0 && compareToEnd < 0) {
-          return 'middle';
-        }
+        return this.getRangeDayType(day);
       }
     },
 
     getBottomInfo(type) {
-      if (type === 'start') {
-        return t('start');
-      }
-
-      if (type === 'end') {
-        return t('end');
+      if (this.type === 'range') {
+        if (type === 'start') {
+          return t('start');
+        }
+        if (type === 'end') {
+          return t('end');
+        }
       }
     },
 
@@ -145,7 +191,12 @@ export default createComponent({
       }
 
       if (this.color) {
-        if (type === 'start' || type === 'end') {
+        if (
+          type === 'start' ||
+          type === 'end' ||
+          type === 'multiple-selected' ||
+          type === 'multiple-middle'
+        ) {
           style.background = this.color;
         } else if (type === 'middle') {
           style.color = this.color;
@@ -156,7 +207,7 @@ export default createComponent({
     },
 
     genTitle() {
-      if (this.showTitle) {
+      if (this.showMonthTitle) {
         return <div class={bem('month-title')}>{this.title}</div>;
       }
     },
@@ -233,7 +284,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem('month')} style={this.monthStyle}>
+      <div class={bem('month')} ref="month" style={this.monthStyle}>
         {this.genTitle()}
         {this.genDays()}
       </div>

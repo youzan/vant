@@ -6,6 +6,8 @@ export function formatNumber(value: string, allowDot: boolean) {
       value =
         value.slice(0, dotIndex + 1) + value.slice(dotIndex).replace(/\./g, '');
     }
+  } else {
+    value = value.split('.')[0];
   }
 
   const regExp = allowDot ? /[^0-9.]/g : /\D/g;

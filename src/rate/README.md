@@ -119,6 +119,7 @@ export default {
 | disabled-color | Disabled color | *string* | `#bdbdbd` |
 | icon | Selected icon | *string* | `star` |
 | void-icon | Void icon | *string* | `star-o` |
+| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | allow-half | Whether to allow half star | *boolean* | `false` |
 | readonly | Whether to be readonly | *boolean* | `false` |
 | disabled | Whether to disable rate | *boolean* | `false` |

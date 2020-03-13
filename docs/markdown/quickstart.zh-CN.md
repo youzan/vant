@@ -115,11 +115,11 @@ Vue.use(Vant);
 
 ```html
 <!-- 引入样式文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.4/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css">
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.4/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.5/lib/vant.min.js"></script>
 
 <script>
 // 在 #app 标签下渲染一个按钮组件
@@ -190,7 +190,7 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 <van-number-keyboard safe-area-inset-bottom />
 ```
 
-<img src="https://b.yzcdn.cn/vant/safearea.png" style="margin-top: 30px;">
+<img src="https://b.yzcdn.cn/vant/safearea.png">
 
 ### 组件实例方法
 
@@ -216,3 +216,27 @@ export default {
   }
 }
 ```
+
+## 常见问题
+
+### 在 HTML 中无法正确渲染组件？
+
+在 HTML 中使用 Vant 组件时，你可能会碰到部分示例代码无法正确渲染的情况，比如下面的用法：
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" />
+</van-cell-group>
+```
+
+这是因为 HTML 并不支持自闭合的自定义元素，也就是说 `<van-cell />` 这样的语法是不被识别的，使用完整的闭合标签可以避免这个问题：
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" value="内容"></van-cell>
+  <van-cell title="单元格" value="内容"></van-cell>
+</van-cell-group>
+```
+
+在单文件组件、字符串模板和 JSX 中可以使用自闭合的自定义元素，因此不会出现这个问题。
