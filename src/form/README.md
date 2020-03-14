@@ -62,19 +62,19 @@ export default {
     v-model="value1"
     name="pattern"
     placeholder="USe pattern"
-    :rules="[{ pattern, message: 'Error message }]"
+    :rules="[{ pattern, message: 'Error message' }]"
   />
   <van-field
     v-model="value2"
     name="validator"
     placeholder="Use validator"
-    :rules="[{ validator, message: 'Error message }]"
+    :rules="[{ validator, message: 'Error message' }]"
   />
   <van-field
     v-model="value3"
     name="asyncValidator"
     placeholder="Use async validator"
-    :rules="[{ validator: asyncValidator, message: 'Error message }]"
+    :rules="[{ validator: asyncValidator, message: 'Error message' }]"
   />
   <div style="margin: 16px;">
     <van-button round block type="info" native-type="submit">
