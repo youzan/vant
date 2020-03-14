@@ -62,4 +62,4 @@ command('commit-lint')
   .description('Lint commit message')
   .action(commitLint);
 
-parse(process.argv);
+parse();
