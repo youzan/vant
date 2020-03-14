@@ -1,4 +1,3 @@
-// @ts-ignore
 import markdownVetur from '@vant/markdown-vetur';
 import { join } from 'path';
 import { get } from 'lodash';

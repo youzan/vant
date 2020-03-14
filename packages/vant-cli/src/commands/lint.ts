@@ -1,4 +1,3 @@
-// @ts-ignore
 import execa from 'execa';
 import { ora } from '../common/logger';
 import { SCRIPT_EXTS } from '../common/constant';

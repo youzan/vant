@@ -1,7 +1,6 @@
 import merge from 'webpack-merge';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-// @ts-ignore
 import WebpackBar from 'webpackbar';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { get } from 'lodash';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
