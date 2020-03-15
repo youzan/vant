@@ -237,7 +237,6 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 是否显示日历弹窗 | *boolean* | `false` |
 | type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | *string* | `single` |
 | title | 日历标题 | *string* | `日期选择` |
 | color | 主题色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
@@ -246,21 +245,36 @@ export default {
 | default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | *Date \| Date[]* | 今天 |
 | row-height | 日期行高 | *number \| string* | `64` |
 | formatter | 日期格式化函数 | *(day: Day) => Day* | - |
-| position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
 | poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
-| round | 是否显示圆角弹窗 | *boolean* | `true` |
 | show-mark | 是否显示月份背景水印 | *boolean* | `true` |
 | show-title `v2.5.5` | 是否展示日历标题 | *boolean* | `true` |
 | show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | *boolean* | `true` |
 | show-confirm | 是否展示确认按钮 | *boolean* | `true` |
+| confirm-text | 确认按钮的文字 | *string* | `确定` |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
+
+### Poppable Props
+
+当 Canlendar 的 `poppable` 为 `true` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| v-model | 是否显示日历弹窗 | *boolean* | `false` |
+| position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
+| round | 是否显示圆角弹窗 | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
-| confirm-text | 确认按钮的文字 | *string* | `确定` |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
+| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
+
+### Range Props
+
+当 Canlendar 的 `type` 为 `range` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
 | max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number \| string* | - |
 | range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | *string* | `选择天数不能超过 xx 天` |
-| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Day 数据结构
 

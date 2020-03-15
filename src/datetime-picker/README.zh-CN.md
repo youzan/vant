@@ -169,7 +169,7 @@ export default {
 
 ### DatePicker Props
 
-当时间选择器类型为 date 或 datetime 时，支持以下 props
+当时间选择器类型为 date 或 datetime 时，支持以下 props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
@@ -178,7 +178,7 @@ export default {
 
 ### TimePicker Props
 
-当时间选择器类型为 time 时，支持以下 props
+当时间选择器类型为 time 时，支持以下 props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|

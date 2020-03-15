@@ -235,7 +235,6 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show calendar | *boolean* | `false` |
 | type `v2.5.4` | Type，can be set to `range` `multiple` | *string* | `single` |
 | title | Title of calendar | *string* | `Calendar` |
 | color | Color for the bottom button and selected date | *string* | `#ee0a24` |
@@ -244,21 +243,36 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | default-date | Default selected date | *Date \| Date[]* | Today |
 | row-height | Row height | *number \| string* | `64` |
 | formatter | Day formatter | *(day: Day) => Day* | - |
-| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
 | poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
-| round | Whether to show round corner | *boolean* | `true` |
 | show-mark | Whether to show background month mark | *boolean* | `true` |
 | show-title `v2.5.5` | Whether to show title | *boolean* | `true` |
 | show-subtitle `v2.5.5` | Whether to show subtitle | *boolean* | `true` |
 | show-confirm | Whether to show confirm button | *boolean* | `true` |
+| confirm-text | Confirm button text | *string* | `Confirm` |
+| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
+
+### Poppable Props
+
+Following props are supported when the poppable is true
+
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| v-model | Whether to show calendar | *boolean* | `false` |
+| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
+| round | Whether to show round corner | *boolean* | `true` |
 | close-on-popstate `v2.4.4` | Whether to close when popstate | *boolean* | `false` |
 | close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
-| confirm-text | Confirm button text | *string* | `Confirm` |
-| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
+| get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
+
+### Range Props
+
+Following props are supported when the type is range
+
+| Attribute | Description | Type | Default |
+|------|------|------|------|
 | max-range `v2.4.3` | Number of selectable days | *number \| string* | - |
 | range-prompt `v2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
-| get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 
 ### Data Structure of Day
 
