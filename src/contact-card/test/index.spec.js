@@ -101,7 +101,7 @@ describe('ContactEdit', () => {
     expect(errorInfo.name).toBeFalsy();
   });
 
-  it('valid tel', () => {
+  test('valid tel', () => {
     const { data, field, button, errorInfo, wrapper } = createComponent();
     data.tel = '';
     button.trigger('click');

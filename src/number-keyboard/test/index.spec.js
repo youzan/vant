@@ -20,14 +20,14 @@ test('click number key', () => {
   wrapper.destroy();
 });
 
-it('click delete key', () => {
+test('click delete key', () => {
   const wrapper = mount(NumberKeyboard);
 
   clickKey(wrapper.findAll('.van-key').at(11));
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
-it('click empty key', () => {
+test('click empty key', () => {
   const wrapper = mount(NumberKeyboard);
   clickKey(wrapper.findAll('.van-key').at(9));
   expect(wrapper.emitted('input')).toBeFalsy();
