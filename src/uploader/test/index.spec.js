@@ -454,3 +454,10 @@ it('close-preview event', async () => {
   await later(300);
   expect(wrapper.emitted('close-preview')).toBeTruthy();
 });
+
+it('show-upload prop', () => {
+  const wrapper = mount(Uploader);
+  expect(wrapper.contains('.van-uploader__upload')).toBeTruthy();
+  wrapper.setProps({ showUpload: false });
+  expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
+});

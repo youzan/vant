@@ -186,6 +186,7 @@ export default {
 | multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` |
 | disabled | 是否禁用文件上传 | *boolean* | `false` |
 | deletable `v2.2.12` | 是否展示删除按钮 | *boolean* | `true` |
+| show-upload `v2.5.6` | 是否展示上传区域 | *boolean* | `true` |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | *string* | - |
 | after-read | 文件读取完成后的回调函数 | *Function* | - |
 | before-read | 文件读取前的回调函数，返回`false`可终止文件读取，<br>支持返回`Promise` | *Function* | - |

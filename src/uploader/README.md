@@ -165,6 +165,7 @@ export default {
 | multiple | Whether to enable multiple selection pictures | *boolean* | `false` |
 | disabled | Whether to disabled the upload | *boolean* | `false` |
 | deletable `v2.2.12` | Whether to show delete icon | *boolean* | `true` |
+| show-upload `v2.5.6` | Whether to show upload area | *boolean* | `true` |
 | capture | Capture，can be set to `camera` | *string* | - |
 | after-read | Hook after reading the file | *Function* | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | *Function* | - |

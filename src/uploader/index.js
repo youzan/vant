@@ -53,6 +53,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    showUpload: {
+      type: Boolean,
+      default: true,
+    },
     previewImage: {
       type: Boolean,
       default: true,
@@ -326,7 +330,7 @@ export default createComponent({
     },
 
     genUpload() {
-      if (this.fileList.length >= this.maxCount) {
+      if (this.fileList.length >= this.maxCount || !this.showUpload) {
         return;
       }
 
