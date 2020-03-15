@@ -242,6 +242,7 @@ export default createComponent({
         this.imagePreview.close();
       }
     },
+
     // @exposed-api
     chooseFile() {
       if (this.disabled) {
