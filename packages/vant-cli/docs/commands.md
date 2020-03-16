@@ -38,12 +38,12 @@ project
 ├─ es               # es 目录下的代码遵循 esmodule 规范
 │   ├─ button      # button 组件编译后的代码目录
 │   ├─ dialog      # dialog 组件编译后的代码目录
-│   └─ index.js    # 通过 esmodule 引入所有组件的入口，支持 tree shaking
+│   └─ index.js    # 引入所有组件的入口，支持 tree shaking
 │
 └─ lib              # lib 目录下的代码遵循 commonjs 规范
     ├─ button       # button 组件编译后的代码目录
     ├─ dialog       # dialog 组件编译后的代码目录
-    ├─ index.js     # 通过 commonjs 引入所有组件的入口，支持 tree shaking
+    ├─ index.js     # 引入所有组件的入口
     ├─ index.less   # 所有组件未编译的样式
     ├─ index.css    # 所有组件打包后的样式，用于 CDN 引入
     ├─ name.js      # 所有组件打包后的脚本，未压缩，用于 CDN 引入
@@ -79,12 +79,12 @@ button
 
 ### release
 
-发布组件库，发布前会自动执行 build 和 changelog 命令。
+发布组件库，发布前会自动执行 build 和 changelog 命令，并通过 [release-it](https://github.com/release-it/release-it) 发布 npm 包。
 
 ## changelog
 
-基于 commit 记录生成更新日志。
+基于 commit 记录生成更新日志，基于 [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) 实现。
 
 ## commit-lint
 
-校验 commit message 的格式是否符合规范，需要配合`husky`在提交 commit 时触发。
+校验 commit message 的格式是否符合规范，需要配合 `husky` 在提交 commit 时触发。
