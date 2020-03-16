@@ -78,11 +78,33 @@ module.exports = {
               'border-color': '#eee'
               // or override with less file
               'hack': `true; @import "your-less-file-path.less";`
-            }
-          }
-        }
-      ]
-    }
-  ]
+            },
+          },
+        },
+      ],
+    },
+  ],
 };
 ```
+
+If you build a project by vue-cli,it can be configured in `vue.config.js`:
+
+```js
+// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {
+          // overide with less vars
+          'text-color': '#111',
+          'border-color': '#eee',
+          // or override with less file
+          hack: `true; @import "your-less-file-path.less";`,
+        },
+      },
+    },
+  },
+};
+```
+
