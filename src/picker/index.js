@@ -176,7 +176,14 @@ export default createComponent({
     // set column option index by column index
     setColumnIndex(columnIndex, optionIndex) {
       const column = this.getColumn(columnIndex);
-      column && column.setIndex(optionIndex);
+
+      if (column) {
+        column.setIndex(optionIndex);
+
+        if (this.dataType === 'cascade') {
+          this.onCascadeChange(columnIndex);
+        }
+      }
     },
 
     // @exposed-api
