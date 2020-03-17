@@ -54,7 +54,7 @@ import { deepClone } from '../../utils/deep-clone';
 export default {
   i18n: {
     'zh-CN': {
-      showBadge: '提示信息',
+      showBadge: '徽标提示',
       radioMode: '单选模式',
       multipleMode: '多选模式',
       customContent: '自定义内容',
