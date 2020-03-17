@@ -32,13 +32,13 @@ export default {
 };
 ```
 
-### Show Info
+### Show Badge
 
 ```html
 <van-sidebar v-model="activeKey">
   <van-sidebar-item title="Title" dot />
-  <van-sidebar-item title="Title" info="5" />
-  <van-sidebar-item title="Title" info="99+" />
+  <van-sidebar-item title="Title" badge="5" />
+  <van-sidebar-item title="Title" badge="99+" />
 </van-sidebar>
 ```
 
@@ -99,7 +99,7 @@ export default {
 |------|------|------|------|
 | title | Content | *string* | `''` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info | Content of the badge | *number \| string* | `''` |
+| badge `v2.5.6` | Content of the badge | *number \| string* | `''` |
 | disabled `v2.2.0` | Whether to be disabled | *boolean* | `false` |
 | url | Link | *string* | - |
 | to `v2.0.4` | Target route of the link, same as to of vue-router | *string \| object* | - |

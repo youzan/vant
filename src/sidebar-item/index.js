@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
@@ -12,6 +12,7 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     info: [Number, String],
+    badge: [Number, String],
     title: String,
     disabled: Boolean,
   },
@@ -43,7 +44,11 @@ export default createComponent({
       >
         <div class={bem('text')}>
           {this.title}
-          <Info dot={this.dot} info={this.info} class={bem('info')} />
+          <Info
+            dot={this.dot}
+            info={isDef(this.badge) ? this.badge : this.info}
+            class={bem('info')}
+          />
         </div>
       </a>
     );
