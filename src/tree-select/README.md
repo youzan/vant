@@ -81,7 +81,7 @@ export default {
 }
 ```
 
-### Show Info
+### Show Badge
 
 ```html
 <van-tree-select
@@ -98,7 +98,7 @@ export default {
       activeIndex: 0,
       items: [
         { text: 'Group 1', children: [], dot: true },
-        { text: 'Group 2', children: [], info: 5 }
+        { text: 'Group 2', children: [], badge: 5 }
       ]
     }
   }
@@ -141,8 +141,8 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   {
     // name of the parent node
     text: 'Group 1',
-    // info
-    info: 3,
+    // badge
+    badge: 3,
     // Whether to show red dot
     dot: true,
     // ClassName of parent node
