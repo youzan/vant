@@ -66,6 +66,19 @@ test('setColumnValue of cascade columns', () => {
   expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
 });
 
+test('setValues of cascade columns', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: COLUMNS,
+    },
+  });
+
+  wrapper.vm.setValues(['A2', 'B4', 'C8']);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B4', 'C8']);
+});
+
 test('setColumnIndex of cascade columns', () => {
   const wrapper = mount(Picker, {
     propsData: {
@@ -81,4 +94,17 @@ test('setColumnIndex of cascade columns', () => {
   wrapper.vm.setColumnIndex(1, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
+});
+
+test('setIndexes of cascade columns', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: COLUMNS,
+    },
+  });
+
+  wrapper.vm.setIndexes([1, 0, 1]);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C6']);
 });
