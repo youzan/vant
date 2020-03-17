@@ -30,10 +30,10 @@
       <van-tabbar v-model="active2">
         <van-tabbar-item icon="home-o">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="search" dot>{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" info="5">
+        <van-tabbar-item icon="friends-o" badge="5">
           {{ $t('tab') }}
         </van-tabbar-item>
-        <van-tabbar-item icon="setting-o" info="20">
+        <van-tabbar-item icon="setting-o" badge="20">
           {{ $t('tab') }}
         </van-tabbar-item>
       </van-tabbar>
@@ -41,7 +41,7 @@
 
     <demo-block :title="$t('customIcon')">
       <van-tabbar v-model="active3">
-        <van-tabbar-item info="3">
+        <van-tabbar-item badge="3">
           <span>{{ $t('custom') }}</span>
           <template #icon="props">
             <img :src="props.active ? icon.active : icon.inactive" />
@@ -80,7 +80,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      badge: '提示信息',
+      badge: '徽标提示',
       customIcon: '自定义图标',
       customColor: '自定义颜色',
       matchByName: '通过名称匹配',

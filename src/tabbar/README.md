@@ -60,8 +60,8 @@ export default {
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">Tab</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" badge="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" badge="20">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -71,7 +71,7 @@ Use `icon` slot to custom icon
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item info="3">
+  <van-tabbar-item badge="3">
     <span>Custom</span>
     <img
       slot="icon"
@@ -181,7 +181,7 @@ export default {
 | icon | Icon name | *string* | - |
 | icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
 | dot | Whether to show red dot | *boolean* | - |
-| info | Content of the badge | *number \| string* | - |
+| badge `v2.5.6` | Content of the badge | *number \| string* | `''` |
 | url | Link | *string* | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` |
