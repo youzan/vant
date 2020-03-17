@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, isDef } from '../utils';
 import { BORDER } from '../utils/constant';
 import { route, routeProps } from '../utils/router';
 
@@ -22,6 +22,7 @@ export default createComponent({
     icon: String,
     iconPrefix: String,
     info: [Number, String],
+    badge: [Number, String],
   },
 
   computed: {
@@ -70,12 +71,13 @@ export default createComponent({
 
     genIcon() {
       const iconSlot = this.slots('icon');
+      const info = isDef(this.badge) ? this.badge : this.info;
 
       if (iconSlot) {
         return (
           <div class={bem('icon-wrapper')}>
             {iconSlot}
-            <Info dot={this.dot} info={this.info} />
+            <Info dot={this.dot} info={info} />
           </div>
         );
       }
@@ -85,7 +87,7 @@ export default createComponent({
           <Icon
             name={this.icon}
             dot={this.dot}
-            info={this.info}
+            info={info}
             size={this.parent.iconSize}
             class={bem('icon')}
             classPrefix={this.iconPrefix}

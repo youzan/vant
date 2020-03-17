@@ -78,10 +78,10 @@
       </van-grid>
     </demo-block>
 
-    <demo-block :title="$t('showInfo')">
+    <demo-block :title="$t('showBadge')">
       <van-grid :column-num="2">
         <van-grid-item icon="home-o" :text="$t('text')" dot />
-        <van-grid-item icon="search" :text="$t('text')" info="99+" />
+        <van-grid-item icon="search" :text="$t('text')" badge="99+" />
       </van-grid>
     </demo-block>
   </demo-section>
@@ -99,7 +99,7 @@ export default {
       customContent: '自定义内容',
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
-      showInfo: '提示信息',
+      showBadge: '徽标提示',
     },
     'en-US': {
       text: 'Text',
@@ -110,7 +110,7 @@ export default {
       customContent: 'Custom Content',
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
-      showInfo: 'Show Info',
+      showBadge: 'Show Badge',
     },
   },
 };
