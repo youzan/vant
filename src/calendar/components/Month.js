@@ -23,6 +23,7 @@ export default createComponent({
     rowHeight: [Number, String],
     formatter: Function,
     currentDate: [Date, Array],
+    allowSameDay: Boolean,
     showSubtitle: Boolean,
     showMonthTitle: Boolean,
   },
@@ -125,19 +126,25 @@ export default createComponent({
       const [startDay, endDay] = this.currentDate;
 
       if (!startDay) {
-        return;
+        return '';
       }
 
       const compareToStart = compareDay(day, startDay);
+
+      if (!endDay) {
+        return compareToStart === 0 ? 'start' : '';
+      }
+
+      const compareToEnd = compareDay(day, endDay);
+
+      if (compareToStart === 0 && compareToEnd === 0 && this.allowSameDay) {
+        return 'start-end';
+      }
+
       if (compareToStart === 0) {
         return 'start';
       }
 
-      if (!endDay) {
-        return;
-      }
-
-      const compareToEnd = compareDay(day, endDay);
       if (compareToEnd === 0) {
         return 'end';
       }
@@ -170,11 +177,11 @@ export default createComponent({
 
     getBottomInfo(type) {
       if (this.type === 'range') {
-        if (type === 'start') {
-          return t('start');
+        if (type === 'start' || type === 'end') {
+          return t(type);
         }
-        if (type === 'end') {
-          return t('end');
+        if (type === 'start-end') {
+          return t('startEnd');
         }
       }
     },
@@ -254,7 +261,7 @@ export default createComponent({
             role="gridcell"
             style={style}
             class={[bem('day'), item.className]}
-            tabindex={disabled ? null : -1}
+            tabindex={-1}
             onClick={onClick}
           >
             <div class={bem('selected-day')} style={{ background: this.color }}>

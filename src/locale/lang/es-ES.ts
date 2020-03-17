@@ -14,8 +14,9 @@ export default {
   telInvalid: 'Teléfono inválido',
   vanCalendar: {
     end: 'Fin',
-    start: 'Comienzo',
+    start: 'Inicio',
     title: 'Calendario',
+    startEnd: 'Inicio/Fin',
     weekdays: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Elija no más de ${maxRange} días`,
