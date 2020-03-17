@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Components
@@ -15,6 +15,7 @@ export type IconProps = {
   name?: string;
   size?: string | number;
   info?: string | number;
+  badge?: string | number;
   color?: string;
   classPrefix: string;
 };
@@ -62,7 +63,10 @@ function Icon(
     >
       {slots.default && slots.default()}
       {imageIcon && <img class={bem('image')} src={name} />}
-      <Info dot={props.dot} info={props.info} />
+      <Info
+        dot={props.dot}
+        info={isDef(props.badge) ? props.badge : props.info}
+      />
     </props.tag>
   );
 }
@@ -71,7 +75,10 @@ Icon.props = {
   dot: Boolean,
   name: String,
   size: [Number, String],
+  // @deprecated
+  // should be removed in next major version
   info: [Number, String],
+  badge: [Number, String],
   color: String,
   tag: {
     type: String,
