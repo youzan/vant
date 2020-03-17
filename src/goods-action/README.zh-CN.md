@@ -41,13 +41,13 @@ export default {
 
 ### 徽标提示
 
-在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" dot />
-  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" info="12" />
+  <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
   <van-goods-action-button type="warning" text="加入购物车" />
   <van-goods-action-button type="danger" text="立即购买" />
 </van-goods-action>
@@ -97,7 +97,8 @@ export default {
 | color `v2.4.2` | 图标颜色 | *string* | `#323233` |
 | icon-class | 图标额外类名 | *any* | - |
 | dot `2.5.5` | 是否显示图标右上角小红点 | *boolean* | `false` |
-| info | 图标右上角徽标的内容 | *number \| string* | - |
+| badge `v2.5.6` | 图标右上角徽标的内容 | *number \| string* | - |
+| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | *number \| string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
