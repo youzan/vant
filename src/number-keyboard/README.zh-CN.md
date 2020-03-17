@@ -101,7 +101,7 @@ export default {
 通过`extra-key`属性可以设置左下角按键内容
 
 ```html
-<van-button plain type="primary" @touchstart.stop="show = true'">
+<van-button plain type="primary" @touchstart.stop="show = true">
   弹出身份证号码键盘
 </van-button>
 
@@ -120,7 +120,7 @@ export default {
 通过`title`属性可以设置键盘标题
 
 ```html
-<van-button plain type="info" @touchstart.stop="show = true'">
+<van-button plain type="info" @touchstart.stop="show = true">
   弹出自定义标题键盘
 </van-button>
 

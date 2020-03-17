@@ -95,7 +95,7 @@ export default {
 Use `extra-key` prop to set the content of bottom left button
 
 ```html
-<van-button plain type="primary" @touchstart.stop="show = true'">
+<van-button plain type="primary" @touchstart.stop="show = true">
   Show Id Card Number Keyboard
 </van-button>
 
@@ -114,7 +114,7 @@ Use `extra-key` prop to set the content of bottom left button
 Use `title` prop to set keyboard title
 
 ```html
-<van-button plain type="info" @touchstart.stop="show = true'">
+<van-button plain type="info" @touchstart.stop="show = true">
   Show Custom Title Keyboard
 </van-button>
 
