@@ -64,25 +64,29 @@ export default {
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
   <!-- 下拉提示，通过 scale 实现一个缩放效果 -->
-  <img
-    class="doge"
-    slot="pulling"
-    slot-scope="props"
-    src="https://img.yzcdn.cn/vant/doge.png"
-    :style="{ transform: `scale(${props.distance / 80})` }"
-  >
+  <template #pulling="props">
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge.png"
+      :style="{ transform: `scale(${props.distance / 80})` }"
+    />
+  </template>
+
   <!-- 释放提示 -->
-  <img
-    class="doge"
-    slot="loosing"
-    src="https://img.yzcdn.cn/vant/doge.png"
-  >
+  <template #loosing>
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge.png"
+    />
+  </template>  
+
   <!-- 加载提示 -->
-  <img
-    class="doge"
-    slot="loading"
-    src="https://img.yzcdn.cn/vant/doge-fire.jpg"
-  >
+  <template #loading>
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge-fire.jpg"
+    />
+  </template>
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>
 

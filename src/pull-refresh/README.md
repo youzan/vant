@@ -63,24 +63,28 @@ Use slots to custom tips
 
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
-  <img
-    class="doge"
-    slot="pulling"
-    slot-scope="props"
-    src="https://img.yzcdn.cn/vant/doge.png"
-    :style="{ transform: `scale(${props.distance / 80})` }"
-  >
-  <img
-    class="doge"
-    slot="loosing"
-    src="https://img.yzcdn.cn/vant/doge.png"
-  >
-  <img
-    class="doge"
-    slot="loading"
-    src="https://img.yzcdn.cn/vant/doge-fire.jpg"
-  >
-  <p>Refresh Count: {{ count }}</p>
+  <template #pulling="props">
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge.png"
+      :style="{ transform: `scale(${props.distance / 80})` }"
+    />
+  </template>
+
+  <template #loosing>
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge.png"
+    />
+  </template>  
+
+  <template #loading>
+    <img
+      class="doge"
+      src="https://img.yzcdn.cn/vant/doge-fire.jpg"
+    />
+  </template>
+  <p>count: {{ count }}</p>
 </van-pull-refresh>
 
 <style>
