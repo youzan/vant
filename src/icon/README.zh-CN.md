@@ -24,14 +24,14 @@ Vue.use(Icon);
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
-### 提示信息
+### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-icon name="chat-o" dot />
-<van-icon name="chat-o" info="9" />
-<van-icon name="chat-o" info="99+" />
+<van-icon name="chat-o" badge="9" />
+<van-icon name="chat-o" badge="99+" />
 ```
 
 ### 图标颜色
@@ -93,7 +93,8 @@ import 'vant/lib/icon/local.css';
 |------|------|------|------|
 | name | 图标名称或图片链接 | *string* | - |
 | dot `v2.2.1` | 是否显示图标右上角小红点 | *boolean* | `false` |
-| info | 图标右上角徽标的内容 | *number \| string* | - |
+| badge `v2.5.6` | 图标右上角徽标的内容 | *number \| string* | - |
+| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | *number \| string* | - |
 | color | 图标颜色 | *string* | `inherit` |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | *number \| string* | `inherit` |
 | class-prefix | 类名前缀，用于使用自定义图标 | *string* | `van-icon` |

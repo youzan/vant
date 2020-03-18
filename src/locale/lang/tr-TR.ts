@@ -16,6 +16,7 @@ export default {
     end: 'Son',
     start: 'Başlat',
     title: 'Takvim',
+    startEnd: 'Başlat/Son',
     weekdays: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `En fazla ${maxRange} gün seçin`,

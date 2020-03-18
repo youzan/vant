@@ -17,6 +17,7 @@ export default {
     start: '開始',
     title: '日期選擇',
     confirm: '確定',
+    startEnd: '開始/結束',
     weekdays: ['日', '壹', '二', '三', '四', '五', '六'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `選擇天數不能超過 ${maxRange} 天`,

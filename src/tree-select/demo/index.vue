@@ -35,10 +35,10 @@
       </van-tree-select>
     </demo-block>
 
-    <demo-block :title="$t('showInfo')">
+    <demo-block :title="$t('showBadge')">
       <van-tree-select
         height="55vw"
-        :items="infoItems"
+        :items="badgeItems"
         :active-id.sync="activeId2"
         :main-active-index.sync="activeIndex4"
       />
@@ -54,7 +54,7 @@ import { deepClone } from '../../utils/deep-clone';
 export default {
   i18n: {
     'zh-CN': {
-      showInfo: '提示信息',
+      showBadge: '徽标提示',
       radioMode: '单选模式',
       multipleMode: '多选模式',
       customContent: '自定义内容',
@@ -62,7 +62,7 @@ export default {
       dataSimple: [{ text: '分组 1' }, { text: '分组 2' }],
     },
     'en-US': {
-      showInfo: 'Show Info',
+      showBadge: 'Show Badge',
       radioMode: 'Radio Mode',
       multipleMode: 'Multiple Mode',
       customContent: 'Custom Content',
@@ -92,11 +92,11 @@ export default {
       return this.$t('dataSimple');
     },
 
-    infoItems() {
+    badgeItems() {
       const data = deepClone(this.$t('data')).slice(0, 2);
 
       data[0].dot = true;
-      data[1].info = 5;
+      data[1].badge = 5;
 
       return data;
     },

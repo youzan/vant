@@ -10,8 +10,9 @@ export default createComponent({
   props: {
     ...routeProps,
     dot: Boolean,
-    info: [Number, String],
     name: [Number, String],
+    info: [Number, String],
+    badge: [Number, String],
     title: String,
     titleStyle: null,
     disabled: Boolean,

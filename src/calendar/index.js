@@ -30,6 +30,7 @@ export default createComponent({
     rangePrompt: String,
     defaultDate: [Date, Array],
     getContainer: [String, Function],
+    allowSameDay: Boolean,
     closeOnPopstate: Boolean,
     confirmDisabledText: String,
     type: {
@@ -261,6 +262,8 @@ export default createComponent({
             this.select([startDay, date], true);
           } else if (compareToStart === -1) {
             this.select([date, null]);
+          } else if (this.allowSameDay) {
+            this.select([date, date]);
           }
         } else {
           this.select([date, null]);
@@ -342,6 +345,7 @@ export default createComponent({
           rowHeight={this.rowHeight}
           currentDate={this.currentDate}
           showSubtitle={this.showSubtitle}
+          allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
           onClick={this.onClickDay}
         />

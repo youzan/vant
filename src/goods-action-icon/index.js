@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 import Info from '../info';
@@ -16,6 +16,7 @@ export default createComponent({
     icon: String,
     color: String,
     info: [Number, String],
+    badge: [Number, String],
     iconClass: null,
   },
 
@@ -27,12 +28,13 @@ export default createComponent({
 
     genIcon() {
       const slot = this.slots('icon');
+      const info = isDef(this.badge) ? this.badge : this.info;
 
       if (slot) {
         return (
           <div class={bem('icon')}>
             {slot}
-            <Info dot={this.dot} info={this.info} />
+            <Info dot={this.dot} info={info} />
           </div>
         );
       }
@@ -42,7 +44,7 @@ export default createComponent({
           class={[bem('icon'), this.iconClass]}
           tag="div"
           dot={this.dot}
-          info={this.info}
+          info={info}
           name={this.icon}
           color={this.color}
         />

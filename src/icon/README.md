@@ -20,16 +20,16 @@ Use `name` prop to set icon name or icon URL
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
-### Show Info
+### Show Badge
 
 Use `dot` prop, a small red dot will be displayed in the upper right corner of the icon. 
 
-Use `info` prop, the info will be displayed in the upper right corner of the icon.
+Use `badge` prop, the badge will be displayed in the upper right corner of the icon.
 
 ```html
 <van-icon name="chat-o" dot />
-<van-icon name="chat-o" info="9" />
-<van-icon name="chat-o" info="99+" />
+<van-icon name="chat-o" badge="9" />
+<van-icon name="chat-o" badge="99+" />
 ```
 
 ### Icon Color
@@ -87,7 +87,7 @@ import 'vant/lib/icon/local.css';
 |------|------|------|------|
 | name | Icon name or URL | *string* | `''` |
 | dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info | Content of the badge | *number \| string* | `''` |
+| badge `v2.5.6` | Content of the badge | *number \| string* | `''` |
 | color | Icon color | *string* | `inherit` |
 | size | Icon size | *number \| string* | `inherit` |
 | class-prefix | ClassName prefix | *string* | `van-icon` |

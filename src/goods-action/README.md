@@ -39,15 +39,15 @@ export default {
 }
 ```
 
-### Icon info
+### Icon Badge
 
-Use `info` prop to show badge in icon
+Use `badge` prop to show badge in icon
 
 ```html
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="Icon1" dot />
-  <van-goods-action-icon icon="cart-o" text="Icon2" info="5" />
-  <van-goods-action-icon icon="shop-o" text="Icon3" info="12" />
+  <van-goods-action-icon icon="cart-o" text="Icon2" badge="5" />
+  <van-goods-action-icon icon="shop-o" text="Icon3" badge="12" />
   <van-goods-action-button type="warning" text="Button1" />
   <van-goods-action-button type="danger" text="Button2" />
 </van-goods-action>
@@ -93,7 +93,7 @@ Use `info` prop to show badge in icon
 | color `v2.4.2` | Icon color | *string* | `#323233` |
 | icon-class | Icon class name | *any* | `''` |
 | dot `2.5.5` | Whether to show red dot | *boolean* | - |
-| info | Content of the badge | *number \| string* | - |
+| badge `2.5.6` | Content of the badge | *number \| string* | - |
 | url | Link | *string* | - |
 | to | Target route of the link, same as to of vue-router | *string \| object* | - |
 | replace | If true, the navigation will not leave a history record | *boolean* | `false` |

@@ -64,3 +64,33 @@ test('hide close icon when there is no title', () => {
   });
   expect(wrapper.contains('.van-popup__close-icon')).toBeFalsy();
 });
+
+test('allow-same-day prop', async () => {
+  const select = jest.fn();
+  const wrapper = mount(Calendar, {
+    propsData: {
+      type: 'range',
+      minDate,
+      maxDate,
+      poppable: false,
+    },
+    listeners: {
+      select,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days.at(9).trigger('click');
+  days.at(9).trigger('click');
+
+  expect(select).toHaveBeenLastCalledWith([minDate, null]);
+
+  wrapper.setProps({
+    allowSameDay: true,
+  });
+
+  days.at(9).trigger('click');
+  expect(select).toHaveBeenLastCalledWith([minDate, minDate]);
+});

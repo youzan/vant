@@ -11,15 +11,15 @@
           </van-col>
         </demo-block>
 
-        <demo-block :title="$t('info')">
+        <demo-block :title="$t('badge')">
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
             <van-icon :name="demoIcon" dot />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { info: '9' })">
-            <van-icon :name="demoIcon" info="9" />
+          <van-col span="6" @click="copy(demoIcon, { badge: '9' })">
+            <van-icon :name="demoIcon" badge="9" />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { info: '99+' })">
-            <van-icon :name="demoIcon" info="99+" />
+          <van-col span="6" @click="copy(demoIcon, { badge: '99+' })">
+            <van-icon :name="demoIcon" badge="99+" />
           </van-col>
         </demo-block>
 
@@ -113,7 +113,7 @@ export default {
   i18n: {
     'zh-CN': {
       title: '图标列表',
-      info: '提示信息',
+      badge: '徽标提示',
       basic: '基础图标',
       copied: '复制成功',
       outline: '线框风格',
@@ -124,7 +124,7 @@ export default {
     },
     'en-US': {
       title: 'Icon List',
-      info: 'Show Info',
+      badge: 'Show Badge',
       basic: 'Basic',
       copied: 'Copied',
       outline: 'Outline',
@@ -152,8 +152,8 @@ export default {
       if ('dot' in option) {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
       }
-      if ('info' in option) {
-        tag = `${tag} info="${option.info}"`;
+      if ('badge' in option) {
+        tag = `${tag} badge="${option.badge}"`;
       }
       if ('color' in option) {
         tag = `${tag} color="${option.color}"`;

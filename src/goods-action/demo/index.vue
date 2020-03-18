@@ -25,11 +25,11 @@
       </van-goods-action>
     </demo-block>
 
-    <demo-block :title="$t('iconInfo')">
+    <demo-block :title="$t('iconBadge')">
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" dot :text="$t('icon1')" />
-        <van-goods-action-icon icon="cart-o" info="5" :text="$t('icon2')" />
-        <van-goods-action-icon icon="shop-o" info="12" :text="$t('icon3')" />
+        <van-goods-action-icon icon="cart-o" badge="5" :text="$t('icon2')" />
+        <van-goods-action-icon icon="shop-o" badge="12" :text="$t('icon3')" />
         <van-goods-action-button type="warning" :text="$t('button1')" />
         <van-goods-action-button type="danger" :text="$t('button2')" />
       </van-goods-action>
@@ -81,7 +81,7 @@ export default {
       icon3: '店铺',
       button1: '加入购物车',
       button2: '立即购买',
-      iconInfo: '徽标提示',
+      iconBadge: '徽标提示',
       collected: '已收藏',
       clickIcon: '点击图标',
       clickButton: '点击按钮',
@@ -94,7 +94,7 @@ export default {
       icon3: 'Icon3',
       button1: 'Button1',
       button2: 'Button2',
-      iconInfo: 'Icon info',
+      iconBadge: 'Icon Badge',
       collected: 'Collected',
       clickIcon: 'Click Icon',
       clickButton: 'Click Button',

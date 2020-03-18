@@ -87,9 +87,9 @@ export default {
 }
 ```
 
-### 提示信息
+### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-tree-select
@@ -106,7 +106,7 @@ export default {
       activeIndex: 0,
       items: [
         { text: '浙江', children: [], dot: true },
-        { text: '江苏', children: [], info: 5 }
+        { text: '江苏', children: [], badge: 5 }
       ]
     }
   }
@@ -147,8 +147,8 @@ export default {
   {
     // 导航名称
     text: '所有城市',
-    // 导航名称右上角徽标
-    info: 3,
+    // 导航名称右上角徽标，2.5.6 版本开始支持
+    badge: 3,
     // 是否在导航名称右上角显示小红点
     dot: true,
     // 导航节点额外类名

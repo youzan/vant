@@ -34,15 +34,15 @@ export default {
 };
 ```
 
-### 提示信息
+### 徽标提示
 
-设置`dot`属性后，会在右上角展示一个小红点。设置`info`属性后，会在右上角展示相应的徽标
+设置`dot`属性后，会在右上角展示一个小红点。设置`badge`属性后，会在右上角展示相应的徽标
 
 ```html
 <van-sidebar v-model="activeKey">
   <van-sidebar-item title="标签名称" dot />
-  <van-sidebar-item title="标签名称" info="5" />
-  <van-sidebar-item title="标签名称" info="99+" />
+  <van-sidebar-item title="标签名称" badge="5" />
+  <van-sidebar-item title="标签名称" badge="99+" />
 </van-sidebar>
 ```
 
@@ -108,7 +108,8 @@ export default {
 |------|------|------|------|
 | title | 内容 | *string* | `''` |
 | dot `v2.2.1` | 是否显示右上角小红点 | *boolean* | `false` |
-| info | 右上角徽标的内容 | *number \| string* | - |
+| badge `v2.5.6` | 图标右上角徽标的内容 | *number \| string* | - |
+| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | *number \| string* | - |
 | disabled `v2.2.0` | 是否禁用该项 | *boolean* | `false` |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to `v2.0.4` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |

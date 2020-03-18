@@ -58,16 +58,16 @@ export default {
 }
 ```
 
-### 提示信息
+### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" badge="5">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" badge="20">标签</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -77,7 +77,7 @@ export default {
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item info="3">
+  <van-tabbar-item badge="3">
     <span>自定义</span>
     <img
       slot="icon"
@@ -188,7 +188,8 @@ export default {
 | icon | [图标名称](#/zh-CN/icon)或图片链接| *string* | - |
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
 | dot | 是否显示图标右上角小红点 | *boolean* | `false` |
-| info | 图标右上角徽标的内容 | *number \| string* | - |
+| badge `v2.5.6` | 图标右上角徽标的内容 | *number \| string* | - |
+| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | *number \| string* | - |
 | url | 点击后跳转的链接地址 | *string* | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
 | replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |

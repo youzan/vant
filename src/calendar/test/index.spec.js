@@ -82,6 +82,7 @@ test('select event when type is multiple', async () => {
   const days = wrapper.findAll('.van-calendar__day');
   days.at(15).trigger('click');
   days.at(16).trigger('click');
+  days.at(17).trigger('click');
 
   await later();
   days.at(15).trigger('click');
@@ -93,7 +94,10 @@ test('select event when type is multiple', async () => {
     '2010/1/10,2010/1/16,2010/1/17'
   );
   expect(formatMultiple(emittedSelect[2][0])).toEqual(
-    '2010/1/10,2010/1/17,2010/1/13'
+    '2010/1/10,2010/1/16,2010/1/17,2010/1/18'
+  );
+  expect(formatMultiple(emittedSelect[3][0])).toEqual(
+    '2010/1/10,2010/1/17,2010/1/18,2010/1/13'
   );
 });
 
