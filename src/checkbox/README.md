@@ -58,7 +58,7 @@ Use icon slot to custom icon
 
 ```html
 <van-checkbox v-model="checked">
-<!--  customize icon-->
+  customize icon
   <template #icon="props">
     <img
       class="img-icon"

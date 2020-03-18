@@ -68,7 +68,7 @@ export default {
 
 ```html
 <van-checkbox v-model="checked">
-<!--  自定义图标-->
+  自定义图标
   <template #icon="props">
     <img
       class="img-icon"
