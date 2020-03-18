@@ -93,7 +93,9 @@ export default {
 
 ```html
 <van-cell center title="标题">
-  <van-switch v-model="checked" slot="right-icon" size="24" />
+  <template #right-icon>
+    <van-switch v-model="checked" size="24" />
+  </template>
 </van-cell>
 ```
 
