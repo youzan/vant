@@ -15,11 +15,11 @@ Vue.use(SwipeCell);
 
 ```html
 <van-swipe-cell>
-  <template v-slot:left>
+  <template #left>
     <van-button square type="primary" text="Select" />
   </template>
   <van-cell :border="false" title="Cell" value="Cell Content" />
-  <template v-slot:right>
+  <template #right>
     <van-button square type="danger" text="Delete" />
     <van-button square type="primary" text="Collect"/>
   </template>
@@ -38,7 +38,7 @@ Vue.use(SwipeCell);
     class="goods-card"
     thumb="https://img.yzcdn.cn/vant/cat.jpeg"
   />
-  <template v-slot:right>
+  <template #right>
     <van-button
       square
       text="Delete"
@@ -65,11 +65,11 @@ Vue.use(SwipeCell);
 
 ```html
 <van-swipe-cell :before-close="beforeClose">
-  <template v-slot:left>
+  <template #left>
     <van-button square type="primary" text="Select" />
   </template>
   <van-cell :border="false" title="Cell" value="Cell Content" />
-  <template v-slot:right>
+  <template #right>
     <van-button square type="danger" text="Delete" />
   </template>
 </van-swipe-cell>
