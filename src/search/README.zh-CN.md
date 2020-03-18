@@ -104,8 +104,11 @@ export default {
   show-action
   placeholder="请输入搜索关键词"
   @search="onSearch"
+  label="地址"
 >
-  <div slot="action" @click="onSearch">搜索</div>
+  <template #action>
+    <div @click="onSearch">搜索</div>
+  </template>
 </van-search>
 ```
 
