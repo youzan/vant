@@ -120,11 +120,29 @@ export default {
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-
-  <div class="custom-indicator" slot="indicator">
-    {{ current + 1 }}/4
-  </div>
+  <template #indicator>
+    <div class="custom-indicator">
+      {{ current + 1 }}/4
+    </div>
+  </template>
 </van-swipe>
+
+<style>
+  .van-swipe-item {
+    background-color: #39a9ed;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+  }
+  .custom-indicator {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px 5px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+</style>
 ```
 
 ```js
