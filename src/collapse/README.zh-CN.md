@@ -61,7 +61,9 @@ export default {
 ```html
 <van-collapse v-model="activeNames">
   <van-collapse-item name="1">
-    <div slot="title">标题1 <van-icon name="question-o" /></div>
+    <template #title>
+      <div>标题1 <van-icon name="question-o" /></div>
+    </template>
     内容
   </van-collapse-item>
   <van-collapse-item title="标题2" name="2" icon="shop-o">
