@@ -23,7 +23,7 @@ export default {
   },
 
   data() {
-    const path = location.pathname.replace('/index', '/');
+    const path = location.pathname.replace(/\/index(\.html)?/, '/');
 
     return {
       packageVersion,
