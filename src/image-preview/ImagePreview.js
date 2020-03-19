@@ -361,6 +361,10 @@ export default createComponent({
         );
       }
     },
+
+    onClosed() {
+      this.$emit('closed');
+    },
   },
 
   render() {
@@ -369,7 +373,7 @@ export default createComponent({
     }
 
     return (
-      <transition name="van-fade">
+      <transition name="van-fade" onAfterLeave={this.onClosed}>
         <div vShow={this.value} class={[bem(), this.className]}>
           {this.genClose()}
           {this.genImages()}
