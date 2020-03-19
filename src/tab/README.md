@@ -142,10 +142,10 @@ Use title slot to custom tab title
 
 ```html
 <van-tabs v-model="active">
-  <van-tab v-for="index in 2">
-    <div slot="title">
+  <van-tab v-for="index in 2" :key="index">
+    <template #title>
       <van-icon name="more-o" />tab
-    </div>
+    </template>
     content {{ index }}
   </van-tab>
 </van-tabs>

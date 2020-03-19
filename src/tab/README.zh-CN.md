@@ -146,10 +146,10 @@ export default {
 
 ```html
 <van-tabs v-model="active">
-  <van-tab v-for="index in 2">
-    <div slot="title">
+  <van-tab v-for="index in 2" :key="index">
+    <template #title>
       <van-icon name="more-o" />选项
-    </div>
+    </template>
     内容 {{ index }}
   </van-tab>
 </van-tabs>
