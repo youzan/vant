@@ -63,7 +63,7 @@ export default {
   :items="items"
   :main-active-index.sync="active"
 >
-  <template slot="content">
+  <template #content>
     <van-image v-if="active === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
     <van-image v-if="active === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
   </template>
