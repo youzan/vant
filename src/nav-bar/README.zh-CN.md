@@ -45,7 +45,9 @@ export default {
 
 ```html
 <van-nav-bar title="标题" left-text="返回" left-arrow>
-  <van-icon name="search" slot="right" />
+  <template #right>
+    <van-icon name="search"/> 
+  </template>
 </van-nav-bar>
 ```
 

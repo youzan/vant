@@ -43,7 +43,9 @@ export default {
 
 ```html
 <van-nav-bar title="Title" left-text="Back" left-arrow>
-  <van-icon name="search" slot="right" />
+  <template #right>
+    <van-icon name="search"/> 
+  </template>
 </van-nav-bar>
 ```
 
