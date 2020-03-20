@@ -79,19 +79,22 @@ Vue.use(CellGroup);
 ### Use Slots
 
 ```html
-<van-cell value="Content" is-link>
-  <template slot="title">
-    <span class="custom-title">Cell title</span>
-    <van-tag type="danger">Tag</van-tag>
+<van-cell value="内容" is-link>
+  <!-- Use the title slot to customize the title -->
+  <template #title>
+    <span class="custom-title">单元格</span>
+    <van-tag type="danger">标签</van-tag>
   </template>
 </van-cell>
 
-<van-cell title="Cell title" icon="shop-o">
-  <van-icon
-    slot="right-icon"
-    name="search"
-    style="line-height: inherit;"
-  />
+<van-cell title="单元格" icon="shop-o">
+  <!-- Use the right-icon slot to customize the right icon -->
+  <template #right-icon>
+    <van-icon
+      name="search"
+      style="line-height: inherit;"
+    />
+  </template>
 </van-cell>
 ```
 

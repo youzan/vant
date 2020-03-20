@@ -24,10 +24,10 @@ Vue.use(Panel);
 ```html
 <van-panel title="Title" desc="Description" status="Status">
   <div>Content</div>
-  <div slot="footer">
+  <template #footer>
     <van-button size="small">Button</van-button>
     <van-button size="small" type="danger">Button</van-button>
-  </div>
+  </template>
 </van-panel>
 ```
 

@@ -49,14 +49,14 @@ Use slot to custom content.
   price="2.00"
   thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
-  <div slot="tags">
+  <template #tags>
     <van-tag plain type="danger">Tag</van-tag>
     <van-tag plain type="danger">Tag</van-tag>
-  </div>
-  <div slot="footer">
+  </template>
+  <template #footer>
     <van-button size="mini">Button</van-button>
     <van-button size="mini">Button</van-button>
-  </div>
+  </template>
 </van-card>
 ```
 

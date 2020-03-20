@@ -87,7 +87,7 @@ Vue.use(CellGroup);
 ```html
 <van-cell value="内容" is-link>
   <!-- 使用 title 插槽来自定义标题 -->
-  <template slot="title">
+  <template #title>
     <span class="custom-title">单元格</span>
     <van-tag type="danger">标签</van-tag>
   </template>
@@ -95,11 +95,12 @@ Vue.use(CellGroup);
 
 <van-cell title="单元格" icon="shop-o">
   <!-- 使用 right-icon 插槽来自定义右侧图标 -->
-  <van-icon
-    slot="right-icon"
-    name="search"
-    style="line-height: inherit;"
-  />
+  <template #right-icon>
+    <van-icon
+      name="search"
+      style="line-height: inherit;"
+    />
+  </template>
 </van-cell>
 ```
 

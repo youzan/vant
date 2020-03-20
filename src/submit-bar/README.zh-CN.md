@@ -60,9 +60,9 @@ Vue.use(SubmitBar);
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">全选</van-checkbox>
-  <span slot="tip">
-    你的收货地址不支持同城送, <span>修改地址</span>
-  </span>
+    <template #tip>
+        你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
+    </template>
 </van-submit-bar>
 ```
 

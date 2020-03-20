@@ -60,9 +60,9 @@ Use slot to add custom contents.
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">Check</van-checkbox>
-  <span slot="tip">
-    Some tips, <span @click="onClickEditAddress">Link</span>
-  </span>
+    <template #tip>
+        Some tips, <span @click="onClickEditAddress">Link</span>
+    </template>
 </van-submit-bar>
 ```
 

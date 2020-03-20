@@ -66,9 +66,11 @@ export default {
 
 ```html
 <van-slider v-model="value" active-color="#ee0a24">
-  <div slot="button" class="custom-button">
-    {{ value }}
-  </div>
+  <template #button>
+    <div class="custom-button">
+      {{ value }}
+    </div>
+  </template>
 </van-slider>
 
 <style>

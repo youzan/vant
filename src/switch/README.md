@@ -81,7 +81,9 @@ export default {
 
 ```html
 <van-cell center title="Title">
-  <van-switch v-model="checked" slot="right-icon" size="24" />
+  <template #right-icon>
+    <van-switch v-model="checked" size="24" />
+  </template>
 </van-cell>
 ```
 

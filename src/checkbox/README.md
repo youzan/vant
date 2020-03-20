@@ -58,13 +58,21 @@ Use icon slot to custom icon
 
 ```html
 <van-checkbox v-model="checked">
-  Custom Icon
-  <img
-    slot="icon"
-    slot-scope="props"
-    :src="props.checked ? activeIcon : inactiveIcon"
-  >
+  customize icon
+  <template #icon="props">
+    <img
+      class="img-icon"
+      :src="props.checked ? activeIcon : inactiveIcon"
+    />
+</template>
+
 </van-checkbox>
+
+<style>
+.img-icon {
+  height: 20px;  
+}
+</style>
 ```
 
 ```js
@@ -178,7 +186,9 @@ export default {
       :title="`Checkbox ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox slot="right-icon" :name="item" ref="checkboxes" />
+    <template #right-icon>
+      <van-checkbox :name="item" ref="checkboxes" />
+    </template>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>

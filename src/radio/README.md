@@ -86,21 +86,29 @@ Use icon slot to custom icon
 <van-radio-group v-model="radio">
   <van-radio name="1">
     Radio 1
-    <img
-      slot="icon"
-      slot-scope="props"
-      :src="props.checked ? activeIcon : inactiveIcon"
-    >
+    <template #icon="props">
+      <img
+        class="img-icon"
+        :src="props.checked ? activeIcon : inactiveIcon"
+      >
+    </template>
   </van-radio>
   <van-radio name="2">
     Radio 2
-    <img
-      slot="icon"
-      slot-scope="props"
-      :src="props.checked ? activeIcon : inactiveIcon"
-    >
+    <template #icon="props">
+      <img
+        class="img-icon"
+        :src="props.checked ? activeIcon : inactiveIcon"
+      />
+    </template>
   </van-radio>
 </van-radio-group>
+
+<style>
+  .img-icon {
+    height: 20px;  
+}
+</style>>
 ```
 
 ```js
@@ -130,10 +138,14 @@ export default {
 <van-radio-group v-model="radio">
   <van-cell-group>
     <van-cell title="Radio 1" clickable @click="radio = '1'">
-      <van-radio slot="right-icon" name="1" />
+      <template #right-icon>      
+        <van-radio name="1" />
+      </template>
     </van-cell>
     <van-cell title="Radio 2" clickable @click="radio = '2'">
-      <van-radio slot="right-icon" name="2" />
+      <template #right-icon>
+        <van-radio name="2" />
+      </template>
     </van-cell>
   </van-cell-group>
 </van-radio-group>

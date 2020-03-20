@@ -81,14 +81,14 @@ export default {
   @add-cart="onAddCartClicked"
 >
   <!-- custom sku-header-price -->
-  <template slot="sku-header-price" slot-scope="props">
+  <template #sku-header-price="props">
     <div class="van-sku__goods-price">
       <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
 
   <!-- custom sku actions -->
-  <template slot="sku-actions" slot-scope="props">
+  <template #sku-actions="props">
     <div class="van-sku-actions">
       <van-button
         square

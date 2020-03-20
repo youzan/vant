@@ -69,20 +69,30 @@ export default {
 ```html
 <van-checkbox v-model="checked">
   自定义图标
-  <img
-    slot="icon"
-    slot-scope="props"
-    :src="props.checked ? activeIcon : inactiveIcon"
-  >
+  <template #icon="props">
+    <img
+      class="img-icon"
+      :src="props.checked ? activeIcon : inactiveIcon"
+    />
+</template>
+
 </van-checkbox>
+
+<style>
+.img-icon {
+  height: 20px;  
+}
+</style>
 ```
 
 ```js
 export default {
   data() {
-    checked: true,
-    activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+    return {
+      checked: true,
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+    }
   }
 }
 ```
@@ -196,7 +206,9 @@ export default {
       :title="`复选框 ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox slot="right-icon" :name="item" ref="checkboxes" />
+    <template #right-icon>
+      <van-checkbox :name="item" ref="checkboxes" />
+    </template>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -206,7 +218,7 @@ export default {
 export default {
   data() {
     return {
-      list: ['a', 'b']
+      list: ['a', 'b'],
       result: []
     };
   },

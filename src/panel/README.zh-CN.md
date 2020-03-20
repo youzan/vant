@@ -28,10 +28,10 @@ Vue.use(Panel);
 ```html
 <van-panel title="标题" desc="描述信息" status="状态">
   <div>内容</div>
-  <div slot="footer">
+  <template #footer>
     <van-button size="small">按钮</van-button>
     <van-button size="small" type="danger">按钮</van-button>
-  </div>
+  </template>
 </van-panel>
 ```
 

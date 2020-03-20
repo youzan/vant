@@ -149,7 +149,9 @@ export default {
   label="短信验证码"
   placeholder="请输入短信验证码"
 >
-  <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+  <template #button>
+    <van-button size="small" type="primary">发送验证码</van-button>
+  </template>
 </van-field>
 ```
 

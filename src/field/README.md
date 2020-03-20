@@ -133,7 +133,9 @@ Use button slot to insert button
   label="SMS"
   placeholder="SMS"
 >
-  <van-button slot="button" size="small" type="primary">Send SMS</van-button>
+  <template #button>
+    <van-button size="small" type="primary">Send SMS</van-button>
+  </template>
 </van-field>
 ```
 
