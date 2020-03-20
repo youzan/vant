@@ -62,6 +62,10 @@ const ImagePreview = (images, startPosition = 0) => {
     instance.value = show;
   });
 
+  instance.$once('closed', () => {
+    instance.images = [];
+  });
+
   if (options.onClose) {
     instance.$off('close');
     instance.$once('close', options.onClose);

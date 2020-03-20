@@ -144,6 +144,7 @@ export default {
 | Event | Description | Parameters |
 |------|------|------|
 | close | Triggered when close | { index, url } |
+| closed `v2.5.6` | Triggered after closed | - |
 | change | Triggered when current image change | index: index of current image |
 | scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
 

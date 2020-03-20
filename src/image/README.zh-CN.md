@@ -154,3 +154,25 @@ Vue.use(Lazyload);
 ```
 
 > 对此更详细的解释可以参考 vue-loader 的[处理资源路径](https://vue-loader.vuejs.org/zh/guide/asset-url.html)章节。
+
+### 使用 image 标签无法渲染？
+
+使用 Image 组件时，可能会遇到将 \<image> 作为标签名时无法渲染的问题，比如下面的写法：
+
+```html
+<template>
+  <image src="xxx" />
+</template>
+
+<script>
+import { Image } from 'vant';
+
+export default {
+  components: {
+    Image,
+  },
+};
+<script>
+```
+
+这是因为 \<image> 标签是原生的 SVG 标签，Vue 不允许将原生标签名注册为组件名，使用 \<van-image> 即可规避这个问题。
