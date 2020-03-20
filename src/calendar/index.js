@@ -372,7 +372,7 @@ export default createComponent({
             color={this.color}
             class={bem('confirm')}
             disabled={this.buttonDisabled}
-            nativeType="text"
+            nativeType="button"
             onClick={this.onConfirm}
           >
             {text || t('confirm')}
