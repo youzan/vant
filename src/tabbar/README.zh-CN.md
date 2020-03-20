@@ -80,9 +80,7 @@ export default {
   <van-tabbar-item badge="3">
     <span>自定义</span>
       <template #icon="props">
-        <img
-          :src="props.active ? icon.active : icon.inactive"
-        />
+        <img :src="props.active ? icon.active : icon.inactive"/>
       </template>
   </van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>

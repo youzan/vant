@@ -74,9 +74,7 @@ Use `icon` slot to custom icon
   <van-tabbar-item badge="3">
     <span>Custom</span>
       <template #icon="props">
-        <img
-          :src="props.active ? icon.active : icon.inactive"
-        />
+        <img :src="props.active ? icon.active : icon.inactive"/>
       </template>
   </van-tabbar-item>
   <van-tabbar-item icon="search">Tab</van-tabbar-item>
