@@ -95,7 +95,6 @@ Vue.use(CellGroup);
       style="line-height: inherit;"
     />
   </template>
-
 </van-cell>
 ```
 
