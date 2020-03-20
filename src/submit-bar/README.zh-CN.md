@@ -61,9 +61,7 @@ Vue.use(SubmitBar);
 >
   <van-checkbox v-model="checked">全选</van-checkbox>
     <template #tip>
-      <span>
         你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
-      </span>
     </template>
 </van-submit-bar>
 ```
