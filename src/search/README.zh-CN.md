@@ -103,8 +103,8 @@ export default {
   v-model="value"
   show-action
   placeholder="请输入搜索关键词"
-  @search="onSearch"
   label="地址"
+  @search="onSearch"
 >
   <template #action>
     <div @click="onSearch">搜索</div>
