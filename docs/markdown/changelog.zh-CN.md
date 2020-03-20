@@ -10,6 +10,34 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.6](https://github.com/youzan/vant/compare/v2.5.5...v2.5.6)
+
+`2020-03-20`
+
+**Feature**
+
+- Calendar: 新增 allow-same-day 属性 [#5688](https://github.com/youzan/vant/issues/5688)
+- GoodsAction: 新增 badge 属性 [0dea9e](https://github.com/youzan/vant/commit/0dea9e2cb1562decc07ef4467d085247b91924fd)
+- GridItem: 新增 badge 属性 [db94b2](https://github.com/youzan/vant/commit/db94b20c8258ebb31bac99ea1f0c918d62de1059)
+- Icon: 新增 badge 属性 [575577](https://github.com/youzan/vant/commit/575577ed58a1e6daa36ffba7db8054556aa0d24d)
+- ImagePreview: 新增 closed 事件 [5b279a](https://github.com/youzan/vant/commit/5b279ab0dc862c0a3257d18fe17d04ed8dd8c1dd)
+- locale: 新增日语配置文件 [#5853](https://github.com/youzan/vant/issues/5853) [#5854](https://github.com/youzan/vant/issues/5854)
+- SidebarItem: 新增 badge 属性 [01482f](https://github.com/youzan/vant/commit/01482f20bc2150a7e4667fac062b4f129b0ac0c1)
+- Tab: 新增 badge 属性 [214b13](https://github.com/youzan/vant/commit/214b13b8fff411a401fe6ccfc9eb979a51df7461)
+- TabbarItem: 新增 badge 属性 [d61cbd](https://github.com/youzan/vant/commit/d61cbdd086c9050fa467803be676a1eb14d50f16)
+- TreeSelect: 新增 badge 选项 [0cc7a3](https://github.com/youzan/vant/commit/0cc7a305287f43314910f893092c09004cef5349)
+- Uploader: 新增 chooseFile 方法 [#5818](https://github.com/youzan/vant/issues/5818)
+- Uploader: 新增 show-upload 属性 [66c0b3](https://github.com/youzan/vant/commit/66c0b3c1b7d101f242071cf90e5c0b2b899edbdd)
+- Uploader: 支持在 before-read 中返回修改后的文件对象 [#5813](https://github.com/youzan/vant/issues/5813)
+
+**Bug Fixes**
+
+- Calendar: 修复在 Form 内使用时错误触发表单提交的问题 [#5873](https://github.com/youzan/vant/issues/5873)
+- Field: 修复通过插槽使用 Uploader 时上传图片未展示的问题 [#5868](https://github.com/youzan/vant/issues/5868)
+- ImagePreview: 修复上次调用结果未清除的问题 [7fcfc5](https://github.com/youzan/vant/commit/7fcfc5f3270d3507a002247c53a29da211f1ecb6)
+- Picker: 修复 setValues、setIndexes 等方法未触发多列联动更新的问题 [#5807](https://github.com/youzan/vant/issues/5807)
+- Toast: 修复设置 forbidClick 后未锁定滚动的问题 [df8777](https://github.com/youzan/vant/commit/df877751b3497eb6477797ee1a52933067e57676)
+
 ### [v2.5.5](https://github.com/youzan/vant/compare/v2.5.4...v2.5.5)
 
 `2020-03-11`
