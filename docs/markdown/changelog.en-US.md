@@ -1,5 +1,14 @@
 # Changelog
 
+### [v2.5.7](https://github.com/youzan/vant/compare/v2.5.6...v2.5.7)
+
+`2020-03-20`
+
+**Bug Fixes**
+
+- Locale: fix incorrect japanese filename [e8c88a](https://github.com/youzan/vant/commit/e8c88a380217eb48cef8aa7dc29d378a1031120a)
+
+
 ### [v2.5.6](https://github.com/youzan/vant/compare/v2.5.5...v2.5.6)
 
 `2020-03-20`
