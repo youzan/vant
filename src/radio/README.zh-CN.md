@@ -102,7 +102,6 @@ export default {
         :src="props.checked ? activeIcon : inactiveIcon"
       >
     </template>
-
   </van-radio>
   <van-radio name="2">
     单选框 2
@@ -110,9 +109,8 @@ export default {
       <img
         class="img-icon"
         :src="props.checked ? activeIcon : inactiveIcon"
-      >
+      />
     </template>
-
   </van-radio>
 </van-radio-group>
 

@@ -92,7 +92,6 @@ Use icon slot to custom icon
         :src="props.checked ? activeIcon : inactiveIcon"
       >
     </template>
-
   </van-radio>
   <van-radio name="2">
     Radio 2
@@ -100,9 +99,8 @@ Use icon slot to custom icon
       <img
         class="img-icon"
         :src="props.checked ? activeIcon : inactiveIcon"
-      >
+      />
     </template>
-
   </van-radio>
 </van-radio-group>
 
