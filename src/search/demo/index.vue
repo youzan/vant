@@ -40,9 +40,9 @@
     <demo-block :title="$t('customButton')">
       <van-search
         v-model="value6"
-        :placeholder="$t('placeholder')"
         show-action
         :label="$t('label')"
+        :placeholder="$t('placeholder')"
         @search="onSearch"
       >
         <template #action>

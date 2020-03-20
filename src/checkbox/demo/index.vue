@@ -53,7 +53,7 @@
       </van-checkbox-group>
     </demo-block>
 
-    <demo-block :title="$t('horizontal')">
+    <demo-block v-if="!isWeapp" :title="$t('horizontal')">
       <van-checkbox-group v-model="horizontalResult" direction="horizontal">
         <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
         <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>

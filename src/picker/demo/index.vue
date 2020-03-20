@@ -32,7 +32,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('cascade')">
+    <demo-block v-if="!isWeapp" :title="$t('cascade')">
       <van-picker
         show-toolbar
         :title="$t('title')"
@@ -54,7 +54,7 @@
       <van-picker loading :columns="columns" />
     </demo-block>
 
-    <demo-block :title="$t('withPopup')">
+    <demo-block v-if="!isWeapp" :title="$t('withPopup')">
       <van-field
         readonly
         clickable

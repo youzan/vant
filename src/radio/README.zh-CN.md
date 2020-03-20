@@ -57,7 +57,7 @@ export default {
 
 ### 自定义形状
 
-通过`square`属性设置选中状态的图标颜色
+将`shape`属性设置为`square`，单选框的形状会变成方形
 
 ```html
 <van-radio-group v-model="radio">

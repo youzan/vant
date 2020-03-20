@@ -58,7 +58,7 @@
       <van-button type="primary" block>{{ $t('blockElement') }}</van-button>
     </demo-block>
 
-    <demo-block :title="$t('router')">
+    <demo-block v-if="!isWeapp" :title="$t('router')">
       <van-button
         :text="$t('urlRoute')"
         type="primary"

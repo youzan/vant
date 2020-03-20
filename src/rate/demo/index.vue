@@ -40,7 +40,7 @@
       <van-rate v-model="value6" readonly />
     </demo-block>
 
-    <demo-block :title="$t('changeEvent')">
+    <demo-block v-if="!isWeapp" :title="$t('changeEvent')">
       <van-rate v-model="value7" @change="onChange" />
     </demo-block>
   </demo-section>
