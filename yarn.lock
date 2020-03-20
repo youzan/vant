@@ -1385,10 +1385,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.2.6.tgz#2904c538785431dae7ef8455cf49a143e876844c"
-  integrity sha512-WZ4pEFor1H7njzny89Pq+DuVLi0f4uKN9UI7ccK5NogBSvG5U6OLbqzYEAfXFngNv9v3mpgcqtE0xCIw/+msDQ==
+"@vant/cli@^2.2.8":
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.2.8.tgz#3ed2145642b763af53f4c4e144aa5c5445ae3fe5"
+  integrity sha512-kpx2X5K+5QnF/fxDD0HlyQWlEg4YE+dowlizoBZY/OwIJt6XVrY2W8C540BCYexu/1CJj/oowkhcr7dxLTNEjw==
   dependencies:
     "@babel/core" "^7.8.7"
     "@babel/plugin-syntax-jsx" "^7.8.3"
