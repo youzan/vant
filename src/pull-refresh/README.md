@@ -84,7 +84,7 @@ Use slots to custom tips
       src="https://img.yzcdn.cn/vant/doge-fire.jpg"
     />
   </template>
-  <p>count: {{ count }}</p>
+  <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>
 
 <style>
