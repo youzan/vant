@@ -124,14 +124,10 @@ export default createComponent({
     },
 
     formValue() {
-      if (this.children && this.inputSlot) {
+      if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
         return this.children.value;
       }
       return this.value;
-    },
-
-    inputSlot() {
-      return this.slots('input');
     },
   },
 
@@ -380,13 +376,12 @@ export default createComponent({
 
     genInput() {
       const { type } = this;
+      const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
-      if (this.inputSlot) {
+      if (inputSlot) {
         return (
-          <div class={bem('control', [inputAlign, 'custom'])}>
-            {this.inputSlot}
-          </div>
+          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
         );
       }
 
