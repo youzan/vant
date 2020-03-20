@@ -37,7 +37,7 @@ function transform(item: any) {
 
   if (item.references.length) {
     item.references.forEach((ref: any) => {
-      if (ref.issue) {
+      if (ref.issue && item.subject) {
         item.subject = item.subject.replace(` (#${ref.issue})`, '');
       }
     });
