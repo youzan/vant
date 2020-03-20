@@ -50,7 +50,6 @@ Vue.use(SwipeCell);
       class="delete-button"
     />
   </template>
-
 </van-swipe-cell>
 
 <style>
