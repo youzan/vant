@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import { zhCNData } from './data.zh-CN';
-import { enUSData } from './data.en-US';
+import { zhCNData } from './data-zh';
+import { enUSData } from './data-en';
 import { deepClone } from '../../utils/deep-clone';
 
 export default {

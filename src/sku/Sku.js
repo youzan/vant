@@ -18,7 +18,7 @@ import {
   getSelectedSkuValues,
   getSelectedPropValues,
   getSelectedProperties,
-} from './utils/skuHelper';
+} from './utils/sku-helper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
 const namespace = createNamespace('sku');
