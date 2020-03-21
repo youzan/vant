@@ -1,91 +1,91 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-cell
         is-link
-        :title="$t('selectSingle')"
+        :title="t('selectSingle')"
         :value="formatFullDate(date.selectSingle)"
         @click="show('single', 'selectSingle')"
       />
 
       <van-cell
         is-link
-        :title="$t('selectMultiple')"
+        :title="t('selectMultiple')"
         :value="formatMultiple(date.selectMultiple)"
         @click="show('multiple', 'selectMultiple')"
       />
 
       <van-cell
         is-link
-        :title="$t('selectRange')"
+        :title="t('selectRange')"
         :value="formatRange(date.selectRange)"
         @click="show('range', 'selectRange')"
       />
     </demo-block>
 
-    <demo-block :title="$t('quickSelect')">
+    <demo-block :title="t('quickSelect')">
       <van-cell
         is-link
-        :title="$t('selectSingle')"
+        :title="t('selectSingle')"
         :value="formatFullDate(date.quickSelect1)"
         @click="show('single', 'quickSelect1')"
       />
 
       <van-cell
         is-link
-        :title="$t('selectRange')"
+        :title="t('selectRange')"
         :value="formatRange(date.quickSelect2)"
         @click="show('range', 'quickSelect2')"
       />
     </demo-block>
 
-    <demo-block :title="$t('customCalendar')">
+    <demo-block :title="t('customCalendar')">
       <van-cell
         is-link
-        :title="$t('customColor')"
+        :title="t('customColor')"
         :value="formatRange(date.customColor)"
         @click="show('range', 'customColor')"
       />
 
       <van-cell
         is-link
-        :title="$t('customRange')"
+        :title="t('customRange')"
         :value="formatFullDate(date.customRange)"
         @click="show('single', 'customRange')"
       />
 
       <van-cell
         is-link
-        :title="$t('customConfirm')"
+        :title="t('customConfirm')"
         :value="formatRange(date.customConfirm)"
         @click="show('range', 'customConfirm')"
       />
 
       <van-cell
         is-link
-        :title="$t('customDayText')"
+        :title="t('customDayText')"
         :value="formatRange(date.customDayText)"
         @click="show('range', 'customDayText')"
       />
 
       <van-cell
         is-link
-        :title="$t('customPosition')"
+        :title="t('customPosition')"
         :value="formatFullDate(date.customPosition)"
         @click="show('single', 'customPosition')"
       />
 
       <van-cell
         is-link
-        :title="$t('maxRange')"
+        :title="t('maxRange')"
         :value="formatRange(date.maxRange)"
         @click="show('range', 'maxRange')"
       />
     </demo-block>
 
-    <demo-block :title="$t('tiledDisplay')">
+    <demo-block :title="t('tiledDisplay')">
       <van-calendar
-        :title="$t('calendar')"
+        :title="t('calendar')"
         :poppable="false"
         :show-confirm="false"
         :min-date="tiledMinDate"
@@ -226,8 +226,8 @@ export default {
           this.color = GREEN;
           break;
         case 'customConfirm':
-          this.confirmText = this.$t('confirmText');
-          this.confirmDisabledText = this.$t('confirmDisabledText');
+          this.confirmText = this.t('confirmText');
+          this.confirmDisabledText = this.t('confirmDisabledText');
           break;
         case 'customRange':
           this.minDate = new Date(2010, 0, 1);
@@ -254,18 +254,18 @@ export default {
 
       if (month === 5) {
         if (date === 1) {
-          day.topInfo = this.$t('laborDay');
+          day.topInfo = this.t('laborDay');
         } else if (date === 4) {
-          day.topInfo = this.$t('youthDay');
+          day.topInfo = this.t('youthDay');
         } else if (date === 11) {
-          day.text = this.$t('today');
+          day.text = this.t('today');
         }
       }
 
       if (day.type === 'start') {
-        day.bottomInfo = this.$t('in');
+        day.bottomInfo = this.t('in');
       } else if (day.type === 'end') {
-        day.bottomInfo = this.$t('out');
+        day.bottomInfo = this.t('out');
       }
 
       return day;
@@ -285,7 +285,7 @@ export default {
 
     formatMultiple(dates) {
       if (dates.length) {
-        return this.$t('selectCount', dates.length);
+        return this.t('selectCount', dates.length);
       }
     },
 

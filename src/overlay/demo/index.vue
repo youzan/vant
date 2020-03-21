@@ -1,9 +1,9 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-button
         type="primary"
-        :text="$t('showOverlay')"
+        :text="t('showOverlay')"
         style="margin-left: 16px;"
         @click="show = true"
       />
@@ -11,10 +11,10 @@
       <van-overlay :show="show" @click="show = false" />
     </demo-block>
 
-    <demo-block :title="$t('embeddedContent')">
+    <demo-block :title="t('embeddedContent')">
       <van-button
         type="primary"
-        :text="$t('embeddedContent')"
+        :text="t('embeddedContent')"
         style="margin-left: 16px;"
         @click="showEmbedded = true"
       />

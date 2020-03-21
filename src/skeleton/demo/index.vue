@@ -1,21 +1,21 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-skeleton title :row="3" />
     </demo-block>
 
-    <demo-block :title="$t('showAvatar')">
+    <demo-block :title="t('showAvatar')">
       <van-skeleton title avatar :row="3" />
     </demo-block>
 
-    <demo-block :title="$t('showChildren')">
+    <demo-block :title="t('showChildren')">
       <van-switch v-model="show" size="24px" />
       <van-skeleton title avatar :row="3" :loading="!show">
         <div class="demo-preview">
           <img src="https://img.yzcdn.cn/vant/logo.png" />
           <div class="demo-content">
-            <h3>{{ $t('title') }}</h3>
-            <p>{{ $t('desc') }}</p>
+            <h3>{{ t('title') }}</h3>
+            <p>{{ t('desc') }}</p>
           </div>
         </div>
       </van-skeleton>

@@ -1,21 +1,17 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <van-cell :title="$t('buttonBasic')" is-link @click="showBasic = true" />
+    <demo-block :title="t('basicUsage')">
+      <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
       <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }">
-        {{ $t('content') }}
+        {{ t('content') }}
       </van-popup>
     </demo-block>
 
-    <demo-block :title="$t('position')">
-      <van-cell :title="$t('buttonTop')" is-link @click="showTop = true" />
-      <van-cell
-        :title="$t('buttonBottom')"
-        is-link
-        @click="showBottom = true"
-      />
-      <van-cell :title="$t('buttonLeft')" is-link @click="showLeft = true" />
-      <van-cell :title="$t('buttonRight')" is-link @click="showRight = true" />
+    <demo-block :title="t('position')">
+      <van-cell :title="t('buttonTop')" is-link @click="showTop = true" />
+      <van-cell :title="t('buttonBottom')" is-link @click="showBottom = true" />
+      <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
+      <van-cell :title="t('buttonRight')" is-link @click="showRight = true" />
 
       <van-popup v-model="showTop" position="top" :style="{ height: '30%' }" />
       <van-popup
@@ -35,19 +31,15 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('closeIcon')">
+    <demo-block :title="t('closeIcon')">
+      <van-cell :title="t('closeIcon')" is-link @click="showCloseIcon = true" />
       <van-cell
-        :title="$t('closeIcon')"
-        is-link
-        @click="showCloseIcon = true"
-      />
-      <van-cell
-        :title="$t('customCloseIcon')"
+        :title="t('customCloseIcon')"
         is-link
         @click="showCustomCloseIcon = true"
       />
       <van-cell
-        :title="$t('customIconPosition')"
+        :title="t('customIconPosition')"
         is-link
         @click="showCustomIconPosition = true"
       />
@@ -74,9 +66,9 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('roundCorner')">
+    <demo-block :title="t('roundCorner')">
       <van-cell
-        :title="$t('roundCorner')"
+        :title="t('roundCorner')"
         is-link
         @click="showRoundCorner = true"
       />
@@ -88,9 +80,9 @@
       />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="$t('getContainer')">
+    <demo-block v-if="!isWeapp" :title="t('getContainer')">
       <van-cell
-        :title="$t('getContainer')"
+        :title="t('getContainer')"
         is-link
         @click="showGetContainer = true"
       />

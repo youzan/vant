@@ -1,38 +1,38 @@
 <template>
   <demo-section>
-    <van-cell center :title="$t('basicUsage')">
+    <van-cell center :title="t('basicUsage')">
       <van-stepper v-model="stepper1" />
     </van-cell>
 
-    <van-cell center :title="$t('step')">
+    <van-cell center :title="t('step')">
       <van-stepper v-model="stepper2" step="2" />
     </van-cell>
 
-    <van-cell center :title="$t('range')">
+    <van-cell center :title="t('range')">
       <van-stepper v-model="stepper3" :min="5" :max="8" />
     </van-cell>
 
-    <van-cell center :title="$t('integer')">
+    <van-cell center :title="t('integer')">
       <van-stepper v-model="stepper4" integer />
     </van-cell>
 
-    <van-cell center :title="$t('disabled')">
+    <van-cell center :title="t('disabled')">
       <van-stepper v-model="stepper5" disabled />
     </van-cell>
 
-    <van-cell center :title="$t('disableInput')">
+    <van-cell center :title="t('disableInput')">
       <van-stepper v-model="disabledInput" disable-input />
     </van-cell>
 
-    <van-cell center :title="$t('decimalLength')">
+    <van-cell center :title="t('decimalLength')">
       <van-stepper v-model="stepper8" :decimal-length="1" step="0.2" />
     </van-cell>
 
-    <van-cell center :title="$t('customSize')">
+    <van-cell center :title="t('customSize')">
       <van-stepper v-model="stepper7" button-size="32px" input-width="40px" />
     </van-cell>
 
-    <van-cell center :title="$t('asyncChange')">
+    <van-cell center :title="t('asyncChange')">
       <van-stepper :value="stepper6" async-change @change="onChange" />
     </van-cell>
   </demo-section>

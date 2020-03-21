@@ -6,13 +6,13 @@
       name="area"
       :value="value"
       :border="false"
-      :label="$t('picker')"
-      :placeholder="$t('placeholder')"
+      :label="t('picker')"
+      :placeholder="t('placeholder')"
       @click="showArea = true"
     />
     <van-popup v-model="showArea" position="bottom">
       <van-area
-        :area-list="$t('areaList')"
+        :area-list="t('areaList')"
         @confirm="onConfirm"
         @cancel="onCancel"
       />

@@ -1,14 +1,14 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <img v-for="img in imageList" v-lazy="img" />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="t('title2')">
       <div v-for="img in backgroundImageList" v-lazy:background-image="img" />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="t('title3')">
       <lazy-component>
         <img v-for="img in componentImageList" v-lazy="img" />
       </lazy-component>

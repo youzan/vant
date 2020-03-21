@@ -6,8 +6,8 @@
       name="datetimePicker"
       :value="value"
       :border="false"
-      :label="$t('label')"
-      :placeholder="$t('placeholder')"
+      :label="t('label')"
+      :placeholder="t('placeholder')"
       @click="showPicker = true"
     />
     <van-popup v-model="showPicker" position="bottom">

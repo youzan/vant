@@ -1,22 +1,22 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-switch v-model="checked" />
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
+    <demo-block :title="t('disabled')">
       <van-switch v-model="checked" disabled />
     </demo-block>
 
-    <demo-block :title="$t('loadingStatus')">
+    <demo-block :title="t('loadingStatus')">
       <van-switch v-model="checked" loading />
     </demo-block>
 
-    <demo-block :title="$t('customSize')">
+    <demo-block :title="t('customSize')">
       <van-switch v-model="checked2" size="24px" />
     </demo-block>
 
-    <demo-block :title="$t('customColor')">
+    <demo-block :title="t('customColor')">
       <van-switch
         v-model="checked3"
         active-color="#07c160"
@@ -24,12 +24,12 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('asyncControl')">
+    <demo-block :title="t('asyncControl')">
       <van-switch :value="checked4" @input="onInput" />
     </demo-block>
 
-    <demo-block :title="$t('withCell')">
-      <van-cell center :title="$t('title')">
+    <demo-block :title="t('withCell')">
+      <van-cell center :title="t('title')">
         <van-switch v-model="checked5" slot="right-icon" size="24" />
       </van-cell>
     </demo-block>
@@ -74,8 +74,8 @@ export default {
     onInput(checked) {
       this.$dialog
         .confirm({
-          title: this.$t('title'),
-          message: this.$t('message'),
+          title: this.t('title'),
+          message: this.t('message'),
         })
         .then(() => {
           this.checked4 = checked;

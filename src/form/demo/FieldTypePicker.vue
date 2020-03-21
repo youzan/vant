@@ -6,14 +6,14 @@
       name="picker"
       :value="value"
       :border="false"
-      :label="$t('picker')"
-      :placeholder="$t('placeholder')"
+      :label="t('picker')"
+      :placeholder="t('placeholder')"
       @click="showPicker = true"
     />
     <van-popup v-model="showPicker" position="bottom">
       <van-picker
         show-toolbar
-        :columns="$t('textColumns')"
+        :columns="t('textColumns')"
         @confirm="onConfirm"
         @cancel="onCancel"
       />

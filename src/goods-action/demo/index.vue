@@ -1,71 +1,71 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
-          :text="$t('icon1')"
+          :text="t('icon1')"
           @click="onClickIcon"
         />
         <van-goods-action-icon
           icon="cart-o"
-          :text="$t('icon2')"
+          :text="t('icon2')"
           @click="onClickIcon"
         />
         <van-goods-action-button
           type="warning"
-          :text="$t('button1')"
+          :text="t('button1')"
           @click="onClickButton"
         />
         <van-goods-action-button
           type="danger"
-          :text="$t('button2')"
+          :text="t('button2')"
           @click="onClickButton"
         />
       </van-goods-action>
     </demo-block>
 
-    <demo-block :title="$t('iconBadge')">
+    <demo-block :title="t('iconBadge')">
       <van-goods-action>
-        <van-goods-action-icon icon="chat-o" dot :text="$t('icon1')" />
-        <van-goods-action-icon icon="cart-o" badge="5" :text="$t('icon2')" />
-        <van-goods-action-icon icon="shop-o" badge="12" :text="$t('icon3')" />
-        <van-goods-action-button type="warning" :text="$t('button1')" />
-        <van-goods-action-button type="danger" :text="$t('button2')" />
+        <van-goods-action-icon icon="chat-o" dot :text="t('icon1')" />
+        <van-goods-action-icon icon="cart-o" badge="5" :text="t('icon2')" />
+        <van-goods-action-icon icon="shop-o" badge="12" :text="t('icon3')" />
+        <van-goods-action-button type="warning" :text="t('button1')" />
+        <van-goods-action-button type="danger" :text="t('button2')" />
       </van-goods-action>
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="$t('customIconColor')">
+    <demo-block v-if="!isWeapp" :title="t('customIconColor')">
       <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
-          :text="$t('icon1')"
+          :text="t('icon1')"
           color="#07c160"
         />
-        <van-goods-action-icon icon="cart-o" :text="$t('icon2')" />
+        <van-goods-action-icon icon="cart-o" :text="t('icon2')" />
         <van-goods-action-icon
           icon="star"
-          :text="$t('collected')"
+          :text="t('collected')"
           color="#ff5000"
         />
-        <van-goods-action-button type="warning" :text="$t('button1')" />
-        <van-goods-action-button type="danger" :text="$t('button2')" />
+        <van-goods-action-button type="warning" :text="t('button1')" />
+        <van-goods-action-button type="danger" :text="t('button2')" />
       </van-goods-action>
     </demo-block>
 
-    <demo-block :title="$t('customButtonColor')">
+    <demo-block :title="t('customButtonColor')">
       <van-goods-action>
-        <van-goods-action-icon icon="chat-o" :text="$t('icon1')" />
-        <van-goods-action-icon icon="cart-o" :text="$t('icon2')" />
+        <van-goods-action-icon icon="chat-o" :text="t('icon1')" />
+        <van-goods-action-icon icon="cart-o" :text="t('icon2')" />
         <van-goods-action-button
           color="#be99ff"
           type="warning"
-          :text="$t('button1')"
+          :text="t('button1')"
         />
         <van-goods-action-button
           color="#7232dd"
           type="danger"
-          :text="$t('button2')"
+          :text="t('button2')"
         />
       </van-goods-action>
     </demo-block>
@@ -104,10 +104,10 @@ export default {
   },
   methods: {
     onClickIcon() {
-      this.$toast(this.$t('clickIcon'));
+      this.$toast(this.t('clickIcon'));
     },
     onClickButton() {
-      this.$toast(this.$t('clickButton'));
+      this.$toast(this.t('clickButton'));
     },
   },
 };

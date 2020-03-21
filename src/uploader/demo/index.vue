@@ -1,34 +1,34 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-uploader :after-read="afterRead" />
     </demo-block>
 
-    <demo-block :title="$t('preview')">
+    <demo-block :title="t('preview')">
       <van-uploader v-model="fileList" multiple accept="*" />
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
+    <demo-block :title="t('disabled')">
       <van-uploader :after-read="afterRead" disabled />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="$t('status')">
+    <demo-block v-if="!isWeapp" :title="t('status')">
       <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
     </demo-block>
 
-    <demo-block :title="$t('maxCount')">
+    <demo-block :title="t('maxCount')">
       <van-uploader v-model="fileList2" multiple :max-count="2" />
     </demo-block>
 
-    <demo-block :title="$t('uploadStyle')">
+    <demo-block :title="t('uploadStyle')">
       <van-uploader>
         <van-button type="primary" icon="photo">
-          {{ this.$t('upload') }}
+          {{ this.t('upload') }}
         </van-button>
       </van-uploader>
     </demo-block>
 
-    <demo-block :title="$t('beforeRead')">
+    <demo-block :title="t('beforeRead')">
       <van-uploader v-model="fileList3" :before-read="beforeRead" />
     </demo-block>
   </demo-section>
@@ -80,12 +80,12 @@ export default {
       {
         url: 'https://img.yzcdn.cn/vant/leaf.jpg',
         status: 'uploading',
-        message: this.$t('uploading'),
+        message: this.t('uploading'),
       },
       {
         url: 'https://img.yzcdn.cn/vant/tree.jpg',
         status: 'failed',
-        message: this.$t('failed'),
+        message: this.t('failed'),
       }
     );
   },
@@ -93,7 +93,7 @@ export default {
   methods: {
     beforeRead(file) {
       if (file.type !== 'image/jpeg') {
-        this.$toast(this.$t('invalidType'));
+        this.$toast(this.t('invalidType'));
         return false;
       }
 
@@ -106,11 +106,11 @@ export default {
 
     afterReadFailed(item) {
       item.status = 'uploading';
-      item.message = this.$t('uploading');
+      item.message = this.t('uploading');
 
       setTimeout(() => {
         item.status = 'failed';
-        item.message = this.$t('failed');
+        item.message = this.t('failed');
       }, 1000);
     },
   },

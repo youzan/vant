@@ -1,33 +1,33 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('alert1')">
+    <demo-block :title="t('alert1')">
       <van-button type="primary" @click="onClickAlert">
-        {{ $t('alert1') }}
+        {{ t('alert1') }}
       </van-button>
       <van-button type="primary" @click="onClickAlert2">
-        {{ $t('alert2') }}
+        {{ t('alert2') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('confirm')">
+    <demo-block :title="t('confirm')">
       <van-button type="primary" @click="onClickConfirm">
-        {{ $t('confirm') }}
+        {{ t('confirm') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('asyncClose')">
+    <demo-block :title="t('asyncClose')">
       <van-button type="primary" @click="onClickAsyncClose">
-        {{ $t('asyncClose') }}
+        {{ t('asyncClose') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('componentCall')">
+    <demo-block :title="t('componentCall')">
       <van-button type="primary" @click="show = true">
-        {{ $t('componentCall') }}
+        {{ t('componentCall') }}
       </van-button>
       <van-dialog
         v-model="show"
-        :title="$t('title')"
+        :title="t('title')"
         show-cancel-button
         :lazy-render="false"
       >
@@ -68,21 +68,21 @@ export default {
   methods: {
     onClickAlert() {
       this.$dialog.alert({
-        title: this.$t('title'),
-        message: this.$t('content'),
+        title: this.t('title'),
+        message: this.t('content'),
       });
     },
 
     onClickAlert2() {
       this.$dialog.alert({
-        message: this.$t('content'),
+        message: this.t('content'),
       });
     },
 
     onClickConfirm() {
       this.$dialog.confirm({
-        title: this.$t('title'),
-        message: this.$t('content'),
+        title: this.t('title'),
+        message: this.t('content'),
       });
     },
 
@@ -96,8 +96,8 @@ export default {
       }
 
       this.$dialog.confirm({
-        title: this.$t('title'),
-        message: this.$t('content'),
+        title: this.t('title'),
+        message: this.t('content'),
         beforeClose,
       });
     },

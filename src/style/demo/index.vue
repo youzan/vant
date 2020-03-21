@@ -1,15 +1,15 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('ellipsis')">
-      <div class="van-ellipsis">{{ $t('text1') }}</div>
-      <div class="van-multi-ellipsis--l2">{{ $t('text2') }}</div>
+    <demo-block :title="t('ellipsis')">
+      <div class="van-ellipsis">{{ t('text1') }}</div>
+      <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
     </demo-block>
 
-    <demo-block :title="$t('hairline')">
+    <demo-block :title="t('hairline')">
       <div class="van-hairline--top" />
     </demo-block>
 
-    <demo-block :title="$t('animation')">
+    <demo-block :title="t('animation')">
       <van-cell is-link title="Fade" @click="animate('van-fade')" />
       <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
       <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />

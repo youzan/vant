@@ -1,29 +1,29 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('type')">
+    <demo-block :title="t('type')">
       <van-loading />
       <van-loading type="spinner" />
     </demo-block>
 
-    <demo-block :title="$t('color')">
+    <demo-block :title="t('color')">
       <van-loading color="#1989fa" />
       <van-loading type="spinner" color="#1989fa" />
     </demo-block>
 
-    <demo-block :title="$t('size')">
+    <demo-block :title="t('size')">
       <van-loading size="24" />
       <van-loading type="spinner" size="24" />
     </demo-block>
 
-    <demo-block :title="$t('text')">
+    <demo-block :title="t('text')">
       <van-loading size="24px">
-        {{ $t('loading') }}
+        {{ t('loading') }}
       </van-loading>
     </demo-block>
 
-    <demo-block :title="$t('vertical')">
+    <demo-block :title="t('vertical')">
       <van-loading size="24px" vertical>
-        {{ $t('loading') }}
+        {{ t('loading') }}
       </van-loading>
     </demo-block>
   </demo-section>

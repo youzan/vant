@@ -21,7 +21,7 @@ let demoUid = 0;
 // helper for demo locales
 Vue.mixin({
   computed: {
-    $t() {
+    t() {
       const { name } = this.$options;
       const { lang = 'zh-CN' } = (this.$route && this.$route.meta) || {};
       const prefix = name ? camelize(name) + '.' : '';

@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('radioMode')">
+    <demo-block :title="t('radioMode')">
       <van-tree-select
         :items="items"
         :active-id.sync="activeId"
@@ -8,7 +8,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('multipleMode')">
+    <demo-block :title="t('multipleMode')">
       <van-tree-select
         :items="items"
         :active-id.sync="activeIds"
@@ -16,7 +16,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('customContent')">
+    <demo-block :title="t('customContent')">
       <van-tree-select
         height="55vw"
         :items="simpleItems"
@@ -35,7 +35,7 @@
       </van-tree-select>
     </demo-block>
 
-    <demo-block :title="$t('showBadge')">
+    <demo-block :title="t('showBadge')">
       <van-tree-select
         height="55vw"
         :items="badgeItems"
@@ -85,15 +85,15 @@ export default {
 
   computed: {
     items() {
-      return this.$t('data');
+      return this.t('data');
     },
 
     simpleItems() {
-      return this.$t('dataSimple');
+      return this.t('dataSimple');
     },
 
     badgeItems() {
-      const data = deepClone(this.$t('data')).slice(0, 2);
+      const data = deepClone(this.t('data')).slice(0, 2);
 
       data[0].dot = true;
       data[1].badge = 5;

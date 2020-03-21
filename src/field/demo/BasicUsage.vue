@@ -1,7 +1,7 @@
 <template>
-  <demo-block :title="$t('basicUsage')">
+  <demo-block :title="t('basicUsage')">
     <van-cell-group>
-      <van-field v-model="value" :placeholder="$t('placeholder')" />
+      <van-field v-model="value" :placeholder="t('placeholder')" />
     </van-cell-group>
   </demo-block>
 </template>

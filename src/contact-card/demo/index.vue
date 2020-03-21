@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-contact-card
         :type="cardType"
         :name="currentContact.name"
@@ -12,7 +12,7 @@
         <van-contact-list
           v-model="chosenContactId"
           :list="list"
-          :default-tag-text="$t('defaultTagText')"
+          :default-tag-text="t('defaultTagText')"
           @add="onAdd"
           @edit="onEdit"
           @select="onSelect"
@@ -22,7 +22,7 @@
       <van-popup v-model="showEdit" position="bottom" :lazy-render="false">
         <van-contact-edit
           show-set-default
-          :set-default-label="$t('defaultLabel')"
+          :set-default-label="t('defaultLabel')"
           :contact-info="editingContact"
           :is-edit="isEdit"
           @save="onSave"
@@ -31,7 +31,7 @@
       </van-popup>
     </demo-block>
 
-    <demo-block :title="$t('uneditable')">
+    <demo-block :title="t('uneditable')">
       <van-contact-card
         type="edit"
         :name="mockContact.name"
@@ -71,7 +71,7 @@ export default {
   computed: {
     mockContact() {
       return {
-        name: this.$t('name'),
+        name: this.t('name'),
         tel: '13000000000',
         id: 0,
         isDefault: 1,

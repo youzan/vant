@@ -1,36 +1,36 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-divider />
     </demo-block>
 
-    <demo-block :title="$t('withText')">
+    <demo-block :title="t('withText')">
       <van-divider>
-        {{ $t('text') }}
+        {{ t('text') }}
       </van-divider>
     </demo-block>
 
-    <demo-block :title="$t('contentPosition')">
+    <demo-block :title="t('contentPosition')">
       <van-divider content-position="left">
-        {{ $t('text') }}
+        {{ t('text') }}
       </van-divider>
 
       <van-divider content-position="right">
-        {{ $t('text') }}
+        {{ t('text') }}
       </van-divider>
     </demo-block>
 
-    <demo-block :title="$t('dashed')">
+    <demo-block :title="t('dashed')">
       <van-divider dashed :hairline="false">
-        {{ $t('text') }}
+        {{ t('text') }}
       </van-divider>
     </demo-block>
 
-    <demo-block :title="$t('customStyle')">
+    <demo-block :title="t('customStyle')">
       <van-divider
         :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }"
       >
-        {{ $t('text') }}
+        {{ t('text') }}
       </van-divider>
     </demo-block>
   </demo-section>

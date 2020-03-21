@@ -1,5 +1,5 @@
 <template>
-  <demo-block v-if="!isWeapp" :title="$t('showWordLimit')">
+  <demo-block v-if="!isWeapp" :title="t('showWordLimit')">
     <van-field
       v-model="value"
       autosize
@@ -7,8 +7,8 @@
       rows="2"
       type="textarea"
       maxlength="50"
-      :label="$t('message')"
-      :placeholder="$t('placeholder')"
+      :label="t('message')"
+      :placeholder="t('placeholder')"
     />
   </demo-block>
 </template>
