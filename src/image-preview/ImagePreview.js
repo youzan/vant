@@ -112,6 +112,8 @@ export default createComponent({
   },
 
   watch: {
+    startPosition: 'setActive',
+
     value(val) {
       if (val) {
         this.setActive(+this.startPosition);
@@ -124,10 +126,6 @@ export default createComponent({
           url: this.images[this.active],
         });
       }
-    },
-
-    startPosition(val) {
-      this.setActive(val);
     },
 
     shouldRender: {
