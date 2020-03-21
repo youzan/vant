@@ -7,6 +7,7 @@ import { range } from '../utils/format/number';
 
 // Mixins
 import { TouchMixin } from '../mixins/touch';
+import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
 const [createComponent, bem] = createNamespace('swipe');
@@ -14,6 +15,7 @@ const [createComponent, bem] = createNamespace('swipe');
 export default createComponent({
   mixins: [
     TouchMixin,
+    ParentMixin('vanSwipe'),
     BindEventMixin(function(bind, isBind) {
       bind(window, 'resize', this.resize, true);
       bind(window, 'visibilitychange', this.onVisibilityChange);
@@ -66,13 +68,12 @@ export default createComponent({
       active: 0,
       deltaX: 0,
       deltaY: 0,
-      swipes: [],
       swiping: false,
     };
   },
 
   watch: {
-    swipes() {
+    children() {
       this.initialize();
     },
 
@@ -91,7 +92,7 @@ export default createComponent({
 
   computed: {
     count() {
-      return this.swipes.length;
+      return this.children.length;
     },
 
     delta() {
@@ -159,7 +160,7 @@ export default createComponent({
       this.swiping = true;
       this.active = active;
       this.offset = this.count > 1 ? -this.size * this.active : 0;
-      this.swipes.forEach(swipe => {
+      this.children.forEach(swipe => {
         swipe.offset = 0;
       });
       this.autoPlay();
@@ -241,7 +242,7 @@ export default createComponent({
     },
 
     move({ pace = 0, offset = 0, emitChange }) {
-      const { loop, count, active, swipes, trackSize, minOffset } = this;
+      const { loop, count, active, children, trackSize, minOffset } = this;
 
       if (count <= 1) {
         return;
@@ -252,14 +253,14 @@ export default createComponent({
 
       // auto move first and last swipe in loop mode
       if (loop) {
-        if (swipes[0]) {
+        if (children[0]) {
           const outRightBound = targetOffset < minOffset;
-          swipes[0].offset = outRightBound ? trackSize : 0;
+          children[0].offset = outRightBound ? trackSize : 0;
         }
 
-        if (swipes[count - 1]) {
+        if (children[count - 1]) {
           const outLeftBound = targetOffset > 0;
-          swipes[count - 1].offset = outLeftBound ? -trackSize : 0;
+          children[count - 1].offset = outLeftBound ? -trackSize : 0;
         }
       }
 
