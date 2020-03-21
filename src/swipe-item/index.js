@@ -12,17 +12,28 @@ export default createComponent({
     };
   },
 
+  computed: {
+    style() {
+      const style = {};
+      const { vertical, computedWidth, computedHeight } = this.parent;
+
+      if (vertical) {
+        style.height = `${computedHeight}px`;
+      } else {
+        style.width = `${computedWidth}px`;
+      }
+
+      if (this.offset) {
+        style.transform = `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`;
+      }
+
+      return style;
+    },
+  },
+
   render() {
-    const { vertical, computedWidth, computedHeight } = this.parent;
-
-    const style = {
-      width: computedWidth + 'px',
-      height: vertical ? computedHeight + 'px' : '100%',
-      transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`,
-    };
-
     return (
-      <div class={bem()} style={style} {...{ on: this.$listeners }}>
+      <div class={bem()} style={this.style} {...{ on: this.$listeners }}>
         {this.slots()}
       </div>
     );

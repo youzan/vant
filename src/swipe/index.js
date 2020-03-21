@@ -382,7 +382,11 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div ref="track" style={this.trackStyle} class={bem('track')}>
+        <div
+          ref="track"
+          style={this.trackStyle}
+          class={bem('track', { vertical: this.vertical })}
+        >
           {this.slots()}
         </div>
         {this.genIndicator()}
