@@ -171,3 +171,47 @@ test('should pause auto play when page hidden', async () => {
 
   expect(change).toHaveBeenCalledTimes(0);
 });
+
+test('lazy-render prop', async () => {
+  const wrapper = mount({
+    template: `
+      <van-swipe :initial-swipe="active" lazy-render>
+        <van-swipe-item><span>1</span></van-swipe-item>
+        <van-swipe-item><span>2</span></van-swipe-item>
+        <van-swipe-item><span>3</span></van-swipe-item>
+        <van-swipe-item><span>4</span></van-swipe-item>
+      </van-swipe>
+    `,
+    data() {
+      return {
+        active: 0,
+      };
+    },
+  });
+
+  await later();
+  const items = wrapper.findAll('.van-swipe-item');
+
+  expect(items.at(0).contains('span')).toBeTruthy();
+  expect(items.at(1).contains('span')).toBeTruthy();
+  expect(items.at(2).contains('span')).toBeFalsy();
+  expect(items.at(3).contains('span')).toBeTruthy();
+
+  wrapper.setData({ active: 1 });
+  expect(items.at(0).contains('span')).toBeTruthy();
+  expect(items.at(1).contains('span')).toBeTruthy();
+  expect(items.at(2).contains('span')).toBeTruthy();
+  expect(items.at(3).contains('span')).toBeFalsy();
+
+  wrapper.setData({ active: 2 });
+  expect(items.at(0).contains('span')).toBeFalsy();
+  expect(items.at(1).contains('span')).toBeTruthy();
+  expect(items.at(2).contains('span')).toBeTruthy();
+  expect(items.at(3).contains('span')).toBeTruthy();
+
+  wrapper.setData({ active: 3 });
+  expect(items.at(0).contains('span')).toBeTruthy();
+  expect(items.at(1).contains('span')).toBeFalsy();
+  expect(items.at(2).contains('span')).toBeTruthy();
+  expect(items.at(3).contains('span')).toBeTruthy();
+});

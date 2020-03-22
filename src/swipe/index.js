@@ -33,6 +33,7 @@ export default createComponent({
     height: [Number, String],
     autoplay: [Number, String],
     vertical: Boolean,
+    lazyRender: Boolean,
     indicatorColor: String,
     loop: {
       type: Boolean,
@@ -62,13 +63,13 @@ export default createComponent({
 
   data() {
     return {
-      computedWidth: 0,
-      computedHeight: 0,
       offset: 0,
       active: 0,
       deltaX: 0,
       deltaY: 0,
       swiping: false,
+      computedWidth: 0,
+      computedHeight: 0,
     };
   },
 

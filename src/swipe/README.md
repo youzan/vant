@@ -128,20 +128,14 @@ export default {
 </van-swipe>
 
 <style>
-  .van-swipe-item {
-    background-color: #39a9ed;
-    font-size: 20px;
-    line-height: 150px;
-    text-align: center;
-  }
-  .custom-indicator {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    padding: 2px 5px;
-    font-size: 12px;
-    background: rgba(0, 0, 0, 0.1);
-  }
+.custom-indicator {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 2px 5px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.1);
+}
 </style>
 ```
 
@@ -176,6 +170,7 @@ export default {
 | vertical | Whether to be vertical Scrolling | *boolean* | `false` |
 | touchable | Whether to allow swipe by touch gesture | *boolean* | `true` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
+| lazy-render `v2.6.0` | Whether to enable lazy render | *boolean* | `false` |
 | indicator-color | Indicator color | *string* | `#1989fa` |
 
 ### Swipe Events
