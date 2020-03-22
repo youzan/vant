@@ -112,7 +112,6 @@ export default {
 | closeOnPopstate | Whether to close when popstate | *boolean* | `false` |
 | asyncClose | Whether to enable async close | *boolean* | `false` |
 | className | Custom className | *any* | - |
-| lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
 | maxZoom | Max zoom | *number \| string* | `3` |
 | minZoom | Min zoom | *number \| string* | `1/3` |
 | closeable | Whether to show close icon | *boolean* | `false` |
@@ -132,7 +131,6 @@ export default {
 | async-close | Whether to enable async close | *boolean* | `false` |
 | close-on-popstate | Whether to close when popstate | *boolean* | `false` |
 | class-name | Custom className | *any* | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
 | max-zoom | Max zoom | *number \| string* | `3` |
 | min-zoom | Min zoom | *number \| string* | `1/3` |
 | closeable `v2.5.0` | Whether to show close icon | *boolean* | `false` |

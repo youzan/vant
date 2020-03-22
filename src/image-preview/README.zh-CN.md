@@ -124,7 +124,6 @@ export default {
 | asyncClose | 是否开启异步关闭 | *boolean* | `false` |
 | closeOnPopstate | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | className | 自定义类名 | *any* | - |
-| lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | maxZoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
 | closeable | 是否显示关闭图标 | *boolean* | `false` |
@@ -146,7 +145,6 @@ export default {
 | async-close | 是否开启异步关闭 | *boolean* | `false` |
 | close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `false` |
 | class-name | 自定义类名 | *any* | - |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | *boolean* | `false` |
 | max-zoom | 手势缩放时，最大缩放比例 | *number \| string* | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | *number \| string* | `1/3` |
 | closeable `v2.5.0` | 是否显示关闭图标 | *boolean* | `false` |

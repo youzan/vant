@@ -8,7 +8,6 @@ export type ImagePreviewOptions =
       maxZoom?: number;
       minZoom?: number;
       className?: any;
-      lazyLoad?: boolean;
       showIndex?: boolean;
       closeable?: boolean;
       closeIcon?: string;

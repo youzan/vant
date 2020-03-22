@@ -13,7 +13,6 @@ const defaultConfig = {
   className: '',
   onClose: null,
   onChange: null,
-  lazyLoad: false,
   showIndex: true,
   closeable: false,
   closeIcon: 'clear',

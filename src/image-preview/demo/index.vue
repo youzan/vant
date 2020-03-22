@@ -85,7 +85,6 @@ export default {
     showImagePreview(position, timer, closeable) {
       const instance = ImagePreview({
         images,
-        lazyLoad: true,
         swipeDuration: 300,
         asyncClose: !!timer,
         closeable,

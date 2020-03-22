@@ -33,7 +33,6 @@ export default createComponent({
 
   props: {
     className: null,
-    lazyLoad: Boolean,
     asyncClose: Boolean,
     showIndicators: Boolean,
     images: {
@@ -334,7 +333,6 @@ export default createComponent({
                 src={image}
                 fit="contain"
                 class={bem('image')}
-                lazyLoad={this.lazyLoad}
                 scopedSlots={imageSlots}
                 style={index === this.active ? this.imageStyle : null}
                 nativeOnTouchstart={this.onImageTouchStart}
