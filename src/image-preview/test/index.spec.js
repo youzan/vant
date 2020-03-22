@@ -177,7 +177,8 @@ test('onScale option', async done => {
     },
   });
 
-  const image = instance.$el.getElementsByTagName('img')[0];
+  await later();
+  const image = instance.$el.querySelector('img');
   triggerZoom(image, 300, 300);
   Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
@@ -195,10 +196,12 @@ test('zoom', async () => {
     propsData: { images, value: true },
   });
 
-  const image = wrapper.find('img');
+  await later();
+  const image = wrapper.find('.van-image');
   triggerZoom(image, 300, 300);
   triggerDrag(image, 300, 300);
-  expect(wrapper).toMatchSnapshot();
+
+  expect(image).toMatchSnapshot();
   Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
 
@@ -256,19 +259,4 @@ test('closeOnPopstate', () => {
 
   trigger(window, 'popstate');
   expect(wrapper.emitted('input')[1]).toBeFalsy();
-});
-
-test('lazy-load prop', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    propsData: {
-      images,
-      lazyLoad: true,
-    },
-  });
-
-  wrapper.setProps({
-    value: true,
-  });
-
-  expect(wrapper).toMatchSnapshot();
 });

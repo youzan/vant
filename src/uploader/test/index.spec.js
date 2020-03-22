@@ -382,7 +382,7 @@ test('before-delete prop rejected', async () => {
   expect(wrapper.emitted('delete')).toBeFalsy();
 });
 
-test('click to preview image', () => {
+test('click to preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       previewFullImage: false,
@@ -396,6 +396,8 @@ test('click to preview image', () => {
 
   wrapper.setProps({ previewFullImage: true });
   wrapper.find('.van-image').trigger('click');
+
+  await later();
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
   const images = imagePreviewNode2.querySelectorAll(

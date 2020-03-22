@@ -319,6 +319,7 @@ export default createComponent({
       return (
         <Swipe
           ref="swipe"
+          lazyRender
           loop={this.loop}
           class={bem('swipe')}
           indicatorColor="white"
