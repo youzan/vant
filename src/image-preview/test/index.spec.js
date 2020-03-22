@@ -119,6 +119,7 @@ test('function call', done => {
 test('double click', async done => {
   const instance = ImagePreview(images);
 
+  await later();
   const swipe = instance.$el.querySelector('.van-swipe__track');
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
