@@ -10,30 +10,23 @@
 export type Mod = string | { [key: string]: any };
 export type Mods = Mod | Mod[];
 
-const ELEMENT = '__';
-const MODS = '--';
+function gen(name: string, mods?: Mods): string {
+  if (!mods) {
+    return '';
+  }
 
-function join(name: string, el?: string, symbol?: string): string {
-  return el ? name + symbol + el : name;
-}
-
-function prefix(name: string, mods: Mods): Mods {
   if (typeof mods === 'string') {
-    return join(name, mods, MODS);
+    return ` ${name}--${mods}`;
   }
 
   if (Array.isArray(mods)) {
-    return mods.map(item => <Mod>prefix(name, item));
+    return mods.reduce<string>((ret, item) => ret + gen(name, item), '');
   }
 
-  const ret: Mods = {};
-  if (mods) {
-    Object.keys(mods).forEach(key => {
-      ret[name + MODS + key] = mods[key];
-    });
-  }
-
-  return ret;
+  return Object.keys(mods).reduce(
+    (ret, key) => ret + (mods[key] ? gen(name, key) : ''),
+    ''
+  );
 }
 
 export function createBEM(name: string) {
@@ -42,9 +35,10 @@ export function createBEM(name: string) {
       mods = el;
       el = '';
     }
-    el = join(name, el, ELEMENT);
 
-    return mods ? [el, prefix(el, mods)] : el;
+    el = el ? `${name}__${el}` : name;
+
+    return `${el}${gen(el, mods)}`;
   };
 }
 
