@@ -36,9 +36,9 @@ export function createBEM(name: string) {
       el = '';
     }
 
-    el = el ? `${name}__${el}` : name;
+    name = el ? `${name}__${el}` : name;
 
-    return `${el}${gen(el, mods)}`;
+    return `${name}${gen(name, mods)}`;
   };
 }
 
