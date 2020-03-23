@@ -67,10 +67,10 @@ export default {
 
 ### 禁用输入框
 
-通过设置`disabled-input`属性来禁用输入框，此时按钮仍然可以点击
+通过设置`disable-input`属性来禁用输入框，此时按钮仍然可以点击
 
 ```html
-<van-stepper v-model="value" disabled-input />
+<van-stepper v-model="value" disable-input />
 ```
 
 ### 固定小数位数
