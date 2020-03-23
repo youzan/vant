@@ -54,7 +54,7 @@ export default {
 ### Disable Input
 
 ```html
-<van-stepper v-model="value" disabled-input />
+<van-stepper v-model="value" disable-input />
 ```
 
 ### Decimal Length
