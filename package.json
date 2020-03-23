@@ -1,5 +1,5 @@
 {
-  "name": "vant",
+  "name": "@dustess/vant",
   "version": "2.5.5",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
