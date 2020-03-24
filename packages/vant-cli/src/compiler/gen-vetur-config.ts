@@ -5,8 +5,8 @@ import { SRC_DIR, getVantConfig, ROOT } from '../common/constant';
 
 // generate vetur tags & attributes
 export function genVeturConfig() {
-  const vantCongig = getVantConfig();
-  const options = get(vantCongig, 'build.vetur');
+  const vantConfig = getVantConfig();
+  const options = get(vantConfig, 'build.vetur');
 
   if (options) {
     markdownVetur.parseAndWrite({

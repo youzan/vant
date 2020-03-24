@@ -16,5 +16,12 @@
     "dev": "tsc --watch",
     "build": "tsc",
     "release": "npm run build && npm publish"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.2",
+    "fs-extra": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0"
   }
 }
