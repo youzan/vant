@@ -2,6 +2,7 @@
 declare module 'less';
 declare module 'sass';
 declare module 'execa';
+declare module 'hash-sum';
 declare module 'clean-css';
 declare module 'webpackbar';
 declare module 'release-it';
