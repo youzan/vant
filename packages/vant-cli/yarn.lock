@@ -1571,10 +1571,10 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/stylelint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.2.0.tgz#435cac883489c2bb7dbdb2403a6838ec6a15f9c7"
-  integrity sha512-hmsLX1/FGO4Dy+3UDZSK/YJNgl5ZY8l7P0r/PhXXQ5u+5wYOuvVEKb0qL4FVGjf2C7zR7zkMtRUSnIn8uU7/Cw==
+"@vant/stylelint-config@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.2.1.tgz#3ed9584053f70b1d8461d91dc614d7ec2c9950c1"
+  integrity sha512-N0M5LJNU3XzjFWA6PhsseQnkLYobzKBEBbYG9+9OnrFdRqweN+jYdDIdDLu5GD5clEEAyFsCabLMPdfBbISPcw==
   dependencies:
     stylelint-config-rational-order "^0.1.2"
     stylelint-config-standard "^20.0.0"

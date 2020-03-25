@@ -7,5 +7,11 @@ module.exports = {
     'no-descending-specificity': null,
     'declaration-colon-newline-after': null,
     'font-family-no-missing-generic-family-keyword': null,
+    'selector-pseudo-element-no-unknown': [
+      true,
+      {
+        ignorePseudoElements: ['v-deep'],
+      },
+    ],
   },
 };
