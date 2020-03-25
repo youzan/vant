@@ -1,9 +1,13 @@
 {
-  "extends": "../../tsconfig",
-  "include": ["src/*"],
   "compilerOptions": {
+    "target": "ES2017",
+    "outDir": "./lib",
     "module": "commonjs",
-    "outDir": "lib",
-    "noEmit": false
-  }
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "lib": ["esnext"]
+  },
+  "include": ["src/**/*"]
 }

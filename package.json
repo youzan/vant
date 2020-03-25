@@ -78,6 +78,7 @@
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
+  "web-types": "vetur/web-types.json",
   "eslintConfig": {
     "root": true,
     "extends": [
