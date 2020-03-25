@@ -1,5 +1,14 @@
 # 更新日志
 
+### [v2.3.0]
+
+`2020-03-25`
+
+- build 命令支持编译 scoped 样式 ([#5910](https://github.com/youzan/vant/pull/5910))
+- build 命令支持生成 WebStorm 组件定义文件 ([#5899](https://github.com/youzan/vant/issues/5899))
+- clean 命令现在会移除而不是清空文件夹 ([#5895](https://github.com/youzan/vant/issues/5895))
+- 升级 @vant/markdown-vetur 2.0.0
+
 ### [v2.2.8]
 
 `2020-03-20`

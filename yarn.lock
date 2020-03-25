@@ -1390,10 +1390,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.2.8":
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.2.8.tgz#3ed2145642b763af53f4c4e144aa5c5445ae3fe5"
-  integrity sha512-kpx2X5K+5QnF/fxDD0HlyQWlEg4YE+dowlizoBZY/OwIJt6XVrY2W8C540BCYexu/1CJj/oowkhcr7dxLTNEjw==
+"@vant/cli@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.3.0.tgz#1f32950f15573682ef5a850ed9b230bd69f10342"
+  integrity sha512-FsA0n6F3BhpUb4X42vPSmfnPDzsfG4+v2QOG6iwa/kFnenGM82FGrYgOgWO7J+qvXn/no5j7k/wd1tyd3U1u8A==
   dependencies:
     "@babel/core" "^7.8.7"
     "@babel/plugin-syntax-jsx" "^7.8.3"
@@ -1405,7 +1405,7 @@
     "@types/jest" "^25.1.3"
     "@vant/eslint-config" "^2.0.0"
     "@vant/markdown-loader" "^2.3.0"
-    "@vant/markdown-vetur" "^1.1.0"
+    "@vant/markdown-vetur" "^2.0.0"
     "@vant/stylelint-config" "^1.2.0"
     "@vant/touch-emulator" "^1.2.0"
     "@vue/babel-preset-jsx" "^1.1.2"
@@ -1428,6 +1428,7 @@
     eslint "^6.8.0"
     fast-glob "^3.2.2"
     gh-pages "2.0.1"
+    hash-sum "^2.0.0"
     html-webpack-plugin "3.2.0"
     husky "^4.2.3"
     jest "^25.1.0"
@@ -1483,10 +1484,13 @@
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
-"@vant/markdown-vetur@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.1.0.tgz#e02d29f3180e47dd588d7dcacaa06b66724915c9"
-  integrity sha512-abdWeVzCmVMwYzzFoqKtiLb1SVlWNoF3lgDXE0/gGBxkNXSN3XWeGXSaq7LNReyEjpRmfqqEIuP18NvkhBk4DQ==
+"@vant/markdown-vetur@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-2.0.0.tgz#19cb9b089fbd04dfb2b74c3edb497297086229e0"
+  integrity sha512-XcAcVOIUhuYbD5nmKjv4y9WxuP/YytDJi17xn1SwJe2gjIKNMli/gc2oNN2v8npCaCZAaDWpAUTXYy7XefdH9Q==
+  dependencies:
+    fast-glob "^3.2.2"
+    fs-extra "^9.0.0"
 
 "@vant/stylelint-config@^1.2.0":
   version "1.2.0"
@@ -2119,6 +2123,11 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
+
+at-least-node@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
+  integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
 atob@^2.1.2:
   version "2.1.2"
@@ -4828,6 +4837,16 @@ fs-extra@^7.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
+fs-extra@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.0.tgz#b6afc31036e247b2466dc99c29ae797d5d4580a3"
+  integrity sha512-pmEYSk3vYsG/bF651KPUXZ+hvjpgWYw/Gc7W9NFUe3ZVLczKKWIij3IKpOrQcdw4TILtibFslZ0UmR8Vvzig4g==
+  dependencies:
+    at-least-node "^1.0.0"
+    graceful-fs "^4.2.0"
+    jsonfile "^6.0.1"
+    universalify "^1.0.0"
+
 fs-write-stream-atomic@^1.0.8:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/fs-write-stream-atomic/-/fs-write-stream-atomic-1.0.10.tgz#b47df53493ef911df75731e70a9ded0189db40c9"
@@ -5155,7 +5174,7 @@ got@^9.6.0:
     to-readable-stream "^1.0.0"
     url-parse-lax "^3.0.0"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.3:
+graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
@@ -5276,6 +5295,11 @@ hash-sum@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-1.0.2.tgz#33b40777754c6432573c120cc3808bbd10d47f04"
   integrity sha1-M7QHd3VMZDJXPBIMw4CLvRDUfwQ=
+
+hash-sum@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-2.0.0.tgz#81d01bb5de8ea4a214ad5d6ead1b523460b0b45a"
+  integrity sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==
 
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.7"
@@ -6719,6 +6743,15 @@ jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
   integrity sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
+jsonfile@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.0.1.tgz#98966cba214378c8c84b82e085907b40bf614179"
+  integrity sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==
+  dependencies:
+    universalify "^1.0.0"
   optionalDependencies:
     graceful-fs "^4.1.6"
 
@@ -11048,6 +11081,11 @@ universalify@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+
+universalify@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
+  integrity sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
