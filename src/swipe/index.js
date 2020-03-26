@@ -63,6 +63,7 @@ export default createComponent({
 
   data() {
     return {
+      rect: null,
       offset: 0,
       active: 0,
       deltaX: 0,
@@ -136,31 +137,40 @@ export default createComponent({
     },
 
     minOffset() {
-      const rect = this.$el.getBoundingClientRect();
       return (
-        (this.vertical ? rect.height : rect.width) - this.size * this.count
+        (this.vertical ? this.rect.height : this.rect.width) -
+        this.size * this.count
       );
     },
   },
 
   mounted() {
+    this.initRect();
     this.bindTouchEvent(this.$refs.track);
   },
 
   methods: {
+    initRect() {
+      this.rect = this.$el.getBoundingClientRect();
+    },
+
     // initialize swipe position
     initialize(active = +this.initialSwipe) {
+      if (!this.rect) {
+        return;
+      }
+
       clearTimeout(this.timer);
 
       if (this.$el && !isHidden(this.$el)) {
-        const rect = this.$el.getBoundingClientRect();
+        const { rect } = this;
         this.computedWidth = Math.round(+this.width || rect.width);
         this.computedHeight = Math.round(+this.height || rect.height);
       }
 
       this.swiping = true;
       this.active = active;
-      this.offset = this.count > 1 ? -this.size * this.active : 0;
+      this.offset = this.getTargetOffset(active);
       this.children.forEach(swipe => {
         swipe.offset = 0;
       });
@@ -169,6 +179,7 @@ export default createComponent({
 
     // @exposed-api
     resize() {
+      this.initRect();
       this.initialize(this.activeIndicator);
     },
 
@@ -228,7 +239,7 @@ export default createComponent({
       return active;
     },
 
-    getTargetOffset(targetActive, offset) {
+    getTargetOffset(targetActive, offset = 0) {
       let currentPosition = targetActive * this.size;
       if (!this.loop) {
         currentPosition = Math.min(currentPosition, -this.minOffset);
