@@ -140,11 +140,8 @@ export default {
 
 .van-doc-header {
   width: 100%;
+  background-color: #001938;
   user-select: none;
-
-  .van-doc-row {
-    width: 100%;
-  }
 
   &__top {
     display: flex;
@@ -152,7 +149,6 @@ export default {
     height: @van-doc-header-top-height;
     padding: 0 @van-doc-padding;
     line-height: @van-doc-header-top-height;
-    background-color: #001938;
 
     &-nav {
       flex: 1;
