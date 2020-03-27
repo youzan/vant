@@ -142,6 +142,10 @@ export default {
   width: 100%;
   user-select: none;
 
+  .van-doc-row {
+    width: 100%;
+  }
+
   &__top {
     display: flex;
     align-items: center;
