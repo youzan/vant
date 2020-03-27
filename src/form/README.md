@@ -431,7 +431,8 @@ export default {
 | validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | *string* | `onBlur` |
 | colon | Whether to display `:` after label | *boolean* | `false` |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
-| scroll-to-error `v2.5.2` | Whether to scroll to the error field when submit failed | *boolean* | `false` |
+| scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | *boolean* | `false` |
+| show-error-message `v2.5.8` | Whether to show error message when validation failed | *boolean* | `true` |
 
 ### Data Structure of Rule 
 
