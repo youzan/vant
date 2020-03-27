@@ -474,6 +474,10 @@ export default createComponent({
     },
 
     genMessage() {
+      if (this.vanForm && this.vanForm.showErrorMessage === false) {
+        return;
+      }
+
       const message = this.errorMessage || this.validateMessage;
 
       if (message) {
