@@ -4,7 +4,7 @@ exports[`close-icon prop 1`] = `
 <div class="van-image-preview" name="van-fade"><i role="button" class="van-icon van-icon-close van-image-preview__close-icon van-image-preview__close-icon--top-right">
     <!----></i>
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);"></div>
   </div>
   <div class="van-image-preview__index">1 / 0</div>
 </div>
@@ -14,7 +14,7 @@ exports[`close-icon-position prop 1`] = `
 <div class="van-image-preview" name="van-fade"><i role="button" class="van-icon van-icon-close van-image-preview__close-icon van-image-preview__close-icon--top-left">
     <!----></i>
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);"></div>
   </div>
   <div class="van-image-preview__index">1 / 0</div>
 </div>
@@ -23,7 +23,7 @@ exports[`close-icon-position prop 1`] = `
 exports[`cover slot 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);"></div>
   </div>
   <div class="van-image-preview__index">1 / 0</div>
   <div class="van-image-preview__cover">Custom Cover Content</div>
@@ -33,7 +33,7 @@ exports[`cover slot 1`] = `
 exports[`index slot 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);"></div>
   </div>
   <div class="van-image-preview__index">Custom Index</div>
 </div>
@@ -55,7 +55,7 @@ exports[`render image 1`] = `
 exports[`set show-index prop to false 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"></div>
+    <div class="van-swipe__track" style="width: 0px; transition-duration: 500ms; transform: translateX(0px);"></div>
   </div>
 </div>
 `;
