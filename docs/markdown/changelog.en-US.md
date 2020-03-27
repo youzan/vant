@@ -1,5 +1,26 @@
 # Changelog
 
+### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
+
+`2020-03-27`
+
+**Feature**
+
+- support generate webstorm types [#5900](https://github.com/youzan/vant/issues/5900)
+- Circle: improve text padding [10f32d](https://github.com/youzan/vant/commit/10f32d6619199e99ff743cb5425db1e54e495fd0)
+- Form: add show-error-message prop [#5927](https://github.com/youzan/vant/issues/5927)
+- ImagePreview: enable swipe lazy-render [#5879](https://github.com/youzan/vant/issues/5879)
+- Sidebar: set overflow-y auto [#5921](https://github.com/youzan/vant/issues/5921)
+- Swipe: add lazy-render prop [365f2b](https://github.com/youzan/vant/commit/365f2b16f7d9592f92413e206439585468a8a1c7)
+- Swipe: use flex layout [f701de](https://github.com/youzan/vant/commit/f701de9e58db5f88a582e3277c97a0c9ca99eec4)
+
+**Bug Fixes**
+
+- Calendar: fix the default date of multiple selection type [#5907](https://github.com/youzan/vant/issues/5907)
+- PullRefresh: track should be full of container [#5878](https://github.com/youzan/vant/issues/5878)
+- Sticky: shoud rerender after visibility changed [#5888](https://github.com/youzan/vant/issues/5888)
+- Swipe: incorrect offset after resize [#5922](https://github.com/youzan/vant/issues/5922)
+
 ### [v2.5.7](https://github.com/youzan/vant/compare/v2.5.6...v2.5.7)
 
 `2020-03-20`
@@ -7,7 +28,6 @@
 **Bug Fixes**
 
 - Locale: fix incorrect japanese filename [e8c88a](https://github.com/youzan/vant/commit/e8c88a380217eb48cef8aa7dc29d378a1031120a)
-
 
 ### [v2.5.6](https://github.com/youzan/vant/compare/v2.5.5...v2.5.6)
 

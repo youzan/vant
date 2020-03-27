@@ -10,6 +10,30 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
+
+`2020-03-27`
+
+**Feature**
+
+- 新增 Webstorm 的 web-types.json 定义文件，提供智能提示 [#5900](https://github.com/youzan/vant/issues/5900)
+- Form: 新增 show-error-message 属性 [#5927](https://github.com/youzan/vant/issues/5927)
+- ImagePreview: 开启延迟渲染，提高渲染性能 [#5879](https://github.com/youzan/vant/issues/5879)
+- Swipe: 新增 lazy-render 属性 [365f2b](https://github.com/youzan/vant/commit/365f2b16f7d9592f92413e206439585468a8a1c7)
+
+**Improvement**
+
+- Circle: 优化文字边距 [10f32d](https://github.com/youzan/vant/commit/10f32d6619199e99ff743cb5425db1e54e495fd0)
+- Sidebar: 新增 overflow-y: auto 样式 [#5921](https://github.com/youzan/vant/issues/5921)
+- Swipe: 调整为 flex 布局 [f701de](https://github.com/youzan/vant/commit/f701de9e58db5f88a582e3277c97a0c9ca99eec4)
+
+**Bug Fixes**
+
+- Calendar: 修复 multiple 模式下 default-date 格式错误的问题 [#5907](https://github.com/youzan/vant/issues/5907)
+- PullRefresh: 修复内部元素高度未填满容器的问题 [#5878](https://github.com/youzan/vant/issues/5878)
+- Sticky: 修复切换显示状态时可能出现定位错误的问题 [#5888](https://github.com/youzan/vant/issues/5888)
+- Swipe: 修复屏幕 resize 后可能导致轮播位置错误的问题 [#5922](https://github.com/youzan/vant/issues/5922)
+
 ### [v2.5.7](https://github.com/youzan/vant/compare/v2.5.6...v2.5.7)
 
 `2020-03-20`
