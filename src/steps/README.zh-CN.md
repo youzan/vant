@@ -91,3 +91,9 @@ export default {
 |------|------|
 | active-icon | 自定义激活状态图标 |
 | inactive-icon | 自定义未激活状态图标 |
+
+### Steps Events
+
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| click-step `v2.6.0` | 点击步骤的标题或图标时触发 | *index: number* |
