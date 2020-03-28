@@ -261,7 +261,6 @@ export default createComponent({
   render() {
     const { data, errorInfo, searchResult, disableArea } = this;
     const onFocus = name => () => this.onFocus(name);
-    const onClick = name => () => this.$emit('click', name);
 
     // hide bottom field when use search && detail get focused
     const hideBottomFields =
@@ -298,7 +297,7 @@ export default createComponent({
             value={this.areaText}
             onFocus={onFocus('areaCode')}
             onClick={() => {
-              onClick('areaCode')();
+              this.$emit('click-area');
               this.showAreaPopup = !disableArea;
             }}
           />
