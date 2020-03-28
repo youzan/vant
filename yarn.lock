@@ -1390,10 +1390,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.3.0.tgz#1f32950f15573682ef5a850ed9b230bd69f10342"
-  integrity sha512-FsA0n6F3BhpUb4X42vPSmfnPDzsfG4+v2QOG6iwa/kFnenGM82FGrYgOgWO7J+qvXn/no5j7k/wd1tyd3U1u8A==
+"@vant/cli@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-2.3.1.tgz#4a5324abb22246cb31bf69b0f02e3ea5446665e0"
+  integrity sha512-rZD3bGW7z9uiX2m0CiwONPx51IjETeYUAHL3s2IwlE/cwAmN9wv9fNSnbNqURDy98S39DC1c+T++F1dKtOiuuQ==
   dependencies:
     "@babel/core" "^7.8.7"
     "@babel/plugin-syntax-jsx" "^7.8.3"
@@ -1406,7 +1406,7 @@
     "@vant/eslint-config" "^2.0.0"
     "@vant/markdown-loader" "^2.3.0"
     "@vant/markdown-vetur" "^2.0.0"
-    "@vant/stylelint-config" "^1.2.0"
+    "@vant/stylelint-config" "^1.2.1"
     "@vant/touch-emulator" "^1.2.0"
     "@vue/babel-preset-jsx" "^1.1.2"
     "@vue/component-compiler-utils" "^3.1.1"
@@ -1492,10 +1492,10 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/stylelint-config@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.2.0.tgz#435cac883489c2bb7dbdb2403a6838ec6a15f9c7"
-  integrity sha512-hmsLX1/FGO4Dy+3UDZSK/YJNgl5ZY8l7P0r/PhXXQ5u+5wYOuvVEKb0qL4FVGjf2C7zR7zkMtRUSnIn8uU7/Cw==
+"@vant/stylelint-config@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@vant/stylelint-config/-/stylelint-config-1.2.1.tgz#3ed9584053f70b1d8461d91dc614d7ec2c9950c1"
+  integrity sha512-N0M5LJNU3XzjFWA6PhsseQnkLYobzKBEBbYG9+9OnrFdRqweN+jYdDIdDLu5GD5clEEAyFsCabLMPdfBbISPcw==
   dependencies:
     stylelint-config-rational-order "^0.1.2"
     stylelint-config-standard "^20.0.0"
