@@ -14,6 +14,10 @@
 <p align="center">
   🔥 <a href="https://youzan.github.io/vant">文档网站</a>
   &nbsp;
+  &nbsp;
+  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  &nbsp;
+  &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
 </p>
 
