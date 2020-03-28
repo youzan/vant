@@ -39,14 +39,14 @@ export default {
 }
 ```
 
-### 高级用法
+### 使用插槽
 
-通过插槽定制内容
+通过插槽自定义导航栏两侧的内容
 
 ```html
 <van-nav-bar title="标题" left-text="返回" left-arrow>
   <template #right>
-    <van-icon name="search"/> 
+    <van-icon name="search" size="18" /> 
   </template>
 </van-nav-bar>
 ```
@@ -61,8 +61,9 @@ export default {
 | left-text | 左侧文案 | *string* | `''` |
 | right-text | 右侧文案 | *string* | `''` |
 | left-arrow | 是否显示左侧箭头 | *boolean* | `false` |
-| fixed | 是否固定在顶部 | *boolean* | `false` |
 | border | 是否显示下边框 | *boolean* | `true` |
+| fixed | 是否固定在顶部 | *boolean* | `false` |
+| placeholder `v2.6.0` | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | *boolean* | `false` |
 | z-index | 元素 z-index | *number \| string* | `1` |
 
 ### Slots
