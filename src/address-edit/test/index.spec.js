@@ -295,7 +295,7 @@ test('select area', () => {
   expect(data.areaCode).toEqual('110101');
 });
 
-test('click area', () => {
+test('click-area event', () => {
   const wrapper = mount(AddressEdit, {
     propsData: {
       disableArea: true,
@@ -304,5 +304,5 @@ test('click area', () => {
 
   const field = wrapper.findAll('.van-field').at(2);
   field.trigger('click');
-  expect(wrapper.emitted('click')[0][0]).toEqual('areaCode');
+  expect(wrapper.emitted('click-area')[0]).toBeTruthy();
 });
