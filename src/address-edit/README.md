@@ -95,6 +95,7 @@ export default {
 | delete | Triggered when confirm delete | content：form content |
 | cancel-delete | Triggered when cancel delete | content：form content |
 | select-search | Triggered when select search result | value: search content |
+| click-area `v2.5.9` | Triggered when click area | - |
 | change-area | Triggered when change area | values: area values |
 | change-detail | Triggered when address detail changed | value: address detail |
 | change-default | Triggered when switch default address | value: checked |
