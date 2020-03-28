@@ -46,6 +46,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 25%;
     height: @number-keyboard-key-height * 4;
   }
@@ -82,9 +84,11 @@
   }
 
   &--big {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: @number-keyboard-key-height * 2;
-    line-height: @number-keyboard-key-height * 2;
   }
 
   &--blue,

@@ -189,3 +189,25 @@ test('maxlength', () => {
   expect(wrapper.vm.value).toEqual('1');
   expect(onInput).toHaveBeenCalledTimes(1);
 });
+
+test('show-delete-key prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      showDeleteKey: true,
+    },
+  });
+
+  expect(wrapper.contains('.van-key--delete')).toBeTruthy();
+
+  wrapper.setData({ showDeleteKey: false });
+  expect(wrapper.contains('.van-key--delete')).toBeFalsy();
+
+  wrapper.setData({
+    theme: 'custom',
+    showDeleteKey: true,
+  });
+  expect(wrapper.contains('.van-key--delete')).toBeTruthy();
+
+  wrapper.setData({ showDeleteKey: false });
+  expect(wrapper.contains('.van-key--delete')).toBeFalsy();
+});

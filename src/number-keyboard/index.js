@@ -81,7 +81,11 @@ export default createComponent({
           keys.push(
             { text: this.extraKey, theme: ['gray'], type: 'extra' },
             { text: 0 },
-            { text: this.deleteText, theme: ['gray'], type: 'delete' }
+            {
+              theme: ['gray'],
+              text: this.showDeleteKey ? this.deleteText : '',
+              type: this.showDeleteKey ? 'delete' : '',
+            }
           );
           break;
         case 'custom':
@@ -179,14 +183,16 @@ export default createComponent({
       if (this.theme === 'custom') {
         return (
           <div class={bem('sidebar')}>
-            <Key
-              text={this.deleteText}
-              type="delete"
-              theme={DELETE_KEY_THEME}
-              onPress={this.onPress}
-            >
-              {this.slots('delete')}
-            </Key>
+            {this.showDeleteKey && (
+              <Key
+                text={this.deleteText}
+                type="delete"
+                theme={DELETE_KEY_THEME}
+                onPress={this.onPress}
+              >
+                {this.slots('delete')}
+              </Key>
+            )}
             <Key
               text={this.closeButtonText}
               type="close"
