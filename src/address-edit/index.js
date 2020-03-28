@@ -297,6 +297,7 @@ export default createComponent({
             value={this.areaText}
             onFocus={onFocus('areaCode')}
             onClick={() => {
+              this.$emit('click-area');
               this.showAreaPopup = !disableArea;
             }}
           />
