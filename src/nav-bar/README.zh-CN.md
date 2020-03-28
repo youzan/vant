@@ -63,7 +63,7 @@ export default {
 | left-arrow | 是否显示左侧箭头 | *boolean* | `false` |
 | border | 是否显示下边框 | *boolean* | `true` |
 | fixed | 是否固定在顶部 | *boolean* | `false` |
-| placeholder `v2.6.0` | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | *boolean* | `false` |
+| placeholder `v2.5.9` | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | *boolean* | `false` |
 | z-index | 元素 z-index | *number \| string* | `1` |
 
 ### Slots

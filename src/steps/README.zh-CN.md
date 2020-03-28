@@ -96,4 +96,4 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click-step `v2.6.0` | 点击步骤的标题或图标时触发 | *index: number* |
+| click-step `v2.5.9` | 点击步骤的标题或图标时触发 | *index: number* |

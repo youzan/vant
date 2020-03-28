@@ -176,7 +176,7 @@ export default {
 | vertical | 是否为纵向滚动 | *boolean* | `false` |
 | touchable | 是否可以通过手势滑动 | *boolean* | `true` |
 | stop-propagation `v2.2.13` | 是否阻止滑动事件冒泡 | *boolean* | `true` |
-| lazy-render `v2.6.0` | 是否延迟渲染未展示的轮播 | *boolean* | `false` |
+| lazy-render `v2.5.8` | 是否延迟渲染未展示的轮播 | *boolean* | `false` |
 | indicator-color | 指示器颜色 | *string* | `#1989fa` |
 
 ### Swipe Events

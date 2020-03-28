@@ -151,7 +151,7 @@ export default {
 | extra-key | 左下角按键内容 | *string* | `''` |
 | close-button-text | 关闭按钮文字，空则不展示 | *string* | `-` |
 | delete-button-text | 删除按钮文字 | *string* | `删除` |
-| show-delete-key `v2.6.0` | 是否展示删除按钮 | *boolean* | `true` |
+| show-delete-key `v2.5.9` | 是否展示删除按钮 | *boolean* | `true` |
 | hide-on-click-outside | 点击外部时是否收起键盘 | *boolean* | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 

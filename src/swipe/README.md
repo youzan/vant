@@ -170,7 +170,7 @@ export default {
 | vertical | Whether to be vertical Scrolling | *boolean* | `false` |
 | touchable | Whether to allow swipe by touch gesture | *boolean* | `true` |
 | stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | *boolean* | `false` |
-| lazy-render `v2.6.0` | Whether to enable lazy render | *boolean* | `false` |
+| lazy-render `v2.5.8` | Whether to enable lazy render | *boolean* | `false` |
 | indicator-color | Indicator color | *string* | `#1989fa` |
 
 ### Swipe Events

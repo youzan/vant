@@ -61,7 +61,7 @@ export default {
 | left-arrow | Whether to show left arrow | *boolean* | `false` |
 | border | Whether to show bottom border | *boolean* | `true` |
 | fixed | Whether to fixed top | *boolean* | `false` |
-| placeholder `v2.6.0` | Whether to generage a placeholder element when fixed | *boolean* | `false` |
+| placeholder `v2.5.9` | Whether to generage a placeholder element when fixed | *boolean* | `false` |
 | z-index | Z-index | *number \| string* | `1` |
 
 ### Slots

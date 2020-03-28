@@ -10,6 +10,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.5.9-beta.0](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9-beta.0)
+
+`2020-03-28`
+
+**Feature**
+
+- AddressEdit: 新增 click-area 事件 [#5939](https://github.com/youzan/vant/issues/5939)
+- NavBar: 新增 placeholder 属性 [#5938](https://github.com/youzan/vant/issues/5938)
+- Steps: 新增 click-step 事件 [#5937](https://github.com/youzan/vant/issues/5937)
+
+**Bug Fixes**
+
+- NumberKeyboard: 修复 show-delete-key 属性不生效的问题 [#5935](https://github.com/youzan/vant/issues/5935)
+- Toast: 修复在部分机型上高度错误的问题 [#5931](https://github.com/youzan/vant/issues/5931)
+
 ### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
 
 `2020-03-27`

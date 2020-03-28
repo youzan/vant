@@ -1,5 +1,20 @@
 # Changelog
 
+### [v2.5.9-beta.0](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9-beta.0)
+
+`2020-03-28`
+
+**Feature**
+
+- AddressEdit: add click-area event [#5939](https://github.com/youzan/vant/issues/5939)
+- NavBar: add placeholder prop [#5938](https://github.com/youzan/vant/issues/5938)
+- Steps: add click-step event [#5937](https://github.com/youzan/vant/issues/5937)
+
+**Bug Fixes**
+
+- NumberKeyboard: show-delete-key prop not work [#5935](https://github.com/youzan/vant/issues/5935)
+- Toast: incorrect height in legacy devices [#5931](https://github.com/youzan/vant/issues/5931)
+
 ### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
 
 `2020-03-27`
