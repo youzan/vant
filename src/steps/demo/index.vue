@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-steps :active="active" @click-step="$toast($event)">
+      <van-steps :active="active">
         <van-step>{{ t('step1') }}</van-step>
         <van-step>{{ t('step2') }}</van-step>
         <van-step>{{ t('step3') }}</van-step>
