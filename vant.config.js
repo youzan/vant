@@ -238,7 +238,7 @@ module.exports = {
               },
               {
                 path: 'lazyload',
-                title: 'Lazyload 图片懒加载',
+                title: 'Lazyload 懒加载',
               },
               {
                 path: 'list',
