@@ -145,7 +145,7 @@ Use `title` prop to set keyboard title
 | extra-key | Content of bottom left key | *string* | `''` |
 | close-button-text | Close button text | *string* | `-` |
 | delete-button-text | Delete button text | *string* | `delete` |
-| show-delete-key | Whether to show delete button | *boolean* | `true` |
+| show-delete-key `v2.6.0` | Whether to show delete button | *boolean* | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 
