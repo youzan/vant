@@ -17,6 +17,7 @@ export default createComponent({
         return 'process';
       }
     },
+
     active() {
       return this.status === 'process';
     },
@@ -48,6 +49,10 @@ export default createComponent({
 
       return <i class={bem('circle')} />;
     },
+
+    onClickStep() {
+      this.parent.$emit('click-step', this.index);
+    },
   },
 
   render() {
@@ -59,10 +64,16 @@ export default createComponent({
 
     return (
       <div class={[BORDER, bem([direction, { [status]: status }])]}>
-        <div class={bem('title', { active })} style={titleStyle}>
+        <div
+          class={bem('title', { active })}
+          style={titleStyle}
+          onClick={this.onClickStep}
+        >
           {this.slots()}
         </div>
-        <div class={bem('circle-container')}>{this.genCircle()}</div>
+        <div class={bem('circle-container')} onClick={this.onClickStep}>
+          {this.genCircle()}
+        </div>
         <div class={bem('line')} style={lineStyle} />
       </div>
     );
