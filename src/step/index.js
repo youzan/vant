@@ -48,6 +48,10 @@ export default createComponent({
 
       return <i class={bem('circle')} />;
     },
+
+    onClick() {
+      this.parent.clickItem(this.index);
+    },
   },
 
   render() {
@@ -58,7 +62,10 @@ export default createComponent({
     const lineStyle = status === 'finish' && { background: activeColor };
 
     return (
-      <div class={[BORDER, bem([direction, { [status]: status }])]}>
+      <div
+        class={[BORDER, bem([direction, { [status]: status }])]}
+        onClick={this.onClick}
+      >
         <div class={bem('title', { active })} style={titleStyle}>
           {this.slots()}
         </div>

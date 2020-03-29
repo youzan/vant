@@ -67,6 +67,32 @@ export default {
 </van-steps>
 ```
 
+### Click Event
+
+```html
+<van-steps
+  :active="active"
+  @click-step="onClick"
+>
+  <van-step>Step1</van-step>
+  <van-step>Step2</van-step>
+  <van-step>Step3</van-step>
+  <van-step>Step4</van-step>
+</van-steps>
+```
+
+```js
+import { Notify } from 'vant';
+
+export default {
+  methods: {
+    onClick(index) {
+      Notify({ type: 'primary', message: index });
+    }
+  }
+}
+```
+
 ## API
 
 ### Steps Props
@@ -78,6 +104,12 @@ export default {
 | active-color | Active step color | *string* | `#07c160` |
 | active-icon | Active icon name | *string* | `checked` |
 | inactive-icon | Active icon name | *string* | - |
+
+### Steps Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| click-step | Triggered when click step | index: index of clicked step |
 
 ### Step Slots
 

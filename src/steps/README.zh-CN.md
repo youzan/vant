@@ -73,6 +73,28 @@ export default {
 </van-steps>
 ```
 
+### 监听切换事件
+
+```html
+<van-steps :active="active" @click-step="onClick">
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>
+</van-steps>
+```
+```js
+import { Notify } from 'vant';
+
+export default {
+  methods: {
+    onClick(index) {
+      Notify({ type: 'primary', message: index });
+    }
+  }
+}
+```
+
 ## API
 
 ### Steps Props
@@ -84,6 +106,12 @@ export default {
 | active-color | 激活状态颜色 | *string* | `#07c160` |
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | `checked` |
 | inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | *string* | - |
+
+### Steps Events
+
+| 事件名称 | 说明 | 回调参数 |
+|------|------|------|
+| click-step | 点击步骤时触发的事件 | index: 被点击的步骤的索引 |
 
 ### Step Slots
 

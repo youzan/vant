@@ -41,6 +41,15 @@
         </van-step>
       </van-steps>
     </demo-block>
+
+    <demo-block :title="t('clickEvent')">
+      <van-steps :active="active" @click-step="onClick">
+        <van-step>{{ t('step1') }}</van-step>
+        <van-step>{{ t('step2') }}</van-step>
+        <van-step>{{ t('step3') }}</van-step>
+        <van-step>{{ t('step4') }}</van-step>
+      </van-steps>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -59,6 +68,7 @@ export default {
       status2: '【城市】物流状态',
       status3: '快件已发货',
       customStyle: '自定义样式',
+      clickEvent: '监听点击事件',
     },
     'en-US': {
       nextStep: 'Next Step',
@@ -72,6 +82,7 @@ export default {
       status2: '【City】Status2',
       status3: '【City】Status3',
       customStyle: 'Custom Style',
+      clickEvent: 'Click Event',
     },
   },
 
@@ -84,6 +95,13 @@ export default {
   methods: {
     nextStep() {
       this.active = ++this.active % 4;
+    },
+
+    onClick(index) {
+      this.$notify({
+        type: 'primary',
+        message: `${index}`,
+      });
     },
   },
 };

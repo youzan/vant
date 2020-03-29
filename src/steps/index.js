@@ -23,6 +23,12 @@ export default createComponent({
     },
   },
 
+  methods: {
+    clickItem(index) {
+      this.$emit('click-step', index);
+    },
+  },
+
   render() {
     return (
       <div class={bem([this.direction])}>
