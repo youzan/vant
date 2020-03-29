@@ -406,3 +406,28 @@ test('show-error-message prop', async () => {
   await submitForm(wrapper);
   expect(wrapper.contains('.van-field__error-message')).toBeTruthy();
 });
+
+test('show-error prop', async () => {
+  const wrapper = mountForm({
+    template: `
+      <van-form :show-error="showError">
+        <van-field name="A" :rules="rulesA" value="" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        ...getSimpleRules(),
+        showError: false,
+      };
+    },
+  });
+
+  await submitForm(wrapper);
+  expect(wrapper.contains('.van-field--error')).toBeFalsy();
+
+  wrapper.setData({ showError: true });
+
+  await submitForm(wrapper);
+  expect(wrapper.contains('.van-field--error')).toBeTruthy();
+});

@@ -15,6 +15,10 @@ export default createComponent({
       type: String,
       default: 'onBlur',
     },
+    showError: {
+      type: Boolean,
+      default: true,
+    },
     showErrorMessage: {
       type: Boolean,
       default: true,

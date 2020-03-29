@@ -467,6 +467,7 @@ export default {
 | colon | 是否在 label 后面添加冒号 | *boolean* | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
 | scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | *boolean* | `false` |
+| show-error `v2.5.9` | 是否在校验不通过时标红输入框 | *boolean* | `true` |
 | show-error-message `v2.5.8` | 是否在校验不通过时在输入框下方展示错误提示 | *boolean* | `true` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)

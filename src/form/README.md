@@ -432,6 +432,7 @@ export default {
 | colon | Whether to display `:` after label | *boolean* | `false` |
 | validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | *boolean* | `false` |
+| show-error `v2.5.9` | Whether to highlight input when validation failed | *boolean* | `true` |
 | show-error-message `v2.5.8` | Whether to show error message when validation failed | *boolean* | `true` |
 
 ### Data Structure of Rule 
