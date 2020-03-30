@@ -97,6 +97,10 @@ export default createComponent({
       return this.children.length;
     },
 
+    maxCount() {
+      return Math.ceil(Math.abs(this.minOffset) / this.size);
+    },
+
     delta() {
       return this.vertical ? this.deltaY : this.deltaX;
     },
@@ -215,8 +219,19 @@ export default createComponent({
 
       if (this.delta && this.isCorrectDirection) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
+
+        let pace = 0;
+
+        if (this.loop) {
+          pace = offset > 0 ? (this.delta > 0 ? -1 : 1) : 0;
+        } else {
+          pace = -Math[this.delta > 0 ? 'ceil' : 'floor'](
+            this.delta / this.size
+          );
+        }
+
         this.move({
-          pace: offset > 0 ? (this.delta > 0 ? -1 : 1) : 0,
+          pace,
           emitChange: true,
         });
       }
@@ -226,14 +241,14 @@ export default createComponent({
     },
 
     getTargetActive(pace) {
-      const { active, count } = this;
+      const { active, count, maxCount } = this;
 
       if (pace) {
         if (this.loop) {
           return range(active + pace, -1, count);
         }
 
-        return range(active + pace, 0, count - 1);
+        return range(active + pace, 0, maxCount);
       }
 
       return active;
