@@ -31,3 +31,5 @@ exports[`Icon render icon slot with info 1`] = `
   </div>Text
 </div>
 `;
+
+exports[`disable safe-area-inset-bottom prop 1`] = `<div class="van-goods-action van-goods-action--unfit"></div>`;

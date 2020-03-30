@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-goods-action :safe-area-inset-bottom="false">
+      <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
           :text="t('icon1')"
@@ -26,7 +26,7 @@
     </demo-block>
 
     <demo-block :title="t('iconBadge')">
-      <van-goods-action :safe-area-inset-bottom="false">
+      <van-goods-action>
         <van-goods-action-icon icon="chat-o" dot :text="t('icon1')" />
         <van-goods-action-icon icon="cart-o" badge="5" :text="t('icon2')" />
         <van-goods-action-icon icon="shop-o" badge="12" :text="t('icon3')" />
@@ -36,7 +36,7 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="t('customIconColor')">
-      <van-goods-action :safe-area-inset-bottom="false">
+      <van-goods-action>
         <van-goods-action-icon
           icon="chat-o"
           :text="t('icon1')"
@@ -54,7 +54,7 @@
     </demo-block>
 
     <demo-block :title="t('customButtonColor')">
-      <van-goods-action :safe-area-inset-bottom="false">
+      <van-goods-action>
         <van-goods-action-icon icon="chat-o" :text="t('icon1')" />
         <van-goods-action-icon icon="cart-o" :text="t('icon2')" />
         <van-goods-action-button
@@ -117,6 +117,7 @@ export default {
 .demo-goods-action {
   .van-goods-action {
     position: relative;
+    padding-bottom: 0;
   }
 }
 </style>

@@ -97,3 +97,14 @@ test('text-align prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('disable safe-area-inset-bottom prop', () => {
+  const wrapper = mount(SubmitBar, {
+    context: {
+      props: {
+        safeAreaInsetBottom: false,
+      },
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
