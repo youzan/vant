@@ -7,7 +7,10 @@ export default createComponent({
   mixins: [ParentMixin('vanGoodsAction')],
 
   props: {
-    safeAreaInsetBottom: Boolean,
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   render() {

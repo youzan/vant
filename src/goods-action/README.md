@@ -82,7 +82,7 @@ Use `badge` prop to show badge in icon
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 
 ### GoodsActionIcon Props
 
