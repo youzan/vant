@@ -60,9 +60,9 @@ Use slot to add custom contents.
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">Check</van-checkbox>
-    <template #tip>
-        Some tips, <span @click="onClickEditAddress">Link</span>
-    </template>
+  <template #tip>
+    Some tips, <span @click="onClickEditAddress">Link</span>
+  </template>
 </van-submit-bar>
 ```
 
@@ -84,7 +84,7 @@ Use slot to add custom contents.
 | decimal-length | number of digits to appear after the decimal point | *number \| string* | `2` |
 | disabled | Whether to disable button | *boolean* | `false` |
 | loading | Whether to show loading icon | *boolean* | `false` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 
 ### Events
 

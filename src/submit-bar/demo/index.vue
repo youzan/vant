@@ -92,6 +92,7 @@ export default {
 .demo-submit-bar {
   .van-submit-bar {
     position: relative;
+    padding-bottom: 0;
   }
 
   .edit-address {

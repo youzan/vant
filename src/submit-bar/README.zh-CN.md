@@ -60,9 +60,9 @@ Vue.use(SubmitBar);
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">全选</van-checkbox>
-    <template #tip>
-        你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
-    </template>
+  <template #tip>
+    你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
+  </template>
 </van-submit-bar>
 ```
 
@@ -84,7 +84,7 @@ Vue.use(SubmitBar);
 | decimal-length | 价格小数点后位数 | *number \| string* | `2` |
 | disabled | 是否禁用按钮 | *boolean* | `false` |
 | loading | 是否显示加载中的按钮 |  *boolean* | `false` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 
 ### Events
 
