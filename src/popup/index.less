@@ -68,6 +68,20 @@
       padding-bottom: env(safe-area-inset-bottom);
     }
 
+    &-slide-top-enter-active,
+    &-slide-left-enter-active,
+    &-slide-right-enter-active,
+    &-slide-bottom-enter-active {
+      transition-timing-function: ease-out;
+    }
+
+    &-slide-top-leave-active,
+    &-slide-left-leave-active,
+    &-slide-right-leave-active,
+    &-slide-bottom-leave-active {
+      transition-timing-function: ease-in;
+    }
+
     &-slide-top-enter,
     &-slide-top-leave-active {
       transform: translate3d(0, -100%, 0);
