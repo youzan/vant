@@ -48,6 +48,8 @@
 // Animation
 @animation-duration-base: 0.3s;
 @animation-duration-fast: 0.2s;
+@animation-timing-function-enter: ease-out;
+@animation-timing-function-leave: ease-in;
 
 // Border
 @border-color: @gray-3;
@@ -531,7 +533,7 @@
 
 // Popup
 @popup-background-color: @white;
-@popup-transition: transform @animation-duration-base ease-out;
+@popup-transition: transform @animation-duration-base;
 @popup-round-border-radius: 20px;
 @popup-close-icon-size: 22px;
 @popup-close-icon-color: @gray-5;
