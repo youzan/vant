@@ -106,7 +106,7 @@ Vue.use(Button);
 | text | Text | *string* | - |
 | color `v2.1.8` | Color, support linear-gradient | *string* | - |
 | icon | Left Icon | *string* | - |
-| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
+| icon-prefix `v2.6.0` | Icon className prefix | *string* | `van-icon` |
 | tag | HTML Tag | *string* | `button` |
 | native-type | Native Type Attribute | *string* | `''` |
 | plain | Whether to be plain button | *boolean* | `false` |
