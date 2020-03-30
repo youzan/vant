@@ -11,7 +11,6 @@
 
   .van-icon {
     color: @nav-bar-icon-color;
-    vertical-align: middle;
   }
 
   &__arrow {
@@ -42,7 +41,10 @@
   &__left,
   &__right {
     position: absolute;
+    top: 0;
     bottom: 0;
+    display: flex;
+    align-items: center;
     font-size: @font-size-md;
     cursor: pointer;
   }
@@ -56,11 +58,9 @@
   }
 
   &__text {
-    display: inline-block;
     margin: 0 -@padding-md;
     padding: 0 @padding-md;
     color: @nav-bar-text-color;
-    vertical-align: middle;
 
     &:active {
       background-color: @active-color;
