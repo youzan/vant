@@ -106,11 +106,13 @@ export default {
 滑块默认宽度为`100%`，可以通过`width`属性设置单个滑块的宽度。纵向滚动模式下，可以通过`height`属性设置单个滑块的高度。
 
 ```html
-<van-swipe :loop="false" :width="300">
+<van-swipe :loop="false" :width="100">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
+  <van-swipe-item>5</van-swipe-item>
+  <van-swipe-item>6</van-swipe-item>
 </van-swipe>
 ```
 
