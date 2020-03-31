@@ -1,8 +1,8 @@
 # Changelog
 
-### [v2.5.9-beta.0](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9-beta.0)
+### [v2.5.9](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9)
 
-`2020-03-28`
+`2020-03-31`
 
 **Feature**
 
@@ -14,6 +14,7 @@
 
 - NumberKeyboard: show-delete-key prop not work [#5935](https://github.com/youzan/vant/issues/5935)
 - Toast: incorrect height in legacy devices [#5931](https://github.com/youzan/vant/issues/5931)
+- Sticky: Fixed error when accessing the window during SSR [#5958](https://github.com/youzan/vant/issues/5958)
 
 ### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
 
