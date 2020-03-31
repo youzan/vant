@@ -127,6 +127,7 @@ export default {
 .demo-tabbar {
   .van-tabbar {
     position: relative;
+    padding-bottom: 0;
   }
 }
 </style>

@@ -12,7 +12,6 @@ export default createComponent({
     zIndex: [Number, String],
     activeColor: String,
     inactiveColor: String,
-    safeAreaInsetBottom: Boolean,
     value: {
       type: [Number, String],
       default: 0,
@@ -24,6 +23,20 @@ export default createComponent({
     fixed: {
       type: Boolean,
       default: true,
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: null,
+    },
+  },
+
+  computed: {
+    fit() {
+      if (this.safeAreaInsetBottom !== null) {
+        return this.safeAreaInsetBottom;
+      }
+      // enable safe-area-inset-bottom by default when fixed
+      return this.fixed;
     },
   },
 
@@ -54,8 +67,8 @@ export default createComponent({
         class={[
           { [BORDER_TOP_BOTTOM]: this.border },
           bem({
+            unfit: !this.fit,
             fixed: this.fixed,
-            'safe-area-inset-bottom': this.safeAreaInsetBottom,
           }),
         ]}
       >
