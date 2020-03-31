@@ -6,6 +6,8 @@
   box-sizing: content-box;
   width: 100%;
   height: @tabbar-height;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
   background-color: @tabbar-background-color;
 
   &--fixed {
@@ -14,8 +16,7 @@
     left: 0;
   }
 
-  &--safe-area-inset-bottom {
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
+  &--unfit {
+    padding-bottom: 0;
   }
 }

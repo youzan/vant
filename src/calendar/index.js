@@ -383,11 +383,7 @@ export default createComponent({
 
     genFooter() {
       return (
-        <div
-          class={bem('footer', {
-            'safe-area-inset-bottom': this.safeAreaInsetBottom,
-          })}
-        >
+        <div class={bem('footer', { unfit: !this.safeAreaInsetBottom })}>
           {this.genFooterContent()}
         </div>
       );
