@@ -1,5 +1,5 @@
 import { isHidden } from '../utils/dom/style';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, isServer } from '../utils';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
 import { BindEventMixin } from '../mixins/bind-event';
 
@@ -65,7 +65,7 @@ export default createComponent({
 
   created() {
     // compatibility: https://caniuse.com/#feat=intersectionobserver
-    if (window.IntersectionObserver) {
+    if (!isServer && window.IntersectionObserver) {
       this.observer = new IntersectionObserver(
         entries => {
           // trigger scroll when visibility changed
