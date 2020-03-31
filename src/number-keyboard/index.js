@@ -211,10 +211,7 @@ export default createComponent({
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
-          class={bem([
-            this.theme,
-            { 'safe-area-inset-bottom': this.safeAreaInsetBottom },
-          ])}
+          class={bem([this.theme, { unfit: !this.safeAreaInsetBottom }])}
           onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
