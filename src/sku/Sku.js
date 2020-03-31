@@ -43,7 +43,6 @@ export default createComponent({
     customSkuValidator: Function,
     closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
-    safeAreaInsetBottom: Boolean,
     resetSelectedSkuOnHide: Boolean,
     properties: Array,
     quota: {
@@ -92,6 +91,10 @@ export default createComponent({
       default: () => ({}),
     },
     previewOnClickImage: {
+      type: Boolean,
+      default: true,
+    },
+    safeAreaInsetBottom: {
       type: Boolean,
       default: true,
     },
@@ -693,7 +696,6 @@ export default createComponent({
         startSaleNum={this.startSaleNum}
         skuEventBus={skuEventBus}
         selectedNum={selectedNum}
-        selectedSku={selectedSku}
         stepperTitle={stepperTitle}
         skuStockNum={sku.stock_num}
         disableStepperInput={this.disableStepperInput}
