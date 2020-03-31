@@ -140,7 +140,7 @@ export default {
 | custom-stepper-config | Custom stepper related config | *object* | `{}` |
 | message-config | Message related config | *object* | `{}` |
 | get-container | Return the mount node for sku | *string \| () => Element* | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `true` |
 | start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
 | properties `v2.4.2` | Goods properties | *array* | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | *boolean* | `true` |

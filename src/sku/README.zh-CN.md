@@ -144,7 +144,7 @@ export default {
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
-| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
 | start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
 | properties `v2.4.2` | 商品属性 | *array* | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | *boolean* | `true` |
