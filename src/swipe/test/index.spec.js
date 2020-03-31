@@ -144,16 +144,9 @@ test('loop', () => {
 });
 
 test('not loop', () => {
-  // mock iPhone7
   const restoreMock = mockGetBoundingClientRect({
-    x: 0,
-    y: -751,
     width: 375,
-    height: 1448,
-    top: -751,
-    right: 375,
-    bottom: 697,
-    left: 0,
+    height: 150,
   });
 
   const wrapper = mount({
