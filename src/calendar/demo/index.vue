@@ -122,7 +122,7 @@ export default {
       out: '离店',
       today: '今天',
       laborDay: '劳动节',
-      youthDay: '五四青年节',
+      youthDay: '青年节',
       calendar: '日历',
       maxRange: '日期区间最大范围',
       selectCount: count => `选择了 ${count} 个日期`,
