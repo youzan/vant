@@ -315,7 +315,7 @@ export default createComponent({
       this.focused = true;
       this.$emit('focus', event);
 
-      // hack for safari
+      // readonly not work in lagacy mobile safari
       /* istanbul ignore if */
       if (this.readonly) {
         this.blur();

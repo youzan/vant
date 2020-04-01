@@ -208,6 +208,12 @@ export default createComponent({
 
     onFocus(event) {
       this.$emit('focus', event);
+
+      // readonly not work in lagacy mobile safari
+      /* istanbul ignore if */
+      if (this.disableInput && this.$refs.input) {
+        this.$refs.input.blur();
+      }
     },
 
     onBlur(event) {
@@ -280,6 +286,7 @@ export default createComponent({
           {...createListeners('minus')}
         />
         <input
+          ref="input"
           type={this.integer ? 'tel' : 'text'}
           role="spinbutton"
           class={bem('input')}
