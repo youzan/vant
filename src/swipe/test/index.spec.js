@@ -1,10 +1,4 @@
-import {
-  mount,
-  triggerDrag,
-  later,
-  trigger,
-  mockGetBoundingClientRect,
-} from '../../../test';
+import { mount, triggerDrag, later, trigger } from '../../../test';
 
 function mockPageHidden() {
   let hidden = true;
@@ -141,44 +135,6 @@ test('loop', () => {
   expect(swipe.active).toEqual(-1);
   triggerDrag(track, 100, 0);
   expect(swipe.active).toEqual(1);
-});
-
-test('not loop', () => {
-  const restoreMock = mockGetBoundingClientRect({
-    width: 375,
-    height: 150,
-  });
-
-  const wrapper = mount({
-    template: `
-      <van-swipe
-        ref="swipe"
-        :width="100"
-        :loop="false"
-      >
-        <van-swipe-item>1</van-swipe-item>
-        <van-swipe-item>2</van-swipe-item>
-        <van-swipe-item>3</van-swipe-item>
-        <van-swipe-item>4</van-swipe-item>
-        <van-swipe-item>5</van-swipe-item>
-        <van-swipe-item>6</van-swipe-item>
-      </van-swipe>
-    `,
-  });
-
-  const { swipe } = wrapper.vm.$refs;
-  const track = wrapper.find('.van-swipe__track');
-
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(1);
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(2);
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(3);
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(3);
-
-  restoreMock();
 });
 
 test('should pause auto play when page hidden', async () => {
