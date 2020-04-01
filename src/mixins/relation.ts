@@ -1,25 +1,9 @@
-import Vue, { VNode } from 'vue';
+import Vue from 'vue';
+import { sortChildren } from '../utils/vnodes';
 
 type ChildrenMixinOptions = {
   indexKey?: any;
 };
-
-function flattenVNodes(vnodes: VNode[]) {
-  const result: VNode[] = [];
-
-  function traverse(vnodes: VNode[]) {
-    vnodes.forEach(vnode => {
-      result.push(vnode);
-
-      if (vnode.children) {
-        traverse(vnode.children);
-      }
-    });
-  }
-
-  traverse(vnodes);
-  return result;
-}
 
 type ChildrenMixinThis = {
   disableBindRelation?: boolean;
@@ -72,10 +56,8 @@ export function ChildrenMixin(
         }
 
         const children = [...this.parent.children, this];
-        const vnodes = flattenVNodes(this.parent.slots());
-        children.sort(
-          (a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode)
-        );
+
+        sortChildren(children, this.parent);
 
         this.parent.children = children;
       },

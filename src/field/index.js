@@ -80,13 +80,13 @@ export default createComponent({
     this.$nextTick(this.adjustSize);
 
     if (this.vanForm) {
-      this.vanForm.fields.push(this);
+      this.vanForm.addField(this);
     }
   },
 
   beforeDestroy() {
     if (this.vanForm) {
-      this.vanForm.fields = this.vanForm.fields.filter(item => item !== this);
+      this.vanForm.removeField(this);
     }
   },
 

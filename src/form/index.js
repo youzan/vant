@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { sortChildren } from '../utils/vnodes';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -122,6 +123,15 @@ export default createComponent({
           item.$el.scrollIntoView();
         }
       });
+    },
+
+    addField(field) {
+      this.fields.push(field);
+      sortChildren(this.fields, this);
+    },
+
+    removeField(field) {
+      this.fields = this.fields.filter(item => item !== field);
     },
 
     getValues() {
