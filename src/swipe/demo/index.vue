@@ -42,13 +42,11 @@
     </demo-block>
 
     <demo-block :title="t('title5')">
-      <van-swipe :width="100" :loop="false" indicator-color="white">
+      <van-swipe :width="300" :loop="false" indicator-color="white">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
         <van-swipe-item>4</van-swipe-item>
-        <van-swipe-item>5</van-swipe-item>
-        <van-swipe-item>6</van-swipe-item>
       </van-swipe>
     </demo-block>
 
