@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import { mount, later } from '../../../test';
+import { mount, later, mockGetBoundingClientRect } from '../../../test';
 import Vue from 'vue';
 import Tabbar from '..';
 
@@ -173,4 +173,19 @@ test('disable border', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('placeholder prop', () => {
+  const restore = mockGetBoundingClientRect({ height: 50 });
+
+  const wrapper = mount(Tabbar, {
+    propsData: {
+      fixed: true,
+      placeholder: true,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+
+  restore();
 });

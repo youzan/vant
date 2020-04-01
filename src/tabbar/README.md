@@ -163,6 +163,7 @@ export default {
 | active-color | Color of active tab item | *string* | `#1989fa` |
 | inactive-color | Color of inactive tab item | *string* | `#7d7e80` |
 | route | Whether to enable route mode | *boolean* | `false` |
+| placeholder `v2.6.0` | Whether to generage a placeholder element when fixed | *boolean* | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `false` |
 
 ### Tabbar Events
