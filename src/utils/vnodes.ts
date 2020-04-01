@@ -18,8 +18,13 @@ function flattenVNodes(vnodes: VNode[]) {
   return result;
 }
 
+type VueInstance = {
+  _vnode: VNode;
+  $vnode: VNode;
+};
+
 // sort children instances by vnodes order
-export function sortChildren(children: any[], parent: any) {
-  const vnodes = flattenVNodes(parent._vnode.children);
+export function sortChildren(children: VueInstance[], parent: VueInstance) {
+  const vnodes = flattenVNodes(parent._vnode.children!);
   children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
 }
