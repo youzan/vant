@@ -176,7 +176,7 @@ export default {
         if (date === 1) {
           day.topInfo = '劳动节';
         } else if (date === 4) {
-          day.topInfo = '五四青年节';
+          day.topInfo = '青年节';
         } else if (date === 11) {
           day.text = '今天';
         }

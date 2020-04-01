@@ -135,13 +135,7 @@ export default createComponent({
 
   watch: {
     type: 'reset',
-
-    value(val) {
-      if (val) {
-        this.initRect();
-        this.scrollIntoView();
-      }
-    },
+    value: 'init',
 
     defaultDate(val) {
       this.currentDate = val;
@@ -150,10 +144,11 @@ export default createComponent({
   },
 
   mounted() {
-    if (this.value || !this.poppable) {
-      this.initRect();
-      this.scrollIntoView();
-    }
+    this.init();
+  },
+
+  activated() {
+    this.init();
   },
 
   methods: {
@@ -163,7 +158,11 @@ export default createComponent({
       this.scrollIntoView();
     },
 
-    initRect() {
+    init() {
+      if (this.poppable && !this.value) {
+        return;
+      }
+
       this.$nextTick(() => {
         // add Math.floor to avoid decimal height issues
         // https://github.com/youzan/vant/issues/5640
@@ -172,6 +171,7 @@ export default createComponent({
         );
         this.onScroll();
       });
+      this.scrollIntoView();
     },
 
     // scroll to current month
