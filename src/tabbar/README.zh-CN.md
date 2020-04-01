@@ -170,6 +170,7 @@ export default {
 | active-color | 选中标签的颜色 | *string* | `#1989fa` |
 | inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` |
 | route | 是否开启路由模式 | *boolean* | `false` |
+| placeholder `v2.6.0` | 固定在底部时，是否在标签位置生成一个等高的占位元素 | *boolean* | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei)，设置 fixed 时默认开启 | *boolean* | `false` |
 
 ### Tabbar Events

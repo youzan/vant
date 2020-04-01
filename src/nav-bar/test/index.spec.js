@@ -1,5 +1,5 @@
 import NavBar from '..';
-import { mount } from '../../../test';
+import { mount, mockGetBoundingClientRect } from '../../../test';
 
 test('render left & right slot', () => {
   const wrapper = mount(NavBar, {
@@ -23,6 +23,8 @@ test('render title slot', () => {
 });
 
 test('placeholder prop', () => {
+  const restore = mockGetBoundingClientRect({ height: 50 });
+
   const wrapper = mount(NavBar, {
     propsData: {
       fixed: true,
@@ -31,6 +33,8 @@ test('placeholder prop', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+
+  restore();
 });
 
 test('click-left event', () => {
