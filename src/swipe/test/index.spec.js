@@ -137,23 +137,6 @@ test('loop', () => {
   expect(swipe.active).toEqual(1);
 });
 
-test('not loop', () => {
-  const wrapper = mount(Component, {
-    propsData: {
-      loop: false,
-    },
-  });
-  const { swipe } = wrapper.vm.$refs;
-  const track = wrapper.find('.van-swipe__track');
-
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(1);
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(2);
-  triggerDrag(track, -100, 0);
-  expect(swipe.active).toEqual(2);
-});
-
 test('should pause auto play when page hidden', async () => {
   const change = jest.fn();
   mount(Component, {
