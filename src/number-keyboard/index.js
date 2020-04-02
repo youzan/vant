@@ -10,7 +10,7 @@ const DELETE_KEY_THEME = ['delete', 'big', 'gray'];
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);
       }
@@ -165,7 +165,7 @@ export default createComponent({
     },
 
     genKeys() {
-      return this.keys.map(key => (
+      return this.keys.map((key) => (
         <Key
           key={key.text}
           text={key.text}

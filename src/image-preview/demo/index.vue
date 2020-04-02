@@ -53,7 +53,7 @@ export default {
       button3: '异步关闭',
       button4: '展示关闭按钮',
       componentCall: '组件调用',
-      index: index => `第${index + 1}页`,
+      index: (index) => `第${index + 1}页`,
     },
     'en-US': {
       button1: 'Show Images',
@@ -61,7 +61,7 @@ export default {
       button3: 'Async Close',
       button4: 'Show Close Icon',
       componentCall: 'Component Call',
-      index: index => `Page: ${index}`,
+      index: (index) => `Page: ${index}`,
     },
   },
 

@@ -154,7 +154,7 @@ export default createComponent({
     },
 
     runValidator(value, rule) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         const returnVal = rule.validator(value, rule);
 
         if (isPromise(returnVal)) {
@@ -213,7 +213,7 @@ export default createComponent({
             }
 
             if (rule.validator) {
-              return this.runValidator(value, rule).then(result => {
+              return this.runValidator(value, rule).then((result) => {
                 if (result === false) {
                   this.validateMessage = this.getRuleMessage(value, rule);
                 }
@@ -225,7 +225,7 @@ export default createComponent({
     },
 
     validate(rules = this.rules) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         if (!rules) {
           resolve();
         }
@@ -246,7 +246,7 @@ export default createComponent({
     validateWithTrigger(trigger) {
       if (this.vanForm && this.rules) {
         const defaultTrigger = this.vanForm.validateTrigger === trigger;
-        const rules = this.rules.filter(rule => {
+        const rules = this.rules.filter((rule) => {
           if (rule.trigger) {
             return rule.trigger === trigger;
           }

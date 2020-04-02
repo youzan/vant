@@ -61,7 +61,7 @@ function ContactList(
           <Icon
             name="edit"
             class={bem('edit')}
-            onClick={event => {
+            onClick={(event) => {
               event.stopPropagation();
               emit(ctx, 'edit', item, index);
             }}

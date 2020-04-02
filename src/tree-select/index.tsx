@@ -61,7 +61,7 @@ function TreeSelect(
       : activeId === id;
   }
 
-  const Navs = items.map(item => (
+  const Navs = items.map((item) => (
     <SidebarItem
       dot={item.dot}
       info={isDef(item.badge) ? item.badge : item.info}
@@ -76,7 +76,7 @@ function TreeSelect(
       return slots.content();
     }
 
-    return subItems.map(item => (
+    return subItems.map((item) => (
       <div
         key={item.id}
         class={[

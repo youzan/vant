@@ -151,7 +151,7 @@ test('bind value', () => {
       value: '',
     },
     listeners: {
-      'update:value': value => {
+      'update:value': (value) => {
         wrapper.setProps({ value });
       },
     },
@@ -176,7 +176,7 @@ test('maxlength', () => {
     },
     listeners: {
       input: onInput,
-      'update:value': value => {
+      'update:value': (value) => {
         wrapper.setProps({ value });
       },
     },

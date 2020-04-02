@@ -57,7 +57,7 @@ export default createComponent({
 
       return accordion
         ? value === this.currentName
-        : value.some(name => name === this.currentName);
+        : value.some((name) => name === this.currentName);
     },
   },
 

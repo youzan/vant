@@ -121,7 +121,7 @@ export default createComponent({
     const { value } = this;
     const simple = this.mode !== 'multi';
 
-    const onSelect = value => () => {
+    const onSelect = (value) => () => {
       this.select(value, true);
     };
 
@@ -133,7 +133,7 @@ export default createComponent({
         >
           {this.prevText || t('prev')}
         </li>
-        {this.pages.map(page => (
+        {this.pages.map((page) => (
           <li
             class={[bem('item', { active: page.active }), bem('page'), BORDER]}
             onClick={onSelect(page.number)}

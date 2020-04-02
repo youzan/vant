@@ -19,7 +19,7 @@ function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
 }
 
 export function deepAssign(to: ObjectIndex, from: ObjectIndex): ObjectIndex {
-  Object.keys(from).forEach(key => {
+  Object.keys(from).forEach((key) => {
     assignKey(to, from, key);
   });
 

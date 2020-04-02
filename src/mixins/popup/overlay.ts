@@ -63,7 +63,7 @@ export function updateOverlay(): void {
 }
 
 export function openOverlay(vm: any, config: OverlayConfig): void {
-  if (!context.stack.some(item => item.vm === vm)) {
+  if (!context.stack.some((item) => item.vm === vm)) {
     context.stack.push({ vm, config });
     updateOverlay();
   }
@@ -77,7 +77,7 @@ export function closeOverlay(vm: any): void {
       stack.pop();
       updateOverlay();
     } else {
-      context.stack = stack.filter(item => item.vm !== vm);
+      context.stack = stack.filter((item) => item.vm !== vm);
     }
   }
 }

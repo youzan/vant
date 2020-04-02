@@ -43,7 +43,7 @@ export function emit(context: Context, eventName: string, ...args: any[]) {
   const listeners = context.listeners[eventName];
   if (listeners) {
     if (Array.isArray(listeners)) {
-      listeners.forEach(listener => {
+      listeners.forEach((listener) => {
         listener(...args);
       });
     } else {

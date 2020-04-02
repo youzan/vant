@@ -172,7 +172,7 @@ test('stepper blur', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 

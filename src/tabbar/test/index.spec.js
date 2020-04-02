@@ -75,7 +75,7 @@ test('route mode match by name', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('router NavigationDuplicated', async done => {
+test('router NavigationDuplicated', async (done) => {
   expect(async () => {
     const router = new VueRouter();
     const wrapper = mount({
@@ -157,10 +157,7 @@ test('name prop', () => {
     },
   });
 
-  wrapper
-    .findAll('.van-tabbar-item')
-    .at(1)
-    .trigger('click');
+  wrapper.findAll('.van-tabbar-item').at(1).trigger('click');
 
   expect(onChange).toHaveBeenCalledWith('b');
 });

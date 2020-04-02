@@ -84,7 +84,7 @@ export default {
 
     currentContact() {
       const id = this.chosenContactId;
-      return id !== null ? this.list.filter(item => item.id === id)[0] : {};
+      return id !== null ? this.list.filter((item) => item.id === id)[0] : {};
     },
   },
 
@@ -114,7 +114,9 @@ export default {
       this.showList = false;
 
       if (this.isEdit) {
-        this.list = this.list.map(item => (item.id === info.id ? info : item));
+        this.list = this.list.map((item) =>
+          (item.id === info.id ? info : item)
+        );
       } else {
         this.list.push(info);
       }
@@ -123,7 +125,7 @@ export default {
 
     onDelete(info) {
       this.showEdit = false;
-      this.list = this.list.filter(item => item.id !== info.id);
+      this.list = this.list.filter((item) => item.id !== info.id);
       if (this.chosenContactId === info.id) {
         this.chosenContactId = null;
       }

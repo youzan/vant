@@ -171,7 +171,9 @@ export default createComponent({
       }
       // 属性未全选
       if (
-        this.propList.some(it => (this.selectedProp[it.k_id] || []).length < 1)
+        this.propList.some(
+          (it) => (this.selectedProp[it.k_id] || []).length < 1
+        )
       ) {
         return false;
       }
@@ -258,12 +260,12 @@ export default createComponent({
       const imageList = [this.goods.picture];
 
       if (this.skuTree.length > 0) {
-        this.skuTree.forEach(treeItem => {
+        this.skuTree.forEach((treeItem) => {
           if (!treeItem.v) {
             return;
           }
 
-          treeItem.v.forEach(vItem => {
+          treeItem.v.forEach((vItem) => {
             const img = vItem.previewImgUrl || vItem.imgUrl || vItem.img_url;
             if (img) {
               imageList.push(img);
@@ -306,15 +308,17 @@ export default createComponent({
     selectedText() {
       if (this.selectedSkuComb) {
         const values = this.selectedSkuValues.concat(this.selectedPropValues);
-        return `${t('selected')} ${values.map(item => item.name).join('；')}`;
+        return `${t('selected')} ${values.map((item) => item.name).join('；')}`;
       }
 
       const unselectedSku = this.skuTree
-        .filter(item => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID)
-        .map(item => item.k);
+        .filter(
+          (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID
+        )
+        .map((item) => item.k);
       const unselectedProp = this.propList
-        .filter(item => (this.selectedProp[item.k_id] || []).length < 1)
-        .map(item => item.k);
+        .filter((item) => (this.selectedProp[item.k_id] || []).length < 1)
+        .map((item) => item.k);
 
       return `${t('select')} ${unselectedSku
         .concat(unselectedProp)
@@ -363,13 +367,13 @@ export default createComponent({
       this.selectedSku = {};
 
       // 重置 selectedSku
-      this.skuTree.forEach(item => {
+      this.skuTree.forEach((item) => {
         this.selectedSku[item.k_s] =
           this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
       });
 
       // 只有一个 sku 规格值时默认选中
-      this.skuTree.forEach(item => {
+      this.skuTree.forEach((item) => {
         const key = item.k_s;
         const valueId = item.v[0].id;
         if (
@@ -396,7 +400,7 @@ export default createComponent({
       this.selectedProp = {};
       const { selectedProp = {} } = this.initialSku;
       // 只有一个属性值时，默认选中，且选中外部传入信息
-      this.propList.forEach(item => {
+      this.propList.forEach((item) => {
         if (item.v && item.v.length === 1) {
           this.selectedProp[item.k_id] = [item.v[0].id];
         } else if (selectedProp[item.k_id]) {
@@ -493,7 +497,7 @@ export default createComponent({
     onPreviewImage(indexImage) {
       const { previewOnClickImage } = this;
 
-      const index = this.imageList.findIndex(image => image === indexImage);
+      const index = this.imageList.findIndex((image) => image === indexImage);
 
       const params = {
         index,
@@ -615,7 +619,7 @@ export default createComponent({
       selectedSku,
       selectedSkuComb,
     };
-    const slots = name => this.slots(name, slotsProps);
+    const slots = (name) => this.slots(name, slotsProps);
 
     const Header = slots('sku-header') || (
       <SkuHeader
@@ -658,9 +662,9 @@ export default createComponent({
       slots('sku-group') ||
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
-          {this.skuTree.map(skuTreeItem => (
+          {this.skuTree.map((skuTreeItem) => (
             <SkuRow skuRow={skuTreeItem}>
-              {skuTreeItem.v.map(skuValue => (
+              {skuTreeItem.v.map((skuValue) => (
                 <SkuRowItem
                   skuList={sku.list}
                   skuValue={skuValue}
@@ -671,9 +675,9 @@ export default createComponent({
               ))}
             </SkuRow>
           ))}
-          {this.propList.map(skuTreeItem => (
+          {this.propList.map((skuTreeItem) => (
             <SkuRow skuRow={skuTreeItem}>
-              {skuTreeItem.v.map(skuValue => (
+              {skuTreeItem.v.map((skuValue) => (
                 <SkuRowPropItem
                   skuValue={skuValue}
                   skuKeyStr={skuTreeItem.k_id + ''}
@@ -701,7 +705,7 @@ export default createComponent({
         disableStepperInput={this.disableStepperInput}
         customStepperConfig={this.customStepperConfig}
         hideQuotaText={this.hideQuotaText}
-        onChange={event => {
+        onChange={(event) => {
           this.$emit('stepper-change', event);
         }}
       />

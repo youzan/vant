@@ -267,7 +267,7 @@ test('formatter prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'abc123',
-      formatter: value => value.replace(/\d/g, ''),
+      formatter: (value) => value.replace(/\d/g, ''),
     },
   });
 
@@ -301,7 +301,7 @@ test('name prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('call focus method before mounted', done => {
+test('call focus method before mounted', (done) => {
   mount(Field, {
     created() {
       this.focus();

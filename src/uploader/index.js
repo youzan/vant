@@ -117,7 +117,7 @@ export default createComponent({
 
         if (isPromise(response)) {
           response
-            .then(data => {
+            .then((data) => {
               if (data) {
                 this.readFile(data);
               } else {
@@ -143,8 +143,8 @@ export default createComponent({
           files = files.slice(0, maxCount);
         }
 
-        Promise.all(files.map(file => readFile(file, this.resultType))).then(
-          contents => {
+        Promise.all(files.map((file) => readFile(file, this.resultType))).then(
+          (contents) => {
             const fileList = files.map((file, index) => {
               const result = { file, status: '' };
 
@@ -159,7 +159,7 @@ export default createComponent({
           }
         );
       } else {
-        readFile(files, this.resultType).then(content => {
+        readFile(files, this.resultType).then((content) => {
           const result = { file: files, status: '' };
 
           if (content) {
@@ -227,8 +227,8 @@ export default createComponent({
         return;
       }
 
-      const imageFiles = this.fileList.filter(item => isImageFile(item));
-      const imageContents = imageFiles.map(item => item.content || item.url);
+      const imageFiles = this.fileList.filter((item) => isImageFile(item));
+      const imageContents = imageFiles.map((item) => item.content || item.url);
 
       this.imagePreview = ImagePreview({
         images: imageContents,
@@ -287,7 +287,7 @@ export default createComponent({
         <Icon
           name="clear"
           class={bem('preview-delete')}
-          onClick={event => {
+          onClick={(event) => {
             event.stopPropagation();
             this.onDelete(item, index);
           }}

@@ -13,7 +13,7 @@ const [createComponent, bem, t] = createNamespace('list');
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (!this.scroller) {
         this.scroller = getScroller(this.$el);
       }

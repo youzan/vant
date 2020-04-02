@@ -102,8 +102,9 @@ export default createComponent({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this
-          .moveX / scale}px, ${this.moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${
+          this.moveX / scale
+        }px, ${this.moveY / scale}px)`;
       }
 
       return style;

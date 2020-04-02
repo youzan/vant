@@ -43,10 +43,7 @@ test('click-step event', () => {
   wrapper.find('.van-step__title').trigger('click');
   expect(onClickStep).toHaveBeenCalledWith(0);
 
-  wrapper
-    .findAll('.van-step__circle-container')
-    .at(2)
-    .trigger('click');
+  wrapper.findAll('.van-step__circle-container').at(2).trigger('click');
   expect(onClickStep).toHaveBeenCalledTimes(2);
   expect(onClickStep).toHaveBeenLastCalledWith(2);
 });

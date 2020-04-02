@@ -33,10 +33,7 @@ test('select event when type is single', async () => {
 
   await later();
 
-  wrapper
-    .findAll('.van-calendar__day')
-    .at(15)
-    .trigger('click');
+  wrapper.findAll('.van-calendar__day').at(15).trigger('click');
 
   expect(formatDate(wrapper.emitted('select')[0][0])).toEqual('2010/1/16');
 });
@@ -112,10 +109,7 @@ test('should not trigger select event when click disabled day', async () => {
 
   await later();
 
-  wrapper
-    .findAll('.van-calendar__day')
-    .at(1)
-    .trigger('click');
+  wrapper.findAll('.van-calendar__day').at(1).trigger('click');
 
   expect(formatDate(wrapper.emitted('select'))).toBeFalsy();
 });
@@ -131,10 +125,7 @@ test('confirm event when type is single', async () => {
 
   await later();
 
-  wrapper
-    .findAll('.van-calendar__day')
-    .at(15)
-    .trigger('click');
+  wrapper.findAll('.van-calendar__day').at(15).trigger('click');
 
   expect(wrapper.emitted('confirm')).toBeFalsy();
 
@@ -446,7 +437,7 @@ test('color prop when type is range', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should scroll to current month when show', async done => {
+test('should scroll to current month when show', async (done) => {
   const wrapper = mount(Calendar, {
     propsData: {
       type: 'range',
@@ -456,7 +447,7 @@ test('should scroll to current month when show', async done => {
     },
   });
 
-  Element.prototype.scrollIntoView = function() {
+  Element.prototype.scrollIntoView = function () {
     expect(this.parentNode).toEqual(
       wrapper.findAll('.van-calendar__month').at(3).element
     );

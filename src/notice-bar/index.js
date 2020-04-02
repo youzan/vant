@@ -133,7 +133,7 @@ export default createComponent({
         vShow={this.showNoticeBar}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
-        onClick={event => {
+        onClick={(event) => {
           this.$emit('click', event);
         }}
       >

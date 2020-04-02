@@ -35,10 +35,10 @@ export default createComponent({
 
       let { children } = this;
       if (!checked) {
-        children = children.filter(item => !item.checked);
+        children = children.filter((item) => !item.checked);
       }
 
-      const names = children.map(item => item.name);
+      const names = children.map((item) => item.name);
       this.$emit('input', names);
     },
   },

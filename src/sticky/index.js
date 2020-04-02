@@ -7,7 +7,7 @@ const [createComponent, bem] = createNamespace('sticky');
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function(bind, isBind) {
+    BindEventMixin(function (bind, isBind) {
       if (!this.scroller) {
         this.scroller = getScroller(this.$el);
       }
@@ -67,7 +67,7 @@ export default createComponent({
     // compatibility: https://caniuse.com/#feat=intersectionobserver
     if (!isServer && window.IntersectionObserver) {
       this.observer = new IntersectionObserver(
-        entries => {
+        (entries) => {
           // trigger scroll when visibility changed
           if (entries[0].intersectionRatio > 0) {
             this.onScroll();

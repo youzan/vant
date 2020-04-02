@@ -30,13 +30,13 @@ const initInstance = () => {
   });
   document.body.appendChild(instance.$el);
 
-  instance.$on('change', index => {
+  instance.$on('change', (index) => {
     if (instance.onChange) {
       instance.onChange(index);
     }
   });
 
-  instance.$on('scale', data => {
+  instance.$on('scale', (data) => {
     if (instance.onScale) {
       instance.onScale(data);
     }
@@ -57,7 +57,7 @@ const ImagePreview = (images, startPosition = 0) => {
 
   Object.assign(instance, defaultConfig, options);
 
-  instance.$once('input', show => {
+  instance.$once('input', (show) => {
     instance.value = show;
   });
 

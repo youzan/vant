@@ -84,7 +84,7 @@ export default createComponent({
         const defaultIndex = cursor.defaultIndex || +this.defaultIndex;
 
         formatted.push({
-          values: cursor.children.map(item => item[this.valueKey]),
+          values: cursor.children.map((item) => item[this.valueKey]),
           className: cursor.className,
           defaultIndex,
         });
@@ -116,7 +116,7 @@ export default createComponent({
 
         this.setColumnValues(
           columnIndex,
-          cursor.children.map(item => item[this.valueKey])
+          cursor.children.map((item) => item[this.valueKey])
         );
 
         cursor = cursor.children[cursor.defaultIndex || 0];
@@ -205,7 +205,7 @@ export default createComponent({
     // @exposed-api
     // get values of all columns
     getValues() {
-      return this.children.map(child => child.getValue());
+      return this.children.map((child) => child.getValue());
     },
 
     // @exposed-api
@@ -219,7 +219,7 @@ export default createComponent({
     // @exposed-api
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(child => child.currentIndex);
+      return this.children.map((child) => child.currentIndex);
     },
 
     // @exposed-api
@@ -232,7 +232,7 @@ export default createComponent({
 
     // @exposed-api
     confirm() {
-      this.children.forEach(child => child.stopMomentum());
+      this.children.forEach((child) => child.stopMomentum());
       this.emit('confirm');
     },
 

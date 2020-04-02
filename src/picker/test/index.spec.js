@@ -154,7 +154,7 @@ test('simulation finger swipe again before transitionend', () => {
   // mock getComputedStyle
   // see: https://github.com/jsdom/jsdom/issues/2588
   const originGetComputedStyle = window.getComputedStyle;
-  window.getComputedStyle = ele => {
+  window.getComputedStyle = (ele) => {
     const style = originGetComputedStyle(ele);
 
     return {
@@ -188,10 +188,7 @@ test('click column item', () => {
     },
   });
 
-  wrapper
-    .findAll('.van-picker-column__item')
-    .at(3)
-    .trigger('click');
+  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
   expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });
 

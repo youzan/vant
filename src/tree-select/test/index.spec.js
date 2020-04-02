@@ -293,7 +293,7 @@ test('className of nav', () => {
   expect(items.at(0).element.classList.contains('my-class')).toBeTruthy();
 });
 
-test('should sync value before trigger click-item event', done => {
+test('should sync value before trigger click-item event', (done) => {
   const wrapper = mount({
     template: `
       <van-tree-select

@@ -1,7 +1,7 @@
 import Uploader from '..';
 import { mount, later, triggerDrag } from '../../../test';
 
-window.File = function() {
+window.File = function () {
   this.size = 10000;
 };
 
@@ -12,8 +12,8 @@ const multiFile = { target: { files: [mockFile, mockFile] } };
 const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
-window.FileReader = function() {
-  this.readAsText = function() {
+window.FileReader = function () {
+  this.readAsText = function () {
     this.onload &&
       this.onload({
         target: {
@@ -37,11 +37,11 @@ test('disabled', () => {
   expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
-test('result-type as text', done => {
+test('result-type as text', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'text',
-      afterRead: readFile => {
+      afterRead: (readFile) => {
         expect(readFile.content).toEqual(mockFileDataUrl);
         done();
       },
@@ -51,11 +51,11 @@ test('result-type as text', done => {
   wrapper.vm.onChange(file);
 });
 
-test('result-type as file', done => {
+test('result-type as file', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'file',
-      afterRead: readFile => {
+      afterRead: (readFile) => {
         expect(readFile.file).toBeTruthy();
         expect(readFile.content).toBeFalsy();
         done();
@@ -66,7 +66,7 @@ test('result-type as file', done => {
   wrapper.vm.onChange(file);
 });
 
-test('set input name', done => {
+test('set input name', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       name: 'uploader',
@@ -117,7 +117,7 @@ test('before read return promise and resolve', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       beforeRead: () =>
-        new Promise(resolve => {
+        new Promise((resolve) => {
           resolve(file);
         }),
       afterRead,
@@ -135,7 +135,7 @@ test('before read return promise and resolve no value', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       beforeRead: () =>
-        new Promise(resolve => {
+        new Promise((resolve) => {
           resolve();
         }),
       afterRead,
@@ -360,7 +360,7 @@ test('before-delete prop resolved', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => new Promise(resolve => resolve()),
+      beforeDelete: () => new Promise((resolve) => resolve()),
     },
   });
 

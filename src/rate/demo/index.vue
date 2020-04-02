@@ -57,7 +57,7 @@ export default {
       customCount: '自定义数量',
       readonly: '只读状态',
       changeEvent: '监听 change 事件',
-      toastContent: value => `当前值：${value}`,
+      toastContent: (value) => `当前值：${value}`,
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -67,7 +67,7 @@ export default {
       customCount: 'Custom Count',
       readonly: 'Readonly',
       changeEvent: 'Change Event',
-      toastContent: value => `current value：${value}`,
+      toastContent: (value) => `current value：${value}`,
     },
   },
 

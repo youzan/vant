@@ -4,7 +4,7 @@ import { mount, later } from '../../../test';
 test('switch checkbox', async () => {
   const wrapper = mount(Checkbox);
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setData({ value });
   });
 

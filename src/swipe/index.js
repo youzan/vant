@@ -16,7 +16,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanSwipe'),
-    BindEventMixin(function(bind, isBind) {
+    BindEventMixin(function (bind, isBind) {
       bind(window, 'resize', this.resize, true);
       bind(window, 'visibilitychange', this.onVisibilityChange);
 
@@ -175,7 +175,7 @@ export default createComponent({
       this.swiping = true;
       this.active = active;
       this.offset = this.getTargetOffset(active);
-      this.children.forEach(swipe => {
+      this.children.forEach((swipe) => {
         swipe.offset = 0;
       });
       this.autoPlay();

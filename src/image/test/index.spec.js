@@ -48,7 +48,7 @@ test('lazy load', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('lazy-load load event', done => {
+test('lazy-load load event', (done) => {
   const wrapper = mount(Image, {
     propsData: {
       lazyLoad: true,
@@ -75,7 +75,7 @@ test('lazy-load load event', done => {
   });
 });
 
-test('lazy-load error event', done => {
+test('lazy-load error event', (done) => {
   const wrapper = mount(Image, {
     propsData: {
       lazyLoad: true,

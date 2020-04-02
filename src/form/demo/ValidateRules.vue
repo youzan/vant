@@ -71,7 +71,7 @@ export default {
     },
 
     asyncValidator(val) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         this.$toast.loading(this.t('validating'));
 
         setTimeout(() => {

@@ -47,7 +47,7 @@ export default {
 
   methods: {
     onConfirm(values) {
-      this.value = values.map(item => item.name).join('/');
+      this.value = values.map((item) => item.name).join('/');
       this.showArea = false;
     },
 

@@ -77,7 +77,7 @@ export default createComponent({
     },
 
     onClickOutside() {
-      this.children.forEach(item => {
+      this.children.forEach((item) => {
         item.toggle(false);
       });
     },

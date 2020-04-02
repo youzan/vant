@@ -181,7 +181,7 @@ export default createComponent({
       </div>
     );
 
-    const onChange = index => () => this.$emit('change', index);
+    const onChange = (index) => () => this.$emit('change', index);
 
     const CouponTab = (
       <Tab title={title}>
@@ -210,7 +210,7 @@ export default createComponent({
           class={bem('list', { 'with-bottom': this.showCloseButton })}
           style={this.listStyle}
         >
-          {disabledCoupons.map(coupon => (
+          {disabledCoupons.map((coupon) => (
             <Coupon
               disabled
               key={coupon.id}

@@ -5,7 +5,7 @@ function flattenVNodes(vnodes: VNode[]) {
   const result: VNode[] = [];
 
   function traverse(vnodes: VNode[]) {
-    vnodes.forEach(vnode => {
+    vnodes.forEach((vnode) => {
       result.push(vnode);
 
       if (vnode.children) {

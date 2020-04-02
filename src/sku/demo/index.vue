@@ -180,8 +180,8 @@ export default {
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
-        stockFormatter: stock => `剩余${stock}件`,
-        handleOverLimit: data => {
+        stockFormatter: (stock) => `剩余${stock}件`,
+        handleOverLimit: (data) => {
           const { action, limitType, quota, startSaleNum = 1 } = data;
 
           if (action === 'minus') {
@@ -202,7 +202,7 @@ export default {
           留言1: '商品留言',
         },
         uploadImg: (file, img) =>
-          new Promise(resolve => {
+          new Promise((resolve) => {
             setTimeout(() => resolve(img), 1000);
           }),
         uploadMaxSize: 3,

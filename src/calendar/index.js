@@ -219,7 +219,7 @@ export default createComponent({
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
       const bottom = top + this.bodyHeight;
-      const heights = months.map(item => item.height);
+      const heights = months.map((item) => item.height);
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
@@ -412,7 +412,7 @@ export default createComponent({
 
   render() {
     if (this.poppable) {
-      const createListener = name => () => this.$emit(name);
+      const createListener = (name) => () => this.$emit(name);
 
       return (
         <Popup

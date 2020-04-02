@@ -70,7 +70,7 @@
 </template>
 
 <script>
-const format = rate => Math.min(Math.max(rate, 0), 100);
+const format = (rate) => Math.min(Math.max(rate, 0), 100);
 
 export default {
   i18n: {

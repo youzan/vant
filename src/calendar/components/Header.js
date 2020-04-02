@@ -30,7 +30,7 @@ export default createComponent({
 
       return (
         <div class={bem('weekdays')}>
-          {weekdays.map(item => (
+          {weekdays.map((item) => (
             <span class={bem('weekday')}>{item}</span>
           ))}
         </div>

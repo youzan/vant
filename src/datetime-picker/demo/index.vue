@@ -95,7 +95,7 @@ export default {
 
     filter(type, values) {
       if (type === 'minute') {
-        return values.filter(value => value % 5 === 0);
+        return values.filter((value) => value % 5 === 0);
       }
 
       return values;

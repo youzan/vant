@@ -103,7 +103,7 @@ test('async close prop', async () => {
   expect(wrapper.emitted('close')[0]).toBeTruthy();
 });
 
-test('function call', done => {
+test('function call', (done) => {
   ImagePreview(images);
   ImagePreview(images.slice(0, 1));
   Vue.nextTick(() => {
@@ -116,7 +116,7 @@ test('function call', done => {
   });
 });
 
-test('double click', async done => {
+test('double click', async (done) => {
   const instance = ImagePreview(images);
 
   await later();
@@ -150,7 +150,7 @@ test('onClose option', () => {
   });
 });
 
-test('onChange option', async done => {
+test('onChange option', async (done) => {
   const instance = ImagePreview({
     images,
     startPostion: 0,
@@ -164,7 +164,7 @@ test('onChange option', async done => {
   triggerDrag(swipe, 1000, 0);
 });
 
-test('onScale option', async done => {
+test('onScale option', async (done) => {
   const { getBoundingClientRect } = Element.prototype;
   Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
 

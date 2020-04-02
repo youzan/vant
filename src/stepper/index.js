@@ -261,7 +261,7 @@ export default createComponent({
   },
 
   render() {
-    const createListeners = type => ({
+    const createListeners = (type) => ({
       on: {
         click: () => {
           this.type = type;

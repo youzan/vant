@@ -37,10 +37,7 @@ test('v-model', () => {
     },
   });
 
-  wrapper
-    .findAll('.van-sidebar-item')
-    .at(1)
-    .trigger('click');
+  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
   expect(wrapper.vm.active).toEqual(1);
 });
 
@@ -59,10 +56,7 @@ test('disabled prop', () => {
     },
   });
 
-  wrapper
-    .findAll('.van-sidebar-item')
-    .at(1)
-    .trigger('click');
+  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
   expect(wrapper.vm.active).toEqual(0);
 });
 

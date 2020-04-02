@@ -99,8 +99,8 @@ export default createComponent({
     },
 
     getMultipleDayType(day) {
-      const isSelected = date =>
-        this.currentDate.some(item => compareDay(item, date) === 0);
+      const isSelected = (date) =>
+        this.currentDate.some((item) => compareDay(item, date) === 0);
 
       if (isSelected(day)) {
         const prevDay = getPrevDay(day);
