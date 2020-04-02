@@ -78,7 +78,7 @@ import { Button } from 'vant';
 import Button from 'vant/lib/button';
 import 'vant/lib/button/style';
 ```
- 
+
 ### 3. Import all components
 
 ```js
@@ -97,7 +97,10 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 
 ```html
 <!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css"
+/>
 
 <!-- import script -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
@@ -107,7 +110,7 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
   // Render the Button component
   new Vue({
     el: '#app',
-    template: `<van-button>Button</van-button>`
+    template: `<van-button>Button</van-button>`,
   });
 
   // Call function component
@@ -131,13 +134,13 @@ postcss config example:
 ```js
 module.exports = {
   plugins: {
-    'autoprefixer': {
-      browsers: ['Android >= 4.0', 'iOS >= 8']
+    autoprefixer: {
+      browsers: ['Android >= 4.0', 'iOS >= 8'],
     },
     'postcss-pxtorem': {
       rootValue: 37.5,
-      propList: ['*']
-    }
-  }
-}
+      propList: ['*'],
+    },
+  },
+};
 ```

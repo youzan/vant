@@ -9,7 +9,7 @@ Vue.component('transition', TransitionStub as any);
 
 // promisify setTimeout
 export function later(delay: number = 0): Promise<void> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
 }

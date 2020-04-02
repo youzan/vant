@@ -41,7 +41,6 @@ yarn add vant
 - 配置基于 TypeScript 的工程
 - 配置自定义主题色方案
 
-
 ## 引入组件
 
 ### 方式一. 自动按需引入组件 (推荐)
@@ -115,21 +114,24 @@ Vue.use(Vant);
 
 ```html
 <!-- 引入样式文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vant@2.5/lib/index.css"
+/>
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vant@2.5/lib/vant.min.js"></script>
 
 <script>
-// 在 #app 标签下渲染一个按钮组件
-new Vue({
-  el: '#app',
-  template: `<van-button>按钮</van-button>`
-});
+  // 在 #app 标签下渲染一个按钮组件
+  new Vue({
+    el: '#app',
+    template: `<van-button>按钮</van-button>`,
+  });
 
-// 调用函数组件，弹出一个 Toast
-vant.Toast('提示');
+  // 调用函数组件，弹出一个 Toast
+  vant.Toast('提示');
 </script>
 ```
 
@@ -149,15 +151,15 @@ Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，
 ```js
 module.exports = {
   plugins: {
-    'autoprefixer': {
-      browsers: ['Android >= 4.0', 'iOS >= 8']
+    autoprefixer: {
+      browsers: ['Android >= 4.0', 'iOS >= 8'],
     },
     'postcss-pxtorem': {
       rootValue: 37.5,
-      propList: ['*']
-    }
-  }
-}
+      propList: ['*'],
+    },
+  },
+};
 ```
 
 > 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译
@@ -184,7 +186,10 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 
 ```html
 <!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+/>
 
 <!-- 开启 safe-area-inset-bottom 属性 -->
 <van-number-keyboard safe-area-inset-bottom />
@@ -207,14 +212,14 @@ Vant 中的许多组件提供了实例方法，调用实例方法时，我们需
 export default {
   data() {
     return {
-      checked: false
+      checked: false,
     };
   },
   // 注意：组件挂载后才能访问到 ref 对象
   mounted() {
     this.$refs.checkbox.toggle();
-  }
-}
+  },
+};
 ```
 
 ## 常见问题
@@ -230,7 +235,7 @@ export default {
 </van-cell-group>
 ```
 
-这是因为 HTML 并不支持自闭合的自定义元素，也就是说 `<van-cell />` 这样的语法是不被识别的，使用完整的闭合标签可以避免这个问题：
+这是因为 HTML 并不支持自闭合的自定义元素，也就是说 `<van-cell />` 这样的语法是不被识别的，使用完整的闭合标签可以避免这个问题：
 
 ```html
 <van-cell-group>
