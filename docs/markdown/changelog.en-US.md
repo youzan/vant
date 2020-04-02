@@ -1,5 +1,15 @@
 # Changelog
 
+### Intro
+
+Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
+
+**Release Schedule**
+
+- Patch version：released weekly, including features and bug fixes.
+- Minor version：released every one to two months, including backwards compatible features.
+- Major version：including breaking changes and new features.
+
 ### [v2.6.0-beta.0](https://github.com/youzan/vant/compare/v2.5.9-beta.0...v2.6.0-beta.0)
 
 `2020-04-02`
