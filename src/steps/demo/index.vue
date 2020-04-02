@@ -102,15 +102,15 @@ export default {
     margin: @padding-md 0 0 @padding-md;
   }
 
-  .van-steps__message + p {
-    margin-bottom: 10px;
-  }
-
   p,
   h3 {
     margin: 0;
     font-weight: normal;
     font-size: inherit;
+  }
+
+  .van-steps__message + p {
+    margin-bottom: 10px;
   }
 }
 </style>

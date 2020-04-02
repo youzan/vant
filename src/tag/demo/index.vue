@@ -113,14 +113,14 @@ export default {
 .demo-tag {
   background-color: @white;
 
-  .van-tag + .van-tag {
-    margin-left: @padding-xs;
-  }
-
   .van-tag {
     &:first-of-type {
       margin-left: @padding-md;
     }
+  }
+
+  .van-tag + .van-tag {
+    margin-left: @padding-xs;
   }
 }
 </style>
