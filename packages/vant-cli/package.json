@@ -88,6 +88,7 @@
     "portfinder": "^1.0.25",
     "postcss": "^7.0.27",
     "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.2",
     "release-it": "^13.5.1",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
