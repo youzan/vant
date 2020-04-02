@@ -10,6 +10,34 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.6.0-beta.0](https://github.com/youzan/vant/compare/v2.5.9-beta.0...v2.6.0-beta.0)
+
+`2020-04-02`
+
+**Feature**
+
+- Form: 新增 show-error 属性 [#5941](https://github.com/youzan/vant/issues/5941)
+- Tabbar: 新增 placeholder 属性 [#5979](https://github.com/youzan/vant/issues/5979)
+- Sku: 默认开启底部安全区适配 [#5960](https://github.com/youzan/vant/issues/5960)
+- SubmitBar: 默认开启底部安全区适配 [#5956](https://github.com/youzan/vant/issues/5956)
+- GoodsAction: 默认开启底部安全区适配 [#5955](https://github.com/youzan/vant/issues/5955)
+- Tabbar: 固定在底部时默认开启底部安全区适配 [#5968](https://github.com/youzan/vant/issues/5968)
+- Swipe: 允许一次滚动多页轮播 [#5953](https://github.com/youzan/vant/issues/5953)
+
+**Improvement**
+
+- NavBar: 优化点击反馈效果 [#5949](https://github.com/youzan/vant/issues/5949)
+- Popup: 优化退场动画效果 [#5954](https://github.com/youzan/vant/issues/5954)
+- Picker: 优化惯性滑动速率 [#5951](https://github.com/youzan/vant/issues/5951)
+
+**Bug Fixes**
+
+- Button: 修复 icon-prefix 属性不生效的问题 [#5947](https://github.com/youzan/vant/issues/5947)
+- Calendar: 修复 keep-alive 时可能出现渲染空白的问题 [#5978](https://github.com/youzan/vant/issues/5978)
+- Form: 修复动态插入 Field 时校验顺序错误的问题 [b8dea3](https://github.com/youzan/vant/commit/b8dea3c13b7dbf6533169653c493a3156c07f1d4)
+- NavBar: 修复图标在部分机型上不居中的问题 [#5948](https://github.com/youzan/vant/issues/5948)
+- Stepper: 修复 disable-input 属性在低版本 safari 上不生效的问题 [#5976](https://github.com/youzan/vant/issues/5976)
+
 ### [v2.5.9](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9)
 
 `2020-03-31`

@@ -1,5 +1,33 @@
 # Changelog
 
+### [v2.6.0-beta.0](https://github.com/youzan/vant/compare/v2.5.9-beta.0...v2.6.0-beta.0)
+
+`2020-04-02`
+
+**Feature**
+
+- Form: add show-error prop [#5941](https://github.com/youzan/vant/issues/5941)
+- Tabbar: add placeholder prop [#5979](https://github.com/youzan/vant/issues/5979)
+- Sku: enable safe-area-inset-bottom by default [#5960](https://github.com/youzan/vant/issues/5960)
+- Tabbar: enable safe-area-inset-bottom by default when fixed [#5968](https://github.com/youzan/vant/issues/5968)
+- SubmitBar: enable safe-area-inset-bottom by default [#5956](https://github.com/youzan/vant/issues/5956)
+- GoodsAction: enable safe-area-inset-bottom by default [#5955](https://github.com/youzan/vant/issues/5955)
+- Swipe: allow swipe multiple item at once [#5953](https://github.com/youzan/vant/issues/5953)
+
+**Improvement**
+
+- NavBar: improve active feedback [#5949](https://github.com/youzan/vant/issues/5949)
+- Popup: improve leave animation timing function [#5954](https://github.com/youzan/vant/issues/5954)
+- Picker: improve scroll speed [#5951](https://github.com/youzan/vant/issues/5951)
+
+**Bug Fixes**
+
+- Button: icon-prefix prop not work [#5947](https://github.com/youzan/vant/issues/5947)
+- Calendar: rendering error when activated [#5978](https://github.com/youzan/vant/issues/5978)
+- Form: incorrect validation order when add field dynamically [b8dea3](https://github.com/youzan/vant/commit/b8dea3c13b7dbf6533169653c493a3156c07f1d4)
+- NavBar: icon align center [#5948](https://github.com/youzan/vant/issues/5948)
+- Stepper: readonly not work in lagacy mobile safari [#5976](https://github.com/youzan/vant/issues/5976)
+
 ### [v2.5.9](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9)
 
 `2020-03-31`
