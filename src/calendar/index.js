@@ -7,10 +7,11 @@ import {
   copyDates,
   getNextDay,
   compareDay,
+  ROW_HEIGHT,
+  calcDateNum,
   compareMonth,
   createComponent,
-  calcDateNum,
-  ROW_HEIGHT,
+  getDayByOffset,
 } from './utils';
 
 // Components
@@ -294,26 +295,36 @@ export default createComponent({
     },
 
     select(date, complete) {
-      this.currentDate = date;
-      this.$emit('select', copyDates(this.currentDate));
+      const emit = (date) => {
+        this.currentDate = date;
+        this.$emit('select', copyDates(this.currentDate));
+      };
 
       if (complete && this.type === 'range') {
-        const valid = this.checkRange();
+        const valid = this.checkRange(date);
 
         if (!valid) {
+          // auto selected to max range if showConfirm
+          if (this.showConfirm) {
+            emit([date[0], getDayByOffset(date[0], this.maxRange - 1)]);
+          } else {
+            emit(date);
+          }
           return;
         }
       }
+
+      emit(date);
 
       if (complete && !this.showConfirm) {
         this.onConfirm();
       }
     },
 
-    checkRange() {
-      const { maxRange, currentDate, rangePrompt } = this;
+    checkRange(date) {
+      const { maxRange, rangePrompt } = this;
 
-      if (maxRange && calcDateNum(currentDate) > maxRange) {
+      if (maxRange && calcDateNum(date) > maxRange) {
         Toast(rangePrompt || t('rangePrompt', maxRange));
         return false;
       }
@@ -322,10 +333,6 @@ export default createComponent({
     },
 
     onConfirm() {
-      if (this.type === 'range' && !this.checkRange()) {
-        return;
-      }
-
       this.$emit('confirm', copyDates(this.currentDate));
     },
 
