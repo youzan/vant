@@ -1,26 +1,14 @@
 import Calendar from '..';
 import { mount, later } from '../../../test';
 import { getNextDay } from '../utils';
-
-const now = new Date();
-const minDate = new Date(2010, 0, 10);
-const maxDate = new Date(2010, 0, 20);
-
-function formatDate(date) {
-  if (date) {
-    return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-  }
-
-  return '';
-}
-
-function formatRange([start, end]) {
-  return `${formatDate(start)}-${formatDate(end)}`;
-}
-
-function formatMultiple(dates) {
-  return dates.map(formatDate).join(',');
-}
+import {
+  now,
+  minDate,
+  maxDate,
+  formatDate,
+  formatRange,
+  formatMultiple,
+} from './utils';
 
 test('select event when type is single', async () => {
   const wrapper = mount(Calendar, {

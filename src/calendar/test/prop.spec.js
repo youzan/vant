@@ -1,16 +1,39 @@
 import Calendar from '..';
 import { mount, later } from '../../../test';
+import { minDate, maxDate, formatRange } from './utils';
 
-const minDate = new Date(2010, 0, 10);
-const maxDate = new Date(2010, 0, 20);
-
-test('max-range prop', async () => {
+test('max-range prop when showConfirm is false', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       type: 'range',
       minDate,
       maxDate,
-      maxRange: 1,
+      maxRange: 3,
+      poppable: false,
+      showConfirm: false,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days.at(12).trigger('click');
+  days.at(18).trigger('click');
+
+  expect(formatRange(wrapper.emitted('select')[0][0])).toEqual('2010/1/13-');
+  expect(formatRange(wrapper.emitted('select')[1][0])).toEqual(
+    '2010/1/13-2010/1/19'
+  );
+  expect(wrapper.emitted('confirm')).toBeFalsy();
+});
+
+test('max-range prop when showConfirm is true', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      type: 'range',
+      minDate,
+      maxDate,
+      maxRange: 3,
       poppable: false,
     },
   });
@@ -18,10 +41,13 @@ test('max-range prop', async () => {
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(15).trigger('click');
+  days.at(12).trigger('click');
   days.at(18).trigger('click');
-  wrapper.find('.van-calendar__confirm').trigger('click');
 
+  expect(formatRange(wrapper.emitted('select')[0][0])).toEqual('2010/1/13-');
+  expect(formatRange(wrapper.emitted('select')[1][0])).toEqual(
+    '2010/1/13-2010/1/15'
+  );
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
