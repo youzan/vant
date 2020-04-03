@@ -79,3 +79,9 @@ yarn add @vant/cli --dev
 ## 更新日志
 
 参见[更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)。
+
+## 微信讨论群
+
+扫码加入 Vant Cli 交流群，若群二维码过期，可以联系有赞前端小秘书加群
+
+<img src="https://img.yzcdn.cn/vant/wechat_20200403.jpeg" width="220" height="285" >
