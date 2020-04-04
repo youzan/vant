@@ -1,1 +1,3 @@
-import './mourn';
+import mourn from './mourn';
+
+mourn();

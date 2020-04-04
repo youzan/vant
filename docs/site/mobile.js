@@ -1,10 +1,12 @@
-import './mourn';
+import mourn from './mourn';
 import Vue from 'vue';
 import Locale from '../../src/locale';
 import Lazyload from '../../src/lazyload';
 import { get } from '../../src/utils';
 import { camelize } from '../../src/utils/format/string';
 import enUS from '../../src/locale/lang/en-US';
+
+mourn();
 
 Vue.use(Lazyload, {
   lazyComponent: true,
