@@ -1,3 +1,4 @@
+import './mourn';
 import Vue from 'vue';
 import Locale from '../../src/locale';
 import Lazyload from '../../src/lazyload';
