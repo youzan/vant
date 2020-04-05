@@ -15,18 +15,16 @@ const CACHE_LOADER = {
   },
 };
 
-const CSS_LOADERS = [
-  'style-loader',
-  'css-loader',
-  {
-    loader: 'postcss-loader',
-    options: {
-      config: {
-        path: POSTCSS_CONFIG_FILE,
-      },
+const POSTCSS_LOADERS = {
+  loader: 'postcss-loader',
+  options: {
+    config: {
+      path: POSTCSS_CONFIG_FILE,
     },
   },
-];
+};
+
+const CSS_LOADERS = ['style-loader', 'css-loader', POSTCSS_LOADERS];
 
 export const baseConfig = {
   mode: 'development',
@@ -57,7 +55,24 @@ export const baseConfig = {
       {
         test: /\.css$/,
         sideEffects: true,
-        use: CSS_LOADERS,
+        oneOf: [
+          {
+            resourceQuery: /module/,
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                },
+              },
+              POSTCSS_LOADERS,
+            ],
+          },
+          {
+            use: CSS_LOADERS,
+          },
+        ],
       },
       {
         test: /\.less$/,
