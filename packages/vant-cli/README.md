@@ -76,6 +76,10 @@ yarn add @vant/cli --dev
 
 参见[配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
 
+## 目录结构
+
+参见[目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)。
+
 ## 更新日志
 
 参见[更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)。
