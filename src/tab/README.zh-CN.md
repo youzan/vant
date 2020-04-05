@@ -37,7 +37,7 @@ export default {
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`（此时无法通过索引值来匹配标签）
 
 ```html
 <van-tabs v-model="activeName">
