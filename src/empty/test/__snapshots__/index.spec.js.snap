@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`description slot 1`] = `
+<div class="van-empty">
+  <div class="van-empty__image"><img src="https://img.yzcdn.cn/vant/empty-image-default.png"></div>
+  <p class="van-empty__description">Custom description</p>
+</div>
+`;
+
+exports[`image slot 1`] = `
+<div class="van-empty">
+  <div class="van-empty__image">Custom Image</div>
+</div>
+`;

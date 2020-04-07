@@ -1,0 +1,32 @@
+@import '../style/var';
+
+.van-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: @empty-padding;
+
+  &__image {
+    width: @empty-image-size;
+    height: @empty-image-size;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    margin-top: @empty-description-margin-top;
+    padding: @empty-description-padding;
+    color: @empty-description-color;
+    font-size: @empty-description-font-size;
+    line-height: @empty-description-line-height;
+  }
+
+  &__bottom {
+    margin-top: @empty-bottom-margin-top;
+  }
+}
