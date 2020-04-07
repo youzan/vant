@@ -45,6 +45,7 @@ export class CouponCell extends VanComponent {}
 export class CouponList extends VanComponent {}
 export class Divider extends VanComponent {}
 export class DropdownMenu extends VanComponent {}
+export class Empty extends VanComponent {}
 export class Grid extends VanComponent {}
 export class GridItem extends VanComponent {}
 export class GoodsAction extends VanComponent {}
