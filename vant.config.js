@@ -177,7 +177,7 @@ module.exports = {
             items: [
               {
                 path: 'action-sheet',
-                title: 'ActionSheet 上拉菜单',
+                title: 'ActionSheet 动作面板',
               },
               {
                 path: 'dialog',
@@ -202,6 +202,10 @@ module.exports = {
               {
                 path: 'pull-refresh',
                 title: 'PullRefresh 下拉刷新',
+              },
+              {
+                path: 'share-sheet',
+                title: 'ShareSheet 分享面板',
               },
               {
                 path: 'swipe-cell',
@@ -549,6 +553,10 @@ module.exports = {
               {
                 path: 'pull-refresh',
                 title: 'PullRefresh',
+              },
+              {
+                path: 'share-sheet',
+                title: 'ShareSheet',
               },
               {
                 path: 'swipe-cell',
