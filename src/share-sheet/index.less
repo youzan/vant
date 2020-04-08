@@ -1,0 +1,69 @@
+@import '../style/var';
+
+.van-share-sheet {
+  &__options {
+    display: flex;
+    padding: 16px 0 16px 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    // fix right-padding issue for overflow-x element
+    // see: https://stackoverflow.com/questions/10054870
+    &::after {
+      display: block;
+      width: 24px;
+      content: '';
+    }
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 32px;
+    cursor: pointer;
+    user-select: none;
+
+    &:last-child {
+      padding-right: 16px;
+    }
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__name {
+    margin-top: 8px;
+    color: #646566;
+    font-size: 12px;
+  }
+
+  &__cancel {
+    display: block;
+    width: 100%;
+    padding: 0;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    background-color: @white;
+    border: none;
+    cursor: pointer;
+
+    &::before {
+      display: block;
+      height: 8px;
+      background-color: @background-color;
+      content: ' ';
+    }
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}
