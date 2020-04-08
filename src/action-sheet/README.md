@@ -123,6 +123,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| v-model (value) | Whether to show ActionSheet | *boolean* | `false` |
 | actions | Options | *Action[]* | `[]` | 
 | title | Title | *string* | - |
 | cancel-text | Text of cancel button | *string* | - |

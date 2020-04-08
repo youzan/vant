@@ -117,7 +117,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Whether to show popup | *boolean* | `false` |
+| v-model (value) | Whether to show popup | *boolean* | `false` |
 | overlay | Whether to show overlay | *boolean* | `true` |
 | position | Can be set to `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | Custom overlay class | *string* | - |

@@ -128,7 +128,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| v-model | 当前组件是否显示 | *boolean* | `false` |
+| v-model (value) | 是否显示弹出层 | *boolean* | `false` |
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
 | overlay-class | 自定义遮罩层类名 | *string* | - |
