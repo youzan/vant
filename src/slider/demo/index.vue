@@ -45,7 +45,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: '基本用法',
+      title1: '基础用法',
       title2: '指定选择范围',
       title3: '禁用',
       title4: '指定步长',

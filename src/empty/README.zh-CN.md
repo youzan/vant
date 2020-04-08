@@ -15,7 +15,7 @@ Vue.use(Empty);
 
 ## 代码演示
 
-### 基本用法
+### 基础用法
 
 ```html
 <van-empty description="描述文字" />

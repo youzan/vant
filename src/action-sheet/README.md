@@ -156,7 +156,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | select | Triggered when click option | *action: Action, index: number* |
-| cancel | Triggered when cancel click | - |
+| cancel | Triggered when click cancel button | - |
 | open | Triggered when open ActionSheet | - |
 | close | Triggered when close ActionSheet | - |
 | opened | Triggered when opened ActionSheet | - |
