@@ -2,7 +2,7 @@
 
 ### 介绍
 
-底部弹起的模态面板，用于展示各分享渠道对应的操作按钮，不包含具体的分享逻辑。2.6 版本开始支持此组件。
+底部弹起的分享面板，用于展示各分享渠道对应的操作按钮，不含具体的分享逻辑。2.6 版本开始支持此组件。
 
 ### 引入
 
@@ -17,17 +17,38 @@ Vue.use(ShareSheet);
 
 ### 基础用法
 
+分享面板通过`options`属性来定义分享选项，数组的每一项是一个对象，对象格式见文档下方表格。
+
 ```html
-<van-share-sheet :options="options" />
+<van-cell @click="showShare = true" />
+<van-share-sheet
+  v-model="showShare"
+  :options="options"
+  @select="onSelect"
+/>
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
-      options: [],
+      showShare: false,
+      options: [
+        { name: '微信', icon: 'wechat' },
+        { name: '复制链接', icon: 'link' },
+        { name: '分享海报', icon: 'poster' },
+        { name: '二维码', icon: 'qrcode' },
+      ],
     };
   },
+  methods: {
+    onSelect(option) {
+      Toast(option.name);
+      this.showShare = false;
+    },
+  }
 };
 ```
 

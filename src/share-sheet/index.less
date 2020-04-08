@@ -1,9 +1,30 @@
 @import '../style/var';
 
 .van-share-sheet {
+  &__header {
+    padding: 12px @padding-md @padding-base;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: @padding-xs;
+    color: @text-color;
+    font-weight: normal;
+    font-size: @font-size-md;
+    line-height: 20px;
+  }
+
+  &__description {
+    display: block;
+    margin-top: @padding-xs;
+    color: @gray-6;
+    font-size: @font-size-sm;
+    line-height: 16px;
+  }
+
   &__options {
     display: flex;
-    padding: 16px 0 16px 24px;
+    padding: @padding-md 0 @padding-md @padding-lg;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -11,7 +32,8 @@
     // see: https://stackoverflow.com/questions/10054870
     &::after {
       display: block;
-      width: 24px;
+      flex-shrink: 0;
+      width: @padding-lg;
       content: '';
     }
   }
@@ -20,12 +42,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 32px;
+    margin-right: @padding-xl;
     cursor: pointer;
     user-select: none;
 
     &:last-child {
-      padding-right: 16px;
+      margin-right: 0;
     }
 
     &:active {
@@ -39,16 +61,16 @@
   }
 
   &__name {
-    margin-top: 8px;
-    color: #646566;
-    font-size: 12px;
+    margin-top: @padding-xs;
+    color: @gray-7;
+    font-size: @font-size-sm;
   }
 
   &__cancel {
     display: block;
     width: 100%;
     padding: 0;
-    font-size: 16px;
+    font-size: @font-size-lg;
     line-height: 48px;
     text-align: center;
     background-color: @white;
@@ -57,7 +79,7 @@
 
     &::before {
       display: block;
-      height: 8px;
+      height: @padding-xs;
       background-color: @background-color;
       content: ' ';
     }
