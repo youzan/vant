@@ -1,4 +1,8 @@
-# ActionSheet 上拉菜单
+# ActionSheet 动作面板
+
+### 介绍
+
+底部弹起的模态面板，包含与当前情境相关的多个选项。
 
 ### 引入
 
@@ -46,7 +50,7 @@ export default {
 
 ### 展示取消按钮
 
-设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前菜单
+设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前面板
 
 ```html
 <van-action-sheet
@@ -117,7 +121,7 @@ export default {
 
 ### 自定义面板
 
-通过插槽可以自定义菜单的展示内容，同时可以使用`title`属性展示标题栏
+通过插槽可以自定义面板的展示内容，同时可以使用`title`属性展示标题栏
 
 ```html
 <van-action-sheet v-model="show" title="标题">
@@ -137,7 +141,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| actions | 菜单选项 | *Action[]* | `[]` |
+| v-model (value) | 是否显示动作面板 | *boolean* | `false` |
+| actions | 面板选项列表 | *Action[]* | `[]` |
 | title | 顶部标题 | *string* | - |
 | cancel-text | 取消按钮文字 | *string* | - |
 | description `v2.2.8` | 选项上方的描述信息 | *string* | - |
@@ -172,14 +177,14 @@ export default {
 |------|------|------|
 | select | 选中选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
 | cancel | 取消按钮点击时触发 | - |
-| open | 打开菜单时触发 | - |
-| close | 关闭菜单时触发 | - |
-| opened | 打开菜单且动画结束后触发 | - |
-| closed | 关闭菜单且动画结束后触发 | - |
+| open | 打开面板时触发 | - |
+| close | 关闭面板时触发 | - |
+| opened | 打开面板且动画结束后触发 | - |
+| closed | 关闭面板且动画结束后触发 | - |
 | click-overlay | 点击遮罩层时触发 | - |
 
 ## 常见问题
 
 ### 引入时提示 dependencies not found？
 
-在 1.x 版本中，上拉菜单的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
+在 1.x 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
