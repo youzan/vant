@@ -175,8 +175,8 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| select | 选中选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
-| cancel | 取消按钮点击时触发 | - |
+| select | 点击选项时触发，禁用或加载状态下不会触发 | *action: Action, index: number* |
+| cancel | 点击取消按钮时触发 | - |
 | open | 打开面板时触发 | - |
 | close | 关闭面板时触发 | - |
 | opened | 打开面板且动画结束后触发 | - |
