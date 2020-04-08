@@ -48,6 +48,22 @@ export default createComponent({
       return icon;
     },
 
+    genHeader() {
+      if (!this.title && !this.description) {
+        return;
+      }
+
+      const title = this.slots('title') || this.title;
+      const description = this.slots('description') || this.description;
+
+      return (
+        <div class={bem('header')}>
+          {title && <h2 class={bem('title')}>{title}</h2>}
+          {description && <span class={bem('description')}>{description}</span>}
+        </div>
+      );
+    },
+
     genOptions() {
       return (
         <div class={bem('options')}>
@@ -89,6 +105,7 @@ export default createComponent({
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onInput={this.toggle}
       >
+        {this.genHeader()}
         {this.genOptions()}
         {this.genCancelText()}
       </Popup>

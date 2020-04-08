@@ -17,7 +17,7 @@ Vue.use(ActionSheet);
 
 ### 基础用法
 
-`ActionSheet`通过`actions`数组来定义展示的选项，数组的每一项是一个对象，对象属性见文档下方表格。
+动作面板通过`actions`属性来定义选项，数组的每一项是一个对象，对象格式见文档下方表格。
 
 ```html
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
