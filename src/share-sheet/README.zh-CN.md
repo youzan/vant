@@ -37,6 +37,7 @@ export default {
       showShare: false,
       options: [
         { name: '微信', icon: 'wechat' },
+        { name: '微博', icon: 'weibo' },
         { name: '复制链接', icon: 'link' },
         { name: '分享海报', icon: 'poster' },
         { name: '二维码', icon: 'qrcode' },
@@ -49,6 +50,49 @@ export default {
       this.showShare = false;
     },
   }
+};
+```
+
+### 展示面板标题
+
+通过`title`属性可以设置面板标题，通过`description`属性可以设置标题下方的描述文字
+
+```html
+<van-share-sheet
+  v-model="showShare"
+  title="立即分享给好友"
+  :options="options"
+  description="描述信息"
+/>
+```
+
+### 展示多行选项
+
+当分享选项的数量较多时，可以将`options`定义为数组嵌套的格式，每个子数组代表一行选项
+
+```html
+<van-share-sheet v-model="showShare" :options="options" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      showShare: false,
+      options: [
+        [
+          { name: '微信', icon: 'wechat' },
+          { name: '微博', icon: 'weibo' },
+          { name: 'QQ', icon: 'qq' },
+        ],
+        [
+          { name: '复制链接', icon: 'link' },
+          { name: '分享海报', icon: 'poster' },
+          { name: '二维码', icon: 'qrcode' },
+        ],
+      ],
+    };
+  },
 };
 ```
 
@@ -70,7 +114,7 @@ export default {
 | 键名 | 说明 | 类型 |
 |------|------|------|
 | name | 分享渠道名称 | *string* |
-| icon | 图标，可选值为 `wechat` `link` `qrcode` `poster`，支持传入图片 URL | *string* |
+| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | *string* |
 
 ### Events
 

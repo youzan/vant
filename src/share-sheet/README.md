@@ -13,6 +13,79 @@ Vue.use(ShareSheet);
 
 ### Basic Usage
 
+```html
+<van-cell @click="showShare = true" />
+<van-share-sheet
+  v-model="showShare"
+  :options="options"
+  @select="onSelect"
+/>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      showShare: false,
+      options: [
+        { name: 'Wechat', icon: 'wechat' },
+        { name: 'Weibo', icon: 'weibo' },
+        { name: 'Link', icon: 'link' },
+        { name: 'Poster', icon: 'poster' },
+        { name: 'Qrcode', icon: 'qrcode' },
+      ],
+    };
+  },
+  methods: {
+    onSelect(option) {
+      Toast(option.name);
+      this.showShare = false;
+    },
+  }
+};
+```
+
+### Show Title
+
+```html
+<van-share-sheet
+  v-model="showShare"
+  title="Share with friends"
+  :options="options"
+  description="Description"
+/>
+```
+
+### Multi Line
+
+```html
+<van-share-sheet v-model="showShare" :options="options" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      showShare: false,
+      options: [
+        [
+          { name: 'Wechat', icon: 'wechat' },
+          { name: 'Weibo', icon: 'weibo' },
+          { name: 'QQ', icon: 'qq' },
+        ],
+        [
+          { name: 'Link', icon: 'link' },
+          { name: 'Poster', icon: 'poster' },
+          { name: 'Qrcode', icon: 'qrcode' },
+        ],
+      ],
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -29,7 +102,7 @@ Vue.use(ShareSheet);
 | Key | Description | Type |
 |------|------|------|
 | name | Option name | *string* |
-| icon | Option icon，can be set to `wechat` `link` `qrcode` `poster` or image URL | *string* |
+| icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | *string* |
 
 ### Events
 

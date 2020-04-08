@@ -47,25 +47,29 @@
 export default {
   i18n: {
     'zh-CN': {
+      qq: 'QQ',
       link: '复制链接',
       title: '立即分享给好友',
+      weibo: '微博',
       wechat: '微信',
       poster: '分享海报',
       qrcode: '二维码',
-      multiLine: '多行展示',
+      multiLine: '展示多行选项',
       showSheet: '显示分享面板',
-      withTitle: '展示带标题的面板',
+      withTitle: '展示面板标题',
       description: '描述信息',
     },
     'en-US': {
+      qq: 'QQ',
       link: 'Link',
       title: 'Share with friends',
+      weibo: 'Weibo',
       wechat: 'Wechat',
       poster: 'Poster',
       qrcode: 'Qrcode',
       multiLine: 'Multi Line',
       showSheet: 'Show ShareSheet',
-      withTitle: 'Show ShareSheet with title',
+      withTitle: 'Show Title',
       description: 'Description',
     },
   },
@@ -81,13 +85,18 @@ export default {
   created() {
     this.options = [
       { name: this.t('wechat'), icon: 'wechat' },
+      { name: this.t('weibo'), icon: 'weibo' },
       { name: this.t('link'), icon: 'link' },
       { name: this.t('poster'), icon: 'poster' },
       { name: this.t('qrcode'), icon: 'qrcode' },
     ];
 
     this.multiLineOptions = [
-      [{ name: this.t('wechat'), icon: 'wechat' }],
+      [
+        { name: this.t('wechat'), icon: 'wechat' },
+        { name: this.t('weibo'), icon: 'weibo' },
+        { name: this.t('qq'), icon: 'qq' },
+      ],
       [
         { name: this.t('link'), icon: 'link' },
         { name: this.t('poster'), icon: 'poster' },
