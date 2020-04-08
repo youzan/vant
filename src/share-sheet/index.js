@@ -7,7 +7,7 @@ import { popupMixinProps } from '../mixins/popup';
 // Components
 import Popup from '../popup';
 
-const PRESET_ICONS = ['wechat', 'link', 'qrcode', 'poster'];
+const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
 
 const [createComponent, bem, t] = createNamespace('share-sheet');
 
@@ -30,6 +30,7 @@ export default createComponent({
   methods: {
     onCancel() {
       this.toggle(false);
+      this.$emit('cancel');
     },
 
     onSelect(option, index) {
@@ -42,7 +43,7 @@ export default createComponent({
 
     getIconURL(icon) {
       if (PRESET_ICONS.indexOf(icon) !== -1) {
-        return `https://img.yzcdn.cn/vant/share-icon-${icon}.svg`;
+        return `https://img.yzcdn.cn/vant/share-icon-${icon}.png`;
       }
 
       return icon;
@@ -64,10 +65,10 @@ export default createComponent({
       );
     },
 
-    genOptions() {
+    genOptions(options, showBorder) {
       return (
-        <div class={bem('options')}>
-          {this.options.map((option, index) => (
+        <div class={bem('options', { border: showBorder })}>
+          {options.map((option, index) => (
             <div
               class={bem('option')}
               onClick={() => {
@@ -80,6 +81,14 @@ export default createComponent({
           ))}
         </div>
       );
+    },
+
+    genRows() {
+      const { options } = this;
+      if (Array.isArray(options[0])) {
+        return options.map((item, index) => this.genOptions(item, index !== 0));
+      }
+      return this.genOptions(options);
     },
 
     genCancelText() {
@@ -106,7 +115,7 @@ export default createComponent({
         onInput={this.toggle}
       >
         {this.genHeader()}
-        {this.genOptions()}
+        {this.genRows()}
         {this.genCancelText()}
       </Popup>
     );

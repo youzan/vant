@@ -1,4 +1,5 @@
 @import '../style/var';
+@import '../style/mixins/hairline';
 
 .van-share-sheet {
   &__header {
@@ -23,10 +24,15 @@
   }
 
   &__options {
+    position: relative;
     display: flex;
     padding: @padding-md 0 @padding-md @padding-lg;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+
+    &--border::before {
+      .hairline-top(@cell-border-color, @padding-md);
+    }
 
     // fix right-padding issue for overflow-x element
     // see: https://stackoverflow.com/questions/10054870
