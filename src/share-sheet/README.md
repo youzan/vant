@@ -14,7 +14,7 @@ Vue.use(ShareSheet);
 ### Basic Usage
 
 ```html
-<van-cell @click="showShare = true" />
+<van-cell title="Show ShareSheet" @click="showShare = true" />
 <van-share-sheet
   v-model="showShare"
   :options="options"
@@ -52,8 +52,8 @@ export default {
 ```html
 <van-share-sheet
   v-model="showShare"
-  title="Share with friends"
   :options="options"
+  title="Share with friends"
   description="Description"
 />
 ```
