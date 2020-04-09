@@ -3,24 +3,24 @@
 
 .van-share-sheet {
   &__header {
-    padding: 12px @padding-md @padding-base;
+    padding: @share-sheet-header-padding;
     text-align: center;
   }
 
   &__title {
     margin-top: @padding-xs;
-    color: @text-color;
+    color: @share-sheet-title-color;
     font-weight: normal;
-    font-size: @font-size-md;
-    line-height: 20px;
+    font-size: @share-sheet-title-font-size;
+    line-height: @share-sheet-title-line-height;
   }
 
   &__description {
     display: block;
     margin-top: @padding-xs;
-    color: @gray-6;
-    font-size: @font-size-sm;
-    line-height: 16px;
+    color: @share-sheet-description-color;
+    font-size: @share-sheet-description-font-size;
+    line-height: @share-sheet-description-line-height;
   }
 
   &__options {
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: @padding-xl;
+    margin-right: @share-sheet-option-margin-right;
     cursor: pointer;
     user-select: none;
 
@@ -62,24 +62,24 @@
   }
 
   &__icon {
-    width: 48px;
-    height: 48px;
+    width: @share-sheet-icon-size;
+    height: @share-sheet-icon-size;
   }
 
   &__name {
     margin-top: @padding-xs;
-    color: @gray-7;
-    font-size: @font-size-sm;
+    color: @share-sheet-option-name-color;
+    font-size: @share-sheet-option-name-font-size;
   }
 
   &__cancel {
     display: block;
     width: 100%;
     padding: 0;
-    font-size: @font-size-lg;
-    line-height: 48px;
+    font-size: @share-sheet-cancel-button-font-size;
+    line-height: @share-sheet-cancel-button-height;
     text-align: center;
-    background-color: @white;
+    background: @share-sheet-cancel-button-background;
     border: none;
     cursor: pointer;
 
