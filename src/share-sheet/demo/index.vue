@@ -4,22 +4,8 @@
       <van-cell is-link :title="t('showSheet')" @click="show.basic = true" />
       <van-share-sheet
         v-model="show.basic"
-        :options="options"
-        @select="onSelect"
-      />
-    </demo-block>
-
-    <demo-block :title="t('withTitle')">
-      <van-cell
-        is-link
-        :title="t('showSheet')"
-        @click="show.withTitle = true"
-      />
-      <van-share-sheet
-        v-model="show.withTitle"
         :title="t('title')"
         :options="options"
-        :description="t('description')"
         @select="onSelect"
       />
     </demo-block>
@@ -32,6 +18,7 @@
       />
       <van-share-sheet
         v-model="show.multiLine"
+        :title="t('title')"
         :options="multiLineOptions"
         @select="onSelect"
       />
@@ -46,6 +33,17 @@
       <van-share-sheet
         v-model="show.customIcon"
         :options="customIconOptions"
+        @select="onSelect"
+      />
+    </demo-block>
+
+    <demo-block :title="t('withDesc')">
+      <van-cell is-link :title="t('showSheet')" @click="show.withDesc = true" />
+      <van-share-sheet
+        v-model="show.withDesc"
+        :title="t('title')"
+        :options="options"
+        :description="t('description')"
         @select="onSelect"
       />
     </demo-block>
@@ -66,7 +64,7 @@ export default {
       qrcode: '二维码',
       multiLine: '展示多行选项',
       showSheet: '显示分享面板',
-      withTitle: '展示面板标题',
+      withDesc: '展示描述信息',
       customIcon: '自定义图标',
       description: '描述信息',
     },
@@ -74,14 +72,14 @@ export default {
       qq: 'QQ',
       name: 'Name',
       link: 'Link',
-      title: 'Share with friends',
+      title: 'Share',
       weibo: 'Weibo',
       wechat: 'Wechat',
       poster: 'Poster',
       qrcode: 'Qrcode',
       multiLine: 'Multi Line',
       showSheet: 'Show ShareSheet',
-      withTitle: 'Show Title',
+      withDesc: 'Show Description',
       customIcon: 'Custom Icon',
       description: 'Description',
     },
@@ -91,7 +89,7 @@ export default {
     return {
       show: {
         basic: false,
-        withTitle: false,
+        withDesc: false,
         multiLine: false,
         customIcon: false,
       },
@@ -146,7 +144,7 @@ export default {
     onSelect(option) {
       this.$toast(option.name);
       this.show.basic = false;
-      this.show.withTitle = false;
+      this.show.withDesc = false;
       this.show.multiLine = false;
       this.show.customIcon = false;
     },
