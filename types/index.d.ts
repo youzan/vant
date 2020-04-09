@@ -72,6 +72,7 @@ export class RadioGroup extends VanComponent {}
 export class Rate extends VanComponent {}
 export class Row extends VanComponent {}
 export class Search extends VanComponent {}
+export class ShareSheet extends VanComponent {}
 export class Sidebar extends VanComponent {}
 export class SidebarItem extends VanComponent {}
 export class Skeleton extends VanComponent {}
