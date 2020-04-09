@@ -17,11 +17,24 @@ export default createComponent({
     title: String,
     cancelText: String,
     description: String,
+    getContainer: [String, Function],
     options: {
       type: Array,
       default: () => [],
     },
+    overlay: {
+      type: Boolean,
+      default: true,
+    },
+    closeOnPopstate: {
+      type: Boolean,
+      default: true,
+    },
     safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
+    closeOnClickOverlay: {
       type: Boolean,
       default: true,
     },
@@ -111,6 +124,13 @@ export default createComponent({
         class={bem()}
         value={this.value}
         position="bottom"
+        overlay={this.overlay}
+        duration={this.duration}
+        lazyRender={this.lazyRender}
+        lockScroll={this.lockScroll}
+        getContainer={this.getContainer}
+        closeOnPopstate={this.closeOnPopstate}
+        closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onInput={this.toggle}
       >

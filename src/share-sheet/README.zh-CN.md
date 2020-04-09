@@ -134,6 +134,14 @@ export default {
 | title | 顶部标题 | *string* | - |
 | cancel-text | 取消按钮文字 | *string* | `'取消'` |
 | description | 标题下方的辅助描述文字 | *string* | - |
+| duration | 动画时长，单位秒 | *number \| string* | `0.3` |
+| overlay | 是否显示遮罩层 | *boolean* | `true` |
+| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
+| lazy-render | 是否在显示弹层时才渲染内容 | *boolean* | `true` |
+| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
 
 ### Option 数据结构
 
