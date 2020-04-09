@@ -10,25 +10,35 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.6.0-beta.0](https://github.com/youzan/vant/compare/v2.5.9-beta.0...v2.6.0-beta.0)
+### [v2.6.0](https://github.com/youzan/vant/compare/v2.6.0-beta.0...v2.6.0)
 
-`2020-04-02`
+`2020-04-09`
 
 **Feature**
 
-- Form: 新增 show-error 属性 [#5941](https://github.com/youzan/vant/issues/5941)
-- Tabbar: 新增 placeholder 属性 [#5979](https://github.com/youzan/vant/issues/5979)
+- 新增 ShareSheet 分享面板组件，用于进行分享操作 [508076](https://github.com/youzan/vant/commit/5080761cfee10881bb3db771609800f3fcfb1af7)
+- 新增 Empty 空状态组件，作为空状态时的占位提示 [#6010](https://github.com/youzan/vant/issues/6010)
+
+<img src="https://img.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">
+
+**Feature**
+
+- Form: 新增 show-error 属性，用于控制展示错误提示 [#5941](https://github.com/youzan/vant/issues/5941)
+- Tabbar: 新增 placeholder 属性，用于在吸底时生成占位元素 [#5979](https://github.com/youzan/vant/issues/5979)
 - Sku: 默认开启底部安全区适配 [#5960](https://github.com/youzan/vant/issues/5960)
 - SubmitBar: 默认开启底部安全区适配 [#5956](https://github.com/youzan/vant/issues/5956)
 - GoodsAction: 默认开启底部安全区适配 [#5955](https://github.com/youzan/vant/issues/5955)
 - Tabbar: 固定在底部时默认开启底部安全区适配 [#5968](https://github.com/youzan/vant/issues/5968)
 - Swipe: 允许一次滚动多页轮播 [#5953](https://github.com/youzan/vant/issues/5953)
+- Calendar: 设置 max-range 后，选择超出范围时会自动选择到最大范围 [#5992](https://github.com/youzan/vant/issues/5992)
 
 **Improvement**
 
 - NavBar: 优化点击反馈效果 [#5949](https://github.com/youzan/vant/issues/5949)
 - Popup: 优化退场动画效果 [#5954](https://github.com/youzan/vant/issues/5954)
 - Picker: 优化惯性滑动速率 [#5951](https://github.com/youzan/vant/issues/5951)
+- Swipe: 优化滚动手势体验，滑动较慢时会回弹到原位置 [#6003](https://github.com/youzan/vant/issues/6003)
+- TreeSelect: 更新左侧栏背景色，增强区分度 [#5991](https://github.com/youzan/vant/issues/5991)
 
 **Bug Fixes**
 

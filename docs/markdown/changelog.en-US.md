@@ -10,9 +10,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.6.0-beta.0](https://github.com/youzan/vant/compare/v2.5.9-beta.0...v2.6.0-beta.0)
+### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
 
-`2020-04-02`
+`2020-04-09`
+
+**Feature**
+
+- add Empty component [#6010](https://github.com/youzan/vant/issues/6010)
+- add ShareSheet component [508076](https://github.com/youzan/vant/commit/5080761cfee10881bb3db771609800f3fcfb1af7)
 
 **Feature**
 
@@ -23,12 +28,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - SubmitBar: enable safe-area-inset-bottom by default [#5956](https://github.com/youzan/vant/issues/5956)
 - GoodsAction: enable safe-area-inset-bottom by default [#5955](https://github.com/youzan/vant/issues/5955)
 - Swipe: allow swipe multiple item at once [#5953](https://github.com/youzan/vant/issues/5953)
+- Calendar: auto selected to max range [#5992](https://github.com/youzan/vant/issues/5992)
 
 **Improvement**
 
 - NavBar: improve active feedback [#5949](https://github.com/youzan/vant/issues/5949)
 - Popup: improve leave animation timing function [#5954](https://github.com/youzan/vant/issues/5954)
 - Picker: improve scroll speed [#5951](https://github.com/youzan/vant/issues/5951)
+- Swipe: improve swipe threshold [#6003](https://github.com/youzan/vant/issues/6003)
+- TreeSelect: update nav background color [#5991](https://github.com/youzan/vant/issues/5991)
 
 **Bug Fixes**
 
