@@ -10,13 +10,13 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.6.0](https://github.com/youzan/vant/compare/v2.6.0-beta.0...v2.6.0)
+### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
 
 `2020-04-09`
 
 **Feature**
 
-- 新增 ShareSheet 分享面板组件，用于进行分享操作 [508076](https://github.com/youzan/vant/commit/5080761cfee10881bb3db771609800f3fcfb1af7)
+- 新增 ShareSheet 分享面板组件，用于进行分享操作 [#6019](https://github.com/youzan/vant/issues/6019)
 - 新增 Empty 空状态组件，作为空状态时的占位提示 [#6010](https://github.com/youzan/vant/issues/6010)
 
 <img src="https://img.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">

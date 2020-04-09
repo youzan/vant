@@ -16,8 +16,8 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Feature**
 
+- add ShareSheet component [#6019](https://github.com/youzan/vant/issues/6019)
 - add Empty component [#6010](https://github.com/youzan/vant/issues/6010)
-- add ShareSheet component [508076](https://github.com/youzan/vant/commit/5080761cfee10881bb3db771609800f3fcfb1af7)
 
 **Feature**
 
