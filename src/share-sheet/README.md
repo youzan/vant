@@ -101,6 +101,14 @@ export default {
 | title | Title | *string* | - |
 | cancel-text | Cancel button text | *string* | `'Cancel'` |
 | description | Description | *string* | - |
+| duration | Transition duration, unit second | *number \| string* | `0.3` |
+| overlay | Whether to show overlay | *boolean* | `true` |
+| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
+| lazy-render | Whether to lazy render util appeared | *boolean* | `true`  |
+| close-on-popstate | Whether to close when popstate | *boolean* | `true` |
+| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| get-container | Return the mount node for ShareSheet | *string \| () => Element* | - |
 
 ### Data Structure of Option
 
