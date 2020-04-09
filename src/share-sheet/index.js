@@ -50,12 +50,12 @@ export default createComponent({
     },
 
     genHeader() {
-      if (!this.title && !this.description) {
-        return;
-      }
-
       const title = this.slots('title') || this.title;
       const description = this.slots('description') || this.description;
+
+      if (!title && !description) {
+        return;
+      }
 
       return (
         <div class={bem('header')}>
@@ -76,7 +76,7 @@ export default createComponent({
               }}
             >
               <img src={this.getIconURL(option.icon)} class={bem('icon')} />
-              <span class={bem('name')}>{option.name || ''}</span>
+              {option.name && <span class={bem('name')}>{option.name}</span>}
             </div>
           ))}
         </div>

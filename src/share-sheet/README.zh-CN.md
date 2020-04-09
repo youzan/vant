@@ -23,6 +23,7 @@ Vue.use(ShareSheet);
 <van-cell title="显示分享面板" @click="showShare = true" />
 <van-share-sheet
   v-model="showShare"
+  title="立即分享给好友"
   :options="options"
   @select="onSelect"
 />
@@ -53,25 +54,16 @@ export default {
 };
 ```
 
-### 展示面板标题
-
-通过`title`属性可以设置面板标题，通过`description`属性可以设置标题下方的描述文字
-
-```html
-<van-share-sheet
-  v-model="showShare"
-  :options="options"
-  title="立即分享给好友"
-  description="描述信息"
-/>
-```
-
 ### 展示多行选项
 
 当分享选项的数量较多时，可以将`options`定义为数组嵌套的格式，每个子数组会作为一行选项展示
 
 ```html
-<van-share-sheet v-model="showShare" :options="options" />
+<van-share-sheet
+  v-model="showShare"
+  title="立即分享给好友"
+  :options="options"
+/>
 ```
 
 ```js
@@ -117,6 +109,19 @@ export default {
     };
   },
 };
+```
+
+### 展示描述信息
+
+通过`description`属性可以设置标题下方的描述文字
+
+```html
+<van-share-sheet
+  v-model="showShare"
+  :options="options"
+  title="立即分享给好友"
+  description="描述信息"
+/>
 ```
 
 ## API
