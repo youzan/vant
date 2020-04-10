@@ -1,6 +1,6 @@
 import Calendar from '..';
 import { mount, later } from '../../../test';
-import { minDate, maxDate, formatRange } from './utils';
+import { minDate, maxDate, formatRange, formatDate } from './utils';
 
 test('max-range prop when showConfirm is false', async () => {
   const wrapper = mount(Calendar, {
@@ -119,4 +119,30 @@ test('allow-same-day prop', async () => {
 
   days.at(9).trigger('click');
   expect(select).toHaveBeenLastCalledWith([minDate, minDate]);
+});
+
+test('min-date after current time', () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      poppable: false,
+      minDate: new Date(2200, 0, 1),
+      maxDate: new Date(2200, 0, 2),
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(formatDate(wrapper.emitted('confirm')[0][0])).toEqual('2200/1/1');
+});
+
+test('min-date before current time', () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      poppable: false,
+      minDate: new Date(1800, 0, 1),
+      maxDate: new Date(1800, 0, 2),
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(formatDate(wrapper.emitted('confirm')[0][0])).toEqual('1800/1/2');
 });

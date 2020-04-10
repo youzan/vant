@@ -59,6 +59,7 @@ test('select event when type is multiple', async () => {
       minDate,
       maxDate,
       poppable: false,
+      defaultDate: [minDate],
     },
   });
 
@@ -181,6 +182,7 @@ test('reset method', async () => {
       maxDate,
       type: 'range',
       poppable: false,
+      defaultDate: [minDate, getNextDay(minDate)],
     },
   });
 
@@ -227,6 +229,7 @@ test('row-height prop', async () => {
       maxDate,
       poppable: false,
       rowHeight: 50,
+      defaultDate: minDate,
     },
   });
 
@@ -241,6 +244,7 @@ test('formatter prop', async () => {
       minDate,
       maxDate,
       poppable: false,
+      defaultDate: minDate,
       formatter(day) {
         const date = day.date.getDate();
 
@@ -275,6 +279,7 @@ test('title & footer slot', async () => {
       minDate,
       maxDate,
       poppable: false,
+      defaultDate: minDate,
     },
     scopedSlots: {
       title: () => 'Custom Title',
@@ -293,6 +298,7 @@ test('should reset when type changed', async () => {
       minDate,
       maxDate,
       poppable: false,
+      defaultDate: minDate,
     },
   });
 
@@ -301,7 +307,10 @@ test('should reset when type changed', async () => {
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(formatDate(wrapper.emitted('confirm')[0][0])).toEqual('2010/1/10');
 
-  wrapper.setProps({ type: 'range' });
+  wrapper.setProps({
+    type: 'range',
+    defaultDate: [minDate, getNextDay(minDate)],
+  });
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(formatRange(wrapper.emitted('confirm')[1][0])).toEqual(
     '2010/1/10-2010/1/11'
@@ -358,6 +367,7 @@ test('popup wrapper', async () => {
     propsData: {
       minDate,
       maxDate,
+      defaultDate: minDate,
     },
     listeners: {
       input(value) {
@@ -400,6 +410,7 @@ test('color prop when type is single', async () => {
       maxDate,
       color: 'blue',
       poppable: false,
+      defaultDate: minDate,
     },
   });
 
