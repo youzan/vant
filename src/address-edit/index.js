@@ -292,9 +292,7 @@ export default createComponent({
             readonly
             clickable={!disableArea}
             label={t('area')}
-            placeholder={
-              this.areaPlaceholder ? this.areaPlaceholder : t('areaPlaceholder')
-            }
+            placeholder={this.areaPlaceholder || t('areaPlaceholder')}
             errorMessage={errorInfo.areaCode}
             rightIcon={!disableArea ? 'arrow' : null}
             value={this.areaText}
