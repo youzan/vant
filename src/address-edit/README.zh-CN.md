@@ -67,7 +67,7 @@ export default {
 |------|------|------|------|
 | area-list | 地区列表 | *object* | - |
 | area-columns-placeholder `v2.2.5` | 地区选择列占位提示文字 | *string[]* | `[]` |
-| area-placeholder  | 地区输入框占位提示文字 | *string* | - |
+| area-placeholder  | 地区输入框占位提示文字 | *string* | `选择省 / 市 / 区` |
 | address-info | 收货人信息初始值 | *AddressInfo* | `{}` |
 | search-result | 详细地址搜索结果 | *SearchResult[]* | `[]` |
 | show-postal | 是否显示邮政编码 | *boolean* | `false` |
