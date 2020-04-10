@@ -148,6 +148,7 @@ export default createComponent({
     this.init();
   },
 
+  /* istanbul ignore next */
   activated() {
     this.init();
   },
@@ -200,18 +201,26 @@ export default createComponent({
     },
 
     getInitialDate() {
-      const { type, defaultDate, minDate } = this;
+      const { type, minDate, maxDate, defaultDate } = this;
+
+      let defaultVal = new Date();
+
+      if (compareDay(defaultVal, minDate) === -1) {
+        defaultVal = minDate;
+      } else if (compareDay(defaultVal, maxDate) === 1) {
+        defaultVal = maxDate;
+      }
 
       if (type === 'range') {
         const [startDay, endDay] = defaultDate || [];
-        return [startDay || minDate, endDay || getNextDay(minDate)];
+        return [startDay || defaultVal, endDay || getNextDay(defaultVal)];
       }
 
       if (type === 'multiple') {
-        return defaultDate || [minDate];
+        return defaultDate || [defaultVal];
       }
 
-      return defaultDate || minDate;
+      return defaultDate || defaultVal;
     },
 
     // calculate the position of the elements

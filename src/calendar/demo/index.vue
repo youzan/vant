@@ -90,6 +90,7 @@
         :show-confirm="false"
         :min-date="tiledMinDate"
         :max-date="tiledMaxDate"
+        :default-date="tiledMinDate"
         :style="{ height: '500px' }"
       />
     </demo-block>
