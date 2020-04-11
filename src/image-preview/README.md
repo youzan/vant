@@ -41,7 +41,10 @@ After setting the `closeable` attribute, the close icon will be displayed in the
 
 ```js
 ImagePreview({
-  images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
   closeable: true,
 });
 ```
@@ -76,7 +79,10 @@ export default {
     return {
       show: false,
       index: 0,
-      images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+      images: [
+        'https://img.yzcdn.cn/vant/apple-1.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+      ],
     };
   },
 

@@ -8,7 +8,7 @@
 
 ### 函数调用
 
-Dialog 是一个函数而不是组件，因此可以直接调用，展示对应的提示弹窗
+Dialog 是一个函数，调用后展示提示弹窗
 
 ```js
 import { Dialog } from 'vant';

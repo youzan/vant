@@ -261,3 +261,7 @@ test('closeOnPopstate', () => {
   trigger(window, 'popstate');
   expect(wrapper.emitted('input')[1]).toBeFalsy();
 });
+
+test('ImagePreview.Component', () => {
+  expect(ImagePreview.Component).toEqual(ImagePreviewVue);
+});

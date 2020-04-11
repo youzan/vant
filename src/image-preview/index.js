@@ -73,6 +73,8 @@ const ImagePreview = (images, startPosition = 0) => {
   return instance;
 };
 
+ImagePreview.Component = VueImagePreview;
+
 ImagePreview.install = () => {
   Vue.use(VueImagePreview);
 };

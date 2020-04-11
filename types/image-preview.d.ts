@@ -1,3 +1,4 @@
+import { VanComponent } from './component';
 import { VanPopupMixin } from './mixins/popup';
 
 export type ImagePreviewOptions =
@@ -32,6 +33,7 @@ export class VanImagePreview extends VanPopupMixin {
 export interface ImagePreview {
   (options: ImagePreviewOptions, startPosition?: number): VanImagePreview;
   install(): void;
+  Component: typeof VanComponent;
 }
 
 export const ImagePreview: ImagePreview;
