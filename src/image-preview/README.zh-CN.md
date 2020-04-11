@@ -6,7 +6,7 @@
 
 ### 函数调用
 
-ImagePreview 是一个函数，调用函数后展示预览界面
+ImagePreview 是一个函数，调用函数后展示图片预览
 
 ```js
 import { Dialog } from 'vant';
