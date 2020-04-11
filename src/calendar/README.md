@@ -100,7 +100,7 @@ export default {
 
 ### Quick Select
 
-Set `show-confirm` to`false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
+Set `show-confirm` to `false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
 
 ```html
 <van-calendar v-model="show" :show-confirm="false" />
