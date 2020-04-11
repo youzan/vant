@@ -65,38 +65,38 @@ Use slot to custom content.
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| thumb | Left thumb image URL | *string* | - |
-| title | Title | *string* | - |
-| desc | Description | *string* | - |
-| tag | Tag | *string* | - |
-| num | number | *number \| string* | - |
-| price | Price | *number \| string* | - |
-| origin-price | Origin price | *number \| string* | - |
-| centered | Whether content vertical centered | *boolean* | `false` |
-| currency | Currency symbol |  *string* | `¥` |
-| thumb-link | Thumb link URL | *string* | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | *boolean* | `false` |
+| --- | --- | --- | --- |
+| thumb | Left thumb image URL | _string_ | - |
+| title | Title | _string_ | - |
+| desc | Description | _string_ | - |
+| tag | Tag | _string_ | - |
+| num | number | _number \| string_ | - |
+| price | Price | _number \| string_ | - |
+| origin-price | Origin price | _number \| string_ | - |
+| centered | Whether content vertical centered | _boolean_ | `false` |
+| currency | Currency symbol | _string_ | `¥` |
+| thumb-link | Thumb link URL | _string_ | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | *event: Event* |
-| click-thumb | Triggered when thumb clicked | *event: Event* |
+| Event       | Description                  | Arguments      |
+| ----------- | ---------------------------- | -------------- |
+| click       | Triggered when clicked       | _event: Event_ |
+| click-thumb | Triggered when thumb clicked | _event: Event_ |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| title | Custom title |
-| desc | Custom description |
-| num | Custom num |
-| price | Custom price |
+| Name         | Description         |
+| ------------ | ------------------- |
+| title        | Custom title        |
+| desc         | Custom description  |
+| num          | Custom num          |
+| price        | Custom price        |
 | origin-price | Custom origin price |
-| price-top | Custom price top |
-| bottom | Custom price bottom |
-| thumb | Custom thumb |
-| tag | Custom thumb tag |
-| tags | Custom tags |
-| footer | Custom footer |
+| price-top    | Custom price top    |
+| bottom       | Custom price bottom |
+| thumb        | Custom thumb        |
+| tag          | Custom thumb tag    |
+| tags         | Custom tags         |
+| footer       | Custom footer       |

@@ -20,9 +20,9 @@ Vue.use(Search);
 ```js
 export default {
   data() {
-    value: ''
-  }
-}
+    value: '';
+  },
+};
 ```
 
 ### Listen to Events
@@ -47,7 +47,7 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      value: ''
+      value: '',
     };
   },
   methods: {
@@ -56,9 +56,9 @@ export default {
     },
     onCancel() {
       Toast('Cancel');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 > Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
@@ -66,28 +66,20 @@ export default {
 ### Input Align
 
 ```html
-<van-search
-  v-model="value"
-  input-align="center"
-  placeholder="Placeholder"
-/>
+<van-search v-model="value" input-align="center" placeholder="Placeholder" />
 ```
 
 ### Disabled
 
 ```html
-<van-search
-  v-model="value"
-  disabled
-  placeholder="Placeholder"
-/>
+<van-search v-model="value" disabled placeholder="Placeholder" />
 ```
 
 ### Custom Background Color
 
 ```html
 <van-search
-  v-model="value" 
+  v-model="value"
   shape="round"
   background="#4fc08d"
   placeholder="Placeholder"
@@ -107,7 +99,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
   @search="onSearch"
 >
   <template #action>
-    <div @click="onSearch">Search</div> 
+    <div @click="onSearch">Search</div>
   </template>
 </van-search>
 ```
@@ -117,40 +109,40 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| label | Left side label | *string* | - |
-| shape | Shape of field, can be set to `round` | *string* | `square` |
-| background | Background color of field | *string* | `#f2f2f2` |
-| maxlength | Max length of value | *number \| string* | - |
-| placeholder | Placeholder | *string* | - |
-| clearable | Whether to be clearable | *boolean* | `true` |
-| autofocus | Whether to auto focus, unsupported in iOS | *boolean* | `false` |
-| show-action | Whether to show right action button | *boolean* | `false` |
-| action-text `v2.2.2` | Text of action button | *boolean* | `Cancel` |
-| disabled | Whether to disable field | *boolean* | `false` |
-| readonly | Whether to be readonly | *boolean* | `false` |
-| error | Whether to show error info | *boolean* | `false` |
-| input-align | Text align of field, can be set to `center` `right` | *string* | `left` |
-| left-icon | Left icon name | *string* | `search` |
-| right-icon | Right icon name | *string* | - |
+| --- | --- | --- | --- |
+| label | Left side label | _string_ | - |
+| shape | Shape of field, can be set to `round` | _string_ | `square` |
+| background | Background color of field | _string_ | `#f2f2f2` |
+| maxlength | Max length of value | _number \| string_ | - |
+| placeholder | Placeholder | _string_ | - |
+| clearable | Whether to be clearable | _boolean_ | `true` |
+| autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
+| show-action | Whether to show right action button | _boolean_ | `false` |
+| action-text `v2.2.2` | Text of action button | _boolean_ | `Cancel` |
+| disabled | Whether to disable field | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
+| error | Whether to show error info | _boolean_ | `false` |
+| input-align | Text align of field, can be set to `center` `right` | _string_ | `left` |
+| left-icon | Left icon name | _string_ | `search` |
+| right-icon | Right icon name | _string_ | - |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| search | Triggered when confirm search | *value: string* |
-| input | Triggered when input value changed | *value: string* |
-| focus | Triggered when input gets focus | *event: Event* |
-| blur | Triggered when input loses focus | *event: Event* |
-| clear | Triggered when click clear icon | *event: Event* |
-| cancel | Triggered when click cancel button | - |
+| Event  | Description                        | Arguments       |
+| ------ | ---------------------------------- | --------------- |
+| search | Triggered when confirm search      | _value: string_ |
+| input  | Triggered when input value changed | _value: string_ |
+| focus  | Triggered when input gets focus    | _event: Event_  |
+| blur   | Triggered when input loses focus   | _event: Event_  |
+| clear  | Triggered when click clear icon    | _event: Event_  |
+| cancel | Triggered when click cancel button | -               |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| left | Custom left side content |
-| action | Custom right button, displayed when `show-action` is `true` |
-| label | Custom Search label |
-| left-icon | Custom left icon |
-| right-icon | Custom right icon |
+| Name       | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| left       | Custom left side content                                    |
+| action     | Custom right button, displayed when `show-action` is `true` |
+| label      | Custom Search label                                         |
+| left-icon  | Custom left icon                                            |
+| right-icon | Custom right icon                                           |

@@ -23,10 +23,10 @@ Vue.use(Switch);
 export default {
   data() {
     return {
-      checked: true
+      checked: true,
     };
-  }
-};  
+  },
+};
 ```
 
 ### 禁用状态
@@ -73,20 +73,20 @@ export default {
 export default {
   data() {
     return {
-      checked: true
+      checked: true,
     };
   },
   methods: {
     onInput(checked) {
       Dialog.confirm({
         title: '提醒',
-        message: '是否切换开关？'
+        message: '是否切换开关？',
       }).then(() => {
         this.checked = checked;
       });
-    }
-  }
-}; 
+    },
+  },
+};
 ```
 
 ### 搭配单元格使用
@@ -103,20 +103,20 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 开关选中状态 | *any* | `false` |
-| loading | 是否为加载状态 | *boolean* | `false` |
-| disabled | 是否为禁用状态 | *boolean* | `false` |
-| size `v2.2.11` | 开关尺寸，默认单位为`px` | *number \| string* | `30px` |
-| active-color | 打开时的背景色 | *string* | `#1989fa` |
-| inactive-color | 关闭时的背景色 | *string* | `white` |
-| active-value | 打开时对应的值 | *any* | `true` |
-| inactive-value | 关闭时对应的值 | *any* | `false` |
+| 参数           | 说明                     | 类型               | 默认值    |
+| -------------- | ------------------------ | ------------------ | --------- |
+| v-model        | 开关选中状态             | _any_              | `false`   |
+| loading        | 是否为加载状态           | _boolean_          | `false`   |
+| disabled       | 是否为禁用状态           | _boolean_          | `false`   |
+| size `v2.2.11` | 开关尺寸，默认单位为`px` | _number \| string_ | `30px`    |
+| active-color   | 打开时的背景色           | _string_           | `#1989fa` |
+| inactive-color | 关闭时的背景色           | _string_           | `white`   |
+| active-value   | 打开时对应的值           | _any_              | `true`    |
+| inactive-value | 关闭时对应的值           | _any_              | `false`   |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| change | 开关状态切换时触发 | *value: any* |
-| click `v2.2.11` | 点击时触发 | *event: Event* |
+| 事件名          | 说明               | 回调参数       |
+| --------------- | ------------------ | -------------- |
+| change          | 开关状态切换时触发 | _value: any_   |
+| click `v2.2.11` | 点击时触发         | _event: Event_ |

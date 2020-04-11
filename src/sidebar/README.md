@@ -26,9 +26,9 @@ Vue.use(SidebarItem);
 export default {
   data() {
     return {
-      activeKey: 0
+      activeKey: 0,
     };
-  }
+  },
 };
 ```
 
@@ -68,45 +68,45 @@ import { Notify } from 'vant';
 export default {
   data() {
     return {
-      activeKey: 0
+      activeKey: 0,
     };
   },
   methods: {
     onChange(index) {
       Notify({ type: 'primary', message: index });
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## API
 
 ### Sidebar Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Index of chosen item | *number \| string* | `0` |
+| Attribute | Description          | Type               | Default |
+| --------- | -------------------- | ------------------ | ------- |
+| v-model   | Index of chosen item | _number \| string_ | `0`     |
 
 ### Sidebar Events
 
-| Event | Description | Arguments |
-|------|------|------|
+| Event  | Description                 | Arguments                    |
+| ------ | --------------------------- | ---------------------------- |
 | change | Triggered when item changed | index: index of current item |
 
 ### SidebarItem Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| title | Content | *string* | `''` |
-| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| badge `v2.5.6` | Content of the badge | *number \| string* | `''` |
-| disabled `v2.2.0` | Whether to be disabled | *boolean* | `false` |
-| url | Link | *string* | - |
-| to `v2.0.4` | Target route of the link, same as to of vue-router | *string \| object* | - |
-| replace `v2.0.4` | If true, the navigation will not leave a history record | *boolean* | `false` |
+| --- | --- | --- | --- |
+| title | Content | _string_ | `''` |
+| dot `v2.2.1` | Whether to show red dot | _boolean_ | `false` |
+| badge `v2.5.6` | Content of the badge | _number \| string_ | `''` |
+| disabled `v2.2.0` | Whether to be disabled | _boolean_ | `false` |
+| url | Link | _string_ | - |
+| to `v2.0.4` | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| replace `v2.0.4` | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### SidebarItem Events
 
-| Event | Description | Arguments |
-|------|------|------|
+| Event | Description               | Arguments                    |
+| ----- | ------------------------- | ---------------------------- |
 | click | Triggered when click item | index: index of current item |

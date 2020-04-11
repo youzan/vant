@@ -22,9 +22,9 @@ Vue.use(CheckboxGroup);
 export default {
   data() {
     return {
-      checked: true
+      checked: true,
     };
-  }
+  },
 };
 ```
 
@@ -60,18 +60,14 @@ Use icon slot to custom icon
 <van-checkbox v-model="checked">
   customize icon
   <template #icon="props">
-    <img
-      class="img-icon"
-      :src="props.checked ? activeIcon : inactiveIcon"
-    />
-</template>
-
+    <img class="img-icon" :src="props.checked ? activeIcon : inactiveIcon" />
+  </template>
 </van-checkbox>
 
 <style>
-.img-icon {
-  height: 20px;  
-}
+  .img-icon {
+    height: 20px;
+  }
 </style>
 ```
 
@@ -81,9 +77,9 @@ export default {
     return {
       checked: true,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
-  }
+  },
 };
 ```
 
@@ -108,9 +104,9 @@ When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an 
 export default {
   data() {
     return {
-      result: ['a', 'b']
+      result: ['a', 'b'],
     };
-  }
+  },
 };
 ```
 
@@ -127,9 +123,9 @@ export default {
 export default {
   data() {
     return {
-      result: []
+      result: [],
     };
-  }
+  },
 };
 ```
 
@@ -160,8 +156,8 @@ export default {
 export default {
   data() {
     return {
-      result: []
-    }
+      result: [],
+    };
   },
   methods: {
     checkAll() {
@@ -169,9 +165,9 @@ export default {
     },
     toggleAll() {
       this.$refs.checkboxGroup.toggleAll();
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Inside a Cell
@@ -186,9 +182,9 @@ export default {
       :title="`Checkbox ${item}`"
       @click="toggle(index)"
     >
-    <template #right-icon>
-      <van-checkbox :name="item" ref="checkboxes" />
-    </template>
+      <template #right-icon>
+        <van-checkbox :name="item" ref="checkboxes" />
+      </template>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -215,60 +211,60 @@ export default {
 ### Checkbox Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model (value) | Check status | *boolean* | `false` |
-| name | Checkbox name | *any* | - |
-| shape | Can be set to `square` | *string* | `round` |
-| disabled | Disable checkbox | *boolean* | `false` |
-| label-disabled | Whether to disable label click | *boolean* | `false` |
-| label-position | Can be set to `left` | *string* | `right` |
-| icon-size | Icon size | *number \| string* | `20px` |
-| checked-color | Checked color | *string* | `#1989fa` | - |
-| bind-group `v2.2.4` | Whether to bind with CheckboxGroup | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model (value) | Check status | _boolean_ | `false` |
+| name | Checkbox name | _any_ | - |
+| shape | Can be set to `square` | _string_ | `round` |
+| disabled | Disable checkbox | _boolean_ | `false` |
+| label-disabled | Whether to disable label click | _boolean_ | `false` |
+| label-position | Can be set to `left` | _string_ | `right` |
+| icon-size | Icon size | _number \| string_ | `20px` |
+| checked-color | Checked color | _string_ | `#1989fa` | - |
+| bind-group `v2.2.4` | Whether to bind with CheckboxGroup | _boolean_ | `true` |
 
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model (value) | Names of all checked checkboxes | *any[]* | - |
-| disabled | Whether to disable all checkboxes | *boolean* | `false` |
-| max | Maximum amount of checked options | *number \| string* | `0`(Unlimited) |
-| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
-| icon-size `v2.2.3` | Icon size of all checkboxes | *number \| string* | `20px` |
-| checked-color `v2.2.3` | Checked color of all checkboxes | *string* | `#1989fa` | - |
+| --- | --- | --- | --- |
+| v-model (value) | Names of all checked checkboxes | _any[]_ | - |
+| disabled | Whether to disable all checkboxes | _boolean_ | `false` |
+| max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
+| icon-size `v2.2.3` | Icon size of all checkboxes | _number \| string_ | `20px` |
+| checked-color `v2.2.3` | Checked color of all checkboxes | _string_ | `#1989fa` | - |
 
 ### Checkbox Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| change | Triggered when value changed | *checked: boolean* |
-| click | Triggered when click checkbox | *event: Event* |
+| Event  | Description                   | Parameters         |
+| ------ | ----------------------------- | ------------------ |
+| change | Triggered when value changed  | _checked: boolean_ |
+| click  | Triggered when click checkbox | _event: Event_     |
 
 ### CheckboxGroup Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| change | Triggered when value changed | *names: any[]* |
+| Event  | Description                  | Parameters     |
+| ------ | ---------------------------- | -------------- |
+| change | Triggered when value changed | _names: any[]_ |
 
 ### Checkbox Slots
 
-| Name | Description | SlotProps |
-|------|------|------|
-| default | Custom label | - |
-| icon | Custom icon | *checked: boolean* |
+| Name    | Description  | SlotProps          |
+| ------- | ------------ | ------------------ |
+| default | Custom label | -                  |
+| icon    | Custom icon  | _checked: boolean_ |
 
 ### CheckboxGroup Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods
 
 | Name | Description | Attribute | Return value |
-|------|------|------|------|
-| toggleAll | Toggle check status of all checkboxes | *checked?: boolean* | - |
+| --- | --- | --- | --- |
+| toggleAll | Toggle check status of all checkboxes | _checked?: boolean_ | - |
 
 ### Checkbox Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| toggle | Toggle check status | *checked?: boolean* | - |
+| Name   | Description         | Attribute           | Return value |
+| ------ | ------------------- | ------------------- | ------------ |
+| toggle | Toggle check status | _checked?: boolean_ | -            |

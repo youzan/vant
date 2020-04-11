@@ -40,9 +40,9 @@ Use the image prop to display different placeholder images
 />
 
 <style>
-.custom-image img {
-  border-radius: 100%;
-}
+  .custom-image img {
+    border-radius: 100%;
+  }
 </style>
 ```
 
@@ -56,9 +56,9 @@ Use the image prop to display different placeholder images
 </van-empty>
 
 <style>
-.bottom-button {
-  width: 160px;
-}
+  .bottom-button {
+    width: 160px;
+  }
 </style>
 ```
 
@@ -67,14 +67,14 @@ Use the image prop to display different placeholder images
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| image | Image type，can be set to `error` `network` `search` or image URL | *string* | `default` |
-| description | Desciption | *string* | - |
+| --- | --- | --- | --- |
+| image | Image type，can be set to `error` `network` `search` or image URL | _string_ | `default` |
+| description | Desciption | _string_ | - |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| default | Custom bottom content |
-| image | Custom image |
-| description | Custom description |
+| Name        | Description           |
+| ----------- | --------------------- |
+| default     | Custom bottom content |
+| image       | Custom image          |
+| description | Custom description    |

@@ -32,25 +32,25 @@ Notify({ type: 'warning', message: 'Notify Message' });
 Notify({
   message: 'Custom Color',
   color: '#ad0000',
-  background: '#ffe1e1'
+  background: '#ffe1e1',
 });
 
 Notify({
   message: 'Custom Duration',
-  duration: 1000
+  duration: 1000,
 });
 ```
 
-### $notify Method
+### \$notify Method
 
-After import the Notify component, the $notify method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After import the Notify component, the \$notify method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
 export default {
   mounted() {
     this.$notify('Notify Message');
-  }
-}
+  },
+};
 ```
 
 ## API
@@ -58,7 +58,7 @@ export default {
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | Notify | `options | message` | notify instance | Show notify |
 | Notify.clear | - | `void` | Close notify |
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
@@ -67,13 +67,13 @@ export default {
 ### Options
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| type `v2.1.6` | Can be set to `primary` `success` `warning` | *string* | `danger` |
-| message | Message | *string* | - |
-| duration | Duration(ms), won't disappear if value is 0 | *number \| string* | `3000` |
-| color | Message color | *string* | `white` | |
-| background | Background color | *string* | - |
-| className | Custom className | *any* | - |
-| onClick | Callback function after click | *Function* | - |
-| onOpened | Callback function after opened | *Function* | - |
-| onClose | Callback function after close | *Function* | - |
+| --- | --- | --- | --- |
+| type `v2.1.6` | Can be set to `primary` `success` `warning` | _string_ | `danger` |
+| message | Message | _string_ | - |
+| duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
+| color | Message color | _string_ | `white` |  |
+| background | Background color | _string_ | - |
+| className | Custom className | _any_ | - |
+| onClick | Callback function after click | _Function_ | - |
+| onOpened | Callback function after opened | _Function_ | - |
+| onClose | Callback function after close | _Function_ | - |

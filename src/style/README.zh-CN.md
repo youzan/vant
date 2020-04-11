@@ -13,10 +13,14 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 <div class="van-ellipsis">这是一段最多显示一行的文字，多余的内容会被省略</div>
 
 <!-- 最多显示两行 -->
-<div class="van-multi-ellipsis--l2">这是一段最多显示两行的文字，多余的内容会被省略</div>
+<div class="van-multi-ellipsis--l2">
+  这是一段最多显示两行的文字，多余的内容会被省略
+</div>
 
 <!-- 最多显示三行 -->
-<div class="van-multi-ellipsis--l3">这是一段最多显示三行的文字，多余的内容会被省略</div>
+<div class="van-multi-ellipsis--l3">
+  这是一段最多显示三行的文字，多余的内容会被省略
+</div>
 ```
 
 ### 1px 边框

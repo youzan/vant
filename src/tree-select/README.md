@@ -27,10 +27,10 @@ export default {
     return {
       items,
       activeId: 1,
-      activeIndex: 0
+      activeIndex: 0,
     };
-  }
-}
+  },
+};
 ```
 
 ### Multiple Mode
@@ -49,23 +49,25 @@ export default {
     return {
       items,
       activeIds: [1, 2],
-      activeIndex: 0
+      activeIndex: 0,
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Content
 
 ```html
-<van-tree-select
-  height="55vw"
-  :items="items"
-  :main-active-index.sync="active"
->
+<van-tree-select height="55vw" :items="items" :main-active-index.sync="active">
   <template #content>
-    <van-image v-if="active === 0" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
-    <van-image v-if="active === 1" src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image
+      v-if="active === 0"
+      src="https://img.yzcdn.cn/vant/apple-1.jpg"
+    />
+    <van-image
+      v-if="active === 1"
+      src="https://img.yzcdn.cn/vant/apple-2.jpg"
+    />
   </template>
 </van-tree-select>
 ```
@@ -75,10 +77,10 @@ export default {
   data() {
     return {
       active: 0,
-      items: [{ text: 'Group 1' }, { text: 'Group 2' }]
-    }
-  }
-}
+      items: [{ text: 'Group 1' }, { text: 'Group 2' }],
+    };
+  },
+};
 ```
 
 ### Show Badge
@@ -98,11 +100,11 @@ export default {
       activeIndex: 0,
       items: [
         { text: 'Group 1', children: [], dot: true },
-        { text: 'Group 2', children: [], badge: 5 }
-      ]
-    }
-  }
-}
+        { text: 'Group 2', children: [], badge: 5 },
+      ],
+    };
+  },
+};
 ```
 
 ## API
@@ -110,24 +112,24 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| items | Required datasets for the component | *Item[]* | `[]` |
-| height | Height | *number \| string* | `300` |
-| main-active-index | The index of selected parent node | *number \| string* | `0` |
-| active-id | Id of selected item | *number \| string \|<br>(number \| string)[]* | `0` |
-| max `v2.2.0` | Maximum number of selected items | *number \| string* | `Infinity` |
+| --- | --- | --- | --- |
+| items | Required datasets for the component | _Item[]_ | `[]` |
+| height | Height | _number \| string_ | `300` |
+| main-active-index | The index of selected parent node | _number \| string_ | `0` |
+| active-id | Id of selected item | _number \| string \|<br>(number \| string)[]_ | `0` |
+| max `v2.2.0` | Maximum number of selected items | _number \| string_ | `Infinity` |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
+| --- | --- | --- |
 | click-nav | triggered when parent node is selected | index: index of selected parent |
 | click-item | triggered when item is selected | data: selected item |
 
 ### Slots
 
-| Name | Description |
-|------|------|
+| Name    | Description          |
+| ------- | -------------------- |
 | content | Custom right content |
 
 ### Data Structure of Item
@@ -155,13 +157,13 @@ In every tree object, `text` property defines `id` stands for the unique key whi
         // id of the leaf node, component highlights leaf node by comparing the activeId with this.
         id: 1,
         // disable options
-        disabled: true
+        disabled: true,
       },
       {
         text: 'Baltimore',
-        id: 2
-      }
-    ]
-  }
-]
+        id: 2,
+      },
+    ],
+  },
+];
 ```

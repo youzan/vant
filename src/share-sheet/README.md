@@ -44,18 +44,14 @@ export default {
       Toast(option.name);
       this.showShare = false;
     },
-  }
+  },
 };
 ```
 
 ### Multi Line
 
 ```html
-<van-share-sheet
-  v-model="showShare"
-  title="Share"
-  :options="options"
-/>
+<van-share-sheet v-model="showShare" title="Share" :options="options" />
 ```
 
 ```js
@@ -96,37 +92,37 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| options | Share options | *Option[]* | `[]` |
-| title | Title | *string* | - |
-| cancel-text | Cancel button text | *string* | `'Cancel'` |
-| description | Description | *string* | - |
-| duration | Transition duration, unit second | *number \| string* | `0.3` |
-| overlay | Whether to show overlay | *boolean* | `true` |
-| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
-| lazy-render | Whether to lazy render util appeared | *boolean* | `true`  |
-| close-on-popstate | Whether to close when popstate | *boolean* | `true` |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
-| get-container | Return the mount node for ShareSheet | *string \| () => Element* | - |
+| --- | --- | --- | --- |
+| options | Share options | _Option[]_ | `[]` |
+| title | Title | _string_ | - |
+| cancel-text | Cancel button text | _string_ | `'Cancel'` |
+| description | Description | _string_ | - |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| overlay | Whether to show overlay | _boolean_ | `true` |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
+| lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| get-container | Return the mount node for ShareSheet | _string \| () => Element_ | - |
 
 ### Data Structure of Option
 
 | Key | Description | Type |
-|------|------|------|
-| name | Option name | *string* |
-| icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | *string* |
+| --- | --- | --- |
+| name | Option name | _string_ |
+| icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | _string_ |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| select | Triggered when click option | *option: Option, index: number* |
+| --- | --- | --- |
+| select | Triggered when click option | _option: Option, index: number_ |
 | cancel | Triggered when click cancel button | - |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| title | Custom title |
+| Name        | Description        |
+| ----------- | ------------------ |
+| title       | Custom title       |
 | description | Custom description |

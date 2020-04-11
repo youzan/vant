@@ -22,7 +22,7 @@ Use `name` prop to set icon name or icon URL
 
 ### Show Badge
 
-Use `dot` prop, a small red dot will be displayed in the upper right corner of the icon. 
+Use `dot` prop, a small red dot will be displayed in the upper right corner of the icon.
 
 Use `badge` prop, the badge will be displayed in the upper right corner of the icon.
 
@@ -46,8 +46,7 @@ Use `color` prop to set icon color
 Use `size` prop to set icon size
 
 ```html
-<van-icon name="chat-o" size="40" />
-<van-icon name="chat-o" size="3rem" />
+<van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />
 ```
 
 ### Use local font file
@@ -83,18 +82,18 @@ import 'vant/lib/icon/local.css';
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| name | Icon name or URL | *string* | `''` |
-| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| badge `v2.5.6` | Content of the badge | *number \| string* | `''` |
-| color | Icon color | *string* | `inherit` |
-| size | Icon size | *number \| string* | `inherit` |
-| class-prefix | ClassName prefix | *string* | `van-icon` |
-| tag | HTML Tag | *string* | `i` |
+| Attribute      | Description             | Type               | Default    |
+| -------------- | ----------------------- | ------------------ | ---------- |
+| name           | Icon name or URL        | _string_           | `''`       |
+| dot `v2.2.1`   | Whether to show red dot | _boolean_          | `false`    |
+| badge `v2.5.6` | Content of the badge    | _number \| string_ | `''`       |
+| color          | Icon color              | _string_           | `inherit`  |
+| size           | Icon size               | _number \| string_ | `inherit`  |
+| class-prefix   | ClassName prefix        | _string_           | `van-icon` |
+| tag            | HTML Tag                | _string_           | `i`        |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when click icon | *event: Event* |
+| Event | Description               | Arguments      |
+| ----- | ------------------------- | -------------- |
+| click | Triggered when click icon | _event: Event_ |

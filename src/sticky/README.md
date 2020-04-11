@@ -41,12 +41,12 @@ Vue.use(Sticky);
 export default {
   data() {
     return {
-      container: null
+      container: null,
     };
   },
   mounted() {
     this.container = this.$refs.container;
-  }
+  },
 };
 ```
 
@@ -54,14 +54,14 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| offset-top | Offset top | *number \| string* | `0` |
-| z-index | z-index when sticky | *number \| string* | `99` |
-| container | Container DOM | *Element* | - |
+| Attribute  | Description         | Type               | Default |
+| ---------- | ------------------- | ------------------ | ------- |
+| offset-top | Offset top          | _number \| string_ | `0`     |
+| z-index    | z-index when sticky | _number \| string_ | `99`    |
+| container  | Container DOM       | _Element_          | -       |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
+| Event  | Description           | Arguments                      |
+| ------ | --------------------- | ------------------------------ |
 | scroll | Triggered when scroll | object: { scrollTop, isFixed } |

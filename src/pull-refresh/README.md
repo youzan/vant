@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       count: 0,
-      isLoading: false
-    }
+      isLoading: false,
+    };
   },
   methods: {
     onRefresh() {
@@ -38,9 +38,9 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 1000);
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Success Tip
@@ -72,28 +72,22 @@ Use slots to custom tips
   </template>
 
   <template #loosing>
-    <img
-      class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
-    />
-  </template>  
+    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+  </template>
 
   <template #loading>
-    <img
-      class="doge"
-      src="https://img.yzcdn.cn/vant/doge-fire.jpg"
-    />
+    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>
 
 <style>
-.doge {
-  width: 140px;
-  height: 72px;
-  margin-top: 8px;
-  border-radius: 4px;
-}
+  .doge {
+    width: 140px;
+    height: 72px;
+    margin-top: 8px;
+    border-radius: 4px;
+  }
 </style>
 ```
 
@@ -102,30 +96,30 @@ Use slots to custom tips
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Loading status | *boolean* | - |
-| pulling-text | Text to show when pulling | *string* | `Pull to refresh...` |
-| loosing-text | Text to show when loosing | *string* | `Loose to refresh...` |
-| loading-text | Text to show when loading | *string* | `Loading...` |
-| success-text | Text to show when loading success | *string* | - |
-| success-duration | Success text display duration(ms) | *number \| string* | `500` |
-| animation-duration | Animation duration | *number \| string* | `300` |
-| head-height `v2.4.2` | Height of head | *number \| string* | `50` |
-| disabled | Whether to disable pull refresh | *boolean* | `false` |
+| --- | --- | --- | --- |
+| v-model | Loading status | _boolean_ | - |
+| pulling-text | Text to show when pulling | _string_ | `Pull to refresh...` |
+| loosing-text | Text to show when loosing | _string_ | `Loose to refresh...` |
+| loading-text | Text to show when loading | _string_ | `Loading...` |
+| success-text | Text to show when loading success | _string_ | - |
+| success-duration | Success text display duration(ms) | _number \| string_ | `500` |
+| animation-duration | Animation duration | _number \| string_ | `300` |
+| head-height `v2.4.2` | Height of head | _number \| string_ | `50` |
+| disabled | Whether to disable pull refresh | _boolean_ | `false` |
 
 ### Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| refresh | Triggered when pull refresh | - |
+| Event   | Description                 | Parameters |
+| ------- | --------------------------- | ---------- |
+| refresh | Triggered when pull refresh | -          |
 
 ### Slots
 
-| Name | Description | SlotProps |
-|------|------|------|
-| default | Default slot | - |
-| normal | Content of head when at normal status | - |
-| pulling | Content of head when at pulling | { distance } |
-| loosing | Content of head when at loosing | { distance } |
-| loading | Content of head when at loading | { distance } |
-| success | Content of head when succeed | - |
+| Name    | Description                           | SlotProps    |
+| ------- | ------------------------------------- | ------------ |
+| default | Default slot                          | -            |
+| normal  | Content of head when at normal status | -            |
+| pulling | Content of head when at pulling       | { distance } |
+| loosing | Content of head when at loosing       | { distance } |
+| loading | Content of head when at loading       | { distance } |
+| success | Content of head when succeed          | -            |

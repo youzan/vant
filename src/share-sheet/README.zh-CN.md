@@ -50,7 +50,7 @@ export default {
       Toast(option.name);
       this.showShare = false;
     },
-  }
+  },
 };
 ```
 
@@ -102,9 +102,18 @@ export default {
     return {
       showShare: false,
       options: [
-        { name: '名称', icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png' },
-        { name: '名称', icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png' },
-        { name: '名称', icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png' },
+        {
+          name: '名称',
+          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+        },
+        {
+          name: '名称',
+          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+        },
+        {
+          name: '名称',
+          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+        },
       ],
     };
   },
@@ -129,41 +138,41 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| options | 分享选项 | *Option[]* | `[]` |
-| title | 顶部标题 | *string* | - |
-| cancel-text | 取消按钮文字 | *string* | `'取消'` |
-| description | 标题下方的辅助描述文字 | *string* | - |
-| duration | 动画时长，单位秒 | *number \| string* | `0.3` |
-| overlay | 是否显示遮罩层 | *boolean* | `true` |
-| lock-scroll | 是否锁定背景滚动 | *boolean* | `true` |
-| lazy-render | 是否在显示弹层时才渲染内容 | *boolean* | `true` |
-| close-on-popstate | 是否在页面回退时自动关闭 | *boolean* | `true` |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
+| --- | --- | --- | --- |
+| options | 分享选项 | _Option[]_ | `[]` |
+| title | 顶部标题 | _string_ | - |
+| cancel-text | 取消按钮文字 | _string_ | `'取消'` |
+| description | 标题下方的辅助描述文字 | _string_ | - |
+| duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
+| overlay | 是否显示遮罩层 | _boolean_ | `true` |
+| lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
+| lazy-render | 是否在显示弹层时才渲染内容 | _boolean_ | `true` |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Option 数据结构
 
 `options`属性为一个对象数组，数组中的每个对象配置一列，对象可以包含以下值：
 
 | 键名 | 说明 | 类型 |
-|------|------|------|
-| name | 分享渠道名称 | *string* |
-| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | *string* |
+| --- | --- | --- |
+| name | 分享渠道名称 | _string_ |
+| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | _string_ |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| select | 点击分享选项时触发 | *option: Option, index: number* |
-| cancel | 点击取消按钮时触发 | - |
+| 事件名 | 说明               | 回调参数                        |
+| ------ | ------------------ | ------------------------------- |
+| select | 点击分享选项时触发 | _option: Option, index: number_ |
+| cancel | 点击取消按钮时触发 | -                               |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| title | 自定义顶部标题 |
+| 名称        | 说明           |
+| ----------- | -------------- |
+| title       | 自定义顶部标题 |
 | description | 自定义描述文字 |
 
 ## 常见问题
