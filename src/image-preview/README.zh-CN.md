@@ -1,14 +1,36 @@
 # ImagePreview 图片预览
 
-### 引入
+### 介绍
 
-`ImagePreview`和其他组件不同，不是通过 HTML 结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
+图片放大预览，支持函数调用和组件调用两种方式
+
+### 函数调用
+
+ImagePreview 是一个函数，调用函数后展示图片预览
+
+```js
+import { Dialog } from 'vant';
+
+ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
+```
+
+### 组件调用
+
+通过组件调用 ImagePreview 时，可以通过下面的方式进行注册
 
 ```js
 import Vue from 'vue';
 import { ImagePreview } from 'vant';
 
+// 全局注册
 Vue.use(ImagePreview);
+
+// 局部注册
+export default {
+  components: {
+    [ImagePreview.Component.name]: ImagePreview.Component,
+  },
+};
 ```
 
 ## 代码演示
@@ -18,7 +40,10 @@ Vue.use(ImagePreview);
 直接传入图片数组，即可展示图片预览
 
 ```js
-ImagePreview(['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg']);
+ImagePreview([
+  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://img.yzcdn.cn/vant/apple-2.jpg',
+]);
 ```
 
 ### 传入配置项
@@ -27,7 +52,10 @@ ImagePreview(['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg']);
 
 ```js
 ImagePreview({
-  images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
   startPosition: 1,
   onClose() {
     // do something
@@ -41,7 +69,10 @@ ImagePreview({
 
 ```js
 ImagePreview({
-  images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
   closeable: true,
 });
 ```
@@ -52,7 +83,10 @@ ImagePreview({
 
 ```js
 const instance = ImagePreview({
-  images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
   asyncClose: true,
 });
 
@@ -77,7 +111,10 @@ export default {
     return {
       show: false,
       index: 0,
-      images: ['https://img.yzcdn.cn/1.jpg', 'https://img.yzcdn.cn/2.jpg'],
+      images: [
+        'https://img.yzcdn.cn/vant/apple-1.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg',
+      ],
     };
   },
 

@@ -8,11 +8,11 @@ import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 
 // Components
+import Icon from '../icon';
 import Image from '../image';
 import Swipe from '../swipe';
 import Loading from '../loading';
 import SwipeItem from '../swipe-item';
-import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image-preview');
 
