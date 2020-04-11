@@ -14,11 +14,7 @@ Vue.use(SubmitBar);
 ### Basic Usage
 
 ```html
-<van-submit-bar
-  :price="3050"
-  button-text="Submit"
-  @submit="onSubmit"
-/>
+<van-submit-bar :price="3050" button-text="Submit" @submit="onSubmit" />
 ```
 
 ### Disabled
@@ -41,12 +37,7 @@ Vue.use(SubmitBar);
 `submit` event will not triggerd when loading.
 
 ```html
-<van-submit-bar
-  loading
-  :price="3050"
-  button-text="Submit"
-  @submit="onSubmit"
-/>
+<van-submit-bar loading :price="3050" button-text="Submit" @submit="onSubmit" />
 ```
 
 ### Advanced Usage
@@ -54,11 +45,7 @@ Vue.use(SubmitBar);
 Use slot to add custom contents.
 
 ```html
-<van-submit-bar
-  :price="3050"
-  button-text="Submit"
-  @submit="onSubmit"
->
+<van-submit-bar :price="3050" button-text="Submit" @submit="onSubmit">
   <van-checkbox v-model="checked">Check</van-checkbox>
   <template #tip>
     Some tips, <span @click="onClickEditAddress">Link</span>
@@ -71,31 +58,31 @@ Use slot to add custom contents.
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| price | Price | *number* | - |
-| label | Price left label | *string* | `Total：` |
-| suffix-label | Price right label | *string* | - |
-| text-align `v2.3.0` | Price label text align can be set to `left` | *string* | `right` |
-| button-text | Button text | *string* | - |
-| button-type | Button type | *string* | `danger` |
-| tip | Tip | *string* | - |
-| tip-icon | Icon |  *string* | - |
-| currency | Currency symbol | *string* | `¥` |
-| decimal-length | number of digits to appear after the decimal point | *number \| string* | `2` |
-| disabled | Whether to disable button | *boolean* | `false` |
-| loading | Whether to show loading icon | *boolean* | `false` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| --- | --- | --- | --- |
+| price | Price | _number_ | - |
+| label | Price left label | _string_ | `Total：` |
+| suffix-label | Price right label | _string_ | - |
+| text-align `v2.3.0` | Price label text align can be set to `left` | _string_ | `right` |
+| button-text | Button text | _string_ | - |
+| button-type | Button type | _string_ | `danger` |
+| tip | Tip | _string_ | - |
+| tip-icon | Icon | _string_ | - |
+| currency | Currency symbol | _string_ | `¥` |
+| decimal-length | number of digits to appear after the decimal point | _number \| string_ | `2` |
+| disabled | Whether to disable button | _boolean_ | `false` |
+| loading | Whether to show loading icon | _boolean_ | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| submit | Triggerd when click submit button | - |
+| Event  | Description                       | Arguments |
+| ------ | --------------------------------- | --------- |
+| submit | Triggerd when click submit button | -         |
 
 ### Slots
 
-| Name | Description |
-|------|------|
+| Name    | Description         |
+| ------- | ------------------- |
 | default | Custom left content |
-| top | Custom top content |
-| tip | Custom tips |
+| top     | Custom top content  |
+| tip     | Custom tips         |

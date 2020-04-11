@@ -26,12 +26,7 @@ Vue.use(Skeleton);
 ### Show Children
 
 ```html
-<van-skeleton
-  title
-  avatar
-  :row="3"
-  :loading="loading"
->
+<van-skeleton title avatar :row="3" :loading="loading">
   <div>Content</div>
 </van-skeleton>
 ```
@@ -40,12 +35,12 @@ Vue.use(Skeleton);
 export default {
   data() {
     return {
-      loading: true
-    }
+      loading: true,
+    };
   },
   mounted() {
     this.loading = false;
-  }
+  },
 };
 ```
 
@@ -54,13 +49,13 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| row | Row count | *number \| string* | `0` |
-| row-width | Row width, can be array | *number \| string \|<br>(number \| string)[]* | `100%` |
-| title | Whether to show title placeholder | *boolean* | `false` |
-| avatar | Whether to show avatar placeholder | *boolean* | `false` |
-| loading | Whether to show skeleton，pass `false` to show child component | *boolean* | `true` |
-| animate | Whether to enable animation | *boolean* | `true` |
-| title-width | Title width | *number \| string* | `40%` |
-| avatar-size | Size of avatar placeholder | *number \| string* | `32px` |
-| avatar-shape | Shape of avatar placeholder，can be set to `square` | *string* | `round` |
+| --- | --- | --- | --- |
+| row | Row count | _number \| string_ | `0` |
+| row-width | Row width, can be array | _number \| string \|<br>(number \| string)[]_ | `100%` |
+| title | Whether to show title placeholder | _boolean_ | `false` |
+| avatar | Whether to show avatar placeholder | _boolean_ | `false` |
+| loading | Whether to show skeleton，pass `false` to show child component | _boolean_ | `true` |
+| animate | Whether to enable animation | _boolean_ | `true` |
+| title-width | Title width | _number \| string_ | `40%` |
+| avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
+| avatar-shape | Shape of avatar placeholder，can be set to `square` | _string_ | `round` |

@@ -28,8 +28,8 @@ export default {
   data() {
     return {
       count: 0,
-      isLoading: false
-    }
+      isLoading: false,
+    };
   },
   methods: {
     onRefresh() {
@@ -38,9 +38,9 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 1000);
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### 成功提示
@@ -74,29 +74,23 @@ export default {
 
   <!-- 释放提示 -->
   <template #loosing>
-    <img
-      class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
-    />
-  </template>  
+    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+  </template>
 
   <!-- 加载提示 -->
   <template #loading>
-    <img
-      class="doge"
-      src="https://img.yzcdn.cn/vant/doge-fire.jpg"
-    />
+    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>
 
 <style>
-.doge {
-  width: 140px;
-  height: 72px;
-  margin-top: 8px;
-  border-radius: 4px;
-}
+  .doge {
+    width: 140px;
+    height: 72px;
+    margin-top: 8px;
+    border-radius: 4px;
+  }
 </style>
 ```
 
@@ -105,33 +99,33 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 是否处于加载中状态 | *boolean* | - |
-| pulling-text | 下拉过程提示文案 | *string* | `下拉即可刷新...` |
-| loosing-text | 释放过程提示文案 | *string* | `释放即可刷新...` |
-| loading-text | 加载过程提示文案 | *string* | `加载中...` |
-| success-text | 刷新成功提示文案 | *string* | - |
-| success-duration | 刷新成功提示展示时长(ms) | *number \| string* | `500` |
-| animation-duration | 动画时长 | *number \| string* | `300` |
-| head-height `v2.4.2` | 顶部内容高度 | *number \| string* | `50` |
-| disabled | 是否禁用下拉刷新 | *boolean* | `false` |
+| --- | --- | --- | --- |
+| v-model | 是否处于加载中状态 | _boolean_ | - |
+| pulling-text | 下拉过程提示文案 | _string_ | `下拉即可刷新...` |
+| loosing-text | 释放过程提示文案 | _string_ | `释放即可刷新...` |
+| loading-text | 加载过程提示文案 | _string_ | `加载中...` |
+| success-text | 刷新成功提示文案 | _string_ | - |
+| success-duration | 刷新成功提示展示时长(ms) | _number \| string_ | `500` |
+| animation-duration | 动画时长 | _number \| string_ | `300` |
+| head-height `v2.4.2` | 顶部内容高度 | _number \| string_ | `50` |
+| disabled | 是否禁用下拉刷新 | _boolean_ | `false` |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| refresh | 下拉刷新时触发 | - |
+| 事件名  | 说明           | 回调参数 |
+| ------- | -------------- | -------- |
+| refresh | 下拉刷新时触发 | -        |
 
 ### Slots
 
-| 名称 | 说明 | SlotProps |
-|------|------|------|
-| default | 自定义内容 | - |
-| normal | 非下拉状态时顶部内容 | - |
-| pulling | 下拉过程中顶部内容 | { distance: 当前下拉距离 } |
-| loosing | 释放过程中顶部内容 | { distance: 当前下拉距离 } |
-| loading | 加载过程中顶部内容 | { distance: 当前下拉距离 } |
-| success | 刷新成功提示内容 | - |
+| 名称    | 说明                 | SlotProps                  |
+| ------- | -------------------- | -------------------------- |
+| default | 自定义内容           | -                          |
+| normal  | 非下拉状态时顶部内容 | -                          |
+| pulling | 下拉过程中顶部内容   | { distance: 当前下拉距离 } |
+| loosing | 释放过程中顶部内容   | { distance: 当前下拉距离 } |
+| loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
+| success | 刷新成功提示内容     | -                          |
 
 ## 常见问题
 

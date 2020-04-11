@@ -59,11 +59,13 @@ export default {
       showList: false,
       showEdit: false,
       isEdit: false,
-      list: [{
-        name: '张三',
-        tel: '13000000000',
-        id: 0
-      }]
+      list: [
+        {
+          name: '张三',
+          tel: '13000000000',
+          id: 0,
+        },
+      ],
     };
   },
 
@@ -74,8 +76,8 @@ export default {
 
     currentContact() {
       const id = this.chosenContactId;
-      return id !== null ? this.list.filter(item => item.id === id)[0] : {};
-    }
+      return id !== null ? this.list.filter((item) => item.id === id)[0] : {};
+    },
   },
 
   methods: {
@@ -88,7 +90,7 @@ export default {
 
     // 编辑联系人
     onEdit(item) {
-      this.isEdit = true;      
+      this.isEdit = true;
       this.showEdit = true;
       this.editingContact = item;
     },
@@ -102,9 +104,11 @@ export default {
     onSave(info) {
       this.showEdit = false;
       this.showList = false;
-      
+
       if (this.isEdit) {
-        this.list = this.list.map(item => item.id === info.id ? info : item);
+        this.list = this.list.map((item) =>
+          item.id === info.id ? info : item
+        );
       } else {
         this.list.push(info);
       }
@@ -114,84 +118,79 @@ export default {
     // 删除联系人
     onDelete(info) {
       this.showEdit = false;
-      this.list = this.list.filter(item => item.id !== info.id);
+      this.list = this.list.filter((item) => item.id !== info.id);
       if (this.chosenContactId === info.id) {
         this.chosenContactId = null;
       }
-    }
-  }
+    },
+  },
 };
 ```
 
 ### 不可编辑
 
 ```html
-<van-contact-card
-  type="edit"
-  name="张三"
-  tel="13000000000"
-  :editable="false"
-/>
+<van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
 ```
 
 ## API
 
 ### ContactCard Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| type | 类型，可选值为 `add` `edit` | *string* | `add` |
-| name | 联系人姓名 | *string* | - |
-| tel | 联系人手机号 | *string* | - |
-| add-text | 添加时的文案提示 | *string* | `添加订单联系人信息` |
+| 参数     | 说明                        | 类型     | 默认值               |
+| -------- | --------------------------- | -------- | -------------------- |
+| type     | 类型，可选值为 `add` `edit` | _string_ | `add`                |
+| name     | 联系人姓名                  | _string_ | -                    |
+| tel      | 联系人手机号                | _string_ | -                    |
+| add-text | 添加时的文案提示            | _string_ | `添加订单联系人信息` |
 
 ### ContactCard Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击时触发 | *event: Event* |
+| 事件名 | 说明       | 回调参数       |
+| ------ | ---------- | -------------- |
+| click  | 点击时触发 | _event: Event_ |
 
 ### ContactList Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 当前选中联系人的 id | *number \| string* | - |
-| list | 联系人列表 | *Contact[]* | `[]` |
-| add-text | 新建按钮文案 | *string* | `新建联系人` |
-| default-tag-text `v2.3.0` | 默认联系人标签文案 | *string* | - |
+| --- | --- | --- | --- |
+| v-model | 当前选中联系人的 id | _number \| string_ | - |
+| list | 联系人列表 | _Contact[]_ | `[]` |
+| add-text | 新建按钮文案 | _string_ | `新建联系人` |
+| default-tag-text `v2.3.0` | 默认联系人标签文案 | _string_ | - |
 
 ### ContactList Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| add | 点击新增按钮时触发 | - |
-| edit | 点击编辑按钮时触发 | item: 当前联系人对象，index: 索引 |
+| 事件名 | 说明                   | 回调参数                          |
+| ------ | ---------------------- | --------------------------------- |
+| add    | 点击新增按钮时触发     | -                                 |
+| edit   | 点击编辑按钮时触发     | item: 当前联系人对象，index: 索引 |
 | select | 切换选中的联系人时触发 | item: 当前联系人对象，index: 索引 |
 
 ### ContactEdit Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| contact-info | 联系人信息 | *object* | `[]` |
-| is-edit | 是否为编辑联系人 | *boolean* | `false` |
-| is-saving | 是否显示保存按钮加载动画 | *boolean* | `false` |
-| is-deleting | 是否显示删除按钮加载动画 | *boolean* | `false` |
-| tel-validator | 手机号格式校验函数 | *(tel: string) => boolean* | - |
-| show-set-default `v2.3.0` | 是否显示默认联系人栏 | *boolean* | `false` |
-| set-default-label `v2.3.0` | 默认联系人栏文案 | *string* | - |
+| --- | --- | --- | --- |
+| contact-info | 联系人信息 | _object_ | `[]` |
+| is-edit | 是否为编辑联系人 | _boolean_ | `false` |
+| is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
+| is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
+| tel-validator | 手机号格式校验函数 | _(tel: string) => boolean_ | - |
+| show-set-default `v2.3.0` | 是否显示默认联系人栏 | _boolean_ | `false` |
+| set-default-label `v2.3.0` | 默认联系人栏文案 | _string_ | - |
 
 ### ContactEdit Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| save | 点击保存按钮时触发 | content：表单内容 |
+| 事件名 | 说明               | 回调参数          |
+| ------ | ------------------ | ----------------- |
+| save   | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
 
 ### Contact 数据结构
 
-| 键名 | 说明 | 类型 |
-|------|------|------|
-| id | 每位联系人的唯一标识 | *number \| string* |
-| name | 联系人姓名 | *string* |
-| tel | 联系人手机号 | *number \| string* |
-| isDefault | 是否为默认联系人 | *boolean* |
+| 键名      | 说明                 | 类型               |
+| --------- | -------------------- | ------------------ |
+| id        | 每位联系人的唯一标识 | _number \| string_ |
+| name      | 联系人姓名           | _string_           |
+| tel       | 联系人手机号         | _number \| string_ |
+| isDefault | 是否为默认联系人     | _boolean_          |

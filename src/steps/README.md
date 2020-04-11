@@ -27,20 +27,16 @@ Vue.use(Steps);
 export default {
   data() {
     return {
-      active: 1
+      active: 1,
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Style
 
 ```html
-<van-steps
-  :active="active"
-  active-icon="success"
-  active-color="#38f"
->
+<van-steps :active="active" active-icon="success" active-color="#38f">
   <van-step>Step1</van-step>
   <van-step>Step2</van-step>
   <van-step>Step3</van-step>
@@ -71,23 +67,23 @@ export default {
 
 ### Steps Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| active | Active step | *number \| string* | `0` |
-| direction | Can be set to `vertical` | *string* | `horizontal` |
-| active-color | Active step color | *string* | `#07c160` |
-| active-icon | Active icon name | *string* | `checked` |
-| inactive-icon | Active icon name | *string* | - |
+| Attribute     | Description              | Type               | Default      |
+| ------------- | ------------------------ | ------------------ | ------------ |
+| active        | Active step              | _number \| string_ | `0`          |
+| direction     | Can be set to `vertical` | _string_           | `horizontal` |
+| active-color  | Active step color        | _string_           | `#07c160`    |
+| active-icon   | Active icon name         | _string_           | `checked`    |
+| inactive-icon | Active icon name         | _string_           | -            |
 
 ### Step Slots
 
-| Name | Description |
-|------|------|
-| active-icon | Custom active icon |
+| Name          | Description          |
+| ------------- | -------------------- |
+| active-icon   | Custom active icon   |
 | inactive-icon | Custom inactive icon |
 
 ### Steps Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| click-step `v2.5.9` | Triggered when a step's title or icon is clicked | *index: number* |
+| --- | --- | --- |
+| click-step `v2.5.9` | Triggered when a step's title or icon is clicked | _index: number_ |

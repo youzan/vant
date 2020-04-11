@@ -27,9 +27,9 @@ Use `v-model` to bind the name of checked radio
 export default {
   data() {
     return {
-      radio: '1'
-    }
-  }
+      radio: '1',
+    };
+  },
 };
 ```
 
@@ -87,28 +87,22 @@ Use icon slot to custom icon
   <van-radio name="1">
     Radio 1
     <template #icon="props">
-      <img
-        class="img-icon"
-        :src="props.checked ? activeIcon : inactiveIcon"
-      >
+      <img class="img-icon" :src="props.checked ? activeIcon : inactiveIcon" />
     </template>
   </van-radio>
   <van-radio name="2">
     Radio 2
     <template #icon="props">
-      <img
-        class="img-icon"
-        :src="props.checked ? activeIcon : inactiveIcon"
-      />
+      <img class="img-icon" :src="props.checked ? activeIcon : inactiveIcon" />
     </template>
   </van-radio>
 </van-radio-group>
 
 <style>
   .img-icon {
-    height: 20px;  
-}
-</style>>
+    height: 20px;
+  }</style
+>>
 ```
 
 ```js
@@ -117,9 +111,9 @@ export default {
     return {
       radio: '1',
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
-  }
+  },
 };
 ```
 
@@ -138,7 +132,7 @@ export default {
 <van-radio-group v-model="radio">
   <van-cell-group>
     <van-cell title="Radio 1" clickable @click="radio = '1'">
-      <template #right-icon>      
+      <template #right-icon>
         <van-radio name="1" />
       </template>
     </van-cell>
@@ -156,40 +150,40 @@ export default {
 ### Radio Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| name | Radio name | *any* | - |
-| shape | Can be set to `square` | *string* | `round` |
-| disabled | Whether to disable radio | *boolean* | `false` |
-| label-disabled | Whether to disable label click | *boolean* | `false` |
-| label-position | Can be set to `left` | *string* | `right` |
-| icon-size | Icon size | *number \| string* | `20px` |
-| checked-color | Checked color | *string* | `#1989fa` | - |
+| --- | --- | --- | --- |
+| name | Radio name | _any_ | - |
+| shape | Can be set to `square` | _string_ | `round` |
+| disabled | Whether to disable radio | _boolean_ | `false` |
+| label-disabled | Whether to disable label click | _boolean_ | `false` |
+| label-position | Can be set to `left` | _string_ | `right` |
+| icon-size | Icon size | _number \| string_ | `20px` |
+| checked-color | Checked color | _string_ | `#1989fa` | - |
 
 ### RadioGroup Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model (v-model) | Name of checked radio | *any* | - |
-| disabled | Disable all radios | *boolean* | `false` |
-| direction `v2.5.0` | Direction, can be set to `horizontal` | *string* | `vertical` |
-| icon-size `v2.2.3` | Icon size of all radios | *number \| string* | `20px` |
-| checked-color `v2.2.3` | Checked color of all radios | *string* | `#1989fa` | - |
+| --- | --- | --- | --- |
+| v-model (v-model) | Name of checked radio | _any_ | - |
+| disabled | Disable all radios | _boolean_ | `false` |
+| direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
+| icon-size `v2.2.3` | Icon size of all radios | _number \| string_ | `20px` |
+| checked-color `v2.2.3` | Checked color of all radios | _string_ | `#1989fa` | - |
 
 ### Radio Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| click | Triggered when click radio | *event: Event* |
+| Event | Description                | Parameters     |
+| ----- | -------------------------- | -------------- |
+| click | Triggered when click radio | _event: Event_ |
 
 ### RadioGroup Events
 
-| Event | Description | Parameters |
-|------|------|------|
-| change | Triggered when value changed | *name: string* |
+| Event  | Description                  | Parameters     |
+| ------ | ---------------------------- | -------------- |
+| change | Triggered when value changed | _name: string_ |
 
 ### Radio Slots
 
-| Name | Description | SlotProps |
-|------|------|------|
-| default | Custom label | - |
-| icon | Custom icon | *checked: boolean* |
+| Name    | Description  | SlotProps          |
+| ------- | ------------ | ------------------ |
+| default | Custom label | -                  |
+| icon    | Custom icon  | _checked: boolean_ |

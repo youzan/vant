@@ -51,12 +51,12 @@ Vue.use(Sticky);
 export default {
   data() {
     return {
-      container: null
+      container: null,
     };
   },
   mounted() {
     this.container = this.$refs.container;
-  }
+  },
 };
 ```
 
@@ -64,14 +64,14 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| offset-top | 吸顶时与顶部的距离，单位`px` | *number \| string* | `0` |
-| z-index | 吸顶时的 z-index | *number \| string* | `99` |
-| container | 容器对应的 HTML 节点 | *Element* | - |
+| 参数       | 说明                         | 类型               | 默认值 |
+| ---------- | ---------------------------- | ------------------ | ------ |
+| offset-top | 吸顶时与顶部的距离，单位`px` | _number \| string_ | `0`    |
+| z-index    | 吸顶时的 z-index             | _number \| string_ | `99`   |
+| container  | 容器对应的 HTML 节点         | _Element_          | -      |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
+| 事件名 | 说明       | 回调参数                                       |
+| ------ | ---------- | ---------------------------------------------- |
 | scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |

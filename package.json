@@ -30,6 +30,7 @@
     }
   },
   "lint-staged": {
+    "*.md": ["prettier --write"],
     "*.{ts,tsx,js,vue,less}": [
       "prettier --write",
       "git add"
@@ -92,7 +93,8 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "proseWrap": "never"
   },
   "browserslist": [
     "Android >= 4.0",

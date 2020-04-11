@@ -27,9 +27,9 @@ Vue.use(RadioGroup);
 export default {
   data() {
     return {
-      radio: '1'
-    }
-  }
+      radio: '1',
+    };
+  },
 };
 ```
 
@@ -97,27 +97,21 @@ export default {
   <van-radio name="1">
     单选框 1
     <template #icon="props">
-      <img
-        class="img-icon"
-        :src="props.checked ? activeIcon : inactiveIcon"
-      >
+      <img class="img-icon" :src="props.checked ? activeIcon : inactiveIcon" />
     </template>
   </van-radio>
   <van-radio name="2">
     单选框 2
     <template #icon="props">
-      <img
-        class="img-icon"
-        :src="props.checked ? activeIcon : inactiveIcon"
-      />
+      <img class="img-icon" :src="props.checked ? activeIcon : inactiveIcon" />
     </template>
   </van-radio>
 </van-radio-group>
 
 <style>
   .img-icon {
-    height: 20px;  
-}
+    height: 20px;
+  }
 </style>
 ```
 
@@ -125,12 +119,12 @@ export default {
 export default {
   data() {
     return {
-     radio: '1',
-     activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-     inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
-    }
-  }
-}
+      radio: '1',
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+    };
+  },
+};
 ```
 
 ### 禁用文本点击
@@ -152,7 +146,7 @@ export default {
 <van-radio-group v-model="radio">
   <van-cell-group>
     <van-cell title="单选框 1" clickable @click="radio = '1'">
-      <template #right-icon>      
+      <template #right-icon>
         <van-radio name="1" />
       </template>
     </van-cell>
@@ -169,41 +163,41 @@ export default {
 
 ### Radio Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| name | 标识符 | *any* | - |
-| shape | 形状，可选值为 `square` | *string* | `round` |
-| disabled | 是否为禁用状态 | *boolean* | `false` |
-| label-disabled | 是否禁用文本内容点击 | *boolean* | `false` |
-| label-position | 文本位置，可选值为 `left` | *string* | `right` |
-| icon-size | 图标大小，默认单位为`px` | *number \| string* | `20px` |
-| checked-color | 选中状态颜色 | *string* | `#1989fa` |
+| 参数           | 说明                      | 类型               | 默认值    |
+| -------------- | ------------------------- | ------------------ | --------- |
+| name           | 标识符                    | _any_              | -         |
+| shape          | 形状，可选值为 `square`   | _string_           | `round`   |
+| disabled       | 是否为禁用状态            | _boolean_          | `false`   |
+| label-disabled | 是否禁用文本内容点击      | _boolean_          | `false`   |
+| label-position | 文本位置，可选值为 `left` | _string_           | `right`   |
+| icon-size      | 图标大小，默认单位为`px`  | _number \| string_ | `20px`    |
+| checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
 
 ### RadioGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model (value) | 当前选中项的标识符 | *any* | - |
-| disabled | 是否禁用所有单选框 | *boolean* | `false` |
-| direction `v2.5.0` | 排列方向，可选值为`horizontal` | *string* | `vertical` |
-| icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | *number \| string* | `20px` |
-| checked-color `v2.2.3` | 所有单选框的选中状态颜色 | *string* | `#1989fa` |
+| --- | --- | --- | --- |
+| v-model (value) | 当前选中项的标识符 | _any_ | - |
+| disabled | 是否禁用所有单选框 | _boolean_ | `false` |
+| direction `v2.5.0` | 排列方向，可选值为`horizontal` | _string_ | `vertical` |
+| icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | _number \| string_ | `20px` |
+| checked-color `v2.2.3` | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
 
 ### Radio Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击单选框时触发 | *event: Event* |
+| 事件名 | 说明             | 回调参数       |
+| ------ | ---------------- | -------------- |
+| click  | 点击单选框时触发 | _event: Event_ |
 
 ### RadioGroup Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| change | 当绑定值变化时触发的事件 | *name: string* |
+| 事件名 | 说明                     | 回调参数       |
+| ------ | ------------------------ | -------------- |
+| change | 当绑定值变化时触发的事件 | _name: string_ |
 
 ### Radio Slots
 
-| 名称 | 说明 | SlotProps |
-|------|------|------|
-| default | 自定义文本 | - |
-| icon | 自定义图标 | *checked: boolean* |
+| 名称    | 说明       | SlotProps          |
+| ------- | ---------- | ------------------ |
+| default | 自定义文本 | -                  |
+| icon    | 自定义图标 | _checked: boolean_ |
