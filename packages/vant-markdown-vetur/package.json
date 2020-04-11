@@ -1,6 +1,6 @@
 {
   "name": "@vant/markdown-vetur",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "simple parse markdown to vue component description for vetur auto-completion",
   "main": "lib/index.js",
   "license": "MIT",

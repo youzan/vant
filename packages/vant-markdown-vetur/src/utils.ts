@@ -12,8 +12,9 @@ export function removeVersion(str: string) {
 }
 
 // *boolean* -> boolean
+// _boolean_ -> boolean
 export function formatType(type: string) {
-  return type.replace(/\*/g, '');
+  return type.replace(/(^(\*|_))|((\*|_)$)/g, '');
 }
 
 export function normalizePath(path: string): string {

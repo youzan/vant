@@ -1734,10 +1734,10 @@
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
-"@vant/markdown-vetur@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-2.0.0.tgz#19cb9b089fbd04dfb2b74c3edb497297086229e0"
-  integrity sha512-XcAcVOIUhuYbD5nmKjv4y9WxuP/YytDJi17xn1SwJe2gjIKNMli/gc2oNN2v8npCaCZAaDWpAUTXYy7XefdH9Q==
+"@vant/markdown-vetur@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-2.0.1.tgz#cb0c2d33b5e5606e1dc7f3e6531c18b39d6e57a3"
+  integrity sha512-OhNFTQhCBlK+qIxfyw9unqU77Kf7gd5EsTUXPqg23lALWwpJiVb0IKGwxnYTZ9i7JAzTAho7oIGt7GQ0hhyvow==
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
