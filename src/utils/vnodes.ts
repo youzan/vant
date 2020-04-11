@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { VNode } from 'vue';
 
 function flattenVNodes(vnodes: VNode[]) {

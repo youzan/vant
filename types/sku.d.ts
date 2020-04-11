@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { VanComponent } from './component';
 
 export type SkuData = {

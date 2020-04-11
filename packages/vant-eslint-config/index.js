@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ['airbnb-base', 'plugin:vue/recommended'],
+  extends: [
+    'airbnb-base',
+    'plugin:vue/recommended',
+    'prettier',
+    'prettier/vue',
+  ],
 
   parserOptions: {
     parser: '@typescript-eslint/parser',
@@ -17,46 +22,23 @@ module.exports = {
     browser: true,
   },
 
-  globals: {
-    window: false,
-    document: false,
-    navigator: false,
-  },
-
   rules: {
+    camelcase: 0,
     'no-new': 0,
     'no-shadow': 0,
-    camelcase: 1,
     'no-bitwise': 0,
     'func-names': 0,
     'no-console': 0,
     'no-plusplus': 0,
-    'arrow-parens': 0,
     'default-case': 0,
-    'comma-dangle': [
-      'error',
-      {
-        arrays: 'always-multiline',
-        objects: 'always-multiline',
-        imports: 'always-multiline',
-        exports: 'always-multiline',
-        functions: 'never',
-      },
-    ],
     'prefer-template': 0,
     'consistent-return': 0,
     'no-param-reassign': 0,
     'no-nested-ternary': 0,
-    'operator-linebreak': 0,
-    'object-curly-newline': 0,
-    'no-underscore-dangle': 1,
+    'no-underscore-dangle': 0,
     'no-unused-expressions': 0,
     'no-restricted-globals': 0,
-    'function-paren-newline': 0,
     'class-methods-use-this': 0,
-    'implicit-arrow-linebreak': 0,
-    'space-before-function-paren': 0,
-    'max-len': ['error', { code: 150 }],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'import/order': 0,
     'import/extensions': 0,
@@ -68,19 +50,8 @@ module.exports = {
     'vue/require-v-for-key': 0,
     'vue/require-default-prop': 0,
     'vue/no-unused-components': 0,
-    'vue/max-attributes-per-line': 0,
-    'vue/singleline-html-element-content-newline': 0,
     'vue/name-property-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
-    'vue/html-closing-bracket-newline': 2,
-    'vue/html-self-closing': [
-      'error',
-      {
-        html: {
-          void: 'always',
-        },
-      },
-    ],
     '@typescript-eslint/no-unused-vars': ['error'],
   },
 };
