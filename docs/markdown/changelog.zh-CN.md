@@ -10,6 +10,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.6.1-beta.0](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1-beta.0)
+
+`2020-04-13`
+
+**Feature**
+
+- AddressEdit: 新增 area-placeholder 属性 [#6023](https://github.com/youzan/vant/issues/6023)
+- ImagePreview: 支持通过局部注册的方式使用 [#6031](https://github.com/youzan/vant/issues/6031)
+
+**Bug Fixes**
+
+- Calendar: 修复 default-date 默认值为 min-date 而不是今天的问题 [#6025](https://github.com/youzan/vant/issues/6025) [#6028](https://github.com/youzan/vant/issues/6028)
+
 ### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
 
 `2020-04-09`

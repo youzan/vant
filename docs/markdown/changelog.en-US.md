@@ -10,6 +10,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.6.1-beta.0](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1-beta.0)
+
+`2020-04-13`
+
+**Feature**
+
+- AddressEdit: add area-placeholder prop [#6023](https://github.com/youzan/vant/issues/6023)
+- ImagePreview: support local registration [#6031](https://github.com/youzan/vant/issues/6031)
+
+**Bug Fixes**
+
+- Calendar: default-date should be today, close #6025 [#6025](https://github.com/youzan/vant/issues/6025) [#6028](https://github.com/youzan/vant/issues/6028)
+
 ### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
 
 `2020-04-09`
