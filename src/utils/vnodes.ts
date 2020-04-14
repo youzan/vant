@@ -25,6 +25,11 @@ type VueInstance = {
 
 // sort children instances by vnodes order
 export function sortChildren(children: VueInstance[], parent: VueInstance) {
+  // null on SSR
+  if (!parent._vnode) {
+    return;
+  }
+
   const vnodes = flattenVNodes(parent._vnode.children!);
   children.sort((a, b) => vnodes.indexOf(a.$vnode) - vnodes.indexOf(b.$vnode));
 }
