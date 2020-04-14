@@ -12,7 +12,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ### [v2.6.1](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1)
 
-`2020-04-13`
+`2020-04-14`
 
 **Feature**
 

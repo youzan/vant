@@ -69,7 +69,7 @@ export default {
 | --- | --- | --- | --- |
 | area-list | Area List | _object_ | - |
 | area-columns-placeholder `v2.2.5` | placeholder of area columns | _string[]_ | `[]` |
-| area-placeholder | placeholder of area input field | _string_ | `Area` |
+| area-placeholder `v2.6.1` | placeholder of area input field | _string_ | `Area` |
 | address-info | Address Info | _AddressInfo_ | `{}` |
 | search-result | Address search result | _SearchResult[]_ | `[]` |
 | show-postal | Whether to show postal field | _boolean_ | `false` |
