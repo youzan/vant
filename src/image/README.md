@@ -4,9 +4,9 @@
 
 ```js
 import Vue from 'vue';
-import { Image } from 'vant';
+import { Image as VanImage } from 'vant';
 
-Vue.use(Image);
+Vue.use(VanImage);
 ```
 
 ## Usage
