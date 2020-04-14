@@ -10,9 +10,9 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.6.1-beta.0](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1-beta.0)
+### [v2.6.1](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1)
 
-`2020-04-13`
+`2020-04-14`
 
 **Feature**
 
@@ -21,6 +21,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Bug Fixes**
 
+- sortChildren broke SSR [#6046](https://github.com/youzan/vant/issues/6046)
 - Calendar: default-date should be today, close #6025 [#6025](https://github.com/youzan/vant/issues/6025) [#6028](https://github.com/youzan/vant/issues/6028)
 
 ### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
