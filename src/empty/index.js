@@ -14,16 +14,6 @@ export default createComponent({
     },
   },
 
-  computed: {
-    url() {
-      if (PRESETS.indexOf(this.image) !== -1) {
-        return `https://img.yzcdn.cn/vant/empty-image-${this.image}.png`;
-      }
-
-      return this.image;
-    },
-  },
-
   methods: {
     genImageContent() {
       const slots = this.slots('image');
@@ -36,7 +26,13 @@ export default createComponent({
         return <Network />;
       }
 
-      return <img src={this.url} />;
+      let { image } = this;
+
+      if (PRESETS.indexOf(image) !== -1) {
+        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
+      }
+
+      return <img src={image} />;
     },
 
     genImage() {
