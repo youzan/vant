@@ -1,8 +1,9 @@
 import { createNamespace } from '../utils';
+import Network from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
 
-const PRESETS = ['error', 'search', 'default', 'network'];
+const PRESETS = ['error', 'search', 'default'];
 
 export default createComponent({
   props: {
@@ -24,9 +25,22 @@ export default createComponent({
   },
 
   methods: {
+    genImageContent() {
+      const slots = this.slots('image');
+
+      if (slots) {
+        return slots;
+      }
+
+      if (this.image === 'network') {
+        return <Network />;
+      }
+
+      return <img src={this.url} />;
+    },
+
     genImage() {
-      const image = this.slots('image') || <img src={this.url} />;
-      return <div class={bem('image')}>{image}</div>;
+      return <div class={bem('image')}>{this.genImageContent()}</div>;
     },
 
     genDescription() {
