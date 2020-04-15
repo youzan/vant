@@ -1,8 +1,9 @@
 import { createNamespace } from '../utils';
+import Network from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
 
-const PRESETS = ['error', 'search', 'default', 'network'];
+const PRESETS = ['error', 'search', 'default'];
 
 export default createComponent({
   props: {
@@ -13,20 +14,29 @@ export default createComponent({
     },
   },
 
-  computed: {
-    url() {
-      if (PRESETS.indexOf(this.image) !== -1) {
-        return `https://img.yzcdn.cn/vant/empty-image-${this.image}.png`;
+  methods: {
+    genImageContent() {
+      const slots = this.slots('image');
+
+      if (slots) {
+        return slots;
       }
 
-      return this.image;
-    },
-  },
+      if (this.image === 'network') {
+        return <Network />;
+      }
 
-  methods: {
+      let { image } = this;
+
+      if (PRESETS.indexOf(image) !== -1) {
+        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
+      }
+
+      return <img src={image} />;
+    },
+
     genImage() {
-      const image = this.slots('image') || <img src={this.url} />;
-      return <div class={bem('image')}>{image}</div>;
+      return <div class={bem('image')}>{this.genImageContent()}</div>;
     },
 
     genDescription() {

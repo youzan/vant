@@ -20,3 +20,23 @@ test('description slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('bottom slot', () => {
+  const wrapper = mount(Empty, {
+    scopedSlots: {
+      default: () => 'Custom bottom',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render svg when image is network', () => {
+  const wrapper = mount(Empty, {
+    propsData: {
+      image: 'network',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
