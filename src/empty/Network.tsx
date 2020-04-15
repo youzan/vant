@@ -1,10 +1,8 @@
 export default {
   render() {
-    const genStop = (color: string, offset: number, opacity?: number) => {
-      return (
-        <stop stop-color={color} offset={`${offset}%`} stop-opacity={opacity} />
-      );
-    };
+    const genStop = (color: string, offset: number, opacity?: number) => (
+      <stop stop-color={color} offset={`${offset}%`} stop-opacity={opacity} />
+    );
 
     return (
       <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
