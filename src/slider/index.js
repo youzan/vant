@@ -148,16 +148,16 @@ export default createComponent({
 
   render() {
     const { vertical } = this;
-    const style = {
-      background: this.inactiveColor,
-    };
-
     const mainAxis = vertical ? 'height' : 'width';
     const crossAxis = vertical ? 'width' : 'height';
 
+    const wrapperStyle = {
+      background: this.inactiveColor,
+      [crossAxis]: addUnit(this.barHeight),
+    };
+
     const barStyle = {
       [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
-      [crossAxis]: addUnit(this.barHeight),
       background: this.activeColor,
     };
 
@@ -167,7 +167,7 @@ export default createComponent({
 
     return (
       <div
-        style={style}
+        style={wrapperStyle}
         class={bem({ disabled: this.disabled, vertical })}
         onClick={this.onClick}
       >
