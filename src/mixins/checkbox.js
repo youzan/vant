@@ -69,9 +69,15 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
 
       if (!this.isDisabled && (iconClicked || !this.labelDisabled)) {
         this.toggle();
-      }
 
-      this.$emit('click', event);
+        // wait for toggle method to complete
+        // so we can get the changed value in the click event listener
+        setTimeout(() => {
+          this.$emit('click', event);
+        });
+      } else {
+        this.$emit('click', event);
+      }
     },
 
     genIcon() {
