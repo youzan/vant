@@ -39,8 +39,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width: 50%; height: 4px; background: rgb(238, 10, 36);">
+    <div class="van-slider" style="height: 4px;">
+      <div class="van-slider__bar" style="width: 50%; background: rgb(238, 10, 36);">
         <div role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" aria-orientation="horizontal" class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
