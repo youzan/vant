@@ -111,7 +111,7 @@ export default createComponent({
         cursor = cursor.children[indexes[i]];
       }
 
-      while (cursor.children) {
+      while (cursor && cursor.children) {
         columnIndex++;
 
         this.setColumnValues(
@@ -198,7 +198,11 @@ export default createComponent({
       const column = this.children[index];
 
       if (column) {
-        column.setOptions(options);
+        if (this.dataType === 'cascade') {
+          column.setOptions(options.map((item) => item[this.valueKey]));
+        } else {
+          column.setOptions(options);
+        }
       }
     },
 
