@@ -1561,10 +1561,10 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^2.27.0":
+"@typescript-eslint/eslint-plugin@^2.28.0":
   version "2.28.0"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.28.0.tgz#4431bc6d3af41903e5255770703d4e55a0ccbdec"
-  integrity sha1-RDG8bTr0GQPlJVdwcD1OVaDMvew=
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.28.0.tgz#4431bc6d3af41903e5255770703d4e55a0ccbdec"
+  integrity sha512-w0Ugcq2iatloEabQP56BRWJowliXUP5Wv6f9fKzjJmDW81hOTBxRoJ4LoEOxRpz9gcY51Libytd2ba3yLmSOfg==
   dependencies:
     "@typescript-eslint/experimental-utils" "2.28.0"
     functional-red-black-tree "^1.0.1"
@@ -1581,10 +1581,10 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^2.27.0":
+"@typescript-eslint/parser@^2.28.0":
   version "2.28.0"
-  resolved "https://registry.npm.taobao.org/@typescript-eslint/parser/download/@typescript-eslint/parser-2.28.0.tgz#bb761286efd2b0714761cab9d0ee5847cf080385"
-  integrity sha1-u3YShu/SsHFHYcq50O5YR88IA4U=
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.28.0.tgz#bb761286efd2b0714761cab9d0ee5847cf080385"
+  integrity sha512-RqPybRDquui9d+K86lL7iPqH6Dfp9461oyqvlXMNtap+PyqYbkY5dB7LawQjDzot99fqzvS0ZLZdfe+1Bt3Jgw==
   dependencies:
     "@types/eslint-visitor-keys" "^1.0.0"
     "@typescript-eslint/experimental-utils" "2.28.0"
@@ -1672,12 +1672,12 @@
     webpackbar "^4.0.0"
 
 "@vant/eslint-config@^2.0.0":
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-2.1.0.tgz#736cb273ac279a44ab54a922dfd9b21fd8883308"
-  integrity sha1-c2yyc6wnmkSrVKki39myH9iIMwg=
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-2.2.0.tgz#b2802ff85a0b5b0b4e84b3d7825d5c8fff3d62e6"
+  integrity sha512-C8RYiiQNnwi2h9seb9eDqtSiMW5nnPnMFE4pdrIvjaPi7xP887jGb+BD4YLc3VzI4cmp7XbmiDhw8KlfpECsUA==
   dependencies:
-    "@typescript-eslint/eslint-plugin" "^2.27.0"
-    "@typescript-eslint/parser" "^2.27.0"
+    "@typescript-eslint/eslint-plugin" "^2.28.0"
+    "@typescript-eslint/parser" "^2.28.0"
     eslint-config-airbnb-base "^14.1.0"
     eslint-config-prettier "^6.10.1"
     eslint-plugin-import "^2.20.2"
