@@ -19,21 +19,21 @@ export function getScroller(el: HTMLElement, root: ScrollElement = window) {
   ) {
     const { overflowY } = window.getComputedStyle(node);
 
-    if (overflowScrollReg.test(<string>overflowY)) {
+    if (overflowScrollReg.test(overflowY)) {
       if (node.tagName !== 'BODY') {
         return node;
       }
 
       // see: https://github.com/youzan/vant/issues/3823
       const { overflowY: htmlOverflowY } = window.getComputedStyle(
-        <Element>node.parentNode
+        node.parentNode as Element
       );
 
-      if (overflowScrollReg.test(<string>htmlOverflowY)) {
+      if (overflowScrollReg.test(htmlOverflowY)) {
         return node;
       }
     }
-    node = <HTMLElement>node.parentNode;
+    node = node.parentNode as HTMLElement;
   }
 
   return root;
