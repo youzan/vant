@@ -71,10 +71,11 @@ Vue.use(NoticeBar);
 
 ### Events
 
-| Event | Description                    | Arguments      |
-| ----- | ------------------------------ | -------------- |
-| click | Triggered when click NoticeBar | _event: Event_ |
-| close | Triggered when closed          | _event: Event_ |
+| Event           | Description                    | Arguments      |
+| --------------- | ------------------------------ | -------------- |
+| click           | Triggered when click NoticeBar | _event: Event_ |
+| close           | Triggered when closed          | _event: Event_ |
+| replay `v2.6.2` | Triggered when replay          | -              |
 
 ### Slots
 
