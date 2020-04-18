@@ -24,6 +24,7 @@ export default createComponent({
 
   props: {
     disabled: Boolean,
+    lazyLoad: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
@@ -301,6 +302,7 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
+          lazyLoad={this.lazyLoad}
           onClick={() => {
             this.onPreviewImage(item);
           }}
