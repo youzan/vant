@@ -70,3 +70,29 @@ test('default slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('lock-scroll prop', () => {
+  const onTouchMove = jest.fn();
+  const wrapper = mount({
+    template: `
+      <div @touchmove="onTouchMove">
+        <van-overlay :lock-scroll="lockScroll" />
+      </div>
+    `,
+    data() {
+      return {
+        lockScroll: true,
+      };
+    },
+    methods: {
+      onTouchMove,
+    },
+  });
+
+  wrapper.find('.van-overlay').trigger('touchmove');
+  expect(onTouchMove).toHaveBeenCalledTimes(0);
+
+  wrapper.setData({ lockScroll: false });
+  wrapper.find('.van-overlay').trigger('touchmove');
+  expect(onTouchMove).toHaveBeenCalledTimes(1);
+});
