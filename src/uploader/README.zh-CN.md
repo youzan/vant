@@ -183,6 +183,7 @@ export default {
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
 | deletable `v2.2.12` | 是否展示删除按钮 | _boolean_ | `true` |
 | show-upload `v2.5.6` | 是否展示上传区域 | _boolean_ | `true` |
+| lazy-load `v2.6.2` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | _string_ | - |
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回`false`可终止文件读取，<br>支持返回`Promise` | _Function_ | - |

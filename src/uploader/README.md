@@ -161,6 +161,7 @@ export default {
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | deletable `v2.2.12` | Whether to show delete icon | _boolean_ | `true` |
 | show-upload `v2.5.6` | Whether to show upload area | _boolean_ | `true` |
+| lazy-load `v2.6.2` | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture，can be set to `camera` | _string_ | - |
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
