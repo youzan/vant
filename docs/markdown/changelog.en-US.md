@@ -10,6 +10,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
+
+`2020-04-18`
+
+**Feature**
+
+- Empty: support offline scenario [#6055](https://github.com/youzan/vant/issues/6055)
+- NoticeBar: add replay event [#6079](https://github.com/youzan/vant/issues/6079)
+- Overlay: add lock-scroll prop [#6082](https://github.com/youzan/vant/issues/6082)
+- Uploader: add lazy-load prop [#6083](https://github.com/youzan/vant/issues/6083)
+
+**Bug Fixes**
+
+- Checkbox: get changed value in click event [#6066](https://github.com/youzan/vant/issues/6066)
+- Picker: setColumnValues failed in cascade mode [#6080](https://github.com/youzan/vant/issues/6080)
+- Slider: incorrect bar-height when vertical [#6065](https://github.com/youzan/vant/issues/6065)
+- Swipe: incorrect width after resize if hidden [#6084](https://github.com/youzan/vant/issues/6084)
+
 ### [v2.6.1](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1)
 
 `2020-04-14`

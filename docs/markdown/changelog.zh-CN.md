@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
+
+`2020-04-18`
+
+**Feature**
+
+- Empty: 支持在离线环境下使用 network 图片 [#6055](https://github.com/youzan/vant/issues/6055)
+- NoticeBar: 新增 replay 事件，在每次滚动结束时触发 [#6079](https://github.com/youzan/vant/issues/6079)
+- Overlay: 新增 lock-scroll 属性，用于控制是否锁定背景滚动 [#6082](https://github.com/youzan/vant/issues/6082)
+- Uploader: 新增 lazy-load 属性，用于开启图片懒加载 [#6083](https://github.com/youzan/vant/issues/6083)
+
+**Bug Fixes**
+
+- Checkbox: 修复在 click 事件的回调中获取到的 value 未改变的问题 [#6066](https://github.com/youzan/vant/issues/6066)
+- Picker: 修复级联模式下使用 setColumnValues 方法导致报错的问题 [#6080](https://github.com/youzan/vant/issues/6080)
+- Slider: 修复在垂直模式下使用 bar-height 后样式错误的问题 [#6065](https://github.com/youzan/vant/issues/6065)
+- Swipe: 修复元素隐藏且触发 resize 事件后渲染错误的问题 [#6084](https://github.com/youzan/vant/issues/6084)
+
 ### [v2.6.1](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1)
 
 `2020-04-14`
