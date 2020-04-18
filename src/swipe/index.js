@@ -149,31 +149,25 @@ export default createComponent({
   },
 
   mounted() {
-    this.initRect();
     this.bindTouchEvent(this.$refs.track);
   },
 
   methods: {
-    initRect() {
-      this.rect = this.$el.getBoundingClientRect();
-    },
-
     // initialize swipe position
     initialize(active = +this.initialSwipe) {
-      if (!this.rect) {
+      if (!this.$el || isHidden(this.$el)) {
         return;
       }
 
       clearTimeout(this.timer);
 
-      if (this.$el && !isHidden(this.$el)) {
-        const { rect } = this;
-        this.computedWidth = Math.round(+this.width || rect.width);
-        this.computedHeight = Math.round(+this.height || rect.height);
-      }
+      const rect = this.$el.getBoundingClientRect();
 
+      this.rect = rect;
       this.swiping = true;
       this.active = active;
+      this.computedWidth = Math.round(+this.width || rect.width);
+      this.computedHeight = Math.round(+this.height || rect.height);
       this.offset = this.getTargetOffset(active);
       this.children.forEach((swipe) => {
         swipe.offset = 0;
@@ -183,7 +177,6 @@ export default createComponent({
 
     // @exposed-api
     resize() {
-      this.initRect();
       this.initialize(this.activeIndicator);
     },
 
