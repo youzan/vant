@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { nextTick } from 'vue';
 import VueRouter from 'vue-router';
 import DemoHome from './components/DemoHome';
 import { decamelize } from '../common';
@@ -29,10 +29,10 @@ function getRoutes() {
   if (langs.length) {
     routes.push({
       path: '*',
-      redirect: route => `/${getLangFromRoute(route)}/`,
+      redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
 
-    langs.forEach(lang => {
+    langs.forEach((lang) => {
       routes.push({
         path: `/${lang}`,
         component: DemoHome,
@@ -51,11 +51,11 @@ function getRoutes() {
     });
   }
 
-  names.forEach(name => {
+  names.forEach((name) => {
     const component = decamelize(name);
 
     if (langs.length) {
-      langs.forEach(lang => {
+      langs.forEach((lang) => {
         routes.push({
           name: `${lang}/${component}`,
           path: `/${lang}/${component}`,
@@ -81,8 +81,6 @@ function getRoutes() {
   return routes;
 }
 
-Vue.use(VueRouter);
-
 export const router = new VueRouter({
   mode: 'hash',
   routes: getRoutes(),
@@ -91,7 +89,7 @@ export const router = new VueRouter({
 
 router.afterEach(() => {
   if (!router.currentRoute.redirectedFrom) {
-    Vue.nextTick(window.syncPath);
+    nextTick(window.syncPath);
   }
 });
 

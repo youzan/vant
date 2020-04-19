@@ -1,19 +1,18 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App';
+import VueRouter from 'vue-router';
 import { router } from './router';
 import { scrollToAnchor } from './utils';
 
-if (process.env.NODE_ENV !== 'production') {
-  Vue.config.productionTip = false;
-}
-
-new Vue({
+const app = createApp({
   el: '#app',
   mounted() {
     if (this.$route.hash) {
       scrollToAnchor(this.$route.hash);
     }
   },
-  render: h => h(App),
+  render: (h) => h(App),
   router,
 });
+
+app.use(VueRouter);
