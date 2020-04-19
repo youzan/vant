@@ -25,7 +25,7 @@ test('drag button', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -46,7 +46,7 @@ test('drag button', () => {
   restoreMock();
 });
 
-it('click bar', () => {
+test('click bar', () => {
   const restoreMock = mockRect();
 
   const wrapper = mount(Slider, {
@@ -56,7 +56,7 @@ it('click bar', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -80,7 +80,7 @@ test('drag button vertical', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -91,7 +91,7 @@ test('drag button vertical', () => {
   restoreMock();
 });
 
-it('click vertical', () => {
+test('click vertical', () => {
   const restoreMock = mockRect(true);
 
   const wrapper = mount(Slider, {
@@ -101,7 +101,7 @@ it('click vertical', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -111,7 +111,7 @@ it('click vertical', () => {
   restoreMock();
 });
 
-it('bar-height prop', () => {
+test('bar-height prop', () => {
   const wrapper = mount(Slider, {
     propsData: {
       value: 50,
@@ -122,7 +122,7 @@ it('bar-height prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('button-size prop', () => {
+test('button-size prop', () => {
   const wrapper = mount(Slider, {
     propsData: {
       value: 50,
@@ -133,7 +133,7 @@ it('button-size prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should not emit change event when value not changed', () => {
+test('should not emit change event when value not changed', () => {
   const wrapper = mount(Slider, {
     propsData: {
       value: 50,
@@ -151,7 +151,7 @@ it('should not emit change event when value not changed', () => {
   expect(wrapper.emitted('change').length).toEqual(1);
 });
 
-it('should format initial value', done => {
+test('should format initial value', (done) => {
   mount(Slider, {
     propsData: {
       value: null,

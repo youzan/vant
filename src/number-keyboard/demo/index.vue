@@ -1,13 +1,13 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('default')">
+    <demo-block :title="t('default')">
       <van-button type="primary" @touchstart.stop="keyboard = 'default'">
-        {{ $t('button1') }}
+        {{ t('button1') }}
       </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'default'"
-        :close-button-text="$t('close')"
+        :close-button-text="t('close')"
         extra-key="."
         @blur="keyboard = ''"
         @input="onInput"
@@ -15,14 +15,14 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('custom')">
+    <demo-block :title="t('custom')">
       <van-button type="info" @touchstart.stop="keyboard = 'custom'">
-        {{ $t('button2') }}
+        {{ t('button2') }}
       </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'custom'"
-        :close-button-text="$t('close')"
+        :close-button-text="t('close')"
         theme="custom"
         extra-key="."
         @blur="keyboard = ''"
@@ -31,12 +31,12 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('bindValue')">
+    <demo-block :title="t('bindValue')">
       <van-field
         readonly
         clickable
         :value="value"
-        :placeholder="$t('clickToInput')"
+        :placeholder="t('clickToInput')"
         @touchstart.native.stop="keyboard = 'bindValue'"
       />
 
@@ -48,14 +48,14 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('extraKey')">
+    <demo-block :title="t('extraKey')">
       <van-button plain type="primary" @touchstart.stop="keyboard = 'extraKey'">
-        {{ $t('button3') }}
+        {{ t('button3') }}
       </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'extraKey'"
-        :close-button-text="$t('close')"
+        :close-button-text="t('close')"
         extra-key="X"
         @blur="keyboard = ''"
         @input="onInput"
@@ -63,15 +63,15 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title')">
+    <demo-block :title="t('title')">
       <van-button plain type="info" @touchstart.stop="keyboard = 'title'">
-        {{ $t('button4') }}
+        {{ t('button4') }}
       </van-button>
 
       <van-number-keyboard
         :show="keyboard === 'title'"
-        :close-button-text="$t('close')"
-        :title="$t('title')"
+        :close-button-text="t('close')"
+        :title="t('title')"
         extra-key="."
         @blur="keyboard = ''"
         @input="onInput"
@@ -123,11 +123,11 @@ export default {
 
   methods: {
     onInput(value) {
-      this.$toast(`${this.$t('input')}: ${value}`);
+      this.$toast(`${this.t('input')}: ${value}`);
     },
 
     onDelete() {
-      this.$toast(this.$t('delete'));
+      this.$toast(this.t('delete'));
     },
   },
 };
@@ -137,6 +137,8 @@ export default {
 @import '../../style/var';
 
 .demo-number-keyboard {
+  padding-bottom: 300px;
+
   .van-button {
     margin-left: @padding-md;
   }

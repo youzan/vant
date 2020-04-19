@@ -2,6 +2,12 @@
 
 exports[`disable border 1`] = `<div class="van-tabbar van-tabbar--fixed"></div>`;
 
+exports[`placeholder prop 1`] = `
+<div class="van-tabbar__placeholder" style="height: 50px;">
+  <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed"></div>
+</div>
+`;
+
 exports[`route mode 1`] = `
 <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
   <div class="van-tabbar-item van-tabbar-item--active">

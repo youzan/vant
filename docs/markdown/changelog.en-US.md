@@ -1,5 +1,205 @@
 # Changelog
 
+### Intro
+
+Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
+
+**Release Schedule**
+
+- Patch version：released weekly, including features and bug fixes.
+- Minor version：released every one to two months, including backwards compatible features.
+- Major version：including breaking changes and new features.
+
+### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
+
+`2020-04-18`
+
+**Feature**
+
+- Empty: support offline scenario [#6055](https://github.com/youzan/vant/issues/6055)
+- NoticeBar: add replay event [#6079](https://github.com/youzan/vant/issues/6079)
+- Overlay: add lock-scroll prop [#6082](https://github.com/youzan/vant/issues/6082)
+- Uploader: add lazy-load prop [#6083](https://github.com/youzan/vant/issues/6083)
+
+**Bug Fixes**
+
+- Checkbox: get changed value in click event [#6066](https://github.com/youzan/vant/issues/6066)
+- Picker: setColumnValues failed in cascade mode [#6080](https://github.com/youzan/vant/issues/6080)
+- Slider: incorrect bar-height when vertical [#6065](https://github.com/youzan/vant/issues/6065)
+- Swipe: incorrect width after resize if hidden [#6084](https://github.com/youzan/vant/issues/6084)
+
+### [v2.6.1](https://github.com/youzan/vant/compare/v2.6.0...v2.6.1)
+
+`2020-04-14`
+
+**Feature**
+
+- AddressEdit: add area-placeholder prop [#6023](https://github.com/youzan/vant/issues/6023)
+- ImagePreview: support local registration [#6031](https://github.com/youzan/vant/issues/6031)
+
+**Bug Fixes**
+
+- sortChildren broke SSR [#6046](https://github.com/youzan/vant/issues/6046)
+- Calendar: default-date should be today, close #6025 [#6025](https://github.com/youzan/vant/issues/6025) [#6028](https://github.com/youzan/vant/issues/6028)
+
+### [v2.6.0](https://github.com/youzan/vant/compare/v2.5.9...v2.6.0)
+
+`2020-04-09`
+
+**Feature**
+
+- add ShareSheet component [#6019](https://github.com/youzan/vant/issues/6019)
+- add Empty component [#6010](https://github.com/youzan/vant/issues/6010)
+
+**Feature**
+
+- Form: add show-error prop [#5941](https://github.com/youzan/vant/issues/5941)
+- Tabbar: add placeholder prop [#5979](https://github.com/youzan/vant/issues/5979)
+- Sku: enable safe-area-inset-bottom by default [#5960](https://github.com/youzan/vant/issues/5960)
+- Tabbar: enable safe-area-inset-bottom by default when fixed [#5968](https://github.com/youzan/vant/issues/5968)
+- SubmitBar: enable safe-area-inset-bottom by default [#5956](https://github.com/youzan/vant/issues/5956)
+- GoodsAction: enable safe-area-inset-bottom by default [#5955](https://github.com/youzan/vant/issues/5955)
+- Swipe: allow swipe multiple item at once [#5953](https://github.com/youzan/vant/issues/5953)
+- Calendar: auto selected to max range [#5992](https://github.com/youzan/vant/issues/5992)
+
+**Improvement**
+
+- NavBar: improve active feedback [#5949](https://github.com/youzan/vant/issues/5949)
+- Popup: improve leave animation timing function [#5954](https://github.com/youzan/vant/issues/5954)
+- Picker: improve scroll speed [#5951](https://github.com/youzan/vant/issues/5951)
+- Swipe: improve swipe threshold [#6003](https://github.com/youzan/vant/issues/6003)
+- TreeSelect: update nav background color [#5991](https://github.com/youzan/vant/issues/5991)
+
+**Bug Fixes**
+
+- Button: icon-prefix prop not work [#5947](https://github.com/youzan/vant/issues/5947)
+- Calendar: rendering error when activated [#5978](https://github.com/youzan/vant/issues/5978)
+- Form: incorrect validation order when add field dynamically [b8dea3](https://github.com/youzan/vant/commit/b8dea3c13b7dbf6533169653c493a3156c07f1d4)
+- NavBar: icon align center [#5948](https://github.com/youzan/vant/issues/5948)
+- Stepper: readonly not work in lagacy mobile safari [#5976](https://github.com/youzan/vant/issues/5976)
+
+### [v2.5.9](https://github.com/youzan/vant/compare/v2.5.8...v2.5.9)
+
+`2020-03-31`
+
+**Feature**
+
+- AddressEdit: add click-area event [#5939](https://github.com/youzan/vant/issues/5939)
+- NavBar: add placeholder prop [#5938](https://github.com/youzan/vant/issues/5938)
+- Steps: add click-step event [#5937](https://github.com/youzan/vant/issues/5937)
+
+**Bug Fixes**
+
+- NumberKeyboard: show-delete-key prop not work [#5935](https://github.com/youzan/vant/issues/5935)
+- Toast: incorrect height in legacy devices [#5931](https://github.com/youzan/vant/issues/5931)
+- Sticky: Fixed error when accessing the window during SSR [#5958](https://github.com/youzan/vant/issues/5958)
+
+### [v2.5.8](https://github.com/youzan/vant/compare/v2.5.7...v2.5.8)
+
+`2020-03-27`
+
+**Feature**
+
+- support generate webstorm types [#5900](https://github.com/youzan/vant/issues/5900)
+- Circle: improve text padding [10f32d](https://github.com/youzan/vant/commit/10f32d6619199e99ff743cb5425db1e54e495fd0)
+- Form: add show-error-message prop [#5927](https://github.com/youzan/vant/issues/5927)
+- ImagePreview: enable swipe lazy-render [#5879](https://github.com/youzan/vant/issues/5879)
+- Sidebar: set overflow-y auto [#5921](https://github.com/youzan/vant/issues/5921)
+- Swipe: add lazy-render prop [365f2b](https://github.com/youzan/vant/commit/365f2b16f7d9592f92413e206439585468a8a1c7)
+- Swipe: use flex layout [f701de](https://github.com/youzan/vant/commit/f701de9e58db5f88a582e3277c97a0c9ca99eec4)
+
+**Bug Fixes**
+
+- Calendar: fix the default date of multiple selection type [#5907](https://github.com/youzan/vant/issues/5907)
+- PullRefresh: track should be full of container [#5878](https://github.com/youzan/vant/issues/5878)
+- Sticky: shoud rerender after visibility changed [#5888](https://github.com/youzan/vant/issues/5888)
+- Swipe: incorrect offset after resize [#5922](https://github.com/youzan/vant/issues/5922)
+
+### [v2.5.7](https://github.com/youzan/vant/compare/v2.5.6...v2.5.7)
+
+`2020-03-20`
+
+**Bug Fixes**
+
+- Locale: fix incorrect japanese filename [e8c88a](https://github.com/youzan/vant/commit/e8c88a380217eb48cef8aa7dc29d378a1031120a)
+
+### [v2.5.6](https://github.com/youzan/vant/compare/v2.5.5...v2.5.6)
+
+`2020-03-20`
+
+**Feature**
+
+- Calendar: add allow-same-day prop [#5688](https://github.com/youzan/vant/issues/5688)
+- GoodsAction: add badge prop, mark info prop as deprecated [0dea9e](https://github.com/youzan/vant/commit/0dea9e2cb1562decc07ef4467d085247b91924fd)
+- GridItem: add badge prop, mark info prop as deprecated [db94b2](https://github.com/youzan/vant/commit/db94b20c8258ebb31bac99ea1f0c918d62de1059)
+- Icon: add badge prop, mark info prop deprecated [575577](https://github.com/youzan/vant/commit/575577ed58a1e6daa36ffba7db8054556aa0d24d)
+- ImagePreview: add closed event [5b279a](https://github.com/youzan/vant/commit/5b279ab0dc862c0a3257d18fe17d04ed8dd8c1dd)
+- locale: add japanese language [#5853](https://github.com/youzan/vant/issues/5853) [#5854](https://github.com/youzan/vant/issues/5854)
+- SidebarItem: add badge prop, mark info prop as deprecated [01482f](https://github.com/youzan/vant/commit/01482f20bc2150a7e4667fac062b4f129b0ac0c1)
+- Tab: add badge prop, mark info prop as deprecated [214b13](https://github.com/youzan/vant/commit/214b13b8fff411a401fe6ccfc9eb979a51df7461)
+- TabbarItem: add badge prop, mark info prop as deprecated [d61cbd](https://github.com/youzan/vant/commit/d61cbdd086c9050fa467803be676a1eb14d50f16)
+- TreeSelect: add badge option, mark info option as deprecated [0cc7a3](https://github.com/youzan/vant/commit/0cc7a305287f43314910f893092c09004cef5349)
+- Uploader: add chooseFile method [#5818](https://github.com/youzan/vant/issues/5818)
+- Uploader: add show-upload prop [66c0b3](https://github.com/youzan/vant/commit/66c0b3c1b7d101f242071cf90e5c0b2b899edbdd)
+- Uploader: use before read promise resolved value [#5813](https://github.com/youzan/vant/issues/5813)
+
+**Bug Fixes**
+
+- Calendar: incorret button native-type [#5873](https://github.com/youzan/vant/issues/5873)
+- Field: should not cache input slot [#5868](https://github.com/youzan/vant/issues/5868)
+- ImagePreview: should not show previews image [7fcfc5](https://github.com/youzan/vant/commit/7fcfc5f3270d3507a002247c53a29da211f1ecb6)
+- Picker: update cascade after setColumnIndex [#5807](https://github.com/youzan/vant/issues/5807)
+- Picker: update cascade after setColumnValue [#5807](https://github.com/youzan/vant/issues/5807)
+- Toast: should lock scroll when use forbidClick [df8777](https://github.com/youzan/vant/commit/df877751b3497eb6477797ee1a52933067e57676)
+
+### [v2.5.5](https://github.com/youzan/vant/compare/v2.5.4...v2.5.5)
+
+`2020-03-11`
+
+**Feature**
+
+- Calendar: add show-title prop [#5779](https://github.com/youzan/vant/issues/5779)
+- Calendar: add show-subtitle prop [#5779](https://github.com/youzan/vant/issues/5779)
+- Field: improve number keyboard [e89baa](https://github.com/youzan/vant/commit/e89baa12ae24dbd27466bd6ec694074ab99acf5d)
+- Stepper: improve number keyboard [58e74a](https://github.com/youzan/vant/commit/58e74a9e8bfc36f69103c6a301170c5f6ada03dd)
+- GoodsActionIcon: add dot prop [b983ac](https://github.com/youzan/vant/commit/b983ac08919056e1095767d1deb3f78e5274b41c)
+
+**Bug Fixes**
+
+- AddressEdit: check addressDetail only when showDetail is true [#5803](https://github.com/youzan/vant/issues/5803)
+- Calendar: color not work in multiple mode [#5786](https://github.com/youzan/vant/issues/5786)
+- Field: should not get formValue from button slot [#5785](https://github.com/youzan/vant/issues/5785)
+- GoodsActionIcon: info not work with icon slot [#5788](https://github.com/youzan/vant/issues/5788)
+- Stepper: skip form number validation [#5792](https://github.com/youzan/vant/issues/5792)
+- Sticky: should not detect scroll when hidden [41e5c0](https://github.com/youzan/vant/commit/41e5c035dcf75c1f1d4c04673d3db255e439d452)
+
+### [v2.5.4](https://github.com/youzan/vant/compare/v2.5.3...v2.5.4)
+
+`2020-03-08`
+
+**Feature**
+
+- Calendar: add multiple type [#5705](https://github.com/youzan/vant/issues/5705)
+- Field: input inherit line-height [#5737](https://github.com/youzan/vant/issues/5737)
+- Search: add left slot [#5771](https://github.com/youzan/vant/issues/5771)
+- Uploader: add upload-icon prop [b3b46c](https://github.com/youzan/vant/commit/b3b46cde45f885b746a2a633e5fc0e87e1881abe)
+- Uploader: increase border-radius to 8px [c67918](https://github.com/youzan/vant/commit/c6791841f4b06e699a684da0243526147438d852)
+- Uploader: update upload area style [bd4e64](https://github.com/youzan/vant/commit/bd4e64190e63eea30c342ea5255d8603a70385f9)
+
+**Bug Fixes**
+
+- Calendar: incorrect position when poppable is false [#5760](https://github.com/youzan/vant/issues/5760)
+- DropdownMenu: menu ref may not exist in some cases [#5770](https://github.com/youzan/vant/issues/5770)
+- Tabs: incorrect scrollspy position while inside a scroller [0993b3](https://github.com/youzan/vant/commit/0993b394b16fdbf92bdf02d39090e631bba1f471)
+- Tabs: lock scroll not work when using scrollspy [#5727](https://github.com/youzan/vant/issues/5727)
+- TimePicker: incorrect value when set min-minute dynamically [#5767](https://github.com/youzan/vant/issues/5767)
+
+**Types**
+
+- Form: fix missing scrollToField method [df4439](https://github.com/youzan/vant/commit/df4439e9f6759a446b522652233703601093e99d)
+- ImagePreview: fix missing closeable option [d5438d](https://github.com/youzan/vant/commit/d5438dfe0dc9df22e94881b57def33207eca44e6)
+- Toast: fix missing iconPrefix option [3237e5](https://github.com/youzan/vant/commit/3237e56561e1b6b80ea3431f3b8a9f30f61d4b08)
+
 ### [v2.5.3](https://github.com/youzan/vant/compare/v2.5.2...v2.5.3)
 
 `2020-02-28`

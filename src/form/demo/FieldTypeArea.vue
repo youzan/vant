@@ -1,17 +1,18 @@
 <template>
-  <div>
+  <div class="van-hairline--bottom">
     <van-field
       readonly
       clickable
       name="area"
       :value="value"
-      :label="$t('picker')"
-      :placeholder="$t('placeholder')"
+      :border="false"
+      :label="t('picker')"
+      :placeholder="t('placeholder')"
       @click="showArea = true"
     />
     <van-popup v-model="showArea" position="bottom">
       <van-area
-        :area-list="$t('areaList')"
+        :area-list="t('areaList')"
         @confirm="onConfirm"
         @cancel="onCancel"
       />
@@ -46,7 +47,7 @@ export default {
 
   methods: {
     onConfirm(values) {
-      this.value = values.map(item => item.name).join('/');
+      this.value = values.map((item) => item.name).join('/');
       this.showArea = false;
     },
 

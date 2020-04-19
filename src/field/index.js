@@ -1,6 +1,5 @@
 // Utils
 import { formatNumber } from './utils';
-import { isIOS } from '../utils/validate/system';
 import { preventDefault } from '../utils/dom/event';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import {
@@ -81,13 +80,13 @@ export default createComponent({
     this.$nextTick(this.adjustSize);
 
     if (this.vanForm) {
-      this.vanForm.fields.push(this);
+      this.vanForm.addField(this);
     }
   },
 
   beforeDestroy() {
     if (this.vanForm) {
-      this.vanForm.fields = this.vanForm.fields.filter(item => item !== this);
+      this.vanForm.removeField(this);
     }
   },
 
@@ -100,6 +99,13 @@ export default createComponent({
         isDef(this.value) &&
         !this.readonly
       );
+    },
+
+    showError() {
+      if (this.vanForm && this.vanForm.showError && this.validateMessage) {
+        return true;
+      }
+      return this.error;
     },
 
     listeners() {
@@ -125,7 +131,10 @@ export default createComponent({
     },
 
     formValue() {
-      return this.children ? this.children.value : this.value;
+      if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
+        return this.children.value;
+      }
+      return this.value;
     },
   },
 
@@ -145,7 +154,7 @@ export default createComponent({
     },
 
     runValidator(value, rule) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         const returnVal = rule.validator(value, rule);
 
         if (isPromise(returnVal)) {
@@ -204,7 +213,7 @@ export default createComponent({
             }
 
             if (rule.validator) {
-              return this.runValidator(value, rule).then(result => {
+              return this.runValidator(value, rule).then((result) => {
                 if (result === false) {
                   this.validateMessage = this.getRuleMessage(value, rule);
                 }
@@ -216,7 +225,7 @@ export default createComponent({
     },
 
     validate(rules = this.rules) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         if (!rules) {
           resolve();
         }
@@ -237,7 +246,7 @@ export default createComponent({
     validateWithTrigger(trigger) {
       if (this.vanForm && this.rules) {
         const defaultTrigger = this.vanForm.validateTrigger === trigger;
-        const rules = this.rules.filter(rule => {
+        const rules = this.rules.filter((rule) => {
           if (rule.trigger) {
             return rule.trigger === trigger;
           }
@@ -306,7 +315,7 @@ export default createComponent({
       this.focused = true;
       this.$emit('focus', event);
 
-      // hack for safari
+      // readonly not work in lagacy mobile safari
       /* istanbul ignore if */
       if (this.readonly) {
         this.blur();
@@ -411,24 +420,21 @@ export default createComponent({
       }
 
       let inputType = type;
+      let inputMode;
 
-      // type="number" is weired in iOS
+      // type="number" is weired in iOS, and can't prevent dot in Android
+      // so use inputmode to set keyboard in mordern browers
       if (type === 'number') {
         inputType = 'text';
+        inputMode = 'decimal';
       }
 
       if (type === 'digit') {
-        // set pattern to show number keyboard in iOS
-        if (isIOS()) {
-          inputType = 'number';
-          inputProps.attrs.pattern = '\\d*';
-          // cannot prevent dot when type is number in Android, so use tel
-        } else {
-          inputType = 'tel';
-        }
+        inputType = 'tel';
+        inputMode = 'numeric';
       }
 
-      return <input type={inputType} {...inputProps} />;
+      return <input type={inputType} inputmode={inputMode} {...inputProps} />;
     },
 
     genLeftIcon() {
@@ -475,6 +481,10 @@ export default createComponent({
     },
 
     genMessage() {
+      if (this.vanForm && this.vanForm.showErrorMessage === false) {
+        return;
+      }
+
       const message = this.errorMessage || this.validateMessage;
 
       if (message) {
@@ -537,7 +547,7 @@ export default createComponent({
         scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
         class={bem({
-          error: this.error || this.validateMessage,
+          error: this.showError,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}

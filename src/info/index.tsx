@@ -9,6 +9,7 @@ import { DefaultSlots } from '../utils/types';
 export type InfoProps = {
   dot?: boolean;
   info?: string | number;
+  badge?: string | number;
 };
 
 const [createComponent, bem] = createNamespace('info');

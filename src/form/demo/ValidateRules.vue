@@ -1,30 +1,30 @@
 <template>
-  <demo-block :title="$t('title')">
+  <demo-block :title="t('title')">
     <van-form validate-first @sumbit="onSubmit" @failed="onFailed">
       <van-field
         v-model="value1"
         name="pattern"
-        :label="$t('label')"
-        :rules="[{ pattern, message: $t('message') }]"
-        :placeholder="$t('pattern')"
+        :label="t('label')"
+        :rules="[{ pattern, message: t('message') }]"
+        :placeholder="t('pattern')"
       />
       <van-field
         v-model="value2"
         name="validator"
-        :label="$t('label')"
-        :rules="[{ validator, message: $t('message') }]"
-        :placeholder="$t('validator')"
+        :label="t('label')"
+        :rules="[{ validator, message: t('message') }]"
+        :placeholder="t('validator')"
       />
       <van-field
         v-model="value3"
         name="asyncValidator"
-        :label="$t('label')"
-        :rules="[{ validator: asyncValidator, message: $t('message') }]"
-        :placeholder="$t('asyncValidator')"
+        :label="t('label')"
+        :rules="[{ validator: asyncValidator, message: t('message') }]"
+        :placeholder="t('asyncValidator')"
       />
       <div style="margin: 16px 16px 0;">
         <van-button round block type="info" native-type="submit">
-          {{ $t('submit') }}
+          {{ t('submit') }}
         </van-button>
       </div>
     </van-form>
@@ -71,8 +71,8 @@ export default {
     },
 
     asyncValidator(val) {
-      return new Promise(resolve => {
-        this.$toast.loading(this.$t('validating'));
+      return new Promise((resolve) => {
+        this.$toast.loading(this.t('validating'));
 
         setTimeout(() => {
           this.$toast.clear();

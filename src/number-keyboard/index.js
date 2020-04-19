@@ -10,7 +10,7 @@ const DELETE_KEY_THEME = ['delete', 'big', 'gray'];
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);
       }
@@ -81,7 +81,11 @@ export default createComponent({
           keys.push(
             { text: this.extraKey, theme: ['gray'], type: 'extra' },
             { text: 0 },
-            { text: this.deleteText, theme: ['gray'], type: 'delete' }
+            {
+              theme: ['gray'],
+              text: this.showDeleteKey ? this.deleteText : '',
+              type: this.showDeleteKey ? 'delete' : '',
+            }
           );
           break;
         case 'custom':
@@ -161,7 +165,7 @@ export default createComponent({
     },
 
     genKeys() {
-      return this.keys.map(key => (
+      return this.keys.map((key) => (
         <Key
           key={key.text}
           text={key.text}
@@ -179,14 +183,16 @@ export default createComponent({
       if (this.theme === 'custom') {
         return (
           <div class={bem('sidebar')}>
-            <Key
-              text={this.deleteText}
-              type="delete"
-              theme={DELETE_KEY_THEME}
-              onPress={this.onPress}
-            >
-              {this.slots('delete')}
-            </Key>
+            {this.showDeleteKey && (
+              <Key
+                text={this.deleteText}
+                type="delete"
+                theme={DELETE_KEY_THEME}
+                onPress={this.onPress}
+              >
+                {this.slots('delete')}
+              </Key>
+            )}
             <Key
               text={this.closeButtonText}
               type="close"
@@ -205,10 +211,7 @@ export default createComponent({
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
-          class={bem([
-            this.theme,
-            { 'safe-area-inset-bottom': this.safeAreaInsetBottom },
-          ])}
+          class={bem([this.theme, { unfit: !this.safeAreaInsetBottom }])}
           onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}

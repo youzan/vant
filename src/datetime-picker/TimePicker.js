@@ -55,7 +55,7 @@ export default createComponent({
 
       if (val !== this.innerValue) {
         this.innerValue = val;
-        this.updateColumnValue(val);
+        this.updateColumnValue();
       }
     },
   },
@@ -81,6 +81,7 @@ export default createComponent({
       const minute = minuteColumn.values[minuteIndex] || minuteColumn.values[0];
 
       this.innerValue = this.formatValue(`${hour}:${minute}`);
+      this.updateColumnValue();
     },
 
     onChange(picker) {

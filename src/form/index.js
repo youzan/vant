@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { sortChildren } from '../utils/vnodes';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -14,6 +15,14 @@ export default createComponent({
     validateTrigger: {
       type: String,
       default: 'onBlur',
+    },
+    showError: {
+      type: Boolean,
+      default: true,
+    },
+    showErrorMessage: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -39,7 +48,7 @@ export default createComponent({
             (promise, field) =>
               promise.then(() => {
                 if (!errors.length) {
-                  return field.validate().then(error => {
+                  return field.validate().then((error) => {
                     if (error) {
                       errors.push(error);
                     }
@@ -60,15 +69,17 @@ export default createComponent({
 
     validateAll() {
       return new Promise((resolve, reject) => {
-        Promise.all(this.fields.map(item => item.validate())).then(errors => {
-          errors = errors.filter(item => item);
+        Promise.all(this.fields.map((item) => item.validate())).then(
+          (errors) => {
+            errors = errors.filter((item) => item);
 
-          if (errors.length) {
-            reject(errors);
-          } else {
-            resolve();
+            if (errors.length) {
+              reject(errors);
+            } else {
+              resolve();
+            }
           }
-        });
+        );
       });
     },
 
@@ -81,11 +92,11 @@ export default createComponent({
     },
 
     validateField(name) {
-      const matched = this.fields.filter(item => item.name === name);
+      const matched = this.fields.filter((item) => item.name === name);
 
       if (matched.length) {
         return new Promise((resolve, reject) => {
-          matched[0].validate().then(error => {
+          matched[0].validate().then((error) => {
             if (error) {
               reject(error);
             } else {
@@ -100,7 +111,7 @@ export default createComponent({
 
     // @exposed-api
     resetValidation(name) {
-      this.fields.forEach(item => {
+      this.fields.forEach((item) => {
         if (!name || item.name === name) {
           item.resetValidation();
         }
@@ -109,11 +120,20 @@ export default createComponent({
 
     // @exposed-api
     scrollToField(name) {
-      this.fields.forEach(item => {
+      this.fields.forEach((item) => {
         if (item.name === name) {
           item.$el.scrollIntoView();
         }
       });
+    },
+
+    addField(field) {
+      this.fields.push(field);
+      sortChildren(this.fields, this);
+    },
+
+    removeField(field) {
+      this.fields = this.fields.filter((item) => item !== field);
     },
 
     getValues() {
@@ -136,7 +156,7 @@ export default createComponent({
         .then(() => {
           this.$emit('submit', values);
         })
-        .catch(errors => {
+        .catch((errors) => {
           this.$emit('failed', {
             values,
             errors,

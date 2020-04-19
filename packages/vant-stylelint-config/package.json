@@ -1,6 +1,6 @@
 {
   "name": "@vant/stylelint-config",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "stylelint config of vant.",
   "main": "index.js",
   "publishConfig": {
@@ -9,11 +9,12 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-stylelint-config",
   "peerDependencies": {
-    "stylelint": "^12.0.0"
+    "stylelint": "^13.0.0"
   },
   "dependencies": {
+    "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^19.0.0",
-    "stylelint-order": "^3.1.1"
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0"
   }
 }

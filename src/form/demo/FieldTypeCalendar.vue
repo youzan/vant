@@ -5,8 +5,8 @@
       clickable
       name="calendar"
       :value="value"
-      :label="$t('calendar')"
-      :placeholder="$t('placeholder')"
+      :label="t('calendar')"
+      :placeholder="t('placeholder')"
       @click="showCalendar = true"
     />
     <van-calendar v-model="showCalendar" @confirm="onConfirm" />

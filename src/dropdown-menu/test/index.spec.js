@@ -213,7 +213,7 @@ test('change event', async () => {
   expect(onChange).toHaveBeenCalledTimes(1);
 });
 
-test('toggle method', async done => {
+test('toggle method', async (done) => {
   const wrapper = mount({
     template: `
       <van-dropdown-menu>

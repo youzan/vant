@@ -120,7 +120,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="number" role="spinbutton" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
+              <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
             </div>
           </div>
         </div>
@@ -184,8 +184,8 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-hairline--bottom">
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
           <div class="van-cell__title van-field__label"><span>选择器</span></div>
           <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="text" name="picker" readonly="readonly" placeholder="点击选择城市" class="van-field__control"></div>
@@ -193,8 +193,8 @@ exports[`renders demo correctly 1`] = `
         </div>
         <!---->
       </div>
-      <div>
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-hairline--bottom">
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
           <div class="van-cell__title van-field__label"><span>时间选择</span></div>
           <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="text" name="datetimePicker" readonly="readonly" placeholder="点击选择时间" class="van-field__control"></div>
@@ -202,8 +202,8 @@ exports[`renders demo correctly 1`] = `
         </div>
         <!---->
       </div>
-      <div>
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-hairline--bottom">
+        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
           <div class="van-cell__title van-field__label"><span>地区选择</span></div>
           <div class="van-cell__value van-field__value">
             <div class="van-field__body"><input type="text" name="area" readonly="readonly" placeholder="点击选择省市区" class="van-field__control"></div>

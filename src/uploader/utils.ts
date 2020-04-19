@@ -9,7 +9,7 @@ export function toArray<T>(item: T | T[]): T[] {
 }
 
 export function readFile(file: File, resultType: ResultType) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     if (resultType === 'file') {
       resolve();
       return;
@@ -17,7 +17,7 @@ export function readFile(file: File, resultType: ResultType) {
 
     const reader = new FileReader();
 
-    reader.onload = event => {
+    reader.onload = (event) => {
       resolve((event.target as FileReader).result);
     };
 
@@ -33,7 +33,7 @@ export function isOversize(
   files: File | File[],
   maxSize: number | string
 ): boolean {
-  return toArray(files).some(file => file.size > maxSize);
+  return toArray(files).some((file) => file.size > maxSize);
 }
 
 export type FileListItem = {

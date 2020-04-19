@@ -20,14 +20,14 @@ test('click number key', () => {
   wrapper.destroy();
 });
 
-it('click delete key', () => {
+test('click delete key', () => {
   const wrapper = mount(NumberKeyboard);
 
   clickKey(wrapper.findAll('.van-key').at(11));
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
-it('click empty key', () => {
+test('click empty key', () => {
   const wrapper = mount(NumberKeyboard);
   clickKey(wrapper.findAll('.van-key').at(9));
   expect(wrapper.emitted('input')).toBeFalsy();
@@ -151,7 +151,7 @@ test('bind value', () => {
       value: '',
     },
     listeners: {
-      'update:value': value => {
+      'update:value': (value) => {
         wrapper.setProps({ value });
       },
     },
@@ -176,7 +176,7 @@ test('maxlength', () => {
     },
     listeners: {
       input: onInput,
-      'update:value': value => {
+      'update:value': (value) => {
         wrapper.setProps({ value });
       },
     },
@@ -188,4 +188,26 @@ test('maxlength', () => {
 
   expect(wrapper.vm.value).toEqual('1');
   expect(onInput).toHaveBeenCalledTimes(1);
+});
+
+test('show-delete-key prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      showDeleteKey: true,
+    },
+  });
+
+  expect(wrapper.contains('.van-key--delete')).toBeTruthy();
+
+  wrapper.setData({ showDeleteKey: false });
+  expect(wrapper.contains('.van-key--delete')).toBeFalsy();
+
+  wrapper.setData({
+    theme: 'custom',
+    showDeleteKey: true,
+  });
+  expect(wrapper.contains('.van-key--delete')).toBeTruthy();
+
+  wrapper.setData({ showDeleteKey: false });
+  expect(wrapper.contains('.van-key--delete')).toBeFalsy();
 });

@@ -32,9 +32,9 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date()
+      currentDate: new Date(),
     };
-  }
+  },
 };
 ```
 
@@ -55,9 +55,9 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date()
+      currentDate: new Date(),
     };
-  }
+  },
 };
 ```
 
@@ -81,7 +81,7 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date()
+      currentDate: new Date(),
     };
   },
   methods: {
@@ -89,12 +89,12 @@ export default {
       if (type === 'year') {
         return `${val}年`;
       } else if (type === 'month') {
-        return `${val}月`
+        return `${val}月`;
       }
       return val;
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### 选择时间
@@ -112,9 +112,9 @@ export default {
 export default {
   data() {
     return {
-      currentTime: '12:00'
+      currentTime: '12:00',
     };
-  }
+  },
 };
 ```
 
@@ -123,29 +123,25 @@ export default {
 通过传入`filter`函数，可以对选项数组进行过滤，实现自定义时间间隔
 
 ```html
-<van-datetime-picker
-  v-model="currentTime"
-  type="time"
-  :filter="filter"
-/>
+<van-datetime-picker v-model="currentTime" type="time" :filter="filter" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      currentTime: '12:00'
+      currentTime: '12:00',
     };
   },
   methods: {
     filter(type, options) {
       if (type === 'minute') {
-        return options.filter(option => option % 5 === 0);
+        return options.filter((option) => option % 5 === 0);
       }
 
       return options;
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -154,53 +150,53 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| type | 类型，可选值为 `date` <br> `time` `year-month` | *string* | `datetime` |
-| title | 顶部栏标题 | *string* | `''` |
-| confirm-button-text | 确认按钮文字 | *string* | `确认` |
-| cancel-button-text | 取消按钮文字 | *string* | `取消` |
-| show-toolbar | 是否显示顶部栏 | *boolean* | `true` |
-| loading | 是否显示加载状态 | *boolean* | `false` |
-| filter | 选项过滤函数 | *(type, vals) => vals* | - |
-| formatter | 选项格式化函数 | *(type, val) => val* | - |
-| item-height | 选项高度 | *number \| string* | `44` |
-| visible-item-count | 可见的选项个数 | *number \| string* | `5` |
-| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number \| string*  | `1000` |
+| --- | --- | --- | --- |
+| type | 类型，可选值为 `date` <br> `time` `year-month` | _string_ | `datetime` |
+| title | 顶部栏标题 | _string_ | `''` |
+| confirm-button-text | 确认按钮文字 | _string_ | `确认` |
+| cancel-button-text | 取消按钮文字 | _string_ | `取消` |
+| show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
+| loading | 是否显示加载状态 | _boolean_ | `false` |
+| filter | 选项过滤函数 | _(type, vals) => vals_ | - |
+| formatter | 选项格式化函数 | _(type, val) => val_ | - |
+| item-height | 选项高度 | _number \| string_ | `44` |
+| visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
+| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
 
 ### DatePicker Props
 
-当时间选择器类型为 date 或 datetime 时，支持以下 props
+当时间选择器类型为 date 或 datetime 时，支持以下 props:
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| min-date | 可选的最小时间，精确到分钟 | *Date* | 十年前 |
-| max-date | 可选的最大时间，精确到分钟 | *Date* | 十年后 |
+| 参数     | 说明                       | 类型   | 默认值 |
+| -------- | -------------------------- | ------ | ------ |
+| min-date | 可选的最小时间，精确到分钟 | _Date_ | 十年前 |
+| max-date | 可选的最大时间，精确到分钟 | _Date_ | 十年后 |
 
 ### TimePicker Props
 
-当时间选择器类型为 time 时，支持以下 props
+当时间选择器类型为 time 时，支持以下 props:
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| min-hour | 可选的最小小时 | *number \| string* | `0` |
-| max-hour | 可选的最大小时 | *number \| string* | `23` |
-| min-minute | 可选的最小分钟 | *number \| string* | `0` |
-| max-minute | 可选的最大分钟 | *number \| string* | `59` |
+| 参数       | 说明           | 类型               | 默认值 |
+| ---------- | -------------- | ------------------ | ------ |
+| min-hour   | 可选的最小小时 | _number \| string_ | `0`    |
+| max-hour   | 可选的最大小时 | _number \| string_ | `23`   |
+| min-minute | 可选的最小分钟 | _number \| string_ | `0`    |
+| max-minute | 可选的最大分钟 | _number \| string_ | `59`   |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| change | 当值变化时触发的事件 | picker: Picker 实例 |
+| 事件名  | 说明                     | 回调参数              |
+| ------- | ------------------------ | --------------------- |
+| change  | 当值变化时触发的事件     | picker: Picker 实例   |
 | confirm | 点击完成按钮时触发的事件 | value: 当前选中的时间 |
-| cancel | 点击取消按钮时触发的事件 | - |
+| cancel  | 点击取消按钮时触发的事件 | -                     |
 
 ### 方法
 
 通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | getPicker `v2.5.3` | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
 
 ## 常见问题

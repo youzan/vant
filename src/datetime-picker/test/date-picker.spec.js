@@ -3,7 +3,7 @@ import { mount, later, triggerDrag } from '../../../test';
 
 function filter(type, options) {
   const mod = type === 'year' ? 10 : 5;
-  return options.filter(option => option % mod === 0);
+  return options.filter((option) => option % mod === 0);
 }
 
 function formatter(type, value) {
@@ -128,7 +128,7 @@ test('use min-date with filter', async () => {
       value: new Date(2020, 0, 0, 0, 0),
       filter(type, values) {
         if (type === 'minute') {
-          return values.filter(value => value % 30 === 0);
+          return values.filter((value) => value % 30 === 0);
         }
 
         return values;

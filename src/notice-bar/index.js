@@ -72,6 +72,7 @@ export default createComponent({
       this.$nextTick(() => {
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = bem('play--infinite');
+        this.$emit('replay');
       });
     },
   },
@@ -133,7 +134,7 @@ export default createComponent({
         vShow={this.showNoticeBar}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
-        onClick={event => {
+        onClick={(event) => {
           this.$emit('click', event);
         }}
       >

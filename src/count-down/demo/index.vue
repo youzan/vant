@@ -1,18 +1,18 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-count-down :time="time" />
     </demo-block>
 
-    <demo-block :title="$t('customFormat')">
-      <van-count-down :time="time" :format="$t('formatWithDay')" />
+    <demo-block :title="t('customFormat')">
+      <van-count-down :time="time" :format="t('formatWithDay')" />
     </demo-block>
 
-    <demo-block :title="$t('millisecond')">
+    <demo-block :title="t('millisecond')">
       <van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
     </demo-block>
 
-    <demo-block :title="$t('customStyle')">
+    <demo-block :title="t('customStyle')">
       <van-count-down :time="time">
         <template v-slot="currentTime">
           <span class="item">{{ currentTime.hours }}</span>
@@ -22,27 +22,23 @@
       </van-count-down>
     </demo-block>
 
-    <demo-block :title="$t('manualControl')">
+    <demo-block :title="t('manualControl')">
       <van-count-down
         ref="countDown"
         millisecond
         :time="3000"
         :auto-start="false"
         format="ss:SSS"
-        @finish="$toast($t('finished'))"
+        @finish="$toast(t('finished'))"
       />
       <van-grid clickable :column-num="3">
-        <van-grid-item
-          icon="play-circle-o"
-          :text="$t('start')"
-          @click="start"
-        />
+        <van-grid-item icon="play-circle-o" :text="t('start')" @click="start" />
         <van-grid-item
           icon="pause-circle-o"
-          :text="$t('pause')"
+          :text="t('pause')"
           @click="pause"
         />
-        <van-grid-item icon="replay" :text="$t('reset')" @click="reset" />
+        <van-grid-item icon="replay" :text="t('reset')" @click="reset" />
       </van-grid>
     </demo-block>
   </demo-section>

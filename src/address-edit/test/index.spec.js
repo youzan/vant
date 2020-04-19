@@ -1,5 +1,5 @@
 import AddressEdit from '..';
-import areaList from '../../area/demo/area.simple';
+import areaList from '../../area/demo/area-simple';
 import { mount, later } from '../../../test';
 
 const addressInfo = {
@@ -123,7 +123,7 @@ test('valid name', () => {
   expect(errorInfo.name).toBeFalsy();
 });
 
-it('valid tel', () => {
+test('valid tel', () => {
   const { data, field, button, errorInfo } = createComponent();
   data.tel = '';
   button.trigger('click');
@@ -132,7 +132,7 @@ it('valid tel', () => {
   expect(errorInfo.tel).toBeFalsy();
 });
 
-it('valid areaCode', () => {
+test('valid areaCode', () => {
   const { data, button, errorInfo } = createComponent();
   // areaCode empty
   data.areaCode = '';
@@ -145,7 +145,7 @@ it('valid areaCode', () => {
   expect(errorInfo.areaCode).toBeTruthy();
 });
 
-it('valid addressDetail', () => {
+test('valid addressDetail', () => {
   const { data, field, button, errorInfo } = createComponent();
   data.addressDetail = '';
   button.trigger('click');
@@ -293,4 +293,16 @@ test('select area', () => {
   const { wrapper, data } = createComponent();
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(data.areaCode).toEqual('110101');
+});
+
+test('click-area event', () => {
+  const wrapper = mount(AddressEdit, {
+    propsData: {
+      disableArea: true,
+    },
+  });
+
+  const field = wrapper.findAll('.van-field').at(2);
+  field.trigger('click');
+  expect(wrapper.emitted('click-area')[0]).toBeTruthy();
 });

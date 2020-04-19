@@ -1,6 +1,6 @@
 {
   "name": "create-vant-cli-app",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Create Vant Cli App",
   "main": "lib/index.js",
   "bin": {
@@ -24,17 +24,19 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^8.0.1",
+    "@types/fs-extra": "^8.1.0",
+    "@types/yeoman-environment": "^2.3.3",
     "@types/yeoman-generator": "^3.1.4",
-    "release-it": "^12.4.3",
-    "typescript": "^3.7.4"
+    "release-it": "^13.0.0",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "chalk": "^3.0.0",
     "consola": "^2.11.3",
     "fs-extra": "^8.1.0",
-    "inquirer": "^7.0.3",
-    "yeoman-generator": "^4.4.0"
+    "inquirer": "^7.0.6",
+    "yeoman-environment": "^2.8.0",
+    "yeoman-generator": "^4.6.0"
   },
   "release-it": {
     "git": {

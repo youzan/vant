@@ -62,7 +62,7 @@ test('touch and scroll to anchor', () => {
   const sidebar = wrapper.find('.van-index-bar__sidebar');
   const indexes = wrapper.findAll('.van-index-bar__index');
 
-  document.elementFromPoint = function(x, y) {
+  document.elementFromPoint = function (x, y) {
     const index = y / 100;
 
     if (index === 1 || index === 2) {
@@ -93,7 +93,7 @@ test('touch and scroll to anchor', () => {
 
 test('scroll and update active anchor', () => {
   const nativeRect = Element.prototype.getBoundingClientRect;
-  Element.prototype.getBoundingClientRect = function() {
+  Element.prototype.getBoundingClientRect = function () {
     const { index } = this.dataset;
     return {
       top: index ? index * 10 : 0,

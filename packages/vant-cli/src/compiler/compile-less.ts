@@ -1,4 +1,3 @@
-// @ts-ignore
 import { render, FileManager } from 'less';
 import { readFileSync } from 'fs-extra';
 

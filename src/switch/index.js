@@ -1,6 +1,5 @@
 // Utils
 import { createNamespace, addUnit } from '../utils';
-import { BLUE } from '../utils/constant';
 import { switchProps } from './shared';
 
 // Mixins
@@ -42,10 +41,7 @@ export default createComponent({
 
     genLoading() {
       if (this.loading) {
-        const color = this.checked
-          ? this.activeColor || BLUE
-          : this.inactiveColor || '';
-
+        const color = this.checked ? this.activeColor : this.inactiveColor;
         return <Loading class={bem('loading')} color={color} />;
       }
     },

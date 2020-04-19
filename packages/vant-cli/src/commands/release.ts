@@ -1,5 +1,4 @@
 /* eslint-disable no-template-curly-in-string */
-// @ts-ignore
 import releaseIt from 'release-it';
 import { join } from 'path';
 

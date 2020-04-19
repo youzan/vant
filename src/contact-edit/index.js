@@ -71,7 +71,7 @@ export default createComponent({
     },
 
     onSave() {
-      const isValid = ['name', 'tel'].every(item => {
+      const isValid = ['name', 'tel'].every((item) => {
         const msg = this.getErrorMessageByKey(item);
         if (msg) {
           this.errorInfo[item] = msg;
@@ -95,7 +95,7 @@ export default createComponent({
 
   render() {
     const { data, errorInfo } = this;
-    const onFocus = name => () => this.onFocus(name);
+    const onFocus = (name) => () => this.onFocus(name);
 
     return (
       <div class={bem()}>
@@ -128,7 +128,7 @@ export default createComponent({
             <Switch
               vModel={data.isDefault}
               size={24}
-              onChange={event => {
+              onChange={(event) => {
                 this.$emit('change-default', event);
               }}
             />

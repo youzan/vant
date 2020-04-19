@@ -1,0 +1,97 @@
+@import '../style/var';
+@import '../style/mixins/hairline';
+
+.van-share-sheet {
+  &__header {
+    padding: @share-sheet-header-padding;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: @padding-xs;
+    color: @share-sheet-title-color;
+    font-weight: normal;
+    font-size: @share-sheet-title-font-size;
+    line-height: @share-sheet-title-line-height;
+  }
+
+  &__description {
+    display: block;
+    margin-top: @padding-xs;
+    color: @share-sheet-description-color;
+    font-size: @share-sheet-description-font-size;
+    line-height: @share-sheet-description-line-height;
+  }
+
+  &__options {
+    position: relative;
+    display: flex;
+    padding: @padding-md 0 @padding-md @padding-lg;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &--border::before {
+      .hairline-top(@cell-border-color, @padding-md);
+    }
+
+    // fix right-padding issue for overflow-x element
+    // see: https://stackoverflow.com/questions/10054870
+    &::after {
+      display: block;
+      flex-shrink: 0;
+      width: @padding-lg;
+      content: '';
+    }
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: @share-sheet-option-margin-right;
+    cursor: pointer;
+    user-select: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+
+  &__icon {
+    width: @share-sheet-icon-size;
+    height: @share-sheet-icon-size;
+  }
+
+  &__name {
+    margin-top: @padding-xs;
+    color: @share-sheet-option-name-color;
+    font-size: @share-sheet-option-name-font-size;
+  }
+
+  &__cancel {
+    display: block;
+    width: 100%;
+    padding: 0;
+    font-size: @share-sheet-cancel-button-font-size;
+    line-height: @share-sheet-cancel-button-height;
+    text-align: center;
+    background: @share-sheet-cancel-button-background;
+    border: none;
+    cursor: pointer;
+
+    &::before {
+      display: block;
+      height: @padding-xs;
+      background-color: @background-color;
+      content: ' ';
+    }
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}

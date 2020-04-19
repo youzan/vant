@@ -66,9 +66,17 @@ test('search event', () => {
 test('label slot', () => {
   const wrapper = mount(Search, {
     scopedSlots: {
-      label() {
-        return 'Custom Label';
-      },
+      label: () => 'Custom Label',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('left slot', () => {
+  const wrapper = mount(Search, {
+    scopedSlots: {
+      left: () => 'Custom Left Content',
     },
   });
 

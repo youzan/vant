@@ -141,7 +141,7 @@ export default createComponent({
     updateInnerValue() {
       const indexes = this.getPicker().getIndexes();
 
-      const getValue = index => {
+      const getValue = (index) => {
         const { values } = this.originColumns[index];
         return getTrueValue(values[indexes[index]]);
       };

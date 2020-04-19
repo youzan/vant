@@ -8,6 +8,10 @@ exports[`renders demo correctly 1`] = `
         <!----></i>
     </div>
     <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>选择多个日期</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
       <div class="van-cell__title"><span>选择日期区间</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
@@ -52,7 +56,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-calendar" style="height: 500px;">
       <div class="van-calendar__header">
         <div class="van-calendar__header-title">日历</div>
-        <div class="van-calendar__month-title">2012年1月</div>
+        <div class="van-calendar__header-subtitle">2012年1月</div>
         <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
       </div>
       <div class="van-calendar__body">
@@ -167,7 +171,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-calendar__footer van-calendar__footer--safe-area-inset-bottom"></div>
+      <div class="van-calendar__footer"></div>
     </div>
   </div>
   <!---->

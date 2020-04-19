@@ -48,6 +48,8 @@
 // Animation
 @animation-duration-base: 0.3s;
 @animation-duration-fast: 0.2s;
+@animation-timing-function-enter: ease-out;
+@animation-timing-function-leave: ease-in;
 
 // Border
 @border-color: @gray-3;
@@ -142,6 +144,7 @@
 @calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
 @calendar-header-title-height: 44px;
 @calendar-header-title-font-size: @font-size-lg;
+@calendar-header-subtitle-font-size: @font-size-md;
 @calendar-weekdays-height: 30px;
 @calendar-weekdays-font-size: @font-size-sm;
 @calendar-month-title-font-size: @font-size-md;
@@ -329,6 +332,16 @@
 @dropdown-menu-option-active-color: @blue;
 @dropdown-menu-content-max-height: 80%;
 @dropdown-item-z-index: 10;
+
+// Empty
+@empty-padding: @padding-xl 0;
+@empty-image-size: 160px;
+@empty-description-margin-top: @padding-md;
+@empty-description-padding: 0 60px;
+@empty-description-color: @gray-6;
+@empty-description-font-size: 14px;
+@empty-description-line-height: 20px;
+@empty-bottom-margin-top: 24px;
 
 // Field
 @field-label-width: 90px;
@@ -530,7 +543,7 @@
 
 // Popup
 @popup-background-color: @white;
-@popup-transition: transform @animation-duration-base ease-out;
+@popup-transition: transform @animation-duration-base;
 @popup-round-border-radius: 20px;
 @popup-close-icon-size: 22px;
 @popup-close-icon-color: @gray-5;
@@ -571,6 +584,22 @@
 @rate-icon-full-color: #ffd21e;
 @rate-icon-disabled-color: #bdbdbd;
 
+// ShareSheet
+@share-sheet-header-padding: @padding-sm @padding-md @padding-base;
+@share-sheet-title-color: @text-color;
+@share-sheet-title-font-size: @font-size-md;
+@share-sheet-title-line-height: 20px;
+@share-sheet-description-color: @gray-6;
+@share-sheet-description-font-size: @font-size-sm;
+@share-sheet-description-line-height: 16px;
+@share-sheet-icon-size: 48px;
+@share-sheet-option-margin-right: @padding-xl;
+@share-sheet-option-name-color: @gray-7;
+@share-sheet-option-name-font-size: @font-size-sm;
+@share-sheet-cancel-button-font-size: @font-size-lg;
+@share-sheet-cancel-button-height: 48px;
+@share-sheet-cancel-button-background: @white;
+
 // Search
 @search-padding: 10px @padding-sm;
 @search-background-color: @white;
@@ -594,7 +623,7 @@
 @sidebar-disabled-text-color: @gray-5;
 @sidebar-padding: 20px @padding-sm 20px @padding-xs;
 @sidebar-active-color: @active-color;
-@sidebar-background-color: @background-color-light;
+@sidebar-background-color: @background-color;
 @sidebar-selected-font-weight: @font-weight-bold;
 @sidebar-selected-text-color: @text-color;
 @sidebar-selected-border-color: @red;
@@ -755,14 +784,14 @@
 @toast-text-min-width: 96px;
 @toast-text-padding: @padding-xs @padding-sm;
 @toast-default-padding: @padding-md;
-@toast-default-width: 90px;
-@toast-default-min-height: 90px;
+@toast-default-width: 88px;
+@toast-default-min-height: 88px;
 @toast-position-top-distance: 50px;
 @toast-position-bottom-distance: 50px;
 
 // TreeSelect
 @tree-select-font-size: @font-size-md;
-@tree-select-nav-background-color: @background-color-light;
+@tree-select-nav-background-color: @background-color;
 @tree-select-content-background-color: @white;
 @tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
 @tree-select-item-height: 44px;

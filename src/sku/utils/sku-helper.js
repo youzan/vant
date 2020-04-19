@@ -34,19 +34,19 @@ import { UNSELECTED_SKU_VALUE_ID } from '../constants';
     ...
   }
  */
-export const normalizeSkuTree = skuTree => {
+export const normalizeSkuTree = (skuTree) => {
   const normalizedTree = {};
-  skuTree.forEach(treeItem => {
+  skuTree.forEach((treeItem) => {
     normalizedTree[treeItem.k_s] = treeItem.v;
   });
   return normalizedTree;
 };
 
-export const normalizePropList = propList => {
+export const normalizePropList = (propList) => {
   const normalizedProp = {};
-  propList.forEach(item => {
+  propList.forEach((item) => {
     const itemObj = {};
-    item.v.forEach(it => {
+    item.v.forEach((it) => {
       itemObj[it.id] = it;
     });
     normalizedProp[item.k_id] = itemObj;
@@ -58,16 +58,16 @@ export const normalizePropList = propList => {
 export const isAllSelected = (skuTree, selectedSku) => {
   // 筛选selectedSku对象中key值不为空的值
   const selected = Object.keys(selectedSku).filter(
-    skuKeyStr => selectedSku[skuKeyStr] !== UNSELECTED_SKU_VALUE_ID
+    (skuKeyStr) => selectedSku[skuKeyStr] !== UNSELECTED_SKU_VALUE_ID
   );
   return skuTree.length === selected.length;
 };
 
 // 根据已选择的 sku 获取 skuComb
 export const getSkuComb = (skuList, selectedSku) => {
-  const skuComb = skuList.filter(item =>
+  const skuComb = skuList.filter((item) =>
     Object.keys(selectedSku).every(
-      skuKeyStr => String(item[skuKeyStr]) === String(selectedSku[skuKeyStr])
+      (skuKeyStr) => String(item[skuKeyStr]) === String(selectedSku[skuKeyStr])
     )
   );
   return skuComb[0];
@@ -81,7 +81,7 @@ export const getSelectedSkuValues = (skuTree, selectedSku) => {
     const skuValueId = selectedSku[skuKeyStr];
 
     if (skuValueId !== UNSELECTED_SKU_VALUE_ID) {
-      const skuValue = skuValues.filter(value => value.id === skuValueId)[0];
+      const skuValue = skuValues.filter((value) => value.id === skuValueId)[0];
       skuValue && selectedValues.push(skuValue);
     }
     return selectedValues;
@@ -100,12 +100,12 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
 
   // 再判断剩余sku是否全部不可选，若不可选则当前sku不可选中
   const skusToCheck = Object.keys(matchedSku).filter(
-    skuKey => matchedSku[skuKey] !== UNSELECTED_SKU_VALUE_ID
+    (skuKey) => matchedSku[skuKey] !== UNSELECTED_SKU_VALUE_ID
   );
 
-  const filteredSku = skuList.filter(sku =>
+  const filteredSku = skuList.filter((sku) =>
     skusToCheck.every(
-      skuKey => String(matchedSku[skuKey]) === String(sku[skuKey])
+      (skuKey) => String(matchedSku[skuKey]) === String(sku[skuKey])
     )
   );
 
@@ -119,7 +119,7 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
 export const getSelectedPropValues = (propList, selectedProp) => {
   const normalizeProp = normalizePropList(propList);
   return Object.keys(selectedProp).reduce((acc, cur) => {
-    selectedProp[cur].forEach(it => {
+    selectedProp[cur].forEach((it) => {
       acc.push({
         ...normalizeProp[cur][it],
       });
@@ -130,10 +130,10 @@ export const getSelectedPropValues = (propList, selectedProp) => {
 
 export const getSelectedProperties = (propList, selectedProp) => {
   const list = [];
-  (propList || []).forEach(prop => {
+  (propList || []).forEach((prop) => {
     if (selectedProp[prop.k_id] && selectedProp[prop.k_id].length > 0) {
       const v = [];
-      prop.v.forEach(it => {
+      prop.v.forEach((it) => {
         if (selectedProp[prop.k_id].indexOf(it.id) > -1) {
           v.push({ ...it });
         }

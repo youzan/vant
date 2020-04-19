@@ -18,6 +18,16 @@
   transform: scale(0.5);
 }
 
+.hairline-top(@color: @border-color, @left: 0) {
+  .hairline-common();
+
+  top: 0;
+  right: 0;
+  left: @left;
+  border-top: 1px solid @color;
+  transform: scaleY(0.5);
+}
+
 .hairline-bottom(@color: @border-color, @left: 0) {
   .hairline-common();
 

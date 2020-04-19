@@ -19,3 +19,14 @@ export default {
   },
 };
 </script>
+
+<style lang="less">
+.demo-form {
+  width: 100vw;
+  overflow: hidden;
+
+  .van-hairline--bottom::after {
+    margin-left: 16px;
+  }
+}
+</style>

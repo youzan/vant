@@ -3,7 +3,7 @@ import { mount, later, triggerDrag } from '../../../test';
 
 function filter(type, options) {
   const mod = type === 'minute' ? 10 : 5;
-  return options.filter(option => option % mod === 0);
+  return options.filter((option) => option % mod === 0);
 }
 
 function formatter(type, value) {
@@ -125,4 +125,28 @@ test('set max-hour & max-minute smaller than current then emit correct value', a
 
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual('00:00');
+});
+
+test('set min-minute dynamically', async () => {
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="currentTime"
+        type="time"
+        :min-minute="currentTime.split(':')[0] > 12 ? 0 : 30"
+        min-hour="12"
+        max-hour="13"
+        @confirm="$emit('confirm', $event)"
+      />
+    `,
+    data() {
+      return {
+        currentTime: '12:30',
+      };
+    },
+  });
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('13:00');
 });

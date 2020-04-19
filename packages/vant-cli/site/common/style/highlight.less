@@ -3,7 +3,6 @@
 code {
   position: relative;
   display: block;
-  margin-top: 20px;
   overflow-x: auto;
   color: @van-doc-code-color;
   font-weight: 400;
@@ -16,7 +15,11 @@ code {
 }
 
 pre {
-  margin: 0;
+  margin: 20px 0 0;
+
+  + p {
+    margin-top: 20px;
+  }
 }
 
 .hljs {

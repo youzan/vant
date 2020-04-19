@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="van-hairline--bottom">
     <van-field
       readonly
       clickable
       name="datetimePicker"
       :value="value"
-      :label="$t('label')"
-      :placeholder="$t('placeholder')"
+      :border="false"
+      :label="t('label')"
+      :placeholder="t('placeholder')"
       @click="showPicker = true"
     />
     <van-popup v-model="showPicker" position="bottom">

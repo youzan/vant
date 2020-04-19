@@ -6,17 +6,23 @@ const [createComponent] = createNamespace('calendar-header');
 export default createComponent({
   props: {
     title: String,
-    monthTitle: String,
+    subtitle: String,
+    showTitle: Boolean,
+    showSubtitle: Boolean,
   },
 
   methods: {
     genTitle() {
-      const title = this.slots('title') || this.title || t('title');
-      return <div class={bem('header-title')}>{title}</div>;
+      if (this.showTitle) {
+        const title = this.slots('title') || this.title || t('title');
+        return <div class={bem('header-title')}>{title}</div>;
+      }
     },
 
-    genMonth() {
-      return <div class={bem('month-title')}>{this.monthTitle}</div>;
+    genSubtitle() {
+      if (this.showSubtitle) {
+        return <div class={bem('header-subtitle')}>{this.subtitle}</div>;
+      }
     },
 
     genWeekDays() {
@@ -24,7 +30,7 @@ export default createComponent({
 
       return (
         <div class={bem('weekdays')}>
-          {weekdays.map(item => (
+          {weekdays.map((item) => (
             <span class={bem('weekday')}>{item}</span>
           ))}
         </div>
@@ -36,7 +42,7 @@ export default createComponent({
     return (
       <div class={bem('header')}>
         {this.genTitle()}
-        {this.genMonth()}
+        {this.genSubtitle()}
         {this.genWeekDays()}
       </div>
     );

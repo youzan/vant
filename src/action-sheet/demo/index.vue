@@ -1,25 +1,25 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <van-cell is-link :title="$t('basicUsage')" @click="show.basic = true" />
-      <van-cell is-link :title="$t('showCancel')" @click="show.cancel = true" />
+    <demo-block :title="t('basicUsage')">
+      <van-cell is-link :title="t('basicUsage')" @click="show.basic = true" />
+      <van-cell is-link :title="t('showCancel')" @click="show.cancel = true" />
       <van-cell
         is-link
-        :title="$t('showDescription')"
+        :title="t('showDescription')"
         @click="show.description = true"
       />
     </demo-block>
 
-    <demo-block :title="$t('optionStatus')">
+    <demo-block :title="t('optionStatus')">
       <van-cell
         is-link
-        :title="$t('optionStatus')"
+        :title="t('optionStatus')"
         @click="show.status = true"
       />
     </demo-block>
 
-    <demo-block :title="$t('customPanel')">
-      <van-cell is-link :title="$t('customPanel')" @click="show.title = true" />
+    <demo-block :title="t('customPanel')">
+      <van-cell is-link :title="t('customPanel')" @click="show.title = true" />
     </demo-block>
 
     <van-action-sheet
@@ -32,14 +32,14 @@
       v-model="show.status"
       close-on-click-action
       :actions="statusActions"
-      :cancel-text="$t('cancel')"
+      :cancel-text="t('cancel')"
     />
 
     <van-action-sheet
       v-model="show.cancel"
       :actions="simpleActions"
       close-on-click-action
-      :cancel-text="$t('cancel')"
+      :cancel-text="t('cancel')"
       @cancel="onCancel"
     />
 
@@ -47,11 +47,11 @@
       v-model="show.description"
       :actions="simpleActions"
       close-on-click-action
-      :description="$t('description')"
+      :description="t('description')"
     />
 
-    <van-action-sheet v-model="show.title" :title="$t('title')">
-      <div class="demo-action-sheet-content">{{ $t('content') }}</div>
+    <van-action-sheet v-model="show.title" :title="t('title')">
+      <div class="demo-action-sheet-content">{{ t('content') }}</div>
     </van-action-sheet>
   </demo-section>
 </template>
@@ -98,17 +98,17 @@ export default {
   computed: {
     simpleActions() {
       return [
-        { name: this.$t('option') },
-        { name: this.$t('option') },
-        { name: this.$t('option'), subname: this.$t('subname') },
+        { name: this.t('option') },
+        { name: this.t('option') },
+        { name: this.t('option'), subname: this.t('subname') },
       ];
     },
 
     statusActions() {
       return [
-        { name: this.$t('option'), color: GREEN },
+        { name: this.t('option'), color: GREEN },
         { loading: true },
-        { name: this.$t('disabledOption'), disabled: true },
+        { name: this.t('disabledOption'), disabled: true },
       ];
     },
   },

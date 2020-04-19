@@ -2,7 +2,6 @@ import { join } from 'path';
 import { ROOT } from '../common/constant';
 import { ora, slimPath } from '../common/logger';
 import { createWriteStream, readFileSync } from 'fs-extra';
-// @ts-ignore
 import conventionalChangelog from 'conventional-changelog';
 
 const DIST_FILE = join(ROOT, './changelog.generated.md');
@@ -38,7 +37,7 @@ function transform(item: any) {
 
   if (item.references.length) {
     item.references.forEach((ref: any) => {
-      if (ref.issue) {
+      if (ref.issue && item.subject) {
         item.subject = item.subject.replace(` (#${ref.issue})`, '');
       }
     });

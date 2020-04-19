@@ -36,7 +36,8 @@ export default createComponent({
   },
 
   beforeCreate() {
-    const createEmitter = eventName => event => this.$emit(eventName, event);
+    const createEmitter = (eventName) => (event) =>
+      this.$emit(eventName, event);
 
     this.onClick = createEmitter('click');
     this.onOpened = createEmitter('opened');

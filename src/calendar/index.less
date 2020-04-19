@@ -27,8 +27,9 @@
     box-shadow: @calendar-header-box-shadow;
   }
 
+  &__month-title,
   &__header-title,
-  &__month-title {
+  &__header-subtitle {
     height: @calendar-header-title-height;
     font-weight: @font-weight-bold;
     line-height: @calendar-header-title-height;
@@ -37,6 +38,10 @@
 
   &__header-title {
     font-size: @calendar-header-title-font-size;
+  }
+
+  &__header-subtitle {
+    font-size: @calendar-header-subtitle-font-size;
   }
 
   &__month-title {
@@ -94,7 +99,10 @@
     cursor: pointer;
 
     &--end,
-    &--start {
+    &--start,
+    &--start-end,
+    &--multiple-middle,
+    &--multiple-selected {
       color: @calendar-range-edge-color;
       background-color: @calendar-range-edge-background-color;
     }
@@ -105,6 +113,11 @@
 
     &--end {
       border-radius: 0 @border-radius-md @border-radius-md 0;
+    }
+
+    &--start-end,
+    &--multiple-selected {
+      border-radius: @border-radius-md;
     }
 
     &--middle {
@@ -160,10 +173,11 @@
   &__footer {
     flex-shrink: 0;
     padding: 0 @padding-md;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 
-    &--safe-area-inset-bottom {
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
+    &--unfit {
+      padding-bottom: 0;
     }
   }
 

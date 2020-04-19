@@ -7,6 +7,7 @@ import { range } from '../utils/format/number';
 
 // Mixins
 import { TouchMixin } from '../mixins/touch';
+import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
 const [createComponent, bem] = createNamespace('swipe');
@@ -14,7 +15,8 @@ const [createComponent, bem] = createNamespace('swipe');
 export default createComponent({
   mixins: [
     TouchMixin,
-    BindEventMixin(function(bind, isBind) {
+    ParentMixin('vanSwipe'),
+    BindEventMixin(function (bind, isBind) {
       bind(window, 'resize', this.resize, true);
       bind(window, 'visibilitychange', this.onVisibilityChange);
 
@@ -31,6 +33,7 @@ export default createComponent({
     height: [Number, String],
     autoplay: [Number, String],
     vertical: Boolean,
+    lazyRender: Boolean,
     indicatorColor: String,
     loop: {
       type: Boolean,
@@ -60,19 +63,19 @@ export default createComponent({
 
   data() {
     return {
-      computedWidth: 0,
-      computedHeight: 0,
+      rect: null,
       offset: 0,
       active: 0,
       deltaX: 0,
       deltaY: 0,
-      swipes: [],
       swiping: false,
+      computedWidth: 0,
+      computedHeight: 0,
     };
   },
 
   watch: {
-    swipes() {
+    children() {
       this.initialize();
     },
 
@@ -91,7 +94,11 @@ export default createComponent({
 
   computed: {
     count() {
-      return this.swipes.length;
+      return this.children.length;
+    },
+
+    maxCount() {
+      return Math.ceil(Math.abs(this.minOffset) / this.size);
     },
 
     delta() {
@@ -134,9 +141,9 @@ export default createComponent({
     },
 
     minOffset() {
-      const rect = this.$el.getBoundingClientRect();
       return (
-        (this.vertical ? rect.height : rect.width) - this.size * this.count
+        (this.vertical ? this.rect.height : this.rect.width) -
+        this.size * this.count
       );
     },
   },
@@ -148,18 +155,21 @@ export default createComponent({
   methods: {
     // initialize swipe position
     initialize(active = +this.initialSwipe) {
-      clearTimeout(this.timer);
-
-      if (this.$el && !isHidden(this.$el)) {
-        const rect = this.$el.getBoundingClientRect();
-        this.computedWidth = Math.round(+this.width || rect.width);
-        this.computedHeight = Math.round(+this.height || rect.height);
+      if (!this.$el || isHidden(this.$el)) {
+        return;
       }
 
+      clearTimeout(this.timer);
+
+      const rect = this.$el.getBoundingClientRect();
+
+      this.rect = rect;
       this.swiping = true;
       this.active = active;
-      this.offset = this.count > 1 ? -this.size * this.active : 0;
-      this.swipes.forEach(swipe => {
+      this.computedWidth = Math.round(+this.width || rect.width);
+      this.computedHeight = Math.round(+this.height || rect.height);
+      this.offset = this.getTargetOffset(active);
+      this.children.forEach((swipe) => {
         swipe.offset = 0;
       });
       this.autoPlay();
@@ -182,6 +192,7 @@ export default createComponent({
       if (!this.touchable) return;
 
       this.clear();
+      this.touchStartTime = Date.now();
       this.touchStart(event);
       this.correctPosition();
     },
@@ -200,12 +211,28 @@ export default createComponent({
     onTouchEnd() {
       if (!this.touchable || !this.swiping) return;
 
-      if (this.delta && this.isCorrectDirection) {
+      const { size, delta } = this;
+      const duration = Date.now() - this.touchStartTime;
+      const speed = delta / duration;
+      const shouldSwipe = Math.abs(speed) > 0.25 || Math.abs(delta) > size / 2;
+
+      if (shouldSwipe && this.isCorrectDirection) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
+
+        let pace = 0;
+
+        if (this.loop) {
+          pace = offset > 0 ? (delta > 0 ? -1 : 1) : 0;
+        } else {
+          pace = -Math[delta > 0 ? 'ceil' : 'floor'](delta / size);
+        }
+
         this.move({
-          pace: offset > 0 ? (this.delta > 0 ? -1 : 1) : 0,
+          pace,
           emitChange: true,
         });
+      } else if (delta) {
+        this.move({ pace: 0 });
       }
 
       this.swiping = false;
@@ -213,20 +240,20 @@ export default createComponent({
     },
 
     getTargetActive(pace) {
-      const { active, count } = this;
+      const { active, count, maxCount } = this;
 
       if (pace) {
         if (this.loop) {
           return range(active + pace, -1, count);
         }
 
-        return range(active + pace, 0, count - 1);
+        return range(active + pace, 0, maxCount);
       }
 
       return active;
     },
 
-    getTargetOffset(targetActive, offset) {
+    getTargetOffset(targetActive, offset = 0) {
       let currentPosition = targetActive * this.size;
       if (!this.loop) {
         currentPosition = Math.min(currentPosition, -this.minOffset);
@@ -241,7 +268,7 @@ export default createComponent({
     },
 
     move({ pace = 0, offset = 0, emitChange }) {
-      const { loop, count, active, swipes, trackSize, minOffset } = this;
+      const { loop, count, active, children, trackSize, minOffset } = this;
 
       if (count <= 1) {
         return;
@@ -252,14 +279,14 @@ export default createComponent({
 
       // auto move first and last swipe in loop mode
       if (loop) {
-        if (swipes[0]) {
+        if (children[0] && targetOffset !== minOffset) {
           const outRightBound = targetOffset < minOffset;
-          swipes[0].offset = outRightBound ? trackSize : 0;
+          children[0].offset = outRightBound ? trackSize : 0;
         }
 
-        if (swipes[count - 1]) {
+        if (children[count - 1] && targetOffset !== 0) {
           const outLeftBound = targetOffset > 0;
-          swipes[count - 1].offset = outLeftBound ? -trackSize : 0;
+          children[count - 1].offset = outLeftBound ? -trackSize : 0;
         }
       }
 
@@ -381,7 +408,11 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        <div ref="track" style={this.trackStyle} class={bem('track')}>
+        <div
+          ref="track"
+          style={this.trackStyle}
+          class={bem('track', { vertical: this.vertical })}
+        >
           {this.slots()}
         </div>
         {this.genIndicator()}

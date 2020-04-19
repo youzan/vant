@@ -49,7 +49,7 @@ export function scrollTopTo(
     if ((isDown && current < to) || (!isDown && current > to)) {
       raf(animate);
     } else if (callback) {
-      callback();
+      raf(callback as FrameRequestCallback);
     }
   }
 

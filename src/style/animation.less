@@ -80,50 +80,60 @@
 
 .van-fade {
   &-enter-active {
-    animation: @animation-duration-base van-fade-in;
+    animation: @animation-duration-base van-fade-in both
+      @animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: @animation-duration-base van-fade-out;
+    animation: @animation-duration-base van-fade-out both
+      @animation-timing-function-leave;
   }
 }
 
 .van-slide-up {
   &-enter-active {
-    animation: van-slide-up-enter @animation-duration-base both ease;
+    animation: van-slide-up-enter @animation-duration-base both
+      @animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-up-leave @animation-duration-base both ease;
+    animation: van-slide-up-leave @animation-duration-base both
+      @animation-timing-function-leave;
   }
 }
 
 .van-slide-down {
   &-enter-active {
-    animation: van-slide-down-enter @animation-duration-base both ease;
+    animation: van-slide-down-enter @animation-duration-base both
+      @animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-down-leave @animation-duration-base both ease;
+    animation: van-slide-down-leave @animation-duration-base both
+      @animation-timing-function-leave;
   }
 }
 
 .van-slide-left {
   &-enter-active {
-    animation: van-slide-left-enter @animation-duration-base both ease;
+    animation: van-slide-left-enter @animation-duration-base both
+      @animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-left-leave @animation-duration-base both ease;
+    animation: van-slide-left-leave @animation-duration-base both
+      @animation-timing-function-leave;
   }
 }
 
 .van-slide-right {
   &-enter-active {
-    animation: van-slide-right-enter @animation-duration-base both ease;
+    animation: van-slide-right-enter @animation-duration-base both
+      @animation-timing-function-enter;
   }
 
   &-leave-active {
-    animation: van-slide-right-leave @animation-duration-base both ease;
+    animation: van-slide-right-leave @animation-duration-base both
+      @animation-timing-function-leave;
   }
 }

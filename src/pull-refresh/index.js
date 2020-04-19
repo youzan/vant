@@ -198,14 +198,14 @@ export default createComponent({
   },
 
   render() {
-    const style = {
+    const trackStyle = {
       transitionDuration: `${this.duration}ms`,
       transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : '',
     };
 
     return (
       <div class={bem()}>
-        <div ref="track" class={bem('track')} style={style}>
+        <div ref="track" class={bem('track')} style={trackStyle}>
           <div class={bem('head')} style={this.headStyle}>
             {this.genStatus()}
           </div>

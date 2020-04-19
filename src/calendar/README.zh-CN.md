@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       date: '',
-      show: false
+      show: false,
     };
   },
   methods: {
@@ -39,8 +39,34 @@ export default {
     onConfirm(date) {
       this.show = false;
       this.date = this.formatDate(date);
-    }
-  }
+    },
+  },
+};
+```
+
+### 选择多个日期
+
+设置`type`为`multiple`后可以选择多个日期，此时`confirm`事件返回的 date 为数组结构，数组包含若干个选中的日期。
+
+```html
+<van-cell title="选择多个日期" :value="text" @click="show = true" />
+<van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      text: '',
+      show: false,
+    };
+  },
+  methods: {
+    onConfirm(date) {
+      this.show = false;
+      this.text = `选择了 ${date.length} 个日期`;
+    },
+  },
 };
 ```
 
@@ -58,7 +84,7 @@ export default {
   data() {
     return {
       date: '',
-      show: false
+      show: false,
     };
   },
   methods: {
@@ -69,8 +95,8 @@ export default {
       const [start, end] = date;
       this.show = false;
       this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -95,11 +121,7 @@ export default {
 通过`min-date`和`max-date`定义日历的范围
 
 ```html
-<van-calendar
-  v-model="show"
-  :min-date="minDate"
-  :max-date="maxDate"
-/>
+<van-calendar v-model="show" :min-date="minDate" :max-date="maxDate" />
 ```
 
 ```js
@@ -108,9 +130,9 @@ export default {
     return {
       show: false,
       minDate: new Date(2010, 0, 1),
-      maxDate: new Date(2010, 0, 31)
+      maxDate: new Date(2010, 0, 31),
     };
-  }
+  },
 };
 ```
 
@@ -132,11 +154,7 @@ export default {
 通过传入`formatter`函数来对日历上每一格的内容进行格式化
 
 ```html
-<van-calendar
-  v-model="show"
-  type="range"
-  :formatter="formatter"
-/>
+<van-calendar v-model="show" type="range" :formatter="formatter" />
 ```
 
 ```js
@@ -150,7 +168,7 @@ export default {
         if (date === 1) {
           day.topInfo = '劳动节';
         } else if (date === 4) {
-          day.topInfo = '五四青年节';
+          day.topInfo = '青年节';
         } else if (date === 11) {
           day.text = '今天';
         }
@@ -163,9 +181,9 @@ export default {
       }
 
       return day;
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### 自定义弹出位置
@@ -173,11 +191,7 @@ export default {
 通过`position`属性自定义弹出层的弹出位置，可选值为`top`、`left`、`right`
 
 ```html
-<van-calendar
-  v-model="show"
-  :round="false"
-  position="right"
-/>
+<van-calendar v-model="show" :round="false" position="right" />
 ```
 
 ### 日期区间最大范围
@@ -185,11 +199,7 @@ export default {
 选择日期区间时，可以通过`max-range`属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案
 
 ```html
-<van-calendar
-  type="range"
-  :max-range="3"
-  :style="{ height: '500px' }"
-/>
+<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
 ```
 
 ### 平铺展示
@@ -210,49 +220,66 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 是否显示日历弹窗 | *boolean* | `false` |
-| type | 选择类型，`single`表示选择单个日期，<br>`range`表示选择日期区间 | *string* | `single` |
-| title | 日历标题 | *string* | `日期选择` |
-| color | 颜色，对底部按钮和选中日期生效 | *string* | `#ee0a24` |
-| min-date | 最小日期 | *Date*  | 当前日期 |
-| max-date | 最大日期 | *Date*  | 当前日期的六个月后 |
-| default-date | 默认选中的日期 | *Date \| Date[]* | 今天 |
-| row-height | 日期行高 | *number \| string* | `64` |
-| formatter | 日期格式化函数 | *(day: Day) => Day* | - |
-| position | 弹出位置，可选值为 `top` `right` `left` | *string* | `bottom` |
-| poppable | 是否以弹层的形式展示日历 | *boolean* | `true` |
-| round | 是否显示圆角弹窗 | *boolean* | `true` |
-| show-mark | 是否显示月份背景水印 | *boolean* | `true` |
-| show-confirm | 是否展示确认按钮 | *boolean* | `true` |
-| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | *boolean* | `false` |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `true` |
-| confirm-text | 确认按钮的文字 | *string* | `确定` |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | *string* | `确定` |
-| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | *number \| string* | - |
-| range-prompt `v2.4.3` | 选择超过区间范围时的提示文案 | *string* | `选择天数不能超过 xx 天` |
-| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
+| --- | --- | --- | --- |
+| type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_ | `single` |
+| title | 日历标题 | _string_ | `日期选择` |
+| color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
+| min-date | 可选择的最小日期 | _Date_ | 当前日期 |
+| max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
+| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | _Date \| Date[]_ | 今天 |
+| row-height | 日期行高 | _number \| string_ | `64` |
+| formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
+| poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
+| show-mark | 是否显示月份背景水印 | _boolean_ | `true` |
+| show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
+| show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
+| show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
+| confirm-text | 确认按钮的文字 | _string_ | `确定` |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
+
+### Poppable Props
+
+当 Canlendar 的 `poppable` 为 `true` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model | 是否显示日历弹窗 | _boolean_ | `false` |
+| position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
+| round | 是否显示圆角弹窗 | _boolean_ | `true` |
+| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+
+### Range Props
+
+当 Canlendar 的 `type` 为 `range` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
+| range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `fasle` |
 
 ### Day 数据结构
 
 日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容
 
 | 键名 | 说明 | 类型 |
-|------|------|------|
-| date | 日期对应的 Date 对象 | *Date* |
-| type | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | *string* |
-| text | 中间显示的文字 | *string* |
-| topInfo | 上方的提示信息 | *string* |
-| bottomInfo | 下方的提示信息 | *string* |
-| className | 额外类名 | *string* |
+| --- | --- | --- |
+| date | 日期对应的 Date 对象 | _Date_ |
+| type | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| text | 中间显示的文字 | _string_ |
+| topInfo | 上方的提示信息 | _string_ |
+| bottomInfo | 下方的提示信息 | _string_ |
+| className | 额外类名 | _string_ |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| select | 点击任意日期时触发 | *value: Date \| Date[]* |
-| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | *value: Date \| Date[]* |
+| --- | --- | --- |
+| select | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
 | open `v2.5.2` | 打开弹出层时触发 | - |
 | close `v2.5.2` | 关闭弹出层时触发 | - |
 | opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |
@@ -260,18 +287,18 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| title | 自定义标题 |
+| 名称   | 说明               |
+| ------ | ------------------ |
+| title  | 自定义标题         |
 | footer | 自定义底部区域内容 |
 
 ### 方法
 
 通过 ref 可以获取到 Calendar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| reset | 重置选中的日期到默认值 | - | - |
+| 方法名 | 说明                   | 参数 | 返回值 |
+| ------ | ---------------------- | ---- | ------ |
+| reset  | 重置选中的日期到默认值 | -    | -      |
 
 ## 常见问题
 

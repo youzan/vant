@@ -5,6 +5,7 @@ export { addUnit } from './format/unit';
 
 export const isServer: boolean = Vue.prototype.$isServer;
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
 export function isDef(val: any): boolean {
@@ -27,7 +28,7 @@ export function get(object: any, path: string): any {
   const keys = path.split('.');
   let result = object;
 
-  keys.forEach(key => {
+  keys.forEach((key) => {
     result = isDef(result[key]) ? result[key] : '';
   });
 

@@ -22,15 +22,15 @@ Vue.use(Popup);
 export default {
   data() {
     return {
-      show: false
-    }
+      show: false,
+    };
   },
 
   methods: {
     showPopup() {
       this.show = true;
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -39,11 +39,7 @@ export default {
 Use `position` prop to set popup display position
 
 ```html
-<van-popup
-  v-model="show"
-  position="top"
-  :style="{ height: '30%' }"
-/>
+<van-popup v-model="show" position="top" :style="{ height: '30%' }" />
 ```
 
 ### Close Icon
@@ -76,12 +72,7 @@ Use `position` prop to set popup display position
 ### Round Corner
 
 ```html
-<van-popup
-  v-model="show"
-  round
-  position="bottom"
-  :style="{ height: '30%' }"
-/>
+<van-popup v-model="show" round position="bottom" :style="{ height: '30%' }" />
 ```
 
 ### Get Container
@@ -104,9 +95,9 @@ export default {
   methods: {
     getContainer() {
       return document.querySelector('.my-container');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 > Tips: The get-container prop cannot be used on the root node
@@ -116,32 +107,32 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Whether to show popup | *boolean* | `false` |
-| overlay | Whether to show overlay | *boolean* | `true` |
-| position | Can be set to `top` `bottom` `right` `left` | *string* | `center` |
-| overlay-class | Custom overlay class | *string* | - |
-| overlay-style | Custom overlay style | *object* | - |
-| duration | Transition duration, unit second | *number \| string* | `0.3` |
-| round `v2.0.7` | Whether to show round corner | *boolean* | `false` |
-| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
-| lazy-render | Whether to lazy render util appeared | *boolean* | `true` |
-| close-on-popstate `v2.2.10` | Whether to close when popstate | *boolean* | `false` |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
-| closeable `v2.2.0` | Whether to show close icon | *boolean* | `false` |
-| close-icon `v2.2.0` | Close icon name | *string* | `cross` |
-| close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | *string* | `top-right` |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | - |
-| get-container | Return the mount node for Popup | *string \| () => Element* | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
+| --- | --- | --- | --- |
+| v-model (value) | Whether to show popup | _boolean_ | `false` |
+| overlay | Whether to show overlay | _boolean_ | `true` |
+| position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
+| overlay-class | Custom overlay class | _string_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| round `v2.0.7` | Whether to show round corner | _boolean_ | `false` |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
+| lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
+| close-on-popstate `v2.2.10` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| closeable `v2.2.0` | Whether to show close icon | _boolean_ | `false` |
+| close-icon `v2.2.0` | Close icon name | _string_ | `cross` |
+| close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| get-container | Return the mount node for Popup | _string \| () => Element_ | - |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when click Popup | *event: Event* |
-| open | Triggered when open Popup | - |
-| close | Triggered when close Popup | - |
-| opened | Triggered when opened Popup | - |
-| closed | Triggered when closed Popup | - |
-| click-overlay | Triggered when click overlay | - |
+| Event         | Description                  | Arguments      |
+| ------------- | ---------------------------- | -------------- |
+| click         | Triggered when click Popup   | _event: Event_ |
+| open          | Triggered when open Popup    | -              |
+| close         | Triggered when close Popup   | -              |
+| opened        | Triggered when opened Popup  | -              |
+| closed        | Triggered when closed Popup  | -              |
+| click-overlay | Triggered when click overlay | -              |

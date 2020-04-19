@@ -33,8 +33,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      show: true
-    }
+      show: true,
+    };
   },
   methods: {
     onInput(value) {
@@ -42,9 +42,9 @@ export default {
     },
     onDelete() {
       Toast('delete');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Custom Style
@@ -84,10 +84,10 @@ export default {
   data() {
     return {
       show: false,
-      value: ''
-    }
-  }
-}
+      value: '',
+    };
+  },
+};
 ```
 
 ### Bottom Left Button Content
@@ -95,7 +95,7 @@ export default {
 Use `extra-key` prop to set the content of bottom left button
 
 ```html
-<van-button plain type="primary" @touchstart.stop="show = true'">
+<van-button plain type="primary" @touchstart.stop="show = true">
   Show Id Card Number Keyboard
 </van-button>
 
@@ -114,7 +114,7 @@ Use `extra-key` prop to set the content of bottom left button
 Use `title` prop to set keyboard title
 
 ```html
-<van-button plain type="info" @touchstart.stop="show = true'">
+<van-button plain type="info" @touchstart.stop="show = true">
   Show Custom Title Keyboard
 </van-button>
 
@@ -134,25 +134,25 @@ Use `title` prop to set keyboard title
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model `v2.0.2` | Current value | *string* | - |
-| show | Whether to show keyboard | *boolean* | - |
-| theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` |
-| title | Keyboard title | *string* | - |
-| maxlength `v2.0.2` | Value maxlength | *number \| string* | - |
-| transition | Whether to show transition animation | *boolean* | `true` |
-| z-index | Keyboard z-index | *number \| string* | `100` |
-| extra-key | Content of bottom left key | *string* | `''` |
-| close-button-text | Close button text | *string* | `-` |
-| delete-button-text | Delete button text | *string* | `delete` |
-| show-delete-key | Whether to show delete button | *boolean* | `true` |
-| hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model `v2.0.2` | Current value | _string_ | - |
+| show | Whether to show keyboard | _boolean_ | - |
+| theme | Keyboard theme，can be set to `default` `custom` | _string_ | `default` |
+| title | Keyboard title | _string_ | - |
+| maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
+| transition | Whether to show transition animation | _boolean_ | `true` |
+| z-index | Keyboard z-index | _number \| string_ | `100` |
+| extra-key | Content of bottom left key | _string_ | `''` |
+| close-button-text | Close button text | _string_ | `-` |
+| delete-button-text | Delete button text | _string_ | `delete` |
+| show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
+| hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
+| --- | --- | --- |
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |
 | close | Triggered when click close button | - |
@@ -162,8 +162,8 @@ Use `title` prop to set keyboard title
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| delete | Custom delete key content |
-| extra-key | Custom extra key content |
+| Name       | Description               |
+| ---------- | ------------------------- |
+| delete     | Custom delete key content |
+| extra-key  | Custom extra key content  |
 | title-left | Custom title left content |

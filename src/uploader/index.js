@@ -24,6 +24,7 @@ export default createComponent({
 
   props: {
     disabled: Boolean,
+    lazyLoad: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
@@ -50,6 +51,10 @@ export default createComponent({
       default: Number.MAX_VALUE,
     },
     deletable: {
+      type: Boolean,
+      default: true,
+    },
+    showUpload: {
       type: Boolean,
       default: true,
     },
@@ -113,8 +118,12 @@ export default createComponent({
 
         if (isPromise(response)) {
           response
-            .then(() => {
-              this.readFile(files);
+            .then((data) => {
+              if (data) {
+                this.readFile(data);
+              } else {
+                this.readFile(files);
+              }
             })
             .catch(this.resetInput);
 
@@ -135,8 +144,8 @@ export default createComponent({
           files = files.slice(0, maxCount);
         }
 
-        Promise.all(files.map(file => readFile(file, this.resultType))).then(
-          contents => {
+        Promise.all(files.map((file) => readFile(file, this.resultType))).then(
+          (contents) => {
             const fileList = files.map((file, index) => {
               const result = { file, status: '' };
 
@@ -151,7 +160,7 @@ export default createComponent({
           }
         );
       } else {
-        readFile(files, this.resultType).then(content => {
+        readFile(files, this.resultType).then((content) => {
           const result = { file: files, status: '' };
 
           if (content) {
@@ -219,8 +228,8 @@ export default createComponent({
         return;
       }
 
-      const imageFiles = this.fileList.filter(item => isImageFile(item));
-      const imageContents = imageFiles.map(item => item.content || item.url);
+      const imageFiles = this.fileList.filter((item) => isImageFile(item));
+      const imageContents = imageFiles.map((item) => item.content || item.url);
 
       this.imagePreview = ImagePreview({
         images: imageContents,
@@ -236,6 +245,17 @@ export default createComponent({
     closeImagePreview() {
       if (this.imagePreview) {
         this.imagePreview.close();
+      }
+    },
+
+    // @exposed-api
+    chooseFile() {
+      if (this.disabled) {
+        return;
+      }
+      /* istanbul ignore else */
+      if (this.$refs.input) {
+        this.$refs.input.click();
       }
     },
 
@@ -268,7 +288,7 @@ export default createComponent({
         <Icon
           name="clear"
           class={bem('preview-delete')}
-          onClick={event => {
+          onClick={(event) => {
             event.stopPropagation();
             this.onDelete(item, index);
           }}
@@ -282,6 +302,7 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
+          lazyLoad={this.lazyLoad}
           onClick={() => {
             this.onPreviewImage(item);
           }}
@@ -322,7 +343,7 @@ export default createComponent({
     },
 
     genUpload() {
-      if (this.fileList.length >= this.maxCount) {
+      if (this.fileList.length >= this.maxCount || !this.showUpload) {
         return;
       }
 

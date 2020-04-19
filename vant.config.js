@@ -177,7 +177,7 @@ module.exports = {
             items: [
               {
                 path: 'action-sheet',
-                title: 'ActionSheet 上拉菜单',
+                title: 'ActionSheet 动作面板',
               },
               {
                 path: 'dialog',
@@ -202,6 +202,10 @@ module.exports = {
               {
                 path: 'pull-refresh',
                 title: 'PullRefresh 下拉刷新',
+              },
+              {
+                path: 'share-sheet',
+                title: 'ShareSheet 分享面板',
               },
               {
                 path: 'swipe-cell',
@@ -233,12 +237,16 @@ module.exports = {
                 title: 'Divider 分割线',
               },
               {
+                path: 'empty',
+                title: 'Empty 空状态',
+              },
+              {
                 path: 'image-preview',
                 title: 'ImagePreview 图片预览',
               },
               {
                 path: 'lazyload',
-                title: 'Lazyload 图片懒加载',
+                title: 'Lazyload 懒加载',
               },
               {
                 path: 'list',
@@ -547,6 +555,10 @@ module.exports = {
                 title: 'PullRefresh',
               },
               {
+                path: 'share-sheet',
+                title: 'ShareSheet',
+              },
+              {
                 path: 'swipe-cell',
                 title: 'SwipeCell',
               },
@@ -574,6 +586,10 @@ module.exports = {
               {
                 path: 'divider',
                 title: 'Divider',
+              },
+              {
+                path: 'empty',
+                title: 'Empty',
               },
               {
                 path: 'image-preview',

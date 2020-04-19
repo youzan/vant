@@ -36,7 +36,7 @@ export default {
     return {
       list: [],
       loading: false,
-      finished: false
+      finished: false,
     };
   },
   methods: {
@@ -56,9 +56,9 @@ export default {
           this.finished = true;
         }
       }, 1000);
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### 错误提示
@@ -82,17 +82,17 @@ export default {
     return {
       list: [],
       error: false,
-      loading: false
+      loading: false,
     };
   },
   methods: {
     onLoad() {
       fetchSomeThing().catch(() => {
         this.error = true;
-      })
-    }
-  }
-}
+      });
+    },
+  },
+};
 ```
 
 ### 下拉刷新
@@ -119,7 +119,7 @@ export default {
       list: [],
       loading: false,
       finished: false,
-      refreshing: false
+      refreshing: false,
     };
   },
   methods: {
@@ -148,9 +148,9 @@ export default {
       // 将 loading 设置为 true，表示处于加载状态
       this.loading = true;
       this.onLoad();
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## API
@@ -158,39 +158,39 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 是否处于加载状态，加载过程中不触发`load`事件 | *boolean* | `false` |
-| finished | 是否已加载完成，加载完成后不再触发`load`事件 | *boolean* | `false` |
-| error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | *boolean* | `false` |
-| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | *number \| string* | `300` |
-| loading-text | 加载过程中的提示文案 | *string* | `加载中...` |
-| finished-text | 加载完成后的提示文案 | *string* | - |
-| error-text | 加载失败后的提示文案 | *string* | - |
-| immediate-check | 是否在初始化时立即执行滚动位置检查 | *boolean* | `true` |
-| direction | 滚动触发加载的方向，可选值为`up` | *string* | `down` |
+| --- | --- | --- | --- |
+| v-model | 是否处于加载状态，加载过程中不触发`load`事件 | _boolean_ | `false` |
+| finished | 是否已加载完成，加载完成后不再触发`load`事件 | _boolean_ | `false` |
+| error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | _boolean_ | `false` |
+| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | _number \| string_ | `300` |
+| loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
+| finished-text | 加载完成后的提示文案 | _string_ | - |
+| error-text | 加载失败后的提示文案 | _string_ | - |
+| immediate-check | 是否在初始化时立即执行滚动位置检查 | _boolean_ | `true` |
+| direction | 滚动触发加载的方向，可选值为`up` | _string_ | `down` |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| load | 滚动条与底部距离小于 offset 时触发 | - |
+| 事件名 | 说明                               | 回调参数 |
+| ------ | ---------------------------------- | -------- |
+| load   | 滚动条与底部距离小于 offset 时触发 | -        |
 
 ### 方法
 
 通过 ref 可以获取到 List 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | check | 检查当前的滚动位置，若已滚动至底部，则会触发 load 事件 | - | - |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| default | 列表内容 |
-| loading | 自定义底部加载中提示 |
+| 名称     | 说明                       |
+| -------- | -------------------------- |
+| default  | 列表内容                   |
+| loading  | 自定义底部加载中提示       |
 | finished | 自定义加载完成后的提示文案 |
-| error | 自定义加载失败后的提示文案 |
+| error    | 自定义加载失败后的提示文案 |
 
 ## 常见问题
 
@@ -239,7 +239,6 @@ html,
 body {
   overflow-x: hidden;
 }
-
 ```
 
 这个问题的原因是当元素设置了`overflow-x: hidden`样式时，该元素的`overflow-y`会被浏览器设置为`auto`，而不是默认值`visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加`height: 100%`样式。

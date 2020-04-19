@@ -1,4 +1,3 @@
-// @ts-ignore
 import execa from 'execa';
 import { consola } from './logger';
 import { execSync } from 'child_process';

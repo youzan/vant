@@ -70,7 +70,7 @@ function doBindEvent() {
   const disabledExpr = this.el.getAttribute('waterfall-disabled');
   let disabled = false;
   if (disabledExpr) {
-    this.vm.$watch(disabledExpr, value => {
+    this.vm.$watch(disabledExpr, (value) => {
       this.disabled = value;
       this.scrollEventListener();
     });
@@ -99,7 +99,6 @@ function startBind(el) {
 function doCheckStartBind(el) {
   const context = el[CONTEXT];
 
-  // eslint-disable-next-line no-underscore-dangle
   if (context.vm._isMounted) {
     startBind(el);
   } else {
@@ -109,7 +108,7 @@ function doCheckStartBind(el) {
   }
 }
 
-export default function(type) {
+export default function (type) {
   return {
     bind(el, binding, vnode) {
       if (!el[CONTEXT]) {

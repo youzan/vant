@@ -1,72 +1,72 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <van-picker :columns="$t('textColumns')" @change="onChange1" />
+    <demo-block :title="t('basicUsage')">
+      <van-picker :columns="t('textColumns')" @change="onChange1" />
     </demo-block>
 
-    <demo-block :title="$t('defaultIndex')">
+    <demo-block :title="t('defaultIndex')">
       <van-picker
-        :columns="$t('textColumns')"
+        :columns="t('textColumns')"
         :default-index="2"
         @change="onChange1"
       />
     </demo-block>
 
-    <demo-block :title="$t('showToolbar')">
+    <demo-block :title="t('showToolbar')">
       <van-picker
         show-toolbar
-        :title="$t('title')"
-        :columns="$t('textColumns')"
+        :title="t('title')"
+        :columns="t('textColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
     </demo-block>
 
-    <demo-block :title="$t('multipleColumns')">
+    <demo-block :title="t('multipleColumns')">
       <van-picker
         show-toolbar
-        :title="$t('title')"
-        :columns="$t('dateColumns')"
+        :title="t('title')"
+        :columns="t('dateColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
     </demo-block>
 
-    <demo-block :title="$t('cascade')">
+    <demo-block v-if="!isWeapp" :title="t('cascade')">
       <van-picker
         show-toolbar
-        :title="$t('title')"
-        :columns="$t('cascadeColumns')"
+        :title="t('title')"
+        :columns="t('cascadeColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
     </demo-block>
 
-    <demo-block :title="$t('disableOption')">
-      <van-picker :columns="$t('disabledColumns')" />
+    <demo-block :title="t('disableOption')">
+      <van-picker :columns="t('disabledColumns')" />
     </demo-block>
 
-    <demo-block :title="$t('setColumnValues')">
+    <demo-block :title="t('setColumnValues')">
       <van-picker :columns="columns" @change="onChange2" />
     </demo-block>
 
-    <demo-block :title="$t('loadingStatus')">
+    <demo-block :title="t('loadingStatus')">
       <van-picker loading :columns="columns" />
     </demo-block>
 
-    <demo-block :title="$t('withPopup')">
+    <demo-block v-if="!isWeapp" :title="t('withPopup')">
       <van-field
         readonly
         clickable
-        :label="$t('city')"
+        :label="t('city')"
         :value="fieldValue"
-        :placeholder="$t('chooseCity')"
+        :placeholder="t('chooseCity')"
         @click="onClickField"
       />
       <van-popup v-model="showPicker" position="bottom">
         <van-picker
           show-toolbar
-          :columns="$t('textColumns')"
+          :columns="t('textColumns')"
           @cancel="onCancel2"
           @confirm="onConfirm2"
         />
@@ -139,7 +139,7 @@ export default {
 
   computed: {
     columns() {
-      const column = this.$t('column3');
+      const column = this.t('column3');
       return [
         {
           values: Object.keys(column),
@@ -156,19 +156,19 @@ export default {
 
   methods: {
     onChange1(picker, value, index) {
-      this.$toast(this.$t('toastContent', value, index));
+      this.$toast(this.t('toastContent', value, index));
     },
 
     onChange2(picker, values) {
-      picker.setColumnValues(1, this.$t('column3')[values[0]]);
+      picker.setColumnValues(1, this.t('column3')[values[0]]);
     },
 
     onConfirm(value, index) {
-      this.$toast(this.$t('toastContent', value, index));
+      this.$toast(this.t('toastContent', value, index));
     },
 
     onCancel() {
-      this.$toast(this.$t('cancel'));
+      this.$toast(this.t('cancel'));
     },
 
     onClickField() {

@@ -17,6 +17,8 @@ import { commitLint } from './commands/commit-lint';
 
 version(`@vant/cli ${packageJson.version}`);
 
+process.env.VANT_CLI_VERSION = packageJson.version;
+
 command('dev')
   .description('Run webpack dev server')
   .action(dev);
@@ -62,4 +64,4 @@ command('commit-lint')
   .description('Lint commit message')
   .action(commitLint);
 
-parse(process.argv);
+parse();

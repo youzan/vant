@@ -115,17 +115,17 @@ test('filter value during user input', () => {
   const input = wrapper.find('.van-stepper__input');
   input.element.value = '';
   input.trigger('input');
-  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('input')[0][0]).toEqual('');
 
   input.element.value = 'a';
   input.trigger('input');
   expect(input.element.value).toEqual('');
-  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('input')[1]).toBeFalsy();
 
   input.element.value = '2';
   input.trigger('input');
   expect(input.element.value).toEqual('2');
-  expect(wrapper.emitted('input')[0][0]).toEqual('2');
+  expect(wrapper.emitted('input')[1][0]).toEqual('2');
 });
 
 test('shoud watch value and format it', () => {
@@ -172,16 +172,17 @@ test('stepper blur', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
   const input = wrapper.find('input');
   input.element.value = '';
   input.trigger('input');
-  input.trigger('blur');
+  expect(wrapper.emitted('input')[0][0]).toEqual('');
 
-  expect(wrapper.emitted('input')[0][0]).toEqual(3);
+  input.trigger('blur');
+  expect(wrapper.emitted('input')[1][0]).toEqual(3);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
 

@@ -26,7 +26,11 @@ export default {
 
   methods: {
     onBack() {
-      history.back();
+      if (history.length > 1) {
+        history.back();
+      } else {
+        this.$router.replace('/');
+      }
     },
   },
 };

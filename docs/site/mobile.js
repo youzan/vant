@@ -21,7 +21,7 @@ let demoUid = 0;
 // helper for demo locales
 Vue.mixin({
   computed: {
-    $t() {
+    t() {
       const { name } = this.$options;
       const { lang = 'zh-CN' } = (this.$route && this.$route.meta) || {};
       const prefix = name ? camelize(name) + '.' : '';
@@ -49,7 +49,7 @@ Vue.mixin({
       const locales = {};
       const camelizedName = camelize(name);
 
-      Object.keys(i18n).forEach(key => {
+      Object.keys(i18n).forEach((key) => {
         locales[key] = { [camelizedName]: i18n[key] };
       });
 
@@ -60,7 +60,7 @@ Vue.mixin({
 
 // switch lang after routing
 if (window.vueRouter) {
-  window.vueRouter.afterEach(to => {
+  window.vueRouter.afterEach((to) => {
     const { lang } = to.meta || {};
 
     if (lang) {

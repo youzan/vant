@@ -24,10 +24,10 @@ Vue.use(Panel);
 ```html
 <van-panel title="Title" desc="Description" status="Status">
   <div>Content</div>
-  <div slot="footer">
+  <template #footer>
     <van-button size="small">Button</van-button>
     <van-button size="small" type="danger">Button</van-button>
-  </div>
+  </template>
 </van-panel>
 ```
 
@@ -35,17 +35,17 @@ Vue.use(Panel);
 
 ### Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| icon | Left Icon | *string* | - |
-| title | Title | *string* | - |
-| desc | Description | *string* | - |
-| status | Status | *string* | - |
+| Attribute | Description | Type     | Default |
+| --------- | ----------- | -------- | ------- |
+| icon      | Left Icon   | _string_ | -       |
+| title     | Title       | _string_ | -       |
+| desc      | Description | _string_ | -       |
+| status    | Status      | _string_ | -       |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| default | Default slot |
-| header | Custom header |
-| footer | Custom footer |
+| Name    | Description   |
+| ------- | ------------- |
+| default | Default slot  |
+| header  | Custom header |
+| footer  | Custom footer |

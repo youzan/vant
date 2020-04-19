@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('title1')">
+    <demo-block :title="t('title1')">
       <van-datetime-picker
         v-model="currentDate1"
         type="datetime"
@@ -9,7 +9,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="t('title2')">
       <van-datetime-picker
         v-model="currentDate2"
         type="date"
@@ -18,7 +18,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="t('title3')">
       <van-datetime-picker
         v-model="currentDate3"
         type="year-month"
@@ -28,7 +28,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title4')">
+    <demo-block :title="t('title4')">
       <van-datetime-picker
         v-model="currentTime1"
         type="time"
@@ -37,7 +37,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('optionFilter')">
+    <demo-block :title="t('optionFilter')">
       <van-datetime-picker
         v-model="currentTime2"
         type="time"
@@ -85,17 +85,17 @@ export default {
   methods: {
     formatter(type, value) {
       if (type === 'year') {
-        return value + this.$t('year');
+        return value + this.t('year');
       }
       if (type === 'month') {
-        return value + this.$t('month');
+        return value + this.t('month');
       }
       return value;
     },
 
     filter(type, values) {
       if (type === 'minute') {
-        return values.filter(value => value % 5 === 0);
+        return values.filter((value) => value % 5 === 0);
       }
 
       return values;

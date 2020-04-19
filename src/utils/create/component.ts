@@ -43,7 +43,7 @@ export function unifySlots(context: RenderContext) {
   const scopedSlots = context.scopedSlots || context.data.scopedSlots || {};
   const slots = context.slots();
 
-  Object.keys(slots).forEach(key => {
+  Object.keys(slots).forEach((key) => {
     if (!scopedSlots[key]) {
       scopedSlots[key] = () => slots[key];
     }
@@ -66,7 +66,7 @@ function transformFunctionComponent(
 }
 
 export function createComponent(name: string) {
-  return function<Props = DefaultProps, Events = {}, Slots = {}>(
+  return function <Props = DefaultProps, Events = {}, Slots = {}>(
     sfc: VantComponentOptions | FunctionComponent
   ): TsxComponent<Props, Events, Slots> {
     if (isFunction(sfc)) {

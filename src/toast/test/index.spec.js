@@ -25,7 +25,7 @@ test('create a forbidClick toast', async () => {
   ).toBeFalsy();
 });
 
-it('toast disappeared after duration', async () => {
+test('toast disappeared after duration', async () => {
   const toast = Toast({
     duration: 10,
   });

@@ -166,6 +166,7 @@ Button.props = {
   loading: Boolean,
   hairline: Boolean,
   disabled: Boolean,
+  iconPrefix: String,
   nativeType: String,
   loadingText: String,
   loadingType: String,

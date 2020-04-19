@@ -1,7 +1,7 @@
 import { mount } from '../../../test';
 import Button from '..';
 
-test('loading size', () => {
+test('loading-size prop', () => {
   const wrapper = mount(Button, {
     propsData: {
       loading: true,
@@ -81,4 +81,15 @@ test('hide border when color is gradient', () => {
   });
 
   expect(wrapper.element.style.border).toEqual('0px');
+});
+
+test('icon-prefix prop', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      icon: 'success',
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

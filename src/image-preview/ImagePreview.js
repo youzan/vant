@@ -8,11 +8,11 @@ import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 
 // Components
+import Icon from '../icon';
 import Image from '../image';
 import Swipe from '../swipe';
 import Loading from '../loading';
 import SwipeItem from '../swipe-item';
-import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image-preview');
 
@@ -33,7 +33,6 @@ export default createComponent({
 
   props: {
     className: null,
-    lazyLoad: Boolean,
     asyncClose: Boolean,
     showIndicators: Boolean,
     images: {
@@ -103,8 +102,9 @@ export default createComponent({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this
-          .moveX / scale}px, ${this.moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${
+          this.moveX / scale
+        }px, ${this.moveY / scale}px)`;
       }
 
       return style;
@@ -112,6 +112,8 @@ export default createComponent({
   },
 
   watch: {
+    startPosition: 'setActive',
+
     value(val) {
       if (val) {
         this.setActive(+this.startPosition);
@@ -124,10 +126,6 @@ export default createComponent({
           url: this.images[this.active],
         });
       }
-    },
-
-    startPosition(val) {
-      this.setActive(val);
     },
 
     shouldRender: {
@@ -321,6 +319,7 @@ export default createComponent({
       return (
         <Swipe
           ref="swipe"
+          lazyRender
           loop={this.loop}
           class={bem('swipe')}
           indicatorColor="white"
@@ -335,7 +334,6 @@ export default createComponent({
                 src={image}
                 fit="contain"
                 class={bem('image')}
-                lazyLoad={this.lazyLoad}
                 scopedSlots={imageSlots}
                 style={index === this.active ? this.imageStyle : null}
                 nativeOnTouchstart={this.onImageTouchStart}
@@ -361,6 +359,10 @@ export default createComponent({
         );
       }
     },
+
+    onClosed() {
+      this.$emit('closed');
+    },
   },
 
   render() {
@@ -369,7 +371,7 @@ export default createComponent({
     }
 
     return (
-      <transition name="van-fade">
+      <transition name="van-fade" onAfterLeave={this.onClosed}>
         <div vShow={this.value} class={[bem(), this.className]}>
           {this.genClose()}
           {this.genImages()}

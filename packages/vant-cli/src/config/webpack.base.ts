@@ -1,6 +1,5 @@
-// @ts-ignore
-import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import sass from 'sass';
+import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import {
   CACHE_DIR,
