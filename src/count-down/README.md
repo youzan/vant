@@ -44,21 +44,27 @@ export default {
 ```html
 <van-count-down :time="time">
   <template v-slot="timeData">
-    <span class="item">{{ timeData.hours }}</span>
-    <span class="item">{{ timeData.minutes }}</span>
-    <span class="item">{{ timeData.seconds }}</span>
+    <span class="block">{{ timeData.hours }}</span>
+    <span class="colon">:</span>
+    <span class="block">{{ timeData.minutes }}</span>
+    <span class="colon">:</span>
+    <span class="block">{{ timeData.seconds }}</span>
   </template>
 </van-count-down>
 
 <style>
-  .item {
+  .colon {
+    display: inline-block;
+    margin: 0 4px;
+    color: #ee0a24;
+  }
+  .block {
     display: inline-block;
     width: 22px;
-    margin-right: 5px;
     color: #fff;
     font-size: 12px;
     text-align: center;
-    background-color: #1989fa;
+    background-color: #ee0a24;
   }
 </style>
 ```
