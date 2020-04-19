@@ -16,6 +16,7 @@
 import VanDoc from './components';
 import { config, packageVersion } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
+import { scrollToAnchor } from './utils';
 
 export default {
   components: {
@@ -39,7 +40,7 @@ export default {
 
     langConfigs() {
       const { locales = {} } = config.site;
-      return Object.keys(locales).map(key => ({
+      return Object.keys(locales).map((key) => ({
         lang: key,
         label: locales[key].langLabel || '',
       }));
@@ -73,6 +74,12 @@ export default {
 
   created() {
     this.setTitle();
+  },
+
+  mounted() {
+    if (this.$route.hash) {
+      scrollToAnchor(this.$route.hash);
+    }
   },
 
   methods: {

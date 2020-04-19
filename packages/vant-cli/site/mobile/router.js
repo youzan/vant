@@ -1,5 +1,5 @@
 import { nextTick } from 'vue';
-import VueRouter from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import DemoHome from './components/DemoHome';
 import { decamelize } from '../common';
 import { demos, config } from 'site-mobile-shared';
@@ -81,8 +81,8 @@ function getRoutes() {
   return routes;
 }
 
-export const router = new VueRouter({
-  mode: 'hash',
+export const router = createRouter({
+  mode: createWebHashHistory(),
   routes: getRoutes(),
   scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });

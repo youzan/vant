@@ -1,5 +1,5 @@
 import { nextTick } from 'vue';
-import VueRouter from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import { isMobile, decamelize } from '../common';
 import { config, documents } from 'site-desktop-shared';
 import { getLang, setDefaultLang } from '../common/locales';
@@ -98,8 +98,8 @@ function getRoutes() {
   return routes;
 }
 
-export const router = new VueRouter({
-  mode: 'hash',
+export const router = createRouter({
+  history: createWebHashHistory(),
   routes: getRoutes(),
   scrollBehavior(to) {
     if (to.hash) {
