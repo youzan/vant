@@ -32,13 +32,15 @@
     </demo-block>
 
     <demo-block :title="t('bindValue')">
-      <van-field
-        readonly
-        clickable
-        :value="value"
-        :placeholder="t('clickToInput')"
-        @touchstart.native.stop="keyboard = 'bindValue'"
-      />
+      <van-cell-group>
+        <van-field
+          readonly
+          clickable
+          :value="value"
+          :placeholder="t('clickToInput')"
+          @touchstart.native.stop="keyboard = 'bindValue'"
+        />
+      </van-cell-group>
 
       <van-number-keyboard
         v-model="value"
@@ -138,6 +140,7 @@ export default {
 
 .demo-number-keyboard {
   padding-bottom: 300px;
+  background: @white;
 
   .van-button {
     margin-left: @padding-md;

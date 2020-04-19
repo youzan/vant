@@ -5,44 +5,244 @@ exports[`renders demo correctly 1`] = `
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
       弹出默认键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--default" name="van-slide-up">
-      <div class="van-number-keyboard__title van-hairline--top"><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
-      <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--extra">.</i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+    <div class="van-number-keyboard van-number-keyboard--with-title" name="van-slide-up">
+      <div class="van-number-keyboard__title"><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
+      <div class="van-number-keyboard__body">
+        <div class="van-number-keyboard__keys">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">1</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">2</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">3</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">4</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">5</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">6</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">7</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">8</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">9</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray">.</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">0</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray van-key--delete">删除</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div><button class="van-button van-button--info van-button--normal"><span class="van-button__text">
       弹出自定义键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--custom" style="display: none;" name="van-slide-up">
-      <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--middle">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--extra">.</i>
-        <div class="van-number-keyboard__sidebar"><i role="button" tabindex="0" class="van-hairline van-key van-key--delete van-key--big van-key--gray van-key--delete">删除</i><i role="button" tabindex="0" class="van-hairline van-key van-key--blue van-key--big van-key--close">完成</i></div>
+    <div class="van-number-keyboard" style="display: none;" name="van-slide-up">
+      <div class="van-number-keyboard__body">
+        <div class="van-number-keyboard__keys">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">1</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">2</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">3</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">4</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">5</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">6</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">7</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">8</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">9</div>
+          </div>
+          <div class="van-key__wrapper van-key__wrapper--wider">
+            <div role="button" tabindex="0" class="van-key">0</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">.</div>
+          </div>
+        </div>
+        <div class="van-number-keyboard__sidebar">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--large van-key--delete">删除</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--blue van-key--large">完成</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div>
-    <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
-      <div class="van-cell__value van-cell__value--alone van-field__value">
-        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="点此输入" class="van-field__control"></div>
+    <div class="van-cell-group van-hairline--top-bottom">
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body"><input type="text" readonly="readonly" placeholder="点此输入" class="van-field__control"></div>
+        </div>
       </div>
     </div>
-    <div class="van-number-keyboard van-number-keyboard--default" style="display: none;" name="van-slide-up">
-      <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--extra"></i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+    <div class="van-number-keyboard" style="display: none;" name="van-slide-up">
+      <div class="van-number-keyboard__body">
+        <div class="van-number-keyboard__keys">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">1</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">2</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">3</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">4</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">5</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">6</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">7</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">8</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">9</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray"></div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">0</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray van-key--delete">删除</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div><button class="van-button van-button--primary van-button--normal van-button--plain"><span class="van-button__text">
       弹出身份证号码键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--default" style="display: none;" name="van-slide-up">
-      <div class="van-number-keyboard__title van-hairline--top"><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
-      <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--extra">X</i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+    <div class="van-number-keyboard van-number-keyboard--with-title" style="display: none;" name="van-slide-up">
+      <div class="van-number-keyboard__title"><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
+      <div class="van-number-keyboard__body">
+        <div class="van-number-keyboard__keys">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">1</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">2</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">3</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">4</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">5</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">6</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">7</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">8</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">9</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray">X</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">0</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray van-key--delete">删除</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div><button class="van-button van-button--info van-button--normal van-button--plain"><span class="van-button__text">
       弹出自定义标题键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--default" style="display: none;" name="van-slide-up">
-      <div class="van-number-keyboard__title van-hairline--top"><span>键盘标题</span><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
-      <div class="van-number-keyboard__body"><i role="button" tabindex="0" class="van-hairline van-key">1</i><i role="button" tabindex="0" class="van-hairline van-key">2</i><i role="button" tabindex="0" class="van-hairline van-key">3</i><i role="button" tabindex="0" class="van-hairline van-key">4</i><i role="button" tabindex="0" class="van-hairline van-key">5</i><i role="button" tabindex="0" class="van-hairline van-key">6</i><i role="button" tabindex="0" class="van-hairline van-key">7</i><i role="button" tabindex="0" class="van-hairline van-key">8</i><i role="button" tabindex="0" class="van-hairline van-key">9</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--extra">.</i><i role="button" tabindex="0" class="van-hairline van-key">0</i><i role="button" tabindex="0" class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+    <div class="van-number-keyboard van-number-keyboard--with-title" style="display: none;" name="van-slide-up">
+      <div class="van-number-keyboard__title"><span>键盘标题</span><span role="button" tabindex="0" class="van-number-keyboard__close">完成</span></div>
+      <div class="van-number-keyboard__body">
+        <div class="van-number-keyboard__keys">
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">1</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">2</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">3</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">4</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">5</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">6</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">7</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">8</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">9</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray">.</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key">0</div>
+          </div>
+          <div class="van-key__wrapper">
+            <div role="button" tabindex="0" class="van-key van-key--gray van-key--delete">删除</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

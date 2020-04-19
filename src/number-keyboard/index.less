@@ -11,9 +11,15 @@
   background-color: @number-keyboard-background-color;
   user-select: none;
 
+  &--with-title {
+    border-radius: 20px 20px 0 0;
+  }
+
   &__title {
     position: relative;
+    box-sizing: content-box;
     height: @number-keyboard-title-height;
+    padding-top: 6px;
     color: @number-keyboard-title-color;
     font-size: @number-keyboard-title-font-size;
     line-height: @number-keyboard-title-height;
@@ -26,8 +32,14 @@
   }
 
   &__body {
-    position: relative;
-    box-sizing: border-box;
+    display: flex;
+    padding: 6px 0 0 6px;
+  }
+
+  &__keys {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
   }
 
   &__close {
@@ -39,24 +51,14 @@
     cursor: pointer;
 
     &:active {
-      background-color: @number-keyboard-key-active-color;
+      opacity: @active-opacity;
     }
   }
 
   &__sidebar {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: 25%;
-    height: @number-keyboard-key-height * 4;
-  }
-
-  &--custom {
-    .van-number-keyboard__body {
-      padding-right: 25%;
-    }
   }
 
   &--unfit {
@@ -65,52 +67,23 @@
 }
 
 .van-key {
-  display: inline-block;
-  width: 100% / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: @number-keyboard-key-height;
   font-size: @number-keyboard-key-font-size;
-  font-style: normal;
-  line-height: @number-keyboard-key-height;
-  text-align: center;
-  vertical-align: middle;
+  line-height: 1.5;
+  background-color: @white;
+  border-radius: @border-radius-lg;
   cursor: pointer;
 
-  &::after {
-    border-width: @border-width-base @border-width-base 0 0;
-  }
-
-  &--middle {
-    width: 200% / 3;
-  }
-
-  &--big {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  &--large {
+    height: 100%;
   }
 
   &--blue,
   &--delete {
     font-size: @number-keyboard-delete-font-size;
-  }
-
-  &--blue {
-    color: @number-keyboard-button-text-color;
-    background-color: @number-keyboard-button-background-color;
-
-    &.van-key--active {
-      background-color: @number-keyboard-button-background-color;
-    }
-
-    &::after {
-      border-color: @number-keyboard-button-background-color;
-    }
-
-    &:active {
-      background-color: darken(@number-keyboard-button-background-color, 10%);
-    }
   }
 
   &--gray {
@@ -119,5 +92,25 @@
 
   &--active {
     background-color: @number-keyboard-key-active-color;
+  }
+
+  &--blue {
+    color: @number-keyboard-button-text-color;
+    background-color: @number-keyboard-button-background-color;
+
+    &.van-key--active {
+      background-color: darken(@number-keyboard-button-background-color, 10%);
+    }
+  }
+
+  &__wrapper {
+    flex: 1;
+    flex-basis: 33%;
+    box-sizing: border-box;
+    padding: 0 6px 6px 0;
+
+    &--wider {
+      flex-basis: 66%;
+    }
   }
 }

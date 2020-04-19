@@ -1,6 +1,5 @@
 import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
-import { BORDER } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('key');
 
@@ -10,32 +9,15 @@ export default createComponent({
   props: {
     type: String,
     text: [Number, String],
-    theme: {
-      type: Array,
-      default: () => [],
-    },
+    color: String,
+    wider: Boolean,
+    large: Boolean,
   },
 
   data() {
     return {
       active: false,
     };
-  },
-
-  computed: {
-    className() {
-      const classNames = this.theme.slice(0);
-
-      if (this.active) {
-        classNames.push('active');
-      }
-
-      if (this.type) {
-        classNames.push(this.type);
-      }
-
-      return bem(classNames);
-    },
   },
 
   mounted() {
@@ -69,9 +51,22 @@ export default createComponent({
 
   render() {
     return (
-      <i role="button" tabindex="0" class={[BORDER, this.className]}>
-        {this.slots('default') || this.text}
-      </i>
+      <div class={bem('wrapper', { wider: this.wider })}>
+        <div
+          role="button"
+          tabindex="0"
+          class={bem([
+            this.color,
+            {
+              large: this.large,
+              active: this.active,
+              delete: this.type === 'delete',
+            },
+          ])}
+        >
+          {this.slots('default') || this.text}
+        </div>
+      </div>
     );
   },
 });
