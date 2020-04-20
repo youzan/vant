@@ -10,6 +10,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.6.3](https://github.com/youzan/vant/compare/v2.6.2...v2.6.3)
+
+`2020-04-20`
+
+**Bug Fixes**
+
+- Tab: fail to init in some cases [#6101](https://github.com/youzan/vant/issues/6101)
+- sort vnode not work [#6100](https://github.com/youzan/vant/issues/6100)
+
 ### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
 
 `2020-04-18`
