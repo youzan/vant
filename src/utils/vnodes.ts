@@ -19,7 +19,6 @@ function flattenVNodes(vnodes: VNode[]) {
 
 type VueInstance = {
   $vnode: VNode;
-  slots: () => VNode[];
 };
 
 // sort children instances by vnodes order
