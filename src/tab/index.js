@@ -30,16 +30,16 @@ export default createComponent({
     },
 
     isActive() {
-      return this.computedName === this.parent.currentName;
+      const active = this.computedName === this.parent.currentName;
+
+      if (active) {
+        this.inited = true;
+      }
+      return active;
     },
   },
 
   watch: {
-    // eslint-disable-next-line object-shorthand
-    'parent.currentIndex'() {
-      this.inited = this.inited || this.isActive;
-    },
-
     title() {
       this.parent.setLine();
     },
