@@ -60,6 +60,7 @@
 - [意见反馈](https://github.com/youzan/vant/issues)
 - [更新日志](#/zh-CN/changelog)
 - [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ### 开源协议
 

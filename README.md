@@ -82,6 +82,7 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 
 - [Documentation](https://youzan.github.io/vant)
 - [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+- [Gitter](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## Preview
 
