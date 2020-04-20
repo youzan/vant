@@ -10,6 +10,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.6.3](https://github.com/youzan/vant/compare/v2.6.2...v2.6.3)
+
+`2020-04-20`
+
+**Bug Fixes**
+
+- Tab: 修复在部分浏览器上可能出现顺序错乱的问题 [#6100](https://github.com/youzan/vant/issues/6100)
+- Tab: 修复动态插入标签时可能出现渲染错误的问题 [#6101](https://github.com/youzan/vant/issues/6101)
+
 ### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
 
 `2020-04-18`
