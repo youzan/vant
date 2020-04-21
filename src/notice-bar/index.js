@@ -39,8 +39,7 @@ export default createComponent({
   watch: {
     text: {
       handler() {
-        this.reset();
-        this.startScroll()
+        this.start();
       },
       immediate: true,
     },
@@ -69,7 +68,7 @@ export default createComponent({
       this.duration = 0;
     },
 
-    startScroll(){
+    start(){
       this.$nextTick(() => {
         const { wrap, content } = this.$refs;
         if (!wrap || !content) {
@@ -83,6 +82,8 @@ export default createComponent({
           this.offsetWidth = offsetWidth;
           this.duration = offsetWidth / this.speed;
           this.animationClass = bem('play');
+        } else{
+          this.reset();
         }
       });
     }
