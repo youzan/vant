@@ -39,21 +39,7 @@ export default createComponent({
   watch: {
     text: {
       handler() {
-        this.$nextTick(() => {
-          const { wrap, content } = this.$refs;
-          if (!wrap || !content) {
-            return;
-          }
-
-          const wrapWidth = wrap.getBoundingClientRect().width;
-          const offsetWidth = content.getBoundingClientRect().width;
-          if (this.scrollable && offsetWidth > wrapWidth) {
-            this.wrapWidth = wrapWidth;
-            this.offsetWidth = offsetWidth;
-            this.duration = offsetWidth / this.speed;
-            this.animationClass = bem('play');
-          }
-        });
+        this.start();
       },
       immediate: true,
     },
@@ -75,6 +61,33 @@ export default createComponent({
         this.$emit('replay');
       });
     },
+
+    reset() {
+      this.wrapWidth = 0;
+      this.offsetWidth = 0;
+      this.animationClass = '';
+      this.duration = 0;
+    },
+
+    start(){
+      this.$nextTick(() => {
+        const { wrap, content } = this.$refs;
+        if (!wrap || !content) {
+          return;
+        }
+
+        const wrapWidth = wrap.getBoundingClientRect().width;
+        const offsetWidth = content.getBoundingClientRect().width;
+        if (this.scrollable && offsetWidth > wrapWidth) {
+          this.wrapWidth = wrapWidth;
+          this.offsetWidth = offsetWidth;
+          this.duration = offsetWidth / this.speed;
+          this.animationClass = bem('play');
+        } else {
+          this.reset();
+        }
+      });
+    }
   },
 
   render() {
