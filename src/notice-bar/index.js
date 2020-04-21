@@ -82,7 +82,7 @@ export default createComponent({
           this.offsetWidth = offsetWidth;
           this.duration = offsetWidth / this.speed;
           this.animationClass = bem('play');
-        } else{
+        } else {
           this.reset();
         }
       });
