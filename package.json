@@ -30,21 +30,10 @@
     }
   },
   "lint-staged": {
-    "*.md": [
-      "prettier --write"
-    ],
-    "*.{ts,tsx,js,vue,less}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{ts,tsx,js,vue}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{vue,css,less}": [
-      "stylelint --fix",
-      "git add"
-    ]
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
   },
   "repository": {
     "type": "git",
