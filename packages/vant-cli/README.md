@@ -45,8 +45,8 @@ yarn add @vant/cli --dev
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,vue}": ["eslint", "git add"],
-    "*.{vue,css,less,scss}": ["stylelint", "git add"]
+    "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
+    "*.{vue,css,less,scss}": "stylelint --fix"
   },
   "eslintConfig": {
     "root": true,

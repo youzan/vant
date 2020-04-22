@@ -115,6 +115,9 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 
   // Call function component
   vant.Toast('Message');
+
+  // Register Lazyload directive
+  Vue.use(vant.Lazyload);
 </script>
 ```
 

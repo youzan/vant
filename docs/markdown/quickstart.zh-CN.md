@@ -132,6 +132,10 @@ Vue.use(Vant);
 
   // 调用函数组件，弹出一个 Toast
   vant.Toast('提示');
+
+  // 通过 CDN 引入时不会自动注册 Lazyload 组件
+  // 可以通过下面的方式手动注册
+  Vue.use(vant.Lazyload);
 </script>
 ```
 
