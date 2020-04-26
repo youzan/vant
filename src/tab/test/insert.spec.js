@@ -28,7 +28,7 @@ test('insert tab dynamically', async () => {
 
 // this case will throw wierd error in index.spec.js
 // so separate it
-test('insert tab dynamically', async () => {
+test('insert tab with child component', async () => {
   const wrapper = mount({
     template: `
       <van-tabs v-model="active">
