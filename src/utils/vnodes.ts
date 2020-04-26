@@ -7,6 +7,10 @@ function flattenVNodes(vnodes: VNode[]) {
     vnodes.forEach((vnode) => {
       result.push(vnode);
 
+      if (vnode.componentInstance) {
+        traverse(vnode.componentInstance.$children.map((item) => item.$vnode));
+      }
+
       if (vnode.children) {
         traverse(vnode.children);
       }
@@ -17,12 +21,8 @@ function flattenVNodes(vnodes: VNode[]) {
   return result;
 }
 
-type VueInstance = {
-  $vnode: VNode;
-};
-
 // sort children instances by vnodes order
-export function sortChildren(children: VueInstance[], parent: VueInstance) {
+export function sortChildren(children: Vue[], parent: Vue) {
   const { componentOptions } = parent.$vnode;
   if (!componentOptions || !componentOptions.children) {
     return;
