@@ -162,7 +162,6 @@ export default createComponent({
       const deltaTime = new Date() - this.touchStartTime;
       const { offsetX = 0, offsetY = 0 } = this.$refs.swipe || {};
 
-      console.log('deltaTime', deltaTime);
       // prevent long tap to close component
       if (deltaTime < DOUBLE_CLICK_INTERVAL && offsetX < 10 && offsetY < 10) {
         if (!this.doubleClickTimer) {

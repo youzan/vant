@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, noop, isPromise } from '../utils';
+import { createNamespace, addUnit, noop, isPromise, isDef } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 
 // Mixins
@@ -147,7 +147,7 @@ export default createComponent({
         Promise.all(files.map((file) => readFile(file, this.resultType))).then(
           (contents) => {
             const fileList = files.map((file, index) => {
-              const result = { file, status: '' };
+              const result = { file, status: '', message: '' };
 
               if (contents[index]) {
                 result.content = contents[index];
@@ -161,7 +161,7 @@ export default createComponent({
         );
       } else {
         readFile(files, this.resultType).then((content) => {
-          const result = { file: files, status: '' };
+          const result = { file: files, status: '', message: '' };
 
           if (content) {
             result.content = content;
@@ -279,7 +279,7 @@ export default createComponent({
     },
 
     genPreviewMask(item) {
-      const { status } = item;
+      const { status, message } = item;
 
       if (status === 'uploading' || status === 'failed') {
         const MaskIcon =
@@ -289,12 +289,12 @@ export default createComponent({
             <Loading class={bem('loading')} />
           );
 
+        const showMessage = isDef(message) && message !== '';
+
         return (
           <div class={bem('mask')}>
             {MaskIcon}
-            {item.message && (
-              <div class={bem('mask-message')}>{item.message}</div>
-            )}
+            {showMessage && <div class={bem('mask-message')}>{message}</div>}
           </div>
         );
       }

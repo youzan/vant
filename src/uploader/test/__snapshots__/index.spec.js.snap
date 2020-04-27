@@ -18,6 +18,25 @@ exports[`disable preview image 1`] = `
 </div>
 `;
 
+exports[`file message should be reactive 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__preview">
+      <div class="van-image van-uploader__preview-image"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <!----></i></div>
+      </div>
+      <div class="van-uploader__mask">
+        <div class="van-loading van-loading--circular van-uploader__loading"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+        <div class="van-uploader__mask-message">2</div>
+      </div>
+    </div>
+    <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
+        <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;
+
 exports[`image-fit prop 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">
