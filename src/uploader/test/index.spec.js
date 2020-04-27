@@ -463,3 +463,23 @@ test('show-upload prop', () => {
   wrapper.setProps({ showUpload: false });
   expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
 });
+
+test('multiFile upload filter max-size file', async () => {
+  const SmallFile = function () {
+    this.size = 100;
+  };
+  const multiFiles = {
+    target: { files: [mockFile, new SmallFile([], 'small-test.jpg')] },
+  };
+
+  const wrapper = mount(Uploader, {
+    propsData: {
+      maxSize: 1000,
+    },
+  });
+  wrapper.vm.onChange(multiFiles);
+
+  await later();
+
+  expect(wrapper.emitted('oversize')[0]).toBeTruthy();
+});
