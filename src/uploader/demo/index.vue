@@ -20,6 +20,16 @@
       <van-uploader v-model="fileList2" multiple :max-count="2" />
     </demo-block>
 
+    <demo-block :title="t('maxSize')">
+      <van-uploader
+        v-model="fileList4"
+        multiple
+        :max-count="5"
+        :max-size="3 * 1024 * 1024"
+        @oversize="onOversize"
+      />
+    </demo-block>
+
     <demo-block :title="t('uploadStyle')">
       <van-uploader>
         <van-button type="primary" icon="photo">
@@ -48,6 +58,7 @@ export default {
       beforeRead: '上传前校验',
       uploadStyle: '自定义上传样式',
       invalidType: '请上传 jpg 格式图片',
+      maxSize: '限制上传大小(3M)',
     },
     'en-US': {
       status: 'Upload Status',
@@ -60,6 +71,7 @@ export default {
       beforeRead: 'Before Read',
       uploadStyle: 'Upload Style',
       invalidType: 'Please upload an image in jpg format',
+      maxSize: 'Max Size(3M)',
     },
   },
 
@@ -71,6 +83,7 @@ export default {
       ],
       fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
+      fileList4: [],
       statusFileList: [],
     };
   },
@@ -112,6 +125,10 @@ export default {
         item.status = 'failed';
         item.message = this.t('failed');
       }, 1000);
+    },
+
+    onOversize(file, detail) {
+      console.log(file, detail);
     },
   },
 };

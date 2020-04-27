@@ -175,15 +175,34 @@ export default createComponent({
     onAfterRead(files, oversize) {
       this.resetInput();
 
+      let validFiles = files;
+
       if (oversize) {
-        this.$emit('oversize', files, this.getDetail());
-        return;
+        let oversizeFiles = files;
+        if (Array.isArray(files)) {
+          oversizeFiles = [];
+          validFiles = [];
+          files.forEach((item) => {
+            if (item.file) {
+              if (item.file.size > this.maxSize) {
+                oversizeFiles.push(item);
+              } else {
+                validFiles.push(item);
+              }
+            }
+          });
+        } else {
+          validFiles = null;
+        }
+        this.$emit('oversize', oversizeFiles, this.getDetail());
       }
 
-      this.$emit('input', [...this.fileList, ...toArray(files)]);
+      if (validFiles) {
+        this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
 
-      if (this.afterRead) {
-        this.afterRead(files, this.getDetail());
+        if (this.afterRead) {
+          this.afterRead(validFiles, this.getDetail());
+        }
       }
     },
 

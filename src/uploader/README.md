@@ -103,6 +103,29 @@ export default {
 };
 ```
 
+### Max Size
+
+```html
+<van-uploader
+  multiple
+  :max-count="5"
+  :max-size="3 * 1024 * 1024"
+  @oversize="onOversize"
+/>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  methods: {
+    onOversize(file) {
+      console.log(file);
+    },
+  },
+};
+```
+
 ### Upload Style
 
 ```html
