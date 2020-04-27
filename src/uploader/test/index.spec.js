@@ -463,3 +463,27 @@ test('show-upload prop', () => {
   wrapper.setProps({ showUpload: false });
   expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
 });
+
+test('file message should be reactive', (done) => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [],
+      afterRead(file) {
+        file.status = 'uploading';
+        file.message = 1;
+        setTimeout(() => {
+          file.message = 2;
+          expect(wrapper).toMatchSnapshot();
+          done();
+        });
+      },
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      },
+    },
+  });
+
+  wrapper.vm.onChange(file);
+});
