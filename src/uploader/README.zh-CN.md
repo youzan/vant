@@ -119,6 +119,29 @@ export default {
 };
 ```
 
+### 限制上传大小
+
+通过`max-size`属性可以限制上传文件的大小，超过大小的文件会被自动过滤，这些文件信息可以通过`oversize`事件获取
+
+```html
+<van-uploader
+  multiple
+  :max-count="5"
+  :max-size="3 * 1024 * 1024"
+  @oversize="onOversize"
+/>
+```
+
+```js
+export default {
+  methods: {
+    onOversize(file) {
+      console.log(file);
+    },
+  },
+};
+```
+
 ### 自定义上传样式
 
 通过插槽可以自定义上传区域的样式

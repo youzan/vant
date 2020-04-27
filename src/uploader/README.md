@@ -103,6 +103,27 @@ export default {
 };
 ```
 
+### Max Size
+
+```html
+<van-uploader
+  multiple
+  :max-count="5"
+  :max-size="3 * 1024 * 1024"
+  @oversize="onOversize"
+/>
+```
+
+```js
+export default {
+  methods: {
+    onOversize(file) {
+      console.log(file);
+    },
+  },
+};
+```
+
 ### Upload Style
 
 ```html
