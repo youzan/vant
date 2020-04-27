@@ -1,8 +1,11 @@
 import { createNamespace } from '../utils';
+import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('row');
 
 export default createComponent({
+  mixins: [ParentMixin('vanRow')],
+
   props: {
     type: String,
     align: String,
@@ -26,14 +29,9 @@ export default createComponent({
   render() {
     const { align, justify } = this;
     const flex = this.type === 'flex';
-    const margin = `-${Number(this.gutter) / 2}px`;
-    const style = this.gutter
-      ? { marginLeft: margin, marginRight: margin }
-      : {};
 
     return (
       <this.tag
-        style={style}
         class={bem({
           flex,
           [`align-${align}`]: flex && align,
