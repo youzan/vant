@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
+import DeleteIcon from './DeleteIcon';
 
 const [createComponent, bem] = createNamespace('key');
 
@@ -47,6 +48,17 @@ export default createComponent({
         this.$emit('press', this.text, this.type);
       }
     },
+
+    genContent() {
+      const isDelete = this.type === 'delete';
+      const text = this.slots('default') || this.text;
+
+      if (isDelete) {
+        return text || <DeleteIcon class={bem('delete-icon')} />;
+      }
+
+      return text;
+    },
   },
 
   render() {
@@ -64,7 +76,7 @@ export default createComponent({
             },
           ])}
         >
-          {this.slots('default') || this.text}
+          {this.genContent()}
         </div>
       </div>
     );
