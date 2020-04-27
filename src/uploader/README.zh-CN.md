@@ -121,7 +121,7 @@ export default {
 
 ### 限制上传大小
 
-通过`max-size`属性可以限制上传文件的大小，超过大小的文件会被自动过滤，这些文件信息可以通过事件`oversize`获取
+通过`max-size`属性可以限制上传文件的大小，超过大小的文件会被自动过滤，这些文件信息可以通过`oversize`事件获取
 
 ```html
 <van-uploader
@@ -133,8 +133,6 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
-
 export default {
   methods: {
     onOversize(file) {

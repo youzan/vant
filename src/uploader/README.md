@@ -115,8 +115,6 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
-
 export default {
   methods: {
     onOversize(file) {
