@@ -76,12 +76,11 @@ export default createComponent({
       switch (this.theme) {
         case 'default':
           keys.push(
-            { text: this.extraKey, type: 'extra', color: 'gray' },
+            { text: this.extraKey, type: 'extra' },
             { text: 0 },
             {
               text: this.showDeleteKey ? this.deleteButtonText : '',
               type: this.showDeleteKey ? 'delete' : '',
-              color: 'gray',
             }
           );
           break;
@@ -113,6 +112,9 @@ export default createComponent({
 
     onPress(text, type) {
       if (text === '') {
+        if (type === 'extra') {
+          this.onBlur();
+        }
         return;
       }
 
@@ -182,7 +184,6 @@ export default createComponent({
                 large
                 text={this.deleteButtonText}
                 type="delete"
-                color="gray"
                 onPress={this.onPress}
               >
                 {this.slots('delete')}
