@@ -142,18 +142,13 @@ export default createComponent({
       }
 
       return (
-        <div class={bem('title')}>
+        <div class={bem('header')}>
           {titleLeft && <span class={bem('title-left')}>{titleLeft}</span>}
-          {title && <span>{title}</span>}
+          {title && <h2 class={bem('title')}>{title}</h2>}
           {showClose && (
-            <span
-              role="button"
-              tabindex="0"
-              class={bem('close')}
-              onClick={this.onClose}
-            >
+            <button type="button" class={bem('close')} onClick={this.onClose}>
               {closeButtonText}
-            </span>
+            </button>
           )}
         </div>
       );

@@ -15,7 +15,7 @@
     border-radius: 20px 20px 0 0;
   }
 
-  &__title {
+  &__header {
     position: relative;
     box-sizing: content-box;
     height: @number-keyboard-title-height;
@@ -24,6 +24,11 @@
     font-size: @number-keyboard-title-font-size;
     line-height: @number-keyboard-title-height;
     text-align: center;
+  }
+
+  &__title {
+    display: inline-block;
+    font-weight: normal;
 
     &-left {
       position: absolute;
@@ -48,6 +53,8 @@
     padding: @number-keyboard-close-padding;
     color: @number-keyboard-close-color;
     font-size: @number-keyboard-close-font-size;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 
     &:active {
@@ -70,10 +77,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: @number-keyboard-key-height;
+  padding: 0;
   font-size: @number-keyboard-key-font-size;
   line-height: 1.5;
   background-color: @white;
+  border: none;
   border-radius: @border-radius-lg;
   cursor: pointer;
 
