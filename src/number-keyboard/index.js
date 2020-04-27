@@ -79,7 +79,7 @@ export default createComponent({
             { text: this.extraKey, type: 'extra', color: 'gray' },
             { text: 0 },
             {
-              text: this.showDeleteKey ? this.deleteText : '',
+              text: this.showDeleteKey ? this.deleteButtonText : '',
               type: this.showDeleteKey ? 'delete' : '',
               color: 'gray',
             }
@@ -94,10 +94,6 @@ export default createComponent({
       }
 
       return keys;
-    },
-
-    deleteText() {
-      return this.deleteButtonText || t('delete');
     },
   },
 
@@ -184,8 +180,9 @@ export default createComponent({
             {this.showDeleteKey && (
               <Key
                 large
-                text={this.deleteText}
+                text={this.deleteButtonText}
                 type="delete"
+                color="gray"
                 onPress={this.onPress}
               >
                 {this.slots('delete')}
