@@ -197,7 +197,11 @@ export default createComponent({
         this.$emit('oversize', oversizeFiles, this.getDetail());
       }
 
-      if (validFiles) {
+      const isValidFiles = Array.isArray(validFiles)
+        ? Boolean(validFiles.length)
+        : Boolean(validFiles);
+
+      if (isValidFiles) {
         this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
 
         if (this.afterRead) {
