@@ -28,7 +28,7 @@ exports[`file message should be reactive 1`] = `
       </div>
       <div class="van-uploader__mask">
         <div class="van-loading van-loading--circular van-uploader__loading"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
-        <div class="van-uploader__mask-message">1</div>
+        <div class="van-uploader__mask-message">2</div>
       </div>
     </div>
     <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
