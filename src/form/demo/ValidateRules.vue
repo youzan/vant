@@ -67,7 +67,7 @@ export default {
 
   methods: {
     validator(val) {
-      return val === '1234';
+      return /1\d{10}/.test(val);
     },
 
     asyncValidator(val) {
