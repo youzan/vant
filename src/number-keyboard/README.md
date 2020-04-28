@@ -141,7 +141,7 @@ export default {
 | extra-key | Content of bottom left key | _string_ | `''` |
 | close-button-text | Close button text | _string_ | - |
 | delete-button-text | Delete button text | _string_ | Delete Icon |
-| close-button-loading `v2.6.4` | Whether to show loading close button in custom theme | _boolean_ | `false` |
+| close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
