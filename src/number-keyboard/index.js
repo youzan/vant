@@ -24,6 +24,7 @@ export default createComponent({
     zIndex: [Number, String],
     closeButtonText: String,
     deleteButtonText: String,
+    closeButtonLoading: Boolean,
     theme: {
       type: String,
       default: 'default',
@@ -189,6 +190,7 @@ export default createComponent({
               text={this.closeButtonText}
               type="close"
               color="blue"
+              loading={this.closeButtonLoading}
               onPress={this.onPress}
             />
           </div>

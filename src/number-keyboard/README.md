@@ -133,14 +133,15 @@ export default {
 | --- | --- | --- | --- |
 | v-model (value) `v2.0.2` | Current value | _string_ | - |
 | show | Whether to show keyboard | _boolean_ | - |
-| theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
 | title | Keyboard title | _string_ | - |
+| theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
 | maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
 | extra-key | Content of bottom left key | _string_ | `''` |
 | close-button-text | Close button text | _string_ | - |
 | delete-button-text | Delete button text | _string_ | Delete Icon |
+| close-button-loading `v2.6.4` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
