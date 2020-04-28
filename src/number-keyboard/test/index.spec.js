@@ -217,7 +217,7 @@ test('show-delete-key prop', () => {
   expect(wrapper.contains('.van-key--delete')).toBeFalsy();
 });
 
-test('close-button-loading prop', async () => {
+test('close-button-loading prop', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       show: true,
