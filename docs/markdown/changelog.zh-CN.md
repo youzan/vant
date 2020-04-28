@@ -10,6 +10,38 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.7.0](https://github.com/youzan/vant/compare/v2.6.3...v2.7.0)
+
+`2020-04-28`
+
+**style**
+
+- NumberKeyboard: 升级组件样式 [#6149](https://github.com/youzan/vant/issues/6149) [#6151](https://github.com/youzan/vant/issues/6151) [3188b4](https://github.com/youzan/vant/commit/3188b4d25bb6e60ed5de930ec8947929a7577dd3)
+
+<img src="https://b.yzcdn.cn/vant/keyboard-style-04281448.png" style="width: 600px; height: 394px;">
+
+- 新增全局默认字体 [#6126](https://github.com/youzan/vant/issues/6126)
+- DropdownMenu: 增加阴影效果 [7db744](https://github.com/youzan/vant/commit/7db74490956ec9d4c742a885e436dc6915f1f9dc)
+- Sidebar: 优化左侧选中条的样式 [a31032](https://github.com/youzan/vant/commit/a31032e0d63956b2e9f0c75c8a85ca662fe42545)
+- Toast: 圆角大小由 4px 调整为 8px [2364c4](https://github.com/youzan/vant/commit/2364c4f526912433abf5ee2f36e2148beea7140b)
+- TreeSelect: 选中态的图标从 checked 更换为 success 图标 [5b72e4](https://github.com/youzan/vant/commit/5b72e4339347a710620bf630f1bc8ee09511d63c)
+
+**Feature**
+
+- NoticeBar: 新增 start 方法 [#6069](https://github.com/youzan/vant/issues/6069)
+- ImagePreview: 双击缩放的间隔从 300 毫秒调整为 250 毫秒 [#6136](https://github.com/youzan/vant/issues/6136)
+- NumberKeyboard: 新增左下角默认的键盘图标，点击后收起键盘 [#6152](https://github.com/youzan/vant/issues/6152)
+- NumberKeyboard: 新增 close-button-loading 属性，用于展示加载中状态 [#6158](https://github.com/youzan/vant/issues/6158)
+- uploader: 多选时自动过滤超出大小限制的图片 [#6150](https://github.com/youzan/vant/issues/6150)
+
+**Bug Fixes**
+
+- Layout: 修复设置 gutter 后元素宽度溢出屏幕的问题 [#6143](https://github.com/youzan/vant/issues/6143)
+- Tab: 修复子组件顺序错误的问题 [#6140](https://github.com/youzan/vant/issues/6140)
+- Uploader: 修复动态修改 file.message 未触发视图更新的问题 [#6142](https://github.com/youzan/vant/issues/6142)
+- NavBar: 修复设置顶部内边距后两侧按钮定位错误的问题 [#6147](https://github.com/youzan/vant/issues/6147)
+- types: 修复在 TSX 中使用组件时提示类型错误的问题 [#6148](https://github.com/youzan/vant/issues/6148)
+
 ### [v2.6.3](https://github.com/youzan/vant/compare/v2.6.2...v2.6.3)
 
 `2020-04-20`

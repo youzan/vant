@@ -10,6 +10,39 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.7.0](https://github.com/youzan/vant/compare/v2.6.3...v2.7.0)
+
+`2020-04-28`
+
+**style**
+
+- NumberKeyboard: new style [3188b4](https://github.com/youzan/vant/commit/3188b4d25bb6e60ed5de930ec8947929a7577dd3) [#6149](https://github.com/youzan/vant/issues/6149) [#6151](https://github.com/youzan/vant/issues/6151)
+
+<img src="https://b.yzcdn.cn/vant/keyboard-style-04281448.png" style="width: 600px; height: 394px;">
+
+- add base-font-family [#6126](https://github.com/youzan/vant/issues/6126)
+- DropdownMenu: add box-shadow style [7db744](https://github.com/youzan/vant/commit/7db74490956ec9d4c742a885e436dc6915f1f9dc)
+- NavBar: left & right part align to bottom [#6147](https://github.com/youzan/vant/issues/6147)
+- Sidebar: add less vars [e1a7c6](https://github.com/youzan/vant/commit/e1a7c6668de0b7da58028210e174c9156e87bea2)
+- Sidebar: update border style [a31032](https://github.com/youzan/vant/commit/a31032e0d63956b2e9f0c75c8a85ca662fe42545)
+- Toast: increase border-radius to 8px [2364c4](https://github.com/youzan/vant/commit/2364c4f526912433abf5ee2f36e2148beea7140b)
+- TreeSelect: change checked icon to success icon [5b72e4](https://github.com/youzan/vant/commit/5b72e4339347a710620bf630f1bc8ee09511d63c)
+
+**Feature**
+
+- NoticeBar: add start method [#6069](https://github.com/youzan/vant/issues/6069)
+- ImagePreview: adjust double-click interval to 250ms [#6136](https://github.com/youzan/vant/issues/6136)
+- NumberKeyboard: add collapse icon [#6152](https://github.com/youzan/vant/issues/6152)
+- NumberKeyboard: add close-button-loading prop [#6158](https://github.com/youzan/vant/issues/6158)
+
+**Bug Fixes**
+
+- Layout: outside of the screen after setting gutter [#6143](https://github.com/youzan/vant/issues/6143)
+- Tab: incorrect vnode order in some cases [#6140](https://github.com/youzan/vant/issues/6140)
+- uploader: automatically filter files exceeding the max-size [#6150](https://github.com/youzan/vant/issues/6150)
+- Uploader: file message should be reactive [#6142](https://github.com/youzan/vant/issues/6142)
+- types: VanComponent should extends Vue [#6148](https://github.com/youzan/vant/issues/6148)
+
 ### [v2.6.3](https://github.com/youzan/vant/compare/v2.6.2...v2.6.3)
 
 `2020-04-20`
