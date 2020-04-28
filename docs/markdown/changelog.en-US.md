@@ -10,6 +10,12 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.7.1](https://github.com/youzan/vant/compare/v2.7.0...v2.7.1)
+
+`2020-04-28`
+
+- Revert "style(NavBar): left & right part align to bottom (#6147)" [#6147](https://github.com/youzan/vant/issues/6147)
+
 ### [v2.7.0](https://github.com/youzan/vant/compare/v2.6.3...v2.7.0)
 
 `2020-04-28`
