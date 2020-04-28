@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
+import Loading from '../loading';
 import DeleteIcon from './DeleteIcon';
 import CollapseIcon from './CollapseIcon';
 
@@ -14,6 +15,7 @@ export default createComponent({
     color: String,
     wider: Boolean,
     large: Boolean,
+    loading: Boolean,
   },
 
   data() {
@@ -54,6 +56,10 @@ export default createComponent({
       const isExtra = this.type === 'extra';
       const isDelete = this.type === 'delete';
       const text = this.slots('default') || this.text;
+
+      if (this.loading) {
+        return <Loading class={bem('loading-icon')} />;
+      }
 
       if (isDelete) {
         return text || <DeleteIcon class={bem('delete-icon')} />;

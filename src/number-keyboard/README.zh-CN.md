@@ -144,14 +144,15 @@ export default {
 | --- | --- | --- | --- |
 | v-model (value) `v2.0.2` | 当前输入值 | _string_ | - |
 | show | 是否显示键盘 | _boolean_ | - |
-| theme | 样式风格，可选值为 `custom` | _string_ | `default` |
 | title | 键盘标题 | _string_ | - |
+| theme | 样式风格，可选值为 `custom` | _string_ | `default` |
 | maxlength `v2.0.2` | 输入值最大长度 | _number \| string_ | - |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
-| z-index | 键盘 z-index | _number \| string_ | `100` |
+| z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
 | extra-key | 左下角按键内容 | _string_ | `''` |
 | close-button-text | 关闭按钮文字，空则不展示 | _string_ | - |
 | delete-button-text | 删除按钮文字，空则展示删除图标 | _string_ | - |
+| close-button-loading `v2.6.4` | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | 是否展示删除图标 | _boolean_ | `true` |
 | hide-on-click-outside | 点击外部时是否收起键盘 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
