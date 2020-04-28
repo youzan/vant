@@ -14,6 +14,8 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 `2020-04-28`
 
+**Bug Fixes**
+
 - 修复 NavBar 图标不居中的问题 [#6147](https://github.com/youzan/vant/issues/6147)
 
 ### [v2.7.0](https://github.com/youzan/vant/compare/v2.6.3...v2.7.0)
