@@ -2,7 +2,9 @@
 
 .van-button {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   height: @button-default-height;
   margin: 0;
@@ -14,7 +16,6 @@
   cursor: pointer;
   transition: opacity @animation-duration-fast;
   -webkit-appearance: none;
-  -webkit-text-size-adjust: 100%;
 
   &::before {
     position: absolute;
@@ -95,7 +96,6 @@
   &--large {
     width: 100%;
     height: @button-large-height;
-    line-height: @button-large-line-height;
   }
 
   &--normal {
@@ -108,21 +108,16 @@
     height: @button-small-height;
     padding: 0 @padding-xs;
     font-size: @button-small-font-size;
-    line-height: @button-small-line-height;
   }
 
   &__loading {
-    display: inline-block;
     color: inherit;
-    vertical-align: top;
   }
 
   &--mini {
-    display: inline-block;
     min-width: @button-mini-min-width;
     height: @button-mini-height;
     font-size: @button-mini-font-size;
-    line-height: @button-mini-line-height;
 
     & + .van-button--mini {
       margin-left: @padding-base;
@@ -130,7 +125,7 @@
   }
 
   &--block {
-    display: block;
+    display: flex;
     width: 100%;
   }
 
@@ -155,14 +150,11 @@
     min-width: 1em;
     font-size: 1.2em;
     line-height: inherit;
-    vertical-align: top;
   }
 
   &__icon + &__text,
   &__loading + &__text {
-    display: inline-block;
     margin-left: 5px;
-    vertical-align: top;
   }
 
   &--hairline {
