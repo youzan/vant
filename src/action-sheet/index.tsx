@@ -121,11 +121,12 @@ function ActionSheet(
 
   function CancelText() {
     if (cancelText) {
-      return (
+      return [
+        <div class={bem('gap')} />,
         <button type="button" class={bem('cancel')} onClick={onCancel}>
           {cancelText}
-        </button>
-      );
+        </button>,
+      ];
     }
   }
 
