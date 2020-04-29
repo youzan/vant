@@ -17,13 +17,14 @@
 
   &__header {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: content-box;
     height: @number-keyboard-title-height;
     padding-top: 6px;
     color: @number-keyboard-title-color;
     font-size: @number-keyboard-title-font-size;
-    line-height: @number-keyboard-title-height;
-    text-align: center;
   }
 
   &__title {
@@ -50,6 +51,7 @@
   &__close {
     position: absolute;
     right: 0;
+    height: 100%;
     padding: @number-keyboard-close-padding;
     color: @number-keyboard-close-color;
     font-size: @number-keyboard-close-font-size;
