@@ -4,17 +4,17 @@
   position: relative;
   background-color: @picker-background-color;
   user-select: none;
-  -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
 
   &__toolbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: @picker-toolbar-height;
-    line-height: @picker-toolbar-height;
   }
 
   &__cancel,
   &__confirm {
+    height: 100%;
     padding: @picker-action-padding;
     color: @picker-action-text-color;
     font-size: @picker-action-font-size;
@@ -96,6 +96,7 @@
     &__item {
       padding: 0 5px;
       color: @picker-option-text-color;
+      -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
 
       &--disabled {
         opacity: @picker-option-disabled-opacity;
