@@ -8,9 +8,10 @@
   &__cancel {
     display: block;
     width: 100%;
+    height: @action-sheet-item-height;
     padding: 0;
     font-size: @action-sheet-item-font-size;
-    line-height: @action-sheet-item-height;
+    line-height: 20px;
     text-align: center;
     background-color: @action-sheet-item-background;
     border: none;
@@ -22,8 +23,6 @@
   }
 
   &__item {
-    height: @action-sheet-item-height;
-
     &--loading,
     &--disabled {
       color: @action-sheet-item-disabled-text-color;
@@ -48,11 +47,10 @@
     font-size: @action-sheet-subname-font-size;
   }
 
-  &__cancel::before {
+  &__gap {
     display: block;
     height: @action-sheet-cancel-padding-top;
     background-color: @action-sheet-cancel-padding-color;
-    content: ' ';
   }
 
   &__header {
