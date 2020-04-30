@@ -37,10 +37,9 @@ export default createComponent({
   },
 
   watch: {
+    scrollable: 'start',
     text: {
-      handler() {
-        this.start();
-      },
+      handler: 'start',
       immediate: true,
     },
   },
@@ -69,7 +68,7 @@ export default createComponent({
       this.duration = 0;
     },
 
-    start(){
+    start() {
       this.$nextTick(() => {
         const { wrap, content } = this.$refs;
         if (!wrap || !content) {
@@ -87,7 +86,7 @@ export default createComponent({
           this.reset();
         }
       });
-    }
+    },
   },
 
   render() {
