@@ -314,3 +314,13 @@ test('call focus method before mounted', (done) => {
 test('destroy field', () => {
   mount(Field).destroy();
 });
+
+test('colon prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      label: 'foo',
+      colon: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
