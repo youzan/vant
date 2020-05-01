@@ -33,12 +33,7 @@ export function ChildrenMixin(
 
       [indexKey]() {
         this.bindRelation();
-
-        if (this.parent) {
-          return this.parent.children.indexOf(this);
-        }
-
-        return null;
+        return this.parent.children.indexOf(this);
       },
     },
 
