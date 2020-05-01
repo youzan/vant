@@ -245,6 +245,7 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否只读 | _boolean_ | `false` |
+| colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | clearable | 是否启用清除控件 | _boolean_ | `false` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |

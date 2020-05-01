@@ -220,6 +220,7 @@ Use `input-align` prop to align the input value
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disable field | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
+| colon `v2.7.2` | Whether to display colon after label | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |

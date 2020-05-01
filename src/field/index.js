@@ -58,6 +58,10 @@ export default createComponent({
       type: String,
       default: 'text',
     },
+    colon: {
+      type: Boolean,
+      default: null,
+    },
   },
 
   data() {
