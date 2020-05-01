@@ -46,6 +46,7 @@ Locale.add(messages);
 | 土耳其语       | tr-TR  |
 | 西班牙语       | es-ES  |
 | 日语           | ja-JP  |
+| 罗马尼亚语     | ro-RO  |
 
 > 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的 i18n 配置文件。
 
