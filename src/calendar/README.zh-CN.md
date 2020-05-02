@@ -278,12 +278,13 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| select | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| select | 点击并选中任意日期时触发 | _value: Date \| Date[]_ |
 | confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
 | open `v2.5.2` | 打开弹出层时触发 | - |
 | close `v2.5.2` | 关闭弹出层时触发 | - |
 | opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |
 | closed `v2.5.2` | 关闭弹出层且动画结束后触发 | - |
+| unselect `v2.7.2` | 当 Canlendar 的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
 
 ### Slots
 

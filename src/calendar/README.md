@@ -280,6 +280,7 @@ Following props are supported when the type is range
 | close `v2.5.2` | Triggered when close Popup | - |
 | opened `v2.5.2` | Triggered when opened Popup | - |
 | closed `v2.5.2` | Triggered when closed Popup | - |
+| unselect `v2.7.2` | Triggered when unselect date when type is multiple | _value: Date_ |
 
 ### Slots
 
