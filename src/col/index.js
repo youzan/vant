@@ -16,28 +16,15 @@ export default createComponent({
   },
 
   computed: {
-    gutter() {
-      return (this.parent && Number(this.parent.gutter)) || 0;
-    },
-
     style() {
-      const { index, gutter } = this;
+      const { index } = this;
+      const { spaces } = this.parent || {};
 
-      if (gutter) {
-        const count = this.parent.children.length;
-        const padding = (gutter * (count - 1)) / count;
-
-        if (index === 0) {
-          return { paddingRight: `${padding}px` };
-        }
-
-        if (index === count - 1) {
-          return { paddingLeft: `${padding}px` };
-        }
-
+      if (spaces && spaces[index]) {
+        const { left, right } = spaces[index];
         return {
-          paddingLeft: `${padding / 2}px`,
-          paddingRight: `${padding / 2}px`,
+          paddingLeft: left ? `${left}px` : null,
+          paddingRight: right ? `${right}px` : null,
         };
       }
     },

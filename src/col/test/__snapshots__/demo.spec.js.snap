@@ -23,8 +23,8 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-row">
       <div class="van-col van-col--8" style="padding-right: 13.333333333333334px;">span: 8</div>
-      <div class="van-col van-col--8" style="padding-left: 6.666666666666667px; padding-right: 6.666666666666667px;">span: 8</div>
-      <div class="van-col van-col--8" style="padding-left: 13.333333333333334px;">span: 8</div>
+      <div class="van-col van-col--8" style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;">span: 8</div>
+      <div class="van-col van-col--8" style="padding-left: 13.333333333333332px;">span: 8</div>
     </div>
   </div>
   <div>
