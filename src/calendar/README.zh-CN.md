@@ -257,9 +257,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
+| max-range `v2.4.3` | 日期区间最多可选天数 | _number \| string_ | 无限制 |
 | range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 | allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `fasle` |
+
+### Multiple Props
+
+当 Canlendar 的 `type` 为 `multiple` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| max-range `v2.7.2` | 日期最多可选天数 | _number \| string_ | 无限制 |
+| range-prompt `v2.4.3` | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构
 

@@ -2,7 +2,7 @@ import Calendar from '..';
 import { mount, later } from '../../../test';
 import { minDate, maxDate, formatRange, formatDate } from './utils';
 
-test('max-range prop when showConfirm is false', async () => {
+test('max-range prop when type is range and showConfirm is false', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       type: 'range',
@@ -27,7 +27,7 @@ test('max-range prop when showConfirm is false', async () => {
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
-test('max-range prop when showConfirm is true', async () => {
+test('max-range prop when type is range and showConfirm is true', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       type: 'range',
@@ -49,6 +49,27 @@ test('max-range prop when showConfirm is true', async () => {
     '2010/1/13-2010/1/15'
   );
   expect(wrapper.emitted('confirm')).toBeFalsy();
+});
+
+test('max-range prop when type is multiple', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      type: 'multiple',
+      minDate,
+      maxDate,
+      maxRange: 2,
+      poppable: false,
+      showConfirm: false,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days.at(13).trigger('click');
+  days.at(14).trigger('click');
+
+  expect(wrapper.emitted('select').length).toEqual(1);
 });
 
 test('show-title prop', () => {
