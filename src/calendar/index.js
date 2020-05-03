@@ -293,6 +293,8 @@ export default createComponent({
         if (selected) {
           const [unselectedDate] = currentDate.splice(selectedIndex, 1);
           this.$emit('unselect', copyDate(unselectedDate));
+        } else if (this.maxRange && currentDate.length >= this.maxRange) {
+          Toast(this.rangePrompt || t('rangePrompt', this.maxRange));
         } else {
           this.select([...currentDate, date]);
         }
