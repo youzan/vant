@@ -267,7 +267,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.7.3` | 日期最多可选天数 | _number \| string_ | 无限制 |
+| max-range `v2.7.2` | 日期最多可选天数 | _number \| string_ | 无限制 |
 | range-prompt `v2.4.3` | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构

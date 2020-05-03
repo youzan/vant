@@ -265,7 +265,7 @@ Following props are supported when the type is multiple
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range `v2.7.3` | Max count of selectable days | _number \| string_ | Unlimitied |
+| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimitied |
 | range-prompt `v2.4.3` | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day
