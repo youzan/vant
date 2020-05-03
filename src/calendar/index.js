@@ -4,6 +4,7 @@ import { getScrollTop } from '../utils/dom/scroll';
 import {
   t,
   bem,
+  copyDate,
   copyDates,
   getNextDay,
   compareDay,
@@ -290,7 +291,8 @@ export default createComponent({
         });
 
         if (selected) {
-          currentDate.splice(selectedIndex, 1);
+          const [unselectedDate] = currentDate.splice(selectedIndex, 1);
+          this.$emit('unselect', copyDate(unselectedDate));
         } else {
           this.select([...currentDate, date]);
         }
