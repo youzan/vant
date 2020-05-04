@@ -35,15 +35,6 @@
       .hairline-top(@cell-border-color, @padding-md);
     }
 
-    // fix right-padding issue for overflow-x element
-    // see: https://stackoverflow.com/questions/10054870
-    &::after {
-      display: block;
-      flex-shrink: 0;
-      width: @padding-xs;
-      content: '';
-    }
-
     &::-webkit-scrollbar {
       height: 0;
     }

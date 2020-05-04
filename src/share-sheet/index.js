@@ -83,6 +83,8 @@ export default createComponent({
         <div class={bem('options', { border: showBorder })}>
           {options.map((option, index) => (
             <div
+              role="button"
+              tabindex="0"
               class={bem('option')}
               onClick={() => {
                 this.onSelect(option, index);
