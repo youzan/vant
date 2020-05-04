@@ -5,8 +5,8 @@ exports[`renders demo correctly 1`] = `
   <div class="van-tabs van-tabs--line">
     <div class="van-tabs__wrap van-hairline--top-bottom">
       <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #1989fa;">
-        <div role="tab" aria-selected="true" class="van-tab van-tab--active van-ellipsis"><span class="van-tab__text">基础用法<!----></span></div>
-        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">自定义索引列表<!----></span></div>
+        <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">基础用法</span></div>
+        <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">自定义索引列表</span></div>
         <div class="van-tabs__line" style="background-color: rgb(25, 137, 250); width: 0px; transform: translateX(0px) translateX(-50%);"></div>
       </div>
     </div>
