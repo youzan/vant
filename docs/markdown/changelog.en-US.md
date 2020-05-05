@@ -10,6 +10,41 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.0](https://github.com/youzan/vant/compare/v2.7.1...v2.8.0)
+
+`2020-05-05`
+
+**style**
+
+- Button: use flex layout [#6180](https://github.com/youzan/vant/issues/6180)
+- ActionSheet: improve text size adjust [#6175](https://github.com/youzan/vant/issues/6175)
+- NavBar: improve text size adjust [7effb7](https://github.com/youzan/vant/commit/7effb7cf6cf59a8db1eb77fa16692712de4a18ba)
+- NoticeBar: improve text size adjust [#6177](https://github.com/youzan/vant/issues/6177)
+- NumberKeyboard: improve text size adjust [#6179](https://github.com/youzan/vant/issues/6179)
+- Pagination: improve text size adjust [#6178](https://github.com/youzan/vant/issues/6178)
+- PasswordInput: improve text size adjust [#6176](https://github.com/youzan/vant/issues/6176)
+- Picker: improve text size adjust [#6174](https://github.com/youzan/vant/issues/6174) [#6205](https://github.com/youzan/vant/issues/6205)
+- Picker: update action button color [#6214](https://github.com/youzan/vant/issues/6214)
+- Tab: improve text size adjust [#6209](https://github.com/youzan/vant/issues/6209)
+- CouponList: add @coupon-list-close-button-height less var [18a0c5](https://github.com/youzan/vant/commit/18a0c545ec881eb296ba6cc11dfaa12febd79e5c)
+
+**Feature**
+
+- Calendar: add unselect event [#6198](https://github.com/youzan/vant/issues/6198)
+- Calendar: support max-range when type is multiple [#6202](https://github.com/youzan/vant/issues/6202)
+- Field: add colon prop [#6195](https://github.com/youzan/vant/issues/6195)
+- Locale: adding Romanian language support [#6193](https://github.com/youzan/vant/issues/6193)
+- ShareSheet: improve accessibility [#6208](https://github.com/youzan/vant/issues/6208)
+
+**Bug Fixes**
+
+- Checkbox: incorrect icon position after font-size scale [#6168](https://github.com/youzan/vant/issues/6168)
+- Layout: gutter calculation [#6197](https://github.com/youzan/vant/issues/6197) [#6143](https://github.com/youzan/vant/issues/6143)
+- NoticeBar: allow dynamic setting of scrollable [#6190](https://github.com/youzan/vant/issues/6190)
+- Radio: incorrect icon position after font-size scale [#6173](https://github.com/youzan/vant/issues/6173)
+- ShareSheet: incorrect scrollbar height in some browsers [#6207](https://github.com/youzan/vant/issues/6207)
+- Tab: fix ellipsis issue [#6209](https://github.com/youzan/vant/issues/6209)
+
 ### [v2.7.1](https://github.com/youzan/vant/compare/v2.7.0...v2.7.1)
 
 `2020-04-28`

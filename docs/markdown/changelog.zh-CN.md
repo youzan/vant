@@ -10,6 +10,46 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.0](https://github.com/youzan/vant/compare/v2.7.1...v2.8.0)
+
+`2020-05-05`
+
+**适配系统字体放大**
+
+ 部分手机用户会使用<b>系统或微信提供的字体放大功能</b>，开启该功能后，组件的 font-size 和 line-height 会等比例放大，导致部分组件出现文字不对齐的问题，在 2.8.0 版本中，我们针对这个场景进行了适配，使得所有组件在字体缩放后仍保持正确的布局，改动涉及以下组件：
+
+- ActionSheet [#6175](https://github.com/youzan/vant/issues/6175)
+- Checkbox [#6168](https://github.com/youzan/vant/issues/6168)
+- NavBar [7effb7](https://github.com/youzan/vant/commit/7effb7cf6cf59a8db1eb77fa16692712de4a18ba)
+- NoticeBar [#6177](https://github.com/youzan/vant/issues/6177)
+- NumberKeyboard [#6179](https://github.com/youzan/vant/issues/6179)
+- Pagination [#6178](https://github.com/youzan/vant/issues/6178)
+- PasswordInput [#6176](https://github.com/youzan/vant/issues/6176)
+- Picker [#6174](https://github.com/youzan/vant/issues/6174) [#6205](https://github.com/youzan/vant/issues/6205)
+- Radio [#6173](https://github.com/youzan/vant/issues/6173)
+- Tab [#6209](https://github.com/youzan/vant/issues/6209)
+
+**style**
+
+- Button: 使用 flex 进行内容居中，display 由 inline-block 调整为 inline-flex [#6180](https://github.com/youzan/vant/issues/6180)
+- Picker: 优化顶部操作栏的样式，调整操作按钮颜色 [#6214](https://github.com/youzan/vant/issues/6214)
+- CouponList: 新增 @coupon-list-close-button-height 样式变量 [18a0c5](https://github.com/youzan/vant/commit/18a0c545ec881eb296ba6cc11dfaa12febd79e5c)
+
+**Feature**
+
+- Calendar: 新增 unselect 事件，在取消选中时触发 [#6198](https://github.com/youzan/vant/issues/6198)
+- Calendar: 支持在多选模式下使用 max-range 属性 [#6202](https://github.com/youzan/vant/issues/6202)
+- Field: 新增 colon 属性，用于配置是否显示冒号 [#6195](https://github.com/youzan/vant/issues/6195)
+- Locale: 新增罗马尼亚语配置文件 [#6193](https://github.com/youzan/vant/issues/6193)
+- ShareSheet: 优化无障碍访问 [#6208](https://github.com/youzan/vant/issues/6208)
+
+**Bug Fixes**
+
+- Layout: 修复设置 gutter 属性后间距错误的问题 [#6197](https://github.com/youzan/vant/issues/6197) [#6143](https://github.com/youzan/vant/issues/6143)
+- NoticeBar: 修复动态修改 scrollable 属性后未正确生效的问题 [#6190](https://github.com/youzan/vant/issues/6190)
+- ShareSheet: 修复在部分浏览器上底部间距错误的问题 [#6207](https://github.com/youzan/vant/issues/6207)
+- Tab: 修复文字截断时无法正确展示徽标的问题 [#6209](https://github.com/youzan/vant/issues/6209)
+
 ### [v2.7.1](https://github.com/youzan/vant/compare/v2.7.0...v2.7.1)
 
 `2020-04-28`
