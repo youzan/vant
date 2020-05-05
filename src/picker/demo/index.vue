@@ -69,7 +69,7 @@
         :placeholder="t('chooseCity')"
         @click="onClickField"
       />
-      <van-popup v-model="showPicker" position="bottom">
+      <van-popup v-model="showPicker" round position="bottom">
         <van-picker
           show-toolbar
           :title="t('title')"
