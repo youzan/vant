@@ -20,7 +20,7 @@ Vue.use(Area);
 要初始化一个`Area`组件，你需要传入一个`area-list`属性，数据格式具体可看下面数据格式章节
 
 ```html
-<van-area :area-list="areaList" />
+<van-area title="标题" :area-list="areaList" />
 ```
 
 ### 选中省市区
@@ -28,7 +28,7 @@ Vue.use(Area);
 如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
 
 ```html
-<van-area :area-list="areaList" value="110101" />
+<van-area title="标题" :area-list="areaList" value="110101" />
 ```
 
 ### 配置显示列
@@ -36,7 +36,7 @@ Vue.use(Area);
 可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
 
 ```html
-<van-area :area-list="areaList" :columns-num="2" title="标题" />
+<van-area title="标题" :area-list="areaList" :columns-num="2" />
 ```
 
 ### 配置列占位提示文字
@@ -45,9 +45,9 @@ Vue.use(Area);
 
 ```html
 <van-area
+  title="标题"
   :area-list="areaList"
   :columns-placeholder="['请选择', '请选择', '请选择']"
-  title="标题"
 />
 ```
 

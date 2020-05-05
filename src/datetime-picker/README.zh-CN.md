@@ -15,35 +15,13 @@ Vue.use(DatetimePicker);
 
 ## 代码演示
 
-### 选择完整时间
-
-```html
-<van-datetime-picker
-  v-model="currentDate"
-  type="datetime"
-  :min-date="minDate"
-  :max-date="maxDate"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-};
-```
-
-### 选择日期（年月日）
+### 选择年月日
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="date"
+  title="选择年月日"
   :min-date="minDate"
   :max-date="maxDate"
 />
@@ -61,7 +39,7 @@ export default {
 };
 ```
 
-### 选择日期（年月）
+### 选择年月
 
 通过传入`formatter`函数，可以对选项文字进行格式化处理
 
@@ -69,6 +47,7 @@ export default {
 <van-datetime-picker
   v-model="currentDate"
   type="year-month"
+  title="选择年月"
   :min-date="minDate"
   :max-date="maxDate"
   :formatter="formatter"
@@ -103,6 +82,7 @@ export default {
 <van-datetime-picker
   v-model="currentTime"
   type="time"
+  title="选择时间"
   :min-hour="10"
   :max-hour="20"
 />
@@ -113,6 +93,30 @@ export default {
   data() {
     return {
       currentTime: '12:00',
+    };
+  },
+};
+```
+
+### 选择完整时间
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="datetime"
+  title="选择完整时间"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
     };
   },
 };
