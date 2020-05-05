@@ -15,35 +15,13 @@ Vue.use(DatetimePicker);
 
 ## Usage
 
-### Choose DateTime
-
-```html
-<van-datetime-picker
-  v-model="currentDate"
-  type="datetime"
-  :min-date="minDate"
-  :max-date="maxDate"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-};
-```
-
 ### Choose Date
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="date"
+  title="Choose Date"
   :min-date="minDate"
   :max-date="maxDate"
 />
@@ -67,6 +45,7 @@ export default {
 <van-datetime-picker
   v-model="currentDate"
   type="year-month"
+  title="Choose Year-Month"
   :min-date="minDate"
   :max-date="maxDate"
   :formatter="formatter"
@@ -101,6 +80,7 @@ export default {
 <van-datetime-picker
   v-model="currentTime"
   type="time"
+  title="Choose Time"
   :min-hour="10"
   :max-hour="20"
 />
@@ -116,10 +96,39 @@ export default {
 };
 ```
 
+### Choose DateTime
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="datetime"
+  title="Choose DateTime"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
+    };
+  },
+};
+```
+
 ### Option Filter
 
 ```html
-<van-datetime-picker v-model="currentTime" type="time" :filter="filter" />
+<van-datetime-picker
+  v-model="currentTime"
+  type="time"
+  title="Option Filter"
+  :filter="filter"
+/>
 ```
 
 ```js

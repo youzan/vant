@@ -1,26 +1,26 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-area :area-list="t('areaList')" />
+      <van-area :title="t('title')" :area-list="t('areaList')" />
     </demo-block>
 
     <demo-block :title="t('title2')">
-      <van-area :area-list="t('areaList')" :value="value" />
+      <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />
     </demo-block>
 
     <demo-block :title="t('title3')">
       <van-area
+        :title="t('title')"
         :area-list="t('areaList')"
         :columns-num="2"
-        :title="t('title')"
       />
     </demo-block>
 
     <demo-block :title="t('title4')">
       <van-area
+        :title="t('title')"
         :area-list="t('areaList')"
         :columns-placeholder="t('columnsPlaceholder')"
-        :title="t('title')"
       />
     </demo-block>
   </demo-section>

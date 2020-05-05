@@ -206,7 +206,7 @@ export default createComponent({
 
         const title = titles[this.currentIndex].$el;
         const { lineWidth, lineHeight } = this;
-        const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
+        const width = isDef(lineWidth) ? lineWidth : title.offsetWidth * 0.4;
         const left = title.offsetLeft + title.offsetWidth / 2;
 
         const lineStyle = {

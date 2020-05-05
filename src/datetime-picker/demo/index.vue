@@ -1,18 +1,10 @@
 <template>
   <demo-section>
-    <demo-block :title="t('title1')">
-      <van-datetime-picker
-        v-model="currentDate1"
-        type="datetime"
-        :min-date="minDate"
-        :max-date="maxDate"
-      />
-    </demo-block>
-
     <demo-block :title="t('title2')">
       <van-datetime-picker
         v-model="currentDate2"
         type="date"
+        :title="t('title2')"
         :min-date="minDate"
         :max-date="maxDate"
       />
@@ -22,6 +14,7 @@
       <van-datetime-picker
         v-model="currentDate3"
         type="year-month"
+        :title="t('title3')"
         :min-date="minDate"
         :max-date="maxDate"
         :formatter="formatter"
@@ -32,8 +25,19 @@
       <van-datetime-picker
         v-model="currentTime1"
         type="time"
+        :title="t('title4')"
         :min-hour="10"
         :max-hour="20"
+      />
+    </demo-block>
+
+    <demo-block :title="t('title1')">
+      <van-datetime-picker
+        v-model="currentDate1"
+        type="datetime"
+        :title="t('title1')"
+        :min-date="minDate"
+        :max-date="maxDate"
       />
     </demo-block>
 
@@ -41,6 +45,7 @@
       <van-datetime-picker
         v-model="currentTime2"
         type="time"
+        :title="t('optionFilter')"
         :filter="filter"
       />
     </demo-block>
@@ -52,8 +57,8 @@ export default {
   i18n: {
     'zh-CN': {
       title1: '选择完整时间',
-      title2: '选择日期（年月日）',
-      title3: '选择日期（年月）',
+      title2: '选择年月日',
+      title3: '选择年月',
       title4: '选择时间',
       year: '年',
       month: '月',
