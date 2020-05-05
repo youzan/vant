@@ -257,7 +257,7 @@ export default createComponent({
     genToolbar() {
       if (this.showToolbar) {
         return (
-          <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
+          <div class={bem('toolbar')}>
             {this.slots() || [
               <button type="button" class={bem('cancel')} onClick={this.cancel}>
                 {this.cancelButtonText || t('cancel')}

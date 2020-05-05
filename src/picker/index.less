@@ -16,21 +16,29 @@
   &__confirm {
     height: 100%;
     padding: @picker-action-padding;
-    color: @picker-action-text-color;
     font-size: @picker-action-font-size;
     background-color: transparent;
     border: none;
     cursor: pointer;
 
     &:active {
-      background-color: @picker-action-active-color;
+      opacity: @active-opacity;
     }
+  }
+
+  &__confirm {
+    color: @picker-confirm-action-color;
+  }
+
+  &__cancel {
+    color: @picker-cancel-action-color;
   }
 
   &__title {
     max-width: 50%;
     font-weight: @font-weight-bold;
     font-size: @picker-title-font-size;
+    line-height: @picker-title-line-height;
     text-align: center;
   }
 
@@ -57,9 +65,9 @@
   &__frame {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: @padding-md;
+    left: @padding-md;
     z-index: 3;
-    width: 100%;
     transform: translateY(-50%);
     pointer-events: none;
   }
