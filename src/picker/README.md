@@ -18,41 +18,13 @@ Vue.use(Picker);
 ### Basic Usage
 
 ```html
-<van-picker :columns="columns" @change="onChange" />
-```
-
-```js
-import { Toast } from 'vant';
-
-export default {
-  data() {
-    return {
-      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-    };
-  },
-  methods: {
-    onChange(picker, value, index) {
-      Toast(`Value: ${value}, Index: ${index}`);
-    },
-  },
-};
-```
-
-### Default Index
-
-```html
-<van-picker :columns="columns" :default-index="2" @change="onChange" />
-```
-
-### Show Toolbar
-
-```html
 <van-picker
   show-toolbar
   title="Title"
   :columns="columns"
-  @cancel="onCancel"
   @confirm="onConfirm"
+  @cancel="onCancel"
+  @change="onChange"
 />
 ```
 
@@ -69,11 +41,20 @@ export default {
     onConfirm(value, index) {
       Toast(`Value: ${value}, Index: ${index}`);
     },
+    onChange(picker, value, index) {
+      Toast(`Value: ${value}, Index: ${index}`);
+    },
     onCancel() {
       Toast('Cancel');
     },
   },
 };
+```
+
+### Default Index
+
+```html
+<van-picker show-toolbar title="Title" :columns="columns" :default-index="2" />
 ```
 
 ### Multiple Columns
@@ -147,7 +128,7 @@ export default {
 ### Disable option
 
 ```html
-<van-picker :columns="columns" />
+<van-picker show-toolbar :columns="columns" />
 ```
 
 ```js
@@ -167,7 +148,7 @@ export default {
 ### Set Column Values
 
 ```html
-<van-picker :columns="columns" @change="onChange" />
+<van-picker show-toolbar title="Title" :columns="columns" @change="onChange" />
 ```
 
 ```js
@@ -195,7 +176,7 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
 
 ```html
-<van-picker :columns="columns" :loading="loading" />
+<van-picker show-toolbar title="Title" :columns="columns" :loading="loading" />
 ```
 
 ```js
@@ -226,8 +207,9 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model="showPicker" round position="bottom">
   <van-picker
+    title="Title"
     show-toolbar
     :columns="columns"
     @cancel="showPicker = false"
