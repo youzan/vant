@@ -45,7 +45,6 @@ export default createComponent({
     disableStepperInput: Boolean,
     resetSelectedSkuOnHide: Boolean,
     properties: Array,
-    enableEmptyResetEvent: Boolean,
     quota: {
       type: Number,
       default: 0,
@@ -387,7 +386,7 @@ export default createComponent({
 
       const skuValues = this.selectedSkuValues;
 
-      if (skuValues.length > 0 || this.enableEmptyResetEvent) {
+      if (skuValues.length > 0) {
         this.$nextTick(() => {
           this.$emit('sku-selected', {
             skuValue: skuValues[skuValues.length - 1],
@@ -410,13 +409,20 @@ export default createComponent({
       });
 
       const propValues = this.selectedPropValues;
-      if (propValues.length > 0 || this.enableEmptyResetEvent) {
+      if (propValues.length > 0) {
         this.$emit('sku-prop-selected', {
           propValue: propValues[propValues.length - 1],
           selectedProp: this.selectedProp,
           selectedSkuComb: this.selectedSkuComb,
         });
       }
+
+      // 抛出重置事件
+      this.$emit('sku-reset', {
+        selectedSku: this.selectedSku,
+        selectedProp: this.selectedProp,
+        selectedSkuComb: this.selectedSkuComb,
+      });
     },
 
     getSkuMessages() {
