@@ -416,6 +416,13 @@ export default createComponent({
           selectedSkuComb: this.selectedSkuComb,
         });
       }
+
+      // 抛出重置事件
+      this.$emit('sku-reset', {
+        selectedSku: this.selectedSku,
+        selectedProp: this.selectedProp,
+        selectedSkuComb: this.selectedSkuComb,
+      });
     },
 
     getSkuMessages() {
@@ -457,9 +464,9 @@ export default createComponent({
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
           ? {
-            ...this.selectedSku,
-            [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
-          }
+              ...this.selectedSku,
+              [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
+            }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {

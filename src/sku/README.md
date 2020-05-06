@@ -152,6 +152,7 @@ export default {
 | sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | Triggered when open image preview | data: object |
 | close-preview | Triggered when close image preview | data: object |
+| sku-reset `v2.8.1` | Triggered when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### Methods
 
