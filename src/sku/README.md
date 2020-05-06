@@ -140,6 +140,7 @@ export default {
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
+| enable-empty-reset-event `v2.8.1` | whether to trigger all reset events | _boolean_ | `false` |
 
 ### Events
 

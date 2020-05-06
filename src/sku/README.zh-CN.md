@@ -144,6 +144,7 @@ export default {
 | start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
+| enable-empty-reset-event `v2.8.1` | 是否抛出全部规格属性重置事件 | _boolean_ | `false` |
 
 ### Events
 
