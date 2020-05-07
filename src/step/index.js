@@ -23,8 +23,10 @@ export default createComponent({
     },
 
     lineStyle() {
-      if (this.status === 'finish') {
-        return { background: this.parent.activeColor };
+      if (this.status === 'finish' && this.parent.activeColor) {
+        return {
+          background: this.parent.activeColor,
+        };
       }
     },
   },
