@@ -38,6 +38,7 @@ export default {
           name: 'John Snow',
           tel: '13000000000',
           address: 'Somewhere',
+          isDefault: true,
         },
         {
           id: '2',
