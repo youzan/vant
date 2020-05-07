@@ -1,6 +1,6 @@
 // Utils
-import { formatNumber } from './utils';
 import { preventDefault } from '../utils/dom/event';
+import { formatNumber } from '../utils/format/number';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import {
   createNamespace,

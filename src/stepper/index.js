@@ -1,8 +1,8 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
+import { formatNumber } from '../utils/format/number';
 import { FieldMixin } from '../mixins/field';
-import { formatNumber } from '../field/utils';
 
 const [createComponent, bem] = createNamespace('stepper');
 
