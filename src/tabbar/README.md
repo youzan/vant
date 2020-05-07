@@ -102,7 +102,7 @@ export default {
 <van-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search">Tab</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="setting-o">Tab</van-tabbar-item>
 </van-tabbar>
 ```
@@ -113,7 +113,7 @@ export default {
 <van-tabbar v-model="active" @change="onChange">
   <van-tabbar-item icon="home-o">Tab1</van-tabbar-item>
   <van-tabbar-item icon="search">Tab2</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o">Tab3</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">Tab3</van-tabbar-item>
   <van-tabbar-item icon="setting-o">Tab4</van-tabbar-item>
 </van-tabbar>
 ```
