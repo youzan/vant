@@ -48,7 +48,7 @@ export default createComponent({
 
         group.forEach((item, index) => {
           if (index === 0) {
-            spaces.push({ right: group.length > 1 ? averagePadding : 0 });
+            spaces.push({ right: averagePadding });
           } else {
             const left = gutter - spaces[item - 1].right;
             const right = averagePadding - left;
