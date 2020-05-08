@@ -353,10 +353,15 @@ export default createComponent({
     },
 
     onKeypress(event) {
-      // trigger blur after click keyboard search button
-      /* istanbul ignore next */
-      if (this.type === 'search' && event.keyCode === 13) {
-        this.blur();
+      const ENTER_CODE = 13;
+
+      if (event.keyCode === ENTER_CODE) {
+        preventDefault(event);
+
+        // trigger blur after click keyboard search button
+        if (this.type === 'search') {
+          this.blur();
+        }
       }
 
       this.$emit('keypress', event);

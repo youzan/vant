@@ -342,3 +342,17 @@ test('colon prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should blur search input on enter', () => {
+  const wrapper = mount(Field);
+  const input = wrapper.find('input');
+
+  input.element.focus();
+
+  input.trigger('keypress.enter');
+  expect(wrapper.emitted('blur')).toBeFalsy();
+
+  wrapper.setProps({ type: 'search' });
+  input.trigger('keypress.enter');
+  expect(wrapper.emitted('blur')).toBeTruthy();
+});
