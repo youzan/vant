@@ -66,7 +66,7 @@ export default {
     margin: 0 4px;
     color: #ee0a24;
   }
-  .item {
+  .block {
     display: inline-block;
     width: 22px;
     color: #fff;
