@@ -9,7 +9,7 @@
 ImagePreview 是一个函数，调用函数后展示图片预览
 
 ```js
-import { Dialog } from 'vant';
+import { ImagePreview } from 'vant';
 
 ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
 ```
