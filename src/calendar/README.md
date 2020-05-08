@@ -228,6 +228,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
 | poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
+| lazy-render `v2.8.1` | Whether to enable lazy render | _boolean_ | `true` |
 | show-mark | Whether to show background month mark | _boolean_ | `true` |
 | show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |

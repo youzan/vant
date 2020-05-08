@@ -230,6 +230,7 @@ export default {
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
+| lazy-render `v2.8.1` | 是否只渲染可视区域的内容 | _boolean_ | `true` |
 | show-mark | 是否显示月份背景水印 | _boolean_ | `true` |
 | show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
