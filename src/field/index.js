@@ -113,17 +113,14 @@ export default createComponent({
     },
 
     listeners() {
-      const listeners = {
+      return {
         ...this.$listeners,
-        input: this.onInput,
-        keypress: this.onKeypress,
-        focus: this.onFocus,
         blur: this.onBlur,
+        focus: this.onFocus,
+        input: this.onInput,
+        click: this.onClickInput,
+        keypress: this.onKeypress,
       };
-
-      delete listeners.click;
-
-      return listeners;
     },
 
     labelStyle() {
@@ -337,6 +334,10 @@ export default createComponent({
       this.$emit('click', event);
     },
 
+    onClickInput(event) {
+      this.$emit('click-input', event);
+    },
+
     onClickLeftIcon(event) {
       this.$emit('click-left-icon', event);
     },
@@ -392,7 +393,12 @@ export default createComponent({
 
       if (inputSlot) {
         return (
-          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
+          <div
+            class={bem('control', [inputAlign, 'custom'])}
+            onClick={this.onClickInput}
+          >
+            {inputSlot}
+          </div>
         );
       }
 

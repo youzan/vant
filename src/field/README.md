@@ -253,6 +253,7 @@ Field support all native events of input tag
 | blur | Triggered when input loses focus | _event: Event_ |
 | clear | Triggered when click clear icon | _event: Event_ |
 | click | Triggered when click Field | _event: Event_ |
+| click-input `v2.8.1` | Triggered when click input | _event: Event_ |
 | click-left-icon | Triggered when click the left icon of Field | _event: Event_ |
 | click-right-icon | Triggered when click the right icon of Field | _event: Event_ |
 

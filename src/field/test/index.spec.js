@@ -17,7 +17,25 @@ test('click event', () => {
   expect(wrapper.emitted('click')[0][0]).toBeTruthy();
 });
 
-test('click icon event', () => {
+test('click-input event', () => {
+  const wrapper = mount(Field);
+
+  wrapper.find('input').trigger('click');
+  expect(wrapper.emitted('click-input')[0][0]).toBeTruthy();
+});
+
+test('click-input event when using input slot', () => {
+  const wrapper = mount(Field, {
+    scopedSlots: {
+      input: () => 'Custom Input',
+    },
+  });
+
+  wrapper.find('.van-field__control').trigger('click');
+  expect(wrapper.emitted('click-input')[0][0]).toBeTruthy();
+});
+
+test('click-icon event', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'a',

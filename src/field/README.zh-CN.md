@@ -271,15 +271,16 @@ export default {
 
 除下列事件外，Field 默认支持 Input 标签所有的原生事件
 
-| 事件             | 说明                 | 回调参数                       |
-| ---------------- | -------------------- | ------------------------------ |
-| input            | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus            | 输入框获得焦点时触发 | _event: Event_                 |
-| blur             | 输入框失去焦点时触发 | _event: Event_                 |
-| clear            | 点击清除按钮时触发   | _event: Event_                 |
-| click            | 点击时触发           | _event: Event_                 |
-| click-left-icon  | 点击左侧图标时触发   | _event: Event_                 |
-| click-right-icon | 点击右侧图标时触发   | _event: Event_                 |
+| 事件                 | 说明                 | 回调参数                       |
+| -------------------- | -------------------- | ------------------------------ |
+| input                | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus                | 输入框获得焦点时触发 | _event: Event_                 |
+| blur                 | 输入框失去焦点时触发 | _event: Event_                 |
+| clear                | 点击清除按钮时触发   | _event: Event_                 |
+| click                | 点击 Field 时触发    | _event: Event_                 |
+| click-input `v2.8.1` | 点击输入区域时触发   | _event: Event_                 |
+| click-left-icon      | 点击左侧图标时触发   | _event: Event_                 |
+| click-right-icon     | 点击右侧图标时触发   | _event: Event_                 |
 
 ### 方法
 
