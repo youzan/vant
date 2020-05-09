@@ -209,11 +209,11 @@ export default createComponent({
     },
 
     onFocus(event) {
-      this.$emit('focus', event);
-
       // readonly not work in lagacy mobile safari
       if (this.disableInput && this.$refs.input) {
         this.$refs.input.blur();
+      } else {
+        this.$emit('focus', event);
       }
     },
 

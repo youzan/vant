@@ -173,14 +173,19 @@ test('input invalid value and blur', () => {
 });
 
 test('stepper focus', () => {
-  const wrapper = mount(Stepper);
+  const wrapper = mount(Stepper, {
+    propsData: {
+      disableInput: true,
+    },
+  });
   const input = wrapper.find('input');
+
+  input.trigger('focus');
+  expect(wrapper.emitted('focus')).toBeFalsy();
+
+  wrapper.setProps({ disableInput: false });
   input.trigger('focus');
   expect(wrapper.emitted('focus')).toBeTruthy();
-
-  wrapper.setProps({ disableInput: true });
-  input.trigger('focus');
-  expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
 test('stepper blur', () => {
