@@ -2,6 +2,7 @@ import { createNamespace, isDef, addUnit } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
 import { formatNumber } from '../utils/format/number';
+import { isNaN } from '../utils/validate/number';
 import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('stepper');
@@ -153,6 +154,7 @@ export default createComponent({
 
       // format range
       value = value === '' ? 0 : +value;
+      value = isNaN(value) ? this.min : value;
       value = Math.max(Math.min(this.max, value), this.min);
 
       // format decimal
@@ -210,7 +212,6 @@ export default createComponent({
       this.$emit('focus', event);
 
       // readonly not work in lagacy mobile safari
-      /* istanbul ignore if */
       if (this.disableInput && this.$refs.input) {
         this.$refs.input.blur();
       }

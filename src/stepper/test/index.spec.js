@@ -157,11 +157,30 @@ test('only allow interger', () => {
   expect(wrapper.emitted('input')[1][0]).toEqual(1);
 });
 
+test('input invalid value and blur', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: '',
+    },
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '.';
+  input.trigger('input');
+  input.trigger('blur');
+
+  expect(wrapper.emitted('input').pop()).toEqual([1]);
+});
+
 test('stepper focus', () => {
   const wrapper = mount(Stepper);
   const input = wrapper.find('input');
   input.trigger('focus');
   expect(wrapper.emitted('focus')).toBeTruthy();
+
+  wrapper.setProps({ disableInput: true });
+  input.trigger('focus');
+  expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
 test('stepper blur', () => {
