@@ -10,6 +10,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.1](https://github.com/youzan/vant/compare/v2.8.1-beta.0...v2.8.1)
+
+`2020-05-09`
+
+**Feature**
+
+- Calendar: 新增 lazy-render 属性，用于控制是否开启延迟渲染 [#6245](https://github.com/youzan/vant/issues/6245)
+- Field: 新增 click-input 事件，在点击输入框时触发 [#6239](https://github.com/youzan/vant/issues/6239)
+- Sku: 新增 sku-reset 事件，在规格重置时触发 [#6220](https://github.com/youzan/vant/issues/6220)
+- GoodsActionButton: 适配系统字体放大 [b1dcf3](https://github.com/youzan/vant/commit/b1dcf36263ae7a19197f2c162e67f220dd171047)
+
+**Bug Fixes**
+
+- Button: 修复文字在部分机型上不居中的问题 [8c53db](https://github.com/youzan/vant/commit/8c53db040dd0dfff60eca1ac284d98f13b4e4ce6)
+- Field: 修复回车键会触发表单提交的问题 [#6240](https://github.com/youzan/vant/issues/6240)
+- Step: 修复 active-color 属性对小圆点颜色不生效的问题 [#6229](https://github.com/youzan/vant/issues/6229)
+- Stepper: 修复输入负数时格式化错误的问题 [#6238](https://github.com/youzan/vant/issues/6238)
+- Stepper: 修复个别情况下会展示 NaN 的问题 [7327a4](https://github.com/youzan/vant/commit/7327a481d18271393e25b17d4402dad6d336bb3a)
+- Stepper: 修复设置 disable-input 属性后在部分浏览器上仍会触发 focus 事件的问题 [c6024b](https://github.com/youzan/vant/commit/c6024b18b4191a3a56db0bed1ababa48420c0946)
+
 ### [v2.8.0](https://github.com/youzan/vant/compare/v2.7.1...v2.8.0)
 
 `2020-05-05`

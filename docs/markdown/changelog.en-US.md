@@ -10,6 +10,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.1](https://github.com/youzan/vant/compare/v2.8.1-beta.0...v2.8.1)
+
+`2020-05-09`
+
+**Feature**
+
+- Calendar: add lazy-render prop [#6245](https://github.com/youzan/vant/issues/6245)
+- Field: add click-input event [#6239](https://github.com/youzan/vant/issues/6239)
+- Sku: add sku-reset event [#6220](https://github.com/youzan/vant/issues/6220)
+- GoodsActionButton: improve test size adjust [b1dcf3](https://github.com/youzan/vant/commit/b1dcf36263ae7a19197f2c162e67f220dd171047)
+
+**Bug Fixes**
+
+- Button: text should align center [8c53db](https://github.com/youzan/vant/commit/8c53db040dd0dfff60eca1ac284d98f13b4e4ce6)
+- Field: should not submit form on enter [#6240](https://github.com/youzan/vant/issues/6240)
+- Step: active-color should effect circle [#6229](https://github.com/youzan/vant/issues/6229)
+- Stepper: incorrect value when format minus value [#6238](https://github.com/youzan/vant/issues/6238)
+- Stepper: should not display NaN [7327a4](https://github.com/youzan/vant/commit/7327a481d18271393e25b17d4402dad6d336bb3a)
+- Stepper: should not emit focus when input is readonly [c6024b](https://github.com/youzan/vant/commit/c6024b18b4191a3a56db0bed1ababa48420c0946)
+
 ### [v2.8.0](https://github.com/youzan/vant/compare/v2.7.1...v2.8.0)
 
 `2020-05-05`
