@@ -11,6 +11,7 @@ export default createComponent({
     square: Boolean,
     gutter: [Number, String],
     iconSize: [Number, String],
+    direction: String,
     clickable: Boolean,
     columnNum: {
       type: [Number, String],

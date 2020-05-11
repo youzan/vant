@@ -67,6 +67,14 @@
       </van-grid>
     </demo-block>
 
+    <demo-block :title="t('horizontal')">
+      <van-grid direction="horizontal" :column-num="3">
+        <van-grid-item icon="photo-o" :text="t('text')" />
+        <van-grid-item icon="photo-o" :text="t('text')" />
+        <van-grid-item icon="photo-o" :text="t('text')" />
+      </van-grid>
+    </demo-block>
+
     <demo-block :title="t('route')">
       <van-grid clickable :column-num="2">
         <van-grid-item icon="home-o" :text="t('vueRoute')" to="/" />
@@ -100,6 +108,7 @@ export default {
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
       showBadge: '徽标提示',
+      horizontal: '内容横排',
     },
     'en-US': {
       text: 'Text',
@@ -111,6 +120,7 @@ export default {
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
       showBadge: 'Show Badge',
+      horizontal: 'Horizontal',
     },
   },
 };
