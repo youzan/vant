@@ -63,6 +63,16 @@ Vue.use(GridItem);
 </van-grid>
 ```
 
+### Horizontal
+
+```html
+<van-grid direction="horizontal" :column-num="2">
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+</van-grid>
+```
+
 ### Route
 
 ```html
@@ -94,6 +104,7 @@ Vue.use(GridItem);
 | center | Whether to center content | _boolean_ | `true` |
 | square | Whether to be square shape | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
+| direction `v2.8.2` | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
 
 ### GridItem Props
 

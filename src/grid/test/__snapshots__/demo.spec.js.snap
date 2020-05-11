@@ -152,6 +152,22 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-grid van-hairline--top">
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-grid van-hairline--top">
       <div class="van-grid-item" style="flex-basis: 50%;">
         <div role="button" tabindex="0" class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"><i class="van-icon van-icon-home-o van-grid-item__icon">
             <!----></i><span class="van-grid-item__text">路由跳转</span></div>
