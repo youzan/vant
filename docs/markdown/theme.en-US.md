@@ -71,13 +71,15 @@ module.exports = {
         {
           loader: 'less-loader',
           options: {
-            modifyVars: {
-              // overide with less vars
-              'text-color': '#111',
-              'border-color': '#eee'
-              // or override with less file
-              'hack': `true; @import "your-less-file-path.less";`
-            },
+            lessOptions: {
+              modifyVars: {
+                // overide with less vars
+                'text-color': '#111',
+                'border-color': '#eee'
+                // or override with less file
+                'hack': `true; @import "your-less-file-path.less";`
+              },
+            }
           },
         },
       ],
@@ -94,12 +96,14 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        modifyVars: {
-          // overide with less vars
-          'text-color': '#111',
-          'border-color': '#eee',
-          // or override with less file
-          hack: `true; @import "your-less-file-path.less";`,
+        lessOptions: {
+          modifyVars: {
+            // overide with less vars
+            'text-color': '#111',
+            'border-color': '#eee',
+            // or override with less file
+            hack: `true; @import "your-less-file-path.less";`,
+          },
         },
       },
     },
