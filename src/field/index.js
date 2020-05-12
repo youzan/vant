@@ -356,7 +356,10 @@ export default createComponent({
       const ENTER_CODE = 13;
 
       if (event.keyCode === ENTER_CODE) {
-        preventDefault(event);
+        // should not submit form on etner
+        if (this.type !== 'textarea') {
+          preventDefault(event);
+        }
 
         // trigger blur after click keyboard search button
         if (this.type === 'search') {
