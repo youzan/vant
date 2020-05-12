@@ -345,14 +345,18 @@ test('colon prop', () => {
 
 test('should blur search input on enter', () => {
   const wrapper = mount(Field);
-  const input = wrapper.find('input');
 
-  input.element.focus();
+  wrapper.find('input').element.focus();
+  wrapper.find('input').trigger('keypress.enter');
+  expect(wrapper.emitted('blur')).toBeFalsy();
 
-  input.trigger('keypress.enter');
+  wrapper.setProps({ type: 'textarea' });
+  wrapper.find('textarea').element.focus();
+  wrapper.find('textarea').trigger('keypress.enter');
   expect(wrapper.emitted('blur')).toBeFalsy();
 
   wrapper.setProps({ type: 'search' });
-  input.trigger('keypress.enter');
+  wrapper.find('input').element.focus();
+  wrapper.find('input').trigger('keypress.enter');
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
