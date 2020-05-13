@@ -97,6 +97,22 @@ Use `title` prop to set keyboard title
 />
 ```
 
+### Multiple ExtraKey
+
+```html
+<van-cell plain type="primary" @touchstart.native.stop="show = true">
+  Show Keyboard With Multiple ExtraKey
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  :extra-key="['00', '.']"
+  close-button-text="Close"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### Bind Value
 
 ```html
@@ -138,7 +154,7 @@ export default {
 | maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
-| extra-key | Content of bottom left key | _string_ | `''` |
+| extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |
 | close-button-text | Close button text | _string_ | - |
 | delete-button-text | Delete button text | _string_ | Delete Icon |
 | close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
