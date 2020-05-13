@@ -18,20 +18,20 @@
   transform: scale(0.5);
 }
 
-.hairline-top(@color: @border-color, @left: 0) {
+.hairline-top(@color: @border-color, @left: 0, @right: 0) {
   .hairline-common();
 
   top: 0;
-  right: 0;
+  right: @right;
   left: @left;
   border-top: 1px solid @color;
   transform: scaleY(0.5);
 }
 
-.hairline-bottom(@color: @border-color, @left: 0) {
+.hairline-bottom(@color: @border-color, @left: 0, @right: 0) {
   .hairline-common();
 
-  right: 0;
+  right: @right;
   bottom: 0;
   left: @left;
   border-bottom: 1px solid @color;
