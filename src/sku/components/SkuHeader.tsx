@@ -62,7 +62,7 @@ function SkuHeader(
         <img src={goodsImg} />
         {slots['sku-header-image-extra']?.()}
       </div>
-      <div class={bem('goods-info')}>{slots.default && slots.default()}</div>
+      <div class={bem('goods-info')}>{slots.default?.()}</div>
     </div>
   );
 }
