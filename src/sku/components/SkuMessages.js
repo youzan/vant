@@ -6,19 +6,18 @@ import { isNumeric } from '../../utils/validate/number';
 // Components
 import Cell from '../../cell';
 import Field from '../../field';
-import CellGroup from '../../cell-group';
 import SkuImgUploader from './SkuImgUploader';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');
 
 export default createComponent({
   props: {
+    messageConfig: Object,
+    goodsId: [Number, String],
     messages: {
       type: Array,
       default: () => [],
     },
-    messageConfig: Object,
-    goodsId: [Number, String],
   },
 
   data() {
@@ -155,10 +154,6 @@ export default createComponent({
   },
 
   render() {
-    return (
-      <CellGroup class={bem()} border={this.messages.length > 0}>
-        {this.messages.map(this.genMessage)}
-      </CellGroup>
-    );
+    return <div class={bem()}>{this.messages.map(this.genMessage)}</div>;
   },
 });
