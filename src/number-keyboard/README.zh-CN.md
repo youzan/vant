@@ -106,6 +106,24 @@ export default {
 />
 ```
 
+### 配置多个按键
+
+当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`
+
+```html
+<van-cell plain type="primary" @touchstart.native.stop="show = true">
+  弹出配置多个按键的键盘
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  :extra-key="['00', '.']"
+  close-button-text="完成"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### 双向绑定
 
 可以通过 `v-model` 绑定键盘当前输入值
@@ -149,7 +167,7 @@ export default {
 | maxlength `v2.0.2` | 输入值最大长度 | _number \| string_ | - |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
 | z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
-| extra-key | 左下角按键内容 | _string_ | `''` |
+| extra-key `v2.8.2` | 底部额外按键的内容 | _string \| string[]_ | `''` |
 | close-button-text | 关闭按钮文字，空则不展示 | _string_ | - |
 | delete-button-text | 删除按钮文字，空则展示删除图标 | _string_ | - |
 | close-button-loading `v2.7.0` | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |

@@ -34,7 +34,7 @@ export default createComponent({
       default: '',
     },
     extraKey: {
-      type: String,
+      type: [String, Array],
       default: '',
     },
     maxlength: {
@@ -69,35 +69,55 @@ export default createComponent({
 
   computed: {
     keys() {
-      const keys = [];
-      for (let i = 1; i <= 9; i++) {
-        keys.push({ text: i });
+      if (this.theme === 'custom') {
+        return this.genCustomKeys();
       }
-
-      switch (this.theme) {
-        case 'default':
-          keys.push(
-            { text: this.extraKey, type: 'extra' },
-            { text: 0 },
-            {
-              text: this.showDeleteKey ? this.deleteButtonText : '',
-              type: this.showDeleteKey ? 'delete' : '',
-            }
-          );
-          break;
-        case 'custom':
-          keys.push(
-            { text: 0, wider: true },
-            { text: this.extraKey, type: 'extra' }
-          );
-          break;
-      }
-
-      return keys;
+      return this.genDefaultKeys();
     },
   },
 
   methods: {
+    genBasicKeys() {
+      const keys = [];
+      for (let i = 1; i <= 9; i++) {
+        keys.push({ text: i });
+      }
+      return keys;
+    },
+
+    genDefaultKeys() {
+      return [
+        ...this.genBasicKeys(),
+        { text: this.extraKey, type: 'extra' },
+        { text: 0 },
+        {
+          text: this.showDeleteKey ? this.deleteButtonText : '',
+          type: this.showDeleteKey ? 'delete' : '',
+        },
+      ];
+    },
+
+    genCustomKeys() {
+      const keys = this.genBasicKeys();
+      const { extraKey } = this;
+      const extraKeys = Array.isArray(extraKey) ? extraKey : [extraKey];
+
+      if (extraKeys.length === 1) {
+        keys.push(
+          { text: 0, wider: true },
+          { text: extraKey[0], type: 'extra' }
+        );
+      } else if (extraKeys.length === 2) {
+        keys.push(
+          { text: extraKey[0], type: 'extra' },
+          { text: 0 },
+          { text: extraKey[1], type: 'extra' }
+        );
+      }
+
+      return keys;
+    },
+
     onBlur() {
       this.show && this.$emit('blur');
     },

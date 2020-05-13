@@ -12,6 +12,9 @@
     <van-cell is-link @touchstart.native.stop="keyboard = 'title'">
       {{ t('button4') }}
     </van-cell>
+    <van-cell is-link @touchstart.native.stop="keyboard = 'multiExtraKey'">
+      {{ t('button5') }}
+    </van-cell>
     <van-field
       readonly
       clickable
@@ -58,6 +61,16 @@
     />
 
     <van-number-keyboard
+      :show="keyboard === 'multiExtraKey'"
+      :close-button-text="t('close')"
+      theme="custom"
+      :extra-key="['00', '.']"
+      @blur="keyboard = ''"
+      @input="onInput"
+      @delete="onDelete"
+    />
+
+    <van-number-keyboard
       v-model="value"
       :show="keyboard === 'bindValue'"
       maxlength="6"
@@ -77,9 +90,11 @@ export default {
       button2: '弹出带右侧栏的键盘',
       button3: '弹出身份证号键盘',
       button4: '弹出带标题的键盘',
+      button5: '弹出配置多个按键的键盘',
       bindValue: '双向绑定',
       clickToInput: '点此输入',
       extraKey: '左下角按键内容',
+      multiExtraKey: '配置多个按键',
     },
     'en-US': {
       close: 'Close',
@@ -89,9 +104,11 @@ export default {
       button2: 'Show Keyboard With Sidebar',
       button3: 'Show IdNumber Keyboard',
       button4: 'Show Keyboard With Title',
+      button5: 'Show Keyboard With Multiple ExtraKey',
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'IdNumber Keyboard',
+      multiExtraKey: 'Multiple ExtraKey',
     },
   },
 
