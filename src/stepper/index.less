@@ -11,7 +11,7 @@
     width: @stepper-input-height;
     height: @stepper-input-height;
     margin: 0;
-    padding: @padding-base;
+    padding: 0;
     color: @stepper-button-icon-color;
     vertical-align: middle;
     background-color: @stepper-background-color;
@@ -19,24 +19,22 @@
     cursor: pointer;
 
     &::before {
-      width: 13px;
+      width: 50%;
       height: 1px;
     }
 
     &::after {
       width: 1px;
-      height: 13px;
+      height: 50%;
     }
 
     &::before,
     &::after {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
+      top: 50%;
+      left: 50%;
       background-color: currentColor;
+      transform: translate(-50%, -50%);
       content: '';
     }
 
@@ -75,6 +73,7 @@
     padding: 0;
     color: @stepper-input-text-color;
     font-size: @stepper-input-font-size;
+    line-height: @stepper-input-line-height;
     text-align: center;
     vertical-align: middle;
     background-color: @stepper-background-color;
@@ -92,6 +91,39 @@
 
     &:read-only {
       cursor: default;
+    }
+  }
+
+  &--round {
+    .van-stepper__input {
+      background-color: transparent;
+    }
+
+    .van-stepper__plus,
+    .van-stepper__minus {
+      border-radius: 100%;
+
+      &:active {
+        opacity: @active-opacity;
+      }
+
+      &--disabled {
+        &,
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    .van-stepper__plus {
+      color: @white;
+      background-color: @stepper-button-round-theme-color;
+    }
+
+    .van-stepper__minus {
+      color: @stepper-button-round-theme-color;
+      background-color: @white;
+      border: 1px solid @stepper-button-round-theme-color;
     }
   }
 }

@@ -133,6 +133,7 @@ export default {
 | default-value | 初始值，当 v-model 为空时生效 | _number \| string_ | `1` |
 | step | 步长，每次点击时改变的值 | _number \| string_ | `1` |
 | name `v2.2.11` | 标识符，可以在`change`事件回调参数中获取 | _number \| string_ | - |
+| theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
 | input-width | 输入框宽度，默认单位为`px` | _number \| string_ | `32px` |
 | button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | _number \| string_ | `28px` |
 | decimal-length `v2.2.1` | 固定显示的小数位数 | _number \| string_ | - |

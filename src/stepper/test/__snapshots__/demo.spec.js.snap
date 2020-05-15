@@ -56,5 +56,11 @@ exports[`renders demo correctly 1`] = `
       <div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus"></button></div>
     </div>
   </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title"><span>圆角风格</span></div>
+    <div class="van-cell__value">
+      <div class="van-stepper van-stepper--round"><button type="button" class="van-stepper__minus van-stepper__minus--disabled" style="width: 22px; height: 22px;"></button><input type="text" role="spinbutton" readonly="readonly" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="height: 22px;"><button type="button" class="van-stepper__plus" style="width: 22px; height: 22px;"></button></div>
+    </div>
+  </div>
 </div>
 `;

@@ -109,6 +109,7 @@ export default {
 | default-value | Default value, valid when v-model is empty | _number \| string_ | `1` |
 | step | Value change step | _number \| string_ | `1` |
 | name `v2.0.3` | Stepper name | _number \| string_ | - |
+| theme `v2.8.2` | Theme, can be set to `round` | _string_ | - |
 | input-width | Input width | _number \| string_ | `32px` |
 | button-size `v2.0.5` | Button size | _number \| string_ | `28px` |
 | decimal-length `v2.2.1` | Decimal length | _number \| string_ | - |

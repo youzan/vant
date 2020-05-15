@@ -25,6 +25,7 @@ export default createComponent({
 
   props: {
     value: null,
+    theme: String,
     integer: Boolean,
     disabled: Boolean,
     inputWidth: [Number, String],
@@ -278,7 +279,7 @@ export default createComponent({
     });
 
     return (
-      <div class={bem()}>
+      <div class={bem([this.theme])}>
         <button
           vShow={this.showMinus}
           type="button"
