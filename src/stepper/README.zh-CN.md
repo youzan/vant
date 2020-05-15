@@ -121,6 +121,14 @@ export default {
 };
 ```
 
+### 圆角风格
+
+将 theme 设置为 `round` 来展示圆角风格的步进器
+
+```html
+<van-stepper v-model="value" theme="round" button-size="22" disable-input />
+```
+
 ## API
 
 ### Props
@@ -133,10 +141,10 @@ export default {
 | default-value | 初始值，当 v-model 为空时生效 | _number \| string_ | `1` |
 | step | 步长，每次点击时改变的值 | _number \| string_ | `1` |
 | name `v2.2.11` | 标识符，可以在`change`事件回调参数中获取 | _number \| string_ | - |
-| theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
 | input-width | 输入框宽度，默认单位为`px` | _number \| string_ | `32px` |
 | button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | _number \| string_ | `28px` |
 | decimal-length `v2.2.1` | 固定显示的小数位数 | _number \| string_ | - |
+| theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
 | integer | 是否只允许输入整数 | _boolean_ | `false` |
 | disabled | 是否禁用步进器 | _boolean_ | `false` |
 | disable-plus `v2.2.16` | 是否禁用增加按钮 | _boolean_ | `false` |
