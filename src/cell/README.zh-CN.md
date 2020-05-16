@@ -159,8 +159,9 @@ Vue.use(CellGroup);
 
 | 名称       | 说明                          |
 | ---------- | ----------------------------- |
-| default    | 自定义右侧内容                |
-| title      | 自定义左侧标题                |
-| label      | 自定义标题下方描述            |
+| default    | 自定义右侧 value 的内容       |
+| title      | 自定义左侧 title 的内容       |
+| label      | 自定义标题下方 label 的内容   |
 | icon       | 自定义左侧图标                |
 | right-icon | 自定义右侧按钮，默认为`arrow` |
+| extra      | 自定义单元格最右侧的额外内容  |
