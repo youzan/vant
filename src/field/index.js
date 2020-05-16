@@ -550,6 +550,11 @@ export default createComponent({
       scopedSlots.title = () => Label;
     }
 
+    const extra = this.slots('extra');
+    if (extra) {
+      scopedSlots.extra = () => extra;
+    }
+
     return (
       <Cell
         icon={this.leftIcon}

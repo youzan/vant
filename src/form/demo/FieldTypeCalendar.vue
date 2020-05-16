@@ -1,16 +1,20 @@
 <template>
-  <div>
-    <van-field
-      readonly
-      clickable
-      name="calendar"
-      :value="value"
-      :label="t('calendar')"
-      :placeholder="t('placeholder')"
-      @click="showCalendar = true"
+  <van-field
+    readonly
+    clickable
+    name="calendar"
+    :value="value"
+    :label="t('calendar')"
+    :placeholder="t('placeholder')"
+    @click="showCalendar = true"
+  >
+    <van-calendar
+      v-model="showCalendar"
+      slot="extra"
+      get-container="body"
+      @confirm="onConfirm"
     />
-    <van-calendar v-model="showCalendar" @confirm="onConfirm" />
-  </div>
+  </van-field>
 </template>
 
 <script>
