@@ -154,10 +154,11 @@ Vue.use(CellGroup);
 
 ### Cell Slots
 
-| Name       | Description       |
-| ---------- | ----------------- |
-| default    | Custom value      |
-| icon       | Custom icon       |
-| title      | Custom title      |
-| label      | Custom label      |
-| right-icon | Custom right icon |
+| Name       | Description                       |
+| ---------- | --------------------------------- |
+| default    | Custom value                      |
+| icon       | Custom icon                       |
+| title      | Custom title                      |
+| label      | Custom label                      |
+| right-icon | Custom right icon                 |
+| extra      | Custom extra content on the right |
