@@ -164,4 +164,4 @@ Vue.use(CellGroup);
 | label      | 自定义标题下方 label 的内容   |
 | icon       | 自定义左侧图标                |
 | right-icon | 自定义右侧按钮，默认为`arrow` |
-| extra      | 自定义最右侧的额外内容        |
+| extra      | 自定义单元格最右侧的额外内容  |
