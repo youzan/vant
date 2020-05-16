@@ -268,10 +268,11 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Field instance and call instance
 
 ### Slots
 
-| Name       | Description       |
-| ---------- | ----------------- |
-| label      | Custom label      |
-| input      | Custom input      |
-| left-icon  | Custom left icon  |
-| right-icon | Custom right icon |
-| button     | Insert button     |
+| Name           | Description                 |
+| -------------- | --------------------------- |
+| label          | Custom label                |
+| input          | Custom input                |
+| left-icon      | Custom left icon            |
+| right-icon     | Custom right icon           |
+| button         | Insert button               |
+| extra `v2.8.2` | Custom content on the right |

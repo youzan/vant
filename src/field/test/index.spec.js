@@ -203,14 +203,9 @@ test('clearable', () => {
 });
 
 test('render input slot', () => {
-  const wrapper = mount({
-    template: `
-      <field>
-        <template v-slot:input>Custom Input</template>
-      </field>
-    `,
-    components: {
-      Field,
+  const wrapper = mount(Field, {
+    scopedSlots: {
+      input: () => 'Custom Input',
     },
   });
 
@@ -218,14 +213,19 @@ test('render input slot', () => {
 });
 
 test('render label slot', () => {
-  const wrapper = mount({
-    template: `
-      <field label="Default Label">
-        <template v-slot:label>Custom Label</template>
-      </field>
-    `,
-    components: {
-      Field,
+  const wrapper = mount(Field, {
+    scopedSlots: {
+      label: () => 'Custom Label',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render extra slot', () => {
+  const wrapper = mount(Field, {
+    scopedSlots: {
+      extra: () => 'Extra',
     },
   });
 
