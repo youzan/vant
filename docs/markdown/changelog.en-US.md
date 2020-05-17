@@ -10,6 +10,30 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.2](https://github.com/youzan/vant/compare/v2.8.1...v2.8.2)
+
+`2020-05-17`
+
+**Feature**
+
+- Field: add extra slot [#6290](https://github.com/youzan/vant/issues/6290)
+- Grid: add direction prop [#6256](https://github.com/youzan/vant/issues/6256)
+- Calendar: add month-show event [#6292](https://github.com/youzan/vant/issues/6292)
+- NumberKeyboard: support multiple extra key [#6276](https://github.com/youzan/vant/issues/6276)
+- Stepper: add theme prop [#6282](https://github.com/youzan/vant/issues/6282)
+
+**style**
+
+- Rate: update rate disabled color [#6253](https://github.com/youzan/vant/issues/6253)
+- Sku: adjust border alignment [#6272](https://github.com/youzan/vant/issues/6272)
+- Sku: currency symbol should align to bottom [#6274](https://github.com/youzan/vant/issues/6274)
+- NoticeBar: increase icon min-width to 24px [#6280](https://github.com/youzan/vant/issues/6280)
+
+**Bug Fixes**
+
+- Field: textarea line break failed on enter [#6263](https://github.com/youzan/vant/issues/6263)
+- NoticeBar: replay event only triggered once [#6293](https://github.com/youzan/vant/issues/6293)
+
 ### [v2.8.1](https://github.com/youzan/vant/compare/v2.8.1-beta.0...v2.8.1)
 
 `2020-05-09`

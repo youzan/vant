@@ -10,6 +10,30 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.2](https://github.com/youzan/vant/compare/v2.8.1...v2.8.2)
+
+`2020-05-17`
+
+**Feature**
+
+- Field: 新增 extra 插槽 [#6290](https://github.com/youzan/vant/issues/6290)
+- Grid: 新增 direction 属性 [#6256](https://github.com/youzan/vant/issues/6256)
+- Calendar: 新增 month-show 事件 [#6292](https://github.com/youzan/vant/issues/6292)
+- NumberKeyboard: 支持定义两个 extra-key [#6276](https://github.com/youzan/vant/issues/6276)
+- Stepper: 新增 theme 属性，用于展示圆角风格步进器 [#6282](https://github.com/youzan/vant/issues/6282)
+
+**style**
+
+- Rate: 更新禁用状态下的图标颜色 [#6253](https://github.com/youzan/vant/issues/6253)
+- Sku: 优化内部分割线的布局 [#6272](https://github.com/youzan/vant/issues/6272)
+- Sku: 价格符号由居中对齐调整为底对齐 [#6274](https://github.com/youzan/vant/issues/6274)
+- NoticeBar: 图标宽度由 22px 调整为 24px [#6280](https://github.com/youzan/vant/issues/6280)
+
+**Bug Fixes**
+
+- Field: 修复 textarea 无法通过回车换行的问题 [#6263](https://github.com/youzan/vant/issues/6263)
+- NoticeBar: 修复 replay 事件只能触发一次的问题，内部动画机制由 animation 调整为 transition [#6293](https://github.com/youzan/vant/issues/6293)
+
 ### [v2.8.1](https://github.com/youzan/vant/compare/v2.8.1-beta.0...v2.8.1)
 
 `2020-05-09`
