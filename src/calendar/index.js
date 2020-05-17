@@ -253,6 +253,13 @@ export default createComponent({
           currentMonth = months[i];
         }
 
+        if (!months[i].visible && visible) {
+          this.$emit('month-show', {
+            date: months[i].date,
+            title: months[i].title,
+          });
+        }
+
         months[i].visible = visible;
         height += heights[i];
       }

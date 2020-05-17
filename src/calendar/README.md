@@ -291,6 +291,7 @@ Following props are supported when the type is multiple
 | opened `v2.5.2` | Triggered when opened Popup | - |
 | closed `v2.5.2` | Triggered when closed Popup | - |
 | unselect `v2.7.2` | Triggered when unselect date when type is multiple | _value: Date_ |
+| month-show `v2.8.2` | Triggered when a month enters the visible area | _{ date: Date, title: string }_ |
 
 ### Slots
 

@@ -294,7 +294,8 @@ export default {
 | close `v2.5.2` | 关闭弹出层时触发 | - |
 | opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |
 | closed `v2.5.2` | 关闭弹出层且动画结束后触发 | - |
-| unselect `v2.7.2` | 当 Canlendar 的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
+| unselect `v2.7.2` | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
+| month-show `v2.8.2` | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
 
 ### Slots
 
