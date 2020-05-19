@@ -113,4 +113,5 @@ test('formatNumber', () => {
   expect(formatNumber('-1.2')).toEqual('-1');
   expect(formatNumber('-1.2', true)).toEqual('-1.2');
   expect(formatNumber('-1.2-', true)).toEqual('-1.2');
+  expect(formatNumber('123-')).toEqual('123');
 });
