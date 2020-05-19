@@ -1,25 +1,25 @@
 import { VanComponent } from './component';
 
 export class Picker extends VanComponent {
-  getValues(): string[];
+  getValues<T>(): T[];
 
-  setValues(values: string[]): void;
+  setValues<T>(values: T[]): void;
 
   getIndexes(): number[];
 
   setIndexes(indexes: number[]): void;
 
-  getColumnValue(columnIndex: number): string;
+  getColumnValue<T>(columnIndex: number): T;
 
-  setColumnValue(columnIndex: number, value: string): void;
+  setColumnValue<T>(columnIndex: number, value: T): void;
 
   getColumnIndex(columnIndex: number): number;
 
   setColumnIndex(columnIndex: number, optionIndex: number): void;
 
-  getColumnValues(columnIndex: number): string[];
+  getColumnValues<T>(columnIndex: number): T[];
 
-  setColumnValues(columnIndex: number, values: string[]): void;
+  setColumnValues<T>(columnIndex: number, values: T[]): void;
 
   confirm(): void;
 }
