@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
 
 // Components
