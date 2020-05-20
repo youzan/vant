@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`icon-prefix prop 1`] = `
-<button class="van-button van-button--default van-button--normal"><i class="my-icon my-icon-success van-button__icon">
-    <!----></i></button>
+<button class="van-button van-button--default van-button--normal">
+  <div class="van-button__content"><i class="my-icon my-icon-success van-button__icon">
+      <!----></i></div>
+</button>
 `;
 
 exports[`loading-size prop 1`] = `
 <button class="van-button van-button--default van-button--normal van-button--loading">
-  <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 10px; height: 10px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+  <div class="van-button__content">
+    <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 10px; height: 10px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+  </div>
 </button>
 `;

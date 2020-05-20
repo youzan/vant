@@ -13,6 +13,8 @@ exports[`failed event 1`] = `
       <div class="van-field__body"><input type="text" name="B" class="van-field__control"></div>
       <div class="van-field__error-message">B failed</div>
     </div>
-  </div> <button type="submit" class="van-button van-button--default van-button--normal"></button>
+  </div> <button type="submit" class="van-button van-button--default van-button--normal">
+    <div class="van-button__content"></div>
+  </button>
 </form>
 `;
