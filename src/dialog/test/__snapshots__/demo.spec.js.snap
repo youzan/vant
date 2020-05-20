@@ -2,24 +2,38 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       提示弹窗
-    </span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+    </span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       提示弹窗（无标题）
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+    </span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       确认弹窗
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+    </span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       异步关闭
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+    </span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       组件调用
-    </span></button>
+    </span></div>
+    </button>
     <div role="dialog" aria-labelledby="标题" class="van-dialog" style="display: none;" name="van-dialog-bounce">
       <div class="van-dialog__header">标题</div>
       <div class="van-dialog__content"><img src="https://img.yzcdn.cn/vant/apple-3.jpg"></div>
-      <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel"><span class="van-button__text">取消</span></button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"><span class="van-button__text">确认弹窗</span></button></div>
+      <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel">
+          <div class="van-button__content"><span class="van-button__text">取消</span></div>
+        </button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
+          <div class="van-button__content"><span class="van-button__text">确认弹窗</span></div>
+        </button></div>
     </div>
   </div>
 </div>

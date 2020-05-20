@@ -93,6 +93,8 @@ exports[`validate-first prop 1`] = `
     <div class="van-cell__value van-cell__value--alone van-field__value">
       <div class="van-field__body"><input type="text" name="B" class="van-field__control"></div>
     </div>
-  </div> <button type="submit" class="van-button van-button--default van-button--normal"></button>
+  </div> <button type="submit" class="van-button van-button--default van-button--normal">
+    <div class="van-button__content"></div>
+  </button>
 </form>
 `;

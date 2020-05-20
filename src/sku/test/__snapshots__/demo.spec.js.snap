@@ -4,27 +4,35 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="sku-container">
-      <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
+      <!----> <button class="van-button van-button--primary van-button--normal van-button--block">
+        <div class="van-button__content"><span class="van-button__text">
         基础用法
-      </span></button></div>
+      </span></div>
+      </button></div>
   </div>
   <div>
     <div class="sku-container">
-      <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
+      <!----> <button class="van-button van-button--primary van-button--normal van-button--block">
+        <div class="van-button__content"><span class="van-button__text">
         自定义步进器
-      </span></button></div>
+      </span></div>
+      </button></div>
   </div>
   <div>
     <div class="sku-container">
-      <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
+      <!----> <button class="van-button van-button--primary van-button--normal van-button--block">
+        <div class="van-button__content"><span class="van-button__text">
         隐藏售罄规格
-      </span></button></div>
+      </span></div>
+      </button></div>
   </div>
   <div>
     <div class="sku-container">
-      <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
+      <!----> <button class="van-button van-button--primary van-button--normal van-button--block">
+        <div class="van-button__content"><span class="van-button__text">
         高级用法
-      </span></button></div>
+      </span></div>
+      </button></div>
   </div>
 </div>
 `;
