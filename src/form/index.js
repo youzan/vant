@@ -119,10 +119,10 @@ export default createComponent({
     },
 
     // @exposed-api
-    scrollToField(name) {
+    scrollToField(name, options) {
       this.fields.forEach((item) => {
         if (item.name === name) {
-          item.$el.scrollIntoView();
+          item.$el.scrollIntoView(options);
         }
       });
     },
