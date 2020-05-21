@@ -206,6 +206,7 @@ export default createComponent({
         if (
           type === 'start' ||
           type === 'end' ||
+          type === 'start-end' ||
           type === 'multiple-selected' ||
           type === 'multiple-middle'
         ) {
