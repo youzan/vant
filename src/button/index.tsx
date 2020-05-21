@@ -149,7 +149,7 @@ function Button(
       onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
-      {Content()}
+      <div class={bem('content')}>{Content()}</div>
     </tag>
   );
 }

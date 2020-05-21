@@ -5,7 +5,8 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-field">
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__title van-field__label"><span>文本</span></div>
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" placeholder="请输入文本" class="van-field__control"></div>
         </div>
       </div>
@@ -98,9 +99,11 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell__title van-field__label"><span>短信验证码</span></div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入短信验证码" class="van-field__control">
-          <div class="van-field__button"><button class="van-button van-button--primary van-button--small"><span class="van-button__text">
+          <div class="van-field__button"><button class="van-button van-button--primary van-button--small">
+              <div class="van-button__content"><span class="van-button__text">
         发送验证码
-      </span></button></div>
+      </span></div>
+            </button></div>
         </div>
       </div>
     </div>

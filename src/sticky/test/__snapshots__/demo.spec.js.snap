@@ -4,24 +4,30 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div>
-      <div class="van-sticky"><button class="van-button van-button--primary van-button--normal" style="margin-left: 15px;"><span class="van-button__text">
+      <div class="van-sticky"><button class="van-button van-button--primary van-button--normal" style="margin-left: 15px;">
+          <div class="van-button__content"><span class="van-button__text">
         基础用法
-      </span></button></div>
+      </span></div>
+        </button></div>
     </div>
   </div>
   <div>
     <div style="height: 0px;">
-      <div class="van-sticky van-sticky--fixed" style="top: 50px;"><button class="van-button van-button--info van-button--normal" style="margin-left: 115px;"><span class="van-button__text">
+      <div class="van-sticky van-sticky--fixed" style="top: 50px;"><button class="van-button van-button--info van-button--normal" style="margin-left: 115px;">
+          <div class="van-button__content"><span class="van-button__text">
         吸顶距离
-      </span></button></div>
+      </span></div>
+        </button></div>
     </div>
   </div>
   <div>
     <div style="height: 150px; background-color: rgb(255, 255, 255);">
       <div>
-        <div class="van-sticky"><button class="van-button van-button--warning van-button--normal" style="margin-left: 215px;"><span class="van-button__text">
+        <div class="van-sticky"><button class="van-button van-button--warning van-button--normal" style="margin-left: 215px;">
+            <div class="van-button__content"><span class="van-button__text">
           指定容器
-        </span></button></div>
+        </span></div>
+          </button></div>
       </div>
     </div>
   </div>

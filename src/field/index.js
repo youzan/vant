@@ -356,8 +356,8 @@ export default createComponent({
       const ENTER_CODE = 13;
 
       if (event.keyCode === ENTER_CODE) {
-        // should not submit form on etner
-        if (this.type !== 'textarea') {
+        const submitOnEnter = this.getProp('submitOnEnter');
+        if (!submitOnEnter && this.type !== 'textarea') {
           preventDefault(event);
         }
 

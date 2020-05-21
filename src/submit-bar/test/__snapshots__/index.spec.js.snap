@@ -3,21 +3,27 @@
 exports[`decimal-length prop 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.1</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
+    <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.1</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button>
   </div>
 </div>
 `;
 
 exports[`disable safe-area-inset-bottom prop 1`] = `
 <div class="van-submit-bar van-submit-bar--unfit">
-  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button></div>
+  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button></div>
 </div>
 `;
 
 exports[`disable submit 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">0</span>.01</span></div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
+    <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">0</span>.01</span></div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button>
   </div>
 </div>
 `;
@@ -25,7 +31,9 @@ exports[`disable submit 1`] = `
 exports[`suffix-label prop 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text"><span>Label</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.11</span><span class="van-submit-bar__suffix-label">Suffix Label</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
+    <div class="van-submit-bar__text"><span>Label</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.11</span><span class="van-submit-bar__suffix-label">Suffix Label</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button>
   </div>
 </div>
 `;
@@ -33,18 +41,24 @@ exports[`suffix-label prop 1`] = `
 exports[`text-align prop 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text" style="text-align: left;"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.11</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button>
+    <div class="van-submit-bar__text" style="text-align: left;"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">1</span>.11</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button>
   </div>
 </div>
 `;
 
 exports[`top slot 1`] = `
-<div class="van-submit-bar">top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button></div>
+<div class="van-submit-bar">top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button></div>
 </div>
 `;
 
 exports[`without price 1`] = `
 <div class="van-submit-bar">
-  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"></button></div>
+  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+      <div class="van-button__content"></div>
+    </button></div>
 </div>
 `;

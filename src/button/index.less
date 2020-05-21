@@ -2,9 +2,7 @@
 
 .van-button {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   box-sizing: border-box;
   height: @button-default-height;
   margin: 0;
@@ -125,7 +123,7 @@
   }
 
   &--block {
-    display: flex;
+    display: block;
     width: 100%;
   }
 
@@ -144,6 +142,15 @@
 
   &--square {
     border-radius: 0;
+  }
+
+  // align-items are ignored when flex container is a button in legacy safari
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 
   &__icon {

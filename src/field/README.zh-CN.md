@@ -22,7 +22,7 @@ Vue.use(Field);
 ```html
 <!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为容器来提供外边框。 -->
 <van-cell-group>
-  <van-field v-model="value" placeholder="请输入用户名" />
+  <van-field v-model="value" label="文本" placeholder="请输入用户名" />
 </van-cell-group>
 ```
 

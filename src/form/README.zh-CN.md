@@ -469,6 +469,7 @@ export default {
 | scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
 | show-error `v2.6.0` | 是否在校验不通过时标红输入框 | _boolean_ | `true` |
 | show-error-message `v2.5.8` | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | 是否在按下回车键时提交表单 | _boolean_ | `true` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
 
@@ -501,7 +502,7 @@ export default {
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
 | validate | 验证表单，支持传入`name`来验证单个表单项 | _name?: string_ | _Promise_ |
 | resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | _name?: string_ | - |
-| scrollToField `v2.5.2` | 滚动到对应表单项的位置 | _name: string_ | - |
+| scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 

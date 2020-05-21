@@ -434,6 +434,7 @@ export default {
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
 | show-error-message `v2.5.8` | Whether to show error message when validation failed | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | Whether to submit form on enter | _boolean_ | `true` |
 
 ### Data Structure of Rule
 
@@ -457,12 +458,12 @@ export default {
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods
 
-| Name                   | Description      | Attribute       | Return value |
-| ---------------------- | ---------------- | --------------- | ------------ |
-| submit                 | Submit form      | -               | -            |
-| validate               | Validate form    | _name?: string_ | _Promise_    |
-| resetValidation        | Reset validation | _name?: string_ | -            |
-| scrollToField `v2.5.2` | Scroll to field  | _name: string_  | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| submit | Submit form | - | - |
+| validate | Validate form | _name?: string_ | _Promise_ |
+| resetValidation | Reset validation | _name?: string_ | - |
+| scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 

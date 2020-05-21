@@ -7,7 +7,9 @@ exports[`empty-image prop 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
@@ -30,7 +32,9 @@ exports[`empty-image prop 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;
 
@@ -57,7 +61,9 @@ exports[`render coupon list 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
@@ -176,7 +182,9 @@ exports[`render coupon list 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;
 
@@ -203,7 +211,9 @@ exports[`render empty coupon list 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
@@ -230,6 +240,8 @@ exports[`render empty coupon list 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;

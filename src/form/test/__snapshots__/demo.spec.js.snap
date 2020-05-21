@@ -16,9 +16,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
   <div>
@@ -41,9 +43,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="text" name="asyncValidator" placeholder="异步函数校验" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
   <div>
@@ -208,9 +212,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="text" name="calendar" readonly="readonly" placeholder="点击选择日期" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
 </div>

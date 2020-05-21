@@ -17,7 +17,7 @@ The value of field is bound with v-model.
 
 ```html
 <van-cell-group>
-  <van-field v-model="value" placeholder="Text" />
+  <van-field v-model="value" label="Label" placeholder="Text" />
 </van-cell-group>
 ```
 
