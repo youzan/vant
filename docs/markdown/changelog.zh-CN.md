@@ -10,6 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.3](https://github.com/youzan/vant/compare/v2.8.2...v2.8.3)
+
+`2020-05-21`
+
+**Feature**
+
+- Form: 新增 submit-on-enter 属性，用于控制回车时是否提交表单 [#6336](https://github.com/youzan/vant/issues/6336)
+- Form: 优化 scrollToField 方法，支持通过传参来控制滚动位置 [#6335](https://github.com/youzan/vant/issues/6335)
+- Field: 调整 placeholder 的色值为 @gray-5 [#6304](https://github.com/youzan/vant/issues/6304)
+- Field: 使用 digit 类型时，只能在第一位输入减号 [#6303](https://github.com/youzan/vant/issues/6303)
+- Picker: 优化 methods 的类型定义，支持泛型 [#6315](https://github.com/youzan/vant/issues/6315)
+
+**Bug Fixes**
+
+- Button: 修复在低版本 iOS 下按钮文字不居中的问题 [#6325](https://github.com/youzan/vant/issues/6325)
+- Calendar: 修复范围选择到同一天时 color 属性不生效的问题 [#6331](https://github.com/youzan/vant/issues/6331)
+
 ### [v2.8.2](https://github.com/youzan/vant/compare/v2.8.1...v2.8.2)
 
 `2020-05-17`

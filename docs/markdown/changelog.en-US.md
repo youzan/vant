@@ -10,6 +10,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.3](https://github.com/youzan/vant/compare/v2.8.2...v2.8.3)
+
+`2020-05-21`
+
+**Feature**
+
+- Form: add submit-on-enter prop [#6336](https://github.com/youzan/vant/issues/6336)
+- Form: scrollToField can scroll to bottom [#6335](https://github.com/youzan/vant/issues/6335)
+- Field: adjust field placeholder color to gray-5 [#6304](https://github.com/youzan/vant/issues/6304)
+- Field: minus can only be placed on the first char [#6303](https://github.com/youzan/vant/issues/6303)
+- Picker: improve method type, support generic [#6315](https://github.com/youzan/vant/issues/6315)
+
+**Bug Fixes**
+
+- Button: text not align center in legacy safari [#6325](https://github.com/youzan/vant/issues/6325)
+- Calendar: color prop not work when use allow-some-day [#6331](https://github.com/youzan/vant/issues/6331)
+
 ### [v2.8.2](https://github.com/youzan/vant/compare/v2.8.1...v2.8.2)
 
 `2020-05-17`
