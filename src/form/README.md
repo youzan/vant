@@ -434,6 +434,7 @@ export default {
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
 | show-error-message `v2.5.8` | Whether to show error message when validation failed | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | Whether to submit form on enter | _boolean_ | `true` |
 
 ### Data Structure of Rule
 

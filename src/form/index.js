@@ -12,6 +12,10 @@ export default createComponent({
     scrollToError: Boolean,
     validateFirst: Boolean,
     errorMessageAlign: String,
+    submitOnEnter: {
+      type: Boolean,
+      default: true,
+    },
     validateTrigger: {
       type: String,
       default: 'onBlur',
