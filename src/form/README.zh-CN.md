@@ -502,7 +502,7 @@ export default {
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
 | validate | 验证表单，支持传入`name`来验证单个表单项 | _name?: string_ | _Promise_ |
 | resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | _name?: string_ | - |
-| scrollToField `v2.8.2` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
+| scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 
