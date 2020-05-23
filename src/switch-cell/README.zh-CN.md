@@ -2,7 +2,15 @@
 
 ### 废弃提示
 
-<b>SwitchCell 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Switch 组件代替
+<b>SwitchCell 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Switch 组件代替，替换写法如下：
+
+```html
+<van-cell center title="标题">
+  <template #right-icon>
+    <van-switch v-model="checked" size="24" />
+  </template>
+</van-cell>
+```
 
 ### 引入
 

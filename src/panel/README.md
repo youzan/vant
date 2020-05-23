@@ -1,5 +1,9 @@
 # Panel
 
+### Deprecate Tip
+
+The Panel component will be deprecated in version 3.0. Please use the Cell and Button components instead.
+
 ### Install
 
 ```js

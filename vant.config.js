@@ -257,10 +257,6 @@ module.exports = {
                 title: 'NoticeBar 通知栏',
               },
               {
-                path: 'panel',
-                title: 'Panel 面板',
-              },
-              {
                 path: 'progress',
                 title: 'Progress 进度条',
               },
@@ -367,6 +363,10 @@ module.exports = {
           {
             title: '废弃',
             items: [
+              {
+                path: 'panel',
+                title: 'Panel 面板',
+              },
               {
                 path: 'switch-cell',
                 title: 'SwitchCell 开关单元格',
@@ -608,10 +608,6 @@ module.exports = {
                 title: 'NoticeBar',
               },
               {
-                path: 'panel',
-                title: 'Panel',
-              },
-              {
                 path: 'progress',
                 title: 'Progress',
               },
@@ -718,6 +714,10 @@ module.exports = {
           {
             title: 'Deprecated',
             items: [
+              {
+                path: 'panel',
+                title: 'Panel',
+              },
               {
                 path: 'switch-cell',
                 title: 'SwitchCell',
