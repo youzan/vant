@@ -19,16 +19,8 @@ Vue.use(GoodsActionIcon);
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="Icon1" @click="onClickIcon" />
   <van-goods-action-icon icon="cart-o" text="Icon2" @click="onClickIcon" />
-  <van-goods-action-button
-    type="warning"
-    text="Button1"
-    @click="onClickButton"
-  />
-  <van-goods-action-button
-    type="danger"
-    text="Button2"
-    @click="onClickButton"
-  />
+  <van-goods-action-icon icon="shop-o" text="Icon3" @click="onClickIcon" />
+  <van-goods-action-button type="danger" text="Button" @click="onClickButton" />
 </van-goods-action>
 ```
 
@@ -56,8 +48,8 @@ Use `badge` prop to show badge in icon
   <van-goods-action-icon icon="chat-o" text="Icon1" dot />
   <van-goods-action-icon icon="cart-o" text="Icon2" badge="5" />
   <van-goods-action-icon icon="shop-o" text="Icon3" badge="12" />
-  <van-goods-action-button type="warning" text="Button1" />
-  <van-goods-action-button type="danger" text="Button2" />
+  <van-goods-action-button type="warning" text="Button" />
+  <van-goods-action-button type="danger" text="Button" />
 </van-goods-action>
 ```
 
@@ -68,8 +60,8 @@ Use `badge` prop to show badge in icon
   <van-goods-action-icon icon="chat-o" text="Icon1" color="#07c160" />
   <van-goods-action-icon icon="cart-o" text="Icon2" />
   <van-goods-action-icon icon="star" text="Collected" color="#ff5000" />
-  <van-goods-action-button type="warning" text="Button1" />
-  <van-goods-action-button type="danger" text="Button2" />
+  <van-goods-action-button type="warning" text="Button" />
+  <van-goods-action-button type="danger" text="Button" />
 </van-goods-action>
 ```
 
@@ -79,8 +71,8 @@ Use `badge` prop to show badge in icon
 <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="Icon1" />
   <van-goods-action-icon icon="shop-o" text="Icon2" />
-  <van-goods-action-button color="#be99ff" type="warning" text="Button1" />
-  <van-goods-action-button color="#7232dd" type="danger" text="Button2" />
+  <van-goods-action-button color="#be99ff" type="warning" text="Button" />
+  <van-goods-action-button color="#7232dd" type="danger" text="Button" />
 </van-goods-action>
 ```
 

@@ -12,10 +12,10 @@
           :text="t('icon2')"
           @click="onClickIcon"
         />
-        <van-goods-action-button
-          type="warning"
-          :text="t('button1')"
-          @click="onClickButton"
+        <van-goods-action-icon
+          icon="shop-o"
+          :text="t('icon3')"
+          @click="onClickIcon"
         />
         <van-goods-action-button
           type="danger"
@@ -92,8 +92,8 @@ export default {
       icon1: 'Icon1',
       icon2: 'Icon2',
       icon3: 'Icon3',
-      button1: 'Button1',
-      button2: 'Button2',
+      button1: 'Button',
+      button2: 'Button',
       iconBadge: 'Icon Badge',
       collected: 'Collected',
       clickIcon: 'Click Icon',
