@@ -1,6 +1,11 @@
 // Context
 import { context } from './context';
-import { openOverlay, closeOverlay, updateOverlay } from './overlay';
+import {
+  openOverlay,
+  closeOverlay,
+  updateOverlay,
+  removeOverlay,
+} from './overlay';
 
 // Utils
 import { on, off, preventDefault } from '../../utils/dom/event';
@@ -94,7 +99,8 @@ export function PopupMixin(options = {}) {
     },
 
     beforeDestroy() {
-      this.close();
+      this.removeLock();
+      removeOverlay(this);
 
       if (this.getContainer) {
         removeNode(this.$el);
@@ -123,7 +129,10 @@ export function PopupMixin(options = {}) {
 
         this.opened = true;
         this.renderOverlay();
+        this.addLock();
+      },
 
+      addLock() {
         if (this.lockScroll) {
           on(document, 'touchstart', this.touchStart);
           on(document, 'touchmove', this.onTouchMove);
@@ -135,11 +144,7 @@ export function PopupMixin(options = {}) {
         }
       },
 
-      close() {
-        if (!this.opened) {
-          return;
-        }
-
+      removeLock() {
         if (this.lockScroll) {
           context.lockCount--;
           off(document, 'touchstart', this.touchStart);
@@ -149,9 +154,16 @@ export function PopupMixin(options = {}) {
             document.body.classList.remove('van-overflow-hidden');
           }
         }
+      },
 
-        this.opened = false;
+      close() {
+        if (!this.opened) {
+          return;
+        }
+
         closeOverlay(this);
+        this.opened = false;
+        this.removeLock();
         this.$emit('input', false);
       },
 
