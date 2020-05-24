@@ -343,30 +343,3 @@ exports[`title slot 1`] = `
   </div>
 </div>
 `;
-
-exports[`toggle method 1`] = `
-<div class="van-dropdown-menu">
-  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--active van-dropdown-menu__title--down"><div class="van-ellipsis"></div></span></div>
-  </div>
-  <div>
-    <div class="van-dropdown-item van-dropdown-item--down" style="top: 0px;">
-      <div class="van-overlay" style="z-index: 2017; animation-duration: 0s; position: absolute;" name="van-fade"></div>
-      <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0s; z-index: 2018;" name="van-popup-slide-top"></div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`toggle method 2`] = `
-<div class="van-dropdown-menu">
-  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title"><div class="van-ellipsis"></div></span></div>
-  </div>
-  <div>
-    <div class="van-dropdown-item van-dropdown-item--down" style="top: 0px;">
-      <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0s; z-index: 2018; display: none;" name="van-popup-slide-top"></div>
-    </div>
-  </div>
-</div>
-`;
