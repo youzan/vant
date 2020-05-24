@@ -1,6 +1,15 @@
 @import '../style/var';
+@import '../style/mixins/hairline';
 
 .van-collapse-item {
+  position: relative;
+
+  &--border {
+    &::after {
+      .hairline-top(@cell-border-color, @padding-md, @padding-md);
+    }
+  }
+
   &__title {
     .van-cell__right-icon::before {
       transform: rotate(90deg);
@@ -8,7 +17,8 @@
     }
 
     &::after {
-      visibility: hidden;
+      right: @padding-md;
+      display: none;
     }
 
     &--expanded {
@@ -17,7 +27,7 @@
       }
 
       &::after {
-        visibility: visible;
+        display: block;
       }
     }
 

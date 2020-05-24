@@ -1,6 +1,5 @@
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { BORDER_TOP } from '../utils/constant';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Mixins
@@ -173,7 +172,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={[bem(), { [BORDER_TOP]: this.index }]}>
+      <div class={[bem({ border: this.index })]}>
         {this.genTitle()}
         {this.genContent()}
       </div>
