@@ -2,7 +2,7 @@ import { readFileSync } from 'fs-extra';
 import { consola } from '../common/logger';
 
 const commitRE = /^(revert: )?(fix|feat|docs|perf|test|types|style|build|chore|refactor|breaking change)(\(.+\))?: .{1,50}/;
-const mergeRE = /Merge branch /;
+const mergeRE = /Merge /;
 
 export function commitLint() {
   const gitParams = process.env.HUSKY_GIT_PARAMS as string;
