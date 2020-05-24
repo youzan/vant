@@ -197,17 +197,29 @@ export default createComponent({
       this.$emit('confirm', values, index);
     },
 
+    getDefaultCode() {
+      if (this.columnsPlaceholder.length) {
+        return PLACEHOLDER_CODE;
+      }
+
+      const countyCodes = Object.keys(this.county);
+      if (countyCodes[0]) {
+        return countyCodes[0];
+      }
+
+      const cityCodes = Object.keys(this.city);
+      if (cityCodes[0]) {
+        return cityCodes[0];
+      }
+
+      return '';
+    },
+
     setValues() {
       let { code } = this;
 
       if (!code) {
-        if (this.columnsPlaceholder.length) {
-          code = PLACEHOLDER_CODE;
-        } else if (Object.keys(this.county)[0]) {
-          code = Object.keys(this.county)[0];
-        } else {
-          code = '';
-        }
+        code = this.getDefaultCode();
       }
 
       const { picker } = this.$refs;
