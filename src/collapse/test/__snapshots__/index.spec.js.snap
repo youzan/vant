@@ -8,13 +8,13 @@ exports[`disable border 1`] = `
         <!----></i>
     </div>
   </div>
-  <div class="van-collapse-item van-hairline--top">
+  <div class="van-collapse-item van-collapse-item--border">
     <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
       <div class="van-cell__title"><span>b</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
   </div>
-  <div class="van-collapse-item van-hairline--top">
+  <div class="van-collapse-item van-collapse-item--border">
     <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
       <div class="van-cell__title"><span>c</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
@@ -31,7 +31,7 @@ exports[`lazy render collapse content 1`] = `
         <!----></i>
     </div>
   </div>
-  <div class="van-collapse-item van-hairline--top" style="padding: 0px;">
+  <div class="van-collapse-item van-collapse-item--border" style="padding: 0px;">
     <div role="button" tabindex="0" aria-expanded="true" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
       <div class="van-cell__title"><span>b</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
