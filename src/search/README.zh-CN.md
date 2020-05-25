@@ -150,3 +150,9 @@ export default {
 | label      | 自定义左侧文本（搜索框内）                              |
 | left-icon  | 自定义左侧图标（搜索框内）                              |
 | right-icon | 自定义右侧图标（搜索框内）                              |
+
+## 常见问题
+
+### 在桌面端点击清除按钮无效？
+
+清除按钮监听是的移动端 Touch 事件，参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
