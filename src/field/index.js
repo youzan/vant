@@ -37,7 +37,6 @@ export default createComponent({
     ...cellProps,
     name: String,
     rules: Array,
-    error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     autosize: [Boolean, Object],
@@ -57,6 +56,10 @@ export default createComponent({
     type: {
       type: String,
       default: 'text',
+    },
+    error: {
+      type: Boolean,
+      default: null,
     },
     colon: {
       type: Boolean,
@@ -106,10 +109,12 @@ export default createComponent({
     },
 
     showError() {
+      if (this.error !== null) {
+        return this.error;
+      }
       if (this.vanForm && this.vanForm.showError && this.validateMessage) {
         return true;
       }
-      return this.error;
     },
 
     listeners() {
