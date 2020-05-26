@@ -7,6 +7,7 @@ test('click event & change event', () => {
   const wrapper = mount({
     template: `
       <van-sidebar @change="onChange">
+        <van-sidebar-item>Text</van-sidebar-item>
         <van-sidebar-item @click="onClick">Text</van-sidebar-item>
       </van-sidebar>
     `,
@@ -16,16 +17,17 @@ test('click event & change event', () => {
     },
   });
 
-  wrapper.find('.van-sidebar-item').trigger('click');
-  expect(onClick).toHaveBeenCalledWith(0);
-  expect(onChange).toHaveBeenCalledWith(0);
+  wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
+  expect(onClick).toHaveBeenCalledWith(1);
+  expect(onChange).toHaveBeenCalledWith(1);
   wrapper.vm.$destroy();
 });
 
 test('v-model', () => {
+  const onChange = jest.fn();
   const wrapper = mount({
     template: `
-      <van-sidebar v-model="active">
+      <van-sidebar v-model="active" @change="onChange">
         <van-sidebar-item>Text</van-sidebar-item>
         <van-sidebar-item>Text</van-sidebar-item>
       </van-sidebar>
@@ -35,10 +37,14 @@ test('v-model', () => {
         active: 0,
       };
     },
+    methods: {
+      onChange,
+    },
   });
 
   wrapper.findAll('.van-sidebar-item').at(1).trigger('click');
   expect(wrapper.vm.active).toEqual(1);
+  expect(onChange).toHaveBeenCalledWith(1);
 });
 
 test('disabled prop', () => {
