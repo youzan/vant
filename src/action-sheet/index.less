@@ -1,4 +1,5 @@
 @import '../style/var';
+@import '../style/mixins/hairline';
 
 .van-action-sheet {
   max-height: @action-sheet-max-height;
@@ -60,11 +61,16 @@
   }
 
   &__description {
+    position: relative;
     padding: @padding-md;
     color: @action-sheet-description-color;
     font-size: @action-sheet-description-font-size;
     line-height: @action-sheet-description-line-height;
     text-align: center;
+
+    &::after {
+      .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    }
   }
 
   &__close {

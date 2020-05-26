@@ -1,7 +1,6 @@
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_TOP } from '../utils/constant';
 
 // Mixins
 import { popupMixinProps } from '../mixins/popup';
@@ -110,7 +109,7 @@ function ActionSheet(
     return (
       <button
         type="button"
-        class={[bem('item', { disabled, loading }), item.className, BORDER_TOP]}
+        class={[bem('item', { disabled, loading }), item.className]}
         style={{ color: item.color }}
         onClick={onClickOption}
       >
