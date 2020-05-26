@@ -30,8 +30,8 @@ export default createComponent({
       }
 
       this.$emit('click', this.index);
-      this.parent.setIndex(this.index);
       this.parent.$emit('input', this.index);
+      this.parent.setIndex(this.index);
       route(this.$router, this);
     },
   },
