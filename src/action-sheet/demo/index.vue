@@ -29,13 +29,6 @@
     />
 
     <van-action-sheet
-      v-model="show.status"
-      close-on-click-action
-      :actions="statusActions"
-      :cancel-text="t('cancel')"
-    />
-
-    <van-action-sheet
       v-model="show.cancel"
       :actions="simpleActions"
       close-on-click-action
@@ -45,9 +38,17 @@
 
     <van-action-sheet
       v-model="show.description"
-      :actions="simpleActions"
+      :actions="actionsWithDescription"
       close-on-click-action
+      :cancel-text="t('cancel')"
       :description="t('description')"
+    />
+
+    <van-action-sheet
+      v-model="show.status"
+      close-on-click-action
+      :actions="statusActions"
+      :cancel-text="t('cancel')"
     />
 
     <van-action-sheet v-model="show.title" :title="t('title')">
@@ -62,22 +63,30 @@ import { GREEN } from '../../utils/constant';
 export default {
   i18n: {
     'zh-CN': {
-      subname: '副文本',
+      option1: '选项一',
+      option2: '选项二',
+      option3: '选项三',
+      subname: '描述信息',
       showCancel: '展示取消按钮',
       buttonText: '弹出菜单',
       customPanel: '自定义面板',
       description: '这是一段描述信息',
       optionStatus: '选项状态',
+      coloredOption: '着色选项',
       disabledOption: '禁用选项',
       showDescription: '展示描述信息',
     },
     'en-US': {
-      subname: 'Subname',
+      option1: 'Option 1',
+      option2: 'Option 2',
+      option3: 'Option 3',
+      subname: 'Description',
       showCancel: 'Show Cancel Button',
       buttonText: 'Show ActionSheet',
       customPanel: 'Custom Panel',
       description: 'Description',
       optionStatus: 'Option Status',
+      coloredOption: 'Colored Option',
       disabledOption: 'Disabled Option',
       showDescription: 'Show Description',
     },
@@ -98,17 +107,25 @@ export default {
   computed: {
     simpleActions() {
       return [
-        { name: this.t('option') },
-        { name: this.t('option') },
-        { name: this.t('option'), subname: this.t('subname') },
+        { name: this.t('option1') },
+        { name: this.t('option2') },
+        { name: this.t('option3') },
+      ];
+    },
+
+    actionsWithDescription() {
+      return [
+        { name: this.t('option1') },
+        { name: this.t('option2') },
+        { name: this.t('option3'), subname: this.t('subname') },
       ];
     },
 
     statusActions() {
       return [
-        { name: this.t('option'), color: GREEN },
-        { loading: true },
+        { name: this.t('coloredOption'), color: GREEN },
         { name: this.t('disabledOption'), disabled: true },
+        { loading: true },
       ];
     },
   },
@@ -120,7 +137,7 @@ export default {
     },
 
     onCancel() {
-      this.$toast('cancel');
+      this.$toast(this.t('cancel'));
     },
   },
 };
