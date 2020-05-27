@@ -1514,10 +1514,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-2.5.0.tgz#c1a36df9a7dd3dea4588f4dbddb96503c5fbe664"
-  integrity sha512-6RqS1/2zrq28hEl8w0GEnREriIM/yMZp4jGM9zFDLO37yrhiIPGPZhqMU7CNQNcv6A9kMGbqoTFXrc8Iipfwjw==
+"@vant/cli@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-2.5.1.tgz#055bfbdc68227ac761730eab2a31f52cd93641d9"
+  integrity sha512-U0n719aqoIGKG9x0fo8Onk5QTLfrJErjU3vhQOA5cVMN3z9rOOLU7SoB4oSLLr3lh0wfMxhsie9hh6mAO/4NlQ==
   dependencies:
     "@babel/core" "^7.9.6"
     "@babel/plugin-syntax-jsx" "^7.8.3"
