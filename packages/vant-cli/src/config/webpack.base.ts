@@ -41,7 +41,6 @@ const plugins = [
 ];
 
 const tsconfigPath = join(CWD, 'tsconfig.json');
-console.log('tsconfigPath', existsSync(tsconfigPath));
 if (existsSync(tsconfigPath)) {
   const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
   plugins.push(
