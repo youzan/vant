@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, get } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
 import { getTrueValue, getMonthEndDay } from './utils';
@@ -60,7 +60,7 @@ export default createComponent({
         minMinute,
       } = this.getBoundary('min', this.innerValue);
 
-      const result = [
+      let result = [
         {
           type: 'year',
           range: [minYear, maxYear],
@@ -83,8 +83,18 @@ export default createComponent({
         },
       ];
 
-      if (this.type === 'date') result.splice(3, 2);
-      if (this.type === 'year-month') result.splice(2, 3);
+      if (this.type === 'date') {
+        result = result.slice(0, 3);
+      }
+
+      if (this.type === 'year-month') {
+        result = result.slice(0, 2);
+      }
+
+      if (this.type === 'month-day') {
+        result = result.slice(1, 3);
+      }
+
       return result;
     },
   },
@@ -139,35 +149,39 @@ export default createComponent({
     },
 
     updateInnerValue() {
+      const { type } = this;
       const indexes = this.getPicker().getIndexes();
-
       const getValue = (index) => {
         const { values } = this.originColumns[index];
         return getTrueValue(values[indexes[index]]);
       };
 
-      const year = getValue(0);
-      const month = getValue(1);
-      const maxDate = getMonthEndDay(year, month);
+      let year;
+      let month;
+      let day;
 
-      let date;
-      if (this.type === 'year-month') {
-        date = 1;
+      if (type === 'month-day') {
+        year = this.innerValue.getFullYear();
+        month = getValue(0);
+        day = getValue(1);
       } else {
-        date = getValue(2);
+        year = getValue(0);
+        month = getValue(1);
+        day = type === 'year-month' ? 1 : getValue(2);
       }
 
-      date = date > maxDate ? maxDate : date;
+      const maxDay = getMonthEndDay(year, month);
+      day = day > maxDay ? maxDay : day;
 
       let hour = 0;
       let minute = 0;
 
-      if (this.type === 'datetime') {
+      if (type === 'datetime') {
         hour = getValue(3);
         minute = getValue(4);
       }
 
-      const value = new Date(year, month - 1, date, hour, minute);
+      const value = new Date(year, month - 1, day, hour, minute);
 
       this.innerValue = this.formatValue(value);
     },
@@ -201,6 +215,10 @@ export default createComponent({
 
       if (this.type === 'year-month') {
         values = values.slice(0, 2);
+      }
+
+      if (this.type === 'month-day') {
+        values = values.slice(1, 3);
       }
 
       this.$nextTick(() => {
