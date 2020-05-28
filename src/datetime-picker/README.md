@@ -74,6 +74,41 @@ export default {
 };
 ```
 
+### Choose Month-Day
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="month-day"
+  title="Choose Month-Day"
+  :min-date="minDate"
+  :max-date="maxDate"
+  :formatter="formatter"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatter(type, val) {
+      if (type === 'month') {
+        return `${val} Month`;
+      } else if (type === 'day') {
+        return `${val} Day`;
+      }
+      return val;
+    },
+  },
+};
+```
+
 ### Choose Time
 
 ```html
@@ -143,7 +178,6 @@ export default {
       if (type === 'minute') {
         return options.filter((option) => option % 5 === 0);
       }
-
       return options;
     },
   },
@@ -156,7 +190,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `date` `time`<br> `year-month` | _string_ | `datetime` |
+| type | Can be set to `date` `time`<br> `year-month` `month-day` | _string_ | `datetime` |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
