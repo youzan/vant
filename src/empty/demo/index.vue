@@ -82,6 +82,7 @@ export default {
 
   .bottom-button {
     width: 160px;
+    height: 40px;
   }
 }
 </style>
