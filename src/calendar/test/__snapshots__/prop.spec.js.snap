@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lazy-render prop 1`] = `
+<div class="van-calendar">
+  <div class="van-calendar__header">
+    <div class="van-calendar__header-title">日期选择</div>
+    <div class="van-calendar__header-subtitle"></div>
+    <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
+  </div>
+  <div class="van-calendar__body">
+    <div class="van-calendar__month">
+      <div role="grid" class="van-calendar__days">
+        <div class="van-calendar__month-mark">1</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">9</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">10</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">11</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">12</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">13</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">14</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">15</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">16</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">17</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">18</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">19</div>
+        <div role="gridcell" tabindex="-1" class="van-calendar__day">
+          <div class="van-calendar__selected-day">20</div>
+        </div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">21</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">22</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">23</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">24</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">25</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">26</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">27</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">28</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">29</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">30</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">31</div>
+      </div>
+    </div>
+  </div>
+  <div class="van-calendar__footer"><button type="button" class="van-button van-button--danger van-button--normal van-button--block van-button--round van-calendar__confirm"><span class="van-button__text">确定</span></button></div>
+</div>
+`;

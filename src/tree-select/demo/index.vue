@@ -25,10 +25,12 @@
         <template slot="content">
           <van-image
             v-if="activeIndex3 === 0"
+            :show-loading="false"
             src="https://img.yzcdn.cn/vant/apple-1.jpg"
           />
           <van-image
             v-if="activeIndex3 === 1"
+            :show-loading="false"
             src="https://img.yzcdn.cn/vant/apple-2.jpg"
           />
         </template>

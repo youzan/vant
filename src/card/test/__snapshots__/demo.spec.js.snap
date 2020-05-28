@@ -77,11 +77,15 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-card__footer">
-        <div><button class="van-button van-button--default van-button--mini van-button--round"><span class="van-button__text">
+        <div><button class="van-button van-button--default van-button--mini van-button--round">
+            <div class="van-button__content"><span class="van-button__text">
             按钮
-          </span></button> <button class="van-button van-button--default van-button--mini van-button--round"><span class="van-button__text">
+          </span></div>
+          </button> <button class="van-button van-button--default van-button--mini van-button--round">
+            <div class="van-button__content"><span class="van-button__text">
             按钮
-          </span></button></div>
+          </span></div>
+          </button></div>
       </div>
     </div>
   </div>

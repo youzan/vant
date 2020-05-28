@@ -1,24 +1,21 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-picker :columns="t('textColumns')" @change="onChange1" />
-    </demo-block>
-
-    <demo-block :title="t('defaultIndex')">
-      <van-picker
-        :columns="t('textColumns')"
-        :default-index="2"
-        @change="onChange1"
-      />
-    </demo-block>
-
-    <demo-block :title="t('showToolbar')">
       <van-picker
         show-toolbar
         :title="t('title')"
         :columns="t('textColumns')"
-        @cancel="onCancel"
-        @confirm="onConfirm"
+        @change="onChange1"
+      />
+    </demo-block>
+
+    <demo-block :title="t('defaultIndex')">
+      <van-picker
+        show-toolbar
+        :title="t('title')"
+        :columns="t('textColumns')"
+        :default-index="2"
+        @change="onChange1"
       />
     </demo-block>
 
@@ -43,15 +40,24 @@
     </demo-block>
 
     <demo-block :title="t('disableOption')">
-      <van-picker :columns="t('disabledColumns')" />
+      <van-picker
+        show-toolbar
+        :title="t('title')"
+        :columns="t('disabledColumns')"
+      />
     </demo-block>
 
     <demo-block :title="t('setColumnValues')">
-      <van-picker :columns="columns" @change="onChange2" />
+      <van-picker
+        show-toolbar
+        :title="t('title')"
+        :columns="columns"
+        @change="onChange2"
+      />
     </demo-block>
 
     <demo-block :title="t('loadingStatus')">
-      <van-picker loading :columns="columns" />
+      <van-picker loading show-toolbar :title="t('title')" :columns="columns" />
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="t('withPopup')">
@@ -63,9 +69,10 @@
         :placeholder="t('chooseCity')"
         @click="onClickField"
       />
-      <van-popup v-model="showPicker" position="bottom">
+      <van-popup v-model="showPicker" round position="bottom">
         <van-picker
           show-toolbar
+          :title="t('title')"
           :columns="t('textColumns')"
           @cancel="onCancel2"
           @confirm="onConfirm2"

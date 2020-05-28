@@ -32,7 +32,7 @@ test('render image', async () => {
   expect(wrapper.emitted('input')).toBeFalsy();
   triggerDrag(swipe, 0, 0);
 
-  await later(300);
+  await later(250);
 
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
@@ -94,7 +94,7 @@ test('async close prop', async () => {
 
   // should not emit input or close event when tapped
   triggerDrag(swipe, 0, 0);
-  await later(300);
+  await later(250);
   expect(wrapper.emitted('input')).toBeFalsy();
   expect(wrapper.emitted('close')).toBeFalsy();
 

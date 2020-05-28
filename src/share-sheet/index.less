@@ -26,21 +26,17 @@
   &__options {
     position: relative;
     display: flex;
-    padding: @padding-md 0 @padding-md @padding-lg;
+    padding: @padding-md 0 @padding-md @padding-xs;
     overflow-x: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
 
     &--border::before {
       .hairline-top(@cell-border-color, @padding-md);
     }
 
-    // fix right-padding issue for overflow-x element
-    // see: https://stackoverflow.com/questions/10054870
-    &::after {
-      display: block;
-      flex-shrink: 0;
-      width: @padding-lg;
-      content: '';
+    &::-webkit-scrollbar {
+      height: 0;
     }
   }
 
@@ -48,13 +44,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: @share-sheet-option-margin-right;
     cursor: pointer;
     user-select: none;
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     &:active {
       opacity: @active-opacity;
@@ -64,10 +55,12 @@
   &__icon {
     width: @share-sheet-icon-size;
     height: @share-sheet-icon-size;
+    margin: 0 @padding-md;
   }
 
   &__name {
     margin-top: @padding-xs;
+    padding: 0 @padding-base;
     color: @share-sheet-option-name-color;
     font-size: @share-sheet-option-name-font-size;
   }

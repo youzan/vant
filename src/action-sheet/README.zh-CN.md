@@ -17,9 +17,10 @@ Vue.use(ActionSheet);
 
 ### 基础用法
 
-动作面板通过`actions`属性来定义选项，数组的每一项是一个对象，对象格式见文档下方表格。
+动作面板通过 `actions` 属性来定义选项，`actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象格式见文档下方表格。
 
 ```html
+<van-cell is-link title="基础用法" @click="show = true" />
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
@@ -30,11 +31,7 @@ export default {
   data() {
     return {
       show: false,
-      actions: [
-        { name: '选项' },
-        { name: '选项' },
-        { name: '选项', subname: '描述信息' },
-      ],
+      actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
     };
   },
   methods: {
@@ -50,13 +47,14 @@ export default {
 
 ### 展示取消按钮
 
-设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前面板
+设置 `cancel-text` 属性后，会在底部展示取消按钮，点击后关闭当前面板并触发 `cancel` 事件。
 
 ```html
 <van-action-sheet
   v-model="show"
   :actions="actions"
   cancel-text="取消"
+  close-on-click-action
   @cancel="onCancel"
 />
 ```
@@ -68,12 +66,12 @@ export default {
   data() {
     return {
       show: false,
+      actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
     };
   },
   methods: {
     onCancel() {
-      this.show = false;
-      Toast('cancel');
+      Toast('取消');
     },
   },
 };
@@ -81,26 +79,15 @@ export default {
 
 ### 展示描述信息
 
-设置`description`属性后，会在选项上方显示描述信息
-
-```html
-<van-action-sheet
-  v-model="show"
-  :actions="actions"
-  description="这是一段描述信息"
-/>
-```
-
-### 选项状态
-
-可以将选项设置为加载状态或禁用状态，或者通过`color`设置选项颜色
+通过 `description` 可以在菜单顶部显示描述信息，通过选项的 `subname` 属性可以在选项文字的右侧展示描述信息。
 
 ```html
 <van-action-sheet
   v-model="show"
   :actions="actions"
   cancel-text="取消"
-  @cancel="onCancel"
+  description="这是一段描述信息"
+  close-on-click-action
 />
 ```
 
@@ -110,9 +97,37 @@ export default {
     return {
       show: false,
       actions: [
-        { name: '选项', color: '#07c160' },
-        { loading: true },
+        { name: '选项一' },
+        { name: '选项二' },
+        { name: '选项三', subname: '描述信息' },
+      ],
+    };
+  },
+};
+```
+
+### 选项状态
+
+可以通过 `loading` 和 `disabled` 将选项设置为加载状态或禁用状态，或者通过`color`设置选项的颜色
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="取消"
+  close-on-click-action
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: '着色选项', color: '#07c160' },
         { name: '禁用选项', disabled: true },
+        { name: '加载选项', loading: true },
       ],
     };
   },
@@ -160,7 +175,7 @@ export default {
 
 ### Action 数据结构
 
-`actions`属性为一个对象数组，数组中的每个对象配置一列，对象可以包含以下值：
+`actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象可以包含以下值：
 
 | 键名      | 说明                     | 类型      |
 | --------- | ------------------------ | --------- |

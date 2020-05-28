@@ -7,13 +7,15 @@ exports[`empty-image prop 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
-        <div role="tab" aria-selected="true" class="van-tab van-tab--active van-ellipsis"><span class="van-tab__text">可用 (0)<!----></span></div>
-        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">不可用 (0)<!----></span></div>
+        <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">可用 (0)</span></div>
+        <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">不可用 (0)</span></div>
         <div class="van-tabs__line"></div>
       </div>
     </div>
@@ -30,7 +32,9 @@ exports[`empty-image prop 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;
 
@@ -57,13 +61,15 @@ exports[`render coupon list 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
-        <div role="tab" aria-selected="true" class="van-tab van-tab--active van-ellipsis"><span class="van-tab__text">可用 (6)<!----></span></div>
-        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">不可用 (2)<!----></span></div>
+        <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">可用 (6)</span></div>
+        <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">不可用 (2)</span></div>
         <div class="van-tabs__line"></div>
       </div>
     </div>
@@ -176,7 +182,9 @@ exports[`render coupon list 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;
 
@@ -203,13 +211,15 @@ exports[`render empty coupon list 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body"><input type="text" placeholder="请输入优惠码" class="van-field__control"></div>
       </div>
-    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button>
+    </div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange">
+      <div class="van-button__content"><span class="van-button__text">兑换</span></div>
+    </button>
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
-        <div role="tab" class="van-tab van-ellipsis"><span class="van-tab__text">可用 (0)<!----></span></div>
-        <div role="tab" class="van-tab van-tab--active van-ellipsis" aria-selected="true"><span class="van-tab__text">不可用 (0)<!----></span></div>
+        <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">可用 (0)</span></div>
+        <div role="tab" class="van-tab van-tab--active" aria-selected="true"><span class="van-tab__text van-tab__text--ellipsis">不可用 (0)</span></div>
         <div class="van-tabs__line"></div>
       </div>
     </div>
@@ -230,6 +240,8 @@ exports[`render empty coupon list 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"><span class="van-button__text">不使用优惠券</span></button></div>
+  <div class="van-coupon-list__bottom"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close">
+      <div class="van-button__content"><span class="van-button__text">不使用优惠券</span></div>
+    </button></div>
 </div>
 `;

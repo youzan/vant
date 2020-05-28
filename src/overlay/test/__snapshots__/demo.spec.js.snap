@@ -2,10 +2,14 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;"><span class="van-button__text">显示遮罩层</span></button>
+  <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;">
+      <div class="van-button__content"><span class="van-button__text">显示遮罩层</span></div>
+    </button>
     <div class="van-overlay" style="display: none;" name="van-fade"></div>
   </div>
-  <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;"><span class="van-button__text">嵌入内容</span></button>
+  <div><button class="van-button van-button--primary van-button--normal" style="margin-left: 16px;">
+      <div class="van-button__content"><span class="van-button__text">嵌入内容</span></div>
+    </button>
     <div class="van-overlay" style="display: none;" name="van-fade">
       <div class="wrapper">
         <div class="block"></div>

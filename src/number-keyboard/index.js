@@ -1,12 +1,9 @@
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
-import { BORDER_TOP } from '../utils/constant';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
 const [createComponent, bem, t] = createNamespace('number-keyboard');
-const CLOSE_KEY_THEME = ['blue', 'big'];
-const DELETE_KEY_THEME = ['delete', 'big', 'gray'];
 
 export default createComponent({
   mixins: [
@@ -27,6 +24,7 @@ export default createComponent({
     zIndex: [Number, String],
     closeButtonText: String,
     deleteButtonText: String,
+    closeButtonLoading: Boolean,
     theme: {
       type: String,
       default: 'default',
@@ -36,7 +34,7 @@ export default createComponent({
       default: '',
     },
     extraKey: {
-      type: String,
+      type: [String, Array],
       default: '',
     },
     maxlength: {
@@ -71,40 +69,55 @@ export default createComponent({
 
   computed: {
     keys() {
+      if (this.theme === 'custom') {
+        return this.genCustomKeys();
+      }
+      return this.genDefaultKeys();
+    },
+  },
+
+  methods: {
+    genBasicKeys() {
       const keys = [];
       for (let i = 1; i <= 9; i++) {
         keys.push({ text: i });
       }
+      return keys;
+    },
 
-      switch (this.theme) {
-        case 'default':
-          keys.push(
-            { text: this.extraKey, theme: ['gray'], type: 'extra' },
-            { text: 0 },
-            {
-              theme: ['gray'],
-              text: this.showDeleteKey ? this.deleteText : '',
-              type: this.showDeleteKey ? 'delete' : '',
-            }
-          );
-          break;
-        case 'custom':
-          keys.push(
-            { text: 0, theme: ['middle'] },
-            { text: this.extraKey, type: 'extra' }
-          );
-          break;
+    genDefaultKeys() {
+      return [
+        ...this.genBasicKeys(),
+        { text: this.extraKey, type: 'extra' },
+        { text: 0 },
+        {
+          text: this.showDeleteKey ? this.deleteButtonText : '',
+          type: this.showDeleteKey ? 'delete' : '',
+        },
+      ];
+    },
+
+    genCustomKeys() {
+      const keys = this.genBasicKeys();
+      const { extraKey } = this;
+      const extraKeys = Array.isArray(extraKey) ? extraKey : [extraKey];
+
+      if (extraKeys.length === 1) {
+        keys.push(
+          { text: 0, wider: true },
+          { text: extraKey[0], type: 'extra' }
+        );
+      } else if (extraKeys.length === 2) {
+        keys.push(
+          { text: extraKey[0], type: 'extra' },
+          { text: 0 },
+          { text: extraKey[1], type: 'extra' }
+        );
       }
 
       return keys;
     },
 
-    deleteText() {
-      return this.deleteButtonText || t('delete');
-    },
-  },
-
-  methods: {
     onBlur() {
       this.show && this.$emit('blur');
     },
@@ -120,6 +133,9 @@ export default createComponent({
 
     onPress(text, type) {
       if (text === '') {
+        if (type === 'extra') {
+          this.onBlur();
+        }
         return;
       }
 
@@ -147,18 +163,13 @@ export default createComponent({
       }
 
       return (
-        <div class={[bem('title'), BORDER_TOP]}>
+        <div class={bem('header')}>
           {titleLeft && <span class={bem('title-left')}>{titleLeft}</span>}
-          {title && <span>{title}</span>}
+          {title && <h2 class={bem('title')}>{title}</h2>}
           {showClose && (
-            <span
-              role="button"
-              tabindex="0"
-              class={bem('close')}
-              onClick={this.onClose}
-            >
+            <button type="button" class={bem('close')} onClick={this.onClose}>
               {closeButtonText}
-            </span>
+            </button>
           )}
         </div>
       );
@@ -170,7 +181,8 @@ export default createComponent({
           key={key.text}
           text={key.text}
           type={key.type}
-          theme={key.theme}
+          wider={key.wider}
+          color={key.color}
           onPress={this.onPress}
         >
           {key.type === 'delete' && this.slots('delete')}
@@ -185,18 +197,20 @@ export default createComponent({
           <div class={bem('sidebar')}>
             {this.showDeleteKey && (
               <Key
-                text={this.deleteText}
+                large
+                text={this.deleteButtonText}
                 type="delete"
-                theme={DELETE_KEY_THEME}
                 onPress={this.onPress}
               >
                 {this.slots('delete')}
               </Key>
             )}
             <Key
+              large
               text={this.closeButtonText}
               type="close"
-              theme={CLOSE_KEY_THEME}
+              color="blue"
+              loading={this.closeButtonLoading}
               onPress={this.onPress}
             />
           </div>
@@ -206,19 +220,21 @@ export default createComponent({
   },
 
   render() {
+    const Title = this.genTitle();
+
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
-          class={bem([this.theme, { unfit: !this.safeAreaInsetBottom }])}
+          class={bem({ unfit: !this.safeAreaInsetBottom, 'with-title': Title })}
           onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
         >
-          {this.genTitle()}
+          {Title}
           <div class={bem('body')}>
-            {this.genKeys()}
+            <div class={bem('keys')}>{this.genKeys()}</div>
             {this.genSidebar()}
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import Info from '../info';
 
 const [createComponent, bem] = createNamespace('tab');
@@ -55,6 +55,25 @@ export default createComponent({
     onClick() {
       this.$emit('click');
     },
+
+    genText() {
+      const Text = (
+        <span class={bem('text', { ellipsis: this.ellipsis })}>
+          {this.slots() || this.title}
+        </span>
+      );
+
+      if (this.dot || (isDef(this.info) && this.info !== '')) {
+        return (
+          <span class={bem('text-wrapper')}>
+            {Text}
+            {<Info dot={this.dot} info={this.info} />}
+          </span>
+        );
+      }
+
+      return Text;
+    },
   },
 
   render() {
@@ -68,17 +87,11 @@ export default createComponent({
             disabled: this.disabled,
             complete: !this.ellipsis,
           }),
-          {
-            'van-ellipsis': this.ellipsis,
-          },
         ]}
         style={this.style}
         onClick={this.onClick}
       >
-        <span class={bem('text')}>
-          {this.slots() || this.title}
-          <Info dot={this.dot} info={this.info} />
-        </span>
+        {this.genText()}
       </div>
     );
   },

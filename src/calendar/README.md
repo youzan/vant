@@ -228,6 +228,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
 | poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
+| lazy-render `v2.8.1` | Whether to enable lazy render | _boolean_ | `true` |
 | show-mark | Whether to show background month mark | _boolean_ | `true` |
 | show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |
@@ -255,9 +256,18 @@ Following props are supported when the type is range
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | Number of selectable days | _number \| string_ | - |
+| max-range `v2.4.3` | Number of selectable days | _number \| string_ | Unlimitied |
 | range-prompt `v2.4.3` | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
 | allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `fasle` |
+
+### Multiple Props
+
+Following props are supported when the type is multiple
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimitied |
+| range-prompt `v2.4.3` | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day
 
@@ -280,6 +290,8 @@ Following props are supported when the type is range
 | close `v2.5.2` | Triggered when close Popup | - |
 | opened `v2.5.2` | Triggered when opened Popup | - |
 | closed `v2.5.2` | Triggered when closed Popup | - |
+| unselect `v2.7.2` | Triggered when unselect date when type is multiple | _value: Date_ |
+| month-show `v2.8.2` | Triggered when a month enters the visible area | _{ date: Date, title: string }_ |
 
 ### Slots
 

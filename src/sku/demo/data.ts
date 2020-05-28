@@ -165,14 +165,6 @@ export const skuData = {
       {
         datetime: '0',
         disable: false,
-        name: '时间含日期',
-        multiple: 0,
-        type: 'time',
-        required: 0,
-      },
-      {
-        datetime: '0',
-        disable: false,
         name: '时间',
         multiple: 0,
         type: 'time',
@@ -181,33 +173,6 @@ export const skuData = {
     ],
   },
   properties: [
-    {
-      k_id: 123,
-      k: '加冰',
-      v: [
-        {
-          id: 1222,
-          name: '少冰',
-          price: 1,
-        },
-        {
-          id: 1223,
-          name: '去冰',
-          price: 1,
-        },
-      ],
-    },
-    {
-      k_id: 133,
-      k: '打包',
-      v: [
-        {
-          id: 1244,
-          name: '分开打包',
-          price: 9,
-        },
-      ],
-    },
     {
       k_id: 124,
       k: '加料',
@@ -238,8 +203,6 @@ export const initialSku = {
   s2: '1193',
   selectedNum: 3,
   selectedProp: {
-    123: [1222],
-    133: [1244],
     124: [1225, 1226],
   },
 };

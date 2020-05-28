@@ -58,6 +58,7 @@ Use the image prop to display different placeholder images
 <style>
   .bottom-button {
     width: 160px;
+    height: 40px;
   }
 </style>
 ```

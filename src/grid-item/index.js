@@ -120,7 +120,14 @@ export default createComponent({
   },
 
   render() {
-    const { center, border, square, gutter, clickable } = this.parent;
+    const {
+      center,
+      border,
+      square,
+      gutter,
+      direction,
+      clickable,
+    } = this.parent;
 
     return (
       <div class={[bem({ square })]} style={this.style}>
@@ -129,12 +136,15 @@ export default createComponent({
           role={clickable ? 'button' : null}
           tabindex={clickable ? 0 : null}
           class={[
-            bem('content', {
-              center,
-              square,
-              clickable,
-              surround: border && gutter,
-            }),
+            bem('content', [
+              direction,
+              {
+                center,
+                square,
+                clickable,
+                surround: border && gutter,
+              },
+            ]),
             { [BORDER]: border },
           ]}
           onClick={this.onClick}

@@ -107,7 +107,7 @@ export default {
 | gutter | Icon gutter | _number \| string_ | `4px` |
 | color | Selected color | _string_ | `#ffd21e` |
 | void-color | Void color | _string_ | `#c8c9cc` |
-| disabled-color | Disabled color | _string_ | `#bdbdbd` |
+| disabled-color | Disabled color | _string_ | `#c8c9cc` |
 | icon | Selected icon | _string_ | `star` |
 | void-icon | Void icon | _string_ | `star-o` |
 | icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |

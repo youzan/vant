@@ -46,5 +46,6 @@ Current supported languages:
 | Turkish                  | tr-TR    |
 | Spanish (Spain)          | es-ES    |
 | Japanese                 | ja-JP    |
+| Romanian                 | ro-RO    |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).

@@ -8,6 +8,7 @@ import { isMobile } from '../validate/mobile';
 import { isNumeric } from '../validate/number';
 import { isAndroid } from '../validate/system';
 import { camelize } from '../format/string';
+import { formatNumber } from '../format/number';
 
 test('deepClone', () => {
   const a = { foo: 0 };
@@ -94,4 +95,23 @@ test('isNumeric', () => {
   expect(isNumeric('1..2')).toBeFalsy();
   expect(isNumeric('abc')).toBeFalsy();
   expect(isNumeric('1b2')).toBeFalsy();
+});
+
+test('formatNumber', () => {
+  expect(formatNumber('abc')).toEqual('');
+  expect(formatNumber('1.2')).toEqual('1');
+  expect(formatNumber('abc1.2')).toEqual('1');
+  expect(formatNumber('123.4.')).toEqual('123');
+
+  // with dot
+  expect(formatNumber('abc', true)).toEqual('');
+  expect(formatNumber('1.2', true)).toEqual('1.2');
+  expect(formatNumber('abc1.2', true)).toEqual('1.2');
+  expect(formatNumber('123.4.', true)).toEqual('123.4');
+
+  // minus
+  expect(formatNumber('-1.2')).toEqual('-1');
+  expect(formatNumber('-1.2', true)).toEqual('-1.2');
+  expect(formatNumber('-1.2-', true)).toEqual('-1.2');
+  expect(formatNumber('123-')).toEqual('123');
 });

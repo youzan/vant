@@ -116,12 +116,12 @@ Vue.use(Vant);
 <!-- 引入样式文件 -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@2.6/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@2.8/lib/index.css"
 />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.6/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.8/lib/vant.min.js"></script>
 
 <script>
   // 在 #app 标签下渲染一个按钮组件
@@ -132,6 +132,10 @@ Vue.use(Vant);
 
   // 调用函数组件，弹出一个 Toast
   vant.Toast('提示');
+
+  // 通过 CDN 引入时不会自动注册 Lazyload 组件
+  // 可以通过下面的方式手动注册
+  Vue.use(vant.Lazyload);
 </script>
 ```
 

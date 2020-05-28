@@ -27,6 +27,7 @@
 @disabled-opacity: 0.5;
 @background-color: @gray-1;
 @background-color-light: #fafafa;
+@text-link-color: #576b95;
 
 // Padding
 @padding-base: 4px;
@@ -42,6 +43,9 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
+@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
 @price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
   sans-serif;
 
@@ -71,7 +75,7 @@
 @action-sheet-item-font-size: @font-size-lg;
 @action-sheet-item-text-color: @text-color;
 @action-sheet-item-disabled-text-color: @gray-5;
-@action-sheet-subname-color: @gray-7;
+@action-sheet-subname-color: @gray-6;
 @action-sheet-subname-font-size: @font-size-sm;
 @action-sheet-close-icon-size: 22px;
 @action-sheet-close-icon-color: @gray-5;
@@ -106,16 +110,13 @@
 @button-mini-height: 22px;
 @button-mini-min-width: 50px;
 @button-mini-font-size: @font-size-xs;
-@button-mini-line-height: 20px;
 @button-small-height: 30px;
 @button-small-font-size: @font-size-sm;
 @button-small-min-width: 60px;
-@button-small-line-height: 28px;
 @button-normal-font-size: @font-size-md;
 @button-large-height: 50px;
-@button-large-line-height: 48px;
 @button-default-height: 44px;
-@button-default-line-height: 42px;
+@button-default-line-height: 1.2;
 @button-default-font-size: @font-size-lg;
 @button-default-color: @text-color;
 @button-default-background-color: @white;
@@ -164,7 +165,6 @@
 @calendar-day-disabled-color: @gray-5;
 @calendar-confirm-button-height: 36px;
 @calendar-confirm-button-margin: 7px 0;
-@calendar-confirm-button-line-height: 34px;
 
 // Card
 @card-padding: @padding-xs @padding-md;
@@ -231,8 +231,8 @@
 
 // Collapse
 @collapse-item-transition-duration: @animation-duration-base;
-@collapse-item-content-padding: @padding-md;
-@collapse-item-content-font-size: 13px;
+@collapse-item-content-padding: @padding-sm @padding-md;
+@collapse-item-content-font-size: 14px;
 @collapse-item-content-line-height: 1.5;
 @collapse-item-content-text-color: @gray-6;
 @collapse-item-content-background-color: @white;
@@ -286,6 +286,7 @@
 @coupon-list-background-color: @background-color;
 @coupon-list-field-padding: 5px 0 5px @padding-md;
 @coupon-list-exchange-button-height: 32px;
+@coupon-list-close-button-height: 40px;
 @coupon-list-empty-image-size: 200px;
 @coupon-list-empty-tip-color: @gray-6;
 @coupon-list-empty-tip-font-size: @font-size-md;
@@ -321,14 +322,14 @@
 @divider-content-right-width: 10%;
 
 // DropdownMenu
-@dropdown-menu-height: 50px;
+@dropdown-menu-height: 48px;
 @dropdown-menu-background-color: @white;
 @dropdown-menu-title-font-size: 15px;
 @dropdown-menu-title-text-color: @text-color;
 @dropdown-menu-title-active-text-color: @blue;
 @dropdown-menu-title-disabled-text-color: @gray-6;
 @dropdown-menu-title-padding: 0 @padding-xs;
-@dropdown-menu-title-line-height: 18px;
+@dropdown-menu-title-line-height: 22px;
 @dropdown-menu-option-active-color: @blue;
 @dropdown-menu-content-max-height: 80%;
 @dropdown-item-z-index: 10;
@@ -348,7 +349,7 @@
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
 @field-input-disabled-text-color: @gray-6;
-@field-placeholder-text-color: @gray-6;
+@field-placeholder-text-color: @gray-5;
 @field-icon-size: 16px;
 @field-clear-icon-size: 16px;
 @field-clear-icon-color: @gray-5;
@@ -410,7 +411,7 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
+@info-font-family: @price-integer-font-family;
 
 // Image
 @image-placeholder-text-color: @gray-6;
@@ -462,7 +463,7 @@
 @notice-bar-line-height: 24px;
 @notice-bar-background-color: @orange-light;
 @notice-bar-icon-size: 16px;
-@notice-bar-icon-min-width: 22px;
+@notice-bar-icon-min-width: 24px;
 
 // Notify
 @notify-text-color: @white;
@@ -475,17 +476,16 @@
 @notify-warning-background-color: @orange;
 
 // NumberKeyboard
-@number-keyboard-background-color: @white;
-@number-keyboard-key-height: 54px;
-@number-keyboard-key-background: @gray-3;
-@number-keyboard-key-font-size: 24px;
-@number-keyboard-key-active-color: @active-color;
+@number-keyboard-background-color: @gray-2;
+@number-keyboard-key-height: 56px;
+@number-keyboard-key-font-size: 28px;
+@number-keyboard-key-active-color: @gray-3;
 @number-keyboard-delete-font-size: @font-size-lg;
 @number-keyboard-title-color: @gray-7;
 @number-keyboard-title-height: 30px;
 @number-keyboard-title-font-size: @font-size-md;
 @number-keyboard-close-padding: 0 @padding-md;
-@number-keyboard-close-color: @blue;
+@number-keyboard-close-color: @text-link-color;
 @number-keyboard-close-font-size: @font-size-md;
 @number-keyboard-button-text-color: @white;
 @number-keyboard-button-background-color: @blue;
@@ -531,10 +531,11 @@
 @picker-background-color: @white;
 @picker-toolbar-height: 44px;
 @picker-title-font-size: @font-size-lg;
+@picker-title-line-height: 20px;
 @picker-action-padding: 0 @padding-md;
 @picker-action-font-size: @font-size-md;
-@picker-action-text-color: @blue;
-@picker-action-active-color: @active-color;
+@picker-confirm-action-color: @text-link-color;
+@picker-cancel-action-color: @gray-6;
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
 @picker-option-disabled-opacity: 0.3;
@@ -579,10 +580,10 @@
 
 // Rate
 @rate-icon-size: 20px;
-@rate-icon-gutter: 4px;
+@rate-icon-gutter: @padding-base;
 @rate-icon-void-color: @gray-5;
 @rate-icon-full-color: #ffd21e;
-@rate-icon-disabled-color: #bdbdbd;
+@rate-icon-disabled-color: @gray-5;
 
 // ShareSheet
 @share-sheet-header-padding: @padding-sm @padding-md @padding-base;
@@ -593,7 +594,6 @@
 @share-sheet-description-font-size: @font-size-sm;
 @share-sheet-description-line-height: 16px;
 @share-sheet-icon-size: 48px;
-@share-sheet-option-margin-right: @padding-xl;
 @share-sheet-option-name-color: @gray-7;
 @share-sheet-option-name-font-size: @font-size-sm;
 @share-sheet-cancel-button-font-size: @font-size-lg;
@@ -621,11 +621,13 @@
 @sidebar-line-height: 20px;
 @sidebar-text-color: @text-color;
 @sidebar-disabled-text-color: @gray-5;
-@sidebar-padding: 20px @padding-sm 20px @padding-xs;
+@sidebar-padding: 20px @padding-sm;
 @sidebar-active-color: @active-color;
 @sidebar-background-color: @background-color;
 @sidebar-selected-font-weight: @font-weight-bold;
 @sidebar-selected-text-color: @text-color;
+@sidebar-selected-border-width: 4px;
+@sidebar-selected-border-height: 16px;
 @sidebar-selected-border-color: @red;
 @sidebar-selected-background-color: @white;
 
@@ -672,9 +674,11 @@
 @stepper-button-icon-color: @text-color;
 @stepper-button-disabled-color: @background-color;
 @stepper-button-disabled-icon-color: @gray-5;
+@stepper-button-round-theme-color: @red;
 @stepper-input-width: 32px;
 @stepper-input-height: 28px;
 @stepper-input-font-size: @font-size-md;
+@stepper-input-line-height: normal;
 @stepper-input-text-color: @text-color;
 @stepper-input-disabled-text-color: @gray-5;
 @stepper-input-disabled-background-color: @active-color;
@@ -778,7 +782,7 @@
 @toast-text-color: @white;
 @toast-loading-icon-color: @white;
 @toast-line-height: 20px;
-@toast-border-radius: @border-radius-md;
+@toast-border-radius: @border-radius-lg;
 @toast-background-color: fade(@text-color, 88%);
 @toast-icon-size: 40px;
 @toast-text-min-width: 96px;
@@ -793,8 +797,8 @@
 @tree-select-font-size: @font-size-md;
 @tree-select-nav-background-color: @background-color;
 @tree-select-content-background-color: @white;
-@tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
-@tree-select-item-height: 44px;
+@tree-select-nav-item-padding: 14px @padding-sm;
+@tree-select-item-height: 48px;
 @tree-select-item-active-color: @red;
 @tree-select-item-disabled-color: @gray-5;
 @tree-select-item-selected-size: 16px;

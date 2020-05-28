@@ -3,8 +3,13 @@
 .van-pagination {
   display: flex;
   font-size: @pagination-font-size;
-  line-height: @pagination-height;
-  text-align: center;
+
+  &__item,
+  &__page-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__item {
     flex: 1;

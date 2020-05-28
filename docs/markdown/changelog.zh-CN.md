@@ -10,6 +10,181 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
+
+`2020-05-28`
+
+**Feature**
+
+- AddressList: 增加底部安全区适配 [#6355](https://github.com/youzan/vant/issues/6355)
+- DatetimePicker: 新增 month-day 类型，用于选择月份和日期 [#6395](https://github.com/youzan/vant/issues/6395)
+- Popup: 现在每个弹层会单独创建一个遮罩层，而不是共用一个遮罩层 [#6357](https://github.com/youzan/vant/issues/6357)
+
+**style**
+
+- ActionSheet: subname 的颜色调整为 gray-6 [e54c11](https://github.com/youzan/vant/commit/e54c11d55244e65246df7eddd7751983dbc4d331)
+- ActionSheet: 移除选项之间的分隔线 [8db218](https://github.com/youzan/vant/commit/8db218e9c0ca6905491a019cf983a0269f3aea8c)
+- Cell: 降低边框选择器的 CSS 优先级，便于覆盖样式 [#6359](https://github.com/youzan/vant/issues/6359)
+- Collapse: 调整边框与左右两侧的边距 [#6361](https://github.com/youzan/vant/issues/6361)
+- Collapse: 内容的字号增大为 14px [#6358](https://github.com/youzan/vant/issues/6358)
+
+**Bug Fixes**
+
+- Area: 修复区列表为空时未默认选中第一个城市的问题 [#6356](https://github.com/youzan/vant/issues/6356)
+- Field: 修复设置 error 为 false 无法禁用错误提示颜色的问题 [#6382](https://github.com/youzan/vant/issues/6382)
+- GoodsAction: 修复只有一个按钮时圆角大小错误的问题 [#6347](https://github.com/youzan/vant/issues/6347)
+- Sidebar: 修复 v-model 绑定的值变化时不会触发 change 事件的问题 [#6383](https://github.com/youzan/vant/issues/6383)
+
+### [v2.8.3](https://github.com/youzan/vant/compare/v2.8.2...v2.8.3)
+
+`2020-05-21`
+
+**Feature**
+
+- Form: 新增 submit-on-enter 属性，用于控制回车时是否提交表单 [#6336](https://github.com/youzan/vant/issues/6336)
+- Form: 优化 scrollToField 方法，支持通过传参来控制滚动位置 [#6335](https://github.com/youzan/vant/issues/6335)
+- Field: 调整 placeholder 的色值为 @gray-5 [#6304](https://github.com/youzan/vant/issues/6304)
+- Field: 使用 digit 类型时，只能在第一位输入减号 [#6303](https://github.com/youzan/vant/issues/6303)
+- Picker: 优化 methods 的类型定义，支持泛型 [#6315](https://github.com/youzan/vant/issues/6315)
+
+**Bug Fixes**
+
+- Button: 修复在低版本 iOS 下按钮文字不居中的问题 [#6325](https://github.com/youzan/vant/issues/6325)
+- Calendar: 修复范围选择到同一天时 color 属性不生效的问题 [#6331](https://github.com/youzan/vant/issues/6331)
+
+### [v2.8.2](https://github.com/youzan/vant/compare/v2.8.1...v2.8.2)
+
+`2020-05-17`
+
+**Feature**
+
+- Field: 新增 extra 插槽 [#6290](https://github.com/youzan/vant/issues/6290)
+- Grid: 新增 direction 属性 [#6256](https://github.com/youzan/vant/issues/6256)
+- Calendar: 新增 month-show 事件 [#6292](https://github.com/youzan/vant/issues/6292)
+- NumberKeyboard: 支持定义两个 extra-key [#6276](https://github.com/youzan/vant/issues/6276)
+- Stepper: 新增 theme 属性，用于展示圆角风格步进器 [#6282](https://github.com/youzan/vant/issues/6282)
+
+**style**
+
+- Rate: 更新禁用状态下的图标颜色 [#6253](https://github.com/youzan/vant/issues/6253)
+- Sku: 优化内部分割线的布局 [#6272](https://github.com/youzan/vant/issues/6272)
+- Sku: 价格符号由居中对齐调整为底对齐 [#6274](https://github.com/youzan/vant/issues/6274)
+- NoticeBar: 图标宽度由 22px 调整为 24px [#6280](https://github.com/youzan/vant/issues/6280)
+
+**Bug Fixes**
+
+- Field: 修复 textarea 无法通过回车换行的问题 [#6263](https://github.com/youzan/vant/issues/6263)
+- NoticeBar: 修复 replay 事件只能触发一次的问题，内部动画机制由 animation 调整为 transition [#6293](https://github.com/youzan/vant/issues/6293)
+
+### [v2.8.1](https://github.com/youzan/vant/compare/v2.8.1-beta.0...v2.8.1)
+
+`2020-05-09`
+
+**Feature**
+
+- Calendar: 新增 lazy-render 属性，用于控制是否开启延迟渲染 [#6245](https://github.com/youzan/vant/issues/6245)
+- Field: 新增 click-input 事件，在点击输入框时触发 [#6239](https://github.com/youzan/vant/issues/6239)
+- Sku: 新增 sku-reset 事件，在规格重置时触发 [#6220](https://github.com/youzan/vant/issues/6220)
+- GoodsActionButton: 适配系统字体放大 [b1dcf3](https://github.com/youzan/vant/commit/b1dcf36263ae7a19197f2c162e67f220dd171047)
+
+**Bug Fixes**
+
+- Button: 修复文字在部分机型上不居中的问题 [8c53db](https://github.com/youzan/vant/commit/8c53db040dd0dfff60eca1ac284d98f13b4e4ce6)
+- Field: 修复回车键会触发表单提交的问题 [#6240](https://github.com/youzan/vant/issues/6240)
+- Step: 修复 active-color 属性对小圆点颜色不生效的问题 [#6229](https://github.com/youzan/vant/issues/6229)
+- Stepper: 修复输入负数时格式化错误的问题 [#6238](https://github.com/youzan/vant/issues/6238)
+- Stepper: 修复个别情况下会展示 NaN 的问题 [7327a4](https://github.com/youzan/vant/commit/7327a481d18271393e25b17d4402dad6d336bb3a)
+- Stepper: 修复设置 disable-input 属性后在部分浏览器上仍会触发 focus 事件的问题 [c6024b](https://github.com/youzan/vant/commit/c6024b18b4191a3a56db0bed1ababa48420c0946)
+
+### [v2.8.0](https://github.com/youzan/vant/compare/v2.7.1...v2.8.0)
+
+`2020-05-05`
+
+**适配系统字体放大**
+
+ 部分手机用户会使用<b>系统或微信提供的字体放大功能</b>，开启该功能后，组件的 font-size 和 line-height 会等比例放大，导致部分组件出现样式偏移的问题，在 2.8.0 版本中，我们针对这个场景进行了适配，使得所有组件在字体缩放后仍保持正确的布局，改动涉及以下组件：
+
+- ActionSheet [#6175](https://github.com/youzan/vant/issues/6175)
+- Checkbox [#6168](https://github.com/youzan/vant/issues/6168)
+- NavBar [7effb7](https://github.com/youzan/vant/commit/7effb7cf6cf59a8db1eb77fa16692712de4a18ba)
+- NoticeBar [#6177](https://github.com/youzan/vant/issues/6177)
+- NumberKeyboard [#6179](https://github.com/youzan/vant/issues/6179)
+- Pagination [#6178](https://github.com/youzan/vant/issues/6178)
+- PasswordInput [#6176](https://github.com/youzan/vant/issues/6176)
+- Picker [#6174](https://github.com/youzan/vant/issues/6174) [#6205](https://github.com/youzan/vant/issues/6205)
+- Radio [#6173](https://github.com/youzan/vant/issues/6173)
+- Tab [#6209](https://github.com/youzan/vant/issues/6209)
+
+**style**
+
+- Button: 使用 flex 进行内容居中，display 由 inline-block 调整为 inline-flex [#6180](https://github.com/youzan/vant/issues/6180)
+- Picker: 优化顶部操作栏的样式，调整操作按钮颜色 [#6214](https://github.com/youzan/vant/issues/6214)
+- CouponList: 新增 @coupon-list-close-button-height 样式变量 [18a0c5](https://github.com/youzan/vant/commit/18a0c545ec881eb296ba6cc11dfaa12febd79e5c)
+
+**Feature**
+
+- Calendar: 新增 unselect 事件，在取消选中时触发 [#6198](https://github.com/youzan/vant/issues/6198)
+- Calendar: 支持在多选模式下使用 max-range 属性 [#6202](https://github.com/youzan/vant/issues/6202)
+- Field: 新增 colon 属性，用于配置是否显示冒号 [#6195](https://github.com/youzan/vant/issues/6195)
+- Locale: 新增罗马尼亚语配置文件 [#6193](https://github.com/youzan/vant/issues/6193)
+- ShareSheet: 优化无障碍访问 [#6208](https://github.com/youzan/vant/issues/6208)
+
+**Bug Fixes**
+
+- Layout: 修复设置 gutter 属性后间距错误的问题 [#6197](https://github.com/youzan/vant/issues/6197) [#6143](https://github.com/youzan/vant/issues/6143)
+- NoticeBar: 修复动态修改 scrollable 属性后未正确生效的问题 [#6190](https://github.com/youzan/vant/issues/6190)
+- ShareSheet: 修复在部分浏览器上底部间距错误的问题 [#6207](https://github.com/youzan/vant/issues/6207)
+- Tab: 修复文字截断时无法正确展示徽标的问题 [#6209](https://github.com/youzan/vant/issues/6209)
+
+### [v2.7.1](https://github.com/youzan/vant/compare/v2.7.0...v2.7.1)
+
+`2020-04-28`
+
+**Bug Fixes**
+
+- 修复 NavBar 图标不居中的问题 [#6147](https://github.com/youzan/vant/issues/6147)
+
+### [v2.7.0](https://github.com/youzan/vant/compare/v2.6.3...v2.7.0)
+
+`2020-04-28`
+
+**style**
+
+- NumberKeyboard: 升级组件样式 [#6149](https://github.com/youzan/vant/issues/6149) [#6151](https://github.com/youzan/vant/issues/6151) [3188b4](https://github.com/youzan/vant/commit/3188b4d25bb6e60ed5de930ec8947929a7577dd3)
+
+<img src="https://b.yzcdn.cn/vant/keyboard-style-04281448.png" style="width: 600px; height: 394px;">
+
+- 新增全局默认字体 [#6126](https://github.com/youzan/vant/issues/6126)
+- DropdownMenu: 增加阴影效果 [7db744](https://github.com/youzan/vant/commit/7db74490956ec9d4c742a885e436dc6915f1f9dc)
+- Sidebar: 优化左侧选中条的样式 [a31032](https://github.com/youzan/vant/commit/a31032e0d63956b2e9f0c75c8a85ca662fe42545)
+- Toast: 圆角大小由 4px 调整为 8px [2364c4](https://github.com/youzan/vant/commit/2364c4f526912433abf5ee2f36e2148beea7140b)
+- TreeSelect: 选中态的图标从 checked 更换为 success 图标 [5b72e4](https://github.com/youzan/vant/commit/5b72e4339347a710620bf630f1bc8ee09511d63c)
+
+**Feature**
+
+- NoticeBar: 新增 start 方法 [#6069](https://github.com/youzan/vant/issues/6069)
+- ImagePreview: 双击缩放的间隔从 300 毫秒调整为 250 毫秒 [#6136](https://github.com/youzan/vant/issues/6136)
+- NumberKeyboard: 新增左下角默认的键盘图标，点击后收起键盘 [#6152](https://github.com/youzan/vant/issues/6152)
+- NumberKeyboard: 新增 close-button-loading 属性，用于展示加载中状态 [#6158](https://github.com/youzan/vant/issues/6158)
+- uploader: 多选时自动过滤超出大小限制的图片 [#6150](https://github.com/youzan/vant/issues/6150)
+
+**Bug Fixes**
+
+- Layout: 修复设置 gutter 后元素宽度溢出屏幕的问题 [#6143](https://github.com/youzan/vant/issues/6143)
+- Tab: 修复子组件顺序错误的问题 [#6140](https://github.com/youzan/vant/issues/6140)
+- Uploader: 修复动态修改 file.message 未触发视图更新的问题 [#6142](https://github.com/youzan/vant/issues/6142)
+- NavBar: 修复设置顶部内边距后两侧按钮定位错误的问题 [#6147](https://github.com/youzan/vant/issues/6147)
+- types: 修复在 TSX 中使用组件时提示类型错误的问题 [#6148](https://github.com/youzan/vant/issues/6148)
+
+### [v2.6.3](https://github.com/youzan/vant/compare/v2.6.2...v2.6.3)
+
+`2020-04-20`
+
+**Bug Fixes**
+
+- Tab: 修复在部分浏览器上可能出现顺序错乱的问题 [#6100](https://github.com/youzan/vant/issues/6100)
+- Tab: 修复动态插入标签时可能出现渲染错误的问题 [#6101](https://github.com/youzan/vant/issues/6101)
+
 ### [v2.6.2](https://github.com/youzan/vant/compare/v2.6.1...v2.6.2)
 
 `2020-04-18`

@@ -1,5 +1,5 @@
 import NumberKeyboard from '..';
-import { mount, trigger } from '../../../test';
+import { mount, trigger, later } from '../../../test';
 
 function clickKey(key) {
   trigger(key, 'touchstart');
@@ -27,10 +27,15 @@ test('click delete key', () => {
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
-test('click empty key', () => {
+test('click collapse key', () => {
   const wrapper = mount(NumberKeyboard);
   clickKey(wrapper.findAll('.van-key').at(9));
   expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('blur')).toBeFalsy();
+
+  wrapper.setProps({ show: true });
+  clickKey(wrapper.findAll('.van-key').at(9));
+  expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
 test('click close button', () => {
@@ -210,4 +215,16 @@ test('show-delete-key prop', () => {
 
   wrapper.setData({ showDeleteKey: false });
   expect(wrapper.contains('.van-key--delete')).toBeFalsy();
+});
+
+test('close-button-loading prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      show: true,
+      theme: 'custom',
+      closeButtonLoading: true,
+    },
+  });
+
+  expect(wrapper.contains('.van-key__loading-icon')).toBeTruthy();
 });

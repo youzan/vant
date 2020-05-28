@@ -17,6 +17,27 @@ export default createComponent({
     },
   },
 
+  data() {
+    return {
+      index: +this.activeKey,
+    };
+  },
+
+  watch: {
+    activeKey() {
+      this.setIndex(+this.activeKey);
+    },
+  },
+
+  methods: {
+    setIndex(index) {
+      if (index !== this.index) {
+        this.index = index;
+        this.$emit('change', index);
+      }
+    },
+  },
+
   render() {
     return <div class={bem()}>{this.slots()}</div>;
   },

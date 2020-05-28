@@ -67,6 +67,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 <style>
   .bottom-button {
     width: 160px;
+    height: 40px;
   }
 </style>
 ```

@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.6.2",
+  "version": "2.8.4",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,21 +30,10 @@
     }
   },
   "lint-staged": {
-    "*.md": [
-      "prettier --write"
-    ],
-    "*.{ts,tsx,js,vue,less}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{ts,tsx,js,vue}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{vue,css,less}": [
-      "stylelint --fix",
-      "git add"
-    ]
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
   },
   "repository": {
     "type": "git",
@@ -67,7 +56,7 @@
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
-    "@vant/cli": "^2.4.0",
+    "@vant/cli": "^2.5.1",
     "@vue/compiler-sfc": "^3.0.0-beta.2",
     "prettier": "^2.0.4",
     "vue": "^3.0.0-beta.2"

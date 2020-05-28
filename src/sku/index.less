@@ -24,9 +24,8 @@
     }
   }
 
-  /* sku header */
   &-header {
-    margin-left: @padding-md;
+    margin: 0 @padding-md;
 
     &__img-wrap {
       position: relative;
@@ -55,7 +54,7 @@
       flex-direction: column;
       justify-content: flex-end;
       min-height: 96px;
-      padding: @padding-sm 36px @padding-sm @padding-xs;
+      padding: @padding-sm 20px @padding-sm @padding-xs;
       overflow: hidden;
     }
   }
@@ -69,13 +68,13 @@
 
   &__price-symbol {
     font-size: @font-size-lg;
-    vertical-align: middle;
+    vertical-align: bottom;
   }
 
   &__price-num {
     font-weight: @font-weight-bold;
     font-size: 22px;
-    vertical-align: middle;
+    vertical-align: bottom;
     word-wrap: break-word;
   }
 
@@ -92,7 +91,6 @@
     color: @red;
     font-size: @font-size-sm;
     line-height: 16px;
-    vertical-align: middle;
     border-radius: 8px;
 
     &::before {
@@ -108,8 +106,7 @@
   }
 
   &-group-container {
-    margin-left: @padding-md;
-    padding: @padding-sm 0 2px;
+    padding-top: @padding-sm;
 
     &--hide-soldout {
       .van-sku-row__item--disabled {
@@ -120,7 +117,7 @@
 
   /* sku row */
   &-row {
-    margin: 0 3px @padding-sm 0;
+    margin: 0 @padding-md @padding-sm;
 
     &:last-child {
       margin-bottom: 0;
@@ -194,18 +191,10 @@
     }
   }
 
-  /* sku stepper */
-  &-stepper {
-    &-stock {
-      margin-left: @padding-md;
-      padding: @padding-sm 0;
-    }
-
-    &-container {
-      min-height: 30px;
-      margin-right: 20px;
-      overflow: hidden;
-    }
+  &-stepper-stock {
+    padding: @padding-sm @padding-md;
+    overflow: hidden;
+    line-height: 30px;
   }
 
   &__stepper {
@@ -214,15 +203,12 @@
 
     &-title {
       float: left;
-      line-height: 30px;
     }
 
     &-quota {
-      display: inline-block;
       float: right;
       color: @red;
       font-size: @font-size-sm;
-      line-height: 30px;
     }
   }
 
@@ -239,6 +225,12 @@
 
   &-messages {
     padding-bottom: @padding-xl;
+
+    .van-cell::after {
+      top: 0;
+      right: @padding-md;
+      bottom: auto;
+    }
 
     &__image-cell {
       .van-cell__title {
@@ -329,7 +321,6 @@
       height: 40px;
       font-weight: @font-weight-bold;
       font-size: @font-size-md;
-      line-height: 34px;
       border: none;
       border-radius: 0;
 

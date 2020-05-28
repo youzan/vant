@@ -22,6 +22,7 @@ export default createComponent({
     showMark: Boolean,
     rowHeight: [Number, String],
     formatter: Function,
+    lazyRender: Boolean,
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
@@ -47,8 +48,12 @@ export default createComponent({
       return getMonthEndDay(this.date.getFullYear(), this.date.getMonth() + 1);
     },
 
+    shouldRender() {
+      return this.visible || !this.lazyRender;
+    },
+
     monthStyle() {
-      if (!this.visible) {
+      if (!this.shouldRender) {
         const padding =
           Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
 
@@ -201,6 +206,7 @@ export default createComponent({
         if (
           type === 'start' ||
           type === 'end' ||
+          type === 'start-end' ||
           type === 'multiple-selected' ||
           type === 'multiple-middle'
         ) {
@@ -226,7 +232,7 @@ export default createComponent({
     },
 
     genDays() {
-      if (this.visible) {
+      if (this.shouldRender) {
         return (
           <div ref="days" role="grid" class={bem('days')}>
             {this.genMark()}

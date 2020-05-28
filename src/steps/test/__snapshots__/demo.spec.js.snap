@@ -27,7 +27,9 @@ exports[`renders demo correctly 1`] = `
           <div class="van-step__line"></div>
         </div>
       </div>
-    </div> <button class="van-button van-button--default van-button--normal"><span class="van-button__text">下一步</span></button>
+    </div> <button class="van-button van-button--default van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">下一步</span></div>
+    </button>
   </div>
   <div>
     <div class="van-steps van-steps--horizontal">

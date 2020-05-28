@@ -230,6 +230,7 @@ export default {
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
+| lazy-render `v2.8.1` | 是否只渲染可视区域的内容 | _boolean_ | `true` |
 | show-mark | 是否显示月份背景水印 | _boolean_ | `true` |
 | show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
@@ -257,9 +258,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
+| max-range `v2.4.3` | 日期区间最多可选天数 | _number \| string_ | 无限制 |
 | range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 | allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `fasle` |
+
+### Multiple Props
+
+当 Canlendar 的 `type` 为 `multiple` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| max-range `v2.7.2` | 日期最多可选天数 | _number \| string_ | 无限制 |
+| range-prompt `v2.4.3` | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构
 
@@ -278,12 +288,14 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| select | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| select | 点击并选中任意日期时触发 | _value: Date \| Date[]_ |
 | confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
 | open `v2.5.2` | 打开弹出层时触发 | - |
 | close `v2.5.2` | 关闭弹出层时触发 | - |
 | opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |
 | closed `v2.5.2` | 关闭弹出层且动画结束后触发 | - |
+| unselect `v2.7.2` | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
+| month-show `v2.8.2` | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
 
 ### Slots
 

@@ -1,6 +1,6 @@
 // Utils
-import { formatNumber } from './utils';
 import { preventDefault } from '../utils/dom/event';
+import { formatNumber } from '../utils/format/number';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import {
   createNamespace,
@@ -37,7 +37,6 @@ export default createComponent({
     ...cellProps,
     name: String,
     rules: Array,
-    error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     autosize: [Boolean, Object],
@@ -57,6 +56,14 @@ export default createComponent({
     type: {
       type: String,
       default: 'text',
+    },
+    error: {
+      type: Boolean,
+      default: null,
+    },
+    colon: {
+      type: Boolean,
+      default: null,
     },
   },
 
@@ -102,24 +109,23 @@ export default createComponent({
     },
 
     showError() {
+      if (this.error !== null) {
+        return this.error;
+      }
       if (this.vanForm && this.vanForm.showError && this.validateMessage) {
         return true;
       }
-      return this.error;
     },
 
     listeners() {
-      const listeners = {
+      return {
         ...this.$listeners,
-        input: this.onInput,
-        keypress: this.onKeypress,
-        focus: this.onFocus,
         blur: this.onBlur,
+        focus: this.onFocus,
+        input: this.onInput,
+        click: this.onClickInput,
+        keypress: this.onKeypress,
       };
-
-      delete listeners.click;
-
-      return listeners;
     },
 
     labelStyle() {
@@ -333,6 +339,10 @@ export default createComponent({
       this.$emit('click', event);
     },
 
+    onClickInput(event) {
+      this.$emit('click-input', event);
+    },
+
     onClickLeftIcon(event) {
       this.$emit('click-left-icon', event);
     },
@@ -348,10 +358,18 @@ export default createComponent({
     },
 
     onKeypress(event) {
-      // trigger blur after click keyboard search button
-      /* istanbul ignore next */
-      if (this.type === 'search' && event.keyCode === 13) {
-        this.blur();
+      const ENTER_CODE = 13;
+
+      if (event.keyCode === ENTER_CODE) {
+        const submitOnEnter = this.getProp('submitOnEnter');
+        if (!submitOnEnter && this.type !== 'textarea') {
+          preventDefault(event);
+        }
+
+        // trigger blur after click keyboard search button
+        if (this.type === 'search') {
+          this.blur();
+        }
       }
 
       this.$emit('keypress', event);
@@ -388,7 +406,12 @@ export default createComponent({
 
       if (inputSlot) {
         return (
-          <div class={bem('control', [inputAlign, 'custom'])}>{inputSlot}</div>
+          <div
+            class={bem('control', [inputAlign, 'custom'])}
+            onClick={this.onClickInput}
+          >
+            {inputSlot}
+          </div>
         );
       }
 
@@ -530,6 +553,11 @@ export default createComponent({
     const Label = this.genLabel();
     if (Label) {
       scopedSlots.title = () => Label;
+    }
+
+    const extra = this.slots('extra');
+    if (extra) {
+      scopedSlots.extra = () => extra;
     }
 
     return (

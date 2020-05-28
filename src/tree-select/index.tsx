@@ -110,7 +110,7 @@ function TreeSelect(
       >
         {item.text}
         {isActiveItem(item.id) && (
-          <Icon name="checked" class={bem('selected')} />
+          <Icon name="success" class={bem('selected')} />
         )}
       </div>
     ));

@@ -4,6 +4,7 @@ import { getScrollTop } from '../utils/dom/scroll';
 import {
   t,
   bem,
+  copyDate,
   copyDates,
   getNextDay,
   compareDay,
@@ -64,6 +65,10 @@ export default createComponent({
       default: true,
     },
     poppable: {
+      type: Boolean,
+      default: true,
+    },
+    lazyRender: {
       type: Boolean,
       default: true,
     },
@@ -248,6 +253,13 @@ export default createComponent({
           currentMonth = months[i];
         }
 
+        if (!months[i].visible && visible) {
+          this.$emit('month-show', {
+            date: months[i].date,
+            title: months[i].title,
+          });
+        }
+
         months[i].visible = visible;
         height += heights[i];
       }
@@ -290,7 +302,10 @@ export default createComponent({
         });
 
         if (selected) {
-          currentDate.splice(selectedIndex, 1);
+          const [unselectedDate] = currentDate.splice(selectedIndex, 1);
+          this.$emit('unselect', copyDate(unselectedDate));
+        } else if (this.maxRange && currentDate.length >= this.maxRange) {
+          Toast(this.rangePrompt || t('rangePrompt', this.maxRange));
         } else {
           this.select([...currentDate, date]);
         }
@@ -359,6 +374,7 @@ export default createComponent({
           showMark={this.showMark}
           formatter={this.formatter}
           rowHeight={this.rowHeight}
+          lazyRender={this.lazyRender}
           currentDate={this.currentDate}
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}

@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
 
 // Components
@@ -257,7 +257,7 @@ export default createComponent({
     genToolbar() {
       if (this.showToolbar) {
         return (
-          <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
+          <div class={bem('toolbar')}>
             {this.slots() || [
               <button type="button" class={bem('cancel')} onClick={this.cancel}>
                 {this.cancelButtonText || t('cancel')}

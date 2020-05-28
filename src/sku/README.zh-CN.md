@@ -156,6 +156,7 @@ export default {
 | sku-prop-selected | 切换商品属性时触发 | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | 打开商品图片预览时触发 | data: object |
 | close-preview | 关闭商品图片预览时触发 | data: object |
+| sku-reset `v2.8.1` | 规格和属性被重置时触发 | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### 方法
 

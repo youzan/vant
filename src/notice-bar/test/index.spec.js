@@ -44,7 +44,7 @@ test('replay event', async () => {
     },
   });
 
-  wrapper.find('.van-notice-bar__content').trigger('animationend');
-  await later();
+  wrapper.find('.van-notice-bar__content').trigger('transitionend');
+  await later(50);
   expect(wrapper.emitted('replay')).toBeTruthy();
 });

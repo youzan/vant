@@ -108,7 +108,7 @@ export default {
 <van-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
   <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 </van-tabbar>
 ```
@@ -119,7 +119,7 @@ export default {
 <van-tabbar v-model="active" @change="onChange">
   <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
   <van-tabbar-item icon="search">标签2</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o">标签3</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
   <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
 </van-tabbar>
 ```

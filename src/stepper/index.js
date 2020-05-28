@@ -1,8 +1,9 @@
 import { createNamespace, isDef, addUnit } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
+import { formatNumber } from '../utils/format/number';
+import { isNaN } from '../utils/validate/number';
 import { FieldMixin } from '../mixins/field';
-import { formatNumber } from '../field/utils';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -24,6 +25,7 @@ export default createComponent({
 
   props: {
     value: null,
+    theme: String,
     integer: Boolean,
     disabled: Boolean,
     inputWidth: [Number, String],
@@ -153,6 +155,7 @@ export default createComponent({
 
       // format range
       value = value === '' ? 0 : +value;
+      value = isNaN(value) ? this.min : value;
       value = Math.max(Math.min(this.max, value), this.min);
 
       // format decimal
@@ -207,12 +210,11 @@ export default createComponent({
     },
 
     onFocus(event) {
-      this.$emit('focus', event);
-
       // readonly not work in lagacy mobile safari
-      /* istanbul ignore if */
       if (this.disableInput && this.$refs.input) {
         this.$refs.input.blur();
+      } else {
+        this.$emit('focus', event);
       }
     },
 
@@ -277,7 +279,7 @@ export default createComponent({
     });
 
     return (
-      <div class={bem()}>
+      <div class={bem([this.theme])}>
         <button
           vShow={this.showMinus}
           type="button"

@@ -20,6 +20,10 @@ const mockItems = [
     text: 'group1',
     children: [mockItem],
   },
+  {
+    text: 'group2',
+    children: [mockItem],
+  },
 ];
 
 test('click-nav event', () => {
@@ -39,10 +43,10 @@ test('click-nav event', () => {
   });
 
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
-  navItems.at(0).trigger('click');
+  navItems.at(1).trigger('click');
 
-  expect(onNavClick).toHaveBeenCalledWith(0);
-  expect(onClickNav).toHaveBeenCalledWith(0);
+  expect(onNavClick).toHaveBeenCalledWith(1);
+  expect(onClickNav).toHaveBeenCalledWith(1);
 });
 
 test('click-item event', () => {

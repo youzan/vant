@@ -429,11 +429,12 @@ export default {
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
-| colon | Whether to display `:` after label | _boolean_ | `false` |
+| colon | Whether to display colon after label | _boolean_ | `false` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
 | show-error-message `v2.5.8` | Whether to show error message when validation failed | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | Whether to submit form on enter | _boolean_ | `true` |
 
 ### Data Structure of Rule
 
@@ -457,12 +458,12 @@ export default {
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods
 
-| Name                   | Description      | Attribute       | Return value |
-| ---------------------- | ---------------- | --------------- | ------------ |
-| submit                 | Submit form      | -               | -            |
-| validate               | Validate form    | _name?: string_ | _Promise_    |
-| resetValidation        | Reset validation | _name?: string_ | -            |
-| scrollToField `v2.5.2` | Scroll to field  | _name: string_  | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| submit | Submit form | - | - |
+| validate | Validate form | _name?: string_ | _Promise_ |
+| resetValidation | Reset validation | _name?: string_ | - |
+| scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 

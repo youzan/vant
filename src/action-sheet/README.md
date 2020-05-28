@@ -16,6 +16,7 @@ Vue.use(ActionSheet);
 Use `actions` prop to set options of action-sheet.
 
 ```html
+<van-cell is-link title="Basic Usage" @click="show = true" />
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
@@ -27,9 +28,9 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option' },
-        { name: 'Option' },
-        { name: 'Option', subname: 'Description' },
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3' },
       ],
     };
   },
@@ -49,6 +50,7 @@ export default {
   v-model="show"
   :actions="actions"
   cancel-text="Cancel"
+  close-on-click-action
   @cancel="onCancel"
 />
 ```
@@ -60,11 +62,15 @@ export default {
   data() {
     return {
       show: false,
+      actions: [
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3' },
+      ],
     };
   },
   methods: {
     onCancel() {
-      this.show = false;
       Toast('cancel');
     },
   },
@@ -74,17 +80,12 @@ export default {
 ### Show Description
 
 ```html
-<van-action-sheet v-model="show" :actions="actions" description="Description" />
-```
-
-### Option Status
-
-```html
 <van-action-sheet
   v-model="show"
   :actions="actions"
   cancel-text="Cancel"
-  @cancel="onCancel"
+  description="Description"
+  close-on-click-action
 />
 ```
 
@@ -94,9 +95,35 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option', color: '#07c160' },
-        { loading: true },
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3', subname: 'Description' },
+      ],
+    };
+  },
+};
+```
+
+### Option Status
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="Cancel"
+  close-on-click-action
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: 'Colored Option', color: '#07c160' },
         { name: 'Disabled Option', disabled: true },
+        { name: 'Loading Option', loading: true },
       ],
     };
   },

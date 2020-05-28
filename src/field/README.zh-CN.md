@@ -22,7 +22,7 @@ Vue.use(Field);
 ```html
 <!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为容器来提供外边框。 -->
 <van-cell-group>
-  <van-field v-model="value" placeholder="请输入用户名" />
+  <van-field v-model="value" label="文本" placeholder="请输入用户名" />
 </van-cell-group>
 ```
 
@@ -245,6 +245,7 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否只读 | _boolean_ | `false` |
+| colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | clearable | 是否启用清除控件 | _boolean_ | `false` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
@@ -270,15 +271,16 @@ export default {
 
 除下列事件外，Field 默认支持 Input 标签所有的原生事件
 
-| 事件             | 说明                 | 回调参数                       |
-| ---------------- | -------------------- | ------------------------------ |
-| input            | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus            | 输入框获得焦点时触发 | _event: Event_                 |
-| blur             | 输入框失去焦点时触发 | _event: Event_                 |
-| clear            | 点击清除按钮时触发   | _event: Event_                 |
-| click            | 点击时触发           | _event: Event_                 |
-| click-left-icon  | 点击左侧图标时触发   | _event: Event_                 |
-| click-right-icon | 点击右侧图标时触发   | _event: Event_                 |
+| 事件                 | 说明                 | 回调参数                       |
+| -------------------- | -------------------- | ------------------------------ |
+| input                | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus                | 输入框获得焦点时触发 | _event: Event_                 |
+| blur                 | 输入框失去焦点时触发 | _event: Event_                 |
+| clear                | 点击清除按钮时触发   | _event: Event_                 |
+| click                | 点击 Field 时触发    | _event: Event_                 |
+| click-input `v2.8.1` | 点击输入区域时触发   | _event: Event_                 |
+| click-left-icon      | 点击左侧图标时触发   | _event: Event_                 |
+| click-right-icon     | 点击右侧图标时触发   | _event: Event_                 |
 
 ### 方法
 
@@ -291,16 +293,17 @@ export default {
 
 ### Slots
 
-| 名称       | 说明                                                       |
-| ---------- | ---------------------------------------------------------- |
-| label      | 自定义输入框标签                                           |
-| input      | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-| left-icon  | 自定义输入框头部图标                                       |
-| right-icon | 自定义输入框尾部图标                                       |
-| button     | 自定义输入框尾部按钮                                       |
+| 名称           | 说明                                                       |
+| -------------- | ---------------------------------------------------------- |
+| label          | 自定义输入框 label 标签                                    |
+| input          | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
+| left-icon      | 自定义输入框头部图标                                       |
+| right-icon     | 自定义输入框尾部图标                                       |
+| button         | 自定义输入框尾部按钮                                       |
+| extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
 
 ## 常见问题
 
 ### 在桌面端点击清除按钮无效？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+清除按钮监听是的移动端 Touch 事件，参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
