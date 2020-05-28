@@ -28,7 +28,7 @@ function getRoutes() {
 
   if (langs.length) {
     routes.push({
-      path: '*',
+      path: '/*',
       redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
 
