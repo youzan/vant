@@ -10,6 +10,31 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
+
+`2020-05-28`
+
+**Feature**
+
+- AddressList: add safe-area-inset-bottom [#6355](https://github.com/youzan/vant/issues/6355)
+- DatetimePicker: add month-day type [#6395](https://github.com/youzan/vant/issues/6395)
+- Popup: create overlay for every popup [#6357](https://github.com/youzan/vant/issues/6357)
+
+**style**
+
+- ActionSheet: adjust subname color to gray-6 [e54c11](https://github.com/youzan/vant/commit/e54c11d55244e65246df7eddd7751983dbc4d331)
+- ActionSheet: remove option border [8db218](https://github.com/youzan/vant/commit/8db218e9c0ca6905491a019cf983a0269f3aea8c)
+- Cell: lower CSS priority of the border [#6359](https://github.com/youzan/vant/issues/6359)
+- Collapse: adjust border gag [#6361](https://github.com/youzan/vant/issues/6361)
+- Collapse: increase content font-size to 14px [#6358](https://github.com/youzan/vant/issues/6358)
+
+**Bug Fixes**
+
+- Area: use first city code when county list is empty [#6356](https://github.com/youzan/vant/issues/6356)
+- Field: can not disable error in form [#6382](https://github.com/youzan/vant/issues/6382)
+- GoodsAction: incorrect single button radius [#6347](https://github.com/youzan/vant/issues/6347)
+- Sidebar: should emit change when v-model changed [#6383](https://github.com/youzan/vant/issues/6383)
+
 ### [v2.8.3](https://github.com/youzan/vant/compare/v2.8.2...v2.8.3)
 
 `2020-05-21`

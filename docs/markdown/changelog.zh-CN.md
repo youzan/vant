@@ -10,6 +10,31 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
+
+`2020-05-28`
+
+**Feature**
+
+- AddressList: 增加底部安全区适配 [#6355](https://github.com/youzan/vant/issues/6355)
+- DatetimePicker: 新增 month-day 类型，用于选择月份和日期 [#6395](https://github.com/youzan/vant/issues/6395)
+- Popup: 现在每个弹层会单独创建一个遮罩层，而不是共用一个遮罩层 [#6357](https://github.com/youzan/vant/issues/6357)
+
+**style**
+
+- ActionSheet: subname 的颜色调整为 gray-6 [e54c11](https://github.com/youzan/vant/commit/e54c11d55244e65246df7eddd7751983dbc4d331)
+- ActionSheet: 移除选项之间的分隔线 [8db218](https://github.com/youzan/vant/commit/8db218e9c0ca6905491a019cf983a0269f3aea8c)
+- Cell: 降低边框选择器的 CSS 优先级，便于覆盖样式 [#6359](https://github.com/youzan/vant/issues/6359)
+- Collapse: 调整边框与左右两侧的边距 [#6361](https://github.com/youzan/vant/issues/6361)
+- Collapse: 内容的字号增大为 14px [#6358](https://github.com/youzan/vant/issues/6358)
+
+**Bug Fixes**
+
+- Area: 修复区列表为空时未默认选中第一个城市的问题 [#6356](https://github.com/youzan/vant/issues/6356)
+- Field: 修复设置 error 为 false 无法禁用错误提示颜色的问题 [#6382](https://github.com/youzan/vant/issues/6382)
+- GoodsAction: 修复只有一个按钮时圆角大小错误的问题 [#6347](https://github.com/youzan/vant/issues/6347)
+- Sidebar: 修复 v-model 绑定的值变化时不会触发 change 事件的问题 [#6383](https://github.com/youzan/vant/issues/6383)
+
 ### [v2.8.3](https://github.com/youzan/vant/compare/v2.8.2...v2.8.3)
 
 `2020-05-21`
