@@ -17,8 +17,7 @@ type DemoItem = {
 };
 
 function genInstall() {
-  return `import Vue from 'vue';
-import PackageEntry from './package-entry';
+  return `import packageEntry from './package-entry';
 import './package-style';
 `;
 }
@@ -26,7 +25,7 @@ import './package-style';
 function genImports(demos: DemoItem[]) {
   return demos
     .map(
-      item =>
+      (item) =>
         `import ${item.name} from '${removeExt(normalizePath(item.path))}';`
     )
     .join('\n');
@@ -34,22 +33,22 @@ function genImports(demos: DemoItem[]) {
 
 function genExports(demos: DemoItem[]) {
   return `export const demos = {\n  ${demos
-    .map(item => item.name)
+    .map((item) => item.name)
     .join(',\n  ')}\n};`;
 }
 
 function getSetName(demos: DemoItem[]) {
   return demos
-    .map(item => `${item.name}.name = 'demo-${item.component}';`)
+    .map((item) => `${item.name}.name = 'demo-${item.component}';`)
     .join('\n');
 }
 
 function genConfig(demos: DemoItem[]) {
   const vantConfig = getVantConfig();
-  const demoNames = demos.map(item => decamelize(item.name));
+  const demoNames = demos.map((item) => decamelize(item.name));
 
   function demoFilter(nav: any[]) {
-    return nav.filter(group => {
+    return nav.filter((group) => {
       group.items = group.items.filter((item: any) =>
         demoNames.includes(item.path)
       );
@@ -73,17 +72,17 @@ function genConfig(demos: DemoItem[]) {
 
 function genCode(components: string[]) {
   const demos = components
-    .map(component => ({
+    .map((component) => ({
       component,
       name: pascalize(component),
       path: join(SRC_DIR, component, 'demo/index.vue'),
     }))
-    .filter(item => existsSync(item.path));
+    .filter((item) => existsSync(item.path));
 
   return `${genInstall()}
 ${genImports(demos)}
 
-Vue.use(PackageEntry);
+export { packageEntry };
 
 ${getSetName(demos)}
 
