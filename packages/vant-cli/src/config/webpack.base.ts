@@ -40,26 +40,26 @@ const plugins = [
   }),
 ];
 
-const tsconfigPath = join(CWD, 'tsconfig.json');
-if (existsSync(tsconfigPath)) {
-  const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-  plugins.push(
-    new ForkTsCheckerPlugin({
-      formatter: 'codeframe',
-      vue: { enabled: true },
-      logger: {
-        // skip info message
-        info() {},
-        warn(message: string) {
-          consola.warn(message);
-        },
-        error(message: string) {
-          consola.error(message);
-        },
-      },
-    })
-  );
-}
+// const tsconfigPath = join(CWD, 'tsconfig.json');
+// if (existsSync(tsconfigPath)) {
+//   const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+//   plugins.push(
+//     new ForkTsCheckerPlugin({
+//       formatter: 'codeframe',
+//       vue: { enabled: true },
+//       logger: {
+//         // skip info message
+//         info() {},
+//         warn(message: string) {
+//           consola.warn(message);
+//         },
+//         error(message: string) {
+//           consola.error(message);
+//         },
+//       },
+//     })
+//   );
+// }
 
 export const baseConfig = {
   mode: 'development',
@@ -112,7 +112,7 @@ export const baseConfig = {
       },
       {
         test: /\.md$/,
-        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader'],
+        use: [CACHE_LOADER, '@vant/markdown-loader'],
       },
     ],
   },
