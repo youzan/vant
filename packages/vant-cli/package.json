@@ -29,8 +29,8 @@
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^2.5.22",
-    "vue-template-compiler": "^2.5.22"
+    "vue": "3.x",
+    "@vue/compiler-sfc": "3.x"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",

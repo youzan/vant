@@ -1358,6 +1358,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/mini-css-extract-plugin@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.npmjs.org/@types/mini-css-extract-plugin/-/mini-css-extract-plugin-0.9.1.tgz#d4bdde5197326fca039d418f4bdda03dc74dc451"
+  integrity sha512-+mN04Oszdz9tGjUP/c1ReVwJXxSniLd7lF++sv+8dkABxVNthg6uccei+4ssKxRHGoMmPxdn7uBdJWONSJGTGQ==
+  dependencies:
+    "@types/webpack" "*"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1447,6 +1454,18 @@
     "@types/source-list-map" "*"
     source-map "^0.6.1"
 
+"@types/webpack@*":
+  version "4.41.13"
+  resolved "https://registry.npmjs.org/@types/webpack/-/webpack-4.41.13.tgz#988d114c8913d039b8a0e0502a7fe4f1f84f3d5e"
+  integrity sha512-RYmIHOWSxnTTa765N6jJBVE45pd2SYNblEYshVDduLw6RhocazNmRzE5/ytvBD8IkDMH6DI+bcrqxh8NILimBA==
+  dependencies:
+    "@types/anymatch" "*"
+    "@types/node" "*"
+    "@types/tapable" "*"
+    "@types/uglify-js" "*"
+    "@types/webpack-sources" "*"
+    source-map "^0.6.0"
+
 "@types/webpack@^4.41.8":
   version "4.41.10"
   resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.10.tgz?cache=0&sync_timestamp=1585610818206&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.10.tgz#2e1f6b3508a249854efe3dcc7690905ac5ee10be"
@@ -1514,10 +1533,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.5.1":
-  version "2.5.1"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-2.5.1.tgz#055bfbdc68227ac761730eab2a31f52cd93641d9"
-  integrity sha512-U0n719aqoIGKG9x0fo8Onk5QTLfrJErjU3vhQOA5cVMN3z9rOOLU7SoB4oSLLr3lh0wfMxhsie9hh6mAO/4NlQ==
+"@vant/cli@^3.0.0-alpha.0":
+  version "3.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-alpha.0.tgz#f25c8815b8d0b0360d1c2853ba411e10c072afe7"
+  integrity sha512-rCcYTWh9LYgw2suCjHc3McI77OEHFwdS+te3cNj9+NJV4PVbfsXfho/bHcndNDqEal0KBsOM0JjyfzB2v3z2mA==
   dependencies:
     "@babel/core" "^7.9.6"
     "@babel/plugin-syntax-jsx" "^7.8.3"
@@ -1528,7 +1547,7 @@
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.0"
     "@types/jest" "^25.2.1"
     "@vant/eslint-config" "^2.2.2"
-    "@vant/markdown-loader" "^2.3.0"
+    "@vant/markdown-loader" "^3.0.0-alpha.0"
     "@vant/markdown-vetur" "^2.0.1"
     "@vant/stylelint-config" "^1.3.0"
     "@vant/touch-emulator" "^1.2.0"
@@ -1540,6 +1559,7 @@
     babel-jest "^25.5.1"
     babel-loader "^8.1.0"
     babel-plugin-import "^1.13.0"
+    babel-plugin-transform-jsx-vue3 "^0.1.8"
     cache-loader "^4.1.0"
     chokidar "^3.4.0"
     clean-css "^4.2.3"
@@ -1575,8 +1595,8 @@
     stylelint "^13.3.3"
     typescript "^3.8.3"
     vue-jest "4.0.0-beta.2"
-    vue-loader "^15.9.2"
-    vue-router "^3.1.6"
+    vue-loader "^16.0.0-beta.3"
+    vue-router "^4.0.0-alpha.12"
     webpack "^4.43.0"
     webpack-dev-server "3.10.3"
     webpack-merge "^4.2.2"
@@ -1599,13 +1619,13 @@
   resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.2.1.tgz#309fecb97a4989866f045ce676b545c454701c8f"
   integrity sha512-5ivsKQR4ySbdBW5UPoQDVqO6rdc1um3rvq/0VL+ZSA7Y3MdBQ3E4/NL0hoAY5/sZZeYfIDKEP21gpjUzdeEDQQ==
 
-"@vant/markdown-loader@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
-  integrity sha512-efNAnJMQbX3yP0+/zvnlYda+xIATLl+T9BXOB179M8KkS3hKk0b8tYHYVeLmdCLbJFeVd8bVXICILIplOYQJ5A==
+"@vant/markdown-loader@^3.0.0-alpha.0":
+  version "3.0.0-alpha.0"
+  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.0.0-alpha.0.tgz#a14fa5c6bf4ffd57916855210dffc0daf8d9d6cb"
+  integrity sha512-cDDXfYhyS6yfVtqx+hwgN4blqd/+V1mYsvtDKsrpAZnirFhWfVFWeNZEjXPN6JYfXk3rEprEepjY/FPtCJG2EQ==
   dependencies:
     front-matter "^3.0.2"
-    highlight.js "^9.16.2"
+    highlight.js "^9.17.1"
     loader-utils "^1.2.3"
     markdown-it "^10.0.0"
     markdown-it-anchor "^5.2.5"
@@ -1758,7 +1778,7 @@
     source-map "~0.6.1"
     vue-template-es2015-compiler "^1.9.0"
 
-"@vue/component-compiler-utils@^3.1.0", "@vue/component-compiler-utils@^3.1.2":
+"@vue/component-compiler-utils@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-3.1.2.tgz#8213a5ff3202f9f2137fe55370f9e8b9656081c3"
   integrity sha512-QLq9z8m79mCinpaEeSURhnNCN6djxpHw0lpP/bodMlt5kALfONpryMthvnrQOlTcIKoF+VoPi+lPHUYeDFPXug==
@@ -2426,6 +2446,13 @@ babel-plugin-jest-hoist@^25.5.0:
     "@babel/template" "^7.3.3"
     "@babel/types" "^7.3.3"
     "@types/babel__traverse" "^7.0.6"
+
+babel-plugin-transform-jsx-vue3@^0.1.8:
+  version "0.1.9"
+  resolved "https://registry.npmjs.org/babel-plugin-transform-jsx-vue3/-/babel-plugin-transform-jsx-vue3-0.1.9.tgz#5951c96e68a3281eb25ff11bfd8160bad47bba9a"
+  integrity sha512-braK/4Wd6Vjpk4Z8+KooU8HEPBLdW3lNE+k0IZIKnsZ9kGIaeymC8K/I61N21gguw5np7pRKcpaxfTj00/W8kA==
+  dependencies:
+    esutils "^2.0.2"
 
 babel-preset-current-node-syntax@^0.1.2:
   version "0.1.2"
@@ -5594,9 +5621,9 @@ he@^1.2.0:
   resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.16.2:
+highlight.js@^9.17.1:
   version "9.18.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
+  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
   integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
 
 hmac-drbg@^1.0.0:
@@ -7285,7 +7312,7 @@ loader-runner@^2.4.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
   integrity sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==
 
-loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
+loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.4.0.tgz#c579b5e34cb34b1a74edc6c1fb36bfa371d5a613"
   integrity sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
@@ -11802,11 +11829,6 @@ vue-eslint-parser@^7.0.0:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-hot-reload-api@^2.3.0:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
-  integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
-
 vue-jest@4.0.0-beta.2:
   version "4.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-4.0.0-beta.2.tgz#f2120ea9d24224aad3a100c2010b0760d47ee6fe"
@@ -11824,29 +11846,22 @@ vue-lazyload@1.2.3:
   resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
   integrity sha512-DC0ZwxanbRhx79tlA3zY5OYJkH8FYp3WBAnAJbrcuoS8eye1P73rcgAZhyxFSPUluJUTelMB+i/+VkNU/qVm7g==
 
-vue-loader@^15.9.2:
-  version "15.9.2"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.9.2.tgz#ae01f5f4c9c6a04bff4483912e72ef91a402c1ae"
-  integrity sha512-oXBubaY//CYEISBlHX+c2YPJbmOH68xXPXjFv4MAgPqQvUsnjrBAjCJi8HXZ/r/yfn0tPL5VZj1Zcp8mJPI8VA==
+vue-loader@^16.0.0-beta.3:
+  version "16.0.0-beta.3"
+  resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-16.0.0-beta.3.tgz#2374094399fed98a8a5750912f3caaaefa814553"
+  integrity sha512-B1jRmai+/sr5PDkRqZe6KllBGMJb4+AsjA44yg1dAod8W+tIdvKTffVEl+5lcXSZy5NsjEx3KqpvV6qq8l/ggA==
   dependencies:
-    "@vue/component-compiler-utils" "^3.1.0"
-    hash-sum "^1.0.2"
-    loader-utils "^1.1.0"
-    vue-hot-reload-api "^2.3.0"
-    vue-style-loader "^4.1.0"
+    "@types/mini-css-extract-plugin" "^0.9.1"
+    chalk "^3.0.0"
+    hash-sum "^2.0.0"
+    loader-utils "^1.2.3"
+    merge-source-map "^1.1.0"
+    source-map "^0.6.1"
 
-vue-router@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.6.tgz#45f5a3a3843e31702c061dd829393554e4328f89"
-  integrity sha512-GYhn2ynaZlysZMkFE5oCHRUTqE8BWs/a9YbKpNLi0i7xD6KG1EzDqpHQmv1F5gXjr8kL5iIVS8EOtRaVUEXTqA==
-
-vue-style-loader@^4.1.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
-  integrity sha512-0ip8ge6Gzz/Bk0iHovU9XAUQaFt/G2B61bnWa2tCcqqdgfHs1lF9xXorFbE55Gmy92okFT+8bfmySuUOu13vxQ==
-  dependencies:
-    hash-sum "^1.0.2"
-    loader-utils "^1.0.2"
+vue-router@^4.0.0-alpha.12:
+  version "4.0.0-alpha.12"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.0.0-alpha.12.tgz#cba18f0a7fcb577d97c8cd10072a9927313db510"
+  integrity sha512-TJhbWHPZS1v259PKlZf+ljSob0U2RUii3HXQgrcFXsNmeWuqEYEh6trswHHr4+MQdXxHgonyYK28qhBjNhORkA==
 
 vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"

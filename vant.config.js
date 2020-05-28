@@ -1,6 +1,7 @@
 module.exports = {
   name: 'vant',
   build: {
+    srcDir: 'src-v3',
     skipInstall: ['lazyload'],
     site: {
       publicPath: 'https://b.yzcdn.cn/vant/',
