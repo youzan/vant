@@ -491,7 +491,7 @@ export default createComponent({
 
     genWordLimit() {
       if (this.showWordLimit && this.maxlength) {
-        const count = this.value.length;
+        const count = (this.value || '').length;
         const full = count >= this.maxlength;
 
         return (
