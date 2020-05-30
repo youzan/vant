@@ -25,9 +25,9 @@ import { Locale } from 'vant';
 const messages = {
   'en-US': {
     vanPicker: {
-      confirm: 'Close'
-    }
-  }
+      confirm: 'Close',
+    },
+  },
 };
 
 Locale.add(messages);
@@ -37,13 +37,15 @@ Locale.add(messages);
 
 Current supported languages:
 
-| Language | Filename |
-|------|------|
-| Chinese | zh-CN |
-| Traditional Chinese (HK) | zh-HK |
-| Traditional Chinese (TW) | zh-TW |
-| English | en-US |
-| Turkish | tr-TR |
-| Spanish (Spain) | es-ES |
+| Language                 | Filename |
+| ------------------------ | -------- |
+| Chinese                  | zh-CN    |
+| Traditional Chinese (HK) | zh-HK    |
+| Traditional Chinese (TW) | zh-TW    |
+| English                  | en-US    |
+| Turkish                  | tr-TR    |
+| Spanish (Spain)          | es-ES    |
+| Japanese                 | ja-JP    |
+| Romanian                 | ro-RO    |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).

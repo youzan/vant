@@ -1,98 +1,98 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <van-checkbox v-model="checkbox1">{{ $t('checkbox') }}</van-checkbox>
+    <demo-block :title="t('basicUsage')">
+      <van-checkbox v-model="checkbox1">{{ t('checkbox') }}</van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
+    <demo-block :title="t('disabled')">
       <van-checkbox :value="false" disabled>
-        {{ $t('checkbox') }}
+        {{ t('checkbox') }}
       </van-checkbox>
       <van-checkbox :value="true" disabled>
-        {{ $t('checkbox') }}
+        {{ t('checkbox') }}
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('customShape')">
+    <demo-block :title="t('customShape')">
       <van-checkbox v-model="checkboxShape" shape="square">
-        {{ $t('customColor') }}
+        {{ t('customColor') }}
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('customColor')">
+    <demo-block :title="t('customColor')">
       <van-checkbox v-model="checkbox2" checked-color="#07c160">
-        {{ $t('customColor') }}
+        {{ t('customColor') }}
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('customIconSize')">
+    <demo-block :title="t('customIconSize')">
       <van-checkbox v-model="checboxIcon" icon-size="24px">
-        {{ $t('customIconSize') }}
+        {{ t('customIconSize') }}
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('customIcon')">
+    <demo-block :title="t('customIcon')">
       <van-checkbox v-model="checkbox3">
-        {{ $t('customIcon') }}
+        {{ t('customIcon') }}
         <template #icon="{ checked }">
           <img :src="checked ? activeIcon : inactiveIcon" />
         </template>
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('disableLabel')">
+    <demo-block :title="t('disableLabel')">
       <van-checkbox v-model="checkboxLabel" label-disabled>
-        {{ $t('checkbox') }}
+        {{ t('checkbox') }}
       </van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="t('title3')">
       <van-checkbox-group v-model="result">
-        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
-        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
       </van-checkbox-group>
     </demo-block>
 
-    <demo-block :title="$t('horizontal')">
+    <demo-block v-if="!isWeapp" :title="t('horizontal')">
       <van-checkbox-group v-model="horizontalResult" direction="horizontal">
-        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
-        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
       </van-checkbox-group>
     </demo-block>
 
-    <demo-block :title="$t('title4')">
+    <demo-block :title="t('title4')">
       <van-checkbox-group v-model="result2" :max="2">
-        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
-        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
-        <van-checkbox name="c">{{ $t('checkbox') }} c</van-checkbox>
+        <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="c">{{ t('checkbox') }} c</van-checkbox>
       </van-checkbox-group>
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="$t('toggleAll')">
+    <demo-block v-if="!isWeapp" :title="t('toggleAll')">
       <van-checkbox-group v-model="checkAllResult" ref="group">
-        <van-checkbox name="a">{{ $t('checkbox') }} a</van-checkbox>
-        <van-checkbox name="b">{{ $t('checkbox') }} b</van-checkbox>
-        <van-checkbox name="c">{{ $t('checkbox') }} c</van-checkbox>
+        <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
+        <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
+        <van-checkbox name="c">{{ t('checkbox') }} c</van-checkbox>
       </van-checkbox-group>
 
       <div class="demo-checkbox-buttons">
         <van-button type="primary" @click="checkAll">
-          {{ $t('checkAll') }}
+          {{ t('checkAll') }}
         </van-button>
         <van-button type="info" @click="toggleAll">
-          {{ $t('inverse') }}
+          {{ t('inverse') }}
         </van-button>
       </div>
     </demo-block>
 
-    <demo-block :title="$t('title5')">
+    <demo-block :title="t('title5')">
       <van-checkbox-group v-model="result3">
         <van-cell-group>
           <van-cell
             v-for="(item, index) in list"
             clickable
             :key="index"
-            :title="`${$t('checkbox')} ${item}`"
+            :title="`${t('checkbox')} ${item}`"
             @click="toggle(index)"
           >
             <template #right-icon>

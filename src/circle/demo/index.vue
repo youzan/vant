@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-circle
         v-model="currentRate1"
         :rate="rate"
@@ -9,13 +9,13 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('customStyle')">
+    <demo-block :title="t('customStyle')">
       <van-circle
         v-model="currentRate3"
         :rate="rate"
         :speed="100"
         :stroke-width="60"
-        :text="$t('customWidth')"
+        :text="t('customWidth')"
       />
 
       <van-circle
@@ -24,7 +24,7 @@
         :rate="rate"
         layer-color="#ebedf0"
         :speed="100"
-        :text="$t('customColor')"
+        :text="t('customColor')"
       />
 
       <van-circle
@@ -32,7 +32,7 @@
         :rate="rate"
         :speed="100"
         :color="gradientColor"
-        :text="$t('gradient')"
+        :text="t('gradient')"
       />
 
       <van-circle
@@ -41,7 +41,7 @@
         :rate="rate"
         :speed="100"
         :clockwise="false"
-        :text="$t('counterClockwise')"
+        :text="t('counterClockwise')"
         style="margin-top: 15px;"
       />
 
@@ -52,15 +52,15 @@
         :speed="100"
         size="120px"
         :clockwise="false"
-        :text="$t('customSize')"
+        :text="t('customSize')"
         style="margin-top: 15px;"
       />
     </demo-block>
 
     <div style="margin-top: 15px;">
-      <van-button :text="$t('add')" type="primary" size="small" @click="add" />
+      <van-button :text="t('add')" type="primary" size="small" @click="add" />
       <van-button
-        :text="$t('decrease')"
+        :text="t('decrease')"
         type="danger"
         size="small"
         @click="reduce"
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-const format = rate => Math.min(Math.max(rate, 0), 100);
+const format = (rate) => Math.min(Math.max(rate, 0), 100);
 
 export default {
   i18n: {

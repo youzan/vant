@@ -14,6 +14,10 @@
 <p align="center">
   🔥 <a href="https://youzan.github.io/vant">文档网站</a>
   &nbsp;
+  &nbsp;
+  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  &nbsp;
+  &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
 </p>
 
@@ -21,14 +25,14 @@
 
 ## 特性
 
-* 60+ 高质量组件
-* 90% 单元测试覆盖率
-* 完善的中英文文档和示例
-* 支持按需引入
-* 支持主题定制
-* 支持国际化
-* 支持 TS
-* 支持 SSR
+- 60+ 高质量组件
+- 90% 单元测试覆盖率
+- 完善的中英文文档和示例
+- 支持按需引入
+- 支持主题定制
+- 支持国际化
+- 支持 TS
+- 支持 SSR
 
 ## 安装
 
@@ -79,7 +83,7 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 ## 生态
 
 | 项目 | 描述 |
-|-----|------|
+| --- | --- |
 | [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | 微信小程序组件库 |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
@@ -88,9 +92,10 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 ## 链接
 
-* [详细文档](https://youzan.github.io/vant)
-* [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
-* [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [详细文档](https://youzan.github.io/vant)
+- [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
+- [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## 手机预览
 

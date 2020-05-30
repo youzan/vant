@@ -1,10 +1,10 @@
 <template>
-  <demo-block v-if="!isWeapp" :title="$t('formatValue')">
+  <demo-block v-if="!isWeapp" :title="t('formatValue')">
     <van-field
       v-model="formatValue"
-      :label="$t('text')"
+      :label="t('text')"
       :formatter="formatter"
-      :placeholder="$t('formatValue')"
+      :placeholder="t('formatValue')"
     />
   </demo-block>
 </template>

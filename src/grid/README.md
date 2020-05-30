@@ -27,12 +27,7 @@ Vue.use(GridItem);
 
 ```html
 <van-grid :column-num="3">
-  <van-grid-item
-    v-for="value in 6"
-    :key="value"
-    icon="photo-o"
-    text="Text"
-  />
+  <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="Text" />
 </van-grid>
 ```
 
@@ -56,12 +51,7 @@ Vue.use(GridItem);
 
 ```html
 <van-grid square>
-  <van-grid-item
-    v-for="value in 8"
-    :key="value"
-    icon="photo-o"
-    text="Text"
-  />
+  <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
 </van-grid>
 ```
 
@@ -69,12 +59,17 @@ Vue.use(GridItem);
 
 ```html
 <van-grid :gutter="10">
-  <van-grid-item
-    v-for="value in 8"
-    :key="value"
-    icon="photo-o"
-    text="Text"
-  />
+  <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
+</van-grid>
+```
+
+### Horizontal
+
+```html
+<van-grid direction="horizontal" :column-num="2">
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -87,12 +82,12 @@ Vue.use(GridItem);
 </van-grid>
 ```
 
-### Show Info
+### Show Badge
 
 ```html
 <van-grid :column-num="2">
   <van-grid-item icon="home-o" text="Text" dot />
-  <van-grid-item icon="search" text="Text" info="99+" />
+  <van-grid-item icon="search" text="Text" badge="99+" />
 </van-grid>
 ```
 
@@ -101,38 +96,39 @@ Vue.use(GridItem);
 ### Grid Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| column-num `v2.0.4` | Column Num | *number \| string* | `4` |
-| icon-size `v2.2.6` | Icon size | *number \| string* | `28px` |
-| gutter | Gutter | *number \| string* | `0` |
-| border | Whether to show border | *boolean* | `true` |
-| center | Whether to center content | *boolean* | `true` |
-| square | Whether to be square shape | *boolean* | `false` |
-| clickable | Whether to show click feedback when clicked | *boolean* | `false` |
+| --- | --- | --- | --- |
+| column-num `v2.0.4` | Column Num | _number \| string_ | `4` |
+| icon-size `v2.2.6` | Icon size | _number \| string_ | `28px` |
+| gutter | Gutter | _number \| string_ | `0` |
+| border | Whether to show border | _boolean_ | `true` |
+| center | Whether to center content | _boolean_ | `true` |
+| square | Whether to be square shape | _boolean_ | `false` |
+| clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
+| direction `v2.8.2` | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
 
 ### GridItem Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| text | Text | *string* | - |
-| icon | Icon name or URL | *string* | - |
-| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
-| dot `v2.2.1` | Whether to show red dot | *boolean* | `false` |
-| info `v2.2.1` | Content of the badge | *number \| string* | - |
-| url | Link URL | *string* | - |
-| to | Target route of the link, same as to of vue-router | *string \| object* | - |
-| replace | If true, the navigation will not leave a history record | *boolean* | `false` |
+| --- | --- | --- | --- |
+| text | Text | _string_ | - |
+| icon | Icon name or URL | _string_ | - |
+| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
+| dot `v2.2.1` | Whether to show red dot | _boolean_ | `false` |
+| badge `v2.5.6` | Content of the badge | _number \| string_ | - |
+| url | Link URL | _string_ | - |
+| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### GridItem Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | *event: Event* |
+| Event | Description            | Arguments      |
+| ----- | ---------------------- | -------------- |
+| click | Triggered when clicked | _event: Event_ |
 
 ### GridItem Slots
 
-| Name | Description |
-|------|------|
+| Name    | Description    |
+| ------- | -------------- |
 | default | Custom content |
-| icon | Custom icon |
-| text | Custom text |
+| icon    | Custom icon    |
+| text    | Custom text    |

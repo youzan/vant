@@ -16,6 +16,7 @@ Vue.use(ActionSheet);
 Use `actions` prop to set options of action-sheet.
 
 ```html
+<van-cell is-link title="Basic Usage" @click="show = true" />
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
 ```
 
@@ -27,18 +28,18 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option' },
-        { name: 'Option' },
-        { name: 'Option', subname: 'Description' }
-      ]
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3' },
+      ],
     };
   },
   methods: {
     onSelect(item) {
       this.show = false;
       Toast(item.name);
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -49,6 +50,7 @@ export default {
   v-model="show"
   :actions="actions"
   cancel-text="Cancel"
+  close-on-click-action
   @cancel="onCancel"
 />
 ```
@@ -59,32 +61,31 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      show: false
+      show: false,
+      actions: [
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3' },
+      ],
     };
   },
   methods: {
     onCancel() {
-      this.show = false;
       Toast('cancel');
-    }
-  }
+    },
+  },
 };
 ```
 
 ### Show Description
 
 ```html
-<van-action-sheet v-model="show" :actions="actions" description="Description" />
-```
-
-### Option Status
-
-```html
 <van-action-sheet
   v-model="show"
   :actions="actions"
   cancel-text="Cancel"
-  @cancel="onCancel"
+  description="Description"
+  close-on-click-action
 />
 ```
 
@@ -94,12 +95,38 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option', color: '#07c160' },
-        { loading: true },
-        { name: 'Disabled Option', disabled: true }
-      ]
+        { name: 'Option 1' },
+        { name: 'Option 2' },
+        { name: 'Option 3', subname: 'Description' },
+      ],
     };
-  }
+  },
+};
+```
+
+### Option Status
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="Cancel"
+  close-on-click-action
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: 'Colored Option', color: '#07c160' },
+        { name: 'Disabled Option', disabled: true },
+        { name: 'Loading Option', loading: true },
+      ],
+    };
+  },
 };
 ```
 
@@ -111,9 +138,9 @@ export default {
 </van-action-sheet>
 
 <style>
-.content {
-  padding: 16px 16px 160px;
-}
+  .content {
+    padding: 16px 16px 160px;
+  }
 </style>
 ```
 
@@ -122,40 +149,41 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| actions | Options | *Action[]* | `[]` | 
-| title | Title | *string* | - |
-| cancel-text | Text of cancel button | *string* | - |
-| description `v2.2.8` | Description above the options | *string* | - |
-| close-icon `v2.2.13` | Close icon name | *string* | `cross` |
-| duration `v2.0.3` | Transition duration, unit second | *number \| string* | `0.3` |
-| round `v2.0.9` | Whether to show round corner | *boolean* | `true` |
-| overlay | Whether to show overlay | *boolean* | `true` |
-| lock-scroll | Whether to lock background scroll | *boolean* | `true` |
-| lazy-render | Whether to lazy render util appeared | *boolean* | `true`  |
-| close-on-popstate `v2.5.3` | Whether to close when popstate | *boolean* | `false` |
-| close-on-click-action | Whether to close when click action | *boolean* | `false` |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
-| get-container | Return the mount node for ActionSheet | *string \| () => Element* | - |
+| --- | --- | --- | --- |
+| v-model (value) | Whether to show ActionSheet | _boolean_ | `false` |
+| actions | Options | _Action[]_ | `[]` |
+| title | Title | _string_ | - |
+| cancel-text | Text of cancel button | _string_ | - |
+| description `v2.2.8` | Description above the options | _string_ | - |
+| close-icon `v2.2.13` | Close icon name | _string_ | `cross` |
+| duration `v2.0.3` | Transition duration, unit second | _number \| string_ | `0.3` |
+| round `v2.0.9` | Whether to show round corner | _boolean_ | `true` |
+| overlay | Whether to show overlay | _boolean_ | `true` |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
+| lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
+| close-on-popstate `v2.5.3` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-click-action | Whether to close when click action | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| get-container | Return the mount node for ActionSheet | _string \| () => Element_ | - |
 
 ### Data Structure of Action
 
-| Key | Description | Type |
-|------|------|------|
-| name | Title | *string* |
-| subname | Subtitle | *string* |
-| color | Text color | *string* |
-| className | className for the option | *any* |
-| loading | Whether to be loading status | *boolean* |
-| disabled | Whether to be disabled | *boolean* |
+| Key       | Description                  | Type      |
+| --------- | ---------------------------- | --------- |
+| name      | Title                        | _string_  |
+| subname   | Subtitle                     | _string_  |
+| color     | Text color                   | _string_  |
+| className | className for the option     | _any_     |
+| loading   | Whether to be loading status | _boolean_ |
+| disabled  | Whether to be disabled       | _boolean_ |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| select | Triggered when click option | *action: Action, index: number* |
-| cancel | Triggered when cancel click | - |
+| --- | --- | --- |
+| select | Triggered when click option | _action: Action, index: number_ |
+| cancel | Triggered when click cancel button | - |
 | open | Triggered when open ActionSheet | - |
 | close | Triggered when close ActionSheet | - |
 | opened | Triggered when opened ActionSheet | - |

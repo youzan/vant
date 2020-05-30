@@ -1,8 +1,8 @@
 import { mount } from '../../../test';
-import Image from '..';
+import VanImage from '..';
 
 test('click event', () => {
-  const wrapper = mount(Image);
+  const wrapper = mount(VanImage);
 
   wrapper.trigger('click');
   expect(wrapper.emitted('click')[0][0]).toBeTruthy();
@@ -10,7 +10,7 @@ test('click event', () => {
 });
 
 test('load event', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -26,7 +26,7 @@ test('load event', () => {
 });
 
 test('error event', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -38,7 +38,7 @@ test('error event', () => {
 });
 
 test('lazy load', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
       lazyLoad: true,
@@ -48,8 +48,8 @@ test('lazy load', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('lazy-load load event', done => {
-  const wrapper = mount(Image, {
+test('lazy-load load event', (done) => {
+  const wrapper = mount(VanImage, {
     propsData: {
       lazyLoad: true,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -75,8 +75,8 @@ test('lazy-load load event', done => {
   });
 });
 
-test('lazy-load error event', done => {
-  const wrapper = mount(Image, {
+test('lazy-load error event', (done) => {
+  const wrapper = mount(VanImage, {
     propsData: {
       lazyLoad: true,
     },
@@ -102,7 +102,7 @@ test('lazy-load error event', done => {
 });
 
 test('show-loading prop', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       showLoading: false,
     },
@@ -112,7 +112,7 @@ test('show-loading prop', () => {
 });
 
 test('show-error prop', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       showError: false,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -125,7 +125,7 @@ test('show-error prop', () => {
 });
 
 test('error-icon prop', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       errorIcon: 'error',
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -138,7 +138,7 @@ test('error-icon prop', () => {
 });
 
 test('loading-icon prop', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       loadingIcon: 'success',
     },
@@ -148,7 +148,7 @@ test('loading-icon prop', () => {
 });
 
 test('radius prop', () => {
-  const wrapper = mount(Image, {
+  const wrapper = mount(VanImage, {
     propsData: {
       radius: 3,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',

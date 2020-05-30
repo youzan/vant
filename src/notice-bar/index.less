@@ -24,25 +24,20 @@
 
   &__wrap {
     position: relative;
+    display: flex;
     flex: 1;
-    height: @notice-bar-line-height;
+    align-items: center;
+    height: 100%;
     overflow: hidden;
   }
 
   &__content {
     position: absolute;
     white-space: nowrap;
+    transition-timing-function: linear;
 
     &.van-ellipsis {
       max-width: 100%;
-    }
-  }
-
-  &__play {
-    animation: van-notice-bar-play linear both;
-
-    &--infinite {
-      animation: van-notice-bar-play-infinite linear infinite both;
     }
   }
 
@@ -61,21 +56,5 @@
         word-wrap: break-word;
       }
     }
-  }
-}
-
-/**
- * Declare two same keyframes
- * In case that some mobile browsers can continue animation when className changed
- */
-@keyframes van-notice-bar-play {
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes van-notice-bar-play-infinite {
-  to {
-    transform: translate3d(-100%, 0, 0);
   }
 }

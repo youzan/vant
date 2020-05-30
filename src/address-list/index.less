@@ -12,12 +12,15 @@
     z-index: @address-list-add-button-z-index;
     box-sizing: border-box;
     width: 100%;
-    padding: 5px @padding-md;
+    padding: 0 @padding-md;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     background-color: @white;
   }
 
   &__add {
     height: 40px;
+    margin: 5px 0;
     line-height: 38px;
   }
 

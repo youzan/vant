@@ -1,7 +1,7 @@
 <template>
-  <demo-block :title="$t('disabled')">
-    <van-field :value="$t('inputReadonly')" :label="$t('text')" readonly />
-    <van-field :value="$t('inputDisabled')" :label="$t('text')" disabled />
+  <demo-block :title="t('disabled')">
+    <van-field :value="t('inputReadonly')" :label="t('text')" readonly />
+    <van-field :value="t('inputDisabled')" :label="t('text')" disabled />
   </demo-block>
 </template>
 

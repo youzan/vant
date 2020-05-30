@@ -1,23 +1,23 @@
 <template>
   <demo-section name="pull-refresh">
     <van-tabs>
-      <van-tab :title="$t('basicUsage')">
+      <van-tab :title="t('basicUsage')">
         <van-pull-refresh v-model="isLoading" @refresh="onRefresh(true)">
           <p>{{ tips }}</p>
         </van-pull-refresh>
       </van-tab>
 
-      <van-tab :title="$t('successTip')">
+      <van-tab :title="t('successTip')">
         <van-pull-refresh
           v-model="isLoading"
-          :success-text="$t('success')"
+          :success-text="t('success')"
           @refresh="onRefresh(false)"
         >
           <p>{{ tips }}</p>
         </van-pull-refresh>
       </van-tab>
 
-      <van-tab :title="$t('customTips')">
+      <van-tab :title="t('customTips')">
         <van-pull-refresh
           v-model="isLoading"
           head-height="80"
@@ -72,10 +72,10 @@ export default {
   computed: {
     tips() {
       if (this.count) {
-        return `${this.$t('text')}: ${this.count}`;
+        return `${this.t('text')}: ${this.count}`;
       }
 
-      return this.$t('try');
+      return this.t('try');
     },
   },
 
@@ -96,7 +96,7 @@ export default {
     onRefresh(showToast) {
       setTimeout(() => {
         if (showToast) {
-          this.$toast(this.$t('success'));
+          this.$toast(this.t('success'));
         }
 
         this.isLoading = false;
@@ -114,10 +114,7 @@ export default {
   background-color: @white;
 
   .van-pull-refresh {
-    &,
-    &__track {
-      height: calc(100vh - 50px);
-    }
+    height: calc(100vh - 50px);
   }
 
   .doge {

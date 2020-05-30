@@ -98,16 +98,16 @@ export default {
     return {
       show: {
         primary: true,
-        success: true
-      }
-    }
+        success: true,
+      },
+    };
   },
   methods: {
     close(type) {
       this.show[type] = false;
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## API
@@ -115,25 +115,25 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| type | Type, can be set to `primary` `success` `danger` `warning` | *string* | `default` |
-| size | Size, can be set to `large` `medium` | *string* | - |
-| color | Custom color | *string* | - |
-| plain | Whether to be plain style | *boolean* | `false` |
-| round | Whether to be round style | *boolean* | `false` |
-| mark | Whether to be mark style | *boolean* | `false` |
-| text-color | Text color | *string* | `white` |
-| closeable `v2.2.9` | Whether to be closeable | *boolean* | `false` |
+| --- | --- | --- | --- |
+| type | Type, can be set to `primary` `success` `danger` `warning` | _string_ | `default` |
+| size | Size, can be set to `large` `medium` | _string_ | - |
+| color | Custom color | _string_ | - |
+| plain | Whether to be plain style | _boolean_ | `false` |
+| round | Whether to be round style | _boolean_ | `false` |
+| mark | Whether to be mark style | _boolean_ | `false` |
+| text-color | Text color | _string_ | `white` |
+| closeable `v2.2.9` | Whether to be closeable | _boolean_ | `false` |
 
 ### Slots
 
-| Name | Description |
-|------|------|
+| Name    | Description  |
+| ------- | ------------ |
 | default | Default slot |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | *event: Event* |
-| close | Triggered when click close icon | - |
+| Event | Description                     | Arguments      |
+| ----- | ------------------------------- | -------------- |
+| click | Triggered when clicked          | _event: Event_ |
+| close | Triggered when click close icon | -              |

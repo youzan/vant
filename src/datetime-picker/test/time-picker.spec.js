@@ -3,7 +3,7 @@ import { mount, later, triggerDrag } from '../../../test';
 
 function filter(type, options) {
   const mod = type === 'minute' ? 10 : 5;
-  return options.filter(option => option % mod === 0);
+  return options.filter((option) => option % mod === 0);
 }
 
 function formatter(type, value) {

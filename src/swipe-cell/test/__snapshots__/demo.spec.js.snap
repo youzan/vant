@@ -6,12 +6,18 @@ exports[`renders demo correctly 1`] = `
     <div>
       <div class="van-swipe-cell">
         <div class="van-swipe-cell__wrapper" style="transform: translate3d(0px, 0, 0); transition-duration: .6s;">
-          <div class="van-swipe-cell__left"><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">选择</span></button></div>
+          <div class="van-swipe-cell__left"><button class="van-button van-button--primary van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">选择</span></div>
+            </button></div>
           <div class="van-cell van-cell--borderless">
             <div class="van-cell__title"><span>单元格</span></div>
             <div class="van-cell__value"><span>内容</span></div>
           </div>
-          <div class="van-swipe-cell__right"><button class="van-button van-button--danger van-button--normal van-button--square"><span class="van-button__text">删除</span></button> <button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">收藏</span></button></div>
+          <div class="van-swipe-cell__right"><button class="van-button van-button--danger van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">删除</span></div>
+            </button> <button class="van-button van-button--primary van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">收藏</span></div>
+            </button></div>
         </div>
       </div>
     </div>
@@ -39,19 +45,25 @@ exports[`renders demo correctly 1`] = `
               </div>
             </div>
           </div>
-          <div class="van-swipe-cell__right"><button class="delete-button van-button van-button--danger van-button--normal van-button--square"><span class="van-button__text">删除</span></button></div>
+          <div class="van-swipe-cell__right"><button class="delete-button van-button van-button--danger van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">删除</span></div>
+            </button></div>
         </div>
       </div>
     </div>
     <div>
       <div class="van-swipe-cell">
         <div class="van-swipe-cell__wrapper" style="transform: translate3d(0px, 0, 0); transition-duration: .6s;">
-          <div class="van-swipe-cell__left"><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">选择</span></button></div>
+          <div class="van-swipe-cell__left"><button class="van-button van-button--primary van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">选择</span></div>
+            </button></div>
           <div class="van-cell van-cell--borderless">
             <div class="van-cell__title"><span>单元格</span></div>
             <div class="van-cell__value"><span>内容</span></div>
           </div>
-          <div class="van-swipe-cell__right"><button class="van-button van-button--danger van-button--normal van-button--square"><span class="van-button__text">删除</span></button></div>
+          <div class="van-swipe-cell__right"><button class="van-button van-button--danger van-button--normal van-button--square">
+              <div class="van-button__content"><span class="van-button__text">删除</span></div>
+            </button></div>
         </div>
       </div>
     </div>

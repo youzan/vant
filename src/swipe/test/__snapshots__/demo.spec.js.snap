@@ -5,10 +5,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="width: 400px; transition-duration: 0ms; transform: translateX(0px);">
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">1</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">2</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">3</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">4</div>
+        <div class="van-swipe-item" style="width: 100px;">1</div>
+        <div class="van-swipe-item" style="width: 100px;">2</div>
+        <div class="van-swipe-item" style="width: 100px;">3</div>
+        <div class="van-swipe-item" style="width: 100px;">4</div>
       </div>
       <div class="van-swipe__indicators"><i class="van-swipe__indicator van-swipe__indicator--active" style="background-color: white;"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>
@@ -16,10 +16,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="width: 400px; transition-duration: 0ms; transform: translateX(0px);">
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img data-src="https://img.yzcdn.cn/vant/apple-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img data-src="https://img.yzcdn.cn/vant/apple-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img data-src="https://img.yzcdn.cn/vant/apple-3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);"><img data-src="https://img.yzcdn.cn/vant/apple-4.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-4.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
       </div>
       <div class="van-swipe__indicators"><i class="van-swipe__indicator van-swipe__indicator--active"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>
@@ -27,21 +27,21 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="width: 400px; transition-duration: 0ms; transform: translateX(0px);">
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">1</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">2</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">3</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">4</div>
+        <div class="van-swipe-item" style="width: 100px;">1</div>
+        <div class="van-swipe-item" style="width: 100px;">2</div>
+        <div class="van-swipe-item" style="width: 100px;">3</div>
+        <div class="van-swipe-item" style="width: 100px;">4</div>
       </div>
       <div class="van-swipe__indicators"><i class="van-swipe__indicator van-swipe__indicator--active" style="background-color: white;"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>
   </div>
   <div>
     <div class="demo-swipe--vertical van-swipe" style="height: 200px;">
-      <div class="van-swipe__track" style="height: 400px; transition-duration: 0ms; transform: translateY(0px);">
-        <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">1</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">2</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">3</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100px; transform: translateY(0px);">4</div>
+      <div class="van-swipe__track van-swipe__track--vertical" style="height: 400px; transition-duration: 0ms; transform: translateY(0px);">
+        <div class="van-swipe-item" style="height: 100px;">1</div>
+        <div class="van-swipe-item" style="height: 100px;">2</div>
+        <div class="van-swipe-item" style="height: 100px;">3</div>
+        <div class="van-swipe-item" style="height: 100px;">4</div>
       </div>
       <div class="van-swipe__indicators van-swipe__indicators--vertical"><i class="van-swipe__indicator van-swipe__indicator--active" style="background-color: white;"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>
@@ -49,10 +49,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="width: 1200px; transition-duration: 0ms; transform: translateX(0px);">
-        <div class="van-swipe-item" style="width: 300px; height: 100%; transform: translateX(0px);">1</div>
-        <div class="van-swipe-item" style="width: 300px; height: 100%; transform: translateX(0px);">2</div>
-        <div class="van-swipe-item" style="width: 300px; height: 100%; transform: translateX(0px);">3</div>
-        <div class="van-swipe-item" style="width: 300px; height: 100%; transform: translateX(0px);">4</div>
+        <div class="van-swipe-item" style="width: 300px;">1</div>
+        <div class="van-swipe-item" style="width: 300px;">2</div>
+        <div class="van-swipe-item" style="width: 300px;">3</div>
+        <div class="van-swipe-item" style="width: 300px;">4</div>
       </div>
       <div class="van-swipe__indicators"><i class="van-swipe__indicator van-swipe__indicator--active" style="background-color: white;"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>
@@ -60,10 +60,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="width: 400px; transition-duration: 0ms; transform: translateX(0px);">
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">1</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">2</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">3</div>
-        <div class="van-swipe-item" style="width: 100px; height: 100%; transform: translateX(0px);">4</div>
+        <div class="van-swipe-item" style="width: 100px;">1</div>
+        <div class="van-swipe-item" style="width: 100px;">2</div>
+        <div class="van-swipe-item" style="width: 100px;">3</div>
+        <div class="van-swipe-item" style="width: 100px;">4</div>
       </div>
       <div class="custom-indicator">1/4</div>
     </div>

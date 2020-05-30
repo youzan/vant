@@ -38,8 +38,12 @@ npm run dev
 # open http://localhost:8080
 ```
 
-## Contribute from the browser with a single click
+## Contribute online with a single click
 
-You can use gitpod (A free online IDE) with a single click it will launch a ready to code workspace with dependencies pre-installed and the web server running so that you don't have to waste any time on the dev setup and start contributing straight away.
+You can use Gitpod (A free online VS Code-like IDE) for contributing, With a single click it will launch a workspace and automatically:
+
+- clone the vant repo.
+- run `npm run bootstrap`.
+- run `npm run dev`. 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/youzan/vant)

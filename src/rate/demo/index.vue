@@ -1,14 +1,14 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-rate v-model="value1" />
     </demo-block>
 
-    <demo-block :title="$t('customIcon')">
+    <demo-block :title="t('customIcon')">
       <van-rate v-model="value2" icon="like" void-icon="like-o" />
     </demo-block>
 
-    <demo-block :title="$t('customStyle')">
+    <demo-block :title="t('customStyle')">
       <van-rate
         v-model="value3"
         :size="25"
@@ -18,7 +18,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('halfStar')">
+    <demo-block :title="t('halfStar')">
       <van-rate
         v-model="value4"
         :size="25"
@@ -28,19 +28,19 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('customCount')">
+    <demo-block :title="t('customCount')">
       <van-rate v-model="value5" :count="6" />
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
+    <demo-block :title="t('disabled')">
       <van-rate v-model="value6" disabled />
     </demo-block>
 
-    <demo-block :title="$t('readonly')">
+    <demo-block :title="t('readonly')">
       <van-rate v-model="value6" readonly />
     </demo-block>
 
-    <demo-block :title="$t('changeEvent')">
+    <demo-block v-if="!isWeapp" :title="t('changeEvent')">
       <van-rate v-model="value7" @change="onChange" />
     </demo-block>
   </demo-section>
@@ -57,7 +57,7 @@ export default {
       customCount: '自定义数量',
       readonly: '只读状态',
       changeEvent: '监听 change 事件',
-      toastContent: value => `当前值：${value}`,
+      toastContent: (value) => `当前值：${value}`,
     },
     'en-US': {
       halfStar: 'Half Star',
@@ -67,7 +67,7 @@ export default {
       customCount: 'Custom Count',
       readonly: 'Readonly',
       changeEvent: 'Change Event',
-      toastContent: value => `current value：${value}`,
+      toastContent: (value) => `current value：${value}`,
     },
   },
 
@@ -86,7 +86,7 @@ export default {
   methods: {
     onChange(value) {
       this.value7 = value;
-      this.$toast(this.$t('toastContent', value));
+      this.$toast(this.t('toastContent', value));
     },
   },
 };

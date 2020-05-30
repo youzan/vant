@@ -213,7 +213,7 @@ test('change event', async () => {
   expect(onChange).toHaveBeenCalledTimes(1);
 });
 
-test('toggle method', async done => {
+test('toggle method', async (done) => {
   const wrapper = mount({
     template: `
       <van-dropdown-menu>
@@ -224,12 +224,14 @@ test('toggle method', async done => {
       // show
       this.$refs.item.toggle(true, { immediate: true });
       await later();
-      expect(wrapper).toMatchSnapshot();
+
+      const content = wrapper.find('.van-dropdown-item__content');
+      expect(content.element.style.display).toEqual('');
 
       // hide
       this.$refs.item.toggle(false, { immediate: true });
       await later();
-      expect(wrapper).toMatchSnapshot();
+      expect(content.element.style.display).toEqual('none');
 
       done();
     },

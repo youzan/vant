@@ -20,7 +20,7 @@ Vue.use(Area);
 要初始化一个`Area`组件，你需要传入一个`area-list`属性，数据格式具体可看下面数据格式章节
 
 ```html
-<van-area :area-list="areaList" />
+<van-area title="标题" :area-list="areaList" />
 ```
 
 ### 选中省市区
@@ -28,7 +28,7 @@ Vue.use(Area);
 如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
 
 ```html
-<van-area :area-list="areaList" value="110101" />
+<van-area title="标题" :area-list="areaList" value="110101" />
 ```
 
 ### 配置显示列
@@ -36,7 +36,7 @@ Vue.use(Area);
 可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
 
 ```html
-<van-area :area-list="areaList" :columns-num="2" title="标题" />
+<van-area title="标题" :area-list="areaList" :columns-num="2" />
 ```
 
 ### 配置列占位提示文字
@@ -45,9 +45,9 @@ Vue.use(Area);
 
 ```html
 <van-area
+  title="标题"
   :area-list="areaList"
   :columns-placeholder="['请选择', '请选择', '请选择']"
-  title="标题"
 />
 ```
 
@@ -56,34 +56,34 @@ Vue.use(Area);
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| value | 当前选中的省市区`code` | *string* | - |
-| title | 顶部栏标题 | *string* | - |
-| confirm-button-text | 确认按钮文字 | *string* | `确认` |
-| cancel-button-text | 取消按钮文字 | *string* | `取消` |
-| area-list | 省市区数据，格式见下方 | *object* | - |
-| columns-placeholder `v2.2.5` | 列占位提示文字 | *string[]* | `[]` |
-| loading | 是否显示加载状态 | *boolean* | `false` |
-| item-height | 选项高度 | *number \| string* | `44` |
-| columns-num | 显示列数，3-省市区，2-省市，1-省 | *number \| string* | `3` |
-| visible-item-count | 可见的选项个数 | *number \| string* | `5` |
-| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | *number \| string*  | `1000` |
-| is-oversea-code `v2.1.4` | 根据`code`校验海外地址，海外地址会划分至单独的分类 | *() => boolean* | - |
+| --- | --- | --- | --- |
+| value | 当前选中的省市区`code` | _string_ | - |
+| title | 顶部栏标题 | _string_ | - |
+| confirm-button-text | 确认按钮文字 | _string_ | `确认` |
+| cancel-button-text | 取消按钮文字 | _string_ | `取消` |
+| area-list | 省市区数据，格式见下方 | _object_ | - |
+| columns-placeholder `v2.2.5` | 列占位提示文字 | _string[]_ | `[]` |
+| loading | 是否显示加载状态 | _boolean_ | `false` |
+| item-height | 选项高度 | _number \| string_ | `44` |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
+| visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
+| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
+| is-oversea-code `v2.1.4` | 根据`code`校验海外地址，海外地址会划分至单独的分类 | _() => boolean_ | - |
 
 ### Events
 
-| 事件 | 说明 | 回调参数 |
-| --- | --- | --- |
-| confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
-| cancel | 点击取消按钮时 | - |
-| change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
+| 事件    | 说明               | 回调参数                                    |
+| ------- | ------------------ | ------------------------------------------- |
+| confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节    |
+| cancel  | 点击取消按钮时     | -                                           |
+| change  | 选项改变时触发     | Picker 实例，所有列选中值，当前列对应的索引 |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| title `v2.5.3` | 自定义标题内容 |
-| columns-top `v2.5.3` | 自定义选项上方内容 |
+| 名称                    | 说明               |
+| ----------------------- | ------------------ |
+| title `v2.5.3`          | 自定义标题内容     |
+| columns-top `v2.5.3`    | 自定义选项上方内容 |
 | columns-bottom `v2.5.3` | 自定义选项下方内容 |
 
 ### 方法
@@ -91,7 +91,7 @@ Vue.use(Area);
 通过 ref 可以获取到 Area 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | reset | 根据 code 重置所有选项，若不传 code，则重置到第一项 | code?: string | - |
 
 ### 省市区列表数据格式
@@ -141,16 +141,16 @@ Vue.use(Area);
 [
   {
     code: '110000',
-    name: '北京市'
+    name: '北京市',
   },
   {
     code: '110100',
-    name: '北京市'
+    name: '北京市',
   },
   {
     code: '110101',
-    name: '东城区'
-  }
+    name: '东城区',
+  },
 ];
 ```
 

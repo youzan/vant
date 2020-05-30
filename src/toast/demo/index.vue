@@ -1,53 +1,53 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('title1')">
+    <demo-block :title="t('title1')">
       <van-button
         type="primary"
-        :text="$t('title1')"
-        @click="$toast($t('text'))"
+        :text="t('title1')"
+        @click="$toast(t('text'))"
       />
       <van-button
         type="primary"
-        :text="$t('longTextButton')"
-        @click="$toast($t('longText'))"
+        :text="t('longTextButton')"
+        @click="$toast(t('longText'))"
       />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="t('title2')">
       <van-button
         type="primary"
-        :text="$t('title2')"
+        :text="t('title2')"
         @click="showLoadingToast()"
       />
       <van-button
         type="primary"
-        :text="$t('loadingType')"
+        :text="t('loadingType')"
         @click="showLoadingToast('spinner')"
       />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
-      <van-button type="info" :text="$t('success')" @click="showSuccessToast" />
-      <van-button type="danger" :text="$t('fail')" @click="showFailToast" />
+    <demo-block :title="t('title3')">
+      <van-button type="info" :text="t('success')" @click="showSuccessToast" />
+      <van-button type="danger" :text="t('fail')" @click="showFailToast" />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="$t('customIcon')">
+    <demo-block v-if="!isWeapp" :title="t('customIcon')">
       <van-button
         type="primary"
-        :text="$t('customIcon')"
+        :text="t('customIcon')"
         @click="showIconToast"
       />
       <van-button
         type="primary"
-        :text="$t('customImage')"
+        :text="t('customImage')"
         @click="showImageToast"
       />
     </demo-block>
 
-    <demo-block :title="$t('updateMessage')">
+    <demo-block :title="t('updateMessage')">
       <van-button
         type="primary"
-        :text="$t('updateMessage')"
+        :text="t('updateMessage')"
         @click="showCustomizedToast"
       />
     </demo-block>
@@ -69,7 +69,7 @@ export default {
       text3: '失败文案',
       customIcon: '自定义图标',
       customImage: '展示图片',
-      text4: second => `倒计时 ${second} 秒`,
+      text4: (second) => `倒计时 ${second} 秒`,
       longTextButton: '长文字提示',
       updateMessage: '动态更新提示',
       loadingType: '自定义加载图标',
@@ -87,7 +87,7 @@ export default {
       text3: 'Fail',
       customIcon: 'Custom Icon',
       customImage: 'Custom Image',
-      text4: second => `${second} seconds`,
+      text4: (second) => `${second} seconds`,
       longTextButton: 'Long Text',
       updateMessage: 'Update Message',
       loadingType: 'Loading Type',
@@ -98,29 +98,29 @@ export default {
     showLoadingToast(loadingType) {
       this.$toast.loading({
         forbidClick: true,
-        message: this.$t('loading'),
+        message: this.t('loading'),
         loadingType,
       });
     },
 
     showSuccessToast() {
-      this.$toast.success(this.$t('text2'));
+      this.$toast.success(this.t('text2'));
     },
 
     showFailToast() {
-      this.$toast.fail(this.$t('text3'));
+      this.$toast.fail(this.t('text3'));
     },
 
     showIconToast() {
       this.$toast({
-        message: this.$t('customIcon'),
+        message: this.t('customIcon'),
         icon: 'like-o',
       });
     },
 
     showImageToast() {
       this.$toast({
-        message: this.$t('customImage'),
+        message: this.t('customImage'),
         icon: 'https://img.yzcdn.cn/vant/logo.png',
       });
     },
@@ -129,14 +129,14 @@ export default {
       const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,
-        message: this.$t('text4', 3),
+        message: this.t('text4', 3),
       });
 
       let second = 3;
       const timer = setInterval(() => {
         second--;
         if (second) {
-          toast.message = this.$t('text4', second);
+          toast.message = this.t('text4', second);
         } else {
           clearInterval(timer);
           this.$toast.clear();

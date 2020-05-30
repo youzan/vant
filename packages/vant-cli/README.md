@@ -45,14 +45,8 @@ yarn add @vant/cli --dev
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,vue}": [
-      "eslint",
-      "git add"
-    ],
-    "*.{vue,css,less,scss}": [
-      "stylelint",
-      "git add"
-    ]
+    "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
+    "*.{vue,css,less,scss}": "stylelint --fix"
   },
   "eslintConfig": {
     "root": true,
@@ -68,14 +62,19 @@ yarn add @vant/cli --dev
 }
 ```
 
-## 命令
+## 详细文档
 
-参见[命令](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)。
+- [命令](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
+- [配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
+- [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
+- [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
 
-## 配置
+## 微信讨论群
 
-参见[配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)。
+扫码加入 Vant Cli 交流群，若群二维码过期，可以联系有赞前端小秘书加群
 
-## 更新日志
+<img src="https://img.yzcdn.cn/vant/wechat_20200527.jpeg" width="220" height="285" >
 
-参见[更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)。
+## 关于桌面端组件
+
+目前 Vant Cli 仅支持移动端组件的预览，桌面端组件暂不支持预览（欢迎 PR）。

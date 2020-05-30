@@ -41,10 +41,10 @@ export default {
       },
       messageConfig: {
         // 数据结构见下方文档
-      }
+      },
     };
-  }
-}
+  },
+};
 ```
 
 ### 自定义步进器
@@ -83,21 +83,17 @@ export default {
   @add-cart="onAddCartClicked"
 >
   <!-- 自定义 sku-header-price -->
-  <template slot="sku-header-price" slot-scope="props">
+  <template #sku-header-price="props">
     <div class="van-sku__goods-price">
-      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
+      <span class="van-sku__price-symbol">￥</span
+      ><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
 
   <!-- 自定义 sku actions -->
-  <template slot="sku-actions" slot-scope="props">
+  <template #sku-actions="props">
     <div class="van-sku-actions">
-      <van-button
-        square
-        size="large"
-        type="warning"
-        @click="onPointClicked"
-      >
+      <van-button square size="large" type="warning" @click="onPointClicked">
         积分兑换
       </van-button>
       <!-- 直接触发 sku 内部事件，通过内部事件执行 onBuyClicked 回调 -->
@@ -119,40 +115,40 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| v-model | 是否显示sku | *boolean* | `false` |
-| sku | 商品sku数据 | *object* | - |
-| goods | 商品信息 | *object* | - |
-| goods-id | 商品 id | *number \| string* | - |
-| price-tag | 显示在价格后面的标签 | *string* | - |
-| hide-stock | 是否显示商品剩余库存 | *boolean* | `false` |
-| hide-quota-text | 是否显示限购提示 | *boolean* | `false` |
-| hide-selected-text | 是否隐藏已选提示 | *boolean* | `false` |
-| stock-threshold | 库存阈值。低于这个值会把库存数高亮显示 | *boolean* | `50` |
-| show-add-cart-btn | 是否显示加入购物车按钮 | *boolean* | `true` |
-| buy-text | 购买按钮文字 | *string* | `立即购买` |
-| add-cart-text | 加入购物车按钮文字 | *string* | `加入购物车` |
-| quota | 限购数，0 表示不限购 | *number* | `0` |
-| quota-used | 已经购买过的数量 | *number* | `0` |
-| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | *boolean* | `false` |
-| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | *boolean* | `false` |
-| disable-stepper-input | 是否禁用步进器输入 | *boolean* | `false` |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `false` |
-| stepper-title | 数量选择组件左侧文案 | *string* | `购买数量` |
-| custom-stepper-config | 步进器相关自定义配置 | *object* | `{}` |
-| message-config | 留言相关配置 | *object* | `{}` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | - |
-| initial-sku | 默认选中的 sku，具体参考高级用法 | *object* | `{}` |
-| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | *boolean* | `true` |
-| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | *boolean* | `false` |
-| start-sale-num `v2.3.0` | 起售数量 | *number* | `1` |
-| properties `v2.4.2` | 商品属性 | *array* | - |
-| preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | 是否显示 sku | _boolean_ | `false` |
+| sku | 商品 sku 数据 | _object_ | - |
+| goods | 商品信息 | _object_ | - |
+| goods-id | 商品 id | _number \| string_ | - |
+| price-tag | 显示在价格后面的标签 | _string_ | - |
+| hide-stock | 是否显示商品剩余库存 | _boolean_ | `false` |
+| hide-quota-text | 是否显示限购提示 | _boolean_ | `false` |
+| hide-selected-text | 是否隐藏已选提示 | _boolean_ | `false` |
+| stock-threshold | 库存阈值。低于这个值会把库存数高亮显示 | _boolean_ | `50` |
+| show-add-cart-btn | 是否显示加入购物车按钮 | _boolean_ | `true` |
+| buy-text | 购买按钮文字 | _string_ | `立即购买` |
+| add-cart-text | 加入购物车按钮文字 | _string_ | `加入购物车` |
+| quota | 限购数，0 表示不限购 | _number_ | `0` |
+| quota-used | 已经购买过的数量 | _number_ | `0` |
+| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | _boolean_ | `false` |
+| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | _boolean_ | `false` |
+| disable-stepper-input | 是否禁用步进器输入 | _boolean_ | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
+| stepper-title | 数量选择组件左侧文案 | _string_ | `购买数量` |
+| custom-stepper-config | 步进器相关自定义配置 | _object_ | `{}` |
+| message-config | 留言相关配置 | _object_ | `{}` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| initial-sku | 默认选中的 sku，具体参考高级用法 | _object_ | `{}` |
+| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | _boolean_ | `true` |
+| safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
+| properties `v2.4.2` | 商品属性 | _array_ | - |
+| preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
-|------|------|------|
+| --- | --- | --- |
 | add-cart | 点击添加购物车回调 | skuData: object |
 | buy-clicked | 点击购买回调 | skuData: object |
 | stepper-change | 购买数量变化时触发 | value: number |
@@ -160,28 +156,29 @@ export default {
 | sku-prop-selected | 切换商品属性时触发 | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | 打开商品图片预览时触发 | data: object |
 | close-preview | 关闭商品图片预览时触发 | data: object |
+| sku-reset `v2.8.1` | 规格和属性被重置时触发 | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### 方法
 
 通过 ref 可以获取到 Sku 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
-| 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
-| getSkuData | 获取当前 skuData | - | skuData |
-| resetSelectedSku `v2.3.0` | 重置选中规格到初始状态 | - | - |
+| 方法名                    | 说明                   | 参数 | 返回值  |
+| ------------------------- | ---------------------- | ---- | ------- |
+| getSkuData                | 获取当前 skuData       | -    | skuData |
+| resetSelectedSku `v2.3.0` | 重置选中规格到初始状态 | -    | -       |
 
 ### Slots
 
 Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，可以按需进行替换。区块顺序见下表：
 
 | 名称 | 说明 |
-|------|------|
+| --- | --- |
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
 | sku-header-price | 自定义 sku 头部价格展示 |
 | sku-header-origin-price | 自定义 sku 头部原价展示 |
 | sku-header-extra | 额外 sku 头部区域 |
 | sku-header-image-extra `v2.5.2` | 自定义 sku 头部图片额外的展示 |
-| sku-body-top |  sku 展示区上方的内容，无默认展示内容，按需使用 |
+| sku-body-top | sku 展示区上方的内容，无默认展示内容，按需使用 |
 | sku-group | 商品 sku 展示区 |
 | extra-sku-group | 额外商品 sku 展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
@@ -248,25 +245,26 @@ sku: {
 ### properties 对象结构
 
 ```js
-  [ // 商品属性
-    {
-      k_id: 123, // 属性id
-      k: '加料', // 属性名
-      is_multiple: true, // 是否可多选
-      v: [
-        {
-          id: 1222, // 属性值id
-          name: '珍珠', // 属性值名
-          price: 1, // 属性值加价
-        },
-        {
-          id: 1223,
-          name: '椰果',
-          price: 1,
-        }
-      ],
-    }
-  ]
+[
+  // 商品属性
+  {
+    k_id: 123, // 属性id
+    k: '加料', // 属性名
+    is_multiple: true, // 是否可多选
+    v: [
+      {
+        id: 1222, // 属性值id
+        name: '珍珠', // 属性值名
+        price: 1, // 属性值加价
+      },
+      {
+        id: 1223,
+        name: '椰果',
+        price: 1,
+      },
+    ],
+  },
+];
 ```
 
 ### initialSku 对象结构
@@ -293,7 +291,7 @@ sku: {
 ```js
 goods: {
   // 默认商品 sku 缩略图
-  picture: 'https://img.yzcdn.cn/1.jpg'
+  picture: 'https://img.yzcdn.cn/1.jpg';
 }
 ```
 

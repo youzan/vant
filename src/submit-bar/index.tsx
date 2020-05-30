@@ -77,10 +77,7 @@ function SubmitBar(
   }
 
   return (
-    <div
-      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
-      {...inherit(ctx)}
-    >
+    <div class={bem({ unfit: !props.safeAreaInsetBottom })} {...inherit(ctx)}>
       {slots.top && slots.top()}
       {Tip()}
       <div class={bem('bar')}>
@@ -112,7 +109,10 @@ SubmitBar.props = {
   textAlign: String,
   buttonText: String,
   suffixLabel: String,
-  safeAreaInsetBottom: Boolean,
+  safeAreaInsetBottom: {
+    type: Boolean,
+    default: true,
+  },
   decimalLength: {
     type: [Number, String],
     default: 2,

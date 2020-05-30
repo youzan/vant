@@ -16,9 +16,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
   <div>
@@ -41,9 +43,11 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="text" name="asyncValidator" placeholder="异步函数校验" class="van-field__control"></div>
         </div>
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
   <div>
@@ -184,45 +188,35 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-hairline--bottom">
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
-          <div class="van-cell__title van-field__label"><span>选择器</span></div>
-          <div class="van-cell__value van-field__value">
-            <div class="van-field__body"><input type="text" name="picker" readonly="readonly" placeholder="点击选择城市" class="van-field__control"></div>
-          </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+        <div class="van-cell__title van-field__label"><span>选择器</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body"><input type="text" name="picker" readonly="readonly" placeholder="点击选择城市" class="van-field__control"></div>
         </div>
-        <!---->
       </div>
-      <div class="van-hairline--bottom">
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
-          <div class="van-cell__title van-field__label"><span>时间选择</span></div>
-          <div class="van-cell__value van-field__value">
-            <div class="van-field__body"><input type="text" name="datetimePicker" readonly="readonly" placeholder="点击选择时间" class="van-field__control"></div>
-          </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+        <div class="van-cell__title van-field__label"><span>时间选择</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body"><input type="text" name="datetimePicker" readonly="readonly" placeholder="点击选择时间" class="van-field__control"></div>
         </div>
-        <!---->
       </div>
-      <div class="van-hairline--bottom">
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-cell--borderless van-field">
-          <div class="van-cell__title van-field__label"><span>地区选择</span></div>
-          <div class="van-cell__value van-field__value">
-            <div class="van-field__body"><input type="text" name="area" readonly="readonly" placeholder="点击选择省市区" class="van-field__control"></div>
-          </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+        <div class="van-cell__title van-field__label"><span>地区选择</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body"><input type="text" name="area" readonly="readonly" placeholder="点击选择省市区" class="van-field__control"></div>
         </div>
-        <!---->
       </div>
-      <div>
-        <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
-          <div class="van-cell__title van-field__label"><span>日历</span></div>
-          <div class="van-cell__value van-field__value">
-            <div class="van-field__body"><input type="text" name="calendar" readonly="readonly" placeholder="点击选择日期" class="van-field__control"></div>
-          </div>
+      <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+        <div class="van-cell__title van-field__label"><span>日历</span></div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body"><input type="text" name="calendar" readonly="readonly" placeholder="点击选择日期" class="van-field__control"></div>
         </div>
-        <!---->
       </div>
-      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round"><span class="van-button__text">
+      <div style="margin: 16px 16px 0px;"><button type="submit" class="van-button van-button--info van-button--normal van-button--block van-button--round">
+          <div class="van-button__content"><span class="van-button__text">
         提交
-      </span></button></div>
+      </span></div>
+        </button></div>
     </form>
   </div>
 </div>

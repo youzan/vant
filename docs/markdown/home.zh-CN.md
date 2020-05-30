@@ -8,14 +8,14 @@
 
 ### 特性
 
-* 60+ 高质量组件
-* 90% 单元测试覆盖率
-* 完善的中英文文档和示例
-* 支持按需引入
-* 支持主题定制
-* 支持国际化
-* 支持 TS
-* 支持 SSR
+- 60+ 高质量组件
+- 90% 单元测试覆盖率
+- 完善的中英文文档和示例
+- 支持按需引入
+- 支持主题定制
+- 支持国际化
+- 支持 TS
+- 支持 SSR
 
 ### 快速上手
 
@@ -48,7 +48,7 @@
 ### 生态
 
 | 项目 | 描述 |
-|-----|------|
+| --- | --- |
 | [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | 微信小程序组件库 |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
@@ -57,9 +57,10 @@
 
 ### 链接
 
-* [意见反馈](https://github.com/youzan/vant/issues)
-* [更新日志](#/zh-CN/changelog)
-* [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [意见反馈](https://github.com/youzan/vant/issues)
+- [更新日志](#/zh-CN/changelog)
+- [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ### 开源协议
 

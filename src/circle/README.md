@@ -14,26 +14,21 @@ Vue.use(Circle);
 ### Basic Usage
 
 ```html
-<van-circle
-  v-model="currentRate"
-  :rate="30"
-  :speed="100"
-  :text="text"
-/>
+<van-circle v-model="currentRate" :rate="30" :speed="100" :text="text" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      currentRate: 0
+      currentRate: 0,
     };
   },
   computed: {
     text() {
-      return this.currentRate.toFixed(0) + '%'
-    }
-  }
+      return this.currentRate.toFixed(0) + '%';
+    },
+  },
 };
 ```
 
@@ -77,10 +72,10 @@ export default {
       currentRate: 0,
       gradientColor: {
         '0%': '#3fecff',
-        '100%': '#6149f6'
-      }
+        '100%': '#6149f6',
+      },
     };
-  }
+  },
 };
 ```
 
@@ -111,21 +106,21 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Current rate | *number* | - |
-| rate | Target rate | *number \| string* | `100` |
-| size | Circle size | *number \| string* | `100px` |
-| color `v2.1.4` | Progress color, passing object to render gradient | *string \| object* | `#1989fa` |
-| layer-color | Layer color | *string* | `white` |
-| fill | Fill color | *string* | `none` |
-| speed | Animate speed（rate/s）| *number \| string* | `0` |
-| text | Text | *string* | - |
-| stroke-width | Stroke width | *number \| string* | `40` |
-| stroke-linecap `v2.2.15` | Stroke linecap，can be set to `sqaure` `butt` | *string* | `round` |
-| clockwise | Whether to be clockwise | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | Current rate | _number_ | - |
+| rate | Target rate | _number \| string_ | `100` |
+| size | Circle size | _number \| string_ | `100px` |
+| color `v2.1.4` | Progress color, passing object to render gradient | _string \| object_ | `#1989fa` |
+| layer-color | Layer color | _string_ | `white` |
+| fill | Fill color | _string_ | `none` |
+| speed | Animate speed（rate/s） | _number \| string_ | `0` |
+| text | Text | _string_ | - |
+| stroke-width | Stroke width | _number \| string_ | `40` |
+| stroke-linecap `v2.2.15` | Stroke linecap，can be set to `sqaure` `butt` | _string_ | `round` |
+| clockwise | Whether to be clockwise | _boolean_ | `true` |
 
 ### Slots
 
-| Name | Description |
-|------|------|
+| Name    | Description         |
+| ------- | ------------------- |
 | default | custom text content |

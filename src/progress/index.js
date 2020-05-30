@@ -14,7 +14,7 @@ export default createComponent({
     percentage: {
       type: [Number, String],
       required: true,
-      validator: value => value >= 0 && value <= 100,
+      validator: (value) => value >= 0 && value <= 100,
     },
     showPivot: {
       type: Boolean,

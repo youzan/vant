@@ -43,6 +43,22 @@ test('offset-top prop', () => {
   mockScrollTop(0);
 });
 
+test('should not trigger scroll event when hidden', () => {
+  const scroll = jest.fn();
+  mount({
+    template: `
+      <van-sticky style="height: 10px; display: none;" @scroll="scroll">
+        Content
+      </van-sticky>
+    `,
+    methods: {
+      scroll,
+    },
+  });
+
+  expect(scroll).toHaveBeenCalledTimes(0);
+});
+
 test('container prop', () => {
   const wrapper = mount({
     template: `
@@ -67,4 +83,53 @@ test('container prop', () => {
   mockScrollTop(25);
   expect(wrapper).toMatchSnapshot();
   mockScrollTop(0);
+});
+
+test('trigger scroll when visibility changed', () => {
+  const originIntersectionObserver = window.IntersectionObserver;
+
+  const observe = jest.fn();
+  const unobserve = jest.fn();
+  const scroll = jest.fn();
+
+  let observerCallback;
+
+  window.IntersectionObserver = class IntersectionObserver {
+    constructor(callback) {
+      observerCallback = callback;
+    }
+
+    observe() {
+      observe();
+    }
+
+    unobserve() {
+      unobserve();
+    }
+  };
+
+  const wrapper = mount({
+    template: `
+      <van-sticky style="height: 10px;" @scroll="scroll">
+        Content
+      </van-sticky>
+    `,
+    methods: {
+      scroll,
+    },
+  });
+
+  expect(observe).toHaveBeenCalledTimes(1);
+  expect(scroll).toHaveBeenCalledTimes(1);
+
+  observerCallback([{ intersectionRatio: 1 }]);
+  expect(scroll).toHaveBeenCalledTimes(2);
+
+  observerCallback([{ intersectionRatio: 0 }]);
+  expect(scroll).toHaveBeenCalledTimes(2);
+
+  wrapper.destroy();
+  expect(unobserve).toHaveBeenCalledTimes(1);
+
+  window.IntersectionObserver = originIntersectionObserver;
 });

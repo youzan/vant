@@ -32,7 +32,7 @@ export default createComponent({
       this.paddingImg = file.content;
       this.uploadFail = false;
       this.uploadImg(file.file, file.content)
-        .then(img => {
+        .then((img) => {
           this.$emit('input', img);
           this.$nextTick(() => {
             this.paddingImg = '';

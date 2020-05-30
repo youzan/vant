@@ -1,3 +1,4 @@
+import GoodsAction from '..';
 import Button from '../../goods-action-button';
 import Icon from '../../goods-action-icon';
 import { mount } from '../../../test';
@@ -79,6 +80,16 @@ test('Icon render icon slot with dot', () => {
           icon: () => 'Custom Icon',
         },
       });
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('disable safe-area-inset-bottom prop', () => {
+  const wrapper = mount(GoodsAction, {
+    propsData: {
+      safeAreaInsetBottom: false,
     },
   });
 

@@ -1,34 +1,34 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-pagination
         v-model="currentPage1"
         :total-items="24"
         :items-per-page="5"
-        :prev-text="$t('prevText')"
-        :next-text="$t('nextText')"
+        :prev-text="t('prevText')"
+        :next-text="t('nextText')"
       />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="t('title2')">
       <van-pagination
         v-model="currentPage2"
         :page-count="12"
-        :prev-text="$t('prevText')"
-        :next-text="$t('nextText')"
+        :prev-text="t('prevText')"
+        :next-text="t('nextText')"
         mode="simple"
         size="small"
       />
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="t('title3')">
       <van-pagination
         force-ellipses
         v-model="currentPage3"
         :total-items="125"
         :show-page-size="3"
-        :prev-text="$t('prevText')"
-        :next-text="$t('nextText')"
+        :prev-text="t('prevText')"
+        :next-text="t('nextText')"
       />
     </demo-block>
   </demo-section>

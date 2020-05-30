@@ -26,9 +26,13 @@ exports[`renders demo correctly 1`] = `
       <div class="van-panel__content">
         <div>内容</div>
       </div>
-      <div class="van-panel__footer van-hairline--top"><button class="van-button van-button--default van-button--small"><span class="van-button__text">按钮</span></button> <button class="van-button van-button--danger van-button--small"><span class="van-button__text">
+      <div class="van-panel__footer van-hairline--top"><button class="van-button van-button--default van-button--small">
+          <div class="van-button__content"><span class="van-button__text">按钮</span></div>
+        </button> <button class="van-button van-button--danger van-button--small">
+          <div class="van-button__content"><span class="van-button__text">
           按钮
-        </span></button></div>
+        </span></div>
+        </button></div>
     </div>
   </div>
 </div>

@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       value: '123',
-      showKeyboard: true
+      showKeyboard: true,
     };
   },
   methods: {
@@ -49,9 +49,9 @@ export default {
     },
     onDelete() {
       this.value = this.value.slice(0, this.value.length - 1);
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Custom length
@@ -105,7 +105,7 @@ export default {
     return {
       value: '123',
       showKeyboard: true,
-      errorInfo: ''
+      errorInfo: '',
     };
   },
   methods: {
@@ -119,26 +119,27 @@ export default {
     },
     onDelete() {
       this.value = this.value.slice(0, this.value.length - 1);
-    }
-  }
-}
+    },
+  },
+};
 ```
+
 ## API
 
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| value | Password value | *string* | `''` |
-| info | Bottom info | *string* | - |
-| error-info | Bottom error info | *string* | - |
-| length | Maxlength of password | *number \| string* | `6` |
-| gutter | Gutter of input | *number \| string* | `0` |
-| mask | Whether to mask value | *boolean* | `true` |
-| focused `v2.1.8` | Whether to show focused cursor | *boolean* | `false` |
+| --- | --- | --- | --- |
+| value | Password value | _string_ | `''` |
+| info | Bottom info | _string_ | - |
+| error-info | Bottom error info | _string_ | - |
+| length | Maxlength of password | _number \| string_ | `6` |
+| gutter | Gutter of input | _number \| string_ | `0` |
+| mask | Whether to mask value | _boolean_ | `true` |
+| focused `v2.1.8` | Whether to show focused cursor | _boolean_ | `false` |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| focus | Triggered when input get focused | - |
+| Event | Description                      | Arguments |
+| ----- | -------------------------------- | --------- |
+| focus | Triggered when input get focused | -         |

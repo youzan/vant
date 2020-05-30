@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, noop, isPromise } from '../utils';
+import { createNamespace, addUnit, noop, isPromise, isDef } from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 
 // Mixins
@@ -24,6 +24,7 @@ export default createComponent({
 
   props: {
     disabled: Boolean,
+    lazyLoad: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
@@ -117,7 +118,7 @@ export default createComponent({
 
         if (isPromise(response)) {
           response
-            .then(data => {
+            .then((data) => {
               if (data) {
                 this.readFile(data);
               } else {
@@ -143,10 +144,10 @@ export default createComponent({
           files = files.slice(0, maxCount);
         }
 
-        Promise.all(files.map(file => readFile(file, this.resultType))).then(
-          contents => {
+        Promise.all(files.map((file) => readFile(file, this.resultType))).then(
+          (contents) => {
             const fileList = files.map((file, index) => {
-              const result = { file, status: '' };
+              const result = { file, status: '', message: '' };
 
               if (contents[index]) {
                 result.content = contents[index];
@@ -159,8 +160,8 @@ export default createComponent({
           }
         );
       } else {
-        readFile(files, this.resultType).then(content => {
-          const result = { file: files, status: '' };
+        readFile(files, this.resultType).then((content) => {
+          const result = { file: files, status: '', message: '' };
 
           if (content) {
             result.content = content;
@@ -174,15 +175,38 @@ export default createComponent({
     onAfterRead(files, oversize) {
       this.resetInput();
 
+      let validFiles = files;
+
       if (oversize) {
-        this.$emit('oversize', files, this.getDetail());
-        return;
+        let oversizeFiles = files;
+        if (Array.isArray(files)) {
+          oversizeFiles = [];
+          validFiles = [];
+          files.forEach((item) => {
+            if (item.file) {
+              if (item.file.size > this.maxSize) {
+                oversizeFiles.push(item);
+              } else {
+                validFiles.push(item);
+              }
+            }
+          });
+        } else {
+          validFiles = null;
+        }
+        this.$emit('oversize', oversizeFiles, this.getDetail());
       }
 
-      this.$emit('input', [...this.fileList, ...toArray(files)]);
+      const isValidFiles = Array.isArray(validFiles)
+        ? Boolean(validFiles.length)
+        : Boolean(validFiles);
 
-      if (this.afterRead) {
-        this.afterRead(files, this.getDetail());
+      if (isValidFiles) {
+        this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
+
+        if (this.afterRead) {
+          this.afterRead(validFiles, this.getDetail());
+        }
       }
     },
 
@@ -227,8 +251,8 @@ export default createComponent({
         return;
       }
 
-      const imageFiles = this.fileList.filter(item => isImageFile(item));
-      const imageContents = imageFiles.map(item => item.content || item.url);
+      const imageFiles = this.fileList.filter((item) => isImageFile(item));
+      const imageContents = imageFiles.map((item) => item.content || item.url);
 
       this.imagePreview = ImagePreview({
         images: imageContents,
@@ -259,7 +283,7 @@ export default createComponent({
     },
 
     genPreviewMask(item) {
-      const { status } = item;
+      const { status, message } = item;
 
       if (status === 'uploading' || status === 'failed') {
         const MaskIcon =
@@ -269,12 +293,12 @@ export default createComponent({
             <Loading class={bem('loading')} />
           );
 
+        const showMessage = isDef(message) && message !== '';
+
         return (
           <div class={bem('mask')}>
             {MaskIcon}
-            {item.message && (
-              <div class={bem('mask-message')}>{item.message}</div>
-            )}
+            {showMessage && <div class={bem('mask-message')}>{message}</div>}
           </div>
         );
       }
@@ -287,7 +311,7 @@ export default createComponent({
         <Icon
           name="clear"
           class={bem('preview-delete')}
-          onClick={event => {
+          onClick={(event) => {
             event.stopPropagation();
             this.onDelete(item, index);
           }}
@@ -301,6 +325,7 @@ export default createComponent({
           class={bem('preview-image')}
           width={this.previewSize}
           height={this.previewSize}
+          lazyLoad={this.lazyLoad}
           onClick={() => {
             this.onPreviewImage(item);
           }}

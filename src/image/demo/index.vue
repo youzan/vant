@@ -1,12 +1,12 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-row>
         <van-image width="100" height="100" :src="image" />
       </van-row>
     </demo-block>
 
-    <demo-block :title="$t('fitMode')">
+    <demo-block :title="t('fitMode')">
       <van-row gutter="20">
         <van-col v-for="fit in fits" span="8" :key="fit">
           <van-image :fit="fit" width="100%" height="27vw" :src="image" />
@@ -15,7 +15,7 @@
       </van-row>
     </demo-block>
 
-    <demo-block :title="$t('round')">
+    <demo-block :title="t('round')">
       <van-row gutter="20">
         <van-col v-for="fit in fits" span="8" :key="fit">
           <van-image round :fit="fit" width="100%" height="27vw" :src="image" />
@@ -24,11 +24,11 @@
       </van-row>
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="t('loading')">
       <van-row gutter="20">
         <van-col span="8">
           <van-image width="100%" height="27vw" />
-          <div class="text">{{ $t('defaultTip') }}</div>
+          <div class="text">{{ t('defaultTip') }}</div>
         </van-col>
 
         <van-col span="8">
@@ -37,23 +37,23 @@
               <van-loading type="spinner" size="20" />
             </template>
           </van-image>
-          <div class="text">{{ $t('customTip') }}</div>
+          <div class="text">{{ t('customTip') }}</div>
         </van-col>
       </van-row>
     </demo-block>
 
-    <demo-block :title="$t('error')">
+    <demo-block :title="t('error')">
       <van-row gutter="20">
         <van-col span="8">
           <van-image width="100%" height="27vw" src="x" />
-          <div class="text">{{ $t('defaultTip') }}</div>
+          <div class="text">{{ t('defaultTip') }}</div>
         </van-col>
 
         <van-col span="8">
           <van-image width="100%" height="27vw" src="x">
-            <template #error>{{ $t('loadFail') }}</template>
+            <template #error>{{ t('loadFail') }}</template>
           </van-image>
-          <div class="text">{{ $t('customTip') }}</div>
+          <div class="text">{{ t('customTip') }}</div>
         </van-col>
       </van-row>
     </demo-block>

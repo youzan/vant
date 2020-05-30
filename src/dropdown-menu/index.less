@@ -1,10 +1,19 @@
 @import '../style/var';
 
 .van-dropdown-menu {
-  display: flex;
-  height: @dropdown-menu-height;
-  background-color: @dropdown-menu-background-color;
   user-select: none;
+
+  &__bar {
+    position: relative;
+    display: flex;
+    height: @dropdown-menu-height;
+    background-color: @dropdown-menu-background-color;
+    box-shadow: 0 2px 12px fade(@gray-7, 8);
+
+    &--opened {
+      z-index: @dropdown-item-z-index + 1;
+    }
+  }
 
   &__item {
     display: flex;
@@ -44,7 +53,7 @@
       right: -4px;
       margin-top: -5px;
       border: 3px solid;
-      border-color: transparent transparent currentColor currentColor;
+      border-color: transparent transparent @gray-4 @gray-4;
       transform: rotate(-45deg);
       opacity: 0.8;
       content: '';
@@ -52,6 +61,10 @@
 
     &--active {
       color: @dropdown-menu-title-active-text-color;
+
+      &::after {
+        border-color: transparent transparent currentColor currentColor;
+      }
     }
 
     &--down {

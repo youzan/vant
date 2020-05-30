@@ -26,6 +26,15 @@ exports[`clearable 2`] = `
 </div>
 `;
 
+exports[`colon prop 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label"><span>foo:</span></div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
 exports[`label-class prop 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label custom-label-class"><span>Label</span></div>
@@ -67,6 +76,14 @@ exports[`reach max word-limit 1`] = `
     <div class="van-field__body"><input type="text" class="van-field__control"></div>
     <div class="van-field__word-limit"><span class="van-field__word-num van-field__word-num--full">3</span>/3</div>
   </div>
+</div>
+`;
+
+exports[`render extra slot 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>Extra
 </div>
 `;
 

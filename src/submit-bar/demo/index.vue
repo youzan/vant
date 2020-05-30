@@ -1,44 +1,44 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-submit-bar
         :price="3050"
-        :button-text="$t('submit')"
+        :button-text="t('submit')"
         @submit="onClickButton"
       />
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
+    <demo-block :title="t('disabled')">
       <van-submit-bar
         disabled
         :price="3050"
-        :button-text="$t('submit')"
-        :tip="$t('tip1')"
+        :button-text="t('submit')"
+        :tip="t('tip1')"
         tip-icon="info-o"
         @submit="onClickButton"
       />
     </demo-block>
 
-    <demo-block :title="$t('loadingStatus')">
+    <demo-block :title="t('loadingStatus')">
       <van-submit-bar
         loading
         :price="3050"
-        :button-text="$t('submit')"
+        :button-text="t('submit')"
         @submit="onClickButton"
       />
     </demo-block>
 
-    <demo-block :title="$t('advancedUsage')">
+    <demo-block :title="t('advancedUsage')">
       <van-submit-bar
         :price="3050"
-        :button-text="$t('submit')"
+        :button-text="t('submit')"
         @submit="onClickButton"
       >
-        <van-checkbox v-model="checked">{{ $t('check') }}</van-checkbox>
+        <van-checkbox v-model="checked">{{ t('check') }}</van-checkbox>
         <template #tip>
-          {{ $t('tip2') }}
+          {{ t('tip2') }}
           <span class="edit-address" @click="onClickLink">
-            {{ $t('tip3') }}
+            {{ t('tip3') }}
           </span>
         </template>
       </van-submit-bar>
@@ -77,10 +77,10 @@ export default {
 
   methods: {
     onClickButton() {
-      this.$toast(this.$t('clickButton'));
+      this.$toast(this.t('clickButton'));
     },
     onClickLink() {
-      this.$toast(this.$t('clickLink'));
+      this.$toast(this.t('clickLink'));
     },
   },
 };
@@ -92,6 +92,7 @@ export default {
 .demo-submit-bar {
   .van-submit-bar {
     position: relative;
+    padding-bottom: 0;
   }
 
   .edit-address {

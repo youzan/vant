@@ -149,7 +149,7 @@ function Button(
       onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
-      {Content()}
+      <div class={bem('content')}>{Content()}</div>
     </tag>
   );
 }
@@ -166,6 +166,7 @@ Button.props = {
   loading: Boolean,
   hairline: Boolean,
   disabled: Boolean,
+  iconPrefix: String,
   nativeType: String,
   loadingText: String,
   loadingType: String,

@@ -1,5 +1,5 @@
 import NoticeBar from '..';
-import { mount } from '../../../test';
+import { mount, later } from '../../../test';
 
 test('click event', () => {
   const wrapper = mount(NoticeBar);
@@ -35,4 +35,16 @@ test('icon slot', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('replay event', async () => {
+  const wrapper = mount(NoticeBar, {
+    propsData: {
+      text: 'foo',
+    },
+  });
+
+  wrapper.find('.van-notice-bar__content').trigger('transitionend');
+  await later(50);
+  expect(wrapper.emitted('replay')).toBeTruthy();
 });

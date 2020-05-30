@@ -186,7 +186,7 @@ export default createComponent({
     },
 
     getClickHandler(position, stop) {
-      return event => {
+      return (event) => {
         if (stop) {
           event.stopPropagation();
         }

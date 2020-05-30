@@ -25,7 +25,7 @@ test('drag button', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -56,7 +56,7 @@ test('click bar', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -80,7 +80,7 @@ test('drag button vertical', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -101,7 +101,7 @@ test('click vertical', () => {
     },
   });
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setProps({ value });
   });
 
@@ -151,7 +151,7 @@ test('should not emit change event when value not changed', () => {
   expect(wrapper.emitted('change').length).toEqual(1);
 });
 
-test('should format initial value', done => {
+test('should format initial value', (done) => {
   mount(Slider, {
     propsData: {
       value: null,

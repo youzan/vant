@@ -14,7 +14,6 @@
   cursor: pointer;
   transition: opacity @animation-duration-fast;
   -webkit-appearance: none;
-  -webkit-text-size-adjust: 100%;
 
   &::before {
     position: absolute;
@@ -95,7 +94,6 @@
   &--large {
     width: 100%;
     height: @button-large-height;
-    line-height: @button-large-line-height;
   }
 
   &--normal {
@@ -108,21 +106,17 @@
     height: @button-small-height;
     padding: 0 @padding-xs;
     font-size: @button-small-font-size;
-    line-height: @button-small-line-height;
   }
 
   &__loading {
-    display: inline-block;
     color: inherit;
-    vertical-align: top;
+    font-size: inherit;
   }
 
   &--mini {
-    display: inline-block;
     min-width: @button-mini-min-width;
     height: @button-mini-height;
     font-size: @button-mini-font-size;
-    line-height: @button-mini-line-height;
 
     & + .van-button--mini {
       margin-left: @padding-base;
@@ -151,18 +145,24 @@
     border-radius: 0;
   }
 
+  // align-items are ignored when flex container is a button in legacy safari
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
   &__icon {
     min-width: 1em;
     font-size: 1.2em;
     line-height: inherit;
-    vertical-align: top;
   }
 
   &__icon + &__text,
   &__loading + &__text {
-    display: inline-block;
     margin-left: 5px;
-    vertical-align: top;
   }
 
   &--hairline {

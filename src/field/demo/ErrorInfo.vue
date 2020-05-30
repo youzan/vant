@@ -1,18 +1,18 @@
 <template>
-  <demo-block :title="$t('errorInfo')">
+  <demo-block :title="t('errorInfo')">
     <van-field
       v-model="username"
       error
       required
-      :label="$t('username')"
-      :placeholder="$t('usernamePlaceholder')"
+      :label="t('username')"
+      :placeholder="t('usernamePlaceholder')"
     />
     <van-field
       v-model="phone"
       required
-      :label="$t('phone')"
-      :placeholder="$t('phonePlaceholder')"
-      :error-message="$t('phoneError')"
+      :label="t('phone')"
+      :placeholder="t('phonePlaceholder')"
+      :error-message="t('phoneError')"
     />
   </demo-block>
 </template>

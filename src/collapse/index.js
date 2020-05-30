@@ -21,7 +21,7 @@ export default createComponent({
       if (!this.accordion) {
         name = expanded
           ? this.value.concat(name)
-          : this.value.filter(activeName => activeName !== name);
+          : this.value.filter((activeName) => activeName !== name);
       }
       this.$emit('change', name);
       this.$emit('input', name);

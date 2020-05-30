@@ -4,19 +4,19 @@ const TABLE_REG = /^\|.+\n\|\s*-+/;
 const TD_REG = /\s*`[^`]+`\s*|([^|`]+)/g;
 const TABLE_SPLIT_LINE_REG = /^\|\s*-/;
 
-interface TableContent {
-  head: Array<string>;
-  body: Array<Array<string>>;
-}
+type TableContent = {
+  head: string[];
+  body: string[][];
+};
 
-interface SimpleMdAst {
+export type Artical = {
   type: string;
   content?: string;
   table?: TableContent;
   level?: number;
-}
+};
 
-export interface Artical extends Array<SimpleMdAst> {}
+export type Articals = Artical[];
 
 function readLine(input: string) {
   const end = input.indexOf('\n');
@@ -73,7 +73,7 @@ function tableParse(input: string) {
   };
 }
 
-export function mdParser(input: string): Array<SimpleMdAst> {
+export function mdParser(input: string): Articals {
   const artical = [];
   let start = 0;
   const end = input.length;

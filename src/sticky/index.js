@@ -1,5 +1,5 @@
 import { isHidden } from '../utils/dom/style';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, isServer } from '../utils';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
 import { BindEventMixin } from '../mixins/bind-event';
 
@@ -7,9 +7,14 @@ const [createComponent, bem] = createNamespace('sticky');
 
 export default createComponent({
   mixins: [
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind, isBind) {
       if (!this.scroller) {
         this.scroller = getScroller(this.$el);
+      }
+
+      if (this.observer) {
+        const method = isBind ? 'observe' : 'unobserve';
+        this.observer[method](this.$el);
       }
 
       bind(this.scroller, 'scroll', this.onScroll, true);
@@ -56,6 +61,21 @@ export default createComponent({
 
       return style;
     },
+  },
+
+  created() {
+    // compatibility: https://caniuse.com/#feat=intersectionobserver
+    if (!isServer && window.IntersectionObserver) {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          // trigger scroll when visibility changed
+          if (entries[0].intersectionRatio > 0) {
+            this.onScroll();
+          }
+        },
+        { root: document.body }
+      );
+    }
   },
 
   methods: {

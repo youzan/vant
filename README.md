@@ -15,7 +15,12 @@
 <p align="center">
   🔥 <a href="https://youzan.github.io/vant">文档网站</a>
   &nbsp;
+  &nbsp;
+  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  &nbsp;
+  &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
+  &nbsp;
   &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
 </p>
@@ -24,14 +29,14 @@
 
 ## Features
 
-* 60+ Reusable components
-* 90% Unit test coverage
-* Extensive documentation and demos
-* Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-* Support Custom Theme
-* Support i18n
-* Support TS
-* Support SSR
+- 60+ Reusable components
+- 90% Unit test coverage
+- Extensive documentation and demos
+- Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- Support Custom Theme
+- Support i18n
+- Support TS
+- Support SSR
 
 ## Install
 
@@ -66,17 +71,18 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 ## Ecosystem
 
 | Project | Description |
-|-----|------|
+| --- | --- |
 | [vant-demo](https://github.com/youzan/vant-demo) | Official vant demo collection |
-| [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI  |
+| [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
 
 ## Links
 
-* [Documentation](https://youzan.github.io/vant)
-* [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+- [Documentation](https://youzan.github.io/vant)
+- [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+- [Gitter](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## Preview
 

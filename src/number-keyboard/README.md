@@ -11,16 +11,14 @@ Vue.use(NumberKeyboard);
 
 ## Usage
 
-### Default Style
+### Default Keyboard
 
 ```html
-<van-button @touchstart.stop="show = true">
+<van-cell @touchstart.native.stop="show = true">
   Show Keyboard
-</van-button>
+</van-cell>
 <van-number-keyboard
   :show="show"
-  extra-key="."
-  close-button-text="Close"
   @blur="show = false"
   @input="onInput"
   @delete="onDelete"
@@ -33,8 +31,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      show: true
-    }
+      show: true,
+    };
   },
   methods: {
     onInput(value) {
@@ -42,18 +40,72 @@ export default {
     },
     onDelete() {
       Toast('delete');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
-### Custom Style
+### Keyboard With Sidebar
 
 ```html
 <van-number-keyboard
   :show="show"
   theme="custom"
   extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
+### IdNumber Keyboard
+
+Use `extra-key` prop to set the content of bottom left button
+
+```html
+<van-cell plain type="primary" @touchstart.native.stop="show = true">
+  Show IdNumber Keyboard
+</van-cell>
+
+<van-number-keyboard
+  :show="show"
+  extra-key="X"
+  close-button-text="Close"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
+### Keyboard With Title
+
+Use `title` prop to set keyboard title
+
+```html
+<van-cell plain type="info" @touchstart.native.stop="show = true">
+  Show Keyboard With Title
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  title="Keyboard Title"
+  extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
+### Multiple ExtraKey
+
+```html
+<van-cell plain type="primary" @touchstart.native.stop="show = true">
+  Show Keyboard With Multiple ExtraKey
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  :extra-key="['00', '.']"
   close-button-text="Close"
   @blur="show = false"
   @input="onInput"
@@ -70,7 +122,6 @@ export default {
   :value="value"
   @touchstart.native.stop="show = true"
 />
-
 <van-number-keyboard
   v-model="value"
   :show="show"
@@ -84,49 +135,10 @@ export default {
   data() {
     return {
       show: false,
-      value: ''
-    }
-  }
-}
-```
-
-### Bottom Left Button Content
-
-Use `extra-key` prop to set the content of bottom left button
-
-```html
-<van-button plain type="primary" @touchstart.stop="show = true">
-  Show Id Card Number Keyboard
-</van-button>
-
-<van-number-keyboard
-  :show="show"
-  close-button-text="Close"
-  extra-key="X"
-  @blur="show = false"
-  @input="onInput"
-  @delete="onDelete"
-/>
-```
-
-### Keyboard Title
-
-Use `title` prop to set keyboard title
-
-```html
-<van-button plain type="info" @touchstart.stop="show = true">
-  Show Custom Title Keyboard
-</van-button>
-
-<van-number-keyboard
-  :show="show"
-  close-button-text="Close"
-  title="Keyboard Title"
-  extra-key="."
-  @blur="show = false"
-  @input="onInput"
-  @delete="onDelete"
-/>
+      value: '',
+    };
+  },
+};
 ```
 
 ## API
@@ -134,36 +146,37 @@ Use `title` prop to set keyboard title
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model `v2.0.2` | Current value | *string* | - |
-| show | Whether to show keyboard | *boolean* | - |
-| theme | Keyboard theme，can be set to `default` `custom` | *string* | `default` |
-| title | Keyboard title | *string* | - |
-| maxlength `v2.0.2` | Value maxlength | *number \| string* | - |
-| transition | Whether to show transition animation | *boolean* | `true` |
-| z-index | Keyboard z-index | *number \| string* | `100` |
-| extra-key | Content of bottom left key | *string* | `''` |
-| close-button-text | Close button text | *string* | `-` |
-| delete-button-text | Delete button text | *string* | `delete` |
-| show-delete-key | Whether to show delete button | *boolean* | `true` |
-| hide-on-click-outside | Whether to hide keyboard when click outside | *boolean* | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model (value) `v2.0.2` | Current value | _string_ | - |
+| show | Whether to show keyboard | _boolean_ | - |
+| title | Keyboard title | _string_ | - |
+| theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
+| maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
+| transition | Whether to show transition animation | _boolean_ | `true` |
+| z-index | Keyboard z-index | _number \| string_ | `100` |
+| extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |
+| close-button-text | Close button text | _string_ | - |
+| delete-button-text | Delete button text | _string_ | Delete Icon |
+| close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
+| show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
+| hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
+| --- | --- | --- |
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |
 | close | Triggered when click close button | - |
 | blur | Triggered when click close button or blur keyboard | - |
-| show | Triggered when keyboard is fully displayed. | - |
-| hide | Triggered when keyboard is fully hidden. | - |
+| show | Triggered when keyboard is fully displayed | - |
+| hide | Triggered when keyboard is fully hidden | - |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| delete | Custom delete key content |
-| extra-key | Custom extra key content |
+| Name       | Description               |
+| ---------- | ------------------------- |
+| delete     | Custom delete key content |
+| extra-key  | Custom extra key content  |
 | title-left | Custom title left content |

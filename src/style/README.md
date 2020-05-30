@@ -10,15 +10,18 @@ When the text content length exceeds the maximum container width, the excess tex
 
 ```html
 <div class="van-ellipsis">
-  This is a paragraph that displays up to one line of text, and the rest of the text will be omitted.
+  This is a paragraph that displays up to one line of text, and the rest of the
+  text will be omitted.
 </div>
 
 <div class="van-multi-ellipsis--l2">
-  This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.
+  This is a paragraph that displays up to two lines of text, and the rest of the
+  text will be omitted.
 </div>
 
 <div class="van-multi-ellipsis--l3">
-  This is a paragraph that displays up to three lines of text, and the rest of the text will be omitted.
+  This is a paragraph that displays up to three lines of text, and the rest of
+  the text will be omitted.
 </div>
 ```
 

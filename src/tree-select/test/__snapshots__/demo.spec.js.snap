@@ -18,7 +18,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </a></div>
       <div class="van-tree-select__content">
-        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-checked van-tree-select__selected">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-success van-tree-select__selected">
             <!----></i></div>
         <div class="van-ellipsis van-tree-select__item">温州</div>
         <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>
@@ -42,9 +42,9 @@ exports[`renders demo correctly 1`] = `
           </div>
         </a></div>
       <div class="van-tree-select__content">
-        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-checked van-tree-select__selected">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-success van-tree-select__selected">
             <!----></i></div>
-        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">温州<i class="van-icon van-icon-checked van-tree-select__selected">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">温州<i class="van-icon van-icon-success van-tree-select__selected">
             <!----></i></div>
         <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>
         <div class="van-ellipsis van-tree-select__item">义乌</div>
@@ -63,10 +63,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </a></div>
       <div class="van-tree-select__content">
-        <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img">
-          <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
-              <!----></i></div>
-        </div>
+        <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img"></div>
         <!---->
       </div>
     </div>
@@ -81,7 +78,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </a></div>
       <div class="van-tree-select__content">
-        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-checked van-tree-select__selected">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">杭州<i class="van-icon van-icon-success van-tree-select__selected">
             <!----></i></div>
         <div class="van-ellipsis van-tree-select__item">温州</div>
         <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">宁波</div>

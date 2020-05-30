@@ -171,7 +171,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-calendar__footer van-calendar__footer--safe-area-inset-bottom"></div>
+      <div class="van-calendar__footer"></div>
     </div>
   </div>
   <!---->

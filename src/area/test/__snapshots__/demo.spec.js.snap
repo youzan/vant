@@ -4,208 +4,177 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
-      <!---->
-      <div class="van-picker__columns" style="height: 220px;">
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">内蒙古自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">辽宁省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">吉林省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">黑龙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">上海市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江苏省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">浙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">安徽省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">福建省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广西壮族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">重庆市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">四川省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">贵州省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">云南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西藏自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">陕西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">甘肃省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">青海省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">宁夏回族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">新疆维吾尔自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">台湾省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">香港特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">澳门特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海外</li>
-          </ul>
-        </div>
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-          </ul>
-        </div>
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">东城区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">朝阳区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">丰台区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">石景山区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海淀区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">门头沟区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">房山区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">通州区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">顺义区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">昌平区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">大兴区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">怀柔区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">平谷区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">密云区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">延庆区</li>
-          </ul>
-        </div>
-        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
-        <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div>
-    <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
-      <!---->
-      <div class="van-picker__columns" style="height: 220px;">
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, -352px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">内蒙古自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">辽宁省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">吉林省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">黑龙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">上海市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江苏省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">浙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">安徽省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">福建省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广西壮族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">重庆市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">四川省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">贵州省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">云南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西藏自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">陕西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">甘肃省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">青海省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">宁夏回族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">新疆维吾尔自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">台湾省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">香港特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">澳门特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海外</li>
-          </ul>
-        </div>
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">杭州市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">宁波市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">温州市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">嘉兴市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖州市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">绍兴市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">金华市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">衢州市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">舟山市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">台州市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">丽水市</li>
-          </ul>
-        </div>
-        <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">鹿城区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">龙湾区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">瓯海区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">洞头区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">永嘉县</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">平阳县</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">苍南县</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">文成县</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">泰顺县</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">瑞安市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">乐清市</li>
-          </ul>
-        </div>
-        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
-        <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
-      </div>
-      <!---->
-    </div>
-  </div>
-  <div>
-    <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+      <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
         <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
       </div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">内蒙古自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">辽宁省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">吉林省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">黑龙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">上海市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江苏省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">浙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">安徽省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">福建省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广西壮族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">重庆市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">四川省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">贵州省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">云南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西藏自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">陕西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">甘肃省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">青海省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">宁夏回族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">新疆维吾尔自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">台湾省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">香港特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">澳门特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海外</li>
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">天津市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">内蒙古自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">辽宁省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">吉林省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">黑龙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">上海市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江苏省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">浙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">安徽省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">福建省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广西壮族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">重庆市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">四川省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">贵州省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">云南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">西藏自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">陕西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">甘肃省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">青海省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">宁夏回族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">新疆维吾尔自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">台湾省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">香港特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">澳门特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海外</div>
+            </li>
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">北京市</li>
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+          </ul>
+        </div>
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">东城区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">西城区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">朝阳区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">丰台区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">石景山区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海淀区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">门头沟区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">房山区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">通州区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">顺义区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">昌平区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">大兴区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">怀柔区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">平谷区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">密云区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">延庆区</div>
+            </li>
           </ul>
         </div>
         <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
@@ -216,56 +185,453 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker van-area">
-      <div class="van-hairline--top-bottom van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+      <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
         <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
       </div>
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">请选择</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">北京市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">天津市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">内蒙古自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">辽宁省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">吉林省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">黑龙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">上海市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江苏省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">浙江省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">安徽省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">福建省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">江西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">山东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">河南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖北省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">湖南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广东省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">广西壮族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">重庆市</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">四川省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">贵州省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">云南省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">西藏自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">陕西省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">甘肃省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">青海省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">宁夏回族自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">新疆维吾尔自治区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">台湾省</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">香港特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">澳门特别行政区</li>
-            <li role="button" tabindex="0" class="van-ellipsis van-picker-column__item" style="height: 44px;">海外</li>
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, -352px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">天津市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">内蒙古自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">辽宁省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">吉林省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">黑龙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">上海市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江苏省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">浙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">安徽省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">福建省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广西壮族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">重庆市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">四川省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">贵州省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">云南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">西藏自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">陕西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">甘肃省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">青海省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">宁夏回族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">新疆维吾尔自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">台湾省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">香港特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">澳门特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海外</div>
+            </li>
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">杭州市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">宁波市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">温州市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">嘉兴市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖州市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">绍兴市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">金华市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">衢州市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">舟山市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">台州市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">丽水市</div>
+            </li>
+          </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;"></ul>
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">鹿城区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">龙湾区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">瓯海区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">洞头区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">永嘉县</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">平阳县</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">苍南县</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">文成县</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">泰顺县</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">瑞安市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">乐清市</div>
+            </li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker van-area">
+      <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+        <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">天津市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">内蒙古自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">辽宁省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">吉林省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">黑龙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">上海市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江苏省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">浙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">安徽省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">福建省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广西壮族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">重庆市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">四川省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">贵州省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">云南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">西藏自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">陕西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">甘肃省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">青海省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">宁夏回族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">新疆维吾尔自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">台湾省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">香港特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">澳门特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海外</div>
+            </li>
+          </ul>
+        </div>
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+          </ul>
+        </div>
+        <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+        <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-picker van-area">
+      <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
+        <div class="van-ellipsis van-picker__title">标题</div><button type="button" class="van-picker__confirm">确认</button>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height: 220px;">
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+              <div class="van-ellipsis">请选择</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">北京市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">天津市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">内蒙古自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">辽宁省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">吉林省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">黑龙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">上海市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江苏省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">浙江省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">安徽省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">福建省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">江西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">山东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">河南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖北省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">湖南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广东省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">广西壮族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">重庆市</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">四川省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">贵州省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">云南省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">西藏自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">陕西省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">甘肃省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">青海省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">宁夏回族自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">新疆维吾尔自治区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">台湾省</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">香港特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">澳门特别行政区</div>
+            </li>
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+              <div class="van-ellipsis">海外</div>
+            </li>
+          </ul>
+        </div>
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;"></ul>
+        </div>
+        <div class="van-picker-column">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;"></ul>
         </div>
         <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
         <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>

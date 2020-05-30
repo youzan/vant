@@ -55,11 +55,13 @@ export default {
       showList: false,
       showEdit: false,
       isEdit: false,
-      list: [{
-        name: 'John Snow',
-        tel: '13000000000',
-        id: 0
-      }]
+      list: [
+        {
+          name: 'John Snow',
+          tel: '13000000000',
+          id: 0,
+        },
+      ],
     };
   },
 
@@ -70,8 +72,8 @@ export default {
 
     currentContact() {
       const id = this.chosenContactId;
-      return id !== null ? this.list.filter(item => item.id === id)[0] : {};
-    }
+      return id !== null ? this.list.filter((item) => item.id === id)[0] : {};
+    },
   },
 
   methods: {
@@ -84,7 +86,7 @@ export default {
 
     // edit contact
     onEdit(item) {
-      this.isEdit = true;      
+      this.isEdit = true;
       this.showEdit = true;
       this.editingContact = item;
     },
@@ -98,9 +100,11 @@ export default {
     onSave(info) {
       this.showEdit = false;
       this.showList = false;
-      
+
       if (this.isEdit) {
-        this.list = this.list.map(item => item.id === info.id ? info : item);
+        this.list = this.list.map((item) =>
+          item.id === info.id ? info : item
+        );
       } else {
         this.list.push(info);
       }
@@ -110,12 +114,12 @@ export default {
     // delete contact
     onDelete(info) {
       this.showEdit = false;
-      this.list = this.list.filter(item => item.id !== info.id);
+      this.list = this.list.filter((item) => item.id !== info.id);
       if (this.chosenContactId === info.id) {
         this.chosenContactId = null;
       }
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -134,61 +138,60 @@ export default {
 
 ### ContactCard Props
 
-| Attribute | Description | Type | Default |
-|------|------|------|------|
-| type | Can be set to `add` `edit` | *string* | `add` |
-| name | Name | *string* | - |
-| tel | Phone | *string* | - |
-| add-text | Add card text | *string* | `Add contact info` |
+| Attribute | Description                | Type     | Default            |
+| --------- | -------------------------- | -------- | ------------------ |
+| type      | Can be set to `add` `edit` | _string_ | `add`              |
+| name      | Name                       | _string_ | -                  |
+| tel       | Phone                      | _string_ | -                  |
+| add-text  | Add card text              | _string_ | `Add contact info` |
 
 ### ContactCard Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| click | Triggered when clicked | *event: Event* |
+| Event | Description            | Arguments      |
+| ----- | ---------------------- | -------------- |
+| click | Triggered when clicked | _event: Event_ |
 
 ### ContactList Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Id of chosen contact | *number \| string* | - |
-| list | Contact list | *Contact[]* | `[]` |
-| add-text | Add button text | *string* | `Add new contact` |
-| default-tag-text `v2.3.0` | Default tag text | *string* | - |
+| --- | --- | --- | --- |
+| v-model | Id of chosen contact | _number \| string_ | - |
+| list | Contact list | _Contact[]_ | `[]` |
+| add-text | Add button text | _string_ | `Add new contact` |
+| default-tag-text `v2.3.0` | Default tag text | _string_ | - |
 
 ### ContactList Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| add | Triggered when click add button | - |
-| edit | Triggered when click edit button | item: contact object，index |
-| select | Triggered when select contact | item: contact object |
-
+| Event  | Description                      | Arguments                   |
+| ------ | -------------------------------- | --------------------------- |
+| add    | Triggered when click add button  | -                           |
+| edit   | Triggered when click edit button | item: contact object，index |
+| select | Triggered when select contact    | item: contact object        |
 
 ### ContactEdit Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| contact-info | Contact Info | *object* | `[]` |
-| is-edit | Whether is editing | *boolean* | `false` |
-| is-saving | Whether to show save button loading status | *boolean* | `false` |
-| is-deleting | Whether to show delete button loading status | *boolean* | `false` |
-| tel-validator | The method to validate tel | *(tel: string) => boolean* | - |
-| show-set-default `v2.3.0` | Whether to show default contact switch | *boolean* | `false` |
-| set-default-label `v2.3.0` | default contact switch label | *string* | - |
+| --- | --- | --- | --- |
+| contact-info | Contact Info | _object_ | `[]` |
+| is-edit | Whether is editing | _boolean_ | `false` |
+| is-saving | Whether to show save button loading status | _boolean_ | `false` |
+| is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
+| tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
+| show-set-default `v2.3.0` | Whether to show default contact switch | _boolean_ | `false` |
+| set-default-label `v2.3.0` | default contact switch label | _string_ | - |
 
 ### ContactEdit Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| save | Triggered when click save button | content：contact info |
+| Event  | Description                        | Arguments             |
+| ------ | ---------------------------------- | --------------------- |
+| save   | Triggered when click save button   | content：contact info |
 | delete | Triggered when click delete button | content：contact info |
 
 ### Data Structure of Contact
 
-| key | Description | Type |
-|------|------|------|
-| id | ID | *number \| string* |
-| name | Name | *string* |
-| tel | Phone | *string* |
-| isDefault | Is default contact | *boolean* |
+| key       | Description        | Type               |
+| --------- | ------------------ | ------------------ |
+| id        | ID                 | _number \| string_ |
+| name      | Name               | _string_           |
+| tel       | Phone              | _string_           |
+| isDefault | Is default contact | _boolean_          |

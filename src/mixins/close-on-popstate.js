@@ -3,7 +3,7 @@ import { BindEventMixin } from './bind-event';
 
 export const CloseOnPopstateMixin = {
   mixins: [
-    BindEventMixin(function(bind, isBind) {
+    BindEventMixin(function (bind, isBind) {
       this.handlePopstate(isBind && this.closeOnPopstate);
     }),
   ],

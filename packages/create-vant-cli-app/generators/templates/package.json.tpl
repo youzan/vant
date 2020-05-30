@@ -26,14 +26,8 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,vue}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{vue,css,less,scss}": [
-      "stylelint --fix",
-      "git add"
-    ]
+    "*.{ts,tsx,js,jsx,vue}": "eslint --fix",
+    "*.{vue,css,less,scss}": "stylelint --fix"
   },
   "peerDependencies": {
     "vue": "^2.6.11",

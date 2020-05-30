@@ -24,14 +24,14 @@ Toast('提示内容');
 ```js
 Toast.loading({
   message: '加载中...',
-  forbidClick: true
+  forbidClick: true,
 });
 
 // 自定义加载图标
 Toast.loading({
   message: '加载中...',
   forbidClick: true,
-  loadingType: 'spinner'
+  loadingType: 'spinner',
 });
 ```
 
@@ -47,12 +47,12 @@ Toast.fail('失败文案');
 ```js
 Toast({
   message: '自定义图标',
-  icon: 'like-o'
+  icon: 'like-o',
 });
 
 Toast({
   message: '展示图片',
-  icon: 'https://img.yzcdn.cn/vant/logo.png'
+  icon: 'https://img.yzcdn.cn/vant/logo.png',
 });
 ```
 
@@ -62,7 +62,7 @@ Toast({
 const toast = Toast.loading({
   duration: 0, // 持续展示 toast
   forbidClick: true,
-  message: '倒计时 3 秒'
+  message: '倒计时 3 秒',
 });
 
 let second = 3;
@@ -80,14 +80,14 @@ const timer = setInterval(() => {
 
 ### 组件内调用
 
-引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 $toast 方法，便于在组件内调用。
+引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 \$toast 方法，便于在组件内调用。
 
 ```js
 export default {
   mounted() {
     this.$toast('提示文案');
-  }
-}
+  },
+};
 ```
 
 ### 单例模式
@@ -127,7 +127,7 @@ Toast.resetDefaultOptions('loading');
 ### 方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | Toast | 展示提示 | `options | message` | toast 实例 |
 | Toast.loading | 展示加载提示 | `options | message` | toast 实例 |
 | Toast.success | 展示成功提示 | `options | message` | toast 实例 |
@@ -140,20 +140,20 @@ Toast.resetDefaultOptions('loading');
 ### Options
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | *string* | `text` |
-| position | 位置，可选值为 `top` `bottom` | *string* | `middle` |
-| message | 文本内容，支持通过`\n`换行 | *string* | `''` | - |
-| icon `v2.0.1` | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
-| iconPrefix `v2.0.9` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
-| overlay `v2.2.13` | 是否显示背景遮罩层 | *boolean* | `false` |
-| forbidClick | 是否禁止背景点击 | *boolean* | `false` |
-| closeOnClick `v2.1.5` | 是否在点击后关闭 | *boolean* | `false` |
-| closeOnClickOverlay `v2.2.13` | 是否在点击遮罩层后关闭 | *boolean* | `false` |
-| loadingType | [加载图标类型](#/zh-CN/loading), 可选值为 `spinner` | *string* | `circular` |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `2000` |
-| className | 自定义类名 | *any* | - |
-| onOpened | 完全展示后的回调函数 | *Function* | - |
-| onClose | 关闭时的回调函数 | *Function* | - |
-| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | *string* | `van-fade` |
-| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | *string \| () => Element* | `body` |
+| --- | --- | --- | --- |
+| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _string_ | `text` |
+| position | 位置，可选值为 `top` `bottom` | _string_ | `middle` |
+| message | 文本内容，支持通过`\n`换行 | _string_ | `''` | - |
+| icon `v2.0.1` | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| iconPrefix `v2.0.9` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| overlay `v2.2.13` | 是否显示背景遮罩层 | _boolean_ | `false` |
+| forbidClick | 是否禁止背景点击 | _boolean_ | `false` |
+| closeOnClick `v2.1.5` | 是否在点击后关闭 | _boolean_ | `false` |
+| closeOnClickOverlay `v2.2.13` | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
+| loadingType | [加载图标类型](#/zh-CN/loading), 可选值为 `spinner` | _string_ | `circular` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
+| className | 自定义类名 | _any_ | - |
+| onOpened | 完全展示后的回调函数 | _Function_ | - |
+| onClose | 关闭时的回调函数 | _Function_ | - |
+| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | `van-fade` |
+| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |

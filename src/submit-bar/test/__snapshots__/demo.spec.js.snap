@@ -5,7 +5,9 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-submit-bar">
       <div class="van-submit-bar__bar">
-        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"><span class="van-button__text">提交订单</span></button>
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+          <div class="van-button__content"><span class="van-button__text">提交订单</span></div>
+        </button>
       </div>
     </div>
   </div>
@@ -14,7 +16,9 @@ exports[`renders demo correctly 1`] = `
       <div class="van-submit-bar__tip"><i class="van-icon van-icon-info-o van-submit-bar__tip-icon">
           <!----></i><span class="van-submit-bar__tip-text">你的收货地址不支持同城送, 我们已为你推荐快递</span></div>
       <div class="van-submit-bar__bar">
-        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--round van-submit-bar__button van-submit-bar__button--danger"><span class="van-button__text">提交订单</span></button>
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--round van-submit-bar__button van-submit-bar__button--danger">
+          <div class="van-button__content"><span class="van-button__text">提交订单</span></div>
+        </button>
       </div>
     </div>
   </div>
@@ -22,7 +26,9 @@ exports[`renders demo correctly 1`] = `
     <div class="van-submit-bar">
       <div class="van-submit-bar__bar">
         <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button class="van-button van-button--danger van-button--normal van-button--loading van-button--round van-submit-bar__button van-submit-bar__button--danger">
-          <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+          <div class="van-button__content">
+            <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color: currentColor; width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+          </div>
         </button>
       </div>
     </div>
@@ -39,7 +45,9 @@ exports[`renders demo correctly 1`] = `
           <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
               <!----></i></div><span class="van-checkbox__label">全选</span>
         </div>
-        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"><span class="van-button__text">提交订单</span></button>
+        <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥<span class="van-submit-bar__price van-submit-bar__price--integer">30</span>.50</span></div><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+          <div class="van-button__content"><span class="van-button__text">提交订单</span></div>
+        </button>
       </div>
     </div>
   </div>

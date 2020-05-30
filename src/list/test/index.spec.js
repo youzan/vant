@@ -4,7 +4,7 @@ import { mount, later, mockGetBoundingClientRect } from '../../../test';
 test('load event', async () => {
   const wrapper = mount(List);
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.vm.loading = value;
   });
 
@@ -33,7 +33,7 @@ test('error loaded, click error-text and reload', async () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 
   // simulate the behavior of clicking error-text
-  wrapper.vm.$on('update:error', val => {
+  wrapper.vm.$on('update:error', (val) => {
     wrapper.setProps({
       error: val,
     });
