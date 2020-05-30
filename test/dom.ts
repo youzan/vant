@@ -43,7 +43,7 @@ export function mockGetBoundingClientRect(
 
   Element.prototype.getBoundingClientRect = <any>jest.fn(() => rect);
 
-  return function() {
+  return function () {
     Element.prototype.getBoundingClientRect = originMethod;
   };
 }

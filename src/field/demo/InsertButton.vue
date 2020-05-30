@@ -1,15 +1,15 @@
 <template>
-  <demo-block :title="$t('insertButton')">
+  <demo-block :title="t('insertButton')">
     <van-field
       v-model="sms"
       center
       clearable
-      :label="$t('sms')"
-      :placeholder="$t('smsPlaceholder')"
+      :label="t('sms')"
+      :placeholder="t('smsPlaceholder')"
     >
       <template #button>
         <van-button size="small" type="primary">
-          {{ $t('sendSMS') }}
+          {{ t('sendSMS') }}
         </van-button>
       </template>
     </van-field>

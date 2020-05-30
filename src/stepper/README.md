@@ -21,10 +21,10 @@ Vue.use(Stepper);
 export default {
   data() {
     return {
-      value: 1
-    }
-  }
-}
+      value: 1,
+    };
+  },
+};
 ```
 
 ### Step
@@ -54,7 +54,7 @@ export default {
 ### Disable Input
 
 ```html
-<van-stepper v-model="value" disabled-input />
+<van-stepper v-model="value" disable-input />
 ```
 
 ### Decimal Length
@@ -72,11 +72,7 @@ export default {
 ### Async Change
 
 ```html
-<van-stepper
-  :value="value"
-  async-change
-  @change="onChange"
-/>
+<van-stepper :value="value" async-change @change="onChange" />
 ```
 
 ```js
@@ -85,8 +81,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      value: 1
-    }
+      value: 1,
+    };
   },
   methods: {
     onChange(value) {
@@ -96,9 +92,15 @@ export default {
         Toast.clear();
         this.value = value;
       }, 500);
-    }
-  }
-}
+    },
+  },
+};
+```
+
+### Round Theme
+
+```html
+<van-stepper v-model="value" theme="round" button-size="22" disable-input />
 ```
 
 ## API
@@ -106,33 +108,34 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Current value | *number \| string* | - |
-| min | Min value | *number \| string* | `1` |
-| max | Max value | *number \| string* | - |
-| default-value | Default value, valid when v-model is empty | *number \| string* | `1` |
-| step | Value change step | *number \| string* | `1` |
-| name `v2.0.3` | Stepper name | *number \| string* | - |
-| input-width | Input width | *number \| string* | `32px` |
-| button-size `v2.0.5` | Button size | *number \| string* | `28px` |
-| decimal-length `v2.2.1` | Decimal length | *number \| string* | - |
-| integer | Whether to allow only integers | *boolean* | `false` |
-| disabled | Disable value change | *boolean* | `false` |
-| disable-plus `v2.2.16` | Whether to disable plus button | *boolean* | `false` |
-| disable-minus `v2.2.16` | Whether to disable minus button | *boolean* | `false` |
-| disable-input | Whether to disable input | *boolean* | `false` |
-| async-change | Whether to enable async change | *boolean* | `false` | - |
-| show-plus `v2.1.2` | Whether to show plus button | *boolean* | `true` |
-| show-minus `v2.1.2` | Whether to show minus button | *boolean* | `true` |
-| long-press `v2.4.3` | Whether to allow long press | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | Current value | _number \| string_ | - |
+| min | Min value | _number \| string_ | `1` |
+| max | Max value | _number \| string_ | - |
+| default-value | Default value, valid when v-model is empty | _number \| string_ | `1` |
+| step | Value change step | _number \| string_ | `1` |
+| name `v2.0.3` | Stepper name | _number \| string_ | - |
+| input-width | Input width | _number \| string_ | `32px` |
+| button-size `v2.0.5` | Button size | _number \| string_ | `28px` |
+| decimal-length `v2.2.1` | Decimal length | _number \| string_ | - |
+| theme `v2.8.2` | Theme, can be set to `round` | _string_ | - |
+| integer | Whether to allow only integers | _boolean_ | `false` |
+| disabled | Disable value change | _boolean_ | `false` |
+| disable-plus `v2.2.16` | Whether to disable plus button | _boolean_ | `false` |
+| disable-minus `v2.2.16` | Whether to disable minus button | _boolean_ | `false` |
+| disable-input | Whether to disable input | _boolean_ | `false` |
+| async-change | Whether to enable async change | _boolean_ | `false` | - |
+| show-plus `v2.1.2` | Whether to show plus button | _boolean_ | `true` |
+| show-minus `v2.1.2` | Whether to show minus button | _boolean_ | `true` |
+| long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| change | Triggered when value change | *value: string, detail: { name: string }* |
+| --- | --- | --- |
+| change | Triggered when value change | _value: string, detail: { name: string }_ |
 | overlimit | Triggered when click disabled button | - |
 | plus | Triggered when click plus button | - |
 | minus | Triggered when click minus button | - |
-| focus | Triggered when input focused | *event: Event* |
-| blur | Triggered when input blured | *event: Event* |
+| focus | Triggered when input focused | _event: Event_ |
+| blur | Triggered when input blured | _event: Event_ |

@@ -31,36 +31,7 @@ npx vant-cli dev
 
 构建组件库。
 
-运行 build 命令会在 `es` 和 `lib` 目录下生成可用于生产环境的组件代码，结构如下：
-
-```
-project
-├─ es               # es 目录下的代码遵循 esmodule 规范
-│   ├─ button      # button 组件编译后的代码目录
-│   ├─ dialog      # dialog 组件编译后的代码目录
-│   └─ index.js    # 引入所有组件的入口，支持 tree shaking
-│
-└─ lib              # lib 目录下的代码遵循 commonjs 规范
-    ├─ button       # button 组件编译后的代码目录
-    ├─ dialog       # dialog 组件编译后的代码目录
-    ├─ index.js     # 引入所有组件的入口
-    ├─ index.less   # 所有组件未编译的样式
-    ├─ index.css    # 所有组件打包后的样式，用于 CDN 引入
-    ├─ name.js      # 所有组件打包后的脚本，未压缩，用于 CDN 引入
-    └─ name.min.js  # 所有组件打包后的脚本，已压缩，用于 CDN 引入
-```
-
-单个组件编译后的目录如下：
-
-```
-button
-├─ index.js         # 组件编译后的 JS 文件
-├─ index.css        # 组件编译后的 CSS 文件
-├─ index.less       # 组件编译前的 CSS 文件
-└─ style            # 按需引入样式的入口
-    ├─ index.js     # 按需引入编译后的样式
-    └─ less.js      # 按需引入未编译的样式，可用于主题定制
-```
+运行 build 命令会在 `es` 和 `lib` 目录下生成可用于生产环境的组件代码，详见 [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)。
 
 发布 npm 时，请将以下配置加入到 `package.json` 中，使 npm 包能被正确识别:
 

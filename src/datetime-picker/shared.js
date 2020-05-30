@@ -27,7 +27,7 @@ export const TimePickerMixin = {
   computed: {
     originColumns() {
       return this.ranges.map(({ type, range: rangeArr }) => {
-        let values = times(rangeArr[1] - rangeArr[0] + 1, index => {
+        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
           const value = padZero(rangeArr[0] + index);
           return value;
         });
@@ -44,8 +44,10 @@ export const TimePickerMixin = {
     },
 
     columns() {
-      return this.originColumns.map(column => ({
-        values: column.values.map(value => this.formatter(column.type, value)),
+      return this.originColumns.map((column) => ({
+        values: column.values.map((value) =>
+          this.formatter(column.type, value)
+        ),
       }));
     },
   },
@@ -83,7 +85,7 @@ export const TimePickerMixin = {
 
   render() {
     const props = {};
-    Object.keys(pickerProps).forEach(key => {
+    Object.keys(pickerProps).forEach((key) => {
       props[key] = this[key];
     });
 

@@ -54,7 +54,7 @@ function createInstance() {
       el: document.createElement('div'),
     });
 
-    toast.$on('input', value => {
+    toast.$on('input', (value) => {
       toast.value = value;
     });
 
@@ -99,7 +99,7 @@ function Toast(options = {}) {
     if (multiple && !isServer) {
       toast.$on('closed', () => {
         clearTimeout(toast.timer);
-        queue = queue.filter(item => item !== toast);
+        queue = queue.filter((item) => item !== toast);
 
         removeNode(toast.$el);
         toast.$destroy();
@@ -119,20 +119,20 @@ function Toast(options = {}) {
   return toast;
 }
 
-const createMethod = type => options =>
+const createMethod = (type) => (options) =>
   Toast({
     type,
     ...parseOptions(options),
   });
 
-['loading', 'success', 'fail'].forEach(method => {
+['loading', 'success', 'fail'].forEach((method) => {
   Toast[method] = createMethod(method);
 });
 
-Toast.clear = all => {
+Toast.clear = (all) => {
   if (queue.length) {
     if (all) {
-      queue.forEach(toast => {
+      queue.forEach((toast) => {
         toast.clear();
       });
       queue = [];
@@ -152,7 +152,7 @@ Toast.setDefaultOptions = (type, options) => {
   }
 };
 
-Toast.resetDefaultOptions = type => {
+Toast.resetDefaultOptions = (type) => {
   if (typeof type === 'string') {
     defaultOptionsMap[type] = null;
   } else {

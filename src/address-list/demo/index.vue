@@ -1,12 +1,12 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-address-list
         v-model="chosenAddressId"
-        :list="$t('list')"
-        :disabled-list="$t('disabledList')"
-        :disabled-text="$t('disabledText')"
-        :default-tag-text="$t('defaultTagText')"
+        :list="t('list')"
+        :disabled-list="t('disabledList')"
+        :disabled-text="t('disabledText')"
+        :default-tag-text="t('defaultTagText')"
         @add="onAdd"
         @edit="onEdit"
       />
@@ -85,11 +85,11 @@ export default {
 
   methods: {
     onAdd() {
-      this.$toast(this.$t('add'));
+      this.$toast(this.t('add'));
     },
 
     onEdit(item, index) {
-      this.$toast(`${this.$t('edit')}:${index}`);
+      this.$toast(`${this.t('edit')}:${index}`);
     },
   },
 };

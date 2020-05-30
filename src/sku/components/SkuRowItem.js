@@ -1,5 +1,5 @@
 import { createNamespace } from '../../utils';
-import { isSkuChoosable } from '../utils/skuHelper';
+import { isSkuChoosable } from '../utils/sku-helper';
 
 const [createComponent] = createNamespace('sku-row-item');
 

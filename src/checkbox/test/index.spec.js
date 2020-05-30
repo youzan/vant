@@ -4,7 +4,7 @@ import { mount, later } from '../../../test';
 test('switch checkbox', async () => {
   const wrapper = mount(Checkbox);
 
-  wrapper.vm.$on('input', value => {
+  wrapper.vm.$on('input', (value) => {
     wrapper.setData({ value });
   });
 
@@ -73,7 +73,7 @@ test('checkbox group', async () => {
   expect(wrapper.vm.result).toEqual(['b']);
 });
 
-test('click event', () => {
+test('click event', async () => {
   const onClick = jest.fn();
   const wrapper = mount(Checkbox, {
     listeners: {
@@ -82,10 +82,12 @@ test('click event', () => {
   });
 
   wrapper.trigger('click');
+  await later();
   expect(onClick).toHaveBeenCalledTimes(1);
 
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
+  await later();
   expect(onClick).toHaveBeenCalledTimes(2);
 });
 

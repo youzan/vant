@@ -14,8 +14,9 @@ function format(rate) {
 
 function getPath(clockwise, viewBoxSize) {
   const sweepFlag = clockwise ? 1 : 0;
-  return `M ${viewBoxSize / 2} ${viewBoxSize /
-    2} m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
+  return `M ${viewBoxSize / 2} ${
+    viewBoxSize / 2
+  } m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
 export default createComponent({

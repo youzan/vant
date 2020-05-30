@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-coupon-cell
         :coupons="coupons"
         :chosen-coupon="chosenCoupon"
@@ -70,8 +70,8 @@ export default {
         condition: '无使用门槛\n最多优惠12元',
         reason: '',
         value: 150,
-        name: this.$t('coupon.name'),
-        description: this.$t('coupon.description'),
+        name: this.t('coupon.name'),
+        description: this.t('coupon.description'),
         startAt: 1489104000,
         endAt: 1514592000,
         valueDesc: '1.5',
@@ -93,7 +93,7 @@ export default {
       return {
         ...this.coupon,
         id: 3,
-        reason: this.$t('coupon.reason'),
+        reason: this.t('coupon.reason'),
       };
     },
 
@@ -103,7 +103,7 @@ export default {
         valueDesc: '1',
         unitDesc: '折',
         id: 4,
-        reason: this.$t('coupon.reason'),
+        reason: this.t('coupon.reason'),
       };
     },
   },
@@ -114,7 +114,7 @@ export default {
       this.chosenCoupon = index;
     },
     onExchange() {
-      this.$toast(this.$t('exchange'));
+      this.$toast(this.t('exchange'));
       this.exchangedCoupons.push({
         ...this.coupon,
         id: this.randomId(),

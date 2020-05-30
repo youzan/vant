@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { VanComponent } from './component';
 
 export type SkuData = {
@@ -17,6 +16,7 @@ export type SkuTreeItemData = {
   k: string;
   v: SkuTreeItemValueData[];
   k_s: string;
+  is_multiple: never;
 };
 
 export type SkuTreeItemValueData = {

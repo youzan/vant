@@ -3,25 +3,22 @@
 .van-nav-bar {
   position: relative;
   z-index: @nav-bar-z-index;
+  display: flex;
+  align-items: center;
   height: @nav-bar-height;
-  line-height: @nav-bar-height;
+  line-height: 1.5;
   text-align: center;
   background-color: @nav-bar-background-color;
   user-select: none;
 
   .van-icon {
     color: @nav-bar-icon-color;
-    vertical-align: middle;
   }
 
   &__arrow {
     min-width: 1em;
+    margin-right: @padding-base;
     font-size: @nav-bar-arrow-size;
-
-    + .van-nav-bar__text {
-      margin-left: -20px;
-      padding-left: 25px;
-    }
   }
 
   &--fixed {
@@ -42,28 +39,28 @@
   &__left,
   &__right {
     position: absolute;
+    top: 0;
     bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 @padding-md;
     font-size: @font-size-md;
     cursor: pointer;
+
+    &:active {
+      opacity: @active-opacity;
+    }
   }
 
   &__left {
-    left: @padding-md;
+    left: 0;
   }
 
   &__right {
-    right: @padding-md;
+    right: 0;
   }
 
   &__text {
-    display: inline-block;
-    margin: 0 -@padding-md;
-    padding: 0 @padding-md;
     color: @nav-bar-text-color;
-    vertical-align: middle;
-
-    &:active {
-      background-color: @active-color;
-    }
   }
 }

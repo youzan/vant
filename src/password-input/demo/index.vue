@@ -1,9 +1,9 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-password-input
         :value="value1"
-        :info="$t('info')"
+        :info="t('info')"
         :focused="keyboard === 'value1'"
         @focus="keyboard = 'value1'"
       />
@@ -16,7 +16,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('customLength')">
+    <demo-block :title="t('customLength')">
       <van-password-input
         :value="value2"
         :length="4"
@@ -26,7 +26,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('removeMask')">
+    <demo-block :title="t('removeMask')">
       <van-password-input
         :value="value3"
         :mask="false"
@@ -35,7 +35,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('hintError')">
+    <demo-block :title="t('hintError')">
       <van-password-input
         :value="value4"
         :error-info="errorInfo"
@@ -81,7 +81,7 @@ export default {
       const { keyboard } = this;
       this[keyboard] = (this[keyboard] + key).slice(0, 6);
       if (this[keyboard].length === 6) {
-        this.errorInfo = this.$t('errorInfo');
+        this.errorInfo = this.t('errorInfo');
       } else {
         this.errorInfo = '';
       }

@@ -260,7 +260,7 @@ export default createComponent({
     momentum(distance, duration) {
       const speed = Math.abs(distance / duration);
 
-      distance = this.offset + (speed / 0.002) * (distance < 0 ? -1 : 1);
+      distance = this.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
 
       const index = this.getIndexByOffset(distance);
 
@@ -294,7 +294,6 @@ export default createComponent({
             tabindex: disabled ? -1 : 0,
           },
           class: [
-            'van-ellipsis',
             bem('item', {
               disabled,
               selected: index === this.currentIndex,
@@ -307,13 +306,18 @@ export default createComponent({
           },
         };
 
-        if (this.allowHtml) {
-          data.domProps = {
-            innerHTML: text,
-          };
-        }
+        const childData = {
+          class: 'van-ellipsis',
+          domProps: {
+            [this.allowHtml ? 'innerHTML' : 'innerText']: text,
+          },
+        };
 
-        return <li {...data}>{this.allowHtml ? '' : text}</li>;
+        return (
+          <li {...data}>
+            <div {...childData} />
+          </li>
+        );
       });
     },
   },
@@ -323,7 +327,6 @@ export default createComponent({
       transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
       transitionProperty: this.duration ? 'all' : 'none',
-      lineHeight: `${this.itemHeight}px`,
     };
 
     return (

@@ -17,7 +17,7 @@ test('change event', () => {
 
   const wrapper = mount(Rate, {
     listeners: {
-      input: value => {
+      input: (value) => {
         onInput(value);
         wrapper.setProps({ value });
       },

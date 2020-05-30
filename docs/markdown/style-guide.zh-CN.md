@@ -12,18 +12,18 @@
 // bad
 export default {
   data: {
-    foo: 'bar'
-  }
-}
+    foo: 'bar',
+  },
+};
 
 // good
 export default {
-  data () {
+  data() {
     return {
-      foo: 'bar'
-    }
-  }
-}
+      foo: 'bar',
+    };
+  },
+};
 ```
 
 ### 单文件组件文件名称
@@ -78,16 +78,16 @@ components/
 // bad
 export default {
   props: {
-    'greeting-text': String
-  }
+    'greeting-text': String,
+  },
 };
 
 // good
 export default {
   props: {
-    greetingText: String
-  }
-}
+    greetingText: String,
+  },
+};
 ```
 
 ```html
@@ -98,38 +98,16 @@ export default {
 <welcome-message greeting-text="hi" />
 ```
 
-### Props 换行
-
-多个 Props 的元素应该分多行撰写，每个 Props 一行，闭合标签单起一行。
-
-```html
-<!-- bad -->
-<my-component foo="a" bar="b" baz="c" />
-
-<!-- good -->
-<my-component
-  foo="a"
-  bar="b"
-  baz="c"
-/>
-```
-
 ### 指令缩写
 
 指令缩写，用 `:` 表示 `v-bind:` ，用 `@` 表示 `v-on:`
 
 ```html
 <!-- bad -->
-<input
-  v-bind:value="value"
-  v-on:input="onInput"
->
+<input v-bind:value="value" v-on:input="onInput" />
 
 <!-- good -->
-<input
-  :value="value"
-  @input="onInput"
->
+<input :value="value" @input="onInput" />
 ```
 
 ### Props 顺序
@@ -175,7 +153,7 @@ export default {
 
   destroyed() {},
 
-  methods: {}
+  methods: {},
 };
 ```
 
@@ -192,7 +170,7 @@ export default {
 
     styles() {
       // ...
-    }
+    },
   },
 
   methods: {
@@ -202,8 +180,8 @@ export default {
 
     onChange() {
       // ...
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -213,14 +191,14 @@ export default {
 
 ```html
 <template>
-...
+  ...
 </template>
 
 <script>
-/* ... */
+  /* ... */
 </script>
 
 <style>
-/* ... */
+  /* ... */
 </style>
 ```

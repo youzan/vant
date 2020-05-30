@@ -1,7 +1,7 @@
 // Utils
 import lang from './lang';
 import constants from './constants';
-import skuHelper from './utils/skuHelper';
+import skuHelper from './utils/sku-helper';
 
 // Components
 import Sku from './Sku';

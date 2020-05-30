@@ -1,18 +1,18 @@
 <template>
-  <demo-block :title="$t('showIcon')">
+  <demo-block :title="t('showIcon')">
     <van-field
       v-model="icon1"
-      :label="$t('text')"
+      :label="t('text')"
       left-icon="smile-o"
       right-icon="warning-o"
-      :placeholder="$t('showIcon')"
+      :placeholder="t('showIcon')"
     />
     <van-field
       v-model="icon2"
       clearable
-      :label="$t('text')"
+      :label="t('text')"
       left-icon="music-o"
-      :placeholder="$t('showClearIcon')"
+      :placeholder="t('showClearIcon')"
     />
   </demo-block>
 </template>

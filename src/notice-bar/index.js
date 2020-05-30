@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { doubleRaf } from '../utils/dom/raf';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');
@@ -27,34 +28,19 @@ export default createComponent({
 
   data() {
     return {
+      show: true,
+      offset: 0,
+      duration: 0,
       wrapWidth: 0,
       firstRound: true,
-      duration: 0,
-      offsetWidth: 0,
-      showNoticeBar: true,
-      animationClass: '',
+      contentWidth: 0,
     };
   },
 
   watch: {
+    scrollable: 'start',
     text: {
-      handler() {
-        this.$nextTick(() => {
-          const { wrap, content } = this.$refs;
-          if (!wrap || !content) {
-            return;
-          }
-
-          const wrapWidth = wrap.getBoundingClientRect().width;
-          const offsetWidth = content.getBoundingClientRect().width;
-          if (this.scrollable && offsetWidth > wrapWidth) {
-            this.wrapWidth = wrapWidth;
-            this.offsetWidth = offsetWidth;
-            this.duration = offsetWidth / this.speed;
-            this.animationClass = bem('play');
-          }
-        });
-      },
+      handler: 'start',
       immediate: true,
     },
   },
@@ -62,16 +48,47 @@ export default createComponent({
   methods: {
     onClickIcon(event) {
       if (this.mode === 'closeable') {
-        this.showNoticeBar = false;
+        this.show = false;
         this.$emit('close', event);
       }
     },
 
-    onAnimationEnd() {
+    onTransitionEnd() {
+      this.offset = this.wrapWidth;
+      this.duration = 0;
       this.firstRound = false;
+
+      doubleRaf(() => {
+        this.offset = -this.contentWidth;
+        this.duration = (this.contentWidth + this.wrapWidth) / this.speed;
+        this.$emit('replay');
+      });
+    },
+
+    reset() {
+      this.duration = 0;
+      this.wrapWidth = 0;
+      this.contentWidth = 0;
+    },
+
+    start() {
       this.$nextTick(() => {
-        this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
-        this.animationClass = bem('play--infinite');
+        const { wrap, content } = this.$refs;
+        if (!wrap || !content) {
+          return;
+        }
+
+        const wrapWidth = wrap.getBoundingClientRect().width;
+        const contentWidth = content.getBoundingClientRect().width;
+
+        if (this.scrollable && contentWidth > wrapWidth) {
+          this.offset = -contentWidth;
+          this.duration = contentWidth / this.speed;
+          this.wrapWidth = wrapWidth;
+          this.contentWidth = contentWidth;
+        } else {
+          this.reset();
+        }
       });
     },
   },
@@ -85,9 +102,9 @@ export default createComponent({
     };
 
     const contentStyle = {
-      paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
-      animationDelay: (this.firstRound ? this.delay : 0) + 's',
-      animationDuration: this.duration + 's',
+      transform: `translateX(${this.offset}px)`,
+      transitionDelay: (this.firstRound ? this.delay : 0) + 's',
+      transitionDuration: this.duration + 's',
     };
 
     function LeftIcon() {
@@ -130,10 +147,10 @@ export default createComponent({
     return (
       <div
         role="alert"
-        vShow={this.showNoticeBar}
+        vShow={this.show}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
-        onClick={event => {
+        onClick={(event) => {
           this.$emit('click', event);
         }}
       >
@@ -143,12 +160,10 @@ export default createComponent({
             ref="content"
             class={[
               bem('content'),
-              this.animationClass,
               { 'van-ellipsis': !this.scrollable && !this.wrapable },
             ]}
             style={contentStyle}
-            onAnimationend={this.onAnimationEnd}
-            onWebkitAnimationEnd={this.onAnimationEnd}
+            onTransitionend={this.onTransitionEnd}
           >
             {this.slots() || this.text}
           </div>

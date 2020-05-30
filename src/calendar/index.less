@@ -100,6 +100,7 @@
 
     &--end,
     &--start,
+    &--start-end,
     &--multiple-middle,
     &--multiple-selected {
       color: @calendar-range-edge-color;
@@ -114,6 +115,7 @@
       border-radius: 0 @border-radius-md @border-radius-md 0;
     }
 
+    &--start-end,
     &--multiple-selected {
       border-radius: @border-radius-md;
     }
@@ -171,16 +173,16 @@
   &__footer {
     flex-shrink: 0;
     padding: 0 @padding-md;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
 
-    &--safe-area-inset-bottom {
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
+    &--unfit {
+      padding-bottom: 0;
     }
   }
 
   &__confirm {
     height: @calendar-confirm-button-height;
     margin: @calendar-confirm-button-margin;
-    line-height: @calendar-confirm-button-line-height;
   }
 }

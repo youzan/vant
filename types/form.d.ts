@@ -7,5 +7,5 @@ export class Form extends VanComponent {
 
   resetValidation(name?: string): void;
 
-  scrollToField(name: string): void;
+  scrollToField(name: string, options?: boolean | ScrollIntoViewOptions): void;
 }

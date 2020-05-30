@@ -39,10 +39,10 @@ export default {
       show: false,
       sku: {},
       goods: {},
-      messageConfig: {}
+      messageConfig: {},
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Stepper Config
@@ -81,21 +81,17 @@ export default {
   @add-cart="onAddCartClicked"
 >
   <!-- custom sku-header-price -->
-  <template slot="sku-header-price" slot-scope="props">
+  <template #sku-header-price="props">
     <div class="van-sku__goods-price">
-      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
+      <span class="van-sku__price-symbol">￥</span
+      ><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
 
   <!-- custom sku actions -->
-  <template slot="sku-actions" slot-scope="props">
+  <template #sku-actions="props">
     <div class="van-sku-actions">
-      <van-button
-        square
-        size="large"
-        type="warning"
-        @click="onPointClicked"
-      >
+      <van-button square size="large" type="warning" @click="onPointClicked">
         Button
       </van-button>
       <!-- trigger sku inner event -->
@@ -117,38 +113,38 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Whether to show sku | *boolean* | `false` |
-| sku | Sku data | *object* | - |
-| goods | Goods info | *object* | - |
-| goods-id | Goods id | `string | *number* | - |
-| price-tag | Tag behind the price | *string* | - |
-| hide-stock | Whether to hide stock | *boolean* | `false` |
-| hide-quota-text | Whether to hide quota text | *boolean* | `false` |
-| hide-selected-text | Whether to hide selected text | *boolean* | `false` |
-| stock-threshold | stock threshold | *boolean* | `50` |
-| show-add-cart-btn | Whether to show cart button | *boolean* | `true` |
-| buy-text | Buy button text | *string* | - | - |
-| add-cart-text | Add cart button text | *string* | - | - |
-| quota | Quota (0 as no limit) | *number* | `0` |
-| quota-used | Used quota | *number* | `0` |
-| reset-stepper-on-hide | Whether to reset stepper when hide | *boolean* | `false` |
-| reset-selected-sku-on-hide | Whether to reset selected sku when hide | *boolean* | `false` |
-| disable-stepper-input | Whether to disable stepper input | *boolean* | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | *boolean* | `false` |
-| stepper-title | Quantity title | *string* | `Quantity` |
-| custom-stepper-config | Custom stepper related config | *object* | `{}` |
-| message-config | Message related config | *object* | `{}` |
-| get-container | Return the mount node for sku | *string \| () => Element* | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | *boolean* | `false` |
-| start-sale-num `v2.3.0` | Minimum quantity | *number* | `1` |
-| properties `v2.4.2` | Goods properties | *array* | - |
-| preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | Whether to show sku | _boolean_ | `false` |
+| sku | Sku data | _object_ | - |
+| goods | Goods info | _object_ | - |
+| goods-id | Goods id | `string | _number_ | - |
+| price-tag | Tag behind the price | _string_ | - |
+| hide-stock | Whether to hide stock | _boolean_ | `false` |
+| hide-quota-text | Whether to hide quota text | _boolean_ | `false` |
+| hide-selected-text | Whether to hide selected text | _boolean_ | `false` |
+| stock-threshold | stock threshold | _boolean_ | `50` |
+| show-add-cart-btn | Whether to show cart button | _boolean_ | `true` |
+| buy-text | Buy button text | _string_ | - | - |
+| add-cart-text | Add cart button text | _string_ | - | - |
+| quota | Quota (0 as no limit) | _number_ | `0` |
+| quota-used | Used quota | _number_ | `0` |
+| reset-stepper-on-hide | Whether to reset stepper when hide | _boolean_ | `false` |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | _boolean_ | `false` |
+| disable-stepper-input | Whether to disable stepper input | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `false` |
+| stepper-title | Quantity title | _string_ | `Quantity` |
+| custom-stepper-config | Custom stepper related config | _object_ | `{}` |
+| message-config | Message related config | _object_ | `{}` |
+| get-container | Return the mount node for sku | _string \| () => Element_ | - |
+| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
+| properties `v2.4.2` | Goods properties | _array_ | - |
+| preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
+| --- | --- | --- |
 | add-cart | Triggered when click cart button | data: object |
 | buy-clicked | Triggered when click buy button | data: object |
 | stepper-change | Triggered when stepper value changed | value: number |
@@ -156,32 +152,33 @@ export default {
 | sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
 | open-preview | Triggered when open image preview | data: object |
 | close-preview | Triggered when close image preview | data: object |
+| sku-reset `v2.8.1` | Triggered when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance methods
 
 | Name | Description | Attribute | Return value |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | getSkuData | Get current skuData | - | skuData |
 | resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
-| Name | Description | 
-|------|------|
-| sku-header | Custom header |
-| sku-header-price | Custom header price area |
-| sku-header-origin-price | Custom header origin price area |
-| sku-header-extra | Extra header area |
-| sku-header-image-extra `v2.5.2` | Custom header image extra area |
-| sku-body-top | Custom content before sku-group |
-| sku-group | Custom sku |
-| extra-sku-group | Extra custom content |
-| sku-stepper | Custom stepper |
-| sku-messages | Custom messages |
-| sku-actions-top `v2.4.7` | Custom content before sku-actions |
-| sku-actions | Custom button actions |
+| Name                            | Description                       |
+| ------------------------------- | --------------------------------- |
+| sku-header                      | Custom header                     |
+| sku-header-price                | Custom header price area          |
+| sku-header-origin-price         | Custom header origin price area   |
+| sku-header-extra                | Extra header area                 |
+| sku-header-image-extra `v2.5.2` | Custom header image extra area    |
+| sku-body-top                    | Custom content before sku-group   |
+| sku-group                       | Custom sku                        |
+| extra-sku-group                 | Extra custom content              |
+| sku-stepper                     | Custom stepper                    |
+| sku-messages                    | Custom messages                   |
+| sku-actions-top `v2.4.7`        | Custom content before sku-actions |
+| sku-actions                     | Custom button actions             |
 
 ### Sku Data Structure
 
@@ -257,25 +254,25 @@ sku: {
 ### properties Data Structure
 
 ```js
-  [
-    {
-      k_id: 123,
-      k: 'More',
-      is_multiple: true,
-      v: [
-        {
-          id: 1222,
-          name: 'Tea',
-          price: 1,
-        },
-        {
-          id: 1223,
-          name: 'Water',
-          price: 1,
-        }
-      ],
-    }
-  ]
+[
+  {
+    k_id: 123,
+    k: 'More',
+    is_multiple: true,
+    v: [
+      {
+        id: 1222,
+        name: 'Tea',
+        price: 1,
+      },
+      {
+        id: 1223,
+        name: 'Water',
+        price: 1,
+      },
+    ],
+  },
+];
 ```
 
 ### initialSku Data Structure
@@ -297,10 +294,9 @@ sku: {
 
 ```js
 goods: {
-  picture: 'https://img.yzcdn.cn/1.jpg'
+  picture: 'https://img.yzcdn.cn/1.jpg';
 }
 ```
-
 
 ### customStepperConfig Data Structure
 

@@ -21,7 +21,6 @@ There are some basic variables below, all available variables could be found in 
 
 ## How to custom theme
 
-
 ### Step 1: import less file
 
 First you should import the less source file to your project. you can use babel-plugin-import to automatically import or just manually import less file.
@@ -39,11 +38,11 @@ module.exports = {
         libraryName: 'vant',
         libraryDirectory: 'es',
         // specify less file path
-        style: name => `${name}/style/less`
+        style: (name) => `${name}/style/less`,
       },
-      'vant'
-    ]
-  ]
+      'vant',
+    ],
+  ],
 };
 ```
 
@@ -72,13 +71,15 @@ module.exports = {
         {
           loader: 'less-loader',
           options: {
-            modifyVars: {
-              // overide with less vars
-              'text-color': '#111',
-              'border-color': '#eee'
-              // or override with less file
-              'hack': `true; @import "your-less-file-path.less";`
-            },
+            lessOptions: {
+              modifyVars: {
+                // overide with less vars
+                'text-color': '#111',
+                'border-color': '#eee'
+                // or override with less file
+                'hack': `true; @import "your-less-file-path.less";`
+              },
+            }
           },
         },
       ],
@@ -95,16 +96,17 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        modifyVars: {
-          // overide with less vars
-          'text-color': '#111',
-          'border-color': '#eee',
-          // or override with less file
-          hack: `true; @import "your-less-file-path.less";`,
+        lessOptions: {
+          modifyVars: {
+            // overide with less vars
+            'text-color': '#111',
+            'border-color': '#eee',
+            // or override with less file
+            hack: `true; @import "your-less-file-path.less";`,
+          },
         },
       },
     },
   },
 };
 ```
-

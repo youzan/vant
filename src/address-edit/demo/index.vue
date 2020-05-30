@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-address-edit
         :area-list="areaList"
         show-postal
@@ -8,7 +8,7 @@
         show-set-default
         show-search-result
         :search-result="searchResult"
-        :area-columns-placeholder="$t('areaColumnsPlaceholder')"
+        :area-columns-placeholder="t('areaColumnsPlaceholder')"
         @save="onSave"
         @delete="onDelete"
         @change-detail="onChangeDetail"
@@ -65,15 +65,15 @@ export default {
 
   methods: {
     onSave() {
-      this.$toast(this.$t('save'));
+      this.$toast(this.t('save'));
     },
 
     onDelete() {
-      this.$toast(this.$t('delete'));
+      this.$toast(this.t('delete'));
     },
 
     onChangeDetail(val) {
-      this.searchResult = val ? this.$t('searchResult') : [];
+      this.searchResult = val ? this.t('searchResult') : [];
     },
   },
 };

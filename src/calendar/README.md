@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       date: '',
-      show: false
+      show: false,
     };
   },
   methods: {
@@ -39,8 +39,8 @@ export default {
     onConfirm(date) {
       this.show = false;
       this.date = this.formatDate(date);
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -56,21 +56,21 @@ export default {
   data() {
     return {
       text: '',
-      show: false
+      show: false,
     };
   },
   methods: {
     onConfirm(date) {
       this.show = false;
       this.text = `${date.length} dates selected`;
-    }
-  }
+    },
+  },
 };
 ```
 
 ### Select Date Range
 
-You can select a date range after setting `type` to` range`. In range mode, the date returned by the `confirm` event is an array, the first item in the array is the start time and the second item is the end time.
+You can select a date range after setting `type` to`range`. In range mode, the date returned by the `confirm` event is an array, the first item in the array is the start time and the second item is the end time.
 
 ```html
 <van-cell title="Select Date Range" :value="date" @click="show = true" />
@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       date: '',
-      show: false
+      show: false,
     };
   },
   methods: {
@@ -93,14 +93,14 @@ export default {
       const [start, end] = date;
       this.show = false;
       this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
-    }
-  }
+    },
+  },
 };
 ```
 
 ### Quick Select
 
-Set `show-confirm` to` false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
+Set `show-confirm` to `false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
 
 ```html
 <van-calendar v-model="show" :show-confirm="false" />
@@ -119,11 +119,7 @@ Use `color` prop to custom calendar color
 Use `min-date` and `max-date` to custom date range
 
 ```html
-<van-calendar
-  v-model="show"
-  :min-date="minDate"
-  :max-date="maxDate"
-/>
+<van-calendar v-model="show" :min-date="minDate" :max-date="maxDate" />
 ```
 
 ```js
@@ -132,9 +128,9 @@ export default {
     return {
       show: false,
       minDate: new Date(2010, 0, 1),
-      maxDate: new Date(2010, 0, 31)
+      maxDate: new Date(2010, 0, 31),
     };
-  }
+  },
 };
 ```
 
@@ -156,11 +152,7 @@ Use `confirm-text` and `confirm-disabled-text` to custom confirm text
 Use `formatter` to custom day text
 
 ```html
-<van-calendar
-  v-model="show"
-  type="range"
-  :formatter="formatter"
-/>
+<van-calendar v-model="show" type="range" :formatter="formatter" />
 ```
 
 ```js
@@ -187,9 +179,9 @@ export default {
       }
 
       return day;
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Custom Position
@@ -197,11 +189,7 @@ export default {
 Use `position` to custom popup position，can be set to `top`、`left`、`right`
 
 ```html
-<van-calendar
-  v-model="show"
-  :round="false"
-  position="right"
-/>
+<van-calendar v-model="show" :round="false" position="right" />
 ```
 
 ### Max Range
@@ -209,11 +197,7 @@ Use `position` to custom popup position，can be set to `top`、`left`、`right`
 When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days
 
 ```html
-<van-calendar
-  type="range"
-  :max-range="3"
-  :style="{ height: '500px' }"
-/>
+<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
 ```
 
 ### Tiled display
@@ -234,35 +218,36 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| type `v2.5.4` | Type，can be set to `range` `multiple` | *string* | `single` |
-| title | Title of calendar | *string* | `Calendar` |
-| color | Color for the bottom button and selected date | *string* | `#ee0a24` |
-| min-date | Min date | *Date*  | Today |
-| max-date | Max date | *Date*  | Six months after the today |
-| default-date | Default selected date | *Date \| Date[]* | Today |
-| row-height | Row height | *number \| string* | `64` |
-| formatter | Day formatter | *(day: Day) => Day* | - |
-| poppable | Whether to show the calendar inside a popup | *boolean* | `true` |
-| show-mark | Whether to show background month mark | *boolean* | `true` |
-| show-title `v2.5.5` | Whether to show title | *boolean* | `true` |
-| show-subtitle `v2.5.5` | Whether to show subtitle | *boolean* | `true` |
-| show-confirm | Whether to show confirm button | *boolean* | `true` |
-| confirm-text | Confirm button text | *string* | `Confirm` |
-| confirm-disabled-text | Confirm button text when disabled | *string* | `Confirm` |
+| --- | --- | --- | --- |
+| type `v2.5.4` | Type，can be set to `range` `multiple` | _string_ | `single` |
+| title | Title of calendar | _string_ | `Calendar` |
+| color | Color for the bottom button and selected date | _string_ | `#ee0a24` |
+| min-date | Min date | _Date_ | Today |
+| max-date | Max date | _Date_ | Six months after the today |
+| default-date | Default selected date | _Date \| Date[]_ | Today |
+| row-height | Row height | _number \| string_ | `64` |
+| formatter | Day formatter | _(day: Day) => Day_ | - |
+| poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
+| lazy-render `v2.8.1` | Whether to enable lazy render | _boolean_ | `true` |
+| show-mark | Whether to show background month mark | _boolean_ | `true` |
+| show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
+| show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |
+| show-confirm | Whether to show confirm button | _boolean_ | `true` |
+| confirm-text | Confirm button text | _string_ | `Confirm` |
+| confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
 
 ### Poppable Props
 
 Following props are supported when the poppable is true
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Whether to show calendar | *boolean* | `false` |
-| position | Popup position, can be set to `top` `right` `left` | *string* | `bottom` |
-| round | Whether to show round corner | *boolean* | `true` |
-| close-on-popstate `v2.4.4` | Whether to close when popstate | *boolean* | `false` |
-| close-on-click-overlay | Whether to close when click overlay | *boolean* | `true` |
-| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | Whether to show calendar | _boolean_ | `false` |
+| position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
+| round | Whether to show round corner | _boolean_ | `true` |
+| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
 
 ### Range Props
@@ -270,43 +255,55 @@ Following props are supported when the poppable is true
 Following props are supported when the type is range
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| max-range `v2.4.3` | Number of selectable days | *number \| string* | - |
-| range-prompt `v2.4.3` | Error message when exceeded max range | *string* | `Choose no more than xx days` |
+| --- | --- | --- | --- |
+| max-range `v2.4.3` | Number of selectable days | _number \| string_ | Unlimitied |
+| range-prompt `v2.4.3` | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
+| allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `fasle` |
+
+### Multiple Props
+
+Following props are supported when the type is multiple
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimitied |
+| range-prompt `v2.4.3` | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day
 
 | Key | Description | Type |
-|------|------|------|
-| date | Date | *Date* |
-| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled` | *string* |
-| text | Text | *string* |
-| topInfo | Top info | *string* |
-| bottomInfo | Bottom info | *string* |
-| className | Extra className | *string* |
+| --- | --- | --- |
+| date | Date | _Date_ |
+| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| text | Text | _string_ |
+| topInfo | Top info | _string_ |
+| bottomInfo | Bottom info | _string_ |
+| className | Extra className | _string_ |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| select | Triggered when select date | *value: Date \| Date[]* |
-| confirm | Triggered after date selection is complete，if `show-confirm` is` true`, it is triggered after clicking the confirm button | *value: Date \| Date[]* |
+| --- | --- | --- |
+| select | Triggered when select date | _value: Date \| Date[]_ |
+| confirm | Triggered after date selection is complete，if `show-confirm` is`true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_ |
 | open `v2.5.2` | Triggered when open Popup | - |
 | close `v2.5.2` | Triggered when close Popup | - |
 | opened `v2.5.2` | Triggered when opened Popup | - |
 | closed `v2.5.2` | Triggered when closed Popup | - |
+| unselect `v2.7.2` | Triggered when unselect date when type is multiple | _value: Date_ |
+| month-show `v2.8.2` | Triggered when a month enters the visible area | _{ date: Date, title: string }_ |
 
 ### Slots
 
-| Name | Description |
-|------|------|
-| title | Custom title |
+| Name   | Description   |
+| ------ | ------------- |
+| title  | Custom title  |
 | footer | Custom fotter |
 
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| reset | Reset selected date to default date | - | - |
+| Name  | Description                         | Attribute | Return value |
+| ----- | ----------------------------------- | --------- | ------------ |
+| reset | Reset selected date to default date | -         | -            |

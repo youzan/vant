@@ -1,8 +1,11 @@
 import { createNamespace } from '../utils';
+import { ChildrenMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('col');
 
 export default createComponent({
+  mixins: [ChildrenMixin('vanRow')],
+
   props: {
     span: [Number, String],
     offset: [Number, String],
@@ -13,13 +16,17 @@ export default createComponent({
   },
 
   computed: {
-    gutter() {
-      return (this.$parent && Number(this.$parent.gutter)) || 0;
-    },
-
     style() {
-      const padding = `${this.gutter / 2}px`;
-      return this.gutter ? { paddingLeft: padding, paddingRight: padding } : {};
+      const { index } = this;
+      const { spaces } = this.parent || {};
+
+      if (spaces && spaces[index]) {
+        const { left, right } = spaces[index];
+        return {
+          paddingLeft: left ? `${left}px` : null,
+          paddingRight: right ? `${right}px` : null,
+        };
+      }
     },
   },
 

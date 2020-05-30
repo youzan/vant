@@ -48,6 +48,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-circle__text">大小定制</div>
     </div>
   </div>
-  <div style="margin-top: 15px;"><button class="van-button van-button--primary van-button--small"><span class="van-button__text">增加</span></button> <button class="van-button van-button--danger van-button--small"><span class="van-button__text">减少</span></button></div>
+  <div style="margin-top: 15px;"><button class="van-button van-button--primary van-button--small">
+      <div class="van-button__content"><span class="van-button__text">增加</span></div>
+    </button> <button class="van-button van-button--danger van-button--small">
+      <div class="van-button__content"><span class="van-button__text">减少</span></div>
+    </button></div>
 </div>
 `;

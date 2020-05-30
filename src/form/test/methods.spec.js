@@ -23,10 +23,10 @@ test('submit method', async () => {
   expect(onSubmit).toHaveBeenCalledWith({ A: 'bar' });
 });
 
-test('validate method - validate all fields', done => {
+test('validate method - validate all fields', (done) => {
   mountSimpleRulesForm({
     mounted() {
-      this.$refs.form.validate().catch(err => {
+      this.$refs.form.validate().catch((err) => {
         expect(err).toEqual([
           { message: 'A failed', name: 'A' },
           { message: 'B failed', name: 'B' },
@@ -37,10 +37,10 @@ test('validate method - validate all fields', done => {
   });
 });
 
-test('validate method - validate one field and passed', done => {
+test('validate method - validate one field and passed', (done) => {
   mountSimpleRulesForm({
     mounted() {
-      this.$refs.form.validate('A').catch(err => {
+      this.$refs.form.validate('A').catch((err) => {
         expect(err).toEqual({ message: 'A failed', name: 'A' });
         done();
       });
@@ -48,7 +48,7 @@ test('validate method - validate one field and passed', done => {
   });
 });
 
-test('validate method - validate one field and failed', done => {
+test('validate method - validate one field and failed', (done) => {
   mountForm({
     template: `
       <van-form ref="form" @failed="onFailed">
@@ -64,7 +64,7 @@ test('validate method - validate one field and failed', done => {
   });
 });
 
-test('validate method - unexisted name', done => {
+test('validate method - unexisted name', (done) => {
   mountSimpleRulesForm({
     mounted() {
       this.$refs.form.validate('unexisted').catch(done);
@@ -72,7 +72,7 @@ test('validate method - unexisted name', done => {
   });
 });
 
-test('resetValidation method - reset all fields', done => {
+test('resetValidation method - reset all fields', (done) => {
   const wrapper = mountSimpleRulesForm({
     mounted() {
       this.$refs.form.validate().catch(() => {
@@ -85,7 +85,7 @@ test('resetValidation method - reset all fields', done => {
   });
 });
 
-test('resetValidation method - reset one field', done => {
+test('resetValidation method - reset one field', (done) => {
   const wrapper = mountSimpleRulesForm({
     mounted() {
       this.$refs.form.validate().catch(() => {
@@ -97,7 +97,7 @@ test('resetValidation method - reset one field', done => {
   });
 });
 
-test('scrollToField method', done => {
+test('scrollToField method', (done) => {
   const fn = mockScrollIntoView();
   mountSimpleRulesForm({
     mounted() {

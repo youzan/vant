@@ -1,35 +1,35 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="t('basicUsage')">
       <van-button type="primary" @click="showImagePreview">
-        {{ $t('button1') }}
+        {{ t('button1') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('button2')">
+    <demo-block :title="t('button2')">
       <van-button type="primary" @click="showImagePreview(1)">
-        {{ $t('button2') }}
+        {{ t('button2') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('button4')">
+    <demo-block :title="t('button4')">
       <van-button type="primary" @click="showImagePreview(0, 0, true)">
-        {{ $t('button4') }}
+        {{ t('button4') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('button3')">
+    <demo-block :title="t('button3')">
       <van-button type="primary" @click="showImagePreview(0, 3000)">
-        {{ $t('button3') }}
+        {{ t('button3') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('componentCall')">
+    <demo-block :title="t('componentCall')">
       <van-button type="primary" @click="componentCall">
-        {{ $t('componentCall') }}
+        {{ t('componentCall') }}
       </van-button>
       <van-image-preview v-model="show" :images="images" @change="onChange">
-        <template #index>{{ $t('index', index) }}</template>
+        <template #index>{{ t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
   </demo-section>
@@ -53,7 +53,7 @@ export default {
       button3: '异步关闭',
       button4: '展示关闭按钮',
       componentCall: '组件调用',
-      index: index => `第${index + 1}页`,
+      index: (index) => `第${index + 1}页`,
     },
     'en-US': {
       button1: 'Show Images',
@@ -61,7 +61,7 @@ export default {
       button3: 'Async Close',
       button4: 'Show Close Icon',
       componentCall: 'Component Call',
-      index: index => `Page: ${index}`,
+      index: (index) => `Page: ${index}`,
     },
   },
 
@@ -85,7 +85,6 @@ export default {
     showImagePreview(position, timer, closeable) {
       const instance = ImagePreview({
         images,
-        lazyLoad: true,
         swipeDuration: 300,
         asyncClose: !!timer,
         closeable,

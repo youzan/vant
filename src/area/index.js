@@ -14,7 +14,7 @@ function pickSlots(instance, keys) {
   const { $slots, $scopedSlots } = instance;
   const scopedSlots = {};
 
-  keys.forEach(key => {
+  keys.forEach((key) => {
     if ($scopedSlots[key]) {
       scopedSlots[key] = $scopedSlots[key];
     } else if ($slots[key]) {
@@ -111,7 +111,7 @@ export default createComponent({
       }
 
       const list = this[type];
-      result = Object.keys(list).map(listCode => ({
+      result = Object.keys(list).map((listCode) => ({
         code: listCode,
         name: list[listCode],
       }));
@@ -122,7 +122,7 @@ export default createComponent({
           code = '9';
         }
 
-        result = result.filter(item => item.code.indexOf(code) === 0);
+        result = result.filter((item) => item.code.indexOf(code) === 0);
       }
 
       if (this.placeholderMap[type] && result.length) {
@@ -197,17 +197,29 @@ export default createComponent({
       this.$emit('confirm', values, index);
     },
 
+    getDefaultCode() {
+      if (this.columnsPlaceholder.length) {
+        return PLACEHOLDER_CODE;
+      }
+
+      const countyCodes = Object.keys(this.county);
+      if (countyCodes[0]) {
+        return countyCodes[0];
+      }
+
+      const cityCodes = Object.keys(this.city);
+      if (cityCodes[0]) {
+        return cityCodes[0];
+      }
+
+      return '';
+    },
+
     setValues() {
       let { code } = this;
 
       if (!code) {
-        if (this.columnsPlaceholder.length) {
-          code = PLACEHOLDER_CODE;
-        } else if (Object.keys(this.county)[0]) {
-          code = Object.keys(this.county)[0];
-        } else {
-          code = '';
-        }
+        code = this.getDefaultCode();
       }
 
       const { picker } = this.$refs;
@@ -239,7 +251,9 @@ export default createComponent({
 
     getValues() {
       const { picker } = this.$refs;
-      let getValues = picker ? picker.getValues().filter(value => !!value) : [];
+      let getValues = picker
+        ? picker.getValues().filter((value) => !!value)
+        : [];
       getValues = this.parseOutputValues(getValues);
       return getValues;
     },
@@ -258,8 +272,8 @@ export default createComponent({
         return area;
       }
 
-      const names = values.map(item => item.name);
-      const validValues = values.filter(value => !!value.code);
+      const names = values.map((item) => item.name);
+      const validValues = values.filter((value) => !!value.code);
 
       area.code = validValues.length
         ? validValues[validValues.length - 1].code

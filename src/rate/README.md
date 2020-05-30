@@ -21,20 +21,16 @@ Vue.use(Rate);
 export default {
   data() {
     return {
-      value: 3
+      value: 3,
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Icon
 
 ```html
-<van-rate
-  v-model="value"
-  icon="like"
-  void-icon="like-o"
-/>
+<van-rate v-model="value" icon="like" void-icon="like-o" />
 ```
 
 ### Custom Style
@@ -52,22 +48,17 @@ export default {
 ### Half Star
 
 ```html
-<van-rate
-  v-model="value"
-  allow-half
-  void-icon="star"
-  void-color="#eee"
-/>
+<van-rate v-model="value" allow-half void-icon="star" void-color="#eee" />
 ```
 
 ```js
 export default {
   data() {
     return {
-      value: 2.5
+      value: 2.5,
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Count
@@ -79,7 +70,7 @@ export default {
 ### Disabled
 
 ```html
- <van-rate v-model="value" disabled />
+<van-rate v-model="value" disabled />
 ```
 
 ### Readonly
@@ -98,10 +89,10 @@ export default {
 export default {
   method: {
     onChange(value) {
-       Toast('current value:'+ value);
-    }
-  }
-}
+      Toast('current value:' + value);
+    },
+  },
+};
 ```
 
 ## API
@@ -109,24 +100,24 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| v-model | Current rate | *number* | - |
-| count | Count | *number \| string* | `5` |
-| size | Icon size| *number \| string* | `20px` |
-| gutter | Icon gutter | *number \| string* | `4px` |
-| color | Selected color | *string* | `#ffd21e` |
-| void-color | Void color | *string* | `#c8c9cc` |
-| disabled-color | Disabled color | *string* | `#bdbdbd` |
-| icon | Selected icon | *string* | `star` |
-| void-icon | Void icon | *string* | `star-o` |
-| icon-prefix `v2.5.3` | Icon className prefix | *string* | `van-icon` |
-| allow-half | Whether to allow half star | *boolean* | `false` |
-| readonly | Whether to be readonly | *boolean* | `false` |
-| disabled | Whether to disable rate | *boolean* | `false` |
-| touchable `v2.2.0` | Whether to allow select rate by touch gesture | *boolean* | `true` |
+| --- | --- | --- | --- |
+| v-model | Current rate | _number_ | - |
+| count | Count | _number \| string_ | `5` |
+| size | Icon size | _number \| string_ | `20px` |
+| gutter | Icon gutter | _number \| string_ | `4px` |
+| color | Selected color | _string_ | `#ffd21e` |
+| void-color | Void color | _string_ | `#c8c9cc` |
+| disabled-color | Disabled color | _string_ | `#c8c9cc` |
+| icon | Selected icon | _string_ | `star` |
+| void-icon | Void icon | _string_ | `star-o` |
+| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
+| allow-half | Whether to allow half star | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
+| disabled | Whether to disable rate | _boolean_ | `false` |
+| touchable `v2.2.0` | Whether to allow select rate by touch gesture | _boolean_ | `true` |
 
 ### Events
 
-| Event | Description | Parameters |
-|------|------|------|
+| Event  | Description                 | Parameters   |
+| ------ | --------------------------- | ------------ |
 | change | Triggered when rate changed | current rate |

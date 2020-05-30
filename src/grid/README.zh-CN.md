@@ -16,7 +16,7 @@ Vue.use(GridItem);
 
 ## 代码演示
 
-### 基本用法
+### 基础用法
 
 通过`icon`属性设置格子内的图标，`text`属性设置文字内容
 
@@ -35,12 +35,7 @@ Vue.use(GridItem);
 
 ```html
 <van-grid :column-num="3">
-  <van-grid-item
-    v-for="value in 6"
-    :key="value"
-    icon="photo-o"
-    text="文字"
-  />
+  <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -68,12 +63,7 @@ Vue.use(GridItem);
 
 ```html
 <van-grid square>
-  <van-grid-item
-    v-for="value in 8"
-    :key="value"
-    icon="photo-o"
-    text="文字"
-  />
+  <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -83,12 +73,19 @@ Vue.use(GridItem);
 
 ```html
 <van-grid :gutter="10">
-  <van-grid-item
-    v-for="value in 8"
-    :key="value"
-    icon="photo-o"
-    text="文字"
-  />
+  <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="文字" />
+</van-grid>
+```
+
+### 内容横排
+
+将`direction`属性设置为`horizontal`，可以让宫格的内容呈横向排列
+
+```html
+<van-grid direction="horizontal" :column-num="2">
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -103,14 +100,14 @@ Vue.use(GridItem);
 </van-grid>
 ```
 
-### 提示信息
+### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-grid :column-num="2">
   <van-grid-item icon="home-o" text="文字" dot />
-  <van-grid-item icon="search" text="文字" info="99+" />
+  <van-grid-item icon="search" text="文字" badge="99+" />
 </van-grid>
 ```
 
@@ -119,38 +116,40 @@ Vue.use(GridItem);
 ### Grid Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| column-num `v2.0.4` | 列数 | *number \| string* | `4` |
-| icon-size `v2.2.6` | 图标大小，默认单位为`px` | *number \| string* | `28px` |
-| gutter | 格子之间的间距，默认单位为`px` | *number \| string* | `0` |
-| border | 是否显示边框 | *boolean* | `true` |
-| center | 是否将格子内容居中显示 | *boolean* | `true` |
-| square | 是否将格子固定为正方形 | *boolean* | `false` |
-| clickable | 是否开启格子点击反馈 | *boolean* | `false` |
+| --- | --- | --- | --- |
+| column-num `v2.0.4` | 列数 | _number \| string_ | `4` |
+| icon-size `v2.2.6` | 图标大小，默认单位为`px` | _number \| string_ | `28px` |
+| gutter | 格子之间的间距，默认单位为`px` | _number \| string_ | `0` |
+| border | 是否显示边框 | _boolean_ | `true` |
+| center | 是否将格子内容居中显示 | _boolean_ | `true` |
+| square | 是否将格子固定为正方形 | _boolean_ | `false` |
+| clickable | 是否开启格子点击反馈 | _boolean_ | `false` |
+| direction `v2.8.2` | 格子内容排列的方向，可选值为 `horizontal` | _string_ | `vertical` |
 
 ### GridItem Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| text | 文字 | *string* | - |
-| icon | [图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
-| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | *string* | `van-icon` |
-| dot `v2.2.1` | 是否显示图标右上角小红点 | *boolean* | `false` |
-| info `v2.2.1` | 图标右上角徽标的内容 | *number \| string* | - |
-| url | 点击后跳转的链接地址 | *string* | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | *string \| object* | - |
-| replace | 是否在跳转时替换当前页面历史 | *boolean* | `false` |
+| --- | --- | --- | --- |
+| text | 文字 | _string_ | - |
+| icon | [图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| dot `v2.2.1` | 是否显示图标右上角小红点 | _boolean_ | `false` |
+| badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
+| info `2.2.1` | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
+| url | 点击后跳转的链接地址 | _string_ | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
+| replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
 ### GridItem Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击格子时触发 | *event: Event* |
+| 事件名 | 说明           | 回调参数       |
+| ------ | -------------- | -------------- |
+| click  | 点击格子时触发 | _event: Event_ |
 
 ### GridItem Slots
 
-| 名称 | 说明 |
-|------|------|
+| 名称    | 说明                 |
+| ------- | -------------------- |
 | default | 自定义宫格的所有内容 |
-| icon | 自定义图标 |
-| text | 自定义文字 |
+| icon    | 自定义图标           |
+| text    | 自定义文字           |

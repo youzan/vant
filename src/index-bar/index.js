@@ -32,7 +32,7 @@ export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),
-    BindEventMixin(function(bind) {
+    BindEventMixin(function (bind) {
       if (!this.scroller) {
         this.scroller = getScroller(this.$el);
       }
@@ -97,7 +97,7 @@ export default createComponent({
 
       const scrollTop = getScrollTop(this.scroller);
       const scrollerRect = this.getScrollerRect();
-      const rects = this.children.map(item => ({
+      const rects = this.children.map((item) => ({
         height: item.height,
         top: this.getElementTop(item.$el, scrollerRect),
       }));
@@ -198,7 +198,9 @@ export default createComponent({
         return;
       }
 
-      const match = this.children.filter(item => String(item.index) === index);
+      const match = this.children.filter(
+        (item) => String(item.index) === index
+      );
       if (match[0]) {
         match[0].scrollIntoView();
 
@@ -216,7 +218,7 @@ export default createComponent({
   },
 
   render() {
-    const Indexes = this.indexList.map(index => {
+    const Indexes = this.indexList.map((index) => {
       const active = index === this.activeAnchorIndex;
 
       return (

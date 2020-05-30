@@ -27,11 +27,12 @@ function getSkuImg(
 ): string | undefined {
   let img;
 
-  sku.tree.some(item => {
+  sku.tree.some((item) => {
     const id = selectedSku[item.k_s];
 
     if (id && item.v) {
-      const matchedSku = item.v.filter(skuValue => skuValue.id === id)[0] || {};
+      const matchedSku =
+        item.v.filter((skuValue) => skuValue.id === id)[0] || {};
       img = matchedSku.previewImgUrl || matchedSku.imgUrl || matchedSku.img_url;
       return img;
     }
@@ -61,7 +62,7 @@ function SkuHeader(
         <img src={goodsImg} />
         {slots['sku-header-image-extra']?.()}
       </div>
-      <div class={bem('goods-info')}>{slots.default && slots.default()}</div>
+      <div class={bem('goods-info')}>{slots.default?.()}</div>
     </div>
   );
 }

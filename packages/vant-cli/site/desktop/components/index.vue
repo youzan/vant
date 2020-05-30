@@ -51,7 +51,7 @@ export default {
   },
 
   watch: {
-    // eslint-disable-next-line
+    // eslint-disable-next-line object-shorthand
     '$route.path'() {
       this.setNav();
     },
@@ -88,7 +88,7 @@ export default {
     },
 
     keyboardHandler() {
-      window.addEventListener('keyup', event => {
+      window.addEventListener('keyup', (event) => {
         switch (event.keyCode) {
           case 37: // left
             this.keyboardNav('prev');

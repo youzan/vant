@@ -115,7 +115,7 @@ test('before-close prop', () => {
   expect(wrapper.vm.offset).toEqual(0);
 });
 
-test('name prop', done => {
+test('name prop', (done) => {
   const wrapper = mount(SwipeCell, {
     ...defaultProps,
     propsData: {

@@ -1,24 +1,24 @@
 <template>
-  <demo-block :title="$t('basicUsage')">
+  <demo-block :title="t('basicUsage')">
     <van-form @submit="onSubmit" @failed="onFailed">
       <van-field
         v-model="username"
         name="username"
-        :label="$t('username')"
-        :rules="[{ required: true, message: $t('requireUsername') }]"
-        :placeholder="$t('username')"
+        :label="t('username')"
+        :rules="[{ required: true, message: t('requireUsername') }]"
+        :placeholder="t('username')"
       />
       <van-field
         v-model="password"
         type="password"
         name="password"
-        :label="$t('password')"
-        :rules="[{ required: true, message: $t('requirePassword') }]"
-        :placeholder="$t('password')"
+        :label="t('password')"
+        :rules="[{ required: true, message: t('requirePassword') }]"
+        :placeholder="t('password')"
       />
       <div style="margin: 16px 16px 0;">
         <van-button round block type="info" native-type="submit">
-          {{ $t('submit') }}
+          {{ t('submit') }}
         </van-button>
       </div>
     </van-form>

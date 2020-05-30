@@ -101,7 +101,7 @@ export default {
       return /1\d{10}/.test(val);
     },
     asyncValidator(val) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         Toast.loading('Validating...');
 
         setTimeout(() => {
@@ -194,7 +194,7 @@ export default {
 ```html
 <van-field name="stepper" label="Stepper">
   <template #input>
-    <van-stepper v-model="stepper"/>
+    <van-stepper v-model="stepper" />
   </template>
 </van-field>
 ```
@@ -379,7 +379,7 @@ export default {
   },
   methods: {
     onConfirm(values) {
-      this.value = values.map(item => item.name).join('/');
+      this.value = values.map((item) => item.name).join('/');
       this.showArea = false;
     },
   },
@@ -423,47 +423,50 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| label-width | Field label width | *number \| string* | `90px` |
-| label-align | Field label align, can be set to `center` `right` | *string* | `left` |
-| input-align | Field input align, can be set to `center` `right` | *string* | `left` |
-| error-message-align | Error message align, can be set to `center` `right` | *string* | `left` |
-| validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | *string* | `onBlur` |
-| colon | Whether to display `:` after label | *boolean* | `false` |
-| validate-first | Whether to stop the validation when a rule fails | *boolean* | `false` |
-| scroll-to-error `v2.5.2` | Whether to scroll to the error field when submit failed | *boolean* | `false` |
+| --- | --- | --- | --- |
+| label-width | Field label width | _number \| string_ | `90px` |
+| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
+| input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
+| error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
+| validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
+| colon | Whether to display colon after label | _boolean_ | `false` |
+| validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
+| scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
+| show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
+| show-error-message `v2.5.8` | Whether to show error message when validation failed | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | Whether to submit form on enter | _boolean_ | `true` |
 
-### Data Structure of Rule 
+### Data Structure of Rule
 
 | Key | Description | Type |
-|------|------|------|
-| required | Whether to be a required field | *boolean* |
-| message `v2.5.3` | Error message | *string \| (value, rule) => string* |
-| validator `v2.5.3` | Custom validator | *(value, rule) => boolean \| Promise* |
-| pattern `v2.5.3` | Regex pattern | *RegExp* |
-| trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | *string* |
-| formatter `v2.5.3` | Format value before validate | *(value, rule) => any* |
+| --- | --- | --- |
+| required | Whether to be a required field | _boolean_ |
+| message `v2.5.3` | Error message | _string \| (value, rule) => string_ |
+| validator `v2.5.3` | Custom validator | _(value, rule) => boolean \| Promise_ |
+| pattern `v2.5.3` | Regex pattern | _RegExp_ |
+| trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
+| formatter `v2.5.3` | Format value before validate | _(value, rule) => any_ |
 
 ### Events
 
 | Event | Description | Arguments |
-|------|------|------|
-| submit | Triggered after submitting the form and validation passed | *values: object* |
-| failed | Triggered after submitting the form and validation failed |  *errorInfo: { values: object, errors: object[] }* |
+| --- | --- | --- |
+| submit | Triggered after submitting the form and validation passed | _values: object_ |
+| failed | Triggered after submitting the form and validation failed | _errorInfo: { values: object, errors: object[] }_ |
 
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods
 
 | Name | Description | Attribute | Return value |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| validate | Validate form | *name?: string* | *Promise* |
-| resetValidation | Reset validation | *name?: string* | - |
-| scrollToField `v2.5.2` | Scroll to field | *name: string* | - |
+| validate | Validate form | _name?: string_ | _Promise_ |
+| resetValidation | Reset validation | _name?: string_ | - |
+| scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 
-| Name | Description |
-| ---- | ----------- |
+| Name    | Description  |
+| ------- | ------------ |
 | default | Form content |

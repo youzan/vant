@@ -32,12 +32,7 @@ Vue.use(Skeleton);
 将`loading`属性设置成`false`表示内容加载完成，此时会隐藏占位图，并显示`Skeleton`的子组件
 
 ```html
-<van-skeleton
-  title
-  avatar
-  :row="3"
-  :loading="loading"
->
+<van-skeleton title avatar :row="3" :loading="loading">
   <div>实际内容</div>
 </van-skeleton>
 ```
@@ -46,12 +41,12 @@ Vue.use(Skeleton);
 export default {
   data() {
     return {
-      loading: true
-    }
+      loading: true,
+    };
   },
   mounted() {
     this.loading = false;
-  }
+  },
 };
 ```
 
@@ -60,13 +55,13 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| row | 段落占位图行数 | *number \| string* | `0` |
-| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | *number \| string \|<br>(number \| string)[]* | `100%` |
-| title | 是否显示标题占位图 | *boolean* | `false` |
-| avatar | 是否显示头像占位图 | *boolean* | `false` |
-| loading | 是否显示骨架屏，传`false`时会展示子组件内容 | *boolean* | `true` |
-| animate | 是否开启动画 | *boolean* | `true` |
-| title-width | 标题占位图宽度 | *number \| string* | `40%` |
-| avatar-size | 头像占位图大小 | *number \| string* | `32px` |
-| avatar-shape | 头像占位图形状，可选值为`square` | *string* | `round` |
+| --- | --- | --- | --- |
+| row | 段落占位图行数 | _number \| string_ | `0` |
+| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | _number \| string \|<br>(number \| string)[]_ | `100%` |
+| title | 是否显示标题占位图 | _boolean_ | `false` |
+| avatar | 是否显示头像占位图 | _boolean_ | `false` |
+| loading | 是否显示骨架屏，传`false`时会展示子组件内容 | _boolean_ | `true` |
+| animate | 是否开启动画 | _boolean_ | `true` |
+| title-width | 标题占位图宽度 | _number \| string_ | `40%` |
+| avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
+| avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |

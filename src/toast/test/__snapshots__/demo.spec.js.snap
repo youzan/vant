@@ -2,10 +2,28 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">文字提示</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">长文字提示</span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">加载提示</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义加载图标</span></button></div>
-  <div><button class="van-button van-button--info van-button--normal"><span class="van-button__text">成功提示</span></button> <button class="van-button van-button--danger van-button--normal"><span class="van-button__text">失败提示</span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">自定义图标</span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">展示图片</span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">动态更新提示</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">文字提示</span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">长文字提示</span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">加载提示</span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">自定义加载图标</span></div>
+    </button></div>
+  <div><button class="van-button van-button--info van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">成功提示</span></div>
+    </button> <button class="van-button van-button--danger van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">失败提示</span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">自定义图标</span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">展示图片</span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">动态更新提示</span></div>
+    </button></div>
 </div>
 `;

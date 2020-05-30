@@ -114,7 +114,7 @@ export default {
     },
     // 异步校验函数返回 Promise
     asyncValidator(val) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         Toast.loading('验证中...');
 
         setTimeout(() => {
@@ -412,7 +412,7 @@ export default {
   },
   methods: {
     onConfirm(values) {
-      this.value = values.map(item => item.name).join('/');
+      this.value = values.map((item) => item.name).join('/');
       this.showArea = false;
     },
   },
@@ -458,15 +458,18 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| label-width | 表单项 label 宽度，默认单位为`px` | *number \| string* | `90px` |
-| label-align | 表单项 label 对齐方式，可选值为 `center` `right` | *string* | `left` |
-| input-align | 输入框对齐方式，可选值为 `center` `right` | *string* | `left` |
-| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | *string* | `left` |
-| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为`onChange` | *string* | `onBlur` |
-| colon | 是否在 label 后面添加冒号 | *boolean* | `false` |
-| validate-first | 是否在某一项校验不通过时停止校验 | *boolean* | `false` |
-| scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | *boolean* | `false` |
+| --- | --- | --- | --- |
+| label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `90px` |
+| label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为`onChange` | _string_ | `onBlur` |
+| colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
+| validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
+| scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
+| show-error `v2.6.0` | 是否在校验不通过时标红输入框 | _boolean_ | `true` |
+| show-error-message `v2.5.8` | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
+| submit-on-enter `v2.8.3` | 是否在按下回车键时提交表单 | _boolean_ | `true` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
 
@@ -475,36 +478,36 @@ export default {
 使用 Field 的`rules`属性可以定义校验规则，可选属性如下:
 
 | 键名 | 说明 | 类型 |
-|------|------|------|
-| required | 是否为必选字段 | *boolean* |
-| message `v2.5.3` | 错误提示文案 | *string \| (value, rule) => string* |
-| validator `v2.5.3` | 通过函数进行校验 | *(value, rule) => boolean \| Promise* |
-| pattern `v2.5.3` | 通过正则表达式进行校验 | *RegExp* |
-| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | *string* |
-| formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | *(value, rule) => any* |
+| --- | --- | --- |
+| required | 是否为必选字段 | _boolean_ |
+| message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
+| validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
+| pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
+| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | _string_ |
+| formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| submit | 提交表单且验证通过后触发 | *values: object* |
-| failed | 提交表单且验证不通过后触发 |  *errorInfo: { values: object, errors: object[] }* |
+| --- | --- | --- |
+| submit | 提交表单且验证通过后触发 | _values: object_ |
+| failed | 提交表单且验证不通过后触发 | _errorInfo: { values: object, errors: object[] }_ |
 
 ### 方法
 
 通过 ref 可以获取到 Form 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
 
 | 方法名 | 说明 | 参数 | 返回值 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
-| validate | 验证表单，支持传入`name`来验证单个表单项 | *name?: string* | *Promise* |
-| resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | *name?: string* | - |
-| scrollToField `v2.5.2` | 滚动到对应表单项的位置 | *name: string* | - |
+| validate | 验证表单，支持传入`name`来验证单个表单项 | _name?: string_ | _Promise_ |
+| resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | _name?: string_ | - |
+| scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
+| 名称    | 说明     |
+| ------- | -------- |
 | default | 表单内容 |
 
 ## 常见问题

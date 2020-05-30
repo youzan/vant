@@ -4,33 +4,41 @@
   position: relative;
   background-color: @picker-background-color;
   user-select: none;
-  -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
 
   &__toolbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     height: @picker-toolbar-height;
-    line-height: @picker-toolbar-height;
   }
 
   &__cancel,
   &__confirm {
+    height: 100%;
     padding: @picker-action-padding;
-    color: @picker-action-text-color;
     font-size: @picker-action-font-size;
     background-color: transparent;
     border: none;
     cursor: pointer;
 
     &:active {
-      background-color: @picker-action-active-color;
+      opacity: @active-opacity;
     }
+  }
+
+  &__confirm {
+    color: @picker-confirm-action-color;
+  }
+
+  &__cancel {
+    color: @picker-cancel-action-color;
   }
 
   &__title {
     max-width: 50%;
     font-weight: @font-weight-bold;
     font-size: @picker-title-font-size;
+    line-height: @picker-title-line-height;
     text-align: center;
   }
 
@@ -57,9 +65,9 @@
   &__frame {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: @padding-md;
+    left: @padding-md;
     z-index: 3;
-    width: 100%;
     transform: translateY(-50%);
     pointer-events: none;
   }
@@ -71,8 +79,12 @@
     z-index: 2;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .9), hsla(0, 0%, 100%, .4)),
-      linear-gradient(0deg, hsla(0, 0%, 100%, .9), hsla(0, 0%, 100%, .4));
+    background-image: linear-gradient(
+        180deg,
+        hsla(0, 0%, 100%, 0.9),
+        hsla(0, 0%, 100%, 0.4)
+      ),
+      linear-gradient(0deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.4));
     background-repeat: no-repeat;
     background-position: top, bottom;
     backface-visibility: hidden;
@@ -83,14 +95,16 @@
     flex: 1;
     overflow: hidden;
     font-size: @picker-option-font-size;
-    text-align: center;
 
     &__wrapper {
       transition-timing-function: cubic-bezier(0.23, 1, 0.68, 1);
     }
 
     &__item {
-      padding: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 @padding-base;
       color: @picker-option-text-color;
 
       &--disabled {

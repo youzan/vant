@@ -5,7 +5,7 @@ import locale from '../../locale';
 export function createI18N(name: string) {
   const prefix = camelize(name) + '.';
 
-  return function(path: string, ...args: any[]): string {
+  return function (path: string, ...args: any[]): string {
     const messages = locale.messages();
     const message = get(messages, prefix + path) || get(messages, path);
 

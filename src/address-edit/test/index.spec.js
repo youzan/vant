@@ -1,5 +1,5 @@
 import AddressEdit from '..';
-import areaList from '../../area/demo/area.simple';
+import areaList from '../../area/demo/area-simple';
 import { mount, later } from '../../../test';
 
 const addressInfo = {
@@ -293,4 +293,16 @@ test('select area', () => {
   const { wrapper, data } = createComponent();
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(data.areaCode).toEqual('110101');
+});
+
+test('click-area event', () => {
+  const wrapper = mount(AddressEdit, {
+    propsData: {
+      disableArea: true,
+    },
+  });
+
+  const field = wrapper.findAll('.van-field').at(2);
+  field.trigger('click');
+  expect(wrapper.emitted('click-area')[0]).toBeTruthy();
 });

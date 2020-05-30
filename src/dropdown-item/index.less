@@ -7,6 +7,11 @@
   z-index: @dropdown-item-z-index;
   overflow: hidden;
 
+  &__icon {
+    display: block;
+    line-height: inherit;
+  }
+
   &__option {
     text-align: left;
 
@@ -30,10 +35,5 @@
   &__content {
     position: absolute;
     max-height: @dropdown-menu-content-max-height;
-  }
-
-  &__icon {
-    display: block;
-    line-height: inherit;
   }
 }

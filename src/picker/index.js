@@ -1,7 +1,7 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { BORDER_TOP_BOTTOM, BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
+import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
 
 // Components
@@ -84,7 +84,7 @@ export default createComponent({
         const defaultIndex = cursor.defaultIndex || +this.defaultIndex;
 
         formatted.push({
-          values: cursor.children.map(item => item[this.valueKey]),
+          values: cursor.children.map((item) => item[this.valueKey]),
           className: cursor.className,
           defaultIndex,
         });
@@ -111,14 +111,9 @@ export default createComponent({
         cursor = cursor.children[indexes[i]];
       }
 
-      while (cursor.children) {
+      while (cursor && cursor.children) {
         columnIndex++;
-
-        this.setColumnValues(
-          columnIndex,
-          cursor.children.map(item => item[this.valueKey])
-        );
-
+        this.setColumnValues(columnIndex, cursor.children);
         cursor = cursor.children[cursor.defaultIndex || 0];
       }
     },
@@ -156,7 +151,14 @@ export default createComponent({
     // set column value by index
     setColumnValue(index, value) {
       const column = this.getColumn(index);
-      column && column.setValue(value);
+
+      if (column) {
+        column.setValue(value);
+
+        if (this.dataType === 'cascade') {
+          this.onCascadeChange(index);
+        }
+      }
     },
 
     // @exposed-api
@@ -169,7 +171,14 @@ export default createComponent({
     // set column option index by column index
     setColumnIndex(columnIndex, optionIndex) {
       const column = this.getColumn(columnIndex);
-      column && column.setIndex(optionIndex);
+
+      if (column) {
+        column.setIndex(optionIndex);
+
+        if (this.dataType === 'cascade') {
+          this.onCascadeChange(columnIndex);
+        }
+      }
     },
 
     // @exposed-api
@@ -184,14 +193,21 @@ export default createComponent({
       const column = this.children[index];
 
       if (column) {
-        column.setOptions(options);
+        if (this.dataType === 'cascade') {
+          // map should be removed in next major version
+          column.setOptions(
+            options.map((item) => (isObject(item) ? item[this.valueKey] : item))
+          );
+        } else {
+          column.setOptions(options);
+        }
       }
     },
 
     // @exposed-api
     // get values of all columns
     getValues() {
-      return this.children.map(child => child.getValue());
+      return this.children.map((child) => child.getValue());
     },
 
     // @exposed-api
@@ -205,7 +221,7 @@ export default createComponent({
     // @exposed-api
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(child => child.currentIndex);
+      return this.children.map((child) => child.currentIndex);
     },
 
     // @exposed-api
@@ -218,7 +234,7 @@ export default createComponent({
 
     // @exposed-api
     confirm() {
-      this.children.forEach(child => child.stopMomentum());
+      this.children.forEach((child) => child.stopMomentum());
       this.emit('confirm');
     },
 
@@ -241,7 +257,7 @@ export default createComponent({
     genToolbar() {
       if (this.showToolbar) {
         return (
-          <div class={[BORDER_TOP_BOTTOM, bem('toolbar')]}>
+          <div class={bem('toolbar')}>
             {this.slots() || [
               <button type="button" class={bem('cancel')} onClick={this.cancel}>
                 {this.cancelButtonText || t('cancel')}

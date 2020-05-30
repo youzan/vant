@@ -1,14 +1,14 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <van-search v-model="value1" :placeholder="$t('placeholder')" />
+    <demo-block :title="t('basicUsage')">
+      <van-search v-model="value1" :placeholder="t('placeholder')" />
     </demo-block>
 
-    <demo-block :title="$t('listenToEvents')">
+    <demo-block :title="t('listenToEvents')">
       <form action="/">
         <van-search
           v-model="value5"
-          :placeholder="$t('placeholder')"
+          :placeholder="t('placeholder')"
           show-action
           @search="onSearch"
           @cancel="onCancel"
@@ -16,37 +16,37 @@
       </form>
     </demo-block>
 
-    <demo-block :title="$t('inputAlign')">
+    <demo-block :title="t('inputAlign')">
       <van-search
         v-model="value4"
-        :placeholder="$t('placeholder')"
+        :placeholder="t('placeholder')"
         input-align="center"
       />
     </demo-block>
 
-    <demo-block :title="$t('disabled')">
-      <van-search v-model="value3" :placeholder="$t('placeholder')" disabled />
+    <demo-block :title="t('disabled')">
+      <van-search v-model="value3" :placeholder="t('placeholder')" disabled />
     </demo-block>
 
-    <demo-block :title="$t('background')">
+    <demo-block :title="t('background')">
       <van-search
         v-model="value2"
-        :placeholder="$t('placeholder')"
+        :placeholder="t('placeholder')"
         shape="round"
         background="#4fc08d"
       />
     </demo-block>
 
-    <demo-block :title="$t('customButton')">
+    <demo-block :title="t('customButton')">
       <van-search
         v-model="value6"
-        :placeholder="$t('placeholder')"
         show-action
-        :label="$t('label')"
+        :label="t('label')"
+        :placeholder="t('placeholder')"
         @search="onSearch"
       >
         <template #action>
-          <div @click="onSearch">{{ $t('search') }}</div>
+          <div @click="onSearch">{{ t('search') }}</div>
         </template>
       </van-search>
     </demo-block>
@@ -93,7 +93,7 @@ export default {
     },
 
     onCancel() {
-      this.$toast(this.$t('cancel'));
+      this.$toast(this.t('cancel'));
     },
   },
 };

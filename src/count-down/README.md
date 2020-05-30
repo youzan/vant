@@ -21,10 +21,10 @@ Vue.use(CountDown);
 export default {
   data() {
     return {
-      time: 30 * 60 * 60 * 1000
+      time: 30 * 60 * 60 * 1000,
     };
-  }
-}
+  },
+};
 ```
 
 ### Custom Format
@@ -44,22 +44,28 @@ export default {
 ```html
 <van-count-down :time="time">
   <template v-slot="timeData">
-    <span class="item">{{ timeData.hours }}</span>
-    <span class="item">{{ timeData.minutes }}</span>
-    <span class="item">{{ timeData.seconds }}</span>
+    <span class="block">{{ timeData.hours }}</span>
+    <span class="colon">:</span>
+    <span class="block">{{ timeData.minutes }}</span>
+    <span class="colon">:</span>
+    <span class="block">{{ timeData.seconds }}</span>
   </template>
 </van-count-down>
 
 <style>
-.item {
-  display: inline-block;
-  width: 22px;
-  margin-right: 5px;
-  color: #fff;
-  font-size: 12px;
-  text-align: center;
-  background-color: #1989fa;
-}
+  .colon {
+    display: inline-block;
+    margin: 0 4px;
+    color: #ee0a24;
+  }
+  .block {
+    display: inline-block;
+    width: 22px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ee0a24;
+  }
 </style>
 ```
 
@@ -97,9 +103,9 @@ export default {
     },
     finish() {
       Toast('Finished');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## API
@@ -107,53 +113,53 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| time | Total time | *number \| string* | `0` |
-| format | Time format | *string* | `HH:mm:ss` |
-| auto-start | Whether to auto start count down | *boolean* | `true` |
-| millisecond | Whether to enable millisecond render | *boolean* | `false` |
+| --- | --- | --- | --- |
+| time | Total time | _number \| string_ | `0` |
+| format | Time format | _string_ | `HH:mm:ss` |
+| auto-start | Whether to auto start count down | _boolean_ | `true` |
+| millisecond | Whether to enable millisecond render | _boolean_ | `false` |
 
 ### Available formats
 
-| Format | Description |
-|------|------|
-| DD | Day |
-| HH | Hour |
-| mm | Minute |
-| ss | Second |
-| S | Millisecond, 1-digit |
-| SS | Millisecond, 2-digits |
-| SSS | Millisecond, 3-digits |
+| Format | Description           |
+| ------ | --------------------- |
+| DD     | Day                   |
+| HH     | Hour                  |
+| mm     | Minute                |
+| ss     | Second                |
+| S      | Millisecond, 1-digit  |
+| SS     | Millisecond, 2-digits |
+| SSS    | Millisecond, 3-digits |
 
 ### Events
 
-| Event | Description | Arguments |
-|------|------|------|
-| finish | Triggered when count down finished | - |
-| change `v2.4.4` | Triggered when count down changed | *timeData: TimeData* |
+| Event           | Description                        | Arguments            |
+| --------------- | ---------------------------------- | -------------------- |
+| finish          | Triggered when count down finished | -                    |
+| change `v2.4.4` | Triggered when count down changed  | _timeData: TimeData_ |
 
 ### Slots
 
-| Name | Description | SlotProps |
-|------|------|------|
-| default | Custom Content | *timeData: TimeData* |
+| Name    | Description    | SlotProps            |
+| ------- | -------------- | -------------------- |
+| default | Custom Content | _timeData: TimeData_ |
 
 ### TimeData Structure
 
-| Name | Description | Type |
-|------|------|------|
-| days | Remain days | *number* |
-| hours | Remain hours | *number* |
-| minutes | Remain minutes | *number* |
-| seconds | Remain seconds | *number* |
-| milliseconds | Remain milliseconds | *number* |
+| Name         | Description         | Type     |
+| ------------ | ------------------- | -------- |
+| days         | Remain days         | _number_ |
+| hours        | Remain hours        | _number_ |
+| minutes      | Remain minutes      | _number_ |
+| seconds      | Remain seconds      | _number_ |
+| milliseconds | Remain milliseconds | _number_ |
 
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get CountDown instance and call instance methods
 
-| Name | Description | Attribute | Return value |
-|------|------|------|------|
-| start | Start count down | - | - |
-| pause | Pause count down | - | - |
-| reset | Reset count down | - | - |
+| Name  | Description      | Attribute | Return value |
+| ----- | ---------------- | --------- | ------------ |
+| start | Start count down | -         | -            |
+| pause | Pause count down | -         | -            |
+| reset | Reset count down | -         | -            |

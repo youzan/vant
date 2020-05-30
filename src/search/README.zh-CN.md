@@ -41,7 +41,7 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      value: ''
+      value: '',
     };
   },
   methods: {
@@ -50,9 +50,9 @@ export default {
     },
     onCancel() {
       Toast('取消');
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 > Tips: 在 van-search 外层增加 form 标签，且 action 不为空，即可在 iOS 输入法中显示搜索按钮
@@ -74,11 +74,7 @@ export default {
 通过`disabled`属性禁用搜索框
 
 ```html
-<van-search
-  v-model="value"
-  disabled
-  placeholder="请输入搜索关键词"
-/>
+<van-search v-model="value" disabled placeholder="请输入搜索关键词" />
 ```
 
 ### 自定义背景色
@@ -102,10 +98,13 @@ export default {
 <van-search
   v-model="value"
   show-action
+  label="地址"
   placeholder="请输入搜索关键词"
   @search="onSearch"
 >
-  <div slot="action" @click="onSearch">搜索</div>
+  <template #action>
+    <div @click="onSearch">搜索</div>
+  </template>
 </van-search>
 ```
 
@@ -114,40 +113,46 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| label | 搜索框左侧文本 | *string* | - |
-| shape | 搜索框形状，可选值为 `round` | *string* | `square` |
-| background | 搜索框外部背景色 | *string* | `#f2f2f2` |
-| maxlength | 输入的最大字符数 | *number \| string* | - |
-| placeholder | 占位提示文字 | *string* | - |
-| clearable | 是否启用清除控件 | *boolean* | `true` |
-| autofocus | 是否自动聚焦，iOS 系统不支持该属性 | *boolean* | `false` |
-| show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` |
-| action-text `v2.2.2` | 取消按钮文字 | *boolean* | `取消` |
-| disabled | 是否禁用输入框 | *boolean* | `false` |
-| readonly | 是否将输入框设为只读 | *boolean* | `false` |
-| error | 是否将输入内容标红 | *boolean* | `false` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
-| left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | `search` |
-| right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | *string* | - |
+| --- | --- | --- | --- |
+| label | 搜索框左侧文本 | _string_ | - |
+| shape | 搜索框形状，可选值为 `round` | _string_ | `square` |
+| background | 搜索框外部背景色 | _string_ | `#f2f2f2` |
+| maxlength | 输入的最大字符数 | _number \| string_ | - |
+| placeholder | 占位提示文字 | _string_ | - |
+| clearable | 是否启用清除控件 | _boolean_ | `true` |
+| autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
+| show-action | 是否在搜索框右侧显示取消按钮 | _boolean_ | `false` |
+| action-text `v2.2.2` | 取消按钮文字 | _boolean_ | `取消` |
+| disabled | 是否禁用输入框 | _boolean_ | `false` |
+| readonly | 是否将输入框设为只读 | _boolean_ | `false` |
+| error | 是否将输入内容标红 | _boolean_ | `false` |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `search` |
+| right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| search | 确定搜索时触发 | *value: string (当前输入的值)* |
-| input | 输入框内容变化时触发 | *value: string (当前输入的值)* |
-| focus | 输入框获得焦点时触发 | *event: Event* |
-| blur | 输入框失去焦点时触发 | *event: Event* |
-| clear | 点击清除按钮后触发 | *event: Event* |
-| cancel | 点击取消按钮时触发 | - |
+| 事件名 | 说明                 | 回调参数                       |
+| ------ | -------------------- | ------------------------------ |
+| search | 确定搜索时触发       | _value: string (当前输入的值)_ |
+| input  | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus  | 输入框获得焦点时触发 | _event: Event_                 |
+| blur   | 输入框失去焦点时触发 | _event: Event_                 |
+| clear  | 点击清除按钮后触发   | _event: Event_                 |
+| cancel | 点击取消按钮时触发   | -                              |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
-| left | 自定义左侧内容（搜索框外） |
-| action | 自定义右侧内容（搜索框外），设置`show-action`属性后展示 |
-| label | 自定义左侧文本（搜索框内） |
-| left-icon | 自定义左侧图标（搜索框内） |
-| right-icon | 自定义右侧图标（搜索框内） |
+| 名称       | 说明                                                    |
+| ---------- | ------------------------------------------------------- |
+| left       | 自定义左侧内容（搜索框外）                              |
+| action     | 自定义右侧内容（搜索框外），设置`show-action`属性后展示 |
+| label      | 自定义左侧文本（搜索框内）                              |
+| left-icon  | 自定义左侧图标（搜索框内）                              |
+| right-icon | 自定义右侧图标（搜索框内）                              |
+
+## 常见问题
+
+### 在桌面端点击清除按钮无效？
+
+清除按钮监听是的移动端 Touch 事件，参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。

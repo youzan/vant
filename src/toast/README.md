@@ -22,13 +22,13 @@ Toast('Some messages');
 ```js
 Toast.loading({
   message: 'Loading...',
-  forbidClick: true
+  forbidClick: true,
 });
 
 Toast.loading({
   message: 'Loading...',
   forbidClick: true,
-  loadingType: 'spinner'
+  loadingType: 'spinner',
 });
 ```
 
@@ -44,12 +44,12 @@ Toast.fail('Fail');
 ```js
 Toast({
   message: 'Custom Icon',
-  icon: 'like-o'
+  icon: 'like-o',
 });
 
 Toast({
   message: 'Custom Image',
-  icon: 'https://img.yzcdn.cn/vant/logo.png'
+  icon: 'https://img.yzcdn.cn/vant/logo.png',
 });
 ```
 
@@ -60,7 +60,7 @@ const toast = Toast.loading({
   duration: 0, // continuous display toast
   forbidClick: true,
   loadingType: 'spinner',
-  message: '3 seconds'
+  message: '3 seconds',
 });
 
 let second = 3;
@@ -75,16 +75,16 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-### $toast Method
+### \$toast Method
 
-After import the Toast component, the $toast method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After import the Toast component, the \$toast method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
 export default {
   mounted() {
     this.$toast('Some messages');
-  }
-}
+  },
+};
 ```
 
 ### Singleton
@@ -124,7 +124,7 @@ Toast.resetDefaultOptions('loading');
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | Toast | `options | message` | toast instance | Show toast |
 | Toast.loading | `options | message` | toast instance | Show loading toast |
 | Toast.success | `options | message` | toast instance | Show success toast |
@@ -137,20 +137,20 @@ Toast.resetDefaultOptions('loading');
 ### Options
 
 | Attribute | Description | Type | Default |
-|------|------|------|------|
-| type | Can be set to `loading` `success` `fail` `html` | *string* | `text` |
-| position | Can be set to `top` `middle` `bottom` | *string* | `middle` |
-| message | Message | *string* | `''` |
-| icon `v2.0.1` | Custom icon | *string* | - |
-| iconPrefix `v2.0.9` | Icon className prefix | *string* | `van-icon` |
-| overlay `v2.2.13` | Whether to show overlay | *boolean* | `false` |
-| forbidClick | Whether to forbid click background | *boolean* | `false` |
-| closeOnClick `v2.1.5` | Whether to close after clicked | *boolean* | `false` |
-| closeOnClickOverlay `v2.2.13` | Whether to close when click overlay | *boolean* | `false` |
-| loadingType | Loading icon type, can be set to `spinner` | *string* | `circular` |
-| duration | Toast duration(ms), won't disappear if value is 0 | *number* | `2000` |
-| className | Custom className | *any* | - |
-| onOpened | Callback function after opened | *Function* | - |
-| onClose | Callback function after close | *Function* | - |
-| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | *string* | `van-fade` |
-| getContainer | Return the mount node for Toast | *string \| () => Element* | `body` |
+| --- | --- | --- | --- |
+| type | Can be set to `loading` `success` `fail` `html` | _string_ | `text` |
+| position | Can be set to `top` `middle` `bottom` | _string_ | `middle` |
+| message | Message | _string_ | `''` |
+| icon `v2.0.1` | Custom icon | _string_ | - |
+| iconPrefix `v2.0.9` | Icon className prefix | _string_ | `van-icon` |
+| overlay `v2.2.13` | Whether to show overlay | _boolean_ | `false` |
+| forbidClick | Whether to forbid click background | _boolean_ | `false` |
+| closeOnClick `v2.1.5` | Whether to close after clicked | _boolean_ | `false` |
+| closeOnClickOverlay `v2.2.13` | Whether to close when click overlay | _boolean_ | `false` |
+| loadingType | Loading icon type, can be set to `spinner` | _string_ | `circular` |
+| duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
+| className | Custom className | _any_ | - |
+| onOpened | Callback function after opened | _Function_ | - |
+| onClose | Callback function after close | _Function_ | - |
+| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
+| getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |

@@ -1,6 +1,8 @@
 import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
-import { BORDER } from '../utils/constant';
+import Loading from '../loading';
+import DeleteIcon from './DeleteIcon';
+import CollapseIcon from './CollapseIcon';
 
 const [createComponent, bem] = createNamespace('key');
 
@@ -10,32 +12,16 @@ export default createComponent({
   props: {
     type: String,
     text: [Number, String],
-    theme: {
-      type: Array,
-      default: () => [],
-    },
+    color: String,
+    wider: Boolean,
+    large: Boolean,
+    loading: Boolean,
   },
 
   data() {
     return {
       active: false,
     };
-  },
-
-  computed: {
-    className() {
-      const classNames = this.theme.slice(0);
-
-      if (this.active) {
-        classNames.push('active');
-      }
-
-      if (this.type) {
-        classNames.push(this.type);
-      }
-
-      return bem(classNames);
-    },
   },
 
   mounted() {
@@ -65,13 +51,45 @@ export default createComponent({
         this.$emit('press', this.text, this.type);
       }
     },
+
+    genContent() {
+      const isExtra = this.type === 'extra';
+      const isDelete = this.type === 'delete';
+      const text = this.slots('default') || this.text;
+
+      if (this.loading) {
+        return <Loading class={bem('loading-icon')} />;
+      }
+
+      if (isDelete) {
+        return text || <DeleteIcon class={bem('delete-icon')} />;
+      }
+
+      if (isExtra) {
+        return text || <CollapseIcon class={bem('collapse-icon')} />;
+      }
+
+      return text;
+    },
   },
 
   render() {
     return (
-      <i role="button" tabindex="0" class={[BORDER, this.className]}>
-        {this.slots('default') || this.text}
-      </i>
+      <div class={bem('wrapper', { wider: this.wider })}>
+        <button
+          type="button"
+          class={bem([
+            this.color,
+            {
+              large: this.large,
+              active: this.active,
+              delete: this.type === 'delete',
+            },
+          ])}
+        >
+          {this.genContent()}
+        </button>
+      </div>
     );
   },
 });

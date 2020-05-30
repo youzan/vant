@@ -108,16 +108,16 @@ export default {
     return {
       show: {
         primary: true,
-        success: true
-      }
-    }
+        success: true,
+      },
+    };
   },
   methods: {
     close(type) {
       this.show[type] = false;
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ## API
@@ -125,25 +125,25 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| type | 类型，可选值为`primary` `success` `danger` `warning` | *string* | `default` |
-| size | 大小, 可选值为`large` `medium` | *string* | - |
-| color | 标签颜色 | *string* | - |
-| plain | 是否为空心样式 | *boolean* | `false` |
-| round | 是否为圆角样式 | *boolean* | `false` |
-| mark | 是否为标记样式 | *boolean* | `false` |
-| text-color | 文本颜色，优先级高于`color`属性 | *string* | `white` |
-| closeable `v2.2.9` | 是否为可关闭标签 | *boolean* | `false` |
+| --- | --- | --- | --- |
+| type | 类型，可选值为`primary` `success` `danger` `warning` | _string_ | `default` |
+| size | 大小, 可选值为`large` `medium` | _string_ | - |
+| color | 标签颜色 | _string_ | - |
+| plain | 是否为空心样式 | _boolean_ | `false` |
+| round | 是否为圆角样式 | _boolean_ | `false` |
+| mark | 是否为标记样式 | _boolean_ | `false` |
+| text-color | 文本颜色，优先级高于`color`属性 | _string_ | `white` |
+| closeable `v2.2.9` | 是否为可关闭标签 | _boolean_ | `false` |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
+| 名称    | 说明         |
+| ------- | ------------ |
 | default | 标签显示内容 |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|------|------|------|
-| click | 点击时触发 | *event: Event* |
-| close | 关闭标签时触发 | - |
+| 事件名 | 说明           | 回调参数       |
+| ------ | -------------- | -------------- |
+| click  | 点击时触发     | _event: Event_ |
+| close  | 关闭标签时触发 | -              |

@@ -2,26 +2,38 @@
 
 exports[`button color 1`] = `
 <div role="dialog" class="van-dialog" name="van-dialog-bounce">
-  <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel" style="color: white;"><span class="van-button__text">取消</span></button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left" style="color: red;"><span class="van-button__text">确认</span></button></div>
+  <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel" style="color: white;">
+      <div class="van-button__content"><span class="van-button__text">取消</span></div>
+    </button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left" style="color: red;">
+      <div class="van-button__content"><span class="van-button__text">确认</span></div>
+    </button></div>
 </div>
 `;
 
 exports[`button text 1`] = `
 <div role="dialog" class="van-dialog" name="van-dialog-bounce">
-  <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel"><span class="van-button__text">Custom cancel</span></button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"><span class="van-button__text">Custom confirm</span></button></div>
+  <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel">
+      <div class="van-button__content"><span class="van-button__text">Custom cancel</span></div>
+    </button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
+      <div class="van-button__content"><span class="van-button__text">Custom confirm</span></div>
+    </button></div>
 </div>
 `;
 
 exports[`default slot 1`] = `
 <div role="dialog" class="van-dialog" name="van-dialog-bounce">
   <div class="van-dialog__content">Custom Message</div>
-  <div class="van-hairline--top van-dialog__footer"><button class="van-button van-button--default van-button--large van-dialog__confirm"><span class="van-button__text">确认</span></button></div>
+  <div class="van-hairline--top van-dialog__footer"><button class="van-button van-button--default van-button--large van-dialog__confirm">
+      <div class="van-button__content"><span class="van-button__text">确认</span></div>
+    </button></div>
 </div>
 `;
 
 exports[`title slot 1`] = `
 <div role="dialog" class="van-dialog" name="van-dialog-bounce">
   <div class="van-dialog__header van-dialog__header--isolated">Custom Title</div>
-  <div class="van-hairline--top van-dialog__footer"><button class="van-button van-button--default van-button--large van-dialog__confirm"><span class="van-button__text">确认</span></button></div>
+  <div class="van-hairline--top van-dialog__footer"><button class="van-button van-button--default van-button--large van-dialog__confirm">
+      <div class="van-button__content"><span class="van-button__text">确认</span></div>
+    </button></div>
 </div>
 `;

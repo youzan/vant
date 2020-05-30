@@ -49,7 +49,9 @@ Vue.use(Divider);
 可以直接通过`style`属性设置分割线的样式
 
 ```html
-<van-divider :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }">
+<van-divider
+  :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"
+>
   文字
 </van-divider>
 ```
@@ -58,14 +60,14 @@ Vue.use(Divider);
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|------|------|------|------|
-| dashed | 是否使用虚线 | *boolean* | `false` |
-| hairline | 是否使用 0.5px 线 | *boolean* | `true` |
-| content-position | 内容位置，可选值为`left` `right` | *string* | `center` |
+| 参数             | 说明                             | 类型      | 默认值   |
+| ---------------- | -------------------------------- | --------- | -------- |
+| dashed           | 是否使用虚线                     | _boolean_ | `false`  |
+| hairline         | 是否使用 0.5px 线                | _boolean_ | `true`   |
+| content-position | 内容位置，可选值为`left` `right` | _string_  | `center` |
 
 ### Slots
 
-| 名称 | 说明 |
-|------|------|
+| 名称    | 说明 |
+| ------- | ---- |
 | default | 内容 |

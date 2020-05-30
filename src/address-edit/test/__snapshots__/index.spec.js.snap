@@ -35,7 +35,9 @@ exports[`create a AddressEdit 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;
 
@@ -88,7 +90,9 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;
 
@@ -141,7 +145,9 @@ exports[`set-default 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;
 
@@ -194,7 +200,9 @@ exports[`show area component 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;
 
@@ -247,7 +255,9 @@ exports[`show area component 2`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;
 
@@ -286,6 +296,8 @@ exports[`valid area placeholder confirm 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round"><span class="van-button__text">保存</span></button></div>
+  <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block van-button--round">
+      <div class="van-button__content"><span class="van-button__text">保存</span></div>
+    </button></div>
 </div>
 `;

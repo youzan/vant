@@ -1,12 +1,12 @@
 <template>
-  <demo-block :title="$t('autosize')">
+  <demo-block :title="t('autosize')">
     <van-field
       v-model="value"
       autosize
       rows="1"
       type="textarea"
-      :label="$t('message')"
-      :placeholder="$t('placeholder')"
+      :label="t('message')"
+      :placeholder="t('placeholder')"
     />
   </demo-block>
 </template>

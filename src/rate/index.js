@@ -96,7 +96,9 @@ export default createComponent({
 
       this.touchStart(event);
 
-      const rects = this.$refs.items.map(item => item.getBoundingClientRect());
+      const rects = this.$refs.items.map((item) =>
+        item.getBoundingClientRect()
+      );
       const ranges = [];
 
       rects.forEach((rect, index) => {

@@ -53,7 +53,7 @@ export default createComponent({
     genSearchResult() {
       const { value, shouldShowSearchResult, searchResult } = this;
       if (shouldShowSearchResult) {
-        return searchResult.map(express => (
+        return searchResult.map((express) => (
           <Cell
             key={express.name + express.address}
             clickable

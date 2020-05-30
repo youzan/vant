@@ -13,7 +13,14 @@ exports[`renders demo correctly 1`] = `
         <div class="van-icon van-icon-cart-o van-goods-action-icon__icon">
           <!---->
         </div>购物车
-      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning"><span class="van-button__text">加入购物车</span></button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger"><span class="van-button__text">立即购买</span></button>
+      </div>
+      <div role="button" tabindex="0" class="van-goods-action-icon">
+        <div class="van-icon van-icon-shop-o van-goods-action-icon__icon">
+          <!---->
+        </div>店铺
+      </div> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--last van-goods-action-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
     </div>
   </div>
   <div>
@@ -32,7 +39,11 @@ exports[`renders demo correctly 1`] = `
         <div class="van-icon van-icon-shop-o van-goods-action-icon__icon">
           <div class="van-info">12</div>
         </div>店铺
-      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning"><span class="van-button__text">加入购物车</span></button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger"><span class="van-button__text">立即购买</span></button>
+      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
     </div>
   </div>
   <div>
@@ -51,7 +62,11 @@ exports[`renders demo correctly 1`] = `
         <div class="van-icon van-icon-star van-goods-action-icon__icon" style="color: rgb(255, 80, 0);">
           <!---->
         </div>已收藏
-      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning"><span class="van-button__text">加入购物车</span></button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger"><span class="van-button__text">立即购买</span></button>
+      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
     </div>
   </div>
   <div>
@@ -65,7 +80,11 @@ exports[`renders demo correctly 1`] = `
         <div class="van-icon van-icon-cart-o van-goods-action-icon__icon">
           <!---->
         </div>购物车
-      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning" style="color: rgb(255, 255, 255); background: rgb(190, 153, 255); border-color: #be99ff;"><span class="van-button__text">加入购物车</span></button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;"><span class="van-button__text">立即购买</span></button>
+      </div> <button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button van-goods-action-button--first van-goods-action-button--warning" style="color: rgb(255, 255, 255); background: rgb(190, 153, 255); border-color: #be99ff;">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-button--square van-goods-action-button van-goods-action-button--last van-goods-action-button--danger" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
     </div>
   </div>
 </div>

@@ -26,7 +26,11 @@ export default {
 
   methods: {
     onBack() {
-      history.back();
+      if (history.length > 1) {
+        history.back();
+      } else {
+        this.$router.replace('/');
+      }
     },
   },
 };
@@ -35,9 +39,10 @@ export default {
 <style lang="less">
 .demo-nav {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 56px;
-  line-height: 56px;
-  text-align: center;
   background-color: #fff;
 
   &__title {

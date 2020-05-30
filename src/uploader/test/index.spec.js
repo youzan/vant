@@ -1,7 +1,7 @@
 import Uploader from '..';
 import { mount, later, triggerDrag } from '../../../test';
 
-window.File = function() {
+window.File = function () {
   this.size = 10000;
 };
 
@@ -12,8 +12,8 @@ const multiFile = { target: { files: [mockFile, mockFile] } };
 const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
-window.FileReader = function() {
-  this.readAsText = function() {
+window.FileReader = function () {
+  this.readAsText = function () {
     this.onload &&
       this.onload({
         target: {
@@ -37,11 +37,11 @@ test('disabled', () => {
   expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
-test('result-type as text', done => {
+test('result-type as text', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'text',
-      afterRead: readFile => {
+      afterRead: (readFile) => {
         expect(readFile.content).toEqual(mockFileDataUrl);
         done();
       },
@@ -51,11 +51,11 @@ test('result-type as text', done => {
   wrapper.vm.onChange(file);
 });
 
-test('result-type as file', done => {
+test('result-type as file', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'file',
-      afterRead: readFile => {
+      afterRead: (readFile) => {
         expect(readFile.file).toBeTruthy();
         expect(readFile.content).toBeFalsy();
         done();
@@ -66,7 +66,7 @@ test('result-type as file', done => {
   wrapper.vm.onChange(file);
 });
 
-test('set input name', done => {
+test('set input name', (done) => {
   const wrapper = mount(Uploader, {
     propsData: {
       name: 'uploader',
@@ -117,7 +117,7 @@ test('before read return promise and resolve', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       beforeRead: () =>
-        new Promise(resolve => {
+        new Promise((resolve) => {
           resolve(file);
         }),
       afterRead,
@@ -135,7 +135,7 @@ test('before read return promise and resolve no value', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       beforeRead: () =>
-        new Promise(resolve => {
+        new Promise((resolve) => {
           resolve();
         }),
       afterRead,
@@ -360,7 +360,7 @@ test('before-delete prop resolved', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }],
-      beforeDelete: () => new Promise(resolve => resolve()),
+      beforeDelete: () => new Promise((resolve) => resolve()),
     },
   });
 
@@ -382,7 +382,7 @@ test('before-delete prop rejected', async () => {
   expect(wrapper.emitted('delete')).toBeFalsy();
 });
 
-test('click to preview image', () => {
+test('click to preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       previewFullImage: false,
@@ -396,6 +396,8 @@ test('click to preview image', () => {
 
   wrapper.setProps({ previewFullImage: true });
   wrapper.find('.van-image').trigger('click');
+
+  await later();
 
   const imagePreviewNode2 = document.querySelector('.van-image-preview');
   const images = imagePreviewNode2.querySelectorAll(
@@ -460,4 +462,48 @@ test('show-upload prop', () => {
   expect(wrapper.contains('.van-uploader__upload')).toBeTruthy();
   wrapper.setProps({ showUpload: false });
   expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
+});
+
+test('file message should be reactive', (done) => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [],
+      afterRead(file) {
+        file.status = 'uploading';
+        file.message = 1;
+        setTimeout(() => {
+          file.message = 2;
+          expect(wrapper).toMatchSnapshot();
+          done();
+        });
+      },
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      },
+    },
+  });
+
+  wrapper.vm.onChange(file);
+});
+
+test('multiFile upload filter max-size file', async () => {
+  const SmallFile = function () {
+    this.size = 100;
+  };
+  const multiFiles = {
+    target: { files: [mockFile, new SmallFile([], 'small-test.jpg')] },
+  };
+
+  const wrapper = mount(Uploader, {
+    propsData: {
+      maxSize: 1000,
+    },
+  });
+  wrapper.vm.onChange(multiFiles);
+
+  await later();
+
+  expect(wrapper.emitted('oversize')[0]).toBeTruthy();
 });
