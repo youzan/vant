@@ -32,7 +32,6 @@ export default createComponent({
       offset: 0,
       duration: 0,
       wrapWidth: 0,
-      firstRound: true,
       contentWidth: 0,
     };
   },
@@ -43,6 +42,10 @@ export default createComponent({
       handler: 'start',
       immediate: true,
     },
+  },
+
+  activated() {
+    this.start();
   },
 
   methods: {
@@ -56,7 +59,6 @@ export default createComponent({
     onTransitionEnd() {
       this.offset = this.wrapWidth;
       this.duration = 0;
-      this.firstRound = false;
 
       doubleRaf(() => {
         this.offset = -this.contentWidth;
@@ -66,13 +68,16 @@ export default createComponent({
     },
 
     reset() {
+      this.offset = 0;
       this.duration = 0;
       this.wrapWidth = 0;
       this.contentWidth = 0;
     },
 
     start() {
-      this.$nextTick(() => {
+      this.reset();
+
+      setTimeout(() => {
         const { wrap, content } = this.$refs;
         if (!wrap || !content) {
           return;
@@ -82,14 +87,14 @@ export default createComponent({
         const contentWidth = content.getBoundingClientRect().width;
 
         if (this.scrollable && contentWidth > wrapWidth) {
-          this.offset = -contentWidth;
-          this.duration = contentWidth / this.speed;
-          this.wrapWidth = wrapWidth;
-          this.contentWidth = contentWidth;
-        } else {
-          this.reset();
+          doubleRaf(() => {
+            this.offset = -contentWidth;
+            this.duration = contentWidth / this.speed;
+            this.wrapWidth = wrapWidth;
+            this.contentWidth = contentWidth;
+          });
         }
-      });
+      }, this.delay * 1000);
     },
   },
 
@@ -102,8 +107,7 @@ export default createComponent({
     };
 
     const contentStyle = {
-      transform: `translateX(${this.offset}px)`,
-      transitionDelay: (this.firstRound ? this.delay : 0) + 's',
+      transform: this.offset ? `translateX(${this.offset}px)` : '',
       transitionDuration: this.duration + 's',
     };
 
