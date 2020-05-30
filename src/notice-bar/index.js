@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
 import Icon from '../icon';
 
@@ -75,6 +75,8 @@ export default createComponent({
     },
 
     start() {
+      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
+
       this.reset();
 
       setTimeout(() => {
@@ -94,7 +96,7 @@ export default createComponent({
             this.contentWidth = contentWidth;
           });
         }
-      }, this.delay * 1000);
+      }, delay);
     },
   },
 
