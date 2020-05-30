@@ -310,6 +310,28 @@ test('reach max word-limit', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('reach max word-limit undefined', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: undefined,
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('reach max word-limit null', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: null,
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('name prop', () => {
   const wrapper = mount(Field, {
     propsData: {
