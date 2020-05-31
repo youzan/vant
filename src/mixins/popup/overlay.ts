@@ -51,7 +51,10 @@ export function updateOverlay(vm: any): void {
 }
 
 export function openOverlay(vm: any, config: OverlayConfig): void {
-  if (!context.find(vm)) {
+  const item = context.find(vm);
+  if (item) {
+    item.config = config;
+  } else {
     const overlay = mountOverlay(vm);
     context.stack.push({ vm, config, overlay });
   }
