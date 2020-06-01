@@ -35,6 +35,7 @@ yarn add @vant/cli --dev
     "dev": "vant-cli dev",
     "test": "vant-cli test",
     "lint": "vant-cli lint",
+    "build": "vant-cli build",
     "release": "vant-cli release",
     "build-site": "vant-cli build-site"
   },
