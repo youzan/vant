@@ -2,13 +2,13 @@
 
 ### 介绍
 
-弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作
+弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。
 
-弹出框组件支持函数调用和组件调用两种方式
+弹出框组件支持函数调用和组件调用两种方式。
 
 ### 函数调用
 
-Dialog 是一个函数，调用后展示提示弹窗
+Dialog 是一个函数，调用后会直接在页面中弹出相应的模态框。
 
 ```js
 import { Dialog } from 'vant';
@@ -18,7 +18,7 @@ Dialog({ message: '提示' });
 
 ### 组件调用
 
-通过组件调用 Dialog 时，可以通过下面的方式进行注册
+通过组件调用 Dialog 时，可以通过下面的方式进行注册：
 
 ```js
 import Vue from 'vue';
@@ -39,7 +39,7 @@ export default {
 
 ### 消息提示
 
-用于提示一些消息，只包含一个确认按钮
+用于提示一些消息，只包含一个确认按钮。
 
 ```js
 Dialog.alert({
@@ -58,7 +58,7 @@ Dialog.alert({
 
 ### 消息确认
 
-用于确认消息，包含取消和确认按钮
+用于确认消息，包含取消和确认按钮。
 
 ```js
 Dialog.confirm({
@@ -74,6 +74,8 @@ Dialog.confirm({
 ```
 
 ### 异步关闭
+
+通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```js
 function beforeClose(action, done) {
@@ -93,7 +95,7 @@ Dialog.confirm({
 
 ### 全局方法
 
-引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 \$dialog 方法，在所有组件内部都可以直接调用此方法
+引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
 
 ```js
 export default {
@@ -107,7 +109,7 @@ export default {
 
 ### 组件调用
 
-如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式
+如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
 
 ```html
 <van-dialog v-model="show" title="标题" show-cancel-button>

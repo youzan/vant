@@ -13,7 +13,7 @@ Vue.use(Dialog);
 
 ### Alert dialog
 
-Used to prompt for some messages, only including one confirm button
+Used to prompt for some messages, only including one confirm button.
 
 ```js
 Dialog.alert({
@@ -32,7 +32,7 @@ Dialog.alert({
 
 ### Confirm dialog
 
-Used to confirm some messages, including a confirm button and a cancel button
+Used to confirm some messages, including a confirm button and a cancel button.
 
 ```js
 Dialog.confirm({
@@ -65,9 +65,9 @@ Dialog.confirm({
 });
 ```
 
-### \$dialog Method
+### Global Method
 
-After import the Dialog component, the \$dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After import the Dialog component, the `$dialog` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
 export default {
