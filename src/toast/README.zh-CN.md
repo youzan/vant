@@ -1,5 +1,9 @@
 # Toast 轻提示
 
+### 介绍
+
+在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。
+
 ### 引入
 
 ```js
@@ -19,7 +23,7 @@ Toast('提示内容');
 
 ### 加载提示
 
-使用`Toast.loading`方法展示加载提示，通过`forbidClick`属性可以禁用背景点击，通过`loadingType`属性可以自定义加载图标类型。
+使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击，通过`loadingType` 属性可以自定义加载图标类型。
 
 ```js
 Toast.loading({
@@ -37,12 +41,16 @@ Toast.loading({
 
 ### 成功/失败提示
 
+使用 `Toast.success` 方法展示成功提示，使用 `Toast.fail` 方法展示失败提示。
+
 ```js
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
 ### 自定义图标
+
+通过 `icon` 选项可以自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
 
 ```js
 Toast({
@@ -57,6 +65,8 @@ Toast({
 ```
 
 ### 动态更新提示
+
+执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 message 属性可以实现动态更新提示的效果。
 
 ```js
 const toast = Toast.loading({
@@ -78,9 +88,9 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-### 组件内调用
+### 全局方法
 
-引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 \$toast 方法，便于在组件内调用。
+引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 `$toast` 方法，便于在组件内调用。
 
 ```js
 export default {
@@ -92,7 +102,7 @@ export default {
 
 ### 单例模式
 
-Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例
+Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例：
 
 ```js
 Toast.allowMultiple();
@@ -106,19 +116,19 @@ toast2.clear();
 
 ### 修改默认配置
 
-通过`Toast.setDefaultOptions`函数可以全局修改 Toast 的默认配置
+通过`Toast.setDefaultOptions`函数可以全局修改 Toast 的默认配置。
 
 ```js
 // 将所有 Toast 的展示时长设置为 2000 毫秒
 Toast.setDefaultOptions({ duration: 2000 });
 
-// 将所有 loading Toast 设置为背景不可点击 (2.2.10 版本开始支持)
+// 将所有 loading Toast 设置为背景不可点击
 Toast.setDefaultOptions('loading', { forbidClick: true });
 
 // 重置所有 Toast 的默认配置
 Toast.resetDefaultOptions();
 
-// 重置 loading Toast 的默认配置 (2.2.10 版本开始支持)
+// 重置 loading Toast 的默认配置
 Toast.resetDefaultOptions('loading');
 ```
 
