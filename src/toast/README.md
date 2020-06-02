@@ -75,9 +75,9 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-### \$toast Method
+### Global Method
 
-After import the Toast component, the \$toast method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After import the Toast component, the `$toast` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
 export default {
@@ -89,7 +89,7 @@ export default {
 
 ### Singleton
 
-Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example
+Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example:
 
 ```js
 Toast.allowMultiple();
