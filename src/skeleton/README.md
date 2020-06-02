@@ -56,6 +56,7 @@ export default {
 | avatar | Whether to show avatar placeholder | _boolean_ | `false` |
 | loading | Whether to show skeleton，pass `false` to show child component | _boolean_ | `true` |
 | animate | Whether to enable animation | _boolean_ | `true` |
+| round `v2.8.5` | Whether to show round title and row | _boolean_ | `false` |
 | title-width | Title width | _number \| string_ | `40%` |
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
 | avatar-shape | Shape of avatar placeholder，can be set to `square` | _string_ | `round` |

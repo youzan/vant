@@ -34,6 +34,17 @@ test('avatar shape', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('round prop', () => {
+  const wrapper = mount(Skeleton, {
+    propsData: {
+      title: true,
+      round: true,
+      avatar: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('disable animate', () => {
   const wrapper = mount(Skeleton, {
     propsData: {

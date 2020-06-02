@@ -10,7 +10,7 @@
     background-color: @skeleton-avatar-background-color;
 
     &--round {
-      border-radius: 100%;
+      border-radius: @border-radius-max;
     }
   }
 
@@ -45,6 +45,13 @@
   &--animate {
     animation: van-skeleton-blink @skeleton-animation-duration ease-in-out
       infinite;
+  }
+
+  &--round {
+    .van-skeleton__row,
+    .van-skeleton__title {
+      border-radius: @border-radius-max;
+    }
   }
 }
 

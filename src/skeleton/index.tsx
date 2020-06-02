@@ -9,6 +9,7 @@ import { DefaultSlots } from '../utils/types';
 export type SkeletonProps = {
   row: number | string;
   title?: boolean;
+  round?: boolean;
   avatar?: boolean;
   loading: boolean;
   animate: boolean;
@@ -78,7 +79,10 @@ function Skeleton(
   }
 
   return (
-    <div class={bem({ animate: props.animate })} {...inherit(ctx)}>
+    <div
+      class={bem({ animate: props.animate, round: props.round })}
+      {...inherit(ctx)}
+    >
       {Avatar()}
       <div class={bem('content')}>
         {Title()}
@@ -90,6 +94,7 @@ function Skeleton(
 
 Skeleton.props = {
   title: Boolean,
+  round: Boolean,
   avatar: Boolean,
   row: {
     type: [Number, String],
