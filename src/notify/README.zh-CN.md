@@ -1,12 +1,36 @@
 # Notify 消息提示
 
-### 引入
+### 介绍
+
+在页面顶部展示消息提示，支持函数调用和组件调用两种方式。
+
+### 函数调用
+
+Notify 是一个函数，调用后会直接在页面中弹出相应的消息提示。
+
+```js
+import { Notify } from 'vant';
+
+Notify('通知内容');
+```
+
+### 组件调用
+
+通过组件调用 Notify 时，可以通过下面的方式进行注册（从 2.8.5 版本开始支持）：
 
 ```js
 import Vue from 'vue';
 import { Notify } from 'vant';
 
+// 全局注册
 Vue.use(Notify);
+
+// 局部注册
+export default {
+  components: {
+    [Notify.Component.name]: Notify.Component,
+  },
+};
 ```
 
 ## 代码演示
@@ -19,7 +43,7 @@ Notify('通知内容');
 
 ### 通知类型
 
-支持`primary`、`success`、`warning`、`danger`四种通知类型，默认为`danger`
+支持 `primary`、`success`、`warning`、`danger` 四种通知类型，默认为 `danger`。
 
 ```js
 // 主要通知
@@ -37,7 +61,7 @@ Notify({ type: 'warning', message: '通知内容' });
 
 ### 自定义通知
 
-自定义消息通知的颜色和展示时长
+自定义消息通知的颜色和展示时长。
 
 ```js
 Notify({
@@ -52,14 +76,44 @@ Notify({
 });
 ```
 
-### 组件内调用
+### 全局方法
 
-引入 Notify 组件后，会自动在 Vue 的 prototype 上挂载 \$notify 方法，便于在组件内调用。
+引入 Notify 组件后，会自动在 Vue 的 prototype 上挂载 `$notify` 方法，便于在组件内调用。
 
 ```js
 export default {
   mounted() {
     this.$notify('提示文案');
+  },
+};
+```
+
+### 组件调用
+
+如果需要在 Notify 内嵌入组件或其他自定义内容，可以使用组件调用的方式。
+
+```html
+<van-button type="primary" text="组件调用" @click="showNotify" />
+<van-notify v-model="show" type="success">
+  <van-icon name="bell" style="margin-right: 4px;" />
+  <span>通知内容</span>
+</van-notify>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
+  methods: {
+    showNotify() {
+      this.show = true;
+      setTimeout(() => {
+        this.show = false;
+      }, 2000);
+    },
   },
 };
 ```

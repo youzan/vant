@@ -2,11 +2,11 @@
 
 ### 介绍
 
-图片放大预览，支持函数调用和组件调用两种方式
+图片放大预览，支持函数调用和组件调用两种方式。
 
 ### 函数调用
 
-ImagePreview 是一个函数，调用函数后展示图片预览
+ImagePreview 是一个函数，调用函数后会直接在页面中展示图片预览界面。
 
 ```js
 import { ImagePreview } from 'vant';
@@ -16,7 +16,7 @@ ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
 
 ### 组件调用
 
-通过组件调用 ImagePreview 时，可以通过下面的方式进行注册
+通过组件调用 ImagePreview 时，可以通过下面的方式进行注册。
 
 ```js
 import Vue from 'vue';
@@ -37,7 +37,7 @@ export default {
 
 ### 基础用法
 
-直接传入图片数组，即可展示图片预览
+直接传入图片数组，即可展示图片预览。
 
 ```js
 ImagePreview([
@@ -48,7 +48,7 @@ ImagePreview([
 
 ### 传入配置项
 
-通过传入配置对象，可以指定初始图片的位置、监听关闭事件
+通过传入配置对象，可以指定初始图片的位置、监听关闭事件。
 
 ```js
 ImagePreview({
@@ -65,7 +65,7 @@ ImagePreview({
 
 ### 展示关闭按钮
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
 
 ```js
 ImagePreview({
@@ -79,7 +79,7 @@ ImagePreview({
 
 ### 异步关闭
 
-通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览
+通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
 
 ```js
 const instance = ImagePreview({
@@ -97,7 +97,7 @@ setTimeout(() => {
 
 ### 组件调用
 
-如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件
+如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件。
 
 ```html
 <van-image-preview v-model="show" :images="images" @change="onChange">

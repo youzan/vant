@@ -46,7 +46,7 @@ function Notify(
       class={[bem([props.type]), props.className]}
       {...inherit(ctx, true)}
     >
-      {props.message}
+      {slots.default?.() || props.message}
     </Popup>
   );
 }
