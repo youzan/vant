@@ -134,6 +134,7 @@ export default {
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
 | title-class | 标题额外类名 | _string_ | - |
 | get-container `v2.2.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 
 ### DropdownItem Events
 

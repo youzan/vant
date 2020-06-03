@@ -25,6 +25,10 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    lazyRender: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -160,6 +164,7 @@ export default createComponent({
             onOpen={this.onOpen}
             onClose={this.onClose}
             onOpened={this.onOpened}
+            lazyRender={this.lazyRender}
             onClosed={() => {
               this.showWrapper = false;
               this.$emit('closed');
