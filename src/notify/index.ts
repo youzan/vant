@@ -89,6 +89,8 @@ Notify.install = () => {
   Vue.use(VanNotify as any);
 };
 
+Notify.Component = VanNotify;
+
 Vue.prototype.$notify = Notify;
 
 export default Notify;

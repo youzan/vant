@@ -41,14 +41,42 @@ Notify({
 });
 ```
 
-### \$notify Method
+### Global Method
 
-After import the Notify component, the \$notify method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After import the Notify component, the `$notify` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
 export default {
   mounted() {
     this.$notify('Notify Message');
+  },
+};
+```
+
+### Component Call
+
+```html
+<van-button type="primary" text="Component Call" @click="showNotify" />
+<van-notify v-model="show" type="success">
+  <van-icon name="bell" style="margin-right: 4px;" />
+  <span>Content</span>
+</van-notify>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+    };
+  },
+  methods: {
+    showNotify() {
+      this.show = true;
+      setTimeout(() => {
+        this.show = false;
+      }, 2000);
+    },
   },
 };
 ```
