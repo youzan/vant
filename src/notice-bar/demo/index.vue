@@ -25,6 +25,21 @@
         left-icon="info-o"
       />
     </demo-block>
+
+    <demo-block v-if="!isWeapp" :title="t('verticalScroll')">
+      <van-notice-bar left-icon="volume-o" :scrollable="false">
+        <van-swipe
+          vertical
+          class="notice-swipe"
+          :autoplay="3000"
+          :show-indicators="false"
+        >
+          <van-swipe-item>{{ t('content') }} 1</van-swipe-item>
+          <van-swipe-item>{{ t('content') }} 2</van-swipe-item>
+          <van-swipe-item>{{ t('content') }} 3</van-swipe-item>
+        </van-swipe>
+      </van-notice-bar>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -32,20 +47,24 @@
 export default {
   i18n: {
     'zh-CN': {
-      unscrollable: '禁用滚动',
-      mode: '通知栏模式',
-      wrapable: '多行展示',
       text:
         '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
+      mode: '通知栏模式',
+      content: '内容',
+      wrapable: '多行展示',
+      unscrollable: '禁用滚动',
       customStyle: '自定义样式',
+      verticalScroll: '垂直滚动',
     },
     'en-US': {
-      mode: 'Mode',
-      wrapable: 'Wrapable',
-      unscrollable: 'Disable scroll',
       text:
         'Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.',
+      mode: 'Mode',
+      content: 'Content',
+      wrapable: 'Wrapable',
       customStyle: 'Custom Style',
+      unscrollable: 'Disable scroll',
+      verticalScroll: 'Vertical Scroll',
     },
   },
 };
@@ -63,6 +82,11 @@ export default {
 
   .van-doc-demo-block__title {
     padding-top: 24px;
+  }
+
+  .notice-swipe {
+    height: 40px;
+    line-height: 40px;
   }
 }
 </style>

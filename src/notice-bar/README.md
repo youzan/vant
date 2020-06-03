@@ -53,6 +53,30 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
+### Vertical Scroll
+
+```html
+<van-notice-bar left-icon="volume-o" :scrollable="false">
+  <van-swipe
+    vertical
+    class="notice-swipe"
+    :autoplay="3000"
+    :show-indicators="false"
+  >
+    <van-swipe-item>Content 1</van-swipe-item>
+    <van-swipe-item>Content 2</van-swipe-item>
+    <van-swipe-item>Content 3</van-swipe-item>
+  </van-swipe>
+</van-notice-bar>
+
+<style>
+  .notice-swipe {
+    height: 40px;
+    line-height: 40px;
+  }
+</style>
+```
+
 ## API
 
 ### Props
