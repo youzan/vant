@@ -92,6 +92,7 @@ export default createComponent({
             >
               <img src={this.getIconURL(option.icon)} class={bem('icon')} />
               {option.name && <span class={bem('name')}>{option.name}</span>}
+              {option.intro && <span class={bem('intro')}>{option.intro}</span>}
             </div>
           ))}
         </div>
