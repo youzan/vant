@@ -42,7 +42,7 @@
       <van-share-sheet
         v-model="show.withDesc"
         :title="t('title')"
-        :options="options"
+        :options="optionsWithDesc"
         :description="t('description')"
         @select="onSelect"
       />
@@ -136,6 +136,20 @@ export default {
           name: this.t('name'),
           icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
         },
+      ];
+    },
+
+    optionsWithDesc() {
+      return [
+        { name: this.t('wechat'), icon: 'wechat' },
+        { name: this.t('weibo'), icon: 'weibo' },
+        {
+          name: this.t('link'),
+          icon: 'link',
+          description: this.t('description'),
+        },
+        { name: this.t('poster'), icon: 'poster' },
+        { name: this.t('qrcode'), icon: 'qrcode' },
       ];
     },
   },
