@@ -198,7 +198,7 @@ export default {
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | filter | Option filter | _(type, vals) => vals_ | - |
 | formatter | Option text formatter | _(type, val) => val_ | - |
-| item-height | Option height | _number \| string_ | `44` |
+| item-height `v2.8.6` | Option height, supports `px` ans `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `5` |
 | swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 

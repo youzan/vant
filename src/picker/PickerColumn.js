@@ -33,7 +33,7 @@ export default createComponent({
     valueKey: String,
     allowHtml: Boolean,
     className: String,
-    itemHeight: [Number, String],
+    itemHeight: Number,
     defaultIndex: Number,
     swipeDuration: [Number, String],
     visibleItemCount: [Number, String],

@@ -3,6 +3,7 @@ import { createNamespace, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
+import { unitToPx } from '../utils/format/unit';
 
 // Components
 import Loading from '../loading';
@@ -39,6 +40,10 @@ export default createComponent({
   },
 
   computed: {
+    itemPxHeight() {
+      return unitToPx(this.itemHeight);
+    },
+
     dataType() {
       const { columns } = this;
       const firstColumn = columns[0] || {};
@@ -277,12 +282,38 @@ export default createComponent({
     },
 
     genColumns() {
+      const { itemPxHeight } = this;
+      const wrapHeight = itemPxHeight * this.visibleItemCount;
+
+      const frameStyle = { height: `${itemPxHeight}px` };
+      const columnsStyle = { height: `${wrapHeight}px` };
+      const maskStyle = {
+        backgroundSize: `100% ${(wrapHeight - itemPxHeight) / 2}px`,
+      };
+
+      return (
+        <div
+          class={bem('columns')}
+          style={columnsStyle}
+          onTouchmove={preventDefault}
+        >
+          {this.genColumnItems()}
+          <div class={bem('mask')} style={maskStyle} />
+          <div
+            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
+            style={frameStyle}
+          />
+        </div>
+      );
+    },
+
+    genColumnItems() {
       return this.formattedColumns.map((item, columnIndex) => (
         <PickerColumn
           valueKey={this.valueKey}
           allowHtml={this.allowHtml}
           className={item.className}
-          itemHeight={this.itemHeight}
+          itemHeight={this.itemPxHeight}
           defaultIndex={item.defaultIndex || +this.defaultIndex}
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
@@ -296,38 +327,12 @@ export default createComponent({
   },
 
   render(h) {
-    const itemHeight = +this.itemHeight;
-    const wrapHeight = itemHeight * this.visibleItemCount;
-
-    const frameStyle = {
-      height: `${itemHeight}px`,
-    };
-
-    const columnsStyle = {
-      height: `${wrapHeight}px`,
-    };
-
-    const maskStyle = {
-      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`,
-    };
-
     return (
       <div class={bem()}>
         {this.toolbarPosition === 'top' ? this.genToolbar() : h()}
         {this.loading ? <Loading class={bem('loading')} /> : h()}
         {this.slots('columns-top')}
-        <div
-          class={bem('columns')}
-          style={columnsStyle}
-          onTouchmove={preventDefault}
-        >
-          {this.genColumns()}
-          <div class={bem('mask')} style={maskStyle} />
-          <div
-            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
-            style={frameStyle}
-          />
-        </div>
+        {this.genColumns()}
         {this.slots('columns-bottom')}
         {this.toolbarPosition === 'bottom' ? this.genToolbar() : h()}
       </div>
