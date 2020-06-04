@@ -42,7 +42,7 @@
       <van-share-sheet
         v-model="show.withDesc"
         :title="t('title')"
-        :options="optionsWithDesc"
+        :options="optionsWithIntro"
         :description="t('description')"
         @select="onSelect"
       />
@@ -141,7 +141,7 @@ export default {
       ];
     },
 
-    optionsWithDesc() {
+    optionsWithIntro() {
       return [
         { name: this.t('wechat'), icon: 'wechat' },
         { name: this.t('weibo'), icon: 'weibo' },
