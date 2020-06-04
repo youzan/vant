@@ -94,7 +94,7 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 - [详细文档](https://youzan.github.io/vant)
 - [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
-- [码云镜像](https://gitee.com/organizations/vant-contrib)
+- [码云镜像](https://vant-contrib.gitee.io/vant)
 - [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## 手机预览
