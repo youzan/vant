@@ -95,7 +95,7 @@ export default {
       options: [
         { name: 'Wechat', icon: 'wechat' },
         { name: 'Weibo', icon: 'weibo' },
-        { name: 'Link', icon: 'link', intro: 'Share intro' },
+        { name: 'Link', icon: 'link', description: 'Description' },
         { name: 'Poster', icon: 'poster' },
         { name: 'Qrcode', icon: 'qrcode' },
       ],
@@ -128,7 +128,7 @@ export default {
 | Key | Description | Type |
 | --- | --- | --- |
 | name | Option name | _string_ |
-| intro | Option intro | _string_ |
+| description | Option description | _string_ |
 | icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | _string_ |
 
 ### Events

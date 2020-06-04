@@ -42,7 +42,7 @@
       <van-share-sheet
         v-model="show.withDesc"
         :title="t('title')"
-        :options="optionsWithIntro"
+        :options="optionsWithDesc"
         :description="t('description')"
         @select="onSelect"
       />
@@ -67,7 +67,6 @@ export default {
       withDesc: '展示描述信息',
       customIcon: '自定义图标',
       description: '描述信息',
-      intro: '分享说明',
     },
     'en-US': {
       qq: 'QQ',
@@ -83,7 +82,6 @@ export default {
       withDesc: 'Show Description',
       customIcon: 'Custom Icon',
       description: 'Description',
-      intro: 'Share intro',
     },
   },
 
@@ -141,11 +139,15 @@ export default {
       ];
     },
 
-    optionsWithIntro() {
+    optionsWithDesc() {
       return [
         { name: this.t('wechat'), icon: 'wechat' },
         { name: this.t('weibo'), icon: 'weibo' },
-        { name: this.t('link'), icon: 'link', intro: this.t('intro') },
+        {
+          name: this.t('link'),
+          icon: 'link',
+          description: this.t('description'),
+        },
         { name: this.t('poster'), icon: 'poster' },
         { name: this.t('qrcode'), icon: 'qrcode' },
       ];
