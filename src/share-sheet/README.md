@@ -128,7 +128,7 @@ export default {
 | Key | Description | Type |
 | --- | --- | --- |
 | name | Option name | _string_ |
-| description | Option description | _string_ |
+| description `v2.8.5` | Option description | _string_ |
 | icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | _string_ |
 
 ### Events
