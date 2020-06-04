@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.5](https://github.com/youzan/vant/compare/v2.8.4...v2.8.5)
+
+`2020-06-04`
+
+**Feature**
+
+- Notify: 支持组件调用 [#6453](https://github.com/youzan/vant/issues/6453)
+- Skeleton: 新增 round 属性，用于展示圆角风格 [#6441](https://github.com/youzan/vant/issues/6441)
+- ShareSheet: 支持在 option 中配置 description 属性 [#6460](https://github.com/youzan/vant/issues/6460)
+- DropdownItem: 新增 lazy-render 属性，由于控制是否开启延迟渲染 [#6454](https://github.com/youzan/vant/issues/6454)
+
+**Bug Fixes**
+
+- Popup: 修复重复弹出时遮罩层 z-index 未正确更新的问题 [#6429](https://github.com/youzan/vant/issues/6429)
+- Button: 修复设置 loading 时无法与其他按钮垂直对齐的问题 [#6413](https://github.com/youzan/vant/issues/6413) [#6414](https://github.com/youzan/vant/issues/6414)
+- NoticeBar: 修复在 keep-alive 内重新渲染时无法正确滚动的问题 [d21420](https://github.com/youzan/vant/commit/d21420b7d2357c4c0b47bc0f38b48e57d7fd9b81)
+- Field: 修复 value 为 null 且开启 show-word-limit 时出现报错的问题 [#6419](https://github.com/youzan/vant/issues/6419)
+
 ### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
 
 `2020-05-28`

@@ -10,6 +10,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.5](https://github.com/youzan/vant/compare/v2.8.4...v2.8.5)
+
+`2020-06-04`
+
+**Feature**
+
+- DropdownItem: add lazy-render prop [#6454](https://github.com/youzan/vant/issues/6454)
+- Notify: support component call [#6453](https://github.com/youzan/vant/issues/6453)
+- ShareSheet: add options description [#6460](https://github.com/youzan/vant/issues/6460)
+- Skeleton: add round prop [#6441](https://github.com/youzan/vant/issues/6441)
+
+**Bug Fixes**
+
+- Popup: incorrect overlay z-index when reopened [#6429](https://github.com/youzan/vant/issues/6429)
+- Button: set font-size to inherit when loading [#6413](https://github.com/youzan/vant/issues/6413) [#6414](https://github.com/youzan/vant/issues/6414)
+- NoticeBar: scroll failed after activated [d21420](https://github.com/youzan/vant/commit/d21420b7d2357c4c0b47bc0f38b48e57d7fd9b81)
+- Field: fix render error when value is null or undefined [#6419](https://github.com/youzan/vant/issues/6419)
+
 ### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
 
 `2020-05-28`
