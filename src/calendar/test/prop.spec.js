@@ -191,3 +191,58 @@ test('month-show event', async () => {
 
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });
+
+test.only('first day of week', async () => {
+  const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+
+  for (let i = 0; i <= 6; i++) {
+    const wrapper = mount(Calendar, {
+      propsData: {
+        poppable: false,
+        defaultDate: new Date(2020, 5, 1),
+        maxDate: new Date(2020, 5, 30),
+        firstDayOfWeek: i,
+      },
+    });
+
+    // eslint-disable-next-line no-await-in-loop
+    await later();
+
+    const expectedDays = new Array(7)
+      .fill(0)
+      .map((_, index) => {
+        const fakeIndex = index + i;
+        const keyIndex = fakeIndex <= 6 ? fakeIndex : fakeIndex - 7;
+
+        return weekdays.slice(keyIndex, keyIndex + 1);
+      })
+      .join('');
+
+    const firstDayOffset = (() => {
+      const realDay = new Date(2020, 5, 1).getDay();
+
+      if (!i) {
+        return realDay;
+      }
+
+      const fakeDay = realDay - i;
+      if (fakeDay >= 0) {
+        return fakeDay;
+      }
+
+      return fakeDay + 7;
+    })();
+
+    const marginLeft = `${(100 * firstDayOffset) / 7}%`;
+
+    expect(wrapper.find('.van-calendar__weekdays').text()).toEqual(
+      expectedDays
+    );
+
+    const day = wrapper.find(
+      '.van-calendar__month:first-of-type .van-calendar__day'
+    );
+    expect(day.text()).toEqual('1');
+    expect(day.attributes('style')).toContain(`margin-left: ${marginLeft}`);
+  }
+});

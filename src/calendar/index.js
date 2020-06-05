@@ -35,6 +35,13 @@ export default createComponent({
     allowSameDay: Boolean,
     closeOnPopstate: Boolean,
     confirmDisabledText: String,
+    firstDayOfWeek: {
+      type: Number,
+      default: 0,
+      validator: (val) => {
+        return val >= 0 && val <= 6;
+      },
+    },
     type: {
       type: String,
       default: 'single',
@@ -380,6 +387,7 @@ export default createComponent({
           allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
           onClick={this.onClickDay}
+          firstDayOfWeek={this.firstDayOfWeek}
         />
       );
     },
@@ -432,6 +440,7 @@ export default createComponent({
             scopedSlots={{
               title: () => this.slots('title'),
             }}
+            firstDayOfWeek={this.firstDayOfWeek}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}

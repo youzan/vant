@@ -27,6 +27,7 @@ export default createComponent({
     allowSameDay: Boolean,
     showSubtitle: Boolean,
     showMonthTitle: Boolean,
+    firstDayOfWeek: Number,
   },
 
   data() {
@@ -41,7 +42,21 @@ export default createComponent({
     },
 
     offset() {
-      return this.date.getDay();
+      const { firstDayOfWeek } = this;
+
+      const realDay = this.date.getDay();
+
+      if (!firstDayOfWeek) {
+        return realDay;
+      }
+
+      const fakeDay = realDay - firstDayOfWeek;
+
+      if (fakeDay >= 0) {
+        return fakeDay;
+      }
+
+      return fakeDay + 7;
     },
 
     totalDay() {
