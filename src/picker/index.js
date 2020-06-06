@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isObject } from '../utils';
+import { createNamespace, isDef, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps } from './shared';
@@ -86,7 +86,9 @@ export default createComponent({
       let cursor = { children: this.columns };
 
       while (cursor && cursor.children) {
-        const defaultIndex = cursor.defaultIndex || +this.defaultIndex;
+        const defaultIndex = isDef(cursor.defaultIndex)
+          ? cursor.defaultIndex
+          : +this.defaultIndex;
 
         formatted.push({
           values: cursor.children.map((item) => item[this.valueKey]),
