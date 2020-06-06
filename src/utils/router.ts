@@ -15,7 +15,7 @@ function isRedundantNavigation(err: Error) {
   return (
     err.name === 'NavigationDuplicated' ||
     // compatible with vue-router@3.3
-    err.message.indexOf('redundant navigation') !== -1
+    (err.message && err.message.indexOf('redundant navigation') !== -1)
   );
 }
 
