@@ -11,6 +11,14 @@ export type RouteConfig = {
   replace?: boolean;
 };
 
+function isRedundantNavigation(err: Error) {
+  return (
+    err.name === 'NavigationDuplicated' ||
+    // compatible with vue-router@3.3
+    (err.message && err.message.indexOf('redundant navigation') !== -1)
+  );
+}
+
 export function route(router: VueRouter, config: RouteConfig) {
   const { to, url, replace } = config;
   if (to && router) {
@@ -19,8 +27,7 @@ export function route(router: VueRouter, config: RouteConfig) {
     /* istanbul ignore else */
     if (promise && promise.catch) {
       promise.catch((err) => {
-        /* istanbul ignore if */
-        if (err && err.name !== 'NavigationDuplicated') {
+        if (err && !isRedundantNavigation(err)) {
           throw err;
         }
       });

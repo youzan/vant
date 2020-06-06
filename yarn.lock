@@ -11609,9 +11609,9 @@ vue-loader@^15.9.2:
     vue-style-loader "^4.1.0"
 
 vue-router@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.6.tgz#45f5a3a3843e31702c061dd829393554e4328f89"
-  integrity sha512-GYhn2ynaZlysZMkFE5oCHRUTqE8BWs/a9YbKpNLi0i7xD6KG1EzDqpHQmv1F5gXjr8kL5iIVS8EOtRaVUEXTqA==
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.3.2.tgz?cache=0&sync_timestamp=1590759571191&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
+  integrity sha1-AJneQC7bL+kvlxEFOrWiFW8jnK0=
 
 vue-style-loader@^4.1.0:
   version "4.1.2"
