@@ -185,10 +185,8 @@ export default createComponent({
       this.code = values[index].code;
       this.setValues();
 
-      let getValues = picker.getValues();
-      getValues = this.parseOutputValues(getValues);
-
-      this.$emit('change', picker, getValues, index);
+      const parsedValues = this.parseOutputValues(picker.getValues());
+      this.$emit('change', picker, parsedValues, index);
     },
 
     onConfirm(values, index) {
