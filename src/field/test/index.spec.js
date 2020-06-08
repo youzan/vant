@@ -289,11 +289,9 @@ test('formatter prop', () => {
     },
   });
 
-  const input = wrapper.find('input');
-
-  input.trigger('input');
   expect(wrapper.emitted('input')[0][0]).toEqual('abc');
 
+  const input = wrapper.find('input');
   input.element.value = '123efg';
   input.trigger('input');
   expect(wrapper.emitted('input')[1][0]).toEqual('efg');

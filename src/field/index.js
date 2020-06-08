@@ -1,14 +1,14 @@
 // Utils
-import { preventDefault } from '../utils/dom/event';
-import { formatNumber } from '../utils/format/number';
 import { resetScroll } from '../utils/dom/reset-scroll';
+import { formatNumber } from '../utils/format/number';
+import { preventDefault } from '../utils/dom/event';
 import {
-  createNamespace,
-  isObject,
   isDef,
   addUnit,
+  isObject,
   isPromise,
   isFunction,
+  createNamespace,
 } from '../utils';
 
 // Components
@@ -53,6 +53,10 @@ export default createComponent({
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
+    value: {
+      type: [String, Number],
+      default: '',
+    },
     type: {
       type: String,
       default: 'text',
@@ -76,6 +80,7 @@ export default createComponent({
 
   watch: {
     value() {
+      this.updateValue(this.value);
       this.resetValidation();
       this.validateWithTrigger('onChange');
       this.$nextTick(this.adjustSize);
@@ -83,7 +88,7 @@ export default createComponent({
   },
 
   mounted() {
-    this.format();
+    this.updateValue(this.value);
     this.$nextTick(this.adjustSize);
 
     if (this.vanForm) {
@@ -270,13 +275,12 @@ export default createComponent({
       }
     },
 
-    format(target = this.$refs.input) {
-      if (!target) {
+    updateValue(value) {
+      value = String(value);
+
+      if (value === this.currentValue) {
         return;
       }
-
-      let { value } = target;
-      const originValue = value;
 
       // native maxlength not work when type is number
       const { maxlength } = this;
@@ -293,11 +297,16 @@ export default createComponent({
         value = this.formatter(value);
       }
 
-      if (value !== originValue) {
-        target.value = value;
+      const { input } = this.$refs;
+      if (input && value !== input.value) {
+        input.value = value;
       }
 
-      return value;
+      if (value !== this.value) {
+        this.$emit('input', value);
+      }
+
+      this.currentValue = value;
     },
 
     onInput(event) {
@@ -306,7 +315,7 @@ export default createComponent({
         return;
       }
 
-      this.$emit('input', this.format(event.target));
+      this.updateValue(event.target.value);
     },
 
     onFocus(event) {
