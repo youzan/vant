@@ -276,33 +276,25 @@ export default createComponent({
       }
 
       let { value } = target;
-      const { maxlength } = this;
+      const originValue = value;
 
       // native maxlength not work when type is number
+      const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
-        target.value = value;
       }
 
       if (this.type === 'number' || this.type === 'digit') {
-        const originValue = value;
         const allowDot = this.type === 'number';
-
         value = formatNumber(value, allowDot);
-
-        if (value !== originValue) {
-          target.value = value;
-        }
       }
 
       if (this.formatter) {
-        const originValue = value;
-
         value = this.formatter(value);
+      }
 
-        if (value !== originValue) {
-          target.value = value;
-        }
+      if (value !== originValue) {
+        target.value = value;
       }
 
       return value;
