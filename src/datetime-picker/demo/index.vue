@@ -21,7 +21,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('monthDayType')">
+    <demo-block v-if="!isWeapp" :title="t('monthDayType')">
       <van-datetime-picker
         v-model="value.monthDayType"
         type="month-day"
