@@ -30,4 +30,5 @@ yarn add @vant/icons
 
 1. Add new icon to assets/icons.sketch
 2. Add icon name to src/config.js
-3. Make a Pull Request
+3. Add icon codepoints to build/codepoints.js
+4. Make a Pull Request
