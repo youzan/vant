@@ -27,6 +27,16 @@
       cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
+  &__tips {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 35px;
+    color: @switch-on-background-color;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
   &__loading {
     top: 25%;
     left: 25%;
@@ -40,6 +50,11 @@
 
     .van-switch__node {
       transform: translateX(@switch-width - @switch-node-size);
+    }
+
+    .van-switch__tips {
+      margin-left: 7px;
+      color: @switch-node-background-color;
     }
 
     .van-switch__loading {

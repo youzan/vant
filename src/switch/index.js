@@ -26,6 +26,10 @@ export default createComponent({
         backgroundColor: this.checked ? this.activeColor : this.inactiveColor,
       };
     },
+
+    text() {
+      return this.checked ? this.activeText : this.inactiveText;
+    },
   },
 
   methods: {
@@ -63,6 +67,7 @@ export default createComponent({
         onClick={this.onClick}
       >
         <div class={bem('node')}>{this.genLoading()}</div>
+        <span class={bem('tips')}>{this.text}</span>
       </div>
     );
   },

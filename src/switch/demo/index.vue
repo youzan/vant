@@ -16,6 +16,14 @@
       <van-switch v-model="checked2" size="24px" />
     </demo-block>
 
+    <demo-block :title="t('customText')">
+      <van-switch
+        v-model="checked3"
+        :active-text="t('activeText')"
+        :inactive-text="t('inactiveText')"
+      />
+    </demo-block>
+
     <demo-block :title="t('customColor')">
       <van-switch
         v-model="checked3"
@@ -45,6 +53,9 @@ export default {
       message: '是否切换开关？',
       withCell: '搭配单元格使用',
       customSize: '自定义大小',
+      customText: '自定义文本',
+      activeText: '开',
+      inactiveText: '关',
       customColor: '自定义颜色',
       asyncControl: '异步控制',
     },
@@ -54,6 +65,9 @@ export default {
       message: 'Are you sure to toggle switch?',
       withCell: 'Inside a Cell',
       customSize: 'Custom Size',
+      customText: 'Custom Text',
+      activeText: 'O',
+      inactiveText: 'C',
       customColor: 'Custom Color',
       asyncControl: 'Async Control',
     },

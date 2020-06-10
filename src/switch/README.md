@@ -45,6 +45,12 @@ export default {
 <van-switch v-model="checked" size="24px" />
 ```
 
+### Custom Text
+
+```html
+<van-switch v-model="checked" active-text="开" inactive-text="关" />
+```
+
 ### Custom Color
 
 ```html
@@ -97,6 +103,8 @@ export default {
 | loading | Whether to show loading icon | _boolean_ | `false` |
 | disabled | Whether to disable switch | _boolean_ | `false` |
 | size `v2.2.11` | Size of switch | _number \| string_ | `30px` |
+| active-text | Text when active | _string_ | - |
+| inactive-text | Text when inactive | _string_ | - |
 | active-color | Background color when active | _string_ | `#1989fa` |
 | inactive-color | Background color when inactive | _string_ | `white` |
 | active-value | Value when active | _any_ | `true` |
