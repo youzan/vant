@@ -11,6 +11,7 @@ const md5File = require('md5-file');
 const iconfont = require('gulp-iconfont');
 const iconfontCss = require('gulp-iconfont-css');
 const config = require('../src/config');
+const codepoints = require('./codepoints');
 
 const srcDir = path.join(__dirname, '../src');
 const svgDir = path.join(__dirname, '../assets/svg');
@@ -23,8 +24,10 @@ const md5 = md5File.sync(sketch).slice(0, 6);
 const fontName = `${config.name}-${md5}`;
 
 // remove previous fonts
-const prevFonts = glob.sync(formats.map(ext => path.join(srcDir, '*.' + ext)));
-prevFonts.forEach(font => fs.removeSync(font));
+const prevFonts = glob.sync(
+  formats.map((ext) => path.join(srcDir, '*.' + ext))
+);
+prevFonts.forEach((font) => fs.removeSync(font));
 
 // generate font from svg && build index.less
 function font() {
@@ -35,7 +38,7 @@ function font() {
         path: template,
         targetPath: '../src/index.less',
         normalize: true,
-        firstGlyph: 0xf000,
+        fixedCodepoints: codepoints,
         cssClass: fontName, // this is a trick to pass fontName to template
       })
     )
@@ -53,7 +56,7 @@ function upload(done) {
   encode(fontName, srcDir);
 
   // upload font to cdn
-  formats.forEach(ext => {
+  formats.forEach((ext) => {
     shell.exec(`superman-cdn /vant ${path.join(srcDir, fontName + '.' + ext)}`);
   });
 
