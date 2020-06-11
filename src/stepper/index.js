@@ -31,6 +31,7 @@ export default createComponent({
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
+    placeholder: String,
     disablePlus: Boolean,
     disableMinus: Boolean,
     disableInput: Boolean,
@@ -298,6 +299,7 @@ export default createComponent({
           readonly={this.disableInput}
           // set keyboard in mordern browers
           inputmode={this.integer ? 'numeric' : 'decimal'}
+          placeholder={this.placeholder}
           aria-valuemax={this.max}
           aria-valuemin={this.min}
           aria-valuenow={this.currentValue}
