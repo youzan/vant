@@ -17,12 +17,17 @@ Vue.use(NoticeBar);
 <van-notice-bar text="Notice Content" left-icon="volume-o" />
 ```
 
-### Disable scroll
+### Scrollable
 
 ```html
-<van-notice-bar :scrollable="false">
-  Notice Content
-</van-notice-bar>
+<!-- Enable scroll when text is short -->
+<van-notice-bar scrollable text="Notice Content" />
+
+<!-- Disable scroll when text is long -->
+<van-notice-bar
+  :scrollable="false"
+  text="Technology is the common soul of the people who developed it."
+/>
 ```
 
 ### Wrapable
@@ -90,7 +95,7 @@ Vue.use(NoticeBar);
 | left-icon | Left Icon | _string_ | - |
 | delay | Animation delay (s) | _number \| string_ | `1` |
 | speed | Scroll speed (px/s) | _number \| string_ | `50` |
-| scrollable | Whether to scroll content | _boolean_ | `true` |
+| scrollable | Whether to scroll content | _boolean_ | - |
 | wrapable | Whether to enable text wrap | _boolean_ | `false` | - |
 
 ### Events

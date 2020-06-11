@@ -14,7 +14,7 @@ export default createComponent({
     background: String,
     scrollable: {
       type: Boolean,
-      default: true,
+      default: null,
     },
     delay: {
       type: [Number, String],
@@ -81,14 +81,14 @@ export default createComponent({
 
       setTimeout(() => {
         const { wrap, content } = this.$refs;
-        if (!wrap || !content) {
+        if (!wrap || !content || this.scrollable === false) {
           return;
         }
 
         const wrapWidth = wrap.getBoundingClientRect().width;
         const contentWidth = content.getBoundingClientRect().width;
 
-        if (this.scrollable && contentWidth > wrapWidth) {
+        if (this.scrollable || contentWidth > wrapWidth) {
           doubleRaf(() => {
             this.offset = -contentWidth;
             this.duration = contentWidth / this.speed;
