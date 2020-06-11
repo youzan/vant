@@ -166,7 +166,7 @@ export default createComponent({
             ref="content"
             class={[
               bem('content'),
-              { 'van-ellipsis': !this.scrollable && !this.wrapable },
+              { 'van-ellipsis': this.scrollable === false && !this.wrapable },
             ]}
             style={contentStyle}
             onTransitionend={this.onTransitionEnd}
