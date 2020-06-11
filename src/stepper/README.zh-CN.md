@@ -145,6 +145,7 @@ export default {
 | button-size `v2.0.5` | 按钮大小以及输入框高度，默认单位为`px` | _number \| string_ | `28px` |
 | decimal-length `v2.2.1` | 固定显示的小数位数 | _number \| string_ | - |
 | theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
+| placeholder `v2.8.6` | 输入框占位提示文字 | _string_ | - |
 | integer | 是否只允许输入整数 | _boolean_ | `false` |
 | disabled | 是否禁用步进器 | _boolean_ | `false` |
 | disable-plus `v2.2.16` | 是否禁用增加按钮 | _boolean_ | `false` |

@@ -241,7 +241,7 @@ export default {
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | _string_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
-| placeholder | 占位提示文字 | _string_ | - |
+| placeholder | 输入框占位提示文字 | _string_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否只读 | _boolean_ | `false` |

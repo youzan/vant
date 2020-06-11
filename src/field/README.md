@@ -216,7 +216,7 @@ Use `input-align` prop to align the input value
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
-| placeholder | Placeholder | _string_ | - |
+| placeholder | Input placeholder | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disable field | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
