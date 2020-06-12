@@ -125,7 +125,7 @@ export default createComponent({
     },
 
     genTitle() {
-      const { disabled, expanded } = this;
+      const { border, disabled, expanded } = this;
 
       const titleSlots = CELL_SLOTS.reduce((slots, name) => {
         if (this.slots(name)) {
@@ -142,7 +142,7 @@ export default createComponent({
       return (
         <Cell
           role="button"
-          class={bem('title', { disabled, expanded })}
+          class={bem('title', { disabled, expanded, borderless: !border })}
           onClick={this.onClick}
           scopedSlots={titleSlots}
           tabindex={disabled ? -1 : 0}
@@ -172,7 +172,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={[bem({ border: this.index })]}>
+      <div class={[bem({ border: this.index && this.border })]}>
         {this.genTitle()}
         {this.genContent()}
       </div>
