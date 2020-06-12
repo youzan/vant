@@ -54,6 +54,7 @@ export default createComponent({
             this.animationClass = bem('play');
           }else{
             this.animationClass='';
+          }
         });
       },
       immediate: true,
