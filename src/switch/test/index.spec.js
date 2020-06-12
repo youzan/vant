@@ -55,6 +55,18 @@ test('active-value & inactive-value prop', () => {
   expect(change).toHaveBeenCalledWith('2');
 });
 
+test('inactive-text prop', () => {
+  const wrapper = mount(Switch, {
+    propsData: {
+      value: '2',
+      inactiveValue: '2',
+      inactiveText: '关',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('inactive-color prop', () => {
   const wrapper = mount(Switch, {
     propsData: {
