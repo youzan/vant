@@ -198,8 +198,8 @@ Use `input-align` prop to align the input value
 ```html
 <van-field
   v-model="value"
-  :label="Text"
-  :placeholder="Input Align Right"
+  label="Text"
+  placeholder="Input Align Right"
   input-align="right"
 />
 ```
