@@ -53,6 +53,14 @@ export default {
 <van-switch v-model="checked" size="24px" />
 ```
 
+### 自定义文本
+
+`active-text`属性表示打开时的文本，`inactive-text`表示关闭时的文本
+
+```html
+<van-switch v-model="checked" active-text="开" inactive-text="关" />
+```
+
 ### 自定义颜色
 
 `active-color`属性表示打开时的背景色，`inactive-color`表示关闭时的背景色
@@ -109,6 +117,8 @@ export default {
 | loading        | 是否为加载状态           | _boolean_          | `false`   |
 | disabled       | 是否为禁用状态           | _boolean_          | `false`   |
 | size `v2.2.11` | 开关尺寸，默认单位为`px` | _number \| string_ | `30px`    |
+| active-text    | 打开时的文本             | _string_           | -         |
+| inactive-text  | 关闭时的文本             | _string_           | -         |
 | active-color   | 打开时的背景色           | _string_           | `#1989fa` |
 | inactive-color | 关闭时的背景色           | _string_           | `white`   |
 | active-value   | 打开时对应的值           | _any_              | `true`    |

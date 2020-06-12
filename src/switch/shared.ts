@@ -9,6 +9,8 @@ export type SharedSwitchProps = {
   disabled?: boolean;
   activeValue: any;
   inactiveValue: any;
+  activeText?: string;
+  inactiveText?: string;
   activeColor?: string;
   inactiveColor?: string;
 };
@@ -18,6 +20,8 @@ export const switchProps = {
   value: null as any,
   loading: Boolean,
   disabled: Boolean,
+  activeText: String,
+  inactiveText: String,
   activeColor: String,
   inactiveColor: String,
   activeValue: {
