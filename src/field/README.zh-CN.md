@@ -223,8 +223,8 @@ export default {
 ```html
 <van-field
   v-model="value"
-  :label="文本"
-  :placeholder="输入框内容右对齐"
+  label="文本"
+  placeholder="输入框内容右对齐"
   input-align="right"
 />
 ```
