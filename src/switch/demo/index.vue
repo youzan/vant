@@ -72,6 +72,7 @@ export default {
       asyncControl: 'Async Control',
     },
   },
+  
   data() {
     return {
       checked: true,
@@ -82,6 +83,7 @@ export default {
       checked6: false,
     };
   },
+  
   methods: {
     onInput(checked) {
       this.$dialog
