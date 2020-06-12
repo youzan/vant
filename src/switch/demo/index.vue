@@ -101,6 +101,7 @@ export default {
 
 <style lang="less">
 @import '../../style/var';
+
 .demo-switch {
   .van-switch {
     margin-left: @padding-md;
