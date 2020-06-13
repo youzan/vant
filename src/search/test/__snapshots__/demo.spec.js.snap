@@ -47,7 +47,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-search">
       <div class="van-search__content van-search__content--square">
-        <div class="van-cell van-cell--borderless van-field">
+        <div class="van-cell van-cell--borderless van-field van-field--disabled">
           <div class="van-field__left-icon"><i class="van-icon van-icon-search">
               <!----></i></div>
           <div class="van-cell__value van-cell__value--alone van-field__value">
