@@ -10,6 +10,29 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
+
+`2020-06-13`
+
+**Feature**
+
+- Stepper: 新增 placeholder 属性 [#6519](https://github.com/youzan/vant/issues/6519)
+- Picker: 选项高度支持配置 rem 单位 [#6462](https://github.com/youzan/vant/issues/6462)
+- NoticeBar: 支持在内容较短时开启滚动播放 [7b0546](https://github.com/youzan/vant/commit/7b0546dbba7425988ae2b4d1765fe20e907c893f)
+
+**style**
+
+- Field: 更新禁用状态下的文本颜色 [#6534](https://github.com/youzan/vant/issues/6534)
+
+**Bug Fixes**
+
+- Calendar: 修复范围选择时无法快捷选择同一天的问题 [#6504](https://github.com/youzan/vant/issues/6504)
+- CollapseItem: 修复无法通过 border 属性隐藏内边框的问题 [#6533](https://github.com/youzan/vant/issues/6533)
+- Field: 修复 v-model 绑定值变化时 formatter 函数没生效的问题 [#6490](https://github.com/youzan/vant/issues/6490)
+- ImagePreview: 修复在 iOS 上放大后图片变模糊的问题 [#6496](https://github.com/youzan/vant/issues/6496)
+- Picker: 修复级联选择时 defaultIndex 在个别情况下取值错误的问题 [#6473](https://github.com/youzan/vant/issues/6473)
+- Tabbar: 修复使用 vue-router 3.3 以上版本时出现重复路由提示的问题 [#6474](https://github.com/youzan/vant/issues/6474)
+
 ### [v2.8.5](https://github.com/youzan/vant/compare/v2.8.4...v2.8.5)
 
 `2020-06-04`

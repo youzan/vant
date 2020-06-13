@@ -10,6 +10,29 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
+
+`2020-06-13`
+
+**Feature**
+
+- NoticeBar: allow to force scrolling [7b0546](https://github.com/youzan/vant/commit/7b0546dbba7425988ae2b4d1765fe20e907c893f)
+- Picker: item-height support rem unit [#6462](https://github.com/youzan/vant/issues/6462)
+- Stepper: add placeholder prop [#6519](https://github.com/youzan/vant/issues/6519)
+
+**style**
+
+- Field: update disabled color [#6534](https://github.com/youzan/vant/issues/6534)
+
+**Bug Fixes**
+
+- Calendar: quick select not work when select same day [#6504](https://github.com/youzan/vant/issues/6504)
+- CollapseItem: can't hide border [#6533](https://github.com/youzan/vant/issues/6533)
+- Field: formatter not work when v-model changed [#6490](https://github.com/youzan/vant/issues/6490)
+- ImagePreview: image blurred after scale on iOS [#6496](https://github.com/youzan/vant/issues/6496)
+- Picker: cursor.defaultIndex may be 0 [#6473](https://github.com/youzan/vant/issues/6473)
+- Tabbar: avoid redundant navigation error [#6474](https://github.com/youzan/vant/issues/6474)
+
 ### [v2.8.5](https://github.com/youzan/vant/compare/v2.8.4...v2.8.5)
 
 `2020-06-04`
