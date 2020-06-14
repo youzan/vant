@@ -74,6 +74,7 @@ export default createComponent({
   data() {
     return {
       focused: false,
+      validateFailed: false,
       validateMessage: '',
     };
   },
@@ -117,7 +118,7 @@ export default createComponent({
       if (this.error !== null) {
         return this.error;
       }
-      if (this.vanForm && this.vanForm.showError && this.validateMessage) {
+      if (this.vanForm && this.vanForm.showError && this.validateFailed) {
         return true;
       }
     },
@@ -208,7 +209,7 @@ export default createComponent({
       return rules.reduce(
         (promise, rule) =>
           promise.then(() => {
-            if (this.validateMessage) {
+            if (this.validateFailed) {
               return;
             }
 
@@ -219,6 +220,7 @@ export default createComponent({
             }
 
             if (!this.runSyncRule(value, rule)) {
+              this.validateFailed = true;
               this.validateMessage = this.getRuleMessage(value, rule);
               return;
             }
@@ -226,6 +228,7 @@ export default createComponent({
             if (rule.validator) {
               return this.runValidator(value, rule).then((result) => {
                 if (result === false) {
+                  this.validateFailed = true;
                   this.validateMessage = this.getRuleMessage(value, rule);
                 }
               });
@@ -242,7 +245,7 @@ export default createComponent({
         }
 
         this.runRules(rules).then(() => {
-          if (this.validateMessage) {
+          if (this.validateFailed) {
             resolve({
               name: this.name,
               message: this.validateMessage,
@@ -271,6 +274,7 @@ export default createComponent({
 
     resetValidation() {
       if (this.validateMessage) {
+        this.validateFailed = false;
         this.validateMessage = '';
       }
     },
