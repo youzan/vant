@@ -38,3 +38,30 @@ test('failed event', async () => {
     values: { A: '', B: '' },
   });
 });
+
+test('failed event when rule message is empty', async () => {
+  const onFailed = jest.fn();
+  const wrapper = mountForm({
+    template: `
+      <van-form ref="form" @failed="onFailed">
+        <van-field name="A" :rules="rulesA" value="" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
+    data() {
+      return {
+        rulesA: [{ required: true }],
+      };
+    },
+    methods: {
+      onFailed,
+    },
+  });
+
+  await submitForm(wrapper);
+
+  expect(onFailed).toHaveBeenCalledWith({
+    errors: [{ name: 'A' }],
+    values: { A: '' },
+  });
+});
