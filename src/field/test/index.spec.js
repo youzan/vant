@@ -380,3 +380,14 @@ test('should blur search input on enter', () => {
   wrapper.find('input').trigger('keypress.enter');
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
+
+test('value is null', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: null,
+    },
+  });
+
+  expect(wrapper.find('input').element.value).toEqual('');
+  expect(wrapper.emitted('input')[0][0]).toEqual('');
+});

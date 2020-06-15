@@ -280,7 +280,7 @@ export default createComponent({
     },
 
     updateValue(value) {
-      value = String(value);
+      value = isDef(value) ? String(value) : '';
 
       if (value === this.currentValue) {
         return;
