@@ -10,13 +10,24 @@ export function addUnit(value?: string | number): string | undefined {
   return isNumeric(value) ? `${value}px` : value;
 }
 
+// cache
+let rootFontSize: number;
+
+function getRootFontSize() {
+  if (!rootFontSize) {
+    const doc = document.documentElement;
+    const fontSize =
+      doc.style.fontSize || window.getComputedStyle(doc).fontSize;
+
+    rootFontSize = parseFloat(fontSize);
+  }
+
+  return rootFontSize;
+}
+
 function convertRem(value: string) {
-  const rootStyle = window.getComputedStyle(document.documentElement);
-  const rootFontSize = parseFloat(rootStyle.fontSize);
-
   value = value.replace(/rem/g, '');
-
-  return +value * rootFontSize;
+  return +value * getRootFontSize();
 }
 
 export function unitToPx(value: string | number): number {
