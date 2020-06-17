@@ -54,11 +54,11 @@ export default {
 
 ### Props
 
-| Attribute  | Description         | Type               | Default |
-| ---------- | ------------------- | ------------------ | ------- |
-| offset-top | Offset top          | _number \| string_ | `0`     |
-| z-index    | z-index when sticky | _number \| string_ | `99`    |
-| container  | Container DOM       | _Element_          | -       |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| offset-top `v2.8.7` | Offset top, supports `px` ans `rem` unit, default `px` | _number \| string_ | `0` |
+| z-index | z-index when sticky | _number \| string_ | `99` |
+| container | Container DOM | _Element_ | - |
 
 ### Events
 

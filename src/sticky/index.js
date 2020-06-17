@@ -1,4 +1,5 @@
 import { isHidden } from '../utils/dom/style';
+import { unitToPx } from '../utils/format/unit';
 import { createNamespace, isDef, isServer } from '../utils';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
 import { BindEventMixin } from '../mixins/bind-event';
@@ -40,6 +41,10 @@ export default createComponent({
   },
 
   computed: {
+    offsetTopPx() {
+      return unitToPx(this.offsetTop);
+    },
+
     style() {
       if (!this.fixed) {
         return;
@@ -51,8 +56,8 @@ export default createComponent({
         style.zIndex = this.zIndex;
       }
 
-      if (this.offsetTop && this.fixed) {
-        style.top = `${this.offsetTop}px`;
+      if (this.offsetTopPx && this.fixed) {
+        style.top = `${this.offsetTopPx}px`;
       }
 
       if (this.transform) {
@@ -86,8 +91,7 @@ export default createComponent({
 
       this.height = this.$el.offsetHeight;
 
-      const { container } = this;
-      const offsetTop = +this.offsetTop;
+      const { container, offsetTopPx } = this;
       const scrollTop = getScrollTop(window);
       const topToPageTop = getElementTop(this.$el);
 
@@ -102,12 +106,12 @@ export default createComponent({
       if (container) {
         const bottomToPageTop = topToPageTop + container.offsetHeight;
 
-        if (scrollTop + offsetTop + this.height > bottomToPageTop) {
+        if (scrollTop + offsetTopPx + this.height > bottomToPageTop) {
           const distanceToBottom = this.height + scrollTop - bottomToPageTop;
 
           if (distanceToBottom < this.height) {
             this.fixed = true;
-            this.transform = -(distanceToBottom + offsetTop);
+            this.transform = -(distanceToBottom + offsetTopPx);
           } else {
             this.fixed = false;
           }
@@ -117,7 +121,7 @@ export default createComponent({
         }
       }
 
-      if (scrollTop + offsetTop > topToPageTop) {
+      if (scrollTop + offsetTopPx > topToPageTop) {
         this.fixed = true;
         this.transform = 0;
       } else {
