@@ -297,6 +297,29 @@ test('formatter prop', () => {
   expect(wrapper.emitted('input')[1][0]).toEqual('efg');
 });
 
+test('format-trigger prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'abc123',
+      formatTrigger: 'onBlur',
+      formatter: (value) => value.replace(/\d/g, ''),
+    },
+  });
+
+  wrapper.vm.$on('input', (value) => {
+    wrapper.setProps({ value });
+  });
+
+  expect(wrapper.emitted('input')[0][0]).toEqual('abc');
+
+  const input = wrapper.find('input');
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('123efg');
+  input.trigger('blur');
+  expect(wrapper.emitted('input')[2][0]).toEqual('efg');
+});
+
 test('reach max word-limit', () => {
   const wrapper = mount(Field, {
     propsData: {
