@@ -127,6 +127,17 @@ test('title slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('allow-html prop', () => {
+  const wrapper = mount(DialogComponent, {
+    propsData: {
+      value: true,
+      message: '<span>text</span>',
+      allowHtml: false,
+    },
+  });
+  expect(wrapper.find('.van-dialog__message')).toMatchSnapshot();
+});
+
 test('open & close event', () => {
   const wrapper = mount(DialogComponent);
   wrapper.vm.value = true;

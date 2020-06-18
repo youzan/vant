@@ -51,6 +51,7 @@ Dialog.defaultOptions = {
   message: '',
   overlay: true,
   className: '',
+  allowHtml: true,
   lockScroll: true,
   transition: 'van-dialog-bounce',
   beforeClose: null,
