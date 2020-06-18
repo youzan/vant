@@ -2,7 +2,7 @@
 import { createNamespace, isDef, isObject } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
-import { pickerProps } from './shared';
+import { pickerProps, DEFAULT_ITEM_HEIGHT } from './shared';
 import { unitToPx } from '../utils/format/unit';
 
 // Components
@@ -41,7 +41,7 @@ export default createComponent({
 
   computed: {
     itemPxHeight() {
-      return unitToPx(this.itemHeight);
+      return this.itemHeight ? unitToPx(this.itemHeight) : DEFAULT_ITEM_HEIGHT;
     },
 
     dataType() {
