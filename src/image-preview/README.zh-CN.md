@@ -148,9 +148,9 @@ export default {
 | className | 自定义类名 | _any_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
-| closeable | 是否显示关闭图标 | _boolean_ | `false` |
-| closeIcon | 关闭图标名称或图片链接 | _string_ | `clear` |
-| closeIconPosition | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
+| closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
+| closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 
 ### Props
 
