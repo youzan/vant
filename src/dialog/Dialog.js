@@ -37,6 +37,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    allowHtml: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -124,6 +128,31 @@ export default createComponent({
         </div>
       );
     },
+
+    genContent(hasTitle, messageSlot) {
+      if (messageSlot) {
+        return <div class={bem('content')}>{messageSlot}</div>;
+      }
+
+      const { message, messageAlign } = this;
+      if (message) {
+        const data = {
+          class: bem('message', {
+            'has-title': hasTitle,
+            [messageAlign]: messageAlign,
+          }),
+          domProps: {
+            [this.allowHtml ? 'innerHTML' : 'textContent']: message,
+          },
+        };
+
+        return (
+          <div class={bem('content')}>
+            <div {...data} />
+          </div>
+        );
+      }
+    },
   },
 
   render() {
@@ -131,27 +160,12 @@ export default createComponent({
       return;
     }
 
-    const { message, messageAlign } = this;
+    const { message } = this;
     const messageSlot = this.slots();
     const title = this.slots('title') || this.title;
-
     const Title = title && (
       <div class={bem('header', { isolated: !message && !messageSlot })}>
         {title}
-      </div>
-    );
-
-    const Content = (messageSlot || message) && (
-      <div class={bem('content')}>
-        {messageSlot || (
-          <div
-            domPropsInnerHTML={message}
-            class={bem('message', {
-              'has-title': title,
-              [messageAlign]: messageAlign,
-            })}
-          />
-        )}
       </div>
     );
 
@@ -169,7 +183,7 @@ export default createComponent({
           style={{ width: addUnit(this.width) }}
         >
           {Title}
-          {Content}
+          {this.genContent(title, messageSlot)}
           {this.genButtons()}
         </div>
       </transition>

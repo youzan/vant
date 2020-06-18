@@ -1,10 +1,15 @@
 @import '../style/var';
 
 .van-field {
+  &--disabled {
+    color: @field-disabled-text-color;
+  }
+
   &__label {
     flex: none;
     box-sizing: border-box;
     width: @field-label-width;
+    text-align: left;
 
     &--center {
       text-align: center;
@@ -144,12 +149,6 @@
     font-size: @field-word-limit-font-size;
     line-height: @field-word-limit-line-height;
     text-align: right;
-  }
-
-  &__word-num {
-    &--full {
-      color: @field-word-num-full-color;
-    }
   }
 
   &--error {

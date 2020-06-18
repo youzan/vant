@@ -21,5 +21,10 @@ exports[`renders demo correctly 1`] = `
     </button> <button class="van-button van-button--primary van-button--normal">
       <div class="van-button__content"><span class="van-button__text">自定义时长</span></div>
     </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">组件调用</span></div>
+    </button>
+    <!---->
+  </div>
 </div>
 `;

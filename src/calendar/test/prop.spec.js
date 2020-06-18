@@ -181,7 +181,7 @@ test('lazy-render prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test.only('month-show event', async () => {
+test('month-show event', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       value: true,

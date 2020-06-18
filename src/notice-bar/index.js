@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
 import Icon from '../icon';
 
@@ -14,7 +14,7 @@ export default createComponent({
     background: String,
     scrollable: {
       type: Boolean,
-      default: true,
+      default: null,
     },
     delay: {
       type: [Number, String],
@@ -32,7 +32,6 @@ export default createComponent({
       offset: 0,
       duration: 0,
       wrapWidth: 0,
-      firstRound: true,
       contentWidth: 0,
     };
   },
@@ -43,6 +42,10 @@ export default createComponent({
       handler: 'start',
       immediate: true,
     },
+  },
+
+  activated() {
+    this.start();
   },
 
   methods: {
@@ -56,7 +59,6 @@ export default createComponent({
     onTransitionEnd() {
       this.offset = this.wrapWidth;
       this.duration = 0;
-      this.firstRound = false;
 
       doubleRaf(() => {
         this.offset = -this.contentWidth;
@@ -66,30 +68,35 @@ export default createComponent({
     },
 
     reset() {
+      this.offset = 0;
       this.duration = 0;
       this.wrapWidth = 0;
       this.contentWidth = 0;
     },
 
     start() {
-      this.$nextTick(() => {
+      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
+
+      this.reset();
+
+      setTimeout(() => {
         const { wrap, content } = this.$refs;
-        if (!wrap || !content) {
+        if (!wrap || !content || this.scrollable === false) {
           return;
         }
 
         const wrapWidth = wrap.getBoundingClientRect().width;
         const contentWidth = content.getBoundingClientRect().width;
 
-        if (this.scrollable && contentWidth > wrapWidth) {
-          this.offset = -contentWidth;
-          this.duration = contentWidth / this.speed;
-          this.wrapWidth = wrapWidth;
-          this.contentWidth = contentWidth;
-        } else {
-          this.reset();
+        if (this.scrollable || contentWidth > wrapWidth) {
+          doubleRaf(() => {
+            this.offset = -contentWidth;
+            this.duration = contentWidth / this.speed;
+            this.wrapWidth = wrapWidth;
+            this.contentWidth = contentWidth;
+          });
         }
-      });
+      }, delay);
     },
   },
 
@@ -102,8 +109,7 @@ export default createComponent({
     };
 
     const contentStyle = {
-      transform: `translateX(${this.offset}px)`,
-      transitionDelay: (this.firstRound ? this.delay : 0) + 's',
+      transform: this.offset ? `translateX(${this.offset}px)` : '',
       transitionDuration: this.duration + 's',
     };
 
@@ -160,7 +166,7 @@ export default createComponent({
             ref="content"
             class={[
               bem('content'),
-              { 'van-ellipsis': !this.scrollable && !this.wrapable },
+              { 'van-ellipsis': this.scrollable === false && !this.wrapable },
             ]}
             style={contentStyle}
             onTransitionend={this.onTransitionEnd}

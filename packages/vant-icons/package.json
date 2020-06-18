@@ -17,14 +17,14 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
-    "fast-glob": "^3.1.1",
-    "fs-extra": "^8.1.0",
+    "fast-glob": "^3.2.2",
+    "fs-extra": "^9.0.1",
     "gulp": "^4.0.2",
     "gulp-iconfont": "^10.0.3",
     "gulp-iconfont-css": "^3.0.0",
-    "md5-file": "^4.0.0",
-    "release-it": "^12.4.3",
-    "shelljs": "^0.8.3",
+    "md5-file": "^5.0.0",
+    "release-it": "^13.6.2",
+    "shelljs": "^0.8.4",
     "svgo": "1.2.2"
   },
   "release-it": {

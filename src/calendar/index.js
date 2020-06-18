@@ -285,7 +285,7 @@ export default createComponent({
           } else if (compareToStart === -1) {
             this.select([date, null]);
           } else if (this.allowSameDay) {
-            this.select([date, date]);
+            this.select([date, date], true);
           }
         } else {
           this.select([date, null]);

@@ -51,7 +51,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-field__body"><input type="text" readonly="readonly" class="van-field__control"></div>
       </div>
     </div>
-    <div class="van-cell van-field">
+    <div class="van-cell van-field van-field--disabled">
       <div class="van-cell__title van-field__label"><span>文本</span></div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body"><input type="text" disabled="disabled" class="van-field__control"></div>
@@ -112,7 +112,13 @@ exports[`renders demo correctly 1`] = `
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label"><span>文本</span></div>
       <div class="van-cell__value van-field__value">
-        <div class="van-field__body"><input type="text" placeholder="格式化输入内容" class="van-field__control"></div>
+        <div class="van-field__body"><input type="text" placeholder="在输入时执行格式化" class="van-field__control"></div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label"><span>文本</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" placeholder="在失焦时执行格式化" class="van-field__control"></div>
       </div>
     </div>
   </div>

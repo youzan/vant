@@ -42,6 +42,19 @@
         @click="showCustomDuration"
       />
     </demo-block>
+
+    <demo-block :title="t('componentCall')">
+      <van-button
+        type="primary"
+        :text="t('componentCall')"
+        @click="showComponentCall"
+      />
+
+      <van-notify v-model="show" type="success">
+        <van-icon name="bell" style="margin-right: 4px;" />
+        <span>{{ t('content') }}</span>
+      </van-notify>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -57,6 +70,7 @@ export default {
       notifyType: '通知类型',
       customColor: '自定义颜色',
       customNotify: '自定义配置',
+      componentCall: '组件调用',
       customDuration: '自定义时长',
     },
     'en-US': {
@@ -68,8 +82,15 @@ export default {
       notifyType: 'Notify Type',
       customColor: 'Custom Color',
       customNotify: 'Custom Notify',
+      componentCall: 'Component Call',
       customDuration: 'Custom Duration',
     },
+  },
+
+  data() {
+    return {
+      show: false,
+    };
   },
 
   methods: {
@@ -97,6 +118,13 @@ export default {
         message: this.t('content'),
         type,
       });
+    },
+
+    showComponentCall() {
+      this.show = true;
+      setTimeout(() => {
+        this.show = false;
+      }, 2000);
     },
   },
 };

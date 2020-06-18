@@ -87,6 +87,23 @@ export default {
 />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      showShare: false,
+      options: [
+        { name: 'Wechat', icon: 'wechat' },
+        { name: 'Weibo', icon: 'weibo' },
+        { name: 'Link', icon: 'link', description: 'Description' },
+        { name: 'Poster', icon: 'poster' },
+        { name: 'Qrcode', icon: 'qrcode' },
+      ],
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -111,6 +128,7 @@ export default {
 | Key | Description | Type |
 | --- | --- | --- |
 | name | Option name | _string_ |
+| description `v2.8.5` | Option description | _string_ |
 | icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | _string_ |
 
 ### Events

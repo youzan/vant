@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { VanComponent } from './component';
 
 export type NotifyMessage = string | number;
 
@@ -30,6 +31,7 @@ export interface Notify {
   defaultOptions: NotifyOptions;
   setDefaultOptions(options: NotifyOptions): void;
   resetDefaultOptions(): void;
+  Component: typeof VanComponent;
 }
 
 declare module 'vue/types/vue' {

@@ -10,6 +10,47 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
+
+`2020-06-13`
+
+**Feature**
+
+- NoticeBar: allow to force scrolling [7b0546](https://github.com/youzan/vant/commit/7b0546dbba7425988ae2b4d1765fe20e907c893f)
+- Picker: item-height support rem unit [#6462](https://github.com/youzan/vant/issues/6462)
+- Stepper: add placeholder prop [#6519](https://github.com/youzan/vant/issues/6519)
+
+**style**
+
+- Field: update disabled color [#6534](https://github.com/youzan/vant/issues/6534)
+
+**Bug Fixes**
+
+- Calendar: quick select not work when select same day [#6504](https://github.com/youzan/vant/issues/6504)
+- CollapseItem: can't hide border [#6533](https://github.com/youzan/vant/issues/6533)
+- Field: formatter not work when v-model changed [#6490](https://github.com/youzan/vant/issues/6490)
+- ImagePreview: image blurred after scale on iOS [#6496](https://github.com/youzan/vant/issues/6496)
+- Picker: cursor.defaultIndex may be 0 [#6473](https://github.com/youzan/vant/issues/6473)
+- Tabbar: avoid redundant navigation error [#6474](https://github.com/youzan/vant/issues/6474)
+
+### [v2.8.5](https://github.com/youzan/vant/compare/v2.8.4...v2.8.5)
+
+`2020-06-04`
+
+**Feature**
+
+- DropdownItem: add lazy-render prop [#6454](https://github.com/youzan/vant/issues/6454)
+- Notify: support component call [#6453](https://github.com/youzan/vant/issues/6453)
+- ShareSheet: add options description [#6460](https://github.com/youzan/vant/issues/6460)
+- Skeleton: add round prop [#6441](https://github.com/youzan/vant/issues/6441)
+
+**Bug Fixes**
+
+- Popup: incorrect overlay z-index when reopened [#6429](https://github.com/youzan/vant/issues/6429)
+- Button: set font-size to inherit when loading [#6413](https://github.com/youzan/vant/issues/6413) [#6414](https://github.com/youzan/vant/issues/6414)
+- NoticeBar: scroll failed after activated [d21420](https://github.com/youzan/vant/commit/d21420b7d2357c4c0b47bc0f38b48e57d7fd9b81)
+- Field: fix render error when value is null or undefined [#6419](https://github.com/youzan/vant/issues/6419)
+
 ### [v2.8.4](https://github.com/youzan/vant/compare/v2.8.3...v2.8.4)
 
 `2020-05-28`

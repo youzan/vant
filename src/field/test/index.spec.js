@@ -289,20 +289,63 @@ test('formatter prop', () => {
     },
   });
 
-  const input = wrapper.find('input');
-
-  input.trigger('input');
   expect(wrapper.emitted('input')[0][0]).toEqual('abc');
 
+  const input = wrapper.find('input');
   input.element.value = '123efg';
   input.trigger('input');
   expect(wrapper.emitted('input')[1][0]).toEqual('efg');
+});
+
+test('format-trigger prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'abc123',
+      formatTrigger: 'onBlur',
+      formatter: (value) => value.replace(/\d/g, ''),
+    },
+  });
+
+  wrapper.vm.$on('input', (value) => {
+    wrapper.setProps({ value });
+  });
+
+  expect(wrapper.emitted('input')[0][0]).toEqual('abc');
+
+  const input = wrapper.find('input');
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('123efg');
+  input.trigger('blur');
+  expect(wrapper.emitted('input')[2][0]).toEqual('efg');
 });
 
 test('reach max word-limit', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'foo',
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('reach max word-limit undefined', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: undefined,
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('reach max word-limit null', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: null,
       maxlength: 3,
       showWordLimit: true,
     },
@@ -359,4 +402,15 @@ test('should blur search input on enter', () => {
   wrapper.find('input').element.focus();
   wrapper.find('input').trigger('keypress.enter');
   expect(wrapper.emitted('blur')).toBeTruthy();
+});
+
+test('value is null', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: null,
+    },
+  });
+
+  expect(wrapper.find('input').element.value).toEqual('');
+  expect(wrapper.emitted('input')[0][0]).toEqual('');
 });

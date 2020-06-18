@@ -166,11 +166,11 @@ export default createComponent({
   },
 
   mounted() {
-    this.onShow();
+    this.init();
   },
 
   activated() {
-    this.onShow();
+    this.init();
     this.setLine();
   },
 
@@ -180,7 +180,7 @@ export default createComponent({
       this.setLine();
     },
 
-    onShow() {
+    init() {
       this.$nextTick(() => {
         this.inited = true;
         this.tabHeight = getVisibleHeight(this.$refs.wrap);

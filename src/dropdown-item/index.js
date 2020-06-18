@@ -25,6 +25,10 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    lazyRender: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -155,8 +159,9 @@ export default createComponent({
             class={bem('content')}
             position={direction === 'down' ? 'top' : 'bottom'}
             duration={this.transition ? duration : 0}
-            closeOnClickOverlay={closeOnClickOverlay}
+            lazyRender={this.lazyRender}
             overlayStyle={{ position: 'absolute' }}
+            closeOnClickOverlay={closeOnClickOverlay}
             onOpen={this.onOpen}
             onClose={this.onClose}
             onOpened={this.onOpened}

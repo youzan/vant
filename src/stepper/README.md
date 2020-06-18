@@ -119,8 +119,9 @@ export default {
 | button-size `v2.0.5` | Button size | _number \| string_ | `28px` |
 | decimal-length `v2.2.1` | Decimal length | _number \| string_ | - |
 | theme `v2.8.2` | Theme, can be set to `round` | _string_ | - |
+| placeholder `v2.8.6` | Input placeholder | _string_ | - |
 | integer | Whether to allow only integers | _boolean_ | `false` |
-| disabled | Disable value change | _boolean_ | `false` |
+| disabled | Whether to disable value change | _boolean_ | `false` |
 | disable-plus `v2.2.16` | Whether to disable plus button | _boolean_ | `false` |
 | disable-minus `v2.2.16` | Whether to disable minus button | _boolean_ | `false` |
 | disable-input | Whether to disable input | _boolean_ | `false` |

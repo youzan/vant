@@ -261,3 +261,21 @@ test('should not reset index when columns unchanged', () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0]).toEqual(['2', 1]);
 });
+
+test('set rem item-height', async () => {
+  const originGetComputedStyle = window.getComputedStyle;
+
+  window.getComputedStyle = () => ({ fontSize: '16px' });
+
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns: simpleColumn.slice(0, 2),
+      itemHeight: '10rem',
+    },
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+
+  window.getComputedStyle = originGetComputedStyle;
+});

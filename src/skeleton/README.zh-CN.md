@@ -60,8 +60,9 @@ export default {
 | row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | _number \| string \|<br>(number \| string)[]_ | `100%` |
 | title | 是否显示标题占位图 | _boolean_ | `false` |
 | avatar | 是否显示头像占位图 | _boolean_ | `false` |
-| loading | 是否显示骨架屏，传`false`时会展示子组件内容 | _boolean_ | `true` |
+| loading | 是否显示骨架屏，传 `false` 时会展示子组件内容 | _boolean_ | `true` |
 | animate | 是否开启动画 | _boolean_ | `true` |
+| round `v2.8.5` | 是否将标题和段落显示为圆角风格 | _boolean_ | `false` |
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |

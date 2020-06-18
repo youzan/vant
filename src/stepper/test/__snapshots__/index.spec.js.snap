@@ -8,4 +8,6 @@ exports[`disabled stepper 1`] = `<div class="van-stepper"><button type="button" 
 
 exports[`input-width prop 1`] = `<div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input" style="width: 10rem;"><button type="button" class="van-stepper__plus"></button></div>`;
 
+exports[`placeholder prop 1`] = `<input type="text" role="spinbutton" inputmode="decimal" placeholder="foo" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input">`;
+
 exports[`show-plus & show-minus props 1`] = `<div class="van-stepper"><button type="button" class="van-stepper__minus van-stepper__minus--disabled" style="display: none;"></button><input type="text" role="spinbutton" inputmode="decimal" aria-valuemax="Infinity" aria-valuemin="1" aria-valuenow="1" class="van-stepper__input"><button type="button" class="van-stepper__plus" style="display: none;"></button></div>`;
