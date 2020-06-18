@@ -18,6 +18,7 @@ export type ImagePreviewOptions =
       showIndicators?: boolean;
       closeOnPopstate?: boolean;
       closeIconPosition?: string;
+      getContainer?: string | (() => Element);
       onClose?: () => void;
       onChange?: (index: number) => void;
     };

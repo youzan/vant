@@ -265,3 +265,47 @@ test('closeOnPopstate', () => {
 test('ImagePreview.Component', () => {
   expect(ImagePreview.Component).toEqual(ImagePreviewVue);
 });
+
+test('get container with function call ', async (done) => {
+  const element = document.createElement('div');
+  document.body.appendChild(element);
+  ImagePreview({ images, getContainer: () => element });
+
+  await Vue.nextTick();
+  const wrapperDiv = document.querySelector('.van-image-preview');
+  expect(wrapperDiv.parentNode).toEqual(element);
+  document.body.removeChild(element);
+
+  ImagePreview(images);
+
+  await Vue.nextTick();
+  const wrapperBody = document.querySelector('.van-image-preview');
+  expect(wrapperBody.parentNode).toEqual(document.body);
+
+  done();
+});
+
+test('get container with component call', () => {
+  const div1 = document.createElement('div');
+  const div2 = document.createElement('div');
+  const wrapper = mount({
+    template: `
+    <div>
+      <van-image-preview :value="true" :get-container="getContainer">
+      </van-image-preview>
+    </div>
+    `,
+    data() {
+      return {
+        getContainer: () => div1,
+      };
+    },
+  });
+  const imageView = wrapper.find('.van-image-preview').element;
+
+  expect(imageView.parentNode).toEqual(div1);
+  wrapper.vm.getContainer = () => div2;
+  expect(imageView.parentNode).toEqual(div2);
+  wrapper.vm.getContainer = null;
+  expect(wrapper.element).toEqual(wrapper.element);
+});

@@ -22,6 +22,7 @@ const defaultConfig = {
   showIndicators: false,
   closeOnPopstate: false,
   closeIconPosition: 'top-right',
+  getContainer: 'body',
 };
 
 const initInstance = () => {
