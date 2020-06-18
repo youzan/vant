@@ -69,6 +69,10 @@ export default createComponent({
       type: Boolean,
       default: null,
     },
+    formatTrigger: {
+      type: String,
+      default: 'onChange',
+    },
   },
 
   data() {
@@ -89,7 +93,7 @@ export default createComponent({
   },
 
   mounted() {
-    this.updateValue(this.value);
+    this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
 
     if (this.vanForm) {
@@ -279,12 +283,8 @@ export default createComponent({
       }
     },
 
-    updateValue(value) {
+    updateValue(value, trigger = 'onChange') {
       value = isDef(value) ? String(value) : '';
-
-      if (value === this.currentValue) {
-        return;
-      }
 
       // native maxlength not work when type is number
       const { maxlength } = this;
@@ -297,7 +297,7 @@ export default createComponent({
         value = formatNumber(value, allowDot);
       }
 
-      if (this.formatter) {
+      if (this.formatter && trigger === this.formatTrigger) {
         value = this.formatter(value);
       }
 
@@ -335,6 +335,7 @@ export default createComponent({
 
     onBlur(event) {
       this.focused = false;
+      this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
       this.validateWithTrigger('onBlur');
       resetScroll();

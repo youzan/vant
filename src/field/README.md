@@ -139,10 +139,17 @@ Use `formatter` prop to format the input value
 
 ```html
 <van-field
-  v-model="value"
+  v-model="value1"
   label="Text"
   :formatter="formatter"
-  placeholder="Format Value"
+  placeholder="Format On Change"
+/>
+<van-field
+  v-model="value2"
+  label="Text"
+  :formatter="formatter"
+  format-trigger="onBlur"
+  placeholder="Format On Blur"
 />
 ```
 
@@ -150,7 +157,8 @@ Use `formatter` prop to format the input value
 export default {
   data() {
     return {
-      value: '',
+      value1: '',
+      value2: '',
     };
   },
   methods: {
@@ -230,6 +238,7 @@ Use `input-align` prop to align the input value
 | error | Whether to show error info | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
 | formatter `v2.4.2` | Input value formatter | _Function_ | - |
+| format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
 | label-width | Label width | _number \| string_ | `90px` |

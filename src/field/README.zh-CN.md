@@ -17,7 +17,7 @@ Vue.use(Field);
 
 ### 基础用法
 
-可以通过`v-model`双向绑定输入框的值，通过`placeholder`设置占位提示文字
+可以通过 `v-model` 双向绑定输入框的值，通过 `placeholder` 设置占位提示文字。
 
 ```html
 <!-- Field 是基于 Cell 实现的，可以使用 CellGroup 作为容器来提供外边框。 -->
@@ -38,7 +38,7 @@ export default {
 
 ### 自定义类型
 
-根据`type`属性定义不同类型的输入框，默认值为`text`
+根据 `type` 属性定义不同类型的输入框，默认值为 `text`。
 
 ```html
 <!-- 输入任意文本 -->
@@ -71,7 +71,7 @@ export default {
 
 ### 禁用输入框
 
-通过`readonly`将输入框设置为只读状态，通过`disabled`将输入框设置为禁用状态
+通过 `readonly` 将输入框设置为只读状态，通过 `disabled` 将输入框设置为禁用状态。
 
 ```html
 <van-cell-group>
@@ -82,7 +82,7 @@ export default {
 
 ### 显示图标
 
-通过`left-icon`和`right-icon`配置输入框两侧的图标，通过设置`clearable`在输入过程中展示清除图标
+通过 `left-icon` 和 `right-icon` 配置输入框两侧的图标，通过设置 `clearable` 在输入过程中展示清除图标。
 
 ```html
 <van-cell-group>
@@ -116,7 +116,7 @@ export default {
 
 ### 错误提示
 
-设置`required`属性表示这是一个必填项，可以配合`error`或`error-message`属性显示对应的错误提示
+设置 `required` 属性表示这是一个必填项，可以配合 `error` 或 `error-message` 属性显示对应的错误提示。
 
 ```html
 <van-cell-group>
@@ -139,7 +139,7 @@ export default {
 
 ### 插入按钮
 
-通过 button 插槽可以在输入框尾部插入按钮
+通过 button 插槽可以在输入框尾部插入按钮。
 
 ```html
 <van-field
@@ -157,14 +157,21 @@ export default {
 
 ### 格式化输入内容
 
-通过`formatter`属性可以对输入的内容进行格式化
+通过 `formatter` 属性可以对输入的内容进行格式化，通过 `format-trigger` 属性可以指定执行格式化的时机，默认在输入时进行格式化。
 
 ```html
 <van-field
-  v-model="value"
+  v-model="value1"
   label="文本"
   :formatter="formatter"
-  placeholder="格式化输入内容"
+  placeholder="在输入时执行格式化"
+/>
+<van-field
+  v-model="value2"
+  label="文本"
+  :formatter="formatter"
+  format-trigger="onBlur"
+  placeholder="在失焦时执行格式化"
 />
 ```
 
@@ -172,7 +179,8 @@ export default {
 export default {
   data() {
     return {
-      value: '',
+      value1: '',
+      value2: '',
     };
   },
   methods: {
@@ -186,7 +194,7 @@ export default {
 
 ### 高度自适应
 
-对于 textarea，可以通过`autosize`属性设置高度自适应
+对于 textarea，可以通过 `autosize` 属性设置高度自适应。
 
 ```html
 <van-field
@@ -201,7 +209,7 @@ export default {
 
 ### 显示字数统计
 
-设置`maxlength`和`show-word-limit`属性后会在底部显示字数统计
+设置 `maxlength` 和 `show-word-limit` 属性后会在底部显示字数统计。
 
 ```html
 <van-field
@@ -218,7 +226,7 @@ export default {
 
 ### 输入框内容对齐
 
-通过`input-align`属性可以设置输入框内容的对齐方式，可选值为`center`、`right`
+通过 `input-align` 属性可以设置输入框内容的对齐方式，可选值为 `center`、`right`。
 
 ```html
 <van-field
@@ -255,6 +263,7 @@ export default {
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
 | formatter `v2.4.2` | 输入内容格式化函数 | _Function_ | - |
+| format-trigger `v2.8.7` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _any_ | - |
 | label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `90px` |
