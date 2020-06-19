@@ -60,11 +60,11 @@ export default createComponent({
       this.offset = this.wrapWidth;
       this.duration = 0;
 
-      doubleRaf(() => {
+      setTimeout(() => {
         this.offset = -this.contentWidth;
         this.duration = (this.contentWidth + this.wrapWidth) / this.speed;
         this.$emit('replay');
-      });
+      }, 100);
     },
 
     reset() {
