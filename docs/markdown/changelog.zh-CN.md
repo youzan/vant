@@ -10,6 +10,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.8.7](https://github.com/youzan/vant/compare/v2.8.6...v2.8.7)
+
+`2020-06-19`
+
+**Feature**
+
+- Dialog: 新增 allow-html 属性，用于控制是否允许渲染 HTML 内容 [#6568](https://github.com/youzan/vant/issues/6568)
+- Field: 新增 format-trigger 属性，用于控制 formatter 触发时机 [#6566](https://github.com/youzan/vant/issues/6566)
+- Form: 允许在 rules 中不传入 message 字段 [#6536](https://github.com/youzan/vant/issues/6536)
+- Sticky: 支持 offset-top 属性传入 rem 单位 [#6556](https://github.com/youzan/vant/issues/6556)
+
+**style**
+
+- Field: 移除字数统计到达上限时的红色高亮效果 [#6545](https://github.com/youzan/vant/issues/6545)
+- Picker: 新增 @picker-option-height LESS 变量 [#6571](https://github.com/youzan/vant/issues/6571)
+
+**Bug Fixes**
+
+- Field: 修复展示 null 的问题 [#6542](https://github.com/youzan/vant/issues/6542)
+- ImagePreview: 修复放大时拖拽区域过大的问题 [#6574](https://github.com/youzan/vant/issues/6574)
+- NoticeBar: 修复在部分情况下无法重新播放的问题 [e8bd24](https://github.com/youzan/vant/commit/e8bd24265d6e36ed61ea353108d57d75602d2f08)
+
 ### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
 
 `2020-06-13`

@@ -10,6 +10,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.8.7](https://github.com/youzan/vant/compare/v2.8.6...v2.8.7)
+
+`2020-06-19`
+
+**Feature**
+
+- Dialog: add allow-html prop [#6568](https://github.com/youzan/vant/issues/6568)
+- Field: add format-trigger prop [#6566](https://github.com/youzan/vant/issues/6566)
+- Form: rule message can be empty [#6536](https://github.com/youzan/vant/issues/6536)
+- Sticky: offset-top support rem unit [#6556](https://github.com/youzan/vant/issues/6556)
+
+**style**
+
+- Field: remove word num full color [#6545](https://github.com/youzan/vant/issues/6545)
+- Picker: add @picker-option-height less var [#6571](https://github.com/youzan/vant/issues/6571)
+
+**Bug Fixes**
+
+- Field: should not display null [#6542](https://github.com/youzan/vant/issues/6542)
+- ImagePreview: incorrect drag area [#6574](https://github.com/youzan/vant/issues/6574)
+- NoticeBar: failed to replay [e8bd24](https://github.com/youzan/vant/commit/e8bd24265d6e36ed61ea353108d57d75602d2f08)
+
 ### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
 
 `2020-06-13`
