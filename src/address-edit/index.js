@@ -364,14 +364,15 @@ export default createComponent({
         </div>
         <Popup
           vModel={this.showAreaPopup}
+          round
           position="bottom"
           lazyRender={false}
           getContainer="body"
         >
           <Area
             ref="area"
-            loading={!this.areaListLoaded}
             value={data.areaCode}
+            loading={!this.areaListLoaded}
             areaList={this.areaList}
             columnsPlaceholder={this.areaColumnsPlaceholder}
             onConfirm={this.onAreaConfirm}
