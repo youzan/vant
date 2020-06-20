@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef, isObject } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps, DEFAULT_ITEM_HEIGHT } from './shared';
@@ -91,7 +91,7 @@ export default createComponent({
           : +this.defaultIndex;
 
         formatted.push({
-          values: cursor.children.map((item) => item[this.valueKey]),
+          values: cursor.children,
           className: cursor.className,
           defaultIndex,
         });
@@ -106,7 +106,16 @@ export default createComponent({
       if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
       } else {
-        this.$emit(event, this.getValues(), this.getIndexes());
+        let values = this.getValues();
+
+        // compatible with old version of wrong parameters
+        // should be removed in next major version
+        // see: https://github.com/youzan/vant/issues/5905
+        if (this.dataType === 'cascade') {
+          values = values.map((item) => item[this.valueKey]);
+        }
+
+        this.$emit(event, values, this.getIndexes());
       }
     },
 
@@ -138,7 +147,16 @@ export default createComponent({
           this.getColumnIndex(0)
         );
       } else {
-        this.$emit('change', this, this.getValues(), columnIndex);
+        let values = this.getValues();
+
+        // compatible with old version of wrong parameters
+        // should be removed in next major version
+        // see: https://github.com/youzan/vant/issues/5905
+        if (this.dataType === 'cascade') {
+          values = values.map((item) => item[this.valueKey]);
+        }
+
+        this.$emit('change', this, values, columnIndex);
       }
     },
 
@@ -200,14 +218,7 @@ export default createComponent({
       const column = this.children[index];
 
       if (column) {
-        if (this.dataType === 'cascade') {
-          // map should be removed in next major version
-          column.setOptions(
-            options.map((item) => (isObject(item) ? item[this.valueKey] : item))
-          );
-        } else {
-          column.setOptions(options);
-        }
+        column.setOptions(options);
       }
     },
 
