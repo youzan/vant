@@ -12,7 +12,7 @@
       <van-rate
         v-model="value3"
         :size="25"
-        color="#ee0a24"
+        color="#ffd21e"
         void-icon="star"
         void-color="#eee"
       />
