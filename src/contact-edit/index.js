@@ -86,7 +86,7 @@ export default createComponent({
 
     onDelete() {
       Dialog.confirm({
-        message: t('confirmDelete'),
+        title: t('confirmDelete'),
       }).then(() => {
         this.$emit('delete', this.data);
       });
