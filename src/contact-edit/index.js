@@ -128,6 +128,7 @@ export default createComponent({
             <Switch
               vModel={data.isDefault}
               size={24}
+              slot="right-icon"
               onChange={(event) => {
                 this.$emit('change-default', event);
               }}
