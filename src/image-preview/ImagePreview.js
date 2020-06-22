@@ -408,10 +408,9 @@ export default createComponent({
 
     // @exposed-api
     swipeTo(index, options) {
-      if (!this.$refs.swipe) {
-        return;
+      if (this.$refs.swipe) {
+        this.$refs.swipe.swipeTo(index, options);
       }
-      this.$refs.swipe.swipeTo(+index, options);
     },
   },
 

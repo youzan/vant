@@ -32,27 +32,6 @@
         <template #index>{{ t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
-
-    <demo-block :title="t('swipeToPosition')">
-      <van-button type="primary" @click="swipeToPosition">
-        {{ t('swipeToPosition') }}
-      </van-button>
-      <van-image-preview
-        v-model="showPage"
-        :images="images"
-        @change="onChange"
-        ref="imagePreview"
-      >
-        <template #index>
-          <div class="block__wrap">
-            <div class="block">{{ t('index', index) }}</div>
-            <div class="block__btn" @click="swipeToSecond">
-              {{ t('swipeToThird') }}
-            </div>
-          </div>
-        </template>
-      </van-image-preview>
-    </demo-block>
   </demo-section>
 </template>
 
@@ -74,8 +53,6 @@ export default {
       button3: '异步关闭',
       button4: '展示关闭按钮',
       componentCall: '组件调用',
-      swipeToPosition: '指定滑动位置',
-      swipeToThird: '前往第三页',
       index: (index) => `第${index + 1}页`,
     },
     'en-US': {
@@ -84,8 +61,6 @@ export default {
       button3: 'Async Close',
       button4: 'Show Close Icon',
       componentCall: 'Component Call',
-      swipeToPosition: 'swipe to position',
-      swipeToThird: 'swipe to third page',
       index: (index) => `Page: ${index}`,
     },
   },
@@ -93,7 +68,6 @@ export default {
   data() {
     return {
       show: false,
-      showPage: false,
       images,
       index: 0,
     };
@@ -102,10 +76,6 @@ export default {
   methods: {
     componentCall() {
       this.show = true;
-    },
-
-    componentPage() {
-      this.showPage = true;
     },
 
     onChange(index) {
@@ -128,9 +98,6 @@ export default {
         }, timer);
       }
     },
-    swipeToSecond() {
-      this.$refs.imagePreview.swipeTo(2);
-    },
   },
 };
 </script>
@@ -143,16 +110,6 @@ export default {
 
   .van-button {
     margin-left: @padding-md;
-  }
-
-  .block {
-    flex: 1;
-    text-align: center;
-
-    &__wrap {
-      display: flex;
-      width: 300px;
-    }
   }
 }
 </style>
