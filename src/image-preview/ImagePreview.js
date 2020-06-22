@@ -406,8 +406,12 @@ export default createComponent({
       this.$emit('closed');
     },
 
-    swipeTo(index) {
-      this.$refs.swipe.swipeTo(+index, { immediate: true });
+    // @exposed-api
+    swipeTo(index, options) {
+      if (!this.$refs.swipe) {
+        return;
+      }
+      this.$refs.swipe.swipeTo(+index, options);
     },
   },
 
