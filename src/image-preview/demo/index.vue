@@ -32,6 +32,26 @@
         <template #index>{{ t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
+
+    <demo-block :title="t('componentPage')">
+      <van-button type="primary" @click="componentPage">
+        {{ t('componentPage') }}
+      </van-button>
+      <van-image-preview
+        v-model="showPage"
+        :images="images"
+        @change="onChange"
+        ref="imagePreview"
+      >
+        <template #index>
+          <div class="block__wrap">
+            <div class="block__btn" @click="toPrev">上一页</div>
+            <div class="block">{{ t('index', index) }}</div>
+            <div class="block__btn" @click="toNext">下一页</div>
+          </div>
+        </template>
+      </van-image-preview>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -53,6 +73,7 @@ export default {
       button3: '异步关闭',
       button4: '展示关闭按钮',
       componentCall: '组件调用',
+      componentPage: '分页器',
       index: (index) => `第${index + 1}页`,
     },
     'en-US': {
@@ -61,6 +82,7 @@ export default {
       button3: 'Async Close',
       button4: 'Show Close Icon',
       componentCall: 'Component Call',
+      componentPage: 'show sorter function',
       index: (index) => `Page: ${index}`,
     },
   },
@@ -68,6 +90,7 @@ export default {
   data() {
     return {
       show: false,
+      showPage: false,
       images,
       index: 0,
     };
@@ -76,6 +99,10 @@ export default {
   methods: {
     componentCall() {
       this.show = true;
+    },
+
+    componentPage() {
+      this.showPage = true;
     },
 
     onChange(index) {
@@ -98,6 +125,12 @@ export default {
         }, timer);
       }
     },
+    toPrev() {
+      this.$refs.imagePreview.prev();
+    },
+    toNext() {
+      this.$refs.imagePreview.next();
+    },
   },
 };
 </script>
@@ -110,6 +143,15 @@ export default {
 
   .van-button {
     margin-left: @padding-md;
+  }
+
+  .block {
+    flex: 1;
+    text-align: center;
+    &__wrap {
+      display: flex;
+      width: 300px;
+    }
   }
 }
 </style>

@@ -84,10 +84,6 @@ export default createComponent({
   },
 
   data() {
-    this.imageSizes = [];
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-
     return {
       scale: 1,
       moveX: 0,
@@ -184,24 +180,16 @@ export default createComponent({
 
     startMove(event) {
       const image = event.currentTarget;
+      const rect = image.getBoundingClientRect();
+      const winWidth = window.innerWidth;
+      const winHeight = window.innerHeight;
+
       this.touchStart(event);
-      this.setMaxMove(image.dataset.index);
       this.moving = true;
       this.startMoveX = this.moveX;
       this.startMoveY = this.moveY;
-    },
-
-    setMaxMove(index) {
-      const { scale, windowWidth, windowHeight } = this;
-
-      if (this.imageSizes[index]) {
-        const { displayWidth, displayHeight } = this.imageSizes[index];
-        this.maxMoveX = Math.max(0, (displayWidth * scale - windowWidth) / 2);
-        this.maxMoveY = Math.max(0, (displayHeight * scale - windowHeight) / 2);
-      } else {
-        this.maxMoveX = 0;
-        this.maxMoveY = 0;
-      }
+      this.maxMoveX = Math.max(0, (rect.width - winWidth) / 2);
+      this.maxMoveY = Math.max(0, (rect.height - winHeight) / 2);
     },
 
     startZoom(event) {
@@ -209,31 +197,6 @@ export default createComponent({
       this.zooming = true;
       this.startScale = this.scale;
       this.startDistance = getDistance(event.touches);
-    },
-
-    onImageLoad(event, index) {
-      const { windowWidth, windowHeight } = this;
-      const { naturalWidth, naturalHeight } = event.target;
-      const windowRatio = windowHeight / windowWidth;
-      const imageRatio = naturalHeight / naturalWidth;
-
-      let displayWidth;
-      let displayHeight;
-
-      if (imageRatio < windowRatio) {
-        displayWidth = windowWidth;
-        displayHeight = windowWidth * imageRatio;
-      } else {
-        displayWidth = windowHeight / imageRatio;
-        displayHeight = windowHeight;
-      }
-
-      this.imageSizes[index] = {
-        naturalWidth,
-        naturalHeight,
-        displayWidth,
-        displayHeight,
-      };
     },
 
     onImageTouchStart(event) {
@@ -372,16 +335,12 @@ export default createComponent({
                 src={image}
                 fit="contain"
                 class={bem('image')}
-                data-index={index}
                 scopedSlots={imageSlots}
                 style={index === this.active ? this.imageStyle : null}
                 nativeOnTouchstart={this.onImageTouchStart}
                 nativeOnTouchmove={this.onImageTouchMove}
                 nativeOnTouchend={this.onImageTouchEnd}
                 nativeOnTouchcancel={this.onImageTouchEnd}
-                onLoad={(event) => {
-                  this.onImageLoad(event, index);
-                }}
               />
             </SwipeItem>
           ))}
@@ -404,6 +363,16 @@ export default createComponent({
 
     onClosed() {
       this.$emit('closed');
+    },
+
+    prev() {
+      this.resetScale();
+      this.$refs.swipe.prev();
+    },
+
+    next() {
+      this.resetScale();
+      this.$refs.swipe.next();
     },
   },
 
