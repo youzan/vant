@@ -33,9 +33,9 @@
       </van-image-preview>
     </demo-block>
 
-    <demo-block :title="t('componentPage')">
-      <van-button type="primary" @click="componentPage">
-        {{ t('componentPage') }}
+    <demo-block :title="t('swipeToPosition')">
+      <van-button type="primary" @click="swipeToPosition">
+        {{ t('swipeToPosition') }}
       </van-button>
       <van-image-preview
         v-model="showPage"
@@ -46,7 +46,9 @@
         <template #index>
           <div class="block__wrap">
             <div class="block">{{ t('index', index) }}</div>
-            <div class="block__btn" @click="swipeToSecond">前往第三页</div>
+            <div class="block__btn" @click="swipeToSecond">
+              {{ t('swipeToThird') }}
+            </div>
           </div>
         </template>
       </van-image-preview>
@@ -72,7 +74,8 @@ export default {
       button3: '异步关闭',
       button4: '展示关闭按钮',
       componentCall: '组件调用',
-      componentPage: '指定滑动位置',
+      swipeToPosition: '指定滑动位置',
+      swipeToThird: '前往第三页',
       index: (index) => `第${index + 1}页`,
     },
     'en-US': {
@@ -81,7 +84,8 @@ export default {
       button3: 'Async Close',
       button4: 'Show Close Icon',
       componentCall: 'Component Call',
-      componentPage: 'swipe to position',
+      swipeToPosition: 'swipe to position',
+      swipeToThird: 'swipe to third page',
       index: (index) => `Page: ${index}`,
     },
   },
