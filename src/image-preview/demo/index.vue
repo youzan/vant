@@ -144,6 +144,7 @@ export default {
   .block {
     flex: 1;
     text-align: center;
+
     &__wrap {
       display: flex;
       width: 300px;
