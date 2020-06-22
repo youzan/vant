@@ -405,6 +405,10 @@ export default createComponent({
     onClosed() {
       this.$emit('closed');
     },
+
+    swipeTo(index) {
+      this.$refs.swipe.swipeTo(+index, { immediate: true });
+    },
   },
 
   render() {
