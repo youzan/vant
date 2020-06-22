@@ -405,6 +405,14 @@ export default createComponent({
     onClosed() {
       this.$emit('closed');
     },
+
+    // @exposed-api
+    swipeTo(index, options) {
+      if (!this.$refs.swipe) {
+        return;
+      }
+      this.$refs.swipe.swipeTo(+index, options);
+    },
   },
 
   render() {
