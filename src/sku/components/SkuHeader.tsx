@@ -13,6 +13,7 @@ export type SkuHeaderProps = {
   goods: SkuGoodsData;
   skuEventBus: Vue;
   selectedSku: SelectedSkuData;
+  supportBigPicture: boolean;
 };
 
 export type SkuHeaderSlots = DefaultSlots & {
@@ -49,20 +50,34 @@ function SkuHeader(
   slots: SkuHeaderSlots,
   ctx: RenderContext<SkuHeaderProps>
 ) {
-  const { sku, goods, skuEventBus, selectedSku } = props;
+  const {
+    sku,
+    goods,
+    skuEventBus,
+    selectedSku,
+    supportBigPicture = false,
+  } = props;
   const goodsImg = getSkuImg(sku, selectedSku) || goods.picture;
 
   const previewImage = () => {
     skuEventBus.$emit('sku:previewImage', goodsImg);
   };
-
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
-      <div class={bem('img-wrap')} onClick={previewImage}>
-        <img src={goodsImg} />
-        {slots['sku-header-image-extra']?.()}
+      {!supportBigPicture && (
+        <div class={bem('img-wrap')} onClick={previewImage}>
+          <img src={goodsImg} />
+          {slots['sku-header-image-extra']?.()}
+        </div>
+      )}
+      <div
+        class={[
+          bem('goods-info'),
+          supportBigPicture && bem('goods-info--no-padding'),
+        ]}
+      >
+        {slots.default?.()}
       </div>
-      <div class={bem('goods-info')}>{slots.default?.()}</div>
     </div>
   );
 }
@@ -72,6 +87,7 @@ SkuHeader.props = {
   goods: Object,
   skuEventBus: Object,
   selectedSku: Object,
+  supportBigPicture: Boolean,
 };
 
 export default createComponent<SkuHeaderProps>(SkuHeader);
