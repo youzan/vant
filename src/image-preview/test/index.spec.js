@@ -309,3 +309,24 @@ test('get container with component call', () => {
   wrapper.vm.getContainer = null;
   expect(wrapper.element).toEqual(wrapper.element);
 });
+
+test('swipeTo method', async () => {
+  const wrapper = mount({
+    template: `
+    <div>
+      <van-image-preview ref="imagePreview" :value="true" :images="images">
+      </van-image-preview>
+    </div>
+    `,
+    data() {
+      return {
+        images,
+      };
+    },
+  });
+  const { imagePreview } = wrapper.vm.$refs;
+  imagePreview.swipeTo(2);
+
+  await later(100);
+  expect(imagePreview.active).toEqual(2);
+});
