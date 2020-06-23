@@ -1,21 +1,20 @@
 <template>
   <demo-section>
-    <!-- 基础用法 -->
     <demo-block :title="t('basicUsage')">
       <div class="sku-container">
         <van-sku
           v-model="showBase"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
+          :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :message-config="messageConfig"
           :start-sale-num="skuData.start_sale_num"
           :close-on-click-overlay="closeOnClickOverlay"
-          :message-config="messageConfig"
           :custom-sku-validator="customSkuValidator"
-          :properties="skuData.properties"
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -29,21 +28,20 @@
       </div>
     </demo-block>
 
-    <!-- 自定义步进器 -->
-    <demo-block :title="t('title2')">
+    <demo-block :title="t('customStepper')">
       <div class="sku-container">
         <van-sku
           v-model="showStepper"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :custom-stepper-config="customStepperConfig"
-          :message-config="messageConfig"
           :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :start-sale-num="skuData.start_sale_num"
+          :message-config="messageConfig"
+          :custom-stepper-config="customStepperConfig"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
@@ -55,22 +53,21 @@
       </div>
     </demo-block>
 
-    <!-- 隐藏售罄sku -->
     <demo-block :title="t('hideSoldoutSku')">
       <div class="sku-container">
         <van-sku
           v-model="showSoldout"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :custom-stepper-config="customStepperConfig"
-          :message-config="messageConfig"
-          :show-soldout-sku="false"
           :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :message-config="messageConfig"
+          :start-sale-num="skuData.start_sale_num"
+          :show-soldout-sku="false"
+          :custom-stepper-config="customStepperConfig"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
@@ -82,23 +79,22 @@
       </div>
     </demo-block>
 
-    <!-- 大图模式 -->
     <demo-block :title="t('largePicturePreview')">
       <div class="sku-container">
         <van-sku
           v-model="showLargePicturePreview"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
           :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
-          :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :close-on-click-overlay="closeOnClickOverlay"
-          :message-config="messageConfig"
-          :custom-sku-validator="customSkuValidator"
           :properties="skuData.properties"
+          :quota-used="skuData.quota_used"
+          :message-config="messageConfig"
+          :start-sale-num="skuData.start_sale_num"
           :show-header-image="false"
+          :custom-sku-validator="customSkuValidator"
+          :close-on-click-overlay="closeOnClickOverlay"
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -185,22 +181,22 @@ import { LIMIT_TYPE } from '../constants';
 export default {
   i18n: {
     'zh-CN': {
-      title2: '自定义步进器',
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
       stepperTitle: '我要买',
       customBySlot: '通过插槽定制',
+      customStepper: '自定义步进器',
       hideSoldoutSku: '隐藏售罄规格',
       largePicturePreview: '大图预览模式',
     },
     'en-US': {
-      title2: 'Custom Stepper Related Config',
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
       customBySlot: 'Custom By Slot',
       stepperTitle: 'Stepper title',
+      customStepper: 'Custom Stepper',
       hideSoldoutSku: 'Hide Soldout Sku',
       largePicturePreview: 'Large Picture Preview',
     },

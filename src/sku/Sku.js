@@ -28,12 +28,14 @@ const { QUOTA_LIMIT } = LIMIT_TYPE;
 export default createComponent({
   props: {
     sku: Object,
-    priceTag: String,
     goods: Object,
     value: Boolean,
     buyText: String,
     goodsId: [Number, String],
+    priceTag: String,
+    lazyLoad: Boolean,
     hideStock: Boolean,
+    properties: Array,
     addCartText: String,
     stepperTitle: String,
     getContainer: [String, Function],
@@ -44,7 +46,6 @@ export default createComponent({
     closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
     resetSelectedSkuOnHide: Boolean,
-    properties: Array,
     quota: {
       type: Number,
       default: 0,
@@ -102,7 +103,6 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    lazyLoad: Boolean,
   },
 
   data() {
@@ -117,6 +117,7 @@ export default createComponent({
   watch: {
     show(val) {
       this.$emit('input', val);
+
       if (!val) {
         this.$emit('sku-close', {
           selectedSkuValues: this.selectedSkuValues,
@@ -161,7 +162,6 @@ export default createComponent({
         return;
       }
 
-      // header高度82px, sku actions高度50px，如果改动了样式自己传下bodyOffsetTop调整下
       const maxHeight = window.innerHeight - this.bodyOffsetTop;
 
       return {
@@ -174,15 +174,11 @@ export default createComponent({
       if (this.hasSku && !isAllSelected(this.skuTree, this.selectedSku)) {
         return false;
       }
+
       // 属性未全选
-      if (
-        this.propList.some(
-          (it) => (this.selectedProp[it.k_id] || []).length < 1
-        )
-      ) {
-        return false;
-      }
-      return true;
+      return !this.propList.some(
+        (it) => (this.selectedProp[it.k_id] || []).length < 1
+      );
     },
 
     isSkuEmpty() {
@@ -614,6 +610,7 @@ export default createComponent({
       sku,
       goods,
       price,
+      lazyLoad,
       originPrice,
       skuEventBus,
       selectedSku,
@@ -622,8 +619,8 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       showHeaderImage,
-      lazyLoad = false,
     } = this;
+
     const slotsProps = {
       price,
       originPrice,
@@ -632,6 +629,7 @@ export default createComponent({
       selectedSku,
       selectedSkuComb,
     };
+
     const slots = (name) => this.slots(name, slotsProps);
 
     const Header = slots('sku-header') || (
@@ -694,12 +692,12 @@ export default createComponent({
                 >
                   <SkuRowItem
                     skuList={sku.list}
+                    lazyLoad={lazyLoad}
                     skuValue={skuValue}
+                    skuKeyStr={skuTreeItem.k_s}
                     selectedSku={selectedSku}
                     skuEventBus={skuEventBus}
-                    skuKeyStr={skuTreeItem.k_s}
                     largePicturePreview={skuTreeItem.large_picture_preview}
-                    lazyLoad={lazyLoad}
                   ></SkuRowItem>
                 </template>
               ))}

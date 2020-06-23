@@ -45,7 +45,7 @@ export default {
 };
 ```
 
-### Custom Stepper Config
+### Custom Stepper
 
 ```html
 <van-sku
