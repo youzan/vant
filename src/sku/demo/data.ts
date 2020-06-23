@@ -32,42 +32,6 @@ export const skuData = {
             imgUrl:
               'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
           },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
-          {
-            id: '1215',
-            name: '白色',
-            imgUrl:
-              'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
-          },
         ],
         k_s: 's1',
         count: 2,
