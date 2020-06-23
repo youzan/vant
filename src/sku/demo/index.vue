@@ -157,8 +157,7 @@
           :message-config="messageConfig"
           :custom-sku-validator="customSkuValidator"
           :properties="skuData.properties"
-          :support-big-picture="true"
-          :has-scroll-tab="true"
+          :is-hide-sku-header-img="true"
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
