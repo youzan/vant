@@ -145,8 +145,7 @@ export default {
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
 | supportBigPicture `v2.9.0` | 是否展示大图模式 | _boolean_ | `false` |
-| supportBigPictureIndex `v2.9.0` | 多规格情况下，大图模式的索引值 | _number_ | `0` |
-| hasScrollTab `v2.9.0` | 大图模式下，是否展示滚动条 | _boolean_ | `false` |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 
 ### Events
 

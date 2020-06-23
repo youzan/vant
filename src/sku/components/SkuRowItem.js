@@ -14,6 +14,7 @@ export default createComponent({
       default: () => [],
     },
     isShowBigPicture: Boolean,
+    lazyLoad: Boolean,
   },
 
   computed: {
@@ -66,9 +67,12 @@ export default createComponent({
             onClick={this.onPreviewImg}
           />
         )}
-        {imgUrl && (
-          <img class={`${BEM_NAME}-img`} src={imgUrl} v-lazy={imgUrl} />
-        )}
+        {imgUrl &&
+          (this.isShowBigPicture && this.lazyLoad ? (
+            <img class={`${BEM_NAME}-img`} src={imgUrl} vLazy={imgUrl} />
+          ) : (
+            <img class={`${BEM_NAME}-img`} src={imgUrl} />
+          ))}
         <span class={`${BEM_NAME}-name`}>{this.skuValue.name}</span>
       </span>
     );

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Popup from '../popup';
 import Toast from '../toast';
-import Lazyload from '../lazyload';
 import ImagePreview from '../image-preview';
 import SkuHeader from './components/SkuHeader';
 import SkuHeaderItem from './components/SkuHeaderItem';
@@ -25,8 +24,6 @@ import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 const namespace = createNamespace('sku');
 const [createComponent, bem, t] = namespace;
 const { QUOTA_LIMIT } = LIMIT_TYPE;
-
-Vue.use(Lazyload);
 
 export default createComponent({
   props: {
@@ -105,14 +102,7 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
-    supportBigPictureIndex: {
-      type: Number,
-      default: 0,
-    },
-    hasScrollTab: {
-      type: Boolean,
-      default: false,
-    },
+    lazyLoad: Boolean,
   },
 
   data() {
@@ -632,8 +622,7 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       supportBigPicture,
-      supportBigPictureIndex,
-      hasScrollTab,
+      lazyLoad = false,
     } = this;
     const slotsProps = {
       price,
@@ -687,44 +676,37 @@ export default createComponent({
       slots('sku-group') ||
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
-          {this.skuTree.map((skuTreeItem, index) => (
+          {this.skuTree.map((skuTreeItem) => (
             <SkuRow
               skuRow={skuTreeItem}
               isShowBigPicture={
-                supportBigPicture && supportBigPictureIndex === index
+                supportBigPicture && skuTreeItem.is_support_big_picture
               }
-              hasScrollTab={hasScrollTab && skuTreeItem.v.length > 6}
+              hasScrollTab={skuTreeItem.v.length > 6}
             >
-              {skuTreeItem.v.map((skuValue, itemIndex) => {
-                return supportBigPicture && supportBigPictureIndex === index ? (
-                  <template
-                    slot={
-                      Math.floor(itemIndex / 3) % 2 === 0
+              {skuTreeItem.v.map((skuValue, itemIndex) => (
+                <template
+                  slot={
+                    supportBigPicture && skuTreeItem.is_support_big_picture
+                      ? Math.floor(itemIndex / 3) % 2 === 0
                         ? 'sku-item-group-one'
                         : 'sku-item-group-two'
-                    }
-                  >
-                    <SkuRowItem
-                      skuList={sku.list}
-                      skuValue={skuValue}
-                      selectedSku={selectedSku}
-                      skuEventBus={skuEventBus}
-                      skuKeyStr={skuTreeItem.k_s}
-                      isShowBigPicture={
-                        supportBigPicture && supportBigPictureIndex === index
-                      }
-                    ></SkuRowItem>
-                  </template>
-                ) : (
+                      : 'default'
+                  }
+                >
                   <SkuRowItem
                     skuList={sku.list}
                     skuValue={skuValue}
                     selectedSku={selectedSku}
                     skuEventBus={skuEventBus}
                     skuKeyStr={skuTreeItem.k_s}
+                    isShowBigPicture={
+                      supportBigPicture && skuTreeItem.is_support_big_picture
+                    }
+                    lazyLoad={lazyLoad}
                   ></SkuRowItem>
-                );
-              })}
+                </template>
+              ))}
             </SkuRow>
           ))}
           {this.propList.map((skuTreeItem) => (

@@ -35,6 +35,7 @@ export const skuData = {
         ],
         k_s: 's1',
         count: 2,
+        is_support_big_picture: true,
       },
       {
         k: '尺寸',
