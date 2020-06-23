@@ -166,7 +166,11 @@
           @add-cart="onAddCartClicked"
         >
         </van-sku>
-        <van-button block type="primary" @click="showBigPictureMode = true">
+        <van-button
+          block
+          type="primary"
+          @click="showLargePicturePreview = true"
+        >
           {{ t('bigPicture') }}
         </van-button>
       </div>
@@ -209,7 +213,7 @@ export default {
       showCustom: false,
       showStepper: false,
       showSoldout: false,
-      showBigPictureMode: false,
+      showLargePicturePreview: false,
       closeOnClickOverlay: true,
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
