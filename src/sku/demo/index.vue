@@ -48,7 +48,7 @@
           @add-cart="onAddCartClicked"
         />
         <van-button block type="primary" @click="showStepper = true">
-          {{ t('title2') }}
+          {{ t('customStepper') }}
         </van-button>
       </div>
     </demo-block>
