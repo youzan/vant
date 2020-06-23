@@ -83,15 +83,15 @@
       <div class="sku-container">
         <van-sku
           v-model="showLargePicturePreview"
-          :sku="skuData.sku"
-          :quota="skuData.quota"
-          :goods="skuData.goods_info"
-          :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :properties="skuData.properties"
-          :quota-used="skuData.quota_used"
+          :sku="skuData2.sku"
+          :quota="skuData2.quota"
+          :goods="skuData2.goods_info"
+          :goods-id="skuData2.goods_id"
+          :hide-stock="skuData2.sku.hide_stock"
+          :properties="skuData2.properties"
+          :quota-used="skuData2.quota_used"
           :message-config="messageConfig"
-          :start-sale-num="skuData.start_sale_num"
+          :start-sale-num="skuData2.start_sale_num"
           :show-header-image="false"
           :custom-sku-validator="customSkuValidator"
           :close-on-click-overlay="closeOnClickOverlay"
@@ -175,7 +175,7 @@
 </template>
 
 <script>
-import { skuData, initialSku } from './data';
+import { initialSku, getSkuData } from './data';
 import { LIMIT_TYPE } from '../constants';
 
 export default {
@@ -203,7 +203,8 @@ export default {
   },
 
   data() {
-    this.skuData = skuData;
+    this.skuData = getSkuData();
+    this.skuData2 = getSkuData(true);
     this.initialSku = initialSku;
 
     return {

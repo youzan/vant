@@ -1,6 +1,8 @@
 import { mount } from '../../../test';
 import Sku from '..';
-import { skuData, initialSku } from '../demo/data';
+import { getSkuData, initialSku } from '../demo/data';
+
+const skuData = getSkuData();
 
 test('resetSelectedSku method', () => {
   skuData.sku.messages = [];
