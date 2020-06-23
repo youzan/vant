@@ -141,8 +141,7 @@ export default {
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
 | supportBigPicture `v2.9.0` | Whether to display large image mode | _boolean_ | `false` |
-| supportBigPictureIndex `v2.9.0` | The index value of the large image mode | _number_ | `0` |
-| hasScrollTab `v2.9.0` | Whether the large image mode displays a scroll bar | _boolean_ | `false` |
+| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events
 
