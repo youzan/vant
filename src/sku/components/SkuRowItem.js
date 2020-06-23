@@ -13,7 +13,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
-    isShowBigPicture: Boolean,
+    largePicturePreview: Boolean,
     lazyLoad: Boolean,
   },
 
@@ -47,7 +47,7 @@ export default createComponent({
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
     const imgUrl = this.skuValue.imgUrl || this.skuValue.img_url;
-    const BEM_NAME = this.isShowBigPicture
+    const BEM_NAME = this.largePicturePreview
       ? 'van-sku-row__picture-item'
       : 'van-sku-row__item';
 
@@ -60,7 +60,7 @@ export default createComponent({
         ]}
         onClick={this.onSelect}
       >
-        {this.isShowBigPicture && (
+        {this.largePicturePreview && (
           <img
             class={`${BEM_NAME}-img-icon`}
             src="https://img.yzcdn.cn/upload_files/2020/06/18/Fn6Qf0fGRFyuD8xh0Gi1w2ng59G1.png"
@@ -68,7 +68,7 @@ export default createComponent({
           />
         )}
         {imgUrl &&
-          (this.isShowBigPicture && this.lazyLoad ? (
+          (this.largePicturePreview && this.lazyLoad ? (
             <img class={`${BEM_NAME}-img`} src={imgUrl} vLazy={imgUrl} />
           ) : (
             <img class={`${BEM_NAME}-img`} src={imgUrl} />
