@@ -13,6 +13,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    isShowBigPicture: Boolean,
   },
 
   computed: {
@@ -33,25 +34,42 @@ export default createComponent({
         });
       }
     },
+    onPreviewImg(event) {
+      event.stopPropagation();
+      this.skuEventBus.$emit(
+        'sku:previewImage',
+        this.skuValue.imgUrl || this.skuValue.img_url
+      );
+    },
   },
 
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
     const imgUrl = this.skuValue.imgUrl || this.skuValue.img_url;
+    const BEM_NAME = this.isShowBigPicture
+      ? 'van-sku-row__picture-item'
+      : 'van-sku-row__item';
 
     return (
       <span
         class={[
-          'van-sku-row__item',
-          {
-            'van-sku-row__item--active': choosed,
-            'van-sku-row__item--disabled': !this.choosable,
-          },
+          `${BEM_NAME}`,
+          choosed ? `${BEM_NAME}--active` : '',
+          !this.choosable ? `${BEM_NAME}--disabled` : '',
         ]}
         onClick={this.onSelect}
       >
-        {imgUrl && <img class="van-sku-row__item-img" src={imgUrl} />}
-        <span class="van-sku-row__item-name">{this.skuValue.name}</span>
+        {this.isShowBigPicture && (
+          <img
+            class={`${BEM_NAME}-img-icon`}
+            src="https://img.yzcdn.cn/upload_files/2020/06/18/Fn6Qf0fGRFyuD8xh0Gi1w2ng59G1.png"
+            onClick={this.onPreviewImg}
+          />
+        )}
+        {imgUrl && (
+          <img class={`${BEM_NAME}-img`} src={imgUrl} v-lazy={imgUrl} />
+        )}
+        <span class={`${BEM_NAME}-name`}>{this.skuValue.name}</span>
       </span>
     );
   },

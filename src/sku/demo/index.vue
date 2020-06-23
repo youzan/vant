@@ -140,6 +140,38 @@
         </van-button>
       </div>
     </demo-block>
+
+    <!-- 大图模式 -->
+    <demo-block :title="t('bigPicture')">
+      <div class="sku-container">
+        <van-sku
+          v-model="showBigPictureMode"
+          :sku="skuData.sku"
+          :goods="skuData.goods_info"
+          :goods-id="skuData.goods_id"
+          :hide-stock="skuData.sku.hide_stock"
+          :quota="skuData.quota"
+          :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
+          :close-on-click-overlay="closeOnClickOverlay"
+          :message-config="messageConfig"
+          :custom-sku-validator="customSkuValidator"
+          :properties="skuData.properties"
+          :support-big-picture="true"
+          :has-scroll-tab="true"
+          disable-stepper-input
+          reset-stepper-on-hide
+          safe-area-inset-bottom
+          reset-selected-sku-on-hide
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        >
+        </van-sku>
+        <van-button block type="primary" @click="showBigPictureMode = true">
+          {{ t('bigPicture') }}
+        </van-button>
+      </div>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -156,6 +188,7 @@ export default {
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
+      bigPicture: 'sku大图模式',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
@@ -164,6 +197,7 @@ export default {
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
+      bigPicture: 'sku big picture mode',
     },
   },
 
@@ -176,6 +210,7 @@ export default {
       showCustom: false,
       showStepper: false,
       showSoldout: false,
+      showBigPictureMode: false,
       closeOnClickOverlay: true,
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
