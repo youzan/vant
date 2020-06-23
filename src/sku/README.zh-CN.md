@@ -197,32 +197,31 @@ sku: {
   tree: [
     {
       k: '颜色', // skuKeyName：规格类目名称
+      k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
       v: [
         {
-          id: '30349', // skuValueId：规格值 id
+          id: '1', // skuValueId：规格值 id
           name: '红色', // skuValueName：规格值名称
           imgUrl: 'https://img.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
           previewImgUrl: 'https://img.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
         },
         {
-          id: '1215',
+          id: '1',
           name: '蓝色',
           imgUrl: 'https://img.yzcdn.cn/2.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
       large_picture_preview: true, //  是否展示大图模式
     }
   ],
   // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合
   list: [
     {
-      id: 2259, // skuId，下单时后端需要
+      id: 2259, // skuId
+      s1: '1', // 规格类目 k_s 为 s1 的对应规格值 id
+      s2: '1', // 规格类目 k_s 为 s2 的对应规格值 id
       price: 100, // 价格（单位分）
-      s1: '1215', // 规格类目 k_s 为 s1 的对应规格值 id
-      s2: '1193', // 规格类目 k_s 为 s2 的对应规格值 id
-      s3: '0', // 最多包含3个规格值，为0表示不存在该规格
       stock_num: 110 // 当前 sku 组合对应的库存
     }
   ],
@@ -276,8 +275,8 @@ sku: {
 {
   // 键：skuKeyStr（sku 组合列表中当前类目对应的 key 值）
   // 值：skuValueId（规格值 id）
-  s1: '30349',
-  s2: '1193',
+  s1: '1',
+  s2: '1',
   // 初始选中数量
   selectedNum: 3,
   // 初始选中的商品属性
@@ -330,7 +329,7 @@ customStepperConfig: {
 }
 ```
 
-### messageConfig Data Structure
+### messageConfig 对象结构
 
 ```js
 messageConfig: {

@@ -13,10 +13,10 @@
           :hide-stock="skuData.sku.hide_stock"
           :message-config="messageConfig"
           :start-sale-num="skuData.start_sale_num"
-          :close-on-click-overlay="closeOnClickOverlay"
           :custom-sku-validator="customSkuValidator"
           disable-stepper-input
           reset-stepper-on-hide
+          close-on-click-overlay
           safe-area-inset-bottom
           reset-selected-sku-on-hide
           @buy-clicked="onBuyClicked"
@@ -94,7 +94,7 @@
           :start-sale-num="skuData2.start_sale_num"
           :show-header-image="false"
           :custom-sku-validator="customSkuValidator"
-          :close-on-click-overlay="closeOnClickOverlay"
+          close-on-click-overlay
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -213,11 +213,10 @@ export default {
       showStepper: false,
       showSoldout: false,
       showLargePicturePreview: false,
-      closeOnClickOverlay: true,
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
-        stockFormatter: (stock) => `剩余${stock}件`,
+        stockFormatter: (stock) => `剩余${stock}`,
         handleOverLimit: (data) => {
           const { action, limitType, quota, startSaleNum = 1 } = data;
 

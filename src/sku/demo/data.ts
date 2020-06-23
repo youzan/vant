@@ -1,14 +1,13 @@
 export function getSkuData(large_picture_preview = false) {
   return {
-    goods_id: '946755',
-    quota: 15,
+    goods_id: '1',
+    quota: 5,
     quota_used: 0,
-    start_sale_num: 10,
+    start_sale_num: 2,
     goods_info: {
-      title: '测试商品',
-      picture:
-        'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
       price: 1,
+      title: '测试商品',
+      picture: 'https://b.yzcdn.cn/vant/sku/shoes-1.png',
     },
     sku: {
       price: '1.00',
@@ -19,94 +18,75 @@ export function getSkuData(large_picture_preview = false) {
       tree: [
         {
           k: '颜色',
+          k_s: 's1',
           k_id: '1',
           v: [
             {
-              id: '30349',
-              name: '天蓝色',
-              imgUrl:
-                'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg',
+              id: '1',
+              name: '粉色',
+              imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-1.png',
             },
             {
-              id: '1215',
-              name: '白色',
-              imgUrl:
-                'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
+              id: '2',
+              name: '黄色',
+              imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-2.png',
+            },
+            {
+              id: '3',
+              name: '蓝色',
+              imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-3.png',
             },
           ],
-          k_s: 's1',
-          count: 2,
           large_picture_preview,
         },
         {
           k: '尺寸',
+          k_s: 's2',
           k_id: '2',
           v: [
             {
-              id: '1193',
-              name: '1',
+              id: '1',
+              name: '大',
             },
             {
-              id: '1194',
-              name: '2',
+              id: '2',
+              name: '小',
             },
           ],
-          k_s: 's2',
-          count: 2,
         },
       ],
       list: [
         {
           id: 2259,
+          s1: '2',
+          s2: '1',
           price: 100,
           discount: 100,
-          code: '',
-          s1: '1215',
-          s2: '1193',
-          s3: '0',
-          s4: '0',
-          s5: '0',
           stock_num: 110,
-          goods_id: 946755,
         },
         {
           id: 2260,
+          s1: '3',
+          s2: '1',
           price: 100,
           discount: 100,
-          code: '',
-          s1: '1215',
-          s2: '1194',
-          s3: '0',
-          s4: '0',
-          s5: '0',
-          stock_num: 0,
-          goods_id: 946755,
+          stock_num: 99,
         },
         {
           id: 2257,
+          s1: '1',
+          s2: '1',
           price: 100,
           discount: 100,
-          code: '',
-          s1: '30349',
-          s2: '1193',
-          s3: '0',
-          s4: '0',
-          s5: '0',
           stock_num: 111,
-          goods_id: 946755,
         },
         {
           id: 2258,
+          s1: '1',
+          s2: '2',
           price: 100,
           discount: 100,
-          code: '',
-          s1: '30349',
-          s2: '1194',
-          s3: '0',
-          s4: '0',
-          s5: '0',
           stock_num: 6,
-          goods_id: 946755,
         },
       ],
       messages: [
@@ -178,8 +158,8 @@ export function getSkuData(large_picture_preview = false) {
     },
     properties: [
       {
-        k_id: 124,
         k: '加料',
+        k_id: 124,
         is_multiple: true,
         v: [
           {
@@ -204,8 +184,8 @@ export function getSkuData(large_picture_preview = false) {
 }
 
 export const initialSku = {
-  s1: '30349',
-  s2: '1193',
+  s1: '1',
+  s2: '1',
   selectedNum: 3,
   selectedProp: {
     124: [1225, 1226],

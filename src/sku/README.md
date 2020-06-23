@@ -189,31 +189,30 @@ sku: {
   tree: [
     {
       k: 'Color',
+      k_s: 's1',
       v: [
         {
-          id: '30349',
+          id: '1',
           name: 'Red',
           imgUrl: 'https://img.yzcdn.cn/1.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/1p.jpg',
         },
         {
-          id: '1215',
+          id: '1',
           name: 'Blue',
           imgUrl: 'https://img.yzcdn.cn/2.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1',
       large_picture_preview: true, //  Whether to display large image mode
     }
   ],
   list: [
     {
       id: 2259,
+      s1: '1',
+      s2: '1',
       price: 100,
-      s1: '1215',
-      s2: '1193',
-      s3: '0',
       stock_num: 110
     }
   ],
