@@ -64,7 +64,7 @@ export default {
 />
 ```
 
-### 高级用法
+### 通过插槽定制
 
 ```html
 <van-sku
@@ -116,7 +116,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 是否显示 sku | _boolean_ | `false` |
+| v-model | 是否显示商品规格弹窗 | _boolean_ | `false` |
 | sku | 商品 sku 数据 | _object_ | - |
 | goods | 商品信息 | _object_ | - |
 | goods-id | 商品 id | _number \| string_ | - |
@@ -144,8 +144,8 @@ export default {
 | start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
-| showHeaderImage `v2.9.0` | 是否展示 sku 头部图片 | _boolean_ | `true` |
-| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
+| show-header-image `v2.9.0` | 是否展示头部图片 | _boolean_ | `true` |
+| lazy-load `v2.9.0` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 
 ### Events
 

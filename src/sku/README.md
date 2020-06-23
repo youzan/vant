@@ -62,7 +62,7 @@ export default {
 />
 ```
 
-### Advanced Usage
+### Custom By Slot
 
 ```html
 <van-sku
@@ -140,7 +140,7 @@ export default {
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
-| showHeaderImage `v2.9.0` | Whether to display sku header image | _boolean_ | `true` |
+| show-header-image `v2.9.0` | Whether to display header image | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events

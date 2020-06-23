@@ -82,7 +82,42 @@
       </div>
     </demo-block>
 
-    <demo-block :title="t('advancedUsage')">
+    <!-- 大图模式 -->
+    <demo-block :title="t('largePicturePreview')">
+      <div class="sku-container">
+        <van-sku
+          v-model="showLargePicturePreview"
+          :sku="skuData.sku"
+          :goods="skuData.goods_info"
+          :goods-id="skuData.goods_id"
+          :hide-stock="skuData.sku.hide_stock"
+          :quota="skuData.quota"
+          :quota-used="skuData.quota_used"
+          :start-sale-num="skuData.start_sale_num"
+          :close-on-click-overlay="closeOnClickOverlay"
+          :message-config="messageConfig"
+          :custom-sku-validator="customSkuValidator"
+          :properties="skuData.properties"
+          :show-header-image="false"
+          disable-stepper-input
+          reset-stepper-on-hide
+          safe-area-inset-bottom
+          reset-selected-sku-on-hide
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        >
+        </van-sku>
+        <van-button
+          block
+          type="primary"
+          @click="showLargePicturePreview = true"
+        >
+          {{ t('largePicturePreview') }}
+        </van-button>
+      </div>
+    </demo-block>
+
+    <demo-block :title="t('customBySlot')">
       <div class="sku-container">
         <van-sku
           v-model="showCustom"
@@ -136,42 +171,7 @@
           </template>
         </van-sku>
         <van-button block type="primary" @click="showCustom = true">
-          {{ t('advancedUsage') }}
-        </van-button>
-      </div>
-    </demo-block>
-
-    <!-- 大图模式 -->
-    <demo-block :title="t('largePreview')">
-      <div class="sku-container">
-        <van-sku
-          v-model="showLargePicturePreview"
-          :sku="skuData.sku"
-          :goods="skuData.goods_info"
-          :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
-          :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :close-on-click-overlay="closeOnClickOverlay"
-          :message-config="messageConfig"
-          :custom-sku-validator="customSkuValidator"
-          :properties="skuData.properties"
-          :show-header-image="false"
-          disable-stepper-input
-          reset-stepper-on-hide
-          safe-area-inset-bottom
-          reset-selected-sku-on-hide
-          @buy-clicked="onBuyClicked"
-          @add-cart="onAddCartClicked"
-        >
-        </van-sku>
-        <van-button
-          block
-          type="primary"
-          @click="showLargePicturePreview = true"
-        >
-          {{ t('largePreview') }}
+          {{ t('customBySlot') }}
         </van-button>
       </div>
     </demo-block>
@@ -186,21 +186,23 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '自定义步进器',
-      hideSoldoutSku: '隐藏售罄规格',
-      stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
-      largePreview: 'sku大图模式',
+      stepperTitle: '我要买',
+      customBySlot: '通过插槽定制',
+      hideSoldoutSku: '隐藏售罄规格',
+      largePicturePreview: '大图预览模式',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
-      hideSoldoutSku: 'Hide Soldout Sku',
-      stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
-      largePreview: 'sku big picture mode',
+      customBySlot: 'Custom By Slot',
+      stepperTitle: 'Stepper title',
+      hideSoldoutSku: 'Hide Soldout Sku',
+      largePicturePreview: 'Large Picture Preview',
     },
   },
 
