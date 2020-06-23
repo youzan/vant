@@ -142,10 +142,10 @@
     </demo-block>
 
     <!-- 大图模式 -->
-    <demo-block :title="t('bigPicture')">
+    <demo-block :title="t('largePreview')">
       <div class="sku-container">
         <van-sku
-          v-model="showBigPictureMode"
+          v-model="showLargePicturePreview"
           :sku="skuData.sku"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
@@ -171,7 +171,7 @@
           type="primary"
           @click="showLargePicturePreview = true"
         >
-          {{ t('bigPicture') }}
+          {{ t('largePreview') }}
         </van-button>
       </div>
     </demo-block>
@@ -191,7 +191,7 @@ export default {
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
-      bigPicture: 'sku大图模式',
+      largePreview: 'sku大图模式',
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
@@ -200,7 +200,7 @@ export default {
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
-      bigPicture: 'sku big picture mode',
+      largePreview: 'sku big picture mode',
     },
   },
 
