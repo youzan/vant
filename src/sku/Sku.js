@@ -98,7 +98,7 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    supportBigPicture: {
+    isHideSkuHeaderImg: {
       type: Boolean,
       default: false,
     },
@@ -621,7 +621,7 @@ export default createComponent({
       selectedNum,
       stepperTitle,
       selectedSkuComb,
-      supportBigPicture,
+      isHideSkuHeaderImg,
       lazyLoad = false,
     } = this;
     const slotsProps = {
@@ -640,7 +640,7 @@ export default createComponent({
         goods={goods}
         skuEventBus={skuEventBus}
         selectedSku={selectedSku}
-        supportBigPicture={supportBigPicture}
+        supportBigPicture={isHideSkuHeaderImg}
       >
         <template slot="sku-header-image-extra">
           {slots('sku-header-image-extra')}
@@ -679,15 +679,13 @@ export default createComponent({
           {this.skuTree.map((skuTreeItem) => (
             <SkuRow
               skuRow={skuTreeItem}
-              isShowBigPicture={
-                supportBigPicture && skuTreeItem.is_support_big_picture
-              }
+              isShowBigPicture={skuTreeItem.is_support_big_picture}
               hasScrollTab={skuTreeItem.v.length > 6}
             >
               {skuTreeItem.v.map((skuValue, itemIndex) => (
                 <template
                   slot={
-                    supportBigPicture && skuTreeItem.is_support_big_picture
+                    skuTreeItem.is_support_big_picture
                       ? Math.floor(itemIndex / 3) % 2 === 0
                         ? 'sku-item-group-one'
                         : 'sku-item-group-two'
@@ -700,9 +698,7 @@ export default createComponent({
                     selectedSku={selectedSku}
                     skuEventBus={skuEventBus}
                     skuKeyStr={skuTreeItem.k_s}
-                    isShowBigPicture={
-                      supportBigPicture && skuTreeItem.is_support_big_picture
-                    }
+                    isShowBigPicture={skuTreeItem.is_support_big_picture}
                     lazyLoad={lazyLoad}
                   ></SkuRowItem>
                 </template>

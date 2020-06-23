@@ -144,7 +144,7 @@ export default {
 | start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
-| supportBigPicture `v2.9.0` | 是否展示大图模式 | _boolean_ | `false` |
+| isHideSkuHeaderImg `v2.9.0` | 是否隐藏 sku 头部图片 | _boolean_ | `false` |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 
 ### Events
@@ -211,7 +211,8 @@ sku: {
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1' // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
+      k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
+      is_support_big_picture: true, //  是否展示大图模式
     }
   ],
   // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合

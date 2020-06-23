@@ -140,7 +140,7 @@ export default {
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
-| supportBigPicture `v2.9.0` | Whether to display large image mode | _boolean_ | `false` |
+| isHideSkuHeaderImg `v2.9.0` | Whether to hide sku header image | _boolean_ | `false` |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events
@@ -204,7 +204,7 @@ sku: {
         }
       ],
       k_s: 's1',
-      is_support_big_picture: true,
+      is_support_big_picture: true, //  Whether to display large image mode
     }
   ],
   list: [
