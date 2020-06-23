@@ -203,7 +203,8 @@ sku: {
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1'
+      k_s: 's1',
+      is_support_big_picture: true,
     }
   ],
   list: [
