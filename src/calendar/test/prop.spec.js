@@ -192,7 +192,7 @@ test('month-show event', async () => {
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });
 
-test.only('first day of week', async () => {
+test('first day of week', async () => {
   const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
 
   for (let i = 0; i <= 6; i++) {
@@ -208,9 +208,8 @@ test.only('first day of week', async () => {
     // eslint-disable-next-line no-await-in-loop
     await later();
 
-    const expectedDays = new Array(7)
-      .fill(0)
-      .map((_, index) => {
+    const expectedDays = [0, 1, 2, 3, 4, 5, 6]
+      .map((index) => {
         const fakeIndex = index + i;
         const keyIndex = fakeIndex <= 6 ? fakeIndex : fakeIndex - 7;
 

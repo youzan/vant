@@ -33,7 +33,7 @@ export default createComponent({
 
       const renderWeekDays = !firstDayOfWeek
         ? weekdays
-        : new Array(7).fill(0).map((_, index) => {
+        : [0, 1, 2, 3, 4, 5, 6].map((index) => {
             const fakeIndex = index + firstDayOfWeek;
             const keyIndex = fakeIndex <= 6 ? fakeIndex : fakeIndex - 7;
 

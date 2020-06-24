@@ -36,7 +36,7 @@ export default createComponent({
     closeOnPopstate: Boolean,
     confirmDisabledText: String,
     firstDayOfWeek: {
-      type: Number,
+      type: [Number, String],
       default: 0,
       validator: (val) => {
         return val >= 0 && val <= 6;
@@ -386,8 +386,8 @@ export default createComponent({
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
-          onClick={this.onClickDay}
           firstDayOfWeek={this.firstDayOfWeek}
+          onClick={this.onClickDay}
         />
       );
     },

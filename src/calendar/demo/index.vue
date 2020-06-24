@@ -146,7 +146,7 @@ export default {
       customPosition: '自定义弹出位置',
       customCalendar: '自定义日历',
       confirmDisabledText: '请选择结束时间',
-      firstDayOfWeek: '设置周起始日',
+      firstDayOfWeek: '自定义周起始日',
       tiledDisplay: '平铺展示',
     },
     'en-US': {
@@ -169,6 +169,7 @@ export default {
       customDayText: 'Custom Day Text',
       customPosition: 'Custom Position',
       customCalendar: 'Custom Calendar',
+      firstDayOfWeek: 'Custom First Day Of Week',
       confirmDisabledText: 'Select End Time',
       tiledDisplay: 'Tiled display',
     },
