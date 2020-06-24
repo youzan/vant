@@ -2,7 +2,6 @@
 import { createNamespace } from '../../utils';
 import { BORDER_BOTTOM } from '../../utils/constant';
 import { BindEventMixin } from '../../mixins/bind-event';
-import { getScroller } from '../../utils/dom/scroll';
 
 const [createComponent, bem, t] = createNamespace('sku-row');
 
@@ -14,7 +13,7 @@ export default createComponent({
       }
 
       if (!this.scrollCon) {
-        this.scrollCon = getScroller(this.$refs.skuContent);
+        this.scrollCon = this.$refs.skuContent;
       }
 
       bind(this.scrollCon, 'scroll', this.onScroll);
@@ -60,7 +59,6 @@ export default createComponent({
       });
     },
   },
-  mounted() {},
   render() {
     const { skuRow, largePicturePreview, hasScrollTab } = this;
     const multipleNode = skuRow.is_multiple && (
