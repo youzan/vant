@@ -19,7 +19,11 @@ export default createComponent({
 
   computed: {
     imgUrl() {
-      return this.skuValue.imgUrl || this.skuValue.img_url;
+      const url = this.skuValue.imgUrl || this.skuValue.img_url;
+      return this.largePicturePreview
+        ? url ||
+            'https://img.yzcdn.cn/upload_files/2020/06/24/FslGJf7nYrMjDrD3iNIHJjx5G3A_.png'
+        : url;
     },
 
     choosable() {
@@ -47,9 +51,8 @@ export default createComponent({
 
     genImage(classPrefix) {
       const { imgUrl } = this;
-
-      if (imgUrl && this.largePicturePreview) {
-        if (this.lazyLoad) {
+      if (imgUrl) {
+        if (this.largePicturePreview && this.lazyLoad) {
           return (
             <img class={`${classPrefix}-img`} src={imgUrl} vLazy={imgUrl} />
           );
@@ -83,7 +86,13 @@ export default createComponent({
           />
         )}
         {this.genImage(classPrefix)}
-        <span class={`${classPrefix}-name`}>{this.skuValue.name}</span>
+        <div class={`${classPrefix}-name`}>
+          <span
+            class={this.largePicturePreview ? 'van-multi-ellipsis--l2' : ''}
+          >
+            {this.skuValue.name}
+          </span>
+        </div>
       </span>
     );
   },
