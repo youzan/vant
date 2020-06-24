@@ -19,11 +19,7 @@ export default createComponent({
 
   computed: {
     imgUrl() {
-      const url = this.skuValue.imgUrl || this.skuValue.img_url;
-      return this.largePicturePreview
-        ? url ||
-            'https://img.yzcdn.cn/upload_files/2020/06/24/FslGJf7nYrMjDrD3iNIHJjx5G3A_.png'
-        : url;
+      return this.skuValue.imgUrl || this.skuValue.img_url;
     },
 
     choosable() {
