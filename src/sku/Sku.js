@@ -267,9 +267,10 @@ export default createComponent({
           }
 
           treeItem.v.forEach((vItem) => {
-            const img = vItem.previewImgUrl || vItem.imgUrl || vItem.img_url;
-            if (img) {
-              imageList.push(img);
+            const imgUrl = vItem.previewImgUrl || vItem.imgUrl || vItem.img_url;
+
+            if (imgUrl && imageList.indexOf(imgUrl) === -1) {
+              imageList.push(imgUrl);
             }
           });
         });
