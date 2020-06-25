@@ -310,7 +310,7 @@ export default createComponent({
     selectedText() {
       if (this.selectedSkuComb) {
         const values = this.selectedSkuValues.concat(this.selectedPropValues);
-        return `${t('selected')} ${values.map((item) => item.name).join('；')}`;
+        return `${t('selected')} ${values.map((item) => item.name).join(' ')}`;
       }
 
       const unselectedSku = this.skuTree
@@ -322,9 +322,7 @@ export default createComponent({
         .filter((item) => (this.selectedProp[item.k_id] || []).length < 1)
         .map((item) => item.k);
 
-      return `${t('select')} ${unselectedSku
-        .concat(unselectedProp)
-        .join('；')}`;
+      return `${t('select')} ${unselectedSku.concat(unselectedProp).join(' ')}`;
     },
   },
 

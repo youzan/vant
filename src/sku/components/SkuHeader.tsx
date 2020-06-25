@@ -57,11 +57,13 @@ function SkuHeader(
     selectedSku,
     showHeaderImage = true,
   } = props;
+
   const goodsImg = getSkuImg(sku, selectedSku) || goods.picture;
 
   const previewImage = () => {
     skuEventBus.$emit('sku:previewImage', goodsImg);
   };
+
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
       {showHeaderImage && (
