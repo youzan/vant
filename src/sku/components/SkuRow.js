@@ -49,25 +49,26 @@ export default createComponent({
         this.present = content.scrollLeft / distance;
       });
     },
+
+    genIndicator() {
+      if (this.scrollable) {
+        return (
+          <div class={bem('indicator-wrapper')}>
+            <div class={bem('indicator')}>
+              <div class={bem('indicator-active')} style={this.scrollStyle} />
+            </div>
+          </div>
+        );
+      }
+    },
   },
 
   render() {
-    const { item, scrollable } = this;
+    const { item } = this;
     const { largeImageMode } = item;
 
     const multipleNode = item.is_multiple && (
       <span class={bem('title-multiple')}>（{t('multiple')}）</span>
-    );
-
-    const SkuScroll = (
-      <div class={bem('scroll')}>
-        <div class={bem('scroll__content')} ref="skuScroll">
-          <div
-            class={bem('scroll__content--active')}
-            style={this.scrollStyle}
-          ></div>
-        </div>
-      </div>
     );
 
     const SkuContent = (
@@ -88,7 +89,7 @@ export default createComponent({
           {multipleNode}
         </div>
         {largeImageMode ? SkuContent : this.slots()}
-        {largeImageMode && scrollable && SkuScroll}
+        {this.genIndicator()}
       </div>
     );
   },

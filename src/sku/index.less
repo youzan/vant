@@ -301,25 +301,23 @@
       }
     }
 
-    &__scroll {
-      display: flex;
-      justify-content: center;
+    &__indicator {
+      width: 40px;
       height: 4px;
-      padding-bottom: 16px;
+      background: @gray-3;
+      border-radius: 2px;
 
-      &__content {
-        position: relative;
-        width: 40px;
-        height: 4px;
-        background: #ebedf0;
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 16px;
+      }
+
+      &-active {
+        width: 50%;
+        height: 100%;
+        background-color: @red;
         border-radius: 2px;
-
-        &--active {
-          width: 20px;
-          height: 4px;
-          background: #f44;
-          border-radius: 2px;
-        }
       }
     }
   }
