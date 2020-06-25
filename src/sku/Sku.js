@@ -205,6 +205,7 @@ export default createComponent({
             stock_num: this.sku.stock_num,
           };
         }
+
         if (skuComb) {
           skuComb.properties = getSelectedProperties(
             this.propList,
@@ -292,7 +293,9 @@ export default createComponent({
 
     stockText() {
       const { stockFormatter } = this.customStepperConfig;
-      if (stockFormatter) return stockFormatter(this.stock);
+      if (stockFormatter) {
+        return stockFormatter(this.stock);
+      }
 
       return [
         `${t('stock')} `,
@@ -318,6 +321,7 @@ export default createComponent({
           (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID
         )
         .map((item) => item.k);
+
       const unselectedProp = this.propList
         .filter((item) => (this.selectedProp[item.k_id] || []).length < 1)
         .map((item) => item.k);
@@ -479,6 +483,7 @@ export default createComponent({
     onPropSelect(propValue) {
       const arr = this.selectedProp[propValue.skuKeyStr] || [];
       const pos = arr.indexOf(propValue.id);
+
       if (pos > -1) {
         arr.splice(pos, 1);
       } else if (propValue.multiple) {
@@ -486,10 +491,12 @@ export default createComponent({
       } else {
         arr.splice(0, 1, propValue.id);
       }
+
       this.selectedProp = {
         ...this.selectedProp,
         [propValue.skuKeyStr]: arr,
       };
+
       this.$emit('sku-prop-selected', {
         propValue,
         selectedProp: this.selectedProp,
@@ -502,10 +509,7 @@ export default createComponent({
     },
 
     onPreviewImage(indexImage) {
-      const { previewOnClickImage } = this;
-
       const index = this.imageList.findIndex((image) => image === indexImage);
-
       const params = {
         index,
         imageList: this.imageList,
@@ -514,7 +518,7 @@ export default createComponent({
 
       this.$emit('open-preview', params);
 
-      if (!previewOnClickImage) {
+      if (!this.previewOnClickImage) {
         return;
       }
 
@@ -557,14 +561,12 @@ export default createComponent({
     },
 
     onStepperState(data) {
-      if (data.valid) {
-        this.stepperError = null;
-      } else {
-        this.stepperError = {
-          ...data,
-          action: 'plus',
-        };
-      }
+      this.stepperError = data.valid
+        ? null
+        : {
+            ...data,
+            action: 'plus',
+          };
     },
 
     onAddCart() {
@@ -576,11 +578,13 @@ export default createComponent({
     },
 
     onBuyOrAddCart(type) {
-      // 有信息表示该sku根本不符合购买条件
+      // sku 不符合购买条件
       if (this.stepperError) {
         return this.onOverLimit(this.stepperError);
       }
+
       const error = this.validateSku();
+
       if (error) {
         Toast(error);
       } else {
@@ -592,10 +596,10 @@ export default createComponent({
     getSkuData() {
       return {
         goodsId: this.goodsId,
-        selectedNum: this.selectedNum,
-        selectedSkuComb: this.selectedSkuComb,
         messages: this.getSkuMessages(),
+        selectedNum: this.selectedNum,
         cartMessages: this.getSkuCartMessages(),
+        selectedSkuComb: this.selectedSkuComb,
       };
     },
   },
