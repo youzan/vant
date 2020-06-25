@@ -678,11 +678,7 @@ export default createComponent({
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
           {this.skuTree.map((skuTreeItem) => (
-            <SkuRow
-              skuRow={skuTreeItem}
-              largeImageMode={skuTreeItem.largeImageMode}
-              hasScrollTab={skuTreeItem.v.length > 6}
-            >
+            <SkuRow item={skuTreeItem}>
               {skuTreeItem.v.map((skuValue, itemIndex) => (
                 <template
                   slot={
@@ -707,7 +703,7 @@ export default createComponent({
             </SkuRow>
           ))}
           {this.propList.map((skuTreeItem) => (
-            <SkuRow skuRow={skuTreeItem}>
+            <SkuRow item={skuTreeItem}>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowPropItem
                   skuValue={skuValue}

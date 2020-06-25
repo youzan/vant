@@ -8,28 +8,20 @@ const [createComponent, bem, t] = createNamespace('sku-row');
 export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
-      if (!(this.largeImageMode && this.hasScrollTab)) {
-        return false;
-      }
+      if (this.scrollable) {
+        if (!this.scrollCon) {
+          this.scrollCon = this.$refs.skuContent;
+        }
 
-      if (!this.scrollCon) {
-        this.scrollCon = this.$refs.skuContent;
+        bind(this.scrollCon, 'scroll', this.onScroll);
       }
-
-      bind(this.scrollCon, 'scroll', this.onScroll);
     }),
   ],
+
   props: {
-    skuRow: Object,
-    largeImageMode: {
-      type: Boolean,
-      default: false,
-    },
-    hasScrollTab: {
-      type: Boolean,
-      default: false,
-    },
+    item: Object,
   },
+
   data() {
     return {
       present: 0,
@@ -38,17 +30,21 @@ export default createComponent({
       scrollLeft: 0,
     };
   },
+
   computed: {
+    scrollable() {
+      return this.item.largeImageMode && this.item.v.length > 6;
+    },
+
     scrollStyle() {
-      if (!(this.largeImageMode && this.hasScrollTab)) {
-        return false;
+      if (this.scrollable) {
+        return {
+          transform: `translate3d(${this.present * 20}px, 0, 0)`,
+        };
       }
-      this.tranX = this.present * 20;
-      return {
-        transform: `translate3d(${this.tranX}px, 0, 0)`,
-      };
     },
   },
+
   methods: {
     onScroll() {
       this.$nextTick(() => {
@@ -59,11 +55,15 @@ export default createComponent({
       });
     },
   },
+
   render() {
-    const { skuRow, largeImageMode, hasScrollTab } = this;
-    const multipleNode = skuRow.is_multiple && (
+    const { item, scrollable } = this;
+    const { largeImageMode } = item;
+
+    const multipleNode = item.is_multiple && (
       <span class={bem('title-multiple')}>（{t('multiple')}）</span>
     );
+
     const SkuScroll = (
       <div class={bem('scroll')}>
         <div class={bem('scroll__content')} ref="skuScroll">
@@ -85,14 +85,15 @@ export default createComponent({
         </div>
       </div>
     );
+
     return (
       <div class={[bem(), BORDER_BOTTOM, largeImageMode && bem('picture')]}>
         <div class={bem('title')}>
-          {skuRow.k}
+          {item.k}
           {multipleNode}
         </div>
         {largeImageMode ? SkuContent : this.slots()}
-        {largeImageMode && hasScrollTab && SkuScroll}
+        {largeImageMode && scrollable && SkuScroll}
       </div>
     );
   },
