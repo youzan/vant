@@ -8,7 +8,7 @@ const [createComponent, bem, t] = createNamespace('sku-row');
 export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
-      if (!(this.largePicturePreview && this.hasScrollTab)) {
+      if (!(this.largeImageMode && this.hasScrollTab)) {
         return false;
       }
 
@@ -21,7 +21,7 @@ export default createComponent({
   ],
   props: {
     skuRow: Object,
-    largePicturePreview: {
+    largeImageMode: {
       type: Boolean,
       default: false,
     },
@@ -40,7 +40,7 @@ export default createComponent({
   },
   computed: {
     scrollStyle() {
-      if (!(this.largePicturePreview && this.hasScrollTab)) {
+      if (!(this.largeImageMode && this.hasScrollTab)) {
         return false;
       }
       this.tranX = this.present * 20;
@@ -60,7 +60,7 @@ export default createComponent({
     },
   },
   render() {
-    const { skuRow, largePicturePreview, hasScrollTab } = this;
+    const { skuRow, largeImageMode, hasScrollTab } = this;
     const multipleNode = skuRow.is_multiple && (
       <span class={bem('title-multiple')}>（{t('multiple')}）</span>
     );
@@ -86,15 +86,13 @@ export default createComponent({
       </div>
     );
     return (
-      <div
-        class={[bem(), BORDER_BOTTOM, largePicturePreview && bem('picture')]}
-      >
+      <div class={[bem(), BORDER_BOTTOM, largeImageMode && bem('picture')]}>
         <div class={bem('title')}>
           {skuRow.k}
           {multipleNode}
         </div>
-        {largePicturePreview ? SkuContent : this.slots()}
-        {largePicturePreview && hasScrollTab && SkuScroll}
+        {largeImageMode ? SkuContent : this.slots()}
+        {largeImageMode && hasScrollTab && SkuScroll}
       </div>
     );
   },
