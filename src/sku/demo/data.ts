@@ -1,4 +1,4 @@
-export function getSkuData(large_picture_preview = false) {
+export function getSkuData(largeImageMode = false) {
   return {
     goods_id: '1',
     quota: 5,
@@ -37,7 +37,7 @@ export function getSkuData(large_picture_preview = false) {
               imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-3.png',
             },
           ],
-          large_picture_preview,
+          largeImageMode,
         },
         {
           k: '尺寸',

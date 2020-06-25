@@ -79,7 +79,7 @@
       </div>
     </demo-block>
 
-    <demo-block :title="t('largePicturePreview')">
+    <demo-block :title="t('largeImageMode')">
       <div class="sku-container">
         <van-sku
           v-model="showLargePicturePreview"
@@ -108,7 +108,7 @@
           type="primary"
           @click="showLargePicturePreview = true"
         >
-          {{ t('largePicturePreview') }}
+          {{ t('largeImageMode') }}
         </van-button>
       </div>
     </demo-block>
@@ -188,7 +188,7 @@ export default {
       customBySlot: '通过插槽定制',
       customStepper: '自定义步进器',
       hideSoldoutSku: '隐藏售罄规格',
-      largePicturePreview: '大图预览模式',
+      largeImageMode: '大图预览模式',
     },
     'en-US': {
       button1: 'Button',
@@ -198,7 +198,7 @@ export default {
       stepperTitle: 'Stepper title',
       customStepper: 'Custom Stepper',
       hideSoldoutSku: 'Hide Soldout Sku',
-      largePicturePreview: 'Large Picture Preview',
+      largeImageMode: 'Large Image Mode',
     },
   },
 

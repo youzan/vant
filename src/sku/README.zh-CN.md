@@ -212,7 +212,7 @@ sku: {
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      large_picture_preview: true, //  是否展示大图模式
+      largeImageMode: true, //  是否展示大图模式
     }
   ],
   // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合

@@ -10,7 +10,7 @@ export default createComponent({
     skuKeyStr: String,
     skuEventBus: Object,
     selectedSku: Object,
-    largePicturePreview: Boolean,
+    largeImageMode: Boolean,
     skuList: {
       type: Array,
       default: () => [],
@@ -20,7 +20,7 @@ export default createComponent({
   computed: {
     imgUrl() {
       const url = this.skuValue.imgUrl || this.skuValue.img_url;
-      return this.largePicturePreview
+      return this.largeImageMode
         ? url ||
             'https://img.yzcdn.cn/upload_files/2020/06/24/FmKWDg0bN9rMcTp9ne8MXiQWGtLn.png'
         : url;
@@ -52,7 +52,7 @@ export default createComponent({
     genImage(classPrefix) {
       const { imgUrl } = this;
       if (imgUrl) {
-        if (this.largePicturePreview && this.lazyLoad) {
+        if (this.largeImageMode && this.lazyLoad) {
           return (
             <img class={`${classPrefix}-img`} src={imgUrl} vLazy={imgUrl} />
           );
@@ -65,7 +65,7 @@ export default createComponent({
 
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
-    const classPrefix = this.largePicturePreview
+    const classPrefix = this.largeImageMode
       ? 'van-sku-row__picture-item'
       : 'van-sku-row__item';
 
@@ -78,7 +78,7 @@ export default createComponent({
         ]}
         onClick={this.onSelect}
       >
-        {this.largePicturePreview && (
+        {this.largeImageMode && (
           <img
             class={`${classPrefix}-img-icon`}
             src="https://img.yzcdn.cn/upload_files/2020/06/18/Fn6Qf0fGRFyuD8xh0Gi1w2ng59G1.png"
@@ -87,9 +87,7 @@ export default createComponent({
         )}
         {this.genImage(classPrefix)}
         <div class={`${classPrefix}-name`}>
-          <span
-            class={this.largePicturePreview ? 'van-multi-ellipsis--l2' : ''}
-          >
+          <span class={this.largeImageMode ? 'van-multi-ellipsis--l2' : ''}>
             {this.skuValue.name}
           </span>
         </div>

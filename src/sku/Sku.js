@@ -680,13 +680,13 @@ export default createComponent({
           {this.skuTree.map((skuTreeItem) => (
             <SkuRow
               skuRow={skuTreeItem}
-              largePicturePreview={skuTreeItem.large_picture_preview}
+              largeImageMode={skuTreeItem.largeImageMode}
               hasScrollTab={skuTreeItem.v.length > 6}
             >
               {skuTreeItem.v.map((skuValue, itemIndex) => (
                 <template
                   slot={
-                    skuTreeItem.large_picture_preview
+                    skuTreeItem.largeImageMode
                       ? Math.floor(itemIndex / 3) % 2 === 0
                         ? 'sku-item-group-one'
                         : 'sku-item-group-two'
@@ -700,7 +700,7 @@ export default createComponent({
                     skuKeyStr={skuTreeItem.k_s}
                     selectedSku={selectedSku}
                     skuEventBus={skuEventBus}
-                    largePicturePreview={skuTreeItem.large_picture_preview}
+                    largeImageMode={skuTreeItem.largeImageMode}
                   ></SkuRowItem>
                 </template>
               ))}

@@ -204,7 +204,7 @@ sku: {
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      large_picture_preview: true, //  Whether to display large image mode
+      largeImageMode: true, //  whether to enable large image mode
     }
   ],
   list: [
