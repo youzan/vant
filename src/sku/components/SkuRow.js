@@ -8,12 +8,8 @@ const [createComponent, bem, t] = createNamespace('sku-row');
 export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
-      if (this.scrollable) {
-        if (!this.scrollCon) {
-          this.scrollCon = this.$refs.skuContent;
-        }
-
-        bind(this.scrollCon, 'scroll', this.onScroll);
+      if (this.scrollable && this.$refs.content) {
+        bind(this.$refs.content, 'scroll', this.onScroll);
       }
     }),
   ],
@@ -25,9 +21,9 @@ export default createComponent({
   data() {
     return {
       present: 0,
+      scrollLeft: 0,
       contentWidth: 0,
       contentItemWidth: 0,
-      scrollLeft: 0,
     };
   },
 
@@ -48,10 +44,9 @@ export default createComponent({
   methods: {
     onScroll() {
       this.$nextTick(() => {
-        const contentWidth = this.scrollCon.clientWidth;
-        const contentItemWidth = this.$refs.skuContentItem.clientWidth;
-        const distance = contentItemWidth - contentWidth;
-        this.present = this.scrollCon.scrollLeft / distance;
+        const { content, contentTop } = this.$refs;
+        const distance = contentTop.offsetWidth - content.offsetWidth;
+        this.present = content.scrollLeft / distance;
       });
     },
   },
@@ -76,8 +71,8 @@ export default createComponent({
     );
 
     const SkuContent = (
-      <div class={bem('content')} ref="skuContent">
-        <div class={bem('content__top')} ref="skuContentItem">
+      <div class={bem('content')} ref="content">
+        <div class={bem('content__top')} ref="contentTop">
           {this.slots('sku-item-group-one')}
         </div>
         <div class={bem('content__bottom')}>
