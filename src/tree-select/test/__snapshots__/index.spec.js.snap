@@ -34,3 +34,8 @@ exports[`nav info 1`] = `
   <div class="van-tree-select__content"></div>
 </div>
 `;
+
+exports[`selected-icon prop 1`] = `
+<div class="van-ellipsis van-tree-select__item van-tree-select__item--active">city1<i class="van-icon van-icon-foo van-tree-select__selected">
+    <!----></i></div>
+`;
