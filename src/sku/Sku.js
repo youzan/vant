@@ -679,26 +679,16 @@ export default createComponent({
         <div class={this.skuGroupClass}>
           {this.skuTree.map((skuTreeItem) => (
             <SkuRow item={skuTreeItem}>
-              {skuTreeItem.v.map((skuValue, itemIndex) => (
-                <template
-                  slot={
-                    skuTreeItem.largeImageMode
-                      ? Math.floor(itemIndex / 3) % 2 === 0
-                        ? 'sku-item-group-one'
-                        : 'sku-item-group-two'
-                      : 'default'
-                  }
-                >
-                  <SkuRowItem
-                    skuList={sku.list}
-                    lazyLoad={lazyLoad}
-                    skuValue={skuValue}
-                    skuKeyStr={skuTreeItem.k_s}
-                    selectedSku={selectedSku}
-                    skuEventBus={skuEventBus}
-                    largeImageMode={skuTreeItem.largeImageMode}
-                  ></SkuRowItem>
-                </template>
+              {skuTreeItem.v.map((skuValue) => (
+                <SkuRowItem
+                  skuList={sku.list}
+                  lazyLoad={lazyLoad}
+                  skuValue={skuValue}
+                  skuKeyStr={skuTreeItem.k_s}
+                  selectedSku={selectedSku}
+                  skuEventBus={skuEventBus}
+                  largeImageMode={skuTreeItem.largeImageMode}
+                />
               ))}
             </SkuRow>
           ))}

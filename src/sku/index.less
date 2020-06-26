@@ -281,7 +281,7 @@
       }
     }
 
-    &__content {
+    &__scroller {
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -289,16 +289,11 @@
       &::-webkit-scrollbar {
         display: none;
       }
+    }
 
-      &__top {
-        display: inline-flex;
-        margin-bottom: 4px;
-      }
-
-      &__bottom {
-        display: inline-flex;
-        margin-bottom: 4px;
-      }
+    &__row {
+      display: flex;
+      margin-bottom: 4px;
     }
 
     &__indicator {
@@ -313,7 +308,7 @@
         padding-bottom: 16px;
       }
 
-      &-active {
+      &-slider {
         width: 50%;
         height: 100%;
         background-color: @red;

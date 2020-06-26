@@ -1,3 +1,4 @@
+import { bem } from './SkuRow';
 import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/sku-helper';
 
@@ -51,23 +52,22 @@ export default createComponent({
 
     genImage(classPrefix) {
       const { imgUrl } = this;
-      if (imgUrl) {
-        if (this.largeImageMode && this.lazyLoad) {
-          return (
-            <img class={`${classPrefix}-img`} src={imgUrl} vLazy={imgUrl} />
-          );
-        }
 
-        return <img class={`${classPrefix}-img`} src={imgUrl} />;
+      if (!imgUrl) {
+        return;
       }
+
+      if (this.largeImageMode && this.lazyLoad) {
+        return <img class={`${classPrefix}-img`} src={imgUrl} vLazy={imgUrl} />;
+      }
+
+      return <img class={`${classPrefix}-img`} src={imgUrl} />;
     },
   },
 
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
-    const classPrefix = this.largeImageMode
-      ? 'van-sku-row__picture-item'
-      : 'van-sku-row__item';
+    const classPrefix = this.largeImageMode ? bem('picture-item') : bem('item');
 
     return (
       <span
