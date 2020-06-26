@@ -157,3 +157,16 @@ test('radius prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('default slot', () => {
+  const wrapper = mount(VanImage, {
+    propsData: {
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
+    scopedSlots: {
+      default: () => 'Custom Default',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

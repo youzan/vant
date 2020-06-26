@@ -173,6 +173,7 @@ export default createComponent({
       >
         {this.genImage()}
         {this.genPlaceholder()}
+        {this.slots()}
       </div>
     );
   },
