@@ -34,6 +34,7 @@ export type TreeSelectProps = {
   height: number | string;
   items: TreeSelectItem[];
   activeId: TreeSelectActiveId;
+  selectedIcon: string;
   mainActiveIndex: number | string;
 };
 
@@ -49,7 +50,7 @@ function TreeSelect(
   slots: TreeSelectSlots,
   ctx: RenderContext<TreeSelectProps>
 ) {
-  const { height, items, mainActiveIndex, activeId } = props;
+  const { items, height, activeId, selectedIcon, mainActiveIndex } = props;
 
   const selectedItem: Partial<TreeSelectItem> = items[+mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
@@ -110,7 +111,7 @@ function TreeSelect(
       >
         {item.text}
         {isActiveItem(item.id) && (
-          <Icon name="success" class={bem('selected')} />
+          <Icon name={selectedIcon} class={bem('selected')} />
         )}
       </div>
     ));
@@ -151,6 +152,10 @@ TreeSelect.props = {
   activeId: {
     type: [Number, String, Array],
     default: 0,
+  },
+  selectedIcon: {
+    type: String,
+    default: 'success',
   },
   mainActiveIndex: {
     type: [Number, String],
