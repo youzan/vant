@@ -126,7 +126,7 @@ export default {
 | main-active-index | 左侧选中项的索引 | _number \| string_ | `0` |
 | active-id | 右侧选中项的 id，支持传入数组 | _number \| string \|<br>(number \| string)[]_ | `0` |
 | max `v2.2.0` | 右侧项最大选中个数 | _number \| string_ | `Infinity` |
-| selected-icon `v2.9.0` | 右侧栏选中状态的图标 | _string_ | `success` |
+| selected-icon `v2.9.0` | 自定义右侧栏选中状态的图标 | _string_ | `success` |
 
 ### Events
 
