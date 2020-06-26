@@ -74,6 +74,22 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    customStepperConfig: {
+      type: Object,
+      default: () => ({}),
+    },
+    showHeaderImage: {
+      type: Boolean,
+      default: true,
+    },
+    previewOnClickImage: {
+      type: Boolean,
+      default: true,
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
     bodyOffsetTop: {
       type: Number,
       default: 200,
@@ -86,22 +102,6 @@ export default createComponent({
         uploadImg: () => Promise.resolve(),
         uploadMaxSize: 5,
       }),
-    },
-    customStepperConfig: {
-      type: Object,
-      default: () => ({}),
-    },
-    previewOnClickImage: {
-      type: Boolean,
-      default: true,
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
-    },
-    showHeaderImage: {
-      type: Boolean,
-      default: true,
     },
   },
 
