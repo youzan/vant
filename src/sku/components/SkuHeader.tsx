@@ -3,6 +3,9 @@ import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import { BORDER_BOTTOM } from '../../utils/constant';
 
+// Components
+import Image from '../../image';
+
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../../utils/types';
@@ -58,19 +61,23 @@ function SkuHeader(
     showHeaderImage = true,
   } = props;
 
-  const goodsImg = getSkuImg(sku, selectedSku) || goods.picture;
+  const imgUrl = getSkuImg(sku, selectedSku) || goods.picture;
 
   const previewImage = () => {
-    skuEventBus.$emit('sku:previewImage', goodsImg);
+    skuEventBus.$emit('sku:previewImage', imgUrl);
   };
 
   return (
     <div class={[bem(), BORDER_BOTTOM]} {...inherit(ctx)}>
       {showHeaderImage && (
-        <div class={bem('img-wrap')} onClick={previewImage}>
-          <img src={goodsImg} />
+        <Image
+          fit="cover"
+          src={imgUrl}
+          class={bem('img-wrap')}
+          onClick={previewImage}
+        >
           {slots['sku-header-image-extra']?.()}
-        </div>
+        </Image>
       )}
       <div class={bem('goods-info')}>{slots.default?.()}</div>
     </div>
