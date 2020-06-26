@@ -331,7 +331,7 @@ test('should sync value before trigger click-item event', (done) => {
   items.at(1).trigger('click');
 });
 
-test('className of nav', () => {
+test('selected-icon prop', () => {
   const wrapper = mount(TreeSelect, {
     propsData: {
       items: mockItems,
