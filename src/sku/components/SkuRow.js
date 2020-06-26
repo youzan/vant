@@ -5,11 +5,13 @@ import { BindEventMixin } from '../../mixins/bind-event';
 
 const [createComponent, bem, t] = createNamespace('sku-row');
 
+export { bem };
+
 export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
-      if (this.scrollable && this.$refs.content) {
-        bind(this.$refs.content, 'scroll', this.onScroll);
+      if (this.scrollable && this.$refs.scroller) {
+        bind(this.$refs.scroller, 'scroll', this.onScroll);
       }
     }),
   ],
@@ -20,10 +22,7 @@ export default createComponent({
 
   data() {
     return {
-      present: 0,
-      scrollLeft: 0,
-      contentWidth: 0,
-      contentItemWidth: 0,
+      progress: 0,
     };
   },
 
@@ -31,64 +30,67 @@ export default createComponent({
     scrollable() {
       return this.item.largeImageMode && this.item.v.length > 6;
     },
-
-    scrollStyle() {
-      if (this.scrollable) {
-        return {
-          transform: `translate3d(${this.present * 20}px, 0, 0)`,
-        };
-      }
-    },
   },
 
   methods: {
     onScroll() {
-      this.$nextTick(() => {
-        const { content, contentTop } = this.$refs;
-        const distance = contentTop.offsetWidth - content.offsetWidth;
-        this.present = content.scrollLeft / distance;
-      });
+      const { scroller, row } = this.$refs;
+      const distance = row.offsetWidth - scroller.offsetWidth;
+      this.progress = scroller.scrollLeft / distance;
+    },
+
+    genTitle() {
+      return (
+        <div class={bem('title')}>
+          {this.item.k}
+          {this.item.is_multiple && (
+            <span class={bem('title-multiple')}>（{t('multiple')}）</span>
+          )}
+        </div>
+      );
     },
 
     genIndicator() {
       if (this.scrollable) {
+        const style = {
+          transform: `translate3d(${this.progress * 20}px, 0, 0)`,
+        };
+
         return (
           <div class={bem('indicator-wrapper')}>
             <div class={bem('indicator')}>
-              <div class={bem('indicator-active')} style={this.scrollStyle} />
+              <div class={bem('indicator-slider')} style={style} />
             </div>
           </div>
         );
       }
     },
+
+    genContent() {
+      const nodes = this.slots();
+
+      if (this.item.largeImageMode) {
+        const middle = Math.ceil(nodes.length / 2);
+
+        return (
+          <div class={bem('scroller')} ref="scroller">
+            <div class={bem('row')} ref="row">
+              {nodes.slice(0, middle)}
+            </div>
+            <div class={bem('row')}>{nodes.slice(middle, nodes.length)}</div>
+          </div>
+        );
+      }
+
+      return nodes;
+    },
   },
 
   render() {
-    const { item } = this;
-    const { largeImageMode } = item;
-
-    const multipleNode = item.is_multiple && (
-      <span class={bem('title-multiple')}>（{t('multiple')}）</span>
-    );
-
-    const SkuContent = (
-      <div class={bem('content')} ref="content">
-        <div class={bem('content__top')} ref="contentTop">
-          {this.slots('sku-item-group-one')}
-        </div>
-        <div class={bem('content__bottom')}>
-          {this.slots('sku-item-group-two')}
-        </div>
-      </div>
-    );
-
     return (
-      <div class={[bem(), BORDER_BOTTOM, largeImageMode && bem('picture')]}>
-        <div class={bem('title')}>
-          {item.k}
-          {multipleNode}
-        </div>
-        {largeImageMode ? SkuContent : this.slots()}
+      <div class={[bem(), BORDER_BOTTOM]}>
+        {this.genTitle()}
+        {this.genContent()}
         {this.genIndicator()}
       </div>
     );
