@@ -45,10 +45,12 @@ export type RouteProps = {
   url?: string;
   replace?: boolean;
   to?: RawLocation;
+  errorFunc: Function;
 };
 
 export const routeProps = {
   url: String,
   replace: Boolean,
   to: [String, Object],
+  errorFunc: Function,
 };

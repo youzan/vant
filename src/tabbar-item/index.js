@@ -45,9 +45,18 @@ export default createComponent({
 
   methods: {
     onClick(event) {
+      const { errorFunc } = this;
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
-      route(this.$router, this);
+      if (errorFunc) {
+        try {
+          route(this.$router, this);
+        } catch {
+          errorFunc();
+        }
+      } else {
+        route(this.$router, this);
+      }
     },
 
     genIcon(active) {
