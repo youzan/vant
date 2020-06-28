@@ -26,6 +26,7 @@
 
   &-header {
     display: flex;
+    flex-shrink: 0;
     margin: 0 @padding-md;
 
     &__img-wrap {
@@ -262,6 +263,7 @@
     }
 
     &__scroller {
+      margin: 0 -@padding-md;
       overflow-x: scroll;
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
@@ -272,8 +274,9 @@
     }
 
     &__row {
-      display: flex;
+      display: inline-flex;
       margin-bottom: 4px;
+      padding: 0 @padding-md;
     }
 
     &__indicator {
