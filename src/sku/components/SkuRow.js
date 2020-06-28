@@ -70,14 +70,20 @@ export default createComponent({
       const nodes = this.slots();
 
       if (this.item.largeImageMode) {
-        const middle = Math.ceil(nodes.length / 2);
+        const top = [];
+        const bottom = [];
+
+        nodes.forEach((node, index) => {
+          const group = Math.floor(index / 3) % 2 === 0 ? top : bottom;
+          group.push(node);
+        });
 
         return (
           <div class={bem('scroller')} ref="scroller">
             <div class={bem('row')} ref="row">
-              {nodes.slice(0, middle)}
+              {top}
             </div>
-            <div class={bem('row')}>{nodes.slice(middle, nodes.length)}</div>
+            {bottom.length && <div class={bem('row')}>{bottom}</div>}
           </div>
         );
       }
