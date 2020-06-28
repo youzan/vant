@@ -43,7 +43,6 @@ export default createComponent({
     hideSelectedText: Boolean,
     resetStepperOnHide: Boolean,
     customSkuValidator: Function,
-    closeOnClickOverlay: Boolean,
     disableStepperInput: Boolean,
     resetSelectedSkuOnHide: Boolean,
     quota: {
@@ -87,6 +86,10 @@ export default createComponent({
       default: true,
     },
     safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
+    closeOnClickOverlay: {
       type: Boolean,
       default: true,
     },
