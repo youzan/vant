@@ -622,6 +622,7 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       showHeaderImage,
+      initialSku,
     } = this;
 
     const slotsProps = {
@@ -688,6 +689,7 @@ export default createComponent({
                   selectedSku={selectedSku}
                   skuEventBus={skuEventBus}
                   largeImageMode={skuTreeItem.largeImageMode}
+                  initSelected={initialSku[skuTreeItem.k_s]}
                 />
               ))}
             </SkuRow>

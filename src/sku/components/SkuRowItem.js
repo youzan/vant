@@ -16,6 +16,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    initSelected: Number,
   },
 
   computed: {
@@ -33,6 +34,20 @@ export default createComponent({
         valueId: this.skuValue.id,
       });
     },
+  },
+
+  watch: {
+    initSelected(val) {
+      this.scrollSelectedToView(val);
+      // 等待弹框显示后再次执行用以兜底
+      setTimeout(() => {
+        this.scrollSelectedToView(val);
+      }, 300);
+    },
+  },
+
+  mounted() {
+    this.scrollSelectedToView(this.initSelected);
   },
 
   methods: {
@@ -63,6 +78,12 @@ export default createComponent({
 
       return <img class={`${classPrefix}-img`} src={imgUrl} />;
     },
+
+    scrollSelectedToView(val) {
+      if (this.largeImageMode && this.skuValue.id === +val && this.$refs.item) {
+        this.$refs.item.scrollIntoView();
+      }
+    },
   },
 
   render() {
@@ -76,6 +97,7 @@ export default createComponent({
           choosed ? `${classPrefix}--active` : '',
           !this.choosable ? `${classPrefix}--disabled` : '',
         ]}
+        ref="item"
         onClick={this.onSelect}
       >
         {this.largeImageMode && (
