@@ -678,7 +678,7 @@ export default createComponent({
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
           {this.skuTree.map((skuTreeItem) => (
-            <SkuRow item={skuTreeItem}>
+            <SkuRow skuRow={skuTreeItem}>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowItem
                   skuList={sku.list}
@@ -693,7 +693,7 @@ export default createComponent({
             </SkuRow>
           ))}
           {this.propList.map((skuTreeItem) => (
-            <SkuRow item={skuTreeItem}>
+            <SkuRow skuRow={skuTreeItem}>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowPropItem
                   skuValue={skuValue}
