@@ -1,7 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
-import { range } from '../utils/format/number';
-import { on, preventDefault } from '../utils/dom/event';
+import { bem, createComponent } from './shared';
 
 // Mixins
 import { PopupMixin } from '../mixins/popup';
@@ -9,20 +7,8 @@ import { TouchMixin } from '../mixins/touch';
 
 // Components
 import Icon from '../icon';
-import Image from '../image';
 import Swipe from '../swipe';
-import Loading from '../loading';
-import SwipeItem from '../swipe-item';
-
-const [createComponent, bem] = createNamespace('image-preview');
-const DOUBLE_CLICK_INTERVAL = 250;
-
-function getDistance(touches) {
-  return Math.sqrt(
-    (touches[0].clientX - touches[1].clientX) ** 2 +
-      (touches[0].clientY - touches[1].clientY) ** 2
-  );
-}
+import ImagePreviewItem from './ImagePreviewItem';
 
 export default createComponent({
   mixins: [
@@ -34,6 +20,7 @@ export default createComponent({
 
   props: {
     className: null,
+    closeable: Boolean,
     asyncClose: Boolean,
     showIndicators: Boolean,
     images: {
@@ -72,7 +59,6 @@ export default createComponent({
       type: String,
       default: bem('overlay'),
     },
-    closeable: Boolean,
     closeIcon: {
       type: String,
       default: 'clear',
@@ -84,36 +70,10 @@ export default createComponent({
   },
 
   data() {
-    this.imageSizes = [];
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-
     return {
-      scale: 1,
-      moveX: 0,
-      moveY: 0,
       active: 0,
-      moving: false,
-      zooming: false,
       doubleClickTimer: null,
     };
-  },
-
-  computed: {
-    imageStyle() {
-      const { scale } = this;
-      const style = {
-        transitionDuration: this.zooming || this.moving ? '0s' : '.3s',
-      };
-
-      if (scale !== 1) {
-        style.transform = `scale(${scale}, ${scale}) translate(${
-          this.moveX / scale
-        }px, ${this.moveY / scale}px)`;
-      }
-
-      return style;
-    },
   },
 
   watch: {
@@ -132,21 +92,6 @@ export default createComponent({
         });
       }
     },
-
-    shouldRender: {
-      handler(val) {
-        if (val) {
-          this.$nextTick(() => {
-            const swipe = this.$refs.swipe.$el;
-            on(swipe, 'touchstart', this.onWrapperTouchStart);
-            on(swipe, 'touchmove', preventDefault);
-            on(swipe, 'touchend', this.onWrapperTouchEnd);
-            on(swipe, 'touchcancel', this.onWrapperTouchEnd);
-          });
-        }
-      },
-      immediate: true,
-    },
   },
 
   methods: {
@@ -156,178 +101,15 @@ export default createComponent({
       }
     },
 
-    onWrapperTouchStart() {
-      this.touchStartTime = new Date();
-    },
-
-    onWrapperTouchEnd(event) {
-      preventDefault(event);
-
-      const deltaTime = new Date() - this.touchStartTime;
-      const { offsetX = 0, offsetY = 0 } = this.$refs.swipe || {};
-
-      // prevent long tap to close component
-      if (deltaTime < DOUBLE_CLICK_INTERVAL && offsetX < 10 && offsetY < 10) {
-        if (!this.doubleClickTimer) {
-          this.doubleClickTimer = setTimeout(() => {
-            this.emitClose();
-
-            this.doubleClickTimer = null;
-          }, DOUBLE_CLICK_INTERVAL);
-        } else {
-          clearTimeout(this.doubleClickTimer);
-          this.doubleClickTimer = null;
-          this.toggleScale();
-        }
-      }
-    },
-
-    startMove(event) {
-      const image = event.currentTarget;
-      this.touchStart(event);
-      this.setMaxMove(image.dataset.index);
-      this.moving = true;
-      this.startMoveX = this.moveX;
-      this.startMoveY = this.moveY;
-    },
-
-    setMaxMove(index) {
-      const { scale, windowWidth, windowHeight } = this;
-
-      if (this.imageSizes[index]) {
-        const { displayWidth, displayHeight } = this.imageSizes[index];
-        this.maxMoveX = Math.max(0, (displayWidth * scale - windowWidth) / 2);
-        this.maxMoveY = Math.max(0, (displayHeight * scale - windowHeight) / 2);
-      } else {
-        this.maxMoveX = 0;
-        this.maxMoveY = 0;
-      }
-    },
-
-    startZoom(event) {
-      this.moving = false;
-      this.zooming = true;
-      this.startScale = this.scale;
-      this.startDistance = getDistance(event.touches);
-    },
-
-    onImageLoad(event, index) {
-      const { windowWidth, windowHeight } = this;
-      const { naturalWidth, naturalHeight } = event.target;
-      const windowRatio = windowHeight / windowWidth;
-      const imageRatio = naturalHeight / naturalWidth;
-
-      let displayWidth;
-      let displayHeight;
-
-      if (imageRatio < windowRatio) {
-        displayWidth = windowWidth;
-        displayHeight = windowWidth * imageRatio;
-      } else {
-        displayWidth = windowHeight / imageRatio;
-        displayHeight = windowHeight;
-      }
-
-      this.imageSizes[index] = {
-        naturalWidth,
-        naturalHeight,
-        displayWidth,
-        displayHeight,
-      };
-    },
-
-    onImageTouchStart(event) {
-      const { touches } = event;
-      const { offsetX = 0 } = this.$refs.swipe || {};
-
-      if (touches.length === 1 && this.scale !== 1) {
-        this.startMove(event);
-      } /* istanbul ignore else */ else if (touches.length === 2 && !offsetX) {
-        this.startZoom(event);
-      }
-    },
-
-    onImageTouchMove(event) {
-      const { touches } = event;
-      if (this.moving || this.zooming) {
-        preventDefault(event, true);
-      }
-
-      if (this.moving) {
-        this.touchMove(event);
-        const moveX = this.deltaX + this.startMoveX;
-        const moveY = this.deltaY + this.startMoveY;
-        this.moveX = range(moveX, -this.maxMoveX, this.maxMoveX);
-        this.moveY = range(moveY, -this.maxMoveY, this.maxMoveY);
-      }
-
-      if (this.zooming && touches.length === 2) {
-        const distance = getDistance(touches);
-        const scale = (this.startScale * distance) / this.startDistance;
-
-        this.setScale(scale);
-      }
-    },
-
-    onImageTouchEnd(event) {
-      /* istanbul ignore else */
-      if (this.moving || this.zooming) {
-        let stopPropagation = true;
-
-        if (
-          this.moving &&
-          this.startMoveX === this.moveX &&
-          this.startMoveY === this.moveY
-        ) {
-          stopPropagation = false;
-        }
-
-        if (!event.touches.length) {
-          this.moving = false;
-          this.zooming = false;
-          this.startMoveX = 0;
-          this.startMoveY = 0;
-          this.startScale = 1;
-
-          if (this.scale < 1) {
-            this.resetScale();
-          }
-        }
-
-        if (stopPropagation) {
-          preventDefault(event, true);
-        }
-      }
+    emitScale(args) {
+      this.$emit('scale', args);
     },
 
     setActive(active) {
-      this.resetScale();
-
       if (active !== this.active) {
         this.active = active;
         this.$emit('change', active);
       }
-    },
-
-    setScale(scale) {
-      const value = range(scale, +this.minZoom, +this.maxZoom);
-
-      this.scale = value;
-      this.$emit('scale', { index: this.active, scale: value });
-    },
-
-    resetScale() {
-      this.setScale(1);
-      this.moveX = 0;
-      this.moveY = 0;
-    },
-
-    toggleScale() {
-      const scale = this.scale > 1 ? 1 : 2;
-
-      this.setScale(scale);
-      this.moveX = 0;
-      this.moveY = 0;
     },
 
     genIndex() {
@@ -350,40 +132,26 @@ export default createComponent({
     },
 
     genImages() {
-      const imageSlots = {
-        loading: () => <Loading type="spinner" />,
-      };
-
       return (
         <Swipe
           ref="swipe"
           lazyRender
           loop={this.loop}
           class={bem('swipe')}
-          indicatorColor="white"
           duration={this.swipeDuration}
           initialSwipe={this.startPosition}
           showIndicators={this.showIndicators}
+          indicatorColor="white"
           onChange={this.setActive}
         >
-          {this.images.map((image, index) => (
-            <SwipeItem>
-              <Image
-                src={image}
-                fit="contain"
-                class={bem('image')}
-                data-index={index}
-                scopedSlots={imageSlots}
-                style={index === this.active ? this.imageStyle : null}
-                nativeOnTouchstart={this.onImageTouchStart}
-                nativeOnTouchmove={this.onImageTouchMove}
-                nativeOnTouchend={this.onImageTouchEnd}
-                nativeOnTouchcancel={this.onImageTouchEnd}
-                onLoad={(event) => {
-                  this.onImageLoad(event, index);
-                }}
-              />
-            </SwipeItem>
+          {this.images.map((image) => (
+            <ImagePreviewItem
+              src={image}
+              maxZoom={this.maxZoom}
+              minZoom={this.minZoom}
+              onScale={this.emitScale}
+              onClose={this.emitClose}
+            />
           ))}
         </Swipe>
       );
