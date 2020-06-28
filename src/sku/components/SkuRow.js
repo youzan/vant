@@ -17,7 +17,7 @@ export default createComponent({
   ],
 
   props: {
-    item: Object,
+    skuRow: Object,
   },
 
   data() {
@@ -28,7 +28,7 @@ export default createComponent({
 
   computed: {
     scrollable() {
-      return this.item.largeImageMode && this.item.v.length > 6;
+      return this.skuRow.largeImageMode && this.skuRow.v.length > 6;
     },
   },
 
@@ -42,8 +42,8 @@ export default createComponent({
     genTitle() {
       return (
         <div class={bem('title')}>
-          {this.item.k}
-          {this.item.is_multiple && (
+          {this.skuRow.k}
+          {this.skuRow.is_multiple && (
             <span class={bem('title-multiple')}>（{t('multiple')}）</span>
           )}
         </div>
@@ -69,7 +69,7 @@ export default createComponent({
     genContent() {
       const nodes = this.slots();
 
-      if (this.item.largeImageMode) {
+      if (this.skuRow.largeImageMode) {
         const top = [];
         const bottom = [];
 
