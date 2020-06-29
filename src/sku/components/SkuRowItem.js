@@ -1,6 +1,7 @@
 import { bem } from './SkuRow';
 import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/sku-helper';
+import Image from '../../image';
 
 const [createComponent] = createNamespace('sku-row-item');
 
@@ -51,23 +52,22 @@ export default createComponent({
     },
 
     genImage(classPrefix) {
-      const { imgUrl } = this;
-
-      if (!imgUrl) {
-        return;
+      if (this.imgUrl) {
+        return (
+          <Image
+            fit="cover"
+            src={this.imgUrl}
+            class={`${classPrefix}-img`}
+            lazy-load={this.lazyLoad}
+          />
+        );
       }
-
-      if (this.largeImageMode && this.lazyLoad) {
-        return <img class={`${classPrefix}-img`} src={imgUrl} vLazy={imgUrl} />;
-      }
-
-      return <img class={`${classPrefix}-img`} src={imgUrl} />;
     },
   },
 
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
-    const classPrefix = this.largeImageMode ? bem('picture-item') : bem('item');
+    const classPrefix = this.largeImageMode ? bem('image-item') : bem('item');
 
     return (
       <span
@@ -78,6 +78,16 @@ export default createComponent({
         ]}
         onClick={this.onSelect}
       >
+        {this.genImage(classPrefix)}
+        <div class={`${classPrefix}-name`}>
+          {this.largeImageMode ? (
+            <span class={{ 'van-multi-ellipsis--l2': this.largeImageMode }}>
+              {this.skuValue.name}
+            </span>
+          ) : (
+            this.skuValue.name
+          )}
+        </div>
         {this.largeImageMode && (
           <img
             class={`${classPrefix}-img-icon`}
@@ -85,12 +95,6 @@ export default createComponent({
             onClick={this.onPreviewImg}
           />
         )}
-        {this.genImage(classPrefix)}
-        <div class={`${classPrefix}-name`}>
-          <span class={this.largeImageMode ? 'van-multi-ellipsis--l2' : ''}>
-            {this.skuValue.name}
-          </span>
-        </div>
       </span>
     );
   },
