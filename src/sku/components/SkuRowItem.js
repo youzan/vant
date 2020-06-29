@@ -58,7 +58,7 @@ export default createComponent({
             fit="cover"
             src={this.imgUrl}
             class={`${classPrefix}-img`}
-            lazy-load={this.lazyLoad}
+            lazyLoad={this.lazyLoad}
           />
         );
       }
