@@ -16,7 +16,6 @@
           :custom-sku-validator="customSkuValidator"
           disable-stepper-input
           reset-stepper-on-hide
-          close-on-click-overlay
           safe-area-inset-bottom
           reset-selected-sku-on-hide
           @buy-clicked="onBuyClicked"
@@ -94,7 +93,6 @@
           :start-sale-num="skuData2.start_sale_num"
           :show-header-image="false"
           :custom-sku-validator="customSkuValidator"
-          close-on-click-overlay
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
