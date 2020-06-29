@@ -83,7 +83,7 @@ export default createComponent({
             <div class={bem('row')} ref="row">
               {top}
             </div>
-            {bottom.length && <div class={bem('row')}>{bottom}</div>}
+            {bottom.length ? <div class={bem('row')}>{bottom}</div> : null}
           </div>
         );
       }

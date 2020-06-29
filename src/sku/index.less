@@ -109,77 +109,114 @@
       margin-bottom: 0;
     }
 
-    &__picture {
+    &__item,
+    &__image-item {
+      position: relative;
+      overflow: hidden;
+      color: @text-color;
+      border-radius: @border-radius-md;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: @sku-item-background-color;
+        content: '';
+      }
+
+      &--active {
+        color: @red;
+
+        &::before {
+          background: currentColor;
+          opacity: 0.1;
+        }
+      }
+    }
+
+    &__item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      margin: 0 @padding-sm @padding-sm 0;
+      font-size: 13px;
+      line-height: 16px;
+      vertical-align: middle;
+
+      &-img {
+        z-index: 1;
+        width: 24px;
+        height: 24px;
+        margin: 4px 0 4px 4px;
+        object-fit: cover;
+        border-radius: @border-radius-sm;
+      }
+
+      &-name {
+        z-index: 1;
+        padding: @padding-xs;
+      }
+
+      &--disabled {
+        color: @gray-5;
+        background: @active-color;
+        cursor: not-allowed;
+
+        .van-sku-row__item-img {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    &__image {
       margin-right: 0;
 
       &-item {
-        position: relative;
-        flex: 0 0 110px;
+        display: flex;
+        flex-direction: column;
         width: 110px;
-        height: 150px;
         margin: 0 4px 6px 0;
-        color: @text-color;
-        border: 1px solid rgba(0, 0, 0, 0);
-        border-radius: @border-radius-md;
-        cursor: pointer;
+        border: 1px solid transparent;
 
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: @sku-item-background-color;
-          border-radius: @border-radius-md;
-          content: '';
+        &:last-child {
+          margin-right: 0;
         }
 
         &-img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1;
-          display: block;
-          width: 110px;
+          width: 100%;
           height: 110px;
-          object-fit: cover;
-          border-radius: @border-radius-md @border-radius-md 0 0;
 
           &-icon {
             position: absolute;
             top: 0;
             right: 0;
-            z-index: 3;
             width: 18px;
             height: 19px;
-            opacity: 1 !important;
           }
         }
 
         &-name {
-          position: absolute;
-          top: 110px;
-          left: 0;
-          z-index: 1;
+          position: relative;
           display: flex;
           align-items: center;
           justify-content: center;
           box-sizing: border-box;
-          width: 110px;
           height: 40px;
           padding: @padding-base;
           font-size: 12px;
           line-height: 16px;
+
+          span {
+            word-wrap: break-word;
+          }
         }
 
         &--active {
-          color: @red;
-          border: 1px solid currentColor;
-
-          &::before {
-            background: currentColor;
-            opacity: 0.1;
-          }
+          border-color: currentColor;
         }
 
         &--disabled {
@@ -201,65 +238,6 @@
 
     &__title-multiple {
       color: @gray-6;
-    }
-
-    &__item {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 40px;
-      margin: 0 @padding-sm @padding-sm 0;
-      overflow: hidden;
-      color: @text-color;
-      font-size: 13px;
-      line-height: 16px;
-      vertical-align: middle;
-      border-radius: @border-radius-md;
-      cursor: pointer;
-
-      &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: @sku-item-background-color;
-        content: '';
-      }
-
-      &-img {
-        z-index: 1;
-        width: 24px;
-        height: 24px;
-        margin: 4px 0 4px 4px;
-        object-fit: cover;
-        border-radius: @border-radius-sm;
-      }
-
-      &-name {
-        z-index: 1;
-        padding: @padding-xs;
-      }
-
-      &--active {
-        color: @red;
-
-        &::before {
-          background: currentColor;
-          opacity: 0.1;
-        }
-      }
-
-      &--disabled {
-        color: @gray-5;
-        background: @active-color;
-        cursor: not-allowed;
-
-        .van-sku-row__item-img {
-          opacity: 0.3;
-        }
-      }
     }
 
     &__scroller {
