@@ -427,6 +427,8 @@ export default createComponent({
         selectedProp: this.selectedProp,
         selectedSkuComb: this.selectedSkuComb,
       });
+
+      this.centerInitialSku();
     },
 
     getSkuMessages() {
@@ -602,6 +604,18 @@ export default createComponent({
         selectedSkuComb: this.selectedSkuComb,
       };
     },
+
+    // 当 popup 完全打开后执行
+    onOpened() {
+      this.centerInitialSku();
+    },
+
+    centerInitialSku() {
+      (this.$refs.skuRows || []).forEach((it) => {
+        const { k_s } = it.skuRow || {};
+        it.centerItem(this.initialSku[k_s]);
+      });
+    },
   },
 
   render() {
@@ -622,7 +636,6 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       showHeaderImage,
-      initialSku,
     } = this;
 
     const slotsProps = {
@@ -679,7 +692,7 @@ export default createComponent({
       (this.hasSkuOrAttr && (
         <div class={this.skuGroupClass}>
           {this.skuTree.map((skuTreeItem) => (
-            <SkuRow skuRow={skuTreeItem}>
+            <SkuRow skuRow={skuTreeItem} ref="skuRows" refInFor>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowItem
                   skuList={sku.list}
@@ -689,7 +702,6 @@ export default createComponent({
                   selectedSku={selectedSku}
                   skuEventBus={skuEventBus}
                   largeImageMode={skuTreeItem.largeImageMode}
-                  initSelected={initialSku[skuTreeItem.k_s]}
                 />
               ))}
             </SkuRow>
@@ -758,6 +770,7 @@ export default createComponent({
         getContainer={this.getContainer}
         closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}
+        onOpened={this.onOpened}
       >
         {Header}
         <div class="van-sku-body" style={this.bodyStyle}>

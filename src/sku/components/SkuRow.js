@@ -1,6 +1,8 @@
 // Utils
 import { createNamespace } from '../../utils';
 import { BORDER_BOTTOM } from '../../utils/constant';
+// Mixins
+import { ParentMixin } from '../../mixins/relation';
 import { BindEventMixin } from '../../mixins/bind-event';
 
 const [createComponent, bem, t] = createNamespace('sku-row');
@@ -9,6 +11,7 @@ export { bem };
 
 export default createComponent({
   mixins: [
+    ParentMixin('vanSkuRows'),
     BindEventMixin(function (bind) {
       if (this.scrollable && this.$refs.scroller) {
         bind(this.$refs.scroller, 'scroll', this.onScroll);
@@ -89,6 +92,21 @@ export default createComponent({
       }
 
       return nodes;
+    },
+
+    centerItem(selectSkuId) {
+      if (!this.skuRow.largeImageMode || !selectSkuId) {
+        return;
+      }
+      const { children = [] } = this;
+      const { scroller, row } = this.$refs;
+      const child = children.find((it) => +it.skuValue.id === +selectSkuId);
+      if (scroller && row && child && child.$el) {
+        const target = child.$el;
+        const to =
+          target.offsetLeft - (scroller.offsetWidth - target.offsetWidth) / 2;
+        scroller.scrollLeft = to;
+      }
     },
   },
 
