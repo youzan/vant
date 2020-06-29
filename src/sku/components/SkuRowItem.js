@@ -1,11 +1,14 @@
 import { bem } from './SkuRow';
 import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/sku-helper';
+import { ChildrenMixin } from '../../mixins/relation';
 import Image from '../../image';
 
 const [createComponent] = createNamespace('sku-row-item');
 
 export default createComponent({
+  mixins: [ChildrenMixin('vanSkuRows')],
+
   props: {
     lazyLoad: Boolean,
     skuValue: Object,
