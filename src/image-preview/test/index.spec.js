@@ -27,15 +27,14 @@ test('render image', async () => {
 
   await later();
 
-  const swipe = wrapper.find('.van-swipe__track');
+  const swipe = wrapper.find('.van-swipe-item');
   triggerDrag(swipe, 500, 0);
   expect(wrapper.emitted('input')).toBeFalsy();
-  triggerDrag(swipe, 0, 0);
-
-  await later(250);
-
-  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
+
+  triggerDrag(swipe, 0, 0);
+  await later(250);
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
 });
 
 test('closeable prop', () => {
@@ -116,21 +115,29 @@ test('function call', (done) => {
   });
 });
 
-test('double click', async (done) => {
-  const instance = ImagePreview(images);
+test('double click', async () => {
+  const onScale = jest.fn();
+  const instance = ImagePreview({
+    images,
+    onScale,
+  });
 
   await later();
-  const swipe = instance.$el.querySelector('.van-swipe__track');
+  const swipe = instance.$el.querySelector('.van-swipe-item');
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
-  expect(instance.scale).toEqual(2);
+  expect(onScale).toHaveBeenCalledWith({
+    index: 0,
+    scale: 2,
+  });
 
   await later();
-
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
-  expect(instance.scale).toEqual(1);
-  done();
+  expect(onScale).toHaveBeenLastCalledWith({
+    index: 0,
+    scale: 1,
+  });
 });
 
 test('onClose option', () => {

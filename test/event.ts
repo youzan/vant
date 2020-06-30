@@ -20,8 +20,8 @@ function getTouch(el: HTMLElement | Window, x: number, y: number) {
 export function trigger(
   wrapper: Wrapper<Vue> | HTMLElement | Window,
   eventName: string,
-  x: number = 0,
-  y: number = 0,
+  x = 0,
+  y = 0,
   options: any = {}
 ) {
   const el = 'element' in wrapper ? wrapper.element : wrapper;

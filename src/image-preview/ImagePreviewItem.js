@@ -25,6 +25,7 @@ export default {
 
   props: {
     src: String,
+    active: Number,
     minZoom: [Number, String],
     maxZoom: [Number, String],
   },
@@ -60,8 +61,7 @@ export default {
   },
 
   methods: {
-    startMove(event) {
-      this.touchStart(event);
+    startMove() {
       this.setMaxMove();
       this.moving = true;
       this.startMoveX = this.moveX;
@@ -80,6 +80,9 @@ export default {
       if (this.displayWidth && this.displayHeight) {
         this.maxMoveX = Math.max(0, (displayWidth * scale - windowWidth) / 2);
         this.maxMoveY = Math.max(0, (displayHeight * scale - windowHeight) / 2);
+      } else {
+        this.maxMoveX = 0;
+        this.maxMoveY = 0;
       }
     },
 
@@ -109,10 +112,11 @@ export default {
       const { touches } = event;
       const { offsetX = 0 } = this;
 
+      this.touchStart(event);
       this.touchStartTime = new Date();
 
       if (touches.length === 1 && this.scale !== 1) {
-        this.startMove(event);
+        this.startMove();
       } else if (touches.length === 2 && !offsetX) {
         this.startZoom(event);
       }
