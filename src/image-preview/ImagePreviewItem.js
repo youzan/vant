@@ -11,8 +11,6 @@ import Image from '../image';
 import Loading from '../loading';
 import SwipeItem from '../swipe-item';
 
-const DOUBLE_CLICK_INTERVAL = 250;
-
 function getDistance(touches) {
   return Math.sqrt(
     (touches[0].clientX - touches[1].clientX) ** 2 +
@@ -40,6 +38,8 @@ export default {
       moveY: 0,
       moving: false,
       zooming: false,
+      displayWidth: 0,
+      displayHeight: 0,
     };
   },
 
@@ -58,34 +58,33 @@ export default {
 
       return style;
     },
+
+    maxMoveX() {
+      if (this.displayWidth) {
+        return Math.max(
+          0,
+          (this.scale * this.displayWidth - this.windowWidth) / 2
+        );
+      }
+      return 0;
+    },
+
+    maxMoveY() {
+      if (this.displayHeight) {
+        return Math.max(
+          0,
+          (this.scale * this.displayHeight - this.windowHeight) / 2
+        );
+      }
+      return 0;
+    },
+  },
+
+  mounted() {
+    this.bindTouchEvent(this.$el);
   },
 
   methods: {
-    startMove() {
-      this.setMaxMove();
-      this.moving = true;
-      this.startMoveX = this.moveX;
-      this.startMoveY = this.moveY;
-    },
-
-    setMaxMove() {
-      const {
-        scale,
-        windowWidth,
-        windowHeight,
-        displayWidth,
-        displayHeight,
-      } = this;
-
-      if (this.displayWidth && this.displayHeight) {
-        this.maxMoveX = Math.max(0, (displayWidth * scale - windowWidth) / 2);
-        this.maxMoveY = Math.max(0, (displayHeight * scale - windowHeight) / 2);
-      } else {
-        this.maxMoveX = 0;
-        this.maxMoveY = 0;
-      }
-    },
-
     resetScale() {
       this.setScale(1);
       this.moveX = 0;
@@ -115,10 +114,15 @@ export default {
       this.touchStart(event);
       this.touchStartTime = new Date();
 
-      if (touches.length === 1 && this.scale !== 1) {
-        this.startMove();
-      } else if (touches.length === 2 && !offsetX) {
-        this.startZoom(event);
+      this.startMoveX = this.moveX;
+      this.startMoveY = this.moveY;
+
+      this.moving = touches.length === 1 && this.scale !== 1;
+      this.zooming = touches.length === 2 && !offsetX;
+
+      if (this.zooming) {
+        this.startScale = this.scale;
+        this.startDistance = getDistance(event.touches);
       }
     },
 
@@ -147,9 +151,12 @@ export default {
     },
 
     onTouchEnd(event) {
+      let stopPropagation = false;
+
       /* istanbul ignore else */
       if (this.moving || this.zooming) {
-        let stopPropagation = true;
+
+        stopPropagation = true;
 
         if (
           this.moving &&
@@ -160,8 +167,13 @@ export default {
         }
 
         if (!event.touches.length) {
+          if (this.zooming) {
+            this.moveX = range(this.moveX, -this.maxMoveX, this.maxMoveX);
+            this.moveY = range(this.moveY, -this.maxMoveY, this.maxMoveY);
+            this.zooming = false;
+          }
+
           this.moving = false;
-          this.zooming = false;
           this.startMoveX = 0;
           this.startMoveY = 0;
           this.startScale = 1;
@@ -170,38 +182,36 @@ export default {
             this.resetScale();
           }
         }
-
-        if (stopPropagation) {
-          preventDefault(event, true);
-        }
       }
 
-      const deltaTime = new Date() - this.touchStartTime;
-      const { offsetX = 0, offsetY = 0 } = this;
+      preventDefault(event, stopPropagation);
 
-      // prevent long tap to close component
-      if (deltaTime < DOUBLE_CLICK_INTERVAL && offsetX < 10 && offsetY < 10) {
-        if (!this.doubleClickTimer) {
-          this.doubleClickTimer = setTimeout(() => {
-            this.$emit('close');
-
-            this.doubleClickTimer = null;
-          }, DOUBLE_CLICK_INTERVAL);
-        } else {
-          clearTimeout(this.doubleClickTimer);
-          this.doubleClickTimer = null;
-          this.toggleScale();
-        }
-      }
-
+      this.checkTap();
       this.resetTouchStatus();
     },
 
-    startZoom(event) {
-      this.moving = false;
-      this.zooming = true;
-      this.startScale = this.scale;
-      this.startDistance = getDistance(event.touches);
+    checkTap() {
+      const { offsetX = 0, offsetY = 0 } = this;
+      const deltaTime = new Date() - this.touchStartTime;
+      const TAP_TIME = 250;
+      const TAP_OFFSET = 10;
+
+      if (
+        offsetX < TAP_OFFSET &&
+        offsetY < TAP_OFFSET &&
+        deltaTime < TAP_TIME
+      ) {
+        if (this.doubleTapTimer) {
+          clearTimeout(this.doubleTapTimer);
+          this.doubleTapTimer = null;
+          this.toggleScale();
+        } else {
+          this.doubleTapTimer = setTimeout(() => {
+            this.$emit('close');
+            this.doubleTapTimer = null;
+          }, TAP_TIME);
+        }
+      }
     },
 
     onLoad(event) {
@@ -226,12 +236,7 @@ export default {
     };
 
     return (
-      <SwipeItem
-        nativeOnTouchstart={this.onTouchStart}
-        nativeOnTouchmove={this.onTouchMove}
-        nativeOnTouchend={this.onTouchEnd}
-        nativeOnTouchcancel={this.onTouchEnd}
-      >
+      <SwipeItem>
         <Image
           src={this.src}
           fit="contain"
