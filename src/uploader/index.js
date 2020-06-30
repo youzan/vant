@@ -288,7 +288,7 @@ export default createComponent({
       if (status === 'uploading' || status === 'failed') {
         const MaskIcon =
           status === 'failed' ? (
-            <Icon name="warning-o" class={bem('mask-icon')} />
+            <Icon name="close" class={bem('mask-icon')} />
           ) : (
             <Loading class={bem('loading')} />
           );

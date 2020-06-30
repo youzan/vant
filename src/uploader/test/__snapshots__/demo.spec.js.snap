@@ -58,7 +58,7 @@ exports[`renders demo correctly 1`] = `
             <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
                 <!----></i></div>
           </div>
-          <div class="van-uploader__mask"><i class="van-icon van-icon-warning-o van-uploader__mask-icon">
+          <div class="van-uploader__mask"><i class="van-icon van-icon-close van-uploader__mask-icon">
               <!----></i>
             <div class="van-uploader__mask-message">上传失败</div>
           </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
