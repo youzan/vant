@@ -61,7 +61,7 @@ exports[`set show-index prop to false 1`] = `
 `;
 
 exports[`zoom 1`] = `
-<div class="van-image van-image-preview__image" style="transition-duration: 0s; transform: scale(2, 2) translate(0px, 0px);" data-index="0"><img src="https://img.yzcdn.cn/1.png" class="van-image__img" style="object-fit: contain;">
+<div class="van-image van-image-preview__image" style="transition-duration: 0s; transform: scale(2, 2) translate(0px, 0px);"><img src="https://img.yzcdn.cn/1.png" class="van-image__img" style="object-fit: contain;">
   <div class="van-image__loading">
     <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
   </div>
