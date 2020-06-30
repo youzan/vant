@@ -1,14 +1,27 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag, later } from '../../../test';
+import { mount, trigger, triggerDrag, later, mockGetBoundingClientRect } from '../../../test';
 
-function triggerZoom(el, x, y) {
-  trigger(el, 'touchstart', 0, 0, { x, y });
-  trigger(el, 'touchmove', -x / 4, -y / 4, { x, y });
-  trigger(el, 'touchmove', -x / 3, -y / 3, { x, y });
-  trigger(el, 'touchmove', -x / 2, -y / 2, { x, y });
+function triggerTwoFingerTouchmove(el, x, y) {
   trigger(el, 'touchmove', -x, -y, { x, y });
+}
+
+function triggerZoom(el, x, y, direction = 'in') {
+  trigger(el, 'touchstart', 0, 0, { x, y });
+
+  if (direction === 'in') {
+    triggerTwoFingerTouchmove(el, x / 4, y / 4);
+    triggerTwoFingerTouchmove(el, x / 3, y / 3);
+    triggerTwoFingerTouchmove(el, x / 2, y / 2);
+    triggerTwoFingerTouchmove(el, x, y);
+  } else if (direction === 'out') {
+    triggerTwoFingerTouchmove(el, x, y);
+    triggerTwoFingerTouchmove(el, x / 2, y / 2);
+    triggerTwoFingerTouchmove(el, x / 3, y / 3);
+    triggerTwoFingerTouchmove(el, x / 4, y / 4);
+  }
+
   trigger(el, 'touchend', 0, 0, { touchList: [] });
 }
 
@@ -172,9 +185,7 @@ test('onChange option', async (done) => {
 });
 
 test('onScale option', async (done) => {
-  const { getBoundingClientRect } = Element.prototype;
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
-
+  const restore = mockGetBoundingClientRect({ width: 100 });
   const instance = ImagePreview({
     images,
     startPosition: 0,
@@ -188,7 +199,7 @@ test('onScale option', async (done) => {
   await later();
   const image = instance.$el.querySelector('img');
   triggerZoom(image, 300, 300);
-  Element.prototype.getBoundingClientRect = getBoundingClientRect;
+  restore();
 });
 
 test('register component', () => {
@@ -196,21 +207,59 @@ test('register component', () => {
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
 });
 
-test('zoom', async () => {
-  const { getBoundingClientRect } = Element.prototype;
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+test('zoom in and drag image to move', async () => {
+  const restore = mockGetBoundingClientRect({ width: 100 });
+  const originWindowWidth = window.innerWidth;
+  const originWindowHeight = window.innerHeight;
+
+  window.innerWidth = 100;
+  window.innerHeight = 100;
 
   const wrapper = mount(ImagePreviewVue, {
     propsData: { images, value: true },
   });
 
   await later();
-  const image = wrapper.find('.van-image');
+  const image = wrapper.find('img');
   triggerZoom(image, 300, 300);
-  triggerDrag(image, 300, 300);
 
-  expect(image).toMatchSnapshot();
-  Element.prototype.getBoundingClientRect = getBoundingClientRect;
+  // mock image size
+  ['naturalWidth', 'naturalHeight'].forEach((key) => {
+    Object.defineProperty(image.element, key, { value: 300 });
+  });
+
+  // drag image before load
+  triggerDrag(image, 300, 300);
+  expect(wrapper.find('.van-image')).toMatchSnapshot();
+
+  // drag image after load
+  image.trigger('load');
+  triggerDrag(image, 300, 300);
+  expect(wrapper.find('.van-image')).toMatchSnapshot();
+
+  window.innerWidth = originWindowWidth;
+  window.innerHeight = originWindowHeight;
+  restore();
+});
+
+test('zoom out', async () => {
+  const restore = mockGetBoundingClientRect({ width: 100 });
+
+  const onScale = jest.fn();
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: { images, value: true },
+    listeners: {
+      scale: onScale,
+    },
+  });
+
+  await later();
+  const image = wrapper.find('.van-image');
+  triggerZoom(image, 300, 300, 'out');
+
+  expect(onScale).toHaveBeenLastCalledWith({ index: 0, scale: 1 });
+
+  restore();
 });
 
 test('set show-index prop to false', () => {
