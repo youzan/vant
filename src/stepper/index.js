@@ -86,12 +86,14 @@ export default createComponent({
   computed: {
     minusDisabled() {
       return (
-        this.disabled || this.disableMinus || this.currentValue <= this.min
+        this.disabled || this.disableMinus || this.currentValue <= +this.min
       );
     },
 
     plusDisabled() {
-      return this.disabled || this.disablePlus || this.currentValue >= this.max;
+      return (
+        this.disabled || this.disablePlus || this.currentValue >= +this.max
+      );
     },
 
     inputStyle() {
