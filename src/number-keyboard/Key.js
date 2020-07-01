@@ -45,8 +45,10 @@ export default createComponent({
       }
     },
 
-    onTouchEnd() {
+    onTouchEnd(event) {
       if (this.active) {
+        // eliminate tap delay on safari
+        event.preventDefault();
         this.active = false;
         this.$emit('press', this.text, this.type);
       }
