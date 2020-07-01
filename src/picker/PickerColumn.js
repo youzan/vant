@@ -3,7 +3,6 @@ import { createNamespace, isObject } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
-import { DEFAULT_ITEM_HEIGHT } from './shared';
 
 const DEFAULT_DURATION = 200;
 
@@ -256,11 +255,9 @@ export default createComponent({
     },
 
     genOptions() {
-      const optionStyle = {};
-
-      if (this.itemHeight !== DEFAULT_ITEM_HEIGHT) {
-        optionStyle.height = `${this.itemHeight}px`;
-      }
+      const optionStyle = {
+        height: `${this.itemHeight}px`,
+      };
 
       return this.options.map((option, index) => {
         const text = this.getOptionText(option);
