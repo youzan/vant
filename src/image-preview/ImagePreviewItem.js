@@ -38,6 +38,7 @@ export default {
       moveY: 0,
       moving: false,
       zooming: false,
+      vertical: false,
       displayWidth: 0,
       displayHeight: 0,
     };
@@ -155,7 +156,6 @@ export default {
 
       /* istanbul ignore else */
       if (this.moving || this.zooming) {
-
         stopPropagation = true;
 
         if (
@@ -220,12 +220,14 @@ export default {
       const windowRatio = windowHeight / windowWidth;
       const imageRatio = naturalHeight / naturalWidth;
 
-      if (imageRatio < windowRatio) {
-        this.displayWidth = windowWidth;
-        this.displayHeight = windowWidth * imageRatio;
-      } else {
+      this.vertical = imageRatio > windowRatio;
+
+      if (this.vertical) {
         this.displayWidth = windowHeight / imageRatio;
         this.displayHeight = windowHeight;
+      } else {
+        this.displayWidth = windowWidth;
+        this.displayHeight = windowWidth * imageRatio;
       }
     },
   },
@@ -236,11 +238,11 @@ export default {
     };
 
     return (
-      <SwipeItem>
+      <SwipeItem class={bem('swipe-item')}>
         <Image
           src={this.src}
           fit="contain"
-          class={bem('image')}
+          class={bem('image', { vertical: this.vertical })}
           style={this.imageStyle}
           scopedSlots={imageSlots}
           onLoad={this.onLoad}

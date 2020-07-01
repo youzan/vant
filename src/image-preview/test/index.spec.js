@@ -139,6 +139,7 @@ test('double click', async () => {
   const swipe = instance.$el.querySelector('.van-swipe-item');
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
+  await later();
   expect(onScale).toHaveBeenCalledWith({
     index: 0,
     scale: 2,
