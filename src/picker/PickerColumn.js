@@ -3,7 +3,6 @@ import { createNamespace, isObject } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
-import { DEFAULT_ITEM_HEIGHT } from './shared';
 
 const DEFAULT_DURATION = 200;
 
