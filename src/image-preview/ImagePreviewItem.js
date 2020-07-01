@@ -193,6 +193,7 @@ export default {
         }
       }
 
+      // eliminate tap delay on safari
       preventDefault(event, stopPropagation);
 
       this.checkTap();
