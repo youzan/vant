@@ -51,7 +51,12 @@ export default createComponent({
 
     onPreviewImg(event) {
       event.stopPropagation();
-      this.skuEventBus.$emit('sku:previewImage', this.imgUrl);
+      const { skuValue, skuKeyStr } = this;
+      this.skuEventBus.$emit('sku:previewImage', {
+        ...skuValue,
+        ks: skuKeyStr,
+        imgUrl: skuValue.imgUrl || skuValue.img_url,
+      });
     },
 
     genImage(classPrefix) {
