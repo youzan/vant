@@ -147,6 +147,7 @@ export default createComponent({
           {this.images.map((image) => (
             <ImagePreviewItem
               src={image}
+              show={this.value}
               active={this.active}
               maxZoom={this.maxZoom}
               minZoom={this.minZoom}
