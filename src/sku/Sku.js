@@ -518,9 +518,13 @@ export default createComponent({
       let index = 0;
       let indexImage = imageList[0];
       if (selectedValue && selectedValue.imgUrl) {
-        index = this.imageList.findIndex(
-          (image) => image === selectedValue.imgUrl
-        );
+        this.imageList.some((image, pos) => {
+          if (image === selectedValue.imgUrl) {
+            index = pos;
+            return true;
+          }
+          return false;
+        });
         indexImage = selectedValue.imgUrl;
       }
       const params = {
