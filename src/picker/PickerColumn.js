@@ -256,11 +256,9 @@ export default createComponent({
     },
 
     genOptions() {
-      const optionStyle = {};
-
-      if (this.itemHeight !== DEFAULT_ITEM_HEIGHT) {
-        optionStyle.height = `${this.itemHeight}px`;
-      }
+      const optionStyle = {
+        height: `${this.itemHeight}px`,
+      };
 
       return this.options.map((option, index) => {
         const text = this.getOptionText(option);
