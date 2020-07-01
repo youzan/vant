@@ -23,6 +23,7 @@ export default {
 
   props: {
     src: String,
+    show: Boolean,
     active: Number,
     minZoom: [Number, String],
     maxZoom: [Number, String],
@@ -78,6 +79,14 @@ export default {
         );
       }
       return 0;
+    },
+  },
+
+  watch: {
+    show(val) {
+      if (!val) {
+        this.resetScale();
+      }
     },
   },
 
