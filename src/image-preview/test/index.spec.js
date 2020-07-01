@@ -1,7 +1,13 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag, later, mockGetBoundingClientRect } from '../../../test';
+import {
+  later,
+  mount,
+  trigger,
+  triggerDrag,
+  mockGetBoundingClientRect,
+} from '../../../test';
 
 function triggerTwoFingerTouchmove(el, x, y) {
   trigger(el, 'touchmove', -x, -y, { x, y });
@@ -130,16 +136,20 @@ test('function call', (done) => {
 
 test('double click', async () => {
   const onScale = jest.fn();
-  const instance = ImagePreview({
-    images,
-    onScale,
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+    },
+    listeners: {
+      scale: onScale,
+    },
   });
 
   await later();
-  const swipe = instance.$el.querySelector('.van-swipe-item');
+  const swipe = wrapper.find('.van-swipe-item');
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
-  await later();
   expect(onScale).toHaveBeenCalledWith({
     index: 0,
     scale: 2,

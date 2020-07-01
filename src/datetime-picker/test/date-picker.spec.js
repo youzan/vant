@@ -111,12 +111,12 @@ test('month-day type', () => {
   expect(wrapper.emitted('confirm')[0][0].getMonth()).toEqual(10);
   expect(wrapper.emitted('confirm')[0][0].getDate()).toEqual(1);
 
-  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -300);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[1][0].getMonth()).toEqual(11);
   expect(wrapper.emitted('confirm')[1][0].getDate()).toEqual(1);
 
-  triggerDrag(wrapper.findAll('.van-picker-column').at(1), 0, -100);
+  triggerDrag(wrapper.findAll('.van-picker-column').at(1), 0, -300);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[2][0].getMonth()).toEqual(11);
   expect(wrapper.emitted('confirm')[2][0].getDate()).toEqual(31);
