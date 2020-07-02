@@ -1,4 +1,5 @@
 /* stylelint-disable selector-pseudo-element-colon-notation */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
   font-weight: normal;
   font-family: '<%= fontName %>';
