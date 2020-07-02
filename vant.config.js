@@ -143,6 +143,10 @@ module.exports = {
                 title: 'Calendar 日历',
               },
               {
+                path: 'cascader',
+                title: 'Cascader 级联选择'
+              },
+              {
                 path: 'checkbox',
                 title: 'Checkbox 复选框',
               },
@@ -508,6 +512,10 @@ module.exports = {
               {
                 path: 'calendar',
                 title: 'Calendar',
+              },
+              {
+                path: 'cascader',
+                title: 'Cascader'
               },
               {
                 path: 'checkbox',
