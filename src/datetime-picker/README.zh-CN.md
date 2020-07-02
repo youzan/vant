@@ -191,6 +191,47 @@ export default {
 };
 ```
 
+### 自定义列排序
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="date"
+  title="自定义列排序"
+  :sort-columns="sortColumns"
+  :formatter="formatter"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatter(type, val) {
+      if (type === 'year') {
+        return val + '年';
+      }
+      if (type === 'month') {
+        return val + '月';
+      }
+      if (type === 'day') {
+        return val + '日';
+      }
+      return val;
+    },
+
+    sortColumns(type1, type2) {
+      let array = ['month', 'day', 'year'];
+      return array.indexOf(type1) - array.indexOf(type2);
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -205,6 +246,7 @@ export default {
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type, vals) => vals_ | - |
 | formatter | 选项格式化函数 | _(type, val) => val_ | - |
+| sort-columns `v2.9.1` | 自定义列排序函数 (参考 [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) 的 compareFunction) | _(type1, type2) => number_ | - |
 | item-height `v2.8.6` | 选项高度，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
 | swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |

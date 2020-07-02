@@ -15,6 +15,7 @@ export const sharedProps = {
     type: Function,
     default: (type, value) => value,
   },
+  sortColumns: Function,
 };
 
 export const TimePickerMixin = {
@@ -44,6 +45,9 @@ export const TimePickerMixin = {
     },
 
     columns() {
+      if (this.sortColumns) {
+        this.originColumns.sort((a, b) => this.sortColumns(a.type, b.type));
+      }
       return this.originColumns.map((column) => ({
         values: column.values.map((value) =>
           this.formatter(column.type, value)
