@@ -379,23 +379,14 @@ export default createComponent({
       });
       this.skuTree.forEach((item) => {
         const key = item.k_s;
-        const valueId = item.v[0].id;
-        const initValueId = this.initialSku[item.k_s];
-        // 只有1个规格值时，默认选中
+        // 规格值只有1个时，优先判断
+        const valueId =
+          item.v.length === 1 ? item.v[0].id : this.initialSku[key];
         if (
-          item.v.length === 1 &&
+          valueId &&
           isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
         ) {
           this.selectedSku[key] = valueId;
-        } else if (
-          initValueId &&
-          isSkuChoosable(this.sku.list, this.selectedSku, {
-            key,
-            valueId: initValueId,
-          })
-        ) {
-          // 外部传入的规格也需要进行库存判断
-          this.selectedSku[key] = initValueId;
         }
       });
 
