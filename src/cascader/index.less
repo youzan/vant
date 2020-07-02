@@ -1,0 +1,33 @@
+@import '../style/var';
+
+.van-cascader {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @cascader-header-height;
+    padding: 0 @padding-md;
+  }
+
+  &__title {
+    font-size: @cascader-title-font-size;
+    font-weight: @font-weight-bold;
+    line-height: @cascader-title-line-height;
+  }
+
+  &__confirm {
+    height: 100%;
+    // expand click area
+    padding: 0 @padding-md;
+    margin-right: -@padding-md;
+    color: @cascader-confirm-color;
+    font-size: @cascader-confirm-font-size;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+}
