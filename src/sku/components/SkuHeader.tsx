@@ -23,7 +23,7 @@ export type SkuHeaderSlots = DefaultSlots & {
   'sku-header-image-extra'?: ScopedSlot;
 };
 
-type selectedValueType = {
+type SelectedValueType = {
   ks: string;
   imgUrl: string;
 };
@@ -33,8 +33,8 @@ const [createComponent, bem] = createNamespace('sku-header');
 function getSkuImgValue(
   sku: SkuData,
   selectedSku: SelectedSkuData
-): selectedValueType | undefined {
-  let obj;
+): SelectedValueType | undefined {
+  let imgValue;
 
   sku.tree.some((item) => {
     const id = selectedSku[item.k_s];
@@ -46,7 +46,7 @@ function getSkuImgValue(
       const img =
         matchedSku.previewImgUrl || matchedSku.imgUrl || matchedSku.img_url;
       if (img) {
-        obj = {
+        imgValue = {
           ...matchedSku,
           ks: item.k_s,
           imgUrl: img,
@@ -58,7 +58,7 @@ function getSkuImgValue(
     return false;
   });
 
-  return obj;
+  return imgValue;
 }
 
 function SkuHeader(
