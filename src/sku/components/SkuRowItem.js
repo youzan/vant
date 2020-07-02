@@ -94,7 +94,7 @@ export default createComponent({
         {this.largeImageMode && (
           <img
             class={`${classPrefix}-img-icon`}
-            src="https://img.yzcdn.cn/upload_files/2020/06/29/Fi62E2HpMEGDDZS2-pd3LUOm_yWe.png"
+            src="https://img.yzcdn.cn/upload_files/2020/07/02/Fu4_ya0l0aAt4Mv4PL9jzPzfZnDX.png"
             onClick={this.onPreviewImg}
           />
         )}
