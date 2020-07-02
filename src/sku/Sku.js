@@ -512,9 +512,22 @@ export default createComponent({
       this.selectedNum = num;
     },
 
-    onPreviewImage(indexImage) {
-      const index = this.imageList.findIndex((image) => image === indexImage);
+    onPreviewImage(selectedValue) {
+      const { imageList } = this;
+      let index = 0;
+      let indexImage = imageList[0];
+      if (selectedValue && selectedValue.imgUrl) {
+        this.imageList.some((image, pos) => {
+          if (image === selectedValue.imgUrl) {
+            index = pos;
+            return true;
+          }
+          return false;
+        });
+        indexImage = selectedValue.imgUrl;
+      }
       const params = {
+        ...selectedValue,
         index,
         imageList: this.imageList,
         indexImage,
