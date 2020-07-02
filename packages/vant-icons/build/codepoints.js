@@ -228,6 +228,7 @@ const map = {
   F0E1: 'weapp-nav',
   F0E2: 'wechat',
   F0E3: 'youzan-shield',
+  F0E4: 'enlarge',
 };
 
 const reversedMap = {};

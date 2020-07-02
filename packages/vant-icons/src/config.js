@@ -236,5 +236,6 @@ module.exports = {
     'descending',
     'bars',
     'wap-nav',
+    'enlarge',
   ],
 };
