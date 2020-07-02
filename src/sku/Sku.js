@@ -375,16 +375,15 @@ export default createComponent({
 
       // 重置 selectedSku
       this.skuTree.forEach((item) => {
-        this.selectedSku[item.k_s] =
-          this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+        this.selectedSku[item.k_s] = UNSELECTED_SKU_VALUE_ID;
       });
-
-      // 只有一个 sku 规格值时默认选中
       this.skuTree.forEach((item) => {
         const key = item.k_s;
-        const valueId = item.v[0].id;
+        // 规格值只有1个时，优先判断
+        const valueId =
+          item.v.length === 1 ? item.v[0].id : this.initialSku[key];
         if (
-          item.v.length === 1 &&
+          valueId &&
           isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
         ) {
           this.selectedSku[key] = valueId;
