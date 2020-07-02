@@ -1,5 +1,13 @@
 ## Changelog
 
+## 1.2.3
+
+- fix enlarge icon align
+
+## 1.2.2
+
+- add enlarge icon
+
 ## 1.2.1
 
 - update share icon
