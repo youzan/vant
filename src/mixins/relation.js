@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { sortChildren } from '../utils/vnodes';
 
 export function ChildrenMixin(parent, options = {}) {

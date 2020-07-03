@@ -3,7 +3,7 @@ import { stopPropagation } from '../utils/dom/event';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
-const [createComponent, bem, t] = createNamespace('number-keyboard');
+const [createComponent, bem] = createNamespace('number-keyboard');
 
 export default createComponent({
   mixins: [

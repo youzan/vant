@@ -1583,9 +1583,9 @@
     webpackbar "^4.0.0"
 
 "@vant/eslint-config@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-2.2.2.tgz#bd3bfb03da9806f0bf63d69e4f566577e8525b7e"
-  integrity sha512-cUtMEPCMz5ym9MnztZtuvgcSDydwrZpRD11Ex5+1gb1oOqDq58Cm6Ux7rDgSrAVn9Td4qQxyy7Zy4t2fYJGf3A==
+  version "2.2.3"
+  resolved "https://registry.npmjs.org/@vant/eslint-config/-/eslint-config-2.2.3.tgz#e4e4fae51ff1eba3f06108b9f0625d8d7bc668df"
+  integrity sha512-63E1ooZ4z6W4C4/sbNlnQHaLpYSNYzahfVCvZYITP2Dzm119dUkMmk9+JEtqGOfyFx/Qoc5LBmmonbuwoBit2w==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.28.0"
     "@typescript-eslint/parser" "^2.28.0"
