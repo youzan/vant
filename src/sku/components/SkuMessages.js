@@ -7,6 +7,7 @@ import { isNumeric } from '../../utils/validate/number';
 import Cell from '../../cell';
 import Field from '../../field';
 import SkuImgUploader from './SkuImgUploader';
+import SkuDateTimeFiled from './SkuDateTimeFiled';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');
 
@@ -48,7 +49,7 @@ export default createComponent({
       if (message.type === 'id_no') {
         return 'text';
       }
-      return message.datetime > 0 ? 'datetime-local' : message.type;
+      return message.datetime > 0 ? 'datetime' : message.type;
     },
 
     getMessages() {
@@ -125,7 +126,6 @@ export default createComponent({
           <Cell
             key={`${this.goodsId}-${index}`}
             title={message.name}
-            label={t('imageLabel')}
             class={bem('image-cell')}
             required={String(message.required) === '1'}
             valueClass={bem('image-cell-value')}
@@ -135,7 +135,23 @@ export default createComponent({
               maxSize={this.messageConfig.uploadMaxSize}
               uploadImg={this.messageConfig.uploadImg}
             />
+            <div class={bem('image-cell-label')}>{t('imageLabel')}</div>
           </Cell>
+        );
+      }
+
+      // 时间和日期使用的vant选择器
+      const isDateOrTime = ['date', 'time'].indexOf(message.type) > -1;
+      if (isDateOrTime) {
+        return (
+          <SkuDateTimeFiled
+            vModel={this.messageValues[index].value}
+            label={message.name}
+            key={`${this.goodsId}-${index}`}
+            required={String(message.required) === '1'}
+            placeholder={this.getPlaceholder(message)}
+            type={this.getType(message)}
+          />
         );
       }
 
@@ -143,6 +159,7 @@ export default createComponent({
         <Field
           vModel={this.messageValues[index].value}
           maxlength="200"
+          center={!message.multiple}
           label={message.name}
           key={`${this.goodsId}-${index}`}
           required={String(message.required) === '1'}
