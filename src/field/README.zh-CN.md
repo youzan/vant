@@ -255,6 +255,7 @@ export default {
 | readonly | 是否只读 | _boolean_ | `false` |
 | colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
+| center | 是否使内容垂直居中 | _boolean_ | `false` |
 | clearable | 是否启用清除控件 | _boolean_ | `false` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
