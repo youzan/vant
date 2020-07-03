@@ -3,9 +3,9 @@
 .van-tab {
   position: relative;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  flex: 1;
   box-sizing: border-box;
   padding: 0 @padding-base;
   color: @tab-text-color;
@@ -25,9 +25,9 @@
   &__text {
     &--ellipsis {
       display: -webkit-box;
+      overflow: hidden;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden;
     }
   }
 
