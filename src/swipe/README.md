@@ -14,7 +14,7 @@ Vue.use(SwipeItem);
 
 ### Basic Usage
 
-Use `autoplay` prop to set autoplay interval
+Use `autoplay` prop to set autoplay interval.
 
 ```html
 <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -37,7 +37,7 @@ Use `autoplay` prop to set autoplay interval
 
 ### Image Lazyload
 
-Use [Lazyload](#/en-US/lazyload) component to lazyload image
+Use [Lazyload](#/en-US/lazyload) component to lazyload image.
 
 ```html
 <van-swipe>
@@ -110,7 +110,7 @@ export default {
 </van-swipe>
 ```
 
-> It's not supported to set SwipeItem size in the loop mode
+> It's not supported to set SwipeItem size in the loop mode.
 
 ### Custom Indicator
 
@@ -187,7 +187,7 @@ export default {
 
 ### Swipe Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
