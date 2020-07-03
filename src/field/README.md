@@ -230,6 +230,7 @@ Use `input-align` prop to align the input value
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | colon `v2.7.2` | Whether to display colon after label | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
+| center | Whether to center content vertically | _boolean_ | `true` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
