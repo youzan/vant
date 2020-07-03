@@ -10,9 +10,9 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.9.0-beta.4](https://github.com/youzan/vant/compare/v2.9.0-beta.3...v2.9.0-beta.4)
+### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
 
-`2020-07-02`
+`2020-07-03`
 
 **Feature**
 
@@ -30,6 +30,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 **style**
 
 - Button: 调整 small 和 mini 按钮的样式，移除最小宽度限制 [#6371](https://github.com/youzan/vant/issues/6371)
+- Cell: 内侧边框增加 16px 的右边距 [#6686](https://github.com/youzan/vant/issues/6686)
 - ActionSheet: 顶部描述文字的颜色调整为 gray-6 [#6586](https://github.com/youzan/vant/issues/6586)
 - AddressEdit: 省市区弹窗调整为圆角样式 [#6584](https://github.com/youzan/vant/issues/6584)
 - AddressEdit: 表单文本宽度调整为 4em [#6591](https://github.com/youzan/vant/issues/6591)

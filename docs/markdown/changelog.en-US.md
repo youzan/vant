@@ -10,9 +10,9 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.9.0-beta.4](https://github.com/youzan/vant/compare/v2.9.0-beta.3...v2.9.0-beta.4)
+### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
 
-`2020-07-02`
+`2020-07-03`
 
 **Feature**
 
@@ -33,6 +33,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - AddressEdit: adjust label width [#6591](https://github.com/youzan/vant/issues/6591)
 - AddressEdit: area picker use round popup [#6584](https://github.com/youzan/vant/issues/6584)
 - Button: adjust small button size [#6371](https://github.com/youzan/vant/issues/6371)
+- Cell: adjust inner border gap [#6686](https://github.com/youzan/vant/issues/6686)
 - ContactEdit: adjust label width [a77ebe](https://github.com/youzan/vant/commit/a77ebe11d722a3f242ef8e4125bb94629a56b81f)
 - Field: label color updated to gray-7 [#6581](https://github.com/youzan/vant/issues/6581)
 - Field: label width adjusted to 6em [#6583](https://github.com/youzan/vant/issues/6583) [#6589](https://github.com/youzan/vant/issues/6589)
