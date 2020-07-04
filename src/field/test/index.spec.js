@@ -202,7 +202,7 @@ test('clearable prop', () => {
   expect(wrapper.emitted('clear')[0][0]).toBeTruthy();
 });
 
-test.only('clear-trigger prop', () => {
+test('clear-trigger prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'test',
