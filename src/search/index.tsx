@@ -22,6 +22,7 @@ export type SearchProps = {
   background: string;
   actionText?: string;
   showAction?: boolean;
+  clearTrigger?: string;
 };
 
 export type SearchSlots = DefaultSlots & {
@@ -110,6 +111,7 @@ function Search(
           leftIcon={props.leftIcon}
           rightIcon={props.rightIcon}
           clearable={props.clearable}
+          clearTrigger={props.clearTrigger}
           scopedSlots={{
             'left-icon': slots['left-icon'],
             'right-icon': slots['right-icon'],
@@ -127,8 +129,9 @@ Search.props = {
   label: String,
   rightIcon: String,
   actionText: String,
-  showAction: Boolean,
   background: String,
+  showAction: Boolean,
+  clearTrigger: String,
   shape: {
     type: String,
     default: 'square',

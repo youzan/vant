@@ -88,7 +88,7 @@ export default {
 
 ### Custom Action Button
 
-Use `action` slot to custom right button, `cancel` event will no longer be triggered when use this slot
+Use `action` slot to custom right button, `cancel` event will no longer be triggered when use this slot.
 
 ```html
 <van-search
@@ -116,6 +116,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Placeholder | _string_ | - |
 | clearable | Whether to be clearable | _boolean_ | `true` |
+| clear-trigger `v2.9.1` | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
 | show-action | Whether to show right action button | _boolean_ | `false` |
 | action-text `v2.2.2` | Text of action button | _boolean_ | `Cancel` |
