@@ -28,7 +28,7 @@ function getRoutes() {
 
   if (langs.length) {
     routes.push({
-      path: '/*',
+      path: '/:catchAll(.*)',
       redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
 
@@ -41,7 +41,7 @@ function getRoutes() {
     });
   } else {
     routes.push({
-      path: '*',
+      path: '/:catchAll(.*)',
       redirect: () => '/',
     });
 
