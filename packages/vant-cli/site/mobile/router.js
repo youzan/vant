@@ -82,13 +82,13 @@ function getRoutes() {
 }
 
 export const router = createRouter({
-  mode: createWebHashHistory(),
+  history: createWebHashHistory(),
   routes: getRoutes(),
   scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });
 
 router.afterEach(() => {
-  if (!router.currentRoute.redirectedFrom) {
+  if (!router.currentRoute.value.redirectedFrom) {
     nextTick(window.syncPath);
   }
 });
