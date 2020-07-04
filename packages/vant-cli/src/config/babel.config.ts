@@ -18,12 +18,6 @@ module.exports = function(api?: ConfigAPI) {
           modules: useESModules ? false : 'commonjs',
         },
       ],
-      [
-        '@vue/babel-preset-jsx',
-        {
-          functional: false,
-        },
-      ],
       '@babel/preset-typescript',
     ],
     plugins: [
@@ -43,6 +37,7 @@ module.exports = function(api?: ConfigAPI) {
         },
         'vant',
       ],
+      '@ant-design-vue/babel-plugin-jsx',
       '@babel/plugin-transform-object-assign',
     ],
   };
