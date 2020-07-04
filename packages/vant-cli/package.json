@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -36,8 +36,6 @@
     "@types/fs-extra": "^9.0.1",
     "@types/lodash": "^4.14.153",
     "@types/postcss-load-config": "^2.0.1",
-    "@types/webpack": "^4.41.13",
-    "@types/webpack-dev-server": "^3.11.0",
     "@types/webpack-merge": "^4.1.5"
   },
   "dependencies": {
@@ -49,6 +47,8 @@
     "@babel/preset-typescript": "^7.10.1",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/jest": "^25.2.3",
+    "@types/webpack": "^4.41.13",
+    "@types/webpack-dev-server": "^3.11.0",
     "@vant/eslint-config": "^2.2.2",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/markdown-vetur": "^2.0.1",

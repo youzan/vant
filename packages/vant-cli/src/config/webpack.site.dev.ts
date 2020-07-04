@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { get } from 'lodash';
 import { join } from 'path';
 import { baseConfig } from './webpack.base';
+import { WebpackConfig } from '../common/types';
 import { getVantConfig, getWebpackConfig } from '../common';
 import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
@@ -12,7 +13,7 @@ import {
   SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
-export function getSiteDevBaseConfig() {
+export function getSiteDevBaseConfig(): WebpackConfig {
   const vantConfig = getVantConfig();
   const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
 
@@ -101,6 +102,6 @@ export function getSiteDevBaseConfig() {
   });
 }
 
-export function getSiteDevConfig() {
+export function getSiteDevConfig(): WebpackConfig {
   return merge(getSiteDevBaseConfig(), getWebpackConfig());
 }

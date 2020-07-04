@@ -13,6 +13,7 @@ export default {
   name: 'demo-block',
 
   props: {
+    card: Boolean,
     title: String,
   },
 };
