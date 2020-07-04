@@ -48,7 +48,6 @@
   "dependencies": {
     "@babel/runtime": "7.x",
     "@vant/icons": "1.2.3",
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
@@ -56,10 +55,10 @@
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
-    "@vant/cli": "^3.0.0-alpha.0",
-    "@vue/compiler-sfc": "^3.0.0-beta.14",
+    "@vant/cli": "^3.0.0-alpha.1",
+    "@vue/compiler-sfc": "^3.0.0-beta.18",
     "prettier": "^2.0.4",
-    "vue": "^3.0.0-beta.14"
+    "vue": "^3.0.0-beta.18"
   },
   "sideEffects": [
     "es/**/style/*",
