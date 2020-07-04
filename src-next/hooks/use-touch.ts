@@ -39,10 +39,10 @@ export function useTouch() {
 
   function move(event: TouchEvent) {
     const touch = event.touches[0];
-    deltaX.value = touch.clientX - this.startX;
-    deltaY.value = touch.clientY - this.startY;
-    offsetX.value = Math.abs(this.deltaX);
-    offsetY.value = Math.abs(this.deltaY);
+    deltaX.value = touch.clientX - startX.value;
+    deltaY.value = touch.clientY - startY.value;
+    offsetX.value = Math.abs(deltaX.value);
+    offsetY.value = Math.abs(deltaY.value);
 
     if (!direction.value) {
       direction.value = getDirection(offsetX.value, offsetY.value);
