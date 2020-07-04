@@ -7,7 +7,7 @@ import { iframeReady, isMobile } from '.';
 window.syncPath = function() {
   const router = window.vueRouter;
   const isInIframe = window !== window.top;
-  const currentDir = router.history.current.path;
+  const currentDir = router.currentRoute.value.path;
 
   if (isInIframe) {
     window.top.replacePath(currentDir);

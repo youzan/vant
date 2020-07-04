@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <van-doc
+      v-if="config"
       :lang="lang"
       :config="config"
       :versions="versions"
@@ -73,7 +74,8 @@ export default {
   },
 
   created() {
-    this.setTitle();
+    // TODO
+    // this.setTitle();
   },
 
   mounted() {
