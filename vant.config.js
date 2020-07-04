@@ -86,10 +86,10 @@ module.exports = {
               //   path: 'cell',
               //   title: 'Cell 单元格',
               // },
-              // {
-              //   path: 'icon',
-              //   title: 'Icon 图标',
-              // },
+              {
+                path: 'icon',
+                title: 'Icon 图标',
+              },
               // {
               //   path: 'image',
               //   title: 'Image 图片',
@@ -433,10 +433,10 @@ module.exports = {
               //   path: 'cell',
               //   title: 'Cell',
               // },
-              // {
-              //   path: 'icon',
-              //   title: 'Icon',
-              // },
+              {
+                path: 'icon',
+                title: 'Icon',
+              },
               // {
               //   path: 'image',
               //   title: 'Image',
