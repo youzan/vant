@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-cell is-link :title="t('showSheet')" @click="show.basic = true" />
       <van-share-sheet
         v-model="show.basic"
@@ -10,7 +10,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('multiLine')">
+    <demo-block card :title="t('multiLine')">
       <van-cell
         is-link
         :title="t('showSheet')"
@@ -24,7 +24,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('customIcon')">
+    <demo-block card :title="t('customIcon')">
       <van-cell
         is-link
         :title="t('showSheet')"
@@ -37,7 +37,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('withDesc')">
+    <demo-block card :title="t('withDesc')">
       <van-cell is-link :title="t('showSheet')" @click="show.withDesc = true" />
       <van-share-sheet
         v-model="show.withDesc"

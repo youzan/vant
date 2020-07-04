@@ -1,6 +1,6 @@
 <template>
   <div class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">{{ title }}</h2>
+    <h2 v-if="title" class="van-doc-demo-block__title">{{ title }}</h2>
     <div v-if="card" class="van-doc-demo-block__card">
       <slot />
     </div>
@@ -33,9 +33,13 @@ export default {
   }
 
   &__card {
-    margin: 0 12px 0;
+    margin: 12px 12px 0;
     overflow: hidden;
     border-radius: 8px;
+  }
+
+  &__title + &__card {
+    margin-top: 0;
   }
 
   &:first-of-type {

@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-cell
         is-link
         :title="t('selectSingle')"
@@ -23,7 +23,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('quickSelect')">
+    <demo-block card :title="t('quickSelect')">
       <van-cell
         is-link
         :title="t('selectSingle')"
@@ -39,7 +39,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('customCalendar')">
+    <demo-block card :title="t('customCalendar')">
       <van-cell
         is-link
         :title="t('customColor')"
@@ -83,7 +83,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('tiledDisplay')">
+    <demo-block card :title="t('tiledDisplay')">
       <van-calendar
         :title="t('calendar')"
         :poppable="false"
