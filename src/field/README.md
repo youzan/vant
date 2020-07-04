@@ -100,7 +100,7 @@ export default {
 
 ### Error Info
 
-Use `error` or `error-message` to show error info
+Use `error` or `error-message` to show error info.
 
 ```html
 <van-cell-group>
@@ -123,7 +123,7 @@ Use `error` or `error-message` to show error info
 
 ### Insert Button
 
-Use button slot to insert button
+Use button slot to insert button.
 
 ```html
 <van-field v-model="sms" center clearable label="SMS" placeholder="SMS">
@@ -135,7 +135,7 @@ Use button slot to insert button
 
 ### Format Value
 
-Use `formatter` prop to format the input value
+Use `formatter` prop to format the input value.
 
 ```html
 <van-field
@@ -171,7 +171,7 @@ export default {
 
 ### Auto Resize
 
-Textarea Field can be auto resize when has `autosize` prop
+Textarea Field can be auto resize when has `autosize` prop.
 
 ```html
 <van-field
@@ -201,7 +201,7 @@ Textarea Field can be auto resize when has `autosize` prop
 
 ### Input Align
 
-Use `input-align` prop to align the input value
+Use `input-align` prop to align the input value.
 
 ```html
 <van-field
