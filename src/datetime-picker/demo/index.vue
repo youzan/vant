@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="t('dateType')">
+    <demo-block card :title="t('dateType')">
       <van-datetime-picker
         v-model="value.date"
         type="date"
@@ -10,7 +10,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('yearMonthType')">
+    <demo-block card :title="t('yearMonthType')">
       <van-datetime-picker
         v-model="value.yearMonth"
         type="year-month"
@@ -21,7 +21,7 @@
       />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('monthDayType')">
+    <demo-block card v-if="!isWeapp" :title="t('monthDayType')">
       <van-datetime-picker
         v-model="value.monthDayType"
         type="month-day"
@@ -32,7 +32,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('timeType')">
+    <demo-block card :title="t('timeType')">
       <van-datetime-picker
         v-model="value.time"
         type="time"
@@ -42,7 +42,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('datetimeType')">
+    <demo-block card :title="t('datetimeType')">
       <van-datetime-picker
         v-model="value.datetime"
         type="datetime"
@@ -52,7 +52,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('optionFilter')">
+    <demo-block card :title="t('optionFilter')">
       <van-datetime-picker
         v-model="value.optionFilter"
         type="time"
