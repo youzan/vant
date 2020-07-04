@@ -70,12 +70,6 @@ yarn add @vant/cli --dev
 - [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
 - [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
 
-## 微信讨论群
-
-扫码加入 Vant Cli 交流群，若群二维码过期，可以联系有赞前端小秘书加群
-
-<img src="https://img.yzcdn.cn/vant/wechat_20200527.jpeg" width="220" height="285" >
-
 ## 关于桌面端组件
 
 目前 Vant Cli 仅支持移动端组件的预览，桌面端组件暂不支持预览（欢迎 PR）。

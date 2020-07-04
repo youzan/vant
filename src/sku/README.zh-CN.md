@@ -64,7 +64,7 @@ export default {
 />
 ```
 
-### 高级用法
+### 通过插槽定制
 
 ```html
 <van-sku
@@ -116,7 +116,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 是否显示 sku | _boolean_ | `false` |
+| v-model | 是否显示商品规格弹窗 | _boolean_ | `false` |
 | sku | 商品 sku 数据 | _object_ | - |
 | goods | 商品信息 | _object_ | - |
 | goods-id | 商品 id | _number \| string_ | - |
@@ -133,7 +133,7 @@ export default {
 | reset-stepper-on-hide | 隐藏时重置选择的商品数量 | _boolean_ | `false` |
 | reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | _boolean_ | `false` |
 | disable-stepper-input | 是否禁用步进器输入 | _boolean_ | `false` |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | stepper-title | 数量选择组件左侧文案 | _string_ | `购买数量` |
 | custom-stepper-config | 步进器相关自定义配置 | _object_ | `{}` |
 | message-config | 留言相关配置 | _object_ | `{}` |
@@ -144,6 +144,8 @@ export default {
 | start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
+| show-header-image `v2.9.0` | 是否展示头部图片 | _boolean_ | `true` |
+| lazy-load `v2.9.0` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 
 ### Events
 
@@ -195,31 +197,31 @@ sku: {
   tree: [
     {
       k: '颜色', // skuKeyName：规格类目名称
+      k_s: 's1', // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
       v: [
         {
-          id: '30349', // skuValueId：规格值 id
+          id: '1', // skuValueId：规格值 id
           name: '红色', // skuValueName：规格值名称
           imgUrl: 'https://img.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
           previewImgUrl: 'https://img.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
         },
         {
-          id: '1215',
+          id: '1',
           name: '蓝色',
           imgUrl: 'https://img.yzcdn.cn/2.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1' // skuKeyStr：sku 组合列表（下方 list）中当前类目对应的 key 值，value 值会是从属于当前类目的一个规格值 id
+      largeImageMode: true, //  是否展示大图模式
     }
   ],
   // 所有 sku 的组合列表，比如红色、M 码为一个 sku 组合，红色、S 码为另一个组合
   list: [
     {
-      id: 2259, // skuId，下单时后端需要
+      id: 2259, // skuId
+      s1: '1', // 规格类目 k_s 为 s1 的对应规格值 id
+      s2: '1', // 规格类目 k_s 为 s2 的对应规格值 id
       price: 100, // 价格（单位分）
-      s1: '1215', // 规格类目 k_s 为 s1 的对应规格值 id
-      s2: '1193', // 规格类目 k_s 为 s2 的对应规格值 id
-      s3: '0', // 最多包含3个规格值，为0表示不存在该规格
       stock_num: 110 // 当前 sku 组合对应的库存
     }
   ],
@@ -273,8 +275,8 @@ sku: {
 {
   // 键：skuKeyStr（sku 组合列表中当前类目对应的 key 值）
   // 值：skuValueId（规格值 id）
-  s1: '30349',
-  s2: '1193',
+  s1: '1',
+  s2: '1',
   // 初始选中数量
   selectedNum: 3,
   // 初始选中的商品属性
@@ -327,7 +329,7 @@ customStepperConfig: {
 }
 ```
 
-### messageConfig Data Structure
+### messageConfig 对象结构
 
 ```js
 messageConfig: {

@@ -10,6 +10,70 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
+
+`2020-07-03`
+
+**Feature**
+
+- Icon: add enlarge icon [1c97b1](https://github.com/youzan/vant/commit/1c97b1837f3f16f339773133b5e78b8a200c57f5)
+- Image: add default slot [#6613](https://github.com/youzan/vant/issues/6613)
+- ImagePreview: add swipeTo method [#6596](https://github.com/youzan/vant/issues/6596)
+- ImagePreview: add get-container prop [39b5be](https://github.com/youzan/vant/commit/39b5beeac0d4a7e74866cb92eb9e4644872cf41a)
+- NoticeBar: optimize replay delay [022196](https://github.com/youzan/vant/commit/02219625fb94384865b79cf27ecea5ae0c4f3bb0)
+- Sku: add lazy-load prop [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: add show-header-image prop [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: support large image mode [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: enable close-on-click-overlay prop by default [#6631](https://github.com/youzan/vant/issues/6631)
+- TreeSelect: add selected-icon prop [#6615](https://github.com/youzan/vant/issues/6615)
+
+**style**
+
+- ActionSheet: update description style [#6586](https://github.com/youzan/vant/issues/6586)
+- AddressEdit: adjust label width [#6591](https://github.com/youzan/vant/issues/6591)
+- AddressEdit: area picker use round popup [#6584](https://github.com/youzan/vant/issues/6584)
+- Button: adjust small button size [#6371](https://github.com/youzan/vant/issues/6371)
+- Cell: adjust inner border gap [#6686](https://github.com/youzan/vant/issues/6686)
+- ContactEdit: adjust label width [a77ebe](https://github.com/youzan/vant/commit/a77ebe11d722a3f242ef8e4125bb94629a56b81f)
+- Field: label color updated to gray-7 [#6581](https://github.com/youzan/vant/issues/6581)
+- Field: label width adjusted to 6em [#6583](https://github.com/youzan/vant/issues/6583) [#6589](https://github.com/youzan/vant/issues/6589)
+- ImagePreview: adjust index position [#6650](https://github.com/youzan/vant/issues/6650)
+- Picker: optimize option disabled cursor [#6579](https://github.com/youzan/vant/issues/6579)
+- Rate: the default color is adjusted to red [#6373](https://github.com/youzan/vant/issues/6373)
+- Uploader: update failed icon [#6653](https://github.com/youzan/vant/issues/6653)
+
+**Bug Fixes**
+
+- ImagePreview: fix longpress error on mobile safari [#6660](https://github.com/youzan/vant/issues/6660)
+- ImagePreview: fix incorrect position after scale [#6656](https://github.com/youzan/vant/issues/6656)
+- Field: fix label word wrap [#6590](https://github.com/youzan/vant/issues/6590)
+- NumberKeyboard: fix eliminate tap delay on safari [#6667](https://github.com/youzan/vant/issues/6667)
+- Picker: disabled not work in cascade mode [#6580](https://github.com/youzan/vant/issues/6580)
+- Picker: revert add @picker-option-height var [#6663](https://github.com/youzan/vant/issues/6663)
+- Stepper: fix incorrect button disable status [#6652](https://github.com/youzan/vant/issues/6652)
+
+### [v2.8.7](https://github.com/youzan/vant/compare/v2.8.6...v2.8.7)
+
+`2020-06-19`
+
+**Feature**
+
+- Dialog: add allow-html prop [#6568](https://github.com/youzan/vant/issues/6568)
+- Field: add format-trigger prop [#6566](https://github.com/youzan/vant/issues/6566)
+- Form: rule message can be empty [#6536](https://github.com/youzan/vant/issues/6536)
+- Sticky: offset-top support rem unit [#6556](https://github.com/youzan/vant/issues/6556)
+
+**style**
+
+- Field: remove word num full color [#6545](https://github.com/youzan/vant/issues/6545)
+- Picker: add @picker-option-height less var [#6571](https://github.com/youzan/vant/issues/6571)
+
+**Bug Fixes**
+
+- Field: should not display null [#6542](https://github.com/youzan/vant/issues/6542)
+- ImagePreview: incorrect drag area [#6574](https://github.com/youzan/vant/issues/6574)
+- NoticeBar: failed to replay [e8bd24](https://github.com/youzan/vant/commit/e8bd24265d6e36ed61ea353108d57d75602d2f08)
+
 ### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
 
 `2020-06-13`

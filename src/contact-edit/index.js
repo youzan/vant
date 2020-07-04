@@ -86,7 +86,7 @@ export default createComponent({
 
     onDelete() {
       Dialog.confirm({
-        message: t('confirmDelete'),
+        title: t('confirmDelete'),
       }).then(() => {
         this.$emit('delete', this.data);
       });
@@ -128,6 +128,7 @@ export default createComponent({
             <Switch
               vModel={data.isDefault}
               size={24}
+              slot="right-icon"
               onChange={(event) => {
                 this.$emit('change-default', event);
               }}

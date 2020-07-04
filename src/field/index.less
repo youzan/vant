@@ -1,15 +1,14 @@
 @import '../style/var';
 
 .van-field {
-  &--disabled {
-    color: @field-disabled-text-color;
-  }
-
   &__label {
     flex: none;
     box-sizing: border-box;
     width: @field-label-width;
+    margin-right: @field-label-margin-right;
+    color: @field-label-color;
     text-align: left;
+    word-wrap: break-word;
 
     &--center {
       text-align: center;
@@ -18,6 +17,12 @@
     &--right {
       padding-right: @padding-md;
       text-align: right;
+    }
+  }
+
+  &--disabled {
+    .van-field__label {
+      color: @field-disabled-text-color;
     }
   }
 

@@ -1,14 +1,33 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag, later } from '../../../test';
+import {
+  later,
+  mount,
+  trigger,
+  triggerDrag,
+  mockGetBoundingClientRect,
+} from '../../../test';
 
-function triggerZoom(el, x, y) {
-  trigger(el, 'touchstart', 0, 0, { x, y });
-  trigger(el, 'touchmove', -x / 4, -y / 4, { x, y });
-  trigger(el, 'touchmove', -x / 3, -y / 3, { x, y });
-  trigger(el, 'touchmove', -x / 2, -y / 2, { x, y });
+function triggerTwoFingerTouchmove(el, x, y) {
   trigger(el, 'touchmove', -x, -y, { x, y });
+}
+
+function triggerZoom(el, x, y, direction = 'in') {
+  trigger(el, 'touchstart', 0, 0, { x, y });
+
+  if (direction === 'in') {
+    triggerTwoFingerTouchmove(el, x / 4, y / 4);
+    triggerTwoFingerTouchmove(el, x / 3, y / 3);
+    triggerTwoFingerTouchmove(el, x / 2, y / 2);
+    triggerTwoFingerTouchmove(el, x, y);
+  } else if (direction === 'out') {
+    triggerTwoFingerTouchmove(el, x, y);
+    triggerTwoFingerTouchmove(el, x / 2, y / 2);
+    triggerTwoFingerTouchmove(el, x / 3, y / 3);
+    triggerTwoFingerTouchmove(el, x / 4, y / 4);
+  }
+
   trigger(el, 'touchend', 0, 0, { touchList: [] });
 }
 
@@ -27,15 +46,14 @@ test('render image', async () => {
 
   await later();
 
-  const swipe = wrapper.find('.van-swipe__track');
+  const swipe = wrapper.find('.van-swipe-item');
   triggerDrag(swipe, 500, 0);
   expect(wrapper.emitted('input')).toBeFalsy();
-  triggerDrag(swipe, 0, 0);
-
-  await later(250);
-
-  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
   expect(wrapper.emitted('change')[0][0]).toEqual(2);
+
+  triggerDrag(swipe, 0, 0);
+  await later(250);
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
 });
 
 test('closeable prop', () => {
@@ -116,21 +134,34 @@ test('function call', (done) => {
   });
 });
 
-test('double click', async (done) => {
-  const instance = ImagePreview(images);
+test('double click', async () => {
+  const onScale = jest.fn();
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+    },
+    listeners: {
+      scale: onScale,
+    },
+  });
 
   await later();
-  const swipe = instance.$el.querySelector('.van-swipe__track');
+  const swipe = wrapper.find('.van-swipe-item');
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
-  expect(instance.scale).toEqual(2);
+  expect(onScale).toHaveBeenCalledWith({
+    index: 0,
+    scale: 2,
+  });
 
   await later();
-
   triggerDrag(swipe, 0, 0);
   triggerDrag(swipe, 0, 0);
-  expect(instance.scale).toEqual(1);
-  done();
+  expect(onScale).toHaveBeenLastCalledWith({
+    index: 0,
+    scale: 1,
+  });
 });
 
 test('onClose option', () => {
@@ -165,9 +196,7 @@ test('onChange option', async (done) => {
 });
 
 test('onScale option', async (done) => {
-  const { getBoundingClientRect } = Element.prototype;
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
-
+  const restore = mockGetBoundingClientRect({ width: 100 });
   const instance = ImagePreview({
     images,
     startPosition: 0,
@@ -181,7 +210,7 @@ test('onScale option', async (done) => {
   await later();
   const image = instance.$el.querySelector('img');
   triggerZoom(image, 300, 300);
-  Element.prototype.getBoundingClientRect = getBoundingClientRect;
+  restore();
 });
 
 test('register component', () => {
@@ -189,21 +218,59 @@ test('register component', () => {
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
 });
 
-test('zoom', async () => {
-  const { getBoundingClientRect } = Element.prototype;
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+test('zoom in and drag image to move', async () => {
+  const restore = mockGetBoundingClientRect({ width: 100 });
+  const originWindowWidth = window.innerWidth;
+  const originWindowHeight = window.innerHeight;
+
+  window.innerWidth = 100;
+  window.innerHeight = 100;
 
   const wrapper = mount(ImagePreviewVue, {
     propsData: { images, value: true },
   });
 
   await later();
-  const image = wrapper.find('.van-image');
+  const image = wrapper.find('img');
   triggerZoom(image, 300, 300);
-  triggerDrag(image, 300, 300);
 
-  expect(image).toMatchSnapshot();
-  Element.prototype.getBoundingClientRect = getBoundingClientRect;
+  // mock image size
+  ['naturalWidth', 'naturalHeight'].forEach((key) => {
+    Object.defineProperty(image.element, key, { value: 300 });
+  });
+
+  // drag image before load
+  triggerDrag(image, 300, 300);
+  expect(wrapper.find('.van-image')).toMatchSnapshot();
+
+  // drag image after load
+  image.trigger('load');
+  triggerDrag(image, 300, 300);
+  expect(wrapper.find('.van-image')).toMatchSnapshot();
+
+  window.innerWidth = originWindowWidth;
+  window.innerHeight = originWindowHeight;
+  restore();
+});
+
+test('zoom out', async () => {
+  const restore = mockGetBoundingClientRect({ width: 100 });
+
+  const onScale = jest.fn();
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: { images, value: true },
+    listeners: {
+      scale: onScale,
+    },
+  });
+
+  await later();
+  const image = wrapper.find('.van-image');
+  triggerZoom(image, 300, 300, 'out');
+
+  expect(onScale).toHaveBeenLastCalledWith({ index: 0, scale: 1 });
+
+  restore();
 });
 
 test('set show-index prop to false', () => {
@@ -264,4 +331,69 @@ test('closeOnPopstate', () => {
 
 test('ImagePreview.Component', () => {
   expect(ImagePreview.Component).toEqual(ImagePreviewVue);
+});
+
+test('get container with function call ', async (done) => {
+  const element = document.createElement('div');
+  document.body.appendChild(element);
+  ImagePreview({ images, getContainer: () => element });
+
+  await Vue.nextTick();
+  const wrapperDiv = document.querySelector('.van-image-preview');
+  expect(wrapperDiv.parentNode).toEqual(element);
+  document.body.removeChild(element);
+
+  ImagePreview(images);
+
+  await Vue.nextTick();
+  const wrapperBody = document.querySelector('.van-image-preview');
+  expect(wrapperBody.parentNode).toEqual(document.body);
+
+  done();
+});
+
+test('get container with component call', () => {
+  const div1 = document.createElement('div');
+  const div2 = document.createElement('div');
+  const wrapper = mount({
+    template: `
+    <div>
+      <van-image-preview :value="true" :get-container="getContainer">
+      </van-image-preview>
+    </div>
+    `,
+    data() {
+      return {
+        getContainer: () => div1,
+      };
+    },
+  });
+  const imageView = wrapper.find('.van-image-preview').element;
+
+  expect(imageView.parentNode).toEqual(div1);
+  wrapper.vm.getContainer = () => div2;
+  expect(imageView.parentNode).toEqual(div2);
+  wrapper.vm.getContainer = null;
+  expect(wrapper.element).toEqual(wrapper.element);
+});
+
+test('swipeTo method', async () => {
+  const wrapper = mount({
+    template: `
+    <div>
+      <van-image-preview ref="imagePreview" :value="true" :images="images">
+      </van-image-preview>
+    </div>
+    `,
+    data() {
+      return {
+        images,
+      };
+    },
+  });
+  const { imagePreview } = wrapper.vm.$refs;
+  imagePreview.swipeTo(2);
+
+  await later(100);
+  expect(imagePreview.active).toEqual(2);
 });

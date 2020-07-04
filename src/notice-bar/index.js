@@ -60,10 +60,14 @@ export default createComponent({
       this.offset = this.wrapWidth;
       this.duration = 0;
 
-      doubleRaf(() => {
-        this.offset = -this.contentWidth;
-        this.duration = (this.contentWidth + this.wrapWidth) / this.speed;
-        this.$emit('replay');
+      // wait for Vue to render offset
+      this.$nextTick(() => {
+        // use double raf to ensure animation can start
+        doubleRaf(() => {
+          this.offset = -this.contentWidth;
+          this.duration = (this.contentWidth + this.wrapWidth) / this.speed;
+          this.$emit('replay');
+        });
       });
     },
 

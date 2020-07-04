@@ -1,14 +1,14 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-area :title="t('title')" :area-list="t('areaList')" />
     </demo-block>
 
-    <demo-block :title="t('title2')">
+    <demo-block card :title="t('title2')">
       <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />
     </demo-block>
 
-    <demo-block :title="t('title3')">
+    <demo-block card :title="t('title3')">
       <van-area
         :title="t('title')"
         :area-list="t('areaList')"
@@ -16,7 +16,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('title4')">
+    <demo-block card :title="t('title4')">
       <van-area
         :title="t('title')"
         :area-list="t('areaList')"

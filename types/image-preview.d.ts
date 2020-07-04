@@ -1,5 +1,6 @@
 import { VanComponent } from './component';
 import { VanPopupMixin } from './mixins/popup';
+import { SwipeToOptions } from './swipe';
 
 export type ImagePreviewOptions =
   | string[]
@@ -18,8 +19,10 @@ export type ImagePreviewOptions =
       showIndicators?: boolean;
       closeOnPopstate?: boolean;
       closeIconPosition?: string;
+      getContainer?: string | (() => Element);
       onClose?: () => void;
       onChange?: (index: number) => void;
+      swipeTo(index: number, options?: SwipeToOptions): void;
     };
 
 export class VanImagePreview extends VanPopupMixin {

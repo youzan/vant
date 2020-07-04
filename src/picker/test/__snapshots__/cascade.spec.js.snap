@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`disabled in cascade 1`] = `
+<li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">
+  <div class="van-ellipsis">A2</div>
+</li>
+`;

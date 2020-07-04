@@ -1,4 +1,4 @@
-import { createNamespace, get } from '../utils';
+import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
 import { getTrueValue, getMonthEndDay } from './utils';

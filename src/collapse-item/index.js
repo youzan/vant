@@ -92,7 +92,7 @@ export default createComponent({
           const contentHeight = `${offsetHeight}px`;
           wrapper.style.height = expanded ? 0 : contentHeight;
 
-          // use double raf to ensure animation can start in mobile safari
+          // use double raf to ensure animation can start
           doubleRaf(() => {
             wrapper.style.height = expanded ? contentHeight : 0;
           });

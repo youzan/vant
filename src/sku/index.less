@@ -25,37 +25,23 @@
   }
 
   &-header {
+    display: flex;
+    flex-shrink: 0;
     margin: 0 @padding-md;
 
     &__img-wrap {
-      position: relative;
-      float: left;
       width: 96px;
       height: 96px;
-      margin: @padding-sm 0;
+      margin: @padding-sm @padding-sm @padding-sm 0;
       overflow: hidden;
-      background: @background-color;
       border-radius: @border-radius-md;
-
-      img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        max-width: 100%;
-        max-height: 100%;
-        margin: auto;
-      }
     }
 
     &__goods-info {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      min-height: 96px;
-      padding: @padding-sm 20px @padding-sm @padding-xs;
-      overflow: hidden;
+      padding: @padding-sm 20px @padding-sm 0;
     }
   }
 
@@ -123,26 +109,11 @@
       margin-bottom: 0;
     }
 
-    &__title {
-      padding-bottom: @padding-sm;
-    }
-
-    &__title-multiple {
-      color: @gray-6;
-    }
-
-    &__item {
+    &__item,
+    &__image-item {
       position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 40px;
-      margin: 0 @padding-sm @padding-sm 0;
       overflow: hidden;
       color: @text-color;
-      font-size: 13px;
-      line-height: 16px;
-      vertical-align: middle;
       border-radius: @border-radius-md;
       cursor: pointer;
 
@@ -155,6 +126,26 @@
         background: @sku-item-background-color;
         content: '';
       }
+
+      &--active {
+        color: @red;
+
+        &::before {
+          background: currentColor;
+          opacity: 0.1;
+        }
+      }
+    }
+
+    &__item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      margin: 0 @padding-sm @padding-sm 0;
+      font-size: 13px;
+      line-height: 16px;
+      vertical-align: middle;
 
       &-img {
         z-index: 1;
@@ -170,15 +161,6 @@
         padding: @padding-xs;
       }
 
-      &--active {
-        color: @red;
-
-        &::before {
-          background: currentColor;
-          opacity: 0.1;
-        }
-      }
-
       &--disabled {
         color: @gray-5;
         background: @active-color;
@@ -187,6 +169,112 @@
         .van-sku-row__item-img {
           opacity: 0.3;
         }
+      }
+    }
+
+    &__image {
+      margin-right: 0;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        width: 110px;
+        margin: 0 4px 4px 0;
+        border: 1px solid transparent;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &-img {
+          width: 100%;
+          height: 110px;
+
+          &-icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        &-name {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          height: 40px;
+          padding: @padding-base;
+          font-size: 12px;
+          line-height: 16px;
+
+          span {
+            word-wrap: break-word;
+          }
+        }
+
+        &--active {
+          border-color: currentColor;
+        }
+
+        &--disabled {
+          color: @gray-5;
+          cursor: not-allowed;
+
+          &::before {
+            z-index: 2;
+            background: @active-color;
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+
+    &__title {
+      padding-bottom: @padding-sm;
+    }
+
+    &__title-multiple {
+      color: @gray-6;
+    }
+
+    &__scroller {
+      margin: 0 -@padding-md;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__row {
+      display: inline-flex;
+      margin-bottom: 4px;
+      padding: 0 @padding-md;
+    }
+
+    &__indicator {
+      width: 40px;
+      height: 4px;
+      background: @gray-3;
+      border-radius: 2px;
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 16px;
+      }
+
+      &-slider {
+        width: 50%;
+        height: 100%;
+        background-color: @red;
+        border-radius: 2px;
       }
     }
   }
@@ -234,7 +322,8 @@
 
     &__image-cell {
       .van-cell__title {
-        max-width: 90px;
+        max-width: @field-label-width;
+        margin-right: @field-label-margin-right;
       }
 
       .van-cell__value {

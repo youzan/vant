@@ -10,6 +10,70 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
+
+`2020-07-03`
+
+**Feature**
+
+- Sku: 新增大图预览模式，可以通过 largeImageMode 选项开启 [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: 新增 lazy-load 属性，用于控制是否开启大图懒加载 [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: 新增 show-header-image 属性，用于控制是否显示头部图片 [#6598](https://github.com/youzan/vant/issues/6598)
+- Sku: 默认开启 close-on-click-overlay 属性 [#6631](https://github.com/youzan/vant/issues/6631)
+- Icon: 新增 enlarge 扩大图标 [1c97b1](https://github.com/youzan/vant/commit/1c97b1837f3f16f339773133b5e78b8a200c57f5)
+- Image: 新增 default 默认插槽 [#6613](https://github.com/youzan/vant/issues/6613)
+- ImagePreview: 新增 swipeTo 方法 [#6596](https://github.com/youzan/vant/issues/6596)
+- ImagePreview: 新增 get-container 属性 [39b5be](https://github.com/youzan/vant/commit/39b5beeac0d4a7e74866cb92eb9e4644872cf41a)
+- NoticeBar: 优化重新开始滚动的间隔 [022196](https://github.com/youzan/vant/commit/02219625fb94384865b79cf27ecea5ae0c4f3bb0)
+- TreeSelect: 新增 selected-icon 属性 [#6615](https://github.com/youzan/vant/issues/6615)
+
+**style**
+
+- Button: 调整 small 和 mini 按钮的样式，移除最小宽度限制 [#6371](https://github.com/youzan/vant/issues/6371)
+- Cell: 内侧边框增加 16px 的右边距 [#6686](https://github.com/youzan/vant/issues/6686)
+- ActionSheet: 顶部描述文字的颜色调整为 gray-6 [#6586](https://github.com/youzan/vant/issues/6586)
+- AddressEdit: 省市区弹窗调整为圆角样式 [#6584](https://github.com/youzan/vant/issues/6584)
+- AddressEdit: 表单文本宽度调整为 4em [#6591](https://github.com/youzan/vant/issues/6591)
+- ContactEdit: 表单文本宽度调整为 4em [a77ebe](https://github.com/youzan/vant/commit/a77ebe11d722a3f242ef8e4125bb94629a56b81f)
+- Field: 左侧文本颜色调整为 gray-7 [#6581](https://github.com/youzan/vant/issues/6581)
+- Field: 左侧文本宽度调整为 6em [#6589](https://github.com/youzan/vant/issues/6589) [#6583](https://github.com/youzan/vant/issues/6583)
+- ImagePreview: 调整页码位置，与关闭图标对齐 [#6650](https://github.com/youzan/vant/issues/6650)
+- Picker: 优化选项禁用时的光标效果 [#6579](https://github.com/youzan/vant/issues/6579)
+- Rate: 默认图标颜色由黄色调整为红色 [#6373](https://github.com/youzan/vant/issues/6373)
+- Uploader: 更新上传失败提示图标 [#6653](https://github.com/youzan/vant/issues/6653)
+
+**Bug Fixes**
+
+- Field: 修复左侧文本中较长的英文单词无法换行的问题 [#6590](https://github.com/youzan/vant/issues/6590)
+- ImagePreview: 修复在 safari 浏览器上长按图标时缩放效果异常的问题 [#6660](https://github.com/youzan/vant/issues/6660)
+- ImagePreview: 修复图片缩放时可能出现位置错误的问题 [#6656](https://github.com/youzan/vant/issues/6656)
+- NumberKeyboard: 修复在 iOS 系统下存在点击延迟的问题 [#6667](https://github.com/youzan/vant/issues/6667)
+- Picker: 修复在级联模式下无法禁用选项的问题 [#6580](https://github.com/youzan/vant/issues/6580)
+- Picker: 修复开启 rem 转换时可能出现选项偏移的问题 [#6663](https://github.com/youzan/vant/issues/6663)
+- Stepper: 修复个别情况下按钮禁用状态计算错误的问题 [#6652](https://github.com/youzan/vant/issues/6652)
+
+### [v2.8.7](https://github.com/youzan/vant/compare/v2.8.6...v2.8.7)
+
+`2020-06-19`
+
+**Feature**
+
+- Dialog: 新增 allow-html 属性，用于控制是否允许渲染 HTML 内容 [#6568](https://github.com/youzan/vant/issues/6568)
+- Field: 新增 format-trigger 属性，用于控制 formatter 触发时机 [#6566](https://github.com/youzan/vant/issues/6566)
+- Form: 允许在 rules 中不传入 message 字段 [#6536](https://github.com/youzan/vant/issues/6536)
+- Sticky: 支持 offset-top 属性传入 rem 单位 [#6556](https://github.com/youzan/vant/issues/6556)
+
+**style**
+
+- Field: 移除字数统计到达上限时的红色高亮效果 [#6545](https://github.com/youzan/vant/issues/6545)
+- Picker: 新增 @picker-option-height LESS 变量 [#6571](https://github.com/youzan/vant/issues/6571)
+
+**Bug Fixes**
+
+- Field: 修复展示 null 的问题 [#6542](https://github.com/youzan/vant/issues/6542)
+- ImagePreview: 修复放大时拖拽区域过大的问题 [#6574](https://github.com/youzan/vant/issues/6574)
+- NoticeBar: 修复在部分情况下无法重新播放的问题 [e8bd24](https://github.com/youzan/vant/commit/e8bd24265d6e36ed61ea353108d57d75602d2f08)
+
 ### [v2.8.6](https://github.com/youzan/vant/compare/v2.8.5...v2.8.6)
 
 `2020-06-13`

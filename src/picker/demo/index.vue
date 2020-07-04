@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -9,7 +9,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('defaultIndex')">
+    <demo-block card :title="t('defaultIndex')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -19,7 +19,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('multipleColumns')">
+    <demo-block card :title="t('multipleColumns')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -29,7 +29,7 @@
       />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('cascade')">
+    <demo-block card v-if="!isWeapp" :title="t('cascade')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -39,7 +39,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('disableOption')">
+    <demo-block card :title="t('disableOption')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -47,7 +47,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('setColumnValues')">
+    <demo-block card :title="t('setColumnValues')">
       <van-picker
         show-toolbar
         :title="t('title')"
@@ -56,11 +56,11 @@
       />
     </demo-block>
 
-    <demo-block :title="t('loadingStatus')">
+    <demo-block card :title="t('loadingStatus')">
       <van-picker loading show-toolbar :title="t('title')" :columns="columns" />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('withPopup')">
+    <demo-block card v-if="!isWeapp" :title="t('withPopup')">
       <van-field
         readonly
         clickable

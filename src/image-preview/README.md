@@ -114,9 +114,10 @@ export default {
 | className | Custom className | _any_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
 | minZoom | Min zoom | _number \| string_ | `1/3` |
-| closeable | Whether to show close icon | _boolean_ | `false` |
-| closeIcon | Close icon name | _string_ | `clear` |
-| closeIconPosition | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeable `v2.5.0` | Whether to show close icon | _boolean_ | `false` |
+| closeIcon `v2.5.0` | Close icon name | _string_ | `clear` |
+| closeIconPosition `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| getContainer | Return the mount node for ImagePreview | _string \| () => Element_ | - |
 
 ### Props
 
@@ -136,6 +137,7 @@ export default {
 | closeable `v2.5.0` | Whether to show close icon | _boolean_ | `false` |
 | close-icon `v2.5.0` | Close icon name | _string_ | `clear` |
 | close-icon-position `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| get-container | Return the mount node for ImagePreview | _string \| () => Element_ | - |
 
 ### Events
 
@@ -145,6 +147,7 @@ export default {
 | closed `v2.5.6` | Triggered after closed | - |
 | change | Triggered when current image change | index: index of current image |
 | scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
+| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | void |
 
 ### Slots
 

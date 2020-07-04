@@ -1,12 +1,4 @@
-import Vue, { PropType } from 'vue';
-import { GetContainer } from './popup/type';
-
-type PortalMixinOptions = {
-  ref?: string;
-  afterPortal?: () => void;
-};
-
-function getElement(selector: string | GetContainer): Element | null {
+function getElement(selector) {
   if (typeof selector === 'string') {
     return document.querySelector(selector);
   }
@@ -14,10 +6,10 @@ function getElement(selector: string | GetContainer): Element | null {
   return selector();
 }
 
-export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
-  return Vue.extend({
+export function PortalMixin({ ref, afterPortal }) {
+  return {
     props: {
-      getContainer: [String, Function] as PropType<string | GetContainer>,
+      getContainer: [String, Function],
     },
 
     watch: {
@@ -33,7 +25,7 @@ export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
     methods: {
       portal() {
         const { getContainer } = this;
-        const el = ref ? (this.$refs[ref] as HTMLElement) : this.$el;
+        const el = ref ? this.$refs[ref] : this.$el;
 
         let container;
         if (getContainer) {
@@ -51,5 +43,5 @@ export function PortalMixin({ ref, afterPortal }: PortalMixinOptions) {
         }
       },
     },
-  });
+  };
 }

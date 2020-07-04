@@ -1,14 +1,21 @@
+import { bem } from './SkuRow';
 import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/sku-helper';
+import { ChildrenMixin } from '../../mixins/relation';
+import Image from '../../image';
 
 const [createComponent] = createNamespace('sku-row-item');
 
 export default createComponent({
+  mixins: [ChildrenMixin('vanSkuRows')],
+
   props: {
+    lazyLoad: Boolean,
     skuValue: Object,
     skuKeyStr: String,
     skuEventBus: Object,
     selectedSku: Object,
+    largeImageMode: Boolean,
     skuList: {
       type: Array,
       default: () => [],
@@ -16,6 +23,14 @@ export default createComponent({
   },
 
   computed: {
+    imgUrl() {
+      const url = this.skuValue.imgUrl || this.skuValue.img_url;
+      return this.largeImageMode
+        ? url ||
+            'https://img.yzcdn.cn/upload_files/2020/06/24/FmKWDg0bN9rMcTp9ne8MXiQWGtLn.png'
+        : url;
+    },
+
     choosable() {
       return isSkuChoosable(this.skuList, this.selectedSku, {
         key: this.skuKeyStr,
@@ -33,25 +48,61 @@ export default createComponent({
         });
       }
     },
+
+    onPreviewImg(event) {
+      event.stopPropagation();
+      const { skuValue, skuKeyStr } = this;
+      this.skuEventBus.$emit('sku:previewImage', {
+        ...skuValue,
+        ks: skuKeyStr,
+        imgUrl: skuValue.imgUrl || skuValue.img_url,
+      });
+    },
+
+    genImage(classPrefix) {
+      if (this.imgUrl) {
+        return (
+          <Image
+            fit="cover"
+            src={this.imgUrl}
+            class={`${classPrefix}-img`}
+            lazyLoad={this.lazyLoad}
+          />
+        );
+      }
+    },
   },
 
   render() {
     const choosed = this.skuValue.id === this.selectedSku[this.skuKeyStr];
-    const imgUrl = this.skuValue.imgUrl || this.skuValue.img_url;
+    const classPrefix = this.largeImageMode ? bem('image-item') : bem('item');
 
     return (
       <span
         class={[
-          'van-sku-row__item',
-          {
-            'van-sku-row__item--active': choosed,
-            'van-sku-row__item--disabled': !this.choosable,
-          },
+          classPrefix,
+          choosed ? `${classPrefix}--active` : '',
+          !this.choosable ? `${classPrefix}--disabled` : '',
         ]}
         onClick={this.onSelect}
       >
-        {imgUrl && <img class="van-sku-row__item-img" src={imgUrl} />}
-        <span class="van-sku-row__item-name">{this.skuValue.name}</span>
+        {this.genImage(classPrefix)}
+        <div class={`${classPrefix}-name`}>
+          {this.largeImageMode ? (
+            <span class={{ 'van-multi-ellipsis--l2': this.largeImageMode }}>
+              {this.skuValue.name}
+            </span>
+          ) : (
+            this.skuValue.name
+          )}
+        </div>
+        {this.largeImageMode && (
+          <img
+            class={`${classPrefix}-img-icon`}
+            src="https://img.yzcdn.cn/upload_files/2020/07/02/Fu4_ya0l0aAt4Mv4PL9jzPzfZnDX.png"
+            onClick={this.onPreviewImg}
+          />
+        )}
       </span>
     );
   },

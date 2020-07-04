@@ -145,7 +145,7 @@ export function PopupMixin(options = {}) {
       },
 
       removeLock() {
-        if (this.lockScroll) {
+        if (this.lockScroll && context.lockCount) {
           context.lockCount--;
           off(document, 'touchstart', this.touchStart);
           off(document, 'touchmove', this.onTouchMove);

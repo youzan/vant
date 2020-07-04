@@ -24,7 +24,6 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
-  :close-on-click-overlay="closeOnClickOverlay"
   :disable-stepper-input="disableStepperInput"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
@@ -45,7 +44,7 @@ export default {
 };
 ```
 
-### Custom Stepper Config
+### Custom Stepper
 
 ```html
 <van-sku
@@ -62,7 +61,7 @@ export default {
 />
 ```
 
-### Advanced Usage
+### Custom By Slot
 
 ```html
 <van-sku
@@ -131,7 +130,7 @@ export default {
 | reset-stepper-on-hide | Whether to reset stepper when hide | _boolean_ | `false` |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | _boolean_ | `false` |
 | disable-stepper-input | Whether to disable stepper input | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `true` |
 | stepper-title | Quantity title | _string_ | `Quantity` |
 | custom-stepper-config | Custom stepper related config | _object_ | `{}` |
 | message-config | Message related config | _object_ | `{}` |
@@ -140,6 +139,8 @@ export default {
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
+| show-header-image `v2.9.0` | Whether to display header image | _boolean_ | `true` |
+| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events
 
@@ -187,30 +188,30 @@ sku: {
   tree: [
     {
       k: 'Color',
+      k_s: 's1',
       v: [
         {
-          id: '30349',
+          id: '1',
           name: 'Red',
           imgUrl: 'https://img.yzcdn.cn/1.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/1p.jpg',
         },
         {
-          id: '1215',
+          id: '1',
           name: 'Blue',
           imgUrl: 'https://img.yzcdn.cn/2.jpg',
           previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
         }
       ],
-      k_s: 's1'
+      largeImageMode: true, //  whether to enable large image mode
     }
   ],
   list: [
     {
       id: 2259,
+      s1: '1',
+      s2: '1',
       price: 100,
-      s1: '1215',
-      s2: '1193',
-      s3: '0',
       stock_num: 110
     }
   ],

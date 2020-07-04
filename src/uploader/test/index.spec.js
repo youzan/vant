@@ -450,7 +450,7 @@ test('close-preview event', async () => {
   wrapper.find('.van-image').trigger('click');
 
   const preview = document.querySelector('.van-image-preview');
-  const swipe = preview.querySelector('.van-swipe__track');
+  const swipe = preview.querySelector('.van-swipe-item');
   triggerDrag(swipe, 0, 0);
 
   await later(300);

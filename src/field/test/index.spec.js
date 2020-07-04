@@ -184,7 +184,7 @@ test('maxlength', async () => {
   expect(wrapper.emitted('input')[0][0]).toEqual('123');
 });
 
-test('clearable', () => {
+test('clearable prop', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'test',
@@ -200,6 +200,18 @@ test('clearable', () => {
   wrapper.find('.van-field__clear').trigger('touchstart');
   expect(wrapper.emitted('input')[0][0]).toEqual('');
   expect(wrapper.emitted('clear')[0][0]).toBeTruthy();
+});
+
+test('clear-trigger prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'test',
+      clearable: true,
+      clearTrigger: 'always',
+    },
+  });
+
+  expect(wrapper.contains('.van-field__clear')).toBeTruthy();
 });
 
 test('render input slot', () => {

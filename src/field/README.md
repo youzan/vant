@@ -100,7 +100,7 @@ export default {
 
 ### Error Info
 
-Use `error` or `error-message` to show error info
+Use `error` or `error-message` to show error info.
 
 ```html
 <van-cell-group>
@@ -123,7 +123,7 @@ Use `error` or `error-message` to show error info
 
 ### Insert Button
 
-Use button slot to insert button
+Use button slot to insert button.
 
 ```html
 <van-field v-model="sms" center clearable label="SMS" placeholder="SMS">
@@ -135,7 +135,7 @@ Use button slot to insert button
 
 ### Format Value
 
-Use `formatter` prop to format the input value
+Use `formatter` prop to format the input value.
 
 ```html
 <van-field
@@ -171,7 +171,7 @@ export default {
 
 ### Auto Resize
 
-Textarea Field can be auto resize when has `autosize` prop
+Textarea Field can be auto resize when has `autosize` prop.
 
 ```html
 <van-field
@@ -201,7 +201,7 @@ Textarea Field can be auto resize when has `autosize` prop
 
 ### Input Align
 
-Use `input-align` prop to align the input value
+Use `input-align` prop to align the input value.
 
 ```html
 <van-field
@@ -230,7 +230,9 @@ Use `input-align` prop to align the input value
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | colon `v2.7.2` | Whether to display colon after label | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
+| center | Whether to center content vertically | _boolean_ | `true` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
+| clear-trigger `v2.9.1` | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
@@ -241,7 +243,7 @@ Use `input-align` prop to align the input value
 | format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
-| label-width | Label width | _number \| string_ | `90px` |
+| label-width | Label width | _number \| string_ | `6em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |

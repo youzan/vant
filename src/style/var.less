@@ -67,7 +67,7 @@
 @action-sheet-max-height: 80%;
 @action-sheet-header-height: 44px;
 @action-sheet-header-font-size: @font-size-lg;
-@action-sheet-description-color: @gray-7;
+@action-sheet-description-color: @gray-6;
 @action-sheet-description-font-size: @font-size-md;
 @action-sheet-description-line-height: 20px;
 @action-sheet-item-height: 50px;
@@ -107,12 +107,10 @@
 @address-list-edit-icon-size: 20px;
 
 // Button
-@button-mini-height: 22px;
-@button-mini-min-width: 50px;
+@button-mini-height: 24px;
 @button-mini-font-size: @font-size-xs;
-@button-small-height: 30px;
+@button-small-height: 32px;
 @button-small-font-size: @font-size-sm;
-@button-small-min-width: 60px;
 @button-normal-font-size: @font-size-md;
 @button-large-height: 50px;
 @button-default-height: 44px;
@@ -197,7 +195,7 @@
 @cell-label-color: @gray-6;
 @cell-label-font-size: @font-size-sm;
 @cell-label-line-height: 18px;
-@cell-label-margin-top: 3px;
+@cell-label-margin-top: @padding-base;
 @cell-value-color: @gray-6;
 @cell-icon-size: 16px;
 @cell-right-icon-color: @gray-6;
@@ -250,7 +248,7 @@
 @contact-edit-buttons-padding: @padding-xl 0;
 @contact-edit-button-margin-bottom: @padding-sm;
 @contact-edit-button-font-size: 16px;
-@contact-edit-field-label-width: 65px;
+@contact-edit-field-label-width: 4em;
 
 // ContactList
 @contact-list-edit-icon-size: 16px;
@@ -345,7 +343,9 @@
 @empty-bottom-margin-top: 24px;
 
 // Field
-@field-label-width: 90px;
+@field-label-width: 6em;
+@field-label-color: @gray-7;
+@field-label-margin-right: @padding-sm;
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
 @field-input-disabled-text-color: @gray-5;
@@ -423,6 +423,7 @@
 // ImagePreview
 @image-preview-index-text-color: @white;
 @image-preview-index-font-size: @font-size-md;
+@image-preview-index-line-height: 22px;
 @image-preview-index-text-shadow: 0 1px 1px @gray-8;
 @image-preview-overlay-background-color: rgba(0, 0, 0, 0.9);
 @image-preview-close-icon-size: 22px;
@@ -536,7 +537,6 @@
 @picker-action-font-size: @font-size-md;
 @picker-confirm-action-color: @text-link-color;
 @picker-cancel-action-color: @gray-6;
-@picker-option-height: 44px;
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
 @picker-option-disabled-opacity: 0.3;
@@ -583,7 +583,7 @@
 @rate-icon-size: 20px;
 @rate-icon-gutter: @padding-base;
 @rate-icon-void-color: @gray-5;
-@rate-icon-full-color: #ffd21e;
+@rate-icon-full-color: @red;
 @rate-icon-disabled-color: @gray-5;
 
 // ShareSheet

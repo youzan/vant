@@ -330,3 +330,16 @@ test('should sync value before trigger click-item event', (done) => {
   const items = wrapper.findAll('.van-tree-select__item');
   items.at(1).trigger('click');
 });
+
+test('selected-icon prop', () => {
+  const wrapper = mount(TreeSelect, {
+    propsData: {
+      items: mockItems,
+      activeId: 1,
+      mainActiveIndex: 0,
+      selectedIcon: 'foo',
+    },
+  });
+
+  expect(wrapper.find('.van-tree-select__item')).toMatchSnapshot();
+});

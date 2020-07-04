@@ -1,13 +1,13 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
       <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }">
         {{ t('content') }}
       </van-popup>
     </demo-block>
 
-    <demo-block :title="t('position')">
+    <demo-block card :title="t('position')">
       <van-cell :title="t('buttonTop')" is-link @click="showTop = true" />
       <van-cell :title="t('buttonBottom')" is-link @click="showBottom = true" />
       <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
@@ -31,7 +31,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('closeIcon')">
+    <demo-block card :title="t('closeIcon')">
       <van-cell :title="t('closeIcon')" is-link @click="showCloseIcon = true" />
       <van-cell
         :title="t('customCloseIcon')"
@@ -66,7 +66,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('roundCorner')">
+    <demo-block card :title="t('roundCorner')">
       <van-cell
         :title="t('roundCorner')"
         is-link
@@ -80,7 +80,7 @@
       />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('getContainer')">
+    <demo-block card v-if="!isWeapp" :title="t('getContainer')">
       <van-cell
         :title="t('getContainer')"
         is-link

@@ -14,7 +14,7 @@ Vue.use(SwipeItem);
 
 ### 基础用法
 
-每个 SwipeItem 代表一张轮播卡片，可以通过`autoplay`属性设置自动轮播的间隔
+每个 SwipeItem 代表一张轮播卡片，可以通过 `autoplay` 属性设置自动轮播的间隔。
 
 ```html
 <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -37,7 +37,7 @@ Vue.use(SwipeItem);
 
 ### 图片懒加载
 
-当 Swipe 中含有图片时，可以配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载
+当 Swipe 中含有图片时，可以配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载。
 
 ```html
 <van-swipe :autoplay="3000">
@@ -90,7 +90,7 @@ export default {
 
 ### 纵向滚动
 
-设置`vertical`属性后滑块会纵向排列，此时需要指定滑块容器的高度
+设置 `vertical` 属性后滑块会纵向排列，此时需要指定滑块容器的高度。
 
 ```html
 <van-swipe style="height: 200px;" vertical>
@@ -103,7 +103,7 @@ export default {
 
 ### 自定义滑块大小
 
-滑块默认宽度为`100%`，可以通过`width`属性设置单个滑块的宽度。纵向滚动模式下，可以通过`height`属性设置单个滑块的高度。
+滑块默认宽度为 `100%`，可以通过 `width` 属性设置单个滑块的宽度。纵向滚动模式下，可以通过 `height` 属性设置单个滑块的高度。
 
 ```html
 <van-swipe :loop="false" :width="300">
@@ -114,11 +114,11 @@ export default {
 </van-swipe>
 ```
 
-> 目前不支持在循环滚动模式下自定义滑块大小，因此需要将 loop 设置为 false
+> 目前不支持在循环滚动模式下自定义滑块大小，因此需要将 loop 设置为 false。
 
 ### 自定义指示器
 
-通过`indicator`插槽可以自定义指示器的样式
+通过 `indicator` 插槽可以自定义指示器的样式。
 
 ```html
 <van-swipe @change="onChange">
@@ -193,7 +193,7 @@ export default {
 
 ### Swipe 方法
 
-通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
@@ -226,3 +226,7 @@ export default {
 ### 在桌面端无法操作组件？
 
 参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+
+### Swipe 组件功能太少，无法实现复杂效果？
+
+Vant 中的 Swipe 组件是比较轻量的，因此功能也比较基础。如果需要更复杂的轮播效果，推荐使用社区里一些优质的轮播库，比如 [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper)。

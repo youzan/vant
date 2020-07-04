@@ -7,41 +7,41 @@ exports[`filter prop 1`] = `
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">05</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">10</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">15</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">20</div>
         </li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">10</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">20</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">30</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">40</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">50</div>
         </li>
       </ul>
@@ -60,20 +60,20 @@ exports[`format initial value 1`] = `
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">22</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">23</div>
         </li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">58</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">59</div>
         </li>
       </ul>
@@ -92,41 +92,41 @@ exports[`formatter prop 1`] = `
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00 hour</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">05 hour</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">10 hour</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">15 hour</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">20 hour</div>
         </li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00 minute</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">10 minute</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">20 minute</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">30 minute</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">40 minute</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">50 minute</div>
         </li>
       </ul>
@@ -145,26 +145,26 @@ exports[`max-hour & max-minute 1`] = `
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">01</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">02</div>
         </li>
       </ul>
     </div>
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">00</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">01</div>
         </li>
-        <li role="button" tabindex="0" class="van-picker-column__item">
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
           <div class="van-ellipsis">02</div>
         </li>
       </ul>

@@ -5,7 +5,7 @@
 export default {
   'zh-CN': {
     vanSku: {
-      select: '选择',
+      select: '请选择',
       selected: '已选',
       selectSku: '请先选择商品规格',
       soldout: '库存不足',

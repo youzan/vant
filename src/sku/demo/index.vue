@@ -1,21 +1,19 @@
 <template>
   <demo-section>
-    <!-- 基础用法 -->
     <demo-block :title="t('basicUsage')">
       <div class="sku-container">
         <van-sku
           v-model="showBase"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :close-on-click-overlay="closeOnClickOverlay"
-          :message-config="messageConfig"
-          :custom-sku-validator="customSkuValidator"
           :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :message-config="messageConfig"
+          :start-sale-num="skuData.start_sale_num"
+          :custom-sku-validator="customSkuValidator"
           disable-stepper-input
           reset-stepper-on-hide
           safe-area-inset-bottom
@@ -29,48 +27,46 @@
       </div>
     </demo-block>
 
-    <!-- 自定义步进器 -->
-    <demo-block :title="t('title2')">
+    <demo-block :title="t('customStepper')">
       <div class="sku-container">
         <van-sku
           v-model="showStepper"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :custom-stepper-config="customStepperConfig"
-          :message-config="messageConfig"
           :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :start-sale-num="skuData.start_sale_num"
+          :message-config="messageConfig"
+          :custom-stepper-config="customStepperConfig"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
         <van-button block type="primary" @click="showStepper = true">
-          {{ t('title2') }}
+          {{ t('customStepper') }}
         </van-button>
       </div>
     </demo-block>
 
-    <!-- 隐藏售罄sku -->
     <demo-block :title="t('hideSoldoutSku')">
       <div class="sku-container">
         <van-sku
           v-model="showSoldout"
           :sku="skuData.sku"
+          :quota="skuData.quota"
           :goods="skuData.goods_info"
           :goods-id="skuData.goods_id"
-          :hide-stock="skuData.sku.hide_stock"
-          :quota="skuData.quota"
           :quota-used="skuData.quota_used"
-          :start-sale-num="skuData.start_sale_num"
-          :custom-stepper-config="customStepperConfig"
-          :message-config="messageConfig"
-          :show-soldout-sku="false"
           :properties="skuData.properties"
+          :hide-stock="skuData.sku.hide_stock"
+          :message-config="messageConfig"
+          :start-sale-num="skuData.start_sale_num"
+          :show-soldout-sku="false"
+          :custom-stepper-config="customStepperConfig"
           hide-quota-text
           safe-area-inset-bottom
           @buy-clicked="onBuyClicked"
@@ -82,7 +78,40 @@
       </div>
     </demo-block>
 
-    <demo-block :title="t('advancedUsage')">
+    <demo-block :title="t('largeImageMode')">
+      <div class="sku-container">
+        <van-sku
+          v-model="showLargePicturePreview"
+          :sku="skuData2.sku"
+          :quota="skuData2.quota"
+          :goods="skuData2.goods_info"
+          :goods-id="skuData2.goods_id"
+          :hide-stock="skuData2.sku.hide_stock"
+          :properties="skuData2.properties"
+          :quota-used="skuData2.quota_used"
+          :message-config="messageConfig"
+          :start-sale-num="skuData2.start_sale_num"
+          :show-header-image="false"
+          :custom-sku-validator="customSkuValidator"
+          disable-stepper-input
+          reset-stepper-on-hide
+          safe-area-inset-bottom
+          reset-selected-sku-on-hide
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        >
+        </van-sku>
+        <van-button
+          block
+          type="primary"
+          @click="showLargePicturePreview = true"
+        >
+          {{ t('largeImageMode') }}
+        </van-button>
+      </div>
+    </demo-block>
+
+    <demo-block :title="t('customBySlot')">
       <div class="sku-container">
         <van-sku
           v-model="showCustom"
@@ -136,7 +165,7 @@
           </template>
         </van-sku>
         <van-button block type="primary" @click="showCustom = true">
-          {{ t('advancedUsage') }}
+          {{ t('customBySlot') }}
         </van-button>
       </div>
     </demo-block>
@@ -144,31 +173,36 @@
 </template>
 
 <script>
-import { skuData, initialSku } from './data';
+import { initialSku, getSkuData } from './data';
 import { LIMIT_TYPE } from '../constants';
 
 export default {
   i18n: {
     'zh-CN': {
-      title2: '自定义步进器',
-      hideSoldoutSku: '隐藏售罄规格',
-      stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买',
       actionsTop: '商品不多，赶快购买吧',
+      stepperTitle: '我要买',
+      customBySlot: '通过插槽定制',
+      customStepper: '自定义步进器',
+      hideSoldoutSku: '隐藏售罄规格',
+      largeImageMode: '大图预览模式',
     },
     'en-US': {
-      title2: 'Custom Stepper Related Config',
-      hideSoldoutSku: 'Hide Soldout Sku',
-      stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button',
       actionsTop: 'Action top info',
+      customBySlot: 'Custom By Slot',
+      stepperTitle: 'Stepper title',
+      customStepper: 'Custom Stepper',
+      hideSoldoutSku: 'Hide Soldout Sku',
+      largeImageMode: 'Large Image Mode',
     },
   },
 
   data() {
-    this.skuData = skuData;
+    this.skuData = getSkuData();
+    this.skuData2 = getSkuData(true);
     this.initialSku = initialSku;
 
     return {
@@ -176,11 +210,11 @@ export default {
       showCustom: false,
       showStepper: false,
       showSoldout: false,
-      closeOnClickOverlay: true,
+      showLargePicturePreview: false,
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
-        stockFormatter: (stock) => `剩余${stock}件`,
+        stockFormatter: (stock) => `剩余${stock}`,
         handleOverLimit: (data) => {
           const { action, limitType, quota, startSaleNum = 1 } = data;
 

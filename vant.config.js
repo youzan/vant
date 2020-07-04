@@ -106,6 +106,10 @@ module.exports = {
                 path: 'style',
                 title: 'Style 内置样式',
               },
+              {
+                path: 'toast',
+                title: 'Toast 轻提示',
+              },
             ],
           },
           {
@@ -211,10 +215,6 @@ module.exports = {
               {
                 path: 'swipe-cell',
                 title: 'SwipeCell 滑动单元格',
-              },
-              {
-                path: 'toast',
-                title: 'Toast 轻提示',
               },
             ],
           },
@@ -453,6 +453,10 @@ module.exports = {
                 path: 'style',
                 title: 'Built-in style',
               },
+              {
+                path: 'toast',
+                title: 'Toast',
+              },
             ],
           },
           {
@@ -562,10 +566,6 @@ module.exports = {
               {
                 path: 'swipe-cell',
                 title: 'SwipeCell',
-              },
-              {
-                path: 'toast',
-                title: 'Toast',
               },
             ],
           },

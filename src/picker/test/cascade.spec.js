@@ -108,3 +108,20 @@ test('setIndexes of cascade columns', () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C6']);
 });
+
+test('disabled in cascade', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      columns: [
+        COLUMNS[0],
+        {
+          ...COLUMNS[1],
+          disabled: true,
+        },
+      ],
+    },
+  });
+
+  expect(wrapper.find('.van-picker-column__item--disabled')).toMatchSnapshot();
+});

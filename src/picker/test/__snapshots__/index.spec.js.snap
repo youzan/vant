@@ -76,7 +76,7 @@ exports[`not allow html 1`] = `
   <div class="van-picker__columns" style="height: 220px;">
     <div class="van-picker-column">
       <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
-        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">&lt;div&gt;option&lt;/div&gt;</div>
         </li>
       </ul>

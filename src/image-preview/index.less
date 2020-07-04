@@ -9,6 +9,12 @@
 
   &__swipe {
     height: 100%;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__cover {
@@ -18,12 +24,13 @@
   }
 
   &__image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
     transition-property: transform;
+
+    &--vertical {
+      width: auto;
+      height: 100%;
+    }
 
     img {
       // disable desktop browser image drag
@@ -48,10 +55,11 @@
 
   &__index {
     position: absolute;
-    top: 10px;
+    top: @padding-md;
     left: 50%;
     color: @image-preview-index-text-color;
     font-size: @image-preview-index-font-size;
+    line-height: @image-preview-index-line-height;
     text-shadow: @image-preview-index-text-shadow;
     transform: translate(-50%, 0);
   }

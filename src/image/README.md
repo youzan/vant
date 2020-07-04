@@ -98,7 +98,8 @@ Vue.use(Lazyload);
 
 ### Slots
 
-| Name    | Description                |
-| ------- | -------------------------- |
-| loading | Custom loading placeholder |
-| error   | Custom error placeholder   |
+| Name             | Description                        |
+| ---------------- | ---------------------------------- |
+| default `v2.9.0` | Custom the content below the image |
+| loading          | Custom loading placeholder         |
+| error            | Custom error placeholder           |
