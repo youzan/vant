@@ -69,6 +69,10 @@ export default createComponent({
       type: Boolean,
       default: null,
     },
+    clearTrigger: {
+      type: String,
+      default: 'focus',
+    },
     formatTrigger: {
       type: String,
       default: 'onChange',
@@ -109,13 +113,14 @@ export default createComponent({
 
   computed: {
     showClear() {
-      return (
-        this.clearable &&
-        this.focused &&
-        this.value !== '' &&
-        isDef(this.value) &&
-        !this.readonly
-      );
+      if (this.clearable && !this.readonly) {
+        const hasValue = isDef(this.value) && this.value !== '';
+        const trigger =
+          this.clearTrigger === 'always' ||
+          (this.clearTrigger === 'focus' && this.focused);
+
+        return hasValue && trigger;
+      }
     },
 
     showError() {

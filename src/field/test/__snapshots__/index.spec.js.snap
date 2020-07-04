@@ -9,7 +9,7 @@ exports[`arrow-direction prop 1`] = `
 </div>
 `;
 
-exports[`clearable 1`] = `
+exports[`clearable prop 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body"><input type="text" class="van-field__control"></div>
@@ -17,7 +17,7 @@ exports[`clearable 1`] = `
 </div>
 `;
 
-exports[`clearable 2`] = `
+exports[`clearable prop 2`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body"><input type="text" class="van-field__control"><i class="van-icon van-icon-clear van-field__clear">
