@@ -277,10 +277,10 @@ module.exports = {
               //   path: 'swipe',
               //   title: 'Swipe 轮播',
               // },
-              // {
-              //   path: 'tag',
-              //   title: 'Tag 标记',
-              // },
+              {
+                path: 'tag',
+                title: 'Tag 标记',
+              },
             ],
           },
           {
@@ -611,10 +611,10 @@ module.exports = {
               //   path: 'swipe',
               //   title: 'Swipe',
               // },
-              // {
-              //   path: 'tag',
-              //   title: 'Tag',
-              // },
+              {
+                path: 'tag',
+                title: 'Tag',
+              },
             ],
           },
           {
