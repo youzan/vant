@@ -94,10 +94,10 @@ module.exports = {
                 path: 'image',
                 title: 'Image 图片',
               },
-              // {
-              //   path: 'col',
-              //   title: 'Layout 布局',
-              // },
+              {
+                path: 'col',
+                title: 'Layout 布局',
+              },
               // {
               //   path: 'popup',
               //   title: 'Popup 弹出层',
@@ -441,10 +441,10 @@ module.exports = {
                 path: 'image',
                 title: 'Image',
               },
-              // {
-              //   path: 'col',
-              //   title: 'Layout',
-              // },
+              {
+                path: 'col',
+                title: 'Layout',
+              },
               // {
               //   path: 'popup',
               //   title: 'Popup',
