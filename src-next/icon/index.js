@@ -43,7 +43,7 @@ export default createComponent({
           fontSize: addUnit(this.size),
         }}
       >
-        {/* {slots.default && slots.default()} */}
+        {this.$slots.default?.()}
         {imageIcon && <img class={bem('image')} src={name} />}
         <Info
           dot={this.dot}
