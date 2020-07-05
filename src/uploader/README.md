@@ -43,12 +43,6 @@ export default {
 };
 ```
 
-### Disabled
-
-```html
-<van-uploader disabled />
-```
-
 ### Upload Status
 
 ```html
@@ -106,30 +100,52 @@ export default {
 ### Max Size
 
 ```html
-<van-uploader
-  multiple
-  :max-count="5"
-  :max-size="3 * 1024 * 1024"
-  @oversize="onOversize"
-/>
+<van-uploader multiple :max-size="500 * 1024" @oversize="onOversize" />
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onOversize(file) {
       console.log(file);
+      Toast('File size cannot exceed 500kb)
     },
   },
 };
 ```
 
-### Upload Style
+### Custom Upload Area
 
 ```html
 <van-uploader>
-  <van-button icon="photo" type="primary">Upload Image</van-button>
+  <van-button icon="plus" type="primary">Upload Image</van-button>
 </van-uploader>
+```
+
+### Preview Cover
+
+```html
+<van-uploader v-model="fileList">
+  <template #preview-cover="{ file }">
+    <div class="preview-cover van-ellipsis">{{ file.name }}</div>
+  </template>
+</van-uploader>
+
+<style>
+  .preview-cover {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 0;
+    width: 100%;
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+  }
+</style>
 ```
 
 ### Before Read
@@ -165,6 +181,14 @@ export default {
     },
   },
 };
+```
+
+### Disable Uploader
+
+Use `disabled` prop to disable uploader.
+
+```html
+<van-uploader disabled />
 ```
 
 ## API
@@ -205,9 +229,10 @@ export default {
 
 ### Slots
 
-| Name    | Description |
-| ------- | ----------- |
-| default | Custom icon |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default | Custom icon | - |
+| preview-cover `v2.9.1` | Custom content that covers the image preview | `item: FileListItem` |
 
 ### Parematers of before-read、after-read、before-delete
 
