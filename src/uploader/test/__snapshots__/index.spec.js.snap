@@ -67,6 +67,31 @@ exports[`max-count prop 1`] = `
 </div>
 `;
 
+exports[`preview-cover slot 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__preview">
+      <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <!----></i></div>
+        <div class="van-uploader__preview-cover">https://img.yzcdn.cn/vant/cat.jpeg</div>
+      </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
+        <!----></i>
+    </div>
+    <div class="van-uploader__preview">
+      <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <!----></i></div>
+        <div class="van-uploader__preview-cover">https://img.yzcdn.cn/vant/cat.jpeg</div>
+      </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
+        <!----></i>
+    </div>
+    <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
+        <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;
+
 exports[`preview-size prop 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">
