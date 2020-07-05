@@ -1,9 +1,9 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 
-export { createNamespace } from './create';
+// export { createNamespace } from './create';
 export { addUnit } from './format/unit';
 
-export const isServer: boolean = Vue.prototype.$isServer;
+// export const isServer: boolean = Vue.prototype.$isServer;
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}

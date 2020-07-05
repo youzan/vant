@@ -1,5 +1,5 @@
 // Utils
-import { addUnit, isDef } from '../../src/utils';
+import { addUnit } from '../../src/utils';
 import { createNamespace } from '../utils/create';
 
 // Components
