@@ -1,0 +1,103 @@
+@import '../style/var';
+
+.van-loading {
+  position: relative;
+  color: @loading-spinner-color;
+  font-size: 0;
+  vertical-align: middle;
+
+  &__spinner {
+    position: relative;
+    display: inline-block;
+    width: @loading-spinner-size;
+    // compatible for 1.x, users may set width or height in root element
+    max-width: 100%;
+    height: @loading-spinner-size;
+    max-height: 100%;
+    vertical-align: middle;
+    animation: van-rotate @loading-spinner-animation-duration linear infinite;
+
+    &--spinner {
+      animation-timing-function: steps(12);
+
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &::before {
+          display: block;
+          width: 2px;
+          height: 25%;
+          margin: 0 auto;
+          background-color: currentColor;
+          border-radius: 40%;
+          content: ' ';
+        }
+      }
+    }
+
+    &--circular {
+      animation-duration: 2s;
+    }
+  }
+
+  &__circular {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    circle {
+      animation: van-circular 1.5s ease-in-out infinite;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-left: @padding-xs;
+    color: @loading-text-color;
+    font-size: @loading-text-font-size;
+    vertical-align: middle;
+  }
+
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .van-loading__text {
+      margin: @padding-xs 0 0;
+    }
+  }
+}
+
+@keyframes van-circular {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120;
+  }
+}
+
+.generate-spinner(@n, @i: 1) when (@i =< @n) {
+  .van-loading__spinner--spinner i:nth-of-type(@{i}) {
+    transform: rotate(@i * 30deg);
+    opacity: 1 - (0.75 / 12) * (@i - 1);
+  }
+  .generate-spinner(@n, (@i + 1));
+}
+.generate-spinner(12);

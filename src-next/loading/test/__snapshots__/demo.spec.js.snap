@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+    <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div>
+    <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="color: rgb(25, 137, 250);"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+    <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="color: rgb(25, 137, 250);"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div>
+    <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 24px; height: 24px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+    <div class="van-loading van-loading--spinner"><span class="van-loading__spinner van-loading__spinner--spinner" style="width: 24px; height: 24px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+  </div>
+  <div>
+    <div class="van-loading van-loading--circular"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 24px; height: 24px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">
+      加载中...
+    </span></div>
+  </div>
+  <div>
+    <div class="van-loading van-loading--circular van-loading--vertical"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 24px; height: 24px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><span class="van-loading__text">
+      加载中...
+    </span></div>
+  </div>
+</div>
+`;

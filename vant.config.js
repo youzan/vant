@@ -192,10 +192,10 @@ module.exports = {
               //   path: 'dropdown-menu',
               //   title: 'DropdownMenu 下拉菜单',
               // },
-              // {
-              //   path: 'loading',
-              //   title: 'Loading 加载',
-              // },
+              {
+                path: 'loading',
+                title: 'Loading 加载',
+              },
               // {
               //   path: 'notify',
               //   title: 'Notify 消息通知',
@@ -543,10 +543,10 @@ module.exports = {
               //   path: 'dropdown-menu',
               //   title: 'DropdownMenu',
               // },
-              // {
-              //   path: 'loading',
-              //   title: 'Loading',
-              // },
+              {
+                path: 'loading',
+                title: 'Loading',
+              },
               // {
               //   path: 'notify',
               //   title: 'Notify',
