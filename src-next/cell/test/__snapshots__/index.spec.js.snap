@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CellGroup title slot 1`] = `
+<div>
+  <div class="van-cell-group__title">CustomTitle</div>
+  <div class="van-cell-group van-hairline--top-bottom"></div>
+</div>
+`;
+
+exports[`arrow direction 1`] = `
+<div role="button" tabindex="0" class="van-cell van-cell--clickable"><i class="van-icon van-icon-arrow-down van-cell__right-icon">
+    <!----></i></div>
+`;
+
+exports[`icon-prefix prop 1`] = `
+<div class="van-cell"><i class="my-icon my-icon-success van-cell__left-icon">
+    <!----></i></div>
+`;
+
+exports[`render slot 1`] = `
+<div class="van-cell">Custom Icon<div class="van-cell__title">Custom Title<div class="van-cell__label">Custom Label</div>
+  </div>Custom Extra</div>
+`;
+
+exports[`title-style prop 1`] = `
+<div class="van-cell">
+  <div class="van-cell__title" style="color: red;"><span>title</span></div>
+</div>
+`;

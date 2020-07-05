@@ -82,10 +82,10 @@ module.exports = {
                 path: 'button',
                 title: 'Button 按钮',
               },
-              // {
-              //   path: 'cell',
-              //   title: 'Cell 单元格',
-              // },
+              {
+                path: 'cell',
+                title: 'Cell 单元格',
+              },
               {
                 path: 'icon',
                 title: 'Icon 图标',
@@ -102,10 +102,10 @@ module.exports = {
               //   path: 'popup',
               //   title: 'Popup 弹出层',
               // },
-              // {
-              //   path: 'style',
-              //   title: 'Style 内置样式',
-              // },
+              {
+                path: 'style',
+                title: 'Style 内置样式',
+              },
               // {
               //   path: 'toast',
               //   title: 'Toast 轻提示',
@@ -360,20 +360,7 @@ module.exports = {
               //   title: 'Sku 商品规格',
               // },
             ],
-          },
-          {
-            title: '废弃',
-            items: [
-              // {
-              //   path: 'panel',
-              //   title: 'Panel 面板',
-              // },
-              // {
-              //   path: 'switch-cell',
-              //   title: 'SwitchCell 开关单元格',
-              // },
-            ],
-          },
+          }
         ],
       },
       'en-US': {
@@ -429,10 +416,10 @@ module.exports = {
                 path: 'button',
                 title: 'Button',
               },
-              // {
-              //   path: 'cell',
-              //   title: 'Cell',
-              // },
+              {
+                path: 'cell',
+                title: 'Cell',
+              },
               {
                 path: 'icon',
                 title: 'Icon',
@@ -449,10 +436,10 @@ module.exports = {
               //   path: 'popup',
               //   title: 'Popup',
               // },
-              // {
-              //   path: 'style',
-              //   title: 'Built-in style',
-              // },
+              {
+                path: 'style',
+                title: 'Built-in style',
+              },
               // {
               //   path: 'toast',
               //   title: 'Toast',
@@ -517,10 +504,6 @@ module.exports = {
               // {
               //   path: 'switch',
               //   title: 'Switch',
-              // },
-              // {
-              //   path: 'switch-cell',
-              //   title: 'SwitchCell',
               // },
               // {
               //   path: 'uploader',
@@ -711,20 +694,7 @@ module.exports = {
               //   title: 'Sku',
               // },
             ],
-          },
-          {
-            title: 'Deprecated',
-            items: [
-              // {
-              //   path: 'panel',
-              //   title: 'Panel',
-              // },
-              // {
-              //   path: 'switch-cell',
-              //   title: 'SwitchCell',
-              // },
-            ],
-          },
+          }
         ],
       },
     },
