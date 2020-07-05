@@ -157,14 +157,16 @@ export default createComponent({
         return <img ref="image" vLazy={this.src} {...imgData} />;
       }
 
-      return (
-        <img
-          src={this.src}
-          onLoad={this.onLoad}
-          onError={this.onError}
-          {...imgData}
-        />
-      );
+      if (this.src) {
+        return (
+          <img
+            src={this.src}
+            onLoad={this.onLoad}
+            onError={this.onError}
+            {...imgData}
+          />
+        );
+      }
     },
   },
 
