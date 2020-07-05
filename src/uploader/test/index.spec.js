@@ -508,7 +508,7 @@ test('multiFile upload filter max-size file', async () => {
   expect(wrapper.emitted('oversize')[0]).toBeTruthy();
 });
 
-test('click-preview event', () => {
+test('preview-cover slot', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [{ url: IMAGE }, { url: IMAGE }],
