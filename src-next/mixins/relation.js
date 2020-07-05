@@ -1,5 +1,3 @@
-import { sortChildren } from '../utils/vnodes';
-
 export function ChildrenMixin(parent, options = {}) {
   const indexKey = options.indexKey || 'index';
 
@@ -43,8 +41,6 @@ export function ChildrenMixin(parent, options = {}) {
         }
 
         const children = [...this.parent.children, this];
-
-        sortChildren(children, this.parent);
 
         this.parent.children = children;
       },
