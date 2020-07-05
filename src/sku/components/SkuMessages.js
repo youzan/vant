@@ -56,11 +56,7 @@ export default createComponent({
       const messages = {};
 
       this.messageValues.forEach((item, index) => {
-        let { value } = item;
-        if (this.messages[index].datetime > 0) {
-          value = value.replace(/T/g, ' ');
-        }
-        messages[`message_${index}`] = value;
+        messages[`message_${index}`] = item.value;
       });
 
       return messages;
@@ -70,12 +66,8 @@ export default createComponent({
       const messages = {};
 
       this.messageValues.forEach((item, index) => {
-        let { value } = item;
         const message = this.messages[index];
-        if (message.datetime > 0) {
-          value = value.replace(/T/g, ' ');
-        }
-        messages[message.name] = value;
+        messages[message.name] = item.value;
       });
 
       return messages;
