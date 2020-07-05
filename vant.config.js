@@ -78,10 +78,10 @@ module.exports = {
           {
             title: '基础组件',
             items: [
-              // {
-              //   path: 'button',
-              //   title: 'Button 按钮',
-              // },
+              {
+                path: 'button',
+                title: 'Button 按钮',
+              },
               // {
               //   path: 'cell',
               //   title: 'Cell 单元格',
@@ -425,10 +425,10 @@ module.exports = {
           {
             title: 'Basic Components',
             items: [
-              // {
-              //   path: 'button',
-              //   title: 'Button',
-              // },
+              {
+                path: 'button',
+                title: 'Button',
+              },
               // {
               //   path: 'cell',
               //   title: 'Cell',
