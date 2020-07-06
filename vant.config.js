@@ -294,10 +294,10 @@ module.exports = {
               //   path: 'index-bar',
               //   title: 'IndexBar 索引栏',
               // },
-              // {
-              //   path: 'nav-bar',
-              //   title: 'NavBar 导航栏',
-              // },
+              {
+                path: 'nav-bar',
+                title: 'NavBar 导航栏',
+              },
               // {
               //   path: 'pagination',
               //   title: 'Pagination 分页',
@@ -432,10 +432,10 @@ module.exports = {
                 path: 'col',
                 title: 'Layout',
               },
-              // {
-              //   path: 'popup',
-              //   title: 'Popup',
-              // },
+              {
+                path: 'popup',
+                title: 'Popup',
+              },
               {
                 path: 'style',
                 title: 'Built-in style',
@@ -628,10 +628,10 @@ module.exports = {
               //   path: 'index-bar',
               //   title: 'IndexBar',
               // },
-              // {
-              //   path: 'nav-bar',
-              //   title: 'NavBar',
-              // },
+              {
+                path: 'nav-bar',
+                title: 'NavBar',
+              },
               // {
               //   path: 'pagination',
               //   title: 'Pagination',

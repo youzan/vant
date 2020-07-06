@@ -1,0 +1,66 @@
+@import '../style/var';
+
+.van-nav-bar {
+  position: relative;
+  z-index: @nav-bar-z-index;
+  display: flex;
+  align-items: center;
+  height: @nav-bar-height;
+  line-height: 1.5;
+  text-align: center;
+  background-color: @nav-bar-background-color;
+  user-select: none;
+
+  .van-icon {
+    color: @nav-bar-icon-color;
+  }
+
+  &__arrow {
+    min-width: 1em;
+    margin-right: @padding-base;
+    font-size: @nav-bar-arrow-size;
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__title {
+    max-width: 60%;
+    margin: 0 auto;
+    color: @nav-bar-title-text-color;
+    font-weight: @font-weight-bold;
+    font-size: @nav-bar-title-font-size;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 @padding-md;
+    font-size: @font-size-md;
+    cursor: pointer;
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+
+  &__left {
+    left: 0;
+  }
+
+  &__right {
+    right: 0;
+  }
+
+  &__text {
+    color: @nav-bar-text-color;
+  }
+}
