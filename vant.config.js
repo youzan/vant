@@ -298,10 +298,10 @@ module.exports = {
                 path: 'nav-bar',
                 title: 'NavBar 导航栏',
               },
-              // {
-              //   path: 'pagination',
-              //   title: 'Pagination 分页',
-              // },
+              {
+                path: 'pagination',
+                title: 'Pagination 分页',
+              },
               // {
               //   path: 'sidebar',
               //   title: 'Sidebar 侧边导航',
@@ -632,10 +632,10 @@ module.exports = {
                 path: 'nav-bar',
                 title: 'NavBar',
               },
-              // {
-              //   path: 'pagination',
-              //   title: 'Pagination',
-              // },
+              {
+                path: 'pagination',
+                title: 'Pagination',
+              },
               // {
               //   path: 'sidebar',
               //   title: 'Sidebar',
