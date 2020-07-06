@@ -49,10 +49,6 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     const { round, position, duration } = this;
     const isCenter = position === 'center';
 
@@ -76,29 +72,31 @@ export default createComponent({
           onAfterEnter={this.onOpened}
           onAfterLeave={this.onClosed}
         >
-          <div
-            vShow={this.show}
-            ref="root"
-            style={style}
-            class={bem({
-              round,
-              [position]: position,
-              'safe-area-inset-bottom': this.safeAreaInsetBottom,
-            })}
-            onClick={this.onClick}
-            {...this.$attrs}
-          >
-            {this.$slots.default?.()}
-            {this.closeable && (
-              <Icon
-                role="button"
-                tabindex="0"
-                name={this.closeIcon}
-                class={bem('close-icon', this.closeIconPosition)}
-                onClick={this.close}
-              />
-            )}
-          </div>
+          {this.shouldRender ? (
+            <div
+              vShow={this.show}
+              ref="root"
+              style={style}
+              class={bem({
+                round,
+                [position]: position,
+                'safe-area-inset-bottom': this.safeAreaInsetBottom,
+              })}
+              onClick={this.onClick}
+              {...this.$attrs}
+            >
+              {this.$slots.default?.()}
+              {this.closeable && (
+                <Icon
+                  role="button"
+                  tabindex="0"
+                  name={this.closeIcon}
+                  class={bem('close-icon', this.closeIconPosition)}
+                  onClick={this.close}
+                />
+              )}
+            </div>
+          ) : null}
         </Transition>
       </>
     );

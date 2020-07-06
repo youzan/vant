@@ -13,7 +13,11 @@
       <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
       <van-cell :title="t('buttonRight')" is-link @click="showRight = true" />
 
-      <van-popup v-model:show="showTop" position="top" :style="{ height: '30%' }" />
+      <van-popup
+        v-model:show="showTop"
+        position="top"
+        :style="{ height: '30%' }"
+      />
       <van-popup
         v-model:show="showBottom"
         position="bottom"
@@ -140,12 +144,6 @@ export default {
       showCustomIconPosition: false,
     };
   },
-
-  watch: {
-    showBasic(val) {
-      console.log('showBasic', val);
-    }
-  }
 };
 </script>
 
