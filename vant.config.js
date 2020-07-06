@@ -265,10 +265,10 @@ module.exports = {
                 path: 'skeleton',
                 title: 'Skeleton 骨架屏',
               },
-              // {
-              //   path: 'steps',
-              //   title: 'Steps 步骤条',
-              // },
+              {
+                path: 'steps',
+                title: 'Steps 步骤条',
+              },
               // {
               //   path: 'sticky',
               //   title: 'Sticky 粘性布局',
@@ -599,10 +599,10 @@ module.exports = {
                 path: 'skeleton',
                 title: 'Skeleton',
               },
-              // {
-              //   path: 'steps',
-              //   title: 'Steps',
-              // },
+              {
+                path: 'steps',
+                title: 'Steps',
+              },
               // {
               //   path: 'sticky',
               //   title: 'Sticky',
