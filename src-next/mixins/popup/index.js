@@ -8,7 +8,6 @@ import { getScroller } from '../../utils/dom/scroll';
 
 // Mixins
 import { TouchMixin } from '../touch';
-import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
@@ -20,6 +19,8 @@ export const popupMixinProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
+  // teleport
+  getContainer: [String, Function],
   // whether to close popup when click overlay
   closeOnClickOverlay: Boolean,
   // z-index
@@ -41,7 +42,6 @@ export function PopupMixin(options = {}) {
     mixins: [
       TouchMixin,
       CloseOnPopstateMixin,
-      PortalMixin({}),
     ],
 
     props: popupMixinProps,

@@ -1,5 +1,5 @@
-import { Transition } from 'vue';
-import { createNamespace, isDef } from '../utils';
+import { Teleport, Transition } from 'vue';
+import { createNamespace, isDef, isFunction } from '../utils';
 import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
 import Overlay from '../overlay';
@@ -48,25 +48,28 @@ export default createComponent({
     this.onClosed = createEmitter('closed');
   },
 
-  render() {
-    const { round, position, duration } = this;
-    const isCenter = position === 'center';
+  methods: {
+    genOverlay() {
+      if (this.overlay) {
+        return <Overlay show={this.show} onClick={this.onClickOverlay} />;
+      }
+    },
 
-    const transitionName =
-      this.transition ||
-      (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
+    genPopup() {
+      const { round, position, duration } = this;
+      const isCenter = position === 'center';
 
-    const style = {};
-    if (isDef(duration)) {
-      const key = isCenter ? 'animationDuration' : 'transitionDuration';
-      style[key] = `${duration}s`;
-    }
+      const transitionName =
+        this.transition ||
+        (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
-    return (
-      <>
-        {this.overlay && (
-          <Overlay show={this.show} onClick={this.onClickOverlay} />
-        )}
+      const style = {};
+      if (isDef(duration)) {
+        const key = isCenter ? 'animationDuration' : 'transitionDuration';
+        style[key] = `${duration}s`;
+      }
+
+      return (
         <Transition
           name={transitionName}
           onAfterEnter={this.onOpened}
@@ -98,6 +101,26 @@ export default createComponent({
             </div>
           ) : null}
         </Transition>
+      );
+    },
+  },
+
+  render() {
+    const { getContainer } = this;
+    if (getContainer) {
+      const to = isFunction(getContainer) ? getContainer() : getContainer;
+      return (
+        <Teleport to={to}>
+          {this.genOverlay()}
+          {this.genPopup()}
+        </Teleport>
+      );
+    }
+
+    return (
+      <>
+        {this.genOverlay()}
+        {this.genPopup()}
       </>
     );
   },
