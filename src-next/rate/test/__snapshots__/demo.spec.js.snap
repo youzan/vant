@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-like van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-like van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-like van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-like-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-like-o van-rate__icon">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--full" style="color: rgb(255, 210, 30); font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star van-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star van-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full" style="font-size: 25px;">
+          <!----></i><i data-score="0.5" class="van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full" style="font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full" style="font-size: 25px;">
+          <!----></i><i data-score="1.5" class="van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full" style="font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i><i data-score="2.5" class="van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full" style="font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star van-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i><i data-score="3.5" class="van-icon van-icon-star van-rate__icon van-rate__icon--half" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star van-rate__icon" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i><i data-score="4.5" class="van-icon van-icon-star van-rate__icon van-rate__icon--half" style="color: rgb(238, 238, 238); font-size: 25px;">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="4" aria-checked="true" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="6" aria-posinset="6" aria-checked="false" class="van-rate__item"><i data-score="6" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate van-rate--disabled">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star-o van-rate__icon van-rate__icon--disabled">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon van-rate__icon--disabled">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate van-rate--readonly">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="true" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+    </div>
+  </div>
+  <div>
+    <div tabindex="0" role="radiogroup" class="van-rate">
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="1" aria-checked="true" class="van-rate__item"><i data-score="1" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="2" aria-checked="true" class="van-rate__item"><i data-score="2" class="van-icon van-icon-star van-rate__icon van-rate__icon--full">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="3" aria-checked="false" class="van-rate__item"><i data-score="3" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="4" aria-checked="false" class="van-rate__item"><i data-score="4" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+      <div role="radio" tabindex="0" aria-setsize="5" aria-posinset="5" aria-checked="false" class="van-rate__item"><i data-score="5" class="van-icon van-icon-star-o van-rate__icon">
+          <!----></i></div>
+    </div>
+  </div>
+</div>
+`;

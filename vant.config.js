@@ -151,10 +151,10 @@ module.exports = {
               //   path: 'radio',
               //   title: 'Radio 单选框',
               // },
-              // {
-              //   path: 'rate',
-              //   title: 'Rate 评分',
-              // },
+              {
+                path: 'rate',
+                title: 'Rate 评分',
+              },
               // {
               //   path: 'search',
               //   title: 'Search 搜索',
@@ -485,10 +485,10 @@ module.exports = {
               //   path: 'radio',
               //   title: 'Radio',
               // },
-              // {
-              //   path: 'rate',
-              //   title: 'Rate',
-              // },
+              {
+                path: 'rate',
+                title: 'Rate',
+              },
               // {
               //   path: 'search',
               //   title: 'Search',
