@@ -233,10 +233,10 @@ module.exports = {
               //   path: 'count-down',
               //   title: 'CountDown 倒计时',
               // },
-              // {
-              //   path: 'divider',
-              //   title: 'Divider 分割线',
-              // },
+              {
+                path: 'divider',
+                title: 'Divider 分割线',
+              },
               {
                 path: 'empty',
                 title: 'Empty 空状态',
@@ -567,10 +567,10 @@ module.exports = {
               //   path: 'count-down',
               //   title: 'CountDown',
               // },
-              // {
-              //   path: 'divider',
-              //   title: 'Divider',
-              // },
+              {
+                path: 'divider',
+                title: 'Divider',
+              },
               {
                 path: 'empty',
                 title: 'Empty',
