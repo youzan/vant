@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calc width 1`] = `<div class="van-progress"><span class="van-progress__portion" style="width: 0px;"></span></div>`;
+
+exports[`calc width 2`] = `<div class="van-progress"><span class="van-progress__portion" style="width: 0px;"><span class="van-progress__pivot" style="left: 0px;">test</span></span></div>`;

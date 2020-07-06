@@ -257,10 +257,10 @@ module.exports = {
               //   path: 'notice-bar',
               //   title: 'NoticeBar 通知栏',
               // },
-              // {
-              //   path: 'progress',
-              //   title: 'Progress 进度条',
-              // },
+              {
+                path: 'progress',
+                title: 'Progress 进度条',
+              },
               {
                 path: 'skeleton',
                 title: 'Skeleton 骨架屏',
@@ -591,10 +591,10 @@ module.exports = {
               //   path: 'notice-bar',
               //   title: 'NoticeBar',
               // },
-              // {
-              //   path: 'progress',
-              //   title: 'Progress',
-              // },
+              {
+                path: 'progress',
+                title: 'Progress',
+              },
               {
                 path: 'skeleton',
                 title: 'Skeleton',
