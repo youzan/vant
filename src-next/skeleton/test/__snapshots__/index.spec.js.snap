@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`avatar shape 1`] = `
+<div class="van-skeleton van-skeleton--animate">
+  <div class="van-skeleton__avatar van-skeleton__avatar--square" style="width: 20px; height: 20px;"></div>
+  <div class="van-skeleton__content"></div>
+</div>
+`;
+
+exports[`disable animate 1`] = `
+<div class="van-skeleton van-skeleton--animate">
+  <div class="van-skeleton__content">
+    <div class="van-skeleton__row" style="width: 60%;"></div>
+  </div>
+</div>
+`;
+
+exports[`render chidren 1`] = `<div>Content</div>`;
+
+exports[`round prop 1`] = `
+<div class="van-skeleton van-skeleton--animate van-skeleton--round">
+  <div class="van-skeleton__avatar van-skeleton__avatar--round" style="width: 32px; height: 32px;"></div>
+  <div class="van-skeleton__content">
+    <h3 class="van-skeleton__title" style="width: 40%;"></h3>
+  </div>
+</div>
+`;
+
+exports[`row-width array 1`] = `
+<div class="van-skeleton van-skeleton--animate">
+  <div class="van-skeleton__content">
+    <div class="van-skeleton__row" style="width: 100%;"></div>
+    <div class="van-skeleton__row" style="width: 30px;"></div>
+    <div class="van-skeleton__row" style="width: 5rem;"></div>
+    <div class="van-skeleton__row"></div>
+  </div>
+</div>
+`;

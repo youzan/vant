@@ -261,10 +261,10 @@ module.exports = {
               //   path: 'progress',
               //   title: 'Progress 进度条',
               // },
-              // {
-              //   path: 'skeleton',
-              //   title: 'Skeleton 骨架屏',
-              // },
+              {
+                path: 'skeleton',
+                title: 'Skeleton 骨架屏',
+              },
               // {
               //   path: 'steps',
               //   title: 'Steps 步骤条',
@@ -595,10 +595,10 @@ module.exports = {
               //   path: 'progress',
               //   title: 'Progress',
               // },
-              // {
-              //   path: 'skeleton',
-              //   title: 'Skeleton',
-              // },
+              {
+                path: 'skeleton',
+                title: 'Skeleton',
+              },
               // {
               //   path: 'steps',
               //   title: 'Steps',

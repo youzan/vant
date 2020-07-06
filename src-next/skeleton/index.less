@@ -1,0 +1,62 @@
+@import '../style/var';
+
+.van-skeleton {
+  display: flex;
+  padding: 0 @padding-md;
+
+  &__avatar {
+    flex-shrink: 0;
+    margin-right: @padding-md;
+    background-color: @skeleton-avatar-background-color;
+
+    &--round {
+      border-radius: @border-radius-max;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__avatar + &__content {
+    padding-top: @padding-xs;
+  }
+
+  &__row,
+  &__title {
+    height: @skeleton-row-height;
+    background-color: @skeleton-row-background-color;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__row {
+    &:not(:first-child) {
+      margin-top: @skeleton-row-margin-top;
+    }
+  }
+
+  &__title + &__row {
+    margin-top: 20px;
+  }
+
+  &--animate {
+    animation: van-skeleton-blink @skeleton-animation-duration ease-in-out
+      infinite;
+  }
+
+  &--round {
+    .van-skeleton__row,
+    .van-skeleton__title {
+      border-radius: @border-radius-max;
+    }
+  }
+}
+
+@keyframes van-skeleton-blink {
+  50% {
+    opacity: 0.6;
+  }
+}
