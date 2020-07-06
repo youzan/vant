@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-cell-group>
-        <van-cell :title="t('cell')" :value="t('content')" />
+        <van-cell :title="t('cell')" :value="t('content')" @click="onClick" />
         <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
       </van-cell-group>
     </demo-block>
@@ -106,6 +106,12 @@ export default {
       vueRoute: 'Vue Router',
       useSlots: 'Use Slots',
       verticalCenter: 'Vertical center',
+    },
+  },
+
+  methods: {
+    onClick() {
+      console.log('click');
     },
   },
 };

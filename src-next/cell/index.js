@@ -14,6 +14,8 @@ export default createComponent({
     ...routeProps,
   },
 
+  emits: ['click'],
+
   setup(props, { slots, emit }) {
     return function () {
       const { icon, size, title, label, value, isLink } = props;

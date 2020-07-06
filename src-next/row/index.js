@@ -20,6 +20,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click'],
+
   computed: {
     spaces() {
       const gutter = Number(this.gutter);

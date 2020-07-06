@@ -39,12 +39,11 @@ export const popupMixinProps = {
 
 export function PopupMixin(options = {}) {
   return {
-    mixins: [
-      TouchMixin,
-      CloseOnPopstateMixin,
-    ],
+    mixins: [TouchMixin, CloseOnPopstateMixin],
 
     props: popupMixinProps,
+
+    emits: ['open', 'close', 'update:show', 'click-overlay'],
 
     data() {
       return {

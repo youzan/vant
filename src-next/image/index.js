@@ -31,6 +31,8 @@ export default createComponent({
     },
   },
 
+  emits: ['load', 'error', 'click'],
+
   data() {
     return {
       loading: true,

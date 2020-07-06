@@ -44,6 +44,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click', 'touchstart'],
+
   methods: {
     onClick() {
       if (!this.loading && !this.disabled) {

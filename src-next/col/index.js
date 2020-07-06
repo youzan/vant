@@ -15,6 +15,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click'],
+
   computed: {
     style() {
       const { index } = this;

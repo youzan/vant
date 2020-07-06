@@ -39,6 +39,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click', 'opened', 'closed'],
+
   beforeCreate() {
     const createEmitter = (eventName) => (event) =>
       this.$emit(eventName, event);

@@ -22,6 +22,8 @@ export default createComponent({
     },
   },
 
+  emits: ['close'],
+
   setup(props, { slots, emit }) {
     return function () {
       const { type, mark, plain, color, round, size } = props;
