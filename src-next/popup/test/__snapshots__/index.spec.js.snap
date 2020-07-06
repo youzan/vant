@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`close-icon prop 1`] = `
+<div class="van-popup van-popup--center" name="van-fade"><i role="button" tabindex="0" class="van-icon van-icon-success van-popup__close-icon van-popup__close-icon--top-right">
+    <!----></i></div>
+`;
+
+exports[`duration prop when position is center 1`] = `<div class="van-popup van-popup--center" style="animation-duration: 0.5s;" name="van-fade"></div>`;
+
+exports[`duration prop when position is top 1`] = `<div class="van-popup van-popup--top" style="transition-duration: 0.5s;" name="van-popup-slide-top"></div>`;
+
+exports[`reset z-index 1`] = `<div class="van-popup van-popup--center" name="van-fade"></div>`;
+
+exports[`round prop 1`] = `<div class="van-popup van-popup--round van-popup--center" name="van-fade"></div>`;

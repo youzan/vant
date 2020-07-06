@@ -98,10 +98,10 @@ module.exports = {
                 path: 'col',
                 title: 'Layout 布局',
               },
-              // {
-              //   path: 'popup',
-              //   title: 'Popup 弹出层',
-              // },
+              {
+                path: 'popup',
+                title: 'Popup 弹出层',
+              },
               {
                 path: 'style',
                 title: 'Style 内置样式',
@@ -200,10 +200,10 @@ module.exports = {
               //   path: 'notify',
               //   title: 'Notify 消息通知',
               // },
-              // {
-              //   path: 'overlay',
-              //   title: 'Overlay 遮罩层',
-              // },
+              {
+                path: 'overlay',
+                title: 'Overlay 遮罩层',
+              },
               // {
               //   path: 'pull-refresh',
               //   title: 'PullRefresh 下拉刷新',
@@ -534,10 +534,10 @@ module.exports = {
               //   path: 'notify',
               //   title: 'Notify',
               // },
-              // {
-              //   path: 'overlay',
-              //   title: 'Overlay',
-              // },
+              {
+                path: 'overlay',
+                title: 'Overlay',
+              },
               // {
               //   path: 'pull-refresh',
               //   title: 'PullRefresh',

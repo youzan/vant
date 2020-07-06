@@ -1,11 +1,5 @@
 // Context
 import { context } from './context';
-import {
-  openOverlay,
-  closeOverlay,
-  updateOverlay,
-  removeOverlay,
-} from './overlay';
 
 // Utils
 import { on, off, preventDefault } from '../../utils/dom/event';
@@ -19,7 +13,7 @@ import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
   // whether to show popup
-  value: Boolean,
+  show: Boolean,
   // whether to show overlay
   overlay: Boolean,
   // overlay custom style
@@ -47,20 +41,14 @@ export function PopupMixin(options = {}) {
     mixins: [
       TouchMixin,
       CloseOnPopstateMixin,
-      PortalMixin({
-        afterPortal() {
-          if (this.overlay) {
-            updateOverlay();
-          }
-        },
-      }),
+      PortalMixin({}),
     ],
 
     props: popupMixinProps,
 
     data() {
       return {
-        inited: this.value,
+        inited: this.show,
       };
     },
 
@@ -71,9 +59,9 @@ export function PopupMixin(options = {}) {
     },
 
     watch: {
-      value(val) {
+      show(val) {
         const type = val ? 'open' : 'close';
-        this.inited = this.inited || this.value;
+        this.inited = this.inited || this.show;
         this[type]();
 
         if (!options.skipToggleEvent) {
@@ -85,7 +73,7 @@ export function PopupMixin(options = {}) {
     },
 
     mounted() {
-      if (this.value) {
+      if (this.show) {
         this.open();
       }
     },
@@ -93,23 +81,22 @@ export function PopupMixin(options = {}) {
     /* istanbul ignore next */
     activated() {
       if (this.shouldReopen) {
-        this.$emit('input', true);
+        this.$emit('update:show', true);
         this.shouldReopen = false;
       }
     },
 
     beforeDestroy() {
       this.removeLock();
-      removeOverlay(this);
 
       if (this.getContainer) {
-        removeNode(this.$el);
+        removeNode(this.$refs.root);
       }
     },
 
     /* istanbul ignore next */
     deactivated() {
-      if (this.value) {
+      if (this.show) {
         this.close();
         this.shouldReopen = true;
       }
@@ -161,16 +148,15 @@ export function PopupMixin(options = {}) {
           return;
         }
 
-        closeOverlay(this);
         this.opened = false;
         this.removeLock();
-        this.$emit('input', false);
+        this.$emit('update:show', false);
       },
 
       onTouchMove(event) {
         this.touchMove(event);
         const direction = this.deltaY > 0 ? '10' : '01';
-        const el = getScroller(event.target, this.$el);
+        const el = getScroller(event.target, this.$refs.root);
         const { scrollHeight, offsetHeight, scrollTop } = el;
         let status = '11';
 
@@ -191,29 +177,32 @@ export function PopupMixin(options = {}) {
         }
       },
 
+      onClickOverlay() {
+        this.$emit('click-overlay');
+
+        if (this.closeOnClickOverlay) {
+          // TODO
+          // if (this.onClickOverlay) {
+          //   this.onClickOverlay();
+          // } else {
+          //   this.close();
+          // }
+          this.close();
+        }
+      },
+
       renderOverlay() {
-        if (this.$isServer || !this.value) {
+        if (this.$isServer || !this.show) {
           return;
         }
 
         this.$nextTick(() => {
           this.updateZIndex(this.overlay ? 1 : 0);
-
-          if (this.overlay) {
-            openOverlay(this, {
-              zIndex: context.zIndex++,
-              duration: this.duration,
-              className: this.overlayClass,
-              customStyle: this.overlayStyle,
-            });
-          } else {
-            closeOverlay(this);
-          }
         });
       },
 
       updateZIndex(value = 0) {
-        this.$el.style.zIndex = ++context.zIndex + value;
+        this.$refs.root.style.zIndex = ++context.zIndex + value;
       },
     },
   };

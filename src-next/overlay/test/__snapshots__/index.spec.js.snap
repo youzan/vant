@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class-name prop 1`] = `<div class="van-overlay my-overlay" name="van-fade"></div>`;
+
+exports[`custom style prop 1`] = `<div class="van-overlay" style="background-color: red;" name="van-fade"></div>`;
+
+exports[`default slot 1`] = `<div class="van-overlay" style="display: none;" name="van-fade">Custom Default</div>`;
+
+exports[`duration prop 1`] = `<div class="van-overlay" style="animation-duration: 1s;" name="van-fade"></div>`;
+
+exports[`z-index prop 1`] = `<div class="van-overlay" style="z-index: 99;" name="van-fade"></div>`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>展示弹出层</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>顶部弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>底部弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>左侧弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>右侧弹出</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>关闭图标</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>自定义图标</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>图标位置</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+    <!---->
+    <!---->
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>圆角弹窗</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <!---->
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>指定挂载节点</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+</div>
+`;
