@@ -286,10 +286,10 @@ module.exports = {
           {
             title: '导航组件',
             items: [
-              // {
-              //   path: 'grid',
-              //   title: 'Grid 宫格',
-              // },
+              {
+                path: 'grid',
+                title: 'Grid 宫格',
+              },
               // {
               //   path: 'index-bar',
               //   title: 'IndexBar 索引栏',
@@ -620,10 +620,10 @@ module.exports = {
           {
             title: 'Navigation Components',
             items: [
-              // {
-              //   path: 'grid',
-              //   title: 'Grid',
-              // },
+              {
+                path: 'grid',
+                title: 'Grid',
+              },
               // {
               //   path: 'index-bar',
               //   title: 'IndexBar',
