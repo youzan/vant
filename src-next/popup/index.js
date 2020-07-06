@@ -39,7 +39,15 @@ export default createComponent({
     },
   },
 
-  emits: ['click', 'opened', 'closed'],
+  emits: [
+    'open',
+    'close',
+    'click',
+    'opened',
+    'closed',
+    'update:show',
+    'click-overlay',
+  ],
 
   beforeCreate() {
     const createEmitter = (eventName) => (event) =>

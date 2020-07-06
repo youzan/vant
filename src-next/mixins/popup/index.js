@@ -43,8 +43,6 @@ export function PopupMixin(options = {}) {
 
     props: popupMixinProps,
 
-    emits: ['open', 'close', 'update:show', 'click-overlay'],
-
     data() {
       return {
         inited: this.show,

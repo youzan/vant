@@ -1,0 +1,89 @@
+@import '../style/var';
+@import '../style/mixins/hairline';
+
+.van-action-sheet {
+  max-height: @action-sheet-max-height;
+  color: @action-sheet-item-text-color;
+
+  &__item,
+  &__cancel {
+    display: block;
+    width: 100%;
+    height: @action-sheet-item-height;
+    padding: 0;
+    font-size: @action-sheet-item-font-size;
+    line-height: 20px;
+    background-color: @action-sheet-item-background;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+
+  &__item {
+    &--loading,
+    &--disabled {
+      color: @action-sheet-item-disabled-text-color;
+
+      &:active {
+        background-color: @action-sheet-item-background;
+      }
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &--loading {
+      cursor: default;
+    }
+  }
+
+  &__subname {
+    margin-left: @padding-base;
+    color: @action-sheet-subname-color;
+    font-size: @action-sheet-subname-font-size;
+  }
+
+  &__gap {
+    display: block;
+    height: @action-sheet-cancel-padding-top;
+    background-color: @action-sheet-cancel-padding-color;
+  }
+
+  &__header {
+    font-weight: @font-weight-bold;
+    font-size: @action-sheet-header-font-size;
+    line-height: @action-sheet-header-height;
+    text-align: center;
+  }
+
+  &__description {
+    position: relative;
+    padding: 20px @padding-md;
+    color: @action-sheet-description-color;
+    font-size: @action-sheet-description-font-size;
+    line-height: @action-sheet-description-line-height;
+    text-align: center;
+
+    &::after {
+      .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: @action-sheet-close-icon-padding;
+    color: @action-sheet-close-icon-color;
+    font-size: @action-sheet-close-icon-size;
+    line-height: inherit;
+
+    &:active {
+      color: @action-sheet-close-icon-active-color;
+    }
+  }
+}
