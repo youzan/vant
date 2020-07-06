@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inactive-color prop 1`] = `
+<div role="switch" aria-checked="false" class="van-switch" style="background-color: black;">
+  <div class="van-switch__node"></div>
+</div>
+`;
+
+exports[`size prop 1`] = `
+<div role="switch" aria-checked="false" class="van-switch" style="font-size: 20px;">
+  <div class="van-switch__node"></div>
+</div>
+`;

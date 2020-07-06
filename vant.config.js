@@ -167,10 +167,10 @@ module.exports = {
               //   path: 'stepper',
               //   title: 'Stepper 步进器',
               // },
-              // {
-              //   path: 'switch',
-              //   title: 'Switch 开关',
-              // },
+              {
+                path: 'switch',
+                title: 'Switch 开关',
+              },
               // {
               //   path: 'uploader',
               //   title: 'Uploader 文件上传',
@@ -501,10 +501,10 @@ module.exports = {
               //   path: 'stepper',
               //   title: 'Stepper',
               // },
-              // {
-              //   path: 'switch',
-              //   title: 'Switch',
-              // },
+              {
+                path: 'switch',
+                title: 'Switch',
+              },
               // {
               //   path: 'uploader',
               //   title: 'Uploader',
