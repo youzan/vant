@@ -38,6 +38,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'update:modelValue'],
+
   computed: {
     count() {
       const count =
