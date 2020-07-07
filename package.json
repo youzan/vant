@@ -40,8 +40,12 @@
     "url": "git@github.com:youzan/vant.git"
   },
   "keywords": [
+    "ui",
     "vue",
-    "component"
+    "frontend",
+    "mobile ui",
+    "component",
+    "components"
   ],
   "author": "youzanfe",
   "license": "MIT",
