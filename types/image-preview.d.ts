@@ -20,8 +20,8 @@ export type ImagePreviewOptions =
       closeOnPopstate?: boolean;
       closeIconPosition?: string;
       getContainer?: string | (() => Element);
-      onClose?: () => void;
-      onChange?: (index: number) => void;
+      onClose?(): void;
+      onChange?(index: number): void;
       swipeTo?(index: number, options?: SwipeToOptions): void;
     };
 
