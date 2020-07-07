@@ -69,7 +69,7 @@ export default createComponent({
   created() {
     const { $Lazyload } = this;
 
-    if ($Lazyload) {
+    if ($Lazyload & !this.$isServer) {
       $Lazyload.$on('loaded', this.onLazyLoaded);
       $Lazyload.$on('error', this.onLazyLoadError);
     }
