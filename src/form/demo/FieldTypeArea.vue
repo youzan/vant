@@ -10,6 +10,7 @@
   >
     <van-popup
       v-model="showArea"
+      round
       slot="extra"
       position="bottom"
       get-container="body"
