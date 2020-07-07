@@ -30,6 +30,14 @@ export function ChildrenMixin(parent, options = {}) {
       },
     },
 
+    watch: {
+      disableBindRelation(val) {
+        if (!val) {
+          this.bindRelation();
+        }
+      },
+    },
+
     mounted() {
       this.bindRelation();
     },
