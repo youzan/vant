@@ -1,10 +1,8 @@
-function length2(int) {
-  return int > 9 ? `${int}` : `0${int}`;
-}
+import { padZero } from '../../utils/format/string';
 
 // 字符串转 Date
 // 只处理 YYYY-MM-DD 或者 YYYY-MM-DD HH:MM 格式
-export function string2Date(timeString) {
+export function stringToDate(timeString) {
   if (!timeString) {
     return null;
   }
@@ -13,18 +11,18 @@ export function string2Date(timeString) {
 
 // Date 转字符串
 // type: date or datetime
-export function date2String(date, type = 'date') {
+export function dateToString(date, type = 'date') {
   if (!date) {
     return '';
   }
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  let timeString = `${year}-${length2(month)}-${length2(day)}`;
+  let timeString = `${year}-${padZero(month)}-${padZero(day)}`;
   if (type === 'datetime') {
     const hours = date.getHours();
     const minute = date.getMinutes();
-    timeString += ` ${length2(hours)}:${length2(minute)}`;
+    timeString += ` ${padZero(hours)}:${padZero(minute)}`;
   }
   return timeString;
 }

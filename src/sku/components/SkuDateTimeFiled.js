@@ -1,6 +1,6 @@
 // Utils
 import { createNamespace } from '../../utils';
-import { string2Date, date2String } from '../utils/time-helper';
+import { stringToDate, dateToString } from '../utils/time-helper';
 
 // Components
 import Popup from '../../popup';
@@ -36,7 +36,7 @@ export default createComponent({
           break;
         case 'date':
         case 'datetime':
-          this.currentDate = string2Date(val) || new Date();
+          this.currentDate = stringToDate(val) || new Date();
           break;
       }
     },
@@ -49,7 +49,7 @@ export default createComponent({
     onConfirm(val) {
       let data = val;
       if (this.type !== 'time') {
-        data = date2String(val, this.type);
+        data = dateToString(val, this.type);
       }
       this.$emit('input', data);
       this.showDatePicker = false;
@@ -73,6 +73,7 @@ export default createComponent({
       >
         <Popup
           vModel={this.showDatePicker}
+          round
           slot="extra"
           position="bottom"
           getContainer="body"

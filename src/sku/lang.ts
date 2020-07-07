@@ -26,7 +26,8 @@ export default {
     vanSkuImgUploader: {
       oversize: (maxSize: number) =>
         `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
-      fail: '上传失败<br />重新上传',
+      fail: '上传失败',
+      uploading: '上传中...',
     },
     vanSkuStepper: {
       quotaLimit: (quota: number) => `限购${quota}件`,
