@@ -168,6 +168,7 @@ export default createComponent({
         return;
       }
 
+      this.transitionEndTrigger = null;
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
     },
