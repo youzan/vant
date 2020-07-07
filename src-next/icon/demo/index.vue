@@ -83,7 +83,7 @@
 
 <script>
 import icons from '@vant/icons';
-import { BLUE, GREEN } from '../../../src/utils/constant';
+import { BLUE, GREEN } from '../../utils/constant';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str) {

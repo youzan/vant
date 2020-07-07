@@ -1,6 +1,5 @@
 // Utils
-import { isDef } from '../../src/utils';
-import { createNamespace } from '../utils/create';
+import { isDef, createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('info');
 

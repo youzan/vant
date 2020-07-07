@@ -1,4 +1,4 @@
-import { on, off } from '../../src/utils/dom/event';
+import { on, off } from '../utils/dom/event';
 import {
   Ref,
   watch,

@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { deepAssign } from '../../src/utils/deep-assign';
+import { deepAssign } from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
 type Messages = Record<string, Record<string, any>>;

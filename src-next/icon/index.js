@@ -1,6 +1,5 @@
 // Utils
-import { addUnit } from '../../src/utils';
-import { createNamespace } from '../utils/create';
+import { addUnit, createNamespace } from '../utils';
 
 // Components
 import Info from '../info';

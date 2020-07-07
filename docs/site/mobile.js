@@ -1,7 +1,7 @@
 import Locale from '../../src-next/locale';
 import enUS from '../../src-next/locale/lang/en-US';
-import { get } from '../../src/utils';
-import { camelize } from '../../src/utils/format/string';
+import { get } from '../../src-next/utils';
+import { camelize } from '../../src-next/utils/format/string';
 // import Lazyload from '../../src/lazyload';
 
 const { app } = window;
