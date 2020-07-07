@@ -4,7 +4,9 @@ import { createNamespace } from '../../utils';
 // Components
 import Uploader from '../../uploader';
 
-const [createComponent, bem, t] = createNamespace('sku-img-uploader');
+const namespace = createNamespace('sku-img-uploader');
+const createComponent = namespace[0];
+const t = namespace[2];
 
 export default createComponent({
   props: {

@@ -7,7 +7,7 @@ import Popup from '../../popup';
 import DateTimePicker from '../../datetime-picker';
 import Field from '../../field';
 
-const [createComponent, bem, t] = createNamespace('sku-datetime-filed');
+const [createComponent] = createNamespace('sku-datetime-filed');
 
 export default createComponent({
   props: {
