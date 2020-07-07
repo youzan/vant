@@ -35,7 +35,7 @@ export default createComponent({
   methods: {
     afterReadFile(file) {
       file.status = 'uploading';
-      file.message = '上传中...';
+      file.message = t('uploading');
       this.uploadImg(file.file, file.content)
         .then((img) => {
           file.status = 'done';
@@ -43,7 +43,7 @@ export default createComponent({
         })
         .catch(() => {
           file.status = 'failed';
-          file.message = '上传失败';
+          file.message = t('fail');
         });
     },
 
