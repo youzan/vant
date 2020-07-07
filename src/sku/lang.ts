@@ -59,5 +59,19 @@ export default {
     vanSkuRow: {
       multiple: '可多选',
     },
+    vanSkuDatetimeField: {
+      title: {
+        date: '选择年月日',
+        time: '选择时间',
+        datetime: '选择日期时间',
+      },
+      format: {
+        year: '年',
+        month: '月',
+        day: '日',
+        hour: '时',
+        minute: '分',
+      },
+    },
   },
 };

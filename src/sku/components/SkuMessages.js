@@ -7,7 +7,7 @@ import { isNumeric } from '../../utils/validate/number';
 import Cell from '../../cell';
 import Field from '../../field';
 import SkuImgUploader from './SkuImgUploader';
-import SkuDateTimeFiled from './SkuDateTimeFiled';
+import SkuDateTimeField from './SkuDateTimeField';
 
 const [createComponent, bem, t] = createNamespace('sku-messages');
 
@@ -136,7 +136,7 @@ export default createComponent({
       const isDateOrTime = ['date', 'time'].indexOf(message.type) > -1;
       if (isDateOrTime) {
         return (
-          <SkuDateTimeFiled
+          <SkuDateTimeField
             vModel={this.messageValues[index].value}
             label={message.name}
             key={`${this.goodsId}-${index}`}
