@@ -1,4 +1,4 @@
-import { createNamespace, isDef, addUnit } from '../utils';
+import { createNamespace, isDef, addUnit, inBrowser } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
@@ -69,7 +69,7 @@ export default createComponent({
   created() {
     const { $Lazyload } = this;
 
-    if ($Lazyload) {
+    if ($Lazyload && inBrowser) {
       $Lazyload.$on('loaded', this.onLazyLoaded);
       $Lazyload.$on('error', this.onLazyLoadError);
     }
