@@ -90,11 +90,14 @@ export default createComponent({
     },
   },
 
-  mounted() {
-    this.height = this.$el.getBoundingClientRect().height;
-  },
-
   methods: {
+    getHeight() {
+      if (!this.height) {
+        this.height = this.$el.getBoundingClientRect().height;
+      }
+      return this.height;
+    },
+
     scrollIntoView() {
       if (this.showSubtitle) {
         this.$refs.days.scrollIntoView();
