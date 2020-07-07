@@ -7,7 +7,9 @@ import Popup from '../../popup';
 import DateTimePicker from '../../datetime-picker';
 import Field from '../../field';
 
-const [createComponent] = createNamespace('sku-datetime-filed');
+const namespace = createNamespace('sku-datetime-field');
+const createComponent = namespace[0];
+const t = namespace[2];
 
 export default createComponent({
   props: {
@@ -42,6 +44,12 @@ export default createComponent({
     },
   },
 
+  computed: {
+    title() {
+      return t(`title.${this.type}`);
+    },
+  },
+
   methods: {
     onClick() {
       this.showDatePicker = true;
@@ -56,6 +64,10 @@ export default createComponent({
     },
     onCancel() {
       this.showDatePicker = false;
+    },
+    formatter(type, val) {
+      const word = t(`format.${type}`);
+      return `${val}${word}`;
     },
   },
 
@@ -80,7 +92,9 @@ export default createComponent({
         >
           <DateTimePicker
             type={this.type}
+            title={this.title}
             value={this.currentDate}
+            formatter={this.formatter}
             onCancel={this.onCancel}
             onConfirm={this.onConfirm}
           />
