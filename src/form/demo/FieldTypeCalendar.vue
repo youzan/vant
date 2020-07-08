@@ -10,6 +10,7 @@
   >
     <van-calendar
       v-model="showCalendar"
+      round
       slot="extra"
       get-container="body"
       @confirm="onConfirm"

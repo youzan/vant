@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.9.0",
+  "version": "2.9.1-beta.1",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -40,8 +40,12 @@
     "url": "git@github.com:youzan/vant.git"
   },
   "keywords": [
+    "ui",
     "vue",
-    "component"
+    "frontend",
+    "mobile ui",
+    "component",
+    "components"
   ],
   "author": "youzanfe",
   "license": "MIT",

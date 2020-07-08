@@ -10,6 +10,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.9.1-beta.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1-beta.1)
+
+`2020-07-07`
+
+**Feature**
+
+- Field: 新增 clear-trigger 属性 [#6699](https://github.com/youzan/vant/issues/6699)
+- Search: 新增 clear-trigger 属性 [#6700](https://github.com/youzan/vant/issues/6700)
+- Uploader: 新增 preview-cover 插槽 [#6707](https://github.com/youzan/vant/issues/6707)
+- Sku: 优化留言栏时间选择交互 [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
+
+**Bug Fixes**
+
+- Calendar: 修复个别情况下日历标题不更新的问题 [#6723](https://github.com/youzan/vant/issues/6723)
+- Checkbox: 修复动态设置 bind-group 时不生效的问题 [#6730](https://github.com/youzan/vant/issues/6730)
+- Image: 修复 SSR 时 LazyLoad 属性存在内存泄露的问题 [#6721](https://github.com/youzan/vant/issues/6721)
+- ImagePreview: 修复 swipeTo 方法类型定义错误 [#6727](https://github.com/youzan/vant/issues/6727)
+- Picker: 修复惯性滚动过程中点击选项会导致选中结果错误的问题 [#6724](https://github.com/youzan/vant/issues/6724)
+- Popup: 修复 lock-scroll 在个别场景下不生效的问题 [#6698](https://github.com/youzan/vant/issues/6698)
+
 ### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
 
 `2020-07-03`

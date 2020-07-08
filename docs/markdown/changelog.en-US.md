@@ -10,6 +10,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.9.1-beta.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1-beta.1)
+
+`2020-07-07`
+
+**Feature**
+
+- Field: add clear-trigger prop [#6699](https://github.com/youzan/vant/issues/6699)
+- Search: add clear-trigger prop [#6700](https://github.com/youzan/vant/issues/6700)
+- Uploader: add preview-cover slot [#6707](https://github.com/youzan/vant/issues/6707)
+- Sku: improve message datetime picker [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
+
+**Bug Fixes**
+
+- Calendar: subtitle not updated in some cases [#6723](https://github.com/youzan/vant/issues/6723)
+- Checkbox: dynamic bind group [#6730](https://github.com/youzan/vant/issues/6730)
+- Image: memory leak during SSR [#6721](https://github.com/youzan/vant/issues/6721)
+- ImagePreview: swipeTo type should be optional [#6727](https://github.com/youzan/vant/issues/6727)
+- Picker: click during momentum case incorrect result [#6724](https://github.com/youzan/vant/issues/6724)
+- Popup: lock-scroll not work in some cases [#6698](https://github.com/youzan/vant/issues/6698)
+
 ### [v2.9.0](https://github.com/youzan/vant/compare/v2.8.7...v2.9.0)
 
 `2020-07-03`
