@@ -52,6 +52,16 @@
       />
     </demo-block>
 
+    <demo-block card :title="t('datehourType')">
+      <van-datetime-picker
+        v-model="value.datehour"
+        type="datehour"
+        :title="t('datehourType')"
+        :min-date="minDate"
+        :max-date="maxDate"
+      />
+    </demo-block>
+
     <demo-block card :title="t('optionFilter')">
       <van-datetime-picker
         v-model="value.optionFilter"
@@ -73,6 +83,7 @@ export default {
       timeType: '选择时间',
       dateType: '选择年月日',
       datetimeType: '选择完整时间',
+      datehourType: '选择年月日小时',
       monthDayType: '选择月日',
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
@@ -84,6 +95,7 @@ export default {
       timeType: 'Choose Time',
       dateType: 'Choose Date',
       datetimeType: 'Choose DateTime',
+      datehourType: 'Choose DateHour',
       monthDayType: 'Choose Month-Day',
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
@@ -98,6 +110,7 @@ export default {
         date: null,
         time: '12:00',
         datetime: new Date(2020, 0, 1),
+        datehour: new Date(2020, 0, 1),
         monthDay: new Date(2020, 0, 1),
         yearMonth: new Date(2020, 0, 1),
         optionFilter: '12:00',

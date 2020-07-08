@@ -165,6 +165,32 @@ export default {
 };
 ```
 
+### 选择年月日小时
+
+将 type 设置为 `datetime` 即可选择完整时间，包括年月日和小时、分钟。
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="datehour"
+  title="选择完整时间"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
+    };
+  },
+};
+```
+
 ### 选项过滤器
 
 通过传入`filter`函数，可以对选项数组进行过滤，实现自定义时间间隔
@@ -197,7 +223,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 时间类型，可选值为 `date` `time` <br> `year-month` `month-day` | _string_ | `datetime` |
+| type | 时间类型，可选值为 `date` `time` <br> `year-month` `month-day` `datehour` | _string_ | `datetime` |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

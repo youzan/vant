@@ -95,6 +95,10 @@ export default createComponent({
         result = result.slice(1, 3);
       }
 
+      if (this.type === 'datehour') {
+        result = result.slice(0, 4);
+      }
+
       return result;
     },
   },
@@ -176,6 +180,10 @@ export default createComponent({
       let hour = 0;
       let minute = 0;
 
+      if (type === 'datehour') {
+        hour = getValue(3);
+      }
+
       if (type === 'datetime') {
         hour = getValue(3);
         minute = getValue(4);
@@ -210,6 +218,12 @@ export default createComponent({
         values.push(
           formatter('hour', padZero(value.getHours())),
           formatter('minute', padZero(value.getMinutes()))
+        );
+      }
+
+      if (this.type === 'datehour') {
+        values.push(
+          formatter('hour', padZero(value.getHours()))
         );
       }
 
