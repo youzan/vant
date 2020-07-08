@@ -41,7 +41,10 @@ function PasswordInput(
 
     Points.push(
       <li
-        class={{ [BORDER_LEFT]: showBorder, [bem('focus')]: showCursor }}
+        class={[
+          { [BORDER_LEFT]: showBorder },
+          { 'van-password-input__item--focus': showCursor },
+        ]}
         style={style}
       >
         {mask ? (
