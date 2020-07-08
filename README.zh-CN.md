@@ -1,7 +1,10 @@
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
-<h3 align="center" style="margin: 30px 0 35px;">轻量、可靠的移动端 Vue 组件库</h3>
+
+<h1 align="center">Vant</h1>
+
+<p align="center">轻量、可靠的移动端 Vue 组件库</p>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />

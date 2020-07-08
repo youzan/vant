@@ -2,7 +2,9 @@
     <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<h3 align="center" style="margin: 30px 0 35px;">Mobile UI Components built on Vue</h3>
+<h1 align="center">Vant</h1>
+
+<p align="center">Mobile UI Components built on Vue</p>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
