@@ -61,6 +61,7 @@ export default createComponent({
   data() {
     return {
       activeAnchorIndex: null,
+      activeIndexTip: false,
     };
   },
 
@@ -80,6 +81,12 @@ export default createComponent({
           color: highlightColor,
         };
       }
+    },
+    indexTipStyle() {
+      return {
+        display:
+          this.activeAnchorIndex && this.activeIndexTip ? 'inline' : 'none',
+      };
     },
   },
 
@@ -174,7 +181,7 @@ export default createComponent({
 
     onTouchMove(event) {
       this.touchMove(event);
-
+      this.activeIndexTip = true;
       if (this.direction === 'vertical') {
         preventDefault(event);
 
@@ -214,6 +221,7 @@ export default createComponent({
 
     onTouchEnd() {
       this.active = null;
+      this.activeIndexTip = false;
     },
   },
 
@@ -232,6 +240,12 @@ export default createComponent({
       );
     });
 
+    const indexTip = (
+      <span class={bem('indexTip')} style={this.indexTipStyle}>
+        {this.touchActiveIndex}
+      </span>
+    );
+
     return (
       <div class={bem()}>
         <div
@@ -246,6 +260,7 @@ export default createComponent({
           {Indexes}
         </div>
         {this.slots('default')}
+        <div>{indexTip}</div>
       </div>
     );
   },

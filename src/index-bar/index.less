@@ -24,4 +24,19 @@
       color: @index-bar-index-active-color;
     }
   }
+  &__indexTip {
+    position: fixed;
+    padding: @padding-md;
+    color: @white;
+    font-size: @font-size-lg;
+    font-weight: @font-weight-bold;
+    top: 50%;
+    right: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    cursor: pointer;
+    user-select: none;
+    background-color: @gray-8;
+  }
 }
