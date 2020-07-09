@@ -243,7 +243,7 @@ Use `input-align` prop to align the input value.
 | format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
-| label-width | Label width | _number \| string_ | `6em` |
+| label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
