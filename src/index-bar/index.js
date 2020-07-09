@@ -260,7 +260,7 @@ export default createComponent({
           {Indexes}
         </div>
         {this.slots('default')}
-        <div>{indexTip}</div>
+        {indexTip}
       </div>
     );
   },
