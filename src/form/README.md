@@ -424,7 +424,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| label-width | Field label width | _number \| string_ | `6em` |
+| label-width | Field label width | _number \| string_ | `6.2em` |
 | label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
