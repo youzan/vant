@@ -43,7 +43,7 @@ function PasswordInput(
       <li
         class={[
           { [BORDER_LEFT]: showBorder },
-          { 'van-password-input__item--focus': showCursor },
+          bem('item', { focus: showCursor }),
         ]}
         style={style}
       >
