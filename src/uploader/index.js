@@ -308,14 +308,15 @@ export default createComponent({
       const showDelete = item.status !== 'uploading' && this.deletable;
 
       const DeleteIcon = showDelete && (
-        <Icon
-          name="clear"
+        <div
           class={bem('preview-delete')}
           onClick={(event) => {
             event.stopPropagation();
             this.onDelete(item, index);
           }}
-        />
+        >
+          <Icon name="cross" class={bem('preview-delete-icon')} />
+        </div>
       );
 
       const PreviewCoverContent = this.slots('preview-cover', item);

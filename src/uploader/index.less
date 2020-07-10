@@ -74,12 +74,22 @@
 
     &-delete {
       position: absolute;
-      top: -8px;
-      right: -8px;
-      color: @uploader-delete-color;
-      font-size: @uploader-delete-icon-size;
+      top: 0;
+      right: 0;
+      width: @uploader-delete-icon-size;
+      height: @uploader-delete-icon-size;
       background-color: @uploader-delete-background-color;
-      border-radius: 100%;
+      border-radius: 0 0 0 12px;
+
+      &-icon {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        color: #fff;
+        color: @uploader-delete-color;
+        font-size: 16px;
+        transform: scale(0.5);
+      }
     }
 
     &-cover {
