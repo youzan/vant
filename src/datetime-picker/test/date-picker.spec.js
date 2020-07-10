@@ -132,7 +132,6 @@ test('datehour type', async () => {
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  console.log(wrapper.find('.van-picker__confirm'))
   expect(wrapper.emitted('confirm')[0][0].getHours()).toEqual(0);
 
   triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, -300);
