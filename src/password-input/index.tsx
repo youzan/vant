@@ -41,10 +41,7 @@ function PasswordInput(
 
     Points.push(
       <li
-        class={[
-          { [BORDER_LEFT]: showBorder },
-          bem('item', { focus: showCursor }),
-        ]}
+        class={[{ [BORDER_LEFT]: showBorder }, bem('item', { focus: showCursor })]}
         style={style}
       >
         {mask ? (
