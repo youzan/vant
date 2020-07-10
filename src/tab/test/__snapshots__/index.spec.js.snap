@@ -105,8 +105,8 @@ exports[`dot prop 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text-wrapper"><span class="van-tab__text van-tab__text--ellipsis"></span>
-        <div class="van-info van-info--dot"></div>
-        </span></div>
+        <div class="van-info van-info--dot"></div></span>
+      </div>
       <div class="van-tabs__line"></div>
     </div>
   </div>
@@ -121,8 +121,8 @@ exports[`info prop 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text-wrapper"><span class="van-tab__text van-tab__text--ellipsis"></span>
-        <div class="van-info">10</div>
-        </span></div>
+        <div class="van-info">10</div></span>
+      </div>
       <div class="van-tabs__line"></div>
     </div>
   </div>

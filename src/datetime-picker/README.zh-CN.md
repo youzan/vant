@@ -167,13 +167,13 @@ export default {
 
 ### 选择年月日小时
 
-将 type 设置为 `datetime` 即可选择完整时间，包括年月日和小时、分钟。
+将 type 设置为 `datehour` 即可选择日期和小时，包括年月日和小时。
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="datehour"
-  title="选择完整时间"
+  title="选择年月日小时"
   :min-date="minDate"
   :max-date="maxDate"
 />
