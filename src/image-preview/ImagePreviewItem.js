@@ -67,11 +67,11 @@ export default {
     },
 
     maxMoveX() {
-      const displayWidth = this.vertical
-        ? this.windowHeight / this.imageRatio
-        : this.windowWidth;
+      if (this.imageRatio) {
+        const displayWidth = this.vertical
+          ? this.windowHeight / this.imageRatio
+          : this.windowWidth;
 
-      if (displayWidth) {
         return Math.max(0, (this.scale * displayWidth - this.windowWidth) / 2);
       }
 
@@ -79,11 +79,11 @@ export default {
     },
 
     maxMoveY() {
-      const displayHeight = this.vertical
-        ? this.windowHeight
-        : this.windowWidth * this.imageRatio;
+      if (this.imageRatio) {
+        const displayHeight = this.vertical
+          ? this.windowHeight
+          : this.windowWidth * this.imageRatio;
 
-      if (displayHeight) {
         return Math.max(
           0,
           (this.scale * displayHeight - this.windowHeight) / 2
