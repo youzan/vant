@@ -155,6 +155,7 @@ export default {
 | show-plus `v2.1.2` | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus `v2.1.2` | 是否显示减少按钮 | _boolean_ | `true` |
 | long-press `v2.4.3` | 是否开启长按手势 | _boolean_ | `true` |
+| allow-empty `v2.9.1` | 是否允许输入的值为空 | _boolean_ | `false` |
 
 ### Events
 

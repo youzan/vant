@@ -129,6 +129,7 @@ export default {
 | show-plus `v2.1.2` | Whether to show plus button | _boolean_ | `true` |
 | show-minus `v2.1.2` | Whether to show minus button | _boolean_ | `true` |
 | long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |
+| allow-empty `v2.9.1` | Whether to allow the input to be empty | _boolean_ | `false` |
 
 ### Events
 
