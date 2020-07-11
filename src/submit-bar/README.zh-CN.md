@@ -70,6 +70,7 @@ Vue.use(SubmitBar);
 | text-align `v2.3.0` | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
 | button-text | 按钮文字 | _string_ | - |
 | button-type | 按钮类型 | _string_ | `danger` |
+| button-color `v2.9.1` | 自定义按钮颜色 | _string_ | - |
 | tip | 提示文案 | _string_ | - |
 | tip-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | currency | 货币符号 | _string_ | `¥` |
