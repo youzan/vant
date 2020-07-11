@@ -125,7 +125,7 @@ export default {
     return {
       show: false,
       actions: [
-        { name: '着色选项', color: '#07c160' },
+        { name: '着色选项', color: '#ee0a24' },
         { name: '禁用选项', disabled: true },
         { name: '加载选项', loading: true },
       ],
