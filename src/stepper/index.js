@@ -28,6 +28,7 @@ export default createComponent({
     theme: String,
     integer: Boolean,
     disabled: Boolean,
+    allowEmpty: Boolean,
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
@@ -154,6 +155,10 @@ export default createComponent({
     },
 
     format(value) {
+      if (this.allowEmpty && value === '') {
+        return value;
+      }
+
       value = this.formatNumber(value);
 
       // format range
