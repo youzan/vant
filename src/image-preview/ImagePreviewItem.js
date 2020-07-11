@@ -27,25 +27,30 @@ export default {
     active: Number,
     minZoom: [Number, String],
     maxZoom: [Number, String],
+    windowWidth: Number,
+    windowHeight: Number,
   },
 
   data() {
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-
     return {
       scale: 1,
       moveX: 0,
       moveY: 0,
       moving: false,
       zooming: false,
-      vertical: false,
+      imageRatio: 0,
       displayWidth: 0,
       displayHeight: 0,
     };
   },
 
   computed: {
+    vertical() {
+      const { windowWidth, windowHeight } = this;
+      const windowRatio = windowHeight / windowWidth;
+      return this.imageRatio > windowRatio;
+    },
+
     imageStyle() {
       const { scale } = this;
       const style = {
@@ -62,22 +67,29 @@ export default {
     },
 
     maxMoveX() {
-      if (this.displayWidth) {
-        return Math.max(
-          0,
-          (this.scale * this.displayWidth - this.windowWidth) / 2
-        );
+      const displayWidth = this.vertical
+        ? this.windowHeight / this.imageRatio
+        : this.windowWidth;
+
+      if (displayWidth) {
+        return Math.max(0, (this.scale * displayWidth - this.windowWidth) / 2);
       }
+
       return 0;
     },
 
     maxMoveY() {
-      if (this.displayHeight) {
+      const displayHeight = this.vertical
+        ? this.windowHeight
+        : this.windowWidth * this.imageRatio;
+
+      if (displayHeight) {
         return Math.max(
           0,
-          (this.scale * this.displayHeight - this.windowHeight) / 2
+          (this.scale * displayHeight - this.windowHeight) / 2
         );
       }
+
       return 0;
     },
   },
@@ -225,20 +237,8 @@ export default {
     },
 
     onLoad(event) {
-      const { windowWidth, windowHeight } = this;
       const { naturalWidth, naturalHeight } = event.target;
-      const windowRatio = windowHeight / windowWidth;
-      const imageRatio = naturalHeight / naturalWidth;
-
-      this.vertical = imageRatio > windowRatio;
-
-      if (this.vertical) {
-        this.displayWidth = windowHeight / imageRatio;
-        this.displayHeight = windowHeight;
-      } else {
-        this.displayWidth = windowWidth;
-        this.displayHeight = windowWidth * imageRatio;
-      }
+      this.imageRatio = naturalHeight / naturalWidth;
     },
   },
 
