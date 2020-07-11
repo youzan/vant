@@ -388,7 +388,7 @@ test('placeholder prop', () => {
   expect(wrapper.find('.van-stepper__input')).toMatchSnapshot();
 });
 
-test.only('allow-empty prop', () => {
+test('allow-empty prop', () => {
   const wrapper = mount(Stepper, {
     propsData: {
       value: '',
