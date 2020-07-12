@@ -2,7 +2,7 @@
  * requestAnimationFrame polyfill
  */
 
-import { isServer } from '..';
+import { inBrowser } from '..';
 
 let prev = Date.now();
 
@@ -16,7 +16,7 @@ function fallback(fn: FrameRequestCallback): number {
 }
 
 /* istanbul ignore next */
-const root = (isServer ? global : window) as Window;
+const root = (inBrowser ? window : global) as Window;
 
 /* istanbul ignore next */
 const iRaf = root.requestAnimationFrame || fallback;

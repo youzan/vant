@@ -221,10 +221,10 @@ module.exports = {
           {
             title: '展示组件',
             items: [
-              // {
-              //   path: 'circle',
-              //   title: 'Circle 环形进度条',
-              // },
+              {
+                path: 'circle',
+                title: 'Circle 环形进度条',
+              },
               // {
               //   path: 'collapse',
               //   title: 'Collapse 折叠面板',
@@ -555,10 +555,10 @@ module.exports = {
           {
             title: 'Display Components',
             items: [
-              // {
-              //   path: 'circle',
-              //   title: 'Circle',
-              // },
+              {
+                path: 'circle',
+                title: 'Circle',
+              },
               // {
               //   path: 'collapse',
               //   title: 'Collapse',
