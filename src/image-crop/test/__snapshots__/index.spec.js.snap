@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render cancel、rotate、submit slot 1`] = `<div class="van-image-crop"><img src="" class="van-image-crop__show-img"><input accept="image/*" type="file" class="van-image-crop__input-file"></div>`;
+
+exports[`render delete、cancel、rotate、submit slot 1`] = `<div class="van-image-crop"><img src="" class="van-image-crop__show-img"><input accept="image/*" type="file" class="van-image-crop__input-file"></div>`;
