@@ -594,7 +594,7 @@ export default createComponent({
             </div>
           </div>
           <div class={bem('handle')}>
-            <div class={bem('back')} onClick={this.onCancel}>
+            <div class={bem('cancel')} onClick={this.onCancel}>
               {this.$slots.cancel || '取消'}
             </div>
             <div class={bem('rotate')} onClick={this.onRotate}>
