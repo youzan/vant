@@ -122,6 +122,10 @@ export default createComponent({
         );
       }
     },
+
+    onClickOverlay() {
+      this.$emit('click-overlay');
+    },
   },
 
   render() {
@@ -140,6 +144,7 @@ export default createComponent({
         closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onInput={this.toggle}
+        onClick-overlay={this.onClickOverlay}
       >
         {this.genHeader()}
         {this.genRows()}

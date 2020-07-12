@@ -137,6 +137,7 @@ export default {
 | --- | --- | --- |
 | select | Triggered when click option | _option: Option, index: number_ |
 | cancel | Triggered when click cancel button | - |
+| click-overlay `v2.9.1` | Triggered when click overlay | - |
 
 ### Slots
 
