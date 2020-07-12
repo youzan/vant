@@ -1,0 +1,51 @@
+@import '../style/var';
+
+.van-tree-select {
+  position: relative;
+  display: flex;
+  font-size: @tree-select-font-size;
+  user-select: none;
+
+  &__nav {
+    flex: 1;
+    overflow-y: auto;
+    background-color: @tree-select-nav-background-color;
+    -webkit-overflow-scrolling: touch;
+
+    &-item {
+      padding: @tree-select-nav-item-padding;
+    }
+  }
+
+  &__content {
+    flex: 2;
+    overflow-y: auto;
+    background-color: @tree-select-content-background-color;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item {
+    position: relative;
+    padding: 0 32px 0 @padding-md;
+    font-weight: @font-weight-bold;
+    line-height: @tree-select-item-height;
+    cursor: pointer;
+
+    &--active {
+      color: @tree-select-item-active-color;
+    }
+
+    &--disabled {
+      color: @tree-select-item-disabled-color;
+      cursor: not-allowed;
+    }
+  }
+
+  &__selected {
+    position: absolute;
+    top: 50%;
+    right: @padding-md;
+    margin-top: -@padding-xs;
+    font-size: @tree-select-item-selected-size;
+  }
+}

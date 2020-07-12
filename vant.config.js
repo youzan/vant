@@ -302,10 +302,10 @@ module.exports = {
                 path: 'pagination',
                 title: 'Pagination 分页',
               },
-              // {
-              //   path: 'sidebar',
-              //   title: 'Sidebar 侧边导航',
-              // },
+              {
+                path: 'sidebar',
+                title: 'Sidebar 侧边导航',
+              },
               // {
               //   path: 'tab',
               //   title: 'Tab 标签页',
@@ -314,10 +314,10 @@ module.exports = {
               //   path: 'tabbar',
               //   title: 'Tabbar 标签栏',
               // },
-              // {
-              //   path: 'tree-select',
-              //   title: 'TreeSelect 分类选择',
-              // },
+              {
+                path: 'tree-select',
+                title: 'TreeSelect 分类选择',
+              },
             ],
           },
           {
@@ -636,10 +636,10 @@ module.exports = {
                 path: 'pagination',
                 title: 'Pagination',
               },
-              // {
-              //   path: 'sidebar',
-              //   title: 'Sidebar',
-              // },
+              {
+                path: 'sidebar',
+                title: 'Sidebar',
+              },
               // {
               //   path: 'tab',
               //   title: 'Tab',
@@ -648,10 +648,10 @@ module.exports = {
               //   path: 'tabbar',
               //   title: 'Tabbar',
               // },
-              // {
-              //   path: 'tree-select',
-              //   title: 'TreeSelect',
-              // },
+              {
+                path: 'tree-select',
+                title: 'TreeSelect',
+              },
             ],
           },
           {
