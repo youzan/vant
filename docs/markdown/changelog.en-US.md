@@ -16,7 +16,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Feature**
 
-- DatePicker: add datehour type [#6732](https://github.com/youzan/vant/issues/6732)
+- DatetimePicker: add datehour type [#6732](https://github.com/youzan/vant/issues/6732)
 - Field: add clear-trigger prop [#6699](https://github.com/youzan/vant/issues/6699)
 - Search: add clear-trigger prop [#6700](https://github.com/youzan/vant/issues/6700)
 - Uploader: add preview-cover slot [#6707](https://github.com/youzan/vant/issues/6707)

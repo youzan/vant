@@ -16,7 +16,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- DatePicker: 新增 datehour 类型，用于选择年月日和小时 [#6732](https://github.com/youzan/vant/issues/6732)
+- DatetimePicker: 新增 datehour 类型，用于选择年月日和小时 [#6732](https://github.com/youzan/vant/issues/6732)
 - Field: 新增 clear-trigger 属性，用于控制清除按钮展示时机 [#6699](https://github.com/youzan/vant/issues/6699)
 - Search: 新增 clear-trigger 属性，用于控制清除按钮展示时机 [#6700](https://github.com/youzan/vant/issues/6700)
 - Uploader: 新增 preview-cover 插槽，用于自定义覆盖在预览区域上方的内容 [#6707](https://github.com/youzan/vant/issues/6707)

@@ -52,7 +52,7 @@
       />
     </demo-block>
 
-    <demo-block card :title="t('datehourType')">
+    <demo-block card v-if="!isWeapp" :title="t('datehourType')">
       <van-datetime-picker
         v-model="value.datehour"
         type="datehour"
