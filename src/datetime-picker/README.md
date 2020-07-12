@@ -155,6 +155,30 @@ export default {
 };
 ```
 
+### Choose DateHour
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="datehour"
+  title="Choose DateTime"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
+    };
+  },
+};
+```
+
 ### Option Filter
 
 ```html
@@ -190,7 +214,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `date` `time`<br> `year-month` `month-day` | _string_ | `datetime` |
+| type | Can be set to `date` `time`<br> `year-month` `month-day` `datehour` | _string_ | `datetime` |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |

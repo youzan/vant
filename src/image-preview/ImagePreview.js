@@ -1,9 +1,11 @@
 // Utils
+import { inBrowser } from '../utils';
 import { bem, createComponent } from './shared';
 
 // Mixins
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
+import { BindEventMixin } from '../mixins/bind-event';
 
 // Components
 import Icon from '../icon';
@@ -12,10 +14,13 @@ import ImagePreviewItem from './ImagePreviewItem';
 
 export default createComponent({
   mixins: [
+    TouchMixin,
     PopupMixin({
       skipToggleEvent: true,
     }),
-    TouchMixin,
+    BindEventMixin(function (bind) {
+      bind(window, 'resize', this.resize, true);
+    }),
   ],
 
   props: {
@@ -72,8 +77,14 @@ export default createComponent({
   data() {
     return {
       active: 0,
+      windowWidth: 0,
+      windowHeight: 0,
       doubleClickTimer: null,
     };
+  },
+
+  created() {
+    this.resize();
   },
 
   watch: {
@@ -95,6 +106,13 @@ export default createComponent({
   },
 
   methods: {
+    resize() {
+      if (inBrowser) {
+        this.windowWidth = window.innerWidth;
+        this.windowHeight = window.innerHeight;
+      }
+    },
+
     emitClose() {
       if (!this.asyncClose) {
         this.$emit('input', false);
@@ -151,6 +169,8 @@ export default createComponent({
               active={this.active}
               maxZoom={this.maxZoom}
               minZoom={this.minZoom}
+              windowWidth={this.windowWidth}
+              windowHeight={this.windowHeight}
               onScale={this.emitScale}
               onClose={this.emitClose}
             />

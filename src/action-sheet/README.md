@@ -121,7 +121,7 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Colored Option', color: '#07c160' },
+        { name: 'Colored Option', color: '#ee0a24' },
         { name: 'Disabled Option', disabled: true },
         { name: 'Loading Option', loading: true },
       ],
