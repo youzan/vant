@@ -44,7 +44,16 @@ export default createComponent({
     },
   },
 
-  emits: ['close', 'cancel', 'select', 'update:show'],
+  emits: [
+    'open',
+    'close',
+    'opened',
+    'closed',
+    'cancel',
+    'select',
+    'update:show',
+    'click-overlay',
+  ],
 
   setup(props, { slots, emit }) {
     function onCancel() {
@@ -52,9 +61,17 @@ export default createComponent({
       emit('cancel');
     }
 
-    function onToggle(show) {
-      emit('update:show', show);
-    }
+    const createEmitter = (name) => () => emit(name);
+    const listeners = {
+      onOpen: createEmitter('open'),
+      onClose: createEmitter('close'),
+      onOpened: createEmitter('opened'),
+      onClosed: createEmitter('closed'),
+      'onClick-overlay': createEmitter('click-overlay'),
+      'onUpdate:show': (show) => {
+        emit('update:show', show);
+      },
+    };
 
     return function () {
       const { title, cancelText } = props;
@@ -153,7 +170,7 @@ export default createComponent({
           closeOnPopstate={props.closeOnPopstate}
           closeOnClickOverlay={props.closeOnClickOverlay}
           safeAreaInsetBottom={props.safeAreaInsetBottom}
-          {...{ 'onUpdate:show': onToggle }}
+          {...listeners}
         >
           {Header()}
           {Description}
