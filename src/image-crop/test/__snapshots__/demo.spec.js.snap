@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="image_1 van-image-crop"><img src="" class="van-image-crop__show-img"><span class="van-image-crop__remove"><i class="van-icon van-icon-clear van-image-crop__remove-icon"><!----></i></span><input accept="image/*" type="file" class="van-image-crop__input-file"></div>
+  </div>
+  <div>
+    <div class="van-image-crop" style="height: 68.75vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image-crop__show-img"><input accept="image/*" type="file" class="van-image-crop__input-file"></div>
+  </div>
+  <div>
+    <div class="img-list van-row">
+      <div class="item">
+        <div class="item-box add">添加图片</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="image_1 van-image-crop"><img src="" class="van-image-crop__show-img"><span class="van-image-crop__remove"><span>移除</span></span>
+      <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        点击选择要裁剪的图片
+      </div><input accept="image/*" type="file" class="van-image-crop__input-file">
+    </div>
+  </div>
+</div>
+`;

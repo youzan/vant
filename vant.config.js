@@ -94,6 +94,10 @@ module.exports = {
                 title: 'Image 图片',
               },
               {
+                path: 'image-crop',
+                title: 'ImageCrop 图片裁剪',
+              },
+              {
                 path: 'col',
                 title: 'Layout 布局',
               },
@@ -439,6 +443,10 @@ module.exports = {
               {
                 path: 'image',
                 title: 'Image',
+              },
+              {
+                path: 'image-crop',
+                title: 'ImageCrop',
               },
               {
                 path: 'col',
