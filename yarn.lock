@@ -1999,10 +1999,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^3.0.0-alpha.1":
-  version "3.0.0-alpha.1"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-alpha.1.tgz#3719cc47e6157b70096854ad1c1bb24626b7491c"
-  integrity sha512-zq+dwYoXi6DbNJOpRAR2OkX63WHr1XWCr0w8woKJIgNa47Brr+rrss1L2WkGgPdSYZcWXUIOYuVCWEg15lOLJg==
+"@vant/cli@^3.0.0-alpha.2":
+  version "3.0.0-alpha.2"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-alpha.2.tgz#ab7b20d6c1dd4c9b3a31e6835394f1c66005bada"
+  integrity sha512-E3zrxIAq5MeVOu0sAGHEV43/d9+PLCKfcnT0EC4iGywp+LZnpamDTA5xdZ15EbnHuFZkVHtRej/PWmX3phOj+Q==
   dependencies:
     "@ant-design-vue/babel-plugin-jsx" "^1.0.0-alpha.6"
     "@babel/core" "^7.10.1"
