@@ -8,6 +8,8 @@ const [createComponent, bem] = createNamespace('sidebar-item');
 export default createComponent({
   mixins: [ChildrenMixin('vanSidebar')],
 
+  emits: ['click'],
+
   props: {
     ...routeProps,
     dot: Boolean,

@@ -6,6 +6,8 @@ const [createComponent, bem] = createNamespace('sidebar');
 export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
+  emits: ['change', 'update:modelValue'],
+
   props: {
     modelValue: {
       type: [Number, String],

@@ -21,6 +21,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'finish'],
+
   data() {
     return {
       remain: 0,

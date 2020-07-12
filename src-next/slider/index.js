@@ -33,6 +33,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
+
   data() {
     return {
       dragStatus: '',

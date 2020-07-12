@@ -61,6 +61,8 @@ export default createComponent({
     },
   },
 
+  emits: ['update:currentRate'],
+
   beforeCreate() {
     this.uid = `van-circle-gradient-${uid++}`;
   },
