@@ -208,6 +208,42 @@ export default {
 };
 ```
 
+### Sort Columns
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="date"
+  title="自定义列排序"
+  :columns-order="['month', 'day', 'year']"
+  :formatter="formatter"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatter(type, val) {
+      if (type === 'year') {
+        return val + ' YEAR';
+      }
+      if (type === 'month') {
+        return val + ' MONTH';
+      }
+      if (type === 'day') {
+        return val + ' DAY';
+      }
+      return val;
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -222,6 +258,7 @@ export default {
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | filter | Option filter | _(type, vals) => vals_ | - |
 | formatter | Option text formatter | _(type, val) => val_ | - |
+| columns-order `v2.9.2` | Array for ordering columns, where item can be set to<br> `year`, `month`, `day`, `hour` and `minute` | _string[]_ | - |
 | item-height `v2.8.6` | Option height, supports `px` ans `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `5` |
 | swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
