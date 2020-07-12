@@ -1,0 +1,75 @@
+@import '../style/var';
+
+.van-slider {
+  position: relative;
+  width: 100%;
+  height: @slider-bar-height;
+  background-color: @slider-inactive-background-color;
+  border-radius: @border-radius-max;
+  cursor: pointer;
+
+  // use pseudo element to expand click area
+  &::before {
+    position: absolute;
+    top: -@padding-xs;
+    right: 0;
+    bottom: -@padding-xs;
+    left: 0;
+    content: '';
+  }
+
+  &__bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: @slider-active-background-color;
+    border-radius: inherit;
+    transition: width @animation-duration-fast;
+  }
+
+  &__button {
+    width: @slider-button-width;
+    height: @slider-button-height;
+    background-color: @slider-button-background-color;
+    border-radius: @slider-button-border-radius;
+    box-shadow: @slider-button-box-shadow;
+
+    &-wrapper {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+      cursor: grab;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: @slider-disabled-opacity;
+
+    .van-slider__button-wrapper {
+      cursor: not-allowed;
+    }
+  }
+
+  &--vertical {
+    display: inline-block;
+    width: @slider-bar-height;
+    height: 100%;
+
+    .van-slider__button-wrapper {
+      top: auto;
+      right: 50%;
+      bottom: 0;
+      transform: translate3d(50%, 50%, 0);
+    }
+
+    // use pseudo element to expand click area
+    &::before {
+      top: 0;
+      right: -@padding-xs;
+      bottom: 0;
+      left: -@padding-xs;
+    }
+  }
+}

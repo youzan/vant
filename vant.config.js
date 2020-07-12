@@ -159,10 +159,10 @@ module.exports = {
               //   path: 'search',
               //   title: 'Search 搜索',
               // },
-              // {
-              //   path: 'slider',
-              //   title: 'Slider 滑块',
-              // },
+              {
+                path: 'slider',
+                title: 'Slider 滑块',
+              },
               // {
               //   path: 'stepper',
               //   title: 'Stepper 步进器',
@@ -493,10 +493,10 @@ module.exports = {
               //   path: 'search',
               //   title: 'Search',
               // },
-              // {
-              //   path: 'slider',
-              //   title: 'Slider',
-              // },
+              {
+                path: 'slider',
+                title: 'Slider',
+              },
               // {
               //   path: 'stepper',
               //   title: 'Stepper',
