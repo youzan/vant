@@ -212,10 +212,10 @@ module.exports = {
               //   path: 'share-sheet',
               //   title: 'ShareSheet 分享面板',
               // },
-              // {
-              //   path: 'swipe-cell',
-              //   title: 'SwipeCell 滑动单元格',
-              // },
+              {
+                path: 'swipe-cell',
+                title: 'SwipeCell 滑动单元格',
+              },
             ],
           },
           {
@@ -360,7 +360,7 @@ module.exports = {
               //   title: 'Sku 商品规格',
               // },
             ],
-          }
+          },
         ],
       },
       'en-US': {
@@ -546,10 +546,10 @@ module.exports = {
               //   path: 'share-sheet',
               //   title: 'ShareSheet',
               // },
-              // {
-              //   path: 'swipe-cell',
-              //   title: 'SwipeCell',
-              // },
+              {
+                path: 'swipe-cell',
+                title: 'SwipeCell',
+              },
             ],
           },
           {
@@ -694,7 +694,7 @@ module.exports = {
               //   title: 'Sku',
               // },
             ],
-          }
+          },
         ],
       },
     },

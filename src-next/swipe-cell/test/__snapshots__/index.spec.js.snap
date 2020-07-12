@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`auto calc width 1`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(50px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`drag and show left part 1`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(0px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`drag and show left part 2`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(100px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`drag and show left part 3`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(100px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`drag and show left part 4`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(100px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`drag and show right part 1`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(-100px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+    <div class="van-swipe-cell__right">Right</div>
+  </div>
+</div>
+`;
+
+exports[`render one side 1`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(50px, 0, 0); transition-duration: .6s;">
+    <div class="van-swipe-cell__left">Left</div>
+  </div>
+</div>
+`;
