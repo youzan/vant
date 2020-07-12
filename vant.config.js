@@ -229,10 +229,10 @@ module.exports = {
               //   path: 'collapse',
               //   title: 'Collapse 折叠面板',
               // },
-              // {
-              //   path: 'count-down',
-              //   title: 'CountDown 倒计时',
-              // },
+              {
+                path: 'count-down',
+                title: 'CountDown 倒计时',
+              },
               {
                 path: 'divider',
                 title: 'Divider 分割线',
@@ -563,10 +563,10 @@ module.exports = {
               //   path: 'collapse',
               //   title: 'Collapse',
               // },
-              // {
-              //   path: 'count-down',
-              //   title: 'CountDown',
-              // },
+              {
+                path: 'count-down',
+                title: 'CountDown',
+              },
               {
                 path: 'divider',
                 title: 'Divider',
