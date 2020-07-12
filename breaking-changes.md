@@ -18,7 +18,8 @@
 
 - Circle: `v-model` 调整为 `v-model:currentRate`
 - Popup: `v-model` 调整为 `v-model:show`
-- Switch: v-model 对应的属性名和事件名由 `value/input` 调整为 `modelValue/update:modelValue`
+- Switch: v-model 对应的属性 `value` 调整为 `modelValue`，事件由 `input` 调整为 `update:modelValue`
+- Sidebar: v-model 对应的属性 `activeKey` 调整为 `modelValue`，事件由 `input` 调整为 `update:modelValue`
 
 ## 废弃个别组件
 
