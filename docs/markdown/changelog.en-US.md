@@ -10,22 +10,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.9.1-beta.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1-beta.1)
+### [v2.9.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1)
 
-`2020-07-07`
+`2020-07-12`
 
 **Feature**
 
+- DatePicker: add datehour type [#6732](https://github.com/youzan/vant/issues/6732)
 - Field: add clear-trigger prop [#6699](https://github.com/youzan/vant/issues/6699)
 - Search: add clear-trigger prop [#6700](https://github.com/youzan/vant/issues/6700)
 - Uploader: add preview-cover slot [#6707](https://github.com/youzan/vant/issues/6707)
+- ShareSheet: add click-overlay event [#6765](https://github.com/youzan/vant/issues/6765)
+- Stepper: add allow-empty prop [#6759](https://github.com/youzan/vant/issues/6759)
+- Steps: add inactive-color prop [#6758](https://github.com/youzan/vant/issues/6758)
+- SubmitBar: add button-color prop [#6757](https://github.com/youzan/vant/issues/6757)
 - Sku: improve message datetime picker [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
+
+**style**
+
+- ActionSheet: subname vertical align [#6756](https://github.com/youzan/vant/issues/6756)
+- Uploader: remove round border radius [#6748](https://github.com/youzan/vant/issues/6748)
+- Uploader: update delete icon style [#6750](https://github.com/youzan/vant/issues/6750)
 
 **Bug Fixes**
 
 - Calendar: subtitle not updated in some cases [#6723](https://github.com/youzan/vant/issues/6723)
 - Checkbox: dynamic bind group [#6730](https://github.com/youzan/vant/issues/6730)
+- Field: can't display six characters in iOS [#6743](https://github.com/youzan/vant/issues/6743)
 - Image: memory leak during SSR [#6721](https://github.com/youzan/vant/issues/6721)
+- ImagePreview: fit window resize [#6760](https://github.com/youzan/vant/issues/6760)
 - ImagePreview: swipeTo type should be optional [#6727](https://github.com/youzan/vant/issues/6727)
 - Picker: click during momentum case incorrect result [#6724](https://github.com/youzan/vant/issues/6724)
 - Popup: lock-scroll not work in some cases [#6698](https://github.com/youzan/vant/issues/6698)

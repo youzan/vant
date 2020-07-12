@@ -10,22 +10,35 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.9.1-beta.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1-beta.1)
+### [v2.9.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1)
 
-`2020-07-07`
+`2020-07-12`
 
 **Feature**
 
-- Field: 新增 clear-trigger 属性 [#6699](https://github.com/youzan/vant/issues/6699)
-- Search: 新增 clear-trigger 属性 [#6700](https://github.com/youzan/vant/issues/6700)
-- Uploader: 新增 preview-cover 插槽 [#6707](https://github.com/youzan/vant/issues/6707)
+- DatePicker: 新增 datehour 类型，用于选择年月日和小时 [#6732](https://github.com/youzan/vant/issues/6732)
+- Field: 新增 clear-trigger 属性，用于控制清除按钮展示时机 [#6699](https://github.com/youzan/vant/issues/6699)
+- Search: 新增 clear-trigger 属性，用于控制清除按钮展示时机 [#6700](https://github.com/youzan/vant/issues/6700)
+- Uploader: 新增 preview-cover 插槽，用于自定义覆盖在预览区域上方的内容 [#6707](https://github.com/youzan/vant/issues/6707)
+- ShareSheet: 新增 click-overlay 事件，在点击遮罩层时触发 [#6765](https://github.com/youzan/vant/issues/6765)
+- Stepper: 新增 allow-empty 属性，用于控制是否允许输入空值 [#6759](https://github.com/youzan/vant/issues/6759)
+- Steps: 新增 inactive-color 属性，用于设置未激活状态颜色 [#6758](https://github.com/youzan/vant/issues/6758)
+- SubmitBar: 新增 button-color 属性，用于设置按钮颜色 [#6757](https://github.com/youzan/vant/issues/6757)
 - Sku: 优化留言栏时间选择交互 [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
+
+**style**
+
+- ActionSheet: 标题和二级标题调整为上下排列 [#6756](https://github.com/youzan/vant/issues/6756)
+- Uploader: 移除上传区域和图片预览的圆角 [#6748](https://github.com/youzan/vant/issues/6748)
+- Uploader: 更新删除按钮样式 [#6750](https://github.com/youzan/vant/issues/6750)
 
 **Bug Fixes**
 
 - Calendar: 修复个别情况下日历标题不更新的问题 [#6723](https://github.com/youzan/vant/issues/6723)
 - Checkbox: 修复动态设置 bind-group 时不生效的问题 [#6730](https://github.com/youzan/vant/issues/6730)
+- Field: 修复在 iOS 下 label 文字超过 5 个时会换行的问题 [#6743](https://github.com/youzan/vant/issues/6743)
 - Image: 修复 SSR 时 LazyLoad 属性存在内存泄露的问题 [#6721](https://github.com/youzan/vant/issues/6721)
+- ImagePreview: 修复屏幕大小变化时图片宽高比展示错误的问题 [#6760](https://github.com/youzan/vant/issues/6760)
 - ImagePreview: 修复 swipeTo 方法类型定义错误 [#6727](https://github.com/youzan/vant/issues/6727)
 - Picker: 修复惯性滚动过程中点击选项会导致选中结果错误的问题 [#6724](https://github.com/youzan/vant/issues/6724)
 - Popup: 修复 lock-scroll 在个别场景下不生效的问题 [#6698](https://github.com/youzan/vant/issues/6698)
