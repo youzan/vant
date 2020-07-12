@@ -50,13 +50,7 @@ export default createComponent({
         return realDay;
       }
 
-      const fakeDay = realDay - firstDayOfWeek;
-
-      if (fakeDay >= 0) {
-        return fakeDay;
-      }
-
-      return fakeDay + 7;
+      return (realDay + 7 - this.firstDayOfWeek) % 7;
     },
 
     totalDay() {

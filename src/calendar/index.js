@@ -144,6 +144,10 @@ export default createComponent({
 
       return !currentDate;
     },
+
+    dayOffset() {
+      return this.firstDayOfWeek ? this.firstDayOfWeek % 7 : 0;
+    },
   },
 
   watch: {
@@ -386,7 +390,7 @@ export default createComponent({
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
-          firstDayOfWeek={this.firstDayOfWeek}
+          firstDayOfWeek={this.dayOffset}
           onClick={this.onClickDay}
         />
       );
@@ -440,7 +444,7 @@ export default createComponent({
             scopedSlots={{
               title: () => this.slots('title'),
             }}
-            firstDayOfWeek={this.firstDayOfWeek}
+            firstDayOfWeek={this.dayOffset}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}

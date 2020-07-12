@@ -52,7 +52,7 @@ exports[`renders demo correctly 1`] = `
         <!----></i>
     </div>
     <div role="button" tabindex="0" class="van-cell van-cell--clickable">
-      <div class="van-cell__title"><span>设置周起始日</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+      <div class="van-cell__title"><span>自定义周起始日</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
   </div>
