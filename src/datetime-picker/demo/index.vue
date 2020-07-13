@@ -102,7 +102,7 @@ export default {
       sortColumns: '自定义列排序',
     },
     'en-US': {
-      day: 'Day',
+      day: ' Day',
       year: ' Year',
       month: ' Month',
       timeType: 'Choose Time',

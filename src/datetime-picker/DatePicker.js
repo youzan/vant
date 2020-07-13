@@ -96,9 +96,6 @@ export default createComponent({
         case 'datehour':
           result = result.slice(0, 4);
           break;
-        default:
-          // no default
-          break;
       }
 
       if (this.columnsOrder) {
@@ -167,9 +164,12 @@ export default createComponent({
       const { type } = this;
       const indexes = this.getPicker().getIndexes();
       const getValue = (type) => {
-        const index = this.originColumns.findIndex(
-          (column) => type === column.type
-        );
+        let index = 0;
+        this.originColumns.forEach((column, columnIndex) => {
+          if (type === column.type) {
+            index = columnIndex;
+          }
+        });
         const { values } = this.originColumns[index];
         return getTrueValue(values[indexes[index]]);
       };

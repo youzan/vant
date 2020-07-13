@@ -208,7 +208,7 @@ export default {
 };
 ```
 
-### Sort Columns
+### Columns Order
 
 ```html
 <van-datetime-picker
@@ -230,13 +230,13 @@ export default {
   methods: {
     formatter(type, val) {
       if (type === 'year') {
-        return val + ' YEAR';
+        return val + ' Year';
       }
       if (type === 'month') {
-        return val + ' MONTH';
+        return val + ' Month';
       }
       if (type === 'day') {
-        return val + ' DAY';
+        return val + ' Day';
       }
       return val;
     },

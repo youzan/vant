@@ -267,7 +267,7 @@ export default {
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type, vals) => vals_ | - |
 | formatter | 选项格式化函数 | _(type, val) => val_ | - |
-| columns-order `v2.9.x` | 自定义列排序数组, 子项可选值为<br> `year`、`month`、`day`、`hour`、`minute` | _string[]_ | - |
+| columns-order `v2.9.2` | 自定义列排序数组, 子项可选值为<br> `year`、`month`、`day`、`hour`、`minute` | _string[]_ | - |
 | item-height `v2.8.6` | 选项高度，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
 | swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
