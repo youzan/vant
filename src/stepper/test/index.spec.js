@@ -387,3 +387,20 @@ test('placeholder prop', () => {
   });
   expect(wrapper.find('.van-stepper__input')).toMatchSnapshot();
 });
+
+test('allow-empty prop', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: '',
+      allowEmpty: true,
+    },
+  });
+
+  const input = wrapper.find('input');
+  input.trigger('blur');
+  expect(wrapper.emitted('input')).toBeFalsy();
+
+  wrapper.setProps({ allowEmpty: false });
+  input.trigger('blur');
+  expect(wrapper.emitted('input')[0][0]).toEqual(1);
+});

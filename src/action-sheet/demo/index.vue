@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { GREEN } from '../../utils/constant';
+import { RED } from '../../utils/constant';
 
 export default {
   i18n: {
@@ -123,7 +123,7 @@ export default {
 
     statusActions() {
       return [
-        { name: this.t('coloredOption'), color: GREEN },
+        { name: this.t('coloredOption'), color: RED },
         { name: this.t('disabledOption'), disabled: true },
         { loading: true },
       ];

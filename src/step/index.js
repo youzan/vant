@@ -23,10 +23,18 @@ export default createComponent({
     },
 
     lineStyle() {
-      if (this.status === 'finish' && this.parent.activeColor) {
-        return {
-          background: this.parent.activeColor,
-        };
+      if (this.status === 'finish') {
+        return { background: this.parent.activeColor };
+      }
+      return { background: this.parent.inactiveColor };
+    },
+
+    titleStyle() {
+      if (this.active) {
+        return { color: this.parent.activeColor };
+      }
+      if (!this.status) {
+        return { color: this.parent.inactiveColor };
       }
     },
   },
@@ -65,15 +73,13 @@ export default createComponent({
 
   render() {
     const { status, active } = this;
-    const { activeColor, direction } = this.parent;
-
-    const titleStyle = active && { color: activeColor };
+    const { direction } = this.parent;
 
     return (
       <div class={[BORDER, bem([direction, { [status]: status }])]}>
         <div
           class={bem('title', { active })}
-          style={titleStyle}
+          style={this.titleStyle}
           onClick={this.onClickStep}
         >
           {this.slots()}

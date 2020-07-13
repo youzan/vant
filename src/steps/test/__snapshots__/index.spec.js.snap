@@ -27,3 +27,21 @@ exports[`icon slot 1`] = `
   </div>
 </div>
 `;
+
+exports[`inactive-color prop 1`] = `
+<div class="van-steps van-steps--horizontal">
+  <div class="van-steps__items">
+    <div class="van-hairline van-step van-step--horizontal van-step--process">
+      <div class="van-step__title van-step__title--active">A</div>
+      <div class="van-step__circle-container"><i class="van-icon van-icon-checked van-step__icon van-step__icon--active">
+          <!----></i></div>
+      <div class="van-step__line" style="background: red;"></div>
+    </div>
+    <div class="van-hairline van-step van-step--horizontal">
+      <div class="van-step__title" style="color: red;">B</div>
+      <div class="van-step__circle-container"><i class="van-step__circle" style="background: red;"></i></div>
+      <div class="van-step__line" style="background: red;"></div>
+    </div>
+  </div>
+</div>
+`;
