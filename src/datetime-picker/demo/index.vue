@@ -21,7 +21,7 @@
       />
     </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('monthDayType')">
+    <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
       <van-datetime-picker
         v-model="value.monthDayType"
         type="month-day"
@@ -52,7 +52,7 @@
       />
     </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('datehourType')">
+    <demo-block v-if="!isWeapp" card :title="t('datehourType')">
       <van-datetime-picker
         v-model="value.datehour"
         type="datehour"
@@ -71,7 +71,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('sortColumns')">
+    <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
       <van-datetime-picker
         v-model="value.sortColumnsDate"
         type="date"

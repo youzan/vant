@@ -10,7 +10,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.9.2-beta.0](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2-beta.0)
+### [v2.9.2](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2)
 
 `2020-07-14`
 
@@ -21,7 +21,9 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
+- Tab: 修复标签禁用时仍会触发路由跳转的问题 [#6782](https://github.com/youzan/vant/issues/6782)
 - Sku: 修复留言区域 label 颜色不一致的问题 [#6771](https://github.com/youzan/vant/issues/6771)
+- Sku: 修复留言区域 label 里包含较长的单词时未自动换行的问题 [#6777](https://github.com/youzan/vant/issues/6777)
 
 ### [v2.9.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1)
 
