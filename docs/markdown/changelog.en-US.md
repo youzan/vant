@@ -16,8 +16,8 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Feature**
 
+- Calendar: add first-day-of-week prop [#6468](https://github.com/youzan/vant/issues/6468)
 - DatetimePicker: add columns-order prop [#6672](https://github.com/youzan/vant/issues/6672) [#6768](https://github.com/youzan/vant/issues/6768)
-- Calendar: add firstDayOfWeek prop [#6468](https://github.com/youzan/vant/issues/6468)
 
 **Bug Fixes**
 

@@ -16,8 +16,8 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
+- Calendar: 新增 first-day-of-week 属性 [#6468](https://github.com/youzan/vant/issues/6468)
 - DatetimePicker: 新增 columns-order 属性 [#6672](https://github.com/youzan/vant/issues/6672) [#6768](https://github.com/youzan/vant/issues/6768)
-- Calendar: 新增 firstDayOfWeek 属性 [#6468](https://github.com/youzan/vant/issues/6468)
 
 **Bug Fixes**
 
