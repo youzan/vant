@@ -192,7 +192,7 @@ test('month-show event', async () => {
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });
 
-test.only('first day of week', async () => {
+test('first day of week', async () => {
   const wrapper = mount(Calendar, {
     propsData: {
       poppable: false,
