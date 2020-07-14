@@ -267,7 +267,7 @@ export default createComponent({
     },
 
     // emit event when clicked
-    onClick(index) {
+    onClick(item, index) {
       const { title, disabled, computedName } = this.children[index];
       if (disabled) {
         this.$emit('disabled', computedName, title);
@@ -275,6 +275,7 @@ export default createComponent({
         this.setCurrentIndex(index);
         this.scrollToCurrentContent();
         this.$emit('click', computedName, title);
+        route(item.$router, item);
       }
     },
 
@@ -360,8 +361,7 @@ export default createComponent({
           default: () => item.slots('title'),
         }}
         onClick={() => {
-          this.onClick(index);
-          route(item.$router, item);
+          this.onClick(item, index);
         }}
       />
     ));
