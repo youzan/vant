@@ -202,6 +202,14 @@ export default {
 <van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
 ```
 
+### 自定义周起始日
+
+通过`first-day-of-week`属性设置一周从哪天开始
+
+```html
+<van-calendar first-day-of-week="1" />
+```
+
 ### 平铺展示
 
 将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现
@@ -237,6 +245,7 @@ export default {
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
 | confirm-text | 确认按钮的文字 | _string_ | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
+| first-day-of-week | 设置周起始日 | _0-6_ | `0` |
 
 ### Poppable Props
 

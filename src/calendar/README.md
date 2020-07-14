@@ -200,6 +200,14 @@ When selecting a date range, you can use the `max-range` prop to specify the max
 <van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
 ```
 
+### Custom First Day Of Week
+
+Use `first-day-of-week` to custom the start day of week
+
+```html
+<van-calendar first-day-of-week="1" />
+```
+
 ### Tiled display
 
 Set `poppable` to `false`, the calendar will be displayed directly on the page instead of appearing as a popup
@@ -235,6 +243,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | show-confirm | Whether to show confirm button | _boolean_ | `true` |
 | confirm-text | Confirm button text | _string_ | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
+| first-day-of-week | Set the start day of week | _0-6_ | `0` |
 
 ### Poppable Props
 
