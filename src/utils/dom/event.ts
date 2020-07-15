@@ -1,10 +1,10 @@
-import { isServer } from '..';
+import { inBrowser } from '..';
 import { EventHandler } from '../types';
 
 // eslint-disable-next-line import/no-mutable-exports
 export let supportsPassive = false;
 
-if (!isServer) {
+if (inBrowser) {
   try {
     const opts = {};
     Object.defineProperty(opts, 'passive', {
@@ -25,7 +25,7 @@ export function on(
   handler: EventHandler,
   passive = false
 ) {
-  if (!isServer) {
+  if (inBrowser) {
     target.addEventListener(
       event,
       handler,
@@ -35,7 +35,7 @@ export function on(
 }
 
 export function off(target: EventTarget, event: string, handler: EventHandler) {
-  if (!isServer) {
+  if (inBrowser) {
     target.removeEventListener(event, handler);
   }
 }

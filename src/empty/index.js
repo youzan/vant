@@ -16,7 +16,7 @@ export default createComponent({
 
   methods: {
     genImageContent() {
-      const slots = this.slots('image');
+      const slots = this.$slots.image?.();
 
       if (slots) {
         return slots;
@@ -40,7 +40,9 @@ export default createComponent({
     },
 
     genDescription() {
-      const description = this.slots('description') || this.description;
+      const description = this.$slots.description
+        ? this.slot.description()
+        : this.description;
 
       if (description) {
         return <p class={bem('description')}>{description}</p>;
@@ -48,7 +50,7 @@ export default createComponent({
     },
 
     genBottom() {
-      const slot = this.slots();
+      const slot = this.$slots.default?.();
 
       if (slot) {
         return <div class={bem('bottom')}>{slot}</div>;

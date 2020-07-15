@@ -1,4 +1,4 @@
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
@@ -8,10 +8,11 @@ const [createComponent, bem] = createNamespace('sidebar-item');
 export default createComponent({
   mixins: [ChildrenMixin('vanSidebar')],
 
+  emits: ['click'],
+
   props: {
     ...routeProps,
     dot: Boolean,
-    info: [Number, String],
     badge: [Number, String],
     title: String,
     disabled: Boolean,
@@ -19,7 +20,7 @@ export default createComponent({
 
   computed: {
     select() {
-      return this.index === +this.parent.activeKey;
+      return this.index === +this.parent.modelValue;
     },
   },
 
@@ -30,7 +31,7 @@ export default createComponent({
       }
 
       this.$emit('click', this.index);
-      this.parent.$emit('input', this.index);
+      this.parent.$emit('update:modelValue', this.index);
       this.parent.setIndex(this.index);
       route(this.$router, this);
     },
@@ -44,11 +45,7 @@ export default createComponent({
       >
         <div class={bem('text')}>
           {this.title}
-          <Info
-            dot={this.dot}
-            info={isDef(this.badge) ? this.badge : this.info}
-            class={bem('info')}
-          />
+          <Info dot={this.dot} info={this.badge} class={bem('info')} />
         </div>
       </a>
     );

@@ -1,6 +1,6 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 import VanDialog from './Dialog';
-import { isServer } from '../utils';
+import { inBrowser } from '../utils';
 
 let instance;
 
@@ -28,7 +28,7 @@ function initInstance() {
 
 function Dialog(options) {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return Promise.resolve();
   }
 

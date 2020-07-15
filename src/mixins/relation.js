@@ -1,24 +1,16 @@
-import { sortChildren } from '../utils/vnodes';
-
 export function ChildrenMixin(parent, options = {}) {
   const indexKey = options.indexKey || 'index';
 
   return {
     inject: {
-      [parent]: {
+      // TODO: disableBindRelation
+      parent: {
+        from: parent,
         default: null,
       },
     },
 
     computed: {
-      parent() {
-        if (this.disableBindRelation) {
-          return null;
-        }
-
-        return this[parent];
-      },
-
       [indexKey]() {
         this.bindRelation();
 
@@ -27,14 +19,6 @@ export function ChildrenMixin(parent, options = {}) {
         }
 
         return null;
-      },
-    },
-
-    watch: {
-      disableBindRelation(val) {
-        if (!val) {
-          this.bindRelation();
-        }
       },
     },
 
@@ -57,8 +41,6 @@ export function ChildrenMixin(parent, options = {}) {
         }
 
         const children = [...this.parent.children, this];
-
-        sortChildren(children, this.parent);
 
         this.parent.children = children;
       },

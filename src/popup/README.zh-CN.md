@@ -17,11 +17,11 @@ Vue.use(Popup);
 
 ### 基础用法
 
-通过`v-model`控制弹出层是否展示
+通过 `v-model:show` 控制弹出层是否展示
 
 ```html
 <van-cell is-link @click="showPopup">展示弹出层</van-cell>
-<van-popup v-model="show">内容</van-popup>
+<van-popup v-model:show="show">内容</van-popup>
 ```
 
 ```js
@@ -45,7 +45,7 @@ export default {
 通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`
 
 ```html
-<van-popup v-model="show" position="top" :style="{ height: '30%' }" />
+<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
 ```
 
 ### 关闭图标
@@ -54,14 +54,14 @@ export default {
 
 ```html
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   position="bottom"
   :style="{ height: '30%' }"
 />
 <!-- 自定义图标 -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon="close"
   position="bottom"
@@ -69,7 +69,7 @@ export default {
 />
 <!-- 图标位置 -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon-position="top-left"
   position="bottom"
@@ -82,7 +82,7 @@ export default {
 设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
 
 ```html
-<van-popup v-model="show" round position="bottom" :style="{ height: '30%' }" />
+<van-popup v-model:show="show" round position="bottom" :style="{ height: '30%' }" />
 ```
 
 ### 指定挂载位置
@@ -91,13 +91,13 @@ export default {
 
 ```html
 <!-- 挂载到 body 节点下 -->
-<van-popup v-model="show" get-container="body" />
+<van-popup v-model:show="show" get-container="body" />
 
 <!-- 挂载到 #app 节点下 -->
-<van-popup v-model="show" get-container="#app" />
+<van-popup v-model:show="show" get-container="#app" />
 
 <!-- 通过函数指定挂载位置 -->
-<van-popup v-model="show" :get-container="getContainer" />
+<van-popup v-model:show="show" :get-container="getContainer" />
 ```
 
 ```js
@@ -119,7 +119,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) | 是否显示弹出层 | _boolean_ | `false` |
+| v-model:show | 是否显示弹出层 | _boolean_ | `false` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |

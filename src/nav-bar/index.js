@@ -22,6 +22,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click-left', 'click-right'],
+
   data() {
     return {
       height: null,
@@ -36,7 +38,7 @@ export default createComponent({
 
   methods: {
     genLeft() {
-      const leftSlot = this.slots('left');
+      const leftSlot = this.$slots.left?.();
 
       if (leftSlot) {
         return leftSlot;
@@ -49,7 +51,7 @@ export default createComponent({
     },
 
     genRight() {
-      const rightSlot = this.slots('right');
+      const rightSlot = this.$slots.right?.();
 
       if (rightSlot) {
         return rightSlot;
@@ -71,7 +73,7 @@ export default createComponent({
             {this.genLeft()}
           </div>
           <div class={[bem('title'), 'van-ellipsis']}>
-            {this.slots('title') || this.title}
+            {this.$slots.title ? this.$slots.title() : this.title}
           </div>
           <div class={bem('right')} onClick={this.onClickRight}>
             {this.genRight()}

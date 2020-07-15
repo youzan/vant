@@ -2,12 +2,11 @@
  * Vue Router support
  */
 
-import { RenderContext } from 'vue/types';
-import VueRouter, { RawLocation } from 'vue-router/types';
+import type { Router, RouteLocation } from 'vue-router';
 
 export type RouteConfig = {
   url?: string;
-  to?: RawLocation;
+  to?: RouteLocation;
   replace?: boolean;
 };
 
@@ -19,7 +18,7 @@ function isRedundantNavigation(err: Error) {
   );
 }
 
-export function route(router: VueRouter, config: RouteConfig) {
+export function route(router: Router, config: RouteConfig) {
   const { to, url, replace } = config;
   if (to && router) {
     const promise = router[replace ? 'replace' : 'push'](to);
@@ -37,14 +36,10 @@ export function route(router: VueRouter, config: RouteConfig) {
   }
 }
 
-export function functionalRoute(context: RenderContext) {
-  route(context.parent && context.parent.$router, context.props);
-}
-
 export type RouteProps = {
   url?: string;
   replace?: boolean;
-  to?: RawLocation;
+  to?: RouteLocation;
 };
 
 export const routeProps = {

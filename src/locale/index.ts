@@ -1,34 +1,25 @@
-import Vue from 'vue';
+import { ref } from 'vue';
 import { deepAssign } from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
-declare module 'vue' {
-  interface VueConstructor {
-    util: {
-      defineReactive(obj: object, key: string, value: any): void;
-    };
-  }
-}
+type Messages = Record<string, Record<string, any>>;
 
-const proto = Vue.prototype;
-const { defineReactive } = Vue.util;
-
-defineReactive(proto, '$vantLang', 'zh-CN');
-defineReactive(proto, '$vantMessages', {
+const lang = ref('zh-CN');
+const messages = ref<Messages>({
   'zh-CN': defaultMessages,
 });
 
 export default {
   messages() {
-    return proto.$vantMessages[proto.$vantLang];
+    return messages.value[lang.value];
   },
 
-  use(lang: string, messages?: object) {
-    proto.$vantLang = lang;
-    this.add({ [lang]: messages });
+  use(newLang: string, newMessages?: object) {
+    lang.value = newLang;
+    this.add({ [newLang]: newMessages });
   },
 
-  add(messages = {}) {
-    deepAssign(proto.$vantMessages, messages);
+  add(newMessages = {}) {
+    deepAssign(messages.value, newMessages);
   },
 };

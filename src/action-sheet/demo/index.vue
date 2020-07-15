@@ -23,13 +23,13 @@
     </demo-block>
 
     <van-action-sheet
-      v-model="show.basic"
+      v-model:show="show.basic"
       :actions="simpleActions"
       @select="onSelect"
     />
 
     <van-action-sheet
-      v-model="show.cancel"
+      v-model:show="show.cancel"
       :actions="simpleActions"
       close-on-click-action
       :cancel-text="t('cancel')"
@@ -37,7 +37,7 @@
     />
 
     <van-action-sheet
-      v-model="show.description"
+      v-model:show="show.description"
       :actions="actionsWithDescription"
       close-on-click-action
       :cancel-text="t('cancel')"
@@ -45,13 +45,13 @@
     />
 
     <van-action-sheet
-      v-model="show.status"
+      v-model:show="show.status"
       close-on-click-action
       :actions="statusActions"
       :cancel-text="t('cancel')"
     />
 
-    <van-action-sheet v-model="show.title" :title="t('title')">
+    <van-action-sheet v-model:show="show.title" :title="t('title')">
       <div class="demo-action-sheet-content">{{ t('content') }}</div>
     </van-action-sheet>
   </demo-section>

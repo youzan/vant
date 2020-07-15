@@ -20,6 +20,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click'],
+
   computed: {
     spaces() {
       const gutter = Number(this.gutter);
@@ -80,7 +82,7 @@ export default createComponent({
         })}
         onClick={this.onClick}
       >
-        {this.slots()}
+        {this.$slots.default?.()}
       </this.tag>
     );
   },

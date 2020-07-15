@@ -45,7 +45,7 @@ export default createComponent({
         style={this.style}
         class={[bem(), { [BORDER_TOP]: this.border && !this.gutter }]}
       >
-        {this.slots()}
+        {this.$slots.default?.()}
       </div>
     );
   },

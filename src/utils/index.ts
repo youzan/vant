@@ -1,13 +1,10 @@
-import Vue from 'vue';
-
-export { createNamespace } from './create';
 export { addUnit } from './format/unit';
-
-export const inBrowser = typeof window !== 'undefined';
-export const isServer: boolean = Vue.prototype.$isServer;
+export { createNamespace } from './create';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
+
+export const inBrowser = typeof window !== 'undefined'
 
 export function isDef(val: unknown): boolean {
   return val !== undefined && val !== null;

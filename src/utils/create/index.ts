@@ -10,5 +10,9 @@ type CreateNamespaceReturn = [
 
 export function createNamespace(name: string): CreateNamespaceReturn {
   name = 'van-' + name;
-  return [createComponent(name), createBEM(name), createI18N(name)];
+  return [
+    createComponent(name),
+    createBEM(name),
+    createI18N(name)
+  ];
 }

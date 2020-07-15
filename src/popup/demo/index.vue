@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
-      <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }">
+      <van-popup v-model:show="showBasic" :style="{ padding: '30px 50px' }">
         {{ t('content') }}
       </van-popup>
     </demo-block>
@@ -13,19 +13,23 @@
       <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
       <van-cell :title="t('buttonRight')" is-link @click="showRight = true" />
 
-      <van-popup v-model="showTop" position="top" :style="{ height: '30%' }" />
       <van-popup
-        v-model="showBottom"
+        v-model:show="showTop"
+        position="top"
+        :style="{ height: '30%' }"
+      />
+      <van-popup
+        v-model:show="showBottom"
         position="bottom"
         :style="{ height: '30%' }"
       />
       <van-popup
-        v-model="showLeft"
+        v-model:show="showLeft"
         position="left"
         :style="{ width: '30%', height: '100%' }"
       />
       <van-popup
-        v-model="showRight"
+        v-model:show="showRight"
         position="right"
         :style="{ width: '30%', height: '100%' }"
       />
@@ -45,20 +49,20 @@
       />
 
       <van-popup
-        v-model="showCloseIcon"
+        v-model:show="showCloseIcon"
         closeable
         position="bottom"
         :style="{ height: '30%' }"
       />
       <van-popup
-        v-model="showCustomCloseIcon"
+        v-model:show="showCustomCloseIcon"
         closeable
         close-icon="close"
         position="bottom"
         :style="{ height: '30%' }"
       />
       <van-popup
-        v-model="showCustomIconPosition"
+        v-model:show="showCustomIconPosition"
         closeable
         close-icon-position="top-left"
         position="bottom"
@@ -73,7 +77,7 @@
         @click="showRoundCorner = true"
       />
       <van-popup
-        v-model="showRoundCorner"
+        v-model:show="showRoundCorner"
         round
         position="bottom"
         :style="{ height: '30%' }"
@@ -87,7 +91,7 @@
         @click="showGetContainer = true"
       />
       <van-popup
-        v-model="showGetContainer"
+        v-model:show="showGetContainer"
         get-container="body"
         :style="{ padding: '30px 50px' }"
       />

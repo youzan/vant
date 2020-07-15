@@ -1,9 +1,6 @@
-import { OverlayConfig } from './overlay';
-
 export type StackItem = {
   vm: any;
   overlay: any;
-  config: OverlayConfig;
 };
 
 export const context = {

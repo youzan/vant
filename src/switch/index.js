@@ -15,9 +15,11 @@ export default createComponent({
 
   props: switchProps,
 
+  emits: ['click', 'change', 'update:modelValue'],
+
   computed: {
     checked() {
-      return this.value === this.activeValue;
+      return this.modelValue === this.activeValue;
     },
 
     style() {
@@ -34,7 +36,7 @@ export default createComponent({
 
       if (!this.disabled && !this.loading) {
         const newValue = this.checked ? this.inactiveValue : this.activeValue;
-        this.$emit('input', newValue);
+        this.$emit('update:modelValue', newValue);
         this.$emit('change', newValue);
       }
     },

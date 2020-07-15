@@ -13,8 +13,7 @@
   },
   "include": [
     "types/**/*",
-    "src/**/*",
-    "src-next/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "**/*.spec.ts",

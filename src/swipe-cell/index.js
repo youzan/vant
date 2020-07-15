@@ -195,7 +195,7 @@ export default createComponent({
     },
 
     genLeftPart() {
-      const content = this.slots('left');
+      const content = this.$slots.left?.();
 
       if (content) {
         return (
@@ -211,7 +211,7 @@ export default createComponent({
     },
 
     genRightPart() {
-      const content = this.slots('right');
+      const content = this.$slots.right?.();
 
       if (content) {
         return (
@@ -237,7 +237,7 @@ export default createComponent({
       <div class={bem()} onClick={this.getClickHandler('cell')}>
         <div class={bem('wrapper')} style={wrapperStyle}>
           {this.genLeftPart()}
-          {this.slots()}
+          {this.$slots.default?.()}
           {this.genRightPart()}
         </div>
       </div>

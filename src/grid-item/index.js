@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, isDef } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
 import { route, routeProps } from '../utils/router';
 
@@ -21,9 +21,10 @@ export default createComponent({
     text: String,
     icon: String,
     iconPrefix: String,
-    info: [Number, String],
     badge: [Number, String],
   },
+
+  emits: ['click'],
 
   computed: {
     style() {
@@ -70,14 +71,11 @@ export default createComponent({
     },
 
     genIcon() {
-      const iconSlot = this.slots('icon');
-      const info = isDef(this.badge) ? this.badge : this.info;
-
-      if (iconSlot) {
+      if (this.$slots.icon) {
         return (
           <div class={bem('icon-wrapper')}>
-            {iconSlot}
-            <Info dot={this.dot} info={info} />
+            {this.$slots.icon()}
+            <Info dot={this.dot} info={this.badge} />
           </div>
         );
       }
@@ -87,7 +85,7 @@ export default createComponent({
           <Icon
             name={this.icon}
             dot={this.dot}
-            info={info}
+            info={this.badge}
             size={this.parent.iconSize}
             class={bem('icon')}
             classPrefix={this.iconPrefix}
@@ -97,10 +95,8 @@ export default createComponent({
     },
 
     getText() {
-      const textSlot = this.slots('text');
-
-      if (textSlot) {
-        return textSlot;
+      if (this.$slots.text) {
+        return this.$slots.text();
       }
 
       if (this.text) {
@@ -109,10 +105,8 @@ export default createComponent({
     },
 
     genContent() {
-      const slot = this.slots();
-
-      if (slot) {
-        return slot;
+      if (this.$slots.default) {
+        return this.$slots.default();
       }
 
       return [this.genIcon(), this.getText()];

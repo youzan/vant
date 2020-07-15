@@ -2,25 +2,25 @@
   <demo-section>
     <demo-block :title="t('radioMode')">
       <van-tree-select
+        v-model:active-id="activeId"
+        v-model:main-active-index="activeIndex"
         :items="items"
-        :active-id.sync="activeId"
-        :main-active-index.sync="activeIndex"
       />
     </demo-block>
 
     <demo-block :title="t('multipleMode')">
       <van-tree-select
+        v-model:active-id="activeIds"
+        v-model:main-active-index="activeIndex2"
         :items="items"
-        :active-id.sync="activeIds"
-        :main-active-index.sync="activeIndex2"
       />
     </demo-block>
 
     <demo-block :title="t('customContent')">
       <van-tree-select
+        v-model:main-active-index="activeIndex3"
         height="55vw"
         :items="simpleItems"
-        :main-active-index.sync="activeIndex3"
       >
         <template slot="content">
           <van-image
@@ -39,10 +39,10 @@
 
     <demo-block :title="t('showBadge')">
       <van-tree-select
+        v-model:active-id="activeId2"
+        v-model:main-active-index="activeIndex4"
         height="55vw"
         :items="badgeItems"
-        :active-id.sync="activeId2"
-        :main-active-index.sync="activeIndex4"
       />
     </demo-block>
   </demo-section>

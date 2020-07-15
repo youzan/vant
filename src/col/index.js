@@ -15,6 +15,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click'],
+
   computed: {
     style() {
       const { index } = this;
@@ -44,7 +46,7 @@ export default createComponent({
         class={bem({ [span]: span, [`offset-${offset}`]: offset })}
         onClick={this.onClick}
       >
-        {this.slots()}
+        {this.$slots.default?.()}
       </this.tag>
     );
   },

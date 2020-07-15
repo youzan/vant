@@ -31,6 +31,8 @@ export default createComponent({
     },
   },
 
+  emits: ['load', 'error', 'click'],
+
   data() {
     return {
       loading: true,
@@ -116,7 +118,9 @@ export default createComponent({
       if (this.loading && this.showLoading) {
         return (
           <div class={bem('loading')}>
-            {this.slots('loading') || (
+            {this.$slots.loading ? (
+              this.$slots.loading()
+            ) : (
               <Icon name={this.loadingIcon} class={bem('loading-icon')} />
             )}
           </div>
@@ -126,7 +130,9 @@ export default createComponent({
       if (this.error && this.showError) {
         return (
           <div class={bem('error')}>
-            {this.slots('error') || (
+            {this.$slots.error ? (
+              this.$slots.error()
+            ) : (
               <Icon name={this.errorIcon} class={bem('error-icon')} />
             )}
           </div>
@@ -153,14 +159,16 @@ export default createComponent({
         return <img ref="image" vLazy={this.src} {...imgData} />;
       }
 
-      return (
-        <img
-          src={this.src}
-          onLoad={this.onLoad}
-          onError={this.onError}
-          {...imgData}
-        />
-      );
+      if (this.src) {
+        return (
+          <img
+            src={this.src}
+            onLoad={this.onLoad}
+            onError={this.onError}
+            {...imgData}
+          />
+        );
+      }
     },
   },
 
@@ -173,7 +181,7 @@ export default createComponent({
       >
         {this.genImage()}
         {this.genPlaceholder()}
-        {this.slots()}
+        {this.$slots.default?.()}
       </div>
     );
   },

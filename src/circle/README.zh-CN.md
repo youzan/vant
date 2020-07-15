@@ -13,10 +13,15 @@ Vue.use(Circle);
 
 ### 基础用法
 
-`rate`属性表示进度条的目标进度，`v-model`表示动画过程中的实时进度。当`rate`发生变化时，`v-model`会以`speed`的速度变化，直至达到`rate`设定的值。
+`rate`属性表示进度条的目标进度，`v-model:currentRate`表示动画过程中的实时进度。当`rate`发生变化时，`v-model:currentRate`会以`speed`的速度变化，直至达到`rate`设定的值。
 
 ```html
-<van-circle v-model="currentRate" :rate="30" :speed="100" :text="text" />
+<van-circle
+  v-model:currentRate="currentRate"
+  :rate="30"
+  :speed="100"
+  :text="text"
+/>
 ```
 
 ```js
@@ -40,7 +45,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:currentRate="currentRate"
   :rate="rate"
   :stroke-width="60"
   text="宽度定制"
@@ -53,7 +58,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:currentRate="currentRate"
   :rate="rate"
   layer-color="#ebedf0"
   text="颜色定制"
@@ -66,7 +71,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:currentRate="currentRate"
   :rate="rate"
   :color="gradientColor"
   text="渐变色"
@@ -93,7 +98,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:currentRate="currentRate"
   :rate="rate"
   :clockwise="false"
   text="逆时针方向"
@@ -105,7 +110,12 @@ export default {
 通过`size`属性设置圆环直径
 
 ```html
-<van-circle v-model="currentRate" :rate="rate" size="120px" text="大小定制" />
+<van-circle
+  v-model:currentRate="currentRate"
+  :rate="rate"
+  size="120px"
+  text="大小定制"
+/>
 ```
 
 ## API
@@ -114,7 +124,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前进度 | _number_ | - |
+| v-model:currentRate | 当前进度 | _number_ | - |
 | rate | 目标进度 | _number \| string_ | `100` |
 | size | 圆环直径，默认单位为 `px` | _number \| string_ | `100px` |
 | color `v2.1.4` | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` |

@@ -6,12 +6,10 @@ const [createComponent, bem] = createNamespace('sidebar');
 export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
-  model: {
-    prop: 'activeKey',
-  },
+  emits: ['change', 'update:modelValue'],
 
   props: {
-    activeKey: {
+    modelValue: {
       type: [Number, String],
       default: 0,
     },
@@ -19,13 +17,13 @@ export default createComponent({
 
   data() {
     return {
-      index: +this.activeKey,
+      index: +this.modelValue,
     };
   },
 
   watch: {
-    activeKey() {
-      this.setIndex(+this.activeKey);
+    modelValue() {
+      this.setIndex(+this.modelValue);
     },
   },
 
@@ -39,6 +37,6 @@ export default createComponent({
   },
 
   render() {
-    return <div class={bem()}>{this.slots()}</div>;
+    return <div class={bem()}>{this.$slots.default?.()}</div>;
   },
 });

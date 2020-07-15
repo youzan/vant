@@ -27,11 +27,13 @@ export default createComponent({
       type: [Number, String],
       default: 1,
     },
-    value: {
+    modelValue: {
       type: Number,
       default: 0,
     },
   },
+
+  emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
 
   data() {
     return {
@@ -57,7 +59,7 @@ export default createComponent({
 
   created() {
     // format initial value
-    this.updateValue(this.value);
+    this.updateValue(this.modelValue);
   },
 
   mounted() {
@@ -71,7 +73,7 @@ export default createComponent({
       }
 
       this.touchStart(event);
-      this.startValue = this.format(this.value);
+      this.startValue = this.format(this.modelValue);
       this.dragStatus = 'start';
     },
 
@@ -122,15 +124,15 @@ export default createComponent({
       const total = this.vertical ? rect.height : rect.width;
       const value = +this.min + (delta / total) * this.range;
 
-      this.startValue = this.value;
+      this.startValue = this.modelValue;
       this.updateValue(value, true);
     },
 
     updateValue(value, end) {
       value = this.format(value);
 
-      if (value !== this.value) {
-        this.$emit('input', value);
+      if (value !== this.modelValue) {
+        this.$emit('update:modelValue', value);
       }
 
       if (end && value !== this.startValue) {
@@ -157,7 +159,7 @@ export default createComponent({
     };
 
     const barStyle = {
-      [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
+      [mainAxis]: `${((this.modelValue - this.min) * 100) / this.range}%`,
       background: this.activeColor,
     };
 
@@ -177,12 +179,14 @@ export default createComponent({
             role="slider"
             tabindex={this.disabled ? -1 : 0}
             aria-valuemin={this.min}
-            aria-valuenow={this.value}
+            aria-valuenow={this.modelValue}
             aria-valuemax={this.max}
             aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
             class={bem('button-wrapper')}
           >
-            {this.slots('button') || (
+            {this.$slots.button ? (
+              this.$slots.button()
+            ) : (
               <div class={bem('button')} style={this.buttonStyle} />
             )}
           </div>

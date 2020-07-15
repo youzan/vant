@@ -54,7 +54,7 @@ export default {
 ### Async Control
 
 ```html
-<van-switch :value="checked" @input="onInput" />
+<van-switch :model-value="checked" @update:model:value="onUpdateValue" />
 ```
 
 ```js
@@ -65,7 +65,7 @@ export default {
     };
   },
   methods: {
-    onInput(checked) {
+    onUpdateValue(checked) {
       Dialog.confirm({
         title: 'Confirm',
         message: 'Are you sure to toggle switch?',

@@ -25,12 +25,14 @@
     </demo-block>
 
     <demo-block :title="t('asyncControl')">
-      <van-switch :value="checked4" @input="onInput" />
+      <van-switch :model-value="checked4" @update:model-value="onInput" />
     </demo-block>
 
     <demo-block :title="t('withCell')">
       <van-cell center :title="t('title')">
-        <van-switch v-model="checked5" slot="right-icon" size="24" />
+        <template #right-icon>
+          <van-switch v-model="checked5" size="24" />
+        </template>
       </van-cell>
     </demo-block>
   </demo-section>

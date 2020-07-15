@@ -36,7 +36,7 @@ export default createComponent({
     voidColor: String,
     iconPrefix: String,
     disabledColor: String,
-    value: {
+    modelValue: {
       type: Number,
       default: 0,
     },
@@ -58,11 +58,15 @@ export default createComponent({
     },
   },
 
+  created() {
+    this.itemRefs = [];
+  },
+
   computed: {
     list() {
       const list = [];
       for (let i = 1; i <= this.count; i++) {
-        list.push(getRateStatus(this.value, i, this.allowHalf));
+        list.push(getRateStatus(this.modelValue, i, this.allowHalf));
       }
 
       return list;
@@ -83,8 +87,8 @@ export default createComponent({
 
   methods: {
     select(index) {
-      if (!this.disabled && !this.readonly && index !== this.value) {
-        this.$emit('input', index);
+      if (!this.disabled && !this.readonly && index !== this.modelValue) {
+        this.$emit('update:modelValue', index);
         this.$emit('change', index);
       }
     },
@@ -96,9 +100,7 @@ export default createComponent({
 
       this.touchStart(event);
 
-      const rects = this.$refs.items.map((item) =>
-        item.getBoundingClientRect()
-      );
+      const rects = this.itemRefs.map((item) => item.getBoundingClientRect());
       const ranges = [];
 
       rects.forEach((rect, index) => {
@@ -161,9 +163,10 @@ export default createComponent({
 
       return (
         <div
-          ref="items"
-          refInFor
           key={index}
+          ref={(val) => {
+            this.itemRefs[index] = val;
+          }}
           role="radio"
           style={style}
           tabindex="0"

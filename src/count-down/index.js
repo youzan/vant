@@ -21,6 +21,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'finish'],
+
   data() {
     return {
       remain: 0,
@@ -40,7 +42,9 @@ export default createComponent({
   watch: {
     time: {
       immediate: true,
-      handler: 'reset',
+      handler() {
+        this.reset();
+      },
     },
   },
 
@@ -153,7 +157,9 @@ export default createComponent({
   render() {
     return (
       <div class={bem()}>
-        {this.slots('default', this.timeData) || this.formattedTime}
+        {this.$slots.default
+          ? this.$slots.default(this.timeData)
+          : this.formattedTime}
       </div>
     );
   },

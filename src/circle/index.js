@@ -23,7 +23,7 @@ export default createComponent({
   props: {
     text: String,
     strokeLinecap: String,
-    value: {
+    currentRate: {
       type: Number,
       default: 0,
     },
@@ -61,6 +61,8 @@ export default createComponent({
     },
   },
 
+  emits: ['update:currentRate'],
+
   beforeCreate() {
     this.uid = `van-circle-gradient-${uid++}`;
   },
@@ -83,7 +85,7 @@ export default createComponent({
     },
 
     layerStyle() {
-      const offset = (PERIMETER * this.value) / 100;
+      const offset = (PERIMETER * this.currentRate) / 100;
 
       return {
         stroke: `${this.color}`,
@@ -130,7 +132,7 @@ export default createComponent({
     rate: {
       handler(rate) {
         this.startTime = Date.now();
-        this.startRate = this.value;
+        this.startRate = this.currentRate;
         this.endRate = format(rate);
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs(
@@ -141,7 +143,7 @@ export default createComponent({
           cancelRaf(this.rafId);
           this.rafId = raf(this.animate);
         } else {
-          this.$emit('input', this.endRate);
+          this.$emit('update:currentRate', this.endRate);
         }
       },
       immediate: true,
@@ -154,7 +156,7 @@ export default createComponent({
       const progress = Math.min((now - this.startTime) / this.duration, 1);
       const rate = progress * (this.endRate - this.startRate) + this.startRate;
 
-      this.$emit('input', format(parseFloat(rate.toFixed(1))));
+      this.$emit('update:currentRate', format(parseFloat(rate.toFixed(1))));
 
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
         this.rafId = raf(this.animate);
@@ -175,8 +177,9 @@ export default createComponent({
             stroke={this.gradient ? `url(#${this.uid})` : this.color}
           />
         </svg>
-        {this.slots() ||
-          (this.text && <div class={bem('text')}>{this.text}</div>)}
+        {this.$slots.default
+          ? this.$slots.default()
+          : this.text && <div class={bem('text')}>{this.text}</div>}
       </div>
     );
   },

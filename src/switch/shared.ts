@@ -4,9 +4,9 @@
 
 export type SharedSwitchProps = {
   size?: string | number;
-  value?: any;
   loading?: boolean;
   disabled?: boolean;
+  modelValue?: any;
   activeValue: any;
   inactiveValue: any;
   activeColor?: string;
@@ -15,9 +15,9 @@ export type SharedSwitchProps = {
 
 export const switchProps = {
   size: [Number, String],
-  value: null as any,
   loading: Boolean,
   disabled: Boolean,
+  modelValue: null as any,
   activeColor: String,
   inactiveColor: String,
   activeValue: {

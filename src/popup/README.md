@@ -15,7 +15,7 @@ Vue.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">Show Popup</van-cell>
-<van-popup v-model="show">Content</van-popup>
+<van-popup v-model:show="show">Content</van-popup>
 ```
 
 ```js
@@ -39,21 +39,21 @@ export default {
 Use `position` prop to set popup display position
 
 ```html
-<van-popup v-model="show" position="top" :style="{ height: '30%' }" />
+<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
 ```
 
 ### Close Icon
 
 ```html
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   position="bottom"
   :style="{ height: '30%' }"
 />
 <!-- Custom Icon -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon="close"
   position="bottom"
@@ -61,7 +61,7 @@ Use `position` prop to set popup display position
 />
 <!-- Icon Position -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon-position="top-left"
   position="bottom"
@@ -72,7 +72,7 @@ Use `position` prop to set popup display position
 ### Round Corner
 
 ```html
-<van-popup v-model="show" round position="bottom" :style="{ height: '30%' }" />
+<van-popup v-model:show="show" round position="bottom" :style="{ height: '30%' }" />
 ```
 
 ### Get Container
@@ -81,13 +81,13 @@ Use `get-container` prop to specify mount location
 
 ```html
 <!-- mount to body -->
-<van-popup v-model="show" get-container="body" />
+<van-popup v-model:show="show" get-container="body" />
 
 <!-- mount to #app -->
-<van-popup v-model="show" get-container="#app" />
+<van-popup v-model:show="show" get-container="#app" />
 
 <!-- Specify the mount location by function -->
-<van-popup v-model="show" :get-container="getContainer" />
+<van-popup v-model:show="show" :get-container="getContainer" />
 ```
 
 ```js
@@ -108,7 +108,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) | Whether to show popup | _boolean_ | `false` |
+| v-model:show | Whether to show popup | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | Custom overlay class | _string_ | - |

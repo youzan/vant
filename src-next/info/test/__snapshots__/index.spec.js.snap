@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`should not render when info is empty string 1`] = ``;
-
-exports[`should not render when info is empty undefined 1`] = ``;
-
-exports[`should render when info is zero 1`] = `<div class="van-info">0</div>`;

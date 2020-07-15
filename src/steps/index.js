@@ -24,10 +24,12 @@ export default createComponent({
     },
   },
 
+  emits: ['click-step'],
+
   render() {
     return (
       <div class={bem([this.direction])}>
-        <div class={bem('items')}>{this.slots()}</div>
+        <div class={bem('items')}>{this.$slots.default?.()}</div>
       </div>
     );
   },

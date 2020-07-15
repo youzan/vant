@@ -23,8 +23,8 @@
 
     <demo-block :title="t('title3')">
       <van-pagination
-        force-ellipses
         v-model="currentPage3"
+        force-ellipses
         :total-items="125"
         :show-page-size="3"
         :prev-text="t('prevText')"

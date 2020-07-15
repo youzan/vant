@@ -16,7 +16,7 @@ export default createComponent({
       type: String,
       default: 'multi',
     },
-    value: {
+    modelValue: {
       type: Number,
       default: 0,
     },
@@ -37,6 +37,8 @@ export default createComponent({
       default: 5,
     },
   },
+
+  emits: ['change', 'update:modelValue'],
 
   computed: {
     count() {
@@ -62,7 +64,7 @@ export default createComponent({
       // recompute if showPageSize
       if (isMaxSized) {
         // Current page is displayed in the middle of the visible ones
-        startPage = Math.max(this.value - Math.floor(showPageSize / 2), 1);
+        startPage = Math.max(this.modelValue - Math.floor(showPageSize / 2), 1);
         endPage = startPage + showPageSize - 1;
 
         // Adjust if limit is exceeded
@@ -74,7 +76,7 @@ export default createComponent({
 
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
-        const page = makePage(number, number, number === this.value);
+        const page = makePage(number, number, number === this.modelValue);
         pages.push(page);
       }
 
@@ -96,9 +98,9 @@ export default createComponent({
   },
 
   watch: {
-    value: {
+    modelValue: {
       handler(page) {
-        this.select(page || this.value);
+        this.select(page);
       },
       immediate: true,
     },
@@ -107,8 +109,8 @@ export default createComponent({
   methods: {
     select(page, emitChange) {
       page = Math.min(this.count, Math.max(1, page));
-      if (this.value !== page) {
-        this.$emit('input', page);
+      if (this.modelValue !== page) {
+        this.$emit('update:modelValue', page);
 
         if (emitChange) {
           this.$emit('change', page);
@@ -118,7 +120,7 @@ export default createComponent({
   },
 
   render() {
-    const { value } = this;
+    const value = this.modelValue;
     const simple = this.mode !== 'multi';
 
     const onSelect = (value) => () => {
@@ -143,7 +145,9 @@ export default createComponent({
         ))}
         {simple && (
           <li class={bem('page-desc')}>
-            {this.slots('pageDesc') || `${value}/${this.count}`}
+            {this.$slots.pageDesc
+              ? this.$slots.pageDesc()
+              : `${value}/${this.count}`}
           </li>
         )}
         <li

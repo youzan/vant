@@ -44,22 +44,22 @@ export default createComponent({
       const { activeIcon, activeColor, inactiveIcon } = this.parent;
 
       if (this.active) {
-        return (
-          this.slots('active-icon') || (
-            <Icon
-              class={bem('icon', 'active')}
-              name={activeIcon}
-              color={activeColor}
-            />
-          )
+        return this.$slots['active-icon'] ? (
+          this.$slots['active-icon']()
+        ) : (
+          <Icon
+            class={bem('icon', 'active')}
+            name={activeIcon}
+            color={activeColor}
+          />
         );
       }
 
-      const inactiveIconSlot = this.slots('inactive-icon');
-
-      if (inactiveIcon || inactiveIconSlot) {
-        return (
-          inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />
+      if (inactiveIcon || this.$slots['inactive-icon']) {
+        return this.$slots['inactive-icon'] ? (
+          this.$slots['inactive-icon']()
+        ) : (
+          <Icon class={bem('icon')} name={inactiveIcon} />
         );
       }
 
@@ -82,7 +82,7 @@ export default createComponent({
           style={this.titleStyle}
           onClick={this.onClickStep}
         >
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
         <div class={bem('circle-container')} onClick={this.onClickStep}>
           {this.genCircle()}

@@ -1,6 +1,6 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 import VueImagePreview from './ImagePreview';
-import { isServer } from '../utils';
+import { inBrowser } from '../utils';
 
 let instance;
 
@@ -46,7 +46,7 @@ const initInstance = () => {
 
 const ImagePreview = (images, startPosition = 0) => {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return;
   }
 
