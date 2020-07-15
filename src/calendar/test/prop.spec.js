@@ -191,3 +191,24 @@ test('month-show event', async () => {
 
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });
+
+test('first day of week', async () => {
+  const wrapper = mount(Calendar, {
+    propsData: {
+      poppable: false,
+      defaultDate: new Date(2020, 7, 1),
+      maxDate: new Date(2020, 7, 30),
+      firstDayOfWeek: 2,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.find('.van-calendar__weekdays').text()[0]).toEqual('二');
+
+  const day = wrapper.find(
+    '.van-calendar__month:first-of-type .van-calendar__day'
+  );
+  expect(day.text()).toEqual('1');
+  expect(day.attributes('style')).toContain(`margin-left: ${100 / 7}%`);
+});

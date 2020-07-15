@@ -2,7 +2,7 @@
 
 ### 介绍
 
-日历组件用于选择日期或日期区间，2.4 版本开始支持此组件
+日历组件用于选择日期或日期区间，2.4 版本开始支持此组件。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Calendar);
 
 ### 选择单个日期
 
-下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发`confirm`事件
+下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发 `confirm` 事件。
 
 ```html
 <van-cell title="选择单个日期" :value="date" @click="show = true" />
@@ -46,7 +46,7 @@ export default {
 
 ### 选择多个日期
 
-设置`type`为`multiple`后可以选择多个日期，此时`confirm`事件返回的 date 为数组结构，数组包含若干个选中的日期。
+设置 `type` 为 `multiple` 后可以选择多个日期，此时 `confirm` 事件返回的 date 为数组结构，数组包含若干个选中的日期。
 
 ```html
 <van-cell title="选择多个日期" :value="text" @click="show = true" />
@@ -72,7 +72,7 @@ export default {
 
 ### 选择日期区间
 
-设置`type`为`range`后可以选择日期区间，此时`confirm`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
+设置 `type` 为 `range` 后可以选择日期区间，此时 `confirm` 事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
 
 ```html
 <van-cell title="选择日期区间" :value="date" @click="show = true" />
@@ -102,7 +102,7 @@ export default {
 
 ### 快捷选择
 
-将`show-confirm`设置为`false`可以隐藏确认按钮，这种情况下选择完成后会立即触发`confirm`事件
+将 `show-confirm` 设置为 `false` 可以隐藏确认按钮，这种情况下选择完成后会立即触发 `confirm` 事件。
 
 ```html
 <van-calendar v-model="show" :show-confirm="false" />
@@ -110,7 +110,7 @@ export default {
 
 ### 自定义颜色
 
-通过`color`属性可以自定义日历的颜色，对选中日期和底部按钮生效
+通过 `color` 属性可以自定义日历的颜色，对选中日期和底部按钮生效。
 
 ```html
 <van-calendar v-model="show" color="#07c160" />
@@ -118,7 +118,7 @@ export default {
 
 ### 自定义日期范围
 
-通过`min-date`和`max-date`定义日历的范围
+通过 `min-date` 和 `max-date` 定义日历的范围。
 
 ```html
 <van-calendar v-model="show" :min-date="minDate" :max-date="maxDate" />
@@ -138,7 +138,7 @@ export default {
 
 ### 自定义按钮文字
 
-通过`confirm-text`设置按钮文字，通过`confirm-disabled-text`设置按钮禁用时的文字
+通过 `confirm-text` 设置按钮文字，通过 `confirm-disabled-text` 设置按钮禁用时的文字。
 
 ```html
 <van-calendar
@@ -151,7 +151,7 @@ export default {
 
 ### 自定义日期文案
 
-通过传入`formatter`函数来对日历上每一格的内容进行格式化
+通过传入 `formatter` 函数来对日历上每一格的内容进行格式化。
 
 ```html
 <van-calendar v-model="show" type="range" :formatter="formatter" />
@@ -188,7 +188,7 @@ export default {
 
 ### 自定义弹出位置
 
-通过`position`属性自定义弹出层的弹出位置，可选值为`top`、`left`、`right`
+通过 `position` 属性自定义弹出层的弹出位置，可选值为 `top`、`left`、`right`。
 
 ```html
 <van-calendar v-model="show" :round="false" position="right" />
@@ -196,15 +196,23 @@ export default {
 
 ### 日期区间最大范围
 
-选择日期区间时，可以通过`max-range`属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案
+选择日期区间时，可以通过 `max-range` 属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案。
 
 ```html
 <van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
 ```
 
+### 自定义周起始日
+
+通过 `first-day-of-week` 属性设置一周从哪天开始。
+
+```html
+<van-calendar first-day-of-week="1" />
+```
+
 ### 平铺展示
 
-将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现
+将 `poppable` 设置为 `false`，日历会直接展示在页面内，而不是以弹层的形式出现。
 
 ```html
 <van-calendar
@@ -237,6 +245,7 @@ export default {
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
 | confirm-text | 确认按钮的文字 | _string_ | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
+| first-day-of-week `v2.9.2` | 设置周起始日 | _0-6_ | `0` |
 
 ### Poppable Props
 

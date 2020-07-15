@@ -10,6 +10,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.9.2](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2)
+
+`2020-07-14`
+
+**Feature**
+
+- Calendar: add first-day-of-week prop [#6468](https://github.com/youzan/vant/issues/6468)
+- DatetimePicker: add columns-order prop [#6672](https://github.com/youzan/vant/issues/6672) [#6768](https://github.com/youzan/vant/issues/6768)
+
+**Bug Fixes**
+
+- Tab: should not trigger route when disabled [#6782](https://github.com/youzan/vant/issues/6782)
+- Sku: fix label color [#6771](https://github.com/youzan/vant/issues/6771)
+- Sku: image cell word wrap [#6777](https://github.com/youzan/vant/issues/6777)
+
 ### [v2.9.1](https://github.com/youzan/vant/compare/v2.9.0...v2.9.1)
 
 `2020-07-12`

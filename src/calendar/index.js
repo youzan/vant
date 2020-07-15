@@ -35,6 +35,13 @@ export default createComponent({
     allowSameDay: Boolean,
     closeOnPopstate: Boolean,
     confirmDisabledText: String,
+    firstDayOfWeek: {
+      type: [Number, String],
+      default: 0,
+      validator: (val) => {
+        return val >= 0 && val <= 6;
+      },
+    },
     type: {
       type: String,
       default: 'single',
@@ -136,6 +143,10 @@ export default createComponent({
       }
 
       return !currentDate;
+    },
+
+    dayOffset() {
+      return this.firstDayOfWeek ? this.firstDayOfWeek % 7 : 0;
     },
   },
 
@@ -379,6 +390,7 @@ export default createComponent({
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
+          firstDayOfWeek={this.dayOffset}
           onClick={this.onClickDay}
         />
       );
@@ -432,6 +444,7 @@ export default createComponent({
             scopedSlots={{
               title: () => this.slots('title'),
             }}
+            firstDayOfWeek={this.dayOffset}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}

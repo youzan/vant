@@ -96,7 +96,7 @@ Vue.use(CellGroup);
 <van-cell title="单元格" icon="shop-o">
   <!-- 使用 right-icon 插槽来自定义右侧图标 -->
   <template #right-icon>
-    <van-icon name="search" style="line-height: inherit;" />
+    <van-icon name="search" style="font-size: 16px; line-height: inherit;" />
   </template>
 </van-cell>
 ```
