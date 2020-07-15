@@ -9,10 +9,8 @@
   &__cancel {
     display: block;
     width: 100%;
-    height: @action-sheet-item-height;
-    padding: 0;
+    padding: 14px @padding-md;
     font-size: @action-sheet-item-font-size;
-    line-height: 20px;
     background-color: @action-sheet-item-background;
     border: none;
     cursor: pointer;
@@ -23,6 +21,8 @@
   }
 
   &__item {
+    line-height: @action-sheet-item-line-height;
+
     &--loading,
     &--disabled {
       color: @action-sheet-item-disabled-text-color;
@@ -42,9 +42,10 @@
   }
 
   &__subname {
-    margin-left: @padding-base;
+    margin-top: @padding-xs;
     color: @action-sheet-subname-color;
     font-size: @action-sheet-subname-font-size;
+    line-height: @action-sheet-subname-line-height;
   }
 
   &__gap {

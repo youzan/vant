@@ -125,7 +125,7 @@ export default createComponent({
 
           return [
             <span class={bem('name')}>{item.name}</span>,
-            item.subname && <span class={bem('subname')}>{item.subname}</span>,
+            item.subname && <div class={bem('subname')}>{item.subname}</div>,
           ];
         }
 
