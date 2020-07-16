@@ -229,7 +229,7 @@ exports[`render nav-left & nav-right slot 1`] = `
 
 exports[`rendered event 1`] = `<div role="tabpanel" class="van-tab__pane" style="">Text</div>`;
 
-exports[`scrollspy 1`] = `
+exports[`scrollspy prop 1`] = `
 <div class="van-tabs van-tabs--line">
   <div>
     <div class="van-sticky">
@@ -251,7 +251,7 @@ exports[`scrollspy 1`] = `
 </div>
 `;
 
-exports[`scrollspy 2`] = `
+exports[`scrollspy prop 2`] = `
 <div class="van-tabs van-tabs--line">
   <div>
     <div class="van-sticky">
