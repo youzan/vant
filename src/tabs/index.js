@@ -299,7 +299,15 @@ export default createComponent({
       this.$emit('scroll', params);
     },
 
-    scrollToCurrentContent() {
+    // @exposed-api
+    scrollTo(name) {
+      this.$nextTick(() => {
+        this.setCurrentIndexByName(name);
+        this.scrollToCurrentContent(true);
+      });
+    },
+
+    scrollToCurrentContent(immediate = false) {
       if (this.scrollspy) {
         const target = this.children[this.currentIndex];
         const el = target?.$el;
@@ -308,7 +316,7 @@ export default createComponent({
           const to = getElementTop(el, this.scroller) - this.scrollOffset;
 
           this.lockScroll = true;
-          scrollTopTo(this.scroller, to, +this.duration, () => {
+          scrollTopTo(this.scroller, to, immediate ? 0 : +this.duration, () => {
             this.lockScroll = false;
           });
         }

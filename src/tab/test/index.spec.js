@@ -258,7 +258,7 @@ test('info prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('scrollspy', async () => {
+test('scrollspy prop', async () => {
   const onChange = jest.fn();
   window.scrollTo = jest.fn();
 
@@ -286,6 +286,30 @@ test('scrollspy', async () => {
   mockScrollTop(100);
   expect(wrapper).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledWith('c', 'title3');
+});
+
+test('scrollTo method', async () => {
+  const onChange = jest.fn();
+  window.scrollTo = jest.fn();
+
+  mount({
+    template: `
+      <van-tabs scrollspy sticky @change="onChange" ref="root">
+        <van-tab name="a" title="title1">Text</van-tab>
+        <van-tab name="b" title="title2">Text</van-tab>
+        <van-tab name="c" title="title3">Text</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onChange,
+    },
+    mounted() {
+      this.$refs.root.scrollTo('b');
+    },
+  });
+
+  await later();
+  expect(onChange).toHaveBeenCalledWith('b', 'title2');
 });
 
 test('rendered event', async () => {
