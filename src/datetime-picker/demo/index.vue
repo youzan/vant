@@ -21,7 +21,7 @@
       />
     </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('monthDayType')">
+    <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
       <van-datetime-picker
         v-model="value.monthDayType"
         type="month-day"
@@ -52,7 +52,7 @@
       />
     </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('datehourType')">
+    <demo-block v-if="!isWeapp" card :title="t('datehourType')">
       <van-datetime-picker
         v-model="value.datehour"
         type="datehour"
@@ -68,6 +68,18 @@
         type="time"
         :title="t('optionFilter')"
         :filter="filter"
+      />
+    </demo-block>
+
+    <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
+      <van-datetime-picker
+        v-model="value.sortColumnsDate"
+        type="date"
+        :title="t('sortColumns')"
+        :columns-order="['month', 'day', 'year']"
+        :min-date="minDate"
+        :max-date="maxDate"
+        :formatter="formatter"
       />
     </demo-block>
   </demo-section>
@@ -87,9 +99,10 @@ export default {
       monthDayType: '选择月日',
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
+      sortColumns: '自定义列排序',
     },
     'en-US': {
-      day: 'Day',
+      day: ' Day',
       year: ' Year',
       month: ' Month',
       timeType: 'Choose Time',
@@ -99,6 +112,7 @@ export default {
       monthDayType: 'Choose Month-Day',
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
+      sortColumns: 'Columns Order',
     },
   },
 
@@ -114,6 +128,7 @@ export default {
         monthDay: new Date(2020, 0, 1),
         yearMonth: new Date(2020, 0, 1),
         optionFilter: '12:00',
+        sortColumnsDate: new Date(2020, 0, 1),
       },
     };
   },

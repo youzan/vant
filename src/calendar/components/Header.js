@@ -9,6 +9,7 @@ export default createComponent({
     subtitle: String,
     showTitle: Boolean,
     showSubtitle: Boolean,
+    firstDayOfWeek: Number,
   },
 
   methods: {
@@ -28,9 +29,16 @@ export default createComponent({
     genWeekDays() {
       const weekdays = t('weekdays');
 
+      const { firstDayOfWeek } = this;
+
+      const renderWeekDays = [
+        ...weekdays.slice(firstDayOfWeek, 7),
+        ...weekdays.slice(0, firstDayOfWeek),
+      ];
+
       return (
         <div class={bem('weekdays')}>
-          {weekdays.map((item) => (
+          {renderWeekDays.map((item) => (
             <span class={bem('weekday')}>{item}</span>
           ))}
         </div>

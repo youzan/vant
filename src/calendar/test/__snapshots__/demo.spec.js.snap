@@ -51,6 +51,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell__title"><span>日期区间最大范围</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
         <!----></i>
     </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>自定义周起始日</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
   </div>
   <div>
     <div class="van-calendar" style="height: 500px;">

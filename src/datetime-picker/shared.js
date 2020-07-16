@@ -15,6 +15,7 @@ export const sharedProps = {
     type: Function,
     default: (type, value) => value,
   },
+  columnsOrder: Array,
 };
 
 export const TimePickerMixin = {
