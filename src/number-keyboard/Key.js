@@ -78,8 +78,9 @@ export default createComponent({
   render() {
     return (
       <div class={bem('wrapper', { wider: this.wider })}>
-        <button
-          type="button"
+        <div
+          role="button"
+          tabindex="0"
           class={bem([
             this.color,
             {
@@ -90,7 +91,7 @@ export default createComponent({
           ])}
         >
           {this.genContent()}
-        </button>
+        </div>
       </div>
     );
   },
