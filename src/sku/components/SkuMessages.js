@@ -115,11 +115,12 @@ export default createComponent({
      * The phone number copied from IOS mobile phone address book
      * will add spaces and invisible Unicode characters
      * which cannot pass the /^\d+$/ verification
+     * so keep numbers and dots
      */
     getFormatter(message) {
       return function formatter(value) {
         if (message.type === 'mobile' || message.type === 'tel') {
-          return value.replace(/\s/g, '').replace(/[\u202c|\u202d]/g, '');
+          return value.replace(/[^\d.]/g, '');
         }
 
         return value;
