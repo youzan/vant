@@ -112,6 +112,16 @@ export default createComponent({
       }
     },
 
+    getFormatter(message) {
+      return function formatter(value) {
+        if (message.type === 'mobile' || message.type === 'tel') {
+          return value.replace(/\s/g, '').replace(/[\u202c|\u202d]/g, '');
+        }
+
+        return value;
+      };
+    },
+
     genMessage(message, index) {
       if (message.type === 'image') {
         return (
@@ -157,6 +167,7 @@ export default createComponent({
           required={String(message.required) === '1'}
           placeholder={this.getPlaceholder(message)}
           type={this.getType(message)}
+          formatter={this.getFormatter(message)}
         />
       );
     },
