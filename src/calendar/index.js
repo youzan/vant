@@ -244,14 +244,13 @@ export default createComponent({
     onScroll() {
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
-      const bottom = top + this.bodyHeight;
       const heights = months.map((item) => item.getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      /* istanbul ignore next */
-      if (top < 0 || (bottom > heightSum && top > 0)) {
-        return;
+      let bottom = top + this.bodyHeight;
+      if (bottom > heightSum && top > 0) {
+        bottom = heightSum;
       }
 
       let height = 0;
