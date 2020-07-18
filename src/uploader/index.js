@@ -30,6 +30,7 @@ export default createComponent({
     beforeRead: Function,
     beforeDelete: Function,
     previewSize: [Number, String],
+    previewOptions: Object,
     name: {
       type: [Number, String],
       default: '',
@@ -256,11 +257,12 @@ export default createComponent({
 
       this.imagePreview = ImagePreview({
         images: imageContents,
-        closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item),
+        closeOnPopstate: true,
         onClose: () => {
           this.$emit('close-preview');
         },
+        ...this.previewOptions,
       });
     },
 

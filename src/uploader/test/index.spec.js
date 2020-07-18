@@ -406,6 +406,23 @@ test('click to preview image', async () => {
   expect(images.length).toEqual(1);
 });
 
+test('preview-options prop', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      previewOptions: {
+        closeable: true,
+      },
+    },
+  });
+
+  wrapper.find('.van-image').trigger('click');
+  await later();
+
+  const closeIcon = document.querySelectorAll('.van-image-preview__close-icon');
+  expect(closeIcon.length).toEqual(1);
+});
+
 test('closeImagePreview method', () => {
   const close = jest.fn();
   const wrapper = mount(Uploader, {
