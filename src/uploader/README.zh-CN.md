@@ -227,6 +227,7 @@ export default {
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | _number \| string_ | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | _boolean_ | `true` |
 | preview-full-image `v2.1.5` | 是否在点击预览图后展示全屏图片预览 | _boolean_ | `true` |
+| preview-options `v2.9.3` | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | _boolean_ | `false` |
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
 | deletable `v2.2.12` | 是否展示删除按钮 | _boolean_ | `true` |
