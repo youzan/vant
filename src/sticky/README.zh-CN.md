@@ -66,7 +66,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| offset-top `v2.8.7` | 吸顶时与顶部的距离，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | 吸顶时与顶部的距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | z-index | 吸顶时的 z-index | _number \| string_ | `99` |
 | container | 容器对应的 HTML 节点 | _Element_ | - |
 

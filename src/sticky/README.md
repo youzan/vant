@@ -56,7 +56,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| offset-top `v2.8.7` | Offset top, supports `px` ans `rem` unit, default `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | Offset top, supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `0` |
 | z-index | z-index when sticky | _number \| string_ | `99` |
 | container | Container DOM | _Element_ | - |
 

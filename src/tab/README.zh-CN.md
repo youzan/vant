@@ -209,7 +209,7 @@ export default {
 | swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | _boolean_ | `false` |
-| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `4` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
