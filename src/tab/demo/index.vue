@@ -93,6 +93,14 @@
         </van-tab>
       </van-tabs>
     </demo-block>
+
+    <demo-block v-if="!isWeapp" :title="t('beforeChange')">
+      <van-tabs :before-change="beforeChange">
+        <van-tab :title="t('tab') + index" v-for="index in 4" :key="index">
+          {{ t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -112,6 +120,7 @@ export default {
       title10: '滚动导航',
       disabled: ' 已被禁用',
       matchByName: '通过名称匹配',
+      beforeChange: '异步切换',
     },
     'en-US': {
       tab: 'Tab ',
@@ -127,6 +136,7 @@ export default {
       title10: 'Scrollspy',
       disabled: ' is disabled',
       matchByName: 'Match By Name',
+      beforeChange: 'Before Change',
     },
   },
 
@@ -145,6 +155,16 @@ export default {
 
     onClick(index, title) {
       this.$toast(title);
+    },
+
+    beforeChange(name) {
+      if (name === 1) {
+        return false;
+      }
+
+      return new Promise((resolve) => {
+        resolve(name !== 3);
+      });
     },
   },
 };

@@ -14,7 +14,7 @@ Vue.use(Tabs);
 
 ### 基础用法
 
-通过`v-model`绑定当前激活标签对应的索引值，默认情况下启用第一个标签
+通过 `v-model` 绑定当前激活标签对应的索引值，默认情况下启用第一个标签。
 
 ```html
 <van-tabs v-model="active">
@@ -37,7 +37,7 @@ export default {
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`（此时无法通过索引值来匹配标签）
+在标签指定 `name` 属性的情况下，`v-model` 的值为当前标签的 `name`（此时无法通过索引值来匹配标签）。
 
 ```html
 <van-tabs v-model="activeName">
@@ -59,7 +59,7 @@ export default {
 
 ### 标签栏滚动
 
-标签数量超过 4 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中
+标签数量超过 4 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中。
 
 ```html
 <van-tabs>
@@ -71,7 +71,7 @@ export default {
 
 ### 禁用标签
 
-设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件
+设置 `disabled` 属性即可禁用标签，如果需要监听禁用标签的点击事件，可以在 `van-tabs` 上监听`disabled` 事件。
 
 ```html
 <van-tabs @disabled="onClickDisabled">
@@ -95,7 +95,7 @@ export default {
 
 ### 样式风格
 
-`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格
+`Tab` 支持两种样式风格：`line` 和`card`，默认为 `line` 样式，可以通过 `type` 属性切换样式风格。
 
 ```html
 <van-tabs type="card">
@@ -107,7 +107,7 @@ export default {
 
 ### 点击事件
 
-可以在`van-tabs`上绑定`click`事件，事件传参为标签对应的索引和标题
+可以在 `van-tabs` 上绑定 `click` 事件，事件传参为标签对应的标识符和标题。
 
 ```html
 <van-tabs @click="onClick">
@@ -130,7 +130,7 @@ export default {
 
 ### 粘性布局
 
-通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+通过 `sticky` 属性可以开启粘性布局，粘性布局下，标签页滚动到顶部时会自动吸顶。
 
 ```html
 <van-tabs v-model="active" sticky>
@@ -142,7 +142,7 @@ export default {
 
 ### 自定义标签
 
-通过 title 插槽可以自定义标签内容
+通过 `title` 插槽可以自定义标签内容。
 
 ```html
 <van-tabs v-model="active">
@@ -155,7 +155,7 @@ export default {
 
 ### 切换动画
 
-通过`animated`属性可以开启切换标签内容时的转场动画
+通过 `animated` 属性可以开启切换标签内容时的转场动画。
 
 ```html
 <van-tabs v-model="active" animated>
@@ -167,7 +167,7 @@ export default {
 
 ### 滑动切换
 
-通过`swipeable`属性可以开启滑动切换标签页
+通过 `swipeable` 属性可以开启滑动切换标签页。
 
 ```html
 <van-tabs v-model="active" swipeable>
@@ -179,7 +179,7 @@ export default {
 
 ### 滚动导航
 
-通过`scrollspy`属性可以开启滚动导航模式，该模式下，内容将会平铺展示
+通过 `scrollspy` 属性可以开启滚动导航模式，该模式下，内容将会平铺展示。
 
 ```html
 <van-tabs v-model="active" scrollspy sticky>
@@ -187,6 +187,37 @@ export default {
     内容 {{ index }}
   </van-tab>
 </van-tabs>
+```
+
+### 异步切换
+
+通过 `before-change` 属性可以在切换标签前执行特定的逻辑。
+
+```html
+<van-tabs :before-change="beforeChange">
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+```js
+export default {
+  methods: {
+    beforeChange(index) {
+      // 返回 false 表示阻止此次切换
+      if (index === 1) {
+        return false;
+      }
+
+      // 返回 Promise 来执行异步逻辑
+      return new Promise((resolve) => {
+        // 在 resolve 函数中返回 true 或 false
+        resolve(index !== 3);
+      });
+    },
+  },
+};
 ```
 
 ## API
@@ -213,6 +244,7 @@ export default {
 | swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `4` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
+| before-change `v2.9.3` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tab Props
 
