@@ -10,6 +10,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
+
+`2020-07-19`
+
+**Feature**
+
+- Tabs: add before-change prop [#6817](https://github.com/youzan/vant/issues/6817)
+- Sticky: offset-top support vw unit [#6816](https://github.com/youzan/vant/issues/6816)
+- Picker: item-height support vw unit [#6816](https://github.com/youzan/vant/issues/6816)
+- Sku: add mobile message value formatter [19e0d0](https://github.com/youzan/vant/commit/19e0d0df0e52cb9b683aef1f7f09d9c4ae425b97)
+- Tab: add scrollTo method [#6800](https://github.com/youzan/vant/issues/6800)
+- Uploader: add preview-options prop [#6810](https://github.com/youzan/vant/issues/6810)
+
+**Bug Fixes**
+
+- Calendar: rendering fails in some cases [#6812](https://github.com/youzan/vant/issues/6812)
+- ImagePreview: image overflow in some cases [#6811](https://github.com/youzan/vant/issues/6811)
+- NumberKeyboard: flex not work on legacy safari [#6804](https://github.com/youzan/vant/issues/6804)
+- Slider: missing transition in vertical mode [#6786](https://github.com/youzan/vant/issues/6786)
+
 ### [v2.9.2](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2)
 
 `2020-07-14`

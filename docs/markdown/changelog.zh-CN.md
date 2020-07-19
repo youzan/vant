@@ -10,6 +10,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
+
+`2020-07-19`
+
+**Feature**
+
+- Tabs: 新增 before-change 属性，用于在切换标签前执行校验逻辑 [#6817](https://github.com/youzan/vant/issues/6817)
+- Sticky: offset-top 属性支持传入 vw 单位 [#6816](https://github.com/youzan/vant/issues/6816)
+- Picker: item-height 属性支持传入 vw 单位 [#6816](https://github.com/youzan/vant/issues/6816)
+- Sku: 新增对手机号留言的格式化处理 [19e0d0](https://github.com/youzan/vant/commit/19e0d0df0e52cb9b683aef1f7f09d9c4ae425b97)
+- Tab: 新增 scrollTo 方法，用于在滚动导航模式下滚动到特定位置 [#6800](https://github.com/youzan/vant/issues/6800)
+- Uploader: 新增 preview-options 属性，用于自定义全屏图片预览的配置项 [#6810](https://github.com/youzan/vant/issues/6810)
+
+**Bug Fixes**
+
+- Calendar: 修复在个别情况下内容渲染失败的问题 [#6812](https://github.com/youzan/vant/issues/6812)
+- ImagePreview: 修复在个别情况下图片错位的问题 [#6811](https://github.com/youzan/vant/issues/6811)
+- NumberKeyboard: 修复在旧版本 iOS 上按键内容不居中的问题 [#6804](https://github.com/youzan/vant/issues/6804)
+- Slider: 修复垂直模式下滑动动画失效的问题 [#6786](https://github.com/youzan/vant/issues/6786)
+
 ### [v2.9.2](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2)
 
 `2020-07-14`
