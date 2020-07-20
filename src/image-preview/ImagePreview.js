@@ -20,6 +20,7 @@ export default createComponent({
     }),
     BindEventMixin(function (bind) {
       bind(window, 'resize', this.resize, true);
+      bind(window, 'orientationchange', this.resize, true);
     }),
   ],
 
