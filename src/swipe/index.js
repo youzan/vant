@@ -164,8 +164,6 @@ export default createComponent({
 
       const rect = this.$el.getBoundingClientRect();
 
-      console.log('rect', rect);
-
       this.rect = rect;
       this.swiping = true;
       this.active = active;
