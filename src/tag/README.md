@@ -14,7 +14,6 @@ Vue.use(Tag);
 ### Basic Usage
 
 ```html
-<van-tag>Tag</van-tag>
 <van-tag type="primary">Tag</van-tag>
 <van-tag type="success">Tag</van-tag>
 <van-tag type="danger">Tag</van-tag>
@@ -24,7 +23,6 @@ Vue.use(Tag);
 ### Round style
 
 ```html
-<van-tag round>Tag</van-tag>
 <van-tag round type="primary">Tag</van-tag>
 <van-tag round type="success">Tag</van-tag>
 <van-tag round type="danger">Tag</van-tag>
@@ -34,7 +32,6 @@ Vue.use(Tag);
 ### Mark style
 
 ```html
-<van-tag mark>Tag</van-tag>
 <van-tag mark type="primary">Tag</van-tag>
 <van-tag mark type="success">Tag</van-tag>
 <van-tag mark type="danger">Tag</van-tag>
@@ -44,7 +41,6 @@ Vue.use(Tag);
 ### Plain style
 
 ```html
-<van-tag plain>Tag</van-tag>
 <van-tag plain type="primary">Tag</van-tag>
 <van-tag plain type="success">Tag</van-tag>
 <van-tag plain type="danger">Tag</van-tag>
@@ -55,7 +51,6 @@ Vue.use(Tag);
 
 ```html
 <van-tag color="#f2826a">Tag</van-tag>
-<van-tag color="#f2826a" plain>Tag</van-tag>
 <van-tag color="#7232dd">Tag</van-tag>
 <van-tag color="#7232dd" plain>Tag</van-tag>
 <van-tag color="#ffe1e1" text-color="#ad0000">Tag</van-tag>

@@ -1,7 +1,6 @@
 // Utils
 import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
-import { BORDER_SURROUND } from '../utils/constant';
 
 // Components
 import Icon from '../icon';
@@ -63,7 +62,7 @@ function Tag(
       <span
         key="content"
         style={style}
-        class={[bem([classes, type]), { [BORDER_SURROUND]: plain }]}
+        class={bem([classes, type])}
         {...inherit(ctx, true)}
       >
         {slots.default?.()}
