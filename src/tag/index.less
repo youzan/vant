@@ -53,7 +53,7 @@
   &--plain {
     background-color: @tag-plain-background-color;
 
-    &::after {
+    &::before {
       position: absolute;
       top: 0;
       right: 0;
@@ -62,11 +62,8 @@
       border: 1px solid currentColor;
       border-radius: inherit;
       content: '';
+      pointer-events: none;
     }
-  }
-
-  &--mark {
-    border-radius: 0 @tag-round-border-radius @tag-round-border-radius 0;
   }
 
   &--medium {
@@ -77,6 +74,16 @@
     padding: @tag-large-padding;
     font-size: @tag-large-font-size;
     border-radius: @tag-large-border-radius;
+  }
+
+  &--mark {
+    border-radius: 0 @tag-round-border-radius @tag-round-border-radius 0;
+
+    &::after {
+      display: block;
+      width: 2px;
+      content: '';
+    }
   }
 
   &--round {
