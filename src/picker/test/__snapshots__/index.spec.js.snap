@@ -59,11 +59,11 @@ exports[`column watch default index 2`] = `
 exports[`columns-top、columns-bottom prop 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
-  <!---->Custom Columns Top<div class="van-picker__columns" style="height: 220px;">
+  <!---->Custom Columns Top<div class="van-picker__columns" style="height: 264px;">
     <div class="van-picker-column">
-      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;"></ul>
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"></ul>
     </div>
-    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>Custom Columns Bottom
   <!---->
@@ -73,15 +73,15 @@ exports[`columns-top、columns-bottom prop 1`] = `
 exports[`not allow html 1`] = `
 <div class="van-picker">
   <!---->
-  <div class="van-picker__columns" style="height: 220px;">
+  <div class="van-picker__columns" style="height: 264px;">
     <div class="van-picker-column">
-      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
         <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
           <div class="van-ellipsis">&lt;div&gt;option&lt;/div&gt;</div>
         </li>
       </ul>
     </div>
-    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
   <!---->
@@ -92,11 +92,11 @@ exports[`render title slot 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>Custom title<button type="button" class="van-picker__confirm">确认</button></div>
   <!---->
-  <div class="van-picker__columns" style="height: 220px;">
+  <div class="van-picker__columns" style="height: 264px;">
     <div class="van-picker-column">
-      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;"></ul>
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"></ul>
     </div>
-    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
   <!---->
@@ -106,9 +106,9 @@ exports[`render title slot 1`] = `
 exports[`set rem item-height 1`] = `
 <div class="van-picker">
   <!---->
-  <div class="van-picker__columns" style="height: 800px;">
+  <div class="van-picker__columns" style="height: 960px;">
     <div class="van-picker-column">
-      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 320px, 0); transition-duration: 0ms; transition-property: none;">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 400px, 0); transition-duration: 0ms; transition-property: none;">
         <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 160px;">
           <div class="van-ellipsis">1990</div>
         </li>
@@ -117,7 +117,7 @@ exports[`set rem item-height 1`] = `
         </li>
       </ul>
     </div>
-    <div class="van-picker__mask" style="background-size: 100% 320px;"></div>
+    <div class="van-picker__mask" style="background-size: 100% 400px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 160px;"></div>
   </div>
   <!---->
@@ -128,11 +128,11 @@ exports[`toolbar-position prop 1`] = `
 <div class="van-picker">
   <!---->
   <!---->
-  <div class="van-picker__columns" style="height: 220px;">
+  <div class="van-picker__columns" style="height: 264px;">
     <div class="van-picker-column">
-      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none;"></ul>
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"></ul>
     </div>
-    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
     <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
   <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button><button type="button" class="van-picker__confirm">确认</button></div>
