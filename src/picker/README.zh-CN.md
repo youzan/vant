@@ -174,7 +174,7 @@ export default {
 ```
 
 ```js
-const citys = {
+const cities = {
   浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   福建: ['福州', '厦门', '莆田', '三明', '泉州'],
 };
@@ -182,12 +182,12 @@ const citys = {
 export default {
   data() {
     return {
-      columns: [{ values: Object.keys(citys) }, { values: citys['浙江'] }],
+      columns: [{ values: Object.keys(cities) }, { values: cities['浙江'] }],
     };
   },
   methods: {
     onChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
+      picker.setColumnValues(1, cities[values[0]]);
     },
   },
 };
