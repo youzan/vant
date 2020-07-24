@@ -69,6 +69,8 @@ export default {
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top `v2.0.7` | Anchor offset top when sticky | _number_ | `0` |
 | highlight-color | Index character highlight color | _string_ | `#07c160` | - |
+| show-active-anchor | Whether to show acitve anchor toast | _boolean_ | `true` |
+| toast-class-name | acitve anchor toast custom className | _string_ | `van-index-bar-toast` |
 
 ### IndexAnchor Props
 

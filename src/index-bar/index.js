@@ -58,9 +58,13 @@ export default createComponent({
       type: Array,
       default: genAlphabet,
     },
-    showActiveAnchor: {
+    showActiveAnchorToast: {
       type: Boolean,
       default: true,
+    },
+    toastClassName: {
+      type: String,
+      default: 'van-index-bar-toast',
     },
   },
 
@@ -95,10 +99,10 @@ export default createComponent({
     },
 
     activeAnchorIndex() {
-      if (this.showActiveAnchor && this.activeAnchorIndex) {
+      if (this.showActiveAnchorToast && this.activeAnchorIndex) {
         Toast({
           message: this.activeAnchorIndex,
-          className: 'van-index-bar-toast',
+          className: this.toastClassName,
           duration: 500,
         });
       }
