@@ -52,7 +52,11 @@ export default {
   <van-dropdown-item title="筛选" ref="item">
     <van-switch-cell v-model="switch1" title="包邮" />
     <van-switch-cell v-model="switch2" title="团购" />
-    <van-button block type="info" @click="onConfirm">确认</van-button>
+    <div style="padding: 5px 16px;">
+      <van-button type="danger" block round @click="onConfirm">
+        确认
+      </van-button>
+    </div>
   </van-dropdown-item>
 </van-dropdown-menu>
 ```
@@ -116,7 +120,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| active-color | 菜单标题和选项的选中态颜色 | _string_ | `#1989fa` |
+| active-color | 菜单标题和选项的选中态颜色 | _string_ | `#ee0a24` |
 | direction `v2.0.1` | 菜单展开方向，可选值为`up` | _string_ | `down` |
 | z-index | 菜单栏 z-index 层级 | _number \| string_ | `10` |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.2` |

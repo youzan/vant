@@ -13,9 +13,17 @@
         <van-dropdown-item :title="t('itemTitle')" ref="item">
           <van-switch-cell v-model="switch1" :title="t('switchTitle1')" />
           <van-switch-cell v-model="switch2" :title="t('switchTitle2')" />
-          <van-button type="info" block @click="onConfirm">
-            {{ t('confirm') }}
-          </van-button>
+          <div style="padding: 5px 16px;">
+            <van-button
+              type="danger"
+              block
+              round
+              style="height: 40px;"
+              @click="onConfirm"
+            >
+              {{ t('confirm') }}
+            </van-button>
+          </div>
         </van-dropdown-item>
       </van-dropdown-menu>
     </demo-block>
