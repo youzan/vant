@@ -73,6 +73,7 @@ export default {
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top `v2.0.7` | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
 | highlight-color | 索引字符高亮颜色 | _string_ | `#07c160` |
+| show-active-anchor | 是否展示激活锚点 Toast | _boolean_ | `true` |
 
 ### IndexAnchor Props
 

@@ -10,6 +10,8 @@ import {
   setRootScrollTop,
 } from '../utils/dom/scroll';
 
+import Toast from '../toast';
+
 // Mixins
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
@@ -56,6 +58,10 @@ export default createComponent({
       type: Array,
       default: genAlphabet,
     },
+    showActiveAnchor: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -86,6 +92,16 @@ export default createComponent({
   watch: {
     indexList() {
       this.$nextTick(this.onScroll);
+    },
+
+    activeAnchorIndex() {
+      if (this.showActiveAnchor && this.activeAnchorIndex) {
+        Toast({
+          message: this.activeAnchorIndex,
+          className: 'van-index-bar-toast',
+          duration: 500,
+        });
+      }
     },
   },
 
