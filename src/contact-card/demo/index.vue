@@ -115,7 +115,7 @@ export default {
 
       if (this.isEdit) {
         this.list = this.list.map((item) =>
-          (item.id === info.id ? info : item)
+          item.id === info.id ? info : item
         );
       } else {
         this.list.push(info);
@@ -135,10 +135,12 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-contact-card {
   .van-popup {
     height: 100%;
-    background-color: #f2f2f2;
+    background-color: @background-color;
   }
 }
 </style>
