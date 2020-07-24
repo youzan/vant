@@ -41,6 +41,10 @@
     }
   }
 
+  &__cancel {
+    color: @action-sheet-cancel-text-color;
+  }
+
   &__subname {
     margin-top: @padding-xs;
     color: @action-sheet-subname-color;
@@ -72,6 +76,11 @@
     &::after {
       .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
     }
+  }
+
+  &__loading-icon .van-loading__spinner {
+    width: @action-sheet-loading-icon-size;
+    height: @action-sheet-loading-icon-size;
   }
 
   &__close {

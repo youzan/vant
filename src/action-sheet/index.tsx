@@ -97,7 +97,7 @@ function ActionSheet(
 
     function OptionContent() {
       if (loading) {
-        return <Loading size="20px" />;
+        return <Loading class={bem('loading-icon')} />;
       }
 
       return [
