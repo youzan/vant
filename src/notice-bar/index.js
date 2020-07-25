@@ -26,6 +26,8 @@ export default createComponent({
     },
   },
 
+  emits: ['click', 'close', 'replay'],
+
   data() {
     return {
       show: true,
