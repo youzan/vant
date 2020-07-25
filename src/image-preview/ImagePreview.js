@@ -37,21 +37,9 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    swipeDuration: {
-      type: [Number, String],
-      default: 500,
-    },
     overlay: {
       type: Boolean,
       default: true,
-    },
-    showIndex: {
-      type: Boolean,
-      default: true,
-    },
-    startPosition: {
-      type: [Number, String],
-      default: 0,
     },
     minZoom: {
       type: [Number, String],
@@ -61,6 +49,18 @@ export default createComponent({
       type: [Number, String],
       default: 3,
     },
+    showIndex: {
+      type: Boolean,
+      default: true,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      default: 500,
+    },
+    startPosition: {
+      type: [Number, String],
+      default: 0,
+    },
     overlayClass: {
       type: String,
       default: bem('overlay'),
@@ -68,6 +68,10 @@ export default createComponent({
     closeIcon: {
       type: String,
       default: 'clear',
+    },
+    closeOnPopstate: {
+      type: Boolean,
+      default: true,
     },
     closeIconPosition: {
       type: String,
