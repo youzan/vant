@@ -37,9 +37,13 @@ export default createComponent({
   },
 
   watch: {
-    scrollable: 'start',
+    scrollable() {
+      this.start();
+    },
     text: {
-      handler: 'start',
+      handler() {
+        this.start();
+      },
       immediate: true,
     },
   },
@@ -105,7 +109,8 @@ export default createComponent({
   },
 
   render() {
-    const { slots, mode, leftIcon, onClickIcon } = this;
+    const slots = this.$slots;
+    const { mode, leftIcon, onClickIcon } = this;
 
     const barStyle = {
       color: this.color,
@@ -118,10 +123,8 @@ export default createComponent({
     };
 
     function LeftIcon() {
-      const slot = slots('left-icon');
-
-      if (slot) {
-        return slot;
+      if (slots['left-icon']) {
+        return slots['left-icon']();
       }
 
       if (leftIcon) {
@@ -130,10 +133,8 @@ export default createComponent({
     }
 
     function RightIcon() {
-      const slot = slots('right-icon');
-
-      if (slot) {
-        return slot;
+      if (slots['right-icon']) {
+        return slots['right-icon']();
       }
 
       let iconName;
@@ -175,7 +176,7 @@ export default createComponent({
             style={contentStyle}
             onTransitionend={this.onTransitionEnd}
           >
-            {this.slots() || this.text}
+            {slots.default?.() || this.text}
           </div>
         </div>
         {RightIcon()}

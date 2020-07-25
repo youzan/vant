@@ -31,4 +31,5 @@ module.exports = [
   'pagination',
   'sidebar',
   'tree-select',
+  'notice-bar',
 ];

@@ -253,10 +253,10 @@ module.exports = {
               //   path: 'list',
               //   title: 'List 列表',
               // },
-              // {
-              //   path: 'notice-bar',
-              //   title: 'NoticeBar 通知栏',
-              // },
+              {
+                path: 'notice-bar',
+                title: 'NoticeBar 通知栏',
+              },
               {
                 path: 'progress',
                 title: 'Progress 进度条',
@@ -587,10 +587,10 @@ module.exports = {
               //   path: 'list',
               //   title: 'List',
               // },
-              // {
-              //   path: 'notice-bar',
-              //   title: 'NoticeBar',
-              // },
+              {
+                path: 'notice-bar',
+                title: 'NoticeBar',
+              },
               {
                 path: 'progress',
                 title: 'Progress',
