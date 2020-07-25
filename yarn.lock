@@ -2122,36 +2122,36 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vue/compiler-core@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.0.0-beta.21.tgz#818b1a27d640663de01fef3a12ba53cd90cbd946"
-  integrity sha512-+V3KymdckkMmcVFOY+JKUM4q/4WteJndjQgFtQztboKCeMc4ZGdiOmkwS1ZMtqfGhoE7wf7BPQRJ47bZGneS/g==
+"@vue/compiler-core@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/compiler-core/download/@vue/compiler-core-3.0.0-rc.4.tgz#2fe7c9e010d6c66f1f191c8a6fbd4e9c4d87d126"
+  integrity sha1-L+fJ4BDWxm8fGRyKb71OnE2H0SY=
   dependencies:
     "@babel/parser" "^7.10.4"
     "@babel/types" "^7.10.4"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/shared" "3.0.0-rc.4"
     estree-walker "^2.0.1"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.0.0-beta.21.tgz#16140b976a083481a7f58577dbb5d7f70f487798"
-  integrity sha512-NOw6uxAHXlSkVW8NkSplnOrNusVF9YRXuaS0DJW2++dtYw0kP6kYgOZmQ1liywl3Kf78BHXNLQqEdI7JDWkJ9g==
+"@vue/compiler-dom@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/compiler-dom/download/@vue/compiler-dom-3.0.0-rc.4.tgz#3c6b56f8c99797b46cf7935ffb1e538a1a1174c7"
+  integrity sha1-PGtW+MmXl7Rs95Nf+x5TihoRdMc=
   dependencies:
-    "@vue/compiler-core" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/compiler-core" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
 
-"@vue/compiler-sfc@^3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.0.0-beta.21.tgz#56c256c0d1067ca1ac58556fddb2c7adfcec9572"
-  integrity sha512-AvjEiGqonKKA58EkoeycRVvgGxSAMefcf7VMn11Sw6wiz8/dwfGCiVvae9ezN0NI30yQd5+9x2VyWXlbOgP/qw==
+"@vue/compiler-sfc@^3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/compiler-sfc/download/@vue/compiler-sfc-3.0.0-rc.4.tgz#cdd8154c3a6a4dc34405fbdb75db4a55db2fae26"
+  integrity sha1-zdgVTDpqTcNEBfvbddtKVdsvriY=
   dependencies:
     "@babel/parser" "^7.10.4"
     "@babel/types" "^7.10.4"
-    "@vue/compiler-core" "3.0.0-beta.21"
-    "@vue/compiler-dom" "3.0.0-beta.21"
-    "@vue/compiler-ssr" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/compiler-core" "3.0.0-rc.4"
+    "@vue/compiler-dom" "3.0.0-rc.4"
+    "@vue/compiler-ssr" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
     consolidate "^0.15.1"
     estree-walker "^2.0.1"
     hash-sum "^2.0.0"
@@ -2163,13 +2163,13 @@
     postcss-selector-parser "^6.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-ssr@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.0.0-beta.21.tgz#ea06f054a84832143a311688067000b970d427a7"
-  integrity sha512-bE29cgqsmXFlMrrhRab3Uvvwx6jIq8ZQrva7VedqBDIHL1tzWonbvuNtiYM8hNwNUalNiVqhEH9kcVB5YAeS8w==
+"@vue/compiler-ssr@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/compiler-ssr/download/@vue/compiler-ssr-3.0.0-rc.4.tgz#58d3446eda2cbdc38d983c0a8bbab7d182921149"
+  integrity sha1-WNNEbtosvcONmDwKi7q30YKSEUk=
   dependencies:
-    "@vue/compiler-dom" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/compiler-dom" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
 
 "@vue/component-compiler-utils@^2.4.0":
   version "2.6.0"
@@ -2202,34 +2202,34 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/reactivity@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.0.0-beta.21.tgz#b974040b50799f36c5b75941e7b13dc074db1827"
-  integrity sha512-G43QUrs2TkIMeBnOfewot/k9C4K116BluoQTYGnukninESb+Th2psijDPsqAu9W8Ja+XAE7zQpawIkwwY0hYfQ==
+"@vue/reactivity@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/reactivity/download/@vue/reactivity-3.0.0-rc.4.tgz#0a917d9809967c78c32436fb0113dac6d157b87a"
+  integrity sha1-CpF9mAmWfHjDJDb7ARPaxtFXuHo=
   dependencies:
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/shared" "3.0.0-rc.4"
 
-"@vue/runtime-core@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.0.0-beta.21.tgz#7c8e351d8376bc8076d7685a7ac0a1caf8a9d3cb"
-  integrity sha512-xAlyIo8N1dBG+nA9JTQHPrMnG71RKm4oV6d19OAwxrPHsHJmyrpiqWbglrDvA8TaHSA/hniqscti6nxxMgEN8w==
+"@vue/runtime-core@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/runtime-core/download/@vue/runtime-core-3.0.0-rc.4.tgz#87b5a4022aa86eb717d38751b8b4be4cede0f323"
+  integrity sha1-h7WkAiqobrcX04dRuLS+TO3g8yM=
   dependencies:
-    "@vue/reactivity" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/reactivity" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
 
-"@vue/runtime-dom@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.0.0-beta.21.tgz#ec84f1f775494a28a4f2375224c7d9d2c54a5a68"
-  integrity sha512-GyRqkJ6XkGgDkFJZokR8VLlaiTisdVzNxwLtOYEyxWAKF2q8FOxrjNwBLAXCUyza8Zb6j/Nj9NlClthXp6RZbw==
+"@vue/runtime-dom@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/runtime-dom/download/@vue/runtime-dom-3.0.0-rc.4.tgz#66453056c2761f112d9c04ab816477140bcaa664"
+  integrity sha1-ZkUwVsJ2HxEtnASrgWR3FAvKpmQ=
   dependencies:
-    "@vue/runtime-core" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/runtime-core" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
     csstype "^2.6.8"
 
-"@vue/shared@3.0.0-beta.21":
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.0.0-beta.21.tgz#f4fd53501f40aaaead1448de20beb831283a6e08"
-  integrity sha512-mCktqmNuFNI1x5DtCmx/90Qx/gH60fxEo7TEq119Q4qr0PNyU+mHU875J8WjCvXiFENsEsIjkJvS2KUQqzn4BA==
+"@vue/shared@3.0.0-rc.4":
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/shared/download/@vue/shared-3.0.0-rc.4.tgz#fac45cd6fec76a1e284b41f1b49c2cb13c914598"
+  integrity sha1-+sRc1v7Hah4oS0HxtJwssTyRRZg=
 
 "@vue/test-utils@2.0.0-alpha.8":
   version "2.0.0-alpha.8"
@@ -12310,14 +12310,14 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^3.0.0-beta.21:
-  version "3.0.0-beta.21"
-  resolved "https://registry.npmjs.org/vue/-/vue-3.0.0-beta.21.tgz#71b8ba89cf5e2321371344492caa854e8087848c"
-  integrity sha512-ABzY8deVybug0IXuC08rUaNwMysJaRTiiRUqidQZ9BjkIKrDLIAaN59OY37vGofmAu88+zMQ7kUfhTrbTtlcNQ==
+vue@^3.0.0-rc.4:
+  version "3.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/vue/download/vue-3.0.0-rc.4.tgz?cache=0&sync_timestamp=1595360618003&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.0-rc.4.tgz#f17b32914c8add7f4792d618eb4f1358ff4222e8"
+  integrity sha1-8XsykUyK3X9HktYY608TWP9CIug=
   dependencies:
-    "@vue/compiler-dom" "3.0.0-beta.21"
-    "@vue/runtime-dom" "3.0.0-beta.21"
-    "@vue/shared" "3.0.0-beta.21"
+    "@vue/compiler-dom" "3.0.0-rc.4"
+    "@vue/runtime-dom" "3.0.0-rc.4"
+    "@vue/shared" "3.0.0-rc.4"
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"
