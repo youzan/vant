@@ -40,7 +40,10 @@ export function getScroller(el: HTMLElement, root: ScrollElement = window) {
 }
 
 export function getScrollTop(el: ScrollElement): number {
-  return 'scrollTop' in el ? el.scrollTop : el.pageYOffset;
+  const top = 'scrollTop' in el ? el.scrollTop : el.pageYOffset;
+
+  // iOS scroll bounce cause minus scrollTop
+  return Math.max(top, 0);
 }
 
 export function setScrollTop(el: ScrollElement, value: number) {

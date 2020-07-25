@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
+import { PortalMixin } from '../mixins/portal';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
@@ -7,6 +8,7 @@ const [createComponent, bem] = createNamespace('number-keyboard');
 
 export default createComponent({
   mixins: [
+    PortalMixin(),
     BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);

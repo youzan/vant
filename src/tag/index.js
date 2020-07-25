@@ -1,6 +1,5 @@
 // Utils
 import { createNamespace } from '../utils';
-import { BORDER_SURROUND } from '../utils/constant';
 
 // Components
 import Icon from '../icon';
@@ -56,7 +55,7 @@ export default createComponent({
           <span
             key="content"
             style={style}
-            class={[bem([classes, type]), { [BORDER_SURROUND]: plain }]}
+            class={bem([classes, type])}
           >
             {slots.default?.()}
             {CloseIcon}

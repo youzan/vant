@@ -64,9 +64,9 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | area-list | Area list data | _object_ | - |
 | columns-placeholder `v2.2.5` | Placeholder of columns | _string[]_ | `[]` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
-| item-height `v2.8.6` | Option height, supports `px` ans `rem` unit, default `px` | _number \| string_ | `44` |
+| item-height `v2.8.6` | Option height, supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
-| visible-item-count | Count of visible columns | _number \| string_ | `5` |
+| visible-item-count | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration `v2.2.13` | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 | is-oversea-code `v2.1.4` | The method to validate oversea code | _() => boolean_ | - |
 

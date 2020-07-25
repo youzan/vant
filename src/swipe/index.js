@@ -18,6 +18,7 @@ export default createComponent({
     ParentMixin('vanSwipe'),
     BindEventMixin(function (bind, isBind) {
       bind(window, 'resize', this.resize, true);
+      bind(window, 'orientationchange', this.resize, true);
       bind(window, 'visibilitychange', this.onVisibilityChange);
 
       if (isBind) {

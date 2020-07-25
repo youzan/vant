@@ -50,7 +50,11 @@ export default {
   <van-dropdown-item title="Title" ref="item">
     <van-switch-cell v-model="switch1" title="Title" />
     <van-switch-cell v-model="switch2" title="Title" />
-    <van-button block type="info" @click="onConfirm">Confirm</van-button>
+    <div style="padding: 5px 16px;">
+      <van-button type="danger" block round @click="onConfirm">
+        Confirm
+      </van-button>
+    </div>
   </van-dropdown-item>
 </van-dropdown-menu>
 ```
@@ -112,7 +116,7 @@ Use `active-color` prop to custom active color of the title and options
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| active-color | Active color of title and option | _string_ | `#1989fa` |
+| active-color | Active color of title and option | _string_ | `#ee0a24` |
 | direction `v2.0.1` | Expand direction, can be set to `up` | _string_ | `down` |
 | z-index | z-index of menu item | _number \| string_ | `10` |
 | duration | Transition duration, unit second | _number \| string_ | `0.2` |

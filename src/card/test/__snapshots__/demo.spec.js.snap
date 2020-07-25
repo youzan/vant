@@ -62,9 +62,9 @@ exports[`renders demo correctly 1`] = `
           <div>
             <div class="van-card__title van-multi-ellipsis--l2">商品名称</div>
             <div class="van-card__desc van-ellipsis">描述信息</div>
-            <div><span class="van-tag van-tag--plain van-tag--danger van-hairline--surround" style="margin-right: 5px;">
+            <div><span class="van-tag van-tag--plain van-tag--danger" style="margin-right: 5px;">
             标签
-          </span> <span class="van-tag van-tag--plain van-tag--danger van-hairline--surround">
+          </span> <span class="van-tag van-tag--plain van-tag--danger">
             标签
           </span></div>
           </div>

@@ -10,6 +10,60 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
+
+`2020-07-25`
+
+**Feature**
+
+- AddressEdit: add tel-maxlength prop [#6869](https://github.com/youzan/vant/issues/6869)
+- Calendar: enable close-on-popstate by default [#6874](https://github.com/youzan/vant/issues/6874)
+- Dialog: enable close-on-popsate by default [#6873](https://github.com/youzan/vant/issues/6873)
+- ImagePreview: enable close-on-popstate by default [#6875](https://github.com/youzan/vant/issues/6875)
+- NumberKeyboard: add get-container prop [#6870](https://github.com/youzan/vant/issues/6870)
+
+**style**
+
+- uniform line-height [#6862](https://github.com/youzan/vant/issues/6862)
+- DropdownMenu: adjust default active color to @red [#6863](https://github.com/youzan/vant/issues/6863)
+- ActionSheet: add @action-sheet-loading-icon-size var [#6847](https://github.com/youzan/vant/issues/6847)
+- ActionSheet: adjust cancel text color to @gray-7 [#6846](https://github.com/youzan/vant/issues/6846)
+- ActionSheet: increase header height to 48px [#6856](https://github.com/youzan/vant/issues/6856)
+- Cell: adjust icon margin to 4px [#6844](https://github.com/youzan/vant/issues/6844)
+- Field: adjust icon margin to 4px [#6849](https://github.com/youzan/vant/issues/6849)
+- NumberKeyboard: increase title size [#6845](https://github.com/youzan/vant/issues/6845)
+- Picker: adjust default value of visible-item-count to 6 [#6827](https://github.com/youzan/vant/issues/6827)
+- Sidebar: adjust width to 80px [#6861](https://github.com/youzan/vant/issues/6861)
+- Tag: adjust size and padding [#6828](https://github.com/youzan/vant/issues/6828)
+- Toast: adjust background color [#6848](https://github.com/youzan/vant/issues/6848)
+- Toast: adjust icon size to 36px [#6857](https://github.com/youzan/vant/issues/6857)
+
+**Bug Fixes**
+
+- Field: failed to reset validation when message is empty [#6867](https://github.com/youzan/vant/issues/6867)
+- Icon: incorrect image icon height when loading [#6858](https://github.com/youzan/vant/issues/6858)
+- ImagePreview: fit orientationchange [#6825](https://github.com/youzan/vant/issues/6825)
+
+### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
+
+`2020-07-19`
+
+**Feature**
+
+- Tabs: add before-change prop [#6817](https://github.com/youzan/vant/issues/6817)
+- Sticky: offset-top support vw unit [#6816](https://github.com/youzan/vant/issues/6816)
+- Picker: item-height support vw unit [#6816](https://github.com/youzan/vant/issues/6816)
+- Sku: add mobile message value formatter [19e0d0](https://github.com/youzan/vant/commit/19e0d0df0e52cb9b683aef1f7f09d9c4ae425b97)
+- Tab: add scrollTo method [#6800](https://github.com/youzan/vant/issues/6800)
+- Uploader: add preview-options prop [#6810](https://github.com/youzan/vant/issues/6810)
+
+**Bug Fixes**
+
+- Calendar: rendering fails in some cases [#6812](https://github.com/youzan/vant/issues/6812)
+- ImagePreview: image overflow in some cases [#6811](https://github.com/youzan/vant/issues/6811)
+- NumberKeyboard: flex not work on legacy safari [#6804](https://github.com/youzan/vant/issues/6804)
+- Slider: missing transition in vertical mode [#6786](https://github.com/youzan/vant/issues/6786)
+
 ### [v2.9.2](https://github.com/youzan/vant/compare/v2.9.1...v2.9.2)
 
 `2020-07-14`

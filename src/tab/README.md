@@ -126,7 +126,7 @@ export default {
 
 ### Sticky
 
-In sticky mode, the tab will be fixed to top when scroll to top
+In sticky mode, the tab will be fixed to top when scroll to top.
 
 ```html
 <van-tabs v-model="active" sticky>
@@ -138,7 +138,7 @@ In sticky mode, the tab will be fixed to top when scroll to top
 
 ### Custom title
 
-Use title slot to custom tab title
+Use title slot to custom tab title.
 
 ```html
 <van-tabs v-model="active">
@@ -151,7 +151,7 @@ Use title slot to custom tab title
 
 ### Switch Animation
 
-Use `animated` props to change tabs with animation
+Use `animated` props to change tabs with animation.
 
 ```html
 <van-tabs v-model="active" animated>
@@ -163,7 +163,7 @@ Use `animated` props to change tabs with animation
 
 ### Swipeable
 
-In swipeable mode, you can switch tabs with swipe gestrue in the content
+In swipeable mode, you can switch tabs with swipe gestrue in the content.
 
 ```html
 <van-tabs v-model="active" swipeable>
@@ -175,7 +175,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ### Scrollspy
 
-In scrollspy mode, the list of content will be tiled
+In scrollspy mode, the list of content will be tiled.
 
 ```html
 <van-tabs v-model="active" scrollspy sticky>
@@ -183,6 +183,34 @@ In scrollspy mode, the list of content will be tiled
     content {{ index }}
   </van-tab>
 </van-tabs>
+```
+
+### Before Change
+
+```html
+<van-tabs :before-change="beforeChange">
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+```js
+export default {
+  methods: {
+    beforeChange(index) {
+      // prevent change
+      if (index === 1) {
+        return false;
+      }
+
+      // async
+      return new Promise((resolve) => {
+        resolve(index !== 3);
+      });
+    },
+  },
+};
 ```
 
 ## API
@@ -205,10 +233,11 @@ In scrollspy mode, the list of content will be tiled
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
-| offset-top `v2.8.7` | Sticky offset top , supports `px` ans `rem` unit, default `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `4` | - |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
+| before-change `v2.9.3` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tab Props
 
@@ -241,6 +270,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | resize | Resize Tabs when container element resized | - | void |
+| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | void |
 
 ### Tabs Slots
 

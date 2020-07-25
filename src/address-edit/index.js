@@ -40,11 +40,12 @@ export default createComponent({
     showDelete: Boolean,
     showPostal: Boolean,
     searchResult: Array,
+    telMaxlength: [Number, String],
     showSetDefault: Boolean,
-    showSearchResult: Boolean,
     saveButtonText: String,
-    deleteButtonText: String,
     areaPlaceholder: String,
+    deleteButtonText: String,
+    showSearchResult: Boolean,
     showArea: {
       type: Boolean,
       default: true,
@@ -283,6 +284,7 @@ export default createComponent({
             clearable
             type="tel"
             label={t('tel')}
+            maxlength={this.telMaxlength}
             placeholder={t('telPlaceholder')}
             errorMessage={errorInfo.tel}
             onFocus={onFocus('tel')}

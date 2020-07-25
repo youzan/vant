@@ -36,6 +36,14 @@ exports[`offset-top with rem unit 1`] = `
 </div>
 `;
 
+exports[`offset-top with vw unit 1`] = `
+<div style="height: 10px;">
+  <div class="van-sticky van-sticky--fixed" style="top: 30px;">
+    Content
+  </div>
+</div>
+`;
+
 exports[`sticky to top 1`] = `
 <div style="height: 10px;">
   <div class="van-sticky">

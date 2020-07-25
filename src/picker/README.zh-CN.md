@@ -174,7 +174,7 @@ export default {
 ```
 
 ```js
-const citys = {
+const cities = {
   浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   福建: ['福州', '厦门', '莆田', '三明', '泉州'],
 };
@@ -182,12 +182,12 @@ const citys = {
 export default {
   data() {
     return {
-      columns: [{ values: Object.keys(citys) }, { values: citys['浙江'] }],
+      columns: [{ values: Object.keys(cities) }, { values: cities['浙江'] }],
     };
   },
   methods: {
     onChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
+      picker.setColumnValues(1, cities[values[0]]);
     },
   },
 };
@@ -275,8 +275,8 @@ export default {
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `false` |
 | allow-html `v2.1.8` | 是否允许选项内容中渲染 HTML | _boolean_ | `true` |
 | default-index | 单列选择时，默认选中项的索引 | _number \| string_ | `0` |
-| item-height `v2.8.6` | 选项高度，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `44` |
-| visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
+| item-height `v2.8.6` | 选项高度，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `44` |
+| visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration `v2.2.10` | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
 
 ### Events

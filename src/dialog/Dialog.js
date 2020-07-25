@@ -21,6 +21,14 @@ export default createComponent({
     confirmButtonText: String,
     confirmButtonColor: String,
     showCancelButton: Boolean,
+    overlay: {
+      type: Boolean,
+      default: true,
+    },
+    allowHtml: {
+      type: Boolean,
+      default: true,
+    },
     transition: {
       type: String,
       default: 'van-dialog-bounce',
@@ -29,17 +37,13 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    overlay: {
+    closeOnPopstate: {
       type: Boolean,
       default: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
       default: false,
-    },
-    allowHtml: {
-      type: Boolean,
-      default: true,
     },
   },
 

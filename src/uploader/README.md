@@ -203,6 +203,7 @@ Use `disabled` prop to disable uploader.
 | preview-size | Size of preview image | _number \| string_ | `80px` |
 | preview-image `v2.1.5` | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whethe to show full screen image preview when click image | _boolean_ | `true` |
+| preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | deletable `v2.2.12` | Whether to show delete icon | _boolean_ | `true` |

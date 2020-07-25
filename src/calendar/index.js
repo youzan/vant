@@ -33,47 +33,30 @@ export default createComponent({
     defaultDate: [Date, Array],
     getContainer: [String, Function],
     allowSameDay: Boolean,
-    closeOnPopstate: Boolean,
     confirmDisabledText: String,
-    firstDayOfWeek: {
-      type: [Number, String],
-      default: 0,
-      validator: (val) => {
-        return val >= 0 && val <= 6;
-      },
-    },
     type: {
       type: String,
       default: 'single',
-    },
-    minDate: {
-      type: Date,
-      validator: isDate,
-      default: () => new Date(),
-    },
-    maxDate: {
-      type: Date,
-      validator: isDate,
-      default() {
-        const now = new Date();
-        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
-      },
-    },
-    position: {
-      type: String,
-      default: 'bottom',
-    },
-    rowHeight: {
-      type: [Number, String],
-      default: ROW_HEIGHT,
     },
     round: {
       type: Boolean,
       default: true,
     },
+    position: {
+      type: String,
+      default: 'bottom',
+    },
     poppable: {
       type: Boolean,
       default: true,
+    },
+    rowHeight: {
+      type: [Number, String],
+      default: ROW_HEIGHT,
+    },
+    maxRange: {
+      type: [Number, String],
+      default: null,
     },
     lazyRender: {
       type: Boolean,
@@ -95,7 +78,7 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    safeAreaInsetBottom: {
+    closeOnPopstate: {
       type: Boolean,
       default: true,
     },
@@ -103,9 +86,27 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    maxRange: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
+    minDate: {
+      type: Date,
+      validator: isDate,
+      default: () => new Date(),
+    },
+    maxDate: {
+      type: Date,
+      validator: isDate,
+      default() {
+        const now = new Date();
+        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+      },
+    },
+    firstDayOfWeek: {
       type: [Number, String],
-      default: null,
+      default: 0,
+      validator: (val) => val >= 0 && val <= 6,
     },
   },
 
@@ -244,14 +245,13 @@ export default createComponent({
     onScroll() {
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
-      const bottom = top + this.bodyHeight;
       const heights = months.map((item) => item.getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      /* istanbul ignore next */
-      if (top < 0 || (bottom > heightSum && top > 0)) {
-        return;
+      let bottom = top + this.bodyHeight;
+      if (bottom > heightSum && top > 0) {
+        bottom = heightSum;
       }
 
       let height = 0;

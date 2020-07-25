@@ -111,6 +111,21 @@ export default createComponent({
         }
       }
     },
+    /**
+     * The phone number copied from IOS mobile phone address book
+     * will add spaces and invisible Unicode characters
+     * which cannot pass the /^\d+$/ verification
+     * so keep numbers and dots
+     */
+    getFormatter(message) {
+      return function formatter(value) {
+        if (message.type === 'mobile' || message.type === 'tel') {
+          return value.replace(/[^\d.]/g, '');
+        }
+
+        return value;
+      };
+    },
 
     genMessage(message, index) {
       if (message.type === 'image') {
@@ -157,6 +172,7 @@ export default createComponent({
           required={String(message.required) === '1'}
           placeholder={this.getPlaceholder(message)}
           type={this.getType(message)}
+          formatter={this.getFormatter(message)}
         />
       );
     },

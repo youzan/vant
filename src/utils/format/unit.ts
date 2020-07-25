@@ -1,4 +1,4 @@
-import { isDef } from '..';
+import { isDef, inBrowser } from '..';
 import { isNumeric } from '../validate/number';
 
 export function addUnit(value?: string | number): string | undefined {
@@ -30,13 +30,24 @@ function convertRem(value: string) {
   return +value * getRootFontSize();
 }
 
+function convertVw(value: string) {
+  value = value.replace(/vw/g, '');
+  return (+value * window.innerWidth) / 100;
+}
+
 export function unitToPx(value: string | number): number {
   if (typeof value === 'number') {
     return value;
   }
 
-  if (value.indexOf('rem') !== -1) {
-    return convertRem(value);
+  if (inBrowser) {
+    if (value.indexOf('rem') !== -1) {
+      return convertRem(value);
+    }
+
+    if (value.indexOf('vw') !== -1) {
+      return convertVw(value);
+    }
   }
 
   return parseFloat(value);

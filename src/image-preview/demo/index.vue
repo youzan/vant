@@ -88,7 +88,6 @@ export default {
         swipeDuration: 300,
         asyncClose: !!timer,
         closeable,
-        closeOnPopstate: true,
         startPosition: typeof position === 'number' ? position : 0,
       });
 
