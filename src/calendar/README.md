@@ -254,7 +254,7 @@ Following props are supported when the poppable is true
 | v-model | Whether to show calendar | _boolean_ | `false` |
 | position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
 | round | Whether to show round corner | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
