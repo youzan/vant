@@ -1,5 +1,5 @@
 import { later, mockScrollIntoView } from '../../../test';
-import { mountForm, mountSimpleRulesForm } from './shared';
+import { mountForm, mountSimpleRulesForm, getSimpleRules } from './shared';
 
 test('submit method', async () => {
   const onSubmit = jest.fn();
@@ -44,6 +44,22 @@ test('validate method - validate one field and passed', (done) => {
         expect(err).toEqual({ message: 'A failed', name: 'A' });
         done();
       });
+    },
+  });
+});
+
+test('validate method - validate one field and failed', (done) => {
+  mountForm({
+    template: `	
+      <van-form ref="form" @failed="onFailed">	
+        <van-field name="A" :rules="rulesA" value="123" />	
+        <van-field name="B" :rules="rulesB" value="" />	
+        <van-button native-type="submit" />	
+      </van-form>	
+    `,
+    data: getSimpleRules,
+    mounted() {
+      this.$refs.form.validate('A').then(done);
     },
   });
 });
