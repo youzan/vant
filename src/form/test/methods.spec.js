@@ -50,12 +50,12 @@ test('validate method - validate one field and passed', (done) => {
 
 test('validate method - validate one field and failed', (done) => {
   mountForm({
-    template: `
-      <van-form ref="form" @failed="onFailed">
-        <van-field name="A" :rules="rulesA" value="123" />
-        <van-field name="B" :rules="rulesB" value="" />
-        <van-button native-type="submit" />
-      </van-form>
+    template: `	
+      <van-form ref="form" @failed="onFailed">	
+        <van-field name="A" :rules="rulesA" value="123" />	
+        <van-field name="B" :rules="rulesB" value="" />	
+        <van-button native-type="submit" />	
+      </van-form>	
     `,
     data: getSimpleRules,
     mounted() {
@@ -90,7 +90,27 @@ test('resetValidation method - reset one field', (done) => {
     mounted() {
       this.$refs.form.validate().catch(() => {
         this.$refs.form.resetValidation('A');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.findAll('.van-field--error').length).toEqual(1);
+        this.$refs.form.resetValidation('B');
+        expect(wrapper.findAll('.van-field--error').length).toEqual(0);
+        done();
+      });
+    },
+  });
+});
+
+test('resetValidation method - reset when rule message is empty', (done) => {
+  const wrapper = mountSimpleRulesForm({
+    data() {
+      return {
+        rulesA: [{ required: true, message: '' }],
+        rulesB: [{ required: true, message: '' }],
+      };
+    },
+    mounted() {
+      this.$refs.form.validate().catch(() => {
+        this.$refs.form.resetValidation('A');
+        expect(wrapper.findAll('.van-field--error').length).toEqual(1);
         done();
       });
     },

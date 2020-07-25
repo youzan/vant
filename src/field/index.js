@@ -282,7 +282,7 @@ export default createComponent({
     },
 
     resetValidation() {
-      if (this.validateMessage) {
+      if (this.validateFailed) {
         this.validateFailed = false;
         this.validateMessage = '';
       }
