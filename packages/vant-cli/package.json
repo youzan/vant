@@ -39,7 +39,7 @@
     "@types/webpack-merge": "^4.1.5"
   },
   "dependencies": {
-    "@ant-design-vue/babel-plugin-jsx": "^1.0.0-beta.2",
+    "@ant-design-vue/babel-plugin-jsx": "^1.0.0-beta.4",
     "@babel/core": "^7.10.1",
     "@babel/plugin-syntax-jsx": "^7.10.1",
     "@babel/plugin-transform-object-assign": "^7.10.1",
@@ -98,7 +98,7 @@
     "typescript": "^3.9.3",
     "vue-jest": "4.0.0-beta.2",
     "vue-loader": "^16.0.0-beta.4",
-    "vue-router": "^4.0.0-beta.2",
+    "vue-router": "^4.0.0-beta.3",
     "webpack": "^4.43.0",
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "^4.2.2",
