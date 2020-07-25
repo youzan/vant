@@ -68,19 +68,19 @@ Vue.use(Tag);
 
 ```html
 <van-tag
-  v-if="show.primary"
   closeable
   size="medium"
   type="primary"
+  :show="show.primary"
   @close="close('primary')"
 >
   Tag
 </van-tag>
 <van-tag
-  v-if="show.success"
   closeable
   size="medium"
   type="success"
+  :show="show.success"
   @close="close('success')"
 >
   Tag
@@ -114,6 +114,7 @@ export default {
 | type | Type, can be set to `primary` `success` `danger` `warning` | _string_ | `default` |
 | size | Size, can be set to `large` `medium` | _string_ | - |
 | color | Custom color | _string_ | - |
+| show | Whether to show tag | _boolean_ | `true` |
 | plain | Whether to be plain style | _boolean_ | `false` |
 | round | Whether to be round style | _boolean_ | `false` |
 | mark | Whether to be mark style | _boolean_ | `false` |

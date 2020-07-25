@@ -43,8 +43,8 @@
 
     <demo-block :title="t('closeable')">
       <van-tag
-        v-if="show.primary"
         size="medium"
+        :show="show.primary"
         closeable
         type="primary"
         @close="close('primary')"
@@ -52,8 +52,8 @@
         {{ t('tag') }}
       </van-tag>
       <van-tag
-        v-if="show.success"
         size="medium"
+        :show="show.success"
         closeable
         type="success"
         @close="close('success')"

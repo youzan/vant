@@ -78,19 +78,19 @@ Vue.use(Tag);
 
 ```html
 <van-tag
-  v-if="show.primary"
   closeable
   size="medium"
   type="primary"
+  :show="show.primary"
   @close="close('primary')"
 >
   标签
 </van-tag>
 <van-tag
-  v-if="show.success"
   closeable
   size="medium"
   type="success"
+  :show="show.success"
   @close="close('success')"
 >
   标签
@@ -124,6 +124,7 @@ export default {
 | type | 类型，可选值为`primary` `success` `danger` `warning` | _string_ | `default` |
 | size | 大小, 可选值为`large` `medium` | _string_ | - |
 | color | 标签颜色 | _string_ | - |
+| show | 是否展示标签 | _boolean_ | `true` |
 | plain | 是否为空心样式 | _boolean_ | `false` |
 | round | 是否为圆角样式 | _boolean_ | `false` |
 | mark | 是否为标记样式 | _boolean_ | `false` |

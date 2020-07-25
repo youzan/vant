@@ -1,7 +1,5 @@
-// Utils
+import { Transition } from 'vue';
 import { createNamespace } from '../utils';
-
-// Components
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('tag');
@@ -18,6 +16,10 @@ export default createComponent({
     type: {
       type: String,
       default: 'default',
+    },
+    show: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -51,16 +53,14 @@ export default createComponent({
       );
 
       return (
-        <transition name={props.closeable ? 'van-fade' : null}>
-          <span
-            key="content"
-            style={style}
-            class={bem([classes, type])}
-          >
-            {slots.default?.()}
-            {CloseIcon}
-          </span>
-        </transition>
+        <Transition name={props.closeable ? 'van-fade' : null}>
+          {props.show ? (
+            <span key="content" style={style} class={bem([classes, type])}>
+              {slots.default?.()}
+              {CloseIcon}
+            </span>
+          ) : null}
+        </Transition>
       );
     };
   },
