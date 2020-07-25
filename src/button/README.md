@@ -14,9 +14,9 @@ Vue.use(Button);
 ### Type
 
 ```html
-<van-button type="default">Default</van-button>
 <van-button type="primary">Primary</van-button>
 <van-button type="info">Info</van-button>
+<van-button type="default">Default</van-button>
 <van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
 ```
@@ -60,11 +60,11 @@ Vue.use(Button);
 ### Icon
 
 ```html
-<van-button icon="star-o" type="primary" />
-<van-button icon="star-o" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info"
-  >Button</van-button
->
+<van-button icon="plus" type="primary" />
+<van-button icon="plus" type="primary">Button</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+  Button
+</van-button>
 ```
 
 ### Size
@@ -94,9 +94,9 @@ Vue.use(Button);
 ```html
 <van-button color="#7232dd">Pure</van-button>
 <van-button color="#7232dd" plain>Pure</van-button>
-<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)"
-  >Gradient</van-button
->
+<van-button color="linear-gradient(to right, #ff6034, #ee0a24)">
+  Gradient
+</van-button>
 ```
 
 ## API
