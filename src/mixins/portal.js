@@ -6,7 +6,7 @@ function getElement(selector) {
   return selector();
 }
 
-export function PortalMixin({ ref, afterPortal }) {
+export function PortalMixin({ ref, afterPortal } = {}) {
   return {
     props: {
       getContainer: [String, Function],
