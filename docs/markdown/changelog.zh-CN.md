@@ -24,7 +24,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **style**
 
-- uniform line-height [#6862](https://github.com/youzan/vant/issues/6862)
+- 新增 line-height 相关 LESS 变量 [#6862](https://github.com/youzan/vant/issues/6862)
 - DropdownMenu: 默认选中态颜色调整为红色 [#6863](https://github.com/youzan/vant/issues/6863)
 - ActionSheet: 加载图标大小调整为 22px [#6847](https://github.com/youzan/vant/issues/6847)
 - ActionSheet: 取消按钮文字颜色调整为 @gray-7 [#6846](https://github.com/youzan/vant/issues/6846)
