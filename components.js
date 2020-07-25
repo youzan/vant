@@ -34,4 +34,5 @@ module.exports = [
   'tree-select',
   'notice-bar',
   'share-sheet',
+  'pull-refresh',
 ];

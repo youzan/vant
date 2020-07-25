@@ -204,10 +204,10 @@ module.exports = {
                 path: 'overlay',
                 title: 'Overlay 遮罩层',
               },
-              // {
-              //   path: 'pull-refresh',
-              //   title: 'PullRefresh 下拉刷新',
-              // },
+              {
+                path: 'pull-refresh',
+                title: 'PullRefresh 下拉刷新',
+              },
               {
                 path: 'share-sheet',
                 title: 'ShareSheet 分享面板',
@@ -538,10 +538,10 @@ module.exports = {
                 path: 'overlay',
                 title: 'Overlay',
               },
-              // {
-              //   path: 'pull-refresh',
-              //   title: 'PullRefresh',
-              // },
+              {
+                path: 'pull-refresh',
+                title: 'PullRefresh',
+              },
               {
                 path: 'share-sheet',
                 title: 'ShareSheet',

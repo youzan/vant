@@ -23,7 +23,7 @@ export default createComponent({
     pullingText: String,
     loosingText: String,
     loadingText: String,
-    value: {
+    modelValue: {
       type: Boolean,
       required: true,
     },
@@ -40,6 +40,8 @@ export default createComponent({
       default: DEFAULT_HEAD_HEIGHT,
     },
   },
+
+  emits: ['refresh', 'update:modelValue'],
 
   data() {
     return {
@@ -66,12 +68,14 @@ export default createComponent({
   },
 
   watch: {
-    value(loading) {
+    modelValue(loading) {
       this.duration = this.animationDuration;
 
       if (loading) {
         this.setStatus(+this.headHeight, true);
-      } else if (this.slots('success') || this.successText) {
+      } else if (
+        this.$slots.success ? this.$slots.success() : this.successText
+      ) {
         this.showSuccessTip();
       } else {
         this.setStatus(0, false);
@@ -123,7 +127,7 @@ export default createComponent({
 
         if (this.status === 'loosing') {
           this.setStatus(+this.headHeight, true);
-          this.$emit('input', true);
+          this.$emit('update:modelValue', true);
 
           // ensure value change can be watched
           this.$nextTick(() => {
@@ -168,14 +172,13 @@ export default createComponent({
 
     genStatus() {
       const { status, distance } = this;
-      const slot = this.slots(status, { distance });
 
-      if (slot) {
-        return slot;
+      if (this.$slots[status]) {
+        return this.$slots[status]({ distance });
       }
 
       const nodes = [];
-      const text = this[`${status}Text`] || t(status);
+      const text = (status !== 'normal' && this[`${status}Text`]) || t(status);
 
       if (TEXT_STATUS.indexOf(status) !== -1) {
         nodes.push(<div class={bem('text')}>{text}</div>);
@@ -209,7 +212,7 @@ export default createComponent({
           <div class={bem('head')} style={this.headStyle}>
             {this.genStatus()}
           </div>
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
       </div>
     );
