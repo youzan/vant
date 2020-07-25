@@ -10,6 +10,40 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
+
+`2020-07-25`
+
+**Feature**
+
+- AddressEdit: 新增 tel-maxlength 属性 [#6869](https://github.com/youzan/vant/issues/6869)
+- Calendar: 默认开启 close-on-popstate 属性 [#6874](https://github.com/youzan/vant/issues/6874)
+- Dialog: 默认开启 close-on-popstate 属性 [#6873](https://github.com/youzan/vant/issues/6873)
+- ImagePreview: 默认开启 close-on-popstate 属性 [#6875](https://github.com/youzan/vant/issues/6875)
+- NumberKeyboard: 新增 get-container 属性 [#6870](https://github.com/youzan/vant/issues/6870)
+
+**style**
+
+- uniform line-height [#6862](https://github.com/youzan/vant/issues/6862)
+- DropdownMenu: 默认选中态颜色调整为红色 [#6863](https://github.com/youzan/vant/issues/6863)
+- ActionSheet: 加载图标大小调整为 22px [#6847](https://github.com/youzan/vant/issues/6847)
+- ActionSheet: 取消按钮文字颜色调整为 @gray-7 [#6846](https://github.com/youzan/vant/issues/6846)
+- ActionSheet: 标题栏高度调整为 48px [#6856](https://github.com/youzan/vant/issues/6856)
+- Cell: 图标与文字的间距调整为 4px [#6844](https://github.com/youzan/vant/issues/6844)
+- Field: 图标与文字的间距调整为 4px [#6849](https://github.com/youzan/vant/issues/6849)
+- NumberKeyboard: 标题栏高度调整为 40px [#6845](https://github.com/youzan/vant/issues/6845)
+- Picker: 默认可见的选项个数调整为 6 个 [#6827](https://github.com/youzan/vant/issues/6827)
+- Sidebar: 宽度调整为 80px [#6861](https://github.com/youzan/vant/issues/6861)
+- Tag: 更新文字大小和标签大小 [#6828](https://github.com/youzan/vant/issues/6828)
+- Toast: 更新背景色 [#6848](https://github.com/youzan/vant/issues/6848)
+- Toast: 图标大小调整为 36px [#6857](https://github.com/youzan/vant/issues/6857)
+
+**Bug Fixes**
+
+- Field: 修复 rule 的 message 为空时无法重置表单状态的问题 [#6867](https://github.com/youzan/vant/issues/6867)
+- Icon: 修复图片图标加载过程中高度异常的问题 [#6858](https://github.com/youzan/vant/issues/6858)
+- ImagePreview: 修复 iOS 下旋转屏幕时布局错误的问题 [#6825](https://github.com/youzan/vant/issues/6825)
+
 ### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
 
 `2020-07-19`
