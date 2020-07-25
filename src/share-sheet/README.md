@@ -110,6 +110,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model:show | Whether to show ShareSheet | _boolean_ | `false` |
 | options | Share options | _Option[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Cancel button text | _string_ | `'Cancel'` |
