@@ -167,3 +167,15 @@ export default {
 | minus | 点击减少按钮时触发 | - |
 | focus | 输入框聚焦时触发 | _event: Event_ |
 | blur | 输入框失焦时触发 | _event: Event_ |
+
+## 常见问题
+
+### 为什么 value 有时候会变成 string 类型？
+
+这是因为用户输入过程中可能出现小数点或空值，比如 `1.`，这种情况下组件会抛出字符串类型。
+
+如果希望 value 保持 number 类型，可以在 v-model 上添加 `number` 修饰符：
+
+```html
+<van-stepper v-model.number="value" />
+```
