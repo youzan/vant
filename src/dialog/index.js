@@ -59,13 +59,13 @@ Dialog.defaultOptions = {
   overlayStyle: null,
   messageAlign: '',
   getContainer: 'body',
+  closeOnPopstate: true,
   cancelButtonText: '',
   cancelButtonColor: null,
   confirmButtonText: '',
   confirmButtonColor: null,
   showConfirmButton: true,
   showCancelButton: false,
-  closeOnPopstate: false,
   closeOnClickOverlay: false,
   callback: (action) => {
     instance[action === 'confirm' ? 'resolve' : 'reject'](action);

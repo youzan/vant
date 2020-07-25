@@ -256,7 +256,7 @@ export default {
 | v-model | 是否显示日历弹窗 | _boolean_ | `false` |
 | position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `false` |
+| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |

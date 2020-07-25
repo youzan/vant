@@ -166,17 +166,8 @@ ActionSheet.props = {
   cancelText: String,
   description: String,
   getContainer: [String, Function],
-  closeOnPopstate: Boolean,
   closeOnClickAction: Boolean,
   round: {
-    type: Boolean,
-    default: true,
-  },
-  closeIcon: {
-    type: String,
-    default: 'cross',
-  },
-  safeAreaInsetBottom: {
     type: Boolean,
     default: true,
   },
@@ -184,7 +175,19 @@ ActionSheet.props = {
     type: Boolean,
     default: true,
   },
+  closeIcon: {
+    type: String,
+    default: 'cross',
+  },
+  closeOnPopstate: {
+    type: Boolean,
+    default: true,
+  },
   closeOnClickOverlay: {
+    type: Boolean,
+    default: true,
+  },
+  safeAreaInsetBottom: {
     type: Boolean,
     default: true,
   },

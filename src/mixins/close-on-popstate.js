@@ -9,7 +9,10 @@ export const CloseOnPopstateMixin = {
   ],
 
   props: {
-    closeOnPopstate: Boolean,
+    closeOnPopstate: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {

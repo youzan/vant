@@ -130,7 +130,7 @@ export default {
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlayClass `v2.2.7` | Custom overlay class | _string_ | - |
 | overlayStyle `v2.2.7` | Custom overlay style | _object_ | - |
-| closeOnPopstate `v2.0.5` | Whether to close when popstate | _boolean_ | `false` |
+| closeOnPopstate `v2.0.5` | Whether to close when popstate | _boolean_ | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
@@ -156,7 +156,7 @@ export default {
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class `v2.2.7` | Custom overlay class | _string_ | - |
 | overlay-style `v2.2.7` | Custom overlay style | _object_ | - |
-| close-on-popstate `v2.0.5` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate `v2.0.5` | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |

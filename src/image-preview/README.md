@@ -109,7 +109,7 @@ export default {
 | onClose | Triggered when close | _Function_ | - |
 | onChange `v2.0.3` | Triggered when current image change | _Function_ | - |
 | onScale | Triggered when current image scale | _Function_ | - |
-| closeOnPopstate | Whether to close when popstate | _boolean_ | `false` |
+| closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | asyncClose | Whether to enable async close | _boolean_ | `false` |
 | className | Custom className | _any_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
@@ -130,7 +130,7 @@ export default {
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
 | async-close | Whether to enable async close | _boolean_ | `false` |
-| close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | class-name | Custom className | _any_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
 | min-zoom | Min zoom | _number \| string_ | `1/3` |

@@ -258,7 +258,6 @@ export default createComponent({
       this.imagePreview = ImagePreview({
         images: imageContents,
         startPosition: imageFiles.indexOf(item),
-        closeOnPopstate: true,
         onClose: () => {
           this.$emit('close-preview');
         },

@@ -128,7 +128,7 @@ export default {
 | round `v2.0.7` | 是否显示圆角 | _boolean_ | `false` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
-| close-on-popstate `v2.2.10` | 是否在页面回退时自动关闭 | _boolean_ | `false` |
+| close-on-popstate `v2.2.10` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | closeable `v2.2.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon `v2.2.0` | 关闭图标名称或图片链接 | _string_ | `cross` |
