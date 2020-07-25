@@ -30,6 +30,7 @@ module.exports = [
   'nav-bar',
   'pagination',
   'sidebar',
+  'sidebar-item',
   'tree-select',
   'notice-bar',
   'share-sheet',
