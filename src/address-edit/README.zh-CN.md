@@ -86,6 +86,7 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
+| tel-maxlength `v2.10.0` | 手机号最大长度 | _number \| string_ | - |
 | postal-validator `v2.1.2` | 邮政编码格式校验函数 | _string => boolean_ | - |
 | validator | 自定义校验函数 | _(key, val) => string_ | - |
 

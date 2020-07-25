@@ -1,6 +1,6 @@
 import AddressEdit from '..';
 import areaList from '../../area/demo/area-simple';
-import { mount, later } from '../../../test';
+import { mount, later, trigger } from '../../../test';
 
 const addressInfo = {
   name: '测试',
@@ -305,4 +305,18 @@ test('click-area event', () => {
   const field = wrapper.findAll('.van-field').at(2);
   field.trigger('click');
   expect(wrapper.emitted('click-area')[0]).toBeTruthy();
+});
+
+test('tel-maxlength prop', () => {
+  const wrapper = mount(AddressEdit, {
+    propsData: {
+      telMaxlength: 4,
+    },
+  });
+
+  const telInput = wrapper.find('input[type="tel"]');
+  telInput.element.value = '123456';
+  trigger(telInput, 'input');
+
+  expect(telInput.element.value).toEqual('1234');
 });

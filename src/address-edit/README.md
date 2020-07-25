@@ -86,6 +86,7 @@ export default {
 | is-saving | Whether to show save button loading status | _boolean_ | `false` |
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
 | tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
+| tel-maxlength `v2.10.0` | Tel maxlength | _number \| string_ | - |
 | postal-validator `v2.1.2` | The method to validate postal | _(tel: string) => boolean_ | - |
 | validator | Custom validator | _(key, val) => string_ | - |
 
