@@ -208,10 +208,10 @@ module.exports = {
               //   path: 'pull-refresh',
               //   title: 'PullRefresh 下拉刷新',
               // },
-              // {
-              //   path: 'share-sheet',
-              //   title: 'ShareSheet 分享面板',
-              // },
+              {
+                path: 'share-sheet',
+                title: 'ShareSheet 分享面板',
+              },
               {
                 path: 'swipe-cell',
                 title: 'SwipeCell 滑动单元格',
@@ -542,10 +542,10 @@ module.exports = {
               //   path: 'pull-refresh',
               //   title: 'PullRefresh',
               // },
-              // {
-              //   path: 'share-sheet',
-              //   title: 'ShareSheet',
-              // },
+              {
+                path: 'share-sheet',
+                title: 'ShareSheet',
+              },
               {
                 path: 'swipe-cell',
                 title: 'SwipeCell',

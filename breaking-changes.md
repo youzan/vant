@@ -6,6 +6,8 @@
 
 - Circle: `v-model` 重命名为 `v-model:currentRate`
 - Popup: `v-model` 重命名为 `v-model:show`
+- ShareSheet: `v-model` 重命名为 `v-model:show`
+- ActionSheet: `v-model` 重命名为 `v-model:show`
 - Switch: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
 - Sidebar: v-model 对应的属性 `activeKey` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
 - TreeSelect: `active-id.sync` 重命名为 `v-model:active-id`

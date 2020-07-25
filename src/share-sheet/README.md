@@ -16,7 +16,7 @@ Vue.use(ShareSheet);
 ```html
 <van-cell title="Show ShareSheet" @click="showShare = true" />
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="Share"
   :options="options"
   @select="onSelect"
@@ -51,7 +51,7 @@ export default {
 ### Multi Line
 
 ```html
-<van-share-sheet v-model="showShare" title="Share" :options="options" />
+<van-share-sheet v-model:show="showShare" title="Share" :options="options" />
 ```
 
 ```js
@@ -80,7 +80,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   :options="options"
   title="Share"
   description="Description"

@@ -3,7 +3,7 @@
     <demo-block card :title="t('basicUsage')">
       <van-cell is-link :title="t('showSheet')" @click="show.basic = true" />
       <van-share-sheet
-        v-model="show.basic"
+        v-model:show="show.basic"
         :title="t('title')"
         :options="options"
         @select="onSelect"
@@ -17,7 +17,7 @@
         @click="show.multiLine = true"
       />
       <van-share-sheet
-        v-model="show.multiLine"
+        v-model:show="show.multiLine"
         :title="t('title')"
         :options="multiLineOptions"
         @select="onSelect"
@@ -31,7 +31,7 @@
         @click="show.customIcon = true"
       />
       <van-share-sheet
-        v-model="show.customIcon"
+        v-model:show="show.customIcon"
         :options="customIconOptions"
         @select="onSelect"
       />
@@ -40,7 +40,7 @@
     <demo-block card :title="t('withDesc')">
       <van-cell is-link :title="t('showSheet')" @click="show.withDesc = true" />
       <van-share-sheet
-        v-model="show.withDesc"
+        v-model:show="show.withDesc"
         :title="t('title')"
         :options="optionsWithDesc"
         :description="t('description')"

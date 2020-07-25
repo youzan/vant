@@ -22,7 +22,7 @@ Vue.use(ShareSheet);
 ```html
 <van-cell title="显示分享面板" @click="showShare = true" />
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="立即分享给好友"
   :options="options"
   @select="onSelect"
@@ -60,7 +60,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="立即分享给好友"
   :options="options"
 />
@@ -93,7 +93,7 @@ export default {
 除了使用内置的几种图标外，可以直接在 `icon` 中传入图片 URL 来使用自定义的图标。
 
 ```html
-<van-share-sheet v-model="showShare" :options="options" />
+<van-share-sheet v-model:show="showShare" :options="options" />
 ```
 
 ```js
@@ -126,7 +126,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   :options="options"
   title="立即分享给好友"
   description="描述信息"

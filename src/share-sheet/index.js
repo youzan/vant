@@ -15,6 +15,7 @@ export default createComponent({
   props: {
     ...popupMixinProps,
     title: String,
+    duration: [Number, String],
     cancelText: String,
     description: String,
     getContainer: [String, Function],
@@ -40,6 +41,8 @@ export default createComponent({
     },
   },
 
+  emits: ['cancel', 'select', 'update:show', 'click-overlay'],
+
   methods: {
     onCancel() {
       this.toggle(false);
@@ -51,7 +54,7 @@ export default createComponent({
     },
 
     toggle(val) {
-      this.$emit('input', val);
+      this.$emit('update:show', val);
     },
 
     getIconURL(icon) {
@@ -63,8 +66,10 @@ export default createComponent({
     },
 
     genHeader() {
-      const title = this.slots('title') || this.title;
-      const description = this.slots('description') || this.description;
+      const title = this.$slots.title ? this.$slots.title() : this.title;
+      const description = this.$slots.description
+        ? this.$slots.description()
+        : this.description;
 
       if (!title && !description) {
         return;
@@ -132,8 +137,8 @@ export default createComponent({
     return (
       <Popup
         round
+        show={this.show}
         class={bem()}
-        value={this.value}
         position="bottom"
         overlay={this.overlay}
         duration={this.duration}
@@ -143,8 +148,10 @@ export default createComponent({
         closeOnPopstate={this.closeOnPopstate}
         closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}
-        onInput={this.toggle}
-        onClick-overlay={this.onClickOverlay}
+        {...{
+          'onUpdate:show': this.toggle,
+          'onClick-overlay': this.onClickOverlay,
+        }}
       >
         {this.genHeader()}
         {this.genRows()}

@@ -32,4 +32,5 @@ module.exports = [
   'sidebar',
   'tree-select',
   'notice-bar',
+  'share-sheet',
 ];
