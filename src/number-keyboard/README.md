@@ -160,6 +160,7 @@ export default {
 | close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| get-container `v2.10.0` | Return the mount node for NumberKeyboard | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
