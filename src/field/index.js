@@ -53,10 +53,6 @@ export default createComponent({
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
-    value: {
-      type: [String, Number],
-      default: '',
-    },
     type: {
       type: String,
       default: 'text',
@@ -69,6 +65,10 @@ export default createComponent({
       type: Boolean,
       default: null,
     },
+    modelValue: {
+      type: [String, Number],
+      default: '',
+    },
     clearTrigger: {
       type: String,
       default: 'focus',
@@ -79,6 +79,18 @@ export default createComponent({
     },
   },
 
+  emits: [
+    'blur',
+    'focus',
+    'clear',
+    'click',
+    'keypress',
+    'click-input',
+    'click-left-icon',
+    'click-right-icon',
+    'update:modelValue',
+  ],
+
   data() {
     return {
       focused: false,
@@ -88,8 +100,8 @@ export default createComponent({
   },
 
   watch: {
-    value() {
-      this.updateValue(this.value);
+    modelValue(val) {
+      this.updateValue(val);
       this.resetValidation();
       this.validateWithTrigger('onChange');
       this.$nextTick(this.adjustSize);
@@ -97,7 +109,7 @@ export default createComponent({
   },
 
   mounted() {
-    this.updateValue(this.value, this.formatTrigger);
+    this.updateValue(this.modelValue, this.formatTrigger);
     this.$nextTick(this.adjustSize);
 
     if (this.vanForm) {
@@ -114,7 +126,7 @@ export default createComponent({
   computed: {
     showClear() {
       if (this.clearable && !this.readonly) {
-        const hasValue = isDef(this.value) && this.value !== '';
+        const hasValue = isDef(this.modelValue) && this.modelValue !== '';
         const trigger =
           this.clearTrigger === 'always' ||
           (this.clearTrigger === 'focus' && this.focused);
@@ -132,30 +144,18 @@ export default createComponent({
       }
     },
 
-    listeners() {
-      return {
-        ...this.$listeners,
-        blur: this.onBlur,
-        focus: this.onFocus,
-        input: this.onInput,
-        click: this.onClickInput,
-        keypress: this.onKeypress,
-      };
-    },
-
     labelStyle() {
       const labelWidth = this.getProp('labelWidth');
-
       if (labelWidth) {
         return { width: addUnit(labelWidth) };
       }
     },
 
     formValue() {
-      if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
-        return this.children.value;
+      if (this.children && this.$slots.input) {
+        return this.children.modelValue || this.children.value;
       }
-      return this.value;
+      return this.modelValue;
     },
   },
 
@@ -311,8 +311,8 @@ export default createComponent({
         input.value = value;
       }
 
-      if (value !== this.value) {
-        this.$emit('input', value);
+      if (value !== this.modelValue) {
+        this.$emit('update:modelValue', value);
       }
 
       this.currentValue = value;
@@ -340,7 +340,7 @@ export default createComponent({
 
     onBlur(event) {
       this.focused = false;
-      this.updateValue(this.value, 'onBlur');
+      this.updateValue(this.modelValue, 'onBlur');
       this.$emit('blur', event);
       this.validateWithTrigger('onBlur');
       resetScroll();
@@ -364,7 +364,7 @@ export default createComponent({
 
     onClear(event) {
       preventDefault(event);
-      this.$emit('input', '');
+      this.$emit('update:modelValue', '');
       this.$emit('clear', event);
     },
 
@@ -412,41 +412,41 @@ export default createComponent({
 
     genInput() {
       const { type } = this;
-      const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
-      if (inputSlot) {
+      if (this.$slots.input) {
         return (
           <div
             class={bem('control', [inputAlign, 'custom'])}
             onClick={this.onClickInput}
           >
-            {inputSlot}
+            {this.$slots.input()}
           </div>
         );
       }
 
       const inputProps = {
+        ...this.$attrs,
         ref: 'input',
+        name: this.name,
         class: bem('control', inputAlign),
-        domProps: {
-          value: this.value,
-        },
-        attrs: {
-          ...this.$attrs,
-          name: this.name,
-          disabled: this.disabled,
-          readonly: this.readonly,
-          placeholder: this.placeholder,
-        },
-        on: this.listeners,
+        value: this.modelValue,
+        disabled: this.disabled,
+        readonly: this.readonly,
+        placeholder: this.placeholder,
+        onBlur: this.onBlur,
+        onFocus: this.onFocus,
+        onInput: this.onInput,
+        onClick: this.onClickInput,
+        onKeypress: this.onKeypress,
+        // TODO
         // add model directive to skip IME composition
-        directives: [
-          {
-            name: 'model',
-            value: this.value,
-          },
-        ],
+        // directives: [
+        //   {
+        //     name: 'model',
+        //     value: this.modelValue,
+        //   },
+        // ],
       };
 
       if (type === 'textarea') {
@@ -472,12 +472,14 @@ export default createComponent({
     },
 
     genLeftIcon() {
-      const showLeftIcon = this.slots('left-icon') || this.leftIcon;
+      const leftIconSlot = this.$slots['left-icon'];
 
-      if (showLeftIcon) {
+      if (this.leftIcon || leftIconSlot) {
         return (
           <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-            {this.slots('left-icon') || (
+            {leftIconSlot ? (
+              leftIconSlot()
+            ) : (
               <Icon name={this.leftIcon} classPrefix={this.iconPrefix} />
             )}
           </div>
@@ -486,13 +488,14 @@ export default createComponent({
     },
 
     genRightIcon() {
-      const { slots } = this;
-      const showRightIcon = slots('right-icon') || this.rightIcon;
+      const rightIconSlot = this.$slots['right-icon'];
 
-      if (showRightIcon) {
+      if (this.rightIcon || rightIconSlot) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-            {slots('right-icon') || (
+            {rightIconSlot ? (
+              rightIconSlot()
+            ) : (
               <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
             )}
           </div>
@@ -502,7 +505,7 @@ export default createComponent({
 
     genWordLimit() {
       if (this.showWordLimit && this.maxlength) {
-        const count = (this.value || '').length;
+        const count = (this.modelValue || '').length;
 
         return (
           <div class={bem('word-limit')}>
@@ -541,8 +544,8 @@ export default createComponent({
     genLabel() {
       const colon = this.getProp('colon') ? ':' : '';
 
-      if (this.slots('label')) {
-        return [this.slots('label'), colon];
+      if (this.$slots.label) {
+        return [this.$slots.label(), colon];
       }
 
       if (this.label) {
@@ -552,27 +555,25 @@ export default createComponent({
   },
 
   render() {
-    const { slots } = this;
+    const slots = this.$slots;
     const labelAlign = this.getProp('labelAlign');
-
-    const scopedSlots = {
-      icon: this.genLeftIcon,
-    };
-
-    const Label = this.genLabel();
-    if (Label) {
-      scopedSlots.title = () => Label;
-    }
-
-    const extra = this.slots('extra');
-    if (extra) {
-      scopedSlots.extra = () => extra;
-    }
 
     return (
       <Cell
         icon={this.leftIcon}
         size={this.size}
+        class={bem({
+          error: this.showError,
+          disabled: this.disabled,
+          [`label-${labelAlign}`]: labelAlign,
+          'min-height': this.type === 'textarea' && !this.autosize,
+        })}
+        // TODO
+        // vSlot={{
+        //   icon: this.genLeftIcon,
+        //   title: this.genLabel,
+        //   extra: slots.extra,
+        // }}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
@@ -581,14 +582,7 @@ export default createComponent({
         titleStyle={this.labelStyle}
         valueClass={bem('value')}
         titleClass={[bem('label', labelAlign), this.labelClass]}
-        scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
-        class={bem({
-          error: this.showError,
-          disabled: this.disabled,
-          [`label-${labelAlign}`]: labelAlign,
-          'min-height': this.type === 'textarea' && !this.autosize,
-        })}
         onClick={this.onClick}
       >
         <div class={bem('body')}>
@@ -601,9 +595,7 @@ export default createComponent({
             />
           )}
           {this.genRightIcon()}
-          {slots('button') && (
-            <div class={bem('button')}>{slots('button')}</div>
-          )}
+          {slots.button && <div class={bem('button')}>{slots.button()}</div>}
         </div>
         {this.genWordLimit()}
         {this.genMessage()}

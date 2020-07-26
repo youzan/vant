@@ -2,6 +2,7 @@
 module.exports = [
   'button',
   'cell',
+  'cell-group',
   'icon',
   'info',
   'image',
@@ -35,4 +36,5 @@ module.exports = [
   'notice-bar',
   'share-sheet',
   'pull-refresh',
+  'field',
 ];
