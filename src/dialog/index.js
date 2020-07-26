@@ -17,8 +17,11 @@ function initInstance() {
       };
     },
     methods: {
-      onToggle(show) {
+      toggle(show) {
         this.dialogProps.show = show;
+      },
+      setProps(props) {
+        this.dialogProps = props;
       },
     },
     render() {
@@ -27,7 +30,7 @@ function initInstance() {
           lazyRender={false}
           {...{
             ...this.dialogProps,
-            'onUpdate:show': this.onToggle,
+            'onUpdate:show': this.toggle,
           }}
         />
       );
@@ -46,22 +49,21 @@ function Dialog(options) {
       initInstance();
     }
 
-    instance.dialogProps = {
+    instance.setProps({
       ...Dialog.currentOptions,
       ...options,
       callback: (action) => {
         (action === 'confirm' ? resolve : reject)(action);
       },
-    };
+    });
 
     nextTick(() => {
-      instance.dialogProps.show = true;
+      instance.toggle(true);
     });
   });
 }
 
 Dialog.defaultOptions = {
-  show: false,
   title: '',
   width: '',
   message: '',

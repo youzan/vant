@@ -47,6 +47,8 @@ export default createComponent({
     },
   },
 
+  emits: ['opened', 'closed', 'confirm', 'cancel', 'update:show'],
+
   data() {
     return {
       loading: {
