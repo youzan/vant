@@ -37,4 +37,6 @@ module.exports = [
   'share-sheet',
   'pull-refresh',
   'field',
+  'tabbar',
+  'tabbar-item',
 ];

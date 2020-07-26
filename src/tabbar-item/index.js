@@ -24,6 +24,8 @@ export default createComponent({
     iconPrefix: String,
   },
 
+  emits: ['click'],
+
   data() {
     return {
       active: false,
@@ -51,10 +53,8 @@ export default createComponent({
     },
 
     genIcon(active) {
-      const slot = this.slots('icon', { active });
-
-      if (slot) {
-        return slot;
+      if (this.$slots.icon) {
+        return this.$slots.icon({ active });
       }
 
       if (this.icon) {
@@ -76,7 +76,9 @@ export default createComponent({
             info={isDef(this.badge) ? this.badge : this.info}
           />
         </div>
-        <div class={bem('text')}>{this.slots('default', { active })}</div>
+        <div class={bem('text')}>
+          {this.$slots.default ? this.$slots.default({ active }) : null}
+        </div>
       </div>
     );
   },

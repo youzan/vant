@@ -13,7 +13,7 @@ export default createComponent({
     placeholder: Boolean,
     activeColor: String,
     inactiveColor: String,
-    value: {
+    modelValue: {
       type: [Number, String],
       default: 0,
     },
@@ -30,6 +30,8 @@ export default createComponent({
       default: null,
     },
   },
+
+  emits: ['change', 'update:modelValue'],
 
   data() {
     return {
@@ -48,8 +50,8 @@ export default createComponent({
   },
 
   watch: {
-    value: 'setActiveItem',
     children: 'setActiveItem',
+    modelValue: 'setActiveItem',
   },
 
   mounted() {
@@ -61,13 +63,13 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.value;
+        item.active = (item.name || index) === this.modelValue;
       });
     },
 
     onChange(active) {
-      if (active !== this.value) {
-        this.$emit('input', active);
+      if (active !== this.modelValue) {
+        this.$emit('update:modelValue', active);
         this.$emit('change', active);
       }
     },
@@ -85,7 +87,7 @@ export default createComponent({
             }),
           ]}
         >
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
       );
     },

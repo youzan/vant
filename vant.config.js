@@ -310,10 +310,10 @@ module.exports = {
               //   path: 'tab',
               //   title: 'Tab 标签页',
               // },
-              // {
-              //   path: 'tabbar',
-              //   title: 'Tabbar 标签栏',
-              // },
+              {
+                path: 'tabbar',
+                title: 'Tabbar 标签栏',
+              },
               {
                 path: 'tree-select',
                 title: 'TreeSelect 分类选择',
@@ -644,10 +644,10 @@ module.exports = {
               //   path: 'tab',
               //   title: 'Tab',
               // },
-              // {
-              //   path: 'tabbar',
-              //   title: 'Tabbar',
-              // },
+              {
+                path: 'tabbar',
+                title: 'Tabbar',
+              },
               {
                 path: 'tree-select',
                 title: 'TreeSelect',
