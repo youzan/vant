@@ -99,7 +99,16 @@ export default {
       cascadeColumns: cascadeColumns['zh-CN'],
       multipleColumns: '多列选择',
       setColumnValues: '动态设置选项',
-      textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      textColumns: [
+        '杭州',
+        '宁波',
+        '温州',
+        '绍兴',
+        '湖州',
+        '嘉兴',
+        '金华',
+        '衢州',
+      ],
       disabledColumns: [
         { text: '杭州', disabled: true },
         { text: '宁波' },

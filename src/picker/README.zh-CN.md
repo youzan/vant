@@ -42,7 +42,7 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      columns: ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华', '衢州'],
     };
   },
   methods: {
@@ -247,7 +247,7 @@ export default {
     return {
       value: '',
       showPicker: false,
-      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      columns: ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华', '衢州'],
     };
   },
   methods: {
