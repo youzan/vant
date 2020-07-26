@@ -86,7 +86,7 @@ export default createComponent({
     },
   },
 
-  emits: ['rendered', 'input', 'change', 'disabled', 'click', 'scroll'],
+  emits: ['click', 'change', 'scroll', 'disabled', 'rendered', 'update:active'],
 
   data() {
     this.titleRefs = [];
@@ -243,7 +243,7 @@ export default createComponent({
       if (isDef(currentIndex) && currentIndex !== this.currentIndex) {
         const shouldEmitChange = this.currentIndex !== null;
         this.currentIndex = currentIndex;
-        this.$emit('input', this.currentName);
+        this.$emit('update:active', this.currentName);
 
         if (shouldEmitChange) {
           this.$emit(
