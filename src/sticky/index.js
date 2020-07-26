@@ -1,6 +1,6 @@
 import { isHidden } from '../utils/dom/style';
 import { unitToPx } from '../utils/format/unit';
-import { createNamespace, isDef, isServer } from '../utils';
+import { createNamespace, isDef, inBrowser } from '../utils';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
 import { BindEventMixin } from '../mixins/bind-event';
 
@@ -31,6 +31,8 @@ export default createComponent({
       default: 0,
     },
   },
+
+  emits: ['scroll'],
 
   data() {
     return {
@@ -70,7 +72,7 @@ export default createComponent({
 
   created() {
     // compatibility: https://caniuse.com/#feat=intersectionobserver
-    if (!isServer && window.IntersectionObserver) {
+    if (inBrowser && window.IntersectionObserver) {
       this.observer = new IntersectionObserver(
         (entries) => {
           // trigger scroll when visibility changed
@@ -141,7 +143,7 @@ export default createComponent({
     return (
       <div style={style}>
         <div class={bem({ fixed })} style={this.style}>
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
       </div>
     );
