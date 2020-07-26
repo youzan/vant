@@ -43,6 +43,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change'],
+
   data() {
     return {
       offset: 0,
@@ -266,28 +268,22 @@ export default createComponent({
 
         const data = {
           style: optionStyle,
-          attrs: {
-            role: 'button',
-            tabindex: disabled ? -1 : 0,
-          },
+          role: 'button',
+          tabindex: disabled ? -1 : 0,
           class: [
             bem('item', {
               disabled,
               selected: index === this.currentIndex,
             }),
           ],
-          on: {
-            click: () => {
-              this.onClickItem(index);
-            },
+          onClick: () => {
+            this.onClickItem(index);
           },
         };
 
         const childData = {
           class: 'van-ellipsis',
-          domProps: {
-            [this.allowHtml ? 'innerHTML' : 'textContent']: text,
-          },
+          [this.allowHtml ? 'innerHTML' : 'textContent']: text,
         };
 
         return (

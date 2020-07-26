@@ -43,4 +43,5 @@ module.exports = [
   'tab',
   'tabs',
   'sticky',
+  'picker',
 ];

@@ -32,6 +32,8 @@ export default createComponent({
     },
   },
 
+  emits: ['confirm', 'cancel', 'change'],
+
   data() {
     return {
       children: [],
@@ -62,7 +64,9 @@ export default createComponent({
 
   watch: {
     columns: {
-      handler: 'format',
+      handler() {
+        this.format();
+      },
       immediate: true,
     },
   },
@@ -261,10 +265,8 @@ export default createComponent({
     },
 
     genTitle() {
-      const titleSlot = this.slots('title');
-
-      if (titleSlot) {
-        return titleSlot;
+      if (this.$slots.title) {
+        return this.$slots.title();
       }
 
       if (this.title) {
@@ -276,19 +278,25 @@ export default createComponent({
       if (this.showToolbar) {
         return (
           <div class={bem('toolbar')}>
-            {this.slots() || [
-              <button type="button" class={bem('cancel')} onClick={this.cancel}>
-                {this.cancelButtonText || t('cancel')}
-              </button>,
-              this.genTitle(),
-              <button
-                type="button"
-                class={bem('confirm')}
-                onClick={this.confirm}
-              >
-                {this.confirmButtonText || t('confirm')}
-              </button>,
-            ]}
+            {this.$slots.default
+              ? this.$slots.default()
+              : [
+                  <button
+                    type="button"
+                    class={bem('cancel')}
+                    onClick={this.cancel}
+                  >
+                    {this.cancelButtonText || t('cancel')}
+                  </button>,
+                  this.genTitle(),
+                  <button
+                    type="button"
+                    class={bem('confirm')}
+                    onClick={this.confirm}
+                  >
+                    {this.confirmButtonText || t('confirm')}
+                  </button>,
+                ]}
           </div>
         );
       }
@@ -339,15 +347,15 @@ export default createComponent({
     },
   },
 
-  render(h) {
+  render() {
     return (
       <div class={bem()}>
-        {this.toolbarPosition === 'top' ? this.genToolbar() : h()}
-        {this.loading ? <Loading class={bem('loading')} /> : h()}
-        {this.slots('columns-top')}
+        {this.toolbarPosition === 'top' ? this.genToolbar() : null}
+        {this.loading ? <Loading class={bem('loading')} /> : null}
+        {this.$slots['columns-top']?.()}
         {this.genColumns()}
-        {this.slots('columns-bottom')}
-        {this.toolbarPosition === 'bottom' ? this.genToolbar() : h()}
+        {this.$slots['columns-bottom']?.()}
+        {this.toolbarPosition === 'bottom' ? this.genToolbar() : null}
       </div>
     );
   },

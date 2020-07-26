@@ -143,10 +143,10 @@ module.exports = {
               //   path: 'password-input',
               //   title: 'PasswordInput 密码输入框',
               // },
-              // {
-              //   path: 'picker',
-              //   title: 'Picker 选择器',
-              // },
+              {
+                path: 'picker',
+                title: 'Picker 选择器',
+              },
               // {
               //   path: 'radio',
               //   title: 'Radio 单选框',
@@ -477,10 +477,10 @@ module.exports = {
               //   path: 'password-input',
               //   title: 'PasswordInput',
               // },
-              // {
-              //   path: 'picker',
-              //   title: 'Picker',
-              // },
+              {
+                path: 'picker',
+                title: 'Picker',
+              },
               // {
               //   path: 'radio',
               //   title: 'Radio',
