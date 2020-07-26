@@ -15,6 +15,7 @@ export default createComponent({
     disabled: Boolean,
     scrollable: Boolean,
     activeColor: String,
+    renderTitle: Function,
     inactiveColor: String,
     swipeThreshold: [Number, String],
   },
@@ -59,7 +60,7 @@ export default createComponent({
     genText() {
       const Text = (
         <span class={bem('text', { ellipsis: this.ellipsis })}>
-          {this.slots() || this.title}
+          {this.renderTitle ? this.renderTitle() : this.title}
         </span>
       );
 

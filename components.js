@@ -40,4 +40,7 @@ module.exports = [
   'tabbar',
   'tabbar-item',
   'list',
+  'tab',
+  'tabs',
+  'sticky',
 ];

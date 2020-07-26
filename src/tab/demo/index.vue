@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-tabs v-model="active">
+      <van-tabs v-model:active="active">
         <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="t('matchByName')">
-      <van-tabs v-model="activeName">
+      <van-tabs v-model:active="activeName">
         <van-tab name="a" :title="t('tab') + 1"> {{ t('content') }} 1 </van-tab>
         <van-tab name="b" :title="t('tab') + 2"> {{ t('content') }} 2 </van-tab>
         <van-tab name="c" :title="t('tab') + 3"> {{ t('content') }} 3 </van-tab>

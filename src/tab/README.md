@@ -14,10 +14,10 @@ Vue.use(Tabs);
 
 ### Basic Usage
 
-The first tab is actived by default, you can set `v-model` to active specified tab.
+The first tab is actived by default, you can set `v-model:active` to active specified tab.
 
 ```html
-<van-tabs v-model="active">
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 4" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -37,7 +37,7 @@ export default {
 ### Match By Name
 
 ```html
-<van-tabs v-model="activeName">
+<van-tabs v-model:active="activeName">
   <van-tab title="tab 1" name="a">content of tab 1</van-tab>
   <van-tab title="tab 2" name="b">content of tab 2</van-tab>
   <van-tab title="tab 3" name="c">content of tab 3</van-tab>
@@ -129,7 +129,7 @@ export default {
 In sticky mode, the tab will be fixed to top when scroll to top.
 
 ```html
-<van-tabs v-model="active" sticky>
+<van-tabs v-model:active="active" sticky>
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -141,7 +141,7 @@ In sticky mode, the tab will be fixed to top when scroll to top.
 Use title slot to custom tab title.
 
 ```html
-<van-tabs v-model="active">
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 2" :key="index">
     <template #title> <van-icon name="more-o" />tab </template>
     content {{ index }}
@@ -154,7 +154,7 @@ Use title slot to custom tab title.
 Use `animated` props to change tabs with animation.
 
 ```html
-<van-tabs v-model="active" animated>
+<van-tabs v-model:active="active" animated>
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -166,7 +166,7 @@ Use `animated` props to change tabs with animation.
 In swipeable mode, you can switch tabs with swipe gestrue in the content.
 
 ```html
-<van-tabs v-model="active" swipeable>
+<van-tabs v-model:active="active" swipeable>
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -178,7 +178,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content.
 In scrollspy mode, the list of content will be tiled.
 
 ```html
-<van-tabs v-model="active" scrollspy sticky>
+<van-tabs v-model:active="active" scrollspy sticky>
   <van-tab v-for="index in 8" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -219,7 +219,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Index of active tab | _number \| string_ | `0` |
+| v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |
 | background | Background color | _string_ | `white` |

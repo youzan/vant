@@ -53,11 +53,11 @@ export default createComponent({
     },
   },
 
-  render(h) {
-    const { slots, parent, isActive } = this;
+  render() {
+    const { parent, isActive } = this;
     const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
     const show = parent.scrollspy || isActive;
-    const Content = shouldRender ? slots() : h();
+    const Content = shouldRender ? this.$slots.default?.() : null;
 
     if (parent.animated) {
       return (

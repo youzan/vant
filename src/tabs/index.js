@@ -40,10 +40,6 @@ export default createComponent({
     }),
   ],
 
-  model: {
-    prop: 'active',
-  },
-
   props: {
     color: String,
     sticky: Boolean,
@@ -90,7 +86,11 @@ export default createComponent({
     },
   },
 
+  emits: ['rendered', 'input', 'change', 'disabled', 'click', 'scroll'],
+
   data() {
+    this.titleRefs = [];
+
     return {
       position: '',
       currentIndex: null,
@@ -194,18 +194,18 @@ export default createComponent({
       const shouldAnimate = this.inited;
 
       this.$nextTick(() => {
-        const { titles } = this.$refs;
+        const { titleRefs } = this;
 
         if (
-          !titles ||
-          !titles[this.currentIndex] ||
+          !titleRefs ||
+          !titleRefs[this.currentIndex] ||
           this.type !== 'line' ||
           isHidden(this.$el)
         ) {
           return;
         }
 
-        const title = titles[this.currentIndex].$el;
+        const title = titleRefs[this.currentIndex].$el;
         const { lineWidth, lineHeight } = this;
         const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
         const left = title.offsetLeft + title.offsetWidth / 2;
@@ -302,14 +302,14 @@ export default createComponent({
 
     // scroll active tab into view
     scrollIntoView(immediate) {
-      const { titles } = this.$refs;
+      const { titleRefs } = this;
 
-      if (!this.scrollable || !titles || !titles[this.currentIndex]) {
+      if (!this.scrollable || !titleRefs || !titleRefs[this.currentIndex]) {
         return;
       }
 
       const { nav } = this.$refs;
-      const title = titles[this.currentIndex].$el;
+      const title = titleRefs[this.currentIndex].$el;
       const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
       scrollLeftTo(nav, to, immediate ? 0 : +this.duration);
@@ -369,31 +369,32 @@ export default createComponent({
   render() {
     const { type, ellipsis, animated, scrollable } = this;
 
-    const Nav = this.children.map((item, index) => (
-      <Title
-        ref="titles"
-        refInFor
-        type={type}
-        dot={item.dot}
-        info={isDef(item.badge) ? item.badge : item.info}
-        title={item.title}
-        color={this.color}
-        style={item.titleStyle}
-        isActive={index === this.currentIndex}
-        ellipsis={ellipsis}
-        disabled={item.disabled}
-        scrollable={scrollable}
-        activeColor={this.titleActiveColor}
-        inactiveColor={this.titleInactiveColor}
-        swipeThreshold={this.swipeThreshold}
-        scopedSlots={{
-          default: () => item.slots('title'),
-        }}
-        onClick={() => {
-          this.onClick(item, index);
-        }}
-      />
-    ));
+    const Nav = this.children.map((item, index) => {
+      return (
+        <Title
+          ref={(val) => {
+            this.titleRefs[index] = val;
+          }}
+          dot={item.dot}
+          type={type}
+          info={isDef(item.badge) ? item.badge : item.info}
+          title={item.title}
+          color={this.color}
+          style={item.titleStyle}
+          isActive={index === this.currentIndex}
+          ellipsis={ellipsis}
+          disabled={item.disabled}
+          scrollable={scrollable}
+          renderTitle={item.$slots.title}
+          activeColor={this.titleActiveColor}
+          inactiveColor={this.titleInactiveColor}
+          swipeThreshold={this.swipeThreshold}
+          onClick={() => {
+            this.onClick(item, index);
+          }}
+        />
+      );
+    });
 
     const Wrap = (
       <div
@@ -409,12 +410,12 @@ export default createComponent({
           class={bem('nav', [type])}
           style={this.navStyle}
         >
-          {this.slots('nav-left')}
+          {this.$slots['nav-left']?.()}
           {Nav}
           {type === 'line' && (
             <div class={bem('line')} style={this.lineStyle} />
           )}
-          {this.slots('nav-right')}
+          {this.$slots['nav-right']?.()}
         </div>
       </div>
     );
@@ -440,7 +441,7 @@ export default createComponent({
           currentIndex={this.currentIndex}
           onChange={this.setCurrentIndex}
         >
-          {this.slots()}
+          {this.$slots.default?.()}
         </Content>
       </div>
     );

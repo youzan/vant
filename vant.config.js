@@ -269,10 +269,10 @@ module.exports = {
                 path: 'steps',
                 title: 'Steps 步骤条',
               },
-              // {
-              //   path: 'sticky',
-              //   title: 'Sticky 粘性布局',
-              // },
+              {
+                path: 'sticky',
+                title: 'Sticky 粘性布局',
+              },
               // {
               //   path: 'swipe',
               //   title: 'Swipe 轮播',
@@ -306,10 +306,10 @@ module.exports = {
                 path: 'sidebar',
                 title: 'Sidebar 侧边导航',
               },
-              // {
-              //   path: 'tab',
-              //   title: 'Tab 标签页',
-              // },
+              {
+                path: 'tab',
+                title: 'Tab 标签页',
+              },
               {
                 path: 'tabbar',
                 title: 'Tabbar 标签栏',
@@ -603,10 +603,10 @@ module.exports = {
                 path: 'steps',
                 title: 'Steps',
               },
-              // {
-              //   path: 'sticky',
-              //   title: 'Sticky',
-              // },
+              {
+                path: 'sticky',
+                title: 'Sticky',
+              },
               // {
               //   path: 'swipe',
               //   title: 'Swipe',
@@ -640,10 +640,10 @@ module.exports = {
                 path: 'sidebar',
                 title: 'Sidebar',
               },
-              // {
-              //   path: 'tab',
-              //   title: 'Tab',
-              // },
+              {
+                path: 'tab',
+                title: 'Tab',
+              },
               {
                 path: 'tabbar',
                 title: 'Tabbar',

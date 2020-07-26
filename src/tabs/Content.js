@@ -15,6 +15,8 @@ export default createComponent({
     currentIndex: Number,
   },
 
+  emits: ['change'],
+
   computed: {
     style() {
       if (this.animated) {
@@ -28,10 +30,10 @@ export default createComponent({
     listeners() {
       if (this.swipeable) {
         return {
-          touchstart: this.touchStart,
-          touchmove: this.touchMove,
-          touchend: this.onTouchEnd,
-          touchcancel: this.onTouchEnd,
+          onTouchstart: this.touchStart,
+          onTouchmove: this.touchMove,
+          onTouchend: this.onTouchEnd,
+          onTouchcancel: this.onTouchEnd,
         };
       }
     },
@@ -54,15 +56,16 @@ export default createComponent({
     },
 
     genChildren() {
+      const Content = this.$slots.default?.();
       if (this.animated) {
         return (
           <div class={bem('track')} style={this.style}>
-            {this.slots()}
+            {Content}
           </div>
         );
       }
 
-      return this.slots();
+      return Content;
     },
   },
 
@@ -70,7 +73,7 @@ export default createComponent({
     return (
       <div
         class={bem('content', { animated: this.animated })}
-        {...{ on: this.listeners }}
+        {...this.listeners}
       >
         {this.genChildren()}
       </div>

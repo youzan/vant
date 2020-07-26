@@ -4,8 +4,9 @@
 
 以下改动是为了适配 Vue 3 的 v-model API 用法变更：
 
-- Circle: `v-model` 重命名为 `v-model:currentRate`
+- Tabs: `v-model` 重命名为 `v-model:active`
 - Popup: `v-model` 重命名为 `v-model:show`
+- Circle: `v-model` 重命名为 `v-model:currentRate`
 - ShareSheet: `v-model` 重命名为 `v-model:show`
 - ActionSheet: `v-model` 重命名为 `v-model:show`
 - List: `v-model` 重命名为 `v-model:loading`，`error.sync` 重命名为 `v-model:error`
