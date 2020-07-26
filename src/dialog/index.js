@@ -56,7 +56,7 @@ function Dialog(options) {
 
     nextTick(() => {
       instance.dialogProps.show = true;
-    })
+    });
   });
 }
 
@@ -111,7 +111,6 @@ Dialog.resetDefaultOptions = () => {
 Dialog.resetDefaultOptions();
 
 Dialog.install = (app) => {
-  console.log('use VanDialog', VanDialog);
   app.use(VanDialog);
   app.config.globalProperties.$dialog = Dialog;
 };
