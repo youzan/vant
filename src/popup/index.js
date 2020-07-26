@@ -61,7 +61,13 @@ export default createComponent({
   methods: {
     genOverlay() {
       if (this.overlay) {
-        return <Overlay show={this.show} onClick={this.onClickOverlay} />;
+        return (
+          <Overlay
+            show={this.show}
+            zIndex={this.currentZIndex}
+            onClick={this.onClickOverlay}
+          />
+        );
       }
     },
 
@@ -73,7 +79,10 @@ export default createComponent({
         this.transition ||
         (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
-      const style = {};
+      const style = {
+        zIndex: this.currentZIndex,
+      };
+
       if (isDef(duration)) {
         const key = isCenter ? 'animationDuration' : 'transitionDuration';
         style[key] = `${duration}s`;
@@ -88,7 +97,6 @@ export default createComponent({
           {this.shouldRender ? (
             <div
               vShow={this.show}
-              ref="root"
               style={style}
               class={bem({
                 round,

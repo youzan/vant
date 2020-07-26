@@ -46,6 +46,7 @@ export function PopupMixin(options = {}) {
     data() {
       return {
         inited: this.show,
+        currentZIndex: null,
       };
     },
 
@@ -199,7 +200,7 @@ export function PopupMixin(options = {}) {
       },
 
       updateZIndex(value = 0) {
-        this.$refs.root.style.zIndex = ++context.zIndex + value;
+        this.currentZIndex = ++context.zIndex + value;
       },
     },
   };
