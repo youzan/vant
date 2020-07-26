@@ -249,10 +249,10 @@ module.exports = {
               //   path: 'lazyload',
               //   title: 'Lazyload 懒加载',
               // },
-              // {
-              //   path: 'list',
-              //   title: 'List 列表',
-              // },
+              {
+                path: 'list',
+                title: 'List 列表',
+              },
               {
                 path: 'notice-bar',
                 title: 'NoticeBar 通知栏',
@@ -583,10 +583,10 @@ module.exports = {
               //   path: 'lazyload',
               //   title: 'Lazyload',
               // },
-              // {
-              //   path: 'list',
-              //   title: 'List',
-              // },
+              {
+                path: 'list',
+                title: 'List',
+              },
               {
                 path: 'notice-bar',
                 title: 'NoticeBar',

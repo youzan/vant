@@ -8,6 +8,7 @@
 - Popup: `v-model` 重命名为 `v-model:show`
 - ShareSheet: `v-model` 重命名为 `v-model:show`
 - ActionSheet: `v-model` 重命名为 `v-model:show`
+- List: `v-model` 重命名为 `v-model:loading`，`error.sync` 重命名为 `v-model:error`
 - Field: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
 - Switch: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
 - Sidebar: v-model 对应的属性 `activeKey` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`

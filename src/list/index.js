@@ -22,10 +22,6 @@ export default createComponent({
     }),
   ],
 
-  model: {
-    prop: 'loading',
-  },
-
   props: {
     error: Boolean,
     loading: Boolean,
@@ -46,6 +42,8 @@ export default createComponent({
       default: 'down',
     },
   },
+
+  emits: ['load', 'update:error', 'update:loading'],
 
   data() {
     return {
@@ -107,7 +105,7 @@ export default createComponent({
 
         if (isReachEdge) {
           this.innerLoading = true;
-          this.$emit('input', true);
+          this.$emit('update:loading', true);
           this.$emit('load');
         }
       });
@@ -122,7 +120,9 @@ export default createComponent({
       if (this.innerLoading && !this.finished) {
         return (
           <div class={bem('loading')} key="loading">
-            {this.slots('loading') || (
+            {this.$slots.loading ? (
+              this.$slots.loading()
+            ) : (
               <Loading size="16">{this.loadingText || t('loading')}</Loading>
             )}
           </div>
@@ -132,7 +132,9 @@ export default createComponent({
 
     genFinishedText() {
       if (this.finished) {
-        const text = this.slots('finished') || this.finishedText;
+        const text = this.$slots.finished
+          ? this.$slots.finished()
+          : this.finishedText;
 
         if (text) {
           return <div class={bem('finished-text')}>{text}</div>;
@@ -142,7 +144,7 @@ export default createComponent({
 
     genErrorText() {
       if (this.error) {
-        const text = this.slots('error') || this.errorText;
+        const text = this.$slots.error ? this.$slots.error() : this.errorText;
 
         if (text) {
           return (
@@ -157,14 +159,15 @@ export default createComponent({
 
   render() {
     const Placeholder = <div ref="placeholder" class={bem('placeholder')} />;
+    const Content = this.$slots.default?.();
 
     return (
       <div class={bem()} role="feed" aria-busy={this.innerLoading}>
-        {this.direction === 'down' ? this.slots() : Placeholder}
+        {this.direction === 'down' ? Content : Placeholder}
         {this.genLoading()}
         {this.genFinishedText()}
         {this.genErrorText()}
-        {this.direction === 'up' ? this.slots() : Placeholder}
+        {this.direction === 'up' ? Content : Placeholder}
       </div>
     );
   },

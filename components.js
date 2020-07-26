@@ -39,4 +39,5 @@ module.exports = [
   'field',
   'tabbar',
   'tabbar-item',
+  'list',
 ];

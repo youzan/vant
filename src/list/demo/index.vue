@@ -3,7 +3,7 @@
     <van-tabs>
       <van-tab :title="t('basicUsage')">
         <van-list
-          v-model="list[0].loading"
+          v-model:loading="list[0].loading"
           :finished="list[0].finished"
           :finished-text="t('finishedText')"
           @load="onLoad(0)"
@@ -14,9 +14,9 @@
 
       <van-tab :title="t('errorInfo')">
         <van-list
-          v-model="list[1].loading"
+          v-model:loading="list[1].loading"
+          v-model:error="list[1].error"
           :finished="list[1].finished"
-          :error.sync="list[1].error"
           :error-text="t('errorText')"
           @load="onLoad(1)"
         >
@@ -25,9 +25,12 @@
       </van-tab>
 
       <van-tab :title="t('pullRefresh')">
-        <van-pull-refresh v-model="list[2].refreshing" @refresh="onRefresh(2)">
+        <van-pull-refresh
+          v-model:loading="list[2].refreshing"
+          @refresh="onRefresh(2)"
+        >
           <van-list
-            v-model="list[2].loading"
+            v-model:loading="list[2].loading"
             :finished="list[2].finished"
             :finished-text="t('finishedText')"
             @load="onLoad(2)"
