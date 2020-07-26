@@ -1,19 +1,19 @@
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
-import { PopupMixin } from '../mixins/popup';
+import Popup from '../popup';
 import Button from '../button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
 export default createComponent({
-  mixins: [PopupMixin()],
-
   props: {
+    show: Boolean,
     title: String,
     width: [Number, String],
     message: String,
     className: null,
     callback: Function,
+    lazyRender: Boolean,
     beforeClose: Function,
     messageAlign: String,
     cancelButtonText: String,
@@ -65,7 +65,7 @@ export default createComponent({
       this.$emit(action);
 
       // show not trigger close event when hidden
-      if (!this.value) {
+      if (!this.show) {
         return;
       }
 
@@ -85,7 +85,7 @@ export default createComponent({
     },
 
     onClose(action) {
-      this.close();
+      this.$emit('update:show', false);
 
       if (this.callback) {
         this.callback(action);
@@ -133,9 +133,9 @@ export default createComponent({
       );
     },
 
-    genContent(hasTitle, messageSlot) {
-      if (messageSlot) {
-        return <div class={bem('content')}>{messageSlot}</div>;
+    genContent(hasTitle) {
+      if (this.$slots.default) {
+        return <div class={bem('content')}>{this.$slots.default()}</div>;
       }
 
       const { message, messageAlign } = this;
@@ -145,9 +145,7 @@ export default createComponent({
             'has-title': hasTitle,
             [messageAlign]: messageAlign,
           }),
-          domProps: {
-            [this.allowHtml ? 'innerHTML' : 'textContent']: message,
-          },
+          [this.allowHtml ? 'innerHTML' : 'textContent']: message,
         };
 
         return (
@@ -160,37 +158,32 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     const { message } = this;
-    const messageSlot = this.slots();
-    const title = this.slots('title') || this.title;
+    const title = this.$slots.title ? this.$slots.title() : this.title;
     const Title = title && (
-      <div class={bem('header', { isolated: !message && !messageSlot })}>
+      <div
+        class={bem('header', { isolated: !message && !this.$slots.default })}
+      >
         {title}
       </div>
     );
 
     return (
-      <transition
-        name={this.transition}
-        onAfterEnter={this.onOpened}
-        onAfterLeave={this.onClosed}
+      <Popup
+        show={this.show}
+        role="dialog"
+        class={[bem(), this.className]}
+        style={{ width: addUnit(this.width) }}
+        transition={this.transition}
+        lazyRender={this.lazyRender}
+        aria-labelledby={this.title || message}
+        onOpened={this.onOpened}
+        onClosed={this.onClosed}
       >
-        <div
-          vShow={this.value}
-          role="dialog"
-          aria-labelledby={this.title || message}
-          class={[bem(), this.className]}
-          style={{ width: addUnit(this.width) }}
-        >
-          {Title}
-          {this.genContent(title, messageSlot)}
-          {this.genButtons()}
-        </div>
-      </transition>
+        {Title}
+        {this.genContent(title)}
+        {this.genButtons()}
+      </Popup>
     );
   },
 });

@@ -26,7 +26,7 @@
         {{ t('componentCall') }}
       </van-button>
       <van-dialog
-        v-model="show"
+        v-model:show="show"
         :title="t('title')"
         show-cancel-button
         :lazy-render="false"

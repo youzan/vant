@@ -84,7 +84,7 @@ export default {
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog v-model="show" title="Title" show-cancel-button>
+<van-dialog v-model:show="show" title="Title" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg" />
 </van-dialog>
 ```
@@ -142,7 +142,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show dialog | _boolean_ | - |
+| v-model:show | Whether to show dialog | _boolean_ | - |
 | title | Title | _string_ | - |
 | width `v2.2.7` | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |

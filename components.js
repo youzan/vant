@@ -44,4 +44,5 @@ module.exports = [
   'tabs',
   'sticky',
   'picker',
+  'dialog',
 ];

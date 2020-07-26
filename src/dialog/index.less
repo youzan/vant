@@ -1,7 +1,6 @@
 @import '../style/var';
 
 .van-dialog {
-  position: fixed;
   top: 45%;
   left: 50%;
   width: @dialog-width;
@@ -9,7 +8,6 @@
   font-size: @dialog-font-size;
   background-color: @dialog-background-color;
   border-radius: @dialog-border-radius;
-  transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
   transition: @dialog-transition;
   transition-property: transform, opacity;
@@ -80,7 +78,7 @@
     }
   }
 
-  &-bounce-enter {
+  &-bounce-enter-from {
     transform: translate3d(-50%, -50%, 0) scale(0.7);
     opacity: 0;
   }
