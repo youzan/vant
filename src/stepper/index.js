@@ -273,7 +273,8 @@ export default createComponent({
   render() {
     const createListeners = (type) => ({
       on: {
-        click: () => {
+        click: (e) => {
+          e.preventDefault();
           this.type = type;
           this.onChange();
         },
