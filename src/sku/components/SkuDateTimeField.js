@@ -27,6 +27,7 @@ export default createComponent({
     return {
       showDatePicker: false,
       currentDate: this.type === 'time' ? '' : new Date(),
+      minDate: new Date(new Date().getFullYear() - 60, 0, 1),
     };
   },
 
@@ -94,6 +95,7 @@ export default createComponent({
             type={this.type}
             title={this.title}
             value={this.currentDate}
+            minDate={this.minDate}
             formatter={this.formatter}
             onCancel={this.onCancel}
             onConfirm={this.onConfirm}
