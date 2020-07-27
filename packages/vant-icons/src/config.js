@@ -237,5 +237,6 @@ module.exports = {
     'bars',
     'wap-nav',
     'enlarge',
+    'photo-fail',
   ],
 };
