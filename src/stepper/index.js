@@ -274,6 +274,7 @@ export default createComponent({
     const createListeners = (type) => ({
       on: {
         click: (e) => {
+          // disable double tap scrolling on mobile safari
           e.preventDefault();
           this.type = type;
           this.onChange();
