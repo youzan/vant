@@ -140,7 +140,7 @@ export default {
 | title-class | 标题额外类名 | _string_ | - |
 | get-container `v2.2.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
-### DropdownItem Events
+### Dropdown Events
 
 | 事件名 | 说明                          | 回调参数 |
 | ------ | ----------------------------- | -------- |
