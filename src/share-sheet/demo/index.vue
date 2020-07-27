@@ -101,7 +101,7 @@ export default {
       return [
         { name: this.t('wechat'), icon: 'wechat' },
         { name: this.t('weibo'), icon: 'weibo' },
-        { name: this.t('link'), icon: 'link', className: 'js-copy' },
+        { name: this.t('link'), icon: 'link' },
         { name: this.t('poster'), icon: 'poster' },
         { name: this.t('qrcode'), icon: 'qrcode' },
       ];
