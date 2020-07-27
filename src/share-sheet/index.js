@@ -85,7 +85,7 @@ export default createComponent({
             <div
               role="button"
               tabindex="0"
-              class={bem('option')}
+              class={[bem('option'), option.className]}
               onClick={() => {
                 this.onSelect(option, index);
               }}
