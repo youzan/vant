@@ -33,7 +33,7 @@ export default {
       options: [
         { name: 'Wechat', icon: 'wechat' },
         { name: 'Weibo', icon: 'weibo' },
-        { name: 'Link', icon: 'link', className: 'js-copy' },
+        { name: 'Link', icon: 'link' },
         { name: 'Poster', icon: 'poster' },
         { name: 'Qrcode', icon: 'qrcode' },
       ],
