@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.2.4
+
+- add photo-fail icon
+
 ## 1.2.3
 
 - fix enlarge icon align
