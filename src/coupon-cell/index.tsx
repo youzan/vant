@@ -27,7 +27,7 @@ function formatValue(props: CouponCellProps) {
 
   if (coupon) {
     const value = coupon.value || coupon.denominations || 0;
-    return `-${currency}${(value / 100).toFixed(2)}`;
+    return `-${currency} ${(value / 100).toFixed(2)}`;
   }
 
   return coupons.length === 0 ? t('tips') : t('count', coupons.length);
