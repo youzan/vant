@@ -178,6 +178,7 @@ export default {
 | name | 分享渠道名称 | _string_ |
 | description `v2.8.5` | 分享选项描述 | _string_ |
 | icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | _string_ |
+| className | 分享选项类名 | _string_ |
 
 ### Events
 

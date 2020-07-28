@@ -130,6 +130,7 @@ export default {
 | name | Option name | _string_ |
 | description `v2.8.5` | Option description | _string_ |
 | icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` or image URL | _string_ |
+| className | Option className is used to set the class props to the share item | _string_ |
 
 ### Events
 
