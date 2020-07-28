@@ -29,7 +29,7 @@ test('description prop', () => {
   expect(wrapper.contains('.van-share-sheet__description')).toBeFalsy();
 });
 
-test('description prop', () => {
+test('option className', () => {
   const wrapper = mount(ShareSheet, {
     propsData: {
       value: true,
@@ -37,10 +37,9 @@ test('description prop', () => {
     },
   });
 
-  expect(
-    wrapper.find('.van-share-sheet__option').element.className.indexOf('foo') >
-      -1
-  );
+  const option = wrapper.find('.van-share-sheet__option').element;
+
+  expect(option.className.includes('foo')).toBeTruthy();
 });
 
 test('select event', () => {
