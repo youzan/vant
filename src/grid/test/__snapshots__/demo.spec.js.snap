@@ -55,7 +55,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
         <div class="van-grid-item__content van-grid-item__content--center">
           <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img" style="object-fit: contain;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
         </div>
@@ -63,7 +63,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
         <div class="van-grid-item__content van-grid-item__content--center">
           <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-2.jpg" class="van-image__img" style="object-fit: contain;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
         </div>
@@ -71,7 +71,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
         <div class="van-grid-item__content van-grid-item__content--center">
           <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-3.jpg" class="van-image__img" style="object-fit: contain;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
         </div>
