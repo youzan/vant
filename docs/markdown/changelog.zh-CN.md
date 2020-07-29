@@ -10,6 +10,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.9.4](https://github.com/youzan/vant/compare/v2.9.3...v2.9.4)
+
+`2020-07-29`
+
+**Feature**
+
+- ShareSheet: 新增 className 选项，用于自定义选项的类名 [#6886](https://github.com/youzan/vant/issues/6886)
+- Sku: 优化日期选择范围 [#6879](https://github.com/youzan/vant/issues/6879)
+
+**Bug Fixes**
+
+- Popup: 修复在个别情况下滚动锁定无法解除的问题 [#6892](https://github.com/youzan/vant/issues/6892)
+- Stepper: 修复在 safari 上快速点击按钮时会导致页面滚动的问题 [#6882](https://github.com/youzan/vant/issues/6882)
+
 ### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
 
 `2020-07-19`

@@ -10,6 +10,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.9.4](https://github.com/youzan/vant/compare/v2.9.3...v2.9.4)
+
+`2020-07-29`
+
+**Feature**
+
+- ShareSheet: add className option [#6886](https://github.com/youzan/vant/issues/6886)
+- Sku: modify default min year of sku date picker [#6879](https://github.com/youzan/vant/issues/6879)
+
+**Bug Fixes**
+
+- Popup: incorrect lock scroll in some cases [#6892](https://github.com/youzan/vant/issues/6892)
+- Stepper: double tap to scroll in safari [#6882](https://github.com/youzan/vant/issues/6882)
+
 ### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
 
 `2020-07-19`
