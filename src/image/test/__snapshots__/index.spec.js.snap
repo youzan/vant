@@ -2,7 +2,7 @@
 
 exports[`default slot 1`] = `
 <div class="van-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>Custom Default
 </div>
 `;
@@ -16,14 +16,14 @@ exports[`error-icon prop 1`] = `
 
 exports[`lazy load 1`] = `
 <div class="van-image"><img class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>
 </div>
 `;
 
 exports[`lazy-load error event 1`] = `
 <div class="van-image">
-  <div class="van-image__error"><i class="van-icon van-icon-warning-o van-image__error-icon">
+  <div class="van-image__error"><i class="van-icon van-icon-photo-fail van-image__error-icon">
       <!----></i></div>
 </div>
 `;
@@ -34,7 +34,7 @@ exports[`load event 1`] = `<div class="van-image"><img src="https://img.yzcdn.cn
 
 exports[`load event 2`] = `
 <div class="van-image"><img src="" class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>
 </div>
 `;
@@ -48,7 +48,7 @@ exports[`loading-icon prop 1`] = `
 
 exports[`radius prop 1`] = `
 <div class="van-image" style="overflow: hidden; border-radius: 3px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>
 </div>
 `;

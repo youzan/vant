@@ -6,7 +6,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-card">
       <div class="van-card__header"><a class="van-card__thumb">
           <div class="van-image" style="width: 100%; height: 100%;"><img src="https://img.yzcdn.cn/vant/ipad.jpeg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
         </a>
@@ -29,7 +29,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-card">
       <div class="van-card__header"><a class="van-card__thumb">
           <div class="van-image" style="width: 100%; height: 100%;"><img src="https://img.yzcdn.cn/vant/ipad.jpeg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
           <div class="van-card__tag"><span class="van-tag van-tag--mark van-tag--danger">标签</span></div>
@@ -54,7 +54,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-card">
       <div class="van-card__header"><a class="van-card__thumb">
           <div class="van-image" style="width: 100%; height: 100%;"><img src="https://img.yzcdn.cn/vant/ipad.jpeg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
         </a>

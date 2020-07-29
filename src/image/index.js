@@ -23,11 +23,11 @@ export default createComponent({
     },
     errorIcon: {
       type: String,
-      default: 'warning-o',
+      default: 'photo-fail',
     },
     loadingIcon: {
       type: String,
-      default: 'photo-o',
+      default: 'photo',
     },
   },
 
