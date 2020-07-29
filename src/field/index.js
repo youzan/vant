@@ -53,6 +53,7 @@ export default createComponent({
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
+    showPassword: Boolean,
     value: {
       type: [String, Number],
       default: '',
@@ -84,6 +85,7 @@ export default createComponent({
       focused: false,
       validateFailed: false,
       validateMessage: '',
+      showPasswordState: false,
     };
   },
 
@@ -112,6 +114,10 @@ export default createComponent({
   },
 
   computed: {
+    switchPassword() {
+      return !this.showPasswordState ? 'eye-o' : 'closed-eye';
+    },
+
     showClear() {
       if (this.clearable && !this.readonly) {
         const hasValue = isDef(this.value) && this.value !== '';
@@ -359,6 +365,10 @@ export default createComponent({
     },
 
     onClickRightIcon(event) {
+      if (this.showPassword) {
+        this.showPasswordState = !this.showPasswordState;
+      }
+
       this.$emit('click-right-icon', event);
     },
 
@@ -411,7 +421,7 @@ export default createComponent({
     },
 
     genInput() {
-      const { type } = this;
+      const { type, showPasswordState } = this;
       const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
@@ -468,6 +478,8 @@ export default createComponent({
         inputMode = 'numeric';
       }
 
+      inputType = showPasswordState ? 'text' : 'password';
+
       return <input type={inputType} inputmode={inputMode} {...inputProps} />;
     },
 
@@ -486,14 +498,22 @@ export default createComponent({
     },
 
     genRightIcon() {
-      const { slots } = this;
-      const showRightIcon = slots('right-icon') || this.rightIcon;
+      let { rightIcon } = this;
 
+      const { slots, showPassword } = this;
+
+      if (showPassword) {
+        rightIcon = this.switchPassword;
+      }
+
+      const showRightIcon = slots('right-icon') || rightIcon;
+
+      console.log(rightIcon);
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
             {slots('right-icon') || (
-              <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
+              <Icon name={rightIcon} classPrefix={this.iconPrefix} />
             )}
           </div>
         );

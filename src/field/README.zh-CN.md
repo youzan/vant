@@ -114,6 +114,31 @@ export default {
 };
 ```
 
+### 显示密码的输入框
+
+通过 `show-password` 来控制是否显示密码。
+
+```html
+<van-cell-group>
+  <van-field
+    v-model="value1"
+    label="文本"
+    placeholder="可切换状态的密码框"
+    show-password
+  />
+</van-cell-group>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value1: '',
+    };
+  },
+};
+```
+
 ### 错误提示
 
 设置 `required` 属性表示这是一个必填项，可以配合 `error` 或 `error-message` 属性显示对应的错误提示。
@@ -253,6 +278,7 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否只读 | _boolean_ | `false` |
+| show-password | 是否显示密码 | _boolean_ | `false` |
 | colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
