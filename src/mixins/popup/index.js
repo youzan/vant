@@ -99,8 +99,11 @@ export function PopupMixin(options = {}) {
     },
 
     beforeDestroy() {
-      this.removeLock();
       removeOverlay(this);
+
+      if (this.opened) {
+        this.removeLock();
+      }
 
       if (this.getContainer) {
         removeNode(this.$el);
