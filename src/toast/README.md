@@ -24,12 +24,6 @@ Toast.loading({
   message: 'Loading...',
   forbidClick: true,
 });
-
-Toast.loading({
-  message: 'Loading...',
-  forbidClick: true,
-  loadingType: 'spinner',
-});
 ```
 
 ### Success/Fail
@@ -50,6 +44,12 @@ Toast({
 Toast({
   message: 'Custom Image',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
+});
+
+Toast.loading({
+  message: 'Loading...',
+  forbidClick: true,
+  loadingType: 'spinner',
 });
 ```
 

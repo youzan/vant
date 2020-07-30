@@ -1,53 +1,26 @@
 <template>
   <demo-section>
-    <demo-block :title="t('title1')">
-      <van-button
-        type="primary"
-        :text="t('title1')"
-        @click="$toast(t('text'))"
-      />
-      <van-button
-        type="primary"
-        :text="t('longTextButton')"
-        @click="$toast(t('longText'))"
-      />
+    <demo-block card :title="t('basicUsage')">
+      <van-cell is-link :title="t('title1')" @click="$toast(t('text'))" />
+      <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
+      <van-cell is-link :title="t('success')" @click="showSuccessToast" />
+      <van-cell is-link :title="t('fail')" @click="showFailToast" />
     </demo-block>
 
-    <demo-block :title="t('title2')">
-      <van-button
-        type="primary"
-        :text="t('title2')"
-        @click="showLoadingToast()"
-      />
-      <van-button
-        type="primary"
-        :text="t('loadingType')"
+    <demo-block card v-if="!isWeapp" :title="t('customIcon')">
+      <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
+      <van-cell is-link :title="t('customImage')" @click="showImageToast" />
+      <van-cell
+        is-link
+        :title="t('loadingType')"
         @click="showLoadingToast('spinner')"
       />
     </demo-block>
 
-    <demo-block :title="t('title3')">
-      <van-button type="info" :text="t('success')" @click="showSuccessToast" />
-      <van-button type="danger" :text="t('fail')" @click="showFailToast" />
-    </demo-block>
-
-    <demo-block v-if="!isWeapp" :title="t('customIcon')">
-      <van-button
-        type="primary"
-        :text="t('customIcon')"
-        @click="showIconToast"
-      />
-      <van-button
-        type="primary"
-        :text="t('customImage')"
-        @click="showImageToast"
-      />
-    </demo-block>
-
-    <demo-block :title="t('updateMessage')">
-      <van-button
-        type="primary"
-        :text="t('updateMessage')"
+    <demo-block card :title="t('updateMessage')">
+      <van-cell
+        is-link
+        :title="t('updateMessage')"
         @click="showCustomizedToast"
       />
     </demo-block>
@@ -64,13 +37,11 @@ export default {
       success: '成功提示',
       fail: '失败提示',
       text: '提示内容',
-      longText: '这是一条长文字提示，超过一定字数就会换行',
       text2: '成功文案',
       text3: '失败文案',
       customIcon: '自定义图标',
-      customImage: '展示图片',
+      customImage: '自定义图片',
       text4: (second) => `倒计时 ${second} 秒`,
-      longTextButton: '长文字提示',
       updateMessage: '动态更新提示',
       loadingType: '自定义加载图标',
     },
@@ -81,14 +52,11 @@ export default {
       success: 'Success',
       fail: 'Fail',
       text: 'Some messages',
-      longText:
-        'This is a long message, text will wrap when over a certain length',
       text2: 'Success',
       text3: 'Fail',
       customIcon: 'Custom Icon',
       customImage: 'Custom Image',
       text4: (second) => `${second} seconds`,
-      longTextButton: 'Long Text',
       updateMessage: 'Update Message',
       loadingType: 'Loading Type',
     },
@@ -146,15 +114,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less">
-@import '../../style/var';
-
-.demo-toast {
-  background-color: @white;
-
-  .van-button {
-    margin-left: @padding-md;
-  }
-}
-</style>
