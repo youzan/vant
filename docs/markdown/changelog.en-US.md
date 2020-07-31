@@ -10,6 +10,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
+
+`2020-07-31`
+
+**Feature**
+
+- Icon: add photo-fail icon [#6883](https://github.com/youzan/vant/issues/6883)
+- DropdownMenu: add @dropdown-menu-box-shadow var [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+
+**style**
+
+- CouponCell: insert a space after currency [#6888](https://github.com/youzan/vant/issues/6888)
+- Image: update loading icon and error icon [#6890](https://github.com/youzan/vant/issues/6890)
+- NumberKeyboard: adjust key height to 28px [#6899](https://github.com/youzan/vant/issues/6899)
+- Sku: improve price align [#6911](https://github.com/youzan/vant/issues/6911)
+- Tab: remove default border [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
+- Tab: adjust padding in complete mode [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387)
+- Tab: update nav padding [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
+
 ### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
 
 `2020-07-25`

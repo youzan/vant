@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
+
+`2020-07-31`
+
+**Feature**
+
+- Icon: 新增 photo-fail 图标 [#6883](https://github.com/youzan/vant/issues/6883)
+- DropdownMenu: 新增 @dropdown-menu-box-shadow 变量 [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+
+**style**
+
+- Tab: 移除默认边框 [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
+- Tab: 优化标签间距 [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387) [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
+- Image: 更新加载图标和错误图标 [#6890](https://github.com/youzan/vant/issues/6890)
+- CouponCell: 优化金额与符号的间隔 [#6888](https://github.com/youzan/vant/issues/6888)
+- Sku: 优化价格符号位置，与下方文案对齐 [#6911](https://github.com/youzan/vant/issues/6911)
+- NumberKeyboard: 调整按键高度为 28px，增加底部空白区域 [#6899](https://github.com/youzan/vant/issues/6899)
+
 ### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
 
 `2020-07-25`
