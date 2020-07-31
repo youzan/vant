@@ -62,14 +62,17 @@
       }
 
       .van-tabs__nav {
-        padding-right: 8px;
-        padding-left: 8px;
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
 
         &::-webkit-scrollbar {
           display: none;
+        }
+
+        &--complete {
+          padding-right: 8px;
+          padding-left: 8px;
         }
       }
     }

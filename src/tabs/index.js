@@ -406,7 +406,7 @@ export default createComponent({
         <div
           ref="nav"
           role="tablist"
-          class={bem('nav', [type])}
+          class={bem('nav', [type, { complete: !ellipsis }])}
           style={this.navStyle}
         >
           {this.slots('nav-left')}
