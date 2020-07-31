@@ -86,7 +86,7 @@ export default createComponent({
     },
     swipeThreshold: {
       type: [Number, String],
-      default: 4,
+      default: 5,
     },
   },
 
