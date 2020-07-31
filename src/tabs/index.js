@@ -364,7 +364,7 @@ export default createComponent({
   },
 
   render() {
-    const { type, ellipsis, animated, scrollable } = this;
+    const { type, animated, scrollable } = this;
 
     const Nav = this.children.map((item, index) => (
       <Title
@@ -377,7 +377,6 @@ export default createComponent({
         color={this.color}
         style={item.titleStyle}
         isActive={index === this.currentIndex}
-        ellipsis={ellipsis}
         disabled={item.disabled}
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
@@ -403,7 +402,7 @@ export default createComponent({
         <div
           ref="nav"
           role="tablist"
-          class={bem('nav', [type, { complete: !ellipsis }])}
+          class={bem('nav', [type, { complete: this.scrollable }])}
           style={this.navStyle}
         >
           {this.slots('nav-left')}

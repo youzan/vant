@@ -11,7 +11,6 @@ export default createComponent({
     color: String,
     title: String,
     isActive: Boolean,
-    ellipsis: Boolean,
     disabled: Boolean,
     scrollable: Boolean,
     activeColor: String,
@@ -58,7 +57,7 @@ export default createComponent({
 
     genText() {
       const Text = (
-        <span class={bem('text', { ellipsis: this.ellipsis })}>
+        <span class={bem('text', { ellipsis: !this.scrollable })}>
           {this.slots() || this.title}
         </span>
       );
@@ -85,7 +84,7 @@ export default createComponent({
           bem({
             active: this.isActive,
             disabled: this.disabled,
-            complete: !this.ellipsis,
+            complete: this.scrollable,
           }),
         ]}
         style={this.style}
