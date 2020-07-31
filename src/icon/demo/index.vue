@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <van-tabs v-model="tab" sticky :color="BLUE">
+    <van-tabs v-model="tab" sticky>
       <van-tab :title="t('demo')">
         <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
