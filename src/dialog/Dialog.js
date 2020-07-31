@@ -45,6 +45,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    reverseButton: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -100,35 +104,51 @@ export default createComponent({
       this.$emit('closed');
     },
 
+    renderCancelButton(multiple) {
+      return this.showCancelButton ? (
+        <Button
+          size="large"
+          class={[bem('cancel'), { [BORDER_LEFT]: multiple }]}
+          loading={this.loading.cancel}
+          text={this.cancelButtonText || t('cancel')}
+          style={{ color: this.cancelButtonColor }}
+          onClick={() => {
+            this.handleAction('cancel');
+          }}
+        />
+      ) : (
+        ''
+      );
+    },
+
+    renderConfirmButton(multiple) {
+      return this.showConfirmButton ? (
+        <Button
+          size="large"
+          class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
+          loading={this.loading.confirm}
+          text={this.confirmButtonText || t('confirm')}
+          style={{ color: this.confirmButtonColor }}
+          onClick={() => {
+            this.handleAction('confirm');
+          }}
+        />
+      ) : (
+        ''
+      );
+    },
+
     genButtons() {
       const multiple = this.showCancelButton && this.showConfirmButton;
 
       return (
         <div class={[BORDER_TOP, bem('footer', { buttons: multiple })]}>
-          {this.showCancelButton && (
-            <Button
-              size="large"
-              class={bem('cancel')}
-              loading={this.loading.cancel}
-              text={this.cancelButtonText || t('cancel')}
-              style={{ color: this.cancelButtonColor }}
-              onClick={() => {
-                this.handleAction('cancel');
-              }}
-            />
-          )}
-          {this.showConfirmButton && (
-            <Button
-              size="large"
-              class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
-              loading={this.loading.confirm}
-              text={this.confirmButtonText || t('confirm')}
-              style={{ color: this.confirmButtonColor }}
-              onClick={() => {
-                this.handleAction('confirm');
-              }}
-            />
-          )}
+          {this.reverseButton
+            ? this.renderConfirmButton(multiple)
+            : this.renderCancelButton(false)}
+          {this.reverseButton
+            ? this.renderCancelButton(multiple)
+            : this.renderConfirmButton(false)}
         </div>
       );
     },

@@ -162,6 +162,7 @@ export default {
 | overlayStyle `v2.2.7` | 自定义遮罩层样式 | _object_ | - |
 | closeOnPopstate `v2.0.5` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
+| reverseButton | 是否反转确认取消按钮 | _boolean_ | `false` |
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allowHtml `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | _(action, done) => void_ | - |
@@ -190,6 +191,7 @@ export default {
 | overlay-style `v2.2.7` | 自定义遮罩层样式 | _object_ | - |
 | close-on-popstate `v2.0.5` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
+| reverse-button | 是否反转确认取消按钮 | _boolean_ | `false` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allow-html `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
