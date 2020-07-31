@@ -50,8 +50,16 @@ export default {
 <van-dropdown-menu>
   <van-dropdown-item v-model="value" :options="option" />
   <van-dropdown-item title="筛选" ref="item">
-    <van-switch-cell v-model="switch1" title="包邮" />
-    <van-switch-cell v-model="switch2" title="团购" />
+    <van-cell center title="包邮">
+      <template #right-icon>
+        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
+    <van-cell center title="团购">
+      <template #right-icon>
+        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
     <div style="padding: 5px 16px;">
       <van-button type="danger" block round @click="onConfirm">
         确认
@@ -88,7 +96,7 @@ export default {
 通过`active-color`属性可以自定义菜单标题和选项的选中态颜色
 
 ```html
-<van-dropdown-menu active-color="#ee0a24">
+<van-dropdown-menu active-color="#1989fa">
   <van-dropdown-item v-model="value1" :options="option1" />
   <van-dropdown-item v-model="value2" :options="option2" />
 </van-dropdown-menu>
