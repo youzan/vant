@@ -42,10 +42,6 @@ export default createComponent({
         style.color = titleColor;
       }
 
-      if (this.scrollable && this.ellipsis) {
-        style.flexBasis = `${88 / this.swipeThreshold}%`;
-      }
-
       return style;
     },
   },
@@ -84,7 +80,6 @@ export default createComponent({
           bem({
             active: this.isActive,
             disabled: this.disabled,
-            complete: this.scrollable,
           }),
         ]}
         style={this.style}
