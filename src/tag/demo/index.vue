@@ -36,9 +36,9 @@
     </demo-block>
 
     <demo-block :title="t('customSize')">
-      <van-tag type="success">{{ t('tag') }}</van-tag>
-      <van-tag type="success" size="medium">{{ t('tag') }}</van-tag>
-      <van-tag type="success" size="large">{{ t('tag') }}</van-tag>
+      <van-tag type="danger">{{ t('tag') }}</van-tag>
+      <van-tag type="danger" size="medium">{{ t('tag') }}</van-tag>
+      <van-tag type="danger" size="large">{{ t('tag') }}</van-tag>
     </demo-block>
 
     <demo-block :title="t('closeable')">
