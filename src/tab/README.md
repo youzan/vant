@@ -227,7 +227,7 @@ export default {
 | line-width | Width of tab line | _number \| string_ | Width of active tab |
 | line-height | Height of tab line | _number \| string_ | `3px` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
-| border | Whether to show border when `type="line"` | _boolean_ | `true` |
+| border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |

@@ -46,6 +46,7 @@ export default createComponent({
 
   props: {
     color: String,
+    border: Boolean,
     sticky: Boolean,
     animated: Boolean,
     swipeable: Boolean,
@@ -63,10 +64,6 @@ export default createComponent({
     active: {
       type: [Number, String],
       default: 0,
-    },
-    border: {
-      type: Boolean,
-      default: true,
     },
     ellipsis: {
       type: Boolean,
