@@ -30,6 +30,27 @@ Dialog.alert({
 });
 ```
 
+### Round Button
+
+use round style button.
+
+```js
+Dialog.alert({
+  title: 'Title',
+  message: 'Content',
+  buttonTheme: 'round',
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: 'Content',
+  buttonTheme: 'round',
+}).then(() => {
+  // on close
+});
+```
+
 ### Confirm dialog
 
 Used to confirm some messages, including a confirm button and a cancel button.

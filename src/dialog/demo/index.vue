@@ -9,6 +9,15 @@
       </van-button>
     </demo-block>
 
+    <demo-block :title="t('round')">
+      <van-button type="primary" @click="onClickRound">
+        {{ t('alert1') }}
+      </van-button>
+      <van-button type="primary" @click="onClickRound2">
+        {{ t('alert2') }}
+      </van-button>
+    </demo-block>
+
     <demo-block :title="t('confirm')">
       <van-button type="primary" @click="onClickConfirm">
         {{ t('confirm') }}
@@ -43,6 +52,7 @@ export default {
     'zh-CN': {
       alert1: '提示弹窗',
       alert2: '提示弹窗（无标题）',
+      round: '圆角按钮',
       confirm: '确认弹窗',
       asyncClose: '异步关闭',
       componentCall: '组件调用',
@@ -75,6 +85,21 @@ export default {
 
     onClickAlert2() {
       this.$dialog.alert({
+        message: this.t('content'),
+      });
+    },
+
+    onClickRound() {
+      this.$dialog.alert({
+        buttonTheme: 'round',
+        title: this.t('title'),
+        message: this.t('content'),
+      });
+    },
+
+    onClickRound2() {
+      this.$dialog.alert({
+        buttonTheme: 'round',
         message: this.t('content'),
       });
     },
