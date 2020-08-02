@@ -1,4 +1,5 @@
 import { createNamespace } from '../../utils';
+import { setScrollTop } from '../../utils/dom/scroll';
 import {
   t,
   bem,
@@ -107,12 +108,16 @@ export default createComponent({
       return this.height;
     },
 
-    scrollIntoView() {
-      if (this.showSubtitle) {
-        this.$refs.days.scrollIntoView();
-      } else {
-        this.$refs.month.scrollIntoView();
-      }
+    scrollIntoView(body) {
+      const { days, month } = this.$refs;
+      const el = this.showSubtitle ? days : month;
+
+      const scrollTop =
+        el.getBoundingClientRect().top -
+        body.getBoundingClientRect().top +
+        body.scrollTop;
+
+      setScrollTop(body, scrollTop);
     },
 
     getMultipleDayType(day) {
