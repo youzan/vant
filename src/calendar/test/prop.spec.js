@@ -197,6 +197,7 @@ test('first day of week', async () => {
     propsData: {
       poppable: false,
       defaultDate: new Date(2020, 7, 1),
+      minDate: new Date(2020, 7, 1),
       maxDate: new Date(2020, 7, 30),
       firstDayOfWeek: 2,
     },
@@ -210,5 +211,5 @@ test('first day of week', async () => {
     '.van-calendar__month:first-of-type .van-calendar__day'
   );
   expect(day.text()).toEqual('1');
-  expect(day.attributes('style')).toContain(`margin-left: ${100 / 7}%`);
+  expect(day.attributes('style')).toContain(`margin-left: ${(100 * 4) / 7}%`);
 });
