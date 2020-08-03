@@ -30,22 +30,22 @@ Dialog.alert({
 });
 ```
 
-### Round Button
+### Round Style
 
-use round style button.
+use round style.
 
 ```js
 Dialog.alert({
   title: 'Title',
   message: 'Content',
-  buttonTheme: 'round',
+  theme: 'round',
 }).then(() => {
   // on close
 });
 
 Dialog.alert({
   message: 'Content',
-  buttonTheme: 'round',
+  theme: 'round',
 }).then(() => {
   // on close
 });
@@ -141,6 +141,7 @@ export default {
 | width `v2.2.7` | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
+| theme | theme style，can be set to `round` | _string_ | `default` |
 | className | Custom className | _any_ | - |
 | showConfirmButton | Whether to show confirm button | _boolean_ | `true` |
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
@@ -168,6 +169,7 @@ export default {
 | width `v2.2.7` | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
+| theme | theme style，can be set to `round` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |

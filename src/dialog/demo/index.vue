@@ -52,7 +52,7 @@ export default {
     'zh-CN': {
       alert1: '提示弹窗',
       alert2: '提示弹窗（无标题）',
-      round: '圆角按钮',
+      round: '圆角样式',
       confirm: '确认弹窗',
       asyncClose: '异步关闭',
       componentCall: '组件调用',
@@ -91,7 +91,7 @@ export default {
 
     onClickRound() {
       this.$dialog.alert({
-        buttonTheme: 'round',
+        theme: 'round',
         title: this.t('title'),
         message: this.t('content'),
       });
@@ -99,7 +99,7 @@ export default {
 
     onClickRound2() {
       this.$dialog.alert({
-        buttonTheme: 'round',
+        theme: 'round',
         message: this.t('content'),
       });
     },

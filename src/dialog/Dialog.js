@@ -13,7 +13,7 @@ export default createComponent({
   props: {
     title: String,
     width: [Number, String],
-    buttonTheme: {
+    theme: {
       type: String,
       default: 'default',
     },
@@ -108,7 +108,7 @@ export default createComponent({
 
     genRoundButtons() {
       return (
-        <GoodsAction class={bem('footer', [this.buttonTheme])}>
+        <GoodsAction class={bem('footer', [this.theme])}>
           {this.showCancelButton && (
             <GoodsActionButton
               size="large"
@@ -225,9 +225,7 @@ export default createComponent({
         >
           {Title}
           {this.genContent(title, messageSlot)}
-          {this.buttonTheme === 'round'
-            ? this.genRoundButtons()
-            : this.genButtons()}
+          {this.theme === 'round' ? this.genRoundButtons() : this.genButtons()}
         </div>
       </transition>
     );
