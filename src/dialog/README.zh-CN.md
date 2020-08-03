@@ -176,7 +176,7 @@ export default {
 | showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
 | showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
 | confirmButtonText | 确认按钮文案 | _string_ | `确认` |
-| confirmButtonColor | 确认按钮颜色 | _string_ | `#1989fa` |
+| confirmButtonColor | 确认按钮颜色 | _string_ | `#ee0a24` |
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
@@ -205,7 +205,7 @@ export default {
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
-| confirm-button-color | 确认按钮颜色 | _string_ | `#1989fa` |
+| confirm-button-color | 确认按钮颜色 | _string_ | `#ee0a24` |
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
