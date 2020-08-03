@@ -10,6 +10,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.2](https://github.com/youzan/vant/compare/v2.10.0-beta.1...v2.10.0-beta.2)
+
+`2020-08-03`
+
+**Feature**
+
+- Dialog: add new prop theme [#6921](https://github.com/youzan/vant/issues/6921)
+- Icon: add back-top icon [#6931](https://github.com/youzan/vant/issues/6931)
+
+**style**
+
+- Image: adjust icon color to @gray-4 [729cca](https://github.com/youzan/vant/commit/729cca61a978ba243cf442143ae85d2abb464de0)
+- Tab: disable ellipsis when scrollable [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
+
+**Bug Fixes**
+
+- Calendar: should only scroll calendar body when inited [#6926](https://github.com/youzan/vant/issues/6926)
+
 ### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
 
 `2020-07-31`
