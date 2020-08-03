@@ -13,6 +13,15 @@ exports[`renders demo correctly 1`] = `
     </button></div>
   <div><button class="van-button van-button--primary van-button--normal">
       <div class="van-button__content"><span class="van-button__text">
+      提示弹窗
+    </span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
+      提示弹窗（无标题）
+    </span></div>
+    </button></div>
+  <div><button class="van-button van-button--primary van-button--normal">
+      <div class="van-button__content"><span class="van-button__text">
       确认弹窗
     </span></div>
     </button></div>

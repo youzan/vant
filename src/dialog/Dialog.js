@@ -2,6 +2,8 @@ import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import Button from '../button';
+import GoodsAction from '../goods-action';
+import GoodsActionButton from '../goods-action-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
@@ -11,6 +13,10 @@ export default createComponent({
   props: {
     title: String,
     width: [Number, String],
+    theme: {
+      type: String,
+      default: 'default',
+    },
     message: String,
     className: null,
     callback: Function,
@@ -98,6 +104,37 @@ export default createComponent({
 
     onClosed() {
       this.$emit('closed');
+    },
+
+    genRoundButtons() {
+      return (
+        <GoodsAction class={bem('footer', [this.theme])}>
+          {this.showCancelButton && (
+            <GoodsActionButton
+              size="large"
+              type="warning"
+              loading={this.loading.cancel}
+              text={this.cancelButtonText || t('cancel')}
+              style={{ color: this.cancelButtonColor }}
+              onClick={() => {
+                this.handleAction('cancel');
+              }}
+            />
+          )}
+          {this.showConfirmButton && (
+            <GoodsActionButton
+              size="large"
+              type="danger"
+              loading={this.loading.confirm}
+              text={this.confirmButtonText || t('confirm')}
+              style={{ color: this.confirmButtonColor }}
+              onClick={() => {
+                this.handleAction('confirm');
+              }}
+            />
+          )}
+        </GoodsAction>
+      );
     },
 
     genButtons() {
@@ -188,7 +225,7 @@ export default createComponent({
         >
           {Title}
           {this.genContent(title, messageSlot)}
-          {this.genButtons()}
+          {this.theme === 'round' ? this.genRoundButtons() : this.genButtons()}
         </div>
       </transition>
     );

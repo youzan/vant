@@ -53,6 +53,7 @@ Dialog.defaultOptions = {
   className: '',
   allowHtml: true,
   lockScroll: true,
+  theme: 'default',
   transition: 'van-dialog-bounce',
   beforeClose: null,
   overlayClass: '',

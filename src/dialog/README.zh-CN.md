@@ -56,6 +56,27 @@ Dialog.alert({
 });
 ```
 
+### 圆角风格
+
+样式为圆角风格。
+
+```js
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容',
+  theme: 'round',
+}).then(() => {
+  // on close
+});
+
+Dialog.alert({
+  message: '弹窗内容',
+  theme: 'round',
+}).then(() => {
+  // on close
+});
+```
+
 ### 消息确认
 
 用于确认消息，包含取消和确认按钮。
@@ -150,11 +171,12 @@ export default {
 | width `v2.2.7` | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
+| theme | 样式风格，可选值为`round` | _string_ | `default` |
 | className | 自定义类名 | _any_ | - |
 | showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
 | showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
 | confirmButtonText | 确认按钮文案 | _string_ | `确认` |
-| confirmButtonColor | 确认按钮颜色 | _string_ | `#1989fa` |
+| confirmButtonColor | 确认按钮颜色 | _string_ | `#ee0a24` |
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
@@ -179,10 +201,11 @@ export default {
 | width `v2.2.7` | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
+| theme | 样式风格，可选值为`round` | _string_ | `default` |
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
-| confirm-button-color | 确认按钮颜色 | _string_ | `#1989fa` |
+| confirm-button-color | 确认按钮颜色 | _string_ | `#ee0a24` |
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
