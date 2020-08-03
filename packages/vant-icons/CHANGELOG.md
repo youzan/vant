@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.2.5
+
+- add back-top icon
+
 ## 1.2.4
 
 - add photo-fail icon
