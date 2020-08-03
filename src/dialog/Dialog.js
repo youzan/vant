@@ -225,7 +225,9 @@ export default createComponent({
         >
           {Title}
           {this.genContent(title, messageSlot)}
-          {this.theme === 'round' ? this.genRoundButtons() : this.genButtons()}
+          {this.theme === 'round-button'
+            ? this.genRoundButtons()
+            : this.genButtons()}
         </div>
       </transition>
     );

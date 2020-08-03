@@ -30,22 +30,22 @@ Dialog.alert({
 });
 ```
 
-### Round Style
+### Round Button Style
 
-use round style.
+Use round button style.
 
 ```js
 Dialog.alert({
   title: 'Title',
   message: 'Content',
-  theme: 'round',
+  theme: 'round-button',
 }).then(() => {
   // on close
 });
 
 Dialog.alert({
   message: 'Content',
-  theme: 'round',
+  theme: 'round-button',
 }).then(() => {
   // on close
 });

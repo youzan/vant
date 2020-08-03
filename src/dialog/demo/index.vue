@@ -9,7 +9,7 @@
       </van-button>
     </demo-block>
 
-    <demo-block :title="t('round')">
+    <demo-block :title="t('roundButton')">
       <van-button type="primary" @click="onClickRound">
         {{ t('alert1') }}
       </van-button>
@@ -52,7 +52,7 @@ export default {
     'zh-CN': {
       alert1: '提示弹窗',
       alert2: '提示弹窗（无标题）',
-      round: '圆角样式',
+      round: '圆角按钮样式',
       confirm: '确认弹窗',
       asyncClose: '异步关闭',
       componentCall: '组件调用',
@@ -61,6 +61,7 @@ export default {
     'en-US': {
       alert1: 'Alert',
       alert2: 'Alert without title',
+      round: 'Round Button Style',
       confirm: 'Confirm dialog',
       asyncClose: 'Async Close',
       componentCall: 'Component Call',
@@ -91,7 +92,7 @@ export default {
 
     onClickRound() {
       this.$dialog.alert({
-        theme: 'round',
+        theme: 'round-button',
         title: this.t('title'),
         message: this.t('content'),
       });
@@ -99,7 +100,7 @@ export default {
 
     onClickRound2() {
       this.$dialog.alert({
-        theme: 'round',
+        theme: 'round-button',
         message: this.t('content'),
       });
     },
