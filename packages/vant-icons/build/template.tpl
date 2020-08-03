@@ -13,7 +13,7 @@
 .van-icon {
   position: relative;
   display: inline-block;
-  font: normal normal normal 14px/1 "<%= fontName %>";
+  font: normal normal normal 14px/1 '<%= fontName %>';
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +24,7 @@
 }
 
 <% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>::before {
-  content: "\<%= glyph.codePoint %>";
+  content: '\<%= glyph.codePoint %>';
 }
 
 <% }); %>
