@@ -103,6 +103,7 @@ module.exports = {
     'desktop-o',
     'apps-o',
     'home-o',
+    'back-top',
     'search',
     'points',
     'edit',
