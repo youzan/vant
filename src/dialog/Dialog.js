@@ -179,7 +179,6 @@ export default createComponent({
         const data = {
           class: bem('message', {
             'has-title': hasTitle,
-            'has-round-button': this.theme === 'round-button',
             [messageAlign]: messageAlign,
           }),
           domProps: {
