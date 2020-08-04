@@ -10,6 +10,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.3](https://github.com/youzan/vant/compare/v2.10.0-beta.2...v2.10.0-beta.3)
+
+`2020-08-04`
+
+**style**
+
+- Dialog: fix round-button theme [#6934](https://github.com/youzan/vant/issues/6934)
+
 ### [v2.10.0-beta.2](https://github.com/youzan/vant/compare/v2.10.0-beta.1...v2.10.0-beta.2)
 
 `2020-08-03`
