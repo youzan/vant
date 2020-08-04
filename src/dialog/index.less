@@ -57,25 +57,15 @@
   }
 
   &__footer {
+    display: flex;
     overflow: hidden;
     user-select: none;
-
-    &--round-button {
-      position: relative;
-      height: auto;
-      padding: 0 @padding-lg - 5px @padding-md;
-    }
-
-    &--buttons {
-      display: flex;
-
-      .van-button {
-        flex: 1;
-      }
-    }
   }
 
-  .van-button {
+  &__confirm,
+  &__cancel {
+    flex: 1;
+    margin: 0;
     border: 0;
   }
 
@@ -83,6 +73,22 @@
     &,
     &:active {
       color: @dialog-confirm-button-text-color;
+    }
+  }
+
+  &--round-button {
+    .van-dialog__footer {
+      position: relative;
+      height: auto;
+      padding: 0 @padding-lg @padding-md;
+    }
+
+    .van-dialog__message {
+      color: @text-color;
+    }
+
+    .van-dialog__confirm {
+      color: @white;
     }
   }
 

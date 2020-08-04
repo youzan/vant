@@ -12,11 +12,8 @@ export default createComponent({
 
   props: {
     title: String,
+    theme: String,
     width: [Number, String],
-    theme: {
-      type: String,
-      default: 'default',
-    },
     message: String,
     className: null,
     callback: Function,
@@ -108,14 +105,15 @@ export default createComponent({
 
     genRoundButtons() {
       return (
-        <GoodsAction class={bem('footer', [this.theme])}>
+        <GoodsAction class={bem('footer')}>
           {this.showCancelButton && (
             <GoodsActionButton
               size="large"
               type="warning"
-              loading={this.loading.cancel}
               text={this.cancelButtonText || t('cancel')}
-              style={{ color: this.cancelButtonColor }}
+              class={bem('cancel')}
+              color={this.cancelButtonColor}
+              loading={this.loading.cancel}
               onClick={() => {
                 this.handleAction('cancel');
               }}
@@ -125,9 +123,10 @@ export default createComponent({
             <GoodsActionButton
               size="large"
               type="danger"
-              loading={this.loading.confirm}
               text={this.confirmButtonText || t('confirm')}
-              style={{ color: this.confirmButtonColor }}
+              class={bem('confirm')}
+              color={this.confirmButtonColor}
+              loading={this.loading.confirm}
               onClick={() => {
                 this.handleAction('confirm');
               }}
@@ -141,7 +140,7 @@ export default createComponent({
       const multiple = this.showCancelButton && this.showConfirmButton;
 
       return (
-        <div class={[BORDER_TOP, bem('footer', { buttons: multiple })]}>
+        <div class={[BORDER_TOP, bem('footer')]}>
           {this.showCancelButton && (
             <Button
               size="large"
@@ -220,7 +219,7 @@ export default createComponent({
           vShow={this.value}
           role="dialog"
           aria-labelledby={this.title || message}
-          class={[bem(), this.className]}
+          class={[bem([this.theme]), this.className]}
           style={{ width: addUnit(this.width) }}
         >
           {Title}
