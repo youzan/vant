@@ -10,6 +10,12 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.4](https://github.com/youzan/vant/compare/v2.10.0-beta.3...v2.10.0-beta.4)
+
+`2020-08-04`
+
+- Revert "fix(Icon): incorrect image icon height when loading (#6858)" [#6858](https://github.com/youzan/vant/issues/6858)
+
 ### [v2.10.0-beta.3](https://github.com/youzan/vant/compare/v2.10.0-beta.2...v2.10.0-beta.3)
 
 `2020-08-04`
