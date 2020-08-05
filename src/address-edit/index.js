@@ -260,7 +260,7 @@ export default createComponent({
     },
   },
 
-  render() {
+  render(h) {
     const { data, errorInfo, searchResult, disableArea } = this;
     const onFocus = (name) => () => this.onFocus(name);
 
@@ -334,7 +334,7 @@ export default createComponent({
           )}
           {this.slots()}
         </div>
-        {this.showSetDefault && (
+        {this.showSetDefault ? (
           <SwitchCell
             class={bem('default')}
             vModel={data.isDefault}
@@ -344,6 +344,8 @@ export default createComponent({
               this.$emit('change-default', event);
             }}
           />
+        ) : (
+          h()
         )}
         <div vShow={!hideBottomFields} class={bem('buttons')}>
           <Button
