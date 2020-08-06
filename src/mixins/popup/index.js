@@ -3,7 +3,6 @@ import { context } from './context';
 
 // Utils
 import { on, off, preventDefault } from '../../utils/dom/event';
-import { removeNode } from '../../utils/dom/node';
 import { getScroller } from '../../utils/dom/scroll';
 
 // Mixins
@@ -85,14 +84,8 @@ export function PopupMixin(options = {}) {
     },
 
     beforeDestroy() {
-      this.removeLock();
-
       if (this.opened) {
         this.removeLock();
-      }
-
-      if (this.getContainer) {
-        removeNode(this.$refs.root);
       }
     },
 
