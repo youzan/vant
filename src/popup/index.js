@@ -64,6 +64,8 @@ export default createComponent({
         return (
           <Overlay
             show={this.show}
+            class={this.overlayClass}
+            style={this.overlayStyle}
             zIndex={this.currentZIndex}
             onClick={this.onClickOverlay}
           />
