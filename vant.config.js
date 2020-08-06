@@ -106,10 +106,10 @@ module.exports = {
                 path: 'style',
                 title: 'Style 内置样式',
               },
-              // {
-              //   path: 'toast',
-              //   title: 'Toast 轻提示',
-              // },
+              {
+                path: 'toast',
+                title: 'Toast 轻提示',
+              },
             ],
           },
           {
@@ -440,10 +440,10 @@ module.exports = {
                 path: 'style',
                 title: 'Built-in style',
               },
-              // {
-              //   path: 'toast',
-              //   title: 'Toast',
-              // },
+              {
+                path: 'toast',
+                title: 'Toast',
+              },
             ],
           },
           {

@@ -1,14 +1,10 @@
-import Vue from 'vue';
-import VueToast from './Toast';
-import { isObject, isServer } from '../utils';
-import { removeNode } from '../utils/dom/node';
+import { createApp, nextTick } from 'vue';
+import VanToast from './Toast';
+import { isObject, inBrowser } from '../utils';
 
 const defaultOptions = {
   icon: '',
   type: 'text',
-  // @deprecated
-  mask: false,
-  value: true,
   message: '',
   className: '',
   overlay: false,
@@ -45,33 +41,74 @@ function parseOptions(message) {
 
 function createInstance() {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return {};
   }
 
   if (!queue.length || multiple) {
-    const toast = new (Vue.extend(VueToast))({
-      el: document.createElement('div'),
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+
+    const app = createApp({
+      data() {
+        return {
+          timer: null,
+          toastProps: {
+            show: false,
+          },
+        };
+      },
+      methods: {
+        clear() {
+          this.toggle(false);
+        },
+        toggle(show, duration) {
+          this.toastProps.show = show;
+
+          if (show) {
+            clearTimeout(this.timer);
+
+            if (duration > 0) {
+              this.timer = setTimeout(() => {
+                this.clear();
+              }, duration);
+            }
+          }
+        },
+        setProps(props) {
+          this.toastProps = {
+            ...props,
+            duration: undefined,
+          };
+        },
+        onClosed() {
+          if (multiple && inBrowser) {
+            clearTimeout(this.timer);
+            queue = queue.filter((item) => item !== this);
+            app.unmount();
+            document.body.removeChild(root);
+          }
+        },
+      },
+      render() {
+        return (
+          <VanToast
+            {...{
+              ...this.toastProps,
+              onClosed: this.onClosed,
+              'onUpdate:show': this.toggle,
+            }}
+          />
+        );
+      },
     });
 
-    toast.$on('input', (value) => {
-      toast.value = value;
-    });
+    const toast = app.mount(root);
 
     queue.push(toast);
   }
 
   return queue[queue.length - 1];
-}
-
-// transform toast options to popup props
-function transformOptions(options) {
-  return {
-    ...options,
-    overlay: options.mask || options.overlay,
-    mask: undefined,
-    duration: undefined,
-  };
 }
 
 function Toast(options = {}) {
@@ -89,32 +126,11 @@ function Toast(options = {}) {
     ...options,
   };
 
-  options.clear = () => {
-    toast.value = false;
+  toast.setProps(options);
 
-    if (options.onClose) {
-      options.onClose();
-    }
-
-    if (multiple && !isServer) {
-      toast.$on('closed', () => {
-        clearTimeout(toast.timer);
-        queue = queue.filter((item) => item !== toast);
-
-        removeNode(toast.$el);
-        toast.$destroy();
-      });
-    }
-  };
-
-  Object.assign(toast, transformOptions(options));
-  clearTimeout(toast.timer);
-
-  if (options.duration > 0) {
-    toast.timer = setTimeout(() => {
-      toast.clear();
-    }, options.duration);
-  }
+  nextTick(() => {
+    toast.toggle(true, options.duration);
+  });
 
   return toast;
 }
@@ -165,10 +181,9 @@ Toast.allowMultiple = (value = true) => {
   multiple = value;
 };
 
-Toast.install = () => {
-  Vue.use(VueToast);
+Toast.install = (app) => {
+  app.use(VanToast);
+  app.config.globalProperties.$toast = Toast;
 };
-
-Vue.prototype.$toast = Toast;
 
 export default Toast;

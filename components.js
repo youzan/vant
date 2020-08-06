@@ -45,4 +45,5 @@ module.exports = [
   'sticky',
   'picker',
   'dialog',
+  'toast',
 ];

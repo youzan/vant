@@ -2,20 +2,18 @@
 import { createNamespace, isDef } from '../utils';
 import { lockClick } from './lock-click';
 
-// Mixins
-import { PopupMixin } from '../mixins/popup';
-
 // Components
 import Icon from '../icon';
+import Popup from '../popup';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('toast');
 
 export default createComponent({
-  mixins: [PopupMixin()],
-
   props: {
     icon: String,
+    show: Boolean,
+    clear: Function,
     className: null,
     iconPrefix: String,
     loadingType: String,
@@ -40,6 +38,8 @@ export default createComponent({
     },
   },
 
+  emits: ['opened', 'closed', 'update:show'],
+
   data() {
     return {
       clickable: false,
@@ -55,7 +55,7 @@ export default createComponent({
   },
 
   watch: {
-    value: 'toggleClickable',
+    show: 'toggleClickable',
     forbidClick: 'toggleClickable',
   },
 
@@ -67,7 +67,7 @@ export default createComponent({
     },
 
     toggleClickable() {
-      const clickable = this.value && this.forbidClick;
+      const clickable = this.show && this.forbidClick;
 
       if (this.clickable !== clickable) {
         this.clickable = clickable;
@@ -124,23 +124,20 @@ export default createComponent({
 
   render() {
     return (
-      <transition
-        name={this.transition}
-        onAfterEnter={this.onAfterEnter}
-        onAfterLeave={this.onAfterLeave}
+      <Popup
+        show={this.show}
+        class={[
+          bem([this.position, { [this.type]: !this.icon }]),
+          this.className,
+        ]}
+        transition={this.transition}
+        onOpened={this.onAfterEnter}
+        onClosed={this.onAfterLeave}
+        onClick={this.onClick}
       >
-        <div
-          vShow={this.value}
-          class={[
-            bem([this.position, { [this.type]: !this.icon }]),
-            this.className,
-          ]}
-          onClick={this.onClick}
-        >
-          {this.genIcon()}
-          {this.genMessage()}
-        </div>
-      </transition>
+        {this.genIcon()}
+        {this.genMessage()}
+      </Popup>
     );
   },
 });
