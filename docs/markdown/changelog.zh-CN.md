@@ -10,11 +10,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.0-beta.5](https://github.com/youzan/vant/compare/v2.10.0-beta.4...v2.10.0-beta.5)
+
+`2020-08-06`
+
+**style**
+
+- NumberKeyboard: 减少底部留白大小 [#6938](https://github.com/youzan/vant/issues/6938)
+- Dialog: 优化使用 round-button 主题时的内边距 [#6936](https://github.com/youzan/vant/issues/6936)
+
+**Bug Fixes**
+
+- AddressEdit: 修复个别情况下按钮渲染错误的问题 [#6942](https://github.com/youzan/vant/issues/6942)
+- Info: 修复 badge 的数字在 iOS 上不居中的问题 [#6952](https://github.com/youzan/vant/issues/6952)
+- NumberKeyboard: 修复在低版本 safari 上按键高度错误的问题 [#6937](https://github.com/youzan/vant/issues/6937)
+- Picker: 修复 defaultIndex 在个别情况下取值逻辑错误的问题 [#6948](https://github.com/youzan/vant/issues/6948)
+- Sku: 修复价格较长时顶部图片的宽度被压缩的问题 [#6949](https://github.com/youzan/vant/issues/6949)
+
 ### [v2.10.0-beta.4](https://github.com/youzan/vant/compare/v2.10.0-beta.3...v2.10.0-beta.4)
 
 `2020-08-04`
 
-- Revert "fix(Icon): incorrect image icon height when loading (#6858)" [#6858](https://github.com/youzan/vant/issues/6858)
+- 回滚 "fix(Icon): 修复图片图标加载过程中高度异常的问题 (#6858)" [#6858](https://github.com/youzan/vant/issues/6858)
 
 ### [v2.10.0-beta.3](https://github.com/youzan/vant/compare/v2.10.0-beta.2...v2.10.0-beta.3)
 
@@ -35,6 +52,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **style**
 
+- Dialog: 确认按钮的默认颜色调整为红色 [#6921](https://github.com/youzan/vant/issues/6921)
 - Image: 加载图标和错误图标的颜色调整为 @gray-4 [729cca](https://github.com/youzan/vant/commit/729cca61a978ba243cf442143ae85d2abb464de0)
 - Tab: 在横向滚动模式下默认不截断标题的文字 [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
 

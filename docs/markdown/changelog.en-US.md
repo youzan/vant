@@ -10,6 +10,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.5](https://github.com/youzan/vant/compare/v2.10.0-beta.4...v2.10.0-beta.5)
+
+`2020-08-06`
+
+**style**
+
+- NumberKeyboard: adjust padding bottom [#6938](https://github.com/youzan/vant/issues/6938)
+
+**Bug Fixes**
+
+- AddressEdit: render error in some cases [#6942](https://github.com/youzan/vant/issues/6942)
+- Dialog: incorrect padding with round-button theme [#6936](https://github.com/youzan/vant/issues/6936)
+- Info: number vertical align center [#6952](https://github.com/youzan/vant/issues/6952)
+- NumberKeyboard: incorrect key height on legacy safari [#6937](https://github.com/youzan/vant/issues/6937)
+- Picker: When item.defaultIndex is 0, this.defaultIndex will be used [#6948](https://github.com/youzan/vant/issues/6948)
+- Sku: header image shrink [#6949](https://github.com/youzan/vant/issues/6949)
+
 ### [v2.10.0-beta.4](https://github.com/youzan/vant/compare/v2.10.0-beta.3...v2.10.0-beta.4)
 
 `2020-08-04`
