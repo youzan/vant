@@ -327,7 +327,9 @@ export default createComponent({
           allowHtml={this.allowHtml}
           className={item.className}
           itemHeight={this.itemPxHeight}
-          defaultIndex={item.defaultIndex || +this.defaultIndex}
+          defaultIndex={
+            isDef(item.defaultIndex) ? item.defaultIndex : +this.defaultIndex
+          }
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}
