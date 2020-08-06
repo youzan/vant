@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, isDef } from '../utils';
 import { preventDefault } from '../utils/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
@@ -183,7 +183,7 @@ export default sfc({
               valueKey={this.valueKey}
               className={item.className}
               itemHeight={this.itemHeight}
-              defaultIndex={item.defaultIndex || this.defaultIndex}
+              defaultIndex={isDef(item.defaultIndex) ? item.defaultIndex : this.defaultIndex}
               visibleItemCount={this.visibleItemCount}
               initialOptions={this.simple ? item : item.values}
               onChange={() => {
