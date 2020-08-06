@@ -2,6 +2,8 @@ import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import Popup from '../popup';
 import Button from '../button';
+import GoodsAction from '../goods-action';
+import GoodsActionButton from '../goods-action-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
@@ -9,6 +11,7 @@ export default createComponent({
   props: {
     show: Boolean,
     title: String,
+    theme: String,
     width: [Number, String],
     message: String,
     className: null,
@@ -102,11 +105,44 @@ export default createComponent({
       this.$emit('closed');
     },
 
+    genRoundButtons() {
+      return (
+        <GoodsAction class={bem('footer')}>
+          {this.showCancelButton && (
+            <GoodsActionButton
+              size="large"
+              type="warning"
+              text={this.cancelButtonText || t('cancel')}
+              class={bem('cancel')}
+              color={this.cancelButtonColor}
+              loading={this.loading.cancel}
+              onClick={() => {
+                this.handleAction('cancel');
+              }}
+            />
+          )}
+          {this.showConfirmButton && (
+            <GoodsActionButton
+              size="large"
+              type="danger"
+              text={this.confirmButtonText || t('confirm')}
+              class={bem('confirm')}
+              color={this.confirmButtonColor}
+              loading={this.loading.confirm}
+              onClick={() => {
+                this.handleAction('confirm');
+              }}
+            />
+          )}
+        </GoodsAction>
+      );
+    },
+
     genButtons() {
       const multiple = this.showCancelButton && this.showConfirmButton;
 
       return (
-        <div class={[BORDER_TOP, bem('footer', { buttons: multiple })]}>
+        <div class={[BORDER_TOP, bem('footer')]}>
           {this.showCancelButton && (
             <Button
               size="large"
@@ -174,7 +210,7 @@ export default createComponent({
       <Popup
         show={this.show}
         role="dialog"
-        class={[bem(), this.className]}
+        class={[bem([this.theme]), this.className]}
         style={{ width: addUnit(this.width) }}
         transition={this.transition}
         lazyRender={this.lazyRender}
@@ -184,7 +220,9 @@ export default createComponent({
       >
         {Title}
         {this.genContent(title)}
-        {this.genButtons()}
+        {this.theme === 'round-button'
+          ? this.genRoundButtons()
+          : this.genButtons()}
       </Popup>
     );
   },

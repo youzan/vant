@@ -107,8 +107,8 @@ Vue.use(Lazyload);
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | show-error `v2.0.9` | 是否展示图片加载失败提示 | _boolean_ | `true` |
 | show-loading `v2.0.9` | 是否展示图片加载中提示 | _boolean_ | `true` |
-| error-icon `v2.4.2` | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `warning-o` |
-| loading-icon `v2.4.2` | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo-o` |
+| error-icon `v2.4.2` | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo-fail` |
+| loading-icon `v2.4.2` | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo` |
 
 ### 图片填充模式 
 

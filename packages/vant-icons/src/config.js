@@ -103,6 +103,7 @@ module.exports = {
     'desktop-o',
     'apps-o',
     'home-o',
+    'back-top',
     'search',
     'points',
     'edit',
@@ -237,5 +238,6 @@ module.exports = {
     'bars',
     'wap-nav',
     'enlarge',
+    'photo-fail',
   ],
 };

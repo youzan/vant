@@ -56,7 +56,7 @@ export default {
 
 ### Swipe Tabs
 
-By default more than 4 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
+By default more than 5 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
 
 ```html
 <van-tabs>
@@ -227,14 +227,14 @@ export default {
 | line-width | Width of tab line | _number \| string_ | Width of active tab |
 | line-height | Height of tab line | _number \| string_ | `3px` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
-| border | Whether to show border when `type="line"` | _boolean_ | `true` |
+| border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
 | offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `0` |
-| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `4` | - |
+| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
 | before-change `v2.9.3` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |

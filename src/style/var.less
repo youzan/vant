@@ -313,8 +313,8 @@
 @dialog-message-line-height: @line-height-md;
 @dialog-message-max-height: 60vh;
 @dialog-has-title-message-text-color: @gray-7;
-@dialog-has-title-message-padding-top: @padding-sm;
-@dialog-confirm-button-text-color: @blue;
+@dialog-has-title-message-padding-top: @padding-xs;
+@dialog-confirm-button-text-color: @red;
 
 // Divider
 @divider-margin: @padding-md 0;
@@ -329,6 +329,7 @@
 // DropdownMenu
 @dropdown-menu-height: 48px;
 @dropdown-menu-background-color: @white;
+@dropdown-menu-box-shadow: 0 2px 12px fade(@gray-7, 12);
 @dropdown-menu-title-font-size: 15px;
 @dropdown-menu-title-text-color: @text-color;
 @dropdown-menu-title-active-text-color: @red;
@@ -418,14 +419,15 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: @price-integer-font-family;
 
 // Image
 @image-placeholder-text-color: @gray-6;
 @image-placeholder-font-size: @font-size-md;
 @image-placeholder-background-color: @background-color;
-@image-loading-icon-size: 22px;
-@image-error-icon-size: 22px;
+@image-loading-icon-size: 32px;
+@image-loading-icon-color: @gray-4;
+@image-error-icon-size: 32px;
+@image-error-icon-color: @gray-4;
 
 // ImagePreview
 @image-preview-index-text-color: @white;
@@ -485,7 +487,7 @@
 
 // NumberKeyboard
 @number-keyboard-background-color: @gray-2;
-@number-keyboard-key-height: 56px;
+@number-keyboard-key-height: 48px;
 @number-keyboard-key-font-size: 28px;
 @number-keyboard-key-active-color: @gray-3;
 @number-keyboard-delete-font-size: @font-size-lg;

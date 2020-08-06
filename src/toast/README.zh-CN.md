@@ -23,19 +23,12 @@ Toast('提示内容');
 
 ### 加载提示
 
-使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击，通过`loadingType` 属性可以自定义加载图标类型。
+使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击。
 
 ```js
 Toast.loading({
   message: '加载中...',
   forbidClick: true,
-});
-
-// 自定义加载图标
-Toast.loading({
-  message: '加载中...',
-  forbidClick: true,
-  loadingType: 'spinner',
 });
 ```
 
@@ -50,7 +43,7 @@ Toast.fail('失败文案');
 
 ### 自定义图标
 
-通过 `icon` 选项可以自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
+通过 `icon` 选项可以自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接，通过`loadingType` 属性可以自定义加载图标类型。
 
 ```js
 Toast({
@@ -59,8 +52,15 @@ Toast({
 });
 
 Toast({
-  message: '展示图片',
+  message: '自定义图片',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
+});
+
+// 自定义加载图标
+Toast.loading({
+  message: '加载中...',
+  forbidClick: true,
+  loadingType: 'spinner',
 });
 ```
 

@@ -10,6 +10,74 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.0-beta.5](https://github.com/youzan/vant/compare/v2.10.0-beta.4...v2.10.0-beta.5)
+
+`2020-08-06`
+
+**style**
+
+- NumberKeyboard: adjust padding bottom [#6938](https://github.com/youzan/vant/issues/6938)
+
+**Bug Fixes**
+
+- AddressEdit: render error in some cases [#6942](https://github.com/youzan/vant/issues/6942)
+- Dialog: incorrect padding with round-button theme [#6936](https://github.com/youzan/vant/issues/6936)
+- Info: number vertical align center [#6952](https://github.com/youzan/vant/issues/6952)
+- NumberKeyboard: incorrect key height on legacy safari [#6937](https://github.com/youzan/vant/issues/6937)
+- Picker: When item.defaultIndex is 0, this.defaultIndex will be used [#6948](https://github.com/youzan/vant/issues/6948)
+- Sku: header image shrink [#6949](https://github.com/youzan/vant/issues/6949)
+
+### [v2.10.0-beta.4](https://github.com/youzan/vant/compare/v2.10.0-beta.3...v2.10.0-beta.4)
+
+`2020-08-04`
+
+- Revert "fix(Icon): incorrect image icon height when loading (#6858)" [#6858](https://github.com/youzan/vant/issues/6858)
+
+### [v2.10.0-beta.3](https://github.com/youzan/vant/compare/v2.10.0-beta.2...v2.10.0-beta.3)
+
+`2020-08-04`
+
+**style**
+
+- Dialog: fix round-button theme [#6934](https://github.com/youzan/vant/issues/6934)
+
+### [v2.10.0-beta.2](https://github.com/youzan/vant/compare/v2.10.0-beta.1...v2.10.0-beta.2)
+
+`2020-08-03`
+
+**Feature**
+
+- Dialog: add new prop theme [#6921](https://github.com/youzan/vant/issues/6921)
+- Icon: add back-top icon [#6931](https://github.com/youzan/vant/issues/6931)
+
+**style**
+
+- Image: adjust icon color to @gray-4 [729cca](https://github.com/youzan/vant/commit/729cca61a978ba243cf442143ae85d2abb464de0)
+- Tab: disable ellipsis when scrollable [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
+
+**Bug Fixes**
+
+- Calendar: should only scroll calendar body when inited [#6926](https://github.com/youzan/vant/issues/6926)
+
+### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
+
+`2020-07-31`
+
+**Feature**
+
+- Icon: add photo-fail icon [#6883](https://github.com/youzan/vant/issues/6883)
+- DropdownMenu: add @dropdown-menu-box-shadow var [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+
+**style**
+
+- CouponCell: insert a space after currency [#6888](https://github.com/youzan/vant/issues/6888)
+- Image: update loading icon and error icon [#6890](https://github.com/youzan/vant/issues/6890)
+- NumberKeyboard: adjust key height to 28px [#6899](https://github.com/youzan/vant/issues/6899)
+- Sku: improve price align [#6911](https://github.com/youzan/vant/issues/6911)
+- Tab: remove default border [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
+- Tab: adjust padding in complete mode [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387)
+- Tab: update nav padding [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
+
 ### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
 
 `2020-07-25`
@@ -43,6 +111,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Field: failed to reset validation when message is empty [#6867](https://github.com/youzan/vant/issues/6867)
 - Icon: incorrect image icon height when loading [#6858](https://github.com/youzan/vant/issues/6858)
 - ImagePreview: fit orientationchange [#6825](https://github.com/youzan/vant/issues/6825)
+
+### [v2.9.4](https://github.com/youzan/vant/compare/v2.9.3...v2.9.4)
+
+`2020-07-29`
+
+**Feature**
+
+- ShareSheet: add className option [#6886](https://github.com/youzan/vant/issues/6886)
+- Sku: modify default min year of sku date picker [#6879](https://github.com/youzan/vant/issues/6879)
+
+**Bug Fixes**
+
+- Popup: incorrect lock scroll in some cases [#6892](https://github.com/youzan/vant/issues/6892)
+- Stepper: double tap to scroll in safari [#6882](https://github.com/youzan/vant/issues/6882)
 
 ### [v2.9.3](https://github.com/youzan/vant/compare/v2.9.2...v2.9.3)
 

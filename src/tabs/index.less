@@ -53,11 +53,8 @@
 
     &--scrollable {
       .van-tab {
-        flex: 0 0 22%;
-
-        &--complete {
-          flex: 1 0 auto;
-        }
+        flex: 1 0 auto;
+        padding: 0 @padding-sm;
       }
 
       .van-tabs__nav {
@@ -67,6 +64,11 @@
 
         &::-webkit-scrollbar {
           display: none;
+        }
+
+        &--complete {
+          padding-right: 8px;
+          padding-left: 8px;
         }
       }
     }

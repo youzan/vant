@@ -66,6 +66,7 @@ function Dialog(options) {
 Dialog.defaultOptions = {
   title: '',
   width: '',
+  theme: null,
   message: '',
   overlay: true,
   callback: null,

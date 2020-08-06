@@ -42,6 +42,7 @@ export default createComponent({
 
   props: {
     color: String,
+    border: Boolean,
     sticky: Boolean,
     animated: Boolean,
     swipeable: Boolean,
@@ -59,10 +60,6 @@ export default createComponent({
     active: {
       type: [Number, String],
       default: 0,
-    },
-    border: {
-      type: Boolean,
-      default: true,
     },
     ellipsis: {
       type: Boolean,
@@ -82,7 +79,7 @@ export default createComponent({
     },
     swipeThreshold: {
       type: [Number, String],
-      default: 4,
+      default: 5,
     },
   },
 
@@ -367,7 +364,7 @@ export default createComponent({
   },
 
   render() {
-    const { type, ellipsis, animated, scrollable } = this;
+    const { type, animated, scrollable } = this;
 
     const Nav = this.children.map((item, index) => {
       return (
@@ -382,7 +379,6 @@ export default createComponent({
           color={this.color}
           style={item.titleStyle}
           isActive={index === this.currentIndex}
-          ellipsis={ellipsis}
           disabled={item.disabled}
           scrollable={scrollable}
           renderTitle={item.$slots.title}
@@ -407,7 +403,7 @@ export default createComponent({
         <div
           ref="nav"
           role="tablist"
-          class={bem('nav', [type])}
+          class={bem('nav', [type, { complete: this.scrollable }])}
           style={this.navStyle}
         >
           {this.$slots['nav-left']?.()}

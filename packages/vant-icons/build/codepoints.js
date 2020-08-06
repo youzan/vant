@@ -229,6 +229,8 @@ const map = {
   F0E2: 'wechat',
   F0E3: 'youzan-shield',
   F0E4: 'enlarge',
+  F0E5: 'photo-fail',
+  F0E6: 'back-top',
 };
 
 const reversedMap = {};

@@ -87,6 +87,10 @@ export function PopupMixin(options = {}) {
     beforeDestroy() {
       this.removeLock();
 
+      if (this.opened) {
+        this.removeLock();
+      }
+
       if (this.getContainer) {
         removeNode(this.$refs.root);
       }

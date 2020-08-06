@@ -23,7 +23,7 @@ exports[`file message should be reactive 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__mask">
@@ -42,7 +42,7 @@ exports[`image-fit prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: contain;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
@@ -59,7 +59,7 @@ exports[`max-count prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
@@ -74,7 +74,7 @@ exports[`preview-cover slot 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
         <div class="van-uploader__preview-cover">https://img.yzcdn.cn/vant/cat.jpeg</div>
       </div>
@@ -83,7 +83,7 @@ exports[`preview-cover slot 1`] = `
     </div>
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
         <div class="van-uploader__preview-cover">https://img.yzcdn.cn/vant/cat.jpeg</div>
       </div>
@@ -101,7 +101,7 @@ exports[`preview-size prop 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview" style="">
       <div class="van-image van-uploader__preview-image" style="width: 30px; height: 30px;"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
@@ -118,7 +118,7 @@ exports[`render preview image 1`] = `
   <div class="van-uploader__wrapper">
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
@@ -142,7 +142,7 @@ exports[`render preview image 1`] = `
     </div>
     <div class="van-uploader__preview">
       <div class="van-image van-uploader__preview-image"><img src="data:image/test" class="van-image__img" style="object-fit: cover;">
-        <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+        <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
             <!----></i></div>
       </div>
       <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">

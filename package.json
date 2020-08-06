@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.10.0-beta.0",
+  "version": "2.10.0-beta.5",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -51,7 +51,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.2.3",
+    "@vant/icons": "1.2.5",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {

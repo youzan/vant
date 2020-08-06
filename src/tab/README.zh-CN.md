@@ -59,7 +59,7 @@ export default {
 
 ### 标签栏滚动
 
-标签数量超过 4 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中。
+标签数量超过 5 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中。
 
 ```html
 <van-tabs>
@@ -227,21 +227,21 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:active | 绑定当前选中标签的标识符 | _number \| string_ | `0` |
-| type | 样式风格类型，可选值为`card` | _string_ | `line` |
+| type | 样式风格类型，可选值为 `card` | _string_ | `line` |
 | color | 标签主题色 | _string_ | `#ee0a24` |
 | background | 标签栏背景色 | _string_ | `white` |
 | duration | 动画时间，单位秒 | _number \| string_ | `0.3` |
 | line-width | 底部条宽度，默认单位`px` | _number \| string_ | `auto` |
 | line-height | 底部条高度，默认单位`px` | _number \| string_ | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
-| border | 是否显示标签栏外边框，仅在`type="line"`时有效 | _boolean_ | `true` |
+| border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
 | sticky | 是否使用粘性定位布局 | _boolean_ | `false` |
 | swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | _boolean_ | `false` |
 | offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `4` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | before-change `v2.9.3` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
