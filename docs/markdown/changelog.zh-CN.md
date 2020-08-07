@@ -10,107 +10,58 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.10.0-beta.5](https://github.com/youzan/vant/compare/v2.10.0-beta.4...v2.10.0-beta.5)
+### [v2.10.0](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0)
 
-`2020-08-06`
-
-**style**
-
-- NumberKeyboard: 减少底部留白大小 [#6938](https://github.com/youzan/vant/issues/6938)
-- Dialog: 优化使用 round-button 主题时的内边距 [#6936](https://github.com/youzan/vant/issues/6936)
-
-**Bug Fixes**
-
-- AddressEdit: 修复个别情况下按钮渲染错误的问题 [#6942](https://github.com/youzan/vant/issues/6942)
-- Info: 修复 badge 的数字在 iOS 上不居中的问题 [#6952](https://github.com/youzan/vant/issues/6952)
-- NumberKeyboard: 修复在低版本 safari 上按键高度错误的问题 [#6937](https://github.com/youzan/vant/issues/6937)
-- Picker: 修复 defaultIndex 在个别情况下取值逻辑错误的问题 [#6948](https://github.com/youzan/vant/issues/6948)
-- Sku: 修复价格较长时顶部图片的宽度被压缩的问题 [#6949](https://github.com/youzan/vant/issues/6949)
-
-### [v2.10.0-beta.4](https://github.com/youzan/vant/compare/v2.10.0-beta.3...v2.10.0-beta.4)
-
-`2020-08-04`
-
-- 回滚 "fix(Icon): 修复图片图标加载过程中高度异常的问题 (#6858)" [#6858](https://github.com/youzan/vant/issues/6858)
-
-### [v2.10.0-beta.3](https://github.com/youzan/vant/compare/v2.10.0-beta.2...v2.10.0-beta.3)
-
-`2020-08-04`
-
-**style**
-
-- Dialog: 修复 round-theme 弹窗样式错误的问题 [#6934](https://github.com/youzan/vant/issues/6934)
-
-### [v2.10.0-beta.2](https://github.com/youzan/vant/compare/v2.10.0-beta.1...v2.10.0-beta.2)
-
-`2020-08-03`
-
-**Feature**
-
-- Dialog: 新增 theme 属性，用于展示圆角按钮风格的弹窗 [#6921](https://github.com/youzan/vant/issues/6921)
-- Icon: 新增 back-top 图标 [#6931](https://github.com/youzan/vant/issues/6931)
-
-**style**
-
-- Dialog: 确认按钮的默认颜色调整为红色 [#6921](https://github.com/youzan/vant/issues/6921)
-- Image: 加载图标和错误图标的颜色调整为 @gray-4 [729cca](https://github.com/youzan/vant/commit/729cca61a978ba243cf442143ae85d2abb464de0)
-- Tab: 在横向滚动模式下默认不截断标题的文字 [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
-
-**Bug Fixes**
-
-- Calendar: 修复初始化日历时页面滚动条位置错误的问题 [#6926](https://github.com/youzan/vant/issues/6926)
-
-### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
-
-`2020-07-31`
-
-**Feature**
-
-- Icon: 新增 photo-fail 图标 [#6883](https://github.com/youzan/vant/issues/6883)
-- DropdownMenu: 新增 @dropdown-menu-box-shadow 变量 [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
-
-**style**
-
-- Tab: 移除默认边框 [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
-- Tab: 优化标签间距 [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387) [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
-- Image: 更新加载图标和错误图标 [#6890](https://github.com/youzan/vant/issues/6890)
-- CouponCell: 优化金额与符号的间隔 [#6888](https://github.com/youzan/vant/issues/6888)
-- Sku: 优化价格符号位置，与下方文案对齐 [#6911](https://github.com/youzan/vant/issues/6911)
-- NumberKeyboard: 调整按键高度为 28px，增加底部空白区域 [#6899](https://github.com/youzan/vant/issues/6899)
-
-### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
-
-`2020-07-25`
+`2020-08-07`
 
 **Feature**
 
 - AddressEdit: 新增 tel-maxlength 属性 [#6869](https://github.com/youzan/vant/issues/6869)
 - Calendar: 默认开启 close-on-popstate 属性 [#6874](https://github.com/youzan/vant/issues/6874)
 - Dialog: 默认开启 close-on-popstate 属性 [#6873](https://github.com/youzan/vant/issues/6873)
+- Dialog: 新增 theme 属性，用于展示圆角按钮风格的弹窗 [#6921](https://github.com/youzan/vant/issues/6921)
+- DropdownMenu: 新增 @dropdown-menu-box-shadow 变量 [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+- Icon: 新增 back-top 图标 [#6931](https://github.com/youzan/vant/issues/6931)
+- Icon: 新增 photo-fail 图标 [#6883](https://github.com/youzan/vant/issues/6883)
 - ImagePreview: 默认开启 close-on-popstate 属性 [#6875](https://github.com/youzan/vant/issues/6875)
 - NumberKeyboard: 新增 get-container 属性 [#6870](https://github.com/youzan/vant/issues/6870)
 
 **style**
 
 - 新增 line-height 相关 LESS 变量 [#6862](https://github.com/youzan/vant/issues/6862)
-- DropdownMenu: 默认选中态颜色调整为红色 [#6863](https://github.com/youzan/vant/issues/6863)
 - ActionSheet: 加载图标大小调整为 22px [#6847](https://github.com/youzan/vant/issues/6847)
 - ActionSheet: 取消按钮文字颜色调整为 @gray-7 [#6846](https://github.com/youzan/vant/issues/6846)
 - ActionSheet: 标题栏高度调整为 48px [#6856](https://github.com/youzan/vant/issues/6856)
 - Cell: 图标与文字的间距调整为 4px [#6844](https://github.com/youzan/vant/issues/6844)
+- CouponCell: 优化金额与符号的间隔 [#6888](https://github.com/youzan/vant/issues/6888)
+- Dialog: 确认按钮的默认颜色调整为红色 [#6921](https://github.com/youzan/vant/issues/6921)
+- DropdownMenu: 默认选中态颜色调整为红色 [#6863](https://github.com/youzan/vant/issues/6863)
 - Field: 图标与文字的间距调整为 4px [#6849](https://github.com/youzan/vant/issues/6849)
+- Image: 更新加载图标和错误图标 [#6890](https://github.com/youzan/vant/issues/6890)
+- NumberKeyboard: 增加底部空白区域 [#6938](https://github.com/youzan/vant/issues/6938)
+- NumberKeyboard: 调整按键高度为 28px [#6899](https://github.com/youzan/vant/issues/6899)
 - NumberKeyboard: 标题栏高度调整为 40px [#6845](https://github.com/youzan/vant/issues/6845)
 - Picker: 默认可见的选项个数调整为 6 个 [#6827](https://github.com/youzan/vant/issues/6827)
 - Sidebar: 宽度调整为 80px [#6861](https://github.com/youzan/vant/issues/6861)
+- Sku: 优化价格符号位置，与下方文案对齐 [#6911](https://github.com/youzan/vant/issues/6911)
 - Tag: 更新文字大小和标签大小 [#6828](https://github.com/youzan/vant/issues/6828)
+- Tab: 在横向滚动模式下默认不截断标题的文字 [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
+- Tab: 移除默认边框 [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
+- Tab: 优化标签间距 [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387) [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
 - Toast: 更新背景色 [#6848](https://github.com/youzan/vant/issues/6848)
 - Toast: 图标大小调整为 36px [#6857](https://github.com/youzan/vant/issues/6857)
 
 **Bug Fixes**
 
+- AddressEdit: 修复个别情况下按钮渲染错误的问题 [#6942](https://github.com/youzan/vant/issues/6942)
+- Calendar: 修复初始化日历时页面滚动条位置错误的问题 [#6926](https://github.com/youzan/vant/issues/6926)
 - Field: 修复 rule 的 message 为空时无法重置表单状态的问题 [#6867](https://github.com/youzan/vant/issues/6867)
 - Icon: 修复图片图标加载过程中高度异常的问题 [#6858](https://github.com/youzan/vant/issues/6858)
 - ImagePreview: 修复 iOS 下旋转屏幕时布局错误的问题 [#6825](https://github.com/youzan/vant/issues/6825)
+- Info: 修复 badge 的数字在 iOS 上不居中的问题 [#6952](https://github.com/youzan/vant/issues/6952)
+- NumberKeyboard: 修复在低版本 safari 上按键高度错误的问题 [#6937](https://github.com/youzan/vant/issues/6937)
+- Picker: 修复 defaultIndex 在个别情况下取值逻辑错误的问题 [#6948](https://github.com/youzan/vant/issues/6948)
+- Sku: 修复价格较长时顶部图片的宽度被压缩的问题 [#6949](https://github.com/youzan/vant/issues/6949)
 
 ### [v2.9.4](https://github.com/youzan/vant/compare/v2.9.3...v2.9.4)
 
