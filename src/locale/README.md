@@ -47,5 +47,6 @@ Current supported languages:
 | Spanish (Spain)          | es-ES    |
 | Japanese                 | ja-JP    |
 | Romanian                 | ro-RO    |
+| Norwegian                | nb-NO    |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
