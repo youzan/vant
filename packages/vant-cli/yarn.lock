@@ -2,24 +2,16 @@
 # yarn lockfile v1
 
 
-"@ant-design-vue/babel-helper-vue-compatible-props@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@ant-design-vue/babel-helper-vue-compatible-props/-/babel-helper-vue-compatible-props-1.0.0.tgz#1cf8a267e04e7de4bd9207eb457bb40fbe96d69a"
-  integrity sha512-BHOaxm9EJOqoBYWUMVFKwjgDkdqbGnY1KhQBJwTdrQGRDVjVXkxzyoDGJV52YAGgHQrdaSMWakwZIiTfncsNJQ==
-  dependencies:
-    "@ant-design-vue/babel-helper-vue-transform-on" "^1.0.1"
-
-"@ant-design-vue/babel-helper-vue-transform-on@^1.0.0", "@ant-design-vue/babel-helper-vue-transform-on@^1.0.1":
+"@ant-design-vue/babel-helper-vue-transform-on@^1.0.0":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@ant-design-vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-1.0.1.tgz#d219d92f4e1fc5e7add211c347c7fa000518b623"
   integrity sha512-dOAPf/tCM2lCG8FhvOMFBaOdMElMEGhOoocMXEWvHW2l1KIex+UibDcq4bdBEJpDMLrnbNOqci9E7P2dARP6lg==
 
-"@ant-design-vue/babel-plugin-jsx@^1.0.0-beta.4":
-  version "1.0.0-beta.4"
-  resolved "https://registry.npm.taobao.org/@ant-design-vue/babel-plugin-jsx/download/@ant-design-vue/babel-plugin-jsx-1.0.0-beta.4.tgz#38e90befb34a062a63db919ae891d2f69dd907d7"
-  integrity sha1-OOkL77NKBipj25Ga6JHS9p3ZB9c=
+"@ant-design-vue/babel-plugin-jsx@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.npmjs.org/@ant-design-vue/babel-plugin-jsx/-/babel-plugin-jsx-1.0.0-rc.1.tgz#ae56cecbda9f08691bcf92dfe98e2416e77d758b"
+  integrity sha512-x7PfAHSs5/emIuey1Df7Bh/vJU27S9KBdufzoAA7kgwTpEpY85R7CXD9gl6sJFB7aG2pZpl4Tmm+FsHlzgp7fA==
   dependencies:
-    "@ant-design-vue/babel-helper-vue-compatible-props" "^1.0.0"
     "@ant-design-vue/babel-helper-vue-transform-on" "^1.0.0"
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.0.0"
