@@ -50,7 +50,7 @@ module.exports = {
                 title: '快速上手',
               },
               {
-                path: 'changelog',
+                path: 'changelog-v3',
                 title: '更新日志',
               },
               {
