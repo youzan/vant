@@ -7,6 +7,12 @@ exports[`icon-prefix prop 1`] = `
 </button>
 `;
 
+exports[`loading slot 1`] = `
+<button class="van-button van-button--default van-button--normal van-button--loading">
+  <div class="van-button__content">Custom Loading</div>
+</button>
+`;
+
 exports[`loading-size prop 1`] = `
 <button class="van-button van-button--default van-button--normal van-button--loading">
   <div class="van-button__content">

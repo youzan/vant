@@ -132,3 +132,10 @@ Vue.use(Button);
 | --- | --- | --- |
 | click | Triggered when click button and not disabled or loading | _event: Event_ |
 | touchstart | Triggered when touch start | _event: TouchEvent_ |
+
+### Slots
+
+| Name              | Description         |
+| ----------------- | ------------------- |
+| default           | Default slot        |
+| loading `v2.10.1` | Custom loading icon |

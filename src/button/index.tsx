@@ -10,7 +10,7 @@ import Loading, { LoadingType } from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 
 export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
 
@@ -41,12 +41,16 @@ export type ButtonEvents = {
   onClick?(event: Event): void;
 };
 
+export type ButttonSlots = DefaultSlots & {
+  loading?: ScopedSlot;
+};
+
 const [createComponent, bem] = createNamespace('button');
 
 function Button(
   h: CreateElement,
   props: ButtonProps,
-  slots: DefaultSlots,
+  slots: ButttonSlots,
   ctx: RenderContext<ButtonProps>
 ) {
   const {
@@ -112,12 +116,16 @@ function Button(
 
     if (loading) {
       content.push(
-        <Loading
-          class={bem('loading')}
-          size={props.loadingSize}
-          type={props.loadingType}
-          color="currentColor"
-        />
+        slots.loading ? (
+          slots.loading()
+        ) : (
+          <Loading
+            class={bem('loading')}
+            size={props.loadingSize}
+            type={props.loadingType}
+            color="currentColor"
+          />
+        )
       );
     } else if (icon) {
       content.push(
@@ -188,4 +196,4 @@ Button.props = {
   },
 };
 
-export default createComponent<ButtonProps, ButtonEvents>(Button);
+export default createComponent<ButtonProps, ButtonEvents, ButttonSlots>(Button);
