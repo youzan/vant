@@ -93,3 +93,16 @@ test('icon-prefix prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('loading slot', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      loading: true,
+    },
+    scopedSlots: {
+      loading: () => 'Custom Loading',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
