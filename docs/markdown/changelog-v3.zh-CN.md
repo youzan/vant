@@ -41,13 +41,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 以下改动是为了规范 API 命名：
 
+- SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
 - Toast: `mask` 属性重命名为 `overlay`
 - TreeSelect: `navclick` 事件重命名为 `click-nav`
 - TreeSelect: `itemclick` 事件重命名为 `click-item`
 
 ##### 重命名徽标属性
 
-在之前的版本中，我们通过 info 属性来展示图标右上角的徽标信息，为了表达更符合社区的命名习惯，我们将这个属性重命名为 badge，影响以下组件：
+在之前的版本中，我们通过 info 属性来展示图标右上角的徽标信息，为了更符合社区的命名习惯，我们将这个属性重命名为 badge，影响以下组件：
 
 - Tab
 - Icon

@@ -41,43 +41,6 @@ test('drag and show right part', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('on-close prop', () => {
-  let position;
-  let instance;
-
-  const wrapper = mount(SwipeCell, {
-    ...defaultProps,
-    propsData: {
-      ...defaultProps.propsData,
-      onClose(pos, ins) {
-        position = pos;
-        instance = ins;
-      },
-    },
-  });
-
-  wrapper.trigger('click');
-  expect(position).toEqual(undefined);
-
-  wrapper.vm.open('left');
-  wrapper.trigger('click');
-  expect(position).toEqual('cell');
-
-  wrapper.find('.van-swipe-cell__left').trigger('click');
-  expect(position).toEqual('left');
-
-  wrapper.find('.van-swipe-cell__right').trigger('click');
-  expect(position).toEqual('right');
-
-  instance.close();
-  expect(instance.offset).toEqual(0);
-
-  instance.open('left');
-  wrapper.setData({ onClose: null });
-  wrapper.trigger('click');
-  expect(wrapper.vm.offset).toEqual(0);
-});
-
 test('before-close prop', () => {
   let position;
   let instance;

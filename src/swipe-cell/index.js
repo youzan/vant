@@ -20,9 +20,6 @@ export default createComponent({
   ],
 
   props: {
-    // @deprecated
-    // should be removed in next major version, use beforeClose instead
-    onClose: Function,
     disabled: Boolean,
     leftWidth: [Number, String],
     rightWidth: [Number, String],
@@ -177,8 +174,6 @@ export default createComponent({
             name: this.name,
             instance: this,
           });
-        } else if (this.onClose) {
-          this.onClose(position, this, { name: this.name });
         } else {
           this.close(position);
         }
