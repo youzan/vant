@@ -102,7 +102,7 @@
     </demo-block>
 
     <van-calendar
-      v-model="showCalendar"
+      v-model:show="showCalendar"
       :type="type"
       :color="color"
       :round="round"

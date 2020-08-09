@@ -115,10 +115,10 @@ module.exports = {
           {
             title: '表单组件',
             items: [
-              // {
-              //   path: 'calendar',
-              //   title: 'Calendar 日历',
-              // },
+              {
+                path: 'calendar',
+                title: 'Calendar 日历',
+              },
               // {
               //   path: 'checkbox',
               //   title: 'Checkbox 复选框',
@@ -449,10 +449,10 @@ module.exports = {
           {
             title: 'Form Components',
             items: [
-              // {
-              //   path: 'calendar',
-              //   title: 'Calendar',
-              // },
+              {
+                path: 'calendar',
+                title: 'Calendar',
+              },
               // {
               //   path: 'checkbox',
               //   title: 'Checkbox',

@@ -24,9 +24,9 @@ import Header from './components/Header';
 
 export default createComponent({
   props: {
+    show: Boolean,
     title: String,
     color: String,
-    value: Boolean,
     formatter: Function,
     confirmText: String,
     rangePrompt: String,
@@ -110,7 +110,20 @@ export default createComponent({
     },
   },
 
+  emits: [
+    'open',
+    'close',
+    'opened',
+    'closed',
+    'select',
+    'confirm',
+    'unselect',
+    'month-show',
+    'update:show',
+  ],
+
   data() {
+    this.monthRefs = [];
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
@@ -152,8 +165,8 @@ export default createComponent({
   },
 
   watch: {
+    show: 'init',
     type: 'reset',
-    value: 'init',
 
     defaultDate(val) {
       this.currentDate = val;
@@ -178,7 +191,7 @@ export default createComponent({
     },
 
     init() {
-      if (this.poppable && !this.value) {
+      if (this.poppable && !this.show) {
         return;
       }
 
@@ -199,7 +212,7 @@ export default createComponent({
         const { currentDate } = this;
         const targetDate =
           this.type === 'single' ? currentDate : currentDate[0];
-        const displayed = this.value || !this.poppable;
+        const displayed = this.show || !this.poppable;
 
         /* istanbul ignore if */
         if (!targetDate || !displayed) {
@@ -208,8 +221,8 @@ export default createComponent({
 
         this.months.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
-            const { body, months } = this.$refs;
-            months[index].scrollIntoView(body);
+            const { body } = this.$refs;
+            this.monthRefs[index].scrollIntoView(body);
             return true;
           }
 
@@ -244,9 +257,10 @@ export default createComponent({
     // calculate the position of the elements
     // and find the elements that needs to be rendered
     onScroll() {
-      const { body, months } = this.$refs;
+      const { body } = this.$refs;
+      const { months, monthRefs } = this;
       const top = getScrollTop(body);
-      const heights = months.map((item) => item.getHeight());
+      const heights = months.map((item, index) => monthRefs[index].getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
@@ -262,17 +276,17 @@ export default createComponent({
         const visible = height <= bottom && height + heights[i] >= top;
 
         if (visible && !currentMonth) {
-          currentMonth = months[i];
+          currentMonth = monthRefs[i];
         }
 
-        if (!months[i].visible && visible) {
+        if (!monthRefs[i].visible && visible) {
           this.$emit('month-show', {
-            date: months[i].date,
-            title: months[i].title,
+            date: monthRefs[i].date,
+            title: monthRefs[i].title,
           });
         }
 
-        months[i].visible = visible;
+        monthRefs[i].visible = visible;
         height += heights[i];
       }
 
@@ -327,7 +341,7 @@ export default createComponent({
     },
 
     togglePopup(val) {
-      this.$emit('input', val);
+      this.$emit('update:show', val);
     },
 
     select(date, complete) {
@@ -376,8 +390,9 @@ export default createComponent({
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
         <Month
-          ref="months"
-          refInFor
+          ref={(val) => {
+            this.monthRefs[index] = val;
+          }}
           date={date}
           type={this.type}
           color={this.color}
@@ -398,10 +413,8 @@ export default createComponent({
     },
 
     genFooterContent() {
-      const slot = this.slots('footer');
-
-      if (slot) {
-        return slot;
+      if (this.$slots.footer) {
+        return this.$slots.footer();
       }
 
       if (this.showConfirm) {
@@ -438,13 +451,13 @@ export default createComponent({
       return (
         <div class={bem()}>
           <Header
+            v-slots={{
+              title: this.$slots.title,
+            }}
             title={this.title}
             showTitle={this.showTitle}
             subtitle={this.subtitle}
             showSubtitle={this.showSubtitle}
-            scopedSlots={{
-              title: () => this.slots('title'),
-            }}
             firstDayOfWeek={this.dayOffset}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
@@ -459,23 +472,25 @@ export default createComponent({
   render() {
     if (this.poppable) {
       const createListener = (name) => () => this.$emit(name);
+      const listeners = {
+        'onUpdate:show': this.togglePopup,
+        onOpen: createListener('open'),
+        onClose: createListener('close'),
+        onOpened: createListener('opened'),
+        onClosed: createListener('closed'),
+      };
 
       return (
         <Popup
-          round
+          show={this.show}
           class={bem('popup')}
-          value={this.value}
           round={this.round}
           position={this.position}
           closeable={this.showTitle || this.showSubtitle}
           getContainer={this.getContainer}
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
-          onInput={this.togglePopup}
-          onOpen={createListener('open')}
-          onOpened={createListener('opened')}
-          onClose={createListener('close')}
-          onClosed={createListener('closed')}
+          {...listeners}
         >
           {this.genCalendar()}
         </Popup>

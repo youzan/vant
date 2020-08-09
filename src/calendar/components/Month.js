@@ -31,6 +31,8 @@ export default createComponent({
     firstDayOfWeek: Number,
   },
 
+  emits: ['click'],
+
   data() {
     return {
       visible: false,
@@ -183,17 +185,15 @@ export default createComponent({
         return 'disabled';
       }
 
-      if (type === 'single') {
+      if (Array.isArray(currentDate)) {
+        if (type === 'multiple') {
+          return this.getMultipleDayType(day);
+        }
+        if (type === 'range') {
+          return this.getRangeDayType(day);
+        }
+      } else if (type === 'single') {
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
-      }
-
-      if (type === 'multiple') {
-        return this.getMultipleDayType(day);
-      }
-
-      /* istanbul ignore else */
-      if (type === 'range') {
-        return this.getRangeDayType(day);
       }
     },
 

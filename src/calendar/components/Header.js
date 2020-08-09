@@ -15,7 +15,7 @@ export default createComponent({
   methods: {
     genTitle() {
       if (this.showTitle) {
-        const title = this.slots('title') || this.title || t('title');
+        const title = this.$slots.title?.() || this.title || t('title');
         return <div class={bem('header-title')}>{title}</div>;
       }
     },

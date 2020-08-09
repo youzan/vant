@@ -24,16 +24,17 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 以下改动是为了适配 Vue 3 的 v-model API 用法变更：
 
-- Tabs: `v-model` 重命名为 `v-model:active`
-- Popup: `v-model` 重命名为 `v-model:show`
+- ActionSheet: `v-model` 重命名为 `v-model:show`
+- Calendar: `v-model` 重命名为 `v-model:show`
 - Circle: `v-model` 重命名为 `v-model:currentRate`
 - Dialog: `v-model` 重命名为 `v-model:show`
-- ShareSheet: `v-model` 重命名为 `v-model:show`
-- ActionSheet: `v-model` 重命名为 `v-model:show`
-- List: `v-model` 重命名为 `v-model:loading`，`error.sync` 重命名为 `v-model:error`
 - Field: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
-- Switch: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
+- List: `v-model` 重命名为 `v-model:loading`，`error.sync` 重命名为 `v-model:error`
+- Popup: `v-model` 重命名为 `v-model:show`
 - Sidebar: v-model 对应的属性 `activeKey` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
+- ShareSheet: `v-model` 重命名为 `v-model:show`
+- Switch: v-model 对应的属性 `value` 重命名为 `modelValue`，事件由 `input` 重命名为 `update:modelValue`
+- Tabs: `v-model` 重命名为 `v-model:active`
 - TreeSelect: `active-id.sync` 重命名为 `v-model:active-id`
 - TreeSelect: `main-active-index.sync` 重命名为 `v-model:main-active-index`
 

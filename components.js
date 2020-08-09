@@ -46,4 +46,5 @@ module.exports = [
   'picker',
   'dialog',
   'toast',
+  'calendar',
 ];
