@@ -63,12 +63,16 @@ export default createComponent({
 
       if (this.loading) {
         Content.push(
-          <Loading
-            class={bem('loading')}
-            size={this.loadingSize}
-            type={this.loadingType}
-            color="currentColor"
-          />
+          this.$slots.loading ? (
+            this.$slots.loading()
+          ) : (
+            <Loading
+              class={bem('loading')}
+              size={this.loadingSize}
+              type={this.loadingType}
+              color="currentColor"
+            />
+          )
         );
       } else if (this.icon) {
         Content.push(
