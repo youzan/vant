@@ -73,9 +73,6 @@ export default createComponent({
       this.$emit('open', {
         position,
         name: this.name,
-        // @deprecated
-        // should be removed in next major version
-        detail: this.name,
       });
     },
 

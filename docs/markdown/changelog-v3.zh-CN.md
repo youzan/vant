@@ -41,6 +41,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 以下改动是为了规范 API 命名：
 
+- SwipeCell: `open` 事件的 `detail` 参数重命名为 `name`
 - SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
 - Toast: `mask` 属性重命名为 `overlay`
 - TreeSelect: `navclick` 事件重命名为 `click-nav`
