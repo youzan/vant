@@ -10,6 +10,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.1](https://github.com/youzan/vant/compare/v2.10.0...v2.10.1)
+
+`2020-08-10`
+
+**Feature**
+
+- Button: add loading slot [#6966](https://github.com/youzan/vant/issues/6966)
+- Locale: adding Norwegian Language support [#6962](https://github.com/youzan/vant/issues/6962)
+
+**style**
+
+- ContactList: add safe area inset bottom [#6970](https://github.com/youzan/vant/issues/6970)
+- TabbarItem: increase icon size to 22px [#6972](https://github.com/youzan/vant/issues/6972)
+
+**Bug Fixes**
+
+- AddressEdit: incorrect label wrap on safari [#6969](https://github.com/youzan/vant/issues/6969)
+- Icon: fix badge number align [#6975](https://github.com/youzan/vant/issues/6975) [#6952](https://github.com/youzan/vant/issues/6952)
+
 ### [v2.10.0](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0)
 
 `2020-08-07`
