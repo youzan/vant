@@ -117,11 +117,7 @@ export default createComponent({
     },
 
     onTransitionEnd() {
-      if (!this.expanded) {
-        this.show = false;
-      } else {
-        this.$refs.wrapper.style.height = '';
-      }
+      this.show = this.expanded;
     },
 
     genTitle() {
