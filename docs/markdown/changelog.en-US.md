@@ -10,6 +10,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.2](https://github.com/youzan/vant/compare/v2.10.1...v2.10.2)
+
+`2020-08-12`
+
+**Feature**
+
+- Tab: add @tab-line-height less var [#6985](https://github.com/youzan/vant/issues/6985)
+
+**Bug Fixes**
+
+- Sku: compatible sku.list don't exist [#6991](https://github.com/youzan/vant/issues/6991)
+
 ### [v2.10.1](https://github.com/youzan/vant/compare/v2.10.0...v2.10.1)
 
 `2020-08-10`
