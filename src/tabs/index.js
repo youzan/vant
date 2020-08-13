@@ -204,11 +204,10 @@ export default createComponent({
 
         const title = titles[this.currentIndex].$el;
         const { lineWidth, lineHeight } = this;
-        const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
         const left = title.offsetLeft + title.offsetWidth / 2;
 
         const lineStyle = {
-          width: addUnit(width),
+          width: addUnit(lineWidth),
           backgroundColor: this.color,
           transform: `translateX(${left}px) translateX(-50%)`,
         };
