@@ -224,7 +224,7 @@ export default {
 | color | Tab color | _string_ | `#ee0a24` |
 | background | Background color | _string_ | `white` |
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` | - |
-| line-width | Width of tab line | _number \| string_ | Width of active tab |
+| line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |

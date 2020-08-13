@@ -65,7 +65,7 @@ exports[`click to switch tab 1`] = `
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-tab__text van-tab__text--ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
+      <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%);"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -87,7 +87,7 @@ exports[`click to switch tab 2`] = `
       <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title1</span></div>
       <div role="tab" class="van-tab van-tab--active" aria-selected="true"><span class="van-tab__text van-tab__text--ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-tab__text van-tab__text--ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
+      <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -187,7 +187,7 @@ exports[`name prop 1`] = `
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-tab__text van-tab__text--ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
+      <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%);"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -238,7 +238,7 @@ exports[`scrollspy prop 1`] = `
           <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">title1</span></div>
           <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title2</span></div>
           <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title3</span></div>
-          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
+          <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%);"></div>
         </div>
       </div>
     </div>
@@ -260,7 +260,7 @@ exports[`scrollspy prop 2`] = `
           <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title1</span></div>
           <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">title2</span></div>
           <div role="tab" class="van-tab van-tab--active" aria-selected="true"><span class="van-tab__text van-tab__text--ellipsis">title3</span></div>
-          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
+          <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
         </div>
       </div>
     </div>
