@@ -56,6 +56,23 @@ Dialog.alert({
 });
 ```
 
+### 消息确认
+
+用于确认消息，包含取消和确认按钮。
+
+```js
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容',
+})
+  .then(() => {
+    // on confirm
+  })
+  .catch(() => {
+    // on cancel
+  });
+```
+
 ### 圆角按钮风格
 
 将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗，该选项从 2.10.0 版本开始支持。
@@ -75,23 +92,6 @@ Dialog.alert({
 }).then(() => {
   // on close
 });
-```
-
-### 消息确认
-
-用于确认消息，包含取消和确认按钮。
-
-```js
-Dialog.confirm({
-  title: '标题',
-  message: '弹窗内容',
-})
-  .then(() => {
-    // on confirm
-  })
-  .catch(() => {
-    // on cancel
-  });
 ```
 
 ### 异步关闭
