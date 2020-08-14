@@ -22,7 +22,7 @@
         height="55vw"
         :items="simpleItems"
       >
-        <template slot="content">
+        <template #content>
           <van-image
             v-if="activeIndex3 === 0"
             :show-loading="false"

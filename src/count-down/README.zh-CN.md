@@ -13,7 +13,7 @@ Vue.use(CountDown);
 
 ### 基础用法
 
-`time`属性表示倒计时总时长，单位为毫秒
+`time` 属性表示倒计时总时长，单位为毫秒。
 
 ```html
 <van-count-down :time="time" />
@@ -31,7 +31,7 @@ export default {
 
 ### 自定义格式
 
-通过`format`属性设置倒计时文本的内容
+通过 `format` 属性设置倒计时文本的内容。
 
 ```html
 <van-count-down :time="time" format="DD 天 HH 时 mm 分 ss 秒" />
@@ -39,7 +39,7 @@ export default {
 
 ### 毫秒级渲染
 
-倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染
+倒计时默认每秒渲染一次，设置 `millisecond` 属性可以开启毫秒级渲染。
 
 ```html
 <van-count-down millisecond :time="time" format="HH:mm:ss:SS" />
@@ -47,11 +47,11 @@ export default {
 
 ### 自定义样式
 
-通过插槽自定义倒计时的样式，`timeData`对象格式见下方表格
+通过插槽自定义倒计时的样式，`timeData` 对象格式见下方表格。
 
 ```html
 <van-count-down :time="time">
-  <template v-slot="timeData">
+  <template #default="timeData">
     <span class="block">{{ timeData.hours }}</span>
     <span class="colon">:</span>
     <span class="block">{{ timeData.minutes }}</span>
@@ -79,7 +79,7 @@ export default {
 
 ### 手动控制
 
-通过 ref 获取到组件实例后，可以调用`start`、`pause`、`reset`方法
+通过 ref 获取到组件实例后，可以调用 `start`、`pause`、`reset` 方法。
 
 ```html
 <van-count-down
