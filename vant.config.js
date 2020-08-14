@@ -119,10 +119,10 @@ module.exports = {
                 path: 'calendar',
                 title: 'Calendar 日历',
               },
-              // {
-              //   path: 'checkbox',
-              //   title: 'Checkbox 复选框',
-              // },
+              {
+                path: 'checkbox',
+                title: 'Checkbox 复选框',
+              },
               // {
               //   path: 'datetime-picker',
               //   title: 'DatetimePicker 时间选择',
@@ -453,10 +453,10 @@ module.exports = {
                 path: 'calendar',
                 title: 'Calendar',
               },
-              // {
-              //   path: 'checkbox',
-              //   title: 'Checkbox',
-              // },
+              {
+                path: 'checkbox',
+                title: 'Checkbox',
+              },
               // {
               //   path: 'datetime-picker',
               //   title: 'DatetimePicker',

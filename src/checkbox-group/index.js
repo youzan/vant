@@ -13,14 +13,16 @@ export default createComponent({
     direction: String,
     iconSize: [Number, String],
     checkedColor: String,
-    value: {
+    modelValue: {
       type: Array,
       default: () => [],
     },
   },
 
+  emits: ['change', 'update:modelValue'],
+
   watch: {
-    value(val) {
+    modelValue(val) {
       this.$emit('change', val);
     },
   },
@@ -29,7 +31,7 @@ export default createComponent({
     // @exposed-api
     toggleAll(checked) {
       if (checked === false) {
-        this.$emit('input', []);
+        this.$emit('update:modelValue', []);
         return;
       }
 
@@ -39,11 +41,11 @@ export default createComponent({
       }
 
       const names = children.map((item) => item.name);
-      this.$emit('input', names);
+      this.$emit('update:modelValue', names);
     },
   },
 
   render() {
-    return <div class={bem([this.direction])}>{this.slots()}</div>;
+    return <div class={bem([this.direction])}>{this.$slots.default?.()}</div>;
   },
 });

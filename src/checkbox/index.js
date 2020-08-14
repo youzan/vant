@@ -12,27 +12,29 @@ export default createComponent({
     }),
   ],
 
+  emits: ['click', 'change', 'update:modelValue'],
+
   computed: {
     checked: {
       get() {
         if (this.parent) {
-          return this.parent.value.indexOf(this.name) !== -1;
+          return this.parent.modelValue.indexOf(this.name) !== -1;
         }
-        return this.value;
+        return this.modelValue;
       },
 
       set(val) {
         if (this.parent) {
           this.setParentValue(val);
         } else {
-          this.$emit('input', val);
+          this.$emit('update:modelValue', val);
         }
       },
     },
   },
 
   watch: {
-    value(val) {
+    modelValue(val) {
       this.$emit('change', val);
     },
   },
@@ -51,7 +53,7 @@ export default createComponent({
 
     setParentValue(val) {
       const { parent } = this;
-      const value = parent.value.slice();
+      const value = parent.modelValue.slice();
 
       if (val) {
         if (parent.max && value.length >= parent.max) {
@@ -61,7 +63,7 @@ export default createComponent({
         /* istanbul ignore else */
         if (value.indexOf(this.name) === -1) {
           value.push(this.name);
-          parent.$emit('input', value);
+          parent.$emit('update:modelValue', value);
         }
       } else {
         const index = value.indexOf(this.name);
@@ -69,7 +71,7 @@ export default createComponent({
         /* istanbul ignore else */
         if (index !== -1) {
           value.splice(index, 1);
-          parent.$emit('input', value);
+          parent.$emit('update:modelValue', value);
         }
       }
     },

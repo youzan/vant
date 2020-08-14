@@ -47,4 +47,6 @@ module.exports = [
   'dialog',
   'toast',
   'calendar',
+  'checkbox',
+  'checkbox-group',
 ];

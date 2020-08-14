@@ -11,9 +11,9 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
 
   props: {
     name: null,
-    value: null,
     disabled: Boolean,
     iconSize: [Number, String],
+    modelValue: null,
     checkedColor: String,
     labelPosition: String,
     labelDisabled: Boolean,
@@ -93,7 +93,9 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
           ])}
           style={{ fontSize: addUnit(iconSize) }}
         >
-          {this.slots('icon', { checked }) || (
+          {this.$slots.icon ? (
+            this.$slots.icon({ checked })
+          ) : (
             <Icon name="success" style={this.iconStyle} />
           )}
         </div>
@@ -101,9 +103,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     },
 
     genLabel() {
-      const slot = this.slots();
-
-      if (slot) {
+      if (this.$slots.default) {
         return (
           <span
             class={bem('label', [
@@ -111,7 +111,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
               { disabled: this.isDisabled },
             ])}
           >
-            {slot}
+            {this.$slots.default()}
           </span>
         );
       }
