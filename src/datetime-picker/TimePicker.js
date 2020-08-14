@@ -28,6 +28,8 @@ export default createComponent({
     },
   },
 
+  emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
+
   computed: {
     ranges() {
       return [

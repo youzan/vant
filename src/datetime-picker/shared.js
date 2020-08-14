@@ -5,8 +5,8 @@ import Picker from '../picker';
 
 export const sharedProps = {
   ...pickerProps,
-  value: null,
   filter: Function,
+  modelValue: null,
   showToolbar: {
     type: Boolean,
     default: true,
@@ -21,7 +21,7 @@ export const sharedProps = {
 export const TimePickerMixin = {
   data() {
     return {
-      innerValue: this.formatValue(this.value),
+      innerValue: this.formatValue(this.modelValue),
     };
   },
 
@@ -57,7 +57,7 @@ export const TimePickerMixin = {
     columns: 'updateColumnValue',
 
     innerValue(val) {
-      this.$emit('input', val);
+      this.$emit('update:modelValue', val);
     },
   },
 
@@ -97,7 +97,7 @@ export const TimePickerMixin = {
         onChange={this.onChange}
         onConfirm={this.onConfirm}
         onCancel={this.onCancel}
-        {...{ props }}
+        {...props}
       />
     );
   },

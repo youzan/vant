@@ -51,4 +51,5 @@ module.exports = [
   'checkbox-group',
   'radio',
   'radio-group',
+  'datetime-picker',
 ];

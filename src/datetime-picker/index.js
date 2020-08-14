@@ -19,16 +19,6 @@ export default createComponent({
 
   render() {
     const Component = this.type === 'time' ? TimePicker : DatePicker;
-
-    return (
-      <Component
-        ref="root"
-        class={bem()}
-        {...{
-          props: this.$props,
-          on: this.$listeners,
-        }}
-      />
-    );
+    return <Component ref="root" class={bem()} {...this.$props} />;
   },
 });

@@ -28,12 +28,14 @@ export default createComponent({
     },
   },
 
+  emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
+
   watch: {
     filter: 'updateInnerValue',
     minDate: 'updateInnerValue',
     maxDate: 'updateInnerValue',
 
-    value(val) {
+    modelValue(val) {
       val = this.formatValue(val);
 
       if (val.valueOf() !== this.innerValue.valueOf()) {
