@@ -37,6 +37,8 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Checkbox
 - CheckboxGroup
 - Field
+- Radio
+- RadioGroup
 - Switch
 - Sidebar
 

@@ -12,14 +12,16 @@ export default createComponent({
     }),
   ],
 
+  emits: ['click', 'update:modelValue'],
+
   computed: {
     currentValue: {
       get() {
-        return this.parent ? this.parent.value : this.value;
+        return this.parent ? this.parent.modelValue : this.modelValue;
       },
 
       set(val) {
-        (this.parent || this).$emit('input', val);
+        (this.parent || this).$emit('update:modelValue', val);
       },
     },
 

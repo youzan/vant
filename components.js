@@ -49,4 +49,6 @@ module.exports = [
   'calendar',
   'checkbox',
   'checkbox-group',
+  'radio',
+  'radio-group',
 ];

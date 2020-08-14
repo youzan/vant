@@ -8,12 +8,14 @@ export default createComponent({
   mixins: [ParentMixin('vanRadio'), FieldMixin],
 
   props: {
-    value: null,
     disabled: Boolean,
     direction: String,
+    modelValue: null,
     checkedColor: String,
     iconSize: [Number, String],
   },
+
+  emits: ['change', 'update:modelValue'],
 
   watch: {
     value(value) {
@@ -24,7 +26,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem([this.direction])} role="radiogroup">
-        {this.slots()}
+        {this.$slots.default?.()}
       </div>
     );
   },
