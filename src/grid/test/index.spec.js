@@ -50,7 +50,9 @@ test('render icon-slot', () => {
     template: `
       <van-grid icon-size="10">
         <van-grid-item info="1">
-          <div slot="icon" />
+          <template #icon>
+            <div>Custom Icon</div>
+          </template>
         </van-grid-item>
       </van-grid>
     `,

@@ -43,7 +43,7 @@ export default {
 
 ```html
 <van-count-down :time="time">
-  <template v-slot="timeData">
+  <template #default="timeData">
     <span class="block">{{ timeData.hours }}</span>
     <span class="colon">:</span>
     <span class="block">{{ timeData.minutes }}</span>

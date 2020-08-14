@@ -14,7 +14,7 @@ exports[`render icon-slot 1`] = `
   <div class="van-grid-item" style="flex-basis: 25%;">
     <div class="van-grid-item__content van-grid-item__content--center van-hairline">
       <div class="van-grid-item__icon-wrapper">
-        <div></div>
+        <div>Custom Icon</div>
         <div class="van-info">1</div>
       </div>
     </div>
