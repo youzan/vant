@@ -30,6 +30,23 @@ Dialog.alert({
 });
 ```
 
+### Confirm dialog
+
+Used to confirm some messages, including a confirm button and a cancel button.
+
+```js
+Dialog.confirm({
+  title: 'Title',
+  message: 'Content',
+})
+  .then(() => {
+    // on confirm
+  })
+  .catch(() => {
+    // on cancel
+  });
+```
+
 ### Round Button Style
 
 Use round button style.
@@ -49,23 +66,6 @@ Dialog.alert({
 }).then(() => {
   // on close
 });
-```
-
-### Confirm dialog
-
-Used to confirm some messages, including a confirm button and a cancel button.
-
-```js
-Dialog.confirm({
-  title: 'Title',
-  message: 'Content',
-})
-  .then(() => {
-    // on confirm
-  })
-  .catch(() => {
-    // on cancel
-  });
 ```
 
 ### Asnyc Close
