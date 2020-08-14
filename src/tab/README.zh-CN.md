@@ -231,8 +231,8 @@ export default {
 | color | 标签主题色 | _string_ | `#ee0a24` |
 | background | 标签栏背景色 | _string_ | `white` |
 | duration | 动画时间，单位秒 | _number \| string_ | `0.3` |
-| line-width | 底部条宽度，默认单位`px` | _number \| string_ | `auto` |
-| line-height | 底部条高度，默认单位`px` | _number \| string_ | `3px` |
+| line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
+| line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |

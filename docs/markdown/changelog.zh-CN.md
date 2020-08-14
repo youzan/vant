@@ -10,6 +10,38 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.2](https://github.com/youzan/vant/compare/v2.10.1...v2.10.2)
+
+`2020-08-12`
+
+**Feature**
+
+- Tab: 新增 @tab-line-height less 变量 [#6985](https://github.com/youzan/vant/issues/6985)
+
+**Bug Fixes**
+
+- Sku: 适配 sku.list 为空导致报错的问题 [#6991](https://github.com/youzan/vant/issues/6991)
+
+### [v2.10.1](https://github.com/youzan/vant/compare/v2.10.0...v2.10.1)
+
+`2020-08-10`
+
+**Feature**
+
+- Button: 新增 loading 插槽 [#6966](https://github.com/youzan/vant/issues/6966)
+- Locale: 新增挪威语语言包 [#6962](https://github.com/youzan/vant/issues/6962)
+
+**style**
+
+- ContactList: 适配 iOS 底部安全区 [#6970](https://github.com/youzan/vant/issues/6970)
+- TabbarItem: 图标大小扩大为 22px [#6972](https://github.com/youzan/vant/issues/6972)
+
+**Bug Fixes**
+
+- AddressEdit: 修复在 safari 上左侧文字换行的问题 [#6969](https://github.com/youzan/vant/issues/6969)
+- ContactEdit: 修复在 safari 上左侧文字换行的问题 [#6969](https://github.com/youzan/vant/issues/6969)
+- Icon: 修复徽标数字不居中的问题 [#6975](https://github.com/youzan/vant/issues/6975) [#6952](https://github.com/youzan/vant/issues/6952)
+
 ### [v2.10.0](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0)
 
 `2020-08-07`

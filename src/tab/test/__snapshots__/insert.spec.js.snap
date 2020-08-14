@@ -7,7 +7,7 @@ exports[`insert tab dynamically 1`] = `
       <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">1</span></div>
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-tab__text van-tab__text--ellipsis">2</span></div>
       <div role="tab" class="van-tab"><span class="van-tab__text van-tab__text--ellipsis">3</span></div>
-      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
+      <div class="van-tabs__line" style="transform: translateX(0px) translateX(-50%);"></div>
     </div>
   </div>
   <div class="van-tabs__content">
