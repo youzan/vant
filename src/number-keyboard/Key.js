@@ -18,6 +18,8 @@ export default createComponent({
     loading: Boolean,
   },
 
+  emits: ['press'],
+
   data() {
     return {
       active: false,
@@ -57,7 +59,7 @@ export default createComponent({
     genContent() {
       const isExtra = this.type === 'extra';
       const isDelete = this.type === 'delete';
-      const text = this.slots('default') || this.text;
+      const text = this.$slots.default ? this.$slots.default() : this.text;
 
       if (this.loading) {
         return <Loading class={bem('loading-icon')} />;

@@ -14,7 +14,7 @@ Vue.use(NumberKeyboard);
 ### Default Keyboard
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
+<van-cell @touchstart.stop="show = true">
   Show Keyboard
 </van-cell>
 <van-number-keyboard
@@ -64,7 +64,7 @@ export default {
 Use `extra-key` prop to set the content of bottom left button
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   Show IdNumber Keyboard
 </van-cell>
 
@@ -83,7 +83,7 @@ Use `extra-key` prop to set the content of bottom left button
 Use `title` prop to set keyboard title
 
 ```html
-<van-cell plain type="info" @touchstart.native.stop="show = true">
+<van-cell plain type="info" @touchstart.stop="show = true">
   Show Keyboard With Title
 </van-cell>
 <van-number-keyboard
@@ -100,7 +100,7 @@ Use `title` prop to set keyboard title
 ### Multiple ExtraKey
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   Show Keyboard With Multiple ExtraKey
 </van-cell>
 <van-number-keyboard
@@ -116,12 +116,7 @@ Use `title` prop to set keyboard title
 ### Bind Value
 
 ```html
-<van-field
-  readonly
-  clickable
-  :value="value"
-  @touchstart.native.stop="show = true"
-/>
+<van-field readonly clickable :value="value" @touchstart.stop="show = true" />
 <van-number-keyboard
   v-model="value"
   :show="show"

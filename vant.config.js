@@ -135,10 +135,10 @@ module.exports = {
               //   path: 'form',
               //   title: 'Form 表单',
               // },
-              // {
-              //   path: 'number-keyboard',
-              //   title: 'NumberKeyboard 数字键盘',
-              // },
+              {
+                path: 'number-keyboard',
+                title: 'NumberKeyboard 数字键盘',
+              },
               // {
               //   path: 'password-input',
               //   title: 'PasswordInput 密码输入框',
@@ -469,10 +469,10 @@ module.exports = {
               //   path: 'form',
               //   title: 'Form',
               // },
-              // {
-              //   path: 'number-keyboard',
-              //   title: 'NumberKeyboard',
-              // },
+              {
+                path: 'number-keyboard',
+                title: 'NumberKeyboard',
+              },
               // {
               //   path: 'password-input',
               //   title: 'PasswordInput',

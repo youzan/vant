@@ -1,27 +1,27 @@
 <template>
   <demo-section>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'default'">
+    <van-cell is-link @touchstart.stop="keyboard = 'default'">
       {{ t('button1') }}
     </van-cell>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'custom'">
+    <van-cell is-link @touchstart.stop="keyboard = 'custom'">
       {{ t('button2') }}
     </van-cell>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'extraKey'">
+    <van-cell is-link @touchstart.stop="keyboard = 'extraKey'">
       {{ t('button3') }}
     </van-cell>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'title'">
+    <van-cell is-link @touchstart.stop="keyboard = 'title'">
       {{ t('button4') }}
     </van-cell>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'multiExtraKey'">
+    <van-cell is-link @touchstart.stop="keyboard = 'multiExtraKey'">
       {{ t('button5') }}
     </van-cell>
     <van-field
       readonly
       clickable
-      :value="value"
       :label="t('bindValue')"
+      :model-value="value"
       :placeholder="t('clickToInput')"
-      @touchstart.native.stop="keyboard = 'bindValue'"
+      @touchstart.stop="keyboard = 'bindValue'"
     />
 
     <van-number-keyboard

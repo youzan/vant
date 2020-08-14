@@ -1,3 +1,4 @@
+import { Transition } from 'vue';
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
 import { PortalMixin } from '../mixins/portal';
@@ -16,10 +17,6 @@ export default createComponent({
     }),
   ],
 
-  model: {
-    event: 'update:value',
-  },
-
   props: {
     show: Boolean,
     title: String,
@@ -31,7 +28,7 @@ export default createComponent({
       type: String,
       default: 'default',
     },
-    value: {
+    modelValue: {
       type: String,
       default: '',
     },
@@ -60,6 +57,16 @@ export default createComponent({
       default: true,
     },
   },
+
+  emits: [
+    'show',
+    'hide',
+    'blur',
+    'input',
+    'close',
+    'delete',
+    'update:modelValue',
+  ],
 
   watch: {
     show(val) {
@@ -141,22 +148,22 @@ export default createComponent({
         return;
       }
 
-      const { value } = this;
+      const value = this.modelValue;
 
       if (type === 'delete') {
         this.$emit('delete');
-        this.$emit('update:value', value.slice(0, value.length - 1));
+        this.$emit('update:modelValue', value.slice(0, value.length - 1));
       } else if (type === 'close') {
         this.onClose();
       } else if (value.length < this.maxlength) {
         this.$emit('input', text);
-        this.$emit('update:value', value + text);
+        this.$emit('update:modelValue', value + text);
       }
     },
 
     genTitle() {
       const { title, theme, closeButtonText } = this;
-      const titleLeft = this.slots('title-left');
+      const titleLeft = this.$slots['title-left'];
       const showClose = closeButtonText && theme === 'default';
       const showTitle = title || showClose || titleLeft;
 
@@ -178,19 +185,28 @@ export default createComponent({
     },
 
     genKeys() {
-      return this.keys.map((key) => (
-        <Key
-          key={key.text}
-          text={key.text}
-          type={key.type}
-          wider={key.wider}
-          color={key.color}
-          onPress={this.onPress}
-        >
-          {key.type === 'delete' && this.slots('delete')}
-          {key.type === 'extra' && this.slots('extra-key')}
-        </Key>
-      ));
+      return this.keys.map((key) => {
+        const slots = {};
+
+        if (key.type === 'delete') {
+          slots.default = this.$slots.delete;
+        }
+        if (key.type === 'extra') {
+          slots.default = this.$slots['extra-key'];
+        }
+
+        return (
+          <Key
+            v-slots={slots}
+            key={key.text}
+            text={key.text}
+            type={key.type}
+            wider={key.wider}
+            color={key.color}
+            onPress={this.onPress}
+          />
+        );
+      });
     },
 
     genSidebar() {
@@ -199,13 +215,12 @@ export default createComponent({
           <div class={bem('sidebar')}>
             {this.showDeleteKey && (
               <Key
+                v-slots={{ delete: this.$slots.delete }}
                 large
                 text={this.deleteButtonText}
                 type="delete"
                 onPress={this.onPress}
-              >
-                {this.slots('delete')}
-              </Key>
+              />
             )}
             <Key
               large
@@ -225,7 +240,7 @@ export default createComponent({
     const Title = this.genTitle();
 
     return (
-      <transition name={this.transition ? 'van-slide-up' : ''}>
+      <Transition name={this.transition ? 'van-slide-up' : ''}>
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
@@ -240,7 +255,7 @@ export default createComponent({
             {this.genSidebar()}
           </div>
         </div>
-      </transition>
+      </Transition>
     );
   },
 });

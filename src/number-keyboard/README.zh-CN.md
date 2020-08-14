@@ -20,7 +20,7 @@ Vue.use(NumberKeyboard);
 数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
+<van-cell @touchstart.stop="show = true">
   弹出默认键盘
 </van-cell>
 <van-number-keyboard
@@ -74,7 +74,7 @@ export default {
 通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出身份证号键盘
 </van-cell>
 <van-number-keyboard
@@ -92,7 +92,7 @@ export default {
 通过 `title` 属性可以设置键盘标题
 
 ```html
-<van-cell plain type="info" @touchstart.native.stop="show = true">
+<van-cell plain type="info" @touchstart.stop="show = true">
   弹出带标题的键盘
 </van-cell>
 <van-number-keyboard
@@ -111,7 +111,7 @@ export default {
 当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出配置多个按键的键盘
 </van-cell>
 <van-number-keyboard
@@ -129,12 +129,7 @@ export default {
 可以通过 `v-model` 绑定键盘当前输入值
 
 ```html
-<van-field
-  readonly
-  clickable
-  :value="value"
-  @touchstart.native.stop="show = true"
-/>
+<van-field readonly clickable :value="value" @touchstart.stop="show = true" />
 <van-number-keyboard
   v-model="value"
   :show="show"
