@@ -32,6 +32,13 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Popup
 - ShareSheet
 
+```html
+<!-- before -->
+<van-popup v-model="show" />
+<!-- after -->
+<van-popup v-model:show="show" />
+```
+
 以下组件 v-model 对应的 prop 重命名为 `modelValue`，event 重命名为 `update:modelValue`：
 
 - Checkbox
@@ -42,6 +49,13 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - RadioGroup
 - Switch
 - Sidebar
+
+```html
+<!-- before -->
+<van-field :value="value" @input="onInput" />
+<!-- after -->
+<van-field :model-value="value" @update:model-value="onInput" />
+```
 
 其他改动：
 
