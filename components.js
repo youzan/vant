@@ -53,4 +53,5 @@ module.exports = [
   'radio-group',
   'datetime-picker',
   'number-keyboard',
+  'password-input',
 ];
