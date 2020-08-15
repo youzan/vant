@@ -44,7 +44,7 @@ export default createComponent({
     },
   },
 
-  emits: ['click', 'touchstart'],
+  emits: ['click'],
 
   methods: {
     onClick() {
@@ -52,10 +52,6 @@ export default createComponent({
         this.$emit('click', event);
         route(this.$router, this);
       }
-    },
-
-    onTouchstart(event) {
-      this.$emit('touchstart', event);
     },
 
     genContent() {
@@ -144,7 +140,6 @@ export default createComponent({
         type={this.nativeType}
         disabled={disabled}
         onClick={this.onClick}
-        onTouchstart={this.onTouchstart}
       >
         <div class={bem('content')}>{this.genContent()}</div>
       </tag>
