@@ -33,7 +33,7 @@
     </van-cell>
 
     <van-cell center :title="t('asyncChange')">
-      <van-stepper :value="stepper6" async-change @change="onChange" />
+      <van-stepper :model-value="stepper6" async-change @change="onChange" />
     </van-cell>
 
     <van-cell v-if="!isWeapp" center :title="t('roundTheme')">

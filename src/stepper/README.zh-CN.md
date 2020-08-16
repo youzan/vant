@@ -94,7 +94,7 @@ export default {
 如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
 
 ```html
-<van-stepper :value="value" async-change @change="onChange" />
+<van-stepper :model-value="value" async-change @change="onChange" />
 ```
 
 ```js

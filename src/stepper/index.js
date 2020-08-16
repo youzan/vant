@@ -24,10 +24,10 @@ export default createComponent({
   mixins: [FieldMixin],
 
   props: {
-    value: null,
     theme: String,
     integer: Boolean,
     disabled: Boolean,
+    modelValue: null,
     allowEmpty: Boolean,
     inputWidth: [Number, String],
     buttonSize: [Number, String],
@@ -71,12 +71,24 @@ export default createComponent({
     },
   },
 
+  emits: [
+    'plus',
+    'blur',
+    'minus',
+    'focus',
+    'change',
+    'overlimit',
+    'update:modelValue',
+  ],
+
   data() {
-    const defaultValue = isDef(this.value) ? this.value : this.defaultValue;
+    const defaultValue = isDef(this.modelValue)
+      ? this.value
+      : this.defaultValue;
     const value = this.format(defaultValue);
 
-    if (!equal(value, this.value)) {
-      this.$emit('input', value);
+    if (!equal(value, this.modelValue)) {
+      this.$emit('update:modelValue', value);
     }
 
     return {
@@ -129,14 +141,14 @@ export default createComponent({
     integer: 'check',
     decimalLength: 'check',
 
-    value(val) {
+    modelValue(val) {
       if (!equal(val, this.currentValue)) {
         this.currentValue = this.format(val);
       }
     },
 
     currentValue(val) {
-      this.$emit('input', val);
+      this.$emit('update:modelValue', val);
       this.$emit('change', val, { name: this.name });
     },
   },
@@ -194,7 +206,7 @@ export default createComponent({
 
     emitChange(value) {
       if (this.asyncChange) {
-        this.$emit('input', value);
+        this.$emit('update:modelValue', value);
         this.$emit('change', value, { name: this.name });
       } else {
         this.currentValue = value;
@@ -272,20 +284,18 @@ export default createComponent({
 
   render() {
     const createListeners = (type) => ({
-      on: {
-        click: (e) => {
-          // disable double tap scrolling on mobile safari
-          e.preventDefault();
-          this.type = type;
-          this.onChange();
-        },
-        touchstart: () => {
-          this.type = type;
-          this.onTouchStart();
-        },
-        touchend: this.onTouchEnd,
-        touchcancel: this.onTouchEnd,
+      onClick: (e) => {
+        // disable double tap scrolling on mobile safari
+        e.preventDefault();
+        this.type = type;
+        this.onChange();
       },
+      onTouchstart: () => {
+        this.type = type;
+        this.onTouchStart();
+      },
+      onTouchend: this.onTouchEnd,
+      onTouchcancel: this.onTouchEnd,
     });
 
     return (

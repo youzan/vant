@@ -72,7 +72,7 @@ export default {
 ### Async Change
 
 ```html
-<van-stepper :value="value" async-change @change="onChange" />
+<van-stepper :model-value="value" async-change @change="onChange" />
 ```
 
 ```js

@@ -55,4 +55,5 @@ module.exports = [
   'number-keyboard',
   'password-input',
   'search',
+  'stepper',
 ];

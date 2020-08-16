@@ -163,10 +163,10 @@ module.exports = {
                 path: 'slider',
                 title: 'Slider 滑块',
               },
-              // {
-              //   path: 'stepper',
-              //   title: 'Stepper 步进器',
-              // },
+              {
+                path: 'stepper',
+                title: 'Stepper 步进器',
+              },
               {
                 path: 'switch',
                 title: 'Switch 开关',
@@ -497,10 +497,10 @@ module.exports = {
                 path: 'slider',
                 title: 'Slider',
               },
-              // {
-              //   path: 'stepper',
-              //   title: 'Stepper',
-              // },
+              {
+                path: 'stepper',
+                title: 'Stepper',
+              },
               {
                 path: 'switch',
                 title: 'Switch',
