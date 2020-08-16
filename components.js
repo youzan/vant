@@ -56,4 +56,5 @@ module.exports = [
   'password-input',
   'search',
   'stepper',
+  'uploader',
 ];

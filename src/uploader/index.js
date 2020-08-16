@@ -18,10 +18,6 @@ export default createComponent({
 
   mixins: [FieldMixin],
 
-  model: {
-    prop: 'fileList',
-  },
-
   props: {
     disabled: Boolean,
     lazyLoad: Boolean,
@@ -39,7 +35,7 @@ export default createComponent({
       type: String,
       default: 'image/*',
     },
-    fileList: {
+    modelValue: {
       type: Array,
       default: () => [],
     },
@@ -81,19 +77,22 @@ export default createComponent({
     },
   },
 
+  emits: [
+    'delete',
+    'oversize',
+    'close-preview',
+    'click-preview',
+    'update:modelValue',
+  ],
+
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
     },
-
-    // for form
-    value() {
-      return this.fileList;
-    },
   },
 
   methods: {
-    getDetail(index = this.fileList.length) {
+    getDetail(index = this.modelValue.length) {
       return {
         name: this.name,
         index,
@@ -139,7 +138,7 @@ export default createComponent({
       const oversize = isOversize(files, this.maxSize);
 
       if (Array.isArray(files)) {
-        const maxCount = this.maxCount - this.fileList.length;
+        const maxCount = this.maxCount - this.modelValue.length;
 
         if (files.length > maxCount) {
           files = files.slice(0, maxCount);
@@ -203,7 +202,10 @@ export default createComponent({
         : Boolean(validFiles);
 
       if (isValidFiles) {
-        this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
+        this.$emit('update:modelValue', [
+          ...this.modelValue,
+          ...toArray(validFiles),
+        ]);
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
@@ -233,10 +235,10 @@ export default createComponent({
     },
 
     deleteFile(file, index) {
-      const fileList = this.fileList.slice(0);
+      const fileList = this.modelValue.slice(0);
       fileList.splice(index, 1);
 
-      this.$emit('input', fileList);
+      this.$emit('update:modelValue', fileList);
       this.$emit('delete', file, this.getDetail(index));
     },
 
@@ -252,7 +254,7 @@ export default createComponent({
         return;
       }
 
-      const imageFiles = this.fileList.filter((item) => isImageFile(item));
+      const imageFiles = this.modelValue.filter((item) => isImageFile(item));
       const imageContents = imageFiles.map((item) => item.content || item.url);
 
       this.imagePreview = ImagePreview({
@@ -320,9 +322,10 @@ export default createComponent({
         </div>
       );
 
-      const PreviewCoverContent = this.slots('preview-cover', item);
-      const PreviewCover = PreviewCoverContent && (
-        <div class={bem('preview-cover')}>{PreviewCoverContent}</div>
+      const PreviewCover = this.$slots['preview-cover'] && (
+        <div class={bem('preview-cover')}>
+          {this.$slots['preview-cover'](item)}
+        </div>
       );
 
       const Preview = isImageFile(item) ? (
@@ -371,20 +374,18 @@ export default createComponent({
 
     genPreviewList() {
       if (this.previewImage) {
-        return this.fileList.map(this.genPreviewItem);
+        return this.modelValue.map(this.genPreviewItem);
       }
     },
 
     genUpload() {
-      if (this.fileList.length >= this.maxCount || !this.showUpload) {
+      if (this.modelValue.length >= this.maxCount || !this.showUpload) {
         return;
       }
 
-      const slot = this.slots();
-
       const Input = (
         <input
-          {...{ attrs: this.$attrs }}
+          {...this.$attrs}
           ref="input"
           type="file"
           accept={this.accept}
@@ -394,10 +395,10 @@ export default createComponent({
         />
       );
 
-      if (slot) {
+      if (this.$slots.default) {
         return (
           <div class={bem('input-wrapper')}>
-            {slot}
+            {this.$slots.default()}
             {Input}
           </div>
         );
