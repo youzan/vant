@@ -1,52 +1,29 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-button type="danger" :text="t('basicUsage')" @click="showNotify" />
+    <demo-block card :title="t('basicUsage')">
+      <van-cell is-link :title="t('basicUsage')" @click="showNotify" />
     </demo-block>
 
-    <demo-block :title="t('notifyType')">
-      <div style="margin-bottom: 15px;">
-        <van-button
-          type="info"
-          :text="t('primary')"
-          @click="showType('primary')"
-        />
-        <van-button
-          type="primary"
-          :text="t('success')"
-          @click="showType('success')"
-        />
-      </div>
-
-      <van-button
-        type="danger"
-        :text="t('danger')"
-        @click="showType('danger')"
-      />
-      <van-button
-        type="warning"
-        :text="t('warning')"
-        @click="showType('warning')"
-      />
+    <demo-block card :title="t('notifyType')">
+      <van-cell is-link :title="t('primary')" @click="showType('primary')" />
+      <van-cell is-link :title="t('success')" @click="showType('success')" />
+      <van-cell is-link :title="t('danger')" @click="showType('danger')" />
+      <van-cell is-link :title="t('warning')" @click="showType('warning')" />
     </demo-block>
 
-    <demo-block :title="t('customNotify')">
-      <van-button
-        type="primary"
-        :text="t('customColor')"
-        @click="showCustomColor"
-      />
-      <van-button
-        type="primary"
-        :text="t('customDuration')"
+    <demo-block card :title="t('customNotify')">
+      <van-cell is-link :title="t('customColor')" @click="showCustomColor" />
+      <van-cell
+        is-link
+        :title="t('customDuration')"
         @click="showCustomDuration"
       />
     </demo-block>
 
-    <demo-block :title="t('componentCall')">
-      <van-button
-        type="primary"
-        :text="t('componentCall')"
+    <demo-block card :title="t('componentCall')">
+      <van-cell
+        is-link
+        :title="t('componentCall')"
         @click="showComponentCall"
       />
 
@@ -129,15 +106,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less">
-@import '../../style/var';
-
-.demo-notify {
-  background-color: @white;
-
-  .van-button {
-    margin-left: @padding-md;
-  }
-}
-</style>
