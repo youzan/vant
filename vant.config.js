@@ -225,10 +225,10 @@ module.exports = {
                 path: 'circle',
                 title: 'Circle 环形进度条',
               },
-              // {
-              //   path: 'collapse',
-              //   title: 'Collapse 折叠面板',
-              // },
+              {
+                path: 'collapse',
+                title: 'Collapse 折叠面板',
+              },
               {
                 path: 'count-down',
                 title: 'CountDown 倒计时',
@@ -559,10 +559,10 @@ module.exports = {
                 path: 'circle',
                 title: 'Circle',
               },
-              // {
-              //   path: 'collapse',
-              //   title: 'Collapse',
-              // },
+              {
+                path: 'collapse',
+                title: 'Collapse',
+              },
               {
                 path: 'count-down',
                 title: 'CountDown',

@@ -11,8 +11,6 @@ import { cellProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
-const CELL_SLOTS = ['title', 'icon', 'right-icon'];
-
 export default createComponent({
   mixins: [ChildrenMixin('vanCollapse')],
 
@@ -43,20 +41,22 @@ export default createComponent({
         return null;
       }
 
-      const { value, accordion } = this.parent;
+      const { modelValue, accordion } = this.parent;
 
       if (
         process.env.NODE_ENV !== 'production' &&
         !accordion &&
-        !Array.isArray(value)
+        !Array.isArray(modelValue)
       ) {
-        console.error('[Vant] Collapse: type of prop "value" should be Array');
+        console.error(
+          '[Vant] Collapse: type of prop "modelValue" should be Array'
+        );
         return;
       }
 
       return accordion
-        ? value === this.currentName
-        : value.some((name) => name === this.currentName);
+        ? modelValue === this.currentName
+        : modelValue.some((name) => name === this.currentName);
     },
   },
 
@@ -110,7 +110,7 @@ export default createComponent({
       }
 
       const { parent, currentName } = this;
-      const close = parent.accordion && currentName === parent.value;
+      const close = parent.accordion && currentName === parent.modelValue;
       const name = close ? '' : currentName;
 
       parent.switch(name, !this.expanded);
@@ -127,27 +127,22 @@ export default createComponent({
     genTitle() {
       const { border, disabled, expanded } = this;
 
-      const titleSlots = CELL_SLOTS.reduce((slots, name) => {
-        if (this.slots(name)) {
-          slots[name] = () => this.slots(name);
-        }
-
-        return slots;
-      }, {});
-
-      if (this.slots('value')) {
-        titleSlots.default = () => this.slots('value');
-      }
+      const slots = {
+        icon: this.$slots.icon,
+        title: this.$slots.title,
+        default: this.$slots.value,
+        'right-icon': this.$slots['right-icon'],
+      };
 
       return (
         <Cell
+          v-slots={slots}
           role="button"
           class={bem('title', { disabled, expanded, borderless: !border })}
           onClick={this.onClick}
-          scopedSlots={titleSlots}
           tabindex={disabled ? -1 : 0}
           aria-expanded={String(expanded)}
-          {...{ props: this.$props }}
+          {...this.$props}
         />
       );
     },
@@ -162,7 +157,7 @@ export default createComponent({
             onTransitionend={this.onTransitionEnd}
           >
             <div ref="content" class={bem('content')}>
-              {this.slots()}
+              {this.$slots.default?.()}
             </div>
           </div>
         );

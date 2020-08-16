@@ -60,4 +60,6 @@ module.exports = [
   'dropdown-menu',
   'dropdown-item',
   'notify',
+  'collapse',
+  'collapse-item',
 ];

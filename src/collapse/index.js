@@ -9,29 +9,31 @@ export default createComponent({
 
   props: {
     accordion: Boolean,
-    value: [String, Number, Array],
+    modelValue: [String, Number, Array],
     border: {
       type: Boolean,
       default: true,
     },
   },
 
+  emits: ['change', 'update:modelValue'],
+
   methods: {
     switch(name, expanded) {
       if (!this.accordion) {
         name = expanded
-          ? this.value.concat(name)
-          : this.value.filter((activeName) => activeName !== name);
+          ? this.modelValue.concat(name)
+          : this.modelValue.filter((activeName) => activeName !== name);
       }
       this.$emit('change', name);
-      this.$emit('input', name);
+      this.$emit('update:modelValue', name);
     },
   },
 
   render() {
     return (
       <div class={[bem(), { [BORDER_TOP_BOTTOM]: this.border }]}>
-        {this.slots()}
+        {this.$slots.default?.()}
       </div>
     );
   },
