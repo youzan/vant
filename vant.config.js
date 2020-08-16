@@ -155,10 +155,10 @@ module.exports = {
                 path: 'rate',
                 title: 'Rate 评分',
               },
-              // {
-              //   path: 'search',
-              //   title: 'Search 搜索',
-              // },
+              {
+                path: 'search',
+                title: 'Search 搜索',
+              },
               {
                 path: 'slider',
                 title: 'Slider 滑块',
@@ -489,10 +489,10 @@ module.exports = {
                 path: 'rate',
                 title: 'Rate',
               },
-              // {
-              //   path: 'search',
-              //   title: 'Search',
-              // },
+              {
+                path: 'search',
+                title: 'Search',
+              },
               {
                 path: 'slider',
                 title: 'Slider',

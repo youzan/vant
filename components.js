@@ -54,4 +54,5 @@ module.exports = [
   'datetime-picker',
   'number-keyboard',
   'password-input',
+  'search',
 ];
