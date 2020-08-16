@@ -17,9 +17,9 @@ export default createComponent({
   mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu')],
 
   props: {
-    value: null,
     title: String,
     disabled: Boolean,
+    modelValue: null,
     titleClass: String,
     options: {
       type: Array,
@@ -30,6 +30,8 @@ export default createComponent({
       default: true,
     },
   },
+
+  emits: ['open', 'opened', 'close', 'closed', 'change', 'update:modelValue'],
 
   data() {
     return {
@@ -46,7 +48,7 @@ export default createComponent({
       }
 
       const match = this.options.filter(
-        (option) => option.value === this.value
+        (option) => option.value === this.modelValue
       );
       return match.length ? match[0].text : '';
     },
@@ -98,6 +100,10 @@ export default createComponent({
         event.stopPropagation();
       }
     },
+
+    onTogglePopup(show) {
+      this.showPopup = show;
+    },
   },
 
   render() {
@@ -112,7 +118,7 @@ export default createComponent({
     } = this.parent;
 
     const Options = this.options.map((option) => {
-      const active = option.value === this.value;
+      const active = option.value === this.modelValue;
       return (
         <Cell
           clickable
@@ -124,8 +130,8 @@ export default createComponent({
           onClick={() => {
             this.showPopup = false;
 
-            if (option.value !== this.value) {
-              this.$emit('input', option.value);
+            if (option.value !== this.modelValue) {
+              this.$emit('update:modelValue', option.value);
               this.$emit('change', option.value);
             }
           }}
@@ -154,7 +160,7 @@ export default createComponent({
           onClick={this.onClickWrapper}
         >
           <Popup
-            vModel={this.showPopup}
+            show={this.showPopup}
             overlay={overlay}
             class={bem('content')}
             position={direction === 'down' ? 'top' : 'bottom'}
@@ -169,9 +175,10 @@ export default createComponent({
               this.showWrapper = false;
               this.$emit('closed');
             }}
+            {...{ 'onUpdate:modelValue': this.onTogglePopup }}
           >
             {Options}
-            {this.slots('default')}
+            {this.$slots.default?.()}
           </Popup>
         </div>
       </div>

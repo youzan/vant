@@ -57,4 +57,6 @@ module.exports = [
   'search',
   'stepper',
   'uploader',
+  'dropdown-menu',
+  'dropdown-item',
 ];

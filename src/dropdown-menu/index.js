@@ -117,7 +117,7 @@ export default createComponent({
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
           <div class="van-ellipsis">
-            {item.slots('title') || item.displayTitle}
+            {item.$slots.title ? item.$slots.title() : item.displayTitle}
           </div>
         </span>
       </div>
@@ -132,7 +132,7 @@ export default createComponent({
         >
           {Titles}
         </div>
-        {this.slots('default')}
+        {this.$slots.default?.()}
       </div>
     );
   },
