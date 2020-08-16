@@ -59,4 +59,5 @@ module.exports = [
   'uploader',
   'dropdown-menu',
   'dropdown-item',
+  'notify',
 ];

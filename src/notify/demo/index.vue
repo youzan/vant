@@ -27,7 +27,7 @@
         @click="showComponentCall"
       />
 
-      <van-notify v-model="show" type="success">
+      <van-notify v-model:show="show" type="success">
         <van-icon name="bell" style="margin-right: 4px;" />
         <span>{{ t('content') }}</span>
       </van-notify>

@@ -196,10 +196,10 @@ module.exports = {
                 path: 'loading',
                 title: 'Loading 加载',
               },
-              // {
-              //   path: 'notify',
-              //   title: 'Notify 消息通知',
-              // },
+              {
+                path: 'notify',
+                title: 'Notify 消息通知',
+              },
               {
                 path: 'overlay',
                 title: 'Overlay 遮罩层',
@@ -530,10 +530,10 @@ module.exports = {
                 path: 'loading',
                 title: 'Loading',
               },
-              // {
-              //   path: 'notify',
-              //   title: 'Notify',
-              // },
+              {
+                path: 'notify',
+                title: 'Notify',
+              },
               {
                 path: 'overlay',
                 title: 'Overlay',
