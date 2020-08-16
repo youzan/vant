@@ -142,10 +142,8 @@ export default createComponent({
 
     genImage() {
       const imgData = {
+        alt: this.alt,
         class: bem('img'),
-        attrs: {
-          alt: this.alt,
-        },
         style: {
           objectFit: this.fit,
         },
