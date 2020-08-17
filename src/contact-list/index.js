@@ -1,0 +1,111 @@
+// Utils
+import { createNamespace } from '../utils';
+import { RED } from '../utils/constant';
+
+// Components
+import Tag from '../tag';
+import Icon from '../icon';
+import Cell from '../cell';
+import Radio from '../radio';
+import Button from '../button';
+import RadioGroup from '../radio-group';
+
+const [createComponent, bem, t] = createNamespace('contact-list');
+
+export default createComponent({
+  props: {
+    list: Array,
+    addText: String,
+    modelValue: null,
+    defaultTagText: String,
+  },
+
+  emits: ['add', 'edit', 'select', 'update:modelValue'],
+
+  setup(props, { emit }) {
+    return () => {
+      const List =
+        props.list &&
+        props.list.map((item, index) => {
+          function onClick() {
+            emit('update:modelValue', item.id);
+            emit('select', item, index);
+          }
+
+          function RightIcon() {
+            return (
+              <Radio
+                name={item.id}
+                iconSize={16}
+                checkedColor={RED}
+                onClick={onClick}
+              />
+            );
+          }
+
+          function LeftIcon() {
+            return (
+              <Icon
+                name="edit"
+                class={bem('edit')}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  emit('edit', item, index);
+                }}
+              />
+            );
+          }
+
+          function Content() {
+            const nodes = [`${item.name}，${item.tel}`];
+
+            if (item.isDefault && props.defaultTagText) {
+              nodes.push(
+                <Tag type="danger" round class={bem('item-tag')}>
+                  {props.defaultTagText}
+                </Tag>
+              );
+            }
+
+            return nodes;
+          }
+
+          return (
+            <Cell
+              v-slots={{
+                icon: LeftIcon,
+                default: Content,
+                'right-icon': RightIcon,
+              }}
+              key={item.id}
+              isLink
+              center
+              class={bem('item')}
+              valueClass={bem('item-value')}
+              onClick={onClick}
+            />
+          );
+        });
+
+      return (
+        <div class={bem()}>
+          <RadioGroup modelValue={props.modelValue} class={bem('group')}>
+            {List}
+          </RadioGroup>
+          <div class={bem('bottom')}>
+            <Button
+              round
+              block
+              type="danger"
+              class={bem('add')}
+              text={props.addText || t('addText')}
+              onClick={() => {
+                emit('add');
+              }}
+            />
+          </div>
+        </div>
+      );
+    };
+  },
+});
