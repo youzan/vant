@@ -174,7 +174,7 @@ test('incomplate format prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('pause when destroyed', () => {
+test('pause when unmounted', () => {
   const wrapper = mount(CountDown);
   expect(wrapper.vm.counting).toBeTruthy();
   wrapper.destroy();

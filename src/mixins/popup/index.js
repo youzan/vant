@@ -83,7 +83,7 @@ export function PopupMixin(options = {}) {
       }
     },
 
-    beforeDestroy() {
+    beforeUnmount() {
       if (this.opened) {
         this.removeLock();
       }

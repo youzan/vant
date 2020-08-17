@@ -28,6 +28,6 @@ export function BindEventMixin(handler: BindEventHandler) {
     mounted: bind,
     activated: bind,
     deactivated: unbind,
-    beforeDestroy: unbind,
+    beforeUnmount: unbind,
   };
 }

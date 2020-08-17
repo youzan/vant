@@ -66,7 +66,7 @@ export default createComponent({
     this.bindTouchEvent(this.$el);
   },
 
-  destroyed() {
+  unmounted() {
     const { children } = this.$parent;
 
     if (children) {

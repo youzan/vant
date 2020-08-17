@@ -77,7 +77,7 @@ export default createComponent({
     }
   },
 
-  beforeDestroy() {
+  beforeUnmount() {
     const { $Lazyload } = this;
 
     if ($Lazyload) {

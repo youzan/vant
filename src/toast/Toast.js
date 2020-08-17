@@ -50,7 +50,7 @@ export default createComponent({
     this.toggleClickable();
   },
 
-  destroyed() {
+  unmounted() {
     this.toggleClickable();
   },
 

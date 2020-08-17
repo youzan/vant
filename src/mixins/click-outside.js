@@ -25,7 +25,7 @@ export const ClickOutsideMixin = (config) => ({
     on(document, config.event, this.clickOutsideHandler);
   },
 
-  beforeDestroy() {
+  beforeUnmount() {
     off(document, config.event, this.clickOutsideHandler);
   },
 });

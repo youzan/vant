@@ -63,7 +63,7 @@ export default createComponent({
     }
   },
 
-  beforeDestroy() {
+  beforeUnmount() {
     this.pause();
   },
 

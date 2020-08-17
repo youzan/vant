@@ -117,7 +117,7 @@ export default createComponent({
     }
   },
 
-  beforeDestroy() {
+  beforeUnmount() {
     if (this.vanForm) {
       this.vanForm.removeField(this);
     }
