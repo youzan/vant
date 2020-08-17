@@ -64,4 +64,5 @@ module.exports = [
   'collapse-item',
   'swipe',
   'swipe-item',
+  'image-preview',
 ];

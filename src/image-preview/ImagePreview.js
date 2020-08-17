@@ -3,21 +3,18 @@ import { inBrowser } from '../utils';
 import { bem, createComponent } from './shared';
 
 // Mixins
-import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import { BindEventMixin } from '../mixins/bind-event';
 
 // Components
 import Icon from '../icon';
 import Swipe from '../swipe';
+import Popup from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
 export default createComponent({
   mixins: [
     TouchMixin,
-    PopupMixin({
-      skipToggleEvent: true,
-    }),
     BindEventMixin(function (bind) {
       bind(window, 'resize', this.resize, true);
       bind(window, 'orientationchange', this.resize, true);
@@ -25,6 +22,7 @@ export default createComponent({
   ],
 
   props: {
+    show: Boolean,
     className: null,
     closeable: Boolean,
     asyncClose: Boolean,
@@ -61,10 +59,6 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    overlayClass: {
-      type: String,
-      default: bem('overlay'),
-    },
     closeIcon: {
       type: String,
       default: 'clear',
@@ -78,6 +72,8 @@ export default createComponent({
       default: 'top-right',
     },
   },
+
+  emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
   data() {
     return {
@@ -95,7 +91,7 @@ export default createComponent({
   watch: {
     startPosition: 'setActive',
 
-    value(val) {
+    show(val) {
       if (val) {
         this.setActive(+this.startPosition);
         this.$nextTick(() => {
@@ -120,7 +116,7 @@ export default createComponent({
 
     emitClose() {
       if (!this.asyncClose) {
-        this.$emit('input', false);
+        this.$emit('update:show', false);
       }
     },
 
@@ -139,18 +135,17 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') ||
-              `${this.active + 1} / ${this.images.length}`}
+            {this.$slots.index
+              ? this.$slots.index()
+              : `${this.active + 1} / ${this.images.length}`}
           </div>
         );
       }
     },
 
     genCover() {
-      const cover = this.slots('cover');
-
-      if (cover) {
-        return <div class={bem('cover')}>{cover}</div>;
+      if (this.$slots.cover) {
+        return <div class={bem('cover')}>{this.$slots.cover()}</div>;
       }
     },
 
@@ -170,7 +165,7 @@ export default createComponent({
           {this.images.map((image) => (
             <ImagePreviewItem
               src={image}
-              show={this.value}
+              show={this.show}
               active={this.active}
               maxZoom={this.maxZoom}
               minZoom={this.minZoom}
@@ -210,19 +205,18 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     return (
-      <transition name="van-fade" onAfterLeave={this.onClosed}>
-        <div vShow={this.value} class={[bem(), this.className]}>
-          {this.genClose()}
-          {this.genImages()}
-          {this.genIndex()}
-          {this.genCover()}
-        </div>
-      </transition>
+      <Popup
+        show={this.show}
+        class={[bem(), this.className]}
+        overlayClass={bem('overlay')}
+        onClosed={this.onClosed}
+      >
+        {this.genClose()}
+        {this.genImages()}
+        {this.genIndex()}
+        {this.genCover()}
+      </Popup>
     );
   },
 });

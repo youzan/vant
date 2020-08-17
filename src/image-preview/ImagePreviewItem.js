@@ -31,6 +31,8 @@ export default {
     windowHeight: Number,
   },
 
+  emits: ['scale', 'close'],
+
   data() {
     return {
       scale: 1,
@@ -250,11 +252,11 @@ export default {
     return (
       <SwipeItem class={bem('swipe-item')}>
         <Image
+          v-slots={imageSlots}
           src={this.src}
           fit="contain"
           class={bem('image', { vertical: this.vertical })}
           style={this.imageStyle}
-          scopedSlots={imageSlots}
           onLoad={this.onLoad}
         />
       </SwipeItem>

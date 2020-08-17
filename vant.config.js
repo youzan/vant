@@ -241,10 +241,10 @@ module.exports = {
                 path: 'empty',
                 title: 'Empty 空状态',
               },
-              // {
-              //   path: 'image-preview',
-              //   title: 'ImagePreview 图片预览',
-              // },
+              {
+                path: 'image-preview',
+                title: 'ImagePreview 图片预览',
+              },
               // {
               //   path: 'lazyload',
               //   title: 'Lazyload 懒加载',
@@ -575,10 +575,10 @@ module.exports = {
                 path: 'empty',
                 title: 'Empty',
               },
-              // {
-              //   path: 'image-preview',
-              //   title: 'ImagePreview',
-              // },
+              {
+                path: 'image-preview',
+                title: 'ImagePreview',
+              },
               // {
               //   path: 'lazyload',
               //   title: 'Lazyload',

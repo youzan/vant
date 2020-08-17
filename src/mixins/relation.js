@@ -26,7 +26,7 @@ export function ChildrenMixin(parent, options = {}) {
       this.bindRelation();
     },
 
-    beforeDestroy() {
+    beforeUnmount() {
       if (this.parent) {
         this.parent.children = this.parent.children.filter(
           (item) => item !== this
