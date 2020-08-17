@@ -560,6 +560,11 @@ export default createComponent({
 
     return (
       <Cell
+        v-slots={{
+          icon: this.genLeftIcon,
+          title: this.genLabel,
+          extra: slots.extra,
+        }}
         icon={this.leftIcon}
         size={this.size}
         class={bem({
@@ -568,12 +573,6 @@ export default createComponent({
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
-        // TODO
-        // vSlot={{
-        //   icon: this.genLeftIcon,
-        //   title: this.genLabel,
-        //   extra: slots.extra,
-        // }}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
