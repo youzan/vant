@@ -72,7 +72,7 @@ export default createComponent({
                     `<span class=${bem('keyword')}>${value}</span>`
                   );
 
-                  return <div domPropsInnerHTML={text} />;
+                  return <div innerHTML={text} />;
                 }
               },
             }}

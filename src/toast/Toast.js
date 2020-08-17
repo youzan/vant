@@ -115,7 +115,7 @@ export default createComponent({
       }
 
       if (type === 'html') {
-        return <div class={bem('text')} domPropsInnerHTML={message} />;
+        return <div class={bem('text')} innerHTML={message} />;
       }
 
       return <div class={bem('text')}>{message}</div>;
