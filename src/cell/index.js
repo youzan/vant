@@ -19,7 +19,8 @@ export default createComponent({
   setup(props, { slots, emit }) {
     return function () {
       const { icon, size, title, label, value, isLink } = props;
-      const showTitle = slots.title || isDef(title);
+      const titleSlot = slots.title?.();
+      const showTitle = titleSlot || isDef(title);
 
       function Label() {
         const showLabel = slots.label || isDef(label);
@@ -40,7 +41,7 @@ export default createComponent({
               class={[bem('title'), props.titleClass]}
               style={props.titleStyle}
             >
-              {slots.title ? slots.title() : <span>{title}</span>}
+              {slots.title ? titleSlot : <span>{title}</span>}
               {Label()}
             </div>
           );

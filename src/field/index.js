@@ -557,12 +557,14 @@ export default createComponent({
   render() {
     const slots = this.$slots;
     const labelAlign = this.getProp('labelAlign');
+    const Label = this.genLabel();
+    const LeftIcon = this.genLeftIcon();
 
     return (
       <Cell
         v-slots={{
-          icon: this.genLeftIcon,
-          title: this.genLabel,
+          icon: LeftIcon ? () => LeftIcon : null,
+          title: Label ? () => Label : null,
           extra: slots.extra,
         }}
         icon={this.leftIcon}
