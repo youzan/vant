@@ -43,12 +43,12 @@ export default createComponent({
       const { coupon } = this;
 
       if (coupon.valueDesc) {
-        return `${coupon.valueDesc}<span>${coupon.unitDesc || ''}</span>`;
+        return [coupon.valueDesc, <span>{coupon.unitDesc || ''}</span>];
       }
 
       if (coupon.denominations) {
         const denominations = formatAmount(coupon.denominations);
-        return `<span>${this.currency}</span> ${denominations}`;
+        return [<span>{this.currency}</span>, ` ${denominations}`];
       }
 
       if (coupon.discount) {
@@ -72,7 +72,7 @@ export default createComponent({
       <div class={bem({ disabled })}>
         <div class={bem('content')}>
           <div class={bem('head')}>
-            <h2 class={bem('amount')} domPropsInnerHTML={this.faceAmount} />
+            <h2 class={bem('amount')}>{this.faceAmount}</h2>
             <p class={bem('condition')}>
               {this.coupon.condition || this.conditionMessage}
             </p>
