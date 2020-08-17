@@ -69,4 +69,5 @@ module.exports = [
   'index-anchor',
   'address-list',
   'area',
+  'card',
 ];

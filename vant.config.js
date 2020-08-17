@@ -335,10 +335,10 @@ module.exports = {
                 path: 'area',
                 title: 'Area 省市区选择',
               },
-              // {
-              //   path: 'card',
-              //   title: 'Card 商品卡片',
-              // },
+              {
+                path: 'card',
+                title: 'Card 商品卡片',
+              },
               // {
               //   path: 'contact-card',
               //   title: 'Contact 联系人',
@@ -669,10 +669,10 @@ module.exports = {
                 path: 'area',
                 title: 'Area',
               },
-              // {
-              //   path: 'card',
-              //   title: 'Card',
-              // },
+              {
+                path: 'card',
+                title: 'Card',
+              },
               // {
               //   path: 'contact-card',
               //   title: 'Contact',
