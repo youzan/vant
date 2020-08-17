@@ -93,6 +93,10 @@ export default createComponent({
           <div class={bem('content', props.shape)}>
             {Label()}
             <Field
+              v-slots={{
+                'left-icon': slots['left-icon'],
+                'right-icon': slots['right-icon'],
+              }}
               type="search"
               border={false}
               leftIcon={props.leftIcon}
@@ -100,10 +104,6 @@ export default createComponent({
               clearable={props.clearable}
               modelValue={props.modelValue}
               clearTrigger={props.clearTrigger}
-              scopedSlots={{
-                'left-icon': slots['left-icon'],
-                'right-icon': slots['right-icon'],
-              }}
               {...fieldData}
             />
           </div>
