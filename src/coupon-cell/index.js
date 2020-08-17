@@ -42,9 +42,7 @@ export default createComponent({
 
   setup(props) {
     return () => {
-      const valueClass = props.coupons[+props.chosenCoupon]
-        ? bem('selected')
-        : '';
+      const selected = props.coupons[+props.chosenCoupon];
       const value = formatValue(props);
 
       return (
@@ -54,7 +52,7 @@ export default createComponent({
           title={props.title || t('title')}
           border={props.border}
           isLink={props.editable}
-          valueClass={valueClass}
+          valueClass={bem('value', { selected })}
         />
       );
     };
