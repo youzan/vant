@@ -14,11 +14,11 @@ import ImagePreview from '../image-preview';
 const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
-  inheritAttrs: false,
-
   mixins: [FieldMixin],
 
   props: {
+    capture: String,
+    multiple: Boolean,
     disabled: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
@@ -385,11 +385,12 @@ export default createComponent({
 
       const Input = (
         <input
-          {...this.$attrs}
           ref="input"
           type="file"
-          accept={this.accept}
           class={bem('input')}
+          accept={this.accept}
+          capture={this.capture}
+          multiple={this.multiple}
           disabled={this.disabled}
           onChange={this.onChange}
         />
