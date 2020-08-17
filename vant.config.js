@@ -339,10 +339,10 @@ module.exports = {
                 path: 'card',
                 title: 'Card 商品卡片',
               },
-              // {
-              //   path: 'contact-card',
-              //   title: 'Contact 联系人',
-              // },
+              {
+                path: 'contact-card',
+                title: 'Contact 联系人',
+              },
               // {
               //   path: 'coupon-list',
               //   title: 'Coupon 优惠券',
@@ -673,10 +673,10 @@ module.exports = {
                 path: 'card',
                 title: 'Card',
               },
-              // {
-              //   path: 'contact-card',
-              //   title: 'Contact',
-              // },
+              {
+                path: 'contact-card',
+                title: 'Contact',
+              },
               // {
               //   path: 'coupon-list',
               //   title: 'Coupon',

@@ -70,4 +70,7 @@ module.exports = [
   'address-list',
   'area',
   'card',
+  'contact-card',
+  'contact-edit',
+  'contact-list',
 ];

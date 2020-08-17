@@ -8,7 +8,7 @@
         @click="showList = true"
       />
 
-      <van-popup v-model="showList" position="bottom" :lazy-render="false">
+      <van-popup v-model:show="showList" position="bottom" :lazy-render="false">
         <van-contact-list
           v-model="chosenContactId"
           :list="list"
@@ -19,7 +19,7 @@
         />
       </van-popup>
 
-      <van-popup v-model="showEdit" position="bottom" :lazy-render="false">
+      <van-popup v-model:show="showEdit" position="bottom" :lazy-render="false">
         <van-contact-edit
           show-set-default
           :set-default-label="t('defaultLabel')"

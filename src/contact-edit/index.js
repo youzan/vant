@@ -33,6 +33,8 @@ export default createComponent({
     },
   },
 
+  emits: ['save', 'delete', 'change-default'],
+
   data() {
     return {
       data: {
@@ -121,19 +123,21 @@ export default createComponent({
         </div>
         {this.showSetDefault && (
           <Cell
+            v-slots={{
+              'right-icon': () => (
+                <Switch
+                  vModel={data.isDefault}
+                  size={24}
+                  onChange={(event) => {
+                    this.$emit('change-default', event);
+                  }}
+                />
+              ),
+            }}
             title={this.setDefaultLabel}
             class={bem('switch-cell')}
             border={false}
-          >
-            <Switch
-              vModel={data.isDefault}
-              size={24}
-              slot="right-icon"
-              onChange={(event) => {
-                this.$emit('change-default', event);
-              }}
-            />
-          </Cell>
+          ></Cell>
         )}
         <div class={bem('buttons')}>
           <Button
