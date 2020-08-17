@@ -67,5 +67,6 @@ module.exports = [
   'image-preview',
   'index-bar',
   'index-anchor',
+  'address-list',
   'area',
 ];

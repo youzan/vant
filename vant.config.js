@@ -327,10 +327,10 @@ module.exports = {
               //   path: 'address-edit',
               //   title: 'AddressEdit 地址编辑',
               // },
-              // {
-              //   path: 'address-list',
-              //   title: 'AddressList 地址列表',
-              // },
+              {
+                path: 'address-list',
+                title: 'AddressList 地址列表',
+              },
               {
                 path: 'area',
                 title: 'Area 省市区选择',
@@ -661,10 +661,10 @@ module.exports = {
               //   path: 'address-edit',
               //   title: 'AddressEdit',
               // },
-              // {
-              //   path: 'address-list',
-              //   title: 'AddressList',
-              // },
+              {
+                path: 'address-list',
+                title: 'AddressList',
+              },
               {
                 path: 'area',
                 title: 'Area',
