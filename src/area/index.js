@@ -10,21 +10,6 @@ function isOverseaCode(code) {
   return code[0] === '9';
 }
 
-function pickSlots(instance, keys) {
-  const { $slots, $scopedSlots } = instance;
-  const scopedSlots = {};
-
-  keys.forEach((key) => {
-    if ($scopedSlots[key]) {
-      scopedSlots[key] = $scopedSlots[key];
-    } else if ($slots[key]) {
-      scopedSlots[key] = () => $slots[key];
-    }
-  });
-
-  return scopedSlots;
-}
-
 export default createComponent({
   props: {
     ...pickerProps,
@@ -46,6 +31,8 @@ export default createComponent({
       default: () => [],
     },
   },
+
+  emits: ['change', 'confirm'],
 
   data() {
     return {
@@ -78,6 +65,13 @@ export default createComponent({
         county: this.columnsPlaceholder[2] || '',
       };
     },
+
+    pickerSlots() {
+      return ['title', 'columns-top', 'columns-bottom'].reduce((slots, key) => {
+        slots[key] = this.$slots[key];
+        return slots;
+      }, {});
+    },
   },
 
   watch: {
@@ -88,7 +82,9 @@ export default createComponent({
 
     areaList: {
       deep: true,
-      handler: 'setValues',
+      handler() {
+        this.setValues();
+      },
     },
 
     columnsNum() {
@@ -297,14 +293,9 @@ export default createComponent({
   },
 
   render() {
-    const on = {
-      ...this.$listeners,
-      change: this.onChange,
-      confirm: this.onConfirm,
-    };
-
     return (
       <Picker
+        v-slots={this.pickerSlots}
         ref="picker"
         class={bem()}
         showToolbar
@@ -317,12 +308,8 @@ export default createComponent({
         visibleItemCount={this.visibleItemCount}
         cancelButtonText={this.cancelButtonText}
         confirmButtonText={this.confirmButtonText}
-        scopedSlots={pickSlots(this, [
-          'title',
-          'columns-top',
-          'columns-bottom',
-        ])}
-        {...{ on }}
+        onChange={this.onChange}
+        onConfirm={this.onConfirm}
       />
     );
   },

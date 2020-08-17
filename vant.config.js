@@ -331,10 +331,10 @@ module.exports = {
               //   path: 'address-list',
               //   title: 'AddressList 地址列表',
               // },
-              // {
-              //   path: 'area',
-              //   title: 'Area 省市区选择',
-              // },
+              {
+                path: 'area',
+                title: 'Area 省市区选择',
+              },
               // {
               //   path: 'card',
               //   title: 'Card 商品卡片',
@@ -665,10 +665,10 @@ module.exports = {
               //   path: 'address-list',
               //   title: 'AddressList',
               // },
-              // {
-              //   path: 'area',
-              //   title: 'Area',
-              // },
+              {
+                path: 'area',
+                title: 'Area',
+              },
               // {
               //   path: 'card',
               //   title: 'Card',
