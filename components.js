@@ -73,4 +73,7 @@ module.exports = [
   'contact-card',
   'contact-edit',
   'contact-list',
+  'coupon',
+  'coupon-list',
+  'coupon-cell',
 ];

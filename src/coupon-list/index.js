@@ -12,16 +12,12 @@ const [createComponent, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default createComponent({
-  model: {
-    prop: 'code',
-  },
-
   props: {
     code: String,
-    closeButtonText: String,
-    inputPlaceholder: String,
     enabledTitle: String,
     disabledTitle: String,
+    closeButtonText: String,
+    inputPlaceholder: String,
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
@@ -67,6 +63,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'exchange', 'update:code'],
+
   data() {
     return {
       tab: 0,
@@ -98,7 +96,7 @@ export default createComponent({
     },
 
     currentCode(code) {
-      this.$emit('input', code);
+      this.$emit('update:code', code);
     },
 
     displayedCouponIndex: 'scrollToShowCoupon',
@@ -194,9 +192,9 @@ export default createComponent({
               ref="card"
               key={coupon.id}
               coupon={coupon}
-              currency={this.currency}
               chosen={index === this.chosenCoupon}
-              nativeOnClick={onChange(index)}
+              currency={this.currency}
+              onClick={onChange(index)}
             />
           ))}
           {!coupons.length && this.genEmpty()}
@@ -234,8 +232,8 @@ export default createComponent({
           <Button
             vShow={this.showCloseButton}
             round
-            type="danger"
             block
+            type="danger"
             class={bem('close')}
             text={this.closeButtonText || t('close')}
             onClick={onChange(-1)}

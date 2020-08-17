@@ -88,7 +88,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前输入的兑换码 | _string_ | - |
+| v-model:code | 当前输入的兑换码 | _string_ | - |
 | chosen-coupon | 当前选中优惠券的索引 | _number_ | `-1` |
 | coupons | 可用优惠券列表 | _Coupon[]_ | `[]` |
 | disabled-coupons | 不可用优惠券列表 | _Coupon[]_ | `[]` |

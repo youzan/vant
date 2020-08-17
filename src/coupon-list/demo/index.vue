@@ -6,9 +6,8 @@
         :chosen-coupon="chosenCoupon"
         @click="showList = true"
       />
-
       <van-popup
-        v-model="showList"
+        v-model:show="showList"
         round
         position="bottom"
         style="height: 90%; padding-top: 4px;"

@@ -66,6 +66,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 其他改动：
 
 - Circle: `v-model` 重命名为 `v-model:currentRate`
+- CouponList: `v-model` 重命名为 `v-model:code`
 - List: `v-model` 重命名为 `v-model:loading`，`error.sync` 重命名为 `v-model:error`
 - Tabs: `v-model` 重命名为 `v-model:active`
 - TreeSelect: `active-id.sync` 重命名为 `v-model:active-id`

@@ -83,8 +83,8 @@ export default createComponent({
             {!this.disabled && (
               <Checkbox
                 size={18}
-                value={this.chosen}
                 class={bem('corner')}
+                modelValue={this.chosen}
                 checkedColor={RED}
               />
             )}
