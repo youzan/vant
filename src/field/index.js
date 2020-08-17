@@ -429,6 +429,7 @@ export default createComponent({
         ...this.$attrs,
         ref: 'input',
         name: this.name,
+        style: null,
         class: bem('control', inputAlign),
         value: this.modelValue,
         disabled: this.disabled,
@@ -569,12 +570,16 @@ export default createComponent({
         }}
         icon={this.leftIcon}
         size={this.size}
-        class={bem({
-          error: this.showError,
-          disabled: this.disabled,
-          [`label-${labelAlign}`]: labelAlign,
-          'min-height': this.type === 'textarea' && !this.autosize,
-        })}
+        class={[
+          bem({
+            error: this.showError,
+            disabled: this.disabled,
+            [`label-${labelAlign}`]: labelAlign,
+            'min-height': this.type === 'textarea' && !this.autosize,
+          }),
+          this.$attrs.class,
+        ]}
+        style={this.$attrs.style}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
