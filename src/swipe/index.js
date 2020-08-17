@@ -62,6 +62,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change'],
+
   data() {
     return {
       rect: null,
@@ -385,10 +387,9 @@ export default createComponent({
 
     genIndicator() {
       const { count, activeIndicator } = this;
-      const slot = this.slots('indicator');
 
-      if (slot) {
-        return slot;
+      if (this.$slots.indicator) {
+        return this.$slots.indicator();
       }
 
       if (this.showIndicators && count > 1) {
@@ -414,7 +415,7 @@ export default createComponent({
           style={this.trackStyle}
           class={bem('track', { vertical: this.vertical })}
         >
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
         {this.genIndicator()}
       </div>

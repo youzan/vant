@@ -12,7 +12,9 @@
     <demo-block :title="t('title2')">
       <van-swipe :autoplay="3000">
         <van-swipe-item v-for="(image, index) in images" :key="index">
-          <img v-lazy="image" />
+          <img :src="image" />
+          <!-- TODO -->
+          <!-- <img v-lazy="image" /> -->
         </van-swipe-item>
       </van-swipe>
     </demo-block>

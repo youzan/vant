@@ -273,10 +273,10 @@ module.exports = {
                 path: 'sticky',
                 title: 'Sticky 粘性布局',
               },
-              // {
-              //   path: 'swipe',
-              //   title: 'Swipe 轮播',
-              // },
+              {
+                path: 'swipe',
+                title: 'Swipe 轮播',
+              },
               {
                 path: 'tag',
                 title: 'Tag 标记',
@@ -607,10 +607,10 @@ module.exports = {
                 path: 'sticky',
                 title: 'Sticky',
               },
-              // {
-              //   path: 'swipe',
-              //   title: 'Swipe',
-              // },
+              {
+                path: 'swipe',
+                title: 'Swipe',
+              },
               {
                 path: 'tag',
                 title: 'Tag',

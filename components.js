@@ -62,4 +62,6 @@ module.exports = [
   'notify',
   'collapse',
   'collapse-item',
+  'swipe',
+  'swipe-item',
 ];

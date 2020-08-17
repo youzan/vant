@@ -56,8 +56,8 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem()} style={this.style} {...{ on: this.$listeners }}>
-        {this.shouldRender && this.slots()}
+      <div class={bem()} style={this.style}>
+        {this.shouldRender ? this.$slots.default?.() : null}
       </div>
     );
   },
