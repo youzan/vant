@@ -31,6 +31,8 @@ export default createComponent({
     },
   },
 
+  emits: ['open', 'close', 'click'],
+
   data() {
     return {
       offset: 0,
