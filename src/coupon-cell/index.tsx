@@ -39,7 +39,7 @@ function CouponCell(
   slots: DefaultSlots,
   ctx: RenderContext<CouponCellProps>
 ) {
-  const valueClass = props.coupons[+props.chosenCoupon] ? bem('selected') : '';
+  const selected = props.coupons[+props.chosenCoupon];
   const value = formatValue(props);
 
   return (
@@ -49,7 +49,7 @@ function CouponCell(
       title={props.title || t('title')}
       border={props.border}
       isLink={props.editable}
-      valueClass={valueClass}
+      valueClass={bem('value', { selected })}
       {...inherit(ctx, true)}
     />
   );
