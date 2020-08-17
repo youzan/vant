@@ -290,10 +290,10 @@ module.exports = {
                 path: 'grid',
                 title: 'Grid 宫格',
               },
-              // {
-              //   path: 'index-bar',
-              //   title: 'IndexBar 索引栏',
-              // },
+              {
+                path: 'index-bar',
+                title: 'IndexBar 索引栏',
+              },
               {
                 path: 'nav-bar',
                 title: 'NavBar 导航栏',
@@ -624,10 +624,10 @@ module.exports = {
                 path: 'grid',
                 title: 'Grid',
               },
-              // {
-              //   path: 'index-bar',
-              //   title: 'IndexBar',
-              // },
+              {
+                path: 'index-bar',
+                title: 'IndexBar',
+              },
               {
                 path: 'nav-bar',
                 title: 'NavBar',

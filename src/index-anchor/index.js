@@ -39,7 +39,9 @@ export default createComponent({
   },
 
   mounted() {
-    this.height = this.$el.offsetHeight;
+    this.$nextTick(() => {
+      this.height = this.$el.offsetHeight;
+    });
   },
 
   methods: {
@@ -57,7 +59,7 @@ export default createComponent({
           style={this.anchorStyle}
           class={[bem({ sticky }), { [BORDER_BOTTOM]: sticky }]}
         >
-          {this.slots('default') || this.index}
+          {this.$slots.default ? this.$slots.default() : this.index}
         </div>
       </div>
     );

@@ -65,4 +65,6 @@ module.exports = [
   'swipe',
   'swipe-item',
   'image-preview',
+  'index-bar',
+  'index-anchor',
 ];

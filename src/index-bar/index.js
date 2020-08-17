@@ -58,6 +58,8 @@ export default createComponent({
     },
   },
 
+  emits: ['select'],
+
   data() {
     return {
       activeAnchorIndex: null,
@@ -245,7 +247,7 @@ export default createComponent({
         >
           {Indexes}
         </div>
-        {this.slots('default')}
+        {this.$slots.default?.()}
       </div>
     );
   },
