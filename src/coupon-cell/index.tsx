@@ -39,9 +39,7 @@ function CouponCell(
   slots: DefaultSlots,
   ctx: RenderContext<CouponCellProps>
 ) {
-  const valueClass = props.coupons[+props.chosenCoupon]
-    ? 'van-coupon-cell--selected'
-    : '';
+  const valueClass = props.coupons[+props.chosenCoupon] ? bem('selected') : '';
   const value = formatValue(props);
 
   return (
