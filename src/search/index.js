@@ -74,6 +74,8 @@ export default createComponent({
 
       const fieldData = {
         ...this.$attrs,
+        style: null,
+        class: null,
         onKeypress(event) {
           // press enter
           if (event.keyCode === 13) {
@@ -86,8 +88,8 @@ export default createComponent({
 
       return (
         <div
-          class={bem({ 'show-action': props.showAction })}
-          style={{ background: props.background }}
+          class={[bem({ 'show-action': props.showAction }), this.$attrs.class]}
+          style={{ background: props.background, ...this.$attrs.style }}
         >
           {slots.left?.()}
           <div class={bem('content', props.shape)}>
