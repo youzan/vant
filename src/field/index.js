@@ -19,8 +19,6 @@ import { cellProps } from '../cell/shared';
 const [createComponent, bem] = createNamespace('field');
 
 export default createComponent({
-  inheritAttrs: false,
-
   provide() {
     return {
       vanField: this,
@@ -426,7 +424,6 @@ export default createComponent({
       }
 
       const inputProps = {
-        ...this.$attrs,
         ref: 'input',
         name: this.name,
         style: null,
@@ -570,16 +567,12 @@ export default createComponent({
         }}
         icon={this.leftIcon}
         size={this.size}
-        class={[
-          bem({
-            error: this.showError,
-            disabled: this.disabled,
-            [`label-${labelAlign}`]: labelAlign,
-            'min-height': this.type === 'textarea' && !this.autosize,
-          }),
-          this.$attrs.class,
-        ]}
-        style={this.$attrs.style}
+        class={bem({
+          error: this.showError,
+          disabled: this.disabled,
+          [`label-${labelAlign}`]: labelAlign,
+          'min-height': this.type === 'textarea' && !this.autosize,
+        })}
         center={this.center}
         border={this.border}
         isLink={this.isLink}
