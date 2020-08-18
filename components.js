@@ -80,4 +80,5 @@ module.exports = [
   'goods-action',
   'goods-action-icon',
   'goods-action-button',
+  'address-edit',
 ];

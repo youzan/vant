@@ -323,10 +323,10 @@ module.exports = {
           {
             title: '业务组件',
             items: [
-              // {
-              //   path: 'address-edit',
-              //   title: 'AddressEdit 地址编辑',
-              // },
+              {
+                path: 'address-edit',
+                title: 'AddressEdit 地址编辑',
+              },
               {
                 path: 'address-list',
                 title: 'AddressList 地址列表',
@@ -657,10 +657,10 @@ module.exports = {
           {
             title: 'Business Components',
             items: [
-              // {
-              //   path: 'address-edit',
-              //   title: 'AddressEdit',
-              // },
+              {
+                path: 'address-edit',
+                title: 'AddressEdit',
+              },
               {
                 path: 'address-list',
                 title: 'AddressList',

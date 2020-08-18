@@ -20,6 +20,8 @@ export default createComponent({
     showSearchResult: Boolean,
   },
 
+  emits: ['blur', 'focus', 'input', 'select-search'],
+
   computed: {
     shouldShowSearchResult() {
       return this.focused && this.searchResult && this.showSearchResult;
@@ -39,6 +41,14 @@ export default createComponent({
       this.$refs.field.blur();
     },
 
+    onFocus(event) {
+      this.$emit('focus', event);
+    },
+
+    onBlur(event) {
+      this.$emit('blur', event);
+    },
+
     genFinish() {
       const show = this.value && this.focused && android;
       if (show) {
@@ -55,16 +65,7 @@ export default createComponent({
       if (shouldShowSearchResult) {
         return searchResult.map((express) => (
           <Cell
-            key={express.name + express.address}
-            clickable
-            border={false}
-            icon="location-o"
-            label={express.address}
-            class={bem('search-item')}
-            onClick={() => {
-              this.onSelect(express);
-            }}
-            scopedSlots={{
+            v-slots={{
               title: () => {
                 if (express.name) {
                   const text = express.name.replace(
@@ -76,6 +77,15 @@ export default createComponent({
                 }
               },
             }}
+            key={express.name + express.address}
+            clickable
+            border={false}
+            icon="location-o"
+            label={express.address}
+            class={bem('search-item')}
+            onClick={() => {
+              this.onSelect(express);
+            }}
           />
         ));
       }
@@ -86,19 +96,25 @@ export default createComponent({
     return (
       <Cell class={bem()}>
         <Field
+          v-slots={{ icon: this.genFinish }}
           autosize
           ref="field"
           rows={this.detailRows}
           clearable={!android}
           type="textarea"
-          value={this.value}
-          errorMessage={this.errorMessage}
-          border={!this.shouldShowSearchResult}
           label={t('label')}
+          border={!this.shouldShowSearchResult}
           maxlength={this.detailMaxlength}
+          modelValue={this.value}
           placeholder={t('placeholder')}
-          scopedSlots={{ icon: this.genFinish }}
-          {...{ on: this.$listeners }}
+          errorMessage={this.errorMessage}
+          onBlur={this.onBlur}
+          onFocus={this.onFocus}
+          {...{
+            'onUpdate:modelValue': (val) => {
+              this.$emit('input', val);
+            },
+          }}
         />
         {this.genSearchResult()}
       </Cell>

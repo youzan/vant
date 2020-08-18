@@ -282,11 +282,11 @@ export default createComponent({
 
         return (
           <Cell
+            v-slots={slots}
             vShow={!this.hideBottomFields}
             center
             title={t('defaultAddress')}
             class={bem('default')}
-            scopedSlots={slots}
           />
         );
       }
@@ -328,7 +328,7 @@ export default createComponent({
             placeholder={this.areaPlaceholder || t('areaPlaceholder')}
             errorMessage={errorInfo.areaCode}
             rightIcon={!disableArea ? 'arrow' : null}
-            value={this.areaText}
+            modelValue={this.areaText}
             onFocus={onFocus('areaCode')}
             onClick={() => {
               this.$emit('click-area');
@@ -337,15 +337,15 @@ export default createComponent({
           />
           <Detail
             vShow={this.showDetail}
-            focused={this.detailFocused}
             value={data.addressDetail}
+            focused={this.detailFocused}
             errorMessage={errorInfo.addressDetail}
             detailRows={this.detailRows}
             detailMaxlength={this.detailMaxlength}
             searchResult={this.searchResult}
             showSearchResult={this.showSearchResult}
-            onFocus={onFocus('addressDetail')}
             onBlur={this.onDetailBlur}
+            onFocus={onFocus('addressDetail')}
             onInput={this.onChangeDetail}
             onSelect-search={(event) => {
               this.$emit('select-search', event);
@@ -363,7 +363,7 @@ export default createComponent({
               onFocus={onFocus('postalCode')}
             />
           )}
-          {this.slots()}
+          {this.$slots.default?.()}
         </div>
         {this.genSetDefaultCell(h)}
         <div vShow={!hideBottomFields} class={bem('buttons')}>
@@ -386,11 +386,16 @@ export default createComponent({
           )}
         </div>
         <Popup
-          vModel={this.showAreaPopup}
+          show={this.showAreaPopup}
           round
           position="bottom"
           lazyRender={false}
           getContainer="body"
+          {...{
+            'onUpdate:modelValue': (value) => {
+              this.showAreaPopup = value;
+            },
+          }}
         >
           <Area
             ref="area"
