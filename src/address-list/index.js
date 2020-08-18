@@ -41,14 +41,14 @@ export default createComponent({
 
         return list.map((item, index) => (
           <AddressItem
+            v-slots={{
+              bottom: slots['item-bottom'],
+            }}
             data={item}
             key={item.id}
             disabled={disabled}
             switchable={props.switchable}
             defaultTagText={props.defaultTagText}
-            scopedSlots={{
-              bottom: slots['item-bottom'],
-            }}
             onSelect={() => {
               emit(disabled ? 'select-disabled' : 'select', item, index);
 
