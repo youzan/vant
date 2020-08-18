@@ -18,6 +18,8 @@ export default createComponent({
     disabled: Boolean,
   },
 
+  emits: ['click'],
+
   computed: {
     isFirst() {
       const prev = this.parent && this.parent.children[this.index - 1];
@@ -55,7 +57,7 @@ export default createComponent({
         disabled={this.disabled}
         onClick={this.onClick}
       >
-        {this.slots() || this.text}
+        {this.$slots.default ? this.$slots.default() : this.text}
       </Button>
     );
   },

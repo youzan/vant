@@ -20,6 +20,8 @@ export default createComponent({
     iconClass: null,
   },
 
+  emits: ['click'],
+
   methods: {
     onClick(event) {
       this.$emit('click', event);
@@ -27,13 +29,12 @@ export default createComponent({
     },
 
     genIcon() {
-      const slot = this.slots('icon');
       const info = isDef(this.badge) ? this.badge : this.info;
 
-      if (slot) {
+      if (this.$slots.icon) {
         return (
           <div class={bem('icon')}>
-            {slot}
+            {this.$slots.icon()}
             <Info dot={this.dot} info={info} />
           </div>
         );
@@ -56,7 +57,7 @@ export default createComponent({
     return (
       <div role="button" tabindex="0" class={bem()} onClick={this.onClick}>
         {this.genIcon()}
-        {this.slots() || this.text}
+        {this.$slots.default ? this.$slots.default() : this.text}
       </div>
     );
   },

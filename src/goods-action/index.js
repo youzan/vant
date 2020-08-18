@@ -16,7 +16,7 @@ export default createComponent({
   render() {
     return (
       <div class={bem({ unfit: !this.safeAreaInsetBottom })}>
-        {this.slots()}
+        {this.$slots.default?.()}
       </div>
     );
   },

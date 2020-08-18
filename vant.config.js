@@ -347,10 +347,10 @@ module.exports = {
                 path: 'coupon-list',
                 title: 'Coupon 优惠券',
               },
-              // {
-              //   path: 'goods-action',
-              //   title: 'GoodsAction 商品导航',
-              // },
+              {
+                path: 'goods-action',
+                title: 'GoodsAction 商品导航',
+              },
               {
                 path: 'submit-bar',
                 title: 'SubmitBar 提交订单栏',
@@ -681,10 +681,10 @@ module.exports = {
                 path: 'coupon-list',
                 title: 'Coupon',
               },
-              // {
-              //   path: 'goods-action',
-              //   title: 'GoodsAction',
-              // },
+              {
+                path: 'goods-action',
+                title: 'GoodsAction',
+              },
               {
                 path: 'submit-bar',
                 title: 'SubmitBar',
