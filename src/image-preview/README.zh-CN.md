@@ -46,9 +46,9 @@ ImagePreview([
 ]);
 ```
 
-### 传入配置项
+### 指定初始位置
 
-通过传入配置对象，可以指定初始图片的位置、监听关闭事件。
+ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
 
 ```js
 ImagePreview({
@@ -57,9 +57,6 @@ ImagePreview({
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
-  onClose() {
-    // do something
-  },
 });
 ```
 
@@ -74,6 +71,24 @@ ImagePreview({
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
+});
+```
+
+### 监听关闭事件
+
+通过 `onClose` 选项监听图片预览的关闭事件。
+
+```js
+import { Toast } from 'vant';
+
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
+  onClose() {
+    Toast('关闭');
+  },
 });
 ```
 
@@ -92,7 +107,7 @@ const instance = ImagePreview({
 
 setTimeout(() => {
   instance.close();
-}, 1000);
+}, 2000);
 ```
 
 ### 组件调用
@@ -117,7 +132,6 @@ export default {
       ],
     };
   },
-
   methods: {
     onChange(index) {
       this.index = index;
