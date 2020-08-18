@@ -33,6 +33,7 @@ export default createComponent({
 
   props: {
     ...cellProps,
+    rows: [Number, String],
     name: String,
     rules: Array,
     disabled: Boolean,
@@ -426,6 +427,7 @@ export default createComponent({
       const inputProps = {
         ref: 'input',
         name: this.name,
+        rows: this.rows,
         style: null,
         class: bem('control', inputAlign),
         value: this.modelValue,
