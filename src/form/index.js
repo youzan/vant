@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { sortChildren } from '../utils/vnodes';
+// import { sortChildren } from '../utils/vnodes';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -29,6 +29,8 @@ export default createComponent({
       default: true,
     },
   },
+
+  emits: ['submit', 'failed'],
 
   provide() {
     return {
@@ -133,7 +135,8 @@ export default createComponent({
 
     addField(field) {
       this.fields.push(field);
-      sortChildren(this.fields, this);
+      // TODO
+      // sortChildren(this.fields, this);
     },
 
     removeField(field) {
@@ -176,7 +179,7 @@ export default createComponent({
   render() {
     return (
       <form class={bem()} onSubmit={this.onSubmit}>
-        {this.slots()}
+        {this.$slots.default?.()}
       </form>
     );
   },

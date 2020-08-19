@@ -3,14 +3,14 @@
     readonly
     clickable
     name="datetimePicker"
-    :value="value"
     :label="t('label')"
+    :model-value="value"
     :placeholder="t('placeholder')"
     @click="showPicker = true"
   >
     <template #extra>
       <van-popup
-        v-model="showPicker"
+        v-model:show="showPicker"
         round
         position="bottom"
         get-container="body"

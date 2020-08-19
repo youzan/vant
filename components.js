@@ -81,4 +81,5 @@ module.exports = [
   'goods-action-icon',
   'goods-action-button',
   'address-edit',
+  'form',
 ];

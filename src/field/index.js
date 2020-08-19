@@ -27,6 +27,7 @@ export default createComponent({
 
   inject: {
     vanForm: {
+      from: 'vanForm',
       default: null,
     },
   },
@@ -152,7 +153,7 @@ export default createComponent({
 
     formValue() {
       if (this.children && this.$slots.input) {
-        return this.children.modelValue || this.children.value;
+        return this.children.modelValue;
       }
       return this.modelValue;
     },

@@ -3,14 +3,14 @@
     readonly
     clickable
     name="calendar"
-    :value="value"
     :label="t('calendar')"
+    :model-value="value"
     :placeholder="t('placeholder')"
     @click="showCalendar = true"
   >
     <template #extra>
       <van-calendar
-        v-model="showCalendar"
+        v-model:show="showCalendar"
         round
         get-container="body"
         @confirm="onConfirm"

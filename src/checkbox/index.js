@@ -1,10 +1,12 @@
 import { createNamespace } from '../utils';
+import { FieldMixin } from '../mixins/field';
 import { CheckboxMixin } from '../mixins/checkbox';
 
 const [createComponent, bem] = createNamespace('checkbox');
 
 export default createComponent({
   mixins: [
+    FieldMixin,
     CheckboxMixin({
       bem,
       role: 'checkbox',

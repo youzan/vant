@@ -1,6 +1,7 @@
 export const FieldMixin = {
   inject: {
     vanField: {
+      from: 'vanField',
       default: null,
     },
   },

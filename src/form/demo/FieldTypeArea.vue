@@ -3,14 +3,14 @@
     readonly
     clickable
     name="area"
-    :value="value"
     :label="t('picker')"
+    :model-value="value"
     :placeholder="t('placeholder')"
     @click="showArea = true"
   >
     <template #extra>
       <van-popup
-        v-model="showArea"
+        v-model:show="showArea"
         round
         position="bottom"
         get-container="body"

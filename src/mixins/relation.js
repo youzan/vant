@@ -42,6 +42,8 @@ export function ChildrenMixin(parent, options = {}) {
 
         const children = [...this.parent.children, this];
 
+        // TODO sortChildren
+
         this.parent.children = children;
       },
     },
