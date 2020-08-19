@@ -1,12 +1,11 @@
 import { createNamespace } from '../utils';
-import { popupMixinProps } from '../mixins/popup';
-import Popup from '../popup';
+import Popup, { popupSharedProps } from '../popup';
 
 const [createComponent, bem] = createNamespace('notify');
 
 export default createComponent({
   props: {
-    ...popupMixinProps,
+    ...popupSharedProps,
     color: String,
     message: [Number, String],
     duration: [Number, String],

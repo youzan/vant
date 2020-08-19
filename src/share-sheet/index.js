@@ -1,11 +1,8 @@
 // Utils
 import { createNamespace, isDef } from '../utils';
 
-// Mixins
-import { popupMixinProps } from '../mixins/popup';
-
 // Components
-import Popup from '../popup';
+import Popup, { popupSharedProps } from '../popup';
 
 const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
 
@@ -13,7 +10,7 @@ const [createComponent, bem, t] = createNamespace('share-sheet');
 
 export default createComponent({
   props: {
-    ...popupMixinProps,
+    ...popupSharedProps,
     title: String,
     duration: [Number, String],
     cancelText: String,

@@ -1,19 +1,16 @@
 // Utils
 import { createNamespace } from '../utils';
 
-// Mixins
-import { popupMixinProps } from '../mixins/popup';
-
 // Components
 import Icon from '../icon';
-import Popup from '../popup';
+import Popup, { popupSharedProps } from '../popup';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('action-sheet');
 
 export default createComponent({
   props: {
-    ...popupMixinProps,
+    ...popupSharedProps,
     title: String,
     actions: Array,
     duration: [Number, String],
