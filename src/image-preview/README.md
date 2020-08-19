@@ -20,7 +20,7 @@ ImagePreview([
 ]);
 ```
 
-### Custom config
+### Set Start Position
 
 ```js
 ImagePreview({
@@ -29,9 +29,6 @@ ImagePreview({
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
-  onClose() {
-    // do something
-  },
 });
 ```
 
@@ -49,6 +46,22 @@ ImagePreview({
 });
 ```
 
+### Close Event
+
+```js
+import { Toast } from 'vant';
+
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
+  onClose() {
+    Toast('closed');
+  },
+});
+```
+
 ### Async Close
 
 ```js
@@ -62,7 +75,7 @@ const instance = ImagePreview({
 
 setTimeout(() => {
   instance.close();
-}, 1000);
+}, 2000);
 ```
 
 ### Component Call
@@ -85,7 +98,6 @@ export default {
       ],
     };
   },
-
   methods: {
     onChange(index) {
       this.index = index;
