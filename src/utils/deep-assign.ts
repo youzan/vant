@@ -1,5 +1,6 @@
 import { isDef, isObject } from '.';
-import { ObjectIndex } from './types';
+
+type ObjectIndex = Record<string, any>;
 
 const { hasOwnProperty } = Object.prototype;
 

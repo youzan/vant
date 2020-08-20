@@ -1,5 +1,6 @@
 import { inBrowser } from '..';
-import { EventHandler } from '../types';
+
+type EventHandler = (event: Event) => void;
 
 // eslint-disable-next-line import/no-mutable-exports
 export let supportsPassive = false;
