@@ -3,10 +3,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Circle } from 'vant';
 
-Vue.use(Circle);
+const app = createApp();
+app.use(Circle);
 ```
 
 ## 代码演示

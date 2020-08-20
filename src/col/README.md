@@ -7,11 +7,12 @@ Quickly and easily create layouts with `van-row` and `van-col`
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Col, Row } from 'vant';
 
-Vue.use(Col);
-Vue.use(Row);
+const app = createApp();
+app.use(Col);
+app.use(Row);
 ```
 
 ## Usage

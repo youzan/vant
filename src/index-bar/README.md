@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { IndexBar } from 'vant';
 
-Vue.use(IndexBar);
-Vue.use(IndexAnchor);
+const app = createApp();
+app.use(IndexBar);
+app.use(IndexAnchor);
 ```
 
 ## Usage

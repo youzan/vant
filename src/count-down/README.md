@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { CountDown } from 'vant';
 
-Vue.use(CountDown);
+const app = createApp();
+app.use(CountDown);
 ```
 
 ## Usage

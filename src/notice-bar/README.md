@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { NoticeBar } from 'vant';
 
-Vue.use(NoticeBar);
+const app = createApp();
+app.use(NoticeBar);
 ```
 
 ## Usage

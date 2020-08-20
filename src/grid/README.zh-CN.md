@@ -7,11 +7,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Grid, GridItem } from 'vant';
 
-Vue.use(Grid);
-Vue.use(GridItem);
+const app = createApp();
+app.use(Grid);
+app.use(GridItem);
 ```
 
 ## 代码演示

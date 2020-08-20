@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Popup } from 'vant';
 
-Vue.use(Popup);
+const app = createApp();
+app.use(Popup);
 ```
 
 ## 代码演示
@@ -82,7 +83,12 @@ export default {
 设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
 
 ```html
-<van-popup v-model:show="show" round position="bottom" :style="{ height: '30%' }" />
+<van-popup
+  v-model:show="show"
+  round
+  position="bottom"
+  :style="{ height: '30%' }"
+/>
 ```
 
 ### 指定挂载位置

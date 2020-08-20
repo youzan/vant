@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Popup } from 'vant';
 
-Vue.use(Popup);
+const app = createApp();
+app.use(Popup);
 ```
 
 ## Usage
@@ -72,7 +73,12 @@ Use `position` prop to set popup display position
 ### Round Corner
 
 ```html
-<van-popup v-model:show="show" round position="bottom" :style="{ height: '30%' }" />
+<van-popup
+  v-model:show="show"
+  round
+  position="bottom"
+  :style="{ height: '30%' }"
+/>
 ```
 
 ### Get Container

@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+const app = createApp();
+app.use(Swipe);
+app.use(SwipeItem);
 ```
 
 ## Usage
@@ -48,10 +49,11 @@ Use [Lazyload](#/en-US/lazyload) component to lazyload image.
 ```
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload);
+const app = createApp();
+app.use(Lazyload);
 
 export default {
   data() {

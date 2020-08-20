@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
+const app = createApp();
+app.use(Checkbox);
+app.use(CheckboxGroup);
 ```
 
 ## Usage

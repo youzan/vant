@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Image as VanImage } from 'vant';
 
-Vue.use(VanImage);
+const app = createApp();
+app.use(VanImage);
 ```
 
 ## 代码演示
@@ -63,10 +64,11 @@ Vue.use(VanImage);
 ```
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload);
+const app = createApp();
+app.use(Lazyload);
 ```
 
 ### 加载中提示

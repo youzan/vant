@@ -7,10 +7,11 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Sticky } from 'vant';
 
-Vue.use(Sticky);
+const app = createApp();
+app.use(Sticky);
 ```
 
 ## 代码演示

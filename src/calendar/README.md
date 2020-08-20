@@ -7,10 +7,11 @@ Calendar component for selecting dates or date ranges.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Calendar } from 'vant';
 
-Vue.use(Calendar);
+const app = createApp();
+app.use(Calendar);
 ```
 
 ## Usage

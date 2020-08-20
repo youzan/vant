@@ -21,11 +21,12 @@ Dialog({ message: '提示' });
 通过组件调用 Dialog 时，可以通过下面的方式进行注册：
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Dialog } from 'vant';
 
 // 全局注册
-Vue.use(Dialog);
+const app = createApp();
+app.use(Dialog);
 
 // 局部注册
 export default {

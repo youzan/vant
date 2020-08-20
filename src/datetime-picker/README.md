@@ -7,10 +7,11 @@ Used to select time, support date and time dimensions, usually used with the [Po
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { DatetimePicker } from 'vant';
 
-Vue.use(DatetimePicker);
+const app = createApp();
+app.use(DatetimePicker);
 ```
 
 ## Usage

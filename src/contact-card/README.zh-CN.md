@@ -7,12 +7,13 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue.use(ContactCard);
-Vue.use(ContactList);
-Vue.use(ContactEdit);
+const app = createApp();
+app.use(ContactCard);
+app.use(ContactList);
+app.use(ContactEdit);
 ```
 
 ## 代码演示

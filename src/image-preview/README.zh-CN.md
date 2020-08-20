@@ -19,11 +19,12 @@ ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
 通过组件调用 ImagePreview 时，可以通过下面的方式进行注册。
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ImagePreview } from 'vant';
 
 // 全局注册
-Vue.use(ImagePreview);
+const app = createApp();
+app.use(ImagePreview);
 
 // 局部注册
 export default {
@@ -112,7 +113,7 @@ setTimeout(() => {
 
 ### 组件调用
 
-如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件。
+如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `app.use` 注册组件。
 
 ```html
 <van-image-preview v-model="show" :images="images" @change="onChange">

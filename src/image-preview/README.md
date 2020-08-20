@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ImagePreview } from 'vant';
 
-Vue.use(ImagePreview);
+const app = createApp();
+app.use(ImagePreview);
 ```
 
 ## Usage

@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { SwipeCell } from 'vant';
 
-Vue.use(SwipeCell);
+const app = createApp();
+app.use(SwipeCell);
 ```
 
 ## Usage

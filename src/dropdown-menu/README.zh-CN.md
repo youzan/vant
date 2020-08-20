@@ -3,11 +3,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 
-Vue.use(DropdownMenu);
-Vue.use(DropdownItem);
+const app = createApp();
+app.use(DropdownMenu);
+app.use(DropdownItem);
 ```
 
 ## 代码演示

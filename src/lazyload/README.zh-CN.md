@@ -5,13 +5,14 @@
 `Lazyload` 是 `Vue` 指令，使用前需要对指令进行注册
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload);
+const app = createApp();
+app.use(Lazyload);
 
 // 注册时可以配置额外的选项
-Vue.use(Lazyload, {
+app.use(Lazyload, {
   lazyComponent: true,
 });
 ```
@@ -53,7 +54,7 @@ export default {
 
 ```js
 // 注册时设置`lazyComponent`选项
-Vue.use(Lazyload, {
+app.use(Lazyload, {
   lazyComponent: true,
 });
 ```

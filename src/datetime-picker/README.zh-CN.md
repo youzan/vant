@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { DatetimePicker } from 'vant';
 
-Vue.use(DatetimePicker);
+const app = createApp();
+app.use(DatetimePicker);
 ```
 
 ## 代码演示

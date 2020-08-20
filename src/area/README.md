@@ -7,10 +7,11 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Area } from 'vant';
 
-Vue.use(Area);
+const app = createApp();
+app.use(Area);
 ```
 
 ## Usage

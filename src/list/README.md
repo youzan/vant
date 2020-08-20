@@ -7,10 +7,11 @@ A list component to show items and control loading status.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { List } from 'vant';
 
-Vue.use(List);
+const app = createApp();
+app.use(List);
 ```
 
 ## Usage

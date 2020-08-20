@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell);
-Vue.use(CouponList);
+const app = createApp();
+app.use(CouponCell);
+app.use(CouponList);
 ```
 
 ## Usage

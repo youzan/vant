@@ -3,11 +3,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
-Vue.use(Sidebar);
-Vue.use(SidebarItem);
+const app = createApp();
+app.use(Sidebar);
+app.use(SidebarItem);
 ```
 
 ## 代码演示

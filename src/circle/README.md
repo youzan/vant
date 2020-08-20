@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Circle } from 'vant';
 
-Vue.use(Circle);
+const app = createApp();
+app.use(Circle);
 ```
 
 ## Usage
@@ -14,7 +15,12 @@ Vue.use(Circle);
 ### Basic Usage
 
 ```html
-<van-circle v-model:currentRate="currentRate" :rate="30" :speed="100" :text="text" />
+<van-circle
+  v-model:currentRate="currentRate"
+  :rate="30"
+  :speed="100"
+  :text="text"
+/>
 ```
 
 ```js

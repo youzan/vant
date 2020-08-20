@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ActionSheet } from 'vant';
 
-Vue.use(ActionSheet);
+const app = createApp();
+app.use(ActionSheet);
 ```
 
 ## 代码演示

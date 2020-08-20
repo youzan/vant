@@ -3,12 +3,13 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ActionBar, ActionBarIcon, ActionBarButton } from 'vant';
 
-Vue.use(ActionBar);
-Vue.use(ActionBarButton);
-Vue.use(ActionBarIcon);
+const app = createApp();
+app.use(ActionBar);
+app.use(ActionBarIcon);
+app.use(ActionBarButton);
 ```
 
 ## 代码演示

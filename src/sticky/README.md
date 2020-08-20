@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Sticky } from 'vant';
 
-Vue.use(Sticky);
+const app = createApp();
+app.use(Sticky);
 ```
 
 ## Usage

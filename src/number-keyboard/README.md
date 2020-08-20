@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { NumberKeyboard } from 'vant';
 
-Vue.use(NumberKeyboard);
+const app = createApp();
+app.use(NumberKeyboard);
 ```
 
 ## Usage

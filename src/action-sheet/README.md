@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ActionSheet } from 'vant';
 
-Vue.use(ActionSheet);
+const app = createApp();
+app.use(ActionSheet);
 ```
 
 ## Usage

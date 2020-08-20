@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Toast } from 'vant';
 
-Vue.use(Toast);
+const app = createApp();
+app.use(Toast);
 ```
 
 ## Usage
