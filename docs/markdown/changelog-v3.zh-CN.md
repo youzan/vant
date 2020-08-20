@@ -105,3 +105,11 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 ##### 废弃组件
 
 - SwitchCell: 移除此组件，可以直接使用 Cell 和 Switch 组件代替
+
+```html
+<van-cell center title="标题">
+  <template #right-icon>
+    <van-switch v-model="checked" size="24" />
+  </template>
+</van-cell>
+```
