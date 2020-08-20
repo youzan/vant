@@ -4,7 +4,7 @@ module.exports = [
   'cell',
   'cell-group',
   'icon',
-  'info',
+  'badge',
   'image',
   'col',
   'row',

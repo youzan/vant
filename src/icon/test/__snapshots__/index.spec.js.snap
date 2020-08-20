@@ -2,7 +2,7 @@
 
 exports[`dot prop 1`] = `
 <i class="van-icon van-icon-undefined">
-  <div class="van-info van-info--dot"></div>
+  <div class="van-badge van-badge--dot"></div>
 </i>
 `;
 

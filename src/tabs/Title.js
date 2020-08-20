@@ -1,5 +1,5 @@
 import { createNamespace, isDef } from '../utils';
-import Info from '../info';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('tab');
 
@@ -7,9 +7,9 @@ export default createComponent({
   props: {
     dot: Boolean,
     type: String,
-    info: [Number, String],
     color: String,
     title: String,
+    badge: [Number, String],
     isActive: Boolean,
     disabled: Boolean,
     scrollable: Boolean,
@@ -59,11 +59,11 @@ export default createComponent({
         </span>
       );
 
-      if (this.dot || (isDef(this.info) && this.info !== '')) {
+      if (this.dot || (isDef(this.badge) && this.badge !== '')) {
         return (
           <span class={bem('text-wrapper')}>
             {Text}
-            {<Info dot={this.dot} info={this.info} />}
+            {<Badge dot={this.dot} badge={this.badge} />}
           </span>
         );
       }

@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, isDef } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -58,8 +58,8 @@ export default createComponent({
       const Navs = items.map((item) => (
         <SidebarItem
           dot={item.dot}
-          info={isDef(item.badge) ? item.badge : item.info}
           title={item.text}
+          badge={item.badge}
           disabled={item.disabled}
           class={[bem('nav-item'), item.className]}
         />

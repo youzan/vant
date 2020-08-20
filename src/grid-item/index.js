@@ -7,8 +7,8 @@ import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 
 // Components
-import Info from '../info';
 import Icon from '../icon';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('grid-item');
 
@@ -75,7 +75,7 @@ export default createComponent({
         return (
           <div class={bem('icon-wrapper')}>
             {this.$slots.icon()}
-            <Info dot={this.dot} info={this.badge} />
+            <Badge dot={this.dot} badge={this.badge} />
           </div>
         );
       }
@@ -83,10 +83,10 @@ export default createComponent({
       if (this.icon) {
         return (
           <Icon
-            name={this.icon}
             dot={this.dot}
-            info={this.badge}
+            name={this.icon}
             size={this.parent.iconSize}
+            badge={this.badge}
             class={bem('icon')}
             classPrefix={this.iconPrefix}
           />

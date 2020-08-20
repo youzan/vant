@@ -71,10 +71,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-tree-select" style="height: 55vw;">
       <div class="van-sidebar van-tree-select__nav"><a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
-          <div class="van-sidebar-item__text">浙江<div class="van-info van-info--dot van-sidebar-item__info"></div>
+          <div class="van-sidebar-item__text">浙江<div class="van-badge van-badge--dot van-sidebar-item__badge"></div>
           </div>
         </a><a class="van-sidebar-item van-tree-select__nav-item">
-          <div class="van-sidebar-item__text">江苏<div class="van-info van-sidebar-item__info">5</div>
+          <div class="van-sidebar-item__text">江苏<div class="van-badge van-sidebar-item__badge">5</div>
           </div>
         </a></div>
       <div class="van-tree-select__content">

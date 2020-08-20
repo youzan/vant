@@ -27,17 +27,17 @@ exports[`renders demo correctly 1`] = `
     <div class="van-action-bar">
       <div role="button" tabindex="0" class="van-action-bar-icon">
         <div class="van-icon van-icon-chat-o van-action-bar-icon__icon">
-          <div class="van-info van-info--dot"></div>
+          <div class="van-badge van-badge--dot"></div>
         </div>客服
       </div>
       <div role="button" tabindex="0" class="van-action-bar-icon">
         <div class="van-icon van-icon-cart-o van-action-bar-icon__icon">
-          <div class="van-info">5</div>
+          <div class="van-badge">5</div>
         </div>购物车
       </div>
       <div role="button" tabindex="0" class="van-action-bar-icon">
         <div class="van-icon van-icon-shop-o van-action-bar-icon__icon">
-          <div class="van-info">12</div>
+          <div class="van-badge">12</div>
         </div>店铺
       </div> <button class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--warning">
         <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>

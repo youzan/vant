@@ -151,13 +151,13 @@ test('height prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('nav info', () => {
+test('nav badge', () => {
   const wrapper = mount(TreeSelect, {
     propsData: {
       items: [
         {
           text: 'group1',
-          info: 3,
+          badge: 3,
         },
       ],
     },

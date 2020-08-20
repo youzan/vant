@@ -24,14 +24,14 @@ exports[`Icon render icon slot 1`] = `
 
 exports[`Icon render icon slot with dot 1`] = `
 <div role="button" tabindex="0" class="van-action-bar-icon">
-  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-info van-info--dot"></div>
+  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-badge van-badge--dot"></div>
   </div>Text
 </div>
 `;
 
-exports[`Icon render icon slot with info 1`] = `
+exports[`Icon render icon slot with badge 1`] = `
 <div role="button" tabindex="0" class="van-action-bar-icon">
-  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-info">1</div>
+  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-badge">1</div>
   </div>Text
 </div>
 `;

@@ -373,7 +373,7 @@ export default createComponent({
           }}
           dot={item.dot}
           type={type}
-          info={isDef(item.badge) ? item.badge : item.info}
+          badge={item.badge}
           title={item.title}
           color={this.color}
           style={item.titleStyle}

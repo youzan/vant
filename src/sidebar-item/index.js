@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
-import Info from '../info';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('sidebar-item');
 
@@ -45,7 +45,7 @@ export default createComponent({
       >
         <div class={bem('text')}>
           {this.title}
-          <Info dot={this.dot} info={this.badge} class={bem('info')} />
+          <Badge dot={this.dot} badge={this.badge} class={bem('badge')} />
         </div>
       </a>
     );

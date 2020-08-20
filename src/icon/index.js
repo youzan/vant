@@ -1,8 +1,5 @@
-// Utils
 import { addUnit, createNamespace } from '../utils';
-
-// Components
-import Info from '../info';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('icon');
 
@@ -30,7 +27,7 @@ export default createComponent({
   render() {
     const { name } = this;
     const imageIcon = isImage(name);
-  
+
     return (
       <this.tag
         class={[
@@ -44,11 +41,8 @@ export default createComponent({
       >
         {this.$slots.default?.()}
         {imageIcon && <img class={bem('image')} src={name} />}
-        <Info
-          dot={this.dot}
-          info={this.badge}
-        />
+        <Badge dot={this.dot} badge={this.badge} />
       </this.tag>
     );
-  }
+  },
 });

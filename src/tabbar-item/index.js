@@ -7,7 +7,7 @@ import { ChildrenMixin } from '../mixins/relation';
 
 // Components
 import Icon from '../icon';
-import Info from '../info';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
 
@@ -19,7 +19,6 @@ export default createComponent({
     dot: Boolean,
     icon: String,
     name: [Number, String],
-    info: [Number, String],
     badge: [Number, String],
     iconPrefix: String,
   },
@@ -71,10 +70,7 @@ export default createComponent({
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
-          <Info
-            dot={this.dot}
-            info={isDef(this.badge) ? this.badge : this.info}
-          />
+          <Badge dot={this.dot} badge={this.badge} />
         </div>
         <div class={bem('text')}>
           {this.$slots.default ? this.$slots.default({ active }) : null}

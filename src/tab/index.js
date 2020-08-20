@@ -11,7 +11,6 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     name: [Number, String],
-    info: [Number, String],
     badge: [Number, String],
     title: String,
     titleStyle: null,

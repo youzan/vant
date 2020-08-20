@@ -246,11 +246,11 @@ test('dot prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('info prop', () => {
+test('badge prop', () => {
   const wrapper = mount({
     template: `
       <van-tabs>
-        <van-tab info="10">Text</van-tab>
+        <van-tab badge="10">Text</van-tab>
       </van-tabs>
     `,
   });
