@@ -90,10 +90,12 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - TreeSelect: `active-id.sync` 重命名为 `v-model:active-id`
 - TreeSelect: `main-active-index.sync` 重命名为 `v-model:main-active-index`
 
-### API 命名调整
+### API 调整
 
-以下改动是为了规范 API 命名：
-
+- Area: 移除 change 事件的第一个参数（picker 实例）
+- Picker: 移除 change 事件的第一个参数（picker 实例）
+- Picker: 默认开启 show-toolbar 属性
+- Picker: 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
 - SwipeCell: `open` 事件的 `detail` 参数重命名为 `name`
 - SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
 - Toast: `mask` 属性重命名为 `overlay`
@@ -133,13 +135,3 @@ export default {
   },
 };
 ```
-
-### Picker
-
-- 默认开启 show-toolbar 属性
-- 移除 change 事件的第一个参数（picker 实例）
-- 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
-
-### Area
-
-- 移除 change 事件的第一个参数（picker 实例）
