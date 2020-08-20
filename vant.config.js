@@ -54,6 +54,10 @@ module.exports = {
                 title: '更新日志',
               },
               {
+                path: 'migrate-from-v2',
+                title: '从 2.x 版本迁移',
+              },
+              {
                 path: 'theme',
                 title: '定制主题',
               },
