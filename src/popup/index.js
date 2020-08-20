@@ -299,12 +299,6 @@ export default createComponent({
       this.$emit('click-overlay');
 
       if (this.closeOnClickOverlay) {
-        // TODO
-        // if (this.onClickOverlay) {
-        //   this.onClickOverlay();
-        // } else {
-        //   this.close();
-        // }
         this.close();
       }
     },
