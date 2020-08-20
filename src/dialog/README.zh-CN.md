@@ -116,7 +116,7 @@ Dialog.confirm({
 
 ### 全局方法
 
-引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
+通过 `app.use` 注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
 
 ```js
 export default {

@@ -88,7 +88,7 @@ Dialog.confirm({
 
 ### Global Method
 
-After import the Dialog component, the `$dialog` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {

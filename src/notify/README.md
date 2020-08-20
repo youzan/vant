@@ -43,7 +43,7 @@ Notify({
 
 ### Global Method
 
-After import the Notify component, the `$notify` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Notify component through `app.use`, the `$notify` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {

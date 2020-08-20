@@ -77,7 +77,7 @@ const timer = setInterval(() => {
 
 ### Global Method
 
-After import the Toast component, the `$toast` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Toast component through `app.use`, the `$toast` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {

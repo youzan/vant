@@ -81,7 +81,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 <van-field :model-value="value" @update:model-value="onInput" />
 ```
 
-### 其他组件 v-model 调整
+### 其他 v-model 调整
 
 - Circle: `v-model` 重命名为 `v-model:currentRate`
 - CouponList: `v-model` 重命名为 `v-model:code`
@@ -113,3 +113,23 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - GoodsActionIcon
 
 同时内部使用的 Info 组件也会重命名为 Badge。
+
+### 注册全局方法
+
+Vant 2.x 中默认提供了 `$toast`、`$dialog` 等全局方法，但 Vue 3.0 不再支持直接在 Vue 的原型链上挂载方法，因此从 Vant 3.0 开始，使用全局方法前必须先通过 `app.use` 将组件注册到对应的 app 上。
+
+```js
+import { Toast, Dialog, Notify } from 'vant';
+
+// 将 Toast 等组件注册到 app 上
+app.use(Toast);
+app.use(Dialog);
+app.use(Notify);
+
+// app 内的子组件可以直接调用 $toast 等方法
+export default {
+  mounted() {
+    this.$toast('提示文案');
+  },
+};
+```
