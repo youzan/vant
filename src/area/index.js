@@ -299,7 +299,6 @@ export default createComponent({
         v-slots={this.pickerSlots}
         ref="picker"
         class={bem()}
-        showToolbar
         valueKey="name"
         title={this.title}
         loading={this.loading}

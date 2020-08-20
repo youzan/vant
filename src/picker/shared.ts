@@ -14,9 +14,12 @@ export const pickerProps = {
   title: String,
   loading: Boolean,
   itemHeight: [Number, String],
-  showToolbar: Boolean,
   cancelButtonText: String,
   confirmButtonText: String,
+  showToolbar: {
+    type: Boolean,
+    default: true,
+  },
   allowHtml: {
     type: Boolean,
     default: true,

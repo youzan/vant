@@ -20,7 +20,6 @@ app.use(Picker);
 
 ```html
 <van-picker
-  show-toolbar
   title="Title"
   :columns="columns"
   @confirm="onConfirm"
@@ -55,13 +54,13 @@ export default {
 ### Default Index
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" :default-index="2" />
+<van-picker title="Title" :columns="columns" :default-index="2" />
 ```
 
 ### Multiple Columns
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" />
+<van-picker title="Title" :columns="columns" />
 ```
 
 ```js
@@ -86,7 +85,7 @@ export default {
 ### Cascade
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" />
+<van-picker title="Title" :columns="columns" />
 ```
 
 ```js
@@ -129,7 +128,7 @@ export default {
 ### Disable option
 
 ```html
-<van-picker show-toolbar :columns="columns" />
+<van-picker :columns="columns" />
 ```
 
 ```js
@@ -149,13 +148,7 @@ export default {
 ### Set Column Values
 
 ```html
-<van-picker
-  ref="picker"
-  show-toolbar
-  title="Title"
-  :columns="columns"
-  @change="onChange"
-/>
+<van-picker ref="picker" title="Title" :columns="columns" @change="onChange" />
 ```
 
 ```js
@@ -183,7 +176,7 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" :loading="loading" />
+<van-picker title="Title" :columns="columns" :loading="loading" />
 ```
 
 ```js
@@ -217,7 +210,6 @@ export default {
 <van-popup v-model="showPicker" round position="bottom">
   <van-picker
     title="Title"
-    show-toolbar
     :columns="columns"
     @cancel="showPicker = false"
     @confirm="onConfirm"
@@ -256,7 +248,7 @@ export default {
 | value-key | Key of option text | _string_ | `text` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | _string_ | `top` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
-| show-toolbar | Whether to show toolbar | _boolean_ | `false` |
+| show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | allow-html `v2.1.8` | Whether to allow HTML in option text | _boolean_ | `true` |
 | default-index | Default value index of single column picker | _number \| string_ | `0` |
 | item-height `v2.8.6` | Option height, supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `44` |

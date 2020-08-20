@@ -16,7 +16,6 @@
         get-container="body"
       >
         <van-picker
-          show-toolbar
           :columns="t('textColumns')"
           @confirm="onConfirm"
           @cancel="onCancel"

@@ -2,7 +2,6 @@
   <demo-section>
     <demo-block card :title="t('basicUsage')">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('textColumns')"
         @change="onChange1"
@@ -11,7 +10,6 @@
 
     <demo-block card :title="t('defaultIndex')">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('textColumns')"
         :default-index="2"
@@ -21,7 +19,6 @@
 
     <demo-block card :title="t('multipleColumns')">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('dateColumns')"
         @cancel="onCancel"
@@ -31,7 +28,6 @@
 
     <demo-block card v-if="!isWeapp" :title="t('cascade')">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('cascadeColumns')"
       />
@@ -39,7 +35,6 @@
 
     <demo-block card :title="t('disableOption')">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('disabledColumns')"
       />
@@ -48,7 +43,6 @@
     <demo-block card :title="t('setColumnValues')">
       <van-picker
         ref="picker"
-        show-toolbar
         :title="t('title')"
         :columns="columns"
         @change="onChange2"
@@ -56,7 +50,7 @@
     </demo-block>
 
     <demo-block card :title="t('loadingStatus')">
-      <van-picker loading show-toolbar :title="t('title')" :columns="columns" />
+      <van-picker loading :title="t('title')" :columns="columns" />
     </demo-block>
 
     <demo-block card v-if="!isWeapp" :title="t('withPopup')">
@@ -70,7 +64,6 @@
       />
       <van-popup v-model:show="showPicker" round position="bottom">
         <van-picker
-          show-toolbar
           :title="t('title')"
           :columns="t('textColumns')"
           @cancel="onCancel2"

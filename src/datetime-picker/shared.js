@@ -7,15 +7,11 @@ export const sharedProps = {
   ...pickerProps,
   filter: Function,
   modelValue: null,
-  showToolbar: {
-    type: Boolean,
-    default: true,
-  },
+  columnsOrder: Array,
   formatter: {
     type: Function,
     default: (type, value) => value,
   },
-  columnsOrder: Array,
 };
 
 export const TimePickerMixin = {

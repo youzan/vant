@@ -138,7 +138,7 @@ test('column watch default index', async () => {
 test('render title slot', () => {
   const wrapper = mount({
     template: `
-      <picker show-toolbar>
+      <picker>
         <template v-slot:title>Custom title</template>
       </picker>
     `,

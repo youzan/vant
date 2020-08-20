@@ -284,7 +284,6 @@ export default {
 />
 <van-popup v-model="showPicker" position="bottom">
   <van-picker
-    show-toolbar
     :columns="columns"
     @confirm="onConfirm"
     @cancel="showPicker = false"
