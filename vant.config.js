@@ -355,10 +355,6 @@ module.exports = {
                 path: 'submit-bar',
                 title: 'SubmitBar 提交订单栏',
               },
-              // {
-              //   path: 'sku',
-              //   title: 'Sku 商品规格',
-              // },
             ],
           },
         ],
@@ -689,10 +685,6 @@ module.exports = {
                 path: 'submit-bar',
                 title: 'SubmitBar',
               },
-              // {
-              //   path: 'sku',
-              //   title: 'Sku',
-              // },
             ],
           },
         ],
