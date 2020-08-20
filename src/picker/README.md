@@ -42,7 +42,7 @@ export default {
     onConfirm(value, index) {
       Toast(`Value: ${value}, Index: ${index}`);
     },
-    onChange(picker, value, index) {
+    onChange(value, index) {
       Toast(`Value: ${value}, Index: ${index}`);
     },
     onCancel() {
@@ -149,7 +149,13 @@ export default {
 ### Set Column Values
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" @change="onChange" />
+<van-picker
+  ref="picker"
+  show-toolbar
+  title="Title"
+  :columns="columns"
+  @change="onChange"
+/>
 ```
 
 ```js
@@ -165,8 +171,8 @@ export default {
     };
   },
   methods: {
-    onChange(picker, values) {
-      picker.setColumnValues(1, states[values[0]]);
+    onChange(values) {
+      this.$refs.picker.setColumnValues(1, states[values[0]]);
     },
   },
 };

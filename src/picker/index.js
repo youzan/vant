@@ -137,12 +137,11 @@ export default createComponent({
       if (this.dataType === 'text') {
         this.$emit(
           'change',
-          this,
           this.getColumnValue(0),
           this.getColumnIndex(0)
         );
       } else {
-        this.$emit('change', this, this.getValues(), columnIndex);
+        this.$emit('change', this.getValues(), columnIndex);
       }
     },
 

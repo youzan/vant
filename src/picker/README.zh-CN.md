@@ -50,7 +50,7 @@ export default {
     onConfirm(value, index) {
       Toast(`当前值：${value}, 当前索引：${index}`);
     },
-    onChange(picker, value, index) {
+    onChange(value, index) {
       Toast(`当前值：${value}, 当前索引：${index}`);
     },
     onCancel() {
@@ -171,7 +171,7 @@ export default {
 通过 Picker 上的实例方法可以更灵活地控制选择器，比如使用`setColumnValues`方法实现多列联动
 
 ```html
-<van-picker show-toolbar :columns="columns" @change="onChange" />
+<van-picker ref="picker" show-toolbar :columns="columns" @change="onChange" />
 ```
 
 ```js
@@ -187,8 +187,8 @@ export default {
     };
   },
   methods: {
-    onChange(picker, values) {
-      picker.setColumnValues(1, cities[values[0]]);
+    onChange(values) {
+      this.$refs.picker.setColumnValues(1, cities[values[0]]);
     },
   },
 };
@@ -288,7 +288,7 @@ export default {
 | --- | --- | --- |
 | confirm | 点击完成按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
 | cancel | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
-| change | 选项改变时触发 | 单列：Picker 实例，选中值，选中值对应的索引<br>多列：Picker 实例，所有列选中值，当前列对应的索引 |
+| change | 选项改变时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，当前列对应的索引 |
 
 ### Slots
 

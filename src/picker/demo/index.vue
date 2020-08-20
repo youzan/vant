@@ -47,6 +47,7 @@
 
     <demo-block card :title="t('setColumnValues')">
       <van-picker
+        ref="picker"
         show-toolbar
         :title="t('title')"
         :columns="columns"
@@ -173,8 +174,8 @@ export default {
       this.$toast(this.t('toastContent', value, index));
     },
 
-    onChange2(picker, values) {
-      picker.setColumnValues(1, this.t('column3')[values[0]]);
+    onChange2(values) {
+      this.$refs.picker.setColumnValues(1, this.t('column3')[values[0]]);
     },
 
     onConfirm(value, index) {
