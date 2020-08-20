@@ -138,3 +138,7 @@ export default {
 
 - 移除 change 事件的第一个参数（picker 实例）
 - 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
+
+### Area
+
+- 移除 change 事件的第一个参数（picker 实例）

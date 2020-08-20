@@ -177,12 +177,13 @@ export default createComponent({
       });
     },
 
-    onChange(picker, values, index) {
+    onChange(values, index) {
+      const { picker } = this.$refs;
       this.code = values[index].code;
       this.setValues();
 
       const parsedValues = this.parseOutputValues(picker.getValues());
-      this.$emit('change', picker, parsedValues, index);
+      this.$emit('change', parsedValues, index);
     },
 
     onConfirm(values, index) {
