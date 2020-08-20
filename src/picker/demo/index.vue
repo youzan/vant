@@ -34,8 +34,6 @@
         show-toolbar
         :title="t('title')"
         :columns="t('cascadeColumns')"
-        @cancel="onCancel"
-        @confirm="onConfirm"
       />
     </demo-block>
 

@@ -133,3 +133,7 @@ export default {
   },
 };
 ```
+
+### Picker 参数调整
+
+在 Picker 的级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
