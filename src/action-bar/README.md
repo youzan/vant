@@ -1,14 +1,14 @@
-# GoodsAction
+# ActionBar
 
 ### Install
 
 ```js
 import Vue from 'vue';
-import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
+import { ActionBar, ActionBarIcon, ActionBarButton } from 'vant';
 
-Vue.use(GoodsAction);
-Vue.use(GoodsActionButton);
-Vue.use(GoodsActionIcon);
+Vue.use(ActionBar);
+Vue.use(ActionBarButton);
+Vue.use(ActionBarIcon);
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ Vue.use(GoodsActionIcon);
 ### Basic Usage
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="Icon1" @click="onClickIcon" />
-  <van-goods-action-icon icon="cart-o" text="Icon2" @click="onClickIcon" />
-  <van-goods-action-icon icon="shop-o" text="Icon3" @click="onClickIcon" />
-  <van-goods-action-button type="danger" text="Button" @click="onClickButton" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="Icon1" @click="onClickIcon" />
+  <van-action-bar-icon icon="cart-o" text="Icon2" @click="onClickIcon" />
+  <van-action-bar-icon icon="shop-o" text="Icon3" @click="onClickIcon" />
+  <van-action-bar-button type="danger" text="Button" @click="onClickButton" />
+</van-action-bar>
 ```
 
 ```js
@@ -44,47 +44,47 @@ export default {
 Use `badge` prop to show badge in icon
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="Icon1" dot />
-  <van-goods-action-icon icon="cart-o" text="Icon2" badge="5" />
-  <van-goods-action-icon icon="shop-o" text="Icon3" badge="12" />
-  <van-goods-action-button type="warning" text="Button" />
-  <van-goods-action-button type="danger" text="Button" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="Icon1" dot />
+  <van-action-bar-icon icon="cart-o" text="Icon2" badge="5" />
+  <van-action-bar-icon icon="shop-o" text="Icon3" badge="12" />
+  <van-action-bar-button type="warning" text="Button" />
+  <van-action-bar-button type="danger" text="Button" />
+</van-action-bar>
 ```
 
 ### Custom Icon Color
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="Icon1" color="#07c160" />
-  <van-goods-action-icon icon="cart-o" text="Icon2" />
-  <van-goods-action-icon icon="star" text="Collected" color="#ff5000" />
-  <van-goods-action-button type="warning" text="Button" />
-  <van-goods-action-button type="danger" text="Button" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="Icon1" color="#07c160" />
+  <van-action-bar-icon icon="cart-o" text="Icon2" />
+  <van-action-bar-icon icon="star" text="Collected" color="#ff5000" />
+  <van-action-bar-button type="warning" text="Button" />
+  <van-action-bar-button type="danger" text="Button" />
+</van-action-bar>
 ```
 
 ### Custom Button Color
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="Icon1" />
-  <van-goods-action-icon icon="shop-o" text="Icon2" />
-  <van-goods-action-button color="#be99ff" type="warning" text="Button" />
-  <van-goods-action-button color="#7232dd" type="danger" text="Button" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="Icon1" />
+  <van-action-bar-icon icon="shop-o" text="Icon2" />
+  <van-action-bar-button color="#be99ff" type="warning" text="Button" />
+  <van-action-bar-button color="#7232dd" type="danger" text="Button" />
+</van-action-bar>
 ```
 
 ## API
 
-### GoodsAction Props
+### ActionBar Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
-### GoodsActionIcon Props
+### ActionBarIcon Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -98,7 +98,7 @@ Use `badge` prop to show badge in icon
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
-### GoodsActionButton Props
+### ActionBarButton Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -113,14 +113,14 @@ Use `badge` prop to show badge in icon
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
-### GoodsActionIcon Slots
+### ActionBarIcon Slots
 
 | Name    | Description |
 | ------- | ----------- |
 | default | Text        |
 | icon    | Custom icon |
 
-### GoodsActionButton Slots
+### ActionBarButton Slots
 
 | Name    | Description    |
 | ------- | -------------- |

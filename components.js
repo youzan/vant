@@ -77,9 +77,9 @@ module.exports = [
   'coupon-list',
   'coupon-cell',
   'submit-bar',
-  'goods-action',
-  'goods-action-icon',
-  'goods-action-button',
+  'action-bar',
+  'action-bar-icon',
+  'action-bar-button',
   'address-edit',
   'form',
 ];

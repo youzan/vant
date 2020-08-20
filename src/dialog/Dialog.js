@@ -2,8 +2,8 @@ import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import Popup from '../popup';
 import Button from '../button';
-import GoodsAction from '../goods-action';
-import GoodsActionButton from '../goods-action-button';
+import ActionBar from '../action-bar';
+import ActionBarButton from '../action-bar-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
@@ -107,9 +107,9 @@ export default createComponent({
 
     genRoundButtons() {
       return (
-        <GoodsAction class={bem('footer')}>
+        <ActionBar class={bem('footer')}>
           {this.showCancelButton && (
-            <GoodsActionButton
+            <ActionBarButton
               size="large"
               type="warning"
               text={this.cancelButtonText || t('cancel')}
@@ -122,7 +122,7 @@ export default createComponent({
             />
           )}
           {this.showConfirmButton && (
-            <GoodsActionButton
+            <ActionBarButton
               size="large"
               type="danger"
               text={this.confirmButtonText || t('confirm')}
@@ -134,7 +134,7 @@ export default createComponent({
               }}
             />
           )}
-        </GoodsAction>
+        </ActionBar>
       );
     },
 

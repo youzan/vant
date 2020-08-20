@@ -4,10 +4,10 @@ import { ChildrenMixin } from '../mixins/relation';
 import Info from '../info';
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('goods-action-icon');
+const [createComponent, bem] = createNamespace('action-bar-icon');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanGoodsAction')],
+  mixins: [ChildrenMixin('vanActionBar')],
 
   props: {
     ...routeProps,

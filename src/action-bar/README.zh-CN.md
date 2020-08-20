@@ -1,14 +1,14 @@
-# GoodsAction 商品导航
+# ActionBar 动作栏
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
+import { ActionBar, ActionBarIcon, ActionBarButton } from 'vant';
 
-Vue.use(GoodsAction);
-Vue.use(GoodsActionButton);
-Vue.use(GoodsActionIcon);
+Vue.use(ActionBar);
+Vue.use(ActionBarButton);
+Vue.use(ActionBarIcon);
 ```
 
 ## 代码演示
@@ -16,16 +16,12 @@ Vue.use(GoodsActionIcon);
 ### 基础用法
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" @click="onClickIcon" />
-  <van-goods-action-icon icon="cart-o" text="购物车" @click="onClickIcon" />
-  <van-goods-action-icon icon="shop-o" text="店铺" @click="onClickIcon" />
-  <van-goods-action-button
-    type="danger"
-    text="立即购买"
-    @click="onClickButton"
-  />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="客服" @click="onClickIcon" />
+  <van-action-bar-icon icon="cart-o" text="购物车" @click="onClickIcon" />
+  <van-action-bar-icon icon="shop-o" text="店铺" @click="onClickIcon" />
+  <van-action-bar-button type="danger" text="立即购买" @click="onClickButton" />
+</van-action-bar>
 ```
 
 ```js
@@ -45,54 +41,54 @@ export default {
 
 ### 徽标提示
 
-在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
+在 ActionBarIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" dot />
-  <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
-  <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
-  <van-goods-action-button type="warning" text="加入购物车" />
-  <van-goods-action-button type="danger" text="立即购买" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="客服" dot />
+  <van-action-bar-icon icon="cart-o" text="购物车" badge="5" />
+  <van-action-bar-icon icon="shop-o" text="店铺" badge="12" />
+  <van-action-bar-button type="warning" text="加入购物车" />
+  <van-action-bar-button type="danger" text="立即购买" />
+</van-action-bar>
 ```
 
 ### 自定义图标颜色
 
-通过 GoodsActionIcon 的`color`属性可以自定义图标的颜色
+通过 ActionBarIcon 的`color`属性可以自定义图标的颜色
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" color="#07c160" />
-  <van-goods-action-icon icon="cart-o" text="购物车" />
-  <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
-  <van-goods-action-button type="warning" text="加入购物车" />
-  <van-goods-action-button type="danger" text="立即购买" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="客服" color="#07c160" />
+  <van-action-bar-icon icon="cart-o" text="购物车" />
+  <van-action-bar-icon icon="star" text="已收藏" color="#ff5000" />
+  <van-action-bar-button type="warning" text="加入购物车" />
+  <van-action-bar-button type="danger" text="立即购买" />
+</van-action-bar>
 ```
 
 ### 自定义按钮颜色
 
-通过 GoodsActionButton 的`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+通过 ActionBarButton 的`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
 
 ```html
-<van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" />
-  <van-goods-action-icon icon="shop-o" text="店铺" />
-  <van-goods-action-button color="#be99ff" type="warning" text="加入购物车" />
-  <van-goods-action-button color="#7232dd" type="danger" text="立即购买" />
-</van-goods-action>
+<van-action-bar>
+  <van-action-bar-icon icon="chat-o" text="客服" />
+  <van-action-bar-icon icon="shop-o" text="店铺" />
+  <van-action-bar-button color="#be99ff" type="warning" text="加入购物车" />
+  <van-action-bar-button color="#7232dd" type="danger" text="立即购买" />
+</van-action-bar>
 ```
 
 ## API
 
-### GoodsAction Props
+### ActionBar Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
-### GoodsActionIcon Props
+### ActionBarIcon Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -107,7 +103,7 @@ export default {
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
-### GoodsActionButton Props
+### ActionBarButton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -121,14 +117,14 @@ export default {
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
-### GoodsActionIcon Slots
+### ActionBarIcon Slots
 
 | 名称    | 说明       |
 | ------- | ---------- |
 | default | 文本内容   |
 | icon    | 自定义图标 |
 
-### GoodsActionButton Slots
+### ActionBarButton Slots
 
 | 名称    | 说明         |
 | ------- | ------------ |

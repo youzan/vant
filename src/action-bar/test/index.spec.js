@@ -1,6 +1,6 @@
-import GoodsAction from '..';
-import Button from '../../goods-action-button';
-import Icon from '../../goods-action-icon';
+import ActionBar from '..';
+import Button from '../../action-bar-button';
+import Icon from '../../action-bar-icon';
 import { mount } from '../../../test';
 
 test('Button click event', () => {
@@ -87,7 +87,7 @@ test('Icon render icon slot with dot', () => {
 });
 
 test('disable safe-area-inset-bottom prop', () => {
-  const wrapper = mount(GoodsAction, {
+  const wrapper = mount(ActionBar, {
     propsData: {
       safeAreaInsetBottom: false,
     },

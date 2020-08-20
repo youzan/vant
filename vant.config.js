@@ -287,6 +287,10 @@ module.exports = {
             title: '导航组件',
             items: [
               {
+                path: 'action-bar',
+                title: 'ActionBar 动作栏',
+              },
+              {
                 path: 'grid',
                 title: 'Grid 宫格',
               },
@@ -346,10 +350,6 @@ module.exports = {
               {
                 path: 'coupon-list',
                 title: 'Coupon 优惠券',
-              },
-              {
-                path: 'goods-action',
-                title: 'GoodsAction 商品导航',
               },
               {
                 path: 'submit-bar',
@@ -621,6 +621,10 @@ module.exports = {
             title: 'Navigation Components',
             items: [
               {
+                path: 'action-bar',
+                title: 'ActionBar',
+              },
+              {
                 path: 'grid',
                 title: 'Grid',
               },
@@ -680,10 +684,6 @@ module.exports = {
               {
                 path: 'coupon-list',
                 title: 'Coupon',
-              },
-              {
-                path: 'goods-action',
-                title: 'GoodsAction',
               },
               {
                 path: 'submit-bar',

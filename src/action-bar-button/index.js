@@ -3,10 +3,10 @@ import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 import Button from '../button';
 
-const [createComponent, bem] = createNamespace('goods-action-button');
+const [createComponent, bem] = createNamespace('action-bar-button');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanGoodsAction')],
+  mixins: [ChildrenMixin('vanActionBar')],
 
   props: {
     ...routeProps,
