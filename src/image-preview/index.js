@@ -65,20 +65,6 @@ function initInstance() {
   }).mount(root);
 }
 
-// const initInstance = () => {
-//   instance.$on('change', (index) => {
-//     if (instance.onChange) {
-//       instance.onChange(index);
-//     }
-//   });
-
-//   instance.$on('scale', (data) => {
-//     if (instance.onScale) {
-//       instance.onScale(data);
-//     }
-//   });
-// };
-
 const ImagePreview = (images, startPosition = 0) => {
   /* istanbul ignore if */
   if (!inBrowser) {
@@ -99,11 +85,6 @@ const ImagePreview = (images, startPosition = 0) => {
   nextTick(() => {
     instance.toggle(true);
   });
-
-  // if (options.onClose) {
-  //   instance.$off('close');
-  //   instance.$once('close', options.onClose);
-  // }
 
   return instance;
 };
