@@ -27,11 +27,11 @@ export default createComponent({
     show: Boolean,
     title: String,
     color: String,
+    teleport: [String, Object],
     formatter: Function,
     confirmText: String,
     rangePrompt: String,
     defaultDate: [Date, Array],
-    getContainer: [String, Function],
     allowSameDay: Boolean,
     confirmDisabledText: String,
     type: {
@@ -487,7 +487,7 @@ export default createComponent({
           round={this.round}
           position={this.position}
           closeable={this.showTitle || this.showSubtitle}
-          getContainer={this.getContainer}
+          teleport={this.teleport}
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
           {...listeners}

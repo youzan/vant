@@ -1,35 +1,35 @@
-function getElement(selector) {
-  if (typeof selector === 'string') {
-    return document.querySelector(selector);
+function getElement(teleport) {
+  if (typeof teleport === 'string') {
+    return document.querySelector(teleport);
   }
 
-  return selector();
+  return teleport;
 }
 
 export function PortalMixin({ ref, afterPortal } = {}) {
   return {
     props: {
-      getContainer: [String, Function],
+      teleport: [String, Object],
     },
 
     watch: {
-      getContainer: 'portal',
+      teleport: 'portal',
     },
 
     mounted() {
-      if (this.getContainer) {
+      if (this.teleport) {
         this.portal();
       }
     },
 
     methods: {
       portal() {
-        const { getContainer } = this;
+        const { teleport } = this;
         const el = ref ? this.$refs[ref] : this.$el;
 
         let container;
-        if (getContainer) {
-          container = getElement(getContainer);
+        if (teleport) {
+          container = getElement(teleport);
         } else if (this.$parent) {
           container = this.$parent.$el;
         }

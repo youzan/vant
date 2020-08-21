@@ -159,7 +159,7 @@ export default {
 | allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
 | transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
-| getContainer | Return the mount node for Dialog | _string \| () => Element_ | `body` |
+| teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
 
 ### Props
 
@@ -187,7 +187,7 @@ export default {
 | allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
 | transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
-| get-container | Return the mount node for Dialog | _string \| () => Element_ | - |
+| teleport | Return the mount node for Dialog | _string \| Element_ | - |
 
 ### Events
 

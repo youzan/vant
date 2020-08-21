@@ -84,15 +84,15 @@
       />
     </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('getContainer')">
+    <demo-block card v-if="!isWeapp" :title="t('teleport')">
       <van-cell
-        :title="t('getContainer')"
+        :title="t('teleport')"
         is-link
         @click="showGetContainer = true"
       />
       <van-popup
         v-model:show="showGetContainer"
-        get-container="body"
+        teleport="body"
         :style="{ padding: '30px 50px' }"
       />
     </demo-block>
@@ -109,7 +109,7 @@ export default {
       buttonBottom: '底部弹出',
       buttonLeft: '左侧弹出',
       buttonRight: '右侧弹出',
-      getContainer: '指定挂载节点',
+      teleport: '指定挂载节点',
       roundCorner: '圆角弹窗',
       closeIcon: '关闭图标',
       customCloseIcon: '自定义图标',
@@ -122,7 +122,7 @@ export default {
       buttonBottom: 'From Bottom',
       buttonLeft: 'From Left',
       buttonRight: 'From Right',
-      getContainer: 'Get Container',
+      teleport: 'Get Container',
       roundCorner: 'Round Corner',
       closeIcon: 'Close Icon',
       customCloseIcon: 'Custom Icon',

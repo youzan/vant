@@ -336,7 +336,7 @@ test('ImagePreview.Component', () => {
 test('get container with function call ', async (done) => {
   const element = document.createElement('div');
   document.body.appendChild(element);
-  ImagePreview({ images, getContainer: () => element });
+  ImagePreview({ images, teleport: element });
 
   await Vue.nextTick();
   const wrapperDiv = document.querySelector('.van-image-preview');
@@ -358,22 +358,22 @@ test('get container with component call', () => {
   const wrapper = mount({
     template: `
     <div>
-      <van-image-preview :value="true" :get-container="getContainer">
+      <van-image-preview :value="true" :teleport="teleport">
       </van-image-preview>
     </div>
     `,
     data() {
       return {
-        getContainer: () => div1,
+        teleport: () => div1,
       };
     },
   });
   const imageView = wrapper.find('.van-image-preview').element;
 
   expect(imageView.parentNode).toEqual(div1);
-  wrapper.vm.getContainer = () => div2;
+  wrapper.vm.teleport = () => div2;
   expect(imageView.parentNode).toEqual(div2);
-  wrapper.vm.getContainer = null;
+  wrapper.vm.teleport = null;
   expect(wrapper.element).toEqual(wrapper.element);
 });
 

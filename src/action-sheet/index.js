@@ -14,9 +14,9 @@ export default createComponent({
     title: String,
     actions: Array,
     duration: [Number, String],
+    teleport: [String, Object],
     cancelText: String,
     description: String,
-    getContainer: [String, Function],
     closeOnPopstate: Boolean,
     closeOnClickAction: Boolean,
     round: {
@@ -163,7 +163,7 @@ export default createComponent({
           duration={props.duration}
           lazyRender={props.lazyRender}
           lockScroll={props.lockScroll}
-          getContainer={props.getContainer}
+          teleport={props.teleport}
           closeOnPopstate={props.closeOnPopstate}
           closeOnClickOverlay={props.closeOnClickOverlay}
           safeAreaInsetBottom={props.safeAreaInsetBottom}

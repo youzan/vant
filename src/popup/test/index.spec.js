@@ -53,7 +53,7 @@ test('get container with parent', () => {
   wrapper = mount({
     template: `
       <div>
-        <popup :value="true" :get-container="getContainer" />
+        <popup :value="true" :teleport="teleport" />
       </div>
     `,
     components: {
@@ -61,16 +61,16 @@ test('get container with parent', () => {
     },
     data() {
       return {
-        getContainer: () => div1,
+        teleport: div1,
       };
     },
   });
   const popup = wrapper.find('.van-popup').element;
 
   expect(popup.parentNode).toEqual(div1);
-  wrapper.vm.getContainer = () => div2;
+  wrapper.vm.teleport = () => div2;
   expect(popup.parentNode).toEqual(div2);
-  wrapper.vm.getContainer = null;
+  wrapper.vm.teleport = null;
   expect(popup.parentNode).toEqual(wrapper.element);
 });
 
@@ -78,8 +78,8 @@ test('get container with selector', () => {
   wrapper = mount({
     template: `
       <div>
-        <popup class="get-container-selector-1" :value="true" get-container="body"></popup>
-        <popup class="get-container-selector-2" :value="true" get-container="unknown"></popup>
+        <popup class="teleport-selector-1" :value="true" teleport="body"></popup>
+        <popup class="teleport-selector-2" :value="true" teleport="unknown"></popup>
       </div>
     `,
     components: {
@@ -87,8 +87,8 @@ test('get container with selector', () => {
     },
   });
 
-  const dom1 = document.querySelector('.get-container-selector-1');
-  const dom2 = wrapper.vm.$el.querySelector('.get-container-selector-2');
+  const dom1 = document.querySelector('.teleport-selector-1');
+  const dom2 = wrapper.vm.$el.querySelector('.teleport-selector-2');
 
   expect(dom1.parentNode).toEqual(document.body);
   expect(dom2.parentNode).toEqual(wrapper.vm.$el);
@@ -99,7 +99,7 @@ test('render overlay', async () => {
   wrapper = mount({
     template: `
       <div>
-        <popup :value="true" :get-container="getContainer" />
+        <popup :value="true" :teleport="teleport" />
       </div>
     `,
     components: {
@@ -107,7 +107,7 @@ test('render overlay', async () => {
     },
     data() {
       return {
-        getContainer: () => div,
+        teleport: () => div,
       };
     },
   });
@@ -122,7 +122,7 @@ test('watch overlay prop', async () => {
   wrapper = mount({
     template: `
       <div>
-        <popup :value="show" :overlay="overlay" :get-container="getContainer" />
+        <popup :value="show" :overlay="overlay" :teleport="teleport" />
       </div>
     `,
     components: {
@@ -132,7 +132,7 @@ test('watch overlay prop', async () => {
       return {
         show: false,
         overlay: false,
-        getContainer: () => div,
+        teleport: () => div,
       };
     },
   });
@@ -158,7 +158,7 @@ test('close on click overlay', async () => {
       <div>
         <popup
           v-model="value"
-          :get-container="getContainer"
+          :teleport="teleport"
           @click-overlay="onClickOverlay"
         />
       </div>
@@ -169,7 +169,7 @@ test('close on click overlay', async () => {
     data() {
       return {
         value: true,
-        getContainer: () => div,
+        teleport: () => div,
       };
     },
     methods: {

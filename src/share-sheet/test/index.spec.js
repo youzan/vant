@@ -89,7 +89,7 @@ test('click-overlay event', async () => {
   const wrapper = mount(ShareSheet, {
     propsData: {
       value: true,
-      getContainer: () => root,
+      teleport: root,
     },
   });
 

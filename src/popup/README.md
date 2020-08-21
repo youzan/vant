@@ -83,30 +83,28 @@ Use `position` prop to set popup display position
 
 ### Get Container
 
-Use `get-container` prop to specify mount location
+Use `teleport` prop to specify mount location
 
 ```html
 <!-- mount to body -->
-<van-popup v-model:show="show" get-container="body" />
+<van-popup v-model:show="show" teleport="body" />
 
 <!-- mount to #app -->
-<van-popup v-model:show="show" get-container="#app" />
+<van-popup v-model:show="show" teleport="#app" />
 
-<!-- Specify the mount location by function -->
-<van-popup v-model:show="show" :get-container="getContainer" />
+<!-- mount to Element -->
+<van-popup v-model:show="show" :teleport="myContainer" />
 ```
 
 ```js
 export default {
-  methods: {
-    getContainer() {
-      return document.querySelector('.my-container');
-    },
+  beforeCreate() {
+    this.myContainer = document.querySelector('.my-container');
   },
 };
 ```
 
-> Tips: The get-container prop cannot be used on the root node
+> Tips: The teleport prop cannot be used on the root node
 
 ## API
 
@@ -129,7 +127,7 @@ export default {
 | close-icon `v2.2.0` | Close icon name | _string_ | `cross` |
 | close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
-| get-container | Return the mount node for Popup | _string \| () => Element_ | - |
+| teleport | Return the mount node for Popup | _string \| Element_ | - |
 | safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events

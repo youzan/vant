@@ -51,7 +51,7 @@ test('click overlay and close', async () => {
       <div>
         <action-sheet
           :value="true"
-          :get-container="getContainer"
+          :teleport="teleport"
           @input="onInput"
           @click-overlay="onClickOverlay"
         />
@@ -62,7 +62,7 @@ test('click overlay and close', async () => {
     },
     data() {
       return {
-        getContainer: () => div,
+        teleport: () => div,
       };
     },
     methods: {
@@ -110,7 +110,7 @@ test('get container', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
-      getContainer: 'body',
+      teleport: 'body',
     },
   });
 

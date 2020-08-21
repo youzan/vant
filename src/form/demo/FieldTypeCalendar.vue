@@ -12,7 +12,7 @@
       <van-calendar
         v-model:show="showCalendar"
         round
-        get-container="body"
+        teleport="body"
         @confirm="onConfirm"
       />
     </template>

@@ -9,9 +9,9 @@ export default createComponent({
     color: String,
     message: [Number, String],
     duration: [Number, String],
+    teleport: [String, Object],
     className: null,
     background: String,
-    getContainer: [String, Function],
     type: {
       type: String,
       default: 'danger',

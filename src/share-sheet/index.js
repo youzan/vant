@@ -13,9 +13,9 @@ export default createComponent({
     ...popupSharedProps,
     title: String,
     duration: [Number, String],
+    teleport: [String, Object],
     cancelText: String,
     description: String,
-    getContainer: [String, Function],
     options: {
       type: Array,
       default: () => [],
@@ -141,7 +141,7 @@ export default createComponent({
         duration={this.duration}
         lazyRender={this.lazyRender}
         lockScroll={this.lockScroll}
-        getContainer={this.getContainer}
+        teleport={this.teleport}
         closeOnPopstate={this.closeOnPopstate}
         closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}

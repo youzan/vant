@@ -93,31 +93,28 @@ export default {
 
 ### 指定挂载位置
 
-弹出层默认挂载到组件所在位置，可以通过`get-container`属性指定挂载位置
+弹出层默认挂载到组件所在位置，可以通过`teleport`属性指定挂载位置
 
 ```html
 <!-- 挂载到 body 节点下 -->
-<van-popup v-model:show="show" get-container="body" />
+<van-popup v-model:show="show" teleport="body" />
 
 <!-- 挂载到 #app 节点下 -->
-<van-popup v-model:show="show" get-container="#app" />
+<van-popup v-model:show="show" teleport="#app" />
 
-<!-- 通过函数指定挂载位置 -->
-<van-popup v-model:show="show" :get-container="getContainer" />
+<!-- 挂载到指定的元素下 -->
+<van-popup v-model:show="show" :teleport="myContainer" />
 ```
 
 ```js
 export default {
-  methods: {
-    // 返回一个特定的 DOM 节点，作为挂载的父节点
-    getContainer() {
-      return document.querySelector('.my-container');
-    },
+  beforeCreate() {
+    this.myContainer = document.querySelector('.my-container');
   },
 };
 ```
 
-> 注意：使用 get-container 属性的组件不能为根节点
+> 注意：使用 teleport 属性的组件不能为根节点
 
 ## API
 
@@ -140,7 +137,7 @@ export default {
 | close-icon `v2.2.0` | 关闭图标名称或图片链接 | _string_ | `cross` |
 | close-icon-position `v2.2.2` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
-| get-container | 指定挂载的节点 | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点 | _string \| Element_ | - |
 | safe-area-inset-bottom `v2.2.1` | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
 
 ### Events

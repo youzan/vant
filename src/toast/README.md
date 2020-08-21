@@ -154,4 +154,4 @@ Toast.resetDefaultOptions('loading');
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
 | transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
-| getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |
+| teleport | Return the mount node for Toast | _string \| Element_ | `body` |

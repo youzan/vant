@@ -13,7 +13,7 @@
         v-model:show="showPicker"
         round
         position="bottom"
-        get-container="body"
+        teleport="body"
       >
         <van-datetime-picker
           type="time"

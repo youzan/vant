@@ -147,7 +147,7 @@ export default {
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
 | lazy-render `v2.8.5` | 是否在首次展开时才渲染菜单内容 | _boolean_ | `true` |
 | title-class | 标题额外类名 | _string_ | - |
-| get-container `v2.2.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport `v2.2.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### DropdownItem Events
 

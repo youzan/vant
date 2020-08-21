@@ -7,13 +7,13 @@
 GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 
 ```html
-<!-- Before -->
+<!-- Vant 2 -->
 <van-goods-action>
   <van-goods-action-icon text="图标" />
   <van-goods-action-button text="按钮" />
 </van-goods-action>
 
-<!-- After -->
+<!-- Vant 3 -->
 <van-action-bar>
   <van-action-bar-icon text="图标" />
   <van-action-bar-button text="按钮" />
@@ -25,10 +25,10 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 移除 SwitchCell 组件，可以直接使用 Cell 和 Switch 组件代替。
 
 ```html
-<!-- Before -->
+<!-- Vant 2 -->
 <van-switch-cell title="标题" v-model="checked" />
 
-<!-- After -->
+<!-- Vant 3 -->
 <van-cell center title="标题">
   <template #right-icon>
     <van-switch v-model="checked" size="24" />
@@ -38,9 +38,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 
 ### 弹窗型组件 v-model 变更
 
-为了适配 Vue 3 的 v-model API 用法变更，所有提供 v-model 属性的组件在用法上有一定调整。
-
-以下弹窗类组件的 `v-model` 被重命名为 `v-model:show`：
+为了适配 Vue 3 的 v-model API 用法变更，所有提供 v-model 属性的组件在用法上有一定调整。以下弹窗类组件的 `v-model` 被重命名为 `v-model:show`：
 
 - ActionSheet
 - Calendar
@@ -51,9 +49,9 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - ShareSheet
 
 ```html
-<!-- before -->
+<!-- Vant 2 -->
 <van-popup v-model="show" />
-<!-- after -->
+<!-- Vant 3 -->
 <van-popup v-model:show="show" />
 ```
 
@@ -75,9 +73,9 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - Uploader
 
 ```html
-<!-- before -->
+<!-- Vant 2 -->
 <van-field :value="value" @input="onInput" />
-<!-- after -->
+<!-- Vant 3 -->
 <van-field :model-value="value" @update:model-value="onInput" />
 ```
 
@@ -89,20 +87,6 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - Tabs: `v-model` 重命名为 `v-model:active`
 - TreeSelect: `active-id.sync` 重命名为 `v-model:active-id`
 - TreeSelect: `main-active-index.sync` 重命名为 `v-model:main-active-index`
-
-### API 调整
-
-- Area: 移除 change 事件的第一个参数（picker 实例）
-- Button: 蓝色按钮对应的类型由 `info` 调整为 `primary`
-- Button: 绿色按钮对应的类型由 `primary` 调整为 `success`
-- Picker: 移除 change 事件的第一个参数（picker 实例）
-- Picker: 默认开启 show-toolbar 属性
-- Picker: 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
-- SwipeCell: `open` 事件的 `detail` 参数重命名为 `name`
-- SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
-- Toast: `mask` 属性重命名为 `overlay`
-- TreeSelect: `navclick` 事件重命名为 `click-nav`
-- TreeSelect: `itemclick` 事件重命名为 `click-item`
 
 ### 徽标属性命名调整
 
@@ -117,6 +101,54 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - GoodsActionIcon
 
 同时内部使用的 Info 组件也会重命名为 Badge。
+
+### 重命名 get-container 属性
+
+Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位置的能力，Vant 2.x 也通过 `get-container` 属性提供了类似的能力。为了与官方的 API 保持一致，Vant 中的 `get-container` 属性将重命名为 `teleport`。
+
+```html
+<!-- Vant 2 -->
+<template>
+  <van-popup get-container="body" />
+  <van-popup :get-container="getContainer" />
+</template>
+<script>
+  export default {
+    methods: {
+      getContainer() {
+        return document.querySelector('#container');
+      },
+    },
+  };
+</script>
+
+<!-- Vant 3 -->
+<template>
+  <van-popup teleport="body" />
+  <van-popup :teleport="container" />
+</template>
+<script>
+  export default {
+    beforeCreate() {
+      this.container = document.querySelector('#container');
+    },
+  };
+</script>
+```
+
+### API 调整
+
+- Area: 移除 change 事件的第一个参数（picker 实例）
+- Button: 蓝色按钮对应的类型由 `info` 调整为 `primary`
+- Button: 绿色按钮对应的类型由 `primary` 调整为 `success`
+- Picker: 移除 change 事件的第一个参数（picker 实例）
+- Picker: 默认开启 show-toolbar 属性
+- Picker: 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
+- SwipeCell: `open` 事件的 `detail` 参数重命名为 `name`
+- SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
+- Toast: `mask` 属性重命名为 `overlay`
+- TreeSelect: `navclick` 事件重命名为 `click-nav`
+- TreeSelect: `itemclick` 事件重命名为 `click-item`
 
 ### 注册全局方法
 

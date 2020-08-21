@@ -388,9 +388,9 @@ export default createComponent({
         <Popup
           show={this.showAreaPopup}
           round
+          teleport="body"
           position="bottom"
           lazyRender={false}
-          getContainer="body"
           {...{
             'onUpdate:modelValue': (value) => {
               this.showAreaPopup = value;

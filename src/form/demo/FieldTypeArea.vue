@@ -13,7 +13,7 @@
         v-model:show="showArea"
         round
         position="bottom"
-        get-container="body"
+        teleport="body"
       >
         <van-area
           :area-list="t('areaList')"

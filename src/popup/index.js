@@ -33,7 +33,7 @@ export const popupSharedProps = {
   // overlay custom class name
   overlayClass: String,
   // teleport
-  getContainer: [String, Function],
+  teleport: [String, Object],
   // whether to close popup when click overlay
   closeOnClickOverlay: Boolean,
   // z-index
@@ -319,9 +319,9 @@ export default createComponent({
   },
 
   render() {
-    const { getContainer } = this;
-    if (getContainer) {
-      const to = isFunction(getContainer) ? getContainer() : getContainer;
+    const { teleport } = this;
+    if (teleport) {
+      const to = isFunction(teleport) ? teleport() : teleport;
       return (
         <Teleport to={to}>
           {this.genOverlay()}
