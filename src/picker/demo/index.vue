@@ -27,17 +27,11 @@
     </demo-block>
 
     <demo-block card v-if="!isWeapp" :title="t('cascade')">
-      <van-picker
-        :title="t('title')"
-        :columns="t('cascadeColumns')"
-      />
+      <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
     </demo-block>
 
     <demo-block card :title="t('disableOption')">
-      <van-picker
-        :title="t('title')"
-        :columns="t('disabledColumns')"
-      />
+      <van-picker :title="t('title')" :columns="t('disabledColumns')" />
     </demo-block>
 
     <demo-block card :title="t('setColumnValues')">

@@ -4,12 +4,13 @@ export { createNamespace } from './create';
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
-export const inBrowser = typeof window !== 'undefined'
+export const inBrowser = typeof window !== 'undefined';
 
 export function isDef(val: unknown): boolean {
   return val !== undefined && val !== null;
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function isFunction(val: unknown): val is Function {
   return typeof val === 'function';
 }

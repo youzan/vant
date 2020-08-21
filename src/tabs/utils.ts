@@ -29,7 +29,7 @@ export function scrollTopTo(
   scroller: HTMLElement,
   to: number,
   duration: number,
-  callback: Function
+  callback: () => void
 ) {
   let current = getScrollTop(scroller);
 
