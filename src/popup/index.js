@@ -164,6 +164,7 @@ export default createComponent({
             class={this.overlayClass}
             style={this.overlayStyle}
             zIndex={this.currentZIndex}
+            duration={this.duration}
             onClick={this.onClickOverlay}
           />
         );
