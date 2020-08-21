@@ -54,10 +54,11 @@ yarn add vant
 ## Quickstart
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Button } from 'vant';
 import 'vant/lib/index.css';
 
+const app = createApp();
 Vue.use(Button);
 ```
 

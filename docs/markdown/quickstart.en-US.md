@@ -82,11 +82,12 @@ import 'vant/lib/button/style';
 ### 3. Import all components
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+const app = createApp();
+app.use(Vant);
 ```
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.

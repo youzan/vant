@@ -99,11 +99,12 @@ import 'vant/lib/button/style';
 Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+const app = createApp();
+app.use(Vant);
 ```
 
 > 配置按需引入后，将不允许直接导入所有组件
