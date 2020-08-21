@@ -96,15 +96,16 @@ export default createComponent({
       this.parent.updateOffset();
     },
 
+    onClosed() {
+      this.showWrapper = false;
+      this.$emit('closed');
+    },
+
     onClickWrapper(event) {
       // prevent being identified as clicking outside and closed when using teleport
       if (this.teleport) {
         event.stopPropagation();
       }
-    },
-
-    onTogglePopup(show) {
-      this.showPopup = show;
     },
   },
 
@@ -161,7 +162,7 @@ export default createComponent({
         onClick={this.onClickWrapper}
       >
         <Popup
-          show={this.showPopup}
+          vModel={[this.showPopup, 'show']}
           overlay={overlay}
           class={bem('content')}
           position={direction === 'down' ? 'top' : 'bottom'}
@@ -172,11 +173,7 @@ export default createComponent({
           onOpen={this.onOpen}
           onClose={this.onClose}
           onOpened={this.onOpened}
-          onClosed={() => {
-            this.showWrapper = false;
-            this.$emit('closed');
-          }}
-          {...{ 'onUpdate:modelValue': this.onTogglePopup }}
+          onClosed={this.onClosed}
         >
           {Options}
           {this.$slots.default?.()}
