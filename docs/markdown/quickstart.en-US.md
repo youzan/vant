@@ -23,10 +23,10 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 
 ```bash
 # Using npm
-npm i vant -S
+npm i vant@next -S
 
 # Using yarn
-yarn add vant
+yarn add vant@next
 ```
 
 ## Usage

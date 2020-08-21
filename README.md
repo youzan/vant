@@ -45,10 +45,10 @@
 
 ```bash
 # Using npm
-npm i vant -S
+npm i vant@next -S
 
 # Using yarn
-yarn add vant
+yarn add vant@next
 ```
 
 ## Quickstart
