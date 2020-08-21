@@ -1,7 +1,6 @@
-import { Transition } from 'vue';
+import { Teleport, Transition } from 'vue';
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
-import { PortalMixin } from '../mixins/portal';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
@@ -9,7 +8,6 @@ const [createComponent, bem] = createNamespace('number-keyboard');
 
 export default createComponent({
   mixins: [
-    PortalMixin(),
     BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);
@@ -21,6 +19,7 @@ export default createComponent({
     show: Boolean,
     title: String,
     zIndex: [Number, String],
+    teleport: [String, Object],
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
@@ -238,8 +237,7 @@ export default createComponent({
 
   render() {
     const Title = this.genTitle();
-
-    return (
+    const Content = (
       <Transition name={this.transition ? 'van-slide-up' : ''}>
         <div
           vShow={this.show}
@@ -257,5 +255,11 @@ export default createComponent({
         </div>
       </Transition>
     );
+
+    if (this.teleport) {
+      return <Teleport to={this.teleport}>{Content}</Teleport>;
+    }
+
+    return Content;
   },
 });
