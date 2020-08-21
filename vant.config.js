@@ -283,7 +283,7 @@ module.exports = {
               },
               {
                 path: 'tag',
-                title: 'Tag 标记',
+                title: 'Tag 标签',
               },
             ],
           },
