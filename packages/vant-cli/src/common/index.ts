@@ -7,7 +7,6 @@ import {
   outputFileSync,
 } from 'fs-extra';
 import {
-  ROOT,
   SRC_DIR,
   getVantConfig,
   ROOT_WEBPACK_CONFIG_FILE,
@@ -38,10 +37,6 @@ export function getComponents() {
   const EXCLUDES = ['.DS_Store'];
   const dirs = readdirSync(SRC_DIR);
 
-  // TODO
-  // whitelist for 3.0 development
-  const whiteList = require(join(ROOT, 'components.js'));
-
   return dirs
     .filter((dir) => !EXCLUDES.includes(dir))
     .filter((dir) =>
@@ -53,8 +48,7 @@ export function getComponents() {
 
         return false;
       })
-    )
-    .filter((dir) => whiteList.includes(dir));
+    );
 }
 
 export function isDir(dir: string) {
