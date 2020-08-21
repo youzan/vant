@@ -32,7 +32,7 @@ app.use(Form);
     :rules="[{ required: true, message: 'Password is required' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       Submit
     </van-button>
   </div>
@@ -78,7 +78,7 @@ export default {
     :rules="[{ validator: asyncValidator, message: 'Error message' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       Submit
     </van-button>
   </div>

@@ -79,7 +79,7 @@
         <van-button type="primary" @click="checkAll">
           {{ t('checkAll') }}
         </van-button>
-        <van-button type="info" @click="toggleAll">
+        <van-button type="primary" @click="toggleAll">
           {{ t('inverse') }}
         </van-button>
       </div>

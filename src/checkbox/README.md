@@ -150,7 +150,7 @@ export default {
 </van-checkbox-group>
 
 <van-button type="primary" @click="checkAll">Check All</van-button>
-<van-button type="info" @click="toggleAll">Toggle All</van-button>
+<van-button type="primary" @click="toggleAll">Toggle All</van-button>
 ```
 
 ```js

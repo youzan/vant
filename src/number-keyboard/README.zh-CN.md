@@ -93,7 +93,7 @@ export default {
 通过 `title` 属性可以设置键盘标题
 
 ```html
-<van-cell plain type="info" @touchstart.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出带标题的键盘
 </van-cell>
 <van-number-keyboard

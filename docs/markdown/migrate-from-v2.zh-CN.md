@@ -93,6 +93,8 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 ### API 调整
 
 - Area: 移除 change 事件的第一个参数（picker 实例）
+- Button: 蓝色按钮对应的类型由 `info` 调整为 `primary`
+- Button: 绿色按钮对应的类型由 `primary` 调整为 `success`
 - Picker: 移除 change 事件的第一个参数（picker 实例）
 - Picker: 默认开启 show-toolbar 属性
 - Picker: 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。

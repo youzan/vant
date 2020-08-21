@@ -16,7 +16,7 @@ app.use(Button);
 
 ```html
 <van-button type="primary">Primary</van-button>
-<van-button type="info">Info</van-button>
+<van-button type="success">Success</van-button>
 <van-button type="default">Default</van-button>
 <van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
@@ -26,21 +26,21 @@ app.use(Button);
 
 ```html
 <van-button plain type="primary">Primary</van-button>
-<van-button plain type="info">Danger</van-button>
+<van-button plain type="primary">Danger</van-button>
 ```
 
 ### Hairline
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
-<van-button plain hairline type="info">Hairline</van-button>
+<van-button plain hairline type="primary">Hairline</van-button>
 ```
 
 ### Disabled
 
 ```html
 <van-button disabled type="primary">Diabled</van-button>
-<van-button disabled type="info">Diabled</van-button>
+<van-button disabled type="primary">Diabled</van-button>
 ```
 
 ### Loading
@@ -48,14 +48,14 @@ app.use(Button);
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="info" loading-text="Loading..." />
+<van-button loading type="primary" loading-text="Loading..." />
 ```
 
 ### Shape
 
 ```html
 <van-button square type="primary">Square</van-button>
-<van-button round type="info">Round</van-button>
+<van-button round type="primary">Round</van-button>
 ```
 
 ### Icon
@@ -63,7 +63,7 @@ app.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="primary">
   Button
 </van-button>
 ```
@@ -106,7 +106,7 @@ app.use(Button);
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
+| type | Can be set to `primary` `success` `warning` `danger` | _string_ | `default` |
 | size | Can be set to `large` `small` `mini` | _string_ | `normal` |
 | text | Text | _string_ | - |
 | color `v2.1.8` | Color, support linear-gradient | _string_ | - |

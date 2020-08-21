@@ -10,7 +10,7 @@
 
     <demo-block :title="t('offsetTop')">
       <van-sticky :offset-top="50">
-        <van-button type="info" style="margin-left: 115px;">
+        <van-button type="primary" style="margin-left: 115px;">
           {{ t('offsetTop') }}
         </van-button>
       </van-sticky>

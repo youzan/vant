@@ -32,7 +32,7 @@ app.use(Sticky);
 
 ```html
 <van-sticky :offset-top="50">
-  <van-button type="info">吸顶距离</van-button>
+  <van-button type="primary">吸顶距离</van-button>
 </van-sticky>
 ```
 

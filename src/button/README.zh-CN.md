@@ -14,11 +14,11 @@ app.use(Button);
 
 ### 按钮类型
 
-按钮支持 `default`、`primary`、`info`、`warning`、`danger` 五种类型，默认为 `default`。
+按钮支持 `default`、`primary`、`success`、`warning`、`danger` 五种类型，默认为 `default`。
 
 ```html
 <van-button type="primary">主要按钮</van-button>
-<van-button type="info">信息按钮</van-button>
+<van-button type="success">成功按钮</van-button>
 <van-button type="default">默认按钮</van-button>
 <van-button type="warning">警告按钮</van-button>
 <van-button type="danger">危险按钮</van-button>
@@ -30,7 +30,7 @@ app.use(Button);
 
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
-<van-button plain type="info">朴素按钮</van-button>
+<van-button plain type="primary">朴素按钮</van-button>
 ```
 
 ### 细边框
@@ -39,7 +39,7 @@ app.use(Button);
 
 ```html
 <van-button plain hairline type="primary">细边框按钮</van-button>
-<van-button plain hairline type="info">细边框按钮</van-button>
+<van-button plain hairline type="primary">细边框按钮</van-button>
 ```
 
 ### 禁用状态
@@ -48,7 +48,7 @@ app.use(Button);
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
-<van-button disabled type="info">禁用状态</van-button>
+<van-button disabled type="primary">禁用状态</van-button>
 ```
 
 ### 加载状态
@@ -58,7 +58,7 @@ app.use(Button);
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="info" loading-text="加载中..." />
+<van-button loading type="primary" loading-text="加载中..." />
 ```
 
 ### 按钮形状
@@ -67,7 +67,7 @@ app.use(Button);
 
 ```html
 <van-button square type="primary">方形按钮</van-button>
-<van-button round type="info">圆形按钮</van-button>
+<van-button round type="primary">圆形按钮</van-button>
 ```
 
 ### 图标按钮
@@ -77,7 +77,7 @@ app.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="primary">
   按钮
 </van-button>
 ```
@@ -128,7 +128,7 @@ app.use(Button);
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
+| type | 类型，可选值为 `primary` `success` `warning` `danger` | _string_ | `default` |
 | size | 尺寸，可选值为 `large` `small` `mini` | _string_ | `normal` |
 | text | 按钮文字 | _string_ | - |
 | color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |

@@ -168,7 +168,7 @@ export default {
 </van-checkbox-group>
 
 <van-button type="primary" @click="checkAll">全选</van-button>
-<van-button type="info" @click="toggleAll">反选</van-button>
+<van-button type="primary" @click="toggleAll">反选</van-button>
 ```
 
 ```js

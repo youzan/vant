@@ -24,7 +24,7 @@ app.use(Sticky);
 
 ```html
 <van-sticky :offset-top="50">
-  <van-button type="info">Offset Top</van-button>
+  <van-button type="primary">Offset Top</van-button>
 </van-sticky>
 ```
 
