@@ -1,9 +1,10 @@
+import { Teleport } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { on, off } from '../utils/dom/event';
 
 // Mixins
-import { PortalMixin } from '../mixins/portal';
 import { ChildrenMixin } from '../mixins/relation';
 
 // Components
@@ -14,11 +15,12 @@ import Popup from '../popup';
 const [createComponent, bem] = createNamespace('dropdown-item');
 
 export default createComponent({
-  mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu')],
+  mixins: [ChildrenMixin('vanDropdownMenu')],
 
   props: {
     title: String,
     disabled: Boolean,
+    teleport: [String, Object],
     modelValue: null,
     titleClass: String,
     options: {
@@ -150,38 +152,42 @@ export default createComponent({
       style.bottom = `${offset}px`;
     }
 
-    return (
-      <div>
-        <div
-          vShow={this.showWrapper}
-          ref="wrapper"
-          style={style}
-          class={bem([direction])}
-          onClick={this.onClickWrapper}
+    const Content = (
+      <div
+        vShow={this.showWrapper}
+        ref="wrapper"
+        style={style}
+        class={bem([direction])}
+        onClick={this.onClickWrapper}
+      >
+        <Popup
+          show={this.showPopup}
+          overlay={overlay}
+          class={bem('content')}
+          position={direction === 'down' ? 'top' : 'bottom'}
+          duration={this.transition ? duration : 0}
+          lazyRender={this.lazyRender}
+          overlayStyle={{ position: 'absolute' }}
+          closeOnClickOverlay={closeOnClickOverlay}
+          onOpen={this.onOpen}
+          onClose={this.onClose}
+          onOpened={this.onOpened}
+          onClosed={() => {
+            this.showWrapper = false;
+            this.$emit('closed');
+          }}
+          {...{ 'onUpdate:modelValue': this.onTogglePopup }}
         >
-          <Popup
-            show={this.showPopup}
-            overlay={overlay}
-            class={bem('content')}
-            position={direction === 'down' ? 'top' : 'bottom'}
-            duration={this.transition ? duration : 0}
-            lazyRender={this.lazyRender}
-            overlayStyle={{ position: 'absolute' }}
-            closeOnClickOverlay={closeOnClickOverlay}
-            onOpen={this.onOpen}
-            onClose={this.onClose}
-            onOpened={this.onOpened}
-            onClosed={() => {
-              this.showWrapper = false;
-              this.$emit('closed');
-            }}
-            {...{ 'onUpdate:modelValue': this.onTogglePopup }}
-          >
-            {Options}
-            {this.$slots.default?.()}
-          </Popup>
-        </div>
+          {Options}
+          {this.$slots.default?.()}
+        </Popup>
       </div>
     );
+
+    if (this.teleport) {
+      return <Teleport to={this.teleport}>{Content}</Teleport>;
+    }
+
+    return Content;
   },
 });
