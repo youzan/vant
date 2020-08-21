@@ -15,7 +15,7 @@ type Options = {
 
 function genImports(components: string[], options: Options): string {
   return components
-    .map(name => {
+    .map((name) => {
       let path = join(SRC_DIR, name);
       if (options.pathResolver) {
         path = options.pathResolver(path);
@@ -27,7 +27,7 @@ function genImports(components: string[], options: Options): string {
 }
 
 function genExports(names: string[]): string {
-  return names.map(name => `${name}`).join(',\n  ');
+  return names.map((name) => `${name}`).join(',\n  ');
 }
 
 export function genPackageEntry(options: Options) {
@@ -41,22 +41,18 @@ export function genPackageEntry(options: Options) {
 
 const version = '${version}';
 
-function install(Vue) {
+function install(app) {
   const components = [
-    ${components.filter(item => !skipInstall.includes(item)).join(',\n    ')}
+    ${components.filter((item) => !skipInstall.includes(item)).join(',\n    ')}
   ];
 
   components.forEach(item => {
     if (item.install) {
-      Vue.use(item);
+      app.use(item);
     } else if (item.name) {
-      Vue.component(item.name, item);
+      app.component(item.name, item);
     }
   });
-}
-
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
 }
 
 export {
