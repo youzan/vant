@@ -1,6 +1,6 @@
 // Utils
 import { Teleport, Transition } from 'vue';
-import { createNamespace, isDef, isFunction } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { on, off, preventDefault } from '../utils/dom/event';
 import { getScroller } from '../utils/dom/scroll';
 
@@ -319,11 +319,9 @@ export default createComponent({
   },
 
   render() {
-    const { teleport } = this;
-    if (teleport) {
-      const to = isFunction(teleport) ? teleport() : teleport;
+    if (this.teleport) {
       return (
-        <Teleport to={to}>
+        <Teleport to={this.teleport}>
           {this.genOverlay()}
           {this.genPopup()}
         </Teleport>
