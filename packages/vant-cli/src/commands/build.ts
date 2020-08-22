@@ -46,7 +46,7 @@ async function compileDir(dir: string) {
   const files = readdirSync(dir);
 
   await Promise.all(
-    files.map(filename => {
+    files.map((filename) => {
       const filePath = join(dir, filename);
 
       if (isDemoDir(filePath) || isTestDir(filePath)) {
@@ -153,9 +153,9 @@ async function runBuildTasks() {
 }
 
 function watchFileChange() {
-  consola.info('\nWatching file changes...');
+  consola.info('Watching file changes...');
 
-  chokidar.watch(SRC_DIR).on('change', async path => {
+  chokidar.watch(SRC_DIR).on('change', async (path) => {
     if (isDemoDir(path) || isTestDir(path)) {
       return;
     }
