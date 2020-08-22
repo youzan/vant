@@ -2053,10 +2053,10 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
-"@vant/cli@^3.0.0-alpha.5":
-  version "3.0.0-alpha.5"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-alpha.5.tgz#7da42baec9721e901c5e0a7ade6fb6c10ca15af4"
-  integrity sha512-M2TRbORy4ee80jZ36zAQpeD662/OxmSb69PYNqcou55th+dvnfUqumOLWwnWOovKB792o056DdFplDsFNNStYg==
+"@vant/cli@^3.0.0-alpha.6":
+  version "3.0.0-alpha.6"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.0.0-alpha.6.tgz?cache=0&sync_timestamp=1598078940987&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.0.0-alpha.6.tgz#117c36b40879be7b8e96a4d86ec2c4368313c8a8"
+  integrity sha1-EXw2tAh5vnuOlqTYbsLENoMTyKg=
   dependencies:
     "@ant-design-vue/babel-plugin-jsx" "^1.0.0-rc.1"
     "@babel/core" "^7.10.1"
