@@ -58,6 +58,8 @@ export default createComponent({
     },
   },
 
+  emits: ['change', 'update:modelValue'],
+
   created() {
     this.itemRefs = [];
   },

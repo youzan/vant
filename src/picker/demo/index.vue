@@ -157,7 +157,7 @@ export default {
   },
 
   methods: {
-    onChange1(picker, value, index) {
+    onChange1(value, index) {
       this.$toast(this.t('toastContent', value, index));
     },
 

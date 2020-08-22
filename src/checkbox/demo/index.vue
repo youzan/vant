@@ -161,6 +161,7 @@ export default {
 
   methods: {
     toggle(index) {
+      // TODO ref in for
       this.$refs.checkboxes[index].toggle();
     },
 
