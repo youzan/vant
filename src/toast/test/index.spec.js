@@ -74,26 +74,31 @@ test('icon-prefix prop', async () => {
   expect(toast.$el.outerHTML).toMatchSnapshot();
 });
 
-test('clear toast', () => {
-  const toast1 = Toast();
+test('clear toast', async () => {
+  const toast1 = Toast('1');
+  await later();
   expect(toast1.value).toBeTruthy();
   Toast.clear();
   expect(toast1.value).toBeFalsy();
 
   Toast.allowMultiple();
   const toast2 = Toast('2');
+  await later();
   const toast3 = Toast('3');
+  await later();
   Toast.clear(true);
   expect(toast2.value).toBeFalsy();
   expect(toast3.value).toBeFalsy();
   Toast.allowMultiple(false);
 });
 
-test('clear multiple toast', () => {
+test('clear multiple toast', async () => {
   Toast.allowMultiple();
   Toast.clear(true);
   const toast1 = Toast.success('1');
+  await later();
   const toast2 = Toast.success('2');
+  await later();
   Toast.clear();
   expect(toast1.value).toBeFalsy();
   expect(toast2.value).toBeTruthy();

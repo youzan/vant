@@ -39,11 +39,17 @@ function parseOptions(message) {
   return { message };
 }
 
+function isInDocument(element) {
+  return document.body.contains(element);
+}
+
 function createInstance() {
   /* istanbul ignore if */
   if (!inBrowser) {
     return {};
   }
+
+  queue = queue.filter((item) => isInDocument(item.$el));
 
   if (!queue.length || multiple) {
     const root = document.createElement('div');

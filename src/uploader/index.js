@@ -324,7 +324,10 @@ export default createComponent({
 
       const PreviewCover = this.$slots['preview-cover'] && (
         <div class={bem('preview-cover')}>
-          {this.$slots['preview-cover'](item)}
+          {this.$slots['preview-cover']({
+            index,
+            ...item,
+          })}
         </div>
       );
 
