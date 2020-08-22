@@ -51,8 +51,7 @@ export default {
   },
 
   watch: {
-    // eslint-disable-next-line object-shorthand
-    '$route.path'() {
+    $route() {
       this.setNav();
     },
   },
