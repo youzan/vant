@@ -1,4 +1,18 @@
-# 从 2.x 版本迁移
+# 从 v2 升级
+
+### 介绍
+
+本文档提供了从 Vant 2 到 Vant 3 的升级指南。
+
+### 升级步骤
+
+#### 1. 升级 Vue 3
+
+Vant 3 是基于 Vue 3 开发的，在使用 Vant 3 前，请将项目中的 Vue 升级到 3.0 以上版本。
+
+#### 2. 处理不兼容更新
+
+Vant 2 到 Vant 3 存在一些不兼容更新，请仔细阅读下方的不兼容更新内容，并依次处理。
 
 ## 不兼容更新
 
@@ -51,6 +65,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 ```html
 <!-- Vant 2 -->
 <van-popup v-model="show" />
+
 <!-- Vant 3 -->
 <van-popup v-model:show="show" />
 ```
@@ -75,6 +90,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 ```html
 <!-- Vant 2 -->
 <van-field :value="value" @input="onInput" />
+
 <!-- Vant 3 -->
 <van-field :model-value="value" @update:model-value="onInput" />
 ```
@@ -101,6 +117,14 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - GoodsActionIcon
 
 同时内部使用的 Info 组件也会重命名为 Badge。
+
+```html
+<!-- Vant 2 -->
+<van-icon info="5" />
+
+<!-- Vant 3 -->
+<van-icon badge="5" />
+```
 
 ### 重命名 get-container 属性
 
@@ -138,17 +162,34 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 ### API 调整
 
-- Area: 移除 change 事件的第一个参数（picker 实例）
-- Button: 蓝色按钮对应的类型由 `info` 调整为 `primary`
-- Button: 绿色按钮对应的类型由 `primary` 调整为 `success`
-- Picker: 移除 change 事件的第一个参数（picker 实例）
-- Picker: 默认开启 show-toolbar 属性
-- Picker: 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
-- SwipeCell: `open` 事件的 `detail` 参数重命名为 `name`
-- SwipeCell: `on-close` 属性重命名为 `before-close`，并调整参数结构
-- Toast: `mask` 属性重命名为 `overlay`
-- TreeSelect: `navclick` 事件重命名为 `click-nav`
-- TreeSelect: `itemclick` 事件重命名为 `click-item`
+#### Area
+
+- 移除 change 事件的第一个参数（picker 实例）
+
+#### Button
+
+- 蓝色按钮对应的类型由 `info` 调整为 `primary`
+- 绿色按钮对应的类型由 `primary` 调整为 `success`
+
+#### Picker
+
+- 移除 change 事件的第一个参数（picker 实例）
+- 默认开启 show-toolbar 属性
+- 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
+
+#### SwipeCell
+
+- `open` 事件的 `detail` 参数重命名为 `name`
+- `on-close` 属性重命名为 `before-close`，并调整参数结构
+
+#### Toast
+
+- `mask` 属性重命名为 `overlay`
+
+#### TreeSelect
+
+- `navclick` 事件重命名为 `click-nav`
+- `itemclick` 事件重命名为 `click-item`
 
 ### 注册全局方法
 

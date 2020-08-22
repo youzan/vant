@@ -55,7 +55,7 @@ module.exports = {
               },
               {
                 path: 'migrate-from-v2',
-                title: '从 2.x 版本迁移',
+                title: '从 v2 升级',
               },
               {
                 path: 'theme',
