@@ -16,4 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ### v3.0.0-alpha.0
 
-`TODO`
+`2020-08-22`
+
+**主要改动**
+
+- 完成 Vue 3 适配
+- 调整 v-model 和 prop.sync API 以适配 v-model 语法变更
+- 废弃个别组件和属性
+- 调整部分组件的 prop 和 event 用法
+- 重命名所有组件的 info 和 get-container 属性
+
+**已知问题**
+
+- Lazyload、Panel 和 Sku 组件暂未完成 Vue 3 适配
+
+> 详见 [从 v2 升级](https://youzan.github.io/vant/next/#/zh-CN/migrate-from-v2)。
