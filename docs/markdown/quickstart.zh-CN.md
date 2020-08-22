@@ -31,6 +31,8 @@ npm i vant -S
 yarn add vant
 ```
 
+> Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)
+
 ### 示例工程
 
 我们提供了一个基于 Vue Cli 的[示例工程](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：

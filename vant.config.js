@@ -11,7 +11,10 @@ module.exports = {
   },
   site: {
     defaultLang: 'en-US',
-    versions: [{ label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }],
+    versions: [
+      { label: '1.x', link: 'https://youzan.github.io/vant/1.x/' },
+      { label: '3.x', link: 'https://youzan.github.io/vant/next/' },
+    ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
