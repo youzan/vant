@@ -320,7 +320,11 @@ export default createComponent({
         </div>
       );
 
-      const PreviewCoverContent = this.slots('preview-cover', item);
+      const PreviewCoverContent = this.slots('preview-cover', {
+        index,
+        ...item,
+      });
+
       const PreviewCover = PreviewCoverContent && (
         <div class={bem('preview-cover')}>{PreviewCoverContent}</div>
       );
