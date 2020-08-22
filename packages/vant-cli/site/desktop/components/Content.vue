@@ -223,7 +223,8 @@ export default {
     border-radius: @van-doc-border-radius;
   }
 
-  &--changelog {
+  &--changelog,
+  &--changelog-v3 {
     strong {
       display: block;
       margin: 24px 0 12px;
