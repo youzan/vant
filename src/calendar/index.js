@@ -258,8 +258,15 @@ export default createComponent({
       let height = 0;
       let currentMonth;
 
+      // add offset to avoid rem accuracy issues
+      // see: https://github.com/youzan/vant/issues/6929
+      const viewportOffset = 50;
+      const viewportTop = top - viewportOffset;
+      const viewportBottom = bottom + viewportOffset;
+
       for (let i = 0; i < months.length; i++) {
-        const visible = height <= bottom && height + heights[i] >= top;
+        const visible =
+          height <= viewportBottom && height + heights[i] >= viewportTop;
 
         if (visible && !currentMonth) {
           currentMonth = months[i];
