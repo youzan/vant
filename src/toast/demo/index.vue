@@ -100,6 +100,7 @@ export default {
         message: this.t('text4', 3),
       });
 
+      // TODO failed to modify message
       let second = 3;
       const timer = setInterval(() => {
         second--;
