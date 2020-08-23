@@ -1,11 +1,11 @@
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
+import { useParent } from '../api/use-relation';
 
 const [createComponent, bem] = createNamespace('action-bar');
 
-export default createComponent({
-  mixins: [ParentMixin('vanActionBar')],
+export const ACTION_BAR_KEY = 'vanActionBar';
 
+export default createComponent({
   props: {
     safeAreaInsetBottom: {
       type: Boolean,
@@ -14,6 +14,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    useParent(ACTION_BAR_KEY);
+
     return () => (
       <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
         {slots.default?.()}

@@ -1,13 +1,13 @@
+import { ref, computed } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
-import { ChildrenMixin } from '../mixins/relation';
+import { useChildren } from '../api/use-relation';
+import { ACTION_BAR_KEY } from '../action-bar';
 import Button from '../button';
 
 const [createComponent, bem] = createNamespace('action-bar-button');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanActionBar')],
-
   props: {
     ...routeProps,
     type: String,
@@ -19,15 +19,24 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const { children, index } = useChildren(ACTION_BAR_KEY, ref(true));
+
+    const isFirst = computed(() => {
+      if (children) {
+        const prev = children.value[index.value - 1];
+        return !(prev && prev.value);
+      }
+    });
+
+    const isLast = computed(() => {
+      if (children) {
+        const next = children.value[index.value + 1];
+        return !(next && next.value);
+      }
+    });
+
     return (vm) => {
       const { type, icon, text, color, loading, disabled } = props;
-
-      const { parent } = vm;
-      const { name } = vm.$options;
-      const prev = parent && parent.children[vm.index - 1];
-      const next = parent && parent.children[vm.index + 1];
-      const last = !next || name !== next.$options.name;
-      const first = !prev || name !== prev.$options.name;
 
       const onClick = () => {
         route(vm.$router, vm);
@@ -35,7 +44,13 @@ export default createComponent({
 
       return (
         <Button
-          class={bem([type, { last, first }])}
+          class={bem([
+            type,
+            {
+              last: isLast.value,
+              first: isFirst.value,
+            },
+          ])}
           size="large"
           type={type}
           icon={icon}

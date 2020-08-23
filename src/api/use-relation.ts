@@ -16,7 +16,8 @@ export function useParent(key: string) {
 
 export function useChildren(key: string, child: unknown) {
   const parent = inject<Parent>(key, null);
-  const index = computed(() => parent?.children.value.indexOf(child));
+  const children = parent?.children;
+  const index = computed(() => children?.value.indexOf(child));
 
   if (parent) {
     parent.children.value.push(child);
@@ -24,6 +25,6 @@ export function useChildren(key: string, child: unknown) {
 
   return {
     index,
-    parent,
+    children,
   };
 }

@@ -1,14 +1,14 @@
+import { ref } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
-import { ChildrenMixin } from '../mixins/relation';
+import { useChildren } from '../api/use-relation';
+import { ACTION_BAR_KEY } from '../action-bar';
 import Icon from '../icon';
 import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('action-bar-icon');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanActionBar')],
-
   props: {
     ...routeProps,
     dot: Boolean,
@@ -20,6 +20,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    useChildren(ACTION_BAR_KEY, ref());
+
     function genIcon() {
       const { dot, badge, icon, color, iconClass } = props;
 
