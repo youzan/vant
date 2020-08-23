@@ -1,30 +1,33 @@
-import { ref, Ref, provide, inject, computed } from 'vue';
+import { ref, Ref, provide, inject, computed, onUnmounted } from 'vue';
 
 export type Parent = null | {
   children: Ref<unknown[]>;
 };
 
-export function useParent(key: string) {
+export function useChildren(key: string) {
   const children = ref<unknown>([]);
-
   provide(key, { children });
-
-  return {
-    children,
-  };
+  return children;
 }
 
-export function useChildren(key: string, child: unknown) {
+export function useParent(key: string, child: unknown) {
   const parent = inject<Parent>(key, null);
-  const children = parent?.children;
-  const index = computed(() => children?.value.indexOf(child));
 
   if (parent) {
-    parent.children.value.push(child);
+    const children = parent.children.value;
+    const index = computed(() => children.indexOf(child));
+
+    children.push(child);
+
+    onUnmounted(() => {
+      children.splice(index.value, 1);
+    });
+
+    return {
+      index,
+      parent,
+    };
   }
 
-  return {
-    index,
-    children,
-  };
+  return {};
 }

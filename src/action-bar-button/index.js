@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
-import { useChildren } from '../api/use-relation';
+import { useParent } from '../api/use-relation';
 import { ACTION_BAR_KEY } from '../action-bar';
 import Button from '../button';
 
@@ -19,18 +19,20 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const { children, index } = useChildren(ACTION_BAR_KEY, ref(true));
+    const { parent, index } = useParent(ACTION_BAR_KEY, ref(true));
 
     const isFirst = computed(() => {
-      if (children) {
-        const prev = children.value[index.value - 1];
+      if (parent) {
+        const children = parent.children.value;
+        const prev = children[index.value - 1];
         return !(prev && prev.value);
       }
     });
 
     const isLast = computed(() => {
-      if (children) {
-        const next = children.value[index.value + 1];
+      if (parent) {
+        const children = parent.children.value;
+        const next = children[index.value + 1];
         return !(next && next.value);
       }
     });
