@@ -2,16 +2,16 @@
  * Create a basic component with common options
  */
 import { camelize } from '../format/string';
-import type { App, ComponentOptions } from 'vue';
+import { App, defineComponent, ComponentOptionsWithObjectProps } from 'vue';
 
 export function createComponent(name: string) {
-  return function (sfc: ComponentOptions) {
+  return function (sfc: ComponentOptionsWithObjectProps) {
     sfc.name = name;
     sfc.install = (app: App) => {
       app.component(name as string, sfc);
       app.component(camelize(`-${name}`), sfc);
     };
 
-    return sfc;
+    return defineComponent(sfc);
   };
 }
