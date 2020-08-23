@@ -24,25 +24,24 @@ export default createComponent({
     },
   },
 
-  render() {
-    const { name } = this;
-    const imageIcon = isImage(name);
+  setup(props, { slots }) {
+    return () => {
+      const { tag, dot, name, size, badge, color, classPrefix } = props;
+      const isImageIcon = isImage(name);
 
-    return (
-      <this.tag
-        class={[
-          this.classPrefix,
-          imageIcon ? '' : `${this.classPrefix}-${name}`,
-        ]}
-        style={{
-          color: this.color,
-          fontSize: addUnit(this.size),
-        }}
-      >
-        {this.$slots.default?.()}
-        {imageIcon && <img class={bem('image')} src={name} />}
-        <Badge dot={this.dot} badge={this.badge} />
-      </this.tag>
-    );
+      return (
+        <tag
+          class={[classPrefix, isImageIcon ? '' : `${classPrefix}-${name}`]}
+          style={{
+            color,
+            fontSize: addUnit(size),
+          }}
+        >
+          {slots.default?.()}
+          {isImageIcon && <img class={bem('image')} src={name} />}
+          <Badge dot={dot} badge={badge} />
+        </tag>
+      );
+    };
   },
 });
