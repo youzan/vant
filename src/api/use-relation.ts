@@ -1,7 +1,7 @@
 import { ref, Ref, provide, inject, computed, onUnmounted } from 'vue';
 
-export type Parent = null | {
-  children: Ref<unknown[]>;
+export type Parent<T = unknown> = null | {
+  children: Ref<Ref<T>[]>;
 };
 
 export function useChildren(key: string) {
@@ -10,8 +10,8 @@ export function useChildren(key: string) {
   return children;
 }
 
-export function useParent(key: string, child: unknown) {
-  const parent = inject<Parent>(key, null);
+export function useParent<T = unknown>(key: string, child: Ref<T>) {
+  const parent = inject<Parent<T>>(key, null);
 
   if (parent) {
     const children = parent.children.value;
