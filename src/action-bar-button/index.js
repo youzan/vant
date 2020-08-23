@@ -18,47 +18,35 @@ export default createComponent({
     disabled: Boolean,
   },
 
-  emits: ['click'],
+  setup(props, { slots }) {
+    return (vm) => {
+      const { type, icon, text, color, loading, disabled } = props;
 
-  computed: {
-    isFirst() {
-      const prev = this.parent && this.parent.children[this.index - 1];
-      return !prev || prev.$options.name !== this.$options.name;
-    },
+      const { parent } = vm;
+      const { name } = vm.$options;
+      const prev = parent && parent.children[vm.index - 1];
+      const next = parent && parent.children[vm.index + 1];
+      const last = !next || name !== next.$options.name;
+      const first = !prev || name !== prev.$options.name;
 
-    isLast() {
-      const next = this.parent && this.parent.children[this.index + 1];
-      return !next || next.$options.name !== this.$options.name;
-    },
-  },
+      const onClick = () => {
+        route(vm.$router, vm);
+      };
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    },
-  },
-
-  render() {
-    return (
-      <Button
-        class={bem([
-          {
-            first: this.isFirst,
-            last: this.isLast,
-          },
-          this.type,
-        ])}
-        size="large"
-        type={this.type}
-        icon={this.icon}
-        color={this.color}
-        loading={this.loading}
-        disabled={this.disabled}
-        onClick={this.onClick}
-      >
-        {this.$slots.default ? this.$slots.default() : this.text}
-      </Button>
-    );
+      return (
+        <Button
+          class={bem([type, { last, first }])}
+          size="large"
+          type={type}
+          icon={icon}
+          color={color}
+          loading={loading}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          {slots.default ? slots.default() : text}
+        </Button>
+      );
+    };
   },
 });

@@ -19,42 +19,42 @@ export default createComponent({
     iconClass: null,
   },
 
-  emits: ['click'],
+  setup(props, { slots }) {
+    function genIcon() {
+      const { dot, badge, icon, color, iconClass } = props;
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    },
-
-    genIcon() {
-      if (this.$slots.icon) {
+      if (slots.icon) {
         return (
           <div class={bem('icon')}>
-            {this.$slots.icon()}
-            <Badge dot={this.dot} badge={this.badge} />
+            {slots.icon()}
+            <Badge dot={dot} badge={badge} />
           </div>
         );
       }
 
       return (
         <Icon
-          class={[bem('icon'), this.iconClass]}
           tag="div"
-          dot={this.dot}
-          name={this.icon}
-          badge={this.badge}
-          color={this.color}
+          dot={dot}
+          name={icon}
+          badge={badge}
+          color={color}
+          class={[bem('icon'), iconClass]}
         />
       );
-    },
-  },
+    }
 
-  render() {
-    return (
-      <div role="button" tabindex="0" class={bem()} onClick={this.onClick}>
-        {this.genIcon()}
-        {this.$slots.default ? this.$slots.default() : this.text}
+    return (vm) => (
+      <div
+        role="button"
+        class={bem()}
+        tabindex="0"
+        onClick={() => {
+          route(vm.$router, vm);
+        }}
+      >
+        {genIcon()}
+        {slots.default ? slots.default() : props.text}
       </div>
     );
   },

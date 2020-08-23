@@ -13,10 +13,10 @@ export default createComponent({
     },
   },
 
-  render() {
-    return (
-      <div class={bem({ unfit: !this.safeAreaInsetBottom })}>
-        {this.$slots.default?.()}
+  setup(props, { slots }) {
+    return () => (
+      <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
+        {slots.default?.()}
       </div>
     );
   },
