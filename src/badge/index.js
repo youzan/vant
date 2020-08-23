@@ -8,14 +8,14 @@ export default createComponent({
     badge: [Number, String],
   },
 
-  render() {
-    const { dot, badge } = this;
-    const showBadge = isDef(badge) && badge !== '';
+  setup(props) {
+    return () => {
+      const { dot, badge } = props;
+      const hasBadge = isDef(badge) && badge !== '';
 
-    if (!dot && !showBadge) {
-      return;
-    }
-
-    return <div class={bem({ dot })}>{dot ? '' : badge}</div>;
+      if (dot || hasBadge) {
+        return <div class={bem({ dot })}>{dot ? '' : badge}</div>;
+      }
+    };
   },
 });
