@@ -5,7 +5,7 @@ import {
   onMounted,
   onActivated,
   onUnmounted,
-  onDeactivated
+  onDeactivated,
 } from 'vue';
 
 export function useGlobalEvent(

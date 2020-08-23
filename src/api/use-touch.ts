@@ -58,6 +58,6 @@ export function useTouch() {
     deltaY,
     offsetX,
     offsetY,
-    direction
+    direction,
   };
 }
