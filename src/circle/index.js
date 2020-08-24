@@ -104,7 +104,8 @@ export default createComponent({
         } else {
           emit('update:currentRate', endRate);
         }
-      }
+      },
+      { immediate: true }
     );
 
     const renderHover = () => {
