@@ -1,12 +1,12 @@
+import { ref, provide } from 'vue';
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('collapse');
 
-export default createComponent({
-  mixins: [ParentMixin('vanCollapse')],
+export const COLLAPSE_KEY = 'vanCollapse';
 
+export default createComponent({
   props: {
     accordion: Boolean,
     modelValue: [String, Number, Array],
@@ -18,22 +18,52 @@ export default createComponent({
 
   emits: ['change', 'update:modelValue'],
 
-  methods: {
-    switch(name, expanded) {
-      if (!this.accordion) {
-        name = expanded
-          ? this.modelValue.concat(name)
-          : this.modelValue.filter((activeName) => activeName !== name);
-      }
-      this.$emit('change', name);
-      this.$emit('update:modelValue', name);
-    },
-  },
+  setup(props, { emit, slots }) {
+    const children = ref([]);
 
-  render() {
-    return (
-      <div class={[bem(), { [BORDER_TOP_BOTTOM]: this.border }]}>
-        {this.$slots.default?.()}
+    const toggle = (name, expanded) => {
+      const { accordion, modelValue } = props;
+
+      if (accordion) {
+        if (name === modelValue) {
+          name = '';
+        }
+      } else if (expanded) {
+        name = modelValue.concat(name);
+      } else {
+        name = modelValue.filter((activeName) => activeName !== name);
+      }
+
+      emit('change', name);
+      emit('update:modelValue', name);
+    };
+
+    const isExpanded = (name) => {
+      const { accordion, modelValue } = props;
+
+      if (
+        !accordion &&
+        !Array.isArray(modelValue) &&
+        process.env.NODE_ENV !== 'production'
+      ) {
+        console.error(
+          '[Vant] Collapse: type of prop "modelValue" should be Array'
+        );
+        return;
+      }
+
+      return accordion ? modelValue === name : modelValue.indexOf(name) !== -1;
+    };
+
+    provide(COLLAPSE_KEY, {
+      toggle,
+      children,
+      isExpanded,
+    });
+
+    return () => (
+      <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}>
+        {slots.default?.()}
       </div>
     );
   },

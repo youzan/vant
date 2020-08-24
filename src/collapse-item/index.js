@@ -1,19 +1,20 @@
+import { ref, watch, computed, nextTick } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
-// Mixins
-import { ChildrenMixin } from '../mixins/relation';
+// Composition
+import { useParent } from '../api/use-relation';
 
 // Components
 import Cell from '../cell';
+import { COLLAPSE_KEY } from '../collapse';
 import { cellProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanCollapse')],
-
   props: {
     ...cellProps,
     name: [Number, String],
@@ -24,152 +25,119 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
-      show: null,
-      inited: null,
+  setup(props, { slots }) {
+    const wrapper = ref(null);
+    const content = ref(null);
+    const { parent, index } = useParent(COLLAPSE_KEY, ref());
+
+    const currentName = computed(() =>
+      isDef(props.name) ? props.name : index.value
+    );
+
+    const expanded = computed(() => {
+      if (parent) {
+        return parent.isExpanded(currentName.value);
+      }
+      return null;
+    });
+
+    const show = ref(expanded.value);
+    const inited = ref(expanded.value);
+
+    const onTransitionEnd = () => {
+      if (!expanded.value) {
+        show.value = false;
+      } else {
+        wrapper.value.style.height = '';
+      }
     };
-  },
 
-  computed: {
-    currentName() {
-      return isDef(this.name) ? this.name : this.index;
-    },
-
-    expanded() {
-      if (!this.parent) {
-        return null;
-      }
-
-      const { modelValue, accordion } = this.parent;
-
-      if (
-        process.env.NODE_ENV !== 'production' &&
-        !accordion &&
-        !Array.isArray(modelValue)
-      ) {
-        console.error(
-          '[Vant] Collapse: type of prop "modelValue" should be Array'
-        );
+    watch(expanded, (value, oldValue) => {
+      if (oldValue === null) {
         return;
       }
 
-      return accordion
-        ? modelValue === this.currentName
-        : modelValue.some((name) => name === this.currentName);
-    },
-  },
-
-  created() {
-    this.show = this.expanded;
-    this.inited = this.expanded;
-  },
-
-  watch: {
-    expanded(expanded, prev) {
-      if (prev === null) {
-        return;
-      }
-
-      if (expanded) {
-        this.show = true;
-        this.inited = true;
+      if (value) {
+        show.value = true;
+        inited.value = true;
       }
 
       // Use raf: flick when opened in safari
       // Use nextTick: closing animation failed when set `user-select: none`
-      const nextTick = expanded ? this.$nextTick : raf;
+      const tick = value ? nextTick : raf;
 
-      nextTick(() => {
-        const { content, wrapper } = this.$refs;
-
-        if (!content || !wrapper) {
+      tick(() => {
+        if (!content.value || !wrapper.value) {
           return;
         }
 
-        const { offsetHeight } = content;
+        const { offsetHeight } = content.value;
         if (offsetHeight) {
           const contentHeight = `${offsetHeight}px`;
-          wrapper.style.height = expanded ? 0 : contentHeight;
+          wrapper.value.style.height = value ? 0 : contentHeight;
 
           // use double raf to ensure animation can start
           doubleRaf(() => {
-            wrapper.style.height = expanded ? contentHeight : 0;
+            wrapper.value.style.height = value ? contentHeight : 0;
           });
         } else {
-          this.onTransitionEnd();
+          onTransitionEnd();
         }
       });
-    },
-  },
+    });
 
-  methods: {
-    onClick() {
-      if (this.disabled) {
-        return;
+    const onClickTitle = () => {
+      if (!props.disabled) {
+        parent.toggle(currentName.value, !expanded.value);
       }
+    };
 
-      const { parent, currentName } = this;
-      const close = parent.accordion && currentName === parent.modelValue;
-      const name = close ? '' : currentName;
-
-      parent.switch(name, !this.expanded);
-    },
-
-    onTransitionEnd() {
-      if (!this.expanded) {
-        this.show = false;
-      } else {
-        this.$refs.wrapper.style.height = '';
-      }
-    },
-
-    genTitle() {
-      const { border, disabled, expanded } = this;
-
-      const slots = {
-        icon: this.$slots.icon,
-        title: this.$slots.title,
-        default: this.$slots.value,
-        'right-icon': this.$slots['right-icon'],
-      };
+    const renderTitle = () => {
+      const { border, disabled } = props;
 
       return (
         <Cell
-          v-slots={slots}
+          v-slots={{
+            icon: slots.icon,
+            title: slots.title,
+            default: slots.value,
+            'right-icon': slots['right-icon'],
+          }}
           role="button"
-          class={bem('title', { disabled, expanded, borderless: !border })}
-          onClick={this.onClick}
+          class={bem('title', {
+            disabled,
+            expanded: expanded.value,
+            borderless: !border,
+          })}
           tabindex={disabled ? -1 : 0}
-          aria-expanded={String(expanded)}
-          {...this.$props}
+          aria-expanded={String(expanded.value)}
+          onClick={onClickTitle}
+          {...props}
         />
       );
-    },
+    };
 
-    genContent() {
-      if (this.inited) {
+    const renderContent = () => {
+      if (inited.value) {
         return (
           <div
-            vShow={this.show}
-            ref="wrapper"
+            ref={wrapper}
+            vShow={show.value}
             class={bem('wrapper')}
-            onTransitionend={this.onTransitionEnd}
+            onTransitionend={onTransitionEnd}
           >
-            <div ref="content" class={bem('content')}>
-              {this.$slots.default?.()}
+            <div ref={content} class={bem('content')}>
+              {slots.default?.()}
             </div>
           </div>
         );
       }
-    },
-  },
+    };
 
-  render() {
-    return (
-      <div class={[bem({ border: this.index && this.border })]}>
-        {this.genTitle()}
-        {this.genContent()}
+    return () => (
+      <div class={[bem({ border: index.value && props.border })]}>
+        {renderTitle()}
+        {renderContent()}
       </div>
     );
   },
