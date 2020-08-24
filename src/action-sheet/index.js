@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, pick } from '../utils';
 
 // Components
 import Icon from '../icon';
@@ -8,58 +8,11 @@ import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('action-sheet');
 
-function Header({ title, closeIcon, onCancel }) {
-  if (title) {
-    return (
-      <div class={bem('header')}>
-        {title}
-        <Icon name={closeIcon} class={bem('close')} onClick={onCancel} />
-      </div>
-    );
-  }
-}
-
-function Option({ item }) {
-  const { name, color, subname, loading, disabled, className } = item;
-
-  const Content = loading ? (
-    <Loading class={bem('loading-icon')} />
-  ) : (
-    [
-      <span class={bem('name')}>{name}</span>,
-      subname && <div class={bem('subname')}>{subname}</div>,
-    ]
-  );
-
-  return (
-    <button
-      type="button"
-      style={{ color }}
-      class={[bem('item', { loading, disabled }), className]}
-    >
-      {Content}
-    </button>
-  );
-}
-
-function CancelText({ cancelText, onCancel }) {
-  if (cancelText) {
-    return [
-      <div class={bem('gap')} />,
-      <button type="button" class={bem('cancel')} onClick={onCancel}>
-        {cancelText}
-      </button>,
-    ];
-  }
-}
-
 export default createComponent({
   props: {
     ...popupSharedProps,
     title: String,
     actions: Array,
-    duration: [Number, String],
-    teleport: [String, Object],
     cancelText: String,
     description: String,
     closeOnPopstate: Boolean,
@@ -76,38 +29,87 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    overlay: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
   },
 
   emits: ['select', 'cancel', 'update:show'],
 
   setup(props, { slots, emit }) {
-    function onUpdateShow(show) {
-      emit('update:show', show);
-    }
+    const popupPropKeys = Object.keys(popupSharedProps);
 
-    function onCancel() {
+    const onUpdateShow = (show) => {
+      emit('update:show', show);
+    };
+
+    const onCancel = () => {
       onUpdateShow(false);
       emit('cancel');
-    }
+    };
 
-    return function () {
-      const {
-        title,
-        actions,
-        closeIcon,
-        cancelText,
-        description,
-        closeOnClickAction,
-        ...restProps
-      } = props;
+    const renderHeader = () => {
+      if (props.title) {
+        return (
+          <div class={bem('header')}>
+            {props.title}
+            <Icon
+              name={props.closeIcon}
+              class={bem('close')}
+              onClick={onCancel}
+            />
+          </div>
+        );
+      }
+    };
+
+    const renderCancel = () => {
+      if (props.cancelText) {
+        return [
+          <div class={bem('gap')} />,
+          <button type="button" class={bem('cancel')} onClick={onCancel}>
+            {props.cancelText}
+          </button>,
+        ];
+      }
+    };
+
+    const renderOption = (item, index) => {
+      const { name, color, subname, loading, disabled, className } = item;
+
+      const Content = loading ? (
+        <Loading class={bem('loading-icon')} />
+      ) : (
+        [
+          <span class={bem('name')}>{name}</span>,
+          subname && <div class={bem('subname')}>{subname}</div>,
+        ]
+      );
+
+      const onClick = () => {
+        emit('select', item, index);
+        if (props.closeOnClickAction) {
+          emit('update:show', false);
+        }
+      };
+
+      return (
+        <button
+          type="button"
+          style={{ color }}
+          class={[bem('item', { loading, disabled }), className]}
+          onClick={onClick}
+        >
+          {Content}
+        </button>
+      );
+    };
+
+    const renderOptions = () => {
+      if (props.actions) {
+        return props.actions.map(renderOption);
+      }
+    };
+
+    return () => {
+      const { round, description } = props;
 
       const Content = slots.default && (
         <div class={bem('content')}>{slots.default()}</div>
@@ -117,35 +119,21 @@ export default createComponent({
         <div class={bem('description')}>{description}</div>
       );
 
-      const Options =
-        actions &&
-        actions.map((item, index) => (
-          <Option
-            item={item}
-            onClick={() => {
-              emit('select', item, index);
-
-              if (closeOnClickAction) {
-                emit('update:show', false);
-              }
-            }}
-          />
-        ));
-
       return (
         <Popup
           class={bem()}
+          round={round}
           position="bottom"
           {...{
-            ...restProps,
+            ...pick(props, popupPropKeys),
             'onUpdate:show': onUpdateShow,
           }}
         >
-          <Header title={title} closeIcon={closeIcon} onCancel={onCancel} />
+          {renderHeader()}
           {Description}
-          {Options}
+          {renderOptions()}
           {Content}
-          <CancelText cancelText={cancelText} onCancel={onCancel} />
+          {renderCancel()}
         </Popup>
       );
     };
