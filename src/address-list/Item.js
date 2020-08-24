@@ -20,14 +20,14 @@ export default createComponent({
   emits: ['edit', 'click', 'select'],
 
   setup(props, { slots, emit }) {
-    function onClick() {
+    const onClick = () => {
       if (props.switchable) {
         emit('select');
       }
       emit('click');
-    }
+    };
 
-    const genRightIcon = () => (
+    const renderRightIcon = () => (
       <Icon
         name="edit"
         class={bem('edit')}
@@ -39,7 +39,7 @@ export default createComponent({
       />
     );
 
-    function genTag() {
+    const renderTag = () => {
       if (props.data.isDefault && props.defaultTagText) {
         return (
           <Tag type="danger" round class={bem('tag')}>
@@ -47,19 +47,20 @@ export default createComponent({
           </Tag>
         );
       }
-    }
+    };
 
-    function genContent() {
-      const { data } = props;
+    const renderContent = () => {
+      const { data, disabled, switchable } = props;
+
       const Info = [
         <div class={bem('name')}>
           {`${data.name} ${data.tel}`}
-          {genTag()}
+          {renderTag()}
         </div>,
         <div class={bem('address')}>{data.address}</div>,
       ];
 
-      if (props.switchable && !props.disabled) {
+      if (switchable && !disabled) {
         return (
           <Radio name={data.id} iconSize={18}>
             {Info}
@@ -68,7 +69,7 @@ export default createComponent({
       }
 
       return Info;
-    }
+    };
 
     return () => {
       const { disabled } = props;
@@ -77,8 +78,8 @@ export default createComponent({
         <div class={bem({ disabled })} onClick={onClick}>
           <Cell
             v-slots={{
-              default: genContent,
-              'right-icon': genRightIcon,
+              default: renderContent,
+              'right-icon': renderRightIcon,
             }}
             border={false}
             valueClass={bem('value')}

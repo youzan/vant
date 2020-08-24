@@ -33,63 +33,82 @@ export default createComponent({
   ],
 
   setup(props, { slots, emit }) {
-    return () => {
-      function genList(list, disabled) {
-        if (!list) {
-          return;
+    const renderItem = (item, index, disabled) => {
+      const onEdit = () => {
+        const name = disabled ? 'edit-disabled' : 'edit';
+        emit(name, item, index);
+      };
+
+      const onClick = () => {
+        emit('click-item', item, index);
+      };
+
+      const onSelect = () => {
+        const name = disabled ? 'select-disabled' : 'select';
+        emit(name, item, index);
+
+        if (!disabled) {
+          emit('update:modelValue', item.id);
         }
+      };
 
-        return list.map((item, index) => (
-          <AddressItem
-            v-slots={{
-              bottom: slots['item-bottom'],
-            }}
-            data={item}
-            key={item.id}
-            disabled={disabled}
-            switchable={props.switchable}
-            defaultTagText={props.defaultTagText}
-            onSelect={() => {
-              emit(disabled ? 'select-disabled' : 'select', item, index);
+      return (
+        <AddressItem
+          v-slots={{
+            bottom: slots['item-bottom'],
+          }}
+          key={item.id}
+          data={item}
+          disabled={disabled}
+          switchable={props.switchable}
+          defaultTagText={props.defaultTagText}
+          onEdit={onEdit}
+          onClick={onClick}
+          onSelect={onSelect}
+        />
+      );
+    };
 
-              if (!disabled) {
-                emit('update:modelValue', item.id);
-              }
-            }}
-            onEdit={() => {
-              emit(disabled ? 'edit-disabled' : 'edit', item, index);
-            }}
-            onClick={() => {
-              emit('click-item', item, index);
-            }}
-          />
-        ));
+    const renderList = (list, disabled) => {
+      if (list) {
+        return list.map((item, index) => renderItem(item, index, disabled));
       }
+    };
 
-      const List = genList(props.list);
-      const DisabledList = genList(props.disabledList, true);
+    const renderBottom = () => {
+      const onClick = () => {
+        emit('add');
+      };
+
+      return (
+        <div class={bem('bottom')}>
+          <Button
+            round
+            block
+            type="danger"
+            text={props.addButtonText || t('add')}
+            class={bem('add')}
+            onClick={onClick}
+          />
+        </div>
+      );
+    };
+
+    return () => {
+      const List = renderList(props.list);
+      const DisabledList = renderList(props.disabledList, true);
+      const DisabledText = props.disabledText && (
+        <div class={bem('disabled-text')}>{props.disabledText}</div>
+      );
 
       return (
         <div class={bem()}>
           {slots.top?.()}
           <RadioGroup modelValue={props.modelValue}>{List}</RadioGroup>
-          {props.disabledText && (
-            <div class={bem('disabled-text')}>{props.disabledText}</div>
-          )}
+          {DisabledText}
           {DisabledList}
           {slots.default?.()}
-          <div class={bem('bottom')}>
-            <Button
-              round
-              block
-              type="danger"
-              class={bem('add')}
-              text={props.addButtonText || t('add')}
-              onClick={() => {
-                emit('add');
-              }}
-            />
-          </div>
+          {renderBottom()}
         </div>
       );
     };
