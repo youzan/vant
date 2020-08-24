@@ -1,11 +1,11 @@
+import { computed } from 'vue';
 import { createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { useParent } from '../api/use-relation';
+import { ROW_KEY } from '../row';
 
 const [createComponent, bem] = createNamespace('col');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanRow')],
-
   props: {
     span: [Number, String],
     offset: [Number, String],
@@ -16,25 +16,29 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const getStyle = (vm) => {
-      const { index } = vm;
-      const { spaces } = vm.parent || {};
+    const { parent, index } = useParent(
+      ROW_KEY,
+      computed(() => props.span)
+    );
 
-      if (spaces && spaces[index]) {
-        const { left, right } = spaces[index];
+    const style = computed(() => {
+      const { spaces } = parent || {};
+
+      if (spaces && spaces.value && spaces.value[index.value]) {
+        const { left, right } = spaces.value[index.value];
         return {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
         };
       }
-    };
+    });
 
-    return (vm) => {
+    return () => {
       const { tag, span, offset } = props;
 
       return (
         <tag
-          style={getStyle(vm)}
+          style={style.value}
           class={bem({ [span]: span, [`offset-${offset}`]: offset })}
         >
           {slots.default?.()}

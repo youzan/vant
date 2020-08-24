@@ -1,11 +1,11 @@
+import { ref, computed, provide } from 'vue';
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('row');
 
-export default createComponent({
-  mixins: [ParentMixin('vanRow')],
+export const ROW_KEY = 'van-row';
 
+export default createComponent({
   props: {
     type: String,
     align: String,
@@ -20,13 +20,15 @@ export default createComponent({
     },
   },
 
-  computed: {
-    groups() {
+  setup(props, { slots }) {
+    const children = ref([]);
+
+    const groups = computed(() => {
       const groups = [[]];
 
       let totalSpan = 0;
-      this.children.forEach((item, index) => {
-        totalSpan += Number(item.span);
+      children.value.forEach((item, index) => {
+        totalSpan += Number(item.value);
 
         if (totalSpan > 24) {
           groups.push([index]);
@@ -37,10 +39,10 @@ export default createComponent({
       });
 
       return groups;
-    },
+    });
 
-    spaces() {
-      const gutter = Number(this.gutter);
+    const spaces = computed(() => {
+      const gutter = Number(props.gutter);
 
       if (!gutter) {
         return;
@@ -48,7 +50,7 @@ export default createComponent({
 
       const spaces = [];
 
-      this.groups.forEach((group) => {
+      groups.value.forEach((group) => {
         const averagePadding = (gutter * (group.length - 1)) / group.length;
 
         group.forEach((item, index) => {
@@ -63,10 +65,13 @@ export default createComponent({
       });
 
       return spaces;
-    },
-  },
+    });
 
-  setup(props, { slots }) {
+    provide(ROW_KEY, {
+      spaces,
+      children,
+    });
+
     return () => {
       const { tag, type, align, justify } = props;
       const flex = type === 'flex';
