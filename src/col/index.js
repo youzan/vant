@@ -15,39 +15,31 @@ export default createComponent({
     },
   },
 
-  emits: ['click'],
+  setup(props, { slots }) {
+    return (vm) => {
+      const { tag, span, offset } = props;
 
-  computed: {
-    style() {
-      const { index } = this;
-      const { spaces } = this.parent || {};
+      const getStyle = () => {
+        const { index } = vm;
+        const { spaces } = vm.parent || {};
 
-      if (spaces && spaces[index]) {
-        const { left, right } = spaces[index];
-        return {
-          paddingLeft: left ? `${left}px` : null,
-          paddingRight: right ? `${right}px` : null,
-        };
-      }
-    },
-  },
+        if (spaces && spaces[index]) {
+          const { left, right } = spaces[index];
+          return {
+            paddingLeft: left ? `${left}px` : null,
+            paddingRight: right ? `${right}px` : null,
+          };
+        }
+      };
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-    },
-  },
-
-  render() {
-    const { span, offset } = this;
-    return (
-      <this.tag
-        style={this.style}
-        class={bem({ [span]: span, [`offset-${offset}`]: offset })}
-        onClick={this.onClick}
-      >
-        {this.$slots.default?.()}
-      </this.tag>
-    );
+      return (
+        <tag
+          style={getStyle()}
+          class={bem({ [span]: span, [`offset-${offset}`]: offset })}
+        >
+          {slots.default?.()}
+        </tag>
+      );
+    };
   },
 });
