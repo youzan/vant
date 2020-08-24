@@ -16,25 +16,25 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const getStyle = (vm) => {
+      const { index } = vm;
+      const { spaces } = vm.parent || {};
+
+      if (spaces && spaces[index]) {
+        const { left, right } = spaces[index];
+        return {
+          paddingLeft: left ? `${left}px` : null,
+          paddingRight: right ? `${right}px` : null,
+        };
+      }
+    };
+
     return (vm) => {
       const { tag, span, offset } = props;
 
-      const getStyle = () => {
-        const { index } = vm;
-        const { spaces } = vm.parent || {};
-
-        if (spaces && spaces[index]) {
-          const { left, right } = spaces[index];
-          return {
-            paddingLeft: left ? `${left}px` : null,
-            paddingRight: right ? `${right}px` : null,
-          };
-        }
-      };
-
       return (
         <tag
-          style={getStyle()}
+          style={getStyle(vm)}
           class={bem({ [span]: span, [`offset-${offset}`]: offset })}
         >
           {slots.default?.()}

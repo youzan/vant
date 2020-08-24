@@ -20,17 +20,8 @@ export default createComponent({
     },
   },
 
-  emits: ['click'],
-
   computed: {
-    spaces() {
-      const gutter = Number(this.gutter);
-
-      if (!gutter) {
-        return;
-      }
-
-      const spaces = [];
+    groups() {
       const groups = [[]];
 
       let totalSpan = 0;
@@ -45,7 +36,19 @@ export default createComponent({
         }
       });
 
-      groups.forEach((group) => {
+      return groups;
+    },
+
+    spaces() {
+      const gutter = Number(this.gutter);
+
+      if (!gutter) {
+        return;
+      }
+
+      const spaces = [];
+
+      this.groups.forEach((group) => {
         const averagePadding = (gutter * (group.length - 1)) / group.length;
 
         group.forEach((item, index) => {
@@ -63,27 +66,22 @@ export default createComponent({
     },
   },
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-    },
-  },
+  setup(props, { slots }) {
+    return () => {
+      const { tag, type, align, justify } = props;
+      const flex = type === 'flex';
 
-  render() {
-    const { align, justify } = this;
-    const flex = this.type === 'flex';
-
-    return (
-      <this.tag
-        class={bem({
-          flex,
-          [`align-${align}`]: flex && align,
-          [`justify-${justify}`]: flex && justify,
-        })}
-        onClick={this.onClick}
-      >
-        {this.$slots.default?.()}
-      </this.tag>
-    );
+      return (
+        <tag
+          class={bem({
+            flex,
+            [`align-${align}`]: flex && align,
+            [`justify-${justify}`]: flex && justify,
+          })}
+        >
+          {slots.default?.()}
+        </tag>
+      );
+    };
   },
 });
