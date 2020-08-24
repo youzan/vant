@@ -1,5 +1,5 @@
+import { ref, provide } from 'vue';
 import { createNamespace } from '../utils';
-import { useChildren } from '../api/use-relation';
 
 const [createComponent, bem] = createNamespace('action-bar');
 
@@ -14,7 +14,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    useChildren(ACTION_BAR_KEY);
+    const children = ref([]);
+    provide(ACTION_BAR_KEY, children);
 
     return () => (
       <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
