@@ -14,106 +14,92 @@ export default createComponent({
     ...routeProps,
   },
 
-  emits: ['click'],
+  setup(props, { slots }) {
+    const renderLabel = () => {
+      const showLabel = slots.label || isDef(props.label);
 
-  setup(props, { slots, emit }) {
-    return function () {
-      const { icon, size, title, label, value, isLink } = props;
-      const titleSlot = slots.title?.();
-      const showTitle = titleSlot || isDef(title);
+      if (showLabel) {
+        return (
+          <div class={[bem('label'), props.labelClass]}>
+            {slots.label ? slots.label() : props.label}
+          </div>
+        );
+      }
+    };
 
-      function Label() {
-        const showLabel = slots.label || isDef(label);
+    const renderTitle = () => {
+      if (slots.title || isDef(props.title)) {
+        return (
+          <div
+            class={[bem('title'), props.titleClass]}
+            style={props.titleStyle}
+          >
+            {slots.title ? slots.title() : <span>{props.title}</span>}
+            {renderLabel()}
+          </div>
+        );
+      }
+    };
 
-        if (showLabel) {
-          return (
-            <div class={[bem('label'), props.labelClass]}>
-              {slots.label ? slots.label() : label}
-            </div>
-          );
-        }
+    const renderValue = () => {
+      const hasTitle = slots.title || isDef(props.title);
+      const hasValue = slots.default || isDef(props.value);
+
+      if (hasValue) {
+        return (
+          <div class={[bem('value', { alone: !hasTitle }), props.valueClass]}>
+            {slots.default ? slots.default() : <span>{props.value}</span>}
+          </div>
+        );
+      }
+    };
+
+    const renderLeftIcon = () => {
+      if (slots.icon) {
+        return slots.icon();
       }
 
-      function Title() {
-        if (showTitle) {
-          return (
-            <div
-              class={[bem('title'), props.titleClass]}
-              style={props.titleStyle}
-            >
-              {slots.title ? titleSlot : <span>{title}</span>}
-              {Label()}
-            </div>
-          );
-        }
+      if (props.icon) {
+        return (
+          <Icon
+            name={props.icon}
+            class={bem('left-icon')}
+            classPrefix={props.iconPrefix}
+          />
+        );
+      }
+    };
+
+    const renderRightIcon = () => {
+      if (slots['right-icon']) {
+        return slots['right-icon']();
       }
 
-      function Value() {
-        const showValue = slots.default || isDef(value);
-
-        if (showValue) {
-          return (
-            <div
-              class={[bem('value', { alone: !showTitle }), props.valueClass]}
-            >
-              {slots.default ? slots.default() : <span>{value}</span>}
-            </div>
-          );
-        }
+      if (props.isLink) {
+        const name = props.arrowDirection
+          ? `arrow-${props.arrowDirection}`
+          : 'arrow';
+        return <Icon name={name} class={bem('right-icon')} />;
       }
+    };
 
-      function LeftIcon() {
-        if (slots.icon) {
-          return slots.icon();
-        }
-
-        if (icon) {
-          return (
-            <Icon
-              class={bem('left-icon')}
-              name={icon}
-              classPrefix={props.iconPrefix}
-            />
-          );
-        }
-      }
-
-      function RightIcon() {
-        const rightIconSlot = slots['right-icon'];
-
-        if (rightIconSlot) {
-          return rightIconSlot();
-        }
-
-        if (isLink) {
-          const { arrowDirection } = props;
-
-          return (
-            <Icon
-              class={bem('right-icon')}
-              name={arrowDirection ? `arrow-${arrowDirection}` : 'arrow'}
-            />
-          );
-        }
-      }
-
-      const onClick = (event) => {
-        emit('click', event);
-        route(this.$router, this);
-      };
-
+    return (vm) => {
+      const { size, center, border, isLink, required } = props;
       const clickable = isLink || props.clickable;
 
       const classes = {
+        center,
+        required,
         clickable,
-        center: props.center,
-        required: props.required,
-        borderless: !props.border,
+        borderless: !border,
       };
-
       if (size) {
         classes[size] = size;
       }
+
+      const onClick = () => {
+        route(vm.$router, vm);
+      };
 
       return (
         <div
@@ -122,10 +108,10 @@ export default createComponent({
           tabindex={clickable ? 0 : null}
           onClick={onClick}
         >
-          {LeftIcon()}
-          {Title()}
-          {Value()}
-          {RightIcon()}
+          {renderLeftIcon()}
+          {renderTitle()}
+          {renderValue()}
+          {renderRightIcon()}
           {slots.extra?.()}
         </div>
       );
