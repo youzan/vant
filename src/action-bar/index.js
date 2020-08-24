@@ -14,8 +14,9 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const children = ref([]);
-    provide(ACTION_BAR_KEY, children);
+    provide(ACTION_BAR_KEY, {
+      children: ref([]),
+    });
 
     return () => (
       <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
