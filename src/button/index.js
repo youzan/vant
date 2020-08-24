@@ -46,103 +46,127 @@ export default createComponent({
 
   emits: ['click'],
 
-  methods: {
-    onClick() {
-      if (!this.loading && !this.disabled) {
-        this.$emit('click', event);
-        route(this.$router, this);
+  setup(props, { emit, slots }) {
+    const renderLoadingIcon = () => {
+      if (slots.loading) {
+        return slots.loading();
       }
-    },
 
-    genContent() {
-      const Content = [];
+      return (
+        <Loading
+          class={bem('loading')}
+          size={props.loadingSize}
+          type={props.loadingType}
+          color="currentColor"
+        />
+      );
+    };
 
-      if (this.loading) {
-        Content.push(
-          this.$slots.loading ? (
-            this.$slots.loading()
-          ) : (
-            <Loading
-              class={bem('loading')}
-              size={this.loadingSize}
-              type={this.loadingType}
-              color="currentColor"
-            />
-          )
-        );
-      } else if (this.icon) {
-        Content.push(
+    const renderIcon = () => {
+      if (props.loading) {
+        return renderLoadingIcon();
+      }
+
+      if (props.icon) {
+        return (
           <Icon
-            name={this.icon}
+            name={props.icon}
             class={bem('icon')}
-            classPrefix={this.iconPrefix}
+            classPrefix={props.iconPrefix}
           />
         );
       }
+    };
 
+    const renderText = () => {
       let text;
-      if (this.loading) {
-        text = this.loadingText;
+      if (props.loading) {
+        text = props.loadingText;
       } else {
-        text = this.$slots.default ? this.$slots.default() : this.text;
+        text = slots.default ? slots.default() : props.text;
       }
 
       if (text) {
-        Content.push(<span class={bem('text')}>{text}</span>);
+        return <span class={bem('text')}>{text}</span>;
       }
+    };
 
-      return Content;
-    },
-  },
+    const getStyle = () => {
+      const { color, plain } = props;
+      if (color) {
+        const style = {};
 
-  render() {
-    const { tag, type, color, plain, disabled, loading, hairline } = this;
+        style.color = plain ? color : WHITE;
 
-    const style = {};
+        if (!plain) {
+          // Use background instead of backgroundColor to make linear-gradient work
+          style.background = color;
+        }
 
-    if (color) {
-      style.color = plain ? color : WHITE;
+        // hide border when color is linear-gradient
+        if (color.indexOf('gradient') !== -1) {
+          style.border = 0;
+        } else {
+          style.borderColor = color;
+        }
 
-      if (!plain) {
-        // Use background instead of backgroundColor to make linear-gradient work
-        style.background = color;
+        return style;
       }
+    };
 
-      // hide border when color is linear-gradient
-      if (color.indexOf('gradient') !== -1) {
-        style.border = 0;
-      } else {
-        style.borderColor = color;
-      }
-    }
-
-    const classes = [
-      bem([
+    return (vm) => {
+      const {
+        tag,
         type,
-        this.size,
-        {
-          plain,
-          loading,
-          disabled,
-          hairline,
-          block: this.block,
-          round: this.round,
-          square: this.square,
-        },
-      ]),
-      { [BORDER_SURROUND]: hairline },
-    ];
+        size,
+        block,
+        round,
+        plain,
+        square,
+        loading,
+        disabled,
+        hairline,
+        nativeType,
+      } = props;
 
-    return (
-      <tag
-        style={style}
-        class={classes}
-        type={this.nativeType}
-        disabled={disabled}
-        onClick={this.onClick}
-      >
-        <div class={bem('content')}>{this.genContent()}</div>
-      </tag>
-    );
+      const onClick = () => {
+        if (!loading && !disabled) {
+          emit('click', event);
+          route(vm.$router, vm);
+        }
+      };
+
+      const classes = [
+        bem([
+          type,
+          size,
+          {
+            plain,
+            block,
+            round,
+            square,
+            loading,
+            disabled,
+            hairline,
+          },
+        ]),
+        { [BORDER_SURROUND]: hairline },
+      ];
+
+      return (
+        <tag
+          type={nativeType}
+          class={classes}
+          style={getStyle()}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          <div class={bem('content')}>
+            {renderIcon()}
+            {renderText()}
+          </div>
+        </tag>
+      );
+    };
   },
 });

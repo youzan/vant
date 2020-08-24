@@ -14,13 +14,13 @@ const [createComponent, bem, t] = createNamespace('picker');
 export default createComponent({
   props: {
     ...pickerProps,
-    defaultIndex: {
-      type: [Number, String],
-      default: 0,
-    },
     columns: {
       type: Array,
       default: () => [],
+    },
+    defaultIndex: {
+      type: [Number, String],
+      default: 0,
     },
     toolbarPosition: {
       type: String,
@@ -135,11 +135,7 @@ export default createComponent({
       }
 
       if (this.dataType === 'text') {
-        this.$emit(
-          'change',
-          this.getColumnValue(0),
-          this.getColumnIndex(0)
-        );
+        this.$emit('change', this.getColumnValue(0), this.getColumnIndex(0));
       } else {
         this.$emit('change', this.getValues(), columnIndex);
       }
