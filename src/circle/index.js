@@ -1,10 +1,9 @@
+import { watch, computed } from 'vue';
 import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
-
-const PERIMETER = 3140;
 
 let uid = 0;
 
@@ -63,123 +62,122 @@ export default createComponent({
 
   emits: ['update:currentRate'],
 
-  beforeCreate() {
-    this.uid = `van-circle-gradient-${uid++}`;
-  },
+  setup(props, { emit, slots }) {
+    const id = `van-circle-${uid++}`;
 
-  computed: {
-    style() {
-      const size = addUnit(this.size);
+    const viewBoxSize = computed(() => +props.strokeWidth + 1000);
+
+    const path = computed(() => getPath(props.clockwise, viewBoxSize.value));
+
+    const rootStyle = computed(() => {
+      const size = addUnit(props.size);
       return {
         width: size,
         height: size,
       };
-    },
+    });
 
-    path() {
-      return getPath(this.clockwise, this.viewBoxSize);
-    },
+    watch(
+      computed(() => props.rate),
+      (rate) => {
+        let rafId;
+        const startTime = Date.now();
+        const startRate = props.currentRate;
+        const endRate = format(rate);
+        const duration = Math.abs(((startRate - endRate) * 1000) / props.speed);
 
-    viewBoxSize() {
-      return +this.strokeWidth + 1000;
-    },
+        const animate = () => {
+          const now = Date.now();
+          const progress = Math.min((now - startTime) / duration, 1);
+          const rate = progress * (endRate - startRate) + startRate;
 
-    layerStyle() {
-      const offset = (PERIMETER * this.currentRate) / 100;
+          emit('update:currentRate', format(parseFloat(rate.toFixed(1))));
 
-      return {
-        stroke: `${this.color}`,
-        strokeWidth: `${+this.strokeWidth + 1}px`,
-        strokeLinecap: this.strokeLinecap,
+          if (endRate > startRate ? rate < endRate : rate > endRate) {
+            rafId = raf(animate);
+          }
+        };
+
+        if (props.speed) {
+          cancelRaf(rafId);
+          rafId = raf(animate);
+        } else {
+          emit('update:currentRate', endRate);
+        }
+      }
+    );
+
+    const renderHover = () => {
+      const style = {
+        fill: props.fill,
+        stroke: props.layerColor,
+        strokeWidth: `${props.strokeWidth}px`,
+      };
+
+      return <path class={bem('hover')} style={style} d={path.value} />;
+    };
+
+    const renderLayer = () => {
+      const PERIMETER = 3140;
+      const { color, strokeWidth, currentRate, strokeLinecap } = props;
+      const offset = (PERIMETER * currentRate) / 100;
+      const style = {
+        stroke: `${color}`,
+        strokeWidth: `${+strokeWidth + 1}px`,
+        strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`,
       };
-    },
 
-    hoverStyle() {
-      return {
-        fill: `${this.fill}`,
-        stroke: `${this.layerColor}`,
-        strokeWidth: `${this.strokeWidth}px`,
-      };
-    },
+      return (
+        <path
+          d={path.value}
+          style={style}
+          class={bem('layer')}
+          stroke={isObject(color) ? `url(#${id})` : color}
+        />
+      );
+    };
 
-    gradient() {
-      return isObject(this.color);
-    },
+    const renderGradient = () => {
+      const { color } = props;
 
-    LinearGradient() {
-      if (!this.gradient) {
+      if (!isObject(color)) {
         return;
       }
 
-      const Stops = Object.keys(this.color)
+      const Stops = Object.keys(color)
         .sort((a, b) => parseFloat(a) - parseFloat(b))
         .map((key, index) => (
-          <stop key={index} offset={key} stop-color={this.color[key]} />
+          <stop key={index} offset={key} stop-color={color[key]} />
         ));
 
       return (
         <defs>
-          <linearGradient id={this.uid} x1="100%" y1="0%" x2="0%" y2="0%">
+          <linearGradient id={id} x1="100%" y1="0%" x2="0%" y2="0%">
             {Stops}
           </linearGradient>
         </defs>
       );
-    },
-  },
+    };
 
-  watch: {
-    rate: {
-      handler(rate) {
-        this.startTime = Date.now();
-        this.startRate = this.currentRate;
-        this.endRate = format(rate);
-        this.increase = this.endRate > this.startRate;
-        this.duration = Math.abs(
-          ((this.startRate - this.endRate) * 1000) / this.speed
-        );
-
-        if (this.speed) {
-          cancelRaf(this.rafId);
-          this.rafId = raf(this.animate);
-        } else {
-          this.$emit('update:currentRate', this.endRate);
-        }
-      },
-      immediate: true,
-    },
-  },
-
-  methods: {
-    animate() {
-      const now = Date.now();
-      const progress = Math.min((now - this.startTime) / this.duration, 1);
-      const rate = progress * (this.endRate - this.startRate) + this.startRate;
-
-      this.$emit('update:currentRate', format(parseFloat(rate.toFixed(1))));
-
-      if (this.increase ? rate < this.endRate : rate > this.endRate) {
-        this.rafId = raf(this.animate);
+    const renderText = () => {
+      if (slots.default) {
+        return slots.default();
       }
-    },
-  },
 
-  render() {
-    return (
-      <div class={bem()} style={this.style}>
-        <svg viewBox={`0 0 ${this.viewBoxSize} ${this.viewBoxSize}`}>
-          {this.LinearGradient}
-          <path class={bem('hover')} style={this.hoverStyle} d={this.path} />
-          <path
-            d={this.path}
-            class={bem('layer')}
-            style={this.layerStyle}
-            stroke={this.gradient ? `url(#${this.uid})` : this.color}
-          />
+      if (props.text) {
+        return <div class={bem('text')}>{props.text}</div>;
+      }
+    };
+
+    return () => (
+      <div class={bem()} style={rootStyle.value}>
+        <svg viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}>
+          {renderGradient()}
+          {renderHover()}
+          {renderLayer()}
         </svg>
-        {this.$slots.default
-          ? this.$slots.default()
-          : this.text && <div class={bem('text')}>{this.text}</div>}
+        {renderText()}
       </div>
     );
   },
