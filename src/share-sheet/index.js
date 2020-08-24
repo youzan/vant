@@ -12,27 +12,17 @@ export default createComponent({
   props: {
     ...popupSharedProps,
     title: String,
-    duration: [Number, String],
-    teleport: [String, Object],
     cancelText: String,
     description: String,
     options: {
       type: Array,
       default: () => [],
     },
-    overlay: {
-      type: Boolean,
-      default: true,
-    },
     closeOnPopstate: {
       type: Boolean,
       default: true,
     },
     safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
       type: Boolean,
       default: true,
     },

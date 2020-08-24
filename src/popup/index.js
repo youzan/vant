@@ -26,18 +26,21 @@ const context = {
 export const popupSharedProps = {
   // whether to show popup
   show: Boolean,
-  // whether to show overlay
-  overlay: Boolean,
+  // z-index
+  zIndex: [Number, String],
+  // transition duration
+  duration: [Number, String],
+  // teleport
+  teleport: [String, Object],
   // overlay custom style
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
-  // teleport
-  teleport: [String, Object],
-  // whether to close popup when click overlay
-  closeOnClickOverlay: Boolean,
-  // z-index
-  zIndex: [Number, String],
+  // whether to show overlay
+  overlay: {
+    type: Boolean,
+    default: true,
+  },
   // prevent body scroll
   lockScroll: {
     type: Boolean,
@@ -45,6 +48,11 @@ export const popupSharedProps = {
   },
   // whether to lazy render
   lazyRender: {
+    type: Boolean,
+    default: true,
+  },
+  // whether to close popup when click overlay
+  closeOnClickOverlay: {
     type: Boolean,
     default: true,
   },
@@ -58,7 +66,6 @@ export default createComponent({
   props: {
     ...popupSharedProps,
     round: Boolean,
-    duration: [Number, String],
     closeable: Boolean,
     transition: String,
     safeAreaInsetBottom: Boolean,
@@ -73,14 +80,6 @@ export default createComponent({
     position: {
       type: String,
       default: 'center',
-    },
-    overlay: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
     },
   },
 

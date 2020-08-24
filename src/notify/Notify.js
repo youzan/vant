@@ -8,8 +8,6 @@ export default createComponent({
     ...popupSharedProps,
     color: String,
     message: [Number, String],
-    duration: [Number, String],
-    teleport: [String, Object],
     className: null,
     background: String,
     type: {
@@ -28,12 +26,12 @@ export default createComponent({
       return (
         <Popup
           show={props.show}
+          class={[bem([props.type]), props.className]}
           style={style}
-          position="top"
           overlay={false}
+          position="top"
           duration={0.2}
           lockScroll={false}
-          class={[bem([props.type]), props.className]}
         >
           {slots.default?.() || props.message}
         </Popup>

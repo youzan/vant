@@ -22,7 +22,7 @@ export default createComponent({
   setup(props, { slots }) {
     useParent(ACTION_BAR_KEY, ref());
 
-    function genIcon() {
+    const renderIcon = () => {
       const { dot, badge, icon, color, iconClass } = props;
 
       if (slots.icon) {
@@ -44,7 +44,7 @@ export default createComponent({
           class={[bem('icon'), iconClass]}
         />
       );
-    }
+    };
 
     return (vm) => (
       <div
@@ -55,7 +55,7 @@ export default createComponent({
           route(vm.$router, vm);
         }}
       >
-        {genIcon()}
+        {renderIcon()}
         {slots.default ? slots.default() : props.text}
       </div>
     );
