@@ -33,3 +33,10 @@ export function get(object: any, path: string): any {
 
   return result;
 }
+
+export function pick(obj: Record<string, any>, keys: string[]) {
+  return keys.reduce((ret, key) => {
+    ret[key] = obj[key];
+    return ret;
+  }, {} as Record<string, any>);
+}
