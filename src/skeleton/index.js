@@ -40,68 +40,66 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    return function () {
+    const renderAvatar = () => {
+      if (props.avatar) {
+        const size = addUnit(props.avatarSize);
+        return (
+          <div
+            class={bem('avatar', props.avatarShape)}
+            style={{ width: size, height: size }}
+          />
+        );
+      }
+    };
+
+    const renderTitle = () => {
+      if (props.title) {
+        return (
+          <h3
+            class={bem('title')}
+            style={{ width: addUnit(props.titleWidth) }}
+          />
+        );
+      }
+    };
+
+    const getRowWidth = (index) => {
+      const { rowWidth } = props;
+
+      if (rowWidth === DEFAULT_ROW_WIDTH && index === +props.row - 1) {
+        return DEFAULT_LAST_ROW_WIDTH;
+      }
+
+      if (Array.isArray(rowWidth)) {
+        return rowWidth[index];
+      }
+
+      return rowWidth;
+    };
+
+    const renderRows = () => {
+      const Rows = [];
+
+      for (let i = 0; i < props.row; i++) {
+        Rows.push(
+          <div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />
+        );
+      }
+
+      return Rows;
+    };
+
+    return () => {
       if (!props.loading) {
-        return slots.default && slots.default();
-      }
-
-      function Title() {
-        if (props.title) {
-          return (
-            <h3
-              class={bem('title')}
-              style={{ width: addUnit(props.titleWidth) }}
-            />
-          );
-        }
-      }
-
-      function Rows() {
-        const Rows = [];
-        const { rowWidth } = props;
-
-        function getRowWidth(index) {
-          if (rowWidth === DEFAULT_ROW_WIDTH && index === +props.row - 1) {
-            return DEFAULT_LAST_ROW_WIDTH;
-          }
-
-          if (Array.isArray(rowWidth)) {
-            return rowWidth[index];
-          }
-
-          return rowWidth;
-        }
-
-        for (let i = 0; i < props.row; i++) {
-          Rows.push(
-            <div
-              class={bem('row')}
-              style={{ width: addUnit(getRowWidth(i)) }}
-            />
-          );
-        }
-
-        return Rows;
-      }
-
-      function Avatar() {
-        if (props.avatar) {
-          const size = addUnit(props.avatarSize);
-          return (
-            <div
-              class={bem('avatar', props.avatarShape)}
-              style={{ width: size, height: size }}
-            />
-          );
-        }
+        return slots.default?.();
       }
 
       return (
         <div class={bem({ animate: props.animate, round: props.round })}>
-          {Avatar()}
+          {renderAvatar()}
           <div class={bem('content')}>
-            {Title()}
-            {Rows()}
+            {renderTitle()}
+            {renderRows()}
           </div>
         </div>
       );
