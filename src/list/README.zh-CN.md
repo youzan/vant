@@ -101,7 +101,7 @@ export default {
 List 组件可以与 [PullRefresh](#/zh-CN/pull-refresh) 组件结合使用，实现下拉刷新的效果
 
 ```html
-<van-pull-refresh v-model:loading="refreshing" @refresh="onRefresh">
+<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
   <van-list
     v-model:loading="loading"
     :finished="finished"

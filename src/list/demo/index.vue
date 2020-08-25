@@ -25,10 +25,7 @@
       </van-tab>
 
       <van-tab :title="t('pullRefresh')">
-        <van-pull-refresh
-          v-model:loading="list[2].refreshing"
-          @refresh="onRefresh(2)"
-        >
+        <van-pull-refresh v-model="list[2].refreshing" @refresh="onRefresh(2)">
           <van-list
             v-model:loading="list[2].loading"
             :finished="list[2].finished"

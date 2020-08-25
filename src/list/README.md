@@ -90,7 +90,7 @@ export default {
 ### PullRefresh
 
 ```html
-<van-pull-refresh v-model:loading="refreshing" @refresh="onRefresh">
+<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
   <van-list
     v-model:loading="loading"
     :finished="finished"
