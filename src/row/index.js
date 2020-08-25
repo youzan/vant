@@ -27,8 +27,8 @@ export default createComponent({
       const groups = [[]];
 
       let totalSpan = 0;
-      children.value.forEach((item, index) => {
-        totalSpan += Number(item.value);
+      children.value.forEach((getSpan, index) => {
+        totalSpan += getSpan();
 
         if (totalSpan > 24) {
           groups.push([index]);

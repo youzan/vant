@@ -16,10 +16,7 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const { parent, index } = useParent(
-      ROW_KEY,
-      computed(() => props.span)
-    );
+    const { parent, index } = useParent(ROW_KEY, () => +props.span);
 
     const style = computed(() => {
       const { spaces } = parent || {};
