@@ -15,57 +15,49 @@ export default createComponent({
 
   props: switchProps,
 
-  emits: ['click', 'change', 'update:modelValue'],
+  emits: ['change', 'update:modelValue'],
 
-  computed: {
-    checked() {
-      return this.modelValue === this.activeValue;
-    },
+  setup(props, { emit }) {
+    const isChecked = () => props.modelValue === props.activeValue;
 
-    style() {
-      return {
-        fontSize: addUnit(this.size),
-        backgroundColor: this.checked ? this.activeColor : this.inactiveColor,
-      };
-    },
-  },
-
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-
-      if (!this.disabled && !this.loading) {
-        const newValue = this.checked ? this.inactiveValue : this.activeValue;
-        this.$emit('update:modelValue', newValue);
-        this.$emit('change', newValue);
+    const onClick = () => {
+      if (!props.disabled && !props.loading) {
+        const newValue = isChecked() ? props.inactiveValue : props.activeValue;
+        emit('update:modelValue', newValue);
+        emit('change', newValue);
       }
-    },
+    };
 
-    genLoading() {
-      if (this.loading) {
-        const color = this.checked ? this.activeColor : this.inactiveColor;
+    const renderLoading = () => {
+      if (props.loading) {
+        const color = isChecked() ? props.activeColor : props.inactiveColor;
         return <Loading class={bem('loading')} color={color} />;
       }
-    },
-  },
+    };
 
-  render() {
-    const { checked, loading, disabled } = this;
+    return () => {
+      const { size, loading, disabled, activeColor, inactiveColor } = props;
+      const checked = isChecked();
+      const style = {
+        fontSize: addUnit(size),
+        backgroundColor: checked ? activeColor : inactiveColor,
+      };
 
-    return (
-      <div
-        class={bem({
-          on: checked,
-          loading,
-          disabled,
-        })}
-        role="switch"
-        style={this.style}
-        aria-checked={String(checked)}
-        onClick={this.onClick}
-      >
-        <div class={bem('node')}>{this.genLoading()}</div>
-      </div>
-    );
+      return (
+        <div
+          role="switch"
+          class={bem({
+            on: checked,
+            loading,
+            disabled,
+          })}
+          style={style}
+          aria-checked={String(checked)}
+          onClick={onClick}
+        >
+          <div class={bem('node')}>{renderLoading()}</div>
+        </div>
+      );
+    };
   },
 });
