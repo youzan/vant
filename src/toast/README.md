@@ -53,6 +53,20 @@ Toast.loading({
 });
 ```
 
+### Custom Position
+
+```js
+Toast({
+  message: 'Top',
+  position: 'top',
+});
+
+Toast({
+  message: 'Bottom',
+  position: 'bottom',
+});
+```
+
 ### Update Message
 
 ```js
