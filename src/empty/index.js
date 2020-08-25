@@ -3,7 +3,7 @@ import Network from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
 
-const PRESETS = ['error', 'search', 'default'];
+const PRESET_IMAGES = ['error', 'search', 'default'];
 
 export default createComponent({
   props: {
@@ -14,56 +14,46 @@ export default createComponent({
     },
   },
 
-  methods: {
-    genImageContent() {
-      const slots = this.$slots.image?.();
-
-      if (slots) {
-        return slots;
+  setup(props, { slots }) {
+    const renderImage = () => {
+      if (slots.image) {
+        return slots.image();
       }
 
-      if (this.image === 'network') {
+      let { image } = props;
+
+      if (image === 'network') {
         return <Network />;
       }
 
-      let { image } = this;
-
-      if (PRESETS.indexOf(image) !== -1) {
+      if (PRESET_IMAGES.indexOf(image) !== -1) {
         image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 
       return <img src={image} />;
-    },
+    };
 
-    genImage() {
-      return <div class={bem('image')}>{this.genImageContent()}</div>;
-    },
-
-    genDescription() {
-      const description = this.$slots.description
-        ? this.slot.description()
-        : this.description;
+    const renderDescription = () => {
+      const description = slots.description
+        ? slots.description()
+        : props.description;
 
       if (description) {
         return <p class={bem('description')}>{description}</p>;
       }
-    },
+    };
 
-    genBottom() {
-      const slot = this.$slots.default?.();
-
-      if (slot) {
-        return <div class={bem('bottom')}>{slot}</div>;
+    const renderBottom = () => {
+      if (slots.default) {
+        return <div class={bem('bottom')}>{slots.default()}</div>;
       }
-    },
-  },
+    };
 
-  render() {
-    return (
+    return () => (
       <div class={bem()}>
-        {this.genImage()}
-        {this.genDescription()}
-        {this.genBottom()}
+        <div class={bem('image')}>{renderImage()}</div>
+        {renderDescription()}
+        {renderBottom()}
       </div>
     );
   },
