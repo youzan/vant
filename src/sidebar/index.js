@@ -1,13 +1,11 @@
+import { ref, watch, provide, computed } from 'vue';
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
+export const SIDEBAR_KEY = 'vanSidebar';
+
 export default createComponent({
-  mixins: [ParentMixin('vanSidebar')],
-
-  emits: ['change', 'update:modelValue'],
-
   props: {
     modelValue: {
       type: [Number, String],
@@ -15,28 +13,31 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
-      index: +this.modelValue,
-    };
-  },
+  emits: ['change', 'update:modelValue'],
 
-  watch: {
-    modelValue() {
-      this.setIndex(+this.modelValue);
-    },
-  },
+  setup(props, { emit, slots }) {
+    const children = ref([]);
+    const index = ref(+props.modelValue);
+    const active = computed(() => props.modelValue);
 
-  methods: {
-    setIndex(index) {
-      if (index !== this.index) {
-        this.index = index;
-        this.$emit('change', index);
+    const setIndex = (value) => {
+      if (value !== index.value) {
+        index.value = value;
+        emit('change', value);
       }
-    },
-  },
+    };
 
-  render() {
-    return <div class={bem()}>{this.$slots.default?.()}</div>;
+    watch(active, (val) => {
+      setIndex(+val);
+    });
+
+    provide(SIDEBAR_KEY, {
+      emit,
+      active,
+      children,
+      setIndex,
+    });
+
+    return () => <div class={bem()}>{slots.default?.()}</div>;
   },
 });
