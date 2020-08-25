@@ -21,7 +21,7 @@ export default createComponent({
   setup(props, { emit }) {
     const { parent, index } = useParent(SIDEBAR_KEY, ref());
 
-    const selected = computed(() => index.value === +parent.active.value);
+    const selected = computed(() => index.value === +parent.active());
 
     return (vm) => {
       const { dot, badge, title, disabled } = props;

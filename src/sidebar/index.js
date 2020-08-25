@@ -1,4 +1,4 @@
-import { ref, watch, provide, computed } from 'vue';
+import { ref, watch, provide } from 'vue';
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('sidebar');
@@ -18,7 +18,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const children = ref([]);
     const index = ref(+props.modelValue);
-    const active = computed(() => props.modelValue);
+    const active = () => props.modelValue;
 
     const setIndex = (value) => {
       if (value !== index.value) {
@@ -27,8 +27,8 @@ export default createComponent({
       }
     };
 
-    watch(active, (val) => {
-      setIndex(+val);
+    watch(active, (value) => {
+      setIndex(+value);
     });
 
     provide(SIDEBAR_KEY, {

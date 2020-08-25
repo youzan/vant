@@ -78,7 +78,7 @@ export default createComponent({
     });
 
     watch(
-      computed(() => props.rate),
+      () => props.rate,
       (rate) => {
         let rafId;
         const startTime = Date.now();

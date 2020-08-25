@@ -116,11 +116,7 @@ export default createComponent({
       }
     };
 
-    watch(
-      computed(() => props.time),
-      reset,
-      { immediate: true }
-    );
+    watch(() => props.time, reset, { immediate: true });
 
     onActivated(() => {
       if (keepAlived) {

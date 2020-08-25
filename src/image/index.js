@@ -59,7 +59,7 @@ export default createComponent({
     });
 
     watch(
-      computed(() => props.src),
+      () => props.src,
       () => {
         error.value = false;
         loading.value = true;
