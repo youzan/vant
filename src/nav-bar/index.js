@@ -1,3 +1,5 @@
+import { ref, onMounted } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
@@ -24,82 +26,79 @@ export default createComponent({
 
   emits: ['click-left', 'click-right'],
 
-  data() {
-    return {
-      height: null,
+  setup(props, { emit, slots }) {
+    const navBar = ref(null);
+    const height = ref(null);
+
+    onMounted(() => {
+      if (props.placeholder && props.fixed) {
+        height.value = navBar.value.getBoundingClientRect().height;
+      }
+    });
+
+    const onClickLeft = (event) => {
+      emit('click-left', event);
     };
-  },
 
-  mounted() {
-    if (this.placeholder && this.fixed) {
-      this.height = this.$refs.navBar.getBoundingClientRect().height;
-    }
-  },
+    const onClickRight = (event) => {
+      emit('click-right', event);
+    };
 
-  methods: {
-    genLeft() {
-      const leftSlot = this.$slots.left?.();
-
-      if (leftSlot) {
-        return leftSlot;
+    const renderLeft = () => {
+      if (slots.left) {
+        return slots.left();
       }
 
       return [
-        this.leftArrow && <Icon class={bem('arrow')} name="arrow-left" />,
-        this.leftText && <span class={bem('text')}>{this.leftText}</span>,
+        props.leftArrow && <Icon class={bem('arrow')} name="arrow-left" />,
+        props.leftText && <span class={bem('text')}>{props.leftText}</span>,
       ];
-    },
+    };
 
-    genRight() {
-      const rightSlot = this.$slots.right?.();
-
-      if (rightSlot) {
-        return rightSlot;
+    const renderRight = () => {
+      if (slots.right) {
+        return slots.right();
       }
 
-      if (this.rightText) {
-        return <span class={bem('text')}>{this.rightText}</span>;
+      if (props.rightText) {
+        return <span class={bem('text')}>{props.rightText}</span>;
       }
-    },
+    };
 
-    genNavBar() {
+    const renderNavBar = () => {
+      const { title, fixed, border, zIndex } = props;
       return (
         <div
-          ref="navBar"
-          style={{ zIndex: this.zIndex }}
-          class={[bem({ fixed: this.fixed }), { [BORDER_BOTTOM]: this.border }]}
+          ref={navBar}
+          style={{ zIndex }}
+          class={[bem({ fixed }), { [BORDER_BOTTOM]: border }]}
         >
-          <div class={bem('left')} onClick={this.onClickLeft}>
-            {this.genLeft()}
+          <div class={bem('left')} onClick={onClickLeft}>
+            {renderLeft()}
           </div>
           <div class={[bem('title'), 'van-ellipsis']}>
-            {this.$slots.title ? this.$slots.title() : this.title}
+            {slots.title ? slots.title() : title}
           </div>
-          <div class={bem('right')} onClick={this.onClickRight}>
-            {this.genRight()}
+          <div class={bem('right')} onClick={onClickRight}>
+            {renderRight()}
           </div>
         </div>
       );
-    },
+    };
 
-    onClickLeft(event) {
-      this.$emit('click-left', event);
-    },
+    return () => {
+      if (props.placeholder && props.fixed) {
+        return (
+          <div
+            class={bem('placeholder')}
+            style={{ height: `${height.value}px` }}
+          >
+            {renderNavBar()}
+          </div>
+        );
+      }
 
-    onClickRight(event) {
-      this.$emit('click-right', event);
-    },
-  },
-
-  render() {
-    if (this.placeholder && this.fixed) {
-      return (
-        <div class={bem('placeholder')} style={{ height: `${this.height}px` }}>
-          {this.genNavBar()}
-        </div>
-      );
-    }
-
-    return this.genNavBar();
+      return renderNavBar();
+    };
   },
 });
