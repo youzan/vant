@@ -1,23 +1,12 @@
-// Utils
+import { computed } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('loading');
 
-const SpinIcon = [];
-for (let i = 0; i < 12; i++) {
-  SpinIcon.push(<i />);
-}
-
-const CircularIcon = (
-  <svg class={bem('circular')} viewBox="25 25 50 50">
-    <circle cx="50" cy="50" r="20" fill="none" />
-  </svg>
-);
-
 export default createComponent({
   props: {
-    color: String,
     size: [Number, String],
+    color: String,
     vertical: Boolean,
     textSize: [Number, String],
     type: {
@@ -26,39 +15,58 @@ export default createComponent({
     },
   },
 
-  methods: {
-    genLoadingText() {
-      if (this.$slots.default) {
-        const style = this.textSize && {
-          fontSize: addUnit(this.textSize),
-        };
+  setup(props, { slots }) {
+    const SpinIcon = [];
+    for (let i = 0; i < 12; i++) {
+      SpinIcon.push(<i />);
+    }
 
+    const CircularIcon = (
+      <svg class={bem('circular')} viewBox="25 25 50 50">
+        <circle cx="50" cy="50" r="20" fill="none" />
+      </svg>
+    );
+
+    const renderText = () => {
+      if (slots.default) {
         return (
-          <span class={bem('text')} style={style}>
-            {this.$slots.default()}
+          <span
+            class={bem('text')}
+            style={{
+              fontSize: addUnit(props.textSize),
+            }}
+          >
+            {slots.default()}
           </span>
         );
       }
-    },
-  },
+    };
 
-  render() {
-    const { color, size, type, vertical } = this;
+    const spinnerStyle = computed(() => {
+      const style = {
+        color: props.color,
+      };
 
-    const style = { color };
-    if (size) {
-      const iconSize = addUnit(size);
-      style.width = iconSize;
-      style.height = iconSize;
-    }
+      if (props.size) {
+        const size = addUnit(props.size);
+        style.width = size;
+        style.height = size;
+      }
 
-    return (
-      <div class={bem([type, { vertical }])}>
-        <span class={bem('spinner', type)} style={style}>
-          {type === 'spinner' ? SpinIcon : CircularIcon}
-        </span>
-        {this.genLoadingText()}
-      </div>
-    );
+      return style;
+    });
+
+    return () => {
+      const { type, vertical } = props;
+
+      return (
+        <div class={bem([type, { vertical }])}>
+          <span class={bem('spinner', type)} style={spinnerStyle.value}>
+            {type === 'spinner' ? SpinIcon : CircularIcon}
+          </span>
+          {renderText()}
+        </div>
+      );
+    };
   },
 });
