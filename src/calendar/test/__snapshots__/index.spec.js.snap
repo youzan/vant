@@ -231,7 +231,7 @@ exports[`row-height prop 1`] = `
     <div class="van-calendar__month" style="padding-bottom: 300px;">
       <div role="grid" class="van-calendar__days">
         <div class="van-calendar__month-mark">1</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%; height: 50px;">1</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px; margin-left: 71.42857142857143%;">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">2</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">3</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">4</div>
@@ -241,7 +241,7 @@ exports[`row-height prop 1`] = `
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">8</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">9</div>
         <div role="gridcell" tabindex="-1" class="van-calendar__day" style="height: 50px;">
-          <div class="van-calendar__selected-day">10</div>
+          <div class="van-calendar__selected-day" style="width: 50px; height: 50px;">10</div>
         </div>
         <div role="gridcell" tabindex="-1" class="van-calendar__day" style="height: 50px;">11</div>
         <div role="gridcell" tabindex="-1" class="van-calendar__day" style="height: 50px;">12</div>
