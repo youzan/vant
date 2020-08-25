@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
@@ -19,13 +19,13 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const { parent, index } = useParent(ACTION_BAR_KEY, ref(true));
+    const { parent, index } = useParent(ACTION_BAR_KEY, { isButton: true });
 
     const isFirst = computed(() => {
       if (parent) {
         const children = parent.children.value;
         const prev = children[index.value - 1];
-        return !(prev && prev.value);
+        return !(prev && prev.isButton);
       }
     });
 
@@ -33,7 +33,7 @@ export default createComponent({
       if (parent) {
         const children = parent.children.value;
         const next = children[index.value + 1];
-        return !(next && next.value);
+        return !(next && next.isButton);
       }
     });
 
