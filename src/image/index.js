@@ -1,4 +1,5 @@
-import { createNamespace, isDef, addUnit, inBrowser } from '../utils';
+import { ref, watch, computed } from 'vue';
+import { createNamespace, isDef, addUnit } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
@@ -31,156 +32,138 @@ export default createComponent({
     },
   },
 
-  emits: ['load', 'error', 'click'],
+  emits: ['load', 'error'],
 
-  data() {
-    return {
-      loading: true,
-      error: false,
-    };
-  },
+  setup(props, { emit, slots }) {
+    const error = ref(false);
+    const loading = ref(true);
+    const imageRef = ref(null);
 
-  watch: {
-    src() {
-      this.loading = true;
-      this.error = false;
-    },
-  },
-
-  computed: {
-    style() {
+    const style = computed(() => {
       const style = {};
 
-      if (isDef(this.width)) {
-        style.width = addUnit(this.width);
+      if (isDef(props.width)) {
+        style.width = addUnit(props.width);
       }
 
-      if (isDef(this.height)) {
-        style.height = addUnit(this.height);
+      if (isDef(props.height)) {
+        style.height = addUnit(props.height);
       }
 
-      if (isDef(this.radius)) {
+      if (isDef(props.radius)) {
         style.overflow = 'hidden';
-        style.borderRadius = addUnit(this.radius);
+        style.borderRadius = addUnit(props.radius);
       }
 
       return style;
-    },
-  },
+    });
 
-  created() {
-    const { $Lazyload } = this;
-
-    if ($Lazyload && inBrowser) {
-      $Lazyload.$on('loaded', this.onLazyLoaded);
-      $Lazyload.$on('error', this.onLazyLoadError);
-    }
-  },
-
-  beforeUnmount() {
-    const { $Lazyload } = this;
-
-    if ($Lazyload) {
-      $Lazyload.$off('loaded', this.onLazyLoaded);
-      $Lazyload.$off('error', this.onLazyLoadError);
-    }
-  },
-
-  methods: {
-    onLoad(event) {
-      this.loading = false;
-      this.$emit('load', event);
-    },
-
-    onLazyLoaded({ el }) {
-      if (el === this.$refs.image && this.loading) {
-        this.onLoad();
+    watch(
+      computed(() => props.src),
+      () => {
+        error.value = false;
+        loading.value = true;
       }
-    },
+    );
 
-    onLazyLoadError({ el }) {
-      if (el === this.$refs.image && !this.error) {
-        this.onError();
-      }
-    },
+    const onLoad = (event) => {
+      loading.value = false;
+      emit('load', event);
+    };
 
-    onError(event) {
-      this.error = true;
-      this.loading = false;
-      this.$emit('error', event);
-    },
+    const onError = (event) => {
+      error.value = true;
+      loading.value = false;
+      emit('error', event);
+    };
 
-    onClick(event) {
-      this.$emit('click', event);
-    },
-
-    genPlaceholder() {
-      if (this.loading && this.showLoading) {
-        return (
-          <div class={bem('loading')}>
-            {this.$slots.loading ? (
-              this.$slots.loading()
-            ) : (
-              <Icon name={this.loadingIcon} class={bem('loading-icon')} />
-            )}
-          </div>
-        );
+    const renderLoadingIcon = () => {
+      if (slots.loading) {
+        return slots.loading();
       }
 
-      if (this.error && this.showError) {
-        return (
-          <div class={bem('error')}>
-            {this.$slots.error ? (
-              this.$slots.error()
-            ) : (
-              <Icon name={this.errorIcon} class={bem('error-icon')} />
-            )}
-          </div>
-        );
+      return <Icon name={props.loadingIcon} class={bem('loading-icon')} />;
+    };
+
+    const renderErrorIcon = () => {
+      if (slots.error) {
+        return slots.error();
       }
-    },
 
-    genImage() {
-      const imgData = {
-        alt: this.alt,
-        class: bem('img'),
-        style: {
-          objectFit: this.fit,
-        },
-      };
+      return <Icon name={props.errorIcon} class={bem('error-icon')} />;
+    };
 
-      if (this.error) {
+    const renderPlaceholder = () => {
+      if (props.loading && props.showLoading) {
+        return <div class={bem('loading')}>{renderLoadingIcon()}</div>;
+      }
+
+      if (props.error && props.showError) {
+        return <div class={bem('error')}>{renderErrorIcon()}</div>;
+      }
+    };
+
+    const renderImage = () => {
+      if (props.error || !props.src) {
         return;
       }
 
-      if (this.lazyLoad) {
-        return <img ref="image" vLazy={this.src} {...imgData} />;
+      const attrs = {
+        alt: props.alt,
+        class: bem('img'),
+        style: {
+          objectFit: props.fit,
+        },
+      };
+
+      if (props.lazyLoad) {
+        return <img ref={imageRef} vLazy={props.src} {...attrs} />;
       }
 
-      if (this.src) {
-        return (
-          <img
-            src={this.src}
-            onLoad={this.onLoad}
-            onError={this.onError}
-            {...imgData}
-          />
-        );
-      }
-    },
-  },
+      return (
+        <img src={props.src} onLoad={onLoad} onError={onError} {...attrs} />
+      );
+    };
 
-  render() {
-    return (
-      <div
-        class={bem({ round: this.round })}
-        style={this.style}
-        onClick={this.onClick}
-      >
-        {this.genImage()}
-        {this.genPlaceholder()}
-        {this.$slots.default?.()}
+    return () => (
+      <div class={bem({ round: props.round })} style={style.value}>
+        {renderImage()}
+        {renderPlaceholder()}
+        {slots.default?.()}
       </div>
     );
   },
+
+  // TODO: lazyLoad
+  // created() {
+  //   const { $Lazyload } = this;
+
+  //   if ($Lazyload && inBrowser) {
+  //     $Lazyload.$on('loaded', this.onLazyLoaded);
+  //     $Lazyload.$on('error', this.onLazyLoadError);
+  //   }
+  // },
+
+  // beforeUnmount() {
+  //   const { $Lazyload } = this;
+
+  //   if ($Lazyload) {
+  //     $Lazyload.$off('loaded', this.onLazyLoaded);
+  //     $Lazyload.$off('error', this.onLazyLoadError);
+  //   }
+  // },
+
+  // methods: {
+  // onLazyLoaded({ el }) {
+  //   if (el === this.$refs.image && this.loading) {
+  //     this.onLoad();
+  //   }
+  // },
+
+  // onLazyLoadError({ el }) {
+  //   if (el === this.$refs.image && !this.error) {
+  //     this.onError();
+  //   }
+  // },
+  // },
 });
