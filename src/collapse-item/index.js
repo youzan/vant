@@ -29,7 +29,7 @@ export default createComponent({
   setup(props, { slots }) {
     const wrapper = ref(null);
     const content = ref(null);
-    const { parent, index } = useParent(COLLAPSE_KEY, ref());
+    const { parent, index } = useParent(COLLAPSE_KEY);
 
     const currentName = computed(() =>
       isDef(props.name) ? props.name : index.value

@@ -1,10 +1,13 @@
-import { Ref, inject, computed, onUnmounted } from 'vue';
+import { ref, Ref, inject, computed, onUnmounted } from 'vue';
 
 export type Parent<T = unknown> = null | {
   children: Ref<Ref<T>[]>;
 };
 
-export function useParent<T = unknown>(key: string, child: Ref<T>) {
+export function useParent<T = unknown>(
+  key: string,
+  child: Ref<T> = ref() as Ref<T>
+) {
   const parent = inject<Parent<T>>(key, null);
 
   if (parent) {

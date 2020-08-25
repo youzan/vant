@@ -1,4 +1,3 @@
-import { ref } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
@@ -20,7 +19,7 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    useParent(ACTION_BAR_KEY, ref());
+    useParent(ACTION_BAR_KEY);
 
     const renderIcon = () => {
       const { dot, badge, icon, color, iconClass } = props;

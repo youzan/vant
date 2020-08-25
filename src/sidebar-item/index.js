@@ -1,4 +1,3 @@
-import { ref } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
@@ -19,7 +18,7 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
-    const { parent, index } = useParent(SIDEBAR_KEY, ref());
+    const { parent, index } = useParent(SIDEBAR_KEY);
 
     return (vm) => {
       const { dot, badge, title, disabled } = props;
@@ -37,7 +36,7 @@ export default createComponent({
       };
 
       return (
-        <a class={bem({ select: selected.value, disabled })} onClick={onClick}>
+        <a class={bem({ select: selected, disabled })} onClick={onClick}>
           <div class={bem('text')}>
             {title}
             <Badge dot={dot} badge={badge} class={bem('badge')} />

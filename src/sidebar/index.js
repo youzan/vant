@@ -18,7 +18,6 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const children = ref([]);
     const active = () => +props.modelValue;
-
     const setActive = (value) => {
       if (value !== active()) {
         emit('change', value);
