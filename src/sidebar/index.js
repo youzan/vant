@@ -17,25 +17,21 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const children = ref([]);
-    const index = ref(+props.modelValue);
-    const active = () => props.modelValue;
+    const active = () => +props.modelValue;
 
-    const setIndex = (value) => {
-      if (value !== index.value) {
-        index.value = value;
+    const setActive = (value) => {
+      if (value !== active()) {
         emit('change', value);
       }
     };
 
-    watch(active, (value) => {
-      setIndex(+value);
-    });
+    watch(active, setActive);
 
     provide(SIDEBAR_KEY, {
       emit,
       active,
       children,
-      setIndex,
+      setActive,
     });
 
     return () => <div class={bem()}>{slots.default?.()}</div>;

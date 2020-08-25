@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
@@ -21,10 +21,9 @@ export default createComponent({
   setup(props, { emit }) {
     const { parent, index } = useParent(SIDEBAR_KEY, ref());
 
-    const selected = computed(() => index.value === +parent.active());
-
     return (vm) => {
       const { dot, badge, title, disabled } = props;
+      const selected = index.value === parent.active();
 
       const onClick = () => {
         if (disabled) {
@@ -33,7 +32,7 @@ export default createComponent({
 
         emit('click', index.value);
         parent.emit('update:modelValue', index.value);
-        parent.setIndex(index.value);
+        parent.setActive(index.value);
         route(vm.$router, vm);
       };
 
