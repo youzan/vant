@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, pick } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 
 // Components
@@ -32,34 +32,37 @@ export default createComponent({
     },
   },
 
-  emits: ['search', 'cancel', 'keypress'],
+  emits: ['search', 'cancel'],
 
-  setup(props, { emit, slots }) {
-    return function () {
-      function Label() {
-        if (slots.label || props.label) {
-          return (
-            <div class={bem('label')}>
-              {slots.label ? slots.label() : props.label}
-            </div>
-          );
-        }
+  setup(props, { emit, slots, attrs }) {
+    const onCancel = () => {
+      if (!slots.action) {
+        emit('update:modelValue', '');
+        emit('cancel');
       }
+    };
 
-      function Action() {
-        if (!props.showAction) {
-          return;
-        }
+    const onKeypress = (event) => {
+      const ENTER_CODE = 13;
+      if (event.keyCode === ENTER_CODE) {
+        preventDefault(event);
+        emit('search', props.modelValue);
+      }
+    };
 
-        function onCancel() {
-          if (slots.action) {
-            return;
-          }
+    const renderLabel = () => {
+      if (slots.label || props.label) {
+        return (
+          <div class={bem('label')}>
+            {slots.label ? slots.label() : props.label}
+          </div>
+        );
+      }
+    };
 
-          emit('update:modelValue', '');
-          emit('cancel');
-        }
-
+    const renderAction = () => {
+      if (props.showAction) {
+        const text = props.actionText || t('cancel');
         return (
           <div
             class={bem('action')}
@@ -67,51 +70,51 @@ export default createComponent({
             tabindex="0"
             onClick={onCancel}
           >
-            {slots.action ? slots.action() : props.actionText || t('cancel')}
+            {slots.action ? slots.action() : text}
           </div>
         );
       }
+    };
 
-      const fieldData = {
-        ...this.$attrs,
+    const fieldPropNames = [
+      'leftIcon',
+      'rightIcon',
+      'clearable',
+      'modelValue',
+      'clearTrigger',
+    ];
+
+    const renderField = () => {
+      const fieldAttrs = {
+        ...attrs,
+        ...pick(props, fieldPropNames),
         style: null,
         class: null,
-        onKeypress(event) {
-          // press enter
-          if (event.keyCode === 13) {
-            preventDefault(event);
-            emit('search', props.modelValue);
-          }
-          emit('keypress', event);
-        },
       };
 
       return (
-        <div
-          class={[bem({ 'show-action': props.showAction }), this.$attrs.class]}
-          style={{ background: props.background, ...this.$attrs.style }}
-        >
-          {slots.left?.()}
-          <div class={bem('content', props.shape)}>
-            {Label()}
-            <Field
-              v-slots={{
-                'left-icon': slots['left-icon'],
-                'right-icon': slots['right-icon'],
-              }}
-              type="search"
-              border={false}
-              leftIcon={props.leftIcon}
-              rightIcon={props.rightIcon}
-              clearable={props.clearable}
-              modelValue={props.modelValue}
-              clearTrigger={props.clearTrigger}
-              {...fieldData}
-            />
-          </div>
-          {Action()}
-        </div>
+        <Field
+          v-slots={pick(slots, ['left-icon', 'right-icon'])}
+          type="search"
+          border={false}
+          onKeypress={onKeypress}
+          {...fieldAttrs}
+        />
       );
     };
+
+    return () => (
+      <div
+        class={[bem({ 'show-action': props.showAction }), attrs.class]}
+        style={{ background: props.background, ...attrs.style }}
+      >
+        {slots.left?.()}
+        <div class={bem('content', props.shape)}>
+          {renderLabel()}
+          {renderField()}
+        </div>
+        {renderAction()}
+      </div>
+    );
   },
 });
