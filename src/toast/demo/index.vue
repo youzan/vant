@@ -17,6 +17,11 @@
       />
     </demo-block>
 
+    <demo-block card v-if="!isWeapp" :title="t('customPosition')">
+      <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
+      <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
+    </demo-block>
+
     <demo-block card :title="t('updateMessage')">
       <van-cell
         is-link
@@ -31,34 +36,40 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: '文字提示',
-      title2: '加载提示',
-      title3: '成功/失败提示',
-      success: '成功提示',
       fail: '失败提示',
       text: '提示内容',
       text2: '成功文案',
       text3: '失败文案',
+      text4: (second) => `倒计时 ${second} 秒`,
+      title1: '文字提示',
+      title2: '加载提示',
+      title3: '成功/失败提示',
+      success: '成功提示',
       customIcon: '自定义图标',
       customImage: '自定义图片',
-      text4: (second) => `倒计时 ${second} 秒`,
-      updateMessage: '动态更新提示',
       loadingType: '自定义加载图标',
+      positionTop: '顶部展示',
+      updateMessage: '动态更新提示',
+      positionBottom: '底部展示',
+      customPosition: '自定义位置',
     },
     'en-US': {
-      title1: 'Text',
-      title2: 'Loading',
-      title3: 'Success/Fail',
-      success: 'Success',
       fail: 'Fail',
       text: 'Some messages',
       text2: 'Success',
       text3: 'Fail',
+      text4: (second) => `${second} seconds`,
+      title1: 'Text',
+      title2: 'Loading',
+      title3: 'Success/Fail',
+      success: 'Success',
       customIcon: 'Custom Icon',
       customImage: 'Custom Image',
-      text4: (second) => `${second} seconds`,
-      updateMessage: 'Update Message',
       loadingType: 'Loading Type',
+      positionTop: 'Top',
+      updateMessage: 'Update Message',
+      positionBottom: 'Bottom',
+      customPosition: 'Custom Position',
     },
   },
 
@@ -77,6 +88,20 @@ export default {
 
     showFailToast() {
       this.$toast.fail(this.t('text3'));
+    },
+
+    showTopToast() {
+      this.$toast({
+        message: this.t('positionTop'),
+        position: 'top',
+      });
+    },
+
+    showBottomToast() {
+      this.$toast({
+        message: this.t('positionBottom'),
+        position: 'bottom',
+      });
     },
 
     showIconToast() {

@@ -65,6 +65,22 @@ Toast.loading({
 });
 ```
 
+### 自定义位置
+
+Toast 默认渲染在屏幕正中位置，通过 `position` 属性可以控制 Toast 展示的位置。
+
+```js
+Toast({
+  message: '顶部展示',
+  position: 'top',
+});
+
+Toast({
+  message: '底部展示',
+  position: 'bottom',
+});
+```
+
 ### 动态更新提示
 
 执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 message 属性可以实现动态更新提示的效果。
