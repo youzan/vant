@@ -1,3 +1,11 @@
+import {
+  ref,
+  watch,
+  computed,
+  onActivated,
+  onDeactivated,
+  onBeforeUnmount,
+} from 'vue';
 import { createNamespace } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
@@ -23,144 +31,125 @@ export default createComponent({
 
   emits: ['change', 'finish'],
 
-  data() {
-    return {
-      remain: 0,
+  setup(props, { emit, slots }) {
+    let rafId;
+    let endTime;
+    let counting;
+    let keepAlived;
+
+    const remain = ref(0);
+    const timeData = computed(() => parseTimeData(remain.value));
+    const timeText = computed(() => parseFormat(props.format, timeData.value));
+
+    const pause = () => {
+      counting = false;
+      cancelRaf(rafId);
     };
-  },
 
-  computed: {
-    timeData() {
-      return parseTimeData(this.remain);
-    },
+    const getCurrentRemain = () => Math.max(endTime - Date.now(), 0);
 
-    formattedTime() {
-      return parseFormat(this.format, this.timeData);
-    },
-  },
+    const setRemain = (value) => {
+      remain.value = value;
+      emit('change', timeData.value);
 
-  watch: {
-    time: {
-      immediate: true,
-      handler() {
-        this.reset();
-      },
-    },
-  },
-
-  activated() {
-    if (this.keepAlivePaused) {
-      this.counting = true;
-      this.keepAlivePaused = false;
-      this.tick();
-    }
-  },
-
-  deactivated() {
-    if (this.counting) {
-      this.pause();
-      this.keepAlivePaused = true;
-    }
-  },
-
-  beforeUnmount() {
-    this.pause();
-  },
-
-  methods: {
-    // @exposed-api
-    start() {
-      if (this.counting) {
-        return;
+      if (value === 0) {
+        pause();
+        emit('finish');
       }
+    };
 
-      this.counting = true;
-      this.endTime = Date.now() + this.remain;
-      this.tick();
-    },
+    const microTick = () => {
+      rafId = raf(() => {
+        // in case of call reset immediately after finish
+        if (counting) {
+          setRemain(getCurrentRemain());
 
-    // @exposed-api
-    pause() {
-      this.counting = false;
-      cancelRaf(this.rafId);
-    },
+          if (remain.value > 0) {
+            microTick();
+          }
+        }
+      });
+    };
 
-    // @exposed-api
-    reset() {
-      this.pause();
-      this.remain = +this.time;
+    const macroTick = () => {
+      rafId = raf(() => {
+        // in case of call reset immediately after finish
+        if (counting) {
+          const currentRemain = getCurrentRemain();
 
-      if (this.autoStart) {
-        this.start();
-      }
-    },
+          if (
+            !isSameSecond(currentRemain, remain.value) ||
+            currentRemain === 0
+          ) {
+            setRemain(currentRemain);
+          }
 
-    tick() {
-      if (this.millisecond) {
-        this.microTick();
+          if (remain.value > 0) {
+            macroTick();
+          }
+        }
+      });
+    };
+
+    const tick = () => {
+      if (props.millisecond) {
+        microTick();
       } else {
-        this.macroTick();
+        macroTick();
       }
-    },
+    };
 
-    microTick() {
-      this.rafId = raf(() => {
-        /* istanbul ignore if */
-        // in case of call reset immediately after finish
-        if (!this.counting) {
-          return;
-        }
-
-        this.setRemain(this.getRemain());
-
-        if (this.remain > 0) {
-          this.microTick();
-        }
-      });
-    },
-
-    macroTick() {
-      this.rafId = raf(() => {
-        /* istanbul ignore if */
-        // in case of call reset immediately after finish
-        if (!this.counting) {
-          return;
-        }
-
-        const remain = this.getRemain();
-
-        if (!isSameSecond(remain, this.remain) || remain === 0) {
-          this.setRemain(remain);
-        }
-
-        if (this.remain > 0) {
-          this.macroTick();
-        }
-      });
-    },
-
-    getRemain() {
-      return Math.max(this.endTime - Date.now(), 0);
-    },
-
-    setRemain(remain) {
-      this.remain = remain;
-      this.$emit('change', this.timeData);
-
-      if (remain === 0) {
-        this.pause();
-        this.$emit('finish');
+    const start = () => {
+      if (!counting) {
+        endTime = Date.now() + remain.value;
+        counting = true;
+        tick();
       }
-    },
-  },
+    };
 
-  render() {
-    return (
-      <div class={bem()}>
-        {this.$slots.default
-          ? this.$slots.default(this.timeData)
-          : this.formattedTime}
-      </div>
+    const reset = () => {
+      pause();
+      remain.value = +props.time;
+
+      if (props.autoStart) {
+        start();
+      }
+    };
+
+    watch(
+      computed(() => props.time),
+      reset,
+      { immediate: true }
     );
+
+    onActivated(() => {
+      if (keepAlived) {
+        counting = true;
+        keepAlived = false;
+        tick();
+      }
+    });
+
+    onDeactivated(() => {
+      if (counting) {
+        pause();
+        keepAlived = true;
+      }
+    });
+
+    onBeforeUnmount(pause);
+
+    return (vm) => {
+      // @exposed-api
+      vm.start = start;
+      vm.reset = reset;
+      vm.pause = pause;
+
+      return (
+        <div class={bem()}>
+          {slots.default ? slots.default(timeData.value) : timeText.value}
+        </div>
+      );
+    };
   },
 });
