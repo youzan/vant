@@ -10,6 +10,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.3](https://github.com/youzan/vant/compare/v2.10.2...v2.10.3)
+
+`2020-08-25`
+
+**Feature**
+
+- Uploader: preview-cover slot add index param [#7036](https://github.com/youzan/vant/issues/7036)
+
+**style**
+
+- Search: increase left padding to 12px [#7014](https://github.com/youzan/vant/issues/7014)
+- Tabs: adjust default line-width to 40px [#7002](https://github.com/youzan/vant/issues/7002)
+- Toast: adjust top position [#7044](https://github.com/youzan/vant/issues/7044)
+
+**Bug Fixes**
+
+- Calendar: render error when using rem unit [#7037](https://github.com/youzan/vant/issues/7037)
+- Toast: failed to reopen when using get-container [#7032](https://github.com/youzan/vant/issues/7032)
+
 ### [v2.10.2](https://github.com/youzan/vant/compare/v2.10.1...v2.10.2)
 
 `2020-08-12`

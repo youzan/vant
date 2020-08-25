@@ -10,6 +10,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.3](https://github.com/youzan/vant/compare/v2.10.2...v2.10.3)
+
+`2020-08-25`
+
+**Feature**
+
+- Uploader: 新增 preview-cover 插槽的 index 参数 [#7036](https://github.com/youzan/vant/issues/7036)
+
+**style**
+
+- Search: 左侧内边距调整为 12px [#7014](https://github.com/youzan/vant/issues/7014)
+- Tabs: 底部条宽度固定为 40px [#7002](https://github.com/youzan/vant/issues/7002)
+- Toast: 调整顶部展示/底部展示时的位置 [#7044](https://github.com/youzan/vant/issues/7044)
+
+**Bug Fixes**
+
+- Calendar: 修复使用 rem 单位时滚动条跳动的问题 [#7037](https://github.com/youzan/vant/issues/7037)
+- Toast: 修复使用 get-container 属性可能导致 Toast 无法展示的问题 [#7032](https://github.com/youzan/vant/issues/7032)
+
 ### [v2.10.2](https://github.com/youzan/vant/compare/v2.10.1...v2.10.2)
 
 `2020-08-12`
