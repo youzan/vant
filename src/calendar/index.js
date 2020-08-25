@@ -288,18 +288,18 @@ export default createComponent({
 
         if (!monthRefs[i].visible && visible) {
           this.$emit('month-show', {
-            date: monthRefs[i].date,
-            title: monthRefs[i].title,
+            date: monthRefs[i].getDate(),
+            title: monthRefs[i].getTitle(),
           });
         }
 
-        monthRefs[i].visible = visible;
+        monthRefs[i].setVisible(visible);
         height += heights[i];
       }
 
       /* istanbul ignore else */
       if (currentMonth) {
-        this.subtitle = currentMonth.title;
+        this.subtitle = currentMonth.getTitle();
       }
     },
 
