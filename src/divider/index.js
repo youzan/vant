@@ -15,18 +15,17 @@ export default createComponent({
     },
   },
 
-  render() {
-    const Content = this.$slots.default?.();
-    return (
+  setup(props, { slots }) {
+    return () => (
       <div
         role="separator"
         class={bem({
-          dashed: this.dashed,
-          hairline: this.hairline,
-          [`content-${this.contentPosition}`]: !!Content,
+          dashed: props.dashed,
+          hairline: props.hairline,
+          [`content-${props.contentPosition}`]: !!slots.default,
         })}
       >
-        {Content}
+        {slots.default?.()}
       </div>
     );
   },
