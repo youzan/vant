@@ -6,6 +6,7 @@ import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Composition
 import { useParent } from '../api/use-relation';
+import { useLazyRender } from '../api/use-lazy-render';
 
 // Components
 import Cell from '../cell';
@@ -42,7 +43,7 @@ export default createComponent({
     });
 
     const show = ref(expanded.value);
-    const inited = ref(expanded.value);
+    const shouldRender = useLazyRender(show);
 
     const onTransitionEnd = () => {
       if (!expanded.value) {
@@ -59,7 +60,6 @@ export default createComponent({
 
       if (value) {
         show.value = true;
-        inited.value = true;
       }
 
       // Use raf: flick when opened in safari
@@ -118,7 +118,7 @@ export default createComponent({
     };
 
     const renderContent = () => {
-      if (inited.value) {
+      if (shouldRender.value) {
         return (
           <div
             ref={wrapper}
