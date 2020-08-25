@@ -1,0 +1,19 @@
+name: 🔂 Surge PR Preview
+
+on: [push, pull_request]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_PATH: '/'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: afc163/surge-preview@v1
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          build: |
+            npm install
+            ./node_modules/.bin/vant-cli build-site
+          dist: site
