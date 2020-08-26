@@ -116,6 +116,13 @@ export default createComponent({
       }
     };
 
+    const onClick = (event) => {
+      if (!props.loading && !props.disabled) {
+        emit('click', event);
+        route();
+      }
+    };
+
     return () => {
       const {
         tag,
@@ -130,13 +137,6 @@ export default createComponent({
         hairline,
         nativeType,
       } = props;
-
-      const onClick = (event) => {
-        if (!loading && !disabled) {
-          emit('click', event);
-          route();
-        }
-      };
 
       const classes = [
         bem([
