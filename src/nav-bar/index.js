@@ -91,7 +91,7 @@ export default createComponent({
         return (
           <div
             class={bem('placeholder')}
-            style={{ height: `${height.value}px` }}
+            style={{ height: height.value && `${height.value}px` }}
           >
             {renderNavBar()}
           </div>

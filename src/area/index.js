@@ -51,8 +51,8 @@ export default createComponent({
     const pickerRef = ref(null);
 
     const state = reactive({
-      code: ref(props.value),
-      columns: reactive([{ values: [] }, { values: [] }, { values: [] }]),
+      code: props.value,
+      columns: [{ values: [] }, { values: [] }, { values: [] }],
     });
 
     const areaList = computed(() => {
