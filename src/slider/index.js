@@ -1,12 +1,18 @@
+import { ref, computed } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
+
+// Mixins
 import { FieldMixin } from '../mixins/field';
+
+// Composition
+import { useRect } from '../composition/use-rect';
+import { useTouch } from '../composition/use-touch';
 
 const [createComponent, bem] = createNamespace('slider');
 
 export default createComponent({
-  mixins: [TouchMixin, FieldMixin],
+  mixins: [FieldMixin],
 
   props: {
     disabled: Boolean,
@@ -35,161 +41,162 @@ export default createComponent({
 
   emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
 
-  data() {
-    return {
-      dragStatus: '',
-    };
-  },
+  setup(props, { emit, slots }) {
+    let startValue;
+    let currentValue;
 
-  computed: {
-    range() {
-      return this.max - this.min;
-    },
+    const rootRef = ref();
+    const dragStatus = ref();
+    const touch = useTouch();
 
-    buttonStyle() {
-      if (this.buttonSize) {
-        const size = addUnit(this.buttonSize);
+    const range = computed(() => props.max - props.min);
+
+    const buttonStyle = computed(() => {
+      if (props.buttonSize) {
+        const size = addUnit(props.buttonSize);
         return {
           width: size,
           height: size,
         };
       }
-    },
-  },
+    });
 
-  created() {
-    // format initial value
-    this.updateValue(this.modelValue);
-  },
+    const wrapperStyle = computed(() => {
+      const crossAxis = props.vertical ? 'width' : 'height';
+      return {
+        background: props.inactiveColor,
+        [crossAxis]: addUnit(props.barHeight),
+      };
+    });
 
-  mounted() {
-    this.bindTouchEvent(this.$refs.wrapper);
-  },
+    const barStyle = computed(() => {
+      const mainAxis = props.vertical ? 'height' : 'width';
+      return {
+        [mainAxis]: `${((props.modelValue - props.min) * 100) / range.value}%`,
+        background: props.activeColor,
+        transition: dragStatus.value ? 'none' : null,
+      };
+    });
 
-  methods: {
-    onTouchStart(event) {
-      if (this.disabled) {
+    const format = (value) => {
+      const { min, max, step } = props;
+      value = Math.max(min, Math.min(value, max));
+      return Math.round(value / step) * step;
+    };
+
+    const updateValue = (value, end) => {
+      value = format(value);
+
+      if (value !== props.modelValue) {
+        emit('update:modelValue', value);
+      }
+
+      if (end && value !== startValue) {
+        emit('change', value);
+      }
+    };
+
+    const onClick = (event) => {
+      event.stopPropagation();
+
+      if (props.disabled) {
         return;
       }
 
-      this.touchStart(event);
-      this.startValue = this.format(this.modelValue);
-      this.dragStatus = 'start';
-    },
+      const { min, vertical, modelValue } = props;
+      const rect = useRect(rootRef);
+      const delta = vertical
+        ? event.clientY - rect.top
+        : event.clientX - rect.left;
+      const total = vertical ? rect.height : rect.width;
+      const value = +min + (delta / total) * range.value;
 
-    onTouchMove(event) {
-      if (this.disabled) {
+      startValue = modelValue;
+      updateValue(value, true);
+    };
+
+    const onTouchStart = (event) => {
+      if (props.disabled) {
         return;
       }
 
-      if (this.dragStatus === 'start') {
-        this.$emit('drag-start');
+      touch.start(event);
+      startValue = format(props.modelValue);
+      dragStatus.value = 'start';
+    };
+
+    const onTouchMove = (event) => {
+      if (props.disabled) {
+        return;
+      }
+
+      if (dragStatus.value === 'start') {
+        emit('drag-start');
       }
 
       preventDefault(event, true);
-      this.touchMove(event);
-      this.dragStatus = 'draging';
+      touch.move(event);
+      dragStatus.value = 'draging';
 
-      const rect = this.$el.getBoundingClientRect();
-      const delta = this.vertical ? this.deltaY : this.deltaX;
-      const total = this.vertical ? rect.height : rect.width;
-      const diff = (delta / total) * this.range;
+      const rect = useRect(rootRef);
+      const delta = props.vertical ? touch.deltaY.value : touch.deltaX.value;
+      const total = props.vertical ? rect.height : rect.width;
+      const diff = (delta / total) * range.value;
 
-      this.newValue = this.startValue + diff;
-      this.updateValue(this.newValue);
-    },
+      currentValue = startValue + diff;
+      updateValue(currentValue);
+    };
 
-    onTouchEnd() {
-      if (this.disabled) {
+    const onTouchEnd = () => {
+      if (props.disabled) {
         return;
       }
 
-      if (this.dragStatus === 'draging') {
-        this.updateValue(this.newValue, true);
-        this.$emit('drag-end');
+      if (dragStatus.value === 'draging') {
+        updateValue(currentValue, true);
+        emit('drag-end');
       }
 
-      this.dragStatus = '';
-    },
-
-    onClick(event) {
-      event.stopPropagation();
-
-      if (this.disabled) return;
-
-      const rect = this.$el.getBoundingClientRect();
-      const delta = this.vertical
-        ? event.clientY - rect.top
-        : event.clientX - rect.left;
-      const total = this.vertical ? rect.height : rect.width;
-      const value = +this.min + (delta / total) * this.range;
-
-      this.startValue = this.modelValue;
-      this.updateValue(value, true);
-    },
-
-    updateValue(value, end) {
-      value = this.format(value);
-
-      if (value !== this.modelValue) {
-        this.$emit('update:modelValue', value);
-      }
-
-      if (end && value !== this.startValue) {
-        this.$emit('change', value);
-      }
-    },
-
-    format(value) {
-      return (
-        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) *
-        this.step
-      );
-    },
-  },
-
-  render() {
-    const { vertical } = this;
-    const mainAxis = vertical ? 'height' : 'width';
-    const crossAxis = vertical ? 'width' : 'height';
-
-    const wrapperStyle = {
-      background: this.inactiveColor,
-      [crossAxis]: addUnit(this.barHeight),
+      dragStatus.value = '';
     };
 
-    const barStyle = {
-      [mainAxis]: `${((this.modelValue - this.min) * 100) / this.range}%`,
-      background: this.activeColor,
-    };
-
-    if (this.dragStatus) {
-      barStyle.transition = 'none';
-    }
-
-    return (
+    const renderButton = () => (
       <div
-        style={wrapperStyle}
-        class={bem({ disabled: this.disabled, vertical })}
-        onClick={this.onClick}
+        role="slider"
+        tabindex={props.disabled ? -1 : 0}
+        aria-valuemin={props.min}
+        aria-valuenow={props.modelValue}
+        aria-valuemax={props.max}
+        aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
+        class={bem('button-wrapper')}
+        onTouchstart={onTouchStart}
+        onTouchmove={onTouchMove}
+        onTouchend={onTouchEnd}
+        onTouchcancel={onTouchEnd}
       >
-        <div class={bem('bar')} style={barStyle}>
-          <div
-            ref="wrapper"
-            role="slider"
-            tabindex={this.disabled ? -1 : 0}
-            aria-valuemin={this.min}
-            aria-valuenow={this.modelValue}
-            aria-valuemax={this.max}
-            aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
-            class={bem('button-wrapper')}
-          >
-            {this.$slots.button ? (
-              this.$slots.button()
-            ) : (
-              <div class={bem('button')} style={this.buttonStyle} />
-            )}
-          </div>
+        {slots.button ? (
+          slots.button()
+        ) : (
+          <div class={bem('button')} style={buttonStyle.value} />
+        )}
+      </div>
+    );
+
+    // format initial value
+    updateValue(props.modelValue);
+
+    return () => (
+      <div
+        ref={rootRef}
+        style={wrapperStyle.value}
+        class={bem({
+          vertical: props.vertical,
+          disabled: props.disabled,
+        })}
+        onClick={onClick}
+      >
+        <div class={bem('bar')} style={barStyle.value}>
+          {renderButton()}
         </div>
       </div>
     );
