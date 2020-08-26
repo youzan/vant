@@ -48,10 +48,6 @@ export default createComponent({
   },
 
   methods: {
-    onClick() {
-      this.$emit('click');
-    },
-
     genText() {
       const Text = (
         <span class={bem('text', { ellipsis: !this.scrollable })}>
@@ -76,7 +72,6 @@ export default createComponent({
     return (
       <div
         role="tab"
-        aria-selected={this.isActive}
         class={[
           bem({
             active: this.isActive,
@@ -84,7 +79,7 @@ export default createComponent({
           }),
         ]}
         style={this.style}
-        onClick={this.onClick}
+        aria-selected={this.isActive}
       >
         {this.genText()}
       </div>

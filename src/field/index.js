@@ -83,7 +83,6 @@ export default createComponent({
     'blur',
     'focus',
     'clear',
-    'click',
     'keypress',
     'click-input',
     'click-left-icon',
@@ -346,10 +345,6 @@ export default createComponent({
       resetScroll();
     },
 
-    onClick(event) {
-      this.$emit('click', event);
-    },
-
     onClickInput(event) {
       this.$emit('click-input', event);
     },
@@ -585,7 +580,6 @@ export default createComponent({
         valueClass={bem('value')}
         titleClass={[bem('label', labelAlign), this.labelClass]}
         arrowDirection={this.arrowDirection}
-        onClick={this.onClick}
       >
         <div class={bem('body')}>
           {this.genInput()}

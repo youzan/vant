@@ -26,7 +26,7 @@ export default createComponent({
     },
   },
 
-  emits: ['click', 'close', 'replay'],
+  emits: ['close', 'replay'],
 
   data() {
     return {
@@ -163,9 +163,6 @@ export default createComponent({
         vShow={this.show}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
-        onClick={(event) => {
-          this.$emit('click', event);
-        }}
       >
         {LeftIcon()}
         <div ref="wrap" class={bem('wrap')} role="marquee">
