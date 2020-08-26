@@ -27,12 +27,12 @@ export default createComponent({
   emits: ['click-left', 'click-right'],
 
   setup(props, { emit, slots }) {
-    const navBar = ref(null);
     const height = ref(null);
+    const navBarRef = ref(null);
 
     onMounted(() => {
       if (props.placeholder && props.fixed) {
-        height.value = navBar.value.getBoundingClientRect().height;
+        height.value = navBarRef.value.getBoundingClientRect().height;
       }
     });
 
@@ -69,7 +69,7 @@ export default createComponent({
       const { title, fixed, border, zIndex } = props;
       return (
         <div
-          ref={navBar}
+          ref={navBarRef}
           style={{ zIndex }}
           class={[bem({ fixed }), { [BORDER_BOTTOM]: border }]}
         >

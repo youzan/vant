@@ -27,8 +27,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const wrapper = ref(null);
-    const content = ref(null);
+    const wrapperRef = ref(null);
+    const contentRef = ref(null);
     const { parent, index } = useParent(COLLAPSE_KEY);
 
     const currentName = computed(() =>
@@ -49,7 +49,7 @@ export default createComponent({
       if (!expanded.value) {
         show.value = false;
       } else {
-        wrapper.value.style.height = '';
+        wrapperRef.value.style.height = '';
       }
     };
 
@@ -67,18 +67,18 @@ export default createComponent({
       const tick = value ? nextTick : raf;
 
       tick(() => {
-        if (!content.value || !wrapper.value) {
+        if (!contentRef.value || !wrapperRef.value) {
           return;
         }
 
-        const { offsetHeight } = content.value;
+        const { offsetHeight } = contentRef.value;
         if (offsetHeight) {
           const contentHeight = `${offsetHeight}px`;
-          wrapper.value.style.height = value ? 0 : contentHeight;
+          wrapperRef.value.style.height = value ? 0 : contentHeight;
 
           // use double raf to ensure animation can start
           doubleRaf(() => {
-            wrapper.value.style.height = value ? contentHeight : 0;
+            wrapperRef.value.style.height = value ? contentHeight : 0;
           });
         } else {
           onTransitionEnd();
@@ -121,12 +121,12 @@ export default createComponent({
       if (shouldRender.value) {
         return (
           <div
-            ref={wrapper}
+            ref={wrapperRef}
             vShow={show.value}
             class={bem('wrapper')}
             onTransitionend={onTransitionEnd}
           >
-            <div ref={content} class={bem('content')}>
+            <div ref={contentRef} class={bem('content')}>
               {slots.default?.()}
             </div>
           </div>

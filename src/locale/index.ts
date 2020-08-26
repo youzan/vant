@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 import { deepAssign } from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
@@ -6,13 +6,13 @@ type Message = Record<string, any>;
 type Messages = Record<string, Message>;
 
 const lang = ref('zh-CN');
-const messages = ref<Messages>({
+const messages = reactive<Messages>({
   'zh-CN': defaultMessages,
 });
 
 export default {
   messages(): Message {
-    return messages.value[lang.value];
+    return messages[lang.value];
   },
 
   use(newLang: string, newMessages?: Message) {
@@ -21,6 +21,6 @@ export default {
   },
 
   add(newMessages: Message = {}) {
-    deepAssign(messages.value, newMessages);
+    deepAssign(messages, newMessages);
   },
 };
