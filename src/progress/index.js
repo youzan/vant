@@ -1,3 +1,4 @@
+import { ref, watch, computed, nextTick, reactive, onMounted } from 'vue';
 import { createNamespace, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('progress');
@@ -22,63 +23,70 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
+  setup(props) {
+    const rootRef = ref(null);
+    const pivotRef = ref(null);
+
+    const state = reactive({
       pivotWidth: 0,
-      progressWidth: 0,
-    };
-  },
+      rootWidth: 0,
+    });
 
-  mounted() {
-    this.setWidth();
-  },
-
-  watch: {
-    showPivot: 'setWidth',
-    pivotText: 'setWidth',
-  },
-
-  methods: {
-    setWidth() {
-      this.$nextTick(() => {
-        this.progressWidth = this.$el.offsetWidth;
-        this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
-      });
-    },
-  },
-
-  render() {
-    const { pivotText, percentage } = this;
-    const text = isDef(pivotText) ? pivotText : percentage + '%';
-    const showPivot = this.showPivot && text;
-    const background = this.inactive ? '#cacaca' : this.color;
-
-    const pivotStyle = {
-      color: this.textColor,
-      left: `${((this.progressWidth - this.pivotWidth) * percentage) / 100}px`,
-      background: this.pivotColor || background,
-    };
-
-    const portionStyle = {
-      background,
-      width: (this.progressWidth * percentage) / 100 + 'px',
-    };
-
-    const wrapperStyle = {
-      background: this.trackColor,
-      height: addUnit(this.strokeWidth),
-    };
-
-    return (
-      <div class={bem()} style={wrapperStyle}>
-        <span class={bem('portion')} style={portionStyle}>
-          {showPivot && (
-            <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
-              {text}
-            </span>
-          )}
-        </span>
-      </div>
+    const background = computed(() =>
+      props.inactive ? '#cacaca' : props.color
     );
+
+    const setWidth = () => {
+      nextTick(() => {
+        state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
+        state.rootWidth = rootRef.value.offsetWidth;
+      });
+    };
+
+    const renderPivot = () => {
+      const { rootWidth, pivotWidth } = state;
+      const { textColor, pivotText, pivotColor, percentage } = props;
+      const text = isDef(pivotText) ? pivotText : percentage + '%';
+      const show = props.showPivot && text;
+
+      if (show) {
+        const left = ((rootWidth - pivotWidth) * percentage) / 100;
+        const style = {
+          color: textColor,
+          left: `${left}px`,
+          background: pivotColor || background.value,
+        };
+
+        return (
+          <span ref={pivotRef} style={style} class={bem('pivot')}>
+            {text}
+          </span>
+        );
+      }
+    };
+
+    watch([() => props.showPivot, () => props.pivotText], setWidth);
+
+    onMounted(setWidth);
+
+    return () => {
+      const { trackColor, percentage, strokeWidth } = props;
+      const rootStyle = {
+        background: trackColor,
+        height: addUnit(strokeWidth),
+      };
+      const portionStyle = {
+        background: background.value,
+        width: (state.rootWidth * percentage) / 100 + 'px',
+      };
+
+      return (
+        <div ref={rootRef} class={bem()} style={rootStyle}>
+          <span class={bem('portion')} style={portionStyle}>
+            {renderPivot()}
+          </span>
+        </div>
+      );
+    };
   },
 });
