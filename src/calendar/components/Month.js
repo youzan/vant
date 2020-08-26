@@ -12,6 +12,7 @@ import {
   formatMonthTitle,
 } from '../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
+import Day from './Day';
 
 const [createComponent] = createNamespace('calendar-month');
 
@@ -173,42 +174,15 @@ export default createComponent({
       }
     };
 
-    const getBottomInfo = (type) => {
+    const getBottomInfo = (dayType) => {
       if (props.type === 'range') {
-        if (type === 'start' || type === 'end') {
-          return t(type);
+        if (dayType === 'start' || dayType === 'end') {
+          return t(dayType);
         }
-        if (type === 'start-end') {
+        if (dayType === 'start-end') {
           return t('startEnd');
         }
       }
-    };
-
-    const getDayStyle = (type, index) => {
-      const { color } = props;
-      const style = {
-        height: rowHeight.value,
-      };
-
-      if (index === 0) {
-        style.marginLeft = `${(100 * offset.value) / 7}%`;
-      }
-
-      if (color) {
-        if (
-          type === 'start' ||
-          type === 'end' ||
-          type === 'start-end' ||
-          type === 'multiple-selected' ||
-          type === 'multiple-middle'
-        ) {
-          style.background = color;
-        } else if (type === 'middle') {
-          style.color = color;
-        }
-      }
-
-      return style;
     };
 
     const renderTitle = () => {
@@ -221,63 +195,6 @@ export default createComponent({
       if (props.showMark) {
         return <div class={bem('month-mark')}>{props.date.getMonth() + 1}</div>;
       }
-    };
-
-    const renderDay = (item, index) => {
-      const { type, topInfo, bottomInfo } = item;
-      const style = getDayStyle(type, index);
-      const disabled = type === 'disabled';
-
-      const onClick = () => {
-        if (!disabled) {
-          emit('click', item);
-        }
-      };
-
-      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
-
-      const BottomInfo = bottomInfo && (
-        <div class={bem('bottom-info')}>{bottomInfo}</div>
-      );
-
-      if (type === 'selected') {
-        return (
-          <div
-            role="gridcell"
-            style={style}
-            class={[bem('day'), item.className]}
-            tabindex={-1}
-            onClick={onClick}
-          >
-            <div
-              class={bem('selected-day')}
-              style={{
-                width: rowHeight.value,
-                height: rowHeight.value,
-                background: props.color,
-              }}
-            >
-              {TopInfo}
-              {item.text}
-              {BottomInfo}
-            </div>
-          </div>
-        );
-      }
-
-      return (
-        <div
-          role="gridcell"
-          style={style}
-          class={[bem('day', type), item.className]}
-          tabindex={disabled ? null : -1}
-          onClick={onClick}
-        >
-          {TopInfo}
-          {item.text}
-          {BottomInfo}
-        </div>
-      );
     };
 
     const days = computed(() => {
@@ -305,6 +222,19 @@ export default createComponent({
 
       return days;
     });
+
+    const renderDay = (item, index) => (
+      <Day
+        item={item}
+        index={index}
+        color={props.color}
+        offset={offset.value}
+        rowHeight={rowHeight.value}
+        onClick={(item) => {
+          emit('click', item);
+        }}
+      />
+    );
 
     const renderDays = () => {
       if (shouldRender.value) {
