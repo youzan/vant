@@ -2,6 +2,18 @@
   <demo-block :title="t('title')">
     <van-form validate-first @sumbit="onSubmit" @failed="onFailed">
       <van-field
+        name="radio"
+        :label="t('label')"
+        :rules="[{ required: true, message: t('required') }]"
+      >
+        <template #input>
+          <van-radio-group v-model="radio" direction="horizontal">
+            <van-radio :name="true">1</van-radio>
+            <van-radio :name="false">2</van-radio>
+          </van-radio-group>
+        </template>
+      </van-field>
+      <van-field
         v-model="value1"
         name="pattern"
         :label="t('label')"
@@ -43,6 +55,7 @@ export default {
       validator: '函数校验',
       validating: '验证中...',
       asyncValidator: '异步函数校验',
+      required: '必填',
     },
     'en-US': {
       label: 'Label',
@@ -53,11 +66,13 @@ export default {
       validator: 'Use validator',
       validating: 'Validating...',
       asyncValidator: 'Use async validator',
+      required: 'required',
     },
   },
 
   data() {
     return {
+      radio: undefined,
       value1: '',
       value2: '',
       value3: '',
