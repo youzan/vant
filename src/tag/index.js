@@ -1,4 +1,4 @@
-import { Transition } from 'vue';
+import { computed, Transition } from 'vue';
 import { createNamespace } from '../utils';
 import Icon from '../icon';
 
@@ -26,36 +26,40 @@ export default createComponent({
   emits: ['close'],
 
   setup(props, { slots, emit }) {
-    return function () {
-      const { type, mark, plain, color, round, size } = props;
+    const onClose = (event) => {
+      event.stopPropagation();
+      emit('close');
+    };
 
-      const key = plain ? 'color' : 'backgroundColor';
-      const style = { [key]: color };
+    const style = computed(() => {
+      const key = props.plain ? 'color' : 'backgroundColor';
+      const style = { [key]: props.color };
 
       if (props.textColor) {
         style.color = props.textColor;
       }
+    });
+
+    return () => {
+      const { show, type, mark, plain, round, size, closeable } = props;
 
       const classes = { mark, plain, round };
       if (size) {
         classes[size] = size;
       }
 
-      const CloseIcon = props.closeable && (
-        <Icon
-          name="cross"
-          class={bem('close')}
-          onClick={(event) => {
-            event.stopPropagation();
-            emit('close');
-          }}
-        />
+      const CloseIcon = closeable && (
+        <Icon name="cross" class={bem('close')} onClick={onClose} />
       );
 
       return (
-        <Transition name={props.closeable ? 'van-fade' : null}>
-          {props.show ? (
-            <span key="content" style={style} class={bem([classes, type])}>
+        <Transition name={closeable ? 'van-fade' : null}>
+          {show ? (
+            <span
+              key="content"
+              style={style.value}
+              class={bem([classes, type])}
+            >
               {slots.default?.()}
               {CloseIcon}
             </span>
