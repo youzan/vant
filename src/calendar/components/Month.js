@@ -11,6 +11,7 @@ import {
   getNextDay,
   formatMonthTitle,
 } from '../utils';
+import { useToggle } from '../../api/use-toggle';
 import { getMonthEndDay } from '../../datetime-picker/utils';
 import Day from './Day';
 
@@ -37,7 +38,7 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
-    const visible = ref(false);
+    const [visible, setVisible] = useToggle();
     const daysRef = ref(null);
     const monthRef = ref(null);
 
@@ -80,10 +81,6 @@ export default createComponent({
         ({ height } = monthRef.value.getBoundingClientRect());
       }
       return height;
-    };
-
-    const setVisible = (value) => {
-      visible.value = value;
     };
 
     const getDate = () => props.data;
@@ -141,7 +138,7 @@ export default createComponent({
 
       const compareToEnd = compareDay(day, endDay);
 
-      if (compareToStart === 0 && compareToEnd === 0 && props.allowSameDay) {
+      if (props.allowSameDay && compareToStart === 0 && compareToEnd === 0) {
         return 'start-end';
       }
       if (compareToStart === 0) {
