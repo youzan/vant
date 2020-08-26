@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 import { createNamespace } from '../utils';
-import { route, routeProps } from '../utils/router';
+import { useRoute, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
 import { ACTION_BAR_KEY } from '../action-bar';
 import Button from '../button';
@@ -19,6 +19,7 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const route = useRoute();
     const { parent, index } = useParent(ACTION_BAR_KEY, { isButton: true });
 
     const isFirst = computed(() => {
@@ -37,12 +38,8 @@ export default createComponent({
       }
     });
 
-    return (vm) => {
+    return () => {
       const { type, icon, text, color, loading, disabled } = props;
-
-      const onClick = () => {
-        route(vm.$router, vm);
-      };
 
       return (
         <Button
@@ -59,7 +56,7 @@ export default createComponent({
           color={color}
           loading={loading}
           disabled={disabled}
-          onClick={onClick}
+          onClick={route}
         >
           {slots.default ? slots.default() : text}
         </Button>

@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { route, routeProps } from '../utils/router';
+import { useRoute, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
 import { SIDEBAR_KEY } from '../sidebar';
 import Badge from '../badge';
@@ -18,9 +18,10 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
+    const route = useRoute();
     const { parent, index } = useParent(SIDEBAR_KEY);
 
-    return (vm) => {
+    return () => {
       const { dot, badge, title, disabled } = props;
       const selected = index.value === parent.active();
 
@@ -32,7 +33,7 @@ export default createComponent({
         emit('click', index.value);
         parent.emit('update:modelValue', index.value);
         parent.setActive(index.value);
-        route(vm.$router, vm);
+        route();
       };
 
       return (

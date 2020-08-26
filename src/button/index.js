@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
-import { routeProps, route } from '../utils/router';
+import { useRoute, routeProps } from '../utils/router';
 
 // Components
 import Icon from '../icon';
@@ -47,6 +47,8 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit, slots }) {
+    const route = useRoute();
+
     const renderLoadingIcon = () => {
       if (slots.loading) {
         return slots.loading();
@@ -114,7 +116,7 @@ export default createComponent({
       }
     };
 
-    return (vm) => {
+    return () => {
       const {
         tag,
         type,
@@ -132,7 +134,7 @@ export default createComponent({
       const onClick = () => {
         if (!loading && !disabled) {
           emit('click', event);
-          route(vm.$router, vm);
+          route();
         }
       };
 

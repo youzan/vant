@@ -1,7 +1,7 @@
 /**
  * Vue Router support
  */
-
+import { getCurrentInstance } from 'vue';
 import type { Router, RouteLocation } from 'vue-router';
 
 export type RouteConfig = {
@@ -18,8 +18,8 @@ function isRedundantNavigation(err: Error) {
   );
 }
 
-export function route(router: Router, config: RouteConfig) {
-  const { to, url, replace } = config;
+export function route(router: Router, props: RouteProps) {
+  const { to, url, replace } = props;
   if (to && router) {
     const promise = router[replace ? 'replace' : 'push'](to);
 
@@ -34,6 +34,13 @@ export function route(router: Router, config: RouteConfig) {
   } else if (url) {
     replace ? location.replace(url) : (location.href = url);
   }
+}
+
+export function useRoute() {
+  const vm = getCurrentInstance()!.proxy!;
+  return () => {
+    route(vm.$router, vm as RouteProps);
+  };
 }
 
 export type RouteProps = {

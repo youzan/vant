@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { route, routeProps } from '../utils/router';
+import { useRoute, routeProps } from '../utils/router';
 import { useParent } from '../api/use-relation';
 import { ACTION_BAR_KEY } from '../action-bar';
 import Icon from '../icon';
@@ -19,6 +19,7 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const route = useRoute();
     useParent(ACTION_BAR_KEY);
 
     const renderIcon = () => {
@@ -45,15 +46,8 @@ export default createComponent({
       );
     };
 
-    return (vm) => (
-      <div
-        role="button"
-        class={bem()}
-        tabindex="0"
-        onClick={() => {
-          route(vm.$router, vm);
-        }}
-      >
+    return () => (
+      <div role="button" class={bem()} tabindex="0" onClick={route}>
         {renderIcon()}
         {slots.default ? slots.default() : props.text}
       </div>

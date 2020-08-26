@@ -1,6 +1,6 @@
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { route, routeProps } from '../utils/router';
+import { useRoute, routeProps } from '../utils/router';
 import { cellProps } from './shared';
 
 // Components
@@ -15,6 +15,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const route = useRoute();
+
     const renderLabel = () => {
       const showLabel = slots.label || isDef(props.label);
 
@@ -83,7 +85,7 @@ export default createComponent({
       }
     };
 
-    return (vm) => {
+    return () => {
       const { size, center, border, isLink, required } = props;
       const clickable = isLink || props.clickable;
 
@@ -97,16 +99,12 @@ export default createComponent({
         classes[size] = size;
       }
 
-      const onClick = () => {
-        route(vm.$router, vm);
-      };
-
       return (
         <div
           class={bem(classes)}
           role={clickable ? 'button' : null}
           tabindex={clickable ? 0 : null}
-          onClick={onClick}
+          onClick={route}
         >
           {renderLeftIcon()}
           {renderTitle()}
