@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref, computed, getCurrentInstance } from 'vue';
 import { createNamespace, addUnit } from '../../utils';
 import { unitToPx } from '../../utils/format/unit';
 import { setScrollTop } from '../../utils/dom/scroll';
@@ -246,19 +246,19 @@ export default createComponent({
       return <div ref={daysRef} />;
     };
 
-    return (vm) => {
-      vm.getDate = getDate;
-      vm.getTitle = getTitle;
-      vm.getHeight = getHeight;
-      vm.setVisible = setVisible;
-      vm.scrollIntoView = scrollIntoView;
+    // @exposed-api
+    const vm = getCurrentInstance().proxy;
+    vm.getDate = getDate;
+    vm.getTitle = getTitle;
+    vm.getHeight = getHeight;
+    vm.setVisible = setVisible;
+    vm.scrollIntoView = scrollIntoView;
 
-      return (
-        <div class={bem('month')} ref={monthRef} style={monthStyle.value}>
-          {renderTitle()}
-          {renderDays()}
-        </div>
-      );
-    };
+    return () => (
+      <div class={bem('month')} ref={monthRef} style={monthStyle.value}>
+        {renderTitle()}
+        {renderDays()}
+      </div>
+    );
   },
 });

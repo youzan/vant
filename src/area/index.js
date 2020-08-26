@@ -1,4 +1,12 @@
-import { ref, watch, computed, reactive, nextTick, onMounted } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  reactive,
+  nextTick,
+  onMounted,
+  getCurrentInstance,
+} from 'vue';
 import { createNamespace, pick } from '../utils';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
@@ -273,11 +281,12 @@ export default createComponent({
       }
     );
 
-    return (vm) => {
-      // @exposed-api
-      vm.reset = reset;
-      vm.getArea = getArea;
+    // @exposed-api
+    const vm = getCurrentInstance().proxy;
+    vm.reset = reset;
+    vm.getArea = getArea;
 
+    return () => {
       const columns = state.columns.slice(0, +props.columnsNum);
 
       return (

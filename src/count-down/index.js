@@ -5,6 +5,7 @@ import {
   onActivated,
   onDeactivated,
   onBeforeUnmount,
+  getCurrentInstance,
 } from 'vue';
 import { createNamespace } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
@@ -135,17 +136,16 @@ export default createComponent({
 
     onBeforeUnmount(pause);
 
-    return (vm) => {
-      // @exposed-api
-      vm.start = start;
-      vm.reset = reset;
-      vm.pause = pause;
+    // @exposed-api
+    const vm = getCurrentInstance().proxy;
+    vm.start = start;
+    vm.reset = reset;
+    vm.pause = pause;
 
-      return (
-        <div class={bem()}>
-          {slots.default ? slots.default(timeData.value) : timeText.value}
-        </div>
-      );
-    };
+    return () => (
+      <div class={bem()}>
+        {slots.default ? slots.default(timeData.value) : timeText.value}
+      </div>
+    );
   },
 });
