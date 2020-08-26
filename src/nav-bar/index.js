@@ -4,6 +4,9 @@ import { ref, onMounted } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
+// Compositions
+import { useHeight } from '../api/use-rect';
+
 // Components
 import Icon from '../icon';
 
@@ -32,7 +35,7 @@ export default createComponent({
 
     onMounted(() => {
       if (props.placeholder && props.fixed) {
-        height.value = navBarRef.value.getBoundingClientRect().height;
+        height.value = useHeight(navBarRef);
       }
     });
 

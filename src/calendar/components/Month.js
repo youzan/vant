@@ -1,7 +1,10 @@
 import { ref, computed, getCurrentInstance } from 'vue';
+
+// Utils
 import { createNamespace, addUnit } from '../../utils';
 import { unitToPx } from '../../utils/format/unit';
 import { setScrollTop } from '../../utils/dom/scroll';
+import { getMonthEndDay } from '../../datetime-picker/utils';
 import {
   t,
   bem,
@@ -11,8 +14,12 @@ import {
   getNextDay,
   formatMonthTitle,
 } from '../utils';
+
+// Compositions
+import { useHeight } from '../../api/use-rect';
 import { useToggle } from '../../api/use-toggle';
-import { getMonthEndDay } from '../../datetime-picker/utils';
+
+// Components
 import Day from './Day';
 
 const [createComponent] = createNamespace('calendar-month');
@@ -78,7 +85,7 @@ export default createComponent({
     let height;
     const getHeight = () => {
       if (!height) {
-        ({ height } = monthRef.value.getBoundingClientRect());
+        height = useHeight(monthRef);
       }
       return height;
     };
