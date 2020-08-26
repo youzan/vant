@@ -131,7 +131,7 @@ export default createComponent({
         nativeType,
       } = props;
 
-      const onClick = () => {
+      const onClick = (event) => {
         if (!loading && !disabled) {
           emit('click', event);
           route();
