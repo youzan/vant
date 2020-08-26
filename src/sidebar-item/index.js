@@ -21,20 +21,20 @@ export default createComponent({
     const route = useRoute();
     const { parent, index } = useParent(SIDEBAR_KEY);
 
+    const onClick = () => {
+      if (props.disabled) {
+        return;
+      }
+
+      emit('click', index.value);
+      parent.emit('update:modelValue', index.value);
+      parent.setActive(index.value);
+      route();
+    };
+
     return () => {
       const { dot, badge, title, disabled } = props;
       const selected = index.value === parent.active();
-
-      const onClick = () => {
-        if (disabled) {
-          return;
-        }
-
-        emit('click', index.value);
-        parent.emit('update:modelValue', index.value);
-        parent.setActive(index.value);
-        route();
-      };
 
       return (
         <a class={bem({ select: selected, disabled })} onClick={onClick}>
