@@ -1,5 +1,7 @@
+import { ref, reactive, nextTick, onActivated, watch } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
+import { useWidth } from '../composition/use-rect';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');
@@ -28,158 +30,149 @@ export default createComponent({
 
   emits: ['close', 'replay'],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    let wrapWidth = 0;
+    let contentWidth = 0;
+
+    const wrapRef = ref();
+    const contentRef = ref();
+
+    const state = reactive({
       show: true,
       offset: 0,
       duration: 0,
-      wrapWidth: 0,
-      contentWidth: 0,
-    };
-  },
+    });
 
-  watch: {
-    scrollable() {
-      this.start();
-    },
-    text: {
-      handler() {
-        this.start();
-      },
-      immediate: true,
-    },
-  },
-
-  activated() {
-    this.start();
-  },
-
-  methods: {
-    onClickIcon(event) {
-      if (this.mode === 'closeable') {
-        this.show = false;
-        this.$emit('close', event);
-      }
-    },
-
-    onTransitionEnd() {
-      this.offset = this.wrapWidth;
-      this.duration = 0;
-
-      // wait for Vue to render offset
-      this.$nextTick(() => {
-        // use double raf to ensure animation can start
-        doubleRaf(() => {
-          this.offset = -this.contentWidth;
-          this.duration = (this.contentWidth + this.wrapWidth) / this.speed;
-          this.$emit('replay');
-        });
-      });
-    },
-
-    reset() {
-      this.offset = 0;
-      this.duration = 0;
-      this.wrapWidth = 0;
-      this.contentWidth = 0;
-    },
-
-    start() {
-      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
-
-      this.reset();
-
-      setTimeout(() => {
-        const { wrap, content } = this.$refs;
-        if (!wrap || !content || this.scrollable === false) {
-          return;
-        }
-
-        const wrapWidth = wrap.getBoundingClientRect().width;
-        const contentWidth = content.getBoundingClientRect().width;
-
-        if (this.scrollable || contentWidth > wrapWidth) {
-          doubleRaf(() => {
-            this.offset = -contentWidth;
-            this.duration = contentWidth / this.speed;
-            this.wrapWidth = wrapWidth;
-            this.contentWidth = contentWidth;
-          });
-        }
-      }, delay);
-    },
-  },
-
-  render() {
-    const slots = this.$slots;
-    const { mode, leftIcon, onClickIcon } = this;
-
-    const barStyle = {
-      color: this.color,
-      background: this.background,
-    };
-
-    const contentStyle = {
-      transform: this.offset ? `translateX(${this.offset}px)` : '',
-      transitionDuration: this.duration + 's',
-    };
-
-    function LeftIcon() {
+    const renderLeftIcon = () => {
       if (slots['left-icon']) {
         return slots['left-icon']();
       }
-
-      if (leftIcon) {
-        return <Icon class={bem('left-icon')} name={leftIcon} />;
+      if (props.leftIcon) {
+        return <Icon class={bem('left-icon')} name={props.leftIcon} />;
       }
-    }
+    };
 
-    function RightIcon() {
+    const getRightIconName = () => {
+      if (props.mode === 'closeable') {
+        return 'cross';
+      }
+      if (props.mode === 'link') {
+        return 'arrow';
+      }
+    };
+
+    const onClickRightIcon = (event) => {
+      if (props.mode === 'closeable') {
+        state.show = false;
+        emit('close', event);
+      }
+    };
+
+    const renderRightIcon = () => {
       if (slots['right-icon']) {
         return slots['right-icon']();
       }
 
-      let iconName;
-      if (mode === 'closeable') {
-        iconName = 'cross';
-      } else if (mode === 'link') {
-        iconName = 'arrow';
-      }
-
-      if (iconName) {
+      const name = getRightIconName();
+      if (name) {
         return (
           <Icon
+            name={name}
             class={bem('right-icon')}
-            name={iconName}
-            onClick={onClickIcon}
+            onClick={onClickRightIcon}
           />
         );
       }
-    }
+    };
 
-    return (
-      <div
-        role="alert"
-        vShow={this.show}
-        class={bem({ wrapable: this.wrapable })}
-        style={barStyle}
-      >
-        {LeftIcon()}
-        <div ref="wrap" class={bem('wrap')} role="marquee">
+    const onTransitionEnd = () => {
+      state.offset = wrapWidth;
+      state.duration = 0;
+
+      // wait for Vue to render offset
+      nextTick(() => {
+        // use double raf to ensure animation can start
+        doubleRaf(() => {
+          state.offset = -contentWidth;
+          state.duration = (contentWidth + wrapWidth) / props.speed;
+          emit('replay');
+        });
+      });
+    };
+
+    const renderMarquee = () => {
+      const ellipsis = props.scrollable === false && !props.wrapable;
+      const style = {
+        transform: state.offset ? `translateX(${state.offset}px)` : '',
+        transitionDuration: `${state.duration}s`,
+      };
+
+      return (
+        <div ref={wrapRef} role="marquee" class={bem('wrap')}>
           <div
-            ref="content"
-            class={[
-              bem('content'),
-              { 'van-ellipsis': this.scrollable === false && !this.wrapable },
-            ]}
-            style={contentStyle}
-            onTransitionend={this.onTransitionEnd}
+            ref={contentRef}
+            style={style}
+            class={[bem('content'), { 'van-ellipsis': ellipsis }]}
+            onTransitionend={onTransitionEnd}
           >
-            {slots.default?.() || this.text}
+            {slots.default ? slots.default() : props.text}
           </div>
         </div>
-        {RightIcon()}
-      </div>
-    );
+      );
+    };
+
+    const reset = () => {
+      wrapWidth = 0;
+      contentWidth = 0;
+      state.offset = 0;
+      state.duration = 0;
+    };
+
+    const start = () => {
+      const { delay, speed, scrollable } = props;
+      const ms = isDef(delay) ? delay * 1000 : 0;
+
+      reset();
+
+      setTimeout(() => {
+        if (!wrapRef.value || !contentRef.value || scrollable === false) {
+          return;
+        }
+
+        const wrapRefWidth = useWidth(wrapRef);
+        const contentRefWidth = useWidth(contentRef);
+
+        if (scrollable || contentRefWidth > wrapRefWidth) {
+          doubleRaf(() => {
+            wrapWidth = wrapRefWidth;
+            contentWidth = contentRefWidth;
+            state.offset = -contentWidth;
+            state.duration = contentWidth / speed;
+          });
+        }
+      }, ms);
+    };
+
+    onActivated(start);
+
+    watch([() => props.text, () => props.scrollable], start, {
+      immediate: true,
+    });
+
+    return () => {
+      const { color, wrapable, background } = props;
+      return (
+        <div
+          role="alert"
+          vShow={state.show}
+          class={bem({ wrapable })}
+          style={{ color, background }}
+        >
+          {renderLeftIcon()}
+          {renderMarquee()}
+          {renderRightIcon()}
+        </div>
+      );
+    };
   },
 });
