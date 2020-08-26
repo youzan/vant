@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 import { createNamespace } from '../utils';
-import { useParent } from '../api/use-relation';
+import { useParent } from '../composition/use-relation';
 import { ROW_KEY } from '../row';
 
 const [createComponent, bem] = createNamespace('col');

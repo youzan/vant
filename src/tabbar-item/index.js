@@ -1,6 +1,6 @@
 // Utils
 import { createNamespace, isObject, isDef } from '../utils';
-import { route, routeProps } from '../utils/router';
+import { route, routeProps } from '../composition/use-route';
 
 // Mixins
 import { ChildrenMixin } from '../mixins/relation';

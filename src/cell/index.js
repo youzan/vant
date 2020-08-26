@@ -1,7 +1,9 @@
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { useRoute, routeProps } from '../utils/router';
 import { cellProps } from './shared';
+
+// Composition
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';

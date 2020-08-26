@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
-import { route, routeProps } from '../utils/router';
+import { route, routeProps } from '../composition/use-route';
 
 // Mixins
 import { ChildrenMixin } from '../mixins/relation';

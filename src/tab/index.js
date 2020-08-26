@@ -1,6 +1,6 @@
 import { isDef, createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
-import { routeProps } from '../utils/router';
+import { routeProps } from '../composition/use-route';
 
 const [createComponent, bem] = createNamespace('tab');
 

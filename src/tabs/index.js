@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace, isDef, addUnit, isPromise } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
-import { route } from '../utils/router';
+import { route } from '../composition/use-route';
 import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';

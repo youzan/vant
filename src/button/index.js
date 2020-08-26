@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
-import { useRoute, routeProps } from '../utils/router';
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';

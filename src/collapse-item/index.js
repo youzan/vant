@@ -5,8 +5,8 @@ import { createNamespace, isDef } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Composition
-import { useParent } from '../api/use-relation';
-import { useLazyRender } from '../api/use-lazy-render';
+import { useParent } from '../composition/use-relation';
+import { useLazyRender } from '../composition/use-lazy-render';
 
 // Components
 import Cell from '../cell';

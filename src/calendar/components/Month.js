@@ -15,9 +15,9 @@ import {
   formatMonthTitle,
 } from '../utils';
 
-// Compositions
-import { useHeight } from '../../api/use-rect';
-import { useToggle } from '../../api/use-toggle';
+// Composition
+import { useHeight } from '../../composition/use-rect';
+import { useToggle } from '../../composition/use-toggle';
 
 // Components
 import Day from './Day';

@@ -4,8 +4,8 @@ import { ref, onMounted } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
-// Compositions
-import { useHeight } from '../api/use-rect';
+// Composition
+import { useHeight } from '../composition/use-rect';
 
 // Components
 import Icon from '../icon';

@@ -1,8 +1,12 @@
 import { computed } from 'vue';
 import { createNamespace } from '../utils';
-import { useRoute, routeProps } from '../utils/router';
-import { useParent } from '../api/use-relation';
 import { ACTION_BAR_KEY } from '../action-bar';
+
+// Composition
+import { useParent } from '../composition/use-relation';
+import { useRoute, routeProps } from '../composition/use-route';
+
+// Components
 import Button from '../button';
 
 const [createComponent, bem] = createNamespace('action-bar-button');
