@@ -50,7 +50,7 @@ export default createComponent({
     },
   },
 
-  emits: ['opened', 'closed', 'confirm', 'cancel', 'update:show'],
+  emits: ['confirm', 'cancel', 'update:show'],
 
   data() {
     return {
@@ -95,14 +95,6 @@ export default createComponent({
       if (this.callback) {
         this.callback(action);
       }
-    },
-
-    onOpened() {
-      this.$emit('opened');
-    },
-
-    onClosed() {
-      this.$emit('closed');
     },
 
     genRoundButtons() {
@@ -215,8 +207,6 @@ export default createComponent({
         transition={this.transition}
         lazyRender={this.lazyRender}
         aria-labelledby={this.title || message}
-        onOpened={this.onOpened}
-        onClosed={this.onClosed}
       >
         {Title}
         {this.genContent(title)}
