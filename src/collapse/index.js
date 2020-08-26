@@ -1,4 +1,4 @@
-import { ref, provide } from 'vue';
+import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
@@ -19,7 +19,7 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const children = ref([]);
+    const children = reactive([]);
 
     const toggle = (name, expanded) => {
       const { accordion, modelValue } = props;

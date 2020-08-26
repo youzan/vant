@@ -1,4 +1,4 @@
-import { ref, computed, provide } from 'vue';
+import { provide, computed, reactive } from 'vue';
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('row');
@@ -21,13 +21,13 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const children = ref([]);
+    const children = reactive([]);
 
     const groups = computed(() => {
       const groups = [[]];
 
       let totalSpan = 0;
-      children.value.forEach((getSpan, index) => {
+      children.forEach((getSpan, index) => {
         totalSpan += getSpan();
 
         if (totalSpan > 24) {

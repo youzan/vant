@@ -1,4 +1,4 @@
-import { ref, watch, provide } from 'vue';
+import { watch, provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('sidebar');
@@ -16,7 +16,7 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const children = ref([]);
+    const children = reactive([]);
     const active = () => +props.modelValue;
     const setActive = (value) => {
       if (value !== active()) {

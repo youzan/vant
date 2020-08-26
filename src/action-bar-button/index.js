@@ -24,16 +24,14 @@ export default createComponent({
 
     const isFirst = computed(() => {
       if (parent) {
-        const children = parent.children.value;
-        const prev = children[index.value - 1];
+        const prev = parent.children[index.value - 1];
         return !(prev && prev.isButton);
       }
     });
 
     const isLast = computed(() => {
       if (parent) {
-        const children = parent.children.value;
-        const next = children[index.value + 1];
+        const next = parent.children[index.value + 1];
         return !(next && next.isButton);
       }
     });
