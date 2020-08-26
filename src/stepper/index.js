@@ -1,4 +1,4 @@
-import { createNamespace, isDef, addUnit } from '../utils';
+import { createNamespace, isDef, addUnit, getSizeStyle } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
 import { formatNumber } from '../utils/format/number';
@@ -124,14 +124,7 @@ export default createComponent({
     },
 
     buttonStyle() {
-      if (this.buttonSize) {
-        const size = addUnit(this.buttonSize);
-
-        return {
-          width: size,
-          height: size,
-        };
-      }
+      return getSizeStyle(this.buttonSize);
     },
   },
 

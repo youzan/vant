@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue';
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, getSizeStyle } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 
 // Mixins
@@ -50,16 +50,6 @@ export default createComponent({
     const touch = useTouch();
 
     const range = computed(() => props.max - props.min);
-
-    const buttonStyle = computed(() => {
-      if (props.buttonSize) {
-        const size = addUnit(props.buttonSize);
-        return {
-          width: size,
-          height: size,
-        };
-      }
-    });
 
     const wrapperStyle = computed(() => {
       const crossAxis = props.vertical ? 'width' : 'height';
@@ -177,7 +167,7 @@ export default createComponent({
         {slots.button ? (
           slots.button()
         ) : (
-          <div class={bem('button')} style={buttonStyle.value} />
+          <div class={bem('button')} style={getSizeStyle(props.buttonSize)} />
         )}
       </div>
     );

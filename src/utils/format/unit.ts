@@ -10,6 +10,16 @@ export function addUnit(value?: string | number): string | undefined {
   return isNumeric(value) ? `${value}px` : value;
 }
 
+export function getSizeStyle(originSize?: string | number) {
+  if (isDef(originSize)) {
+    const size = addUnit(originSize);
+    return {
+      width: size,
+      height: size,
+    };
+  }
+}
+
 // cache
 let rootFontSize: number;
 

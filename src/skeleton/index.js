@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
 const [createComponent, bem] = createNamespace('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
@@ -42,11 +42,10 @@ export default createComponent({
   setup(props, { slots }) {
     const renderAvatar = () => {
       if (props.avatar) {
-        const size = addUnit(props.avatarSize);
         return (
           <div
             class={bem('avatar', props.avatarShape)}
-            style={{ width: size, height: size }}
+            style={getSizeStyle(props.avatarSize)}
           />
         );
       }

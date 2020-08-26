@@ -1,4 +1,4 @@
-export { addUnit } from './format/unit';
+export { addUnit, getSizeStyle } from './format/unit';
 export { createNamespace } from './create';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function

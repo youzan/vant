@@ -1,5 +1,12 @@
 // Utils
-import { createNamespace, addUnit, noop, isPromise, isDef } from '../utils';
+import {
+  noop,
+  isDef,
+  addUnit,
+  isPromise,
+  getSizeStyle,
+  createNamespace,
+} from '../utils';
 import { toArray, readFile, isOversize, isImageFile } from './utils';
 
 // Mixins
@@ -346,13 +353,7 @@ export default createComponent({
           {PreviewCover}
         </Image>
       ) : (
-        <div
-          class={bem('file')}
-          style={{
-            width: this.previewSizeWithUnit,
-            height: this.previewSizeWithUnit,
-          }}
-        >
+        <div class={bem('file')} style={getSizeStyle(this.previewSize)}>
           <Icon class={bem('file-icon')} name="description" />
           <div class={[bem('file-name'), 'van-ellipsis']}>
             {item.file ? item.file.name : item.url}
@@ -408,17 +409,8 @@ export default createComponent({
         );
       }
 
-      let style;
-      if (this.previewSize) {
-        const size = this.previewSizeWithUnit;
-        style = {
-          width: size,
-          height: size,
-        };
-      }
-
       return (
-        <div class={bem('upload')} style={style}>
+        <div class={bem('upload')} style={getSizeStyle(this.previewSize)}>
           <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>

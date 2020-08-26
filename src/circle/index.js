@@ -1,5 +1,5 @@
 import { watch, computed } from 'vue';
-import { createNamespace, isObject, addUnit } from '../utils';
+import { createNamespace, isObject, getSizeStyle } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/constant';
 
@@ -68,14 +68,6 @@ export default createComponent({
     const viewBoxSize = computed(() => +props.strokeWidth + 1000);
 
     const path = computed(() => getPath(props.clockwise, viewBoxSize.value));
-
-    const rootStyle = computed(() => {
-      const size = addUnit(props.size);
-      return {
-        width: size,
-        height: size,
-      };
-    });
 
     watch(
       () => props.rate,
@@ -172,7 +164,7 @@ export default createComponent({
     };
 
     return () => (
-      <div class={bem()} style={rootStyle.value}>
+      <div class={bem()} style={getSizeStyle(props.buttonSize)}>
         <svg viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}>
           {renderGradient()}
           {renderHover()}
