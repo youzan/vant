@@ -24,12 +24,12 @@ export default createComponent({
   },
 
   setup(props) {
-    const rootRef = ref(null);
-    const pivotRef = ref(null);
+    const rootRef = ref();
+    const pivotRef = ref();
 
     const state = reactive({
-      pivotWidth: 0,
       rootWidth: 0,
+      pivotWidth: 0,
     });
 
     const background = computed(() =>
@@ -38,8 +38,8 @@ export default createComponent({
 
     const setWidth = () => {
       nextTick(() => {
-        state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
         state.rootWidth = rootRef.value.offsetWidth;
+        state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
       });
     };
 

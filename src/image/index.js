@@ -37,7 +37,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const error = ref(false);
     const loading = ref(true);
-    const imageRef = ref(null);
+    const imageRef = ref();
 
     const style = computed(() => {
       const style = {};
@@ -94,11 +94,10 @@ export default createComponent({
     };
 
     const renderPlaceholder = () => {
-      if (props.loading && props.showLoading) {
+      if (loading.value && props.showLoading) {
         return <div class={bem('loading')}>{renderLoadingIcon()}</div>;
       }
-
-      if (props.error && props.showError) {
+      if (error.value && props.showError) {
         return <div class={bem('error')}>{renderErrorIcon()}</div>;
       }
     };

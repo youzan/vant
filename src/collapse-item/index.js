@@ -27,8 +27,8 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const wrapperRef = ref(null);
-    const contentRef = ref(null);
+    const wrapperRef = ref();
+    const contentRef = ref();
     const { parent, index } = useParent(COLLAPSE_KEY);
 
     const currentName = computed(() =>

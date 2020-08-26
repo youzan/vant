@@ -46,8 +46,8 @@ export default createComponent({
 
   setup(props, { emit }) {
     const [visible, setVisible] = useToggle();
-    const daysRef = ref(null);
-    const monthRef = ref(null);
+    const daysRef = ref();
+    const monthRef = ref();
 
     const title = computed(() => formatMonthTitle(props.date));
 

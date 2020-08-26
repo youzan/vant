@@ -48,7 +48,7 @@ export default createComponent({
   emits: ['change', 'confirm'],
 
   setup(props, { emit, slots }) {
-    const pickerRef = ref(null);
+    const pickerRef = ref();
 
     const state = reactive({
       code: props.value,

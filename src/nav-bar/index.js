@@ -30,8 +30,8 @@ export default createComponent({
   emits: ['click-left', 'click-right'],
 
   setup(props, { emit, slots }) {
-    const height = ref(null);
-    const navBarRef = ref(null);
+    const height = ref();
+    const navBarRef = ref();
 
     onMounted(() => {
       if (props.placeholder && props.fixed) {
