@@ -1,4 +1,5 @@
 // Utils
+import { pick } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -110,17 +111,7 @@ export default createComponent({
     },
   },
 
-  emits: [
-    'open',
-    'close',
-    'opened',
-    'closed',
-    'select',
-    'confirm',
-    'unselect',
-    'month-show',
-    'update:show',
-  ],
+  emits: ['select', 'confirm', 'unselect', 'month-show', 'update:show'],
 
   data() {
     this.monthRefs = [];
@@ -401,19 +392,21 @@ export default createComponent({
             this.monthRefs[index] = val;
           }}
           date={date}
-          type={this.type}
-          color={this.color}
-          minDate={this.minDate}
-          maxDate={this.maxDate}
-          showMark={this.showMark}
-          formatter={this.formatter}
-          rowHeight={this.rowHeight}
-          lazyRender={this.lazyRender}
-          currentDate={this.currentDate}
-          showSubtitle={this.showSubtitle}
-          allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={this.dayOffset}
+          {...pick(this, [
+            'type',
+            'color',
+            'minDate',
+            'maxDate',
+            'showMark',
+            'formatter',
+            'rowHeight',
+            'lazyRender',
+            'currentDate',
+            'showSubtitle',
+            'allowSameDay',
+          ])}
           onClick={this.onClickDay}
         />
       );
@@ -478,15 +471,6 @@ export default createComponent({
 
   render() {
     if (this.poppable) {
-      const createListener = (name) => () => this.$emit(name);
-      const listeners = {
-        'onUpdate:show': this.togglePopup,
-        onOpen: createListener('open'),
-        onClose: createListener('close'),
-        onOpened: createListener('opened'),
-        onClosed: createListener('closed'),
-      };
-
       return (
         <Popup
           show={this.show}
@@ -497,7 +481,7 @@ export default createComponent({
           teleport={this.teleport}
           closeOnPopstate={this.closeOnPopstate}
           closeOnClickOverlay={this.closeOnClickOverlay}
-          {...listeners}
+          {...{ 'onUpdate:show': this.togglePopup }}
         >
           {this.genCalendar()}
         </Popup>
