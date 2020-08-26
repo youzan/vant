@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, pick } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import Popup from '../popup';
 import Button from '../button';
@@ -90,11 +90,15 @@ export default createComponent({
     },
 
     onClose(action) {
-      this.$emit('update:show', false);
+      this.onUpdateShow(false);
 
       if (this.callback) {
         this.callback(action);
       }
+    },
+
+    onUpdateShow(value) {
+      this.$emit('update:show', value);
     },
 
     genRoundButtons() {
@@ -204,9 +208,17 @@ export default createComponent({
         role="dialog"
         class={[bem([this.theme]), this.className]}
         style={{ width: addUnit(this.width) }}
-        transition={this.transition}
-        lazyRender={this.lazyRender}
         aria-labelledby={this.title || message}
+        {...{
+          ...pick(this, [
+            'overlay',
+            'transition',
+            'lazyRender',
+            'closeOnPopstate',
+            'closeOnClickOverlay',
+          ]),
+          'onUpdate:show': this.onUpdateShow,
+        }}
       >
         {Title}
         {this.genContent(title)}
