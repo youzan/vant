@@ -1,7 +1,9 @@
+import { FIELD_KEY } from '../field';
+
 export const FieldMixin = {
   inject: {
     vanField: {
-      from: 'vanField',
+      from: FIELD_KEY,
       default: null,
     },
   },

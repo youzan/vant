@@ -1,19 +1,17 @@
 import { ref, computed } from 'vue';
+
+// Utils
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
 import { preventDefault } from '../utils/dom/event';
-
-// Mixins
-import { FieldMixin } from '../mixins/field';
 
 // Composition
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
+import { useParentField } from '../composition/use-parent-field';
 
 const [createComponent, bem] = createNamespace('slider');
 
 export default createComponent({
-  mixins: [FieldMixin],
-
   props: {
     disabled: Boolean,
     vertical: Boolean,
@@ -174,6 +172,7 @@ export default createComponent({
 
     // format initial value
     updateValue(props.modelValue);
+    useParentField(() => props.modelValue);
 
     return () => (
       <div

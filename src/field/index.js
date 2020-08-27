@@ -18,6 +18,8 @@ import { cellProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('field');
 
+export const FIELD_KEY = 'vanField';
+
 export default createComponent({
   provide() {
     return {
