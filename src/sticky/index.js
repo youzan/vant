@@ -1,28 +1,18 @@
+import { ref, reactive, computed, onMounted } from 'vue';
+
+// Utils
 import { isHidden } from '../utils/dom/style';
 import { unitToPx } from '../utils/format/unit';
-import { createNamespace, isDef, inBrowser } from '../utils';
+import { createNamespace } from '../utils';
 import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
-import { BindEventMixin } from '../mixins/bind-event';
+
+// Composition
+import { useGlobalEvent } from '../composition/use-global-event';
+import { useVisibilityChange } from '../composition/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
 
 export default createComponent({
-  mixins: [
-    BindEventMixin(function (bind, isBind) {
-      if (!this.scroller) {
-        this.scroller = getScroller(this.$el);
-      }
-
-      if (this.observer) {
-        const method = isBind ? 'observe' : 'unobserve';
-        this.observer[method](this.$el);
-      }
-
-      bind(this.scroller, 'scroll', this.onScroll, true);
-      this.onScroll();
-    }),
-  ],
-
   props: {
     zIndex: [Number, String],
     container: null,
@@ -34,118 +24,102 @@ export default createComponent({
 
   emits: ['scroll'],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    const rootRef = ref();
+    const scrollerRef = ref();
+
+    const state = reactive({
       fixed: false,
       height: 0,
       transform: 0,
-    };
-  },
+    });
 
-  computed: {
-    offsetTopPx() {
-      return unitToPx(this.offsetTop);
-    },
+    const offsetTop = computed(() => unitToPx(props.offsetTop));
 
-    style() {
-      if (!this.fixed) {
+    const style = computed(() => {
+      if (!state.fixed) {
         return;
       }
 
-      const style = {};
+      const top = offsetTop.value ? `${offsetTop.value}px` : null;
+      const transform = state.transform
+        ? `translate3d(0, ${state.transform}px, 0)`
+        : null;
 
-      if (isDef(this.zIndex)) {
-        style.zIndex = this.zIndex;
-      }
-
-      if (this.offsetTopPx && this.fixed) {
-        style.top = `${this.offsetTopPx}px`;
-      }
-
-      if (this.transform) {
-        style.transform = `translate3d(0, ${this.transform}px, 0)`;
-      }
-
-      return style;
-    },
-  },
-
-  created() {
-    // compatibility: https://caniuse.com/#feat=intersectionobserver
-    if (inBrowser && window.IntersectionObserver) {
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          // trigger scroll when visibility changed
-          if (entries[0].intersectionRatio > 0) {
-            this.onScroll();
-          }
-        },
-        { root: document.body }
-      );
-    }
-  },
-
-  methods: {
-    onScroll() {
-      if (isHidden(this.$el)) {
-        return;
-      }
-
-      this.height = this.$el.offsetHeight;
-
-      const { container, offsetTopPx } = this;
-      const scrollTop = getScrollTop(window);
-      const topToPageTop = getElementTop(this.$el);
-
-      const emitScrollEvent = () => {
-        this.$emit('scroll', {
-          scrollTop,
-          isFixed: this.fixed,
-        });
+      return {
+        top,
+        zIndex: props.zIndex,
+        transform,
       };
+    });
+
+    const emitScrollEvent = (scrollTop) => {
+      emit('scroll', {
+        scrollTop,
+        isFixed: state.fixed,
+      });
+    };
+
+    const onScroll = () => {
+      if (isHidden(rootRef.value)) {
+        return;
+      }
+
+      state.height = rootRef.value.offsetHeight;
+
+      const { container } = props;
+      const scrollTop = getScrollTop(window);
+      const topToPageTop = getElementTop(rootRef.value);
 
       // The sticky component should be kept inside the container element
       if (container) {
         const bottomToPageTop = topToPageTop + container.offsetHeight;
 
-        if (scrollTop + offsetTopPx + this.height > bottomToPageTop) {
-          const distanceToBottom = this.height + scrollTop - bottomToPageTop;
+        if (scrollTop + offsetTop.value + state.height > bottomToPageTop) {
+          const distanceToBottom = state.height + scrollTop - bottomToPageTop;
 
-          if (distanceToBottom < this.height) {
-            this.fixed = true;
-            this.transform = -(distanceToBottom + offsetTopPx);
+          if (distanceToBottom < state.height) {
+            state.fixed = true;
+            state.transform = -(distanceToBottom + offsetTop.value);
           } else {
-            this.fixed = false;
+            state.fixed = false;
           }
 
-          emitScrollEvent();
+          emitScrollEvent(scrollTop);
           return;
         }
       }
 
-      if (scrollTop + offsetTopPx > topToPageTop) {
-        this.fixed = true;
-        this.transform = 0;
+      if (scrollTop + offsetTop.value > topToPageTop) {
+        state.fixed = true;
+        state.transform = 0;
       } else {
-        this.fixed = false;
+        state.fixed = false;
       }
 
-      emitScrollEvent();
-    },
-  },
-
-  render() {
-    const { fixed } = this;
-    const style = {
-      height: fixed ? `${this.height}px` : null,
+      emitScrollEvent(scrollTop);
     };
 
-    return (
-      <div style={style}>
-        <div class={bem({ fixed })} style={this.style}>
-          {this.$slots.default?.()}
+    onMounted(() => {
+      scrollerRef.value = getScroller(rootRef.value);
+    });
+
+    useGlobalEvent(scrollerRef, 'scroll', onScroll);
+    useVisibilityChange(rootRef, onScroll);
+
+    return () => {
+      const { fixed, height } = state;
+      const rootStyle = {
+        height: fixed ? `${height}px` : null,
+      };
+
+      return (
+        <div ref={rootRef} style={rootStyle}>
+          <div class={bem({ fixed })} style={style.value}>
+            {slots.default?.()}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });
