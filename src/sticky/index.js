@@ -1,12 +1,13 @@
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, reactive, computed } from 'vue';
 
 // Utils
 import { isHidden } from '../utils/dom/style';
 import { unitToPx } from '../utils/format/unit';
 import { createNamespace } from '../utils';
-import { getScrollTop, getElementTop, getScroller } from '../utils/dom/scroll';
+import { getScrollTop, getElementTop } from '../utils/dom/scroll';
 
 // Composition
+import { useScroller } from '../composition/use-scroller';
 import { useGlobalEvent } from '../composition/use-global-event';
 import { useVisibilityChange } from '../composition/use-visibility-change';
 
@@ -26,7 +27,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const rootRef = ref();
-    const scrollerRef = ref();
+    const scroller = useScroller(rootRef);
 
     const state = reactive({
       fixed: false,
@@ -100,11 +101,7 @@ export default createComponent({
       emitScrollEvent(scrollTop);
     };
 
-    onMounted(() => {
-      scrollerRef.value = getScroller(rootRef.value);
-    });
-
-    useGlobalEvent(scrollerRef, 'scroll', onScroll);
+    useGlobalEvent(scroller, 'scroll', onScroll);
     useVisibilityChange(rootRef, onScroll);
 
     return () => {

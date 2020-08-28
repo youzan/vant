@@ -10,10 +10,10 @@ import {
 // Utils
 import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
-import { getScroller } from '../utils/dom/scroll';
 
 // Composition
 import { useRect } from '../composition/use-rect';
+import { useScroller } from '../composition/use-scroller';
 import { useGlobalEvent } from '../composition/use-global-event';
 
 // Components
@@ -49,8 +49,8 @@ export default createComponent({
     // use sync innerLoading state to avoid repeated loading in some edge cases
     const loading = ref(false);
     const rootRef = ref();
-    const scrollerRef = ref();
     const placeholderRef = ref();
+    const scroller = useScroller(rootRef);
 
     const check = () => {
       nextTick(() => {
@@ -58,16 +58,15 @@ export default createComponent({
           return;
         }
 
-        const scroller = scrollerRef.value;
         const { offset, direction } = props;
         let scrollerRect;
 
-        if (scroller.getBoundingClientRect) {
-          scrollerRect = scroller.getBoundingClientRect();
+        if (scroller.value.getBoundingClientRect) {
+          scrollerRect = scroller.value.getBoundingClientRect();
         } else {
           scrollerRect = {
             top: 0,
-            bottom: scroller.innerHeight,
+            bottom: scroller.value.innerHeight,
           };
         }
 
@@ -143,14 +142,12 @@ export default createComponent({
     });
 
     onMounted(() => {
-      scrollerRef.value = getScroller(rootRef.value);
-
       if (props.immediateCheck) {
         check();
       }
     });
 
-    useGlobalEvent(scrollerRef, 'scroll', check);
+    useGlobalEvent(scroller, 'scroll', check);
 
     // @exposed-api
     const vm = getCurrentInstance().proxy;
