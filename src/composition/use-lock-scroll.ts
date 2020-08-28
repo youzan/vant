@@ -8,7 +8,7 @@ const CLASSNAME = 'van-overflow-hidden';
 export function useLockScroll(element: HTMLElement) {
   const { start, move, deltaY, direction } = useTouch();
 
-  function onTouchMove(event: TouchEvent) {
+  const onTouchMove = ((event: TouchEvent) => {
     move(event);
 
     if (direction.value !== 'vertical') {
@@ -29,9 +29,9 @@ export function useLockScroll(element: HTMLElement) {
     if (prevent) {
       preventDefault(event, true);
     }
-  }
+  }) as EventListener;
 
-  function lock() {
+  const lock = () => {
     if (!count) {
       document.body.classList.add(CLASSNAME);
     }
@@ -39,7 +39,7 @@ export function useLockScroll(element: HTMLElement) {
     count++;
     on(document, 'touchstart', start);
     on(document, 'touchmove', onTouchMove);
-  }
+  };
 
   lock();
 

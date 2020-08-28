@@ -23,21 +23,21 @@ export function useTouch() {
   const offsetY = ref(0);
   const direction = ref('');
 
-  function reset() {
-    direction.value = '';
+  const reset = () => {
     deltaX.value = 0;
     deltaY.value = 0;
     offsetX.value = 0;
     offsetY.value = 0;
-  }
+    direction.value = '';
+  };
 
-  function start(event: TouchEvent) {
+  const start = ((event: TouchEvent) => {
     reset();
     startX.value = event.touches[0].clientX;
     startY.value = event.touches[0].clientY;
-  }
+  }) as EventListener;
 
-  function move(event: TouchEvent) {
+  const move = ((event: TouchEvent) => {
     const touch = event.touches[0];
     deltaX.value = touch.clientX - startX.value;
     deltaY.value = touch.clientY - startY.value;
@@ -47,7 +47,7 @@ export function useTouch() {
     if (!direction.value) {
       direction.value = getDirection(offsetX.value, offsetY.value);
     }
-  }
+  }) as EventListener;
 
   return {
     move,

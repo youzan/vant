@@ -1,7 +1,5 @@
 import { inBrowser } from '..';
 
-type EventHandler = (event: Event) => void;
-
 // eslint-disable-next-line import/no-mutable-exports
 export let supportsPassive = false;
 
@@ -23,7 +21,7 @@ if (inBrowser) {
 export function on(
   target: EventTarget,
   event: string,
-  handler: EventHandler,
+  handler: EventListenerOrEventListenerObject,
   passive = false
 ) {
   if (inBrowser) {
@@ -35,7 +33,11 @@ export function on(
   }
 }
 
-export function off(target: EventTarget, event: string, handler: EventHandler) {
+export function off(
+  target: EventTarget,
+  event: string,
+  handler: EventListenerOrEventListenerObject
+) {
   if (inBrowser) {
     target.removeEventListener(event, handler);
   }
