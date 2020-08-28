@@ -25,7 +25,7 @@ export function useVisibilityChange(
   };
 
   const unobserve = () => {
-    observer.observe(target.value);
+    observer.unobserve(target.value);
   };
 
   onMounted(observe);
