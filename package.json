@@ -18,7 +18,7 @@
     "lint": "vant-cli lint && ls-lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
-    "release": "vant-cli release",
+    "release": "vant-cli release --tag next",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html"
