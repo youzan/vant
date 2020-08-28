@@ -1,11 +1,11 @@
+import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('steps');
 
-export default createComponent({
-  mixins: [ParentMixin('vanSteps')],
+export const STEPS_KEY = 'vanSteps';
 
+export default createComponent({
   props: {
     activeColor: String,
     inactiveIcon: String,
@@ -26,10 +26,18 @@ export default createComponent({
 
   emits: ['click-step'],
 
-  render() {
-    return (
-      <div class={bem([this.direction])}>
-        <div class={bem('items')}>{this.$slots.default?.()}</div>
+  setup(props, { emit, slots }) {
+    const children = reactive([]);
+
+    provide(STEPS_KEY, {
+      emit,
+      props,
+      children,
+    });
+
+    return () => (
+      <div class={bem([props.direction])}>
+        <div class={bem('items')}>{slots.default?.()}</div>
       </div>
     );
   },
