@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 export function useGlobalEvent(
-  target: EventTarget,
+  target: Ref<EventTarget>,
   event: string,
   handler: EventListener,
   passive = false,
@@ -18,23 +18,23 @@ export function useGlobalEvent(
   let binded: boolean;
 
   function add() {
-    if (binded || (flag && !flag.value)) {
+    if (binded || (flag && !flag.value) || !target.value) {
       return;
     }
 
-    on(target, event, handler, passive);
+    on(target.value, event, handler, passive);
     binded = true;
   }
 
   function remove() {
-    if (binded) {
-      off(target, event, handler);
+    if (binded && target.value) {
+      off(target.value, event, handler);
       binded = false;
     }
   }
 
   if (flag) {
-    watch(() => {
+    watch(flag, () => {
       flag.value ? add() : remove();
     });
   }

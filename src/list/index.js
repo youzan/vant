@@ -1,10 +1,20 @@
+import {
+  ref,
+  watch,
+  nextTick,
+  onUpdated,
+  onMounted,
+  getCurrentInstance,
+} from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
 import { getScroller } from '../utils/dom/scroll';
 
-// Mixins
-import { BindEventMixin } from '../mixins/bind-event';
+// Composition
+import { useRect } from '../composition/use-rect';
+import { useGlobalEvent } from '../composition/use-global-event';
 
 // Components
 import Loading from '../loading';
@@ -12,16 +22,6 @@ import Loading from '../loading';
 const [createComponent, bem, t] = createNamespace('list');
 
 export default createComponent({
-  mixins: [
-    BindEventMixin(function (bind) {
-      if (!this.scroller) {
-        this.scroller = getScroller(this.$el);
-      }
-
-      bind(this.scroller, 'scroll', this.check);
-    }),
-  ],
-
   props: {
     error: Boolean,
     loading: Boolean,
@@ -45,37 +45,21 @@ export default createComponent({
 
   emits: ['load', 'update:error', 'update:loading'],
 
-  data() {
-    return {
-      // use sync innerLoading state to avoid repeated loading in some edge cases
-      innerLoading: this.loading,
-    };
-  },
+  setup(props, { emit, slots }) {
+    // use sync innerLoading state to avoid repeated loading in some edge cases
+    const loading = ref(false);
+    const rootRef = ref();
+    const scrollerRef = ref();
+    const placeholderRef = ref();
 
-  updated() {
-    this.innerLoading = this.loading;
-  },
-
-  mounted() {
-    if (this.immediateCheck) {
-      this.check();
-    }
-  },
-
-  watch: {
-    loading: 'check',
-    finished: 'check',
-  },
-
-  methods: {
-    // @exposed-api
-    check() {
-      this.$nextTick(() => {
-        if (this.innerLoading || this.finished || this.error) {
+    const check = () => {
+      nextTick(() => {
+        if (loading.value || props.finished || props.error) {
           return;
         }
 
-        const { $el: el, scroller, offset, direction } = this;
+        const scroller = scrollerRef.value;
+        const { offset, direction } = props;
         let scrollerRect;
 
         if (scroller.getBoundingClientRect) {
@@ -90,12 +74,12 @@ export default createComponent({
         const scrollerHeight = scrollerRect.bottom - scrollerRect.top;
 
         /* istanbul ignore next */
-        if (!scrollerHeight || isHidden(el)) {
+        if (!scrollerHeight || isHidden(rootRef.value)) {
           return false;
         }
 
         let isReachEdge = false;
-        const placeholderRect = this.$refs.placeholder.getBoundingClientRect();
+        const placeholderRect = useRect(placeholderRef);
 
         if (direction === 'up') {
           isReachEdge = scrollerRect.top - placeholderRect.top <= offset;
@@ -104,71 +88,89 @@ export default createComponent({
         }
 
         if (isReachEdge) {
-          this.innerLoading = true;
-          this.$emit('update:loading', true);
-          this.$emit('load');
+          loading.value = true;
+          emit('update:loading', true);
+          emit('load');
         }
       });
-    },
+    };
 
-    clickErrorText() {
-      this.$emit('update:error', false);
-      this.check();
-    },
-
-    genLoading() {
-      if (this.innerLoading && !this.finished) {
-        return (
-          <div class={bem('loading')} key="loading">
-            {this.$slots.loading ? (
-              this.$slots.loading()
-            ) : (
-              <Loading size="16">{this.loadingText || t('loading')}</Loading>
-            )}
-          </div>
-        );
-      }
-    },
-
-    genFinishedText() {
-      if (this.finished) {
-        const text = this.$slots.finished
-          ? this.$slots.finished()
-          : this.finishedText;
-
+    const renderFinishedText = () => {
+      if (props.finished) {
+        const text = slots.finished ? slots.finished() : props.finishedText;
         if (text) {
           return <div class={bem('finished-text')}>{text}</div>;
         }
       }
-    },
+    };
 
-    genErrorText() {
-      if (this.error) {
-        const text = this.$slots.error ? this.$slots.error() : this.errorText;
+    const clickErrorText = () => {
+      emit('update:error', false);
+      check();
+    };
 
+    const renderErrorText = () => {
+      if (props.error) {
+        const text = slots.error ? slots.error() : props.errorText;
         if (text) {
           return (
-            <div onClick={this.clickErrorText} class={bem('error-text')}>
+            <div onClick={clickErrorText} class={bem('error-text')}>
               {text}
             </div>
           );
         }
       }
-    },
-  },
+    };
 
-  render() {
-    const Placeholder = <div ref="placeholder" class={bem('placeholder')} />;
-    const Content = this.$slots.default?.();
+    const renderLoading = () => {
+      if (loading.value && !props.finished) {
+        return (
+          <div class={bem('loading')} key="loading">
+            {slots.loading ? (
+              slots.loading()
+            ) : (
+              <Loading size="16">{props.loadingText || t('loading')}</Loading>
+            )}
+          </div>
+        );
+      }
+    };
 
-    return (
-      <div class={bem()} role="feed" aria-busy={this.innerLoading}>
-        {this.direction === 'down' ? Content : Placeholder}
-        {this.genLoading()}
-        {this.genFinishedText()}
-        {this.genErrorText()}
-        {this.direction === 'up' ? Content : Placeholder}
-      </div>
-    );
+    watch([() => props.loading, () => props.finished], check);
+
+    onUpdated(() => {
+      loading.value = props.loading;
+    });
+
+    onMounted(() => {
+      scrollerRef.value = getScroller(rootRef.value);
+
+      if (props.immediateCheck) {
+        check();
+      }
+    });
+
+    useGlobalEvent(scrollerRef, 'scroll', check);
+
+    // @exposed-api
+    const vm = getCurrentInstance().proxy;
+    vm.check = check;
+
+    return () => {
+      const Content = slots.default?.();
+      const Placeholder = (
+        <div ref={placeholderRef} class={bem('placeholder')} />
+      );
+
+      return (
+        <div ref={rootRef} role="feed" class={bem()} aria-busy={loading.value}>
+          {props.direction === 'down' ? Content : Placeholder}
+          {renderLoading()}
+          {renderFinishedText()}
+          {renderErrorText()}
+          {props.direction === 'up' ? Content : Placeholder}
+        </div>
+      );
+    };
   },
 });
