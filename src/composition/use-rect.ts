@@ -1,7 +1,13 @@
-import type { Ref } from 'vue';
+import { Ref, ref, onMounted } from 'vue';
 
 export const useRect = (el: Ref<Element>) => el.value.getBoundingClientRect();
 
-export const useWidth = (el: Ref<Element>) => useRect(el).width;
+export const useHeight = (el: Ref<Element>) => {
+  const height = ref();
 
-export const useHeight = (el: Ref<Element>) => useRect(el).height;
+  onMounted(() => {
+    height.value = useRect(el).height;
+  });
+
+  return height;
+};

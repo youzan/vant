@@ -1,12 +1,13 @@
-import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
+import { ref, reactive, provide } from 'vue';
+import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { useHeight } from '../composition/use-rect';
 
 const [createComponent, bem] = createNamespace('tabbar');
 
-export default createComponent({
-  mixins: [ParentMixin('vanTabbar')],
+export const TABBAR_KEY = 'vanTabbar';
 
+export default createComponent({
   props: {
     route: Boolean,
     zIndex: [Number, String],
@@ -33,75 +34,59 @@ export default createComponent({
 
   emits: ['change', 'update:modelValue'],
 
-  data() {
-    return {
-      height: null,
-    };
-  },
+  setup(props, { emit, slots }) {
+    const tabbarRef = ref();
+    const height = useHeight(tabbarRef);
+    const children = reactive([]);
 
-  computed: {
-    fit() {
-      if (this.safeAreaInsetBottom !== null) {
-        return this.safeAreaInsetBottom;
+    const isUnfit = () => {
+      if (isDef(props.safeAreaInsetBottom)) {
+        return !props.safeAreaInsetBottom;
       }
       // enable safe-area-inset-bottom by default when fixed
-      return this.fixed;
-    },
-  },
+      return !props.fixed;
+    };
 
-  watch: {
-    children: 'setActiveItem',
-    modelValue: 'setActiveItem',
-  },
-
-  mounted() {
-    if (this.placeholder && this.fixed) {
-      this.height = this.$refs.tabbar.getBoundingClientRect().height;
-    }
-  },
-
-  methods: {
-    setActiveItem() {
-      this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.modelValue;
-      });
-    },
-
-    onChange(active) {
-      if (active !== this.modelValue) {
-        this.$emit('update:modelValue', active);
-        this.$emit('change', active);
-      }
-    },
-
-    genTabbar() {
+    const renderTabbar = () => {
+      const { fixed, zIndex, border } = props;
+      const unfit = isUnfit();
       return (
         <div
-          ref="tabbar"
-          style={{ zIndex: this.zIndex }}
-          class={[
-            { [BORDER_TOP_BOTTOM]: this.border },
-            bem({
-              unfit: !this.fit,
-              fixed: this.fixed,
-            }),
-          ]}
+          ref={tabbarRef}
+          style={{ zIndex }}
+          class={[bem({ unfit, fixed }), { [BORDER_TOP_BOTTOM]: border }]}
         >
-          {this.$slots.default?.()}
+          {slots.default?.()}
         </div>
       );
-    },
-  },
+    };
 
-  render() {
-    if (this.placeholder && this.fixed) {
-      return (
-        <div class={bem('placeholder')} style={{ height: `${this.height}px` }}>
-          {this.genTabbar()}
-        </div>
-      );
-    }
+    const setActive = (active) => {
+      if (active !== props.modelValue) {
+        emit('update:modelValue', active);
+        emit('change', active);
+      }
+    };
 
-    return this.genTabbar();
+    provide(TABBAR_KEY, {
+      props,
+      children,
+      setActive,
+    });
+
+    return () => {
+      if (props.fixed && props.placeholder) {
+        return (
+          <div
+            class={bem('placeholder')}
+            style={{ height: height.value ? `${height.value}px` : null }}
+          >
+            {renderTabbar()}
+          </div>
+        );
+      }
+
+      return renderTabbar();
+    };
   },
 });

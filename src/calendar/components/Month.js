@@ -48,6 +48,7 @@ export default createComponent({
     const [visible, setVisible] = useToggle();
     const daysRef = ref();
     const monthRef = ref();
+    const height = useHeight(monthRef);
 
     const title = computed(() => formatMonthTitle(props.date));
 
@@ -81,14 +82,6 @@ export default createComponent({
         };
       }
     });
-
-    let height;
-    const getHeight = () => {
-      if (!height) {
-        height = useHeight(monthRef);
-      }
-      return height;
-    };
 
     const getDate = () => props.data;
 
@@ -255,9 +248,9 @@ export default createComponent({
 
     // @exposed-api
     const vm = getCurrentInstance().proxy;
+    vm.height = height;
     vm.getDate = getDate;
     vm.getTitle = getTitle;
-    vm.getHeight = getHeight;
     vm.setVisible = setVisible;
     vm.scrollIntoView = scrollIntoView;
 

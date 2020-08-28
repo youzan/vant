@@ -1,7 +1,7 @@
 import { ref, reactive, nextTick, onActivated, watch } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
-import { useWidth } from '../composition/use-rect';
+import { useRect } from '../composition/use-rect';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');
@@ -139,8 +139,8 @@ export default createComponent({
           return;
         }
 
-        const wrapRefWidth = useWidth(wrapRef);
-        const contentRefWidth = useWidth(contentRef);
+        const wrapRefWidth = useRect(wrapRef).width;
+        const contentRefWidth = useRect(contentRef).width;
 
         if (scrollable || contentRefWidth > wrapRefWidth) {
           doubleRaf(() => {

@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -30,14 +30,8 @@ export default createComponent({
   emits: ['click-left', 'click-right'],
 
   setup(props, { emit, slots }) {
-    const height = ref();
     const navBarRef = ref();
-
-    onMounted(() => {
-      if (props.placeholder && props.fixed) {
-        height.value = useHeight(navBarRef);
-      }
-    });
+    const height = useHeight(navBarRef);
 
     const onClickLeft = (event) => {
       emit('click-left', event);
@@ -90,7 +84,7 @@ export default createComponent({
     };
 
     return () => {
-      if (props.placeholder && props.fixed) {
+      if (props.fixed && props.placeholder) {
         return (
           <div
             class={bem('placeholder')}
@@ -100,7 +94,6 @@ export default createComponent({
           </div>
         );
       }
-
       return renderNavBar();
     };
   },
