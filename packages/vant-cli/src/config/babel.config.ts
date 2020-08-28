@@ -1,6 +1,6 @@
 import { ConfigAPI } from '@babel/core';
 
-module.exports = function(api?: ConfigAPI) {
+module.exports = function (api?: ConfigAPI) {
   if (api) {
     api.cache.never();
   }
@@ -37,7 +37,7 @@ module.exports = function(api?: ConfigAPI) {
         },
         'vant',
       ],
-      '@ant-design-vue/babel-plugin-jsx',
+      '@vue/babel-plugin-jsx',
       '@babel/plugin-transform-object-assign',
     ],
   };
