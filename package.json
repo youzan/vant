@@ -55,7 +55,7 @@
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
-    "vue": ">= 2.5.22"
+    "vue": "3.0.0-0"
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
