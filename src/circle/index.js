@@ -164,7 +164,7 @@ export default createComponent({
     };
 
     return () => (
-      <div class={bem()} style={getSizeStyle(props.buttonSize)}>
+      <div class={bem()} style={getSizeStyle(props.size)}>
         <svg viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}>
           {renderGradient()}
           {renderHover()}
