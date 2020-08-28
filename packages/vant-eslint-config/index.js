@@ -56,7 +56,7 @@ module.exports = {
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     // typescript-eslint
     '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
