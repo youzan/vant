@@ -23,6 +23,9 @@
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html"
   },
+  "npm": {
+    "tag": "next"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged && ls-lint",
