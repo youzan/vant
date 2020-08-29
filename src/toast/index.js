@@ -59,10 +59,16 @@ function createInstance() {
       data() {
         return {
           timer: null,
+          message: null,
           toastProps: {
             show: false,
           },
         };
+      },
+      watch: {
+        message(val) {
+          this.toastProps.message = val;
+        },
       },
       methods: {
         clear() {
