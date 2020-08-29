@@ -96,7 +96,7 @@
             @click="toggle(index)"
           >
             <template #right-icon>
-              <van-checkbox ref="checkboxes" :name="item" />
+              <van-checkbox :ref="setRefs(index)" :name="item" />
             </template>
           </van-cell>
         </van-cell-group>
@@ -106,6 +106,9 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useRefs } from '../../composition/use-refs';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -140,6 +143,31 @@ export default {
     },
   },
 
+  setup() {
+    const group = ref();
+    const [refs, setRefs] = useRefs();
+
+    const toggle = (index) => {
+      refs.value[index].toggle();
+    };
+
+    const checkAll = () => {
+      group.value.toggleAll(true);
+    };
+
+    const toggleAll = () => {
+      group.value.toggleAll();
+    };
+
+    return {
+      group,
+      toggle,
+      setRefs,
+      checkAll,
+      toggleAll,
+    };
+  },
+
   data() {
     return {
       checkbox1: true,
@@ -157,21 +185,6 @@ export default {
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
-  },
-
-  methods: {
-    toggle(index) {
-      // TODO ref in for
-      this.$refs.checkboxes[index].toggle();
-    },
-
-    checkAll() {
-      this.$refs.group.toggleAll(true);
-    },
-
-    toggleAll() {
-      this.$refs.group.toggleAll();
-    },
   },
 };
 </script>
