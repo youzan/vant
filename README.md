@@ -16,10 +16,7 @@
 </p>
 
 <p align="center">
-  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
-  &nbsp;
-  &nbsp;
-  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站</a>
   &nbsp;
   &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
