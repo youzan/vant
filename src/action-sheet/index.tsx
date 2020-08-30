@@ -12,7 +12,7 @@ import Loading from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 import { PopupMixinProps } from '../mixins/popup/type';
 
 export type ActionSheetItem = {
@@ -38,12 +38,16 @@ export type ActionSheetProps = PopupMixinProps & {
   safeAreaInsetBottom?: boolean;
 };
 
+export type ActionSheetSlots = DefaultSlots & {
+  description?: ScopedSlot;
+};
+
 const [createComponent, bem] = createNamespace('action-sheet');
 
 function ActionSheet(
   h: CreateElement,
   props: ActionSheetProps,
-  slots: DefaultSlots,
+  slots: ActionSheetSlots,
   ctx: RenderContext<ActionSheetProps>
 ) {
   const { title, cancelText } = props;
@@ -129,9 +133,12 @@ function ActionSheet(
     }
   }
 
-  const Description = props.description && (
-    <div class={bem('description')}>{props.description}</div>
-  );
+  function Description() {
+    const description = slots.description?.() || props.description;
+    if (description) {
+      return <div class={bem('description')}>{description}</div>;
+    }
+  }
 
   return (
     <Popup
@@ -150,7 +157,7 @@ function ActionSheet(
       {...inherit(ctx, true)}
     >
       {Header()}
-      {Description}
+      {Description()}
       {props.actions && props.actions.map(Option)}
       {Content()}
       {CancelText()}

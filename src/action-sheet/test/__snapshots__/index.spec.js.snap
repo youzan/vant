@@ -24,6 +24,12 @@ exports[`description prop 1`] = `
 </div>
 `;
 
+exports[`description slot 1`] = `
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__description">Custom Description</div><button type="button" class="van-action-sheet__item"><span class="van-action-sheet__name">Option</span></button>
+</div>
+`;
+
 exports[`disable lazy-render 1`] = `
 <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" style="display: none;" name="van-popup-slide-bottom"><button type="button" class="van-action-sheet__item"><span class="van-action-sheet__name">Option</span></button><button type="button" class="van-action-sheet__item"><span class="van-action-sheet__name">Option</span></button>
   <div class="van-action-sheet__gap"></div><button type="button" class="van-action-sheet__cancel">Cancel</button>
