@@ -18,7 +18,7 @@ import {
 // Composition
 import { useHeight } from '../../composition/use-rect';
 import { useToggle } from '../../composition/use-toggle';
-import { usePublicApi } from '../composition/use-public-api';
+import { usePublicApi } from '../../composition/use-public-api';
 
 // Components
 import Day from './Day';
