@@ -96,7 +96,7 @@ Dialog.confirm = (options) =>
 
 Dialog.close = () => {
   if (instance) {
-    instance.value = false;
+    instance.toggle(false);
   }
 };
 
