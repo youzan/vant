@@ -82,7 +82,7 @@ setTimeout(() => {
 ### Component Call
 
 ```html
-<van-image-preview v-model="show" :images="images" @change="onChange">
+<van-image-preview v-model:show="show" :images="images" @change="onChange">
   <template v-slot:index>Page: {{ index }}</template>
 </van-image-preview>
 ```

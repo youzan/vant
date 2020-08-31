@@ -28,7 +28,11 @@
       <van-cell is-link @click="componentCall">
         {{ t('componentCall') }}
       </van-cell>
-      <van-image-preview v-model="show" :images="images" @change="onChange">
+      <van-image-preview
+        v-model:show="show"
+        :images="images"
+        @change="onChange"
+      >
         <template #index>{{ t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
