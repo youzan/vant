@@ -5,11 +5,15 @@ import {
   onActivated,
   onDeactivated,
   onBeforeUnmount,
-  getCurrentInstance,
 } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
+
+// Composition
+import { usePublicApi } from '../composition/use-public-api';
 
 const [createComponent, bem] = createNamespace('count-down');
 
@@ -136,11 +140,11 @@ export default createComponent({
 
     onBeforeUnmount(pause);
 
-    // @exposed-api
-    const vm = getCurrentInstance().proxy;
-    vm.start = start;
-    vm.reset = reset;
-    vm.pause = pause;
+    usePublicApi({
+      start,
+      reset,
+      pause,
+    });
 
     return () => (
       <div class={bem()}>

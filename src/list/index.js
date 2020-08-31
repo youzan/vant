@@ -1,11 +1,4 @@
-import {
-  ref,
-  watch,
-  nextTick,
-  onUpdated,
-  onMounted,
-  getCurrentInstance,
-} from 'vue';
+import { ref, watch, nextTick, onUpdated, onMounted } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -14,6 +7,7 @@ import { isHidden } from '../utils/dom/style';
 // Composition
 import { useRect } from '../composition/use-rect';
 import { useScroller } from '../composition/use-scroller';
+import { usePublicApi } from '../composition/use-public-api';
 import { useGlobalEvent } from '../composition/use-global-event';
 
 // Components
@@ -147,11 +141,8 @@ export default createComponent({
       }
     });
 
+    usePublicApi({ check });
     useGlobalEvent(scroller, 'scroll', check);
-
-    // @exposed-api
-    const vm = getCurrentInstance().proxy;
-    vm.check = check;
 
     return () => {
       const Content = slots.default?.();

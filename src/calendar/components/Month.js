@@ -1,4 +1,4 @@
-import { ref, computed, getCurrentInstance } from 'vue';
+import { ref, computed } from 'vue';
 
 // Utils
 import { createNamespace, addUnit } from '../../utils';
@@ -18,6 +18,7 @@ import {
 // Composition
 import { useHeight } from '../../composition/use-rect';
 import { useToggle } from '../../composition/use-toggle';
+import { usePublicApi } from '../composition/use-public-api';
 
 // Components
 import Day from './Day';
@@ -246,13 +247,13 @@ export default createComponent({
       return <div ref={daysRef} />;
     };
 
-    // @exposed-api
-    const vm = getCurrentInstance().proxy;
-    vm.height = height;
-    vm.getDate = getDate;
-    vm.getTitle = getTitle;
-    vm.setVisible = setVisible;
-    vm.scrollIntoView = scrollIntoView;
+    usePublicApi({
+      height,
+      getDate,
+      getTitle,
+      setVisible,
+      scrollIntoView,
+    });
 
     return () => (
       <div class={bem('month')} ref={monthRef} style={monthStyle.value}>

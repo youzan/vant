@@ -1,13 +1,6 @@
-import {
-  ref,
-  watch,
-  computed,
-  reactive,
-  nextTick,
-  onMounted,
-  getCurrentInstance,
-} from 'vue';
+import { ref, watch, computed, reactive, nextTick, onMounted } from 'vue';
 import { createNamespace, pick } from '../utils';
+import { usePublicApi } from '../composition/use-public-api';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
 
@@ -281,10 +274,7 @@ export default createComponent({
       }
     );
 
-    // @exposed-api
-    const vm = getCurrentInstance().proxy;
-    vm.reset = reset;
-    vm.getArea = getArea;
+    usePublicApi({ reset, getArea });
 
     return () => {
       const columns = state.columns.slice(0, +props.columnsNum);
