@@ -102,40 +102,37 @@ export default createComponent({
       );
     };
 
+    const renderDescription = () => {
+      if (props.description || slots.description) {
+        const content = slots.description
+          ? slots.description()
+          : props.description;
+        return <div class={bem('description')}>{content}</div>;
+      }
+    };
+
     const renderOptions = () => {
       if (props.actions) {
         return props.actions.map(renderOption);
       }
     };
 
-    return () => {
-      const { round, description } = props;
-
-      const Content = slots.default && (
-        <div class={bem('content')}>{slots.default()}</div>
-      );
-
-      const Description = description && (
-        <div class={bem('description')}>{description}</div>
-      );
-
-      return (
-        <Popup
-          class={bem()}
-          round={round}
-          position="bottom"
-          {...{
-            ...pick(props, popupPropKeys),
-            'onUpdate:show': onUpdateShow,
-          }}
-        >
-          {renderHeader()}
-          {Description}
-          {renderOptions()}
-          {Content}
-          {renderCancel()}
-        </Popup>
-      );
-    };
+    return () => (
+      <Popup
+        class={bem()}
+        round={props.round}
+        position="bottom"
+        {...{
+          ...pick(props, popupPropKeys),
+          'onUpdate:show': onUpdateShow,
+        }}
+      >
+        {renderHeader()}
+        {renderDescription()}
+        {renderOptions()}
+        {slots.default && <div class={bem('content')}>{slots.default()}</div>}
+        {renderCancel()}
+      </Popup>
+    );
   },
 });

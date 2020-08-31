@@ -190,3 +190,10 @@ export default {
 | opened | Triggered when opened ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
 | click-overlay | Triggered when click overlay | - |
+
+### Slots
+
+| Name                  | Description        |
+| --------------------- | ------------------ |
+| default               | Custom content     |
+| description `v2.10.4` | Custom description |

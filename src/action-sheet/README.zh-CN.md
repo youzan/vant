@@ -199,6 +199,13 @@ export default {
 | closed | 关闭面板且动画结束后触发 | - |
 | click-overlay | 点击遮罩层时触发 | - |
 
+### Slots
+
+| 名称                  | 说明                 |
+| --------------------- | -------------------- |
+| default               | 自定义面板的展示内容 |
+| description `v2.10.4` | 自定义描述文案       |
+
 ## 常见问题
 
 ### 引入时提示 dependencies not found？
