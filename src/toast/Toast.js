@@ -1,3 +1,5 @@
+import { watch, onMounted, onUnmounted } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
 import { lockClick } from './lock-click';
@@ -6,7 +8,6 @@ import { lockClick } from './lock-click';
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';
-import { watch, onMounted, onUnmounted } from 'vue';
 
 const [createComponent, bem] = createNamespace('toast');
 

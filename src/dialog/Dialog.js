@@ -1,5 +1,8 @@
+// Utils
 import { createNamespace, addUnit, pick } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
+
+// Components
 import Popup from '../popup';
 import Button from '../button';
 import ActionBar from '../action-bar';
@@ -19,11 +22,12 @@ export default createComponent({
     lazyRender: Boolean,
     beforeClose: Function,
     messageAlign: String,
+    showCancelButton: Boolean,
     cancelButtonText: String,
     cancelButtonColor: String,
     confirmButtonText: String,
     confirmButtonColor: String,
-    showCancelButton: Boolean,
+    closeOnClickOverlay: Boolean,
     overlay: {
       type: Boolean,
       default: true,
@@ -43,10 +47,6 @@ export default createComponent({
     closeOnPopstate: {
       type: Boolean,
       default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: false,
     },
   },
 
@@ -204,13 +204,13 @@ export default createComponent({
 
     return (
       <Popup
-        show={this.show}
         role="dialog"
         class={[bem([this.theme]), this.className]}
         style={{ width: addUnit(this.width) }}
         aria-labelledby={this.title || message}
         {...{
           ...pick(this, [
+            'show',
             'overlay',
             'transition',
             'lazyRender',
