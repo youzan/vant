@@ -6,6 +6,7 @@ import { lockClick } from './lock-click';
 import Icon from '../icon';
 import Popup from '../popup';
 import Loading from '../loading';
+import { watch, onMounted, onUnmounted } from 'vue';
 
 const [createComponent, bem] = createNamespace('toast');
 
@@ -13,13 +14,13 @@ export default createComponent({
   props: {
     icon: String,
     show: Boolean,
-    clear: Function,
+    message: [Number, String],
     className: null,
     iconPrefix: String,
+    lockScroll: Boolean,
     loadingType: String,
     forbidClick: Boolean,
     closeOnClick: Boolean,
-    message: [Number, String],
     type: {
       type: String,
       default: 'text',
@@ -32,72 +33,37 @@ export default createComponent({
       type: String,
       default: 'van-fade',
     },
-    lockScroll: {
-      type: Boolean,
-      default: false,
-    },
   },
 
-  emits: ['opened', 'closed', 'update:show'],
+  emits: ['update:show'],
 
-  data() {
-    return {
-      clickable: false,
-    };
-  },
+  setup(props, { emit }) {
+    let clickable;
 
-  mounted() {
-    this.toggleClickable();
-  },
-
-  unmounted() {
-    this.toggleClickable();
-  },
-
-  watch: {
-    show: 'toggleClickable',
-    forbidClick: 'toggleClickable',
-  },
-
-  methods: {
-    onClick() {
-      if (this.closeOnClick) {
-        this.close();
-      }
-    },
-
-    toggleClickable() {
-      const clickable = this.show && this.forbidClick;
-
-      if (this.clickable !== clickable) {
-        this.clickable = clickable;
+    const toggleClickable = () => {
+      const newValue = props.show && props.forbidClick;
+      if (clickable !== newValue) {
+        clickable = newValue;
         lockClick(clickable);
       }
-    },
+    };
 
-    /* istanbul ignore next */
-    onAfterEnter() {
-      this.$emit('opened');
-
-      if (this.onOpened) {
-        this.onOpened();
+    const onClick = () => {
+      if (props.closeOnClick) {
+        emit('update:show', false);
       }
-    },
+    };
 
-    onAfterLeave() {
-      this.$emit('closed');
-    },
-
-    genIcon() {
-      const { icon, type, iconPrefix, loadingType } = this;
+    const renderIcon = () => {
+      const { icon, type, iconPrefix, loadingType } = props;
       const hasIcon = icon || type === 'success' || type === 'fail';
 
       if (hasIcon) {
         return (
           <Icon
+            name={icon || type}
             class={bem('icon')}
             classPrefix={iconPrefix}
-            name={icon || type}
           />
         );
       }
@@ -105,38 +71,37 @@ export default createComponent({
       if (type === 'loading') {
         return <Loading class={bem('loading')} type={loadingType} />;
       }
-    },
+    };
 
-    genMessage() {
-      const { type, message } = this;
+    const renderMessage = () => {
+      const { type, message } = props;
 
-      if (!isDef(message) || message === '') {
-        return;
+      if (isDef(message) && message !== '') {
+        return type === 'html' ? (
+          <div class={bem('text')} innerHTML={message} />
+        ) : (
+          <div class={bem('text')}>{message}</div>
+        );
       }
+    };
 
-      if (type === 'html') {
-        return <div class={bem('text')} innerHTML={message} />;
-      }
+    watch([() => props.show, () => props.forbidClick], toggleClickable);
 
-      return <div class={bem('text')}>{message}</div>;
-    },
-  },
+    onMounted(toggleClickable);
+    onUnmounted(toggleClickable);
 
-  render() {
-    return (
+    return () => (
       <Popup
-        show={this.show}
+        show={props.show}
         class={[
-          bem([this.position, { [this.type]: !this.icon }]),
-          this.className,
+          bem([props.position, { [props.type]: !props.icon }]),
+          props.className,
         ]}
-        transition={this.transition}
-        onOpened={this.onAfterEnter}
-        onClosed={this.onAfterLeave}
-        onClick={this.onClick}
+        transition={props.transition}
+        onClick={onClick}
       >
-        {this.genIcon()}
-        {this.genMessage()}
+        {renderIcon()}
+        {renderMessage()}
       </Popup>
     );
   },
