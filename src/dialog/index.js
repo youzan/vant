@@ -1,38 +1,27 @@
 import { nextTick } from 'vue';
-import { inBrowser, mountComponent } from '../utils';
+import { inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog from './Dialog';
 
 let instance;
 
 function initInstance() {
-  ({ instance } = mountComponent({
-    data() {
-      return {
-        dialogProps: {
-          show: false,
-        },
-      };
-    },
-    methods: {
-      toggle(show) {
-        this.dialogProps.show = show;
-      },
-      setProps(props) {
-        this.dialogProps = props;
-      },
-    },
-    render() {
-      return (
+  const Wrapper = {
+    setup() {
+      const { state, toggle } = usePopupState();
+      return () => (
         <VanDialog
           lazyRender={false}
           {...{
-            ...this.dialogProps,
-            'onUpdate:show': this.toggle,
+            ...state,
+            'onUpdate:show': toggle,
           }}
         />
       );
     },
-  }));
+  };
+
+  ({ instance } = mountComponent(Wrapper));
 }
 
 function Dialog(options) {
@@ -46,7 +35,7 @@ function Dialog(options) {
       initInstance();
     }
 
-    instance.setProps({
+    instance.setState({
       ...Dialog.currentOptions,
       ...options,
       callback: (action) => {

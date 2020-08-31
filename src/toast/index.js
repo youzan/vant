@@ -1,5 +1,6 @@
 import { nextTick } from 'vue';
-import { isObject, inBrowser, mountComponent } from '../utils';
+import { isObject, inBrowser } from '../utils';
+import { mountComponent } from '../utils/mount-component';
 import VanToast from './Toast';
 
 const defaultOptions = {
@@ -57,14 +58,14 @@ function createInstance() {
         return {
           timer: null,
           message: null,
-          toastProps: {
+          state: {
             show: false,
           },
         };
       },
       watch: {
         message(val) {
-          this.toastProps.message = val;
+          this.state.message = val;
         },
       },
       methods: {
@@ -72,7 +73,7 @@ function createInstance() {
           this.toggle(false);
         },
         toggle(show, duration) {
-          this.toastProps.show = show;
+          this.state.show = show;
 
           if (show) {
             clearTimeout(this.timer);
@@ -84,8 +85,8 @@ function createInstance() {
             }
           }
         },
-        setProps(props) {
-          this.toastProps = {
+        setState(props) {
+          this.state = {
             ...props,
             duration: undefined,
           };
@@ -102,7 +103,7 @@ function createInstance() {
         return (
           <VanToast
             {...{
-              ...this.toastProps,
+              ...this.state,
               onClosed: this.onClosed,
               'onUpdate:show': this.toggle,
             }}
@@ -132,7 +133,7 @@ function Toast(options = {}) {
     ...options,
   };
 
-  toast.setProps(options);
+  toast.setState(options);
 
   nextTick(() => {
     toast.toggle(true, options.duration);

@@ -1,5 +1,6 @@
 import { nextTick } from 'vue';
-import { isObject, inBrowser, mountComponent } from '../utils';
+import { isObject, inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify from './Notify';
 
 let timer;
@@ -11,27 +12,13 @@ function parseOptions(message) {
 
 function initInstance() {
   ({ instance } = mountComponent({
-    data() {
-      return {
-        notifyProps: {
-          show: false,
-        },
-      };
-    },
-    methods: {
-      toggle(show) {
-        this.notifyProps.show = show;
-      },
-      setProps(props) {
-        this.notifyProps = props;
-      },
-    },
-    render() {
-      return (
+    setup() {
+      const { state, toggle } = usePopupState();
+      return () => (
         <VanNotify
           {...{
-            ...this.notifyProps,
-            'onUpdate:show': this.toggle,
+            ...state,
+            'onUpdate:show': toggle,
           }}
         />
       );
@@ -53,7 +40,7 @@ function Notify(options) {
     ...parseOptions(options),
   };
 
-  instance.setProps(options);
+  instance.setState(options);
   clearTimeout(timer);
 
   if (options.duration && options.duration > 0) {

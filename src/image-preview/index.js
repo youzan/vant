@@ -1,5 +1,6 @@
 import { nextTick } from 'vue';
-import { inBrowser, mountComponent } from '../utils';
+import { inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanImagePreview from './ImagePreview';
 
 let instance;
@@ -27,34 +28,19 @@ const defaultConfig = {
 
 function initInstance() {
   ({ instance } = mountComponent({
-    data() {
-      return {
-        props: {
-          show: false,
-        },
+    setup() {
+      const { state, toggle } = usePopupState();
+
+      const onClosed = () => {
+        state.images = [];
       };
-    },
-    methods: {
-      close() {
-        this.toggle(false);
-      },
-      toggle(show) {
-        this.props.show = show;
-      },
-      setProps(props) {
-        Object.assign(this.props, props);
-      },
-      onClosed() {
-        this.props.images = [];
-      },
-    },
-    render() {
-      return (
+
+      return () => (
         <VanImagePreview
           {...{
-            ...this.props,
-            onClosed: this.onClosed,
-            'onUpdate:show': this.toggle,
+            ...state,
+            onClosed,
+            'onUpdate:show': toggle,
           }}
         />
       );
@@ -74,7 +60,7 @@ const ImagePreview = (images, startPosition = 0) => {
 
   const options = Array.isArray(images) ? { images, startPosition } : images;
 
-  instance.setProps({
+  instance.setState({
     ...defaultConfig,
     ...options,
   });
