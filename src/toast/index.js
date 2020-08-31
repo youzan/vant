@@ -1,6 +1,6 @@
-import { createApp, nextTick } from 'vue';
+import { nextTick } from 'vue';
+import { isObject, inBrowser, mountComponent } from '../utils';
 import VanToast from './Toast';
-import { isObject, inBrowser } from '../utils';
 
 const defaultOptions = {
   icon: '',
@@ -52,10 +52,7 @@ function createInstance() {
   queue = queue.filter((item) => isInDocument(item.$el));
 
   if (!queue.length || multiple) {
-    const root = document.createElement('div');
-    document.body.appendChild(root);
-
-    const app = createApp({
+    const { instance, unmount } = mountComponent({
       data() {
         return {
           timer: null,
@@ -97,8 +94,7 @@ function createInstance() {
           if (multiple && inBrowser) {
             clearTimeout(this.timer);
             queue = queue.filter((item) => item !== this);
-            app.unmount();
-            document.body.removeChild(root);
+            unmount();
           }
         },
       },
@@ -115,9 +111,7 @@ function createInstance() {
       },
     });
 
-    const toast = app.mount(root);
-
-    queue.push(toast);
+    queue.push(instance);
   }
 
   return queue[queue.length - 1];

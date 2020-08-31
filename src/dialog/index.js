@@ -1,14 +1,11 @@
-import { createApp, nextTick } from 'vue';
+import { nextTick } from 'vue';
+import { inBrowser, mountComponent } from '../utils';
 import VanDialog from './Dialog';
-import { inBrowser } from '../utils';
 
 let instance;
 
 function initInstance() {
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-
-  instance = createApp({
+  ({ instance } = mountComponent({
     data() {
       return {
         dialogProps: {
@@ -35,7 +32,7 @@ function initInstance() {
         />
       );
     },
-  }).mount(root);
+  }));
 }
 
 function Dialog(options) {

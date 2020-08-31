@@ -1,6 +1,6 @@
-import { createApp, nextTick } from 'vue';
+import { nextTick } from 'vue';
+import { isObject, inBrowser, mountComponent } from '../utils';
 import VanNotify from './Notify';
-import { isObject, inBrowser } from '../utils';
 
 let timer;
 let instance;
@@ -10,10 +10,7 @@ function parseOptions(message) {
 }
 
 function initInstance() {
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-
-  instance = createApp({
+  ({ instance } = mountComponent({
     data() {
       return {
         notifyProps: {
@@ -39,7 +36,7 @@ function initInstance() {
         />
       );
     },
-  }).mount(root);
+  }));
 }
 
 function Notify(options) {

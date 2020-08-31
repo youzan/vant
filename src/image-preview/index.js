@@ -1,6 +1,6 @@
-import { createApp, nextTick } from 'vue';
+import { nextTick } from 'vue';
+import { inBrowser, mountComponent } from '../utils';
 import VanImagePreview from './ImagePreview';
-import { inBrowser } from '../utils';
 
 let instance;
 
@@ -26,10 +26,7 @@ const defaultConfig = {
 };
 
 function initInstance() {
-  const root = document.createElement('div');
-  document.body.appendChild(root);
-
-  instance = createApp({
+  ({ instance } = mountComponent({
     data() {
       return {
         props: {
@@ -62,7 +59,7 @@ function initInstance() {
         />
       );
     },
-  }).mount(root);
+  }));
 }
 
 const ImagePreview = (images, startPosition = 0) => {
