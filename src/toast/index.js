@@ -1,6 +1,6 @@
-import { nextTick } from 'vue';
+import { ref, watch, nextTick } from 'vue';
 import { isObject, inBrowser } from '../utils';
-import { mountComponent } from '../utils/mount-component';
+import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast from './Toast';
 
 const defaultOptions = {
@@ -27,7 +27,7 @@ const defaultOptions = {
 let defaultOptionsMap = {};
 
 let queue = [];
-let multiple = false;
+let allowMultiple = false;
 let currentOptions = {
   ...defaultOptions,
 };
@@ -36,82 +36,73 @@ function parseOptions(message) {
   if (isObject(message)) {
     return message;
   }
-
   return { message };
 }
 
-function isInDocument(element) {
-  return document.body.contains(element);
+function createInstance() {
+  const { instance, unmount } = mountComponent({
+    setup() {
+      const message = ref();
+      const { state, toggle } = usePopupState();
+
+      const clear = () => {
+        toggle(false);
+      };
+
+      let timer;
+      const show = (duration) => {
+        toggle(true);
+        clearTimeout(timer);
+        if (duration > 0) {
+          timer = setTimeout(clear, duration);
+        }
+      };
+
+      const onClosed = () => {
+        if (allowMultiple) {
+          clearTimeout(timer);
+          queue = queue.filter((item) => item !== instance);
+          unmount();
+        }
+      };
+
+      watch(message, (value) => {
+        state.message = value;
+      });
+
+      return {
+        show,
+        clear,
+        state,
+        toggle,
+        message,
+        onClosed,
+      };
+    },
+    render() {
+      return (
+        <VanToast
+          {...{
+            ...this.state,
+            onClosed: this.onClosed,
+            'onUpdate:show': this.toggle,
+          }}
+        />
+      );
+    },
+  });
+
+  return instance;
 }
 
-function createInstance() {
+function getInstance() {
   /* istanbul ignore if */
   if (!inBrowser) {
     return {};
   }
 
-  queue = queue.filter((item) => isInDocument(item.$el));
-
-  if (!queue.length || multiple) {
-    const { instance, unmount } = mountComponent({
-      data() {
-        return {
-          timer: null,
-          message: null,
-          state: {
-            show: false,
-          },
-        };
-      },
-      watch: {
-        message(val) {
-          this.state.message = val;
-        },
-      },
-      methods: {
-        clear() {
-          this.toggle(false);
-        },
-        toggle(show, duration) {
-          this.state.show = show;
-
-          if (show) {
-            clearTimeout(this.timer);
-
-            if (duration > 0) {
-              this.timer = setTimeout(() => {
-                this.clear();
-              }, duration);
-            }
-          }
-        },
-        setState(props) {
-          this.state = {
-            ...props,
-            duration: undefined,
-          };
-        },
-        onClosed() {
-          if (multiple && inBrowser) {
-            clearTimeout(this.timer);
-            queue = queue.filter((item) => item !== this);
-            unmount();
-          }
-        },
-      },
-      render() {
-        return (
-          <VanToast
-            {...{
-              ...this.state,
-              onClosed: this.onClosed,
-              'onUpdate:show': this.toggle,
-            }}
-          />
-        );
-      },
-    });
-
+  if (!queue.length || allowMultiple) {
+    const instance = createInstance();
     queue.push(instance);
   }
 
@@ -119,7 +110,7 @@ function createInstance() {
 }
 
 function Toast(options = {}) {
-  const toast = createInstance();
+  const toast = getInstance();
 
   // should add z-index if previous toast has not disappeared
   if (toast.value) {
@@ -133,10 +124,13 @@ function Toast(options = {}) {
     ...options,
   };
 
-  toast.setState(options);
+  toast.setState({
+    ...options,
+    duration: undefined,
+  });
 
   nextTick(() => {
-    toast.toggle(true, options.duration);
+    toast.show(options.duration);
   });
 
   return toast;
@@ -159,7 +153,7 @@ Toast.clear = (all) => {
         toast.clear();
       });
       queue = [];
-    } else if (!multiple) {
+    } else if (!allowMultiple) {
       queue[0].clear();
     } else {
       queue.shift().clear();
@@ -185,7 +179,7 @@ Toast.resetDefaultOptions = (type) => {
 };
 
 Toast.allowMultiple = (value = true) => {
-  multiple = value;
+  allowMultiple = value;
 };
 
 Toast.install = (app) => {
