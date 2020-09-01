@@ -190,7 +190,10 @@ export default createComponent({
       if (Array.isArray(value)) {
         return !value.length;
       }
-      return (value == null) || (value === '');
+      if (value === 0) {
+        return false;
+      }
+      return !value;
     },
 
     runSyncRule(value, rule) {

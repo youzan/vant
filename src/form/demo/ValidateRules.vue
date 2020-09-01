@@ -8,8 +8,9 @@
       >
         <template #input>
           <van-radio-group v-model="radio" direction="horizontal">
-            <van-radio :name="true">1</van-radio>
-            <van-radio :name="false">2</van-radio>
+            <van-radio :name="0">0</van-radio>
+            <van-radio :name="1">1</van-radio>
+            <van-radio :name="2">2</van-radio>
           </van-radio-group>
         </template>
       </van-field>
