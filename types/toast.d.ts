@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { VanPopupMixin } from './mixins/popup';
 
 type ToastMessage = string | number;
@@ -26,7 +25,7 @@ export type ToastOptions = {
   getContainer?: string | (() => Element);
 };
 
-export interface VanToast extends Vue, VanPopupMixin {
+export interface VanToast extends VanPopupMixin {
   type: ToastType;
   position: ToastPosition;
   loadingType: ToastLoadingType;
