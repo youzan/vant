@@ -26,6 +26,7 @@ export function usePopupState() {
 
   return {
     open,
+    close,
     state,
     toggle,
   };

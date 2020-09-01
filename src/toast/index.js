@@ -42,11 +42,7 @@ function createInstance() {
   const { instance, unmount } = mountComponent({
     setup() {
       const message = ref();
-      const { open, state, toggle } = usePopupState();
-
-      const clear = () => {
-        toggle(false);
-      };
+      const { open, state, close, toggle } = usePopupState();
 
       const onClosed = () => {
         if (allowMultiple) {
@@ -61,8 +57,8 @@ function createInstance() {
 
       return {
         open,
-        clear,
         state,
+        clear: close,
         toggle,
         message,
         onClosed,
