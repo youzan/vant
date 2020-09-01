@@ -119,19 +119,20 @@ app.use(Vant);
 <!-- 引入样式文件 -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@2.9/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
 />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.9/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
 
 <script>
   // 在 #app 标签下渲染一个按钮组件
-  new Vue({
-    el: '#app',
+  const app = Vue.createApp({
     template: `<van-button>按钮</van-button>`,
   });
+  app.use(vant);
+  app.mount('#app');
 
   // 调用函数组件，弹出一个 Toast
   vant.Toast('提示');

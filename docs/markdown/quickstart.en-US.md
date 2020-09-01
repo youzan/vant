@@ -102,19 +102,20 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 <!-- import style -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@2.9/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
 />
 
 <!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.9/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
 
 <script>
   // Render the Button component
-  new Vue({
-    el: '#app',
+  const app = Vue.createApp({
     template: `<van-button>Button</van-button>`,
   });
+  app.use(vant);
+  app.mount('#app');
 
   // Call function component
   vant.Toast('Message');
