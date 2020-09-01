@@ -50,8 +50,8 @@ export interface Toast {
   allowMultiple(allow: boolean): void;
 }
 
-declare module 'vue/types/vue' {
-  interface Vue {
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
     $toast: Toast;
   }
 }
