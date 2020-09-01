@@ -1,4 +1,4 @@
-import { ref, watch, nextTick } from 'vue';
+import { ref, watch } from 'vue';
 import { isObject, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast from './Toast';
@@ -25,7 +25,6 @@ const defaultOptions = {
 
 // default options of specific type
 let defaultOptionsMap = {};
-
 let queue = [];
 let allowMultiple = false;
 let currentOptions = {
@@ -43,24 +42,14 @@ function createInstance() {
   const { instance, unmount } = mountComponent({
     setup() {
       const message = ref();
-      const { state, toggle } = usePopupState();
+      const { open, state, toggle } = usePopupState();
 
       const clear = () => {
         toggle(false);
       };
 
-      let timer;
-      const show = (duration) => {
-        toggle(true);
-        clearTimeout(timer);
-        if (duration > 0) {
-          timer = setTimeout(clear, duration);
-        }
-      };
-
       const onClosed = () => {
         if (allowMultiple) {
-          clearTimeout(timer);
           queue = queue.filter((item) => item !== instance);
           unmount();
         }
@@ -71,7 +60,7 @@ function createInstance() {
       });
 
       return {
-        show,
+        open,
         clear,
         state,
         toggle,
@@ -112,11 +101,6 @@ function getInstance() {
 function Toast(options = {}) {
   const toast = getInstance();
 
-  // should add z-index if previous toast has not disappeared
-  if (toast.value) {
-    toast.updateZIndex();
-  }
-
   options = parseOptions(options);
   options = {
     ...currentOptions,
@@ -124,14 +108,7 @@ function Toast(options = {}) {
     ...options,
   };
 
-  toast.setState({
-    ...options,
-    duration: undefined,
-  });
-
-  nextTick(() => {
-    toast.show(options.duration);
-  });
+  toast.open(options);
 
   return toast;
 }

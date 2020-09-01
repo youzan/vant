@@ -1,4 +1,4 @@
-import { createApp, reactive, Component } from 'vue';
+import { createApp, reactive, Component, nextTick } from 'vue';
 import { usePublicApi } from '../composition/use-public-api';
 
 export function usePopupState() {
@@ -10,17 +10,22 @@ export function usePopupState() {
     state.show = show;
   };
 
+  const open = (props: Record<string, any>) => {
+    Object.assign(state, props);
+
+    nextTick(() => {
+      toggle(true);
+    });
+  };
+
   const close = () => {
     toggle(false);
   };
 
-  const setState = (props: Record<string, any>) => {
-    Object.assign(state, props);
-  };
-
-  usePublicApi({ close, toggle, setState });
+  usePublicApi({ open, close, toggle });
 
   return {
+    open,
     state,
     toggle,
   };

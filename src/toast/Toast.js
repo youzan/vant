@@ -16,6 +16,7 @@ export default createComponent({
     icon: String,
     show: Boolean,
     message: [Number, String],
+    duration: Number,
     className: null,
     iconPrefix: String,
     lockScroll: Boolean,
@@ -39,6 +40,7 @@ export default createComponent({
   emits: ['update:show'],
 
   setup(props, { emit }) {
+    let timer;
     let clickable;
 
     const toggleClickable = () => {
@@ -53,6 +55,10 @@ export default createComponent({
       if (props.closeOnClick) {
         emit('update:show', false);
       }
+    };
+
+    const clearTimer = () => {
+      clearTimeout(timer);
     };
 
     const renderIcon = () => {
@@ -88,6 +94,18 @@ export default createComponent({
 
     watch([() => props.show, () => props.forbidClick], toggleClickable);
 
+    watch(
+      () => props.show,
+      (value) => {
+        clearTimer();
+        if (value && props.duration > 0) {
+          timer = setTimeout(() => {
+            emit('update:show', false);
+          }, props.duration);
+        }
+      }
+    );
+
     onMounted(toggleClickable);
     onUnmounted(toggleClickable);
 
@@ -100,6 +118,7 @@ export default createComponent({
         ]}
         transition={props.transition}
         onClick={onClick}
+        onClosed={clearTimer}
       >
         {renderIcon()}
         {renderMessage()}

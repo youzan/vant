@@ -1,4 +1,3 @@
-import { nextTick } from 'vue';
 import { inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanImagePreview from './ImagePreview';
@@ -60,13 +59,9 @@ const ImagePreview = (images, startPosition = 0) => {
 
   const options = Array.isArray(images) ? { images, startPosition } : images;
 
-  instance.setState({
+  instance.open({
     ...defaultConfig,
     ...options,
-  });
-
-  nextTick(() => {
-    instance.toggle(true);
   });
 
   return instance;

@@ -1,4 +1,3 @@
-import { nextTick } from 'vue';
 import { isObject, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify from './Notify';
@@ -40,16 +39,12 @@ function Notify(options) {
     ...parseOptions(options),
   };
 
-  instance.setState(options);
+  instance.open(options);
   clearTimeout(timer);
 
   if (options.duration && options.duration > 0) {
     timer = setTimeout(Notify.clear, options.duration);
   }
-
-  nextTick(() => {
-    instance.toggle(true);
-  });
 
   return instance;
 }

@@ -1,4 +1,3 @@
-import { nextTick } from 'vue';
 import { inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog from './Dialog';
@@ -35,16 +34,12 @@ function Dialog(options) {
       initInstance();
     }
 
-    instance.setState({
+    instance.open({
       ...Dialog.currentOptions,
       ...options,
       callback: (action) => {
         (action === 'confirm' ? resolve : reject)(action);
       },
-    });
-
-    nextTick(() => {
-      instance.toggle(true);
     });
   });
 }
