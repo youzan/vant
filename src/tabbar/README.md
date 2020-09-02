@@ -160,6 +160,7 @@ export default {
 | route | Whether to enable route mode | _boolean_ | `false` |
 | placeholder `v2.6.0` | Whether to generage a placeholder element when fixed | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
+| before-change `v2.10.4` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tabbar Events
 

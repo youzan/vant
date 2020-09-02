@@ -168,6 +168,7 @@ export default {
 | route | 是否开启路由模式 | _boolean_ | `false` |
 | placeholder `v2.6.0` | 固定在底部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei)，设置 fixed 时默认开启 | _boolean_ | `false` |
+| before-change `v2.10.4` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tabbar Events
 
