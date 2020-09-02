@@ -43,7 +43,6 @@ export default {
       validator: '函数校验',
       validating: '验证中...',
       asyncValidator: '异步函数校验',
-      required: '必填',
     },
     'en-US': {
       label: 'Label',
@@ -54,7 +53,6 @@ export default {
       validator: 'Use validator',
       validating: 'Validating...',
       asyncValidator: 'Use async validator',
-      required: 'required',
     },
   },
 
