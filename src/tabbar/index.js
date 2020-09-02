@@ -1,6 +1,7 @@
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { callInterceptor } from '../utils/interceptor';
+import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('tabbar');
 
@@ -12,6 +13,7 @@ export default createComponent({
     zIndex: [Number, String],
     placeholder: Boolean,
     activeColor: String,
+    beforeChange: Function,
     inactiveColor: String,
     value: {
       type: [Number, String],
@@ -67,8 +69,14 @@ export default createComponent({
 
     onChange(active) {
       if (active !== this.value) {
-        this.$emit('input', active);
-        this.$emit('change', active);
+        callInterceptor({
+          interceptor: this.beforeChange,
+          args: [active],
+          done: () => {
+            this.$emit('input', active);
+            this.$emit('change', active);
+          },
+        });
       }
     },
 
