@@ -38,6 +38,8 @@ export default createComponent({
       if (props.textColor) {
         style.color = props.textColor;
       }
+
+      return style;
     });
 
     return () => {
