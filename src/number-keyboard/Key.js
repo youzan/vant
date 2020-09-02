@@ -1,8 +1,7 @@
 import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
+import { DeleteIcon, CollapseIcon } from './Icon';
 import Loading from '../loading';
-import DeleteIcon from './DeleteIcon';
-import CollapseIcon from './CollapseIcon';
 
 const [createComponent, bem] = createNamespace('key');
 
