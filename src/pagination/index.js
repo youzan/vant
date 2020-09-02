@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
+import { computed, watch } from 'vue';
 
 const [createComponent, bem, t] = createNamespace('pagination');
 
@@ -40,19 +41,20 @@ export default createComponent({
 
   emits: ['change', 'update:modelValue'],
 
-  computed: {
-    count() {
-      const count =
-        this.pageCount || Math.ceil(this.totalItems / this.itemsPerPage);
+  setup(props, { emit, slots }) {
+    const count = computed(() => {
+      const { pageCount, totalItems, itemsPerPage } = props;
+      const count = pageCount || Math.ceil(totalItems / itemsPerPage);
       return Math.max(1, count);
-    },
+    });
 
-    pages() {
+    const pages = computed(() => {
       const pages = [];
-      const pageCount = this.count;
-      const showPageSize = +this.showPageSize;
+      const pageCount = count.value;
+      const showPageSize = +props.showPageSize;
+      const { modelValue, forceEllipses } = props;
 
-      if (this.mode !== 'multi') {
+      if (props.mode !== 'multi') {
         return pages;
       }
 
@@ -64,7 +66,7 @@ export default createComponent({
       // recompute if showPageSize
       if (isMaxSized) {
         // Current page is displayed in the middle of the visible ones
-        startPage = Math.max(this.modelValue - Math.floor(showPageSize / 2), 1);
+        startPage = Math.max(modelValue - Math.floor(showPageSize / 2), 1);
         endPage = startPage + showPageSize - 1;
 
         // Adjust if limit is exceeded
@@ -76,91 +78,97 @@ export default createComponent({
 
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
-        const page = makePage(number, number, number === this.modelValue);
+        const page = makePage(number, number, number === modelValue);
         pages.push(page);
       }
 
       // Add links to move between page sets
-      if (isMaxSized && showPageSize > 0 && this.forceEllipses) {
+      if (isMaxSized && showPageSize > 0 && forceEllipses) {
         if (startPage > 1) {
-          const previousPageSet = makePage(startPage - 1, '...', false);
-          pages.unshift(previousPageSet);
+          const prevPages = makePage(startPage - 1, '...');
+          pages.unshift(prevPages);
         }
 
         if (endPage < pageCount) {
-          const nextPageSet = makePage(endPage + 1, '...', false);
-          pages.push(nextPageSet);
+          const nextPages = makePage(endPage + 1, '...');
+          pages.push(nextPages);
         }
       }
 
       return pages;
-    },
-  },
+    });
 
-  watch: {
-    modelValue: {
-      handler(page) {
-        this.select(page);
-      },
-      immediate: true,
-    },
-  },
+    const select = (page, emitChange) => {
+      page = Math.min(count.value, Math.max(1, page));
 
-  methods: {
-    select(page, emitChange) {
-      page = Math.min(this.count, Math.max(1, page));
-      if (this.modelValue !== page) {
-        this.$emit('update:modelValue', page);
+      if (props.modelValue !== page) {
+        emit('update:modelValue', page);
 
         if (emitChange) {
-          this.$emit('change', page);
+          emit('change', page);
         }
       }
-    },
-  },
-
-  render() {
-    const value = this.modelValue;
-    const simple = this.mode !== 'multi';
-
-    const onSelect = (value) => () => {
-      this.select(value, true);
     };
 
-    return (
-      <ul class={bem({ simple })}>
-        <li
-          class={[bem('item', { disabled: value === 1 }), bem('prev'), BORDER]}
-          onClick={onSelect(value - 1)}
-        >
-          {this.prevText || t('prev')}
-        </li>
-        {this.pages.map((page) => (
-          <li
-            class={[bem('item', { active: page.active }), bem('page'), BORDER]}
-            onClick={onSelect(page.number)}
-          >
-            {page.text}
-          </li>
-        ))}
-        {simple && (
+    watch(() => props.modelValue, select, { immediate: true });
+
+    const renderDesc = () => {
+      if (props.mode !== 'multi') {
+        return (
           <li class={bem('page-desc')}>
-            {this.$slots.pageDesc
-              ? this.$slots.pageDesc()
-              : `${value}/${this.count}`}
+            {slots.pageDesc
+              ? slots.pageDesc()
+              : `${props.modelValue}/${count.value}`}
           </li>
-        )}
-        <li
-          class={[
-            bem('item', { disabled: value === this.count }),
-            bem('next'),
-            BORDER,
-          ]}
-          onClick={onSelect(value + 1)}
-        >
-          {this.nextText || t('next')}
-        </li>
-      </ul>
-    );
+        );
+      }
+    };
+
+    return () => {
+      const value = props.modelValue;
+      const simple = props.mode !== 'multi';
+
+      const onSelect = (value) => () => {
+        select(value, true);
+      };
+
+      return (
+        <ul class={bem({ simple })}>
+          <li
+            class={[
+              bem('item', { disabled: value === 1 }),
+              bem('prev'),
+              BORDER,
+            ]}
+            onClick={onSelect(value - 1)}
+          >
+            {props.prevText || t('prev')}
+          </li>
+          {pages.value.map((page) => (
+            <li
+              class={[
+                bem('item', { active: page.active }),
+                bem('page'),
+                BORDER,
+              ]}
+              onClick={onSelect(page.number)}
+            >
+              {page.text}
+            </li>
+          ))}
+          {renderDesc()}
+          <li
+            class={[
+              bem('item', { disabled: value === count.value }),
+              bem('next'),
+              BORDER,
+            ]}
+            onClick={onSelect(value + 1)}
+          >
+            {props.nextText || t('next')}
+          </li>
+        </ul>
+      );
+    };
   },
 });
