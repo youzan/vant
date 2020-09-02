@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import Network from './Network';
+import { Network } from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
 
@@ -23,7 +23,7 @@ export default createComponent({
       let { image } = props;
 
       if (image === 'network') {
-        return <Network />;
+        return Network;
       }
 
       if (PRESET_IMAGES.indexOf(image) !== -1) {
