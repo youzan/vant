@@ -135,7 +135,6 @@ export default {
       &.active {
         background-color: fade(@van-doc-green, 8);
         border-radius: 8px;
-        -webkit-font-smoothing: auto;
       }
 
       span {
