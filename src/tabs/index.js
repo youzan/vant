@@ -1,10 +1,11 @@
 // Utils
-import { createNamespace, isDef, addUnit, isPromise } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { callInterceptor } from '../utils/interceptor';
 import {
   getScroller,
   getVisibleTop,
@@ -263,34 +264,21 @@ export default createComponent({
       }
     },
 
-    callBeforeChange(name, done) {
-      if (this.beforeChange) {
-        const returnVal = this.beforeChange(name);
-
-        if (isPromise(returnVal)) {
-          returnVal.then((value) => {
-            if (value) {
-              done();
-            }
-          });
-        } else if (returnVal) {
-          done();
-        }
-      } else {
-        done();
-      }
-    },
-
     // emit event when clicked
     onClick(item, index) {
       const { title, disabled, computedName } = this.children[index];
       if (disabled) {
         this.$emit('disabled', computedName, title);
       } else {
-        this.callBeforeChange(computedName, () => {
-          this.setCurrentIndex(index);
-          this.scrollToCurrentContent();
+        callInterceptor({
+          interceptor: this.beforeChange,
+          args: [computedName],
+          done: () => {
+            this.setCurrentIndex(index);
+            this.scrollToCurrentContent();
+          },
         });
+
         this.$emit('click', computedName, title);
         route(item.$router, item);
       }
