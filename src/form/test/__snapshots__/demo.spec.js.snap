@@ -28,29 +28,6 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label"><span>文本</span></div>
         <div class="van-cell__value van-field__value">
-          <div class="van-field__body">
-            <div class="van-field__control van-field__control--custom">
-              <div role="radiogroup" class="van-radio-group van-radio-group--horizontal">
-                <div role="radio" tabindex="-1" aria-checked="false" class="van-radio van-radio--horizontal">
-                  <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
-                      <!----></i></div><span class="van-radio__label">0</span>
-                </div>
-                <div role="radio" tabindex="-1" aria-checked="false" class="van-radio van-radio--horizontal">
-                  <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
-                      <!----></i></div><span class="van-radio__label">1</span>
-                </div>
-                <div role="radio" tabindex="-1" aria-checked="false" class="van-radio van-radio--horizontal">
-                  <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
-                      <!----></i></div><span class="van-radio__label">2</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"><span>文本</span></div>
-        <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" name="pattern" placeholder="正则校验" class="van-field__control"></div>
         </div>
       </div>

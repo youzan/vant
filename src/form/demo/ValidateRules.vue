@@ -2,19 +2,6 @@
   <demo-block :title="t('title')">
     <van-form validate-first @sumbit="onSubmit" @failed="onFailed">
       <van-field
-        name="radio"
-        :label="t('label')"
-        :rules="[{ required: true, message: t('required') }]"
-      >
-        <template #input>
-          <van-radio-group v-model="radio" direction="horizontal">
-            <van-radio :name="0">0</van-radio>
-            <van-radio :name="1">1</van-radio>
-            <van-radio :name="2">2</van-radio>
-          </van-radio-group>
-        </template>
-      </van-field>
-      <van-field
         v-model="value1"
         name="pattern"
         :label="t('label')"
@@ -73,7 +60,6 @@ export default {
 
   data() {
     return {
-      radio: undefined,
       value1: '',
       value2: '',
       value3: '',
