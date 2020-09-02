@@ -1,6 +1,7 @@
 import { ref, reactive, provide } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { callInterceptor } from '../utils/interceptor';
 import { useHeight } from '../composition/use-rect';
 
 const [createComponent, bem] = createNamespace('tabbar');
@@ -13,6 +14,7 @@ export default createComponent({
     zIndex: [Number, String],
     placeholder: Boolean,
     activeColor: String,
+    beforeChange: Function,
     inactiveColor: String,
     modelValue: {
       type: [Number, String],
@@ -63,8 +65,14 @@ export default createComponent({
 
     const setActive = (active) => {
       if (active !== props.modelValue) {
-        emit('update:modelValue', active);
-        emit('change', active);
+        callInterceptor({
+          interceptor: props.beforeChange,
+          args: [active],
+          done() {
+            emit('update:modelValue', active);
+            emit('change', active);
+          },
+        });
       }
     };
 
