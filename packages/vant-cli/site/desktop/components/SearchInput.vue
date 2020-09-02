@@ -43,8 +43,8 @@ export default {
 @import '../../common/style/var';
 
 .van-doc-search {
-  width: 200px;
-  height: 60px;
+  width: 400px;
+  height: @van-doc-header-top-height;
   margin-left: 140px;
   color: #fff;
   font-size: 14px;

@@ -38,7 +38,7 @@ export default {
 
   data() {
     return {
-      top: 60,
+      top: 64,
       bottom: 0,
     };
   },
@@ -64,7 +64,7 @@ export default {
   methods: {
     onScroll() {
       const { pageYOffset: offset } = window;
-      this.top = Math.max(0, 60 - offset);
+      this.top = Math.max(0, 64 - offset);
     },
   },
 };
@@ -75,13 +75,11 @@ export default {
 
 .van-doc-nav {
   position: fixed;
-  top: 60px;
-  bottom: 0;
   left: 0;
   z-index: 1;
   min-width: @van-doc-nav-width;
   max-width: @van-doc-nav-width;
-  padding: 24px 0 72px;
+  padding: @van-doc-padding 0;
   overflow-y: scroll;
   background-color: #fff;
   box-shadow: 0 8px 12px #ebedf0;
@@ -108,6 +106,7 @@ export default {
 
   &__group {
     margin-bottom: 16px;
+    padding-left: 6px;
   }
 
   &__title {
@@ -134,6 +133,8 @@ export default {
       }
 
       &.active {
+        background-color: fade(@van-doc-green, 8);
+        border-radius: 8px;
         -webkit-font-smoothing: auto;
       }
 

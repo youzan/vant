@@ -203,7 +203,7 @@ export default {
   }
 
   section {
-    padding: 30px;
+    padding: 24px;
     overflow: hidden;
   }
 
