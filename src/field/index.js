@@ -190,7 +190,9 @@ export default createComponent({
       if (Array.isArray(value)) {
         return !value.length;
       }
-
+      if (value === 0) {
+        return false;
+      }
       return !value;
     },
 
