@@ -10,6 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.4](https://github.com/youzan/vant/compare/v2.10.3...v2.10.4)
+
+`2020-09-03`
+
+**Feature**
+
+- 设计资源：新增 Axure 元件库，感谢 [@axure-tczy](https://github.com/axure-tczy) 同学提供资源
+- ActionSheet: 新增 description 插槽 [#7068](https://github.com/youzan/vant/issues/7068)
+- Icon: 新增 share-o 图标 [ea6324](https://github.com/youzan/vant/commit/ea6324234beae3bc4a700c59523a7091add49480)
+- Tabbar: 新增 before-change 属性 [#7081](https://github.com/youzan/vant/issues/7081)
+
+**Bug Fixes**
+
+- Calendar: 修复 row-height 对选中的日期不生效的问题 [#7046](https://github.com/youzan/vant/issues/7046)
+- Field: 修复表单项的值为 0 会导致 required 校验不通过的问题 [#7050](https://github.com/youzan/vant/issues/7050)
+- Icon: 修复 calendar-o 图标名称拼写错误 [#7080](https://github.com/youzan/vant/issues/7080)
+
 ### [v2.10.3](https://github.com/youzan/vant/compare/v2.10.2...v2.10.3)
 
 `2020-08-25`
