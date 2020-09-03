@@ -1,7 +1,18 @@
 import { computed } from 'vue';
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
 const [createComponent, bem] = createNamespace('loading');
+
+const SpinIcon = [];
+for (let i = 0; i < 12; i++) {
+  SpinIcon.push(<i />);
+}
+
+const CircularIcon = (
+  <svg class={bem('circular')} viewBox="25 25 50 50">
+    <circle cx="50" cy="50" r="20" fill="none" />
+  </svg>
+);
 
 export default createComponent({
   props: {
@@ -16,17 +27,6 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const SpinIcon = [];
-    for (let i = 0; i < 12; i++) {
-      SpinIcon.push(<i />);
-    }
-
-    const CircularIcon = (
-      <svg class={bem('circular')} viewBox="25 25 50 50">
-        <circle cx="50" cy="50" r="20" fill="none" />
-      </svg>
-    );
-
     const renderText = () => {
       if (slots.default) {
         return (
@@ -42,23 +42,13 @@ export default createComponent({
       }
     };
 
-    const spinnerStyle = computed(() => {
-      const style = {
-        color: props.color,
-      };
-
-      if (props.size) {
-        const size = addUnit(props.size);
-        style.width = size;
-        style.height = size;
-      }
-
-      return style;
-    });
+    const spinnerStyle = computed(() => ({
+      color: props.color,
+      ...getSizeStyle(props.size),
+    }));
 
     return () => {
       const { type, vertical } = props;
-
       return (
         <div class={bem([type, { vertical }])}>
           <span class={bem('spinner', type)} style={spinnerStyle.value}>
