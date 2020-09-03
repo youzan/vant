@@ -1,5 +1,10 @@
 ## Changelog
 
+## 1.3.0
+
+- add share-o icon
+- fix calendar-o typo
+
 ## 1.2.5
 
 - add back-top icon

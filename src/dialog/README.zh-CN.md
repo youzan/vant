@@ -202,7 +202,7 @@ export default {
 | width `v2.2.7` | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
-| theme | 样式风格，可选值为`round` | _string_ | `default` |
+| theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |

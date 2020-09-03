@@ -10,6 +10,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.4](https://github.com/youzan/vant/compare/v2.10.3...v2.10.4)
+
+`2020-09-03`
+
+**Feature**
+
+- ActionSheet: add description slot [#7068](https://github.com/youzan/vant/issues/7068)
+- Icon: add share-o icon [ea6324](https://github.com/youzan/vant/commit/ea6324234beae3bc4a700c59523a7091add49480)
+- Tabbar: add before-change prop [#7081](https://github.com/youzan/vant/issues/7081)
+
+**Bug Fixes**
+
+- Calendar: row-height should work on selected month [#7046](https://github.com/youzan/vant/issues/7046)
+- Field: fix the issue of checking empty value [#7050](https://github.com/youzan/vant/issues/7050)
+- Icon: fix calendar-o typo [#7080](https://github.com/youzan/vant/issues/7080)
+
 ### [v2.10.3](https://github.com/youzan/vant/compare/v2.10.2...v2.10.3)
 
 `2020-08-25`
