@@ -1,13 +1,12 @@
+import { ref } from 'vue';
 import { createNamespace } from '../utils';
-import { TouchMixin } from '../mixins/touch';
-import { DeleteIcon, CollapseIcon } from './Icon';
+import { useTouch } from '../composition/use-touch';
 import Loading from '../loading';
+import { DeleteIcon, CollapseIcon } from './Icon';
 
 const [createComponent, bem] = createNamespace('key');
 
 export default createComponent({
-  mixins: [TouchMixin],
-
   props: {
     type: String,
     text: [Number, String],
@@ -19,79 +18,69 @@ export default createComponent({
 
   emits: ['press'],
 
-  data() {
-    return {
-      active: false,
+  setup(props, { emit, slots }) {
+    const active = ref(false);
+    const touch = useTouch();
+
+    const onTouchStart = (event) => {
+      touch.start(event);
+      active.value = true;
     };
-  },
 
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
-
-  methods: {
-    onTouchStart(event) {
-      // compatible with Vue 2.6 event bubble bug
-      event.stopPropagation();
-
-      this.touchStart(event);
-      this.active = true;
-    },
-
-    onTouchMove(event) {
-      this.touchMove(event);
-
-      if (this.direction) {
-        this.active = false;
+    const onTouchMove = (event) => {
+      touch.move(event);
+      if (touch.direction) {
+        active.value = false;
       }
-    },
+    };
 
-    onTouchEnd(event) {
-      if (this.active) {
+    const onTouchEnd = (event) => {
+      if (active.value) {
         // eliminate tap delay on safari
         event.preventDefault();
-        this.active = false;
-        this.$emit('press', this.text, this.type);
+        active.value = false;
+        emit('press', props.text, props.type);
       }
-    },
+    };
 
-    genContent() {
-      const isExtra = this.type === 'extra';
-      const isDelete = this.type === 'delete';
-      const text = this.$slots.default ? this.$slots.default() : this.text;
-
-      if (this.loading) {
+    const renderContent = () => {
+      if (props.loading) {
         return <Loading class={bem('loading-icon')} />;
       }
 
-      if (isDelete) {
-        return text || <DeleteIcon class={bem('delete-icon')} />;
+      const text = slots.default ? slots.default() : props.text;
+
+      switch (props.type) {
+        case 'delete':
+          return text || <DeleteIcon class={bem('delete-icon')} />;
+        case 'extra':
+          return text || <CollapseIcon class={bem('collapse-icon')} />;
+        default:
+          return text;
       }
+    };
 
-      if (isExtra) {
-        return text || <CollapseIcon class={bem('collapse-icon')} />;
-      }
-
-      return text;
-    },
-  },
-
-  render() {
-    return (
-      <div class={bem('wrapper', { wider: this.wider })}>
+    return () => (
+      <div
+        class={bem('wrapper', { wider: props.wider })}
+        onTouchstart={onTouchStart}
+        onTouchmove={onTouchMove}
+        onTouchend={onTouchEnd}
+        onTouchcancel={onTouchEnd}
+      >
         <div
           role="button"
           tabindex="0"
           class={bem([
-            this.color,
+            props.color,
             {
-              large: this.large,
-              active: this.active,
-              delete: this.type === 'delete',
+              large: props.large,
+              active: active.value,
+              delete: props.type === 'delete',
             },
           ])}
         >
-          {this.genContent()}
+          {renderContent()}
         </div>
       </div>
     );
