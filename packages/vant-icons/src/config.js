@@ -98,7 +98,7 @@ module.exports = {
     'newspaper-o',
     'warn-o',
     'notes-o',
-    'calender-o',
+    'calendar-o',
     'bulb-o',
     'user-circle-o',
     'desktop-o',
