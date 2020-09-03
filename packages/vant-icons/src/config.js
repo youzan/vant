@@ -54,6 +54,7 @@ module.exports = {
     'video-o',
     'shop-o',
     'shop-collect-o',
+    'share-o',
     'chat-o',
     'smile-comment-o',
     'vip-card-o',
@@ -188,6 +189,7 @@ module.exports = {
     'video',
     'shop',
     'shop-collect',
+    'share',
     'chat',
     'smile-comment',
     'vip-card',
@@ -212,7 +214,6 @@ module.exports = {
     'goods-collect',
     'eye',
     // without corresponding outline icon
-    'share',
     'alipay',
     'wechat',
     'photograph',

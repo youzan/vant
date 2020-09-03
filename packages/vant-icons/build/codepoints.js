@@ -231,6 +231,7 @@ const map = {
   F0E4: 'enlarge',
   F0E5: 'photo-fail',
   F0E6: 'back-top',
+  F0E7: 'share-o',
 };
 
 const reversedMap = {};
