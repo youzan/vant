@@ -2,7 +2,6 @@
 import {
   noop,
   isDef,
-  addUnit,
   isPromise,
   getSizeStyle,
   createNamespace,
@@ -91,12 +90,6 @@ export default createComponent({
     'click-preview',
     'update:modelValue',
   ],
-
-  computed: {
-    previewSizeWithUnit() {
-      return addUnit(this.previewSize);
-    },
-  },
 
   methods: {
     getDetail(index = this.modelValue.length) {
