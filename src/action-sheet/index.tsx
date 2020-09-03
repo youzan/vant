@@ -30,6 +30,7 @@ export type ActionSheetProps = PopupMixinProps & {
   title?: string;
   actions?: ActionSheetItem[];
   duration: number | string;
+  closeable?: boolean;
   closeIcon: string;
   cancelText?: string;
   description?: string;
@@ -50,7 +51,7 @@ function ActionSheet(
   slots: ActionSheetSlots,
   ctx: RenderContext<ActionSheetProps>
 ) {
-  const { title, cancelText } = props;
+  const { title, cancelText, closeable } = props;
 
   function onCancel() {
     emit(ctx, 'input', false);
@@ -62,11 +63,13 @@ function ActionSheet(
       return (
         <div class={bem('header')}>
           {title}
-          <Icon
-            name={props.closeIcon}
-            class={bem('close')}
-            onClick={onCancel}
-          />
+          {closeable && (
+            <Icon
+              name={props.closeIcon}
+              class={bem('close')}
+              onClick={onCancel}
+            />
+          )}
         </div>
       );
     }
@@ -178,6 +181,10 @@ ActionSheet.props = {
   round: {
     type: Boolean,
     default: true,
+  },
+  closeable: {
+    type: Boolean,
+    default: false,
   },
   closeIcon: {
     type: String,
