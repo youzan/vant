@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composition
-import { useHeight } from '../composition/use-rect';
+import { usePlaceholder } from '../composition/use-placeholder';
 
 // Components
 import Icon from '../icon';
@@ -31,7 +31,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const navBarRef = ref();
-    const height = useHeight(navBarRef);
+    const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
     const onClickLeft = (event) => {
       emit('click-left', event);
@@ -85,14 +85,7 @@ export default createComponent({
 
     return () => {
       if (props.fixed && props.placeholder) {
-        return (
-          <div
-            class={bem('placeholder')}
-            style={{ height: height.value && `${height.value}px` }}
-          >
-            {renderNavBar()}
-          </div>
-        );
+        return renderPlaceholder(renderNavBar);
       }
       return renderNavBar();
     };

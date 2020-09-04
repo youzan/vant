@@ -2,7 +2,7 @@ import { ref, reactive, provide } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor } from '../utils/interceptor';
-import { useHeight } from '../composition/use-rect';
+import { usePlaceholder } from '../composition/use-placeholder';
 
 const [createComponent, bem] = createNamespace('tabbar');
 
@@ -38,8 +38,8 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const tabbarRef = ref();
-    const height = useHeight(tabbarRef);
     const children = reactive([]);
+    const renderPlaceholder = usePlaceholder(tabbarRef, bem);
 
     const isUnfit = () => {
       if (isDef(props.safeAreaInsetBottom)) {
@@ -84,16 +84,8 @@ export default createComponent({
 
     return () => {
       if (props.fixed && props.placeholder) {
-        return (
-          <div
-            class={bem('placeholder')}
-            style={{ height: height.value ? `${height.value}px` : null }}
-          >
-            {renderTabbar()}
-          </div>
-        );
+        return renderPlaceholder(renderTabbar);
       }
-
       return renderTabbar();
     };
   },
