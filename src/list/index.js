@@ -107,7 +107,7 @@ export default createComponent({
         const text = slots.error ? slots.error() : props.errorText;
         if (text) {
           return (
-            <div onClick={clickErrorText} class={bem('error-text')}>
+            <div class={bem('error-text')} onClick={clickErrorText}>
               {text}
             </div>
           );

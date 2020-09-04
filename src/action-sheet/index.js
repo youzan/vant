@@ -86,7 +86,7 @@ export default createComponent({
       const onClick = () => {
         emit('select', item, index);
         if (props.closeOnClickAction) {
-          emit('update:show', false);
+          onUpdateShow(false);
         }
       };
 

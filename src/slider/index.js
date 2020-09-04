@@ -151,12 +151,12 @@ export default createComponent({
     const renderButton = () => (
       <div
         role="slider"
+        class={bem('button-wrapper')}
         tabindex={props.disabled ? -1 : 0}
         aria-valuemin={props.min}
         aria-valuenow={props.modelValue}
         aria-valuemax={props.max}
         aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
-        class={bem('button-wrapper')}
         onTouchstart={onTouchStart}
         onTouchmove={onTouchMove}
         onTouchend={onTouchEnd}

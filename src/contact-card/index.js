@@ -21,13 +21,13 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
-    function onClick(event) {
+    const onClick = (event) => {
       if (props.editable) {
         emit('click', event);
       }
-    }
+    };
 
-    function Content() {
+    const renderContent = () => {
       if (props.type === 'add') {
         return props.addText || t('addText');
       }
@@ -36,19 +36,19 @@ export default createComponent({
         <div>{`${t('name')}：${props.name}`}</div>,
         <div>{`${t('tel')}：${props.tel}`}</div>,
       ];
-    }
+    };
 
     return () => (
       <Cell
         center
+        icon={props.type === 'edit' ? 'contact' : 'add-square'}
+        class={bem([props.type])}
         border={false}
         isLink={props.editable}
-        class={bem([props.type])}
         valueClass={bem('value')}
-        icon={props.type === 'edit' ? 'contact' : 'add-square'}
         onClick={onClick}
       >
-        {Content()}
+        {renderContent()}
       </Cell>
     );
   },

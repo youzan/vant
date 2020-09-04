@@ -27,6 +27,11 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const spinnerStyle = computed(() => ({
+      color: props.color,
+      ...getSizeStyle(props.size),
+    }));
+
     const renderText = () => {
       if (slots.default) {
         return (
@@ -41,11 +46,6 @@ export default createComponent({
         );
       }
     };
-
-    const spinnerStyle = computed(() => ({
-      color: props.color,
-      ...getSizeStyle(props.size),
-    }));
 
     return () => {
       const { type, vertical } = props;
