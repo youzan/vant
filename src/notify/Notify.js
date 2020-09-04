@@ -33,7 +33,7 @@ export default createComponent({
           duration={0.2}
           lockScroll={false}
         >
-          {slots.default?.() || props.message}
+          {slots.default ? slots.default() : props.message}
         </Popup>
       );
     };

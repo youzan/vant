@@ -2,8 +2,8 @@
 import { createNamespace, addUnit } from '../utils';
 import { switchProps } from './shared';
 
-// Mixins
-import { FieldMixin } from '../mixins/field';
+// Composition
+import { useParentField } from '../composition/use-parent-field';
 
 // Components
 import Loading from '../loading';
@@ -11,8 +11,6 @@ import Loading from '../loading';
 const [createComponent, bem] = createNamespace('switch');
 
 export default createComponent({
-  mixins: [FieldMixin],
-
   props: switchProps,
 
   emits: ['change', 'update:modelValue'],
@@ -34,6 +32,8 @@ export default createComponent({
         return <Loading class={bem('loading')} color={color} />;
       }
     };
+
+    useParentField(() => props.modelValue);
 
     return () => {
       const { size, loading, disabled, activeColor, inactiveColor } = props;
