@@ -124,10 +124,12 @@ export default createComponent({
 
     // @exposed-api
     scrollToField(name, options) {
-      this.fields.forEach((item) => {
+      this.fields.some((item) => {
         if (item.name === name) {
           item.$el.scrollIntoView(options);
+          return true;
         }
+        return false;
       });
     },
 
@@ -167,6 +169,7 @@ export default createComponent({
           });
 
           if (this.scrollToError) {
+            console.log('scrollToField', errors[0].name);
             this.scrollToField(errors[0].name);
           }
         });
