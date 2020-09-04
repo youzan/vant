@@ -31,6 +31,7 @@ export default createComponent({
 
   props: {
     valueKey: String,
+    readonly: Boolean,
     allowHtml: Boolean,
     className: String,
     itemHeight: Number,
@@ -101,6 +102,10 @@ export default createComponent({
     },
 
     onTouchStart(event) {
+      if (this.readonly) {
+        return;
+      }
+
       this.touchStart(event);
 
       if (this.moving) {
@@ -118,6 +123,10 @@ export default createComponent({
     },
 
     onTouchMove(event) {
+      if (this.readonly) {
+        return;
+      }
+
       this.touchMove(event);
 
       if (this.direction === 'vertical') {
@@ -139,6 +148,10 @@ export default createComponent({
     },
 
     onTouchEnd() {
+      if (this.readonly) {
+        return;
+      }
+
       const distance = this.offset - this.momentumOffset;
       const duration = Date.now() - this.touchStartTime;
       const allowMomentum =
@@ -166,7 +179,7 @@ export default createComponent({
     },
 
     onClickItem(index) {
-      if (this.moving) {
+      if (this.moving || this.readonly) {
         return;
       }
 

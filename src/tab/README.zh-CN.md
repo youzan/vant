@@ -255,11 +255,11 @@ export default {
 | disabled | 是否禁用标签 | _boolean_ | `false` |
 | dot `v2.3.0` | 是否在标题右上角显示小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
-| name `v2.0.6` | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
-| url `v2.2.1` | 点击后跳转的链接地址 | _string_ | - |
-| to `v2.2.1` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
-| replace `v2.2.1` | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
-| title-style `v2.2.14` | 自定义标题样式 | _any_ | - |
+| name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
+| url | 点击后跳转的链接地址 | _string_ | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
+| replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
+| title-style | 自定义标题样式 | _any_ | - |
 
 ### Tabs Events
 

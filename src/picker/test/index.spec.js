@@ -279,3 +279,18 @@ test('set rem item-height', async () => {
 
   window.getComputedStyle = originGetComputedStyle;
 });
+
+test('readonly prop', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns,
+      readonly: true,
+    },
+  });
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+
+  expect(wrapper.emitted('change')).toBeFalsy();
+});

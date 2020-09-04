@@ -291,6 +291,7 @@ export default createComponent({
           {...pick(props, [
             'title',
             'loading',
+            'readonly',
             'itemHeight',
             'swipeDuration',
             'visibleItemCount',

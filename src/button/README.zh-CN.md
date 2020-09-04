@@ -131,7 +131,7 @@ app.use(Button);
 | type | 类型，可选值为 `primary` `success` `warning` `danger` | _string_ | `default` |
 | size | 尺寸，可选值为 `large` `small` `mini` | _string_ | `normal` |
 | text | 按钮文字 | _string_ | - |
-| color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
 | icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix `v2.6.0` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | tag | 根节点的 HTML 标签 | _string_ | `button` |

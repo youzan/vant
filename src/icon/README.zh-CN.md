@@ -92,7 +92,7 @@ import 'vant/lib/icon/local.css';
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | name | 图标名称或图片链接 | _string_ | - |
-| dot `v2.2.1` | 是否显示图标右上角小红点 | _boolean_ | `false` |
+| dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
 | color | 图标颜色 | _string_ | `inherit` |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | _number \| string_ | `inherit` |

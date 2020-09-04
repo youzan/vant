@@ -106,7 +106,7 @@ export default {
 | round | 是否为圆角样式 | _boolean_ | `false` |
 | mark | 是否为标记样式 | _boolean_ | `false` |
 | text-color | 文本颜色，优先级高于`color`属性 | _string_ | `white` |
-| closeable `v2.2.9` | 是否为可关闭标签 | _boolean_ | `false` |
+| closeable | 是否为可关闭标签 | _boolean_ | `false` |
 
 ### Slots
 

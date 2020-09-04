@@ -92,7 +92,7 @@ export default {
 | round | Whether to be round style | _boolean_ | `false` |
 | mark | Whether to be mark style | _boolean_ | `false` |
 | text-color | Text color | _string_ | `white` |
-| closeable `v2.2.9` | Whether to be closeable | _boolean_ | `false` |
+| closeable | Whether to be closeable | _boolean_ | `false` |
 
 ### Slots
 
