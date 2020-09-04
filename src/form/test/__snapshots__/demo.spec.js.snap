@@ -4,13 +4,13 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <form class="van-form">
-      <div class="van-cell van-field">
+      <div class="van-cell van-cell--required van-field">
         <div class="van-cell__title van-field__label"><span>用户名</span></div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="text" name="username" placeholder="用户名" class="van-field__control"></div>
         </div>
       </div>
-      <div class="van-cell van-field">
+      <div class="van-cell van-cell--required van-field">
         <div class="van-cell__title van-field__label"><span>密码</span></div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body"><input type="password" name="password" placeholder="密码" class="van-field__control"></div>

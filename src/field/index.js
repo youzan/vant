@@ -36,7 +36,10 @@ export default createComponent({
   props: {
     ...cellProps,
     name: String,
-    rules: Array,
+    rules: {
+      type: [Array, Object],
+      default: () => [],
+    },
     disabled: Boolean,
     readonly: Boolean,
     autosize: [Boolean, Object],
@@ -112,6 +115,12 @@ export default createComponent({
   },
 
   computed: {
+    formattedRules() {
+      return Array.isArray(this.rules) ? this.rules : [this.rules];
+    },
+    hasRequired() {
+      return this.required || this.formattedRules.some((rule) => rule.required);
+    },
     showClear() {
       if (this.clearable && !this.readonly) {
         const hasValue = isDef(this.value) && this.value !== '';
@@ -249,7 +258,7 @@ export default createComponent({
       );
     },
 
-    validate(rules = this.rules) {
+    validate(rules = this.formattedRules) {
       return new Promise((resolve) => {
         if (!rules) {
           resolve();
@@ -269,9 +278,9 @@ export default createComponent({
     },
 
     validateWithTrigger(trigger) {
-      if (this.vanForm && this.rules) {
+      if (this.vanForm && this.formattedRules) {
         const defaultTrigger = this.vanForm.validateTrigger === trigger;
-        const rules = this.rules.filter((rule) => {
+        const rules = this.formattedRules.filter((rule) => {
           if (rule.trigger) {
             return rule.trigger === trigger;
           }
@@ -578,7 +587,7 @@ export default createComponent({
         center={this.center}
         border={this.border}
         isLink={this.isLink}
-        required={this.required}
+        required={this.hasRequired}
         clickable={this.clickable}
         titleStyle={this.labelStyle}
         valueClass={bem('value')}
