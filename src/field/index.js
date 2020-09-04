@@ -256,6 +256,7 @@ export default createComponent({
           resolve();
         }
 
+        this.resetValidation();
         this.runRules(rules).then(() => {
           if (this.validateFailed) {
             resolve({
