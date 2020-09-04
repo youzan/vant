@@ -265,6 +265,7 @@ export default {
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
+| readonly `v2.10.5` | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type, vals) => vals_ | - |
 | formatter | 选项格式化函数 | _(type, val) => val_ | - |
 | columns-order `v2.9.2` | 自定义列排序数组, 子项可选值为<br> `year`、`month`、`day`、`hour`、`minute` | _string[]_ | - |
