@@ -98,12 +98,12 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Content | _string_ | `''` |
-| dot `v2.2.1` | Whether to show red dot | _boolean_ | `false` |
+| dot | Whether to show red dot | _boolean_ | `false` |
 | badge `v2.5.6` | Content of the badge | _number \| string_ | `''` |
-| disabled `v2.2.0` | Whether to be disabled | _boolean_ | `false` |
+| disabled | Whether to be disabled | _boolean_ | `false` |
 | url | Link | _string_ | - |
-| to `v2.0.4` | Target route of the link, same as to of vue-router | _string \| object_ | - |
-| replace `v2.0.4` | If true, the navigation will not leave a history record | _boolean_ | `false` |
+| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### SidebarItem Events
 

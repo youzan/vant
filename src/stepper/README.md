@@ -114,20 +114,20 @@ export default {
 | max | Max value | _number \| string_ | - |
 | default-value | Default value, valid when v-model is empty | _number \| string_ | `1` |
 | step | Value change step | _number \| string_ | `1` |
-| name `v2.0.3` | Stepper name | _number \| string_ | - |
+| name | Stepper name | _number \| string_ | - |
 | input-width | Input width | _number \| string_ | `32px` |
-| button-size `v2.0.5` | Button size | _number \| string_ | `28px` |
-| decimal-length `v2.2.1` | Decimal length | _number \| string_ | - |
+| button-size | Button size | _number \| string_ | `28px` |
+| decimal-length | Decimal length | _number \| string_ | - |
 | theme `v2.8.2` | Theme, can be set to `round` | _string_ | - |
 | placeholder `v2.8.6` | Input placeholder | _string_ | - |
 | integer | Whether to allow only integers | _boolean_ | `false` |
 | disabled | Whether to disable value change | _boolean_ | `false` |
-| disable-plus `v2.2.16` | Whether to disable plus button | _boolean_ | `false` |
-| disable-minus `v2.2.16` | Whether to disable minus button | _boolean_ | `false` |
+| disable-plus | Whether to disable plus button | _boolean_ | `false` |
+| disable-minus | Whether to disable minus button | _boolean_ | `false` |
 | disable-input | Whether to disable input | _boolean_ | `false` |
 | async-change | Whether to enable async change | _boolean_ | `false` | - |
-| show-plus `v2.1.2` | Whether to show plus button | _boolean_ | `true` |
-| show-minus `v2.1.2` | Whether to show minus button | _boolean_ | `true` |
+| show-plus | Whether to show plus button | _boolean_ | `true` |
+| show-minus | Whether to show minus button | _boolean_ | `true` |
 | long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |
 | allow-empty `v2.9.1` | Whether to allow the input to be empty | _boolean_ | `false` |
 

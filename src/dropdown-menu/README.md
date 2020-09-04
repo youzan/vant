@@ -125,12 +125,12 @@ Use `active-color` prop to custom active color of the title and options
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | active-color | Active color of title and option | _string_ | `#ee0a24` |
-| direction `v2.0.1` | Expand direction, can be set to `up` | _string_ | `down` |
+| direction | Expand direction, can be set to `up` | _string_ | `down` |
 | z-index | z-index of menu item | _number \| string_ | `10` |
 | duration | Transition duration, unit second | _number \| string_ | `0.2` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
-| close-on-click-outside `v2.0.7` | Whether to close when click outside | _boolean_ | `true` |
+| close-on-click-outside | Whether to close when click outside | _boolean_ | `true` |
 
 ### DropdownItem Props
 
@@ -142,7 +142,7 @@ Use `active-color` prop to custom active color of the title and options
 | disabled | Whether to disable dropdown item | _boolean_ | `false` |
 | lazy-render `v2.8.5` | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title class | _string_ | - |
-| get-container `v2.2.4` | Return the mount node for menu | _string \| () => Element_ | - |
+| get-container | Return the mount node for menu | _string \| () => Element_ | - |
 
 ### DropdownItem Events
 

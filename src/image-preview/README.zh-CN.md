@@ -155,7 +155,7 @@ export default {
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
-| onChange `v2.0.3` | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
+| onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | asyncClose | 是否开启异步关闭 | _boolean_ | `false` |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |

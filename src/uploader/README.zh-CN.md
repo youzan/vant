@@ -223,14 +223,14 @@ export default {
 | --- | --- | --- | --- |
 | v-model (fileList) | 已上传的文件列表 | _FileListItem[]_ | - |
 | accept | 允许上传的文件类型，[详细说明](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%85%81%E8%AE%B8%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B) | _string_ | `image/*` |
-| name `v2.0.3` | 标识符，可以在回调函数的第二项参数中获取 | _number \| string_ | - |
+| name | 标识符，可以在回调函数的第二项参数中获取 | _number \| string_ | - |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | _number \| string_ | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | _boolean_ | `true` |
-| preview-full-image `v2.1.5` | 是否在点击预览图后展示全屏图片预览 | _boolean_ | `true` |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览 | _boolean_ | `true` |
 | preview-options `v2.9.3` | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | _boolean_ | `false` |
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
-| deletable `v2.2.12` | 是否展示删除按钮 | _boolean_ | `true` |
+| deletable | 是否展示删除按钮 | _boolean_ | `true` |
 | show-upload `v2.5.6` | 是否展示上传区域 | _boolean_ | `true` |
 | lazy-load `v2.6.2` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
@@ -239,9 +239,9 @@ export default {
 | before-delete | 文件删除前的回调函数，返回 `false` 可终止文件读取，<br>支持返回`Promise` | _Function_ | - |
 | max-size | 文件大小限制，单位为 `byte` | _number \| string_ | - |
 | max-count | 文件上传数量限制 | _number \| string_ | - |
-| result-type `v2.2.7` | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
+| result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
 | upload-text | 上传区域文字提示 | _string_ | - |
-| image-fit `v2.1.5` | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | _string_ | `cover` |
+| image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | _string_ | `cover` |
 | upload-icon `v2.5.4` | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photograph` |
 
 ### Events

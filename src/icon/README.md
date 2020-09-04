@@ -85,7 +85,7 @@ import 'vant/lib/icon/local.css';
 | Attribute      | Description             | Type               | Default    |
 | -------------- | ----------------------- | ------------------ | ---------- |
 | name           | Icon name or URL        | _string_           | `''`       |
-| dot `v2.2.1`   | Whether to show red dot | _boolean_          | `false`    |
+| dot            | Whether to show red dot | _boolean_          | `false`    |
 | badge `v2.5.6` | Content of the badge    | _number \| string_ | `''`       |
 | color          | Icon color              | _string_           | `inherit`  |
 | size           | Icon size               | _number \| string_ | `inherit`  |

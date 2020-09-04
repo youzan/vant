@@ -53,9 +53,9 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | percentage | Percentage | _number \| string_ | `0` |
-| stroke-width `v2.2.1` | Stroke width | _number \| string_ | `4px` |
+| stroke-width | Stroke width | _number \| string_ | `4px` |
 | color | Color | _string_ | `#1989fa` |
-| track-color `v2.2.9` | Track color | _string_ | `#e5e5e5` |
+| track-color | Track color | _string_ | `#e5e5e5` |
 | pivot-text | Pivot text | _string_ | percentage |
 | pivot-color | Pivot text background color | _string_ | inherit progress color |
 | text-color | Pivot text color | _string_ | `white` |

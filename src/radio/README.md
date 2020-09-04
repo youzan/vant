@@ -166,8 +166,8 @@ export default {
 | v-model (v-model) | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
-| icon-size `v2.2.3` | Icon size of all radios | _number \| string_ | `20px` |
-| checked-color `v2.2.3` | Checked color of all radios | _string_ | `#1989fa` | - |
+| icon-size | Icon size of all radios | _number \| string_ | `20px` |
+| checked-color | Checked color of all radios | _string_ | `#1989fa` | - |
 
 ### Radio Events
 

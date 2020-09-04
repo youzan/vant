@@ -68,7 +68,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | area-list | 地区列表 | _object_ | - |
-| area-columns-placeholder `v2.2.5` | 地区选择列占位提示文字 | _string[]_ | `[]` |
+| area-columns-placeholder | 地区选择列占位提示文字 | _string[]_ | `[]` |
 | area-placeholder `v2.6.1` | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
 | address-info | 收货人信息初始值 | _AddressInfo_ | `{}` |
 | search-result | 详细地址搜索结果 | _SearchResult[]_ | `[]` |
@@ -82,12 +82,12 @@ export default {
 | save-button-text | 保存按钮文字 | _string_ | `保存` |
 | delete-button-text | 删除按钮文字 | _string_ | `删除` |
 | detail-rows | 详细地址输入框行数 | _number \| string_ | `1` |
-| detail-maxlength `v2.0.4` | 详细地址最大长度 | _number \| string_ | `200` |
+| detail-maxlength | 详细地址最大长度 | _number \| string_ | `200` |
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
 | tel-maxlength `v2.10.0` | 手机号最大长度 | _number \| string_ | - |
-| postal-validator `v2.1.2` | 邮政编码格式校验函数 | _string => boolean_ | - |
+| postal-validator | 邮政编码格式校验函数 | _string => boolean_ | - |
 | validator | 自定义校验函数 | _(key, val) => string_ | - |
 
 ### Events

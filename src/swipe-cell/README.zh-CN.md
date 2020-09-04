@@ -106,12 +106,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name `v2.0.4` | 标识符，可以在事件参数中获取到 | _number \| string_ | - |
+| name | 标识符，可以在事件参数中获取到 | _number \| string_ | - |
 | left-width | 指定左侧滑动区域宽度，单位为`px` | _number \| string_ | `auto` |
 | right-width | 指定右侧滑动区域宽度，单位为`px` | _number \| string_ | `auto` |
 | before-close `v2.3.0` | 关闭前的回调函数 | _Function_ | - |
 | disabled | 是否禁用滑动 | _boolean_ | `false` |
-| stop-propagation `v2.1.0` | 是否阻止滑动事件冒泡 | _boolean_ | `false` |
+| stop-propagation | 是否阻止滑动事件冒泡 | _boolean_ | `false` |
 
 ### Slots
 

@@ -96,7 +96,7 @@ export default {
 | v-model | Check status of Switch | _ActiveValue \| InactiveValue_ | `false` |
 | loading | Whether to show loading icon | _boolean_ | `false` |
 | disabled | Whether to disable switch | _boolean_ | `false` |
-| size `v2.2.11` | Size of switch | _number \| string_ | `30px` |
+| size | Size of switch | _number \| string_ | `30px` |
 | active-color | Background color when active | _string_ | `#1989fa` |
 | inactive-color | Background color when inactive | _string_ | `white` |
 | active-value | Value when active | _any_ | `true` |
@@ -104,7 +104,7 @@ export default {
 
 ### Events
 
-| Event           | Description                         | Parameters     |
-| --------------- | ----------------------------------- | -------------- |
-| change          | Triggered when check status changed | _value: any_   |
-| click `v2.2.11` | Triggered when clicked              | _event: Event_ |
+| Event  | Description                         | Parameters     |
+| ------ | ----------------------------------- | -------------- |
+| change | Triggered when check status changed | _value: any_   |
+| click  | Triggered when clicked              | _event: Event_ |
