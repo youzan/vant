@@ -67,7 +67,7 @@ export default {
 需要异步控制开关时，可以使用 `modelValue` 属性和 `update:model-value` 事件代替 `v-model`，并在事件回调函数中手动处理开关状态。
 
 ```html
-<van-switch :model-value="checked" @update:model:value="onUpdateValue" />
+<van-switch :model-value="checked" @update:model-value="onUpdateValue" />
 ```
 
 ```js

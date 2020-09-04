@@ -55,7 +55,7 @@ export default {
 ### Async Control
 
 ```html
-<van-switch :model-value="checked" @update:model:value="onUpdateValue" />
+<van-switch :model-value="checked" @update:model-value="onUpdateValue" />
 ```
 
 ```js
