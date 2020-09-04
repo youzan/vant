@@ -45,7 +45,7 @@ test('replay event', async () => {
   });
 
   wrapper.find('.van-notice-bar__content').trigger('transitionend');
-  await later(50);
+  await later(80);
   expect(wrapper.emitted('replay')).toBeTruthy();
 });
 
