@@ -169,7 +169,7 @@ export default {
 | width `v2.2.7` | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
-| theme `v2.10.0` | theme style，can be set to `round` | _string_ | `default` |
+| theme `v2.10.0` | theme style，can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |

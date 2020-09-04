@@ -34,7 +34,7 @@ const map = {
   F01F: 'brush-o',
   F020: 'bulb-o',
   F021: 'bullhorn-o',
-  F022: 'calender-o',
+  F022: 'calendar-o',
   F023: 'card',
   F024: 'cart-circle-o',
   F025: 'cart-circle',
@@ -231,6 +231,7 @@ const map = {
   F0E4: 'enlarge',
   F0E5: 'photo-fail',
   F0E6: 'back-top',
+  F0E7: 'share-o',
 };
 
 const reversedMap = {};

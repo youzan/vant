@@ -34,6 +34,7 @@ function isImage(name?: string): boolean {
 const LEGACY_MAP: Record<string, string> = {
   medel: 'medal',
   'medel-o': 'medal-o',
+  'calender-o': 'calendar-o',
 };
 
 function correctName(name?: string) {

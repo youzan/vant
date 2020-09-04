@@ -173,6 +173,20 @@ test('description prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('description slot', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      actions: [{ name: 'Option' }],
+    },
+    scopedSlots: {
+      description: () => 'Custom Description',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('close-icon prop', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
