@@ -180,8 +180,8 @@ export default {
 | v-model (value) | 当前选中项的标识符 | _any_ | - |
 | disabled | 是否禁用所有单选框 | _boolean_ | `false` |
 | direction `v2.5.0` | 排列方向，可选值为`horizontal` | _string_ | `vertical` |
-| icon-size `v2.2.3` | 所有单选框的图标大小，默认单位为`px` | _number \| string_ | `20px` |
-| checked-color `v2.2.3` | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
+| icon-size | 所有单选框的图标大小，默认单位为`px` | _number \| string_ | `20px` |
+| checked-color | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
 
 ### Radio Events
 

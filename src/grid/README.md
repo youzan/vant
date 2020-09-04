@@ -97,8 +97,8 @@ Vue.use(GridItem);
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| column-num `v2.0.4` | Column Num | _number \| string_ | `4` |
-| icon-size `v2.2.6` | Icon size | _number \| string_ | `28px` |
+| column-num | Column Num | _number \| string_ | `4` |
+| icon-size | Icon size | _number \| string_ | `28px` |
 | gutter | Gutter | _number \| string_ | `0` |
 | border | Whether to show border | _boolean_ | `true` |
 | center | Whether to center content | _boolean_ | `true` |
@@ -113,7 +113,7 @@ Vue.use(GridItem);
 | text | Text | _string_ | - |
 | icon | Icon name or URL | _string_ | - |
 | icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
-| dot `v2.2.1` | Whether to show red dot | _boolean_ | `false` |
+| dot | Whether to show red dot | _boolean_ | `false` |
 | badge `v2.5.6` | Content of the badge | _number \| string_ | - |
 | url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |

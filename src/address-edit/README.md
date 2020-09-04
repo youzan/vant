@@ -68,7 +68,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | area-list | Area List | _object_ | - |
-| area-columns-placeholder `v2.2.5` | placeholder of area columns | _string[]_ | `[]` |
+| area-columns-placeholder | placeholder of area columns | _string[]_ | `[]` |
 | area-placeholder `v2.6.1` | placeholder of area input field | _string_ | `Area` |
 | address-info | Address Info | _AddressInfo_ | `{}` |
 | search-result | Address search result | _SearchResult[]_ | `[]` |
@@ -82,12 +82,12 @@ export default {
 | save-button-text | Save button text | _string_ | `Save` |
 | delete-button-text | Delete button text | _string_ | `Delete` |
 | detail-rows | Detail input rows | _number \| string_ | `1` |
-| detail-maxlength `v2.0.4` | Detail maxlength | _number \| string_ | `200` |
+| detail-maxlength | Detail maxlength | _number \| string_ | `200` |
 | is-saving | Whether to show save button loading status | _boolean_ | `false` |
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
 | tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
 | tel-maxlength `v2.10.0` | Tel maxlength | _number \| string_ | - |
-| postal-validator `v2.1.2` | The method to validate postal | _(tel: string) => boolean_ | - |
+| postal-validator | The method to validate postal | _(tel: string) => boolean_ | - |
 | validator | Custom validator | _(key, val) => string_ | - |
 
 ### Events

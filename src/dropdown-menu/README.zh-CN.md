@@ -129,12 +129,12 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | active-color | 菜单标题和选项的选中态颜色 | _string_ | `#ee0a24` |
-| direction `v2.0.1` | 菜单展开方向，可选值为`up` | _string_ | `down` |
+| direction | 菜单展开方向，可选值为`up` | _string_ | `down` |
 | z-index | 菜单栏 z-index 层级 | _number \| string_ | `10` |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.2` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
-| close-on-click-outside `v2.0.7` | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
+| close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 
 ### DropdownItem Props
 
@@ -146,7 +146,7 @@ export default {
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
 | lazy-render `v2.8.5` | 是否在首次展开时才渲染菜单内容 | _boolean_ | `true` |
 | title-class | 标题额外类名 | _string_ | - |
-| get-container `v2.2.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### DropdownItem Events
 

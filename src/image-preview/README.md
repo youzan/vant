@@ -119,7 +119,7 @@ export default {
 | loop | Whether to enable loop | _boolean_ | `true` |
 | swipeDuration | Animation duration (ms) | _number \| string_ | `500` |
 | onClose | Triggered when close | _Function_ | - |
-| onChange `v2.0.3` | Triggered when current image change | _Function_ | - |
+| onChange | Triggered when current image change | _Function_ | - |
 | onScale | Triggered when current image scale | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | asyncClose | Whether to enable async close | _boolean_ | `false` |

@@ -236,12 +236,12 @@ Use `input-align` prop to align the input value.
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
-| show-word-limit `v2.2.8` | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
+| show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
 | error | Whether to show error info | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
 | formatter `v2.4.2` | Input value formatter | _Function_ | - |
 | format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
-| arrow-direction `v2.0.4` | Can be set to `left` `up` `down` | _string_ | `right` |
+| arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |

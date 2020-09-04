@@ -135,7 +135,7 @@ export default {
 | length | 密码最大长度 | _number \| string_ | `6` |
 | gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | _number \| string_ | `0` |
 | mask | 是否隐藏密码内容 | _boolean_ | `true` |
-| focused `v2.1.8` | 是否已聚焦，聚焦时会显示光标 | _boolean_ | `false` |
+| focused | 是否已聚焦，聚焦时会显示光标 | _boolean_ | `false` |
 
 ### Events
 

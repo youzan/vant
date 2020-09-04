@@ -169,7 +169,7 @@ export default {
 | show-indicators | Whether to show indicators | _boolean_ | `true` |
 | vertical | Whether to be vertical Scrolling | _boolean_ | `false` |
 | touchable | Whether to allow swipe by touch gesture | _boolean_ | `true` |
-| stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | _boolean_ | `false` |
+| stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |
 | lazy-render `v2.5.8` | Whether to enable lazy render | _boolean_ | `false` |
 | indicator-color | Indicator color | _string_ | `#1989fa` |
 
@@ -194,7 +194,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance
 | prev `v2.4.2` | Swipe to prev item | - | - |
 | next `v2.4.2` | Swipe to next item | - | - |
 | swipeTo | Swipe to target index | index: target index, options: Options | void |
-| resize `v2.2.14` | Resize Swipe when container element resized | - | void |
+| resize | Resize Swipe when container element resized | - | void |
 
 ### swipeTo Options
 

@@ -117,8 +117,8 @@ Vue.use(GridItem);
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| column-num `v2.0.4` | 列数 | _number \| string_ | `4` |
-| icon-size `v2.2.6` | 图标大小，默认单位为`px` | _number \| string_ | `28px` |
+| column-num | 列数 | _number \| string_ | `4` |
+| icon-size | 图标大小，默认单位为`px` | _number \| string_ | `28px` |
 | gutter | 格子之间的间距，默认单位为`px` | _number \| string_ | `0` |
 | border | 是否显示边框 | _boolean_ | `true` |
 | center | 是否将格子内容居中显示 | _boolean_ | `true` |
@@ -133,7 +133,7 @@ Vue.use(GridItem);
 | text | 文字 | _string_ | - |
 | icon | [图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
-| dot `v2.2.1` | 是否显示图标右上角小红点 | _boolean_ | `false` |
+| dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
 | info `2.2.1` | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |

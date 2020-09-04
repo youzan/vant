@@ -117,13 +117,13 @@ export default {
 | v-model | 当前进度 | _number_ | - |
 | rate | 目标进度 | _number \| string_ | `100` |
 | size | 圆环直径，默认单位为 `px` | _number \| string_ | `100px` |
-| color `v2.1.4` | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` |
+| color | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` |
 | layer-color | 轨道颜色 | _string_ | `white` |
 | fill | 填充颜色 | _string_ | `none` |
 | speed | 动画速度（单位为 rate/s） | _number \| string_ | `0` |
 | text | 文字 | _string_ | - |
 | stroke-width | 进度条宽度 | _number \| string_ | `40` |
-| stroke-linecap `v2.2.15` | 进度条端点的形状，可选值为`sqaure` `butt` | _string_ | `round` |
+| stroke-linecap | 进度条端点的形状，可选值为`sqaure` `butt` | _string_ | `round` |
 | clockwise | 是否顺时针增加 | _boolean_ | `true` |
 
 ### Slots

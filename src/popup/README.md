@@ -114,17 +114,17 @@ export default {
 | overlay-class | Custom overlay class | _string_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
-| round `v2.0.7` | Whether to show round corner | _boolean_ | `false` |
+| round | Whether to show round corner | _boolean_ | `false` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
-| close-on-popstate `v2.2.10` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
-| closeable `v2.2.0` | Whether to show close icon | _boolean_ | `false` |
-| close-icon `v2.2.0` | Close icon name | _string_ | `cross` |
-| close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeable | Whether to show close icon | _boolean_ | `false` |
+| close-icon | Close icon name | _string_ | `cross` |
+| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | get-container | Return the mount node for Popup | _string \| () => Element_ | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events
 

@@ -160,11 +160,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) `v2.0.2` | 当前输入值 | _string_ | - |
+| v-model (value) | 当前输入值 | _string_ | - |
 | show | 是否显示键盘 | _boolean_ | - |
 | title | 键盘标题 | _string_ | - |
 | theme | 样式风格，可选值为 `custom` | _string_ | `default` |
-| maxlength `v2.0.2` | 输入值最大长度 | _number \| string_ | - |
+| maxlength | 输入值最大长度 | _number \| string_ | - |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
 | z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
 | extra-key `v2.8.2` | 底部额外按键的内容 | _string \| string[]_ | `''` |
