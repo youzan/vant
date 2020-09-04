@@ -8,15 +8,7 @@ function initInstance() {
   const Wrapper = {
     setup() {
       const { state, toggle } = usePopupState();
-      return () => (
-        <VanDialog
-          lazyRender={false}
-          {...{
-            ...state,
-            'onUpdate:show': toggle,
-          }}
-        />
-      );
+      return () => <VanDialog {...{ ...state, 'onUpdate:show': toggle }} />;
     },
   };
 

@@ -1,25 +1,32 @@
+import { reactive } from 'vue';
+
 // Utils
 import { createNamespace, addUnit, pick } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 
 // Components
-import Popup from '../popup';
+import Popup, { popupSharedProps } from '../popup';
 import Button from '../button';
 import ActionBar from '../action-bar';
 import ActionBarButton from '../action-bar-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
+const popupKeys = [
+  ...Object.keys(popupSharedProps),
+  'transition',
+  'closeOnPopstate',
+];
+
 export default createComponent({
   props: {
-    show: Boolean,
+    ...popupSharedProps,
     title: String,
     theme: String,
     width: [Number, String],
     message: String,
-    className: null,
     callback: Function,
-    lazyRender: Boolean,
+    className: null,
     beforeClose: Function,
     messageAlign: String,
     showCancelButton: Boolean,
@@ -28,10 +35,6 @@ export default createComponent({
     confirmButtonText: String,
     confirmButtonColor: String,
     closeOnClickOverlay: Boolean,
-    overlay: {
-      type: Boolean,
-      default: true,
-    },
     allowHtml: {
       type: Boolean,
       default: true,
@@ -52,180 +55,160 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'update:show'],
 
-  data() {
-    return {
-      loading: {
-        confirm: false,
-        cancel: false,
-      },
+  setup(props, { emit, slots }) {
+    const loading = reactive({
+      confirm: false,
+      cancel: false,
+    });
+
+    const onUpdateShow = (value) => {
+      emit('update:show', value);
     };
-  },
 
-  methods: {
-    onClickOverlay() {
-      this.handleAction('overlay');
-    },
+    const close = (action) => {
+      onUpdateShow(false);
+      if (props.callback) {
+        props.callback(action);
+      }
+    };
 
-    handleAction(action) {
-      this.$emit(action);
-
-      // show not trigger close event when hidden
-      if (!this.show) {
+    const handleAction = (action) => {
+      // should not trigger close event when hidden
+      if (!props.show) {
         return;
       }
 
-      if (this.beforeClose) {
-        this.loading[action] = true;
-        this.beforeClose(action, (state) => {
-          if (state !== false && this.loading[action]) {
-            this.onClose(action);
-          }
+      emit(action);
 
-          this.loading.confirm = false;
-          this.loading.cancel = false;
+      if (props.beforeClose) {
+        loading[action] = true;
+        props.beforeClose(action, (result) => {
+          if (result !== false && loading[action]) {
+            close(action);
+          }
+          loading[action] = false;
         });
       } else {
-        this.onClose(action);
+        close(action);
       }
-    },
+    };
 
-    onClose(action) {
-      this.onUpdateShow(false);
-
-      if (this.callback) {
-        this.callback(action);
-      }
-    },
-
-    onUpdateShow(value) {
-      this.$emit('update:show', value);
-    },
-
-    genRoundButtons() {
-      return (
-        <ActionBar class={bem('footer')}>
-          {this.showCancelButton && (
-            <ActionBarButton
-              size="large"
-              type="warning"
-              text={this.cancelButtonText || t('cancel')}
-              class={bem('cancel')}
-              color={this.cancelButtonColor}
-              loading={this.loading.cancel}
-              onClick={() => {
-                this.handleAction('cancel');
-              }}
-            />
-          )}
-          {this.showConfirmButton && (
-            <ActionBarButton
-              size="large"
-              type="danger"
-              text={this.confirmButtonText || t('confirm')}
-              class={bem('confirm')}
-              color={this.confirmButtonColor}
-              loading={this.loading.confirm}
-              onClick={() => {
-                this.handleAction('confirm');
-              }}
-            />
-          )}
-        </ActionBar>
-      );
-    },
-
-    genButtons() {
-      const multiple = this.showCancelButton && this.showConfirmButton;
-
-      return (
-        <div class={[BORDER_TOP, bem('footer')]}>
-          {this.showCancelButton && (
-            <Button
-              size="large"
-              class={bem('cancel')}
-              loading={this.loading.cancel}
-              text={this.cancelButtonText || t('cancel')}
-              style={{ color: this.cancelButtonColor }}
-              onClick={() => {
-                this.handleAction('cancel');
-              }}
-            />
-          )}
-          {this.showConfirmButton && (
-            <Button
-              size="large"
-              class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
-              loading={this.loading.confirm}
-              text={this.confirmButtonText || t('confirm')}
-              style={{ color: this.confirmButtonColor }}
-              onClick={() => {
-                this.handleAction('confirm');
-              }}
-            />
-          )}
-        </div>
-      );
-    },
-
-    genContent(hasTitle) {
-      if (this.$slots.default) {
-        return <div class={bem('content')}>{this.$slots.default()}</div>;
-      }
-
-      const { message, messageAlign } = this;
-      if (message) {
-        const data = {
-          class: bem('message', {
-            'has-title': hasTitle,
-            [messageAlign]: messageAlign,
-          }),
-          [this.allowHtml ? 'innerHTML' : 'textContent']: message,
-        };
-
+    const renderTitle = () => {
+      const title = slots.title ? slots.title() : props.title;
+      if (title) {
         return (
-          <div class={bem('content')}>
-            <div {...data} />
+          <div
+            class={bem('header', {
+              isolated: !props.message && !slots.default,
+            })}
+          >
+            {title}
           </div>
         );
       }
-    },
-  },
+    };
 
-  render() {
-    const { message } = this;
-    const title = this.$slots.title ? this.$slots.title() : this.title;
-    const Title = title && (
-      <div
-        class={bem('header', { isolated: !message && !this.$slots.default })}
-      >
-        {title}
+    const renderContent = () => {
+      if (slots.default) {
+        return <div class={bem('content')}>{slots.default()}</div>;
+      }
+
+      const { title, message, allowHtml, messageAlign } = props;
+      if (message) {
+        return (
+          <div class={bem('content')}>
+            <div
+              class={bem('message', {
+                'has-title': slots.title || title,
+                [messageAlign]: messageAlign,
+              })}
+              {...{
+                [allowHtml ? 'innerHTML' : 'textContent']: message,
+              }}
+            />
+          </div>
+        );
+      }
+    };
+
+    const renderButtons = () => (
+      <div class={[BORDER_TOP, bem('footer')]}>
+        {props.showCancelButton && (
+          <Button
+            size="large"
+            text={props.cancelButtonText || t('cancel')}
+            class={bem('cancel')}
+            style={{ color: props.cancelButtonColor }}
+            loading={loading.cancel}
+            onClick={() => {
+              handleAction('cancel');
+            }}
+          />
+        )}
+        {props.showConfirmButton && (
+          <Button
+            size="large"
+            text={props.confirmButtonText || t('confirm')}
+            class={[bem('confirm'), { [BORDER_LEFT]: props.showCancelButton }]}
+            style={{ color: props.confirmButtonColor }}
+            loading={loading.confirm}
+            onClick={() => {
+              handleAction('confirm');
+            }}
+          />
+        )}
       </div>
     );
 
-    return (
-      <Popup
-        role="dialog"
-        class={[bem([this.theme]), this.className]}
-        style={{ width: addUnit(this.width) }}
-        aria-labelledby={this.title || message}
-        {...{
-          ...pick(this, [
-            'show',
-            'overlay',
-            'transition',
-            'lazyRender',
-            'closeOnPopstate',
-            'closeOnClickOverlay',
-          ]),
-          'onUpdate:show': this.onUpdateShow,
-        }}
-      >
-        {Title}
-        {this.genContent(title)}
-        {this.theme === 'round-button'
-          ? this.genRoundButtons()
-          : this.genButtons()}
-      </Popup>
+    const renderRoundButtons = () => (
+      <ActionBar class={bem('footer')}>
+        {props.showCancelButton && (
+          <ActionBarButton
+            size="large"
+            type="warning"
+            text={props.cancelButtonText || t('cancel')}
+            class={bem('cancel')}
+            color={props.cancelButtonColor}
+            loading={loading.cancel}
+            onClick={() => {
+              handleAction('cancel');
+            }}
+          />
+        )}
+        {props.showConfirmButton && (
+          <ActionBarButton
+            size="large"
+            type="danger"
+            text={props.confirmButtonText || t('confirm')}
+            class={bem('confirm')}
+            color={props.confirmButtonColor}
+            loading={loading.confirm}
+            onClick={() => {
+              handleAction('confirm');
+            }}
+          />
+        )}
+      </ActionBar>
     );
+
+    return () => {
+      const { width, title, theme, message, className } = props;
+      return (
+        <Popup
+          role="dialog"
+          class={[bem([theme]), className]}
+          style={{ width: addUnit(width) }}
+          aria-labelledby={title || message}
+          {...{
+            ...pick(props, popupKeys),
+            'onUpdate:show': onUpdateShow,
+          }}
+        >
+          {renderTitle()}
+          {renderContent()}
+          {theme === 'round-button' ? renderRoundButtons() : renderButtons()}
+        </Popup>
+      );
+    };
   },
 });
