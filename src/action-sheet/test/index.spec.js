@@ -198,3 +198,15 @@ test('close-icon prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('closeable prop', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      title: 'Title',
+      closeable: false,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
