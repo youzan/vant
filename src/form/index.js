@@ -169,7 +169,6 @@ export default createComponent({
           });
 
           if (this.scrollToError) {
-            console.log('scrollToField', errors[0].name);
             this.scrollToField(errors[0].name);
           }
         });
