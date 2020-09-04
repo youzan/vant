@@ -53,7 +53,9 @@ function createInstance() {
     return {};
   }
 
-  queue = queue.filter((item) => isInDocument(item.$el));
+  queue = queue.filter(
+    (item) => !item.$el.parentNode || isInDocument(item.$el)
+  );
 
   if (!queue.length || multiple) {
     const toast = new (Vue.extend(VueToast))({
