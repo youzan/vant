@@ -27,6 +27,7 @@ export default createComponent({
     title: String,
     color: String,
     value: Boolean,
+    readonly: Boolean,
     formatter: Function,
     confirmText: String,
     rangePrompt: String,
@@ -338,6 +339,10 @@ export default createComponent({
     },
 
     select(date, complete) {
+      if (this.readonly) {
+        return;
+      }
+
       const emit = (date) => {
         this.currentDate = date;
         this.$emit('select', copyDates(this.currentDate));
