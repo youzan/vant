@@ -234,7 +234,7 @@ export default {
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
 | max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
-| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | _Date \| Date[]_ | 今天 |
+| default-date | 默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择 | _Date \| Date[] \| null_ | 今天 |
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
