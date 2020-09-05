@@ -114,7 +114,7 @@ export default {
 | allow-half | Whether to allow half star | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | disabled | Whether to disable rate | _boolean_ | `false` |
-| touchable `v2.2.0` | Whether to allow select rate by touch gesture | _boolean_ | `true` |
+| touchable | Whether to allow select rate by touch gesture | _boolean_ | `true` |
 
 ### Events
 

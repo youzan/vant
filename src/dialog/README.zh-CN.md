@@ -168,7 +168,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | title | 标题 | _string_ | - |
-| width `v2.2.7` | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
+| width | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
 | theme | 样式风格，可选值为`round` | _string_ | `default` |
@@ -180,14 +180,14 @@ export default {
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
-| overlayClass `v2.2.7` | 自定义遮罩层类名 | _string_ | - |
-| overlayStyle `v2.2.7` | 自定义遮罩层样式 | _object_ | - |
-| closeOnPopstate `v2.0.5` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| overlayClass | 自定义遮罩层类名 | _string_ | - |
+| overlayStyle | 自定义遮罩层样式 | _object_ | - |
+| closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allowHtml `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | _(action, done) => void_ | - |
-| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
 | getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
 
 ### Props
@@ -198,7 +198,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 是否显示弹窗 | _boolean_ | - |
 | title | 标题 | _string_ | - |
-| width `v2.2.7` | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
+| width | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
@@ -209,15 +209,15 @@ export default {
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
-| overlay-class `v2.2.7` | 自定义遮罩层类名 | _string_ | - |
-| overlay-style `v2.2.7` | 自定义遮罩层样式 | _object_ | - |
-| close-on-popstate `v2.0.5` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| overlay-class | 自定义遮罩层类名 | _string_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allow-html `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | _(action, done) => void_ | - |
-| transition `v2.2.6` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Events

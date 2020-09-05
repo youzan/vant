@@ -175,7 +175,7 @@ export default {
 | show-indicators | 是否显示指示器 | _boolean_ | `true` |
 | vertical | 是否为纵向滚动 | _boolean_ | `false` |
 | touchable | 是否可以通过手势滑动 | _boolean_ | `true` |
-| stop-propagation `v2.2.13` | 是否阻止滑动事件冒泡 | _boolean_ | `true` |
+| stop-propagation | 是否阻止滑动事件冒泡 | _boolean_ | `true` |
 | lazy-render `v2.5.8` | 是否延迟渲染未展示的轮播 | _boolean_ | `false` |
 | indicator-color | 指示器颜色 | _string_ | `#1989fa` |
 
@@ -200,7 +200,7 @@ export default {
 | prev `v2.4.2` | 切换到上一轮播 | - | - |
 | next `v2.4.2` | 切换到下一轮播 | - | - |
 | swipeTo | 切换到指定位置 | index: number, options: Options | void |
-| resize `v2.2.14` | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
+| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
 
 ### swipeTo Options 格式
 

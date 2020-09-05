@@ -108,7 +108,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
 | size | Can be set to `large` `small` `mini` | _string_ | `normal` |
 | text | Text | _string_ | - |
-| color `v2.1.8` | Color, support linear-gradient | _string_ | - |
+| color | Color, support linear-gradient | _string_ | - |
 | icon | Left Icon | _string_ | - |
 | icon-prefix `v2.6.0` | Icon className prefix | _string_ | `van-icon` |
 | tag | HTML Tag | _string_ | `button` |

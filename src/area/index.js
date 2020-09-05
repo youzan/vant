@@ -310,8 +310,9 @@ export default createComponent({
         showToolbar
         valueKey="name"
         title={this.title}
-        loading={this.loading}
         columns={this.displayColumns}
+        loading={this.loading}
+        readonly={this.readonly}
         itemHeight={this.itemHeight}
         swipeDuration={this.swipeDuration}
         visibleItemCount={this.visibleItemCount}

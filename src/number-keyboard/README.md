@@ -147,11 +147,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) `v2.0.2` | Current value | _string_ | - |
+| v-model (value) | Current value | _string_ | - |
 | show | Whether to show keyboard | _boolean_ | - |
 | title | Keyboard title | _string_ | - |
 | theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
-| maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
+| maxlength | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
 | extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |

@@ -62,13 +62,14 @@ Vue.use(Area);
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
 | area-list | 省市区数据，格式见下方 | _object_ | - |
-| columns-placeholder `v2.2.5` | 列占位提示文字 | _string[]_ | `[]` |
+| columns-placeholder | 列占位提示文字 | _string[]_ | `[]` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
+| readonly `v2.10.5` | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | item-height `v2.8.6` | 选项高度，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
-| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
-| is-oversea-code `v2.1.4` | 根据`code`校验海外地址，海外地址会划分至单独的分类 | _() => boolean_ | - |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
+| is-oversea-code | 根据`code`校验海外地址，海外地址会划分至单独的分类 | _() => boolean_ | - |
 
 ### Events
 

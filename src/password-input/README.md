@@ -128,15 +128,15 @@ export default {
 
 ### Props
 
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| value | Password value | _string_ | `''` |
-| info | Bottom info | _string_ | - |
-| error-info | Bottom error info | _string_ | - |
-| length | Maxlength of password | _number \| string_ | `6` |
-| gutter | Gutter of input | _number \| string_ | `0` |
-| mask | Whether to mask value | _boolean_ | `true` |
-| focused `v2.1.8` | Whether to show focused cursor | _boolean_ | `false` |
+| Attribute  | Description                    | Type               | Default |
+| ---------- | ------------------------------ | ------------------ | ------- |
+| value      | Password value                 | _string_           | `''`    |
+| info       | Bottom info                    | _string_           | -       |
+| error-info | Bottom error info              | _string_           | -       |
+| length     | Maxlength of password          | _number \| string_ | `6`     |
+| gutter     | Gutter of input                | _number \| string_ | `0`     |
+| mask       | Whether to mask value          | _boolean_          | `true`  |
+| focused    | Whether to show focused cursor | _boolean_          | `false` |
 
 ### Events
 

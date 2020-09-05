@@ -114,7 +114,7 @@ export default {
 | allow-half | 是否允许半选 | _boolean_ | `false` |
 | readonly | 是否为只读状态  | _boolean_ | `false` |
 | disabled | 是否禁用评分 | _boolean_ | `false` |
-| touchable `v2.2.0` | 是否可以通过滑动手势选择评分 | _boolean_ | `true` |
+| touchable | 是否可以通过滑动手势选择评分 | _boolean_ | `true` |
 
 ### Events
 

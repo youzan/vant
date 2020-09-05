@@ -154,11 +154,11 @@ export default {
 | actions | Options | _Action[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
-| description `v2.2.8` | Description above the options | _string_ | - |
+| description | Description above the options | _string_ | - |
 | closeable `v2.10.5` | Whether to show close icon | _boolean_ | `true` |
-| close-icon `v2.2.13` | Close icon name | _string_ | `cross` |
-| duration `v2.0.3` | Transition duration, unit second | _number \| string_ | `0.3` |
-| round `v2.0.9` | Whether to show round corner | _boolean_ | `true` |
+| close-icon | Close icon name | _string_ | `cross` |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |

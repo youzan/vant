@@ -13,6 +13,7 @@ export const DEFAULT_ITEM_HEIGHT = 44;
 export const pickerProps = {
   title: String,
   loading: Boolean,
+  readonly: Boolean,
   itemHeight: [Number, String],
   showToolbar: Boolean,
   cancelButtonText: String,

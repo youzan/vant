@@ -26,9 +26,9 @@
 
 Axure 元件库，由社区的 [@axure-tczy](https://github.com/axure-tczy) 同学贡献。
 
-<img src="https://img.yzcdn.cn/vant/vant-axure-0901-2.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://img.yzcdn.cn/vant/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
-<a class="design-download" href="https://b.yzcdn.cn/vant/vant-axure-20200901.zip">下载</a>
+<a class="design-download" href="https://b.yzcdn.cn/vant/vant-axure-20200905.zip">下载</a>
 
 <style>
 a.design-download {

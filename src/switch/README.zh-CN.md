@@ -108,7 +108,7 @@ export default {
 | v-model        | 开关选中状态             | _any_              | `false`   |
 | loading        | 是否为加载状态           | _boolean_          | `false`   |
 | disabled       | 是否为禁用状态           | _boolean_          | `false`   |
-| size `v2.2.11` | 开关尺寸，默认单位为`px` | _number \| string_ | `30px`    |
+| size           | 开关尺寸，默认单位为`px` | _number \| string_ | `30px`    |
 | active-color   | 打开时的背景色           | _string_           | `#1989fa` |
 | inactive-color | 关闭时的背景色           | _string_           | `white`   |
 | active-value   | 打开时对应的值           | _any_              | `true`    |
@@ -116,7 +116,7 @@ export default {
 
 ### Events
 
-| 事件名          | 说明               | 回调参数       |
-| --------------- | ------------------ | -------------- |
-| change          | 开关状态切换时触发 | _value: any_   |
-| click `v2.2.11` | 点击时触发         | _event: Event_ |
+| 事件名 | 说明               | 回调参数       |
+| ------ | ------------------ | -------------- |
+| change | 开关状态切换时触发 | _value: any_   |
+| click  | 点击时触发         | _event: Event_ |

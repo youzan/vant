@@ -323,6 +323,7 @@ export default createComponent({
     genColumnItems() {
       return this.formattedColumns.map((item, columnIndex) => (
         <PickerColumn
+          readonly={this.readonly}
           valueKey={this.valueKey}
           allowHtml={this.allowHtml}
           className={item.className}

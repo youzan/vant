@@ -98,12 +98,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| name `v2.0.4` | Identifier of SwipeCell | _number \| string_ | - |
+| name | Identifier of SwipeCell | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
 | before-close `v2.3.0` | Callback function before close | _Function_ | - |
 | disabled | Whether to disabled swipe | _boolean_ | `false` |
-| stop-propagation `v2.1.0` | Whether to stop touchmove event propagation | _boolean_ | `false` |
+| stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |
 
 ### Slots
 
