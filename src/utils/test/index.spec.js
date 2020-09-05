@@ -99,19 +99,20 @@ test('isNumeric', () => {
 });
 
 test('formatNumber', () => {
-  expect(formatNumber('abc')).toEqual('');
-  expect(formatNumber('1.2')).toEqual('1');
-  expect(formatNumber('abc1.2')).toEqual('1');
-  expect(formatNumber('123.4.')).toEqual('123');
-
   // with dot
-  expect(formatNumber('abc', true)).toEqual('');
-  expect(formatNumber('1.2', true)).toEqual('1.2');
-  expect(formatNumber('abc1.2', true)).toEqual('1.2');
-  expect(formatNumber('123.4.', true)).toEqual('123.4');
+  expect(formatNumber('abc')).toEqual('');
+  expect(formatNumber('1.2')).toEqual('1.2');
+  expect(formatNumber('abc1.2')).toEqual('1.2');
+  expect(formatNumber('123.4.')).toEqual('123.4');
+
+  // without dot
+  expect(formatNumber('1.2', false)).toEqual('1');
+  expect(formatNumber('abc1.2', false)).toEqual('1');
+  expect(formatNumber('123.4.', false)).toEqual('123');
 
   // minus
-  expect(formatNumber('-1.2')).toEqual('-1');
+  expect(formatNumber('-1.2', false)).toEqual('-1');
+  expect(formatNumber('-1.2', false, false)).toEqual('1');
   expect(formatNumber('-1.2', true)).toEqual('-1.2');
   expect(formatNumber('-1.2-', true)).toEqual('-1.2');
   expect(formatNumber('123-')).toEqual('123');
