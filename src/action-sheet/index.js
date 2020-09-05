@@ -21,6 +21,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    closeable: {
+      type: Boolean,
+      default: true,
+    },
     closeIcon: {
       type: String,
       default: 'cross',
@@ -50,11 +54,13 @@ export default createComponent({
         return (
           <div class={bem('header')}>
             {props.title}
-            <Icon
-              name={props.closeIcon}
-              class={bem('close')}
-              onClick={onCancel}
-            />
+            {props.closeable && (
+              <Icon
+                name={props.closeIcon}
+                class={bem('close')}
+                onClick={onCancel}
+              />
+            )}
           </div>
         );
       }

@@ -302,8 +302,8 @@ export default createComponent({
       }
 
       if (this.type === 'number' || this.type === 'digit') {
-        const allowDot = this.type === 'number';
-        value = formatNumber(value, allowDot);
+        const isNumber = this.type === 'number';
+        value = formatNumber(value, isNumber, isNumber);
       }
 
       if (this.formatter && trigger === this.formatTrigger) {

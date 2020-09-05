@@ -28,6 +28,7 @@ export default createComponent({
     show: Boolean,
     title: String,
     color: String,
+    readonly: Boolean,
     teleport: [String, Object],
     formatter: Function,
     confirmText: String,
@@ -139,12 +140,13 @@ export default createComponent({
     buttonDisabled() {
       const { type, currentDate } = this;
 
-      if (type === 'range') {
-        return !currentDate[0] || !currentDate[1];
-      }
-
-      if (type === 'multiple') {
-        return !currentDate.length;
+      if (currentDate) {
+        if (type === 'range') {
+          return !currentDate[0] || !currentDate[1];
+        }
+        if (type === 'multiple') {
+          return !currentDate.length;
+        }
       }
 
       return !currentDate;
@@ -201,6 +203,11 @@ export default createComponent({
     scrollIntoView() {
       this.$nextTick(() => {
         const { currentDate } = this;
+
+        if (!currentDate) {
+          return;
+        }
+
         const targetDate =
           this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.show || !this.poppable;
@@ -224,6 +231,10 @@ export default createComponent({
 
     getInitialDate() {
       const { type, minDate, maxDate, defaultDate } = this;
+
+      if (defaultDate === null) {
+        return defaultDate;
+      }
 
       let defaultVal = new Date();
 
@@ -301,6 +312,11 @@ export default createComponent({
       const { type, currentDate } = this;
 
       if (type === 'range') {
+        if (!currentDate) {
+          this.select([date, null]);
+          return;
+        }
+
         const [startDay, endDay] = currentDate;
 
         if (startDay && !endDay) {
@@ -317,8 +333,12 @@ export default createComponent({
           this.select([date, null]);
         }
       } else if (type === 'multiple') {
-        let selectedIndex;
+        if (!currentDate) {
+          this.select([date]);
+          return;
+        }
 
+        let selectedIndex;
         const selected = this.currentDate.some((dateItem, index) => {
           const equal = compareDay(dateItem, date) === 0;
           if (equal) {
@@ -345,6 +365,10 @@ export default createComponent({
     },
 
     select(date, complete) {
+      if (this.readonly) {
+        return;
+      }
+
       const emit = (date) => {
         this.currentDate = date;
         this.$emit('select', copyDates(this.currentDate));

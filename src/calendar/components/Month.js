@@ -160,6 +160,10 @@ export default createComponent({
         return 'disabled';
       }
 
+      if (currentDate === null) {
+        return;
+      }
+
       if (Array.isArray(currentDate)) {
         if (type === 'multiple') {
           return getMultipleDayType(day);

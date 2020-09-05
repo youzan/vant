@@ -235,7 +235,7 @@ export default {
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
 | max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
-| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | _Date \| Date[]_ | 今天 |
+| default-date | 默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择 | _Date \| Date[] \| null_ | 今天 |
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
@@ -244,6 +244,7 @@ export default {
 | show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
+| readonly `v2.10.5` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
 | confirm-text | 确认按钮的文字 | _string_ | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
 | first-day-of-week `v2.9.2` | 设置周起始日 | _0-6_ | `0` |
