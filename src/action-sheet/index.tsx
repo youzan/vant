@@ -184,7 +184,7 @@ ActionSheet.props = {
   },
   closeable: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   closeIcon: {
     type: String,
