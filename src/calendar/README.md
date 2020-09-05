@@ -241,6 +241,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |
 | show-confirm | Whether to show confirm button | _boolean_ | `true` |
+| readonly `v2.10.5` | Whether to be readonly | _boolean_ | `false` |
 | confirm-text | Confirm button text | _string_ | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
 | first-day-of-week `v2.9.2` | Set the start day of week | _0-6_ | `0` |
