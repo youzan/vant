@@ -161,6 +161,7 @@ export default {
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字 | _string_ | - |
 | description | 选项上方的描述信息 | _string_ | - |
+| closeable `v2.10.5` | 是否显示关闭图标 | _boolean_ | `true` |
 | close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `true` |
