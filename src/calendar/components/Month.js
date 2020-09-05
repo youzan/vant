@@ -189,6 +189,10 @@ export default createComponent({
         return 'disabled';
       }
 
+      if (currentDate === null) {
+        return;
+      }
+
       if (type === 'single') {
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }

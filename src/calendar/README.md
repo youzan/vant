@@ -232,7 +232,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | color | Color for the bottom button and selected date | _string_ | `#ee0a24` |
 | min-date | Min date | _Date_ | Today |
 | max-date | Max date | _Date_ | Six months after the today |
-| default-date | Default selected date | _Date \| Date[]_ | Today |
+| default-date | Default selected date | _Date \| Date[] \| null_ | Today |
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
 | poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
