@@ -17,7 +17,7 @@ const defaultConfig = {
   showIndex: true,
   closeable: false,
   closeIcon: 'clear',
-  asyncClose: false,
+  beforeClose: null,
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,

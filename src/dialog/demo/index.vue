@@ -45,7 +45,7 @@ export default {
       alert1: 'Alert',
       alert2: 'Alert without title',
       confirm: 'Confirm dialog',
-      beforeClose: 'Async Close',
+      beforeClose: 'Before Close',
       roundButton: 'Round Button Style',
       componentCall: 'Component Call',
     },

@@ -18,9 +18,9 @@
       </van-cell>
     </demo-block>
 
-    <demo-block card :title="t('asyncClose')">
-      <van-cell is-link @click="showImagePreview({ asyncClose: true })">
-        {{ t('asyncClose') }}
+    <demo-block card :title="t('beforeClose')">
+      <van-cell is-link @click="showImagePreview({ beforeClose })">
+        {{ t('beforeClose') }}
       </van-cell>
     </demo-block>
 
@@ -55,7 +55,7 @@ export default {
       closed: '关闭',
       showClose: '展示关闭按钮',
       showImages: '预览图片',
-      asyncClose: '异步关闭',
+      beforeClose: '异步关闭',
       closeEvent: '监听关闭事件',
       customConfig: '传入配置项',
       startPosition: '指定初始位置',
@@ -66,7 +66,7 @@ export default {
       closed: 'closed',
       showClose: 'Show Close Icon',
       showImages: 'Show Images',
-      asyncClose: 'Async Close',
+      beforeClose: 'Before Close',
       closeEvent: 'Close Event',
       customConfig: 'Custom Config',
       startPosition: 'Set Start Position',
@@ -88,6 +88,14 @@ export default {
       this.$toast(this.t('closed'));
     },
 
+    beforeClose() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(true);
+        }, 1000);
+      });
+    },
+
     componentCall() {
       this.show = true;
     },
@@ -102,7 +110,7 @@ export default {
         ...options,
       });
 
-      if (options.asyncClose) {
+      if (options.beforeClose) {
         setTimeout(() => {
           instance.close();
         }, 2000);

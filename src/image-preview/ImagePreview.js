@@ -1,6 +1,7 @@
 // Utils
 import { inBrowser } from '../utils';
 import { bem, createComponent } from './shared';
+import { callInterceptor } from '../utils/interceptor';
 
 // Mixins
 import { TouchMixin } from '../mixins/touch';
@@ -25,7 +26,7 @@ export default createComponent({
     show: Boolean,
     className: null,
     closeable: Boolean,
-    asyncClose: Boolean,
+    beforeClose: Function,
     showIndicators: Boolean,
     images: {
       type: Array,
@@ -115,9 +116,13 @@ export default createComponent({
     },
 
     emitClose() {
-      if (!this.asyncClose) {
-        this.$emit('update:show', false);
-      }
+      callInterceptor({
+        interceptor: this.beforeClose,
+        args: [this.active],
+        done: () => {
+          this.$emit('update:show', false);
+        },
+      });
     },
 
     emitScale(args) {

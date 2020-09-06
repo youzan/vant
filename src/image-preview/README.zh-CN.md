@@ -95,7 +95,7 @@ ImagePreview({
 
 ### 异步关闭
 
-通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
+通过 `beforeClose` 属性可以拦截关闭行为。
 
 ```js
 const instance = ImagePreview({
@@ -103,10 +103,11 @@ const instance = ImagePreview({
     'https://img.yzcdn.cn/vant/apple-1.jpg',
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
-  asyncClose: true,
+  beforeClose: () => false,
 });
 
 setTimeout(() => {
+  // 调用实例上的 close 方法手动关闭图片预览
   instance.close();
 }, 2000);
 ```
@@ -158,7 +159,7 @@ export default {
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
-| asyncClose | 是否开启异步关闭 | _boolean_ | `false` |
+| beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | className | 自定义类名 | _any_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
@@ -180,7 +181,7 @@ export default {
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
-| async-close | 是否开启异步关闭 | _boolean_ | `false` |
+| before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | class-name | 自定义类名 | _any_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |

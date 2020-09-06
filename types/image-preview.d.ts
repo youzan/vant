@@ -12,7 +12,7 @@ export type ImagePreviewOptions =
       showIndex?: boolean;
       closeable?: boolean;
       closeIcon?: string;
-      asyncClose?: boolean;
+      beforeClose?: (active: number) => boolean | Promise<boolean>;
       swipeDuration?: number;
       startPosition?: number;
       showIndicators?: boolean;

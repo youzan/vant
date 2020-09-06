@@ -63,7 +63,7 @@ ImagePreview({
 });
 ```
 
-### Async Close
+### Before Close
 
 ```js
 const instance = ImagePreview({
@@ -71,7 +71,7 @@ const instance = ImagePreview({
     'https://img.yzcdn.cn/vant/apple-1.jpg',
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
-  asyncClose: true,
+  beforeClose: () => false,
 });
 
 setTimeout(() => {
@@ -123,7 +123,7 @@ export default {
 | onChange | Triggered when current image change | _Function_ | - |
 | onScale | Triggered when current image scale | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
-| asyncClose | Whether to enable async close | _boolean_ | `false` |
+| beforeClose | Callback before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _any_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
 | minZoom | Min zoom | _number \| string_ | `1/3` |
@@ -142,7 +142,7 @@ export default {
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| async-close | Whether to enable async close | _boolean_ | `false` |
+| before-close | Callback before close | _(action) => boolean \| Promise_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | class-name | Custom className | _any_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
