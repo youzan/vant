@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file */
+import { App } from 'vue';
 import { VanComponent } from './component';
 import { AddressEdit } from './address-edit';
 import { Area } from './area';
@@ -25,6 +26,8 @@ import { Toast } from './toast';
 import { Uploader } from './uploader';
 
 export const version: string;
+
+export const install: (app: App) => any;
 
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
