@@ -14,6 +14,31 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-alpha.4](https://github.com/youzan/vant/compare/v2.10.5...v3.0.0-alpha.4)
+
+`2020-09-06`
+
+**breaking changes**
+
+- Dialog: `before-close` 属性用法调整，不再传入 done 函数，而是通过返回 Promise 来控制
+- SwipeCell: `before-close` 属性不再传入组件实例
+- ImagePreview: 移除 `async-close` 属性，新增 `before-close` 属性
+
+**refactor**
+
+使用 Composition API 重构以下组件：
+
+- Coupon [ec5a75](https://github.com/youzan/vant/commit/ec5a759f684531e7c5ab751d1d746d0e65d26279)
+- Dialog [2b8284](https://github.com/youzan/vant/commit/2b8284a227b6d483685cfa3a70e01774491a2ff9)
+- NumberKeyboard [f735b2](https://github.com/youzan/vant/commit/f735b24a4b71176ce5c214af69b7afc99deab85f)
+- Pagination [1cd918](https://github.com/youzan/vant/commit/1cd918395805f57a60f2cce1f5174b480cfd70f2)
+
+**Bug Fixes**
+
+- Tag: 修复 color 属性不生效的问题 [4b6da2](https://github.com/youzan/vant/commit/4b6da2aab6acae95977579094bc5707345f3d3e9)
+- 修复在 TSX 中使用组件时提示类型错误的问题 [#7076](https://github.com/youzan/vant/issues/7076)
+- 修复全量引入组件时提示类型错误的问题 [#7056](https://github.com/youzan/vant/issues/7056)
+
 ### [v3.0.0-alpha.3](https://github.com/youzan/vant/compare/v3.0.0-alpha.2...v3.0.0-alpha.3)
 
 `2020-09-01`
