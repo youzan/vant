@@ -42,7 +42,7 @@ function Notify(options) {
   instance.open(options);
   clearTimeout(timer);
 
-  if (options.duration && options.duration > 0) {
+  if (options.duration > 0) {
     timer = setTimeout(Notify.clear, options.duration);
   }
 

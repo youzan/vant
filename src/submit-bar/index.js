@@ -37,68 +37,76 @@ export default createComponent({
   emits: ['submit'],
 
   setup(props, { emit, slots }) {
-    return () => {
-      const { tip, price, tipIcon } = props;
+    const renderText = () => {
+      const {
+        price,
+        label,
+        currency,
+        textAlign,
+        suffixLabel,
+        decimalLength,
+      } = props;
 
-      function Text() {
-        if (typeof price === 'number') {
-          const priceArr = (price / 100)
-            .toFixed(props.decimalLength)
-            .split('.');
-          const decimalStr = props.decimalLength ? `.${priceArr[1]}` : '';
-          return (
-            <div
-              style={{ textAlign: props.textAlign ? props.textAlign : '' }}
-              class={bem('text')}
-            >
-              <span>{props.label || t('label')}</span>
-              <span class={bem('price')}>
-                {props.currency}
-                <span class={bem('price', 'integer')}>{priceArr[0]}</span>
-                {decimalStr}
-              </span>
-              {props.suffixLabel && (
-                <span class={bem('suffix-label')}>{props.suffixLabel}</span>
-              )}
-            </div>
-          );
-        }
-      }
+      if (typeof price === 'number') {
+        const pricePair = (price / 100).toFixed(decimalLength).split('.');
+        const decimal = decimalLength ? `.${pricePair[1]}` : '';
 
-      function Tip() {
-        if (slots.tip || tip) {
-          return (
-            <div class={bem('tip')}>
-              {tipIcon && <Icon class={bem('tip-icon')} name={tipIcon} />}
-              {tip && <span class={bem('tip-text')}>{tip}</span>}
-              {slots.tip && slots.tip()}
-            </div>
-          );
-        }
-      }
-
-      return (
-        <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
-          {slots.top && slots.top()}
-          {Tip()}
-          <div class={bem('bar')}>
-            {slots.default && slots.default()}
-            {Text()}
-            <Button
-              round
-              class={bem('button', props.buttonType)}
-              type={props.buttonType}
-              color={props.buttonColor}
-              loading={props.loading}
-              disabled={props.disabled}
-              text={props.loading ? '' : props.buttonText}
-              onClick={() => {
-                emit('submit');
-              }}
-            />
+        return (
+          <div class={bem('text')} style={{ textAlign }}>
+            <span>{label || t('label')}</span>
+            <span class={bem('price')}>
+              {currency}
+              <span class={bem('price-integer')}>{pricePair[0]}</span>
+              {decimal}
+            </span>
+            {suffixLabel && (
+              <span class={bem('suffix-label')}>{suffixLabel}</span>
+            )}
           </div>
-        </div>
-      );
+        );
+      }
     };
+
+    const renderTip = () => {
+      const { tip, tipIcon } = props;
+      if (slots.tip || tip) {
+        return (
+          <div class={bem('tip')}>
+            {tipIcon && <Icon class={bem('tip-icon')} name={tipIcon} />}
+            {tip && <span class={bem('tip-text')}>{tip}</span>}
+            {slots.tip?.()}
+          </div>
+        );
+      }
+    };
+
+    const onClickButton = () => {
+      emit('submit');
+    };
+
+    const renderButton = () => (
+      <Button
+        round
+        type={props.buttonType}
+        text={props.buttonText}
+        class={bem('button', props.buttonType)}
+        color={props.buttonColor}
+        loading={props.loading}
+        disabled={props.disabled}
+        onClick={onClickButton}
+      />
+    );
+
+    return () => (
+      <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
+        {slots.top?.()}
+        {renderTip()}
+        <div class={bem('bar')}>
+          {slots.default?.()}
+          {renderText()}
+          {renderButton()}
+        </div>
+      </div>
+    );
   },
 });
