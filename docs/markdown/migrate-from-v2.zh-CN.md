@@ -164,7 +164,7 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 #### Area
 
-- 移除 change 事件的第一个参数（picker 实例）
+- `change` 事件参数不再传入组件实例
 
 #### Button
 
@@ -181,9 +181,9 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 #### Picker
 
-- 移除 change 事件的第一个参数（picker 实例）
-- 默认开启 show-toolbar 属性
-- 级联选择下，confirm/change 事件返回的回调参数将包含为完整的选项对象。
+- `change` 事件参数不再传入组件实例
+- 默认开启 `show-toolbar` 属性
+- 级联选择下，`confirm`、`change` 事件返回的回调参数将包含为完整的选项对象。
 
 #### SwipeCell
 
