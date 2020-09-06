@@ -1,5 +1,3 @@
-import { VanPopupMixin } from './mixins/popup';
-
 type ToastMessage = string | number;
 type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 type ToastPosition = 'top' | 'middle' | 'bottom';
@@ -25,7 +23,7 @@ export type ToastOptions = {
   getContainer?: string | (() => Element);
 };
 
-export interface VanToast extends VanPopupMixin {
+export interface VanToast {
   type: ToastType;
   position: ToastPosition;
   loadingType: ToastLoadingType;
