@@ -10,6 +10,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.5](https://github.com/youzan/vant/compare/v2.10.4...v2.10.5)
+
+`2020-09-06`
+
+**Feature**
+
+- ActionSheet: 新增 closeable 属性 [#7099](https://github.com/youzan/vant/issues/7099)
+- Area: 新增 readonly 属性 [#7106](https://github.com/youzan/vant/issues/7106)
+- Calendar: 新增 readonly 属性 [#7115](https://github.com/youzan/vant/issues/7115)
+- Calendar: 支持将默认选中的日期设置为空 [#7116](https://github.com/youzan/vant/issues/7116)
+- DatetimePicker: 新增 readonly 属性 [#7107](https://github.com/youzan/vant/issues/7107)
+- Picker: 新增 readonly 属性 [#7105](https://github.com/youzan/vant/issues/7105)
+
+**Bug Fixes**
+
+- Field: 修复 digit 类型可以输入负号的问题 [#7114](https://github.com/youzan/vant/issues/7114)
+- Form: 修复 name 重复时 scrollToError 位置错误的问题 [#7102](https://github.com/youzan/vant/issues/7102)
+- Form: 修复个别情况下校验状态错误的问题 [#7103](https://github.com/youzan/vant/issues/7103)
+- Toast: 修复重复调用时无法清除的问题 [#7100](https://github.com/youzan/vant/issues/7100)
+
 ### [v2.10.4](https://github.com/youzan/vant/compare/v2.10.3...v2.10.4)
 
 `2020-09-03`
