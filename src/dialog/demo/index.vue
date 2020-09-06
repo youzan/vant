@@ -11,8 +11,8 @@
       <van-cell is-link :title="t('alert2')" @click="onClickRound2" />
     </demo-block>
 
-    <demo-block card :title="t('asyncClose')">
-      <van-cell is-link :title="t('asyncClose')" @click="onClickAsyncClose" />
+    <demo-block card :title="t('beforeClose')">
+      <van-cell is-link :title="t('beforeClose')" @click="onClickBeforeClose" />
     </demo-block>
 
     <demo-block card :title="t('componentCall')">
@@ -36,7 +36,7 @@ export default {
       alert1: '提示弹窗',
       alert2: '提示弹窗（无标题）',
       confirm: '确认弹窗',
-      asyncClose: '异步关闭',
+      beforeClose: '异步关闭',
       roundButton: '圆角按钮样式',
       componentCall: '组件调用',
       content: '代码是写出来给人看的，附带能在机器上运行',
@@ -45,7 +45,7 @@ export default {
       alert1: 'Alert',
       alert2: 'Alert without title',
       confirm: 'Confirm dialog',
-      asyncClose: 'Async Close',
+      beforeClose: 'Async Close',
       roundButton: 'Round Button Style',
       componentCall: 'Component Call',
     },
@@ -95,14 +95,11 @@ export default {
       });
     },
 
-    onClickAsyncClose() {
-      function beforeClose(action, done) {
-        if (action === 'confirm') {
-          setTimeout(done, 1000);
-        } else {
-          done();
-        }
-      }
+    onClickBeforeClose() {
+      const beforeClose = (action) =>
+        new Promise((resolve) => {
+          setTimeout(() => resolve(action === 'confirm'), 1000);
+        });
 
       this.$dialog.confirm({
         title: this.t('title'),

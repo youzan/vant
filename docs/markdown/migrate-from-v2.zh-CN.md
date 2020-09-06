@@ -171,6 +171,10 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 - 蓝色按钮对应的类型由 `info` 调整为 `primary`
 - 绿色按钮对应的类型由 `primary` 调整为 `success`
 
+#### Dialog
+
+- `before-close` 属性用法调整，不再传入 done 函数，而是通过返回 Promise 来控制
+
 #### Picker
 
 - 移除 change 事件的第一个参数（picker 实例）

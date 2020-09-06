@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 
 // Utils
+import { callInterceptor } from '../utils/interceptor';
 import { createNamespace, addUnit, pick } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 
@@ -82,11 +83,16 @@ export default createComponent({
 
       if (props.beforeClose) {
         loading[action] = true;
-        props.beforeClose(action, (result) => {
-          if (result !== false && loading[action]) {
+        callInterceptor({
+          interceptor: props.beforeClose,
+          args: [action],
+          done() {
             close(action);
-          }
-          loading[action] = false;
+            loading[action] = false;
+          },
+          canceled() {
+            loading[action] = false;
+          },
         });
       } else {
         close(action);

@@ -72,13 +72,12 @@ Dialog.alert({
 ### Asnyc Close
 
 ```js
-function beforeClose(action, done) {
-  if (action === 'confirm') {
-    setTimeout(done, 1000);
-  } else {
-    done();
-  }
-}
+const beforeClose = (action, done) =>
+  new Promsie((resolve) => {
+    setTimeout(() => {
+      resolve(action === 'confirm');
+    }, 1000);
+  });
 
 Dialog.confirm({
   title: 'Title',
@@ -185,7 +184,7 @@ export default {
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
-| before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
+| before-close | Callback before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | - |
 
