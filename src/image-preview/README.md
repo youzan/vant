@@ -123,7 +123,7 @@ export default {
 | onChange | Triggered when current image change | _Function_ | - |
 | onScale | Triggered when current image scale | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
-| beforeClose | Callback before close | _(action) => boolean \| Promise_ | - |
+| beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _any_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
 | minZoom | Min zoom | _number \| string_ | `1/3` |
@@ -142,7 +142,7 @@ export default {
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| before-close | Callback before close | _(action) => boolean \| Promise_ | - |
+| before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | class-name | Custom className | _any_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |

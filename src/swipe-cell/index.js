@@ -2,6 +2,7 @@
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
+import { callInterceptor } from '../utils/interceptor';
 
 // Mixins
 import { TouchMixin } from '../mixins/touch';
@@ -167,15 +168,18 @@ export default createComponent({
       this.$emit('click', position);
 
       if (this.opened && !this.lockClick) {
-        if (this.beforeClose) {
-          this.beforeClose({
-            position,
-            name: this.name,
-            instance: this,
-          });
-        } else {
-          this.close(position);
-        }
+        callInterceptor({
+          interceptor: this.beforeClose,
+          args: [
+            {
+              position,
+              name: this.name,
+            },
+          ],
+          done: () => {
+            this.close(position);
+          },
+        });
       }
     },
 

@@ -81,22 +81,20 @@ export default {
   },
 
   methods: {
-    beforeClose({ position, instance }) {
+    beforeClose({ position }) {
       switch (position) {
         case 'left':
         case 'cell':
         case 'outside':
-          instance.close();
-          break;
+          return true;
         case 'right':
-          this.$dialog
-            .confirm({
-              message: this.t('confirm'),
-            })
-            .then(() => {
-              instance.close();
-            });
-          break;
+          return new Promise((resolve) => {
+            this.$dialog
+              .confirm({
+                message: this.t('confirm'),
+              })
+              .then(resolve);
+          });
       }
     },
   },

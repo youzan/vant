@@ -189,6 +189,7 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 - `open` 事件的 `detail` 参数重命名为 `name`
 - `on-close` 属性重命名为 `before-close`，并调整参数结构
+- `before-close` 属性不再传入组件实例
 
 #### Toast
 
