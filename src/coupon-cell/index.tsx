@@ -28,13 +28,11 @@ function formatValue(props: CouponCellProps) {
   if (coupon) {
     let value = 0;
     if (isDef(coupon.value)) {
-      const { value: couponValue } = coupon;
-      value = couponValue;
+      ({ value } = coupon);
     }
 
     if (isDef(coupon.denominations)) {
-      const { denominations } = coupon;
-      value = denominations!;
+      value = coupon.denominations!;
     }
 
     return `-${currency} ${(value / 100).toFixed(2)}`;
