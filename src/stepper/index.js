@@ -82,9 +82,7 @@ export default createComponent({
   ],
 
   data() {
-    const defaultValue = isDef(this.modelValue)
-      ? this.value
-      : this.defaultValue;
+    const defaultValue = this.modelValue ?? this.defaultValue;
     const value = this.format(defaultValue);
 
     if (!equal(value, this.modelValue)) {

@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef, pick } from '../utils';
+import { createNamespace, pick } from '../utils';
 
 // Components
 import Popup, { popupSharedProps } from '../popup';
@@ -102,7 +102,7 @@ export default createComponent({
     };
 
     const renderCancelText = () => {
-      const text = isDef(props.cancelText) ? props.cancelText : t('cancel');
+      const text = props.cancelText ?? t('cancel');
       if (text) {
         return (
           <button type="button" class={bem('cancel')} onClick={onCancel}>

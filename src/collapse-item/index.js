@@ -1,7 +1,7 @@
 import { ref, watch, computed, nextTick } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Composition
@@ -31,9 +31,7 @@ export default createComponent({
     const contentRef = ref();
     const { parent, index } = useParent(COLLAPSE_KEY);
 
-    const currentName = computed(() =>
-      isDef(props.name) ? props.name : index.value
-    );
+    const currentName = computed(() => props.name ?? index.value);
 
     const expanded = computed(() => {
       if (parent) {

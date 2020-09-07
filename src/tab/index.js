@@ -1,4 +1,4 @@
-import { isDef, createNamespace } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { routeProps } from '../composition/use-route';
 
@@ -25,7 +25,7 @@ export default createComponent({
 
   computed: {
     computedName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.name ?? this.index;
     },
 
     isActive() {

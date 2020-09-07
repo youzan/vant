@@ -1,5 +1,5 @@
 import { ref, watch, computed, nextTick, reactive, onMounted } from 'vue';
-import { createNamespace, isDef, addUnit } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -46,7 +46,7 @@ export default createComponent({
     const renderPivot = () => {
       const { rootWidth, pivotWidth } = state;
       const { textColor, pivotText, pivotColor, percentage } = props;
-      const text = isDef(pivotText) ? pivotText : percentage + '%';
+      const text = pivotText ?? percentage + '%';
       const show = props.showPivot && text;
 
       if (show) {
