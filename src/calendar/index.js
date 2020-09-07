@@ -301,6 +301,10 @@ export default createComponent({
     },
 
     onClickDay(item) {
+      if (this.readonly) {
+        return;
+      }
+
       const { date } = item;
       const { type, currentDate } = this;
 
@@ -358,10 +362,6 @@ export default createComponent({
     },
 
     select(date, complete) {
-      if (this.readonly) {
-        return;
-      }
-
       const emit = (date) => {
         this.currentDate = date;
         this.$emit('select', copyDates(this.currentDate));
