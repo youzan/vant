@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Mixins
@@ -35,7 +35,7 @@ export default createComponent({
 
   computed: {
     currentName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.name ?? this.index;
     },
 
     expanded() {

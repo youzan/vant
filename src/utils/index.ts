@@ -30,7 +30,7 @@ export function get(object: any, path: string): any {
   let result = object;
 
   keys.forEach((key) => {
-    result = isDef(result[key]) ? result[key] : '';
+    result = result[key] ?? '';
   });
 
   return result;
