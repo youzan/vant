@@ -56,16 +56,12 @@ export default createComponent({
 
       return (
         <Transition name={closeable ? 'van-fade' : null}>
-          {show ? (
-            <span
-              key="content"
-              style={style.value}
-              class={bem([classes, type])}
-            >
+          {show && (
+            <span style={style.value} class={bem([classes, type])}>
               {slots.default?.()}
               {CloseIcon}
             </span>
-          ) : null}
+          )}
         </Transition>
       );
     };
