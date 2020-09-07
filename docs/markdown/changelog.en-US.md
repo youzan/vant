@@ -10,6 +10,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.5](https://github.com/youzan/vant/compare/v2.10.4...v2.10.5)
+
+`2020-09-06`
+
+**Feature**
+
+- ActionSheet: add closeable prop [#7099](https://github.com/youzan/vant/issues/7099)
+- Area: add readonly prop [#7106](https://github.com/youzan/vant/issues/7106)
+- Calendar: add readonly prop [#7115](https://github.com/youzan/vant/issues/7115)
+- Calendar: allow default-date to be null [#7116](https://github.com/youzan/vant/issues/7116)
+- DatetimePicker: add readonly prop [#7107](https://github.com/youzan/vant/issues/7107)
+- Picker: add readonly prop [#7105](https://github.com/youzan/vant/issues/7105)
+
+**Bug Fixes**
+
+- Field: disallow minus when using digit type [#7114](https://github.com/youzan/vant/issues/7114)
+- Form: scroll to first matched field [#7102](https://github.com/youzan/vant/issues/7102)
+- Form: should reset validation before submit [#7103](https://github.com/youzan/vant/issues/7103)
+- Toast: failed to clear in some cases [#7100](https://github.com/youzan/vant/issues/7100)
+
 ### [v2.10.4](https://github.com/youzan/vant/compare/v2.10.3...v2.10.4)
 
 `2020-09-03`
