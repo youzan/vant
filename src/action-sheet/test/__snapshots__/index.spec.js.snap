@@ -16,6 +16,12 @@ exports[`close-icon prop 1`] = `
 </div>
 `;
 
+exports[`closeable prop 1`] = `
+<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
+  <div class="van-action-sheet__header">Title</div>
+</div>
+`;
+
 exports[`color option 1`] = `<div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom"><button type="button" class="van-action-sheet__item" style="color: red;"><span class="van-action-sheet__name">Option</span></button></div>`;
 
 exports[`description prop 1`] = `
