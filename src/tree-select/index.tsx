@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, isDef } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
 
 // Components
@@ -65,7 +65,7 @@ function TreeSelect(
   const Navs = items.map((item) => (
     <SidebarItem
       dot={item.dot}
-      info={isDef(item.badge) ? item.badge : item.info}
+      info={item.badge ?? item.info}
       title={item.text}
       disabled={item.disabled}
       class={[bem('nav-item'), item.className]}

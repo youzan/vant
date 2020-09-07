@@ -1,4 +1,4 @@
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
@@ -46,7 +46,7 @@ export default createComponent({
           {this.title}
           <Info
             dot={this.dot}
-            info={isDef(this.badge) ? this.badge : this.info}
+            info={this.badge ?? this.info}
             class={bem('info')}
           />
         </div>

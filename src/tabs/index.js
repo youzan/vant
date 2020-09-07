@@ -359,7 +359,7 @@ export default createComponent({
         refInFor
         type={type}
         dot={item.dot}
-        info={isDef(item.badge) ? item.badge : item.info}
+        info={item.badge ?? item.info}
         title={item.title}
         color={this.color}
         style={item.titleStyle}

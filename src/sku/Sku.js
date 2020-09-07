@@ -10,7 +10,7 @@ import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import {
   isAllSelected,
   isSkuChoosable,
@@ -361,7 +361,7 @@ export default createComponent({
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
-      const num = isDef(selectedNum) ? selectedNum : this.startSaleNum;
+      const num = selectedNum ?? this.startSaleNum;
       // 用来缓存不合法的情况
       this.stepperError = null;
 

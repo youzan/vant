@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 import { pickerProps, DEFAULT_ITEM_HEIGHT } from './shared';
@@ -86,9 +86,7 @@ export default createComponent({
       let cursor = { children: this.columns };
 
       while (cursor && cursor.children) {
-        const defaultIndex = isDef(cursor.defaultIndex)
-          ? cursor.defaultIndex
-          : +this.defaultIndex;
+        const defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
 
         formatted.push({
           values: cursor.children,
@@ -328,9 +326,7 @@ export default createComponent({
           allowHtml={this.allowHtml}
           className={item.className}
           itemHeight={this.itemPxHeight}
-          defaultIndex={
-            isDef(item.defaultIndex) ? item.defaultIndex : +this.defaultIndex
-          }
+          defaultIndex={item.defaultIndex ?? +this.defaultIndex}
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}

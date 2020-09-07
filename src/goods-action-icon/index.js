@@ -1,4 +1,4 @@
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 import Info from '../info';
@@ -28,7 +28,7 @@ export default createComponent({
 
     genIcon() {
       const slot = this.slots('icon');
-      const info = isDef(this.badge) ? this.badge : this.info;
+      const info = this.badge ?? this.info;
 
       if (slot) {
         return (
