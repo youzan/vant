@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Components
@@ -26,7 +26,15 @@ function formatValue(props: CouponCellProps) {
   const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
-    const value = coupon.value || coupon.denominations || 0;
+    let value = 0;
+    if (isDef(coupon.value)) {
+      ({ value } = coupon);
+    }
+
+    if (isDef(coupon.denominations)) {
+      value = coupon.denominations!;
+    }
+
     return `-${currency} ${(value / 100).toFixed(2)}`;
   }
 
