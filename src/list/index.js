@@ -118,7 +118,7 @@ export default createComponent({
     const renderLoading = () => {
       if (loading.value && !props.finished) {
         return (
-          <div class={bem('loading')} key="loading">
+          <div class={bem('loading')}>
             {slots.loading ? (
               slots.loading()
             ) : (
