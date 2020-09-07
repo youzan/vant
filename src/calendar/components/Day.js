@@ -17,7 +17,7 @@ export default createComponent({
 
   setup(props, { emit }) {
     const style = computed(() => {
-      const { type, index, color, offset, rowHeight } = props;
+      const { item, index, color, offset, rowHeight } = props;
       const style = {
         height: rowHeight,
       };
@@ -27,7 +27,7 @@ export default createComponent({
       }
 
       if (color) {
-        switch (type) {
+        switch (item.type) {
           case 'end':
           case 'start':
           case 'start-end':
@@ -45,14 +45,14 @@ export default createComponent({
     });
 
     const onClick = () => {
-      if (props.type !== 'disabled') {
+      if (props.item.type !== 'disabled') {
         emit('click', props.item);
       }
     };
 
-    return () => {
+    const renderContent = () => {
       const { item, color, rowHeight } = props;
-      const { type, topInfo, bottomInfo } = item;
+      const { type, text, topInfo, bottomInfo } = item;
 
       const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
 
@@ -60,42 +60,37 @@ export default createComponent({
         <div class={bem('bottom-info')}>{bottomInfo}</div>
       );
 
+      const Nodes = [TopInfo, text, BottomInfo];
+
       if (type === 'selected') {
         return (
           <div
-            role="gridcell"
-            style={style.value}
-            class={[bem('day'), item.className]}
-            tabindex={-1}
-            onClick={onClick}
+            class={bem('selected-day')}
+            style={{
+              width: rowHeight,
+              height: rowHeight,
+              background: color,
+            }}
           >
-            <div
-              class={bem('selected-day')}
-              style={{
-                width: rowHeight,
-                height: rowHeight,
-                background: color,
-              }}
-            >
-              {TopInfo}
-              {item.text}
-              {BottomInfo}
-            </div>
+            {Nodes}
           </div>
         );
       }
 
+      return Nodes;
+    };
+
+    return () => {
+      const { type, className } = props.item;
       return (
         <div
           role="gridcell"
           style={style.value}
-          class={[bem('day', type), item.className]}
+          class={[bem('day', type), className]}
           tabindex={type === 'disabled' ? null : -1}
           onClick={onClick}
         >
-          {TopInfo}
-          {item.text}
-          {BottomInfo}
+          {renderContent()}
         </div>
       );
     };
