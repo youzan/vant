@@ -1,6 +1,8 @@
 import { on, off } from '../utils/dom/event';
 import {
   Ref,
+  ref,
+  isRef,
   watch,
   onMounted,
   onActivated,
@@ -16,6 +18,10 @@ export function useGlobalEvent(
   flag?: Ref<boolean>
 ) {
   let binded: boolean;
+
+  if (!isRef(target)) {
+    target = ref(target);
+  }
 
   function add() {
     if (binded || (flag && !flag.value) || !target.value) {

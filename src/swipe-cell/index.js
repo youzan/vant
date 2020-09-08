@@ -1,25 +1,20 @@
+import { ref, reactive, computed } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { callInterceptor } from '../utils/interceptor';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
-import { ClickOutsideMixin } from '../mixins/click-outside';
+// Composition
+import { useRect } from '../composition/use-rect';
+import { useTouch } from '../composition/use-touch';
+import { usePublicApi } from '../composition/use-public-api';
+import { useClickOutside } from '../composition/use-click-outside';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
-const THRESHOLD = 0.15;
 
 export default createComponent({
-  mixins: [
-    TouchMixin,
-    ClickOutsideMixin({
-      event: 'touchstart',
-      method: 'onClick',
-    }),
-  ],
-
   props: {
     disabled: Boolean,
     leftWidth: [Number, String],
@@ -34,211 +29,189 @@ export default createComponent({
 
   emits: ['open', 'close', 'click'],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    let opened;
+    let lockClick;
+    let startOffset;
+
+    const rootRef = ref();
+    const leftRef = ref();
+    const rightRef = ref();
+
+    const state = reactive({
       offset: 0,
       dragging: false,
-    };
-  },
+    });
 
-  computed: {
-    computedLeftWidth() {
-      return +this.leftWidth || this.getWidthByRef('left');
-    },
+    const touch = useTouch();
+    const { deltaX, direction } = touch;
 
-    computedRightWidth() {
-      return +this.rightWidth || this.getWidthByRef('right');
-    },
-  },
+    const getWidthByRef = (ref) => (ref.value ? useRect(ref).width : 0);
 
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
+    const leftWidth = computed(
+      () => +props.leftWidth || getWidthByRef(leftRef)
+    );
 
-  methods: {
-    getWidthByRef(ref) {
-      if (this.$refs[ref]) {
-        const rect = this.$refs[ref].getBoundingClientRect();
-        return rect.width;
-      }
+    const rightWidth = computed(
+      () => +props.rightWidth || getWidthByRef(rightRef)
+    );
 
-      return 0;
-    },
+    const open = (position) => {
+      opened = true;
+      state.offset = position === 'left' ? leftWidth.value : -rightWidth.value;
 
-    // @exposed-api
-    open(position) {
-      const offset =
-        position === 'left' ? this.computedLeftWidth : -this.computedRightWidth;
-
-      this.opened = true;
-      this.offset = offset;
-
-      this.$emit('open', {
+      emit('open', {
+        name: props.name,
         position,
-        name: this.name,
       });
-    },
+    };
 
-    // @exposed-api
-    close(position) {
-      this.offset = 0;
+    const close = (position) => {
+      state.offset = 0;
 
-      if (this.opened) {
-        this.opened = false;
-        this.$emit('close', {
+      if (opened) {
+        opened = false;
+        emit('close', {
+          name: props.name,
           position,
-          name: this.name,
         });
       }
-    },
+    };
 
-    onTouchStart(event) {
-      if (this.disabled) {
+    const toggle = (position) => {
+      const offset = Math.abs(state.offset);
+      const THRESHOLD = 0.15;
+      const threshold = opened ? 1 - THRESHOLD : THRESHOLD;
+
+      if (position === 'left' || position === 'right') {
+        const width = position === 'left' ? leftWidth.value : rightWidth.value;
+
+        if (width && offset > width * threshold) {
+          open(position);
+          return;
+        }
+      }
+
+      close();
+    };
+
+    const onTouchStart = (event) => {
+      if (!props.disabled) {
+        startOffset = state.offset;
+        touch.start(event);
+      }
+    };
+
+    const onTouchMove = (event) => {
+      if (props.disabled) {
         return;
       }
 
-      this.startOffset = this.offset;
-      this.touchStart(event);
-    },
+      touch.move(event);
 
-    onTouchMove(event) {
-      if (this.disabled) {
-        return;
-      }
+      if (direction.value === 'horizontal') {
+        lockClick = true;
+        state.dragging = true;
 
-      this.touchMove(event);
-
-      if (this.direction === 'horizontal') {
-        this.dragging = true;
-        this.lockClick = true;
-
-        const isPrevent = !this.opened || this.deltaX * this.startOffset < 0;
-
-        if (isPrevent) {
-          preventDefault(event, this.stopPropagation);
+        const isEdge = !opened || deltaX.value * startOffset < 0;
+        if (isEdge) {
+          preventDefault(event, props.stopPropagation);
         }
 
-        this.offset = range(
-          this.deltaX + this.startOffset,
-          -this.computedRightWidth,
-          this.computedLeftWidth
+        state.offset = range(
+          deltaX.value + startOffset,
+          -rightWidth.value,
+          leftWidth.value
         );
       }
-    },
+    };
 
-    onTouchEnd() {
-      if (this.disabled) {
-        return;
-      }
-
-      if (this.dragging) {
-        this.toggle(this.offset > 0 ? 'left' : 'right');
-        this.dragging = false;
+    const onTouchEnd = () => {
+      if (state.dragging) {
+        state.dragging = false;
+        toggle(state.offset > 0 ? 'left' : 'right');
 
         // compatible with desktop scenario
         setTimeout(() => {
-          this.lockClick = false;
+          lockClick = false;
         }, 0);
       }
-    },
+    };
 
-    toggle(direction) {
-      const offset = Math.abs(this.offset);
-      const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
-      const { computedLeftWidth, computedRightWidth } = this;
+    const onClick = (position = 'outside') => {
+      emit('click', position);
 
-      if (
-        computedRightWidth &&
-        direction === 'right' &&
-        offset > computedRightWidth * threshold
-      ) {
-        this.open('right');
-      } else if (
-        computedLeftWidth &&
-        direction === 'left' &&
-        offset > computedLeftWidth * threshold
-      ) {
-        this.open('left');
-      } else {
-        this.close();
-      }
-    },
-
-    onClick(position = 'outside') {
-      this.$emit('click', position);
-
-      if (this.opened && !this.lockClick) {
+      if (opened && !lockClick) {
         callInterceptor({
-          interceptor: this.beforeClose,
+          interceptor: props.beforeClose,
           args: [
             {
+              name: props.name,
               position,
-              name: this.name,
             },
           ],
           done: () => {
-            this.close(position);
+            close(position);
           },
         });
       }
-    },
-
-    getClickHandler(position, stop) {
-      return (event) => {
-        if (stop) {
-          event.stopPropagation();
-        }
-        this.onClick(position);
-      };
-    },
-
-    genLeftPart() {
-      const content = this.$slots.left?.();
-
-      if (content) {
-        return (
-          <div
-            ref="left"
-            class={bem('left')}
-            onClick={this.getClickHandler('left', true)}
-          >
-            {content}
-          </div>
-        );
-      }
-    },
-
-    genRightPart() {
-      const content = this.$slots.right?.();
-
-      if (content) {
-        return (
-          <div
-            ref="right"
-            class={bem('right')}
-            onClick={this.getClickHandler('right', true)}
-          >
-            {content}
-          </div>
-        );
-      }
-    },
-  },
-
-  render() {
-    const wrapperStyle = {
-      transform: `translate3d(${this.offset}px, 0, 0)`,
-      transitionDuration: this.dragging ? '0s' : '.6s',
     };
 
-    return (
-      <div class={bem()} onClick={this.getClickHandler('cell')}>
-        <div class={bem('wrapper')} style={wrapperStyle}>
-          {this.genLeftPart()}
-          {this.$slots.default?.()}
-          {this.genRightPart()}
+    const getClickHandler = (position, stop) => (event) => {
+      if (stop) {
+        event.stopPropagation();
+      }
+      onClick(position);
+    };
+
+    const renderSideContent = (position, ref) => {
+      if (slots[position]) {
+        return (
+          <div
+            ref={ref}
+            class={bem(position)}
+            onClick={getClickHandler(position, true)}
+          >
+            {slots[position]()}
+          </div>
+        );
+      }
+    };
+
+    usePublicApi({
+      open,
+      close,
+    });
+
+    useClickOutside({
+      element: rootRef,
+      event: 'touchstart',
+      callback: onClick,
+    });
+
+    return () => {
+      const wrapperStyle = {
+        transform: `translate3d(${state.offset}px, 0, 0)`,
+        transitionDuration: state.dragging ? '0s' : '.6s',
+      };
+
+      return (
+        <div
+          ref={rootRef}
+          class={bem()}
+          onClick={getClickHandler('cell')}
+          onTouchstart={onTouchStart}
+          onTouchmove={onTouchMove}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
+        >
+          <div class={bem('wrapper')} style={wrapperStyle}>
+            {renderSideContent('left', leftRef)}
+            {slots.default?.()}
+            {renderSideContent('right', rightRef)}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });
