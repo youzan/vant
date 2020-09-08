@@ -1,10 +1,13 @@
+import { computed } from 'vue';
+
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
-import { route, routeProps } from '../composition/use-route';
+import { GRID_KEY } from '../grid';
 
-// Mixins
-import { ChildrenMixin } from '../mixins/relation';
+// Composition
+import { useParent } from '../composition/use-relation';
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';
@@ -13,24 +16,22 @@ import Badge from '../badge';
 const [createComponent, bem] = createNamespace('grid-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanGrid')],
-
   props: {
     ...routeProps,
     dot: Boolean,
     text: String,
     icon: String,
-    iconPrefix: String,
     badge: [Number, String],
+    iconPrefix: String,
   },
 
-  emits: ['click'],
+  setup(props, { slots }) {
+    const { parent, index } = useParent(GRID_KEY);
+    const route = useRoute();
 
-  computed: {
-    style() {
-      const { square, gutter, columnNum } = this.parent;
+    const rootStyle = computed(() => {
+      const { square, gutter, columnNum } = parent.props;
       const percent = `${100 / columnNum}%`;
-
       const style = {
         flexBasis: percent,
       };
@@ -41,111 +42,103 @@ export default createComponent({
         const gutterValue = addUnit(gutter);
         style.paddingRight = gutterValue;
 
-        if (this.index >= columnNum) {
+        if (index.value >= columnNum) {
           style.marginTop = gutterValue;
         }
       }
 
       return style;
-    },
+    });
 
-    contentStyle() {
-      const { square, gutter } = this.parent;
+    const contentStyle = computed(() => {
+      const { square, gutter } = parent.props;
 
       if (square && gutter) {
         const gutterValue = addUnit(gutter);
-
         return {
           right: gutterValue,
           bottom: gutterValue,
           height: 'auto',
         };
       }
-    },
-  },
+    });
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    },
-
-    genIcon() {
-      if (this.$slots.icon) {
+    const renderIcon = () => {
+      if (slots.icon) {
         return (
           <div class={bem('icon-wrapper')}>
-            {this.$slots.icon()}
-            <Badge dot={this.dot} badge={this.badge} />
+            {slots.icon()}
+            <Badge dot={props.dot} badge={props.badge} />
           </div>
         );
       }
 
-      if (this.icon) {
+      if (props.icon) {
         return (
           <Icon
-            dot={this.dot}
-            name={this.icon}
-            size={this.parent.iconSize}
-            badge={this.badge}
+            dot={props.dot}
+            name={props.icon}
+            size={parent.props.iconSize}
+            badge={props.badge}
             class={bem('icon')}
-            classPrefix={this.iconPrefix}
+            classPrefix={props.iconPrefix}
           />
         );
       }
-    },
+    };
 
-    getText() {
-      if (this.$slots.text) {
-        return this.$slots.text();
+    const renderText = () => {
+      if (slots.text) {
+        return slots.text();
       }
-
-      if (this.text) {
-        return <span class={bem('text')}>{this.text}</span>;
+      if (props.text) {
+        return <span class={bem('text')}>{props.text}</span>;
       }
-    },
+    };
 
-    genContent() {
-      if (this.$slots.default) {
-        return this.$slots.default();
+    const renderContent = () => {
+      if (slots.default) {
+        return slots.default();
       }
+      return [renderIcon(), renderText()];
+    };
 
-      return [this.genIcon(), this.getText()];
-    },
-  },
+    return () => {
+      const {
+        center,
+        border,
+        square,
+        gutter,
+        direction,
+        clickable,
+      } = parent.props;
 
-  render() {
-    const {
-      center,
-      border,
-      square,
-      gutter,
-      direction,
-      clickable,
-    } = this.parent;
+      const classes = [
+        bem('content', [
+          direction,
+          {
+            center,
+            square,
+            clickable,
+            surround: border && gutter,
+          },
+        ]),
+        { [BORDER]: border },
+      ];
 
-    return (
-      <div class={[bem({ square })]} style={this.style}>
-        <div
-          style={this.contentStyle}
-          role={clickable ? 'button' : null}
-          tabindex={clickable ? 0 : null}
-          class={[
-            bem('content', [
-              direction,
-              {
-                center,
-                square,
-                clickable,
-                surround: border && gutter,
-              },
-            ]),
-            { [BORDER]: border },
-          ]}
-          onClick={this.onClick}
-        >
-          {this.genContent()}
+      return (
+        <div class={[bem({ square })]} style={rootStyle.value}>
+          <div
+            role={clickable ? 'button' : null}
+            class={classes}
+            style={contentStyle.value}
+            tabindex={clickable ? 0 : null}
+            onClick={route}
+          >
+            {renderContent()}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });

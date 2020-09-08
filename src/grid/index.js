@@ -1,12 +1,12 @@
+import { provide, reactive } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
-import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('grid');
 
-export default createComponent({
-  mixins: [ParentMixin('vanGrid')],
+export const GRID_KEY = 'vanGrid';
 
+export default createComponent({
   props: {
     square: Boolean,
     gutter: [Number, String],
@@ -27,25 +27,16 @@ export default createComponent({
     },
   },
 
-  computed: {
-    style() {
-      const { gutter } = this;
+  setup(props, { slots }) {
+    const children = reactive([]);
+    provide(GRID_KEY, { props, children });
 
-      if (gutter) {
-        return {
-          paddingLeft: addUnit(gutter),
-        };
-      }
-    },
-  },
-
-  render() {
-    return (
+    return () => (
       <div
-        style={this.style}
-        class={[bem(), { [BORDER_TOP]: this.border && !this.gutter }]}
+        style={{ paddingLeft: addUnit(props.gutter) }}
+        class={[bem(), { [BORDER_TOP]: props.border && !props.gutter }]}
       >
-        {this.$slots.default?.()}
+        {slots.default?.()}
       </div>
     );
   },
