@@ -1,22 +1,19 @@
+import { ref, provide, reactive, computed } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { getScroller } from '../utils/dom/scroll';
 
-// Mixins
-import { ParentMixin } from '../mixins/relation';
-import { ClickOutsideMixin } from '../mixins/click-outside';
+// Composition
+import { useRect } from '../composition/use-rect';
+import { useScroller } from '../composition/use-scroller';
+import { useGlobalEvent } from '../composition/use-global-event';
+import { useClickOutside } from '../composition/use-click-outside';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
-export default createComponent({
-  mixins: [
-    ParentMixin('vanDropdownMenu'),
-    ClickOutsideMixin({
-      event: 'click',
-      method: 'onClickOutside',
-    }),
-  ],
+export const DROPDOWN_KEY = 'vanDropdownMenu';
 
+export default createComponent({
   props: {
     zIndex: [Number, String],
     activeColor: String,
@@ -38,101 +35,108 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
-      offset: 0,
-    };
-  },
+  setup(props, { slots }) {
+    const offset = ref(0);
+    const barRef = ref();
+    const rootRef = ref();
+    const children = reactive([]);
 
-  computed: {
-    scroller() {
-      return getScroller(this.$el);
-    },
+    const scroller = useScroller(rootRef);
 
-    opened() {
-      return this.children.some((item) => item.showWrapper);
-    },
+    const opened = computed(() =>
+      children.some((item) => item.state.showWrapper)
+    );
 
-    barStyle() {
-      if (this.opened && isDef(this.zIndex)) {
+    const barStyle = computed(() => {
+      if (opened.value && isDef(props.zIndex)) {
         return {
-          zIndex: 1 + this.zIndex,
+          zIndex: 1 + props.zIndex,
         };
       }
-    },
-  },
+    });
 
-  methods: {
-    updateOffset() {
-      if (!this.$refs.bar) {
-        return;
+    const onClickOutside = () => {
+      children.forEach((item) => {
+        item.toggle(false);
+      });
+    };
+
+    const updateOffset = () => {
+      if (barRef.value) {
+        const rect = useRect(barRef);
+        if (props.direction === 'down') {
+          offset.value = rect.bottom;
+        } else {
+          offset.value = window.innerHeight - rect.top;
+        }
       }
+    };
 
-      const rect = this.$refs.bar.getBoundingClientRect();
-
-      if (this.direction === 'down') {
-        this.offset = rect.bottom;
-      } else {
-        this.offset = window.innerHeight - rect.top;
-      }
-    },
-
-    toggleItem(active) {
-      this.children.forEach((item, index) => {
+    const toggleItem = (active) => {
+      children.forEach((item, index) => {
         if (index === active) {
+          updateOffset();
           item.toggle();
-        } else if (item.showPopup) {
+        } else if (item.state.showPopup) {
           item.toggle(false, { immediate: true });
         }
       });
-    },
+    };
 
-    onClickOutside() {
-      this.children.forEach((item) => {
-        item.toggle(false);
-      });
-    },
-  },
+    const renderTitle = (item, index) => {
+      const { showPopup } = item.state;
+      const { disabled, titleClass } = item.props;
 
-  render() {
-    const Titles = this.children.map((item, index) => (
-      <div
-        role="button"
-        tabindex={item.disabled ? -1 : 0}
-        class={bem('item', { disabled: item.disabled })}
-        onClick={() => {
-          if (!item.disabled) {
-            this.toggleItem(index);
-          }
-        }}
-      >
-        <span
-          class={[
-            bem('title', {
-              active: item.showPopup,
-              down: item.showPopup === (this.direction === 'down'),
-            }),
-            item.titleClass,
-          ]}
-          style={{ color: item.showPopup ? this.activeColor : '' }}
-        >
-          <div class="van-ellipsis">
-            {item.$slots.title ? item.$slots.title() : item.displayTitle}
-          </div>
-        </span>
-      </div>
-    ));
-
-    return (
-      <div class={bem()}>
+      return (
         <div
-          ref="bar"
-          style={this.barStyle}
-          class={bem('bar', { opened: this.opened })}
+          role="button"
+          tabindex={disabled ? -1 : 0}
+          class={bem('item', { disabled })}
+          onClick={() => {
+            if (!disabled) {
+              toggleItem(index);
+            }
+          }}
         >
-          {Titles}
+          <span
+            class={[
+              bem('title', {
+                down: showPopup === (props.direction === 'down'),
+                active: showPopup,
+              }),
+              titleClass,
+            ]}
+            style={{ color: showPopup ? props.activeColor : '' }}
+          >
+            <div class="van-ellipsis">{item.renderTitle()}</div>
+          </span>
         </div>
-        {this.$slots.default?.()}
+      );
+    };
+
+    provide(DROPDOWN_KEY, { props, offset, children });
+
+    useClickOutside({
+      element: rootRef,
+      callback: onClickOutside,
+    });
+
+    useGlobalEvent(scroller, 'scroll', () => {
+      if (opened.value) {
+        updateOffset();
+      }
+    });
+
+    return () => (
+      <div ref={rootRef} class={bem()}>
+        <div
+          ref={barRef}
+          style={barStyle.value}
+          class={bem('bar', { opened: opened.value })}
+        >
+          {children.map(renderTitle)}
+        </div>
+        {slots.default?.()}
       </div>
     );
   },

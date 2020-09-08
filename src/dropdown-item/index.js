@@ -1,11 +1,12 @@
-import { Teleport } from 'vue';
+import { reactive, Teleport } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
-import { on, off } from '../utils/dom/event';
+import { DROPDOWN_KEY } from '../dropdown-menu';
 
-// Mixins
-import { ChildrenMixin } from '../mixins/relation';
+// Composition
+import { useParent } from '../composition/use-relation';
+import { usePublicApi } from '../composition/use-public-api';
 
 // Components
 import Cell from '../cell';
@@ -15,8 +16,6 @@ import Popup from '../popup';
 const [createComponent, bem] = createNamespace('dropdown-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanDropdownMenu')],
-
   props: {
     title: String,
     disabled: Boolean,
@@ -35,93 +34,79 @@ export default createComponent({
 
   emits: ['open', 'opened', 'close', 'closed', 'change', 'update:modelValue'],
 
-  data() {
-    return {
-      transition: true,
+  setup(props, { emit, slots }) {
+    const state = reactive({
       showPopup: false,
+      transition: true,
       showWrapper: false,
-    };
-  },
+    });
 
-  computed: {
-    displayTitle() {
-      if (this.title) {
-        return this.title;
+    const renderTitle = () => {
+      if (slots.title) {
+        return slots.title();
       }
 
-      const match = this.options.filter(
-        (option) => option.value === this.modelValue
+      if (props.title) {
+        return props.title;
+      }
+
+      const match = props.options.filter(
+        (option) => option.value === props.modelValue
       );
+
       return match.length ? match[0].text : '';
-    },
-  },
+    };
 
-  watch: {
-    showPopup(val) {
-      this.bindScroll(val);
-    },
-  },
-
-  beforeCreate() {
-    const createEmitter = (eventName) => () => this.$emit(eventName);
-
-    this.onOpen = createEmitter('open');
-    this.onClose = createEmitter('close');
-    this.onOpened = createEmitter('opened');
-  },
-
-  methods: {
-    // @exposed-api
-    toggle(show = !this.showPopup, options = {}) {
-      if (show === this.showPopup) {
+    const toggle = (show = !state.showPopup, options = {}) => {
+      if (show === state.showPopup) {
         return;
       }
 
-      this.transition = !options.immediate;
-      this.showPopup = show;
+      state.showPopup = show;
+      state.transition = !options.immediate;
 
       if (show) {
-        this.parent.updateOffset();
-        this.showWrapper = true;
+        state.showWrapper = true;
       }
-    },
+    };
 
-    bindScroll(bind) {
-      const { scroller } = this.parent;
-      const action = bind ? on : off;
-      action(scroller, 'scroll', this.onScroll, true);
-    },
+    const { parent } = useParent(DROPDOWN_KEY, {
+      props,
+      state,
+      toggle,
+      renderTitle,
+    });
 
-    onScroll() {
-      this.parent.updateOffset();
-    },
+    const createEmitter = (eventName) => () => emit(eventName);
+    const onOpen = createEmitter('open');
+    const onClose = createEmitter('close');
+    const onOpened = createEmitter('opened');
 
-    onClosed() {
-      this.showWrapper = false;
-      this.$emit('closed');
-    },
+    const onClosed = () => {
+      state.showWrapper = false;
+      emit('closed');
+    };
 
-    onClickWrapper(event) {
+    const onClickWrapper = (event) => {
       // prevent being identified as clicking outside and closed when using teleport
-      if (this.teleport) {
+      if (props.teleport) {
         event.stopPropagation();
       }
-    },
-  },
+    };
 
-  render() {
-    const {
-      zIndex,
-      offset,
-      overlay,
-      duration,
-      direction,
-      activeColor,
-      closeOnClickOverlay,
-    } = this.parent;
+    const renderOption = (option) => {
+      const { activeColor } = parent.props;
+      const active = option.value === props.modelValue;
 
-    const Options = this.options.map((option) => {
-      const active = option.value === this.modelValue;
+      const onClick = () => {
+        state.showPopup = false;
+
+        if (option.value !== props.modelValue) {
+          emit('update:modelValue', option.value);
+          emit('change', option.value);
+        }
+      };
+
       return (
         <Cell
           clickable
@@ -130,61 +115,67 @@ export default createComponent({
           title={option.text}
           class={bem('option', { active })}
           style={{ color: active ? activeColor : '' }}
-          onClick={() => {
-            this.showPopup = false;
-
-            if (option.value !== this.modelValue) {
-              this.$emit('update:modelValue', option.value);
-              this.$emit('change', option.value);
-            }
-          }}
+          onClick={onClick}
         >
           {active && (
             <Icon class={bem('icon')} color={activeColor} name="success" />
           )}
         </Cell>
       );
-    });
+    };
 
-    const style = { zIndex };
-    if (direction === 'down') {
-      style.top = `${offset}px`;
-    } else {
-      style.bottom = `${offset}px`;
-    }
+    const renderContent = () => {
+      const { offset } = parent;
+      const {
+        zIndex,
+        overlay,
+        duration,
+        direction,
+        closeOnClickOverlay,
+      } = parent.props;
 
-    const Content = (
-      <div
-        vShow={this.showWrapper}
-        ref="wrapper"
-        style={style}
-        class={bem([direction])}
-        onClick={this.onClickWrapper}
-      >
-        <Popup
-          vModel={[this.showPopup, 'show']}
-          overlay={overlay}
-          class={bem('content')}
-          position={direction === 'down' ? 'top' : 'bottom'}
-          duration={this.transition ? duration : 0}
-          lazyRender={this.lazyRender}
-          overlayStyle={{ position: 'absolute' }}
-          closeOnClickOverlay={closeOnClickOverlay}
-          onOpen={this.onOpen}
-          onClose={this.onClose}
-          onOpened={this.onOpened}
-          onClosed={this.onClosed}
+      const style = { zIndex };
+      if (direction === 'down') {
+        style.top = `${offset.value}px`;
+      } else {
+        style.bottom = `${offset.value}px`;
+      }
+
+      return (
+        <div
+          vShow={state.showWrapper}
+          style={style}
+          class={bem([direction])}
+          onClick={onClickWrapper}
         >
-          {Options}
-          {this.$slots.default?.()}
-        </Popup>
-      </div>
-    );
+          <Popup
+            vModel={[state.showPopup, 'show']}
+            class={bem('content')}
+            overlay={overlay}
+            position={direction === 'down' ? 'top' : 'bottom'}
+            duration={state.transition ? duration : 0}
+            lazyRender={props.lazyRender}
+            overlayStyle={{ position: 'absolute' }}
+            closeOnClickOverlay={closeOnClickOverlay}
+            onOpen={onOpen}
+            onClose={onClose}
+            onOpened={onOpened}
+            onClosed={onClosed}
+          >
+            {props.options.map(renderOption)}
+            {slots.default?.()}
+          </Popup>
+        </div>
+      );
+    };
 
-    if (this.teleport) {
-      return <Teleport to={this.teleport}>{Content}</Teleport>;
-    }
+    usePublicApi({ toggle });
 
-    return Content;
+    return () => {
+      if (props.teleport) {
+        return <Teleport to={props.teleport}>{renderContent()}</Teleport>;
+      }
+      return renderContent();
+    };
   },
 });
