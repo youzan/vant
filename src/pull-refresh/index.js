@@ -1,10 +1,13 @@
+import { ref, watch, reactive, nextTick } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
+import { getScrollTop } from '../utils/dom/scroll';
 import { preventDefault } from '../utils/dom/event';
-import { getScrollTop, getScroller } from '../utils/dom/scroll';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
+// Composition
+import { useTouch } from '../composition/use-touch';
+import { useScroller } from '../composition/use-scroller';
 
 // Components
 import Loading from '../loading';
@@ -15,8 +18,6 @@ const DEFAULT_HEAD_HEIGHT = 50;
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
 export default createComponent({
-  mixins: [TouchMixin],
-
   props: {
     disabled: Boolean,
     successText: String,
@@ -43,104 +44,36 @@ export default createComponent({
 
   emits: ['refresh', 'update:modelValue'],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    let reachTop;
+
+    const rootRef = ref();
+    const scroller = useScroller(rootRef);
+
+    const state = reactive({
       status: 'normal',
       distance: 0,
       duration: 0,
-    };
-  },
+    });
 
-  computed: {
-    touchable() {
-      return (
-        this.status !== 'loading' && this.status !== 'success' && !this.disabled
-      );
-    },
+    const touch = useTouch();
+    const { deltaY, direction } = touch;
 
-    headStyle() {
-      if (this.headHeight !== DEFAULT_HEAD_HEIGHT) {
+    const getHeadStyle = () => {
+      if (props.headHeight !== DEFAULT_HEAD_HEIGHT) {
         return {
-          height: `${this.headHeight}px`,
+          height: `${props.headHeight}px`,
         };
       }
-    },
-  },
+    };
 
-  watch: {
-    modelValue(loading) {
-      this.duration = this.animationDuration;
+    const isTouchable = () =>
+      state.status !== 'loading' &&
+      state.status !== 'success' &&
+      !props.disabled;
 
-      if (loading) {
-        this.setStatus(+this.headHeight, true);
-      } else if (
-        this.$slots.success ? this.$slots.success() : this.successText
-      ) {
-        this.showSuccessTip();
-      } else {
-        this.setStatus(0, false);
-      }
-    },
-  },
-
-  mounted() {
-    this.bindTouchEvent(this.$refs.track);
-    this.scrollEl = getScroller(this.$el);
-  },
-
-  methods: {
-    checkPullStart(event) {
-      this.ceiling = getScrollTop(this.scrollEl) === 0;
-
-      if (this.ceiling) {
-        this.duration = 0;
-        this.touchStart(event);
-      }
-    },
-
-    onTouchStart(event) {
-      if (this.touchable) {
-        this.checkPullStart(event);
-      }
-    },
-
-    onTouchMove(event) {
-      if (!this.touchable) {
-        return;
-      }
-
-      if (!this.ceiling) {
-        this.checkPullStart(event);
-      }
-
-      this.touchMove(event);
-
-      if (this.ceiling && this.deltaY >= 0 && this.direction === 'vertical') {
-        preventDefault(event);
-        this.setStatus(this.ease(this.deltaY));
-      }
-    },
-
-    onTouchEnd() {
-      if (this.touchable && this.ceiling && this.deltaY) {
-        this.duration = this.animationDuration;
-
-        if (this.status === 'loosing') {
-          this.setStatus(+this.headHeight, true);
-          this.$emit('update:modelValue', true);
-
-          // ensure value change can be watched
-          this.$nextTick(() => {
-            this.$emit('refresh');
-          });
-        } else {
-          this.setStatus(0);
-        }
-      }
-    },
-
-    ease(distance) {
-      const headHeight = +this.headHeight;
+    const ease = (distance) => {
+      const headHeight = +props.headHeight;
 
       if (distance > headHeight) {
         if (distance < headHeight * 2) {
@@ -151,34 +84,31 @@ export default createComponent({
       }
 
       return Math.round(distance);
-    },
+    };
 
-    setStatus(distance, isLoading) {
-      let status;
+    const setStatus = (distance, isLoading) => {
+      state.distance = distance;
+
       if (isLoading) {
-        status = 'loading';
+        state.status = 'loading';
       } else if (distance === 0) {
-        status = 'normal';
+        state.status = 'normal';
+      } else if (distance < props.headHeight) {
+        state.status = 'pulling';
       } else {
-        status = distance < this.headHeight ? 'pulling' : 'loosing';
+        state.status = 'loosing';
       }
+    };
 
-      this.distance = distance;
+    const renderStatus = () => {
+      const { status, distance } = state;
 
-      if (status !== this.status) {
-        this.status = status;
-      }
-    },
-
-    genStatus() {
-      const { status, distance } = this;
-
-      if (this.$slots[status]) {
-        return this.$slots[status]({ distance });
+      if (slots[status]) {
+        return slots[status]({ distance });
       }
 
       const nodes = [];
-      const text = (status !== 'normal' && this[`${status}Text`]) || t(status);
+      const text = (status !== 'normal' && props[`${status}Text`]) || t(status);
 
       if (TEXT_STATUS.indexOf(status) !== -1) {
         nodes.push(<div class={bem('text')}>{text}</div>);
@@ -189,32 +119,104 @@ export default createComponent({
       }
 
       return nodes;
-    },
-
-    showSuccessTip() {
-      this.status = 'success';
-
-      setTimeout(() => {
-        this.setStatus(0);
-      }, this.successDuration);
-    },
-  },
-
-  render() {
-    const trackStyle = {
-      transitionDuration: `${this.duration}ms`,
-      transform: this.distance ? `translate3d(0,${this.distance}px, 0)` : '',
     };
 
-    return (
-      <div class={bem()}>
-        <div ref="track" class={bem('track')} style={trackStyle}>
-          <div class={bem('head')} style={this.headStyle}>
-            {this.genStatus()}
-          </div>
-          {this.$slots.default?.()}
-        </div>
-      </div>
+    const showSuccessTip = () => {
+      state.status = 'success';
+
+      setTimeout(() => {
+        setStatus(0);
+      }, props.successDuration);
+    };
+
+    const checkPosition = (event) => {
+      reachTop = getScrollTop(scroller.value) === 0;
+
+      if (reachTop) {
+        state.duration = 0;
+        touch.start(event);
+      }
+    };
+
+    const onTouchStart = (event) => {
+      if (isTouchable()) {
+        checkPosition(event);
+      }
+    };
+
+    const onTouchMove = (event) => {
+      if (isTouchable()) {
+        if (!reachTop) {
+          checkPosition(event);
+        }
+
+        touch.move(event);
+
+        if (reachTop && deltaY.value >= 0 && direction.value === 'vertical') {
+          preventDefault(event);
+          setStatus(ease(deltaY.value));
+        }
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (reachTop && deltaY.value && isTouchable()) {
+        state.duration = props.animationDuration;
+
+        if (state.status === 'loosing') {
+          setStatus(+props.headHeight, true);
+          emit('update:modelValue', true);
+
+          // ensure value change can be watched
+          nextTick(() => {
+            emit('refresh');
+          });
+        } else {
+          setStatus(0);
+        }
+      }
+    };
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        state.duration = props.animationDuration;
+
+        if (value) {
+          setStatus(+props.headHeight, true);
+        } else if (slots.success || props.successText) {
+          showSuccessTip();
+        } else {
+          setStatus(0, false);
+        }
+      }
     );
+
+    return () => {
+      const trackStyle = {
+        transitionDuration: `${state.duration}ms`,
+        transform: state.distance
+          ? `translate3d(0,${state.distance}px, 0)`
+          : '',
+      };
+
+      return (
+        <div ref={rootRef} class={bem()}>
+          <div
+            class={bem('track')}
+            style={trackStyle}
+            onTouchstart={onTouchStart}
+            onTouchmove={onTouchMove}
+            onTouchend={onTouchEnd}
+            onTouchcancel={onTouchEnd}
+          >
+            <div class={bem('head')} style={getHeadStyle()}>
+              {renderStatus()}
+            </div>
+            {slots.default?.()}
+          </div>
+        </div>
+      );
+    };
   },
 });
