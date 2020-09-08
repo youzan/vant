@@ -10,6 +10,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.6](https://github.com/youzan/vant/compare/v2.10.5...v2.10.6)
+
+`2020-09-08`
+
+**Bug Fixes**
+
+- Calendar: readonly not work in multiple mode [#7127](https://github.com/youzan/vant/issues/7127)
+- CouponCell: fix discounted price [#7123](https://github.com/youzan/vant/issues/7123)
+- List: scoped style not applied to first child [#7128](https://github.com/youzan/vant/issues/7128)
+
 ### [v2.10.5](https://github.com/youzan/vant/compare/v2.10.4...v2.10.5)
 
 `2020-09-06`
