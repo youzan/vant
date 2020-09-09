@@ -1,5 +1,4 @@
 // Utils
-import { inBrowser } from '../utils';
 import { bem, createComponent } from './shared';
 
 // Mixins
@@ -113,7 +112,7 @@ export default createComponent({
 
   methods: {
     resize() {
-      if (inBrowser && this.$el && this.$el.getBoundingClientRect) {
+      if (this.$el && this.$el.getBoundingClientRect) {
         const rect = this.$el.getBoundingClientRect();
         this.rootWidth = rect.width;
         this.rootHeight = rect.height;
