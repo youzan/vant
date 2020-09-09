@@ -1,4 +1,4 @@
-import { Ref, ref, onMounted } from 'vue';
+import { Ref, ref, onMounted, nextTick } from 'vue';
 
 export const useRect = (el: Ref<Element>) => el.value.getBoundingClientRect();
 
@@ -6,7 +6,9 @@ export const useHeight = (el: Ref<Element>) => {
   const height = ref();
 
   onMounted(() => {
-    height.value = useRect(el).height;
+    nextTick(() => {
+      height.value = useRect(el).height;
+    });
   });
 
   return height;
