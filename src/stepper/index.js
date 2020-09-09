@@ -282,7 +282,7 @@ export default createComponent({
           {...createListeners('minus')}
         />
         <input
-          ref="input"
+          ref={inputRef}
           type={props.integer ? 'tel' : 'text'}
           role="spinbutton"
           class={bem('input')}
