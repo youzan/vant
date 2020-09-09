@@ -1,19 +1,23 @@
+import { ref, computed, watch, nextTick, reactive, provide } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
 import { isHidden } from '../utils/dom/style';
 import { preventDefault } from '../utils/dom/event';
 import {
-  getScroller,
   getScrollTop,
   getElementTop,
   getRootScrollTop,
   setRootScrollTop,
 } from '../utils/dom/scroll';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
-import { ParentMixin } from '../mixins/relation';
-import { BindEventMixin } from '../mixins/bind-event';
+// Composition
+import { useRect } from '../composition/use-rect';
+import { useTouch } from '../composition/use-touch';
+import { useScroller } from '../composition/use-scroller';
+import { useGlobalEvent } from '../composition/use-global-event';
+
+export const INDEX_BAR_KEY = 'vanIndexBar';
 
 function genAlphabet() {
   const indexList = [];
@@ -29,18 +33,6 @@ function genAlphabet() {
 const [createComponent, bem] = createNamespace('index-bar');
 
 export default createComponent({
-  mixins: [
-    TouchMixin,
-    ParentMixin('vanIndexBar'),
-    BindEventMixin(function (bind) {
-      if (!this.scroller) {
-        this.scroller = getScroller(this.$el);
-      }
-
-      bind(this.scroller, 'scroll', this.onScroll);
-    }),
-  ],
-
   props: {
     zIndex: [Number, String],
     highlightColor: String,
@@ -60,124 +52,163 @@ export default createComponent({
 
   emits: ['select'],
 
-  data() {
-    return {
-      activeAnchorIndex: null,
-    };
-  },
+  setup(props, { emit, slots }) {
+    const rootRef = ref();
+    const activeAnchor = ref();
+    const children = reactive([]);
 
-  computed: {
-    sidebarStyle() {
-      if (isDef(this.zIndex)) {
+    const touch = useTouch();
+    const scroller = useScroller(rootRef);
+
+    provide(INDEX_BAR_KEY, { props, children });
+
+    const sidebarStyle = computed(() => {
+      if (isDef(props.zIndex)) {
         return {
-          zIndex: this.zIndex + 1,
+          zIndex: 1 + props.zIndex,
         };
       }
-    },
+    });
 
-    highlightStyle() {
-      const { highlightColor } = this;
-      if (highlightColor) {
+    const highlightStyle = computed(() => {
+      if (props.highlightColor) {
         return {
-          color: highlightColor,
+          color: props.highlightColor,
         };
       }
-    },
-  },
+    });
 
-  watch: {
-    indexList() {
-      this.$nextTick(this.onScroll);
-    },
-  },
-
-  methods: {
-    onScroll() {
-      if (isHidden(this.$el)) {
-        return;
+    const getScrollerRect = () => {
+      if (scroller.value.getBoundingClientRect) {
+        return useRect(scroller);
       }
-
-      const scrollTop = getScrollTop(this.scroller);
-      const scrollerRect = this.getScrollerRect();
-      const rects = this.children.map((item) => ({
-        height: item.height,
-        top: this.getElementTop(item.$el, scrollerRect),
-      }));
-
-      const active = this.getActiveAnchorIndex(scrollTop, rects);
-
-      this.activeAnchorIndex = this.indexList[active];
-
-      if (this.sticky) {
-        this.children.forEach((item, index) => {
-          if (index === active || index === active - 1) {
-            const rect = item.$el.getBoundingClientRect();
-            item.left = rect.left;
-            item.width = rect.width;
-          } else {
-            item.left = null;
-            item.width = null;
-          }
-
-          if (index === active) {
-            item.active = true;
-            item.top =
-              Math.max(this.stickyOffsetTop, rects[index].top - scrollTop) +
-              scrollerRect.top;
-          } else if (index === active - 1) {
-            const activeItemTop = rects[active].top - scrollTop;
-            item.active = activeItemTop > 0;
-            item.top = activeItemTop + scrollerRect.top - item.height;
-          } else {
-            item.active = false;
-          }
-        });
-      }
-    },
-
-    getScrollerRect() {
-      if (this.scroller.getBoundingClientRect) {
-        return this.scroller.getBoundingClientRect();
-      }
-
       return {
         top: 0,
         left: 0,
       };
-    },
+    };
 
-    getElementTop(ele, scrollerRect) {
-      const { scroller } = this;
-
-      if (scroller === window || scroller === document.body) {
-        return getElementTop(ele);
+    const getAnchorTop = (element, scrollerRect) => {
+      if (scroller.value === window || scroller.value === document.body) {
+        return getElementTop(element);
       }
 
-      const eleRect = ele.getBoundingClientRect();
+      const rect = useRect(element);
+      return rect.top - scrollerRect.top + getScrollTop(scroller);
+    };
 
-      return eleRect.top - scrollerRect.top + getScrollTop(scroller);
-    },
-
-    getActiveAnchorIndex(scrollTop, rects) {
-      for (let i = this.children.length - 1; i >= 0; i--) {
+    const getActiveAnchor = (scrollTop, rects) => {
+      for (let i = children.length - 1; i >= 0; i--) {
         const prevHeight = i > 0 ? rects[i - 1].height : 0;
-        const reachTop = this.sticky ? prevHeight + this.stickyOffsetTop : 0;
+        const reachTop = props.sticky ? prevHeight + props.stickyOffsetTop : 0;
 
         if (scrollTop + reachTop >= rects[i].top) {
           return i;
         }
       }
+
       return -1;
-    },
+    };
 
-    onClick(event) {
-      this.scrollToElement(event.target);
-    },
+    const onScroll = () => {
+      if (isHidden(rootRef.value)) {
+        return;
+      }
 
-    onTouchMove(event) {
-      this.touchMove(event);
+      const { sticky, indexList } = props;
+      const scrollTop = getScrollTop(scroller.value);
+      const scrollerRect = getScrollerRect();
 
-      if (this.direction === 'vertical') {
+      const rects = children.map((item) => ({
+        height: item.height,
+        top: getAnchorTop(item.rootRef, scrollerRect),
+      }));
+
+      const active = getActiveAnchor(scrollTop, rects);
+
+      activeAnchor.value = indexList[active];
+
+      if (sticky) {
+        children.forEach((item, index) => {
+          const { state, height, rootRef } = item;
+          if (index === active || index === active - 1) {
+            const rect = rootRef.getBoundingClientRect();
+            state.left = rect.left;
+            state.width = rect.width;
+          } else {
+            state.left = null;
+            state.width = null;
+          }
+
+          if (index === active) {
+            state.active = true;
+            state.top =
+              Math.max(props.stickyOffsetTop, rects[index].top - scrollTop) +
+              scrollerRect.top;
+          } else if (index === active - 1) {
+            const activeItemTop = rects[active].top - scrollTop;
+            state.active = activeItemTop > 0;
+            state.top = activeItemTop + scrollerRect.top - height;
+          } else {
+            state.active = false;
+          }
+        });
+      }
+    };
+
+    useGlobalEvent(scroller, 'scroll', onScroll);
+
+    watch(
+      () => props.indexList,
+      () => {
+        nextTick(onScroll);
+      }
+    );
+
+    const renderIndexes = () =>
+      props.indexList.map((index) => {
+        const active = index === activeAnchor.value;
+        return (
+          <span
+            class={bem('index', { active })}
+            style={active ? highlightStyle.value : null}
+            data-index={index}
+          >
+            {index}
+          </span>
+        );
+      });
+
+    const scrollToElement = (element) => {
+      const { index } = element.dataset;
+      if (!index) {
+        return;
+      }
+
+      const match = children.filter(
+        (item) => String(item.props.index) === index
+      );
+
+      if (match[0]) {
+        match[0].rootRef.scrollIntoView();
+
+        if (props.sticky && props.stickyOffsetTop) {
+          setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
+        }
+
+        emit('select', match[0].index);
+      }
+    };
+
+    const onClick = (event) => {
+      scrollToElement(event.target);
+    };
+
+    let touchActiveIndex;
+    const onTouchMove = (event) => {
+      touch.move(event);
+
+      if (touch.direction.value === 'vertical') {
         preventDefault(event);
 
         const { clientX, clientY } = event.touches[0];
@@ -186,68 +217,26 @@ export default createComponent({
           const { index } = target.dataset;
 
           /* istanbul ignore else */
-          if (this.touchActiveIndex !== index) {
-            this.touchActiveIndex = index;
-            this.scrollToElement(target);
+          if (touchActiveIndex !== index) {
+            touchActiveIndex = index;
+            scrollToElement(target);
           }
         }
       }
-    },
+    };
 
-    scrollToElement(element) {
-      const { index } = element.dataset;
-      if (!index) {
-        return;
-      }
-
-      const match = this.children.filter(
-        (item) => String(item.index) === index
-      );
-      if (match[0]) {
-        match[0].scrollIntoView();
-
-        if (this.sticky && this.stickyOffsetTop) {
-          setRootScrollTop(getRootScrollTop() - this.stickyOffsetTop);
-        }
-
-        this.$emit('select', match[0].index);
-      }
-    },
-
-    onTouchEnd() {
-      this.active = null;
-    },
-  },
-
-  render() {
-    const Indexes = this.indexList.map((index) => {
-      const active = index === this.activeAnchorIndex;
-
-      return (
-        <span
-          class={bem('index', { active })}
-          style={active ? this.highlightStyle : null}
-          data-index={index}
-        >
-          {index}
-        </span>
-      );
-    });
-
-    return (
-      <div class={bem()}>
+    return () => (
+      <div ref={rootRef} class={bem()}>
         <div
           class={bem('sidebar')}
-          style={this.sidebarStyle}
-          onClick={this.onClick}
-          onTouchstart={this.touchStart}
-          onTouchmove={this.onTouchMove}
-          onTouchend={this.onTouchEnd}
-          onTouchcancel={this.onTouchEnd}
+          style={sidebarStyle.value}
+          onClick={onClick}
+          onTouchstart={touch.start}
+          onTouchmove={onTouchMove}
         >
-          {Indexes}
+          {renderIndexes()}
         </div>
-        {this.$slots.default?.()}
+        {slots.default?.()}
       </div>
     );
   },

@@ -1,67 +1,71 @@
+import { reactive, ref, computed } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
 import { BORDER_BOTTOM } from '../utils/constant';
+import { INDEX_BAR_KEY } from '../index-bar';
+
+// Composition
+import { useHeight } from '../composition/use-rect';
+import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('index-anchor');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanIndexBar', { indexKey: 'childrenIndex' })],
-
   props: {
     index: [Number, String],
   },
 
-  data() {
-    return {
+  setup(props, { slots }) {
+    const state = reactive({
       top: 0,
       left: null,
       width: null,
       active: false,
-    };
-  },
+    });
 
-  computed: {
-    sticky() {
-      return this.active && this.parent.sticky;
-    },
+    const rootRef = ref();
+    const height = useHeight(rootRef);
 
-    anchorStyle() {
-      if (this.sticky) {
+    const { parent } = useParent(INDEX_BAR_KEY, {
+      props,
+      state,
+      height,
+      rootRef,
+    });
+
+    const isSticky = () => state.active && parent.props.sticky;
+
+    const anchorStyle = computed(() => {
+      const { zIndex, highlightColor } = parent.props;
+
+      if (isSticky()) {
         return {
-          zIndex: `${this.parent.zIndex}`,
-          left: this.left ? `${this.left}px` : null,
-          width: this.width ? `${this.width}px` : null,
-          transform: `translate3d(0, ${this.top}px, 0)`,
-          color: this.parent.highlightColor,
+          zIndex: `${zIndex}`,
+          left: state.left ? `${state.left}px` : null,
+          width: state.width ? `${state.width}px` : null,
+          transform: state.top ? `translate3d(0, ${state.top}px, 0)` : null,
+          color: highlightColor,
         };
       }
-    },
-  },
-
-  mounted() {
-    this.$nextTick(() => {
-      this.height = this.$el.offsetHeight;
     });
-  },
 
-  methods: {
-    scrollIntoView() {
-      this.$el.scrollIntoView();
-    },
-  },
+    return () => {
+      const sticky = isSticky();
 
-  render() {
-    const { sticky } = this;
-
-    return (
-      <div style={{ height: sticky ? `${this.height}px` : null }}>
+      return (
         <div
-          style={this.anchorStyle}
-          class={[bem({ sticky }), { [BORDER_BOTTOM]: sticky }]}
+          ref={rootRef}
+          style={{ height: sticky ? `${height.value}px` : null }}
         >
-          {this.$slots.default ? this.$slots.default() : this.index}
+          <div
+            style={anchorStyle.value}
+            class={[bem({ sticky }), { [BORDER_BOTTOM]: sticky }]}
+          >
+            {slots.default ? slots.default() : props.index}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });
