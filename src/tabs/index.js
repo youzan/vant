@@ -4,6 +4,7 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
+import { unitToPx } from '../utils/format/unit';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor } from '../utils/interceptor';
 import {
@@ -119,9 +120,13 @@ export default createComponent({
       }
     },
 
+    offsetTopPx() {
+      return unitToPx(this.offsetTop);
+    },
+
     scrollOffset() {
       if (this.sticky) {
-        return +this.offsetTop + this.tabHeight;
+        return this.offsetTopPx + this.tabHeight;
       }
       return 0;
     },
@@ -151,7 +156,7 @@ export default createComponent({
 
       // scroll to correct position
       if (this.stickyFixed && !this.scrollspy) {
-        setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTop));
+        setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTopPx));
       }
     },
 
