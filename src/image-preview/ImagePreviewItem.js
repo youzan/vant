@@ -27,8 +27,8 @@ export default {
     active: Number,
     minZoom: [Number, String],
     maxZoom: [Number, String],
-    windowWidth: Number,
-    windowHeight: Number,
+    rootWidth: Number,
+    rootHeight: Number,
   },
 
   data() {
@@ -46,9 +46,9 @@ export default {
 
   computed: {
     vertical() {
-      const { windowWidth, windowHeight } = this;
-      const windowRatio = windowHeight / windowWidth;
-      return this.imageRatio > windowRatio;
+      const { rootWidth, rootHeight } = this;
+      const rootRatio = rootHeight / rootWidth;
+      return this.imageRatio > rootRatio;
     },
 
     imageStyle() {
@@ -69,10 +69,10 @@ export default {
     maxMoveX() {
       if (this.imageRatio) {
         const displayWidth = this.vertical
-          ? this.windowHeight / this.imageRatio
-          : this.windowWidth;
+          ? this.rootHeight / this.imageRatio
+          : this.rootWidth;
 
-        return Math.max(0, (this.scale * displayWidth - this.windowWidth) / 2);
+        return Math.max(0, (this.scale * displayWidth - this.rootWidth) / 2);
       }
 
       return 0;
@@ -81,13 +81,10 @@ export default {
     maxMoveY() {
       if (this.imageRatio) {
         const displayHeight = this.vertical
-          ? this.windowHeight
-          : this.windowWidth * this.imageRatio;
+          ? this.rootHeight
+          : this.rootWidth * this.imageRatio;
 
-        return Math.max(
-          0,
-          (this.scale * displayHeight - this.windowHeight) / 2
-        );
+        return Math.max(0, (this.scale * displayHeight - this.rootHeight) / 2);
       }
 
       return 0;
