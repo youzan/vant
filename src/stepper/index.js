@@ -1,14 +1,19 @@
-import { createNamespace, isDef, addUnit, getSizeStyle } from '../utils';
+import { ref, computed, watch } from 'vue';
+
+// Utils
+import { isNaN } from '../utils/validate/number';
+import { formatNumber } from '../utils/format/number';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
-import { formatNumber } from '../utils/format/number';
-import { isNaN } from '../utils/validate/number';
-import { FieldMixin } from '../mixins/field';
+import { createNamespace, isDef, addUnit, getSizeStyle } from '../utils';
+
+// Composition
+import { useParentField } from '../composition/use-parent-field';
 
 const [createComponent, bem] = createNamespace('stepper');
 
-const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
+const LONG_PRESS_START_TIME = 600;
 
 function equal(value1, value2) {
   return String(value1) === String(value2);
@@ -21,8 +26,6 @@ function add(num1, num2) {
 }
 
 export default createComponent({
-  mixins: [FieldMixin],
-
   props: {
     theme: String,
     integer: Boolean,
@@ -81,247 +84,227 @@ export default createComponent({
     'update:modelValue',
   ],
 
-  data() {
-    const defaultValue = this.modelValue ?? this.defaultValue;
-    const value = this.format(defaultValue);
+  setup(props, { emit }) {
+    const format = (value) => {
+      const { min, max, allowEmpty, decimalLength } = props;
 
-    if (!equal(value, this.modelValue)) {
-      this.$emit('update:modelValue', value);
-    }
-
-    return {
-      currentValue: value,
-    };
-  },
-
-  computed: {
-    minusDisabled() {
-      return (
-        this.disabled || this.disableMinus || this.currentValue <= +this.min
-      );
-    },
-
-    plusDisabled() {
-      return (
-        this.disabled || this.disablePlus || this.currentValue >= +this.max
-      );
-    },
-
-    inputStyle() {
-      const style = {};
-
-      if (this.inputWidth) {
-        style.width = addUnit(this.inputWidth);
-      }
-
-      if (this.buttonSize) {
-        style.height = addUnit(this.buttonSize);
-      }
-
-      return style;
-    },
-
-    buttonStyle() {
-      return getSizeStyle(this.buttonSize);
-    },
-  },
-
-  watch: {
-    max: 'check',
-    min: 'check',
-    integer: 'check',
-    decimalLength: 'check',
-
-    modelValue(val) {
-      if (!equal(val, this.currentValue)) {
-        this.currentValue = this.format(val);
-      }
-    },
-
-    currentValue(val) {
-      this.$emit('update:modelValue', val);
-      this.$emit('change', val, { name: this.name });
-    },
-  },
-
-  methods: {
-    check() {
-      const val = this.format(this.currentValue);
-      if (!equal(val, this.currentValue)) {
-        this.currentValue = val;
-      }
-    },
-
-    // formatNumber illegal characters
-    formatNumber(value) {
-      return formatNumber(String(value), !this.integer);
-    },
-
-    format(value) {
-      if (this.allowEmpty && value === '') {
+      if (allowEmpty && value === '') {
         return value;
       }
 
-      value = this.formatNumber(value);
-
-      // format range
+      value = formatNumber(String(value), !props.integer);
       value = value === '' ? 0 : +value;
-      value = isNaN(value) ? this.min : value;
-      value = Math.max(Math.min(this.max, value), this.min);
+      value = isNaN(value) ? min : value;
+      value = Math.max(Math.min(max, value), min);
 
       // format decimal
-      if (isDef(this.decimalLength)) {
-        value = value.toFixed(this.decimalLength);
+      if (isDef(decimalLength)) {
+        value = value.toFixed(decimalLength);
       }
 
       return value;
-    },
+    };
 
-    onInput(event) {
+    const getInitialValue = () => {
+      const defaultValue = props.modelValue ?? props.defaultValue;
+      const value = format(defaultValue);
+
+      if (!equal(value, props.modelValue)) {
+        emit('update:modelValue', value);
+      }
+
+      return value;
+    };
+
+    let actionType;
+    const inputRef = ref();
+    const current = ref(getInitialValue());
+
+    const minusDisabled = computed(
+      () => props.disabled || props.disableMinus || current.value <= +props.min
+    );
+
+    const plusDisabled = computed(
+      () => props.disabled || props.disablePlus || current.value >= +props.max
+    );
+
+    const inputStyle = computed(() => ({
+      width: addUnit(props.inputWidth),
+      height: addUnit(props.buttonSize),
+    }));
+
+    const buttonStyle = computed(() => getSizeStyle(props.buttonSize));
+
+    const check = () => {
+      const value = format(current.value);
+      if (!equal(value, current.value)) {
+        current.value = value;
+      }
+    };
+
+    const emitChange = (value) => {
+      if (props.asyncChange) {
+        emit('update:modelValue', value);
+        emit('change', value, { name: props.name });
+      } else {
+        current.value = value;
+      }
+    };
+
+    const onChange = () => {
+      if (props[`${actionType}Disabled`]) {
+        emit('overlimit', actionType);
+        return;
+      }
+
+      const diff = actionType === 'minus' ? -props.step : +props.step;
+      const value = format(add(+current.value, diff));
+
+      emitChange(value);
+      emit(actionType);
+    };
+
+    const onInput = (event) => {
       const { value } = event.target;
+      const { decimalLength } = props;
 
-      let formatted = this.formatNumber(value);
+      let formatted = formatNumber(String(value), !props.integer);
 
       // limit max decimal length
-      if (isDef(this.decimalLength) && formatted.indexOf('.') !== -1) {
+      if (isDef(decimalLength) && formatted.indexOf('.') !== -1) {
         const pair = formatted.split('.');
-        formatted = `${pair[0]}.${pair[1].slice(0, this.decimalLength)}`;
+        formatted = `${pair[0]}.${pair[1].slice(0, decimalLength)}`;
       }
 
       if (!equal(value, formatted)) {
         event.target.value = formatted;
       }
 
-      this.emitChange(formatted);
-    },
+      emitChange(formatted);
+    };
 
-    emitChange(value) {
-      if (this.asyncChange) {
-        this.$emit('update:modelValue', value);
-        this.$emit('change', value, { name: this.name });
-      } else {
-        this.currentValue = value;
-      }
-    },
-
-    onChange() {
-      const { type } = this;
-
-      if (this[`${type}Disabled`]) {
-        this.$emit('overlimit', type);
-        return;
-      }
-
-      const diff = type === 'minus' ? -this.step : +this.step;
-
-      const value = this.format(add(+this.currentValue, diff));
-
-      this.emitChange(value);
-      this.$emit(type);
-    },
-
-    onFocus(event) {
+    const onFocus = (event) => {
       // readonly not work in lagacy mobile safari
-      if (this.disableInput && this.$refs.input) {
-        this.$refs.input.blur();
+      if (props.disableInput && inputRef.value) {
+        inputRef.value.blur();
       } else {
-        this.$emit('focus', event);
+        emit('focus', event);
       }
-    },
+    };
 
-    onBlur(event) {
-      const value = this.format(event.target.value);
+    const onBlur = (event) => {
+      const value = format(event.target.value);
       event.target.value = value;
-      this.currentValue = value;
-      this.$emit('blur', event);
-
+      current.value = value;
+      emit('blur', event);
       resetScroll();
-    },
+    };
 
-    longPressStep() {
-      this.longPressTimer = setTimeout(() => {
-        this.onChange();
-        this.longPressStep(this.type);
+    let isLongPress;
+    let longPressTimer;
+
+    const longPressStep = () => {
+      longPressTimer = setTimeout(() => {
+        onChange();
+        longPressStep(actionType);
       }, LONG_PRESS_INTERVAL);
-    },
+    };
 
-    onTouchStart() {
-      if (!this.longPress) {
-        return;
+    const onTouchStart = () => {
+      if (props.longPress) {
+        isLongPress = false;
+        clearTimeout(longPressTimer);
+        longPressTimer = setTimeout(() => {
+          isLongPress = true;
+          onChange();
+          longPressStep();
+        }, LONG_PRESS_START_TIME);
       }
+    };
 
-      clearTimeout(this.longPressTimer);
-      this.isLongPress = false;
-
-      this.longPressTimer = setTimeout(() => {
-        this.isLongPress = true;
-        this.onChange();
-        this.longPressStep();
-      }, LONG_PRESS_START_TIME);
-    },
-
-    onTouchEnd(event) {
-      if (!this.longPress) {
-        return;
+    const onTouchEnd = (event) => {
+      if (props.longPress) {
+        clearTimeout(longPressTimer);
+        if (isLongPress) {
+          preventDefault(event);
+        }
       }
+    };
 
-      clearTimeout(this.longPressTimer);
-
-      if (this.isLongPress) {
-        preventDefault(event);
-      }
-    },
-  },
-
-  render() {
     const createListeners = (type) => ({
       onClick: (e) => {
         // disable double tap scrolling on mobile safari
         e.preventDefault();
-        this.type = type;
-        this.onChange();
+        actionType = type;
+        onChange();
       },
       onTouchstart: () => {
-        this.type = type;
-        this.onTouchStart();
+        actionType = type;
+        onTouchStart();
       },
-      onTouchend: this.onTouchEnd,
-      onTouchcancel: this.onTouchEnd,
+      onTouchend: onTouchEnd,
+      onTouchcancel: onTouchEnd,
     });
 
-    return (
-      <div class={bem([this.theme])}>
+    watch(
+      [
+        () => props.max,
+        () => props.min,
+        () => props.integer,
+        () => props.decimalLength,
+      ],
+      check
+    );
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        if (!equal(value, current.value)) {
+          current.value = value;
+        }
+      }
+    );
+
+    watch(current, (value) => {
+      emit('update:modelValue', value);
+      emit('change', value, { name: props.name });
+    });
+
+    useParentField(() => props.modelValue);
+
+    return () => (
+      <div class={bem([props.theme])}>
         <button
-          vShow={this.showMinus}
+          vShow={props.showMinus}
           type="button"
-          style={this.buttonStyle}
-          class={bem('minus', { disabled: this.minusDisabled })}
+          style={buttonStyle.value}
+          class={bem('minus', { disabled: minusDisabled.value })}
           {...createListeners('minus')}
         />
         <input
           ref="input"
-          type={this.integer ? 'tel' : 'text'}
+          type={props.integer ? 'tel' : 'text'}
           role="spinbutton"
           class={bem('input')}
-          value={this.currentValue}
-          style={this.inputStyle}
-          disabled={this.disabled}
-          readonly={this.disableInput}
+          value={current.value}
+          style={inputStyle.value}
+          disabled={props.disabled}
+          readonly={props.disableInput}
           // set keyboard in mordern browers
-          inputmode={this.integer ? 'numeric' : 'decimal'}
-          placeholder={this.placeholder}
-          aria-valuemax={this.max}
-          aria-valuemin={this.min}
-          aria-valuenow={this.currentValue}
-          onInput={this.onInput}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
+          inputmode={props.integer ? 'numeric' : 'decimal'}
+          placeholder={props.placeholder}
+          aria-valuemax={props.max}
+          aria-valuemin={props.min}
+          aria-valuenow={current.value}
+          onInput={onInput}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         <button
-          vShow={this.showPlus}
+          vShow={props.showPlus}
           type="button"
-          style={this.buttonStyle}
-          class={bem('plus', { disabled: this.plusDisabled })}
+          style={buttonStyle.value}
+          class={bem('plus', { disabled: plusDisabled.value })}
           {...createListeners('plus')}
         />
       </div>
