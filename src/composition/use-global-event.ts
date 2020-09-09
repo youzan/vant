@@ -1,8 +1,7 @@
 import { on, off } from '../utils/dom/event';
 import {
   Ref,
-  ref,
-  isRef,
+  unref,
   watch,
   onMounted,
   onActivated,
@@ -11,7 +10,7 @@ import {
 } from 'vue';
 
 export function useGlobalEvent(
-  target: Ref<EventTarget>,
+  target: EventTarget | Ref<EventTarget>,
   event: string,
   handler: EventListener,
   passive = false,
@@ -19,25 +18,24 @@ export function useGlobalEvent(
 ) {
   let binded: boolean;
 
-  if (!isRef(target)) {
-    target = ref(target);
-  }
+  const add = () => {
+    const element = unref(target);
 
-  function add() {
-    if (binded || (flag && !flag.value) || !target.value) {
+    if (binded || (flag && !flag.value) || !element) {
       return;
     }
 
-    on(target.value, event, handler, passive);
+    on(element, event, handler, passive);
     binded = true;
-  }
+  };
 
-  function remove() {
-    if (binded && target.value) {
-      off(target.value, event, handler);
+  const remove = () => {
+    const element = unref(target);
+    if (binded && element) {
+      off(element, event, handler);
       binded = false;
     }
-  }
+  };
 
   if (flag) {
     watch(flag, () => {
