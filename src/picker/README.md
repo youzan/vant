@@ -207,7 +207,7 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     title="Title"
     :columns="columns"

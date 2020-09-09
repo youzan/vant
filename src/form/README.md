@@ -282,7 +282,7 @@ export default {
   placeholder="Select city"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
     :columns="columns"
     @confirm="onConfirm"
@@ -321,7 +321,7 @@ export default {
   placeholder="Select time"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
@@ -359,7 +359,7 @@ export default {
   placeholder="Select area"
   @click="showArea = true"
 />
-<van-popup v-model="showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"

@@ -30,7 +30,7 @@ app.use(ContactEdit);
 />
 
 <!-- 联系人列表 -->
-<van-popup v-model="showList" position="bottom">
+<van-popup v-model:show="showList" position="bottom">
   <van-contact-list
     v-model="chosenContactId"
     :list="list"
@@ -41,7 +41,7 @@ app.use(ContactEdit);
 </van-popup>
 
 <!-- 联系人编辑 -->
-<van-popup v-model="showEdit" position="bottom">
+<van-popup v-model:show="showEdit" position="bottom">
   <van-contact-edit
     :contact-info="editingContact"
     :is-edit="isEdit"

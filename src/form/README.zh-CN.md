@@ -311,7 +311,7 @@ export default {
   placeholder="点击选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
     :columns="columns"
     @confirm="onConfirm"
@@ -352,7 +352,7 @@ export default {
   placeholder="点击选择时间"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
@@ -392,7 +392,7 @@ export default {
   placeholder="点击选择省市区"
   @click="showArea = true"
 />
-<van-popup v-model="showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"

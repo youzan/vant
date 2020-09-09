@@ -231,7 +231,7 @@ export default {
   placeholder="选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     :columns="columns"
     @cancel="showPicker = false"
