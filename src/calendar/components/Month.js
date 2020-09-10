@@ -16,8 +16,8 @@ import {
 } from '../utils';
 
 // Composition
+import { useToggle } from '@vant/use';
 import { useHeight } from '../../composition/use-rect';
-import { useToggle } from '../../composition/use-toggle';
 import { usePublicApi } from '../../composition/use-public-api';
 
 // Components

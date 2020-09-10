@@ -55,6 +55,7 @@
   "dependencies": {
     "@babel/runtime": "7.x",
     "@vant/icons": "1.3.0",
+    "@vant/use": "^0.0.1-alpha.1",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
