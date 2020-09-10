@@ -20,5 +20,11 @@
     "release-it": "^14.0.2",
     "typescript": "^4.0.2",
     "vue": "^3.0.0-rc.10"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "chore: release @vant/use@${version}"
+    }
   }
 }
