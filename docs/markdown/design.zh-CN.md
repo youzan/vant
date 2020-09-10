@@ -6,13 +6,21 @@
 
 ### 组件设计稿（Sketch）
 
-包含 Sketch 格式的组件设计规范、色彩规范。
+包含 Sketch 格式的色彩规范、字体规范、组件设计规范。
 
-<img src="https://img.yzcdn.cn/vant/design-components-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+#### 色彩规范
+
+<img src="https://img.yzcdn.cn/vant/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+
+#### 字体规范
+
+<img src="https://img.yzcdn.cn/vant/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+
+#### 组件规范
+
+<img src="https://img.yzcdn.cn/vant/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/docs/assets/design.sketch?raw=true">下载</a>
-
-> 提示：目前 Sketch 中部分组件仍为旧版样式，我们正在梳理新版设计规范，尽请期待！
 
 ### 图标设计稿（Sketch）
 
