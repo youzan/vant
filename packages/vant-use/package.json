@@ -1,6 +1,6 @@
 {
   "name": "@vant/use",
-  "version": "0.0.1-beta.0",
+  "version": "0.0.1-alpha.0",
   "description": "Vant composition api",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,7 +8,8 @@
   "sideEffects": false,
   "scripts": {
     "dev": "tsc -m esNext --outDir es --watch",
-    "build": "tsc && tsc -m esNext --outDir es"
+    "build": "tsc && tsc -m esNext --outDir es",
+    "release": "yarn build && release-it"
   },
   "publishConfig": {
     "access": "public"
