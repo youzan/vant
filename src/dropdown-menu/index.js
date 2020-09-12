@@ -4,9 +4,9 @@ import { ref, provide, reactive, computed } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Composition
+import { useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useScroller } from '../composition/use-scroller';
-import { useGlobalEvent } from '../composition/use-global-event';
 import { useClickOutside } from '../composition/use-click-outside';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
@@ -121,10 +121,14 @@ export default createComponent({
       callback: onClickOutside,
     });
 
-    useGlobalEvent(scroller, 'scroll', () => {
-      if (opened.value) {
-        updateOffset();
-      }
+    useEventListener({
+      type: 'scroll',
+      target: scroller,
+      listener() {
+        if (opened.value) {
+          updateOffset();
+        }
+      },
     });
 
     return () => (

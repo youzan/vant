@@ -12,10 +12,10 @@ import {
 } from '../utils/dom/scroll';
 
 // Composition
+import { useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
 import { useScroller } from '../composition/use-scroller';
-import { useGlobalEvent } from '../composition/use-global-event';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 
@@ -156,7 +156,11 @@ export default createComponent({
       }
     };
 
-    useGlobalEvent(scroller, 'scroll', onScroll);
+    useEventListener({
+      type: 'scroll',
+      target: scroller,
+      listener: onScroll,
+    });
 
     watch(
       () => props.indexList,

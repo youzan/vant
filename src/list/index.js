@@ -5,10 +5,10 @@ import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
 
 // Composition
+import { useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useScroller } from '../composition/use-scroller';
 import { usePublicApi } from '../composition/use-public-api';
-import { useGlobalEvent } from '../composition/use-global-event';
 
 // Components
 import Loading from '../loading';
@@ -142,7 +142,12 @@ export default createComponent({
     });
 
     usePublicApi({ check });
-    useGlobalEvent(scroller, 'scroll', check);
+
+    useEventListener({
+      type: 'scroll',
+      target: scroller,
+      listener: check,
+    });
 
     return () => {
       const Content = slots.default?.();

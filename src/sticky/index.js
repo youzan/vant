@@ -7,8 +7,8 @@ import { createNamespace } from '../utils';
 import { getScrollTop, getElementTop } from '../utils/dom/scroll';
 
 // Composition
+import { useEventListener } from '@vant/use';
 import { useScroller } from '../composition/use-scroller';
-import { useGlobalEvent } from '../composition/use-global-event';
 import { useVisibilityChange } from '../composition/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
@@ -101,7 +101,12 @@ export default createComponent({
       emitScrollEvent(scrollTop);
     };
 
-    useGlobalEvent(scroller, 'scroll', onScroll);
+    useEventListener({
+      type: 'scroll',
+      target: scroller,
+      listener: onScroll,
+    });
+
     useVisibilityChange(rootRef, onScroll);
 
     return () => {
