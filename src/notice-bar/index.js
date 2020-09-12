@@ -1,10 +1,19 @@
 import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
+import { BindEventMixin } from '../mixins/bind-event';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');
 
 export default createComponent({
+  mixins: [
+    BindEventMixin(function (bind) {
+      // fix cache issues with forwards and back history in safari
+      // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
+      bind(window, 'pageshow', this.start);
+    }),
+  ],
+
   props: {
     text: String,
     mode: String,
@@ -83,7 +92,8 @@ export default createComponent({
 
       this.reset();
 
-      setTimeout(() => {
+      clearTimeout(this.startTimer);
+      this.startTimer = setTimeout(() => {
         const { wrap, content } = this.$refs;
         if (!wrap || !content || this.scrollable === false) {
           return;
