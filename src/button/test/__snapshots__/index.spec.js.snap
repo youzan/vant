@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`icon-position prop 1`] = `
+<button class="van-button van-button--default van-button--normal">
+  <div class="van-button__content"><i class="van-icon van-icon-plus van-button__icon">
+      <!----></i></div>
+</button>
+`;
+
 exports[`icon-prefix prop 1`] = `
 <button class="van-button van-button--default van-button--normal">
   <div class="van-button__content"><i class="my-icon my-icon-success van-button__icon">

@@ -11,6 +11,16 @@ test('loading-size prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('icon-position prop', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      icon: 'plus',
+      iconPosition: 'right',
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('click event', () => {
   const onClick = jest.fn();
   const wrapper = mount(Button, {
