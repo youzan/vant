@@ -35,6 +35,7 @@ export type ButtonProps = RouteProps & {
   loadingSize: string;
   loadingType?: LoadingType;
   loadingText?: string;
+  iconPosition: 'left' | 'right';
 };
 
 export type ButtonEvents = {
@@ -63,6 +64,7 @@ function Button(
     loading,
     hairline,
     loadingText,
+    iconPosition,
   } = props;
 
   const style: Record<string, string | number> = {};
@@ -111,26 +113,32 @@ function Button(
     { [BORDER_SURROUND]: hairline },
   ];
 
-  function Content() {
-    const content = [];
-
+  function renderIcon() {
     if (loading) {
-      content.push(
-        slots.loading ? (
-          slots.loading()
-        ) : (
-          <Loading
-            class={bem('loading')}
-            size={props.loadingSize}
-            type={props.loadingType}
-            color="currentColor"
-          />
-        )
+      return slots.loading ? (
+        slots.loading()
+      ) : (
+        <Loading
+          class={bem('loading')}
+          size={props.loadingSize}
+          type={props.loadingType}
+          color="currentColor"
+        />
       );
-    } else if (icon) {
-      content.push(
+    }
+
+    if (icon) {
+      return (
         <Icon name={icon} class={bem('icon')} classPrefix={props.iconPrefix} />
       );
+    }
+  }
+
+  function renderContent() {
+    const content = [];
+
+    if (iconPosition === 'left') {
+      content.push(renderIcon());
     }
 
     let text;
@@ -142,6 +150,10 @@ function Button(
 
     if (text) {
       content.push(<span class={bem('text')}>{text}</span>);
+    }
+
+    if (iconPosition === 'right') {
+      content.push(renderIcon());
     }
 
     return content;
@@ -157,7 +169,7 @@ function Button(
       onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
-      <div class={bem('content')}>{Content()}</div>
+      <div class={bem('content')}>{renderContent()}</div>
     </tag>
   );
 }
@@ -193,6 +205,10 @@ Button.props = {
   loadingSize: {
     type: String,
     default: '20px',
+  },
+  iconPosition: {
+    type: String,
+    default: 'left',
   },
 };
 
