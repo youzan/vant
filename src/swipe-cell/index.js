@@ -7,10 +7,10 @@ import { preventDefault } from '../utils/dom/event';
 import { callInterceptor } from '../utils/interceptor';
 
 // Composition
+import { useClickAway } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
 import { usePublicApi } from '../composition/use-public-api';
-import { useClickOutside } from '../composition/use-click-outside';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
 
@@ -183,11 +183,7 @@ export default createComponent({
       close,
     });
 
-    useClickOutside({
-      element: rootRef,
-      event: 'touchstart',
-      callback: onClick,
-    });
+    useClickAway(rootRef, onClick, { eventName: 'touchstart' });
 
     return () => {
       const wrapperStyle = {

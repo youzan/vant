@@ -4,10 +4,9 @@ import { ref, provide, reactive, computed } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Composition
-import { useEventListener } from '@vant/use';
+import { useClickAway, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useScroller } from '../composition/use-scroller';
-import { useClickOutside } from '../composition/use-click-outside';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
@@ -55,7 +54,7 @@ export default createComponent({
       }
     });
 
-    const onClickOutside = () => {
+    const onClickAway = () => {
       children.forEach((item) => {
         item.toggle(false);
       });
@@ -122,10 +121,7 @@ export default createComponent({
 
     provide(DROPDOWN_KEY, { props, offset, children });
 
-    useClickOutside({
-      element: rootRef,
-      callback: onClickOutside,
-    });
+    useClickAway(rootRef, onClickAway);
 
     useEventListener('scroll', onScroll, { target: scroller });
 

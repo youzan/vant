@@ -7,7 +7,7 @@ import {
   onDeactivated,
 } from 'vue';
 
-const inBrowser = typeof window !== 'undefined';
+export const inBrowser = typeof window !== 'undefined';
 
 let supportsPassive = false;
 if (inBrowser) {
@@ -32,7 +32,7 @@ export type UseEventListenerOptions = {
 export function useEventListener(
   type: string,
   listener: EventListener,
-  options: UseEventListenerOptions
+  options: UseEventListenerOptions = {}
 ) {
   if (!inBrowser) {
     return;

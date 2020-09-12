@@ -1,7 +1,7 @@
 import { ref, watch, computed, Teleport, Transition } from 'vue';
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
-import { useClickOutside } from '../composition/use-click-outside';
+import { useClickAway } from '@vant/use';
 import Key from './Key';
 
 const [createComponent, bem] = createNamespace('number-keyboard');
@@ -224,11 +224,7 @@ export default createComponent({
       }
     );
 
-    useClickOutside({
-      event: 'touchstart',
-      element: rootRef,
-      callback: onClose,
-    });
+    useClickAway(rootRef, onClose, { eventName: 'touchstart' });
 
     return () => {
       const Title = renderTitle();
