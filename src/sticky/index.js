@@ -101,11 +101,7 @@ export default createComponent({
       emitScrollEvent(scrollTop);
     };
 
-    useEventListener({
-      type: 'scroll',
-      target: scroller,
-      listener: onScroll,
-    });
+    useEventListener('scroll', onScroll, { target: scroller });
 
     useVisibilityChange(rootRef, onScroll);
 

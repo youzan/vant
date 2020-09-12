@@ -24,26 +24,28 @@ if (inBrowser) {
 }
 
 export type UseEventListenerOptions = {
-  type: string;
-  target: EventTarget | Ref<EventTarget>;
+  target?: EventTarget | Ref<EventTarget>;
   capture?: boolean;
   passive?: boolean;
-  listener: EventListener;
 };
 
-export function useEventListener({
-  type,
-  target,
-  passive = false,
-  capture = false,
-  listener,
-}: UseEventListenerOptions) {
+export function useEventListener(
+  type: string,
+  listener: EventListener,
+  options: UseEventListenerOptions
+) {
+  if (!inBrowser) {
+    return;
+  }
+
+  const { target = window, passive = false, capture = false } = options;
+
   let attached: boolean;
 
   const add = () => {
     const element = unref(target);
 
-    if (element && inBrowser && !attached) {
+    if (element && !attached) {
       element.addEventListener(
         type,
         listener,
@@ -56,7 +58,7 @@ export function useEventListener({
   const remove = () => {
     const element = unref(target);
 
-    if (element && inBrowser && attached) {
+    if (element && attached) {
       element.removeEventListener(type, listener, capture);
       attached = false;
     }

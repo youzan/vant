@@ -143,11 +143,7 @@ export default createComponent({
 
     usePublicApi({ check });
 
-    useEventListener({
-      type: 'scroll',
-      target: scroller,
-      listener: check,
-    });
+    useEventListener('scroll', check, { target: scroller });
 
     return () => {
       const Content = slots.default?.();

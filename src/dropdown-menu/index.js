@@ -72,6 +72,12 @@ export default createComponent({
       }
     };
 
+    const onScroll = () => {
+      if (opened.value) {
+        updateOffset();
+      }
+    };
+
     const toggleItem = (active) => {
       children.forEach((item, index) => {
         if (index === active) {
@@ -121,15 +127,7 @@ export default createComponent({
       callback: onClickOutside,
     });
 
-    useEventListener({
-      type: 'scroll',
-      target: scroller,
-      listener() {
-        if (opened.value) {
-          updateOffset();
-        }
-      },
-    });
+    useEventListener('scroll', onScroll, { target: scroller });
 
     return () => (
       <div ref={rootRef} class={bem()}>
