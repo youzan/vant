@@ -6,8 +6,7 @@ import {
   onUnmounted,
   onDeactivated,
 } from 'vue';
-
-export const inBrowser = typeof window !== 'undefined';
+import { inBrowser } from '../shared';
 
 let supportsPassive = false;
 if (inBrowser) {

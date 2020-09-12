@@ -7,9 +7,10 @@ import {
   onBeforeUnmount,
 } from 'vue';
 
+// @Experimental
 export function useVisibilityChange(
   target: Ref<Element>,
-  onChange: () => void
+  onChange: (visible: boolean) => void
 ) {
   // compatibility: https://caniuse.com/#feat=intersectionobserver
   if (!inBrowser || !window.IntersectionObserver) {
@@ -19,9 +20,7 @@ export function useVisibilityChange(
   const observer = new IntersectionObserver(
     (entries) => {
       // visibility changed
-      if (entries[0].intersectionRatio > 0) {
-        onChange();
-      }
+      onChange(entries[0].intersectionRatio > 0);
     },
     { root: document.body }
   );
