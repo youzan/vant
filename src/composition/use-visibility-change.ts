@@ -1,5 +1,11 @@
 import { inBrowser } from '../utils';
-import { Ref, onMounted, onUnmounted, onActivated, onDeactivated } from 'vue';
+import {
+  Ref,
+  onMounted,
+  onActivated,
+  onDeactivated,
+  onBeforeUnmount,
+} from 'vue';
 
 export function useVisibilityChange(
   target: Ref<Element>,
@@ -30,6 +36,6 @@ export function useVisibilityChange(
 
   onMounted(observe);
   onActivated(observe);
-  onUnmounted(unobserve);
   onDeactivated(unobserve);
+  onBeforeUnmount(unobserve);
 }
