@@ -64,9 +64,7 @@ export default {
 ```html
 <van-slider v-model="value" active-color="#ee0a24">
   <template #button>
-    <div class="custom-button">
-      {{ value }}
-    </div>
+    <div class="custom-button">{{ value }}</div>
   </template>
 </van-slider>
 
@@ -91,6 +89,32 @@ export default {
 </div>
 ```
 
+### Dual thumb
+
+add `range` attribute to open dual thumb mode
+
+```html
+<van-slider v-model="value" range @change="onChange" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      // value must be an Array
+      value: [10, 50],
+    };
+  },
+  methods: {
+    onChange(value) {
+      Toast('current value：' + value);
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -100,6 +124,7 @@ export default {
 | value | Current value | _number_ | `0` |
 | max | Max value | _number \| string_ | `100` |
 | min | Min value | _number \| string_ | `0` |
+| range | Dual thumb mode | _boolean_ | `false` |
 | step | Step size | _number \| string_ | `1` |
 | bar-height | Height of bar | _number \| string_ | `2px` |
 | button-size `v2.4.5` | Button size | _number \| string_ | `24px` |

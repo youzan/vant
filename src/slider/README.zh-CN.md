@@ -64,9 +64,7 @@ export default {
 ```html
 <van-slider v-model="value" active-color="#ee0a24">
   <template #button>
-    <div class="custom-button">
-      {{ value }}
-    </div>
+    <div class="custom-button">{{ value }}</div>
   </template>
 </van-slider>
 
@@ -93,6 +91,32 @@ Slider 垂直展示时，高度为 100% 父元素高度
 </div>
 ```
 
+### 双滑块
+
+添加`range`属性就可以开启双滑块模式
+
+```html
+<van-slider v-model="value" range @change="onChange" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      // 双滑块模式时，值必须是数组
+      value: [10, 50],
+    };
+  },
+  methods: {
+    onChange(value) {
+      Toast('当前值：' + value);
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -102,6 +126,7 @@ Slider 垂直展示时，高度为 100% 父元素高度
 | value | 当前进度百分比 | _number_ | `0` |
 | max | 最大值 | _number \| string_ | `100` |
 | min | 最小值 | _number \| string_ | `0` |
+| range | 双滑块模式 | _boolean_ | `false` |
 | step | 步长 | _number \| string_ | `1` |
 | bar-height | 进度条高度，默认单位为`px` | _number \| string_ | `2px` |
 | button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |

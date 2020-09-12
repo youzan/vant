@@ -15,6 +15,7 @@ export default createComponent({
   props: {
     disabled: Boolean,
     vertical: Boolean,
+    range: Boolean,
     barHeight: [Number, String],
     buttonSize: [Number, String],
     activeColor: String,
@@ -32,7 +33,7 @@ export default createComponent({
       default: 1,
     },
     modelValue: {
-      type: Number,
+      type: [Number, Array],
       default: 0,
     },
   },
@@ -42,12 +43,13 @@ export default createComponent({
   setup(props, { emit, slots }) {
     let startValue;
     let currentValue;
+    let index;
 
     const rootRef = ref();
     const dragStatus = ref();
     const touch = useTouch();
 
-    const range = computed(() => props.max - props.min);
+    const scope = computed(() => props.max - props.min);
 
     const wrapperStyle = computed(() => {
       const crossAxis = props.vertical ? 'width' : 'height';
@@ -57,10 +59,28 @@ export default createComponent({
       };
     });
 
+    const calcMainAxis = () => {
+      const { modelValue, min, range } = props;
+      if (range) {
+        return `${((modelValue[1] - modelValue[0]) * 100) / scope.value}%`;
+      }
+      return `${((modelValue - min) * 100) / scope.value}%`;
+    };
+
+    const calcOffset = () => {
+      const { modelValue, min, range } = props;
+      if (range) {
+        return `${((modelValue[0] - min) * 100) / scope.value}%`;
+      }
+      return `0%`;
+    };
+
     const barStyle = computed(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
       return {
-        [mainAxis]: `${((props.modelValue - props.min) * 100) / range.value}%`,
+        [mainAxis]: calcMainAxis(),
+        left: props.vertical ? 'auto' : calcOffset(),
+        top: props.vertical ? calcOffset() : 'auto',
         background: props.activeColor,
         transition: dragStatus.value ? 'none' : null,
       };
@@ -72,14 +92,25 @@ export default createComponent({
       return Math.round(value / step) * step;
     };
 
-    const updateValue = (value, end) => {
-      value = format(value);
+    const isSameValue = (newValue, oldValue) => {
+      return JSON.stringify(newValue) === JSON.stringify(oldValue);
+    };
 
-      if (value !== props.modelValue) {
+    const updateValue = (value, end) => {
+      if (props.range) {
+        if (value[1] < value[0]) {
+          return;
+        }
+        value = value.map((v) => format(v));
+      } else {
+        value = format(value);
+      }
+
+      if (!isSameValue(value, props.modelValue)) {
         emit('update:modelValue', value);
       }
 
-      if (end && value !== startValue) {
+      if (end && !isSameValue(value, startValue)) {
         emit('change', value);
       }
     };
@@ -91,15 +122,26 @@ export default createComponent({
         return;
       }
 
-      const { min, vertical, modelValue } = props;
+      const { min, vertical, modelValue, range } = props;
       const rect = useRect(rootRef);
       const delta = vertical
         ? event.clientY - rect.top
         : event.clientX - rect.left;
       const total = vertical ? rect.height : rect.width;
-      const value = +min + (delta / total) * range.value;
+      let value = +min + (delta / total) * scope.value;
 
-      startValue = modelValue;
+      if (range) {
+        let left = modelValue[0];
+        let right = modelValue[1];
+        const middle = (left + right) / 2;
+        if (value <= middle) {
+          left = value;
+        } else {
+          right = value;
+        }
+        value = [left, right];
+      }
+
       updateValue(value, true);
     };
 
@@ -109,7 +151,12 @@ export default createComponent({
       }
 
       touch.start(event);
-      startValue = format(props.modelValue);
+      currentValue = props.modelValue;
+      if (props.range) {
+        startValue = props.modelValue.map((v) => format(v));
+      } else {
+        startValue = format(props.modelValue);
+      }
       dragStatus.value = 'start';
     };
 
@@ -129,9 +176,13 @@ export default createComponent({
       const rect = useRect(rootRef);
       const delta = props.vertical ? touch.deltaY.value : touch.deltaX.value;
       const total = props.vertical ? rect.height : rect.width;
-      const diff = (delta / total) * range.value;
+      const diff = (delta / total) * scope.value;
 
-      currentValue = startValue + diff;
+      if (props.range) {
+        currentValue[index] = startValue[index] + diff;
+      } else {
+        currentValue = startValue + diff;
+      }
       updateValue(currentValue);
     };
 
@@ -148,27 +199,42 @@ export default createComponent({
       dragStatus.value = '';
     };
 
-    const renderButton = () => (
-      <div
-        role="slider"
-        class={bem('button-wrapper')}
-        tabindex={props.disabled ? -1 : 0}
-        aria-valuemin={props.min}
-        aria-valuenow={props.modelValue}
-        aria-valuemax={props.max}
-        aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
-        onTouchstart={onTouchStart}
-        onTouchmove={onTouchMove}
-        onTouchend={onTouchEnd}
-        onTouchcancel={onTouchEnd}
-      >
-        {slots.button ? (
-          slots.button()
-        ) : (
-          <div class={bem('button')} style={getSizeStyle(props.buttonSize)} />
-        )}
-      </div>
-    );
+    const renderButton = (i) => {
+      const map = ['left', 'right'];
+      const getClassName = () => {
+        if (typeof i === 'number') {
+          return `button-wrapper-${map[i]}`;
+        }
+        return `button-wrapper`;
+      };
+
+      return (
+        <div
+          role="slider"
+          class={bem(getClassName())}
+          tabindex={props.disabled ? -1 : 0}
+          aria-valuemin={props.min}
+          aria-valuenow={props.modelValue}
+          aria-valuemax={props.max}
+          aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
+          onTouchstart={(e) => {
+            if (typeof i === 'number') {
+              index = i;
+            }
+            onTouchStart(e);
+          }}
+          onTouchmove={onTouchMove}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
+        >
+          {slots.button ? (
+            slots.button()
+          ) : (
+            <div class={bem('button')} style={getSizeStyle(props.buttonSize)} />
+          )}
+        </div>
+      );
+    };
 
     // format initial value
     updateValue(props.modelValue);
@@ -185,7 +251,7 @@ export default createComponent({
         onClick={onClick}
       >
         <div class={bem('bar')} style={barStyle.value}>
-          {renderButton()}
+          {props.range ? [renderButton(0), renderButton(1)] : renderButton()}
         </div>
       </div>
     );
