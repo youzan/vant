@@ -7,8 +7,7 @@ import { createNamespace } from '../utils';
 import { getScrollTop, getElementTop } from '../utils/dom/scroll';
 
 // Composition
-import { useEventListener } from '@vant/use';
-import { useScroller } from '../composition/use-scroller';
+import { useScrollParent, useEventListener } from '@vant/use';
 import { useVisibilityChange } from '../composition/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
@@ -27,7 +26,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const rootRef = ref();
-    const scroller = useScroller(rootRef);
+    const scrollParent = useScrollParent(rootRef);
 
     const state = reactive({
       fixed: false,
@@ -101,7 +100,7 @@ export default createComponent({
       emitScrollEvent(scrollTop);
     };
 
-    useEventListener('scroll', onScroll, { target: scroller });
+    useEventListener('scroll', onScroll, { target: scrollParent });
 
     useVisibilityChange(rootRef, onScroll);
 

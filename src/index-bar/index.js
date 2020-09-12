@@ -12,10 +12,9 @@ import {
 } from '../utils/dom/scroll';
 
 // Composition
-import { useEventListener } from '@vant/use';
+import { useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
-import { useScroller } from '../composition/use-scroller';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 
@@ -58,7 +57,7 @@ export default createComponent({
     const children = reactive([]);
 
     const touch = useTouch();
-    const scroller = useScroller(rootRef);
+    const scrollParent = useScrollParent(rootRef);
 
     provide(INDEX_BAR_KEY, { props, children });
 
@@ -79,8 +78,8 @@ export default createComponent({
     });
 
     const getScrollerRect = () => {
-      if (scroller.value.getBoundingClientRect) {
-        return useRect(scroller);
+      if (scrollParent.value.getBoundingClientRect) {
+        return useRect(scrollParent);
       }
       return {
         top: 0,
@@ -88,13 +87,16 @@ export default createComponent({
       };
     };
 
-    const getAnchorTop = (element, scrollerRect) => {
-      if (scroller.value === window || scroller.value === document.body) {
+    const getAnchorTop = (element, scrollParentRect) => {
+      if (
+        scrollParent.value === window ||
+        scrollParent.value === document.body
+      ) {
         return getElementTop(element);
       }
 
       const rect = useRect(element);
-      return rect.top - scrollerRect.top + getScrollTop(scroller);
+      return rect.top - scrollParentRect.top + getScrollTop(scrollParent);
     };
 
     const getActiveAnchor = (scrollTop, rects) => {
@@ -116,12 +118,12 @@ export default createComponent({
       }
 
       const { sticky, indexList } = props;
-      const scrollTop = getScrollTop(scroller.value);
-      const scrollerRect = getScrollerRect();
+      const scrollTop = getScrollTop(scrollParent.value);
+      const scrollParentRect = getScrollerRect();
 
       const rects = children.map((item) => ({
         height: item.height,
-        top: getAnchorTop(item.rootRef, scrollerRect),
+        top: getAnchorTop(item.rootRef, scrollParentRect),
       }));
 
       const active = getActiveAnchor(scrollTop, rects);
@@ -144,11 +146,11 @@ export default createComponent({
             state.active = true;
             state.top =
               Math.max(props.stickyOffsetTop, rects[index].top - scrollTop) +
-              scrollerRect.top;
+              scrollParentRect.top;
           } else if (index === active - 1) {
             const activeItemTop = rects[active].top - scrollTop;
             state.active = activeItemTop > 0;
-            state.top = activeItemTop + scrollerRect.top - height;
+            state.top = activeItemTop + scrollParentRect.top - height;
           } else {
             state.active = false;
           }
@@ -156,7 +158,7 @@ export default createComponent({
       }
     };
 
-    useEventListener('scroll', onScroll, { target: scroller });
+    useEventListener('scroll', onScroll, { target: scrollParent });
 
     watch(
       () => props.indexList,

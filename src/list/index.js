@@ -5,9 +5,8 @@ import { createNamespace } from '../utils';
 import { isHidden } from '../utils/dom/style';
 
 // Composition
-import { useEventListener } from '@vant/use';
+import { useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
-import { useScroller } from '../composition/use-scroller';
 import { usePublicApi } from '../composition/use-public-api';
 
 // Components
@@ -44,7 +43,7 @@ export default createComponent({
     const loading = ref(false);
     const rootRef = ref();
     const placeholderRef = ref();
-    const scroller = useScroller(rootRef);
+    const scrollParent = useScrollParent(rootRef);
 
     const check = () => {
       nextTick(() => {
@@ -53,21 +52,22 @@ export default createComponent({
         }
 
         const { offset, direction } = props;
-        let scrollerRect;
+        let scrollParentRect;
 
-        if (scroller.value.getBoundingClientRect) {
-          scrollerRect = scroller.value.getBoundingClientRect();
+        if (scrollParent.value.getBoundingClientRect) {
+          scrollParentRect = scrollParent.value.getBoundingClientRect();
         } else {
-          scrollerRect = {
+          scrollParentRect = {
             top: 0,
-            bottom: scroller.value.innerHeight,
+            bottom: scrollParent.value.innerHeight,
           };
         }
 
-        const scrollerHeight = scrollerRect.bottom - scrollerRect.top;
+        const scrollParentHeight =
+          scrollParentRect.bottom - scrollParentRect.top;
 
         /* istanbul ignore next */
-        if (!scrollerHeight || isHidden(rootRef.value)) {
+        if (!scrollParentHeight || isHidden(rootRef.value)) {
           return false;
         }
 
@@ -75,9 +75,10 @@ export default createComponent({
         const placeholderRect = useRect(placeholderRef);
 
         if (direction === 'up') {
-          isReachEdge = scrollerRect.top - placeholderRect.top <= offset;
+          isReachEdge = scrollParentRect.top - placeholderRect.top <= offset;
         } else {
-          isReachEdge = placeholderRect.bottom - scrollerRect.bottom <= offset;
+          isReachEdge =
+            placeholderRect.bottom - scrollParentRect.bottom <= offset;
         }
 
         if (isReachEdge) {
@@ -143,7 +144,7 @@ export default createComponent({
 
     usePublicApi({ check });
 
-    useEventListener('scroll', check, { target: scroller });
+    useEventListener('scroll', check, { target: scrollParent });
 
     return () => {
       const Content = slots.default?.();

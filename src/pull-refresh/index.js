@@ -6,8 +6,8 @@ import { getScrollTop } from '../utils/dom/scroll';
 import { preventDefault } from '../utils/dom/event';
 
 // Composition
+import { useScrollParent } from '@vant/use';
 import { useTouch } from '../composition/use-touch';
-import { useScroller } from '../composition/use-scroller';
 
 // Components
 import Loading from '../loading';
@@ -48,7 +48,7 @@ export default createComponent({
     let reachTop;
 
     const rootRef = ref();
-    const scroller = useScroller(rootRef);
+    const scrollParent = useScrollParent(rootRef);
 
     const state = reactive({
       status: 'normal',
@@ -130,7 +130,7 @@ export default createComponent({
     };
 
     const checkPosition = (event) => {
-      reachTop = getScrollTop(scroller.value) === 0;
+      reachTop = getScrollTop(scrollParent.value) === 0;
 
       if (reachTop) {
         state.duration = 0;

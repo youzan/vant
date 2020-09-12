@@ -4,9 +4,8 @@ import { ref, provide, reactive, computed } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Composition
-import { useClickAway, useEventListener } from '@vant/use';
+import { useClickAway, useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
-import { useScroller } from '../composition/use-scroller';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
@@ -40,7 +39,7 @@ export default createComponent({
     const rootRef = ref();
     const children = reactive([]);
 
-    const scroller = useScroller(rootRef);
+    const scrollParent = useScrollParent(rootRef);
 
     const opened = computed(() =>
       children.some((item) => item.state.showWrapper)
@@ -123,7 +122,7 @@ export default createComponent({
 
     useClickAway(rootRef, onClickAway);
 
-    useEventListener('scroll', onScroll, { target: scroller });
+    useEventListener('scroll', onScroll, { target: scrollParent });
 
     return () => (
       <div ref={rootRef} class={bem()}>
