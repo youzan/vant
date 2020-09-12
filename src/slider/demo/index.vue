@@ -96,8 +96,7 @@ export default {
 
   methods: {
     onChange(value) {
-      // this.$toast(this.t('text') + value);
-      console.log(this.t('text'), value);
+      this.$toast(this.t('text') + value);
     },
   },
 };
