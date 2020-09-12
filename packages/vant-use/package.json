@@ -4,7 +4,7 @@
   "description": "Vant composition api",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "lib/index.d.ts",
+  "typings": "es/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "dev": "tsc -m esNext --outDir es --watch",
