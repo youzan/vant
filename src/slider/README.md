@@ -34,6 +34,32 @@ export default {
 };
 ```
 
+### Dual thumb
+
+Add `range` attribute to open dual thumb mode
+
+```html
+<van-slider v-model="value" range @change="onChange" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      // value must be an Array
+      value: [10, 50],
+    };
+  },
+  methods: {
+    onChange(value) {
+      Toast('current value：' + value);
+    },
+  },
+};
+```
+
 ### Range
 
 ```html
@@ -63,9 +89,7 @@ export default {
 ```html
 <van-slider v-model="value" active-color="#ee0a24">
   <template #button>
-    <div class="custom-button">
-      {{ value }}
-    </div>
+    <div class="custom-button">{{ value }}</div>
   </template>
 </van-slider>
 
@@ -90,15 +114,44 @@ export default {
 </div>
 ```
 
+### Vertical, Dual thumb mode
+
+Add `range` and `vertical` attributes at the same time, and make sure that the value of `value` is an array
+
+```html
+<div :style="{ height: '120px' }">
+  <van-slider v-model="value" range vertical @change="onChange" />
+</div>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      // value must be an array
+      value: [10, 50],
+    };
+  },
+  methods: {
+    onChange(value) {
+      Toast('Current value：' + value);
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| value | Current value | _number_ | `0` |
+| value | Current value | _number \| array_ | `0` |
 | max | Max value | _number \| string_ | `100` |
 | min | Min value | _number \| string_ | `0` |
+| range | Dual thumb mode | _boolean_ | `false` |
 | step | Step size | _number \| string_ | `1` |
 | bar-height | Height of bar | _number \| string_ | `2px` |
 | button-size `v2.4.5` | Button size | _number \| string_ | `24px` |
