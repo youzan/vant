@@ -114,7 +114,7 @@ app.use(Button);
 | icon-prefix `v2.6.0` | Icon className prefix | _string_ | `van-icon` |
 | icon-position `v2.10.7` | Icon position, can be set to `right` | `left` |
 | tag | HTML Tag | _string_ | `button` |
-| native-type | Native Type Attribute | _string_ | `''` |
+| native-type | Native Type Attribute | _string_ | `button` |
 | plain | Whether to be plain button | _boolean_ | `false` |
 | block | Whether to set display block | _boolean_ | `false` |
 | round | Whether to be round button | _boolean_ | `false` |

@@ -23,7 +23,6 @@ export default createComponent({
     hairline: Boolean,
     disabled: Boolean,
     iconPrefix: String,
-    nativeType: String,
     loadingText: String,
     loadingType: String,
     tag: {
@@ -37,6 +36,10 @@ export default createComponent({
     size: {
       type: String,
       default: 'normal',
+    },
+    nativeType: {
+      type: String,
+      default: 'button',
     },
     loadingSize: {
       type: String,
