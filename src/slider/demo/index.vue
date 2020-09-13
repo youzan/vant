@@ -38,14 +38,15 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="t('vertical')">
-      <div :style="{ height: '120px', paddingLeft: '30px' }">
+      <div :style="{ height: '150px', paddingLeft: '30px' }">
         <van-slider v-model="value8" vertical @change="onChange" />
-      </div>
-    </demo-block>
-
-    <demo-block v-if="!isWeapp" :title="t('vertical2')">
-      <div :style="{ height: '120px', paddingLeft: '30px' }">
-        <van-slider v-model="value9" range vertical @change="onChange" />
+        <van-slider
+          v-model="value9"
+          range
+          vertical
+          style="margin-left: 100px;"
+          @change="onChange"
+        />
       </div>
     </demo-block>
   </demo-section>
@@ -55,28 +56,26 @@
 export default {
   i18n: {
     'zh-CN': {
+      text: '当前值：',
       title1: '基础用法',
       title2: '双滑块',
       title3: '指定选择范围',
       title4: '禁用',
       title5: '指定步长',
+      vertical: '垂直方向',
       customStyle: '自定义样式',
       customButton: '自定义按钮',
-      text: '当前值：',
-      vertical: '垂直方向',
-      vertical2: '垂直方向，双滑块',
     },
     'en-US': {
+      text: 'Current value: ',
       title1: 'Basic Usage',
       title2: 'Dual thumb mode',
       title3: 'Range',
       title4: 'Disabled',
       title5: 'Step size',
+      vertical: 'Vertical',
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
-      text: 'Current value: ',
-      vertical: 'Vertical',
-      vertical2: 'Vertical, Dual thumb mode',
     },
   },
 

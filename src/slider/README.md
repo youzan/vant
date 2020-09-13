@@ -110,18 +110,9 @@ export default {
 ### Vertical
 
 ```html
-<div :style="{ height: '100px' }">
+<div :style="{ height: '150px' }">
   <van-slider v-model="value" vertical />
-</div>
-```
-
-### Vertical, Dual thumb mode
-
-Add `range` and `vertical` attributes at the same time, and make sure that the value of `value` is an array
-
-```html
-<div :style="{ height: '120px' }">
-  <van-slider v-model="value" range vertical @change="onChange" />
+  <van-slider v-model="value2" range vertical @change="onChange" />
 </div>
 ```
 
@@ -131,8 +122,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      // value must be an array
-      value: [10, 50],
+      value: 50,
+      value2: [10, 50],
     };
   },
   methods: {

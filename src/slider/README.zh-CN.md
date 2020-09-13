@@ -109,21 +109,12 @@ export default {
 
 ### 垂直方向
 
-Slider 垂直展示时，高度为 100% 父元素高度
+设置 `vertical` 属性后，滑块会垂直展示，且高度为 100% 父元素高度。
 
 ```html
-<div :style="{ height: '120px' }">
-  <van-slider v-model="value" vertical />
-</div>
-```
-
-### 垂直方向，双滑块
-
-同时添加`range`和`vertical`属性，并确保`value`的值是一个数组
-
-```html
-<div :style="{ height: '120px' }">
-  <van-slider v-model="value" range vertical @change="onChange" />
+<div :style="{ height: '150px' }">
+  <van-slider v-model="value" vertical @change="onChange" />
+  <van-slider v-model="value2" range vertical @change="onChange" />
 </div>
 ```
 
@@ -133,8 +124,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      // 双滑块模式时，值必须是数组
-      value: [10, 50],
+      value: 50,
+      value2: [10, 50],
     };
   },
   methods: {
