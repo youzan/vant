@@ -143,12 +143,12 @@ export default {
 | value | Current value | _number \| array_ | `0` |
 | max | Max value | _number \| string_ | `100` |
 | min | Min value | _number \| string_ | `0` |
-| range | Dual thumb mode | _boolean_ | `false` |
 | step | Step size | _number \| string_ | `1` |
 | bar-height | Height of bar | _number \| string_ | `2px` |
 | button-size `v2.4.5` | Button size | _number \| string_ | `24px` |
 | active-color | Active color of bar | _string_ | `#1989fa` |
 | inactive-color | Inactive color of bar | _string_ | `#e5e5e5` |
+| range | Whether to enable dual thumb mode | _boolean_ | `false` |
 | disabled | Whether to disable slider | _boolean_ | `false` |
 | vertical | Whether to display slider vertically | _boolean_ | `false` |
 
