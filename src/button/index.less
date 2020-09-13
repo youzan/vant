@@ -160,8 +160,10 @@
   }
 
   &__icon + &__text,
-  &__loading + &__text {
-    margin-left: 5px;
+  &__loading + &__text,
+  &__text + &__icon,
+  &__text + &__loading {
+    margin-left: @padding-base;
   }
 
   &--hairline {

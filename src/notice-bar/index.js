@@ -2,6 +2,7 @@ import { ref, reactive, nextTick, onActivated, watch } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import { doubleRaf } from '../utils/dom/raf';
 import { useRect } from '../composition/use-rect';
+import { useEventListener } from '@vant/use';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');
@@ -33,6 +34,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     let wrapWidth = 0;
     let contentWidth = 0;
+    let startTimer;
 
     const wrapRef = ref();
     const contentRef = ref();
@@ -134,7 +136,8 @@ export default createComponent({
 
       reset();
 
-      setTimeout(() => {
+      clearTimeout(startTimer);
+      startTimer = setTimeout(() => {
         if (!wrapRef.value || !contentRef.value || scrollable === false) {
           return;
         }
@@ -154,6 +157,10 @@ export default createComponent({
     };
 
     onActivated(start);
+
+    // fix cache issues with forwards and back history in safari
+    // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
+    useEventListener('pageshow', start);
 
     watch([() => props.text, () => props.scrollable], start, {
       immediate: true,

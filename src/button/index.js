@@ -42,6 +42,10 @@ export default createComponent({
       type: String,
       default: '20px',
     },
+    iconPosition: {
+      type: String,
+      default: 'left',
+    },
   },
 
   emits: ['click'],
@@ -136,6 +140,7 @@ export default createComponent({
         disabled,
         hairline,
         nativeType,
+        iconPosition,
       } = props;
 
       const classes = [
@@ -164,8 +169,9 @@ export default createComponent({
           onClick={onClick}
         >
           <div class={bem('content')}>
-            {renderIcon()}
+            {iconPosition === 'left' && renderIcon()}
             {renderText()}
+            {iconPosition === 'right' && renderIcon()}
           </div>
         </tag>
       );

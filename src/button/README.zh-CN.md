@@ -134,7 +134,8 @@ app.use(Button);
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
 | icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix `v2.6.0` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
-| tag | 根节点的 HTML 标签 | _string_ | `button` |
+| icon-position `v2.10.7` | 图标展示位置，可选值为 `right` | `left` |
+| tag | 按钮根节点的 HTML 标签 | _string_ | `button` |
 | native-type | 原生 button 标签的 type 属性 | _string_ | - |
 | block | 是否为块级元素 | _boolean_ | `false` |
 | plain | 是否为朴素按钮 | _boolean_ | `false` |
