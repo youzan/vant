@@ -2,6 +2,7 @@ import { ref, computed } from 'vue';
 
 // Utils
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
+import { deepClone } from '../utils/deep-clone';
 import { preventDefault } from '../utils/dom/event';
 
 // Composition
@@ -59,6 +60,7 @@ export default createComponent({
       };
     });
 
+    // 计算选中条的长度百分比
     const calcMainAxis = () => {
       const { modelValue, min, range } = props;
       if (range) {
@@ -67,6 +69,7 @@ export default createComponent({
       return `${((modelValue - min) * 100) / scope.value}%`;
     };
 
+    // 计算选中条的开始位置的偏移量
     const calcOffset = () => {
       const { modelValue, min, range } = props;
       if (range) {
@@ -79,8 +82,8 @@ export default createComponent({
       const mainAxis = props.vertical ? 'height' : 'width';
       return {
         [mainAxis]: calcMainAxis(),
-        left: props.vertical ? 'auto' : calcOffset(),
-        top: props.vertical ? calcOffset() : 'auto',
+        left: props.vertical ? null : calcOffset(),
+        top: props.vertical ? calcOffset() : null,
         background: props.activeColor,
         transition: dragStatus.value ? 'none' : null,
       };
@@ -96,12 +99,18 @@ export default createComponent({
       return JSON.stringify(newValue) === JSON.stringify(oldValue);
     };
 
+    // 处理两个滑块重叠之后的情况
+    const handleOverlap = (value) => {
+      if (value[0] > value[1]) {
+        value = deepClone(value);
+        return value.reverse();
+      }
+      return value;
+    };
+
     const updateValue = (value, end) => {
       if (props.range) {
-        if (value[1] < value[0]) {
-          return;
-        }
-        value = value.map((v) => format(v));
+        value = handleOverlap(value).map(format);
       } else {
         value = format(value);
       }
@@ -153,7 +162,7 @@ export default createComponent({
       touch.start(event);
       currentValue = props.modelValue;
       if (props.range) {
-        startValue = props.modelValue.map((v) => format(v));
+        startValue = props.modelValue.map(format);
       } else {
         startValue = format(props.modelValue);
       }
@@ -219,6 +228,7 @@ export default createComponent({
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
           onTouchstart={(e) => {
             if (typeof i === 'number') {
+              // 保存当前按钮的索引
               index = i;
             }
             onTouchStart(e);
@@ -226,6 +236,7 @@ export default createComponent({
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
+          onClick={(e) => e.stopPropagation()}
         >
           {slots.button ? (
             slots.button()

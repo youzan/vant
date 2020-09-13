@@ -4,19 +4,19 @@
       <van-slider v-model="value1" @change="onChange" />
     </demo-block>
 
-    <demo-block :title="t('title5')">
+    <demo-block :title="t('title2')">
       <van-slider range v-model="value2" @change="onChange" />
     </demo-block>
 
-    <demo-block :title="t('title2')">
+    <demo-block :title="t('title3')">
       <van-slider v-model="value3" :min="-50" :max="50" @change="onChange" />
     </demo-block>
 
-    <demo-block :title="t('title3')">
+    <demo-block :title="t('title4')">
       <van-slider v-model="value4" disabled />
     </demo-block>
 
-    <demo-block :title="t('title4')">
+    <demo-block :title="t('title5')">
       <van-slider v-model="value5" :step="10" @change="onChange" />
     </demo-block>
 
@@ -32,7 +32,7 @@
     <demo-block :title="t('customButton')">
       <van-slider v-model="value7" active-color="#ee0a24">
         <template #button>
-          <div class="custom-button">{{ value6 }}</div>
+          <div class="custom-button">{{ value7 }}</div>
         </template>
       </van-slider>
     </demo-block>
@@ -56,10 +56,10 @@ export default {
   i18n: {
     'zh-CN': {
       title1: '基础用法',
-      title2: '指定选择范围',
-      title3: '禁用',
-      title4: '指定步长',
-      title5: '双滑块',
+      title2: '双滑块',
+      title3: '指定选择范围',
+      title4: '禁用',
+      title5: '指定步长',
       customStyle: '自定义样式',
       customButton: '自定义按钮',
       text: '当前值：',
@@ -68,10 +68,10 @@ export default {
     },
     'en-US': {
       title1: 'Basic Usage',
-      title2: 'Range',
-      title3: 'Disabled',
-      title4: 'Step size',
-      title5: 'Dual thumb mode',
+      title2: 'Dual thumb mode',
+      title3: 'Range',
+      title4: 'Disabled',
+      title5: 'Step size',
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
       text: 'Current value: ',
