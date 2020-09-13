@@ -8,7 +8,8 @@
   "sideEffects": false,
   "scripts": {
     "dev": "tsc -m esNext --outDir es --watch",
-    "build": "tsc && tsc -m esNext --outDir es",
+    "clean": "rm -rf ./es && rm -rf ./lib",
+    "build": "yarn clean && tsc && tsc -m esNext --outDir es",
     "release": "yarn build && release-it"
   },
   "publishConfig": {
