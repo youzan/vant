@@ -14,6 +14,37 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-alpha.5](https://github.com/youzan/vant/compare/v2.10.6...v3.0.0-alpha.5)
+
+`2020-09-13`
+
+**breaking changes**
+
+- Button: native-type 属性的默认值调整为 button [df8059](https://github.com/youzan/vant/commit/df8059eb015f2804433a7306c208a5909a4d46ac)
+
+**refactor**
+
+使用 Composition API 重构以下组件：
+
+- DatetimePicker [60e087](https://github.com/youzan/vant/commit/60e08767b313e90b13c6a4a3246a113367ed09a5)
+- DropdownItem [cd5f5b](https://github.com/youzan/vant/commit/cd5f5bb65544676279e486790761c38a2a9f0fc1)
+- Grid [38740b](https://github.com/youzan/vant/commit/38740b6c1c783d49a2201b24ba51121576e4c643)
+- IndexBar [f94c8c](https://github.com/youzan/vant/commit/f94c8ccbb93f4783814832a9363d663fb4986f10)
+- NumberKeyboard [14c1d4](https://github.com/youzan/vant/commit/14c1d4ea771cd9f01cb282493e57303ced897fa9)
+- PullRefresh [9f632f](https://github.com/youzan/vant/commit/9f632f151e3028adfd376f8ad166bf9d8af356fc)
+- Stepper [a7c285](https://github.com/youzan/vant/commit/a7c28548fcefe48a2ffa95bb0423dee0a48f8e16)
+- SwipeCell [b17c67](https://github.com/youzan/vant/commit/b17c67ab53652a361185934cb4119eca23622d9a)
+
+**Feature**
+
+- Button: 新增 icon-position 属性 [#7174](https://github.com/youzan/vant/issues/7174)
+- slider: 新增 range 属性，支持范围选择 [#7175](https://github.com/youzan/vant/issues/7175)
+- TabbarItem: 新增 @tabbar-item-active-background-color 变量 [#7162](https://github.com/youzan/vant/issues/7162)
+
+**Bug Fixes**
+
+- Sticky: 修复组件销毁时报错的问题 [#7169](https://github.com/youzan/vant/issues/7169)
+
 ### [v3.0.0-alpha.4](https://github.com/youzan/vant/compare/v2.10.5...v3.0.0-alpha.4)
 
 `2020-09-06`
