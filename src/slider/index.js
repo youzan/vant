@@ -153,6 +153,7 @@ export default createComponent({
         value = [left, right];
       }
 
+      this.startValue = this.value;
       this.updateValue(value, true);
     },
 
@@ -214,7 +215,7 @@ export default createComponent({
       if (range) {
         return `${((value[0] - min) * 100) / scope}%`;
       }
-      return `0%`;
+      return null;
     };
 
     const barStyle = {
