@@ -52,6 +52,7 @@ export function useTouch() {
   return {
     move,
     start,
+    reset,
     startX,
     startY,
     deltaX,
