@@ -5,7 +5,7 @@ import { bem, createComponent } from './shared';
 import { callInterceptor } from '../utils/interceptor';
 
 // Composition
-import { useEventListener } from '@vant/use';
+import { useWindowSize } from '@vant/use';
 import { usePublicApi } from '../composition/use-public-api';
 
 // Components
@@ -71,6 +71,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const swipeRef = ref();
+    const windowSize = useWindowSize();
 
     const state = reactive({
       active: 0,
@@ -177,10 +178,10 @@ export default createComponent({
     };
 
     usePublicApi({ swipeTo });
-    useEventListener('resize', resize);
-    useEventListener('orientationchange', resize);
 
     onMounted(resize);
+
+    watch([windowSize.width, windowSize.height], resize);
 
     watch(() => props.startPosition, setActive);
 
