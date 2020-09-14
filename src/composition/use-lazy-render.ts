@@ -1,7 +1,7 @@
-import { ref, Ref, watch } from 'vue';
+import { ref, isRef, watch, WatchSource } from 'vue';
 
-export function useLazyRender(show: Ref<boolean>) {
-  const inited = ref(show.value);
+export function useLazyRender(show: WatchSource<boolean>) {
+  const inited = ref(isRef(show) ? show.value : show());
 
   watch(show, (value) => {
     if (value) {

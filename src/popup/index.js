@@ -1,8 +1,7 @@
 // Utils
 import {
+  ref,
   watch,
-  computed,
-  reactive,
   Teleport,
   onMounted,
   Transition,
@@ -12,7 +11,8 @@ import {
 } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
-// Mixins
+// Composition
+import { useLazyRender } from '../composition/use-lazy-render';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 
 // Components
@@ -76,6 +76,10 @@ export default createComponent({
     closeable: Boolean,
     transition: String,
     safeAreaInsetBottom: Boolean,
+    position: {
+      type: String,
+      default: 'center',
+    },
     closeIcon: {
       type: String,
       default: 'cross',
@@ -83,10 +87,6 @@ export default createComponent({
     closeIconPosition: {
       type: String,
       default: 'top-right',
-    },
-    position: {
-      type: String,
-      default: 'center',
     },
   },
 
@@ -104,12 +104,9 @@ export default createComponent({
     let opened;
     let shouldReopen;
 
-    const state = reactive({
-      inited: props.show,
-      zIndex: null,
-    });
+    const zIndex = ref();
 
-    const shouldRender = computed(() => state.inited || !props.lazyRender);
+    const shouldRender = useLazyRender(() => props.show || !props.lazyRender);
 
     const lockScroll = () => {
       if (props.lockScroll) {
@@ -130,10 +127,6 @@ export default createComponent({
       }
     };
 
-    const updateZIndex = () => {
-      state.zIndex = ++context.zIndex;
-    };
-
     const open = () => {
       if (opened) {
         return;
@@ -144,8 +137,8 @@ export default createComponent({
       }
 
       opened = true;
-      updateZIndex();
       lockScroll();
+      zIndex.value = ++context.zIndex;
     };
 
     const close = () => {
@@ -171,7 +164,7 @@ export default createComponent({
             show={props.show}
             class={props.overlayClass}
             style={props.overlayStyle}
-            zIndex={state.zIndex}
+            zIndex={zIndex.value}
             duration={props.duration}
             onClick={onClickOverlay}
           />
@@ -211,7 +204,7 @@ export default createComponent({
         transition || (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
       const style = {
-        zIndex: state.zIndex,
+        zIndex: zIndex.value,
       };
 
       if (isDef(duration)) {
@@ -249,7 +242,6 @@ export default createComponent({
       () => props.show,
       (value) => {
         if (value) {
-          state.inited = true;
           open();
           emit('open');
         } else {
