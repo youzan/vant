@@ -1,6 +1,7 @@
 import { Transition } from 'vue';
 import { createNamespace, isDef, noop } from '../utils';
 import { preventDefault } from '../utils/dom/event';
+import { useLazyRender } from '../composition/use-lazy-render';
 
 const [createComponent, bem] = createNamespace('overlay');
 
@@ -22,7 +23,9 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    return function () {
+    const lazyRender = useLazyRender(() => props.show);
+
+    const renderOverlay = lazyRender(() => {
       const style = {
         zIndex: props.zIndex,
         ...props.customStyle,
@@ -33,17 +36,17 @@ export default createComponent({
       }
 
       return (
-        <Transition name="van-fade">
-          <div
-            vShow={props.show}
-            style={style}
-            class={[bem(), props.className]}
-            onTouchmove={props.lockScroll ? preventTouchMove : noop}
-          >
-            {slots.default?.()}
-          </div>
-        </Transition>
+        <div
+          vShow={props.show}
+          style={style}
+          class={[bem(), props.className]}
+          onTouchmove={props.lockScroll ? preventTouchMove : noop}
+        >
+          {slots.default?.()}
+        </div>
       );
-    };
+    });
+
+    return () => <Transition name="van-fade">{renderOverlay()}</Transition>;
   },
 });
