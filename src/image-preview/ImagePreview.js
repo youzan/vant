@@ -70,7 +70,6 @@ export default createComponent({
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const rootRef = ref();
     const swipeRef = ref();
 
     const state = reactive({
@@ -80,9 +79,8 @@ export default createComponent({
     });
 
     const resize = () => {
-      const root = rootRef.value;
-      if (root && root.getBoundingClientRect) {
-        const rect = root.getBoundingClientRect();
+      if (swipeRef.value) {
+        const rect = swipeRef.value.$el.getBoundingClientRect();
         state.rootWidth = rect.width;
         state.rootHeight = rect.height;
       }
@@ -207,7 +205,6 @@ export default createComponent({
 
     return () => (
       <Popup
-        ref={rootRef}
         show={props.show}
         class={[bem(), props.className]}
         overlayClass={bem('overlay')}
