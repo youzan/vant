@@ -155,7 +155,7 @@ export default {
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
-| allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
+| allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | beforeClose | Callback function before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
@@ -183,7 +183,7 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
-| allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
+| allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | - |

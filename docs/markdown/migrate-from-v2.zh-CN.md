@@ -174,6 +174,7 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 #### Dialog
 
+- 默认关闭 `allow-html` 属性
 - `before-close` 属性用法调整，不再传入 done 函数，而是通过返回 Promise 来控制
 
 #### ImagePreview
@@ -183,6 +184,7 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 #### Picker
 
 - `change` 事件参数不再传入组件实例
+- 默认关闭 `allow-html` 属性
 - 默认开启 `show-toolbar` 属性
 - 级联选择下，`confirm`、`change` 事件返回的回调参数将包含为完整的选项对象。
 

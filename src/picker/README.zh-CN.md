@@ -272,7 +272,7 @@ export default {
 | toolbar-position | 顶部栏位置，可选值为`bottom` | _string_ | `top` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
-| allow-html | 是否允许选项内容中渲染 HTML | _boolean_ | `true` |
+| allow-html | 是否允许选项内容中渲染 HTML | _boolean_ | `false` |
 | default-index | 单列选择时，默认选中项的索引 | _number \| string_ | `0` |
 | item-height `v2.8.6` | 选项高度，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `6` |

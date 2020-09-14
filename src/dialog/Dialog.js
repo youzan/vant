@@ -27,6 +27,7 @@ export default createComponent({
     width: [Number, String],
     message: String,
     callback: Function,
+    allowHtml: Boolean,
     className: null,
     beforeClose: Function,
     messageAlign: String,
@@ -36,10 +37,6 @@ export default createComponent({
     confirmButtonText: String,
     confirmButtonColor: String,
     closeOnClickOverlay: Boolean,
-    allowHtml: {
-      type: Boolean,
-      default: true,
-    },
     transition: {
       type: String,
       default: 'van-dialog-bounce',

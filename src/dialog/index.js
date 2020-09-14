@@ -45,7 +45,7 @@ Dialog.defaultOptions = {
   callback: null,
   teleport: 'body',
   className: '',
-  allowHtml: true,
+  allowHtml: false,
   lockScroll: true,
   transition: 'van-dialog-bounce',
   beforeClose: null,
