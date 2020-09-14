@@ -1,11 +1,18 @@
 // Utils
-import { Teleport, Transition } from 'vue';
+import {
+  watch,
+  computed,
+  reactive,
+  Teleport,
+  onMounted,
+  Transition,
+  onActivated,
+  onBeforeMount,
+  onDeactivated,
+} from 'vue';
 import { createNamespace, isDef } from '../utils';
-import { on, off, preventDefault } from '../utils/dom/event';
-import { getScroller } from '../utils/dom/scroll';
 
 // Mixins
-import { TouchMixin } from '../mixins/touch';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 
 // Components
@@ -59,7 +66,7 @@ export const popupSharedProps = {
 };
 
 export default createComponent({
-  mixins: [TouchMixin, CloseOnPopstateMixin],
+  mixins: [CloseOnPopstateMixin],
 
   inheritAttrs: false,
 
@@ -93,93 +100,118 @@ export default createComponent({
     'click-overlay',
   ],
 
-  data() {
-    return {
-      inited: this.show,
-      currentZIndex: null,
+  setup(props, { emit, attrs, slots }) {
+    let opened;
+    let shouldReopen;
+
+    const state = reactive({
+      inited: props.show,
+      zIndex: null,
+    });
+
+    const shouldRender = computed(() => state.inited || !props.lazyRender);
+
+    const lockScroll = () => {
+      if (props.lockScroll) {
+        if (!context.lockCount) {
+          document.body.classList.add('van-overflow-hidden');
+        }
+        context.lockCount++;
+      }
     };
-  },
 
-  computed: {
-    shouldRender() {
-      return this.inited || !this.lazyRender;
-    },
-  },
+    const unlockScroll = () => {
+      if (props.lockScroll && context.lockCount) {
+        context.lockCount--;
 
-  watch: {
-    show(val) {
-      const type = val ? 'open' : 'close';
-      this.inited = this.inited || this.show;
-      this[type]();
-      this.$emit(type);
-    },
+        if (!context.lockCount) {
+          document.body.classList.remove('van-overflow-hidden');
+        }
+      }
+    };
 
-    overlay: 'renderOverlay',
-  },
+    const updateZIndex = () => {
+      state.zIndex = ++context.zIndex;
+    };
 
-  beforeCreate() {
-    const createEmitter = (eventName) => (event) =>
-      this.$emit(eventName, event);
+    const open = () => {
+      if (opened) {
+        return;
+      }
 
-    this.onClick = createEmitter('click');
-    this.onOpened = createEmitter('opened');
-    this.onClosed = createEmitter('closed');
-  },
+      if (props.zIndex !== undefined) {
+        context.zIndex = props.zIndex;
+      }
 
-  mounted() {
-    if (this.show) {
-      this.open();
-    }
-  },
+      opened = true;
+      updateZIndex();
+      lockScroll();
+    };
 
-  /* istanbul ignore next */
-  activated() {
-    if (this.shouldReopen) {
-      this.$emit('update:show', true);
-      this.shouldReopen = false;
-    }
-  },
+    const close = () => {
+      if (opened) {
+        opened = false;
+        unlockScroll();
+        emit('update:show', false);
+      }
+    };
 
-  beforeUnmount() {
-    if (this.opened) {
-      this.removeLock();
-    }
-  },
+    const onClickOverlay = () => {
+      emit('click-overlay');
 
-  /* istanbul ignore next */
-  deactivated() {
-    if (this.show) {
-      this.close();
-      this.shouldReopen = true;
-    }
-  },
+      if (props.closeOnClickOverlay) {
+        close();
+      }
+    };
 
-  methods: {
-    genOverlay() {
-      if (this.overlay) {
+    const renderOverlay = () => {
+      if (props.overlay) {
         return (
           <Overlay
-            show={this.show}
-            class={this.overlayClass}
-            style={this.overlayStyle}
-            zIndex={this.currentZIndex}
-            duration={this.duration}
-            onClick={this.onClickOverlay}
+            show={props.show}
+            class={props.overlayClass}
+            style={props.overlayStyle}
+            zIndex={state.zIndex}
+            duration={props.duration}
+            onClick={onClickOverlay}
           />
         );
       }
-    },
+    };
 
-    genPopup() {
-      const { round, position, duration } = this;
+    const renderCloseIcon = () => {
+      if (props.closeable) {
+        return (
+          <Icon
+            role="button"
+            tabindex="0"
+            name={props.closeIcon}
+            class={bem('close-icon', props.closeIconPosition)}
+            onClick={close}
+          />
+        );
+      }
+    };
+
+    const onClick = (event) => emit('click', event);
+    const onOpened = () => emit('opened');
+    const onClosed = () => emit('closed');
+
+    const renderPopup = () => {
+      const {
+        round,
+        position,
+        duration,
+        transition,
+        safeAreaInsetBottom,
+      } = props;
       const isCenter = position === 'center';
 
       const transitionName =
-        this.transition ||
-        (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
+        transition || (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
 
       const style = {
-        zIndex: this.currentZIndex,
+        zIndex: state.zIndex,
       };
 
       if (isDef(duration)) {
@@ -190,149 +222,85 @@ export default createComponent({
       return (
         <Transition
           name={transitionName}
-          onAfterEnter={this.onOpened}
-          onAfterLeave={this.onClosed}
+          onAfterEnter={onOpened}
+          onAfterLeave={onClosed}
         >
-          {this.shouldRender ? (
+          {shouldRender.value ? (
             <div
-              vShow={this.show}
+              vShow={props.show}
               style={style}
               class={bem({
                 round,
                 [position]: position,
-                'safe-area-inset-bottom': this.safeAreaInsetBottom,
+                'safe-area-inset-bottom': safeAreaInsetBottom,
               })}
-              onClick={this.onClick}
-              {...this.$attrs}
+              onClick={onClick}
+              {...attrs}
             >
-              {this.$slots.default?.()}
-              {this.closeable && (
-                <Icon
-                  role="button"
-                  tabindex="0"
-                  name={this.closeIcon}
-                  class={bem('close-icon', this.closeIconPosition)}
-                  onClick={this.close}
-                />
-              )}
+              {slots.default?.()}
+              {renderCloseIcon()}
             </div>
           ) : null}
         </Transition>
       );
-    },
+    };
 
-    open() {
-      /* istanbul ignore next */
-      if (this.$isServer || this.opened) {
-        return;
-      }
-
-      // cover default zIndex
-      if (this.zIndex !== undefined) {
-        context.zIndex = this.zIndex;
-      }
-
-      this.opened = true;
-      this.renderOverlay();
-      this.addLock();
-    },
-
-    addLock() {
-      if (this.lockScroll) {
-        on(document, 'touchstart', this.touchStart);
-        on(document, 'touchmove', this.onTouchMove);
-
-        if (!context.lockCount) {
-          document.body.classList.add('van-overflow-hidden');
-        }
-        context.lockCount++;
-      }
-    },
-
-    removeLock() {
-      if (this.lockScroll && context.lockCount) {
-        context.lockCount--;
-        off(document, 'touchstart', this.touchStart);
-        off(document, 'touchmove', this.onTouchMove);
-
-        if (!context.lockCount) {
-          document.body.classList.remove('van-overflow-hidden');
+    watch(
+      () => props.show,
+      (value) => {
+        if (value) {
+          state.inited = true;
+          open();
+          emit('open');
+        } else {
+          close();
+          emit('close');
         }
       }
-    },
-
-    close() {
-      if (!this.opened) {
-        return;
-      }
-
-      this.opened = false;
-      this.removeLock();
-      this.$emit('update:show', false);
-    },
-
-    onTouchMove(event) {
-      this.touchMove(event);
-      const direction = this.deltaY > 0 ? '10' : '01';
-      const el = getScroller(event.target, this.$refs.root);
-      const { scrollHeight, offsetHeight, scrollTop } = el;
-      let status = '11';
-
-      /* istanbul ignore next */
-      if (scrollTop === 0) {
-        status = offsetHeight >= scrollHeight ? '00' : '01';
-      } else if (scrollTop + offsetHeight >= scrollHeight) {
-        status = '10';
-      }
-
-      /* istanbul ignore next */
-      if (
-        status !== '11' &&
-        this.direction === 'vertical' &&
-        !(parseInt(status, 2) & parseInt(direction, 2))
-      ) {
-        preventDefault(event, true);
-      }
-    },
-
-    onClickOverlay() {
-      this.$emit('click-overlay');
-
-      if (this.closeOnClickOverlay) {
-        this.close();
-      }
-    },
-
-    renderOverlay() {
-      if (this.$isServer || !this.show) {
-        return;
-      }
-
-      this.$nextTick(() => {
-        this.updateZIndex(this.overlay ? 1 : 0);
-      });
-    },
-
-    updateZIndex(value = 0) {
-      this.currentZIndex = ++context.zIndex + value;
-    },
-  },
-
-  render() {
-    if (this.teleport) {
-      return (
-        <Teleport to={this.teleport}>
-          {this.genOverlay()}
-          {this.genPopup()}
-        </Teleport>
-      );
-    }
-
-    return (
-      <>
-        {this.genOverlay()}
-        {this.genPopup()}
-      </>
     );
+
+    onMounted(() => {
+      if (props.show) {
+        open();
+      }
+    });
+
+    onActivated(() => {
+      if (shouldReopen) {
+        emit('update:show', true);
+        shouldReopen = false;
+      }
+    });
+
+    onDeactivated(() => {
+      if (props.show) {
+        close();
+        shouldReopen = true;
+      }
+    });
+
+    onBeforeMount(() => {
+      if (opened) {
+        unlockScroll();
+      }
+    });
+
+    return () => {
+      if (props.teleport) {
+        return (
+          <Teleport to={props.teleport}>
+            {renderOverlay()}
+            {renderPopup()}
+          </Teleport>
+        );
+      }
+
+      return (
+        <>
+          {renderOverlay()}
+          {renderPopup()}
+        </>
+      );
+    };
   },
 });
