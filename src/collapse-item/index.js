@@ -41,7 +41,7 @@ export default createComponent({
     });
 
     const show = ref(expanded.value);
-    const shouldRender = useLazyRender(show);
+    const lazyRender = useLazyRender(show);
 
     const onTransitionEnd = () => {
       if (!expanded.value) {
@@ -115,22 +115,18 @@ export default createComponent({
       );
     };
 
-    const renderContent = () => {
-      if (shouldRender.value) {
-        return (
-          <div
-            ref={wrapperRef}
-            vShow={show.value}
-            class={bem('wrapper')}
-            onTransitionend={onTransitionEnd}
-          >
-            <div ref={contentRef} class={bem('content')}>
-              {slots.default?.()}
-            </div>
-          </div>
-        );
-      }
-    };
+    const renderContent = lazyRender(() => (
+      <div
+        ref={wrapperRef}
+        vShow={show.value}
+        class={bem('wrapper')}
+        onTransitionend={onTransitionEnd}
+      >
+        <div ref={contentRef} class={bem('content')}>
+          {slots.default?.()}
+        </div>
+      </div>
+    ));
 
     return () => (
       <div class={[bem({ border: index.value && props.border })]}>

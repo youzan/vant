@@ -3,6 +3,7 @@ import {
   ref,
   watch,
   Teleport,
+  computed,
   onMounted,
   Transition,
   onActivated,
@@ -12,6 +13,7 @@ import {
 import { createNamespace, isDef } from '../utils';
 
 // Composition
+import { useLockScroll } from '../composition/use-lock-scroll';
 import { useLazyRender } from '../composition/use-lazy-render';
 import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 
@@ -106,39 +108,36 @@ export default createComponent({
 
     const zIndex = ref();
 
-    const shouldRender = useLazyRender(() => props.show || !props.lazyRender);
+    const [lockScroll, unlockScroll] = useLockScroll(() => props.lockScroll);
 
-    const lockScroll = () => {
-      if (props.lockScroll) {
-        if (!context.lockCount) {
-          document.body.classList.add('van-overflow-hidden');
-        }
-        context.lockCount++;
+    const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
+
+    const style = computed(() => {
+      const style = {
+        zIndex: zIndex.value,
+      };
+
+      if (isDef(props.duration)) {
+        const key =
+          props.position === 'center'
+            ? 'animationDuration'
+            : 'transitionDuration';
+        style[key] = `${props.duration}s`;
       }
-    };
 
-    const unlockScroll = () => {
-      if (props.lockScroll && context.lockCount) {
-        context.lockCount--;
-
-        if (!context.lockCount) {
-          document.body.classList.remove('van-overflow-hidden');
-        }
-      }
-    };
+      return style;
+    });
 
     const open = () => {
-      if (opened) {
-        return;
-      }
+      if (!opened) {
+        if (props.zIndex !== undefined) {
+          context.zIndex = props.zIndex;
+        }
 
-      if (props.zIndex !== undefined) {
-        context.zIndex = props.zIndex;
+        opened = true;
+        lockScroll();
+        zIndex.value = ++context.zIndex;
       }
-
-      opened = true;
-      lockScroll();
-      zIndex.value = ++context.zIndex;
     };
 
     const close = () => {
@@ -151,7 +150,6 @@ export default createComponent({
 
     const onClickOverlay = () => {
       emit('click-overlay');
-
       if (props.closeOnClickOverlay) {
         close();
       }
@@ -190,50 +188,38 @@ export default createComponent({
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
 
-    const renderPopup = () => {
-      const {
-        round,
-        position,
-        duration,
-        transition,
-        safeAreaInsetBottom,
-      } = props;
-      const isCenter = position === 'center';
+    const renderPopup = lazyRender(() => {
+      const { round, position, safeAreaInsetBottom } = props;
+      return (
+        <div
+          vShow={props.show}
+          style={style.value}
+          class={bem({
+            round,
+            [position]: position,
+            'safe-area-inset-bottom': safeAreaInsetBottom,
+          })}
+          onClick={onClick}
+          {...attrs}
+        >
+          {slots.default?.()}
+          {renderCloseIcon()}
+        </div>
+      );
+    });
 
-      const transitionName =
-        transition || (isCenter ? 'van-fade' : `van-popup-slide-${position}`);
-
-      const style = {
-        zIndex: zIndex.value,
-      };
-
-      if (isDef(duration)) {
-        const key = isCenter ? 'animationDuration' : 'transitionDuration';
-        style[key] = `${duration}s`;
-      }
+    const renderTransition = () => {
+      const { position, transition } = props;
+      const name =
+        position === 'center' ? 'van-fade' : `van-popup-slide-${position}`;
 
       return (
         <Transition
-          name={transitionName}
+          name={transition || name}
           onAfterEnter={onOpened}
           onAfterLeave={onClosed}
         >
-          {shouldRender.value ? (
-            <div
-              vShow={props.show}
-              style={style}
-              class={bem({
-                round,
-                [position]: position,
-                'safe-area-inset-bottom': safeAreaInsetBottom,
-              })}
-              onClick={onClick}
-              {...attrs}
-            >
-              {slots.default?.()}
-              {renderCloseIcon()}
-            </div>
-          ) : null}
+          {renderPopup()}
         </Transition>
       );
     };
@@ -282,7 +268,7 @@ export default createComponent({
         return (
           <Teleport to={props.teleport}>
             {renderOverlay()}
-            {renderPopup()}
+            {renderTransition()}
           </Teleport>
         );
       }
@@ -290,7 +276,7 @@ export default createComponent({
       return (
         <>
           {renderOverlay()}
-          {renderPopup()}
+          {renderTransition()}
         </>
       );
     };
