@@ -29,7 +29,8 @@ export default createComponent({
 
     const onTouchMove = (event) => {
       touch.move(event);
-      if (touch.direction) {
+
+      if (touch.direction.value) {
         active.value = false;
       }
     };

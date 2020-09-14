@@ -5,10 +5,6 @@ import { useLazyRender } from '../composition/use-lazy-render';
 
 const [createComponent, bem] = createNamespace('overlay');
 
-function preventTouchMove(event) {
-  preventDefault(event, true);
-}
-
 export default createComponent({
   props: {
     show: Boolean,
@@ -24,6 +20,10 @@ export default createComponent({
 
   setup(props, { slots }) {
     const lazyRender = useLazyRender(() => props.show);
+
+    const preventTouchMove = (event) => {
+      preventDefault(event, true);
+    };
 
     const renderOverlay = lazyRender(() => {
       const style = {

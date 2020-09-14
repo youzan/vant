@@ -210,7 +210,7 @@ export default createComponent({
     const onTouchMove = (event) => {
       touch.move(event);
 
-      if (touch.direction.value === 'vertical') {
+      if (touch.isVertical()) {
         preventDefault(event);
 
         const { clientX, clientY } = event.touches[0];

@@ -57,7 +57,6 @@ export default createComponent({
     });
 
     const touch = useTouch();
-    const { deltaY, direction } = touch;
 
     const getHeadStyle = () => {
       if (props.headHeight !== DEFAULT_HEAD_HEIGHT) {
@@ -150,9 +149,10 @@ export default createComponent({
           checkPosition(event);
         }
 
+        const { deltaY } = touch;
         touch.move(event);
 
-        if (reachTop && deltaY.value >= 0 && direction.value === 'vertical') {
+        if (reachTop && deltaY.value >= 0 && touch.isVertical()) {
           preventDefault(event);
           setStatus(ease(deltaY.value));
         }
@@ -160,7 +160,7 @@ export default createComponent({
     };
 
     const onTouchEnd = () => {
-      if (reachTop && deltaY.value && isTouchable()) {
+      if (reachTop && touch.deltaY.value && isTouchable()) {
         state.duration = props.animationDuration;
 
         if (state.status === 'loosing') {

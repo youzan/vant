@@ -121,7 +121,7 @@ export default createComponent({
 
       touch.move(event);
 
-      if (touch.direction.value === 'horizontal') {
+      if (touch.isHorizontal()) {
         const { clientX } = event.touches[0];
         preventDefault(event);
         select(getScoreByPosition(clientX));

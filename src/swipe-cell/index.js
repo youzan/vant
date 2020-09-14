@@ -44,7 +44,6 @@ export default createComponent({
     });
 
     const touch = useTouch();
-    const { deltaX, direction } = touch;
 
     const getWidthByRef = (ref) => (ref.value ? useRect(ref).width : 0);
 
@@ -107,9 +106,10 @@ export default createComponent({
         return;
       }
 
+      const { deltaX } = touch;
       touch.move(event);
 
-      if (direction.value === 'horizontal') {
+      if (touch.isHorizontal()) {
         lockClick = true;
         state.dragging = true;
 

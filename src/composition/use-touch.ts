@@ -23,6 +23,9 @@ export function useTouch() {
   const offsetY = ref(0);
   const direction = ref('');
 
+  const isVertical = () => direction.value === 'vertical';
+  const isHorizontal = () => direction.value === 'horizontal';
+
   const reset = () => {
     deltaX.value = 0;
     deltaY.value = 0;
@@ -60,5 +63,7 @@ export function useTouch() {
     offsetX,
     offsetY,
     direction,
+    isVertical,
+    isHorizontal,
   };
 }
