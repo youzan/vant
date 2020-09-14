@@ -13,9 +13,9 @@ import {
 import { createNamespace, isDef } from '../utils';
 
 // Composition
+import { useEventListener } from '@vant/use';
 import { useLockScroll } from '../composition/use-lock-scroll';
 import { useLazyRender } from '../composition/use-lazy-render';
-import { CloseOnPopstateMixin } from '../mixins/close-on-popstate';
 
 // Components
 import Icon from '../icon';
@@ -68,8 +68,6 @@ export const popupSharedProps = {
 };
 
 export default createComponent({
-  mixins: [CloseOnPopstateMixin],
-
   inheritAttrs: false,
 
   props: {
@@ -77,6 +75,7 @@ export default createComponent({
     round: Boolean,
     closeable: Boolean,
     transition: String,
+    closeOnPopstate: Boolean,
     safeAreaInsetBottom: Boolean,
     position: {
       type: String,
@@ -236,6 +235,13 @@ export default createComponent({
         }
       }
     );
+
+    useEventListener('popstate', () => {
+      if (props.closeOnPopstate) {
+        close();
+        shouldReopen = false;
+      }
+    });
 
     onMounted(() => {
       if (props.show) {
