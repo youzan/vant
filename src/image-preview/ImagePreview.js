@@ -1,10 +1,12 @@
+import { nextTick, onMounted, reactive, ref, watch } from 'vue';
+
 // Utils
 import { bem, createComponent } from './shared';
 import { callInterceptor } from '../utils/interceptor';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
-import { BindEventMixin } from '../mixins/bind-event';
+// Composition
+import { useEventListener } from '@vant/use';
+import { usePublicApi } from '../composition/use-public-api';
 
 // Components
 import Icon from '../icon';
@@ -13,14 +15,6 @@ import Popup from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
 export default createComponent({
-  mixins: [
-    TouchMixin,
-    BindEventMixin(function (bind) {
-      bind(window, 'resize', this.resize, true);
-      bind(window, 'orientationchange', this.resize, true);
-    }),
-  ],
-
   props: {
     show: Boolean,
     className: null,
@@ -75,153 +69,155 @@ export default createComponent({
 
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    const rootRef = ref();
+    const swipeRef = ref();
+
+    const state = reactive({
       active: 0,
       rootWidth: 0,
       rootHeight: 0,
-      doubleClickTimer: null,
+    });
+
+    const resize = () => {
+      const root = rootRef.value;
+      if (root && root.getBoundingClientRect) {
+        const rect = root.getBoundingClientRect();
+        state.rootWidth = rect.width;
+        state.rootHeight = rect.height;
+      }
     };
-  },
 
-  mounted() {
-    this.resize();
-  },
+    const emitScale = (args) => {
+      emit('scale', args);
+    };
 
-  watch: {
-    startPosition: 'setActive',
-
-    show(val) {
-      if (val) {
-        this.setActive(+this.startPosition);
-        this.$nextTick(() => {
-          this.resize();
-          this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
-        });
-      } else {
-        this.$emit('close', {
-          index: this.active,
-          url: this.images[this.active],
-        });
-      }
-    },
-  },
-
-  methods: {
-    resize() {
-      if (this.$el && this.$el.getBoundingClientRect) {
-        const rect = this.$el.getBoundingClientRect();
-        this.rootWidth = rect.width;
-        this.rootHeight = rect.height;
-      }
-    },
-
-    emitClose() {
+    const emitClose = () => {
       callInterceptor({
-        interceptor: this.beforeClose,
-        args: [this.active],
+        interceptor: props.beforeClose,
+        args: [state.active],
         done: () => {
-          this.$emit('update:show', false);
+          emit('update:show', false);
         },
       });
-    },
+    };
 
-    emitScale(args) {
-      this.$emit('scale', args);
-    },
-
-    setActive(active) {
-      if (active !== this.active) {
-        this.active = active;
-        this.$emit('change', active);
+    const setActive = (active) => {
+      if (active !== state.active) {
+        state.active = active;
+        emit('change', active);
       }
-    },
+    };
 
-    genIndex() {
-      if (this.showIndex) {
+    const renderIndex = () => {
+      if (props.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.$slots.index
-              ? this.$slots.index()
-              : `${this.active + 1} / ${this.images.length}`}
+            {slots.index
+              ? slots.index()
+              : `${state.active + 1} / ${props.images.length}`}
           </div>
         );
       }
-    },
+    };
 
-    genCover() {
-      if (this.$slots.cover) {
-        return <div class={bem('cover')}>{this.$slots.cover()}</div>;
+    const renderCover = () => {
+      if (slots.cover) {
+        return <div class={bem('cover')}>{slots.cover()}</div>;
       }
-    },
+    };
 
-    genImages() {
-      return (
-        <Swipe
-          ref="swipe"
-          lazyRender
-          loop={this.loop}
-          class={bem('swipe')}
-          duration={this.swipeDuration}
-          initialSwipe={this.startPosition}
-          showIndicators={this.showIndicators}
-          indicatorColor="white"
-          onChange={this.setActive}
-        >
-          {this.images.map((image) => (
-            <ImagePreviewItem
-              src={image}
-              show={this.show}
-              active={this.active}
-              maxZoom={this.maxZoom}
-              minZoom={this.minZoom}
-              rootWidth={this.rootWidth}
-              rootHeight={this.rootHeight}
-              onScale={this.emitScale}
-              onClose={this.emitClose}
-            />
-          ))}
-        </Swipe>
-      );
-    },
+    const renderImages = () => (
+      <Swipe
+        ref={swipeRef}
+        lazyRender
+        loop={props.loop}
+        class={bem('swipe')}
+        duration={props.swipeDuration}
+        initialSwipe={props.startPosition}
+        showIndicators={props.showIndicators}
+        indicatorColor="white"
+        onChange={setActive}
+      >
+        {props.images.map((image) => (
+          <ImagePreviewItem
+            src={image}
+            show={props.show}
+            active={state.active}
+            maxZoom={props.maxZoom}
+            minZoom={props.minZoom}
+            rootWidth={state.rootWidth}
+            rootHeight={state.rootHeight}
+            onScale={emitScale}
+            onClose={emitClose}
+          />
+        ))}
+      </Swipe>
+    );
 
-    genClose() {
-      if (this.closeable) {
+    const renderClose = () => {
+      if (props.closeable) {
         return (
           <Icon
             role="button"
-            name={this.closeIcon}
-            class={bem('close-icon', this.closeIconPosition)}
-            onClick={this.emitClose}
+            name={props.closeIcon}
+            class={bem('close-icon', props.closeIconPosition)}
+            onClick={emitClose}
           />
         );
       }
-    },
+    };
 
-    onClosed() {
-      this.$emit('closed');
-    },
+    const onClosed = () => {
+      emit('closed');
+    };
 
-    // @exposed-api
-    swipeTo(index, options) {
-      if (this.$refs.swipe) {
-        this.$refs.swipe.swipeTo(index, options);
+    const swipeTo = (index, options) => {
+      if (swipeRef.value) {
+        swipeRef.value.swipeTo(index, options);
       }
-    },
-  },
+    };
 
-  render() {
-    return (
+    usePublicApi({ swipeTo });
+    useEventListener('resize', resize);
+    useEventListener('orientationchange', resize);
+
+    onMounted(resize);
+
+    watch(() => props.startPosition, setActive);
+
+    watch(
+      () => props.show,
+      (value) => {
+        const { images, startPosition } = props;
+        if (value) {
+          setActive(+startPosition);
+          nextTick(() => {
+            resize();
+            swipeRef.value.swipeTo(+startPosition, { immediate: true });
+          });
+        } else {
+          emit('close', {
+            index: state.active,
+            url: images[state.active],
+          });
+        }
+      }
+    );
+
+    return () => (
       <Popup
-        show={this.show}
-        class={[bem(), this.className]}
+        ref={rootRef}
+        show={props.show}
+        class={[bem(), props.className]}
         overlayClass={bem('overlay')}
-        onClosed={this.onClosed}
+        closeOnPopstate={props.closeOnPopstate}
+        onClosed={onClosed}
       >
-        {this.genClose()}
-        {this.genImages()}
-        {this.genIndex()}
-        {this.genCover()}
+        {renderClose()}
+        {renderImages()}
+        {renderIndex()}
+        {renderCover()}
       </Popup>
     );
   },
