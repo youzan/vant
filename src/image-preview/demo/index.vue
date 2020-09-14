@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block card :title="t('basicUsage')">
-      <van-cell is-link @click="showImagePreview">
+      <van-cell is-link @click="showImagePreview()">
         {{ t('showImages') }}
       </van-cell>
     </demo-block>
@@ -104,7 +104,7 @@ export default {
       this.index = index;
     },
 
-    showImagePreview(options) {
+    showImagePreview(options = {}) {
       const instance = ImagePreview({
         images,
         ...options,
