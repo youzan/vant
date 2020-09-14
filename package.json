@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
-    "@vant/cli": "^3.0.0-alpha.9",
+    "@vant/cli": "^3.0.0-alpha.10",
     "@vue/compiler-sfc": "3.0.0-rc.10",
     "prettier": "^2.0.4",
     "vue": "3.0.0-rc.10"
