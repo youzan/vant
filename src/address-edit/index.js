@@ -336,7 +336,7 @@ export default createComponent({
             }}
           />
           <Detail
-            vShow={this.showDetail}
+            show={this.showDetail}
             value={data.addressDetail}
             focused={this.detailFocused}
             errorMessage={errorInfo.addressDetail}

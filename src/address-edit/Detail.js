@@ -13,6 +13,7 @@ const android = isAndroid();
 
 export default createComponent({
   props: {
+    show: Boolean,
     value: String,
     errorMessage: String,
     focused: Boolean,
@@ -96,28 +97,32 @@ export default createComponent({
       emit('input', value);
     };
 
-    return () => (
-      <>
-        <Field
-          v-slots={{ icon: renderFinish }}
-          autosize
-          ref={field}
-          class={bem()}
-          rows={props.detailRows}
-          type="textarea"
-          label={t('label')}
-          border={!showSearchResult()}
-          clearable={!android}
-          maxlength={props.detailMaxlength}
-          modelValue={props.value}
-          placeholder={t('placeholder')}
-          errorMessage={props.errorMessage}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          {...{ 'onUpdate:modelValue': onInput }}
-        />
-        {renderSearchResult()}
-      </>
-    );
+    return () => {
+      if (props.show) {
+        return (
+          <>
+            <Field
+              v-slots={{ icon: renderFinish }}
+              autosize
+              ref={field}
+              class={bem()}
+              rows={props.detailRows}
+              type="textarea"
+              label={t('label')}
+              border={!showSearchResult()}
+              clearable={!android}
+              maxlength={props.detailMaxlength}
+              modelValue={props.value}
+              placeholder={t('placeholder')}
+              errorMessage={props.errorMessage}
+              onBlur={onBlur}
+              onFocus={onFocus}
+              {...{ 'onUpdate:modelValue': onInput }}
+            />
+            {renderSearchResult()}
+          </>
+        );
+      }
+    };
   },
 });
