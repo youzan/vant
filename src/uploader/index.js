@@ -1,15 +1,13 @@
-// Utils
-import {
-  noop,
-  isDef,
-  isPromise,
-  getSizeStyle,
-  createNamespace,
-} from '../utils';
-import { toArray, readFile, isOversize, isImageFile } from './utils';
+import { ref } from 'vue';
 
-// Mixins
-import { FieldMixin } from '../mixins/field';
+// Utils
+import { callInterceptor } from '../utils/interceptor';
+import { isDef, isPromise, getSizeStyle, createNamespace } from '../utils';
+import { toArray, isOversize, isImageFile, readFileContent } from './utils';
+
+// Composition
+import { usePublicApi } from '../composition/use-public-api';
+import { useParentField } from '../composition/use-parent-field';
 
 // Components
 import Icon from '../icon';
@@ -20,8 +18,6 @@ import ImagePreview from '../image-preview';
 const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
-  mixins: [FieldMixin],
-
   props: {
     capture: String,
     multiple: Boolean,
@@ -91,89 +87,22 @@ export default createComponent({
     'update:modelValue',
   ],
 
-  methods: {
-    getDetail(index = this.modelValue.length) {
-      return {
-        name: this.name,
-        index,
-      };
-    },
+  setup(props, { emit, slots }) {
+    const inputRef = ref();
 
-    onChange(event) {
-      let { files } = event.target;
+    const getDetail = (index = props.modelValue.length) => ({
+      name: props.name,
+      index,
+    });
 
-      if (this.disabled || !files.length) {
-        return;
+    const resetInput = () => {
+      if (inputRef.value) {
+        inputRef.value.value = '';
       }
+    };
 
-      files = files.length === 1 ? files[0] : [].slice.call(files);
-
-      if (this.beforeRead) {
-        const response = this.beforeRead(files, this.getDetail());
-
-        if (!response) {
-          this.resetInput();
-          return;
-        }
-
-        if (isPromise(response)) {
-          response
-            .then((data) => {
-              if (data) {
-                this.readFile(data);
-              } else {
-                this.readFile(files);
-              }
-            })
-            .catch(this.resetInput);
-
-          return;
-        }
-      }
-
-      this.readFile(files);
-    },
-
-    readFile(files) {
-      const oversize = isOversize(files, this.maxSize);
-
-      if (Array.isArray(files)) {
-        const maxCount = this.maxCount - this.modelValue.length;
-
-        if (files.length > maxCount) {
-          files = files.slice(0, maxCount);
-        }
-
-        Promise.all(files.map((file) => readFile(file, this.resultType))).then(
-          (contents) => {
-            const fileList = files.map((file, index) => {
-              const result = { file, status: '', message: '' };
-
-              if (contents[index]) {
-                result.content = contents[index];
-              }
-
-              return result;
-            });
-
-            this.onAfterRead(fileList, oversize);
-          }
-        );
-      } else {
-        readFile(files, this.resultType).then((content) => {
-          const result = { file: files, status: '', message: '' };
-
-          if (content) {
-            result.content = content;
-          }
-
-          this.onAfterRead(result, oversize);
-        });
-      }
-    },
-
-    onAfterRead(files, oversize) {
-      this.resetInput();
+    const onAfterRead = (files, oversize) => {
+      resetInput();
 
       let validFiles = files;
 
@@ -184,7 +113,7 @@ export default createComponent({
           validFiles = [];
           files.forEach((item) => {
             if (item.file) {
-              if (item.file.size > this.maxSize) {
+              if (item.file.size > props.maxSize) {
                 oversizeFiles.push(item);
               } else {
                 validFiles.push(item);
@@ -194,7 +123,7 @@ export default createComponent({
         } else {
           validFiles = null;
         }
-        this.$emit('oversize', oversizeFiles, this.getDetail());
+        emit('oversize', oversizeFiles, getDetail());
       }
 
       const isValidFiles = Array.isArray(validFiles)
@@ -202,90 +131,140 @@ export default createComponent({
         : Boolean(validFiles);
 
       if (isValidFiles) {
-        this.$emit('update:modelValue', [
-          ...this.modelValue,
+        emit('update:modelValue', [
+          ...props.modelValue,
           ...toArray(validFiles),
         ]);
 
-        if (this.afterRead) {
-          this.afterRead(validFiles, this.getDetail());
+        if (props.afterRead) {
+          props.afterRead(validFiles, getDetail());
         }
       }
-    },
+    };
 
-    onDelete(file, index) {
-      if (this.beforeDelete) {
-        const response = this.beforeDelete(file, this.getDetail(index));
+    const readFile = (files) => {
+      const { maxSize, maxCount, modelValue, resultType } = props;
+      const oversize = isOversize(files, maxSize);
+
+      if (Array.isArray(files)) {
+        const remainCount = maxCount - modelValue.length;
+
+        if (files.length > remainCount) {
+          files = files.slice(0, remainCount);
+        }
+
+        Promise.all(
+          files.map((file) => readFileContent(file, resultType))
+        ).then((contents) => {
+          const fileList = files.map((file, index) => {
+            const result = { file, status: '', message: '' };
+
+            if (contents[index]) {
+              result.content = contents[index];
+            }
+
+            return result;
+          });
+
+          onAfterRead(fileList, oversize);
+        });
+      } else {
+        readFileContent(files, resultType).then((content) => {
+          const result = { file: files, status: '', message: '' };
+
+          if (content) {
+            result.content = content;
+          }
+
+          onAfterRead(result, oversize);
+        });
+      }
+    };
+
+    const deleteFile = (file, index) => {
+      const fileList = props.modelValue.slice(0);
+      fileList.splice(index, 1);
+
+      emit('update:modelValue', fileList);
+      emit('delete', file, getDetail(index));
+    };
+
+    const onDelete = (file, index) => {
+      callInterceptor({
+        interceptor: props.beforeDelete,
+        args: [file, getDetail(index)],
+        done() {
+          deleteFile(file, index);
+        },
+      });
+    };
+
+    const onChange = (event) => {
+      let { files } = event.target;
+
+      if (props.disabled || !files.length) {
+        return;
+      }
+
+      files = files.length === 1 ? files[0] : [].slice.call(files);
+
+      if (props.beforeRead) {
+        const response = props.beforeRead(files, getDetail());
 
         if (!response) {
+          resetInput();
           return;
         }
 
         if (isPromise(response)) {
           response
-            .then(() => {
-              this.deleteFile(file, index);
+            .then((data) => {
+              if (data) {
+                readFile(data);
+              } else {
+                readFile(files);
+              }
             })
-            .catch(noop);
-          return;
+            .catch(resetInput);
         }
+      } else {
+        readFile(files);
       }
+    };
 
-      this.deleteFile(file, index);
-    },
+    let imagePreview;
 
-    deleteFile(file, index) {
-      const fileList = this.modelValue.slice(0);
-      fileList.splice(index, 1);
+    const onPreviewImage = (item) => {
+      if (props.previewFullImage) {
+        const imageFiles = props.modelValue.filter((item) => isImageFile(item));
+        const imageContents = imageFiles.map(
+          (item) => item.content || item.url
+        );
 
-      this.$emit('update:modelValue', fileList);
-      this.$emit('delete', file, this.getDetail(index));
-    },
-
-    resetInput() {
-      /* istanbul ignore else */
-      if (this.$refs.input) {
-        this.$refs.input.value = '';
+        imagePreview = ImagePreview({
+          images: imageContents,
+          startPosition: imageFiles.indexOf(item),
+          onClose: () => {
+            emit('close-preview');
+          },
+          ...props.previewOptions,
+        });
       }
-    },
+    };
 
-    onPreviewImage(item) {
-      if (!this.previewFullImage) {
-        return;
+    const closeImagePreview = () => {
+      if (imagePreview) {
+        imagePreview.close();
       }
+    };
 
-      const imageFiles = this.modelValue.filter((item) => isImageFile(item));
-      const imageContents = imageFiles.map((item) => item.content || item.url);
-
-      this.imagePreview = ImagePreview({
-        images: imageContents,
-        startPosition: imageFiles.indexOf(item),
-        onClose: () => {
-          this.$emit('close-preview');
-        },
-        ...this.previewOptions,
-      });
-    },
-
-    // @exposed-api
-    closeImagePreview() {
-      if (this.imagePreview) {
-        this.imagePreview.close();
+    const chooseFile = () => {
+      if (inputRef.value && !props.disabled) {
+        inputRef.value.click();
       }
-    },
+    };
 
-    // @exposed-api
-    chooseFile() {
-      if (this.disabled) {
-        return;
-      }
-      /* istanbul ignore else */
-      if (this.$refs.input) {
-        this.$refs.input.click();
-      }
-    },
-
-    genPreviewMask(item) {
+    const renderPreviewMask = (item) => {
       const { status, message } = item;
 
       if (status === 'uploading' || status === 'failed') {
@@ -305,26 +284,26 @@ export default createComponent({
           </div>
         );
       }
-    },
+    };
 
-    genPreviewItem(item, index) {
-      const showDelete = item.status !== 'uploading' && this.deletable;
+    const renderPreviewItem = (item, index) => {
+      const showDelete = item.status !== 'uploading' && props.deletable;
 
       const DeleteIcon = showDelete && (
         <div
           class={bem('preview-delete')}
           onClick={(event) => {
             event.stopPropagation();
-            this.onDelete(item, index);
+            onDelete(item, index);
           }}
         >
           <Icon name="cross" class={bem('preview-delete-icon')} />
         </div>
       );
 
-      const PreviewCover = this.$slots['preview-cover'] && (
+      const PreviewCover = slots['preview-cover'] && (
         <div class={bem('preview-cover')}>
-          {this.$slots['preview-cover']({
+          {slots['preview-cover']({
             index,
             ...item,
           })}
@@ -333,20 +312,20 @@ export default createComponent({
 
       const Preview = isImageFile(item) ? (
         <Image
-          fit={this.imageFit}
+          fit={props.imageFit}
           src={item.content || item.url}
           class={bem('preview-image')}
-          width={this.previewSize}
-          height={this.previewSize}
-          lazyLoad={this.lazyLoad}
+          width={props.previewSize}
+          height={props.previewSize}
+          lazyLoad={props.lazyLoad}
           onClick={() => {
-            this.onPreviewImage(item);
+            onPreviewImage(item);
           }}
         >
           {PreviewCover}
         </Image>
       ) : (
-        <div class={bem('file')} style={getSizeStyle(this.previewSize)}>
+        <div class={bem('file')} style={getSizeStyle(props.previewSize)}>
           <Icon class={bem('file-icon')} name="description" />
           <div class={[bem('file-name'), 'van-ellipsis']}>
             {item.file ? item.file.name : item.url}
@@ -359,24 +338,24 @@ export default createComponent({
         <div
           class={bem('preview')}
           onClick={() => {
-            this.$emit('click-preview', item, this.getDetail(index));
+            emit('click-preview', item, getDetail(index));
           }}
         >
           {Preview}
-          {this.genPreviewMask(item)}
+          {renderPreviewMask(item)}
           {DeleteIcon}
         </div>
       );
-    },
+    };
 
-    genPreviewList() {
-      if (this.previewImage) {
-        return this.modelValue.map(this.genPreviewItem);
+    const renderPreviewList = () => {
+      if (props.previewImage) {
+        return props.modelValue.map(renderPreviewItem);
       }
-    },
+    };
 
-    genUpload() {
-      if (this.modelValue.length >= this.maxCount || !this.showUpload) {
+    const renderUpload = () => {
+      if (props.modelValue.length >= props.maxCount || !props.showUpload) {
         return;
       }
 
@@ -385,41 +364,46 @@ export default createComponent({
           ref="input"
           type="file"
           class={bem('input')}
-          accept={this.accept}
-          capture={this.capture}
-          multiple={this.multiple}
-          disabled={this.disabled}
-          onChange={this.onChange}
+          accept={props.accept}
+          capture={props.capture}
+          multiple={props.multiple}
+          disabled={props.disabled}
+          onChange={onChange}
         />
       );
 
-      if (this.$slots.default) {
+      if (slots.default) {
         return (
           <div class={bem('input-wrapper')}>
-            {this.$slots.default()}
+            {slots.default()}
             {Input}
           </div>
         );
       }
 
       return (
-        <div class={bem('upload')} style={getSizeStyle(this.previewSize)}>
-          <Icon name={this.uploadIcon} class={bem('upload-icon')} />
-          {this.uploadText && (
-            <span class={bem('upload-text')}>{this.uploadText}</span>
+        <div class={bem('upload')} style={getSizeStyle(props.previewSize)}>
+          <Icon name={props.uploadIcon} class={bem('upload-icon')} />
+          {props.uploadText && (
+            <span class={bem('upload-text')}>{props.uploadText}</span>
           )}
           {Input}
         </div>
       );
-    },
-  },
+    };
 
-  render() {
-    return (
+    usePublicApi({
+      chooseFile,
+      closeImagePreview,
+    });
+
+    useParentField(() => props.modelValue);
+
+    return () => (
       <div class={bem()}>
-        <div class={bem('wrapper', { disabled: this.disabled })}>
-          {this.genPreviewList()}
-          {this.genUpload()}
+        <div class={bem('wrapper', { disabled: props.disabled })}>
+          {renderPreviewList()}
+          {renderUpload()}
         </div>
       </div>
     );
