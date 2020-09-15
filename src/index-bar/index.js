@@ -113,7 +113,7 @@ export default createComponent({
     };
 
     const onScroll = () => {
-      if (isHidden(root.value)) {
+      if (isHidden(root)) {
         return;
       }
 

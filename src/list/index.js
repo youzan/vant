@@ -67,7 +67,7 @@ export default createComponent({
           scrollParentRect.bottom - scrollParentRect.top;
 
         /* istanbul ignore next */
-        if (!scrollParentHeight || isHidden(root.value)) {
+        if (!scrollParentHeight || isHidden(root)) {
           return false;
         }
 
