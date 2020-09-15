@@ -10,7 +10,7 @@ import { callInterceptor } from '../utils/interceptor';
 import { useClickAway } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
 
@@ -178,7 +178,7 @@ export default createComponent({
       }
     };
 
-    usePublicApi({
+    useExpose({
       open,
       close,
     });

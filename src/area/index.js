@@ -1,6 +1,6 @@
 import { ref, watch, computed, reactive, nextTick, onMounted } from 'vue';
 import { createNamespace, pick } from '../utils';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
 
@@ -250,9 +250,8 @@ export default createComponent({
     };
 
     const onConfirm = (values, index) => {
-      values = parseValues(values);
       setValues();
-      emit('confirm', values, index);
+      emit('confirm', parseValues(values), index);
     };
 
     onMounted(setValues);
@@ -274,7 +273,7 @@ export default createComponent({
       }
     );
 
-    usePublicApi({ reset, getArea });
+    useExpose({ reset, getArea });
 
     return () => {
       const columns = state.columns.slice(0, +props.columnsNum);

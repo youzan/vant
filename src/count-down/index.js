@@ -13,7 +13,7 @@ import { raf, cancelRaf } from '../utils/dom/raf';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
 
 // Composition
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('count-down');
 
@@ -140,7 +140,7 @@ export default createComponent({
 
     onBeforeUnmount(pause);
 
-    usePublicApi({
+    useExpose({
       start,
       reset,
       pause,

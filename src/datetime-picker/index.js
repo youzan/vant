@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { createNamespace } from '../utils';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 
@@ -15,7 +15,7 @@ export default createComponent({
   setup(props) {
     const root = ref();
 
-    usePublicApi({
+    useExpose({
       getPicker: () => root.value && root.value.getPicker(),
     });
 

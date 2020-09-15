@@ -7,7 +7,7 @@ import { isHidden } from '../utils/dom/style';
 // Composition
 import { useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Loading from '../loading';
@@ -142,7 +142,7 @@ export default createComponent({
       }
     });
 
-    usePublicApi({ check });
+    useExpose({ check });
 
     useEventListener('scroll', check, { target: scrollParent });
 

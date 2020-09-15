@@ -1,5 +1,5 @@
 import { createApp, reactive, Component, nextTick } from 'vue';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 export function usePopupState() {
   const state = reactive({
@@ -22,7 +22,7 @@ export function usePopupState() {
     toggle(false);
   };
 
-  usePublicApi({ open, close, toggle });
+  useExpose({ open, close, toggle });
 
   return {
     open,

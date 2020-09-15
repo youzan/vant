@@ -6,7 +6,7 @@ import { DROPDOWN_KEY } from '../dropdown-menu';
 
 // Composition
 import { useParent } from '../composition/use-relation';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Cell from '../cell';
@@ -169,7 +169,7 @@ export default createComponent({
       );
     };
 
-    usePublicApi({ toggle });
+    useExpose({ toggle });
 
     return () => {
       if (props.teleport) {

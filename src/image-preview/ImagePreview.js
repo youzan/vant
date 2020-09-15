@@ -6,7 +6,7 @@ import { callInterceptor } from '../utils/interceptor';
 
 // Composition
 import { useWindowSize } from '@vant/use';
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Icon from '../icon';
@@ -177,7 +177,7 @@ export default createComponent({
       }
     };
 
-    usePublicApi({ swipeTo });
+    useExpose({ swipeTo });
 
     onMounted(resize);
 

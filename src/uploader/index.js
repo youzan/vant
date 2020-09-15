@@ -12,7 +12,7 @@ import {
 } from './utils';
 
 // Composition
-import { usePublicApi } from '../composition/use-public-api';
+import { useExpose } from '../composition/use-expose';
 import { useParentField } from '../composition/use-parent-field';
 
 // Components
@@ -308,7 +308,7 @@ export default createComponent({
       }
     };
 
-    usePublicApi({
+    useExpose({
       chooseFile,
       closeImagePreview,
     });

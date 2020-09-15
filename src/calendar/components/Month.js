@@ -18,7 +18,7 @@ import {
 // Composition
 import { useToggle } from '@vant/use';
 import { useHeight } from '../../composition/use-rect';
-import { usePublicApi } from '../../composition/use-public-api';
+import { useExpose } from '../../composition/use-expose';
 
 // Components
 import Day from './Day';
@@ -251,7 +251,7 @@ export default createComponent({
       return <div ref={daysRef} />;
     };
 
-    usePublicApi({
+    useExpose({
       height,
       getDate,
       getTitle,
