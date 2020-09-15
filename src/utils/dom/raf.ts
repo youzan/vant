@@ -6,7 +6,6 @@ import { inBrowser } from '..';
 
 let prev = Date.now();
 
-/* istanbul ignore next */
 function fallback(fn: FrameRequestCallback): number {
   const curr = Date.now();
   const ms = Math.max(0, 16 - (curr - prev));
@@ -15,13 +14,10 @@ function fallback(fn: FrameRequestCallback): number {
   return id;
 }
 
-/* istanbul ignore next */
 const root = (inBrowser ? window : global) as Window;
 
-/* istanbul ignore next */
 const iRaf = root.requestAnimationFrame || fallback;
 
-/* istanbul ignore next */
 const iCancel = root.cancelAnimationFrame || root.clearTimeout;
 
 export function raf(fn: FrameRequestCallback): number {

@@ -42,8 +42,21 @@ export default createComponent({
     // use sync innerLoading state to avoid repeated loading in some edge cases
     const loading = ref(false);
     const root = ref();
-    const placeholderRef = ref();
+    const placeholder = ref();
     const scrollParent = useScrollParent(root);
+
+    const getScrollParentRect = () => {
+      const element = scrollParent.value;
+      if (element.getBoundingClientRect) {
+        return element.getBoundingClientRect();
+      }
+      const height = element.innerHeight;
+      return {
+        top: 0,
+        height,
+        bottom: height,
+      };
+    };
 
     const check = () => {
       nextTick(() => {
@@ -52,27 +65,14 @@ export default createComponent({
         }
 
         const { offset, direction } = props;
-        let scrollParentRect;
+        const scrollParentRect = getScrollParentRect();
 
-        if (scrollParent.value.getBoundingClientRect) {
-          scrollParentRect = scrollParent.value.getBoundingClientRect();
-        } else {
-          scrollParentRect = {
-            top: 0,
-            bottom: scrollParent.value.innerHeight,
-          };
-        }
-
-        const scrollParentHeight =
-          scrollParentRect.bottom - scrollParentRect.top;
-
-        /* istanbul ignore next */
-        if (!scrollParentHeight || isHidden(root)) {
+        if (!scrollParentRect.height || isHidden(root)) {
           return false;
         }
 
         let isReachEdge = false;
-        const placeholderRect = useRect(placeholderRef);
+        const placeholderRect = useRect(placeholder);
 
         if (direction === 'up') {
           isReachEdge = scrollParentRect.top - placeholderRect.top <= offset;
@@ -148,9 +148,7 @@ export default createComponent({
 
     return () => {
       const Content = slots.default?.();
-      const Placeholder = (
-        <div ref={placeholderRef} class={bem('placeholder')} />
-      );
+      const Placeholder = <div ref={placeholder} class={bem('placeholder')} />;
 
       return (
         <div ref={root} role="feed" class={bem()} aria-busy={loading.value}>

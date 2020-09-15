@@ -171,7 +171,6 @@ export default createComponent({
     this.init();
   },
 
-  /* istanbul ignore next */
   activated() {
     this.init();
   },

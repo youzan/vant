@@ -9,7 +9,6 @@ if (inBrowser) {
     Object.defineProperty(opts, 'passive', {
       // eslint-disable-next-line getter-return
       get() {
-        /* istanbul ignore next */
         supportsPassive = true;
       },
     });
