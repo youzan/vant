@@ -40,6 +40,7 @@ export default createComponent({
     validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
+    disableArea: Boolean,
     searchResult: Array,
     telMaxlength: [Number, String],
     showSetDefault: Boolean,
@@ -55,7 +56,6 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    disableArea: Boolean,
     detailRows: {
       type: [Number, String],
       default: 1,
