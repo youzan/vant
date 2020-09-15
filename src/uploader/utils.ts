@@ -29,13 +29,6 @@ export function readFileContent(file: File, resultType: ResultType) {
   });
 }
 
-export function isOversize(
-  items: FileListItem | FileListItem[],
-  maxSize: number | string
-): boolean {
-  return toArray(items).some((item) => item.file && item.file.size > maxSize);
-}
-
 export type FileListItem = {
   url?: string;
   file?: File;
@@ -44,6 +37,28 @@ export type FileListItem = {
   status?: '' | 'uploading' | 'done' | 'failed';
   message?: string;
 };
+
+export function isOversize(
+  items: FileListItem | FileListItem[],
+  maxSize: number | string
+): boolean {
+  return toArray(items).some((item) => item.file && item.file.size > maxSize);
+}
+
+export function filterFiles(items: FileListItem[], maxSize: number | string) {
+  const valid: FileListItem[] = [];
+  const invalid: FileListItem[] = [];
+
+  items.forEach((item) => {
+    if (item.file && item.file.size > maxSize) {
+      invalid.push(item);
+    } else {
+      valid.push(item);
+    }
+  });
+
+  return { valid, invalid };
+}
 
 const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
 

@@ -22,7 +22,7 @@ export default {
   emits: ['delete', 'preview'],
 
   setup(props, { emit, slots }) {
-    const renderPreviewMask = () => {
+    const renderMask = () => {
       const { status, message } = props.item;
 
       if (status === 'uploading' || status === 'failed') {
@@ -46,7 +46,6 @@ export default {
 
     const onDelete = (event) => {
       const { name, item, index, beforeDelete } = props;
-
       event.stopPropagation();
       callInterceptor({
         interceptor: beforeDelete,
@@ -71,7 +70,7 @@ export default {
       }
     };
 
-    const renderPreviewCover = () => {
+    const renderCover = () => {
       if (slots['preview-cover']) {
         const { index, item } = props;
         return (
@@ -96,7 +95,7 @@ export default {
             lazyLoad={props.lazyLoad}
             onClick={onPreview}
           >
-            {renderPreviewCover()}
+            {renderCover()}
           </Image>
         );
       }
@@ -107,7 +106,7 @@ export default {
           <div class={[bem('file-name'), 'van-ellipsis']}>
             {item.file ? item.file.name : item.url}
           </div>
-          {renderPreviewCover()}
+          {renderCover()}
         </div>
       );
     };
@@ -115,7 +114,7 @@ export default {
     return () => (
       <div class={bem('preview')}>
         {renderPreview()}
-        {renderPreviewMask()}
+        {renderMask()}
         {renderDeleteIcon()}
       </div>
     );

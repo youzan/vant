@@ -3,7 +3,13 @@ import { ref } from 'vue';
 // Utils
 import { bem, createComponent } from './shared';
 import { isPromise, getSizeStyle, pick } from '../utils';
-import { toArray, isOversize, isImageFile, readFileContent } from './utils';
+import {
+  toArray,
+  isOversize,
+  filterFiles,
+  isImageFile,
+  readFileContent,
+} from './utils';
 
 // Composition
 import { usePublicApi } from '../composition/use-public-api';
@@ -98,52 +104,28 @@ export default createComponent({
       }
     };
 
-    const findOversizeFiles = (files) => {
-      const valid = [];
-      const oversize = [];
-
-      files.forEach((item) => {
-        if (item.file && item.file.size > props.maxSize) {
-          oversize.push(item);
-        } else {
-          valid.push(item);
-        }
-      });
-
-      return { valid, oversize };
-    };
-
     const onAfterRead = (items) => {
       resetInput();
 
-      let validFiles = items;
-
-      const hasOversize = isOversize(items, props.maxSize);
-
-      if (hasOversize) {
+      if (isOversize(items, props.maxSize)) {
         if (Array.isArray(items)) {
-          const result = findOversizeFiles(items);
-          validFiles = result.valid;
-          emit('oversize', result.oversizeFiles, getDetail());
+          const result = filterFiles(items, props.maxSize);
+          items = result.valid;
+          emit('oversize', result.invalid, getDetail());
+
+          if (!items.length) {
+            return;
+          }
         } else {
           emit('oversize', items, getDetail());
           return;
         }
       }
 
-      const isValidFiles = Boolean(
-        Array.isArray(validFiles) ? validFiles.length : validFiles
-      );
+      emit('update:modelValue', [...props.modelValue, ...toArray(items)]);
 
-      if (isValidFiles) {
-        emit('update:modelValue', [
-          ...props.modelValue,
-          ...toArray(validFiles),
-        ]);
-
-        if (props.afterRead) {
-          props.afterRead(validFiles, getDetail());
-        }
+      if (props.afterRead) {
+        props.afterRead(items, getDetail());
       }
     };
 
@@ -289,7 +271,7 @@ export default createComponent({
 
       const Input = (
         <input
-          ref="input"
+          ref={inputRef}
           type="file"
           class={bem('input')}
           accept={props.accept}
