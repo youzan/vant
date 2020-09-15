@@ -398,16 +398,11 @@ export default createComponent({
           )}
         </div>
         <Popup
-          show={this.showAreaPopup}
+          vModel={[this.showAreaPopup, 'show']}
           round
           teleport="body"
           position="bottom"
           lazyRender={false}
-          {...{
-            'onUpdate:modelValue': (value) => {
-              this.showAreaPopup = value;
-            },
-          }}
         >
           <Area
             ref="area"
