@@ -1,8 +1,8 @@
 import { ref } from 'vue';
 
 // Utils
-import { callInterceptor } from '../utils/interceptor';
-import { isDef, isPromise, getSizeStyle, createNamespace } from '../utils';
+import { bem, createComponent } from './shared';
+import { isPromise, getSizeStyle, pick } from '../utils';
 import { toArray, isOversize, isImageFile, readFileContent } from './utils';
 
 // Composition
@@ -11,11 +11,8 @@ import { useParentField } from '../composition/use-parent-field';
 
 // Components
 import Icon from '../icon';
-import Image from '../image';
-import Loading from '../loading';
+import PreviewItem from './PreviewItem';
 import ImagePreview from '../image-preview';
-
-const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
   props: {
@@ -101,34 +98,42 @@ export default createComponent({
       }
     };
 
-    const onAfterRead = (files, oversize) => {
+    const findOversizeFiles = (files) => {
+      const valid = [];
+      const oversize = [];
+
+      files.forEach((item) => {
+        if (item.file && item.file.size > props.maxSize) {
+          oversize.push(item);
+        } else {
+          valid.push(item);
+        }
+      });
+
+      return { valid, oversize };
+    };
+
+    const onAfterRead = (items) => {
       resetInput();
 
-      let validFiles = files;
+      let validFiles = items;
 
-      if (oversize) {
-        let oversizeFiles = files;
-        if (Array.isArray(files)) {
-          oversizeFiles = [];
-          validFiles = [];
-          files.forEach((item) => {
-            if (item.file) {
-              if (item.file.size > props.maxSize) {
-                oversizeFiles.push(item);
-              } else {
-                validFiles.push(item);
-              }
-            }
-          });
+      const hasOversize = isOversize(items, props.maxSize);
+
+      if (hasOversize) {
+        if (Array.isArray(items)) {
+          const result = findOversizeFiles(items);
+          validFiles = result.valid;
+          emit('oversize', result.oversizeFiles, getDetail());
         } else {
-          validFiles = null;
+          emit('oversize', items, getDetail());
+          return;
         }
-        emit('oversize', oversizeFiles, getDetail());
       }
 
-      const isValidFiles = Array.isArray(validFiles)
-        ? Boolean(validFiles.length)
-        : Boolean(validFiles);
+      const isValidFiles = Boolean(
+        Array.isArray(validFiles) ? validFiles.length : validFiles
+      );
 
       if (isValidFiles) {
         emit('update:modelValue', [
@@ -143,8 +148,7 @@ export default createComponent({
     };
 
     const readFile = (files) => {
-      const { maxSize, maxCount, modelValue, resultType } = props;
-      const oversize = isOversize(files, maxSize);
+      const { maxCount, modelValue, resultType } = props;
 
       if (Array.isArray(files)) {
         const remainCount = maxCount - modelValue.length;
@@ -166,7 +170,7 @@ export default createComponent({
             return result;
           });
 
-          onAfterRead(fileList, oversize);
+          onAfterRead(fileList);
         });
       } else {
         readFileContent(files, resultType).then((content) => {
@@ -176,27 +180,9 @@ export default createComponent({
             result.content = content;
           }
 
-          onAfterRead(result, oversize);
+          onAfterRead(result);
         });
       }
-    };
-
-    const deleteFile = (file, index) => {
-      const fileList = props.modelValue.slice(0);
-      fileList.splice(index, 1);
-
-      emit('update:modelValue', fileList);
-      emit('delete', file, getDetail(index));
-    };
-
-    const onDelete = (file, index) => {
-      callInterceptor({
-        interceptor: props.beforeDelete,
-        args: [file, getDetail(index)],
-        done() {
-          deleteFile(file, index);
-        },
-      });
     };
 
     const onChange = (event) => {
@@ -234,19 +220,19 @@ export default createComponent({
 
     let imagePreview;
 
-    const onPreviewImage = (item) => {
+    const onClosePreview = () => {
+      emit('close-preview');
+    };
+
+    const previewImage = (item) => {
       if (props.previewFullImage) {
-        const imageFiles = props.modelValue.filter((item) => isImageFile(item));
-        const imageContents = imageFiles.map(
-          (item) => item.content || item.url
-        );
+        const imageFiles = props.modelValue.filter(isImageFile);
+        const images = imageFiles.map((item) => item.content || item.url);
 
         imagePreview = ImagePreview({
-          images: imageContents,
+          images,
           startPosition: imageFiles.indexOf(item),
-          onClose: () => {
-            emit('close-preview');
-          },
+          onClose: onClosePreview,
           ...props.previewOptions,
         });
       }
@@ -258,95 +244,37 @@ export default createComponent({
       }
     };
 
-    const chooseFile = () => {
-      if (inputRef.value && !props.disabled) {
-        inputRef.value.click();
-      }
+    const deleteFile = (item, index) => {
+      const fileList = props.modelValue.slice(0);
+      fileList.splice(index, 1);
+
+      emit('update:modelValue', fileList);
+      emit('delete', item, getDetail(index));
     };
 
-    const renderPreviewMask = (item) => {
-      const { status, message } = item;
-
-      if (status === 'uploading' || status === 'failed') {
-        const MaskIcon =
-          status === 'failed' ? (
-            <Icon name="close" class={bem('mask-icon')} />
-          ) : (
-            <Loading class={bem('loading')} />
-          );
-
-        const showMessage = isDef(message) && message !== '';
-
-        return (
-          <div class={bem('mask')}>
-            {MaskIcon}
-            {showMessage && <div class={bem('mask-message')}>{message}</div>}
-          </div>
-        );
-      }
-    };
-
-    const renderPreviewItem = (item, index) => {
-      const showDelete = item.status !== 'uploading' && props.deletable;
-
-      const DeleteIcon = showDelete && (
-        <div
-          class={bem('preview-delete')}
-          onClick={(event) => {
-            event.stopPropagation();
-            onDelete(item, index);
-          }}
-        >
-          <Icon name="cross" class={bem('preview-delete-icon')} />
-        </div>
-      );
-
-      const PreviewCover = slots['preview-cover'] && (
-        <div class={bem('preview-cover')}>
-          {slots['preview-cover']({
-            index,
-            ...item,
-          })}
-        </div>
-      );
-
-      const Preview = isImageFile(item) ? (
-        <Image
-          fit={props.imageFit}
-          src={item.content || item.url}
-          class={bem('preview-image')}
-          width={props.previewSize}
-          height={props.previewSize}
-          lazyLoad={props.lazyLoad}
-          onClick={() => {
-            onPreviewImage(item);
-          }}
-        >
-          {PreviewCover}
-        </Image>
-      ) : (
-        <div class={bem('file')} style={getSizeStyle(props.previewSize)}>
-          <Icon class={bem('file-icon')} name="description" />
-          <div class={[bem('file-name'), 'van-ellipsis']}>
-            {item.file ? item.file.name : item.url}
-          </div>
-          {PreviewCover}
-        </div>
-      );
-
-      return (
-        <div
-          class={bem('preview')}
-          onClick={() => {
-            emit('click-preview', item, getDetail(index));
-          }}
-        >
-          {Preview}
-          {renderPreviewMask(item)}
-          {DeleteIcon}
-        </div>
-      );
-    };
+    const renderPreviewItem = (item, index) => (
+      <PreviewItem
+        v-slots={{ 'preview-cover': slots['preview-cover'] }}
+        item={item}
+        onClick={() => {
+          emit('click-preview', item, getDetail(index));
+        }}
+        onDelete={() => {
+          deleteFile(item, index);
+        }}
+        onPreview={() => {
+          previewImage(item);
+        }}
+        {...pick(props, [
+          'name',
+          'lazyLoad',
+          'imageFit',
+          'deletable',
+          'previewSize',
+          'beforeDelete',
+        ])}
+      />
+    );
 
     const renderPreviewList = () => {
       if (props.previewImage) {
@@ -390,6 +318,12 @@ export default createComponent({
           {Input}
         </div>
       );
+    };
+
+    const chooseFile = () => {
+      if (inputRef.value && !props.disabled) {
+        inputRef.value.click();
+      }
     };
 
     usePublicApi({

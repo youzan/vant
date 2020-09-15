@@ -30,10 +30,10 @@ export function readFileContent(file: File, resultType: ResultType) {
 }
 
 export function isOversize(
-  files: File | File[],
+  items: FileListItem | FileListItem[],
   maxSize: number | string
 ): boolean {
-  return toArray(files).some((file) => file.size > maxSize);
+  return toArray(items).some((item) => item.file && item.file.size > maxSize);
 }
 
 export type FileListItem = {
