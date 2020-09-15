@@ -82,6 +82,18 @@ export default createComponent({
     },
   },
 
+  emits: [
+    'save',
+    'focus',
+    'delete',
+    'click-area',
+    'change-area',
+    'change-detail',
+    'cancel-delete',
+    'select-search',
+    'change-default',
+  ],
+
   data() {
     return {
       data: {},
