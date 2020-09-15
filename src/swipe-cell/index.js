@@ -34,7 +34,7 @@ export default createComponent({
     let lockClick;
     let startOffset;
 
-    const rootRef = ref();
+    const root = ref();
     const leftRef = ref();
     const rightRef = ref();
 
@@ -183,7 +183,7 @@ export default createComponent({
       close,
     });
 
-    useClickAway(rootRef, onClick, { eventName: 'touchstart' });
+    useClickAway(root, onClick, { eventName: 'touchstart' });
 
     return () => {
       const wrapperStyle = {
@@ -193,7 +193,7 @@ export default createComponent({
 
       return (
         <div
-          ref={rootRef}
+          ref={root}
           class={bem()}
           onClick={getClickHandler('cell')}
           onTouchstart={onTouchStart}

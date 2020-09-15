@@ -36,10 +36,10 @@ export default createComponent({
   setup(props, { slots }) {
     const offset = ref(0);
     const barRef = ref();
-    const rootRef = ref();
+    const root = ref();
     const children = reactive([]);
 
-    const scrollParent = useScrollParent(rootRef);
+    const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>
       children.some((item) => item.state.showWrapper)
@@ -120,12 +120,12 @@ export default createComponent({
 
     provide(DROPDOWN_KEY, { props, offset, children });
 
-    useClickAway(rootRef, onClickAway);
+    useClickAway(root, onClickAway);
 
     useEventListener('scroll', onScroll, { target: scrollParent });
 
     return () => (
-      <div ref={rootRef} class={bem()}>
+      <div ref={root} class={bem()}>
         <div
           ref={barRef}
           style={barStyle.value}

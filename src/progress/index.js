@@ -24,7 +24,7 @@ export default createComponent({
   },
 
   setup(props) {
-    const rootRef = ref();
+    const root = ref();
     const pivotRef = ref();
 
     const state = reactive({
@@ -38,7 +38,7 @@ export default createComponent({
 
     const setWidth = () => {
       nextTick(() => {
-        state.rootWidth = rootRef.value.offsetWidth;
+        state.rootWidth = root.value.offsetWidth;
         state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
       });
     };
@@ -81,7 +81,7 @@ export default createComponent({
       };
 
       return (
-        <div ref={rootRef} class={bem()} style={rootStyle}>
+        <div ref={root} class={bem()} style={rootStyle}>
           <span class={bem('portion')} style={portionStyle}>
             {renderPivot()}
           </span>

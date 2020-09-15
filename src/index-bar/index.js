@@ -52,12 +52,12 @@ export default createComponent({
   emits: ['select'],
 
   setup(props, { emit, slots }) {
-    const rootRef = ref();
+    const root = ref();
     const activeAnchor = ref();
     const children = reactive([]);
 
     const touch = useTouch();
-    const scrollParent = useScrollParent(rootRef);
+    const scrollParent = useScrollParent(root);
 
     provide(INDEX_BAR_KEY, { props, children });
 
@@ -113,7 +113,7 @@ export default createComponent({
     };
 
     const onScroll = () => {
-      if (isHidden(rootRef.value)) {
+      if (isHidden(root.value)) {
         return;
       }
 
@@ -123,7 +123,7 @@ export default createComponent({
 
       const rects = children.map((item) => ({
         height: item.height,
-        top: getAnchorTop(item.rootRef, scrollParentRect),
+        top: getAnchorTop(item.root, scrollParentRect),
       }));
 
       const active = getActiveAnchor(scrollTop, rects);
@@ -132,9 +132,9 @@ export default createComponent({
 
       if (sticky) {
         children.forEach((item, index) => {
-          const { state, height, rootRef } = item;
+          const { state, height, root } = item;
           if (index === active || index === active - 1) {
-            const rect = rootRef.getBoundingClientRect();
+            const rect = root.getBoundingClientRect();
             state.left = rect.left;
             state.width = rect.width;
           } else {
@@ -192,7 +192,7 @@ export default createComponent({
       );
 
       if (match[0]) {
-        match[0].rootRef.scrollIntoView();
+        match[0].root.scrollIntoView();
 
         if (props.sticky && props.stickyOffsetTop) {
           setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
@@ -228,7 +228,7 @@ export default createComponent({
     };
 
     return () => (
-      <div ref={rootRef} class={bem()}>
+      <div ref={root} class={bem()}>
         <div
           class={bem('sidebar')}
           style={sidebarStyle.value}

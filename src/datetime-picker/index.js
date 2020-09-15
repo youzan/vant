@@ -13,15 +13,15 @@ export default createComponent({
   },
 
   setup(props) {
-    const rootRef = ref();
+    const root = ref();
 
     usePublicApi({
-      getPicker: () => rootRef.value && rootRef.value.getPicker(),
+      getPicker: () => root.value && root.value.getPicker(),
     });
 
     return () => {
       const Component = props.type === 'time' ? TimePicker : DatePicker;
-      return <Component ref={rootRef} class={bem()} {...props} />;
+      return <Component ref={root} class={bem()} {...props} />;
     };
   },
 });

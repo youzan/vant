@@ -24,14 +24,14 @@ export default createComponent({
       active: false,
     });
 
-    const rootRef = ref();
-    const height = useHeight(rootRef);
+    const root = ref();
+    const height = useHeight(root);
 
     const { parent } = useParent(INDEX_BAR_KEY, {
       props,
       state,
       height,
-      rootRef,
+      root,
     });
 
     const isSticky = () => state.active && parent.props.sticky;
@@ -54,10 +54,7 @@ export default createComponent({
       const sticky = isSticky();
 
       return (
-        <div
-          ref={rootRef}
-          style={{ height: sticky ? `${height.value}px` : null }}
-        >
+        <div ref={root} style={{ height: sticky ? `${height.value}px` : null }}>
           <div
             style={anchorStyle.value}
             class={[bem({ sticky }), { [BORDER_BOTTOM]: sticky }]}

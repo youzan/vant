@@ -60,7 +60,7 @@ export default createComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const rootRef = ref();
+    const root = ref();
 
     const genBasicKeys = () => {
       const keys = [];
@@ -224,14 +224,14 @@ export default createComponent({
       }
     );
 
-    useClickAway(rootRef, onClose, { eventName: 'touchstart' });
+    useClickAway(root, onClose, { eventName: 'touchstart' });
 
     return () => {
       const Title = renderTitle();
       const Content = (
         <Transition name={props.transition ? 'van-slide-up' : ''}>
           <div
-            ref={rootRef}
+            ref={root}
             vShow={props.show}
             style={{ zIndex: props.zIndex }}
             class={bem({

@@ -46,7 +46,7 @@ export default createComponent({
     let currentValue;
     let index;
 
-    const rootRef = ref();
+    const root = ref();
     const dragStatus = ref();
     const touch = useTouch();
 
@@ -132,7 +132,7 @@ export default createComponent({
       }
 
       const { min, vertical, modelValue, range } = props;
-      const rect = useRect(rootRef);
+      const rect = useRect(root);
       const delta = vertical
         ? event.clientY - rect.top
         : event.clientX - rect.left;
@@ -182,7 +182,7 @@ export default createComponent({
       touch.move(event);
       dragStatus.value = 'draging';
 
-      const rect = useRect(rootRef);
+      const rect = useRect(root);
       const delta = props.vertical ? touch.deltaY.value : touch.deltaX.value;
       const total = props.vertical ? rect.height : rect.width;
       const diff = (delta / total) * scope.value;
@@ -253,7 +253,7 @@ export default createComponent({
 
     return () => (
       <div
-        ref={rootRef}
+        ref={root}
         style={wrapperStyle.value}
         class={bem({
           vertical: props.vertical,

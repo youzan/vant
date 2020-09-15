@@ -25,8 +25,8 @@ export default createComponent({
   emits: ['scroll'],
 
   setup(props, { emit, slots }) {
-    const rootRef = ref();
-    const scrollParent = useScrollParent(rootRef);
+    const root = ref();
+    const scrollParent = useScrollParent(root);
 
     const state = reactive({
       fixed: false,
@@ -61,15 +61,15 @@ export default createComponent({
     };
 
     const onScroll = () => {
-      if (isHidden(rootRef.value)) {
+      if (isHidden(root.value)) {
         return;
       }
 
-      state.height = rootRef.value.offsetHeight;
+      state.height = root.value.offsetHeight;
 
       const { container } = props;
       const scrollTop = getScrollTop(window);
-      const topToPageTop = getElementTop(rootRef.value);
+      const topToPageTop = getElementTop(root.value);
 
       // The sticky component should be kept inside the container element
       if (container) {
@@ -102,7 +102,7 @@ export default createComponent({
 
     useEventListener('scroll', onScroll, { target: scrollParent });
 
-    useVisibilityChange(rootRef, onScroll);
+    useVisibilityChange(root, onScroll);
 
     return () => {
       const { fixed, height } = state;
@@ -111,7 +111,7 @@ export default createComponent({
       };
 
       return (
-        <div ref={rootRef} style={rootStyle}>
+        <div ref={root} style={rootStyle}>
           <div class={bem({ fixed })} style={style.value}>
             {slots.default?.()}
           </div>

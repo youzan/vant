@@ -41,9 +41,9 @@ export default createComponent({
   setup(props, { emit, slots }) {
     // use sync innerLoading state to avoid repeated loading in some edge cases
     const loading = ref(false);
-    const rootRef = ref();
+    const root = ref();
     const placeholderRef = ref();
-    const scrollParent = useScrollParent(rootRef);
+    const scrollParent = useScrollParent(root);
 
     const check = () => {
       nextTick(() => {
@@ -67,7 +67,7 @@ export default createComponent({
           scrollParentRect.bottom - scrollParentRect.top;
 
         /* istanbul ignore next */
-        if (!scrollParentHeight || isHidden(rootRef.value)) {
+        if (!scrollParentHeight || isHidden(root.value)) {
           return false;
         }
 
@@ -153,7 +153,7 @@ export default createComponent({
       );
 
       return (
-        <div ref={rootRef} role="feed" class={bem()} aria-busy={loading.value}>
+        <div ref={root} role="feed" class={bem()} aria-busy={loading.value}>
           {props.direction === 'down' ? Content : Placeholder}
           {renderLoading()}
           {renderFinishedText()}

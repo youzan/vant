@@ -47,8 +47,8 @@ export default createComponent({
   setup(props, { emit, slots }) {
     let reachTop;
 
-    const rootRef = ref();
-    const scrollParent = useScrollParent(rootRef);
+    const root = ref();
+    const scrollParent = useScrollParent(root);
 
     const state = reactive({
       status: 'normal',
@@ -201,7 +201,7 @@ export default createComponent({
       };
 
       return (
-        <div ref={rootRef} class={bem()}>
+        <div ref={root} class={bem()}>
           <div
             class={bem('track')}
             style={trackStyle}
