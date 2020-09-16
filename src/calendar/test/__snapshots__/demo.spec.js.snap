@@ -64,7 +64,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
       </div>
       <div class="van-calendar__body">
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month" style="padding-bottom: 0px;">
           <div role="grid" class="van-calendar__days">
             <div class="van-calendar__month-mark">1</div>
             <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 0%;">1</div>
@@ -102,7 +102,7 @@ exports[`renders demo correctly 1`] = `
             <div role="gridcell" tabindex="-1" class="van-calendar__day">31</div>
           </div>
         </div>
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month" style="padding-bottom: 0px;">
           <div class="van-calendar__month-title">2012年2月</div>
           <div role="grid" class="van-calendar__days">
             <div class="van-calendar__month-mark">2</div>
@@ -137,7 +137,7 @@ exports[`renders demo correctly 1`] = `
             <div role="gridcell" tabindex="-1" class="van-calendar__day">29</div>
           </div>
         </div>
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month" style="padding-bottom: 0px;">
           <div class="van-calendar__month-title">2012年3月</div>
           <div role="grid" class="van-calendar__days">
             <div class="van-calendar__month-mark">3</div>

@@ -4,7 +4,6 @@ import {
   t,
   bem,
   compareDay,
-  ROW_HEIGHT,
   getPrevDay,
   getNextDay,
   formatMonthTitle,
@@ -27,6 +26,7 @@ export default createComponent({
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
+    realRowHeight: Number,
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
   },
@@ -43,9 +43,7 @@ export default createComponent({
     },
 
     rowHeightWithUnit() {
-      if (this.rowHeight !== ROW_HEIGHT) {
-        return addUnit(this.rowHeight);
-      }
+      return addUnit(this.rowHeight);
     },
 
     offset() {
@@ -71,7 +69,7 @@ export default createComponent({
     monthStyle() {
       if (!this.shouldRender) {
         const padding =
-          Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
+          Math.ceil((this.totalDay + this.offset) / 7) * this.realRowHeight;
 
         return {
           paddingBottom: `${padding}px`,
@@ -103,6 +101,23 @@ export default createComponent({
       }
 
       return days;
+    },
+  },
+
+  watch: {
+    shouldRender(value) {
+      if (value) {
+        this.$nextTick(() => {
+          if (this.$refs.day[0] && !this.realRowHeight) {
+            const { height } = this.$refs.day[0].getBoundingClientRect();
+            this.$emit('update-height', height);
+          }
+        });
+      }
+    },
+
+    realRowHeight() {
+      this.height = null;
     },
   },
 
@@ -289,6 +304,8 @@ export default createComponent({
       if (type === 'selected') {
         return (
           <div
+            ref="day"
+            refInFor
             role="gridcell"
             style={style}
             class={[bem('day'), item.className]}
@@ -313,6 +330,8 @@ export default createComponent({
 
       return (
         <div
+          ref="day"
+          refInFor
           role="gridcell"
           style={style}
           class={[bem('day', type), item.className]}
