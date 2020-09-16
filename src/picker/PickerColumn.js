@@ -1,8 +1,15 @@
+import { reactive, ref, watch } from 'vue';
+import { PICKER_KEY } from './shared';
+
+// Utils
+import { range } from '../utils/format/number';
 import { deepClone } from '../utils/deep-clone';
 import { createNamespace, isObject } from '../utils';
-import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
+
+// Composition
+import { useTouch } from '../composition/use-touch';
+import { useParent } from '../composition/use-relation';
 
 const DEFAULT_DURATION = 200;
 
@@ -27,8 +34,6 @@ function isOptionDisabled(option) {
 }
 
 export default createComponent({
-  mixins: [TouchMixin],
-
   props: {
     valueKey: String,
     readonly: Boolean,
@@ -46,257 +51,210 @@ export default createComponent({
 
   emits: ['change'],
 
-  data() {
-    return {
+  setup(props, { emit }) {
+    let moving;
+    let startOffset;
+    let touchStartTime;
+    let momentumOffset;
+    let transitionEndTrigger;
+
+    const wrapper = ref();
+
+    const state = reactive({
+      index: props.defaultIndex,
       offset: 0,
       duration: 0,
-      options: deepClone(this.initialOptions),
-      currentIndex: this.defaultIndex,
-    };
-  },
+      options: deepClone(props.initialOptions),
+    });
 
-  created() {
-    if (this.$parent.children) {
-      this.$parent.children.push(this);
-    }
+    const touch = useTouch();
 
-    this.setIndex(this.currentIndex);
-  },
+    const count = () => state.options.length;
 
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
+    const baseOffset = () =>
+      (props.itemHeight * (props.visibleItemCount - 1)) / 2;
 
-  unmounted() {
-    const { children } = this.$parent;
+    const adjustIndex = (index) => {
+      index = range(index, 0, count());
 
-    if (children) {
-      children.splice(children.indexOf(this), 1);
-    }
-  },
-
-  watch: {
-    initialOptions: 'setOptions',
-
-    defaultIndex(val) {
-      this.setIndex(val);
-    },
-  },
-
-  computed: {
-    count() {
-      return this.options.length;
-    },
-
-    baseOffset() {
-      return (this.itemHeight * (this.visibleItemCount - 1)) / 2;
-    },
-  },
-
-  methods: {
-    setOptions(options) {
-      if (JSON.stringify(options) !== JSON.stringify(this.options)) {
-        this.options = deepClone(options);
-        this.setIndex(this.defaultIndex);
+      for (let i = index; i < count(); i++) {
+        if (!isOptionDisabled(state.options[i])) return i;
       }
-    },
-
-    onTouchStart(event) {
-      if (this.readonly) {
-        return;
-      }
-
-      this.touchStart(event);
-
-      if (this.moving) {
-        const translateY = getElementTranslateY(this.$refs.wrapper);
-        this.offset = Math.min(0, translateY - this.baseOffset);
-        this.startOffset = this.offset;
-      } else {
-        this.startOffset = this.offset;
-      }
-
-      this.duration = 0;
-      this.transitionEndTrigger = null;
-      this.touchStartTime = Date.now();
-      this.momentumOffset = this.startOffset;
-    },
-
-    onTouchMove(event) {
-      if (this.readonly) {
-        return;
-      }
-
-      this.touchMove(event);
-
-      if (this.direction === 'vertical') {
-        this.moving = true;
-        preventDefault(event, true);
-      }
-
-      this.offset = range(
-        this.startOffset + this.deltaY,
-        -(this.count * this.itemHeight),
-        this.itemHeight
-      );
-
-      const now = Date.now();
-      if (now - this.touchStartTime > MOMENTUM_LIMIT_TIME) {
-        this.touchStartTime = now;
-        this.momentumOffset = this.offset;
-      }
-    },
-
-    onTouchEnd() {
-      if (this.readonly) {
-        return;
-      }
-
-      const distance = this.offset - this.momentumOffset;
-      const duration = Date.now() - this.touchStartTime;
-      const allowMomentum =
-        duration < MOMENTUM_LIMIT_TIME &&
-        Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
-
-      if (allowMomentum) {
-        this.momentum(distance, duration);
-        return;
-      }
-
-      const index = this.getIndexByOffset(this.offset);
-      this.duration = DEFAULT_DURATION;
-      this.setIndex(index, true);
-
-      // compatible with desktop scenario
-      // use setTimeout to skip the click event triggered after touchstart
-      setTimeout(() => {
-        this.moving = false;
-      }, 0);
-    },
-
-    onTransitionEnd() {
-      this.stopMomentum();
-    },
-
-    onClickItem(index) {
-      if (this.moving || this.readonly) {
-        return;
-      }
-
-      this.transitionEndTrigger = null;
-      this.duration = DEFAULT_DURATION;
-      this.setIndex(index, true);
-    },
-
-    adjustIndex(index) {
-      index = range(index, 0, this.count);
-
-      for (let i = index; i < this.count; i++) {
-        if (!isOptionDisabled(this.options[i])) return i;
-      }
-
       for (let i = index - 1; i >= 0; i--) {
-        if (!isOptionDisabled(this.options[i])) return i;
+        if (!isOptionDisabled(state.options[i])) return i;
       }
-    },
+    };
 
-    getOptionText(option) {
-      if (isObject(option) && this.valueKey in option) {
-        return option[this.valueKey];
-      }
-      return option;
-    },
+    const setIndex = (index, emitChange) => {
+      index = adjustIndex(index) || 0;
 
-    setIndex(index, emitChange) {
-      index = this.adjustIndex(index) || 0;
-
-      const offset = -index * this.itemHeight;
-
+      const offset = -index * props.itemHeight;
       const trigger = () => {
-        if (index !== this.currentIndex) {
-          this.currentIndex = index;
+        if (index !== state.index) {
+          state.index = index;
 
           if (emitChange) {
-            this.$emit('change', index);
+            emit('change', index);
           }
         }
       };
 
       // trigger the change event after transitionend when moving
-      if (this.moving && offset !== this.offset) {
-        this.transitionEndTrigger = trigger;
+      if (moving && offset !== state.offset) {
+        transitionEndTrigger = trigger;
       } else {
         trigger();
       }
 
-      this.offset = offset;
-    },
+      state.offset = offset;
+    };
 
-    setValue(value) {
-      const { options } = this;
-      for (let i = 0; i < options.length; i++) {
-        if (this.getOptionText(options[i]) === value) {
-          return this.setIndex(i);
-        }
+    const setOptions = (options) => {
+      if (JSON.stringify(options) !== JSON.stringify(state.options)) {
+        state.options = deepClone(options);
+        setIndex(props.defaultIndex);
       }
-    },
+    };
 
-    getValue() {
-      return this.options[this.currentIndex];
-    },
+    const onClickItem = (index) => {
+      if (moving || props.readonly) {
+        return;
+      }
 
-    getIndexByOffset(offset) {
-      return range(Math.round(-offset / this.itemHeight), 0, this.count - 1);
-    },
+      transitionEndTrigger = null;
+      state.duration = DEFAULT_DURATION;
+      setIndex(index, true);
+    };
 
-    momentum(distance, duration) {
+    const getOptionText = (option) => {
+      if (isObject(option) && props.valueKey in option) {
+        return option[props.valueKey];
+      }
+      return option;
+    };
+
+    const getIndexByOffset = (offset) =>
+      range(Math.round(-offset / props.itemHeight), 0, count() - 1);
+
+    const momentum = (distance, duration) => {
       const speed = Math.abs(distance / duration);
 
-      distance = this.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
+      distance = state.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
 
-      const index = this.getIndexByOffset(distance);
+      const index = getIndexByOffset(distance);
 
-      this.duration = +this.swipeDuration;
-      this.setIndex(index, true);
-    },
+      state.duration = +props.swipeDuration;
+      setIndex(index, true);
+    };
 
-    stopMomentum() {
-      this.moving = false;
-      this.duration = 0;
+    const stopMomentum = () => {
+      moving = false;
+      state.duration = 0;
 
-      if (this.transitionEndTrigger) {
-        this.transitionEndTrigger();
-        this.transitionEndTrigger = null;
+      if (transitionEndTrigger) {
+        transitionEndTrigger();
+        transitionEndTrigger = null;
       }
-    },
+    };
 
-    genOptions() {
+    const onTouchStart = (event) => {
+      if (props.readonly) {
+        return;
+      }
+
+      touch.start(event);
+
+      if (moving) {
+        const translateY = getElementTranslateY(wrapper.value);
+        state.offset = Math.min(0, translateY - baseOffset());
+        startOffset = state.offset;
+      } else {
+        startOffset = state.offset;
+      }
+
+      state.duration = 0;
+      touchStartTime = Date.now();
+      momentumOffset = startOffset;
+      transitionEndTrigger = null;
+    };
+
+    const onTouchMove = (event) => {
+      if (props.readonly) {
+        return;
+      }
+
+      touch.move(event);
+
+      if (touch.isVertical()) {
+        moving = true;
+        preventDefault(event, true);
+      }
+
+      state.offset = range(
+        startOffset + touch.deltaY.value,
+        -(count() * props.itemHeight),
+        props.itemHeight
+      );
+
+      const now = Date.now();
+      if (now - touchStartTime > MOMENTUM_LIMIT_TIME) {
+        touchStartTime = now;
+        momentumOffset = state.offset;
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (props.readonly) {
+        return;
+      }
+
+      const distance = state.offset - momentumOffset;
+      const duration = Date.now() - touchStartTime;
+      const allowMomentum =
+        duration < MOMENTUM_LIMIT_TIME &&
+        Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
+
+      if (allowMomentum) {
+        momentum(distance, duration);
+        return;
+      }
+
+      const index = getIndexByOffset(state.offset);
+      state.duration = DEFAULT_DURATION;
+      setIndex(index, true);
+
+      // compatible with desktop scenario
+      // use setTimeout to skip the click event triggered after touchstart
+      setTimeout(() => {
+        moving = false;
+      }, 0);
+    };
+
+    const renderOptions = () => {
       const optionStyle = {
-        height: `${this.itemHeight}px`,
+        height: `${props.itemHeight}px`,
       };
 
-      return this.options.map((option, index) => {
-        const text = this.getOptionText(option);
+      return state.options.map((option, index) => {
+        const text = getOptionText(option);
         const disabled = isOptionDisabled(option);
 
         const data = {
-          style: optionStyle,
           role: 'button',
+          style: optionStyle,
           tabindex: disabled ? -1 : 0,
-          class: [
-            bem('item', {
-              disabled,
-              selected: index === this.currentIndex,
-            }),
-          ],
+          class: bem('item', {
+            disabled,
+            selected: index === state.index,
+          }),
           onClick: () => {
-            this.onClickItem(index);
+            onClickItem(index);
           },
         };
 
         const childData = {
           class: 'van-ellipsis',
-          [this.allowHtml ? 'innerHTML' : 'textContent']: text,
+          [props.allowHtml ? 'innerHTML' : 'textContent']: text,
         };
 
         return (
@@ -305,27 +263,63 @@ export default createComponent({
           </li>
         );
       });
-    },
-  },
-
-  render() {
-    const wrapperStyle = {
-      transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
-      transitionDuration: `${this.duration}ms`,
-      transitionProperty: this.duration ? 'all' : 'none',
     };
 
-    return (
-      <div class={[bem(), this.className]}>
-        <ul
-          ref="wrapper"
-          style={wrapperStyle}
-          class={bem('wrapper')}
-          onTransitionend={this.onTransitionEnd}
-        >
-          {this.genOptions()}
-        </ul>
-      </div>
+    const setValue = (value) => {
+      const { options } = state;
+      for (let i = 0; i < options.length; i++) {
+        if (getOptionText(options[i]) === value) {
+          return setIndex(i);
+        }
+      }
+    };
+
+    const getValue = () => state.options[state.index];
+
+    setIndex(state.index);
+
+    useParent(PICKER_KEY, {
+      state,
+      getValue,
+      setValue,
+      setOptions,
+      stopMomentum,
+    });
+
+    watch(() => props.initialOptions, setOptions);
+
+    watch(
+      () => props.defaultIndex,
+      (value) => {
+        setIndex(value);
+      }
     );
+
+    return () => {
+      const wrapperStyle = {
+        transform: `translate3d(0, ${state.offset + baseOffset()}px, 0)`,
+        transitionDuration: `${state.duration}ms`,
+        transitionProperty: state.duration ? 'all' : 'none',
+      };
+
+      return (
+        <div
+          class={[bem(), props.className]}
+          onTouchstart={onTouchStart}
+          onTouchmove={onTouchMove}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
+        >
+          <ul
+            ref={wrapper}
+            style={wrapperStyle}
+            class={bem('wrapper')}
+            onTransitionend={stopMomentum}
+          >
+            {renderOptions()}
+          </ul>
+        </div>
+      );
+    };
   },
 });

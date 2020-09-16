@@ -8,6 +8,8 @@ export type SharedPickerProps = {
   confirmButtonText?: string;
 };
 
+export const PICKER_KEY = 'vanPicker';
+
 export const DEFAULT_ITEM_HEIGHT = 44;
 
 export const pickerProps = {
