@@ -111,7 +111,7 @@ export default createComponent({
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
-      realRowHeight: null,
+      realRowHeight: 0,
     };
   },
 
