@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref, computed, watch, nextTick } from 'vue';
 
 // Utils
 import { createNamespace, addUnit } from '../../utils';
@@ -9,7 +9,6 @@ import {
   t,
   bem,
   compareDay,
-  ROW_HEIGHT,
   getPrevDay,
   getNextDay,
   formatMonthTitle,
@@ -17,8 +16,9 @@ import {
 
 // Composition
 import { useToggle } from '@vant/use';
-import { useHeight } from '../../composition/use-rect';
+import { useRefs } from '../../composition/use-refs';
 import { useExpose } from '../../composition/use-expose';
+import { useRect, useHeight } from '../../composition/use-rect';
 
 // Components
 import Day from './Day';
@@ -39,25 +39,23 @@ export default createComponent({
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
+    realRowHeight: Number,
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
   },
 
-  emits: ['click'],
+  emits: ['click', 'update-height'],
 
   setup(props, { emit }) {
     const [visible, setVisible] = useToggle();
+    const [dayRefs, setDayRefs] = useRefs();
     const daysRef = ref();
     const monthRef = ref();
     const height = useHeight(monthRef);
 
     const title = computed(() => formatMonthTitle(props.date));
 
-    const rowHeight = computed(() => {
-      if (props.rowHeight !== ROW_HEIGHT) {
-        return addUnit(props.rowHeight);
-      }
-    });
+    const rowHeight = computed(() => addUnit(props.rowHeight));
 
     const offset = computed(() => {
       const realDay = props.date.getDay();
@@ -77,7 +75,7 @@ export default createComponent({
     const monthStyle = computed(() => {
       if (!shouldRender.value) {
         const rowCount = Math.ceil((totalDay.value + offset.value) / 7);
-        const padding = rowCount * unitToPx(props.rowHeight);
+        const padding = rowCount * unitToPx(props.realRowHeight);
         return {
           paddingBottom: `${padding}px`,
         };
@@ -227,6 +225,7 @@ export default createComponent({
 
     const renderDay = (item, index) => (
       <Day
+        ref={setDayRefs(index)}
         item={item}
         index={index}
         color={props.color}
@@ -250,6 +249,25 @@ export default createComponent({
 
       return <div ref={daysRef} />;
     };
+
+    watch(
+      () => props.realRowHeight,
+      () => {
+        height.value = useRect(monthRef).height;
+        console.log('height.value', height.value);
+      }
+    );
+
+    watch(shouldRender, (value) => {
+      if (value) {
+        nextTick(() => {
+          if (dayRefs.value[0] && !props.realRowHeight) {
+            const { height } = dayRefs.value[0].$el.getBoundingClientRect();
+            emit('update-height', height);
+          }
+        });
+      }
+    });
 
     useExpose({
       height,

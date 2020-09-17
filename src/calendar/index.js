@@ -9,7 +9,6 @@ import {
   copyDates,
   getNextDay,
   compareDay,
-  ROW_HEIGHT,
   calcDateNum,
   compareMonth,
   createComponent,
@@ -31,6 +30,7 @@ export default createComponent({
     readonly: Boolean,
     teleport: [String, Object],
     formatter: Function,
+    rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
     defaultDate: [Date, Array],
@@ -51,10 +51,6 @@ export default createComponent({
     poppable: {
       type: Boolean,
       default: true,
-    },
-    rowHeight: {
-      type: [Number, String],
-      default: ROW_HEIGHT,
     },
     maxRange: {
       type: [Number, String],
@@ -119,6 +115,7 @@ export default createComponent({
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
+      realRowHeight: 0,
     };
   },
 
@@ -409,6 +406,10 @@ export default createComponent({
       this.$emit('confirm', copyDates(this.currentDate));
     },
 
+    onUpdateHeight(height) {
+      this.realRowHeight = height;
+    },
+
     genMonth(date, index) {
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
@@ -431,8 +432,10 @@ export default createComponent({
             'currentDate',
             'showSubtitle',
             'allowSameDay',
+            'realRowHeight',
           ])}
           onClick={this.onClickDay}
+          onUpdate-height={this.onUpdateHeight}
         />
       );
     },
