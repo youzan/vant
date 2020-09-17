@@ -14,9 +14,9 @@ const [createComponent, bem] = createNamespace('slider');
 
 export default createComponent({
   props: {
+    range: Boolean,
     disabled: Boolean,
     vertical: Boolean,
-    range: Boolean,
     barHeight: [Number, String],
     buttonSize: [Number, String],
     activeColor: String,
@@ -43,8 +43,8 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     let startValue;
+    let buttonIndex;
     let currentValue;
-    let index;
 
     const root = ref();
     const dragStatus = ref();
@@ -188,7 +188,7 @@ export default createComponent({
       const diff = (delta / total) * scope.value;
 
       if (props.range) {
-        currentValue[index] = startValue[index] + diff;
+        currentValue[buttonIndex] = startValue[buttonIndex] + diff;
       } else {
         currentValue = startValue + diff;
       }
@@ -208,11 +208,11 @@ export default createComponent({
       dragStatus.value = '';
     };
 
-    const renderButton = (i) => {
-      const map = ['left', 'right'];
+    const renderButton = (index) => {
       const getClassName = () => {
-        if (typeof i === 'number') {
-          return `button-wrapper-${map[i]}`;
+        if (typeof index === 'number') {
+          const position = ['left', 'right'];
+          return `button-wrapper-${position[index]}`;
         }
         return `button-wrapper`;
       };
@@ -227,9 +227,9 @@ export default createComponent({
           aria-valuemax={props.max}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
           onTouchstart={(e) => {
-            if (typeof i === 'number') {
+            if (typeof index === 'number') {
               // 保存当前按钮的索引
-              index = i;
+              buttonIndex = index;
             }
             onTouchStart(e);
           }}
