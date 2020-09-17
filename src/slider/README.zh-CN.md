@@ -108,21 +108,18 @@ export default {
 
 ### 垂直方向
 
-Slider 垂直展示时，高度为 100% 父元素高度
+设置 `vertical` 属性后，滑块会垂直展示，且高度为 100% 父元素高度。
 
 ```html
-<div :style="{ height: '120px' }">
-  <van-slider v-model="value" vertical />
-</div>
-```
-
-### 垂直方向，双滑块
-
-同时添加`range`和`vertical`属性，并确保`value`的值是一个数组
-
-```html
-<div :style="{ height: '120px' }">
-  <van-slider v-model="value" range vertical @change="onChange" />
+<div :style="{ height: '150px' }">
+  <van-slider v-model="value" vertical @change="onChange" />
+  <van-slider
+    v-model="value2"
+    range
+    vertical
+    style="margin-left: 100px;"
+    @change="onChange"
+  />
 </div>
 ```
 
@@ -132,8 +129,8 @@ import { Toast } from 'vant';
 export default {
   data() {
     return {
-      // 双滑块模式时，值必须是数组
-      value: [10, 50],
+      value: 50,
+      value2: [10, 50],
     };
   },
   methods: {
@@ -153,12 +150,12 @@ export default {
 | value | 当前进度百分比 | _number \| array_ | `0` |
 | max | 最大值 | _number \| string_ | `100` |
 | min | 最小值 | _number \| string_ | `0` |
-| range | 双滑块模式 | _boolean_ | `false` |
 | step | 步长 | _number \| string_ | `1` |
 | bar-height | 进度条高度，默认单位为`px` | _number \| string_ | `2px` |
 | button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
+| range `v2.10.7` | 是否开启双滑块模式 | _boolean_ | `false` |
 | disabled | 是否禁用滑块 | _boolean_ | `false` |
 | vertical | 是否垂直展示 | _boolean_ | `false` |
 

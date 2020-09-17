@@ -38,14 +38,15 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="t('vertical')">
-      <div :style="{ height: '120px', paddingLeft: '30px' }">
+      <div :style="{ height: '150px', paddingLeft: '30px' }">
         <van-slider v-model="value8" vertical @change="onChange" />
-      </div>
-    </demo-block>
-
-    <demo-block v-if="!isWeapp" :title="t('vertical2')">
-      <div :style="{ height: '120px', paddingLeft: '30px' }">
-        <van-slider v-model="value9" range vertical @change="onChange" />
+        <van-slider
+          v-model="value9"
+          range
+          vertical
+          style="margin-left: 100px;"
+          @change="onChange"
+        />
       </div>
     </demo-block>
   </demo-section>
@@ -64,7 +65,6 @@ export default {
       customButton: '自定义按钮',
       text: '当前值：',
       vertical: '垂直方向',
-      vertical2: '垂直方向，双滑块',
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -76,7 +76,6 @@ export default {
       customButton: 'Custom Button',
       text: 'Current value: ',
       vertical: 'Vertical',
-      vertical2: 'Vertical, Dual thumb mode',
     },
   },
   data() {

@@ -69,7 +69,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div style="height: 120px; padding-left: 30px;">
+    <div style="height: 150px; padding-left: 30px;">
       <div class="van-slider van-slider--vertical">
         <div class="van-slider__bar" style="height: 50%;">
           <div role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="50" aria-valuemax="100" aria-orientation="vertical" class="van-slider__button-wrapper">
@@ -77,11 +77,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div>
-    <div style="height: 120px; padding-left: 30px;">
-      <div class="van-slider van-slider--vertical">
+      <div class="van-slider van-slider--vertical" style="margin-left: 100px;">
         <div class="van-slider__bar" style="height: 40%; top: 20%;">
           <div role="slider" tabindex="0" aria-valuemin="0" aria-valuenow="20,60" aria-valuemax="100" aria-orientation="vertical" class="van-slider__button-wrapper-left">
             <div class="van-slider__button"></div>
