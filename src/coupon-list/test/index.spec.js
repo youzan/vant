@@ -177,5 +177,4 @@ test('render coupon cell with zero discount', () => {
     },
   });
   expect(wrapper).toMatchSnapshot();
-  expect(wrapper.text()).toBe('优惠券-¥ 0.00');
 });
