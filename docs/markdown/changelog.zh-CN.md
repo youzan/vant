@@ -10,6 +10,31 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
+
+`2020-09-17`
+
+**Feature**
+
+- Slider: 新增 range 属性，用于开启双滑块模式 [#7176](https://github.com/youzan/vant/issues/7176)
+- Button: 新增 icon-position 属性，用于指定图标位置 [#7174](https://github.com/youzan/vant/issues/7174)
+
+**style**
+
+- Dialog: 优化无标题弹窗的最小高度 [#7191](https://github.com/youzan/vant/issues/7191)
+- Field: 占位文字的颜色调整为 gray-6 [#7192](https://github.com/youzan/vant/issues/7192)
+- TabbarItem: 新增 @tabbar-item-active-background-color less 变量 [#7162](https://github.com/youzan/vant/issues/7162)
+
+**Bug Fixes**
+
+- Calendar: 修复使用 rem 布局时内容跳动的问题 [#7190](https://github.com/youzan/vant/issues/7190)
+- ImagePreview: 修复在个别场景下图片滑动范围错误的问题 [#7142](https://github.com/youzan/vant/issues/7142)
+- NoticeBar: 修复在 safari 浏览器上返回时无法滚动的问题 [#7167](https://github.com/youzan/vant/issues/7167)
+- NumberKeyboard: 修复 extra-key 包含多个字符时被截断的问题 [#7150](https://github.com/youzan/vant/issues/7150)
+- NumberKeyboard: 修复 extra-key 插槽内无法触发 click 事件的问题 [#7193](https://github.com/youzan/vant/issues/7193)
+- Tabs: 修复 offset-top 属性包含单位时切换标签后滚动位置错误的问题 [#7143](https://github.com/youzan/vant/issues/7143)
+- Tag: 修复标签文字在小米手机上不居中的问题 [#7151](https://github.com/youzan/vant/issues/7151)
+
 ### [v2.10.6](https://github.com/youzan/vant/compare/v2.10.5...v2.10.6)
 
 `2020-09-08`
