@@ -28,7 +28,7 @@
 
 Vant 是**有赞前端团队**开源的移动端组件库，于 2016 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万前端开发者，是业界主流的移动端组件库之一。
 
-目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，同时由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
+目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
 
 ## 特性
 
