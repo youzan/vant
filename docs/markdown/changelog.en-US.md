@@ -10,6 +10,31 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
+
+`2020-09-17`
+
+**Feature**
+
+- Slider: add dual thumb mode for slider [#7176](https://github.com/youzan/vant/issues/7176)
+- Button: add icon-position prop [#7174](https://github.com/youzan/vant/issues/7174)
+- TabbarItem: add @tabbar-item-active-background-color less var [#7162](https://github.com/youzan/vant/issues/7162)
+
+**style**
+
+- Dialog: add message min-height [#7191](https://github.com/youzan/vant/issues/7191)
+- Field: adjust placeholder color to gray-6 [#7192](https://github.com/youzan/vant/issues/7192)
+
+**Bug Fixes**
+
+- Calendar: incorrect height when using rem [#7190](https://github.com/youzan/vant/issues/7190)
+- ImagePreview: incorrect move range in some cases [#7142](https://github.com/youzan/vant/issues/7142)
+- NoticeBar: fix cache issues with forwards and back history in safari [#7167](https://github.com/youzan/vant/issues/7167)
+- NumberKeyboard: incorrect extra key [#7150](https://github.com/youzan/vant/issues/7150)
+- NumberKeyboard: slot content click event not work [#7193](https://github.com/youzan/vant/issues/7193)
+- Tabs: incorrect scroll position when offset-top has unit [#7143](https://github.com/youzan/vant/issues/7143)
+- Tag: text vertical align in miui [#7151](https://github.com/youzan/vant/issues/7151)
+
 ### [v2.10.6](https://github.com/youzan/vant/compare/v2.10.5...v2.10.6)
 
 `2020-09-08`

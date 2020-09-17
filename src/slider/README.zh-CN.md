@@ -114,7 +114,13 @@ export default {
 ```html
 <div :style="{ height: '150px' }">
   <van-slider v-model="value" vertical @change="onChange" />
-  <van-slider v-model="value2" range vertical @change="onChange" />
+  <van-slider
+    v-model="value2"
+    range
+    vertical
+    style="margin-left: 100px;"
+    @change="onChange"
+  />
 </div>
 ```
 

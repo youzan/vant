@@ -27,9 +27,18 @@
     }
   }
 
+  &__content {
+    &--isolated {
+      display: flex;
+      align-items: center;
+      min-height: 104px;
+    }
+  }
+
   &__message {
+    flex: 1;
     max-height: @dialog-message-max-height;
-    padding: @dialog-message-padding;
+    padding: 26px @dialog-message-padding;
     overflow-y: auto;
     font-size: @dialog-message-font-size;
     line-height: @dialog-message-line-height;
@@ -63,6 +72,7 @@
   &__confirm,
   &__cancel {
     flex: 1;
+    height: @dialog-button-height;
     margin: 0;
     border: 0;
   }
@@ -84,6 +94,11 @@
     .van-dialog__message {
       padding-bottom: @padding-md;
       color: @text-color;
+    }
+
+    .van-dialog__confirm,
+    .van-dialog__cancel {
+      height: @dialog-round-button-height;
     }
 
     .van-dialog__confirm {

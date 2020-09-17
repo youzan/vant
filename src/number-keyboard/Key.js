@@ -38,7 +38,10 @@ export default createComponent({
     const onTouchEnd = (event) => {
       if (active.value) {
         // eliminate tap delay on safari
-        event.preventDefault();
+        // see: https://github.com/youzan/vant/issues/6836
+        if (!slots.default) {
+          event.preventDefault();
+        }
         active.value = false;
         emit('press', props.text, props.type);
       }
