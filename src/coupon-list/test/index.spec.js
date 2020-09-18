@@ -26,6 +26,12 @@ const coupon3 = {
   denominations: 123,
 };
 
+const coupon4 = {
+  ...coupon,
+  startAt: 1600327871,
+  endAt: 1700327871,
+};
+
 const emptyCoupon = {
   id: 0,
   discount: 0,
@@ -157,6 +163,16 @@ test('render coupon cell with coupon', () => {
   const wrapper = mount(CouponCell, {
     propsData: {
       coupons: [{ value: 100 }],
+      chosenCoupon: 0,
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render coupon cell with zero discount', () => {
+  const wrapper = mount(CouponCell, {
+    propsData: {
+      coupons: [{ ...coupon4, value: 0, denominations: 150 }],
       chosenCoupon: 0,
     },
   });

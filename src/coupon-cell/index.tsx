@@ -30,9 +30,7 @@ function formatValue(props: CouponCellProps) {
 
     if (isDef(coupon.value)) {
       ({ value } = coupon);
-    }
-
-    if (isDef(coupon.denominations)) {
+    } else if (isDef(coupon.denominations)) {
       value = coupon.denominations;
     }
 
