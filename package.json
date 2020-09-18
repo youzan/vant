@@ -59,14 +59,14 @@
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
-    "vue": "3.0.0-0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
     "@vant/cli": "^3.0.0-alpha.10",
-    "@vue/compiler-sfc": "3.0.0-rc.12",
+    "@vue/compiler-sfc": "^3.0.0",
     "prettier": "^2.0.4",
-    "vue": "3.0.0-rc.12"
+    "vue": "^3.0.0"
   },
   "sideEffects": [
     "es/**/style/*",

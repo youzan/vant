@@ -29,8 +29,8 @@
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
-    "@vue/compiler-sfc": "3.0.0-0",
-    "vue": "3.0.0-0"
+    "@vue/compiler-sfc": "^3.0.0",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.1",
@@ -56,7 +56,7 @@
     "@vant/touch-emulator": "^1.2.0",
     "@vue/babel-plugin-jsx": "^1.0.0-rc.3",
     "@vue/component-compiler-utils": "^3.1.2",
-    "@vue/test-utils": "2.0.0-beta.4",
+    "@vue/test-utils": "2.0.0-beta.5",
     "address": "^1.1.2",
     "autoprefixer": "^9.8.0",
     "babel-jest": "^26.0.1",
@@ -98,7 +98,7 @@
     "typescript": "^4.0.0",
     "vue-jest": "^5.0.0-alpha.3",
     "vue-loader": "^16.0.0-beta.7",
-    "vue-router": "^4.0.0-beta.9",
+    "vue-router": "^4.0.0-beta.10",
     "webpack": "^4.43.0",
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "^4.2.2",
