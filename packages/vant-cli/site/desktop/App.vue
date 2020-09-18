@@ -71,11 +71,15 @@ export default {
       setLang(val);
       this.setTitle();
     },
-  },
 
-  created() {
-    // TODO
-    // this.setTitle();
+    config: {
+      handler(val) {
+        if (val) {
+          this.setTitle();
+        }
+      },
+      immediate: true,
+    },
   },
 
   mounted() {
