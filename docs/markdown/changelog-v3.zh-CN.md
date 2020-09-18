@@ -14,6 +14,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-beta.0](https://github.com/youzan/vant/compare/v2.10.7...v3.0.0-beta.0)
+
+`2020-09-18`
+
+**breaking changes**
+
+- Dialog: allow-html 属性的默认值调整为 false [02c7a7](https://github.com/youzan/vant/commit/02c7a75ee3d7725157b744bb710bd879f01a0065)
+- Picker: allow-html 属性的默认值调整为 false [02c7a7](https://github.com/youzan/vant/commit/02c7a75ee3d7725157b744bb710bd879f01a0065)
+
+**refactor**
+
+使用 Composition API 重构以下组件：
+
+- ImagePreview [6ab2b3](https://github.com/youzan/vant/commit/6ab2b3bf1f53dabf272ae3a6d663221236eab47c)
+- Picker [85d0d4](https://github.com/youzan/vant/commit/85d0d423eb33567d74d029991509589237214cf8)
+- Popup [946565](https://github.com/youzan/vant/commit/9465653f429d216bf0f34cb9cf26cc1f51b3e358)
+- Swipe [39c68c](https://github.com/youzan/vant/commit/39c68c993a34f8cfb0de056f0da7edcd01bd6d4d)
+- Uploader [595b06](https://github.com/youzan/vant/commit/595b062c34e34e48b5f8d730dc6b13221fcad841)
+
+**Bug Fixes**
+
+- AddressEdit: 修复 emits 未声明导致 warning 的问题 [1e6a12](https://github.com/youzan/vant/commit/1e6a120b2e48f7262062729260d362c96355eca6)
+- AddressEdit: 修复点击省市区弹窗的蒙层时无法关闭的问题 [02e89a](https://github.com/youzan/vant/commit/02e89a73c57af1e59429ab320c2a13395abc0520)
+- Field: 修复在 iOS 上中文输入过程中触发 input 事件的问题 [#7035](https://github.com/youzan/vant/issues/7035)
+- 包含 `v2.10.7` 版本的所有修复
+
 ### [v3.0.0-alpha.5](https://github.com/youzan/vant/compare/v2.10.6...v3.0.0-alpha.5)
 
 `2020-09-13`
