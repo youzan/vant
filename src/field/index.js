@@ -1,7 +1,7 @@
 // Utils
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { formatNumber } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { trigger, preventDefault } from '../utils/dom/event';
 import {
   isDef,
   addUnit,
@@ -386,6 +386,18 @@ export default createComponent({
       this.$emit('keypress', event);
     },
 
+    onCompositionStart(event) {
+      event.target.composing = true;
+    },
+
+    onCompositionEnd(event) {
+      const { target } = event;
+      if (target.composing) {
+        target.composing = false;
+        trigger(target, 'input');
+      }
+    },
+
     adjustSize() {
       const { input } = this.$refs;
       if (!(this.type === 'textarea' && this.autosize) || !input) {
@@ -439,15 +451,10 @@ export default createComponent({
         onFocus: this.onFocus,
         onInput: this.onInput,
         onClick: this.onClickInput,
+        onChange: this.onCompositionEnd,
         onKeypress: this.onKeypress,
-        // TODO
-        // add model directive to skip IME composition
-        // directives: [
-        //   {
-        //     name: 'model',
-        //     value: this.modelValue,
-        //   },
-        // ],
+        onCompositionend: this.onCompositionEnd,
+        onCompositionstart: this.onCompositionStart,
       };
 
       if (type === 'textarea') {
