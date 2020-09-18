@@ -1,4 +1,5 @@
 // Utils
+import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -20,7 +21,6 @@ import Button from '../button';
 import Toast from '../toast';
 import Month from './components/Month';
 import Header from './components/Header';
-import { raf } from '../utils/dom/raf';
 
 export default createComponent({
   props: {
