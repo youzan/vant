@@ -1,4 +1,5 @@
 // Utils
+import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -188,13 +189,13 @@ export default createComponent({
           this.$refs.body.getBoundingClientRect().height
         );
         this.onScroll();
+        this.scrollIntoView();
       });
-      this.scrollIntoView();
     },
 
     // scroll to current month
     scrollIntoView() {
-      this.$nextTick(() => {
+      raf(() => {
         const { currentDate } = this;
 
         if (!currentDate) {
@@ -254,29 +255,24 @@ export default createComponent({
     onScroll() {
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
+      const bottom = top + this.bodyHeight;
       const heights = months.map((item) => item.getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      let bottom = top + this.bodyHeight;
       if (bottom > heightSum && top > 0) {
-        bottom = heightSum;
+        return;
       }
 
       let height = 0;
       let currentMonth;
-
-      // add offset to avoid rem accuracy issues
-      // see: https://github.com/youzan/vant/issues/6929
-      const viewportOffset = 50;
-      const viewportTop = top - viewportOffset;
-      const viewportBottom = bottom + viewportOffset;
+      let visibleIndex;
 
       for (let i = 0; i < months.length; i++) {
-        const visible =
-          height <= viewportBottom && height + heights[i] >= viewportTop;
+        const visible = height <= bottom && height + heights[i] >= top;
 
         if (visible && !currentMonth) {
+          visibleIndex = i;
           currentMonth = months[i];
         }
 
@@ -287,9 +283,12 @@ export default createComponent({
           });
         }
 
-        months[i].visible = visible;
         height += heights[i];
       }
+
+      months.forEach((month, index) => {
+        month.visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
+      });
 
       /* istanbul ignore else */
       if (currentMonth) {
