@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { isDef, createNamespace } from '../utils';
 import Cell from '../cell';
 
 const [createComponent, bem, t] = createNamespace('coupon-cell');
@@ -8,7 +8,14 @@ function formatValue(props) {
   const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
-    const value = coupon.value || coupon.denominations || 0;
+    let value = 0;
+
+    if (isDef(coupon.value)) {
+      ({ value } = coupon);
+    } else if (isDef(coupon.denominations)) {
+      value = coupon.denominations;
+    }
+
     return `-${currency} ${(value / 100).toFixed(2)}`;
   }
 

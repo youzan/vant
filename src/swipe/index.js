@@ -243,8 +243,8 @@ export default createComponent({
       state.rect = rect;
       state.swiping = true;
       state.active = active;
-      state.width = Math.round(+props.width || rect.width);
-      state.height = Math.round(+props.height || rect.height);
+      state.width = Math.floor(+props.width || rect.width);
+      state.height = Math.floor(+props.height || rect.height);
       state.offset = getTargetOffset(active);
       children.forEach((swipe) => {
         swipe.setOffset(0);

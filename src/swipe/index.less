@@ -41,7 +41,8 @@
     background-color: @swipe-indicator-inactive-background-color;
     border-radius: 100%;
     opacity: @swipe-indicator-inactive-opacity;
-    transition: opacity 0.2s;
+    transition: opacity @animation-duration-fast,
+      background-color @animation-duration-fast;
 
     &:not(:last-child) {
       margin-right: @swipe-indicator-size;

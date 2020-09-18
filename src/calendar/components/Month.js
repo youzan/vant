@@ -254,7 +254,6 @@ export default createComponent({
       () => props.realRowHeight,
       () => {
         height.value = useRect(monthRef).height;
-        console.log('height.value', height.value);
       }
     );
 

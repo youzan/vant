@@ -54,6 +54,15 @@ exports[`render coupon cell with coupon 1`] = `
 </div>
 `;
 
+
+exports[`render coupon cell with zero discount 1`] = `
+<div role="button" tabindex="0" class="van-cell van-cell--clickable van-coupon-cell">
+  <div class="van-cell__title"><span>优惠券</span></div>
+  <div class="van-cell__value van-coupon-cell__value van-coupon-cell__value--selected"><span>-¥ 0.00</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+    <!----></i>
+</div>
+`;
+
 exports[`render coupon list 1`] = `
 <div class="van-coupon-list">
   <div class="van-coupon-list__exchange-bar">
