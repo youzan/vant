@@ -47,12 +47,14 @@ function getRoutes() {
 
   if (locales) {
     routes.push({
-      path: '/:catchAll(.*)',
+      name: 'notFound',
+      path: '/:path(.*)+',
       redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
   } else {
     routes.push({
-      path: '/:catchAll(.*)',
+      name: 'notFound',
+      path: '/:path(.*)+',
       redirect: '/',
     });
   }
