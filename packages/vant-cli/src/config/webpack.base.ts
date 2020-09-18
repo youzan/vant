@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
+import { consola } from '../common/logger';
 import { existsSync } from 'fs';
 import { WebpackConfig } from '../common/types';
 import {
@@ -55,6 +56,18 @@ if (existsSync(tsconfigPath)) {
           vue: {
             enabled: true,
             compiler: '@vue/compiler-sfc',
+          },
+        },
+      },
+      logger: {
+        issues: {
+          // skip info message
+          log() {},
+          warn(message: string) {
+            consola.warn(message);
+          },
+          error(message: string) {
+            consola.error(message);
           },
         },
       },
