@@ -167,8 +167,8 @@ export default createComponent({
       this.rect = rect;
       this.swiping = true;
       this.active = active;
-      this.computedWidth = Math.round(+this.width || rect.width);
-      this.computedHeight = Math.round(+this.height || rect.height);
+      this.computedWidth = Math.floor(+this.width || rect.width);
+      this.computedHeight = Math.floor(+this.height || rect.height);
       this.offset = this.getTargetOffset(active);
       this.children.forEach((swipe) => {
         swipe.offset = 0;
