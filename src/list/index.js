@@ -121,7 +121,7 @@ export default createComponent({
     genLoading() {
       if (this.innerLoading && !this.finished) {
         return (
-          <div class={bem('loading')}>
+          <div key="loading" class={bem('loading')}>
             {this.slots('loading') || (
               <Loading size="16">{this.loadingText || t('loading')}</Loading>
             )}
