@@ -1,4 +1,5 @@
 import sass from 'sass';
+import webpack from 'webpack';
 import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
@@ -34,6 +35,10 @@ const CSS_LOADERS = [
 ];
 
 const plugins = [
+  new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: 'true',
+    __VUE_PROD_DEVTOOLS__: 'false'
+  }),
   new VueLoaderPlugin(),
   new FriendlyErrorsPlugin({
     clearConsole: false,
