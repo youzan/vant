@@ -73,7 +73,7 @@
     "css-loader": "^3.5.3",
     "eslint": "^7.0.0",
     "fast-glob": "^3.2.2",
-    "fork-ts-checker-webpack-plugin": "^4.1.6",
+    "fork-ts-checker-webpack-plugin": "^5.0.0",
     "gh-pages": "^2.2.0",
     "hash-sum": "^2.0.0",
     "html-webpack-plugin": "4.3.0",

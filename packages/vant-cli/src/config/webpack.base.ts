@@ -4,7 +4,6 @@ import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
 import { existsSync } from 'fs';
-import { consola } from '../common/logger';
 import { WebpackConfig } from '../common/types';
 import {
   CWD,
@@ -37,7 +36,7 @@ const CSS_LOADERS = [
 const plugins = [
   new webpack.DefinePlugin({
     __VUE_OPTIONS_API__: 'true',
-    __VUE_PROD_DEVTOOLS__: 'false'
+    __VUE_PROD_DEVTOOLS__: 'false',
   }),
   new VueLoaderPlugin(),
   new FriendlyErrorsPlugin({
@@ -46,26 +45,22 @@ const plugins = [
   }),
 ];
 
-// const tsconfigPath = join(CWD, 'tsconfig.json');
-// if (existsSync(tsconfigPath)) {
-//   const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-//   plugins.push(
-//     new ForkTsCheckerPlugin({
-//       formatter: 'codeframe',
-//       vue: { enabled: true },
-//       logger: {
-//         // skip info message
-//         info() {},
-//         warn(message: string) {
-//           consola.warn(message);
-//         },
-//         error(message: string) {
-//           consola.error(message);
-//         },
-//       },
-//     })
-//   );
-// }
+const tsconfigPath = join(CWD, 'tsconfig.json');
+if (existsSync(tsconfigPath)) {
+  const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
+  plugins.push(
+    new ForkTsCheckerPlugin({
+      typescript: {
+        extensions: {
+          vue: {
+            enabled: true,
+            compiler: '@vue/compiler-sfc',
+          },
+        },
+      },
+    })
+  );
+}
 
 export const baseConfig: WebpackConfig = {
   mode: 'development',
