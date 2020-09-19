@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
@@ -8,6 +10,15 @@ import Icon from '../icon';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('button');
+
+export type ButtonType =
+  | 'default'
+  | 'primary'
+  | 'success'
+  | 'warning'
+  | 'danger';
+
+export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 
 export default createComponent({
   props: {
@@ -26,15 +37,15 @@ export default createComponent({
     loadingText: String,
     loadingType: String,
     tag: {
-      type: String,
+      type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'button',
     },
     type: {
-      type: String,
+      type: String as PropType<ButtonType>,
       default: 'default',
     },
     size: {
-      type: String,
+      type: String as PropType<ButtonSize>,
       default: 'normal',
     },
     nativeType: {
@@ -46,7 +57,7 @@ export default createComponent({
       default: '20px',
     },
     iconPosition: {
-      type: String,
+      type: String as PropType<'left' | 'right'>,
       default: 'left',
     },
   },
@@ -103,7 +114,7 @@ export default createComponent({
     const getStyle = () => {
       const { color, plain } = props;
       if (color) {
-        const style = {};
+        const style: Record<string, string> = {};
 
         style.color = plain ? color : WHITE;
 
@@ -114,7 +125,7 @@ export default createComponent({
 
         // hide border when color is linear-gradient
         if (color.indexOf('gradient') !== -1) {
-          style.border = 0;
+          style.border = '0';
         } else {
           style.borderColor = color;
         }
@@ -123,7 +134,7 @@ export default createComponent({
       }
     };
 
-    const onClick = (event) => {
+    const onClick = (event: MouseEvent) => {
       if (!props.loading && !props.disabled) {
         emit('click', event);
         route();
