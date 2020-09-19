@@ -2,18 +2,13 @@ import { isDef, createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('badge');
 
-export type BadgeProps = {
-  dot?: boolean;
-  badge?: number | string;
-};
-
 export default createComponent({
   props: {
     dot: Boolean,
     badge: [Number, String],
   },
 
-  setup(props: BadgeProps) {
+  setup(props) {
     return () => {
       const { dot, badge } = props;
       const hasBadge = isDef(badge) && badge !== '';
