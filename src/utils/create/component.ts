@@ -13,5 +13,5 @@ export function createComponent(name: string) {
     };
 
     return defineComponent(sfc);
-  };
+  } as typeof defineComponent;
 }
