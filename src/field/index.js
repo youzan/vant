@@ -13,8 +13,7 @@ import {
 
 // Components
 import Icon from '../icon';
-import Cell from '../cell';
-import { cellProps } from '../cell/shared';
+import Cell, { cellProps } from '../cell';
 
 const [createComponent, bem] = createNamespace('field');
 

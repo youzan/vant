@@ -1,6 +1,7 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { cellProps } from './shared';
 
 // Composition
 import { useRoute, routeProps } from '../composition/use-route';
@@ -9,6 +10,30 @@ import { useRoute, routeProps } from '../composition/use-route';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('cell');
+
+export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
+
+export const cellProps = {
+  icon: String,
+  size: String as PropType<'large'>,
+  title: [Number, String],
+  value: [Number, String],
+  label: [Number, String],
+  center: Boolean,
+  isLink: Boolean,
+  required: Boolean,
+  clickable: Boolean,
+  iconPrefix: String,
+  titleStyle: null as any,
+  titleClass: null as any,
+  valueClass: null as any,
+  labelClass: null as any,
+  arrowDirection: String as PropType<CellArrowDirection>,
+  border: {
+    type: Boolean,
+    default: true,
+  },
+};
 
 export default createComponent({
   props: {
@@ -91,21 +116,21 @@ export default createComponent({
       const { size, center, border, isLink, required } = props;
       const clickable = isLink || props.clickable;
 
-      const classes = {
+      const classes: Record<string, boolean | undefined> = {
         center,
         required,
         clickable,
         borderless: !border,
       };
       if (size) {
-        classes[size] = size;
+        classes[size] = !!size;
       }
 
       return (
         <div
           class={bem(classes)}
-          role={clickable ? 'button' : null}
-          tabindex={clickable ? 0 : null}
+          role={clickable ? 'button' : undefined}
+          tabindex={clickable ? 0 : undefined}
           onClick={route}
         >
           {renderLeftIcon()}

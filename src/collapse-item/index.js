@@ -9,9 +9,8 @@ import { useParent } from '../composition/use-relation';
 import { useLazyRender } from '../composition/use-lazy-render';
 
 // Components
-import Cell from '../cell';
+import Cell, { cellProps } from '../cell';
 import { COLLAPSE_KEY } from '../collapse';
-import { cellProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
