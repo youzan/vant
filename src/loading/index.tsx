@@ -1,9 +1,9 @@
-import { computed } from 'vue';
+import { computed, PropType } from 'vue';
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
 const [createComponent, bem] = createNamespace('loading');
 
-const SpinIcon = [];
+const SpinIcon: JSX.Element[] = [];
 for (let i = 0; i < 12; i++) {
   SpinIcon.push(<i />);
 }
@@ -14,6 +14,8 @@ const CircularIcon = (
   </svg>
 );
 
+export type LoadingType = 'circular' | 'spinner';
+
 export default createComponent({
   props: {
     size: [Number, String],
@@ -21,7 +23,7 @@ export default createComponent({
     vertical: Boolean,
     textSize: [Number, String],
     type: {
-      type: String,
+      type: String as PropType<LoadingType>,
       default: 'circular',
     },
   },

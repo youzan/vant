@@ -7,7 +7,7 @@ import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';
-import Loading from '../loading';
+import Loading, { LoadingType } from '../loading';
 
 const [createComponent, bem] = createNamespace('button');
 
@@ -35,7 +35,7 @@ export default createComponent({
     disabled: Boolean,
     iconPrefix: String,
     loadingText: String,
-    loadingType: String,
+    loadingType: String as PropType<LoadingType>,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'button',
