@@ -1,9 +1,10 @@
+import { PropType } from 'vue';
 import { addUnit, createNamespace } from '../utils';
 import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('icon');
 
-function isImage(name) {
+function isImage(name?: string) {
   return name ? name.indexOf('/') !== -1 : false;
 }
 
@@ -15,7 +16,7 @@ export default createComponent({
     badge: [Number, String],
     color: String,
     tag: {
-      type: String,
+      type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'i',
     },
     classPrefix: {
