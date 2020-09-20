@@ -317,8 +317,6 @@ export default createComponent({
       if (value !== this.value) {
         this.$emit('input', value);
       }
-
-      this.currentValue = value;
     },
 
     onInput(event) {
