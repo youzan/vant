@@ -119,3 +119,9 @@ export default {
 | 事件名 | 说明       | 回调参数                |
 | ------ | ---------- | ----------------------- |
 | click  | 点击时触发 | index: 当前导航项的索引 |
+
+### SidebarItem Slots
+
+| Name  | Description |
+| ----- | ----------- |
+| title | 自定义标题  |
