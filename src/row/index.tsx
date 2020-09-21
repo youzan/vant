@@ -1,17 +1,35 @@
-import { provide, computed, reactive } from 'vue';
+import { provide, computed, reactive, PropType, ComputedRef } from 'vue';
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('row');
 
-export const ROW_KEY = 'van-row';
+export const ROW_KEY = 'vanRow';
+
+export type RowSpaces = { left?: number; right: number }[];
+
+export type RowChild = () => number;
+
+export type RowProvide = {
+  spaces: ComputedRef<RowSpaces>;
+  children: RowChild[];
+};
+
+export type RowAlign = 'top' | 'center' | 'bottom';
+
+export type RowJustify =
+  | 'start'
+  | 'end'
+  | 'center'
+  | 'space-around'
+  | 'space-between';
 
 export default createComponent({
   props: {
-    type: String,
-    align: String,
-    justify: String,
+    type: String as PropType<'flex'>,
+    align: String as PropType<RowAlign>,
+    justify: String as PropType<RowJustify>,
     tag: {
-      type: String,
+      type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
     },
     gutter: {
@@ -21,10 +39,10 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const children = reactive([]);
+    const children = reactive<RowChild[]>([]);
 
     const groups = computed(() => {
-      const groups = [[]];
+      const groups: number[][] = [[]];
 
       let totalSpan = 0;
       children.forEach((getSpan, index) => {
@@ -43,12 +61,11 @@ export default createComponent({
 
     const spaces = computed(() => {
       const gutter = Number(props.gutter);
+      const spaces: RowSpaces = [];
 
       if (!gutter) {
-        return;
+        return spaces;
       }
-
-      const spaces = [];
 
       groups.value.forEach((group) => {
         const averagePadding = (gutter * (group.length - 1)) / group.length;

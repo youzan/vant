@@ -1,28 +1,35 @@
-import { computed } from 'vue';
+import { computed, PropType } from 'vue';
 import { createNamespace } from '../utils';
 import { useParent } from '../composition/use-relation';
-import { ROW_KEY } from '../row';
+import { ROW_KEY, RowProvide } from '../row';
 
 const [createComponent, bem] = createNamespace('col');
 
 export default createComponent({
   props: {
-    span: [Number, String],
     offset: [Number, String],
     tag: {
-      type: String,
+      type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
+    },
+    span: {
+      type: [Number, String],
+      default: 0,
     },
   },
 
   setup(props, { slots }) {
-    const { parent, index } = useParent(ROW_KEY, () => +props.span);
+    const { parent, index } = useParent<RowProvide>(ROW_KEY, () => +props.span);
 
     const style = computed(() => {
-      const { spaces } = parent || {};
+      if (!parent) {
+        return;
+      }
 
-      if (spaces && spaces.value && spaces.value[index.value]) {
-        const { left, right } = spaces.value[index.value];
+      const { spaces } = parent;
+
+      if (spaces && spaces.value && spaces.value[index!.value]) {
+        const { left, right } = spaces.value[index!.value];
         return {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
