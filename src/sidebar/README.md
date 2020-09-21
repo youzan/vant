@@ -113,6 +113,6 @@ export default {
 
 ### SidebarItem Slots
 
-| Name  | Description      |
-| ----- | ---------------- |
-| title | Custom item title |
+| Name            | Description       |
+| --------------- | ----------------- |
+| title `v2.10.8` | Custom item title |

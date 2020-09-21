@@ -10,6 +10,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.8](https://github.com/youzan/vant/compare/v2.10.7...v2.10.8)
+
+`2020-09-21`
+
+**Feature**
+
+- SidebarItem: add title slot [#7220](https://github.com/youzan/vant/issues/7220)
+
+**Bug Fixes**
+
+- Calendar: incorrect month title [#7205](https://github.com/youzan/vant/issues/7205)
+- CouponCell: discounted value [#7196](https://github.com/youzan/vant/issues/7196)
+- Field: incorrect disabled color in iOS 14 [#7206](https://github.com/youzan/vant/issues/7206)
+- List: scoped style not applied to first child [#7202](https://github.com/youzan/vant/issues/7202)
+- Swipe: can't disable loop in some cases [#7208](https://github.com/youzan/vant/issues/7208)
+- Swipe: incorrect indicator color trantision [#7207](https://github.com/youzan/vant/issues/7207)
+
 ### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
 
 `2020-09-17`
