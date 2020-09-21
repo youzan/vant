@@ -4,7 +4,10 @@ type Parent = { children: unknown[] };
 
 type Child<T> = T extends { children: (infer U)[] } ? U : never;
 
-export function useParent<P extends Parent>(key: string, child: Child<P>) {
+export function useParent<P extends Parent>(
+  key: string,
+  child = {} as Child<P>
+) {
   const parent = inject<P | null>(key, null);
 
   if (parent) {

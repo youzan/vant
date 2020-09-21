@@ -24,6 +24,7 @@ export default createComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
+
     useParent(ACTION_BAR_KEY);
 
     const renderIcon = () => {
@@ -51,7 +52,7 @@ export default createComponent({
     };
 
     return () => (
-      <div role="button" class={bem()} tabindex="0" onClick={route}>
+      <div role="button" class={bem()} tabindex={0} onClick={route}>
         {renderIcon()}
         {slots.default ? slots.default() : props.text}
       </div>
