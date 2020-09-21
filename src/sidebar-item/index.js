@@ -43,7 +43,7 @@ export default createComponent({
         onClick={this.onClick}
       >
         <div class={bem('text')}>
-          {this.title}
+          {this.slots('title') ?? this.title}
           <Info
             dot={this.dot}
             info={this.badge ?? this.info}
