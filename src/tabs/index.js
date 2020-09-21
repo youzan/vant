@@ -20,8 +20,8 @@ import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
 // Components
-import Title from './Title';
 import Sticky from '../sticky';
+import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
 const [createComponent, bem] = createNamespace('tabs');
@@ -360,7 +360,7 @@ export default createComponent({
 
     const Nav = this.children.map((item, index) => {
       return (
-        <Title
+        <TabsTitle
           ref={(val) => {
             this.titleRefs[index] = val;
           }}
@@ -376,7 +376,6 @@ export default createComponent({
           renderTitle={item.$slots.title}
           activeColor={this.titleActiveColor}
           inactiveColor={this.titleInactiveColor}
-          swipeThreshold={this.swipeThreshold}
           onClick={() => {
             this.onClick(item, index);
           }}

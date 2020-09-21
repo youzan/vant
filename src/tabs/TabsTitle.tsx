@@ -1,3 +1,4 @@
+import { computed } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import Badge from '../badge';
 
@@ -16,20 +17,27 @@ export default createComponent({
     activeColor: String,
     renderTitle: Function,
     inactiveColor: String,
-    swipeThreshold: [Number, String],
   },
 
-  computed: {
-    style() {
-      const style = {};
-      const { color, isActive } = this;
-      const isCard = this.type === 'card';
+  setup(props) {
+    const style = computed(() => {
+      const style: Record<string, string> = {};
+      const {
+        type,
+        color,
+        disabled,
+        isActive,
+        activeColor,
+        inactiveColor,
+      } = props;
+
+      const isCard = type === 'card';
 
       // card theme color
       if (color && isCard) {
         style.borderColor = color;
 
-        if (!this.disabled) {
+        if (!disabled) {
           if (isActive) {
             style.backgroundColor = color;
           } else {
@@ -38,50 +46,46 @@ export default createComponent({
         }
       }
 
-      const titleColor = isActive ? this.activeColor : this.inactiveColor;
+      const titleColor = isActive ? activeColor : inactiveColor;
       if (titleColor) {
         style.color = titleColor;
       }
 
       return style;
-    },
-  },
+    });
 
-  methods: {
-    genText() {
+    const renderText = () => {
       const Text = (
-        <span class={bem('text', { ellipsis: !this.scrollable })}>
-          {this.renderTitle ? this.renderTitle() : this.title}
+        <span class={bem('text', { ellipsis: !props.scrollable })}>
+          {props.renderTitle ? props.renderTitle() : props.title}
         </span>
       );
 
-      if (this.dot || (isDef(this.badge) && this.badge !== '')) {
+      if (props.dot || (isDef(props.badge) && props.badge !== '')) {
         return (
           <span class={bem('text-wrapper')}>
             {Text}
-            {<Badge dot={this.dot} badge={this.badge} />}
+            {<Badge dot={props.dot} badge={props.badge} />}
           </span>
         );
       }
 
       return Text;
-    },
-  },
+    };
 
-  render() {
-    return (
+    return () => (
       <div
         role="tab"
         class={[
           bem({
-            active: this.isActive,
-            disabled: this.disabled,
+            active: props.isActive,
+            disabled: props.disabled,
           }),
         ]}
-        style={this.style}
-        aria-selected={this.isActive}
+        style={style.value}
+        aria-selected={props.isActive}
       >
-        {this.genText()}
+        {renderText()}
       </div>
     );
   },
