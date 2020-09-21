@@ -118,11 +118,12 @@ export default createComponent({
 
       const { title, message, allowHtml, messageAlign } = props;
       if (message) {
+        const hasTitle = title || slots.title;
         return (
-          <div class={bem('content', { isolated: !slots.title })}>
+          <div class={bem('content', { isolated: !hasTitle })}>
             <div
               class={bem('message', {
-                'has-title': slots.title || title,
+                'has-title': hasTitle,
                 [messageAlign]: messageAlign,
               })}
               {...{
