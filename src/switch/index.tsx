@@ -1,17 +1,26 @@
-// Utils
 import { createNamespace, addUnit } from '../utils';
-import { switchProps } from './shared';
-
-// Composition
 import { useParentField } from '../composition/use-parent-field';
-
-// Components
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('switch');
 
 export default createComponent({
-  props: switchProps,
+  props: {
+    size: [Number, String],
+    loading: Boolean,
+    disabled: Boolean,
+    modelValue: null as any,
+    activeColor: String,
+    inactiveColor: String,
+    activeValue: {
+      type: null as any,
+      default: true,
+    },
+    inactiveValue: {
+      type: null as any,
+      default: false,
+    },
+  },
 
   emits: ['change', 'update:modelValue'],
 
@@ -52,7 +61,7 @@ export default createComponent({
             disabled,
           })}
           style={style}
-          aria-checked={String(checked)}
+          aria-checked={checked}
           onClick={onClick}
         >
           <div class={bem('node')}>{renderLoading()}</div>
