@@ -1,11 +1,11 @@
 import { inject, computed, onUnmounted } from 'vue';
 
-export type Parent<T = unknown> = null | {
-  children: T[];
-};
+type Parent = { children: unknown[] };
 
-export function useParent<T = unknown>(key: string, child: T = {} as T) {
-  const parent = inject<Parent<T>>(key, null);
+type Child<T> = T extends { children: (infer U)[] } ? U : never;
+
+export function useParent<P extends Parent>(key: string, child: Child<P>) {
+  const parent = inject<P | null>(key, null);
 
   if (parent) {
     const { children } = parent;
