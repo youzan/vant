@@ -230,7 +230,7 @@ export default createComponent({
 
     const validateWithTrigger = (trigger) => {
       if (form && props.rules) {
-        const defaultTrigger = form.validateTrigger === trigger;
+        const defaultTrigger = form.props.validateTrigger === trigger;
         const rules = props.rules.filter((rule) => {
           if (rule.trigger) {
             return rule.trigger === trigger;
@@ -329,7 +329,7 @@ export default createComponent({
       if (typeof props.error === 'boolean') {
         return props.error;
       }
-      if (form && form.showError && state.validateFailed) {
+      if (form && form.props.showError && state.validateFailed) {
         return true;
       }
     });
@@ -339,8 +339,8 @@ export default createComponent({
         return props[key];
       }
 
-      if (form && isDef(form[key])) {
-        return form[key];
+      if (form && isDef(form.props[key])) {
+        return form.props[key];
       }
     };
 
@@ -508,7 +508,7 @@ export default createComponent({
     };
 
     const renderMessage = () => {
-      if (form && form.showErrorMessage === false) {
+      if (form && form.props.showErrorMessage === false) {
         return;
       }
 

@@ -1,4 +1,6 @@
+import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -33,24 +35,16 @@ export default createComponent({
 
   emits: ['submit', 'failed'],
 
-  provide() {
-    return {
-      [FORM_KEY]: this,
-    };
-  },
+  setup(props, { emit, slots }) {
+    const children = reactive([]);
 
-  data() {
-    return {
-      children: [],
-    };
-  },
+    provide(FORM_KEY, { props, children });
 
-  methods: {
-    validateSeq() {
-      return new Promise((resolve, reject) => {
+    const validateSeq = () =>
+      new Promise((resolve, reject) => {
         const errors = [];
 
-        this.children
+        children
           .reduce(
             (promise, field) =>
               promise.then(() => {
@@ -72,34 +66,22 @@ export default createComponent({
             }
           });
       });
-    },
 
-    validateAll() {
-      return new Promise((resolve, reject) => {
-        Promise.all(this.children.map((item) => item.validate())).then(
-          (errors) => {
-            errors = errors.filter((item) => item);
+    const validateAll = () =>
+      new Promise((resolve, reject) => {
+        Promise.all(children.map((item) => item.validate())).then((errors) => {
+          errors = errors.filter((item) => item);
 
-            if (errors.length) {
-              reject(errors);
-            } else {
-              resolve();
-            }
+          if (errors.length) {
+            reject(errors);
+          } else {
+            resolve();
           }
-        );
+        });
       });
-    },
 
-    // @exposed-api
-    validate(name) {
-      if (name) {
-        return this.validateField(name);
-      }
-      return this.validateFirst ? this.validateSeq() : this.validateAll();
-    },
-
-    validateField(name) {
-      const matched = this.children.filter((item) => item.props.name === name);
+    const validateField = (name) => {
+      const matched = children.filter((item) => item.props.name === name);
 
       if (matched.length) {
         return new Promise((resolve, reject) => {
@@ -114,65 +96,70 @@ export default createComponent({
       }
 
       return Promise.reject();
-    },
+    };
 
-    // @exposed-api
-    resetValidation(name) {
-      this.children.forEach((item) => {
+    const validate = (name) => {
+      if (name) {
+        return validateField(name);
+      }
+      return props.validateFirst ? validateSeq() : validateAll();
+    };
+
+    const resetValidation = (name) => {
+      children.forEach((item) => {
         if (!name || item.props.name === name) {
           item.resetValidation();
         }
       });
-    },
+    };
 
-    // @exposed-api
-    scrollToField(name, options) {
-      this.children.some((item) => {
+    const scrollToField = (name, options) => {
+      children.some((item) => {
         if (item.props.name === name) {
           item.root.value.scrollIntoView(options);
           return true;
         }
         return false;
       });
-    },
+    };
 
-    getValues() {
-      return this.children.reduce((form, field) => {
+    const getValues = () =>
+      children.reduce((form, field) => {
         form[field.props.name] = field.formValue;
         return form;
       }, {});
-    },
 
-    onSubmit(event) {
-      event.preventDefault();
-      this.submit();
-    },
+    const submit = () => {
+      const values = getValues();
 
-    // @exposed-api
-    submit() {
-      const values = this.getValues();
-
-      this.validate()
+      validate()
         .then(() => {
-          this.$emit('submit', values);
+          emit('submit', values);
         })
         .catch((errors) => {
-          this.$emit('failed', {
-            values,
-            errors,
-          });
+          emit('failed', { values, errors });
 
-          if (this.scrollToError) {
-            this.scrollToField(errors[0].name);
+          if (props.scrollToError) {
+            scrollToField(errors[0].name);
           }
         });
-    },
-  },
+    };
 
-  render() {
-    return (
-      <form class={bem()} onSubmit={this.onSubmit}>
-        {this.$slots.default?.()}
+    const onSubmit = (event) => {
+      event.preventDefault();
+      submit();
+    };
+
+    useExpose({
+      submit,
+      validate,
+      scrollToField,
+      resetValidation,
+    });
+
+    return () => (
+      <form class={bem()} onSubmit={onSubmit}>
+        {slots.default?.()}
       </form>
     );
   },
