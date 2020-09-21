@@ -22,7 +22,7 @@ import { BindEventMixin } from '../mixins/bind-event';
 // Components
 import Title from './Title';
 import Sticky from '../sticky';
-import Content from './Content';
+import TabsContent from './TabsContent';
 
 const [createComponent, bem] = createNamespace('tabs');
 
@@ -92,7 +92,7 @@ export default createComponent({
 
     return {
       position: '',
-      currentIndex: null,
+      currentIndex: -1,
       lineStyle: {
         backgroundColor: this.color,
       },
@@ -421,7 +421,7 @@ export default createComponent({
         ) : (
           Wrap
         )}
-        <Content
+        <TabsContent
           count={this.children.length}
           animated={animated}
           duration={this.duration}
@@ -430,7 +430,7 @@ export default createComponent({
           onChange={this.setCurrentIndex}
         >
           {this.$slots.default?.()}
-        </Content>
+        </TabsContent>
       </div>
     );
   },
