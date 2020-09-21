@@ -37,9 +37,9 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const tabbarRef = ref();
+    const root = ref();
     const children = reactive([]);
-    const renderPlaceholder = usePlaceholder(tabbarRef, bem);
+    const renderPlaceholder = usePlaceholder(root, bem);
 
     const isUnfit = () => {
       if (isDef(props.safeAreaInsetBottom)) {
@@ -54,7 +54,7 @@ export default createComponent({
       const unfit = isUnfit();
       return (
         <div
-          ref={tabbarRef}
+          ref={root}
           style={{ zIndex }}
           class={[bem({ unfit, fixed }), { [BORDER_TOP_BOTTOM]: border }]}
         >
