@@ -1,7 +1,8 @@
 import { createNamespace } from '../utils';
-// import { sortChildren } from '../utils/vnodes';
 
 const [createComponent, bem] = createNamespace('form');
+
+export const FORM_KEY = 'vanForm';
 
 export default createComponent({
   props: {
@@ -34,13 +35,13 @@ export default createComponent({
 
   provide() {
     return {
-      vanForm: this,
+      [FORM_KEY]: this,
     };
   },
 
   data() {
     return {
-      fields: [],
+      children: [],
     };
   },
 
@@ -49,7 +50,7 @@ export default createComponent({
       return new Promise((resolve, reject) => {
         const errors = [];
 
-        this.fields
+        this.children
           .reduce(
             (promise, field) =>
               promise.then(() => {
@@ -75,7 +76,7 @@ export default createComponent({
 
     validateAll() {
       return new Promise((resolve, reject) => {
-        Promise.all(this.fields.map((item) => item.validate())).then(
+        Promise.all(this.children.map((item) => item.validate())).then(
           (errors) => {
             errors = errors.filter((item) => item);
 
@@ -98,7 +99,7 @@ export default createComponent({
     },
 
     validateField(name) {
-      const matched = this.fields.filter((item) => item.name === name);
+      const matched = this.children.filter((item) => item.props.name === name);
 
       if (matched.length) {
         return new Promise((resolve, reject) => {
@@ -117,8 +118,8 @@ export default createComponent({
 
     // @exposed-api
     resetValidation(name) {
-      this.fields.forEach((item) => {
-        if (!name || item.name === name) {
+      this.children.forEach((item) => {
+        if (!name || item.props.name === name) {
           item.resetValidation();
         }
       });
@@ -126,28 +127,18 @@ export default createComponent({
 
     // @exposed-api
     scrollToField(name, options) {
-      this.fields.some((item) => {
-        if (item.name === name) {
-          item.$el.scrollIntoView(options);
+      this.children.some((item) => {
+        if (item.props.name === name) {
+          item.root.value.scrollIntoView(options);
           return true;
         }
         return false;
       });
     },
 
-    addField(field) {
-      this.fields.push(field);
-      // TODO
-      // sortChildren(this.fields, this);
-    },
-
-    removeField(field) {
-      this.fields = this.fields.filter((item) => item !== field);
-    },
-
     getValues() {
-      return this.fields.reduce((form, field) => {
-        form[field.name] = field.formValue;
+      return this.children.reduce((form, field) => {
+        form[field.props.name] = field.formValue;
         return form;
       }, {});
     },

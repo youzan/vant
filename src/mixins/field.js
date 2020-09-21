@@ -9,7 +9,7 @@ export const FieldMixin = {
   },
 
   watch: {
-    value() {
+    modelValue() {
       const field = this.vanField;
 
       if (field) {
@@ -22,8 +22,8 @@ export const FieldMixin = {
   created() {
     const field = this.vanField;
 
-    if (field && !field.children) {
-      field.children = this;
+    if (field && !field.childFieldValue.value) {
+      field.childFieldValue.value = () => this.modelValue;
     }
   },
 };

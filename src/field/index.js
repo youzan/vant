@@ -1,3 +1,13 @@
+import {
+  ref,
+  watch,
+  provide,
+  computed,
+  nextTick,
+  reactive,
+  onMounted,
+} from 'vue';
+
 // Utils
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { formatNumber } from '../utils/format/number';
@@ -11,28 +21,20 @@ import {
   createNamespace,
 } from '../utils';
 
+// Composition
+import { useExpose } from '../composition/use-expose';
+import { useParent } from '../composition/use-relation';
+
 // Components
 import Icon from '../icon';
 import Cell, { cellProps } from '../cell';
+import { FORM_KEY } from '../form';
 
 const [createComponent, bem] = createNamespace('field');
 
 export const FIELD_KEY = 'vanField';
 
 export default createComponent({
-  provide() {
-    return {
-      vanField: this,
-    };
-  },
-
-  inject: {
-    vanForm: {
-      from: 'vanForm',
-      default: null,
-    },
-  },
-
   props: {
     ...cellProps,
     rows: [Number, String],
@@ -91,91 +93,37 @@ export default createComponent({
     'update:modelValue',
   ],
 
-  data() {
-    return {
+  setup(props, { emit, slots }) {
+    const state = reactive({
       focused: false,
       validateFailed: false,
       validateMessage: '',
-    };
-  },
+    });
 
-  watch: {
-    modelValue(val) {
-      this.updateValue(val);
-      this.resetValidation();
-      this.validateWithTrigger('onChange');
-      this.$nextTick(this.adjustSize);
-    },
-  },
+    const root = ref();
+    const inputRef = ref();
+    const childFieldValue = ref();
 
-  mounted() {
-    this.updateValue(this.modelValue, this.formatTrigger);
-    this.$nextTick(this.adjustSize);
-
-    if (this.vanForm) {
-      this.vanForm.addField(this);
-    }
-  },
-
-  beforeUnmount() {
-    if (this.vanForm) {
-      this.vanForm.removeField(this);
-    }
-  },
-
-  computed: {
-    showClear() {
-      if (this.clearable && !this.readonly) {
-        const hasValue = isDef(this.modelValue) && this.modelValue !== '';
+    const showClear = computed(() => {
+      if (props.clearable && !props.readonly) {
+        const hasValue = isDef(props.modelValue) && props.modelValue !== '';
         const trigger =
-          this.clearTrigger === 'always' ||
-          (this.clearTrigger === 'focus' && this.focused);
+          props.clearTrigger === 'always' ||
+          (props.clearTrigger === 'focus' && state.focused);
 
         return hasValue && trigger;
       }
-    },
+    });
 
-    showError() {
-      if (this.error !== null) {
-        return this.error;
+    const formValue = computed(() => {
+      if (childFieldValue.value && slots.input) {
+        return childFieldValue.value();
       }
-      if (this.vanForm && this.vanForm.showError && this.validateFailed) {
-        return true;
-      }
-    },
+      return props.modelValue;
+    });
 
-    labelStyle() {
-      const labelWidth = this.getProp('labelWidth');
-      if (labelWidth) {
-        return { width: addUnit(labelWidth) };
-      }
-    },
-
-    formValue() {
-      if (this.children && this.$slots.input) {
-        return this.children.modelValue;
-      }
-      return this.modelValue;
-    },
-  },
-
-  methods: {
-    // @exposed-api
-    focus() {
-      if (this.$refs.input) {
-        this.$refs.input.focus();
-      }
-    },
-
-    // @exposed-api
-    blur() {
-      if (this.$refs.input) {
-        this.$refs.input.blur();
-      }
-    },
-
-    runValidator(value, rule) {
-      return new Promise((resolve) => {
+    const runValidator = (value, rule) =>
+      new Promise((resolve) => {
         const returnVal = rule.validator(value, rule);
 
         if (isPromise(returnVal)) {
@@ -184,9 +132,8 @@ export default createComponent({
 
         resolve(returnVal);
       });
-    },
 
-    isEmptyValue(value) {
+    const isEmptyValue = (value) => {
       if (Array.isArray(value)) {
         return !value.length;
       }
@@ -194,85 +141,97 @@ export default createComponent({
         return false;
       }
       return !value;
-    },
+    };
 
-    runSyncRule(value, rule) {
-      if (rule.required && this.isEmptyValue(value)) {
+    const runSyncRule = (value, rule) => {
+      if (rule.required && isEmptyValue(value)) {
         return false;
       }
       if (rule.pattern && !rule.pattern.test(value)) {
         return false;
       }
       return true;
-    },
+    };
 
-    getRuleMessage(value, rule) {
+    const getRuleMessage = (value, rule) => {
       const { message } = rule;
 
       if (isFunction(message)) {
         return message(value, rule);
       }
-
       return message;
-    },
+    };
 
-    runRules(rules) {
-      return rules.reduce(
+    const runRules = (rules) =>
+      rules.reduce(
         (promise, rule) =>
           promise.then(() => {
-            if (this.validateFailed) {
+            if (state.validateFailed) {
               return;
             }
 
-            let value = this.formValue;
+            let { value } = formValue;
 
             if (rule.formatter) {
               value = rule.formatter(value, rule);
             }
 
-            if (!this.runSyncRule(value, rule)) {
-              this.validateFailed = true;
-              this.validateMessage = this.getRuleMessage(value, rule);
+            if (!runSyncRule(value, rule)) {
+              state.validateFailed = true;
+              state.validateMessage = getRuleMessage(value, rule);
               return;
             }
 
             if (rule.validator) {
-              return this.runValidator(value, rule).then((result) => {
+              return runValidator(value, rule).then((result) => {
                 if (result === false) {
-                  this.validateFailed = true;
-                  this.validateMessage = this.getRuleMessage(value, rule);
+                  state.validateFailed = true;
+                  state.validateMessage = getRuleMessage(value, rule);
                 }
               });
             }
           }),
         Promise.resolve()
       );
-    },
 
-    validate(rules = this.rules) {
-      return new Promise((resolve) => {
+    const resetValidation = () => {
+      if (state.validateFailed) {
+        state.validateFailed = false;
+        state.validateMessage = '';
+      }
+    };
+
+    const validate = (rules = props.rules) =>
+      new Promise((resolve) => {
         if (!rules) {
           resolve();
         }
 
-        this.resetValidation();
-        this.runRules(rules).then(() => {
-          if (this.validateFailed) {
+        resetValidation();
+        runRules(rules).then(() => {
+          if (state.validateFailed) {
             resolve({
-              name: this.name,
-              message: this.validateMessage,
+              name: props.name,
+              message: state.validateMessage,
             });
           } else {
             resolve();
           }
         });
       });
-    },
 
-    validateWithTrigger(trigger) {
-      if (this.vanForm && this.rules) {
-        const defaultTrigger = this.vanForm.validateTrigger === trigger;
-        const rules = this.rules.filter((rule) => {
+    const { parent: form } = useParent(FORM_KEY, {
+      root,
+      props,
+      validate,
+      formValue,
+      resetValidation,
+    });
+
+    const validateWithTrigger = (trigger) => {
+      if (form && props.rules) {
+        const defaultTrigger = form.validateTrigger === trigger;
+        const rules = props.rules.filter((rule) => {
           if (rule.trigger) {
             return rule.trigger === trigger;
           }
@@ -280,134 +239,160 @@ export default createComponent({
           return defaultTrigger;
         });
 
-        this.validate(rules);
+        validate(rules);
       }
-    },
+    };
 
-    resetValidation() {
-      if (this.validateFailed) {
-        this.validateFailed = false;
-        this.validateMessage = '';
-      }
-    },
-
-    updateValue(value, trigger = 'onChange') {
+    const updateValue = (value, trigger = 'onChange') => {
       value = isDef(value) ? String(value) : '';
 
       // native maxlength not work when type is number
-      const { maxlength } = this;
+      const { maxlength } = props;
       if (isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
       }
 
-      if (this.type === 'number' || this.type === 'digit') {
-        const isNumber = this.type === 'number';
+      if (props.type === 'number' || props.type === 'digit') {
+        const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
       }
 
-      if (this.formatter && trigger === this.formatTrigger) {
-        value = this.formatter(value);
+      if (props.formatter && trigger === props.formatTrigger) {
+        value = props.formatter(value);
       }
 
-      const { input } = this.$refs;
-      if (input && value !== input.value) {
-        input.value = value;
+      if (inputRef.value && value !== inputRef.value.value) {
+        inputRef.value.value = value;
       }
 
-      if (value !== this.modelValue) {
-        this.$emit('update:modelValue', value);
+      if (value !== props.modelValue) {
+        emit('update:modelValue', value);
       }
+    };
 
-      this.currentValue = value;
-    },
-
-    onInput(event) {
-      // not update v-model when composing
-      if (event.target.composing) {
-        return;
+    const onInput = (event) => {
+      // skip update value when composing
+      if (!event.target.composing) {
+        updateValue(event.target.value);
       }
+    };
 
-      this.updateValue(event.target.value);
-    },
+    const focus = () => {
+      if (inputRef.value) {
+        inputRef.value.focus();
+      }
+    };
 
-    onFocus(event) {
-      this.focused = true;
-      this.$emit('focus', event);
+    const blur = () => {
+      if (inputRef.value) {
+        inputRef.value.blur();
+      }
+    };
+
+    const onFocus = (event) => {
+      state.focused = true;
+      emit('focus', event);
 
       // readonly not work in lagacy mobile safari
-      /* istanbul ignore if */
-      if (this.readonly) {
-        this.blur();
+      if (props.readonly) {
+        blur();
       }
-    },
+    };
 
-    onBlur(event) {
-      this.focused = false;
-      this.updateValue(this.modelValue, 'onBlur');
-      this.$emit('blur', event);
-      this.validateWithTrigger('onBlur');
+    const onBlur = (event) => {
+      state.focused = false;
+      updateValue(props.modelValue, 'onBlur');
+      emit('blur', event);
+      validateWithTrigger('onBlur');
       resetScroll();
-    },
+    };
 
-    onClickInput(event) {
-      this.$emit('click-input', event);
-    },
+    const onClickInput = (event) => {
+      emit('click-input', event);
+    };
 
-    onClickLeftIcon(event) {
-      this.$emit('click-left-icon', event);
-    },
+    const onClickLeftIcon = (event) => {
+      emit('click-left-icon', event);
+    };
 
-    onClickRightIcon(event) {
-      this.$emit('click-right-icon', event);
-    },
+    const onClickRightIcon = (event) => {
+      emit('click-right-icon', event);
+    };
 
-    onClear(event) {
+    const onClear = (event) => {
       preventDefault(event);
-      this.$emit('update:modelValue', '');
-      this.$emit('clear', event);
-    },
+      emit('update:modelValue', '');
+      emit('clear', event);
+    };
 
-    onKeypress(event) {
+    const showError = computed(() => {
+      if (typeof props.error === 'boolean') {
+        return props.error;
+      }
+      if (form && form.showError && state.validateFailed) {
+        return true;
+      }
+    });
+
+    const getProp = (key) => {
+      if (isDef(props[key])) {
+        return props[key];
+      }
+
+      if (form && isDef(form[key])) {
+        return form[key];
+      }
+    };
+
+    const labelStyle = computed(() => {
+      const labelWidth = getProp('labelWidth');
+      if (labelWidth) {
+        return { width: addUnit(labelWidth) };
+      }
+    });
+
+    const onKeypress = (event) => {
       const ENTER_CODE = 13;
 
       if (event.keyCode === ENTER_CODE) {
-        const submitOnEnter = this.getProp('submitOnEnter');
-        if (!submitOnEnter && this.type !== 'textarea') {
+        const submitOnEnter = getProp('submitOnEnter');
+        if (!submitOnEnter && props.type !== 'textarea') {
           preventDefault(event);
         }
 
         // trigger blur after click keyboard search button
-        if (this.type === 'search') {
-          this.blur();
+        if (props.type === 'search') {
+          blur();
         }
       }
 
-      this.$emit('keypress', event);
-    },
+      emit('keypress', event);
+    };
 
-    onCompositionStart(event) {
+    const onCompositionStart = (event) => {
       event.target.composing = true;
-    },
+    };
 
-    onCompositionEnd(event) {
+    const onCompositionEnd = (event) => {
       const { target } = event;
       if (target.composing) {
         target.composing = false;
         trigger(target, 'input');
       }
-    },
+    };
 
-    adjustSize() {
-      const { input } = this.$refs;
-      if (!(this.type === 'textarea' && this.autosize) || !input) {
+    const adjustSize = () => {
+      const input = inputRef.value;
+
+      if (!(props.type === 'textarea' && props.autosize) || !input) {
         return;
       }
 
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
-      if (isObject(this.autosize)) {
-        const { maxHeight, minHeight } = this.autosize;
+      if (isObject(props.autosize)) {
+        const { maxHeight, minHeight } = props.autosize;
         if (maxHeight) {
           height = Math.min(height, maxHeight);
         }
@@ -419,42 +404,43 @@ export default createComponent({
       if (height) {
         input.style.height = height + 'px';
       }
-    },
+    };
 
-    genInput() {
-      const { type } = this;
-      const inputAlign = this.getProp('inputAlign');
+    const renderInput = () => {
+      const inputAlign = getProp('inputAlign');
 
-      if (this.$slots.input) {
+      if (slots.input) {
         return (
           <div
             class={bem('control', [inputAlign, 'custom'])}
-            onClick={this.onClickInput}
+            onClick={onClickInput}
           >
-            {this.$slots.input()}
+            {slots.input()}
           </div>
         );
       }
 
       const inputProps = {
-        ref: 'input',
-        name: this.name,
-        rows: this.rows,
+        ref: inputRef,
+        name: props.name,
+        rows: props.rows,
         style: null,
         class: bem('control', inputAlign),
-        value: this.modelValue,
-        disabled: this.disabled,
-        readonly: this.readonly,
-        placeholder: this.placeholder,
-        onBlur: this.onBlur,
-        onFocus: this.onFocus,
-        onInput: this.onInput,
-        onClick: this.onClickInput,
-        onChange: this.onCompositionEnd,
-        onKeypress: this.onKeypress,
-        onCompositionend: this.onCompositionEnd,
-        onCompositionstart: this.onCompositionStart,
+        value: props.modelValue,
+        disabled: props.disabled,
+        readonly: props.readonly,
+        placeholder: props.placeholder,
+        onBlur,
+        onFocus,
+        onInput,
+        onClick: onClickInput,
+        onChange: onCompositionEnd,
+        onKeypress,
+        onCompositionend: onCompositionEnd,
+        onCompositionstart: onCompositionStart,
       };
+
+      const { type } = props;
 
       if (type === 'textarea') {
         return <textarea {...inputProps} />;
@@ -476,137 +462,144 @@ export default createComponent({
       }
 
       return <input type={inputType} inputmode={inputMode} {...inputProps} />;
-    },
+    };
 
-    genLeftIcon() {
-      const leftIconSlot = this.$slots['left-icon'];
+    const renderLeftIcon = () => {
+      const leftIconSlot = slots['left-icon'];
 
-      if (this.leftIcon || leftIconSlot) {
+      if (props.leftIcon || leftIconSlot) {
         return (
-          <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
+          <div class={bem('left-icon')} onClick={onClickLeftIcon}>
             {leftIconSlot ? (
               leftIconSlot()
             ) : (
-              <Icon name={this.leftIcon} classPrefix={this.iconPrefix} />
+              <Icon name={props.leftIcon} classPrefix={props.iconPrefix} />
             )}
           </div>
         );
       }
-    },
+    };
 
-    genRightIcon() {
-      const rightIconSlot = this.$slots['right-icon'];
+    const renderRightIcon = () => {
+      const rightIconSlot = slots['right-icon'];
 
-      if (this.rightIcon || rightIconSlot) {
+      if (props.rightIcon || rightIconSlot) {
         return (
-          <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
+          <div class={bem('right-icon')} onClick={onClickRightIcon}>
             {rightIconSlot ? (
               rightIconSlot()
             ) : (
-              <Icon name={this.rightIcon} classPrefix={this.iconPrefix} />
+              <Icon name={props.rightIcon} classPrefix={props.iconPrefix} />
             )}
           </div>
         );
       }
-    },
+    };
 
-    genWordLimit() {
-      if (this.showWordLimit && this.maxlength) {
-        const count = (this.modelValue || '').length;
-
+    const renderWordLimit = () => {
+      if (props.showWordLimit && props.maxlength) {
+        const count = (props.modelValue || '').length;
         return (
           <div class={bem('word-limit')}>
-            <span class={bem('word-num')}>{count}</span>/{this.maxlength}
+            <span class={bem('word-num')}>{count}</span>/{props.maxlength}
           </div>
         );
       }
-    },
+    };
 
-    genMessage() {
-      if (this.vanForm && this.vanForm.showErrorMessage === false) {
+    const renderMessage = () => {
+      if (form && form.showErrorMessage === false) {
         return;
       }
 
-      const message = this.errorMessage || this.validateMessage;
+      const message = props.errorMessage || state.validateMessage;
 
       if (message) {
-        const errorMessageAlign = this.getProp('errorMessageAlign');
-
+        const errorMessageAlign = getProp('errorMessageAlign');
         return (
           <div class={bem('error-message', errorMessageAlign)}>{message}</div>
         );
       }
-    },
+    };
 
-    getProp(key) {
-      if (isDef(this[key])) {
-        return this[key];
+    const renderLabel = () => {
+      const colon = getProp('colon') ? ':' : '';
+
+      if (slots.label) {
+        return [slots.label(), colon];
       }
-
-      if (this.vanForm && isDef(this.vanForm[key])) {
-        return this.vanForm[key];
+      if (props.label) {
+        return <span>{props.label + colon}</span>;
       }
-    },
+    };
 
-    genLabel() {
-      const colon = this.getProp('colon') ? ':' : '';
+    useExpose({
+      focus,
+      blur,
+    });
 
-      if (this.$slots.label) {
-        return [this.$slots.label(), colon];
+    provide(FIELD_KEY, {
+      childFieldValue,
+      resetValidation,
+      validateWithTrigger,
+    });
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        updateValue(value);
+        resetValidation();
+        validateWithTrigger('onChange');
+        nextTick(adjustSize);
       }
-
-      if (this.label) {
-        return <span>{this.label + colon}</span>;
-      }
-    },
-  },
-
-  render() {
-    const slots = this.$slots;
-    const labelAlign = this.getProp('labelAlign');
-    const Label = this.genLabel();
-    const LeftIcon = this.genLeftIcon();
-
-    return (
-      <Cell
-        v-slots={{
-          icon: LeftIcon ? () => LeftIcon : null,
-          title: Label ? () => Label : null,
-          extra: slots.extra,
-        }}
-        icon={this.leftIcon}
-        size={this.size}
-        class={bem({
-          error: this.showError,
-          disabled: this.disabled,
-          [`label-${labelAlign}`]: labelAlign,
-          'min-height': this.type === 'textarea' && !this.autosize,
-        })}
-        center={this.center}
-        border={this.border}
-        isLink={this.isLink}
-        required={this.required}
-        clickable={this.clickable}
-        titleStyle={this.labelStyle}
-        valueClass={bem('value')}
-        titleClass={[bem('label', labelAlign), this.labelClass]}
-        arrowDirection={this.arrowDirection}
-      >
-        <div class={bem('body')}>
-          {this.genInput()}
-          {this.showClear && (
-            <Icon
-              name="clear"
-              class={bem('clear')}
-              onTouchstart={this.onClear}
-            />
-          )}
-          {this.genRightIcon()}
-          {slots.button && <div class={bem('button')}>{slots.button()}</div>}
-        </div>
-        {this.genWordLimit()}
-        {this.genMessage()}
-      </Cell>
     );
+
+    onMounted(() => {
+      updateValue(props.modelValue, props.formatTrigger);
+      nextTick(adjustSize);
+    });
+
+    return () => {
+      const labelAlign = getProp('labelAlign');
+
+      return (
+        <Cell
+          v-slots={{
+            icon: renderLeftIcon,
+            title: renderLabel,
+            extra: slots.extra,
+          }}
+          ref={root}
+          size={props.size}
+          icon={props.leftIcon}
+          class={bem({
+            error: showError.value,
+            disabled: props.disabled,
+            [`label-${labelAlign}`]: labelAlign,
+            'min-height': props.type === 'textarea' && !props.autosize,
+          })}
+          center={props.center}
+          border={props.border}
+          isLink={props.isLink}
+          required={props.required}
+          clickable={props.clickable}
+          titleStyle={labelStyle.value}
+          valueClass={bem('value')}
+          titleClass={[bem('label', labelAlign), props.labelClass]}
+          arrowDirection={props.arrowDirection}
+        >
+          <div class={bem('body')}>
+            {renderInput()}
+            {showClear.value && (
+              <Icon name="clear" class={bem('clear')} onTouchstart={onClear} />
+            )}
+            {renderRightIcon()}
+            {slots.button && <div class={bem('button')}>{slots.button()}</div>}
+          </div>
+          {renderWordLimit()}
+          {renderMessage()}
+        </Cell>
+      );
+    };
   },
 });
