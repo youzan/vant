@@ -17,7 +17,7 @@ export default createComponent({
 
   emits: ['click'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const route = useRoute();
     const { parent, index } = useParent(SIDEBAR_KEY);
 
@@ -39,7 +39,7 @@ export default createComponent({
       return (
         <a class={bem({ select: selected, disabled })} onClick={onClick}>
           <div class={bem('text')}>
-            {title}
+            {slots.title ? slots.title() : title}
             <Badge dot={dot} badge={badge} class={bem('badge')} />
           </div>
         </a>

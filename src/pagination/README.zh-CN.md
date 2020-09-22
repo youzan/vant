@@ -45,6 +45,20 @@ export default {
 />
 ```
 
+### 自定义渲染
+
+```html
+<van-pagination v-model="currentPage" :total-items="50" :show-page-size="5">
+  <template #prev-text>
+    <van-icon name="arrow-left" />
+  </template>
+  <template #next-text>
+    <van-icon name="arrow" />
+  </template>
+  <template #page="{ text }">{{ text }}</template>
+</van-pagination>
+```
+
 ## API
 
 ### Props
@@ -66,3 +80,11 @@ export default {
 | 事件名 | 说明           | 回调参数 |
 | ------ | -------------- | -------- |
 | change | 页码改变时触发 | -        |
+
+### Slots
+
+| 名称 | 描述 | 默认值 |
+| --- | --- | --- |
+| prev-text | 自定义上一页插槽 | `-` |
+| next-text | 自定义下一页插槽 | `-` |
+| page | 自定义页码插槽 | `{ number: number, text: string, active: boolean }` |

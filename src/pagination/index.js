@@ -142,7 +142,9 @@ export default createComponent({
             ]}
             onClick={onSelect(value - 1)}
           >
-            {props.prevText || t('prev')}
+            {slots['prev-text']
+              ? slots['prev-text']()
+              : props.prevText || t('prev')}
           </li>
           {pages.value.map((page) => (
             <li
@@ -153,7 +155,7 @@ export default createComponent({
               ]}
               onClick={onSelect(page.number)}
             >
-              {page.text}
+              {slots.page ? slots.page(page) : page.text}
             </li>
           ))}
           {renderDesc()}
@@ -165,7 +167,9 @@ export default createComponent({
             ]}
             onClick={onSelect(value + 1)}
           >
-            {props.nextText || t('next')}
+            {slots['next-text']
+              ? slots['next-text']()
+              : props.nextText || t('next')}
           </li>
         </ul>
       );

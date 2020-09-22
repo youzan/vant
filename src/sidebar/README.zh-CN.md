@@ -15,7 +15,7 @@ app.use(SidebarItem);
 
 ### 基础用法
 
-通过`v-model`绑定当前选中项的索引
+通过 `v-model` 绑定当前选中项的索引。
 
 ```html
 <van-sidebar v-model="activeKey">
@@ -37,7 +37,7 @@ export default {
 
 ### 徽标提示
 
-设置`dot`属性后，会在右上角展示一个小红点。设置`badge`属性后，会在右上角展示相应的徽标
+设置 `dot` 属性后，会在右上角展示一个小红点；设置 `badge` 属性后，会在右上角展示相应的徽标。
 
 ```html
 <van-sidebar v-model="activeKey">
@@ -49,7 +49,7 @@ export default {
 
 ### 禁用选项
 
-通过`disabled`属性禁用选项
+通过 `disabled` 属性禁用选项。
 
 ```html
 <van-sidebar v-model="activeKey">
@@ -61,7 +61,7 @@ export default {
 
 ### 监听切换事件
 
-设置`change`方法来监听切换导航项时的事件
+设置 `change` 方法来监听切换导航项时的事件。
 
 ```html
 <van-sidebar v-model="activeKey" @change="onChange">
@@ -119,3 +119,9 @@ export default {
 | 事件名 | 说明       | 回调参数                |
 | ------ | ---------- | ----------------------- |
 | click  | 点击时触发 | index: 当前导航项的索引 |
+
+### SidebarItem Slots
+
+| Name            | Description |
+| --------------- | ----------- |
+| title `v2.10.8` | 自定义标题  |

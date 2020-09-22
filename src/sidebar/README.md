@@ -111,3 +111,9 @@ export default {
 | Event | Description               | Arguments                    |
 | ----- | ------------------------- | ---------------------------- |
 | click | Triggered when click item | index: index of current item |
+
+### SidebarItem Slots
+
+| Name            | Description       |
+| --------------- | ----------------- |
+| title `v2.10.8` | Custom item title |

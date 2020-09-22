@@ -76,3 +76,22 @@ test('without parent', () => {
     expect(err).toBeTruthy();
   }
 });
+
+test('title slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-sidebar v-model="active">
+        <van-sidebar-item>
+          <template #title>Title Slot</template>
+        </van-sidebar-item>
+      </van-sidebar>
+    `,
+    data() {
+      return {
+        active: 0,
+      };
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

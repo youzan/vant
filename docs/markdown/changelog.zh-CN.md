@@ -10,6 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.8](https://github.com/youzan/vant/compare/v2.10.7...v2.10.8)
+
+`2020-09-21`
+
+**Feature**
+
+- SidebarItem: 新增 title 插槽 [#7220](https://github.com/youzan/vant/issues/7220)
+
+**Bug Fixes**
+
+- Calendar: 修复月份标题展示错误的问题 [#7205](https://github.com/youzan/vant/issues/7205)
+- CouponCell: 修复金额为 0 时取值逻辑错误的问题 [#7196](https://github.com/youzan/vant/issues/7196)
+- Field: 修复在 iOS 14 上禁用时文字颜色过浅的问题 [#7206](https://github.com/youzan/vant/issues/7206)
+- List: 修复个别情况下第一个子元素的 scoped 样式不生效的问题 [#7202](https://github.com/youzan/vant/issues/7202)
+- Swipe: 修复宽度为小数时无法禁用循环滚动的问题 [#7208](https://github.com/youzan/vant/issues/7208)
+- Swipe: 修复指示器切换时渐变动画闪烁的问题 [#7207](https://github.com/youzan/vant/issues/7207)
+
 ### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
 
 `2020-09-17`
