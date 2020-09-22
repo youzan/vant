@@ -44,9 +44,7 @@
         <template #next-text>
           <van-icon name="arrow" />
         </template>
-        <template #page="{ page }">
-          {{ page.text }}
-        </template>
+        <template #page="{ text }">{{ text }}</template>
       </van-pagination>
     </demo-block>
   </demo-section>

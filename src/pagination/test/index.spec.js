@@ -23,7 +23,7 @@ test('render page slot', () => {
       showPageSize: 5
     },
     scopedSlots: {
-      'page': ({ page }) => `${page.text}`,
+      'page': ({ text }) => `${text}`,
     }
   });
 

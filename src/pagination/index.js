@@ -138,7 +138,7 @@ export default createComponent({
             class={[bem('item', { active: page.active }), bem('page'), BORDER]}
             onClick={onSelect(page.number)}
           >
-            {this.slots('page', { page }) ?? page.text}
+            {this.slots('page', page) ?? page.text}
           </li>
         ))}
         {simple && (
