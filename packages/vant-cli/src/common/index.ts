@@ -101,20 +101,20 @@ export function normalizePath(path: string): string {
   return path.replace(/\\/g, '/');
 }
 
-export function getWebpackConfig(defaultWebpackCfg: WebpackConfig): object {
+export function getWebpackConfig(defaultConfig: WebpackConfig): object {
   if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
     const config = require(ROOT_WEBPACK_CONFIG_FILE);
 
     // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
     // 比如修改markdown-loader,添加options.enableMetaData
     if (typeof config === 'function') {
-      return config(defaultWebpackCfg);
+      return config(defaultConfig);
     }
 
-    return merge(defaultWebpackCfg, config);
+    return merge(defaultConfig, config);
   }
 
-  return defaultWebpackCfg;
+  return defaultConfig;
 }
 
 export function getPostcssConfig(): object {
