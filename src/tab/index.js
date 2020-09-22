@@ -1,12 +1,14 @@
+import { ref, watch, nextTick } from 'vue';
 import { createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { TABS_KEY } from '../tabs';
+
+// Composition
 import { routeProps } from '../composition/use-route';
+import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanTabs')],
-
   props: {
     ...routeProps,
     dot: Boolean,
@@ -17,63 +19,74 @@ export default createComponent({
     disabled: Boolean,
   },
 
-  data() {
-    return {
-      inited: false,
-    };
-  },
+  setup(props, { slots }) {
+    const root = ref();
+    const inited = ref(false);
+    const { parent, index } = useParent(TABS_KEY, {
+      getRoot: () => root.value,
+      props,
+      slots,
+    });
 
-  computed: {
-    computedName() {
-      return this.name ?? this.index;
-    },
-
-    isActive() {
-      const active = this.computedName === this.parent.currentName;
-
-      if (active) {
-        this.inited = true;
-      }
-      return active;
-    },
-  },
-
-  watch: {
-    title() {
-      this.parent.setLine();
-    },
-
-    inited(val) {
-      if (this.parent.lazyRender && val) {
-        this.$nextTick(() => {
-          this.parent.$emit('rendered', this.computedName, this.title);
-        });
-      }
-    },
-  },
-
-  render() {
-    const { parent, isActive } = this;
-    const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
-    const show = parent.scrollspy || isActive;
-    const Content = shouldRender ? this.$slots.default?.() : null;
-
-    if (parent.animated) {
-      return (
-        <div
-          role="tabpanel"
-          aria-hidden={!isActive}
-          class={bem('pane-wrapper', { inactive: !isActive })}
-        >
-          <div class={bem('pane')}>{Content}</div>
-        </div>
-      );
+    if (!parent) {
+      throw new Error('[Vant] Tabs: <van-tab> must be used inside <van-tabs>');
     }
 
-    return (
-      <div vShow={show} role="tabpanel" class={bem('pane')}>
-        {Content}
-      </div>
+    const getName = () => props.name ?? index.value;
+
+    const init = () => {
+      inited.value = true;
+
+      if (parent.props.lazyRender) {
+        nextTick(() => {
+          parent.emit('rendered', getName(), props.title);
+        });
+      }
+    };
+
+    const isActive = () => {
+      const active = getName() === parent.currentName.value;
+
+      if (active && !inited.value) {
+        init();
+      }
+
+      return active;
+    };
+
+    watch(
+      () => props.title,
+      () => {
+        parent.setLine();
+      }
     );
+
+    return () => {
+      const { animated, scrollspy, lazyRender } = parent.props;
+      const active = isActive();
+      const show = scrollspy || active;
+
+      const shouldRender = inited.value || scrollspy || !lazyRender;
+      const Content = shouldRender ? slots.default?.() : null;
+
+      if (animated) {
+        return (
+          <div
+            ref={root}
+            role="tabpanel"
+            aria-hidden={!active}
+            class={bem('pane-wrapper', { inactive: !active })}
+          >
+            <div class={bem('pane')}>{Content}</div>
+          </div>
+        );
+      }
+
+      return (
+        <div v-show={show} ref={root} role="tabpanel" class={bem('pane')}>
+          {Content}
+        </div>
+      );
+    };
   },
 });
