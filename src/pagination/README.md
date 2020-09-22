@@ -44,6 +44,20 @@ export default {
 />
 ```
 
+### Custom Render
+
+```html
+<van-pagination v-model="currentPage" :total-items="50" :show-page-size="5">
+  <template #prev-text>
+    <van-icon name="arrow-left" />
+  </template>
+  <template #next-text>
+    <van-icon name="arrow" />
+  </template>
+  <template #page="{ page }"> {{page.text}} </template>
+</van-pagination>
+```
+
 ## API
 
 ### Props
@@ -65,3 +79,11 @@ export default {
 | Event  | Description              | Arguments |
 | ------ | ------------------------ | --------- |
 | change | Triggered on page change | -         |
+
+### Slots
+
+| Name | Description | Default |
+| --- | --- | --- |
+| prev-text | custom prev slot | `-` |
+| next-text | custom next slot | `-` |
+| page | pagination item slot | `{ number: number, text: string, active: boolean }` |
