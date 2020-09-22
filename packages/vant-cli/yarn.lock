@@ -1988,8 +1988,8 @@
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
-  integrity sha512-efNAnJMQbX3yP0+/zvnlYda+xIATLl+T9BXOB179M8KkS3hKk0b8tYHYVeLmdCLbJFeVd8bVXICILIplOYQJ5A==
+  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
+  integrity sha1-6oq02NQWCYObQLgXvDpZjPE/mSA=
   dependencies:
     front-matter "^3.0.2"
     highlight.js "^9.16.2"
@@ -5901,9 +5901,9 @@ he@^1.2.0:
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
 highlight.js@^9.16.2:
-  version "9.18.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
-  integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
+  version "9.18.3"
+  resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
+  integrity sha1-oaCiAo1eMUniOA+Khl7oUWcD1jQ=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
