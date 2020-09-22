@@ -10,9 +10,8 @@ export function getPackageConfig(isMinify: boolean): WebpackConfig {
 
   setBuildTarget('package');
 
-  return merge(
-    baseConfig as any,
-    {
+  return getWebpackConfig(
+    merge(baseConfig as any, {
       mode: 'production',
       entry: {
         [name]: join(ES_DIR, 'index.js'),
@@ -39,7 +38,6 @@ export function getPackageConfig(isMinify: boolean): WebpackConfig {
       optimization: {
         minimize: isMinify,
       },
-    },
-    getWebpackConfig()
+    })
   );
 }

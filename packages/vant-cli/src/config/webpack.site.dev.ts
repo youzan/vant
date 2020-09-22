@@ -103,5 +103,5 @@ export function getSiteDevBaseConfig(): WebpackConfig {
 }
 
 export function getSiteDevConfig(): WebpackConfig {
-  return merge(getSiteDevBaseConfig(), getWebpackConfig());
+  return getWebpackConfig(getSiteDevBaseConfig());
 }
