@@ -4,7 +4,7 @@ import { TABS_KEY } from '../tabs';
 
 // Composition
 import { routeProps } from '../composition/use-route';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 
 const [createComponent, bem] = createNamespace('tab');
 

@@ -9,7 +9,7 @@ import { preventDefault } from '../utils/dom/event';
 
 // Composition
 import { useTouch } from '../composition/use-touch';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 
 const DEFAULT_DURATION = 200;
 

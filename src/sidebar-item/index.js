@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
 import { useRoute, routeProps } from '../composition/use-route';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 import { SIDEBAR_KEY } from '../sidebar';
 import Badge from '../badge';
 

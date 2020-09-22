@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 import { useLazyRender } from '../composition/use-lazy-render';
 
 // Components

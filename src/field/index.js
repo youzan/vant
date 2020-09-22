@@ -23,7 +23,7 @@ import {
 
 // Composition
 import { useExpose } from '../composition/use-expose';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 
 // Components
 import Icon from '../icon';

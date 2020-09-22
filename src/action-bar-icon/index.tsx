@@ -2,7 +2,7 @@ import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 import { useRoute, routeProps } from '../composition/use-route';
 
 // Components

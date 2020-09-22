@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 import { useExpose } from '../composition/use-expose';
 
 // Components

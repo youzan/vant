@@ -6,7 +6,7 @@ import { BORDER } from '../utils/constant';
 import { GRID_KEY } from '../grid';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '../composition/use-parent';
 import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
