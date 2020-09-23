@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`count prop 1`] = `<span class="van-badge"><sup class="van-badge__number van-badge__standalone">10</sup></span>`;
+
+exports[`dot prop 1`] = `<span class="van-badge"><sup class="van-badge__dot van-badge__standalone"></sup></span>`;
+
+exports[`max-count prop 1`] = `<span class="van-badge"><sup class="van-badge__number van-badge__standalone">50+</sup></span>`;
+
+exports[`offset prop 1`] = `<span class="van-badge"><sup class="van-badge__number van-badge__standalone" style="top: 10px; right: 10px;">10</sup></span>`;
+
+exports[`show-zero prop 1`] = `<span class="van-badge"><sup class="van-badge__number van-badge__standalone">0</sup></span>`;

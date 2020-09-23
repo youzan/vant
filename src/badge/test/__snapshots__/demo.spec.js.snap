@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div class="demo-badge">
+  <div>
+    <div class="demo-badge--row van-row">
+      <div class="van-col"><span class="van-badge"><a href="#" class="avatar"></a><sup class="van-badge__number van-badge__position">10</sup></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="demo-badge--row van-row">
+      <div class="van-col"><span class="van-badge"><a href="#" class="avatar"></a><sup class="van-badge__number van-badge__position">60+</sup></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="demo-badge--row van-row">
+      <div class="van-col"><span class="van-badge"><a href="#" class="avatar"></a><sup class="van-badge__number van-badge__position" style="top: 0px; right: -10px;">10</sup></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="demo-badge--row van-row">
+      <div class="van-col"><span class="van-badge"><i class="van-icon van-icon-chat-o"><!----></i><sup class="van-badge__dot van-badge__position"></sup></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row">
+      <div class="demo-badge--standalone van-col"><span class="van-badge"><sup class="van-badge__number van-badge__standalone">12</sup></span> <span class="van-badge"><sup class="van-badge__number van-badge__standalone">99+</sup></span> <span class="van-badge"><sup class="van-badge__dot van-badge__standalone"></sup></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="demo-badge--row van-row">
+      <div class="demo-badge--standalone van-col"><span class="van-badge"><a href="#" class="avatar"></a></span> <span class="van-badge"><a href="#" class="avatar"></a><sup class="van-badge__number van-badge__position">0</sup></span></div>
+    </div>
+  </div>
+</div>
+`;
