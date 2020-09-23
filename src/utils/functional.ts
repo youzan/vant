@@ -10,6 +10,7 @@ const inheritKey = [
   'style',
   'class',
   'attrs',
+  'refInFor',
   'nativeOn',
   'directives',
   'staticClass',
