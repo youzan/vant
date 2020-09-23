@@ -58,7 +58,7 @@ import { Button } from 'vant';
 import 'vant/lib/index.css';
 
 const app = createApp();
-Vue.use(Button);
+app.use(Button);
 ```
 
 See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).

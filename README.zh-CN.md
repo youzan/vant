@@ -61,7 +61,7 @@ import { Button } from 'vant';
 import 'vant/lib/index.css';
 
 const app = createApp();
-Vue.use(Button);
+app.use(Button);
 ```
 
 vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手](https://vant-contrib.gitee.io/vant#/zh-CN/quickstart).
