@@ -62,6 +62,10 @@ export default createComponent({
     );
 
     return () => {
+      if (!slots.default) {
+        return;
+      }
+
       const { animated, scrollspy, lazyRender } = parent.props;
       const active = isActive();
       const show = scrollspy || active;

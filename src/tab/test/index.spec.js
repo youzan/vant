@@ -410,3 +410,16 @@ test('before-change prop', async () => {
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onChange).toHaveBeenLastCalledWith(4, 'title5');
 });
+
+test('render empty tab', async () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs>
+        <van-tab title="title1" />
+        <van-tab title="title2" />
+      </van-tabs>
+    `,
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
