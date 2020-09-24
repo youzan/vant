@@ -8,7 +8,13 @@ const [createComponent, bem] = createNamespace('checkbox');
 export default createComponent({
   mixins: [FieldMixin, ChildrenMixin('vanCheckbox')],
 
-  props: checkerProps,
+  props: {
+    ...checkerProps,
+    bindGroup: {
+      type: Boolean,
+      default: true,
+    },
+  },
 
   emits: ['change', 'update:modelValue'],
 
