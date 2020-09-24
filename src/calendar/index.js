@@ -1,3 +1,5 @@
+import { ref, watch, reactive, computed, onMounted, onActivated } from 'vue';
+
 // Utils
 import { pick } from '../utils';
 import { raf } from '../utils/dom/raf';
@@ -15,6 +17,11 @@ import {
   createComponent,
   getDayByOffset,
 } from './utils';
+
+// Composition
+import { useRefs } from '../composition/use-refs';
+import { useRect } from '../composition/use-rect';
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Popup from '../popup';
@@ -111,123 +118,9 @@ export default createComponent({
 
   emits: ['select', 'confirm', 'unselect', 'month-show', 'update:show'],
 
-  data() {
-    this.monthRefs = [];
-    return {
-      subtitle: '',
-      currentDate: this.getInitialDate(),
-      realRowHeight: 0,
-    };
-  },
-
-  computed: {
-    months() {
-      const months = [];
-      const cursor = new Date(this.minDate);
-
-      cursor.setDate(1);
-
-      do {
-        months.push(new Date(cursor));
-        cursor.setMonth(cursor.getMonth() + 1);
-      } while (compareMonth(cursor, this.maxDate) !== 1);
-
-      return months;
-    },
-
-    buttonDisabled() {
-      const { type, currentDate } = this;
-
-      if (currentDate) {
-        if (type === 'range') {
-          return !currentDate[0] || !currentDate[1];
-        }
-        if (type === 'multiple') {
-          return !currentDate.length;
-        }
-      }
-
-      return !currentDate;
-    },
-
-    dayOffset() {
-      return this.firstDayOfWeek ? this.firstDayOfWeek % 7 : 0;
-    },
-  },
-
-  watch: {
-    show: 'init',
-    type: 'reset',
-
-    defaultDate(val) {
-      this.currentDate = val;
-      this.scrollIntoView();
-    },
-  },
-
-  mounted() {
-    this.init();
-  },
-
-  activated() {
-    this.init();
-  },
-
-  methods: {
-    // @exposed-api
-    reset() {
-      this.currentDate = this.getInitialDate();
-      this.scrollIntoView();
-    },
-
-    init() {
-      if (this.poppable && !this.show) {
-        return;
-      }
-
-      this.$nextTick(() => {
-        // add Math.floor to avoid decimal height issues
-        // https://github.com/youzan/vant/issues/5640
-        this.bodyHeight = Math.floor(
-          this.$refs.body.getBoundingClientRect().height
-        );
-        this.onScroll();
-        this.scrollIntoView();
-      });
-    },
-
-    // scroll to current month
-    scrollIntoView() {
-      raf(() => {
-        const { currentDate } = this;
-
-        if (!currentDate) {
-          return;
-        }
-
-        const targetDate =
-          this.type === 'single' ? currentDate : currentDate[0];
-        const displayed = this.show || !this.poppable;
-
-        /* istanbul ignore if */
-        if (!targetDate || !displayed) {
-          return;
-        }
-
-        this.months.some((month, index) => {
-          if (compareMonth(month, targetDate) === 0) {
-            const { body } = this.$refs;
-            this.monthRefs[index].scrollIntoView(body);
-            return true;
-          }
-
-          return false;
-        });
-      });
-    },
-
-    getInitialDate() {
-      const { type, minDate, maxDate, defaultDate } = this;
+  setup(props, { emit, slots }) {
+    const getInitialDate = () => {
+      const { type, minDate, maxDate, defaultDate } = props;
 
       if (defaultDate === null) {
         return defaultDate;
@@ -251,18 +144,90 @@ export default createComponent({
       }
 
       return defaultDate || defaultVal;
-    },
+    };
+
+    let bodyHeight;
+
+    const bodyRef = ref();
+
+    const state = reactive({
+      subtitle: '',
+      currentDate: getInitialDate(),
+      realRowHeight: 0,
+    });
+
+    const [monthRefs, setMonthRefs] = useRefs();
+
+    const dayOffset = computed(() =>
+      props.firstDayOfWeek ? props.firstDayOfWeek % 7 : 0
+    );
+
+    const months = computed(() => {
+      const months = [];
+      const cursor = new Date(props.minDate);
+
+      cursor.setDate(1);
+
+      do {
+        months.push(new Date(cursor));
+        cursor.setMonth(cursor.getMonth() + 1);
+      } while (compareMonth(cursor, props.maxDate) !== 1);
+
+      return months;
+    });
+
+    const buttonDisabled = computed(() => {
+      const { currentDate } = state;
+
+      if (currentDate) {
+        if (props.type === 'range') {
+          return !currentDate[0] || !currentDate[1];
+        }
+        if (props.type === 'multiple') {
+          return !currentDate.length;
+        }
+      }
+
+      return !currentDate;
+    });
+
+    // scroll to current month
+    const scrollIntoView = () => {
+      raf(() => {
+        const { currentDate } = state;
+
+        if (!currentDate) {
+          return;
+        }
+
+        const targetDate =
+          props.type === 'single' ? currentDate : currentDate[0];
+        const displayed = props.show || !props.poppable;
+
+        /* istanbul ignore if */
+        if (!targetDate || !displayed) {
+          return;
+        }
+
+        months.value.some((month, index) => {
+          if (compareMonth(month, targetDate) === 0) {
+            monthRefs.value[index].scrollIntoView(bodyRef.value);
+            return true;
+          }
+
+          return false;
+        });
+      });
+    };
 
     // calculate the position of the elements
     // and find the elements that needs to be rendered
-    onScroll() {
-      const { body } = this.$refs;
-      const { months, monthRefs } = this;
-      const top = getScrollTop(body);
-      const bottom = top + this.bodyHeight;
+    const onScroll = () => {
+      const top = getScrollTop(bodyRef.value);
+      const bottom = top + bodyHeight;
 
-      const heights = months.map(
-        (item, index) => monthRefs[index].height.value
+      const heights = months.value.map((item, index) =>
+        monthRefs.value[index].getHeight()
       );
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
@@ -275,46 +240,112 @@ export default createComponent({
       let currentMonth;
       let visibleIndex;
 
-      for (let i = 0; i < months.length; i++) {
+      for (let i = 0; i < months.value.length; i++) {
+        const month = monthRefs.value[i];
         const visible = height <= bottom && height + heights[i] >= top;
 
         if (visible && !currentMonth) {
           visibleIndex = i;
-          currentMonth = monthRefs[i];
+          currentMonth = month;
         }
 
-        if (!monthRefs[i].visible && visible) {
-          this.$emit('month-show', {
-            date: monthRefs[i].getDate(),
-            title: monthRefs[i].getTitle(),
+        if (!month.visible && visible) {
+          emit('month-show', {
+            date: month.getDate(),
+            title: month.getTitle(),
           });
         }
 
         height += heights[i];
       }
 
-      months.forEach((month, index) => {
+      months.value.forEach((month, index) => {
         const visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
-        monthRefs[index].setVisible(visible);
+        monthRefs.value[index].setVisible(visible);
       });
 
       /* istanbul ignore else */
       if (currentMonth) {
-        this.subtitle = currentMonth.getTitle();
+        state.subtitle = currentMonth.getTitle();
       }
-    },
+    };
 
-    onClickDay(item) {
-      if (this.readonly) {
+    const init = () => {
+      if (props.poppable && !props.show) {
+        return;
+      }
+
+      raf(() => {
+        // add Math.floor to avoid decimal height issues
+        // https://github.com/youzan/vant/issues/5640
+        bodyHeight = Math.floor(useRect(bodyRef).height);
+        onScroll();
+        scrollIntoView();
+      });
+    };
+
+    const reset = () => {
+      state.currentDate = getInitialDate();
+      scrollIntoView();
+    };
+
+    const checkRange = (date) => {
+      const { maxRange, rangePrompt } = props;
+
+      if (maxRange && calcDateNum(date) > maxRange) {
+        Toast(rangePrompt || t('rangePrompt', maxRange));
+        return false;
+      }
+
+      return true;
+    };
+
+    const onConfirm = () => {
+      emit('confirm', copyDates(state.currentDate));
+    };
+
+    const select = (date, complete) => {
+      const setCurrentDate = (date) => {
+        state.currentDate = date;
+        emit('select', copyDates(state.currentDate));
+      };
+
+      if (complete && props.type === 'range') {
+        const valid = checkRange(date);
+
+        if (!valid) {
+          // auto selected to max range if showConfirm
+          if (props.showConfirm) {
+            setCurrentDate([
+              date[0],
+              getDayByOffset(date[0], props.maxRange - 1),
+            ]);
+          } else {
+            setCurrentDate(date);
+          }
+          return;
+        }
+      }
+
+      setCurrentDate(date);
+
+      if (complete && !props.showConfirm) {
+        onConfirm();
+      }
+    };
+
+    const onClickDay = (item) => {
+      if (props.readonly) {
         return;
       }
 
       const { date } = item;
-      const { type, currentDate } = this;
+      const { type } = props;
+      const { currentDate } = state;
 
       if (type === 'range') {
         if (!currentDate) {
-          this.select([date, null]);
+          select([date, null]);
           return;
         }
 
@@ -324,23 +355,23 @@ export default createComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            this.select([startDay, date], true);
+            select([startDay, date], true);
           } else if (compareToStart === -1) {
-            this.select([date, null]);
-          } else if (this.allowSameDay) {
-            this.select([date, date], true);
+            select([date, null]);
+          } else if (props.allowSameDay) {
+            select([date, date], true);
           }
         } else {
-          this.select([date, null]);
+          select([date, null]);
         }
       } else if (type === 'multiple') {
         if (!currentDate) {
-          this.select([date]);
+          select([date]);
           return;
         }
 
         let selectedIndex;
-        const selected = this.currentDate.some((dateItem, index) => {
+        const selected = state.currentDate.some((dateItem, index) => {
           const equal = compareDay(dateItem, date) === 0;
           if (equal) {
             selectedIndex = index;
@@ -350,78 +381,36 @@ export default createComponent({
 
         if (selected) {
           const [unselectedDate] = currentDate.splice(selectedIndex, 1);
-          this.$emit('unselect', copyDate(unselectedDate));
-        } else if (this.maxRange && currentDate.length >= this.maxRange) {
-          Toast(this.rangePrompt || t('rangePrompt', this.maxRange));
+          emit('unselect', copyDate(unselectedDate));
+        } else if (props.maxRange && currentDate.length >= props.maxRange) {
+          Toast(props.rangePrompt || t('rangePrompt', props.maxRange));
         } else {
-          this.select([...currentDate, date]);
+          select([...currentDate, date]);
         }
       } else {
-        this.select(date, true);
+        select(date, true);
       }
-    },
+    };
 
-    togglePopup(val) {
-      this.$emit('update:show', val);
-    },
+    const togglePopup = (val) => {
+      emit('update:show', val);
+    };
 
-    select(date, complete) {
-      const emit = (date) => {
-        this.currentDate = date;
-        this.$emit('select', copyDates(this.currentDate));
-      };
+    const onUpdateHeight = (height) => {
+      state.realRowHeight = height;
+    };
 
-      if (complete && this.type === 'range') {
-        const valid = this.checkRange(date);
-
-        if (!valid) {
-          // auto selected to max range if showConfirm
-          if (this.showConfirm) {
-            emit([date[0], getDayByOffset(date[0], this.maxRange - 1)]);
-          } else {
-            emit(date);
-          }
-          return;
-        }
-      }
-
-      emit(date);
-
-      if (complete && !this.showConfirm) {
-        this.onConfirm();
-      }
-    },
-
-    checkRange(date) {
-      const { maxRange, rangePrompt } = this;
-
-      if (maxRange && calcDateNum(date) > maxRange) {
-        Toast(rangePrompt || t('rangePrompt', maxRange));
-        return false;
-      }
-
-      return true;
-    },
-
-    onConfirm() {
-      this.$emit('confirm', copyDates(this.currentDate));
-    },
-
-    onUpdateHeight(height) {
-      this.realRowHeight = height;
-    },
-
-    genMonth(date, index) {
-      const showMonthTitle = index !== 0 || !this.showSubtitle;
+    const renderMonth = (date, index) => {
+      const showMonthTitle = index !== 0 || !props.showSubtitle;
       return (
         <Month
-          ref={(val) => {
-            this.monthRefs[index] = val;
-          }}
+          ref={setMonthRefs(index)}
           date={date}
+          currentDate={state.currentDate}
+          realRowHeight={state.realRowHeight}
           showMonthTitle={showMonthTitle}
-          firstDayOfWeek={this.dayOffset}
-          {...pick(this, [
+          firstDayOfWeek={dayOffset.value}
+          {...pick(props, [
             'type',
             'color',
             'minDate',
@@ -430,93 +419,100 @@ export default createComponent({
             'formatter',
             'rowHeight',
             'lazyRender',
-            'currentDate',
             'showSubtitle',
             'allowSameDay',
-            'realRowHeight',
           ])}
-          onClick={this.onClickDay}
-          onUpdate-height={this.onUpdateHeight}
+          onClick={onClickDay}
+          onUpdate-height={onUpdateHeight}
         />
       );
-    },
+    };
 
-    genFooterContent() {
-      if (this.$slots.footer) {
-        return this.$slots.footer();
+    const renderFooterButton = () => {
+      if (slots.footer) {
+        return slots.footer();
       }
 
-      if (this.showConfirm) {
-        const text = this.buttonDisabled
-          ? this.confirmDisabledText
-          : this.confirmText;
+      if (props.showConfirm) {
+        const text = buttonDisabled.value
+          ? props.confirmDisabledText
+          : props.confirmText;
 
         return (
           <Button
             round
             block
             type="danger"
-            color={this.color}
+            color={props.color}
             class={bem('confirm')}
-            disabled={this.buttonDisabled}
+            disabled={buttonDisabled.value}
             nativeType="button"
-            onClick={this.onConfirm}
+            onClick={onConfirm}
           >
             {text || t('confirm')}
           </Button>
         );
       }
-    },
+    };
 
-    genFooter() {
-      return (
-        <div class={bem('footer', { unfit: !this.safeAreaInsetBottom })}>
-          {this.genFooterContent()}
+    const renderFooter = () => (
+      <div class={bem('footer', { unfit: !props.safeAreaInsetBottom })}>
+        {renderFooterButton()}
+      </div>
+    );
+
+    const renderCalendar = () => (
+      <div class={bem()}>
+        <Header
+          v-slots={{ title: slots.title }}
+          title={props.title}
+          showTitle={props.showTitle}
+          subtitle={state.subtitle}
+          showSubtitle={props.showSubtitle}
+          firstDayOfWeek={dayOffset.value}
+        />
+        <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
+          {months.value.map(renderMonth)}
         </div>
-      );
-    },
+        {renderFooter()}
+      </div>
+    );
 
-    genCalendar() {
-      return (
-        <div class={bem()}>
-          <Header
-            v-slots={{
-              title: this.$slots.title,
-            }}
-            title={this.title}
-            showTitle={this.showTitle}
-            subtitle={this.subtitle}
-            showSubtitle={this.showSubtitle}
-            firstDayOfWeek={this.dayOffset}
-          />
-          <div ref="body" class={bem('body')} onScroll={this.onScroll}>
-            {this.months.map(this.genMonth)}
-          </div>
-          {this.genFooter()}
-        </div>
-      );
-    },
-  },
+    watch(() => props.show, init);
+    watch(() => props.type, reset);
+    watch(
+      () => props.defaultDate,
+      (value) => {
+        state.currentDate = value;
+        scrollIntoView();
+      }
+    );
 
-  render() {
-    if (this.poppable) {
-      return (
-        <Popup
-          show={this.show}
-          class={bem('popup')}
-          round={this.round}
-          position={this.position}
-          closeable={this.showTitle || this.showSubtitle}
-          teleport={this.teleport}
-          closeOnPopstate={this.closeOnPopstate}
-          closeOnClickOverlay={this.closeOnClickOverlay}
-          {...{ 'onUpdate:show': this.togglePopup }}
-        >
-          {this.genCalendar()}
-        </Popup>
-      );
-    }
+    onMounted(init);
+    onActivated(init);
 
-    return this.genCalendar();
+    useExpose({ reset });
+
+    return () => {
+      if (props.poppable) {
+        return (
+          <Popup
+            show={props.show}
+            class={bem('popup')}
+            round={props.round}
+            position={props.position}
+            closeable={props.showTitle || props.showSubtitle}
+            teleport={props.teleport}
+            closeOnPopstate={props.closeOnPopstate}
+            closeOnClickOverlay={props.closeOnClickOverlay}
+            {...{ 'onUpdate:show': togglePopup }}
+          >
+            {renderCalendar()}
+          </Popup>
+        );
+      }
+
+      return renderCalendar();
+    };
   },
 });

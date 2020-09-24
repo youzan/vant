@@ -253,7 +253,9 @@ export default createComponent({
     watch(
       () => props.realRowHeight,
       () => {
-        height.value = useRect(monthRef).height;
+        nextTick(() => {
+          height.value = useRect(monthRef).height;
+        });
       }
     );
 
@@ -269,9 +271,9 @@ export default createComponent({
     });
 
     useExpose({
-      height,
       getDate,
       getTitle,
+      getHeight: () => height.value,
       setVisible,
       scrollIntoView,
     });
