@@ -280,6 +280,7 @@ export default createComponent({
 
     useParent(PICKER_KEY, {
       state,
+      setIndex,
       getValue,
       setValue,
       setOptions,
