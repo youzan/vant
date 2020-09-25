@@ -1,32 +1,39 @@
+import { watch } from 'vue';
 import { createNamespace } from '../utils';
-import { FieldMixin } from '../mixins/field';
-import { ParentMixin } from '../mixins/relation';
+import { useChildren } from '../composition/use-relation';
+import { useParentField } from '../composition/use-parent-field';
 
 const [createComponent, bem] = createNamespace('radio-group');
 
-export default createComponent({
-  mixins: [ParentMixin('vanRadio'), FieldMixin],
+export const RADIO_KEY = 'vanRadio';
 
+export default createComponent({
   props: {
     disabled: Boolean,
+    iconSize: [Number, String],
     direction: String,
     modelValue: null,
     checkedColor: String,
-    iconSize: [Number, String],
   },
 
   emits: ['change', 'update:modelValue'],
 
-  watch: {
-    value(value) {
-      this.$emit('change', value);
-    },
-  },
+  setup(props, { emit, slots }) {
+    const { linkChildren } = useChildren(RADIO_KEY);
 
-  render() {
-    return (
-      <div class={bem([this.direction])} role="radiogroup">
-        {this.$slots.default?.()}
+    watch(
+      () => props.modelValue,
+      (value) => {
+        emit('change', value);
+      }
+    );
+
+    linkChildren({ emit, props });
+    useParentField(() => props.modelValue);
+
+    return () => (
+      <div class={bem([props.direction])} role="radiogroup">
+        {slots.default?.()}
       </div>
     );
   },

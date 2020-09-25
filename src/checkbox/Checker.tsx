@@ -33,17 +33,21 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const iconRef = ref();
 
+    const getParentProp = (name: string) => {
+      if (props.parent) {
+        return props.parent.props[name];
+      }
+      return null;
+    };
+
     const disabled = computed(
-      () => (props.parent && props.parent.disabled) || props.disabled
+      () => getParentProp('disabled') || props.disabled
     );
 
-    const direction = computed(
-      () => (props.parent && props.parent.direction) || null
-    );
+    const direction = computed(() => getParentProp('direction') || null);
 
     const iconStyle = computed(() => {
-      const checkedColor =
-        props.checkedColor || (props.parent && props.parent.checkedColor);
+      const checkedColor = props.checkedColor || getParentProp('checkedColor');
 
       if (checkedColor && props.checked && !disabled.value) {
         return {
@@ -72,8 +76,8 @@ export default defineComponent({
     };
 
     const renderIcon = () => {
-      const { bem, shape, parent, checked } = props;
-      const iconSize = props.iconSize || (parent && parent.iconSize);
+      const { bem, shape, checked } = props;
+      const iconSize = props.iconSize || getParentProp('iconSize');
 
       return (
         <div

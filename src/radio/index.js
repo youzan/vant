@@ -1,48 +1,37 @@
 import { pick, createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { useParent } from '../composition/use-relation';
 import Checker, { checkerProps } from '../checkbox/Checker';
+import { RADIO_KEY } from '../radio-group';
 
 const [createComponent, bem] = createNamespace('radio');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanRadio')],
-
   props: checkerProps,
 
   emits: ['update:modelValue'],
 
-  computed: {
-    currentValue: {
-      get() {
-        return this.parent ? this.parent.modelValue : this.modelValue;
-      },
+  setup(props, { emit, slots }) {
+    const { parent } = useParent(RADIO_KEY);
 
-      set(val) {
-        (this.parent || this).$emit('update:modelValue', val);
-      },
-    },
+    const checked = () => {
+      const value = parent ? parent.props.modelValue : props.modelValue;
+      return value === props.name;
+    };
 
-    checked() {
-      return this.currentValue === this.name;
-    },
-  },
+    const toggle = () => {
+      const emitter = parent ? parent.emit : emit;
+      emitter('update:modelValue', props.name);
+    };
 
-  methods: {
-    toggle() {
-      this.currentValue = this.name;
-    },
-  },
-
-  render() {
-    return (
+    return () => (
       <Checker
-        v-slots={pick(this.$slots, ['default', 'icon'])}
+        v-slots={pick(slots, ['default', 'icon'])}
         bem={bem}
         role="radio"
-        parent={this.parent}
-        checked={this.checked}
-        onToggle={this.toggle}
-        {...this.$props}
+        parent={parent}
+        checked={checked()}
+        onToggle={toggle}
+        {...props}
       />
     );
   },
