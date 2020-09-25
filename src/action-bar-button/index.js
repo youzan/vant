@@ -3,7 +3,8 @@ import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
-import { useParent } from '../composition/use-parent';
+import { useParent } from '../composition/use-relation';
+import { useExpose } from '../composition/use-expose';
 import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
@@ -24,21 +25,23 @@ export default createComponent({
 
   setup(props, { slots }) {
     const route = useRoute();
-    const { parent, index } = useParent(ACTION_BAR_KEY, { isButton: true });
+    const { parent, index } = useParent(ACTION_BAR_KEY);
 
     const isFirst = computed(() => {
       if (parent) {
         const prev = parent.children[index.value - 1];
-        return !(prev && prev.isButton);
+        return !(prev && 'isButton' in prev);
       }
     });
 
     const isLast = computed(() => {
       if (parent) {
         const next = parent.children[index.value + 1];
-        return !(next && next.isButton);
+        return !(next && 'isButton' in next);
       }
     });
+
+    useExpose({ isButton: true });
 
     return () => {
       const { type, icon, text, color, loading, disabled } = props;
