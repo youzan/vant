@@ -5,8 +5,8 @@ import { createNamespace } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu';
 
 // Composition
-import { useParent } from '../composition/use-parent';
 import { useExpose } from '../composition/use-expose';
+import { useParent } from '../composition/use-relation';
 
 // Components
 import Cell from '../cell';
@@ -41,41 +41,7 @@ export default createComponent({
       showWrapper: false,
     });
 
-    const renderTitle = () => {
-      if (slots.title) {
-        return slots.title();
-      }
-
-      if (props.title) {
-        return props.title;
-      }
-
-      const match = props.options.filter(
-        (option) => option.value === props.modelValue
-      );
-
-      return match.length ? match[0].text : '';
-    };
-
-    const toggle = (show = !state.showPopup, options = {}) => {
-      if (show === state.showPopup) {
-        return;
-      }
-
-      state.showPopup = show;
-      state.transition = !options.immediate;
-
-      if (show) {
-        state.showWrapper = true;
-      }
-    };
-
-    const { parent } = useParent(DROPDOWN_KEY, {
-      props,
-      state,
-      toggle,
-      renderTitle,
-    });
+    const { parent } = useParent(DROPDOWN_KEY);
 
     const createEmitter = (eventName) => () => emit(eventName);
     const onOpen = createEmitter('open');
@@ -92,6 +58,35 @@ export default createComponent({
       if (props.teleport) {
         event.stopPropagation();
       }
+    };
+
+    const toggle = (show = !state.showPopup, options = {}) => {
+      if (show === state.showPopup) {
+        return;
+      }
+
+      state.showPopup = show;
+      state.transition = !options.immediate;
+
+      if (show) {
+        state.showWrapper = true;
+      }
+    };
+
+    const renderTitle = () => {
+      if (slots.title) {
+        return slots.title();
+      }
+
+      if (props.title) {
+        return props.title;
+      }
+
+      const match = props.options.filter(
+        (option) => option.value === props.modelValue
+      );
+
+      return match.length ? match[0].text : '';
     };
 
     const renderOption = (option) => {
@@ -169,7 +164,7 @@ export default createComponent({
       );
     };
 
-    useExpose({ toggle });
+    useExpose({ state, toggle, renderTitle });
 
     return () => {
       if (props.teleport) {

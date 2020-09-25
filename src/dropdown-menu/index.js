@@ -1,4 +1,4 @@
-import { ref, provide, reactive, computed } from 'vue';
+import { ref, computed } from 'vue';
 
 // Utils
 import { createNamespace, isDef } from '../utils';
@@ -6,6 +6,7 @@ import { createNamespace, isDef } from '../utils';
 // Composition
 import { useClickAway, useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
@@ -34,11 +35,11 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
+    const root = ref();
     const offset = ref(0);
     const barRef = ref();
-    const root = ref();
-    const children = reactive([]);
 
+    const { children, linkChildren } = useChildren(DROPDOWN_KEY);
     const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>
@@ -89,7 +90,7 @@ export default createComponent({
 
     const renderTitle = (item, index) => {
       const { showPopup } = item.state;
-      const { disabled, titleClass } = item.props;
+      const { disabled, titleClass } = item;
 
       return (
         <div
@@ -118,10 +119,8 @@ export default createComponent({
       );
     };
 
-    provide(DROPDOWN_KEY, { props, offset, children });
-
+    linkChildren({ props, offset });
     useClickAway(root, onClickAway);
-
     useEventListener('scroll', onScroll, { target: scrollParent });
 
     return () => (
