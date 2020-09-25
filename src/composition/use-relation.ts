@@ -94,23 +94,35 @@ export function useChildren(key: string) {
   };
 }
 
-export function useParent(key: string) {
-  const parent = inject<any | null>(key, null);
+type ParentProvide<T> = T & {
+  link(child: InternalInstance): void;
+  unlink(child: InternalInstance): void;
+  children: PublicInstance[];
+  internalChildren: InternalInstance[];
+};
+
+export function useParent<T>(key: string) {
+  const parent = inject<ParentProvide<T> | null>(key, null);
 
   if (parent) {
     const instance = getCurrentInstance();
-    const index = computed(() => parent.internalChildren.indexOf(instance));
 
-    parent.link(instance);
+    if (instance) {
+      const { link, unlink, internalChildren, ...rest } = parent;
 
-    onUnmounted(() => {
-      parent.unlink(instance);
-    });
+      link(instance);
 
-    return {
-      parent,
-      index,
-    };
+      onUnmounted(() => {
+        unlink(instance);
+      });
+
+      const index = computed(() => internalChildren.indexOf(instance));
+
+      return {
+        parent: rest,
+        index,
+      };
+    }
   }
 
   return {};

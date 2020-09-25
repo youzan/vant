@@ -1,5 +1,6 @@
-import { provide, computed, reactive, PropType, ComputedRef } from 'vue';
+import { computed, PropType, ComputedRef } from 'vue';
 import { createNamespace } from '../utils';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('row');
 
@@ -7,11 +8,8 @@ export const ROW_KEY = 'vanRow';
 
 export type RowSpaces = { left?: number; right: number }[];
 
-export type RowChild = () => number;
-
 export type RowProvide = {
   spaces: ComputedRef<RowSpaces>;
-  children: RowChild[];
 };
 
 export type RowAlign = 'top' | 'center' | 'bottom';
@@ -39,14 +37,16 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const children = reactive<RowChild[]>([]);
+    const { children, linkChildren } = useChildren(ROW_KEY);
 
     const groups = computed(() => {
       const groups: number[][] = [[]];
 
       let totalSpan = 0;
-      children.forEach((getSpan, index) => {
-        totalSpan += getSpan();
+      children.forEach((child, index) => {
+        // TODO
+        // @ts-ignore
+        totalSpan += Number(child.span);
 
         if (totalSpan > 24) {
           groups.push([index]);
@@ -84,10 +84,7 @@ export default createComponent({
       return spaces;
     });
 
-    provide(ROW_KEY, {
-      spaces,
-      children,
-    });
+    linkChildren({ spaces });
 
     return () => {
       const { tag, type, align, justify } = props;
