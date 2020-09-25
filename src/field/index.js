@@ -23,7 +23,7 @@ import {
 
 // Composition
 import { useExpose } from '../composition/use-expose';
-import { useParent } from '../composition/use-parent';
+import { useParent } from '../composition/use-relation';
 
 // Components
 import Icon from '../icon';
@@ -100,7 +100,6 @@ export default createComponent({
       validateMessage: '',
     });
 
-    const root = ref();
     const inputRef = ref();
     const childFieldValue = ref();
 
@@ -220,13 +219,7 @@ export default createComponent({
         });
       });
 
-    const { parent: form } = useParent(FORM_KEY, {
-      root,
-      props,
-      validate,
-      formValue,
-      resetValidation,
-    });
+    const { parent: form } = useParent(FORM_KEY);
 
     const validateWithTrigger = (trigger) => {
       if (form && props.rules) {
@@ -534,8 +527,11 @@ export default createComponent({
     };
 
     useExpose({
-      focus,
       blur,
+      focus,
+      validate,
+      formValue,
+      resetValidation,
     });
 
     provide(FIELD_KEY, {
@@ -569,7 +565,6 @@ export default createComponent({
             title: renderLabel,
             extra: slots.extra,
           }}
-          ref={root}
           size={props.size}
           icon={props.leftIcon}
           class={bem({

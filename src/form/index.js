@@ -1,6 +1,6 @@
-import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
 import { useExpose } from '../composition/use-expose';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -36,9 +36,7 @@ export default createComponent({
   emits: ['submit', 'failed'],
 
   setup(props, { emit, slots }) {
-    const children = reactive([]);
-
-    provide(FORM_KEY, { props, children });
+    const { children, linkChildren } = useChildren(FORM_KEY);
 
     const validateSeq = () =>
       new Promise((resolve, reject) => {
@@ -81,7 +79,7 @@ export default createComponent({
       });
 
     const validateField = (name) => {
-      const matched = children.filter((item) => item.props.name === name);
+      const matched = children.filter((item) => item.name === name);
 
       if (matched.length) {
         return new Promise((resolve, reject) => {
@@ -107,7 +105,7 @@ export default createComponent({
 
     const resetValidation = (name) => {
       children.forEach((item) => {
-        if (!name || item.props.name === name) {
+        if (!name || item.name === name) {
           item.resetValidation();
         }
       });
@@ -115,8 +113,8 @@ export default createComponent({
 
     const scrollToField = (name, options) => {
       children.some((item) => {
-        if (item.props.name === name) {
-          item.root.value.scrollIntoView(options);
+        if (item.name === name) {
+          item.$el.scrollIntoView(options);
           return true;
         }
         return false;
@@ -125,7 +123,7 @@ export default createComponent({
 
     const getValues = () =>
       children.reduce((form, field) => {
-        form[field.props.name] = field.formValue;
+        form[field.name] = field.formValue.value;
         return form;
       }, {});
 
@@ -150,6 +148,7 @@ export default createComponent({
       submit();
     };
 
+    linkChildren({ props });
     useExpose({
       submit,
       validate,
