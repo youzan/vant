@@ -1,6 +1,6 @@
-import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('collapse');
 
@@ -19,7 +19,7 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const children = reactive([]);
+    const { linkChildren } = useChildren(COLLAPSE_KEY);
 
     const toggle = (name, expanded) => {
       const { accordion, modelValue } = props;
@@ -55,11 +55,7 @@ export default createComponent({
       return accordion ? modelValue === name : modelValue.indexOf(name) !== -1;
     };
 
-    provide(COLLAPSE_KEY, {
-      toggle,
-      children,
-      isExpanded,
-    });
+    linkChildren({ toggle, isExpanded });
 
     return () => (
       <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}>
