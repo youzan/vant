@@ -1,13 +1,13 @@
 import { createNamespace } from '../utils';
 import { padZero } from '../utils/format/string';
 import { range } from '../utils/format/number';
-import { sharedProps, TimePickerMixin } from './shared';
+import { times, sharedProps } from './utils';
+import Picker from '../picker';
+import { pickerProps } from '../picker/shared';
 
 const [createComponent] = createNamespace('time-picker');
 
 export default createComponent({
-  mixins: [TimePickerMixin],
-
   props: {
     ...sharedProps,
     minHour: {
@@ -30,6 +30,12 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
+  data() {
+    return {
+      innerValue: this.formatValue(this.modelValue),
+    };
+  },
+
   computed: {
     ranges() {
       return [
@@ -43,6 +49,32 @@ export default createComponent({
         },
       ];
     },
+
+    originColumns() {
+      return this.ranges.map(({ type, range: rangeArr }) => {
+        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
+          const value = padZero(rangeArr[0] + index);
+          return value;
+        });
+
+        if (this.filter) {
+          values = this.filter(type, values);
+        }
+
+        return {
+          type,
+          values,
+        };
+      });
+    },
+
+    columns() {
+      return this.originColumns.map((column) => ({
+        values: column.values.map((value) =>
+          this.formatter(column.type, value)
+        ),
+      }));
+    },
   },
 
   watch: {
@@ -51,6 +83,11 @@ export default createComponent({
     maxHour: 'updateInnerValue',
     minMinute: 'updateInnerValue',
     maxMinute: 'updateInnerValue',
+    columns: 'updateColumnValue',
+
+    innerValue(val) {
+      this.$emit('update:modelValue', val);
+    },
 
     value(val) {
       val = this.formatValue(val);
@@ -62,7 +99,28 @@ export default createComponent({
     },
   },
 
+  mounted() {
+    this.updateColumnValue();
+
+    this.$nextTick(() => {
+      this.updateInnerValue();
+    });
+  },
+
   methods: {
+    // @exposed-api
+    getPicker() {
+      return this.$refs.picker;
+    },
+
+    onConfirm() {
+      this.$emit('confirm', this.innerValue);
+    },
+
+    onCancel() {
+      this.$emit('cancel');
+    },
+
     formatValue(value) {
       if (!value) {
         value = `${padZero(this.minHour)}:${padZero(this.minMinute)}`;
@@ -105,5 +163,24 @@ export default createComponent({
         this.getPicker().setValues(values);
       });
     },
+  },
+
+  render() {
+    const props = {};
+    Object.keys(pickerProps).forEach((key) => {
+      props[key] = this[key];
+    });
+
+    return (
+      <Picker
+        ref="picker"
+        columns={this.columns}
+        readonly={this.readonly}
+        onChange={this.onChange}
+        onConfirm={this.onConfirm}
+        onCancel={this.onCancel}
+        {...props}
+      />
+    );
   },
 });
