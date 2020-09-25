@@ -1,6 +1,6 @@
-import { provide, reactive } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('grid');
 
@@ -28,8 +28,9 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const children = reactive([]);
-    provide(GRID_KEY, { props, children });
+    const { linkChildren } = useChildren(GRID_KEY);
+
+    linkChildren({ props });
 
     return () => (
       <div
