@@ -1,12 +1,13 @@
+import { watch } from 'vue';
 import { createNamespace } from '../utils';
-import { FieldMixin } from '../mixins/field';
-import { ParentMixin } from '../mixins/relation';
+import { CHECKBOX_KEY } from '../checkbox';
+import { useExpose } from '../composition/use-expose';
+import { useChildren } from '../composition/use-relation';
+import { useParentField } from '../composition/use-parent-field';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
 export default createComponent({
-  mixins: [ParentMixin('vanCheckbox'), FieldMixin],
-
   props: {
     max: [Number, String],
     disabled: Boolean,
@@ -21,31 +22,31 @@ export default createComponent({
 
   emits: ['change', 'update:modelValue'],
 
-  watch: {
-    modelValue(val) {
-      this.$emit('change', val);
-    },
-  },
+  setup(props, { emit, slots }) {
+    const { children, linkChildren } = useChildren(CHECKBOX_KEY);
 
-  methods: {
-    // @exposed-api
-    toggleAll(checked) {
+    const toggleAll = (checked) => {
       if (checked === false) {
-        this.$emit('update:modelValue', []);
-        return;
+        emit('update:modelValue', []);
+      } else {
+        const names = children
+          .filter((item) => checked || !item.checked.value)
+          .map((item) => item.name);
+        emit('update:modelValue', names);
       }
+    };
 
-      let { children } = this;
-      if (!checked) {
-        children = children.filter((item) => !item.checked);
+    watch(
+      () => props.modelValue,
+      (value) => {
+        emit('change', value);
       }
+    );
 
-      const names = children.map((item) => item.name);
-      this.$emit('update:modelValue', names);
-    },
-  },
+    useExpose({ toggleAll });
+    useParentField(() => props.modelValue);
+    linkChildren({ emit, props });
 
-  render() {
-    return <div class={bem([this.direction])}>{this.$slots.default?.()}</div>;
+    return () => <div class={bem([props.direction])}>{slots.default?.()}</div>;
   },
 });
