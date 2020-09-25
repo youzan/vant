@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue';
+import { ref, watch, getCurrentInstance } from 'vue';
 import { isObject, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast from './Toast';
@@ -55,25 +55,21 @@ function createInstance() {
         state.message = value;
       });
 
-      return {
-        open,
-        state,
-        clear: close,
-        toggle,
-        message,
-        onClosed,
-      };
-    },
-    render() {
-      return (
+      getCurrentInstance().render = () => (
         <VanToast
           {...{
-            ...this.state,
-            onClosed: this.onClosed,
-            'onUpdate:show': this.toggle,
+            ...state,
+            onClosed,
+            'onUpdate:show': toggle,
           }}
         />
       );
+
+      return {
+        open,
+        clear: close,
+        message,
+      };
     },
   });
 
