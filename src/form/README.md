@@ -379,7 +379,10 @@ export default {
   },
   methods: {
     onConfirm(values) {
-      this.value = values.map((item) => item.name).join('/');
+      this.value = values
+        .filter((item) => !!item)
+        .map((item) => item.name)
+        .join('/');
       this.showArea = false;
     },
   },
@@ -446,6 +449,14 @@ export default {
 | pattern `v2.5.3` | Regex pattern | _RegExp_ |
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | Format value before validate | _(value, rule) => any_ |
+
+### validate-trigger
+
+| Value    | Description                                                     |
+| -------- | --------------------------------------------------------------- |
+| onSubmit | Trigger validation after submiting form                         |
+| onBlur   | Trigger validation after submiting form or bluring input        |
+| onChange | Trigger validation after submiting form or changing input value |
 
 ### Events
 

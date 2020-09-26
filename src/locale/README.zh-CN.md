@@ -37,17 +37,19 @@ Locale.add(messages);
 
 目前支持的语言:
 
-| 语言           | 文件名 |
-| -------------- | ------ |
-| 简体中文       | zh-CN  |
-| 繁體中文（港） | zh-HK  |
-| 繁體中文（台） | zh-TW  |
-| 英语           | en-US  |
-| 土耳其语       | tr-TR  |
-| 西班牙语       | es-ES  |
-| 日语           | ja-JP  |
-| 罗马尼亚语     | ro-RO  |
-| 挪威语         | nb-NO  |
+| 语言           | 文件名       |
+| -------------- | ------------ |
+| 简体中文       | zh-CN        |
+| 繁體中文（港） | zh-HK        |
+| 繁體中文（台） | zh-TW        |
+| 英语           | en-US        |
+| 德语           | de-DE        |
+| 德语 (正式)    | de-DE-formal |
+| 土耳其语       | tr-TR        |
+| 西班牙语       | es-ES        |
+| 日语           | ja-JP        |
+| 罗马尼亚语     | ro-RO        |
+| 挪威语         | nb-NO        |
 
 > 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的 i18n 配置文件。
 
