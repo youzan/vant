@@ -5,7 +5,7 @@ import { TABBAR_KEY } from '../tabbar';
 import { createNamespace, isObject, isDef } from '../utils';
 
 // Composition
-import { useParent } from '../composition/use-parent';
+import { useParent } from '../composition/use-relation';
 import { routeProps, useRoute } from '../composition/use-route';
 
 // Components

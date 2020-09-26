@@ -1,7 +1,12 @@
-import { ref, reactive, provide } from 'vue';
+import { ref } from 'vue';
+
+// Utils
 import { createNamespace, isDef } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor } from '../utils/interceptor';
+
+// Composition
+import { useChildren } from '../composition/use-relation';
 import { usePlaceholder } from '../composition/use-placeholder';
 
 const [createComponent, bem] = createNamespace('tabbar');
@@ -38,7 +43,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const root = ref();
-    const children = reactive([]);
+    const { linkChildren } = useChildren(TABBAR_KEY);
     const renderPlaceholder = usePlaceholder(root, bem);
 
     const isUnfit = () => {
@@ -76,11 +81,7 @@ export default createComponent({
       }
     };
 
-    provide(TABBAR_KEY, {
-      props,
-      children,
-      setActive,
-    });
+    linkChildren({ props, setActive });
 
     return () => {
       if (props.fixed && props.placeholder) {
