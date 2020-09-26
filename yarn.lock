@@ -2000,10 +2000,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.5.3":
-  version "2.5.3"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.5.3.tgz?cache=0&sync_timestamp=1600247593747&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.5.3.tgz#4ba3bae7fe957d28f63a57348aeefa1fbf96e54c"
-  integrity sha1-S6O65/6VfSj2Olc0iu76H7+W5Uw=
+"@vant/cli@^2.5.5":
+  version "2.5.5"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.5.5.tgz#15b68b8684d2b4209cde092645556c2abcdd262a"
+  integrity sha1-FbaLhoTStCCc3gkmRVVsKrzdJio=
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
