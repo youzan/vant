@@ -2,7 +2,7 @@ import { computed } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
 import { STEPS_KEY } from '../steps';
-import { useParent } from '../composition/use-parent';
+import { useParent } from '../composition/use-relation';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('step');

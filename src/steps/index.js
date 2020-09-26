@@ -1,5 +1,5 @@
-import { provide, reactive } from 'vue';
 import { createNamespace } from '../utils';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('steps');
 
@@ -27,13 +27,9 @@ export default createComponent({
   emits: ['click-step'],
 
   setup(props, { emit, slots }) {
-    const children = reactive([]);
+    const { linkChildren } = useChildren(STEPS_KEY);
 
-    provide(STEPS_KEY, {
-      emit,
-      props,
-      children,
-    });
+    linkChildren({ emit, props });
 
     return () => (
       <div class={bem([props.direction])}>
