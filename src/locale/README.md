@@ -37,16 +37,18 @@ Locale.add(messages);
 
 Current supported languages:
 
-| Language                 | Filename |
-| ------------------------ | -------- |
-| Chinese                  | zh-CN    |
-| Traditional Chinese (HK) | zh-HK    |
-| Traditional Chinese (TW) | zh-TW    |
-| English                  | en-US    |
-| Turkish                  | tr-TR    |
-| Spanish (Spain)          | es-ES    |
-| Japanese                 | ja-JP    |
-| Romanian                 | ro-RO    |
-| Norwegian                | nb-NO    |
+| Language                 | Filename     |
+| ------------------------ | ------------ |
+| Chinese                  | zh-CN        |
+| Traditional Chinese (HK) | zh-HK        |
+| Traditional Chinese (TW) | zh-TW        |
+| English                  | en-US        |
+| German                   | de-DE        |
+| German (formal)          | de-DE-formal |
+| Norwegian                | nb-NO        |
+| Japanese                 | ja-JP        |
+| Romanian                 | ro-RO        |
+| Spanish (Spain)          | es-ES        |
+| Turkish                  | tr-TR        |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
