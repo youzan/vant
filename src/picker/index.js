@@ -1,4 +1,4 @@
-import { ref, watch, computed, provide, reactive } from 'vue';
+import { ref, watch, computed } from 'vue';
 import { pickerProps, PICKER_KEY, DEFAULT_ITEM_HEIGHT } from './shared';
 
 // Utils
@@ -9,6 +9,7 @@ import { unitToPx } from '../utils/format/unit';
 
 // Composition
 import { useExpose } from '../composition/use-expose';
+import { useChildren } from '../composition/use-relation';
 
 // Components
 import Loading from '../loading';
@@ -40,8 +41,11 @@ export default createComponent({
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
-    const children = reactive([]);
     const formattedColumns = ref([]);
+
+    const { children, linkChildren } = useChildren(PICKER_KEY);
+
+    linkChildren();
 
     const itemHeight = computed(() =>
       props.itemHeight ? unitToPx(props.itemHeight) : DEFAULT_ITEM_HEIGHT
@@ -278,8 +282,6 @@ export default createComponent({
         </div>
       );
     };
-
-    provide(PICKER_KEY, { children });
 
     watch(() => props.columns, format, { immediate: true });
 

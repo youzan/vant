@@ -9,7 +9,8 @@ import { preventDefault } from '../utils/dom/event';
 
 // Composition
 import { useTouch } from '../composition/use-touch';
-import { useParent } from '../composition/use-parent';
+import { useExpose } from '../composition/use-expose';
+import { useParent } from '../composition/use-relation';
 
 const DEFAULT_DURATION = 200;
 
@@ -278,7 +279,8 @@ export default createComponent({
 
     setIndex(state.index);
 
-    useParent(PICKER_KEY, {
+    useParent(PICKER_KEY);
+    useExpose({
       state,
       setIndex,
       getValue,
