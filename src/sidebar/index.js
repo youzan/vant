@@ -1,5 +1,6 @@
-import { watch, provide, reactive } from 'vue';
+import { watch } from 'vue';
 import { createNamespace } from '../utils';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
@@ -16,8 +17,10 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const children = reactive([]);
+    const { linkChildren } = useChildren(SIDEBAR_KEY);
+
     const active = () => +props.modelValue;
+
     const setActive = (value) => {
       if (value !== active()) {
         emit('change', value);
@@ -26,10 +29,9 @@ export default createComponent({
 
     watch(active, setActive);
 
-    provide(SIDEBAR_KEY, {
+    linkChildren({
       emit,
       active,
-      children,
       setActive,
     });
 
