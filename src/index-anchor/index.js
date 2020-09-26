@@ -7,7 +7,8 @@ import { INDEX_BAR_KEY } from '../index-bar';
 
 // Composition
 import { useHeight } from '../composition/use-rect';
-import { useParent } from '../composition/use-parent';
+import { useExpose } from '../composition/use-expose';
+import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('index-anchor');
 
@@ -26,13 +27,7 @@ export default createComponent({
 
     const root = ref();
     const height = useHeight(root);
-
-    const { parent } = useParent(INDEX_BAR_KEY, {
-      props,
-      state,
-      height,
-      root,
-    });
+    const { parent } = useParent(INDEX_BAR_KEY);
 
     const isSticky = () => state.active && parent.props.sticky;
 
@@ -48,6 +43,11 @@ export default createComponent({
           color: highlightColor,
         };
       }
+    });
+
+    useExpose({
+      state,
+      height,
     });
 
     return () => {

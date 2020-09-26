@@ -1,4 +1,4 @@
-import { ref, computed, watch, nextTick, reactive, provide } from 'vue';
+import { ref, computed, watch, nextTick } from 'vue';
 
 // Utils
 import { createNamespace, isDef } from '../utils';
@@ -15,6 +15,7 @@ import {
 import { useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
+import { useChildren } from '../composition/use-relation';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 
@@ -54,12 +55,12 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const root = ref();
     const activeAnchor = ref();
-    const children = reactive([]);
 
     const touch = useTouch();
     const scrollParent = useScrollParent(root);
+    const { children, linkChildren } = useChildren(INDEX_BAR_KEY);
 
-    provide(INDEX_BAR_KEY, { props, children });
+    linkChildren({ props });
 
     const sidebarStyle = computed(() => {
       if (isDef(props.zIndex)) {
@@ -122,8 +123,8 @@ export default createComponent({
       const scrollParentRect = getScrollerRect();
 
       const rects = children.map((item) => ({
-        height: item.height,
-        top: getAnchorTop(item.root, scrollParentRect),
+        height: item.height.value,
+        top: getAnchorTop(item.$el, scrollParentRect),
       }));
 
       const active = getActiveAnchor(scrollTop, rects);
@@ -132,9 +133,9 @@ export default createComponent({
 
       if (sticky) {
         children.forEach((item, index) => {
-          const { state, height, root } = item;
+          const { state, height, $el } = item;
           if (index === active || index === active - 1) {
-            const rect = root.getBoundingClientRect();
+            const rect = $el.getBoundingClientRect();
             state.left = rect.left;
             state.width = rect.width;
           } else {
@@ -150,7 +151,7 @@ export default createComponent({
           } else if (index === active - 1) {
             const activeItemTop = rects[active].top - scrollTop;
             state.active = activeItemTop > 0;
-            state.top = activeItemTop + scrollParentRect.top - height;
+            state.top = activeItemTop + scrollParentRect.top - height.value;
           } else {
             state.active = false;
           }
@@ -187,12 +188,10 @@ export default createComponent({
         return;
       }
 
-      const match = children.filter(
-        (item) => String(item.props.index) === index
-      );
+      const match = children.filter((item) => String(item.index) === index);
 
       if (match[0]) {
-        match[0].root.scrollIntoView();
+        match[0].$el.scrollIntoView();
 
         if (props.sticky && props.stickyOffsetTop) {
           setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
