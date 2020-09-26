@@ -273,7 +273,7 @@ export default createComponent({
         });
 
         emit('click', name, title);
-        route(item.$router, item);
+        route(item);
       }
     };
 

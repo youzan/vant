@@ -1,8 +1,14 @@
 /**
  * Vue Router support
  */
-import { getCurrentInstance } from 'vue';
-import type { Router, RouteLocation } from 'vue-router';
+import { getCurrentInstance, ComponentPublicInstance } from 'vue';
+import type { RouteLocation } from 'vue-router';
+
+export type RouteProps = {
+  url?: string;
+  replace?: boolean;
+  to?: RouteLocation;
+};
 
 export type RouteConfig = {
   url?: string;
@@ -18,8 +24,10 @@ function isRedundantNavigation(err: Error) {
   );
 }
 
-export function route(router: Router, props: RouteProps) {
-  const { to, url, replace } = props;
+export function route(vm: ComponentPublicInstance<RouteProps>) {
+  const router = vm.$router;
+  const { to, url, replace } = vm;
+
   if (to && router) {
     const promise = router[replace ? 'replace' : 'push'](to);
 
@@ -39,15 +47,9 @@ export function route(router: Router, props: RouteProps) {
 export function useRoute() {
   const vm = getCurrentInstance()!.proxy!;
   return () => {
-    route(vm.$router, vm as RouteProps);
+    route(vm);
   };
 }
-
-export type RouteProps = {
-  url?: string;
-  replace?: boolean;
-  to?: RouteLocation;
-};
 
 export const routeProps = {
   url: String,
