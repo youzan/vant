@@ -1,7 +1,8 @@
 import { computed, nextTick, onMounted, reactive } from 'vue';
 import { SWIPE_KEY } from '../swipe';
 import { createNamespace } from '../utils';
-import { useParent } from '../composition/use-parent';
+import { useExpose } from '../composition/use-expose';
+import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('swipe-item');
 
@@ -12,17 +13,7 @@ export default createComponent({
       mounted: false,
     });
 
-    const setOffset = (offset) => {
-      state.offset = offset;
-    };
-
-    const { parent, index } = useParent(SWIPE_KEY, { setOffset });
-
-    onMounted(() => {
-      nextTick(() => {
-        state.mounted = true;
-      });
-    });
+    const { parent, index } = useParent(SWIPE_KEY);
 
     const style = computed(() => {
       const style = {};
@@ -54,6 +45,18 @@ export default createComponent({
 
       return index.value >= prevActive || index.value <= nextActive;
     });
+
+    const setOffset = (offset) => {
+      state.offset = offset;
+    };
+
+    onMounted(() => {
+      nextTick(() => {
+        state.mounted = true;
+      });
+    });
+
+    useExpose({ setOffset });
 
     return () => (
       <div class={bem()} style={style.value}>

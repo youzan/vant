@@ -1,7 +1,6 @@
 import {
   ref,
   watch,
-  provide,
   reactive,
   computed,
   onMounted,
@@ -18,10 +17,11 @@ import { doubleRaf } from '../utils/dom/raf';
 import { preventDefault } from '../utils/dom/event';
 
 // Composition
-import { useTouch } from '../composition/use-touch';
-import { useRect } from '../composition/use-rect';
-import { useExpose } from '../composition/use-expose';
 import { usePageVisibility, useWindowSize } from '@vant/use';
+import { useRect } from '../composition/use-rect';
+import { useTouch } from '../composition/use-touch';
+import { useExpose } from '../composition/use-expose';
+import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('swipe');
 
@@ -73,10 +73,10 @@ export default createComponent({
       active: 0,
       swiping: false,
     });
-    const children = reactive([]);
 
     const touch = useTouch();
     const windowSize = useWindowSize();
+    const { children, linkChildren } = useChildren(SWIPE_KEY);
 
     const count = computed(() => children.length);
 
@@ -370,9 +370,9 @@ export default createComponent({
       swipeTo,
     });
 
-    provide(SWIPE_KEY, { size, props, count, children, activeIndicator });
+    linkChildren({ size, props, count, activeIndicator });
 
-    watch([children, () => props.initialSwipe], initialize);
+    watch([() => children.length, () => props.initialSwipe], initialize);
 
     watch(
       () => props.autoplay,
