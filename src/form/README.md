@@ -450,6 +450,14 @@ export default {
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | Format value before validate | _(value, rule) => any_ |
 
+### validate-trigger
+
+| Value    | Description                                                     |
+| -------- | --------------------------------------------------------------- |
+| onSubmit | Trigger validation after submiting form                         |
+| onBlur   | Trigger validation after submiting form or bluring input        |
+| onChange | Trigger validation after submiting form or changing input value |
+
 ### Events
 
 | Event | Description | Arguments |
