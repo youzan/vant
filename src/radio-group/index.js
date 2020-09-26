@@ -1,7 +1,7 @@
 import { watch } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '../composition/use-relation';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('radio-group');
 
@@ -29,7 +29,7 @@ export default createComponent({
     );
 
     linkChildren({ emit, props });
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <div class={bem([props.direction])} role="radiogroup">

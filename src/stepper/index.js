@@ -8,7 +8,7 @@ import { preventDefault } from '../utils/dom/event';
 import { createNamespace, isDef, addUnit, getSizeStyle } from '../utils';
 
 // Composition
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -270,7 +270,7 @@ export default createComponent({
       emit('change', value, { name: props.name });
     });
 
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <div class={bem([props.theme])}>

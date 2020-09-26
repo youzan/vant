@@ -7,7 +7,7 @@ import { preventDefault } from '../utils/dom/event';
 // Composition
 import { useRefs } from '../composition/use-refs';
 import { useTouch } from '../composition/use-touch';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 // Components
 import Icon from '../icon';
@@ -193,7 +193,7 @@ export default createComponent({
       );
     };
 
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <div

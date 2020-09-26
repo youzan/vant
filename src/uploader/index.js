@@ -13,7 +13,7 @@ import {
 
 // Composition
 import { useExpose } from '../composition/use-expose';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 // Components
 import Icon from '../icon';
@@ -313,7 +313,7 @@ export default createComponent({
       closeImagePreview,
     });
 
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <div class={bem()}>

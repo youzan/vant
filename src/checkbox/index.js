@@ -1,7 +1,7 @@
 import { computed, watch } from 'vue';
 import { createNamespace, pick } from '../utils';
 import { useExpose } from '../composition/use-expose';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 import { useParent } from '../composition/use-relation';
 import Checker, { checkerProps } from './Checker';
 
@@ -81,7 +81,7 @@ export default createComponent({
     );
 
     useExpose({ toggle, checked });
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <Checker

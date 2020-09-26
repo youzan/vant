@@ -8,7 +8,7 @@ import { preventDefault } from '../utils/dom/event';
 // Composition
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('slider');
 
@@ -249,7 +249,7 @@ export default createComponent({
 
     // format initial value
     updateValue(props.modelValue);
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => (
       <div

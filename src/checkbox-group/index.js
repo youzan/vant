@@ -3,7 +3,7 @@ import { createNamespace } from '../utils';
 import { CHECKBOX_KEY } from '../checkbox';
 import { useExpose } from '../composition/use-expose';
 import { useChildren } from '../composition/use-relation';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
@@ -44,7 +44,7 @@ export default createComponent({
     );
 
     useExpose({ toggleAll });
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
     linkChildren({ emit, props });
 
     return () => <div class={bem([props.direction])}>{slots.default?.()}</div>;

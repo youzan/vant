@@ -1,5 +1,5 @@
 import { createNamespace, addUnit } from '../utils';
-import { useParentField } from '../composition/use-parent-field';
+import { useLinkField } from '../composition/use-link-field';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('switch');
@@ -42,7 +42,7 @@ export default createComponent({
       }
     };
 
-    useParentField(() => props.modelValue);
+    useLinkField(() => props.modelValue);
 
     return () => {
       const { size, loading, disabled, activeColor, inactiveColor } = props;
