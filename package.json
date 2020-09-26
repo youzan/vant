@@ -12,6 +12,9 @@
     "types",
     "vetur"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "vant-cli dev",
