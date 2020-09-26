@@ -108,7 +108,7 @@ export function getWebpackConfig(defaultConfig: WebpackConfig): object {
     // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
     // 比如修改markdown-loader,添加options.enableMetaData
     if (typeof config === 'function') {
-      return config(defaultConfig);
+      return merge(defaultConfig, config(defaultConfig));
     }
 
     return merge(defaultConfig, config);
