@@ -17,7 +17,7 @@ Vue.use(Form);
 
 ### 基础用法
 
-在表单中，每个 [Field 组件](#/zh-CN/field) 代表一个表单项，使用 Field 的`rules`属性定义校验规则
+在表单中，每个 [Field 组件](#/zh-CN/field) 代表一个表单项，使用 Field 的 `rules` 属性定义校验规则。
 
 ```html
 <van-form @submit="onSubmit">
@@ -62,7 +62,7 @@ export default {
 
 ### 校验规则
 
-通过`rules`定义表单校验规则，可用字段见[下方表格](#/zh-CN/form#rule-shu-ju-jie-gou)
+通过 `rules` 定义表单校验规则，可用字段见[下方表格](#/zh-CN/form#rule-shu-ju-jie-gou)。
 
 ```html
 <van-form validate-first @failed="onFailed">
@@ -132,7 +132,7 @@ export default {
 
 ### 表单项类型 - 开关
 
-在表单中使用 [Switch 组件](#/zh-CN/switch)
+在表单中使用 [Switch 组件](#/zh-CN/switch)。
 
 ```html
 <van-field name="switch" label="开关">
@@ -154,7 +154,7 @@ export default {
 
 ### 表单项类型 - 复选框
 
-在表单中使用 [Checkbox 组件](#/zh-CN/checkbox)
+在表单中使用 [Checkbox 组件](#/zh-CN/checkbox)。
 
 ```html
 <van-field name="checkbox" label="复选框">
@@ -185,7 +185,7 @@ export default {
 
 ### 表单项类型 - 单选框
 
-在表单中使用 [Radio 组件](#/zh-CN/radio)
+在表单中使用 [Radio 组件](#/zh-CN/radio)。
 
 ```html
 <van-field name="radio" label="单选框">
@@ -210,7 +210,7 @@ export default {
 
 ### 表单项类型 - 步进器
 
-在表单中使用 [Stepper 组件](#/zh-CN/stepper)
+在表单中使用 [Stepper 组件](#/zh-CN/stepper)。
 
 ```html
 <van-field name="stepper" label="步进器">
@@ -232,7 +232,7 @@ export default {
 
 ### 表单项类型 - 评分
 
-在表单中使用 [Rate 组件](#/zh-CN/rate)
+在表单中使用 [Rate 组件](#/zh-CN/rate)。
 
 ```html
 <van-field name="rate" label="评分">
@@ -254,7 +254,7 @@ export default {
 
 ### 表单项类型 - 滑块
 
-在表单中使用 [Slider 组件](#/zh-CN/slider)
+在表单中使用 [Slider 组件](#/zh-CN/slider)。
 
 ```html
 <van-field name="slider" label="滑块">
@@ -276,7 +276,7 @@ export default {
 
 ### 表单项类型 - 文件上传
 
-在表单中使用 [Uploader 组件](#/zh-CN/uploader)
+在表单中使用 [Uploader 组件](#/zh-CN/uploader)。
 
 ```html
 <van-field name="uploader" label="文件上传">
@@ -298,7 +298,7 @@ export default {
 
 ### 表单项类型 - 选择器
 
-在表单中使用 [Picker 组件](#/zh-CN/picker)
+在表单中使用 [Picker 组件](#/zh-CN/picker)。
 
 ```html
 <van-field
@@ -340,7 +340,7 @@ export default {
 
 ### 表单项类型 - 时间选择器
 
-在表单中使用 [DatetimePicker 组件](#/zh-CN/datetime-picker)
+在表单中使用 [DatetimePicker 组件](#/zh-CN/datetime-picker)。
 
 ```html
 <van-field
@@ -380,7 +380,7 @@ export default {
 
 ### 表单项类型 - 省市区选择器
 
-在表单中使用 [Area 组件](#/zh-CN/area)
+在表单中使用 [Area 组件](#/zh-CN/area)。
 
 ```html
 <van-field
@@ -412,7 +412,10 @@ export default {
   },
   methods: {
     onConfirm(values) {
-      this.value = values.map((item) => item.name).join('/');
+      this.value = values
+        .filter((item) => !!item)
+        .map((item) => item.name)
+        .join('/');
       this.showArea = false;
     },
   },
@@ -421,7 +424,7 @@ export default {
 
 ### 表单项类型 - 日历
 
-在表单中使用 [Calendar 组件](#/zh-CN/calendar)
+在表单中使用 [Calendar 组件](#/zh-CN/calendar)。
 
 ```html
 <van-field
@@ -463,7 +466,7 @@ export default {
 | label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为 `onChange`、`onSubmit` | _string_ | `onBlur` |
+| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
 | scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
@@ -485,6 +488,16 @@ export default {
 | pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
 | trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
+
+### validate-trigger  可选值
+
+通过 `validate-trigger` 属性可以自定义表单校验的触发时机。
+
+| 值       | 描述                                 |
+| -------- | ------------------------------------ |
+| onSubmit | 仅在提交表单时触发校验               |
+| onBlur   | 在提交表单和输入框失焦时触发校验     |
+| onChange | 在提交表单和输入框内容变化时触发校验 |
 
 ### Events
 
