@@ -129,6 +129,14 @@ export default {
 
 ## 常见问题
 
+### PullReresh 的内容未填满屏幕时，只有一部分区域可以下拉？
+
+默认情况下，下拉区域的高度是和内容高度保持一致的，如果需要让下拉区域始终为全屏，可以给 PullRefresh 设置一个与屏幕大小相等的最小高度：
+
+```html
+<van-pull-refresh style="min-height: 100vh;" />
+```
+
 ### 在桌面端无法操作组件？
 
 参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
