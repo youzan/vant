@@ -4,7 +4,7 @@ import { TABS_KEY } from '../tabs';
 
 // Composition
 import { routeProps } from '../composition/use-route';
-import { useParent } from '../composition/use-parent';
+import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('tab');
 
@@ -22,11 +22,7 @@ export default createComponent({
   setup(props, { slots }) {
     const root = ref();
     const inited = ref(false);
-    const { parent, index } = useParent(TABS_KEY, {
-      getRoot: () => root.value,
-      props,
-      slots,
-    });
+    const { parent, index } = useParent(TABS_KEY);
 
     if (!parent) {
       throw new Error('[Vant] Tabs: <van-tab> must be used inside <van-tabs>');

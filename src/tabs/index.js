@@ -1,7 +1,6 @@
 import {
   ref,
   watch,
-  provide,
   computed,
   reactive,
   nextTick,
@@ -25,9 +24,10 @@ import {
 } from '../utils/dom/scroll';
 
 // Composition
+import { useWindowSize, useScrollParent, useEventListener } from '@vant/use';
 import { useRefs } from '../composition/use-refs';
 import { useExpose } from '../composition/use-expose';
-import { useWindowSize, useScrollParent, useEventListener } from '@vant/use';
+import { useChildren } from '../composition/use-relation';
 
 // Components
 import Sticky from '../sticky';
@@ -97,8 +97,8 @@ export default createComponent({
     const windowSize = useWindowSize();
     const scroller = useScrollParent(root);
     const [titleRefs, setTitleRefs] = useRefs();
+    const { children, linkChildren } = useChildren(TABS_KEY);
 
-    const children = reactive([]);
     const state = reactive({
       position: '',
       currentIndex: -1,
@@ -117,7 +117,7 @@ export default createComponent({
       background: props.background,
     }));
 
-    const getTabName = (tab, index) => tab.props.name ?? index;
+    const getTabName = (tab, index) => tab.name ?? index;
 
     const currentName = computed(() => {
       const activeTab = children[state.currentIndex];
@@ -203,7 +203,7 @@ export default createComponent({
       const diff = index < state.currentIndex ? -1 : 1;
 
       while (index >= 0 && index < children.length) {
-        if (!children[index].props.disabled) {
+        if (!children[index].disabled) {
           return index;
         }
 
@@ -220,7 +220,7 @@ export default createComponent({
         emit('update:active', currentName.value);
 
         if (shouldEmitChange) {
-          emit('change', currentName.value, children[currentIndex].props.title);
+          emit('change', currentName.value, children[currentIndex].title);
         }
       }
     };
@@ -237,11 +237,10 @@ export default createComponent({
 
     const scrollToCurrentContent = (immediate = false) => {
       if (props.scrollspy) {
-        const target = children[state.currentIndex];
-        const el = target?.getRoot();
+        const target = children[state.currentIndex].$el;
 
-        if (el) {
-          const to = getElementTop(el, scroller.value) - scrollOffset.value;
+        if (target) {
+          const to = getElementTop(target, scroller.value) - scrollOffset.value;
 
           lockScroll = true;
           scrollTopTo(
@@ -258,7 +257,7 @@ export default createComponent({
 
     // emit event when clicked
     const onClick = (item, index) => {
-      const { title, disabled } = children[index].props;
+      const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
       if (disabled) {
@@ -292,7 +291,7 @@ export default createComponent({
 
     const getCurrentIndexOnScroll = () => {
       for (let index = 0; index < children.length; index++) {
-        const top = getVisibleTop(children[index].getRoot());
+        const top = getVisibleTop(children[index].$el);
 
         if (top > scrollOffset.value) {
           return index === 0 ? 0 : index - 1;
@@ -313,16 +312,16 @@ export default createComponent({
       children.map((item, index) => (
         <TabsTitle
           ref={setTitleRefs(index)}
-          dot={item.props.dot}
+          dot={item.dot}
           type={props.type}
-          badge={item.props.badge}
-          title={item.props.title}
+          badge={item.badge}
+          title={item.title}
           color={props.color}
-          style={item.props.titleStyle}
+          style={item.titleStyle}
           isActive={index === state.currentIndex}
-          disabled={item.props.disabled}
+          disabled={item.disabled}
           scrollable={scrollable.value}
-          renderTitle={item.slots.title}
+          renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
           inactiveColor={props.titleInactiveColor}
           onClick={() => {
@@ -369,13 +368,16 @@ export default createComponent({
       }
     );
 
-    watch(children, () => {
-      setCurrentIndexByName(currentName.value || props.active);
-      setLine();
-      nextTick(() => {
-        scrollIntoView(true);
-      });
-    });
+    watch(
+      () => children.length,
+      () => {
+        setCurrentIndexByName(currentName.value || props.active);
+        setLine();
+        nextTick(() => {
+          scrollIntoView(true);
+        });
+      }
+    );
 
     watch(
       () => state.currentIndex,
@@ -406,11 +408,10 @@ export default createComponent({
 
     useEventListener('scroll', onScroll, { target: scroller.value });
 
-    provide(TABS_KEY, {
+    linkChildren({
       emit,
       props,
       setLine,
-      children,
       currentName,
     });
 
