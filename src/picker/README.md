@@ -173,7 +173,7 @@ export default {
 
 ### Loading
 
-When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
+When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt.
 
 ```html
 <van-picker show-toolbar title="Title" :columns="columns" :loading="loading" />

@@ -35,7 +35,7 @@ export default {
 
 ### Disabled
 
-use `disabled` property to disable the component
+Use `disabled` property to disable the component.
 
 ```html
 <van-cell-group>
@@ -45,7 +45,7 @@ use `disabled` property to disable the component
 
 ### Loading
 
-use `loading` property to keep component in loading state
+Use `loading` property to keep component in loading state.
 
 ```html
 <van-cell-group>

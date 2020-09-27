@@ -36,7 +36,7 @@ export default {
 
 ### Dual thumb
 
-Add `range` attribute to open dual thumb mode
+Add `range` attribute to open dual thumb mode.
 
 ```html
 <van-slider v-model="value" range @change="onChange" />

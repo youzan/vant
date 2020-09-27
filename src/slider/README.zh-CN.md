@@ -36,7 +36,7 @@ export default {
 
 ### 双滑块
 
-添加`range`属性就可以开启双滑块模式，确保`value`的值是一个数组
+添加 `range` 属性就可以开启双滑块模式，确保 `value` 的值是一个数组。
 
 ```html
 <van-slider v-model="value" range @change="onChange" />

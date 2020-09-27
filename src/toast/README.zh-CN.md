@@ -82,7 +82,7 @@ Toast({
 
 ### 动态更新提示
 
-执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 message 属性可以实现动态更新提示的效果。
+执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 `message` 属性可以实现动态更新提示的效果。
 
 ```js
 const toast = Toast.loading({
@@ -132,7 +132,7 @@ toast2.clear();
 
 ### 修改默认配置
 
-通过`Toast.setDefaultOptions`函数可以全局修改 Toast 的默认配置。
+通过 `Toast.setDefaultOptions` 函数可以全局修改 Toast 的默认配置。
 
 ```js
 // 将所有 Toast 的展示时长设置为 2000 毫秒

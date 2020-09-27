@@ -91,7 +91,7 @@ export default {
 
 ### Custom Active Color
 
-Use `active-color` prop to custom active color of the title and options
+Use `active-color` prop to custom active color of the title and options.
 
 ```html
 <van-dropdown-menu active-color="#1989fa">

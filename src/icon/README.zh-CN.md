@@ -2,7 +2,7 @@
 
 ### 介绍
 
-基于字体的图标集，可以通过 Icon 组件使用，也可以在其他组件中通过`icon`属性引用
+基于字体的图标集，可以通过 Icon 组件使用，也可以在其他组件中通过 `icon` 属性引用。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Icon);
 
 ### 基础用法
 
-`Icon`的`name`属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例
+`Icon` 的 `name` 属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例。
 
 ```html
 <van-icon name="chat-o" />
@@ -26,7 +26,7 @@ Vue.use(Icon);
 
 ### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
+设置 `dot` 属性后，会在图标右上角展示一个小红点；设置 `badge` 属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-icon name="chat-o" dot />
@@ -36,7 +36,7 @@ Vue.use(Icon);
 
 ### 图标颜色
 
-`Icon`的`color`属性用来设置图标的颜色
+`Icon` 的 `color` 属性用来设置图标的颜色。
 
 ```html
 <van-icon name="chat-o" color="#1989fa" />
@@ -45,7 +45,7 @@ Vue.use(Icon);
 
 ### 图标大小
 
-`Icon`的`size`属性用来设置图标的尺寸大小，默认单位为`px`
+`Icon` 的 `size` 属性用来设置图标的尺寸大小，默认单位为 `px`。
 
 ```html
 <van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />
@@ -53,7 +53,7 @@ Vue.use(Icon);
 
 ### 使用本地字体文件
 
-Icon 组件默认引用有赞 CDN 提供的字体文件，并通过网络下载。如果需要在项目中使用本地字体文件，请引入下面的 CSS 文件，并在项目中配置`url-loader`
+Icon 组件默认引用有赞 CDN 提供的字体文件，并通过网络下载。如果需要在项目中使用本地字体文件，请引入下面的 CSS 文件，并在项目中配置 `url-loader`。
 
 ```js
 import 'vant/lib/icon/local.css';
@@ -61,7 +61,7 @@ import 'vant/lib/icon/local.css';
 
 ### 自定义图标
 
-如果需要在现有 Icon 的基础上使用更多图标，可以引入第三方 iconfont 对应的字体文件和 CSS 文件，之后就可以在 Icon 组件中直接使用
+如果需要在现有 Icon 的基础上使用更多图标，可以引入第三方 iconfont 对应的字体文件和 CSS 文件，之后就可以在 Icon 组件中直接使用。
 
 ```css
 /* 引入第三方或自定义的字体图标样式 */

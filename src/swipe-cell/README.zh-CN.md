@@ -13,7 +13,7 @@ Vue.use(SwipeCell);
 
 ### 基础用法
 
-`SwipeCell`组件提供了`left`和`right`两个插槽，用于定义两侧滑动区域的内容
+`SwipeCell` 组件提供了 `left` 和 `right` 两个插槽，用于定义两侧滑动区域的内容。
 
 ```html
 <van-swipe-cell>
@@ -30,7 +30,7 @@ Vue.use(SwipeCell);
 
 ### 自定义内容
 
-`SwipeCell`内容可以嵌套任意内容，比如嵌套一个商品卡片
+`SwipeCell` 可以嵌套任意内容，比如嵌套一个商品卡片。
 
 ```html
 <van-swipe-cell>
@@ -61,7 +61,7 @@ Vue.use(SwipeCell);
 
 ### 异步关闭
 
-通过传入`before-close`回调函数，可以自定义两侧滑动内容关闭时的行为
+通过传入 `before-close` 回调函数，可以自定义两侧滑动内容关闭时的行为。
 
 ```html
 <van-swipe-cell :before-close="beforeClose">

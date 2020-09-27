@@ -30,7 +30,7 @@ Vue.use(VanImage);
 
 ### Round
 
-Show round image, it may not works at `fit=contain` and `fit=scale-down`
+Show round image, it may not works at `fit=contain` and `fit=scale-down`.
 
 ```html
 <van-image

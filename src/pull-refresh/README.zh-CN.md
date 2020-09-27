@@ -45,7 +45,7 @@ export default {
 
 ### 成功提示
 
-通过`success-text`可以设置刷新成功后的顶部提示文案
+通过 `success-text` 可以设置刷新成功后的顶部提示文案。
 
 ```html
 <van-pull-refresh
@@ -59,7 +59,7 @@ export default {
 
 ### 自定义提示
 
-通过插槽可以自定义下拉刷新过程中的提示内容
+通过插槽可以自定义下拉刷新过程中的提示内容。
 
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">

@@ -61,7 +61,7 @@ export default {
 
 ### IdNumber Keyboard
 
-Use `extra-key` prop to set the content of bottom left button
+Use `extra-key` prop to set the content of bottom left button.
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -80,7 +80,7 @@ Use `extra-key` prop to set the content of bottom left button
 
 ### Keyboard With Title
 
-Use `title` prop to set keyboard title
+Use `title` prop to set keyboard title.
 
 ```html
 <van-cell plain type="info" @touchstart.native.stop="show = true">

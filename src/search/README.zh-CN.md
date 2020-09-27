@@ -13,7 +13,7 @@ Vue.use(Search);
 
 ### 基础用法
 
-v-model 用于控制搜索框中的文字，background 可以自定义搜索框外部背景色。
+`v-model` 用于控制搜索框中的文字，`background` 可以自定义搜索框外部背景色。
 
 ```html
 <van-search v-model="value" placeholder="请输入搜索关键词" />

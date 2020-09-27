@@ -13,7 +13,7 @@ Vue.use(Progress);
 
 ### Basic Usage
 
-Use 'percentage' prop to set current progress
+Use `percentage` prop to set current progress.
 
 ```html
 <van-progress :percentage="50" />
@@ -33,7 +33,7 @@ Use 'percentage' prop to set current progress
 
 ### Custom Style
 
-Use `pivot-text` to custom text，use `color` to custom bar color
+Use `pivot-text` to custom text，use `color` to custom bar color.
 
 ```html
 <van-progress pivot-text="Orange" color="#f2826a" :percentage="25" />

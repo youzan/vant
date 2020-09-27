@@ -41,7 +41,7 @@ export default {
 
 ### Icon Badge
 
-Use `badge` prop to show badge in icon
+Use `badge` prop to show badge in icon.
 
 ```html
 <van-goods-action>

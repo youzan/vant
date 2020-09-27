@@ -2,7 +2,7 @@
 
 ### 介绍
 
-数字虚拟键盘，可以配合[密码输入框组件](#/zh-CN/password-input)或自定义的输入框组件使用
+数字虚拟键盘，可以配合[密码输入框组件](#/zh-CN/password-input)或自定义的输入框组件使用。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(NumberKeyboard);
 
 ### 默认样式
 
-数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作
+数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作。
 
 ```html
 <van-cell @touchstart.native.stop="show = true">
@@ -55,7 +55,7 @@ export default {
 
 ### 带右侧栏的键盘
 
-将 theme 属性设置为 `custom` 来展示键盘的右侧栏，常用于输入金额的场景
+将 theme 属性设置为 `custom` 来展示键盘的右侧栏，常用于输入金额的场景。
 
 ```html
 <van-number-keyboard
@@ -71,7 +71,7 @@ export default {
 
 ### 身份证号键盘
 
-通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`
+通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`。
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -89,7 +89,7 @@ export default {
 
 ### 键盘标题
 
-通过 `title` 属性可以设置键盘标题
+通过 `title` 属性可以设置键盘标题。
 
 ```html
 <van-cell plain type="info" @touchstart.native.stop="show = true">
@@ -108,7 +108,7 @@ export default {
 
 ### 配置多个按键
 
-当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`
+当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`。
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -126,7 +126,7 @@ export default {
 
 ### 双向绑定
 
-可以通过 `v-model` 绑定键盘当前输入值
+可以通过 `v-model` 绑定键盘当前输入值。
 
 ```html
 <van-field

@@ -14,7 +14,7 @@ Vue.use(RadioGroup);
 
 ### 基础用法
 
-通过`v-model`绑定值当前选中项的 name
+通过 `v-model` 绑定值当前选中项的 name。
 
 ```html
 <van-radio-group v-model="radio">
@@ -35,7 +35,7 @@ export default {
 
 ### 水平排列
 
-将`direction`属性设置为`horizontal`后，单选框组会变成水平排列
+将 `direction` 属性设置为 `horizontal` 后，单选框组会变成水平排列。
 
 ```html
 <van-radio-group v-model="radio" direction="horizontal">
@@ -46,7 +46,7 @@ export default {
 
 ### 禁用状态
 
-通过`disabled`属性禁止选项切换，在`Radio`上设置`disabled`可以禁用单个选项
+通过 `disabled` 属性禁止选项切换，在 `Radio` 上设置 `disabled` 可以禁用单个选项。
 
 ```html
 <van-radio-group v-model="radio" disabled>
@@ -57,7 +57,7 @@ export default {
 
 ### 自定义形状
 
-将`shape`属性设置为`square`，单选框的形状会变成方形
+将 `shape` 属性设置为 `square`，单选框的形状会变成方形。
 
 ```html
 <van-radio-group v-model="radio">
@@ -68,7 +68,7 @@ export default {
 
 ### 自定义颜色
 
-通过`checked-color`属性设置选中状态的图标颜色
+通过 `checked-color` 属性设置选中状态的图标颜色。
 
 ```html
 <van-radio-group v-model="radio">
@@ -79,7 +79,7 @@ export default {
 
 ### 自定义大小
 
-通过`icon-size`属性可以自定义图标的大小
+通过 `icon-size` 属性可以自定义图标的大小。
 
 ```html
 <van-radio-group v-model="radio">
@@ -90,7 +90,7 @@ export default {
 
 ### 自定义图标
 
-通过`icon`插槽自定义图标，并通过`slotProps`判断是否为选中状态
+通过 `icon` 插槽自定义图标，并通过 `slotProps` 判断是否为选中状态。
 
 ```html
 <van-radio-group v-model="radio">
@@ -129,7 +129,7 @@ export default {
 
 ### 禁用文本点击
 
-设置`label-disabled`属性后，点击图标以外的内容不会触发单选框切换
+设置 `label-disabled` 属性后，点击图标以外的内容不会触发单选框切换。
 
 ```html
 <van-radio-group v-model="radio">
@@ -140,7 +140,7 @@ export default {
 
 ### 与 Cell 组件一起使用
 
-此时你需要再引入`Cell`和`CellGroup`组件
+此时你需要再引入 `Cell` 和 `CellGroup` 组件。
 
 ```html
 <van-radio-group v-model="radio">

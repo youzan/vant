@@ -13,7 +13,7 @@ Vue.use(Icon);
 
 ### Basic Usage
 
-Use `name` prop to set icon name or icon URL
+Use `name` prop to set icon name or icon URL.
 
 ```html
 <van-icon name="chat-o" />
@@ -34,7 +34,7 @@ Use `badge` prop, the badge will be displayed in the upper right corner of the i
 
 ### Icon Color
 
-Use `color` prop to set icon color
+Use `color` prop to set icon color.
 
 ```html
 <van-icon name="chat-o" color="#1989fa" />
@@ -43,7 +43,7 @@ Use `color` prop to set icon color
 
 ### Icon Size
 
-Use `size` prop to set icon size
+Use `size` prop to set icon size.
 
 ```html
 <van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />

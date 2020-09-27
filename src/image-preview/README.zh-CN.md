@@ -62,7 +62,7 @@ ImagePreview({
 
 ### 展示关闭按钮
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
+设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
 
 ```js
 ImagePreview({
@@ -94,7 +94,7 @@ ImagePreview({
 
 ### 异步关闭
 
-通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
+通过 `asyncClose` 属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
 
 ```js
 const instance = ImagePreview({

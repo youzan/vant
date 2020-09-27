@@ -2,7 +2,7 @@
 
 ### 介绍
 
-增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示
+增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(VanImage);
 
 ### 基础用法
 
-基础用法与原生`img`标签一致，可以设置`src`、`width`、`height`、`alt`等原生属性
+基础用法与原生 `img` 标签一致，可以设置 `src`、`width`、`height`、`alt` 等原生属性。
 
 ```html
 <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
@@ -25,7 +25,7 @@ Vue.use(VanImage);
 
 ### 填充模式
 
-通过`fit`属性可以设置图片填充模式，可选值见下方表格
+通过 `fit` 属性可以设置图片填充模式，可选值见下方表格。
 
 ```html
 <van-image
@@ -38,7 +38,7 @@ Vue.use(VanImage);
 
 ### 圆形图片
 
-通过`round`属性可以设置图片变圆，注意当图片宽高不相等且`fit`为`contain`或`scale-down`时，将无法填充一个完整的圆形。
+通过 `round` 属性可以设置图片变圆，注意当图片宽高不相等且 `fit` 为 `contain` 或 `scale-down` 时，将无法填充一个完整的圆形。
 
 ```html
 <van-image
@@ -51,7 +51,7 @@ Vue.use(VanImage);
 
 ### 图片懒加载
 
-设置`lazy-load`属性来开启图片懒加载，需要搭配 [Lazyload](#/zh-CN/lazyload) 组件使用
+设置 `lazy-load` 属性来开启图片懒加载，需要搭配 [Lazyload](#/zh-CN/lazyload) 组件使用。
 
 ```html
 <van-image
@@ -71,7 +71,7 @@ Vue.use(Lazyload);
 
 ### 加载中提示
 
-`Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
+`Image` 组件提供了默认的加载中提示，支持通过 `loading` 插槽自定义内容。
 
 ```html
 <van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
@@ -83,7 +83,7 @@ Vue.use(Lazyload);
 
 ### 加载失败提示
 
-`Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义内容
+`Image` 组件提供了默认的加载失败提示，支持通过 `error` 插槽自定义内容。
 
 ```html
 <van-image src="https://img.yzcdn.cn/vant/cat.jpeg">

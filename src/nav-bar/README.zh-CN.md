@@ -41,7 +41,7 @@ export default {
 
 ### 使用插槽
 
-通过插槽自定义导航栏两侧的内容
+通过插槽自定义导航栏两侧的内容。
 
 ```html
 <van-nav-bar title="标题" left-text="返回" left-arrow>

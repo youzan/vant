@@ -2,7 +2,7 @@
 
 ### 介绍
 
-省市区三级联动选择，通常与[弹出层](#/zh-CN/popup)组件配合使用
+省市区三级联动选择，通常与[弹出层](#/zh-CN/popup)组件配合使用。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Area);
 
 ### 基础用法
 
-要初始化一个`Area`组件，你需要传入一个`area-list`属性，数据格式具体可看下面数据格式章节
+要初始化一个 `Area` 组件，你需要传入一个 `area-list` 属性，数据格式具体可看下面数据格式章节。
 
 ```html
 <van-area title="标题" :area-list="areaList" />
@@ -25,7 +25,7 @@ Vue.use(Area);
 
 ### 选中省市区
 
-如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
+如果想选中某个省市区，需要传入一个 `value` 属性，绑定对应的省市区 `code`。
 
 ```html
 <van-area title="标题" :area-list="areaList" value="110101" />
@@ -33,7 +33,7 @@ Vue.use(Area);
 
 ### 配置显示列
 
-可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
+可以通过 `columns-num` 属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为 `2`，则只会显示省市选择。
 
 ```html
 <van-area title="标题" :area-list="areaList" :columns-num="2" />
@@ -41,7 +41,7 @@ Vue.use(Area);
 
 ### 配置列占位提示文字
 
-可以通过`columns-placeholder`属性配置每一列的占位提示文字
+可以通过 `columns-placeholder` 属性配置每一列的占位提示文字。
 
 ```html
 <van-area

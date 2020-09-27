@@ -14,7 +14,7 @@ Vue.use(CollapseItem);
 
 ### Basic Usage
 
-Use `v-model` to control the name of active panels
+Use `v-model` to control the name of active panels.
 
 ```html
 <van-collapse v-model="activeNames">
