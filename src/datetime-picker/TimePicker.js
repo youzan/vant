@@ -1,6 +1,7 @@
-import { createNamespace } from '../utils';
-import { padZero } from '../utils/format/string';
+import { ref, watch, computed, nextTick, onMounted } from 'vue';
+import { createNamespace, pick } from '../utils';
 import { range } from '../utils/format/number';
+import { padZero } from '../utils/format/string';
 import { times, sharedProps } from './utils';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
@@ -30,156 +31,144 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
-  data() {
-    return {
-      innerValue: this.formatValue(this.modelValue),
+  setup(props, { emit }) {
+    const formatValue = (value) => {
+      const { minHour, maxHour, maxMinute, minMinute } = props;
+
+      if (!value) {
+        value = `${padZero(minHour)}:${padZero(minMinute)}`;
+      }
+
+      let [hour, minute] = value.split(':');
+      hour = padZero(range(hour, minHour, maxHour));
+      minute = padZero(range(minute, minMinute, maxMinute));
+
+      return `${hour}:${minute}`;
     };
-  },
 
-  computed: {
-    ranges() {
-      return [
-        {
-          type: 'hour',
-          range: [+this.minHour, +this.maxHour],
-        },
-        {
-          type: 'minute',
-          range: [+this.minMinute, +this.maxMinute],
-        },
-      ];
-    },
+    const picker = ref();
+    const currentDate = ref(formatValue(props.modelValue));
 
-    originColumns() {
-      return this.ranges.map(({ type, range: rangeArr }) => {
-        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
-          const value = padZero(rangeArr[0] + index);
-          return value;
-        });
+    const ranges = computed(() => [
+      {
+        type: 'hour',
+        range: [+props.minHour, +props.maxHour],
+      },
+      {
+        type: 'minute',
+        range: [+props.minMinute, +props.maxMinute],
+      },
+    ]);
 
-        if (this.filter) {
-          values = this.filter(type, values);
+    const originColumns = computed(() =>
+      ranges.value.map(({ type, range: rangeArr }) => {
+        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) =>
+          padZero(rangeArr[0] + index)
+        );
+
+        if (props.filter) {
+          values = props.filter(type, values);
         }
 
         return {
           type,
           values,
         };
-      });
-    },
+      })
+    );
 
-    columns() {
-      return this.originColumns.map((column) => ({
+    const columns = computed(() =>
+      originColumns.value.map((column) => ({
         values: column.values.map((value) =>
-          this.formatter(column.type, value)
+          props.formatter(column.type, value)
         ),
-      }));
-    },
-  },
+      }))
+    );
 
-  watch: {
-    filter: 'updateInnerValue',
-    minHour: 'updateInnerValue',
-    maxHour: 'updateInnerValue',
-    minMinute: 'updateInnerValue',
-    maxMinute: 'updateInnerValue',
-    columns: 'updateColumnValue',
+    const updateColumnValue = () => {
+      const pair = currentDate.value.split(':');
+      const values = [
+        props.formatter('hour', pair[0]),
+        props.formatter('minute', pair[1]),
+      ];
 
-    innerValue(val) {
-      this.$emit('update:modelValue', val);
-    },
+      nextTick(() => {
+        picker.value.setValues(values);
+      });
+    };
 
-    value(val) {
-      val = this.formatValue(val);
-
-      if (val !== this.innerValue) {
-        this.innerValue = val;
-        this.updateColumnValue();
-      }
-    },
-  },
-
-  mounted() {
-    this.updateColumnValue();
-
-    this.$nextTick(() => {
-      this.updateInnerValue();
-    });
-  },
-
-  methods: {
-    // @exposed-api
-    getPicker() {
-      return this.$refs.picker;
-    },
-
-    onConfirm() {
-      this.$emit('confirm', this.innerValue);
-    },
-
-    onCancel() {
-      this.$emit('cancel');
-    },
-
-    formatValue(value) {
-      if (!value) {
-        value = `${padZero(this.minHour)}:${padZero(this.minMinute)}`;
-      }
-
-      let [hour, minute] = value.split(':');
-      hour = padZero(range(hour, this.minHour, this.maxHour));
-      minute = padZero(range(minute, this.minMinute, this.maxMinute));
-
-      return `${hour}:${minute}`;
-    },
-
-    updateInnerValue() {
-      const [hourIndex, minuteIndex] = this.getPicker().getIndexes();
-      const [hourColumn, minuteColumn] = this.originColumns;
+    const updateInnerValue = () => {
+      const [hourIndex, minuteIndex] = picker.value.getIndexes();
+      const [hourColumn, minuteColumn] = originColumns.value;
 
       const hour = hourColumn.values[hourIndex] || hourColumn.values[0];
       const minute = minuteColumn.values[minuteIndex] || minuteColumn.values[0];
 
-      this.innerValue = this.formatValue(`${hour}:${minute}`);
-      this.updateColumnValue();
-    },
+      currentDate.value = formatValue(`${hour}:${minute}`);
+      updateColumnValue();
+    };
 
-    onChange(picker) {
-      this.updateInnerValue();
+    const onConfirm = () => {
+      emit('confirm', currentDate.value);
+    };
 
-      this.$nextTick(() => {
-        this.$nextTick(() => {
-          this.$emit('change', picker);
+    const onCancel = () => {
+      emit('cancel');
+    };
+
+    const onChange = () => {
+      updateInnerValue();
+
+      nextTick(() => {
+        nextTick(() => {
+          emit('change', picker.value);
         });
       });
-    },
+    };
 
-    updateColumnValue() {
-      const { formatter } = this;
-      const pair = this.innerValue.split(':');
-      const values = [formatter('hour', pair[0]), formatter('minute', pair[1])];
-
-      this.$nextTick(() => {
-        this.getPicker().setValues(values);
-      });
-    },
-  },
-
-  render() {
-    const props = {};
-    Object.keys(pickerProps).forEach((key) => {
-      props[key] = this[key];
+    onMounted(() => {
+      updateColumnValue();
+      nextTick(updateInnerValue);
     });
 
-    return (
+    watch(columns, updateColumnValue);
+
+    watch(
+      [
+        () => props.filter,
+        () => props.minHour,
+        () => props.maxHour,
+        () => props.minMinute,
+        () => props.maxMinute,
+      ],
+      updateInnerValue
+    );
+
+    watch(currentDate, (value) => {
+      emit('update:modelValue', value);
+    });
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        value = formatValue(value);
+
+        if (value !== currentDate.value) {
+          currentDate.value = value;
+          updateColumnValue();
+        }
+      }
+    );
+
+    return () => (
       <Picker
-        ref="picker"
-        columns={this.columns}
-        readonly={this.readonly}
-        onChange={this.onChange}
-        onConfirm={this.onConfirm}
-        onCancel={this.onCancel}
-        {...props}
+        ref={picker}
+        columns={columns.value}
+        readonly={props.readonly}
+        onChange={onChange}
+        onCancel={onCancel}
+        onConfirm={onConfirm}
+        {...pick(props, Object.keys(pickerProps))}
       />
     );
   },

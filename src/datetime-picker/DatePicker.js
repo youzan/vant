@@ -31,7 +31,7 @@ export default createComponent({
 
   data() {
     return {
-      innerValue: this.formatValue(this.modelValue),
+      currentDate: this.formatValue(this.modelValue),
     };
   },
 
@@ -43,7 +43,7 @@ export default createComponent({
         maxMonth,
         maxHour,
         maxMinute,
-      } = this.getBoundary('max', this.innerValue);
+      } = this.getBoundary('max', this.currentDate);
 
       const {
         minYear,
@@ -51,7 +51,7 @@ export default createComponent({
         minMonth,
         minHour,
         minMinute,
-      } = this.getBoundary('min', this.innerValue);
+      } = this.getBoundary('min', this.currentDate);
 
       let result = [
         {
@@ -136,15 +136,15 @@ export default createComponent({
     maxDate: 'updateInnerValue',
     columns: 'updateColumnValue',
 
-    innerValue(val) {
+    currentDate(val) {
       this.$emit('update:modelValue', val);
     },
 
     modelValue(val) {
       val = this.formatValue(val);
 
-      if (val.valueOf() !== this.innerValue.valueOf()) {
-        this.innerValue = val;
+      if (val.valueOf() !== this.currentDate.valueOf()) {
+        this.currentDate = val;
       }
     },
   },
@@ -164,7 +164,7 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', this.innerValue);
+      this.$emit('confirm', this.currentDate);
     },
 
     onCancel() {
@@ -237,7 +237,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = this.innerValue.getFullYear();
+        year = this.currentDate.getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -263,7 +263,7 @@ export default createComponent({
 
       const value = new Date(year, month - 1, day, hour, minute);
 
-      this.innerValue = this.formatValue(value);
+      this.currentDate = this.formatValue(value);
     },
 
     onChange(picker) {
@@ -277,7 +277,7 @@ export default createComponent({
     },
 
     updateColumnValue() {
-      const value = this.innerValue;
+      const value = this.currentDate;
       const { formatter } = this;
 
       const values = this.originColumns.map((column) => {
