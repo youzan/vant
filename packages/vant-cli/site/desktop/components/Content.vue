@@ -210,7 +210,7 @@ export default {
   blockquote {
     margin: 16px 0 0;
     padding: 16px;
-    background-color: #ebfff0;
+    background-color: #ecf9ff;
     border-radius: @van-doc-border-radius;
   }
 
