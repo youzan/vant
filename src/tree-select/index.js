@@ -44,18 +44,61 @@ export default createComponent({
   ],
 
   setup(props, { emit, slots }) {
-    return function () {
-      const { items, height, activeId, selectedIcon, mainActiveIndex } = props;
+    const isMultiple = () => Array.isArray(props.activeId);
 
-      const selectedItem = items[+mainActiveIndex] || {};
-      const subItems = selectedItem.children || [];
-      const isMultiple = Array.isArray(activeId);
+    const isActiveItem = (id) => {
+      return isMultiple()
+        ? props.activeId.indexOf(id) !== -1
+        : props.activeId === id;
+    };
 
-      function isActiveItem(id) {
-        return isMultiple ? activeId.indexOf(id) !== -1 : activeId === id;
-      }
+    const renderSubItem = (item) => {
+      const onClick = () => {
+        if (item.disabled) {
+          return;
+        }
 
-      const Navs = items.map((item) => (
+        let activeId;
+        if (isMultiple()) {
+          activeId = props.activeId.slice();
+
+          const index = activeId.indexOf(item.id);
+
+          if (index !== -1) {
+            activeId.splice(index, 1);
+          } else if (activeId.length < props.max) {
+            activeId.push(item.id);
+          }
+        } else {
+          activeId = item.id;
+        }
+
+        emit('update:activeId', activeId);
+        emit('click-item', item);
+      };
+
+      return (
+        <div
+          key={item.id}
+          class={[
+            'van-ellipsis',
+            bem('item', {
+              active: isActiveItem(item.id),
+              disabled: item.disabled,
+            }),
+          ]}
+          onClick={onClick}
+        >
+          {item.text}
+          {isActiveItem(item.id) && (
+            <Icon name={props.selectedIcon} class={bem('selected')} />
+          )}
+        </div>
+      );
+    };
+
+    const renderSidebar = () => {
+      const Items = props.items.map((item) => (
         <SidebarItem
           dot={item.dot}
           title={item.text}
@@ -65,64 +108,36 @@ export default createComponent({
         />
       ));
 
-      function Content() {
-        if (slots.content) {
-          return slots.content();
-        }
-
-        return subItems.map((item) => (
-          <div
-            key={item.id}
-            class={[
-              'van-ellipsis',
-              bem('item', {
-                active: isActiveItem(item.id),
-                disabled: item.disabled,
-              }),
-            ]}
-            onClick={() => {
-              if (!item.disabled) {
-                let newActiveId = item.id;
-                if (isMultiple) {
-                  newActiveId = activeId.slice();
-
-                  const index = newActiveId.indexOf(item.id);
-
-                  if (index !== -1) {
-                    newActiveId.splice(index, 1);
-                  } else if (newActiveId.length < props.max) {
-                    newActiveId.push(item.id);
-                  }
-                }
-
-                emit('update:activeId', newActiveId);
-                emit('click-item', item);
-              }
-            }}
-          >
-            {item.text}
-            {isActiveItem(item.id) && (
-              <Icon name={selectedIcon} class={bem('selected')} />
-            )}
-          </div>
-        ));
-      }
-
       return (
-        <div class={bem()} style={{ height: addUnit(height) }}>
-          <Sidebar
-            class={bem('nav')}
-            modelValue={mainActiveIndex}
-            onChange={(index) => {
-              emit('update:mainActiveIndex', index);
-              emit('click-nav', index);
-            }}
-          >
-            {Navs}
-          </Sidebar>
-          <div class={bem('content')}>{Content()}</div>
-        </div>
+        <Sidebar
+          class={bem('nav')}
+          modelValue={props.mainActiveIndex}
+          onChange={(index) => {
+            emit('update:mainActiveIndex', index);
+            emit('click-nav', index);
+          }}
+        >
+          {Items}
+        </Sidebar>
       );
     };
+
+    const renderContent = () => {
+      if (slots.content) {
+        return slots.content();
+      }
+
+      const selected = props.items[+props.mainActiveIndex] || {};
+      if (selected.children) {
+        return selected.children.map(renderSubItem);
+      }
+    };
+
+    return () => (
+      <div class={bem()} style={{ height: addUnit(props.height) }}>
+        {renderSidebar()}
+        <div class={bem('content')}>{renderContent()}</div>
+      </div>
+    );
   },
 });

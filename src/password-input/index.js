@@ -27,10 +27,10 @@ export default createComponent({
   emits: ['focus'],
 
   setup(props, { emit }) {
-    function onTouchStart(event) {
+    const onTouchStart = (event) => {
       event.stopPropagation();
       emit('focus', event);
-    }
+    };
 
     return () => {
       const { mask, value, length, gutter, focused, errorInfo } = props;
