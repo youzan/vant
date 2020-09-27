@@ -108,7 +108,6 @@ export default {
 
 .van-doc-intro {
   padding-top: 20px;
-  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
   p {
