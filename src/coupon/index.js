@@ -1,7 +1,6 @@
 import { computed } from 'vue';
-import { createNamespace } from '../utils';
+import { padZero, createNamespace } from '../utils';
 import { RED } from '../utils/constant';
-import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 
 const [createComponent, bem, t] = createNamespace('coupon');

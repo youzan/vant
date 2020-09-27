@@ -2,10 +2,8 @@ import { ref, watch, computed } from 'vue';
 import { pickerProps, PICKER_KEY, DEFAULT_ITEM_HEIGHT } from './shared';
 
 // Utils
-import { createNamespace } from '../utils';
-import { preventDefault } from '../utils/dom/event';
+import { unitToPx, preventDefault, createNamespace } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
-import { unitToPx } from '../utils/format/unit';
 
 // Composition
 import { useExpose } from '../composition/use-expose';

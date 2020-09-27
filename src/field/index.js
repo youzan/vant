@@ -9,15 +9,16 @@ import {
 } from 'vue';
 
 // Utils
-import { resetScroll } from '../utils/dom/reset-scroll';
-import { formatNumber } from '../utils/format/number';
-import { trigger, preventDefault } from '../utils/dom/event';
 import {
   isDef,
+  trigger,
   addUnit,
   isObject,
   isPromise,
   isFunction,
+  resetScroll,
+  formatNumber,
+  preventDefault,
   createNamespace,
 } from '../utils';
 

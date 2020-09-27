@@ -1,8 +1,7 @@
 import { computed } from 'vue';
 
 // Utils
-import { createNamespace, addUnit } from '../utils';
-import { preventDefault } from '../utils/dom/event';
+import { addUnit, createNamespace, preventDefault } from '../utils';
 
 // Composition
 import { useRefs } from '../composition/use-refs';

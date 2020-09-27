@@ -1,8 +1,11 @@
-import { ref, reactive, nextTick, onActivated, watch } from 'vue';
-import { createNamespace, isDef } from '../utils';
-import { doubleRaf } from '../utils/dom/raf';
+import { ref, watch, reactive, nextTick, onActivated } from 'vue';
+import { isDef, doubleRaf, createNamespace } from '../utils';
+
+// Composition
 import { useRect } from '../composition/use-rect';
 import { useEventListener } from '@vant/use';
+
+// Components
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('notice-bar');

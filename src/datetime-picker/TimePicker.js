@@ -1,11 +1,15 @@
 import { ref, watch, computed, nextTick, onMounted } from 'vue';
-import { createNamespace, pick } from '../utils';
-import { range } from '../utils/format/number';
-import { padZero } from '../utils/format/string';
+
+// Utils
+import { pick, range, padZero, createNamespace } from '../utils';
 import { times, sharedProps } from './utils';
+
+// Composition
+import { useExpose } from '../composition/use-expose';
+
+// Components
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
-import { useExpose } from '../composition/use-expose';
 
 const [createComponent] = createNamespace('time-picker');
 

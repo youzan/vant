@@ -10,11 +10,13 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { range } from '../utils/format/number';
-import { isHidden } from '../utils/dom/style';
-import { doubleRaf } from '../utils/dom/raf';
-import { preventDefault } from '../utils/dom/event';
+import {
+  range,
+  isHidden,
+  doubleRaf,
+  preventDefault,
+  createNamespace,
+} from '../utils';
 
 // Composition
 import { usePageVisibility, useWindowSize } from '@vant/use';

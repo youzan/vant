@@ -1,8 +1,7 @@
 import { ref, watch, computed, nextTick } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { raf, doubleRaf } from '../utils/dom/raf';
+import { raf, doubleRaf, createNamespace } from '../utils';
 
 // Composition
 import { useParent } from '../composition/use-relation';

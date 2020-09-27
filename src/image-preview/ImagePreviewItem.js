@@ -2,8 +2,7 @@ import { watch, computed, reactive } from 'vue';
 
 // Utils
 import { bem } from './shared';
-import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { range, preventDefault } from '../utils';
 
 // Composition
 import { useTouch } from '../composition/use-touch';

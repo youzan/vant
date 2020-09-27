@@ -8,8 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { raf, cancelRaf } from '../utils/dom/raf';
+import { raf, cancelRaf, createNamespace } from '../utils';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
 
 // Composition

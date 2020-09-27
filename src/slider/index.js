@@ -1,9 +1,13 @@
 import { ref, computed } from 'vue';
 
 // Utils
-import { createNamespace, addUnit, getSizeStyle } from '../utils';
+import {
+  addUnit,
+  getSizeStyle,
+  preventDefault,
+  createNamespace,
+} from '../utils';
 import { deepClone } from '../utils/deep-clone';
-import { preventDefault } from '../utils/dom/event';
 
 // Composition
 import { useRect } from '../composition/use-rect';

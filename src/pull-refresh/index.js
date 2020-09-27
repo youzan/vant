@@ -1,9 +1,7 @@
 import { ref, watch, reactive, nextTick } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { getScrollTop } from '../utils/dom/scroll';
-import { preventDefault } from '../utils/dom/event';
+import { preventDefault, getScrollTop, createNamespace } from '../utils';
 
 // Composition
 import { useScrollParent } from '@vant/use';

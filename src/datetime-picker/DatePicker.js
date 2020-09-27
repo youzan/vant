@@ -1,11 +1,16 @@
 import { ref, watch, computed, nextTick, onMounted } from 'vue';
-import { createNamespace, pick } from '../utils';
+
+// Utils
 import { isDate } from '../utils/validate/date';
-import { padZero } from '../utils/format/string';
+import { pick, padZero, createNamespace } from '../utils';
 import { times, sharedProps, getTrueValue, getMonthEndDay } from './utils';
+
+// Composition
+import { useExpose } from '../composition/use-expose';
+
+// Components
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
-import { useExpose } from '../composition/use-expose';
 
 const currentYear = new Date().getFullYear();
 const [createComponent] = createNamespace('date-picker');

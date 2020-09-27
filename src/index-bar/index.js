@@ -1,15 +1,16 @@
 import { ref, computed, watch, nextTick } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
-import { isHidden } from '../utils/dom/style';
-import { preventDefault } from '../utils/dom/event';
 import {
+  isDef,
+  isHidden,
   getScrollTop,
   getElementTop,
+  preventDefault,
+  createNamespace,
   getRootScrollTop,
   setRootScrollTop,
-} from '../utils/dom/scroll';
+} from '../utils';
 
 // Composition
 import { useScrollParent, useEventListener } from '@vant/use';

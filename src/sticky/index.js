@@ -1,10 +1,13 @@
 import { ref, reactive, computed } from 'vue';
 
 // Utils
-import { isHidden } from '../utils/dom/style';
-import { unitToPx } from '../utils/format/unit';
-import { createNamespace } from '../utils';
-import { getScrollTop, getElementTop } from '../utils/dom/scroll';
+import {
+  isHidden,
+  unitToPx,
+  getScrollTop,
+  getElementTop,
+  createNamespace,
+} from '../utils';
 
 // Composition
 import { useScrollParent, useEventListener } from '@vant/use';

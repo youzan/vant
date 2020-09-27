@@ -9,22 +9,24 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, isDef, addUnit } from '../utils';
-import { scrollLeftTo, scrollTopTo } from './utils';
-import { route } from '../composition/use-route';
-import { isHidden } from '../utils/dom/style';
-import { unitToPx } from '../utils/format/unit';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { callInterceptor } from '../utils/interceptor';
 import {
+  isDef,
+  addUnit,
+  isHidden,
+  unitToPx,
   getVisibleTop,
   getElementTop,
+  createNamespace,
   getVisibleHeight,
   setRootScrollTop,
-} from '../utils/dom/scroll';
+} from '../utils';
+import { scrollLeftTo, scrollTopTo } from './utils';
+import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { callInterceptor } from '../utils/interceptor';
 
 // Composition
 import { useWindowSize, useScrollParent, useEventListener } from '@vant/use';
+import { route } from '../composition/use-route';
 import { useRefs } from '../composition/use-refs';
 import { useExpose } from '../composition/use-expose';
 import { useChildren } from '../composition/use-relation';

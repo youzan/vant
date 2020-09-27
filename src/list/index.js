@@ -1,8 +1,7 @@
 import { ref, watch, nextTick, onUpdated, onMounted } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { isHidden } from '../utils/dom/style';
+import { isHidden, createNamespace } from '../utils';
 
 // Composition
 import { useScrollParent, useEventListener } from '@vant/use';

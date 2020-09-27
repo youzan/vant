@@ -1,4 +1,4 @@
-import { padZero } from '../utils/format/string';
+import { padZero } from '../utils';
 
 export type TimeData = {
   days: number;

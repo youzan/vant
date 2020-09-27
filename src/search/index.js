@@ -1,6 +1,5 @@
 // Utils
-import { createNamespace, pick } from '../utils';
-import { preventDefault } from '../utils/dom/event';
+import { pick, createNamespace, preventDefault } from '../utils';
 
 // Components
 import Field from '../field';

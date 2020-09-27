@@ -1,6 +1,5 @@
 import { ref, watch, computed, Teleport, Transition } from 'vue';
-import { createNamespace } from '../utils';
-import { stopPropagation } from '../utils/dom/event';
+import { createNamespace, stopPropagation } from '../utils';
 import { useClickAway } from '@vant/use';
 import Key from './Key';
 

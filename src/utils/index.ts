@@ -1,5 +1,11 @@
-export { addUnit, getSizeStyle } from './format/unit';
-export { createNamespace } from './create';
+export * from './create';
+export * from './format/unit';
+export * from './format/number';
+export * from './format/string';
+export * from './dom/raf';
+export * from './dom/style';
+export * from './dom/event';
+export * from './dom/scroll';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}

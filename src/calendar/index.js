@@ -1,10 +1,8 @@
 import { ref, watch, reactive, computed, onMounted, onActivated } from 'vue';
 
 // Utils
-import { pick } from '../utils';
-import { raf } from '../utils/dom/raf';
+import { raf, pick, getScrollTop } from '../utils';
 import { isDate } from '../utils/validate/date';
-import { getScrollTop } from '../utils/dom/scroll';
 import {
   t,
   bem,
