@@ -1,4 +1,4 @@
-import { computed, Transition } from 'vue';
+import { Transition } from 'vue';
 import { createNamespace } from '../utils';
 import Icon from '../icon';
 
@@ -31,16 +31,17 @@ export default createComponent({
       emit('close');
     };
 
-    const style = computed(() => {
-      const key = props.plain ? 'color' : 'backgroundColor';
-      const style = { [key]: props.color };
-
-      if (props.textColor) {
-        style.color = props.textColor;
+    const getStyle = () => {
+      if (props.plain) {
+        return {
+          color: props.textColor || props.color,
+        };
       }
-
-      return style;
-    });
+      return {
+        color: props.textColor,
+        background: props.color,
+      };
+    };
 
     return () => {
       const { show, type, mark, plain, round, size, closeable } = props;
@@ -55,13 +56,13 @@ export default createComponent({
       );
 
       return (
-        <Transition name={closeable ? 'van-fade' : null}>
-          {show && (
-            <span style={style.value} class={bem([classes, type])}>
+        <Transition name={closeable ? 'van-fade' : undefined}>
+          {show ? (
+            <span style={getStyle()} class={bem([classes, type])}>
               {slots.default?.()}
               {CloseIcon}
             </span>
-          )}
+          ) : null}
         </Transition>
       );
     };
