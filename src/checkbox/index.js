@@ -1,8 +1,8 @@
 import { computed, watch } from 'vue';
 import { createNamespace, pick } from '../utils';
+import { useParent } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
 import { useLinkField } from '../composition/use-link-field';
-import { useParent } from '../composition/use-relation';
 import Checker, { checkerProps } from './Checker';
 
 const [createComponent, bem] = createNamespace('checkbox');

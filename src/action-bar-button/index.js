@@ -3,7 +3,7 @@ import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
 import { useRoute, routeProps } from '../composition/use-route';
 

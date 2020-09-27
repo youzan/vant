@@ -4,7 +4,7 @@ import { ref, watch, computed, nextTick } from 'vue';
 import { raf, doubleRaf, createNamespace } from '../utils';
 
 // Composition
-import { useParent } from '../composition/use-relation';
+import { useParent } from '@vant/use';
 import { useLazyRender } from '../composition/use-lazy-render';
 
 // Components

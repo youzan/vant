@@ -1,6 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
-import { useChildren } from '../composition/use-relation';
+import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('grid');
 

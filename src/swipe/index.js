@@ -19,11 +19,10 @@ import {
 } from '../utils';
 
 // Composition
-import { usePageVisibility, useWindowSize } from '@vant/use';
+import { useChildren, useWindowSize, usePageVisibility } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
 import { useExpose } from '../composition/use-expose';
-import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('swipe');
 

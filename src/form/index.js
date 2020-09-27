@@ -1,6 +1,6 @@
 import { createNamespace } from '../utils';
+import { useChildren } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
-import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('form');
 

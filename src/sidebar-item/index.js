@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composition/use-route';
 import { SIDEBAR_KEY } from '../sidebar';
 import Badge from '../badge';

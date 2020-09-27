@@ -6,9 +6,9 @@ import { deepClone } from '../utils/deep-clone';
 import { range, isObject, createNamespace, preventDefault } from '../utils';
 
 // Composition
+import { useParent } from '@vant/use';
 import { useTouch } from '../composition/use-touch';
 import { useExpose } from '../composition/use-expose';
-import { useParent } from '../composition/use-relation';
 
 const DEFAULT_DURATION = 200;
 

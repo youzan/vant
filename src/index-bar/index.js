@@ -13,10 +13,9 @@ import {
 } from '../utils';
 
 // Composition
-import { useScrollParent, useEventListener } from '@vant/use';
+import { useChildren, useScrollParent, useEventListener } from '@vant/use';
 import { useRect } from '../composition/use-rect';
 import { useTouch } from '../composition/use-touch';
-import { useChildren } from '../composition/use-relation';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 

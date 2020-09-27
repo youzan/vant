@@ -6,7 +6,7 @@ import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor } from '../utils/interceptor';
 
 // Composition
-import { useChildren } from '../composition/use-relation';
+import { useChildren } from '@vant/use';
 import { usePlaceholder } from '../composition/use-placeholder';
 
 const [createComponent, bem] = createNamespace('tabbar');

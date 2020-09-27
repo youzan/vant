@@ -3,8 +3,8 @@ import { createNamespace } from '../utils';
 import { TABS_KEY } from '../tabs';
 
 // Composition
+import { useParent } from '@vant/use';
 import { routeProps } from '../composition/use-route';
-import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('tab');
 

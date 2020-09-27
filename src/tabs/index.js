@@ -25,11 +25,15 @@ import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor } from '../utils/interceptor';
 
 // Composition
-import { useWindowSize, useScrollParent, useEventListener } from '@vant/use';
+import {
+  useChildren,
+  useWindowSize,
+  useScrollParent,
+  useEventListener,
+} from '@vant/use';
 import { route } from '../composition/use-route';
 import { useRefs } from '../composition/use-refs';
 import { useExpose } from '../composition/use-expose';
-import { useChildren } from '../composition/use-relation';
 
 // Components
 import Sticky from '../sticky';

@@ -4,9 +4,13 @@ import { ref, computed } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Composition
-import { useClickAway, useScrollParent, useEventListener } from '@vant/use';
+import {
+  useChildren,
+  useClickAway,
+  useScrollParent,
+  useEventListener,
+} from '@vant/use';
 import { useRect } from '../composition/use-rect';
-import { useChildren } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 

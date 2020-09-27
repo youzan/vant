@@ -6,9 +6,9 @@ import { BORDER_BOTTOM } from '../utils/constant';
 import { INDEX_BAR_KEY } from '../index-bar';
 
 // Composition
+import { useParent } from '@vant/use';
 import { useHeight } from '../composition/use-rect';
 import { useExpose } from '../composition/use-expose';
-import { useParent } from '../composition/use-relation';
 
 const [createComponent, bem] = createNamespace('index-anchor');
 

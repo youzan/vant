@@ -1,8 +1,8 @@
 import { watch } from 'vue';
 import { createNamespace } from '../utils';
 import { CHECKBOX_KEY } from '../checkbox';
+import { useChildren } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
-import { useChildren } from '../composition/use-relation';
 import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('checkbox-group');

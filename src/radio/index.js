@@ -1,5 +1,5 @@
 import { pick, createNamespace } from '../utils';
-import { useParent } from '../composition/use-relation';
+import { useParent } from '@vant/use';
 import Checker, { checkerProps } from '../checkbox/Checker';
 import { RADIO_KEY } from '../radio-group';
 

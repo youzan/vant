@@ -1,6 +1,6 @@
 import { watch } from 'vue';
 import { createNamespace } from '../utils';
-import { useChildren } from '../composition/use-relation';
+import { useChildren } from '@vant/use';
 import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('radio-group');

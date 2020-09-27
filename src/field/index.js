@@ -23,8 +23,8 @@ import {
 } from '../utils';
 
 // Composition
+import { useParent } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
-import { useParent } from '../composition/use-relation';
 
 // Components
 import Icon from '../icon';

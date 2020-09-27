@@ -6,8 +6,8 @@ import { unitToPx, preventDefault, createNamespace } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
 // Composition
+import { useChildren } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
-import { useChildren } from '../composition/use-relation';
 
 // Components
 import Loading from '../loading';
