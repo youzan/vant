@@ -81,7 +81,7 @@ export default {
 
 ### 选择月日
 
-将 type 设置为 `month-day` 即可选择月份和日期（从 2.8.4 版本开始支持）。
+将 type 设置为 `month-day` 即可选择月份和日期。
 
 ```html
 <van-datetime-picker
@@ -168,7 +168,7 @@ export default {
 
 ### 选择年月日小时
 
-将 type 设置为 `datehour` 即可选择日期和小时，包括年月日和小时（从 2.9.1 版本开始支持）。
+将 type 设置为 `datehour` 即可选择日期和小时，包括年月日和小时。
 
 ```html
 <van-datetime-picker
@@ -298,7 +298,7 @@ export default {
 
 | 事件名  | 说明                     | 回调参数              |
 | ------- | ------------------------ | --------------------- |
-| change  | 当值变化时触发的事件     | picker: Picker 实例   |
+| change  | 当值变化时触发的事件     | value: 当前选中的时间 |
 | confirm | 点击完成按钮时触发的事件 | value: 当前选中的时间 |
 | cancel  | 点击取消按钮时触发的事件 | -                     |
 

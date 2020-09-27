@@ -256,7 +256,7 @@ export default createComponent({
       updateInnerValue();
       nextTick(() => {
         nextTick(() => {
-          emit('change', picker.value);
+          emit('change', currentDate.value);
         });
       });
     };

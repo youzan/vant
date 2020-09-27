@@ -177,6 +177,10 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 - 默认关闭 `allow-html` 属性
 - `before-close` 属性用法调整，不再传入 done 函数，而是通过返回 Promise 来控制
 
+#### DatetimePicker
+
+- `change` 事件参数不再传入组件实例
+
 #### ImagePreview
 
 - 移除 `async-close` 属性，可以使用新增的 `before-close` 属性代替
