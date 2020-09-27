@@ -83,7 +83,7 @@ export default {
   }
 
   .algolia-docsearch-suggestion--title {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .algolia-docsearch-suggestion--text {

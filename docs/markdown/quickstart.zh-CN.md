@@ -31,7 +31,7 @@ npm i vant -S
 yarn add vant
 ```
 
-> Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)
+> Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)。
 
 ### 示例工程
 
@@ -85,7 +85,7 @@ module.exports = {
 import { Button } from 'vant';
 ```
 
-> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
+> Tips: 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
 
 ### 方式二. 手动按需引入组件
 
@@ -108,7 +108,7 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 ```
 
-> 配置按需引入后，将不允许直接导入所有组件
+> Tips: 配置按需引入后，将不允许直接导入所有组件。
 
 ### 方式四. 通过 CDN 引入
 
@@ -168,7 +168,7 @@ module.exports = {
 };
 ```
 
-> 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译
+> Tips: 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译。
 
 ### 在桌面端使用
 

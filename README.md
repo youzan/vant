@@ -48,7 +48,7 @@ npm i vant -S
 yarn add vant
 ```
 
-> Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035)
+> Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035).
 
 ## Quickstart
 
