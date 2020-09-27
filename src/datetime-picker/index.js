@@ -12,16 +12,16 @@ export default createComponent({
     ...DatePicker.props,
   },
 
-  setup(props) {
+  setup(props, { attrs }) {
     const root = ref();
 
     useExpose({
-      getPicker: () => root.value && root.value.getPicker(),
+      getPicker: () => root.value?.getPicker(),
     });
 
     return () => {
       const Component = props.type === 'time' ? TimePicker : DatePicker;
-      return <Component ref={root} class={bem()} {...props} />;
+      return <Component ref={root} class={bem()} {...{ ...props, ...attrs }} />;
     };
   },
 });

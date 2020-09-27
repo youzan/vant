@@ -5,6 +5,7 @@ import { padZero } from '../utils/format/string';
 import { times, sharedProps } from './utils';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent] = createNamespace('time-picker');
 
@@ -159,6 +160,10 @@ export default createComponent({
         }
       }
     );
+
+    useExpose({
+      getPicker: () => picker.value,
+    });
 
     return () => (
       <Picker

@@ -1,9 +1,11 @@
-import { createNamespace } from '../utils';
+import { ref, watch, computed, nextTick, onMounted } from 'vue';
+import { createNamespace, pick } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
 import { times, sharedProps, getTrueValue, getMonthEndDay } from './utils';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
+import { useExpose } from '../composition/use-expose';
 
 const currentYear = new Date().getFullYear();
 const [createComponent] = createNamespace('date-picker');
@@ -29,161 +31,23 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
-  data() {
-    return {
-      currentDate: this.formatValue(this.modelValue),
-    };
-  },
-
-  computed: {
-    ranges() {
-      const {
-        maxYear,
-        maxDate,
-        maxMonth,
-        maxHour,
-        maxMinute,
-      } = this.getBoundary('max', this.currentDate);
-
-      const {
-        minYear,
-        minDate,
-        minMonth,
-        minHour,
-        minMinute,
-      } = this.getBoundary('min', this.currentDate);
-
-      let result = [
-        {
-          type: 'year',
-          range: [minYear, maxYear],
-        },
-        {
-          type: 'month',
-          range: [minMonth, maxMonth],
-        },
-        {
-          type: 'day',
-          range: [minDate, maxDate],
-        },
-        {
-          type: 'hour',
-          range: [minHour, maxHour],
-        },
-        {
-          type: 'minute',
-          range: [minMinute, maxMinute],
-        },
-      ];
-
-      switch (this.type) {
-        case 'date':
-          result = result.slice(0, 3);
-          break;
-        case 'year-month':
-          result = result.slice(0, 2);
-          break;
-        case 'month-day':
-          result = result.slice(1, 3);
-          break;
-        case 'datehour':
-          result = result.slice(0, 4);
-          break;
-      }
-
-      if (this.columnsOrder) {
-        const columnsOrder = this.columnsOrder.concat(
-          result.map((column) => column.type)
-        );
-        result.sort(
-          (a, b) => columnsOrder.indexOf(a.type) - columnsOrder.indexOf(b.type)
-        );
-      }
-
-      return result;
-    },
-
-    originColumns() {
-      return this.ranges.map(({ type, range: rangeArr }) => {
-        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
-          const value = padZero(rangeArr[0] + index);
-          return value;
-        });
-
-        if (this.filter) {
-          values = this.filter(type, values);
-        }
-
-        return {
-          type,
-          values,
-        };
-      });
-    },
-
-    columns() {
-      return this.originColumns.map((column) => ({
-        values: column.values.map((value) =>
-          this.formatter(column.type, value)
-        ),
-      }));
-    },
-  },
-
-  watch: {
-    filter: 'updateInnerValue',
-    minDate: 'updateInnerValue',
-    maxDate: 'updateInnerValue',
-    columns: 'updateColumnValue',
-
-    currentDate(val) {
-      this.$emit('update:modelValue', val);
-    },
-
-    modelValue(val) {
-      val = this.formatValue(val);
-
-      if (val.valueOf() !== this.currentDate.valueOf()) {
-        this.currentDate = val;
-      }
-    },
-  },
-
-  mounted() {
-    this.updateColumnValue();
-
-    this.$nextTick(() => {
-      this.updateInnerValue();
-    });
-  },
-
-  methods: {
-    // @exposed-api
-    getPicker() {
-      return this.$refs.picker;
-    },
-
-    onConfirm() {
-      this.$emit('confirm', this.currentDate);
-    },
-
-    onCancel() {
-      this.$emit('cancel');
-    },
-
-    formatValue(value) {
+  setup(props, { emit }) {
+    const formatValue = (value) => {
       if (!isDate(value)) {
-        value = this.minDate;
+        value = props.minDate;
       }
 
-      value = Math.max(value, this.minDate.getTime());
-      value = Math.min(value, this.maxDate.getTime());
+      value = Math.max(value, props.minDate.getTime());
+      value = Math.min(value, props.maxDate.getTime());
 
       return new Date(value);
-    },
+    };
 
-    getBoundary(type, value) {
-      const boundary = this[`${type}Date`];
+    const picker = ref();
+    const currentDate = ref(formatValue(props.modelValue));
+
+    const getBoundary = (type, value) => {
+      const boundary = props[`${type}Date`];
       const year = boundary.getFullYear();
       let month = 1;
       let date = 1;
@@ -217,19 +81,134 @@ export default createComponent({
         [`${type}Hour`]: hour,
         [`${type}Minute`]: minute,
       };
-    },
+    };
 
-    updateInnerValue() {
-      const { type } = this;
-      const indexes = this.getPicker().getIndexes();
+    const ranges = computed(() => {
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = getBoundary(
+        'max',
+        currentDate.value
+      );
+
+      const { minYear, minDate, minMonth, minHour, minMinute } = getBoundary(
+        'min',
+        currentDate.value
+      );
+
+      let result = [
+        {
+          type: 'year',
+          range: [minYear, maxYear],
+        },
+        {
+          type: 'month',
+          range: [minMonth, maxMonth],
+        },
+        {
+          type: 'day',
+          range: [minDate, maxDate],
+        },
+        {
+          type: 'hour',
+          range: [minHour, maxHour],
+        },
+        {
+          type: 'minute',
+          range: [minMinute, maxMinute],
+        },
+      ];
+
+      switch (props.type) {
+        case 'date':
+          result = result.slice(0, 3);
+          break;
+        case 'year-month':
+          result = result.slice(0, 2);
+          break;
+        case 'month-day':
+          result = result.slice(1, 3);
+          break;
+        case 'datehour':
+          result = result.slice(0, 4);
+          break;
+      }
+
+      if (props.columnsOrder) {
+        const columnsOrder = props.columnsOrder.concat(
+          result.map((column) => column.type)
+        );
+        result.sort(
+          (a, b) => columnsOrder.indexOf(a.type) - columnsOrder.indexOf(b.type)
+        );
+      }
+
+      return result;
+    });
+
+    const originColumns = computed(() =>
+      ranges.value.map(({ type, range: rangeArr }) => {
+        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
+          const value = padZero(rangeArr[0] + index);
+          return value;
+        });
+
+        if (props.filter) {
+          values = props.filter(type, values);
+        }
+
+        return {
+          type,
+          values,
+        };
+      })
+    );
+
+    const columns = computed(() =>
+      originColumns.value.map((column) => ({
+        values: column.values.map((value) =>
+          props.formatter(column.type, value)
+        ),
+      }))
+    );
+
+    const updateColumnValue = () => {
+      const { value } = currentDate;
+      const { formatter } = props;
+
+      const values = originColumns.value.map((column) => {
+        switch (column.type) {
+          case 'year':
+            return formatter('year', `${value.getFullYear()}`);
+          case 'month':
+            return formatter('month', padZero(value.getMonth() + 1));
+          case 'day':
+            return formatter('day', padZero(value.getDate()));
+          case 'hour':
+            return formatter('hour', padZero(value.getHours()));
+          case 'minute':
+            return formatter('minute', padZero(value.getMinutes()));
+          default:
+            // no default
+            return null;
+        }
+      });
+
+      nextTick(() => {
+        picker.value.setValues(values);
+      });
+    };
+
+    const updateInnerValue = () => {
+      const { type } = props;
+      const indexes = picker.value.getIndexes();
+
       const getValue = (type) => {
         let index = 0;
-        this.originColumns.forEach((column, columnIndex) => {
+        originColumns.value.forEach((column, columnIndex) => {
           if (type === column.type) {
             index = columnIndex;
           }
         });
-        const { values } = this.originColumns[index];
+        const { values } = originColumns.value[index];
         return getTrueValue(values[indexes[index]]);
       };
 
@@ -237,7 +216,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = this.currentDate.getFullYear();
+        year = currentDate.value.getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -262,63 +241,66 @@ export default createComponent({
       }
 
       const value = new Date(year, month - 1, day, hour, minute);
+      currentDate.value = formatValue(value);
+    };
 
-      this.currentDate = this.formatValue(value);
-    },
+    const onConfirm = () => {
+      emit('confirm', currentDate.value);
+    };
 
-    onChange(picker) {
-      this.updateInnerValue();
+    const onCancel = () => {
+      emit('cancel');
+    };
 
-      this.$nextTick(() => {
-        this.$nextTick(() => {
-          this.$emit('change', picker);
+    const onChange = () => {
+      updateInnerValue();
+      nextTick(() => {
+        nextTick(() => {
+          emit('change', picker.value);
         });
       });
-    },
+    };
 
-    updateColumnValue() {
-      const value = this.currentDate;
-      const { formatter } = this;
-
-      const values = this.originColumns.map((column) => {
-        switch (column.type) {
-          case 'year':
-            return formatter('year', `${value.getFullYear()}`);
-          case 'month':
-            return formatter('month', padZero(value.getMonth() + 1));
-          case 'day':
-            return formatter('day', padZero(value.getDate()));
-          case 'hour':
-            return formatter('hour', padZero(value.getHours()));
-          case 'minute':
-            return formatter('minute', padZero(value.getMinutes()));
-          default:
-            // no default
-            return null;
-        }
-      });
-
-      this.$nextTick(() => {
-        this.getPicker().setValues(values);
-      });
-    },
-  },
-
-  render() {
-    const props = {};
-    Object.keys(pickerProps).forEach((key) => {
-      props[key] = this[key];
+    onMounted(() => {
+      updateColumnValue();
+      nextTick(updateInnerValue);
     });
 
-    return (
+    watch(columns, updateColumnValue);
+
+    watch(currentDate, (value) => {
+      emit('update:modelValue', value);
+    });
+
+    watch(
+      [() => props.filter, () => props.minDate, () => props.maxDate],
+      updateInnerValue
+    );
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        value = formatValue(value);
+
+        if (value.valueOf() !== currentDate.value.valueOf()) {
+          currentDate.value = value;
+        }
+      }
+    );
+
+    useExpose({
+      getPicker: () => picker.value,
+    });
+
+    return () => (
       <Picker
-        ref="picker"
-        columns={this.columns}
-        readonly={this.readonly}
-        onChange={this.onChange}
-        onConfirm={this.onConfirm}
-        onCancel={this.onCancel}
-        {...props}
+        ref={picker}
+        columns={columns.value}
+        readonly={props.readonly}
+        onChange={onChange}
+        onCancel={onCancel}
+        onConfirm={onConfirm}
+        {...pick(props, Object.keys(pickerProps))}
       />
     );
   },
