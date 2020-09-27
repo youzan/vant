@@ -32,11 +32,10 @@ export default createComponent({
       emit('focus', event);
     };
 
-    return () => {
-      const { mask, value, length, gutter, focused, errorInfo } = props;
-      const info = errorInfo || props.info;
-
+    const renderPoints = () => {
       const Points = [];
+      const { mask, value, length, gutter, focused } = props;
+
       for (let i = 0; i < length; i++) {
         const char = value[i];
         const showBorder = i !== 0 && !gutter;
@@ -65,16 +64,23 @@ export default createComponent({
         );
       }
 
+      return Points;
+    };
+
+    return () => {
+      const info = props.errorInfo || props.info;
       return (
         <div class={bem()}>
           <ul
-            class={[bem('security'), { [BORDER_SURROUND]: !gutter }]}
+            class={[bem('security'), { [BORDER_SURROUND]: !props.gutter }]}
             onTouchstart={onTouchStart}
           >
-            {Points}
+            {renderPoints()}
           </ul>
           {info && (
-            <div class={bem(errorInfo ? 'error-info' : 'info')}>{info}</div>
+            <div class={bem(props.errorInfo ? 'error-info' : 'info')}>
+              {info}
+            </div>
           )}
         </div>
       );
