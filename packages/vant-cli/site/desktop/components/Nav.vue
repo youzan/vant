@@ -120,11 +120,11 @@ export default {
   &__item {
     a {
       display: block;
-      margin: 0;
+      margin: 8px 0;
       padding: 8px 0 8px @van-doc-padding;
       color: #455a64;
       font-size: 14px;
-      line-height: 28px;
+      line-height: 20px;
       transition: color 0.2s;
 
       &:hover,
@@ -133,8 +133,9 @@ export default {
       }
 
       &.active {
-        background-color: fade(@van-doc-green, 8);
-        border-radius: 8px;
+        font-weight: 600;
+        background-color: #ebfff0;
+        border-radius: 999px;
       }
 
       span {
