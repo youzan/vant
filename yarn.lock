@@ -2053,10 +2053,10 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
-"@vant/cli@^3.0.0-beta.0":
-  version "3.0.0-beta.0"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-beta.0.tgz#dd3d0f4c12b7437649dc1c87fb0a70117410ec50"
-  integrity sha512-YHeaK0KzkqsjefC7zOrNJc1wVimJfcpgv3ycUU0w7Ge4Jv4D9gmWmUADU3Ji9tmFYXtE/i0/bLnd9yOqeHas7w==
+"@vant/cli@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-beta.1.tgz#22d43a6f832f430b36ca5b5ff31809dc43a1acc4"
+  integrity sha512-B/4V0V7GcXsD4RkiMcoJOHddlzw345BP/4f7ZUww1kLiwnNaFc48HtqBCOE/5yLfTPBU9tCAgbwwelGum1434A==
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
