@@ -15,7 +15,7 @@ app.use(CheckboxGroup);
 
 ### 基础用法
 
-通过`v-model`绑定复选框的勾选状态
+通过 `v-model` 绑定复选框的勾选状态。
 
 ```html
 <van-checkbox v-model="checked">复选框</van-checkbox>
@@ -33,7 +33,7 @@ export default {
 
 ### 禁用状态
 
-通过设置`disabled`属性可以禁用复选框
+通过设置 `disabled` 属性可以禁用复选框。
 
 ```html
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
@@ -41,7 +41,7 @@ export default {
 
 ### 自定义形状
 
-将`shape`属性设置为`square`，复选框的形状会变成方形
+将 `shape` 属性设置为 `square`，复选框的形状会变成方形。
 
 ```html
 <van-checkbox v-model="checked" shape="square">复选框</van-checkbox>
@@ -49,7 +49,7 @@ export default {
 
 ### 自定义颜色
 
-通过`checked-color`属性设置选中状态的图标颜色
+通过 `checked-color` 属性设置选中状态的图标颜色。
 
 ```html
 <van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
@@ -57,7 +57,7 @@ export default {
 
 ### 自定义大小
 
-通过`icon-size`属性可以自定义图标的大小
+通过 `icon-size` 属性可以自定义图标的大小。
 
 ```html
 <van-checkbox v-model="checked" icon-size="24px">复选框</van-checkbox>
@@ -65,7 +65,7 @@ export default {
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标，可以通过`slotProps`判断是否为选中状态
+通过 `icon` 插槽自定义图标，可以通过 `slotProps` 判断是否为选中状态.
 
 ```html
 <van-checkbox v-model="checked">
@@ -96,7 +96,7 @@ export default {
 
 ### 禁用文本点击
 
-设置`label-disabled`属性后，点击图标以外的内容不会触发复选框切换
+设置 `label-disabled` 属性后，点击图标以外的内容不会触发复选框切换。
 
 ```html
 <van-checkbox v-model="checked" label-disabled>复选框</van-checkbox>
@@ -104,7 +104,7 @@ export default {
 
 ### 复选框组
 
-复选框可以与复选框组一起使用，复选框组通过`v-model`数组绑定复选框的勾选状态
+复选框可以与复选框组一起使用，复选框组通过 `v-model` 数组绑定复选框的勾选状态。
 
 ```html
 <van-checkbox-group v-model="result">
@@ -125,7 +125,7 @@ export default {
 
 ### 水平排列
 
-将`direction`属性设置为`horizontal`后，复选框组会变成水平排列
+将 `direction` 属性设置为 `horizontal` 后，复选框组会变成水平排列。
 
 ```html
 <van-checkbox-group v-model="result" direction="horizontal">
@@ -146,7 +146,7 @@ export default {
 
 ### 限制最大可选数
 
-通过`max`属性可以限制复选框组的最大可选数
+通过 `max` 属性可以限制复选框组的最大可选数。
 
 ```html
 <van-checkbox-group v-model="result" :max="2">
@@ -158,7 +158,7 @@ export default {
 
 ### 全选与反选
 
-通过`CheckboxGroup`实例上的`toggleAll`方法可以实现全选与反选
+通过 `CheckboxGroup` 实例上的 `toggleAll` 方法可以实现全选与反选。
 
 ```html
 <van-checkbox-group v-model="result" ref="checkboxGroup">
@@ -191,7 +191,7 @@ export default {
 
 ### 搭配单元格组件使用
 
-此时你需要再引入`Cell`和`CellGroup`组件，并通过`Checkbox`实例上的 toggle 方法触发切换
+此时你需要再引入 `Cell` 和 `CellGroup` 组件，并通过 `Checkbox` 实例上的 toggle 方法触发切换。
 
 ```html
 <van-checkbox-group v-model="result">

@@ -37,7 +37,7 @@ export default {
 
 ### Position
 
-Use `position` prop to set popup display position
+Use `position` prop to set popup display position.
 
 ```html
 <van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
@@ -83,7 +83,7 @@ Use `position` prop to set popup display position
 
 ### Get Container
 
-Use `teleport` prop to specify mount location
+Use `teleport` prop to specify mount location.
 
 ```html
 <!-- mount to body -->

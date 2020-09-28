@@ -15,7 +15,7 @@ app.use(IndexAnchor);
 
 ### 基础用法
 
-点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置
+点击索引栏时，会自动跳转到对应的 `IndexAnchor` 锚点位置。
 
 ```html
 <van-index-bar>
@@ -35,7 +35,7 @@ app.use(IndexAnchor);
 
 ### 自定义索引列表
 
-可以通过`index-list`属性自定义展示的索引字符列表，
+可以通过 `index-list` 属性自定义展示的索引字符列表。
 
 ```html
 <van-index-bar :index-list="indexList">

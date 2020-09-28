@@ -137,8 +137,8 @@ export default {
 <style>
   .preview-cover {
     position: absolute;
-    box-sizing: border-box;
     bottom: 0;
+    box-sizing: border-box;
     width: 100%;
     padding: 4px;
     color: #fff;

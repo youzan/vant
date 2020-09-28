@@ -80,7 +80,7 @@ export default {
 
 ### Hint Error
 
-Use `error-info` prop to set error message. For example, a password error is prompted when entering 6 bits
+Use `error-info` prop to set error message. For example, a password error is prompted when entering 6 bits.
 
 ```html
 <!-- PasswordInput -->

@@ -15,7 +15,7 @@ app.use(CollapseItem);
 
 ### 基础用法
 
-通过`v-model`控制展开的面板列表，`activeNames`为数组格式
+通过 `v-model` 控制展开的面板列表，`activeNames` 为数组格式。
 
 ```html
 <van-collapse v-model="activeNames">
@@ -37,7 +37,7 @@ export default {
 
 ### 手风琴
 
-通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
+通过 `accordion` 可以设置为手风琴模式，最多展开一个面板，此时 `activeName` 为字符串格式。
 
 ```html
 <van-collapse v-model="activeName" accordion>

@@ -55,7 +55,7 @@ export default {
 
 ### Custom Icon
 
-Use icon slot to custom icon
+Use icon slot to custom icon.
 
 ```html
 <van-checkbox v-model="checked">

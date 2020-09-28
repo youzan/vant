@@ -15,7 +15,7 @@ app.use(RadioGroup);
 
 ### Basic Usage
 
-Use `v-model` to bind the name of checked radio
+Use `v-model` to bind the name of checked radio.
 
 ```html
 <van-radio-group v-model="radio">
@@ -102,8 +102,8 @@ Use icon slot to custom icon
 <style>
   .img-icon {
     height: 20px;
-  }</style
->>
+  }
+</style>
 ```
 
 ```js

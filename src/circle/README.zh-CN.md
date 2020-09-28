@@ -14,7 +14,7 @@ app.use(Circle);
 
 ### 基础用法
 
-`rate`属性表示进度条的目标进度，`v-model:currentRate`表示动画过程中的实时进度。当`rate`发生变化时，`v-model:currentRate`会以`speed`的速度变化，直至达到`rate`设定的值。
+`rate` 属性表示进度条的目标进度，`v-model:currentRate` 表示动画过程中的实时进度。当 `rate` 发生变化时，`v-model:currentRate` 会以 `speed` 的速度变化，直至达到 `rate` 设定的值。
 
 ```html
 <van-circle
@@ -42,7 +42,7 @@ export default {
 
 ### 宽度定制
 
-通过`stroke-width`属性来控制进度条宽度
+通过 `stroke-width` 属性来控制进度条宽度。
 
 ```html
 <van-circle
@@ -55,7 +55,7 @@ export default {
 
 ### 颜色定制
 
-通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色
+通过 `color` 属性来控制进度条颜色，`layer-color` 属性来控制轨道颜色。
 
 ```html
 <van-circle
@@ -68,7 +68,7 @@ export default {
 
 ### 渐变色
 
-`color`属性支持传入对象格式来定义渐变色
+`color` 属性支持传入对象格式来定义渐变色。
 
 ```html
 <van-circle
@@ -95,7 +95,7 @@ export default {
 
 ### 逆时针方向
 
-将`clockwise`设置为`false`，进度会从逆时针方向开始
+将 `clockwise` 设置为 `false`，进度会从逆时针方向开始。
 
 ```html
 <van-circle
@@ -108,7 +108,7 @@ export default {
 
 ### 大小定制
 
-通过`size`属性设置圆环直径
+通过 `size` 属性设置圆环直径。
 
 ```html
 <van-circle

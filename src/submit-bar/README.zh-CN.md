@@ -20,7 +20,7 @@ app.use(SubmitBar);
 
 ### 禁用状态
 
-禁用状态下不会触发`submit`事件
+禁用状态下不会触发 `submit` 事件。
 
 ```html
 <van-submit-bar
@@ -35,7 +35,7 @@ app.use(SubmitBar);
 
 ### 加载状态
 
-加载状态下不会触发`submit`事件
+加载状态下不会触发 `submit` 事件。
 
 ```html
 <van-submit-bar
@@ -48,7 +48,7 @@ app.use(SubmitBar);
 
 ### 高级用法
 
-通过插槽插入自定义内容
+通过插槽插入自定义内容。
 
 ```html
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">

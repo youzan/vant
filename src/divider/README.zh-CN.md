@@ -14,7 +14,7 @@ app.use(Divider);
 
 ### 基础用法
 
-默认渲染一条水平分割线
+默认渲染一条水平分割线。
 
 ```html
 <van-divider />
@@ -22,7 +22,7 @@ app.use(Divider);
 
 ### 展示文字
 
-通过插槽在可以分割线中间插入内容
+通过插槽在可以分割线中间插入内容。
 
 ```html
 <van-divider>文字</van-divider>
@@ -30,7 +30,7 @@ app.use(Divider);
 
 ### 内容位置
 
-通过`content-position`指定内容所在位置
+通过 `content-position` 指定内容所在位置。
 
 ```html
 <van-divider content-position="left">文字</van-divider>
@@ -39,7 +39,7 @@ app.use(Divider);
 
 ### 虚线
 
-添加`dashed`属性使分割线渲染为虚线
+添加 `dashed` 属性使分割线渲染为虚线。
 
 ```html
 <van-divider dashed>文字</van-divider>
@@ -47,7 +47,7 @@ app.use(Divider);
 
 ### 自定义样式
 
-可以直接通过`style`属性设置分割线的样式
+可以直接通过 `style` 属性设置分割线的样式。
 
 ```html
 <van-divider

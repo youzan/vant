@@ -20,7 +20,7 @@ app.use(Empty);
 
 ### Image Type
 
-Use the image prop to display different placeholder images
+Use the image prop to display different placeholder images.
 
 ```html
 <!-- Error -->

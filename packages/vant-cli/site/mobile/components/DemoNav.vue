@@ -46,7 +46,7 @@ export default {
   background-color: #fff;
 
   &__title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 17px;
     text-transform: capitalize;
   }

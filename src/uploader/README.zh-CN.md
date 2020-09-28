@@ -33,7 +33,7 @@ export default {
 
 ### 文件预览
 
-通过`v-model`可以绑定已经上传的文件列表，并展示文件列表的预览图。
+通过 `v-model` 可以绑定已经上传的文件列表，并展示文件列表的预览图。
 
 ```html
 <van-uploader v-model="fileList" multiple />
@@ -157,8 +157,8 @@ export default {
 <style>
   .preview-cover {
     position: absolute;
-    box-sizing: border-box;
     bottom: 0;
+    box-sizing: border-box;
     width: 100%;
     padding: 4px;
     color: #fff;
@@ -210,7 +210,7 @@ export default {
 
 ### 禁用文件上传
 
-通过 `disabled` 属性禁用文件上传
+通过 `disabled` 属性禁用文件上传。
 
 ```html
 <van-uploader disabled />

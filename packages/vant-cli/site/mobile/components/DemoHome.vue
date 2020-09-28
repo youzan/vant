@@ -85,7 +85,6 @@ export default {
 
     span {
       margin-left: 16px;
-      font-weight: 500;
     }
 
     &--small {

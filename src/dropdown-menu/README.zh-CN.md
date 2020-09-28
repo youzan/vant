@@ -45,7 +45,7 @@ export default {
 
 ### 自定义菜单内容
 
-通过插槽可以自定义`DropdownItem`的内容，此时需要使用实例上的`toggle`方法手动控制菜单的显示
+通过插槽可以自定义 `DropdownItem` 的内容，此时需要使用实例上的 `toggle` 方法手动控制菜单的显示。
 
 ```html
 <van-dropdown-menu>
@@ -94,7 +94,7 @@ export default {
 
 ### 自定义选中态颜色
 
-通过`active-color`属性可以自定义菜单标题和选项的选中态颜色
+通过 `active-color` 属性可以自定义菜单标题和选项的选中态颜色。
 
 ```html
 <van-dropdown-menu active-color="#1989fa">
@@ -105,7 +105,7 @@ export default {
 
 ### 向上展开
 
-将`direction`属性值设置为`up`，菜单即可向上展开
+将 `direction` 属性值设置为 `up`，菜单即可向上展开。
 
 ```html
 <van-dropdown-menu direction="up">
