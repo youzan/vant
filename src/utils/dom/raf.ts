@@ -2,7 +2,7 @@
  * requestAnimationFrame polyfill
  */
 
-import { inBrowser } from '..';
+import { inBrowser } from '../base';
 
 let prev = Date.now();
 

@@ -1,4 +1,4 @@
-import { isDef, inBrowser } from '..';
+import { isDef, inBrowser } from '../base';
 import { isNumeric } from '../validate/number';
 
 export function addUnit(value?: string | number): string | undefined {

@@ -1,4 +1,4 @@
-import { inBrowser } from '..';
+import { inBrowser } from '../base';
 
 export function isAndroid(): boolean {
   return inBrowser ? /android/.test(navigator.userAgent.toLowerCase()) : false;

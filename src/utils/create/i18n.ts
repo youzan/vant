@@ -1,4 +1,5 @@
-import { get, camelize, isFunction } from '..';
+import { get, isFunction } from '../base';
+import { camelize } from '../format/string';
 import locale from '../../locale';
 
 export function createI18N(name: string) {
