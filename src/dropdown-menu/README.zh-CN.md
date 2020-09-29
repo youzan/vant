@@ -171,7 +171,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggle | 切换菜单展示状态，传`true`为显示，`false`为隐藏，不传参为取反 | show?: boolean | - |
+| toggle | 切换菜单展示状态，传 `true` 为显示，`false` 为隐藏，不传参为取反 | _show?: boolean_ | - |
 
 ### Option 数据结构
 

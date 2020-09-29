@@ -105,15 +105,17 @@ export default createComponent({
 
   methods: {
     onClick() {
-      if (this.disabled) {
-        return;
+      if (!this.disabled) {
+        this.toggle();
       }
+    },
 
+    // @exposed-api
+    toggle(expanded = !this.expanded) {
       const { parent, currentName } = this;
       const close = parent.accordion && currentName === parent.value;
       const name = close ? '' : currentName;
-
-      parent.switch(name, !this.expanded);
+      this.parent.switch(name, expanded);
     },
 
     onTransitionEnd() {

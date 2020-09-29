@@ -165,9 +165,9 @@ Use `active-color` prop to custom active color of the title and options.
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get DropdownItem instance and call instance methods
 
-| Name   | Description    | Attribute     | Return value |
-| ------ | -------------- | ------------- | ------------ |
-| toggle | Toggle display | show: boolean | -            |
+| Name   | Description    | Attribute       | Return value |
+| ------ | -------------- | --------------- | ------------ |
+| toggle | Toggle display | _show: boolean_ | -            |
 
 ### Data Structure of Option
 

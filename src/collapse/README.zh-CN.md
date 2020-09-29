@@ -117,10 +117,18 @@ export default {
 
 ### CollapseItem Slots
 
-| 名称       | 说明                          |
-| ---------- | ----------------------------- |
-| default    | 面板内容                      |
-| value      | 自定义显示内容                |
-| icon       | 自定义`icon`                  |
-| title      | 自定义`title`                 |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| 名称       | 说明                           |
+| ---------- | ------------------------------ |
+| default    | 面板内容                       |
+| value      | 自定义显示内容                 |
+| icon       | 自定义 `icon`                  |
+| title      | 自定义 `title`                 |
+| right-icon | 自定义右侧按钮，默认是 `arrow` |
+
+### CollapseItem 方法
+
+通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle `v2.10.9` | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
