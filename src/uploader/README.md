@@ -253,7 +253,7 @@ Use `disabled` prop to disable uploader.
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |

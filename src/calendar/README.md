@@ -312,7 +312,7 @@ Following props are supported when the type is multiple
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods.
 
 | Name  | Description                         | Attribute | Return value |
 | ----- | ----------------------------------- | --------- | ------------ |

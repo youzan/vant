@@ -144,3 +144,61 @@ test('warn when value type is incorrect', () => {
   expect(error).toHaveBeenCalledTimes(1);
   console.error = originConsoleError;
 });
+
+test('toggle method', (done) => {
+  mount({
+    template: `
+    <van-collapse v-model="active" >
+      <van-collapse-item name="a" ref="a" />
+      <van-collapse-item name="b" ref="b" />
+    </van-collapse>
+  `,
+    data() {
+      return { active: [] };
+    },
+    mounted() {
+      this.$refs.a.toggle();
+      expect(this.active).toEqual(['a']);
+
+      this.$refs.b.toggle();
+      expect(this.active).toEqual(['a', 'b']);
+
+      this.$refs.b.toggle(false);
+      expect(this.active).toEqual(['a']);
+
+      this.$refs.a.toggle();
+      expect(this.active).toEqual([]);
+
+      done();
+    },
+  });
+});
+
+test('toggle method in accordion mode', (done) => {
+  mount({
+    template: `
+    <van-collapse v-model="active" accordion>
+      <van-collapse-item name="a" ref="a" />
+      <van-collapse-item name="b" ref="b" />
+    </van-collapse>
+  `,
+    data() {
+      return { active: '' };
+    },
+    mounted() {
+      this.$refs.a.toggle();
+      expect(this.active).toEqual('a');
+
+      this.$refs.b.toggle();
+      expect(this.active).toEqual('b');
+
+      this.$refs.b.toggle(false);
+      expect(this.active).toEqual('');
+
+      this.$refs.a.toggle();
+      expect(this.active).toEqual('a');
+
+      done();
+    },
+  });
+});
