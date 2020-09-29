@@ -89,7 +89,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance methods.
 
 | Name  | Description               | Attribute     | Return value |
 | ----- | ------------------------- | ------------- | ------------ |

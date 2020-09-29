@@ -129,7 +129,7 @@ export default {
 
 ### CollapseItem Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get CollapseItem instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get CollapseItem instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
