@@ -294,10 +294,15 @@ export default createComponent({
     updateValue(value, trigger = 'onChange') {
       value = isDef(value) ? String(value) : '';
 
-      // native maxlength not work when type is number
+      // native maxlength have incorrect line-break counting
+      // see: https://github.com/youzan/vant/issues/5033
       const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
-        value = value.slice(0, maxlength);
+        if (this.value && this.value.length === +maxlength) {
+          ({ value } = this);
+        } else {
+          value = value.slice(0, maxlength);
+        }
       }
 
       if (this.type === 'number' || this.type === 'digit') {
