@@ -298,7 +298,7 @@ export default createComponent({
       // see: https://github.com/youzan/vant/issues/5033
       const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
-        if (this.value.length === +maxlength) {
+        if (this.value && this.value.length === +maxlength) {
           ({ value } = this);
         } else {
           value = value.slice(0, maxlength);
