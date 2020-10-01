@@ -23,8 +23,8 @@
 
     <demo-block :title="t('title3')">
       <van-pagination
-        force-ellipses
         v-model="currentPage3"
+        force-ellipses
         :total-items="125"
         :show-page-size="3"
         :prev-text="t('prevText')"
@@ -56,14 +56,14 @@ export default {
     'zh-CN': {
       title2: '简单模式',
       title3: '显示省略号',
-      title4: '自定义渲染',
+      title4: '自定义按钮',
       prevText: '上一页',
       nextText: '下一页',
     },
     'en-US': {
       title2: 'Simple Mode',
       title3: 'Show ellipses',
-      title4: 'Custom Render',
+      title4: 'Custom Button',
       prevText: 'Prev',
       nextText: 'Next',
     },

@@ -13,6 +13,8 @@ Vue.use(Pagination);
 
 ### 基础用法
 
+通过 `v-model` 来绑定当前页码。
+
 ```html
 <van-pagination v-model="currentPage" :total-items="24" :items-per-page="5" />
 ```
@@ -29,11 +31,15 @@ export default {
 
 ### 简单模式
 
+ 将 `mode` 设置为 `simple` 来切换到简单模式，此时分页器不会展示具体的页码按钮。
+
 ```html
 <van-pagination v-model="currentPage" :page-count="12" mode="simple" />
 ```
 
 ### 显示省略号
+
+设置 `force-ellipses` 后会展示省略号按钮，点击后可以快速跳转。
 
 ```html
 <van-pagination
@@ -44,7 +50,9 @@ export default {
 />
 ```
 
-### 自定义渲染
+### 自定义按钮
+
+通过 `prev-text`、`next-text` 等插槽来自定义分页按钮的内容。
 
 ```html
 <van-pagination v-model="currentPage" :total-items="50" :show-page-size="5">
@@ -84,6 +92,6 @@ export default {
 
 | 名称 | 描述 | SlotProps |
 | --- | --- | --- |
-| page `v2.10.9` | 自定义页码 | `{ number: number, text: string, active: boolean }` |
+| page `v2.10.9` | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
 | prev-text `v2.10.9` | 自定义上一页按钮文字 | `-` |
 | next-text `v2.10.9` | 自定义下一页按钮文字 | `-` |
