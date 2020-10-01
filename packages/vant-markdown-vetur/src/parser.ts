@@ -1,6 +1,6 @@
 /* eslint-disable no-cond-assign */
 const TITLE_REG = /^(#+)\s+([^\n]*)/;
-const TABLE_REG = /^\|.+\n\|\s*-+/;
+const TABLE_REG = /^\|.+\r?\n\|\s*-+/;
 const TD_REG = /\s*`[^`]+`\s*|([^|`]+)/g;
 const TABLE_SPLIT_LINE_REG = /^\|\s*-/;
 
