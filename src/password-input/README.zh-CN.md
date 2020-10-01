@@ -2,7 +2,7 @@
 
 ### 介绍
 
-带网格的输入框组件，可以用于输入支付密码、短信验证码等，通常与[数字键盘](#/zh-CN/number-keyboard)组件配合使用。
+带网格的输入框组件，可以用于输入密码、短信验证码等场景，通常与[数字键盘](#/zh-CN/number-keyboard)组件配合使用。
 
 ### 引入
 
@@ -18,19 +18,19 @@ Vue.use(NumberKeyboard);
 
 ### 基础用法
 
+搭配数字键盘组件来实现密码输入功能。
+
 ```html
 <!-- 密码输入框 -->
 <van-password-input
   :value="value"
-  info="密码为 6 位数字"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 <!-- 数字键盘 -->
 <van-number-keyboard
+  v-model="value"
   :show="showKeyboard"
-  @input="onInput"
-  @delete="onDelete"
   @blur="showKeyboard = false"
 />
 ```
@@ -43,30 +43,38 @@ export default {
       showKeyboard: true,
     };
   },
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
-    },
-  },
 };
 ```
 
 ### 自定义长度
 
+通过 `length` 属性来设置密码长度。
+
 ```html
 <van-password-input
   :value="value"
   :length="4"
-  :gutter="15"
+  :focused="showKeyboard"
+  @focus="showKeyboard = true"
+/>
+```
+
+### 格子间距
+
+通过 `gutter` 属性来设置格子之间的间距。
+
+```html
+<van-password-input
+  :value="value"
+  :gutter="10"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
 
 ### 明文展示
+
+将 `mask` 设置为 `false` 可以明文展示输入的内容，适用于短信验证码等场景。
 
 ```html
 <van-password-input
@@ -77,23 +85,21 @@ export default {
 />
 ```
 
-### 错误提示
+### 提示信息
 
-通过 `error-info` 属性可以设置错误提示信息，例如当输入六位时提示密码错误。
+通过 `info` 属性设置提示信息，通过 `error-info` 属性设置错误提示，例如当输入六位时提示密码错误。
 
 ```html
-<!-- 密码输入框 -->
 <van-password-input
   :value="value"
+  info="密码为 6 位数字"
   :error-info="errorInfo"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
-<!-- 数字键盘 -->
 <van-number-keyboard
+  v-model="value"
   :show="showKeyboard"
-  @input="onInput"
-  @delete="onDelete"
   @blur="showKeyboard = false"
 />
 ```
@@ -103,21 +109,17 @@ export default {
   data() {
     return {
       value: '123',
-      showKeyboard: true,
       errorInfo: '',
+      showKeyboard: true,
     };
   },
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-      if (this.value.length === 6) {
+  watch: {
+    value(value) {
+      if (value.length === 6 && value !== '123456') {
         this.errorInfo = '密码错误';
       } else {
         this.errorInfo = '';
       }
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
     },
   },
 };
