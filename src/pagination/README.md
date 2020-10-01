@@ -82,8 +82,8 @@ export default {
 
 ### Slots
 
-| Name | Description | Default |
+| Name | Description | SlotProps |
 | --- | --- | --- |
-| prev-text | custom prev slot | `-` |
-| next-text | custom next slot | `-` |
-| page | pagination item slot | `{ number: number, text: string, active: boolean }` |
+| page `v2.10.9` | Custom pagination item | `{ number: number, text: string, active: boolean }` |
+| prev-text `v2.10.9` | Custom prev text | `-` |
+| next-text `v2.10.9` | Custom next text | `-` |

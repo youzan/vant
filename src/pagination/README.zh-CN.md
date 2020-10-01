@@ -82,8 +82,8 @@ export default {
 
 ### Slots
 
-| 名称 | 描述 | 默认值 |
+| 名称 | 描述 | SlotProps |
 | --- | --- | --- |
-| prev-text | 自定义上一页插槽 | `-` |
-| next-text | 自定义下一页插槽 | `-` |
-| page | 自定义页码插槽 | `{ number: number, text: string, active: boolean }` |
+| page `v2.10.9` | 自定义页码 | `{ number: number, text: string, active: boolean }` |
+| prev-text `v2.10.9` | 自定义上一页按钮文字 | `-` |
+| next-text `v2.10.9` | 自定义下一页按钮文字 | `-` |
