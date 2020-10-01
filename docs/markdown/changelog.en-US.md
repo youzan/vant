@@ -10,6 +10,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
+
+`2020-10-01`
+
+**Feature**
+
+- Locale: Add German translations [#7245](https://github.com/youzan/vant/issues/7245)
+- CollapseItem: add toggle method [#7281](https://github.com/youzan/vant/issues/7281)
+- Pagination: add page、prev-text、next-text slot [#7222](https://github.com/youzan/vant/issues/7222)
+- Tab: skip rendering empty pane [#7238](https://github.com/youzan/vant/issues/7238)
+
+**Bug Fixes**
+
+- Swipe: fix prev、next method types [#7270](https://github.com/youzan/vant/issues/7270)
+- Button: incorrect ref in for [#7237](https://github.com/youzan/vant/issues/7237)
+- Field: incorrect maxlength slicing [#7284](https://github.com/youzan/vant/issues/7284)
+- @vant/markdown-vetur: fix Windows system build vetur problem [#7277](https://github.com/youzan/vant/issues/7277) [#7287](https://github.com/youzan/vant/issues/7287)
+
 ### [v2.10.8](https://github.com/youzan/vant/compare/v2.10.7...v2.10.8)
 
 `2020-09-21`
