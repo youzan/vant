@@ -96,7 +96,7 @@
             @click="toggle(index)"
           >
             <template #right-icon>
-              <van-checkbox :ref="setRefs(index)" :name="item" />
+              <van-checkbox :ref="setRefs(index)" :name="item" @click.stop />
             </template>
           </van-cell>
         </van-cell-group>

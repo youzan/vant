@@ -62,15 +62,8 @@ export default createComponent({
       },
     });
 
-    let toggleTimer;
     const toggle = (newValue = !checked.value) => {
-      // When toggle method is called multiple times at the same time,
-      // only the last call is valid.
-      // This is a hack for usage inside Cell.
-      clearTimeout(toggleTimer);
-      toggleTimer = setTimeout(() => {
-        checked.value = newValue;
-      });
+      checked.value = newValue;
     };
 
     watch(

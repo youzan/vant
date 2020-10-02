@@ -172,6 +172,10 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 - 绿色按钮对应的类型由 `primary` 调整为 `success`
 - `native-type` 的默认值由 `submit` 调整为 `button`
 
+#### Checkbox
+
+- 在 Cell 内部使用时，现在需要手动添加 `@click.stop` 来阻止事件冒泡
+
 #### Dialog
 
 - 默认关闭 `allow-html` 属性

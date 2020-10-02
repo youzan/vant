@@ -64,15 +64,8 @@ export default defineComponent({
 
       if (!disabled.value && (iconClicked || !props.labelDisabled)) {
         emit('toggle');
-
-        // wait for toggle method to complete
-        // so we can get the changed value in the click event listener
-        setTimeout(() => {
-          emit('click', event);
-        });
-      } else {
-        emit('click', event);
       }
+      emit('click', event);
     };
 
     const renderIcon = () => {

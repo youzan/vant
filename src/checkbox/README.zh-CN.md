@@ -204,7 +204,11 @@ export default {
       @click="toggle(index)"
     >
       <template #right-icon>
-        <van-checkbox :name="item" :ref="el => checkboxes[index] = el" />
+        <van-checkbox
+          :name="item"
+          :ref="el => checkboxes[index] = el"
+          @click.stop
+        />
       </template>
     </van-cell>
   </van-cell-group>
