@@ -1,5 +1,5 @@
 import { ref, watch, computed } from 'vue';
-import { pickerProps, PICKER_KEY, DEFAULT_ITEM_HEIGHT } from './shared';
+import { pickerProps, PICKER_KEY } from './shared';
 
 // Utils
 import { unitToPx, preventDefault, createNamespace } from '../utils';
@@ -45,9 +45,7 @@ export default createComponent({
 
     linkChildren();
 
-    const itemHeight = computed(() =>
-      props.itemHeight ? unitToPx(props.itemHeight) : DEFAULT_ITEM_HEIGHT
-    );
+    const itemHeight = computed(() => unitToPx(props.itemHeight));
 
     const dataType = computed(() => {
       const { columns } = props;
