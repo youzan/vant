@@ -17,7 +17,7 @@ export default createComponent({
 
   setup(props, { slots }) {
     const hasContent = () =>
-      !!(slots.default || (isDef(props.content) && props.content !== ''));
+      !!(slots.content || (isDef(props.content) && props.content !== ''));
 
     const renderContent = () => {
       const { dot, max, content } = props;
