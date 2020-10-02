@@ -265,7 +265,7 @@ export default {
 
 ### CheckboxGroup Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
@@ -273,7 +273,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call 
 
 ### Checkbox Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods.
 
 | Name   | Description         | Attribute           | Return value |
 | ------ | ------------------- | ------------------- | ------------ |

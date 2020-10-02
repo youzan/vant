@@ -2,7 +2,9 @@
 
 ### 介绍
 
-这里提供了 Vant 现有的设计资源，更多资源还在整理中。
+Vant 是基于有赞 [Zan Design System](https://design.youzan.com/) 视觉规范实现的组件库，在这里可以下载 Vant 的设计资源。
+
+## 设计稿
 
 ### 组件设计稿（Sketch）
 

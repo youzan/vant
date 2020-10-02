@@ -20,18 +20,14 @@ app.use(NumberKeyboard);
 ### Basic Usage
 
 ```html
-<!-- PasswordInput -->
 <van-password-input
   :value="value"
-  info="Some tips"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
-<!-- NumberKeyboard -->
 <van-number-keyboard
+  v-model="value"
   :show="showKeyboard"
-  @input="onInput"
-  @delete="onDelete"
   @blur="showKeyboard = false"
 />
 ```
@@ -44,30 +40,32 @@ export default {
       showKeyboard: true,
     };
   },
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
-    },
-  },
 };
 ```
 
-### Custom length
+### Custom Length
 
 ```html
 <van-password-input
   :value="value"
-  :length="4"
   :gutter="15"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
 ```
 
-### Without mask
+### Add Gutter
+
+```html
+<van-password-input
+  :value="value"
+  :gutter="10"
+  :focused="showKeyboard"
+  @focus="showKeyboard = true"
+/>
+```
+
+### Without Mask
 
 ```html
 <van-password-input
@@ -80,22 +78,19 @@ export default {
 
 ### Hint Error
 
-Use `error-info` prop to set error message. For example, a password error is prompted when entering 6 bits.
+Use `info` to set info message, use `error-info` prop to set error message.
 
 ```html
-<!-- PasswordInput -->
 <van-password-input
   :value="value"
+  info="Some tips"
   :error-info="errorInfo"
   :focused="showKeyboard"
   @focus="showKeyboard = true"
 />
-
-<!-- NumberKeyboard -->
 <van-number-keyboard
+  v-model="value"
   :show="showKeyboard"
-  @input="onInput"
-  @delete="onDelete"
   @blur="showKeyboard = false"
 />
 ```
@@ -105,21 +100,17 @@ export default {
   data() {
     return {
       value: '123',
-      showKeyboard: true,
       errorInfo: '',
+      showKeyboard: true,
     };
   },
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-      if (this.value.length === 6) {
+  watch: {
+    value(value) {
+      if (value.length === 6 && value !== '123456') {
         this.errorInfo = 'Password Mistake';
       } else {
         this.errorInfo = '';
       }
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
     },
   },
 };

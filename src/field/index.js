@@ -240,10 +240,15 @@ export default createComponent({
     const updateValue = (value, trigger = 'onChange') => {
       value = isDef(value) ? String(value) : '';
 
-      // native maxlength not work when type is number
-      const { maxlength } = props;
+      // native maxlength have incorrect line-break counting
+      // see: https://github.com/youzan/vant/issues/5033
+      const { maxlength, modelValue } = props;
       if (isDef(maxlength) && value.length > maxlength) {
-        value = value.slice(0, maxlength);
+        if (modelValue && modelValue.length === +maxlength) {
+          value = modelValue;
+        } else {
+          value = value.slice(0, maxlength);
+        }
       }
 
       if (props.type === 'number' || props.type === 'digit') {

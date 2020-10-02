@@ -5,6 +5,7 @@ import { raf, doubleRaf, createNamespace } from '../utils';
 
 // Composition
 import { useParent } from '@vant/use';
+import { useExpose } from '../composition/use-expose';
 import { useLazyRender } from '../composition/use-lazy-render';
 
 // Components
@@ -82,9 +83,13 @@ export default createComponent({
       });
     });
 
+    const toggle = (value = !expanded.value) => {
+      parent.toggle(currentName.value, value);
+    };
+
     const onClickTitle = () => {
       if (!props.disabled) {
-        parent.toggle(currentName.value, !expanded.value);
+        toggle();
       }
     };
 
@@ -125,6 +130,8 @@ export default createComponent({
         </div>
       </div>
     ));
+
+    useExpose({ toggle });
 
     return () => (
       <div class={[bem({ border: index.value && props.border })]}>

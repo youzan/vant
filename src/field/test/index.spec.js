@@ -171,17 +171,25 @@ test('maxlength', async () => {
       value: 1234,
       type: 'number',
     },
+    listeners: {
+      input(value) {
+        wrapper && wrapper.setProps({ value });
+      },
+    },
   });
 
   const input = wrapper.find('input');
   expect(input.element.value).toEqual('123');
 
   input.element.value = 1234;
-  await later();
   input.trigger('input');
-
   expect(input.element.value).toEqual('123');
   expect(wrapper.emitted('input')[0][0]).toEqual('123');
+
+  // see: https://github.com/youzan/vant/issues/7265
+  input.element.value = 1423;
+  input.trigger('input');
+  expect(input.element.value).toEqual('123');
 });
 
 test('clearable prop', () => {

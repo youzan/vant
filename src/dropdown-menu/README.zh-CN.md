@@ -1,5 +1,9 @@
 # DropdownMenu 下拉菜单
 
+### 介绍
+
+向下弹出的菜单列表。
+
 ### 引入
 
 ```js
@@ -168,11 +172,11 @@ export default {
 
 ### DropdownItem 方法
 
-通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggle | 切换菜单展示状态，传`true`为显示，`false`为隐藏，不传参为取反 | show?: boolean | - |
+| toggle | 切换菜单展示状态，传 `true` 为显示，`false` 为隐藏，不传参为取反 | _show?: boolean_ | - |
 
 ### Option 数据结构
 

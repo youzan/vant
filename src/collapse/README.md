@@ -127,3 +127,11 @@ export default {
 | icon       | Custom icon       |
 | title      | Custom title      |
 | right-icon | Custom right icon |
+
+### CollapseItem Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get CollapseItem instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| toggle `v2.10.9` | Toggle expanded status | _expanded: boolean_ | - |

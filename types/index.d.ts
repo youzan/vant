@@ -6,6 +6,7 @@ import { Area } from './area';
 import { Calendar } from './calendar';
 import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
+import { CollapseItem } from './collapse-item';
 import { CountDown } from './count-down';
 import { DatetimePicker } from './datetime-picker';
 import { Dialog } from './dialog';
@@ -38,7 +39,6 @@ export class CellGroup extends VanComponent {}
 export class Circle extends VanComponent {}
 export class Col extends VanComponent {}
 export class Collapse extends VanComponent {}
-export class CollapseItem extends VanComponent {}
 export class ContactCard extends VanComponent {}
 export class ContactEdit extends VanComponent {}
 export class ContactList extends VanComponent {}
@@ -98,6 +98,7 @@ export {
   Calendar,
   Checkbox,
   CheckboxGroup,
+  CollapseItem,
   CountDown,
   DatetimePicker,
   Dialog,

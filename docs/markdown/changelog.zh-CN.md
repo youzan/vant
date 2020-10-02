@@ -10,6 +10,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
+
+`2020-10-01`
+
+**Feature**
+
+- Locale: 新增德语语言包 [#7245](https://github.com/youzan/vant/issues/7245)
+- CollapseItem: 新增 toggle 方法，用于主动控制面板展开或收起 [#7281](https://github.com/youzan/vant/issues/7281)
+- Pagination: 新增 page、prev-text、next-text 插槽 [#7222](https://github.com/youzan/vant/issues/7222)
+- Tab: 当标签页内容为空时，不再渲染空的 `van-tab-pane` 节点 [#7238](https://github.com/youzan/vant/issues/7238)
+
+**Bug Fixes**
+
+- Swipe: 修复 prev、next 方法缺少类型定义的问题 [#7270](https://github.com/youzan/vant/issues/7270)
+- Button: 修复在 v-for 中渲染时 ref 不正确的问题 [#7237](https://github.com/youzan/vant/issues/7237)
+- Field: 修复设置 maxlength 后在中间输入时截断结果不正确的问题 [#7284](https://github.com/youzan/vant/issues/7284)
+- @vant/markdown-vetur: 修复 Windows 系统下的兼容问题 [#7277](https://github.com/youzan/vant/issues/7277) [#7287](https://github.com/youzan/vant/issues/7287)
+
 ### [v2.10.8](https://github.com/youzan/vant/compare/v2.10.7...v2.10.8)
 
 `2020-09-21`
