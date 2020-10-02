@@ -28,7 +28,7 @@
     </demo-block>
 
     <demo-block :title="t('standalone')">
-      <van-badge :content="200" :max="99" />
+      <van-badge :content="200" :max="99" style="margin-left: 16px;" />
     </demo-block>
   </demo-section>
 </template>
