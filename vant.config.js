@@ -241,6 +241,10 @@ module.exports = {
             title: '展示组件',
             items: [
               {
+                path: 'badge',
+                title: 'Badge 徽标',
+              },
+              {
                 path: 'circle',
                 title: 'Circle 环形进度条',
               },
@@ -570,6 +574,10 @@ module.exports = {
           {
             title: 'Display Components',
             items: [
+              {
+                path: 'badge',
+                title: 'Badge',
+              },
               {
                 path: 'circle',
                 title: 'Circle',

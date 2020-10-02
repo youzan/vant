@@ -38,10 +38,9 @@ export default createComponent({
 
       return (
         <a class={bem({ select: selected, disabled })} onClick={onClick}>
-          <div class={bem('text')}>
+          <Badge dot={dot} content={badge} class={bem('text')}>
             {slots.title ? slots.title() : title}
-            <Badge dot={dot} badge={badge} class={bem('badge')} />
-          </div>
+          </Badge>
         </a>
       );
     };

@@ -66,10 +66,9 @@ export default createComponent({
     const renderIcon = () => {
       if (slots.icon) {
         return (
-          <div class={bem('icon-wrapper')}>
+          <Badge dot={props.dot} content={props.badge}>
             {slots.icon()}
-            <Badge dot={props.dot} badge={props.badge} />
-          </div>
+          </Badge>
         );
       }
 

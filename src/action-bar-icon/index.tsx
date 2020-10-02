@@ -32,10 +32,9 @@ export default createComponent({
 
       if (slots.icon) {
         return (
-          <div class={bem('icon')}>
+          <Badge dot={dot} content={badge} class={bem('icon')}>
             {slots.icon()}
-            <Badge dot={dot} badge={badge} />
-          </div>
+          </Badge>
         );
       }
 

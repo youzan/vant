@@ -31,7 +31,10 @@ export default createComponent({
       const isImageIcon = isImage(name);
 
       return (
-        <tag
+        <Badge
+          dot={dot}
+          tag={tag}
+          content={badge}
           class={[classPrefix, isImageIcon ? '' : `${classPrefix}-${name}`]}
           style={{
             color,
@@ -40,8 +43,7 @@ export default createComponent({
         >
           {slots.default?.()}
           {isImageIcon && <img class={bem('image')} src={name} />}
-          <Badge dot={dot} badge={badge} />
-        </tag>
+        </Badge>
       );
     };
   },

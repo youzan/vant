@@ -73,10 +73,9 @@ export default createComponent({
           style={{ color }}
           onClick={onClick}
         >
-          <div class={bem('icon')}>
+          <Badge dot={dot} content={badge} class={bem('icon')}>
             {renderIcon()}
-            <Badge dot={dot} badge={badge} />
-          </div>
+          </Badge>
           <div class={bem('text')}>
             {slots.default?.({ active: active.value })}
           </div>
