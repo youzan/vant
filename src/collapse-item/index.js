@@ -120,8 +120,8 @@ export default createComponent({
 
     const renderContent = lazyRender(() => (
       <div
+        v-show={show.value}
         ref={wrapperRef}
-        vShow={show.value}
         class={bem('wrapper')}
         onTransitionend={onTransitionEnd}
       >

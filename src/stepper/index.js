@@ -280,7 +280,7 @@ export default createComponent({
     return () => (
       <div class={bem([props.theme])}>
         <button
-          vShow={props.showMinus}
+          v-show={props.showMinus}
           type="button"
           style={buttonStyle.value}
           class={bem('minus', { disabled: minusDisabled.value })}
@@ -306,7 +306,7 @@ export default createComponent({
           onBlur={onBlur}
         />
         <button
-          vShow={props.showPlus}
+          v-show={props.showPlus}
           type="button"
           style={buttonStyle.value}
           class={bem('plus', { disabled: plusDisabled.value })}

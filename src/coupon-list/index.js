@@ -224,7 +224,7 @@ export default createComponent({
         </Tabs>
         <div class={bem('bottom')}>
           <Button
-            vShow={props.showCloseButton}
+            v-show={props.showCloseButton}
             round
             block
             type="danger"

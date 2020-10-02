@@ -230,8 +230,8 @@ export default createComponent({
       const Content = (
         <Transition name={props.transition ? 'van-slide-up' : ''}>
           <div
+            v-show={props.show}
             ref={root}
-            vShow={props.show}
             style={{ zIndex: props.zIndex }}
             class={bem({
               unfit: !props.safeAreaInsetBottom,

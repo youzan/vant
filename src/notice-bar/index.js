@@ -173,8 +173,8 @@ export default createComponent({
       const { color, wrapable, background } = props;
       return (
         <div
+          v-show={state.show}
           role="alert"
-          vShow={state.show}
           class={bem({ wrapable })}
           style={{ color, background }}
         >

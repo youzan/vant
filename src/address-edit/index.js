@@ -274,7 +274,7 @@ export default createComponent({
         return (
           <Cell
             v-slots={slots}
-            vShow={!hideBottomFields.value}
+            v-show={!hideBottomFields.value}
             center
             title={t('defaultAddress')}
             class={bem('default')}
@@ -338,7 +338,7 @@ export default createComponent({
               onFocus={() => onFocus('tel')}
             />
             <Field
-              vShow={props.showArea}
+              v-show={props.showArea}
               readonly
               label={t('area')}
               clickable={!disableArea}
@@ -370,7 +370,7 @@ export default createComponent({
             />
             {props.showPostal && (
               <Field
-                vShow={!hideBottomFields.value}
+                v-show={!hideBottomFields.value}
                 vModel={data.postalCode}
                 type="tel"
                 maxlength="6"
@@ -383,7 +383,7 @@ export default createComponent({
             {slots.default?.()}
           </div>
           {renderSetDefaultCell()}
-          <div vShow={!hideBottomFields.value} class={bem('buttons')}>
+          <div v-show={!hideBottomFields.value} class={bem('buttons')}>
             <Button
               block
               round

@@ -138,7 +138,7 @@ export default createComponent({
 
       return (
         <div
-          vShow={state.showWrapper}
+          v-show={state.showWrapper}
           style={style}
           class={bem([direction])}
           onClick={onClickWrapper}

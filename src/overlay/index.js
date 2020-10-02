@@ -36,7 +36,7 @@ export default createComponent({
 
       return (
         <div
-          vShow={props.show}
+          v-show={props.show}
           style={style}
           class={[bem(), props.className]}
           onTouchmove={props.lockScroll ? preventTouchMove : noop}

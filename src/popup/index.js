@@ -191,7 +191,7 @@ export default createComponent({
       const { round, position, safeAreaInsetBottom } = props;
       return (
         <div
-          vShow={props.show}
+          v-show={props.show}
           style={style.value}
           class={bem({
             round,
