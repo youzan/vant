@@ -15,7 +15,7 @@ app.use(Badge);
 ### Basic Usage
 
 ```html
-<van-badge :content="5">
+<van-badge content="5">
   <div class="child" />
 </van-badge>
 <van-badge dot>
@@ -35,10 +35,10 @@ app.use(Badge);
 ### Max
 
 ```html
-<van-badge :content="20" :max="9">
+<van-badge content="20" max="9">
   <div class="child" />
 </van-badge>
-<van-badge :content="200" :max="99">
+<van-badge content="200" max="99">
   <div class="child" />
 </van-badge>
 ```
@@ -46,7 +46,7 @@ app.use(Badge);
 ### Custom Color
 
 ```html
-<van-badge :content="5" color="#1989fa">
+<van-badge content="5" color="#1989fa">
   <div class="child" />
 </van-badge>
 <van-badge dot color="#1989fa">
@@ -57,7 +57,7 @@ app.use(Badge);
 ### Standaline
 
 ```html
-<van-badge :content="200" :max="99" />
+<van-badge content="200" max="99" />
 ```
 
 ## API
@@ -66,10 +66,10 @@ app.use(Badge);
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| content | Badge content | _string \| number_ | - |
+| content | Badge content | _number \| string_ | - |
 | color | Background color | _string_ | `#ee0a24` |
 | dot | Whether to show dot | _boolean_ | `false` |
-| max | Max value，show `{max}+` when exceed，only works when content is number type | _number_ | - |
+| max | Max value，show `{max}+` when exceed，only works when content is number | _number \| string_ | - |
 
 ### Slots
 

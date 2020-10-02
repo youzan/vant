@@ -1,12 +1,13 @@
 import type { PropType } from 'vue';
 import { isDef, createNamespace } from '../utils';
+import { isNumeric } from '../utils/validate/number';
 
 const [createComponent, bem] = createNamespace('badge');
 
 export default createComponent({
   props: {
-    max: Number,
     dot: Boolean,
+    max: [Number, String],
     color: String,
     content: [Number, String],
     tag: {
@@ -27,7 +28,7 @@ export default createComponent({
           return slots.content();
         }
 
-        if (isDef(max) && typeof content === 'number' && content > max) {
+        if (isDef(max) && isNumeric(content!) && +content > max) {
           return `${max}+`;
         }
 

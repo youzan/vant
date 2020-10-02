@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-badge :content="5">
+      <van-badge content="5">
         <div class="child" />
       </van-badge>
       <van-badge dot>
@@ -10,16 +10,16 @@
     </demo-block>
 
     <demo-block :title="t('max')">
-      <van-badge :content="20" :max="9">
+      <van-badge content="20" max="9">
         <div class="child" />
       </van-badge>
-      <van-badge :content="200" :max="99">
+      <van-badge content="200" max="99">
         <div class="child" />
       </van-badge>
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <van-badge :content="5" :color="BLUE">
+      <van-badge content="5" :color="BLUE">
         <div class="child" />
       </van-badge>
       <van-badge dot :color="BLUE">
@@ -28,7 +28,7 @@
     </demo-block>
 
     <demo-block :title="t('standalone')">
-      <van-badge :content="200" :max="99" style="margin-left: 16px;" />
+      <van-badge content="200" max="99" style="margin-left: 16px;" />
     </demo-block>
   </demo-section>
 </template>

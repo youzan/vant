@@ -43,10 +43,10 @@ app.use(Badge);
 设置 `max` 属性后，当 `content` 的数值超过最大值时，会自动显示为 `{max}+`。
 
 ```html
-<van-badge :content="20" :max="9">
+<van-badge :content="20" max="9">
   <div class="child" />
 </van-badge>
-<van-badge :content="200" :max="99">
+<van-badge :content="200" max="99">
   <div class="child" />
 </van-badge>
 ```
@@ -69,7 +69,7 @@ app.use(Badge);
 当 Badge 没有子元素时，会作为一个独立的元素进行展示。
 
 ```html
-<van-badge :content="200" :max="99" />
+<van-badge :content="200" max="99" />
 ```
 
 ## API
@@ -78,10 +78,10 @@ app.use(Badge);
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| content | 徽标内容 | _string \| number_ | - |
+| content | 徽标内容 | _number \| string_ | - |
 | color | 徽标背景颜色 | _string_ | `#ee0a24` |
 | dot | 是否展示为小红点 | _boolean_ | `false` |
-| max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为 number 类型时有效 | _number_ | - |
+| max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效 | _number \| string_ | - |
 
 ### Slots
 

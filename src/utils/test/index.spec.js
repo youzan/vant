@@ -91,6 +91,7 @@ test('isMobile', () => {
 });
 
 test('isNumeric', () => {
+  expect(isNumeric(1)).toBeTruthy();
   expect(isNumeric('1')).toBeTruthy();
   expect(isNumeric('1.2')).toBeTruthy();
   expect(isNumeric('1..2')).toBeFalsy();
