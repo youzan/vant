@@ -39,6 +39,7 @@ export default createComponent({
             ref={swipeRef}
             loop={false}
             class={bem('track')}
+            duration={props.duration}
             touchable={props.swipeable}
             lazyRender={props.lazyRender}
             showIndicators={false}
