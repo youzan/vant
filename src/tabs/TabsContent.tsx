@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { createNamespace } from '../utils';
 import Swipe from '../swipe';
 
@@ -7,12 +7,15 @@ const [createComponent, bem] = createNamespace('tabs');
 export default createComponent({
   props: {
     inited: Boolean,
-    duration: [Number, String],
     animated: Boolean,
     swipeable: Boolean,
     lazyRender: Boolean,
     count: {
       type: Number,
+      required: true,
+    },
+    duration: {
+      type: [Number, String],
       required: true,
     },
     currentIndex: {
@@ -39,7 +42,7 @@ export default createComponent({
             ref={swipeRef}
             loop={false}
             class={bem('track')}
-            duration={props.duration}
+            duration={+props.duration * 1000}
             touchable={props.swipeable}
             lazyRender={props.lazyRender}
             showIndicators={false}
@@ -53,15 +56,18 @@ export default createComponent({
       return Content;
     };
 
-    watch(
-      () => props.currentIndex,
-      (index) => {
-        const swipe = swipeRef.value;
-        if (swipe && swipe.state.active !== index) {
-          swipe.swipeTo(index, { immediate: !props.inited });
-        }
+    const swipeToCurrentTab = (index: number) => {
+      const swipe = swipeRef.value;
+      if (swipe && swipe.state.active !== index) {
+        swipe.swipeTo(index, { immediate: !props.inited });
       }
-    );
+    };
+
+    watch(() => props.currentIndex, swipeToCurrentTab);
+
+    onMounted(() => {
+      swipeToCurrentTab(props.currentIndex);
+    });
 
     return () => (
       <div
