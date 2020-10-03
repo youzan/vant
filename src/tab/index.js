@@ -6,6 +6,9 @@ import { TABS_KEY } from '../tabs';
 import { useParent } from '@vant/use';
 import { routeProps } from '../composition/use-route';
 
+// Components
+import SwipeItem from '../swipe-item';
+
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
@@ -20,7 +23,6 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const root = ref();
     const inited = ref(false);
     const { parent, index } = useParent(TABS_KEY);
 
@@ -62,28 +64,27 @@ export default createComponent({
         return;
       }
 
-      const { animated, scrollspy, lazyRender } = parent.props;
+      const { animated, swipeable, scrollspy, lazyRender } = parent.props;
       const active = isActive();
       const show = scrollspy || active;
 
-      const shouldRender = inited.value || scrollspy || !lazyRender;
-      const Content = shouldRender ? slots.default?.() : null;
-
-      if (animated) {
+      if (animated || swipeable) {
         return (
-          <div
-            ref={root}
+          <SwipeItem
             role="tabpanel"
             aria-hidden={!active}
             class={bem('pane-wrapper', { inactive: !active })}
           >
-            <div class={bem('pane')}>{Content}</div>
-          </div>
+            <div class={bem('pane')}>{slots.default?.()}</div>
+          </SwipeItem>
         );
       }
 
+      const shouldRender = inited.value || scrollspy || !lazyRender;
+      const Content = shouldRender ? slots.default?.() : null;
+
       return (
-        <div v-show={show} ref={root} role="tabpanel" class={bem('pane')}>
+        <div v-show={show} role="tabpanel" class={bem('pane')}>
           {Content}
         </div>
       );

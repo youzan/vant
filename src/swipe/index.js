@@ -367,6 +367,7 @@ export default createComponent({
     useExpose({
       prev,
       next,
+      state,
       resize,
       swipeTo,
     });

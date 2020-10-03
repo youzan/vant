@@ -1,14 +1,16 @@
+import { ref, watch } from 'vue';
 import { createNamespace } from '../utils';
-import { useTouch } from '../composition/use-touch';
+import Swipe from '../swipe';
 
 const [createComponent, bem] = createNamespace('tabs');
-const MIN_SWIPE_DISTANCE = 50;
 
 export default createComponent({
   props: {
+    inited: Boolean,
     duration: [Number, String],
     animated: Boolean,
     swipeable: Boolean,
+    lazyRender: Boolean,
     count: {
       type: Number,
       required: true,
@@ -22,60 +24,52 @@ export default createComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    const touch = useTouch();
+    const swipeRef = ref();
 
-    const onTouchEnd = () => {
-      const { deltaX, offsetX } = touch;
-      const { currentIndex } = props;
-
-      /* istanbul ignore else */
-      if (touch.isHorizontal() && offsetX.value >= MIN_SWIPE_DISTANCE) {
-        /* istanbul ignore else */
-        if (deltaX.value > 0 && currentIndex !== 0) {
-          emit('change', currentIndex - 1);
-        } else if (deltaX.value < 0 && currentIndex !== props.count - 1) {
-          emit('change', currentIndex + 1);
-        }
-      }
+    const onChange = (index: number) => {
+      emit('change', index);
     };
 
     const renderChildren = () => {
       const Content = slots.default?.();
 
-      if (props.animated) {
-        const style = {
-          transform: `translate3d(${-1 * props.currentIndex * 100}%, 0, 0)`,
-          transitionDuration: `${props.duration}s`,
-        };
-
+      if (props.animated || props.swipeable) {
         return (
-          <div class={bem('track')} style={style}>
+          <Swipe
+            ref={swipeRef}
+            loop={false}
+            class={bem('track')}
+            touchable={props.swipeable}
+            lazyRender={props.lazyRender}
+            showIndicators={false}
+            onChange={onChange}
+          >
             {Content}
-          </div>
+          </Swipe>
         );
       }
 
       return Content;
     };
 
-    return () => {
-      const listeners = props.swipeable
-        ? {
-            onTouchstart: touch.start,
-            onTouchmove: touch.move,
-            onTouchend: onTouchEnd,
-            onTouchcancel: onTouchEnd,
-          }
-        : null;
+    watch(
+      () => props.currentIndex,
+      (index) => {
+        const swipe = swipeRef.value;
+        if (swipe && swipe.state.active !== index) {
+          swipe.swipeTo(index, { immediate: !props.inited });
+        }
+      }
+    );
 
-      return (
-        <div
-          class={bem('content', { animated: props.animated })}
-          {...listeners}
-        >
-          {renderChildren()}
-        </div>
-      );
-    };
+    return () => (
+      <div
+        class={bem('content', {
+          animated: props.animated || props.swipeable,
+        })}
+      >
+        {renderChildren()}
+      </div>
+    );
   },
 });
