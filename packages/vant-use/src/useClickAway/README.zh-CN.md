@@ -31,9 +31,7 @@ export default {
 通过 `eventName` 选项可以自定义需要监听的事件类型。
 
 ```html
-<template>
-  <div ref="root" />
-</template>
+<div ref="root" />
 ```
 
 ```js
@@ -54,6 +52,20 @@ export default {
     return { root };
   },
 };
+```
+
+## 类型定义
+
+```ts
+type Options = {
+  eventName?: string;
+};
+
+function useClickAway(
+  target: Element | Ref<Element>,
+  listener: EventListener,
+  options?: Options
+): void;
 ```
 
 ## 参数
