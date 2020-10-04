@@ -21,7 +21,9 @@ export default {
 };
 ```
 
-## 类型定义
+## API
+
+### 类型定义
 
 ```ts
 function usePageVisibility(): Ref<VisibilityState>;
@@ -29,7 +31,7 @@ function usePageVisibility(): Ref<VisibilityState>;
 type VisibilityState = 'visible' | 'hidden';
 ```
 
-## 返回值
+### 返回值
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
