@@ -33,4 +33,4 @@ type VisibilityState = 'visible' | 'hidden';
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| visibilityState | 页面当前的可见状态，`visible` 为可见，`hidden` 为隐藏 | _Ref<VisibilityState>_ | - |
+| visibilityState | 页面当前的可见状态，`visible` 为可见，`hidden` 为隐藏 | _Ref\<VisibilityState>_ | - |
