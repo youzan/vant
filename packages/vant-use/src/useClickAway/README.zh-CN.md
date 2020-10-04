@@ -72,7 +72,7 @@ type Options = {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| target | 绑定事件的节点 | \_Element | Ref<Element>\_ | - |
+| target | 绑定事件的元素 | \_Element | Ref<Element>\_ | - |
 | listener | 点击外部时触发的回调函数 | _EventListener_ | - |
 | options | 可选的配置项 | _Options_ | `{ eventName: 'click' }` |
 
