@@ -1,8 +1,5 @@
-import { Ref, ref, unref, onMounted, nextTick } from 'vue';
-
-export const useRect = (element: Element | Ref<Element>) => {
-  return unref(element).getBoundingClientRect();
-};
+import { useRect } from '@vant/use';
+import { Ref, ref, onMounted, nextTick } from 'vue';
 
 export const useHeight = (element: Element | Ref<Element>) => {
   const height = ref();

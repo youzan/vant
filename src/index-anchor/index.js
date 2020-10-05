@@ -7,7 +7,7 @@ import { INDEX_BAR_KEY } from '../index-bar';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useHeight } from '../composition/use-rect';
+import { useHeight } from '../composition/use-height';
 import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('index-anchor');

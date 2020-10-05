@@ -5,12 +5,12 @@ import { createNamespace, isDef } from '../utils';
 
 // Composition
 import {
+  useRect,
   useChildren,
   useClickAway,
   useScrollParent,
   useEventListener,
 } from '@vant/use';
-import { useRect } from '../composition/use-rect';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 

@@ -19,8 +19,12 @@ import {
 } from '../utils';
 
 // Composition
-import { useChildren, useWindowSize, usePageVisibility } from '@vant/use';
-import { useRect } from '../composition/use-rect';
+import {
+  useRect,
+  useChildren,
+  useWindowSize,
+  usePageVisibility,
+} from '@vant/use';
 import { useTouch } from '../composition/use-touch';
 import { useExpose } from '../composition/use-expose';
 

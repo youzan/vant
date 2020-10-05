@@ -10,7 +10,7 @@ import {
 import { deepClone } from '../utils/deep-clone';
 
 // Composition
-import { useRect } from '../composition/use-rect';
+import { useRect } from '@vant/use';
 import { useTouch } from '../composition/use-touch';
 import { useLinkField } from '../composition/use-link-field';
 

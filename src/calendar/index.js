@@ -17,8 +17,8 @@ import {
 } from './utils';
 
 // Composition
+import { useRect } from '@vant/use';
 import { useRefs } from '../composition/use-refs';
-import { useRect } from '../composition/use-rect';
 import { useExpose } from '../composition/use-expose';
 
 // Components

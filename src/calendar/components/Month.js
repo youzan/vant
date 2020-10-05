@@ -16,7 +16,7 @@ import {
 import { useToggle } from '@vant/use';
 import { useRefs } from '../../composition/use-refs';
 import { useExpose } from '../../composition/use-expose';
-import { useRect, useHeight } from '../../composition/use-rect';
+import { useRect, useHeight } from '../../composition/use-height';
 
 // Components
 import Day from './Day';

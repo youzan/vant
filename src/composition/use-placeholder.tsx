@@ -1,4 +1,4 @@
-import { useHeight } from './use-rect';
+import { useHeight } from './use-height';
 import type { Ref, VNode } from 'vue';
 import type { BEM } from '../utils/create/bem';
 

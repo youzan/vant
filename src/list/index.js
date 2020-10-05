@@ -4,8 +4,7 @@ import { ref, watch, nextTick, onUpdated, onMounted } from 'vue';
 import { isHidden, createNamespace } from '../utils';
 
 // Composition
-import { useScrollParent, useEventListener } from '@vant/use';
-import { useRect } from '../composition/use-rect';
+import { useRect, useScrollParent, useEventListener } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
 
 // Components
@@ -44,19 +43,6 @@ export default createComponent({
     const placeholder = ref();
     const scrollParent = useScrollParent(root);
 
-    const getScrollParentRect = () => {
-      const element = scrollParent.value;
-      if (element.getBoundingClientRect) {
-        return element.getBoundingClientRect();
-      }
-      const height = element.innerHeight;
-      return {
-        top: 0,
-        height,
-        bottom: height,
-      };
-    };
-
     const check = () => {
       nextTick(() => {
         if (loading.value || props.finished || props.error) {
@@ -64,7 +50,7 @@ export default createComponent({
         }
 
         const { offset, direction } = props;
-        const scrollParentRect = getScrollParentRect();
+        const scrollParentRect = useRect(scrollParent);
 
         if (!scrollParentRect.height || isHidden(root)) {
           return false;

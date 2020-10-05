@@ -5,8 +5,7 @@ import { range, createNamespace, preventDefault } from '../utils';
 import { callInterceptor } from '../utils/interceptor';
 
 // Composition
-import { useClickAway } from '@vant/use';
-import { useRect } from '../composition/use-rect';
+import { useRect, useClickAway } from '@vant/use';
 import { useTouch } from '../composition/use-touch';
 import { useExpose } from '../composition/use-expose';
 
