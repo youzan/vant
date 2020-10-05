@@ -1,3 +1,4 @@
+export { useRect } from './useRect';
 export { useToggle } from './useToggle';
 export { useClickAway } from './useClickAway';
 export { useWindowSize } from './useWindowSize';

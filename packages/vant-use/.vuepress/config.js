@@ -26,6 +26,7 @@ module.exports = {
         title: 'DOM',
         collapsable: false,
         children: [
+          '/src/useRect/',
           '/src/useClickAway/',
           '/src/useEventListener/',
           '/src/usePageVisibility/',
