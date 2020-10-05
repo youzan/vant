@@ -1,6 +1,6 @@
 # useEventListener
 
-用于事件绑定，在 `mounted` 和 `activated` 时调用 `addEventListener`，在 `unmounted` 和 `deactivated` 时调用 `removeEventListener`。
+方便地进行事件绑定，在组件 `mounted` 和 `activated` 时绑定事件，`unmounted` 和 `deactivated` 时解绑事件。
 
 ## 代码演示
 

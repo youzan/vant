@@ -33,6 +33,11 @@ module.exports = {
           '/src/useWindowSize/',
         ],
       },
+      {
+        title: 'Enhanced',
+        collapsable: false,
+        children: ['/src/useRelation/'],
+      },
     ],
   },
 };
