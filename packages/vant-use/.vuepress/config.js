@@ -15,7 +15,7 @@ module.exports = {
       {
         title: '介绍',
         collapsable: false,
-        children: ['/'],
+        children: ['/', 'changelog'],
       },
       {
         title: 'State',
