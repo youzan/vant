@@ -30,7 +30,7 @@ module.exports = {
           '/src/useEventListener/',
           '/src/usePageVisibility/',
           '/src/useScrollParent/',
-          // '/src/useWindowSize/',
+          '/src/useWindowSize/',
         ],
       },
     ],

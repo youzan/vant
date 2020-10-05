@@ -2,9 +2,9 @@ import { ref } from 'vue';
 import { inBrowser } from '../shared';
 import { useEventListener } from '../useEventListener';
 
-export function useWindowSize(initialWidth = 0, initialHeight = 0) {
-  const width = ref(inBrowser ? window.innerWidth : initialWidth);
-  const height = ref(inBrowser ? window.innerHeight : initialHeight);
+export function useWindowSize() {
+  const width = ref(inBrowser ? window.innerWidth : 0);
+  const height = ref(inBrowser ? window.innerHeight : 0);
 
   const onResize = () => {
     width.value = window.innerWidth;
