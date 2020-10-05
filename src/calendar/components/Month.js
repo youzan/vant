@@ -13,10 +13,10 @@ import {
 } from '../utils';
 
 // Composition
-import { useToggle } from '@vant/use';
+import { useRect, useToggle } from '@vant/use';
 import { useRefs } from '../../composition/use-refs';
 import { useExpose } from '../../composition/use-expose';
-import { useRect, useHeight } from '../../composition/use-height';
+import { useHeight } from '../../composition/use-height';
 
 // Components
 import Day from './Day';
