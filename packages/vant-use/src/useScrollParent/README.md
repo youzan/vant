@@ -48,6 +48,6 @@ function useScrollParent(element: Ref<Element>): Ref<Element>;
 
 ### 返回值
 
-| 参数         | 说明               | 类型            | 默认值 |
-| ------------ | ------------------ | --------------- | ------ |
-| scrollParent | 最近的可滚动父元素 | _Ref\<Element>_ | -      |
+| 参数         | 说明               | 类型            |
+| ------------ | ------------------ | --------------- |
+| scrollParent | 最近的可滚动父元素 | _Ref\<Element>_ |

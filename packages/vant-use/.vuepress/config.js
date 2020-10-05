@@ -13,9 +13,14 @@ module.exports = {
     sidebarDepth: 0,
     sidebar: [
       {
+        title: '介绍',
+        collapsable: false,
+        children: ['/'],
+      },
+      {
         title: 'State',
         collapsable: false,
-        // children: ['/src/useToggle/'],
+        children: ['/src/useToggle/'],
       },
       {
         title: 'DOM',
