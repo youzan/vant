@@ -59,7 +59,7 @@ export function sortChildren(
   });
 }
 
-export function useChildren(key: string) {
+export function useChildren(key: string | symbol) {
   const publicChildren: PublicInstance[] = reactive([]);
   const internalChildren: InternalInstance[] = reactive([]);
   const parent = getCurrentInstance()!;
@@ -101,7 +101,7 @@ type ParentProvide<T> = T & {
   internalChildren: InternalInstance[];
 };
 
-export function useParent<T>(key: string) {
+export function useParent<T>(key: string | symbol) {
   const parent = inject<ParentProvide<T> | null>(key, null);
 
   if (parent) {

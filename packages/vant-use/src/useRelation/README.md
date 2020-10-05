@@ -48,14 +48,14 @@ export default {
 
 ```ts
 function useParent<T>(
-  key: string
+  key: string | symbol
 ): {
   parent?: T;
   index?: Ref<number>;
 };
 
 function useChildren(
-  key: string
+  key: string | symbol
 ): {
   children: ComponentPublicInstance[];
   linkChildren: (value: any) => void;
