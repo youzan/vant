@@ -1,6 +1,6 @@
 {
   "name": "@vant/use",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vant composition api",
   "main": "lib/index.js",
   "module": "es/index.js",
