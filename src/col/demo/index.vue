@@ -29,32 +29,26 @@
       </van-row>
     </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('title3')">
-      <van-row type="flex">
+    <demo-block v-if="!isWeapp" :title="t('justify')">
+      <van-row justify="center">
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
       </van-row>
 
-      <van-row type="flex" justify="center">
+      <van-row justify="end">
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
       </van-row>
 
-      <van-row type="flex" justify="end">
+      <van-row justify="space-between">
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
       </van-row>
 
-      <van-row type="flex" justify="space-between">
-        <van-col span="6">span: 6</van-col>
-        <van-col span="6">span: 6</van-col>
-        <van-col span="6">span: 6</van-col>
-      </van-row>
-
-      <van-row type="flex" justify="space-around">
+      <van-row justify="space-around">
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
@@ -68,11 +62,11 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '在列元素之间增加间距',
-      title3: 'Flex 布局',
+      justify: '对齐方式',
     },
     'en-US': {
       title2: 'Column Spacing',
-      title3: 'Flex Layout',
+      justify: 'Justify Content',
     },
   },
 };

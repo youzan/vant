@@ -51,36 +51,28 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 </van-row>
 ```
 
-### Flex Layout
-
-Setting `type` to `flex` to enable flex layout.
+### Justify Content
 
 ```html
-<van-row type="flex">
+<van-row justify="center">
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
 </van-row>
 
-<van-row type="flex" justify="center">
+<van-row justify="end">
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
 </van-row>
 
-<van-row type="flex" justify="end">
+<van-row justify="space-between">
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
 </van-row>
 
-<van-row type="flex" justify="space-between">
-  <van-col span="6">span: 6</van-col>
-  <van-col span="6">span: 6</van-col>
-  <van-col span="6">span: 6</van-col>
-</van-row>
-
-<van-row type="flex" justify="space-around">
+<van-row justify="space-around">
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
   <van-col span="6">span: 6</van-col>
@@ -93,7 +85,6 @@ Setting `type` to `flex` to enable flex layout.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Layout type, can be set to `flex` | _string_ | - |
 | gutter | Grid spacing（px） | _number \| string_ | - |
 | tag | Custom element tag | _string_ | `div` |
 | justify | Flex main axis，can be set to end/center/space-around/space-between | _string_ | `start` |

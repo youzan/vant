@@ -1,19 +1,7 @@
 @import '../style/var';
 
 .van-row {
-  &::after {
-    display: table;
-    clear: both;
-    content: '';
-  }
-
-  &--flex {
-    display: flex;
-
-    &::after {
-      display: none;
-    }
-  }
+  display: flex;
 
   &--justify-center {
     justify-content: center;

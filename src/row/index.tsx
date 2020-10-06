@@ -23,7 +23,6 @@ export type RowJustify =
 
 export default createComponent({
   props: {
-    type: String as PropType<'flex'>,
     align: String as PropType<RowAlign>,
     justify: String as PropType<RowJustify>,
     tag: {
@@ -87,15 +86,12 @@ export default createComponent({
     linkChildren({ spaces });
 
     return () => {
-      const { tag, type, align, justify } = props;
-      const flex = type === 'flex';
-
+      const { tag, align, justify } = props;
       return (
         <tag
           class={bem({
-            flex,
-            [`align-${align}`]: flex && align,
-            [`justify-${justify}`]: flex && justify,
+            [`align-${align}`]: align,
+            [`justify-${justify}`]: justify,
           })}
         >
           {slots.default?.()}
