@@ -35,7 +35,7 @@ yarn add vant@next
 
 ### 1. Import on demand
 
-Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand
+Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand.
 
 ```bash
 # Install plugin
@@ -72,7 +72,7 @@ module.exports = {
 import { Button } from 'vant';
 ```
 
-> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead
+> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
 
 ### 2. Manually import
 
