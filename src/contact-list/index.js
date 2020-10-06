@@ -23,89 +23,76 @@ export default createComponent({
   emits: ['add', 'edit', 'select', 'update:modelValue'],
 
   setup(props, { emit }) {
-    return () => {
-      const List =
-        props.list &&
-        props.list.map((item, index) => {
-          function onClick() {
-            emit('update:modelValue', item.id);
-            emit('select', item, index);
-          }
+    const renderItem = (item, index) => {
+      const onClick = () => {
+        emit('update:modelValue', item.id);
+        emit('select', item, index);
+      };
 
-          function RightIcon() {
-            return (
-              <Radio
-                name={item.id}
-                iconSize={16}
-                checkedColor={RED}
-                onClick={onClick}
-              />
-            );
-          }
+      const renderRightIcon = () => (
+        <Radio name={item.id} iconSize={16} checkedColor={RED} />
+      );
 
-          function LeftIcon() {
-            return (
-              <Icon
-                name="edit"
-                class={bem('edit')}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  emit('edit', item, index);
-                }}
-              />
-            );
-          }
+      const renderLeftIcon = () => (
+        <Icon
+          name="edit"
+          class={bem('edit')}
+          onClick={(event) => {
+            event.stopPropagation();
+            emit('edit', item, index);
+          }}
+        />
+      );
 
-          function Content() {
-            const nodes = [`${item.name}，${item.tel}`];
+      const renderContent = () => {
+        const nodes = [`${item.name}，${item.tel}`];
 
-            if (item.isDefault && props.defaultTagText) {
-              nodes.push(
-                <Tag type="danger" round class={bem('item-tag')}>
-                  {props.defaultTagText}
-                </Tag>
-              );
-            }
-
-            return nodes;
-          }
-
-          return (
-            <Cell
-              v-slots={{
-                icon: LeftIcon,
-                default: Content,
-                'right-icon': RightIcon,
-              }}
-              key={item.id}
-              isLink
-              center
-              class={bem('item')}
-              valueClass={bem('item-value')}
-              onClick={onClick}
-            />
+        if (item.isDefault && props.defaultTagText) {
+          nodes.push(
+            <Tag type="danger" round class={bem('item-tag')}>
+              {props.defaultTagText}
+            </Tag>
           );
-        });
+        }
+
+        return nodes;
+      };
 
       return (
-        <div class={bem()}>
-          <RadioGroup modelValue={props.modelValue} class={bem('group')}>
-            {List}
-          </RadioGroup>
-          <div class={bem('bottom')}>
-            <Button
-              round
-              block
-              type="danger"
-              class={bem('add')}
-              text={props.addText || t('addText')}
-              onClick={() => {
-                emit('add');
-              }}
-            />
-          </div>
-        </div>
+        <Cell
+          v-slots={{
+            icon: renderLeftIcon,
+            default: renderContent,
+            'right-icon': renderRightIcon,
+          }}
+          key={item.id}
+          isLink
+          center
+          class={bem('item')}
+          valueClass={bem('item-value')}
+          onClick={onClick}
+        />
       );
     };
+
+    return () => (
+      <div class={bem()}>
+        <RadioGroup modelValue={props.modelValue} class={bem('group')}>
+          {props.list && props.list.map(renderItem)}
+        </RadioGroup>
+        <div class={bem('bottom')}>
+          <Button
+            round
+            block
+            type="danger"
+            class={bem('add')}
+            text={props.addText || t('addText')}
+            onClick={() => {
+              emit('add');
+            }}
+          />
+        </div>
+      </div>
+    );
   },
 });
