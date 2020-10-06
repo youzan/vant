@@ -1,18 +1,12 @@
-import {
-  ref,
-  watch,
-  computed,
-  onActivated,
-  onDeactivated,
-  onBeforeUnmount,
-} from 'vue';
+import { watch, computed } from 'vue';
 
 // Utils
-import { raf, cancelRaf, createNamespace } from '../utils';
-import { isSameSecond, parseTimeData, parseFormat } from './utils';
+import { createNamespace } from '../utils';
+import { parseFormat } from './utils';
 
 // Composition
 import { useExpose } from '../composition/use-expose';
+import { useCountDown } from './use-count-down';
 
 const [createComponent, bem] = createNamespace('count-down');
 
@@ -36,118 +30,37 @@ export default createComponent({
   emits: ['change', 'finish'],
 
   setup(props, { emit, slots }) {
-    let rafId;
-    let endTime;
-    let counting;
-    let keepAlived;
-
-    const remain = ref(0);
-    const timeData = computed(() => parseTimeData(remain.value));
-    const timeText = computed(() => parseFormat(props.format, timeData.value));
-
-    const pause = () => {
-      counting = false;
-      cancelRaf(rafId);
-    };
-
-    const getCurrentRemain = () => Math.max(endTime - Date.now(), 0);
-
-    const setRemain = (value) => {
-      remain.value = value;
-      emit('change', timeData.value);
-
-      if (value === 0) {
-        pause();
+    const { start, pause, reset, current } = useCountDown({
+      time: +props.time,
+      millisecond: props.millisecond,
+      onChange(current) {
+        emit('change', current);
+      },
+      onFinish() {
         emit('finish');
-      }
-    };
+      },
+    });
 
-    const microTick = () => {
-      rafId = raf(() => {
-        // in case of call reset immediately after finish
-        if (counting) {
-          setRemain(getCurrentRemain());
+    const timeText = computed(() => parseFormat(props.format, current.value));
 
-          if (remain.value > 0) {
-            microTick();
-          }
-        }
-      });
-    };
-
-    const macroTick = () => {
-      rafId = raf(() => {
-        // in case of call reset immediately after finish
-        if (counting) {
-          const currentRemain = getCurrentRemain();
-
-          if (
-            !isSameSecond(currentRemain, remain.value) ||
-            currentRemain === 0
-          ) {
-            setRemain(currentRemain);
-          }
-
-          if (remain.value > 0) {
-            macroTick();
-          }
-        }
-      });
-    };
-
-    const tick = () => {
-      if (props.millisecond) {
-        microTick();
-      } else {
-        macroTick();
-      }
-    };
-
-    const start = () => {
-      if (!counting) {
-        endTime = Date.now() + remain.value;
-        counting = true;
-        tick();
-      }
-    };
-
-    const reset = () => {
-      pause();
-      remain.value = +props.time;
-
+    const resetTime = () => {
+      reset(+props.time);
       if (props.autoStart) {
         start();
       }
     };
 
-    watch(() => props.time, reset, { immediate: true });
-
-    onActivated(() => {
-      if (keepAlived) {
-        counting = true;
-        keepAlived = false;
-        tick();
-      }
-    });
-
-    onDeactivated(() => {
-      if (counting) {
-        pause();
-        keepAlived = true;
-      }
-    });
-
-    onBeforeUnmount(pause);
+    watch(() => props.time, resetTime, { immediate: true });
 
     useExpose({
       start,
-      reset,
       pause,
+      reset: resetTime,
     });
 
     return () => (
       <div class={bem()}>
-        {slots.default ? slots.default(timeData.value) : timeText.value}
+        {slots.default ? slots.default(current.value) : timeText.value}
       </div>
     );
   },
