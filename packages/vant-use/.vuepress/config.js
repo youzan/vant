@@ -21,7 +21,7 @@ module.exports = {
       {
         title: 'State',
         collapsable: false,
-        children: ['/src/useToggle/'],
+        children: ['/src/useToggle/', '/src/useCountDown/'],
       },
       {
         title: 'DOM',
