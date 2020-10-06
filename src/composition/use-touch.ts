@@ -2,15 +2,15 @@ import { ref } from 'vue';
 
 const MIN_DISTANCE = 10;
 
+type Direction = '' | 'vertical' | 'horizontal';
+
 function getDirection(x: number, y: number) {
   if (x > y && x > MIN_DISTANCE) {
     return 'horizontal';
   }
-
   if (y > x && y > MIN_DISTANCE) {
     return 'vertical';
   }
-
   return '';
 }
 
@@ -21,7 +21,7 @@ export function useTouch() {
   const deltaY = ref(0);
   const offsetX = ref(0);
   const offsetY = ref(0);
-  const direction = ref('');
+  const direction = ref<Direction>('');
 
   const isVertical = () => direction.value === 'vertical';
   const isHorizontal = () => direction.value === 'horizontal';
