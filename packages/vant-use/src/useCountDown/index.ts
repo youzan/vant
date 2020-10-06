@@ -121,7 +121,7 @@ export function useCountDown(options: UseCountDownOptions) {
     }
   };
 
-  const reset = (totalTime: number) => {
+  const reset = (totalTime: number = options.time) => {
     pause();
     remain.value = totalTime;
   };
