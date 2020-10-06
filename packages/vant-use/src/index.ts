@@ -1,5 +1,6 @@
 export * from './useRect';
 export * from './useToggle';
+export * from './useCountDown';
 export * from './useClickAway';
 export * from './useWindowSize';
 export * from './useScrollParent';

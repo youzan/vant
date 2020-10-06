@@ -2175,10 +2175,10 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vant/use@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.npmjs.org/@vant/use/-/use-0.0.5.tgz#64ff89ffc50e73c315d469a805379a41ce3c06ae"
-  integrity sha512-Wak1vLAF+SuqY+NTyanYexu+WV9pAjllRHGbtZtBBJc+G7QHC3xIUEQYkZJjbBR4iJmLPgA4R6OLwqM8eb6xZg==
+"@vant/use@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@vant/use/-/use-0.0.6.tgz#96939bacbd21964f1cc2a84dc4bfa702c9670175"
+  integrity sha512-ML5i3U/cbnIYYHocNqZewjbsbgamCJ2bR3Vo9R8znjVzvjBm2OnGBE68UZKUWwBmcF0prBI+QdaLYbkQLow7jA==
 
 "@vue/babel-helper-vue-transform-on@^1.0.0-rc.2":
   version "1.0.0-rc.2"
