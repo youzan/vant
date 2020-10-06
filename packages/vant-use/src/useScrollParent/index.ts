@@ -11,7 +11,7 @@ function isElement(node: Element) {
 
 // http://w3help.org/zh-cn/causes/SD9013
 // http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
-export function getScrollParent(el: Element, root: ScrollElement = window) {
+function getScrollParent(el: Element, root: ScrollElement = window) {
   let node = el;
 
   while (node && node !== root && isElement(node)) {

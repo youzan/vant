@@ -28,7 +28,7 @@ const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 
-export function parseTime(time: number): CurrentTime {
+function parseTime(time: number): CurrentTime {
   const days = Math.floor(time / DAY);
   const hours = Math.floor((time % DAY) / HOUR);
   const minutes = Math.floor((time % HOUR) / MINUTE);
