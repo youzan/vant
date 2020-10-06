@@ -43,7 +43,3 @@ export function parseFormat(format: string, currentTime: CurrentTime): string {
 
   return format;
 }
-
-export function isSameSecond(time1: number, time2: number): boolean {
-  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
-}

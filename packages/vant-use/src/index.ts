@@ -6,3 +6,4 @@ export { useScrollParent } from './useScrollParent';
 export { useEventListener } from './useEventListener';
 export { usePageVisibility } from './usePageVisibility';
 export { useParent, useChildren } from './useRelation';
+export * from './utils';
