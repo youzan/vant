@@ -46,24 +46,19 @@ export default createComponent({
       }
     };
 
-    const checked = computed({
-      get() {
-        if (parent) {
-          return parent.props.modelValue.indexOf(props.name) !== -1;
-        }
-        return props.modelValue;
-      },
-      set(value) {
-        if (parent) {
-          setParentValue(value);
-        } else {
-          emit('update:modelValue', value);
-        }
-      },
+    const checked = computed(() => {
+      if (parent) {
+        return parent.props.modelValue.indexOf(props.name) !== -1;
+      }
+      return props.modelValue;
     });
 
     const toggle = (newValue = !checked.value) => {
-      checked.value = newValue;
+      if (parent) {
+        setParentValue(newValue);
+      } else {
+        emit('update:modelValue', newValue);
+      }
     };
 
     watch(

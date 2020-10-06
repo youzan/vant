@@ -157,7 +157,6 @@ export default createComponent({
       if (slots.default) {
         return slots.default();
       }
-
       if (props.text) {
         return <div class={bem('text')}>{props.text}</div>;
       }
