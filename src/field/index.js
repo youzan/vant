@@ -21,6 +21,7 @@ import {
   preventDefault,
   createNamespace,
 } from '../utils';
+import { runSyncRule } from './utils';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -132,26 +133,6 @@ export default createComponent({
 
         resolve(returnVal);
       });
-
-    const isEmptyValue = (value) => {
-      if (Array.isArray(value)) {
-        return !value.length;
-      }
-      if (value === 0) {
-        return false;
-      }
-      return !value;
-    };
-
-    const runSyncRule = (value, rule) => {
-      if (rule.required && isEmptyValue(value)) {
-        return false;
-      }
-      if (rule.pattern && !rule.pattern.test(value)) {
-        return false;
-      }
-      return true;
-    };
 
     const getRuleMessage = (value, rule) => {
       const { message } = rule;
@@ -337,7 +318,6 @@ export default createComponent({
       if (isDef(props[key])) {
         return props[key];
       }
-
       if (form && isDef(form.props[key])) {
         return form.props[key];
       }
@@ -423,7 +403,6 @@ export default createComponent({
         ref: inputRef,
         name: props.name,
         rows: props.rows,
-        style: null,
         class: bem('control', inputAlign),
         value: props.modelValue,
         disabled: props.disabled,

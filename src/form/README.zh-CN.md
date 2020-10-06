@@ -486,7 +486,7 @@ export default {
 | message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
-| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | _string_ |
+| trigger `v2.5.2` | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
 ### validate-trigger  可选值
