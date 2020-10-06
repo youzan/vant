@@ -1,11 +1,6 @@
 import { watch, computed } from 'vue';
-import {
-  raf,
-  isObject,
-  cancelRaf,
-  getSizeStyle,
-  createNamespace,
-} from '../utils';
+import { raf, cancelRaf } from '@vant/use';
+import { isObject, getSizeStyle, createNamespace } from '../utils';
 import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');

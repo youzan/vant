@@ -10,17 +10,12 @@ import {
 } from 'vue';
 
 // Utils
-import {
-  range,
-  isHidden,
-  doubleRaf,
-  preventDefault,
-  createNamespace,
-} from '../utils';
+import { range, isHidden, preventDefault, createNamespace } from '../utils';
 
 // Composition
 import {
   useRect,
+  doubleRaf,
   useChildren,
   useWindowSize,
   usePageVisibility,

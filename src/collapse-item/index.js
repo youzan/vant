@@ -1,10 +1,10 @@
 import { ref, watch, computed, nextTick } from 'vue';
 
 // Utils
-import { raf, doubleRaf, createNamespace } from '../utils';
+import { createNamespace } from '../utils';
 
 // Composition
-import { useParent } from '@vant/use';
+import { raf, doubleRaf, useParent } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
 import { useLazyRender } from '../composition/use-lazy-render';
 

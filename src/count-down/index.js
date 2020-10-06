@@ -5,8 +5,8 @@ import { createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
 // Composition
+import { useCountDown } from '@vant/use';
 import { useExpose } from '../composition/use-expose';
-import { useCountDown } from './use-count-down';
 
 const [createComponent, bem] = createNamespace('count-down');
 

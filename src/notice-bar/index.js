@@ -1,8 +1,8 @@
 import { ref, watch, reactive, nextTick, onActivated } from 'vue';
-import { isDef, doubleRaf, createNamespace } from '../utils';
+import { isDef, createNamespace } from '../utils';
 
 // Composition
-import { useRect, useEventListener } from '@vant/use';
+import { useRect, doubleRaf, useEventListener } from '@vant/use';
 
 // Components
 import Icon from '../icon';

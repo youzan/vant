@@ -1,5 +1,5 @@
 import { padZero } from '../utils';
-import { CurrentTime } from './use-count-down';
+import { CurrentTime } from '@vant/use';
 
 export function parseFormat(format: string, currentTime: CurrentTime): string {
   const { days } = currentTime;

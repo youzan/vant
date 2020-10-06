@@ -1,4 +1,5 @@
-import { raf, cancelRaf, getScrollTop, setScrollTop } from '../utils';
+import { raf, cancelRaf } from '@vant/use';
+import { getScrollTop, setScrollTop } from '../utils';
 
 let rafId: number;
 
