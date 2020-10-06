@@ -50,6 +50,8 @@ export default {
     },
   },
 
+  emits: ['switch-version'],
+
   watch: {
     $route() {
       this.setNav();

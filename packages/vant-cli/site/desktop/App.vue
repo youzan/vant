@@ -67,6 +67,11 @@ export default {
   },
 
   watch: {
+    // eslint-disable-next-line
+    '$route.path'() {
+      this.setTitle();
+    },
+
     lang(val) {
       setLang(val);
       this.setTitle();
@@ -92,7 +97,18 @@ export default {
     setTitle() {
       let { title } = this.config;
 
-      if (this.config.description) {
+      const navItems = this.config.nav.reduce(
+        (result, nav) => [...result, ...nav.items],
+        []
+      );
+
+      const current = navItems.find((item) => {
+        return item.path === this.$route.meta.name;
+      });
+
+      if (current && current.title) {
+        title = current.title + ' - ' + title;
+      } else if (this.config.description) {
         title += ` - ${this.config.description}`;
       }
 
