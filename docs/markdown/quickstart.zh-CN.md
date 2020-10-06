@@ -2,7 +2,7 @@
 
 ### 脚手架
 
-在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目。
 
 ```bash
 # 安装 Vue Cli
@@ -21,7 +21,7 @@ vue ui
 
 ### 通过 npm 安装
 
-在现有项目中使用 Vant 时，可以通过`npm`或`yarn`安装
+在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 安装：
 
 ```bash
 # 通过 npm 安装
@@ -47,7 +47,7 @@ yarn add vant
 
 ### 方式一. 自动按需引入组件 (推荐)
 
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式。
 
 ```bash
 # 安装插件
@@ -89,7 +89,7 @@ import { Button } from 'vant';
 
 ### 方式二. 手动按需引入组件
 
-在不使用插件的情况下，可以手动引入需要的组件
+在不使用插件的情况下，可以手动引入需要的组件。
 
 ```js
 import Button from 'vant/lib/button';
@@ -98,7 +98,7 @@ import 'vant/lib/button/style';
 
 ### 方式三. 导入所有组件
 
-Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法
+Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
 
 ```js
 import Vue from 'vue';
@@ -112,7 +112,7 @@ Vue.use(Vant);
 
 ### 方式四. 通过 CDN 引入
 
-使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量`vant`访问到所有组件。
+使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
 
 ```html
 <!-- 引入样式文件 -->
@@ -145,14 +145,14 @@ Vue.use(Vant);
 
 ### Rem 适配
 
-Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，推荐使用以下两个工具：
+Vant 中的样式默认使用 `px` 作为单位，如果需要使用 `rem` 单位，推荐使用以下两个工具：
 
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
 - [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
 
 #### PostCSS 配置
 
-下面提供了一份基本的 postcss 配置，可以在此配置的基础上根据项目需求进行修改
+下面提供了一份基本的 postcss 配置，可以在此配置的基础上根据项目需求进行修改。
 
 ```js
 module.exports = {
