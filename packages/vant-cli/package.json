@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.7",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -89,7 +89,7 @@
     "portfinder": "^1.0.26",
     "postcss": "^8.0.0",
     "postcss-load-config": "^3.0.0",
-    "postcss-loader": "^4.0.0",
+    "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "release-it": "^13.6.1",
     "sass": "^1.26.7",
