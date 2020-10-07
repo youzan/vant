@@ -6,7 +6,7 @@ import {
   readFileSync,
   outputFileSync,
 } from 'fs-extra';
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import {
   SRC_DIR,
   getVantConfig,
