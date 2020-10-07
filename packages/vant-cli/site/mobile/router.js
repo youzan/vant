@@ -1,4 +1,4 @@
-import { nextTick } from 'vue';
+import { watch, nextTick } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import DemoHome from './components/DemoHome';
 import { decamelize } from '../common';
@@ -89,7 +89,7 @@ export const router = createRouter({
   scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
 });
 
-router.afterEach(() => {
+watch(router.currentRoute, () => {
   if (!router.currentRoute.value.redirectedFrom) {
     nextTick(window.syncPath);
   }
