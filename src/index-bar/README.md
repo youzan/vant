@@ -80,7 +80,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when select index | index |
+| select | Triggered when select index | _index: number \| string_ |
 | change `v2.10.10` | Triggered when active index changed | _index: number \| string_ |
 
 ### IndexAnchor Slots
