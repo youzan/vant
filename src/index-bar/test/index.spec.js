@@ -8,7 +8,7 @@ function mockOffsetHeight(offsetHeight) {
   });
 }
 
-test('custom anchor text', () => {
+test('should allow to custom anchor text', () => {
   const wrapper = mount({
     template: `
       <van-index-bar>
@@ -21,7 +21,7 @@ test('custom anchor text', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('click and scroll to anchor', () => {
+test('should scroll to anchor and emit select event after clicking the index-bar', () => {
   const onSelect = jest.fn();
   const wrapper = mount({
     template: `
@@ -43,7 +43,7 @@ test('click and scroll to anchor', () => {
   expect(onSelect).toHaveBeenCalledWith('A');
 });
 
-test('touch and scroll to anchor', () => {
+test('should scroll to anchor after touching the index-bar', () => {
   const onSelect = jest.fn();
   const wrapper = mount({
     template: `
@@ -91,7 +91,7 @@ test('touch and scroll to anchor', () => {
   expect(onSelect).toHaveBeenCalledWith('B');
 });
 
-test('scroll and update active anchor', () => {
+test('should update active anchor after page scroll', () => {
   const nativeRect = Element.prototype.getBoundingClientRect;
   Element.prototype.getBoundingClientRect = function () {
     const { index } = this.dataset;
@@ -128,6 +128,48 @@ test('scroll and update active anchor', () => {
   trigger(window, 'scroll');
   expect(wrapper).toMatchSnapshot();
   wrapper.vm.$destroy();
+
+  Element.prototype.getBoundingClientRect = nativeRect;
+});
+
+test('should emit change event when active index changed', () => {
+  const nativeRect = Element.prototype.getBoundingClientRect;
+  Element.prototype.getBoundingClientRect = function () {
+    const { index } = this.dataset;
+    return {
+      top: index ? index * 10 : 0,
+    };
+  };
+
+  mockOffsetHeight(10);
+
+  const onChange = jest.fn();
+
+  mount({
+    template: `
+      <van-index-bar @change="onChange">
+        <van-index-anchor
+          v-for="index in 4"
+          :key="index"
+          :index="index"
+          :data-index="index - 1"
+        />
+      </van-index-bar>
+    `,
+    methods: {
+      onChange,
+    },
+  });
+
+  window.scrollTop = 0;
+  trigger(window, 'scroll');
+  expect(onChange).toHaveBeenCalledTimes(1);
+  expect(onChange).toHaveBeenLastCalledWith('B');
+
+  window.scrollTop = 100;
+  trigger(window, 'scroll');
+  expect(onChange).toHaveBeenCalledTimes(2);
+  expect(onChange).toHaveBeenLastCalledWith('D');
 
   Element.prototype.getBoundingClientRect = nativeRect;
 });
