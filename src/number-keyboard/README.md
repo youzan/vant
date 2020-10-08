@@ -61,7 +61,7 @@ export default {
 
 ### IdNumber Keyboard
 
-Use `extra-key` prop to set the content of bottom left button
+Use `extra-key` prop to set the content of bottom left button.
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -80,7 +80,7 @@ Use `extra-key` prop to set the content of bottom left button
 
 ### Keyboard With Title
 
-Use `title` prop to set keyboard title
+Use `title` prop to set keyboard title.
 
 ```html
 <van-cell plain type="info" @touchstart.native.stop="show = true">
@@ -147,11 +147,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) `v2.0.2` | Current value | _string_ | - |
+| v-model (value) | Current value | _string_ | - |
 | show | Whether to show keyboard | _boolean_ | - |
 | title | Keyboard title | _string_ | - |
 | theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
-| maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
+| maxlength | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
 | extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |
@@ -160,6 +160,7 @@ export default {
 | close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| get-container `v2.10.0` | Return the mount node for NumberKeyboard | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events

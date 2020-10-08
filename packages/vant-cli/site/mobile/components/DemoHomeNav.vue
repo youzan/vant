@@ -58,7 +58,7 @@ export default {
     margin: 0 0 12px;
     padding-left: 20px;
     color: #323233;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
     line-height: 40px;
     background: #f7f8fa;

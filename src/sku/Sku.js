@@ -10,7 +10,7 @@ import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import {
   isAllSelected,
   isSkuChoosable,
@@ -200,7 +200,7 @@ export default createComponent({
       let skuComb = null;
       if (this.isSkuCombSelected) {
         if (this.hasSku) {
-          skuComb = getSkuComb(this.sku.list, this.selectedSku);
+          skuComb = getSkuComb(this.skuList, this.selectedSku);
         } else {
           skuComb = {
             id: this.sku.collection_id,
@@ -255,6 +255,10 @@ export default createComponent({
 
     skuTree() {
       return this.sku.tree || [];
+    },
+
+    skuList() {
+      return this.sku.list || [];
     },
 
     propList() {
@@ -357,7 +361,7 @@ export default createComponent({
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
-      const num = isDef(selectedNum) ? selectedNum : this.startSaleNum;
+      const num = selectedNum ?? this.startSaleNum;
       // 用来缓存不合法的情况
       this.stepperError = null;
 
@@ -375,17 +379,16 @@ export default createComponent({
 
       // 重置 selectedSku
       this.skuTree.forEach((item) => {
-        this.selectedSku[item.k_s] =
-          this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+        this.selectedSku[item.k_s] = UNSELECTED_SKU_VALUE_ID;
       });
-
-      // 只有一个 sku 规格值时默认选中
       this.skuTree.forEach((item) => {
         const key = item.k_s;
-        const valueId = item.v[0].id;
+        // 规格值只有1个时，优先判断
+        const valueId =
+          item.v.length === 1 ? item.v[0].id : this.initialSku[key];
         if (
-          item.v.length === 1 &&
-          isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
+          valueId &&
+          isSkuChoosable(this.skuList, this.selectedSku, { key, valueId })
         ) {
           this.selectedSku[key] = valueId;
         }
@@ -513,9 +516,22 @@ export default createComponent({
       this.selectedNum = num;
     },
 
-    onPreviewImage(indexImage) {
-      const index = this.imageList.findIndex((image) => image === indexImage);
+    onPreviewImage(selectedValue) {
+      const { imageList } = this;
+      let index = 0;
+      let indexImage = imageList[0];
+      if (selectedValue && selectedValue.imgUrl) {
+        this.imageList.some((image, pos) => {
+          if (image === selectedValue.imgUrl) {
+            index = pos;
+            return true;
+          }
+          return false;
+        });
+        indexImage = selectedValue.imgUrl;
+      }
       const params = {
+        ...selectedValue,
         index,
         imageList: this.imageList,
         indexImage,
@@ -530,7 +546,6 @@ export default createComponent({
       ImagePreview({
         images: this.imageList,
         startPosition: index,
-        closeOnPopstate: true,
         onClose: () => {
           this.$emit('close-preview', params);
         },
@@ -628,6 +643,7 @@ export default createComponent({
 
     const {
       sku,
+      skuList,
       goods,
       price,
       lazyLoad,
@@ -698,7 +714,7 @@ export default createComponent({
             <SkuRow skuRow={skuTreeItem} ref="skuRows" refInFor>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowItem
-                  skuList={sku.list}
+                  skuList={skuList}
                   lazyLoad={lazyLoad}
                   skuValue={skuValue}
                   skuKeyStr={skuTreeItem.k_s}

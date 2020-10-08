@@ -173,12 +173,38 @@ test('description prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('description slot', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      actions: [{ name: 'Option' }],
+    },
+    scopedSlots: {
+      description: () => 'Custom Description',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('close-icon prop', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
       title: 'Title',
       closeIcon: 'cross',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('closeable prop', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      title: 'Title',
+      closeable: false,
     },
   });
 

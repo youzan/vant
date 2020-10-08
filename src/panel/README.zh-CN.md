@@ -2,7 +2,7 @@
 
 ### 废弃提示
 
-<b>由于使用场景有限，Panel 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Button 组件代替
+<b>由于使用场景有限，Panel 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Button 组件代替。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Panel);
 
 ### 基础用法
 
-面板只是一个容器，里面可以放入自定义的内容
+面板只是一个容器，里面可以放入自定义的内容。
 
 ```html
 <van-panel title="标题" desc="描述信息" status="状态">
@@ -27,7 +27,7 @@ Vue.use(Panel);
 
 ### 高级用法
 
-使用`slot`自定义内容
+使用插槽自定义内容。
 
 ```html
 <van-panel title="标题" desc="描述信息" status="状态">

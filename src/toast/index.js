@@ -43,11 +43,19 @@ function parseOptions(message) {
   return { message };
 }
 
+function isInDocument(element) {
+  return document.body.contains(element);
+}
+
 function createInstance() {
   /* istanbul ignore if */
   if (isServer) {
     return {};
   }
+
+  queue = queue.filter(
+    (item) => !item.$el.parentNode || isInDocument(item.$el)
+  );
 
   if (!queue.length || multiple) {
     const toast = new (Vue.extend(VueToast))({

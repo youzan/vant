@@ -2,7 +2,7 @@
 
 ### Intro
 
-Calendar component for selecting dates or date ranges
+Calendar component for selecting dates or date ranges.
 
 ### Install
 
@@ -17,7 +17,7 @@ Vue.use(Calendar);
 
 ### Select Single Date
 
-The `confirm` event will be triggered after the date selection is completed
+The `confirm` event will be triggered after the date selection is completed.
 
 ```html
 <van-cell title="Select Single Date" :value="date" @click="show = true" />
@@ -108,7 +108,7 @@ Set `show-confirm` to `false` to hide the confirm button. In this case, the `con
 
 ### Custom Color
 
-Use `color` prop to custom calendar color
+Use `color` prop to custom calendar color.
 
 ```html
 <van-calendar v-model="show" color="#07c160" />
@@ -116,7 +116,7 @@ Use `color` prop to custom calendar color
 
 ### Custom Date Range
 
-Use `min-date` and `max-date` to custom date range
+Use `min-date` and `max-date` to custom date range.
 
 ```html
 <van-calendar v-model="show" :min-date="minDate" :max-date="maxDate" />
@@ -136,7 +136,7 @@ export default {
 
 ### Custom Confirm Text
 
-Use `confirm-text` and `confirm-disabled-text` to custom confirm text
+Use `confirm-text` and `confirm-disabled-text` to custom confirm text.
 
 ```html
 <van-calendar
@@ -149,7 +149,7 @@ Use `confirm-text` and `confirm-disabled-text` to custom confirm text
 
 ### Custom Day Text
 
-Use `formatter` to custom day text
+Use `formatter` to custom day text.
 
 ```html
 <van-calendar v-model="show" type="range" :formatter="formatter" />
@@ -186,7 +186,7 @@ export default {
 
 ### Custom Position
 
-Use `position` to custom popup position，can be set to `top`、`left`、`right`
+Use `position` to custom popup position，can be set to `top`、`left`、`right`.
 
 ```html
 <van-calendar v-model="show" :round="false" position="right" />
@@ -194,10 +194,18 @@ Use `position` to custom popup position，can be set to `top`、`left`、`right`
 
 ### Max Range
 
-When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days
+When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days.
 
 ```html
 <van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
+```
+
+### Custom First Day Of Week
+
+Use `first-day-of-week` to custom the start day of week
+
+```html
+<van-calendar first-day-of-week="1" />
 ```
 
 ### Tiled display
@@ -224,7 +232,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | color | Color for the bottom button and selected date | _string_ | `#ee0a24` |
 | min-date | Min date | _Date_ | Today |
 | max-date | Max date | _Date_ | Six months after the today |
-| default-date | Default selected date | _Date \| Date[]_ | Today |
+| default-date | Default selected date | _Date \| Date[] \| null_ | Today |
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
 | poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
@@ -233,8 +241,10 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |
 | show-confirm | Whether to show confirm button | _boolean_ | `true` |
+| readonly `v2.10.5` | Whether to be readonly | _boolean_ | `false` |
 | confirm-text | Confirm button text | _string_ | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
+| first-day-of-week `v2.9.2` | Set the start day of week | _0-6_ | `0` |
 
 ### Poppable Props
 
@@ -245,7 +255,7 @@ Following props are supported when the poppable is true
 | v-model | Whether to show calendar | _boolean_ | `false` |
 | position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
 | round | Whether to show round corner | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
@@ -302,7 +312,7 @@ Following props are supported when the type is multiple
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods.
 
 | Name  | Description                         | Attribute | Return value |
 | ----- | ----------------------------------- | --------- | ------------ |

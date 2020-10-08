@@ -48,9 +48,21 @@ export default {
 <van-dropdown-menu>
   <van-dropdown-item v-model="value" :options="option" />
   <van-dropdown-item title="Title" ref="item">
-    <van-switch-cell v-model="switch1" title="Title" />
-    <van-switch-cell v-model="switch2" title="Title" />
-    <van-button block type="info" @click="onConfirm">Confirm</van-button>
+    <van-cell center title="Title">
+      <template #right-icon>
+        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
+    <van-cell center title="Title">
+      <template #right-icon>
+        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
+      </template>
+    </van-cell>
+    <div style="padding: 5px 16px;">
+      <van-button type="danger" block round @click="onConfirm">
+        Confirm
+      </van-button>
+    </div>
   </van-dropdown-item>
 </van-dropdown-menu>
 ```
@@ -79,10 +91,10 @@ export default {
 
 ### Custom Active Color
 
-Use `active-color` prop to custom active color of the title and options
+Use `active-color` prop to custom active color of the title and options.
 
 ```html
-<van-dropdown-menu active-color="#ee0a24">
+<van-dropdown-menu active-color="#1989fa">
   <van-dropdown-item v-model="value1" :options="option1" />
   <van-dropdown-item v-model="value2" :options="option2" />
 </van-dropdown-menu>
@@ -112,13 +124,13 @@ Use `active-color` prop to custom active color of the title and options
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| active-color | Active color of title and option | _string_ | `#1989fa` |
-| direction `v2.0.1` | Expand direction, can be set to `up` | _string_ | `down` |
+| active-color | Active color of title and option | _string_ | `#ee0a24` |
+| direction | Expand direction, can be set to `up` | _string_ | `down` |
 | z-index | z-index of menu item | _number \| string_ | `10` |
 | duration | Transition duration, unit second | _number \| string_ | `0.2` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
-| close-on-click-outside `v2.0.7` | Whether to close when click outside | _boolean_ | `true` |
+| close-on-click-outside | Whether to close when click outside | _boolean_ | `true` |
 
 ### DropdownItem Props
 
@@ -130,7 +142,7 @@ Use `active-color` prop to custom active color of the title and options
 | disabled | Whether to disable dropdown item | _boolean_ | `false` |
 | lazy-render `v2.8.5` | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title class | _string_ | - |
-| get-container `v2.2.4` | Return the mount node for menu | _string \| () => Element_ | - |
+| get-container | Return the mount node for menu | _string \| () => Element_ | - |
 
 ### DropdownItem Events
 
@@ -151,11 +163,11 @@ Use `active-color` prop to custom active color of the title and options
 
 ### DropdownItem Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get DropdownItem instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get DropdownItem instance and call instance methods.
 
-| Name   | Description    | Attribute     | Return value |
-| ------ | -------------- | ------------- | ------------ |
-| toggle | Toggle display | show: boolean | -            |
+| Name   | Description    | Attribute       | Return value |
+| ------ | -------------- | --------------- | ------------ |
+| toggle | Toggle display | _show: boolean_ | -            |
 
 ### Data Structure of Option
 

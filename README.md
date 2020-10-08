@@ -2,21 +2,21 @@
     <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<h3 align="center" style="margin: 30px 0 35px;">Mobile UI Components built on Vue</h3>
+<h1 align="center">Vant</h1>
+
+<p align="center">Mobile UI Components built on Vue</p>
 
 <p align="center">
-    <img src="https://img.shields.io/npm/v/vant.svg?style=for-the-badge" alt="npm version" />
-    <img src="https://img.shields.io/github/workflow/status/youzan/vant/CI/dev?style=for-the-badge" alt="npm version" />
-    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=for-the-badge&color=#4fc08d" alt="Coverage Status" />
-    <img src="https://img.shields.io/npm/dm/vant.svg?style=for-the-badge&color=#4fc08d" alt="downloads" />
-    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=for-the-badge&label=gzip%20size&color=#4fc08d" alt="Gzip Size" />
+    <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/github/workflow/status/youzan/vant/CI/dev?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
+    <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
+    <img src="https://img.shields.io/jsdelivr/npm/hm/vant?style=flat-square" alt="Jsdelivr Hits">
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=gzip%20size&color=#4fc08d" alt="Gzip Size" />
 </p>
 
 <p align="center">
-  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
-  &nbsp;
-  &nbsp;
-  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站</a>
   &nbsp;
   &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
@@ -48,6 +48,8 @@ npm i vant -S
 yarn add vant
 ```
 
+> Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035).
+
 ## Quickstart
 
 ```js
@@ -74,6 +76,7 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 | --- | --- |
 | [vant-demo](https://github.com/youzan/vant-demo) | Official vant demo collection |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
+| [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React (maintained by the community) |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |

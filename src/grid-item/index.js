@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, isDef } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
 import { route, routeProps } from '../utils/router';
 
@@ -71,7 +71,7 @@ export default createComponent({
 
     genIcon() {
       const iconSlot = this.slots('icon');
-      const info = isDef(this.badge) ? this.badge : this.info;
+      const info = this.badge ?? this.info;
 
       if (iconSlot) {
         return (

@@ -48,6 +48,7 @@ Dialog.defaultOptions = {
   value: true,
   title: '',
   width: '',
+  theme: null,
   message: '',
   overlay: true,
   className: '',
@@ -65,7 +66,7 @@ Dialog.defaultOptions = {
   confirmButtonColor: null,
   showConfirmButton: true,
   showCancelButton: false,
-  closeOnPopstate: false,
+  closeOnPopstate: true,
   closeOnClickOverlay: false,
   callback: (action) => {
     instance[action === 'confirm' ? 'resolve' : 'reject'](action);

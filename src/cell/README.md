@@ -95,9 +95,21 @@ Vue.use(CellGroup);
 <van-cell title="单元格" icon="shop-o">
   <!-- Use the right-icon slot to customize the right icon -->
   <template #right-icon>
-    <van-icon name="search" style="line-height: inherit;" />
+    <van-icon name="search" class="search-icon" />
   </template>
 </van-cell>
+
+<style>
+  .custom-title {
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  .search-icon {
+    font-size: 16px;
+    line-height: inherit;
+  }
+</style>
 ```
 
 ### Vertical Center

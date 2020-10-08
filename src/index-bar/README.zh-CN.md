@@ -14,7 +14,7 @@ Vue.use(IndexAnchor);
 
 ### 基础用法
 
-点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置
+点击索引栏时，会自动跳转到对应的 `IndexAnchor` 锚点位置。
 
 ```html
 <van-index-bar>
@@ -34,7 +34,7 @@ Vue.use(IndexAnchor);
 
 ### 自定义索引列表
 
-可以通过`index-list`属性自定义展示的索引字符列表，
+可以通过 `index-list` 属性自定义展示的索引字符列表。
 
 ```html
 <van-index-bar :index-list="indexList">
@@ -71,7 +71,7 @@ export default {
 | index-list | 索引字符列表 | _string[] \| number[]_ | `A-Z` |
 | z-index | z-index 层级 | _number \| string_ | `1` |
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
-| sticky-offset-top `v2.0.7` | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
+| sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
 | highlight-color | 索引字符高亮颜色 | _string_ | `#07c160` |
 
 ### IndexAnchor Props

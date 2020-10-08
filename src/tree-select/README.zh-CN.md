@@ -13,7 +13,7 @@ Vue.use(TreeSelect);
 
 ### 单选模式
 
-`item`为分类显示所需的数据，数据格式见下方示例。`main-active-index`表示左侧高亮选项的索引，`active-id`表示右侧高亮选项的 id
+`item` 为分类显示所需的数据，数据格式见下方示例。`main-active-index` 表示左侧高亮选项的索引，`active-id` 表示右侧高亮选项的 id。
 
 ```html
 <van-tree-select
@@ -37,7 +37,7 @@ export default {
 
 ### 多选模式
 
-`active-id`为数组格式时，可以选中多个右侧选项
+`active-id` 为数组格式时，可以选中多个右侧选项。
 
 ```html
 <van-tree-select
@@ -61,7 +61,7 @@ export default {
 
 ### 自定义内容
 
-通过`content`插槽可以自定义右侧区域的内容
+通过 `content` 插槽可以自定义右侧区域的内容。
 
 ```html
 <van-tree-select height="55vw" :items="items" :main-active-index.sync="active">
@@ -91,7 +91,7 @@ export default {
 
 ### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
+设置 `dot` 属性后，会在图标右上角展示一个小红点；设置 `badge` 属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-tree-select
@@ -125,7 +125,7 @@ export default {
 | height | 高度，默认单位为`px` | _number \| string_ | `300` |
 | main-active-index | 左侧选中项的索引 | _number \| string_ | `0` |
 | active-id | 右侧选中项的 id，支持传入数组 | _number \| string \|<br>(number \| string)[]_ | `0` |
-| max `v2.2.0` | 右侧项最大选中个数 | _number \| string_ | `Infinity` |
+| max | 右侧项最大选中个数 | _number \| string_ | `Infinity` |
 | selected-icon `v2.9.0` | 自定义右侧栏选中状态的图标 | _string_ | `success` |
 
 ### Events

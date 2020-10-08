@@ -3,13 +3,14 @@
 .van-tab {
   position: relative;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  flex: 1;
   box-sizing: border-box;
   padding: 0 @padding-base;
   color: @tab-text-color;
   font-size: @tab-font-size;
+  line-height: @tab-line-height;
   cursor: pointer;
 
   &--active {
@@ -25,9 +26,9 @@
   &__text {
     &--ellipsis {
       display: -webkit-box;
+      overflow: hidden;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden;
     }
   }
 
@@ -53,11 +54,8 @@
 
     &--scrollable {
       .van-tab {
-        flex: 0 0 22%;
-
-        &--complete {
-          flex: 1 0 auto;
-        }
+        flex: 1 0 auto;
+        padding: 0 @padding-sm;
       }
 
       .van-tabs__nav {
@@ -67,6 +65,11 @@
 
         &::-webkit-scrollbar {
           display: none;
+        }
+
+        &--complete {
+          padding-right: 8px;
+          padding-left: 8px;
         }
       }
     }
@@ -116,6 +119,7 @@
     bottom: 15px;
     left: 0;
     z-index: 1;
+    width: @tabs-bottom-bar-width;
     height: @tabs-bottom-bar-height;
     background-color: @tabs-bottom-bar-color;
     border-radius: @tabs-bottom-bar-height;

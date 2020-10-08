@@ -8,18 +8,20 @@
     :placeholder="t('placeholder')"
     @click="showPicker = true"
   >
-    <van-popup
-      v-model="showPicker"
-      slot="extra"
-      position="bottom"
-      get-container="body"
-    >
-      <van-datetime-picker
-        type="time"
-        @confirm="onConfirm"
-        @cancel="onCancel"
-      />
-    </van-popup>
+    <template #extra>
+      <van-popup
+        v-model="showPicker"
+        round
+        position="bottom"
+        get-container="body"
+      >
+        <van-datetime-picker
+          type="time"
+          @confirm="onConfirm"
+          @cancel="onCancel"
+        />
+      </van-popup>
+    </template>
   </van-field>
 </template>
 

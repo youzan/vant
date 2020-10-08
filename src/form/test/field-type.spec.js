@@ -126,10 +126,7 @@ test('use stepper', async () => {
   });
 
   await submitForm(wrapper);
-  expect(onFailed).toHaveBeenCalledWith({
-    errors: [{ message: 'foo', name: 'A' }],
-    values: { A: 0 },
-  });
+  expect(onFailed).toBeCalledTimes(0);
 
   wrapper.setData({ value: 1 });
 
@@ -146,10 +143,7 @@ test('use rate', async () => {
   });
 
   await submitForm(wrapper);
-  expect(onFailed).toHaveBeenCalledWith({
-    errors: [{ message: 'foo', name: 'A' }],
-    values: { A: 0 },
-  });
+  expect(onFailed).toBeCalledTimes(0);
 
   wrapper.setData({ value: 1 });
 
@@ -166,10 +160,7 @@ test('use slider', async () => {
   });
 
   await submitForm(wrapper);
-  expect(onFailed).toHaveBeenCalledWith({
-    errors: [{ message: 'foo', name: 'A' }],
-    values: { A: 0 },
-  });
+  expect(onFailed).toBeCalledTimes(0);
 
   wrapper.setData({ value: 50 });
 

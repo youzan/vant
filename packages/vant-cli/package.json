@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -11,7 +11,8 @@
     "node": ">=10"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "tsc --watch",
@@ -36,8 +37,6 @@
     "@types/fs-extra": "^9.0.1",
     "@types/lodash": "^4.14.153",
     "@types/postcss-load-config": "^2.0.1",
-    "@types/webpack": "^4.41.13",
-    "@types/webpack-dev-server": "^3.11.0",
     "@types/webpack-merge": "^4.1.5"
   },
   "dependencies": {
@@ -49,6 +48,8 @@
     "@babel/preset-typescript": "^7.10.1",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/jest": "^25.2.3",
+    "@types/webpack": "^4.41.13",
+    "@types/webpack-dev-server": "^3.11.0",
     "@vant/eslint-config": "^2.2.2",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/markdown-vetur": "^2.0.1",
@@ -96,7 +97,7 @@
     "style-loader": "^1.2.1",
     "stylelint": "^13.5.0",
     "typescript": "^3.9.3",
-    "vue-jest": "4.0.0-beta.2",
+    "vue-jest": "4.0.0-rc.0",
     "vue-loader": "^15.9.2",
     "vue-router": "^3.3.1",
     "webpack": "^4.43.0",

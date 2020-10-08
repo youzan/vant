@@ -178,7 +178,6 @@ export default {
     padding: 0 12px;
     color: #fff;
     font-size: 14px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 24px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.7);

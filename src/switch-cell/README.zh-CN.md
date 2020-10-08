@@ -43,7 +43,7 @@ export default {
 
 ### 禁用状态
 
-通过`disabled`属性可以将组件设置为禁用状态
+通过 `disabled` 属性可以将组件设置为禁用状态。
 
 ```html
 <van-cell-group>
@@ -53,7 +53,7 @@ export default {
 
 ### 加载状态
 
-通过`loading`属性可以将组件设置为加载状态
+通过 `loading` 属性可以将组件设置为加载状态。
 
 ```html
 <van-cell-group>

@@ -406,6 +406,23 @@ test('click to preview image', async () => {
   expect(images.length).toEqual(1);
 });
 
+test('preview-options prop', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }],
+      previewOptions: {
+        closeable: true,
+      },
+    },
+  });
+
+  wrapper.find('.van-image').trigger('click');
+  await later();
+
+  const closeIcon = document.querySelectorAll('.van-image-preview__close-icon');
+  expect(closeIcon.length).toEqual(1);
+});
+
 test('closeImagePreview method', () => {
   const close = jest.fn();
   const wrapper = mount(Uploader, {
@@ -506,4 +523,17 @@ test('multiFile upload filter max-size file', async () => {
   await later();
 
   expect(wrapper.emitted('oversize')[0]).toBeTruthy();
+});
+
+test('preview-cover slot', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{ url: IMAGE }, { url: IMAGE }],
+    },
+    scopedSlots: {
+      'preview-cover': (item) => `url: ${item.url}, index: ${item.index}`,
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

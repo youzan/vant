@@ -11,6 +11,16 @@ test('loading-size prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('icon-position prop', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      icon: 'plus',
+      iconPosition: 'right',
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('click event', () => {
   const onClick = jest.fn();
   const wrapper = mount(Button, {
@@ -88,6 +98,19 @@ test('icon-prefix prop', () => {
     propsData: {
       icon: 'success',
       iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('loading slot', () => {
+  const wrapper = mount(Button, {
+    propsData: {
+      loading: true,
+    },
+    scopedSlots: {
+      loading: () => 'Custom Loading',
     },
   });
 

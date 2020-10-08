@@ -2,7 +2,7 @@
 
 ### 介绍
 
-表单中的输入框组件
+表单中的输入框组件。
 
 ### 引入
 
@@ -255,18 +255,20 @@ export default {
 | readonly | 是否只读 | _boolean_ | `false` |
 | colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
-| clearable | 是否启用清除控件 | _boolean_ | `false` |
+| center | 是否使内容垂直居中 | _boolean_ | `false` |
+| clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
+| clear-trigger `v2.9.1` | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
-| show-word-limit `v2.2.8` | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
+| show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
 | formatter `v2.4.2` | 输入内容格式化函数 | _Function_ | - |
 | format-trigger `v2.8.7` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
-| arrow-direction `v2.0.4` | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _any_ | - |
-| label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `6em` |
+| label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `6.2em` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
@@ -293,7 +295,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明           | 参数 | 返回值 |
 | ------ | -------------- | ---- | ------ |

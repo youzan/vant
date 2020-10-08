@@ -69,6 +69,10 @@ export default createComponent({
       type: Boolean,
       default: null,
     },
+    clearTrigger: {
+      type: String,
+      default: 'focus',
+    },
     formatTrigger: {
       type: String,
       default: 'onChange',
@@ -109,13 +113,14 @@ export default createComponent({
 
   computed: {
     showClear() {
-      return (
-        this.clearable &&
-        this.focused &&
-        this.value !== '' &&
-        isDef(this.value) &&
-        !this.readonly
-      );
+      if (this.clearable && !this.readonly) {
+        const hasValue = isDef(this.value) && this.value !== '';
+        const trigger =
+          this.clearTrigger === 'always' ||
+          (this.clearTrigger === 'focus' && this.focused);
+
+        return hasValue && trigger;
+      }
     },
 
     showError() {
@@ -185,7 +190,9 @@ export default createComponent({
       if (Array.isArray(value)) {
         return !value.length;
       }
-
+      if (value === 0) {
+        return false;
+      }
       return !value;
     },
 
@@ -248,6 +255,7 @@ export default createComponent({
           resolve();
         }
 
+        this.resetValidation();
         this.runRules(rules).then(() => {
           if (this.validateFailed) {
             resolve({
@@ -277,7 +285,7 @@ export default createComponent({
     },
 
     resetValidation() {
-      if (this.validateMessage) {
+      if (this.validateFailed) {
         this.validateFailed = false;
         this.validateMessage = '';
       }
@@ -286,15 +294,20 @@ export default createComponent({
     updateValue(value, trigger = 'onChange') {
       value = isDef(value) ? String(value) : '';
 
-      // native maxlength not work when type is number
+      // native maxlength have incorrect line-break counting
+      // see: https://github.com/youzan/vant/issues/5033
       const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
-        value = value.slice(0, maxlength);
+        if (this.value && this.value.length === +maxlength) {
+          ({ value } = this);
+        } else {
+          value = value.slice(0, maxlength);
+        }
       }
 
       if (this.type === 'number' || this.type === 'digit') {
-        const allowDot = this.type === 'number';
-        value = formatNumber(value, allowDot);
+        const isNumber = this.type === 'number';
+        value = formatNumber(value, isNumber, isNumber);
       }
 
       if (this.formatter && trigger === this.formatTrigger) {
@@ -309,8 +322,6 @@ export default createComponent({
       if (value !== this.value) {
         this.$emit('input', value);
       }
-
-      this.currentValue = value;
     },
 
     onInput(event) {

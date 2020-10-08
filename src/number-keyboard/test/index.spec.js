@@ -1,5 +1,5 @@
 import NumberKeyboard from '..';
-import { mount, trigger, later } from '../../../test';
+import { mount, trigger } from '../../../test';
 
 function clickKey(key) {
   trigger(key, 'touchstart');
@@ -87,6 +87,16 @@ test('title-left slot', () => {
   const wrapper = mount(NumberKeyboard, {
     scopedSlots: {
       'title-left': () => 'Custom Title Left',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('extra-key prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      extraKey: 'foo',
     },
   });
 

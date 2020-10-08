@@ -48,7 +48,10 @@ export default createComponent({
     onTouchEnd(event) {
       if (this.active) {
         // eliminate tap delay on safari
-        event.preventDefault();
+        // see: https://github.com/youzan/vant/issues/6836
+        if (!this.slots('default')) {
+          event.preventDefault();
+        }
         this.active = false;
         this.$emit('press', this.text, this.type);
       }
@@ -78,8 +81,9 @@ export default createComponent({
   render() {
     return (
       <div class={bem('wrapper', { wider: this.wider })}>
-        <button
-          type="button"
+        <div
+          role="button"
+          tabindex="0"
           class={bem([
             this.color,
             {
@@ -90,7 +94,7 @@ export default createComponent({
           ])}
         >
           {this.genContent()}
-        </button>
+        </div>
       </div>
     );
   },

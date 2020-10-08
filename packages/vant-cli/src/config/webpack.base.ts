@@ -4,6 +4,7 @@ import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
 import { existsSync } from 'fs';
 import { consola } from '../common/logger';
+import { WebpackConfig } from '../common/types';
 import {
   CWD,
   CACHE_DIR,
@@ -61,7 +62,7 @@ if (existsSync(tsconfigPath)) {
   );
 }
 
-export const baseConfig = {
+export const baseConfig: WebpackConfig = {
   mode: 'development',
   resolve: {
     extensions: [...SCRIPT_EXTS, ...STYLE_EXTS],

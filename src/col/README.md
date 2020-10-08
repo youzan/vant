@@ -2,7 +2,7 @@
 
 ### Intro
 
-Quickly and easily create layouts with `van-row` and `van-col`
+Quickly and easily create layouts with `van-row` and `van-col`.
 
 ### Install
 
@@ -40,7 +40,7 @@ Layout are based on 24-column. The attribute `span` in `Col` means the number of
 
 ### Column Spacing
 
-Set grid spacing using `gutter` attribute. The default value is 0
+Set grid spacing using `gutter` attribute. The default value is 0.
 
 ```html
 <van-row gutter="20">
@@ -52,7 +52,7 @@ Set grid spacing using `gutter` attribute. The default value is 0
 
 ### Flex Layout
 
-Setting `type` to `flex` to enable flex layout
+Setting `type` to `flex` to enable flex layout.
 
 ```html
 <van-row type="flex">

@@ -29,6 +29,17 @@ export default {
     if (this.searchConfig) {
       this.docsearchInstance = window.docsearch({
         ...this.searchConfig,
+        transformData: (hits) => {
+          hits.forEach((hit) => {
+            if (hit.anchor) {
+              hit.url = hit.url + '#' + hit.anchor;
+              hit.anchor = null;
+            }
+          });
+          if (this.searchConfig.transformData) {
+            this.searchConfig.transformData(hits);
+          }
+        },
         inputSelector: '.van-doc-search',
         algoliaOptions: {
           facetFilters: [`lang:${this.lang}`],
@@ -72,7 +83,7 @@ export default {
   }
 
   .algolia-docsearch-suggestion--title {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .algolia-docsearch-suggestion--text {

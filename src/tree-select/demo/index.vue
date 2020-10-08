@@ -22,7 +22,7 @@
         :items="simpleItems"
         :main-active-index.sync="activeIndex3"
       >
-        <template slot="content">
+        <template #content>
           <van-image
             v-if="activeIndex3 === 0"
             :show-loading="false"

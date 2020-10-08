@@ -30,7 +30,9 @@
 
     <demo-block :title="t('withCell')">
       <van-cell center :title="t('title')">
-        <van-switch v-model="checked5" slot="right-icon" size="24" />
+        <template #right-icon>
+          <van-switch v-model="checked5" size="24" />
+        </template>
       </van-cell>
     </demo-block>
   </demo-section>

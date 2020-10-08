@@ -1,7 +1,10 @@
 <template>
   <div class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">{{ title }}</h2>
-    <slot />
+    <h2 v-if="title" class="van-doc-demo-block__title">{{ title }}</h2>
+    <div v-if="card" class="van-doc-demo-block__card">
+      <slot />
+    </div>
+    <slot v-else />
   </div>
 </template>
 
@@ -10,6 +13,7 @@ export default {
   name: 'demo-block',
 
   props: {
+    card: Boolean,
     title: String,
   },
 };
@@ -26,6 +30,16 @@ export default {
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
+  }
+
+  &__card {
+    margin: 12px 12px 0;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  &__title + &__card {
+    margin-top: 0;
   }
 
   &:first-of-type {

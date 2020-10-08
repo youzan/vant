@@ -30,6 +30,7 @@
     margin: 0 @padding-md;
 
     &__img-wrap {
+      flex-shrink: 0;
       width: 96px;
       height: 96px;
       margin: @padding-sm @padding-sm @padding-sm 0;
@@ -65,6 +66,8 @@
   }
 
   &__goods-price {
+    // for price align
+    margin-left: -2px;
     color: @red;
   }
 
@@ -314,90 +317,25 @@
   &-messages {
     padding-bottom: @padding-xl;
 
-    .van-cell::after {
-      top: 0;
-      right: @padding-md;
-      bottom: auto;
-    }
-
     &__image-cell {
       .van-cell__title {
         max-width: @field-label-width;
         margin-right: @field-label-margin-right;
+        color: @field-label-color;
+        text-align: left;
+        word-wrap: break-word;
       }
 
       .van-cell__value {
         overflow: visible;
         text-align: left;
       }
-    }
-  }
 
-  &-img-uploader {
-    display: inline-block;
-
-    &__uploader {
-      vertical-align: middle;
-    }
-
-    &__img {
-      position: relative;
-      float: left;
-      width: 64px;
-      height: 64px;
-      margin-right: @padding-xs;
-      background: @sku-item-background-color;
-      border-radius: @border-radius-sm;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      &-label {
+        color: @cell-label-color;
+        font-size: @cell-label-font-size;
+        line-height: @cell-label-line-height;
       }
-    }
-
-    &__delete {
-      position: absolute;
-      top: -12px;
-      right: -14px;
-      z-index: 1;
-      padding: 6px;
-      color: @sku-upload-mask-color;
-      opacity: 0.8;
-
-      &::before {
-        background-color: @white;
-        border-radius: 14px;
-      }
-    }
-
-    &__mask {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      color: white;
-      background: @sku-upload-mask-color;
-    }
-
-    &__warn-text {
-      margin-top: 6px;
-      font-size: @font-size-sm;
-      line-height: 14px;
-    }
-
-    &__trigger {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      color: @sku-icon-gray-color;
     }
   }
 

@@ -24,7 +24,7 @@
     height: 100%;
     background-color: @slider-active-background-color;
     border-radius: inherit;
-    transition: width @animation-duration-fast;
+    transition: all @animation-duration-fast;
   }
 
   &__button {
@@ -34,11 +34,20 @@
     border-radius: @slider-button-border-radius;
     box-shadow: @slider-button-box-shadow;
 
-    &-wrapper {
+    &-wrapper,
+    &-wrapper-right {
       position: absolute;
       top: 50%;
       right: 0;
       transform: translate3d(50%, -50%, 0);
+      cursor: grab;
+    }
+
+    &-wrapper-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(-50%, -50%, 0);
       cursor: grab;
     }
   }
@@ -47,7 +56,9 @@
     cursor: not-allowed;
     opacity: @slider-disabled-opacity;
 
-    .van-slider__button-wrapper {
+    .van-slider__button-wrapper,
+    .van-slider__button-wrapper-left,
+    .van-slider__button-wrapper-right {
       cursor: not-allowed;
     }
   }
@@ -57,11 +68,19 @@
     width: @slider-bar-height;
     height: 100%;
 
-    .van-slider__button-wrapper {
+    .van-slider__button-wrapper,
+    .van-slider__button-wrapper-right {
       top: auto;
       right: 50%;
       bottom: 0;
       transform: translate3d(50%, 50%, 0);
+    }
+
+    .van-slider__button-wrapper-left {
+      top: 0;
+      right: 50%;
+      left: auto;
+      transform: translate3d(50%, -50%, 0);
     }
 
     // use pseudo element to expand click area

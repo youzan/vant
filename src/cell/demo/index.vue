@@ -60,7 +60,7 @@
 
       <van-cell icon="shop-o" :title="t('cell')">
         <template #right-icon>
-          <van-icon name="search" style="line-height: inherit;" />
+          <van-icon name="search" class="search-icon" />
         </template>
       </van-cell>
     </demo-block>
@@ -114,8 +114,13 @@ export default {
 <style lang="less">
 .demo-cell {
   .custom-title {
-    margin-right: 5px;
+    margin-right: 4px;
     vertical-align: middle;
+  }
+
+  .search-icon {
+    font-size: 16px;
+    line-height: inherit;
   }
 }
 </style>

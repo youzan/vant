@@ -15,17 +15,19 @@ exports[`renders demo correctly 1`] = `
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
-          </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
-            <!----></i>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
         </div>
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
-          </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
-            <!----></i>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
         </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input multiple="multiple" type="file" accept="*" class="van-uploader__input"></div>
@@ -34,18 +36,10 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-uploader">
-      <div class="van-uploader__wrapper van-uploader__wrapper--disabled">
-        <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
-            <!----></i><input type="file" accept="image/*" disabled="disabled" class="van-uploader__input"></div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
           <div class="van-uploader__mask">
@@ -55,14 +49,15 @@ exports[`renders demo correctly 1`] = `
         </div>
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
           <div class="van-uploader__mask"><i class="van-icon van-icon-close van-uploader__mask-icon">
               <!----></i>
             <div class="van-uploader__mask-message">上传失败</div>
-          </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
-            <!----></i>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
         </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
@@ -74,10 +69,11 @@ exports[`renders demo correctly 1`] = `
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
           <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
-            <div class="van-image__loading"><i class="van-icon van-icon-photo-o van-image__loading-icon">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
-          </div><i class="van-icon van-icon-clear van-uploader__preview-delete">
-            <!----></i>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
         </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input multiple="multiple" type="file" accept="image/*" class="van-uploader__input"></div>
@@ -87,6 +83,14 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
+        <div class="van-uploader__preview">
+          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
+                <!----></i></div>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
+        </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input multiple="multiple" type="file" accept="image/*" class="van-uploader__input"></div>
       </div>
@@ -96,7 +100,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__input-wrapper"><button class="van-button van-button--primary van-button--normal">
-            <div class="van-button__content"><i class="van-icon van-icon-photo van-button__icon">
+            <div class="van-button__content"><i class="van-icon van-icon-plus van-button__icon">
                 <!----></i><span class="van-button__text">
         上传文件
       </span></div>
@@ -107,8 +111,35 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
+        <div class="van-uploader__preview">
+          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
+                <!----></i></div>
+            <div class="van-uploader__preview-cover">
+              <div class="preview-cover van-ellipsis">图片名称</div>
+            </div>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
+        </div>
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
+            <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper van-uploader__wrapper--disabled">
+        <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
+            <!----></i><input type="file" accept="image/*" disabled="disabled" class="van-uploader__input"></div>
       </div>
     </div>
   </div>

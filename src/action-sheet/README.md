@@ -121,7 +121,7 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Colored Option', color: '#07c160' },
+        { name: 'Colored Option', color: '#ee0a24' },
         { name: 'Disabled Option', disabled: true },
         { name: 'Loading Option', loading: true },
       ],
@@ -154,10 +154,11 @@ export default {
 | actions | Options | _Action[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
-| description `v2.2.8` | Description above the options | _string_ | - |
-| close-icon `v2.2.13` | Close icon name | _string_ | `cross` |
-| duration `v2.0.3` | Transition duration, unit second | _number \| string_ | `0.3` |
-| round `v2.0.9` | Whether to show round corner | _boolean_ | `true` |
+| description | Description above the options | _string_ | - |
+| closeable `v2.10.5` | Whether to show close icon | _boolean_ | `true` |
+| close-icon | Close icon name | _string_ | `cross` |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
@@ -189,3 +190,10 @@ export default {
 | opened | Triggered when opened ActionSheet | - |
 | closed | Triggered when closed ActionSheet | - |
 | click-overlay | Triggered when click overlay | - |
+
+### Slots
+
+| Name                  | Description        |
+| --------------------- | ------------------ |
+| default               | Custom content     |
+| description `v2.10.4` | Custom description |

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render page slot 1`] = `
+<ul class="van-pagination">
+  <li class="van-pagination__item van-pagination__prev van-hairline">上一页</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">1</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">2</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">3</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">4</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">5</li>
+  <li class="van-pagination__item van-pagination__next van-hairline">下一页</li>
+</ul>
+`;
+
+exports[`render prev-text & next-text slot 1`] = `
+<ul class="van-pagination">
+  <li class="van-pagination__item van-pagination__prev van-hairline">Custom PrevText</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">1</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">2</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">3</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">4</li>
+  <li class="van-pagination__item van-pagination__page van-hairline">5</li>
+  <li class="van-pagination__item van-pagination__next van-hairline">Custom NextText</li>
+</ul>
+`;

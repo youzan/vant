@@ -27,25 +27,30 @@ export default {
     active: Number,
     minZoom: [Number, String],
     maxZoom: [Number, String],
+    rootWidth: Number,
+    rootHeight: Number,
   },
 
   data() {
-    this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
-
     return {
       scale: 1,
       moveX: 0,
       moveY: 0,
       moving: false,
       zooming: false,
-      vertical: false,
+      imageRatio: 0,
       displayWidth: 0,
       displayHeight: 0,
     };
   },
 
   computed: {
+    vertical() {
+      const { rootWidth, rootHeight } = this;
+      const rootRatio = rootHeight / rootWidth;
+      return this.imageRatio > rootRatio;
+    },
+
     imageStyle() {
       const { scale } = this;
       const style = {
@@ -62,22 +67,26 @@ export default {
     },
 
     maxMoveX() {
-      if (this.displayWidth) {
-        return Math.max(
-          0,
-          (this.scale * this.displayWidth - this.windowWidth) / 2
-        );
+      if (this.imageRatio) {
+        const displayWidth = this.vertical
+          ? this.rootHeight / this.imageRatio
+          : this.rootWidth;
+
+        return Math.max(0, (this.scale * displayWidth - this.rootWidth) / 2);
       }
+
       return 0;
     },
 
     maxMoveY() {
-      if (this.displayHeight) {
-        return Math.max(
-          0,
-          (this.scale * this.displayHeight - this.windowHeight) / 2
-        );
+      if (this.imageRatio) {
+        const displayHeight = this.vertical
+          ? this.rootHeight
+          : this.rootWidth * this.imageRatio;
+
+        return Math.max(0, (this.scale * displayHeight - this.rootHeight) / 2);
       }
+
       return 0;
     },
   },
@@ -225,20 +234,8 @@ export default {
     },
 
     onLoad(event) {
-      const { windowWidth, windowHeight } = this;
       const { naturalWidth, naturalHeight } = event.target;
-      const windowRatio = windowHeight / windowWidth;
-      const imageRatio = naturalHeight / naturalWidth;
-
-      this.vertical = imageRatio > windowRatio;
-
-      if (this.vertical) {
-        this.displayWidth = windowHeight / imageRatio;
-        this.displayHeight = windowHeight;
-      } else {
-        this.displayWidth = windowWidth;
-        this.displayHeight = windowWidth * imageRatio;
-      }
+      this.imageRatio = naturalHeight / naturalWidth;
     },
   },
 

@@ -1,5 +1,5 @@
 import ShareSheet from '..';
-import { mount } from '../../../test';
+import { mount, trigger, later } from '../../../test';
 
 test('cancel-text prop', () => {
   const wrapper = mount(ShareSheet, {
@@ -27,6 +27,19 @@ test('description prop', () => {
 
   wrapper.setProps({ description: '' });
   expect(wrapper.contains('.van-share-sheet__description')).toBeFalsy();
+});
+
+test('option className', () => {
+  const wrapper = mount(ShareSheet, {
+    propsData: {
+      value: true,
+      options: [{ name: 'Link', icon: 'link', className: 'foo' }],
+    },
+  });
+
+  const option = wrapper.find('.van-share-sheet__option').element;
+
+  expect(option.className.includes('foo')).toBeTruthy();
 });
 
 test('select event', () => {
@@ -69,4 +82,20 @@ test('title & description slot', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('click-overlay event', async () => {
+  const root = document.createElement('div');
+  const wrapper = mount(ShareSheet, {
+    propsData: {
+      value: true,
+      getContainer: () => root,
+    },
+  });
+
+  await later();
+
+  const overlay = root.querySelector('.van-overlay');
+  trigger(overlay, 'click');
+  expect(wrapper.emitted('click-overlay')).toBeTruthy();
 });

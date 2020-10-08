@@ -7,6 +7,7 @@ export const sharedProps = {
   ...pickerProps,
   value: null,
   filter: Function,
+  columnsOrder: Array,
   showToolbar: {
     type: Boolean,
     default: true,
@@ -93,6 +94,7 @@ export const TimePickerMixin = {
       <Picker
         ref="picker"
         columns={this.columns}
+        readonly={this.readonly}
         onChange={this.onChange}
         onConfirm={this.onConfirm}
         onCancel={this.onCancel}

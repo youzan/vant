@@ -59,7 +59,7 @@ Use `success-text` to set the success prompt after the refresh is successful
 
 ### Custom Tips
 
-Use slots to custom tips
+Use slots to custom tips.
 
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">

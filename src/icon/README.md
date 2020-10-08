@@ -13,7 +13,7 @@ Vue.use(Icon);
 
 ### Basic Usage
 
-Use `name` prop to set icon name or icon URL
+Use `name` prop to set icon name or icon URL.
 
 ```html
 <van-icon name="chat-o" />
@@ -34,7 +34,7 @@ Use `badge` prop, the badge will be displayed in the upper right corner of the i
 
 ### Icon Color
 
-Use `color` prop to set icon color
+Use `color` prop to set icon color.
 
 ```html
 <van-icon name="chat-o" color="#1989fa" />
@@ -43,7 +43,7 @@ Use `color` prop to set icon color
 
 ### Icon Size
 
-Use `size` prop to set icon size
+Use `size` prop to set icon size.
 
 ```html
 <van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />
@@ -85,7 +85,7 @@ import 'vant/lib/icon/local.css';
 | Attribute      | Description             | Type               | Default    |
 | -------------- | ----------------------- | ------------------ | ---------- |
 | name           | Icon name or URL        | _string_           | `''`       |
-| dot `v2.2.1`   | Whether to show red dot | _boolean_          | `false`    |
+| dot            | Whether to show red dot | _boolean_          | `false`    |
 | badge `v2.5.6` | Content of the badge    | _number \| string_ | `''`       |
 | color          | Icon color              | _string_           | `inherit`  |
 | size           | Icon size               | _number \| string_ | `inherit`  |

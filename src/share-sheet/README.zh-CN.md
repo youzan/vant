@@ -158,7 +158,7 @@ export default {
 | --- | --- | --- | --- |
 | options | 分享选项 | _Option[]_ | `[]` |
 | title | 顶部标题 | _string_ | - |
-| cancel-text | 取消按钮文字 | _string_ | `'取消'` |
+| cancel-text | 取消按钮文字，传入空字符串可以隐藏按钮 | _string_ | `'取消'` |
 | description | 标题下方的辅助描述文字 | _string_ | - |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
@@ -178,13 +178,15 @@ export default {
 | name | 分享渠道名称 | _string_ |
 | description `v2.8.5` | 分享选项描述 | _string_ |
 | icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | _string_ |
+| className | 分享选项类名 | _string_ |
 
 ### Events
 
-| 事件名 | 说明               | 回调参数                        |
-| ------ | ------------------ | ------------------------------- |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
 | select | 点击分享选项时触发 | _option: Option, index: number_ |
-| cancel | 点击取消按钮时触发 | -                               |
+| cancel | 点击取消按钮时触发 | - |
+| click-overlay `v2.9.1` | 点击遮罩层时触发 | - |
 
 ### Slots
 

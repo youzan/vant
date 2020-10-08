@@ -47,3 +47,15 @@ test('click-step event', () => {
   expect(onClickStep).toHaveBeenCalledTimes(2);
   expect(onClickStep).toHaveBeenLastCalledWith(2);
 });
+
+test('inactive-color prop', () => {
+  const wrapper = mount({
+    template: `
+    <van-steps :active="0" inactive-color="red">
+      <van-step>A</van-step>
+      <van-step>B</van-step>
+    </van-steps>
+    `,
+  });
+  expect(wrapper).toMatchSnapshot();
+});

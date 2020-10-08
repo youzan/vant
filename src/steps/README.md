@@ -67,13 +67,14 @@ export default {
 
 ### Steps Props
 
-| Attribute     | Description              | Type               | Default      |
-| ------------- | ------------------------ | ------------------ | ------------ |
-| active        | Active step              | _number \| string_ | `0`          |
-| direction     | Can be set to `vertical` | _string_           | `horizontal` |
-| active-color  | Active step color        | _string_           | `#07c160`    |
-| active-icon   | Active icon name         | _string_           | `checked`    |
-| inactive-icon | Active icon name         | _string_           | -            |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| active | Active step | _number \| string_ | `0` |
+| direction | Can be set to `vertical` | _string_ | `horizontal` |
+| active-color | Active step color | _string_ | `#07c160` |
+| inactive-color `v2.9.1` | Inactive step color | _string_ | `#969799` |
+| active-icon | Active icon name | _string_ | `checked` |
+| inactive-icon | Inactive icon name | _string_ | - |
 
 ### Step Slots
 

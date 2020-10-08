@@ -131,14 +131,14 @@ export default createComponent({
           class={[bem('item', { disabled: value === 1 }), bem('prev'), BORDER]}
           onClick={onSelect(value - 1)}
         >
-          {this.prevText || t('prev')}
+          {(this.slots('prev-text') ?? this.prevText) || t('prev')}
         </li>
         {this.pages.map((page) => (
           <li
             class={[bem('item', { active: page.active }), bem('page'), BORDER]}
             onClick={onSelect(page.number)}
           >
-            {page.text}
+            {this.slots('page', page) ?? page.text}
           </li>
         ))}
         {simple && (
@@ -154,7 +154,7 @@ export default createComponent({
           ]}
           onClick={onSelect(value + 1)}
         >
-          {this.nextText || t('next')}
+          {(this.slots('next-text') ?? this.nextText) || t('next')}
         </li>
       </ul>
     );

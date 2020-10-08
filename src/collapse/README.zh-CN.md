@@ -1,5 +1,9 @@
 # Collapse 折叠面板
 
+### 介绍
+
+将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。
+
 ### 引入
 
 ```js
@@ -14,7 +18,7 @@ Vue.use(CollapseItem);
 
 ### 基础用法
 
-通过`v-model`控制展开的面板列表，`activeNames`为数组格式
+通过 `v-model` 控制展开的面板列表，`activeNames` 为数组格式。
 
 ```html
 <van-collapse v-model="activeNames">
@@ -36,7 +40,7 @@ export default {
 
 ### 手风琴
 
-通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
+通过 `accordion` 可以设置为手风琴模式，最多展开一个面板，此时 `activeName` 为字符串格式。
 
 ```html
 <van-collapse v-model="activeName" accordion>
@@ -117,10 +121,18 @@ export default {
 
 ### CollapseItem Slots
 
-| 名称       | 说明                          |
-| ---------- | ----------------------------- |
-| default    | 面板内容                      |
-| value      | 自定义显示内容                |
-| icon       | 自定义`icon`                  |
-| title      | 自定义`title`                 |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| 名称       | 说明                           |
+| ---------- | ------------------------------ |
+| default    | 面板内容                       |
+| value      | 自定义显示内容                 |
+| icon       | 自定义 `icon`                  |
+| title      | 自定义 `title`                 |
+| right-icon | 自定义右侧按钮，默认是 `arrow` |
+
+### CollapseItem 方法
+
+通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle `v2.10.9` | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |

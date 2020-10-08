@@ -379,7 +379,10 @@ export default {
   },
   methods: {
     onConfirm(values) {
-      this.value = values.map((item) => item.name).join('/');
+      this.value = values
+        .filter((item) => !!item)
+        .map((item) => item.name)
+        .join('/');
       this.showArea = false;
     },
   },
@@ -424,7 +427,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| label-width | Field label width | _number \| string_ | `6em` |
+| label-width | Field label width | _number \| string_ | `6.2em` |
 | label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
@@ -447,6 +450,14 @@ export default {
 | trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | Format value before validate | _(value, rule) => any_ |
 
+### validate-trigger
+
+| Value    | Description                                                     |
+| -------- | --------------------------------------------------------------- |
+| onSubmit | Trigger validation after submiting form                         |
+| onBlur   | Trigger validation after submiting form or bluring input        |
+| onChange | Trigger validation after submiting form or changing input value |
+
 ### Events
 
 | Event | Description | Arguments |
@@ -456,7 +467,7 @@ export default {
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |

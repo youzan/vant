@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <van-tabs v-model="activeTab" :color="BLUE">
+    <van-tabs v-model="activeTab">
       <van-tab :title="t('basicUsage')">
         <van-index-bar>
           <div v-for="index in indexList" :key="index">
@@ -29,8 +29,6 @@
 </template>
 
 <script>
-import { BLUE } from '../../utils/constant';
-
 export default {
   i18n: {
     'zh-CN': {
@@ -46,12 +44,12 @@ export default {
   data() {
     const indexList = [];
     const charCodeOfA = 'A'.charCodeAt(0);
+
     for (let i = 0; i < 26; i++) {
       indexList.push(String.fromCharCode(charCodeOfA + i));
     }
 
     return {
-      BLUE,
       activeTab: 0,
       indexList,
       customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],

@@ -23,15 +23,16 @@
 
     img {
       display: block;
-      height: @tabbar-item-icon-size;
+      height: 20px;
     }
   }
 
   &--active {
+    background-color: @tabbar-item-active-background-color;
     color: @tabbar-item-active-color;
   }
 
   .van-info {
-    margin-top: 2px;
+    margin-top: @padding-base;
   }
 }

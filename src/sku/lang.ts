@@ -26,7 +26,8 @@ export default {
     vanSkuImgUploader: {
       oversize: (maxSize: number) =>
         `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`,
-      fail: '上传失败<br />重新上传',
+      fail: '上传失败',
+      uploading: '上传中...',
     },
     vanSkuStepper: {
       quotaLimit: (quota: number) => `限购${quota}件`,
@@ -45,18 +46,32 @@ export default {
         id_no: '请填写正确的身份证号码',
       },
       placeholder: {
-        id_no: '输入身份证号码',
-        text: '输入文本',
-        tel: '输入数字',
-        email: '输入邮箱',
-        date: '点击选择日期',
-        time: '点击选择时间',
-        textarea: '点击填写段落文本',
-        mobile: '输入手机号码',
+        id_no: '请填写身份证号',
+        text: '请填写留言',
+        tel: '请填写数字',
+        email: '请填写邮箱',
+        date: '请选择日期',
+        time: '请选择时间',
+        textarea: '请填写留言',
+        mobile: '请填写手机号',
       },
     },
     vanSkuRow: {
       multiple: '可多选',
+    },
+    vanSkuDatetimeField: {
+      title: {
+        date: '选择年月日',
+        time: '选择时间',
+        datetime: '选择日期时间',
+      },
+      format: {
+        year: '年',
+        month: '月',
+        day: '日',
+        hour: '时',
+        minute: '分',
+      },
     },
   },
 };

@@ -14,9 +14,9 @@ Vue.use(Button);
 ### Type
 
 ```html
-<van-button type="default">Default</van-button>
 <van-button type="primary">Primary</van-button>
 <van-button type="info">Info</van-button>
+<van-button type="default">Default</van-button>
 <van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
 ```
@@ -60,11 +60,11 @@ Vue.use(Button);
 ### Icon
 
 ```html
-<van-button icon="star-o" type="primary" />
-<van-button icon="star-o" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info"
-  >Button</van-button
->
+<van-button icon="plus" type="primary" />
+<van-button icon="plus" type="primary">Button</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+  Button
+</van-button>
 ```
 
 ### Size
@@ -94,9 +94,9 @@ Vue.use(Button);
 ```html
 <van-button color="#7232dd">Pure</van-button>
 <van-button color="#7232dd" plain>Pure</van-button>
-<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)"
-  >Gradient</van-button
->
+<van-button color="linear-gradient(to right, #ff6034, #ee0a24)">
+  Gradient
+</van-button>
 ```
 
 ## API
@@ -108,9 +108,10 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
 | size | Can be set to `large` `small` `mini` | _string_ | `normal` |
 | text | Text | _string_ | - |
-| color `v2.1.8` | Color, support linear-gradient | _string_ | - |
+| color | Color, support linear-gradient | _string_ | - |
 | icon | Left Icon | _string_ | - |
 | icon-prefix `v2.6.0` | Icon className prefix | _string_ | `van-icon` |
+| icon-position `v2.10.7` | Icon position, can be set to `right` | _string_ | `left` |
 | tag | HTML Tag | _string_ | `button` |
 | native-type | Native Type Attribute | _string_ | `''` |
 | plain | Whether to be plain button | _boolean_ | `false` |
@@ -132,3 +133,10 @@ Vue.use(Button);
 | --- | --- | --- |
 | click | Triggered when click button and not disabled or loading | _event: Event_ |
 | touchstart | Triggered when touch start | _event: TouchEvent_ |
+
+### Slots
+
+| Name              | Description         |
+| ----------------- | ------------------- |
+| default           | Default slot        |
+| loading `v2.10.1` | Custom loading icon |

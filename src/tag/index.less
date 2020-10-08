@@ -1,18 +1,14 @@
 @import '../style/var';
 
 .van-tag {
+  position: relative;
   display: inline-flex;
   align-items: center;
   padding: @tag-padding;
   color: @tag-text-color;
   font-size: @tag-font-size;
-  line-height: normal;
+  line-height: @tag-line-height;
   border-radius: @tag-border-radius;
-
-  &::after {
-    border-color: currentColor;
-    border-radius: @tag-border-radius * 2;
-  }
 
   &--default {
     background-color: @tag-default-color;
@@ -56,30 +52,42 @@
 
   &--plain {
     background-color: @tag-plain-background-color;
-  }
 
-  &--mark {
-    padding-right: 0.7em;
-
-    &,
-    &::after {
-      border-radius: 0 @tag-round-border-radius @tag-round-border-radius 0;
-    }
-  }
-
-  &--round {
-    &,
-    &::after {
-      border-radius: @tag-round-border-radius;
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 1px solid currentColor;
+      border-radius: inherit;
+      content: '';
+      pointer-events: none;
     }
   }
 
   &--medium {
-    font-size: @tag-medium-font-size;
+    padding: @tag-medium-padding;
   }
 
   &--large {
+    padding: @tag-large-padding;
     font-size: @tag-large-font-size;
+    border-radius: @tag-large-border-radius;
+  }
+
+  &--mark {
+    border-radius: 0 @tag-round-border-radius @tag-round-border-radius 0;
+
+    &::after {
+      display: block;
+      width: 2px;
+      content: '';
+    }
+  }
+
+  &--round {
+    border-radius: @tag-round-border-radius;
   }
 
   &__close {

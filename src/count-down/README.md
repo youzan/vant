@@ -43,7 +43,7 @@ export default {
 
 ```html
 <van-count-down :time="time">
-  <template v-slot="timeData">
+  <template #default="timeData">
     <span class="block">{{ timeData.hours }}</span>
     <span class="colon">:</span>
     <span class="block">{{ timeData.minutes }}</span>
@@ -156,7 +156,7 @@ export default {
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get CountDown instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get CountDown instance and call instance methods.
 
 | Name  | Description      | Attribute | Return value |
 | ----- | ---------------- | --------- | ------------ |

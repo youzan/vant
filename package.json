@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.9.0-beta.3",
+  "version": "2.10.9",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,6 +12,9 @@
     "types",
     "vetur"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "vant-cli dev",
@@ -40,14 +43,18 @@
     "url": "git@github.com:youzan/vant.git"
   },
   "keywords": [
+    "ui",
     "vue",
-    "component"
+    "frontend",
+    "mobile ui",
+    "component",
+    "components"
   ],
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.2.1",
+    "@vant/icons": "1.3.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
@@ -56,7 +63,7 @@
   },
   "devDependencies": {
     "@ls-lint/ls-lint": "^1.8.0",
-    "@vant/cli": "^2.5.1",
+    "@vant/cli": "^2.6.0",
     "prettier": "^2.0.4",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"

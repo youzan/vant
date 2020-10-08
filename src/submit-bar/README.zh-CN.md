@@ -19,7 +19,7 @@ Vue.use(SubmitBar);
 
 ### 禁用状态
 
-禁用状态下不会触发`submit`事件
+禁用状态下不会触发 `submit` 事件。
 
 ```html
 <van-submit-bar
@@ -34,7 +34,7 @@ Vue.use(SubmitBar);
 
 ### 加载状态
 
-加载状态下不会触发`submit`事件
+加载状态下不会触发 `submit` 事件。
 
 ```html
 <van-submit-bar
@@ -47,7 +47,7 @@ Vue.use(SubmitBar);
 
 ### 高级用法
 
-通过插槽插入自定义内容
+通过插槽插入自定义内容。
 
 ```html
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
@@ -70,6 +70,7 @@ Vue.use(SubmitBar);
 | text-align `v2.3.0` | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
 | button-text | 按钮文字 | _string_ | - |
 | button-type | 按钮类型 | _string_ | `danger` |
+| button-color `v2.9.1` | 自定义按钮颜色 | _string_ | - |
 | tip | 提示文案 | _string_ | - |
 | tip-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | currency | 货币符号 | _string_ | `¥` |

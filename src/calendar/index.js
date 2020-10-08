@@ -1,4 +1,5 @@
 // Utils
+import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -8,7 +9,6 @@ import {
   copyDates,
   getNextDay,
   compareDay,
-  ROW_HEIGHT,
   calcDateNum,
   compareMonth,
   createComponent,
@@ -27,46 +27,34 @@ export default createComponent({
     title: String,
     color: String,
     value: Boolean,
+    readonly: Boolean,
     formatter: Function,
+    rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
     defaultDate: [Date, Array],
     getContainer: [String, Function],
     allowSameDay: Boolean,
-    closeOnPopstate: Boolean,
     confirmDisabledText: String,
     type: {
       type: String,
       default: 'single',
     },
-    minDate: {
-      type: Date,
-      validator: isDate,
-      default: () => new Date(),
-    },
-    maxDate: {
-      type: Date,
-      validator: isDate,
-      default() {
-        const now = new Date();
-        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
-      },
+    round: {
+      type: Boolean,
+      default: true,
     },
     position: {
       type: String,
       default: 'bottom',
     },
-    rowHeight: {
-      type: [Number, String],
-      default: ROW_HEIGHT,
-    },
-    round: {
-      type: Boolean,
-      default: true,
-    },
     poppable: {
       type: Boolean,
       default: true,
+    },
+    maxRange: {
+      type: [Number, String],
+      default: null,
     },
     lazyRender: {
       type: Boolean,
@@ -88,7 +76,7 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    safeAreaInsetBottom: {
+    closeOnPopstate: {
       type: Boolean,
       default: true,
     },
@@ -96,9 +84,27 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    maxRange: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: true,
+    },
+    minDate: {
+      type: Date,
+      validator: isDate,
+      default: () => new Date(),
+    },
+    maxDate: {
+      type: Date,
+      validator: isDate,
+      default() {
+        const now = new Date();
+        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+      },
+    },
+    firstDayOfWeek: {
       type: [Number, String],
-      default: null,
+      default: 0,
+      validator: (val) => val >= 0 && val <= 6,
     },
   },
 
@@ -106,6 +112,7 @@ export default createComponent({
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
+      realRowHeight: 0,
     };
   },
 
@@ -127,15 +134,20 @@ export default createComponent({
     buttonDisabled() {
       const { type, currentDate } = this;
 
-      if (type === 'range') {
-        return !currentDate[0] || !currentDate[1];
-      }
-
-      if (type === 'multiple') {
-        return !currentDate.length;
+      if (currentDate) {
+        if (type === 'range') {
+          return !currentDate[0] || !currentDate[1];
+        }
+        if (type === 'multiple') {
+          return !currentDate.length;
+        }
       }
 
       return !currentDate;
+    },
+
+    dayOffset() {
+      return this.firstDayOfWeek ? this.firstDayOfWeek % 7 : 0;
     },
   },
 
@@ -177,14 +189,19 @@ export default createComponent({
           this.$refs.body.getBoundingClientRect().height
         );
         this.onScroll();
+        this.scrollIntoView();
       });
-      this.scrollIntoView();
     },
 
     // scroll to current month
     scrollIntoView() {
-      this.$nextTick(() => {
+      raf(() => {
         const { currentDate } = this;
+
+        if (!currentDate) {
+          return;
+        }
+
         const targetDate =
           this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.value || !this.poppable;
@@ -196,7 +213,8 @@ export default createComponent({
 
         this.months.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
-            this.$refs.months[index].scrollIntoView();
+            const { body, months } = this.$refs;
+            months[index].scrollIntoView(body);
             return true;
           }
 
@@ -207,6 +225,10 @@ export default createComponent({
 
     getInitialDate() {
       const { type, minDate, maxDate, defaultDate } = this;
+
+      if (defaultDate === null) {
+        return defaultDate;
+      }
 
       let defaultVal = new Date();
 
@@ -234,22 +256,23 @@ export default createComponent({
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
       const bottom = top + this.bodyHeight;
-      const heights = months.map((item) => item.height);
+      const heights = months.map((item) => item.getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      /* istanbul ignore next */
-      if (top < 0 || (bottom > heightSum && top > 0)) {
+      if (bottom > heightSum && top > 0) {
         return;
       }
 
       let height = 0;
       let currentMonth;
+      let visibleIndex;
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
         if (visible && !currentMonth) {
+          visibleIndex = i;
           currentMonth = months[i];
         }
 
@@ -260,9 +283,12 @@ export default createComponent({
           });
         }
 
-        months[i].visible = visible;
         height += heights[i];
       }
+
+      months.forEach((month, index) => {
+        month.visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
+      });
 
       /* istanbul ignore else */
       if (currentMonth) {
@@ -271,10 +297,19 @@ export default createComponent({
     },
 
     onClickDay(item) {
+      if (this.readonly) {
+        return;
+      }
+
       const { date } = item;
       const { type, currentDate } = this;
 
       if (type === 'range') {
+        if (!currentDate) {
+          this.select([date, null]);
+          return;
+        }
+
         const [startDay, endDay] = currentDate;
 
         if (startDay && !endDay) {
@@ -291,8 +326,12 @@ export default createComponent({
           this.select([date, null]);
         }
       } else if (type === 'multiple') {
-        let selectedIndex;
+        if (!currentDate) {
+          this.select([date]);
+          return;
+        }
 
+        let selectedIndex;
         const selected = this.currentDate.some((dateItem, index) => {
           const equal = compareDay(dateItem, date) === 0;
           if (equal) {
@@ -360,6 +399,10 @@ export default createComponent({
       this.$emit('confirm', copyDates(this.currentDate));
     },
 
+    onUpdateHeight(height) {
+      this.realRowHeight = height;
+    },
+
     genMonth(date, index) {
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
@@ -378,8 +421,11 @@ export default createComponent({
           currentDate={this.currentDate}
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
+          realRowHeight={this.realRowHeight}
           showMonthTitle={showMonthTitle}
+          firstDayOfWeek={this.dayOffset}
           onClick={this.onClickDay}
+          onUpdate-height={this.onUpdateHeight}
         />
       );
     },
@@ -432,6 +478,7 @@ export default createComponent({
             scopedSlots={{
               title: () => this.slots('title'),
             }}
+            firstDayOfWeek={this.dayOffset}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}

@@ -1,4 +1,4 @@
-import { createNamespace, get } from '../utils';
+import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
 import { getTrueValue, getMonthEndDay } from './utils';
@@ -83,16 +83,28 @@ export default createComponent({
         },
       ];
 
-      if (this.type === 'date') {
-        result = result.slice(0, 3);
+      switch (this.type) {
+        case 'date':
+          result = result.slice(0, 3);
+          break;
+        case 'year-month':
+          result = result.slice(0, 2);
+          break;
+        case 'month-day':
+          result = result.slice(1, 3);
+          break;
+        case 'datehour':
+          result = result.slice(0, 4);
+          break;
       }
 
-      if (this.type === 'year-month') {
-        result = result.slice(0, 2);
-      }
-
-      if (this.type === 'month-day') {
-        result = result.slice(1, 3);
+      if (this.columnsOrder) {
+        const columnsOrder = this.columnsOrder.concat(
+          result.map((column) => column.type)
+        );
+        result.sort(
+          (a, b) => columnsOrder.indexOf(a.type) - columnsOrder.indexOf(b.type)
+        );
       }
 
       return result;
@@ -151,7 +163,13 @@ export default createComponent({
     updateInnerValue() {
       const { type } = this;
       const indexes = this.getPicker().getIndexes();
-      const getValue = (index) => {
+      const getValue = (type) => {
+        let index = 0;
+        this.originColumns.forEach((column, columnIndex) => {
+          if (type === column.type) {
+            index = columnIndex;
+          }
+        });
         const { values } = this.originColumns[index];
         return getTrueValue(values[indexes[index]]);
       };
@@ -159,15 +177,14 @@ export default createComponent({
       let year;
       let month;
       let day;
-
       if (type === 'month-day') {
         year = this.innerValue.getFullYear();
-        month = getValue(0);
-        day = getValue(1);
+        month = getValue('month');
+        day = getValue('day');
       } else {
-        year = getValue(0);
-        month = getValue(1);
-        day = type === 'year-month' ? 1 : getValue(2);
+        year = getValue('year');
+        month = getValue('month');
+        day = type === 'year-month' ? 1 : getValue('day');
       }
 
       const maxDay = getMonthEndDay(year, month);
@@ -176,9 +193,13 @@ export default createComponent({
       let hour = 0;
       let minute = 0;
 
+      if (type === 'datehour') {
+        hour = getValue('hour');
+      }
+
       if (type === 'datetime') {
-        hour = getValue(3);
-        minute = getValue(4);
+        hour = getValue('hour');
+        minute = getValue('minute');
       }
 
       const value = new Date(year, month - 1, day, hour, minute);
@@ -200,26 +221,23 @@ export default createComponent({
       const value = this.innerValue;
       const { formatter } = this;
 
-      let values = [
-        formatter('year', `${value.getFullYear()}`),
-        formatter('month', padZero(value.getMonth() + 1)),
-        formatter('day', padZero(value.getDate())),
-      ];
-
-      if (this.type === 'datetime') {
-        values.push(
-          formatter('hour', padZero(value.getHours())),
-          formatter('minute', padZero(value.getMinutes()))
-        );
-      }
-
-      if (this.type === 'year-month') {
-        values = values.slice(0, 2);
-      }
-
-      if (this.type === 'month-day') {
-        values = values.slice(1, 3);
-      }
+      const values = this.originColumns.map((column) => {
+        switch (column.type) {
+          case 'year':
+            return formatter('year', `${value.getFullYear()}`);
+          case 'month':
+            return formatter('month', padZero(value.getMonth() + 1));
+          case 'day':
+            return formatter('day', padZero(value.getDate()));
+          case 'hour':
+            return formatter('hour', padZero(value.getHours()));
+          case 'minute':
+            return formatter('minute', padZero(value.getMinutes()));
+          default:
+            // no default
+            return null;
+        }
+      });
 
       this.$nextTick(() => {
         this.getPicker().setValues(values);

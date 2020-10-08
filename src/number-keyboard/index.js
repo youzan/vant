@@ -1,12 +1,14 @@
 import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
+import { PortalMixin } from '../mixins/portal';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
-const [createComponent, bem, t] = createNamespace('number-keyboard');
+const [createComponent, bem] = createNamespace('number-keyboard');
 
 export default createComponent({
   mixins: [
+    PortalMixin(),
     BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {
         bind(document.body, 'touchstart', this.onBlur);
@@ -105,13 +107,13 @@ export default createComponent({
       if (extraKeys.length === 1) {
         keys.push(
           { text: 0, wider: true },
-          { text: extraKey[0], type: 'extra' }
+          { text: extraKeys[0], type: 'extra' }
         );
       } else if (extraKeys.length === 2) {
         keys.push(
-          { text: extraKey[0], type: 'extra' },
+          { text: extraKeys[0], type: 'extra' },
           { text: 0 },
-          { text: extraKey[1], type: 'extra' }
+          { text: extraKeys[1], type: 'extra' }
         );
       }
 

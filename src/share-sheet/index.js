@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 
 // Mixins
 import { popupMixinProps } from '../mixins/popup';
@@ -85,7 +85,7 @@ export default createComponent({
             <div
               role="button"
               tabindex="0"
-              class={bem('option')}
+              class={[bem('option'), option.className]}
               onClick={() => {
                 this.onSelect(option, index);
               }}
@@ -112,7 +112,7 @@ export default createComponent({
     },
 
     genCancelText() {
-      const cancelText = isDef(this.cancelText) ? this.cancelText : t('cancel');
+      const cancelText = this.cancelText ?? t('cancel');
 
       if (cancelText) {
         return (
@@ -121,6 +121,10 @@ export default createComponent({
           </button>
         );
       }
+    },
+
+    onClickOverlay() {
+      this.$emit('click-overlay');
     },
   },
 
@@ -140,6 +144,7 @@ export default createComponent({
         closeOnClickOverlay={this.closeOnClickOverlay}
         safeAreaInsetBottom={this.safeAreaInsetBottom}
         onInput={this.toggle}
+        onClick-overlay={this.onClickOverlay}
       >
         {this.genHeader()}
         {this.genRows()}

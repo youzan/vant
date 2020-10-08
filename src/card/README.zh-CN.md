@@ -25,7 +25,7 @@ Vue.use(Card);
 
 ### 营销信息
 
-通过`origin-price`设置商品原价，通过`tag`设置商品左上角标签
+通过 `origin-price` 设置商品原价，通过 `tag` 设置商品左上角标签。
 
 ```html
 <van-card
@@ -41,7 +41,7 @@ Vue.use(Card);
 
 ### 自定义内容
 
-`Card`组件提供了多个插槽，可以灵活地自定义内容
+`Card` 组件提供了多个插槽，可以灵活地自定义内容。
 
 ```html
 <van-card

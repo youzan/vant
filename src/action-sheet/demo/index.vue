@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
+    <demo-block card :title="t('basicUsage')">
       <van-cell is-link :title="t('basicUsage')" @click="show.basic = true" />
       <van-cell is-link :title="t('showCancel')" @click="show.cancel = true" />
       <van-cell
@@ -10,7 +10,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('optionStatus')">
+    <demo-block card :title="t('optionStatus')">
       <van-cell
         is-link
         :title="t('optionStatus')"
@@ -18,7 +18,7 @@
       />
     </demo-block>
 
-    <demo-block :title="t('customPanel')">
+    <demo-block card :title="t('customPanel')">
       <van-cell is-link :title="t('customPanel')" @click="show.title = true" />
     </demo-block>
 
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { GREEN } from '../../utils/constant';
+import { RED } from '../../utils/constant';
 
 export default {
   i18n: {
@@ -123,7 +123,7 @@ export default {
 
     statusActions() {
       return [
-        { name: this.t('coloredOption'), color: GREEN },
+        { name: this.t('coloredOption'), color: RED },
         { name: this.t('disabledOption'), disabled: true },
         { loading: true },
       ];

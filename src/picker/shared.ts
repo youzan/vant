@@ -13,6 +13,7 @@ export const DEFAULT_ITEM_HEIGHT = 44;
 export const pickerProps = {
   title: String,
   loading: Boolean,
+  readonly: Boolean,
   itemHeight: [Number, String],
   showToolbar: Boolean,
   cancelButtonText: String,
@@ -23,7 +24,7 @@ export const pickerProps = {
   },
   visibleItemCount: {
     type: [Number, String],
-    default: 5,
+    default: 6,
   },
   swipeDuration: {
     type: [Number, String],

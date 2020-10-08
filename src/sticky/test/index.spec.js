@@ -63,6 +63,22 @@ test('offset-top with rem unit', () => {
   window.getComputedStyle = originGetComputedStyle;
 });
 
+test('offset-top with vw unit', () => {
+  window.innerWidth = 300;
+
+  const wrapper = mount({
+    template: `
+      <van-sticky style="height: 10px;" offset-top="10vw">
+        Content
+      </van-sticky>
+    `,
+  });
+
+  mockScrollTop(100);
+  expect(wrapper).toMatchSnapshot();
+  mockScrollTop(0);
+});
+
 test('should not trigger scroll event when hidden', () => {
   const scroll = jest.fn();
   mount({

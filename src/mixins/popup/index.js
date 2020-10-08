@@ -99,8 +99,11 @@ export function PopupMixin(options = {}) {
     },
 
     beforeDestroy() {
-      this.removeLock();
       removeOverlay(this);
+
+      if (this.opened) {
+        this.removeLock();
+      }
 
       if (this.getContainer) {
         removeNode(this.$el);
@@ -145,7 +148,7 @@ export function PopupMixin(options = {}) {
       },
 
       removeLock() {
-        if (this.lockScroll) {
+        if (this.lockScroll && context.lockCount) {
           context.lockCount--;
           off(document, 'touchstart', this.touchStart);
           off(document, 'touchmove', this.onTouchMove);

@@ -23,13 +23,29 @@
 
     <demo-block :title="t('title3')">
       <van-pagination
-        force-ellipses
         v-model="currentPage3"
+        force-ellipses
         :total-items="125"
         :show-page-size="3"
         :prev-text="t('prevText')"
         :next-text="t('nextText')"
       />
+    </demo-block>
+
+    <demo-block :title="t('title4')">
+      <van-pagination
+        v-model="currentPage4"
+        :total-items="125"
+        :show-page-size="5"
+      >
+        <template #prev-text>
+          <van-icon name="arrow-left" />
+        </template>
+        <template #next-text>
+          <van-icon name="arrow" />
+        </template>
+        <template #page="{ text }">{{ text }}</template>
+      </van-pagination>
     </demo-block>
   </demo-section>
 </template>
@@ -40,12 +56,14 @@ export default {
     'zh-CN': {
       title2: '简单模式',
       title3: '显示省略号',
+      title4: '自定义按钮',
       prevText: '上一页',
       nextText: '下一页',
     },
     'en-US': {
       title2: 'Simple Mode',
       title3: 'Show ellipses',
+      title4: 'Custom Button',
       prevText: 'Prev',
       nextText: 'Next',
     },
@@ -56,6 +74,7 @@ export default {
       currentPage1: 1,
       currentPage2: 1,
       currentPage3: 1,
+      currentPage4: 1,
     };
   },
 };

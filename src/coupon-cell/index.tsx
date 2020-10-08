@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Components
@@ -26,8 +26,15 @@ function formatValue(props: CouponCellProps) {
   const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
-    const value = coupon.value || coupon.denominations || 0;
-    return `-${currency}${(value / 100).toFixed(2)}`;
+    let value = 0;
+
+    if (isDef(coupon.value)) {
+      ({ value } = coupon);
+    } else if (isDef(coupon.denominations)) {
+      value = coupon.denominations;
+    }
+
+    return `-${currency} ${(value / 100).toFixed(2)}`;
   }
 
   return coupons.length === 0 ? t('tips') : t('count', coupons.length);
@@ -39,9 +46,7 @@ function CouponCell(
   slots: DefaultSlots,
   ctx: RenderContext<CouponCellProps>
 ) {
-  const valueClass = props.coupons[+props.chosenCoupon]
-    ? 'van-coupon-cell--selected'
-    : '';
+  const selected = props.coupons[+props.chosenCoupon];
   const value = formatValue(props);
 
   return (
@@ -51,7 +56,7 @@ function CouponCell(
       title={props.title || t('title')}
       border={props.border}
       isLink={props.editable}
-      valueClass={valueClass}
+      valueClass={bem('value', { selected })}
       {...inherit(ctx, true)}
     />
   );

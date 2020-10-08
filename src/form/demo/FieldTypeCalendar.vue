@@ -8,12 +8,14 @@
     :placeholder="t('placeholder')"
     @click="showCalendar = true"
   >
-    <van-calendar
-      v-model="showCalendar"
-      slot="extra"
-      get-container="body"
-      @confirm="onConfirm"
-    />
+    <template #extra>
+      <van-calendar
+        v-model="showCalendar"
+        round
+        get-container="body"
+        @confirm="onConfirm"
+      />
+    </template>
   </van-field>
 </template>
 

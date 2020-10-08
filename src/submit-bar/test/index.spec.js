@@ -108,3 +108,14 @@ test('disable safe-area-inset-bottom prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('button-color prop', () => {
+  const wrapper = mount(SubmitBar, {
+    context: {
+      props: {
+        buttonColor: 'red',
+      },
+    },
+  });
+  expect(wrapper).toMatchSnapshot();
+});

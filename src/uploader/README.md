@@ -43,12 +43,6 @@ export default {
 };
 ```
 
-### Disabled
-
-```html
-<van-uploader disabled />
-```
-
 ### Upload Status
 
 ```html
@@ -106,30 +100,52 @@ export default {
 ### Max Size
 
 ```html
-<van-uploader
-  multiple
-  :max-count="5"
-  :max-size="3 * 1024 * 1024"
-  @oversize="onOversize"
-/>
+<van-uploader multiple :max-size="500 * 1024" @oversize="onOversize" />
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   methods: {
     onOversize(file) {
       console.log(file);
+      Toast('File size cannot exceed 500kb);
     },
   },
 };
 ```
 
-### Upload Style
+### Custom Upload Area
 
 ```html
 <van-uploader>
-  <van-button icon="photo" type="primary">Upload Image</van-button>
+  <van-button icon="plus" type="primary">Upload Image</van-button>
 </van-uploader>
+```
+
+### Preview Cover
+
+```html
+<van-uploader v-model="fileList">
+  <template #preview-cover="{ file }">
+    <div class="preview-cover van-ellipsis">{{ file.name }}</div>
+  </template>
+</van-uploader>
+
+<style>
+  .preview-cover {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+  }
+</style>
 ```
 
 ### Before Read
@@ -167,20 +183,30 @@ export default {
 };
 ```
 
+### Disable Uploader
+
+Use `disabled` prop to disable uploader.
+
+```html
+<van-uploader disabled />
+```
+
 ## API
 
 ### Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model (fileList) | List of uploaded files | _FileListItem[]_ | - |
 | accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | _string_ | `image/*` |
-| name `v2.0.3` | Input name | _number \| string_ | - |
+| name | Input name | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string_ | `80px` |
-| preview-image `v2.1.5` | Whether to show image preview | _boolean_ | `true` |
+| preview-image | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whethe to show full screen image preview when click image | _boolean_ | `true` |
+| preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
-| deletable `v2.2.12` | Whether to show delete icon | _boolean_ | `true` |
+| deletable | Whether to show delete icon | _boolean_ | `true` |
 | show-upload `v2.5.6` | Whether to show upload area | _boolean_ | `true` |
 | lazy-load `v2.6.2` | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture，can be set to `camera` | _string_ | - |
@@ -189,9 +215,9 @@ export default {
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | max-size | Max size of file | _number \| string_ | - |
 | max-count | Max count of image | _number \| string_ | - |
-| result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
+| result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
-| image-fit `v2.1.5` | Preview image fit mode | _string_ | `cover` |
+| image-fit | Preview image fit mode | _string_ | `cover` |
 | upload-icon `v2.5.4` | Upload icon | _string_ | `photograph` |
 
 ### Events
@@ -205,9 +231,10 @@ export default {
 
 ### Slots
 
-| Name    | Description |
-| ------- | ----------- |
-| default | Custom icon |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default | Custom icon | - |
+| preview-cover `v2.9.1` | Custom content that covers the image preview | `item: FileListItem` |
 
 ### Parematers of before-read、after-read、before-delete
 
@@ -226,7 +253,7 @@ export default {
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |

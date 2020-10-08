@@ -43,7 +43,6 @@
     height: @uploader-size;
     margin: 0 @padding-xs @padding-xs 0;
     background-color: @uploader-upload-background-color;
-    border-radius: @uploader-upload-border-radius;
 
     &:active {
       background-color: @uploader-upload-active-color;
@@ -71,17 +70,34 @@
       width: @uploader-size;
       height: @uploader-size;
       overflow: hidden;
-      border-radius: @uploader-upload-border-radius;
     }
 
     &-delete {
       position: absolute;
-      top: -8px;
-      right: -8px;
-      color: @uploader-delete-color;
-      font-size: @uploader-delete-icon-size;
+      top: 0;
+      right: 0;
+      width: @uploader-delete-icon-size;
+      height: @uploader-delete-icon-size;
       background-color: @uploader-delete-background-color;
-      border-radius: 100%;
+      border-radius: 0 0 0 12px;
+
+      &-icon {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        color: #fff;
+        color: @uploader-delete-color;
+        font-size: 16px;
+        transform: scale(0.5);
+      }
+    }
+
+    &-cover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 
@@ -97,7 +113,6 @@
     justify-content: center;
     color: @white;
     background-color: @uploader-mask-background-color;
-    border-radius: @uploader-upload-border-radius;
 
     &-icon {
       font-size: @uploader-mask-icon-size;
@@ -125,7 +140,6 @@
     width: @uploader-size;
     height: @uploader-size;
     background-color: @uploader-file-background-color;
-    border-radius: @uploader-upload-border-radius;
 
     &-icon {
       color: @uploader-file-icon-color;

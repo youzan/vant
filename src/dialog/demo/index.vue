@@ -1,30 +1,22 @@
 <template>
   <demo-section>
-    <demo-block :title="t('alert1')">
-      <van-button type="primary" @click="onClickAlert">
-        {{ t('alert1') }}
-      </van-button>
-      <van-button type="primary" @click="onClickAlert2">
-        {{ t('alert2') }}
-      </van-button>
+    <demo-block card :title="t('basicUsage')">
+      <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
+      <van-cell is-link :title="t('alert2')" @click="onClickAlert2" />
+      <van-cell is-link :title="t('confirm')" @click="onClickConfirm" />
     </demo-block>
 
-    <demo-block :title="t('confirm')">
-      <van-button type="primary" @click="onClickConfirm">
-        {{ t('confirm') }}
-      </van-button>
+    <demo-block card :title="t('roundButton')">
+      <van-cell is-link :title="t('alert1')" @click="onClickRound" />
+      <van-cell is-link :title="t('alert2')" @click="onClickRound2" />
     </demo-block>
 
-    <demo-block :title="t('asyncClose')">
-      <van-button type="primary" @click="onClickAsyncClose">
-        {{ t('asyncClose') }}
-      </van-button>
+    <demo-block card :title="t('asyncClose')">
+      <van-cell is-link :title="t('asyncClose')" @click="onClickAsyncClose" />
     </demo-block>
 
-    <demo-block :title="t('componentCall')">
-      <van-button type="primary" @click="show = true">
-        {{ t('componentCall') }}
-      </van-button>
+    <demo-block card :title="t('componentCall')">
+      <van-cell is-link :title="t('componentCall')" @click="show = true" />
       <van-dialog
         v-model="show"
         :title="t('title')"
@@ -45,6 +37,7 @@ export default {
       alert2: '提示弹窗（无标题）',
       confirm: '确认弹窗',
       asyncClose: '异步关闭',
+      roundButton: '圆角按钮样式',
       componentCall: '组件调用',
       content: '代码是写出来给人看的，附带能在机器上运行',
     },
@@ -53,6 +46,7 @@ export default {
       alert2: 'Alert without title',
       confirm: 'Confirm dialog',
       asyncClose: 'Async Close',
+      roundButton: 'Round Button Style',
       componentCall: 'Component Call',
     },
   },
@@ -75,6 +69,21 @@ export default {
 
     onClickAlert2() {
       this.$dialog.alert({
+        message: this.t('content'),
+      });
+    },
+
+    onClickRound() {
+      this.$dialog.alert({
+        theme: 'round-button',
+        title: this.t('title'),
+        message: this.t('content'),
+      });
+    },
+
+    onClickRound2() {
+      this.$dialog.alert({
+        theme: 'round-button',
         message: this.t('content'),
       });
     },
@@ -109,12 +118,6 @@ export default {
 @import '../../style/var';
 
 .demo-dialog {
-  background-color: @white;
-
-  .van-doc-demo-block > .van-button {
-    margin-left: @padding-md;
-  }
-
   img {
     box-sizing: border-box;
     width: 100%;

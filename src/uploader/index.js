@@ -30,6 +30,7 @@ export default createComponent({
     beforeRead: Function,
     beforeDelete: Function,
     previewSize: [Number, String],
+    previewOptions: Object,
     name: {
       type: [Number, String],
       default: '',
@@ -256,11 +257,11 @@ export default createComponent({
 
       this.imagePreview = ImagePreview({
         images: imageContents,
-        closeOnPopstate: true,
         startPosition: imageFiles.indexOf(item),
         onClose: () => {
           this.$emit('close-preview');
         },
+        ...this.previewOptions,
       });
     },
 
@@ -308,14 +309,24 @@ export default createComponent({
       const showDelete = item.status !== 'uploading' && this.deletable;
 
       const DeleteIcon = showDelete && (
-        <Icon
-          name="clear"
+        <div
           class={bem('preview-delete')}
           onClick={(event) => {
             event.stopPropagation();
             this.onDelete(item, index);
           }}
-        />
+        >
+          <Icon name="cross" class={bem('preview-delete-icon')} />
+        </div>
+      );
+
+      const PreviewCoverContent = this.slots('preview-cover', {
+        index,
+        ...item,
+      });
+
+      const PreviewCover = PreviewCoverContent && (
+        <div class={bem('preview-cover')}>{PreviewCoverContent}</div>
       );
 
       const Preview = isImageFile(item) ? (
@@ -329,7 +340,9 @@ export default createComponent({
           onClick={() => {
             this.onPreviewImage(item);
           }}
-        />
+        >
+          {PreviewCover}
+        </Image>
       ) : (
         <div
           class={bem('file')}
@@ -342,6 +355,7 @@ export default createComponent({
           <div class={[bem('file-name'), 'van-ellipsis']}>
             {item.file ? item.file.name : item.url}
           </div>
+          {PreviewCover}
         </div>
       );
 

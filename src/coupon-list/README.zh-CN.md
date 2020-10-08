@@ -104,7 +104,7 @@ export default {
 | input-placeholder | 输入框文字提示 | _string_ | `请输入优惠码` |
 | show-exchange-bar | 是否展示兑换栏 | _boolean_ | `true` |
 | currency | 货币符号 | _string_ | `¥` |
-| empty-image `v2.1.0` | 列表为空时的占位图 | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| empty-image | 列表为空时的占位图 | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
 | show-count `v2.3.0` | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
 
 ### CouponList Events

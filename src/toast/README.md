@@ -24,12 +24,6 @@ Toast.loading({
   message: 'Loading...',
   forbidClick: true,
 });
-
-Toast.loading({
-  message: 'Loading...',
-  forbidClick: true,
-  loadingType: 'spinner',
-});
 ```
 
 ### Success/Fail
@@ -50,6 +44,26 @@ Toast({
 Toast({
   message: 'Custom Image',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
+});
+
+Toast.loading({
+  message: 'Loading...',
+  forbidClick: true,
+  loadingType: 'spinner',
+});
+```
+
+### Custom Position
+
+```js
+Toast({
+  message: 'Top',
+  position: 'top',
+});
+
+Toast({
+  message: 'Bottom',
+  position: 'bottom',
 });
 ```
 
@@ -141,16 +155,16 @@ Toast.resetDefaultOptions('loading');
 | type | Can be set to `loading` `success` `fail` `html` | _string_ | `text` |
 | position | Can be set to `top` `middle` `bottom` | _string_ | `middle` |
 | message | Message | _string_ | `''` |
-| icon `v2.0.1` | Custom icon | _string_ | - |
-| iconPrefix `v2.0.9` | Icon className prefix | _string_ | `van-icon` |
-| overlay `v2.2.13` | Whether to show overlay | _boolean_ | `false` |
+| icon | Custom icon | _string_ | - |
+| iconPrefix | Icon className prefix | _string_ | `van-icon` |
+| overlay | Whether to show overlay | _boolean_ | `false` |
 | forbidClick | Whether to forbid click background | _boolean_ | `false` |
-| closeOnClick `v2.1.5` | Whether to close after clicked | _boolean_ | `false` |
-| closeOnClickOverlay `v2.2.13` | Whether to close when click overlay | _boolean_ | `false` |
+| closeOnClick | Whether to close after clicked | _boolean_ | `false` |
+| closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
 | loadingType | Loading icon type, can be set to `spinner` | _string_ | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
 | className | Custom className | _any_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
-| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
 | getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |

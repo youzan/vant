@@ -45,7 +45,7 @@ export default {
 
 ### 徽标提示
 
-在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
+在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-goods-action>
@@ -59,7 +59,7 @@ export default {
 
 ### 自定义图标颜色
 
-通过 GoodsActionIcon 的`color`属性可以自定义图标的颜色
+通过 GoodsActionIcon 的`color`属性可以自定义图标的颜色。
 
 ```html
 <van-goods-action>
@@ -73,7 +73,7 @@ export default {
 
 ### 自定义按钮颜色
 
-通过 GoodsActionButton 的`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+通过 GoodsActionButton 的 `color` 属性可以自定义按钮的颜色，支持传入 `linear-gradient` 渐变色。
 
 ```html
 <van-goods-action>
@@ -113,7 +113,7 @@ export default {
 | --- | --- | --- | --- |
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
-| color `v2.1.8` | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
 | icon `v2.4.4` | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | disabled | 是否禁用按钮 | _boolean_ | `false` | - |
 | loading | 是否显示为加载状态 | _boolean_ | `false` | - |

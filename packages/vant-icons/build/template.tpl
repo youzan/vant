@@ -1,4 +1,5 @@
 /* stylelint-disable selector-pseudo-element-colon-notation */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
   font-weight: normal;
   font-family: '<%= fontName %>';
@@ -12,7 +13,7 @@
 .van-icon {
   position: relative;
   display: inline-block;
-  font: normal normal normal 14px/1 "<%= fontName %>";
+  font: normal normal normal 14px/1 '<%= fontName %>';
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +24,7 @@
 }
 
 <% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>::before {
-  content: "\<%= glyph.codePoint %>";
+  content: '\<%= glyph.codePoint %>';
 }
 
 <% }); %>

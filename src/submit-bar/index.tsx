@@ -20,6 +20,7 @@ export type SubmitBarProps = {
   disabled?: boolean;
   buttonType: ButtonType;
   buttonText?: string;
+  buttonColor?: string;
   suffixLabel?: string;
   decimalLength: number;
   safeAreaInsetBottom?: boolean;
@@ -87,6 +88,7 @@ function SubmitBar(
           round
           class={bem('button', props.buttonType)}
           type={props.buttonType}
+          color={props.buttonColor}
           loading={props.loading}
           disabled={props.disabled}
           text={props.loading ? '' : props.buttonText}
@@ -108,6 +110,7 @@ SubmitBar.props = {
   disabled: Boolean,
   textAlign: String,
   buttonText: String,
+  buttonColor: String,
   suffixLabel: String,
   safeAreaInsetBottom: {
     type: Boolean,

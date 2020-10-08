@@ -2,28 +2,45 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--danger van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">基础用法</span></div>
-    </button></div>
   <div>
-    <div style="margin-bottom: 15px;"><button class="van-button van-button--info van-button--normal">
-        <div class="van-button__content"><span class="van-button__text">主要通知</span></div>
-      </button> <button class="van-button van-button--primary van-button--normal">
-        <div class="van-button__content"><span class="van-button__text">成功通知</span></div>
-      </button></div> <button class="van-button van-button--danger van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">危险通知</span></div>
-    </button> <button class="van-button van-button--warning van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">警告通知</span></div>
-    </button>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>基础用法</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
   </div>
-  <div><button class="van-button van-button--primary van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">自定义颜色</span></div>
-    </button> <button class="van-button van-button--primary van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">自定义时长</span></div>
-    </button></div>
-  <div><button class="van-button van-button--primary van-button--normal">
-      <div class="van-button__content"><span class="van-button__text">组件调用</span></div>
-    </button>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>主要通知</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>成功通知</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>危险通知</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>警告通知</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>自定义颜色</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>自定义时长</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+      <div class="van-cell__title"><span>组件调用</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
     <!---->
   </div>
 </div>

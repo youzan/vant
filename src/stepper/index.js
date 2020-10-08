@@ -28,6 +28,7 @@ export default createComponent({
     theme: String,
     integer: Boolean,
     disabled: Boolean,
+    allowEmpty: Boolean,
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
@@ -71,7 +72,7 @@ export default createComponent({
   },
 
   data() {
-    const defaultValue = isDef(this.value) ? this.value : this.defaultValue;
+    const defaultValue = this.value ?? this.defaultValue;
     const value = this.format(defaultValue);
 
     if (!equal(value, this.value)) {
@@ -154,6 +155,10 @@ export default createComponent({
     },
 
     format(value) {
+      if (this.allowEmpty && value === '') {
+        return value;
+      }
+
       value = this.formatNumber(value);
 
       // format range
@@ -268,7 +273,9 @@ export default createComponent({
   render() {
     const createListeners = (type) => ({
       on: {
-        click: () => {
+        click: (e) => {
+          // disable double tap scrolling on mobile safari
+          e.preventDefault();
           this.type = type;
           this.onChange();
         },

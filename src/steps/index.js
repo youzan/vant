@@ -9,6 +9,7 @@ export default createComponent({
   props: {
     activeColor: String,
     inactiveIcon: String,
+    inactiveColor: String,
     active: {
       type: [Number, String],
       default: 0,

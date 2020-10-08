@@ -1,33 +1,33 @@
 <template>
   <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-button type="primary" @click="showImagePreview">
-        {{ t('button1') }}
-      </van-button>
+    <demo-block card :title="t('basicUsage')">
+      <van-cell is-link @click="showImagePreview">
+        {{ t('showImages') }}
+      </van-cell>
     </demo-block>
 
-    <demo-block :title="t('button2')">
-      <van-button type="primary" @click="showImagePreview(1)">
-        {{ t('button2') }}
-      </van-button>
+    <demo-block card :title="t('customConfig')">
+      <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
+        {{ t('startPosition') }}
+      </van-cell>
+      <van-cell is-link @click="showImagePreview({ closeable: true })">
+        {{ t('showClose') }}
+      </van-cell>
+      <van-cell is-link @click="showImagePreview({ onClose })">
+        {{ t('closeEvent') }}
+      </van-cell>
     </demo-block>
 
-    <demo-block :title="t('button4')">
-      <van-button type="primary" @click="showImagePreview(0, 0, true)">
-        {{ t('button4') }}
-      </van-button>
+    <demo-block card :title="t('asyncClose')">
+      <van-cell is-link @click="showImagePreview({ asyncClose: true })">
+        {{ t('asyncClose') }}
+      </van-cell>
     </demo-block>
 
-    <demo-block :title="t('button3')">
-      <van-button type="primary" @click="showImagePreview(0, 3000)">
-        {{ t('button3') }}
-      </van-button>
-    </demo-block>
-
-    <demo-block :title="t('componentCall')">
-      <van-button type="primary" @click="componentCall">
+    <demo-block card :title="t('componentCall')">
+      <van-cell is-link @click="componentCall">
         {{ t('componentCall') }}
-      </van-button>
+      </van-cell>
       <van-image-preview v-model="show" :images="images" @change="onChange">
         <template #index>{{ t('index', index) }}</template>
       </van-image-preview>
@@ -48,18 +48,24 @@ const images = [
 export default {
   i18n: {
     'zh-CN': {
-      button1: '预览图片',
-      button2: '指定初始位置',
-      button3: '异步关闭',
-      button4: '展示关闭按钮',
+      closed: '关闭',
+      showClose: '展示关闭按钮',
+      showImages: '预览图片',
+      asyncClose: '异步关闭',
+      closeEvent: '监听关闭事件',
+      customConfig: '传入配置项',
+      startPosition: '指定初始位置',
       componentCall: '组件调用',
       index: (index) => `第${index + 1}页`,
     },
     'en-US': {
-      button1: 'Show Images',
-      button2: 'Custom Start Position',
-      button3: 'Async Close',
-      button4: 'Show Close Icon',
+      closed: 'closed',
+      showClose: 'Show Close Icon',
+      showImages: 'Show Images',
+      asyncClose: 'Async Close',
+      closeEvent: 'Close Event',
+      customConfig: 'Custom Config',
+      startPosition: 'Set Start Position',
       componentCall: 'Component Call',
       index: (index) => `Page: ${index}`,
     },
@@ -74,6 +80,10 @@ export default {
   },
 
   methods: {
+    onClose() {
+      this.$toast(this.t('closed'));
+    },
+
     componentCall() {
       this.show = true;
     },
@@ -82,34 +92,18 @@ export default {
       this.index = index;
     },
 
-    showImagePreview(position, timer, closeable) {
+    showImagePreview(options) {
       const instance = ImagePreview({
         images,
-        swipeDuration: 300,
-        asyncClose: !!timer,
-        closeable,
-        closeOnPopstate: true,
-        startPosition: typeof position === 'number' ? position : 0,
+        ...options,
       });
 
-      if (timer) {
+      if (options.asyncClose) {
         setTimeout(() => {
           instance.close();
-        }, timer);
+        }, 2000);
       }
     },
   },
 };
 </script>
-
-<style lang="less">
-@import '../../style/var';
-
-.demo-image-preview {
-  background-color: @white;
-
-  .van-button {
-    margin-left: @padding-md;
-  }
-}
-</style>

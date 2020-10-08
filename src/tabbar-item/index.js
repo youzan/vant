@@ -71,10 +71,7 @@ export default createComponent({
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
-          <Info
-            dot={this.dot}
-            info={isDef(this.badge) ? this.badge : this.info}
-          />
+          <Info dot={this.dot} info={this.badge ?? this.info} />
         </div>
         <div class={bem('text')}>{this.slots('default', { active })}</div>
       </div>

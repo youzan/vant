@@ -8,10 +8,6 @@
       <van-uploader v-model="fileList" multiple accept="*" />
     </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-uploader :after-read="afterRead" disabled />
-    </demo-block>
-
     <demo-block v-if="!isWeapp" :title="t('status')">
       <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
     </demo-block>
@@ -24,22 +20,33 @@
       <van-uploader
         v-model="fileList4"
         multiple
-        :max-count="5"
-        :max-size="3 * 1024 * 1024"
+        :max-size="500 * 1024"
         @oversize="onOversize"
       />
     </demo-block>
 
-    <demo-block :title="t('uploadStyle')">
+    <demo-block :title="t('customUpload')">
       <van-uploader>
-        <van-button type="primary" icon="photo">
+        <van-button type="primary" icon="plus">
           {{ t('upload') }}
         </van-button>
       </van-uploader>
     </demo-block>
 
+    <demo-block :title="t('previewCover')">
+      <van-uploader v-model="previewCoverFiles">
+        <template #preview-cover="{ file }">
+          <div class="preview-cover van-ellipsis">{{ file.name }}</div>
+        </template>
+      </van-uploader>
+    </demo-block>
+
     <demo-block :title="t('beforeRead')">
       <van-uploader v-model="fileList3" :before-read="beforeRead" />
+    </demo-block>
+
+    <demo-block :title="t('disabled')">
+      <van-uploader :after-read="afterRead" disabled />
     </demo-block>
   </demo-section>
 </template>
@@ -52,26 +59,32 @@ export default {
       failed: '上传失败',
       upload: '上传文件',
       preview: '文件预览',
-      disabled: '禁用',
+      maxSize: '限制上传大小',
+      disabled: '禁用文件上传',
       maxCount: '限制上传数量',
       uploading: '上传中...',
-      beforeRead: '上传前校验',
-      uploadStyle: '自定义上传样式',
+      imageName: '图片名称',
+      beforeRead: '上传前置处理',
+      overSizeTip: '文件大小不能超过 500kb',
       invalidType: '请上传 jpg 格式图片',
-      maxSize: '限制上传大小(3M)',
+      customUpload: '自定义上传样式',
+      previewCover: '自定义预览样式',
     },
     'en-US': {
       status: 'Upload Status',
       failed: 'Failed',
       upload: 'Upload File',
       preview: 'Preview File',
-      disabled: 'Disabled',
+      maxSize: 'Max Size',
+      disabled: 'Disable Uploader',
       maxCount: 'Max Count',
       uploading: 'Uploading...',
+      imageName: 'Image Name',
       beforeRead: 'Before Read',
-      uploadStyle: 'Upload Style',
+      overSizeTip: 'File size cannot exceed 500kb',
       invalidType: 'Please upload an image in jpg format',
-      maxSize: 'Max Size(3M)',
+      customUpload: 'Custom Upload Area',
+      previewCover: 'Preview Cover',
     },
   },
 
@@ -83,8 +96,9 @@ export default {
       ],
       fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
-      fileList4: [],
+      fileList4: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       statusFileList: [],
+      previewCoverFiles: [],
     };
   },
 
@@ -101,6 +115,13 @@ export default {
         message: this.t('failed'),
       }
     );
+
+    this.previewCoverFiles.push({
+      url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+      file: {
+        name: this.t('imageName'),
+      },
+    });
   },
 
   methods: {
@@ -129,6 +150,7 @@ export default {
 
     onOversize(file, detail) {
       console.log(file, detail);
+      this.$toast(this.t('overSizeTip'));
     },
   },
 };
@@ -142,6 +164,18 @@ export default {
 
   .van-uploader {
     margin-left: @padding-md;
+  }
+
+  .preview-cover {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 </style>

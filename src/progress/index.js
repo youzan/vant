@@ -1,4 +1,4 @@
-import { createNamespace, isDef, addUnit } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -49,7 +49,7 @@ export default createComponent({
 
   render() {
     const { pivotText, percentage } = this;
-    const text = isDef(pivotText) ? pivotText : percentage + '%';
+    const text = pivotText ?? percentage + '%';
     const showPivot = this.showPivot && text;
     const background = this.inactive ? '#cacaca' : this.color;
 

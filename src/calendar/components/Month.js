@@ -1,9 +1,9 @@
-import { createNamespace } from '../../utils';
+import { createNamespace, addUnit } from '../../utils';
+import { setScrollTop } from '../../utils/dom/scroll';
 import {
   t,
   bem,
   compareDay,
-  ROW_HEIGHT,
   getPrevDay,
   getNextDay,
   formatMonthTitle,
@@ -26,7 +26,9 @@ export default createComponent({
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
+    realRowHeight: Number,
     showMonthTitle: Boolean,
+    firstDayOfWeek: Number,
   },
 
   data() {
@@ -40,8 +42,20 @@ export default createComponent({
       return formatMonthTitle(this.date);
     },
 
+    rowHeightWithUnit() {
+      return addUnit(this.rowHeight);
+    },
+
     offset() {
-      return this.date.getDay();
+      const { firstDayOfWeek } = this;
+
+      const realDay = this.date.getDay();
+
+      if (!firstDayOfWeek) {
+        return realDay;
+      }
+
+      return (realDay + 7 - this.firstDayOfWeek) % 7;
     },
 
     totalDay() {
@@ -55,7 +69,7 @@ export default createComponent({
     monthStyle() {
       if (!this.shouldRender) {
         const padding =
-          Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
+          Math.ceil((this.totalDay + this.offset) / 7) * this.realRowHeight;
 
         return {
           paddingBottom: `${padding}px`,
@@ -90,17 +104,41 @@ export default createComponent({
     },
   },
 
-  mounted() {
-    this.height = this.$el.getBoundingClientRect().height;
+  watch: {
+    shouldRender(value) {
+      if (value) {
+        this.$nextTick(() => {
+          if (this.$refs.day[0] && !this.realRowHeight) {
+            const { height } = this.$refs.day[0].getBoundingClientRect();
+            this.$emit('update-height', height);
+          }
+        });
+      }
+    },
+
+    realRowHeight() {
+      this.height = null;
+    },
   },
 
   methods: {
-    scrollIntoView() {
-      if (this.showSubtitle) {
-        this.$refs.days.scrollIntoView();
-      } else {
-        this.$refs.month.scrollIntoView();
+    getHeight() {
+      if (!this.height) {
+        this.height = this.$el.getBoundingClientRect().height;
       }
+      return this.height;
+    },
+
+    scrollIntoView(body) {
+      const { days, month } = this.$refs;
+      const el = this.showSubtitle ? days : month;
+
+      const scrollTop =
+        el.getBoundingClientRect().top -
+        body.getBoundingClientRect().top +
+        body.scrollTop;
+
+      setScrollTop(body, scrollTop);
     },
 
     getMultipleDayType(day) {
@@ -166,6 +204,10 @@ export default createComponent({
         return 'disabled';
       }
 
+      if (currentDate === null) {
+        return;
+      }
+
       if (type === 'single') {
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
@@ -192,14 +234,12 @@ export default createComponent({
     },
 
     getDayStyle(type, index) {
-      const style = {};
+      const style = {
+        height: this.rowHeightWithUnit,
+      };
 
       if (index === 0) {
         style.marginLeft = `${(100 * this.offset) / 7}%`;
-      }
-
-      if (this.rowHeight !== ROW_HEIGHT) {
-        style.height = `${this.rowHeight}px`;
       }
 
       if (this.color) {
@@ -264,13 +304,22 @@ export default createComponent({
       if (type === 'selected') {
         return (
           <div
+            ref="day"
+            refInFor
             role="gridcell"
             style={style}
             class={[bem('day'), item.className]}
             tabindex={-1}
             onClick={onClick}
           >
-            <div class={bem('selected-day')} style={{ background: this.color }}>
+            <div
+              class={bem('selected-day')}
+              style={{
+                width: this.rowHeightWithUnit,
+                height: this.rowHeightWithUnit,
+                background: this.color,
+              }}
+            >
               {TopInfo}
               {item.text}
               {BottomInfo}
@@ -281,6 +330,8 @@ export default createComponent({
 
       return (
         <div
+          ref="day"
+          refInFor
           role="gridcell"
           style={style}
           class={[bem('day', type), item.className]}

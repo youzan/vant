@@ -2,7 +2,7 @@
 
 ### 介绍
 
-时间选择器，支持日期、年月、时分等维度，通常与[弹出层](#/zh-CN/popup)组件配合使用
+时间选择器，支持日期、年月、时分等维度，通常与[弹出层](#/zh-CN/popup)组件配合使用。
 
 ### 引入
 
@@ -43,7 +43,7 @@ export default {
 
 ### 选择年月
 
-将 type 设置为 `year-month` 即可选择年份和月份。通过传入`formatter`函数，可以对选项文字进行格式化处理
+将 type 设置为 `year-month` 即可选择年份和月份。通过传入 `formatter` 函数，可以对选项文字进行格式化处理。
 
 ```html
 <van-datetime-picker
@@ -80,7 +80,7 @@ export default {
 
 ### 选择月日
 
-将 type 设置为 `month-day` 即可选择月份和日期（从 2.8.4 版本开始支持）
+将 type 设置为 `month-day` 即可选择月份和日期（从 2.8.4 版本开始支持）。
 
 ```html
 <van-datetime-picker
@@ -117,7 +117,7 @@ export default {
 
 ### 选择时间
 
-将 type 设置为 `time` 即可选择时间（小时和分钟）
+将 type 设置为 `time` 即可选择时间（小时和分钟）。
 
 ```html
 <van-datetime-picker
@@ -165,9 +165,35 @@ export default {
 };
 ```
 
+### 选择年月日小时
+
+将 type 设置为 `datehour` 即可选择日期和小时，包括年月日和小时（从 2.9.1 版本开始支持）。
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="datehour"
+  title="选择年月日小时"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate: new Date(),
+    };
+  },
+};
+```
+
 ### 选项过滤器
 
-通过传入`filter`函数，可以对选项数组进行过滤，实现自定义时间间隔
+通过传入 `filter` 函数，可以对选项数组进行过滤，实现自定义时间间隔。
 
 ```html
 <van-datetime-picker v-model="currentTime" type="time" :filter="filter" />
@@ -191,23 +217,61 @@ export default {
 };
 ```
 
+### 自定义列排序
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="date"
+  title="自定义列排序"
+  :columns-order="['month', 'day', 'year']"
+  :formatter="formatter"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date(),
+    };
+  },
+  methods: {
+    formatter(type, val) {
+      if (type === 'year') {
+        return val + '年';
+      }
+      if (type === 'month') {
+        return val + '月';
+      }
+      if (type === 'day') {
+        return val + '日';
+      }
+      return val;
+    },
+  },
+};
+```
+
 ## API
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 时间类型，可选值为 `date` `time` <br> `year-month` `month-day` | _string_ | `datetime` |
+| type | 时间类型，可选值为 `date` `time` <br> `year-month` `month-day` `datehour` | _string_ | `datetime` |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
+| readonly `v2.10.5` | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type, vals) => vals_ | - |
 | formatter | 选项格式化函数 | _(type, val) => val_ | - |
-| item-height `v2.8.6` | 选项高度，支持 `px` 和 `rem` 单位，默认 `px` | _number \| string_ | `44` |
-| visible-item-count | 可见的选项个数 | _number \| string_ | `5` |
-| swipe-duration `v2.2.13` | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
+| columns-order `v2.9.2` | 自定义列排序数组, 子项可选值为<br> `year`、`month`、`day`、`hour`、`minute` | _string[]_ | - |
+| item-height `v2.8.6` | 选项高度，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `44` |
+| visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
+| swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
 
 ### DatePicker Props
 
@@ -239,7 +303,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |

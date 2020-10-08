@@ -54,7 +54,7 @@ export default {
 
 ### Custom Icon
 
-Use icon slot to custom icon
+Use icon slot to custom icon.
 
 ```html
 <van-checkbox v-model="checked">
@@ -220,7 +220,7 @@ export default {
 | label-position | Can be set to `left` | _string_ | `right` |
 | icon-size | Icon size | _number \| string_ | `20px` |
 | checked-color | Checked color | _string_ | `#1989fa` | - |
-| bind-group `v2.2.4` | Whether to bind with CheckboxGroup | _boolean_ | `true` |
+| bind-group | Whether to bind with CheckboxGroup | _boolean_ | `true` |
 
 ### CheckboxGroup Props
 
@@ -230,8 +230,8 @@ export default {
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
-| icon-size `v2.2.3` | Icon size of all checkboxes | _number \| string_ | `20px` |
-| checked-color `v2.2.3` | Checked color of all checkboxes | _string_ | `#1989fa` | - |
+| icon-size | Icon size of all checkboxes | _number \| string_ | `20px` |
+| checked-color | Checked color of all checkboxes | _string_ | `#1989fa` | - |
 
 ### Checkbox Events
 
@@ -255,7 +255,7 @@ export default {
 
 ### CheckboxGroup Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
@@ -263,7 +263,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call 
 
 ### Checkbox Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods.
 
 | Name   | Description         | Attribute           | Return value |
 | ------ | ------------------- | ------------------- | ------------ |

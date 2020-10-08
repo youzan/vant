@@ -43,8 +43,12 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
+@line-height-xs: 14px;
+@line-height-sm: 18px;
+@line-height-md: 20px;
+@line-height-lg: 22px;
 @base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
   'Microsoft Yahei', sans-serif;
 @price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
   sans-serif;
@@ -65,24 +69,27 @@
 
 // ActionSheet
 @action-sheet-max-height: 80%;
-@action-sheet-header-height: 44px;
+@action-sheet-header-height: 48px;
 @action-sheet-header-font-size: @font-size-lg;
 @action-sheet-description-color: @gray-6;
 @action-sheet-description-font-size: @font-size-md;
-@action-sheet-description-line-height: 20px;
-@action-sheet-item-height: 50px;
+@action-sheet-description-line-height: @line-height-md;
 @action-sheet-item-background: @white;
 @action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-line-height: @line-height-lg;
 @action-sheet-item-text-color: @text-color;
 @action-sheet-item-disabled-text-color: @gray-5;
 @action-sheet-subname-color: @gray-6;
 @action-sheet-subname-font-size: @font-size-sm;
+@action-sheet-subname-line-height: @line-height-sm;
 @action-sheet-close-icon-size: 22px;
 @action-sheet-close-icon-color: @gray-5;
 @action-sheet-close-icon-active-color: @gray-6;
 @action-sheet-close-icon-padding: 0 @padding-md;
+@action-sheet-cancel-text-color: @gray-7;
 @action-sheet-cancel-padding-top: @padding-xs;
 @action-sheet-cancel-padding-color: @background-color;
+@action-sheet-loading-icon-size: 22px;
 
 // AddressEdit
 @address-edit-padding: @padding-sm;
@@ -92,17 +99,17 @@
 @address-edit-detail-finish-font-size: @font-size-sm;
 
 // AddressList
-@address-list-padding: 12px 12px 100px;
+@address-list-padding: @padding-sm @padding-sm 80px;
 @address-list-disabled-text-color: @gray-6;
 @address-list-disabled-text-padding: @padding-base * 5 0 @padding-md;
 @address-list-disabled-text-font-size: @font-size-md;
-@address-list-disabled-text-line-height: 20px;
+@address-list-disabled-text-line-height: @line-height-md;
 @address-list-add-button-z-index: 999;
 @address-list-item-padding: @padding-sm;
 @address-list-item-text-color: @text-color;
 @address-list-item-disabled-text-color: @gray-5;
 @address-list-item-font-size: 13px;
-@address-list-item-line-height: 18px;
+@address-list-item-line-height: @line-height-sm;
 @address-list-item-radio-icon-color: @red;
 @address-list-edit-icon-size: 20px;
 
@@ -158,7 +165,7 @@
 @calendar-selected-day-size: 54px;
 @calendar-selected-day-color: @white;
 @calendar-info-font-size: @font-size-xs;
-@calendar-info-line-height: 14px;
+@calendar-info-line-height: @line-height-xs;
 @calendar-selected-day-background-color: @red;
 @calendar-day-disabled-color: @gray-5;
 @calendar-confirm-button-height: 36px;
@@ -173,7 +180,7 @@
 @card-thumb-border-radius: @border-radius-lg;
 @card-title-line-height: 16px;
 @card-desc-color: @gray-7;
-@card-desc-line-height: 20px;
+@card-desc-line-height: @line-height-md;
 @card-price-color: @gray-8;
 @card-origin-price-color: @gray-6;
 @card-num-color: @gray-6;
@@ -201,7 +208,7 @@
 @cell-required-color: @red;
 @cell-label-color: @gray-6;
 @cell-label-font-size: @font-size-sm;
-@cell-label-line-height: 18px;
+@cell-label-line-height: @line-height-sm;
 @cell-label-margin-top: @padding-base;
 @cell-value-color: @gray-6;
 @cell-icon-size: 16px;
@@ -232,12 +239,12 @@
 @circle-text-color: @text-color;
 @circle-text-font-weight: @font-weight-bold;
 @circle-text-font-size: @font-size-md;
-@circle-text-line-height: 18px;
+@circle-text-line-height: @line-height-md;
 
 // Collapse
 @collapse-item-transition-duration: @animation-duration-base;
 @collapse-item-content-padding: @padding-sm @padding-md;
-@collapse-item-content-font-size: 14px;
+@collapse-item-content-font-size: @font-size-md;
 @collapse-item-content-line-height: 1.5;
 @collapse-item-content-text-color: @gray-6;
 @collapse-item-content-background-color: @white;
@@ -247,7 +254,7 @@
 @contact-card-padding: @padding-md;
 @contact-card-add-icon-size: 40px;
 @contact-card-add-icon-color: @blue;
-@contact-card-value-line-height: 20px;
+@contact-card-value-line-height: @line-height-md;
 
 // ContactEdit
 @contact-edit-padding: @padding-md;
@@ -255,7 +262,7 @@
 @contact-edit-buttons-padding: @padding-xl 0;
 @contact-edit-button-margin-bottom: @padding-sm;
 @contact-edit-button-font-size: 16px;
-@contact-edit-field-label-width: 4em;
+@contact-edit-field-label-width: 4.1em;
 
 // ContactList
 @contact-list-edit-icon-size: 16px;
@@ -265,7 +272,7 @@
 // CountDown
 @count-down-text-color: @text-color;
 @count-down-font-size: @font-size-md;
-@count-down-line-height: 20px;
+@count-down-line-height: @line-height-md;
 
 // Coupon
 @coupon-margin: 0 @padding-sm @padding-sm;
@@ -295,7 +302,7 @@
 @coupon-list-empty-image-size: 200px;
 @coupon-list-empty-tip-color: @gray-6;
 @coupon-list-empty-tip-font-size: @font-size-md;
-@coupon-list-empty-tip-line-height: 20px;
+@coupon-list-empty-tip-line-height: @line-height-md;
 
 // Dialog
 @dialog-width: 320px;
@@ -306,15 +313,17 @@
 @dialog-background-color: @white;
 @dialog-header-font-weight: @font-weight-bold;
 @dialog-header-line-height: 24px;
-@dialog-header-padding-top: @padding-lg;
+@dialog-header-padding-top: 26px;
 @dialog-header-isolated-padding: @padding-lg 0;
 @dialog-message-padding: @padding-lg;
 @dialog-message-font-size: @font-size-md;
-@dialog-message-line-height: 20px;
+@dialog-message-line-height: @line-height-md;
 @dialog-message-max-height: 60vh;
 @dialog-has-title-message-text-color: @gray-7;
-@dialog-has-title-message-padding-top: @padding-sm;
-@dialog-confirm-button-text-color: @blue;
+@dialog-has-title-message-padding-top: @padding-xs;
+@dialog-button-height: 48px;
+@dialog-round-button-height: 36px;
+@dialog-confirm-button-text-color: @red;
 
 // Divider
 @divider-margin: @padding-md 0;
@@ -329,13 +338,14 @@
 // DropdownMenu
 @dropdown-menu-height: 48px;
 @dropdown-menu-background-color: @white;
+@dropdown-menu-box-shadow: 0 2px 12px fade(@gray-7, 12);
 @dropdown-menu-title-font-size: 15px;
 @dropdown-menu-title-text-color: @text-color;
-@dropdown-menu-title-active-text-color: @blue;
+@dropdown-menu-title-active-text-color: @red;
 @dropdown-menu-title-disabled-text-color: @gray-6;
 @dropdown-menu-title-padding: 0 @padding-xs;
-@dropdown-menu-title-line-height: 22px;
-@dropdown-menu-option-active-color: @blue;
+@dropdown-menu-title-line-height: @line-height-lg;
+@dropdown-menu-option-active-color: @red;
 @dropdown-menu-content-max-height: 80%;
 @dropdown-item-z-index: 10;
 
@@ -345,18 +355,18 @@
 @empty-description-margin-top: @padding-md;
 @empty-description-padding: 0 60px;
 @empty-description-color: @gray-6;
-@empty-description-font-size: 14px;
-@empty-description-line-height: 20px;
+@empty-description-font-size: @font-size-md;
+@empty-description-line-height: @line-height-md;
 @empty-bottom-margin-top: 24px;
 
 // Field
-@field-label-width: 6em;
+@field-label-width: 6.2em;
 @field-label-color: @gray-7;
 @field-label-margin-right: @padding-sm;
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
 @field-input-disabled-text-color: @gray-5;
-@field-placeholder-text-color: @gray-5;
+@field-placeholder-text-color: @gray-6;
 @field-icon-size: 16px;
 @field-clear-icon-size: 16px;
 @field-clear-icon-color: @gray-5;
@@ -405,7 +415,7 @@
 // IndexBar
 @index-bar-sidebar-z-index: 2;
 @index-bar-index-font-size: @font-size-xs;
-@index-bar-index-line-height: 14px;
+@index-bar-index-line-height: @line-height-xs;
 @index-bar-index-active-color: @green;
 
 // Info
@@ -418,19 +428,21 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: @price-integer-font-family;
+@info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Image
 @image-placeholder-text-color: @gray-6;
 @image-placeholder-font-size: @font-size-md;
 @image-placeholder-background-color: @background-color;
-@image-loading-icon-size: 22px;
-@image-error-icon-size: 22px;
+@image-loading-icon-size: 32px;
+@image-loading-icon-color: @gray-4;
+@image-error-icon-size: 32px;
+@image-error-icon-color: @gray-4;
 
 // ImagePreview
 @image-preview-index-text-color: @white;
 @image-preview-index-font-size: @font-size-md;
-@image-preview-index-line-height: 22px;
+@image-preview-index-line-height: @line-height-md;
 @image-preview-index-text-shadow: 0 1px 1px @gray-8;
 @image-preview-overlay-background-color: rgba(0, 0, 0, 0.9);
 @image-preview-close-icon-size: 22px;
@@ -477,7 +489,7 @@
 @notify-text-color: @white;
 @notify-padding: @padding-xs @padding-md;
 @notify-font-size: @font-size-md;
-@notify-line-height: 20px;
+@notify-line-height: @line-height-md;
 @notify-primary-background-color: @blue;
 @notify-success-background-color: @green;
 @notify-danger-background-color: @red;
@@ -485,13 +497,13 @@
 
 // NumberKeyboard
 @number-keyboard-background-color: @gray-2;
-@number-keyboard-key-height: 56px;
+@number-keyboard-key-height: 48px;
 @number-keyboard-key-font-size: 28px;
 @number-keyboard-key-active-color: @gray-3;
 @number-keyboard-delete-font-size: @font-size-lg;
 @number-keyboard-title-color: @gray-7;
-@number-keyboard-title-height: 30px;
-@number-keyboard-title-font-size: @font-size-md;
+@number-keyboard-title-height: 34px;
+@number-keyboard-title-font-size: @font-size-lg;
 @number-keyboard-close-padding: 0 @padding-md;
 @number-keyboard-close-color: @text-link-color;
 @number-keyboard-close-font-size: @font-size-md;
@@ -539,7 +551,7 @@
 @picker-background-color: @white;
 @picker-toolbar-height: 44px;
 @picker-title-font-size: @font-size-lg;
-@picker-title-line-height: 20px;
+@picker-title-line-height: @line-height-md;
 @picker-action-padding: 0 @padding-md;
 @picker-action-font-size: @font-size-md;
 @picker-confirm-action-color: @text-link-color;
@@ -597,7 +609,7 @@
 @share-sheet-header-padding: @padding-sm @padding-md @padding-base;
 @share-sheet-title-color: @text-color;
 @share-sheet-title-font-size: @font-size-md;
-@share-sheet-title-line-height: 20px;
+@share-sheet-title-line-height: @line-height-md;
 @share-sheet-description-color: @gray-6;
 @share-sheet-description-font-size: @font-size-sm;
 @share-sheet-description-line-height: 16px;
@@ -624,11 +636,9 @@
 @search-action-font-size: @font-size-md;
 
 // Sidebar
-@sidebar-width: 85px;
-
-// SidebarItem
+@sidebar-width: 80px;
 @sidebar-font-size: @font-size-md;
-@sidebar-line-height: 20px;
+@sidebar-line-height: @line-height-md;
 @sidebar-text-color: @text-color;
 @sidebar-disabled-text-color: @gray-5;
 @sidebar-padding: 20px @padding-sm;
@@ -753,31 +763,37 @@
 @tabbar-item-font-size: @font-size-sm;
 @tabbar-item-text-color: @gray-7;
 @tabbar-item-active-color: @blue;
+@tabbar-item-active-background-color: @tabbar-background-color;
 @tabbar-item-line-height: 1;
-@tabbar-item-icon-size: 18px;
-@tabbar-item-margin-bottom: 5px;
+@tabbar-item-icon-size: 22px;
+@tabbar-item-margin-bottom: 4px;
 
 // Tab
 @tab-text-color: @gray-7;
 @tab-active-text-color: @text-color;
 @tab-disabled-text-color: @gray-5;
 @tab-font-size: @font-size-md;
+@tab-line-height: @line-height-md;
 
 // Tabs
 @tabs-default-color: @red;
 @tabs-line-height: 44px;
 @tabs-card-height: 30px;
 @tabs-nav-background-color: @white;
+@tabs-bottom-bar-width: 40px;
 @tabs-bottom-bar-height: 3px;
 @tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
-@tag-padding: 0.2em 0.5em;
-@tag-font-size: @font-size-xs;
-@tag-medium-font-size: @font-size-sm;
-@tag-large-font-size: @font-size-md;
+@tag-padding: 0 @padding-base;
 @tag-text-color: @white;
-@tag-border-radius: 0.2em;
+@tag-font-size: @font-size-sm;
+@tag-border-radius: 2px;
+@tag-line-height: 16px;
+@tag-medium-padding: 2px 6px;
+@tag-large-padding: @padding-base @padding-xs;
+@tag-large-border-radius: @border-radius-md;
+@tag-large-font-size: @font-size-md;
 @tag-round-border-radius: @border-radius-max;
 @tag-danger-color: @red;
 @tag-primary-color: @blue;
@@ -791,17 +807,17 @@
 @toast-font-size: @font-size-md;
 @toast-text-color: @white;
 @toast-loading-icon-color: @white;
-@toast-line-height: 20px;
+@toast-line-height: @line-height-md;
 @toast-border-radius: @border-radius-lg;
-@toast-background-color: fade(@text-color, 88%);
-@toast-icon-size: 40px;
+@toast-background-color: fade(@black, 70%);
+@toast-icon-size: 36px;
 @toast-text-min-width: 96px;
 @toast-text-padding: @padding-xs @padding-sm;
 @toast-default-padding: @padding-md;
 @toast-default-width: 88px;
 @toast-default-min-height: 88px;
-@toast-position-top-distance: 50px;
-@toast-position-bottom-distance: 50px;
+@toast-position-top-distance: 20%;
+@toast-position-bottom-distance: 20%;
 
 // TreeSelect
 @tree-select-font-size: @font-size-md;
@@ -819,12 +835,11 @@
 @uploader-icon-color: @gray-4;
 @uploader-text-color: @gray-6;
 @uploader-text-font-size: @font-size-sm;
-@uploader-upload-border-radius: 8px;
 @uploader-upload-background-color: @gray-1;
 @uploader-upload-active-color: @active-color;
-@uploader-delete-color: @gray-6;
-@uploader-delete-icon-size: 18px;
-@uploader-delete-background-color: @white;
+@uploader-delete-color: @white;
+@uploader-delete-icon-size: 14px;
+@uploader-delete-background-color: rgba(0, 0, 0, 0.7);
 @uploader-file-background-color: @background-color;
 @uploader-file-icon-size: 20px;
 @uploader-file-icon-color: @gray-7;
@@ -835,7 +850,7 @@
 @uploader-mask-background-color: fade(@gray-8, 88%);
 @uploader-mask-icon-size: 22px;
 @uploader-mask-message-font-size: @font-size-sm;
-@uploader-mask-message-line-height: 14px;
+@uploader-mask-message-line-height: @line-height-xs;
 @uploader-loading-icon-size: 22px;
 @uploader-loading-icon-color: @white;
 @uploader-disabled-opacity: @disabled-opacity;

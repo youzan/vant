@@ -82,10 +82,14 @@
       <van-radio-group v-model="radio5">
         <van-cell-group>
           <van-cell clickable :title="t('radio') + 1" @click="radio5 = '1'">
-            <van-radio name="1" slot="right-icon" />
+            <template #right-icon>
+              <van-radio name="1" />
+            </template>
           </van-cell>
           <van-cell clickable :title="t('radio') + 2" @click="radio5 = '2'">
-            <van-radio name="2" slot="right-icon" />
+            <template #right-icon>
+              <van-radio name="2" />
+            </template>
           </van-cell>
         </van-cell-group>
       </van-radio-group>
