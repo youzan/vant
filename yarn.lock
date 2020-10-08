@@ -2082,10 +2082,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.3.0.tgz#94f4c93122fd7331e0e00df55804779aead8c9c2"
-  integrity sha1-lPTJMSL9czHg4A31WAR3murYycI=
+"@vant/icons@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.3.1.tgz#07207fc1c8b5adfd40c22c3647fb535943b33c53"
+  integrity sha512-zzFlR5RoPw2P/wFweyFVYUmKfH6o8ZLd2m+s/tdOm6OBJajAbDQyFK6RIjtFMMu+A27rhXbfUuWRhp7tW76yYw==
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"

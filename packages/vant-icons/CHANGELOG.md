@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.3.1
+
+- add minus icon
+
 ## 1.3.0
 
 - add share-o icon
