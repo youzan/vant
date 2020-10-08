@@ -1344,11 +1344,6 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@ls-lint/ls-lint@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.npm.taobao.org/@ls-lint/ls-lint/download/@ls-lint/ls-lint-1.8.0.tgz#508fe32d4dbdd90d61c8ea156c20af33c294a22e"
-  integrity sha1-UI/jLU292Q1hyOoVbCCvM8KUoi4=
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

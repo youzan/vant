@@ -18,7 +18,7 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "vant-cli dev",
-    "lint": "vant-cli lint && ls-lint",
+    "lint": "vant-cli lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
     "release": "vant-cli release",
@@ -28,7 +28,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && ls-lint",
+      "pre-commit": "lint-staged",
       "commit-msg": "vant-cli commit-lint"
     }
   },
@@ -62,7 +62,6 @@
     "vue": ">= 2.5.22"
   },
   "devDependencies": {
-    "@ls-lint/ls-lint": "^1.8.0",
     "@vant/cli": "^2.6.0",
     "prettier": "^2.0.4",
     "vue": "^2.6.11",
