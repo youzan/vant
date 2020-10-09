@@ -1,7 +1,13 @@
 import { unref, Ref } from 'vue';
 
-export function isHidden(elementRef: HTMLElement | Ref<HTMLElement>) {
+export function isHidden(
+  elementRef: HTMLElement | Ref<HTMLElement | undefined>
+) {
   const el = unref(elementRef);
+  if (!el) {
+    return false;
+  }
+
   const style = window.getComputedStyle(el);
   const hidden = style.display === 'none';
 
