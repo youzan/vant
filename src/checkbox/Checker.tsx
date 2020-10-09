@@ -31,7 +31,7 @@ export default defineComponent({
   emits: ['click', 'toggle'],
 
   setup(props, { emit, slots }) {
-    const iconRef = ref();
+    const iconRef = ref<HTMLElement>();
 
     const getParentProp = (name: string) => {
       if (props.parent) {
@@ -60,7 +60,7 @@ export default defineComponent({
     const onClick = (event: MouseEvent) => {
       const { target } = event;
       const icon = iconRef.value;
-      const iconClicked = icon === target || icon.contains(target);
+      const iconClicked = icon === target || icon!.contains(target as Node);
 
       if (!disabled.value && (iconClicked || !props.labelDisabled)) {
         emit('toggle');

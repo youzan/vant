@@ -39,7 +39,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const error = ref(false);
     const loading = ref(true);
-    const imageRef = ref();
+    const imageRef = ref<HTMLElement>();
 
     const style = computed(() => {
       const style: CSSProperties = {};
