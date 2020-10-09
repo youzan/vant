@@ -23,7 +23,7 @@ if (inBrowser) {
 }
 
 export type UseEventListenerOptions = {
-  target?: EventTarget | Ref<EventTarget>;
+  target?: EventTarget | Ref<EventTarget | undefined>;
   capture?: boolean;
   passive?: boolean;
 };
