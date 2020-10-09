@@ -14,7 +14,11 @@
         />
 
         <ul class="van-doc-header__top-nav">
-          <li v-for="item in config.links" class="van-doc-header__top-nav-item">
+          <li
+            v-for="(item, index) in config.links"
+            :key="index"
+            class="van-doc-header__top-nav-item"
+          >
             <a
               class="van-doc-header__logo-link"
               target="_blank"
@@ -37,7 +41,8 @@
               <transition name="van-doc-dropdown">
                 <div v-if="showVersionPop" class="van-doc-header__version-pop">
                   <div
-                    v-for="item in versions"
+                    v-for="(item, index) in versions"
+                    :key="index"
                     class="van-doc-header__version-pop-item"
                     @click="onSwitchVersion(item)"
                   >
