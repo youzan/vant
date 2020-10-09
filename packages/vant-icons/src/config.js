@@ -1,14 +1,15 @@
 module.exports = {
   name: 'vant-icon',
   basic: [
-    'success',
-    'plus',
-    'cross',
-    'fail',
     'arrow',
     'arrow-left',
     'arrow-up',
     'arrow-down',
+    'success',
+    'cross',
+    'plus',
+    'minus',
+    'fail',
   ],
   outline: [
     // has corresponding filled icon

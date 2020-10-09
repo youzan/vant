@@ -51,7 +51,7 @@
     "@types/webpack-dev-server": "^3.11.0",
     "@vant/eslint-config": "^3.0.0-alpha.2",
     "@vant/markdown-loader": "^3.0.0-alpha.0",
-    "@vant/markdown-vetur": "^2.0.1",
+    "@vant/markdown-vetur": "^2.0.2",
     "@vant/stylelint-config": "^1.3.0",
     "@vant/touch-emulator": "^1.2.0",
     "@vue/babel-plugin-jsx": "^1.0.0-rc.3",

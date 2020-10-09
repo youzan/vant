@@ -54,7 +54,7 @@ export default createComponent({
     },
   },
 
-  emits: ['select'],
+  emits: ['select', 'change'],
 
   setup(props, { emit, slots }) {
     const root = ref();
@@ -171,6 +171,12 @@ export default createComponent({
         nextTick(onScroll);
       }
     );
+
+    watch(activeAnchor, (value) => {
+      if (value) {
+        emit('change', value);
+      }
+    });
 
     const renderIndexes = () =>
       props.indexList.map((index) => {
