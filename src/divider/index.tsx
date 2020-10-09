@@ -1,6 +1,9 @@
+import { PropType } from 'vue';
 import { createNamespace } from '../utils';
 
 const [createComponent, bem] = createNamespace('divider');
+
+export type DividerContentPosition = 'left' | 'center' | 'right';
 
 export default createComponent({
   props: {
@@ -10,7 +13,7 @@ export default createComponent({
       default: true,
     },
     contentPosition: {
-      type: String,
+      type: String as PropType<DividerContentPosition>,
       default: 'center',
     },
   },
