@@ -1,9 +1,9 @@
-const renderStop = (color, offset, opacity) => (
+const renderStop = (color: string, offset: number, opacity?: number) => (
   <stop stop-color={color} offset={`${offset}%`} stop-opacity={opacity} />
 );
 
 export const Network = (
-  <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 160 160">
     <defs>
       <linearGradient id="c" x1="64.022%" y1="100%" x2="64.022%" y2="0%">
         {renderStop('#FFF', 0, 0.5)}
