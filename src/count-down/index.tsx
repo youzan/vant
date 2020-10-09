@@ -45,6 +45,7 @@ export default createComponent({
 
     const resetTime = () => {
       reset(+props.time);
+
       if (props.autoStart) {
         start();
       }
