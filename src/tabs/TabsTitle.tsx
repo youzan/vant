@@ -1,4 +1,4 @@
-import { computed } from 'vue';
+import { computed, CSSProperties } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import Badge from '../badge';
 
@@ -21,7 +21,7 @@ export default createComponent({
 
   setup(props) {
     const style = computed(() => {
-      const style: Record<string, string> = {};
+      const style: CSSProperties = {};
       const {
         type,
         color,

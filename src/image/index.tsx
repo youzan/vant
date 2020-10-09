@@ -1,4 +1,4 @@
-import { ref, watch, computed, PropType } from 'vue';
+import { ref, watch, computed, PropType, CSSProperties } from 'vue';
 import { createNamespace, isDef, addUnit } from '../utils';
 import Icon from '../icon';
 
@@ -42,7 +42,7 @@ export default createComponent({
     const imageRef = ref();
 
     const style = computed(() => {
-      const style: Record<string, unknown> = {};
+      const style: CSSProperties = {};
 
       if (isDef(props.width)) {
         style.width = addUnit(props.width);

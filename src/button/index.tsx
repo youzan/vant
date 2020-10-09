@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -114,7 +114,7 @@ export default createComponent({
     const getStyle = () => {
       const { color, plain } = props;
       if (color) {
-        const style: Record<string, string> = {};
+        const style: CSSProperties = {};
 
         style.color = plain ? color : WHITE;
 
@@ -125,7 +125,7 @@ export default createComponent({
 
         // hide border when color is linear-gradient
         if (color.indexOf('gradient') !== -1) {
-          style.border = '0';
+          style.border = 0;
         } else {
           style.borderColor = color;
         }
