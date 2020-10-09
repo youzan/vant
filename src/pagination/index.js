@@ -110,7 +110,13 @@ export default createComponent({
       }
     };
 
-    watch(() => props.modelValue, select, { immediate: true });
+    watch(
+      () => props.modelValue,
+      (value) => {
+        select(value);
+      },
+      { immediate: true }
+    );
 
     const renderDesc = () => {
       if (props.mode !== 'multi') {
