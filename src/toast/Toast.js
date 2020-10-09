@@ -116,6 +116,7 @@ export default createComponent({
           bem([props.position, { [props.type]: !props.icon }]),
           props.className,
         ]}
+        lockScroll={false}
         transition={props.transition}
         onClick={onClick}
         onClosed={clearTimer}
