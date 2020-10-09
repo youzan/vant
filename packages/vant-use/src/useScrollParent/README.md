@@ -37,7 +37,9 @@ export default {
 ### 类型定义
 
 ```ts
-function useScrollParent(element: Ref<Element>): Ref<Element>;
+function useScrollParent(
+  element: Ref<Element | undefined>
+): Ref<Element | Window | undefined>;
 ```
 
 ### 参数

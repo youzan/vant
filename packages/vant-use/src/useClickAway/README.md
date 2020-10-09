@@ -60,7 +60,7 @@ export default {
 
 ```ts
 function useClickAway(
-  target: Element | Ref<Element>,
+  target: Element | Ref<Element | undefined>,
   listener: EventListener,
   options?: Options
 ): void;

@@ -5,7 +5,7 @@ function isWindow(val: unknown): val is Window {
 }
 
 export const useRect = (
-  elementRef: (Element | Window) | Ref<Element | Window>
+  elementRef: (Element | Window) | Ref<Element | Window | undefined>
 ) => {
   const element = unref(elementRef);
 
@@ -23,7 +23,7 @@ export const useRect = (
     };
   }
 
-  if (element.getBoundingClientRect) {
+  if (element && element.getBoundingClientRect) {
     return element.getBoundingClientRect();
   }
 
