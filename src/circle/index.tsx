@@ -1,4 +1,4 @@
-import { watch, computed } from 'vue';
+import { watch, computed, PropType } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import { isObject, getSizeStyle, createNamespace } from '../utils';
 import { BLUE, WHITE } from '../utils/constant';
@@ -7,11 +7,11 @@ const [createComponent, bem] = createNamespace('circle');
 
 let uid = 0;
 
-function format(rate) {
-  return Math.min(Math.max(rate, 0), 100);
+function format(rate: string | number) {
+  return Math.min(Math.max(+rate, 0), 100);
 }
 
-function getPath(clockwise, viewBoxSize) {
+function getPath(clockwise: boolean, viewBoxSize: number) {
   const sweepFlag = clockwise ? 1 : 0;
   return `M ${viewBoxSize / 2} ${
     viewBoxSize / 2
@@ -21,7 +21,7 @@ function getPath(clockwise, viewBoxSize) {
 export default createComponent({
   props: {
     text: String,
-    strokeLinecap: String,
+    strokeLinecap: String as PropType<CanvasLineCap>,
     currentRate: {
       type: Number,
       default: 0,
@@ -76,7 +76,9 @@ export default createComponent({
         const startTime = Date.now();
         const startRate = props.currentRate;
         const endRate = format(rate);
-        const duration = Math.abs(((startRate - endRate) * 1000) / props.speed);
+        const duration = Math.abs(
+          ((startRate - endRate) * 1000) / +props.speed
+        );
 
         const animate = () => {
           const now = Date.now();
@@ -91,7 +93,9 @@ export default createComponent({
         };
 
         if (props.speed) {
-          cancelRaf(rafId);
+          if (rafId) {
+            cancelRaf(rafId);
+          }
           rafId = raf(animate);
         } else {
           emit('update:currentRate', endRate);
