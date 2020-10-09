@@ -1,14 +1,16 @@
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, PropType } from 'vue';
 import { createNamespace, isDef, addUnit } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
 
+export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+
 export default createComponent({
   props: {
     src: String,
-    fit: String,
     alt: String,
+    fit: String as PropType<ImageFit>,
     round: Boolean,
     width: [Number, String],
     height: [Number, String],
@@ -40,7 +42,7 @@ export default createComponent({
     const imageRef = ref();
 
     const style = computed(() => {
-      const style = {};
+      const style: Record<string, unknown> = {};
 
       if (isDef(props.width)) {
         style.width = addUnit(props.width);
@@ -66,12 +68,12 @@ export default createComponent({
       }
     );
 
-    const onLoad = (event) => {
+    const onLoad = (event: Event) => {
       loading.value = false;
       emit('load', event);
     };
 
-    const onError = (event) => {
+    const onError = (event: Event) => {
       error.value = true;
       loading.value = false;
       emit('error', event);
@@ -103,7 +105,7 @@ export default createComponent({
     };
 
     const renderImage = () => {
-      if (props.error || !props.src) {
+      if (error.value || !props.src) {
         return;
       }
 
@@ -116,7 +118,7 @@ export default createComponent({
       };
 
       if (props.lazyLoad) {
-        return <img ref={imageRef} vLazy={props.src} {...attrs} />;
+        return <img ref={imageRef} v-lazy={props.src} {...attrs} />;
       }
 
       return (
