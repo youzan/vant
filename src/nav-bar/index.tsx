@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -33,11 +33,11 @@ export default createComponent({
     const navBarRef = ref();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event) => {
+    const onClickLeft = (event: MouseEvent) => {
       emit('click-left', event);
     };
 
-    const onClickRight = (event) => {
+    const onClickRight = (event: MouseEvent) => {
       emit('click-right', event);
     };
 
@@ -64,10 +64,14 @@ export default createComponent({
 
     const renderNavBar = () => {
       const { title, fixed, border, zIndex } = props;
+      const style: CSSProperties = {
+        zIndex: zIndex !== undefined ? +zIndex : undefined,
+      };
+
       return (
         <div
           ref={navBarRef}
-          style={{ zIndex }}
+          style={style}
           class={[bem({ fixed }), { [BORDER_BOTTOM]: border }]}
         >
           <div class={bem('left')} onClick={onClickLeft}>
