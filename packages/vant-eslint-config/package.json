@@ -1,10 +1,11 @@
 {
   "name": "@vant/eslint-config",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0-beta.0",
   "description": "eslint config of vant",
   "main": "index.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
@@ -17,7 +18,7 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-vue": "7.0.0-beta.2"
+    "eslint-plugin-vue": "^7.0.1"
   },
   "devDependencies": {
     "eslint": "^7.7.0"
