@@ -15,7 +15,7 @@ export default createComponent({
     percentage: {
       type: [Number, String],
       required: true,
-      validator: (value) => value >= 0 && value <= 100,
+      validator: (value: number | string) => value >= 0 && value <= 100,
     },
     showPivot: {
       type: Boolean,
@@ -24,8 +24,8 @@ export default createComponent({
   },
 
   setup(props) {
-    const root = ref();
-    const pivotRef = ref();
+    const root = ref<HTMLElement>();
+    const pivotRef = ref<HTMLElement>();
 
     const state = reactive({
       rootWidth: 0,
@@ -38,7 +38,7 @@ export default createComponent({
 
     const setWidth = () => {
       nextTick(() => {
-        state.rootWidth = root.value.offsetWidth;
+        state.rootWidth = root.value ? root.value.offsetWidth : 0;
         state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
       });
     };
@@ -46,11 +46,11 @@ export default createComponent({
     const renderPivot = () => {
       const { rootWidth, pivotWidth } = state;
       const { textColor, pivotText, pivotColor, percentage } = props;
-      const text = pivotText ?? percentage + '%';
+      const text = pivotText ?? `${percentage}%`;
       const show = props.showPivot && text;
 
       if (show) {
-        const left = ((rootWidth - pivotWidth) * percentage) / 100;
+        const left = ((rootWidth - pivotWidth) * +percentage) / 100;
         const style = {
           color: textColor,
           left: `${left}px`,
@@ -77,7 +77,7 @@ export default createComponent({
       };
       const portionStyle = {
         background: background.value,
-        width: (state.rootWidth * percentage) / 100 + 'px',
+        width: (state.rootWidth * +percentage) / 100 + 'px',
       };
 
       return (
