@@ -67,6 +67,7 @@ export default {
     width: 120px;
     height: 120px;
     background-color: @white;
+    border-radius: 4px;
   }
 }
 </style>

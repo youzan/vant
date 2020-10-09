@@ -1,4 +1,4 @@
-import { Transition } from 'vue';
+import { PropType, Transition, CSSProperties } from 'vue';
 import { noop, isDef, preventDefault, createNamespace } from '../utils';
 import { useLazyRender } from '../composition/use-lazy-render';
 
@@ -10,7 +10,7 @@ export default createComponent({
     zIndex: [Number, String],
     duration: [Number, String],
     className: null,
-    customStyle: Object,
+    customStyle: Object as PropType<CSSProperties>,
     lockScroll: {
       type: Boolean,
       default: true,
@@ -20,13 +20,13 @@ export default createComponent({
   setup(props, { slots }) {
     const lazyRender = useLazyRender(() => props.show);
 
-    const preventTouchMove = (event) => {
+    const preventTouchMove = (event: TouchEvent) => {
       preventDefault(event, true);
     };
 
     const renderOverlay = lazyRender(() => {
-      const style = {
-        zIndex: props.zIndex,
+      const style: CSSProperties = {
+        zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
         ...props.customStyle,
       };
 

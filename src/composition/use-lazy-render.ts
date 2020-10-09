@@ -1,6 +1,6 @@
-import { ref, watch, WatchSource, VNode } from 'vue';
+import { ref, watch, WatchSource } from 'vue';
 
-export function useLazyRender(show: WatchSource<boolean>) {
+export function useLazyRender(show: WatchSource<boolean | undefined>) {
   const inited = ref(false);
 
   watch(
@@ -13,5 +13,5 @@ export function useLazyRender(show: WatchSource<boolean>) {
     { immediate: true }
   );
 
-  return (render: () => VNode) => () => (inited.value ? render() : null);
+  return (render: () => JSX.Element) => () => (inited.value ? render() : null);
 }
