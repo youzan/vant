@@ -38,7 +38,7 @@ function getScrollParent(el: Element, root: ScrollElement = window) {
   return root;
 }
 
-export function useScrollParent(el: Ref<Element>) {
+export function useScrollParent(el: Ref<Element | undefined>) {
   const scrollParent = ref();
 
   onMounted(() => {
