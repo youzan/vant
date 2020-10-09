@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-circle
-        v-model:currentRate="currentRate1"
+        v-model:current-rate="currentRate1"
         :rate="rate"
         :speed="100"
         :text="currentRate1.toFixed(0) + '%'"
@@ -11,7 +11,7 @@
 
     <demo-block :title="t('customStyle')">
       <van-circle
-        v-model:currentRate="currentRate3"
+        v-model:current-rate="currentRate3"
         :rate="rate"
         :speed="100"
         :stroke-width="60"
@@ -19,7 +19,7 @@
       />
 
       <van-circle
-        v-model:currentRate="currentRate3"
+        v-model:current-rate="currentRate3"
         color="#ee0a24"
         :rate="rate"
         layer-color="#ebedf0"
@@ -28,7 +28,7 @@
       />
 
       <van-circle
-        v-model:currentRate="currentRate2"
+        v-model:current-rate="currentRate2"
         :rate="rate"
         :speed="100"
         :color="gradientColor"
@@ -36,7 +36,7 @@
       />
 
       <van-circle
-        v-model:currentRate="currentRate4"
+        v-model:current-rate="currentRate4"
         color="#07c160"
         :rate="rate"
         :speed="100"
@@ -46,7 +46,7 @@
       />
 
       <van-circle
-        v-model:currentRate="currentRate4"
+        v-model:current-rate="currentRate4"
         color="#7232dd"
         :rate="rate"
         :speed="100"

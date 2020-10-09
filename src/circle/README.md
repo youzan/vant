@@ -16,7 +16,7 @@ app.use(Circle);
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="30"
   :speed="100"
   :text="text"
@@ -42,7 +42,7 @@ export default {
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :stroke-width="60"
   text="Custom Width"
@@ -53,7 +53,7 @@ export default {
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   layer-color="#ebedf0"
   text="Custom Color"
@@ -64,7 +64,7 @@ export default {
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :color="gradientColor"
   text="Gradient"
@@ -89,7 +89,7 @@ export default {
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :clockwise="false"
   text="Counter Clockwise"
@@ -100,7 +100,7 @@ export default {
 
 ```html
 <van-circle
-  v-model:currentRate="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   size="120px"
   text="Custom Size"
@@ -113,7 +113,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model:currentRate | Current rate | _number_ | - |
+| v-model:current-rate | Current rate | _number_ | - |
 | rate | Target rate | _number \| string_ | `100` |
 | size | Circle size | _number \| string_ | `100px` |
 | color | Progress color, passing object to render gradient | _string \| object_ | `#1989fa` |
