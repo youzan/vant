@@ -1,4 +1,4 @@
-import { ref, watch, nextTick, onUpdated, onMounted } from 'vue';
+import { ref, watch, nextTick, onUpdated, onMounted, PropType } from 'vue';
 
 // Utils
 import { isHidden, createNamespace } from '../utils';
@@ -20,17 +20,17 @@ export default createComponent({
     errorText: String,
     loadingText: String,
     finishedText: String,
-    immediateCheck: {
-      type: Boolean,
-      default: true,
-    },
     offset: {
       type: [Number, String],
       default: 300,
     },
     direction: {
-      type: String,
+      type: String as PropType<'up' | 'down'>,
       default: 'down',
+    },
+    immediateCheck: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -39,8 +39,8 @@ export default createComponent({
   setup(props, { emit, slots }) {
     // use sync innerLoading state to avoid repeated loading in some edge cases
     const loading = ref(false);
-    const root = ref();
-    const placeholder = ref();
+    const root = ref<HTMLElement>();
+    const placeholder = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
 
     const check = () => {
@@ -108,7 +108,7 @@ export default createComponent({
             {slots.loading ? (
               slots.loading()
             ) : (
-              <Loading size="16">{props.loadingText || t('loading')}</Loading>
+              <Loading size={16}>{props.loadingText || t('loading')}</Loading>
             )}
           </div>
         );
@@ -118,7 +118,7 @@ export default createComponent({
     watch([() => props.loading, () => props.finished], check);
 
     onUpdated(() => {
-      loading.value = props.loading;
+      loading.value = props.loading!;
     });
 
     onMounted(() => {
