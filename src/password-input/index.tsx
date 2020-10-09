@@ -1,4 +1,3 @@
-// Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
 
@@ -27,13 +26,13 @@ export default createComponent({
   emits: ['focus'],
 
   setup(props, { emit }) {
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       event.stopPropagation();
       emit('focus', event);
     };
 
     const renderPoints = () => {
-      const Points = [];
+      const Points: JSX.Element[] = [];
       const { mask, value, length, gutter, focused } = props;
 
       for (let i = 0; i < length; i++) {
