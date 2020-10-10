@@ -1,6 +1,6 @@
 import { isIOS as checkIsIOS } from '../validate/system';
 
-type ScrollElement = HTMLElement | Window;
+type ScrollElement = Element | Window;
 
 function isWindow(val: unknown): val is Window {
   return val === window;

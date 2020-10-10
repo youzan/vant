@@ -15,6 +15,13 @@ const [createComponent, bem, t] = createNamespace('pull-refresh');
 const DEFAULT_HEAD_HEIGHT = 50;
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
+type PullRefreshStatus =
+  | 'normal'
+  | 'loading'
+  | 'loosing'
+  | 'pulling'
+  | 'success';
+
 export default createComponent({
   props: {
     disabled: Boolean,
@@ -43,13 +50,13 @@ export default createComponent({
   emits: ['refresh', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    let reachTop;
+    let reachTop: boolean;
 
     const root = ref();
     const scrollParent = useScrollParent(root);
 
     const state = reactive({
-      status: 'normal',
+      status: 'normal' as PullRefreshStatus,
       distance: 0,
       duration: 0,
     });
@@ -69,7 +76,7 @@ export default createComponent({
       state.status !== 'success' &&
       !props.disabled;
 
-    const ease = (distance) => {
+    const ease = (distance: number) => {
       const headHeight = +props.headHeight;
 
       if (distance > headHeight) {
@@ -83,7 +90,7 @@ export default createComponent({
       return Math.round(distance);
     };
 
-    const setStatus = (distance, isLoading) => {
+    const setStatus = (distance: number, isLoading?: boolean) => {
       state.distance = distance;
 
       if (isLoading) {
@@ -97,22 +104,28 @@ export default createComponent({
       }
     };
 
+    const getStatusText = () => {
+      const { status } = state;
+      if (status === 'normal') {
+        return '';
+      }
+      return (props as any)[`${status}Text`] || t(status);
+    };
+
     const renderStatus = () => {
       const { status, distance } = state;
 
       if (slots[status]) {
-        return slots[status]({ distance });
+        return slots[status]!({ distance });
       }
 
       const nodes = [];
-      const text = (status !== 'normal' && props[`${status}Text`]) || t(status);
 
       if (TEXT_STATUS.indexOf(status) !== -1) {
-        nodes.push(<div class={bem('text')}>{text}</div>);
+        nodes.push(<div class={bem('text')}>{getStatusText()}</div>);
       }
-
       if (status === 'loading') {
-        nodes.push(<Loading size="16">{text}</Loading>);
+        nodes.push(<Loading size="16">{getStatusText()}</Loading>);
       }
 
       return nodes;
@@ -123,11 +136,11 @@ export default createComponent({
 
       setTimeout(() => {
         setStatus(0);
-      }, props.successDuration);
+      }, +props.successDuration);
     };
 
-    const checkPosition = (event) => {
-      reachTop = getScrollTop(scrollParent.value) === 0;
+    const checkPosition = (event: TouchEvent) => {
+      reachTop = getScrollTop(scrollParent.value!) === 0;
 
       if (reachTop) {
         state.duration = 0;
@@ -135,13 +148,13 @@ export default createComponent({
       }
     };
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (isTouchable()) {
         checkPosition(event);
       }
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (isTouchable()) {
         if (!reachTop) {
           checkPosition(event);
@@ -159,7 +172,7 @@ export default createComponent({
 
     const onTouchEnd = () => {
       if (reachTop && touch.deltaY.value && isTouchable()) {
-        state.duration = props.animationDuration;
+        state.duration = +props.animationDuration;
 
         if (state.status === 'loosing') {
           setStatus(+props.headHeight, true);
@@ -178,7 +191,7 @@ export default createComponent({
     watch(
       () => props.modelValue,
       (value) => {
-        state.duration = props.animationDuration;
+        state.duration = +props.animationDuration;
 
         if (value) {
           setStatus(+props.headHeight, true);
