@@ -66,4 +66,4 @@ export default {
 | round `v2.8.5` | 是否将标题和段落显示为圆角风格 | _boolean_ | `false` |
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
-| avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |
+| avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |

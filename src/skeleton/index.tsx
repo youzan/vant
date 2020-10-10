@@ -1,3 +1,4 @@
+import { PropType } from 'vue';
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
 const [createComponent, bem] = createNamespace('skeleton');
@@ -26,7 +27,7 @@ export default createComponent({
       default: '32px',
     },
     avatarShape: {
-      type: String,
+      type: String as PropType<'square' | 'round'>,
       default: 'round',
     },
     titleWidth: {
@@ -34,7 +35,9 @@ export default createComponent({
       default: '40%',
     },
     rowWidth: {
-      type: [Number, String, Array],
+      type: [Number, String, Array] as PropType<
+        number | string | (number | string)[]
+      >,
       default: DEFAULT_ROW_WIDTH,
     },
   },
@@ -62,7 +65,7 @@ export default createComponent({
       }
     };
 
-    const getRowWidth = (index) => {
+    const getRowWidth = (index: number) => {
       const { rowWidth } = props;
 
       if (rowWidth === DEFAULT_ROW_WIDTH && index === +props.row - 1) {
@@ -77,7 +80,7 @@ export default createComponent({
     };
 
     const renderRows = () => {
-      const Rows = [];
+      const Rows: JSX.Element[] = [];
 
       for (let i = 0; i < props.row; i++) {
         Rows.push(
