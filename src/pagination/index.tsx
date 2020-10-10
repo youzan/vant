@@ -4,7 +4,17 @@ import { computed, watch } from 'vue';
 
 const [createComponent, bem, t] = createNamespace('pagination');
 
-function makePage(number, text, active) {
+type PageItem = {
+  text: string | number;
+  number: number;
+  active?: boolean;
+};
+
+function makePage(
+  number: number,
+  text: string | number,
+  active?: boolean
+): PageItem {
   return { number, text, active };
 }
 
@@ -44,18 +54,18 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const count = computed(() => {
       const { pageCount, totalItems, itemsPerPage } = props;
-      const count = pageCount || Math.ceil(totalItems / itemsPerPage);
+      const count = +pageCount || Math.ceil(+totalItems / +itemsPerPage);
       return Math.max(1, count);
     });
 
     const pages = computed(() => {
-      const pages = [];
+      const items: PageItem[] = [];
       const pageCount = count.value;
       const showPageSize = +props.showPageSize;
       const { modelValue, forceEllipses } = props;
 
       if (props.mode !== 'multi') {
-        return pages;
+        return items;
       }
 
       // Default page limits
@@ -79,26 +89,26 @@ export default createComponent({
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
         const page = makePage(number, number, number === modelValue);
-        pages.push(page);
+        items.push(page);
       }
 
       // Add links to move between page sets
       if (isMaxSized && showPageSize > 0 && forceEllipses) {
         if (startPage > 1) {
           const prevPages = makePage(startPage - 1, '...');
-          pages.unshift(prevPages);
+          items.unshift(prevPages);
         }
 
         if (endPage < pageCount) {
           const nextPages = makePage(endPage + 1, '...');
-          pages.push(nextPages);
+          items.push(nextPages);
         }
       }
 
-      return pages;
+      return items;
     });
 
-    const select = (page, emitChange) => {
+    const select = (page: number, emitChange?: boolean) => {
       page = Math.min(count.value, Math.max(1, page));
 
       if (props.modelValue !== page) {
@@ -134,7 +144,7 @@ export default createComponent({
       const value = props.modelValue;
       const simple = props.mode !== 'multi';
 
-      const onSelect = (value) => () => {
+      const onSelect = (value: number) => () => {
         select(value, true);
       };
 
