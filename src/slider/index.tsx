@@ -1,13 +1,13 @@
-import { ref, computed } from 'vue';
+import { ref, computed, PropType, CSSProperties } from 'vue';
 
 // Utils
 import {
   addUnit,
   getSizeStyle,
   preventDefault,
+  stopPropagation,
   createNamespace,
 } from '../utils';
-import { deepClone } from '../utils/deep-clone';
 
 // Composition
 import { useRect } from '@vant/use';
@@ -15,6 +15,8 @@ import { useTouch } from '../composition/use-touch';
 import { useLinkField } from '../composition/use-link-field';
 
 const [createComponent, bem] = createNamespace('slider');
+
+type SliderValue = number | number[];
 
 export default createComponent({
   props: {
@@ -38,7 +40,7 @@ export default createComponent({
       default: 1,
     },
     modelValue: {
-      type: [Number, Array],
+      type: [Number, Array] as PropType<SliderValue>,
       default: 0,
     },
   },
@@ -46,15 +48,15 @@ export default createComponent({
   emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    let startValue;
-    let buttonIndex;
-    let currentValue;
+    let buttonIndex: number;
+    let startValue: SliderValue;
+    let currentValue: SliderValue;
 
-    const root = ref();
-    const dragStatus = ref();
+    const root = ref<HTMLElement>();
+    const dragStatus = ref<'start' | 'draging' | ''>();
     const touch = useTouch();
 
-    const scope = computed(() => props.max - props.min);
+    const scope = computed(() => Number(props.max) - Number(props.min));
 
     const wrapperStyle = computed(() => {
       const crossAxis = props.vertical ? 'width' : 'height';
@@ -64,56 +66,57 @@ export default createComponent({
       };
     });
 
+    const isRange = (val: unknown): val is number[] =>
+      !!props.range && Array.isArray(val);
+
     // 计算选中条的长度百分比
     const calcMainAxis = () => {
-      const { modelValue, min, range } = props;
-      if (range) {
+      const { modelValue, min } = props;
+      if (isRange(modelValue)) {
         return `${((modelValue[1] - modelValue[0]) * 100) / scope.value}%`;
       }
-      return `${((modelValue - min) * 100) / scope.value}%`;
+      return `${((modelValue - Number(min)) * 100) / scope.value}%`;
     };
 
     // 计算选中条的开始位置的偏移量
     const calcOffset = () => {
-      const { modelValue, min, range } = props;
-      if (range) {
-        return `${((modelValue[0] - min) * 100) / scope.value}%`;
+      const { modelValue, min } = props;
+      if (isRange(modelValue)) {
+        return `${((modelValue[0] - Number(min)) * 100) / scope.value}%`;
       }
       return `0%`;
     };
 
-    const barStyle = computed(() => {
+    const barStyle = computed<CSSProperties>(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
       return {
         [mainAxis]: calcMainAxis(),
-        left: props.vertical ? null : calcOffset(),
-        top: props.vertical ? calcOffset() : null,
+        left: props.vertical ? undefined : calcOffset(),
+        top: props.vertical ? calcOffset() : undefined,
         background: props.activeColor,
-        transition: dragStatus.value ? 'none' : null,
+        transition: dragStatus.value ? 'none' : undefined,
       };
     });
 
-    const format = (value) => {
+    const format = (value: number) => {
       const { min, max, step } = props;
-      value = Math.max(min, Math.min(value, max));
-      return Math.round(value / step) * step;
+      value = Math.max(+min, Math.min(value, +max));
+      return Math.round(value / +step) * +step;
     };
 
-    const isSameValue = (newValue, oldValue) => {
-      return JSON.stringify(newValue) === JSON.stringify(oldValue);
-    };
+    const isSameValue = (newValue: SliderValue, oldValue: SliderValue) =>
+      JSON.stringify(newValue) === JSON.stringify(oldValue);
 
     // 处理两个滑块重叠之后的情况
-    const handleOverlap = (value) => {
+    const handleOverlap = (value: number[]) => {
       if (value[0] > value[1]) {
-        value = deepClone(value);
-        return value.reverse();
+        return value.slice(0).reverse();
       }
       return value;
     };
 
-    const updateValue = (value, end) => {
-      if (props.range) {
+    const updateValue = (value: SliderValue, end?: boolean) => {
+      if (isRange(value)) {
         value = handleOverlap(value).map(format);
       } else {
         value = format(value);
@@ -128,52 +131,53 @@ export default createComponent({
       }
     };
 
-    const onClick = (event) => {
+    const onClick = (event: MouseEvent) => {
       event.stopPropagation();
 
       if (props.disabled) {
         return;
       }
 
-      const { min, vertical, modelValue, range } = props;
+      const { min, vertical, modelValue } = props;
       const rect = useRect(root);
       const delta = vertical
         ? event.clientY - rect.top
         : event.clientX - rect.left;
       const total = vertical ? rect.height : rect.width;
-      let value = +min + (delta / total) * scope.value;
+      const value = Number(min) + (delta / total) * scope.value;
 
-      if (range) {
-        let left = modelValue[0];
-        let right = modelValue[1];
+      if (isRange(modelValue)) {
+        const [left, right] = modelValue;
         const middle = (left + right) / 2;
-        if (value <= middle) {
-          left = value;
-        } else {
-          right = value;
-        }
-        value = [left, right];
-      }
 
-      updateValue(value, true);
+        if (value <= middle) {
+          updateValue([value, right], true);
+        } else {
+          updateValue([left, value], true);
+        }
+      } else {
+        updateValue(value, true);
+      }
     };
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (props.disabled) {
         return;
       }
 
       touch.start(event);
       currentValue = props.modelValue;
-      if (props.range) {
-        startValue = props.modelValue.map(format);
+
+      if (isRange(currentValue)) {
+        startValue = currentValue.map(format);
       } else {
-        startValue = format(props.modelValue);
+        startValue = format(currentValue);
       }
+
       dragStatus.value = 'start';
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (props.disabled) {
         return;
       }
@@ -191,8 +195,9 @@ export default createComponent({
       const total = props.vertical ? rect.height : rect.width;
       const diff = (delta / total) * scope.value;
 
-      if (props.range) {
-        currentValue[buttonIndex] = startValue[buttonIndex] + diff;
+      if (isRange(startValue)) {
+        (currentValue as number[])[buttonIndex] =
+          startValue[buttonIndex] + diff;
       } else {
         currentValue = startValue + diff;
       }
@@ -212,7 +217,7 @@ export default createComponent({
       dragStatus.value = '';
     };
 
-    const renderButton = (index) => {
+    const renderButton = (index?: number) => {
       const getClassName = () => {
         if (typeof index === 'number') {
           const position = ['left', 'right'];
@@ -221,18 +226,23 @@ export default createComponent({
         return `button-wrapper`;
       };
 
+      const currentValue =
+        typeof index === 'number'
+          ? (props.modelValue as number[])[index]
+          : (props.modelValue as number);
+
       return (
         <div
           role="slider"
           class={bem(getClassName())}
           tabindex={props.disabled ? -1 : 0}
-          aria-valuemin={props.min}
-          aria-valuenow={props.modelValue}
-          aria-valuemax={props.max}
+          aria-valuemin={+props.min}
+          aria-valuenow={currentValue}
+          aria-valuemax={+props.max}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
           onTouchstart={(e) => {
             if (typeof index === 'number') {
-              // 保存当前按钮的索引
+              // save index of current button
               buttonIndex = index;
             }
             onTouchStart(e);
@@ -240,7 +250,7 @@ export default createComponent({
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
-          onClick={(e) => e.stopPropagation()}
+          onClick={stopPropagation}
         >
           {slots.button ? (
             slots.button()
