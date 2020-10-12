@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed, CSSProperties } from 'vue';
 
 // Utils
 import {
@@ -28,7 +28,7 @@ export default createComponent({
   emits: ['scroll'],
 
   setup(props, { emit, slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
 
     const state = reactive({
@@ -39,24 +39,24 @@ export default createComponent({
 
     const offsetTop = computed(() => unitToPx(props.offsetTop));
 
-    const style = computed(() => {
+    const style = computed<CSSProperties | undefined>(() => {
       if (!state.fixed) {
         return;
       }
 
-      const top = offsetTop.value ? `${offsetTop.value}px` : null;
+      const top = offsetTop.value ? `${offsetTop.value}px` : undefined;
       const transform = state.transform
         ? `translate3d(0, ${state.transform}px, 0)`
-        : null;
+        : undefined;
 
       return {
         top,
-        zIndex: props.zIndex,
+        zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
         transform,
       };
     });
 
-    const emitScrollEvent = (scrollTop) => {
+    const emitScrollEvent = (scrollTop: number) => {
       emit('scroll', {
         scrollTop,
         isFixed: state.fixed,
@@ -64,7 +64,7 @@ export default createComponent({
     };
 
     const onScroll = () => {
-      if (isHidden(root)) {
+      if (!root.value || isHidden(root)) {
         return;
       }
 
@@ -104,13 +104,12 @@ export default createComponent({
     };
 
     useEventListener('scroll', onScroll, { target: scrollParent });
-
     useVisibilityChange(root, onScroll);
 
     return () => {
       const { fixed, height } = state;
-      const rootStyle = {
-        height: fixed ? `${height}px` : null,
+      const rootStyle: CSSProperties = {
+        height: fixed ? `${height}px` : undefined,
       };
 
       return (

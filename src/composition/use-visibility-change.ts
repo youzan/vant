@@ -9,7 +9,7 @@ import {
 
 // @Experimental
 export function useVisibilityChange(
-  target: Ref<Element>,
+  target: Ref<Element | undefined>,
   onChange: (visible: boolean) => void
 ) {
   // compatibility: https://caniuse.com/#feat=intersectionobserver
@@ -26,11 +26,15 @@ export function useVisibilityChange(
   );
 
   const observe = () => {
-    observer.observe(target.value);
+    if (target.value) {
+      observer.observe(target.value);
+    }
   };
 
   const unobserve = () => {
-    observer.unobserve(target.value);
+    if (target.value) {
+      observer.unobserve(target.value);
+    }
   };
 
   onMounted(observe);
