@@ -5,10 +5,10 @@
     </demo-block>
 
     <demo-block :title="t('disabled')">
-      <van-checkbox :value="false" disabled>
+      <van-checkbox :model-value="false" disabled>
         {{ t('checkbox') }}
       </van-checkbox>
-      <van-checkbox :value="true" disabled>
+      <van-checkbox :model-value="true" disabled>
         {{ t('checkbox') }}
       </van-checkbox>
     </demo-block>
