@@ -20,12 +20,12 @@ const [createComponent, bem] = createNamespace('stepper');
 const LONG_PRESS_INTERVAL = 200;
 const LONG_PRESS_START_TIME = 600;
 
-function equal(value1, value2) {
+function equal(value1?: string | number, value2?: string | number) {
   return String(value1) === String(value2);
 }
 
 // add num and avoid float number
-function add(num1, num2) {
+function add(num1: number, num2: number) {
   const cardinal = 10 ** 10;
   return Math.round((num1 + num2) * cardinal) / cardinal;
 }
@@ -35,8 +35,8 @@ export default createComponent({
     theme: String,
     integer: Boolean,
     disabled: Boolean,
-    modelValue: null,
     allowEmpty: Boolean,
+    modelValue: [Number, String],
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
@@ -90,7 +90,7 @@ export default createComponent({
   ],
 
   setup(props, { emit }) {
-    const format = (value) => {
+    const format = (value: string | number) => {
       const { min, max, allowEmpty, decimalLength } = props;
 
       if (allowEmpty && value === '') {
@@ -99,12 +99,12 @@ export default createComponent({
 
       value = formatNumber(String(value), !props.integer);
       value = value === '' ? 0 : +value;
-      value = isNaN(value) ? min : value;
-      value = Math.max(Math.min(max, value), min);
+      value = isNaN(value) ? +min : value;
+      value = Math.max(Math.min(+max, value), +min);
 
       // format decimal
       if (isDef(decimalLength)) {
-        value = value.toFixed(decimalLength);
+        value = value.toFixed(+decimalLength);
       }
 
       return value;
@@ -121,7 +121,7 @@ export default createComponent({
       return value;
     };
 
-    let actionType;
+    let actionType: 'plus' | 'minus';
     const inputRef = ref();
     const current = ref(getInitialValue());
 
@@ -147,7 +147,7 @@ export default createComponent({
       }
     };
 
-    const emitChange = (value) => {
+    const emitChange = (value: string | number) => {
       if (props.asyncChange) {
         emit('update:modelValue', value);
         emit('change', value, { name: props.name });
@@ -157,7 +157,7 @@ export default createComponent({
     };
 
     const onChange = () => {
-      if (props[`${actionType}Disabled`]) {
+      if ((props as any)[`${actionType}Disabled`]) {
         emit('overlimit', actionType);
         return;
       }
@@ -169,8 +169,9 @@ export default createComponent({
       emit(actionType);
     };
 
-    const onInput = (event) => {
-      const { value } = event.target;
+    const onInput = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      const { value } = input;
       const { decimalLength } = props;
 
       let formatted = formatNumber(String(value), !props.integer);
@@ -178,17 +179,17 @@ export default createComponent({
       // limit max decimal length
       if (isDef(decimalLength) && formatted.indexOf('.') !== -1) {
         const pair = formatted.split('.');
-        formatted = `${pair[0]}.${pair[1].slice(0, decimalLength)}`;
+        formatted = `${pair[0]}.${pair[1].slice(0, +decimalLength)}`;
       }
 
       if (!equal(value, formatted)) {
-        event.target.value = formatted;
+        input.value = formatted;
       }
 
       emitChange(formatted);
     };
 
-    const onFocus = (event) => {
+    const onFocus = (event: Event) => {
       // readonly not work in lagacy mobile safari
       if (props.disableInput && inputRef.value) {
         inputRef.value.blur();
@@ -197,21 +198,22 @@ export default createComponent({
       }
     };
 
-    const onBlur = (event) => {
-      const value = format(event.target.value);
-      event.target.value = value;
+    const onBlur = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      const value = format(input.value);
+      input.value = String(value);
       current.value = value;
       emit('blur', event);
       resetScroll();
     };
 
-    let isLongPress;
-    let longPressTimer;
+    let isLongPress: boolean;
+    let longPressTimer: NodeJS.Timeout;
 
     const longPressStep = () => {
       longPressTimer = setTimeout(() => {
         onChange();
-        longPressStep(actionType);
+        longPressStep();
       }, LONG_PRESS_INTERVAL);
     };
 
@@ -227,7 +229,7 @@ export default createComponent({
       }
     };
 
-    const onTouchEnd = (event) => {
+    const onTouchEnd = (event: TouchEvent) => {
       if (props.longPress) {
         clearTimeout(longPressTimer);
         if (isLongPress) {
@@ -236,10 +238,10 @@ export default createComponent({
       }
     };
 
-    const createListeners = (type) => ({
-      onClick: (e) => {
+    const createListeners = (type: 'plus' | 'minus') => ({
+      onClick: (event: MouseEvent) => {
         // disable double tap scrolling on mobile safari
-        e.preventDefault();
+        event.preventDefault();
         actionType = type;
         onChange();
       },
@@ -265,7 +267,7 @@ export default createComponent({
       () => props.modelValue,
       (value) => {
         if (!equal(value, current.value)) {
-          current.value = value;
+          current.value = value!;
         }
       }
     );
@@ -298,9 +300,9 @@ export default createComponent({
           // set keyboard in mordern browers
           inputmode={props.integer ? 'numeric' : 'decimal'}
           placeholder={props.placeholder}
-          aria-valuemax={props.max}
-          aria-valuemin={props.min}
-          aria-valuenow={current.value}
+          aria-valuemax={+props.max}
+          aria-valuemin={+props.min}
+          aria-valuenow={+current.value}
           onInput={onInput}
           onFocus={onFocus}
           onBlur={onBlur}
