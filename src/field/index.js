@@ -542,12 +542,14 @@ export default createComponent({
 
     return () => {
       const labelAlign = getProp('labelAlign');
+      const Label = renderLabel();
+      const LeftIcon = renderLeftIcon();
 
       return (
         <Cell
           v-slots={{
-            icon: renderLeftIcon,
-            title: renderLabel,
+            icon: LeftIcon ? () => LeftIcon : null,
+            title: Label ? () => Label : null,
             extra: slots.extra,
           }}
           size={props.size}
