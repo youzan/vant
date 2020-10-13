@@ -8,18 +8,10 @@ import { existsSync } from 'fs';
 import { WebpackConfig } from '../common/types';
 import {
   CWD,
-  CACHE_DIR,
   STYLE_EXTS,
   SCRIPT_EXTS,
   POSTCSS_CONFIG_FILE,
 } from '../common/constant';
-
-const CACHE_LOADER = {
-  loader: 'cache-loader',
-  options: {
-    cacheDirectory: CACHE_DIR,
-  },
-};
 
 const CSS_LOADERS = [
   'style-loader',
@@ -85,7 +77,6 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.vue$/,
         use: [
-          CACHE_LOADER,
           {
             loader: 'vue-loader',
             options: {
@@ -99,7 +90,7 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules\/(?!(@vant\/cli))/,
-        use: [CACHE_LOADER, 'babel-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
@@ -126,9 +117,15 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.md$/,
-        use: [CACHE_LOADER, '@vant/markdown-loader'],
+        use: ['@vant/markdown-loader'],
       },
     ],
   },
   plugins,
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
 };

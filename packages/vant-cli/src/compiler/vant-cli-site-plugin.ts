@@ -10,7 +10,7 @@ import { PACKAGE_ENTRY_FILE, PACKAGE_STYLE_FILE } from '../common/constant';
 
 const PLUGIN_NAME = 'VantCliSitePlugin';
 
-export async function genSiteEntry() {
+export async function genSiteEntry(): Promise<void> {
   return new Promise((resolve, reject) => {
     genStyleDepsMap()
       .then(() => {
@@ -24,7 +24,7 @@ export async function genSiteEntry() {
         genSiteDesktopShared();
         resolve();
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         reject(err);
       });

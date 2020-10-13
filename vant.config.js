@@ -4,7 +4,9 @@ module.exports = {
     srcDir: 'src',
     skipInstall: ['lazyload'],
     site: {
-      publicPath: process.env.PUBLIC_PATH || 'https://b.yzcdn.cn/vant/',
+      publicPath:
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
+        'https://b.yzcdn.cn/vant/',
     },
     vetur: {
       tagPrefix: 'van-',
