@@ -50,6 +50,12 @@ function Icon(
   const name = correctName(props.name);
   const imageIcon = isImage(name);
 
+  if (process.env.NODE_ENV !== 'production' && props.info) {
+    console.warn(
+      '[Vant] Icon: "info" option is deprecated, use "badge" option instead.'
+    );
+  }
+
   return (
     <props.tag
       class={[
