@@ -52,7 +52,7 @@ function Icon(
 
   if (process.env.NODE_ENV !== 'production' && props.info) {
     console.warn(
-      '[Vant] Icon: "info" option is deprecated, use "badge" option instead.'
+      '[Vant] Icon: "info" prop is deprecated, use "badge" prop instead.'
     );
   }
 
