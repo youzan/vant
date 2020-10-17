@@ -64,7 +64,7 @@ export default createComponent({
       );
     }
 
-    if (!slotContent) {
+    if (!slotContent && !parent.animated) {
       return;
     }
 
