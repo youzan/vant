@@ -10,6 +10,32 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
+
+`2020-10-18`
+
+**Feature**
+
+- Icons: add minus icon [40e26f](https://github.com/youzan/vant/commit/40e26f97d1144d0dd0810075af8616676459ced3)
+- IndexBar: add change event [#7296](https://github.com/youzan/vant/issues/7296)
+
+**Improvement**
+
+- add info prop deprecation warning [#7352](https://github.com/youzan/vant/issues/7352) [#7347](https://github.com/youzan/vant/issues/7347)
+- SwitchCell: add deprecation warning [#7350](https://github.com/youzan/vant/issues/7350)
+- Toast: add mask option deprecation warning [#7342](https://github.com/youzan/vant/issues/7342)
+- TreeSelect: add deprecation warning of navclick/itemclick [#7351](https://github.com/youzan/vant/issues/7351)
+
+**Bug Fixes**
+
+- Calendar: does not show current month with larger screen sizes [#7355](https://github.com/youzan/vant/issues/7355)
+- Tabs: incorrect animation when content is empty [#7354](https://github.com/youzan/vant/issues/7354)
+- Field: incorrect label length when label-align is right [#7349](https://github.com/youzan/vant/issues/7349)
+- GridItem: failed to break word [#7292](https://github.com/youzan/vant/issues/7292)
+- Icon: incomplete after-sale/cash-back-record [#7328](https://github.com/youzan/vant/issues/7328)
+- Picker: incorrect loading z-index [14cd28](https://github.com/youzan/vant/commit/14cd2863cc75d4f7328ddcf19808b9f6eec38fa4)
+- Row: should enable flex wrap [#7332](https://github.com/youzan/vant/issues/7332)
+
 ### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
 
 `2020-10-01`
