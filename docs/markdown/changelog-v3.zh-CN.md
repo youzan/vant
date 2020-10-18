@@ -14,6 +14,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-beta.4](https://github.com/youzan/vant/compare/v2.10.10...v3.0.0-beta.4)
+
+`2020-10-18`
+
+**refactor**
+
+- Layout: 默认使用 flex 布局，移除 type 属性 [f7a120](https://github.com/youzan/vant/commit/f7a1208a18f61eaa9dbec80db1c585f19229cd91)
+
+**style**
+
+- Stepper: 布局方式调整为 inline-block [e9c282](https://github.com/youzan/vant/commit/e9c28212358cd0317442051383b92d23441920c6)
+
+**Bug Fixes**
+
+- ContactList: 修复 select 事件重复触发的问题 [1dd408](https://github.com/youzan/vant/commit/1dd4083102272250637d6397bd98355d87d99bf5)
+- Search: 修复布局错误的问题 [9cd48e](https://github.com/youzan/vant/commit/9cd48e0e333fc6f0a2f71b568b7e5b5ca2138bae)
+- Image: 修复图片加载错误时仍会渲染图片节点的问题 [59fb1d](https://github.com/youzan/vant/commit/59fb1d4dfcdc99773642a63c62e6b08baa3fac30)
+- Pagination: 修复 change 事件触发时机错误的问题 [346035](https://github.com/youzan/vant/commit/3460351ce396bb418408ddbfad462ddac8ef9477)
+- Toast: 修复展示时会锁定滚动的问题 [a622ca](https://github.com/youzan/vant/commit/a622caa649baedac7cfe9614ded88e7ec1cd18e1)
+- 包含 `v2.10.10` 版本的所有改动
+
 ### [v3.0.0-beta.3](https://github.com/youzan/vant/compare/v2.10.9...v3.0.0-beta.3)
 
 `2020-10-03`
