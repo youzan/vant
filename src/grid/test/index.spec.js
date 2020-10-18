@@ -49,7 +49,7 @@ test('render icon-slot', () => {
   const wrapper = mount({
     template: `
       <van-grid icon-size="10">
-        <van-grid-item info="1">
+        <van-grid-item badge="1">
           <template #icon>
             <div>Custom Icon</div>
           </template>

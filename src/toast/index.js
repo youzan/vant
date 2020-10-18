@@ -97,7 +97,7 @@ function Toast(options = {}) {
     ...options,
   };
 
-  if (process.env.NODE_ENV !== 'production' && options.mask) {
+  if (process.env.NODE_ENV === 'development' && options.mask) {
     console.warn(
       '[Vant] Toast: "mask" option is deprecated, use "overlay" option instead.'
     );

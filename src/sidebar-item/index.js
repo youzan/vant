@@ -38,7 +38,7 @@ export default createComponent({
   },
 
   render() {
-    if (process.env.NODE_ENV !== 'production' && this.info) {
+    if (process.env.NODE_ENV === 'development' && this.info) {
       console.warn(
         '[Vant] SidebarItem: "info" prop is deprecated, use "badge" prop instead.'
       );
