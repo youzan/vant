@@ -58,7 +58,7 @@ export default createComponent({
     const { slots, parent, isActive } = this;
     const slotContent = slots();
 
-    if (process.env.NODE_ENV !== 'production' && this.info) {
+    if (process.env.NODE_ENV === 'development' && this.info) {
       console.warn(
         '[Vant] Tab: "info" prop is deprecated, use "badge" prop instead.'
       );

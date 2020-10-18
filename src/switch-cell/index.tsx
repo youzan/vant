@@ -30,7 +30,7 @@ function SwitchCell(
   slots: DefaultSlots,
   ctx: RenderContext<SwitchCellProps>
 ) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'development') {
     console.warn(
       '[Vant] "SwitchCell" component is deprecated, see: https://youzan.github.io/vant/#/zh-CN/switch-cell.'
     );

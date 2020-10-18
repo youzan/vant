@@ -68,7 +68,7 @@ export default createComponent({
     const active = this.parent.route ? this.routeActive : this.active;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
-    if (process.env.NODE_ENV !== 'production' && this.info) {
+    if (process.env.NODE_ENV === 'development' && this.info) {
       console.warn(
         '[Vant] TabbarItem: "info" prop is deprecated, use "badge" prop instead.'
       );

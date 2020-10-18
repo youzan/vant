@@ -52,7 +52,7 @@ function TreeSelect(
 ) {
   const { items, height, activeId, selectedIcon, mainActiveIndex } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'development') {
     if (ctx.listeners.navclick) {
       console.warn(
         '[Vant] TreeSelect: "navclick" event is deprecated, use "click-nav" instead.'

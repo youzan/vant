@@ -74,7 +74,7 @@ export default createComponent({
       const iconSlot = this.slots('icon');
       const info = this.badge ?? this.info;
 
-      if (process.env.NODE_ENV !== 'production' && this.info) {
+      if (process.env.NODE_ENV === 'development' && this.info) {
         console.warn(
           '[Vant] GridItem: "info" prop is deprecated, use "badge" prop instead.'
         );
