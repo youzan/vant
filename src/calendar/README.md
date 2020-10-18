@@ -269,7 +269,7 @@ Following props are supported when the type is range
 | --- | --- | --- | --- |
 | max-range `v2.4.3` | Number of selectable days | _number \| string_ | Unlimitied |
 | range-prompt `v2.4.3` | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
-| allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `fasle` |
+| allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
 ### Multiple Props
 

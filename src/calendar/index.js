@@ -236,29 +236,34 @@ export default createComponent({
 
       let height = 0;
       let currentMonth;
-      let visibleIndex;
+      const visibleRange = [-1, -1];
 
       for (let i = 0; i < months.value.length; i++) {
         const month = monthRefs.value[i];
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !currentMonth) {
-          visibleIndex = i;
-          currentMonth = month;
-        }
+        if (visible) {
+          visibleRange[1] = i;
 
-        if (!month.visible && visible) {
-          emit('month-show', {
-            date: month.getDate(),
-            title: month.getTitle(),
-          });
+          if (!currentMonth) {
+            currentMonth = month;
+            visibleRange[0] = i;
+          }
+
+          if (!month.visible) {
+            emit('month-show', {
+              date: month.date,
+              title: month.title,
+            });
+          }
         }
 
         height += heights[i];
       }
 
       months.value.forEach((month, index) => {
-        const visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
+        const visible =
+          index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
         monthRefs.value[index].setVisible(visible);
       });
 

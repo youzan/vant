@@ -60,11 +60,12 @@ export default createComponent({
     );
 
     return () => {
-      if (!slots.default) {
+      const { animated, swipeable, scrollspy, lazyRender } = parent.props;
+
+      if (!slots.default && !animated) {
         return;
       }
 
-      const { animated, swipeable, scrollspy, lazyRender } = parent.props;
       const active = isActive();
       const show = scrollspy || active;
 

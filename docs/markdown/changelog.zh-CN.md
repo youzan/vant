@@ -10,6 +10,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
+
+`2020-10-18`
+
+**Feature**
+
+- Icons: 新增 minus 减号图标 [40e26f](https://github.com/youzan/vant/commit/40e26f97d1144d0dd0810075af8616676459ced3)
+- IndexBar: 新增 change 事件 [#7296](https://github.com/youzan/vant/issues/7296)
+
+**Improvement**
+
+- 增加 info 属性的废弃提示 [#7352](https://github.com/youzan/vant/issues/7352) [#7347](https://github.com/youzan/vant/issues/7347)
+- SwitchCell: 增加组件废弃提示 [#7350](https://github.com/youzan/vant/issues/7350)
+- Toast: 新增 mask 选项的废弃提示 [#7342](https://github.com/youzan/vant/issues/7342)
+- TreeSelect: 增加 navclick 和 itemclick 事件的废弃提示 [#7351](https://github.com/youzan/vant/issues/7351)
+
+**Bug Fixes**
+
+- Calendar: 修复在大屏幕上日期展示不全的问题 [#7355](https://github.com/youzan/vant/issues/7355)
+- Tabs: 修复部分标签页内容为空且开启 animated 时展示错误的问题 [#7354](https://github.com/youzan/vant/issues/7354)
+- Field: 修复 label-align 为 right 时 label 只能展示五个字的问题 [#7349](https://github.com/youzan/vant/issues/7349)
+- GridItem: 修复文字未正确换行的问题 [#7292](https://github.com/youzan/vant/issues/7292)
+- Icon: 修复 after-sale 和 cash-back-record 图标在真机上不完整的问题 [#7328](https://github.com/youzan/vant/issues/7328)
+- Picker: 修复加载图标的 z-index 错误的问题 [14cd28](https://github.com/youzan/vant/commit/14cd2863cc75d4f7328ddcf19808b9f6eec38fa4)
+- Row: 修复开启 flex 模式时未能正确换行的问题 [#7332](https://github.com/youzan/vant/issues/7332)
+
 ### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
 
 `2020-10-01`

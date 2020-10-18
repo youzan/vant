@@ -25,7 +25,7 @@ exports[`height prop 1`] = `
 </div>
 `;
 
-exports[`nav badge 1`] = `
+exports[`nav render badge 1`] = `
 <div class="van-tree-select" style="height: 300px;">
   <div class="van-sidebar van-tree-select__nav"><a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
       <div class="van-sidebar-item__text">group1<div class="van-badge van-sidebar-item__badge">3</div>

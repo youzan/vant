@@ -85,15 +85,15 @@ app.use(CellGroup);
 ### Use Slots
 
 ```html
-<van-cell value="内容" is-link>
+<van-cell value="Content" is-link>
   <!-- Use the title slot to customize the title -->
   <template #title>
-    <span class="custom-title">单元格</span>
-    <van-tag type="danger">标签</van-tag>
+    <span class="custom-title">Title</span>
+    <van-tag type="danger">Tag</van-tag>
   </template>
 </van-cell>
 
-<van-cell title="单元格" icon="shop-o">
+<van-cell title="Title" icon="shop-o">
   <!-- Use the right-icon slot to customize the right icon -->
   <template #right-icon>
     <van-icon name="search" class="search-icon" />
