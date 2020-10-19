@@ -10,6 +10,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.11-beta.0](https://github.com/youzan/vant/compare/v2.10.10...v2.10.11-beta.0)
+
+`2020-10-19`
+
+**Bug Fixes**
+
+- Dialog: failed to disable closeOnPopstate [#7357](https://github.com/youzan/vant/issues/7357)
+
 ### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
 
 `2020-10-18`
