@@ -20,9 +20,7 @@ Use `v-model` to control the name of active panels.
 <van-collapse v-model="activeNames">
   <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
   <van-collapse-item title="Title2" name="2">Content</van-collapse-item>
-  <van-collapse-item title="Title3" name="3" disabled
-    >Content</van-collapse-item
-  >
+  <van-collapse-item title="Title3" name="3">Content</van-collapse-item>
 </van-collapse>
 ```
 
@@ -56,6 +54,22 @@ export default {
     };
   },
 };
+```
+
+### Disabled
+
+Use the `disabled` prop to disable CollaseItem.
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
+  <van-collapse-item title="Title2" name="2" disabled>
+    Content
+  </van-collapse-item>
+  <van-collapse-item title="Title3" name="3" disabled>
+    Content
+  </van-collapse-item>
+</van-collapse>
 ```
 
 ### Custom title
