@@ -10394,9 +10394,9 @@ terser@^4.6.3:
     source-map-support "~0.5.12"
 
 terser@^5.3.5:
-  version "5.3.6"
-  resolved "https://registry.npm.taobao.org/terser/download/terser-5.3.6.tgz#3490ab11b99184f2d6fb8e65ddf53fc3d4b6147a"
-  integrity sha1-NJCrEbmRhPLW+45l3fU/w9S2FHo=
+  version "5.3.7"
+  resolved "https://registry.npm.taobao.org/terser/download/terser-5.3.7.tgz?cache=0&sync_timestamp=1603116524754&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fterser%2Fdownload%2Fterser-5.3.7.tgz#798a4ae2e7ff67050c3e99fcc4e00725827d97e2"
+  integrity sha1-eYpK4uf/ZwUMPpn8xOAHJYJ9l+I=
   dependencies:
     commander "^2.20.0"
     source-map "~0.7.2"
