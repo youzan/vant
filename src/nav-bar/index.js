@@ -67,13 +67,13 @@ export default createComponent({
           style={{ zIndex: this.zIndex }}
           class={[bem({ fixed: this.fixed }), { [BORDER_BOTTOM]: this.border }]}
         >
-          {this.hasLeft && <div class={bem('left')} onClick={this.onClickLeft}>
+          {this.hasLeft() && <div class={bem('left')} onClick={this.onClickLeft}>
             {this.genLeft()}
           </div>}
           <div class={[bem('title'), 'van-ellipsis']}>
             {this.slots('title') || this.title}
           </div>
-          {this.hasRight && <div class={bem('right')} onClick={this.onClickRight}>
+          {this.hasRight() && <div class={bem('right')} onClick={this.onClickRight}>
             {this.genRight()}
           </div>}
         </div>
@@ -81,11 +81,11 @@ export default createComponent({
     },
 
     hasLeft() {
-      return this.leftArrow || this.leftText || this.leftSlot;
+      return this.leftArrow || this.leftText || this.slots('left');
     },
 
     hasRight() {
-      return this.rightArrow || this.rightText || this.rightSlot;
+      return this.rightText || this.slots('right');
     },
 
     onClickLeft(event) {
