@@ -160,6 +160,38 @@ test('render confirm/cancel slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('render option slot with simple columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item }}</template>
+      </van-picker>
+    `,
+    data() {
+      return { columns: ['foo', 'bar'] };
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option slot with object columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item.text }}</template>
+      </van-picker>
+    `,
+    data() {
+      return {
+        columns: [{ text: 'foo' }, { text: 'bar' }],
+      };
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('simulation finger swipe again before transitionend', () => {
   // mock getComputedStyle
   // see: https://github.com/jsdom/jsdom/issues/2588

@@ -338,6 +338,9 @@ export default createComponent({
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}
+          scopedSlots={{
+            option: this.$scopedSlots.option,
+          }}
           onChange={() => {
             this.onChange(columnIndex);
           }}

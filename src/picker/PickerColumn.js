@@ -305,7 +305,7 @@ export default createComponent({
 
         return (
           <li {...data}>
-            <div {...childData} />
+            {this.slots('option', option) || <div {...childData} />}
           </li>
         );
       });
