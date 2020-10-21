@@ -2,7 +2,11 @@
 @import '../style/mixins/hairline';
 
 .van-action-sheet {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   max-height: @action-sheet-max-height;
+  overflow: hidden;
   color: @action-sheet-item-text-color;
 
   &__item,
@@ -42,6 +46,8 @@
   }
 
   &__cancel {
+    flex-shrink: 0;
+    box-sizing: border-box;
     color: @action-sheet-cancel-text-color;
   }
 
@@ -59,6 +65,7 @@
   }
 
   &__header {
+    flex-shrink: 0;
     font-weight: @font-weight-bold;
     font-size: @action-sheet-header-font-size;
     line-height: @action-sheet-header-height;
@@ -67,6 +74,7 @@
 
   &__description {
     position: relative;
+    flex-shrink: 0;
     padding: 20px @padding-md;
     color: @action-sheet-description-color;
     font-size: @action-sheet-description-font-size;
@@ -95,5 +103,17 @@
     &:active {
       color: @action-sheet-close-icon-active-color;
     }
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  &__main {
+    flex: 1;
+    overflow-y: scroll;
   }
 }

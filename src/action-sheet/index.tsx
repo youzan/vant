@@ -159,11 +159,15 @@ function ActionSheet(
       safeAreaInsetBottom={props.safeAreaInsetBottom}
       {...inherit(ctx, true)}
     >
-      {Header()}
-      {Description()}
-      {props.actions && props.actions.map(Option)}
-      {Content()}
-      {CancelText()}
+      <div class={bem('inner')}>
+        {Header()}
+        {Description()}
+        <div class={bem('main')}>
+          {props.actions && props.actions.map(Option)}
+          {Content()}
+        </div>
+        {CancelText()}
+      </div>
     </Popup>
   );
 }
