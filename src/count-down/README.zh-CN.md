@@ -150,7 +150,7 @@ export default {
 
 ### Slots
 
-| 名称    | 说明       | SlotProps            |
+| 名称    | 说明       | 参数                 |
 | ------- | ---------- | -------------------- |
 | default | 自定义内容 | _timeData: TimeData_ |
 
