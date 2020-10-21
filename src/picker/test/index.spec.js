@@ -138,13 +138,23 @@ test('column watch default index', async () => {
 test('render title slot', () => {
   const wrapper = mount({
     template: `
-      <picker show-toolbar>
+      <van-picker show-toolbar>
         <template v-slot:title>Custom title</template>
-      </picker>
+      </van-picker>
     `,
-    components: {
-      Picker,
-    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render confirm/cancel slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker show-toolbar>
+        <template v-slot:confirm>Custom Confirm</template>
+        <template v-slot:cancel>Custom Cancel</template>
+      </van-picker>
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
