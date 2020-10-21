@@ -192,6 +192,6 @@ export default {
 
 ### TabbarItem Slots
 
-| 名称 | 说明       | SlotProps              |
+| 名称 | 说明       | 参数                   |
 | ---- | ---------- | ---------------------- |
 | icon | 自定义图标 | active: 是否为选中标签 |
