@@ -269,12 +269,14 @@ Picker events will pass different parameters according to the columns are single
 
 ### Slots
 
-| Name           | Description                  |
-| -------------- | ---------------------------- |
-| default        | Custom toolbar content       |
-| title          | Custom title                 |
-| columns-top    | Custom content above columns |
-| columns-bottom | Custom content below columns |
+| Name               | Description                  |
+| ------------------ | ---------------------------- |
+| default            | Custom toolbar content       |
+| title              | Custom title                 |
+| confirm `v2.10.11` | Custom confirm button text   |
+| cancel `v2.10.11`  | Custom cancel button text    |
+| columns-top        | Custom content above columns |
+| columns-bottom     | Custom content below columns |
 
 ### Data Structure of Column
 
