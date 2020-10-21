@@ -232,6 +232,7 @@ export default createComponent({
 
     // initialize swipe position
     const initialize = (active = +props.initialSwipe) => {
+      console.log('initialize', children.length, active);
       if (!root.value || isHidden(root)) {
         return;
       }
@@ -373,7 +374,9 @@ export default createComponent({
 
     linkChildren({ size, props, count, activeIndicator });
 
-    watch([() => children.length, () => props.initialSwipe], initialize);
+    watch([() => children.length, () => props.initialSwipe], () => {
+      initialize();
+    });
 
     watch(
       () => props.autoplay,

@@ -1,4 +1,4 @@
-import { PropType, ref } from 'vue';
+import { ref, PropType } from 'vue';
 import { createNamespace } from '../utils';
 import { useTouch } from '../composition/use-touch';
 import Loading from '../loading';
