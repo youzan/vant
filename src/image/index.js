@@ -113,7 +113,7 @@ export default createComponent({
     },
 
     genPlaceholder() {
-      if (this.loading && this.showLoading) {
+      if (this.loading && this.showLoading && inBrowser) {
         return (
           <div class={bem('loading')}>
             {this.slots('loading') || (
