@@ -1768,17 +1768,17 @@
     eslint-plugin-import "^2.22.0"
     eslint-plugin-vue "^7.0.1"
 
-"@vant/markdown-loader@^3.0.0-alpha.0":
-  version "3.0.0-alpha.0"
-  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.0.0-alpha.0.tgz#a14fa5c6bf4ffd57916855210dffc0daf8d9d6cb"
-  integrity sha512-cDDXfYhyS6yfVtqx+hwgN4blqd/+V1mYsvtDKsrpAZnirFhWfVFWeNZEjXPN6JYfXk3rEprEepjY/FPtCJG2EQ==
+"@vant/markdown-loader@^3.0.0-alpha.2":
+  version "3.0.0-alpha.2"
+  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.0.0-alpha.2.tgz#88ab27d82608ab44bdff6087c1cab6928d2714b6"
+  integrity sha512-2SDfXchN6rglKLydVg26NHS5sUvN8vZgASrZLzOBchXD3Y6lpS+CUU3R6Ar9p9rDwkIbpwTiI5joHlIRUZrjJg==
   dependencies:
-    front-matter "^3.0.2"
-    highlight.js "^9.17.1"
-    loader-utils "^1.2.3"
-    markdown-it "^10.0.0"
-    markdown-it-anchor "^5.2.5"
-    transliteration "^2.1.7"
+    front-matter "^4.0.2"
+    highlight.js "^10.3.1"
+    loader-utils "^2.0.0"
+    markdown-it "^12.0.1"
+    markdown-it-anchor "^6.0.0"
+    transliteration "^2.1.11"
 
 "@vant/markdown-vetur@^2.0.2":
   version "2.0.2"
@@ -2198,6 +2198,11 @@ argparse@^1.0.7:
   integrity sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   dependencies:
     sprintf-js "~1.0.2"
+
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
 
 argv@0.0.2:
   version "0.0.2"
@@ -4786,10 +4791,10 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-front-matter@^3.0.2:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/front-matter/-/front-matter-3.1.0.tgz#a0b758c3c6c39ce43e107dd0909a57d42964c2de"
-  integrity sha512-RFEK8N6waWTdwBZOPNEtvwMjZ/hUfpwXkYUYkmmOhQGdhSulXhWrFwiUhdhkduLDiIwbROl/faF1X/PC/GGRMw==
+front-matter@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmjs.org/front-matter/-/front-matter-4.0.2.tgz#b14e54dc745cfd7293484f3210d15ea4edd7f4d5"
+  integrity sha512-I8ZuJ/qG92NWX8i5x1Y8qyj3vizhXS31OxjKDu3LKP+7/qBgfIKValiZIEwoVoJKUHlhWtYrktkxV1XsX+pPlg==
   dependencies:
     js-yaml "^3.13.1"
 
@@ -5259,10 +5264,10 @@ he@^1.2.0:
   resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.17.1:
-  version "9.18.1"
-  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
-  integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
+highlight.js@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.3.1.tgz#3ca6bf007377faae347e8135ff25900aac734b9a"
+  integrity sha512-jeW8rdPdhshYKObedYg5XGbpVgb1/DT4AHvDFXhkU7UnGSIjy9kkJ7zHG7qplhFHMitTSzh5/iClKQk3Kb2RFQ==
 
 hosted-git-info@^2.1.4:
   version "2.8.8"
@@ -6864,10 +6869,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-linkify-it@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-2.2.0.tgz#e3b54697e78bf915c70a38acd78fd09e0058b1cf"
-  integrity sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==
+linkify-it@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/linkify-it/-/linkify-it-3.0.2.tgz#f55eeb8bc1d3ae754049e124ab3bb56d97797fb8"
+  integrity sha512-gDBO4aHNZS6coiZCKVhSNh43F9ioIL4JwRjLZPkoLIY4yZFwg264Y5lu2x6rb1Js42Gh6Yqm2f6L2AJcnkzinQ==
   dependencies:
     uc.micro "^1.0.1"
 
@@ -7178,19 +7183,19 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.4.tgz#c95415ef451499d7602b91095f3c8e8975f78535"
   integrity sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
 
-markdown-it-anchor@^5.2.5:
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.2.5.tgz#dbf13cfcdbffd16a510984f1263e1d479a47d27a"
-  integrity sha512-xLIjLQmtym3QpoY9llBgApknl7pxAcN3WDRc2d3rwpl+/YvDZHPmKscGs+L6E05xf2KrCXPBvosWt7MZukwSpQ==
+markdown-it-anchor@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/markdown-it-anchor/-/markdown-it-anchor-6.0.0.tgz#2ec2554fa4d065f2d1ca2422a50c14c10cf67c2a"
+  integrity sha512-WOcIGhG1M1W94VV5cmSZAMSKi2vqCxpLAqQZ0wSO9RzQ9Rbls7ecjRVXp5DIPoXrNy9bjv9K7M0nYqNk60ctxQ==
 
-markdown-it@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-10.0.0.tgz#abfc64f141b1722d663402044e43927f1f50a8dc"
-  integrity sha512-YWOP1j7UbDNz+TumYP1kpwnP0aEa711cJjrAQrzd0UXlbJfc5aAq0F/PZHjiioqDC1NKgvIMX+o+9Bk7yuM2dg==
+markdown-it@^12.0.1:
+  version "12.0.1"
+  resolved "https://registry.npmjs.org/markdown-it/-/markdown-it-12.0.1.tgz#29e617276869614d6b0b45a90df39b8e7f58c53c"
+  integrity sha512-+y+88n2za9jayLU9ELoGdTKucnW4qIIg6JRWmkesrw8LBnp/Eb2Vurg2P1epf+iNvpRc7IzDjbYcgreOuuOZzw==
   dependencies:
-    argparse "^1.0.7"
+    argparse "^2.0.1"
     entities "~2.0.0"
-    linkify-it "^2.0.0"
+    linkify-it "^3.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
@@ -10534,12 +10539,12 @@ tr46@^2.0.2:
   dependencies:
     punycode "^2.1.1"
 
-transliteration@^2.1.7:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.1.8.tgz#b2a032107be42910dbb792ff96b39938114a4eb8"
-  integrity sha512-ds3uRxcS0yCxzP4xP30dz+ImEeVhgAwSaewhlApuYYTUuT8+wFFLoFfO1nHvfJzbpoRBp4lS52Ai3wm8IkemIQ==
+transliteration@^2.1.11:
+  version "2.1.11"
+  resolved "https://registry.npmjs.org/transliteration/-/transliteration-2.1.11.tgz#84a274349525cf8bb9f09d5fcd28c07c66ee6940"
+  integrity sha512-CMCKB2VHgc9JabQ3NiC2aXG5hEd3FKoU+F+zRQJoDRtZFdQwLYKfRSK8zH/B/4HML4WnOx8U0xmob1ehlt/xvw==
   dependencies:
-    yargs "^15.0.2"
+    yargs "^15.3.1"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
@@ -11545,7 +11550,7 @@ yargs@^13.3.2:
     y18n "^4.0.0"
     yargs-parser "^13.1.2"
 
-yargs@^15.0.2, yargs@^15.4.1:
+yargs@^15.3.1, yargs@^15.4.1:
   version "15.4.1"
   resolved "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz#0d87a16de01aee9d8bec2bfbf74f67851730f4f8"
   integrity sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
