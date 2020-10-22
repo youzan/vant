@@ -7,22 +7,10 @@
     :model-value="value"
     :placeholder="t('placeholder')"
     @click="showPicker = true"
-  >
-    <template #extra>
-      <van-popup
-        v-model:show="showPicker"
-        round
-        position="bottom"
-        teleport="body"
-      >
-        <van-datetime-picker
-          type="time"
-          @confirm="onConfirm"
-          @cancel="onCancel"
-        />
-      </van-popup>
-    </template>
-  </van-field>
+  />
+  <van-popup v-model:show="showPicker" round position="bottom" teleport="body">
+    <van-datetime-picker type="time" @confirm="onConfirm" @cancel="onCancel" />
+  </van-popup>
 </template>
 
 <script>

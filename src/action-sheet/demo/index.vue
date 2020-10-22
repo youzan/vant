@@ -1,60 +1,54 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link :title="t('basicUsage')" @click="show.basic = true" />
-      <van-cell is-link :title="t('showCancel')" @click="show.cancel = true" />
-      <van-cell
-        is-link
-        :title="t('showDescription')"
-        @click="show.description = true"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('optionStatus')">
-      <van-cell
-        is-link
-        :title="t('optionStatus')"
-        @click="show.status = true"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('customPanel')">
-      <van-cell is-link :title="t('customPanel')" @click="show.title = true" />
-    </demo-block>
-
-    <van-action-sheet
-      v-model:show="show.basic"
-      :actions="simpleActions"
-      @select="onSelect"
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link :title="t('basicUsage')" @click="show.basic = true" />
+    <van-cell is-link :title="t('showCancel')" @click="show.cancel = true" />
+    <van-cell
+      is-link
+      :title="t('showDescription')"
+      @click="show.description = true"
     />
+  </demo-block>
 
-    <van-action-sheet
-      v-model:show="show.cancel"
-      :actions="simpleActions"
-      close-on-click-action
-      :cancel-text="t('cancel')"
-      @cancel="onCancel"
-    />
+  <demo-block card :title="t('optionStatus')">
+    <van-cell is-link :title="t('optionStatus')" @click="show.status = true" />
+  </demo-block>
 
-    <van-action-sheet
-      v-model:show="show.description"
-      :actions="actionsWithDescription"
-      close-on-click-action
-      :cancel-text="t('cancel')"
-      :description="t('description')"
-    />
+  <demo-block card :title="t('customPanel')">
+    <van-cell is-link :title="t('customPanel')" @click="show.title = true" />
+  </demo-block>
 
-    <van-action-sheet
-      v-model:show="show.status"
-      close-on-click-action
-      :actions="statusActions"
-      :cancel-text="t('cancel')"
-    />
+  <van-action-sheet
+    v-model:show="show.basic"
+    :actions="simpleActions"
+    @select="onSelect"
+  />
 
-    <van-action-sheet v-model:show="show.title" :title="t('title')">
-      <div class="demo-action-sheet-content">{{ t('content') }}</div>
-    </van-action-sheet>
-  </demo-section>
+  <van-action-sheet
+    v-model:show="show.cancel"
+    :actions="simpleActions"
+    close-on-click-action
+    :cancel-text="t('cancel')"
+    @cancel="onCancel"
+  />
+
+  <van-action-sheet
+    v-model:show="show.description"
+    :actions="actionsWithDescription"
+    close-on-click-action
+    :cancel-text="t('cancel')"
+    :description="t('description')"
+  />
+
+  <van-action-sheet
+    v-model:show="show.status"
+    close-on-click-action
+    :actions="statusActions"
+    :cancel-text="t('cancel')"
+  />
+
+  <van-action-sheet v-model:show="show.title" :title="t('title')">
+    <div class="demo-action-sheet-content">{{ t('content') }}</div>
+  </van-action-sheet>
 </template>
 
 <script>

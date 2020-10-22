@@ -1,9 +1,7 @@
 <template>
-  <demo-section>
-    <basic-usage />
-    <validate-rules />
-    <field-type />
-  </demo-section>
+  <basic-usage />
+  <validate-rules />
+  <field-type />
 </template>
 
 <script>

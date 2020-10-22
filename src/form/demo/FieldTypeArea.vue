@@ -7,22 +7,14 @@
     :model-value="value"
     :placeholder="t('placeholder')"
     @click="showArea = true"
-  >
-    <template #extra>
-      <van-popup
-        v-model:show="showArea"
-        round
-        position="bottom"
-        teleport="body"
-      >
-        <van-area
-          :area-list="t('areaList')"
-          @confirm="onConfirm"
-          @cancel="onCancel"
-        />
-      </van-popup>
-    </template>
-  </van-field>
+  />
+  <van-popup v-model:show="showArea" round position="bottom" teleport="body">
+    <van-area
+      :area-list="t('areaList')"
+      @confirm="onConfirm"
+      @cancel="onCancel"
+    />
+  </van-popup>
 </template>
 
 <script>

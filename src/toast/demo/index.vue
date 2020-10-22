@@ -1,35 +1,33 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link :title="t('title1')" @click="$toast(t('text'))" />
-      <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
-      <van-cell is-link :title="t('success')" @click="showSuccessToast" />
-      <van-cell is-link :title="t('fail')" @click="showFailToast" />
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link :title="t('title1')" @click="$toast(t('text'))" />
+    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
+    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
+    <van-cell is-link :title="t('fail')" @click="showFailToast" />
+  </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('customIcon')">
-      <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
-      <van-cell is-link :title="t('customImage')" @click="showImageToast" />
-      <van-cell
-        is-link
-        :title="t('loadingType')"
-        @click="showLoadingToast('spinner')"
-      />
-    </demo-block>
+  <demo-block card v-if="!isWeapp" :title="t('customIcon')">
+    <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
+    <van-cell is-link :title="t('customImage')" @click="showImageToast" />
+    <van-cell
+      is-link
+      :title="t('loadingType')"
+      @click="showLoadingToast('spinner')"
+    />
+  </demo-block>
 
-    <demo-block card v-if="!isWeapp" :title="t('customPosition')">
-      <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
-      <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
-    </demo-block>
+  <demo-block card v-if="!isWeapp" :title="t('customPosition')">
+    <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
+    <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
+  </demo-block>
 
-    <demo-block card :title="t('updateMessage')">
-      <van-cell
-        is-link
-        :title="t('updateMessage')"
-        @click="showCustomizedToast"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block card :title="t('updateMessage')">
+    <van-cell
+      is-link
+      :title="t('updateMessage')"
+      @click="showCustomizedToast"
+    />
+  </demo-block>
 </template>
 
 <script>

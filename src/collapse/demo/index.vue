@@ -1,65 +1,63 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-collapse v-model="active1">
-        <van-collapse-item :title="t('title') + 1">
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 2">
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 3">
-          {{ t('text') }}
-        </van-collapse-item>
-      </van-collapse>
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-collapse v-model="active1">
+      <van-collapse-item :title="t('title') + 1">
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 2">
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 3">
+        {{ t('text') }}
+      </van-collapse-item>
+    </van-collapse>
+  </demo-block>
 
-    <demo-block :title="t('accordion')">
-      <van-collapse v-model="active2" accordion>
-        <van-collapse-item :title="t('title') + 1">
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 2">
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 3">
-          {{ t('text') }}
-        </van-collapse-item>
-      </van-collapse>
-    </demo-block>
+  <demo-block :title="t('accordion')">
+    <van-collapse v-model="active2" accordion>
+      <van-collapse-item :title="t('title') + 1">
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 2">
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 3">
+        {{ t('text') }}
+      </van-collapse-item>
+    </van-collapse>
+  </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-collapse v-model="active3">
-        <van-collapse-item :title="t('title') + 1">
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 2" disabled>
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item :title="t('title') + 3" disabled>
-          {{ t('text') }}
-        </van-collapse-item>
-      </van-collapse>
-    </demo-block>
+  <demo-block :title="t('disabled')">
+    <van-collapse v-model="active3">
+      <van-collapse-item :title="t('title') + 1">
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 2" disabled>
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 3" disabled>
+        {{ t('text') }}
+      </van-collapse-item>
+    </van-collapse>
+  </demo-block>
 
-    <demo-block :title="t('titleSlot')">
-      <van-collapse v-model="active4">
-        <van-collapse-item>
-          <template #title>
-            {{ t('title') + 1 }}<van-icon name="question-o" />
-          </template>
-          {{ t('text') }}
-        </van-collapse-item>
-        <van-collapse-item
-          :title="t('title') + 2"
-          :value="t('content')"
-          icon="shop-o"
-        >
-          {{ t('text') }}
-        </van-collapse-item>
-      </van-collapse>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('titleSlot')">
+    <van-collapse v-model="active4">
+      <van-collapse-item>
+        <template #title>
+          {{ t('title') + 1 }}<van-icon name="question-o" />
+        </template>
+        {{ t('text') }}
+      </van-collapse-item>
+      <van-collapse-item
+        :title="t('title') + 2"
+        :value="t('content')"
+        icon="shop-o"
+      >
+        {{ t('text') }}
+      </van-collapse-item>
+    </van-collapse>
+  </demo-block>
 </template>
 
 <script>

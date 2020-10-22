@@ -1,20 +1,18 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-address-edit
-        :area-list="areaList"
-        show-postal
-        show-delete
-        show-set-default
-        show-search-result
-        :search-result="searchResult"
-        :area-columns-placeholder="t('areaColumnsPlaceholder')"
-        @save="onSave"
-        @delete="onDelete"
-        @change-detail="onChangeDetail"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('basicUsage')">
+    <van-address-edit
+      :area-list="areaList"
+      show-postal
+      show-delete
+      show-set-default
+      show-search-result
+      :search-result="searchResult"
+      :area-columns-placeholder="t('areaColumnsPlaceholder')"
+      @save="onSave"
+      @delete="onDelete"
+      @change-detail="onChangeDetail"
+    />
+  </demo-block>
 </template>
 
 <script>

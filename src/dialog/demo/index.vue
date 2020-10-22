@@ -1,32 +1,30 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
-      <van-cell is-link :title="t('alert2')" @click="onClickAlert2" />
-      <van-cell is-link :title="t('confirm')" @click="onClickConfirm" />
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
+    <van-cell is-link :title="t('alert2')" @click="onClickAlert2" />
+    <van-cell is-link :title="t('confirm')" @click="onClickConfirm" />
+  </demo-block>
 
-    <demo-block card :title="t('roundButton')">
-      <van-cell is-link :title="t('alert1')" @click="onClickRound" />
-      <van-cell is-link :title="t('alert2')" @click="onClickRound2" />
-    </demo-block>
+  <demo-block card :title="t('roundButton')">
+    <van-cell is-link :title="t('alert1')" @click="onClickRound" />
+    <van-cell is-link :title="t('alert2')" @click="onClickRound2" />
+  </demo-block>
 
-    <demo-block card :title="t('beforeClose')">
-      <van-cell is-link :title="t('beforeClose')" @click="onClickBeforeClose" />
-    </demo-block>
+  <demo-block card :title="t('beforeClose')">
+    <van-cell is-link :title="t('beforeClose')" @click="onClickBeforeClose" />
+  </demo-block>
 
-    <demo-block card :title="t('componentCall')">
-      <van-cell is-link :title="t('componentCall')" @click="show = true" />
-      <van-dialog
-        v-model:show="show"
-        :title="t('title')"
-        show-cancel-button
-        :lazy-render="false"
-      >
-        <img :src="image" />
-      </van-dialog>
-    </demo-block>
-  </demo-section>
+  <demo-block card :title="t('componentCall')">
+    <van-cell is-link :title="t('componentCall')" @click="show = true" />
+    <van-dialog
+      v-model:show="show"
+      :title="t('title')"
+      show-cancel-button
+      :lazy-render="false"
+    >
+      <img :src="image" />
+    </van-dialog>
+  </demo-block>
 </template>
 
 <script>

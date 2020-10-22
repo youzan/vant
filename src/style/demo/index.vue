@@ -1,30 +1,24 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('ellipsis')">
-      <div class="van-ellipsis">{{ t('text1') }}</div>
-      <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
-    </demo-block>
+  <demo-block :title="t('ellipsis')">
+    <div class="van-ellipsis">{{ t('text1') }}</div>
+    <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
+  </demo-block>
 
-    <demo-block card :title="t('hairline')">
-      <div class="van-hairline--top" />
-    </demo-block>
+  <demo-block card :title="t('hairline')">
+    <div class="van-hairline--top" />
+  </demo-block>
 
-    <demo-block card :title="t('animation')">
-      <van-cell is-link title="Fade" @click="animate('van-fade')" />
-      <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
-      <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
-      <van-cell is-link title="Slide Left" @click="animate('van-slide-left')" />
-      <van-cell
-        is-link
-        title="Slide Right"
-        @click="animate('van-slide-right')"
-      />
-    </demo-block>
+  <demo-block card :title="t('animation')">
+    <van-cell is-link title="Fade" @click="animate('van-fade')" />
+    <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
+    <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
+    <van-cell is-link title="Slide Left" @click="animate('van-slide-left')" />
+    <van-cell is-link title="Slide Right" @click="animate('van-slide-right')" />
+  </demo-block>
 
-    <transition :name="transitionName">
-      <div v-show="show" class="demo-animate-block" />
-    </transition>
-  </demo-section>
+  <transition :name="transitionName">
+    <div v-show="show" class="demo-animate-block" />
+  </transition>
 </template>
 
 <script>

@@ -1,42 +1,36 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link @click="showImagePreview()">
-        {{ t('showImages') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link @click="showImagePreview()">
+      {{ t('showImages') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('customConfig')">
-      <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
-        {{ t('startPosition') }}
-      </van-cell>
-      <van-cell is-link @click="showImagePreview({ closeable: true })">
-        {{ t('showClose') }}
-      </van-cell>
-      <van-cell is-link @click="showImagePreview({ onClose })">
-        {{ t('closeEvent') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('customConfig')">
+    <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
+      {{ t('startPosition') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ closeable: true })">
+      {{ t('showClose') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ onClose })">
+      {{ t('closeEvent') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('beforeClose')">
-      <van-cell is-link @click="showImagePreview({ beforeClose })">
-        {{ t('beforeClose') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('beforeClose')">
+    <van-cell is-link @click="showImagePreview({ beforeClose })">
+      {{ t('beforeClose') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('componentCall')">
-      <van-cell is-link @click="componentCall">
-        {{ t('componentCall') }}
-      </van-cell>
-      <van-image-preview
-        v-model:show="show"
-        :images="images"
-        @change="onChange"
-      >
-        <template #index>{{ t('index', index) }}</template>
-      </van-image-preview>
-    </demo-block>
-  </demo-section>
+  <demo-block card :title="t('componentCall')">
+    <van-cell is-link @click="componentCall">
+      {{ t('componentCall') }}
+    </van-cell>
+    <van-image-preview v-model:show="show" :images="images" @change="onChange">
+      <template #index>{{ t('index', index) }}</template>
+    </van-image-preview>
+  </demo-block>
 </template>
 
 <script>

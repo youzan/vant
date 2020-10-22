@@ -1,71 +1,65 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-action-bar>
-        <van-action-bar-icon
-          icon="chat-o"
-          :text="t('icon1')"
-          @click="onClickIcon"
-        />
-        <van-action-bar-icon
-          icon="cart-o"
-          :text="t('icon2')"
-          @click="onClickIcon"
-        />
-        <van-action-bar-icon
-          icon="shop-o"
-          :text="t('icon3')"
-          @click="onClickIcon"
-        />
-        <van-action-bar-button
-          type="danger"
-          :text="t('button2')"
-          @click="onClickButton"
-        />
-      </van-action-bar>
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-action-bar>
+      <van-action-bar-icon
+        icon="chat-o"
+        :text="t('icon1')"
+        @click="onClickIcon"
+      />
+      <van-action-bar-icon
+        icon="cart-o"
+        :text="t('icon2')"
+        @click="onClickIcon"
+      />
+      <van-action-bar-icon
+        icon="shop-o"
+        :text="t('icon3')"
+        @click="onClickIcon"
+      />
+      <van-action-bar-button
+        type="danger"
+        :text="t('button2')"
+        @click="onClickButton"
+      />
+    </van-action-bar>
+  </demo-block>
 
-    <demo-block :title="t('iconBadge')">
-      <van-action-bar>
-        <van-action-bar-icon icon="chat-o" dot :text="t('icon1')" />
-        <van-action-bar-icon icon="cart-o" badge="5" :text="t('icon2')" />
-        <van-action-bar-icon icon="shop-o" badge="12" :text="t('icon3')" />
-        <van-action-bar-button type="warning" :text="t('button1')" />
-        <van-action-bar-button type="danger" :text="t('button2')" />
-      </van-action-bar>
-    </demo-block>
+  <demo-block :title="t('iconBadge')">
+    <van-action-bar>
+      <van-action-bar-icon icon="chat-o" dot :text="t('icon1')" />
+      <van-action-bar-icon icon="cart-o" badge="5" :text="t('icon2')" />
+      <van-action-bar-icon icon="shop-o" badge="12" :text="t('icon3')" />
+      <van-action-bar-button type="warning" :text="t('button1')" />
+      <van-action-bar-button type="danger" :text="t('button2')" />
+    </van-action-bar>
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('customIconColor')">
-      <van-action-bar>
-        <van-action-bar-icon icon="chat-o" :text="t('icon1')" color="#07c160" />
-        <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
-        <van-action-bar-icon
-          icon="star"
-          :text="t('collected')"
-          color="#ff5000"
-        />
-        <van-action-bar-button type="warning" :text="t('button1')" />
-        <van-action-bar-button type="danger" :text="t('button2')" />
-      </van-action-bar>
-    </demo-block>
+  <demo-block v-if="!isWeapp" :title="t('customIconColor')">
+    <van-action-bar>
+      <van-action-bar-icon icon="chat-o" :text="t('icon1')" color="#07c160" />
+      <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
+      <van-action-bar-icon icon="star" :text="t('collected')" color="#ff5000" />
+      <van-action-bar-button type="warning" :text="t('button1')" />
+      <van-action-bar-button type="danger" :text="t('button2')" />
+    </van-action-bar>
+  </demo-block>
 
-    <demo-block :title="t('customButtonColor')">
-      <van-action-bar>
-        <van-action-bar-icon icon="chat-o" :text="t('icon1')" />
-        <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
-        <van-action-bar-button
-          color="#be99ff"
-          type="warning"
-          :text="t('button1')"
-        />
-        <van-action-bar-button
-          color="#7232dd"
-          type="danger"
-          :text="t('button2')"
-        />
-      </van-action-bar>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('customButtonColor')">
+    <van-action-bar>
+      <van-action-bar-icon icon="chat-o" :text="t('icon1')" />
+      <van-action-bar-icon icon="cart-o" :text="t('icon2')" />
+      <van-action-bar-button
+        color="#be99ff"
+        type="warning"
+        :text="t('button1')"
+      />
+      <van-action-bar-button
+        color="#7232dd"
+        type="danger"
+        :text="t('button2')"
+      />
+    </van-action-bar>
+  </demo-block>
 </template>
 
 <script>

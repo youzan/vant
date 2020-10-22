@@ -1,54 +1,52 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-uploader :after-read="afterRead" />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-uploader :after-read="afterRead" />
+  </demo-block>
 
-    <demo-block :title="t('preview')">
-      <van-uploader v-model="fileList" multiple accept="*" />
-    </demo-block>
+  <demo-block :title="t('preview')">
+    <van-uploader v-model="fileList" multiple accept="*" />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('status')">
-      <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
-    </demo-block>
+  <demo-block v-if="!isWeapp" :title="t('status')">
+    <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
+  </demo-block>
 
-    <demo-block :title="t('maxCount')">
-      <van-uploader v-model="fileList2" multiple :max-count="2" />
-    </demo-block>
+  <demo-block :title="t('maxCount')">
+    <van-uploader v-model="fileList2" multiple :max-count="2" />
+  </demo-block>
 
-    <demo-block :title="t('maxSize')">
-      <van-uploader
-        v-model="fileList4"
-        multiple
-        :max-size="500 * 1024"
-        @oversize="onOversize"
-      />
-    </demo-block>
+  <demo-block :title="t('maxSize')">
+    <van-uploader
+      v-model="fileList4"
+      multiple
+      :max-size="500 * 1024"
+      @oversize="onOversize"
+    />
+  </demo-block>
 
-    <demo-block :title="t('customUpload')">
-      <van-uploader>
-        <van-button type="primary" icon="plus">
-          {{ t('upload') }}
-        </van-button>
-      </van-uploader>
-    </demo-block>
+  <demo-block :title="t('customUpload')">
+    <van-uploader>
+      <van-button type="primary" icon="plus">
+        {{ t('upload') }}
+      </van-button>
+    </van-uploader>
+  </demo-block>
 
-    <demo-block :title="t('previewCover')">
-      <van-uploader v-model="previewCoverFiles">
-        <template #preview-cover="{ file }">
-          <div class="preview-cover van-ellipsis">{{ file.name }}</div>
-        </template>
-      </van-uploader>
-    </demo-block>
+  <demo-block :title="t('previewCover')">
+    <van-uploader v-model="previewCoverFiles">
+      <template #preview-cover="{ file }">
+        <div class="preview-cover van-ellipsis">{{ file.name }}</div>
+      </template>
+    </van-uploader>
+  </demo-block>
 
-    <demo-block :title="t('beforeRead')">
-      <van-uploader v-model="fileList3" :before-read="beforeRead" />
-    </demo-block>
+  <demo-block :title="t('beforeRead')">
+    <van-uploader v-model="fileList3" :before-read="beforeRead" />
+  </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-uploader :after-read="afterRead" disabled />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('disabled')">
+    <van-uploader :after-read="afterRead" disabled />
+  </demo-block>
 </template>
 
 <script>

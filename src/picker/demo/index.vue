@@ -1,71 +1,69 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
+  <demo-block card :title="t('basicUsage')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('textColumns')"
+      @change="onChange1"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('defaultIndex')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('textColumns')"
+      :default-index="2"
+      @change="onChange1"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('multipleColumns')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('dateColumns')"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('cascade')">
+    <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('disableOption')">
+    <van-picker :title="t('title')" :columns="t('disabledColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('setColumnValues')">
+    <van-picker
+      ref="picker"
+      :title="t('title')"
+      :columns="columns"
+      @change="onChange2"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('loadingStatus')">
+    <van-picker loading :title="t('title')" :columns="columns" />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('withPopup')">
+    <van-field
+      v-model="fieldValue"
+      readonly
+      clickable
+      :label="t('city')"
+      :placeholder="t('chooseCity')"
+      @click="onClickField"
+    />
+    <van-popup v-model:show="showPicker" round position="bottom">
       <van-picker
         :title="t('title')"
         :columns="t('textColumns')"
-        @change="onChange1"
+        @cancel="onCancel2"
+        @confirm="onConfirm2"
       />
-    </demo-block>
-
-    <demo-block card :title="t('defaultIndex')">
-      <van-picker
-        :title="t('title')"
-        :columns="t('textColumns')"
-        :default-index="2"
-        @change="onChange1"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('multipleColumns')">
-      <van-picker
-        :title="t('title')"
-        :columns="t('dateColumns')"
-        @cancel="onCancel"
-        @confirm="onConfirm"
-      />
-    </demo-block>
-
-    <demo-block card v-if="!isWeapp" :title="t('cascade')">
-      <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
-    </demo-block>
-
-    <demo-block card :title="t('disableOption')">
-      <van-picker :title="t('title')" :columns="t('disabledColumns')" />
-    </demo-block>
-
-    <demo-block card :title="t('setColumnValues')">
-      <van-picker
-        ref="picker"
-        :title="t('title')"
-        :columns="columns"
-        @change="onChange2"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('loadingStatus')">
-      <van-picker loading :title="t('title')" :columns="columns" />
-    </demo-block>
-
-    <demo-block card v-if="!isWeapp" :title="t('withPopup')">
-      <van-field
-        v-model="fieldValue"
-        readonly
-        clickable
-        :label="t('city')"
-        :placeholder="t('chooseCity')"
-        @click="onClickField"
-      />
-      <van-popup v-model:show="showPicker" round position="bottom">
-        <van-picker
-          :title="t('title')"
-          :columns="t('textColumns')"
-          @cancel="onCancel2"
-          @confirm="onConfirm2"
-        />
-      </van-popup>
-    </demo-block>
-  </demo-section>
+    </van-popup>
+  </demo-block>
 </template>
 
 <script>

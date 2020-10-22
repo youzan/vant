@@ -1,38 +1,32 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link :title="t('basicUsage')" @click="showNotify" />
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link :title="t('basicUsage')" @click="showNotify" />
+  </demo-block>
 
-    <demo-block card :title="t('notifyType')">
-      <van-cell is-link :title="t('primary')" @click="showType('primary')" />
-      <van-cell is-link :title="t('success')" @click="showType('success')" />
-      <van-cell is-link :title="t('danger')" @click="showType('danger')" />
-      <van-cell is-link :title="t('warning')" @click="showType('warning')" />
-    </demo-block>
+  <demo-block card :title="t('notifyType')">
+    <van-cell is-link :title="t('primary')" @click="showType('primary')" />
+    <van-cell is-link :title="t('success')" @click="showType('success')" />
+    <van-cell is-link :title="t('danger')" @click="showType('danger')" />
+    <van-cell is-link :title="t('warning')" @click="showType('warning')" />
+  </demo-block>
 
-    <demo-block card :title="t('customNotify')">
-      <van-cell is-link :title="t('customColor')" @click="showCustomColor" />
-      <van-cell
-        is-link
-        :title="t('customDuration')"
-        @click="showCustomDuration"
-      />
-    </demo-block>
+  <demo-block card :title="t('customNotify')">
+    <van-cell is-link :title="t('customColor')" @click="showCustomColor" />
+    <van-cell
+      is-link
+      :title="t('customDuration')"
+      @click="showCustomDuration"
+    />
+  </demo-block>
 
-    <demo-block card :title="t('componentCall')">
-      <van-cell
-        is-link
-        :title="t('componentCall')"
-        @click="showComponentCall"
-      />
+  <demo-block card :title="t('componentCall')">
+    <van-cell is-link :title="t('componentCall')" @click="showComponentCall" />
 
-      <van-notify v-model:show="show" type="success">
-        <van-icon name="bell" style="margin-right: 4px;" />
-        <span>{{ t('content') }}</span>
-      </van-notify>
-    </demo-block>
-  </demo-section>
+    <van-notify v-model:show="show" type="success">
+      <van-icon name="bell" style="margin-right: 4px;" />
+      <span>{{ t('content') }}</span>
+    </van-notify>
+  </demo-block>
 </template>
 
 <script>
