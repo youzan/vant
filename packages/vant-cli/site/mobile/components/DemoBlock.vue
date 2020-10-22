@@ -1,5 +1,5 @@
 <template>
-  <div class="van-doc-demo-block" :class="demoName">
+  <div class="van-doc-demo-block">
     <h2 v-if="title" class="van-doc-demo-block__title">{{ title }}</h2>
     <div v-if="card" class="van-doc-demo-block__card">
       <slot />
@@ -9,25 +9,12 @@
 </template>
 
 <script>
-import { decamelize } from '../../common';
-
 export default {
   name: 'demo-block',
 
   props: {
     card: Boolean,
     title: String,
-  },
-
-  computed: {
-    demoName() {
-      const { meta } = this.$route || {};
-      if (meta && meta.name) {
-        return `demo-${decamelize(meta.name)}`;
-      }
-
-      return '';
-    },
   },
 };
 </script>
