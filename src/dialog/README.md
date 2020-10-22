@@ -138,7 +138,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
-| width | Width | _number \| string_ | `320px` |
+| width | Dialog width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
 | theme `v2.10.0` | theme style，can be set to `round` | _string_ | `default` |
