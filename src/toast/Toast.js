@@ -41,7 +41,7 @@ export default createComponent({
 
   setup(props, { emit }) {
     let timer;
-    let clickable;
+    let clickable = false;
 
     const toggleClickable = () => {
       const newValue = props.show && props.forbidClick;
