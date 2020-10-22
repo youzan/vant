@@ -29,7 +29,7 @@ export function route(vm: ComponentPublicInstance<RouteProps>) {
 }
 
 export function useRoute() {
-  const vm = getCurrentInstance()!.proxy!;
+  const vm = getCurrentInstance()!.proxy as ComponentPublicInstance<RouteProps>;
   return () => {
     route(vm);
   };
