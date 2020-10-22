@@ -2098,10 +2098,10 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
-"@vant/cli@^3.0.0-beta.10":
-  version "3.0.0-beta.10"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-beta.10.tgz#32d4e8315a606ec399768acfe587242b94ba5b91"
-  integrity sha512-G+bbBCL9sMCJ072BO3f+rsk+tnMWKGKeO8yiDSYhfsUb+kHLu6UsMFBqHSVdteKIfSG6IIjJ0P21RkFuG0Hapw==
+"@vant/cli@^3.0.0-beta.11":
+  version "3.0.0-beta.11"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-beta.11.tgz#d506a0be5a2d15d6fe1fc6eda2e3b689563c47d0"
+  integrity sha512-RWehOMPFxNplbTI25QZ9deHiSzn9DFdP5rYzEGtpuayJlBy4H1q8bY6mFUteHxf+4+FLniGiqtjBJoJ0mk/HkQ==
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-transform-object-assign" "^7.10.1"
