@@ -4,10 +4,9 @@
 .van-action-sheet {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   max-height: @action-sheet-max-height;
-  overflow: hidden;
   color: @action-sheet-item-text-color;
+  overflow: hidden;
 
   &__item,
   &__cancel {
@@ -106,10 +105,9 @@
   }
 
   &__inner {
-    display: flex;
     flex: 1;
+    display: flex;
     flex-direction: column;
-    overflow-y: scroll;
   }
 
   &__main {
