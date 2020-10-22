@@ -50,7 +50,7 @@ export default createComponent({
 
   emits: ['change'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     let moving;
     let startOffset;
     let touchStartTime;
@@ -258,7 +258,7 @@ export default createComponent({
 
         return (
           <li {...data}>
-            <div {...childData} />
+            {slots.option ? slots.option(option) : <div {...childData} />}
           </li>
         );
       });

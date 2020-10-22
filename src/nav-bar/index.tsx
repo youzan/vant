@@ -68,21 +68,28 @@ export default createComponent({
         zIndex: zIndex !== undefined ? +zIndex : undefined,
       };
 
+      const hasLeft = props.leftArrow || props.leftText || slots.left;
+      const hasRight = props.rightText || slots.right;
+
       return (
         <div
           ref={navBarRef}
           style={style}
           class={[bem({ fixed }), { [BORDER_BOTTOM]: border }]}
         >
-          <div class={bem('left')} onClick={onClickLeft}>
-            {renderLeft()}
-          </div>
+          {hasLeft && (
+            <div class={bem('left')} onClick={onClickLeft}>
+              {renderLeft()}
+            </div>
+          )}
           <div class={[bem('title'), 'van-ellipsis']}>
             {slots.title ? slots.title() : title}
           </div>
-          <div class={bem('right')} onClick={onClickRight}>
-            {renderRight()}
-          </div>
+          {hasRight && (
+            <div class={bem('right')} onClick={onClickRight}>
+              {renderRight()}
+            </div>
+          )}
         </div>
       );
     };

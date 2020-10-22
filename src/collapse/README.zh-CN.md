@@ -25,7 +25,7 @@ app.use(CollapseItem);
 <van-collapse v-model="activeNames">
   <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
   <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
-  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
 </van-collapse>
 ```
 
@@ -61,7 +61,21 @@ export default {
 };
 ```
 
+### 禁用状态
+
+通过 `disabled` 属性来禁用单个面板。
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
+  <van-collapse-item title="标题2" name="2" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+</van-collapse>
+```
+
 ### 自定义标题内容
+
+通过 `title` 插槽可以自定义标题栏的内容。
 
 ```html
 <van-collapse v-model="activeNames">

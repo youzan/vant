@@ -1,5 +1,5 @@
 import { ref, watch, computed, PropType, CSSProperties } from 'vue';
-import { createNamespace, isDef, addUnit } from '../utils';
+import { isDef, addUnit, inBrowser, createNamespace } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
@@ -96,7 +96,7 @@ export default createComponent({
     };
 
     const renderPlaceholder = () => {
-      if (loading.value && props.showLoading) {
+      if (loading.value && props.showLoading && inBrowser) {
         return <div class={bem('loading')}>{renderLoadingIcon()}</div>;
       }
       if (error.value && props.showError) {

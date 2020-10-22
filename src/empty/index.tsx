@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, getSizeStyle } from '../utils';
 import { Network } from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
@@ -7,6 +7,7 @@ const PRESET_IMAGES = ['error', 'search', 'default'];
 
 export default createComponent({
   props: {
+    imageSize: [Number, String],
     description: String,
     image: {
       type: String,
@@ -51,7 +52,9 @@ export default createComponent({
 
     return () => (
       <div class={bem()}>
-        <div class={bem('image')}>{renderImage()}</div>
+        <div class={bem('image')} style={getSizeStyle(props.imageSize)}>
+          {renderImage()}
+        </div>
         {renderDescription()}
         {renderBottom()}
       </div>

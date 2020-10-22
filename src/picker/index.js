@@ -213,25 +213,31 @@ export default createComponent({
       }
     };
 
+    const renderCancel = () => {
+      const text = props.cancelButtonText || t('cancel');
+      return (
+        <button type="button" class={bem('cancel')} onClick={cancel}>
+          {slots.cancel ? slots.cancel() : text}
+        </button>
+      );
+    };
+
+    const renderConfirm = () => {
+      const text = props.confirmButtonText || t('confirm');
+      return (
+        <button type="button" class={bem('confirm')} onClick={confirm}>
+          {slots.confirm ? slots.confirm() : text}
+        </button>
+      );
+    };
+
     const renderToolbar = () => {
       if (props.showToolbar) {
         return (
           <div class={bem('toolbar')}>
             {slots.default
               ? slots.default()
-              : [
-                  <button type="button" class={bem('cancel')} onClick={cancel}>
-                    {props.cancelButtonText || t('cancel')}
-                  </button>,
-                  renderTitle(),
-                  <button
-                    type="button"
-                    class={bem('confirm')}
-                    onClick={confirm}
-                  >
-                    {props.confirmButtonText || t('confirm')}
-                  </button>,
-                ]}
+              : [renderCancel(), renderTitle(), renderConfirm()]}
           </div>
         );
       }
@@ -240,6 +246,7 @@ export default createComponent({
     const renderColumnItems = () =>
       formattedColumns.value.map((item, columnIndex) => (
         <PickerColumn
+          v-slots={{ option: slots.option }}
           readonly={props.readonly}
           valueKey={props.valueKey}
           allowHtml={props.allowHtml}

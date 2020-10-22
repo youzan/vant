@@ -203,10 +203,10 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 是否显示弹窗 | _boolean_ | - |
 | title | 标题 | _string_ | - |
-| width | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
-| message | 文本内容，支持通过`\n`换行 | _string_ | - |
-| message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
-| theme | 样式风格，可选值为`round-button` | _string_ | `default` |
+| width | 弹窗宽度，默认单位为 `px` | _number \| string_ | `320px` |
+| message | 文本内容，支持通过 `\n` 换行 | _string_ | - |
+| message-align | 内容对齐方式，可选值为 `left` `right` | _string_ | `center` |
+| theme | 样式风格，可选值为 `round-button` | _string_ | `default` |
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
@@ -222,7 +222,7 @@ export default {
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allow-html `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `false` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action) => boolean \| Promise_ | - |
-| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
+| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | - |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Events
