@@ -94,17 +94,14 @@ export default createComponent({
 
     watch([() => props.show, () => props.forbidClick], toggleClickable);
 
-    watch(
-      () => props.show,
-      (value) => {
-        clearTimer();
-        if (value && props.duration > 0) {
-          timer = setTimeout(() => {
-            emit('update:show', false);
-          }, props.duration);
-        }
+    watch([() => props.show, () => props.duration], () => {
+      clearTimer();
+      if (props.show && props.duration > 0) {
+        timer = setTimeout(() => {
+          emit('update:show', false);
+        }, props.duration);
       }
-    );
+    });
 
     onMounted(toggleClickable);
     onUnmounted(toggleClickable);
