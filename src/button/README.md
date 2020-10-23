@@ -124,7 +124,7 @@ Vue.use(Button);
 | loading-type | Loading type, can be set to `spinner` | _string_ | `circular` |
 | loading-size | Loading icon size | _string_ | `20px` |
 | url | Link URL | _string_ | - |
-| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| to | Target route of the link, same as using vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### Events

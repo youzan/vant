@@ -15,6 +15,7 @@ export default createComponent({
     text: String,
     icon: String,
     color: String,
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
     iconClass: null,
@@ -29,6 +30,12 @@ export default createComponent({
     genIcon() {
       const slot = this.slots('icon');
       const info = this.badge ?? this.info;
+
+      if (process.env.NODE_ENV === 'development' && this.info) {
+        console.warn(
+          '[Vant] GoodsActionIcon: "info" prop is deprecated, use "badge" prop instead.'
+        );
+      }
 
       if (slot) {
         return (

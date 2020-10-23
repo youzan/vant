@@ -1998,10 +1998,10 @@
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
-"@vant/markdown-vetur@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-2.0.1.tgz#cb0c2d33b5e5606e1dc7f3e6531c18b39d6e57a3"
-  integrity sha512-OhNFTQhCBlK+qIxfyw9unqU77Kf7gd5EsTUXPqg23lALWwpJiVb0IKGwxnYTZ9i7JAzTAho7oIGt7GQ0hhyvow==
+"@vant/markdown-vetur@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.0.2.tgz#8e6be188952a2c4b0e1d626bf93f47f84ab0f22d"
+  integrity sha1-jmvhiJUqLEsOHWJr+T9H+Eqw8i0=
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"

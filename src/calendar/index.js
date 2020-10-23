@@ -266,28 +266,33 @@ export default createComponent({
 
       let height = 0;
       let currentMonth;
-      let visibleIndex;
+      const visibleRange = [-1, -1];
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !currentMonth) {
-          visibleIndex = i;
-          currentMonth = months[i];
-        }
+        if (visible) {
+          visibleRange[1] = i;
 
-        if (!months[i].visible && visible) {
-          this.$emit('month-show', {
-            date: months[i].date,
-            title: months[i].title,
-          });
+          if (!currentMonth) {
+            currentMonth = months[i];
+            visibleRange[0] = i;
+          }
+
+          if (!months[i].visible) {
+            this.$emit('month-show', {
+              date: months[i].date,
+              title: months[i].title,
+            });
+          }
         }
 
         height += heights[i];
       }
 
       months.forEach((month, index) => {
-        month.visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
+        month.visible =
+          index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
       });
 
       /* istanbul ignore else */

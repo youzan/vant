@@ -270,22 +270,30 @@ export default createComponent({
       }
     },
 
+    genCancel() {
+      return (
+        <button type="button" class={bem('cancel')} onClick={this.cancel}>
+          {this.slots('cancel') || this.cancelButtonText || t('cancel')}
+        </button>
+      );
+    },
+
+    genConfirm() {
+      return (
+        <button type="button" class={bem('confirm')} onClick={this.confirm}>
+          {this.slots('confirm') || this.confirmButtonText || t('confirm')}
+        </button>
+      );
+    },
+
     genToolbar() {
       if (this.showToolbar) {
         return (
           <div class={bem('toolbar')}>
             {this.slots() || [
-              <button type="button" class={bem('cancel')} onClick={this.cancel}>
-                {this.cancelButtonText || t('cancel')}
-              </button>,
+              this.genCancel(),
               this.genTitle(),
-              <button
-                type="button"
-                class={bem('confirm')}
-                onClick={this.confirm}
-              >
-                {this.confirmButtonText || t('confirm')}
-              </button>,
+              this.genConfirm(),
             ]}
           </div>
         );
@@ -330,6 +338,9 @@ export default createComponent({
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}
+          scopedSlots={{
+            option: this.$scopedSlots.option,
+          }}
           onChange={() => {
             this.onChange(columnIndex);
           }}

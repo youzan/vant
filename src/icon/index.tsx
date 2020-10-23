@@ -50,6 +50,12 @@ function Icon(
   const name = correctName(props.name);
   const imageIcon = isImage(name);
 
+  if (process.env.NODE_ENV === 'development' && props.info) {
+    console.warn(
+      '[Vant] Icon: "info" prop is deprecated, use "badge" prop instead.'
+    );
+  }
+
   return (
     <props.tag
       class={[

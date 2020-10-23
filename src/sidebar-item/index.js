@@ -11,6 +11,7 @@ export default createComponent({
   props: {
     ...routeProps,
     dot: Boolean,
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
     title: String,
@@ -37,6 +38,12 @@ export default createComponent({
   },
 
   render() {
+    if (process.env.NODE_ENV === 'development' && this.info) {
+      console.warn(
+        '[Vant] SidebarItem: "info" prop is deprecated, use "badge" prop instead.'
+      );
+    }
+
     return (
       <a
         class={bem({ select: this.select, disabled: this.disabled })}

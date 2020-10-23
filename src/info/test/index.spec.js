@@ -1,30 +1,30 @@
 import Info from '..';
 import { mount } from '../../../test';
 
-test('should not render when info is empty string', () => {
+test('should not render when badge is empty string', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: '',
+      badge: '',
     },
   });
 
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should not render when info is empty undefined', () => {
+test('should not render when badge is empty undefined', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: undefined,
+      badge: undefined,
     },
   });
 
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should render when info is zero', () => {
+test('should render when badge is zero', () => {
   const wrapper = mount(Info, {
     propsData: {
-      info: 0,
+      badge: 0,
     },
   });
 

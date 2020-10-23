@@ -90,7 +90,7 @@ export default {
 
 ### Slots
 
-| 名称 | 描述 | SlotProps |
+| 名称 | 描述 | 参数 |
 | --- | --- | --- |
 | page `v2.10.9` | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
 | prev-text `v2.10.9` | 自定义上一页按钮文字 | `-` |

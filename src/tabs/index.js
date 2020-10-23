@@ -373,7 +373,6 @@ export default createComponent({
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
-        swipeThreshold={this.swipeThreshold}
         scopedSlots={{
           default: () => item.slots('title'),
         }}

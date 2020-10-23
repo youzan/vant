@@ -1,5 +1,9 @@
 # Checkbox 复选框
 
+### 介绍
+
+用于在选中和非选中状态之间进行切换。
+
 ### 引入
 
 ```js
@@ -268,7 +272,7 @@ export default {
 
 ### Checkbox Slots
 
-| 名称    | 说明       | SlotProps          |
+| 名称    | 说明       | 参数               |
 | ------- | ---------- | ------------------ |
 | default | 自定义文本 | -                  |
 | icon    | 自定义图标 | _checked: boolean_ |

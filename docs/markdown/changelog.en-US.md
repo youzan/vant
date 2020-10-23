@@ -10,6 +10,40 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.11-beta.0](https://github.com/youzan/vant/compare/v2.10.10...v2.10.11-beta.0)
+
+`2020-10-19`
+
+**Bug Fixes**
+
+- Dialog: failed to disable closeOnPopstate [#7357](https://github.com/youzan/vant/issues/7357)
+
+### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
+
+`2020-10-18`
+
+**Feature**
+
+- Icons: add minus icon [40e26f](https://github.com/youzan/vant/commit/40e26f97d1144d0dd0810075af8616676459ced3)
+- IndexBar: add change event [#7296](https://github.com/youzan/vant/issues/7296)
+
+**Improvement**
+
+- add info prop deprecation warning [#7352](https://github.com/youzan/vant/issues/7352) [#7347](https://github.com/youzan/vant/issues/7347)
+- SwitchCell: add deprecation warning [#7350](https://github.com/youzan/vant/issues/7350)
+- Toast: add mask option deprecation warning [#7342](https://github.com/youzan/vant/issues/7342)
+- TreeSelect: add deprecation warning of navclick/itemclick [#7351](https://github.com/youzan/vant/issues/7351)
+
+**Bug Fixes**
+
+- Calendar: does not show current month with larger screen sizes [#7355](https://github.com/youzan/vant/issues/7355)
+- Tabs: incorrect animation when content is empty [#7354](https://github.com/youzan/vant/issues/7354)
+- Field: incorrect label length when label-align is right [#7349](https://github.com/youzan/vant/issues/7349)
+- GridItem: failed to break word [#7292](https://github.com/youzan/vant/issues/7292)
+- Icon: incomplete after-sale/cash-back-record [#7328](https://github.com/youzan/vant/issues/7328)
+- Picker: incorrect loading z-index [14cd28](https://github.com/youzan/vant/commit/14cd2863cc75d4f7328ddcf19808b9f6eec38fa4)
+- Row: should enable flex wrap [#7332](https://github.com/youzan/vant/issues/7332)
+
 ### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
 
 `2020-10-01`
@@ -55,7 +89,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Button: add icon-position prop [#7174](https://github.com/youzan/vant/issues/7174)
 - TabbarItem: add @tabbar-item-active-background-color less var [#7162](https://github.com/youzan/vant/issues/7162)
 
-**style**
+**Style**
 
 - Dialog: add message min-height [#7191](https://github.com/youzan/vant/issues/7191)
 - Field: adjust placeholder color to gray-6 [#7192](https://github.com/youzan/vant/issues/7192)
@@ -124,7 +158,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - Uploader: preview-cover slot add index param [#7036](https://github.com/youzan/vant/issues/7036)
 
-**style**
+**Style**
 
 - Search: increase left padding to 12px [#7014](https://github.com/youzan/vant/issues/7014)
 - Tabs: adjust default line-width to 40px [#7002](https://github.com/youzan/vant/issues/7002)
@@ -156,7 +190,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Button: add loading slot [#6966](https://github.com/youzan/vant/issues/6966)
 - Locale: adding Norwegian Language support [#6962](https://github.com/youzan/vant/issues/6962)
 
-**style**
+**Style**
 
 - ContactList: add safe area inset bottom [#6970](https://github.com/youzan/vant/issues/6970)
 - TabbarItem: increase icon size to 22px [#6972](https://github.com/youzan/vant/issues/6972)
@@ -182,7 +216,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - ImagePreview: enable close-on-popstate by default [#6875](https://github.com/youzan/vant/issues/6875)
 - NumberKeyboard: add get-container prop [#6870](https://github.com/youzan/vant/issues/6870)
 
-**style**
+**Style**
 
 - uniform line-height [#6862](https://github.com/youzan/vant/issues/6862)
 - ActionSheet: add @action-sheet-loading-icon-size var [#6847](https://github.com/youzan/vant/issues/6847)
@@ -283,7 +317,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - SubmitBar: add button-color prop [#6757](https://github.com/youzan/vant/issues/6757)
 - Sku: improve message datetime picker [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
 
-**style**
+**Style**
 
 - ActionSheet: subname vertical align [#6756](https://github.com/youzan/vant/issues/6756)
 - Uploader: remove round border radius [#6748](https://github.com/youzan/vant/issues/6748)
@@ -317,7 +351,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Sku: enable close-on-click-overlay prop by default [#6631](https://github.com/youzan/vant/issues/6631)
 - TreeSelect: add selected-icon prop [#6615](https://github.com/youzan/vant/issues/6615)
 
-**style**
+**Style**
 
 - ActionSheet: update description style [#6586](https://github.com/youzan/vant/issues/6586)
 - AddressEdit: adjust label width [#6591](https://github.com/youzan/vant/issues/6591)
@@ -353,7 +387,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Form: rule message can be empty [#6536](https://github.com/youzan/vant/issues/6536)
 - Sticky: offset-top support rem unit [#6556](https://github.com/youzan/vant/issues/6556)
 
-**style**
+**Style**
 
 - Field: remove word num full color [#6545](https://github.com/youzan/vant/issues/6545)
 - Picker: add @picker-option-height less var [#6571](https://github.com/youzan/vant/issues/6571)
@@ -374,7 +408,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Picker: item-height support rem unit [#6462](https://github.com/youzan/vant/issues/6462)
 - Stepper: add placeholder prop [#6519](https://github.com/youzan/vant/issues/6519)
 
-**style**
+**Style**
 
 - Field: update disabled color [#6534](https://github.com/youzan/vant/issues/6534)
 
@@ -415,7 +449,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - DatetimePicker: add month-day type [#6395](https://github.com/youzan/vant/issues/6395)
 - Popup: create overlay for every popup [#6357](https://github.com/youzan/vant/issues/6357)
 
-**style**
+**Style**
 
 - ActionSheet: adjust subname color to gray-6 [e54c11](https://github.com/youzan/vant/commit/e54c11d55244e65246df7eddd7751983dbc4d331)
 - ActionSheet: remove option border [8db218](https://github.com/youzan/vant/commit/8db218e9c0ca6905491a019cf983a0269f3aea8c)
@@ -459,7 +493,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - NumberKeyboard: support multiple extra key [#6276](https://github.com/youzan/vant/issues/6276)
 - Stepper: add theme prop [#6282](https://github.com/youzan/vant/issues/6282)
 
-**style**
+**Style**
 
 - Rate: update rate disabled color [#6253](https://github.com/youzan/vant/issues/6253)
 - Sku: adjust border alignment [#6272](https://github.com/youzan/vant/issues/6272)
@@ -495,7 +529,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 `2020-05-05`
 
-**style**
+**Style**
 
 - Button: use flex layout [#6180](https://github.com/youzan/vant/issues/6180)
 - ActionSheet: improve text size adjust [#6175](https://github.com/youzan/vant/issues/6175)
@@ -538,7 +572,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 `2020-04-28`
 
-**style**
+**Style**
 
 - NumberKeyboard: new style [3188b4](https://github.com/youzan/vant/commit/3188b4d25bb6e60ed5de930ec8947929a7577dd3) [#6149](https://github.com/youzan/vant/issues/6149) [#6151](https://github.com/youzan/vant/issues/6151)
 

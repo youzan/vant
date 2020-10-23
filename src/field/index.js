@@ -54,7 +54,7 @@ export default createComponent({
     errorMessageAlign: String,
     showWordLimit: Boolean,
     value: {
-      type: [String, Number],
+      type: [Number, String],
       default: '',
     },
     type: {

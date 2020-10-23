@@ -8,7 +8,7 @@
         <van-collapse-item :title="t('title') + 2">
           {{ t('text') }}
         </van-collapse-item>
-        <van-collapse-item :title="t('title') + 3" disabled>
+        <van-collapse-item :title="t('title') + 3">
           {{ t('text') }}
         </van-collapse-item>
       </van-collapse>
@@ -28,8 +28,22 @@
       </van-collapse>
     </demo-block>
 
-    <demo-block :title="t('titleSlot')">
+    <demo-block :title="t('disabled')">
       <van-collapse v-model="active3">
+        <van-collapse-item :title="t('title') + 1">
+          {{ t('text') }}
+        </van-collapse-item>
+        <van-collapse-item :title="t('title') + 2" disabled>
+          {{ t('text') }}
+        </van-collapse-item>
+        <van-collapse-item :title="t('title') + 3" disabled>
+          {{ t('text') }}
+        </van-collapse-item>
+      </van-collapse>
+    </demo-block>
+
+    <demo-block :title="t('titleSlot')">
+      <van-collapse v-model="active4">
         <van-collapse-item>
           <template #title>
             {{ t('title') + 1 }}<van-icon name="question-o" />
@@ -68,6 +82,7 @@ export default {
       active1: [0],
       active2: 0,
       active3: [],
+      active4: [],
     };
   },
 };

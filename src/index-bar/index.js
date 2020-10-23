@@ -87,6 +87,12 @@ export default createComponent({
     indexList() {
       this.$nextTick(this.onScroll);
     },
+
+    activeAnchorIndex(value) {
+      if (value) {
+        this.$emit('change', value);
+      }
+    },
   },
 
   methods: {
@@ -201,6 +207,7 @@ export default createComponent({
       const match = this.children.filter(
         (item) => String(item.index) === index
       );
+
       if (match[0]) {
         match[0].scrollIntoView();
 

@@ -15,7 +15,6 @@ export default createComponent({
     scrollable: Boolean,
     activeColor: String,
     inactiveColor: String,
-    swipeThreshold: [Number, String],
   },
 
   computed: {

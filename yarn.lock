@@ -1344,11 +1344,6 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@ls-lint/ls-lint@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.npm.taobao.org/@ls-lint/ls-lint/download/@ls-lint/ls-lint-1.8.0.tgz#508fe32d4dbdd90d61c8ea156c20af33c294a22e"
-  integrity sha1-UI/jLU292Q1hyOoVbCCvM8KUoi4=
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -2082,10 +2077,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.3.0.tgz#94f4c93122fd7331e0e00df55804779aead8c9c2"
-  integrity sha1-lPTJMSL9czHg4A31WAR3murYycI=
+"@vant/icons@1.3.2":
+  version "1.3.2"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.3.2.tgz#f0930010e7aaa9b06b03636fe9b5bc6477ea224b"
+  integrity sha512-uP0nUWw0pyMMGt3L9BO5fEacz/Cn7QIea0/gFoC/jPLv9ufvUxjPsV9HSyyUJsqMJ3qlYLAI/SxZDbmMZA814A==
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"

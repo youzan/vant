@@ -1,5 +1,14 @@
 ## Changelog
 
+## 1.3.2
+
+- fix incomplete after-sale icon
+- fix incomplete cash-back-record icon
+
+## 1.3.1
+
+- add minus icon
+
 ## 1.3.0
 
 - add share-o icon
