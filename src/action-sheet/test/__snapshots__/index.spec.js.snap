@@ -16,7 +16,7 @@ exports[`close-icon prop 1`] = `
 <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet" name="van-popup-slide-bottom">
   <div class="van-action-sheet__inner">
     <div class="van-action-sheet__header">Title<i class="van-icon van-icon-cross van-action-sheet__close">
-         <!----></i></div>
+        <!----></i></div>
     <div class="van-action-sheet__main"></div>
   </div>
 </div>
