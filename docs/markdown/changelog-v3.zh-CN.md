@@ -14,6 +14,17 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-beta.5](https://github.com/youzan/vant/compare/v2.10.11...v3.0.0-beta.5)
+
+`2020-10-24`
+
+**Bug Fixes**
+
+- Swipe: 修复动态插入轮播时无法滚动的问题 [#7366](https://github.com/youzan/vant/issues/7366)
+- Toast: 修复 forbidClick 属性不生效的问题 [#7396](https://github.com/youzan/vant/issues/7396)
+- Toast: 修复 duration 变化未生效的问题 [#7394](https://github.com/youzan/vant/issues/7394)
+- 包含 `v2.10.11` 版本的所有改动
+
 ### [v3.0.0-beta.4](https://github.com/youzan/vant/compare/v2.10.10...v3.0.0-beta.4)
 
 `2020-10-18`
