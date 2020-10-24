@@ -67,6 +67,10 @@ module.exports = {
                 title: '快速上手',
               },
               {
+                path: 'advanced-usage',
+                title: '进阶用法',
+              },
+              {
                 path: 'changelog-v3',
                 title: '更新日志',
               },
@@ -415,6 +419,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: 'Quickstart',
+              },
+              {
+                path: 'advanced-usage',
+                title: 'Advanced Usage',
               },
               {
                 path: 'changelog',

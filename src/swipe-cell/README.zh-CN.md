@@ -144,7 +144,7 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 方法
 
-通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明             | 参数                     | 返回值 |
 | ------ | ---------------- | ------------------------ | ------ |
@@ -155,4 +155,4 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
