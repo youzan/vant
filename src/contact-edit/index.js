@@ -1,3 +1,5 @@
+import { watch, reactive } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
@@ -11,7 +13,7 @@ import Switch from '../switch';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
 
-const defaultContact = {
+const DEFAULT_CONTACT = {
   tel: '',
   name: '',
 };
@@ -25,7 +27,7 @@ export default createComponent({
     setDefaultLabel: String,
     contactInfo: {
       type: Object,
-      default: () => ({ ...defaultContact }),
+      default: () => ({ ...DEFAULT_CONTACT }),
     },
     telValidator: {
       type: Function,
@@ -33,128 +35,139 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
-      data: {
-        ...defaultContact,
-        ...this.contactInfo,
+  emits: ['save', 'delete', 'change-default'],
+
+  setup(props, { emit }) {
+    const state = reactive({
+      contact: {
+        ...DEFAULT_CONTACT,
+        ...props.contactInfo,
       },
       errorInfo: {
         name: '',
         tel: '',
       },
+    });
+
+    const onFocus = (key) => {
+      state.errorInfo[key] = '';
     };
-  },
 
-  watch: {
-    contactInfo(val) {
-      this.data = {
-        ...defaultContact,
-        ...val,
-      };
-    },
-  },
-
-  methods: {
-    onFocus(key) {
-      this.errorInfo[key] = '';
-    },
-
-    getErrorMessageByKey(key) {
-      const value = this.data[key].trim();
+    const getErrorMessageByKey = (key) => {
+      const value = state.contact[key].trim();
       switch (key) {
         case 'name':
           return value ? '' : t('nameInvalid');
         case 'tel':
-          return this.telValidator(value) ? '' : t('telInvalid');
+          return props.telValidator(value) ? '' : t('telInvalid');
       }
-    },
+    };
 
-    onSave() {
+    const onSave = () => {
       const isValid = ['name', 'tel'].every((item) => {
-        const msg = this.getErrorMessageByKey(item);
+        const msg = getErrorMessageByKey(item);
         if (msg) {
-          this.errorInfo[item] = msg;
+          state.errorInfo[item] = msg;
         }
         return !msg;
       });
 
-      if (isValid && !this.isSaving) {
-        this.$emit('save', this.data);
+      if (isValid && !props.isSaving) {
+        emit('save', state.contact);
       }
-    },
+    };
 
-    onDelete() {
+    const onDelete = () => {
       Dialog.confirm({
         title: t('confirmDelete'),
       }).then(() => {
-        this.$emit('delete', this.data);
+        emit('delete', state.contact);
       });
-    },
-  },
+    };
 
-  render() {
-    const { data, errorInfo } = this;
-    const onFocus = (name) => () => this.onFocus(name);
-
-    return (
-      <div class={bem()}>
-        <div class={bem('fields')}>
-          <Field
-            vModel={data.name}
-            clearable
-            maxlength="30"
-            label={t('name')}
-            placeholder={t('nameEmpty')}
-            errorMessage={errorInfo.name}
-            onFocus={onFocus('name')}
-          />
-          <Field
-            vModel={data.tel}
-            clearable
-            type="tel"
-            label={t('tel')}
-            placeholder={t('telEmpty')}
-            errorMessage={errorInfo.tel}
-            onFocus={onFocus('tel')}
-          />
-        </div>
-        {this.showSetDefault && (
-          <Cell
-            title={this.setDefaultLabel}
-            class={bem('switch-cell')}
-            border={false}
-          >
-            <Switch
-              vModel={data.isDefault}
-              size={24}
-              slot="right-icon"
-              onChange={(event) => {
-                this.$emit('change-default', event);
-              }}
-            />
-          </Cell>
-        )}
-        <div class={bem('buttons')}>
+    const renderButtons = () => (
+      <div class={bem('buttons')}>
+        <Button
+          block
+          round
+          type="danger"
+          text={t('save')}
+          loading={props.isSaving}
+          onClick={onSave}
+        />
+        {props.isEdit && (
           <Button
             block
             round
-            type="danger"
-            text={t('save')}
-            loading={this.isSaving}
-            onClick={this.onSave}
+            text={t('delete')}
+            loading={props.isDeleting}
+            onClick={onDelete}
           />
-          {this.isEdit && (
-            <Button
-              block
-              round
-              text={t('delete')}
-              loading={this.isDeleting}
-              onClick={this.onDelete}
-            />
-          )}
-        </div>
+        )}
       </div>
     );
+
+    const renderSwitch = () => (
+      <Switch
+        vModel={state.contact.isDefault}
+        size={24}
+        onChange={(event) => {
+          emit('change-default', event);
+        }}
+      />
+    );
+
+    const renderSetDefault = () => {
+      if (props.showSetDefault) {
+        return (
+          <Cell
+            v-slots={{ 'right-icon': renderSwitch }}
+            title={props.setDefaultLabel}
+            class={bem('switch-cell')}
+            border={false}
+          />
+        );
+      }
+    };
+
+    watch(
+      () => props.contactInfo,
+      (value) => {
+        state.contact = {
+          ...DEFAULT_CONTACT,
+          ...value,
+        };
+      }
+    );
+
+    return () => {
+      const { contact, errorInfo } = state;
+      return (
+        <div class={bem()}>
+          <div class={bem('fields')}>
+            <Field
+              vModel={contact.name}
+              clearable
+              maxlength="30"
+              label={t('name')}
+              placeholder={t('nameEmpty')}
+              errorMessage={errorInfo.name}
+              onFocus={() => onFocus('name')}
+            />
+            <Field
+              vModel={contact.tel}
+              clearable
+              type="tel"
+              label={t('tel')}
+              placeholder={t('telEmpty')}
+              errorMessage={errorInfo.tel}
+              onFocus={() => onFocus('tel')}
+            />
+          </div>
+          {renderSetDefault()}
+          {renderButtons()}
+        </div>
+      );
+    };
   },
 });

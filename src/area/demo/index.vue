@@ -1,29 +1,23 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-area :title="t('title')" :area-list="t('areaList')" />
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-area :title="t('title')" :area-list="t('areaList')" />
+  </demo-block>
 
-    <demo-block card :title="t('title2')">
-      <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />
-    </demo-block>
+  <demo-block card :title="t('title2')">
+    <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />
+  </demo-block>
 
-    <demo-block card :title="t('title3')">
-      <van-area
-        :title="t('title')"
-        :area-list="t('areaList')"
-        :columns-num="2"
-      />
-    </demo-block>
+  <demo-block card :title="t('title3')">
+    <van-area :title="t('title')" :area-list="t('areaList')" :columns-num="2" />
+  </demo-block>
 
-    <demo-block card :title="t('title4')">
-      <van-area
-        :title="t('title')"
-        :area-list="t('areaList')"
-        :columns-placeholder="t('columnsPlaceholder')"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block card :title="t('title4')">
+    <van-area
+      :title="t('title')"
+      :area-list="t('areaList')"
+      :columns-placeholder="t('columnsPlaceholder')"
+    />
+  </demo-block>
 </template>
 
 <script>

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon-size prop 1`] = `
+<div class="van-grid van-hairline--top">
+  <div class="van-grid-item" style="flex-basis: 25%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-success van-grid-item__icon" style="font-size: 10px;">
+        <!----></i></div>
+  </div>
+</div>
+`;
+
+exports[`render icon-slot 1`] = `
+<div class="van-grid van-hairline--top">
+  <div class="van-grid-item" style="flex-basis: 25%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-hairline">
+      <div class="van-grid-item__icon-wrapper">
+        <div>Custom Icon</div>
+        <div class="van-badge">1</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`sqaure and set gutter 1`] = `
+<div class="van-grid" style="padding-left: 10rem;">
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+</div>
+`;

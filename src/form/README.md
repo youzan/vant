@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Form } from 'vant';
 
-Vue.use(Form);
+const app = createApp();
+app.use(Form);
 ```
 
 ## Usage
@@ -31,7 +32,7 @@ Vue.use(Form);
     :rules="[{ required: true, message: 'Password is required' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       Submit
     </van-button>
   </div>
@@ -77,7 +78,7 @@ export default {
     :rules="[{ validator: asyncValidator, message: 'Error message' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       Submit
     </van-button>
   </div>
@@ -281,9 +282,8 @@ export default {
   placeholder="Select city"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
-    show-toolbar
     :columns="columns"
     @confirm="onConfirm"
     @cancel="showPicker = false"
@@ -321,7 +321,7 @@ export default {
   placeholder="Select time"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
@@ -359,7 +359,7 @@ export default {
   placeholder="Select area"
   @click="showArea = true"
 />
-<van-popup v-model="showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"

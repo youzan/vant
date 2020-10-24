@@ -4,6 +4,7 @@ module.exports = function () {
   }
 
   return {
+    devtool: false,
     entry: {
       'site-mobile': ['./docs/site/mobile'],
     },

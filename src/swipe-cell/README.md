@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { SwipeCell } from 'vant';
 
-Vue.use(SwipeCell);
+const app = createApp();
+app.use(SwipeCell);
 ```
 
 ## Usage
@@ -77,15 +78,15 @@ export default {
         case 'left':
         case 'cell':
         case 'outside':
-          instance.close();
-          break;
+          return true;
         case 'right':
-          Dialog.confirm({
-            message: 'Are you sure to delete?',
-          }).then(() => {
-            instance.close();
+          return new Promise((resolve) => {
+            this.$dialog
+              .confirm({
+                message: 'Are you sure to delete?',
+              })
+              .then(resolve);
           });
-          break;
       }
     },
   },
@@ -101,7 +102,7 @@ export default {
 | name | Identifier of SwipeCell | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
-| before-close `v2.3.0` | Callback function before close | _Function_ | - |
+| before-close `v2.3.0` | Callback function before close | _(args) => boolean \| Promise_ | - |
 | disabled | Whether to disabled swipe | _boolean_ | `false` |
 | stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |
 

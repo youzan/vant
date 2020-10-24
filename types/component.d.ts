@@ -1,7 +1,9 @@
-import Vue from 'vue';
+import { App } from 'vue';
 
-export class VanComponent extends Vue {
+export class VanComponent {
   static name: string;
 
-  static install(vue: typeof Vue): void;
+  static install: (app: App) => any;
+
+  $props: Record<string, any>;
 }

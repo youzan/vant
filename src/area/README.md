@@ -7,10 +7,11 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Area } from 'vant';
 
-Vue.use(Area);
+const app = createApp();
+app.use(Area);
 ```
 
 ## Usage
@@ -77,7 +78,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | --- | --- | --- |
 | confirm | triggers when clicking the confirm button | an array |
 | cancel | triggers when clicking the cancel button | - |
-| change | Triggered when current option changed | Picker instance, current values，column index |
+| change | Triggered when current option changed | current values，column index |
 
 ### Slots
 

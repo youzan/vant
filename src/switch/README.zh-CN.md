@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Switch } from 'vant';
 
-Vue.use(Switch);
+const app = createApp();
+app.use(Switch);
 ```
 
 ## 代码演示
@@ -67,10 +68,10 @@ export default {
 
 ### 异步控制
 
-需要异步控制开关时，可以使用 `value` 属性和 `input` 事件代替 `v-model`，并在 `input` 事件回调函数中手动处理开关状态。
+需要异步控制开关时，可以使用 `modelValue` 属性和 `update:model-value` 事件代替 `v-model`，并在事件回调函数中手动处理开关状态。
 
 ```html
-<van-switch :value="checked" @input="onInput" />
+<van-switch :model-value="checked" @update:model-value="onUpdateValue" />
 ```
 
 ```js
@@ -81,7 +82,7 @@ export default {
     };
   },
   methods: {
-    onInput(checked) {
+    onUpdateValue(checked) {
       Dialog.confirm({
         title: '提醒',
         message: '是否切换开关？',

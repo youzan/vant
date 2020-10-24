@@ -19,11 +19,12 @@ Notify('通知内容');
 通过组件调用 Notify 时，可以通过下面的方式进行注册（从 2.8.5 版本开始支持）：
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Notify } from 'vant';
 
 // 全局注册
-Vue.use(Notify);
+const app = createApp();
+app.use(Notify);
 
 // 局部注册
 export default {
@@ -78,7 +79,7 @@ Notify({
 
 ### 全局方法
 
-引入 Notify 组件后，会自动在 Vue 的 prototype 上挂载 `$notify` 方法，便于在组件内调用。
+通过 `app.use` 注册 Notify 组件后，会自动在 app 的所有子组件上挂载 `$notify` 方法，便于在组件内调用。
 
 ```js
 export default {
@@ -94,7 +95,7 @@ export default {
 
 ```html
 <van-button type="primary" text="组件调用" @click="showNotify" />
-<van-notify v-model="show" type="success">
+<van-notify v-model:show="show" type="success">
   <van-icon name="bell" style="margin-right: 4px;" />
   <span>通知内容</span>
 </van-notify>

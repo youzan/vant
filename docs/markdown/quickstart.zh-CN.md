@@ -25,10 +25,10 @@ vue ui
 
 ```bash
 # 通过 npm 安装
-npm i vant -S
+npm i vant@next -S
 
 # 通过 yarn 安装
-yarn add vant
+yarn add vant@next
 ```
 
 > Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)。
@@ -101,11 +101,12 @@ import 'vant/lib/button/style';
 Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+const app = createApp();
+app.use(Vant);
 ```
 
 > Tips: 配置按需引入后，将不允许直接导入所有组件。
@@ -118,26 +119,27 @@ Vue.use(Vant);
 <!-- 引入样式文件 -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
 />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.10/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
 
 <script>
   // 在 #app 标签下渲染一个按钮组件
-  new Vue({
-    el: '#app',
+  const app = Vue.createApp({
     template: `<van-button>按钮</van-button>`,
   });
+  app.use(vant);
+  app.mount('#app');
 
   // 调用函数组件，弹出一个 Toast
   vant.Toast('提示');
 
   // 通过 CDN 引入时不会自动注册 Lazyload 组件
   // 可以通过下面的方式手动注册
-  Vue.use(vant.Lazyload);
+  // app.use(vant.Lazyload);
 </script>
 ```
 

@@ -1,65 +1,57 @@
-import Vue from 'vue';
+import { inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog from './Dialog';
-import { isServer } from '../utils';
 
 let instance;
 
-function isInDocument(element) {
-  return document.body.contains(element);
-}
-
 function initInstance() {
-  if (instance) {
-    instance.$destroy();
-  }
-
-  instance = new (Vue.extend(VanDialog))({
-    el: document.createElement('div'),
-    // avoid missing animation when first rendered
-    propsData: {
-      lazyRender: false,
+  const Wrapper = {
+    setup() {
+      const { state, toggle } = usePopupState();
+      return () => <VanDialog {...{ ...state, 'onUpdate:show': toggle }} />;
     },
-  });
+  };
 
-  instance.$on('input', (value) => {
-    instance.value = value;
-  });
+  ({ instance } = mountComponent(Wrapper));
 }
 
 function Dialog(options) {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return Promise.resolve();
   }
 
   return new Promise((resolve, reject) => {
-    if (!instance || !isInDocument(instance.$el)) {
+    if (!instance) {
       initInstance();
     }
 
-    Object.assign(instance, Dialog.currentOptions, options, {
-      resolve,
-      reject,
+    instance.open({
+      ...Dialog.currentOptions,
+      ...options,
+      callback: (action) => {
+        (action === 'confirm' ? resolve : reject)(action);
+      },
     });
   });
 }
 
 Dialog.defaultOptions = {
-  value: true,
   title: '',
   width: '',
   theme: null,
   message: '',
   overlay: true,
+  callback: null,
+  teleport: 'body',
   className: '',
-  allowHtml: true,
+  allowHtml: false,
   lockScroll: true,
   transition: 'van-dialog-bounce',
   beforeClose: null,
   overlayClass: '',
   overlayStyle: null,
   messageAlign: '',
-  getContainer: 'body',
   cancelButtonText: '',
   cancelButtonColor: null,
   confirmButtonText: '',
@@ -68,9 +60,6 @@ Dialog.defaultOptions = {
   showCancelButton: false,
   closeOnPopstate: true,
   closeOnClickOverlay: false,
-  callback: (action) => {
-    instance[action === 'confirm' ? 'resolve' : 'reject'](action);
-  },
 };
 
 Dialog.alert = Dialog;
@@ -83,7 +72,7 @@ Dialog.confirm = (options) =>
 
 Dialog.close = () => {
   if (instance) {
-    instance.value = false;
+    instance.toggle(false);
   }
 };
 
@@ -97,12 +86,11 @@ Dialog.resetDefaultOptions = () => {
 
 Dialog.resetDefaultOptions();
 
-Dialog.install = () => {
-  Vue.use(VanDialog);
+Dialog.install = (app) => {
+  app.use(VanDialog);
+  app.config.globalProperties.$dialog = Dialog;
 };
 
 Dialog.Component = VanDialog;
-
-Vue.prototype.$dialog = Dialog;
 
 export default Dialog;

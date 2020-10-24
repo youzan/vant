@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Empty } from 'vant';
 
-Vue.use(Empty);
+const app = createApp();
+app.use(Empty);
 ```
 
 ## 代码演示

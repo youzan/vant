@@ -1,123 +1,121 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell
-        is-link
-        :title="t('selectSingle')"
-        :value="formatFullDate(date.selectSingle)"
-        @click="show('single', 'selectSingle')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('selectMultiple')"
-        :value="formatMultiple(date.selectMultiple)"
-        @click="show('multiple', 'selectMultiple')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('selectRange')"
-        :value="formatRange(date.selectRange)"
-        @click="show('range', 'selectRange')"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('quickSelect')">
-      <van-cell
-        is-link
-        :title="t('selectSingle')"
-        :value="formatFullDate(date.quickSelect1)"
-        @click="show('single', 'quickSelect1')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('selectRange')"
-        :value="formatRange(date.quickSelect2)"
-        @click="show('range', 'quickSelect2')"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('customCalendar')">
-      <van-cell
-        is-link
-        :title="t('customColor')"
-        :value="formatRange(date.customColor)"
-        @click="show('range', 'customColor')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('customRange')"
-        :value="formatFullDate(date.customRange)"
-        @click="show('single', 'customRange')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('customConfirm')"
-        :value="formatRange(date.customConfirm)"
-        @click="show('range', 'customConfirm')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('customDayText')"
-        :value="formatRange(date.customDayText)"
-        @click="show('range', 'customDayText')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('customPosition')"
-        :value="formatFullDate(date.customPosition)"
-        @click="show('single', 'customPosition')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('maxRange')"
-        :value="formatRange(date.maxRange)"
-        @click="show('range', 'maxRange')"
-      />
-
-      <van-cell
-        is-link
-        :title="t('firstDayOfWeek')"
-        @click="show('single', 'firstDayOfWeek')"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('tiledDisplay')">
-      <van-calendar
-        :title="t('calendar')"
-        :poppable="false"
-        :show-confirm="false"
-        :min-date="tiledMinDate"
-        :max-date="tiledMaxDate"
-        :default-date="tiledMinDate"
-        :style="{ height: '500px' }"
-      />
-    </demo-block>
-
-    <van-calendar
-      v-model="showCalendar"
-      :type="type"
-      :color="color"
-      :round="round"
-      :position="position"
-      :min-date="minDate"
-      :max-date="maxDate"
-      :max-range="maxRange"
-      :formatter="formatter"
-      :show-confirm="showConfirm"
-      :confirm-text="confirmText"
-      :confirm-disabled-text="confirmDisabledText"
-      :first-day-of-week="firstDayOfWeek"
-      @confirm="onConfirm"
+  <demo-block card :title="t('basicUsage')">
+    <van-cell
+      is-link
+      :title="t('selectSingle')"
+      :value="formatFullDate(date.selectSingle)"
+      @click="show('single', 'selectSingle')"
     />
-  </demo-section>
+
+    <van-cell
+      is-link
+      :title="t('selectMultiple')"
+      :value="formatMultiple(date.selectMultiple)"
+      @click="show('multiple', 'selectMultiple')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('selectRange')"
+      :value="formatRange(date.selectRange)"
+      @click="show('range', 'selectRange')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('quickSelect')">
+    <van-cell
+      is-link
+      :title="t('selectSingle')"
+      :value="formatFullDate(date.quickSelect1)"
+      @click="show('single', 'quickSelect1')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('selectRange')"
+      :value="formatRange(date.quickSelect2)"
+      @click="show('range', 'quickSelect2')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('customCalendar')">
+    <van-cell
+      is-link
+      :title="t('customColor')"
+      :value="formatRange(date.customColor)"
+      @click="show('range', 'customColor')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customRange')"
+      :value="formatFullDate(date.customRange)"
+      @click="show('single', 'customRange')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customConfirm')"
+      :value="formatRange(date.customConfirm)"
+      @click="show('range', 'customConfirm')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customDayText')"
+      :value="formatRange(date.customDayText)"
+      @click="show('range', 'customDayText')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customPosition')"
+      :value="formatFullDate(date.customPosition)"
+      @click="show('single', 'customPosition')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('maxRange')"
+      :value="formatRange(date.maxRange)"
+      @click="show('range', 'maxRange')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('firstDayOfWeek')"
+      @click="show('single', 'firstDayOfWeek')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('tiledDisplay')">
+    <van-calendar
+      :title="t('calendar')"
+      :poppable="false"
+      :show-confirm="false"
+      :min-date="tiledMinDate"
+      :max-date="tiledMaxDate"
+      :default-date="tiledMinDate"
+      :style="{ height: '500px' }"
+    />
+  </demo-block>
+
+  <van-calendar
+    v-model:show="showCalendar"
+    :type="type"
+    :color="color"
+    :round="round"
+    :position="position"
+    :min-date="minDate"
+    :max-date="maxDate"
+    :max-range="maxRange"
+    :formatter="formatter"
+    :show-confirm="showConfirm"
+    :confirm-text="confirmText"
+    :confirm-disabled-text="confirmDisabledText"
+    :first-day-of-week="firstDayOfWeek"
+    @confirm="onConfirm"
+  />
 </template>
 
 <script>

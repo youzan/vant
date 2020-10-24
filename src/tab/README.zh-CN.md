@@ -3,21 +3,22 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab);
-Vue.use(Tabs);
+const app = createApp();
+app.use(Tab);
+app.use(Tabs);
 ```
 
 ## 代码演示
 
 ### 基础用法
 
-通过 `v-model` 绑定当前激活标签对应的索引值，默认情况下启用第一个标签。
+通过 `v-model:active` 绑定当前激活标签对应的索引值，默认情况下启用第一个标签。
 
 ```html
-<van-tabs v-model="active">
+<van-tabs v-model:active="active">
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
@@ -37,10 +38,10 @@ export default {
 
 ### 通过名称匹配
 
-在标签指定 `name` 属性的情况下，`v-model` 的值为当前标签的 `name`（此时无法通过索引值来匹配标签）。
+在标签指定 `name` 属性的情况下，`v-model:active` 的值为当前标签的 `name`（此时无法通过索引值来匹配标签）。
 
 ```html
-<van-tabs v-model="activeName">
+<van-tabs v-model:active="activeName">
   <van-tab title="标签 1" name="a">内容 1</van-tab>
   <van-tab title="标签 2" name="b">内容 2</van-tab>
   <van-tab title="标签 3" name="c">内容 3</van-tab>
@@ -133,7 +134,7 @@ export default {
 通过 `sticky` 属性可以开启粘性布局，粘性布局下，标签页滚动到顶部时会自动吸顶。
 
 ```html
-<van-tabs v-model="active" sticky>
+<van-tabs v-model:active="active" sticky>
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -145,7 +146,7 @@ export default {
 通过 `title` 插槽可以自定义标签内容。
 
 ```html
-<van-tabs v-model="active">
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 2" :key="index">
     <template #title> <van-icon name="more-o" />选项 </template>
     内容 {{ index }}
@@ -158,7 +159,7 @@ export default {
 通过 `animated` 属性可以开启切换标签内容时的转场动画。
 
 ```html
-<van-tabs v-model="active" animated>
+<van-tabs v-model:active="active" animated>
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -170,7 +171,7 @@ export default {
 通过 `swipeable` 属性可以开启滑动切换标签页。
 
 ```html
-<van-tabs v-model="active" swipeable>
+<van-tabs v-model:active="active" swipeable>
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -182,7 +183,7 @@ export default {
 通过 `scrollspy` 属性可以开启滚动导航模式，该模式下，内容将会平铺展示。
 
 ```html
-<van-tabs v-model="active" scrollspy sticky>
+<van-tabs v-model:active="active" scrollspy sticky>
   <van-tab v-for="index in 8" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -226,7 +227,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 绑定当前选中标签的标识符 | _number \| string_ | `0` |
+| v-model:active | 绑定当前选中标签的标识符 | _number \| string_ | `0` |
 | type | 样式风格类型，可选值为 `card` | _string_ | `line` |
 | color | 标签主题色 | _string_ | `#ee0a24` |
 | background | 标签栏背景色 | _string_ | `white` |
@@ -254,7 +255,6 @@ export default {
 | disabled | 是否禁用标签 | _boolean_ | `false` |
 | dot `v2.3.0` | 是否在标题右上角显示小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
-| info `v2.3.0` | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
 | name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |

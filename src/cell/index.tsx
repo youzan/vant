@@ -1,150 +1,145 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
-import { emit, inherit } from '../utils/functional';
-import { routeProps, RouteProps, functionalRoute } from '../utils/router';
-import { cellProps, SharedCellProps } from './shared';
+
+// Composition
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';
 
-// Types
-import { CreateElement, RenderContext } from 'vue/types';
-import { ScopedSlot, DefaultSlots } from '../utils/types';
-import { Mods } from '../utils/create/bem';
-
-export type CellProps = RouteProps & SharedCellProps;
-
-export type CellSlots = DefaultSlots & {
-  icon?: ScopedSlot;
-  title?: ScopedSlot;
-  label?: ScopedSlot;
-  extra?: ScopedSlot;
-  'right-icon'?: ScopedSlot;
-};
-
-export type CellEvents = {
-  onClick?(event: Event): void;
-};
-
 const [createComponent, bem] = createNamespace('cell');
 
-function Cell(
-  h: CreateElement,
-  props: CellProps,
-  slots: CellSlots,
-  ctx: RenderContext<CellProps>
-) {
-  const { icon, size, title, label, value, isLink } = props;
-  const showTitle = slots.title || isDef(title);
+export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 
-  function Label() {
-    const showLabel = slots.label || isDef(label);
-
-    if (showLabel) {
-      return (
-        <div class={[bem('label'), props.labelClass]}>
-          {slots.label ? slots.label() : label}
-        </div>
-      );
-    }
-  }
-
-  function Title() {
-    if (showTitle) {
-      return (
-        <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
-          {slots.title ? slots.title() : <span>{title}</span>}
-          {Label()}
-        </div>
-      );
-    }
-  }
-
-  function Value() {
-    const showValue = slots.default || isDef(value);
-
-    if (showValue) {
-      return (
-        <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-          {slots.default ? slots.default() : <span>{value}</span>}
-        </div>
-      );
-    }
-  }
-
-  function LeftIcon() {
-    if (slots.icon) {
-      return slots.icon();
-    }
-
-    if (icon) {
-      return (
-        <Icon
-          class={bem('left-icon')}
-          name={icon}
-          classPrefix={props.iconPrefix}
-        />
-      );
-    }
-  }
-
-  function RightIcon() {
-    const rightIconSlot = slots['right-icon'];
-
-    if (rightIconSlot) {
-      return rightIconSlot();
-    }
-
-    if (isLink) {
-      const { arrowDirection } = props;
-
-      return (
-        <Icon
-          class={bem('right-icon')}
-          name={arrowDirection ? `arrow-${arrowDirection}` : 'arrow'}
-        />
-      );
-    }
-  }
-
-  function onClick(event: Event) {
-    emit(ctx, 'click', event);
-    functionalRoute(ctx);
-  }
-
-  const clickable = isLink || props.clickable;
-
-  const classes: Mods = {
-    clickable,
-    center: props.center,
-    required: props.required,
-    borderless: !props.border,
-  };
-
-  if (size) {
-    classes[size] = size;
-  }
-
-  return (
-    <div
-      class={bem(classes)}
-      role={clickable ? 'button' : null}
-      tabindex={clickable ? 0 : null}
-      onClick={onClick}
-      {...inherit(ctx)}
-    >
-      {LeftIcon()}
-      {Title()}
-      {Value()}
-      {RightIcon()}
-      {slots.extra?.()}
-    </div>
-  );
-}
-
-Cell.props = {
-  ...cellProps,
-  ...routeProps,
+export const cellProps = {
+  icon: String,
+  size: String as PropType<'large'>,
+  title: [Number, String],
+  value: [Number, String],
+  label: [Number, String],
+  center: Boolean,
+  isLink: Boolean,
+  required: Boolean,
+  clickable: Boolean,
+  iconPrefix: String,
+  titleStyle: null as any,
+  titleClass: null as any,
+  valueClass: null as any,
+  labelClass: null as any,
+  arrowDirection: String as PropType<CellArrowDirection>,
+  border: {
+    type: Boolean,
+    default: true,
+  },
 };
 
-export default createComponent<CellProps, CellEvents, CellSlots>(Cell);
+export default createComponent({
+  props: {
+    ...cellProps,
+    ...routeProps,
+  },
+
+  setup(props, { slots }) {
+    const route = useRoute();
+
+    const renderLabel = () => {
+      const showLabel = slots.label || isDef(props.label);
+
+      if (showLabel) {
+        return (
+          <div class={[bem('label'), props.labelClass]}>
+            {slots.label ? slots.label() : props.label}
+          </div>
+        );
+      }
+    };
+
+    const renderTitle = () => {
+      if (slots.title || isDef(props.title)) {
+        return (
+          <div
+            class={[bem('title'), props.titleClass]}
+            style={props.titleStyle}
+          >
+            {slots.title ? slots.title() : <span>{props.title}</span>}
+            {renderLabel()}
+          </div>
+        );
+      }
+    };
+
+    const renderValue = () => {
+      const hasTitle = slots.title || isDef(props.title);
+      const hasValue = slots.default || isDef(props.value);
+
+      if (hasValue) {
+        return (
+          <div class={[bem('value', { alone: !hasTitle }), props.valueClass]}>
+            {slots.default ? slots.default() : <span>{props.value}</span>}
+          </div>
+        );
+      }
+    };
+
+    const renderLeftIcon = () => {
+      if (slots.icon) {
+        return slots.icon();
+      }
+
+      if (props.icon) {
+        return (
+          <Icon
+            name={props.icon}
+            class={bem('left-icon')}
+            classPrefix={props.iconPrefix}
+          />
+        );
+      }
+    };
+
+    const renderRightIcon = () => {
+      if (slots['right-icon']) {
+        return slots['right-icon']();
+      }
+
+      if (props.isLink) {
+        const name = props.arrowDirection
+          ? `arrow-${props.arrowDirection}`
+          : 'arrow';
+        return <Icon name={name} class={bem('right-icon')} />;
+      }
+    };
+
+    return () => {
+      const { size, center, border, isLink, required } = props;
+      const clickable = isLink || props.clickable;
+
+      const classes: Record<string, boolean | undefined> = {
+        center,
+        required,
+        clickable,
+        borderless: !border,
+      };
+      if (size) {
+        classes[size] = !!size;
+      }
+
+      return (
+        <div
+          class={bem(classes)}
+          role={clickable ? 'button' : undefined}
+          tabindex={clickable ? 0 : undefined}
+          onClick={route}
+        >
+          {renderLeftIcon()}
+          {renderTitle()}
+          {renderValue()}
+          {renderRightIcon()}
+          {slots.extra?.()}
+        </div>
+      );
+    };
+  },
+});

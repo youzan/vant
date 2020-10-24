@@ -1,0 +1,34 @@
+@import '../style/var';
+
+.van-action-bar-button {
+  flex: 1;
+  height: @action-bar-button-height;
+  font-weight: @font-weight-bold;
+  font-size: @font-size-md;
+  border: none;
+  border-radius: 0;
+
+  &--first {
+    margin-left: 5px;
+    border-top-left-radius: @border-radius-max;
+    border-bottom-left-radius: @border-radius-max;
+  }
+
+  &--last {
+    margin-right: 5px;
+    border-top-right-radius: @border-radius-max;
+    border-bottom-right-radius: @border-radius-max;
+  }
+
+  &--warning {
+    background: @action-bar-button-warning-color;
+  }
+
+  &--danger {
+    background: @action-bar-button-danger-color;
+  }
+
+  @media (max-width: 321px) {
+    font-size: 13px;
+  }
+}

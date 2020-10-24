@@ -1,93 +1,94 @@
+import { ref, watch, nextTick } from 'vue';
 import { createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
-import { routeProps } from '../utils/router';
+import { TABS_KEY } from '../tabs';
+
+// Composition
+import { useParent } from '@vant/use';
+import { routeProps } from '../composition/use-route';
+
+// Components
+import SwipeItem from '../swipe-item';
 
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanTabs')],
-
   props: {
     ...routeProps,
     dot: Boolean,
     name: [Number, String],
-    // @deprecated
-    info: [Number, String],
     badge: [Number, String],
     title: String,
     titleStyle: null,
     disabled: Boolean,
   },
 
-  data() {
-    return {
-      inited: false,
-    };
-  },
+  setup(props, { slots }) {
+    const inited = ref(false);
+    const { parent, index } = useParent(TABS_KEY);
 
-  computed: {
-    computedName() {
-      return this.name ?? this.index;
-    },
+    if (!parent) {
+      throw new Error('[Vant] Tabs: <van-tab> must be used inside <van-tabs>');
+    }
 
-    isActive() {
-      const active = this.computedName === this.parent.currentName;
+    const getName = () => props.name ?? index.value;
 
-      if (active) {
-        this.inited = true;
-      }
-      return active;
-    },
-  },
+    const init = () => {
+      inited.value = true;
 
-  watch: {
-    title() {
-      this.parent.setLine();
-    },
-
-    inited(val) {
-      if (this.parent.lazyRender && val) {
-        this.$nextTick(() => {
-          this.parent.$emit('rendered', this.computedName, this.title);
+      if (parent.props.lazyRender) {
+        nextTick(() => {
+          parent.emit('rendered', getName(), props.title);
         });
       }
-    },
-  },
+    };
 
-  render(h) {
-    const { slots, parent, isActive } = this;
-    const slotContent = slots();
+    const isActive = () => {
+      const active = getName() === parent.currentName.value;
 
-    if (process.env.NODE_ENV === 'development' && this.info) {
-      console.warn(
-        '[Vant] Tab: "info" prop is deprecated, use "badge" prop instead.'
-      );
-    }
+      if (active && !inited.value) {
+        init();
+      }
 
-    if (!slotContent && !parent.animated) {
-      return;
-    }
+      return active;
+    };
 
-    const show = parent.scrollspy || isActive;
-    const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
-    const Content = shouldRender ? slotContent : h();
+    watch(
+      () => props.title,
+      () => {
+        parent.setLine();
+      }
+    );
 
-    if (parent.animated) {
+    return () => {
+      const { animated, swipeable, scrollspy, lazyRender } = parent.props;
+
+      if (!slots.default && !animated) {
+        return;
+      }
+
+      const active = isActive();
+      const show = scrollspy || active;
+
+      if (animated || swipeable) {
+        return (
+          <SwipeItem
+            role="tabpanel"
+            aria-hidden={!active}
+            class={bem('pane-wrapper', { inactive: !active })}
+          >
+            <div class={bem('pane')}>{slots.default?.()}</div>
+          </SwipeItem>
+        );
+      }
+
+      const shouldRender = inited.value || scrollspy || !lazyRender;
+      const Content = shouldRender ? slots.default?.() : null;
+
       return (
-        <div
-          role="tabpanel"
-          aria-hidden={!isActive}
-          class={bem('pane-wrapper', { inactive: !isActive })}
-        >
-          <div class={bem('pane')}>{Content}</div>
+        <div v-show={show} role="tabpanel" class={bem('pane')}>
+          {Content}
         </div>
       );
-    }
-
-    return (
-      <div vShow={show} role="tabpanel" class={bem('pane')}>
-        {Content}
-      </div>
-    );
+    };
   },
 });

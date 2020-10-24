@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Field } from 'vant';
 
-Vue.use(Field);
+const app = createApp();
+app.use(Field);
 ```
 
 ## 代码演示
@@ -279,8 +280,6 @@ export default {
 | rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
 
 ### Events
-
-除下列事件外，Field 默认支持 Input 标签所有的原生事件
 
 | 事件                 | 说明                 | 回调参数                       |
 | -------------------- | -------------------- | ------------------------------ |

@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ActionSheet } from 'vant';
 
-Vue.use(ActionSheet);
+const app = createApp();
+app.use(ActionSheet);
 ```
 
 ## Usage
@@ -17,7 +18,7 @@ Use `actions` prop to set options of action-sheet.
 
 ```html
 <van-cell is-link title="Basic Usage" @click="show = true" />
-<van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
 ```
 
 ```js
@@ -47,7 +48,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="Cancel"
   close-on-click-action
@@ -81,7 +82,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="Cancel"
   description="Description"
@@ -108,7 +109,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="Cancel"
   close-on-click-action
@@ -133,7 +134,7 @@ export default {
 ### Custom Panel
 
 ```html
-<van-action-sheet v-model="show" title="Title">
+<van-action-sheet v-model:show="show" title="Title">
   <div class="content">Content</div>
 </van-action-sheet>
 
@@ -150,7 +151,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) | Whether to show ActionSheet | _boolean_ | `false` |
+| v-model:show | Whether to show ActionSheet | _boolean_ | `false` |
 | actions | Options | _Action[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
@@ -166,7 +167,7 @@ export default {
 | close-on-click-action | Whether to close when click action | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| get-container | Return the mount node for ActionSheet | _string \| () => Element_ | - |
+| teleport | Return the mount node for ActionSheet | _string \| Element_ | - |
 
 ### Data Structure of Action
 

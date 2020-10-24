@@ -1,94 +1,64 @@
-// Utils
-import { createNamespace, addUnit } from '../utils';
-import { inherit } from '../utils/functional';
-
-// Types
-import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
-
-export type LoadingType = 'circular' | 'spinner';
-
-export type LoadingProps = {
-  type: LoadingType;
-  size?: string | number;
-  color: string;
-  vertical?: boolean;
-  textSize?: string | number;
-};
+import { computed, PropType } from 'vue';
+import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
 const [createComponent, bem] = createNamespace('loading');
 
-function LoadingIcon(h: CreateElement, props: LoadingProps) {
-  if (props.type === 'spinner') {
-    const Spin = [];
-    for (let i = 0; i < 12; i++) {
-      Spin.push(<i />);
-    }
-    return Spin;
-  }
-
-  return (
-    <svg class={bem('circular')} viewBox="25 25 50 50">
-      <circle cx="50" cy="50" r="20" fill="none" />
-    </svg>
-  );
+const SpinIcon: JSX.Element[] = [];
+for (let i = 0; i < 12; i++) {
+  SpinIcon.push(<i />);
 }
 
-function LoadingText(
-  h: CreateElement,
-  props: LoadingProps,
-  slots: DefaultSlots
-) {
-  if (slots.default) {
-    const style = props.textSize && {
-      fontSize: addUnit(props.textSize),
+const CircularIcon = (
+  <svg class={bem('circular')} viewBox="25 25 50 50">
+    <circle cx="50" cy="50" r="20" fill="none" />
+  </svg>
+);
+
+export type LoadingType = 'circular' | 'spinner';
+
+export default createComponent({
+  props: {
+    size: [Number, String],
+    color: String,
+    vertical: Boolean,
+    textSize: [Number, String],
+    type: {
+      type: String as PropType<LoadingType>,
+      default: 'circular',
+    },
+  },
+
+  setup(props, { slots }) {
+    const spinnerStyle = computed(() => ({
+      color: props.color,
+      ...getSizeStyle(props.size),
+    }));
+
+    const renderText = () => {
+      if (slots.default) {
+        return (
+          <span
+            class={bem('text')}
+            style={{
+              fontSize: addUnit(props.textSize),
+            }}
+          >
+            {slots.default()}
+          </span>
+        );
+      }
     };
 
-    return (
-      <span class={bem('text')} style={style}>
-        {slots.default()}
-      </span>
-    );
-  }
-}
-
-function Loading(
-  h: CreateElement,
-  props: LoadingProps,
-  slots: DefaultSlots,
-  ctx: RenderContext<LoadingProps>
-) {
-  const { color, size, type } = props;
-
-  const style: { [key: string]: string } = { color };
-  if (size) {
-    const iconSize = addUnit(size) as string;
-    style.width = iconSize;
-    style.height = iconSize;
-  }
-
-  return (
-    <div
-      class={bem([type, { vertical: props.vertical }])}
-      {...inherit(ctx, true)}
-    >
-      <span class={bem('spinner', type)} style={style}>
-        {LoadingIcon(h, props)}
-      </span>
-      {LoadingText(h, props, slots)}
-    </div>
-  );
-}
-
-Loading.props = {
-  color: String,
-  size: [Number, String],
-  vertical: Boolean,
-  textSize: [Number, String],
-  type: {
-    type: String,
-    default: 'circular',
+    return () => {
+      const { type, vertical } = props;
+      return (
+        <div class={bem([type, { vertical }])}>
+          <span class={bem('spinner', type)} style={spinnerStyle.value}>
+            {type === 'spinner' ? SpinIcon : CircularIcon}
+          </span>
+          {renderText()}
+        </div>
+      );
+    };
   },
-};
-
-export default createComponent<LoadingProps>(Loading);
+});

@@ -3,11 +3,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Tabbar, TabbarItem } from 'vant';
 
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
+const app = createApp();
+app.use(Tabbar);
+app.use(TabbarItem);
 ```
 
 ## 代码演示
@@ -185,7 +186,6 @@ export default {
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
-| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |

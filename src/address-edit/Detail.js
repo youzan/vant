@@ -1,3 +1,5 @@
+import { ref } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
@@ -11,6 +13,7 @@ const android = isAndroid();
 
 export default createComponent({
   props: {
+    show: Boolean,
     value: String,
     errorMessage: String,
     focused: Boolean,
@@ -20,88 +23,106 @@ export default createComponent({
     showSearchResult: Boolean,
   },
 
-  computed: {
-    shouldShowSearchResult() {
-      return this.focused && this.searchResult && this.showSearchResult;
-    },
-  },
+  emits: ['blur', 'focus', 'input', 'select-search'],
 
-  methods: {
-    onSelect(express) {
-      this.$emit('select-search', express);
-      this.$emit(
-        'input',
-        `${express.address || ''} ${express.name || ''}`.trim()
-      );
-    },
+  setup(props, { emit }) {
+    const field = ref();
 
-    onFinish() {
-      this.$refs.field.blur();
-    },
+    const showSearchResult = () =>
+      props.focused && props.searchResult && props.showSearchResult;
 
-    genFinish() {
-      const show = this.value && this.focused && android;
-      if (show) {
+    const onSelect = (express) => {
+      emit('select-search', express);
+      emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+    };
+
+    const onFinish = () => {
+      field.value.blur();
+    };
+
+    const renderFinish = () => {
+      if (props.value && props.focused && android) {
         return (
-          <div class={bem('finish')} onClick={this.onFinish}>
+          <div class={bem('finish')} onClick={onFinish}>
             {t('complete')}
           </div>
         );
       }
-    },
+    };
 
-    genSearchResult() {
-      const { value, shouldShowSearchResult, searchResult } = this;
-      if (shouldShowSearchResult) {
-        return searchResult.map((express) => (
-          <Cell
-            key={express.name + express.address}
-            clickable
-            border={false}
-            icon="location-o"
-            label={express.address}
-            class={bem('search-item')}
-            onClick={() => {
-              this.onSelect(express);
-            }}
-            scopedSlots={{
-              title: () => {
-                if (express.name) {
-                  const text = express.name.replace(
-                    value,
-                    `<span class=${bem('keyword')}>${value}</span>`
-                  );
+    const renderSearchTitle = (express) => {
+      if (express.name) {
+        const text = express.name.replace(
+          props.value,
+          `<span class=${bem('keyword')}>${props.value}</span>`
+        );
 
-                  return <div domPropsInnerHTML={text} />;
-                }
-              },
-            }}
-          />
-        ));
+        return <div innerHTML={text} />;
       }
-    },
-  },
+    };
 
-  render() {
-    return (
-      <Cell class={bem()}>
-        <Field
-          autosize
-          ref="field"
-          rows={this.detailRows}
-          clearable={!android}
-          type="textarea"
-          value={this.value}
-          errorMessage={this.errorMessage}
-          border={!this.shouldShowSearchResult}
-          label={t('label')}
-          maxlength={this.detailMaxlength}
-          placeholder={t('placeholder')}
-          scopedSlots={{ icon: this.genFinish }}
-          {...{ on: this.$listeners }}
+    const renderSearchResult = () => {
+      if (!showSearchResult()) {
+        return;
+      }
+
+      const { searchResult } = props;
+      return searchResult.map((express) => (
+        <Cell
+          v-slots={{
+            title: () => renderSearchTitle(express),
+          }}
+          clickable
+          key={express.name + express.address}
+          icon="location-o"
+          label={express.address}
+          class={bem('search-item')}
+          border={false}
+          onClick={() => {
+            onSelect(express);
+          }}
         />
-        {this.genSearchResult()}
-      </Cell>
-    );
+      ));
+    };
+
+    const onFocus = (event) => {
+      emit('focus', event);
+    };
+
+    const onBlur = (event) => {
+      emit('blur', event);
+    };
+
+    const onInput = (value) => {
+      emit('input', value);
+    };
+
+    return () => {
+      if (props.show) {
+        return (
+          <>
+            <Field
+              v-slots={{ icon: renderFinish }}
+              autosize
+              ref={field}
+              class={bem()}
+              rows={props.detailRows}
+              type="textarea"
+              label={t('label')}
+              border={!showSearchResult()}
+              clearable={!android}
+              maxlength={props.detailMaxlength}
+              modelValue={props.value}
+              placeholder={t('placeholder')}
+              errorMessage={props.errorMessage}
+              onBlur={onBlur}
+              onFocus={onFocus}
+              {...{ 'onUpdate:modelValue': onInput }}
+            />
+            {renderSearchResult()}
+          </>
+        );
+      }
+    };
   },
 });

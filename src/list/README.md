@@ -7,10 +7,11 @@ A list component to show items and control loading status.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { List } from 'vant';
 
-Vue.use(List);
+const app = createApp();
+app.use(List);
 ```
 
 ## Usage
@@ -19,7 +20,7 @@ Vue.use(List);
 
 ```html
 <van-list
-  v-model="loading"
+  v-model:loading="loading"
   :finished="finished"
   finished-text="Finished"
   @load="onLoad"
@@ -58,8 +59,8 @@ export default {
 
 ```html
 <van-list
-  v-model="loading"
-  :error.sync="error"
+  v-model:loading="loading"
+  v-model:error="error"
   error-text="Request failed. Click to reload"
   @load="onLoad"
 >
@@ -91,7 +92,7 @@ export default {
 ```html
 <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
   <van-list
-    v-model="loading"
+    v-model:loading="loading"
     :finished="finished"
     finished-text="Finished"
     @load="onLoad"
@@ -144,7 +145,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show loading info，the `load` event will not be triggered when loading | _boolean_ | `false` |
+| v-model:loading | Whether to show loading info，the `load` event will not be triggered when loading | _boolean_ | `false` |
 | finished | Whether loading is finished，the `load` event will not be triggered when finished | _boolean_ | `false` |
 | error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | _boolean_ | `false` |
 | offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | _number \| string_ | `300` |

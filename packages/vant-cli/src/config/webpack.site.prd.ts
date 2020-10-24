@@ -1,4 +1,4 @@
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import { get } from 'lodash';
 import { WebpackConfig } from '../common/types';
 import { getVantConfig, getWebpackConfig } from '../common';
@@ -21,8 +21,8 @@ export function getSitePrdConfig(): WebpackConfig {
       output: {
         publicPath,
         path: outputDir,
-        filename: '[name].[hash:8].js',
-        chunkFilename: 'async_[name].[chunkhash:8].js',
+        filename: '[name].[contenthash:8].js',
+        chunkFilename: 'async_[name].[contenthash:8].js',
       },
     })
   );

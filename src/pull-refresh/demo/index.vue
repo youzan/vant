@@ -1,46 +1,44 @@
 <template>
-  <demo-section name="pull-refresh">
-    <van-tabs>
-      <van-tab :title="t('basicUsage')">
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh(true)">
-          <p>{{ tips }}</p>
-        </van-pull-refresh>
-      </van-tab>
+  <van-tabs>
+    <van-tab :title="t('basicUsage')">
+      <van-pull-refresh v-model="isLoading" @refresh="onRefresh(true)">
+        <p>{{ tips }}</p>
+      </van-pull-refresh>
+    </van-tab>
 
-      <van-tab :title="t('successTip')">
-        <van-pull-refresh
-          v-model="isLoading"
-          :success-text="t('success')"
-          @refresh="onRefresh(false)"
-        >
-          <p>{{ tips }}</p>
-        </van-pull-refresh>
-      </van-tab>
+    <van-tab :title="t('successTip')">
+      <van-pull-refresh
+        v-model="isLoading"
+        :success-text="t('success')"
+        @refresh="onRefresh(false)"
+      >
+        <p>{{ tips }}</p>
+      </van-pull-refresh>
+    </van-tab>
 
-      <van-tab :title="t('customTips')">
-        <van-pull-refresh
-          v-model="isLoading"
-          head-height="80"
-          @refresh="onRefresh(true)"
-        >
-          <template #pulling="{ distance }">
-            <img
-              class="doge"
-              src="https://b.yzcdn.cn/vant/doge.png"
-              :style="{ transform: `scale(${distance / 80})` }"
-            />
-          </template>
-          <template #loosing>
-            <img src="https://b.yzcdn.cn/vant/doge.png" class="doge" />
-          </template>
-          <template #loading>
-            <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge" />
-          </template>
-          <p>{{ tips }}</p>
-        </van-pull-refresh>
-      </van-tab>
-    </van-tabs>
-  </demo-section>
+    <van-tab :title="t('customTips')">
+      <van-pull-refresh
+        v-model="isLoading"
+        head-height="80"
+        @refresh="onRefresh(true)"
+      >
+        <template #pulling="{ distance }">
+          <img
+            class="doge"
+            src="https://b.yzcdn.cn/vant/doge.png"
+            :style="{ transform: `scale(${distance / 80})` }"
+          />
+        </template>
+        <template #loosing>
+          <img src="https://b.yzcdn.cn/vant/doge.png" class="doge" />
+        </template>
+        <template #loading>
+          <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge" />
+        </template>
+        <p>{{ tips }}</p>
+      </van-pull-refresh>
+    </van-tab>
+  </van-tabs>
 </template>
 
 <script>

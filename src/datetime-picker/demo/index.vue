@@ -1,88 +1,86 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('dateType')">
-      <van-datetime-picker
-        v-model="value.date"
-        type="date"
-        :title="t('dateType')"
-        :min-date="minDate"
-        :max-date="maxDate"
-      />
-    </demo-block>
+  <demo-block card :title="t('dateType')">
+    <van-datetime-picker
+      v-model="value.date"
+      type="date"
+      :title="t('dateType')"
+      :min-date="minDate"
+      :max-date="maxDate"
+    />
+  </demo-block>
 
-    <demo-block card :title="t('yearMonthType')">
-      <van-datetime-picker
-        v-model="value.yearMonth"
-        type="year-month"
-        :title="t('yearMonthType')"
-        :min-date="minDate"
-        :max-date="maxDate"
-        :formatter="formatter"
-      />
-    </demo-block>
+  <demo-block card :title="t('yearMonthType')">
+    <van-datetime-picker
+      v-model="value.yearMonth"
+      type="year-month"
+      :title="t('yearMonthType')"
+      :min-date="minDate"
+      :max-date="maxDate"
+      :formatter="formatter"
+    />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
-      <van-datetime-picker
-        v-model="value.monthDayType"
-        type="month-day"
-        :title="t('monthDayType')"
-        :min-date="minDate"
-        :max-date="maxDate"
-        :formatter="formatter"
-      />
-    </demo-block>
+  <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
+    <van-datetime-picker
+      v-model="value.monthDayType"
+      type="month-day"
+      :title="t('monthDayType')"
+      :min-date="minDate"
+      :max-date="maxDate"
+      :formatter="formatter"
+    />
+  </demo-block>
 
-    <demo-block card :title="t('timeType')">
-      <van-datetime-picker
-        v-model="value.time"
-        type="time"
-        :title="t('timeType')"
-        :min-hour="10"
-        :max-hour="20"
-      />
-    </demo-block>
+  <demo-block card :title="t('timeType')">
+    <van-datetime-picker
+      v-model="value.time"
+      type="time"
+      :title="t('timeType')"
+      :min-hour="10"
+      :max-hour="20"
+    />
+  </demo-block>
 
-    <demo-block card :title="t('datetimeType')">
-      <van-datetime-picker
-        v-model="value.datetime"
-        type="datetime"
-        :title="t('datetimeType')"
-        :min-date="minDate"
-        :max-date="maxDate"
-      />
-    </demo-block>
+  <demo-block card :title="t('datetimeType')">
+    <van-datetime-picker
+      v-model="value.datetime"
+      type="datetime"
+      :title="t('datetimeType')"
+      :min-date="minDate"
+      :max-date="maxDate"
+    />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" card :title="t('datehourType')">
-      <van-datetime-picker
-        v-model="value.datehour"
-        type="datehour"
-        :title="t('datehourType')"
-        :min-date="minDate"
-        :max-date="maxDate"
-      />
-    </demo-block>
+  <demo-block v-if="!isWeapp" card :title="t('datehourType')">
+    <van-datetime-picker
+      v-model="value.datehour"
+      type="datehour"
+      :title="t('datehourType')"
+      :min-date="minDate"
+      :max-date="maxDate"
+    />
+  </demo-block>
 
-    <demo-block card :title="t('optionFilter')">
-      <van-datetime-picker
-        v-model="value.optionFilter"
-        type="time"
-        :title="t('optionFilter')"
-        :filter="filter"
-      />
-    </demo-block>
+  <demo-block card :title="t('optionFilter')">
+    <van-datetime-picker
+      v-model="value.optionFilter"
+      type="time"
+      :title="t('optionFilter')"
+      :filter="filter"
+    />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
-      <van-datetime-picker
-        v-model="value.sortColumnsDate"
-        type="date"
-        :title="t('sortColumns')"
-        :columns-order="['month', 'day', 'year']"
-        :min-date="minDate"
-        :max-date="maxDate"
-        :formatter="formatter"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
+    <van-datetime-picker
+      v-model="value.sortColumnsDate"
+      type="date"
+      :title="t('sortColumns')"
+      :columns-order="['month', 'day', 'year']"
+      :min-date="minDate"
+      :max-date="maxDate"
+      :formatter="formatter"
+    />
+  </demo-block>
 </template>
 
 <script>

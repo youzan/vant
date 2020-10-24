@@ -7,7 +7,7 @@ import { iframeReady, isMobile } from '.';
 window.syncPath = function() {
   const router = window.vueRouter;
   const isInIframe = window !== window.top;
-  const currentDir = router.history.current.path;
+  const currentDir = router.currentRoute.value.path;
 
   if (isInIframe) {
     window.top.replacePath(currentDir);
@@ -23,7 +23,7 @@ window.syncPath = function() {
 
 window.replacePath = function(path = '') {
   // should preserve hash for anchor
-  if (window.vueRouter.currentRoute.path !== path) {
+  if (window.vueRouter.currentRoute.value.path !== path) {
     window.vueRouter.replace(path).catch(() => {});
   }
 };

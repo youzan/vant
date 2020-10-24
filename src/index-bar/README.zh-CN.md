@@ -3,11 +3,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { IndexBar, IndexAnchor } from 'vant';
 
-Vue.use(IndexBar);
-Vue.use(IndexAnchor);
+const app = createApp();
+app.use(IndexBar);
+app.use(IndexAnchor);
 ```
 
 ## 代码演示

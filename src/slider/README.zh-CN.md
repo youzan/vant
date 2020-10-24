@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Slider } from 'vant';
 
-Vue.use(Slider);
+const app = createApp();
+app.use(Slider);
 ```
 
 ## 代码演示
@@ -159,7 +160,7 @@ export default {
 | button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
-| range `v2.10.7` | 是否开启双滑块模式 | _boolean_ | `false` |
+| range | 是否开启双滑块模式 | _boolean_ | `false` |
 | disabled | 是否禁用滑块 | _boolean_ | `false` |
 | vertical | 是否垂直展示 | _boolean_ | `false` |
 

@@ -7,7 +7,7 @@ export function lockClick(lock: boolean) {
     }
 
     lockCount++;
-  } else {
+  } else if (lockCount) {
     lockCount--;
 
     if (!lockCount) {

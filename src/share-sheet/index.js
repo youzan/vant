@@ -1,30 +1,29 @@
 // Utils
-import { createNamespace } from '../utils';
-
-// Mixins
-import { popupMixinProps } from '../mixins/popup';
+import { createNamespace, pick } from '../utils';
 
 // Components
-import Popup from '../popup';
+import Popup, { popupSharedProps } from '../popup';
 
 const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
+
+function getIconURL(icon) {
+  if (PRESET_ICONS.indexOf(icon) !== -1) {
+    return `https://img.yzcdn.cn/vant/share-icon-${icon}.png`;
+  }
+  return icon;
+}
 
 const [createComponent, bem, t] = createNamespace('share-sheet');
 
 export default createComponent({
   props: {
-    ...popupMixinProps,
+    ...popupSharedProps,
     title: String,
     cancelText: String,
     description: String,
-    getContainer: [String, Function],
     options: {
       type: Array,
       default: () => [],
-    },
-    overlay: {
-      type: Boolean,
-      default: true,
     },
     closeOnPopstate: {
       type: Boolean,
@@ -34,121 +33,108 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
   },
 
-  methods: {
-    onCancel() {
-      this.toggle(false);
-      this.$emit('cancel');
-    },
+  emits: ['cancel', 'select', 'update:show'],
 
-    onSelect(option, index) {
-      this.$emit('select', option, index);
-    },
+  setup(props, { emit, slots }) {
+    const toggle = (value) => {
+      emit('update:show', value);
+    };
 
-    toggle(val) {
-      this.$emit('input', val);
-    },
+    const onCancel = () => {
+      toggle(false);
+      emit('cancel');
+    };
 
-    getIconURL(icon) {
-      if (PRESET_ICONS.indexOf(icon) !== -1) {
-        return `https://img.yzcdn.cn/vant/share-icon-${icon}.png`;
-      }
+    const onSelect = (option, index) => {
+      emit('select', option, index);
+    };
 
-      return icon;
-    },
+    const renderHeader = () => {
+      const title = slots.title ? slots.title() : props.title;
+      const description = slots.description
+        ? slots.description()
+        : props.description;
 
-    genHeader() {
-      const title = this.slots('title') || this.title;
-      const description = this.slots('description') || this.description;
-
-      if (!title && !description) {
-        return;
-      }
-
-      return (
-        <div class={bem('header')}>
-          {title && <h2 class={bem('title')}>{title}</h2>}
-          {description && <span class={bem('description')}>{description}</span>}
-        </div>
-      );
-    },
-
-    genOptions(options, showBorder) {
-      return (
-        <div class={bem('options', { border: showBorder })}>
-          {options.map((option, index) => (
-            <div
-              role="button"
-              tabindex="0"
-              class={[bem('option'), option.className]}
-              onClick={() => {
-                this.onSelect(option, index);
-              }}
-            >
-              <img src={this.getIconURL(option.icon)} class={bem('icon')} />
-              {option.name && <span class={bem('name')}>{option.name}</span>}
-              {option.description && (
-                <span class={bem('option-description')}>
-                  {option.description}
-                </span>
-              )}
-            </div>
-          ))}
-        </div>
-      );
-    },
-
-    genRows() {
-      const { options } = this;
-      if (Array.isArray(options[0])) {
-        return options.map((item, index) => this.genOptions(item, index !== 0));
-      }
-      return this.genOptions(options);
-    },
-
-    genCancelText() {
-      const cancelText = this.cancelText ?? t('cancel');
-
-      if (cancelText) {
+      if (title || description) {
         return (
-          <button type="button" class={bem('cancel')} onClick={this.onCancel}>
-            {cancelText}
+          <div class={bem('header')}>
+            {title && <h2 class={bem('title')}>{title}</h2>}
+            {description && (
+              <span class={bem('description')}>{description}</span>
+            )}
+          </div>
+        );
+      }
+    };
+
+    const renderOption = (option, index) => {
+      const { name, icon, className, description } = option;
+      return (
+        <div
+          role="button"
+          tabindex="0"
+          class={[bem('option'), className]}
+          onClick={() => {
+            onSelect(option, index);
+          }}
+        >
+          <img src={getIconURL(icon)} class={bem('icon')} />
+          {name && <span class={bem('name')}>{name}</span>}
+          {description && (
+            <span class={bem('option-description')}>{description}</span>
+          )}
+        </div>
+      );
+    };
+
+    const renderOptions = (options, border) => (
+      <div class={bem('options', { border })}>{options.map(renderOption)}</div>
+    );
+
+    const renderRows = () => {
+      const { options } = props;
+      if (Array.isArray(options[0])) {
+        return options.map((item, index) => renderOptions(item, index !== 0));
+      }
+      return renderOptions(options);
+    };
+
+    const renderCancelText = () => {
+      const text = props.cancelText ?? t('cancel');
+      if (text) {
+        return (
+          <button type="button" class={bem('cancel')} onClick={onCancel}>
+            {text}
           </button>
         );
       }
-    },
+    };
 
-    onClickOverlay() {
-      this.$emit('click-overlay');
-    },
-  },
-
-  render() {
-    return (
+    return () => (
       <Popup
         round
         class={bem()}
-        value={this.value}
         position="bottom"
-        overlay={this.overlay}
-        duration={this.duration}
-        lazyRender={this.lazyRender}
-        lockScroll={this.lockScroll}
-        getContainer={this.getContainer}
-        closeOnPopstate={this.closeOnPopstate}
-        closeOnClickOverlay={this.closeOnClickOverlay}
-        safeAreaInsetBottom={this.safeAreaInsetBottom}
-        onInput={this.toggle}
-        onClick-overlay={this.onClickOverlay}
+        {...{
+          ...pick(props, [
+            'show',
+            'overlay',
+            'duration',
+            'teleport',
+            'lazyRender',
+            'lockScroll',
+            'closeOnPopstate',
+            'closeOnClickOverlay',
+            'safeAreaInsetBottom',
+          ]),
+          'onUpdate:show': toggle,
+        }}
       >
-        {this.genHeader()}
-        {this.genRows()}
-        {this.genCancelText()}
+        {renderHeader()}
+        {renderRows()}
+        {renderCancelText()}
       </Popup>
     );
   },

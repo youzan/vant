@@ -1,4 +1,4 @@
-import { get, isFunction } from '..';
+import { get, isFunction } from '../base';
 import { camelize } from '../format/string';
 import locale from '../../locale';
 

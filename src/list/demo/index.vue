@@ -1,43 +1,41 @@
 <template>
-  <demo-section>
-    <van-tabs>
-      <van-tab :title="t('basicUsage')">
+  <van-tabs>
+    <van-tab :title="t('basicUsage')">
+      <van-list
+        v-model:loading="list[0].loading"
+        :finished="list[0].finished"
+        :finished-text="t('finishedText')"
+        @load="onLoad(0)"
+      >
+        <van-cell v-for="item in list[0].items" :key="item" :title="item" />
+      </van-list>
+    </van-tab>
+
+    <van-tab :title="t('errorInfo')">
+      <van-list
+        v-model:loading="list[1].loading"
+        v-model:error="list[1].error"
+        :finished="list[1].finished"
+        :error-text="t('errorText')"
+        @load="onLoad(1)"
+      >
+        <van-cell v-for="item in list[1].items" :key="item" :title="item" />
+      </van-list>
+    </van-tab>
+
+    <van-tab :title="t('pullRefresh')">
+      <van-pull-refresh v-model="list[2].refreshing" @refresh="onRefresh(2)">
         <van-list
-          v-model="list[0].loading"
-          :finished="list[0].finished"
+          v-model:loading="list[2].loading"
+          :finished="list[2].finished"
           :finished-text="t('finishedText')"
-          @load="onLoad(0)"
+          @load="onLoad(2)"
         >
-          <van-cell v-for="item in list[0].items" :key="item" :title="item" />
+          <van-cell v-for="item in list[2].items" :key="item" :title="item" />
         </van-list>
-      </van-tab>
-
-      <van-tab :title="t('errorInfo')">
-        <van-list
-          v-model="list[1].loading"
-          :finished="list[1].finished"
-          :error.sync="list[1].error"
-          :error-text="t('errorText')"
-          @load="onLoad(1)"
-        >
-          <van-cell v-for="item in list[1].items" :key="item" :title="item" />
-        </van-list>
-      </van-tab>
-
-      <van-tab :title="t('pullRefresh')">
-        <van-pull-refresh v-model="list[2].refreshing" @refresh="onRefresh(2)">
-          <van-list
-            v-model="list[2].loading"
-            :finished="list[2].finished"
-            :finished-text="t('finishedText')"
-            @load="onLoad(2)"
-          >
-            <van-cell v-for="item in list[2].items" :key="item" :title="item" />
-          </van-list>
-        </van-pull-refresh>
-      </van-tab>
-    </van-tabs>
-  </demo-section>
+      </van-pull-refresh>
+    </van-tab>
+  </van-tabs>
 </template>
 
 <script>

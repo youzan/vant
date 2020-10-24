@@ -1,4 +1,4 @@
-import * as compiler from 'vue-template-compiler';
+import * as compiler from '@vue/compiler-sfc';
 import * as compileUtils from '@vue/component-compiler-utils';
 import hash from 'hash-sum';
 import { parse } from 'path';
@@ -87,7 +87,7 @@ export async function compileSfc(filePath: string): Promise<any> {
   const descriptor = parseSfc(filePath);
   const { template, styles } = descriptor;
 
-  const hasScoped = styles.some(s => s.scoped);
+  const hasScoped = styles.some((s) => s.scoped);
   const scopeId = hasScoped ? `data-v-${hash(source)}` : '';
 
   // compile js part
@@ -107,9 +107,7 @@ export async function compileSfc(filePath: string): Promise<any> {
         }
 
         writeFileSync(jsFilePath, script);
-        compileJs(jsFilePath)
-          .then(resolve)
-          .catch(reject);
+        compileJs(jsFilePath).then(resolve).catch(reject);
       })
     );
   }

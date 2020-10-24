@@ -1,26 +1,23 @@
-import Vue from 'vue';
-import VueToast from './Toast';
-import { isObject, isServer } from '../utils';
-import { removeNode } from '../utils/dom/node';
+import { ref, watch, getCurrentInstance } from 'vue';
+import { isObject, inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
+import VanToast from './Toast';
 
 const defaultOptions = {
   icon: '',
   type: 'text',
-  // @deprecated
-  mask: false,
-  value: true,
   message: '',
   className: '',
   overlay: false,
   onClose: null,
   onOpened: null,
   duration: 2000,
+  teleport: 'body',
   iconPrefix: undefined,
   position: 'middle',
   transition: 'van-fade',
   forbidClick: false,
   loadingType: undefined,
-  getContainer: 'body',
   overlayStyle: null,
   closeOnClick: false,
   closeOnClickOverlay: false,
@@ -28,9 +25,8 @@ const defaultOptions = {
 
 // default options of specific type
 let defaultOptionsMap = {};
-
 let queue = [];
-let multiple = false;
+let allowMultiple = false;
 let currentOptions = {
   ...defaultOptions,
 };
@@ -39,56 +35,63 @@ function parseOptions(message) {
   if (isObject(message)) {
     return message;
   }
-
   return { message };
 }
 
-function isInDocument(element) {
-  return document.body.contains(element);
+function createInstance() {
+  const { instance, unmount } = mountComponent({
+    setup() {
+      const message = ref();
+      const { open, state, close, toggle } = usePopupState();
+
+      const onClosed = () => {
+        if (allowMultiple) {
+          queue = queue.filter((item) => item !== instance);
+          unmount();
+        }
+      };
+
+      watch(message, (value) => {
+        state.message = value;
+      });
+
+      getCurrentInstance().render = () => (
+        <VanToast
+          {...{
+            ...state,
+            onClosed,
+            'onUpdate:show': toggle,
+          }}
+        />
+      );
+
+      return {
+        open,
+        clear: close,
+        message,
+      };
+    },
+  });
+
+  return instance;
 }
 
-function createInstance() {
+function getInstance() {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return {};
   }
 
-  queue = queue.filter(
-    (item) => !item.$el.parentNode || isInDocument(item.$el)
-  );
-
-  if (!queue.length || multiple) {
-    const toast = new (Vue.extend(VueToast))({
-      el: document.createElement('div'),
-    });
-
-    toast.$on('input', (value) => {
-      toast.value = value;
-    });
-
-    queue.push(toast);
+  if (!queue.length || allowMultiple) {
+    const instance = createInstance();
+    queue.push(instance);
   }
 
   return queue[queue.length - 1];
 }
 
-// transform toast options to popup props
-function transformOptions(options) {
-  return {
-    ...options,
-    overlay: options.mask || options.overlay,
-    mask: undefined,
-    duration: undefined,
-  };
-}
-
 function Toast(options = {}) {
-  const toast = createInstance();
-
-  // should add z-index if previous toast has not disappeared
-  if (toast.value) {
-    toast.updateZIndex();
-  }
+  const toast = getInstance();
 
   options = parseOptions(options);
   options = {
@@ -97,38 +100,7 @@ function Toast(options = {}) {
     ...options,
   };
 
-  if (process.env.NODE_ENV === 'development' && options.mask) {
-    console.warn(
-      '[Vant] Toast: "mask" option is deprecated, use "overlay" option instead.'
-    );
-  }
-
-  options.clear = () => {
-    toast.value = false;
-
-    if (options.onClose) {
-      options.onClose();
-    }
-
-    if (multiple && !isServer) {
-      toast.$on('closed', () => {
-        clearTimeout(toast.timer);
-        queue = queue.filter((item) => item !== toast);
-
-        removeNode(toast.$el);
-        toast.$destroy();
-      });
-    }
-  };
-
-  Object.assign(toast, transformOptions(options));
-  clearTimeout(toast.timer);
-
-  if (options.duration > 0) {
-    toast.timer = setTimeout(() => {
-      toast.clear();
-    }, options.duration);
-  }
+  toast.open(options);
 
   return toast;
 }
@@ -150,7 +122,7 @@ Toast.clear = (all) => {
         toast.clear();
       });
       queue = [];
-    } else if (!multiple) {
+    } else if (!allowMultiple) {
       queue[0].clear();
     } else {
       queue.shift().clear();
@@ -176,13 +148,12 @@ Toast.resetDefaultOptions = (type) => {
 };
 
 Toast.allowMultiple = (value = true) => {
-  multiple = value;
+  allowMultiple = value;
 };
 
-Toast.install = () => {
-  Vue.use(VueToast);
+Toast.install = (app) => {
+  app.use(VanToast);
+  app.config.globalProperties.$toast = Toast;
 };
-
-Vue.prototype.$toast = Toast;
 
 export default Toast;

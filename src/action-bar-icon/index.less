@@ -1,0 +1,26 @@
+@import '../style/var';
+
+.van-action-bar-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: @action-bar-icon-width;
+  height: @action-bar-icon-height;
+  color: @action-bar-icon-text-color;
+  font-size: @action-bar-icon-font-size;
+  line-height: 1;
+  text-align: center;
+  background-color: @white;
+  cursor: pointer;
+
+  &:active {
+    background-color: @action-bar-icon-active-color;
+  }
+
+  &__icon {
+    width: 1em;
+    margin: 0 auto 5px;
+    color: @action-bar-icon-color;
+    font-size: @action-bar-icon-size;
+  }
+}

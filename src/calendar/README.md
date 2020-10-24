@@ -7,10 +7,11 @@ Calendar component for selecting dates or date ranges.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Calendar } from 'vant';
 
-Vue.use(Calendar);
+const app = createApp();
+app.use(Calendar);
 ```
 
 ## Usage
@@ -21,7 +22,7 @@ The `confirm` event will be triggered after the date selection is completed.
 
 ```html
 <van-cell title="Select Single Date" :value="date" @click="show = true" />
-<van-calendar v-model="show" @confirm="onConfirm" />
+<van-calendar v-model:show="show" @confirm="onConfirm" />
 ```
 
 ```js
@@ -48,7 +49,7 @@ export default {
 
 ```html
 <van-cell title="Select Multiple Date" :value="text" @click="show = true" />
-<van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+<van-calendar v-model:show="show" type="multiple" @confirm="onConfirm" />
 ```
 
 ```js
@@ -74,7 +75,7 @@ You can select a date range after setting `type` to`range`. In range mode, the d
 
 ```html
 <van-cell title="Select Date Range" :value="date" @click="show = true" />
-<van-calendar v-model="show" type="range" @confirm="onConfirm" />
+<van-calendar v-model:show="show" type="range" @confirm="onConfirm" />
 ```
 
 ```js
@@ -103,7 +104,7 @@ export default {
 Set `show-confirm` to `false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
 
 ```html
-<van-calendar v-model="show" :show-confirm="false" />
+<van-calendar v-model:show="show" :show-confirm="false" />
 ```
 
 ### Custom Color
@@ -111,7 +112,7 @@ Set `show-confirm` to `false` to hide the confirm button. In this case, the `con
 Use `color` prop to custom calendar color.
 
 ```html
-<van-calendar v-model="show" color="#07c160" />
+<van-calendar v-model:show="show" color="#07c160" />
 ```
 
 ### Custom Date Range
@@ -119,7 +120,7 @@ Use `color` prop to custom calendar color.
 Use `min-date` and `max-date` to custom date range.
 
 ```html
-<van-calendar v-model="show" :min-date="minDate" :max-date="maxDate" />
+<van-calendar v-model:show="show" :min-date="minDate" :max-date="maxDate" />
 ```
 
 ```js
@@ -140,7 +141,7 @@ Use `confirm-text` and `confirm-disabled-text` to custom confirm text.
 
 ```html
 <van-calendar
-  v-model="show"
+  v-model:show="show"
   type="range"
   confirm-text="OK"
   confirm-disabled-text="Select End Time"
@@ -152,7 +153,7 @@ Use `confirm-text` and `confirm-disabled-text` to custom confirm text.
 Use `formatter` to custom day text.
 
 ```html
-<van-calendar v-model="show" type="range" :formatter="formatter" />
+<van-calendar v-model:show="show" type="range" :formatter="formatter" />
 ```
 
 ```js
@@ -189,7 +190,7 @@ export default {
 Use `position` to custom popup position，can be set to `top`、`left`、`right`.
 
 ```html
-<van-calendar v-model="show" :round="false" position="right" />
+<van-calendar v-model:show="show" :round="false" position="right" />
 ```
 
 ### Max Range
@@ -252,13 +253,13 @@ Following props are supported when the poppable is true
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show calendar | _boolean_ | `false` |
+| v-model:show | Whether to show calendar | _boolean_ | `false` |
 | position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
 | round | Whether to show round corner | _boolean_ | `true` |
 | close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| get-container `v2.4.4` | Return the mount node for Calendar | _string \| () => Element_ | - |
+| teleport `v2.4.4` | Return the mount node for Calendar | _string \| Element_ | - |
 
 ### Range Props
 

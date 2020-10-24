@@ -1,11 +1,11 @@
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
+import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('steps');
 
-export default createComponent({
-  mixins: [ParentMixin('vanSteps')],
+export const STEPS_KEY = 'vanSteps';
 
+export default createComponent({
   props: {
     activeColor: String,
     inactiveIcon: String,
@@ -24,10 +24,16 @@ export default createComponent({
     },
   },
 
-  render() {
-    return (
-      <div class={bem([this.direction])}>
-        <div class={bem('items')}>{this.slots()}</div>
+  emits: ['click-step'],
+
+  setup(props, { emit, slots }) {
+    const { linkChildren } = useChildren(STEPS_KEY);
+
+    linkChildren({ emit, props });
+
+    return () => (
+      <div class={bem([props.direction])}>
+        <div class={bem('items')}>{slots.default?.()}</div>
       </div>
     );
   },

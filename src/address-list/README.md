@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { AddressList } from 'vant';
 
-Vue.use(AddressList);
+const app = createApp();
+app.use(AddressList);
 ```
 
 ## Usage

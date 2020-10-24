@@ -1,37 +1,9 @@
-import { padZero } from '../utils/format/string';
+import { padZero } from '../utils';
+import { CurrentTime } from '@vant/use';
 
-export type TimeData = {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-  milliseconds: number;
-};
-
-const SECOND = 1000;
-const MINUTE = 60 * SECOND;
-const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
-
-export function parseTimeData(time: number): TimeData {
-  const days = Math.floor(time / DAY);
-  const hours = Math.floor((time % DAY) / HOUR);
-  const minutes = Math.floor((time % HOUR) / MINUTE);
-  const seconds = Math.floor((time % MINUTE) / SECOND);
-  const milliseconds = Math.floor(time % SECOND);
-
-  return {
-    days,
-    hours,
-    minutes,
-    seconds,
-    milliseconds,
-  };
-}
-
-export function parseFormat(format: string, timeData: TimeData): string {
-  const { days } = timeData;
-  let { hours, minutes, seconds, milliseconds } = timeData;
+export function parseFormat(format: string, currentTime: CurrentTime): string {
+  const { days } = currentTime;
+  let { hours, minutes, seconds, milliseconds } = currentTime;
 
   if (format.indexOf('DD') === -1) {
     hours += days * 24;
@@ -70,8 +42,4 @@ export function parseFormat(format: string, timeData: TimeData): string {
   }
 
   return format;
-}
-
-export function isSameSecond(time1: number, time2: number): boolean {
-  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
 }

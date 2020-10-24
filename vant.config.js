@@ -1,9 +1,12 @@
 module.exports = {
   name: 'vant',
   build: {
+    srcDir: 'src',
     skipInstall: ['lazyload'],
     site: {
-      publicPath: process.env.PUBLIC_PATH || 'https://b.yzcdn.cn/vant/',
+      publicPath:
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
+        'https://b.yzcdn.cn/vant/',
     },
     vetur: {
       tagPrefix: 'van-',
@@ -13,7 +16,7 @@ module.exports = {
     defaultLang: 'en-US',
     versions: [
       { label: '1.x', link: '/vant/1.x/' },
-      { label: '3.x', link: '/vant/next/' },
+      { label: '2.x', link: '/vant/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
@@ -64,8 +67,12 @@ module.exports = {
                 title: '快速上手',
               },
               {
-                path: 'changelog',
+                path: 'changelog-v3',
                 title: '更新日志',
+              },
+              {
+                path: 'migrate-from-v2',
+                title: '从 v2 升级',
               },
               {
                 path: 'theme',
@@ -236,6 +243,10 @@ module.exports = {
             title: '展示组件',
             items: [
               {
+                path: 'badge',
+                title: 'Badge 徽标',
+              },
+              {
                 path: 'circle',
                 title: 'Circle 环形进度条',
               },
@@ -259,10 +270,10 @@ module.exports = {
                 path: 'image-preview',
                 title: 'ImagePreview 图片预览',
               },
-              {
-                path: 'lazyload',
-                title: 'Lazyload 懒加载',
-              },
+              // {
+              //   path: 'lazyload',
+              //   title: 'Lazyload 懒加载',
+              // },
               {
                 path: 'list',
                 title: 'List 列表',
@@ -300,6 +311,10 @@ module.exports = {
           {
             title: '导航组件',
             items: [
+              {
+                path: 'action-bar',
+                title: 'ActionBar 动作栏',
+              },
               {
                 path: 'grid',
                 title: 'Grid 宫格',
@@ -362,29 +377,8 @@ module.exports = {
                 title: 'Coupon 优惠券',
               },
               {
-                path: 'goods-action',
-                title: 'GoodsAction 商品导航',
-              },
-              {
                 path: 'submit-bar',
                 title: 'SubmitBar 提交订单栏',
-              },
-              {
-                path: 'sku',
-                title: 'Sku 商品规格',
-              },
-            ],
-          },
-          {
-            title: '废弃',
-            items: [
-              {
-                path: 'panel',
-                title: 'Panel 面板',
-              },
-              {
-                path: 'switch-cell',
-                title: 'SwitchCell 开关单元格',
               },
             ],
           },
@@ -533,10 +527,6 @@ module.exports = {
                 title: 'Switch',
               },
               {
-                path: 'switch-cell',
-                title: 'SwitchCell',
-              },
-              {
                 path: 'uploader',
                 title: 'Uploader',
               },
@@ -587,6 +577,10 @@ module.exports = {
             title: 'Display Components',
             items: [
               {
+                path: 'badge',
+                title: 'Badge',
+              },
+              {
                 path: 'circle',
                 title: 'Circle',
               },
@@ -610,10 +604,10 @@ module.exports = {
                 path: 'image-preview',
                 title: 'ImagePreview',
               },
-              {
-                path: 'lazyload',
-                title: 'Lazyload',
-              },
+              // {
+              //   path: 'lazyload',
+              //   title: 'Lazyload',
+              // },
               {
                 path: 'list',
                 title: 'List',
@@ -651,6 +645,10 @@ module.exports = {
           {
             title: 'Navigation Components',
             items: [
+              {
+                path: 'action-bar',
+                title: 'ActionBar',
+              },
               {
                 path: 'grid',
                 title: 'Grid',
@@ -713,29 +711,8 @@ module.exports = {
                 title: 'Coupon',
               },
               {
-                path: 'goods-action',
-                title: 'GoodsAction',
-              },
-              {
                 path: 'submit-bar',
                 title: 'SubmitBar',
-              },
-              {
-                path: 'sku',
-                title: 'Sku',
-              },
-            ],
-          },
-          {
-            title: 'Deprecated',
-            items: [
-              {
-                path: 'panel',
-                title: 'Panel',
-              },
-              {
-                path: 'switch-cell',
-                title: 'SwitchCell',
               },
             ],
           },

@@ -1,27 +1,28 @@
+import { watch, onMounted, onUnmounted } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
 import { lockClick } from './lock-click';
 
-// Mixins
-import { PopupMixin } from '../mixins/popup';
-
 // Components
 import Icon from '../icon';
+import Popup from '../popup';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('toast');
 
 export default createComponent({
-  mixins: [PopupMixin()],
-
   props: {
     icon: String,
+    show: Boolean,
+    message: [Number, String],
+    duration: Number,
     className: null,
     iconPrefix: String,
+    lockScroll: Boolean,
     loadingType: String,
     forbidClick: Boolean,
     closeOnClick: Boolean,
-    message: [Number, String],
     type: {
       type: String,
       default: 'text',
@@ -34,70 +35,42 @@ export default createComponent({
       type: String,
       default: 'van-fade',
     },
-    lockScroll: {
-      type: Boolean,
-      default: false,
-    },
   },
 
-  data() {
-    return {
-      clickable: false,
-    };
-  },
+  emits: ['update:show'],
 
-  mounted() {
-    this.toggleClickable();
-  },
+  setup(props, { emit }) {
+    let timer;
+    let clickable = false;
 
-  destroyed() {
-    this.toggleClickable();
-  },
-
-  watch: {
-    value: 'toggleClickable',
-    forbidClick: 'toggleClickable',
-  },
-
-  methods: {
-    onClick() {
-      if (this.closeOnClick) {
-        this.close();
-      }
-    },
-
-    toggleClickable() {
-      const clickable = this.value && this.forbidClick;
-
-      if (this.clickable !== clickable) {
-        this.clickable = clickable;
+    const toggleClickable = () => {
+      const newValue = props.show && props.forbidClick;
+      if (clickable !== newValue) {
+        clickable = newValue;
         lockClick(clickable);
       }
-    },
+    };
 
-    /* istanbul ignore next */
-    onAfterEnter() {
-      this.$emit('opened');
-
-      if (this.onOpened) {
-        this.onOpened();
+    const onClick = () => {
+      if (props.closeOnClick) {
+        emit('update:show', false);
       }
-    },
+    };
 
-    onAfterLeave() {
-      this.$emit('closed');
-    },
+    const clearTimer = () => {
+      clearTimeout(timer);
+    };
 
-    genIcon() {
-      const { icon, type, iconPrefix, loadingType } = this;
+    const renderIcon = () => {
+      const { icon, type, iconPrefix, loadingType } = props;
       const hasIcon = icon || type === 'success' || type === 'fail';
 
       if (hasIcon) {
         return (
           <Icon
+            name={icon || type}
             class={bem('icon')}
             classPrefix={iconPrefix}
-            name={icon || type}
           />
         );
       }
@@ -105,42 +78,49 @@ export default createComponent({
       if (type === 'loading') {
         return <Loading class={bem('loading')} type={loadingType} />;
       }
-    },
+    };
 
-    genMessage() {
-      const { type, message } = this;
+    const renderMessage = () => {
+      const { type, message } = props;
 
-      if (!isDef(message) || message === '') {
-        return;
+      if (isDef(message) && message !== '') {
+        return type === 'html' ? (
+          <div class={bem('text')} innerHTML={message} />
+        ) : (
+          <div class={bem('text')}>{message}</div>
+        );
       }
+    };
 
-      if (type === 'html') {
-        return <div class={bem('text')} domPropsInnerHTML={message} />;
+    watch([() => props.show, () => props.forbidClick], toggleClickable);
+
+    watch([() => props.show, () => props.duration], () => {
+      clearTimer();
+      if (props.show && props.duration > 0) {
+        timer = setTimeout(() => {
+          emit('update:show', false);
+        }, props.duration);
       }
+    });
 
-      return <div class={bem('text')}>{message}</div>;
-    },
-  },
+    onMounted(toggleClickable);
+    onUnmounted(toggleClickable);
 
-  render() {
-    return (
-      <transition
-        name={this.transition}
-        onAfterEnter={this.onAfterEnter}
-        onAfterLeave={this.onAfterLeave}
+    return () => (
+      <Popup
+        show={props.show}
+        class={[
+          bem([props.position, { [props.type]: !props.icon }]),
+          props.className,
+        ]}
+        lockScroll={false}
+        transition={props.transition}
+        onClick={onClick}
+        onClosed={clearTimer}
       >
-        <div
-          vShow={this.value}
-          class={[
-            bem([this.position, { [this.type]: !this.icon }]),
-            this.className,
-          ]}
-          onClick={this.onClick}
-        >
-          {this.genIcon()}
-          {this.genMessage()}
-        </div>
-      </transition>
+        {renderIcon()}
+        {renderMessage()}
+      </Popup>
     );
   },
 });

@@ -21,11 +21,12 @@ Dialog({ message: '提示' });
 通过组件调用 Dialog 时，可以通过下面的方式进行注册：
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Dialog } from 'vant';
 
 // 全局注册
-Vue.use(Dialog);
+const app = createApp();
+app.use(Dialog);
 
 // 局部注册
 export default {
@@ -99,13 +100,17 @@ Dialog.alert({
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```js
-function beforeClose(action, done) {
-  if (action === 'confirm') {
-    setTimeout(done, 1000);
-  } else {
-    done();
-  }
-}
+const beforeClose = (action, done) =>
+  new Promsie((resolve) => {
+    setTimeout(() => {
+      if (action === 'confirm') {
+        resolve(true);
+      } else {
+        // 拦截取消操作
+        resolve(false);
+      }
+    }, 1000);
+  });
 
 Dialog.confirm({
   title: '标题',
@@ -116,7 +121,7 @@ Dialog.confirm({
 
 ### 全局方法
 
-引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
+通过 `app.use` 注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
 
 ```js
 export default {
@@ -133,7 +138,7 @@ export default {
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
 
 ```html
-<van-dialog v-model="show" title="标题" show-cancel-button>
+<van-dialog v-model:show="show" title="标题" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg" />
 </van-dialog>
 ```
@@ -185,10 +190,10 @@ export default {
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `true` |
-| allowHtml `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
+| allowHtml `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `false` |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | _(action, done) => void_ | - |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
-| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | `body` |
 
 ### Props
 
@@ -215,10 +220,10 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
-| allow-html `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `true` |
-| before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | _(action, done) => void_ | - |
+| allow-html `v2.8.7` | 是否允许 message 内容中渲染 HTML | _boolean_ | `false` |
+| before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action) => boolean \| Promise_ | - |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | - |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Events
 

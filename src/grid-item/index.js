@@ -1,36 +1,37 @@
+import { computed } from 'vue';
+
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
-import { route, routeProps } from '../utils/router';
+import { GRID_KEY } from '../grid';
 
-// Mixins
-import { ChildrenMixin } from '../mixins/relation';
+// Composition
+import { useParent } from '@vant/use';
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
-import Info from '../info';
 import Icon from '../icon';
+import Badge from '../badge';
 
 const [createComponent, bem] = createNamespace('grid-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanGrid')],
-
   props: {
     ...routeProps,
     dot: Boolean,
     text: String,
     icon: String,
-    iconPrefix: String,
-    // @deprecated
-    info: [Number, String],
     badge: [Number, String],
+    iconPrefix: String,
   },
 
-  computed: {
-    style() {
-      const { square, gutter, columnNum } = this.parent;
-      const percent = `${100 / columnNum}%`;
+  setup(props, { slots }) {
+    const { parent, index } = useParent(GRID_KEY);
+    const route = useRoute();
 
+    const rootStyle = computed(() => {
+      const { square, gutter, columnNum } = parent.props;
+      const percent = `${100 / columnNum}%`;
       const style = {
         flexBasis: percent,
       };
@@ -41,124 +42,102 @@ export default createComponent({
         const gutterValue = addUnit(gutter);
         style.paddingRight = gutterValue;
 
-        if (this.index >= columnNum) {
+        if (index.value >= columnNum) {
           style.marginTop = gutterValue;
         }
       }
 
       return style;
-    },
+    });
 
-    contentStyle() {
-      const { square, gutter } = this.parent;
+    const contentStyle = computed(() => {
+      const { square, gutter } = parent.props;
 
       if (square && gutter) {
         const gutterValue = addUnit(gutter);
-
         return {
           right: gutterValue,
           bottom: gutterValue,
           height: 'auto',
         };
       }
-    },
-  },
+    });
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    },
-
-    genIcon() {
-      const iconSlot = this.slots('icon');
-      const info = this.badge ?? this.info;
-
-      if (process.env.NODE_ENV === 'development' && this.info) {
-        console.warn(
-          '[Vant] GridItem: "info" prop is deprecated, use "badge" prop instead.'
-        );
-      }
-
-      if (iconSlot) {
+    const renderIcon = () => {
+      if (slots.icon) {
         return (
-          <div class={bem('icon-wrapper')}>
-            {iconSlot}
-            <Info dot={this.dot} info={info} />
-          </div>
+          <Badge dot={props.dot} content={props.badge}>
+            {slots.icon()}
+          </Badge>
         );
       }
 
-      if (this.icon) {
+      if (props.icon) {
         return (
           <Icon
-            name={this.icon}
-            dot={this.dot}
-            info={info}
-            size={this.parent.iconSize}
+            dot={props.dot}
+            name={props.icon}
+            size={parent.props.iconSize}
+            badge={props.badge}
             class={bem('icon')}
-            classPrefix={this.iconPrefix}
+            classPrefix={props.iconPrefix}
           />
         );
       }
-    },
+    };
 
-    getText() {
-      const textSlot = this.slots('text');
-
-      if (textSlot) {
-        return textSlot;
+    const renderText = () => {
+      if (slots.text) {
+        return slots.text();
       }
-
-      if (this.text) {
-        return <span class={bem('text')}>{this.text}</span>;
+      if (props.text) {
+        return <span class={bem('text')}>{props.text}</span>;
       }
-    },
+    };
 
-    genContent() {
-      const slot = this.slots();
-
-      if (slot) {
-        return slot;
+    const renderContent = () => {
+      if (slots.default) {
+        return slots.default();
       }
+      return [renderIcon(), renderText()];
+    };
 
-      return [this.genIcon(), this.getText()];
-    },
-  },
+    return () => {
+      const {
+        center,
+        border,
+        square,
+        gutter,
+        direction,
+        clickable,
+      } = parent.props;
 
-  render() {
-    const {
-      center,
-      border,
-      square,
-      gutter,
-      direction,
-      clickable,
-    } = this.parent;
+      const classes = [
+        bem('content', [
+          direction,
+          {
+            center,
+            square,
+            clickable,
+            surround: border && gutter,
+          },
+        ]),
+        { [BORDER]: border },
+      ];
 
-    return (
-      <div class={[bem({ square })]} style={this.style}>
-        <div
-          style={this.contentStyle}
-          role={clickable ? 'button' : null}
-          tabindex={clickable ? 0 : null}
-          class={[
-            bem('content', [
-              direction,
-              {
-                center,
-                square,
-                clickable,
-                surround: border && gutter,
-              },
-            ]),
-            { [BORDER]: border },
-          ]}
-          onClick={this.onClick}
-        >
-          {this.genContent()}
+      return (
+        <div class={[bem({ square })]} style={rootStyle.value}>
+          <div
+            role={clickable ? 'button' : null}
+            class={classes}
+            style={contentStyle.value}
+            tabindex={clickable ? 0 : null}
+            onClick={route}
+          >
+            {renderContent()}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });

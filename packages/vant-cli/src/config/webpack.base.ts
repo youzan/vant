@@ -1,24 +1,17 @@
 import sass from 'sass';
+import webpack from 'webpack';
 import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
-import { existsSync } from 'fs';
 import { consola } from '../common/logger';
+import { existsSync } from 'fs';
 import { WebpackConfig } from '../common/types';
 import {
   CWD,
-  CACHE_DIR,
   STYLE_EXTS,
   SCRIPT_EXTS,
   POSTCSS_CONFIG_FILE,
 } from '../common/constant';
-
-const CACHE_LOADER = {
-  loader: 'cache-loader',
-  options: {
-    cacheDirectory: CACHE_DIR,
-  },
-};
 
 const CSS_LOADERS = [
   'style-loader',
@@ -34,6 +27,10 @@ const CSS_LOADERS = [
 ];
 
 const plugins = [
+  new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: 'true',
+    __VUE_PROD_DEVTOOLS__: 'false',
+  }),
   new VueLoaderPlugin(),
   new FriendlyErrorsPlugin({
     clearConsole: false,
@@ -46,16 +43,24 @@ if (existsSync(tsconfigPath)) {
   const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
   plugins.push(
     new ForkTsCheckerPlugin({
-      formatter: 'codeframe',
-      vue: { enabled: true },
-      logger: {
-        // skip info message
-        info() {},
-        warn(message: string) {
-          consola.warn(message);
+      typescript: {
+        extensions: {
+          vue: {
+            enabled: true,
+            compiler: '@vue/compiler-sfc',
+          },
         },
-        error(message: string) {
-          consola.error(message);
+      },
+      logger: {
+        issues: {
+          // skip info message
+          log() {},
+          warn(message: string) {
+            consola.warn(message);
+          },
+          error(message: string) {
+            consola.error(message);
+          },
         },
       },
     })
@@ -72,7 +77,6 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.vue$/,
         use: [
-          CACHE_LOADER,
           {
             loader: 'vue-loader',
             options: {
@@ -86,7 +90,7 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules\/(?!(@vant\/cli))/,
-        use: [CACHE_LOADER, 'babel-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
@@ -113,9 +117,15 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.md$/,
-        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader'],
+        use: ['@vant/markdown-loader'],
       },
     ],
   },
   plugins,
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
 };

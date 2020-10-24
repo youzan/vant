@@ -1,41 +1,39 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-switch v-model="checked" />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-switch v-model="checked" />
+  </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-switch v-model="checked" disabled />
-    </demo-block>
+  <demo-block :title="t('disabled')">
+    <van-switch v-model="checked" disabled />
+  </demo-block>
 
-    <demo-block :title="t('loadingStatus')">
-      <van-switch v-model="checked" loading />
-    </demo-block>
+  <demo-block :title="t('loadingStatus')">
+    <van-switch v-model="checked" loading />
+  </demo-block>
 
-    <demo-block :title="t('customSize')">
-      <van-switch v-model="checked2" size="24px" />
-    </demo-block>
+  <demo-block :title="t('customSize')">
+    <van-switch v-model="checked2" size="24px" />
+  </demo-block>
 
-    <demo-block :title="t('customColor')">
-      <van-switch
-        v-model="checked3"
-        active-color="#07c160"
-        inactive-color="#ee0a24"
-      />
-    </demo-block>
+  <demo-block :title="t('customColor')">
+    <van-switch
+      v-model="checked3"
+      active-color="#07c160"
+      inactive-color="#ee0a24"
+    />
+  </demo-block>
 
-    <demo-block :title="t('asyncControl')">
-      <van-switch :value="checked4" @input="onInput" />
-    </demo-block>
+  <demo-block :title="t('asyncControl')">
+    <van-switch :model-value="checked4" @update:model-value="onInput" />
+  </demo-block>
 
-    <demo-block :title="t('withCell')">
-      <van-cell center :title="t('title')">
-        <template #right-icon>
-          <van-switch v-model="checked5" size="24" />
-        </template>
-      </van-cell>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('withCell')">
+    <van-cell center :title="t('title')">
+      <template #right-icon>
+        <van-switch v-model="checked5" size="24" />
+      </template>
+    </van-cell>
+  </demo-block>
 </template>
 
 <script>

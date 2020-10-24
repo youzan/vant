@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { RadioGroup, Radio } from 'vant';
 
-Vue.use(Radio);
-Vue.use(RadioGroup);
+const app = createApp();
+app.use(Radio);
+app.use(RadioGroup);
 ```
 
 ## Usage

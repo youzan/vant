@@ -42,10 +42,10 @@
 
 ```bash
 # Using npm
-npm i vant -S
+npm i vant@next -S
 
 # Using yarn
-yarn add vant
+yarn add vant@next
 ```
 
 > Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035).
@@ -53,11 +53,12 @@ yarn add vant
 ## Quickstart
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Button } from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Button);
+const app = createApp();
+app.use(Button);
 ```
 
 See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).

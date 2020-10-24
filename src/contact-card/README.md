@@ -3,12 +3,13 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue.use(ContactCard);
-Vue.use(ContactList);
-Vue.use(ContactEdit);
+const app = createApp();
+app.use(ContactCard);
+app.use(ContactList);
+app.use(ContactEdit);
 ```
 
 ## Usage
@@ -25,7 +26,7 @@ Vue.use(ContactEdit);
 />
 
 <!-- Contact List -->
-<van-popup v-model="showList" position="bottom">
+<van-popup v-model:show="showList" position="bottom">
   <van-contact-list
     v-model="chosenContactId"
     :list="list"
@@ -36,7 +37,7 @@ Vue.use(ContactEdit);
 </van-popup>
 
 <!-- Contact Edit -->
-<van-popup v-model="showEdit" position="bottom">
+<van-popup v-model:show="showEdit" position="bottom">
   <van-contact-edit
     :contact-info="editingContact"
     :is-edit="isEdit"

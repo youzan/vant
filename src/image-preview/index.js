@@ -1,23 +1,23 @@
-import Vue from 'vue';
-import VueImagePreview from './ImagePreview';
-import { isServer } from '../utils';
+import { inBrowser } from '../utils';
+import { mountComponent, usePopupState } from '../utils/mount-component';
+import VanImagePreview from './ImagePreview';
 
 let instance;
 
 const defaultConfig = {
   loop: true,
-  value: true,
   images: [],
   maxZoom: 3,
   minZoom: 1 / 3,
+  onScale: null,
   onClose: null,
   onChange: null,
+  teleport: 'body',
   className: '',
   showIndex: true,
   closeable: false,
   closeIcon: 'clear',
-  asyncClose: false,
-  getContainer: 'body',
+  beforeClose: null,
   startPosition: 0,
   swipeDuration: 500,
   showIndicators: false,
@@ -25,28 +25,31 @@ const defaultConfig = {
   closeIconPosition: 'top-right',
 };
 
-const initInstance = () => {
-  instance = new (Vue.extend(VueImagePreview))({
-    el: document.createElement('div'),
-  });
-  document.body.appendChild(instance.$el);
+function initInstance() {
+  ({ instance } = mountComponent({
+    setup() {
+      const { state, toggle } = usePopupState();
 
-  instance.$on('change', (index) => {
-    if (instance.onChange) {
-      instance.onChange(index);
-    }
-  });
+      const onClosed = () => {
+        state.images = [];
+      };
 
-  instance.$on('scale', (data) => {
-    if (instance.onScale) {
-      instance.onScale(data);
-    }
-  });
-};
+      return () => (
+        <VanImagePreview
+          {...{
+            ...state,
+            onClosed,
+            'onUpdate:show': toggle,
+          }}
+        />
+      );
+    },
+  }));
+}
 
 const ImagePreview = (images, startPosition = 0) => {
   /* istanbul ignore if */
-  if (isServer) {
+  if (!inBrowser) {
     return;
   }
 
@@ -56,28 +59,18 @@ const ImagePreview = (images, startPosition = 0) => {
 
   const options = Array.isArray(images) ? { images, startPosition } : images;
 
-  Object.assign(instance, defaultConfig, options);
-
-  instance.$once('input', (show) => {
-    instance.value = show;
+  instance.open({
+    ...defaultConfig,
+    ...options,
   });
-
-  instance.$once('closed', () => {
-    instance.images = [];
-  });
-
-  if (options.onClose) {
-    instance.$off('close');
-    instance.$once('close', options.onClose);
-  }
 
   return instance;
 };
 
-ImagePreview.Component = VueImagePreview;
+ImagePreview.Component = VanImagePreview;
 
-ImagePreview.install = () => {
-  Vue.use(VueImagePreview);
+ImagePreview.install = (app) => {
+  app.use(VanImagePreview);
 };
 
 export default ImagePreview;

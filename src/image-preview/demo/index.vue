@@ -1,38 +1,36 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
-      <van-cell is-link @click="showImagePreview">
-        {{ t('showImages') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link @click="showImagePreview()">
+      {{ t('showImages') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('customConfig')">
-      <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
-        {{ t('startPosition') }}
-      </van-cell>
-      <van-cell is-link @click="showImagePreview({ closeable: true })">
-        {{ t('showClose') }}
-      </van-cell>
-      <van-cell is-link @click="showImagePreview({ onClose })">
-        {{ t('closeEvent') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('customConfig')">
+    <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
+      {{ t('startPosition') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ closeable: true })">
+      {{ t('showClose') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ onClose })">
+      {{ t('closeEvent') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('asyncClose')">
-      <van-cell is-link @click="showImagePreview({ asyncClose: true })">
-        {{ t('asyncClose') }}
-      </van-cell>
-    </demo-block>
+  <demo-block card :title="t('beforeClose')">
+    <van-cell is-link @click="showImagePreview({ beforeClose })">
+      {{ t('beforeClose') }}
+    </van-cell>
+  </demo-block>
 
-    <demo-block card :title="t('componentCall')">
-      <van-cell is-link @click="componentCall">
-        {{ t('componentCall') }}
-      </van-cell>
-      <van-image-preview v-model="show" :images="images" @change="onChange">
-        <template #index>{{ t('index', index) }}</template>
-      </van-image-preview>
-    </demo-block>
-  </demo-section>
+  <demo-block card :title="t('componentCall')">
+    <van-cell is-link @click="componentCall">
+      {{ t('componentCall') }}
+    </van-cell>
+    <van-image-preview v-model:show="show" :images="images" @change="onChange">
+      <template #index>{{ t('index', index) }}</template>
+    </van-image-preview>
+  </demo-block>
 </template>
 
 <script>
@@ -51,7 +49,7 @@ export default {
       closed: '关闭',
       showClose: '展示关闭按钮',
       showImages: '预览图片',
-      asyncClose: '异步关闭',
+      beforeClose: '异步关闭',
       closeEvent: '监听关闭事件',
       customConfig: '传入配置项',
       startPosition: '指定初始位置',
@@ -62,7 +60,7 @@ export default {
       closed: 'closed',
       showClose: 'Show Close Icon',
       showImages: 'Show Images',
-      asyncClose: 'Async Close',
+      beforeClose: 'Before Close',
       closeEvent: 'Close Event',
       customConfig: 'Custom Config',
       startPosition: 'Set Start Position',
@@ -84,6 +82,14 @@ export default {
       this.$toast(this.t('closed'));
     },
 
+    beforeClose() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(true);
+        }, 1000);
+      });
+    },
+
     componentCall() {
       this.show = true;
     },
@@ -92,13 +98,13 @@ export default {
       this.index = index;
     },
 
-    showImagePreview(options) {
+    showImagePreview(options = {}) {
       const instance = ImagePreview({
         images,
         ...options,
       });
 
-      if (options.asyncClose) {
+      if (options.beforeClose) {
         setTimeout(() => {
           instance.close();
         }, 2000);

@@ -1,17 +1,19 @@
 <template>
-  <demo-section>
-    <van-tabs v-model="tab" sticky>
-      <van-tab :title="t('demo')">
-        <demo-block :title="t('basicUsage')">
+  <van-tabs v-model="tab" sticky>
+    <van-tab :title="t('demo')">
+      <demo-block :title="t('basicUsage')">
+        <van-row>
           <van-col span="6" @click="copy(demoIcon)">
             <van-icon :name="demoIcon" />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
             <van-icon :name="demoImage" />
           </van-col>
-        </demo-block>
+        </van-row>
+      </demo-block>
 
-        <demo-block :title="t('badge')">
+      <demo-block :title="t('badge')">
+        <van-row>
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
             <van-icon :name="demoIcon" dot />
           </van-col>
@@ -21,28 +23,34 @@
           <van-col span="6" @click="copy(demoIcon, { badge: '99+' })">
             <van-icon :name="demoIcon" badge="99+" />
           </van-col>
-        </demo-block>
+        </van-row>
+      </demo-block>
 
-        <demo-block :title="t('color')">
+      <demo-block :title="t('color')">
+        <van-row>
           <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
             <van-icon :name="demoIcon" :color="BLUE" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
             <van-icon :name="demoIcon" :color="GREEN" />
           </van-col>
-        </demo-block>
+        </van-row>
+      </demo-block>
 
-        <demo-block :title="t('size')">
+      <demo-block :title="t('size')">
+        <van-row>
           <van-col span="6" @click="copy(demoIcon, { size: '40' })">
             <van-icon :name="demoIcon" size="40" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
             <van-icon :name="demoIcon" size="3rem" />
           </van-col>
-        </demo-block>
-      </van-tab>
+        </van-row>
+      </demo-block>
+    </van-tab>
 
-      <van-tab :title="t('basic')">
+    <van-tab :title="t('basic')">
+      <van-row>
         <van-col
           v-for="icon in icons.basic"
           :key="icon"
@@ -52,9 +60,11 @@
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
-      </van-tab>
+      </van-row>
+    </van-tab>
 
-      <van-tab :title="t('outline')">
+    <van-tab :title="t('outline')">
+      <van-row>
         <van-col
           v-for="icon in icons.outline"
           :key="icon"
@@ -64,9 +74,11 @@
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
-      </van-tab>
+      </van-row>
+    </van-tab>
 
-      <van-tab :title="t('filled')">
+    <van-tab :title="t('filled')">
+      <van-row>
         <van-col
           v-for="icon in icons.filled"
           :key="icon"
@@ -76,9 +88,9 @@
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
-      </van-tab>
-    </van-tabs>
-  </demo-section>
+      </van-row>
+    </van-tab>
+  </van-tabs>
 </template>
 
 <script>

@@ -12,25 +12,24 @@ export default createComponent({
     firstDayOfWeek: Number,
   },
 
-  methods: {
-    genTitle() {
-      if (this.showTitle) {
-        const title = this.slots('title') || this.title || t('title');
+  setup(props, { slots }) {
+    const renderTitle = () => {
+      if (props.showTitle) {
+        const text = props.title || t('title');
+        const title = slots.title ? slots.title : text;
         return <div class={bem('header-title')}>{title}</div>;
       }
-    },
+    };
 
-    genSubtitle() {
-      if (this.showSubtitle) {
-        return <div class={bem('header-subtitle')}>{this.subtitle}</div>;
+    const renderSubtitle = () => {
+      if (props.showSubtitle) {
+        return <div class={bem('header-subtitle')}>{props.subtitle}</div>;
       }
-    },
+    };
 
-    genWeekDays() {
+    const renderWeekDays = () => {
+      const { firstDayOfWeek } = props;
       const weekdays = t('weekdays');
-
-      const { firstDayOfWeek } = this;
-
       const renderWeekDays = [
         ...weekdays.slice(firstDayOfWeek, 7),
         ...weekdays.slice(0, firstDayOfWeek),
@@ -38,20 +37,18 @@ export default createComponent({
 
       return (
         <div class={bem('weekdays')}>
-          {renderWeekDays.map((item) => (
-            <span class={bem('weekday')}>{item}</span>
+          {renderWeekDays.map((text) => (
+            <span class={bem('weekday')}>{text}</span>
           ))}
         </div>
       );
-    },
-  },
+    };
 
-  render() {
-    return (
+    return () => (
       <div class={bem('header')}>
-        {this.genTitle()}
-        {this.genSubtitle()}
-        {this.genWeekDays()}
+        {renderTitle()}
+        {renderSubtitle()}
+        {renderWeekDays()}
       </div>
     );
   },

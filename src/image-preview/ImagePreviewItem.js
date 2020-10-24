@@ -1,10 +1,11 @@
+import { watch, computed, reactive } from 'vue';
+
 // Utils
 import { bem } from './shared';
-import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { range, preventDefault } from '../utils';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
+// Composition
+import { useTouch } from '../composition/use-touch';
 
 // Component
 import Image from '../image';
@@ -19,8 +20,6 @@ function getDistance(touches) {
 }
 
 export default {
-  mixins: [TouchMixin],
-
   props: {
     src: String,
     show: Boolean,
@@ -31,8 +30,10 @@ export default {
     rootHeight: Number,
   },
 
-  data() {
-    return {
+  emits: ['scale', 'close'],
+
+  setup(props, { emit }) {
+    const state = reactive({
       scale: 1,
       moveX: 0,
       moveY: 0,
@@ -41,163 +42,183 @@ export default {
       imageRatio: 0,
       displayWidth: 0,
       displayHeight: 0,
-    };
-  },
+    });
 
-  computed: {
-    vertical() {
-      const { rootWidth, rootHeight } = this;
+    const touch = useTouch();
+
+    const vertical = computed(() => {
+      const { rootWidth, rootHeight } = props;
       const rootRatio = rootHeight / rootWidth;
-      return this.imageRatio > rootRatio;
-    },
+      return state.imageRatio > rootRatio;
+    });
 
-    imageStyle() {
-      const { scale } = this;
+    const imageStyle = computed(() => {
+      const { scale, moveX, moveY, moving, zooming } = state;
       const style = {
-        transitionDuration: this.zooming || this.moving ? '0s' : '.3s',
+        transitionDuration: zooming || moving ? '0s' : '.3s',
       };
 
       if (scale !== 1) {
-        const offsetX = this.moveX / scale;
-        const offsetY = this.moveY / scale;
+        const offsetX = moveX / scale;
+        const offsetY = moveY / scale;
         style.transform = `scale(${scale}, ${scale}) translate(${offsetX}px, ${offsetY}px)`;
       }
 
       return style;
-    },
+    });
 
-    maxMoveX() {
-      if (this.imageRatio) {
-        const displayWidth = this.vertical
-          ? this.rootHeight / this.imageRatio
-          : this.rootWidth;
+    const maxMoveX = computed(() => {
+      if (state.imageRatio) {
+        const { rootWidth, rootHeight } = props;
+        const displayWidth = vertical.value
+          ? rootHeight / state.imageRatio
+          : rootWidth;
 
-        return Math.max(0, (this.scale * displayWidth - this.rootWidth) / 2);
+        return Math.max(0, (state.scale * displayWidth - rootWidth) / 2);
       }
 
       return 0;
-    },
+    });
 
-    maxMoveY() {
-      if (this.imageRatio) {
-        const displayHeight = this.vertical
-          ? this.rootHeight
-          : this.rootWidth * this.imageRatio;
+    const maxMoveY = computed(() => {
+      if (state.imageRatio) {
+        const { rootWidth, rootHeight } = props;
+        const displayHeight = vertical.value
+          ? rootHeight
+          : rootWidth * state.imageRatio;
 
-        return Math.max(0, (this.scale * displayHeight - this.rootHeight) / 2);
+        return Math.max(0, (state.scale * displayHeight - rootHeight) / 2);
       }
 
       return 0;
-    },
-  },
+    });
 
-  watch: {
-    show(val) {
-      if (!val) {
-        this.resetScale();
-      }
-    },
-  },
-
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
-
-  methods: {
-    resetScale() {
-      this.setScale(1);
-      this.moveX = 0;
-      this.moveY = 0;
-    },
-
-    setScale(scale) {
-      this.scale = range(scale, +this.minZoom, +this.maxZoom);
-      this.$emit('scale', {
-        scale: this.scale,
-        index: this.active,
+    const setScale = (scale) => {
+      state.scale = range(scale, +props.minZoom, +props.maxZoom);
+      emit('scale', {
+        scale: state.scale,
+        index: state.active,
       });
-    },
+    };
 
-    toggleScale() {
-      const scale = this.scale > 1 ? 1 : 2;
+    const resetScale = () => {
+      setScale(1);
+      state.moveX = 0;
+      state.moveY = 0;
+    };
 
-      this.setScale(scale);
-      this.moveX = 0;
-      this.moveY = 0;
-    },
+    const toggleScale = () => {
+      const scale = state.scale > 1 ? 1 : 2;
 
-    onTouchStart(event) {
+      setScale(scale);
+      state.moveX = 0;
+      state.moveY = 0;
+    };
+
+    let startMoveX;
+    let startMoveY;
+    let startScale;
+    let startDistance;
+    let doubleTapTimer;
+    let touchStartTime;
+
+    const onTouchStart = (event) => {
       const { touches } = event;
-      const { offsetX = 0 } = this;
+      const { offsetX } = touch;
 
-      this.touchStart(event);
-      this.touchStartTime = new Date();
+      touch.start(event);
 
-      this.startMoveX = this.moveX;
-      this.startMoveY = this.moveY;
+      startMoveX = state.moveX;
+      startMoveY = state.moveY;
+      touchStartTime = new Date();
 
-      this.moving = touches.length === 1 && this.scale !== 1;
-      this.zooming = touches.length === 2 && !offsetX;
+      state.moving = touches.length === 1 && state.scale !== 1;
+      state.zooming = touches.length === 2 && !offsetX.value;
 
-      if (this.zooming) {
-        this.startScale = this.scale;
-        this.startDistance = getDistance(event.touches);
+      if (state.zooming) {
+        startScale = state.scale;
+        startDistance = getDistance(event.touches);
       }
-    },
+    };
 
-    onTouchMove(event) {
+    const onTouchMove = (event) => {
       const { touches } = event;
 
-      this.touchMove(event);
+      touch.move(event);
 
-      if (this.moving || this.zooming) {
+      if (state.moving || state.zooming) {
         preventDefault(event, true);
       }
 
-      if (this.moving) {
-        const moveX = this.deltaX + this.startMoveX;
-        const moveY = this.deltaY + this.startMoveY;
-        this.moveX = range(moveX, -this.maxMoveX, this.maxMoveX);
-        this.moveY = range(moveY, -this.maxMoveY, this.maxMoveY);
+      if (state.moving) {
+        const { deltaX, deltaY } = touch;
+        const moveX = deltaX.value + startMoveX;
+        const moveY = deltaY.value + startMoveY;
+        state.moveX = range(moveX, -maxMoveX.value, maxMoveX.value);
+        state.moveY = range(moveY, -maxMoveY.value, maxMoveY.value);
       }
 
-      if (this.zooming && touches.length === 2) {
+      if (state.zooming && touches.length === 2) {
         const distance = getDistance(touches);
-        const scale = (this.startScale * distance) / this.startDistance;
+        const scale = (startScale * distance) / startDistance;
 
-        this.setScale(scale);
+        setScale(scale);
       }
-    },
+    };
 
-    onTouchEnd(event) {
+    const checkTap = () => {
+      const { offsetX, offsetY } = touch;
+      const deltaTime = new Date() - touchStartTime;
+      const TAP_TIME = 250;
+      const TAP_OFFSET = 10;
+
+      if (
+        offsetX.value < TAP_OFFSET &&
+        offsetY.value < TAP_OFFSET &&
+        deltaTime < TAP_TIME
+      ) {
+        if (doubleTapTimer) {
+          clearTimeout(doubleTapTimer);
+          doubleTapTimer = null;
+          toggleScale();
+        } else {
+          doubleTapTimer = setTimeout(() => {
+            emit('close');
+            doubleTapTimer = null;
+          }, TAP_TIME);
+        }
+      }
+    };
+
+    const onTouchEnd = (event) => {
       let stopPropagation = false;
 
       /* istanbul ignore else */
-      if (this.moving || this.zooming) {
+      if (state.moving || state.zooming) {
         stopPropagation = true;
 
         if (
-          this.moving &&
-          this.startMoveX === this.moveX &&
-          this.startMoveY === this.moveY
+          state.moving &&
+          startMoveX === state.moveX &&
+          startMoveY === state.moveY
         ) {
           stopPropagation = false;
         }
 
         if (!event.touches.length) {
-          if (this.zooming) {
-            this.moveX = range(this.moveX, -this.maxMoveX, this.maxMoveX);
-            this.moveY = range(this.moveY, -this.maxMoveY, this.maxMoveY);
-            this.zooming = false;
+          if (state.zooming) {
+            state.moveX = range(state.moveX, -maxMoveX.value, maxMoveX.value);
+            state.moveY = range(state.moveY, -maxMoveY.value, maxMoveY.value);
+            state.zooming = false;
           }
 
-          this.moving = false;
-          this.startMoveX = 0;
-          this.startMoveY = 0;
-          this.startScale = 1;
+          state.moving = false;
+          startMoveX = 0;
+          startMoveY = 0;
+          startScale = 1;
 
-          if (this.scale < 1) {
-            this.resetScale();
+          if (state.scale < 1) {
+            resetScale();
           }
         }
       }
@@ -205,56 +226,47 @@ export default {
       // eliminate tap delay on safari
       preventDefault(event, stopPropagation);
 
-      this.checkTap();
-      this.resetTouchStatus();
-    },
-
-    checkTap() {
-      const { offsetX = 0, offsetY = 0 } = this;
-      const deltaTime = new Date() - this.touchStartTime;
-      const TAP_TIME = 250;
-      const TAP_OFFSET = 10;
-
-      if (
-        offsetX < TAP_OFFSET &&
-        offsetY < TAP_OFFSET &&
-        deltaTime < TAP_TIME
-      ) {
-        if (this.doubleTapTimer) {
-          clearTimeout(this.doubleTapTimer);
-          this.doubleTapTimer = null;
-          this.toggleScale();
-        } else {
-          this.doubleTapTimer = setTimeout(() => {
-            this.$emit('close');
-            this.doubleTapTimer = null;
-          }, TAP_TIME);
-        }
-      }
-    },
-
-    onLoad(event) {
-      const { naturalWidth, naturalHeight } = event.target;
-      this.imageRatio = naturalHeight / naturalWidth;
-    },
-  },
-
-  render() {
-    const imageSlots = {
-      loading: () => <Loading type="spinner" />,
+      checkTap();
+      touch.reset();
     };
 
-    return (
-      <SwipeItem class={bem('swipe-item')}>
-        <Image
-          src={this.src}
-          fit="contain"
-          class={bem('image', { vertical: this.vertical })}
-          style={this.imageStyle}
-          scopedSlots={imageSlots}
-          onLoad={this.onLoad}
-        />
-      </SwipeItem>
+    const onLoad = (event) => {
+      const { naturalWidth, naturalHeight } = event.target;
+      state.imageRatio = naturalHeight / naturalWidth;
+    };
+
+    watch(
+      () => props.show,
+      (value) => {
+        if (!value) {
+          resetScale();
+        }
+      }
     );
+
+    return () => {
+      const imageSlots = {
+        loading: () => <Loading type="spinner" />,
+      };
+
+      return (
+        <SwipeItem
+          class={bem('swipe-item')}
+          onTouchstart={onTouchStart}
+          onTouchmove={onTouchMove}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
+        >
+          <Image
+            v-slots={imageSlots}
+            src={props.src}
+            fit="contain"
+            class={bem('image', { vertical: vertical.value })}
+            style={imageStyle.value}
+            onLoad={onLoad}
+          />
+        </SwipeItem>
+      );
+    };
   },
 };

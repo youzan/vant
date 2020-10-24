@@ -1,47 +1,45 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-notice-bar :text="t('text')" scrollable left-icon="volume-o" />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-notice-bar :text="t('text')" scrollable left-icon="volume-o" />
+  </demo-block>
 
-    <demo-block :title="t('scrollable')">
-      <van-notice-bar scrollable :text="t('shortText')" />
-      <van-notice-bar :scrollable="false" :text="t('text')" />
-    </demo-block>
+  <demo-block :title="t('scrollable')">
+    <van-notice-bar scrollable :text="t('shortText')" />
+    <van-notice-bar :scrollable="false" :text="t('text')" />
+  </demo-block>
 
-    <demo-block :title="t('wrapable')">
-      <van-notice-bar wrapable :scrollable="false" :text="t('text')" />
-    </demo-block>
+  <demo-block :title="t('wrapable')">
+    <van-notice-bar wrapable :scrollable="false" :text="t('text')" />
+  </demo-block>
 
-    <demo-block :title="t('mode')">
-      <van-notice-bar mode="closeable" :text="t('shortText')" />
-      <van-notice-bar mode="link" :text="t('shortText')" />
-    </demo-block>
+  <demo-block :title="t('mode')">
+    <van-notice-bar mode="closeable" :text="t('shortText')" />
+    <van-notice-bar mode="link" :text="t('shortText')" />
+  </demo-block>
 
-    <demo-block :title="t('customStyle')">
-      <van-notice-bar
-        :text="t('shortText')"
-        color="#1989fa"
-        background="#ecf9ff"
-        left-icon="info-o"
-      />
-    </demo-block>
+  <demo-block :title="t('customStyle')">
+    <van-notice-bar
+      :text="t('shortText')"
+      color="#1989fa"
+      background="#ecf9ff"
+      left-icon="info-o"
+    />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('verticalScroll')">
-      <van-notice-bar left-icon="volume-o" :scrollable="false">
-        <van-swipe
-          vertical
-          class="notice-swipe"
-          :autoplay="3000"
-          :show-indicators="false"
-        >
-          <van-swipe-item>{{ t('content') }} 1</van-swipe-item>
-          <van-swipe-item>{{ t('content') }} 2</van-swipe-item>
-          <van-swipe-item>{{ t('content') }} 3</van-swipe-item>
-        </van-swipe>
-      </van-notice-bar>
-    </demo-block>
-  </demo-section>
+  <demo-block v-if="!isWeapp" :title="t('verticalScroll')">
+    <van-notice-bar left-icon="volume-o" :scrollable="false">
+      <van-swipe
+        vertical
+        class="notice-swipe"
+        :autoplay="3000"
+        :show-indicators="false"
+      >
+        <van-swipe-item>{{ t('content') }} 1</van-swipe-item>
+        <van-swipe-item>{{ t('content') }} 2</van-swipe-item>
+        <van-swipe-item>{{ t('content') }} 3</van-swipe-item>
+      </van-swipe>
+    </van-notice-bar>
+  </demo-block>
 </template>
 
 <script>

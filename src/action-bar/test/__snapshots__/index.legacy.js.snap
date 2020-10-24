@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render default slot 1`] = `
+<button class="van-button van-button--default van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--last">
+  <div class="van-button__content"><span class="van-button__text">Default Content</span></div>
+</button>
+`;
+
+exports[`Icon render default slot 1`] = `
+<div role="button" tabindex="0" class="van-action-bar-icon">
+  <div class="van-icon van-icon-undefined van-action-bar-icon__icon">
+    <!---->
+  </div>Default Content
+</div>
+`;
+
+exports[`Icon render icon slot 1`] = `
+<div role="button" tabindex="0" class="van-action-bar-icon">
+  <div class="van-action-bar-icon__icon">Custom Icon
+    <!---->
+  </div>Text
+</div>
+`;
+
+exports[`Icon render icon slot with dot 1`] = `
+<div role="button" tabindex="0" class="van-action-bar-icon">
+  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-badge van-badge--dot"></div>
+  </div>Text
+</div>
+`;
+
+exports[`Icon render icon slot with badge 1`] = `
+<div role="button" tabindex="0" class="van-action-bar-icon">
+  <div class="van-action-bar-icon__icon">Custom Icon<div class="van-badge">1</div>
+  </div>Text
+</div>
+`;
+
+exports[`disable safe-area-inset-bottom prop 1`] = `<div class="van-action-bar van-action-bar--unfit"></div>`;

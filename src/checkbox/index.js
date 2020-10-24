@@ -1,77 +1,86 @@
-import { createNamespace } from '../utils';
-import { CheckboxMixin } from '../mixins/checkbox';
+import { computed, watch } from 'vue';
+import { createNamespace, pick } from '../utils';
+import { useParent } from '@vant/use';
+import { useExpose } from '../composition/use-expose';
+import { useLinkField } from '../composition/use-link-field';
+import Checker, { checkerProps } from './Checker';
 
 const [createComponent, bem] = createNamespace('checkbox');
 
+export const CHECKBOX_KEY = 'vanCheckbox';
+
 export default createComponent({
-  mixins: [
-    CheckboxMixin({
-      bem,
-      role: 'checkbox',
-      parent: 'vanCheckbox',
-    }),
-  ],
-
-  computed: {
-    checked: {
-      get() {
-        if (this.parent) {
-          return this.parent.value.indexOf(this.name) !== -1;
-        }
-        return this.value;
-      },
-
-      set(val) {
-        if (this.parent) {
-          this.setParentValue(val);
-        } else {
-          this.$emit('input', val);
-        }
-      },
+  props: {
+    ...checkerProps,
+    // TODO
+    bindGroup: {
+      type: Boolean,
+      default: true,
     },
   },
 
-  watch: {
-    value(val) {
-      this.$emit('change', val);
-    },
-  },
+  emits: ['change', 'update:modelValue'],
 
-  methods: {
-    // @exposed-api
-    toggle(checked = !this.checked) {
-      // When toggle method is called multiple times at the same time,
-      // only the last call is valid.
-      // This is a hack for usage inside Cell.
-      clearTimeout(this.toggleTask);
-      this.toggleTask = setTimeout(() => {
-        this.checked = checked;
-      });
-    },
+  setup(props, { emit, slots }) {
+    const { parent } = useParent(CHECKBOX_KEY);
 
-    setParentValue(val) {
-      const { parent } = this;
-      const value = parent.value.slice();
+    const setParentValue = (checked) => {
+      const { name } = props;
+      const { max, modelValue } = parent.props;
+      const value = modelValue.slice();
 
-      if (val) {
-        if (parent.max && value.length >= parent.max) {
-          return;
-        }
+      if (checked) {
+        const overlimit = max && value.length >= max;
 
-        /* istanbul ignore else */
-        if (value.indexOf(this.name) === -1) {
-          value.push(this.name);
-          parent.$emit('input', value);
+        if (!overlimit && value.indexOf(name) === -1) {
+          value.push(name);
+          parent.emit('update:modelValue', value);
         }
       } else {
-        const index = value.indexOf(this.name);
+        const index = value.indexOf(name);
 
-        /* istanbul ignore else */
         if (index !== -1) {
           value.splice(index, 1);
-          parent.$emit('input', value);
+          parent.emit('update:modelValue', value);
         }
       }
-    },
+    };
+
+    const checked = computed(() => {
+      if (parent) {
+        return parent.props.modelValue.indexOf(props.name) !== -1;
+      }
+      return props.modelValue;
+    });
+
+    const toggle = (newValue = !checked.value) => {
+      if (parent) {
+        setParentValue(newValue);
+      } else {
+        emit('update:modelValue', newValue);
+      }
+    };
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        emit('change', value);
+      }
+    );
+
+    useExpose({ toggle, checked });
+    useLinkField(() => props.modelValue);
+
+    return () => (
+      <Checker
+        v-slots={pick(slots, ['default', 'icon'])}
+        bem={bem}
+        role="checkbox"
+        parent={parent}
+        checked={checked.value}
+        onToggle={toggle}
+        {...props}
+      />
+    );
   },
 });

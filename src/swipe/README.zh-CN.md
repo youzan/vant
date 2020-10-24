@@ -7,11 +7,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+const app = createApp();
+app.use(Swipe);
+app.use(SwipeItem);
 ```
 
 ## 代码演示
@@ -52,10 +53,11 @@ Vue.use(SwipeItem);
 ```
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload);
+const app = createApp();
+app.use(Lazyload);
 
 export default {
   data() {

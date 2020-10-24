@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Stepper } from 'vant';
 
-Vue.use(Stepper);
+const app = createApp();
+app.use(Stepper);
 ```
 
 ## Usage
@@ -72,7 +73,7 @@ export default {
 ### Async Change
 
 ```html
-<van-stepper :value="value" async-change @change="onChange" />
+<van-stepper :model-value="value" async-change @change="onChange" />
 ```
 
 ```js

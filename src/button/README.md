@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Button } from 'vant';
 
-Vue.use(Button);
+const app = createApp();
+app.use(Button);
 ```
 
 ## Usage
@@ -15,7 +16,7 @@ Vue.use(Button);
 
 ```html
 <van-button type="primary">Primary</van-button>
-<van-button type="info">Info</van-button>
+<van-button type="success">Success</van-button>
 <van-button type="default">Default</van-button>
 <van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
@@ -25,21 +26,21 @@ Vue.use(Button);
 
 ```html
 <van-button plain type="primary">Primary</van-button>
-<van-button plain type="info">Danger</van-button>
+<van-button plain type="primary">Danger</van-button>
 ```
 
 ### Hairline
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
-<van-button plain hairline type="info">Hairline</van-button>
+<van-button plain hairline type="primary">Hairline</van-button>
 ```
 
 ### Disabled
 
 ```html
 <van-button disabled type="primary">Diabled</van-button>
-<van-button disabled type="info">Diabled</van-button>
+<van-button disabled type="primary">Diabled</van-button>
 ```
 
 ### Loading
@@ -47,14 +48,14 @@ Vue.use(Button);
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="info" loading-text="Loading..." />
+<van-button loading type="primary" loading-text="Loading..." />
 ```
 
 ### Shape
 
 ```html
 <van-button square type="primary">Square</van-button>
-<van-button round type="info">Round</van-button>
+<van-button round type="primary">Round</van-button>
 ```
 
 ### Icon
@@ -62,7 +63,7 @@ Vue.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="primary">
   Button
 </van-button>
 ```
@@ -105,7 +106,7 @@ Vue.use(Button);
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
+| type | Can be set to `primary` `success` `warning` `danger` | _string_ | `default` |
 | size | Can be set to `large` `small` `mini` | _string_ | `normal` |
 | text | Text | _string_ | - |
 | color | Color, support linear-gradient | _string_ | - |
@@ -113,7 +114,7 @@ Vue.use(Button);
 | icon-prefix `v2.6.0` | Icon className prefix | _string_ | `van-icon` |
 | icon-position `v2.10.7` | Icon position, can be set to `right` | _string_ | `left` |
 | tag | HTML Tag | _string_ | `button` |
-| native-type | Native Type Attribute | _string_ | `''` |
+| native-type | Native Type Attribute | _string_ | `button` |
 | plain | Whether to be plain button | _boolean_ | `false` |
 | block | Whether to set display block | _boolean_ | `false` |
 | round | Whether to be round button | _boolean_ | `false` |

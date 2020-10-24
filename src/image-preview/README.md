@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ImagePreview } from 'vant';
 
-Vue.use(ImagePreview);
+const app = createApp();
+app.use(ImagePreview);
 ```
 
 ## Usage
@@ -62,7 +63,7 @@ ImagePreview({
 });
 ```
 
-### Async Close
+### Before Close
 
 ```js
 const instance = ImagePreview({
@@ -70,7 +71,7 @@ const instance = ImagePreview({
     'https://img.yzcdn.cn/vant/apple-1.jpg',
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
-  asyncClose: true,
+  beforeClose: () => false,
 });
 
 setTimeout(() => {
@@ -81,7 +82,7 @@ setTimeout(() => {
 ### Component Call
 
 ```html
-<van-image-preview v-model="show" :images="images" @change="onChange">
+<van-image-preview v-model:show="show" :images="images" @change="onChange">
   <template v-slot:index>Page: {{ index }}</template>
 </van-image-preview>
 ```
@@ -122,14 +123,14 @@ export default {
 | onChange | Triggered when current image change | _Function_ | - |
 | onScale | Triggered when current image scale | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
-| asyncClose | Whether to enable async close | _boolean_ | `false` |
+| beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _any_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
 | minZoom | Min zoom | _number \| string_ | `1/3` |
 | closeable `v2.5.0` | Whether to show close icon | _boolean_ | `false` |
 | closeIcon `v2.5.0` | Close icon name | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| getContainer | Return the mount node for ImagePreview | _string \| () => Element_ | - |
+| teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
 
 ### Props
 
@@ -141,7 +142,7 @@ export default {
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| async-close | Whether to enable async close | _boolean_ | `false` |
+| before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | class-name | Custom className | _any_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
@@ -149,7 +150,7 @@ export default {
 | closeable `v2.5.0` | Whether to show close icon | _boolean_ | `false` |
 | close-icon `v2.5.0` | Close icon name | _string_ | `clear` |
 | close-icon-position `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| get-container | Return the mount node for ImagePreview | _string \| () => Element_ | - |
+| teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
 
 ### Events
 

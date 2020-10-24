@@ -1,4 +1,4 @@
-import { isDef, inBrowser } from '..';
+import { isDef, inBrowser } from '../base';
 import { isNumeric } from '../validate/number';
 
 export function addUnit(value?: string | number): string | undefined {
@@ -6,8 +6,17 @@ export function addUnit(value?: string | number): string | undefined {
     return undefined;
   }
 
-  value = String(value);
-  return isNumeric(value) ? `${value}px` : value;
+  return isNumeric(value) ? `${value}px` : String(value);
+}
+
+export function getSizeStyle(originSize?: string | number) {
+  if (isDef(originSize)) {
+    const size = addUnit(originSize);
+    return {
+      width: size,
+      height: size,
+    };
+  }
 }
 
 // cache

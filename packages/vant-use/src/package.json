@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "vue": "^3.0.0"
+  }
+}

@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Overlay } from 'vant';
 
-Vue.use(Overlay);
+const app = createApp();
+app.use(Overlay);
 ```
 
 ## Usage

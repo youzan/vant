@@ -1,52 +1,35 @@
-// Utils
+import { PropType } from 'vue';
 import { createNamespace } from '../utils';
-import { inherit } from '../utils/functional';
-
-// Types
-import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
-
-export type DividerProps = {
-  dashed?: boolean;
-  hairline: boolean;
-  borderColor?: string;
-  contentPosition: 'left' | 'center' | 'right';
-};
 
 const [createComponent, bem] = createNamespace('divider');
 
-function Divider(
-  h: CreateElement,
-  props: DividerProps,
-  slots: DefaultSlots,
-  ctx: RenderContext
-) {
-  return (
-    <div
-      role="separator"
-      style={{ borderColor: props.borderColor }}
-      class={bem({
-        dashed: props.dashed,
-        hairline: props.hairline,
-        [`content-${props.contentPosition}`]: slots.default,
-      })}
-      {...inherit(ctx, true)}
-    >
-      {slots.default && slots.default()}
-    </div>
-  );
-}
+export type DividerContentPosition = 'left' | 'center' | 'right';
 
-Divider.props = {
-  dashed: Boolean,
-  hairline: {
-    type: Boolean,
-    default: true,
+export default createComponent({
+  props: {
+    dashed: Boolean,
+    hairline: {
+      type: Boolean,
+      default: true,
+    },
+    contentPosition: {
+      type: String as PropType<DividerContentPosition>,
+      default: 'center',
+    },
   },
-  contentPosition: {
-    type: String,
-    default: 'center',
-  },
-};
 
-export default createComponent<DividerProps>(Divider);
+  setup(props, { slots }) {
+    return () => (
+      <div
+        role="separator"
+        class={bem({
+          dashed: props.dashed,
+          hairline: props.hairline,
+          [`content-${props.contentPosition}`]: !!slots.default,
+        })}
+      >
+        {slots.default?.()}
+      </div>
+    );
+  },
+});

@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ShareSheet } from 'vant';
 
-Vue.use(ShareSheet);
+const app = createApp();
+app.use(ShareSheet);
 ```
 
 ## Usage
@@ -16,7 +17,7 @@ Vue.use(ShareSheet);
 ```html
 <van-cell title="Show ShareSheet" @click="showShare = true" />
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="Share"
   :options="options"
   @select="onSelect"
@@ -51,7 +52,7 @@ export default {
 ### Multi Line
 
 ```html
-<van-share-sheet v-model="showShare" title="Share" :options="options" />
+<van-share-sheet v-model:show="showShare" title="Share" :options="options" />
 ```
 
 ```js
@@ -80,7 +81,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   :options="options"
   title="Share"
   description="Description"
@@ -110,6 +111,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model:show | Whether to show ShareSheet | _boolean_ | `false` |
 | options | Share options | _Option[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Cancel button text | _string_ | `'Cancel'` |
@@ -121,7 +123,7 @@ export default {
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| get-container | Return the mount node for ShareSheet | _string \| () => Element_ | - |
+| teleport | Return the mount node for ShareSheet | _string \| Element_ | - |
 
 ### Data Structure of Option
 

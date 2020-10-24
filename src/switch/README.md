@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Switch } from 'vant';
 
-Vue.use(Switch);
+const app = createApp();
+app.use(Switch);
 ```
 
 ## Usage
@@ -54,7 +55,7 @@ export default {
 ### Async Control
 
 ```html
-<van-switch :value="checked" @input="onInput" />
+<van-switch :model-value="checked" @update:model-value="onUpdateValue" />
 ```
 
 ```js
@@ -65,7 +66,7 @@ export default {
     };
   },
   methods: {
-    onInput(checked) {
+    onUpdateValue(checked) {
       Dialog.confirm({
         title: 'Confirm',
         message: 'Are you sure to toggle switch?',

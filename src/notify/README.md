@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Notify } from 'vant';
 
-Vue.use(Notify);
+const app = createApp();
+app.use(Notify);
 ```
 
 ## Usage
@@ -43,7 +44,7 @@ Notify({
 
 ### Global Method
 
-After import the Notify component, the `$notify` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Notify component through `app.use`, the `$notify` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {
@@ -57,7 +58,7 @@ export default {
 
 ```html
 <van-button type="primary" text="Component Call" @click="showNotify" />
-<van-notify v-model="show" type="success">
+<van-notify v-model:show="show" type="success">
   <van-icon name="bell" style="margin-right: 4px;" />
   <span>Content</span>
 </van-notify>

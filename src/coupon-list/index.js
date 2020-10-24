@@ -1,5 +1,11 @@
+import { watch, computed, nextTick, onMounted, reactive } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
+
+// Composition
+import { useWindowSize } from '@vant/use';
+import { useRefs } from '../composition/use-refs';
 
 // Components
 import Tab from '../tab';
@@ -12,16 +18,12 @@ const [createComponent, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default createComponent({
-  model: {
-    prop: 'code',
-  },
-
   props: {
     code: String,
-    closeButtonText: String,
-    inputPlaceholder: String,
     enabledTitle: String,
     disabledTitle: String,
+    closeButtonText: String,
+    inputPlaceholder: String,
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
@@ -67,178 +69,170 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
+  emits: ['change', 'exchange', 'update:code'],
+
+  setup(props, { emit }) {
+    const [couponRefs, setCouponRefs] = useRefs();
+
+    const state = reactive({
       tab: 0,
-      winHeight: window.innerHeight,
-      currentCode: this.code || '',
-    };
-  },
+      code: props.code || '',
+    });
 
-  computed: {
-    buttonDisabled() {
-      return (
-        !this.exchangeButtonLoading &&
-        (this.exchangeButtonDisabled ||
-          !this.currentCode ||
-          this.currentCode.length < this.exchangeMinLength)
-      );
-    },
+    const { height: windowHeight } = useWindowSize();
 
-    listStyle() {
-      return {
-        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px',
-      };
-    },
-  },
+    const buttonDisabled = computed(
+      () =>
+        !props.exchangeButtonLoading &&
+        (props.exchangeButtonDisabled ||
+          !state.code ||
+          state.code.length < props.exchangeMinLength)
+    );
 
-  watch: {
-    code(code) {
-      this.currentCode = code;
-    },
+    const listStyle = computed(() => ({
+      height: windowHeight.value - (props.showExchangeBar ? 140 : 94) + 'px',
+    }));
 
-    currentCode(code) {
-      this.$emit('input', code);
-    },
-
-    displayedCouponIndex: 'scrollToShowCoupon',
-  },
-
-  mounted() {
-    this.scrollToShowCoupon(this.displayedCouponIndex);
-  },
-
-  methods: {
-    onClickExchangeButton() {
-      this.$emit('exchange', this.currentCode);
+    const onExchange = () => {
+      emit('exchange', state.code);
 
       // auto clear currentCode when not use vModel
-      if (!this.code) {
-        this.currentCode = '';
+      if (!props.code) {
+        state.code = '';
       }
-    },
+    };
 
-    // scroll to show specific coupon
-    scrollToShowCoupon(index) {
-      if (index === -1) {
-        return;
-      }
-
-      this.$nextTick(() => {
-        const { card, list } = this.$refs;
-
-        /* istanbul ignore next */
-        if (list && card && card[index]) {
-          list.scrollTop = card[index].$el.offsetTop - 100;
+    const scrollToCoupon = (index) => {
+      nextTick(() => {
+        if (couponRefs.value[index]) {
+          couponRefs.value[index].scrollIntoView();
         }
       });
-    },
+    };
 
-    genEmpty() {
-      return (
-        <div class={bem('empty')}>
-          <img src={this.emptyImage} />
-          <p>{t('empty')}</p>
-        </div>
-      );
-    },
-
-    genExchangeButton() {
-      return (
-        <Button
-          plain
-          type="danger"
-          class={bem('exchange')}
-          text={this.exchangeButtonText || t('exchange')}
-          loading={this.exchangeButtonLoading}
-          disabled={this.buttonDisabled}
-          onClick={this.onClickExchangeButton}
-        />
-      );
-    },
-  },
-
-  render() {
-    const { coupons, disabledCoupons } = this;
-
-    const count = this.showCount ? ` (${coupons.length})` : '';
-    const title = (this.enabledTitle || t('enable')) + count;
-
-    const disabledCount = this.showCount ? ` (${disabledCoupons.length})` : '';
-    const disabledTitle = (this.disabledTitle || t('disabled')) + disabledCount;
-
-    const ExchangeBar = this.showExchangeBar && (
-      <div class={bem('exchange-bar')}>
-        <Field
-          vModel={this.currentCode}
-          clearable
-          border={false}
-          class={bem('field')}
-          placeholder={this.inputPlaceholder || t('placeholder')}
-          maxlength="20"
-        />
-        {this.genExchangeButton()}
+    const renderEmpty = () => (
+      <div class={bem('empty')}>
+        <img src={props.emptyImage} />
+        <p>{t('empty')}</p>
       </div>
     );
 
-    const onChange = (index) => () => this.$emit('change', index);
-
-    const CouponTab = (
-      <Tab title={title}>
-        <div
-          class={bem('list', { 'with-bottom': this.showCloseButton })}
-          style={this.listStyle}
-        >
-          {coupons.map((coupon, index) => (
-            <Coupon
-              ref="card"
-              key={coupon.id}
-              coupon={coupon}
-              currency={this.currency}
-              chosen={index === this.chosenCoupon}
-              nativeOnClick={onChange(index)}
+    const renderExchangeBar = () => {
+      if (props.showExchangeBar) {
+        return (
+          <div class={bem('exchange-bar')}>
+            <Field
+              vModel={state.code}
+              clearable
+              border={false}
+              class={bem('field')}
+              placeholder={props.inputPlaceholder || t('placeholder')}
+              maxlength="20"
             />
-          ))}
-          {!coupons.length && this.genEmpty()}
-        </div>
-      </Tab>
+            <Button
+              plain
+              type="danger"
+              class={bem('exchange')}
+              text={props.exchangeButtonText || t('exchange')}
+              loading={props.exchangeButtonLoading}
+              disabled={buttonDisabled.value}
+              onClick={onExchange}
+            />
+          </div>
+        );
+      }
+    };
+
+    const renderCouponTab = () => {
+      const { coupons } = props;
+      const count = props.showCount ? ` (${coupons.length})` : '';
+      const title = (props.enabledTitle || t('enable')) + count;
+
+      return (
+        <Tab title={title}>
+          <div
+            class={bem('list', { 'with-bottom': props.showCloseButton })}
+            style={listStyle.value}
+          >
+            {coupons.map((coupon, index) => (
+              <Coupon
+                key={coupon.id}
+                ref={setCouponRefs(index)}
+                coupon={coupon}
+                chosen={index === props.chosenCoupon}
+                currency={props.currency}
+                onClick={() => emit('change', index)}
+              />
+            ))}
+            {!coupons.length && renderEmpty()}
+          </div>
+        </Tab>
+      );
+    };
+
+    const renderDisabledTab = () => {
+      const { disabledCoupons } = props;
+      const count = props.showCount ? ` (${disabledCoupons.length})` : '';
+      const title = (props.disabledTitle || t('disabled')) + count;
+
+      return (
+        <Tab title={title}>
+          <div
+            class={bem('list', { 'with-bottom': props.showCloseButton })}
+            style={listStyle.value}
+          >
+            {disabledCoupons.map((coupon) => (
+              <Coupon
+                disabled
+                key={coupon.id}
+                coupon={coupon}
+                currency={props.currency}
+              />
+            ))}
+            {!disabledCoupons.length && renderEmpty()}
+          </div>
+        </Tab>
+      );
+    };
+
+    watch(
+      () => props.code,
+      (value) => {
+        state.code = value;
+      }
     );
 
-    const DisabledCouponTab = (
-      <Tab title={disabledTitle}>
-        <div
-          class={bem('list', { 'with-bottom': this.showCloseButton })}
-          style={this.listStyle}
-        >
-          {disabledCoupons.map((coupon) => (
-            <Coupon
-              disabled
-              key={coupon.id}
-              coupon={coupon}
-              currency={this.currency}
-            />
-          ))}
-          {!disabledCoupons.length && this.genEmpty()}
-        </div>
-      </Tab>
+    watch(
+      () => state.code,
+      (value) => {
+        emit('update:code', value);
+      }
     );
 
-    return (
+    watch(() => props.displayedCouponIndex, scrollToCoupon);
+
+    onMounted(() => {
+      scrollToCoupon(props.displayedCouponIndex);
+    });
+
+    return () => (
       <div class={bem()}>
-        {ExchangeBar}
-        <Tabs vModel={this.tab} class={bem('tab')} border={false}>
-          {CouponTab}
-          {DisabledCouponTab}
+        {renderExchangeBar()}
+        <Tabs vModel={state.tab} class={bem('tab')} border={false}>
+          {renderCouponTab()}
+          {renderDisabledTab()}
         </Tabs>
         <div class={bem('bottom')}>
           <Button
-            vShow={this.showCloseButton}
+            v-show={props.showCloseButton}
             round
-            type="danger"
             block
+            type="danger"
             class={bem('close')}
-            text={this.closeButtonText || t('close')}
-            onClick={onChange(-1)}
+            text={props.closeButtonText || t('close')}
+            onClick={() => {
+              emit('change', -1);
+            }}
           />
         </div>
       </div>

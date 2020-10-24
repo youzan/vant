@@ -1,49 +1,47 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-rate v-model="value1" />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-rate v-model="value1" />
+  </demo-block>
 
-    <demo-block :title="t('customIcon')">
-      <van-rate v-model="value2" icon="like" void-icon="like-o" />
-    </demo-block>
+  <demo-block :title="t('customIcon')">
+    <van-rate v-model="value2" icon="like" void-icon="like-o" />
+  </demo-block>
 
-    <demo-block :title="t('customStyle')">
-      <van-rate
-        v-model="value3"
-        :size="25"
-        color="#ffd21e"
-        void-icon="star"
-        void-color="#eee"
-      />
-    </demo-block>
+  <demo-block :title="t('customStyle')">
+    <van-rate
+      v-model="value3"
+      :size="25"
+      color="#ffd21e"
+      void-icon="star"
+      void-color="#eee"
+    />
+  </demo-block>
 
-    <demo-block :title="t('halfStar')">
-      <van-rate
-        v-model="value4"
-        :size="25"
-        allow-half
-        void-icon="star"
-        void-color="#eee"
-      />
-    </demo-block>
+  <demo-block :title="t('halfStar')">
+    <van-rate
+      v-model="value4"
+      :size="25"
+      allow-half
+      void-icon="star"
+      void-color="#eee"
+    />
+  </demo-block>
 
-    <demo-block :title="t('customCount')">
-      <van-rate v-model="value5" :count="6" />
-    </demo-block>
+  <demo-block :title="t('customCount')">
+    <van-rate v-model="value5" :count="6" />
+  </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-rate v-model="value6" disabled />
-    </demo-block>
+  <demo-block :title="t('disabled')">
+    <van-rate v-model="value6" disabled />
+  </demo-block>
 
-    <demo-block :title="t('readonly')">
-      <van-rate v-model="value6" readonly />
-    </demo-block>
+  <demo-block :title="t('readonly')">
+    <van-rate v-model="value6" readonly />
+  </demo-block>
 
-    <demo-block v-if="!isWeapp" :title="t('changeEvent')">
-      <van-rate v-model="value7" @change="onChange" />
-    </demo-block>
-  </demo-section>
+  <demo-block v-if="!isWeapp" :title="t('changeEvent')">
+    <van-rate v-model="value7" @change="onChange" />
+  </demo-block>
 </template>
 
 <script>

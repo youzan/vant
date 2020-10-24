@@ -1,16 +1,14 @@
 <template>
-  <demo-section>
-    <basic-usage />
-    <custom-type />
-    <disabled />
-    <show-icon />
-    <error-info />
-    <insert-button />
-    <format-value />
-    <autosize />
-    <show-word-limit />
-    <input-align />
-  </demo-section>
+  <basic-usage />
+  <custom-type />
+  <disabled />
+  <show-icon />
+  <error-info />
+  <insert-button />
+  <format-value />
+  <autosize />
+  <show-word-limit />
+  <input-align />
 </template>
 
 <script>

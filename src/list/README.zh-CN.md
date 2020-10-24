@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { List } from 'vant';
 
-Vue.use(List);
+const app = createApp();
+app.use(List);
 ```
 
 ## 代码演示
@@ -21,7 +22,7 @@ List 组件通过 `loading` 和 `finished` 两个变量控制加载状态，当�
 
 ```html
 <van-list
-  v-model="loading"
+  v-model:loading="loading"
   :finished="finished"
   finished-text="没有更多了"
   @load="onLoad"
@@ -67,8 +68,8 @@ export default {
 
 ```html
 <van-list
-  v-model="loading"
-  :error.sync="error"
+  v-model:loading="loading"
+  v-model:error="error"
   error-text="请求失败，点击重新加载"
   @load="onLoad"
 >
@@ -102,7 +103,7 @@ List 组件可以与 [PullRefresh](#/zh-CN/pull-refresh) 组件结合使用，�
 ```html
 <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
   <van-list
-    v-model="loading"
+    v-model:loading="loading"
     :finished="finished"
     finished-text="没有更多了"
     @load="onLoad"
@@ -159,7 +160,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 是否处于加载状态，加载过程中不触发`load`事件 | _boolean_ | `false` |
+| v-model:loading | 是否处于加载状态，加载过程中不触发`load`事件 | _boolean_ | `false` |
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | _boolean_ | `false` |
 | error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | _boolean_ | `false` |
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | _number \| string_ | `300` |

@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ActionSheet } from 'vant';
 
-Vue.use(ActionSheet);
+const app = createApp();
+app.use(ActionSheet);
 ```
 
 ## 代码演示
@@ -21,7 +22,7 @@ Vue.use(ActionSheet);
 
 ```html
 <van-cell is-link title="基础用法" @click="show = true" />
-<van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
 ```
 
 ```js
@@ -51,7 +52,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="取消"
   close-on-click-action
@@ -83,7 +84,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="取消"
   description="这是一段描述信息"
@@ -112,7 +113,7 @@ export default {
 
 ```html
 <van-action-sheet
-  v-model="show"
+  v-model:show="show"
   :actions="actions"
   cancel-text="取消"
   close-on-click-action
@@ -139,7 +140,7 @@ export default {
 通过插槽可以自定义面板的展示内容，同时可以使用`title`属性展示标题栏
 
 ```html
-<van-action-sheet v-model="show" title="标题">
+<van-action-sheet v-model:show="show" title="标题">
   <div class="content">内容</div>
 </van-action-sheet>
 
@@ -156,7 +157,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) | 是否显示动作面板 | _boolean_ | `false` |
+| v-model:show | 是否显示动作面板 | _boolean_ | `false` |
 | actions | 面板选项列表 | _Action[]_ | `[]` |
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字 | _string_ | - |
@@ -172,7 +173,7 @@ export default {
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Action 数据结构
 

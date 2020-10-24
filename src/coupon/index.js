@@ -1,6 +1,6 @@
-import { createNamespace } from '../utils';
+import { computed } from 'vue';
+import { padZero, createNamespace } from '../utils';
 import { RED } from '../utils/constant';
-import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 
 const [createComponent, bem, t] = createNamespace('coupon');
@@ -33,22 +33,22 @@ export default createComponent({
     },
   },
 
-  computed: {
-    validPeriod() {
-      const { startAt, endAt } = this.coupon;
+  setup(props) {
+    const validPeriod = computed(() => {
+      const { startAt, endAt } = props.coupon;
       return `${getDate(startAt)} - ${getDate(endAt)}`;
-    },
+    });
 
-    faceAmount() {
-      const { coupon } = this;
+    const faceAmount = computed(() => {
+      const { coupon, currency } = props;
 
       if (coupon.valueDesc) {
-        return `${coupon.valueDesc}<span>${coupon.unitDesc || ''}</span>`;
+        return [coupon.valueDesc, <span>{coupon.unitDesc || ''}</span>];
       }
 
       if (coupon.denominations) {
         const denominations = formatAmount(coupon.denominations);
-        return `<span>${this.currency}</span> ${denominations}`;
+        return [<span>{currency}</span>, ` ${denominations}`];
       }
 
       if (coupon.discount) {
@@ -56,42 +56,42 @@ export default createComponent({
       }
 
       return '';
-    },
+    });
 
-    conditionMessage() {
-      const condition = formatAmount(this.coupon.originCondition);
+    const conditionMessage = computed(() => {
+      const condition = formatAmount(props.coupon.originCondition);
       return condition === '0' ? t('unlimited') : t('condition', condition);
-    },
-  },
+    });
 
-  render() {
-    const { coupon, disabled } = this;
-    const description = (disabled && coupon.reason) || coupon.description;
+    return () => {
+      const { chosen, coupon, disabled } = props;
+      const description = (disabled && coupon.reason) || coupon.description;
 
-    return (
-      <div class={bem({ disabled })}>
-        <div class={bem('content')}>
-          <div class={bem('head')}>
-            <h2 class={bem('amount')} domPropsInnerHTML={this.faceAmount} />
-            <p class={bem('condition')}>
-              {this.coupon.condition || this.conditionMessage}
-            </p>
+      return (
+        <div class={bem({ disabled })}>
+          <div class={bem('content')}>
+            <div class={bem('head')}>
+              <h2 class={bem('amount')}>{faceAmount.value}</h2>
+              <p class={bem('condition')}>
+                {coupon.condition || conditionMessage.value}
+              </p>
+            </div>
+            <div class={bem('body')}>
+              <p class={bem('name')}>{coupon.name}</p>
+              <p class={bem('valid')}>{validPeriod.value}</p>
+              {!disabled && (
+                <Checkbox
+                  size={18}
+                  class={bem('corner')}
+                  modelValue={chosen}
+                  checkedColor={RED}
+                />
+              )}
+            </div>
           </div>
-          <div class={bem('body')}>
-            <p class={bem('name')}>{coupon.name}</p>
-            <p class={bem('valid')}>{this.validPeriod}</p>
-            {!this.disabled && (
-              <Checkbox
-                size={18}
-                value={this.chosen}
-                class={bem('corner')}
-                checkedColor={RED}
-              />
-            )}
-          </div>
+          {description && <p class={bem('description')}>{description}</p>}
         </div>
-        {description && <p class={bem('description')}>{description}</p>}
-      </div>
-    );
+      );
+    };
   },
 });

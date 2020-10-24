@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Slider } from 'vant';
 
-Vue.use(Slider);
+const app = createApp();
+app.use(Slider);
 ```
 
 ## Usage
@@ -153,7 +154,7 @@ export default {
 | button-size `v2.4.5` | Button size | _number \| string_ | `24px` |
 | active-color | Active color of bar | _string_ | `#1989fa` |
 | inactive-color | Inactive color of bar | _string_ | `#e5e5e5` |
-| range `v2.10.7` | Whether to enable dual thumb mode | _boolean_ | `false` |
+| range | Whether to enable dual thumb mode | _boolean_ | `false` |
 | disabled | Whether to disable slider | _boolean_ | `false` |
 | vertical | Whether to display slider vertically | _boolean_ | `false` |
 

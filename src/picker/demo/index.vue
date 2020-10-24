@@ -1,85 +1,69 @@
 <template>
-  <demo-section>
-    <demo-block card :title="t('basicUsage')">
+  <demo-block card :title="t('basicUsage')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('textColumns')"
+      @change="onChange1"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('defaultIndex')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('textColumns')"
+      :default-index="2"
+      @change="onChange1"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('multipleColumns')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('dateColumns')"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('cascade')">
+    <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('disableOption')">
+    <van-picker :title="t('title')" :columns="t('disabledColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('setColumnValues')">
+    <van-picker
+      ref="picker"
+      :title="t('title')"
+      :columns="columns"
+      @change="onChange2"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('loadingStatus')">
+    <van-picker loading :title="t('title')" :columns="columns" />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('withPopup')">
+    <van-field
+      v-model="fieldValue"
+      readonly
+      clickable
+      :label="t('city')"
+      :placeholder="t('chooseCity')"
+      @click="onClickField"
+    />
+    <van-popup v-model:show="showPicker" round position="bottom">
       <van-picker
-        show-toolbar
         :title="t('title')"
         :columns="t('textColumns')"
-        @change="onChange1"
+        @cancel="onCancel2"
+        @confirm="onConfirm2"
       />
-    </demo-block>
-
-    <demo-block card :title="t('defaultIndex')">
-      <van-picker
-        show-toolbar
-        :title="t('title')"
-        :columns="t('textColumns')"
-        :default-index="2"
-        @change="onChange1"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('multipleColumns')">
-      <van-picker
-        show-toolbar
-        :title="t('title')"
-        :columns="t('dateColumns')"
-        @cancel="onCancel"
-        @confirm="onConfirm"
-      />
-    </demo-block>
-
-    <demo-block card v-if="!isWeapp" :title="t('cascade')">
-      <van-picker
-        show-toolbar
-        :title="t('title')"
-        :columns="t('cascadeColumns')"
-        @cancel="onCancel"
-        @confirm="onConfirm"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('disableOption')">
-      <van-picker
-        show-toolbar
-        :title="t('title')"
-        :columns="t('disabledColumns')"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('setColumnValues')">
-      <van-picker
-        show-toolbar
-        :title="t('title')"
-        :columns="columns"
-        @change="onChange2"
-      />
-    </demo-block>
-
-    <demo-block card :title="t('loadingStatus')">
-      <van-picker loading show-toolbar :title="t('title')" :columns="columns" />
-    </demo-block>
-
-    <demo-block card v-if="!isWeapp" :title="t('withPopup')">
-      <van-field
-        readonly
-        clickable
-        :label="t('city')"
-        :value="fieldValue"
-        :placeholder="t('chooseCity')"
-        @click="onClickField"
-      />
-      <van-popup v-model="showPicker" round position="bottom">
-        <van-picker
-          show-toolbar
-          :title="t('title')"
-          :columns="t('textColumns')"
-          @cancel="onCancel2"
-          @confirm="onConfirm2"
-        />
-      </van-popup>
-    </demo-block>
-  </demo-section>
+    </van-popup>
+  </demo-block>
 </template>
 
 <script>
@@ -171,12 +155,12 @@ export default {
   },
 
   methods: {
-    onChange1(picker, value, index) {
+    onChange1(value, index) {
       this.$toast(this.t('toastContent', value, index));
     },
 
-    onChange2(picker, values) {
-      picker.setColumnValues(1, this.t('column3')[values[0]]);
+    onChange2(values) {
+      this.$refs.picker.setColumnValues(1, this.t('column3')[values[0]]);
     },
 
     onConfirm(value, index) {

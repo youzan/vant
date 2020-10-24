@@ -1,6 +1,6 @@
 import { ConfigAPI } from '@babel/core';
 
-module.exports = function(api?: ConfigAPI) {
+module.exports = function (api?: ConfigAPI) {
   if (api) {
     api.cache.never();
   }
@@ -16,12 +16,6 @@ module.exports = function(api?: ConfigAPI) {
         {
           loose: true,
           modules: useESModules ? false : 'commonjs',
-        },
-      ],
-      [
-        '@vue/babel-preset-jsx',
-        {
-          functional: false,
         },
       ],
       '@babel/preset-typescript',
@@ -43,6 +37,7 @@ module.exports = function(api?: ConfigAPI) {
         },
         'vant',
       ],
+      '@vue/babel-plugin-jsx',
       '@babel/plugin-transform-object-assign',
     ],
   };

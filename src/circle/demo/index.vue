@@ -1,72 +1,70 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-circle
-        v-model="currentRate1"
-        :rate="rate"
-        :speed="100"
-        :text="currentRate1.toFixed(0) + '%'"
-      />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-circle
+      v-model:current-rate="currentRate1"
+      :rate="rate"
+      :speed="100"
+      :text="currentRate1.toFixed(0) + '%'"
+    />
+  </demo-block>
 
-    <demo-block :title="t('customStyle')">
-      <van-circle
-        v-model="currentRate3"
-        :rate="rate"
-        :speed="100"
-        :stroke-width="60"
-        :text="t('customWidth')"
-      />
+  <demo-block :title="t('customStyle')">
+    <van-circle
+      v-model:current-rate="currentRate3"
+      :rate="rate"
+      :speed="100"
+      :stroke-width="60"
+      :text="t('customWidth')"
+    />
 
-      <van-circle
-        v-model="currentRate3"
-        color="#ee0a24"
-        :rate="rate"
-        layer-color="#ebedf0"
-        :speed="100"
-        :text="t('customColor')"
-      />
+    <van-circle
+      v-model:current-rate="currentRate3"
+      color="#ee0a24"
+      :rate="rate"
+      layer-color="#ebedf0"
+      :speed="100"
+      :text="t('customColor')"
+    />
 
-      <van-circle
-        v-model="currentRate2"
-        :rate="rate"
-        :speed="100"
-        :color="gradientColor"
-        :text="t('gradient')"
-      />
+    <van-circle
+      v-model:current-rate="currentRate2"
+      :rate="rate"
+      :speed="100"
+      :color="gradientColor"
+      :text="t('gradient')"
+    />
 
-      <van-circle
-        v-model="currentRate4"
-        color="#07c160"
-        :rate="rate"
-        :speed="100"
-        :clockwise="false"
-        :text="t('counterClockwise')"
-        style="margin-top: 15px;"
-      />
+    <van-circle
+      v-model:current-rate="currentRate4"
+      color="#07c160"
+      :rate="rate"
+      :speed="100"
+      :clockwise="false"
+      :text="t('counterClockwise')"
+      style="margin-top: 15px;"
+    />
 
-      <van-circle
-        v-model="currentRate4"
-        color="#7232dd"
-        :rate="rate"
-        :speed="100"
-        size="120px"
-        :clockwise="false"
-        :text="t('customSize')"
-        style="margin-top: 15px;"
-      />
-    </demo-block>
+    <van-circle
+      v-model:current-rate="currentRate4"
+      color="#7232dd"
+      :rate="rate"
+      :speed="100"
+      size="120px"
+      :clockwise="false"
+      :text="t('customSize')"
+      style="margin-top: 15px;"
+    />
+  </demo-block>
 
-    <div style="margin-top: 15px;">
-      <van-button :text="t('add')" type="primary" size="small" @click="add" />
-      <van-button
-        :text="t('decrease')"
-        type="danger"
-        size="small"
-        @click="reduce"
-      />
-    </div>
-  </demo-section>
+  <div style="margin-top: 15px;">
+    <van-button :text="t('add')" type="primary" size="small" @click="add" />
+    <van-button
+      :text="t('decrease')"
+      type="danger"
+      size="small"
+      @click="reduce"
+    />
+  </div>
 </template>
 
 <script>

@@ -7,11 +7,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Collapse, CollapseItem } from 'vant';
 
-Vue.use(Collapse);
-Vue.use(CollapseItem);
+const app = createApp();
+app.use(Collapse);
+app.use(CollapseItem);
 ```
 
 ## 代码演示

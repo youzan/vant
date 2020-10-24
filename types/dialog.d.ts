@@ -15,7 +15,7 @@ export type DialogOptions = {
   transition?: string;
   messageAlign?: string;
   overlayClass?: string;
-  overlayStyle?: object;
+  overlayStyle?: Record<string, any>;
   closeOnPopstate?: boolean;
   cancelButtonText?: string;
   cancelButtonColor?: string;
@@ -39,8 +39,8 @@ export interface Dialog {
   Component: typeof VanComponent;
 }
 
-declare module 'vue/types/vue' {
-  interface Vue {
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
     $dialog: Dialog;
   }
 }

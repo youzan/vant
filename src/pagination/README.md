@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Pagination } from 'vant';
 
-Vue.use(Pagination);
+const app = createApp();
+app.use(Pagination);
 ```
 
 ## Usage

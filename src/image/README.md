@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Image as VanImage } from 'vant';
 
-Vue.use(VanImage);
+const app = createApp();
+app.use(VanImage);
 ```
 
 ## Usage
@@ -53,10 +54,11 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`.
 ```
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Lazyload } from 'vant';
 
-Vue.use(Lazyload);
+const app = createApp();
+app.use(Lazyload);
 ```
 
 ## API

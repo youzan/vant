@@ -1,49 +1,47 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-submit-bar
-        :price="3050"
-        :button-text="t('submit')"
-        @submit="onClickButton"
-      />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-submit-bar
+      :price="3050"
+      :button-text="t('submit')"
+      @submit="onClickButton"
+    />
+  </demo-block>
 
-    <demo-block :title="t('disabled')">
-      <van-submit-bar
-        disabled
-        :price="3050"
-        :button-text="t('submit')"
-        :tip="t('tip1')"
-        tip-icon="info-o"
-        @submit="onClickButton"
-      />
-    </demo-block>
+  <demo-block :title="t('disabled')">
+    <van-submit-bar
+      disabled
+      :price="3050"
+      :button-text="t('submit')"
+      :tip="t('tip1')"
+      tip-icon="info-o"
+      @submit="onClickButton"
+    />
+  </demo-block>
 
-    <demo-block :title="t('loadingStatus')">
-      <van-submit-bar
-        loading
-        :price="3050"
-        :button-text="t('submit')"
-        @submit="onClickButton"
-      />
-    </demo-block>
+  <demo-block :title="t('loadingStatus')">
+    <van-submit-bar
+      loading
+      :price="3050"
+      :button-text="t('submit')"
+      @submit="onClickButton"
+    />
+  </demo-block>
 
-    <demo-block :title="t('advancedUsage')">
-      <van-submit-bar
-        :price="3050"
-        :button-text="t('submit')"
-        @submit="onClickButton"
-      >
-        <van-checkbox v-model="checked">{{ t('check') }}</van-checkbox>
-        <template #tip>
-          {{ t('tip2') }}
-          <span class="edit-address" @click="onClickLink">
-            {{ t('tip3') }}
-          </span>
-        </template>
-      </van-submit-bar>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('advancedUsage')">
+    <van-submit-bar
+      :price="3050"
+      :button-text="t('submit')"
+      @submit="onClickButton"
+    >
+      <van-checkbox v-model="checked">{{ t('check') }}</van-checkbox>
+      <template #tip>
+        {{ t('tip2') }}
+        <span class="edit-address" @click="onClickLink">
+          {{ t('tip3') }}
+        </span>
+      </template>
+    </van-submit-bar>
+  </demo-block>
 </template>
 
 <script>

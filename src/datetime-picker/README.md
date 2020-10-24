@@ -7,10 +7,11 @@ Used to select time, support date and time dimensions, usually used with the [Po
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { DatetimePicker } from 'vant';
 
-Vue.use(DatetimePicker);
+const app = createApp();
+app.use(DatetimePicker);
 ```
 
 ## Usage
@@ -286,11 +287,11 @@ Following props are supported when the type is time
 
 ### Events
 
-| Event   | Description                         | Arguments               |
-| ------- | ----------------------------------- | ----------------------- |
-| change  | Triggered when value changed        | picker: Picker instance |
-| confirm | Triggered when click confirm button | value: current value    |
-| cancel  | Triggered when click cancel button  | -                       |
+| Event   | Description                         | Arguments            |
+| ------- | ----------------------------------- | -------------------- |
+| change  | Triggered when value changed        | value: current value |
+| confirm | Triggered when click confirm button | value: current value |
+| cancel  | Triggered when click cancel button  | -                    |
 
 ### Methods
 

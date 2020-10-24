@@ -1,5 +1,5 @@
-export function isNumeric(val: string): boolean {
-  return /^\d+(\.\d+)?$/.test(val);
+export function isNumeric(val: string | number): val is string {
+  return typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
 }
 
 export function isNaN(val: number): val is typeof NaN {

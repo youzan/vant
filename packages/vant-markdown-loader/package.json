@@ -1,19 +1,20 @@
 {
   "name": "@vant/markdown-loader",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Simple and fast vue markdown loader",
   "main": "src/index.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-markdown-loader",
   "dependencies": {
-    "front-matter": "^3.0.2",
-    "highlight.js": "^9.17.1",
-    "loader-utils": "^1.2.3",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5",
-    "transliteration": "^2.1.7"
+    "front-matter": "^4.0.2",
+    "highlight.js": "^10.3.1",
+    "loader-utils": "^2.0.0",
+    "markdown-it": "^12.0.1",
+    "markdown-it-anchor": "^6.0.0",
+    "transliteration": "^2.1.11"
   }
 }

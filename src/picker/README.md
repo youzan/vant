@@ -7,10 +7,11 @@ The Picker component is usually used with [Popup](#/en-US/popup) Component.
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Picker } from 'vant';
 
-Vue.use(Picker);
+const app = createApp();
+app.use(Picker);
 ```
 
 ## Usage
@@ -19,7 +20,6 @@ Vue.use(Picker);
 
 ```html
 <van-picker
-  show-toolbar
   title="Title"
   :columns="columns"
   @confirm="onConfirm"
@@ -41,7 +41,7 @@ export default {
     onConfirm(value, index) {
       Toast(`Value: ${value}, Index: ${index}`);
     },
-    onChange(picker, value, index) {
+    onChange(value, index) {
       Toast(`Value: ${value}, Index: ${index}`);
     },
     onCancel() {
@@ -54,13 +54,13 @@ export default {
 ### Default Index
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" :default-index="2" />
+<van-picker title="Title" :columns="columns" :default-index="2" />
 ```
 
 ### Multiple Columns
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" />
+<van-picker title="Title" :columns="columns" />
 ```
 
 ```js
@@ -85,7 +85,7 @@ export default {
 ### Cascade
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" />
+<van-picker title="Title" :columns="columns" />
 ```
 
 ```js
@@ -128,7 +128,7 @@ export default {
 ### Disable option
 
 ```html
-<van-picker show-toolbar :columns="columns" />
+<van-picker :columns="columns" />
 ```
 
 ```js
@@ -148,7 +148,7 @@ export default {
 ### Set Column Values
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" @change="onChange" />
+<van-picker ref="picker" title="Title" :columns="columns" @change="onChange" />
 ```
 
 ```js
@@ -164,8 +164,8 @@ export default {
     };
   },
   methods: {
-    onChange(picker, values) {
-      picker.setColumnValues(1, states[values[0]]);
+    onChange(values) {
+      this.$refs.picker.setColumnValues(1, states[values[0]]);
     },
   },
 };
@@ -176,7 +176,7 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt.
 
 ```html
-<van-picker show-toolbar title="Title" :columns="columns" :loading="loading" />
+<van-picker title="Title" :columns="columns" :loading="loading" />
 ```
 
 ```js
@@ -207,10 +207,9 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     title="Title"
-    show-toolbar
     :columns="columns"
     @cancel="showPicker = false"
     @confirm="onConfirm"
@@ -249,9 +248,8 @@ export default {
 | value-key | Key of option text | _string_ | `text` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | _string_ | `top` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
-| readonly `v2.10.5` | Whether to be readonly | _boolean_ | `false` |
-| show-toolbar | Whether to show toolbar | _boolean_ | `false` |
-| allow-html | Whether to allow HTML in option text | _boolean_ | `true` |
+| show-toolbar | Whether to show toolbar | _boolean_ | `true` |
+| allow-html | Whether to allow HTML in option text | _boolean_ | `false` |
 | default-index | Default value index of single column picker | _number \| string_ | `0` |
 | item-height `v2.8.6` | Option height, supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |

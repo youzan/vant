@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Toast } from 'vant';
 
-Vue.use(Toast);
+const app = createApp();
+app.use(Toast);
 ```
 
 ## Usage
@@ -91,7 +92,7 @@ const timer = setInterval(() => {
 
 ### Global Method
 
-After import the Toast component, the `$toast` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Toast component through `app.use`, the `$toast` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {
@@ -167,4 +168,4 @@ Toast.resetDefaultOptions('loading');
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
-| getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |
+| teleport | Return the mount node for Toast | _string \| Element_ | `body` |

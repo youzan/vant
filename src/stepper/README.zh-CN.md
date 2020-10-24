@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Stepper } from 'vant';
 
-Vue.use(Stepper);
+const app = createApp();
+app.use(Stepper);
 ```
 
 ## 代码演示
@@ -94,7 +95,7 @@ export default {
 如果需要异步地修改输入框的值，可以设置 `async-change` 属性，并在 `change` 事件中手动修改 `value`。
 
 ```html
-<van-stepper :value="value" async-change @change="onChange" />
+<van-stepper :model-value="value" async-change @change="onChange" />
 ```
 
 ```js
@@ -140,9 +141,9 @@ export default {
 | max | 最大值 | _number \| string_ | - |
 | default-value | 初始值，当 v-model 为空时生效 | _number \| string_ | `1` |
 | step | 步长，每次点击时改变的值 | _number \| string_ | `1` |
-| name | 标识符，可以在`change`事件回调参数中获取 | _number \| string_ | - |
-| input-width | 输入框宽度，默认单位为`px` | _number \| string_ | `32px` |
-| button-size | 按钮大小以及输入框高度，默认单位为`px` | _number \| string_ | `28px` |
+| name | 标识符，可以在 `change` 事件回调参数中获取 | _number \| string_ | - |
+| input-width | 输入框宽度，默认单位为 `px` | _number \| string_ | `32px` |
+| button-size | 按钮大小以及输入框高度，默认单位为 `px` | _number \| string_ | `28px` |
 | decimal-length | 固定显示的小数位数 | _number \| string_ | - |
 | theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
 | placeholder `v2.8.6` | 输入框占位提示文字 | _string_ | - |

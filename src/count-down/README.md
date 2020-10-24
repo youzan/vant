@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { CountDown } from 'vant';
 
-Vue.use(CountDown);
+const app = createApp();
+app.use(CountDown);
 ```
 
 ## Usage
@@ -133,26 +134,27 @@ export default {
 
 ### Events
 
-| Event           | Description                        | Arguments            |
-| --------------- | ---------------------------------- | -------------------- |
-| finish          | Triggered when count down finished | -                    |
-| change `v2.4.4` | Triggered when count down changed  | _timeData: TimeData_ |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| finish | Triggered when count down finished | - |
+| change `v2.4.4` | Triggered when count down changed | _currentTime: CurrentTime_ |
 
 ### Slots
 
-| Name    | Description    | SlotProps            |
-| ------- | -------------- | -------------------- |
-| default | Custom Content | _timeData: TimeData_ |
+| Name    | Description    | SlotProps                  |
+| ------- | -------------- | -------------------------- |
+| default | Custom Content | _currentTime: CurrentTime_ |
 
 ### TimeData Structure
 
-| Name         | Description         | Type     |
-| ------------ | ------------------- | -------- |
-| days         | Remain days         | _number_ |
-| hours        | Remain hours        | _number_ |
-| minutes      | Remain minutes      | _number_ |
-| seconds      | Remain seconds      | _number_ |
-| milliseconds | Remain milliseconds | _number_ |
+| Name         | Description                   | Type     |
+| ------------ | ----------------------------- | -------- |
+| total        | Total time, unit milliseconds | _number_ |
+| days         | Remain days                   | _number_ |
+| hours        | Remain hours                  | _number_ |
+| minutes      | Remain minutes                | _number_ |
+| seconds      | Remain seconds                | _number_ |
+| milliseconds | Remain milliseconds           | _number_ |
 
 ### Methods
 

@@ -19,11 +19,12 @@ ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
 通过组件调用 ImagePreview 时，可以通过下面的方式进行注册。
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ImagePreview } from 'vant';
 
 // 全局注册
-Vue.use(ImagePreview);
+const app = createApp();
+app.use(ImagePreview);
 
 // 局部注册
 export default {
@@ -94,7 +95,7 @@ ImagePreview({
 
 ### 异步关闭
 
-通过 `asyncClose` 属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
+通过 `beforeClose` 属性可以拦截关闭行为。
 
 ```js
 const instance = ImagePreview({
@@ -102,20 +103,21 @@ const instance = ImagePreview({
     'https://img.yzcdn.cn/vant/apple-1.jpg',
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
-  asyncClose: true,
+  beforeClose: () => false,
 });
 
 setTimeout(() => {
+  // 调用实例上的 close 方法手动关闭图片预览
   instance.close();
 }, 2000);
 ```
 
 ### 组件调用
 
-如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件。
+如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `app.use` 注册组件。
 
 ```html
-<van-image-preview v-model="show" :images="images" @change="onChange">
+<van-image-preview v-model:show="show" :images="images" @change="onChange">
   <template v-slot:index>第{{ index }}页</template>
 </van-image-preview>
 ```
@@ -157,7 +159,7 @@ export default {
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
-| asyncClose | 是否开启异步关闭 | _boolean_ | `false` |
+| beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | className | 自定义类名 | _any_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
@@ -165,7 +167,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Props
 
@@ -179,7 +181,7 @@ export default {
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
-| async-close | 是否开启异步关闭 | _boolean_ | `false` |
+| before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | class-name | 自定义类名 | _any_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
@@ -187,7 +189,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Events
 

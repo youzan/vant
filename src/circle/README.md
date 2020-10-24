@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Circle } from 'vant';
 
-Vue.use(Circle);
+const app = createApp();
+app.use(Circle);
 ```
 
 ## Usage
@@ -14,7 +15,12 @@ Vue.use(Circle);
 ### Basic Usage
 
 ```html
-<van-circle v-model="currentRate" :rate="30" :speed="100" :text="text" />
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="30"
+  :speed="100"
+  :text="text"
+/>
 ```
 
 ```js
@@ -36,7 +42,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :stroke-width="60"
   text="Custom Width"
@@ -47,7 +53,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   layer-color="#ebedf0"
   text="Custom Color"
@@ -58,7 +64,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :color="gradientColor"
   text="Gradient"
@@ -83,7 +89,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   :clockwise="false"
   text="Counter Clockwise"
@@ -94,7 +100,7 @@ export default {
 
 ```html
 <van-circle
-  v-model="currentRate"
+  v-model:current-rate="currentRate"
   :rate="rate"
   size="120px"
   text="Custom Size"
@@ -107,7 +113,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Current rate | _number_ | - |
+| v-model:current-rate | Current rate | _number_ | - |
 | rate | Target rate | _number \| string_ | `100` |
 | size | Circle size | _number \| string_ | `100px` |
 | color | Progress color, passing object to render gradient | _string \| object_ | `#1989fa` |

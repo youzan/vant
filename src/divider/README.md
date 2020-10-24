@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Divider } from 'vant';
 
-Vue.use(Divider);
+const app = createApp();
+app.use(Divider);
 ```
 
 ## Usage

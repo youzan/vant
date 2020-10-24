@@ -1,5 +1,8 @@
-import { createNamespace, addUnit } from '../../utils';
-import { setScrollTop } from '../../utils/dom/scroll';
+import { ref, computed, watch, nextTick } from 'vue';
+
+// Utils
+import { addUnit, unitToPx, setScrollTop, createNamespace } from '../../utils';
+import { getMonthEndDay } from '../../datetime-picker/utils';
 import {
   t,
   bem,
@@ -8,7 +11,15 @@ import {
   getNextDay,
   formatMonthTitle,
 } from '../utils';
-import { getMonthEndDay } from '../../datetime-picker/utils';
+
+// Composition
+import { useRect, useToggle } from '@vant/use';
+import { useRefs } from '../../composition/use-refs';
+import { useExpose } from '../../composition/use-expose';
+import { useHeight } from '../../composition/use-height';
+
+// Components
+import Day from './Day';
 
 const [createComponent] = createNamespace('calendar-month');
 
@@ -31,107 +42,50 @@ export default createComponent({
     firstDayOfWeek: Number,
   },
 
-  data() {
-    return {
-      visible: false,
-    };
-  },
+  emits: ['click', 'update-height'],
 
-  computed: {
-    title() {
-      return formatMonthTitle(this.date);
-    },
+  setup(props, { emit }) {
+    const [visible, setVisible] = useToggle();
+    const [dayRefs, setDayRefs] = useRefs();
+    const daysRef = ref();
+    const monthRef = ref();
+    const height = useHeight(monthRef);
 
-    rowHeightWithUnit() {
-      return addUnit(this.rowHeight);
-    },
+    const title = computed(() => formatMonthTitle(props.date));
 
-    offset() {
-      const { firstDayOfWeek } = this;
+    const rowHeight = computed(() => addUnit(props.rowHeight));
 
-      const realDay = this.date.getDay();
+    const offset = computed(() => {
+      const realDay = props.date.getDay();
 
-      if (!firstDayOfWeek) {
-        return realDay;
+      if (props.firstDayOfWeek) {
+        return (realDay + 7 - props.firstDayOfWeek) % 7;
       }
+      return realDay;
+    });
 
-      return (realDay + 7 - this.firstDayOfWeek) % 7;
-    },
+    const totalDay = computed(() =>
+      getMonthEndDay(props.date.getFullYear(), props.date.getMonth() + 1)
+    );
 
-    totalDay() {
-      return getMonthEndDay(this.date.getFullYear(), this.date.getMonth() + 1);
-    },
+    const shouldRender = computed(() => visible.value || !props.lazyRender);
 
-    shouldRender() {
-      return this.visible || !this.lazyRender;
-    },
-
-    monthStyle() {
-      if (!this.shouldRender) {
-        const padding =
-          Math.ceil((this.totalDay + this.offset) / 7) * this.realRowHeight;
-
+    const monthStyle = computed(() => {
+      if (!shouldRender.value) {
+        const rowCount = Math.ceil((totalDay.value + offset.value) / 7);
+        const padding = rowCount * unitToPx(props.realRowHeight);
         return {
           paddingBottom: `${padding}px`,
         };
       }
-    },
+    });
 
-    days() {
-      const days = [];
-      const year = this.date.getFullYear();
-      const month = this.date.getMonth();
+    const getDate = () => props.data;
 
-      for (let day = 1; day <= this.totalDay; day++) {
-        const date = new Date(year, month, day);
-        const type = this.getDayType(date);
+    const getTitle = () => title.value;
 
-        let config = {
-          date,
-          type,
-          text: day,
-          bottomInfo: this.getBottomInfo(type),
-        };
-
-        if (this.formatter) {
-          config = this.formatter(config);
-        }
-
-        days.push(config);
-      }
-
-      return days;
-    },
-  },
-
-  watch: {
-    shouldRender(value) {
-      if (value) {
-        this.$nextTick(() => {
-          if (this.$refs.day[0] && !this.realRowHeight) {
-            const { height } = this.$refs.day[0].getBoundingClientRect();
-            this.$emit('update-height', height);
-          }
-        });
-      }
-    },
-
-    realRowHeight() {
-      this.height = null;
-    },
-  },
-
-  methods: {
-    getHeight() {
-      if (!this.height) {
-        this.height = this.$el.getBoundingClientRect().height;
-      }
-      return this.height;
-    },
-
-    scrollIntoView(body) {
-      const { days, month } = this.$refs;
-      const el = this.showSubtitle ? days : month;
+    const scrollIntoView = (body) => {
+      const el = props.showSubtitle ? daysRef.value : monthRef.value;
 
       const scrollTop =
         el.getBoundingClientRect().top -
@@ -139,11 +93,11 @@ export default createComponent({
         body.scrollTop;
 
       setScrollTop(body, scrollTop);
-    },
+    };
 
-    getMultipleDayType(day) {
+    const getMultipleDayType = (day) => {
       const isSelected = (date) =>
-        this.currentDate.some((item) => compareDay(item, date) === 0);
+        props.currentDate.some((item) => compareDay(item, date) === 0);
 
       if (isSelected(day)) {
         const prevDay = getPrevDay(day);
@@ -154,19 +108,20 @@ export default createComponent({
         if (prevSelected && nextSelected) {
           return 'multiple-middle';
         }
-
         if (prevSelected) {
           return 'end';
         }
-
-        return nextSelected ? 'start' : 'multiple-selected';
+        if (nextSelected) {
+          return 'start';
+        }
+        return 'multiple-selected';
       }
 
       return '';
-    },
+    };
 
-    getRangeDayType(day) {
-      const [startDay, endDay] = this.currentDate;
+    const getRangeDayType = (day) => {
+      const [startDay, endDay] = props.currentDate;
 
       if (!startDay) {
         return '';
@@ -180,25 +135,22 @@ export default createComponent({
 
       const compareToEnd = compareDay(day, endDay);
 
-      if (compareToStart === 0 && compareToEnd === 0 && this.allowSameDay) {
+      if (props.allowSameDay && compareToStart === 0 && compareToEnd === 0) {
         return 'start-end';
       }
-
       if (compareToStart === 0) {
         return 'start';
       }
-
       if (compareToEnd === 0) {
         return 'end';
       }
-
       if (compareToStart > 0 && compareToEnd < 0) {
         return 'middle';
       }
-    },
+    };
 
-    getDayType(day) {
-      const { type, minDate, maxDate, currentDate } = this;
+    const getDayType = (day) => {
+      const { type, minDate, maxDate, currentDate } = props;
 
       if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
         return 'disabled';
@@ -208,149 +160,126 @@ export default createComponent({
         return;
       }
 
-      if (type === 'single') {
+      if (Array.isArray(currentDate)) {
+        if (type === 'multiple') {
+          return getMultipleDayType(day);
+        }
+        if (type === 'range') {
+          return getRangeDayType(day);
+        }
+      } else if (type === 'single') {
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
+    };
 
-      if (type === 'multiple') {
-        return this.getMultipleDayType(day);
-      }
-
-      /* istanbul ignore else */
-      if (type === 'range') {
-        return this.getRangeDayType(day);
-      }
-    },
-
-    getBottomInfo(type) {
-      if (this.type === 'range') {
-        if (type === 'start' || type === 'end') {
-          return t(type);
+    const getBottomInfo = (dayType) => {
+      if (props.type === 'range') {
+        if (dayType === 'start' || dayType === 'end') {
+          return t(dayType);
         }
-        if (type === 'start-end') {
+        if (dayType === 'start-end') {
           return t('startEnd');
         }
       }
-    },
+    };
 
-    getDayStyle(type, index) {
-      const style = {
-        height: this.rowHeightWithUnit,
-      };
-
-      if (index === 0) {
-        style.marginLeft = `${(100 * this.offset) / 7}%`;
+    const renderTitle = () => {
+      if (props.showMonthTitle) {
+        return <div class={bem('month-title')}>{title.value}</div>;
       }
+    };
 
-      if (this.color) {
-        if (
-          type === 'start' ||
-          type === 'end' ||
-          type === 'start-end' ||
-          type === 'multiple-selected' ||
-          type === 'multiple-middle'
-        ) {
-          style.background = this.color;
-        } else if (type === 'middle') {
-          style.color = this.color;
+    const renderMark = () => {
+      if (props.showMark) {
+        return <div class={bem('month-mark')}>{props.date.getMonth() + 1}</div>;
+      }
+    };
+
+    const days = computed(() => {
+      const days = [];
+      const year = props.date.getFullYear();
+      const month = props.date.getMonth();
+
+      for (let day = 1; day <= totalDay.value; day++) {
+        const date = new Date(year, month, day);
+        const type = getDayType(date);
+
+        let config = {
+          date,
+          type,
+          text: day,
+          bottomInfo: getBottomInfo(type),
+        };
+
+        if (props.formatter) {
+          config = props.formatter(config);
         }
+
+        days.push(config);
       }
 
-      return style;
-    },
+      return days;
+    });
 
-    genTitle() {
-      if (this.showMonthTitle) {
-        return <div class={bem('month-title')}>{this.title}</div>;
-      }
-    },
+    const renderDay = (item, index) => (
+      <Day
+        ref={setDayRefs(index)}
+        item={item}
+        index={index}
+        color={props.color}
+        offset={offset.value}
+        rowHeight={rowHeight.value}
+        onClick={(item) => {
+          emit('click', item);
+        }}
+      />
+    );
 
-    genMark() {
-      if (this.showMark) {
-        return <div class={bem('month-mark')}>{this.date.getMonth() + 1}</div>;
-      }
-    },
-
-    genDays() {
-      if (this.shouldRender) {
+    const renderDays = () => {
+      if (shouldRender.value) {
         return (
-          <div ref="days" role="grid" class={bem('days')}>
-            {this.genMark()}
-            {this.days.map(this.genDay)}
+          <div ref={daysRef} role="grid" class={bem('days')}>
+            {renderMark()}
+            {days.value.map(renderDay)}
           </div>
         );
       }
 
-      return <div ref="days" />;
-    },
+      return <div ref={daysRef} />;
+    };
 
-    genDay(item, index) {
-      const { type, topInfo, bottomInfo } = item;
-      const style = this.getDayStyle(type, index);
-      const disabled = type === 'disabled';
-
-      const onClick = () => {
-        if (!disabled) {
-          this.$emit('click', item);
-        }
-      };
-
-      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
-
-      const BottomInfo = bottomInfo && (
-        <div class={bem('bottom-info')}>{bottomInfo}</div>
-      );
-
-      if (type === 'selected') {
-        return (
-          <div
-            ref="day"
-            refInFor
-            role="gridcell"
-            style={style}
-            class={[bem('day'), item.className]}
-            tabindex={-1}
-            onClick={onClick}
-          >
-            <div
-              class={bem('selected-day')}
-              style={{
-                width: this.rowHeightWithUnit,
-                height: this.rowHeightWithUnit,
-                background: this.color,
-              }}
-            >
-              {TopInfo}
-              {item.text}
-              {BottomInfo}
-            </div>
-          </div>
-        );
+    watch(
+      () => props.realRowHeight,
+      () => {
+        nextTick(() => {
+          height.value = useRect(monthRef).height;
+        });
       }
+    );
 
-      return (
-        <div
-          ref="day"
-          refInFor
-          role="gridcell"
-          style={style}
-          class={[bem('day', type), item.className]}
-          tabindex={disabled ? null : -1}
-          onClick={onClick}
-        >
-          {TopInfo}
-          {item.text}
-          {BottomInfo}
-        </div>
-      );
-    },
-  },
+    watch(shouldRender, (value) => {
+      if (value) {
+        nextTick(() => {
+          if (dayRefs.value[0] && !props.realRowHeight) {
+            const { height } = dayRefs.value[0].$el.getBoundingClientRect();
+            emit('update-height', height);
+          }
+        });
+      }
+    });
 
-  render() {
-    return (
-      <div class={bem('month')} ref="month" style={this.monthStyle}>
-        {this.genTitle()}
-        {this.genDays()}
+    useExpose({
+      getDate,
+      getTitle,
+      getHeight: () => height.value,
+      setVisible,
+      scrollIntoView,
+    });
+
+    return () => (
+      <div class={bem('month')} ref={monthRef} style={monthStyle.value}>
+        {renderTitle()}
+        {renderDays()}
       </div>
     );
   },

@@ -8,17 +8,20 @@ export type SharedPickerProps = {
   confirmButtonText?: string;
 };
 
-export const DEFAULT_ITEM_HEIGHT = 44;
+export const PICKER_KEY = 'vanPicker';
 
 export const pickerProps = {
   title: String,
   loading: Boolean,
   readonly: Boolean,
-  itemHeight: [Number, String],
-  showToolbar: Boolean,
+  allowHtml: Boolean,
   cancelButtonText: String,
   confirmButtonText: String,
-  allowHtml: {
+  itemHeight: {
+    type: [Number, String],
+    default: 44,
+  },
+  showToolbar: {
     type: Boolean,
     default: true,
   },

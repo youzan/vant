@@ -1,39 +1,35 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-divider />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-divider />
+  </demo-block>
 
-    <demo-block :title="t('withText')">
-      <van-divider>
-        {{ t('text') }}
-      </van-divider>
-    </demo-block>
+  <demo-block :title="t('withText')">
+    <van-divider>
+      {{ t('text') }}
+    </van-divider>
+  </demo-block>
 
-    <demo-block :title="t('contentPosition')">
-      <van-divider content-position="left">
-        {{ t('text') }}
-      </van-divider>
+  <demo-block :title="t('contentPosition')">
+    <van-divider content-position="left">
+      {{ t('text') }}
+    </van-divider>
 
-      <van-divider content-position="right">
-        {{ t('text') }}
-      </van-divider>
-    </demo-block>
+    <van-divider content-position="right">
+      {{ t('text') }}
+    </van-divider>
+  </demo-block>
 
-    <demo-block :title="t('dashed')">
-      <van-divider dashed :hairline="false">
-        {{ t('text') }}
-      </van-divider>
-    </demo-block>
+  <demo-block :title="t('dashed')">
+    <van-divider dashed :hairline="false">
+      {{ t('text') }}
+    </van-divider>
+  </demo-block>
 
-    <demo-block :title="t('customStyle')">
-      <van-divider
-        :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }"
-      >
-        {{ t('text') }}
-      </van-divider>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('customStyle')">
+    <van-divider :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }">
+      {{ t('text') }}
+    </van-divider>
+  </demo-block>
 </template>
 
 <script>

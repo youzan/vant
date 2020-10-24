@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-action-bar">
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-chat-o van-action-bar-icon__icon">
+          <!---->
+        </div>客服
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-cart-o van-action-bar-icon__icon">
+          <!---->
+        </div>购物车
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-shop-o van-action-bar-icon__icon">
+          <!---->
+        </div>店铺
+      </div> <button class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--last van-action-bar-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="van-action-bar">
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-chat-o van-action-bar-icon__icon">
+          <div class="van-badge van-badge--dot"></div>
+        </div>客服
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-cart-o van-action-bar-icon__icon">
+          <div class="van-badge">5</div>
+        </div>购物车
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-shop-o van-action-bar-icon__icon">
+          <div class="van-badge">12</div>
+        </div>店铺
+      </div> <button class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--warning">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--last van-action-bar-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="van-action-bar">
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-chat-o van-action-bar-icon__icon" style="color: rgb(7, 193, 96);">
+          <!---->
+        </div>客服
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-cart-o van-action-bar-icon__icon">
+          <!---->
+        </div>购物车
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-star van-action-bar-icon__icon" style="color: rgb(255, 80, 0);">
+          <!---->
+        </div>已收藏
+      </div> <button class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--warning">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--last van-action-bar-button--danger">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="van-action-bar">
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-chat-o van-action-bar-icon__icon">
+          <!---->
+        </div>客服
+      </div>
+      <div role="button" tabindex="0" class="van-action-bar-icon">
+        <div class="van-icon van-icon-cart-o van-action-bar-icon__icon">
+          <!---->
+        </div>购物车
+      </div> <button class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--first van-action-bar-button--warning" style="color: rgb(255, 255, 255); background: rgb(190, 153, 255); border-color: #be99ff;">
+        <div class="van-button__content"><span class="van-button__text">加入购物车</span></div>
+      </button> <button class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--last van-action-bar-button--danger" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;">
+        <div class="van-button__content"><span class="van-button__text">立即购买</span></div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

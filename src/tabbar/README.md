@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Tabbar, TabbarItem } from 'vant';
 
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
+const app = createApp();
+app.use(Tabbar);
+app.use(TabbarItem);
 ```
 
 ## Usage

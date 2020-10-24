@@ -1,53 +1,51 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-pagination
-        v-model="currentPage1"
-        :total-items="24"
-        :items-per-page="5"
-        :prev-text="t('prevText')"
-        :next-text="t('nextText')"
-      />
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-pagination
+      v-model="currentPage1"
+      :total-items="24"
+      :items-per-page="5"
+      :prev-text="t('prevText')"
+      :next-text="t('nextText')"
+    />
+  </demo-block>
 
-    <demo-block :title="t('title2')">
-      <van-pagination
-        v-model="currentPage2"
-        :page-count="12"
-        :prev-text="t('prevText')"
-        :next-text="t('nextText')"
-        mode="simple"
-        size="small"
-      />
-    </demo-block>
+  <demo-block :title="t('title2')">
+    <van-pagination
+      v-model="currentPage2"
+      :page-count="12"
+      :prev-text="t('prevText')"
+      :next-text="t('nextText')"
+      mode="simple"
+      size="small"
+    />
+  </demo-block>
 
-    <demo-block :title="t('title3')">
-      <van-pagination
-        v-model="currentPage3"
-        force-ellipses
-        :total-items="125"
-        :show-page-size="3"
-        :prev-text="t('prevText')"
-        :next-text="t('nextText')"
-      />
-    </demo-block>
+  <demo-block :title="t('title3')">
+    <van-pagination
+      v-model="currentPage3"
+      force-ellipses
+      :total-items="125"
+      :show-page-size="3"
+      :prev-text="t('prevText')"
+      :next-text="t('nextText')"
+    />
+  </demo-block>
 
-    <demo-block :title="t('title4')">
-      <van-pagination
-        v-model="currentPage4"
-        :total-items="125"
-        :show-page-size="5"
-      >
-        <template #prev-text>
-          <van-icon name="arrow-left" />
-        </template>
-        <template #next-text>
-          <van-icon name="arrow" />
-        </template>
-        <template #page="{ text }">{{ text }}</template>
-      </van-pagination>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('title4')">
+    <van-pagination
+      v-model="currentPage4"
+      :total-items="125"
+      :show-page-size="5"
+    >
+      <template #prev-text>
+        <van-icon name="arrow-left" />
+      </template>
+      <template #next-text>
+        <van-icon name="arrow" />
+      </template>
+      <template #page="{ text }">{{ text }}</template>
+    </van-pagination>
+  </demo-block>
 </template>
 
 <script>

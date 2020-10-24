@@ -1,123 +1,78 @@
+import { PropType, CSSProperties } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
-import { emit, inherit } from '../utils/functional';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
-import { routeProps, RouteProps, functionalRoute } from '../utils/router';
+import { useRoute, routeProps } from '../composition/use-route';
 
 // Components
 import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
 
-// Types
-import { CreateElement, RenderContext } from 'vue/types';
-import { ScopedSlot, DefaultSlots } from '../utils/types';
+const [createComponent, bem] = createNamespace('button');
 
-export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
+export type ButtonType =
+  | 'default'
+  | 'primary'
+  | 'success'
+  | 'warning'
+  | 'danger';
 
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 
-export type ButtonProps = RouteProps & {
-  tag: keyof HTMLElementTagNameMap | string;
-  type: ButtonType;
-  size: ButtonSize;
-  text?: string;
-  icon?: string;
-  color?: string;
-  block?: boolean;
-  plain?: boolean;
-  round?: boolean;
-  square?: boolean;
-  loading?: boolean;
-  hairline?: boolean;
-  disabled?: boolean;
-  nativeType?: string;
-  iconPrefix?: string;
-  loadingSize: string;
-  loadingType?: LoadingType;
-  loadingText?: string;
-  iconPosition: 'left' | 'right';
-};
+export default createComponent({
+  props: {
+    ...routeProps,
+    text: String,
+    icon: String,
+    color: String,
+    block: Boolean,
+    plain: Boolean,
+    round: Boolean,
+    square: Boolean,
+    loading: Boolean,
+    hairline: Boolean,
+    disabled: Boolean,
+    iconPrefix: String,
+    loadingText: String,
+    loadingType: String as PropType<LoadingType>,
+    tag: {
+      type: String as PropType<keyof HTMLElementTagNameMap>,
+      default: 'button',
+    },
+    type: {
+      type: String as PropType<ButtonType>,
+      default: 'default',
+    },
+    size: {
+      type: String as PropType<ButtonSize>,
+      default: 'normal',
+    },
+    nativeType: {
+      type: String,
+      default: 'button',
+    },
+    loadingSize: {
+      type: String,
+      default: '20px',
+    },
+    iconPosition: {
+      type: String as PropType<'left' | 'right'>,
+      default: 'left',
+    },
+  },
 
-export type ButtonEvents = {
-  onClick?(event: Event): void;
-};
+  emits: ['click'],
 
-export type ButttonSlots = DefaultSlots & {
-  loading?: ScopedSlot;
-};
+  setup(props, { emit, slots }) {
+    const route = useRoute();
 
-const [createComponent, bem] = createNamespace('button');
+    const renderLoadingIcon = () => {
+      if (slots.loading) {
+        return slots.loading();
+      }
 
-function Button(
-  h: CreateElement,
-  props: ButtonProps,
-  slots: ButttonSlots,
-  ctx: RenderContext<ButtonProps>
-) {
-  const {
-    tag,
-    icon,
-    type,
-    color,
-    plain,
-    disabled,
-    loading,
-    hairline,
-    loadingText,
-    iconPosition,
-  } = props;
-
-  const style: Record<string, string | number> = {};
-
-  if (color) {
-    style.color = plain ? color : WHITE;
-
-    if (!plain) {
-      // Use background instead of backgroundColor to make linear-gradient work
-      style.background = color;
-    }
-
-    // hide border when color is linear-gradient
-    if (color.indexOf('gradient') !== -1) {
-      style.border = 0;
-    } else {
-      style.borderColor = color;
-    }
-  }
-
-  function onClick(event: Event) {
-    if (!loading && !disabled) {
-      emit(ctx, 'click', event);
-      functionalRoute(ctx);
-    }
-  }
-
-  function onTouchstart(event: TouchEvent) {
-    emit(ctx, 'touchstart', event);
-  }
-
-  const classes = [
-    bem([
-      type,
-      props.size,
-      {
-        plain,
-        loading,
-        disabled,
-        hairline,
-        block: props.block,
-        round: props.round,
-        square: props.square,
-      },
-    ]),
-    { [BORDER_SURROUND]: hairline },
-  ];
-
-  function renderIcon() {
-    if (loading) {
-      return slots.loading ? (
-        slots.loading()
-      ) : (
+      return (
         <Loading
           class={bem('loading')}
           size={props.loadingSize}
@@ -125,91 +80,115 @@ function Button(
           color="currentColor"
         />
       );
-    }
+    };
 
-    if (icon) {
+    const renderIcon = () => {
+      if (props.loading) {
+        return renderLoadingIcon();
+      }
+
+      if (props.icon) {
+        return (
+          <Icon
+            name={props.icon}
+            class={bem('icon')}
+            classPrefix={props.iconPrefix}
+          />
+        );
+      }
+    };
+
+    const renderText = () => {
+      let text;
+      if (props.loading) {
+        text = props.loadingText;
+      } else {
+        text = slots.default ? slots.default() : props.text;
+      }
+
+      if (text) {
+        return <span class={bem('text')}>{text}</span>;
+      }
+    };
+
+    const getStyle = () => {
+      const { color, plain } = props;
+      if (color) {
+        const style: CSSProperties = {};
+
+        style.color = plain ? color : WHITE;
+
+        if (!plain) {
+          // Use background instead of backgroundColor to make linear-gradient work
+          style.background = color;
+        }
+
+        // hide border when color is linear-gradient
+        if (color.indexOf('gradient') !== -1) {
+          style.border = 0;
+        } else {
+          style.borderColor = color;
+        }
+
+        return style;
+      }
+    };
+
+    const onClick = (event: MouseEvent) => {
+      if (!props.loading && !props.disabled) {
+        emit('click', event);
+        route();
+      }
+    };
+
+    return () => {
+      const {
+        tag,
+        type,
+        size,
+        block,
+        round,
+        plain,
+        square,
+        loading,
+        disabled,
+        hairline,
+        nativeType,
+        iconPosition,
+      } = props;
+
+      const classes = [
+        bem([
+          type,
+          size,
+          {
+            plain,
+            block,
+            round,
+            square,
+            loading,
+            disabled,
+            hairline,
+          },
+        ]),
+        { [BORDER_SURROUND]: hairline },
+      ];
+
       return (
-        <Icon name={icon} class={bem('icon')} classPrefix={props.iconPrefix} />
+        <tag
+          type={nativeType}
+          class={classes}
+          style={getStyle()}
+          disabled={disabled}
+          onClick={onClick}
+        >
+          <div class={bem('content')}>
+            {iconPosition === 'left' && renderIcon()}
+            {renderText()}
+            {iconPosition === 'right' && renderIcon()}
+          </div>
+        </tag>
       );
-    }
-  }
-
-  function renderContent() {
-    const content = [];
-
-    if (iconPosition === 'left') {
-      content.push(renderIcon());
-    }
-
-    let text;
-    if (loading) {
-      text = loadingText;
-    } else {
-      text = slots.default ? slots.default() : props.text;
-    }
-
-    if (text) {
-      content.push(<span class={bem('text')}>{text}</span>);
-    }
-
-    if (iconPosition === 'right') {
-      content.push(renderIcon());
-    }
-
-    return content;
-  }
-
-  return (
-    <tag
-      style={style}
-      class={classes}
-      type={props.nativeType}
-      disabled={disabled}
-      onClick={onClick}
-      onTouchstart={onTouchstart}
-      {...inherit(ctx)}
-    >
-      <div class={bem('content')}>{renderContent()}</div>
-    </tag>
-  );
-}
-
-Button.props = {
-  ...routeProps,
-  text: String,
-  icon: String,
-  color: String,
-  block: Boolean,
-  plain: Boolean,
-  round: Boolean,
-  square: Boolean,
-  loading: Boolean,
-  hairline: Boolean,
-  disabled: Boolean,
-  iconPrefix: String,
-  nativeType: String,
-  loadingText: String,
-  loadingType: String,
-  tag: {
-    type: String,
-    default: 'button',
+    };
   },
-  type: {
-    type: String,
-    default: 'default',
-  },
-  size: {
-    type: String,
-    default: 'normal',
-  },
-  loadingSize: {
-    type: String,
-    default: '20px',
-  },
-  iconPosition: {
-    type: String,
-    default: 'left',
-  },
-};
-
-export default createComponent<ButtonProps, ButtonEvents, ButttonSlots>(Button);
+});

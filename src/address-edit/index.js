@@ -1,6 +1,11 @@
+import { h, ref, watch, computed, nextTick, reactive } from 'vue';
+
 // Utils
 import { createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
+
+// Composition
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Area from '../area';
@@ -40,6 +45,7 @@ export default createComponent({
     validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
+    disableArea: Boolean,
     searchResult: Array,
     telMaxlength: [Number, String],
     showSetDefault: Boolean,
@@ -55,7 +61,6 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    disableArea: Boolean,
     detailRows: {
       type: [Number, String],
       default: 1,
@@ -82,8 +87,22 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
+  emits: [
+    'save',
+    'focus',
+    'delete',
+    'click-area',
+    'change-area',
+    'change-detail',
+    'cancel-delete',
+    'select-search',
+    'change-default',
+  ],
+
+  setup(props, { emit, slots }) {
+    const areaRef = ref();
+
+    const state = reactive({
       data: {},
       showAreaPopup: false,
       detailFocused: false,
@@ -94,16 +113,14 @@ export default createComponent({
         postalCode: '',
         addressDetail: '',
       },
-    };
-  },
+    });
 
-  computed: {
-    areaListLoaded() {
-      return isObject(this.areaList) && Object.keys(this.areaList).length;
-    },
+    const areaListLoaded = computed(
+      () => isObject(props.areaList) && Object.keys(props.areaList).length
+    );
 
-    areaText() {
-      const { country, province, city, county, areaCode } = this.data;
+    const areaText = computed(() => {
+      const { country, province, city, county, areaCode } = state.data;
       if (areaCode) {
         const arr = [country, province, city, county];
         if (province && province === city) {
@@ -112,103 +129,34 @@ export default createComponent({
         return arr.filter((text) => text).join('/');
       }
       return '';
-    },
+    });
 
     // hide bottom field when use search && detail get focused
-    hideBottomFields() {
-      const { searchResult } = this;
-      return searchResult && searchResult.length && this.detailFocused;
-    },
-  },
+    const hideBottomFields = computed(() => {
+      const { searchResult } = props;
+      return searchResult && searchResult.length && state.detailFocused;
+    });
 
-  watch: {
-    addressInfo: {
-      handler(val) {
-        this.data = {
-          ...defaultData,
-          ...val,
-        };
-
-        this.setAreaCode(val.areaCode);
-      },
-      deep: true,
-      immediate: true,
-    },
-
-    areaList() {
-      this.setAreaCode(this.data.areaCode);
-    },
-  },
-
-  methods: {
-    onFocus(key) {
-      this.errorInfo[key] = '';
-      this.detailFocused = key === 'addressDetail';
-      this.$emit('focus', key);
-    },
-
-    onChangeDetail(val) {
-      this.data.addressDetail = val;
-      this.$emit('change-detail', val);
-    },
-
-    onAreaConfirm(values) {
-      values = values.filter((value) => !!value);
-
-      if (values.some((value) => !value.code)) {
-        Toast(t('areaEmpty'));
-        return;
-      }
-
-      this.showAreaPopup = false;
-      this.assignAreaValues();
-      this.$emit('change-area', values);
-    },
-
-    assignAreaValues() {
-      const { area } = this.$refs;
-
-      if (area) {
-        const detail = area.getArea();
+    const assignAreaValues = () => {
+      if (areaRef.value) {
+        const detail = areaRef.value.getArea();
         detail.areaCode = detail.code;
         delete detail.code;
-        Object.assign(this.data, detail);
+        Object.assign(state.data, detail);
       }
-    },
+    };
 
-    onSave() {
-      const items = ['name', 'tel'];
+    const onFocus = (key) => {
+      state.errorInfo[key] = '';
+      state.detailFocused = key === 'addressDetail';
+      emit('focus', key);
+    };
 
-      if (this.showArea) {
-        items.push('areaCode');
-      }
+    const getErrorMessage = (key) => {
+      const value = String(state.data[key] || '').trim();
 
-      if (this.showDetail) {
-        items.push('addressDetail');
-      }
-
-      if (this.showPostal) {
-        items.push('postalCode');
-      }
-
-      const isValid = items.every((item) => {
-        const msg = this.getErrorMessage(item);
-        if (msg) {
-          this.errorInfo[item] = msg;
-        }
-        return !msg;
-      });
-
-      if (isValid && !this.isSaving) {
-        this.$emit('save', this.data);
-      }
-    },
-
-    getErrorMessage(key) {
-      const value = String(this.data[key] || '').trim();
-
-      if (this.validator) {
-        const message = this.validator(key, value);
+      if (props.validator) {
+        const message = props.validator(key, value);
         if (message) {
           return message;
         }
@@ -218,63 +166,106 @@ export default createComponent({
         case 'name':
           return value ? '' : t('nameEmpty');
         case 'tel':
-          return this.telValidator(value) ? '' : t('telInvalid');
+          return props.telValidator(value) ? '' : t('telInvalid');
         case 'areaCode':
           return value ? '' : t('areaEmpty');
         case 'addressDetail':
           return value ? '' : t('addressEmpty');
         case 'postalCode':
-          return value && !this.postalValidator(value) ? t('postalEmpty') : '';
+          return value && !props.postalValidator(value) ? t('postalEmpty') : '';
       }
-    },
+    };
 
-    onDelete() {
+    const onSave = () => {
+      const items = ['name', 'tel'];
+
+      if (props.showArea) {
+        items.push('areaCode');
+      }
+
+      if (props.showDetail) {
+        items.push('addressDetail');
+      }
+
+      if (props.showPostal) {
+        items.push('postalCode');
+      }
+
+      const isValid = items.every((item) => {
+        const msg = getErrorMessage(item);
+        if (msg) {
+          state.errorInfo[item] = msg;
+        }
+        return !msg;
+      });
+
+      if (isValid && !props.isSaving) {
+        emit('save', state.data);
+      }
+    };
+
+    const onChangeDetail = (val) => {
+      state.data.addressDetail = val;
+      emit('change-detail', val);
+    };
+
+    const onAreaConfirm = (values) => {
+      values = values.filter((value) => !!value);
+
+      if (values.some((value) => !value.code)) {
+        Toast(t('areaEmpty'));
+        return;
+      }
+
+      state.showAreaPopup = false;
+      assignAreaValues();
+      emit('change-area', values);
+    };
+
+    const onDelete = () => {
       Dialog.confirm({
         title: t('confirmDelete'),
       })
         .then(() => {
-          this.$emit('delete', this.data);
+          emit('delete', state.data);
         })
         .catch(() => {
-          this.$emit('cancel-delete', this.data);
+          emit('cancel-delete', state.data);
         });
-    },
+    };
 
     // get values of area component
-    getArea() {
-      return this.$refs.area ? this.$refs.area.getValues() : [];
-    },
+    const getArea = () => (areaRef.value ? areaRef.value.getValues() : []);
 
     // set area code to area component
-    setAreaCode(code) {
-      this.data.areaCode = code || '';
+    const setAreaCode = (code) => {
+      state.data.areaCode = code || '';
 
       if (code) {
-        this.$nextTick(this.assignAreaValues);
+        nextTick(assignAreaValues);
       }
-    },
+    };
 
-    // @exposed-api
-    setAddressDetail(value) {
-      this.data.addressDetail = value;
-    },
-
-    onDetailBlur() {
+    const onDetailBlur = () => {
       // await for click search event
       setTimeout(() => {
-        this.detailFocused = false;
+        state.detailFocused = false;
       });
-    },
+    };
 
-    genSetDefaultCell(h) {
-      if (this.showSetDefault) {
+    const setAddressDetail = (value) => {
+      state.data.addressDetail = value;
+    };
+
+    const renderSetDefaultCell = () => {
+      if (props.showSetDefault) {
         const slots = {
           'right-icon': () => (
             <Switch
-              vModel={this.data.isDefault}
+              vModel={state.data.isDefault}
               size="24"
               onChange={(event) => {
-                this.$emit('change-default', event);
+                emit('change-default', event);
               }}
             />
           ),
@@ -282,129 +273,156 @@ export default createComponent({
 
         return (
           <Cell
-            vShow={!this.hideBottomFields}
+            v-slots={slots}
+            v-show={!hideBottomFields.value}
             center
             title={t('defaultAddress')}
             class={bem('default')}
-            scopedSlots={slots}
           />
         );
       }
 
       return h();
-    },
-  },
+    };
 
-  render(h) {
-    const { data, errorInfo, disableArea, hideBottomFields } = this;
-    const onFocus = (name) => () => this.onFocus(name);
+    useExpose({
+      getArea,
+      setAddressDetail,
+    });
 
-    return (
-      <div class={bem()}>
-        <div class={bem('fields')}>
-          <Field
-            vModel={data.name}
-            clearable
-            label={t('name')}
-            placeholder={t('namePlaceholder')}
-            errorMessage={errorInfo.name}
-            onFocus={onFocus('name')}
-          />
-          <Field
-            vModel={data.tel}
-            clearable
-            type="tel"
-            label={t('tel')}
-            maxlength={this.telMaxlength}
-            placeholder={t('telPlaceholder')}
-            errorMessage={errorInfo.tel}
-            onFocus={onFocus('tel')}
-          />
-          <Field
-            vShow={this.showArea}
-            readonly
-            clickable={!disableArea}
-            label={t('area')}
-            placeholder={this.areaPlaceholder || t('areaPlaceholder')}
-            errorMessage={errorInfo.areaCode}
-            rightIcon={!disableArea ? 'arrow' : null}
-            value={this.areaText}
-            onFocus={onFocus('areaCode')}
-            onClick={() => {
-              this.$emit('click-area');
-              this.showAreaPopup = !disableArea;
-            }}
-          />
-          <Detail
-            vShow={this.showDetail}
-            focused={this.detailFocused}
-            value={data.addressDetail}
-            errorMessage={errorInfo.addressDetail}
-            detailRows={this.detailRows}
-            detailMaxlength={this.detailMaxlength}
-            searchResult={this.searchResult}
-            showSearchResult={this.showSearchResult}
-            onFocus={onFocus('addressDetail')}
-            onBlur={this.onDetailBlur}
-            onInput={this.onChangeDetail}
-            onSelect-search={(event) => {
-              this.$emit('select-search', event);
-            }}
-          />
-          {this.showPostal && (
+    watch(
+      () => props.areaList,
+      () => {
+        setAreaCode(state.data.areaCode);
+      }
+    );
+
+    watch(
+      () => props.addressInfo,
+      (value) => {
+        state.data = {
+          ...defaultData,
+          ...value,
+        };
+        setAreaCode(value.areaCode);
+      },
+      {
+        deep: true,
+        immediate: true,
+      }
+    );
+
+    return () => {
+      const { data, errorInfo } = state;
+      const { disableArea } = props;
+
+      return (
+        <div class={bem()}>
+          <div class={bem('fields')}>
             <Field
-              vShow={!hideBottomFields}
-              vModel={data.postalCode}
-              type="tel"
-              maxlength="6"
-              label={t('postal')}
-              placeholder={t('postal')}
-              errorMessage={errorInfo.postalCode}
-              onFocus={onFocus('postalCode')}
+              vModel={data.name}
+              clearable
+              label={t('name')}
+              placeholder={t('namePlaceholder')}
+              errorMessage={errorInfo.name}
+              onFocus={() => onFocus('name')}
             />
-          )}
-          {this.slots()}
-        </div>
-        {this.genSetDefaultCell(h)}
-        <div vShow={!hideBottomFields} class={bem('buttons')}>
-          <Button
-            block
-            round
-            loading={this.isSaving}
-            type="danger"
-            text={this.saveButtonText || t('save')}
-            onClick={this.onSave}
-          />
-          {this.showDelete && (
+            <Field
+              vModel={data.tel}
+              clearable
+              type="tel"
+              label={t('tel')}
+              maxlength={props.telMaxlength}
+              placeholder={t('telPlaceholder')}
+              errorMessage={errorInfo.tel}
+              onFocus={() => onFocus('tel')}
+            />
+            <Field
+              v-show={props.showArea}
+              readonly
+              label={t('area')}
+              clickable={!disableArea}
+              rightIcon={!disableArea ? 'arrow' : null}
+              modelValue={areaText.value}
+              placeholder={props.areaPlaceholder || t('areaPlaceholder')}
+              errorMessage={errorInfo.areaCode}
+              onFocus={() => onFocus('areaCode')}
+              onClick={() => {
+                emit('click-area');
+                state.showAreaPopup = !disableArea;
+              }}
+            />
+            <Detail
+              show={props.showDetail}
+              value={data.addressDetail}
+              focused={state.detailFocused}
+              detailRows={props.detailRows}
+              errorMessage={errorInfo.addressDetail}
+              searchResult={props.searchResult}
+              detailMaxlength={props.detailMaxlength}
+              showSearchResult={props.showSearchResult}
+              onBlur={onDetailBlur}
+              onFocus={() => onFocus('addressDetail')}
+              onInput={onChangeDetail}
+              onSelect-search={(event) => {
+                emit('select-search', event);
+              }}
+            />
+            {props.showPostal && (
+              <Field
+                v-show={!hideBottomFields.value}
+                vModel={data.postalCode}
+                type="tel"
+                maxlength="6"
+                label={t('postal')}
+                placeholder={t('postal')}
+                errorMessage={errorInfo.postalCode}
+                onFocus={() => onFocus('postalCode')}
+              />
+            )}
+            {slots.default?.()}
+          </div>
+          {renderSetDefaultCell()}
+          <div v-show={!hideBottomFields.value} class={bem('buttons')}>
             <Button
               block
               round
-              loading={this.isDeleting}
-              text={this.deleteButtonText || t('delete')}
-              onClick={this.onDelete}
+              loading={props.isSaving}
+              type="danger"
+              text={props.saveButtonText || t('save')}
+              onClick={onSave}
             />
-          )}
+            {props.showDelete && (
+              <Button
+                block
+                round
+                loading={props.isDeleting}
+                text={props.deleteButtonText || t('delete')}
+                onClick={onDelete}
+              />
+            )}
+          </div>
+          <Popup
+            vModel={[state.showAreaPopup, 'show']}
+            round
+            teleport="body"
+            position="bottom"
+            lazyRender={false}
+          >
+            <Area
+              ref={areaRef}
+              value={data.areaCode}
+              loading={!areaListLoaded.value}
+              areaList={props.areaList}
+              columnsPlaceholder={props.areaColumnsPlaceholder}
+              onConfirm={onAreaConfirm}
+              onCancel={() => {
+                state.showAreaPopup = false;
+              }}
+            />
+          </Popup>
         </div>
-        <Popup
-          vModel={this.showAreaPopup}
-          round
-          position="bottom"
-          lazyRender={false}
-          getContainer="body"
-        >
-          <Area
-            ref="area"
-            value={data.areaCode}
-            loading={!this.areaListLoaded}
-            areaList={this.areaList}
-            columnsPlaceholder={this.areaColumnsPlaceholder}
-            onConfirm={this.onAreaConfirm}
-            onCancel={() => {
-              this.showAreaPopup = false;
-            }}
-          />
-        </Popup>
-      </div>
-    );
+      );
+    };
   },
 });

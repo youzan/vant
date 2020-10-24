@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Toast } from 'vant';
 
-Vue.use(Toast);
+const app = createApp();
+app.use(Toast);
 ```
 
 ## 代码演示
@@ -106,7 +107,7 @@ const timer = setInterval(() => {
 
 ### 全局方法
 
-引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 `$toast` 方法，便于在组件内调用。
+通过 `app.use` 注册 Toast 组件后，会自动在 app 的所有子组件上挂载 `$toast` 方法，便于在组件内调用。
 
 ```js
 export default {
@@ -182,4 +183,4 @@ Toast.resetDefaultOptions('loading');
 | onOpened | 完全展示后的回调函数 | _Function_ | - |
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | `van-fade` |
-| getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | `body` |

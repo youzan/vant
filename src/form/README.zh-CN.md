@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Form } from 'vant';
 
-Vue.use(Form);
+const app = createApp();
+app.use(Form);
 ```
 
 ## 代码演示
@@ -37,7 +38,7 @@ Vue.use(Form);
     :rules="[{ required: true, message: '请填写密码' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       提交
     </van-button>
   </div>
@@ -88,7 +89,7 @@ export default {
     :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
+    <van-button round block type="primary" native-type="submit">
       提交
     </van-button>
   </div>
@@ -310,9 +311,8 @@ export default {
   placeholder="点击选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
-    show-toolbar
     :columns="columns"
     @confirm="onConfirm"
     @cancel="showPicker = false"
@@ -352,7 +352,7 @@ export default {
   placeholder="点击选择时间"
   @click="showPicker = true"
 />
-<van-popup v-model="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
@@ -392,7 +392,7 @@ export default {
   placeholder="点击选择省市区"
   @click="showArea = true"
 />
-<van-popup v-model="showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"
@@ -486,7 +486,7 @@ export default {
 | message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
-| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | _string_ |
+| trigger `v2.5.2` | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
 ### validate-trigger  可选值
@@ -522,17 +522,3 @@ export default {
 | 名称    | 说明     |
 | ------- | -------- |
 | default | 表单内容 |
-
-## 常见问题
-
-### 点击表单中的普通按钮为什么会触发表单提交？
-
-在表单中，除了提交按钮外，可能还有一些其他的功能性按钮，如发送验证码按钮。在使用这些按钮时，要注意将`native-type`设置为`button`，否则会触发表单提交。
-
-```html
-<van-button native-type="button">
-  发送验证码
-</van-button>
-```
-
-这个问题的原因是浏览器中 button 标签 type 属性的默认值为`submit`，导致触发表单提交。我们会在下个大版本中将 type 的默认值调整为`button`来避免这个问题。

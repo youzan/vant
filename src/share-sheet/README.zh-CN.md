@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { ShareSheet } from 'vant';
 
-Vue.use(ShareSheet);
+const app = createApp();
+app.use(ShareSheet);
 ```
 
 ## 代码演示
@@ -22,7 +23,7 @@ Vue.use(ShareSheet);
 ```html
 <van-cell title="显示分享面板" @click="showShare = true" />
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="立即分享给好友"
   :options="options"
   @select="onSelect"
@@ -60,7 +61,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   title="立即分享给好友"
   :options="options"
 />
@@ -93,7 +94,7 @@ export default {
 除了使用内置的几种图标外，可以直接在 `icon` 中传入图片 URL 来使用自定义的图标。
 
 ```html
-<van-share-sheet v-model="showShare" :options="options" />
+<van-share-sheet v-model:show="showShare" :options="options" />
 ```
 
 ```js
@@ -126,7 +127,7 @@ export default {
 
 ```html
 <van-share-sheet
-  v-model="showShare"
+  v-model:show="showShare"
   :options="options"
   title="立即分享给好友"
   description="描述信息"
@@ -156,6 +157,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model:show | 是否显示分享面板 | _boolean_ | `false` |
 | options | 分享选项 | _Option[]_ | `[]` |
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字，传入空字符串可以隐藏按钮 | _string_ | `'取消'` |
@@ -167,7 +169,7 @@ export default {
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Option 数据结构
 

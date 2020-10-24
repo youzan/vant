@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Search } from 'vant';
 
-Vue.use(Search);
+const app = createApp();
+app.use(Search);
 ```
 
 ## Usage

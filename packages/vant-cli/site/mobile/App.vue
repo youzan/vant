@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <demo-nav />
+  <demo-nav />
+  <router-view v-slot="{ Component }">
     <keep-alive>
-      <router-view />
+      <demo-section>
+        <component :is="Component" />
+      </demo-section>
     </keep-alive>
-  </div>
+  </router-view>
 </template>
 
 <script>

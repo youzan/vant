@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render when badge is empty string 1`] = ``;
+
+exports[`should not render when badge is empty undefined 1`] = ``;
+
+exports[`should render when badge is zero 1`] = `<div class="van-badge">0</div>`;

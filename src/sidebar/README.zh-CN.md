@@ -3,11 +3,12 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Sidebar, SidebarItem } from 'vant';
 
-Vue.use(Sidebar);
-Vue.use(SidebarItem);
+const app = createApp();
+app.use(Sidebar);
+app.use(SidebarItem);
 ```
 
 ## 代码演示
@@ -108,7 +109,6 @@ export default {
 | title | 内容 | _string_ | `''` |
 | dot | 是否显示右上角小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
-| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
 | disabled | 是否禁用该项 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |

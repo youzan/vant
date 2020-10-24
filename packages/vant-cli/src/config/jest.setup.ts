@@ -1,6 +1,12 @@
-import Vue from 'vue';
-import 'jest-canvas-mock';
+/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
 // @ts-ignore
-import Package from '../../dist/package-entry';
+import vant from '../../dist/package-entry';
+import 'jest-canvas-mock';
 
-Vue.use(Package);
+declare global {
+  interface Window {
+    vant: any;
+  }
+}
+
+window.vant = vant;

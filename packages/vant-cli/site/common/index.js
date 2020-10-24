@@ -4,9 +4,7 @@ function iframeReady(iframe, callback) {
     if (iframe.contentWindow.replacePath) {
       callback();
     } else {
-      setTimeout(() => {
-        interval();
-      }, 50);
+      setTimeout(interval, 50);
     }
   };
 

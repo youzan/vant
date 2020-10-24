@@ -3,10 +3,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Tag } from 'vant';
 
-Vue.use(Tag);
+const app = createApp();
+app.use(Tag);
 ```
 
 ## 代码演示
@@ -51,7 +52,7 @@ Vue.use(Tag);
 添加 `closeable` 属性表示标签是可关闭的，关闭标签时会触发 `close` 事件，在 `close` 事件中可以执行隐藏标签的逻辑。
 
 ```html
-<van-tag v-if="show" closeable size="medium" type="primary" @close="close">
+<van-tag :show="show" closeable size="medium" type="primary" @close="close">
   标签
 </van-tag>
 ```
@@ -100,6 +101,7 @@ export default {
 | type | 类型，可选值为`primary` `success` `danger` `warning` | _string_ | `default` |
 | size | 大小, 可选值为`large` `medium` | _string_ | - |
 | color | 标签颜色 | _string_ | - |
+| show | 是否展示标签 | _boolean_ | `true` |
 | plain | 是否为空心样式 | _boolean_ | `false` |
 | round | 是否为圆角样式 | _boolean_ | `false` |
 | mark | 是否为标记样式 | _boolean_ | `false` |

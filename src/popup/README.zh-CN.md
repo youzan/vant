@@ -7,21 +7,22 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Popup } from 'vant';
 
-Vue.use(Popup);
+const app = createApp();
+app.use(Popup);
 ```
 
 ## 代码演示
 
 ### 基础用法
 
-通过 `v-model` 控制弹出层是否展示。
+通过 `v-model:show` 控制弹出层是否展示。
 
 ```html
 <van-cell is-link @click="showPopup">展示弹出层</van-cell>
-<van-popup v-model="show">内容</van-popup>
+<van-popup v-model:show="show">内容</van-popup>
 ```
 
 ```js
@@ -45,7 +46,7 @@ export default {
 通过 `position` 属性设置弹出位置，默认居中弹出，可以设置为 `top`、`bottom`、`left`、`right`。
 
 ```html
-<van-popup v-model="show" position="top" :style="{ height: '30%' }" />
+<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
 ```
 
 ### 关闭图标
@@ -54,14 +55,14 @@ export default {
 
 ```html
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   position="bottom"
   :style="{ height: '30%' }"
 />
 <!-- 自定义图标 -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon="close"
   position="bottom"
@@ -69,7 +70,7 @@ export default {
 />
 <!-- 图标位置 -->
 <van-popup
-  v-model="show"
+  v-model:show="show"
   closeable
   close-icon-position="top-left"
   position="bottom"
@@ -82,36 +83,38 @@ export default {
 设置 `round` 属性后，弹窗会根据弹出位置添加不同的圆角样式。
 
 ```html
-<van-popup v-model="show" round position="bottom" :style="{ height: '30%' }" />
+<van-popup
+  v-model:show="show"
+  round
+  position="bottom"
+  :style="{ height: '30%' }"
+/>
 ```
 
 ### 指定挂载位置
 
-弹出层默认挂载到组件所在位置，可以通过 `get-container` 属性指定挂载位置。
+弹出层默认挂载到组件所在位置，可以通过 `teleport` 属性指定挂载位置。
 
 ```html
 <!-- 挂载到 body 节点下 -->
-<van-popup v-model="show" get-container="body" />
+<van-popup v-model:show="show" teleport="body" />
 
 <!-- 挂载到 #app 节点下 -->
-<van-popup v-model="show" get-container="#app" />
+<van-popup v-model:show="show" teleport="#app" />
 
-<!-- 通过函数指定挂载位置 -->
-<van-popup v-model="show" :get-container="getContainer" />
+<!-- 挂载到指定的元素下 -->
+<van-popup v-model:show="show" :teleport="myContainer" />
 ```
 
 ```js
 export default {
-  methods: {
-    // 返回一个特定的 DOM 节点，作为挂载的父节点
-    getContainer() {
-      return document.querySelector('.my-container');
-    },
+  beforeCreate() {
+    this.myContainer = document.querySelector('.my-container');
   },
 };
 ```
 
-> 注意：使用 get-container 属性的组件不能为根节点
+> 注意：使用 teleport 属性的组件不能为根节点
 
 ## API
 
@@ -119,7 +122,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) | 是否显示弹出层 | _boolean_ | `false` |
+| v-model:show | 是否显示弹出层 | _boolean_ | `false` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |
@@ -134,7 +137,7 @@ export default {
 | close-icon | 关闭图标名称或图片链接 | _string_ | `cross` |
 | close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
-| get-container | 指定挂载的节点 | _string \| () => Element_ | - |
+| teleport | 指定挂载的节点 | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
 
 ### Events

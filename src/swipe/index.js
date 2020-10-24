@@ -1,34 +1,33 @@
-// Utils
-import { createNamespace } from '../utils';
-import { isHidden } from '../utils/dom/style';
-import { preventDefault } from '../utils/dom/event';
-import { doubleRaf } from '../utils/dom/raf';
-import { range } from '../utils/format/number';
+import {
+  ref,
+  watch,
+  reactive,
+  computed,
+  onMounted,
+  onActivated,
+  onDeactivated,
+  onBeforeUnmount,
+} from 'vue';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
-import { ParentMixin } from '../mixins/relation';
-import { BindEventMixin } from '../mixins/bind-event';
+// Utils
+import { range, isHidden, preventDefault, createNamespace } from '../utils';
+
+// Composition
+import {
+  useRect,
+  doubleRaf,
+  useChildren,
+  useWindowSize,
+  usePageVisibility,
+} from '@vant/use';
+import { useTouch } from '../composition/use-touch';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe');
 
+export const SWIPE_KEY = 'vanSwipe';
+
 export default createComponent({
-  mixins: [
-    TouchMixin,
-    ParentMixin('vanSwipe'),
-    BindEventMixin(function (bind, isBind) {
-      bind(window, 'resize', this.resize, true);
-      bind(window, 'orientationchange', this.resize, true);
-      bind(window, 'visibilitychange', this.onVisibilityChange);
-
-      if (isBind) {
-        this.initialize();
-      } else {
-        this.clear();
-      }
-    }),
-  ],
-
   props: {
     width: [Number, String],
     height: [Number, String],
@@ -62,361 +61,362 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
+  emits: ['change'],
+
+  setup(props, { emit, slots }) {
+    const root = ref();
+    const state = reactive({
       rect: null,
+      width: 0,
+      height: 0,
       offset: 0,
       active: 0,
-      deltaX: 0,
-      deltaY: 0,
       swiping: false,
-      computedWidth: 0,
-      computedHeight: 0,
-    };
-  },
+    });
 
-  watch: {
-    children() {
-      this.initialize();
-    },
+    const touch = useTouch();
+    const windowSize = useWindowSize();
+    const { children, linkChildren } = useChildren(SWIPE_KEY);
 
-    initialSwipe() {
-      this.initialize();
-    },
+    const count = computed(() => children.length);
 
-    autoplay(autoplay) {
-      if (autoplay > 0) {
-        this.autoPlay();
-      } else {
-        this.clear();
-      }
-    },
-  },
+    const size = computed(() => state[props.vertical ? 'height' : 'width']);
 
-  computed: {
-    count() {
-      return this.children.length;
-    },
+    const delta = computed(() =>
+      props.vertical ? touch.deltaY.value : touch.deltaX.value
+    );
 
-    maxCount() {
-      return Math.ceil(Math.abs(this.minOffset) / this.size);
-    },
+    const minOffset = computed(
+      () =>
+        (props.vertical ? state.rect.height : state.rect.width) -
+        size.value * count.value
+    );
 
-    delta() {
-      return this.vertical ? this.deltaY : this.deltaX;
-    },
+    const maxCount = computed(() =>
+      Math.ceil(Math.abs(minOffset.value) / size.value)
+    );
 
-    size() {
-      return this[this.vertical ? 'computedHeight' : 'computedWidth'];
-    },
+    const trackSize = computed(() => count.value * size.value);
 
-    trackSize() {
-      return this.count * this.size;
-    },
+    const activeIndicator = computed(
+      () => (state.active + count.value) % count.value
+    );
 
-    activeIndicator() {
-      return (this.active + this.count) % this.count;
-    },
+    const isCorrectDirection = computed(() => {
+      const expect = props.vertical ? 'vertical' : 'horizontal';
+      return touch.direction.value === expect;
+    });
 
-    isCorrectDirection() {
-      const expect = this.vertical ? 'vertical' : 'horizontal';
-      return this.direction === expect;
-    },
-
-    trackStyle() {
-      const mainAxis = this.vertical ? 'height' : 'width';
-      const crossAxis = this.vertical ? 'width' : 'height';
+    const trackStyle = computed(() => {
+      const mainAxis = props.vertical ? 'height' : 'width';
+      const crossAxis = props.vertical ? 'width' : 'height';
 
       return {
-        [mainAxis]: `${this.trackSize}px`,
-        [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
-        transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
-        transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`,
+        [mainAxis]: `${trackSize.value}px`,
+        [crossAxis]: props[crossAxis] ? `${props[crossAxis]}px` : '',
+        transitionDuration: `${state.swiping ? 0 : props.duration}ms`,
+        transform: `translate${props.vertical ? 'Y' : 'X'}(${state.offset}px)`,
       };
-    },
+    });
 
-    indicatorStyle() {
-      return {
-        backgroundColor: this.indicatorColor,
-      };
-    },
-
-    minOffset() {
-      return (
-        (this.vertical ? this.rect.height : this.rect.width) -
-        this.size * this.count
-      );
-    },
-  },
-
-  mounted() {
-    this.bindTouchEvent(this.$refs.track);
-  },
-
-  methods: {
-    // initialize swipe position
-    initialize(active = +this.initialSwipe) {
-      if (!this.$el || isHidden(this.$el)) {
-        return;
-      }
-
-      clearTimeout(this.timer);
-
-      const rect = this.$el.getBoundingClientRect();
-
-      this.rect = rect;
-      this.swiping = true;
-      this.active = active;
-      this.computedWidth = Math.floor(+this.width || rect.width);
-      this.computedHeight = Math.floor(+this.height || rect.height);
-      this.offset = this.getTargetOffset(active);
-      this.children.forEach((swipe) => {
-        swipe.offset = 0;
-      });
-      this.autoPlay();
-    },
-
-    // @exposed-api
-    resize() {
-      this.initialize(this.activeIndicator);
-    },
-
-    onVisibilityChange() {
-      if (document.hidden) {
-        this.clear();
-      } else {
-        this.autoPlay();
-      }
-    },
-
-    onTouchStart(event) {
-      if (!this.touchable) return;
-
-      this.clear();
-      this.touchStartTime = Date.now();
-      this.touchStart(event);
-      this.correctPosition();
-    },
-
-    onTouchMove(event) {
-      if (!this.touchable || !this.swiping) return;
-
-      this.touchMove(event);
-
-      if (this.isCorrectDirection) {
-        preventDefault(event, this.stopPropagation);
-        this.move({ offset: this.delta });
-      }
-    },
-
-    onTouchEnd() {
-      if (!this.touchable || !this.swiping) return;
-
-      const { size, delta } = this;
-      const duration = Date.now() - this.touchStartTime;
-      const speed = delta / duration;
-      const shouldSwipe = Math.abs(speed) > 0.25 || Math.abs(delta) > size / 2;
-
-      if (shouldSwipe && this.isCorrectDirection) {
-        const offset = this.vertical ? this.offsetY : this.offsetX;
-
-        let pace = 0;
-
-        if (this.loop) {
-          pace = offset > 0 ? (delta > 0 ? -1 : 1) : 0;
-        } else {
-          pace = -Math[delta > 0 ? 'ceil' : 'floor'](delta / size);
-        }
-
-        this.move({
-          pace,
-          emitChange: true,
-        });
-      } else if (delta) {
-        this.move({ pace: 0 });
-      }
-
-      this.swiping = false;
-      this.autoPlay();
-    },
-
-    getTargetActive(pace) {
-      const { active, count, maxCount } = this;
+    const getTargetActive = (pace) => {
+      const { active } = state;
 
       if (pace) {
-        if (this.loop) {
-          return range(active + pace, -1, count);
+        if (props.loop) {
+          return range(active + pace, -1, count.value);
         }
-
-        return range(active + pace, 0, maxCount);
+        return range(active + pace, 0, maxCount.value);
       }
-
       return active;
-    },
+    };
 
-    getTargetOffset(targetActive, offset = 0) {
-      let currentPosition = targetActive * this.size;
-      if (!this.loop) {
-        currentPosition = Math.min(currentPosition, -this.minOffset);
+    const getTargetOffset = (targetActive, offset = 0) => {
+      let currentPosition = targetActive * size.value;
+      if (!props.loop) {
+        currentPosition = Math.min(currentPosition, -minOffset.value);
       }
 
       let targetOffset = Math.round(offset - currentPosition);
-      if (!this.loop) {
-        targetOffset = range(targetOffset, this.minOffset, 0);
+      if (!props.loop) {
+        targetOffset = range(targetOffset, minOffset.value, 0);
       }
 
       return targetOffset;
-    },
+    };
 
-    move({ pace = 0, offset = 0, emitChange }) {
-      const { loop, count, active, children, trackSize, minOffset } = this;
-
-      if (count <= 1) {
+    const move = ({ pace = 0, offset = 0, emitChange }) => {
+      if (count.value <= 1) {
         return;
       }
 
-      const targetActive = this.getTargetActive(pace);
-      const targetOffset = this.getTargetOffset(targetActive, offset);
+      const { active } = state;
+      const targetActive = getTargetActive(pace);
+      const targetOffset = getTargetOffset(targetActive, offset);
 
       // auto move first and last swipe in loop mode
-      if (loop) {
-        if (children[0] && targetOffset !== minOffset) {
-          const outRightBound = targetOffset < minOffset;
-          children[0].offset = outRightBound ? trackSize : 0;
+      if (props.loop) {
+        if (children[0] && targetOffset !== minOffset.value) {
+          const outRightBound = targetOffset < minOffset.value;
+          children[0].setOffset(outRightBound ? trackSize.value : 0);
         }
 
-        if (children[count - 1] && targetOffset !== 0) {
+        if (children[count.value - 1] && targetOffset !== 0) {
           const outLeftBound = targetOffset > 0;
-          children[count - 1].offset = outLeftBound ? -trackSize : 0;
+          children[count.value - 1].setOffset(
+            outLeftBound ? -trackSize.value : 0
+          );
         }
       }
 
-      this.active = targetActive;
-      this.offset = targetOffset;
+      state.active = targetActive;
+      state.offset = targetOffset;
 
       if (emitChange && targetActive !== active) {
-        this.$emit('change', this.activeIndicator);
+        emit('change', activeIndicator.value);
       }
-    },
+    };
 
-    // @exposed-api
-    prev() {
-      this.correctPosition();
-      this.resetTouchStatus();
+    const correctPosition = () => {
+      state.swiping = true;
+
+      if (state.active <= -1) {
+        move({ pace: count.value });
+      }
+      if (state.active >= count.value) {
+        move({ pace: -count.value });
+      }
+    };
+
+    const prev = () => {
+      correctPosition();
+      touch.reset();
 
       doubleRaf(() => {
-        this.swiping = false;
-        this.move({
+        state.swiping = false;
+        move({
           pace: -1,
           emitChange: true,
         });
       });
-    },
+    };
 
-    // @exposed-api
-    next() {
-      this.correctPosition();
-      this.resetTouchStatus();
+    const next = () => {
+      correctPosition();
+      touch.reset();
 
       doubleRaf(() => {
-        this.swiping = false;
-        this.move({
+        state.swiping = false;
+        move({
           pace: 1,
           emitChange: true,
         });
       });
-    },
+    };
 
-    // @exposed-api
-    swipeTo(index, options = {}) {
-      this.correctPosition();
-      this.resetTouchStatus();
+    let autoplayTimer;
+
+    const stopAutoplay = () => {
+      clearTimeout(autoplayTimer);
+    };
+
+    const autoplay = () => {
+      if (props.autoplay > 0 && count.value > 1) {
+        stopAutoplay();
+        autoplayTimer = setTimeout(() => {
+          next();
+          autoplay();
+        }, props.autoplay);
+      }
+    };
+
+    // initialize swipe position
+    const initialize = (active = +props.initialSwipe) => {
+      console.log('initialize', children.length, active);
+      if (!root.value || isHidden(root)) {
+        return;
+      }
+
+      stopAutoplay();
+
+      const rect = useRect(root);
+
+      state.rect = rect;
+      state.swiping = true;
+      state.active = active;
+      state.width = Math.floor(+props.width || rect.width);
+      state.height = Math.floor(+props.height || rect.height);
+      state.offset = getTargetOffset(active);
+      children.forEach((swipe) => {
+        swipe.setOffset(0);
+      });
+
+      autoplay();
+    };
+
+    const resize = () => {
+      initialize(activeIndicator.value);
+    };
+
+    let touchStartTime;
+
+    const onTouchStart = (event) => {
+      if (!props.touchable) return;
+
+      touch.start(event);
+      touchStartTime = Date.now();
+
+      stopAutoplay();
+      correctPosition();
+    };
+
+    const onTouchMove = (event) => {
+      if (props.touchable && state.swiping) {
+        touch.move(event);
+
+        if (isCorrectDirection.value) {
+          preventDefault(event, props.stopPropagation);
+          move({ offset: delta.value });
+        }
+      }
+    };
+
+    const onTouchEnd = () => {
+      if (!props.touchable || !state.swiping) {
+        return;
+      }
+
+      const duration = Date.now() - touchStartTime;
+      const speed = delta.value / duration;
+      const shouldSwipe =
+        Math.abs(speed) > 0.25 || Math.abs(delta.value) > size.value / 2;
+
+      if (shouldSwipe && isCorrectDirection.value) {
+        const offset = props.vertical
+          ? touch.offsetY.value
+          : touch.offsetX.value;
+
+        let pace = 0;
+
+        if (props.loop) {
+          pace = offset > 0 ? (delta.value > 0 ? -1 : 1) : 0;
+        } else {
+          pace = -Math[delta.value > 0 ? 'ceil' : 'floor'](
+            delta.value / size.value
+          );
+        }
+
+        move({
+          pace,
+          emitChange: true,
+        });
+      } else if (delta.value) {
+        move({ pace: 0 });
+      }
+
+      state.swiping = false;
+      autoplay();
+    };
+
+    const swipeTo = (index, options = {}) => {
+      correctPosition();
+      touch.reset();
 
       doubleRaf(() => {
         let targetIndex;
-        if (this.loop && index === this.count) {
-          targetIndex = this.active === 0 ? 0 : index;
+        if (props.loop && index === count.value) {
+          targetIndex = state.active === 0 ? 0 : index;
         } else {
-          targetIndex = index % this.count;
+          targetIndex = index % count.value;
         }
 
         if (options.immediate) {
           doubleRaf(() => {
-            this.swiping = false;
+            state.swiping = false;
           });
         } else {
-          this.swiping = false;
+          state.swiping = false;
         }
 
-        this.move({
-          pace: targetIndex - this.active,
+        move({
+          pace: targetIndex - state.active,
           emitChange: true,
         });
       });
-    },
+    };
 
-    correctPosition() {
-      this.swiping = true;
+    const renderDot = (_, index) => {
+      const active = index === activeIndicator.value;
+      const style = active ? { backgroundColor: props.indicatorColor } : null;
+      return <i style={style} class={bem('indicator', { active })} />;
+    };
 
-      if (this.active <= -1) {
-        this.move({ pace: this.count });
+    const renderIndicator = () => {
+      if (slots.indicator) {
+        return slots.indicator();
       }
-
-      if (this.active >= this.count) {
-        this.move({ pace: -this.count });
-      }
-    },
-
-    clear() {
-      clearTimeout(this.timer);
-    },
-
-    autoPlay() {
-      const { autoplay } = this;
-
-      if (autoplay > 0 && this.count > 1) {
-        this.clear();
-        this.timer = setTimeout(() => {
-          this.next();
-          this.autoPlay();
-        }, autoplay);
-      }
-    },
-
-    genIndicator() {
-      const { count, activeIndicator } = this;
-      const slot = this.slots('indicator');
-
-      if (slot) {
-        return slot;
-      }
-
-      if (this.showIndicators && count > 1) {
+      if (props.showIndicators && count.value > 1) {
         return (
-          <div class={bem('indicators', { vertical: this.vertical })}>
-            {Array(...Array(count)).map((empty, index) => (
-              <i
-                class={bem('indicator', { active: index === activeIndicator })}
-                style={index === activeIndicator ? this.indicatorStyle : null}
-              />
-            ))}
+          <div class={bem('indicators', { vertical: props.vertical })}>
+            {Array(...Array(count.value)).map(renderDot)}
           </div>
         );
       }
-    },
-  },
+    };
 
-  render() {
-    return (
-      <div class={bem()}>
+    useExpose({
+      prev,
+      next,
+      state,
+      resize,
+      swipeTo,
+    });
+
+    linkChildren({ size, props, count, activeIndicator });
+
+    watch([() => children.length, () => props.initialSwipe], () => {
+      initialize();
+    });
+
+    watch(
+      () => props.autoplay,
+      (value) => {
+        if (value > 0) {
+          autoplay();
+        } else {
+          stopAutoplay();
+        }
+      }
+    );
+
+    watch([windowSize.width, windowSize.height], resize);
+
+    watch(usePageVisibility(), (visible) => {
+      if (visible) {
+        autoplay();
+      } else {
+        stopAutoplay();
+      }
+    });
+
+    onMounted(initialize);
+    onActivated(initialize);
+    onDeactivated(stopAutoplay);
+    onBeforeUnmount(stopAutoplay);
+
+    return () => (
+      <div ref={root} class={bem()}>
         <div
-          ref="track"
-          style={this.trackStyle}
-          class={bem('track', { vertical: this.vertical })}
+          style={trackStyle.value}
+          class={bem('track', { vertical: props.vertical })}
+          onTouchstart={onTouchStart}
+          onTouchmove={onTouchMove}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
         >
-          {this.slots()}
+          {slots.default?.()}
         </div>
-        {this.genIndicator()}
+        {renderIndicator()}
       </div>
     );
   },

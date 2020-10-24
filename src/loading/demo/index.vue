@@ -1,32 +1,30 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('type')">
-      <van-loading />
-      <van-loading type="spinner" />
-    </demo-block>
+  <demo-block :title="t('type')">
+    <van-loading />
+    <van-loading type="spinner" />
+  </demo-block>
 
-    <demo-block :title="t('color')">
-      <van-loading color="#1989fa" />
-      <van-loading type="spinner" color="#1989fa" />
-    </demo-block>
+  <demo-block :title="t('color')">
+    <van-loading color="#1989fa" />
+    <van-loading type="spinner" color="#1989fa" />
+  </demo-block>
 
-    <demo-block :title="t('size')">
-      <van-loading size="24" />
-      <van-loading type="spinner" size="24" />
-    </demo-block>
+  <demo-block :title="t('size')">
+    <van-loading size="24" />
+    <van-loading type="spinner" size="24" />
+  </demo-block>
 
-    <demo-block :title="t('text')">
-      <van-loading size="24px">
-        {{ t('loading') }}
-      </van-loading>
-    </demo-block>
+  <demo-block :title="t('text')">
+    <van-loading size="24px">
+      {{ t('loading') }}
+    </van-loading>
+  </demo-block>
 
-    <demo-block :title="t('vertical')">
-      <van-loading size="24px" vertical>
-        {{ t('loading') }}
-      </van-loading>
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('vertical')">
+    <van-loading size="24px" vertical>
+      {{ t('loading') }}
+    </van-loading>
+  </demo-block>
 </template>
 
 <script>

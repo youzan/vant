@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Dialog } from 'vant';
 
-Vue.use(Dialog);
+const app = createApp();
+app.use(Dialog);
 ```
 
 ## Usage
@@ -71,13 +72,12 @@ Dialog.alert({
 ### Asnyc Close
 
 ```js
-function beforeClose(action, done) {
-  if (action === 'confirm') {
-    setTimeout(done, 1000);
-  } else {
-    done();
-  }
-}
+const beforeClose = (action, done) =>
+  new Promsie((resolve) => {
+    setTimeout(() => {
+      resolve(action === 'confirm');
+    }, 1000);
+  });
 
 Dialog.confirm({
   title: 'Title',
@@ -88,7 +88,7 @@ Dialog.confirm({
 
 ### Global Method
 
-After import the Dialog component, the `$dialog` method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subcomponents of the app.
 
 ```js
 export default {
@@ -105,7 +105,7 @@ export default {
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog v-model="show" title="Title" show-cancel-button>
+<van-dialog v-model:show="show" title="Title" show-cancel-button>
   <img src="https://img.yzcdn.cn/vant/apple-3.jpg" />
 </van-dialog>
 ```
@@ -155,16 +155,16 @@ export default {
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
-| allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
-| beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
+| allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
+| beforeClose | Callback function before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
-| getContainer | Return the mount node for Dialog | _string \| () => Element_ | `body` |
+| teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
 
 ### Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show dialog | _boolean_ | - |
+| v-model:show | Whether to show dialog | _boolean_ | - |
 | title | Title | _string_ | - |
 | width | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
@@ -183,10 +183,10 @@ export default {
 | close-on-click-overlay | Whether to close when click overlay | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
-| allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
-| before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
+| allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
+| before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
-| get-container | Return the mount node for Dialog | _string \| () => Element_ | - |
+| teleport | Return the mount node for Dialog | _string \| Element_ | - |
 
 ### Events
 

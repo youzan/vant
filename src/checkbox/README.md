@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
+const app = createApp();
+app.use(Checkbox);
+app.use(CheckboxGroup);
 ```
 
 ## Usage
@@ -149,7 +150,7 @@ export default {
 </van-checkbox-group>
 
 <van-button type="primary" @click="checkAll">Check All</van-button>
-<van-button type="info" @click="toggleAll">Toggle All</van-button>
+<van-button type="primary" @click="toggleAll">Toggle All</van-button>
 ```
 
 ```js
@@ -183,7 +184,11 @@ export default {
       @click="toggle(index)"
     >
       <template #right-icon>
-        <van-checkbox :name="item" ref="checkboxes" />
+        <van-checkbox
+          :name="item"
+          :ref="el => checkboxes[index] = el"
+          @click.stop
+        />
       </template>
     </van-cell>
   </van-cell-group>
@@ -191,19 +196,28 @@ export default {
 ```
 
 ```js
+import { ref, onBeforeUpdate } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const result = ref([]);
+    const checkboxes = ref([]);
+    const toggle = (index) => {
+      checkboxes.value[index].toggle();
+    };
+
+    onBeforeUpdate(() => {
+      checkboxes.value = [];
+    });
+
     return {
-      list: ['a', 'b']
-      result: []
+      list: ['a', 'b'],
+      result,
+      toggle,
+      checkboxes,
     };
   },
-  methods: {
-    toggle(index) {
-      this.$refs.checkboxes[index].toggle();
-    }
-  }
-}
+};
 ```
 
 ## API

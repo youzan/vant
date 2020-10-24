@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Divider } from 'vant';
 
-Vue.use(Divider);
+const app = createApp();
+app.use(Divider);
 ```
 
 ## 代码演示
@@ -64,11 +65,11 @@ Vue.use(Divider);
 
 ### Props
 
-| 参数             | 说明                             | 类型      | 默认值   |
-| ---------------- | -------------------------------- | --------- | -------- |
-| dashed           | 是否使用虚线                     | _boolean_ | `false`  |
-| hairline         | 是否使用 0.5px 线                | _boolean_ | `true`   |
-| content-position | 内容位置，可选值为`left` `right` | _string_  | `center` |
+| 参数             | 说明                              | 类型      | 默认值   |
+| ---------------- | --------------------------------- | --------- | -------- |
+| dashed           | 是否使用虚线                      | _boolean_ | `false`  |
+| hairline         | 是否使用 0.5px 线                 | _boolean_ | `true`   |
+| content-position | 内容位置，可选值为 `left` `right` | _string_  | `center` |
 
 ### Slots
 

@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Tag } from 'vant';
 
-Vue.use(Tag);
+const app = createApp();
+app.use(Tag);
 ```
 
 ## Usage
@@ -41,7 +42,7 @@ Vue.use(Tag);
 ### Closeable
 
 ```html
-<van-tag v-if="show" closeable size="medium" type="primary" @close="close">
+<van-tag :show="show" closeable size="medium" type="primary" @close="close">
   Tag
 </van-tag>
 ```
@@ -86,6 +87,7 @@ export default {
 | type | Type, can be set to `primary` `success` `danger` `warning` | _string_ | `default` |
 | size | Size, can be set to `large` `medium` | _string_ | - |
 | color | Custom color | _string_ | - |
+| show | Whether to show tag | _boolean_ | `true` |
 | plain | Whether to be plain style | _boolean_ | `false` |
 | round | Whether to be round style | _boolean_ | `false` |
 | mark | Whether to be mark style | _boolean_ | `false` |

@@ -1,51 +1,49 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('radioMode')">
-      <van-tree-select
-        :items="items"
-        :active-id.sync="activeId"
-        :main-active-index.sync="activeIndex"
-      />
-    </demo-block>
+  <demo-block :title="t('radioMode')">
+    <van-tree-select
+      v-model:active-id="activeId"
+      v-model:main-active-index="activeIndex"
+      :items="items"
+    />
+  </demo-block>
 
-    <demo-block :title="t('multipleMode')">
-      <van-tree-select
-        :items="items"
-        :active-id.sync="activeIds"
-        :main-active-index.sync="activeIndex2"
-      />
-    </demo-block>
+  <demo-block :title="t('multipleMode')">
+    <van-tree-select
+      v-model:active-id="activeIds"
+      v-model:main-active-index="activeIndex2"
+      :items="items"
+    />
+  </demo-block>
 
-    <demo-block :title="t('customContent')">
-      <van-tree-select
-        height="55vw"
-        :items="simpleItems"
-        :main-active-index.sync="activeIndex3"
-      >
-        <template #content>
-          <van-image
-            v-if="activeIndex3 === 0"
-            :show-loading="false"
-            src="https://img.yzcdn.cn/vant/apple-1.jpg"
-          />
-          <van-image
-            v-if="activeIndex3 === 1"
-            :show-loading="false"
-            src="https://img.yzcdn.cn/vant/apple-2.jpg"
-          />
-        </template>
-      </van-tree-select>
-    </demo-block>
+  <demo-block :title="t('customContent')">
+    <van-tree-select
+      v-model:main-active-index="activeIndex3"
+      height="55vw"
+      :items="simpleItems"
+    >
+      <template #content>
+        <van-image
+          v-if="activeIndex3 === 0"
+          :show-loading="false"
+          src="https://img.yzcdn.cn/vant/apple-1.jpg"
+        />
+        <van-image
+          v-if="activeIndex3 === 1"
+          :show-loading="false"
+          src="https://img.yzcdn.cn/vant/apple-2.jpg"
+        />
+      </template>
+    </van-tree-select>
+  </demo-block>
 
-    <demo-block :title="t('showBadge')">
-      <van-tree-select
-        height="55vw"
-        :items="badgeItems"
-        :active-id.sync="activeId2"
-        :main-active-index.sync="activeIndex4"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('showBadge')">
+    <van-tree-select
+      v-model:active-id="activeId2"
+      v-model:main-active-index="activeIndex4"
+      height="55vw"
+      :items="badgeItems"
+    />
+  </demo-block>
 </template>
 
 <script>

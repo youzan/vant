@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { TreeSelect } from 'vant';
 
-Vue.use(TreeSelect);
+const app = createApp();
+app.use(TreeSelect);
 ```
 
 ## Usage
@@ -15,9 +16,9 @@ Vue.use(TreeSelect);
 
 ```html
 <van-tree-select
+  v-model:active-id="activeId"
+  v-model:main-active-index="activeIndex"
   :items="items"
-  :active-id.sync="activeId"
-  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -37,9 +38,9 @@ export default {
 
 ```html
 <van-tree-select
+  v-model:active-id="activeIds"
+  v-model:main-active-index="activeIndex"
   :items="items"
-  :active-id.sync="activeIds"
-  :main-active-index.sync="activeIndex"
 />
 ```
 
@@ -58,7 +59,11 @@ export default {
 ### Custom Content
 
 ```html
-<van-tree-select height="55vw" :items="items" :main-active-index.sync="active">
+<van-tree-select
+  v-model:main-active-index="active"
+  height="55vw"
+  :items="items"
+>
   <template #content>
     <van-image
       v-if="active === 0"
@@ -87,9 +92,9 @@ export default {
 
 ```html
 <van-tree-select
+  v-model:main-active-index="activeIndex"
   height="55vw"
   :items="items"
-  :main-active-index.sync="activeIndex"
 />
 ```
 

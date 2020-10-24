@@ -3,11 +3,12 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { DropdownMenu, DropdownItem } from 'vant';
 
-Vue.use(DropdownMenu);
-Vue.use(DropdownItem);
+const app = createApp();
+app.use(DropdownMenu);
+app.use(DropdownItem);
 ```
 
 ## Usage
@@ -142,7 +143,7 @@ Use `active-color` prop to custom active color of the title and options.
 | disabled | Whether to disable dropdown item | _boolean_ | `false` |
 | lazy-render `v2.8.5` | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title class | _string_ | - |
-| get-container | Return the mount node for menu | _string \| () => Element_ | - |
+| teleport | Return the mount node for menu | _string \| Element_ | - |
 
 ### DropdownItem Events
 

@@ -1,63 +1,66 @@
+import { computed, nextTick, onMounted, reactive } from 'vue';
+import { SWIPE_KEY } from '../swipe';
 import { createNamespace } from '../utils';
-import { ChildrenMixin } from '../mixins/relation';
+import { useParent } from '@vant/use';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe-item');
 
 export default createComponent({
-  mixins: [ChildrenMixin('vanSwipe')],
-
-  data() {
-    return {
+  setup(props, { slots }) {
+    const state = reactive({
       offset: 0,
       mounted: false,
-    };
-  },
-
-  mounted() {
-    this.$nextTick(() => {
-      this.mounted = true;
     });
-  },
 
-  computed: {
-    style() {
+    const { parent, index } = useParent(SWIPE_KEY);
+
+    const style = computed(() => {
       const style = {};
-      const { size, vertical } = this.parent;
+      const { vertical } = parent.props;
 
-      style[vertical ? 'height' : 'width'] = `${size}px`;
+      style[vertical ? 'height' : 'width'] = `${parent.size.value}px`;
 
-      if (this.offset) {
-        style.transform = `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`;
+      if (state.offset) {
+        style.transform = `translate${vertical ? 'Y' : 'X'}(${state.offset}px)`;
       }
 
       return style;
-    },
+    });
 
-    shouldRender() {
-      const { index, parent, mounted } = this;
-
-      if (!parent.lazyRender) {
+    const shouldRender = computed(() => {
+      if (!parent.props.lazyRender) {
         return true;
       }
 
       // wait for all item to mount, so we can get the exact count
-      if (!mounted) {
+      if (!state.mounted) {
         return false;
       }
 
-      const active = parent.activeIndicator;
-      const maxActive = parent.count - 1;
+      const active = parent.activeIndicator.value;
+      const maxActive = parent.count.value - 1;
       const prevActive = active === 0 ? maxActive : active - 1;
       const nextActive = active === maxActive ? 0 : active + 1;
 
-      return index === active || index === prevActive || index === nextActive;
-    },
-  },
+      return index.value >= prevActive || index.value <= nextActive;
+    });
 
-  render() {
-    return (
-      <div class={bem()} style={this.style} {...{ on: this.$listeners }}>
-        {this.shouldRender && this.slots()}
+    const setOffset = (offset) => {
+      state.offset = offset;
+    };
+
+    onMounted(() => {
+      nextTick(() => {
+        state.mounted = true;
+      });
+    });
+
+    useExpose({ setOffset });
+
+    return () => (
+      <div class={bem()} style={style.value}>
+        {shouldRender.value ? slots.default?.() : null}
       </div>
     );
   },

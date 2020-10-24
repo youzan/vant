@@ -1,4 +1,16 @@
 import { isNaN } from '../utils/validate/number';
+import { pickerProps } from '../picker/shared';
+
+export const sharedProps = {
+  ...pickerProps,
+  filter: Function,
+  modelValue: null,
+  columnsOrder: Array,
+  formatter: {
+    type: Function,
+    default: (type: string, value: unknown) => value,
+  },
+};
 
 export function times(n: number, iteratee: (index: number) => any[]) {
   let index = -1;

@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Icon } from 'vant';
 
-Vue.use(Icon);
+const app = createApp();
+app.use(Icon);
 ```
 
 ## 代码演示
@@ -93,7 +94,6 @@ import 'vant/lib/icon/local.css';
 | name | 图标名称或图片链接 | _string_ | - |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
-| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
 | color | 图标颜色 | _string_ | `inherit` |
 | size | 图标大小，如 `20px` `2em`，默认单位为`px` | _number \| string_ | `inherit` |
 | class-prefix | 类名前缀，用于使用自定义图标 | _string_ | `van-icon` |

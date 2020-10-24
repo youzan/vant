@@ -1,6 +1,3 @@
-import Vue from 'vue';
-import { VanPopupMixin } from './mixins/popup';
-
 type ToastMessage = string | number;
 type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 type ToastPosition = 'top' | 'middle' | 'bottom';
@@ -26,7 +23,7 @@ export type ToastOptions = {
   getContainer?: string | (() => Element);
 };
 
-export interface VanToast extends Vue, VanPopupMixin {
+export interface VanToast {
   type: ToastType;
   position: ToastPosition;
   loadingType: ToastLoadingType;
@@ -50,8 +47,8 @@ export interface Toast {
   allowMultiple(allow: boolean): void;
 }
 
-declare module 'vue/types/vue' {
-  interface Vue {
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
     $toast: Toast;
   }
 }

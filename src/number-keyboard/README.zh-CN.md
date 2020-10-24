@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { NumberKeyboard } from 'vant';
 
-Vue.use(NumberKeyboard);
+const app = createApp();
+app.use(NumberKeyboard);
 ```
 
 ## 代码演示
@@ -20,7 +21,7 @@ Vue.use(NumberKeyboard);
 数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作。
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
+<van-cell @touchstart.stop="show = true">
   弹出默认键盘
 </van-cell>
 <van-number-keyboard
@@ -74,7 +75,7 @@ export default {
 通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`。
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出身份证号键盘
 </van-cell>
 <van-number-keyboard
@@ -92,7 +93,7 @@ export default {
 通过 `title` 属性可以设置键盘标题。
 
 ```html
-<van-cell plain type="info" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出带标题的键盘
 </van-cell>
 <van-number-keyboard
@@ -111,7 +112,7 @@ export default {
 当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`。
 
 ```html
-<van-cell plain type="primary" @touchstart.native.stop="show = true">
+<van-cell plain type="primary" @touchstart.stop="show = true">
   弹出配置多个按键的键盘
 </van-cell>
 <van-number-keyboard
@@ -129,12 +130,7 @@ export default {
 可以通过 `v-model` 绑定键盘当前输入值。
 
 ```html
-<van-field
-  readonly
-  clickable
-  :value="value"
-  @touchstart.native.stop="show = true"
-/>
+<van-field readonly clickable :value="value" @touchstart.stop="show = true" />
 <van-number-keyboard
   v-model="value"
   :show="show"
@@ -173,7 +169,7 @@ export default {
 | close-button-loading `v2.7.0` | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | 是否展示删除图标 | _boolean_ | `true` |
 | hide-on-click-outside | 点击外部时是否收起键盘 | _boolean_ | `true` |
-| get-container `v2.10.0` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| teleport `v2.10.0` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events

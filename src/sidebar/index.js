@@ -1,44 +1,40 @@
+import { watch } from 'vue';
 import { createNamespace } from '../utils';
-import { ParentMixin } from '../mixins/relation';
+import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
+export const SIDEBAR_KEY = 'vanSidebar';
+
 export default createComponent({
-  mixins: [ParentMixin('vanSidebar')],
-
-  model: {
-    prop: 'activeKey',
-  },
-
   props: {
-    activeKey: {
+    modelValue: {
       type: [Number, String],
       default: 0,
     },
   },
 
-  data() {
-    return {
-      index: +this.activeKey,
-    };
-  },
+  emits: ['change', 'update:modelValue'],
 
-  watch: {
-    activeKey() {
-      this.setIndex(+this.activeKey);
-    },
-  },
+  setup(props, { emit, slots }) {
+    const { linkChildren } = useChildren(SIDEBAR_KEY);
 
-  methods: {
-    setIndex(index) {
-      if (index !== this.index) {
-        this.index = index;
-        this.$emit('change', index);
+    const active = () => +props.modelValue;
+
+    const setActive = (value) => {
+      if (value !== active()) {
+        emit('change', value);
       }
-    },
-  },
+    };
 
-  render() {
-    return <div class={bem()}>{this.slots()}</div>;
+    watch(active, setActive);
+
+    linkChildren({
+      emit,
+      active,
+      setActive,
+    });
+
+    return () => <div class={bem()}>{slots.default?.()}</div>;
   },
 });

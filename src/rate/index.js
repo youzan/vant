@@ -1,10 +1,12 @@
-// Utils
-import { createNamespace, addUnit } from '../utils';
-import { preventDefault } from '../utils/dom/event';
+import { computed } from 'vue';
 
-// Mixins
-import { TouchMixin } from '../mixins/touch';
-import { FieldMixin } from '../mixins/field';
+// Utils
+import { addUnit, createNamespace, preventDefault } from '../utils';
+
+// Composition
+import { useRefs } from '../composition/use-refs';
+import { useTouch } from '../composition/use-touch';
+import { useLinkField } from '../composition/use-link-field';
 
 // Components
 import Icon from '../icon';
@@ -15,17 +17,13 @@ function getRateStatus(value, index, allowHalf) {
   if (value >= index) {
     return 'full';
   }
-
   if (value + 0.5 >= index && allowHalf) {
     return 'half';
   }
-
   return 'void';
 }
 
 export default createComponent({
-  mixins: [TouchMixin, FieldMixin],
-
   props: {
     size: [Number, String],
     color: String,
@@ -36,7 +34,7 @@ export default createComponent({
     voidColor: String,
     iconPrefix: String,
     disabledColor: String,
-    value: {
+    modelValue: {
       type: Number,
       default: 0,
     },
@@ -58,51 +56,53 @@ export default createComponent({
     },
   },
 
-  computed: {
-    list() {
+  emits: ['change', 'update:modelValue'],
+
+  setup(props, { emit }) {
+    let ranges;
+
+    const touch = useTouch();
+    const [itemRefs, setItemRefs] = useRefs();
+
+    const untouchable = () =>
+      props.readonly || props.disabled || !props.touchable;
+
+    const list = computed(() => {
       const list = [];
-      for (let i = 1; i <= this.count; i++) {
-        list.push(getRateStatus(this.value, i, this.allowHalf));
+      for (let i = 1; i <= props.count; i++) {
+        list.push(getRateStatus(props.modelValue, i, props.allowHalf));
       }
-
       return list;
-    },
+    });
 
-    sizeWithUnit() {
-      return addUnit(this.size);
-    },
-
-    gutterWithUnit() {
-      return addUnit(this.gutter);
-    },
-  },
-
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
-
-  methods: {
-    select(index) {
-      if (!this.disabled && !this.readonly && index !== this.value) {
-        this.$emit('input', index);
-        this.$emit('change', index);
+    const select = (index) => {
+      if (!props.disabled && !props.readonly && index !== props.modelValue) {
+        emit('update:modelValue', index);
+        emit('change', index);
       }
-    },
+    };
 
-    onTouchStart(event) {
-      if (this.readonly || this.disabled || !this.touchable) {
+    const getScoreByPosition = (x) => {
+      for (let i = ranges.length - 1; i > 0; i--) {
+        if (x > ranges[i].left) {
+          return ranges[i].score;
+        }
+      }
+      return props.allowHalf ? 0.5 : 1;
+    };
+
+    const onTouchStart = (event) => {
+      if (untouchable()) {
         return;
       }
 
-      this.touchStart(event);
+      touch.start(event);
 
-      const rects = this.$refs.items.map((item) =>
-        item.getBoundingClientRect()
-      );
-      const ranges = [];
+      const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
 
+      ranges = [];
       rects.forEach((rect, index) => {
-        if (this.allowHalf) {
+        if (props.allowHalf) {
           ranges.push(
             { score: index + 0.5, left: rect.left },
             { score: index + 1, left: rect.left + rect.width / 2 }
@@ -111,107 +111,101 @@ export default createComponent({
           ranges.push({ score: index + 1, left: rect.left });
         }
       });
+    };
 
-      this.ranges = ranges;
-    },
-
-    onTouchMove(event) {
-      if (this.readonly || this.disabled || !this.touchable) {
+    const onTouchMove = (event) => {
+      if (untouchable()) {
         return;
       }
 
-      this.touchMove(event);
+      touch.move(event);
 
-      if (this.direction === 'horizontal') {
-        preventDefault(event);
-
+      if (touch.isHorizontal()) {
         const { clientX } = event.touches[0];
-        this.select(this.getScoreByPosition(clientX));
+        preventDefault(event);
+        select(getScoreByPosition(clientX));
       }
-    },
+    };
 
-    getScoreByPosition(x) {
-      for (let i = this.ranges.length - 1; i > 0; i--) {
-        if (x > this.ranges[i].left) {
-          return this.ranges[i].score;
-        }
-      }
-
-      return this.allowHalf ? 0.5 : 1;
-    },
-
-    genStar(status, index) {
+    const renderStar = (status, index) => {
       const {
         icon,
+        size,
         color,
         count,
+        gutter,
         voidIcon,
         disabled,
         voidColor,
+        allowHalf,
+        iconPrefix,
         disabledColor,
-      } = this;
+      } = props;
       const score = index + 1;
       const isFull = status === 'full';
       const isVoid = status === 'void';
 
       let style;
-      if (this.gutterWithUnit && score !== +count) {
-        style = { paddingRight: this.gutterWithUnit };
+      if (gutter && score !== +count) {
+        style = {
+          paddingRight: addUnit(gutter),
+        };
       }
 
       return (
         <div
-          ref="items"
-          refInFor
           key={index}
+          ref={setItemRefs(index)}
           role="radio"
           style={style}
+          class={bem('item')}
           tabindex="0"
           aria-setsize={count}
           aria-posinset={score}
           aria-checked={String(!isVoid)}
-          class={bem('item')}
         >
           <Icon
-            size={this.sizeWithUnit}
+            size={size}
             name={isFull ? icon : voidIcon}
             class={bem('icon', { disabled, full: isFull })}
             color={disabled ? disabledColor : isFull ? color : voidColor}
-            classPrefix={this.iconPrefix}
+            classPrefix={iconPrefix}
             data-score={score}
             onClick={() => {
-              this.select(score);
+              select(score);
             }}
           />
-          {this.allowHalf && (
+          {allowHalf && (
             <Icon
-              size={this.sizeWithUnit}
+              size={size}
               name={isVoid ? voidIcon : icon}
               class={bem('icon', ['half', { disabled, full: !isVoid }])}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
-              classPrefix={this.iconPrefix}
+              classPrefix={iconPrefix}
               data-score={score - 0.5}
               onClick={() => {
-                this.select(score - 0.5);
+                select(score - 0.5);
               }}
             />
           )}
         </div>
       );
-    },
-  },
+    };
 
-  render() {
-    return (
+    useLinkField(() => props.modelValue);
+
+    return () => (
       <div
+        role="radiogroup"
         class={bem({
-          readonly: this.readonly,
-          disabled: this.disabled,
+          readonly: props.readonly,
+          disabled: props.disabled,
         })}
         tabindex="0"
-        role="radiogroup"
+        onTouchstart={onTouchStart}
+        onTouchmove={onTouchMove}
       >
-        {this.list.map((status, index) => this.genStar(status, index))}
+        {list.value.map(renderStar)}
       </div>
     );
   },

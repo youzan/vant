@@ -1,4 +1,6 @@
+import { ref } from 'vue';
 import { createNamespace } from '../utils';
+import { useExpose } from '../composition/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 
@@ -10,25 +12,16 @@ export default createComponent({
     ...DatePicker.props,
   },
 
-  methods: {
-    // @exposed-api
-    getPicker() {
-      return this.$refs.root.getPicker();
-    },
-  },
+  setup(props, { attrs }) {
+    const root = ref();
 
-  render() {
-    const Component = this.type === 'time' ? TimePicker : DatePicker;
+    useExpose({
+      getPicker: () => root.value?.getPicker(),
+    });
 
-    return (
-      <Component
-        ref="root"
-        class={bem()}
-        {...{
-          props: this.$props,
-          on: this.$listeners,
-        }}
-      />
-    );
+    return () => {
+      const Component = props.type === 'time' ? TimePicker : DatePicker;
+      return <Component ref={root} class={bem()} {...{ ...props, ...attrs }} />;
+    };
   },
 });

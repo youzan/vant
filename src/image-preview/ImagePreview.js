@@ -1,32 +1,25 @@
+import { nextTick, onMounted, reactive, ref, watch } from 'vue';
+
 // Utils
 import { bem, createComponent } from './shared';
+import { callInterceptor } from '../utils/interceptor';
 
-// Mixins
-import { PopupMixin } from '../mixins/popup';
-import { TouchMixin } from '../mixins/touch';
-import { BindEventMixin } from '../mixins/bind-event';
+// Composition
+import { useWindowSize } from '@vant/use';
+import { useExpose } from '../composition/use-expose';
 
 // Components
 import Icon from '../icon';
 import Swipe from '../swipe';
+import Popup from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
 export default createComponent({
-  mixins: [
-    TouchMixin,
-    PopupMixin({
-      skipToggleEvent: true,
-    }),
-    BindEventMixin(function (bind) {
-      bind(window, 'resize', this.resize, true);
-      bind(window, 'orientationchange', this.resize, true);
-    }),
-  ],
-
   props: {
+    show: Boolean,
     className: null,
     closeable: Boolean,
-    asyncClose: Boolean,
+    beforeClose: Function,
     showIndicators: Boolean,
     images: {
       type: Array,
@@ -60,10 +53,6 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    overlayClass: {
-      type: String,
-      default: bem('overlay'),
-    },
     closeIcon: {
       type: String,
       default: 'clear',
@@ -78,152 +67,156 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
+  emits: ['scale', 'close', 'closed', 'change', 'update:show'],
+
+  setup(props, { emit, slots }) {
+    const swipeRef = ref();
+    const windowSize = useWindowSize();
+
+    const state = reactive({
       active: 0,
       rootWidth: 0,
       rootHeight: 0,
-      doubleClickTimer: null,
+    });
+
+    const resize = () => {
+      if (swipeRef.value) {
+        const rect = swipeRef.value.$el.getBoundingClientRect();
+        state.rootWidth = rect.width;
+        state.rootHeight = rect.height;
+      }
     };
-  },
 
-  mounted() {
-    this.resize();
-  },
+    const emitScale = (args) => {
+      emit('scale', args);
+    };
 
-  watch: {
-    startPosition: 'setActive',
+    const emitClose = () => {
+      callInterceptor({
+        interceptor: props.beforeClose,
+        args: [state.active],
+        done: () => {
+          emit('update:show', false);
+        },
+      });
+    };
 
-    value(val) {
-      if (val) {
-        this.setActive(+this.startPosition);
-        this.$nextTick(() => {
-          this.resize();
-          this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
-        });
-      } else {
-        this.$emit('close', {
-          index: this.active,
-          url: this.images[this.active],
-        });
+    const setActive = (active) => {
+      if (active !== state.active) {
+        state.active = active;
+        emit('change', active);
       }
-    },
-  },
+    };
 
-  methods: {
-    resize() {
-      if (this.$el && this.$el.getBoundingClientRect) {
-        const rect = this.$el.getBoundingClientRect();
-        this.rootWidth = rect.width;
-        this.rootHeight = rect.height;
-      }
-    },
-
-    emitClose() {
-      if (!this.asyncClose) {
-        this.$emit('input', false);
-      }
-    },
-
-    emitScale(args) {
-      this.$emit('scale', args);
-    },
-
-    setActive(active) {
-      if (active !== this.active) {
-        this.active = active;
-        this.$emit('change', active);
-      }
-    },
-
-    genIndex() {
-      if (this.showIndex) {
+    const renderIndex = () => {
+      if (props.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') ||
-              `${this.active + 1} / ${this.images.length}`}
+            {slots.index
+              ? slots.index()
+              : `${state.active + 1} / ${props.images.length}`}
           </div>
         );
       }
-    },
+    };
 
-    genCover() {
-      const cover = this.slots('cover');
-
-      if (cover) {
-        return <div class={bem('cover')}>{cover}</div>;
+    const renderCover = () => {
+      if (slots.cover) {
+        return <div class={bem('cover')}>{slots.cover()}</div>;
       }
-    },
+    };
 
-    genImages() {
-      return (
-        <Swipe
-          ref="swipe"
-          lazyRender
-          loop={this.loop}
-          class={bem('swipe')}
-          duration={this.swipeDuration}
-          initialSwipe={this.startPosition}
-          showIndicators={this.showIndicators}
-          indicatorColor="white"
-          onChange={this.setActive}
-        >
-          {this.images.map((image) => (
-            <ImagePreviewItem
-              src={image}
-              show={this.value}
-              active={this.active}
-              maxZoom={this.maxZoom}
-              minZoom={this.minZoom}
-              rootWidth={this.rootWidth}
-              rootHeight={this.rootHeight}
-              onScale={this.emitScale}
-              onClose={this.emitClose}
-            />
-          ))}
-        </Swipe>
-      );
-    },
+    const renderImages = () => (
+      <Swipe
+        ref={swipeRef}
+        lazyRender
+        loop={props.loop}
+        class={bem('swipe')}
+        duration={props.swipeDuration}
+        initialSwipe={props.startPosition}
+        showIndicators={props.showIndicators}
+        indicatorColor="white"
+        onChange={setActive}
+      >
+        {props.images.map((image) => (
+          <ImagePreviewItem
+            src={image}
+            show={props.show}
+            active={state.active}
+            maxZoom={props.maxZoom}
+            minZoom={props.minZoom}
+            rootWidth={state.rootWidth}
+            rootHeight={state.rootHeight}
+            onScale={emitScale}
+            onClose={emitClose}
+          />
+        ))}
+      </Swipe>
+    );
 
-    genClose() {
-      if (this.closeable) {
+    const renderClose = () => {
+      if (props.closeable) {
         return (
           <Icon
             role="button"
-            name={this.closeIcon}
-            class={bem('close-icon', this.closeIconPosition)}
-            onClick={this.emitClose}
+            name={props.closeIcon}
+            class={bem('close-icon', props.closeIconPosition)}
+            onClick={emitClose}
           />
         );
       }
-    },
+    };
 
-    onClosed() {
-      this.$emit('closed');
-    },
+    const onClosed = () => {
+      emit('closed');
+    };
 
-    // @exposed-api
-    swipeTo(index, options) {
-      if (this.$refs.swipe) {
-        this.$refs.swipe.swipeTo(index, options);
+    const swipeTo = (index, options) => {
+      if (swipeRef.value) {
+        swipeRef.value.swipeTo(index, options);
       }
-    },
-  },
+    };
 
-  render() {
-    if (!this.shouldRender) {
-      return;
-    }
+    useExpose({ swipeTo });
 
-    return (
-      <transition name="van-fade" onAfterLeave={this.onClosed}>
-        <div vShow={this.value} class={[bem(), this.className]}>
-          {this.genClose()}
-          {this.genImages()}
-          {this.genIndex()}
-          {this.genCover()}
-        </div>
-      </transition>
+    onMounted(resize);
+
+    watch([windowSize.width, windowSize.height], resize);
+
+    watch(() => props.startPosition, setActive);
+
+    watch(
+      () => props.show,
+      (value) => {
+        const { images, startPosition } = props;
+        if (value) {
+          setActive(+startPosition);
+          nextTick(() => {
+            resize();
+            swipeRef.value.swipeTo(+startPosition, { immediate: true });
+          });
+        } else {
+          emit('close', {
+            index: state.active,
+            url: images[state.active],
+          });
+        }
+      }
+    );
+
+    return () => (
+      <Popup
+        show={props.show}
+        class={[bem(), props.className]}
+        overlayClass={bem('overlay')}
+        closeOnPopstate={props.closeOnPopstate}
+        onClosed={onClosed}
+      >
+        {renderClose()}
+        {renderImages()}
+        {renderIndex()}
+        {renderCover()}
+      </Popup>
     );
   },
 });
