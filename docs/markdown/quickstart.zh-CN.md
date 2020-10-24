@@ -1,8 +1,58 @@
 # 快速上手
 
-### 脚手架
+### 介绍
 
-在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目。
+通过本章节你可以了解到 Vant 的安装方式和组件使用方法。
+
+## 安装
+
+### 通过 npm 安装
+
+在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 进行安装：
+
+```bash
+# Vue 2 项目，安装 Vant 2.x 版本：
+npm i vant -S
+
+# Vue 3 项目，安装 Vant 3.x 版本：
+npm i vant@next -S
+```
+
+### 通过 CDN 安装
+
+使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
+
+```html
+<!-- 引入样式文件 -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
+/>
+
+<!-- 引入 Vue 和 Vant 的 JS 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
+
+<script>
+  // 在 #app 标签下渲染一个按钮组件
+  const app = Vue.createApp({
+    template: `<van-button>按钮</van-button>`,
+  });
+  app.use(vant);
+  app.mount('#app');
+
+  // 调用函数组件，弹出一个 Toast
+  vant.Toast('提示');
+
+  // 通过 CDN 引入时不会自动注册 Lazyload 组件
+  // 可以通过下面的方式手动注册
+  // app.use(vant.Lazyload);
+</script>
+```
+
+### 通过脚手架安装
+
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
 
 ```bash
 # 安装 Vue Cli
@@ -17,27 +67,17 @@ vue ui
 
 ![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
-在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
+在图形化界面中，点击 `依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
-### 通过 npm 安装
-
-在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 安装：
-
-```bash
-# 通过 npm 安装
-npm i vant@next -S
-
-# 通过 yarn 安装
-yarn add vant@next
-```
-
-> Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)。
+## 示例
 
 ### 示例工程
 
-我们提供了一个基于 Vue Cli 的[示例工程](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+我们提供了丰富的[示例工程](https://github.com/youzan/vant-demo)，通过示例工程你可以了解如下内容：
 
-- 基于 Vant 搭建单页面应用，配置按需引入组件
+- 基于 Vue Cli 和 Vant 搭建应用
+- 基于 Nuxt 和 Vant 搭建应用
+- 配置按需引入组件
 - 配置基于 Rem 的适配方案
 - 配置基于 Viewport 的适配方案
 - 配置基于 TypeScript 的工程
@@ -110,38 +150,6 @@ app.use(Vant);
 ```
 
 > Tips: 配置按需引入后，将不允许直接导入所有组件。
-
-### 方式四. 通过 CDN 引入
-
-使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
-
-```html
-<!-- 引入样式文件 -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
-/>
-
-<!-- 引入 Vue 和 Vant 的 JS 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
-
-<script>
-  // 在 #app 标签下渲染一个按钮组件
-  const app = Vue.createApp({
-    template: `<van-button>按钮</van-button>`,
-  });
-  app.use(vant);
-  app.mount('#app');
-
-  // 调用函数组件，弹出一个 Toast
-  vant.Toast('提示');
-
-  // 通过 CDN 引入时不会自动注册 Lazyload 组件
-  // 可以通过下面的方式手动注册
-  // app.use(vant.Lazyload);
-</script>
-```
 
 ## 进阶用法
 
