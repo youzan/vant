@@ -10,13 +10,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.10.11-beta.0](https://github.com/youzan/vant/compare/v2.10.10...v2.10.11-beta.0)
+### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11-beta.0...v2.10.11)
 
-`2020-10-19`
+`2020-10-24`
+
+**Feature**
+
+- Empty: add image-size prop [#7389](https://github.com/youzan/vant/issues/7389)
+- Picker: add option slot [#7380](https://github.com/youzan/vant/issues/7380)
+- Picker: add cancel slot [#7377](https://github.com/youzan/vant/issues/7377)
+- Picker: add confirm slot [#7377](https://github.com/youzan/vant/issues/7377)
 
 **Bug Fixes**
 
 - Dialog: failed to disable closeOnPopstate [#7357](https://github.com/youzan/vant/issues/7357)
+- NavBar: should not render blank left、right element [#7376](https://github.com/youzan/vant/issues/7376)
+- Image: skip render loading placeholder during ssr [#7383](https://github.com/youzan/vant/issues/7383)
+- Revert "style(Field): adjust placeholder color to gray-6 (#7192)" (#7375) [#7192](https://github.com/youzan/vant/issues/7192) [#7375](https://github.com/youzan/vant/issues/7375)
 
 ### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
 
