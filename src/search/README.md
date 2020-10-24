@@ -20,7 +20,9 @@ Vue.use(Search);
 ```js
 export default {
   data() {
-    value: '';
+    return {
+      value: '',
+    };
   },
 };
 ```
