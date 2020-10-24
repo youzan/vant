@@ -10,13 +10,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.10.11-beta.0](https://github.com/youzan/vant/compare/v2.10.10...v2.10.11-beta.0)
+### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11-beta.0...v2.10.11)
 
-`2020-10-19`
+`2020-10-24`
+
+**Feature**
+
+- Empty: 新增 image-size 属性，用于设置图片大小 [#7389](https://github.com/youzan/vant/issues/7389)
+- Picker: 新增 option 插槽，用于自定义选项 [#7380](https://github.com/youzan/vant/issues/7380)
+- Picker: 新增 cancel 插槽，用于自定义取消按钮 [#7377](https://github.com/youzan/vant/issues/7377)
+- Picker: 新增 confirm 插槽，用于自定义确定按钮 [#7377](https://github.com/youzan/vant/issues/7377)
 
 **Bug Fixes**
 
 - Dialog: 修复将 closeOnPopstate 设置为 false 时不生效的问题 [#7357](https://github.com/youzan/vant/issues/7357)
+- NavBar: 修复左右文字为空时会渲染空节点的问题 [#7376](https://github.com/youzan/vant/issues/7376)
+- Image: 修复 SSR 时会渲染加载中节点的问题 [#7383](https://github.com/youzan/vant/issues/7383)
+- Revert "Field: 占位文字的颜色调整为 gray-6" [#7192](https://github.com/youzan/vant/issues/7192) [#7375](https://github.com/youzan/vant/issues/7375)
 
 ### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
 

@@ -29,8 +29,9 @@
 
 ## Features
 
-- 60+ Reusable components
-- 90% Unit test coverage
+- 65+ Reusable components
+- 4kb Component average size
+- 90%+ Unit test coverage
 - Extensive documentation and demos
 - Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - Support Custom Theme
@@ -41,14 +42,12 @@
 ## Install
 
 ```bash
-# Using npm
+# Install vant 2.x for Vue 2 project
 npm i vant -S
 
-# Using yarn
-yarn add vant
+# Install vant 3.x for Vue 3 project
+npm i vant@next -S
 ```
-
-> Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035).
 
 ## Quickstart
 
