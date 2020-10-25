@@ -266,7 +266,7 @@ export default {
 
 ### Tabs Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance methods.
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |

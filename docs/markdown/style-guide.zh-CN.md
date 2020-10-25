@@ -2,7 +2,7 @@
 
 ### 介绍
 
-在参与 Vant 开发时，请遵守约定的单文件组件风格指南，指南内容节选自 [Vue 官方风格指南](https://cn.vuejs.org/v2/style-guide)。
+在参与 Vant 开发时，请遵守约定的单文件组件风格指南，指南内容节选自 [Vue 官方风格指南](https://v3.cn.vuejs.org/style-guide/)。
 
 ### 组件数据
 

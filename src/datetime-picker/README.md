@@ -295,7 +295,7 @@ Following props are supported when the type is time
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get DatetimePicker instance and call instance methods.
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DatetimePicker instance and call instance methods.
 
 | Name               | Description         | Attribute | Return value |
 | ------------------ | ------------------- | --------- | ------------ |

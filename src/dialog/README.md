@@ -157,7 +157,7 @@ export default {
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | beforeClose | Callback function before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
 
 ### Props
@@ -185,7 +185,7 @@ export default {
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | - |
 
 ### Events
