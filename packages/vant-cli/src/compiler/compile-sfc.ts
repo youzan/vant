@@ -56,8 +56,6 @@ export function parseSfc(filename: string) {
     filename,
   });
 
-  console.log(descriptor);
-
   return descriptor;
 }
 
