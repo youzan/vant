@@ -1,14 +1,12 @@
-import * as compiler from '@vue/compiler-sfc';
-import * as compileUtils from '@vue/component-compiler-utils';
 import hash from 'hash-sum';
-import { parse } from 'path';
+import path from 'path';
+import { parse, SFCBlock, compileTemplate } from '@vue/compiler-sfc';
 import { remove, writeFileSync, readFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
 import { compileJs } from './compile-js';
 import { compileStyle } from './compile-style';
 
 const RENDER_FN = '__vue_render__';
-const STATIC_RENDER_FN = '__vue_staticRenderFns__';
 const EXPORT = 'export default {';
 
 // trim some unused code
@@ -25,13 +23,11 @@ function getSfcStylePath(filePath: string, ext: string, index: number) {
 function injectRender(script: string, render: string) {
   script = trim(script);
 
-  render = render
-    .replace('var render', `var ${RENDER_FN}`)
-    .replace('var staticRenderFns', `var ${STATIC_RENDER_FN}`);
+  render = render.replace('export function render', `function ${RENDER_FN}`);
 
   return script.replace(
     EXPORT,
-    `${render}\n${EXPORT}\n  render: ${RENDER_FN},\n\n  staticRenderFns: ${STATIC_RENDER_FN},\n`
+    `${render}\n${EXPORT}\n  render: ${RENDER_FN},\n`
   );
 }
 
@@ -39,15 +35,11 @@ function injectScopeId(script: string, scopeId: string) {
   return script.replace(EXPORT, `${EXPORT}\n  _scopeId: '${scopeId}',\n\n`);
 }
 
-function injectStyle(
-  script: string,
-  styles: compileUtils.SFCBlock[],
-  filePath: string
-) {
+function injectStyle(script: string, styles: SFCBlock[], filePath: string) {
   if (styles.length) {
     const imports = styles
       .map((style, index) => {
-        const { base } = parse(getSfcStylePath(filePath, 'css', index));
+        const { base } = path.parse(getSfcStylePath(filePath, 'css', index));
         return `import './${base}';`;
       })
       .join('\n');
@@ -58,24 +50,13 @@ function injectStyle(
   return script;
 }
 
-function compileTemplate(template: string) {
-  const result = compileUtils.compileTemplate({
-    compiler,
-    source: template,
-    isProduction: true,
-  } as any);
+export function parseSfc(filename: string) {
+  const source = readFileSync(filename, 'utf-8');
+  const { descriptor } = parse(source, {
+    filename,
+  });
 
-  return result.code;
-}
-
-export function parseSfc(filePath: string) {
-  const source = readFileSync(filePath, 'utf-8');
-
-  const descriptor = compileUtils.parse({
-    source,
-    compiler,
-    needMap: false,
-  } as any);
+  console.log(descriptor);
 
   return descriptor;
 }
@@ -98,7 +79,10 @@ export async function compileSfc(filePath: string): Promise<any> {
         script = injectStyle(script, styles, filePath);
 
         if (template) {
-          const render = compileTemplate(template.content);
+          const render = compileTemplate({
+            source: template.content,
+            filename: filePath,
+          }).code;
           script = injectRender(script, render);
         }
 
@@ -117,17 +101,18 @@ export async function compileSfc(filePath: string): Promise<any> {
     ...styles.map((style, index: number) => {
       const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
 
-      let styleSource = trim(style.content);
+      const styleSource = trim(style.content);
 
-      if (style.scoped) {
-        styleSource = compileUtils.compileStyle({
-          id: scopeId,
-          scoped: true,
-          source: styleSource,
-          filename: cssFilePath,
-          preprocessLang: style.lang,
-        }).code;
-      }
+      // TODO support scoped
+      // if (style.scoped) {
+      //   styleSource = compileUtils.compileStyle({
+      //     id: scopeId,
+      //     scoped: true,
+      //     source: styleSource,
+      //     filename: cssFilePath,
+      //     preprocessLang: style.lang,
+      //   }).code;
+      // }
 
       writeFileSync(cssFilePath, styleSource);
 
