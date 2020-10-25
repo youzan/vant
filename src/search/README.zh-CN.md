@@ -24,6 +24,16 @@ app.use(Search);
 <van-search v-model="value" placeholder="请输入搜索关键词" />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      value: '',
+    };
+  },
+};
+```
+
 ### 事件监听
 
 Search 组件提供了 `search` 和 `cancel` 事件，`search` 事件在点击键盘上的搜索/回车按钮后触发，`cancel` 事件在点击搜索框右侧取消按钮时触发。
