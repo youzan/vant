@@ -9,10 +9,11 @@
 ### Features
 
 - 65+ Reusable components
-- 4kb Component average size
+- 1kb Component average size (min+gzip)
 - 90%+ Unit test coverage
 - Extensive documentation and demos
-- Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- Support Vue 2 & Vue 3
+- Support Tree Shaking
 - Support Custom Theme
 - Support i18n
 - Support TS
