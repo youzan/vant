@@ -232,7 +232,6 @@ export default createComponent({
 
     // initialize swipe position
     const initialize = (active = +props.initialSwipe) => {
-      console.log('initialize', children.length, active);
       if (!root.value || isHidden(root)) {
         return;
       }
