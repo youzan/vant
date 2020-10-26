@@ -189,6 +189,7 @@ export default createComponent({
         this.inited = true;
         this.tabHeight = getVisibleHeight(this.$refs.wrap);
         this.scrollIntoView(true);
+        this.scrollToCurrentContent(true);
       });
     },
 
