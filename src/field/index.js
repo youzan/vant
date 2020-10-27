@@ -58,6 +58,8 @@ export default createComponent({
     errorMessage: String,
     errorMessageAlign: String,
     showWordLimit: Boolean,
+    max: Number,
+    min: Number,
     type: {
       type: String,
       default: 'text',
@@ -235,6 +237,8 @@ export default createComponent({
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
+        if (props.max < value) value = props.max;
+        if (props.min > value) value = props.min;
       }
 
       if (props.formatter && trigger === props.formatTrigger) {

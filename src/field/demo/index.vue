@@ -9,6 +9,7 @@
   <autosize />
   <show-word-limit />
   <input-align />
+  <number-size-limit />
 </template>
 
 <script>
@@ -22,6 +23,7 @@ import FormatValue from './FormatValue';
 import Autosize from './Autosize';
 import ShowWordLimit from './ShowWordLimit';
 import InputAlign from './InputAlign';
+import NumberSizeLimit from './NumberSizeLimit';
 
 export default {
   components: {
@@ -35,6 +37,7 @@ export default {
     Autosize,
     ShowWordLimit,
     InputAlign,
+    NumberSizeLimit,
   },
 };
 </script>

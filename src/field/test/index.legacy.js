@@ -97,6 +97,35 @@ test('digit type', () => {
   expect(wrapper.emitted('input')[2][0]).toEqual('123');
 });
 
+test('number size limit', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: '',
+      type: 'number',
+      min: 2,
+      max: 50,
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  input.element.value = '1';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[0][0]).toEqual('2');
+
+  input.element.value = '20';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[1][0]).toEqual('20');
+
+  input.element.value = '23.4';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[2][0]).toEqual('23.4');
+
+  input.element.value = '55';
+  input.trigger('input');
+  expect(wrapper.emitted('input')[3][0]).toEqual('50');
+});
+
 test('render textarea', async () => {
   const wrapper = mount(Field, {
     propsData: {
