@@ -8,6 +8,7 @@ import {
   bem,
   copyDate,
   copyDates,
+  getPrevDay,
   getNextDay,
   compareDay,
   calcDateNum,
@@ -117,8 +118,8 @@ export default createComponent({
   emits: ['select', 'confirm', 'unselect', 'month-show', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const getInitialDate = () => {
-      const { type, minDate, maxDate, defaultDate } = props;
+    const getInitialDate = (defaultDate = props.defaultDate) => {
+      const { type, minDate, maxDate } = props;
 
       if (defaultDate === null) {
         return defaultDate;
@@ -129,19 +130,21 @@ export default createComponent({
       if (compareDay(defaultVal, minDate) === -1) {
         defaultVal = minDate;
       } else if (compareDay(defaultVal, maxDate) === 1) {
-        defaultVal = maxDate;
+        defaultVal = type === 'range' ? getPrevDay(maxDate) : maxDate;
       }
 
+      const defaultIsArray = Array.isArray(defaultDate);
+
       if (type === 'range') {
-        const [startDay, endDay] = defaultDate || [];
+        const [startDay, endDay] = defaultIsArray ? defaultDate : [];
         return [startDay || defaultVal, endDay || getNextDay(defaultVal)];
       }
 
       if (type === 'multiple') {
-        return defaultDate || [defaultVal];
+        return defaultIsArray ? defaultDate : [defaultVal];
       }
 
-      return defaultDate || defaultVal;
+      return defaultIsArray ? defaultVal : defaultDate;
     };
 
     let bodyHeight;
@@ -188,35 +191,6 @@ export default createComponent({
 
       return !currentDate;
     });
-
-    // scroll to current month
-    const scrollIntoView = () => {
-      raf(() => {
-        const { currentDate } = state;
-
-        if (!currentDate) {
-          return;
-        }
-
-        const targetDate =
-          props.type === 'single' ? currentDate : currentDate[0];
-        const displayed = props.show || !props.poppable;
-
-        /* istanbul ignore if */
-        if (!targetDate || !displayed) {
-          return;
-        }
-
-        months.value.some((month, index) => {
-          if (compareMonth(month, targetDate) === 0) {
-            monthRefs.value[index].scrollIntoView(bodyRef.value);
-            return true;
-          }
-
-          return false;
-        });
-      });
-    };
 
     // calculate the position of the elements
     // and find the elements that needs to be rendered
@@ -273,6 +247,37 @@ export default createComponent({
       }
     };
 
+    // scroll to current month
+    const scrollIntoView = () => {
+      raf(() => {
+        const { currentDate } = state;
+
+        if (!currentDate) {
+          return;
+        }
+
+        const targetDate =
+          props.type === 'single' ? currentDate : currentDate[0];
+        const displayed = props.show || !props.poppable;
+
+        /* istanbul ignore if */
+        if (!targetDate || !displayed) {
+          return;
+        }
+
+        months.value.some((month, index) => {
+          if (compareMonth(month, targetDate) === 0) {
+            monthRefs.value[index].scrollIntoView(bodyRef.value);
+            return true;
+          }
+
+          return false;
+        });
+
+        onScroll();
+      });
+    };
+
     const init = () => {
       if (props.poppable && !props.show) {
         return;
@@ -282,13 +287,12 @@ export default createComponent({
         // add Math.floor to avoid decimal height issues
         // https://github.com/youzan/vant/issues/5640
         bodyHeight = Math.floor(useRect(bodyRef).height);
-        onScroll();
         scrollIntoView();
       });
     };
 
     const reset = () => {
-      state.currentDate = getInitialDate();
+      state.currentDate = getInitialDate(state.currentDate);
       scrollIntoView();
     };
 
@@ -482,13 +486,14 @@ export default createComponent({
     );
 
     watch(() => props.show, init);
-    watch(() => props.type, reset);
     watch(
-      () => props.defaultDate,
-      (value) => {
-        state.currentDate = value;
-        scrollIntoView();
-      }
+      [
+        () => props.type,
+        () => props.minDate,
+        () => props.maxDate,
+        () => props.defaultDate,
+      ],
+      reset
     );
 
     onMounted(init);
