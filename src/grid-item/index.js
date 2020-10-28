@@ -94,7 +94,7 @@ export default createComponent({
           <Icon
             name={this.icon}
             dot={this.dot}
-            info={info}
+            badge={info}
             size={this.parent.iconSize}
             class={bem('icon')}
             classPrefix={this.iconPrefix}
