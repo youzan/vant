@@ -140,13 +140,13 @@ Toast.resetDefaultOptions('loading');
 
 | Methods | Attribute | Return value | Description |
 | --- | --- | --- | --- |
-| Toast | `options | message` | toast instance | Show toast |
-| Toast.loading | `options | message` | toast instance | Show loading toast |
-| Toast.success | `options | message` | toast instance | Show success toast |
-| Toast.fail | `options | message` | toast instance | Show fail toast |
+| Toast | `options \| message` | toast instance | Show toast |
+| Toast.loading | `options \| message` | toast instance | Show loading toast |
+| Toast.success | `options \| message` | toast instance | Show success toast |
+| Toast.fail | `options \| message` | toast instance | Show fail toast |
 | Toast.clear | `clearAll: boolean` | `void` | Close toast |
 | Toast.allowMultiple | - | `void` | Allow multlple toast at the same time |
-| Toast.setDefaultOptions | `type | options` | `void` | Set default options of all toasts |
+| Toast.setDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
 | Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
 
 ### Options

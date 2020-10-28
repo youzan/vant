@@ -155,13 +155,13 @@ Toast.resetDefaultOptions('loading');
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Toast | 展示提示 | `options | message` | toast 实例 |
-| Toast.loading | 展示加载提示 | `options | message` | toast 实例 |
-| Toast.success | 展示成功提示 | `options | message` | toast 实例 |
-| Toast.fail | 展示失败提示 | `options | message` | toast 实例 |
+| Toast | 展示提示 | `options \| message` | toast 实例 |
+| Toast.loading | 展示加载提示 | `options \| message` | toast 实例 |
+| Toast.success | 展示成功提示 | `options \| message` | toast 实例 |
+| Toast.fail | 展示失败提示 | `options \| message` | toast 实例 |
 | Toast.clear | 关闭提示 | `clearAll: boolean` | `void` |
 | Toast.allowMultiple | 允许同时存在多个 Toast | - | `void` |
-| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type | options` | `void` |
+| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type \| options` | `void` |
 | Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### Options
