@@ -8,6 +8,12 @@
   overflow: hidden;
   color: @action-sheet-item-text-color;
 
+  &__content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   &__item,
   &__cancel {
     display: block;
@@ -102,17 +108,5 @@
     &:active {
       color: @action-sheet-close-icon-active-color;
     }
-  }
-
-  &__inner {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  &__main {
-    flex: 1;
-    overflow-y: scroll;
   }
 }

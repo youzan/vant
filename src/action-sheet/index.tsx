@@ -75,12 +75,6 @@ function ActionSheet(
     }
   }
 
-  function Content() {
-    if (slots.default) {
-      return <div class={bem('content')}>{slots.default()}</div>;
-    }
-  }
-
   function Option(item: ActionSheetItem, index: number) {
     const { disabled, loading, callback } = item;
 
@@ -159,15 +153,13 @@ function ActionSheet(
       safeAreaInsetBottom={props.safeAreaInsetBottom}
       {...inherit(ctx, true)}
     >
-      <div class={bem('inner')}>
-        {Header()}
-        {Description()}
-        <div class={bem('main')}>
-          {props.actions && props.actions.map(Option)}
-          {Content()}
-        </div>
-        {CancelText()}
+      {Header()}
+      {Description()}
+      <div class={bem('content')}>
+        {props.actions && props.actions.map(Option)}
+        {slots.default?.()}
       </div>
+      {CancelText()}
     </Popup>
   );
 }
