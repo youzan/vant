@@ -161,7 +161,7 @@ Toast.resetDefaultOptions('loading');
 | Toast.fail | 展示失败提示 | `options \| message` | toast 实例 |
 | Toast.clear | 关闭提示 | `clearAll: boolean` | `void` |
 | Toast.allowMultiple | 允许同时存在多个 Toast | - | `void` |
-| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type | options` | `void` |
+| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type \| options` | `void` |
 | Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### Options
