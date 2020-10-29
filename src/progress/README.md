@@ -61,3 +61,11 @@ Use `pivot-text` to custom text，use `color` to custom bar color.
 | text-color | Pivot text color | _string_ | `white` |
 | inactive | Whether to be gray | _boolean_ | `false` |
 | show-pivot | Whether to show text | _boolean_ | `true` |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get Progress instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| resize | Resize Progress when container element resized or visibility changed | - | - |

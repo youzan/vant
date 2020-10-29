@@ -30,16 +30,17 @@ export default createComponent({
   },
 
   mounted() {
-    this.setWidth();
+    this.resize();
   },
 
   watch: {
-    showPivot: 'setWidth',
-    pivotText: 'setWidth',
+    showPivot: 'resize',
+    pivotText: 'resize',
   },
 
   methods: {
-    setWidth() {
+    // @exposed-api
+    resize() {
       this.$nextTick(() => {
         this.progressWidth = this.$el.offsetWidth;
         this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;

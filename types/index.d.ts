@@ -19,6 +19,7 @@ import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
 import { Picker } from './picker';
+import { Progress } from './progress';
 import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
@@ -65,7 +66,6 @@ export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
 export class Popup extends VanComponent {}
-export class Progress extends VanComponent {}
 export class PullRefresh extends VanComponent {}
 export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
@@ -110,6 +110,7 @@ export {
   Locale,
   Notify,
   Picker,
+  Progress,
   Sku,
   Swipe,
   SwipeCell,
