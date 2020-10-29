@@ -26,6 +26,27 @@ test('insert tab dynamically', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('insert tab with name dynamically', async () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs v-model="active">
+        <van-tab v-if="insert" title="1" name="bar">2</van-tab>
+        <van-tab title="2" name="foo">1</van-tab>
+      </van-tabs>
+    `,
+    data() {
+      return {
+        insert: false,
+        active: [{ name: 'foo', title: 'foo' }],
+      };
+    },
+  });
+
+  await later();
+  wrapper.setData({ insert: true });
+  expect(wrapper).toMatchSnapshot();
+});
+
 // this case will throw wierd error in index.spec.js
 // so separate it
 test('insert tab with child component', async () => {

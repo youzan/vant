@@ -377,7 +377,7 @@ export default createComponent({
     watch(
       () => children.length,
       () => {
-        setCurrentIndexByName(currentName.value || props.active);
+        setCurrentIndexByName(props.active || currentName.value);
         setLine();
         nextTick(() => {
           scrollIntoView(true);

@@ -135,8 +135,10 @@ export default createComponent({
       >
         {renderHeader()}
         {renderDescription()}
-        {renderOptions()}
-        {slots.default && <div class={bem('content')}>{slots.default()}</div>}
+        <div class={bem('content')}>
+          {renderOptions()}
+          {slots.default?.()}
+        </div>
         {renderCancel()}
       </Popup>
     );
