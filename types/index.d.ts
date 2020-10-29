@@ -49,9 +49,9 @@ export class DropdownMenu extends VanComponent {}
 export class Empty extends VanComponent {}
 export class Grid extends VanComponent {}
 export class GridItem extends VanComponent {}
-export class GoodsAction extends VanComponent {}
-export class GoodsActionButton extends VanComponent {}
-export class GoodsActionIcon extends VanComponent {}
+export class ActionBar extends VanComponent {}
+export class ActionBarIcon extends VanComponent {}
+export class ActionBarButton extends VanComponent {}
 export class Icon extends VanComponent {}
 export class Image extends VanComponent {}
 export class IndexAnchor extends VanComponent {}
