@@ -159,7 +159,7 @@ export default {
 | closed `v2.5.6` | Triggered after closed | - |
 | change | Triggered when current image change | index: index of current image |
 | scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
-| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | void |
+| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | - |
 
 ### Slots
 

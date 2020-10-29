@@ -197,14 +197,14 @@ export default {
 
 ### Swipe 方法
 
-通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。。
+通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | prev `v2.4.2` | 切换到上一轮播 | - | - |
 | next `v2.4.2` | 切换到下一轮播 | - | - |
-| swipeTo | 切换到指定位置 | index: number, options: Options | void |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
+| swipeTo | 切换到指定位置 | index: number, options: Options | - |
+| resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 
 ### swipeTo Options 格式
 

@@ -269,8 +269,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance 
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| resize | Resize Tabs when container element resized | - | void |
-| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | void |
+| resize | Resize Tabs when container element resized or visibility changed | - | - |
+| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | - |
 
 ### Tabs Slots
 
