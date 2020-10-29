@@ -142,7 +142,7 @@ export default createComponent({
     },
 
     children() {
-      this.setCurrentIndexByName(this.currentName || this.active);
+      this.setCurrentIndexByName(this.active || this.currentName);
       this.setLine();
 
       this.$nextTick(() => {
