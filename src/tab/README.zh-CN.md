@@ -293,3 +293,30 @@ export default {
 | ------- | ---------- |
 | default | 标签页内容 |
 | title   | 自定义标题 |
+
+## 常见问题
+
+### 组件从隐藏状态切换到显示状态时，底部条位置错误？
+
+Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位置。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法展示底部条位置。
+
+#### 解决方法
+
+方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
+
+```html
+<!-- Before -->
+<van-tabs v-show="show" />
+<!-- After -->
+<van-tabs v-if="show" />
+```
+
+方法二，调用组件的 resize 方法来主动触发重绘：
+
+```html
+<van-tabs v-show="show" ref="tabs" />
+```
+
+```js
+this.$refs.tabs.resize();
+```
