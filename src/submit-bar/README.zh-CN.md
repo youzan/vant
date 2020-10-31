@@ -65,18 +65,18 @@ Vue.use(SubmitBar);
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | price | 价格（单位分） | _number_ | - |
+| decimal-length | 价格小数点位数 | _number \| string_ | `2` |
 | label | 价格左侧文案 | _string_ | `合计：` |
 | suffix-label | 价格右侧文案 | _string_ | - |
 | text-align `v2.3.0` | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
 | button-text | 按钮文字 | _string_ | - |
 | button-type | 按钮类型 | _string_ | `danger` |
 | button-color `v2.9.1` | 自定义按钮颜色 | _string_ | - |
-| tip | 提示文案 | _string_ | - |
-| tip-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| tip | 在订单栏上方的提示文案 | _string_ | - |
+| tip-icon | 提示文案左侧的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | currency | 货币符号 | _string_ | `¥` |
-| decimal-length | 价格小数点后位数 | _number \| string_ | `2` |
 | disabled | 是否禁用按钮 | _boolean_ | `false` |
-| loading | 是否显示加载中的按钮 | _boolean_ | `false` |
+| loading | 是否显示将按钮显示为加载中状态 | _boolean_ | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events
@@ -87,8 +87,9 @@ Vue.use(SubmitBar);
 
 ### Slots
 
-| 名称    | 说明                       |
-| ------- | -------------------------- |
-| default | 自定义订单栏左侧内容       |
-| top     | 自定义订单栏上方内容       |
-| tip     | 提示文案中的额外操作和说明 |
+| 名称              | 说明                 |
+| ----------------- | -------------------- |
+| default           | 自定义订单栏左侧内容 |
+| button `v2.10.12` | 自定义按钮           |
+| top               | 自定义订单栏上方内容 |
+| tip               | 提示文案中的额外内容 |
