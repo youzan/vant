@@ -10,7 +10,30 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11-beta.0...v2.10.11)
+### [v2.10.12](https://github.com/youzan/vant/compare/v2.10.11...v2.10.12)
+
+`2020-10-31`
+
+**Feature**
+
+- Image: add icon-prefix prop [#7457](https://github.com/youzan/vant/issues/7457)
+- Progress: add resize method [#5161](https://github.com/youzan/vant/issues/5161)
+- SubmitBar: add button slot [#7458](https://github.com/youzan/vant/issues/7458)
+
+**style**
+
+- ActionSheet: keep the cancel button at the bottom [#7401](https://github.com/youzan/vant/issues/7401)
+- Popup: adjust round border radius to 16px [#7421](https://github.com/youzan/vant/issues/7421)
+- Sidebar: fix long number wrap [#7456](https://github.com/youzan/vant/issues/7456)
+
+**Bug Fixes**
+
+- GridItem: should not emit deprecation warning [#7433](https://github.com/youzan/vant/issues/7433)
+- Picker: fix rendering failure during animation on safari [#7460](https://github.com/youzan/vant/issues/7460)
+- Tabs: incorrect change event in some cases [#7461](https://github.com/youzan/vant/issues/7461)
+- Tabs: should keep active value after insert item [#7445](https://github.com/youzan/vant/issues/7445)
+
+### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11...v2.10.11)
 
 `2020-10-24`
 
