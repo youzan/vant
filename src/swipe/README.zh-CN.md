@@ -234,3 +234,28 @@ export default {
 ### Swipe 组件功能太少，无法实现复杂效果？
 
 Vant 中的 Swipe 组件是比较轻量的，因此功能也比较基础。如果需要更复杂的轮播效果，推荐使用社区里一些优质的轮播库，比如 [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper)。
+
+### 组件从隐藏状态切换到显示状态时，无法正确渲染？
+
+Swipe 组件在挂载时，会获取自身的宽度，并计算出轮播图的位置。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法正确计算位置。
+
+#### 解决方法
+
+方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
+
+```html
+<!-- Before -->
+<van-swipe v-show="show" />
+<!-- After -->
+<van-swipe v-if="show" />
+```
+
+方法二，调用组件的 resize 方法来主动触发重绘：
+
+```html
+<van-swipe v-show="show" ref="swipe" />
+```
+
+```js
+this.$refs.swipe.resize();
+```
