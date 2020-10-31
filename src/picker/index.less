@@ -87,7 +87,8 @@
       linear-gradient(0deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.4));
     background-repeat: no-repeat;
     background-position: top, bottom;
-    backface-visibility: hidden;
+    // fix rendering failure during animation on safari
+    transform: translateZ(0);
     pointer-events: none;
   }
 
