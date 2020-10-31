@@ -60,6 +60,7 @@ Use slot to add custom contents.
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | price | Price | _number_ | - |
+| decimal-length | Price dicemal length | _number \| string_ | `2` |
 | label | Price left label | _string_ | `Total：` |
 | suffix-label | Price right label | _string_ | - |
 | text-align `v2.3.0` | Price label text align can be set to `left` | _string_ | `right` |
@@ -69,7 +70,6 @@ Use slot to add custom contents.
 | tip | Tip | _string_ | - |
 | tip-icon | Icon | _string_ | - |
 | currency | Currency symbol | _string_ | `¥` |
-| decimal-length | number of digits to appear after the decimal point | _number \| string_ | `2` |
 | disabled | Whether to disable button | _boolean_ | `false` |
 | loading | Whether to show loading icon | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
@@ -82,8 +82,9 @@ Use slot to add custom contents.
 
 ### Slots
 
-| Name    | Description         |
-| ------- | ------------------- |
-| default | Custom left content |
-| top     | Custom top content  |
-| tip     | Custom tips         |
+| Name              | Description         |
+| ----------------- | ------------------- |
+| default           | Custom left content |
+| button `v2.10.12` | Custom button       |
+| top               | Custom top content  |
+| tip               | Custom tips         |
