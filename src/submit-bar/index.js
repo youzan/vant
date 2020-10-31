@@ -84,18 +84,24 @@ export default createComponent({
       emit('submit');
     };
 
-    const renderButton = () => (
-      <Button
-        round
-        type={props.buttonType}
-        text={props.buttonText}
-        class={bem('button', props.buttonType)}
-        color={props.buttonColor}
-        loading={props.loading}
-        disabled={props.disabled}
-        onClick={onClickButton}
-      />
-    );
+    const renderButton = () => {
+      if (slots.button) {
+        return slots.button();
+      }
+
+      return (
+        <Button
+          round
+          type={props.buttonType}
+          text={props.buttonText}
+          class={bem('button', props.buttonType)}
+          color={props.buttonColor}
+          loading={props.loading}
+          disabled={props.disabled}
+          onClick={onClickButton}
+        />
+      );
+    };
 
     return () => (
       <div class={bem({ unfit: !props.safeAreaInsetBottom })}>

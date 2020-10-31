@@ -9,7 +9,6 @@
   color: @sidebar-text-color;
   font-size: @sidebar-font-size;
   line-height: @sidebar-line-height;
-  word-wrap: break-word;
   background-color: @sidebar-background-color;
   cursor: pointer;
   user-select: none;
@@ -20,6 +19,11 @@
 
   &:not(:last-child)::after {
     border-bottom-width: 1px;
+  }
+
+  &__text {
+    // https://github.com/youzan/vant/issues/7455
+    word-break: break-all;
   }
 
   &--select {

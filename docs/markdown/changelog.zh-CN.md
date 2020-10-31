@@ -10,7 +10,30 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
-### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11-beta.0...v2.10.11)
+### [v2.10.12](https://github.com/youzan/vant/compare/v2.10.11...v2.10.12)
+
+`2020-10-31`
+
+**Feature**
+
+- Image: 新增 icon-prefix 属性 [#7457](https://github.com/youzan/vant/issues/7457)
+- Progress: 新增 resize 属性 [#5161](https://github.com/youzan/vant/issues/5161)
+- SubmitBar: 新增 button 插槽，用于自定义按钮 [#7458](https://github.com/youzan/vant/issues/7458)
+
+**style**
+
+- ActionSheet: 当选项较多时，取消按钮现在会固定在底部 [#7401](https://github.com/youzan/vant/issues/7401)
+- Popup: 圆角弹窗的圆角大小从 20px 调整为 16px [#7421](https://github.com/youzan/vant/issues/7421)
+- Sidebar: 修复文本为长数字时无法自动换行的问题 [#7456](https://github.com/youzan/vant/issues/7456)
+
+**Bug Fixes**
+
+- GridItem: 修复使用 badge 属性时会在控制台抛出 warning 的问题 [#7433](https://github.com/youzan/vant/issues/7433)
+- Picker: 修复在 safari 上动画弹出过程中遮罩层闪烁的问题 [#7460](https://github.com/youzan/vant/issues/7460)
+- Tabs: 修复在个别情况下错误地抛出 change 事件的问题 [#7461](https://github.com/youzan/vant/issues/7461)
+- Tabs: 修复动态插入时 active 值可能错误的问题 [#7445](https://github.com/youzan/vant/issues/7445)
+
+### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11...v2.10.11)
 
 `2020-10-24`
 

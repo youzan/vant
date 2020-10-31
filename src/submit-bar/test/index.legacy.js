@@ -52,7 +52,7 @@ test('without price', () => {
 test('top slot', () => {
   const wrapper = mount(SubmitBar, {
     scopedSlots: {
-      top: () => 'top',
+      top: () => 'Custom Top',
     },
   });
 
@@ -117,5 +117,16 @@ test('button-color prop', () => {
       },
     },
   });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('button slot', () => {
+  const wrapper = mount(SubmitBar, {
+    buttonText: 'text',
+    scopedSlots: {
+      button: () => 'Custom button',
+    },
+  });
+
   expect(wrapper).toMatchSnapshot();
 });

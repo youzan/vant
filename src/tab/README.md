@@ -270,8 +270,8 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| resize | Resize Tabs when container element resized | - | void |
-| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | void |
+| resize | Resize Tabs when container element resized or visibility changed | - | - |
+| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | - |
 
 ### Tabs Slots
 

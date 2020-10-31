@@ -1,5 +1,6 @@
 import { ref, watch, computed, nextTick, reactive, onMounted } from 'vue';
 import { createNamespace, addUnit } from '../utils';
+import { useExpose } from '../composition/use-expose';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -36,7 +37,7 @@ export default createComponent({
       props.inactive ? '#cacaca' : props.color
     );
 
-    const setWidth = () => {
+    const resize = () => {
       nextTick(() => {
         state.rootWidth = root.value ? root.value.offsetWidth : 0;
         state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
@@ -65,9 +66,9 @@ export default createComponent({
       }
     };
 
-    watch([() => props.showPivot, () => props.pivotText], setWidth);
-
-    onMounted(setWidth);
+    watch([() => props.showPivot, () => props.pivotText], resize);
+    onMounted(resize);
+    useExpose({ resize });
 
     return () => {
       const { trackColor, percentage, strokeWidth } = props;

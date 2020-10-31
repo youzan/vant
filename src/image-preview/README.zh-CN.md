@@ -201,7 +201,7 @@ export default {
 | closed `v2.5.6` | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
 | scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | void |
+| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | - |
 
 ### Slots
 

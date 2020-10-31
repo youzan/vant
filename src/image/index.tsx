@@ -16,6 +16,7 @@ export default createComponent({
     height: [Number, String],
     radius: [Number, String],
     lazyLoad: Boolean,
+    iconPrefix: String,
     showError: {
       type: Boolean,
       default: true,
@@ -84,7 +85,13 @@ export default createComponent({
         return slots.loading();
       }
 
-      return <Icon name={props.loadingIcon} class={bem('loading-icon')} />;
+      return (
+        <Icon
+          name={props.loadingIcon}
+          class={bem('loading-icon')}
+          classPrefix={props.iconPrefix}
+        />
+      );
     };
 
     const renderErrorIcon = () => {
@@ -92,7 +99,13 @@ export default createComponent({
         return slots.error();
       }
 
-      return <Icon name={props.errorIcon} class={bem('error-icon')} />;
+      return (
+        <Icon
+          name={props.errorIcon}
+          class={bem('error-icon')}
+          classPrefix={props.iconPrefix}
+        />
+      );
     };
 
     const renderPlaceholder = () => {

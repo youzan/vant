@@ -218,15 +218,23 @@ export default createComponent({
     };
 
     const setCurrentIndex = (currentIndex) => {
-      currentIndex = findAvailableTab(currentIndex);
+      const newIndex = findAvailableTab(currentIndex);
 
-      if (isDef(currentIndex) && currentIndex !== state.currentIndex) {
-        const shouldEmitChange = state.currentIndex !== null;
-        state.currentIndex = currentIndex;
-        emit('update:active', currentName.value);
+      if (!isDef(newIndex)) {
+        return;
+      }
+
+      const newTab = children[newIndex];
+      const newName = getTabName(newTab, newIndex);
+      const shouldEmitChange = state.currentIndex !== null;
+
+      state.currentIndex = newIndex;
+
+      if (newName !== props.active) {
+        emit('update:active', newName);
 
         if (shouldEmitChange) {
-          emit('change', currentName.value, children[currentIndex].title);
+          emit('change', newName, newTab.title);
         }
       }
     };
@@ -377,9 +385,9 @@ export default createComponent({
     watch(
       () => children.length,
       () => {
-        setCurrentIndexByName(props.active || currentName.value);
-        setLine();
         nextTick(() => {
+          setCurrentIndexByName(props.active || currentName.value);
+          setLine();
           scrollIntoView(true);
         });
       }

@@ -147,6 +147,31 @@ test('loading-icon prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('apply icon-prefix prop to error-icon', () => {
+  const wrapper = mount(VanImage, {
+    propsData: {
+      errorIcon: 'error',
+      iconPrefix: 'my-icon',
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+    },
+  });
+
+  wrapper.find('img').trigger('error');
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('apply icon-prefix prop to loading-icon', () => {
+  const wrapper = mount(VanImage, {
+    propsData: {
+      loadingIcon: 'success',
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('radius prop', () => {
   const wrapper = mount(VanImage, {
     propsData: {
