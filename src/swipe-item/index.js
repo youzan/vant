@@ -47,8 +47,8 @@ export default createComponent({
 
       const active = parent.activeIndicator;
       const maxActive = parent.count - 1;
-      const prevActive = active === 0 ? maxActive : active - 1;
-      const nextActive = active === maxActive ? 0 : active + 1;
+      const prevActive = active === 0 && parent.loop ? maxActive : active - 1;
+      const nextActive = active === maxActive && parent.loop ? 0 : active + 1;
 
       return index === active || index === prevActive || index === nextActive;
     },
