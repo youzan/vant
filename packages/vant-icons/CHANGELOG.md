@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.4.0
+
+- add encode-woff2.less
+
 ## 1.3.2
 
 - fix incomplete after-sale icon
