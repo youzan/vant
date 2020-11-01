@@ -425,7 +425,7 @@ module.exports = {
                 title: 'Advanced Usage',
               },
               {
-                path: 'changelog',
+                path: 'changelog-v3',
                 title: 'Changelog',
               },
               {
