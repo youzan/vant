@@ -14,6 +14,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新。
 
+### [v3.0.0-beta.6](https://github.com/youzan/vant/compare/v2.10.12...v3.0.0-beta.6)
+
+`2020-11-01`
+
+**Bug Fixes**
+
+- Calendar: 修复动态设置 minDate 和 maxDate 时展示错误的问题 [#7412](https://github.com/youzan/vant/issues/7412)
+- Swipe: 修复开启 lazy-render 且 loop 为 false 时渲染节点不正确的问题 [#7465](https://github.com/youzan/vant/issues/7465)
+- Swipe: 修复开启 lazy-render 时子节点被重复挂载的问题 [#7466](https://github.com/youzan/vant/issues/7466)
+- Tabs: 修复初始动画错误的问题 [49e877](https://github.com/youzan/vant/commit/49e87756c70b33e1a56620ebee3c0aa53fb9fc86)
+- ActionBar: 修复类型定义不存在的问题 [#7440](https://github.com/youzan/vant/issues/7440) [#7442](https://github.com/youzan/vant/issues/7442)
+- 包含 `v2.10.12` 版本的所有改动
+
 ### [v3.0.0-beta.5](https://github.com/youzan/vant/compare/v2.10.11...v3.0.0-beta.5)
 
 `2020-10-24`
