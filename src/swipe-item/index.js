@@ -8,8 +8,10 @@ const [createComponent, bem] = createNamespace('swipe-item');
 
 export default createComponent({
   setup(props, { slots }) {
+    let rendered;
     const state = reactive({
       offset: 0,
+      inited: false,
       mounted: false,
     });
 
@@ -29,7 +31,9 @@ export default createComponent({
     });
 
     const shouldRender = computed(() => {
-      if (!parent.props.lazyRender) {
+      const { loop, lazyRender } = parent.props;
+
+      if (!lazyRender || rendered) {
         return true;
       }
 
@@ -40,10 +44,11 @@ export default createComponent({
 
       const active = parent.activeIndicator.value;
       const maxActive = parent.count.value - 1;
-      const prevActive = active === 0 ? maxActive : active - 1;
-      const nextActive = active === maxActive ? 0 : active + 1;
+      const prevActive = active === 0 && loop ? maxActive : active - 1;
+      const nextActive = active === maxActive && loop ? 0 : active + 1;
+      rendered = index.value >= prevActive && index.value <= nextActive;
 
-      return index.value >= prevActive || index.value <= nextActive;
+      return rendered;
     });
 
     const setOffset = (offset) => {
