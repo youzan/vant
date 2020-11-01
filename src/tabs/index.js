@@ -157,14 +157,6 @@ export default createComponent({
       scrollLeftTo(nav, to, immediate ? 0 : +props.duration);
     };
 
-    const init = () => {
-      nextTick(() => {
-        state.inited = true;
-        tabHeight = getVisibleHeight(wrapRef.value);
-        scrollIntoView(true);
-      });
-    };
-
     // update nav bar style
     const setLine = () => {
       const shouldAnimate = state.inited;
@@ -385,11 +377,13 @@ export default createComponent({
     watch(
       () => children.length,
       () => {
-        nextTick(() => {
+        if (state.inited) {
           setCurrentIndexByName(props.active || currentName.value);
           setLine();
-          scrollIntoView(true);
-        });
+          nextTick(() => {
+            scrollIntoView(true);
+          });
+        }
       }
     );
 
@@ -407,6 +401,15 @@ export default createComponent({
         }
       }
     );
+
+    const init = () => {
+      setCurrentIndexByName(props.active || currentName.value);
+      nextTick(() => {
+        state.inited = true;
+        tabHeight = getVisibleHeight(wrapRef.value);
+        scrollIntoView(true);
+      });
+    };
 
     onMounted(init);
 
