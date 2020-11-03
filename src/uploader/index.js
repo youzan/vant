@@ -238,6 +238,7 @@ export default createComponent({
       <PreviewItem
         v-slots={{ 'preview-cover': slots['preview-cover'] }}
         item={item}
+        index={index}
         onClick={() => {
           emit('click-preview', item, getDetail(index));
         }}

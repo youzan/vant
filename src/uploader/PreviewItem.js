@@ -12,6 +12,7 @@ export default {
   props: {
     name: String,
     item: Object,
+    index: Number,
     imageFit: String,
     lazyLoad: Boolean,
     deletable: Boolean,
