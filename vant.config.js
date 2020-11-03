@@ -374,7 +374,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact 联系人',
+                title: 'ContactCard 联系人卡片',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit 联系人编辑',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList 联系人列表',
               },
               {
                 path: 'coupon-list',
@@ -712,7 +720,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact',
+                title: 'ContactCard',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList',
               },
               {
                 path: 'coupon-list',
