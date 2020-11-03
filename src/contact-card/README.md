@@ -1,4 +1,4 @@
-# Contact
+# ContactCard
 
 ### Install
 
