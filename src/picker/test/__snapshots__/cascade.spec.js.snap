@@ -6,7 +6,7 @@ exports[`disabled in cascade 1`] = `
 </li>
 `;
 
-exports[`should move to next option when defaultOption is disabled 1`] = `
+exports[`should move to next option when default option is disabled 1`] = `
 <div class="van-picker">
   <!---->
   <div class="van-picker__columns" style="height: 264px;">

@@ -126,7 +126,7 @@ test('disabled in cascade', () => {
   expect(wrapper.find('.van-picker-column__item--disabled')).toMatchSnapshot();
 });
 
-test('should move to next option when defaultOption is disabled', () => {
+test('should move to next option when default option is disabled', () => {
   const wrapper = mount(Picker, {
     propsData: {
       columns: [
