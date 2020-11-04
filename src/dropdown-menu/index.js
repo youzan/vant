@@ -32,6 +32,10 @@ export default createComponent({
       type: String,
       default: 'down',
     },
+    closeOnClickOutside: {
+      type: Boolean,
+      default: true,
+    },
     closeOnClickOverlay: {
       type: Boolean,
       default: true,
@@ -59,9 +63,11 @@ export default createComponent({
     });
 
     const onClickAway = () => {
-      children.forEach((item) => {
-        item.toggle(false);
-      });
+      if (props.closeOnClickOutside) {
+        children.forEach((item) => {
+          item.toggle(false);
+        });
+      }
     };
 
     const updateOffset = () => {
