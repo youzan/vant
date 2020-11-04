@@ -14,7 +14,7 @@
   resolved "https://registry.npm.taobao.org/@babel/compat-data/download/@babel/compat-data-7.12.5.tgz?cache=0&sync_timestamp=1604441312130&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcompat-data%2Fdownload%2F%40babel%2Fcompat-data-7.12.5.tgz#f56db0c4bb1bbbf221b4e81345aab4141e7cb0e9"
   integrity sha1-9W2wxLsbu/IhtOgTRaq0FB58sOk=
 
-"@babel/core@>=7.2.2", "@babel/core@>=7.9.0", "@babel/core@^7.1.0", "@babel/core@^7.10.1", "@babel/core@^7.7.5":
+"@babel/core@>=7.2.2", "@babel/core@>=7.9.0", "@babel/core@^7.1.0", "@babel/core@^7.12.0", "@babel/core@^7.7.5":
   version "7.12.3"
   resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.12.3.tgz?cache=0&sync_timestamp=1602883720242&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.12.3.tgz#1b436884e1e3bff6fb1328dc02b208759de92ad8"
   integrity sha1-G0NohOHjv/b7EyjcArIIdZ3pKtg=
@@ -641,7 +641,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-object-assign@^7.10.1":
+"@babel/plugin-transform-object-assign@^7.12.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-object-assign/download/@babel/plugin-transform-object-assign-7.12.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fplugin-transform-object-assign%2Fdownload%2F%40babel%2Fplugin-transform-object-assign-7.12.1.tgz#9102b06625f60a5443cc292d32b565373665e1e4"
   integrity sha1-kQKwZiX2ClRDzCktMrVlNzZl4eQ=
@@ -684,7 +684,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-runtime@^7.10.1":
+"@babel/plugin-transform-runtime@^7.12.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-runtime/download/@babel/plugin-transform-runtime-7.12.1.tgz#04b792057eb460389ff6a4198e377614ea1e7ba5"
   integrity sha1-BLeSBX60YDif9qQZjjd2FOoee6U=
@@ -755,7 +755,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.12.1"
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/preset-env@^7.10.1":
+"@babel/preset-env@^7.12.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/preset-env/download/@babel/preset-env-7.12.1.tgz#9c7e5ca82a19efc865384bb4989148d2ee5d7ac2"
   integrity sha1-nH5cqCoZ78hlOEu0mJFI0u5desI=
@@ -838,7 +838,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/preset-typescript@^7.10.1":
+"@babel/preset-typescript@^7.12.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/preset-typescript/download/@babel/preset-typescript-7.12.1.tgz?cache=0&sync_timestamp=1602801947435&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fpreset-typescript%2Fdownload%2F%40babel%2Fpreset-typescript-7.12.1.tgz#86480b483bb97f75036e8864fe404cc782cc311b"
   integrity sha1-hkgLSDu5f3UDbohk/kBMx4LMMRs=
@@ -1837,21 +1837,21 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.0.0-beta.11":
-  version "3.0.0-beta.11"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.0.0-beta.11.tgz#d506a0be5a2d15d6fe1fc6eda2e3b689563c47d0"
-  integrity sha512-RWehOMPFxNplbTI25QZ9deHiSzn9DFdP5rYzEGtpuayJlBy4H1q8bY6mFUteHxf+4+FLniGiqtjBJoJ0mk/HkQ==
+"@vant/cli@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.0.0-beta.13.tgz?cache=0&sync_timestamp=1604473044302&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.0.0-beta.13.tgz#4deab4295e8d33b696fcd54228eec8e3ae7de8ce"
+  integrity sha1-Teq0KV6NM7aW/NVCKO7I46596M4=
   dependencies:
-    "@babel/core" "^7.10.1"
-    "@babel/plugin-transform-object-assign" "^7.10.1"
-    "@babel/plugin-transform-runtime" "^7.10.1"
-    "@babel/preset-env" "^7.10.1"
-    "@babel/preset-typescript" "^7.10.1"
+    "@babel/core" "^7.12.0"
+    "@babel/plugin-transform-object-assign" "^7.12.0"
+    "@babel/plugin-transform-runtime" "^7.12.0"
+    "@babel/preset-env" "^7.12.0"
+    "@babel/preset-typescript" "^7.12.0"
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.0"
     "@types/jest" "^26.0.0"
     "@types/webpack-dev-server" "^3.11.0"
-    "@vant/eslint-config" "^3.0.0-beta.0"
-    "@vant/markdown-loader" "^3.0.0-alpha.0"
+    "@vant/eslint-config" "^3.0.0"
+    "@vant/markdown-loader" "^3.0.0"
     "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.3.0"
     "@vant/touch-emulator" "^1.2.0"
@@ -1905,10 +1905,10 @@
     webpack-merge "^5.0.0"
     webpackbar "^4.0.0"
 
-"@vant/eslint-config@^3.0.0-beta.0":
-  version "3.0.0-beta.1"
-  resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-3.0.0-beta.1.tgz?cache=0&sync_timestamp=1604231590373&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Feslint-config%2Fdownload%2F%40vant%2Feslint-config-3.0.0-beta.1.tgz#1a5681ef2ade20bdcd84a74e0b17cc303d3f4241"
-  integrity sha1-GlaB7yreIL3NhKdOCxfMMD0/QkE=
+"@vant/eslint-config@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-3.0.0.tgz#b494e8c0ebfdb2e57022c93d3eed891ead0edb51"
+  integrity sha1-tJTowOv9suVwIsk9Pu2JHq0O21E=
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.6.0"
     "@typescript-eslint/parser" "^4.6.0"
@@ -1922,10 +1922,10 @@
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.4.0.tgz#a91f7894f2f34356f78a5d6f8b9d4f1a46add0c5"
   integrity sha1-qR94lPLzQ1b3il1vi51PGkat0MU=
 
-"@vant/markdown-loader@^3.0.0-alpha.0":
-  version "3.0.0-alpha.2"
-  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.0.0-alpha.2.tgz#88ab27d82608ab44bdff6087c1cab6928d2714b6"
-  integrity sha512-2SDfXchN6rglKLydVg26NHS5sUvN8vZgASrZLzOBchXD3Y6lpS+CUU3R6Ar9p9rDwkIbpwTiI5joHlIRUZrjJg==
+"@vant/markdown-loader@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-3.0.0.tgz#a189fbf75e0152ec16f82f8dafb918cd9c11d90a"
+  integrity sha1-oYn7914BUuwW+C+Nr7kYzZwR2Qo=
   dependencies:
     front-matter "^4.0.2"
     highlight.js "^10.3.1"
