@@ -108,6 +108,7 @@ function Toast(options = {}) {
 
     if (options.onClose) {
       options.onClose();
+      options.onClose = null;
     }
 
     if (multiple && !isServer) {
