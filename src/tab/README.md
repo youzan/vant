@@ -233,7 +233,7 @@ export default {
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
-| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
