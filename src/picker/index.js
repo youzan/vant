@@ -66,7 +66,15 @@ export default createComponent({
       let cursor = { children: props.columns };
 
       while (cursor && cursor.children) {
-        const defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
+        const { children } = cursor;
+        let defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
+
+        while (
+          children[defaultIndex].disabled &&
+          defaultIndex < children.length - 1
+        ) {
+          defaultIndex++;
+        }
 
         formatted.push({
           values: cursor.children,
@@ -74,7 +82,7 @@ export default createComponent({
           defaultIndex,
         });
 
-        cursor = cursor.children[defaultIndex];
+        cursor = children[defaultIndex];
       }
 
       formattedColumns.value = formatted;
