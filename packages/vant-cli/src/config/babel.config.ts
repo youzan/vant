@@ -14,7 +14,6 @@ module.exports = function (api?: ConfigAPI) {
       [
         '@babel/preset-env',
         {
-          loose: true,
           modules: useESModules ? false : 'commonjs',
         },
       ],
