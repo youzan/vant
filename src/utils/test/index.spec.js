@@ -131,6 +131,8 @@ test('addUnit', () => {
 test('unitToPx', () => {
   const originGetComputedStyle = window.getComputedStyle;
 
+  window.innerWidth = 100;
+  window.innerHeight = 200;
   window.getComputedStyle = () => ({ fontSize: '16px' });
 
   expect(unitToPx(0)).toEqual(0);
@@ -138,6 +140,8 @@ test('unitToPx', () => {
   expect(unitToPx('10px')).toEqual(10);
   expect(unitToPx('0rem')).toEqual(0);
   expect(unitToPx('10rem')).toEqual(160);
+  expect(unitToPx('10vw')).toEqual(10);
+  expect(unitToPx('10vh')).toEqual(20);
 
   window.getComputedStyle = originGetComputedStyle;
 });
