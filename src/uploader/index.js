@@ -194,10 +194,11 @@ export default createComponent({
               }
             })
             .catch(resetInput);
+          return;
         }
-      } else {
-        readFile(files);
       }
+
+      readFile(files);
     };
 
     let imagePreview;
