@@ -69,11 +69,13 @@ export default createComponent({
         const { children } = cursor;
         let defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
 
-        while (
-          children[defaultIndex].disabled &&
-          defaultIndex < children.length - 1
-        ) {
-          defaultIndex++;
+        while (children[defaultIndex] && children[defaultIndex].disabled) {
+          if (defaultIndex < children.length - 1) {
+            defaultIndex++;
+          } else {
+            defaultIndex = 0;
+            break;
+          }
         }
 
         formatted.push({
