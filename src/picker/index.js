@@ -67,7 +67,7 @@ export default createComponent({
 
       while (cursor && cursor.children) {
         const { children } = cursor;
-        let defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
+        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
           if (defaultIndex < children.length - 1) {
