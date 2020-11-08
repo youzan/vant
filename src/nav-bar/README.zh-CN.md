@@ -65,7 +65,8 @@ export default {
 | border | 是否显示下边框 | _boolean_ | `true` |
 | fixed | 是否固定在顶部 | _boolean_ | `false` |
 | placeholder `v2.5.9` | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
-| z-index | 元素 z-index | _number \| string_ | `1` |
+| z-index | 导航栏 z-index | _number \| string_ | `1` |
+| safe-area-inset-top `v2.10.13` | 是否开启顶部安全区适配 | _boolean_ | `false` |
 
 ### Slots
 

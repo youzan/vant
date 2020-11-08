@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
+
+`2020-11-08`
+
+**Feature**
+
+- Icon: 现在会默认使用 base64 图标，而不是有赞 CDN 上的 iconfont [e0ad65](https://github.com/youzan/vant/commit/e0ad65e69fbcfb9ef69b25d2c1bce322577aad11)
+- NavBar: 新增 safe-area-inset-top 属性，用于开启 iOS 顶部安全区适配 [be25a4](https://github.com/youzan/vant/commit/be25a478dfbc599cdb27ba09d2d72858037c1700)
+- Sticky: offset-top 属性支持使用 vh 单位 [#7498](https://github.com/youzan/vant/issues/7498)
+
+**Bug Fixes**
+
+- NavBar: 修复按钮文字不居中的问题 [#7515](https://github.com/youzan/vant/issues/7515)
+- NoticeBar: 修复在 iOS14 上无法重复播放的问题 [#7516](https://github.com/youzan/vant/issues/7516)
+- Picker: 修复级联模式下选项禁用时二级选项错误的问题 [#7499](https://github.com/youzan/vant/issues/7499)
+- Picker: 修复禁用所有选项时默认展示的选项不为第一项的问题 [#7504](https://github.com/youzan/vant/issues/7504)
+- Swipe: 修复开启 lazy-render 且 loop 为 false 时渲染节点不正确的问题 [#7465](https://github.com/youzan/vant/issues/7465)
+- Swipe: 修复开启 lazy-render 时子节点被重复挂载的问题 [#7466](https://github.com/youzan/vant/issues/7466)
+- Switch: 修复按钮 z-index 层级过高的问题 [#7497](https://github.com/youzan/vant/issues/7497)
+- Toast: 修复 onClose 选项可以被重复触发的问题 [#7496](https://github.com/youzan/vant/issues/7496)
+
 ### [v2.10.12](https://github.com/youzan/vant/compare/v2.10.11...v2.10.12)
 
 `2020-10-31`

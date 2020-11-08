@@ -10,6 +10,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
+
+`2020-11-08`
+
+**Feature**
+
+- Icon: using encoded woff2 iconfont by default [e0ad65](https://github.com/youzan/vant/commit/e0ad65e69fbcfb9ef69b25d2c1bce322577aad11)
+- NavBar: add safe-area-inset-top prop [be25a4](https://github.com/youzan/vant/commit/be25a478dfbc599cdb27ba09d2d72858037c1700)
+- Sticky: offset-top support vh unit [#7498](https://github.com/youzan/vant/issues/7498)
+
+**Bug Fixes**
+
+- NavBar: text vertical align [#7515](https://github.com/youzan/vant/issues/7515)
+- NoticeBar: can't replay in iOS14 [#7516](https://github.com/youzan/vant/issues/7516)
+- Picker: move to next option when default option is disabled [#7499](https://github.com/youzan/vant/issues/7499)
+- Picker: should move to first option when all options are disabled [#7504](https://github.com/youzan/vant/issues/7504)
+- Swipe: incorrect lazy render when loop is false [#7465](https://github.com/youzan/vant/issues/7465)
+- Swipe: item should only rendered once [#7466](https://github.com/youzan/vant/issues/7466)
+- Switch: remove unnecessary z-index [#7497](https://github.com/youzan/vant/issues/7497)
+- Toast: onClose option should only be called once [#7496](https://github.com/youzan/vant/issues/7496)
+
 ### [v2.10.12](https://github.com/youzan/vant/compare/v2.10.11...v2.10.12)
 
 `2020-10-31`

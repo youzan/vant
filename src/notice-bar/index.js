@@ -1,8 +1,8 @@
-import { ref, watch, reactive, nextTick, onActivated } from 'vue';
+import { ref, watch, reactive, onActivated } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
 // Composition
-import { useRect, doubleRaf, useEventListener } from '@vant/use';
+import { raf, useRect, doubleRaf, useEventListener } from '@vant/use';
 
 // Components
 import Icon from '../icon';
@@ -94,7 +94,8 @@ export default createComponent({
       state.duration = 0;
 
       // wait for Vue to render offset
-      nextTick(() => {
+      // using nextTick won't work in iOS14
+      raf(() => {
         // use double raf to ensure animation can start
         doubleRaf(() => {
           state.offset = -contentWidth;

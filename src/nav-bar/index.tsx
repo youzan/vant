@@ -21,6 +21,7 @@ export default createComponent({
     rightText: String,
     leftArrow: Boolean,
     placeholder: Boolean,
+    safeAreaInsetTop: Boolean,
     border: {
       type: Boolean,
       default: true,
@@ -75,21 +76,26 @@ export default createComponent({
         <div
           ref={navBarRef}
           style={style}
-          class={[bem({ fixed }), { [BORDER_BOTTOM]: border }]}
+          class={[
+            bem({ fixed, 'safe-area-inset-top': props.safeAreaInsetTop }),
+            { [BORDER_BOTTOM]: border },
+          ]}
         >
-          {hasLeft && (
-            <div class={bem('left')} onClick={onClickLeft}>
-              {renderLeft()}
+          <div class={bem('content')}>
+            {hasLeft && (
+              <div class={bem('left')} onClick={onClickLeft}>
+                {renderLeft()}
+              </div>
+            )}
+            <div class={[bem('title'), 'van-ellipsis']}>
+              {slots.title ? slots.title() : title}
             </div>
-          )}
-          <div class={[bem('title'), 'van-ellipsis']}>
-            {slots.title ? slots.title() : title}
+            {hasRight && (
+              <div class={bem('right')} onClick={onClickRight}>
+                {renderRight()}
+              </div>
+            )}
           </div>
-          {hasRight && (
-            <div class={bem('right')} onClick={onClickRight}>
-              {renderRight()}
-            </div>
-          )}
         </div>
       );
     };
