@@ -1,5 +1,5 @@
 import PasswordInput from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('focus event', () => {
   const focus = jest.fn();

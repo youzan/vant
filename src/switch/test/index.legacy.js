@@ -1,5 +1,5 @@
 import Switch from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('emit event', () => {
   const input = jest.fn();

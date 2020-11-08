@@ -1,5 +1,5 @@
 import DatetimePicker from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('confirm & cancel event', () => {
   const onConfirm = jest.fn();

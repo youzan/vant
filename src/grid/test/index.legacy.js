@@ -1,4 +1,4 @@
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('click grid item', () => {
   const onClick = jest.fn();

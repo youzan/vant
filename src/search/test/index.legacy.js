@@ -1,5 +1,5 @@
 import Search from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('input event', () => {
   const onInput = jest.fn();

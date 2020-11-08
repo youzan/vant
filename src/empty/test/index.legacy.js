@@ -1,5 +1,5 @@
 import Empty from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('image slot', () => {
   const wrapper = mount(Empty, {

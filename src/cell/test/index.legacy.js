@@ -1,6 +1,6 @@
 import Cell from '..';
 import CellGroup from '../../cell-group';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('click event', () => {
   const click = jest.fn();

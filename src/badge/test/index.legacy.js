@@ -1,5 +1,5 @@
 import Badge from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('should not render when badge is empty string', () => {
   const wrapper = mount(Badge, {

@@ -1,5 +1,5 @@
 import Tag from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('click event', () => {
   const click = jest.fn();

@@ -1,5 +1,5 @@
 import Icon from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('render icon with builtin icon name', () => {
   const wrapper = mount(Icon, {

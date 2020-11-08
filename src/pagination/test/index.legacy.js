@@ -1,4 +1,4 @@
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 import Paginaion from '..';
 
 test('render prev-text & next-text slot', () => {

@@ -1,5 +1,5 @@
 import ContactCard from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('should emit click event after clicking the ContactCard', () => {
   const click = jest.fn();

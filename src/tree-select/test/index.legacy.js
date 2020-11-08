@@ -1,5 +1,5 @@
 import TreeSelect from '..';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('empty list', () => {
   expect(mount(TreeSelect)).toMatchSnapshot();

@@ -1,6 +1,6 @@
 import Col from '..';
 import Row from '../../row';
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('Col click event', () => {
   const wrapper = mount(Col);

@@ -1,4 +1,4 @@
-import { mount } from '../../../test';
+import { mount } from '@vue/test-utils';
 
 test('icon slot', () => {
   const wrapper = mount({
