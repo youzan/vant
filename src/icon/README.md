@@ -57,6 +57,8 @@ Icon uses font file in `yzcdn.cn` by default，if you want to use the local font
 import 'vant/lib/icon/local.css';
 ```
 
+> Tips: Starting from version 2.10.13, Vant will use local font files in woff2 format by default
+
 ### Add custom iconfont
 
 ```css
