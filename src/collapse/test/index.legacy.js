@@ -83,7 +83,7 @@ test('render collapse-item slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable border', () => {
@@ -93,7 +93,7 @@ test('disable border', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('lazy render collapse content', async () => {
@@ -120,7 +120,7 @@ test('lazy render collapse content', async () => {
 
   titles.at(1).trigger('click');
   wrapper.vm.content = 'content';
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('toggle method', (done) => {

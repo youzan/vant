@@ -143,7 +143,7 @@ test('should move to next option when default option is disabled', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should move to first option when all options are disabled', () => {
@@ -170,5 +170,5 @@ test('should move to first option when all options are disabled', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

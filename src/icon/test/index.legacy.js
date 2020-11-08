@@ -7,7 +7,7 @@ test('render icon with builtin icon name', () => {
       name: 'success',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render icon with url name', () => {
@@ -16,7 +16,7 @@ test('render icon with url name', () => {
       name: 'https://img.yzcdn.com/icon.jpg',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render icon with local image', () => {
@@ -25,7 +25,7 @@ test('render icon with local image', () => {
       name: '/assets/icon.jpg',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render icon default slot', () => {
@@ -34,7 +34,7 @@ test('render icon default slot', () => {
       return h(Icon, { props: { name: 'success' } }, ['Default slot']);
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('tag prop', () => {
@@ -43,7 +43,7 @@ test('tag prop', () => {
       tag: 'div',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('dot prop', () => {
@@ -52,7 +52,7 @@ test('dot prop', () => {
       dot: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('size without unit', () => {
@@ -61,5 +61,5 @@ test('size without unit', () => {
       size: 20,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

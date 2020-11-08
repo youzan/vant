@@ -22,7 +22,7 @@ test('Button render default slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('Icon render default slot', () => {
@@ -32,7 +32,7 @@ test('Icon render default slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('Icon render icon slot', () => {
@@ -47,7 +47,7 @@ test('Icon render icon slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('Icon render icon slot with badge', () => {
@@ -65,7 +65,7 @@ test('Icon render icon slot with badge', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('Icon render icon slot with dot', () => {
@@ -83,7 +83,7 @@ test('Icon render icon slot with dot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable safe-area-inset-bottom prop', () => {
@@ -93,5 +93,5 @@ test('disable safe-area-inset-bottom prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

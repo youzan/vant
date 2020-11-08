@@ -64,7 +64,7 @@ test('inactive-color prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('size prop', () => {
@@ -74,7 +74,7 @@ test('size prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click event', () => {

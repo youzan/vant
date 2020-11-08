@@ -40,7 +40,7 @@ test('label disabled', () => {
 
   wrapper.find('.van-checkbox__label').trigger('click');
   expect(wrapper.emitted('input')).toBeFalsy();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('checkbox group', async () => {
@@ -101,7 +101,7 @@ test('label-position prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('icon-size prop', () => {
@@ -114,7 +114,7 @@ test('icon-size prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('checked-color prop', () => {
@@ -127,7 +127,7 @@ test('checked-color prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('bind-group prop', async () => {

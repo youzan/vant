@@ -19,10 +19,10 @@ test('load event', () => {
   wrapper.find('img').trigger('load');
 
   expect(wrapper.emitted('load')[0][0]).toBeTruthy();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setProps({ src: '' });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('error event', () => {
@@ -45,7 +45,7 @@ test('lazy load', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('lazy-load load event', (done) => {
@@ -62,7 +62,7 @@ test('lazy-load load event', (done) => {
               hanlder({ el: null });
               hanlder({ el: wrapper.find('img').element });
               expect(wrapper.emitted('load').length).toEqual(1);
-              expect(wrapper).toMatchSnapshot();
+              expect(wrapper.html()).toMatchSnapshot();
               wrapper.destroy();
             });
           }
@@ -88,7 +88,7 @@ test('lazy-load error event', (done) => {
               hanlder({ el: null });
               hanlder({ el: wrapper.find('img').element });
               expect(wrapper.emitted('error').length).toEqual(1);
-              expect(wrapper).toMatchSnapshot();
+              expect(wrapper.html()).toMatchSnapshot();
               wrapper.destroy();
             });
           }
@@ -108,7 +108,7 @@ test('show-loading prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('show-error prop', () => {
@@ -121,7 +121,7 @@ test('show-error prop', () => {
 
   wrapper.find('img').trigger('error');
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('error-icon prop', () => {
@@ -134,7 +134,7 @@ test('error-icon prop', () => {
 
   wrapper.find('img').trigger('error');
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('loading-icon prop', () => {
@@ -144,7 +144,7 @@ test('loading-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('apply icon-prefix prop to error-icon', () => {
@@ -158,7 +158,7 @@ test('apply icon-prefix prop to error-icon', () => {
 
   wrapper.find('img').trigger('error');
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('apply icon-prefix prop to loading-icon', () => {
@@ -169,7 +169,7 @@ test('apply icon-prefix prop to loading-icon', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('radius prop', () => {
@@ -180,7 +180,7 @@ test('radius prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('default slot', () => {
@@ -193,5 +193,5 @@ test('default slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

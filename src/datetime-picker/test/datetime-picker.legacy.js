@@ -28,7 +28,7 @@ test('time type', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('getPicker method', () => {

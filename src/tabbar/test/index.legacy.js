@@ -27,18 +27,18 @@ test('route mode', async () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   const items = wrapper.findAll('.van-tabbar-item');
 
   items.at(1).trigger('click');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   items.at(2).trigger('click');
   items.at(3).trigger('click');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('route mode match by name', async () => {
@@ -68,11 +68,11 @@ test('route mode match by name', async () => {
   const items = wrapper.findAll('.van-tabbar-item');
   items.at(0).trigger('click');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   items.at(1).trigger('click');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('router NavigationDuplicated', async (done) => {
@@ -114,7 +114,7 @@ test('watch tabbar value', () => {
   });
 
   wrapper.setData({ value: 1 });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click event', () => {
@@ -169,7 +169,7 @@ test('disable border', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('placeholder prop', () => {
@@ -182,7 +182,7 @@ test('placeholder prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restore();
 });

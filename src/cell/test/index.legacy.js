@@ -24,7 +24,7 @@ test('arrow direction', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render slot', () => {
@@ -42,7 +42,7 @@ test('render slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title-style prop', () => {
@@ -55,7 +55,7 @@ test('title-style prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('CellGroup title slot', () => {
@@ -65,7 +65,7 @@ test('CellGroup title slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('icon-prefix prop', () => {
@@ -76,5 +76,5 @@ test('icon-prefix prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

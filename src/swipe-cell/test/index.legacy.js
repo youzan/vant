@@ -22,23 +22,23 @@ test('drag and show left part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, 10, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper, 50, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper, 500, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper, 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('drag and show right part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, -50, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('before-close prop', () => {
@@ -125,7 +125,7 @@ test('auto calc width', async () => {
 
   await later();
   triggerDrag(wrapper, 100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restoreMock();
 });
@@ -143,7 +143,7 @@ test('render one side', async () => {
 
   await later();
   triggerDrag(wrapper, 100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restoreMock();
 });

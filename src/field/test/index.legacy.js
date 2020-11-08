@@ -106,7 +106,7 @@ test('render textarea', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('autosize textarea field', () => {
@@ -200,10 +200,10 @@ test('clearable prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   const input = wrapper.find('input');
   input.trigger('focus');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.find('.van-field__clear').trigger('touchstart');
   expect(wrapper.emitted('input')[0][0]).toEqual('');
@@ -229,7 +229,7 @@ test('render input slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render label slot', () => {
@@ -239,7 +239,7 @@ test('render label slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render extra slot', () => {
@@ -249,7 +249,7 @@ test('render extra slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('size prop', () => {
@@ -258,7 +258,7 @@ test('size prop', () => {
       size: 'large',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('label-width prop with unit', () => {
@@ -268,7 +268,7 @@ test('label-width prop with unit', () => {
       labelWidth: '10rem',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('label-width prop without unit', () => {
@@ -278,7 +278,7 @@ test('label-width prop without unit', () => {
       labelWidth: 100,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('label-class prop', () => {
@@ -288,7 +288,7 @@ test('label-class prop', () => {
       labelClass: 'custom-label-class',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('arrow-direction prop', () => {
@@ -298,7 +298,7 @@ test('arrow-direction prop', () => {
       arrowDirection: 'up',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('formatter prop', () => {
@@ -348,7 +348,7 @@ test('reach max word-limit', () => {
       showWordLimit: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('reach max word-limit undefined', () => {
@@ -359,7 +359,7 @@ test('reach max word-limit undefined', () => {
       showWordLimit: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('reach max word-limit null', () => {
@@ -370,7 +370,7 @@ test('reach max word-limit null', () => {
       showWordLimit: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('name prop', () => {
@@ -379,7 +379,7 @@ test('name prop', () => {
       name: 'foo',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('call focus method before mounted', (done) => {
@@ -403,7 +403,7 @@ test('colon prop', () => {
       colon: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should blur search input on enter', () => {

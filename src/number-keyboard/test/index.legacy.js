@@ -80,7 +80,7 @@ test('render title', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title-left slot', () => {
@@ -90,7 +90,7 @@ test('title-left slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('extra-key prop', () => {
@@ -100,7 +100,7 @@ test('extra-key prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('extra-key slot', () => {
@@ -110,7 +110,7 @@ test('extra-key slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('hideOnClickOutside', () => {
@@ -141,9 +141,9 @@ test('focus on key', () => {
 
   const key = wrapper.find('.van-key');
   trigger(key, 'touchstart');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   trigger(key, 'touchend');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('move and blur key', () => {
@@ -151,11 +151,11 @@ test('move and blur key', () => {
 
   const key = wrapper.find('.van-key');
   trigger(key, 'touchstart');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   trigger(key, 'touchmove', 0, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   trigger(key, 'touchmove', 100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   trigger(key, 'touchend');
   expect(wrapper.emitted('input')).toBeFalsy();
 });

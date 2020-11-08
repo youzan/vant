@@ -18,7 +18,7 @@ test('should allow to custom anchor text', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should scroll to anchor and emit select event after clicking the index-bar', () => {
@@ -122,11 +122,11 @@ test('should update active anchor after page scroll', () => {
 
   window.scrollTop = 0;
   trigger(window, 'scroll');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setData({ sticky: true });
   trigger(window, 'scroll');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   wrapper.vm.$destroy();
 
   Element.prototype.getBoundingClientRect = nativeRect;

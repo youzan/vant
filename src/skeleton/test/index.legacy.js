@@ -8,7 +8,7 @@ test('row-width array', () => {
       rowWidth: ['100%', 30, '5rem'],
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render chidren', () => {
@@ -20,7 +20,7 @@ test('render chidren', () => {
     `,
     components: { Skeleton },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('avatar shape', () => {
@@ -31,7 +31,7 @@ test('avatar shape', () => {
       avatarShape: 'square',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('round prop', () => {
@@ -42,7 +42,7 @@ test('round prop', () => {
       avatar: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable animate', () => {
@@ -52,5 +52,5 @@ test('disable animate', () => {
       aniamte: false,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

@@ -31,7 +31,7 @@ test('drag button', () => {
 
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 50, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(wrapper.emitted('drag-start')).toBeFalsy();
   expect(wrapper.emitted('drag-end')).toBeFalsy();
 
@@ -39,7 +39,7 @@ test('drag button', () => {
   trigger(button, 'touchstart', 0, 0);
   trigger(button, 'touchend', 0, 0);
   triggerDrag(button, 50, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(wrapper.emitted('drag-start')).toBeTruthy();
   expect(wrapper.emitted('drag-end')).toBeTruthy();
 
@@ -61,11 +61,11 @@ test('click bar', () => {
   });
 
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setData({ disabled: false });
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restoreMock();
 });
@@ -86,7 +86,7 @@ test('drag button vertical', () => {
 
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 0, 50);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restoreMock();
 });
@@ -106,7 +106,7 @@ test('click vertical', () => {
   });
 
   trigger(wrapper, 'click', 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restoreMock();
 });
@@ -119,7 +119,7 @@ test('bar-height prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('button-size prop', () => {
@@ -130,7 +130,7 @@ test('button-size prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should not emit change event when value not changed', () => {

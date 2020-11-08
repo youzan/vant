@@ -70,7 +70,7 @@ test('label slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('left slot', () => {
@@ -80,7 +80,7 @@ test('left slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('left-icon prop', () => {
@@ -90,7 +90,7 @@ test('left-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('right-icon prop', () => {
@@ -100,7 +100,7 @@ test('right-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('right-icon slot', () => {
@@ -110,7 +110,7 @@ test('right-icon slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('action-text prop', () => {
@@ -121,5 +121,5 @@ test('action-text prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

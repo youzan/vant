@@ -42,7 +42,7 @@ test('render image', async () => {
     propsData: { images, value: true },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   await later();
 
@@ -78,7 +78,7 @@ test('close-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('close-icon-position prop', () => {
@@ -91,7 +91,7 @@ test('close-icon-position prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('async close prop', async () => {
@@ -274,7 +274,7 @@ test('set show-index prop to false', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('index slot', () => {
@@ -286,7 +286,7 @@ test('index slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('cover slot', () => {
@@ -298,7 +298,7 @@ test('cover slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('closeOnPopstate', () => {

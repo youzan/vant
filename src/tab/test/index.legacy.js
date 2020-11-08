@@ -47,13 +47,13 @@ test('click to switch tab', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
   tabs.at(1).trigger('click');
   tabs.at(2).trigger('click');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(1);
 });
 
@@ -79,16 +79,16 @@ test('swipe to switch tab', async () => {
 
   const content = wrapper.find('.van-tabs__content');
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(content, -100, 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(1);
   expect(onChange).toHaveBeenCalledWith(1, 'title2');
 
   triggerDrag(content, -100, 0);
   expect(onChange).toHaveBeenCalledTimes(1);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   await later();
   wrapper.destroy();
@@ -99,7 +99,7 @@ test('change tabs data', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setData({
     swipeable: false,
@@ -109,20 +109,20 @@ test('change tabs data', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('lazy render', async () => {
   const wrapper = createWrapper();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setData({
     lazyRender: false,
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render nav-left & nav-right slot', async () => {
@@ -133,7 +133,7 @@ test('render nav-left & nav-right slot', async () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('border props', async () => {
@@ -143,7 +143,7 @@ test('border props', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click event', async () => {
@@ -198,7 +198,7 @@ test('name prop', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
   tabs.at(1).trigger('click');
@@ -253,7 +253,7 @@ test('dot prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('badge prop', () => {
@@ -265,7 +265,7 @@ test('badge prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('scrollspy prop', async () => {
@@ -286,7 +286,7 @@ test('scrollspy prop', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
   tabs.at(2).trigger('click');
@@ -294,7 +294,7 @@ test('scrollspy prop', async () => {
 
   await later();
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledWith('c', 'title3');
 });
 
@@ -431,5 +431,5 @@ test('render empty tab', async () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

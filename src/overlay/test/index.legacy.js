@@ -9,7 +9,7 @@ test('z-index prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('class-name prop', () => {
@@ -20,7 +20,7 @@ test('class-name prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('custom style prop', () => {
@@ -33,7 +33,7 @@ test('custom style prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('duration prop', () => {
@@ -44,7 +44,7 @@ test('duration prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click event', () => {
@@ -68,7 +68,7 @@ test('default slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('lock-scroll prop', () => {

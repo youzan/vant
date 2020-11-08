@@ -18,7 +18,7 @@ test('speed is 0', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('animate', async () => {
@@ -45,7 +45,7 @@ test('size prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('stroke-linecap prop', () => {
@@ -55,5 +55,5 @@ test('stroke-linecap prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

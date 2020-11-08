@@ -31,13 +31,13 @@ test('show dropdown item', async () => {
   const titles = wrapper.findAll('.van-dropdown-menu__title');
 
   titles.at(0).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   titles.at(1).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   titles.at(1).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render option icon', async () => {
@@ -50,7 +50,7 @@ test('render option icon', async () => {
   const titles = wrapper.findAll('.van-dropdown-menu__title');
 
   titles.at(0).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('close-on-click-outside', async () => {
@@ -64,7 +64,7 @@ test('close-on-click-outside', async () => {
 
   titles.at(0).trigger('click');
   document.body.click();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable close-on-click-outside', async () => {
@@ -78,7 +78,7 @@ test('disable close-on-click-outside', async () => {
 
   titles.at(0).trigger('click');
   document.body.click();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('direction up', async () => {
@@ -90,11 +90,11 @@ test('direction up', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   const titles = wrapper.findAll('.van-dropdown-menu__title');
   titles.at(0).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   window.innerHeight = innerHeight;
 });
@@ -111,19 +111,19 @@ test('click option', async () => {
   options.at(1).trigger('click');
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title prop', async () => {
   const wrapper = renderWrapper({ title: 'Title' });
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('didn`t find matched option', async () => {
   const wrapper = renderWrapper({ value: -1 });
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('destroy one item', async () => {
@@ -148,7 +148,7 @@ test('destroy one item', async () => {
 
   await later();
   wrapper.setData({ render: false });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable dropdown item', async () => {
@@ -171,7 +171,7 @@ test('disable dropdown item', async () => {
 
   const title = wrapper.find('.van-dropdown-menu__title');
   title.trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('change event', async () => {
@@ -251,5 +251,5 @@ test('title slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

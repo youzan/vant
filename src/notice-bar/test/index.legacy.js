@@ -34,7 +34,7 @@ test('icon slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('replay event', async () => {
@@ -69,7 +69,7 @@ test('should scroll when content width > wrap width ', async () => {
 
   await later(50);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should not scroll when content width > wrap width ', async () => {
@@ -92,5 +92,5 @@ test('should not scroll when content width > wrap width ', async () => {
 
   await later(50);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

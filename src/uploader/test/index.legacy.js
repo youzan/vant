@@ -196,7 +196,7 @@ test('render upload-text', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render preview image', async () => {
@@ -218,7 +218,7 @@ test('render preview image', async () => {
   wrapper.vm.onChange(file);
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('image-fit prop', () => {
@@ -229,7 +229,7 @@ test('image-fit prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('upload-icon prop', () => {
@@ -239,7 +239,7 @@ test('upload-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable preview image', async () => {
@@ -258,7 +258,7 @@ test('disable preview image', async () => {
   wrapper.vm.onChange(file);
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('max-count prop', async () => {
@@ -277,7 +277,7 @@ test('max-count prop', async () => {
   wrapper.vm.onChange(multiFile);
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('preview-size prop', async () => {
@@ -296,7 +296,7 @@ test('preview-size prop', async () => {
   wrapper.vm.onChange(file);
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('deletable prop', () => {
@@ -328,7 +328,7 @@ test('delete preview image', () => {
   wrapper.find('.van-uploader__preview-delete').trigger('click');
   expect(wrapper.vm.fileList.length).toEqual(0);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(wrapper.emitted('delete')[0]).toBeTruthy();
 });
 
@@ -490,7 +490,7 @@ test('file message should be reactive', (done) => {
         file.message = 1;
         setTimeout(() => {
           file.message = 2;
-          expect(wrapper).toMatchSnapshot();
+          expect(wrapper.html()).toMatchSnapshot();
           done();
         });
       },
@@ -535,5 +535,5 @@ test('preview-cover slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

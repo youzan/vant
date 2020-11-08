@@ -50,7 +50,7 @@ test('render price & num slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render origin-price slot', () => {
@@ -60,7 +60,7 @@ test('render origin-price slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render bottom slot', () => {
@@ -70,7 +70,7 @@ test('render bottom slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render thumb & tag slot', () => {
@@ -81,7 +81,7 @@ test('render thumb & tag slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render title & desc slot', () => {
@@ -92,7 +92,7 @@ test('render title & desc slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render price & price-top slot', () => {
@@ -103,5 +103,5 @@ test('render price & price-top slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

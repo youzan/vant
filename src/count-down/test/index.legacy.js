@@ -67,7 +67,7 @@ test('disable auto-start prop', async () => {
   });
 
   await later(50);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('start method', async () => {
@@ -135,7 +135,7 @@ test('complete format prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('milliseconds format SS', () => {
@@ -147,7 +147,7 @@ test('milliseconds format SS', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('milliseconds format S', () => {
@@ -159,7 +159,7 @@ test('milliseconds format S', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('incomplate format prop', () => {
@@ -171,7 +171,7 @@ test('incomplate format prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('pause when unmounted', () => {

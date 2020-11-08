@@ -9,7 +9,7 @@ test('should render left/right slot and match snapshot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should render title slot and match snapshot', () => {
@@ -19,7 +19,7 @@ test('should render title slot and match snapshot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should render placeholder element when using placeholder prop', () => {
@@ -32,7 +32,7 @@ test('should render placeholder element when using placeholder prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   restore();
 });

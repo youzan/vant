@@ -7,7 +7,7 @@ test('disabled stepper', () => {
       disabled: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable stepper input', () => {
@@ -16,7 +16,7 @@ test('disable stepper input', () => {
       disableInput: true,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable button', async () => {
@@ -216,7 +216,7 @@ test('input-width prop', () => {
       inputWidth: '10rem',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('button-size prop', () => {
@@ -225,7 +225,7 @@ test('button-size prop', () => {
       buttonSize: '2rem',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('async-change prop', () => {
@@ -274,7 +274,7 @@ test('show-plus & show-minus props', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('decimal-length prop', () => {

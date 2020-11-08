@@ -9,9 +9,9 @@ test('sticky to top', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
 
@@ -25,7 +25,7 @@ test('z-index prop', () => {
   });
 
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
 
@@ -39,7 +39,7 @@ test('offset-top prop', () => {
   });
 
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
 
@@ -57,7 +57,7 @@ test('offset-top with rem unit', () => {
   });
 
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 
   window.getComputedStyle = originGetComputedStyle;
@@ -75,7 +75,7 @@ test('offset-top with vw unit', () => {
   });
 
   mockScrollTop(100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
 
@@ -115,9 +115,9 @@ test('container prop', () => {
   });
 
   mockScrollTop(15);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(25);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
 

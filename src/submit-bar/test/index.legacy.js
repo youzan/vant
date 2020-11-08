@@ -29,7 +29,7 @@ test('disable submit', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // disabled
   const button = wrapper.find('.van-button');
@@ -46,7 +46,7 @@ test('without price', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('top slot', () => {
@@ -56,7 +56,7 @@ test('top slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('decimal-length prop', () => {
@@ -69,7 +69,7 @@ test('decimal-length prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('suffix-label prop', () => {
@@ -83,7 +83,7 @@ test('suffix-label prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('text-align prop', () => {
@@ -95,7 +95,7 @@ test('text-align prop', () => {
       },
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('disable safe-area-inset-bottom prop', () => {
@@ -106,7 +106,7 @@ test('disable safe-area-inset-bottom prop', () => {
       },
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('button-color prop', () => {
@@ -117,7 +117,7 @@ test('button-color prop', () => {
       },
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('button slot', () => {
@@ -128,5 +128,5 @@ test('button slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

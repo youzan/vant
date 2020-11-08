@@ -20,7 +20,7 @@ test('filter prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('formatter prop', async () => {
@@ -34,7 +34,7 @@ test('formatter prop', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');

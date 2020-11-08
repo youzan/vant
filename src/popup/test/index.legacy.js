@@ -22,7 +22,7 @@ test('reset z-index', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('popup lock scroll', () => {
@@ -214,7 +214,7 @@ test('duration prop when position is center', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('duration prop when position is top', () => {
@@ -226,7 +226,7 @@ test('duration prop when position is top', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('round prop', () => {
@@ -237,7 +237,7 @@ test('round prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('closeable prop', () => {
@@ -261,5 +261,5 @@ test('close-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

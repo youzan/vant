@@ -18,19 +18,19 @@ test('change head content when pulling down', async () => {
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 20);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // loosing
   trigger(track, 'touchmove', 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // loading
   trigger(track, 'touchend', 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // still loading
   triggerDrag(track, 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   expect(wrapper.emitted('input')).toBeTruthy();
   expect(wrapper.emitted('refresh')).toBeFalsy();
@@ -40,7 +40,7 @@ test('change head content when pulling down', async () => {
 
   // end loading
   wrapper.vm.value = false;
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('custom content by slots', async () => {
@@ -63,16 +63,16 @@ test('custom content by slots', async () => {
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 20);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // loosing
   trigger(track, 'touchmove', 0, 75);
   trigger(track, 'touchmove', 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // loading
   trigger(track, 'touchend', 0, 100);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('pull a short distance', () => {
@@ -102,7 +102,7 @@ test('not in page top', () => {
   window.scrollTop = 0;
   trigger(track, 'touchmove', 0, 100);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render success text', async () => {
@@ -128,11 +128,11 @@ test('render success text', async () => {
   wrapper.setProps({ value: false });
 
   // success
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   // normal
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render success slot', async () => {
@@ -154,7 +154,7 @@ test('render success slot', async () => {
 
   expect(wrapper.vm.value).toBeTruthy();
   wrapper.setProps({ value: false });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should set height when using head-height', async () => {
@@ -164,5 +164,5 @@ test('should set height when using head-height', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

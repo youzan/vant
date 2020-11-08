@@ -43,16 +43,16 @@ test('watch areaList & code', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   wrapper.setProps({ value: '110117' });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setProps({
     value: '',
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('change option', () => {
@@ -67,15 +67,15 @@ test('change option', () => {
   });
 
   const columns = wrapper.findAll('.van-picker-column');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(columns.at(0), 0, -100);
   columns.at(0).find('ul').trigger('transitionend');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(columns.at(2), 0, -100);
   columns.at(2).find('ul').trigger('transitionend');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   expect(onChange.mock.calls[0][1]).toEqual(secondOption);
 });
@@ -102,9 +102,9 @@ test('reset method', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   wrapper.vm.reset();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('columns-num prop', async () => {
@@ -120,7 +120,7 @@ test('columns-num prop', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title slot', async () => {
@@ -131,7 +131,7 @@ test('title slot', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('columns-top、columns-bottom slot', async () => {
@@ -143,5 +143,5 @@ test('columns-top、columns-bottom slot', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

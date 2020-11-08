@@ -19,7 +19,7 @@ test('icon slot', () => {
     </van-steps>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click-step event', () => {
@@ -57,5 +57,5 @@ test('inactive-color prop', () => {
     </van-steps>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

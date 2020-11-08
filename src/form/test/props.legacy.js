@@ -188,7 +188,7 @@ test('validate-first prop', async () => {
 
   await submitForm(wrapper);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({
     errors: [{ message: 'A failed', name: 'A' }],
     values: { A: '', B: '' },
@@ -211,7 +211,7 @@ test('colon prop', () => {
       </van-form>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('label-align prop', () => {
@@ -223,7 +223,7 @@ test('label-align prop', () => {
       </van-form>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('label-width prop', () => {
@@ -235,7 +235,7 @@ test('label-width prop', () => {
       </van-form>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('input-align prop', () => {
@@ -251,7 +251,7 @@ test('input-align prop', () => {
       </van-form>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('error-message-align prop', () => {
@@ -262,7 +262,7 @@ test('error-message-align prop', () => {
       </van-form>
     `,
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('validate-trigger - onBlur', async () => {

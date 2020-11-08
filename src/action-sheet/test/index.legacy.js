@@ -38,7 +38,7 @@ test('callback events', () => {
   expect(onCancel).toHaveBeenCalled();
   expect(onInput).toHaveBeenCalledWith(false);
   expect(onSelect).toHaveBeenCalledWith(actions[0], 0);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click overlay and close', async () => {
@@ -87,7 +87,7 @@ test('disable lazy-render', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render title and default slot', () => {
@@ -103,7 +103,7 @@ test('render title and default slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('get container', () => {
@@ -147,7 +147,7 @@ test('round prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('color option', () => {
@@ -158,7 +158,7 @@ test('color option', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('description prop', () => {
@@ -170,7 +170,7 @@ test('description prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('description slot', () => {
@@ -184,7 +184,7 @@ test('description slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('close-icon prop', () => {
@@ -196,7 +196,7 @@ test('close-icon prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('closeable prop', () => {
@@ -208,5 +208,5 @@ test('closeable prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

@@ -75,7 +75,7 @@ test('icon-size prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('checked-color prop', () => {
@@ -88,5 +88,5 @@ test('checked-color prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

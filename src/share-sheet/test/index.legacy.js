@@ -81,7 +81,7 @@ test('title & description slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('click-overlay event', async () => {

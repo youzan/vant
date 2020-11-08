@@ -84,7 +84,7 @@ test('button color', () => {
       confirmButtonColor: 'red',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('button text', () => {
@@ -96,7 +96,7 @@ test('button text', () => {
       confirmButtonText: 'Custom confirm',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('dialog component', () => {
@@ -112,7 +112,7 @@ test('default slot', () => {
       default: () => 'Custom Message',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title slot', () => {
@@ -124,7 +124,7 @@ test('title slot', () => {
       title: () => 'Custom Title',
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('allow-html prop', () => {

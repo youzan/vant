@@ -30,7 +30,7 @@ test('sqaure and set gutter', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('icon-size prop', () => {
@@ -42,7 +42,7 @@ test('icon-size prop', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render icon-slot', () => {
@@ -58,5 +58,5 @@ test('render icon-slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

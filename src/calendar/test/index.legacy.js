@@ -256,7 +256,7 @@ test('row-height prop', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('formatter prop', async () => {
@@ -291,7 +291,7 @@ test('formatter prop', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('title & footer slot', async () => {
@@ -310,7 +310,7 @@ test('title & footer slot', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should reset when type changed', async () => {
@@ -398,12 +398,12 @@ test('popup wrapper', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.setProps({ value: true });
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.find('.van-popup__close-icon').trigger('click');
   expect(wrapper.element.style.display).toEqual('none');
@@ -437,7 +437,7 @@ test('color prop when type is single', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('color prop when type is range', async () => {
@@ -454,7 +454,7 @@ test('color prop when type is range', async () => {
 
   await later();
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('close event', () => {

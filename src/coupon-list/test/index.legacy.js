@@ -82,7 +82,7 @@ test('render disabled coupon', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render coupon list', async () => {
@@ -101,7 +101,7 @@ test('render coupon list', async () => {
     },
   });
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render empty coupon list', () => {
@@ -112,7 +112,7 @@ test('render empty coupon list', () => {
     },
   });
   wrapper.findAll('.van-tab').at(1).trigger('click');
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('empty-image prop', () => {
@@ -122,7 +122,7 @@ test('empty-image prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('exchange coupon', () => {
@@ -154,7 +154,7 @@ test('render coupon cell', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   wrapper.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(1);
 });
@@ -166,7 +166,7 @@ test('render coupon cell with coupon', () => {
       chosenCoupon: 0,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render coupon cell with zero discount', () => {
@@ -176,5 +176,5 @@ test('render coupon cell with zero discount', () => {
       chosenCoupon: 0,
     },
   });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

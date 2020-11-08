@@ -29,7 +29,7 @@ test('failed event', async () => {
 
   await submitForm(wrapper);
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({
     errors: [
       { name: 'A', message: 'A failed' },

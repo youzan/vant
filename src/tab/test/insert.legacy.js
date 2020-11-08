@@ -23,7 +23,7 @@ test('insert tab dynamically', async () => {
 
   await later();
   wrapper.setData({ insert: true });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('insert tab with name dynamically', async () => {
@@ -48,7 +48,7 @@ test('insert tab with name dynamically', async () => {
 
   await later();
   wrapper.setData({ insert: true });
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(0);
 });
 
@@ -71,5 +71,5 @@ test('insert tab with child component', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

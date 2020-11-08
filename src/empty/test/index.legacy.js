@@ -8,7 +8,7 @@ test('image slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('description slot', () => {
@@ -18,7 +18,7 @@ test('description slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('bottom slot', () => {
@@ -28,7 +28,7 @@ test('bottom slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render svg when image is network', () => {
@@ -38,7 +38,7 @@ test('render svg when image is network', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('image-size prop', () => {

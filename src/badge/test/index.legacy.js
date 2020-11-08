@@ -8,7 +8,7 @@ test('should not render when badge is empty string', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should not render when badge is empty undefined', () => {
@@ -18,7 +18,7 @@ test('should not render when badge is empty undefined', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should render when badge is zero', () => {
@@ -28,5 +28,5 @@ test('should render when badge is zero', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });

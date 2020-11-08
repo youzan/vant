@@ -178,7 +178,7 @@ test('lazy-render prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('month-show event', async () => {

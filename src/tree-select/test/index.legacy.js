@@ -132,7 +132,7 @@ test('content slot', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('height prop', () => {
@@ -142,7 +142,7 @@ test('height prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('nav render badge', () => {
@@ -157,7 +157,7 @@ test('nav render badge', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('use sync modifier in main-active-index', () => {

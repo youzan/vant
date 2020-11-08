@@ -129,10 +129,10 @@ test('column watch default index', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.vm.defaultIndex = 2;
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render title slot', () => {
@@ -144,7 +144,7 @@ test('render title slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render confirm/cancel slot', () => {
@@ -157,7 +157,7 @@ test('render confirm/cancel slot', () => {
     `,
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render option slot with simple columns', () => {
@@ -172,7 +172,7 @@ test('render option slot with simple columns', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('render option slot with object columns', () => {
@@ -189,7 +189,7 @@ test('render option slot with object columns', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('simulation finger swipe again before transitionend', () => {
@@ -242,7 +242,7 @@ test('toolbar-position prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('not allow html', () => {
@@ -253,7 +253,7 @@ test('not allow html', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('columns-top、columns-bottom prop', () => {
@@ -267,7 +267,7 @@ test('columns-top、columns-bottom prop', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('watch columns change', () => {
@@ -317,7 +317,7 @@ test('set rem item-height', async () => {
   });
 
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   window.getComputedStyle = originGetComputedStyle;
 });

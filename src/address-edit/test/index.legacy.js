@@ -52,7 +52,7 @@ test('create a AddressEdit with props', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('valid area placeholder confirm', async () => {
@@ -69,7 +69,7 @@ test('valid area placeholder confirm', async () => {
 
   expect(data.areaCode).toBe('');
   await later(50);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('show area component', async () => {
@@ -79,19 +79,19 @@ test('show area component', async () => {
   field.trigger('click');
 
   await later(50);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.find('.van-picker__cancel').trigger('click');
 
   await later(50);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('set-default', () => {
   const { wrapper } = createComponent();
   wrapper.find('.van-switch').trigger('click');
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('validator props', async () => {

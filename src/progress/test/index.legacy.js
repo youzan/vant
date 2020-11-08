@@ -9,12 +9,12 @@ test('calc width', async () => {
     },
   });
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.vm.showPivot = true;
   wrapper.vm.pivotText = 'test';
   await later();
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('track color prop', async () => {

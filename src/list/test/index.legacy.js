@@ -80,7 +80,7 @@ test('finished slot', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('error slot', async () => {
@@ -93,7 +93,7 @@ test('error slot', async () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('immediate check false', async () => {

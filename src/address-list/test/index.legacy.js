@@ -24,7 +24,7 @@ test('unswitchable', () => {
     },
   });
 
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('select event', () => {
