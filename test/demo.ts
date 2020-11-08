@@ -1,4 +1,4 @@
-import { h } from 'Vue';
+import { h } from 'vue';
 import Locale from '../src/locale';
 import { mount, later } from '.';
 import { DemoLocaleMixin } from '../docs/site/demo-locale';
