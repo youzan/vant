@@ -2,7 +2,7 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择年月日</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -176,7 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择年月</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -253,7 +253,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择月日</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -405,7 +405,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" type="time" mindate="Fri Jan 01 2010 00:00:00 GMT+0800 (GMT+08:00)" maxdate="Tue Dec 31 2030 00:00:00 GMT+0800 (GMT+08:00)">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择时间</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -641,7 +641,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择完整时间</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -1075,7 +1075,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选择年月日小时</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -1325,7 +1325,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" type="time" mindate="Fri Jan 01 2010 00:00:00 GMT+0800 (GMT+08:00)" maxdate="Tue Dec 31 2030 00:00:00 GMT+0800 (GMT+08:00)">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">选项过滤器</div><button type="button" class="van-picker__confirm">确认</button>
     </div>
@@ -1456,7 +1456,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker van-datetime-picker" minhour="0" maxhour="23" minminute="0" maxminute="59">
+  <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar"><button type="button" class="van-picker__cancel">取消</button>
       <div class="van-picker__title van-ellipsis">自定义列排序</div><button type="button" class="van-picker__confirm">确认</button>
     </div>

@@ -1,10 +1,13 @@
 import { ref } from 'vue';
-import { createNamespace } from '../utils';
+import { pick, createNamespace } from '../utils';
 import { useExpose } from '../composition/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 
 const [createComponent, bem] = createNamespace('datetime-picker');
+
+const timePickerProps = Object.keys(TimePicker.props);
+const datePickerProps = Object.keys(DatePicker.props);
 
 export default createComponent({
   props: {
@@ -20,8 +23,20 @@ export default createComponent({
     });
 
     return () => {
-      const Component = props.type === 'time' ? TimePicker : DatePicker;
-      return <Component ref={root} class={bem()} {...{ ...props, ...attrs }} />;
+      const isTimePicker = props.type === 'time';
+      const Component = isTimePicker ? TimePicker : DatePicker;
+      const inheritProps = pick(
+        props,
+        isTimePicker ? timePickerProps : datePickerProps
+      );
+
+      return (
+        <Component
+          ref={root}
+          class={bem()}
+          {...{ ...inheritProps, ...attrs }}
+        />
+      );
     };
   },
 });
