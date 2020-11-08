@@ -16,6 +16,17 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.0-beta.7](https://github.com/youzan/vant/compare/v2.10.13...v3.0.0-beta.7)
+
+`2020-11-08`
+
+**Bug Fixes**
+
+- Calendar: incorrect initial date [#7412](https://github.com/youzan/vant/issues/7412)
+- DropdownMenu: can't disable closeOnClickOutside [#7473](https://github.com/youzan/vant/issues/7473)
+- Uploader: before-read return true not work [#7493](https://github.com/youzan/vant/issues/7493)
+- Uploader: can't get index in delete event [#7481](https://github.com/youzan/vant/issues/7481)
+
 ### [v3.0.0-beta.6](https://github.com/youzan/vant/compare/v2.10.12...v3.0.0-beta.6)
 
 `2020-11-01`

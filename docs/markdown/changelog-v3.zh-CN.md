@@ -16,13 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-beta.7](https://github.com/youzan/vant/compare/v2.10.13...v3.0.0-beta.7)
+
+`2020-11-08`
+
+**Bug Fixes**
+
+- Calendar: 修复动态设置 minDate 和 maxDate 时展示错误的问题 [#7412](https://github.com/youzan/vant/issues/7412)
+- DropdownMenu: 修复无法禁用 closeOnClickOutside 属性的问题 [#7473](https://github.com/youzan/vant/issues/7473)
+- Uploader: 修复在 before-read 返回 true 无效的问题 [#7493](https://github.com/youzan/vant/issues/7493)
+- Uploader: 修复在 delete 事件中无法获取 index 的问题 [#7481](https://github.com/youzan/vant/issues/7481)
+- 包含 `v2.10.13` 版本的所有改动
+
 ### [v3.0.0-beta.6](https://github.com/youzan/vant/compare/v2.10.12...v3.0.0-beta.6)
 
 `2020-11-01`
 
 **Bug Fixes**
 
-- Calendar: 修复动态设置 minDate 和 maxDate 时展示错误的问题 [#7412](https://github.com/youzan/vant/issues/7412)
 - Swipe: 修复开启 lazy-render 且 loop 为 false 时渲染节点不正确的问题 [#7465](https://github.com/youzan/vant/issues/7465)
 - Swipe: 修复开启 lazy-render 时子节点被重复挂载的问题 [#7466](https://github.com/youzan/vant/issues/7466)
 - Tabs: 修复初始动画错误的问题 [49e877](https://github.com/youzan/vant/commit/49e87756c70b33e1a56620ebee3c0aa53fb9fc86)
