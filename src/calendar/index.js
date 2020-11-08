@@ -118,6 +118,20 @@ export default createComponent({
   emits: ['select', 'confirm', 'unselect', 'month-show', 'update:show'],
 
   setup(props, { emit, slots }) {
+    const limitDateRange = (
+      date,
+      minDate = props.minDate,
+      maxDate = props.maxDate
+    ) => {
+      if (compareDay(date, minDate) === -1) {
+        return minDate;
+      }
+      if (compareDay(date, maxDate) === 1) {
+        return maxDate;
+      }
+      return date;
+    };
+
     const getInitialDate = (defaultDate = props.defaultDate) => {
       const { type, minDate, maxDate } = props;
 
@@ -125,26 +139,32 @@ export default createComponent({
         return defaultDate;
       }
 
-      let defaultVal = new Date();
-
-      if (compareDay(defaultVal, minDate) === -1) {
-        defaultVal = minDate;
-      } else if (compareDay(defaultVal, maxDate) === 1) {
-        defaultVal = type === 'range' ? getPrevDay(maxDate) : maxDate;
-      }
-
-      const defaultIsArray = Array.isArray(defaultDate);
+      const now = new Date();
 
       if (type === 'range') {
-        const [startDay, endDay] = defaultIsArray ? defaultDate : [];
-        return [startDay || defaultVal, endDay || getNextDay(defaultVal)];
+        if (!Array.isArray(defaultDate)) {
+          defaultDate = [];
+        }
+        const start = limitDateRange(
+          defaultDate[0] || now,
+          minDate,
+          getPrevDay(maxDate)
+        );
+        const end = limitDateRange(defaultDate[1] || now, getNextDay(minDate));
+        return [start, end];
       }
 
       if (type === 'multiple') {
-        return defaultIsArray ? defaultDate : [defaultVal];
+        if (Array.isArray(defaultDate)) {
+          return defaultDate.map((date) => limitDateRange(date));
+        }
+        return [limitDateRange(now)];
       }
 
-      return defaultIsArray ? defaultVal : defaultDate;
+      if (!defaultDate || Array.isArray(defaultDate)) {
+        defaultDate = now;
+      }
+      return limitDateRange(defaultDate);
     };
 
     let bodyHeight;
