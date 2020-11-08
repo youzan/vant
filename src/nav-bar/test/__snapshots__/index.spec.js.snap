@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should allow render left/right slot 1`] = `
+exports[`should render left/right slot and match snapshot 1`] = `
 <div class="van-nav-bar van-hairline--bottom">
   <div class="van-nav-bar__content">
     <div class="van-nav-bar__left">Custom Left</div>
@@ -10,20 +10,20 @@ exports[`should allow render left/right slot 1`] = `
 </div>
 `;
 
-exports[`should allow render title slot 1`] = `
-<div class="van-nav-bar van-hairline--bottom">
-  <div class="van-nav-bar__content">
-    <div class="van-nav-bar__title van-ellipsis">Custom Title</div>
-  </div>
-</div>
-`;
-
-exports[`should render placeholder element when enabling placeholder prop 1`] = `
+exports[`should render placeholder element when using placeholder prop 1`] = `
 <div class="van-nav-bar__placeholder" style="height: 50px;">
   <div class="van-nav-bar van-nav-bar--fixed van-hairline--bottom">
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__title van-ellipsis"></div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`should render title slot and match snapshot 1`] = `
+<div class="van-nav-bar van-hairline--bottom">
+  <div class="van-nav-bar__content">
+    <div class="van-nav-bar__title van-ellipsis">Custom Title</div>
   </div>
 </div>
 `;

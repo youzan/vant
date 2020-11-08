@@ -1,7 +1,7 @@
 import NavBar from '..';
 import { mount, mockGetBoundingClientRect } from '../../../test';
 
-test('should allow render left/right slot', () => {
+test('should render left/right slot and match snapshot', () => {
   const wrapper = mount(NavBar, {
     scopedSlots: {
       left: () => 'Custom Left',
@@ -12,7 +12,7 @@ test('should allow render left/right slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should allow render title slot', () => {
+test('should render title slot and match snapshot', () => {
   const wrapper = mount(NavBar, {
     scopedSlots: {
       title: () => 'Custom Title',
@@ -22,7 +22,7 @@ test('should allow render title slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should render placeholder element when enabling placeholder prop', () => {
+test('should render placeholder element when using placeholder prop', () => {
   const restore = mockGetBoundingClientRect({ height: 50 });
 
   const wrapper = mount(NavBar, {
@@ -59,7 +59,7 @@ test('should emit click-right event when clicking right text', () => {
   expect(wrapper.emitted('click-right')).toBeTruthy();
 });
 
-test('should add safe-area-inset-top classname when using safe-area-inset-top prop', () => {
+test('should have safe-area-inset-top class when using safe-area-inset-top prop', () => {
   const wrapper = mount(NavBar, {
     propsData: {
       safeAreaInsetTop: true,
