@@ -11,7 +11,7 @@ const EmptyComponent = {
 };
 
 export function snapshotDemo(Demo: any, option: any = {}) {
-  test('renders demo correctly', async () => {
+  test('should render demo and match snapshot', async () => {
     if (option.beforeTest) {
       option.beforeTest();
     }

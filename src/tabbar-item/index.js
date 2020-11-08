@@ -32,10 +32,10 @@ export default createComponent({
     const { parent, index } = useParent(TABBAR_KEY);
 
     const active = computed(() => {
-      const { $route } = vm;
       const { route, modelValue } = parent.props;
 
-      if (route && $route) {
+      if (route && '$route' in vm) {
+        const { $route } = vm;
         const { to } = props;
         const config = isObject(to) ? to : { path: to };
         const pathMatched = config.path === $route.path;

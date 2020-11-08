@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
+    <!---->
+    <div class="van-cell__title"><span>基础用法</span>
+      <!---->
+    </div>
+    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+      <!---->
+      <!----></i>
+    <!---->
+  </div>
+  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
+    <!---->
+    <div class="van-cell__title"><span>展示取消按钮</span>
+      <!---->
+    </div>
+    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+      <!---->
+      <!----></i>
+    <!---->
+  </div>
+  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
+    <!---->
+    <div class="van-cell__title"><span>展示描述信息</span>
+      <!---->
+    </div>
+    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+      <!---->
+      <!----></i>
+    <!---->
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
+    <!---->
+    <div class="van-cell__title"><span>选项状态</span>
+      <!---->
+    </div>
+    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+      <!---->
+      <!----></i>
+    <!---->
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
+    <!---->
+    <div class="van-cell__title"><span>自定义面板</span>
+      <!---->
+    </div>
+    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+      <!---->
+      <!----></i>
+    <!---->
+  </div>
+</div>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+<transition-stub>
+  <!---->
+</transition-stub>
+`;
