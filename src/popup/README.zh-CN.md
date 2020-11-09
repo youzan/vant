@@ -120,6 +120,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model (value) | 是否显示弹出层 | _boolean_ | `false` |
+| appear | 初始化渲染动画 | _boolean_ | `false` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |
