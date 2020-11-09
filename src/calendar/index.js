@@ -312,7 +312,7 @@ export default createComponent({
     };
 
     const reset = () => {
-      state.currentDate = getInitialDate(state.currentDate);
+      state.currentDate = getInitialDate();
       scrollIntoView();
     };
 
