@@ -104,7 +104,7 @@ import '@vant/touch-emulator';
 
 ### 底部安全区适配
 
-iPhone X 等机型底部存在底部指示条，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行底部安全区适配。Vant 中部分组件提供了`safe-area-inset-bottom`属性，设置该属性后，即可在对应的机型上开启适配，如下示例：
+iPhone X 等机型底部存在底部指示条，指示条的操作区域与页面底部存在重合，容易导致用户误操作，因此我们需要针对这些机型进行安全区适配。Vant 中部分组件提供了 `safe-area-inset-top` 或 `safe-area-inset-bottom` 属性，设置该属性后，即可在对应的机型上开启适配，如下示例：
 
 ```html
 <!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
@@ -113,7 +113,10 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
   content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
 />
 
-<!-- 开启 safe-area-inset-bottom 属性 -->
+<!-- 开启顶部安全区适配 -->
+<van-nav-bar safe-area-inset-top />
+
+<!-- 开启底部安全区适配 -->
 <van-number-keyboard safe-area-inset-bottom />
 ```
 
