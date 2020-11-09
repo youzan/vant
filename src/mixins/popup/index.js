@@ -18,6 +18,8 @@ import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
+  // Initial rendering animation
+  appear: Boolean,
   // whether to show popup
   value: Boolean,
   // whether to show overlay
