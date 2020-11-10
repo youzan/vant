@@ -64,6 +64,7 @@ export default createComponent({
 
     return (
       <transition
+        appear={this.transitionAppear}
         name={transitionName}
         onAfterEnter={this.onOpened}
         onAfterLeave={this.onClosed}

@@ -109,6 +109,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model (value) | Whether to show popup | _boolean_ | `false` |
+| transition-appear | Initial rendering animation | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | Custom overlay class | _string_ | - |
