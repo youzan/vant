@@ -19,7 +19,7 @@ import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
   // Initial rendering animation
-  appear: Boolean,
+  transitionAppear: Boolean,
   // whether to show popup
   value: Boolean,
   // whether to show overlay
