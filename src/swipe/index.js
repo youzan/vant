@@ -3,8 +3,6 @@ import {
   watch,
   reactive,
   computed,
-  onMounted,
-  onActivated,
   onDeactivated,
   onBeforeUnmount,
 } from 'vue';
@@ -19,6 +17,7 @@ import {
   useChildren,
   useWindowSize,
   usePageVisibility,
+  onMountedOrActivated,
 } from '@vant/use';
 import { useTouch } from '../composition/use-touch';
 import { useExpose } from '../composition/use-expose';
@@ -398,10 +397,9 @@ export default createComponent({
       }
     });
 
-    onMounted(initialize);
-    onActivated(initialize);
     onDeactivated(stopAutoplay);
     onBeforeUnmount(stopAutoplay);
+    onMountedOrActivated(initialize);
 
     return () => (
       <div ref={root} class={bem()}>
