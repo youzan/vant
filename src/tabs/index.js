@@ -1,12 +1,4 @@
-import {
-  ref,
-  watch,
-  computed,
-  reactive,
-  nextTick,
-  onMounted,
-  onActivated,
-} from 'vue';
+import { ref, watch, computed, reactive, nextTick, onActivated } from 'vue';
 
 // Utils
 import {
@@ -30,6 +22,7 @@ import {
   useWindowSize,
   useScrollParent,
   useEventListener,
+  onMountedOrActivated,
 } from '@vant/use';
 import { route } from '../composition/use-route';
 import { useRefs } from '../composition/use-refs';
@@ -411,18 +404,13 @@ export default createComponent({
       });
     };
 
-    onMounted(init);
-
-    onActivated(() => {
-      init();
-      setLine();
-    });
-
     useExpose({
       resize: setLine,
       scrollTo,
     });
 
+    onActivated(setLine);
+    onMountedOrActivated(init);
     useEventListener('scroll', onScroll, { target: scroller.value });
 
     linkChildren({
