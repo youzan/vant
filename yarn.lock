@@ -1957,10 +1957,10 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vant/use@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.npmjs.org/@vant/use/-/use-0.0.9.tgz#938b41e8dd682f063450f45699111ab30dd279c1"
-  integrity sha512-P+/q3MqFCmoNStQU8qpPxDNtBLy9Q82xx05APm7ZqEhoJLPynK1u0giC1JeEvFoSTEJ3y4XxN+R7YqmpXnf/7Q==
+"@vant/use@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-0.1.0.tgz?cache=0&sync_timestamp=1605099108765&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-0.1.0.tgz#7d2020aa7e5ab92d57dea46cb24dd9013c7eacee"
+  integrity sha1-fSAgqn5auS1X3qRssk3ZATx+rO4=
 
 "@vue/babel-helper-vue-transform-on@^1.0.0-rc.2":
   version "1.0.0-rc.2"

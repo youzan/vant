@@ -1,4 +1,4 @@
-import { ref, watch, reactive, computed, onMounted, onActivated } from 'vue';
+import { ref, watch, reactive, computed } from 'vue';
 
 // Utils
 import { pick, getScrollTop } from '../utils';
@@ -18,7 +18,7 @@ import {
 } from './utils';
 
 // Composition
-import { raf, useRect } from '@vant/use';
+import { raf, useRect, onMountedOrActivated } from '@vant/use';
 import { useRefs } from '../composition/use-refs';
 import { useExpose } from '../composition/use-expose';
 
@@ -270,18 +270,21 @@ export default createComponent({
     // scroll to current month
     const scrollIntoView = () => {
       raf(() => {
-        const { currentDate } = state;
+        const displayed = props.show || !props.poppable;
+        if (!displayed) {
+          return;
+        }
 
+        onScroll();
+
+        const { currentDate } = state;
         if (!currentDate) {
           return;
         }
 
         const targetDate =
           props.type === 'single' ? currentDate : currentDate[0];
-        const displayed = props.show || !props.poppable;
-
-        /* istanbul ignore if */
-        if (!targetDate || !displayed) {
+        if (!targetDate) {
           return;
         }
 
@@ -516,10 +519,8 @@ export default createComponent({
       reset
     );
 
-    onMounted(init);
-    onActivated(init);
-
     useExpose({ reset });
+    onMountedOrActivated(init);
 
     return () => {
       if (props.poppable) {
