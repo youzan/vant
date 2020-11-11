@@ -1,8 +1,14 @@
-import { ref, watch, reactive, onActivated } from 'vue';
+import { ref, watch, reactive } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
 // Composition
-import { raf, useRect, doubleRaf, useEventListener } from '@vant/use';
+import {
+  raf,
+  useRect,
+  doubleRaf,
+  useEventListener,
+  onMountedOrActivated,
+} from '@vant/use';
 
 // Components
 import Icon from '../icon';
@@ -159,15 +165,13 @@ export default createComponent({
       }, ms);
     };
 
-    onActivated(start);
+    onMountedOrActivated(start);
 
     // fix cache issues with forwards and back history in safari
     // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
     useEventListener('pageshow', start);
 
-    watch([() => props.text, () => props.scrollable], start, {
-      immediate: true,
-    });
+    watch([() => props.text, () => props.scrollable], start);
 
     return () => {
       const { color, wrapable, background } = props;
