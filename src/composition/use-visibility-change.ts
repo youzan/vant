@@ -1,11 +1,6 @@
 import { inBrowser } from '../utils';
-import {
-  Ref,
-  onMounted,
-  onActivated,
-  onDeactivated,
-  onBeforeUnmount,
-} from 'vue';
+import { Ref, onDeactivated, onBeforeUnmount } from 'vue';
+import { onMountedOrActivated } from '@vant/use';
 
 // @Experimental
 export function useVisibilityChange(
@@ -37,8 +32,7 @@ export function useVisibilityChange(
     }
   };
 
-  onMounted(observe);
-  onActivated(observe);
   onDeactivated(unobserve);
   onBeforeUnmount(unobserve);
+  onMountedOrActivated(observe);
 }
