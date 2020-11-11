@@ -1,11 +1,5 @@
-import {
-  Ref,
-  unref,
-  onMounted,
-  onActivated,
-  onUnmounted,
-  onDeactivated,
-} from 'vue';
+import { Ref, unref, onUnmounted, onDeactivated } from 'vue';
+import { onMountedOrActivated } from '../onMountedOrActivated';
 import { inBrowser } from '../utils';
 
 let supportsPassive = false;
@@ -63,8 +57,7 @@ export function useEventListener(
     }
   };
 
-  onMounted(add);
-  onActivated(add);
   onUnmounted(remove);
   onDeactivated(remove);
+  onMountedOrActivated(add);
 }
