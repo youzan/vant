@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render default slot and match snapshot 1`] = `
+<transition-stub>
+  <div class="van-overlay">
+    <!---->
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--round van-popup--bottom van-action-sheet">
+    <div class="van-action-sheet__header">Title<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+        <!---->
+        <!---->
+        <!----></i></div>
+    <!---->
+    <div class="van-action-sheet__content">
+      <!---->Default</div>
+    <!---->
+    <!---->
+  </div>
+</transition-stub>
+`;

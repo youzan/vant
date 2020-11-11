@@ -78,45 +78,6 @@ test('click overlay and close', async () => {
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 
-test('disable lazy-render', () => {
-  const wrapper = mount(ActionSheet, {
-    propsData: {
-      lazyRender: false,
-      actions: [{ name: 'Option' }, { name: 'Option' }],
-      cancelText: 'Cancel',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('render title and default slot', () => {
-  const wrapper = mount(ActionSheet, {
-    propsData: {
-      value: true,
-      title: 'Title',
-    },
-    scopedSlots: {
-      default() {
-        return 'Default';
-      },
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('get container', () => {
-  const wrapper = mount(ActionSheet, {
-    propsData: {
-      value: true,
-      teleport: 'body',
-    },
-  });
-
-  expect(wrapper.vm.$el.parentNode).toEqual(document.body);
-});
-
 test('close-on-click-action prop', () => {
   const onInput = jest.fn();
   const wrapper = mount(ActionSheet, {
@@ -136,18 +97,6 @@ test('close-on-click-action prop', () => {
   option.trigger('click');
 
   expect(onInput).toHaveBeenCalledWith(false);
-});
-
-test('round prop', () => {
-  const wrapper = mount(ActionSheet, {
-    propsData: {
-      value: true,
-      round: true,
-      actions: [{ name: 'Option' }],
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('color option', () => {
