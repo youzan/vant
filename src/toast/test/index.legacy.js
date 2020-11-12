@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Toast from '..';
 import ToastVue from '../Toast';
 import { later } from '../../../test';
-import { lockClick } from '../lock-click';
 
 test('create a forbidClick toast', async () => {
   const toast = Toast({
@@ -187,19 +186,4 @@ test('closeOnClick option', async () => {
 test('register component', () => {
   Vue.use(Toast);
   expect(Vue.component(ToastVue.name)).toBeTruthy();
-});
-
-test('lockClick function', () => {
-  const CLASSNAME = 'van-toast--unclickable';
-  expect(document.body.classList.contains(CLASSNAME)).toBeFalsy();
-
-  lockClick(true);
-  expect(document.body.classList.contains(CLASSNAME)).toBeTruthy();
-
-  lockClick(true);
-  lockClick(false);
-  expect(document.body.classList.contains(CLASSNAME)).toBeTruthy();
-
-  lockClick(false);
-  expect(document.body.classList.contains(CLASSNAME)).toBeFalsy();
 });
