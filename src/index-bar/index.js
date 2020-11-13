@@ -136,11 +136,12 @@ export default createComponent({
       activeAnchor.value = indexList[active];
 
       if (sticky) {
+        const parentOffsetLeft = state.$parent.$el.getBoundingClientRect().left;
         children.forEach((item, index) => {
           const { state, height, $el } = item;
           if (index === active || index === active - 1) {
             const rect = $el.getBoundingClientRect();
-            state.left = rect.left;
+            state.left = rect.left - parentOffsetLeft;
             state.width = rect.width;
           } else {
             state.left = null;
