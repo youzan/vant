@@ -1,9 +1,9 @@
 import Empty from '..';
 import { mount } from '@vue/test-utils';
 
-test('image slot', () => {
+test('should render image slot correctly', () => {
   const wrapper = mount(Empty, {
-    scopedSlots: {
+    slots: {
       image: () => 'Custom Image',
     },
   });
@@ -11,9 +11,9 @@ test('image slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('description slot', () => {
+test('should render description slot correctly', () => {
   const wrapper = mount(Empty, {
-    scopedSlots: {
+    slots: {
       description: () => 'Custom description',
     },
   });
@@ -21,9 +21,9 @@ test('description slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('bottom slot', () => {
+test('should render bottom slot correctly', () => {
   const wrapper = mount(Empty, {
-    scopedSlots: {
+    slots: {
       default: () => 'Custom bottom',
     },
   });
@@ -31,7 +31,7 @@ test('bottom slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render svg when image is network', () => {
+test('should render svg when image is network', () => {
   const wrapper = mount(Empty, {
     props: {
       image: 'network',
@@ -41,7 +41,7 @@ test('render svg when image is network', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('image-size prop', () => {
+test('should change image size when using image-size prop', async () => {
   const wrapper = mount(Empty, {
     props: {
       imageSize: 50,
@@ -53,7 +53,7 @@ test('image-size prop', () => {
   expect(image.style.width).toEqual('50px');
   expect(image.style.height).toEqual('50px');
 
-  wrapper.setProps({ imageSize: '1vw' });
+  await wrapper.setProps({ imageSize: '1vw' });
   expect(image.style.width).toEqual('1vw');
   expect(image.style.height).toEqual('1vw');
 });

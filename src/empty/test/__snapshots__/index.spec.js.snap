@@ -1,28 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`bottom slot 1`] = `
+exports[`should render bottom slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image"><img src="https://img.yzcdn.cn/vant/empty-image-default.png"></div>
+  <!---->
   <div class="van-empty__bottom">Custom bottom</div>
 </div>
 `;
 
-exports[`description slot 1`] = `
+exports[`should render description slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image"><img src="https://img.yzcdn.cn/vant/empty-image-default.png"></div>
   <p class="van-empty__description">Custom description</p>
+  <!---->
 </div>
 `;
 
-exports[`image slot 1`] = `
+exports[`should render image slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">Custom Image</div>
+  <!---->
+  <!---->
 </div>
 `;
 
-exports[`render svg when image is network 1`] = `
+exports[`should render svg when image is network 1`] = `
 <div class="van-empty">
-  <div class="van-empty__image"><svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <div class="van-empty__image"><svg viewBox="0 0 160 160">
       <defs>
         <linearGradient id="c" x1="64.022%" y1="100%" x2="64.022%" y2="0%">
           <stop stop-color="#FFF" offset="0%" stop-opacity="0.5"></stop>
@@ -79,5 +83,7 @@ exports[`render svg when image is network 1`] = `
         </g>
       </g>
     </svg></div>
+  <!---->
+  <!---->
 </div>
 `;
