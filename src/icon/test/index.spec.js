@@ -67,7 +67,7 @@ test('should render badge correctly', () => {
   expect(wrapper.find('.van-badge').html()).toMatchSnapshot();
 });
 
-test('should change icon size after using size prop', () => {
+test('should change icon size when using size prop', () => {
   const wrapper = mount(Icon, {
     props: {
       size: 20,
