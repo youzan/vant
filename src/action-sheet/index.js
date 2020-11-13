@@ -78,7 +78,15 @@ export default createComponent({
     };
 
     const renderOption = (item, index) => {
-      const { name, color, subname, loading, disabled, className } = item;
+      const {
+        name,
+        color,
+        subname,
+        loading,
+        callback,
+        disabled,
+        className,
+      } = item;
 
       const Content = loading ? (
         <Loading class={bem('loading-icon')} />
@@ -90,7 +98,12 @@ export default createComponent({
       );
 
       const onClick = () => {
+        if (callback) {
+          callback(item);
+        }
+
         emit('select', item, index);
+
         if (props.closeOnClickAction) {
           onUpdateShow(false);
         }
