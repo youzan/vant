@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render content slot and match snapshot 1`] = `<div class="van-badge">Custom Content</div>`;
+
+exports[`should render nothing when badge is empty string 1`] = `<!---->`;
+
+exports[`should render nothing when badge is undefined 1`] = `<!---->`;
+
+exports[`should render nothing when badge is zero 1`] = `<!---->`;
