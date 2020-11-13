@@ -18,7 +18,7 @@ test('click event', () => {
 
 test('arrow direction', () => {
   const wrapper = mount(Cell, {
-    propsData: {
+    props: {
       isLink: true,
       arrowDirection: 'down',
     },
@@ -47,7 +47,7 @@ test('render slot', () => {
 
 test('title-style prop', () => {
   const wrapper = mount(Cell, {
-    propsData: {
+    props: {
       title: 'title',
       titleStyle: {
         color: 'red',
@@ -70,7 +70,7 @@ test('CellGroup title slot', () => {
 
 test('icon-prefix prop', () => {
   const wrapper = mount(Cell, {
-    propsData: {
+    props: {
       iconPrefix: 'my-icon',
       icon: 'success',
     },

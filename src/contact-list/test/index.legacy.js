@@ -8,7 +8,7 @@ const contactInfo = {
 
 test('should render ContactList correctly', () => {
   const wrapper = mount(ContactList, {
-    propsData: {
+    props: {
       list: [contactInfo],
     },
   });
@@ -18,7 +18,7 @@ test('should render ContactList correctly', () => {
 test('should emit select event after clicking the radio', () => {
   const onSelect = jest.fn();
   const wrapper = mount(ContactList, {
-    propsData: {
+    props: {
       list: [contactInfo],
     },
     context: {

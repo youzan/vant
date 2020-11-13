@@ -19,7 +19,7 @@ test('switch checkbox', async () => {
 
 test('disabled', () => {
   const wrapper = mount(Checkbox, {
-    propsData: {
+    props: {
       disabled: true,
     },
   });
@@ -33,7 +33,7 @@ test('label disabled', () => {
     scopedSlots: {
       default: () => 'Label',
     },
-    propsData: {
+    props: {
       labelDisabled: true,
     },
   });
@@ -96,7 +96,7 @@ test('label-position prop', () => {
     scopedSlots: {
       default: () => 'Label',
     },
-    propsData: {
+    props: {
       labelPosition: 'left',
     },
   });

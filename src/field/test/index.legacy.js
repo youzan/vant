@@ -37,7 +37,7 @@ test('click-input event when using input slot', () => {
 
 test('click-icon event', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'a',
       leftIcon: 'contact',
       rightIcon: 'search',
@@ -53,7 +53,7 @@ test('click-icon event', () => {
 
 test('number type', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: '',
       type: 'number',
     },
@@ -76,7 +76,7 @@ test('number type', () => {
 
 test('digit type', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: '',
       type: 'digit',
     },
@@ -99,7 +99,7 @@ test('digit type', () => {
 
 test('render textarea', async () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       type: 'textarea',
       autosize: true,
     },
@@ -111,7 +111,7 @@ test('render textarea', async () => {
 
 test('autosize textarea field', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       type: 'textarea',
       autosize: {},
     },
@@ -126,7 +126,7 @@ test('autosize textarea field', () => {
 
 test('autosize object', async () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       type: 'textarea',
       autosize: {
         maxHeight: 100,
@@ -167,7 +167,7 @@ test('maxlength', async () => {
     attrs: {
       maxlength: 3,
     },
-    propsData: {
+    props: {
       value: 1234,
       type: 'number',
     },
@@ -194,7 +194,7 @@ test('maxlength', async () => {
 
 test('clearable prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'test',
       clearable: true,
     },
@@ -212,7 +212,7 @@ test('clearable prop', () => {
 
 test('clear-trigger prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'test',
       clearable: true,
       clearTrigger: 'always',
@@ -254,7 +254,7 @@ test('render extra slot', () => {
 
 test('size prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       size: 'large',
     },
   });
@@ -263,7 +263,7 @@ test('size prop', () => {
 
 test('label-width prop with unit', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       label: 'Label',
       labelWidth: '10rem',
     },
@@ -273,7 +273,7 @@ test('label-width prop with unit', () => {
 
 test('label-width prop without unit', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       label: 'Label',
       labelWidth: 100,
     },
@@ -283,7 +283,7 @@ test('label-width prop without unit', () => {
 
 test('label-class prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       label: 'Label',
       labelClass: 'custom-label-class',
     },
@@ -293,7 +293,7 @@ test('label-class prop', () => {
 
 test('arrow-direction prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       isLink: true,
       arrowDirection: 'up',
     },
@@ -303,7 +303,7 @@ test('arrow-direction prop', () => {
 
 test('formatter prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'abc123',
       formatter: (value) => value.replace(/\d/g, ''),
     },
@@ -319,7 +319,7 @@ test('formatter prop', () => {
 
 test('format-trigger prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'abc123',
       formatTrigger: 'onBlur',
       formatter: (value) => value.replace(/\d/g, ''),
@@ -342,7 +342,7 @@ test('format-trigger prop', () => {
 
 test('reach max word-limit', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: 'foo',
       maxlength: 3,
       showWordLimit: true,
@@ -353,7 +353,7 @@ test('reach max word-limit', () => {
 
 test('reach max word-limit undefined', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: undefined,
       maxlength: 3,
       showWordLimit: true,
@@ -364,7 +364,7 @@ test('reach max word-limit undefined', () => {
 
 test('reach max word-limit null', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: null,
       maxlength: 3,
       showWordLimit: true,
@@ -375,7 +375,7 @@ test('reach max word-limit null', () => {
 
 test('name prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       name: 'foo',
     },
   });
@@ -398,7 +398,7 @@ test('destroy field', () => {
 
 test('colon prop', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       label: 'foo',
       colon: true,
     },
@@ -426,7 +426,7 @@ test('should blur search input on enter', () => {
 
 test('value is null', () => {
   const wrapper = mount(Field, {
-    propsData: {
+    props: {
       value: null,
     },
   });

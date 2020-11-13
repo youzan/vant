@@ -4,7 +4,7 @@ import { mount, later } from '../../../test';
 
 test('speed is 0', async () => {
   const wrapper = mount(Circle, {
-    propsData: {
+    props: {
       rate: 50,
       value: 0,
     },
@@ -24,7 +24,7 @@ test('speed is 0', async () => {
 test('animate', async () => {
   const onInput = jest.fn();
   mount(Circle, {
-    propsData: {
+    props: {
       rate: 50,
       speed: 100,
     },
@@ -40,7 +40,7 @@ test('animate', async () => {
 
 test('size prop', () => {
   const wrapper = mount(Circle, {
-    propsData: {
+    props: {
       size: 100,
     },
   });
@@ -50,7 +50,7 @@ test('size prop', () => {
 
 test('stroke-linecap prop', () => {
   const wrapper = mount(Circle, {
-    propsData: {
+    props: {
       strokeLinecap: 'square',
     },
   });

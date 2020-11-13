@@ -18,7 +18,7 @@ test('click event', () => {
 test('close event', () => {
   const close = jest.fn();
   const wrapper = mount(Tag, {
-    propsData: {
+    props: {
       closeable: true,
     },
     context: {
@@ -37,7 +37,7 @@ test('should not trigger click event when close', () => {
   const click = jest.fn();
 
   const wrapper = mount(Tag, {
-    propsData: {
+    props: {
       closeable: true,
     },
     context: {

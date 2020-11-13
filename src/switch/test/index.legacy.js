@@ -24,7 +24,7 @@ test('disabled', () => {
       input,
       change,
     },
-    propsData: {
+    props: {
       disabled: true,
     },
   });
@@ -38,7 +38,7 @@ test('active-value & inactive-value prop', () => {
   const input = jest.fn();
   const change = jest.fn();
   const wrapper = mount(Switch, {
-    propsData: {
+    props: {
       value: '1',
       activeValue: '1',
       inactiveValue: '2',
@@ -57,7 +57,7 @@ test('active-value & inactive-value prop', () => {
 
 test('inactive-color prop', () => {
   const wrapper = mount(Switch, {
-    propsData: {
+    props: {
       value: '2',
       inactiveValue: '2',
       inactiveColor: 'black',
@@ -69,7 +69,7 @@ test('inactive-color prop', () => {
 
 test('size prop', () => {
   const wrapper = mount(Switch, {
-    propsData: {
+    props: {
       size: 20,
     },
   });

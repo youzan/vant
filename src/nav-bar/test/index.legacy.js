@@ -26,7 +26,7 @@ test('should render placeholder element when using placeholder prop', () => {
   const restore = mockGetBoundingClientRect({ height: 50 });
 
   const wrapper = mount(NavBar, {
-    propsData: {
+    props: {
       fixed: true,
       placeholder: true,
     },
@@ -39,7 +39,7 @@ test('should render placeholder element when using placeholder prop', () => {
 
 test('should emit click-left event when clicking left text', () => {
   const wrapper = mount(NavBar, {
-    propsData: {
+    props: {
       leftText: 'left',
     },
   });
@@ -50,7 +50,7 @@ test('should emit click-left event when clicking left text', () => {
 
 test('should emit click-right event when clicking right text', () => {
   const wrapper = mount(NavBar, {
-    propsData: {
+    props: {
       rightText: 'right',
     },
   });
@@ -61,7 +61,7 @@ test('should emit click-right event when clicking right text', () => {
 
 test('should have safe-area-inset-top class when using safe-area-inset-top prop', () => {
   const wrapper = mount(NavBar, {
-    propsData: {
+    props: {
       safeAreaInsetTop: true,
     },
   });

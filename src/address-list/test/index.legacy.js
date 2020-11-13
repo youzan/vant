@@ -18,7 +18,7 @@ const list = [
 
 test('unswitchable', () => {
   const wrapper = mount(AddressList, {
-    propsData: {
+    props: {
       list,
       switchable: false,
     },
@@ -30,7 +30,7 @@ test('unswitchable', () => {
 test('select event', () => {
   const onSelect = jest.fn();
   const wrapper = mount(AddressList, {
-    propsData: {
+    props: {
       list,
     },
     context: {
@@ -48,7 +48,7 @@ test('select event', () => {
 test('click-item event', () => {
   const onClickItem = jest.fn();
   const wrapper = mount(AddressList, {
-    propsData: {
+    props: {
       list,
     },
     context: {

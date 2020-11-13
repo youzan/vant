@@ -76,7 +76,7 @@ const disabledDiscountCoupon = {
 
 test('render disabled coupon', () => {
   const wrapper = mount(Coupon, {
-    propsData: {
+    props: {
       coupon: disabledCoupon,
       disabled: true,
     },
@@ -87,7 +87,7 @@ test('render disabled coupon', () => {
 
 test('render coupon list', async () => {
   const wrapper = mount(CouponList, {
-    propsData: {
+    props: {
       chosenCoupon: 1,
       coupons: [
         emptyCoupon,
@@ -106,7 +106,7 @@ test('render coupon list', async () => {
 
 test('render empty coupon list', () => {
   const wrapper = mount(CouponList, {
-    propsData: {
+    props: {
       coupons: [],
       disabledCoupons: [],
     },
@@ -117,7 +117,7 @@ test('render empty coupon list', () => {
 
 test('empty-image prop', () => {
   const wrapper = mount(CouponList, {
-    propsData: {
+    props: {
       emptyImage: 'https://img.yzcdn.com/xxx.png',
     },
   });
@@ -161,7 +161,7 @@ test('render coupon cell', () => {
 
 test('render coupon cell with coupon', () => {
   const wrapper = mount(CouponCell, {
-    propsData: {
+    props: {
       coupons: [{ value: 100 }],
       chosenCoupon: 0,
     },
@@ -171,7 +171,7 @@ test('render coupon cell with coupon', () => {
 
 test('render coupon cell with zero discount', () => {
   const wrapper = mount(CouponCell, {
-    propsData: {
+    props: {
       coupons: [{ ...coupon4, value: 0, denominations: 150 }],
       chosenCoupon: 0,
     },

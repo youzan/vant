@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 
 test('should render nothing when badge is empty string', () => {
   const wrapper = mount(Badge, {
-    propsData: {
+    props: {
       badge: '',
     },
   });
@@ -13,7 +13,7 @@ test('should render nothing when badge is empty string', () => {
 
 test('should render nothing when badge is undefined', () => {
   const wrapper = mount(Badge, {
-    propsData: {
+    props: {
       badge: undefined,
     },
   });
@@ -23,7 +23,7 @@ test('should render nothing when badge is undefined', () => {
 
 test('should render nothing when badge is zero', () => {
   const wrapper = mount(Badge, {
-    propsData: {
+    props: {
       badge: 0,
     },
   });

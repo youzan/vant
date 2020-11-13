@@ -11,7 +11,7 @@ test('click event', () => {
 
 test('load event', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
   });
@@ -27,7 +27,7 @@ test('load event', () => {
 
 test('error event', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
   });
@@ -39,7 +39,7 @@ test('error event', () => {
 
 test('lazy load', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
       lazyLoad: true,
     },
@@ -50,7 +50,7 @@ test('lazy load', () => {
 
 test('lazy-load load event', (done) => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       lazyLoad: true,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -77,7 +77,7 @@ test('lazy-load load event', (done) => {
 
 test('lazy-load error event', (done) => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       lazyLoad: true,
     },
     mocks: {
@@ -103,7 +103,7 @@ test('lazy-load error event', (done) => {
 
 test('show-loading prop', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       showLoading: false,
     },
   });
@@ -113,7 +113,7 @@ test('show-loading prop', () => {
 
 test('show-error prop', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       showError: false,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -126,7 +126,7 @@ test('show-error prop', () => {
 
 test('error-icon prop', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       errorIcon: 'error',
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -139,7 +139,7 @@ test('error-icon prop', () => {
 
 test('loading-icon prop', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       loadingIcon: 'success',
     },
   });
@@ -149,7 +149,7 @@ test('loading-icon prop', () => {
 
 test('apply icon-prefix prop to error-icon', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       errorIcon: 'error',
       iconPrefix: 'my-icon',
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -163,7 +163,7 @@ test('apply icon-prefix prop to error-icon', () => {
 
 test('apply icon-prefix prop to loading-icon', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       loadingIcon: 'success',
       iconPrefix: 'my-icon',
     },
@@ -174,7 +174,7 @@ test('apply icon-prefix prop to loading-icon', () => {
 
 test('radius prop', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       radius: 3,
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
@@ -185,7 +185,7 @@ test('radius prop', () => {
 
 test('default slot', () => {
   const wrapper = mount(VanImage, {
-    propsData: {
+    props: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
     scopedSlots: {

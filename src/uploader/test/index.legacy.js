@@ -27,7 +27,7 @@ window.FileReader = function () {
 test('disabled', () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       disabled: true,
       afterRead,
     },
@@ -39,7 +39,7 @@ test('disabled', () => {
 
 test('result-type as text', (done) => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       resultType: 'text',
       afterRead: (readFile) => {
         expect(readFile.content).toEqual(mockFileDataUrl);
@@ -53,7 +53,7 @@ test('result-type as text', (done) => {
 
 test('result-type as file', (done) => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       resultType: 'file',
       afterRead: (readFile) => {
         expect(readFile.file).toBeTruthy();
@@ -68,7 +68,7 @@ test('result-type as file', (done) => {
 
 test('set input name', (done) => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       name: 'uploader',
       beforeRead: (readFile, detail) => {
         expect(detail.name).toEqual('uploader');
@@ -87,7 +87,7 @@ test('set input name', (done) => {
 test('unknown resultType', () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       resultType: 'xxxx',
       afterRead,
     },
@@ -99,7 +99,7 @@ test('unknown resultType', () => {
 test('before read return false', () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       beforeRead: () => false,
       afterRead,
     },
@@ -115,7 +115,7 @@ test('before read return false', () => {
 test('before read return promise and resolve', async () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       beforeRead: () =>
         new Promise((resolve) => {
           resolve(file);
@@ -133,7 +133,7 @@ test('before read return promise and resolve', async () => {
 test('before read return promise and resolve no value', async () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       beforeRead: () =>
         new Promise((resolve) => {
           resolve();
@@ -152,7 +152,7 @@ test('before read return promise and resolve no value', async () => {
 test('before read return promise and reject', async () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       beforeRead: () =>
         new Promise((resolve, reject) => {
           reject();
@@ -171,7 +171,7 @@ test('before read return promise and reject', async () => {
 
 test('file size overlimit', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       maxSize: 1,
     },
   });
@@ -191,7 +191,7 @@ test('file size overlimit', async () => {
 
 test('render upload-text', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       uploadText: 'Text',
     },
   });
@@ -201,7 +201,7 @@ test('render upload-text', () => {
 
 test('render preview image', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [
         { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
         { url: 'https://img.yzcdn.cn/vant/test.pdf' },
@@ -223,7 +223,7 @@ test('render preview image', async () => {
 
 test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       imageFit: 'contain',
       fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
     },
@@ -234,7 +234,7 @@ test('image-fit prop', () => {
 
 test('upload-icon prop', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       uploadIcon: 'add',
     },
   });
@@ -244,7 +244,7 @@ test('upload-icon prop', () => {
 
 test('disable preview image', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [],
       previewImage: false,
     },
@@ -263,7 +263,7 @@ test('disable preview image', async () => {
 
 test('max-count prop', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [],
       maxCount: 1,
     },
@@ -282,7 +282,7 @@ test('max-count prop', async () => {
 
 test('preview-size prop', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [],
       previewSize: 30,
     },
@@ -301,7 +301,7 @@ test('preview-size prop', async () => {
 
 test('deletable prop', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
     },
   });
@@ -314,7 +314,7 @@ test('deletable prop', () => {
 
 test('delete preview image', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       previewSize: 30,
     },
@@ -334,7 +334,7 @@ test('delete preview image', () => {
 
 test('before-delete prop return false', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       beforeDelete: () => false,
     },
@@ -346,7 +346,7 @@ test('before-delete prop return false', () => {
 
 test('before-delete prop return true', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       beforeDelete: () => true,
     },
@@ -358,7 +358,7 @@ test('before-delete prop return true', () => {
 
 test('before-delete prop resolved', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       beforeDelete: () => new Promise((resolve) => resolve()),
     },
@@ -371,7 +371,7 @@ test('before-delete prop resolved', async () => {
 
 test('before-delete prop rejected', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       beforeDelete: () => new Promise((resolve, reject) => reject()),
     },
@@ -384,7 +384,7 @@ test('before-delete prop rejected', async () => {
 
 test('click to preview image', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       previewFullImage: false,
       fileList: [{ url: IMAGE }, { url: PDF }],
     },
@@ -408,7 +408,7 @@ test('click to preview image', async () => {
 
 test('preview-options prop', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
       previewOptions: {
         closeable: true,
@@ -443,7 +443,7 @@ test('closeImagePreview method', () => {
 
 test('click-preview event', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       previewFullImage: false,
       fileList: [{ url: IMAGE }, { url: PDF }],
     },
@@ -459,7 +459,7 @@ test('click-preview event', () => {
 
 test('close-preview event', async () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }],
     },
   });
@@ -483,7 +483,7 @@ test('show-upload prop', () => {
 
 test('file message should be reactive', (done) => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [],
       afterRead(file) {
         file.status = 'uploading';
@@ -514,7 +514,7 @@ test('multiFile upload filter max-size file', async () => {
   };
 
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       maxSize: 1000,
     },
   });
@@ -527,7 +527,7 @@ test('multiFile upload filter max-size file', async () => {
 
 test('preview-cover slot', () => {
   const wrapper = mount(Uploader, {
-    propsData: {
+    props: {
       fileList: [{ url: IMAGE }, { url: IMAGE }],
     },
     scopedSlots: {

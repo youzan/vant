@@ -15,7 +15,7 @@ test('lazy render', () => {
 
 test('reset z-index', () => {
   wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       zIndex: 10,
       lockScroll: false,
@@ -27,7 +27,7 @@ test('reset z-index', () => {
 
 test('popup lock scroll', () => {
   const wrapper1 = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -36,7 +36,7 @@ test('popup lock scroll', () => {
   triggerDrag(document, 0, -150);
 
   const wrapper2 = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -197,7 +197,7 @@ test('open & close event', () => {
 
 test('click event', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -208,7 +208,7 @@ test('click event', () => {
 
 test('duration prop when position is center', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       duration: 0.5,
     },
@@ -219,7 +219,7 @@ test('duration prop when position is center', () => {
 
 test('duration prop when position is top', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       duration: 0.5,
       position: 'top',
@@ -231,7 +231,7 @@ test('duration prop when position is top', () => {
 
 test('round prop', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       round: true,
     },
@@ -242,7 +242,7 @@ test('round prop', () => {
 
 test('closeable prop', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       closeable: true,
     },
@@ -254,7 +254,7 @@ test('closeable prop', () => {
 
 test('close-icon prop', () => {
   const wrapper = mount(Popup, {
-    propsData: {
+    props: {
       value: true,
       closeable: true,
       closeIcon: 'success',

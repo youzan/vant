@@ -8,7 +8,7 @@ const contactInfo = {
 
 const createComponent = () => {
   const wrapper = mount(ContactEdit, {
-    propsData: {
+    props: {
       contactInfo,
     },
   });
@@ -61,7 +61,7 @@ test('should watch contact info', () => {
 
 test('should allow deleting contact', async () => {
   const wrapper = mount(ContactEdit, {
-    propsData: {
+    props: {
       isEdit: true,
     },
   });

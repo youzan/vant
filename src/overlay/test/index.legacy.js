@@ -3,7 +3,7 @@ import Overlay from '..';
 
 test('z-index prop', () => {
   const wrapper = mount(Overlay, {
-    propsData: {
+    props: {
       show: true,
       zIndex: 99,
     },
@@ -14,7 +14,7 @@ test('z-index prop', () => {
 
 test('class-name prop', () => {
   const wrapper = mount(Overlay, {
-    propsData: {
+    props: {
       show: true,
       className: 'my-overlay',
     },
@@ -25,7 +25,7 @@ test('class-name prop', () => {
 
 test('custom style prop', () => {
   const wrapper = mount(Overlay, {
-    propsData: {
+    props: {
       show: true,
       customStyle: {
         backgroundColor: 'red',
@@ -38,7 +38,7 @@ test('custom style prop', () => {
 
 test('duration prop', () => {
   const wrapper = mount(Overlay, {
-    propsData: {
+    props: {
       show: true,
       duration: 1,
     },

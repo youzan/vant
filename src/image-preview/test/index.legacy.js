@@ -39,7 +39,7 @@ const images = [
 
 test('render image', async () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images, value: true },
+    props: { images, value: true },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
@@ -58,7 +58,7 @@ test('render image', async () => {
 
 test('closeable prop', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       images,
       value: true,
       closeable: true,
@@ -71,7 +71,7 @@ test('closeable prop', () => {
 
 test('close-icon prop', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       value: true,
       closeable: true,
       closeIcon: 'close',
@@ -83,7 +83,7 @@ test('close-icon prop', () => {
 
 test('close-icon-position prop', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       value: true,
       closeable: true,
       closeIcon: 'close',
@@ -96,7 +96,7 @@ test('close-icon-position prop', () => {
 
 test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       images,
       value: true,
       asyncClose: true,
@@ -137,7 +137,7 @@ test('function call', (done) => {
 test('double click', async () => {
   const onScale = jest.fn();
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       images,
       value: true,
     },
@@ -222,7 +222,7 @@ test('zoom in and drag image to move', async () => {
   const restore = mockGetBoundingClientRect({ width: 100, height: 100 });
 
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images, value: true },
+    props: { images, value: true },
   });
 
   await later();
@@ -251,7 +251,7 @@ test('zoom out', async () => {
 
   const onScale = jest.fn();
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images, value: true },
+    props: { images, value: true },
     listeners: {
       scale: onScale,
     },
@@ -268,7 +268,7 @@ test('zoom out', async () => {
 
 test('set show-index prop to false', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       value: true,
       showIndex: false,
     },
@@ -303,7 +303,7 @@ test('cover slot', () => {
 
 test('closeOnPopstate', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
+    props: {
       images,
       value: true,
       closeOnPopstate: true,

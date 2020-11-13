@@ -34,7 +34,7 @@ test('Dialog function call', async () => {
 
 test('before close', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
       showCancelButton: true,
       closeOnClickOverlay: true,
@@ -77,7 +77,7 @@ test('register component', () => {
 
 test('button color', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
       showCancelButton: true,
       cancelButtonColor: 'white',
@@ -89,7 +89,7 @@ test('button color', () => {
 
 test('button text', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
       showCancelButton: true,
       cancelButtonText: 'Custom cancel',
@@ -105,7 +105,7 @@ test('dialog component', () => {
 
 test('default slot', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
     },
     scopedSlots: {
@@ -117,7 +117,7 @@ test('default slot', () => {
 
 test('title slot', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
     },
     scopedSlots: {
@@ -129,7 +129,7 @@ test('title slot', () => {
 
 test('allow-html prop', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
       message: '<span>text</span>',
       allowHtml: false,
@@ -148,7 +148,7 @@ test('open & close event', () => {
 
 test('width prop', () => {
   const wrapper = mount(DialogComponent, {
-    propsData: {
+    props: {
       value: true,
       width: 200,
     },

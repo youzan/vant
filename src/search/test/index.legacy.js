@@ -23,7 +23,7 @@ test('cancel event', () => {
   const onCancel = jest.fn();
 
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       value: 'test',
       showAction: true,
     },
@@ -85,7 +85,7 @@ test('left slot', () => {
 
 test('left-icon prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       leftIcon: 'setting-o',
     },
   });
@@ -95,7 +95,7 @@ test('left-icon prop', () => {
 
 test('right-icon prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       rightIcon: 'setting-o',
     },
   });
@@ -115,7 +115,7 @@ test('right-icon slot', () => {
 
 test('action-text prop', () => {
   const wrapper = mount(Search, {
-    propsData: {
+    props: {
       actionText: 'Custom Text',
       showAction: true,
     },

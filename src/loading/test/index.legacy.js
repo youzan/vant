@@ -3,7 +3,7 @@ import Loading from '..';
 
 test('size prop', () => {
   const wrapper = mount(Loading, {
-    propsData: {
+    props: {
       size: 20,
     },
   });
@@ -13,7 +13,7 @@ test('size prop', () => {
 
 test('text-size prop', () => {
   const wrapper = mount(Loading, {
-    propsData: {
+    props: {
       textSize: 20,
     },
     scopedSlots: {

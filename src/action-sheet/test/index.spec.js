@@ -4,7 +4,7 @@ import ActionSheet from '..';
 
 test('should emit select event after clicking option', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option' }],
     },
@@ -18,7 +18,7 @@ test('should emit select event after clicking option', () => {
 test('should call callback function after clicking option', () => {
   const callback = jest.fn();
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option', callback }],
     },
@@ -30,7 +30,7 @@ test('should call callback function after clicking option', () => {
 
 test('should not emit select event after clicking loading option', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option', loading: true }],
     },
@@ -42,7 +42,7 @@ test('should not emit select event after clicking loading option', () => {
 
 test('should not emit select event after clicking disabled option', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option', disabled: true }],
     },
@@ -54,7 +54,7 @@ test('should not emit select event after clicking disabled option', () => {
 
 test('should emit cancel event after clicking cancel button', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option' }],
       cancelText: 'Cancel',
@@ -67,7 +67,7 @@ test('should emit cancel event after clicking cancel button', () => {
 
 test('should render subname and match snapshot', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option', subname: 'Subname' }],
       cancelText: 'Cancel',
@@ -103,7 +103,7 @@ test('should render default slot and match snapshot', () => {
 test('should allow to use the teleport prop', () => {
   const root = document.createElement('div');
   mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       teleport: root,
     },
@@ -114,7 +114,7 @@ test('should allow to use the teleport prop', () => {
 
 test('should have "van-popup--round" class when setting the round prop', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       round: true,
     },
@@ -125,7 +125,7 @@ test('should have "van-popup--round" class when setting the round prop', () => {
 
 test('should change option color when using the color prop', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option', color: 'red' }],
     },
@@ -138,7 +138,7 @@ test('should change option color when using the color prop', () => {
 
 test('should hide close icon when the closeable prop is false', async () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       title: 'Title',
     },
@@ -153,7 +153,7 @@ test('should hide close icon when the closeable prop is false', async () => {
 
 test('should allow to custom close icon with closeIcon prop', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       title: 'Title',
       closeIcon: 'cross',
@@ -165,7 +165,7 @@ test('should allow to custom close icon with closeIcon prop', () => {
 
 test('should render description and match snapshot', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       description: 'This is a description',
     },
@@ -178,7 +178,7 @@ test('should render description and match snapshot', () => {
 
 test('should render description slot when match snapshot', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
     },
     slots: {
@@ -193,7 +193,7 @@ test('should render description slot when match snapshot', () => {
 
 test('should close after clicking option if close-on-click-action prop is true', () => {
   const wrapper = mount(ActionSheet, {
-    propsData: {
+    props: {
       show: true,
       actions: [{ name: 'Option' }],
       closeOnClickAction: true,

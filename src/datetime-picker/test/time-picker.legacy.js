@@ -12,7 +12,7 @@ function formatter(type, value) {
 
 test('format initial value', () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       minHour: 22,
       minMinute: 58,
     },
@@ -23,7 +23,7 @@ test('format initial value', () => {
 
 test('max-hour & max-minute', () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       value: '23:59',
       maxHour: 2,
       maxMinute: 2,
@@ -35,7 +35,7 @@ test('max-hour & max-minute', () => {
 
 test('filter prop', () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       filter,
       value: '12:00',
     },
@@ -46,7 +46,7 @@ test('filter prop', () => {
 
 test('formatter prop', async () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       filter,
       formatter,
       value: '12:00',
@@ -67,7 +67,7 @@ test('formatter prop', async () => {
 
 test('confirm event', () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       value: '12:00',
     },
   });
@@ -98,7 +98,7 @@ test('dynamic set value', () => {
 
 test('change min-minute and emit correct value', async () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       value: '12:00',
       minMinute: 0,
     },
@@ -113,7 +113,7 @@ test('change min-minute and emit correct value', async () => {
 
 test('set max-hour & max-minute smaller than current then emit correct value', async () => {
   const wrapper = mount(TimePicker, {
-    propsData: {
+    props: {
       value: '23:59',
     },
   });

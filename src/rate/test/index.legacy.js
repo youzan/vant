@@ -40,7 +40,7 @@ test('allow half', () => {
   const onChange = jest.fn();
 
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       allowHalf: true,
     },
     listeners: {
@@ -60,7 +60,7 @@ test('disabled', () => {
   const onChange = jest.fn();
 
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       disabled: true,
     },
     listeners: {
@@ -99,7 +99,7 @@ test('touchmove to select item', () => {
 test('touchmove to select half item', () => {
   const onChange = jest.fn();
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       allowHalf: true,
     },
     listeners: {
@@ -120,7 +120,7 @@ test('touchmove to select half item', () => {
 
 test('gutter prop', () => {
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       gutter: 10,
     },
   });
@@ -130,7 +130,7 @@ test('gutter prop', () => {
 
 test('size prop', () => {
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       size: '2rem',
     },
   });
@@ -141,7 +141,7 @@ test('size prop', () => {
 test('untouchable', () => {
   const onChange = jest.fn();
   const wrapper = mount(Rate, {
-    propsData: {
+    props: {
       touchable: false,
     },
     listeners: {

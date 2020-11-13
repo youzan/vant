@@ -18,7 +18,7 @@ test('should emit click event after clicking the ContactCard', () => {
 test('should not emit click event after clicking the uneditable ContactCard', () => {
   const click = jest.fn();
   const wrapper = mount(ContactCard, {
-    propsData: {
+    props: {
       editable: false,
     },
     context: {

@@ -18,7 +18,7 @@ test('confirm & cancel event', async () => {
   const onConfirm = jest.fn();
   const onCancel = jest.fn();
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
     },
     listeners: {
@@ -38,7 +38,7 @@ test('confirm & cancel event', async () => {
 
 test('watch areaList & code', async () => {
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
     },
   });
@@ -58,7 +58,7 @@ test('watch areaList & code', async () => {
 test('change option', () => {
   const onChange = jest.fn();
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
     },
     listeners: {
@@ -82,7 +82,7 @@ test('change option', () => {
 
 test('getValues method', () => {
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
     },
     created() {
@@ -95,7 +95,7 @@ test('getValues method', () => {
 
 test('reset method', async () => {
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
       value: '120225',
     },
@@ -109,7 +109,7 @@ test('reset method', async () => {
 
 test('columns-num prop', async () => {
   const wrapper = mount(Area, {
-    propsData: {
+    props: {
       areaList,
       columnsNum: 3,
     },

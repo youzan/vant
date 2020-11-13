@@ -3,7 +3,7 @@ import { mount, later } from '../../../test';
 
 test('macro task finish event', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1,
     },
   });
@@ -15,7 +15,7 @@ test('macro task finish event', async () => {
 
 test('micro task finish event', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1,
       millisecond: true,
     },
@@ -28,7 +28,7 @@ test('micro task finish event', async () => {
 
 test('macro task re-render', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1000,
       format: 'SSS',
     },
@@ -43,7 +43,7 @@ test('macro task re-render', async () => {
 
 test('micro task re-render', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 100,
       format: 'SSS',
       millisecond: true,
@@ -59,7 +59,7 @@ test('micro task re-render', async () => {
 
 test('disable auto-start prop', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 100,
       format: 'SSS',
       autoStart: false,
@@ -72,7 +72,7 @@ test('disable auto-start prop', async () => {
 
 test('start method', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 100,
       format: 'SSS',
       autoStart: false,
@@ -94,7 +94,7 @@ test('start method', async () => {
 
 test('pause method', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 100,
       format: 'SSS',
       millisecond: true,
@@ -111,7 +111,7 @@ test('pause method', async () => {
 
 test('reset method', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 100,
       format: 'SSS',
       millisecond: true,
@@ -128,7 +128,7 @@ test('reset method', async () => {
 
 test('complete format prop', () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 30 * 60 * 60 * 1000 - 1,
       autoStart: false,
       format: 'DD-HH-mm-ss-SSS',
@@ -140,7 +140,7 @@ test('complete format prop', () => {
 
 test('milliseconds format SS', () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1500,
       autoStart: false,
       format: 'ss-SS',
@@ -152,7 +152,7 @@ test('milliseconds format SS', () => {
 
 test('milliseconds format S', () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1500,
       autoStart: false,
       format: 'ss-S',
@@ -164,7 +164,7 @@ test('milliseconds format S', () => {
 
 test('incomplate format prop', () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 30 * 60 * 60 * 1000 - 1,
       autoStart: false,
       format: 'HH-mm-ss-SSS',
@@ -216,7 +216,7 @@ test('pause when deactivated', async () => {
 
 test('change event', async () => {
   const wrapper = mount(CountDown, {
-    propsData: {
+    props: {
       time: 1,
     },
   });

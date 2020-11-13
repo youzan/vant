@@ -16,7 +16,7 @@ const columns = [
 
 test('simple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: simpleColumn,
     },
@@ -31,7 +31,7 @@ test('simple columns confirm & cancel event', () => {
 
 test('multiple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns,
     },
@@ -51,7 +51,7 @@ test('multiple columns confirm & cancel event', () => {
 
 test('set picker values', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns,
     },
   });
@@ -89,7 +89,7 @@ test('set picker values', () => {
 
 test('drag columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns,
     },
   });
@@ -104,7 +104,7 @@ test('drag columns', () => {
 
 test('drag simple columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns: simpleColumn,
     },
   });
@@ -120,7 +120,7 @@ test('drag simple columns', () => {
 test('column watch default index', async () => {
   const disabled = { disabled: true, text: 1 };
   const wrapper = mount(PickerColumn, {
-    propsData: {
+    props: {
       initialOptions: [disabled, ...simpleColumn],
       valueKey: 'text',
       itemHeight: 50,
@@ -206,7 +206,7 @@ test('simulation finger swipe again before transitionend', () => {
   };
 
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns: simpleColumn,
     },
   });
@@ -225,7 +225,7 @@ test('click column item', () => {
     { text: '嘉兴', disabled: true },
   ];
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns,
     },
   });
@@ -236,7 +236,7 @@ test('click column item', () => {
 
 test('toolbar-position prop', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       toolbarPosition: 'bottom',
     },
@@ -247,7 +247,7 @@ test('toolbar-position prop', () => {
 
 test('not allow html', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       allowHtml: false,
       columns: ['<div>option</div>'],
     },
@@ -258,7 +258,7 @@ test('not allow html', () => {
 
 test('columns-top、columns-bottom prop', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
     },
     scopedSlots: {
@@ -272,7 +272,7 @@ test('columns-top、columns-bottom prop', () => {
 
 test('watch columns change', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: ['1', '2'],
       defaultIndex: 1,
@@ -289,7 +289,7 @@ test('watch columns change', () => {
 
 test('should not reset index when columns unchanged', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: ['1', '2'],
     },
@@ -310,7 +310,7 @@ test('set rem item-height', async () => {
   window.getComputedStyle = () => ({ fontSize: '16px' });
 
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns: simpleColumn.slice(0, 2),
       itemHeight: '10rem',
     },
@@ -324,7 +324,7 @@ test('set rem item-height', async () => {
 
 test('readonly prop', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns,
       readonly: true,
     },

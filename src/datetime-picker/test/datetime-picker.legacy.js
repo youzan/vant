@@ -21,7 +21,7 @@ test('confirm & cancel event', () => {
 
 test('time type', () => {
   const wrapper = mount(DatetimePicker, {
-    propsData: {
+    props: {
       type: 'time',
       minHour: 22,
       minMinute: 58,

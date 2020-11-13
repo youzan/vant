@@ -44,7 +44,7 @@ test('basic mode', async () => {
 
 test('accordion', async () => {
   const wrapper = mount(component, {
-    propsData: {
+    props: {
       accordion: true,
     },
   });
@@ -88,7 +88,7 @@ test('render collapse-item slot', () => {
 
 test('disable border', () => {
   const wrapper = mount(component, {
-    propsData: {
+    props: {
       border: false,
     },
   });

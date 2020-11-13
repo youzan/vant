@@ -3,7 +3,7 @@ import { mount, later } from '../../../test';
 
 test('disabled stepper', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       disabled: true,
     },
   });
@@ -12,7 +12,7 @@ test('disabled stepper', () => {
 
 test('disable stepper input', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       disableInput: true,
     },
   });
@@ -21,7 +21,7 @@ test('disable stepper input', () => {
 
 test('disable button', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 5,
     },
   });
@@ -50,7 +50,7 @@ test('disable button', async () => {
 
 test('click button', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       max: 2,
     },
@@ -70,7 +70,7 @@ test('click button', () => {
 
 test('long press', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
     },
   });
@@ -91,7 +91,7 @@ test('long press', async () => {
 
 test('disable long press', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       longPress: false,
     },
@@ -107,7 +107,7 @@ test('disable long press', async () => {
 
 test('filter value during user input', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
     },
   });
@@ -130,7 +130,7 @@ test('filter value during user input', () => {
 
 test('shoud watch value and format it', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       max: 5,
     },
@@ -142,7 +142,7 @@ test('shoud watch value and format it', () => {
 
 test('only allow interger', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       integer: true,
     },
@@ -159,7 +159,7 @@ test('only allow interger', () => {
 
 test('input invalid value and blur', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: '',
     },
   });
@@ -174,7 +174,7 @@ test('input invalid value and blur', () => {
 
 test('stepper focus', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       disableInput: true,
     },
   });
@@ -190,7 +190,7 @@ test('stepper focus', () => {
 
 test('stepper blur', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 5,
       min: 3,
     },
@@ -212,7 +212,7 @@ test('stepper blur', () => {
 
 test('input-width prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       inputWidth: '10rem',
     },
   });
@@ -221,7 +221,7 @@ test('input-width prop', () => {
 
 test('button-size prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       buttonSize: '2rem',
     },
   });
@@ -230,7 +230,7 @@ test('button-size prop', () => {
 
 test('async-change prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       asyncChange: true,
     },
@@ -252,7 +252,7 @@ test('async-change prop', () => {
 
 test('min value is 0', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       min: 0,
     },
@@ -268,7 +268,7 @@ test('min value is 0', () => {
 
 test('show-plus & show-minus props', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       showPlus: false,
       showMinus: false,
     },
@@ -279,7 +279,7 @@ test('show-plus & show-minus props', () => {
 
 test('decimal-length prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       step: 0.2,
       decimalLength: 2,
@@ -295,7 +295,7 @@ test('decimal-length prop', () => {
 
 test('should limit decimal-length when input', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
       step: 0.2,
       decimalLength: 1,
@@ -324,7 +324,7 @@ test('name prop', () => {
 
 test('change min and max', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1,
     },
   });
@@ -349,7 +349,7 @@ test('change min and max', async () => {
 
 test('change decimal-length', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1.33,
     },
   });
@@ -365,7 +365,7 @@ test('change decimal-length', async () => {
 
 test('change integer', async () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: 1.33,
     },
   });
@@ -381,7 +381,7 @@ test('change integer', async () => {
 
 test('placeholder prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       placeholder: 'foo',
     },
   });
@@ -390,7 +390,7 @@ test('placeholder prop', () => {
 
 test('allow-empty prop', () => {
   const wrapper = mount(Stepper, {
-    propsData: {
+    props: {
       value: '',
       allowEmpty: true,
     },

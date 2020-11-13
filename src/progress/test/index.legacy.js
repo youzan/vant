@@ -3,7 +3,7 @@ import { mount, later } from '../../../test';
 
 test('calc width', async () => {
   const wrapper = mount(Progress, {
-    propsData: {
+    props: {
       showPivot: false,
       percentage: 100,
     },
@@ -19,7 +19,7 @@ test('calc width', async () => {
 
 test('track color prop', async () => {
   const wrapper = mount(Progress, {
-    propsData: {
+    props: {
       trackColor: 'green',
     },
   });

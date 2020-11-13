@@ -32,7 +32,7 @@ const COLUMNS = [
 
 test('cascade columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: COLUMNS,
     },
@@ -51,7 +51,7 @@ test('cascade columns', () => {
 
 test('setColumnValue of cascade columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: COLUMNS,
     },
@@ -68,7 +68,7 @@ test('setColumnValue of cascade columns', () => {
 
 test('setValues of cascade columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: COLUMNS,
     },
@@ -81,7 +81,7 @@ test('setValues of cascade columns', () => {
 
 test('setColumnIndex of cascade columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: COLUMNS,
     },
@@ -98,7 +98,7 @@ test('setColumnIndex of cascade columns', () => {
 
 test('setIndexes of cascade columns', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: COLUMNS,
     },
@@ -111,7 +111,7 @@ test('setIndexes of cascade columns', () => {
 
 test('disabled in cascade', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       showToolbar: true,
       columns: [
         COLUMNS[0],
@@ -128,7 +128,7 @@ test('disabled in cascade', () => {
 
 test('should move to next option when default option is disabled', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns: [
         {
           text: 'A1',
@@ -148,7 +148,7 @@ test('should move to next option when default option is disabled', () => {
 
 test('should move to first option when all options are disabled', () => {
   const wrapper = mount(Picker, {
-    propsData: {
+    props: {
       columns: [
         {
           text: 'A1',

@@ -92,7 +92,7 @@ test('initial swipe', () => {
 
 test('vertical swipe', () => {
   const wrapper = mount(Component, {
-    propsData: {
+    props: {
       vertical: true,
     },
   });
@@ -105,7 +105,7 @@ test('vertical swipe', () => {
 
 test('untouchable', () => {
   const wrapper = mount(Component, {
-    propsData: {
+    props: {
       touchable: false,
     },
   });
@@ -140,7 +140,7 @@ test('loop', () => {
 test('should pause auto play when page hidden', async () => {
   const change = jest.fn();
   mount(Component, {
-    propsData: {
+    props: {
       loop: true,
       autoplay: 1,
     },

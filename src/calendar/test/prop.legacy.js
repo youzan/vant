@@ -4,7 +4,7 @@ import { minDate, maxDate, formatRange, formatDate } from './utils';
 
 test('max-range prop when type is range and showConfirm is false', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -29,7 +29,7 @@ test('max-range prop when type is range and showConfirm is false', async () => {
 
 test('max-range prop when type is range and showConfirm is true', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -53,7 +53,7 @@ test('max-range prop when type is range and showConfirm is true', async () => {
 
 test('max-range prop when type is multiple', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'multiple',
       minDate,
       maxDate,
@@ -74,7 +74,7 @@ test('max-range prop when type is multiple', async () => {
 
 test('show-title prop', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -86,7 +86,7 @@ test('show-title prop', () => {
 
 test('show-subtitle prop', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -98,7 +98,7 @@ test('show-subtitle prop', () => {
 
 test('hide close icon when there is no title', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -115,7 +115,7 @@ test('hide close icon when there is no title', () => {
 test('allow-same-day prop', async () => {
   const select = jest.fn();
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -144,7 +144,7 @@ test('allow-same-day prop', async () => {
 
 test('min-date after current time', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       poppable: false,
       minDate: new Date(2200, 0, 1),
       maxDate: new Date(2200, 0, 2),
@@ -157,7 +157,7 @@ test('min-date after current time', () => {
 
 test('min-date before current time', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       poppable: false,
       minDate: new Date(1800, 0, 1),
       maxDate: new Date(1800, 0, 2),
@@ -170,7 +170,7 @@ test('min-date before current time', () => {
 
 test('lazy-render prop', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -183,7 +183,7 @@ test('lazy-render prop', () => {
 
 test('month-show event', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -194,7 +194,7 @@ test('month-show event', async () => {
 
 test('first day of week', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       poppable: false,
       defaultDate: new Date(2020, 7, 1),
       minDate: new Date(2020, 7, 1),
@@ -216,7 +216,7 @@ test('first day of week', async () => {
 
 test('readonly prop', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'multiple',
       minDate,
       maxDate,

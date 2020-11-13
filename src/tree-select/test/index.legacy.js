@@ -30,7 +30,7 @@ test('click-nav event', () => {
   const onClickNav = jest.fn();
 
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: mockItems,
     },
     context: {
@@ -50,7 +50,7 @@ test('click-item event', () => {
   const onClickItem = jest.fn();
 
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: mockItems,
     },
     context: {
@@ -69,7 +69,7 @@ test('click disabled nav', () => {
   const onClickNav = jest.fn();
 
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: [
         {
           text: 'group1',
@@ -93,7 +93,7 @@ test('click disabled nav', () => {
 test('click disabled item', () => {
   const onClickItem = jest.fn();
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: [
         {
           text: 'group1',
@@ -120,7 +120,7 @@ test('click disabled item', () => {
 
 test('content slot', () => {
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: [
         {
           text: 'group1',
@@ -137,7 +137,7 @@ test('content slot', () => {
 
 test('height prop', () => {
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       height: '100vh',
     },
   });
@@ -147,7 +147,7 @@ test('height prop', () => {
 
 test('nav render badge', () => {
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: [
         {
           text: 'group1',
@@ -275,7 +275,7 @@ test('max prop', () => {
 
 test('className of nav', () => {
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       mainActiveIndex: 0,
       items: [
         {
@@ -327,7 +327,7 @@ test('should sync value before trigger click-item event', (done) => {
 
 test('selected-icon prop', () => {
   const wrapper = mount(TreeSelect, {
-    propsData: {
+    props: {
       items: mockItems,
       activeId: 1,
       mainActiveIndex: 0,

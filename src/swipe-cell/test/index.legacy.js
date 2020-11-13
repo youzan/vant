@@ -8,7 +8,7 @@ import {
 
 const THRESHOLD = 0.15;
 const defaultProps = {
-  propsData: {
+  props: {
     leftWidth: 100,
     rightWidth: 100,
   },
@@ -47,8 +47,8 @@ test('before-close prop', () => {
 
   const wrapper = mount(SwipeCell, {
     ...defaultProps,
-    propsData: {
-      ...defaultProps.propsData,
+    props: {
+      ...defaultProps.props,
       beforeClose(params) {
         ({ position } = params);
         ({ instance } = params);
@@ -81,8 +81,8 @@ test('before-close prop', () => {
 test('name prop', (done) => {
   const wrapper = mount(SwipeCell, {
     ...defaultProps,
-    propsData: {
-      ...defaultProps.propsData,
+    props: {
+      ...defaultProps.props,
       name: 'test',
       onClose(position, instance, detail) {
         expect(detail.name).toEqual('test');
@@ -104,8 +104,8 @@ test('should reset after drag', () => {
 
 test('disabled prop', () => {
   const wrapper = mount(SwipeCell, {
-    propsData: {
-      ...defaultProps.propsData,
+    props: {
+      ...defaultProps.props,
       disabled: true,
     },
   });

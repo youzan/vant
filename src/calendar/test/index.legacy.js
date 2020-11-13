@@ -12,7 +12,7 @@ import {
 
 test('select event when type is single', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -28,7 +28,7 @@ test('select event when type is single', async () => {
 
 test('select event when type is range', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -54,7 +54,7 @@ test('select event when type is range', async () => {
 
 test('select event when type is multiple', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'multiple',
       minDate,
       maxDate,
@@ -89,7 +89,7 @@ test('select event when type is multiple', async () => {
 
 test('select event when type is multiple', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'multiple',
       minDate,
       maxDate,
@@ -110,7 +110,7 @@ test('select event when type is multiple', async () => {
 
 test('should not trigger select event when click disabled day', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -126,7 +126,7 @@ test('should not trigger select event when click disabled day', async () => {
 
 test('confirm event when type is single', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -145,7 +145,7 @@ test('confirm event when type is single', async () => {
 
 test('confirm event when type is range', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -169,7 +169,7 @@ test('confirm event when type is range', async () => {
 
 test('default single date', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       poppable: false,
     },
   });
@@ -182,7 +182,7 @@ test('default single date', async () => {
 
 test('default range date', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       poppable: false,
     },
@@ -198,7 +198,7 @@ test('default range date', async () => {
 
 test('reset method', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       type: 'range',
@@ -223,7 +223,7 @@ test('reset method', async () => {
 
 test('set show-confirm to false', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       type: 'range',
@@ -245,7 +245,7 @@ test('set show-confirm to false', async () => {
 
 test('row-height prop', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -261,7 +261,7 @@ test('row-height prop', async () => {
 
 test('formatter prop', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -296,7 +296,7 @@ test('formatter prop', async () => {
 
 test('title & footer slot', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -315,7 +315,7 @@ test('title & footer slot', async () => {
 
 test('should reset when type changed', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       poppable: false,
@@ -340,7 +340,7 @@ test('should reset when type changed', async () => {
 
 test('default-date prop in single type', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       defaultDate: getNextDay(minDate),
@@ -360,7 +360,7 @@ test('default-date prop in single type', async () => {
 
 test('default-date prop in range type', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       type: 'range',
       minDate,
       maxDate,
@@ -385,7 +385,7 @@ test('default-date prop in range type', async () => {
 
 test('popup wrapper', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       defaultDate: minDate,
@@ -411,7 +411,7 @@ test('popup wrapper', async () => {
 
 test('set show-mark prop to false', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       showMark: false,
@@ -426,7 +426,7 @@ test('set show-mark prop to false', async () => {
 
 test('color prop when type is single', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       color: 'blue',
@@ -442,7 +442,7 @@ test('color prop when type is single', async () => {
 
 test('color prop when type is range', async () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       defaultDate: [minDate, maxDate],
       type: 'range',
       minDate,
@@ -459,7 +459,7 @@ test('color prop when type is range', async () => {
 
 test('close event', () => {
   const wrapper = mount(Calendar, {
-    propsData: {
+    props: {
       value: true,
     },
   });

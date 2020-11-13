@@ -164,7 +164,7 @@ test('name prop', () => {
 
 test('disable border', () => {
   const wrapper = mount(Tabbar, {
-    propsData: {
+    props: {
       border: false,
     },
   });
@@ -176,7 +176,7 @@ test('placeholder prop', () => {
   const restore = mockGetBoundingClientRect({ height: 50 });
 
   const wrapper = mount(Tabbar, {
-    propsData: {
+    props: {
       fixed: true,
       placeholder: true,
     },

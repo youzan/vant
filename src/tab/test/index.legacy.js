@@ -138,7 +138,7 @@ test('render nav-left & nav-right slot', async () => {
 
 test('border props', async () => {
   const wrapper = mount(Tabs, {
-    propsData: {
+    props: {
       border: false,
     },
   });

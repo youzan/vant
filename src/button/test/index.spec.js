@@ -10,7 +10,7 @@ test('should emit click event', () => {
 
 test('should not emit click event when disabled', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       disabled: true,
     },
   });
@@ -21,7 +21,7 @@ test('should not emit click event when disabled', () => {
 
 test('should not emit click event when loading', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       loading: true,
     },
   });
@@ -32,7 +32,7 @@ test('should not emit click event when loading', () => {
 
 test('should hide border when color is gradient', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       color: 'linear-gradient(#000, #fff)',
     },
   });
@@ -42,7 +42,7 @@ test('should hide border when color is gradient', () => {
 
 test('should change icon class prefix when using icon-prefix prop', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       icon: 'success',
       iconPrefix: 'my-icon',
     },
@@ -53,7 +53,7 @@ test('should change icon class prefix when using icon-prefix prop', () => {
 
 test('should render loading slot and match snapshot', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       loading: true,
     },
     slots: {
@@ -66,7 +66,7 @@ test('should render loading slot and match snapshot', () => {
 
 test('should render loading of a specific size when using loading-size prop', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       loading: true,
       loadingSize: '10px',
     },
@@ -79,7 +79,7 @@ test('should render loading of a specific size when using loading-size prop', ()
 
 test('should render icon in the right side when setting icon-position to right', () => {
   const wrapper = mount(Button, {
-    propsData: {
+    props: {
       icon: 'plus',
       iconPosition: 'right',
     },

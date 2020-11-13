@@ -16,7 +16,7 @@ const addressInfo = {
 
 const createComponent = () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       areaList,
       addressInfo,
       showPostal: true,
@@ -43,7 +43,7 @@ test('create a AddressEdit', () => {
 
 test('create a AddressEdit with props', () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       areaList,
       addressInfo,
       showPostal: true,
@@ -57,7 +57,7 @@ test('create a AddressEdit with props', () => {
 
 test('valid area placeholder confirm', async () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       areaList,
       areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
     },
@@ -96,7 +96,7 @@ test('set-default', () => {
 
 test('validator props', async () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       areaList,
       validator(key, value) {
         return `${key}${value}`;
@@ -192,7 +192,7 @@ test('watch address info', () => {
 
 test('set/get area code', async () => {
   const wrapper = mount(AddressEdit, {
-    propsData: { areaList },
+    props: { areaList },
   });
 
   expect(wrapper.vm.getArea()).toEqual([
@@ -218,7 +218,7 @@ test('set/get area code', async () => {
 
 test('watch area code', async () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       areaList: {},
       addressInfo: {
         areaCode: '110101',
@@ -235,7 +235,7 @@ test('watch area code', async () => {
 
 test('show search result', async () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       showSearchResult: true,
       searchResult: [
         { name: 'name1', address: 'address1' },
@@ -265,7 +265,7 @@ test('show search result', async () => {
 test('delete address', async () => {
   const wrapper = mount(AddressEdit, {
     attachToDocument: true,
-    propsData: {
+    props: {
       showDelete: true,
     },
   });
@@ -297,7 +297,7 @@ test('select area', () => {
 
 test('click-area event', () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       disableArea: true,
     },
   });
@@ -309,7 +309,7 @@ test('click-area event', () => {
 
 test('tel-maxlength prop', () => {
   const wrapper = mount(AddressEdit, {
-    propsData: {
+    props: {
       telMaxlength: 4,
     },
   });

@@ -23,7 +23,7 @@ test('click event', () => {
 test('click-thumb event', () => {
   const onClickThumb = jest.fn();
   const wrapper = mount(Card, {
-    propsData: {
+    props: {
       thumb: 'xx',
     },
     context: {

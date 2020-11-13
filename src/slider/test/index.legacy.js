@@ -19,7 +19,7 @@ test('drag button', () => {
   const restoreMock = mockRect();
 
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       disabled: true,
     },
@@ -50,7 +50,7 @@ test('click bar', () => {
   const restoreMock = mockRect();
 
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       disabled: true,
     },
@@ -74,7 +74,7 @@ test('drag button vertical', () => {
   const restoreMock = mockRect(true);
 
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       vertical: true,
     },
@@ -95,7 +95,7 @@ test('click vertical', () => {
   const restoreMock = mockRect(true);
 
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       vertical: true,
     },
@@ -113,7 +113,7 @@ test('click vertical', () => {
 
 test('bar-height prop', () => {
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       barHeight: 10,
     },
@@ -124,7 +124,7 @@ test('bar-height prop', () => {
 
 test('button-size prop', () => {
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
       buttonSize: 10,
     },
@@ -135,7 +135,7 @@ test('button-size prop', () => {
 
 test('should not emit change event when value not changed', () => {
   const wrapper = mount(Slider, {
-    propsData: {
+    props: {
       value: 50,
     },
     listeners: {
@@ -153,7 +153,7 @@ test('should not emit change event when value not changed', () => {
 
 test('should format initial value', (done) => {
   mount(Slider, {
-    propsData: {
+    props: {
       value: null,
     },
     listeners: {

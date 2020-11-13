@@ -3,7 +3,7 @@ import { mount, trigger, later } from '../../../test';
 
 test('cancel-text prop', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
       cancelText: 'foo',
     },
@@ -17,7 +17,7 @@ test('cancel-text prop', () => {
 
 test('description prop', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
       description: 'foo',
     },
@@ -31,7 +31,7 @@ test('description prop', () => {
 
 test('option className', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
       options: [{ name: 'Link', icon: 'link', className: 'foo' }],
     },
@@ -44,7 +44,7 @@ test('option className', () => {
 
 test('select event', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
       options: [{ icon: 'wechat', name: 'wechat' }],
     },
@@ -59,7 +59,7 @@ test('select event', () => {
 
 test('cancel event', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
     },
   });
@@ -72,7 +72,7 @@ test('cancel event', () => {
 
 test('title & description slot', () => {
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
     },
     scopedSlots: {
@@ -87,7 +87,7 @@ test('title & description slot', () => {
 test('click-overlay event', async () => {
   const root = document.createElement('div');
   const wrapper = mount(ShareSheet, {
-    propsData: {
+    props: {
       value: true,
       teleport: root,
     },

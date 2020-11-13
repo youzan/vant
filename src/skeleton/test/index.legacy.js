@@ -3,7 +3,7 @@ import Skeleton from '..';
 
 test('row-width array', () => {
   const wrapper = mount(Skeleton, {
-    propsData: {
+    props: {
       row: 4,
       rowWidth: ['100%', 30, '5rem'],
     },
@@ -25,7 +25,7 @@ test('render chidren', () => {
 
 test('avatar shape', () => {
   const wrapper = mount(Skeleton, {
-    propsData: {
+    props: {
       avatar: true,
       avatarSize: 20,
       avatarShape: 'square',
@@ -36,7 +36,7 @@ test('avatar shape', () => {
 
 test('round prop', () => {
   const wrapper = mount(Skeleton, {
-    propsData: {
+    props: {
       title: true,
       round: true,
       avatar: true,
@@ -47,7 +47,7 @@ test('round prop', () => {
 
 test('disable animate', () => {
   const wrapper = mount(Skeleton, {
-    propsData: {
+    props: {
       row: 1,
       aniamte: false,
     },

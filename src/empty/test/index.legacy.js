@@ -33,7 +33,7 @@ test('bottom slot', () => {
 
 test('render svg when image is network', () => {
   const wrapper = mount(Empty, {
-    propsData: {
+    props: {
       image: 'network',
     },
   });
@@ -43,7 +43,7 @@ test('render svg when image is network', () => {
 
 test('image-size prop', () => {
   const wrapper = mount(Empty, {
-    propsData: {
+    props: {
       imageSize: 50,
     },
   });

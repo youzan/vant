@@ -3,7 +3,7 @@ import Paginaion from '..';
 
 test('render prev-text & next-text slot', () => {
   const wrapper = mount(Paginaion, {
-    propsData: {
+    props: {
       totalItems: 50,
       showPageSize: 5,
     },
@@ -18,7 +18,7 @@ test('render prev-text & next-text slot', () => {
 
 test('render page slot', () => {
   const wrapper = mount(Paginaion, {
-    propsData: {
+    props: {
       totalItems: 50,
       showPageSize: 5,
     },

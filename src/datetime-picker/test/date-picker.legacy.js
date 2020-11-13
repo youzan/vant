@@ -12,7 +12,7 @@ function formatter(type, value) {
 
 test('filter prop', () => {
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       filter,
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
@@ -25,7 +25,7 @@ test('filter prop', () => {
 
 test('formatter prop', async () => {
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       filter,
       formatter,
       minDate: new Date(2010, 0, 1),
@@ -53,7 +53,7 @@ test('confirm event', () => {
   const date = new Date(2020, 10, 1, 0, 0);
 
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       value: date,
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
@@ -72,7 +72,7 @@ test('year-month type', () => {
   const date = new Date(2020, 10, 1, 0, 0);
 
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       type: 'year-month',
       value: date,
       minDate: new Date(2020, 0, 1),
@@ -99,7 +99,7 @@ test('month-day type', () => {
   const date = new Date(2020, 10, 1, 0, 0);
 
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       type: 'month-day',
       value: date,
       minDate: new Date(2020, 0, 1),
@@ -124,7 +124,7 @@ test('month-day type', () => {
 
 test('datehour type', async () => {
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       minDate: new Date(2010, 0, 1),
       maxDate: new Date(2025, 10, 1),
       value: new Date(2020, 10, 1, 0, 0),
@@ -149,7 +149,7 @@ test('cancel event', () => {
 test('max-date prop', () => {
   const maxDate = new Date(2010, 5, 0, 0, 0);
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       value: new Date(2020, 10, 30, 30, 30),
       maxDate,
     },
@@ -162,7 +162,7 @@ test('max-date prop', () => {
 test('min-date prop', () => {
   const minDate = new Date(2030, 0, 0, 0, 0);
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       value: new Date(2020, 0, 0, 0, 0),
       minDate,
     },
@@ -174,7 +174,7 @@ test('min-date prop', () => {
 
 test('dynamic set value', () => {
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       value: new Date(2019, 1, 1),
     },
   });
@@ -193,7 +193,7 @@ test('use min-date with filter', async () => {
   const maxDate = new Date(2040, 0, 0, 0, 0);
 
   const wrapper = mount(DatePicker, {
-    propsData: {
+    props: {
       minDate,
       maxDate,
       value: new Date(2020, 0, 0, 0, 0),

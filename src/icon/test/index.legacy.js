@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 
 test('render icon with builtin icon name', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       name: 'success',
     },
   });
@@ -12,7 +12,7 @@ test('render icon with builtin icon name', () => {
 
 test('render icon with url name', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       name: 'https://img.yzcdn.com/icon.jpg',
     },
   });
@@ -21,7 +21,7 @@ test('render icon with url name', () => {
 
 test('render icon with local image', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       name: '/assets/icon.jpg',
     },
   });
@@ -39,7 +39,7 @@ test('render icon default slot', () => {
 
 test('tag prop', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       tag: 'div',
     },
   });
@@ -48,7 +48,7 @@ test('tag prop', () => {
 
 test('dot prop', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       dot: true,
     },
   });
@@ -57,7 +57,7 @@ test('dot prop', () => {
 
 test('size without unit', () => {
   const wrapper = mount(Icon, {
-    propsData: {
+    props: {
       size: 20,
     },
   });

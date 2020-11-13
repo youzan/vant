@@ -10,7 +10,7 @@ test('click event', () => {
 
 test('close event', () => {
   const wrapper = mount(NoticeBar, {
-    propsData: {
+    props: {
       mode: 'closeable',
     },
   });
@@ -39,7 +39,7 @@ test('icon slot', () => {
 
 test('replay event', async () => {
   const wrapper = mount(NoticeBar, {
-    propsData: {
+    props: {
       text: 'foo',
     },
   });
@@ -51,7 +51,7 @@ test('replay event', async () => {
 
 test('should scroll when content width > wrap width ', async () => {
   const wrapper = mount(NoticeBar, {
-    propsData: {
+    props: {
       text: 'foo',
       delay: 0,
     },
@@ -74,7 +74,7 @@ test('should scroll when content width > wrap width ', async () => {
 
 test('should not scroll when content width > wrap width ', async () => {
   const wrapper = mount(NoticeBar, {
-    propsData: {
+    props: {
       text: 'foo',
       delay: 0,
     },

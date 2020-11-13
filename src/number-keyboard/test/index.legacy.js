@@ -8,7 +8,7 @@ function clickKey(key) {
 
 test('click number key', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       theme: 'custom',
       closeButtonText: 'close',
     },
@@ -40,7 +40,7 @@ test('click collapse key', () => {
 
 test('click close button', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       theme: 'custom',
       closeButtonText: 'close',
     },
@@ -62,7 +62,7 @@ test('listen to show/hide event when has transtion', () => {
 
 test('listen to show event when no transtion', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       transition: false,
     },
   });
@@ -74,7 +74,7 @@ test('listen to show event when no transtion', () => {
 
 test('render title', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       title: 'Title',
       closeButtonText: 'Close',
     },
@@ -95,7 +95,7 @@ test('title-left slot', () => {
 
 test('extra-key prop', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       extraKey: 'foo',
     },
   });
@@ -115,7 +115,7 @@ test('extra-key slot', () => {
 
 test('hideOnClickOutside', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       show: true,
     },
   });
@@ -126,7 +126,7 @@ test('hideOnClickOutside', () => {
 
 test('disable hideOnClickOutside', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       show: true,
       hideOnClickOutside: false,
     },
@@ -162,7 +162,7 @@ test('move and blur key', () => {
 
 test('bind value', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       value: '',
     },
     listeners: {
@@ -185,7 +185,7 @@ test('bind value', () => {
 test('maxlength', () => {
   const onInput = jest.fn();
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       value: '',
       maxlength: 1,
     },
@@ -207,7 +207,7 @@ test('maxlength', () => {
 
 test('show-delete-key prop', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       showDeleteKey: true,
     },
   });
@@ -229,7 +229,7 @@ test('show-delete-key prop', () => {
 
 test('close-button-loading prop', () => {
   const wrapper = mount(NumberKeyboard, {
-    propsData: {
+    props: {
       show: true,
       theme: 'custom',
       closeButtonLoading: true,
