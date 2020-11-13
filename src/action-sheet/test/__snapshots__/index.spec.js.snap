@@ -7,7 +7,7 @@ exports[`should allow to custom close icon with closeIcon prop 1`] = `
   <!----></i>
 `;
 
-exports[`should render default slot and match snapshot 1`] = `
+exports[`should render default slot correctly 1`] = `
 <transition-stub>
   <div class="van-overlay">
     <!---->
@@ -28,11 +28,11 @@ exports[`should render default slot and match snapshot 1`] = `
 </transition-stub>
 `;
 
-exports[`should render description and match snapshot 1`] = `<div class="van-action-sheet__description">This is a description</div>`;
+exports[`should render description correctly 1`] = `<div class="van-action-sheet__description">This is a description</div>`;
 
 exports[`should render description slot when match snapshot 1`] = `<div class="van-action-sheet__description">Custom Description</div>`;
 
-exports[`should render subname and match snapshot 1`] = `
+exports[`should render subname correctly 1`] = `
 <button type="button" class="van-action-sheet__item"><span class="van-action-sheet__name">Option</span>
   <div class="van-action-sheet__subname">Subname</div></button>
 `;

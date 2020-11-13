@@ -1,30 +1,38 @@
 import NavBar from '..';
-import { mount, mockGetBoundingClientRect } from '../../../test';
+import { mount, mockGetBoundingClientRect, later } from '../../../test';
 
-test('should render left/right slot and match snapshot', () => {
+test('should render left slot correctly', () => {
   const wrapper = mount(NavBar, {
     slots: {
       left: () => 'Custom Left',
+    },
+  });
+
+  expect(wrapper.find('.van-nav-bar__left').html()).toMatchSnapshot();
+});
+
+test('should render left slot correctly', () => {
+  const wrapper = mount(NavBar, {
+    slots: {
       right: () => 'Custom Right',
     },
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-nav-bar__right').html()).toMatchSnapshot();
 });
 
-test('should render title slot and match snapshot', () => {
+test('should render title slot correctly', () => {
   const wrapper = mount(NavBar, {
     slots: {
       title: () => 'Custom Title',
     },
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-nav-bar__title').html()).toMatchSnapshot();
 });
 
-test('should render placeholder element when using placeholder prop', () => {
+test('should render placeholder element when using placeholder prop', async () => {
   const restore = mockGetBoundingClientRect({ height: 50 });
-
   const wrapper = mount(NavBar, {
     props: {
       fixed: true,
@@ -32,8 +40,8 @@ test('should render placeholder element when using placeholder prop', () => {
     },
   });
 
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
-
   restore();
 });
 
@@ -66,5 +74,16 @@ test('should have safe-area-inset-top class when using safe-area-inset-top prop'
     },
   });
 
-  expect(wrapper.contains('.van-nav-bar--safe-area-inset-top')).toBeTruthy();
+  expect(
+    wrapper.find('.van-nav-bar--safe-area-inset-top').exists()
+  ).toBeTruthy();
+});
+
+test('should change z-index when using z-index prop', () => {
+  const wrapper = mount(NavBar, {
+    props: {
+      zIndex: 100,
+    },
+  });
+  expect(wrapper.element.style.zIndex).toEqual('100');
 });

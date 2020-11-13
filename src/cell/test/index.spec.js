@@ -1,7 +1,7 @@
 import Cell from '..';
 import { mount } from '@vue/test-utils';
 
-test('should render default slot and match snapshot', () => {
+test('should render default slot correctly', () => {
   const wrapper = mount(Cell, {
     slots: {
       default: () => 'Custom Default',
@@ -10,7 +10,7 @@ test('should render default slot and match snapshot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render title slot and match snapshot', () => {
+test('should render title slot correctly', () => {
   const wrapper = mount(Cell, {
     slots: {
       title: () => 'Custom Title',
@@ -19,7 +19,7 @@ test('should render title slot and match snapshot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render label slot and match snapshot', () => {
+test('should render label slot correctly', () => {
   const wrapper = mount(Cell, {
     props: {
       title: 'Title',
@@ -31,7 +31,7 @@ test('should render label slot and match snapshot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render icon slot and match snapshot', () => {
+test('should render icon slot correctly', () => {
   const wrapper = mount(Cell, {
     slots: {
       icon: () => 'Custom Icon',
@@ -40,7 +40,7 @@ test('should render icon slot and match snapshot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render extra slot and match snapshot', () => {
+test('should render extra slot correctly', () => {
   const wrapper = mount(Cell, {
     slots: {
       extra: () => 'Custom Extra',

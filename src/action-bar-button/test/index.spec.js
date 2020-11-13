@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import ActionBarButton from '..';
 
-test('should render default slot and match snapshot', () => {
+test('should render default slot correctly', () => {
   const wrapper = mount(ActionBarButton, {
     slots: {
       default: 'Content',

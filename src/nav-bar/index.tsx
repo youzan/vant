@@ -58,9 +58,7 @@ export default createComponent({
         return slots.right();
       }
 
-      if (props.rightText) {
-        return <span class={bem('text')}>{props.rightText}</span>;
-      }
+      return <span class={bem('text')}>{props.rightText}</span>;
     };
 
     const renderNavBar = () => {

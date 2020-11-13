@@ -51,7 +51,7 @@ test('should change icon class prefix when using icon-prefix prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render loading slot and match snapshot', () => {
+test('should render loading slot correctly', () => {
   const wrapper = mount(Button, {
     props: {
       loading: true,

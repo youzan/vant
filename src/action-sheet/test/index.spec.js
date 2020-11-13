@@ -64,7 +64,7 @@ test('should emit cancel event after clicking cancel button', () => {
   expect(wrapper.emitted('cancel').length).toEqual(1);
 });
 
-test('should render subname and match snapshot', () => {
+test('should render subname correctly', () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -84,7 +84,7 @@ test('should render content after disabling the lazy-render prop', async () => {
   expect(wrapper.find('.van-action-sheet__content').exists()).toBeTruthy();
 });
 
-test('should render default slot and match snapshot', () => {
+test('should render default slot correctly', () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -160,7 +160,7 @@ test('should allow to custom close icon with closeIcon prop', () => {
   expect(wrapper.find('.van-action-sheet__close').html()).toMatchSnapshot();
 });
 
-test('should render description and match snapshot', () => {
+test('should render description correctly', () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,

@@ -31,7 +31,7 @@ test('should render nothing when badge is zero', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render content slot and match snapshot', () => {
+test('should render content slot correctly', () => {
   const wrapper = mount(Badge, {
     slots: {
       content: () => 'Custom Content',

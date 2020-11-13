@@ -19,7 +19,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </div>
 `;
 
-exports[`should render default slot and match snapshot 1`] = `
+exports[`should render default slot correctly 1`] = `
 <div class="van-cell">
   <!---->
   <!---->
@@ -29,7 +29,7 @@ exports[`should render default slot and match snapshot 1`] = `
 </div>
 `;
 
-exports[`should render extra slot and match snapshot 1`] = `
+exports[`should render extra slot correctly 1`] = `
 <div class="van-cell">
   <!---->
   <!---->
@@ -37,7 +37,7 @@ exports[`should render extra slot and match snapshot 1`] = `
   <!---->Custom Extra</div>
 `;
 
-exports[`should render icon slot and match snapshot 1`] = `
+exports[`should render icon slot correctly 1`] = `
 <div class="van-cell">Custom Icon
   <!---->
   <!---->
@@ -46,7 +46,7 @@ exports[`should render icon slot and match snapshot 1`] = `
 </div>
 `;
 
-exports[`should render label slot and match snapshot 1`] = `
+exports[`should render label slot correctly 1`] = `
 <div class="van-cell">
   <!---->
   <div class="van-cell__title"><span>Title</span>
@@ -58,7 +58,7 @@ exports[`should render label slot and match snapshot 1`] = `
 </div>
 `;
 
-exports[`should render title slot and match snapshot 1`] = `
+exports[`should render title slot correctly 1`] = `
 <div class="van-cell">
   <!---->
   <div class="van-cell__title">Custom Title
