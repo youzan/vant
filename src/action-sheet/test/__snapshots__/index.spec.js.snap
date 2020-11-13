@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should allow to custom close icon with closeIcon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+  <!---->
+  <!---->
+  <!----></i>
+`;
+
 exports[`should render default slot and match snapshot 1`] = `
 <transition-stub>
   <div class="van-overlay">
@@ -20,3 +27,7 @@ exports[`should render default slot and match snapshot 1`] = `
   </div>
 </transition-stub>
 `;
+
+exports[`should render description and match snapshot 1`] = `<div class="van-action-sheet__description">This is a description</div>`;
+
+exports[`should render description slot when match snapshot 1`] = `<div class="van-action-sheet__description">Custom Description</div>`;
