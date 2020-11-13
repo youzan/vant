@@ -1,5 +1,4 @@
 import { mount } from '@vue/test-utils';
-import { later } from '../../../test';
 import ActionSheet from '..';
 
 test('should emit select event after clicking option', () => {
@@ -81,8 +80,7 @@ test('should render content after disabling the lazy-render prop', async () => {
   const wrapper = mount(ActionSheet);
   expect(wrapper.find('.van-action-sheet__content').exists()).toBeFalsy();
 
-  wrapper.setProps({ lazyRender: false });
-  await later();
+  await wrapper.setProps({ lazyRender: false });
   expect(wrapper.find('.van-action-sheet__content').exists()).toBeTruthy();
 });
 
@@ -146,8 +144,7 @@ test('should hide close icon when the closeable prop is false', async () => {
 
   expect(wrapper.find('.van-action-sheet__close').exists()).toBeTruthy();
 
-  wrapper.setProps({ closeable: false });
-  await later();
+  await wrapper.setProps({ closeable: false });
   expect(wrapper.find('.van-action-sheet__close').exists()).toBeFalsy();
 });
 
@@ -207,7 +204,7 @@ test('should close after clicking option if close-on-click-action prop is true',
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
 });
 
-test('should emit click-overlay event and closed after clicking the overlay', async () => {
+test('should emit click-overlay event and closed after clicking the overlay', () => {
   const onClickOverlay = jest.fn();
   const wrapper = mount(ActionSheet, {
     props: {
@@ -215,8 +212,6 @@ test('should emit click-overlay event and closed after clicking the overlay', as
       onClickOverlay,
     },
   });
-
-  await later();
 
   wrapper.find('.van-overlay').trigger('click');
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
