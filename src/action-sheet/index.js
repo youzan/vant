@@ -98,6 +98,10 @@ export default createComponent({
       );
 
       const onClick = () => {
+        if (disabled || loading) {
+          return;
+        }
+
         if (callback) {
           callback(item);
         }
