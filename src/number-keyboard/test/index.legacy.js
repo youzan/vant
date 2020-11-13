@@ -85,7 +85,7 @@ test('render title', () => {
 
 test('title-left slot', () => {
   const wrapper = mount(NumberKeyboard, {
-    scopedSlots: {
+    slots: {
       'title-left': () => 'Custom Title Left',
     },
   });
@@ -105,7 +105,7 @@ test('extra-key prop', () => {
 
 test('extra-key slot', () => {
   const wrapper = mount(NumberKeyboard, {
-    scopedSlots: {
+    slots: {
       'extra-key': () => 'Custom Extra Key',
     },
   });

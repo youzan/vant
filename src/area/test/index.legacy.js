@@ -125,7 +125,7 @@ test('columns-num prop', async () => {
 
 test('title slot', async () => {
   const wrapper = mount(Area, {
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
     },
   });

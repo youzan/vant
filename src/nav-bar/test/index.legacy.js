@@ -3,7 +3,7 @@ import { mount, mockGetBoundingClientRect } from '../../../test';
 
 test('should render left/right slot and match snapshot', () => {
   const wrapper = mount(NavBar, {
-    scopedSlots: {
+    slots: {
       left: () => 'Custom Left',
       right: () => 'Custom Right',
     },
@@ -14,7 +14,7 @@ test('should render left/right slot and match snapshot', () => {
 
 test('should render title slot and match snapshot', () => {
   const wrapper = mount(NavBar, {
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
     },
   });

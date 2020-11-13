@@ -26,7 +26,7 @@ test('click-input event', () => {
 
 test('click-input event when using input slot', () => {
   const wrapper = mount(Field, {
-    scopedSlots: {
+    slots: {
       input: () => 'Custom Input',
     },
   });
@@ -224,7 +224,7 @@ test('clear-trigger prop', () => {
 
 test('render input slot', () => {
   const wrapper = mount(Field, {
-    scopedSlots: {
+    slots: {
       input: () => 'Custom Input',
     },
   });
@@ -234,7 +234,7 @@ test('render input slot', () => {
 
 test('render label slot', () => {
   const wrapper = mount(Field, {
-    scopedSlots: {
+    slots: {
       label: () => 'Custom Label',
     },
   });
@@ -244,7 +244,7 @@ test('render label slot', () => {
 
 test('render extra slot', () => {
   const wrapper = mount(Field, {
-    scopedSlots: {
+    slots: {
       extra: () => 'Extra',
     },
   });

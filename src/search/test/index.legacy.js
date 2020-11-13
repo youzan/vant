@@ -65,7 +65,7 @@ test('search event', () => {
 
 test('label slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       label: () => 'Custom Label',
     },
   });
@@ -75,7 +75,7 @@ test('label slot', () => {
 
 test('left slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       left: () => 'Custom Left Content',
     },
   });
@@ -105,7 +105,7 @@ test('right-icon prop', () => {
 
 test('right-icon slot', () => {
   const wrapper = mount(Search, {
-    scopedSlots: {
+    slots: {
       'right-icon': () => 'Custom Right Icon',
     },
   });

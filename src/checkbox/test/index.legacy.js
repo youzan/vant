@@ -30,7 +30,7 @@ test('disabled', () => {
 
 test('label disabled', () => {
   const wrapper = mount(Checkbox, {
-    scopedSlots: {
+    slots: {
       default: () => 'Label',
     },
     props: {
@@ -93,7 +93,7 @@ test('click event', async () => {
 
 test('label-position prop', () => {
   const wrapper = mount(Checkbox, {
-    scopedSlots: {
+    slots: {
       default: () => 'Label',
     },
     props: {

@@ -75,7 +75,7 @@ test('finished slot', async () => {
     props: {
       finished: true,
     },
-    scopedSlots: {
+    slots: {
       finished: () => 'Custom Finished',
     },
   });
@@ -88,7 +88,7 @@ test('error slot', async () => {
     props: {
       error: true,
     },
-    scopedSlots: {
+    slots: {
       error: () => 'Custom Error',
     },
   });

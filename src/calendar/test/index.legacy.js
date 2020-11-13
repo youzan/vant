@@ -302,7 +302,7 @@ test('title & footer slot', async () => {
       poppable: false,
       defaultDate: minDate,
     },
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
       footer: () => 'Custom Footer',
     },

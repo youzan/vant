@@ -188,7 +188,7 @@ test('default slot', () => {
     props: {
       src: 'https://img.yzcdn.cn/vant/cat.jpeg',
     },
-    scopedSlots: {
+    slots: {
       default: () => 'Custom Default',
     },
   });

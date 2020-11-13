@@ -108,7 +108,7 @@ test('default slot', () => {
     props: {
       value: true,
     },
-    scopedSlots: {
+    slots: {
       default: () => 'Custom Message',
     },
   });
@@ -120,7 +120,7 @@ test('title slot', () => {
     props: {
       value: true,
     },
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
     },
   });

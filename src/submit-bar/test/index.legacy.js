@@ -51,7 +51,7 @@ test('without price', () => {
 
 test('top slot', () => {
   const wrapper = mount(SubmitBar, {
-    scopedSlots: {
+    slots: {
       top: () => 'Custom Top',
     },
   });
@@ -123,7 +123,7 @@ test('button-color prop', () => {
 test('button slot', () => {
   const wrapper = mount(SubmitBar, {
     buttonText: 'text',
-    scopedSlots: {
+    slots: {
       button: () => 'Custom button',
     },
   });

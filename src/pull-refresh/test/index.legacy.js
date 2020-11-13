@@ -45,7 +45,7 @@ test('change head content when pulling down', async () => {
 
 test('custom content by slots', async () => {
   const wrapper = mount(PullRefresh, {
-    scopedSlots: {
+    slots: {
       pulling({ distance }) {
         return `pulling ${distance}`;
       },
@@ -137,7 +137,7 @@ test('render success text', async () => {
 
 test('render success slot', async () => {
   const wrapper = mount(PullRefresh, {
-    scopedSlots: {
+    slots: {
       success: () => 'Custom Success',
     },
     listeners: {

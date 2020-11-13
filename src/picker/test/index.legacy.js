@@ -261,7 +261,7 @@ test('columns-top、columns-bottom prop', () => {
     props: {
       showToolbar: true,
     },
-    scopedSlots: {
+    slots: {
       'columns-top': () => 'Custom Columns Top',
       'columns-bottom': () => 'Custom Columns Bottom',
     },

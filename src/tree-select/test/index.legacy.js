@@ -127,7 +127,7 @@ test('content slot', () => {
         },
       ],
     },
-    scopedSlots: {
+    slots: {
       content: () => 'Custom Content',
     },
   });

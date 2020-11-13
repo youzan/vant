@@ -530,7 +530,7 @@ test('preview-cover slot', () => {
     props: {
       fileList: [{ url: IMAGE }, { url: IMAGE }],
     },
-    scopedSlots: {
+    slots: {
       'preview-cover': (item) => `url: ${item.url}, index: ${item.index}`,
     },
   });

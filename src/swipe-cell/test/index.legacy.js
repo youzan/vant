@@ -12,7 +12,7 @@ const defaultProps = {
     leftWidth: 100,
     rightWidth: 100,
   },
-  scopedSlots: {
+  slots: {
     left: () => 'Left',
     right: () => 'Right',
   },
@@ -120,7 +120,7 @@ test('auto calc width', async () => {
   });
 
   const wrapper = mount(SwipeCell, {
-    scopedSlots: defaultProps.scopedSlots,
+    slots: defaultProps.scopedSlots,
   });
 
   await later();
@@ -136,7 +136,7 @@ test('render one side', async () => {
   });
 
   const wrapper = mount(SwipeCell, {
-    scopedSlots: {
+    slots: {
       left: defaultProps.scopedSlots.left,
     },
   });

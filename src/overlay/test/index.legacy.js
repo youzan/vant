@@ -63,7 +63,7 @@ test('click event', () => {
 
 test('default slot', () => {
   const wrapper = mount(Overlay, {
-    scopedSlots: {
+    slots: {
       default: () => 'Custom Default',
     },
   });

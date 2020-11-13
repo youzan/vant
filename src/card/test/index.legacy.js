@@ -44,7 +44,7 @@ test('click-thumb event', () => {
 
 test('render price & num slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       num: () => 'Custom Num',
       price: () => 'Custom Price',
     },
@@ -55,7 +55,7 @@ test('render price & num slot', () => {
 
 test('render origin-price slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       'origin-price': () => 'Custom Origin Price',
     },
   });
@@ -65,7 +65,7 @@ test('render origin-price slot', () => {
 
 test('render bottom slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       bottom: () => 'Custom Bottom',
     },
   });
@@ -75,7 +75,7 @@ test('render bottom slot', () => {
 
 test('render thumb & tag slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       tag: () => 'Custom Tag',
       thumb: () => 'Custom Thumb',
     },
@@ -86,7 +86,7 @@ test('render thumb & tag slot', () => {
 
 test('render title & desc slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
       desc: () => 'Custom desc',
     },
@@ -97,7 +97,7 @@ test('render title & desc slot', () => {
 
 test('render price & price-top slot', () => {
   const wrapper = mount(Card, {
-    scopedSlots: {
+    slots: {
       price: () => 'Custom Price',
       'price-top': () => 'Custom Price-top',
     },

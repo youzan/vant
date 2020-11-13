@@ -16,7 +16,7 @@ test('text-size prop', () => {
     props: {
       textSize: 20,
     },
-    scopedSlots: {
+    slots: {
       default: () => 'Text',
     },
   });

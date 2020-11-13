@@ -75,7 +75,7 @@ test('title & description slot', () => {
     props: {
       value: true,
     },
-    scopedSlots: {
+    slots: {
       title: () => 'Custom Title',
       description: () => 'Custom Description',
     },

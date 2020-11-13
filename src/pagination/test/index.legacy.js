@@ -7,7 +7,7 @@ test('render prev-text & next-text slot', () => {
       totalItems: 50,
       showPageSize: 5,
     },
-    scopedSlots: {
+    slots: {
       'prev-text': () => 'Custom PrevText',
       'next-text': () => 'Custom NextText',
     },
@@ -22,7 +22,7 @@ test('render page slot', () => {
       totalItems: 50,
       showPageSize: 5,
     },
-    scopedSlots: {
+    slots: {
       page: ({ text }) => `${text}`,
     },
   });
