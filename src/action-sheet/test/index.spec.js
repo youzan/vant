@@ -2,6 +2,81 @@ import { mount } from '@vue/test-utils';
 import { later } from '../../../test';
 import ActionSheet from '..';
 
+test('should emit select event after clicking option', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option' }],
+    },
+  });
+
+  wrapper.find('.van-action-sheet__item').trigger('click');
+  expect(wrapper.emitted('select').length).toEqual(1);
+  expect(wrapper.emitted('select')[0][0]).toEqual({ name: 'Option' });
+});
+
+test('should call callback function after clicking option', () => {
+  const callback = jest.fn();
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option', callback }],
+    },
+  });
+
+  wrapper.find('.van-action-sheet__item').trigger('click');
+  expect(callback).toHaveBeenCalledTimes(1);
+});
+
+test('should not emit select event after clicking loading option', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option', loading: true }],
+    },
+  });
+
+  wrapper.find('.van-action-sheet__item').trigger('click');
+  expect(wrapper.emitted('select')).toBeFalsy();
+});
+
+test('should not emit select event after clicking disabled option', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option', disabled: true }],
+    },
+  });
+
+  wrapper.find('.van-action-sheet__item').trigger('click');
+  expect(wrapper.emitted('select')).toBeFalsy();
+});
+
+test('should emit cancel event after clicking cancel button', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option' }],
+      cancelText: 'Cancel',
+    },
+  });
+
+  wrapper.find('.van-action-sheet__cancel').trigger('click');
+  expect(wrapper.emitted('cancel').length).toEqual(1);
+});
+
+test('should render subname and match snapshot', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option', subname: 'Subname' }],
+      cancelText: 'Cancel',
+    },
+  });
+
+  expect(wrapper.find('.van-action-sheet__item').html()).toMatchSnapshot();
+});
+
 test('should render content after disabling the lazy-render prop', async () => {
   const wrapper = mount(ActionSheet);
   expect(wrapper.find('.van-action-sheet__content').exists()).toBeFalsy();
