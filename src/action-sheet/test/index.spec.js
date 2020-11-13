@@ -115,3 +115,35 @@ test('should render description slot when match snapshot', () => {
     wrapper.find('.van-action-sheet__description').html()
   ).toMatchSnapshot();
 });
+
+test('should close after clicking option if close-on-click-action prop is true', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      show: true,
+      actions: [{ name: 'Option' }],
+      closeOnClickAction: true,
+    },
+  });
+
+  const option = wrapper.find('.van-action-sheet__item');
+  option.trigger('click');
+
+  expect(wrapper.emitted('update:show').length).toEqual(1);
+  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+});
+
+test('should emit click-overlay event and closed after clicking the overlay', async () => {
+  const onClickOverlay = jest.fn();
+  const wrapper = mount(ActionSheet, {
+    props: {
+      show: true,
+      onClickOverlay,
+    },
+  });
+
+  await later();
+
+  wrapper.find('.van-overlay').trigger('click');
+  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(onClickOverlay).toHaveBeenCalledTimes(1);
+});

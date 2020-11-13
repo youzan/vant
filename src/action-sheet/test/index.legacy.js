@@ -1,4 +1,4 @@
-import { mount, later } from '../../../test';
+import { mount } from '../../../test';
 import ActionSheet from '..';
 
 test('callback events', () => {
@@ -39,62 +39,4 @@ test('callback events', () => {
   expect(onInput).toHaveBeenCalledWith(false);
   expect(onSelect).toHaveBeenCalledWith(actions[0], 0);
   expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('click overlay and close', async () => {
-  const onInput = jest.fn();
-  const onClickOverlay = jest.fn();
-  const div = document.createElement('div');
-
-  mount({
-    template: `
-      <div>
-        <action-sheet
-          :value="true"
-          :teleport="teleport"
-          @input="onInput"
-          @click-overlay="onClickOverlay"
-        />
-      </div>
-    `,
-    components: {
-      ActionSheet,
-    },
-    data() {
-      return {
-        teleport: () => div,
-      };
-    },
-    methods: {
-      onInput,
-      onClickOverlay,
-    },
-  });
-
-  await later();
-
-  div.querySelector('.van-overlay').click();
-  expect(onInput).toHaveBeenCalledWith(false);
-  expect(onClickOverlay).toHaveBeenCalledTimes(1);
-});
-
-test('close-on-click-action prop', () => {
-  const onInput = jest.fn();
-  const wrapper = mount(ActionSheet, {
-    propsData: {
-      value: true,
-      actions: [{ name: 'Option' }],
-      closeOnClickAction: true,
-    },
-    context: {
-      on: {
-        input: onInput,
-      },
-    },
-  });
-
-  const option = wrapper.find('.van-action-sheet__item');
-  option.trigger('click');
-
-  expect(onInput).toHaveBeenCalledWith(false);
 });
