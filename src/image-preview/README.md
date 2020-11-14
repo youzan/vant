@@ -163,10 +163,10 @@ export default {
 
 ### Slots
 
-| Name  | Description                                  |
-| ----- | -------------------------------------------- |
-| index | Custom index                                 |
-| cover | Custom content that covers the image preview |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| index | Custom index | { index: index of current image } |
+| cover | Custom content that covers the image preview | - |
 
 ### onClose Parematers
 
