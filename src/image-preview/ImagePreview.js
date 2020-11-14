@@ -193,7 +193,7 @@ export default createComponent({
           setActive(+startPosition);
           nextTick(() => {
             resize();
-            swipeRef.value.swipeTo(+startPosition, { immediate: true });
+            swipeTo(+startPosition, { immediate: true });
           });
         } else {
           emit('close', {

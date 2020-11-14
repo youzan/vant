@@ -277,30 +277,6 @@ test('set show-index prop to false', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('index slot', () => {
-  const wrapper = mount({
-    template: `
-      <van-image-preview :value="true">
-        <template #index>Custom Index</template>
-      </van-image-preview>
-    `,
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('cover slot', () => {
-  const wrapper = mount({
-    template: `
-      <van-image-preview :value="true">
-        <template #cover>Custom Cover Content</template>
-      </van-image-preview>
-    `,
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
 test('closeOnPopstate', () => {
   const wrapper = mount(ImagePreviewVue, {
     props: {
@@ -322,10 +298,6 @@ test('closeOnPopstate', () => {
   expect(wrapper.emitted('input')[1]).toBeFalsy();
 });
 
-test('ImagePreview.Component', () => {
-  expect(ImagePreview.Component).toEqual(ImagePreviewVue);
-});
-
 test('get container with function call ', async (done) => {
   const element = document.createElement('div');
   document.body.appendChild(element);
@@ -343,50 +315,4 @@ test('get container with function call ', async (done) => {
   expect(wrapperBody.parentNode).toEqual(document.body);
 
   done();
-});
-
-test('get container with component call', () => {
-  const div1 = document.createElement('div');
-  const div2 = document.createElement('div');
-  const wrapper = mount({
-    template: `
-    <div>
-      <van-image-preview :value="true" :teleport="teleport">
-      </van-image-preview>
-    </div>
-    `,
-    data() {
-      return {
-        teleport: () => div1,
-      };
-    },
-  });
-  const imageView = wrapper.find('.van-image-preview').element;
-
-  expect(imageView.parentNode).toEqual(div1);
-  wrapper.vm.teleport = () => div2;
-  expect(imageView.parentNode).toEqual(div2);
-  wrapper.vm.teleport = null;
-  expect(wrapper.element).toEqual(wrapper.element);
-});
-
-test('swipeTo method', async () => {
-  const wrapper = mount({
-    template: `
-    <div>
-      <van-image-preview ref="imagePreview" :value="true" :images="images">
-      </van-image-preview>
-    </div>
-    `,
-    data() {
-      return {
-        images,
-      };
-    },
-  });
-  const { imagePreview } = wrapper.vm.$refs;
-  imagePreview.swipeTo(2);
-
-  await later(100);
-  expect(imagePreview.active).toEqual(2);
 });

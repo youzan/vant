@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render cover slot correctly 1`] = `
+<transition-stub class="van-image-preview__overlay">
+  <div class="van-overlay">
+    <!---->
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--center van-image-preview">
+    <!---->
+    <div class="van-swipe van-image-preview__swipe">
+      <div style="width: 0px; transition-duration: 500ms; transform: translateX(0px);" class="van-swipe__track"></div>
+      <!---->
+    </div>
+    <div class="van-image-preview__index">1 / 0</div>
+    <div class="van-image-preview__cover">Custom Cover</div>
+    <!---->
+  </div>
+</transition-stub>
+`;
+
+exports[`should render index slot correctly 1`] = `<div class="van-image-preview__index">Custom Index</div>`;
+
+exports[`should swipe to currect index after calling the swipeTo method 1`] = `<div class="van-image-preview__index">3 / 3</div>`;
