@@ -140,7 +140,7 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') ||
+            {this.slots('index', { index: this.active }) ||
               `${this.active + 1} / ${this.images.length}`}
           </div>
         );
