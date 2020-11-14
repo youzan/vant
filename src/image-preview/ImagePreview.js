@@ -113,7 +113,7 @@ export default createComponent({
         return (
           <div class={bem('index')}>
             {slots.index
-              ? slots.index()
+              ? slots.index({ index: state.active })
               : `${state.active + 1} / ${props.images.length}`}
           </div>
         );

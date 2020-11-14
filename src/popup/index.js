@@ -45,6 +45,8 @@ export const popupSharedProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
+  // Initial rendering animation
+  transitionAppear: Boolean,
   // whether to show overlay
   overlay: {
     type: Boolean,
@@ -208,13 +210,14 @@ export default createComponent({
     });
 
     const renderTransition = () => {
-      const { position, transition } = props;
+      const { position, transition, transitionAppear } = props;
       const name =
         position === 'center' ? 'van-fade' : `van-popup-slide-${position}`;
 
       return (
         <Transition
           name={transition || name}
+          transitionAppear={transitionAppear}
           onAfterEnter={onOpened}
           onAfterLeave={onClosed}
         >
