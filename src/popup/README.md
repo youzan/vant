@@ -109,7 +109,6 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model (value) | Whether to show popup | _boolean_ | `false` |
-| transition-appear | Initial rendering animation | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | Custom overlay class | _string_ | - |
@@ -124,6 +123,7 @@ export default {
 | close-icon | Close icon name | _string_ | `cross` |
 | close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition-appear `v2.10.14` | Whether to apply transition on initial render | _boolean_ | `false` |
 | get-container | Return the mount node for Popup | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
