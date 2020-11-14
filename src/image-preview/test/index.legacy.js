@@ -56,44 +56,6 @@ test('render image', async () => {
   expect(wrapper.emitted('input')[0][0]).toEqual(false);
 });
 
-test('closeable prop', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    props: {
-      images,
-      value: true,
-      closeable: true,
-    },
-  });
-
-  wrapper.find('.van-image-preview__close-icon').trigger('click');
-  expect(wrapper.emitted('input')[0][0]).toEqual(false);
-});
-
-test('close-icon prop', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    props: {
-      value: true,
-      closeable: true,
-      closeIcon: 'close',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('close-icon-position prop', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    props: {
-      value: true,
-      closeable: true,
-      closeIcon: 'close',
-      closeIconPosition: 'top-left',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
 test('async close prop', async () => {
   const wrapper = mount(ImagePreviewVue, {
     props: {
@@ -213,11 +175,6 @@ test('onScale option', async (done) => {
   restore();
 });
 
-test('register component', () => {
-  Vue.use(ImagePreview);
-  expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
-});
-
 test('zoom in and drag image to move', async () => {
   const restore = mockGetBoundingClientRect({ width: 100, height: 100 });
 
@@ -264,17 +221,6 @@ test('zoom out', async () => {
   expect(onScale).toHaveBeenLastCalledWith({ index: 0, scale: 1 });
 
   restore();
-});
-
-test('set show-index prop to false', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    props: {
-      value: true,
-      showIndex: false,
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('closeOnPopstate', () => {
