@@ -98,14 +98,14 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 类型，可选值为`primary` `success` `danger` `warning` | _string_ | `default` |
-| size | 大小, 可选值为`large` `medium` | _string_ | - |
+| type | 类型，可选值为 `primary` `success` `danger` `warning` | _string_ | `default` |
+| size | 大小, 可选值为 `large` `medium` | _string_ | - |
 | color | 标签颜色 | _string_ | - |
 | show | 是否展示标签 | _boolean_ | `true` |
 | plain | 是否为空心样式 | _boolean_ | `false` |
 | round | 是否为圆角样式 | _boolean_ | `false` |
 | mark | 是否为标记样式 | _boolean_ | `false` |
-| text-color | 文本颜色，优先级高于`color`属性 | _string_ | `white` |
+| text-color | 文本颜色，优先级高于 `color` 属性 | _string_ | `white` |
 | closeable | 是否为可关闭标签 | _boolean_ | `false` |
 
 ### Slots

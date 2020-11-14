@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should hide tag when the show prop is false 1`] = `
+<transition-stub>
+  <!---->
+</transition-stub>
+`;
