@@ -7,12 +7,7 @@ import {
   outputFileSync,
 } from 'fs-extra';
 import merge from 'webpack-merge';
-import {
-  SRC_DIR,
-  getVantConfig,
-  ROOT_WEBPACK_CONFIG_FILE,
-  ROOT_POSTCSS_CONFIG_FILE,
-} from './constant';
+import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
 import { WebpackConfig } from './types';
 
 export const EXT_REGEXP = /\.\w+$/;
@@ -115,14 +110,6 @@ export function getWebpackConfig(defaultConfig: WebpackConfig): object {
   }
 
   return defaultConfig;
-}
-
-export function getPostcssConfig(): object {
-  if (existsSync(ROOT_POSTCSS_CONFIG_FILE)) {
-    return require(ROOT_POSTCSS_CONFIG_FILE);
-  }
-
-  return {};
 }
 
 export type ModuleEnv = 'esmodule' | 'commonjs';
