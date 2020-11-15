@@ -96,6 +96,7 @@ Skeleton.props = {
   title: Boolean,
   round: Boolean,
   avatar: Boolean,
+  avatarSize: [Number, String],
   row: {
     type: [Number, String],
     default: 0,
@@ -107,10 +108,6 @@ Skeleton.props = {
   animate: {
     type: Boolean,
     default: true,
-  },
-  avatarSize: {
-    type: [Number, String],
-    default: '32px',
   },
   avatarShape: {
     type: String,
