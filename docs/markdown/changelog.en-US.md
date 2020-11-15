@@ -10,6 +10,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
+
+`2020-11-15`
+
+**Feature**
+
+- ImagePreview: passing current index to index slot [#7552](https://github.com/youzan/vant/issues/7552)
+- Popup: add transition-appear prop [#7525](https://github.com/youzan/vant/issues/7525)
+- Skeleton: add @skeleton-avatar-size less var [#7556](https://github.com/youzan/vant/issues/7556)
+- Skeleton: add @skeleton-title-width less var [#7557](https://github.com/youzan/vant/issues/7557)
+
+**Bug Fixes**
+
+- Calendar: month-show event triggered multiple times [#7565](https://github.com/youzan/vant/issues/7565)
+- Calendar: should not render all months on mounted [#7564](https://github.com/youzan/vant/issues/7564)
+- IndexBar: incorrect behavior inside popup [#7559](https://github.com/youzan/vant/issues/7559)
+- NavBar: safe-area-inset-top css incorrect [#7534](https://github.com/youzan/vant/issues/7534)
+- Skeleton: avatar-size can be number type [#7555](https://github.com/youzan/vant/issues/7555)
+- Sticky: not work in some cases [#7561](https://github.com/youzan/vant/issues/7561)
+- Swipe: leak when width has decimal [#7562](https://github.com/youzan/vant/issues/7562)
+
 ### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
 
 `2020-11-08`

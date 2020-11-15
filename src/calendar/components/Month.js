@@ -1,7 +1,7 @@
-import { ref, computed, watch, nextTick } from 'vue';
+import { ref, computed } from 'vue';
 
 // Utils
-import { addUnit, unitToPx, setScrollTop, createNamespace } from '../../utils';
+import { addUnit, setScrollTop, createNamespace } from '../../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
 import {
   t,
@@ -13,8 +13,7 @@ import {
 } from '../utils';
 
 // Composition
-import { useRect, useToggle } from '@vant/use';
-import { useRefs } from '../../composition/use-refs';
+import { useToggle } from '@vant/use';
 import { useExpose } from '../../composition/use-expose';
 import { useHeight } from '../../composition/use-height';
 
@@ -37,7 +36,6 @@ export default createComponent({
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
-    realRowHeight: Number,
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
   },
@@ -46,15 +44,12 @@ export default createComponent({
 
   setup(props, { emit }) {
     const [visible, setVisible] = useToggle();
-    const [dayRefs, setDayRefs] = useRefs();
     const daysRef = ref();
     const monthRef = ref();
     const height = useHeight(monthRef);
 
     const title = computed(() => formatMonthTitle(props.date));
-
     const rowHeight = computed(() => addUnit(props.rowHeight));
-
     const offset = computed(() => {
       const realDay = props.date.getDay();
 
@@ -70,18 +65,7 @@ export default createComponent({
 
     const shouldRender = computed(() => visible.value || !props.lazyRender);
 
-    const monthStyle = computed(() => {
-      if (!shouldRender.value) {
-        const rowCount = Math.ceil((totalDay.value + offset.value) / 7);
-        const padding = rowCount * unitToPx(props.realRowHeight);
-        return {
-          paddingBottom: `${padding}px`,
-        };
-      }
-    });
-
     const getDate = () => props.data;
-
     const getTitle = () => title.value;
 
     const scrollIntoView = (body) => {
@@ -190,10 +174,19 @@ export default createComponent({
     };
 
     const renderMark = () => {
-      if (props.showMark) {
+      if (props.showMark && shouldRender.value) {
         return <div class={bem('month-mark')}>{props.date.getMonth() + 1}</div>;
       }
     };
+
+    const placeholders = computed(() => {
+      const rows = [];
+      const count = Math.ceil((totalDay.value + offset.value) / 7);
+      for (let day = 1; day <= count; day++) {
+        rows.push({ type: 'placeholder' });
+      }
+      return rows;
+    });
 
     const days = computed(() => {
       const days = [];
@@ -223,7 +216,6 @@ export default createComponent({
 
     const renderDay = (item, index) => (
       <Day
-        ref={setDayRefs(index)}
         item={item}
         index={index}
         color={props.color}
@@ -236,37 +228,13 @@ export default createComponent({
     );
 
     const renderDays = () => {
-      if (shouldRender.value) {
-        return (
-          <div ref={daysRef} role="grid" class={bem('days')}>
-            {renderMark()}
-            {days.value.map(renderDay)}
-          </div>
-        );
-      }
-
-      return <div ref={daysRef} />;
+      return (
+        <div ref={daysRef} role="grid" class={bem('days')}>
+          {renderMark()}
+          {(shouldRender.value ? days : placeholders).value.map(renderDay)}
+        </div>
+      );
     };
-
-    watch(
-      () => props.realRowHeight,
-      () => {
-        nextTick(() => {
-          height.value = useRect(monthRef).height;
-        });
-      }
-    );
-
-    watch(shouldRender, (value) => {
-      if (value) {
-        nextTick(() => {
-          if (dayRefs.value[0] && !props.realRowHeight) {
-            const { height } = dayRefs.value[0].$el.getBoundingClientRect();
-            emit('update-height', height);
-          }
-        });
-      }
-    });
 
     useExpose({
       getDate,
@@ -277,7 +245,7 @@ export default createComponent({
     });
 
     return () => (
-      <div class={bem('month')} ref={monthRef} style={monthStyle.value}>
+      <div class={bem('month')} ref={monthRef}>
         {renderTitle()}
         {renderDays()}
       </div>

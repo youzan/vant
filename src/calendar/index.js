@@ -174,7 +174,6 @@ export default createComponent({
     const state = reactive({
       subtitle: '',
       currentDate: getInitialDate(),
-      realRowHeight: 0,
     });
 
     const [monthRefs, setMonthRefs] = useRefs();
@@ -244,7 +243,8 @@ export default createComponent({
             visibleRange[0] = i;
           }
 
-          if (!month.visible) {
+          if (!monthRefs.value[i].showed) {
+            monthRefs.value[i].showed = true;
             emit('month-show', {
               date: month.date,
               title: month.title,
@@ -426,10 +426,6 @@ export default createComponent({
       emit('update:show', val);
     };
 
-    const onUpdateHeight = (height) => {
-      state.realRowHeight = height;
-    };
-
     const renderMonth = (date, index) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;
       return (
@@ -437,7 +433,6 @@ export default createComponent({
           ref={setMonthRefs(index)}
           date={date}
           currentDate={state.currentDate}
-          realRowHeight={state.realRowHeight}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={dayOffset.value}
           {...pick(props, [
@@ -453,7 +448,6 @@ export default createComponent({
             'allowSameDay',
           ])}
           onClick={onClickDay}
-          onUpdate-height={onUpdateHeight}
         />
       );
     };
