@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should change avatar shape when using avatar-shape prop 1`] = `<div class="van-skeleton__avatar van-skeleton__avatar--square" style="width: 32px; height: 32px;"></div>`;
+exports[`should change avatar shape when using avatar-shape prop 1`] = `<div class="van-skeleton__avatar van-skeleton__avatar--square"></div>`;
 
 exports[`should change avatar size when using avatar-size prop: 20rem 1`] = `"20rem"`;
 

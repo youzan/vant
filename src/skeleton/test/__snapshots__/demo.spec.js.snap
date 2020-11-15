@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-skeleton van-skeleton--animate">
     <!---->
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title" style="width: 40%;"></h3>
+      <h3 class="van-skeleton__title"></h3>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 60%;"></div>
@@ -14,9 +14,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round" style="width: 32px; height: 32px;"></div>
+    <div class="van-skeleton__avatar van-skeleton__avatar--round"></div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title" style="width: 40%;"></h3>
+      <h3 class="van-skeleton__title"></h3>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 60%;"></div>
@@ -30,9 +30,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round" style="width: 32px; height: 32px;"></div>
+    <div class="van-skeleton__avatar van-skeleton__avatar--round"></div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title" style="width: 40%;"></h3>
+      <h3 class="van-skeleton__title"></h3>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 100%;"></div>
       <div class="van-skeleton__row" style="width: 60%;"></div>
