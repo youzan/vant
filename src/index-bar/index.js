@@ -5,7 +5,6 @@ import {
   isDef,
   isHidden,
   getScrollTop,
-  getElementTop,
   preventDefault,
   createNamespace,
   getRootScrollTop,
@@ -92,18 +91,6 @@ export default createComponent({
       };
     };
 
-    const getAnchorTop = (element, scrollParentRect) => {
-      if (
-        scrollParent.value === window ||
-        scrollParent.value === document.body
-      ) {
-        return getElementTop(element);
-      }
-
-      const rect = useRect(element);
-      return rect.top - scrollParentRect.top + getScrollTop(scrollParent);
-    };
-
     const getActiveAnchor = (scrollTop, rects) => {
       for (let i = children.length - 1; i >= 0; i--) {
         const prevHeight = i > 0 ? rects[i - 1].height : 0;
@@ -126,10 +113,9 @@ export default createComponent({
       const scrollTop = getScrollTop(scrollParent.value);
       const scrollParentRect = getScrollerRect();
 
-      const rects = children.map((item) => ({
-        height: item.height.value,
-        top: getAnchorTop(item.$el, scrollParentRect),
-      }));
+      const rects = children.map((item) =>
+        item.getRect(scrollParent.value, scrollParentRect)
+      );
 
       const active = getActiveAnchor(scrollTop, rects);
 
@@ -137,7 +123,7 @@ export default createComponent({
 
       if (sticky) {
         children.forEach((item, index) => {
-          const { state, height, $el } = item;
+          const { state, $el } = item;
           if (index === active || index === active - 1) {
             const rect = $el.getBoundingClientRect();
             state.left = rect.left;
@@ -155,7 +141,8 @@ export default createComponent({
           } else if (index === active - 1) {
             const activeItemTop = rects[active].top - scrollTop;
             state.active = activeItemTop > 0;
-            state.top = activeItemTop + scrollParentRect.top - height.value;
+            state.top =
+              activeItemTop + scrollParentRect.top - rects[index].height;
           } else {
             state.active = false;
           }

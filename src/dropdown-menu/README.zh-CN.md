@@ -165,10 +165,10 @@ export default {
 
 ### DropdownItem Slots
 
-| 名称    | 说明                       |
-| ------- | -------------------------- |
-| default | 菜单内容                   |
-| title   | 自定义标题，不支持动态渲染 |
+| 名称    | 说明             |
+| ------- | ---------------- |
+| default | 菜单内容         |
+| title   | 自定义菜单项标题 |
 
 ### DropdownItem 方法
 

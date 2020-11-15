@@ -10,6 +10,8 @@ export default createComponent({
     title: Boolean,
     round: Boolean,
     avatar: Boolean,
+    avatarSize: [Number, String],
+    titleWidth: [Number, String],
     row: {
       type: [Number, String],
       default: 0,
@@ -22,17 +24,9 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    avatarSize: {
-      type: String,
-      default: '32px',
-    },
     avatarShape: {
       type: String as PropType<'square' | 'round'>,
       default: 'round',
-    },
-    titleWidth: {
-      type: [Number, String],
-      default: '40%',
     },
     rowWidth: {
       type: [Number, String, Array] as PropType<

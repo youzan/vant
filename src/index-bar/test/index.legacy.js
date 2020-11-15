@@ -1,13 +1,5 @@
 import { mount, trigger, triggerDrag, mockScrollIntoView } from '../../../test';
 
-function mockOffsetHeight(offsetHeight) {
-  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
-    get() {
-      return offsetHeight;
-    },
-  });
-}
-
 test('should allow to custom anchor text', () => {
   const wrapper = mount({
     template: `
@@ -97,10 +89,9 @@ test('should update active anchor after page scroll', () => {
     const { index } = this.dataset;
     return {
       top: index ? index * 10 : 0,
+      height: 10,
     };
   };
-
-  mockOffsetHeight(10);
 
   const wrapper = mount({
     template: `
@@ -138,10 +129,9 @@ test('should emit change event when active index changed', () => {
     const { index } = this.dataset;
     return {
       top: index ? index * 10 : 0,
+      height: 10,
     };
   };
-
-  mockOffsetHeight(10);
 
   const onChange = jest.fn();
 
