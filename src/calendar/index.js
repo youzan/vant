@@ -112,7 +112,6 @@ export default createComponent({
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
-      realRowHeight: 0,
     };
   },
 
@@ -404,10 +403,6 @@ export default createComponent({
       this.$emit('confirm', copyDates(this.currentDate));
     },
 
-    onUpdateHeight(height) {
-      this.realRowHeight = height;
-    },
-
     genMonth(date, index) {
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
@@ -426,11 +421,9 @@ export default createComponent({
           currentDate={this.currentDate}
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
-          realRowHeight={this.realRowHeight}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={this.dayOffset}
           onClick={this.onClickDay}
-          onUpdate-height={this.onUpdateHeight}
         />
       );
     },
