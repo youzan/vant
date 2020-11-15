@@ -278,7 +278,8 @@ export default createComponent({
             visibleRange[0] = i;
           }
 
-          if (!months[i].visible) {
+          if (!months[i].showed) {
+            months[i].showed = true;
             this.$emit('month-show', {
               date: months[i].date,
               title: months[i].title,
