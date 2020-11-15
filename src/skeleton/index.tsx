@@ -13,7 +13,7 @@ export type SkeletonProps = {
   avatar?: boolean;
   loading: boolean;
   animate: boolean;
-  avatarSize: string;
+  avatarSize: number | string;
   avatarShape: 'square' | 'round';
   titleWidth: number | string;
   rowWidth: number | string | (number | string)[];
@@ -109,7 +109,7 @@ Skeleton.props = {
     default: true,
   },
   avatarSize: {
-    type: String,
+    type: [Number, String],
     default: '32px',
   },
   avatarShape: {
