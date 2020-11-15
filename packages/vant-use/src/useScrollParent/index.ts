@@ -6,32 +6,22 @@ const overflowScrollReg = /scroll|auto/i;
 
 function isElement(node: Element) {
   const ELEMENT_NODE_TYPE = 1;
-  return node.tagName !== 'HTML' && node.nodeType === ELEMENT_NODE_TYPE;
+  return (
+    node.tagName !== 'HTML' &&
+    node.tagName !== 'BODY' &&
+    node.nodeType === ELEMENT_NODE_TYPE
+  );
 }
 
-// http://w3help.org/zh-cn/causes/SD9013
-// http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
+// https://github.com/youzan/vant/issues/3823
 function getScrollParent(el: Element, root: ScrollElement = window) {
   let node = el;
 
   while (node && node !== root && isElement(node)) {
     const { overflowY } = window.getComputedStyle(node);
-
     if (overflowScrollReg.test(overflowY)) {
-      if (node.tagName !== 'BODY') {
-        return node;
-      }
-
-      // see: https://github.com/youzan/vant/issues/3823
-      const { overflowY: htmlOverflowY } = window.getComputedStyle(
-        node.parentNode as Element
-      );
-
-      if (overflowScrollReg.test(htmlOverflowY)) {
-        return node;
-      }
+      return node;
     }
-
     node = node.parentNode as Element;
   }
 
