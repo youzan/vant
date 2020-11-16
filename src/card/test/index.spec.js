@@ -1,48 +1,29 @@
 import Card from '..';
 import { mount } from '@vue/test-utils';
 
-test('click event', () => {
+test('should emit click event after clicked', () => {
   const onClick = jest.fn();
   const wrapper = mount(Card, {
-    context: {
-      on: {
-        click: onClick,
-      },
+    props: {
+      onClick,
     },
   });
-
   wrapper.trigger('click');
-
-  expect(onClick).toHaveBeenCalledWith(
-    expect.objectContaining({
-      isTrusted: expect.any(Boolean),
-    })
-  );
+  expect(onClick).toHaveBeenCalledTimes(1);
 });
 
-test('click-thumb event', () => {
-  const onClickThumb = jest.fn();
+test('should emit click-thumb event after clicking thumb', () => {
   const wrapper = mount(Card, {
     props: {
       thumb: 'xx',
     },
-    context: {
-      on: {
-        'click-thumb': onClickThumb,
-      },
-    },
   });
 
   wrapper.find('.van-card__thumb').trigger('click');
-
-  expect(onClickThumb).toHaveBeenCalledWith(
-    expect.objectContaining({
-      isTrusted: expect.any(Boolean),
-    })
-  );
+  expect(wrapper.emitted('click-thumb').length).toEqual(1);
 });
 
-test('render price & num slot', () => {
+test('should render price and num slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       num: () => 'Custom Num',
@@ -53,7 +34,7 @@ test('render price & num slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render origin-price slot', () => {
+test('should render origin-price slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       'origin-price': () => 'Custom Origin Price',
@@ -63,7 +44,7 @@ test('render origin-price slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render bottom slot', () => {
+test('should render bottom slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       bottom: () => 'Custom Bottom',
@@ -73,7 +54,7 @@ test('render bottom slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render thumb & tag slot', () => {
+test('render thumb and tag slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       tag: () => 'Custom Tag',
@@ -84,7 +65,7 @@ test('render thumb & tag slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render title & desc slot', () => {
+test('should render title and desc slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       title: () => 'Custom Title',
@@ -95,7 +76,7 @@ test('render title & desc slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render price & price-top slot', () => {
+test('should render price and price-top slot correctly', () => {
   const wrapper = mount(Card, {
     slots: {
       price: () => 'Custom Price',
