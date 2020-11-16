@@ -6,7 +6,7 @@ import { DROPDOWN_KEY } from '../dropdown-menu';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Cell from '../cell';

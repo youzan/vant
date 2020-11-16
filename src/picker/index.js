@@ -7,7 +7,7 @@ import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
 // Composition
 import { useChildren } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Loading from '../loading';

@@ -11,8 +11,8 @@ import {
 
 // Composition
 import { useRect } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
-import { useLinkField } from '../composition/use-link-field';
+import { useTouch } from '../composables/use-touch';
+import { useLinkField } from '../composables/use-link-field';
 
 const [createComponent, bem] = createNamespace('slider');
 

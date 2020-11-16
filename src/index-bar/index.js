@@ -18,7 +18,7 @@ import {
   useScrollParent,
   useEventListener,
 } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
+import { useTouch } from '../composables/use-touch';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 

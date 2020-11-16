@@ -19,8 +19,8 @@ import {
 
 // Composition
 import { raf, useRect, onMountedOrActivated } from '@vant/use';
-import { useRefs } from '../composition/use-refs';
-import { useExpose } from '../composition/use-expose';
+import { useRefs } from '../composables/use-refs';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Popup from '../popup';

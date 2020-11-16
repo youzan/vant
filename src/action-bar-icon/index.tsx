@@ -3,7 +3,7 @@ import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useRoute, routeProps } from '../composition/use-route';
+import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import Icon from '../icon';

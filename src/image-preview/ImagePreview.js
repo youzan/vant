@@ -6,7 +6,7 @@ import { callInterceptor } from '../utils/interceptor';
 
 // Composition
 import { useWindowSize } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Icon from '../icon';

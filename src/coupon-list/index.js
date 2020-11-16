@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 
 // Composition
 import { useWindowSize } from '@vant/use';
-import { useRefs } from '../composition/use-refs';
+import { useRefs } from '../composables/use-refs';
 
 // Components
 import Tab from '../tab';

@@ -4,7 +4,7 @@ import { PropType } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Composition
-import { useRoute, routeProps } from '../composition/use-route';
+import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import Icon from '../icon';

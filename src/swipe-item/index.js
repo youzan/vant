@@ -2,7 +2,7 @@ import { computed, nextTick, onMounted, reactive } from 'vue';
 import { SWIPE_KEY } from '../swipe';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe-item');
 

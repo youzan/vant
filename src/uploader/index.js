@@ -12,8 +12,8 @@ import {
 } from './utils';
 
 // Composition
-import { useExpose } from '../composition/use-expose';
-import { useLinkField } from '../composition/use-link-field';
+import { useExpose } from '../composables/use-expose';
+import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import Icon from '../icon';

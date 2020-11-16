@@ -6,7 +6,7 @@ import { createNamespace, isObject, isDef } from '../utils';
 
 // Composition
 import { useParent } from '@vant/use';
-import { routeProps, useRoute } from '../composition/use-route';
+import { routeProps, useRoute } from '../composables/use-route';
 
 // Components
 import Icon from '../icon';

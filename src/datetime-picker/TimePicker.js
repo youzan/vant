@@ -5,7 +5,7 @@ import { pick, range, padZero, createNamespace } from '../utils';
 import { times, sharedProps } from './utils';
 
 // Composition
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Picker from '../picker';

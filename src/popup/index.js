@@ -14,8 +14,8 @@ import { createNamespace, isDef } from '../utils';
 
 // Composition
 import { useEventListener } from '@vant/use';
-import { useLockScroll } from '../composition/use-lock-scroll';
-import { useLazyRender } from '../composition/use-lazy-render';
+import { useLockScroll } from '../composables/use-lock-scroll';
+import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
 import Icon from '../icon';

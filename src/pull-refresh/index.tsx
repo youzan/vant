@@ -5,7 +5,7 @@ import { preventDefault, getScrollTop, createNamespace } from '../utils';
 
 // Composition
 import { useScrollParent } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
+import { useTouch } from '../composables/use-touch';
 
 // Components
 import Loading from '../loading';

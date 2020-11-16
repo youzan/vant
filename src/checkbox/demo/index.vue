@@ -105,7 +105,7 @@
 
 <script>
 import { ref } from 'vue';
-import { useRefs } from '../../composition/use-refs';
+import { useRefs } from '../../composables/use-refs';
 
 export default {
   i18n: {

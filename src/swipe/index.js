@@ -19,8 +19,8 @@ import {
   usePageVisibility,
   onMountedOrActivated,
 } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
-import { useExpose } from '../composition/use-expose';
+import { useTouch } from '../composables/use-touch';
+import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe');
 

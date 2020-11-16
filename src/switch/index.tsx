@@ -1,5 +1,5 @@
 import { createNamespace, addUnit } from '../utils';
-import { useLinkField } from '../composition/use-link-field';
+import { useLinkField } from '../composables/use-link-field';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('switch');

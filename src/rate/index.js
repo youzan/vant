@@ -4,9 +4,9 @@ import { computed } from 'vue';
 import { addUnit, createNamespace, preventDefault } from '../utils';
 
 // Composition
-import { useRefs } from '../composition/use-refs';
-import { useTouch } from '../composition/use-touch';
-import { useLinkField } from '../composition/use-link-field';
+import { useRefs } from '../composables/use-refs';
+import { useTouch } from '../composables/use-touch';
+import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import Icon from '../icon';

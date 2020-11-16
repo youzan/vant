@@ -1,6 +1,6 @@
 import { ref, watch, computed, reactive, nextTick, onMounted } from 'vue';
 import { createNamespace, pick } from '../utils';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
 

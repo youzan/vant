@@ -25,7 +25,7 @@ import { runSyncRule } from './utils';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Icon from '../icon';
