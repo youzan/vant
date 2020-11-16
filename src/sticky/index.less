@@ -1,10 +1,17 @@
 @import '../style/var';
 
 .van-sticky {
-  &--fixed {
+  &--fixedTop {
     position: fixed;
     top: 0;
     right: 0;
+    left: 0;
+    z-index: @sticky-z-index;
+  }
+  &--fixedBottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
     left: 0;
     z-index: @sticky-z-index;
   }

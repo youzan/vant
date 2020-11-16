@@ -21,6 +21,20 @@ export function setScrollTop(el: ScrollElement, value: number) {
   }
 }
 
+export function getRootClientHeight(): number {
+  return document.documentElement.clientHeight || document.body.clientHeight;
+}
+
+export function getRootScrollHeight(): number {
+  return document.documentElement.scrollHeight || document.body.scrollHeight;
+}
+
+export function getScrollBottom(el: ScrollElement): number {
+  const bottom =
+    getRootScrollHeight() - getRootClientHeight() - getScrollTop(el);
+  return Math.max(bottom, 0);
+}
+
 export function getRootScrollTop(): number {
   return (
     window.pageYOffset ||
@@ -43,6 +57,17 @@ export function getElementTop(el: ScrollElement, scroller?: HTMLElement) {
 
   const scrollTop = scroller ? getScrollTop(scroller) : getRootScrollTop();
   return el.getBoundingClientRect().top + scrollTop;
+}
+
+export function getElementBottom(el: ScrollElement) {
+  if (isWindow(el)) {
+    return 0;
+  }
+  return (
+    getRootScrollHeight() -
+    el.getBoundingClientRect().bottom -
+    getScrollTop(window)
+  );
 }
 
 export function getVisibleHeight(el: ScrollElement) {
