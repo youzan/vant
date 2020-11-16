@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gutter prop 1`] = `
+<div class="van-row">
+  <div class="van-col van-col--24">24</div>
+  <div class="van-col van-col--12" style="padding-right: 12px;">12</div>
+  <div class="van-col van-col--12" style="padding-left: 12px;">12</div>
+  <div class="van-col van-col--8" style="padding-right: 16px;">8</div>
+  <div class="van-col van-col--8" style="padding-left: 8px; padding-right: 8px;">8</div>
+  <div class="van-col van-col--8" style="padding-left: 16px;">8</div>
+  <div class="van-col van-col--6" style="padding-right: 18px;">6</div>
+  <div class="van-col van-col--6" style="padding-left: 6px; padding-right: 12px;">6</div>
+  <div class="van-col van-col--6" style="padding-left: 12px; padding-right: 6px;">6</div>
+  <div class="van-col van-col--6" style="padding-left: 18px;">6</div>
+  <div class="van-col van-col--7" style="padding-right: 18px;">7</div>
+  <div class="van-col van-col--6" style="padding-left: 6px; padding-right: 12px;">6</div>
+  <div class="van-col van-col--5" style="padding-left: 12px; padding-right: 6px;">5</div>
+  <div class="van-col van-col--4" style="padding-left: 18px;">4</div>
+  <div class="van-col van-col--3" style="padding-right: 12px;">3</div>
+  <div class="van-col van-col--2" style="padding-left: 12px;">2</div>
+</div>
+`;

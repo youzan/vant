@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-row">
+      <div class="van-col van-col--8">span: 8</div>
+      <div class="van-col van-col--8">span: 8</div>
+      <div class="van-col van-col--8">span: 8</div>
+    </div>
+    <div class="van-row">
+      <div class="van-col van-col--4">span: 4</div>
+      <div class="van-col van-col--10 van-col--offset-4">
+        offset: 4, span: 10
+      </div>
+    </div>
+    <div class="van-row">
+      <div class="van-col van-col--12 van-col--offset-12">
+        offset: 12, span: 12
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row">
+      <div class="van-col van-col--8" style="padding-right: 13.333333333333334px;">span: 8</div>
+      <div class="van-col van-col--8" style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;">span: 8</div>
+      <div class="van-col van-col--8" style="padding-left: 13.333333333333332px;">span: 8</div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row van-row--flex">
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+    </div>
+    <div class="van-row van-row--flex van-row--justify-center">
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+    </div>
+    <div class="van-row van-row--flex van-row--justify-end">
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+    </div>
+    <div class="van-row van-row--flex van-row--justify-space-between">
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+    </div>
+    <div class="van-row van-row--flex van-row--justify-space-around">
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+      <div class="van-col van-col--6">span: 6</div>
+    </div>
+  </div>
+</div>
+`;

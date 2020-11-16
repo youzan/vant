@@ -1,0 +1,61 @@
+@import '../style/var';
+@import '../style/mixins/hairline';
+
+.van-popover {
+  position: absolute;
+  border-radius: @border-radius-lg;
+  transform: none;
+  transition: all 0.3s;
+
+  &__action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 44px;
+    font-size: @font-size-md;
+
+    &::after {
+      .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  &--light {
+    color: @text-color;
+    background-color: @white;
+    box-shadow: 0 2px 12px rgba(50, 50, 51, 0.12);
+
+    .van-popover__action {
+      &:active {
+        background-color: @active-color;
+      }
+    }
+  }
+
+  &--dark {
+    color: @white;
+    background-color: @gray-8;
+    opacity: 0.9;
+
+    .van-popover__action {
+      &::after {
+        border-color: @gray-7;
+      }
+
+      &:active {
+        opacity: @active-opacity;
+      }
+    }
+  }
+
+  &-zoom-enter,
+  &-zoom-leave-active {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
