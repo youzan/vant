@@ -4,9 +4,9 @@
       <van-popover
         v-model="show.basic"
         :actions="t('actions')"
-        placement="bottom-left"
+        placement="bottom"
       >
-        <van-button @click="show.basic = true">
+        <van-button type="primary" @click="show.basic = true">
           {{ t('showPopover') }}
         </van-button>
       </van-popover>
@@ -17,9 +17,9 @@
         v-model="show.lightTheme"
         theme="light"
         :actions="t('actions')"
-        placement="bottom-left"
+        placement="bottom"
       >
-        <van-button @click="show.lightTheme = true">
+        <van-button type="primary" @click="show.lightTheme = true">
           {{ t('lightTheme') }}
         </van-button>
       </van-popover>
@@ -57,4 +57,10 @@ export default {
 
 <style lang="less">
 @import '../../style/var';
+
+.demo-popover {
+  .van-popover__wrapper {
+    margin-left: @padding-md;
+  }
+}
 </style>
