@@ -33,4 +33,37 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
 </div>
+<div style="width: 100vw; height: 100vh;"></div>
+<div>
+  <div>
+    <div class="van-sticky"><button type="button" class="van-button van-button--primary van-button--normal" style="margin-left: 15px;">
+        <div class="van-button__content">
+          <!----><span class="van-button__text">基础用法</span>
+          <!---->
+        </div>
+      </button></div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="van-sticky"><button type="button" class="van-button van-button--primary van-button--normal" style="margin-left: 115px;">
+        <div class="van-button__content">
+          <!----><span class="van-button__text">吸底距离</span>
+          <!---->
+        </div>
+      </button></div>
+  </div>
+</div>
+<div>
+  <div style="height: 150px; background-color: rgb(255, 255, 255);">
+    <div>
+      <div class="van-sticky"><button type="button" class="van-button van-button--warning van-button--normal" style="margin-left: 215px;">
+          <div class="van-button__content">
+            <!----><span class="van-button__text">指定容器</span>
+            <!---->
+          </div>
+        </button></div>
+    </div>
+  </div>
+</div>
 `;
