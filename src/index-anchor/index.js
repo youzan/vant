@@ -8,8 +8,8 @@ import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 
 // Composition
 import { useRect, useParent } from '@vant/use';
-import { useHeight } from '../composition/use-height';
-import { useExpose } from '../composition/use-expose';
+import { useHeight } from '../composables/use-height';
+import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('index-anchor');
 

@@ -13,7 +13,7 @@ import {
 
 // Composition
 import { useScrollParent, useEventListener } from '@vant/use';
-import { useVisibilityChange } from '../composition/use-visibility-change';
+import { useVisibilityChange } from '../composables/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
 

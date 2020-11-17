@@ -5,7 +5,7 @@ import { isHidden, createNamespace } from '../utils';
 
 // Composition
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Loading from '../loading';

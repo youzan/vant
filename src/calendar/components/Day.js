@@ -22,6 +22,11 @@ export default createComponent({
         height: rowHeight,
       };
 
+      if (item.type === 'placeholder') {
+        style.width = '100%';
+        return style;
+      }
+
       if (index === 0) {
         style.marginLeft = `${(100 * offset) / 7}%`;
       }

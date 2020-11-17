@@ -1,5 +1,5 @@
 import { createApp, reactive, Component, nextTick } from 'vue';
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 export function usePopupState() {
   const state = reactive({

@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-beta.8](https://github.com/youzan/vant/compare/v2.10.14...v3.0.0-beta.8)
+
+`2020-11-15`
+
+**Bug Fixes**
+
+- ActionSheet: 修复选项禁用或加载时仍能点击的问题 [996598](https://github.com/youzan/vant/commit/996598686955b90bb5cf7589b5ca1589e17e2016)
+- ActionSheet: 修复 callback 选项不生效的问题 [27b761](https://github.com/youzan/vant/commit/27b761f534186a6bfa2e8e54cc78ccb51ec48e25)
+- Calendar: 修复 default-date 为 null 时渲染失败的问题 [#7519](https://github.com/youzan/vant/issues/7519)
+- DatetimePicker: 修复 DOM 上渲染多余属性的问题 [ed332d](https://github.com/youzan/vant/commit/ed332daf319e2005995f279026a57d4f30a339f6)
+- NoticeBar: 修复初始化逻辑执行多次的问题 [0712d9](https://github.com/youzan/vant/commit/0712d920634e7b70b77f49c71337172bf3ece470)
+- Swipe: 修复在 lazy-render 模式下渲染失败的问题 [e06ba4](https://github.com/youzan/vant/commit/e06ba480a9ec02af8659616ff6ceb5155defddad)
+- Swipe: 修复初始化逻辑执行多次的问题 [c94173](https://github.com/youzan/vant/commit/c9417341e0adb681db6108cf1383bab77ab90da9)
+- Tabs: 修复初始化逻辑执行多次的问题 [599e81](https://github.com/youzan/vant/commit/599e817cd4f4239b4a93c75f34118731d47891b5)
+- 包含 `v2.10.14` 版本的所有改动和修复
+
 ### [v3.0.0-beta.7](https://github.com/youzan/vant/compare/v2.10.13...v3.0.0-beta.7)
 
 `2020-11-08`
@@ -26,7 +42,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - DropdownMenu: 修复无法禁用 closeOnClickOutside 属性的问题 [#7473](https://github.com/youzan/vant/issues/7473)
 - Uploader: 修复在 before-read 返回 true 无效的问题 [#7493](https://github.com/youzan/vant/issues/7493)
 - Uploader: 修复在 delete 事件中无法获取 index 的问题 [#7481](https://github.com/youzan/vant/issues/7481)
-- 包含 `v2.10.13` 版本的所有改动
+- 包含 `v2.10.13` 版本的所有改动和修复
 
 ### [v3.0.0-beta.6](https://github.com/youzan/vant/compare/v2.10.12...v3.0.0-beta.6)
 
@@ -38,7 +54,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Swipe: 修复开启 lazy-render 时子节点被重复挂载的问题 [#7466](https://github.com/youzan/vant/issues/7466)
 - Tabs: 修复初始动画错误的问题 [49e877](https://github.com/youzan/vant/commit/49e87756c70b33e1a56620ebee3c0aa53fb9fc86)
 - ActionBar: 修复类型定义不存在的问题 [#7440](https://github.com/youzan/vant/issues/7440) [#7442](https://github.com/youzan/vant/issues/7442)
-- 包含 `v2.10.12` 版本的所有改动
+- 包含 `v2.10.12` 版本的所有改动和修复
 
 ### [v3.0.0-beta.5](https://github.com/youzan/vant/compare/v2.10.11...v3.0.0-beta.5)
 
@@ -49,7 +65,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Swipe: 修复动态插入轮播时无法滚动的问题 [#7366](https://github.com/youzan/vant/issues/7366)
 - Toast: 修复 forbidClick 属性不生效的问题 [#7396](https://github.com/youzan/vant/issues/7396)
 - Toast: 修复 duration 变化未生效的问题 [#7394](https://github.com/youzan/vant/issues/7394)
-- 包含 `v2.10.11` 版本的所有改动
+- 包含 `v2.10.11` 版本的所有改动和修复
 
 ### [v3.0.0-beta.4](https://github.com/youzan/vant/compare/v2.10.10...v3.0.0-beta.4)
 
@@ -70,7 +86,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Image: 修复图片加载错误时仍会渲染图片节点的问题 [59fb1d](https://github.com/youzan/vant/commit/59fb1d4dfcdc99773642a63c62e6b08baa3fac30)
 - Pagination: 修复 change 事件触发时机错误的问题 [346035](https://github.com/youzan/vant/commit/3460351ce396bb418408ddbfad462ddac8ef9477)
 - Toast: 修复展示时会锁定滚动的问题 [a622ca](https://github.com/youzan/vant/commit/a622caa649baedac7cfe9614ded88e7ec1cd18e1)
-- 包含 `v2.10.10` 版本的所有改动
+- 包含 `v2.10.10` 版本的所有改动和修复
 
 ### [v3.0.0-beta.3](https://github.com/youzan/vant/compare/v2.10.9...v3.0.0-beta.3)
 
@@ -84,7 +100,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 新增 Badge 徽标组件 [#6573](https://github.com/youzan/vant/issues/6573)
 - Tab: 增加滑动切换动画 [#1174](https://github.com/youzan/vant/issues/1174)
-- 包含 `v2.10.9` 版本的所有改动
+- 包含 `v2.10.9` 版本的所有改动和修复
 
 ### [v3.0.0-beta.2](https://github.com/youzan/vant/compare/v3.0.0-beta.1...v3.0.0-beta.2)
 
@@ -125,7 +141,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - Picker: 修复 setIndex 方法无效的问题 [d2a542](https://github.com/youzan/vant/commit/d2a54279766acca3981403c4fb9eb34d3d586643)
 - Dialog: 修复最小高度错误的问题 [bf1f0f](https://github.com/youzan/vant/commit/bf1f0f57eb16e2308b388c4e2ccab46c65f76196)
-- 包含 `v2.10.8` 版本的所有改动
+- 包含 `v2.10.8` 版本的所有改动和修复
 
 ### [v3.0.0-beta.0](https://github.com/youzan/vant/compare/v2.10.7...v3.0.0-beta.0)
 
@@ -151,7 +167,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - AddressEdit: 修复 emits 未声明导致 warning 的问题 [1e6a12](https://github.com/youzan/vant/commit/1e6a120b2e48f7262062729260d362c96355eca6)
 - AddressEdit: 修复点击省市区弹窗的蒙层时无法关闭的问题 [02e89a](https://github.com/youzan/vant/commit/02e89a73c57af1e59429ab320c2a13395abc0520)
 - Field: 修复在 iOS 上中文输入过程中触发 input 事件的问题 [#7035](https://github.com/youzan/vant/issues/7035)
-- 包含 `v2.10.7` 版本的所有改动
+- 包含 `v2.10.7` 版本的所有改动和修复
 
 ### [v3.0.0-alpha.5](https://github.com/youzan/vant/compare/v2.10.6...v3.0.0-alpha.5)
 

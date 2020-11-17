@@ -5,8 +5,8 @@ import { createNamespace } from '../utils';
 
 // Composition
 import { raf, doubleRaf, useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
-import { useLazyRender } from '../composition/use-lazy-render';
+import { useExpose } from '../composables/use-expose';
+import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
 import Cell, { cellProps } from '../cell';

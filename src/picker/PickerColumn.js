@@ -7,8 +7,8 @@ import { range, isObject, createNamespace, preventDefault } from '../utils';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useTouch } from '../composition/use-touch';
-import { useExpose } from '../composition/use-expose';
+import { useTouch } from '../composables/use-touch';
+import { useExpose } from '../composables/use-expose';
 
 const DEFAULT_DURATION = 200;
 

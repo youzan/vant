@@ -1,6 +1,6 @@
 import { PropType, Transition, CSSProperties } from 'vue';
 import { noop, isDef, preventDefault, createNamespace } from '../utils';
-import { useLazyRender } from '../composition/use-lazy-render';
+import { useLazyRender } from '../composables/use-lazy-render';
 
 const [createComponent, bem] = createNamespace('overlay');
 

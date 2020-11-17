@@ -4,8 +4,8 @@ import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useExpose } from '../composition/use-expose';
-import { useRoute, routeProps } from '../composition/use-route';
+import { useExpose } from '../composables/use-expose';
+import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import Button from '../button';

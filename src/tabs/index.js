@@ -24,9 +24,9 @@ import {
   useEventListener,
   onMountedOrActivated,
 } from '@vant/use';
-import { route } from '../composition/use-route';
-import { useRefs } from '../composition/use-refs';
-import { useExpose } from '../composition/use-expose';
+import { route } from '../composables/use-route';
+import { useRefs } from '../composables/use-refs';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Sticky from '../sticky';

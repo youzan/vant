@@ -10,6 +10,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
+
+`2020-11-15`
+
+**Feature**
+
+- ImagePreview: index 插槽新增 index 参数 [#7552](https://github.com/youzan/vant/issues/7552)
+- Popup: 新增 transition-appear 属性 [#7525](https://github.com/youzan/vant/issues/7525)
+- Skeleton: 新增 @skeleton-avatar-size less 变量 [#7556](https://github.com/youzan/vant/issues/7556)
+- Skeleton: 新增 @skeleton-title-width less 变量 [#7557](https://github.com/youzan/vant/issues/7557)
+
+**Bug Fixes**
+
+- Calendar: 修复 month-show 事件触发时机不正确的问题 [#7565](https://github.com/youzan/vant/issues/7565)
+- Calendar: 修复初始化时 lazy-render 不生效的问题 [#7564](https://github.com/youzan/vant/issues/7564)
+- IndexBar: 修复在 Popup 内使用时锚点无法吸顶的问题 [#7559](https://github.com/youzan/vant/issues/7559)
+- NavBar: 修复 safe-area-inset-top 属性未能正确生效的问题 [#7534](https://github.com/youzan/vant/issues/7534)
+- Skeleton: 修复 avatar-size 属性传入 number 类型时报错的问题 [#7555](https://github.com/youzan/vant/issues/7555)
+- Sticky: 修复某些情况下无法正确吸顶的问题 [#7561](https://github.com/youzan/vant/issues/7561)
+- Swipe: 修复宽度为小数时漏边的问题 [#7562](https://github.com/youzan/vant/issues/7562)
+
 ### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
 
 `2020-11-08`

@@ -4,7 +4,7 @@ import { TABS_KEY } from '../tabs';
 
 // Composition
 import { useParent } from '@vant/use';
-import { routeProps } from '../composition/use-route';
+import { routeProps } from '../composables/use-route';
 
 // Components
 import SwipeItem from '../swipe-item';

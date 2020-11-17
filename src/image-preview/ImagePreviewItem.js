@@ -5,7 +5,7 @@ import { bem } from './shared';
 import { range, preventDefault } from '../utils';
 
 // Composition
-import { useTouch } from '../composition/use-touch';
+import { useTouch } from '../composables/use-touch';
 
 // Component
 import Image from '../image';

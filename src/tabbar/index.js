@@ -7,7 +7,7 @@ import { callInterceptor } from '../utils/interceptor';
 
 // Composition
 import { useChildren } from '@vant/use';
-import { usePlaceholder } from '../composition/use-placeholder';
+import { usePlaceholder } from '../composables/use-placeholder';
 
 const [createComponent, bem] = createNamespace('tabbar');
 

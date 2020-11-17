@@ -5,7 +5,7 @@ import { createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
 // Composition
-import { useExpose } from '../composition/use-expose';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Area from '../area';

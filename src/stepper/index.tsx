@@ -13,7 +13,7 @@ import {
 } from '../utils';
 
 // Composition
-import { useLinkField } from '../composition/use-link-field';
+import { useLinkField } from '../composables/use-link-field';
 
 const [createComponent, bem] = createNamespace('stepper');
 

@@ -3,7 +3,7 @@ import { PropType, CSSProperties } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_SURROUND, WHITE } from '../utils/constant';
-import { useRoute, routeProps } from '../composition/use-route';
+import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import Icon from '../icon';

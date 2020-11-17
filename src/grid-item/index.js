@@ -7,7 +7,7 @@ import { GRID_KEY } from '../grid';
 
 // Composition
 import { useParent } from '@vant/use';
-import { useRoute, routeProps } from '../composition/use-route';
+import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import Icon from '../icon';

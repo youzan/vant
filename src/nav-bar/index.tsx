@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composition
-import { usePlaceholder } from '../composition/use-placeholder';
+import { usePlaceholder } from '../composables/use-placeholder';
 
 // Components
 import Icon from '../icon';

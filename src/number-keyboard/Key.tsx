@@ -1,6 +1,6 @@
 import { ref, PropType } from 'vue';
 import { createNamespace } from '../utils';
-import { useTouch } from '../composition/use-touch';
+import { useTouch } from '../composables/use-touch';
 import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('key');
