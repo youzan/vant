@@ -17,7 +17,7 @@
         v-model="show.lightTheme"
         theme="light"
         :actions="t('actions')"
-        placement="bottom"
+        placement="right-end"
       >
         <van-button type="primary" @click="show.lightTheme = true">
           {{ t('lightTheme') }}

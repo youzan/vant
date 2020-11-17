@@ -26,7 +26,7 @@ export default createComponent({
     closeOnClickAction: Boolean,
     offset: {
       type: Array,
-      default: [0, 0],
+      default: () => [0, 8],
     },
     theme: {
       type: String,
@@ -113,7 +113,7 @@ export default createComponent({
           ref="popover"
           value={this.value}
           style={this.location}
-          class={bem([this.theme])}
+          class={bem([this.theme, `placement-${this.placement}`])}
           overlay={this.overlay}
           position=""
           transition="van-popover-zoom"
@@ -121,6 +121,7 @@ export default createComponent({
           getContainer={this.getContainer}
           onInput={this.onToggle}
         >
+          <div class={bem('arrow')} />
           {this.actions.map(this.renderAction)}
         </Popup>
         {this.slots('default')}
