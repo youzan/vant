@@ -4,8 +4,11 @@
 .van-popover {
   position: absolute;
   border-radius: @border-radius-lg;
-  transform: none;
-  transition: all 0.3s;
+  transition-duration: 0s;
+
+  &__wrapper {
+    display: inline-block;
+  }
 
   &__action {
     position: relative;
@@ -53,9 +56,10 @@
     }
   }
 
-  &-zoom-enter,
-  &-zoom-leave-active {
-    transform: scale(0.8);
-    opacity: 0;
-  }
+  // &-zoom-enter,
+  // &-zoom-leave-active {
+  //   transform: scale(0.8);
+  //   opacity: 0;
+  //   transition: all 0.3s;
+  // }
 }

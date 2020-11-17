@@ -1,4 +1,5 @@
 import { createNamespace } from '../utils';
+import { createPopper } from '@popperjs/core';
 
 // Mixins
 import { ClickOutsideMixin } from '../mixins/click-outside';
@@ -21,9 +22,12 @@ export default createComponent({
     overlay: Boolean,
     placement: String,
     textColor: String,
-    getContainer: [String, Function],
     backgroundColor: String,
     closeOnClickAction: Boolean,
+    offset: {
+      type: Array,
+      default: [0, 0],
+    },
     theme: {
       type: String,
       default: 'dark',
@@ -32,9 +36,55 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    getContainer: {
+      type: [String, Function],
+      default: 'body',
+    },
+  },
+
+  data() {
+    return {
+      location: null,
+    };
+  },
+
+  watch: {
+    value(value) {
+      if (value) {
+        this.updateLocation();
+      }
+    },
+  },
+
+  mounted() {
+    if (this.value) {
+      this.updateLocation();
+    }
   },
 
   methods: {
+    updateLocation() {
+      this.$nextTick(() => {
+        createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
+          placement: this.placement,
+          modifiers: [
+            {
+              name: 'computeStyles',
+              options: {
+                adaptive: false,
+              },
+            },
+            {
+              name: 'offset',
+              options: {
+                offset: this.offset,
+              },
+            },
+          ],
+        });
+      });
+    },
+
     renderAction(action) {
       return <div class={bem('action')}>{action.text}</div>;
     },
@@ -60,10 +110,14 @@ export default createComponent({
     return (
       <span ref="wrapper" class={bem('wrapper')}>
         <Popup
+          ref="popover"
           value={this.value}
+          style={this.location}
           class={bem([this.theme])}
           overlay={this.overlay}
+          position=""
           transition="van-popover-zoom"
+          lockScroll={false}
           getContainer={this.getContainer}
           onInput={this.onToggle}
         >
