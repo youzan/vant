@@ -33,7 +33,7 @@
     </van-sticky>
   </demo-block>
 
-  <demo-block :title="t('offsetTop')">
+  <demo-block :title="t('offsetBottom')">
     <van-sticky :offset-bottom="50" type="bottom">
       <van-button type="primary" style="margin-left: 115px;">
         {{ t('offsetBottom') }}

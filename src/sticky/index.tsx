@@ -63,8 +63,8 @@ export default createComponent({
         : undefined;
 
       return {
-        top: type === 'top' ? top : null,
-        bottom: type === 'bottom' ? bottom : null,
+        top: type === 'top' ? top : undefined,
+        bottom: type === 'bottom' ? bottom : undefined,
         zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
         transform,
       };

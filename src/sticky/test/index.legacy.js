@@ -15,6 +15,23 @@ test('sticky to top', () => {
   mockScrollTop(0);
 });
 
+test('sticky to bottom', () => {
+  const wrapper = mount({
+    template: `
+      <div style="width:100vw;height:200vh"></div>
+      <van-sticky style="height: 10px;" type="bottom">
+        Content
+      </van-sticky>
+      <div style="width:100vw;height:50vh"></div>
+    `,
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+  mockScrollTop(document.body.scrollHeight);
+  expect(wrapper.html()).toMatchSnapshot();
+  mockScrollTop(0);
+});
+
 test('z-index prop', () => {
   const wrapper = mount({
     template: `
@@ -43,6 +60,22 @@ test('offset-top prop', () => {
   mockScrollTop(0);
 });
 
+test('offset-bottom prop', () => {
+  const wrapper = mount({
+    template: `
+      <div style="width:100vw;height:200vh"></div>
+      <van-sticky style="height: 10px;" type="bottom" :offset-bottom="10">
+        Content
+      </van-sticky>
+      <div style="width:100vw;height:50vh"></div>
+    `,
+  });
+
+  mockScrollTop(document.body.scrollHeight);
+  expect(wrapper.html()).toMatchSnapshot();
+  mockScrollTop(0);
+});
+
 test('offset-top with rem unit', () => {
   const originGetComputedStyle = window.getComputedStyle;
 
@@ -63,6 +96,28 @@ test('offset-top with rem unit', () => {
   window.getComputedStyle = originGetComputedStyle;
 });
 
+test('offset-bottom with rem unit', () => {
+  const originGetComputedStyle = window.getComputedStyle;
+
+  window.getComputedStyle = () => ({ fontSize: '16px' });
+
+  const wrapper = mount({
+    template: `
+      <div style="width:100vw;height:200vh"></div>
+      <van-sticky style="height: 10px;" type="bottom" :offset-bottom="1rem">
+        Content
+      </van-sticky>
+      <div style="width:100vw;height:50vh"></div>
+    `,
+  });
+
+  mockScrollTop(document.body.scrollHeight);
+  expect(wrapper.html()).toMatchSnapshot();
+  mockScrollTop(0);
+
+  window.getComputedStyle = originGetComputedStyle;
+});
+
 test('offset-top with vw unit', () => {
   window.innerWidth = 300;
 
@@ -75,6 +130,24 @@ test('offset-top with vw unit', () => {
   });
 
   mockScrollTop(100);
+  expect(wrapper.html()).toMatchSnapshot();
+  mockScrollTop(0);
+});
+
+test('offset-bottom with vw unit', () => {
+  window.innerWidth = 300;
+
+  const wrapper = mount({
+    template: `
+      <div style="width:100vw;height:200vh"></div>
+      <van-sticky style="height: 10px;" type="bottom" :offset-bottom="10vw">
+        Content
+      </van-sticky>
+      <div style="width:100vw;height:50vh"></div>
+    `,
+  });
+
+  mockScrollTop(document.body.scrollHeight);
   expect(wrapper.html()).toMatchSnapshot();
   mockScrollTop(0);
 });
