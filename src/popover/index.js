@@ -1,10 +1,12 @@
-import { createNamespace } from '../utils';
 import { createPopper } from '@popperjs/core';
+import { createNamespace } from '../utils';
+import { BORDER_BOTTOM } from '../utils/constant';
 
 // Mixins
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
 // Components
+import Icon from '../icon';
 import Popup from '../popup';
 
 const [createComponent, bem] = createNamespace('popover');
@@ -23,7 +25,6 @@ export default createComponent({
     placement: String,
     textColor: String,
     backgroundColor: String,
-    closeOnClickAction: Boolean,
     offset: {
       type: Array,
       default: () => [0, 8],
@@ -39,6 +40,10 @@ export default createComponent({
     getContainer: {
       type: [String, Function],
       default: 'body',
+    },
+    closeOnClickAction: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -64,31 +69,55 @@ export default createComponent({
     }
   },
 
+  beforeDestroy() {
+    if (this.popper) {
+      this.popper.destroy();
+      this.popper = null;
+    }
+  },
+
   methods: {
+    createPopper() {
+      return createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
+        placement: this.placement,
+        modifiers: [
+          {
+            name: 'computeStyles',
+            options: {
+              adaptive: false,
+            },
+          },
+          {
+            name: 'offset',
+            options: {
+              offset: this.offset,
+            },
+          },
+        ],
+      });
+    },
+
     updateLocation() {
       this.$nextTick(() => {
-        createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
-          placement: this.placement,
-          modifiers: [
-            {
-              name: 'computeStyles',
-              options: {
-                adaptive: false,
-              },
-            },
-            {
-              name: 'offset',
-              options: {
-                offset: this.offset,
-              },
-            },
-          ],
-        });
+        if (!this.popper) {
+          this.popper = this.createPopper();
+        } else {
+          this.popper.setOptions({
+            placement: this.placement,
+          });
+        }
       });
     },
 
     renderAction(action) {
-      return <div class={bem('action')}>{action.text}</div>;
+      return (
+        <div class={bem('action')} onClick={this.onClickAction}>
+          {action.icon && (
+            <Icon name={action.icon} class={bem('action-icon')} />
+          )}
+          <div class={[bem('action-text'), BORDER_BOTTOM]}>{action.text}</div>
+        </div>
+      );
     },
 
     onToggle(value) {
