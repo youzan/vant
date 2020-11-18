@@ -172,7 +172,7 @@ export default createComponent({
           ref="popover"
           value={this.value}
           style={this.location}
-          class={bem([this.theme, `placement-${this.placement}`])}
+          class={bem([this.theme])}
           overlay={this.overlay}
           position={null}
           transition="van-popover-zoom"
