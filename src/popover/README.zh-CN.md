@@ -29,10 +29,8 @@ Vue.use(Popover);
 | actions | 选项列表 | _Action[]_ | `[]` |
 | placement | 弹出位置 | _string_ | - |
 | theme | 主题风格，可选值为 `dark` | _string_ | `light` |
-| text-color | 自定义文字颜色 | _string_ | - |
-| background-color | 自定义背景颜色 | _string_ | - |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
-| close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `false` |
+| close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
@@ -40,10 +38,11 @@ Vue.use(Popover);
 
 `actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象可以包含以下值：
 
-| 键名      | 说明                     | 类型     |
-| --------- | ------------------------ | -------- |
-| text      | 文字内容                 | _string_ |
-| className | 为对应选项添加额外的类名 | _any_    |
+| 键名 | 说明 | 类型 |
+| --- | --- | --- |
+| text | 文字内容 | _string_ |
+| icon | 文字左侧的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ |
+| className | 为对应选项添加额外的类名 | _any_ |
 
 ### placement 可选值
 

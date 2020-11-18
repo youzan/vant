@@ -52,12 +52,25 @@
       <div class="demo-popover-box">
         <van-popover
           :value="true"
-          :actions="t('actions')"
+          :actions="t('shortActions')"
           :placement="currentPlacement"
         >
           <div class="demo-popover-refer" />
         </van-popover>
       </div>
+    </demo-block>
+
+    <demo-block :title="t('showIcon')">
+      <van-popover
+        v-model="show.showIcon"
+        :actions="t('actionsWithIcon')"
+        placement="bottom"
+        style="margin-left: 16px;"
+      >
+        <van-button type="primary" @click="show.showIcon = true">
+          {{ t('showPopover') }}
+        </van-button>
+      </van-popover>
     </demo-block>
   </demo-section>
 </template>
@@ -66,7 +79,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      actions: [{ text: '文本' }, { text: '文本' }, { text: '文本' }],
+      actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+      shortActions: [{ text: '选项一' }, { text: '选项二' }],
+      actionsWithIcon: [
+        { text: '选项一', icon: 'add-o' },
+        { text: '选项二', icon: 'music-o' },
+        { text: '选项三', icon: 'more-o' },
+      ],
+      showIcon: '展示图标',
       placement: '弹出位置',
       darkTheme: '深色风格',
       lightTheme: '浅色风格',
@@ -74,7 +94,18 @@ export default {
       choosePlacement: '选择弹出位置',
     },
     'en-US': {
-      actions: [{ text: 'Text' }, { text: 'Text' }, { text: 'Text' }],
+      actions: [
+        { text: 'Option 1' },
+        { text: 'Option 2' },
+        { text: 'Option 3' },
+      ],
+      shortActions: [{ text: 'Option 1' }, { text: 'Option 2' }],
+      actionsWithIcon: [
+        { text: 'Option 1', icon: 'add-o' },
+        { text: 'Option 2', icon: 'music-o' },
+        { text: 'Option 3', icon: 'more-o' },
+      ],
+      showIcon: 'Show Icon',
       placement: 'Placement',
       darkTheme: 'Dark Theme',
       lightTheme: 'Light Theme',
@@ -86,6 +117,7 @@ export default {
   data() {
     return {
       show: {
+        showIcon: false,
         placement: false,
         darkTheme: false,
         lightTheme: false,
@@ -139,7 +171,7 @@ export default {
   &-box {
     display: flex;
     justify-content: center;
-    margin-top: 160px;
+    margin: 110px 0 80px;
   }
 }
 </style>
