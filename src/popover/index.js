@@ -110,12 +110,12 @@ export default createComponent({
       });
     },
 
-    renderAction(action) {
+    renderAction(action, index) {
       const { icon, text, disabled, className } = action;
       return (
         <div
           class={[bem('action', { disabled }), className]}
-          onClick={this.onClickAction}
+          onClick={() => this.onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
@@ -133,6 +133,10 @@ export default createComponent({
     },
 
     onClickAction(action, index) {
+      if (action.disabled) {
+        return;
+      }
+
       this.$emit('select', action, index);
 
       if (this.closeOnClickAction) {

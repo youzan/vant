@@ -29,6 +29,7 @@
     height: 44px;
     padding: 0 @padding-md;
     font-size: @font-size-md;
+    line-height: @line-height-md;
 
     &:last-child {
       .van-popover__action-text::after {
@@ -170,6 +171,14 @@
       &:active {
         background-color: @active-color;
       }
+
+      &--disabled {
+        color: @gray-5;
+
+        &:active {
+          background-color: transparent;
+        }
+      }
     }
   }
 
@@ -184,7 +193,15 @@
 
     .van-popover__action {
       &:active {
-        opacity: @active-opacity;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &--disabled {
+        color: @gray-7;
+
+        &:active {
+          background-color: transparent;
+        }
       }
     }
 

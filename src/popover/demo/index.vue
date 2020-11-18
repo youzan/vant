@@ -60,15 +60,26 @@
       </div>
     </demo-block>
 
-    <demo-block :title="t('showIcon')">
+    <demo-block :title="t('actionOptions')">
       <van-popover
         v-model="show.showIcon"
         :actions="t('actionsWithIcon')"
-        placement="bottom"
+        placement="top"
         style="margin-left: 16px;"
       >
         <van-button type="primary" @click="show.showIcon = true">
-          {{ t('showPopover') }}
+          {{ t('showIcon') }}
+        </van-button>
+      </van-popover>
+
+      <van-popover
+        v-model="show.disabled"
+        :actions="t('actionsDisabled')"
+        placement="top"
+        style="margin-left: 16px;"
+      >
+        <van-button type="primary" @click="show.disabled = true">
+          {{ t('disabled') }}
         </van-button>
       </van-popover>
     </demo-block>
@@ -86,11 +97,17 @@ export default {
         { text: '选项二', icon: 'music-o' },
         { text: '选项三', icon: 'more-o' },
       ],
+      actionsDisabled: [
+        { text: '选项一', disabled: true },
+        { text: '选项二', disabled: true },
+        { text: '选项三' },
+      ],
       showIcon: '展示图标',
       placement: '弹出位置',
       darkTheme: '深色风格',
       lightTheme: '浅色风格',
       showPopover: '点击弹出气泡',
+      actionOptions: '选项配置',
       choosePlacement: '选择弹出位置',
     },
     'en-US': {
@@ -105,11 +122,17 @@ export default {
         { text: 'Option 2', icon: 'music-o' },
         { text: 'Option 3', icon: 'more-o' },
       ],
+      actionsDisabled: [
+        { text: 'Option 1', disabled: true },
+        { text: 'Option 2', disabled: true },
+        { text: 'Option 3' },
+      ],
       showIcon: 'Show Icon',
       placement: 'Placement',
       darkTheme: 'Dark Theme',
       lightTheme: 'Light Theme',
       showPopover: 'Show Popover',
+      actionOptions: 'Action Options',
       choosePlacement: 'Choose Placement',
     },
   },
@@ -117,6 +140,7 @@ export default {
   data() {
     return {
       show: {
+        disabled: false,
         showIcon: false,
         placement: false,
         darkTheme: false,
@@ -154,6 +178,8 @@ export default {
 @import '../../style/var';
 
 .demo-popover {
+  min-height: 200vh;
+
   &-refer {
     width: 60px;
     height: 60px;
