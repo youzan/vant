@@ -168,7 +168,7 @@ export default createComponent({
           <div class={bem('arrow')} />
           {this.actions.map(this.renderAction)}
         </Popup>
-        {this.slots('default')}
+        {this.slots('reference')}
       </span>
     );
   },
