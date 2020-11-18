@@ -147,6 +147,22 @@ export default createComponent({
     onClickOutside() {
       this.$emit('input', false);
     },
+
+    onOpen() {
+      this.$emit('open');
+    },
+
+    onOpened() {
+      this.$emit('opened');
+    },
+
+    onClose() {
+      this.$emit('close');
+    },
+
+    onClosed() {
+      this.$emit('closed');
+    },
   },
 
   render() {
@@ -162,8 +178,12 @@ export default createComponent({
           transition="van-popover-zoom"
           lockScroll={false}
           getContainer={this.getContainer}
-          onInput={this.onToggle}
+          onOpen={this.onOpen}
           onClick={this.onClick}
+          onClose={this.onClose}
+          onInput={this.onToggle}
+          onOpened={this.onOpened}
+          onClosed={this.onClosed}
         >
           <div class={bem('arrow')} />
           {this.actions.map(this.renderAction)}
