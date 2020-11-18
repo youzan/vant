@@ -7,9 +7,11 @@
         placement="bottom"
         style="margin-left: 16px;"
       >
-        <van-button type="primary" @click="show.lightTheme = true">
-          {{ t('lightTheme') }}
-        </van-button>
+        <template #reference>
+          <van-button type="primary" @click="show.lightTheme = true">
+            {{ t('lightTheme') }}
+          </van-button>
+        </template>
       </van-popover>
       <van-popover
         v-model="show.darkTheme"
@@ -18,9 +20,11 @@
         placement="bottom"
         style="margin-left: 16px;"
       >
-        <van-button type="primary" @click="show.darkTheme = true">
-          {{ t('darkTheme') }}
-        </van-button>
+        <template #reference>
+          <van-button type="primary" @click="show.darkTheme = true">
+            {{ t('darkTheme') }}
+          </van-button>
+        </template>
       </van-popover>
     </demo-block>
 
@@ -55,7 +59,9 @@
           :actions="t('shortActions')"
           :placement="currentPlacement"
         >
-          <div class="demo-popover-refer" />
+          <template #reference>
+            <div class="demo-popover-refer" />
+          </template>
         </van-popover>
       </div>
     </demo-block>
@@ -67,9 +73,11 @@
         placement="top"
         style="margin-left: 16px;"
       >
-        <van-button type="primary" @click="show.showIcon = true">
-          {{ t('showIcon') }}
-        </van-button>
+        <template #reference>
+          <van-button type="primary" @click="show.showIcon = true">
+            {{ t('showIcon') }}
+          </van-button>
+        </template>
       </van-popover>
 
       <van-popover
@@ -78,9 +86,11 @@
         placement="top"
         style="margin-left: 16px;"
       >
-        <van-button type="primary" @click="show.disabled = true">
-          {{ t('disabled') }}
-        </van-button>
+        <template #reference>
+          <van-button type="primary" @click="show.disabled = true">
+            {{ t('disabled') }}
+          </van-button>
+        </template>
       </van-popover>
     </demo-block>
   </demo-section>
