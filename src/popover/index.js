@@ -1,4 +1,5 @@
-import { createPopper } from '@popperjs/core';
+import { createPopper } from '@popperjs/core/lib/popper-lite';
+import offsetModifier from '@popperjs/core/lib/modifiers/offset';
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
@@ -88,7 +89,7 @@ export default createComponent({
             },
           },
           {
-            name: 'offset',
+            ...offsetModifier,
             options: {
               offset: this.offset,
             },
@@ -110,12 +111,14 @@ export default createComponent({
     },
 
     renderAction(action) {
+      const { icon, text, disabled, className } = action;
       return (
-        <div class={bem('action')} onClick={this.onClickAction}>
-          {action.icon && (
-            <Icon name={action.icon} class={bem('action-icon')} />
-          )}
-          <div class={[bem('action-text'), BORDER_BOTTOM]}>{action.text}</div>
+        <div
+          class={[bem('action', { disabled }), className]}
+          onClick={this.onClickAction}
+        >
+          {icon && <Icon name={icon} class={bem('action-icon')} />}
+          <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
         </div>
       );
     },
