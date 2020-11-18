@@ -30,7 +30,7 @@ export default createComponent({
     },
     theme: {
       type: String,
-      default: 'dark',
+      default: 'light',
     },
     actions: {
       type: Array,
@@ -49,6 +49,8 @@ export default createComponent({
   },
 
   watch: {
+    placement: 'updateLocation',
+
     value(value) {
       if (value) {
         this.updateLocation();
@@ -93,6 +95,11 @@ export default createComponent({
       this.$emit('input', value);
     },
 
+    onClick(event) {
+      event.stopPropagation();
+      this.$emit('click', event);
+    },
+
     onClickAction(action, index) {
       this.$emit('select', action, index);
 
@@ -115,11 +122,12 @@ export default createComponent({
           style={this.location}
           class={bem([this.theme, `placement-${this.placement}`])}
           overlay={this.overlay}
-          position=""
+          position={null}
           transition="van-popover-zoom"
           lockScroll={false}
           getContainer={this.getContainer}
           onInput={this.onToggle}
+          onClick={this.onClick}
         >
           <div class={bem('arrow')} />
           {this.actions.map(this.renderAction)}
