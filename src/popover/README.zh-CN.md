@@ -28,7 +28,7 @@ Vue.use(Popover);
 | v-model | 是否展示气泡弹出层 | _boolean_ | `false` |
 | actions | 选项列表 | _Action[]_ | `[]` |
 | placement | 弹出位置 | _string_ | - |
-| theme | 主题风格，可选值为 `light` | _string_ | `dark` |
+| theme | 主题风格，可选值为 `dark` | _string_ | `light` |
 | text-color | 自定义文字颜色 | _string_ | - |
 | background-color | 自定义背景颜色 | _string_ | - |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
