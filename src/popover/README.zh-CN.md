@@ -32,7 +32,7 @@ Vue.use(Popover);
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
-| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
 
 ### Action 数据结构
 
@@ -40,13 +40,10 @@ Vue.use(Popover);
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
-| text | 文字内容 | _string_ |
+| text | 选项文字 | _string_ |
 | icon | 文字左侧的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ |
+| disabled | 是否为禁用状态 | _boolean_ |
 | className | 为对应选项添加额外的类名 | _any_ |
-
-### placement 可选值
-
-top left right bottom topLeft topRight bottomLeft bottomRight leftTop leftBottom rightTop rightBottom
 
 ### Events
 
