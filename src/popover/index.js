@@ -23,7 +23,6 @@ export default createComponent({
   props: {
     value: Boolean,
     overlay: Boolean,
-    placement: String,
     textColor: String,
     backgroundColor: String,
     offset: {
@@ -37,6 +36,10 @@ export default createComponent({
     actions: {
       type: Array,
       default: () => [],
+    },
+    placement: {
+      type: String,
+      default: 'bottom',
     },
     getContainer: {
       type: [String, Function],

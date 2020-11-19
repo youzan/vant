@@ -17,12 +17,38 @@
         v-model="show.darkTheme"
         theme="dark"
         :actions="t('actions')"
-        placement="bottom"
         style="margin-left: 16px;"
       >
         <template #reference>
           <van-button type="primary" @click="show.darkTheme = true">
             {{ t('darkTheme') }}
+          </van-button>
+        </template>
+      </van-popover>
+    </demo-block>
+
+    <demo-block :title="t('actionOptions')">
+      <van-popover
+        v-model="show.showIcon"
+        :actions="t('actionsWithIcon')"
+        placement="bottom-start"
+        style="margin-left: 16px;"
+      >
+        <template #reference>
+          <van-button type="primary" @click="show.showIcon = true">
+            {{ t('showIcon') }}
+          </van-button>
+        </template>
+      </van-popover>
+
+      <van-popover
+        v-model="show.disableAction"
+        :actions="t('actionsDisabled')"
+        style="margin-left: 16px;"
+      >
+        <template #reference>
+          <van-button type="primary" @click="show.disableAction = true">
+            {{ t('disableAction') }}
           </van-button>
         </template>
       </van-popover>
@@ -65,34 +91,6 @@
         </van-popover>
       </div>
     </demo-block>
-
-    <demo-block :title="t('actionOptions')">
-      <van-popover
-        v-model="show.showIcon"
-        :actions="t('actionsWithIcon')"
-        placement="top-start"
-        style="margin-left: 16px;"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.showIcon = true">
-            {{ t('showIcon') }}
-          </van-button>
-        </template>
-      </van-popover>
-
-      <van-popover
-        v-model="show.disabled"
-        :actions="t('actionsDisabled')"
-        placement="top"
-        style="margin-left: 16px;"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.disabled = true">
-            {{ t('disabled') }}
-          </van-button>
-        </template>
-      </van-popover>
-    </demo-block>
   </demo-section>
 </template>
 
@@ -118,6 +116,7 @@ export default {
       lightTheme: '浅色风格',
       showPopover: '点击弹出气泡',
       actionOptions: '选项配置',
+      disableAction: '禁用选项',
       choosePlacement: '选择弹出位置',
     },
     'en-US': {
@@ -143,6 +142,7 @@ export default {
       lightTheme: 'Light Theme',
       showPopover: 'Show Popover',
       actionOptions: 'Action Options',
+      disableAction: 'Disable Action',
       choosePlacement: 'Choose Placement',
     },
   },
@@ -150,11 +150,11 @@ export default {
   data() {
     return {
       show: {
-        disabled: false,
         showIcon: false,
         placement: false,
         darkTheme: false,
         lightTheme: false,
+        disableAction: false,
       },
       showPicker: false,
       currentPlacement: '',
@@ -192,8 +192,6 @@ export default {
 @import '../../style/var';
 
 .demo-popover {
-  min-height: 200vh;
-
   &-refer {
     width: 60px;
     height: 60px;
