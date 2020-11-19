@@ -4,7 +4,7 @@
       <van-popover
         v-model="show.lightTheme"
         :actions="t('actions')"
-        placement="bottom"
+        placement="bottom-start"
         style="margin-left: 16px;"
       >
         <template #reference>
@@ -35,7 +35,7 @@
         name="picker"
         :value="currentPlacement"
         :label="t('choosePlacement')"
-        :placeholder="t('placeholder')"
+        :placeholder="t('choosePlacement')"
         @click="showPicker = true"
       />
 
@@ -55,7 +55,7 @@
 
       <div class="demo-popover-box">
         <van-popover
-          :value="true"
+          v-model="show.placement"
           :actions="t('shortActions')"
           :placement="currentPlacement"
         >
@@ -70,7 +70,7 @@
       <van-popover
         v-model="show.showIcon"
         :actions="t('actionsWithIcon')"
-        placement="top"
+        placement="top-start"
         style="margin-left: 16px;"
       >
         <template #reference>
@@ -157,7 +157,7 @@ export default {
         lightTheme: false,
       },
       showPicker: false,
-      currentPlacement: 'top',
+      currentPlacement: '',
       placements: [
         'top',
         'top-start',
@@ -179,6 +179,10 @@ export default {
     onConfirm(value) {
       this.showPicker = false;
       this.currentPlacement = value;
+
+      setTimeout(() => {
+        this.show.placement = true;
+      }, 300);
     },
   },
 };
