@@ -67,6 +67,29 @@ export default {
 };
 ```
 
+### Placement
+
+```html
+<van-popover placement="top" />
+```
+
+`placement` supports the following values:
+
+```bash
+top           # Top middle
+top-start     # Top left
+top-end       # Top right
+left          # Left middle
+left-start    # Left top
+left-end      # Left bottom
+right         # Right middle
+right-start   # Right top
+right-end     # Right bottom
+bottom        # Bottom middle
+bottom-start  # Bottom left
+bottom-end    # Bottom right
+```
+
 ### Show Icon
 
 ```html
@@ -123,29 +146,6 @@ export default {
 };
 ```
 
-### Placement
-
-```html
-<van-popover placement="top" />
-```
-
-`placement` supports the following values:
-
-```bash
-top           # Top middle
-top-start     # Top left
-top-end       # Top right
-left          # Left middle
-left-start    # Left top
-left-end      # Left bottom
-right         # Right middle
-right-start   # Right top
-right-end     # Right bottom
-bottom        # Bottom middle
-bottom-start  # Bottom left
-bottom-end    # Bottom right
-```
-
 ## API
 
 ### Props
@@ -184,4 +184,5 @@ bottom-end    # Bottom right
 
 | Name      | Description       |
 | --------- | ----------------- |
+| default   | Custom content    |
 | reference | Reference Element |

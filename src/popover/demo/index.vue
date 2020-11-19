@@ -27,6 +27,36 @@
       </van-popover>
     </demo-block>
 
+    <demo-block :title="t('placement')">
+      <van-field
+        is-link
+        readonly
+        name="picker"
+        :label="t('choosePlacement')"
+        @click="showPicker = true"
+      />
+
+      <van-popup
+        v-model="showPicker"
+        round
+        position="bottom"
+        get-container="body"
+      >
+        <div class="demo-popover-box">
+          <van-popover
+            v-model="show.placement"
+            :actions="t('shortActions')"
+            :placement="currentPlacement"
+          >
+            <template #reference>
+              <div class="demo-popover-refer" />
+            </template>
+          </van-popover>
+        </div>
+        <van-picker :columns="placements" @change="onPickerChange" />
+      </van-popup>
+    </demo-block>
+
     <demo-block :title="t('actionOptions')">
       <van-popover
         v-model="show.showIcon"
@@ -54,42 +84,33 @@
       </van-popover>
     </demo-block>
 
-    <demo-block :title="t('placement')">
-      <van-field
-        is-link
-        readonly
-        name="picker"
-        :value="currentPlacement"
-        :label="t('choosePlacement')"
-        :placeholder="t('choosePlacement')"
-        @click="showPicker = true"
-      />
-
-      <van-popup
-        v-model="showPicker"
-        round
-        position="bottom"
-        get-container="body"
+    <demo-block :title="t('customContent')">
+      <van-popover
+        v-model="show.customContent"
+        placement="top-start"
+        style="margin-left: 16px;"
       >
-        <van-picker
-          show-toolbar
-          :columns="placements"
-          @confirm="onConfirm"
-          @cancel="showPicker = false"
-        />
-      </van-popup>
-
-      <div class="demo-popover-box">
-        <van-popover
-          v-model="show.placement"
-          :actions="t('shortActions')"
-          :placement="currentPlacement"
+        <van-grid
+          square
+          clickable
+          :border="false"
+          column-num="3"
+          style="width: 240px;"
         >
-          <template #reference>
-            <div class="demo-popover-refer" />
-          </template>
-        </van-popover>
-      </div>
+          <van-grid-item
+            v-for="i in 6"
+            :key="i"
+            icon="photo-o"
+            :text="t('option')"
+            @click="show.customContent = false"
+          />
+        </van-grid>
+        <template #reference>
+          <van-button type="primary" @click="show.customContent = true">
+            {{ t('customContent') }}
+          </van-button>
+        </template>
+      </van-popover>
     </demo-block>
   </demo-section>
 </template>
@@ -116,6 +137,7 @@ export default {
       lightTheme: '浅色风格',
       showPopover: '点击弹出气泡',
       actionOptions: '选项配置',
+      customContent: '自定义内容',
       disableAction: '禁用选项',
       choosePlacement: '选择弹出位置',
     },
@@ -142,6 +164,7 @@ export default {
       lightTheme: 'Light Theme',
       showPopover: 'Show Popover',
       actionOptions: 'Action Options',
+      customContent: 'Custom Content',
       disableAction: 'Disable Action',
       choosePlacement: 'Placement',
     },
@@ -154,6 +177,7 @@ export default {
         placement: false,
         darkTheme: false,
         lightTheme: false,
+        customContent: false,
         disableAction: false,
       },
       showPicker: false,
@@ -176,13 +200,11 @@ export default {
   },
 
   methods: {
-    onConfirm(value) {
-      this.showPicker = false;
-      this.currentPlacement = value;
-
+    onPickerChange(picker, value) {
       setTimeout(() => {
         this.show.placement = true;
-      }, 300);
+        this.currentPlacement = value;
+      });
     },
   },
 };
@@ -209,7 +231,7 @@ export default {
   &-box {
     display: flex;
     justify-content: center;
-    margin: 110px 0 80px;
+    margin: 110px 0;
   }
 }
 </style>
