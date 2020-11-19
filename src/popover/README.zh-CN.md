@@ -2,6 +2,8 @@
 
 ### 介绍
 
+弹出式的气泡菜单。
+
 ### 引入
 
 ```js
@@ -15,8 +17,136 @@ Vue.use(Popover);
 
 ### 基础用法
 
-```html
+当 Popover 弹出时，会基于 `reference` 插槽的内容进行定位。
 
+```html
+<van-popover v-model="showPopover" :actions="actions">
+  <template #reference>
+    <van-button type="primary" @click="showPopover = true">
+      浅色风格
+    </van-button>
+  </template>
+</van-popover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+      // 通过 actions 属性来定义菜单选项
+      actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+    };
+  },
+};
+```
+
+### 深色风格
+
+Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 属性设置为 `dark` 可切换为深色风格。
+
+```html
+<van-popover v-model="showPopover" theme="dark" :actions="actions">
+  <template #reference>
+    <van-button type="primary" @click="showPopover = true">
+      深色风格
+    </van-button>
+  </template>
+</van-popover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+      actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+    };
+  },
+};
+```
+
+### 展示图标
+
+在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
+
+```html
+<van-popover v-model="showPopover" :actions="actions">
+  <template #reference>
+    <van-button type="primary" @click="showPopover = true">
+      展示图标
+    </van-button>
+  </template>
+</van-popover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+      actions: [
+        { text: '选项一', icon: 'add-o' },
+        { text: '选项二', icon: 'music-o' },
+        { text: '选项三', icon: 'more-o' },
+      ],
+    };
+  },
+};
+```
+
+### 禁用选项
+
+在 `actions` 数组中，可以通过 `disabled` 字段来禁用某个选项。
+
+```html
+<van-popover v-model="showPopover" :actions="actions">
+  <template #reference>
+    <van-button type="primary" @click="showPopover = true">
+      禁用选项
+    </van-button>
+  </template>
+</van-popover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+      actions: [
+        { text: '选项一', disabled: true },
+        { text: '选项二', disabled: true },
+        { text: '选项三' },
+      ],
+    };
+  },
+};
+```
+
+### 弹出位置
+
+通过 `placement` 属性来控制气泡的弹出位置。
+
+```html
+<van-popover placement="top" />
+```
+
+`placement` 支持以下值：
+
+```bash
+top           # 顶部中间位置
+top-start     # 顶部左侧位置
+top-end       # 顶部右侧位置
+left          # 左侧中间位置
+left-start    # 左侧上方位置
+left-end      # 左侧下方位置
+right         # 右侧中间位置
+right-start   # 右侧上方位置
+right-end     # 右侧下方位置
+bottom        # 底部中间位置
+bottom-start  # 底部左侧位置
+bottom-end    # 底部右侧位置
 ```
 
 ## API
@@ -27,12 +157,12 @@ Vue.use(Popover);
 | --- | --- | --- | --- |
 | v-model | 是否展示气泡弹出层 | _boolean_ | `false` |
 | actions | 选项列表 | _Action[]_ | `[]` |
-| placement | 弹出位置 | _string_ | - |
+| placement | 弹出位置 | _string_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _string_ | `light` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
-| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
 
 ### Action 数据结构
 
