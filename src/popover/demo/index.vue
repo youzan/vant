@@ -45,6 +45,7 @@
         <div class="demo-popover-box">
           <van-popover
             v-model="show.placement"
+            theme="dark"
             :actions="t('shortActions')"
             :placement="currentPlacement"
           >

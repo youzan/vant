@@ -1,5 +1,6 @@
 import { createPopper } from '@popperjs/core/lib/popper-lite';
 import offsetModifier from '@popperjs/core/lib/modifiers/offset';
+import extendsHelper from '@babel/runtime/helpers/esm/extends';
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
@@ -9,6 +10,12 @@ import { ClickOutsideMixin } from '../mixins/click-outside';
 // Components
 import Icon from '../icon';
 import Popup from '../popup';
+
+// add Object.assign polyfill for popper.js
+// see: https://popper.js.org/docs/v2/browser-support/
+if (!Object.assign) {
+  Object.assign = extendsHelper;
+}
 
 const [createComponent, bem] = createNamespace('popover');
 
