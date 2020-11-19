@@ -48,12 +48,6 @@ export default createComponent({
     },
   },
 
-  data() {
-    return {
-      location: null,
-    };
-  },
-
   watch: {
     placement: 'updateLocation',
 
@@ -86,6 +80,7 @@ export default createComponent({
             name: 'computeStyles',
             options: {
               adaptive: false,
+              gpuAcceleration: false,
             },
           },
           {
@@ -100,6 +95,10 @@ export default createComponent({
 
     updateLocation() {
       this.$nextTick(() => {
+        if (!this.value) {
+          return;
+        }
+
         if (!this.popper) {
           this.popper = this.createPopper();
         } else {
@@ -114,7 +113,7 @@ export default createComponent({
       const { icon, text, disabled, className } = action;
       return (
         <div
-          class={[bem('action', { disabled }), className]}
+          class={[bem('action', { disabled, 'with-icon': icon }), className]}
           onClick={() => this.onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
@@ -171,7 +170,6 @@ export default createComponent({
         <Popup
           ref="popover"
           value={this.value}
-          style={this.location}
           class={bem([this.theme])}
           overlay={this.overlay}
           position={null}
