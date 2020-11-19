@@ -143,7 +143,7 @@ export default {
       showPopover: 'Show Popover',
       actionOptions: 'Action Options',
       disableAction: 'Disable Action',
-      choosePlacement: 'Choose Placement',
+      choosePlacement: 'Placement',
     },
   },
 
