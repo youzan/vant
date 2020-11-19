@@ -15,7 +15,7 @@ const [createComponent, bem] = createNamespace('popover');
 export default createComponent({
   mixins: [
     ClickOutsideMixin({
-      event: 'click',
+      event: 'touchstart',
       method: 'onClickOutside',
     }),
   ],
@@ -129,9 +129,9 @@ export default createComponent({
       this.$emit('input', value);
     },
 
-    onClick(event) {
+    onTouchstart(event) {
       event.stopPropagation();
-      this.$emit('click', event);
+      this.$emit('touchstart', event);
     },
 
     onClickAction(action, index) {
@@ -180,14 +180,16 @@ export default createComponent({
           lockScroll={false}
           getContainer={this.getContainer}
           onOpen={this.onOpen}
-          onClick={this.onClick}
           onClose={this.onClose}
           onInput={this.onToggle}
           onOpened={this.onOpened}
           onClosed={this.onClosed}
+          nativeOnTouchstart={this.onTouchstart}
         >
           <div class={bem('arrow')} />
-          {this.actions.map(this.renderAction)}
+          <div class={bem('content')}>
+            {this.slots('default') || this.actions.map(this.renderAction)}
+          </div>
         </Popup>
         {this.slots('reference')}
       </span>

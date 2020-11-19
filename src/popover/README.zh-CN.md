@@ -66,6 +66,31 @@ export default {
 };
 ```
 
+### 弹出位置
+
+通过 `placement` 属性来控制气泡的弹出位置。
+
+```html
+<van-popover placement="top" />
+```
+
+`placement` 支持以下值：
+
+```bash
+top           # 顶部中间位置
+top-start     # 顶部左侧位置
+top-end       # 顶部右侧位置
+left          # 左侧中间位置
+left-start    # 左侧上方位置
+left-end      # 左侧下方位置
+right         # 右侧中间位置
+right-start   # 右侧上方位置
+right-end     # 右侧下方位置
+bottom        # 底部中间位置
+bottom-start  # 底部左侧位置
+bottom-end    # 底部右侧位置
+```
+
 ### 展示图标
 
 在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
@@ -124,29 +149,43 @@ export default {
 };
 ```
 
-### 弹出位置
+### 自定义内容
 
-通过 `placement` 属性来控制气泡的弹出位置。
+通过默认插槽，可以在 Popover 内部放置任意内容。
 
 ```html
-<van-popover placement="top" />
+<van-popover v-model="showPopover">
+  <van-grid
+    square
+    clickable
+    :border="false"
+    column-num="3"
+    style="width: 240px;"
+  >
+    <van-grid-item
+      v-for="i in 6"
+      :key="i"
+      text="选项"
+      icon="photo-o"
+      @click="showPopover = false"
+    />
+  </van-grid>
+  <template #reference>
+    <van-button type="primary" @click="showPopover = true">
+      自定义内容
+    </van-button>
+  </template>
+</van-popover>
 ```
 
-`placement` 支持以下值：
-
-```bash
-top           # 顶部中间位置
-top-start     # 顶部左侧位置
-top-end       # 顶部右侧位置
-left          # 左侧中间位置
-left-start    # 左侧上方位置
-left-end      # 左侧下方位置
-right         # 右侧中间位置
-right-start   # 右侧上方位置
-right-end     # 右侧下方位置
-bottom        # 底部中间位置
-bottom-start  # 底部左侧位置
-bottom-end    # 底部右侧位置
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+    };
+  },
+};
 ```
 
 ## API
@@ -189,4 +228,5 @@ bottom-end    # 底部右侧位置
 
 | 名称      | 说明                        |
 | --------- | --------------------------- |
+| default   | 自定义菜单内容              |
 | reference | 触发 Popover 显示的元素内容 |
