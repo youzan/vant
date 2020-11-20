@@ -93,7 +93,6 @@
     <van-popover
       v-model:show="show.customContent"
       placement="top-start"
-      style="margin-left: 16px;"
       @select="onSelect"
     >
       <van-grid
