@@ -130,7 +130,7 @@ export default {
 | reset-stepper-on-hide | Whether to reset stepper when hide | _boolean_ | `false` |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | _boolean_ | `false` |
 | disable-stepper-input | Whether to disable stepper input | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close sku popup when overlay is clicked | _boolean_ | `true` |
 | stepper-title | Quantity title | _string_ | `Quantity` |
 | custom-stepper-config | Custom stepper related config | _object_ | `{}` |
 | message-config | Message related config | _object_ | `{}` |
@@ -146,14 +146,14 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add-cart | Triggered when click cart button | data: object |
-| buy-clicked | Triggered when click buy button | data: object |
-| stepper-change | Triggered when stepper value changed | value: number |
-| sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
-| sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
-| open-preview | Triggered when open image preview | data: object |
-| close-preview | Triggered when close image preview | data: object |
-| sku-reset `v2.8.1` | Triggered when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
+| add-cart | Emitted when click cart button | data: object |
+| buy-clicked | Emitted when click buy button | data: object |
+| stepper-change | Emitted when stepper value changed | value: number |
+| sku-selected | Emitted when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | Emitted when select property | { propValue, selectedProp, selectedSkuComb } |
+| open-preview | Emitted when open image preview | data: object |
+| close-preview | Emitted when close image preview | data: object |
+| sku-reset `v2.8.1` | Emitted when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### Methods
 

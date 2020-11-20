@@ -175,15 +175,15 @@ export default {
 
 ### Swipe Events
 
-| Event  | Description                         | Arguments                     |
-| ------ | ----------------------------------- | ----------------------------- |
-| change | Triggered when current swipe change | index: index of current swipe |
+| Event  | Description                        | Arguments                     |
+| ------ | ---------------------------------- | ----------------------------- |
+| change | Emitted when current swipe changed | index: index of current swipe |
 
 ### SwipeItem Events
 
-| Event | Description            | Arguments      |
-| ----- | ---------------------- | -------------- |
-| click | Triggered when clicked | _event: Event_ |
+| Event | Description                       | Arguments      |
+| ----- | --------------------------------- | -------------- |
+| click | Emitted when component is clicked | _event: Event_ |
 
 ### Swipe Methods
 

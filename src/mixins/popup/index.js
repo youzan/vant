@@ -28,7 +28,7 @@ export const popupMixinProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
-  // whether to close popup when click overlay
+  // whether to close popup when overlay is clicked
   closeOnClickOverlay: Boolean,
   // z-index
   zIndex: [Number, String],

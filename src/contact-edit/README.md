@@ -60,10 +60,10 @@ export default {
 
 ### Events
 
-| Event  | Description                        | Arguments             |
-| ------ | ---------------------------------- | --------------------- |
-| save   | Triggered when click save button   | content：contact info |
-| delete | Triggered when click delete button | content：contact info |
+| Event  | Description                               | Arguments             |
+| ------ | ----------------------------------------- | --------------------- |
+| save   | Emitted when the save button is clicked   | content：contact info |
+| delete | Emitted when the delete button is clicked | content：contact info |
 
 ### Data Structure of Contact
 

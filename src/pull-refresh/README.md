@@ -13,7 +13,7 @@ Vue.use(PullRefresh);
 
 ### Basic Usage
 
-The `refresh` event will be triggered when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
+The `refresh` event will be Emitted when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
 
 ```html
 <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
@@ -109,9 +109,9 @@ Use slots to custom tips.
 
 ### Events
 
-| Event   | Description                 | Parameters |
-| ------- | --------------------------- | ---------- |
-| refresh | Triggered when pull refresh | -          |
+| Event   | Description                   | Parameters |
+| ------- | ----------------------------- | ---------- |
+| refresh | Emitted after pulling refresh | -          |
 
 ### Slots
 

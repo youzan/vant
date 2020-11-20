@@ -109,8 +109,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| change | Triggered when change chosen coupon | index: index of chosen coupon |
-| exchange | Triggered when exchange coupon | code: exchange code |
+| change | Emitted when chosen coupon changed | index: index of chosen coupon |
+| exchange | Emitted when exchanging coupon | code: exchange code |
 
 ### Data Structure of Coupon
 

@@ -286,11 +286,11 @@ Following props are supported when the type is time
 
 ### Events
 
-| Event   | Description                         | Arguments               |
-| ------- | ----------------------------------- | ----------------------- |
-| change  | Triggered when value changed        | picker: Picker instance |
-| confirm | Triggered when click confirm button | value: current value    |
-| cancel  | Triggered when click cancel button  | -                       |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| change | Emitted when value changed | picker: Picker instance |
+| confirm | Emitted when the confirm button is clicked | value: current value |
+| cancel | Emitted when the cancel button is clicked | - |
 
 ### Methods
 

@@ -129,8 +129,8 @@ Use `active-color` prop to custom active color of the title and options.
 | z-index | z-index of menu item | _number \| string_ | `10` |
 | duration | Transition duration, unit second | _number \| string_ | `0.2` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
-| close-on-click-outside | Whether to close when click outside | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
+| close-on-click-outside | Whether to close when outside is clicked | _boolean_ | `true` |
 
 ### DropdownItem Props
 
@@ -146,13 +146,13 @@ Use `active-color` prop to custom active color of the title and options.
 
 ### DropdownItem Events
 
-| Event  | Description                               | Arguments |
-| ------ | ----------------------------------------- | --------- |
-| change | Triggered select option and value changed | value     |
-| open   | Triggered when open menu                  | -         |
-| close  | Triggered when close menu                 | -         |
-| opened | Triggered when menu opened                | -         |
-| closed | Triggered when menu closed                | -         |
+| Event  | Description                             | Arguments |
+| ------ | --------------------------------------- | --------- |
+| change | Emitted select option and value changed | value     |
+| open   | Emitted when opening menu               | -         |
+| close  | Emitted when closing menu               | -         |
+| opened | Emitted when menu is opened             | -         |
+| closed | Emitted when menu is closed             | -         |
 
 ### DropdownItem Slots
 

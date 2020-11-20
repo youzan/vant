@@ -259,14 +259,14 @@ Field support all native events of input tag
 
 | Event | Description | Parameters |
 | --- | --- | --- |
-| input | Triggered when input value changed | _value: string_ |
-| focus | Triggered when input gets focus | _event: Event_ |
-| blur | Triggered when input loses focus | _event: Event_ |
-| clear | Triggered when click clear icon | _event: Event_ |
-| click | Triggered when click Field | _event: Event_ |
-| click-input `v2.8.1` | Triggered when click input | _event: Event_ |
-| click-left-icon | Triggered when click the left icon of Field | _event: Event_ |
-| click-right-icon | Triggered when click the right icon of Field | _event: Event_ |
+| input | Emitted when input value changed | _value: string_ |
+| focus | Emitted when input is focused | _event: Event_ |
+| blur | Emitted when input is blured | _event: Event_ |
+| clear | Emitted when the clear icon is clicked | _event: Event_ |
+| click | Emitted when component is clicked | _event: Event_ |
+| click-input `v2.8.1` | Emitted when the input is clicked | _event: Event_ |
+| click-left-icon | Emitted when the left icon is clicked | _event: Event_ |
+| click-right-icon | Emitted when the right icon is clicked | _event: Event_ |
 
 ### Methods
 

@@ -86,12 +86,12 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add | Triggered when click add button | - |
-| edit | Triggered when edit address | item: address object，index |
-| select | Triggered when select address | item: address object，index |
-| edit-disabled | Triggered when edit disabled address | item: address object，index |
-| select-disabled | Triggered when select disabled address | item: address object，index |
-| click-item | Triggered when click address item | item: address object，index |
+| add | Emitted when the add button is clicked | - |
+| edit | Emitted when the edit icon of address is clicked | item: address object，index |
+| select | Emitted when an address is selected | item: address object，index |
+| edit-disabled | Emitted when the edit icon of disabled address is clicked | item: address object，index |
+| select-disabled | Emitted when a disabled address is selected | item: address object，index |
+| click-item | Emitted when an address item is clicked | item: address object，index |
 
 ### Data Structure of Address
 

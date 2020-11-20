@@ -179,13 +179,13 @@ export default {
 
 ### Events
 
-| Event  | Description                      | Arguments                       |
-| ------ | -------------------------------- | ------------------------------- |
-| select | Triggered when clicking action   | _action: Action, index: number_ |
-| open   | Triggered when opening Popover   | -                               |
-| close  | Triggered when closing Popover   | -                               |
-| opened | Triggered when Popover is opened | -                               |
-| closed | Triggered when Popover is closed | -                               |
+| Event  | Description                       | Arguments                       |
+| ------ | --------------------------------- | ------------------------------- |
+| select | Emitted when an action is clicked | _action: Action, index: number_ |
+| open   | Emitted when opening Popover      | -                               |
+| close  | Emitted when closing Popover      | -                               |
+| opened | Emitted when Popover is opened    | -                               |
+| closed | Emitted when Popover is closed    | -                               |
 
 ### Slots
 
