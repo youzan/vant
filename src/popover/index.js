@@ -13,6 +13,7 @@ import Popup from '../popup';
 
 // add Object.assign polyfill for popper.js
 // see: https://popper.js.org/docs/v2/browser-support/
+/* istanbul ignore if */
 if (!Object.assign) {
   Object.assign = extendsHelper;
 }
@@ -59,19 +60,12 @@ export default createComponent({
   },
 
   watch: {
+    value: 'updateLocation',
     placement: 'updateLocation',
-
-    value(value) {
-      if (value) {
-        this.updateLocation();
-      }
-    },
   },
 
   mounted() {
-    if (this.value) {
-      this.updateLocation();
-    }
+    this.updateLocation();
   },
 
   beforeDestroy() {
@@ -161,6 +155,7 @@ export default createComponent({
       this.$emit('open');
     },
 
+    /* istanbul ignore next */
     onOpened() {
       this.$emit('opened');
     },
@@ -169,6 +164,7 @@ export default createComponent({
       this.$emit('close');
     },
 
+    /* istanbul ignore next */
     onClosed() {
       this.$emit('closed');
     },

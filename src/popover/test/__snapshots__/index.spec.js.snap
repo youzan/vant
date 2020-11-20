@@ -1,22 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`gutter prop 1`] = `
-<div class="van-row">
-  <div class="van-col van-col--24">24</div>
-  <div class="van-col van-col--12" style="padding-right: 12px;">12</div>
-  <div class="van-col van-col--12" style="padding-left: 12px;">12</div>
-  <div class="van-col van-col--8" style="padding-right: 16px;">8</div>
-  <div class="van-col van-col--8" style="padding-left: 8px; padding-right: 8px;">8</div>
-  <div class="van-col van-col--8" style="padding-left: 16px;">8</div>
-  <div class="van-col van-col--6" style="padding-right: 18px;">6</div>
-  <div class="van-col van-col--6" style="padding-left: 6px; padding-right: 12px;">6</div>
-  <div class="van-col van-col--6" style="padding-left: 12px; padding-right: 6px;">6</div>
-  <div class="van-col van-col--6" style="padding-left: 18px;">6</div>
-  <div class="van-col van-col--7" style="padding-right: 18px;">7</div>
-  <div class="van-col van-col--6" style="padding-left: 6px; padding-right: 12px;">6</div>
-  <div class="van-col van-col--5" style="padding-left: 12px; padding-right: 6px;">5</div>
-  <div class="van-col van-col--4" style="padding-left: 18px;">4</div>
-  <div class="van-col van-col--3" style="padding-right: 12px;">3</div>
-  <div class="van-col van-col--2" style="padding-left: 12px;">2</div>
+exports[`should locate to reference element when showed 1`] = `<!---->`;
+
+exports[`should locate to reference element when showed 2`] = `
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2005;" data-popper-placement="bottom">
+  <div class="van-popover__arrow"></div>
+  <div class="van-popover__content"></div>
+</div>
+`;
+
+exports[`should locate to reference element when showed 3`] = `
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2005; display: none;" data-popper-placement="bottom">
+  <div class="van-popover__arrow"></div>
+  <div class="van-popover__content"></div>
+</div>
+`;
+
+exports[`should watch placement prop and update location 1`] = `
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="z-index: 2006; position: absolute; left: 0px; top: -8px; margin: 0px;" data-popper-placement="top">
+  <div class="van-popover__arrow"></div>
+  <div class="van-popover__content"></div>
 </div>
 `;
