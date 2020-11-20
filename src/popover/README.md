@@ -14,7 +14,7 @@ Vue.use(Popover);
 ### Basic Usage
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       Light Theme
@@ -24,6 +24,8 @@ Vue.use(Popover);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -34,6 +36,11 @@ export default {
         { text: 'Option 3' },
       ],
     };
+  },
+  methods: {
+    onSelect(action) {
+      Toast(action.text);
+    },
   },
 };
 ```

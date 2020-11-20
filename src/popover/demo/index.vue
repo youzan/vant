@@ -6,6 +6,7 @@
         :actions="t('actions')"
         placement="bottom-start"
         style="margin-left: 16px;"
+        @select="onSelect"
       >
         <template #reference>
           <van-button type="primary" @click="show.lightTheme = true">
@@ -18,6 +19,7 @@
         theme="dark"
         :actions="t('actions')"
         style="margin-left: 16px;"
+        @select="onSelect"
       >
         <template #reference>
           <van-button type="primary" @click="show.darkTheme = true">
@@ -48,6 +50,7 @@
             theme="dark"
             :actions="t('shortActions')"
             :placement="currentPlacement"
+            @select="onSelect"
           >
             <template #reference>
               <div class="demo-popover-refer" />
@@ -64,6 +67,7 @@
         :actions="t('actionsWithIcon')"
         placement="bottom-start"
         style="margin-left: 16px;"
+        @select="onSelect"
       >
         <template #reference>
           <van-button type="primary" @click="show.showIcon = true">
@@ -76,6 +80,7 @@
         v-model="show.disableAction"
         :actions="t('actionsDisabled')"
         style="margin-left: 16px;"
+        @select="onSelect"
       >
         <template #reference>
           <van-button type="primary" @click="show.disableAction = true">
@@ -90,6 +95,7 @@
         v-model="show.customContent"
         placement="top-start"
         style="margin-left: 16px;"
+        @select="onSelect"
       >
         <van-grid
           square
@@ -117,6 +123,8 @@
 </template>
 
 <script>
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -206,6 +214,9 @@ export default {
         this.show.placement = true;
         this.currentPlacement = value;
       });
+    },
+    onSelect(action) {
+      Toast(action.text);
     },
   },
 };

@@ -20,7 +20,7 @@ Vue.use(Popover);
 当 Popover 弹出时，会基于 `reference` 插槽的内容进行定位。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       浅色风格
@@ -30,6 +30,8 @@ Vue.use(Popover);
 ```
 
 ```js
+import { Toast } from 'vant';
+
 export default {
   data() {
     return {
@@ -37,6 +39,11 @@ export default {
       // 通过 actions 属性来定义菜单选项
       actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
     };
+  },
+  methods: {
+    onSelect(action) {
+      Toast(action.text);
+    },
   },
 };
 ```
