@@ -14,6 +14,7 @@ import { createNamespace, isDef } from '../utils';
 
 // Composition
 import { useEventListener } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 
@@ -108,6 +109,7 @@ export default createComponent({
     let shouldReopen;
 
     const zIndex = ref();
+    const popupRef = ref();
 
     const [lockScroll, unlockScroll] = useLockScroll(() => props.lockScroll);
 
@@ -194,6 +196,7 @@ export default createComponent({
       return (
         <div
           v-show={props.show}
+          ref={popupRef}
           style={style.value}
           class={bem({
             round,
@@ -238,6 +241,8 @@ export default createComponent({
         }
       }
     );
+
+    useExpose({ popupRef });
 
     useEventListener('popstate', () => {
       if (props.closeOnPopstate) {

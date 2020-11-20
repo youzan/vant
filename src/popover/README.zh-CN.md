@@ -7,10 +7,11 @@
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Popover } from 'vant';
 
-Vue.use(Popover);
+const app = createApp();
+app.use(Popover);
 ```
 
 ## 代码演示
@@ -20,7 +21,7 @@ Vue.use(Popover);
 当 Popover 弹出时，会基于 `reference` 插槽的内容进行定位。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
+<van-popover v-model:show="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       浅色风格
@@ -53,7 +54,7 @@ export default {
 Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 属性设置为 `dark` 可切换为深色风格。
 
 ```html
-<van-popover v-model="showPopover" theme="dark" :actions="actions">
+<van-popover v-model:show="showPopover" theme="dark" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       深色风格
@@ -103,7 +104,7 @@ bottom-end    # 底部右侧位置
 在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       展示图标
@@ -132,7 +133,7 @@ export default {
 在 `actions` 数组中，可以通过 `disabled` 字段来禁用某个选项。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       禁用选项
@@ -161,7 +162,7 @@ export default {
 通过默认插槽，可以在 Popover 内部放置任意内容。
 
 ```html
-<van-popover v-model="showPopover">
+<van-popover v-model:show="showPopover">
   <van-grid
     square
     clickable
@@ -201,14 +202,14 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 是否展示气泡弹出层 | _boolean_ | `false` |
+| v-model:show | 是否展示气泡弹出层 | _boolean_ | `false` |
 | actions | 选项列表 | _Action[]_ | `[]` |
 | placement | 弹出位置 | _string_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _string_ | `light` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
-| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | `body` |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | `body` |
 
 ### Action 数据结构
 

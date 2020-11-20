@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Popover } from 'vant';
 
-Vue.use(Popover);
+const app = createApp();
+app.use(Popover);
 ```
 
 ## Usage
@@ -14,7 +15,7 @@ Vue.use(Popover);
 ### Basic Usage
 
 ```html
-<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
+<van-popover v-model:show="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       Light Theme
@@ -50,7 +51,7 @@ export default {
 Using the `theme` prop to change the style of Popover.
 
 ```html
-<van-popover v-model="showPopover" theme="dark" :actions="actions">
+<van-popover v-model:show="showPopover" theme="dark" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       Dark Theme
@@ -100,7 +101,7 @@ bottom-end    # Bottom right
 ### Show Icon
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       Show Icon
@@ -129,7 +130,7 @@ export default {
 Using the `disabled` option to disable an action.
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
     <van-button type="primary" @click="showPopover = true">
       Disable Action
@@ -159,14 +160,14 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show Popover | _boolean_ | `false` |
+| v-model:show | Whether to show Popover | _boolean_ | `false` |
 | actions | Actions | _Action[]_ | `[]` |
 | placement | Placement | _string_ | `bottom` |
 | theme | Theme，can be set to `dark` | _string_ | `light` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when clicking outside | _boolean_ | `true` |
-| get-container | Return the mount node for Popover | _string \| () => Element_ | `body` |
+| teleport | Return the mount node for Popover | _string \| Element_ | `body` |
 
 ### Data Structure of Action
 

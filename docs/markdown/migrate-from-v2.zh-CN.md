@@ -59,6 +59,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 - Dialog
 - ImagePreview
 - Notify
+- Popover
 - Popup
 - ShareSheet
 

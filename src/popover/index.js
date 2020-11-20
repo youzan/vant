@@ -1,11 +1,14 @@
+import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import { createPopper } from '@popperjs/core/lib/popper-lite';
 import offsetModifier from '@popperjs/core/lib/modifiers/offset';
 import extendsHelper from '@babel/runtime/helpers/esm/extends';
+
+// Utils
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
-// Mixins
-import { ClickOutsideMixin } from '../mixins/click-outside';
+// Composition
+import { useClickAway } from '@vant/use';
 
 // Components
 import Icon from '../icon';
@@ -21,15 +24,10 @@ if (!Object.assign) {
 const [createComponent, bem] = createNamespace('popover');
 
 export default createComponent({
-  mixins: [
-    ClickOutsideMixin({
-      event: 'touchstart',
-      method: 'onClickOutside',
-    }),
-  ],
+  inheritAttrs: false,
 
   props: {
-    value: Boolean,
+    show: Boolean,
     overlay: Boolean,
     textColor: String,
     backgroundColor: String,
@@ -49,8 +47,8 @@ export default createComponent({
       type: String,
       default: 'bottom',
     },
-    getContainer: {
-      type: [String, Function],
+    teleport: {
+      type: [String, Object],
       default: 'body',
     },
     closeOnClickAction: {
@@ -59,26 +57,16 @@ export default createComponent({
     },
   },
 
-  watch: {
-    value: 'updateLocation',
-    placement: 'updateLocation',
-  },
+  emits: ['select', 'touchstart', 'update:show'],
 
-  mounted() {
-    this.updateLocation();
-  },
+  setup(props, { emit, slots, attrs }) {
+    let popper;
+    const wrapperRef = ref();
+    const popoverRef = ref();
 
-  beforeDestroy() {
-    if (this.popper) {
-      this.popper.destroy();
-      this.popper = null;
-    }
-  },
-
-  methods: {
-    createPopper() {
-      return createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
-        placement: this.placement,
+    const createPopperInstance = () => {
+      return createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
+        placement: props.placement,
         modifiers: [
           {
             name: 'computeStyles',
@@ -90,111 +78,99 @@ export default createComponent({
           {
             ...offsetModifier,
             options: {
-              offset: this.offset,
+              offset: props.offset,
             },
           },
         ],
       });
-    },
+    };
 
-    updateLocation() {
-      this.$nextTick(() => {
-        if (!this.value) {
+    const updateLocation = () => {
+      nextTick(() => {
+        if (!props.show) {
           return;
         }
 
-        if (!this.popper) {
-          this.popper = this.createPopper();
+        if (!popper) {
+          popper = createPopperInstance();
         } else {
-          this.popper.setOptions({
-            placement: this.placement,
+          popper.setOptions({
+            placement: props.placement,
           });
         }
       });
-    },
+    };
 
-    renderAction(action, index) {
+    const toggle = (value) => {
+      emit('update:show', value);
+    };
+
+    const onTouchstart = (event) => {
+      event.stopPropagation();
+      emit('touchstart', event);
+    };
+
+    const onClickAction = (action, index) => {
+      if (action.disabled) {
+        return;
+      }
+
+      emit('select', action, index);
+
+      if (props.closeOnClickAction) {
+        toggle(false);
+      }
+    };
+
+    const onClickAway = () => {
+      toggle(false);
+    };
+
+    const renderAction = (action, index) => {
       const { icon, text, disabled, className } = action;
       return (
         <div
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
-          onClick={() => this.onClickAction(action, index)}
+          onClick={() => onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
         </div>
       );
-    },
+    };
 
-    onToggle(value) {
-      this.$emit('input', value);
-    },
-
-    onTouchstart(event) {
-      event.stopPropagation();
-      this.$emit('touchstart', event);
-    },
-
-    onClickAction(action, index) {
-      if (action.disabled) {
-        return;
+    onMounted(updateLocation);
+    onBeforeUnmount(() => {
+      if (popper) {
+        popper.destroy();
+        popper = null;
       }
+    });
 
-      this.$emit('select', action, index);
+    watch([() => props.show, () => props.placement], updateLocation);
 
-      if (this.closeOnClickAction) {
-        this.$emit('input', false);
-      }
-    },
+    useClickAway(wrapperRef, onClickAway, { eventName: 'touchstart' });
 
-    onClickOutside() {
-      this.$emit('input', false);
-    },
-
-    onOpen() {
-      this.$emit('open');
-    },
-
-    /* istanbul ignore next */
-    onOpened() {
-      this.$emit('opened');
-    },
-
-    onClose() {
-      this.$emit('close');
-    },
-
-    /* istanbul ignore next */
-    onClosed() {
-      this.$emit('closed');
-    },
-  },
-
-  render() {
-    return (
-      <span ref="wrapper" class={bem('wrapper')}>
+    return () => (
+      <span ref={wrapperRef} class={bem('wrapper')}>
         <Popup
-          ref="popover"
-          value={this.value}
-          class={bem([this.theme])}
-          overlay={this.overlay}
+          ref={popoverRef}
+          show={props.show}
+          class={bem([props.theme])}
+          overlay={props.overlay}
           position={null}
+          teleport={props.teleport}
           transition="van-popover-zoom"
           lockScroll={false}
-          getContainer={this.getContainer}
-          onOpen={this.onOpen}
-          onClose={this.onClose}
-          onInput={this.onToggle}
-          onOpened={this.onOpened}
-          onClosed={this.onClosed}
-          nativeOnTouchstart={this.onTouchstart}
+          onTouchstart={onTouchstart}
+          {...{ ...attrs, 'onUpdate:show': toggle }}
         >
           <div class={bem('arrow')} />
           <div class={bem('content')}>
-            {this.slots('default') || this.actions.map(this.renderAction)}
+            {slots.default ? slots.default() : props.actions.map(renderAction)}
           </div>
         </Popup>
-        {this.slots('reference')}
+        {slots.reference?.()}
       </span>
     );
   },

@@ -1,125 +1,123 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-popover
-        v-model="show.lightTheme"
-        :actions="t('actions')"
-        placement="bottom-start"
-        style="margin-left: 16px;"
-        @select="onSelect"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.lightTheme = true">
-            {{ t('lightTheme') }}
-          </van-button>
-        </template>
-      </van-popover>
-      <van-popover
-        v-model="show.darkTheme"
-        theme="dark"
-        :actions="t('actions')"
-        style="margin-left: 16px;"
-        @select="onSelect"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.darkTheme = true">
-            {{ t('darkTheme') }}
-          </van-button>
-        </template>
-      </van-popover>
-    </demo-block>
+  <demo-block :title="t('basicUsage')">
+    <van-popover
+      v-model:show="show.lightTheme"
+      :actions="t('actions')"
+      placement="bottom-start"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary" @click="show.lightTheme = true">
+          {{ t('lightTheme') }}
+        </van-button>
+      </template>
+    </van-popover>
+    <van-popover
+      v-model:show="show.darkTheme"
+      theme="dark"
+      :actions="t('actions')"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary" @click="show.darkTheme = true">
+          {{ t('darkTheme') }}
+        </van-button>
+      </template>
+    </van-popover>
+  </demo-block>
 
-    <demo-block :title="t('placement')">
-      <van-field
-        is-link
-        readonly
-        name="picker"
-        :label="t('choosePlacement')"
-        @click="showPicker = true"
-      />
+  <demo-block :title="t('placement')">
+    <van-field
+      is-link
+      readonly
+      name="picker"
+      :label="t('choosePlacement')"
+      @click="showPicker = true"
+    />
 
-      <van-popup
-        v-model="showPicker"
-        round
-        position="bottom"
-        get-container="body"
-      >
-        <div class="demo-popover-box">
-          <van-popover
-            v-model="show.placement"
-            theme="dark"
-            :actions="t('shortActions')"
-            :placement="currentPlacement"
-            @select="onSelect"
-          >
-            <template #reference>
-              <div class="demo-popover-refer" />
-            </template>
-          </van-popover>
-        </div>
-        <van-picker :columns="placements" @change="onPickerChange" />
-      </van-popup>
-    </demo-block>
-
-    <demo-block :title="t('actionOptions')">
-      <van-popover
-        v-model="show.showIcon"
-        :actions="t('actionsWithIcon')"
-        placement="bottom-start"
-        style="margin-left: 16px;"
-        @select="onSelect"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.showIcon = true">
-            {{ t('showIcon') }}
-          </van-button>
-        </template>
-      </van-popover>
-
-      <van-popover
-        v-model="show.disableAction"
-        :actions="t('actionsDisabled')"
-        style="margin-left: 16px;"
-        @select="onSelect"
-      >
-        <template #reference>
-          <van-button type="primary" @click="show.disableAction = true">
-            {{ t('disableAction') }}
-          </van-button>
-        </template>
-      </van-popover>
-    </demo-block>
-
-    <demo-block :title="t('customContent')">
-      <van-popover
-        v-model="show.customContent"
-        placement="top-start"
-        style="margin-left: 16px;"
-        @select="onSelect"
-      >
-        <van-grid
-          square
-          clickable
-          :border="false"
-          column-num="3"
-          style="width: 240px;"
+    <van-popup
+      v-model:show="showPicker"
+      round
+      position="bottom"
+      get-container="body"
+    >
+      <div class="demo-popover-box">
+        <van-popover
+          v-model:show="show.placement"
+          theme="dark"
+          :actions="t('shortActions')"
+          :placement="currentPlacement"
+          @select="onSelect"
         >
-          <van-grid-item
-            v-for="i in 6"
-            :key="i"
-            icon="photo-o"
-            :text="t('option')"
-            @click="show.customContent = false"
-          />
-        </van-grid>
-        <template #reference>
-          <van-button type="primary" @click="show.customContent = true">
-            {{ t('customContent') }}
-          </van-button>
-        </template>
-      </van-popover>
-    </demo-block>
-  </demo-section>
+          <template #reference>
+            <div class="demo-popover-refer" />
+          </template>
+        </van-popover>
+      </div>
+      <van-picker
+        :columns="placements"
+        :show-toolbar="false"
+        @change="onPickerChange"
+      />
+    </van-popup>
+  </demo-block>
+
+  <demo-block :title="t('actionOptions')">
+    <van-popover
+      v-model:show="show.showIcon"
+      :actions="t('actionsWithIcon')"
+      placement="bottom-start"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary" @click="show.showIcon = true">
+          {{ t('showIcon') }}
+        </van-button>
+      </template>
+    </van-popover>
+
+    <van-popover
+      v-model:show="show.disableAction"
+      :actions="t('actionsDisabled')"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary" @click="show.disableAction = true">
+          {{ t('disableAction') }}
+        </van-button>
+      </template>
+    </van-popover>
+  </demo-block>
+
+  <demo-block :title="t('customContent')">
+    <van-popover
+      v-model:show="show.customContent"
+      placement="top-start"
+      style="margin-left: 16px;"
+      @select="onSelect"
+    >
+      <van-grid
+        square
+        clickable
+        :border="false"
+        column-num="3"
+        style="width: 240px;"
+      >
+        <van-grid-item
+          v-for="i in 6"
+          :key="i"
+          icon="photo-o"
+          :text="t('option')"
+          @click="show.customContent = false"
+        />
+      </van-grid>
+      <template #reference>
+        <van-button type="primary" @click="show.customContent = true">
+          {{ t('customContent') }}
+        </van-button>
+      </template>
+    </van-popover>
+  </demo-block>
 </template>
 
 <script>
@@ -209,7 +207,7 @@ export default {
   },
 
   methods: {
-    onPickerChange(picker, value) {
+    onPickerChange(value) {
       setTimeout(() => {
         this.show.placement = true;
         this.currentPlacement = value;
@@ -233,6 +231,10 @@ export default {
     border-radius: 8px;
   }
 
+  .van-popover__wrapper {
+    margin-left: @padding-md;
+  }
+
   .van-field {
     width: auto;
     margin: 0 12px;
@@ -244,6 +246,10 @@ export default {
     display: flex;
     justify-content: center;
     margin: 110px 0;
+
+    .van-popover__wrapper {
+      margin-left: 0;
+    }
   }
 }
 </style>
