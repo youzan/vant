@@ -47,6 +47,17 @@ test('should close popover when clicking the action', () => {
   expect(wrapper.emitted('input').length).toEqual(1);
 });
 
+test('should allow to custom the className of action', () => {
+  const wrapper = mount(Popover, {
+    propsData: {
+      value: true,
+      actions: [{ text: 'Option', className: 'foo' }],
+    },
+  });
+
+  expect(wrapper.find('.van-popover__action').html()).toMatchSnapshot();
+});
+
 test('should not init popper.js instance before showed', async () => {
   const wrapper = mount(Popover);
   expect(wrapper.vm.popper).toBeFalsy();
