@@ -257,11 +257,11 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when click tab | name，title |
-| change | Triggered when active tab changed | name，title |
-| disabled | Triggered when click disabled tab | name，title |
-| rendered `v2.3.0` | Triggered when content first rendered in lazy-render mode | name，title |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+| click | Emitted when a tab is clicked | name，title |
+| change | Emitted when active tab changed | name，title |
+| disabled | Emitted when a disabled tab is clicked | name，title |
+| rendered `v2.3.0` | Emitted when content first rendered in lazy-render mode | name，title |
+| scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods
 

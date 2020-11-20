@@ -160,7 +160,7 @@ Toast.resetDefaultOptions('loading');
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | forbidClick | Whether to forbid click background | _boolean_ | `false` |
 | closeOnClick | Whether to close after clicked | _boolean_ | `false` |
-| closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
+| closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | loadingType | Loading icon type, can be set to `spinner` | _string_ | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
 | className | Custom className | _any_ | - |

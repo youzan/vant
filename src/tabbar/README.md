@@ -166,7 +166,7 @@ export default {
 
 | Event  | Description                      | Arguments                    |
 | ------ | -------------------------------- | ---------------------------- |
-| change | Triggered when change active tab | active: index of current tab |
+| change | Emitted when changing active tab | active: index of current tab |
 
 ### TabbarItem Props
 

@@ -131,6 +131,6 @@ export default {
 
 ### Events
 
-| Event | Description                      | Arguments |
-| ----- | -------------------------------- | --------- |
-| focus | Triggered when input get focused | -         |
+| Event | Description                   | Arguments |
+| ----- | ----------------------------- | --------- |
+| focus | Emitted when input is focused | -         |

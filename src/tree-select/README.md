@@ -124,8 +124,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-nav | triggered when parent node is selected | index: index of selected parent |
-| click-item | triggered when item is selected | data: selected item |
+| click-nav | Emitted when parent node is selected | index: index of selected parent |
+| click-item | Emitted when item is selected | data: selected item |
 
 ### Slots
 

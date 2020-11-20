@@ -75,7 +75,7 @@ export default {
 
 ### Events
 
-| Event       | Description                       | Arguments |
-| ----------- | --------------------------------- | --------- |
-| click-left  | Triggered when click left button  | -         |
-| click-right | Triggered when click right button | -         |
+| Event       | Description                              | Arguments |
+| ----------- | ---------------------------------------- | --------- |
+| click-left  | Emitted when the left button is clicked  | -         |
+| click-right | Emitted when the right button is clicked | -         |

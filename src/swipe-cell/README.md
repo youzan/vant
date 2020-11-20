@@ -117,9 +117,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
-| open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
-| close | Triggered when closed | { position: string , name: string } |
+| click | Emitted when SwipeCell is clicked | Click positon (`left` `right` `cell` `outside`) |
+| open | Emitted when SwipeCell is opened | { position: 'left' \| 'right' , name: string } |
+| close | Emitted when SwipeCell is closed | { position: string , name: string } |
 
 ### beforeClose Params
 

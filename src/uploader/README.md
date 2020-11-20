@@ -202,7 +202,7 @@ Use `disabled` prop to disable uploader.
 | name | Input name | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
-| preview-full-image | Whethe to show full screen image preview when click image | _boolean_ | `true` |
+| preview-full-image | Whethe to show full screen image preview when image is clicked | _boolean_ | `true` |
 | preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
@@ -224,10 +224,10 @@ Use `disabled` prop to disable uploader.
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| oversize | Triggered when file size over limit | Same as after-read |
-| click-preview | Triggered when click preview image | Same as after-read |
-| close-preview | Triggered when close full screen image preview | - |
-| delete | Triggered when delete preview file | Same as after-read |
+| oversize | Emitted when file size over limit | Same as after-read |
+| click-preview | Emitted when preview image is clicked | Same as after-read |
+| close-preview | Emitted when the full screen image preview is closed | - |
+| delete | Emitted when preview file is deleted | Same as after-read |
 
 ### Slots
 

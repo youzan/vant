@@ -89,9 +89,9 @@ export default {
 
 ### Sidebar Events
 
-| Event  | Description                 | Arguments                    |
-| ------ | --------------------------- | ---------------------------- |
-| change | Triggered when item changed | index: index of current item |
+| Event  | Description                      | Arguments                    |
+| ------ | -------------------------------- | ---------------------------- |
+| change | Emitted when chosen item changed | index: index of current item |
 
 ### SidebarItem Props
 
@@ -107,9 +107,9 @@ export default {
 
 ### SidebarItem Events
 
-| Event | Description               | Arguments                    |
-| ----- | ------------------------- | ---------------------------- |
-| click | Triggered when click item | index: index of current item |
+| Event | Description                     | Arguments                    |
+| ----- | ------------------------------- | ---------------------------- |
+| click | Emitted when an item is clicked | index: index of current item |
 
 ### SidebarItem Slots
 

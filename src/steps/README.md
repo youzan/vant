@@ -87,4 +87,4 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-step `v2.5.9` | Triggered when a step's title or icon is clicked | _index: number_ |
+| click-step `v2.5.9` | Emitted when a step's title or icon is clicked | _index: number_ |

@@ -91,11 +91,11 @@ Vue.use(Lazyload);
 
 ### Events
 
-| Event | Description                      | Arguments      |
-| ----- | -------------------------------- | -------------- |
-| click | Triggered when click image       | _event: Event_ |
-| load  | Triggered when image loaded      | -              |
-| error | Triggered when image load failed | -              |
+| Event | Description                    | Arguments      |
+| ----- | ------------------------------ | -------------- |
+| click | Emitted when image is clicked  | _event: Event_ |
+| load  | Emitted when image loaded      | -              |
+| error | Emitted when image load failed | -              |
 
 ### Slots
 

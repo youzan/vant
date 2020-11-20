@@ -96,6 +96,6 @@ import 'vant/lib/icon/local.css';
 
 ### Events
 
-| Event | Description               | Arguments      |
-| ----- | ------------------------- | -------------- |
-| click | Triggered when click icon | _event: Event_ |
+| Event | Description                  | Arguments      |
+| ----- | ---------------------------- | -------------- |
+| click | Emitted when icon is clicked | _event: Event_ |

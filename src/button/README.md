@@ -131,8 +131,8 @@ Vue.use(Button);
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when click button and not disabled or loading | _event: Event_ |
-| touchstart | Triggered when touch start | _event: TouchEvent_ |
+| click | Emitted when button is clicked and not disabled or loading | _event: Event_ |
+| touchstart | Emitted when button is touched | _event: TouchEvent_ |
 
 ### Slots
 

@@ -94,15 +94,15 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| save | Triggered when click save button | content：form content |
-| focus | Triggered when focus field | key: field name |
-| delete | Triggered when confirm delete | content：form content |
-| cancel-delete | Triggered when cancel delete | content：form content |
-| select-search | Triggered when select search result | value: search content |
-| click-area `v2.5.9` | Triggered when click area | - |
-| change-area | Triggered when change area | values: area values |
-| change-detail | Triggered when address detail changed | value: address detail |
-| change-default | Triggered when switch default address | value: checked |
+| save | Emitted when the save button is clicked | content：form content |
+| focus | Emitted when field is focused | key: field name |
+| delete | Emitted when confirming delete | content：form content |
+| cancel-delete | Emitted when canceling delete | content：form content |
+| select-search | Emitted when a search result is selected | value: search content |
+| click-area `v2.5.9` | Emitted when the area field is clicked | - |
+| change-area | Emitted when area changed | values: area values |
+| change-detail | Emitted when address detail changed | value: address detail |
+| change-default | Emitted when switching default address | value: checked |
 
 ### Slots
 

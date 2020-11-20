@@ -163,8 +163,8 @@ export default {
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate `v2.5.3` | Whether to close when popstate | _boolean_ | `false` |
-| close-on-click-action | Whether to close when click action | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| close-on-click-action | Whether to close when an action is clicked | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container | Return the mount node for ActionSheet | _string \| () => Element_ | - |
 
@@ -183,13 +183,13 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when click option | _action: Action, index: number_ |
-| cancel | Triggered when click cancel button | - |
-| open | Triggered when open ActionSheet | - |
-| close | Triggered when close ActionSheet | - |
-| opened | Triggered when opened ActionSheet | - |
-| closed | Triggered when closed ActionSheet | - |
-| click-overlay | Triggered when click overlay | - |
+| select | Emitted when an option is clicked | _action: Action, index: number_ |
+| cancel | Emitted when the cancel button is clicked | - |
+| open | Emitted when opening ActionSheet | - |
+| close | Emitted when closing ActionSheet | - |
+| opened | Emitted when ActionSheet is opened | - |
+| closed | Emitted when ActionSheet is closed | - |
+| click-overlay | Emitted when overlay is clicked | - |
 
 ### Slots
 

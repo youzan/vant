@@ -118,6 +118,6 @@ export default {
 
 ### Events
 
-| Event  | Description                 | Parameters   |
-| ------ | --------------------------- | ------------ |
-| change | Triggered when rate changed | current rate |
+| Event  | Description               | Parameters   |
+| ------ | ------------------------- | ------------ |
+| change | Emitted when rate changed | current rate |

@@ -75,9 +75,9 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | triggers when clicking the confirm button | an array |
-| cancel | triggers when clicking the cancel button | - |
-| change | Triggered when current option changed | Picker instance, current values，column index |
+| confirm | Emitted when the confirm button is clicked | selected areas |
+| cancel | Emitted when the cancel button is clicked | - |
+| change | Emitted when current option changed | Picker instance, current values，column index |
 
 ### Slots
 

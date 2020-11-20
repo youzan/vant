@@ -119,7 +119,7 @@ export default {
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container | Return the mount node for ShareSheet | _string \| () => Element_ | - |
 
@@ -136,9 +136,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when click option | _option: Option, index: number_ |
-| cancel | Triggered when click cancel button | - |
-| click-overlay `v2.9.1` | Triggered when click overlay | - |
+| select | Emitted when an option is clicked | _option: Option, index: number_ |
+| cancel | Emitted when the cancel button is clicked | - |
+| click-overlay `v2.9.1` | Emitted when overlay is clicked | - |
 
 ### Slots
 

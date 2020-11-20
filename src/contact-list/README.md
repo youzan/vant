@@ -75,9 +75,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add | Triggered when click add button | - |
-| edit | Triggered when click edit button | _contact: Contact，index: number_ |
-| select | Triggered when select contact | _contact: Contact, index: number_ |
+| add | Emitted when the add button is clicked | - |
+| edit | Emitted when the edit button is clicked | _contact: Contact，index: number_ |
+| select | Emitted when a contact is selected | _contact: Contact, index: number_ |
 
 ### Data Structure of Contact
 
