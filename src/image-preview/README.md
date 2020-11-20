@@ -159,6 +159,13 @@ export default {
 | closed `v2.5.6` | Emitted when ImagePreview is closed | - |
 | change | Emitted when current image changed | index: index of current image |
 | scale `v2.5.0` | Emitted when scaling current image | { index: index of current image, scale: scale of current image} |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
 | swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | - |
 
 ### Slots
