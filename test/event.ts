@@ -1,7 +1,7 @@
 import { ComponentPublicInstance } from 'vue';
 import { VueWrapper } from '@vue/test-utils';
 
-function getTouch(el: HTMLElement | Window, x: number, y: number) {
+function getTouch(el: Element | Window, x: number, y: number) {
   return {
     identifier: Date.now(),
     target: el,
@@ -47,7 +47,7 @@ export function trigger(
 
 // simulate drag gesture
 export function triggerDrag(
-  el: Wrapper<Vue> | HTMLElement,
+  el: VueWrapper<ComponentPublicInstance> | HTMLElement,
   x = 0,
   y = 0
 ): void {
