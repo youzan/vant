@@ -2070,10 +2070,10 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/test-utils@2.0.0-beta.7":
-  version "2.0.0-beta.7"
-  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-2.0.0-beta.7.tgz?cache=0&sync_timestamp=1603008369913&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-2.0.0-beta.7.tgz#27751991e0b013ee4af487e51e16a58d477e5857"
-  integrity sha1-J3UZkeCwE+5K9IflHhaljUd+WFc=
+"@vue/test-utils@2.0.0-beta.10":
+  version "2.0.0-beta.10"
+  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-2.0.0-beta.10.tgz?cache=0&sync_timestamp=1605605368739&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-2.0.0-beta.10.tgz#7b5e2a6084d2c99dcc9d229e8de8b71ce50cb07d"
+  integrity sha1-e14qYITSyZ3MnSKejei3HOUMsH0=
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -11362,10 +11362,10 @@ vue-eslint-parser@^7.1.1:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-jest@^5.0.0-alpha.5:
-  version "5.0.0-alpha.5"
-  resolved "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.5.tgz#a24b7569ba2078836a316033f283e151afc4906b"
-  integrity sha1-okt1abogeINqMWAz8oPhUa/EkGs=
+vue-jest@^5.0.0-alpha.6:
+  version "5.0.0-alpha.6"
+  resolved "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.6.tgz?cache=0&sync_timestamp=1605609414836&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-jest%2Fdownload%2Fvue-jest-5.0.0-alpha.6.tgz#76615809ba84278e7cd3b7d6d3cc7f18caa2e893"
+  integrity sha1-dmFYCbqEJ45807fW08x/GMqi6JM=
   dependencies:
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
     chalk "^2.1.0"
@@ -11373,19 +11373,19 @@ vue-jest@^5.0.0-alpha.5:
     extract-from-css "^0.4.4"
     ts-jest "^24.0.0"
 
-vue-loader@^16.0.0-beta.8:
-  version "16.0.0-beta.8"
-  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0-beta.8.tgz?cache=0&sync_timestamp=1600850508665&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0-beta.8.tgz#1f523d9fea8e8c6e4f5bb99fd768165af5845879"
-  integrity sha1-H1I9n+qOjG5PW7mf12gWWvWEWHk=
+vue-loader@^16.0.0-rc.2:
+  version "16.0.0-rc.2"
+  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0-rc.2.tgz?cache=0&sync_timestamp=1605670753007&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0-rc.2.tgz#b6a7e7f30d28f35659a83de41f4a1831a4232a04"
+  integrity sha1-tqfn8w0o81ZZqD3kH0oYMaQjKgQ=
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
 
-vue-router@^4.0.0-beta.13:
-  version "4.0.0-beta.13"
-  resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.0.0-beta.13.tgz#4611d09a9e44f231cc401ecc294a7f2dcb30e6a6"
-  integrity sha512-dYv9qpHPaojQlfujViiTkPkf1Bf5RCFzkCkdVFc1cENzWJYAGJanpIHiyjyKoM4u7IDFBZMItci+U4ieaEWA8A==
+vue-router@^4.0.0-rc.5:
+  version "4.0.0-rc.5"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-rc.5.tgz?cache=0&sync_timestamp=1605950420075&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-rc.5.tgz#191d32e3d5276641ff21e881d34e33a71dc6e8f0"
+  integrity sha1-GR0y49UnZkH/IeiB004zpx3G6PA=
 
 vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
