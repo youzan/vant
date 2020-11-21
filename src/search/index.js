@@ -1,5 +1,10 @@
+import { ref } from 'vue';
+
 // Utils
 import { pick, createNamespace, preventDefault } from '../utils';
+
+// Composition
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import Field from '../field';
@@ -34,6 +39,8 @@ export default createComponent({
   emits: ['search', 'cancel'],
 
   setup(props, { emit, slots, attrs }) {
+    const filedRef = ref();
+
     const onCancel = () => {
       if (!slots.action) {
         emit('update:modelValue', '');
@@ -75,6 +82,12 @@ export default createComponent({
       }
     };
 
+    const focus = () => {
+      if (filedRef.value) {
+        filedRef.value.focus();
+      }
+    };
+
     const fieldPropNames = [
       'leftIcon',
       'rightIcon',
@@ -94,6 +107,7 @@ export default createComponent({
       return (
         <Field
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
+          ref={filedRef}
           type="search"
           border={false}
           onKeypress={onKeypress}
@@ -101,6 +115,8 @@ export default createComponent({
         />
       );
     };
+
+    useExpose({ focus });
 
     return () => (
       <div

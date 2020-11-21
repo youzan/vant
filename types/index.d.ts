@@ -20,6 +20,7 @@ import { Locale } from './locale';
 import { Notify } from './notify';
 import { Picker } from './picker';
 import { Progress } from './progress';
+import { Search } from './search';
 import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
@@ -73,7 +74,6 @@ export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
 export class Rate extends VanComponent {}
 export class Row extends VanComponent {}
-export class Search extends VanComponent {}
 export class ShareSheet extends VanComponent {}
 export class Sidebar extends VanComponent {}
 export class SidebarItem extends VanComponent {}
@@ -113,6 +113,7 @@ export {
   Notify,
   Picker,
   Progress,
+  Search,
   Sku,
   Swipe,
   SwipeCell,

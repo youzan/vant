@@ -141,6 +141,14 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 | clear  | Emitted when the clear icon is clicked    | _event: Event_  |
 | cancel | Emitted when the cancel button is clicked | -               |
 
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search instance and call instance methods.
+
+| Name  | Description         | Attribute | Return value |
+| ----- | ------------------- | --------- | ------------ |
+| focus | Trigger input focus | -         | -            |
+
 ### Slots
 
 | Name       | Description                                                 |
