@@ -19,9 +19,7 @@ const CSS_LOADERS = [
   {
     loader: 'postcss-loader',
     options: {
-      config: {
-        path: POSTCSS_CONFIG_FILE,
-      },
+      postcssOptions: require(POSTCSS_CONFIG_FILE),
     },
   },
 ];

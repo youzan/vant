@@ -33,8 +33,6 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/webpack-dev-server": "^3.11.1",
     "@types/fs-extra": "^9.0.4",
     "@types/lodash": "^4.14.165",
     "@types/postcss-load-config": "^2.0.1"
@@ -46,6 +44,8 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
+    "@types/jest": "^26.0.15",
+    "@types/webpack-dev-server": "^3.11.1",
     "@vant/eslint-config": "^3.0.0",
     "@vant/markdown-loader": "^3.0.1",
     "@vant/markdown-vetur": "^2.0.2",
