@@ -1822,9 +1822,9 @@
     fs-extra "^9.0.0"
 
 "@vant/stylelint-config@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/@vant/stylelint-config/download/@vant/stylelint-config-1.4.0.tgz?cache=0&sync_timestamp=1605967918402&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fstylelint-config%2Fdownload%2F%40vant%2Fstylelint-config-1.4.0.tgz#a446a56819b56d862d994c270a0ca7d326fab924"
-  integrity sha1-pEalaBm1bYYtmUwnCgyn0yb6uSQ=
+  version "1.4.1"
+  resolved "https://registry.npm.taobao.org/@vant/stylelint-config/download/@vant/stylelint-config-1.4.1.tgz#f96d21e09de884e4d9fee71712aacb35228a066f"
+  integrity sha1-+W0h4J3ohOTZ/ucXEqrLNSKKBm8=
   dependencies:
     stylelint-config-prettier "^8.0.1"
     stylelint-config-standard "^20.0.0"
