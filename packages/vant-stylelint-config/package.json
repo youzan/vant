@@ -1,10 +1,11 @@
 {
   "name": "@vant/stylelint-config",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "stylelint config of vant.",
   "main": "index.js",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-stylelint-config",

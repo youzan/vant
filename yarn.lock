@@ -3912,13 +3912,6 @@ diff-sequences@^26.6.2:
   resolved "https://registry.npm.taobao.org/diff-sequences/download/diff-sequences-26.6.2.tgz?cache=0&sync_timestamp=1604319864127&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdiff-sequences%2Fdownload%2Fdiff-sequences-26.6.2.tgz#48ba99157de1923412eed41db6b6d4aa9ca7c0b1"
   integrity sha1-SLqZFX3hkjQS7tQdtrbUqpynwLE=
 
-diffable-html@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npm.taobao.org/diffable-html/download/diffable-html-4.0.0.tgz#eb44a189785115bacd04829f31658fcd3c0ce590"
-  integrity sha1-60ShiXhRFbrNBIKfMWWPzTwM5ZA=
-  dependencies:
-    htmlparser2 "^3.9.2"
-
 dir-glob@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
@@ -5461,7 +5454,7 @@ html-webpack-plugin@^5.0.0-alpha.6:
     pretty-error "^2.1.1"
     tapable "2.0.0"
 
-htmlparser2@^3.10.0, htmlparser2@^3.3.0, htmlparser2@^3.9.2:
+htmlparser2@^3.10.0, htmlparser2@^3.3.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
   integrity sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==
@@ -6575,13 +6568,6 @@ jest-runtime@^26.6.3:
     slash "^3.0.0"
     strip-bom "^4.0.0"
     yargs "^15.4.1"
-
-jest-serializer-html@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npm.taobao.org/jest-serializer-html/download/jest-serializer-html-7.0.0.tgz#9db553a69dea3498412a44c80d74a3770ff62936"
-  integrity sha1-nbVTpp3qNJhBKkTIDXSjdw/2KTY=
-  dependencies:
-    diffable-html "^4.0.0"
 
 jest-serializer-vue@^2.0.2:
   version "2.0.2"
