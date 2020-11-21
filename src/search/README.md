@@ -148,6 +148,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 | Name  | Description         | Attribute | Return value |
 | ----- | ------------------- | --------- | ------------ |
 | focus | Trigger input focus | -         | -            |
+| blur  | Trigger input blur  | -         | -            |
 
 ### Slots
 

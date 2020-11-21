@@ -88,6 +88,12 @@ export default createComponent({
       }
     };
 
+    const blur = () => {
+      if (filedRef.value) {
+        filedRef.value.blur();
+      }
+    };
+
     const fieldPropNames = [
       'leftIcon',
       'rightIcon',
@@ -116,7 +122,7 @@ export default createComponent({
       );
     };
 
-    useExpose({ focus });
+    useExpose({ focus, blur });
 
     return () => (
       <div
