@@ -29,8 +29,6 @@ export default createComponent({
   props: {
     show: Boolean,
     overlay: Boolean,
-    textColor: String,
-    backgroundColor: String,
     offset: {
       type: Array,
       default: () => [0, 8],

@@ -102,6 +102,7 @@ export default createComponent({
     'closed',
     'update:show',
     'click-overlay',
+    'click-close-icon',
   ],
 
   setup(props, { emit, attrs, slots }) {
@@ -173,6 +174,11 @@ export default createComponent({
       }
     };
 
+    const onClickCloseIcon = (event) => {
+      emit('click-close-icon', event);
+      close();
+    };
+
     const renderCloseIcon = () => {
       if (props.closeable) {
         return (
@@ -181,7 +187,7 @@ export default createComponent({
             tabindex="0"
             name={props.closeIcon}
             class={bem('close-icon', props.closeIconPosition)}
-            onClick={close}
+            onClick={onClickCloseIcon}
           />
         );
       }
