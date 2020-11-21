@@ -30,7 +30,6 @@
   "author": "chenjiahan",
   "license": "MIT",
   "peerDependencies": {
-    "@vue/compiler-sfc": "^3.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -76,7 +75,7 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "jest-canvas-mock": "^2.3.0",
-    "jest-serializer-vue": "^2.0.2",
+    "jest-serializer-html": "^7.0.0",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
     "lint-staged": "^10.5.1",
