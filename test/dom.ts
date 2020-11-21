@@ -37,7 +37,7 @@ export function mockScrollIntoView() {
 }
 
 export function mockGetBoundingClientRect(
-  rect: ClientRect | DOMRect
+  rect: DOMRect
 ): () => void {
   const originMethod = Element.prototype.getBoundingClientRect;
 
