@@ -3,7 +3,7 @@ import { readFileSync, removeSync, outputFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
 import { replaceCssImport } from '../common/css';
 
-export function compileJs(filePath: string): Promise<undefined> {
+export function compileJs(filePath: string): Promise<void> {
   return new Promise((resolve, reject) => {
     let code = readFileSync(filePath, 'utf-8');
 

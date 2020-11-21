@@ -93,7 +93,7 @@ function getSequence(components: string[], depsMap: DepsMap) {
 export async function genStyleDepsMap() {
   const components = getComponents();
 
-  return new Promise(resolve => {
+  return new Promise<void>(resolve => {
     clearDepsCache();
 
     const map = {} as DepsMap;
