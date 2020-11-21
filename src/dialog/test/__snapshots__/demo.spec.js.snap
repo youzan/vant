@@ -2,108 +2,130 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>提示弹窗</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        提示弹窗
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>提示弹窗（无标题）</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        提示弹窗（无标题）
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>确认弹窗</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        确认弹窗
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
-  </div>
-</div>
-<div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>提示弹窗</span>
-      <!---->
-    </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
-  </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>提示弹窗（无标题）</span>
-      <!---->
-    </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>异步关闭</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        提示弹窗
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        提示弹窗（无标题）
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>组件调用</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        异步关闭
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        组件调用
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
   <transition-stub>
-    <!---->
   </transition-stub>
   <transition-stub>
-    <div class="van-popup van-popup--center van-dialog" role="dialog" aria-labelledby="标题" style="display: none;">
-      <div class="van-dialog__header">标题</div>
-      <div class="van-dialog__content"><img src="https://img.yzcdn.cn/vant/apple-3.jpg"></div>
-      <div class="van-hairline--top van-dialog__footer"><button type="button" class="van-button van-button--default van-button--large van-dialog__cancel">
+    <div class="van-popup van-popup--center van-dialog"
+         role="dialog"
+         aria-labelledby="标题"
+         style="display: none;"
+    >
+      <div class="van-dialog__header">
+        标题
+      </div>
+      <div class="van-dialog__content">
+        <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
+      </div>
+      <div class="van-hairline--top van-dialog__footer">
+        <button type="button"
+                class="van-button van-button--default van-button--large van-dialog__cancel"
+        >
           <div class="van-button__content">
-            <!----><span class="van-button__text">取消</span>
-            <!---->
+            <span class="van-button__text">
+              取消
+            </span>
           </div>
-        </button><button type="button" class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
+        </button>
+        <button type="button"
+                class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+        >
           <div class="van-button__content">
-            <!----><span class="van-button__text">确认弹窗</span>
-            <!---->
+            <span class="van-button__text">
+              确认弹窗
+            </span>
           </div>
-        </button></div>
-      <!---->
+        </button>
+      </div>
     </div>
   </transition-stub>
 </div>

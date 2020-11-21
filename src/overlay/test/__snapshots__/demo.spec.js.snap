@@ -1,24 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render demo and match snapshot 1`] = `
-<div><button type="button" class="van-button van-button--primary van-button--normal" style="margin-left: 16px;">
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+          style="margin-left: 16px;"
+  >
     <div class="van-button__content">
-      <!----><span class="van-button__text">显示遮罩层</span>
-      <!---->
+      <span class="van-button__text">
+        显示遮罩层
+      </span>
     </div>
   </button>
   <transition-stub>
-    <!---->
   </transition-stub>
 </div>
-<div><button type="button" class="van-button van-button--primary van-button--normal" style="margin-left: 16px;">
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+          style="margin-left: 16px;"
+  >
     <div class="van-button__content">
-      <!----><span class="van-button__text">嵌入内容</span>
-      <!---->
+      <span class="van-button__text">
+        嵌入内容
+      </span>
     </div>
   </button>
   <transition-stub>
-    <!---->
   </transition-stub>
 </div>
 `;

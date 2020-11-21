@@ -4,179 +4,209 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded" role="button" tabindex="0" aria-expanded="true" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题1</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+           role="button"
+           tabindex="0"
+           aria-expanded="true"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题1
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-collapse-item__wrapper">
-        <div class="van-collapse-item__content">代码是写出来给人看的，附带能在机器上运行</div>
+        <div class="van-collapse-item__content">
+          代码是写出来给人看的，附带能在机器上运行
+        </div>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题2</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题2
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题3</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题3
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
   </div>
 </div>
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded" role="button" tabindex="0" aria-expanded="true" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题1</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+           role="button"
+           tabindex="0"
+           aria-expanded="true"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题1
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-collapse-item__wrapper">
-        <div class="van-collapse-item__content">代码是写出来给人看的，附带能在机器上运行</div>
+        <div class="van-collapse-item__content">
+          代码是写出来给人看的，附带能在机器上运行
+        </div>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题2</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题2
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题3</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题3
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
   </div>
 </div>
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title"><span>标题1</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题1
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled" role="button" tabindex="-1" aria-expanded="false" disabled="true">
-        <!---->
-        <div class="van-cell__title"><span>标题2</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled"
+           role="button"
+           tabindex="-1"
+           aria-expanded="false"
+           disabled="true"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题2
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled" role="button" tabindex="-1" aria-expanded="false" disabled="true">
-        <!---->
-        <div class="van-cell__title"><span>标题3</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled"
+           role="button"
+           tabindex="-1"
+           aria-expanded="false"
+           disabled="true"
+      >
+        <div class="van-cell__title">
+          <span>
+            标题3
+          </span>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
   </div>
 </div>
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false">
-        <!---->
-        <div class="van-cell__title">标题1<i class="van-badge__wrapper van-icon van-icon-question-o">
-            <!---->
-            <!---->
-            <!----></i>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <div class="van-cell__title">
+          标题1
+          <i class="van-badge__wrapper van-icon van-icon-question-o">
+          </i>
         </div>
-        <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title" role="button" tabindex="0" aria-expanded="false" disabled="false"><i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <div class="van-cell__title"><span>标题2</span>
-          <!---->
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+           disabled="false"
+      >
+        <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
+        </i>
+        <div class="van-cell__title">
+          <span>
+            标题2
+          </span>
         </div>
-        <div class="van-cell__value"><span>内容</span></div><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-          <!---->
-          <!---->
-          <!----></i>
-        <!---->
+        <div class="van-cell__value">
+          <span>
+            内容
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
-      <!---->
     </div>
   </div>
 </div>

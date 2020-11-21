@@ -4,188 +4,248 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-cell-group van-hairline--top-bottom">
     <div class="van-cell">
-      <!---->
-      <div class="van-cell__title"><span>单元格</span>
-        <!---->
+      <div class="van-cell__title">
+        <span>
+          单元格
+        </span>
       </div>
-      <div class="van-cell__value"><span>内容</span></div>
-      <!---->
-      <!---->
+      <div class="van-cell__value">
+        <span>
+          内容
+        </span>
+      </div>
     </div>
     <div class="van-cell">
-      <!---->
-      <div class="van-cell__title"><span>单元格</span>
-        <div class="van-cell__label">描述信息</div>
+      <div class="van-cell__title">
+        <span>
+          单元格
+        </span>
+        <div class="van-cell__label">
+          描述信息
+        </div>
       </div>
-      <div class="van-cell__value"><span>内容</span></div>
-      <!---->
-      <!---->
+      <div class="van-cell__value">
+        <span>
+          内容
+        </span>
+      </div>
     </div>
   </div>
 </div>
 <div>
   <div class="van-cell van-cell--large">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
     </div>
-    <div class="van-cell__value"><span>内容</span></div>
-    <!---->
-    <!---->
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
   </div>
   <div class="van-cell van-cell--large">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <div class="van-cell__label">描述信息</div>
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
+      <div class="van-cell__label">
+        描述信息
+      </div>
     </div>
-    <div class="van-cell__value"><span>内容</span></div>
-    <!---->
-    <!---->
-  </div>
-</div>
-<div>
-  <div class="van-cell"><i class="van-badge__wrapper van-icon van-icon-location-o van-cell__left-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
     </div>
-    <div class="van-cell__value"><span>内容</span></div>
-    <!---->
-    <!---->
   </div>
 </div>
 <div>
   <div class="van-cell">
-    <!---->
-    <!---->
-    <div class="van-cell__value van-cell__value--alone"><span>内容</span></div>
-    <!---->
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-location-o van-cell__left-icon">
+    </i>
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
+  <div class="van-cell">
+    <div class="van-cell__value van-cell__value--alone">
+      <span>
+        内容
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
-  </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
-    </div>
-    <div class="van-cell__value"><span>内容</span></div><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
-  </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
-    </div>
-    <div class="van-cell__value"><span>内容</span></div><i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>URL 跳转</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span>路由跳转</span>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
+    </i>
   </div>
 </div>
 <div>
-  <div class="van-cell-group__title">分组 1</div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        URL 跳转
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        路由跳转
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group__title">
+    分组 1
+  </div>
   <div class="van-cell-group van-hairline--top-bottom">
     <div class="van-cell">
-      <!---->
-      <div class="van-cell__title"><span>单元格</span>
-        <!---->
+      <div class="van-cell__title">
+        <span>
+          单元格
+        </span>
       </div>
-      <div class="van-cell__value"><span>内容</span></div>
-      <!---->
-      <!---->
+      <div class="van-cell__value">
+        <span>
+          内容
+        </span>
+      </div>
     </div>
   </div>
-  <div class="van-cell-group__title">分组 2</div>
+  <div class="van-cell-group__title">
+    分组 2
+  </div>
   <div class="van-cell-group van-hairline--top-bottom">
     <div class="van-cell">
-      <!---->
-      <div class="van-cell__title"><span>单元格</span>
-        <!---->
+      <div class="van-cell__title">
+        <span>
+          单元格
+        </span>
       </div>
-      <div class="van-cell__value"><span>内容</span></div>
-      <!---->
-      <!---->
+      <div class="van-cell__value">
+        <span>
+          内容
+        </span>
+      </div>
     </div>
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable" role="button" tabindex="0">
-    <!---->
-    <div class="van-cell__title"><span class="custom-title">单元格</span>
-      <transition-stub><span class="van-tag van-tag--danger">标签<!----></span></transition-stub>
-      <!---->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span class="custom-title">
+        单元格
+      </span>
+      <transition-stub>
+        <span class="van-tag van-tag--danger">
+          标签
+        </span>
+      </transition-stub>
     </div>
-    <div class="van-cell__value"><span>内容</span></div><i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <div class="van-cell"><i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <div class="van-cell__title"><span>单元格</span>
-      <!---->
+  <div class="van-cell">
+    <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
+    </i>
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
     </div>
-    <!----><i class="van-badge__wrapper van-icon van-icon-search search-icon">
-      <!---->
-      <!---->
-      <!----></i>
-    <!---->
+    <i class="van-badge__wrapper van-icon van-icon-search search-icon">
+    </i>
   </div>
 </div>
 <div>
   <div class="van-cell van-cell--center">
-    <!---->
-    <div class="van-cell__title"><span>单元格</span>
-      <div class="van-cell__label">描述信息</div>
+    <div class="van-cell__title">
+      <span>
+        单元格
+      </span>
+      <div class="van-cell__label">
+        描述信息
+      </div>
     </div>
-    <div class="van-cell__value"><span>内容</span></div>
-    <!---->
-    <!---->
+    <div class="van-cell__value">
+      <span>
+        内容
+      </span>
+    </div>
   </div>
 </div>
 `;

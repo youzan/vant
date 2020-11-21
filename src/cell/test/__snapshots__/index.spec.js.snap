@@ -2,70 +2,53 @@
 
 exports[`should change arrow direction when using arrow-direction prop 1`] = `
 <i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
-  <!---->
-  <!---->
-  <!----></i>
+</i>
 `;
 
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
-<div class="van-cell"><i class="van-badge__wrapper my-icon my-icon-success van-cell__left-icon">
-    <!---->
-    <!---->
-    <!----></i>
-  <!---->
-  <!---->
-  <!---->
-  <!---->
+<div class="van-cell">
+  <i class="van-badge__wrapper my-icon my-icon-success van-cell__left-icon">
+  </i>
 </div>
 `;
 
 exports[`should render default slot correctly 1`] = `
 <div class="van-cell">
-  <!---->
-  <!---->
-  <div class="van-cell__value van-cell__value--alone">Custom Default</div>
-  <!---->
-  <!---->
+  <div class="van-cell__value van-cell__value--alone">
+    Custom Default
+  </div>
 </div>
 `;
 
 exports[`should render extra slot correctly 1`] = `
 <div class="van-cell">
-  <!---->
-  <!---->
-  <!---->
-  <!---->Custom Extra</div>
+  Custom Extra
+</div>
 `;
 
 exports[`should render icon slot correctly 1`] = `
-<div class="van-cell">Custom Icon
-  <!---->
-  <!---->
-  <!---->
-  <!---->
+<div class="van-cell">
+  Custom Icon
 </div>
 `;
 
 exports[`should render label slot correctly 1`] = `
 <div class="van-cell">
-  <!---->
-  <div class="van-cell__title"><span>Title</span>
-    <div class="van-cell__label">Custom Label</div>
+  <div class="van-cell__title">
+    <span>
+      Title
+    </span>
+    <div class="van-cell__label">
+      Custom Label
+    </div>
   </div>
-  <!---->
-  <!---->
-  <!---->
 </div>
 `;
 
 exports[`should render title slot correctly 1`] = `
 <div class="van-cell">
-  <!---->
-  <div class="van-cell__title">Custom Title
-    <!---->
+  <div class="van-cell__title">
+    Custom Title
   </div>
-  <!---->
-  <!---->
-  <!---->
 </div>
 `;
