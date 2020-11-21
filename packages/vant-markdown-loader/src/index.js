@@ -29,8 +29,10 @@ export default {
     scrollToAnchor(event) {
       if (event.target.id) {
         this.$router.push({
-          path: this.$route.path,
-          hash: event.target.id
+          name: this.$route.name,
+          query: {
+            anchor: event.target.id
+          }
         })
       }
     }
