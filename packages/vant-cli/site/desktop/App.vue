@@ -88,9 +88,11 @@ export default {
   },
 
   mounted() {
-    if (this.$route.hash) {
-      scrollToAnchor(this.$route.hash);
-    }
+    setTimeout(() => {
+      if (this.$route.query.anchor) {
+        scrollToAnchor(this.$route.query.anchor);
+      }
+    });
   },
 
   methods: {
