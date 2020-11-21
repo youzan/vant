@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.0.0"
+    "stylelint-config-standard": "^20.0.0"
   }
 }
