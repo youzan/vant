@@ -9,7 +9,7 @@ export function toArray<T>(item: T | T[]): T[] {
 }
 
 export function readFileContent(file: File, resultType: ResultType) {
-  return new Promise<string | ArrayBuffer | null | undefined>((resolve) => {
+  return new Promise<string | ArrayBuffer | null | void>((resolve) => {
     if (resultType === 'file') {
       resolve();
       return;

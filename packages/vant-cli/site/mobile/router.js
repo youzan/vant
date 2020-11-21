@@ -35,6 +35,7 @@ function getRoutes() {
 
     langs.forEach((lang) => {
       routes.push({
+        name: lang,
         path: `/${lang}`,
         component: DemoHome,
         meta: { lang },
@@ -48,6 +49,7 @@ function getRoutes() {
     });
 
     routes.push({
+      name: 'home',
       path: '/',
       component: DemoHome,
     });
@@ -70,7 +72,7 @@ function getRoutes() {
       });
     } else {
       routes.push({
-        name,
+        name: component,
         path: `/${component}`,
         component: demos[name],
         meta: {

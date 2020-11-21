@@ -61,7 +61,7 @@ function getRoutes() {
 
   function addHomeRoute(Home, lang) {
     routes.push({
-      name: lang,
+      name: lang || 'home',
       path: `/${lang || ''}`,
       component: Home,
       meta: { lang },
