@@ -3151,6 +3151,21 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
+chokidar@^3.4.2:
+  version "3.4.3"
+  resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.4.3.tgz?cache=0&sync_timestamp=1602585391857&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fchokidar%2Fdownload%2Fchokidar-3.4.3.tgz#c1df38231448e45ca4ac588e6c79573ba6a57d5b"
+  integrity sha1-wd84IxRI5FykrFiObHlXO6alfVs=
+  dependencies:
+    anymatch "~3.1.1"
+    braces "~3.0.2"
+    glob-parent "~5.1.0"
+    is-binary-path "~2.1.0"
+    is-glob "~4.0.1"
+    normalize-path "~3.0.0"
+    readdirp "~3.5.0"
+  optionalDependencies:
+    fsevents "~2.1.2"
+
 chrome-trace-event@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/chrome-trace-event/-/chrome-trace-event-1.0.2.tgz#234090ee97c7d4ad1a2c4beae27505deffc608a4"
@@ -4976,14 +4991,15 @@ forever-agent@~0.6.1:
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
 
-fork-ts-checker-webpack-plugin@^5.0.0:
-  version "5.2.0"
-  resolved "https://registry.npm.taobao.org/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-5.2.0.tgz?cache=0&sync_timestamp=1599929910598&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffork-ts-checker-webpack-plugin%2Fdownload%2Ffork-ts-checker-webpack-plugin-5.2.0.tgz#780a14fb0da02a892baedd7aa0d089a1eda7b3e5"
-  integrity sha1-eAoU+w2gKokrrt16oNCJoe2ns+U=
+fork-ts-checker-webpack-plugin@^6.0.0:
+  version "6.0.3"
+  resolved "https://registry.npm.taobao.org/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-6.0.3.tgz?cache=0&sync_timestamp=1605632945621&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffork-ts-checker-webpack-plugin%2Fdownload%2Ffork-ts-checker-webpack-plugin-6.0.3.tgz#8932dbc5094ebb363a9136ba23230a041ed0be14"
+  integrity sha1-iTLbxQlOuzY6kTa6IyMKBB7QvhQ=
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
     chalk "^4.1.0"
+    chokidar "^3.4.2"
     cosmiconfig "^6.0.0"
     deepmerge "^4.2.2"
     fs-extra "^9.0.0"
@@ -9075,6 +9091,13 @@ readdirp@~3.4.0:
   version "3.4.0"
   resolved "https://registry.npm.taobao.org/readdirp/download/readdirp-3.4.0.tgz#9fdccdf9e9155805449221ac645e8303ab5b9ada"
   integrity sha1-n9zN+ekVWAVEkiGsZF6DA6tbmto=
+  dependencies:
+    picomatch "^2.2.1"
+
+readdirp@~3.5.0:
+  version "3.5.0"
+  resolved "https://registry.npm.taobao.org/readdirp/download/readdirp-3.5.0.tgz#9ba74c019b15d365278d2e91bb8c48d7b4d42c9e"
+  integrity sha1-m6dMAZsV02UnjS6Ru4xI17TULJ4=
   dependencies:
     picomatch "^2.2.1"
 
