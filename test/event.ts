@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import { Wrapper } from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
+import { VueWrapper } from '@vue/test-utils';
 
 function getTouch(el: HTMLElement | Window, x: number, y: number) {
   return {
@@ -18,7 +18,7 @@ function getTouch(el: HTMLElement | Window, x: number, y: number) {
 
 // Trigger pointer/touch event
 export function trigger(
-  wrapper: Wrapper<Vue> | HTMLElement | Window,
+  wrapper: VueWrapper<ComponentPublicInstance> | HTMLElement | Window,
   eventName: string,
   x = 0,
   y = 0,
