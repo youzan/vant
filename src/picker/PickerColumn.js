@@ -223,7 +223,7 @@ export default createComponent({
       setIndex(index, true);
 
       // compatible with desktop scenario
-      // use setTimeout to skip the click event triggered after touchstart
+      // use setTimeout to skip the click event Emitted after touchstart
       setTimeout(() => {
         moving = false;
       }, 0);

@@ -136,9 +136,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| change | Triggered when value change | _value: string, detail: { name: string }_ |
-| overlimit | Triggered when click disabled button | - |
-| plus | Triggered when click plus button | - |
-| minus | Triggered when click minus button | - |
-| focus | Triggered when input focused | _event: Event_ |
-| blur | Triggered when input blured | _event: Event_ |
+| change | Emitted when value changed | _value: string, detail: { name: string }_ |
+| overlimit | Emitted when a disabled button is clicked | - |
+| plus | Emitted when the plus button is clicked | - |
+| minus | Emitted when the minus button is clicked | - |
+| focus | Emitted when the input is focused | _event: Event_ |
+| blur | Emitted when the input is blured | _event: Event_ |

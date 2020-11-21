@@ -201,7 +201,14 @@ export default {
 | closed `v2.5.6` | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
 | scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | - |
+
+### 方法
+
+通过组件调用 `ImagePreview` 时，通过 ref 可以获取到 ImagePreview 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名          | 说明           | 参数                            | 返回值 |
+| --------------- | -------------- | ------------------------------- | ------ |
+| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | -      |
 
 ### Slots
 

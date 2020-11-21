@@ -249,16 +249,16 @@ export default {
 
 ### Checkbox Events
 
-| Event  | Description                   | Parameters         |
-| ------ | ----------------------------- | ------------------ |
-| change | Triggered when value changed  | _checked: boolean_ |
-| click  | Triggered when click checkbox | _event: Event_     |
+| Event  | Description                          | Parameters         |
+| ------ | ------------------------------------ | ------------------ |
+| change | Emitted when value changed           | _checked: boolean_ |
+| click  | Emitted when the checkbox is clicked | _event: Event_     |
 
 ### CheckboxGroup Events
 
-| Event  | Description                  | Parameters     |
-| ------ | ---------------------------- | -------------- |
-| change | Triggered when value changed | _names: any[]_ |
+| Event  | Description                | Parameters     |
+| ------ | -------------------------- | -------------- |
+| change | Emitted when value changed | _names: any[]_ |
 
 ### Checkbox Slots
 

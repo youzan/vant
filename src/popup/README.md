@@ -122,7 +122,7 @@ export default {
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `cross` |
 | close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
@@ -133,11 +133,11 @@ export default {
 
 ### Events
 
-| Event         | Description                  | Arguments      |
-| ------------- | ---------------------------- | -------------- |
-| click         | Triggered when click Popup   | _event: Event_ |
-| open          | Triggered when open Popup    | -              |
-| close         | Triggered when close Popup   | -              |
-| opened        | Triggered when opened Popup  | -              |
-| closed        | Triggered when closed Popup  | -              |
-| click-overlay | Triggered when click overlay | -              |
+| Event         | Description                     | Arguments      |
+| ------------- | ------------------------------- | -------------- |
+| click         | Emitted when Popup is clicked   | _event: Event_ |
+| open          | Emitted when opening Popup      | -              |
+| close         | Emitted when closing Popup      | -              |
+| opened        | Emitted when Popup is opened    | -              |
+| closed        | Emitted when Popup is closed    | -              |
+| click-overlay | Emitted when overlay is clicked | -              |

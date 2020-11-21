@@ -462,8 +462,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| submit | Triggered after submitting the form and validation passed | _values: object_ |
-| failed | Triggered after submitting the form and validation failed | _errorInfo: { values: object, errors: object[] }_ |
+| submit | Emitted after submitting the form and validation passed | _values: object_ |
+| failed | Emitted after submitting the form and validation failed | _errorInfo: { values: object, errors: object[] }_ |
 
 ### Methods
 

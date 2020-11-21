@@ -111,9 +111,9 @@ export default {
 
 ### Collapse Events
 
-| Event  | Description                 | Arguments   |
-| ------ | --------------------------- | ----------- |
-| change | Triggered when switch panel | activeNames |
+| Event  | Description                  | Arguments   |
+| ------ | ---------------------------- | ----------- |
+| change | Emitted when switching panel | activeNames |
 
 ### CollapseItem Props
 

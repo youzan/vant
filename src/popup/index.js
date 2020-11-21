@@ -63,7 +63,7 @@ export const popupSharedProps = {
     type: Boolean,
     default: true,
   },
-  // whether to close popup when click overlay
+  // whether to close popup when overlay is clicked
   closeOnClickOverlay: {
     type: Boolean,
     default: true,

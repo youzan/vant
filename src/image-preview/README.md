@@ -119,9 +119,9 @@ export default {
 | showIndicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
 | swipeDuration | Animation duration (ms) | _number \| string_ | `500` |
-| onClose | Triggered when close | _Function_ | - |
-| onChange | Triggered when current image change | _Function_ | - |
-| onScale | Triggered when current image scale | _Function_ | - |
+| onClose | Emitted when ImagePreview is closed | _Function_ | - |
+| onChange | Emitted when current image changed | _Function_ | - |
+| onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _any_ | - |
@@ -156,10 +156,17 @@ export default {
 
 | Event | Description | Parameters |
 | --- | --- | --- |
-| close | Triggered when close | { index, url } |
-| closed `v2.5.6` | Triggered after closed | - |
-| change | Triggered when current image change | index: index of current image |
-| scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
+| close | Emitted when closing ImagePreview | { index, url } |
+| closed `v2.5.6` | Emitted when ImagePreview is closed | - |
+| change | Emitted when current image changed | index: index of current image |
+| scale `v2.5.0` | Emitted when scaling current image | { index: index of current image, scale: scale of current image} |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
 | swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | - |
 
 ### Slots

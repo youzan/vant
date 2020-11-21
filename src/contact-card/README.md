@@ -85,6 +85,6 @@ export default {
 
 ### Events
 
-| Event | Description            | Arguments      |
-| ----- | ---------------------- | -------------- |
-| click | Triggered when clicked | _event: Event_ |
+| Event | Description                       | Arguments      |
+| ----- | --------------------------------- | -------------- |
+| click | Emitted when component is clicked | _event: Event_ |

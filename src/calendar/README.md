@@ -18,7 +18,7 @@ app.use(Calendar);
 
 ### Select Single Date
 
-The `confirm` event will be triggered after the date selection is completed.
+The `confirm` event will be emitted after the date selection is completed.
 
 ```html
 <van-cell title="Select Single Date" :value="date" @click="show = true" />
@@ -101,7 +101,7 @@ export default {
 
 ### Quick Select
 
-Set `show-confirm` to `false` to hide the confirm button. In this case, the `confirm` event will be triggered immediately after the selection is completed.
+Set `show-confirm` to `false` to hide the confirm button. In this case, the `confirm` event will be emitted immediately after the selection is completed.
 
 ```html
 <van-calendar v-model:show="show" :show-confirm="false" />
@@ -257,7 +257,7 @@ Following props are supported when the poppable is true
 | position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
 | round | Whether to show round corner | _boolean_ | `true` |
 | close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `true` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | teleport `v2.4.4` | Return the mount node for Calendar | _string \| Element_ | - |
 
@@ -295,14 +295,14 @@ Following props are supported when the type is multiple
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when select date | _value: Date \| Date[]_ |
-| confirm | Triggered after date selection is complete，if `show-confirm` is`true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_ |
-| open `v2.5.2` | Triggered when open Popup | - |
-| close `v2.5.2` | Triggered when close Popup | - |
-| opened `v2.5.2` | Triggered when opened Popup | - |
-| closed `v2.5.2` | Triggered when closed Popup | - |
-| unselect `v2.7.2` | Triggered when unselect date when type is multiple | _value: Date_ |
-| month-show `v2.8.2` | Triggered when a month enters the visible area | _{ date: Date, title: string }_ |
+| select | Emitted when date is selected | _value: Date \| Date[]_ |
+| confirm | Emitted after date selection is complete，if `show-confirm` is `true`, it is Emitted after clicking the confirm button | _value: Date \| Date[]_ |
+| open `v2.5.2` | Emitted when opening Popup | - |
+| close `v2.5.2` | Emitted when closing Popup | - |
+| opened `v2.5.2` | Emitted when Popup is opened | - |
+| closed `v2.5.2` | Emitted when Popup is closed | - |
+| unselect `v2.7.2` | Emitted when unselect date when type is multiple | _value: Date_ |
+| month-show `v2.8.2` | Emitted when a month enters the visible area | _{ date: Date, title: string }_ |
 
 ### Slots
 

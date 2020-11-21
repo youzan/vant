@@ -101,11 +101,11 @@ app.use(NoticeBar);
 
 ### Events
 
-| Event           | Description                    | Arguments      |
-| --------------- | ------------------------------ | -------------- |
-| click           | Triggered when click NoticeBar | _event: Event_ |
-| close           | Triggered when closed          | _event: Event_ |
-| replay `v2.6.2` | Triggered when replay          | -              |
+| Event           | Description                        | Arguments      |
+| --------------- | ---------------------------------- | -------------- |
+| click           | Emitted when NoticeBar is clicked  | _event: Event_ |
+| close           | Emitted when NoticeBar is closed   | _event: Event_ |
+| replay `v2.6.2` | Emitted when NoticeBar is replayed | -              |
 
 ### Slots
 

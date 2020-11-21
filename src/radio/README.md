@@ -172,15 +172,15 @@ export default {
 
 ### Radio Events
 
-| Event | Description                | Parameters     |
-| ----- | -------------------------- | -------------- |
-| click | Triggered when click radio | _event: Event_ |
+| Event | Description                   | Parameters     |
+| ----- | ----------------------------- | -------------- |
+| click | Emitted when radio is clicked | _event: Event_ |
 
 ### RadioGroup Events
 
-| Event  | Description                  | Parameters     |
-| ------ | ---------------------------- | -------------- |
-| change | Triggered when value changed | _name: string_ |
+| Event  | Description                | Parameters     |
+| ------ | -------------------------- | -------------- |
+| change | Emitted when value changed | _name: string_ |
 
 ### Radio Slots
 

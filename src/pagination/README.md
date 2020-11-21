@@ -77,9 +77,9 @@ export default {
 
 ### Events
 
-| Event  | Description              | Arguments |
-| ------ | ------------------------ | --------- |
-| change | Triggered on page change | -         |
+| Event  | Description                       | Arguments |
+| ------ | --------------------------------- | --------- |
+| change | Emitted when current page changed | -         |
 
 ### Slots
 

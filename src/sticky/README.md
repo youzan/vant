@@ -63,6 +63,6 @@ export default {
 
 ### Events
 
-| Event  | Description           | Arguments                      |
-| ------ | --------------------- | ------------------------------ |
-| scroll | Triggered when scroll | object: { scrollTop, isFixed } |
+| Event  | Description            | Arguments                      |
+| ------ | ---------------------- | ------------------------------ |
+| scroll | Emitted when scrolling | object: { scrollTop, isFixed } |

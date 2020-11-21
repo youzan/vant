@@ -136,8 +136,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| finish | Triggered when count down finished | - |
-| change `v2.4.4` | Triggered when count down changed | _currentTime: CurrentTime_ |
+| finish | Emitted when count down finished | - |
+| change `v2.4.4` | Emitted when count down changed | _currentTime: CurrentTime_ |
 
 ### Slots
 

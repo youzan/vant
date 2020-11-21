@@ -155,7 +155,7 @@ export default {
 | delete-button-text | Delete button text | _string_ | Delete Icon |
 | close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
-| hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
 | teleport `v2.10.0` | Return the mount node for NumberKeyboard | _string \| Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
@@ -163,12 +163,12 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| input | Triggered when keydown | key: Content of the key |
-| delete | Triggered when press delete key | - |
-| close | Triggered when click close button | - |
-| blur | Triggered when click close button or blur keyboard | - |
-| show | Triggered when keyboard is fully displayed | - |
-| hide | Triggered when keyboard is fully hidden | - |
+| input | Emitted when keydown | key: Content of the key |
+| delete | Emitted when the delete key is pressed | - |
+| close | Emitted when the close button is clicked | - |
+| blur | Emitted when the close button is clicked or the keyboard is blured | - |
+| show | Emitted when keyboard is fully displayed | - |
+| hide | Emitted when keyboard is fully hidden | - |
 
 ### Slots
 
