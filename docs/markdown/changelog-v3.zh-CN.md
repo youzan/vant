@@ -16,6 +16,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-beta.9](https://github.com/youzan/vant/compare/v2.11.0...v3.0.0-beta.9)
+
+`2020-11-22`
+
+**New Component**
+
+- 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
+
+![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+
+**Feature**
+
+- Search: 新增 blur 方法 [d26282](https://github.com/youzan/vant/commit/d26282e54245a47075fed01baf6304e0d84559e0)
+- Search: 新增 focus 方法 [2833bc](https://github.com/youzan/vant/commit/2833bc03f5243370e5a3aeece5b823fc2ebde64c)
+
+**Bug Fixes**
+
+- Checkbox: 修复 bind-group 属性不生效的问题 [#7447](https://github.com/youzan/vant/issues/7447)
+- Badge: 修复无类型定义的问题 [c487b3](https://github.com/youzan/vant/commit/c487b394efa946f6fae5059f1e1a69be11a25a6e)
+- 包含 `v2.11.0` 版本的所有改动和修复
+
 ### [v3.0.0-beta.8](https://github.com/youzan/vant/compare/v2.10.14...v3.0.0-beta.8)
 
 `2020-11-15`
