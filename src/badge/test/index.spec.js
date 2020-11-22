@@ -1,30 +1,30 @@
 import Badge from '..';
 import { mount } from '@vue/test-utils';
 
-test('should render nothing when badge is empty string', () => {
+test('should render nothing when content is empty string', () => {
   const wrapper = mount(Badge, {
     props: {
-      badge: '',
+      content: '',
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render nothing when badge is undefined', () => {
+test('should render nothing when content is undefined', () => {
   const wrapper = mount(Badge, {
     props: {
-      badge: undefined,
+      content: undefined,
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render nothing when badge is zero', () => {
+test('should render nothing when content is zero', () => {
   const wrapper = mount(Badge, {
     props: {
-      badge: 0,
+      content: 0,
     },
   });
 
