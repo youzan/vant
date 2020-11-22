@@ -10,6 +10,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
+
+`2020-11-22`
+
+**New Component**
+
+- add [Badge](#/en-US/badge) component [#7602](https://github.com/youzan/vant/issues/7602)
+- add [Popover](#/en-US/popover) component [#7579](https://github.com/youzan/vant/issues/7579)
+
+**Feature**
+
+- Popup: add click-close-icon event [#7599](https://github.com/youzan/vant/issues/7599)
+
+**Bug Fixes**
+
+- ActionSheet: The height of the flex container is lost under iOS 10 [#7578](https://github.com/youzan/vant/issues/7578)
+
 ### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
 
 `2020-11-15`

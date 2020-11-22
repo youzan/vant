@@ -10,6 +10,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
+
+`2020-11-22`
+
+**New Component**
+
+- 新增 [Badge 徽标](#/zh-CN/badge)组件 [#7602](https://github.com/youzan/vant/issues/7602)
+- 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
+
+![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+
+**Feature**
+
+- Popup: 新增 click-close-icon 事件 [#7599](https://github.com/youzan/vant/issues/7599)
+
+**Bug Fixes**
+
+- ActionSheet: 修复在 iOS 10 以下版本时选项高度不正确的问题 [#7578](https://github.com/youzan/vant/issues/7578)
+
 ### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
 
 `2020-11-15`
