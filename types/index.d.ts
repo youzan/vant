@@ -34,6 +34,7 @@ export const install: (app: App) => any;
 
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
+export class Badge extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
