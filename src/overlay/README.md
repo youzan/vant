@@ -78,3 +78,12 @@ export default {
 | Name    | Description  |
 | ------- | ------------ |
 | default | Default slot |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                      | Default Value        | Description |
+| ------------------------- | -------------------- | ----------- |
+| @overlay-z-index          | `1`                  | -           |
+| @overlay-background-color | `rgba(0, 0, 0, 0.7)` | -           |

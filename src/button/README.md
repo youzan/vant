@@ -141,3 +141,39 @@ app.use(Button);
 | ----------------- | ------------------- |
 | default           | Default slot        |
 | loading `v2.10.1` | Custom loading icon |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value        | Description |
+| -------------------------------- | -------------------- | ----------- |
+| @button-mini-height              | `24px`               | -           |
+| @button-mini-font-size           | `@font-size-xs`      | -           |
+| @button-small-height             | `32px`               | -           |
+| @button-small-font-size          | `@font-size-sm`      | -           |
+| @button-normal-font-size         | `@font-size-md`      | -           |
+| @button-large-height             | `50px`               | -           |
+| @button-default-height           | `44px`               | -           |
+| @button-default-line-height      | `1.2`                | -           |
+| @button-default-font-size        | `@font-size-lg`      | -           |
+| @button-default-color            | `@text-color`        | -           |
+| @button-default-background-color | `@white`             | -           |
+| @button-default-border-color     | `@border-color`      | -           |
+| @button-primary-color            | `@white`             | -           |
+| @button-primary-background-color | `@green`             | -           |
+| @button-primary-border-color     | `@green`             | -           |
+| @button-info-color               | `@white`             | -           |
+| @button-info-background-color    | `@blue`              | -           |
+| @button-info-border-color        | `@blue`              | -           |
+| @button-danger-color             | `@white`             | -           |
+| @button-danger-background-color  | `@red`               | -           |
+| @button-danger-border-color      | `@red`               | -           |
+| @button-warning-color            | `@white`             | -           |
+| @button-warning-background-color | `@orange`            | -           |
+| @button-warning-border-color     | `@orange`            | -           |
+| @button-border-width             | `@border-width-base` | -           |
+| @button-border-radius            | `@border-radius-sm`  | -           |
+| @button-round-border-radius      | `@border-radius-max` | -           |
+| @button-plain-background-color   | `@white`             | -           |
+| @button-disabled-opacity         | `@disabled-opacity`  | -           |

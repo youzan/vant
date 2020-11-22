@@ -189,3 +189,20 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 | --------- | ---------------------- | -------- |
 | index     | Index of current image | _number_ |
 | scale     | scale of current image | _number_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                    | Default Value        | Description |
+| --------------------------------------- | -------------------- | ----------- |
+| @image-preview-index-text-color         | `@white`             | -           |
+| @image-preview-index-font-size          | `@font-size-md`      | -           |
+| @image-preview-index-line-height        | `@line-height-md`    | -           |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -           |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -           |
+| @image-preview-close-icon-size          | `22px`               | -           |
+| @image-preview-close-icon-color         | `@gray-5`            | -           |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -           |
+| @image-preview-close-icon-margin        | `@padding-md`        | -           |
+| @image-preview-close-icon-z-index       | `1`                  | -           |

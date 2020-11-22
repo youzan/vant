@@ -124,7 +124,7 @@ export default {
 ### 方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Notify | 展示提示 | `options | message` | notify 实例 |
 | Notify.clear | 关闭提示 | - | `void` |
 | Notify.setDefaultOptions | 修改默认配置，对所有 Notify 生效 | `options` | `void` |
@@ -143,3 +143,18 @@ export default {
 | onClick | 点击时的回调函数 | _Function_ | - |
 | onOpened | 完全展示后的回调函数 | _Function_ | - |
 | onClose | 关闭时的回调函数 | _Function_ | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值                    | 描述 |
+| -------------------------------- | ------------------------- | ---- |
+| @notify-text-color               | `@white`                  | -    |
+| @notify-padding                  | `@padding-xs @padding-md` | -    |
+| @notify-font-size                | `@font-size-md`           | -    |
+| @notify-line-height              | `@line-height-md`         | -    |
+| @notify-primary-background-color | `@blue`                   | -    |
+| @notify-success-background-color | `@green`                  | -    |
+| @notify-danger-background-color  | `@red`                    | -    |
+| @notify-warning-background-color | `@orange`                 | -    |

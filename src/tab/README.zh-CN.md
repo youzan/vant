@@ -294,6 +294,25 @@ export default {
 | default | 标签页内容 |
 | title   | 自定义标题 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                       | 默认值                | 描述 |
+| -------------------------- | --------------------- | ---- |
+| @tab-text-color            | `@gray-7`             | -    |
+| @tab-active-text-color     | `@text-color`         | -    |
+| @tab-disabled-text-color   | `@gray-5`             | -    |
+| @tab-font-size             | `@font-size-md`       | -    |
+| @tab-line-height           | `@line-height-md`     | -    |
+| @tabs-default-color        | `@red`                | -    |
+| @tabs-line-height          | `44px`                | -    |
+| @tabs-card-height          | `30px`                | -    |
+| @tabs-nav-background-color | `@white`              | -    |
+| @tabs-bottom-bar-width     | `40px`                | -    |
+| @tabs-bottom-bar-height    | `3px`                 | -    |
+| @tabs-bottom-bar-color     | `@tabs-default-color` | -    |
+
 ## 常见问题
 
 ### 组件从隐藏状态切换到显示状态时，底部条位置错误？

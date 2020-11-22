@@ -197,6 +197,28 @@ export default {
 | title       | 自定义顶部标题 |
 | description | 自定义描述文字 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @share-sheet-header-padding | `@padding-sm @padding-md @padding-base` | - |
+| @share-sheet-title-color | `@text-color` | - |
+| @share-sheet-title-font-size | `@font-size-md` | - |
+| @share-sheet-title-line-height | `@line-height-md` | - |
+| @share-sheet-description-color | `@gray-6` | - |
+| @share-sheet-description-font-size | `@font-size-sm` | - |
+| @share-sheet-description-line-height | `16px` | - |
+| @share-sheet-icon-size | `48px` | - |
+| @share-sheet-option-name-color | `@gray-7` | - |
+| @share-sheet-option-name-font-size | `@font-size-sm` | - |
+| @share-sheet-option-description-color | `@gray-5` | - |
+| @share-sheet-option-description-font-size | `@font-size-sm` | - |
+| @share-sheet-cancel-button-font-size | `@font-size-lg` | - |
+| @share-sheet-cancel-button-height | `48px` | - |
+| @share-sheet-cancel-button-background | `@white` | - |
+
 ## 常见问题
 
 ### 如何实现分享逻辑？

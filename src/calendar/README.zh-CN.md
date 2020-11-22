@@ -323,6 +323,38 @@ export default {
 | ------ | ---------------------- | ---- | ------ |
 | reset  | 重置选中的日期到默认值 | -    | -      |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @calendar-background-color | `@white` | - |
+| @calendar-popup-height | `80%` | - |
+| @calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
+| @calendar-header-title-height | `44px` | - |
+| @calendar-header-title-font-size | `@font-size-lg` | - |
+| @calendar-header-subtitle-font-size | `@font-size-md` | - |
+| @calendar-weekdays-height | `30px` | - |
+| @calendar-weekdays-font-size | `@font-size-sm` | - |
+| @calendar-month-title-font-size | `@font-size-md` | - |
+| @calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
+| @calendar-month-mark-font-size | `160px` | - |
+| @calendar-day-height | `64px` | - |
+| @calendar-day-font-size | `@font-size-lg` | - |
+| @calendar-range-edge-color | `@white` | - |
+| @calendar-range-edge-background-color | `@red` | - |
+| @calendar-range-middle-color | `@red` | - |
+| @calendar-range-middle-background-opacity | `0.1` | - |
+| @calendar-selected-day-size | `54px` | - |
+| @calendar-selected-day-color | `@white` | - |
+| @calendar-info-font-size | `@font-size-xs` | - |
+| @calendar-info-line-height | `@line-height-xs` | - |
+| @calendar-selected-day-background-color | `@red` | - |
+| @calendar-day-disabled-color | `@gray-5` | - |
+| @calendar-confirm-button-height | `36px` | - |
+| @calendar-confirm-button-margin | `7px 0` | - |
+
 ## 常见问题
 
 ### 在 iOS 系统上初始化组件失败？

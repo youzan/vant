@@ -173,3 +173,18 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   },
 ];
 ```
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                  | Default Value       | Description |
+| ------------------------------------- | ------------------- | ----------- |
+| @tree-select-font-size                | `@font-size-md`     | -           |
+| @tree-select-nav-background-color     | `@background-color` | -           |
+| @tree-select-content-background-color | `@white`            | -           |
+| @tree-select-nav-item-padding         | `14px @padding-sm`  | -           |
+| @tree-select-item-height              | `48px`              | -           |
+| @tree-select-item-active-color        | `@red`              | -           |
+| @tree-select-item-disabled-color      | `@gray-5`           | -           |
+| @tree-select-item-selected-size       | `16px`              | -           |

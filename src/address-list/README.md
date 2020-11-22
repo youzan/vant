@@ -111,3 +111,23 @@ export default {
 | default              | Custom content after list      | -         |
 | top                  | Custom content before list     | -         |
 | item-bottom `v2.5.0` | Custom content after list item | item      |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @address-list-padding | `@padding-sm @padding-sm 80px` | - |
+| @address-list-disabled-text-color | `@gray-6` | - |
+| @address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
+| @address-list-disabled-text-font-size | `@font-size-md` | - |
+| @address-list-disabled-text-line-height | `@line-height-md` | - |
+| @address-list-add-button-z-index | `999` | - |
+| @address-list-item-padding | `@padding-sm` | - |
+| @address-list-item-text-color | `@text-color` | - |
+| @address-list-item-disabled-text-color | `@gray-5` | - |
+| @address-list-item-font-size | `13px` | - |
+| @address-list-item-line-height | `@line-height-sm` | - |
+| @address-list-item-radio-icon-color | `@red` | - |
+| @address-list-edit-icon-size | `20px` | - |

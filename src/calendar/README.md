@@ -318,3 +318,35 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Calend
 | Name  | Description                         | Attribute | Return value |
 | ----- | ----------------------------------- | --------- | ------------ |
 | reset | Reset selected date to default date | -         | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @calendar-background-color | `@white` | - |
+| @calendar-popup-height | `80%` | - |
+| @calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
+| @calendar-header-title-height | `44px` | - |
+| @calendar-header-title-font-size | `@font-size-lg` | - |
+| @calendar-header-subtitle-font-size | `@font-size-md` | - |
+| @calendar-weekdays-height | `30px` | - |
+| @calendar-weekdays-font-size | `@font-size-sm` | - |
+| @calendar-month-title-font-size | `@font-size-md` | - |
+| @calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
+| @calendar-month-mark-font-size | `160px` | - |
+| @calendar-day-height | `64px` | - |
+| @calendar-day-font-size | `@font-size-lg` | - |
+| @calendar-range-edge-color | `@white` | - |
+| @calendar-range-edge-background-color | `@red` | - |
+| @calendar-range-middle-color | `@red` | - |
+| @calendar-range-middle-background-opacity | `0.1` | - |
+| @calendar-selected-day-size | `54px` | - |
+| @calendar-selected-day-color | `@white` | - |
+| @calendar-info-font-size | `@font-size-xs` | - |
+| @calendar-info-line-height | `@line-height-xs` | - |
+| @calendar-selected-day-background-color | `@red` | - |
+| @calendar-day-disabled-color | `@gray-5` | - |
+| @calendar-confirm-button-height | `36px` | - |
+| @calendar-confirm-button-margin | `7px 0` | - |

@@ -176,6 +176,24 @@ export default {
 | left-icon  | 自定义左侧图标（搜索框内）                              |
 | right-icon | 自定义右侧图标（搜索框内）                              |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值             | 描述 |
+| -------------------------------- | ------------------ | ---- |
+| @search-padding                  | `10px @padding-sm` | -    |
+| @search-background-color         | `@white`           | -    |
+| @search-content-background-color | `@gray-1`          | -    |
+| @search-input-height             | `34px`             | -    |
+| @search-label-padding            | `0 5px`            | -    |
+| @search-label-color              | `@text-color`      | -    |
+| @search-label-font-size          | `@font-size-md`    | -    |
+| @search-left-icon-color          | `@gray-6`          | -    |
+| @search-action-padding           | `0 @padding-xs`    | -    |
+| @search-action-text-color        | `@text-color`      | -    |
+| @search-action-font-size         | `@font-size-md`    | -    |
+
 ## 常见问题
 
 ### 在桌面端点击清除按钮无效？

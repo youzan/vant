@@ -151,3 +151,17 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | toggle `v2.10.9` | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值                     | 描述 |
+| --------------------------------------- | -------------------------- | ---- |
+| @collapse-item-transition-duration      | `@animation-duration-base` | -    |
+| @collapse-item-content-padding          | `@padding-sm @padding-md`  | -    |
+| @collapse-item-content-font-size        | `@font-size-md`            | -    |
+| @collapse-item-content-line-height      | `1.5`                      | -    |
+| @collapse-item-content-text-color       | `@gray-6`                  | -    |
+| @collapse-item-content-background-color | `@white`                   | -    |
+| @collapse-item-title-disabled-color     | `@gray-5`                  | -    |

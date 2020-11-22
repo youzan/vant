@@ -144,3 +144,15 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 ### Area Data Structure
 
 Please refer to [Area](#/en-US/area) component。
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @address-edit-padding | `@padding-sm` | - |
+| @address-edit-buttons-padding | `@padding-xl @padding-base` | - |
+| @address-edit-button-margin-bottom | `@padding-sm` | - |
+| @address-edit-detail-finish-color | `@blue` | - |
+| @address-edit-detail-finish-font-size | `@font-size-sm` | - |

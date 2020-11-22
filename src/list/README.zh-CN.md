@@ -193,6 +193,17 @@ export default {
 | finished | 自定义加载完成后的提示文案 |
 | error    | 自定义加载失败后的提示文案 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                    | 默认值          | 描述 |
+| ----------------------- | --------------- | ---- |
+| @list-icon-margin-right | `5px`           | -    |
+| @list-text-color        | `@gray-6`       | -    |
+| @list-text-font-size    | `@font-size-md` | -    |
+| @list-text-line-height  | `50px`          | -    |
+
 ## 常见问题
 
 ### List 的运行机制是什么？

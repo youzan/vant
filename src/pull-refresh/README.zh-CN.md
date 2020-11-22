@@ -132,6 +132,16 @@ export default {
 | loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
 | success | 刷新成功提示内容     | -                          |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                          | 默认值          | 描述 |
+| ----------------------------- | --------------- | ---- |
+| @pull-refresh-head-height     | `50px`          | -    |
+| @pull-refresh-head-font-size  | `@font-size-md` | -    |
+| @pull-refresh-head-text-color | `@gray-6`       | -    |
+
 ## 常见问题
 
 ### PullReresh 的内容未填满屏幕时，只有一部分区域可以下拉？

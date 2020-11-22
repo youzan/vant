@@ -93,3 +93,23 @@ export default {
 | 名称    | 说明                             |
 | ------- | -------------------------------- |
 | default | 锚点位置显示内容，默认为索引字符 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                  | 默认值              | 描述 |
+| ------------------------------------- | ------------------- | ---- |
+| @index-bar-sidebar-z-index            | `2`                 | -    |
+| @index-bar-index-font-size            | `@font-size-xs`     | -    |
+| @index-bar-index-line-height          | `@line-height-xs`   | -    |
+| @index-bar-index-active-color         | `@green`            | -    |
+| @index-anchor-z-index                 | `1`                 | -    |
+| @index-anchor-padding                 | `0 @padding-md`     | -    |
+| @index-anchor-text-color              | `@text-color`       | -    |
+| @index-anchor-font-weight             | `@font-weight-bold` | -    |
+| @index-anchor-font-size               | `@font-size-md`     | -    |
+| @index-anchor-line-height             | `32px`              | -    |
+| @index-anchor-background-color        | `transparent`       | -    |
+| @index-anchor-sticky-text-color       | `@green`            | -    |
+| @index-anchor-sticky-background-color | `@white`            | -    |

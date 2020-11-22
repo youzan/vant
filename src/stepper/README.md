@@ -109,7 +109,7 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Current value | _number \| string_ | - |
 | min | Min value | _number \| string_ | `1` |
 | max | Max value | _number \| string_ | - |
@@ -142,3 +142,24 @@ export default {
 | minus | Emitted when the minus button is clicked | - |
 | focus | Emitted when the input is focused | _event: Event_ |
 | blur | Emitted when the input is blured | _event: Event_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                     | Default Value       | Description |
+| ---------------------------------------- | ------------------- | ----------- |
+| @stepper-active-color                    | `#e8e8e8`           | -           |
+| @stepper-background-color                | `@active-color`     | -           |
+| @stepper-button-icon-color               | `@text-color`       | -           |
+| @stepper-button-disabled-color           | `@background-color` | -           |
+| @stepper-button-disabled-icon-color      | `@gray-5`           | -           |
+| @stepper-button-round-theme-color        | `@red`              | -           |
+| @stepper-input-width                     | `32px`              | -           |
+| @stepper-input-height                    | `28px`              | -           |
+| @stepper-input-font-size                 | `@font-size-md`     | -           |
+| @stepper-input-line-height               | `normal`            | -           |
+| @stepper-input-text-color                | `@text-color`       | -           |
+| @stepper-input-disabled-text-color       | `@gray-5`           | -           |
+| @stepper-input-disabled-background-color | `@active-color`     | -           |
+| @stepper-border-radius                   | `@border-radius-md` | -           |

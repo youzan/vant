@@ -159,3 +159,21 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 | label      | Custom Search label                                         |
 | left-icon  | Custom left icon                                            |
 | right-icon | Custom right icon                                           |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value      | Description |
+| -------------------------------- | ------------------ | ----------- |
+| @search-padding                  | `10px @padding-sm` | -           |
+| @search-background-color         | `@white`           | -           |
+| @search-content-background-color | `@gray-1`          | -           |
+| @search-input-height             | `34px`             | -           |
+| @search-label-padding            | `0 5px`            | -           |
+| @search-label-color              | `@text-color`      | -           |
+| @search-label-font-size          | `@font-size-md`    | -           |
+| @search-left-icon-color          | `@gray-6`          | -           |
+| @search-action-padding           | `0 @padding-xs`    | -           |
+| @search-action-text-color        | `@text-color`      | -           |
+| @search-action-font-size         | `@font-size-md`    | -           |

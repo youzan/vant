@@ -88,3 +88,19 @@ export default {
 | page `v2.10.9` | Custom pagination item | _{ number: number, text: string, active: boolean }_ |
 | prev-text `v2.10.9` | Custom prev text | `-` |
 | next-text `v2.10.9` | Custom next text | `-` |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @pagination-height | `40px` | - |
+| @pagination-font-size | `@font-size-md` | - |
+| @pagination-item-width | `36px` | - |
+| @pagination-item-default-color | `@blue` | - |
+| @pagination-item-disabled-color | `@gray-7` | - |
+| @pagination-item-disabled-background-color | `@background-color` | - |
+| @pagination-background-color | `@white` | - |
+| @pagination-desc-color | `@gray-7` | - |
+| @pagination-disabled-opacity | `@disabled-opacity` | - |

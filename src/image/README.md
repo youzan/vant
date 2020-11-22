@@ -106,3 +106,17 @@ app.use(Lazyload);
 | default `v2.9.0` | Custom the content below the image |
 | loading          | Custom loading placeholder         |
 | error            | Custom error placeholder           |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                | Default Value       | Description |
+| ----------------------------------- | ------------------- | ----------- |
+| @image-placeholder-text-color       | `@gray-6`           | -           |
+| @image-placeholder-font-size        | `@font-size-md`     | -           |
+| @image-placeholder-background-color | `@background-color` | -           |
+| @image-loading-icon-size            | `32px`              | -           |
+| @image-loading-icon-color           | `@gray-4`           | -           |
+| @image-error-icon-size              | `32px`              | -           |
+| @image-error-icon-color             | `@gray-4`           | -           |

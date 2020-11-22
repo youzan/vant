@@ -123,9 +123,7 @@ export default {
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
   <template #indicator>
-    <div class="custom-indicator">
-      {{ current + 1 }}/4
-    </div>
+    <div class="custom-indicator">{{ current + 1 }}/4</div>
   </template>
 </van-swipe>
 
@@ -210,3 +208,16 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 | --------- | ---------------- |
 | default   | Content          |
 | indicator | Custom indicator |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                       | Default Value   | Description |
+| ------------------------------------------ | --------------- | ----------- |
+| @swipe-indicator-size                      | `6px`           | -           |
+| @swipe-indicator-margin                    | `@padding-sm`   | -           |
+| @swipe-indicator-active-opacity            | `1`             | -           |
+| @swipe-indicator-inactive-opacity          | `0.3`           | -           |
+| @swipe-indicator-active-background-color   | `@blue`         | -           |
+| @swipe-indicator-inactive-background-color | `@border-color` | -           |

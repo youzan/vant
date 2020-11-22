@@ -87,3 +87,14 @@ export default {
 | 事件名 | 说明       | 回调参数       |
 | ------ | ---------- | -------------- |
 | click  | 点击时触发 | _event: Event_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                            | 默认值            | 描述 |
+| ------------------------------- | ----------------- | ---- |
+| @contact-card-padding           | `@padding-md`     | -    |
+| @contact-card-add-icon-size     | `40px`            | -    |
+| @contact-card-add-icon-color    | `@blue`           | -    |
+| @contact-card-value-line-height | `@line-height-md` | -    |

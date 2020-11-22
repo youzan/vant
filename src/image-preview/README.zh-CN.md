@@ -233,6 +233,23 @@ export default {
 | index  | 当前图片的索引值 | _number_ |
 | scale  | 当前图片的缩放值 | _number_ |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值               | 描述 |
+| --------------------------------------- | -------------------- | ---- |
+| @image-preview-index-text-color         | `@white`             | -    |
+| @image-preview-index-font-size          | `@font-size-md`      | -    |
+| @image-preview-index-line-height        | `@line-height-md`    | -    |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
+| @image-preview-close-icon-size          | `22px`               | -    |
+| @image-preview-close-icon-color         | `@gray-5`            | -    |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -    |
+| @image-preview-close-icon-margin        | `@padding-md`        | -    |
+| @image-preview-close-icon-z-index       | `1`                  | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？

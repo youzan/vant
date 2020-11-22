@@ -60,14 +60,10 @@ app.use(NoticeBar);
 
 ```html
 <!-- closeable 模式，在右侧显示关闭按钮 -->
-<van-notice-bar mode="closeable">
-  技术是开发它的人的共同灵魂。
-</van-notice-bar>
+<van-notice-bar mode="closeable"> 技术是开发它的人的共同灵魂。 </van-notice-bar>
 
 <!-- link 模式，在右侧显示链接箭头 -->
-<van-notice-bar mode="link">
-  技术是开发它的人的共同灵魂。
-</van-notice-bar>
+<van-notice-bar mode="link"> 技术是开发它的人的共同灵魂。 </van-notice-bar>
 ```
 
 ### 自定义样式
@@ -137,3 +133,19 @@ app.use(NoticeBar);
 | default    | 通知文本内容   |
 | left-icon  | 自定义左侧图标 |
 | right-icon | 自定义右侧图标 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                         | 默认值                    | 描述 |
+| ---------------------------- | ------------------------- | ---- |
+| @notice-bar-height           | `40px`                    | -    |
+| @notice-bar-padding          | `0 @padding-md`           | -    |
+| @notice-bar-wrapable-padding | `@padding-xs @padding-md` | -    |
+| @notice-bar-text-color       | `@orange-dark`            | -    |
+| @notice-bar-font-size        | `@font-size-md`           | -    |
+| @notice-bar-line-height      | `24px`                    | -    |
+| @notice-bar-background-color | `@orange-light`           | -    |
+| @notice-bar-icon-size        | `16px`                    | -    |
+| @notice-bar-icon-min-width   | `24px`                    | -    |

@@ -92,3 +92,13 @@ export default {
 | name      | 联系人姓名           | _string_           |
 | tel       | 联系人手机号         | _number \| string_ |
 | isDefault | 是否为默认联系人     | _boolean_          |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值        | 描述 |
+| -------------------------------- | ------------- | ---- |
+| @contact-list-edit-icon-size     | `16px`        | -    |
+| @contact-list-add-button-z-index | `999`         | -    |
+| @contact-list-item-padding       | `@padding-md` | -    |

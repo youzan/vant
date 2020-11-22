@@ -149,3 +149,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | toggle `v2.10.9` | Toggle expanded status | _expanded: boolean_ | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @collapse-item-transition-duration | `@animation-duration-base` | - |
+| @collapse-item-content-padding | `@padding-sm @padding-md` | - |
+| @collapse-item-content-font-size | `@font-size-md` | - |
+| @collapse-item-content-line-height | `1.5` | - |
+| @collapse-item-content-text-color | `@gray-6` | - |
+| @collapse-item-content-background-color | `@white` | - |
+| @collapse-item-title-disabled-color | `@gray-5` | - |

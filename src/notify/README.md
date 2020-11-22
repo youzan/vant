@@ -87,7 +87,7 @@ export default {
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Notify | `options | message` | notify instance | Show notify |
 | Notify.clear | - | `void` | Close notify |
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
@@ -96,7 +96,7 @@ export default {
 ### Options
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | type | Can be set to `primary` `success` `warning` | _string_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
@@ -106,3 +106,18 @@ export default {
 | onClick | Callback function after click | _Function_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value             | Description |
+| -------------------------------- | ------------------------- | ----------- |
+| @notify-text-color               | `@white`                  | -           |
+| @notify-padding                  | `@padding-xs @padding-md` | -           |
+| @notify-font-size                | `@font-size-md`           | -           |
+| @notify-line-height              | `@line-height-md`         | -           |
+| @notify-primary-background-color | `@blue`                   | -           |
+| @notify-success-background-color | `@green`                  | -           |
+| @notify-danger-background-color  | `@red`                    | -           |
+| @notify-warning-background-color | `@orange`                 | -           |

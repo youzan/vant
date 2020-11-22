@@ -106,7 +106,7 @@ export default {
 ### ActionBarButton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |
@@ -129,3 +129,22 @@ export default {
 | 名称    | 说明         |
 | ------- | ------------ |
 | default | 按钮显示内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                               | 默认值             | 描述 |
+| ---------------------------------- | ------------------ | ---- |
+| @goods-action-background-color     | `@white`           | -    |
+| @goods-action-height               | `50px`             | -    |
+| @goods-action-icon-width           | `48px`             | -    |
+| @goods-action-icon-height          | `100%`             | -    |
+| @goods-action-icon-color           | `@text-color`      | -    |
+| @goods-action-icon-size            | `18px`             | -    |
+| @goods-action-icon-font-size       | `@font-size-xs`    | -    |
+| @goods-action-icon-active-color    | `@active-color`    | -    |
+| @goods-action-icon-text-color      | `@gray-7`          | -    |
+| @goods-action-button-height        | `40px`             | -    |
+| @goods-action-button-warning-color | `@gradient-orange` | -    |
+| @goods-action-button-danger-color  | `@gradient-red`    | -    |

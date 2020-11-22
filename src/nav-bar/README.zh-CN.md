@@ -82,3 +82,18 @@ export default {
 | ----------- | ------------------ | -------- |
 | click-left  | 点击左侧按钮时触发 | -        |
 | click-right | 点击右侧按钮时触发 | -        |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                      | 默认值          | 描述 |
+| ------------------------- | --------------- | ---- |
+| @nav-bar-height           | `46px`          | -    |
+| @nav-bar-background-color | `@white`        | -    |
+| @nav-bar-arrow-size       | `16px`          | -    |
+| @nav-bar-icon-color       | `@blue`         | -    |
+| @nav-bar-text-color       | `@blue`         | -    |
+| @nav-bar-title-font-size  | `@font-size-lg` | -    |
+| @nav-bar-title-text-color | `@text-color`   | -    |
+| @nav-bar-z-index          | `1`             | -    |

@@ -329,6 +329,26 @@ export default {
 | setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |
 | confirm `v2.4.0` | 停止惯性滚动并触发 confirm 事件 | - | - |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                            | 默认值                     | 描述 |
+| ------------------------------- | -------------------------- | ---- |
+| @picker-background-color        | `@white`                   | -    |
+| @picker-toolbar-height          | `44px`                     | -    |
+| @picker-title-font-size         | `@font-size-lg`            | -    |
+| @picker-title-line-height       | `@line-height-md`          | -    |
+| @picker-action-padding          | `0 @padding-md`            | -    |
+| @picker-action-font-size        | `@font-size-md`            | -    |
+| @picker-confirm-action-color    | `@text-link-color`         | -    |
+| @picker-cancel-action-color     | `@gray-6`                  | -    |
+| @picker-option-font-size        | `@font-size-lg`            | -    |
+| @picker-option-text-color       | `@black`                   | -    |
+| @picker-option-disabled-opacity | `0.3`                      | -    |
+| @picker-loading-icon-color      | `@blue`                    | -    |
+| @picker-loading-mask-color      | `rgba(255, 255, 255, 0.9)` | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？

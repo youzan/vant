@@ -134,7 +134,18 @@ export default {
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get SwipeCell instance and call instance methods.
 
-| Name  | Description     | Attribute                | Return value |
-| ----- | --------------- | ------------------------ | ------------ |
-| open  | open SwipeCell  | position: `left | right` | -            |
-| close | close SwipeCell | -                        | -            |
+| Name  | Description     | Attribute       | Return value |
+| ----- | --------------- | --------------- | ------------ | --- |
+| open  | open SwipeCell  | position: `left | right`       | -   |
+| close | close SwipeCell | -               | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |

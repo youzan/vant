@@ -148,3 +148,25 @@ export default {
 | ----------- | ------------------ |
 | title       | Custom title       |
 | description | Custom description |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @share-sheet-header-padding | `@padding-sm @padding-md @padding-base` | - |
+| @share-sheet-title-color | `@text-color` | - |
+| @share-sheet-title-font-size | `@font-size-md` | - |
+| @share-sheet-title-line-height | `@line-height-md` | - |
+| @share-sheet-description-color | `@gray-6` | - |
+| @share-sheet-description-font-size | `@font-size-sm` | - |
+| @share-sheet-description-line-height | `16px` | - |
+| @share-sheet-icon-size | `48px` | - |
+| @share-sheet-option-name-color | `@gray-7` | - |
+| @share-sheet-option-name-font-size | `@font-size-sm` | - |
+| @share-sheet-option-description-color | `@gray-5` | - |
+| @share-sheet-option-description-font-size | `@font-size-sm` | - |
+| @share-sheet-cancel-button-font-size | `@font-size-lg` | - |
+| @share-sheet-cancel-button-height | `48px` | - |
+| @share-sheet-cancel-button-background | `@white` | - |
