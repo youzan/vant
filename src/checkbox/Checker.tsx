@@ -22,6 +22,7 @@ export default defineComponent({
     role: String,
     parent: Object,
     checked: Boolean,
+    bindGroup: Boolean,
     bem: {
       type: Function,
       required: true,
@@ -34,7 +35,7 @@ export default defineComponent({
     const iconRef = ref<HTMLElement>();
 
     const getParentProp = (name: string) => {
-      if (props.parent) {
+      if (props.parent && props.bindGroup) {
         return props.parent.props[name];
       }
       return null;

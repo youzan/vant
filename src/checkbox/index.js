@@ -12,7 +12,6 @@ export const CHECKBOX_KEY = 'vanCheckbox';
 export default createComponent({
   props: {
     ...checkerProps,
-    // TODO
     bindGroup: {
       type: Boolean,
       default: true,
@@ -34,27 +33,33 @@ export default createComponent({
 
         if (!overlimit && value.indexOf(name) === -1) {
           value.push(name);
-          parent.emit('update:modelValue', value);
+
+          if (props.bindGroup) {
+            parent.emit('update:modelValue', value);
+          }
         }
       } else {
         const index = value.indexOf(name);
 
         if (index !== -1) {
           value.splice(index, 1);
-          parent.emit('update:modelValue', value);
+
+          if (props.bindGroup) {
+            parent.emit('update:modelValue', value);
+          }
         }
       }
     };
 
     const checked = computed(() => {
-      if (parent) {
+      if (parent && props.bindGroup) {
         return parent.props.modelValue.indexOf(props.name) !== -1;
       }
       return props.modelValue;
     });
 
     const toggle = (newValue = !checked.value) => {
-      if (parent) {
+      if (parent && props.bindGroup) {
         setParentValue(newValue);
       } else {
         emit('update:modelValue', newValue);
@@ -68,7 +73,7 @@ export default createComponent({
       }
     );
 
-    useExpose({ toggle, checked });
+    useExpose({ toggle, props, checked });
     useLinkField(() => props.modelValue);
 
     return () => (
@@ -78,6 +83,7 @@ export default createComponent({
         role="checkbox"
         parent={parent}
         checked={checked.value}
+        bindGroup={props.bindGroup}
         onToggle={toggle}
         {...props}
       />

@@ -30,7 +30,10 @@ export default createComponent({
         emit('update:modelValue', []);
       } else {
         const names = children
-          .filter((item) => checked || !item.checked.value)
+          .filter((item) => {
+            const willCheck = checked || !item.checked.value;
+            return item.props.bindGroup && willCheck;
+          })
           .map((item) => item.name);
         emit('update:modelValue', names);
       }
