@@ -79,3 +79,18 @@ export default {
 | ----------- | ---------------------------------------- | --------- |
 | click-left  | Emitted when the left button is clicked  | -         |
 | click-right | Emitted when the right button is clicked | -         |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                      | Default Value   | Description |
+| ------------------------- | --------------- | ----------- |
+| @nav-bar-height           | `46px`          | -           |
+| @nav-bar-background-color | `@white`        | -           |
+| @nav-bar-arrow-size       | `16px`          | -           |
+| @nav-bar-icon-color       | `@blue`         | -           |
+| @nav-bar-text-color       | `@blue`         | -           |
+| @nav-bar-title-font-size  | `@font-size-lg` | -           |
+| @nav-bar-title-text-color | `@text-color`   | -           |
+| @nav-bar-z-index          | `1`             | -           |

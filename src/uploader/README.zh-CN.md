@@ -291,3 +291,34 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | --- | --- | --- | --- |
 | closeImagePreview | 关闭全屏的图片预览 | - | - |
 | chooseFile `v2.5.6` | 主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | - | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                               | 默认值               | 描述 |
+| ---------------------------------- | -------------------- | ---- |
+| @uploader-size                     | `80px`               | -    |
+| @uploader-icon-size                | `24px`               | -    |
+| @uploader-icon-color               | `@gray-4`            | -    |
+| @uploader-text-color               | `@gray-6`            | -    |
+| @uploader-text-font-size           | `@font-size-sm`      | -    |
+| @uploader-upload-background-color  | `@gray-1`            | -    |
+| @uploader-upload-active-color      | `@active-color`      | -    |
+| @uploader-delete-color             | `@white`             | -    |
+| @uploader-delete-icon-size         | `14px`               | -    |
+| @uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -    |
+| @uploader-file-background-color    | `@background-color`  | -    |
+| @uploader-file-icon-size           | `20px`               | -    |
+| @uploader-file-icon-color          | `@gray-7`            | -    |
+| @uploader-file-name-padding        | `0 @padding-base`    | -    |
+| @uploader-file-name-margin-top     | `@padding-xs`        | -    |
+| @uploader-file-name-font-size      | `@font-size-sm`      | -    |
+| @uploader-file-name-text-color     | `@gray-7`            | -    |
+| @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -    |
+| @uploader-mask-icon-size           | `22px`               | -    |
+| @uploader-mask-message-font-size   | `@font-size-sm`      | -    |
+| @uploader-mask-message-line-height | `@line-height-xs`    | -    |
+| @uploader-loading-icon-size        | `22px`               | -    |
+| @uploader-loading-icon-color       | `@white`             | -    |
+| @uploader-disabled-opacity         | `@disabled-opacity`  | -    |

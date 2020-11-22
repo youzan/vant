@@ -186,3 +186,20 @@ export default {
 | Name | Description | SlotProps |
 | ---- | ----------- | --------- |
 | icon | Custom icon | active    |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @tabbar-height | `50px` | - |
+| @tabbar-z-index | `1` | - |
+| @tabbar-background-color | `@white` | - |
+| @tabbar-item-font-size | `@font-size-sm` | - |
+| @tabbar-item-text-color | `@gray-7` | - |
+| @tabbar-item-active-color | `@blue` | - |
+| @tabbar-item-active-background-color | `@tabbar-background-color` | - |
+| @tabbar-item-line-height | `1` | - |
+| @tabbar-item-icon-size | `22px` | - |
+| @tabbar-item-margin-bottom | `4px` | - |

@@ -88,3 +88,20 @@ Vue.use(Badge);
 | ------- | ---------------- |
 | default | 徽标包裹的子元素 |
 | content | 自定义徽标内容   |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @badge-size | `16px` | - |
+| @badge-color | `@white` | - |
+| @badge-padding | `0 3px` | - |
+| @badge-font-size | `@font-size-sm` | - |
+| @badge-font-weight | `@font-weight-bold` | - |
+| @badge-border-width | `@border-width-base` | - |
+| @badge-background-color | `@red` | - |
+| @badge-dot-color | `@red` | - |
+| @badge-dot-size | `8px` | - |
+| @badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |

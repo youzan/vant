@@ -64,3 +64,15 @@ Vue.use(Loading);
 | Name    | Description  |
 | ------- | ------------ |
 | default | Loading text |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                | Default Value   | Description |
+| ----------------------------------- | --------------- | ----------- |
+| @loading-text-color                 | `@gray-6`       | -           |
+| @loading-text-font-size             | `@font-size-md` | -           |
+| @loading-spinner-color              | `@gray-5`       | -           |
+| @loading-spinner-size               | `30px`          | -           |
+| @loading-spinner-animation-duration | `0.8s`          | -           |

@@ -171,3 +171,19 @@ export default {
 | Name   | Description   |
 | ------ | ------------- |
 | button | Custom button |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @slider-active-background-color | `@blue` | - |
+| @slider-inactive-background-color | `@gray-3` | - |
+| @slider-disabled-opacity | `@disabled-opacity` | - |
+| @slider-bar-height | `2px` | - |
+| @slider-button-width | `24px` | - |
+| @slider-button-height | `24px` | - |
+| @slider-button-border-radius | `50%` | - |
+| @slider-button-background-color | `@white` | - |
+| @slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

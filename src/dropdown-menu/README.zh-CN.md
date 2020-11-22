@@ -184,3 +184,22 @@ export default {
 | text  | 文字                                   | _string_           |
 | value | 标识符                                 | _number \| string_ |
 | icon  | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_           |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @dropdown-menu-height | `48px` | - |
+| @dropdown-menu-background-color | `@white` | - |
+| @dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
+| @dropdown-menu-title-font-size | `15px` | - |
+| @dropdown-menu-title-text-color | `@text-color` | - |
+| @dropdown-menu-title-active-text-color | `@red` | - |
+| @dropdown-menu-title-disabled-text-color | `@gray-6` | - |
+| @dropdown-menu-title-padding | `0 @padding-xs` | - |
+| @dropdown-menu-title-line-height | `@line-height-lg` | - |
+| @dropdown-menu-option-active-color | `@red` | - |
+| @dropdown-menu-content-max-height | `80%` | - |
+| @dropdown-item-z-index | `10` | - |

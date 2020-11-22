@@ -125,3 +125,22 @@ Use `badge` prop to show badge in icon.
 | Name    | Description    |
 | ------- | -------------- |
 | default | Button content |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                               | Default Value      | Description |
+| ---------------------------------- | ------------------ | ----------- |
+| @goods-action-background-color     | `@white`           | -           |
+| @goods-action-height               | `50px`             | -           |
+| @goods-action-icon-width           | `48px`             | -           |
+| @goods-action-icon-height          | `100%`             | -           |
+| @goods-action-icon-color           | `@text-color`      | -           |
+| @goods-action-icon-size            | `18px`             | -           |
+| @goods-action-icon-font-size       | `@font-size-xs`    | -           |
+| @goods-action-icon-active-color    | `@active-color`    | -           |
+| @goods-action-icon-text-color      | `@gray-7`          | -           |
+| @goods-action-button-height        | `40px`             | -           |
+| @goods-action-button-warning-color | `@gradient-orange` | -           |
+| @goods-action-button-danger-color  | `@gradient-red`    | -           |

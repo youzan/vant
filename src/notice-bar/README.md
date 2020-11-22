@@ -113,3 +113,19 @@ Vue.use(NoticeBar);
 | default    | Notice text content |
 | left-icon  | Custom left icon    |
 | right-icon | Custom right icon   |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                         | Default Value             | Description |
+| ---------------------------- | ------------------------- | ----------- |
+| @notice-bar-height           | `40px`                    | -           |
+| @notice-bar-padding          | `0 @padding-md`           | -           |
+| @notice-bar-wrapable-padding | `@padding-xs @padding-md` | -           |
+| @notice-bar-text-color       | `@orange-dark`            | -           |
+| @notice-bar-font-size        | `@font-size-md`           | -           |
+| @notice-bar-line-height      | `24px`                    | -           |
+| @notice-bar-background-color | `@orange-light`           | -           |
+| @notice-bar-icon-size        | `16px`                    | -           |
+| @notice-bar-icon-min-width   | `24px`                    | -           |

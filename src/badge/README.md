@@ -75,3 +75,20 @@ Vue.use(Badge);
 | Name    | Description  |
 | ------- | ------------ |
 | default | Default slot |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @badge-size | `16px` | - |
+| @badge-color | `@white` | - |
+| @badge-padding | `0 3px` | - |
+| @badge-font-size | `@font-size-sm` | - |
+| @badge-font-weight | `@font-weight-bold` | - |
+| @badge-border-width | `@border-width-base` | - |
+| @badge-background-color | `@red` | - |
+| @badge-dot-color | `@red` | - |
+| @badge-dot-size | `8px` | - |
+| @badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |

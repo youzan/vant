@@ -292,3 +292,19 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | _checked?: boolean_ | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值                     | 描述 |
+| ----------------------------------- | -------------------------- | ---- |
+| @checkbox-size                      | `20px`                     | -    |
+| @checkbox-border-color              | `@gray-5`                  | -    |
+| @checkbox-transition-duration       | `@animation-duration-fast` | -    |
+| @checkbox-label-margin              | `@padding-xs`              | -    |
+| @checkbox-label-color               | `@text-color`              | -    |
+| @checkbox-checked-icon-color        | `@blue`                    | -    |
+| @checkbox-disabled-icon-color       | `@gray-5`                  | -    |
+| @checkbox-disabled-label-color      | `@gray-5`                  | -    |
+| @checkbox-disabled-background-color | `@border-color`            | -    |

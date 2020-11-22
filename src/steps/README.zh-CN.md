@@ -98,3 +98,22 @@ export default {
 | 事件名              | 说明                       | 回调参数        |
 | ------------------- | -------------------------- | --------------- |
 | click-step `v2.5.9` | 点击步骤的标题或图标时触发 | _index: number_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @step-text-color                 | `@gray-6`       | -    |
+| @step-active-color               | `@green`        | -    |
+| @step-process-text-color         | `@text-color`   | -    |
+| @step-font-size                  | `@font-size-md` | -    |
+| @step-line-color                 | `@border-color` | -    |
+| @step-finish-line-color          | `@green`        | -    |
+| @step-finish-text-color          | `@text-color`   | -    |
+| @step-icon-size                  | `12px`          | -    |
+| @step-circle-size                | `5px`           | -    |
+| @step-circle-color               | `@gray-6`       | -    |
+| @step-horizontal-title-font-size | `@font-size-sm` | -    |
+| @steps-background-color          | `@white`        | -    |

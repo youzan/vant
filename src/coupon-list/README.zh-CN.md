@@ -128,3 +128,34 @@ export default {
 | value       | 折扣券优惠金额，单位分          | _number_ |
 | valueDesc   | 折扣券优惠金额文案              | _string_ |
 | unitDesc    | 单位文案                        | _string_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值                       | 描述 |
+| ----------------------------------- | ---------------------------- | ---- |
+| @coupon-margin                      | `0 @padding-sm @padding-sm`  | -    |
+| @coupon-content-height              | `84px`                       | -    |
+| @coupon-content-padding             | `14px 0`                     | -    |
+| @coupon-background-color            | `@white`                     | -    |
+| @coupon-active-background-color     | `@active-color`              | -    |
+| @coupon-border-radius               | `@border-radius-lg`          | -    |
+| @coupon-box-shadow                  | `0 0 4px rgba(0, 0, 0, 0.1)` | -    |
+| @coupon-head-width                  | `96px`                       | -    |
+| @coupon-amount-color                | `@red`                       | -    |
+| @coupon-amount-font-size            | `30px`                       | -    |
+| @coupon-currency-font-size          | `40%`                        | -    |
+| @coupon-name-font-size              | `@font-size-md`              | -    |
+| @coupon-disabled-text-color         | `@gray-6`                    | -    |
+| @coupon-description-padding         | `@padding-xs @padding-md`    | -    |
+| @coupon-description-border-color    | `@border-color`              | -    |
+| @coupon-list-background-color       | `@background-color`          | -    |
+| @coupon-list-field-padding          | `5px 0 5px @padding-md`      | -    |
+| @coupon-list-exchange-button-height | `32px`                       | -    |
+| @coupon-list-close-button-height    | `40px`                       | -    |
+| @coupon-list-empty-image-size       | `200px`                      | -    |
+| @coupon-list-empty-tip-color        | `@gray-6`                    | -    |
+| @coupon-list-empty-tip-font-size    | `@font-size-md`              | -    |
+| @coupon-list-empty-tip-line-height  | `@line-height-md`            | -    |
+| @coupon-cell-selected-text-color    | `@text-color`                | -    |

@@ -208,3 +208,16 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance
 | --------- | ---------------- |
 | default   | Content          |
 | indicator | Custom indicator |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                       | Default Value   | Description |
+| ------------------------------------------ | --------------- | ----------- |
+| @swipe-indicator-size                      | `6px`           | -           |
+| @swipe-indicator-margin                    | `@padding-sm`   | -           |
+| @swipe-indicator-active-opacity            | `1`             | -           |
+| @swipe-indicator-inactive-opacity          | `0.3`           | -           |
+| @swipe-indicator-active-background-color   | `@blue`         | -           |
+| @swipe-indicator-inactive-background-color | `@border-color` | -           |
