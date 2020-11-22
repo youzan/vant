@@ -71,3 +71,16 @@ export default {
 | ---- | ----------- | -------- |
 | name | Name        | _string_ |
 | tel  | Phone       | _string_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                               | Default Value       | Description |
+| ---------------------------------- | ------------------- | ----------- |
+| @contact-edit-padding              | `@padding-md`       | -           |
+| @contact-edit-fields-radius        | `@border-radius-md` | -           |
+| @contact-edit-buttons-padding      | `@padding-xl 0`     | -           |
+| @contact-edit-button-margin-bottom | `@padding-sm`       | -           |
+| @contact-edit-button-font-size     | `16px`              | -           |
+| @contact-edit-field-label-width    | `4.1em`             | -           |

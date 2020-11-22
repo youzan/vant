@@ -238,3 +238,23 @@ export default {
 | --------- | --------------------------- |
 | default   | 自定义菜单内容              |
 | reference | 触发 Popover 显示的元素内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                      | 默认值              | 描述 |
+| ----------------------------------------- | ------------------- | ---- |
+| @popover-arrow-size                       | `6px`               | -    |
+| @popover-border-radius                    | `@border-radius-lg` | -    |
+| @popover-action-width                     | `128px`             | -    |
+| @popover-action-height                    | `44px`              | -    |
+| @popover-action-font-size                 | `@font-size-md`     | -    |
+| @popover-action-line-height               | `@line-height-md`   | -    |
+| @popover-action-icon-size                 | `20px`              | -    |
+| @popover-light-text-color                 | `@text-color`       | -    |
+| @popover-light-background-color           | `@white`            | -    |
+| @popover-light-action-disabled-text-color | `@gray-5`           | -    |
+| @popover-dark-text-color                  | `@white`            | -    |
+| @popover-dark-background-color            | `#4a4a4a`           | -    |
+| @popover-dark-action-disabled-text-color  | `@gray-6`           | -    |

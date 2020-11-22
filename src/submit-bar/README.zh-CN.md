@@ -93,3 +93,29 @@ Vue.use(SubmitBar);
 | button `v2.10.12` | 自定义按钮           |
 | top               | 自定义订单栏上方内容 |
 | tip               | 提示文案中的额外内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值                       | 描述 |
+| ----------------------------------- | ---------------------------- | ---- |
+| @submit-bar-height                  | `50px`                       | -    |
+| @submit-bar-z-index                 | `100`                        | -    |
+| @submit-bar-background-color        | `@white`                     | -    |
+| @submit-bar-button-width            | `110px`                      | -    |
+| @submit-bar-price-color             | `@red`                       | -    |
+| @submit-bar-price-font-size         | `@font-size-md`              | -    |
+| @submit-bar-currency-font-size      | `@font-size-md`              | -    |
+| @submit-bar-text-color              | `@text-color`                | -    |
+| @submit-bar-text-font-size          | `@font-size-md`              | -    |
+| @submit-bar-tip-padding             | `@padding-xs @padding-sm`    | -    |
+| @submit-bar-tip-font-size           | `@font-size-sm`              | -    |
+| @submit-bar-tip-line-height         | `1.5`                        | -    |
+| @submit-bar-tip-color               | `#f56723`                    | -    |
+| @submit-bar-tip-background-color    | `#fff7cc`                    | -    |
+| @submit-bar-tip-icon-size           | `12px`                       | -    |
+| @submit-bar-button-height           | `40px`                       | -    |
+| @submit-bar-padding                 | `0 @padding-md`              | -    |
+| @submit-bar-price-integer-font-size | `20px`                       | -    |
+| @submit-bar-price-font-family       | `@price-integer-font-family` | -    |

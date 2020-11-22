@@ -163,3 +163,13 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CountDown instance and call inst
 | start | Start count down | -         | -            |
 | pause | Pause count down | -         | -            |
 | reset | Reset count down | -         | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                    | Default Value     | Description |
+| ----------------------- | ----------------- | ----------- |
+| @count-down-text-color  | `@text-color`     | -           |
+| @count-down-font-size   | `@font-size-md`   | -           |
+| @count-down-line-height | `@line-height-md` | -           |

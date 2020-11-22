@@ -123,3 +123,13 @@ Use slots to custom tips.
 | loosing | Content of head when at loosing       | { distance } |
 | loading | Content of head when at loading       | { distance } |
 | success | Content of head when succeed          | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                          | Default Value   | Description |
+| ----------------------------- | --------------- | ----------- |
+| @pull-refresh-head-height     | `50px`          | -           |
+| @pull-refresh-head-font-size  | `@font-size-md` | -           |
+| @pull-refresh-head-text-color | `@gray-6`       | -           |

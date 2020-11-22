@@ -133,3 +133,22 @@ export default {
 | 名称    | 说明         |
 | ------- | ------------ |
 | default | 按钮显示内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                               | 默认值             | 描述 |
+| ---------------------------------- | ------------------ | ---- |
+| @goods-action-background-color     | `@white`           | -    |
+| @goods-action-height               | `50px`             | -    |
+| @goods-action-icon-width           | `48px`             | -    |
+| @goods-action-icon-height          | `100%`             | -    |
+| @goods-action-icon-color           | `@text-color`      | -    |
+| @goods-action-icon-size            | `18px`             | -    |
+| @goods-action-icon-font-size       | `@font-size-xs`    | -    |
+| @goods-action-icon-active-color    | `@active-color`    | -    |
+| @goods-action-icon-text-color      | `@gray-7`          | -    |
+| @goods-action-button-height        | `40px`             | -    |
+| @goods-action-button-warning-color | `@gradient-orange` | -    |
+| @goods-action-button-danger-color  | `@gradient-red`    | -    |

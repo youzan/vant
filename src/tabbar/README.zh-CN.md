@@ -195,3 +195,20 @@ export default {
 | 名称 | 说明       | 参数                   |
 | ---- | ---------- | ---------------------- |
 | icon | 自定义图标 | active: 是否为选中标签 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                 | 默认值                     | 描述 |
+| ------------------------------------ | -------------------------- | ---- |
+| @tabbar-height                       | `50px`                     | -    |
+| @tabbar-z-index                      | `1`                        | -    |
+| @tabbar-background-color             | `@white`                   | -    |
+| @tabbar-item-font-size               | `@font-size-sm`            | -    |
+| @tabbar-item-text-color              | `@gray-7`                  | -    |
+| @tabbar-item-active-color            | `@blue`                    | -    |
+| @tabbar-item-active-background-color | `@tabbar-background-color` | -    |
+| @tabbar-item-line-height             | `1`                        | -    |
+| @tabbar-item-icon-size               | `22px`                     | -    |
+| @tabbar-item-margin-bottom           | `4px`                      | -    |

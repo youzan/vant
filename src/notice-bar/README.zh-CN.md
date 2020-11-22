@@ -136,3 +136,19 @@ Vue.use(NoticeBar);
 | default    | 通知文本内容   |
 | left-icon  | 自定义左侧图标 |
 | right-icon | 自定义右侧图标 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                         | 默认值                    | 描述 |
+| ---------------------------- | ------------------------- | ---- |
+| @notice-bar-height           | `40px`                    | -    |
+| @notice-bar-padding          | `0 @padding-md`           | -    |
+| @notice-bar-wrapable-padding | `@padding-xs @padding-md` | -    |
+| @notice-bar-text-color       | `@orange-dark`            | -    |
+| @notice-bar-font-size        | `@font-size-md`           | -    |
+| @notice-bar-line-height      | `24px`                    | -    |
+| @notice-bar-background-color | `@orange-light`           | -    |
+| @notice-bar-icon-size        | `16px`                    | -    |
+| @notice-bar-icon-min-width   | `24px`                    | -    |

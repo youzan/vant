@@ -287,3 +287,28 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Field instance and call instance
 | right-icon     | Custom right icon           |
 | button         | Insert button               |
 | extra `v2.8.2` | Custom content on the right |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value   | Description |
+| -------------------------------- | --------------- | ----------- |
+| @field-label-width               | `6.2em`         | -           |
+| @field-label-color               | `@gray-7`       | -           |
+| @field-label-margin-right        | `@padding-sm`   | -           |
+| @field-input-text-color          | `@text-color`   | -           |
+| @field-input-error-text-color    | `@red`          | -           |
+| @field-input-disabled-text-color | `@gray-5`       | -           |
+| @field-placeholder-text-color    | `@gray-5`       | -           |
+| @field-icon-size                 | `16px`          | -           |
+| @field-clear-icon-size           | `16px`          | -           |
+| @field-clear-icon-color          | `@gray-5`       | -           |
+| @field-right-icon-color          | `@gray-6`       | -           |
+| @field-error-message-color       | `@red`          | -           |
+| @field-error-message-text-color  | `12px`          | -           |
+| @field-text-area-min-height      | `60px`          | -           |
+| @field-word-limit-color          | `@gray-7`       | -           |
+| @field-word-limit-font-size      | `@font-size-sm` | -           |
+| @field-word-limit-line-height    | `16px`          | -           |
+| @field-disabled-text-color       | `@gray-5`       | -           |

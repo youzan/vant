@@ -313,6 +313,31 @@ export default {
 | button         | 自定义输入框尾部按钮                                       |
 | extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @field-label-width               | `6.2em`         | -    |
+| @field-label-color               | `@gray-7`       | -    |
+| @field-label-margin-right        | `@padding-sm`   | -    |
+| @field-input-text-color          | `@text-color`   | -    |
+| @field-input-error-text-color    | `@red`          | -    |
+| @field-input-disabled-text-color | `@gray-5`       | -    |
+| @field-placeholder-text-color    | `@gray-5`       | -    |
+| @field-icon-size                 | `16px`          | -    |
+| @field-clear-icon-size           | `16px`          | -    |
+| @field-clear-icon-color          | `@gray-5`       | -    |
+| @field-right-icon-color          | `@gray-6`       | -    |
+| @field-error-message-color       | `@red`          | -    |
+| @field-error-message-text-color  | `12px`          | -    |
+| @field-text-area-min-height      | `60px`          | -    |
+| @field-word-limit-color          | `@gray-7`       | -    |
+| @field-word-limit-font-size      | `@font-size-sm` | -    |
+| @field-word-limit-line-height    | `16px`          | -    |
+| @field-disabled-text-color       | `@gray-5`       | -    |
+
 ## 常见问题
 
 ### 设置 type 为 number 后，为什么 input 标签的类型仍为 text?
