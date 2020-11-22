@@ -45,7 +45,7 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 
 ### CLI
 
-We recomment to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
+We recommend to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
 
 ```bash
 # Install Vue Cli
