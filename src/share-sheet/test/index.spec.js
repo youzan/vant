@@ -1,38 +1,40 @@
 import ShareSheet from '..';
 import { mount, trigger, later } from '../../../test';
 
-test('cancel-text prop', () => {
+test('should render cancel text when using cancel-text prop', async () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
       cancelText: 'foo',
     },
   });
 
-  expect(wrapper.find('.van-share-sheet__cancel')).toMatchSnapshot();
+  expect(wrapper.find('.van-share-sheet__cancel').html()).toMatchSnapshot();
 
-  wrapper.setProps({ cancelText: '' });
-  expect(wrapper.contains('.van-share-sheet__cancel')).toBeFalsy();
+  await wrapper.setProps({ cancelText: '' });
+  expect(wrapper.find('.van-share-sheet__cancel').exists()).toBeFalsy();
 });
 
-test('description prop', () => {
+test('should render description when using description prop', async () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
       description: 'foo',
     },
   });
 
-  expect(wrapper.find('.van-share-sheet__description')).toMatchSnapshot();
+  expect(
+    wrapper.find('.van-share-sheet__description').html()
+  ).toMatchSnapshot();
 
-  wrapper.setProps({ description: '' });
-  expect(wrapper.contains('.van-share-sheet__description')).toBeFalsy();
+  await wrapper.setProps({ description: '' });
+  expect(wrapper.find('.van-share-sheet__description').exists()).toBeFalsy();
 });
 
-test('option className', () => {
+test('should allow to custom the className of option', () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
       options: [{ name: 'Link', icon: 'link', className: 'foo' }],
     },
   });
@@ -42,10 +44,10 @@ test('option className', () => {
   expect(option.className.includes('foo')).toBeTruthy();
 });
 
-test('select event', () => {
+test('should emit select event when an option is clicked', () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
       options: [{ icon: 'wechat', name: 'wechat' }],
     },
   });
@@ -57,23 +59,23 @@ test('select event', () => {
   ]);
 });
 
-test('cancel event', () => {
+test('should emit cancel event when the cancel button is clicked', () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
     },
   });
 
   wrapper.find('.van-share-sheet__cancel').trigger('click');
 
-  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
   expect(wrapper.emitted('cancel')[0]).toBeTruthy();
 });
 
-test('title & description slot', () => {
+test('should render title and description slot correctly', () => {
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
     },
     slots: {
       title: () => 'Custom Title',
@@ -84,12 +86,14 @@ test('title & description slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('click-overlay event', async () => {
+test('should emit click-overlay event when overlay is clicked', async () => {
   const root = document.createElement('div');
+  const onClickOverlay = jest.fn();
   const wrapper = mount(ShareSheet, {
     props: {
-      value: true,
+      show: true,
       teleport: root,
+      onClickOverlay,
     },
   });
 
@@ -97,5 +101,6 @@ test('click-overlay event', async () => {
 
   const overlay = root.querySelector('.van-overlay');
   trigger(overlay, 'click');
-  expect(wrapper.emitted('click-overlay')).toBeTruthy();
+  expect(onClickOverlay).toHaveBeenCalledTimes(1);
+  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
 });
