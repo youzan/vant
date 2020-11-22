@@ -219,6 +219,19 @@ export default {
 | default   | 轮播内容     |
 | indicator | 自定义指示器 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                       | 默认值          | 描述 |
+| ------------------------------------------ | --------------- | ---- |
+| @swipe-indicator-size                      | `6px`           | -    |
+| @swipe-indicator-margin                    | `@padding-sm`   | -    |
+| @swipe-indicator-active-opacity            | `1`             | -    |
+| @swipe-indicator-inactive-opacity          | `0.3`           | -    |
+| @swipe-indicator-active-background-color   | `@blue`         | -    |
+| @swipe-indicator-inactive-background-color | `@border-color` | -    |
+
 ## 常见问题
 
 ### 滑动轮播时为什么触发了 click 事件？

@@ -268,3 +268,19 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call insta
 | Name   | Description         | Attribute           | Return value |
 | ------ | ------------------- | ------------------- | ------------ |
 | toggle | Toggle check status | _checked?: boolean_ | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @checkbox-size | `20px` | - |
+| @checkbox-border-color | `@gray-5` | - |
+| @checkbox-transition-duration | `@animation-duration-fast` | - |
+| @checkbox-label-margin | `@padding-xs` | - |
+| @checkbox-label-color | `@text-color` | - |
+| @checkbox-checked-icon-color | `@blue` | - |
+| @checkbox-disabled-icon-color | `@gray-5` | - |
+| @checkbox-disabled-label-color | `@gray-5` | - |
+| @checkbox-disabled-background-color | `@border-color` | - |

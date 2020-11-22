@@ -138,3 +138,18 @@ export default {
 | close | Emitted when closing Popup | - |
 | opened | Emitted when Popup is opened | - |
 | closed | Emitted when Popup is closed | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @popup-background-color | `@white` | - |
+| @popup-transition | `transform @animation-duration-base` | - |
+| @popup-round-border-radius | `16px` | - |
+| @popup-close-icon-size | `22px` | - |
+| @popup-close-icon-color | `@gray-5` | - |
+| @popup-close-icon-active-color | `@gray-6` | - |
+| @popup-close-icon-margin | `16px` | - |
+| @popup-close-icon-z-index | `1` | - |

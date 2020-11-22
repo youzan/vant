@@ -194,3 +194,23 @@ export default {
 | --------- | ----------------- |
 | default   | Custom content    |
 | reference | Reference Element |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @popover-arrow-size | `6px` | - |
+| @popover-border-radius | `@border-radius-lg` | - |
+| @popover-action-width | `128px` | - |
+| @popover-action-height | `44px` | - |
+| @popover-action-font-size | `@font-size-md` | - |
+| @popover-action-line-height | `@line-height-md` | - |
+| @popover-action-icon-size | `20px` | - |
+| @popover-light-text-color | `@text-color` | - |
+| @popover-light-background-color | `@white` | - |
+| @popover-light-action-disabled-text-color | `@gray-5` | - |
+| @popover-dark-text-color | `@white` | - |
+| @popover-dark-background-color | `#4a4a4a` | - |
+| @popover-dark-action-disabled-text-color | `@gray-6` | - |

@@ -87,3 +87,13 @@ export default {
 | name      | Name               | _string_           |
 | tel       | Phone              | _string_           |
 | isDefault | Is default contact | _boolean_          |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value | Description |
+| -------------------------------- | ------------- | ----------- |
+| @contact-list-edit-icon-size     | `16px`        | -           |
+| @contact-list-add-button-z-index | `999`         | -           |
+| @contact-list-item-padding       | `@padding-md` | -           |

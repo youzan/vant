@@ -259,3 +259,34 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call insta
 | --- | --- | --- | --- |
 | closeImagePreview | Close full screen image preview | - | - |
 | chooseFile `v2.5.6` | Trigger choosing files, works with the user action context only because of browser security | - | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                               | Default Value        | Description |
+| ---------------------------------- | -------------------- | ----------- |
+| @uploader-size                     | `80px`               | -           |
+| @uploader-icon-size                | `24px`               | -           |
+| @uploader-icon-color               | `@gray-4`            | -           |
+| @uploader-text-color               | `@gray-6`            | -           |
+| @uploader-text-font-size           | `@font-size-sm`      | -           |
+| @uploader-upload-background-color  | `@gray-1`            | -           |
+| @uploader-upload-active-color      | `@active-color`      | -           |
+| @uploader-delete-color             | `@white`             | -           |
+| @uploader-delete-icon-size         | `14px`               | -           |
+| @uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -           |
+| @uploader-file-background-color    | `@background-color`  | -           |
+| @uploader-file-icon-size           | `20px`               | -           |
+| @uploader-file-icon-color          | `@gray-7`            | -           |
+| @uploader-file-name-padding        | `0 @padding-base`    | -           |
+| @uploader-file-name-margin-top     | `@padding-xs`        | -           |
+| @uploader-file-name-font-size      | `@font-size-sm`      | -           |
+| @uploader-file-name-text-color     | `@gray-7`            | -           |
+| @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -           |
+| @uploader-mask-icon-size           | `22px`               | -           |
+| @uploader-mask-message-font-size   | `@font-size-sm`      | -           |
+| @uploader-mask-message-line-height | `@line-height-xs`    | -           |
+| @uploader-loading-icon-size        | `22px`               | -           |
+| @uploader-loading-icon-color       | `@white`             | -           |
+| @uploader-disabled-opacity         | `@disabled-opacity`  | -           |

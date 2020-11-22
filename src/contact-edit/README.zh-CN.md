@@ -75,3 +75,16 @@ export default {
 | ---- | ------------ | ------------------ |
 | name | 联系人姓名   | _string_           |
 | tel  | 联系人手机号 | _number \| string_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                               | 默认值              | 描述 |
+| ---------------------------------- | ------------------- | ---- |
+| @contact-edit-padding              | `@padding-md`       | -    |
+| @contact-edit-fields-radius        | `@border-radius-md` | -    |
+| @contact-edit-buttons-padding      | `@padding-xl 0`     | -    |
+| @contact-edit-button-margin-bottom | `@padding-sm`       | -    |
+| @contact-edit-button-font-size     | `16px`              | -    |
+| @contact-edit-field-label-width    | `4.1em`             | -    |

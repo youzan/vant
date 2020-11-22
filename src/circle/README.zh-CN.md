@@ -135,3 +135,14 @@ export default {
 | 名称    | 说明           |
 | ------- | -------------- |
 | default | 自定义文字内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                     | 默认值              | 描述 |
+| ------------------------ | ------------------- | ---- |
+| @circle-text-color       | `@text-color`       | -    |
+| @circle-text-font-weight | `@font-weight-bold` | -    |
+| @circle-text-font-size   | `@font-size-md`     | -    |
+| @circle-text-line-height | `@line-height-md`   | -    |

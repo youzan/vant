@@ -241,3 +241,29 @@ export default {
 | ------- | ---------- |
 | default | 自定义内容 |
 | title   | 自定义标题 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                  | 默认值                     | 描述 |
+| ------------------------------------- | -------------------------- | ---- |
+| @dialog-width                         | `320px`                    | -    |
+| @dialog-small-screen-width            | `90%`                      | -    |
+| @dialog-font-size                     | `@font-size-lg`            | -    |
+| @dialog-transition                    | `@animation-duration-base` | -    |
+| @dialog-border-radius                 | `16px`                     | -    |
+| @dialog-background-color              | `@white`                   | -    |
+| @dialog-header-font-weight            | `@font-weight-bold`        | -    |
+| @dialog-header-line-height            | `24px`                     | -    |
+| @dialog-header-padding-top            | `26px`                     | -    |
+| @dialog-header-isolated-padding       | `@padding-lg 0`            | -    |
+| @dialog-message-padding               | `@padding-lg`              | -    |
+| @dialog-message-font-size             | `@font-size-md`            | -    |
+| @dialog-message-line-height           | `@line-height-md`          | -    |
+| @dialog-message-max-height            | `60vh`                     | -    |
+| @dialog-has-title-message-text-color  | `@gray-7`                  | -    |
+| @dialog-has-title-message-padding-top | `@padding-xs`              | -    |
+| @dialog-button-height                 | `48px`                     | -    |
+| @dialog-round-button-height           | `36px`                     | -    |
+| @dialog-confirm-button-text-color     | `@red`                     | -    |

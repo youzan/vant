@@ -87,3 +87,14 @@ export default {
 | Event | Description                       | Arguments      |
 | ----- | --------------------------------- | -------------- |
 | click | Emitted when component is clicked | _event: Event_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                            | Default Value     | Description |
+| ------------------------------- | ----------------- | ----------- |
+| @contact-card-padding           | `@padding-md`     | -           |
+| @contact-card-add-icon-size     | `40px`            | -           |
+| @contact-card-add-icon-color    | `@blue`           | -           |
+| @contact-card-value-line-height | `@line-height-md` | -           |

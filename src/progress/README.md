@@ -69,3 +69,18 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Progress instance and call insta
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | resize | Resize Progress when container element resized or visibility changed | - | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value   | Description |
+| -------------------------------- | --------------- | ----------- |
+| @progress-height                 | `4px`           | -           |
+| @progress-color                  | `@blue`         | -           |
+| @progress-background-color       | `@gray-3`       | -           |
+| @progress-pivot-padding          | `0 5px`         | -           |
+| @progress-pivot-text-color       | `@white`        | -           |
+| @progress-pivot-font-size        | `@font-size-xs` | -           |
+| @progress-pivot-line-height      | `1.6`           | -           |
+| @progress-pivot-background-color | `@blue`         | -           |
