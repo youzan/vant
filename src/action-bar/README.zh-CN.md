@@ -134,17 +134,17 @@ export default {
 
 组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
 
-| 名称                               | 默认值             | 描述 |
-| ---------------------------------- | ------------------ | ---- |
-| @goods-action-background-color     | `@white`           | -    |
-| @goods-action-height               | `50px`             | -    |
-| @goods-action-icon-width           | `48px`             | -    |
-| @goods-action-icon-height          | `100%`             | -    |
-| @goods-action-icon-color           | `@text-color`      | -    |
-| @goods-action-icon-size            | `18px`             | -    |
-| @goods-action-icon-font-size       | `@font-size-xs`    | -    |
-| @goods-action-icon-active-color    | `@active-color`    | -    |
-| @goods-action-icon-text-color      | `@gray-7`          | -    |
-| @goods-action-button-height        | `40px`             | -    |
-| @goods-action-button-warning-color | `@gradient-orange` | -    |
-| @goods-action-button-danger-color  | `@gradient-red`    | -    |
+| 名称                             | 默认值             | 描述 |
+| -------------------------------- | ------------------ | ---- |
+| @action-bar-background-color     | `@white`           | -    |
+| @action-bar-height               | `50px`             | -    |
+| @action-bar-icon-width           | `48px`             | -    |
+| @action-bar-icon-height          | `100%`             | -    |
+| @action-bar-icon-color           | `@text-color`      | -    |
+| @action-bar-icon-size            | `18px`             | -    |
+| @action-bar-icon-font-size       | `@font-size-xs`    | -    |
+| @action-bar-icon-active-color    | `@active-color`    | -    |
+| @action-bar-icon-text-color      | `@gray-7`          | -    |
+| @action-bar-button-height        | `40px`             | -    |
+| @action-bar-button-warning-color | `@gradient-orange` | -    |
+| @action-bar-button-danger-color  | `@gradient-red`    | -    |
