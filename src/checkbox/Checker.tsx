@@ -22,7 +22,10 @@ export default defineComponent({
     role: String,
     parent: Object,
     checked: Boolean,
-    bindGroup: Boolean,
+    bindGroup: {
+      type: Boolean,
+      default: true,
+    },
     bem: {
       type: Function,
       required: true,

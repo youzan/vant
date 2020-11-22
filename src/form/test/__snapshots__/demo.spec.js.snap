@@ -147,7 +147,6 @@ exports[`should render demo and match snapshot 1`] = `
                  class="van-checkbox"
                  tabindex="0"
                  aria-checked="false"
-                 bindgroup="true"
             >
               <div class="van-checkbox__icon van-checkbox__icon--square">
                 <i class="van-badge__wrapper van-icon van-icon-success">
@@ -172,7 +171,6 @@ exports[`should render demo and match snapshot 1`] = `
                    class="van-checkbox van-checkbox--horizontal"
                    tabindex="0"
                    aria-checked="false"
-                   bindgroup="true"
               >
                 <div class="van-checkbox__icon van-checkbox__icon--square">
                   <i class="van-badge__wrapper van-icon van-icon-success">
@@ -186,7 +184,6 @@ exports[`should render demo and match snapshot 1`] = `
                    class="van-checkbox van-checkbox--horizontal"
                    tabindex="0"
                    aria-checked="false"
-                   bindgroup="true"
               >
                 <div class="van-checkbox__icon van-checkbox__icon--square">
                   <i class="van-badge__wrapper van-icon van-icon-success">

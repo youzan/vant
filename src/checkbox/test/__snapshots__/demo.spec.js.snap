@@ -6,7 +6,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
       <i class="van-badge__wrapper van-icon van-icon-success">
@@ -22,7 +21,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox van-checkbox--disabled"
        tabindex="-1"
        aria-checked="false"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled">
       <i class="van-badge__wrapper van-icon van-icon-success">
@@ -36,7 +34,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox van-checkbox--disabled"
        tabindex="-1"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked">
       <i class="van-badge__wrapper van-icon van-icon-success">
@@ -52,7 +49,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked">
       <i class="van-badge__wrapper van-icon van-icon-success">
@@ -68,7 +64,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
       <i class="van-badge__wrapper van-icon van-icon-success"
@@ -86,7 +81,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
          style="font-size: 24px;"
@@ -104,7 +98,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
       <img src="https://img.yzcdn.cn/vant/user-active.png">
@@ -119,7 +112,6 @@ exports[`should render demo and match snapshot 1`] = `
        class="van-checkbox van-checkbox--label-disabled"
        tabindex="0"
        aria-checked="true"
-       bindgroup="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
       <i class="van-badge__wrapper van-icon van-icon-success">
@@ -136,7 +128,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="true"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -150,7 +141,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="true"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -168,7 +158,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox van-checkbox--horizontal"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -182,7 +171,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox van-checkbox--horizontal"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -200,7 +188,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -214,7 +201,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -228,7 +214,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -246,7 +231,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -260,7 +244,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -274,7 +257,6 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-checkbox"
          tabindex="0"
          aria-checked="false"
-         bindgroup="true"
     >
       <div class="van-checkbox__icon van-checkbox__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -322,7 +304,6 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-checkbox"
              tabindex="0"
              aria-checked="false"
-             bindgroup="true"
         >
           <div class="van-checkbox__icon van-checkbox__icon--round">
             <i class="van-badge__wrapper van-icon van-icon-success">
@@ -343,7 +324,6 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-checkbox"
              tabindex="0"
              aria-checked="false"
-             bindgroup="true"
         >
           <div class="van-checkbox__icon van-checkbox__icon--round">
             <i class="van-badge__wrapper van-icon van-icon-success">
