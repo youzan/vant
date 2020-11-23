@@ -4,7 +4,7 @@
       <van-slider v-model="value1" @change="onChange" />
     </demo-block>
 
-    <demo-block :title="t('title2')">
+    <demo-block v-if="!isWeapp" :title="t('title2')">
       <van-slider range v-model="value2" @change="onChange" />
     </demo-block>
 
