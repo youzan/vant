@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should allow to custom the className of action 1`] = `
-<div class="van-popover__action foo">
+<button type="button" class="van-popover__action foo">
   <div class="van-popover__action-text van-hairline--bottom">Option</div>
-</div>
+</button>
 `;
 
 exports[`should locate to reference element when showed 1`] = `<!---->`;

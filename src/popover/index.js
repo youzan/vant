@@ -114,13 +114,14 @@ export default createComponent({
     renderAction(action, index) {
       const { icon, text, disabled, className } = action;
       return (
-        <div
+        <button
+          type="button"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
           onClick={() => this.onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
-        </div>
+        </button>
       );
     },
 
