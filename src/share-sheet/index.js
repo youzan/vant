@@ -4,7 +4,15 @@ import { createNamespace, pick } from '../utils';
 // Components
 import Popup, { popupSharedProps } from '../popup';
 
-const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
+const PRESET_ICONS = [
+  'qq',
+  'link',
+  'weibo',
+  'wechat',
+  'poster',
+  'qrcode',
+  'weapp-qrcode',
+];
 
 function getIconURL(icon) {
   if (PRESET_ICONS.indexOf(icon) !== -1) {

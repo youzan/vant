@@ -1821,6 +1821,13 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
+"@vant/popperjs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.0.0.tgz#2d66ab4b8e275c98fb82f5efd43fdd47964d11f2"
+  integrity sha512-2OAl3URmH37OOATcKuT8iuZozoZVNMc8iLLZvurWZqHlWlAojsDHm7lQ2OKlAV4jlxbiFJt0en6DY+WlxHvN9w==
+  dependencies:
+    "@popperjs/core" "^2.5.4"
+
 "@vant/stylelint-config@^1.4.0":
   version "1.4.1"
   resolved "https://registry.npm.taobao.org/@vant/stylelint-config/download/@vant/stylelint-config-1.4.1.tgz#f96d21e09de884e4d9fee71712aacb35228a066f"

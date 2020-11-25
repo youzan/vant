@@ -1,7 +1,5 @@
 import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
-import { createPopper } from '@popperjs/core/lib/popper-lite';
-import offsetModifier from '@popperjs/core/lib/modifiers/offset';
-import extendsHelper from '@babel/runtime/helpers/esm/extends';
+import { createPopper, offsetModifier } from '@vant/popperjs';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -13,13 +11,6 @@ import { useClickAway } from '@vant/use';
 // Components
 import Icon from '../icon';
 import Popup from '../popup';
-
-// add Object.assign polyfill for popper.js
-// see: https://popper.js.org/docs/v2/browser-support/
-/* istanbul ignore if */
-if (!Object.assign) {
-  Object.assign = extendsHelper;
-}
 
 const [createComponent, bem] = createNamespace('popover');
 
