@@ -7,22 +7,22 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-grid-item__content van-grid-item__content--center">
       <h3 class="demo-sidebar-title">
-        基础用法
+        Basic Usage
       </h3>
       <div class="van-sidebar">
         <a class="van-sidebar-item van-sidebar-item--select">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
       </div>
@@ -33,19 +33,19 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-grid-item__content van-grid-item__content--center">
       <h3 class="demo-sidebar-title">
-        徽标提示
+        Show Badge
       </h3>
       <div class="van-sidebar">
         <a class="van-sidebar-item van-sidebar-item--select">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
             <div class="van-badge van-badge--dot van-badge--fixed">
             </div>
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
             <div class="van-badge van-badge--fixed">
               5
             </div>
@@ -53,7 +53,7 @@ exports[`should render demo and match snapshot 1`] = `
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
             <div class="van-badge van-badge--fixed">
               99+
             </div>
@@ -67,22 +67,22 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-grid-item__content van-grid-item__content--center">
       <h3 class="demo-sidebar-title">
-        禁用选项
+        Disabled
       </h3>
       <div class="van-sidebar">
         <a class="van-sidebar-item van-sidebar-item--select">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
         <a class="van-sidebar-item van-sidebar-item--disabled">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名
+            Title
           </div>
         </a>
       </div>
@@ -93,22 +93,22 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-grid-item__content van-grid-item__content--center">
       <h3 class="demo-sidebar-title">
-        监听切换事件
+        Change Event
       </h3>
       <div class="van-sidebar">
         <a class="van-sidebar-item van-sidebar-item--select">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名1
+            Title1
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名2
+            Title2
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            标签名3
+            Title3
           </div>
         </a>
       </div>

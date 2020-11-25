@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -21,7 +21,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -32,7 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -43,7 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -69,7 +69,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -91,7 +91,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -102,7 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -113,7 +113,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -180,7 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -191,7 +191,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -202,7 +202,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -213,7 +213,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -224,7 +224,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -235,7 +235,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -246,7 +246,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -257,7 +257,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -274,7 +274,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -285,7 +285,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -296,7 +296,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -307,7 +307,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -318,7 +318,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -329,7 +329,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -340,7 +340,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -351,7 +351,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -366,7 +366,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -377,7 +377,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -388,7 +388,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -406,7 +406,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-home-o van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          路由跳转
+          Vue Router
         </span>
       </div>
     </div>
@@ -420,7 +420,7 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-search van-grid-item__icon">
         </i>
         <span class="van-grid-item__text">
-          URL 跳转
+          URL
         </span>
       </div>
     </div>
@@ -437,7 +437,7 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>
@@ -451,7 +451,7 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </i>
         <span class="van-grid-item__text">
-          文字
+          Text
         </span>
       </div>
     </div>

@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          浅色风格
+          Light Theme
         </span>
       </div>
     </button>
@@ -19,7 +19,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          深色风格
+          Dark Theme
         </span>
       </div>
     </button>
@@ -32,7 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title van-field__label">
       <span>
-        选择弹出位置
+        Placement
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -59,7 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          展示图标
+          Show Icon
         </span>
       </div>
     </button>
@@ -70,7 +70,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          禁用选项
+          Disable Action
         </span>
       </div>
     </button>
@@ -83,7 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          自定义内容
+          Custom Content
         </span>
       </div>
     </button>

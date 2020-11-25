@@ -41,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
       </path>
     </svg>
     <div class="van-circle__text">
-      宽度定制
+      Custom Width
     </div>
   </div>
   <div class="van-circle"
@@ -61,7 +61,7 @@ exports[`should render demo and match snapshot 1`] = `
       </path>
     </svg>
     <div class="van-circle__text">
-      颜色定制
+      Custom Color
     </div>
   </div>
   <div class="van-circle"
@@ -98,7 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
       </path>
     </svg>
     <div class="van-circle__text">
-      渐变色
+      Gradient
     </div>
   </div>
   <div class="van-circle"
@@ -118,7 +118,7 @@ exports[`should render demo and match snapshot 1`] = `
       </path>
     </svg>
     <div class="van-circle__text">
-      逆时针
+      Counter Clockwise
     </div>
   </div>
   <div class="van-circle"
@@ -138,7 +138,7 @@ exports[`should render demo and match snapshot 1`] = `
       </path>
     </svg>
     <div class="van-circle__text">
-      大小定制
+      Custom Size
     </div>
   </div>
 </div>
@@ -148,7 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        增加
+        Add
       </span>
     </div>
   </button>
@@ -157,7 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        减少
+        Decrease
       </span>
     </div>
   </button>

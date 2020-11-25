@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
       <span style="left: 0px; background: rgb(242, 130, 106);"
             class="van-progress__pivot"
       >
-        橙色
+        Orange
       </span>
     </span>
   </div>
@@ -61,7 +61,7 @@ exports[`should render demo and match snapshot 1`] = `
       <span style="left: 0px; background: rgb(238, 10, 36);"
             class="van-progress__pivot"
       >
-        红色
+        Red
       </span>
     </span>
   </div>
@@ -72,7 +72,7 @@ exports[`should render demo and match snapshot 1`] = `
       <span style="left: 0px; background: rgb(114, 50, 221);"
             class="van-progress__pivot"
       >
-        紫色
+        Purple
       </span>
     </span>
   </div>

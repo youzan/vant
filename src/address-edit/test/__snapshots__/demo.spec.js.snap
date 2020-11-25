@@ -7,14 +7,14 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
           <span>
-            姓名
+            Name
           </span>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
                    class="van-field__control"
-                   placeholder="收货人姓名"
+                   placeholder="Name"
             >
           </div>
         </div>
@@ -22,14 +22,14 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
           <span>
-            电话
+            Phone
           </span>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="tel"
                    class="van-field__control"
-                   placeholder="收货人手机号"
+                   placeholder="Phone"
             >
           </div>
         </div>
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-cell__title van-field__label">
           <span>
-            地区
+            Area
           </span>
         </div>
         <div class="van-cell__value van-field__value">
@@ -48,7 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
             <input type="text"
                    class="van-field__control"
                    readonly
-                   placeholder="选择省 / 市 / 区"
+                   placeholder="Area"
             >
             <div class="van-field__right-icon">
               <i class="van-badge__wrapper van-icon van-icon-arrow">
@@ -60,14 +60,14 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-field van-address-edit-detail">
         <div class="van-cell__title van-field__label">
           <span>
-            详细地址
+            Address
           </span>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <textarea rows="1"
                       class="van-field__control"
-                      placeholder="街道门牌、楼层房间号等信息"
+                      placeholder="Address"
                       style="height: auto;"
             >
             </textarea>
@@ -77,14 +77,14 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
           <span>
-            邮政编码
+            Postal
           </span>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="tel"
                    class="van-field__control"
-                   placeholder="邮政编码"
+                   placeholder="Postal"
             >
           </div>
         </div>
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell van-cell--center van-address-edit__default">
       <div class="van-cell__title">
         <span>
-          设为默认收货地址
+          Set as the default address
         </span>
       </div>
       <div role="switch"
@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            保存
+            Save
           </span>
         </div>
       </button>
@@ -120,7 +120,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            删除
+            Delete
           </span>
         </div>
       </button>

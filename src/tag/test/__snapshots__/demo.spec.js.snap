@@ -5,13 +5,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        primary 类型
+        primary
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -19,13 +19,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        success 类型
+        success
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--success">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -33,13 +33,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        danger 类型
+        danger
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--danger">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -47,13 +47,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        warning 类型
+        warning
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--warning">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -63,13 +63,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        空心样式
+        Plain style
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--plain van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -77,13 +77,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        圆角样式
+        Round style
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--round van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -91,13 +91,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        标记样式
+        Mark style
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--mark van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -105,13 +105,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        可关闭标签
+        Closeable
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--medium van-tag--primary">
-          标签
+          Tag
           <i class="van-badge__wrapper van-icon van-icon-cross van-tag__close">
           </i>
         </span>
@@ -123,13 +123,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        小号标签
+        Small Size
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -137,13 +137,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        中号标签
+        Medium Size
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--medium van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -151,13 +151,13 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        大号标签
+        Large Size
       </span>
     </div>
     <div class="van-cell__value">
       <transition-stub>
         <span class="van-tag van-tag--large van-tag--primary">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -167,7 +167,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        背景颜色
+        Background Color
       </span>
     </div>
     <div class="van-cell__value">
@@ -175,7 +175,7 @@ exports[`should render demo and match snapshot 1`] = `
         <span style="background: rgb(114, 50, 221);"
               class="van-tag van-tag--default"
         >
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -183,7 +183,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        文字颜色
+        Text Color
       </span>
     </div>
     <div class="van-cell__value">
@@ -191,7 +191,7 @@ exports[`should render demo and match snapshot 1`] = `
         <span style="color: rgb(173, 0, 0); background: rgb(255, 225, 225);"
               class="van-tag van-tag--default"
         >
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
@@ -199,7 +199,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__title">
       <span>
-        空心颜色
+        Plain Color
       </span>
     </div>
     <div class="van-cell__value">
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
         <span style="color: rgb(114, 50, 221);"
               class="van-tag van-tag--plain van-tag--default"
         >
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>

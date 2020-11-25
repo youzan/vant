@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        显示遮罩层
+        Show Overlay
       </span>
     </div>
   </button>
@@ -22,7 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        嵌入内容
+        Embedded Content
       </span>
     </div>
   </button>

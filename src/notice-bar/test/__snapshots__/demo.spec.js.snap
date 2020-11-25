@@ -13,7 +13,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+        Technology is the common soul of the people who developed it.
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        技术是开发它的人的共同灵魂。
+        Some short text.
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content van-ellipsis"
       >
-        在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+        Technology is the common soul of the people who developed it.
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+        Technology is the common soul of the people who developed it.
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        技术是开发它的人的共同灵魂。
+        Some short text.
       </div>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-cross van-notice-bar__right-icon">
@@ -86,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        技术是开发它的人的共同灵魂。
+        Some short text.
       </div>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-notice-bar__right-icon">
@@ -106,7 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        技术是开发它的人的共同灵魂。
+        Some short text.
       </div>
     </div>
   </div>
@@ -130,17 +130,17 @@ exports[`should render demo and match snapshot 1`] = `
             <div class="van-swipe-item"
                  style="height: 0px;"
             >
-              内容 1
+              Content 1
             </div>
             <div class="van-swipe-item"
                  style="height: 0px;"
             >
-              内容 2
+              Content 2
             </div>
             <div class="van-swipe-item"
                  style="height: 0px;"
             >
-              内容 3
+              Content 3
             </div>
           </div>
         </div>

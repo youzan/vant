@@ -145,7 +145,7 @@ exports[`should render demo and match snapshot 1`] = `
       </li>
     </ul>
     <div class="van-password-input__info">
-      密码为 6 位数字
+      Some tips
     </div>
   </div>
 </div>

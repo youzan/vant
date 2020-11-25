@@ -6,27 +6,27 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell">
       <div class="van-cell__title">
         <span>
-          单元格
+          Cell title
         </span>
       </div>
       <div class="van-cell__value">
         <span>
-          内容
+          Content
         </span>
       </div>
     </div>
     <div class="van-cell">
       <div class="van-cell__title">
         <span>
-          单元格
+          Cell title
         </span>
         <div class="van-cell__label">
-          描述信息
+          Description
         </div>
       </div>
       <div class="van-cell__value">
         <span>
-          内容
+          Content
         </span>
       </div>
     </div>
@@ -36,27 +36,27 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--large">
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
   </div>
   <div class="van-cell van-cell--large">
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
       <div class="van-cell__label">
-        描述信息
+        Description
       </div>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
   </div>
@@ -67,12 +67,12 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
   </div>
@@ -81,7 +81,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell">
     <div class="van-cell__value van-cell__value--alone">
       <span>
-        内容
+        Content
       </span>
     </div>
   </div>
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -105,12 +105,12 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -122,12 +122,12 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
@@ -141,7 +141,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        URL 跳转
+        URL
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -153,7 +153,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        路由跳转
+        Vue Router
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -162,35 +162,35 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-cell-group__title">
-    分组 1
+    Group 1
   </div>
   <div class="van-cell-group van-hairline--top-bottom">
     <div class="van-cell">
       <div class="van-cell__title">
         <span>
-          单元格
+          Cell title
         </span>
       </div>
       <div class="van-cell__value">
         <span>
-          内容
+          Content
         </span>
       </div>
     </div>
   </div>
   <div class="van-cell-group__title">
-    分组 2
+    Group 2
   </div>
   <div class="van-cell-group van-hairline--top-bottom">
     <div class="van-cell">
       <div class="van-cell__title">
         <span>
-          单元格
+          Cell title
         </span>
       </div>
       <div class="van-cell__value">
         <span>
-          内容
+          Content
         </span>
       </div>
     </div>
@@ -203,17 +203,17 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span class="custom-title">
-        单元格
+        Cell title
       </span>
       <transition-stub>
         <span class="van-tag van-tag--danger">
-          标签
+          Tag
         </span>
       </transition-stub>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -224,7 +224,7 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-search search-icon">
@@ -235,15 +235,15 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--center">
     <div class="van-cell__title">
       <span>
-        单元格
+        Cell title
       </span>
       <div class="van-cell__label">
-        描述信息
+        Description
       </div>
     </div>
     <div class="van-cell__value">
       <span>
-        内容
+        Content
       </span>
     </div>
   </div>

@@ -21,10 +21,10 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-card__content">
         <div>
           <div class="van-card__title van-multi-ellipsis--l2">
-            商品名称
+            Title
           </div>
           <div class="van-card__desc van-ellipsis">
-            描述信息
+            Description
           </div>
         </div>
         <div class="van-card__bottom">
@@ -69,7 +69,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-card__tag">
           <transition-stub>
             <span class="van-tag van-tag--mark van-tag--danger">
-              标签
+              Tag
             </span>
           </transition-stub>
         </div>
@@ -77,10 +77,10 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-card__content">
         <div>
           <div class="van-card__title van-multi-ellipsis--l2">
-            商品名称
+            Title
           </div>
           <div class="van-card__desc van-ellipsis">
-            描述信息
+            Description
           </div>
         </div>
         <div class="van-card__bottom">
@@ -129,10 +129,10 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-card__content">
         <div>
           <div class="van-card__title van-multi-ellipsis--l2">
-            商品名称
+            Title
           </div>
           <div class="van-card__desc van-ellipsis">
-            描述信息
+            Description
           </div>
           <div>
             <transition-stub style="margin-right: 5px;">
@@ -175,7 +175,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              按钮
+              Button
             </span>
           </div>
         </button>
@@ -184,7 +184,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              按钮
+              Button
             </span>
           </div>
         </button>

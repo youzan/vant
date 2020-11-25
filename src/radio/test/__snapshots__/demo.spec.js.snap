@@ -15,7 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -47,7 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -60,7 +60,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -79,7 +79,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label van-radio__label--disabled">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -92,7 +92,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label van-radio__label--disabled">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -124,7 +124,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -145,7 +145,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -158,7 +158,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -181,7 +181,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -196,7 +196,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -214,7 +214,7 @@ exports[`should render demo and match snapshot 1`] = `
         <img src="https://img.yzcdn.cn/vant/user-active.png">
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -226,7 +226,7 @@ exports[`should render demo and match snapshot 1`] = `
         <img src="https://img.yzcdn.cn/vant/user-inactive.png">
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -245,7 +245,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 1
+        Radio 1
       </span>
     </div>
     <div role="radio"
@@ -258,7 +258,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-radio__label">
-        单选框 2
+        Radio 2
       </span>
     </div>
   </div>
@@ -274,7 +274,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-cell__title">
           <span>
-            单选框1
+            Radio1
           </span>
         </div>
         <div role="radio"
@@ -294,7 +294,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-cell__title">
           <span>
-            单选框2
+            Radio2
           </span>
         </div>
         <div role="radio"

@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        基础用法
+        Basic Usage
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -22,7 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        主要通知
+        Primary
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -34,7 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        成功通知
+        Success
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -46,7 +46,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        危险通知
+        Danger
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -58,33 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        警告通知
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        自定义颜色
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        自定义时长
+        Warning
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -98,7 +72,33 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        组件调用
+        Custom Color
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Custom Duration
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Component Call
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">

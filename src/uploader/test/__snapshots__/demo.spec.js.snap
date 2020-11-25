@@ -92,7 +92,7 @@ exports[`should render demo and match snapshot 1`] = `
             </span>
           </div>
           <div class="van-uploader__mask-message">
-            上传中...
+            Uploading...
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-close van-uploader__mask-icon">
           </i>
           <div class="van-uploader__mask-message">
-            上传失败
+            Failed
           </div>
         </div>
         <div class="van-uploader__preview-delete">
@@ -203,7 +203,7 @@ exports[`should render demo and match snapshot 1`] = `
             <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
             </i>
             <span class="van-button__text">
-              上传文件
+              Upload File
             </span>
           </div>
         </button>
@@ -230,7 +230,7 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
           <div class="van-uploader__preview-cover">
             <div class="preview-cover van-ellipsis">
-              图片名称
+              Image Name
             </div>
           </div>
         </div>

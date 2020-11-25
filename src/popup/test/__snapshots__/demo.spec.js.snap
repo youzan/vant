@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        展示弹出层
+        Show Popup
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -26,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        顶部弹出
+        From Top
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -38,7 +38,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        底部弹出
+        From Bottom
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        左侧弹出
+        From Left
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -62,7 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        右侧弹出
+        From Right
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -72,56 +72,6 @@ exports[`should render demo and match snapshot 1`] = `
   </transition-stub>
   <transition-stub>
   </transition-stub>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
-</div>
-<div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        关闭图标
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        自定义图标
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        图标位置
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
   <transition-stub>
   </transition-stub>
   <transition-stub>
@@ -142,7 +92,57 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        圆角弹窗
+        Close Icon
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Custom Icon
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Icon Position
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Round Corner
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -160,7 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        指定挂载节点
+        Get Container
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">

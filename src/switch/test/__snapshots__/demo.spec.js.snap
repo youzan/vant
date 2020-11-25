@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--center">
     <div class="van-cell__title">
       <span>
-        标题
+        Title
       </span>
     </div>
     <div role="switch"

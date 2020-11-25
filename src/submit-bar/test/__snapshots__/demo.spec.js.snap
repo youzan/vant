@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          合计：
+          Total：
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -21,7 +21,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            提交订单
+            Submit
           </span>
         </div>
       </button>
@@ -34,13 +34,13 @@ exports[`should render demo and match snapshot 1`] = `
       <i class="van-badge__wrapper van-icon van-icon-info-o van-submit-bar__tip-icon">
       </i>
       <span class="van-submit-bar__tip-text">
-        你的收货地址不支持同城送, 我们已为你推荐快递
+        Some tips
       </span>
     </div>
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          合计：
+          Total：
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            提交订单
+            Submit
           </span>
         </div>
       </button>
@@ -68,7 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          合计：
+          Total：
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -106,9 +106,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-submit-bar">
     <div class="van-submit-bar__tip">
-      你的收货地址不支持同城送,
+      Some tips,
       <span class="edit-address">
-        修改地址
+        Link
       </span>
     </div>
     <div class="van-submit-bar__bar">
@@ -122,12 +122,12 @@ exports[`should render demo and match snapshot 1`] = `
           </i>
         </div>
         <span class="van-checkbox__label">
-          全选
+          Label
         </span>
       </div>
       <div class="van-submit-bar__text">
         <span>
-          合计：
+          Total：
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -142,7 +142,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            提交订单
+            Submit
           </span>
         </div>
       </button>

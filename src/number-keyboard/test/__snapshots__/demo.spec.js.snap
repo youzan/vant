@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
      tabindex="0"
 >
   <div class="van-cell__value van-cell__value--alone">
-    弹出默认键盘
+    Show Default Keyboard
   </div>
   <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
   </i>
@@ -16,7 +16,7 @@ exports[`should render demo and match snapshot 1`] = `
      tabindex="0"
 >
   <div class="van-cell__value van-cell__value--alone">
-    弹出带右侧栏的键盘
+    Show Keyboard With Sidebar
   </div>
   <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
   </i>
@@ -26,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
      tabindex="0"
 >
   <div class="van-cell__value van-cell__value--alone">
-    弹出身份证号键盘
+    Show IdNumber Keyboard
   </div>
   <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
   </i>
@@ -36,7 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
      tabindex="0"
 >
   <div class="van-cell__value van-cell__value--alone">
-    弹出带标题的键盘
+    Show Keyboard With Title
   </div>
   <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
   </i>
@@ -46,7 +46,7 @@ exports[`should render demo and match snapshot 1`] = `
      tabindex="0"
 >
   <div class="van-cell__value van-cell__value--alone">
-    弹出配置多个按键的键盘
+    Show Keyboard With Multiple ExtraKey
   </div>
   <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
   </i>
@@ -57,7 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
 >
   <div class="van-cell__title van-field__label">
     <span>
-      双向绑定
+      Bind Value
     </span>
   </div>
   <div class="van-cell__value van-field__value">
@@ -65,7 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
       <input type="text"
              class="van-field__control"
              readonly
-             placeholder="点此输入"
+             placeholder="Click To Input"
       >
     </div>
   </div>
@@ -304,7 +304,7 @@ exports[`should render demo and match snapshot 1`] = `
                tabindex="0"
                class="van-key van-key--blue van-key--large"
           >
-            完成
+            Close
           </div>
         </div>
       </div>
@@ -319,7 +319,7 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-number-keyboard__close"
       >
-        完成
+        Close
       </button>
     </div>
     <div class="van-number-keyboard__body">
@@ -437,12 +437,12 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-number-keyboard__header">
       <h2 class="van-number-keyboard__title">
-        键盘标题
+        Keyboard Title
       </h2>
       <button type="button"
               class="van-number-keyboard__close"
       >
-        完成
+        Close
       </button>
     </div>
     <div class="van-number-keyboard__body">
@@ -678,7 +678,7 @@ exports[`should render demo and match snapshot 1`] = `
                tabindex="0"
                class="van-key van-key--blue van-key--large"
           >
-            完成
+            Close
           </div>
         </div>
       </div>

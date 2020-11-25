@@ -22,15 +22,15 @@ exports[`should render demo and match snapshot 1`] = `
               </div>
               <span class="van-radio__label">
                 <div class="van-address-item__name">
-                  张三 13000000000
+                  John Snow 13000000000
                   <transition-stub class="van-address-item__tag">
                     <span class="van-tag van-tag--round van-tag--danger">
-                      默认
+                      Default
                     </span>
                   </transition-stub>
                 </div>
                 <div class="van-address-item__address">
-                  浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室
+                  Somewhere
                 </div>
               </span>
             </div>
@@ -55,10 +55,10 @@ exports[`should render demo and match snapshot 1`] = `
               </div>
               <span class="van-radio__label">
                 <div class="van-address-item__name">
-                  李四 1310000000
+                  Ned Stark 1310000000
                 </div>
                 <div class="van-address-item__address">
-                  浙江省杭州市拱墅区莫干山路 50 号
+                  Somewhere
                 </div>
               </span>
             </div>
@@ -69,16 +69,16 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-address-list__disabled-text">
-      以下地址超出配送范围
+      The following address is out of range
     </div>
     <div class="van-address-item van-address-item--disabled">
       <div class="van-cell van-cell--borderless">
         <div class="van-cell__value van-cell__value--alone van-address-item__value">
           <div class="van-address-item__name">
-            王五 1320000000
+            Tywin 1320000000
           </div>
           <div class="van-address-item__address">
-            浙江省杭州市滨江区江南大道 15 号
+            Somewhere
           </div>
         </div>
         <i class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit">
@@ -91,7 +91,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            新增地址
+            Add new address
           </span>
         </div>
       </button>

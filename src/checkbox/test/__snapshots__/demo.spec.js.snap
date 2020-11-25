@@ -12,7 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label">
-      复选框
+      Checkbox
     </span>
   </div>
 </div>
@@ -27,7 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label van-checkbox__label--disabled">
-      复选框
+      Checkbox
     </span>
   </div>
   <div role="checkbox"
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label van-checkbox__label--disabled">
-      复选框
+      Checkbox
     </span>
   </div>
 </div>
@@ -55,7 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label">
-      自定义形状
+      Custom Shape
     </span>
   </div>
 </div>
@@ -72,7 +72,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label">
-      自定义颜色
+      Custom Color
     </span>
   </div>
 </div>
@@ -89,7 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label">
-      自定义大小
+      Custom Icon Size
     </span>
   </div>
 </div>
@@ -103,7 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
       <img src="https://img.yzcdn.cn/vant/user-active.png">
     </div>
     <span class="van-checkbox__label">
-      自定义图标
+      Custom Icon
     </span>
   </div>
 </div>
@@ -118,7 +118,7 @@ exports[`should render demo and match snapshot 1`] = `
       </i>
     </div>
     <span class="van-checkbox__label">
-      复选框
+      Checkbox
     </span>
   </div>
 </div>
@@ -134,7 +134,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 a
+        Checkbox a
       </span>
     </div>
     <div role="checkbox"
@@ -147,7 +147,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 b
+        Checkbox b
       </span>
     </div>
   </div>
@@ -164,7 +164,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 a
+        Checkbox a
       </span>
     </div>
     <div role="checkbox"
@@ -177,7 +177,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 b
+        Checkbox b
       </span>
     </div>
   </div>
@@ -194,7 +194,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 a
+        Checkbox a
       </span>
     </div>
     <div role="checkbox"
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 b
+        Checkbox b
       </span>
     </div>
     <div role="checkbox"
@@ -220,7 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 c
+        Checkbox c
       </span>
     </div>
   </div>
@@ -237,7 +237,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 a
+        Checkbox a
       </span>
     </div>
     <div role="checkbox"
@@ -250,7 +250,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 b
+        Checkbox b
       </span>
     </div>
     <div role="checkbox"
@@ -263,7 +263,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <span class="van-checkbox__label">
-        复选框 c
+        Checkbox c
       </span>
     </div>
   </div>
@@ -273,7 +273,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          全选
+          Check All
         </span>
       </div>
     </button>
@@ -282,7 +282,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          反选
+          Inverse
         </span>
       </div>
     </button>
@@ -297,7 +297,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-cell__title">
           <span>
-            复选框 a
+            Checkbox a
           </span>
         </div>
         <div role="checkbox"
@@ -317,7 +317,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-cell__title">
           <span>
-            复选框 b
+            Checkbox b
           </span>
         </div>
         <div role="checkbox"

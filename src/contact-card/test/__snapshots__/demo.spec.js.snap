@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-add-square van-cell__left-icon">
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
-      添加联系人
+      Add contact info
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -24,10 +24,10 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
       <div>
-        张三：张三
+        John Snow：John Snow
       </div>
       <div>
-        电话：13000000000
+        Phone：13000000000
       </div>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -40,10 +40,10 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
       <div>
-        张三：张三
+        John Snow：John Snow
       </div>
       <div>
-        电话：13000000000
+        Phone：13000000000
       </div>
     </div>
   </div>

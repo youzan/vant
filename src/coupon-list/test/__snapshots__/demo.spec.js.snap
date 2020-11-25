@@ -8,12 +8,12 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        优惠券
+        Coupon
       </span>
     </div>
     <div class="van-cell__value van-coupon-cell__value">
       <span>
-        2张可用
+        You have 2 coupons
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">

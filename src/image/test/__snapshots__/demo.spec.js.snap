@@ -228,7 +228,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="text">
-        默认提示
+        Default Tip
       </div>
     </div>
     <div style="padding-left: 10px;"
@@ -271,7 +271,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="text">
-        自定义提示
+        Custom Tip
       </div>
     </div>
   </div>
@@ -293,7 +293,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="text">
-        默认提示
+        Default Tip
       </div>
     </div>
     <div style="padding-left: 10px;"
@@ -311,7 +311,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="text">
-        自定义提示
+        Custom Tip
       </div>
     </div>
   </div>

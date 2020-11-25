@@ -8,15 +8,15 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
         </i>
         <span class="van-nav-bar__text">
-          返回
+          Back
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
-        标题
+        Title
       </div>
       <div class="van-nav-bar__right">
         <span class="van-nav-bar__text">
-          按钮
+          Button
         </span>
       </div>
     </div>
@@ -29,11 +29,11 @@ exports[`should render demo and match snapshot 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
         </i>
         <span class="van-nav-bar__text">
-          返回
+          Back
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
-        标题
+        Title
       </div>
       <div class="van-nav-bar__right">
         <i class="van-badge__wrapper van-icon van-icon-search"

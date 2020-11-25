@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            全部商品
+            Option1
           </div>
         </span>
       </div>
@@ -20,49 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            默认排序
-          </div>
-        </span>
-      </div>
-    </div>
-    <div style="top: 0px; display: none;"
-         class="van-dropdown-item van-dropdown-item--down"
-    >
-      <transition-stub style="position: absolute;">
-      </transition-stub>
-      <transition-stub>
-      </transition-stub>
-    </div>
-    <div style="top: 0px; display: none;"
-         class="van-dropdown-item van-dropdown-item--down"
-    >
-      <transition-stub style="position: absolute;">
-      </transition-stub>
-      <transition-stub>
-      </transition-stub>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-dropdown-menu">
-    <div class="van-dropdown-menu__bar">
-      <div role="button"
-           tabindex="0"
-           class="van-dropdown-menu__item"
-      >
-        <span class="van-dropdown-menu__title">
-          <div class="van-ellipsis">
-            全部商品
-          </div>
-        </span>
-      </div>
-      <div role="button"
-           tabindex="0"
-           class="van-dropdown-menu__item"
-      >
-        <span class="van-dropdown-menu__title">
-          <div class="van-ellipsis">
-            筛选
+            Option A
           </div>
         </span>
       </div>
@@ -94,7 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            全部商品
+            Option1
           </div>
         </span>
       </div>
@@ -104,7 +62,49 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            默认排序
+            Title
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub style="position: absolute;">
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub style="position: absolute;">
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
           </div>
         </span>
       </div>
@@ -136,7 +136,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
           <div class="van-ellipsis">
-            全部商品
+            Option1
           </div>
         </span>
       </div>
@@ -146,7 +146,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
           <div class="van-ellipsis">
-            默认排序
+            Option A
           </div>
         </span>
       </div>
@@ -178,7 +178,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            全部商品
+            Option1
           </div>
         </span>
       </div>
@@ -188,7 +188,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
-            默认排序
+            Option A
           </div>
         </span>
       </div>

@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          主要按钮
+          Primary
         </span>
       </div>
     </button>
@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          成功按钮
+          Success
         </span>
       </div>
     </button>
@@ -26,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          默认按钮
+          Default
         </span>
       </div>
     </button>
@@ -36,7 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        危险按钮
+        Danger
       </span>
     </div>
   </button>
@@ -45,7 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        警告按钮
+        Warning
       </span>
     </div>
   </button>
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        朴素按钮
+        Plain
       </span>
     </div>
   </button>
@@ -65,7 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        朴素按钮
+        Plain
       </span>
     </div>
   </button>
@@ -76,7 +76,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        细边框按钮
+        Hairline
       </span>
     </div>
   </button>
@@ -85,7 +85,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        细边框按钮
+        Hairline
       </span>
     </div>
   </button>
@@ -97,7 +97,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        禁用状态
+        Disabled
       </span>
     </div>
   </button>
@@ -107,7 +107,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        禁用状态
+        Disabled
       </span>
     </div>
   </button>
@@ -192,7 +192,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <span class="van-button__text">
-        加载中...
+        Loading...
       </span>
     </div>
   </button>
@@ -203,7 +203,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        方形按钮
+        Square
       </span>
     </div>
   </button>
@@ -212,7 +212,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        圆形按钮
+        Round
       </span>
     </div>
   </button>
@@ -233,7 +233,7 @@ exports[`should render demo and match snapshot 1`] = `
       <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
       </i>
       <span class="van-button__text">
-        按钮
+        Button
       </span>
     </div>
   </button>
@@ -247,7 +247,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
       </i>
       <span class="van-button__text">
-        按钮
+        Button
       </span>
     </div>
   </button>
@@ -258,7 +258,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        大号按钮
+        Large
       </span>
     </div>
   </button>
@@ -267,7 +267,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        普通按钮
+        Normal
       </span>
     </div>
   </button>
@@ -276,7 +276,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        小型按钮
+        Small
       </span>
     </div>
   </button>
@@ -285,7 +285,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        迷你按钮
+        Mini
       </span>
     </div>
   </button>
@@ -296,7 +296,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        块级元素
+        Block Element
       </span>
     </div>
   </button>
@@ -307,7 +307,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        URL 跳转
+        URL
       </span>
     </div>
   </button>
@@ -316,7 +316,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        路由跳转
+        Vue Router
       </span>
     </div>
   </button>
@@ -328,7 +328,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        单色按钮
+        Pure
       </span>
     </div>
   </button>
@@ -338,7 +338,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        单色按钮
+        Pure
       </span>
     </div>
   </button>
@@ -348,7 +348,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        渐变色按钮
+        Gradient
       </span>
     </div>
   </button>

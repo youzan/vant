@@ -12,7 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              选择
+              Select
             </span>
           </div>
         </button>
@@ -20,12 +20,12 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-cell--borderless">
         <div class="van-cell__title">
           <span>
-            单元格
+            Cell
           </span>
         </div>
         <div class="van-cell__value">
           <span>
-            内容
+            Content
           </span>
         </div>
       </div>
@@ -35,7 +35,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              删除
+              Delete
             </span>
           </div>
         </button>
@@ -44,7 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              收藏
+              Collect
             </span>
           </div>
         </button>
@@ -76,10 +76,10 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-card__content">
             <div>
               <div class="van-card__title van-multi-ellipsis--l2">
-                商品标题
+                Title
               </div>
               <div class="van-card__desc van-ellipsis">
-                描述信息
+                Description
               </div>
             </div>
             <div class="van-card__bottom">
@@ -110,7 +110,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              删除
+              Delete
             </span>
           </div>
         </button>
@@ -129,7 +129,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              选择
+              Select
             </span>
           </div>
         </button>
@@ -137,12 +137,12 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-cell--borderless">
         <div class="van-cell__title">
           <span>
-            单元格
+            Cell
           </span>
         </div>
         <div class="van-cell__value">
           <span>
-            内容
+            Content
           </span>
         </div>
       </div>
@@ -152,7 +152,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              删除
+              Delete
             </span>
           </div>
         </button>

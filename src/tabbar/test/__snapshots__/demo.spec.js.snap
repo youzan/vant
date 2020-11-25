@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -18,7 +18,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -27,7 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -36,7 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -67,7 +67,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -76,7 +76,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
   </div>
@@ -89,7 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -100,7 +100,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -112,7 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -124,7 +124,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-tabbar-item__text">
         <span>
-          自定义
+          Custom
         </span>
       </div>
     </div>
@@ -150,7 +150,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -159,7 +159,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
   </div>
@@ -174,7 +174,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item"
@@ -185,7 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item"
@@ -196,7 +196,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
     <div class="van-tabbar-item"
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签
+        Tab
       </div>
     </div>
   </div>
@@ -220,7 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签1
+        Tab1
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -229,7 +229,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签2
+        Tab2
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -238,7 +238,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签3
+        Tab3
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -247,7 +247,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        标签4
+        Tab4
       </div>
     </div>
   </div>

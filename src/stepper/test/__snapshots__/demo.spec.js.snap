@@ -4,7 +4,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      基础用法
+      Basic Usage
     </span>
   </div>
   <div class="van-cell__value">
@@ -31,7 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      步长设置
+      Step
     </span>
   </div>
   <div class="van-cell__value">
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      限制输入范围
+      Range
     </span>
   </div>
   <div class="van-cell__value">
@@ -85,7 +85,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      限制输入整数
+      Integer
     </span>
   </div>
   <div class="van-cell__value">
@@ -112,7 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      禁用状态
+      Disabled
     </span>
   </div>
   <div class="van-cell__value">
@@ -140,7 +140,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      禁用输入框
+      Disable Input
     </span>
   </div>
   <div class="van-cell__value">
@@ -168,7 +168,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      固定小数位数
+      Decimal Length
     </span>
   </div>
   <div class="van-cell__value">
@@ -195,7 +195,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      自定义大小
+      Custom Size
     </span>
   </div>
   <div class="van-cell__value">
@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      异步变更
+      Async Change
     </span>
   </div>
   <div class="van-cell__value">
@@ -252,7 +252,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      圆角风格
+      Round Theme
     </span>
   </div>
   <div class="van-cell__value">

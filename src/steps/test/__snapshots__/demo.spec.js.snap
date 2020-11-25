@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-steps__items">
       <div class="van-hairline van-step van-step--horizontal van-step--finish">
         <div class="van-step__title">
-          买家下单
+          Step1
         </div>
         <div class="van-step__circle-container">
           <i class="van-step__circle">
@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-hairline van-step van-step--horizontal van-step--process">
         <div class="van-step__title van-step__title--active">
-          商家接单
+          Step2
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-checked van-step__icon van-step__icon--active">
@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-hairline van-step van-step--horizontal">
         <div class="van-step__title">
-          买家提货
+          Step3
         </div>
         <div class="van-step__circle-container">
           <i class="van-step__circle">
@@ -39,7 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-hairline van-step van-step--horizontal">
         <div class="van-step__title">
-          交易完成
+          Step4
         </div>
         <div class="van-step__circle-container">
           <i class="van-step__circle">
@@ -55,7 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-button__content">
       <span class="van-button__text">
-        下一步
+        Next Step
       </span>
     </div>
   </button>
@@ -65,7 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-steps__items">
       <div class="van-hairline van-step van-step--horizontal van-step--finish">
         <div class="van-step__title">
-          买家下单
+          Step1
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-step__title van-step__title--active"
              style="color: rgb(51, 136, 255);"
         >
-          商家接单
+          Step2
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-success van-step__icon van-step__icon--active"
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-hairline van-step van-step--horizontal">
         <div class="van-step__title">
-          买家提货
+          Step3
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
@@ -104,7 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-hairline van-step van-step--horizontal">
         <div class="van-step__title">
-          交易完成
+          Step4
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
@@ -122,7 +122,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-hairline van-step van-step--vertical van-step--process">
         <div class="van-step__title van-step__title--active">
           <h3>
-            【城市】物流状态1
+            【City】Status1
           </h3>
           <p>
             2016-07-12 12:40
@@ -138,7 +138,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-hairline van-step van-step--vertical">
         <div class="van-step__title">
           <h3>
-            【城市】物流状态
+            【City】Status2
           </h3>
           <p>
             2016-07-11 10:00
@@ -154,7 +154,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-hairline van-step van-step--vertical">
         <div class="van-step__title">
           <h3>
-            快件已发货
+            【City】Status3
           </h3>
           <p>
             2016-07-10 09:30

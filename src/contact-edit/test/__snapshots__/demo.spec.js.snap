@@ -8,14 +8,14 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell van-field">
           <div class="van-cell__title van-field__label">
             <span>
-              姓名
+              Name
             </span>
           </div>
           <div class="van-cell__value van-field__value">
             <div class="van-field__body">
               <input type="text"
                      class="van-field__control"
-                     placeholder="请填写姓名"
+                     placeholder="Please fill in the name"
               >
             </div>
           </div>
@@ -23,14 +23,14 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell van-field">
           <div class="van-cell__title van-field__label">
             <span>
-              电话
+              Phone
             </span>
           </div>
           <div class="van-cell__value van-field__value">
             <div class="van-field__body">
               <input type="tel"
                      class="van-field__control"
-                     placeholder="请填写电话"
+                     placeholder="Please fill in the tel"
               >
             </div>
           </div>
@@ -39,7 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell van-cell--borderless van-contact-edit__switch-cell">
         <div class="van-cell__title">
           <span>
-            设为默认联系人
+            Set as the default contact
           </span>
         </div>
         <div role="switch"
@@ -57,7 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              保存
+              Save
             </span>
           </div>
         </button>
@@ -66,7 +66,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              删除
+              Delete
             </span>
           </div>
         </button>

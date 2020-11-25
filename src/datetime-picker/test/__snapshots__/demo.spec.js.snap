@@ -7,15 +7,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择年月日
+        Choose Date
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -497,15 +497,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择年月
+        Choose Year-Month
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -521,7 +521,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              2020年
+              2020 Year
             </div>
           </li>
           <li role="button"
@@ -530,7 +530,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2021年
+              2021 Year
             </div>
           </li>
           <li role="button"
@@ -539,7 +539,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2022年
+              2022 Year
             </div>
           </li>
           <li role="button"
@@ -548,7 +548,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2023年
+              2023 Year
             </div>
           </li>
           <li role="button"
@@ -557,7 +557,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2024年
+              2024 Year
             </div>
           </li>
           <li role="button"
@@ -566,7 +566,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2025年
+              2025 Year
             </div>
           </li>
         </ul>
@@ -581,7 +581,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              01月
+              01 Month
             </div>
           </li>
           <li role="button"
@@ -590,7 +590,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              02月
+              02 Month
             </div>
           </li>
           <li role="button"
@@ -599,7 +599,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              03月
+              03 Month
             </div>
           </li>
           <li role="button"
@@ -608,7 +608,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              04月
+              04 Month
             </div>
           </li>
           <li role="button"
@@ -617,7 +617,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              05月
+              05 Month
             </div>
           </li>
           <li role="button"
@@ -626,7 +626,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              06月
+              06 Month
             </div>
           </li>
           <li role="button"
@@ -635,7 +635,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              07月
+              07 Month
             </div>
           </li>
           <li role="button"
@@ -644,7 +644,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              08月
+              08 Month
             </div>
           </li>
           <li role="button"
@@ -653,7 +653,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              09月
+              09 Month
             </div>
           </li>
           <li role="button"
@@ -662,7 +662,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              10月
+              10 Month
             </div>
           </li>
           <li role="button"
@@ -671,7 +671,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              11月
+              11 Month
             </div>
           </li>
           <li role="button"
@@ -680,7 +680,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              12月
+              12 Month
             </div>
           </li>
         </ul>
@@ -702,15 +702,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择月日
+        Choose Month-Day
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -726,7 +726,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              01月
+              01 Month
             </div>
           </li>
           <li role="button"
@@ -735,7 +735,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              02月
+              02 Month
             </div>
           </li>
           <li role="button"
@@ -744,7 +744,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              03月
+              03 Month
             </div>
           </li>
           <li role="button"
@@ -753,7 +753,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              04月
+              04 Month
             </div>
           </li>
           <li role="button"
@@ -762,7 +762,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              05月
+              05 Month
             </div>
           </li>
           <li role="button"
@@ -771,7 +771,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              06月
+              06 Month
             </div>
           </li>
           <li role="button"
@@ -780,7 +780,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              07月
+              07 Month
             </div>
           </li>
           <li role="button"
@@ -789,7 +789,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              08月
+              08 Month
             </div>
           </li>
           <li role="button"
@@ -798,7 +798,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              09月
+              09 Month
             </div>
           </li>
           <li role="button"
@@ -807,7 +807,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              10月
+              10 Month
             </div>
           </li>
           <li role="button"
@@ -816,7 +816,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              11月
+              11 Month
             </div>
           </li>
           <li role="button"
@@ -825,7 +825,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              12月
+              12 Month
             </div>
           </li>
         </ul>
@@ -840,7 +840,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              01日
+              01 Day
             </div>
           </li>
           <li role="button"
@@ -849,7 +849,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              02日
+              02 Day
             </div>
           </li>
           <li role="button"
@@ -858,7 +858,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              03日
+              03 Day
             </div>
           </li>
           <li role="button"
@@ -867,7 +867,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              04日
+              04 Day
             </div>
           </li>
           <li role="button"
@@ -876,7 +876,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              05日
+              05 Day
             </div>
           </li>
           <li role="button"
@@ -885,7 +885,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              06日
+              06 Day
             </div>
           </li>
           <li role="button"
@@ -894,7 +894,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              07日
+              07 Day
             </div>
           </li>
           <li role="button"
@@ -903,7 +903,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              08日
+              08 Day
             </div>
           </li>
           <li role="button"
@@ -912,7 +912,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              09日
+              09 Day
             </div>
           </li>
           <li role="button"
@@ -921,7 +921,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              10日
+              10 Day
             </div>
           </li>
           <li role="button"
@@ -930,7 +930,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              11日
+              11 Day
             </div>
           </li>
           <li role="button"
@@ -939,7 +939,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              12日
+              12 Day
             </div>
           </li>
           <li role="button"
@@ -948,7 +948,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              13日
+              13 Day
             </div>
           </li>
           <li role="button"
@@ -957,7 +957,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              14日
+              14 Day
             </div>
           </li>
           <li role="button"
@@ -966,7 +966,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              15日
+              15 Day
             </div>
           </li>
           <li role="button"
@@ -975,7 +975,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              16日
+              16 Day
             </div>
           </li>
           <li role="button"
@@ -984,7 +984,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              17日
+              17 Day
             </div>
           </li>
           <li role="button"
@@ -993,7 +993,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              18日
+              18 Day
             </div>
           </li>
           <li role="button"
@@ -1002,7 +1002,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              19日
+              19 Day
             </div>
           </li>
           <li role="button"
@@ -1011,7 +1011,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              20日
+              20 Day
             </div>
           </li>
           <li role="button"
@@ -1020,7 +1020,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              21日
+              21 Day
             </div>
           </li>
           <li role="button"
@@ -1029,7 +1029,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              22日
+              22 Day
             </div>
           </li>
           <li role="button"
@@ -1038,7 +1038,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              23日
+              23 Day
             </div>
           </li>
           <li role="button"
@@ -1047,7 +1047,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              24日
+              24 Day
             </div>
           </li>
           <li role="button"
@@ -1056,7 +1056,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              25日
+              25 Day
             </div>
           </li>
           <li role="button"
@@ -1065,7 +1065,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              26日
+              26 Day
             </div>
           </li>
           <li role="button"
@@ -1074,7 +1074,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              27日
+              27 Day
             </div>
           </li>
           <li role="button"
@@ -1083,7 +1083,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              28日
+              28 Day
             </div>
           </li>
           <li role="button"
@@ -1092,7 +1092,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              29日
+              29 Day
             </div>
           </li>
           <li role="button"
@@ -1101,7 +1101,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              30日
+              30 Day
             </div>
           </li>
           <li role="button"
@@ -1110,7 +1110,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              31日
+              31 Day
             </div>
           </li>
         </ul>
@@ -1132,15 +1132,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择时间
+        Choose Time
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -1814,15 +1814,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择完整时间
+        Choose DateTime
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -3072,15 +3072,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选择年月日小时
+        Choose DateHour
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -3784,15 +3784,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        选项过滤器
+        Option Filter
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -4151,15 +4151,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        自定义列排序
+        Columns Order
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -4175,7 +4175,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              01月
+              01 Month
             </div>
           </li>
           <li role="button"
@@ -4184,7 +4184,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              02月
+              02 Month
             </div>
           </li>
           <li role="button"
@@ -4193,7 +4193,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              03月
+              03 Month
             </div>
           </li>
           <li role="button"
@@ -4202,7 +4202,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              04月
+              04 Month
             </div>
           </li>
           <li role="button"
@@ -4211,7 +4211,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              05月
+              05 Month
             </div>
           </li>
           <li role="button"
@@ -4220,7 +4220,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              06月
+              06 Month
             </div>
           </li>
           <li role="button"
@@ -4229,7 +4229,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              07月
+              07 Month
             </div>
           </li>
           <li role="button"
@@ -4238,7 +4238,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              08月
+              08 Month
             </div>
           </li>
           <li role="button"
@@ -4247,7 +4247,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              09月
+              09 Month
             </div>
           </li>
           <li role="button"
@@ -4256,7 +4256,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              10月
+              10 Month
             </div>
           </li>
           <li role="button"
@@ -4265,7 +4265,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              11月
+              11 Month
             </div>
           </li>
           <li role="button"
@@ -4274,7 +4274,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              12月
+              12 Month
             </div>
           </li>
         </ul>
@@ -4289,7 +4289,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              01日
+              01 Day
             </div>
           </li>
           <li role="button"
@@ -4298,7 +4298,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              02日
+              02 Day
             </div>
           </li>
           <li role="button"
@@ -4307,7 +4307,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              03日
+              03 Day
             </div>
           </li>
           <li role="button"
@@ -4316,7 +4316,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              04日
+              04 Day
             </div>
           </li>
           <li role="button"
@@ -4325,7 +4325,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              05日
+              05 Day
             </div>
           </li>
           <li role="button"
@@ -4334,7 +4334,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              06日
+              06 Day
             </div>
           </li>
           <li role="button"
@@ -4343,7 +4343,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              07日
+              07 Day
             </div>
           </li>
           <li role="button"
@@ -4352,7 +4352,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              08日
+              08 Day
             </div>
           </li>
           <li role="button"
@@ -4361,7 +4361,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              09日
+              09 Day
             </div>
           </li>
           <li role="button"
@@ -4370,7 +4370,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              10日
+              10 Day
             </div>
           </li>
           <li role="button"
@@ -4379,7 +4379,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              11日
+              11 Day
             </div>
           </li>
           <li role="button"
@@ -4388,7 +4388,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              12日
+              12 Day
             </div>
           </li>
           <li role="button"
@@ -4397,7 +4397,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              13日
+              13 Day
             </div>
           </li>
           <li role="button"
@@ -4406,7 +4406,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              14日
+              14 Day
             </div>
           </li>
           <li role="button"
@@ -4415,7 +4415,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              15日
+              15 Day
             </div>
           </li>
           <li role="button"
@@ -4424,7 +4424,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              16日
+              16 Day
             </div>
           </li>
           <li role="button"
@@ -4433,7 +4433,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              17日
+              17 Day
             </div>
           </li>
           <li role="button"
@@ -4442,7 +4442,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              18日
+              18 Day
             </div>
           </li>
           <li role="button"
@@ -4451,7 +4451,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              19日
+              19 Day
             </div>
           </li>
           <li role="button"
@@ -4460,7 +4460,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              20日
+              20 Day
             </div>
           </li>
           <li role="button"
@@ -4469,7 +4469,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              21日
+              21 Day
             </div>
           </li>
           <li role="button"
@@ -4478,7 +4478,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              22日
+              22 Day
             </div>
           </li>
           <li role="button"
@@ -4487,7 +4487,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              23日
+              23 Day
             </div>
           </li>
           <li role="button"
@@ -4496,7 +4496,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              24日
+              24 Day
             </div>
           </li>
           <li role="button"
@@ -4505,7 +4505,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              25日
+              25 Day
             </div>
           </li>
           <li role="button"
@@ -4514,7 +4514,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              26日
+              26 Day
             </div>
           </li>
           <li role="button"
@@ -4523,7 +4523,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              27日
+              27 Day
             </div>
           </li>
           <li role="button"
@@ -4532,7 +4532,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              28日
+              28 Day
             </div>
           </li>
           <li role="button"
@@ -4541,7 +4541,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              29日
+              29 Day
             </div>
           </li>
           <li role="button"
@@ -4550,7 +4550,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              30日
+              30 Day
             </div>
           </li>
           <li role="button"
@@ -4559,7 +4559,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              31日
+              31 Day
             </div>
           </li>
         </ul>
@@ -4574,7 +4574,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              2020年
+              2020 Year
             </div>
           </li>
           <li role="button"
@@ -4583,7 +4583,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2021年
+              2021 Year
             </div>
           </li>
           <li role="button"
@@ -4592,7 +4592,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2022年
+              2022 Year
             </div>
           </li>
           <li role="button"
@@ -4601,7 +4601,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2023年
+              2023 Year
             </div>
           </li>
           <li role="button"
@@ -4610,7 +4610,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2024年
+              2024 Year
             </div>
           </li>
           <li role="button"
@@ -4619,7 +4619,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              2025年
+              2025 Year
             </div>
           </li>
         </ul>

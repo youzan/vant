@@ -7,15 +7,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -31,7 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              杭州
+              Delaware
             </div>
           </li>
           <li role="button"
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              宁波
+              Florida
             </div>
           </li>
           <li role="button"
@@ -49,7 +49,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              温州
+              Georqia
             </div>
           </li>
           <li role="button"
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              绍兴
+              Indiana
             </div>
           </li>
           <li role="button"
@@ -67,34 +67,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              湖州
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              嘉兴
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              金华
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              衢州
+              Maine
             </div>
           </li>
         </ul>
@@ -116,15 +89,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -140,7 +113,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              杭州
+              Delaware
             </div>
           </li>
           <li role="button"
@@ -149,7 +122,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              宁波
+              Florida
             </div>
           </li>
           <li role="button"
@@ -158,7 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              温州
+              Georqia
             </div>
           </li>
           <li role="button"
@@ -167,7 +140,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              绍兴
+              Indiana
             </div>
           </li>
           <li role="button"
@@ -176,34 +149,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              湖州
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              嘉兴
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              金华
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              衢州
+              Maine
             </div>
           </li>
         </ul>
@@ -225,15 +171,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -249,7 +195,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              周一
+              Monday
             </div>
           </li>
           <li role="button"
@@ -258,7 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              周二
+              Tuesday
             </div>
           </li>
           <li role="button"
@@ -267,7 +213,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              周三
+              Wednesday
             </div>
           </li>
           <li role="button"
@@ -276,7 +222,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              周四
+              Thusday
             </div>
           </li>
           <li role="button"
@@ -285,7 +231,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              周五
+              Friday
             </div>
           </li>
         </ul>
@@ -300,7 +246,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              上午
+              Morging
             </div>
           </li>
           <li role="button"
@@ -309,7 +255,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              下午
+              Afternoon
             </div>
           </li>
           <li role="button"
@@ -318,7 +264,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              晚上
+              Evening
             </div>
           </li>
         </ul>
@@ -340,15 +286,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -364,7 +310,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              浙江
+              Zhejiang
             </div>
           </li>
           <li role="button"
@@ -373,7 +319,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              福建
+              Fujian
             </div>
           </li>
         </ul>
@@ -388,7 +334,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              杭州
+              Hangzhou
             </div>
           </li>
           <li role="button"
@@ -397,7 +343,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              温州
+              Wenzhou
             </div>
           </li>
         </ul>
@@ -412,7 +358,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              西湖区
+              Xihu
             </div>
           </li>
           <li role="button"
@@ -421,7 +367,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              余杭区
+              Yuhang
             </div>
           </li>
         </ul>
@@ -443,15 +389,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -467,7 +413,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--disabled"
           >
             <div class="van-ellipsis">
-              杭州
+              Delaware
             </div>
           </li>
           <li role="button"
@@ -476,7 +422,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              宁波
+              Florida
             </div>
           </li>
           <li role="button"
@@ -485,7 +431,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              温州
+              Georqia
             </div>
           </li>
         </ul>
@@ -507,15 +453,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-picker__columns"
@@ -531,7 +477,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              浙江
+              Group1
             </div>
           </li>
           <li role="button"
@@ -540,7 +486,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              福建
+              Group2
             </div>
           </li>
         </ul>
@@ -555,7 +501,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              杭州
+              Delaware
             </div>
           </li>
           <li role="button"
@@ -564,7 +510,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              宁波
+              Florida
             </div>
           </li>
           <li role="button"
@@ -573,7 +519,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              温州
+              Georqia
             </div>
           </li>
           <li role="button"
@@ -582,7 +528,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              嘉兴
+              Indiana
             </div>
           </li>
           <li role="button"
@@ -591,7 +537,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              湖州
+              Maine
             </div>
           </li>
         </ul>
@@ -613,15 +559,15 @@ exports[`should render demo and match snapshot 1`] = `
       <button type="button"
               class="van-picker__cancel"
       >
-        取消
+        Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
-        标题
+        Title
       </div>
       <button type="button"
               class="van-picker__confirm"
       >
-        确认
+        Confirm
       </button>
     </div>
     <div class="van-loading van-loading--circular van-picker__loading">
@@ -651,7 +597,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              浙江
+              Group1
             </div>
           </li>
           <li role="button"
@@ -660,7 +606,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              福建
+              Group2
             </div>
           </li>
         </ul>
@@ -675,7 +621,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              杭州
+              Delaware
             </div>
           </li>
           <li role="button"
@@ -684,7 +630,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              宁波
+              Florida
             </div>
           </li>
           <li role="button"
@@ -693,7 +639,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              温州
+              Georqia
             </div>
           </li>
           <li role="button"
@@ -702,7 +648,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              嘉兴
+              Indiana
             </div>
           </li>
           <li role="button"
@@ -711,7 +657,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item"
           >
             <div class="van-ellipsis">
-              湖州
+              Maine
             </div>
           </li>
         </ul>
@@ -734,7 +680,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title van-field__label">
       <span>
-        城市
+        City
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -742,7 +688,7 @@ exports[`should render demo and match snapshot 1`] = `
         <input type="text"
                class="van-field__control"
                readonly
-               placeholder="选择城市"
+               placeholder="Choose City"
         >
       </div>
     </div>

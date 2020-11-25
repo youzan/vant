@@ -11,7 +11,7 @@ exports[`should render demo and match snapshot 1`] = `
            aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          基础用法
+          Basic Usage
         </span>
       </div>
       <div role="tab"
@@ -19,7 +19,7 @@ exports[`should render demo and match snapshot 1`] = `
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          成功提示
+          Success Tip
         </span>
       </div>
       <div role="tab"
@@ -27,7 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          自定义提示
+          Custom Tips
         </span>
       </div>
       <div class="van-tabs__line"
@@ -48,7 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-pull-refresh__head">
           </div>
           <p>
-            下拉试试
+            Try it down
           </p>
         </div>
       </div>

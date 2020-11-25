@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        选择单个日期
+        Select Single Date
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        选择多个日期
+        Select Multiple Date
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -32,33 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        选择日期区间
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        选择单个日期
-      </span>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title">
-      <span>
-        选择日期区间
+        Select Date Range
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -72,7 +46,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义颜色
+        Select Single Date
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -84,7 +58,21 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义日期范围
+        Select Date Range
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Custom Color
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -96,7 +84,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义按钮文字
+        Custom Date Range
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -108,7 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义日期文案
+        Custom Confirm Text
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -120,7 +108,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义弹出位置
+        Custom Day Text
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -132,7 +120,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        日期区间最大范围
+        Custom Position
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -144,7 +132,19 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        自定义周起始日
+        Max Range
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Custom First Day Of Week
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -157,31 +157,31 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-calendar__header">
       <div class="van-calendar__header-title">
-        日历
+        Calendar
       </div>
       <div class="van-calendar__header-subtitle">
       </div>
       <div class="van-calendar__weekdays">
         <span class="van-calendar__weekday">
-          日
+          Sun
         </span>
         <span class="van-calendar__weekday">
-          一
+          Mon
         </span>
         <span class="van-calendar__weekday">
-          二
+          Tue
         </span>
         <span class="van-calendar__weekday">
-          三
+          Wed
         </span>
         <span class="van-calendar__weekday">
-          四
+          Thu
         </span>
         <span class="van-calendar__weekday">
-          五
+          Fri
         </span>
         <span class="van-calendar__weekday">
-          六
+          Sat
         </span>
       </div>
     </div>
@@ -224,7 +224,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012年2月
+          2012/2
         </div>
         <div role="grid"
              class="van-calendar__days"
@@ -263,7 +263,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012年3月
+          2012/3
         </div>
         <div role="grid"
              class="van-calendar__days"

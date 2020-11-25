@@ -7,7 +7,7 @@ exports[`should render demo and match snapshot 1`] = `
       <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
     </div>
     <p class="van-empty__description">
-      描述文字
+      Description
     </p>
   </div>
 </div>
@@ -24,7 +24,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            通用错误
+            Error
           </span>
         </div>
         <div role="tab"
@@ -32,7 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            网络错误
+            Network
           </span>
         </div>
         <div role="tab"
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            搜索提示
+            Search
           </span>
         </div>
         <div class="van-tabs__line"
@@ -59,7 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
             <img src="https://img.yzcdn.cn/vant/empty-image-error.png">
           </div>
           <p class="van-empty__description">
-            描述文字
+            Description
           </p>
         </div>
       </div>
@@ -82,7 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
       <img src="https://img.yzcdn.cn/vant/custom-empty-image.png">
     </div>
     <p class="van-empty__description">
-      描述文字
+      Description
     </p>
   </div>
 </div>
@@ -92,7 +92,7 @@ exports[`should render demo and match snapshot 1`] = `
       <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
     </div>
     <p class="van-empty__description">
-      描述文字
+      Description
     </p>
     <div class="van-empty__bottom">
       <button type="button"
@@ -100,7 +100,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            按钮
+            Button
           </span>
         </div>
       </button>

@@ -13,7 +13,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="search"
                    class="van-field__control"
-                   placeholder="请输入搜索关键词"
+                   placeholder="Placeholder"
             >
           </div>
         </div>
@@ -34,7 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
             <div class="van-field__body">
               <input type="search"
                      class="van-field__control"
-                     placeholder="请输入搜索关键词"
+                     placeholder="Placeholder"
               >
             </div>
           </div>
@@ -44,7 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
            role="button"
            tabindex="0"
       >
-        取消
+        Cancel
       </div>
     </div>
   </form>
@@ -61,7 +61,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="search"
                    class="van-field__control van-field__control--center"
-                   placeholder="请输入搜索关键词"
+                   placeholder="Placeholder"
             >
           </div>
         </div>
@@ -82,7 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
             <input type="search"
                    class="van-field__control"
                    disabled
-                   placeholder="请输入搜索关键词"
+                   placeholder="Placeholder"
             >
           </div>
         </div>
@@ -104,7 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="search"
                    class="van-field__control"
-                   placeholder="请输入搜索关键词"
+                   placeholder="Placeholder"
             >
           </div>
         </div>
@@ -116,7 +116,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-search van-search--show-action">
     <div class="van-search__content van-search__content--square">
       <div class="van-search__label">
-        地址
+        Address
       </div>
       <div class="van-cell van-cell--borderless van-field">
         <div class="van-field__left-icon">
@@ -127,7 +127,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="search"
                    class="van-field__control"
-                   placeholder="请输入搜索关键词"
+                   placeholder="Placeholder"
             >
           </div>
         </div>
@@ -138,7 +138,7 @@ exports[`should render demo and match snapshot 1`] = `
          tabindex="0"
     >
       <div>
-        搜索
+        Search
       </div>
     </div>
   </div>

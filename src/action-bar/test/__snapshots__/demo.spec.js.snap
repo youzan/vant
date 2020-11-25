@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon">
       </div>
-      客服
+      Icon1
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
       </div>
-      购物车
+      Icon2
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -25,14 +25,14 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-shop-o van-action-bar-icon__icon">
       </div>
-      店铺
+      Icon3
     </div>
     <button type="button"
             class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last van-action-bar-button--first"
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          立即购买
+          Button
         </span>
       </div>
     </button>
@@ -48,7 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge van-badge--dot van-badge--fixed">
         </div>
       </div>
-      客服
+      Icon1
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -59,7 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
           5
         </div>
       </div>
-      购物车
+      Icon2
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -70,14 +70,14 @@ exports[`should render demo and match snapshot 1`] = `
           12
         </div>
       </div>
-      店铺
+      Icon3
     </div>
     <button type="button"
             class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          加入购物车
+          Button
         </span>
       </div>
     </button>
@@ -86,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          立即购买
+          Button
         </span>
       </div>
     </button>
@@ -102,7 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
            style="color: rgb(7, 193, 96);"
       >
       </div>
-      客服
+      Icon1
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -110,7 +110,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
       </div>
-      购物车
+      Icon2
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -120,14 +120,14 @@ exports[`should render demo and match snapshot 1`] = `
            style="color: rgb(255, 80, 0);"
       >
       </div>
-      已收藏
+      Collected
     </div>
     <button type="button"
             class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          加入购物车
+          Button
         </span>
       </div>
     </button>
@@ -136,7 +136,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          立即购买
+          Button
         </span>
       </div>
     </button>
@@ -150,7 +150,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon">
       </div>
-      客服
+      Icon1
     </div>
     <div role="button"
          class="van-action-bar-icon"
@@ -158,7 +158,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
       </div>
-      购物车
+      Icon2
     </div>
     <button type="button"
             class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
@@ -166,7 +166,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          加入购物车
+          Button
         </span>
       </div>
     </button>
@@ -176,7 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          立即购买
+          Button
         </span>
       </div>
     </button>

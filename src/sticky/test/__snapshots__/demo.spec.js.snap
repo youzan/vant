@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            基础用法
+            Basic Usage
           </span>
         </div>
       </button>
@@ -26,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            吸顶距离
+            Offset Top
           </span>
         </div>
       </button>
@@ -43,7 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-button__content">
             <span class="van-button__text">
-              指定容器
+              Set Container
             </span>
           </div>
         </button>

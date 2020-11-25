@@ -158,7 +158,7 @@ exports[`should render demo and match snapshot 1`] = `
       </svg>
     </span>
     <span class="van-loading__text">
-      加载中...
+      Loading...
     </span>
   </div>
 </div>
@@ -179,7 +179,7 @@ exports[`should render demo and match snapshot 1`] = `
       </svg>
     </span>
     <span class="van-loading__text">
-      加载中...
+      Loading...
     </span>
   </div>
 </div>

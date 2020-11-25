@@ -6,14 +6,14 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
         <span>
-          文本
+          Label
         </span>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
                  class="van-field__control"
-                 placeholder="请输入文本"
+                 placeholder="Text"
           >
         </div>
       </div>
@@ -24,14 +24,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="请输入文本"
+               placeholder="Text"
         >
       </div>
     </div>
@@ -39,14 +39,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        手机号
+        Phone
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="tel"
                class="van-field__control"
-               placeholder="请输入手机号"
+               placeholder="Phone"
         >
       </div>
     </div>
@@ -54,7 +54,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        整数
+        Digit
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -62,7 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
         <input type="tel"
                inputmode="numeric"
                class="van-field__control"
-               placeholder="请输入整数"
+               placeholder="Digit"
         >
       </div>
     </div>
@@ -70,7 +70,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        数字
+        Number
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -78,7 +78,7 @@ exports[`should render demo and match snapshot 1`] = `
         <input type="text"
                inputmode="decimal"
                class="van-field__control"
-               placeholder="请输入数字（支持小数）"
+               placeholder="Number"
         >
       </div>
     </div>
@@ -86,14 +86,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        密码
+        Password
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="password"
                class="van-field__control"
-               placeholder="请输入密码"
+               placeholder="Password"
         >
       </div>
     </div>
@@ -103,7 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -118,7 +118,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field van-field--disabled">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
@@ -139,14 +139,14 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="显示图标"
+               placeholder="Show Icon"
         >
         <div class="van-field__right-icon">
           <i class="van-badge__wrapper van-icon van-icon-warning-o">
@@ -162,14 +162,14 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="显示清除图标"
+               placeholder="Show Clear Icon"
         >
       </div>
     </div>
@@ -179,14 +179,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--required van-field van-field--error">
     <div class="van-cell__title van-field__label">
       <span>
-        用户名
+        Username
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="请输入用户名"
+               placeholder="Username"
         >
       </div>
     </div>
@@ -194,18 +194,18 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--required van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        手机号
+        Phone
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="请输入手机号"
+               placeholder="Phone"
         >
       </div>
       <div class="van-field__error-message">
-        手机号格式错误
+        Invalid phone
       </div>
     </div>
   </div>
@@ -214,14 +214,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-cell--center van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        短信验证码
+        SMS
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="请输入短信验证码"
+               placeholder="SMS"
         >
         <div class="van-field__button">
           <button type="button"
@@ -229,7 +229,7 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <div class="van-button__content">
               <span class="van-button__text">
-                发送验证码
+                Send SMS
               </span>
             </div>
           </button>
@@ -242,14 +242,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="在输入时执行格式化"
+               placeholder="Format On Change"
         >
       </div>
     </div>
@@ -257,14 +257,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control"
-               placeholder="在失焦时执行格式化"
+               placeholder="Format On Blur"
         >
       </div>
     </div>
@@ -272,16 +272,11 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        留言
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
       <div class="van-field__body">
         <textarea rows="1"
                   class="van-field__control"
-                  placeholder="请输入留言"
+                  placeholder="Message"
                   style="height: auto;"
         >
         </textarea>
@@ -293,14 +288,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        留言
+        Message
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <textarea rows="2"
                   class="van-field__control"
-                  placeholder="请输入留言"
+                  placeholder="Message"
                   style="height: auto;"
         >
         </textarea>
@@ -318,14 +313,14 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
       <span>
-        文本
+        Text
       </span>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                class="van-field__control van-field__control--right"
-               placeholder="输入框内容右对齐"
+               placeholder="Input Align Right"
         >
       </div>
     </div>

@@ -12,7 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div role="tab"
@@ -36,7 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 4
+            Tab 4
           </span>
         </div>
         <div class="van-tabs__line"
@@ -60,7 +60,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 3
+        content of tab 3
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -81,7 +81,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -89,7 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -97,7 +97,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div class="van-tabs__line"
@@ -116,7 +116,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 2
+        content of tab 2
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -137,7 +137,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -145,7 +145,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -153,7 +153,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div role="tab"
@@ -161,7 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 4
+            Tab 4
           </span>
         </div>
         <div role="tab"
@@ -169,7 +169,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 5
+            Tab 5
           </span>
         </div>
         <div role="tab"
@@ -177,7 +177,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 6
+            Tab 6
           </span>
         </div>
         <div role="tab"
@@ -185,7 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 7
+            Tab 7
           </span>
         </div>
         <div role="tab"
@@ -193,7 +193,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text">
-            标签 8
+            Tab 8
           </span>
         </div>
         <div class="van-tabs__line"
@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -258,7 +258,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -266,7 +266,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -274,7 +274,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div class="van-tabs__line"
@@ -288,7 +288,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -314,7 +314,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -322,7 +322,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -330,7 +330,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
       </div>
@@ -340,7 +340,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -366,7 +366,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -374,7 +374,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div class="van-tabs__line"
@@ -388,7 +388,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -411,7 +411,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
-                标签 1
+                Tab 1
               </span>
             </div>
             <div role="tab"
@@ -419,7 +419,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
-                标签 2
+                Tab 2
               </span>
             </div>
             <div role="tab"
@@ -427,7 +427,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="true"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
-                标签 3
+                Tab 3
               </span>
             </div>
             <div role="tab"
@@ -435,7 +435,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
-                标签 4
+                Tab 4
               </span>
             </div>
             <div class="van-tabs__line"
@@ -461,7 +461,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 3
+        content of tab 3
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -484,7 +484,7 @@ exports[`should render demo and match snapshot 1`] = `
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
             </i>
-            标签
+            Tab
           </span>
         </div>
         <div role="tab"
@@ -494,7 +494,7 @@ exports[`should render demo and match snapshot 1`] = `
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
             </i>
-            标签
+            Tab
           </span>
         </div>
         <div class="van-tabs__line"
@@ -508,7 +508,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -529,7 +529,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -537,7 +537,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -545,7 +545,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div role="tab"
@@ -553,7 +553,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 4
+            Tab 4
           </span>
         </div>
         <div class="van-tabs__line"
@@ -573,7 +573,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-hidden="false"
           >
             <div class="van-tab__pane">
-              内容 1
+              content of tab 1
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
@@ -582,7 +582,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-hidden="true"
           >
             <div class="van-tab__pane">
-              内容 2
+              content of tab 2
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
@@ -613,7 +613,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -621,7 +621,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -629,7 +629,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div role="tab"
@@ -637,7 +637,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 4
+            Tab 4
           </span>
         </div>
         <div class="van-tabs__line"
@@ -657,7 +657,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-hidden="true"
           >
             <div class="van-tab__pane">
-              内容 1
+              content of tab 1
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
@@ -666,7 +666,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-hidden="true"
           >
             <div class="van-tab__pane">
-              内容 2
+              content of tab 2
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper"
@@ -699,7 +699,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="true"
             >
               <span class="van-tab__text">
-                标签 1
+                Tab 1
               </span>
             </div>
             <div role="tab"
@@ -707,7 +707,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 2
+                Tab 2
               </span>
             </div>
             <div role="tab"
@@ -715,7 +715,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 3
+                Tab 3
               </span>
             </div>
             <div role="tab"
@@ -723,7 +723,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 4
+                Tab 4
               </span>
             </div>
             <div role="tab"
@@ -731,7 +731,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 5
+                Tab 5
               </span>
             </div>
             <div role="tab"
@@ -739,7 +739,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 6
+                Tab 6
               </span>
             </div>
             <div role="tab"
@@ -747,7 +747,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 7
+                Tab 7
               </span>
             </div>
             <div role="tab"
@@ -755,7 +755,7 @@ exports[`should render demo and match snapshot 1`] = `
                  aria-selected="false"
             >
               <span class="van-tab__text">
-                标签 8
+                Tab 8
               </span>
             </div>
             <div class="van-tabs__line"
@@ -770,42 +770,42 @@ exports[`should render demo and match snapshot 1`] = `
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 2
+        content of tab 2
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 3
+        content of tab 3
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 4
+        content of tab 4
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 5
+        content of tab 5
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 6
+        content of tab 6
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 7
+        content of tab 7
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
       >
-        内容 8
+        content of tab 8
       </div>
     </div>
   </div>
@@ -821,7 +821,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 1
+            Tab 1
           </span>
         </div>
         <div role="tab"
@@ -829,7 +829,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 2
+            Tab 2
           </span>
         </div>
         <div role="tab"
@@ -837,7 +837,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 3
+            Tab 3
           </span>
         </div>
         <div role="tab"
@@ -845,7 +845,7 @@ exports[`should render demo and match snapshot 1`] = `
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
-            标签 4
+            Tab 4
           </span>
         </div>
         <div class="van-tabs__line"
@@ -859,7 +859,7 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tab__pane"
            style
       >
-        内容 1
+        content of tab 1
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
