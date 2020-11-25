@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "rollup --config rollup.config.js --watch",
