@@ -7,7 +7,15 @@ import { popupMixinProps } from '../mixins/popup';
 // Components
 import Popup from '../popup';
 
-const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
+const PRESET_ICONS = [
+  'qq',
+  'link',
+  'weibo',
+  'wechat',
+  'poster',
+  'qrcode',
+  'weapp-qrcode',
+];
 
 const [createComponent, bem, t] = createNamespace('share-sheet');
 

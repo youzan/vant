@@ -67,6 +67,7 @@ export default {
       withDesc: '展示描述信息',
       customIcon: '自定义图标',
       description: '描述信息',
+      weappQrcode: '小程序码',
     },
     'en-US': {
       qq: 'QQ',
@@ -82,6 +83,7 @@ export default {
       withDesc: 'Show Description',
       customIcon: 'Custom Icon',
       description: 'Description',
+      weappQrcode: 'Weapp Qrcode',
     },
   },
 
@@ -118,6 +120,7 @@ export default {
           { name: this.t('link'), icon: 'link' },
           { name: this.t('poster'), icon: 'poster' },
           { name: this.t('qrcode'), icon: 'qrcode' },
+          { name: this.t('weappQrcode'), icon: 'weapp-qrcode' },
         ],
       ];
     },
