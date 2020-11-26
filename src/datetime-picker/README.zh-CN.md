@@ -301,6 +301,18 @@ export default {
 | confirm | 点击完成按钮时触发的事件 | value: 当前选中的时间 |
 | cancel  | 点击取消按钮时触发的事件 | -                     |
 
+### Slots
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| default `v2.11.1` | 自定义整个顶部栏的内容 | - |
+| title `v2.11.1` | 自定义标题内容 | - |
+| confirm `v2.11.1` | 自定义确认按钮内容 | - |
+| cancel `v2.11.1` | 自定义取消按钮内容 | - |
+| option `v2.11.1` | 自定义选项内容 | _option: string \| object_ |
+| columns-top `v2.11.1` | 自定义选项上方内容 | - |
+| columns-bottom `v2.11.1` | 自定义选项下方内容 | - |
+
 ### 方法
 
 通过 ref 可以获取到 DatetimePicker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
