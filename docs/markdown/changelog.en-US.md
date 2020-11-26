@@ -10,6 +10,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
+### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
+
+`2020-11-26`
+
+**Feature**
+
+- CheckboxGroup: toggleAll support skipDisabled option [#7644](https://github.com/youzan/vant/issues/7644)
+- DatetimePicker: support picker slots [#7645](https://github.com/youzan/vant/issues/7645)
+- Popover: add trigger prop [#7646](https://github.com/youzan/vant/issues/7646)
+- Popover: improve a11y [#7624](https://github.com/youzan/vant/issues/7624)
+- ShareSheet: support weapp-qrcode icon [#7635](https://github.com/youzan/vant/issues/7635)
+
+**style**
+
+- NavBar: z-index not work when border is hidden [#7612](https://github.com/youzan/vant/issues/7612)
+- Popover: improve cursor [#7623](https://github.com/youzan/vant/issues/7623)
+
+**Bug Fixes**
+
+- Button: icon button vertical align [#7636](https://github.com/youzan/vant/issues/7636)
+- Popover: failed to compile in legacy nuxt.js [f3ad7e](https://github.com/youzan/vant/commit/f3ad7ed1a77cd2f19001489ea64df0d61429ce33)
+
 ### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
 
 `2020-11-22`
