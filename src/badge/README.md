@@ -14,7 +14,13 @@ Vue.use(Badge);
 ### Basic Usage
 
 ```html
-<van-badge content="5">
+<van-badge :content="5">
+  <div class="child" />
+</van-badge>
+<van-badge :content="10">
+  <div class="child" />
+</van-badge>
+<van-badge content="Hot">
   <div class="child" />
 </van-badge>
 <van-badge dot>
@@ -23,8 +29,8 @@ Vue.use(Badge);
 
 <style>
   .child {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background: #f2f3f5;
     border-radius: 4px;
   }
@@ -34,10 +40,13 @@ Vue.use(Badge);
 ### Max
 
 ```html
-<van-badge content="20" max="9">
+<van-badge :content="20" max="9">
   <div class="child" />
 </van-badge>
-<van-badge content="200" max="99">
+<van-badge :content="50" max="20">
+  <div class="child" />
+</van-badge>
+<van-badge :content="200" max="99">
   <div class="child" />
 </van-badge>
 ```
@@ -45,7 +54,10 @@ Vue.use(Badge);
 ### Custom Color
 
 ```html
-<van-badge content="5" color="#1989fa">
+<van-badge :content="5" color="#1989fa">
+  <div class="child" />
+</van-badge>
+<van-badge :content="10" color="#1989fa">
   <div class="child" />
 </van-badge>
 <van-badge dot color="#1989fa">
@@ -53,10 +65,45 @@ Vue.use(Badge);
 </van-badge>
 ```
 
-### Standaline
+### Custom Content
+
+Use `content` slot to custom :content of badge.
 
 ```html
-<van-badge content="200" max="99" />
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="success" class="badge-icon" />
+  </template>
+</van-badge>
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="cross" class="badge-icon" />
+  </template>
+</van-badge>
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="down" class="badge-icon" />
+  </template>
+</van-badge>
+```
+
+```css
+.badge-icon {
+  display: block;
+  font-size: 10px;
+  line-height: 16px;
+}
+```
+
+### Standalone
+
+```html
+<van-badge :content="20" />
+
+<van-badge :content="200" max="99" />
 ```
 
 ## API
@@ -72,9 +119,10 @@ Vue.use(Badge);
 
 ### Slots
 
-| Name    | Description  |
-| ------- | ------------ |
-| default | Default slot |
+| Name    | Description          |
+| ------- | -------------------- |
+| default | Default slot         |
+| content | Custom badge content |
 
 ### Less Variables
 
