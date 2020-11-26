@@ -95,6 +95,7 @@ export const TimePickerMixin = {
         ref="picker"
         columns={this.columns}
         readonly={this.readonly}
+        scopedSlots={this.$scopedSlots}
         onChange={this.onChange}
         onConfirm={this.onConfirm}
         onCancel={this.onCancel}
