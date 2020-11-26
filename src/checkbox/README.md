@@ -259,7 +259,30 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call 
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| toggleAll | Toggle check status of all checkboxes | _checked?: boolean_ | - |
+| toggleAll | Toggle check status of all checkboxes | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+const { checkboxGroup } = this.$refs;
+
+// Toggle all
+checkboxGroup.toggleAll();
+// Select all
+checkboxGroup.toggleAll(true);
+// Unselect all
+checkboxGroup.toggleAll(false);
+
+// Toggle all, skip disabled
+checkboxGroup.toggleAll({
+  skipDisabled: true,
+});
+// Select all, skip disabled
+checkboxGroup.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### Checkbox Methods
 

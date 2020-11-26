@@ -27,16 +27,19 @@ export default createComponent({
 
   methods: {
     // @exposed-api
-    toggleAll(checked) {
-      if (checked === false) {
-        this.$emit('input', []);
-        return;
+    toggleAll(options = {}) {
+      if (typeof options === 'boolean') {
+        options = { checked: options };
       }
 
-      let { children } = this;
-      if (!checked) {
-        children = children.filter((item) => !item.checked);
-      }
+      const { checked, skipDisabled } = options;
+
+      const children = this.children.filter((item) => {
+        if (item.disabled && skipDisabled) {
+          return item.checked;
+        }
+        return checked ?? !item.checked;
+      });
 
       const names = children.map((item) => item.name);
       this.$emit('input', names);
