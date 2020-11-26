@@ -2,7 +2,7 @@ import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import { createPopper, offsetModifier } from '@vant/popperjs';
 
 // Utils
-import { createNamespace, stopPropagation } from '../utils';
+import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composition
@@ -15,8 +15,6 @@ import Popup from '../popup';
 const [createComponent, bem] = createNamespace('popover');
 
 export default createComponent({
-  inheritAttrs: false,
-
   props: {
     show: Boolean,
     overlay: Boolean,
@@ -152,7 +150,10 @@ export default createComponent({
     useClickAway(wrapperRef, onClickAway, { eventName: 'touchstart' });
 
     return () => (
-      <span ref={wrapperRef} class={bem('wrapper')} onClick={onClickWrapper}>
+      <>
+        <span ref={wrapperRef} class={bem('wrapper')} onClick={onClickWrapper}>
+          {slots.reference?.()}
+        </span>
         <Popup
           ref={popoverRef}
           show={props.show}
@@ -162,7 +163,6 @@ export default createComponent({
           teleport={props.teleport}
           transition="van-popover-zoom"
           lockScroll={false}
-          onClick={stopPropagation}
           onTouchstart={onTouchstart}
           {...{ ...attrs, 'onUpdate:show': toggle }}
         >
@@ -171,8 +171,7 @@ export default createComponent({
             {slots.default ? slots.default() : props.actions.map(renderAction)}
           </div>
         </Popup>
-        {slots.reference?.()}
-      </span>
+      </>
     );
   },
 });
