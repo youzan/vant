@@ -7,6 +7,24 @@ const baseActions = [
   { text: 'Option 3' },
 ];
 
+test('should toggle popover when trigger is "click" and the reference element is clicked', () => {
+  const wrapper = mount(Popover, {
+    propsData: {
+      value: true,
+    },
+    scopedSlots: {
+      reference: '<div class="reference"></div>',
+    },
+  });
+
+  wrapper.find('.reference').trigger('click');
+  expect(wrapper.emitted('input')).toBeFalsy();
+
+  wrapper.setProps({ trigger: 'click' });
+  wrapper.find('.reference').trigger('click');
+  expect(wrapper.emitted('input')[0][0]).toEqual(false);
+});
+
 test('should emit select event when clicking the action', () => {
   const wrapper = mount(Popover, {
     propsData: {

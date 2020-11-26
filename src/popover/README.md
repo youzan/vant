@@ -14,9 +14,14 @@ Vue.use(Popover);
 ### Basic Usage
 
 ```html
-<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
+<van-popover
+  v-model="showPopover"
+  trigger="click"
+  :actions="actions"
+  @select="onSelect"
+>
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       Light Theme
     </van-button>
   </template>
@@ -50,9 +55,14 @@ export default {
 Using the `theme` prop to change the style of Popover.
 
 ```html
-<van-popover v-model="showPopover" theme="dark" :actions="actions">
+<van-popover
+  v-model="showPopover"
+  theme="dark"
+  trigger="click"
+  :actions="actions"
+>
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       Dark Theme
     </van-button>
   </template>
@@ -100,9 +110,9 @@ bottom-end    # Bottom right
 ### Show Icon
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       Show Icon
     </van-button>
   </template>
@@ -129,9 +139,9 @@ export default {
 Using the `disabled` option to disable an action.
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       Disable Action
     </van-button>
   </template>
@@ -163,6 +173,7 @@ export default {
 | actions | Actions | _Action[]_ | `[]` |
 | placement | Placement | _string_ | `bottom` |
 | theme | Theme，can be set to `dark` | _string_ | `light` |
+| trigger `v2.11.1` | Trigger mode，can be set to `click` | - |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |

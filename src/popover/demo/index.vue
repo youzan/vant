@@ -3,13 +3,14 @@
     <demo-block :title="t('basicUsage')">
       <van-popover
         v-model="show.lightTheme"
+        trigger="click"
         :actions="t('actions')"
         placement="bottom-start"
         style="margin-left: 16px;"
         @select="onSelect"
       >
         <template #reference>
-          <van-button type="primary" @click="show.lightTheme = true">
+          <van-button type="primary">
             {{ t('lightTheme') }}
           </van-button>
         </template>
@@ -17,12 +18,13 @@
       <van-popover
         v-model="show.darkTheme"
         theme="dark"
+        trigger="click"
         :actions="t('actions')"
         style="margin-left: 16px;"
         @select="onSelect"
       >
         <template #reference>
-          <van-button type="primary" @click="show.darkTheme = true">
+          <van-button type="primary">
             {{ t('darkTheme') }}
           </van-button>
         </template>
@@ -48,6 +50,7 @@
           <van-popover
             v-model="show.placement"
             theme="dark"
+            trigger="click"
             :actions="t('shortActions')"
             :placement="currentPlacement"
             @select="onSelect"
@@ -64,13 +67,14 @@
     <demo-block :title="t('actionOptions')">
       <van-popover
         v-model="show.showIcon"
+        trigger="click"
         :actions="t('actionsWithIcon')"
         placement="bottom-start"
         style="margin-left: 16px;"
         @select="onSelect"
       >
         <template #reference>
-          <van-button type="primary" @click="show.showIcon = true">
+          <van-button type="primary">
             {{ t('showIcon') }}
           </van-button>
         </template>
@@ -78,12 +82,13 @@
 
       <van-popover
         v-model="show.disableAction"
+        trigger="click"
         :actions="t('actionsDisabled')"
         style="margin-left: 16px;"
         @select="onSelect"
       >
         <template #reference>
-          <van-button type="primary" @click="show.disableAction = true">
+          <van-button type="primary">
             {{ t('disableAction') }}
           </van-button>
         </template>
@@ -93,6 +98,7 @@
     <demo-block :title="t('customContent')">
       <van-popover
         v-model="show.customContent"
+        trigger="click"
         placement="top-start"
         style="margin-left: 16px;"
         @select="onSelect"
@@ -113,7 +119,7 @@
           />
         </van-grid>
         <template #reference>
-          <van-button type="primary" @click="show.customContent = true">
+          <van-button type="primary">
             {{ t('customContent') }}
           </van-button>
         </template>
@@ -190,7 +196,7 @@ export default {
         disableAction: false,
       },
       showPicker: false,
-      currentPlacement: '',
+      currentPlacement: 'top',
       placements: [
         'top',
         'top-start',

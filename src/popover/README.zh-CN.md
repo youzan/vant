@@ -20,9 +20,14 @@ Vue.use(Popover);
 当 Popover 弹出时，会基于 `reference` 插槽的内容进行定位。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions" @select="onSelect">
+<van-popover
+  v-model="showPopover"
+  trigger="click"
+  :actions="actions"
+  @select="onSelect"
+>
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       浅色风格
     </van-button>
   </template>
@@ -53,9 +58,14 @@ export default {
 Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 属性设置为 `dark` 可切换为深色风格。
 
 ```html
-<van-popover v-model="showPopover" theme="dark" :actions="actions">
+<van-popover
+  v-model="showPopover"
+  theme="dark"
+  trigger="click"
+  :actions="actions"
+>
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       深色风格
     </van-button>
   </template>
@@ -103,9 +113,9 @@ bottom-end    # 底部右侧位置
 在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       展示图标
     </van-button>
   </template>
@@ -132,9 +142,9 @@ export default {
 在 `actions` 数组中，可以通过 `disabled` 字段来禁用某个选项。
 
 ```html
-<van-popover v-model="showPopover" :actions="actions">
+<van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       禁用选项
     </van-button>
   </template>
@@ -161,7 +171,7 @@ export default {
 通过默认插槽，可以在 Popover 内部放置任意内容。
 
 ```html
-<van-popover v-model="showPopover">
+<van-popover v-model="showPopover" trigger="click">
   <van-grid
     square
     clickable
@@ -178,7 +188,7 @@ export default {
     />
   </van-grid>
   <template #reference>
-    <van-button type="primary" @click="showPopover = true">
+    <van-button type="primary">
       自定义内容
     </van-button>
   </template>
@@ -205,6 +215,7 @@ export default {
 | actions | 选项列表 | _Action[]_ | `[]` |
 | placement | 弹出位置 | _string_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _string_ | `light` |
+| trigger `v2.11.1` | 触发方式，可选值为 `click` | - |
 | offset | 出现位置的偏移量 | _[number, number]_ | `[0, 8]` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
