@@ -112,16 +112,17 @@ Use `content` slot to custom :content of badge.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| :content | Badge :content | _number \| string_ | - |
+| content | Badge content | _number \| string_ | - |
 | color | Background color | _string_ | `#ee0a24` |
 | dot | Whether to show dot | _boolean_ | `false` |
-| max | Max value，show `{max}+` when exceed，only works when :content is number | _number \| string_ | - |
+| max | Max value，show `{max}+` when exceed，only works when content is number | _number \| string_ | - |
 
 ### Slots
 
-| Name    | Description  |
-| ------- | ------------ |
-| default | Default slot |
+| Name    | Description          |
+| ------- | -------------------- |
+| default | Default slot         |
+| content | Custom badge content |
 
 ### Less Variables
 
