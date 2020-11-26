@@ -19,6 +19,7 @@ export default createComponent({
 
   props: {
     show: Boolean,
+    trigger: String,
     overlay: Boolean,
     offset: {
       type: Array,
@@ -94,6 +95,12 @@ export default createComponent({
       emit('update:show', value);
     };
 
+    const onClickWrapper = () => {
+      if (props.trigger === 'click') {
+        toggle(!props.show);
+      }
+    };
+
     const onTouchstart = (event) => {
       event.stopPropagation();
       emit('touchstart', event);
@@ -142,7 +149,7 @@ export default createComponent({
     useClickAway(wrapperRef, onClickAway, { eventName: 'touchstart' });
 
     return () => (
-      <span ref={wrapperRef} class={bem('wrapper')}>
+      <span ref={wrapperRef} class={bem('wrapper')} onClick={onClickWrapper}>
         <Popup
           ref={popoverRef}
           show={props.show}

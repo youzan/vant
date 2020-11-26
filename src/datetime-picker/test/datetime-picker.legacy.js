@@ -35,3 +35,16 @@ test('getPicker method', () => {
   const wrapper = mount(DatetimePicker);
   expect(wrapper.vm.getPicker()).toBeTruthy();
 });
+
+test('should render title slot correctly', () => {
+  const wrapper = mount(DatetimePicker, {
+    propsData: {
+      showToolbar: true,
+    },
+    scopedSlots: {
+      title: () => 'Custom title',
+    },
+  });
+
+  expect(wrapper.find('.van-picker__toolbar')).toMatchSnapshot();
+});

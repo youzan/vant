@@ -10,6 +10,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
+### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
+
+`2020-11-26`
+
+**Feature**
+
+- CheckboxGroup: toggleAll 方法新增 skipDisabled 选项，用于跳过禁用的复选框 [#7644](https://github.com/youzan/vant/issues/7644)
+- DatetimePicker: 支持 Picker 的所有插槽 [#7645](https://github.com/youzan/vant/issues/7645)
+- Popover: 新增 trigger 属性，用于控制弹出层的触发时机 [#7646](https://github.com/youzan/vant/issues/7646)
+- Popover: 优化无障碍访问 [#7624](https://github.com/youzan/vant/issues/7624)
+- ShareSheet: 新增小程序码图标 [#7635](https://github.com/youzan/vant/issues/7635)
+
+**style**
+
+- NavBar: 修复当 border 为 false 时 z-index 不生效的问题 [#7612](https://github.com/youzan/vant/issues/7612)
+- Popover: 优化 cursor 样式 [#7623](https://github.com/youzan/vant/issues/7623)
+
+**Bug Fixes**
+
+- Button: 修复图标按钮和图标按钮无法垂直对齐的问题 [#7636](https://github.com/youzan/vant/issues/7636)
+- Popover: 修复在 nuxt.js 上编译报错的问题 [f3ad7e](https://github.com/youzan/vant/commit/f3ad7ed1a77cd2f19001489ea64df0d61429ce33)
+
 ### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
 
 `2020-11-22`

@@ -15,7 +15,7 @@ export default createComponent({
     ...DatePicker.props,
   },
 
-  setup(props, { attrs }) {
+  setup(props, { attrs, slots }) {
     const root = ref();
 
     useExpose({
@@ -32,6 +32,7 @@ export default createComponent({
 
       return (
         <Component
+          v-slots={slots}
           ref={root}
           class={bem()}
           {...{ ...inheritProps, ...attrs }}

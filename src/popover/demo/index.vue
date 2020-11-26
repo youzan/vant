@@ -100,7 +100,7 @@
         clickable
         :border="false"
         column-num="3"
-        style="width: 240px;"
+        style="width: 240px"
       >
         <van-grid-item
           v-for="i in 6"
@@ -187,7 +187,7 @@ export default {
         disableAction: false,
       },
       showPicker: false,
-      currentPlacement: '',
+      currentPlacement: 'top',
       placements: [
         'top',
         'top-start',

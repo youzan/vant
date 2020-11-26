@@ -7,9 +7,27 @@ const baseActions = [
   { text: 'Option 3' },
 ];
 
+test('should toggle popover when trigger is "click" and the reference element is clicked', async () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+    },
+    slots: {
+      reference: () => <div class="reference"></div>,
+    },
+  });
+
+  wrapper.find('.reference').trigger('click');
+  expect(wrapper.emitted('update:show')).toBeFalsy();
+
+  await wrapper.setProps({ trigger: 'click' });
+  wrapper.find('.reference').trigger('click');
+  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+});
+
 test('should emit select event when clicking the action', async () => {
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: null,
       actions: baseActions,
@@ -23,7 +41,7 @@ test('should emit select event when clicking the action', async () => {
 
 test('should not emit select event when the action is disabled', () => {
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: null,
       actions: [{ text: 'Option', disabled: true }],
@@ -36,7 +54,7 @@ test('should not emit select event when the action is disabled', () => {
 
 test('should close popover when clicking the action', async () => {
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: null,
       actions: baseActions,
@@ -53,7 +71,7 @@ test('should close popover when clicking the action', async () => {
 
 test('should allow to custom the className of action', () => {
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: null,
       actions: [{ text: 'Option', className: 'foo' }],
@@ -66,7 +84,7 @@ test('should allow to custom the className of action', () => {
 test('should locate to reference element when showed', async () => {
   const root = document.createElement('div');
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       teleport: root,
     },
   });
@@ -84,7 +102,7 @@ test('should locate to reference element when showed', async () => {
 test('should watch placement prop and update location', async () => {
   const root = document.createElement('div');
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: root,
     },
@@ -101,7 +119,7 @@ test('should watch placement prop and update location', async () => {
 test('should close popover when touch outside content', async () => {
   const root = document.createElement('div');
   const wrapper = mount(Popover, {
-    propsData: {
+    props: {
       show: true,
       teleport: root,
     },

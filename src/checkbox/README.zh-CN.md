@@ -256,7 +256,7 @@ export default {
 | disabled        | 是否禁用复选框            | _boolean_          | `false`   |
 | label-disabled  | 是否禁用复选框文本点击    | _boolean_          | `false`   |
 | label-position  | 文本位置，可选值为 `left` | _string_           | `right`   |
-| icon-size       | 图标大小，默认单位为`px`  | _number \| string_ | `20px`    |
+| icon-size       | 图标大小，默认单位为 `px` | _number \| string_ | `20px`    |
 | checked-color   | 选中状态颜色              | _string_           | `#1989fa` |
 | bind-group      | 是否与复选框组绑定        | _boolean_          | `true`    |
 
@@ -267,8 +267,8 @@ export default {
 | v-model (value) | 所有选中项的标识符 | _any[]_ | - |
 | disabled | 是否禁用所有复选框 | _boolean_ | `false` |
 | max | 最大可选数，`0`为无限制 | _number \| string_ | `0` |
-| direction `v2.5.0` | 排列方向，可选值为`horizontal` | _string_ | `vertical` |
-| icon-size | 所有复选框的图标大小，默认单位为`px` | _number \| string_ | `20px` |
+| direction `v2.5.0` | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
+| icon-size | 所有复选框的图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 所有复选框的选中状态颜色 | _string_ | `#1989fa` |
 
 ### Checkbox Events
@@ -297,7 +297,30 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggleAll | 切换所有复选框，传`true`为选中，`false`为取消选中，不传参为取反 | _checked?: boolean_ | - |
+| toggleAll | 切换所有复选框，传 `true` 为选中，`false` 为取消选中，不传参为取反 | _options?: boolean \| object_ | - |
+
+### toggleAll 方法示例
+
+```js
+const { checkboxGroup } = this.$refs;
+
+// 全部反选
+checkboxGroup.toggleAll();
+// 全部选中
+checkboxGroup.toggleAll(true);
+// 全部取消
+checkboxGroup.toggleAll(false);
+
+// 全部反选，并跳过禁用的复选框
+checkboxGroup.toggleAll({
+  skipDisabled: true,
+});
+// 全部选中，并跳过禁用的复选框
+checkboxGroup.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### Checkbox 方法
 
@@ -305,7 +328,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggle | 切换选中状态，传`true`为选中，`false`为取消选中，不传参为取反 | _checked?: boolean_ | - |
+| toggle | 切换选中状态，传 `true` 为选中，`false` 为取消选中，不传参为取反 | _checked?: boolean_ | - |
 
 ### 样式变量
 

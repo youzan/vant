@@ -293,6 +293,18 @@ Following props are supported when the type is time
 | confirm | Emitted when the confirm button is clicked | value: current value |
 | cancel  | Emitted when the cancel button is clicked  | -                    |
 
+### Slots
+
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default `v2.11.1` | Custom toolbar content | - |
+| title `v2.11.1` | Custom title | - |
+| confirm `v2.11.1` | Custom confirm button text | - |
+| cancel `v2.11.1` | Custom cancel button text | - |
+| option `v2.11.1` | Custom option content | _option: string \| object_ |
+| columns-top `v2.11.1` | Custom content above columns | - |
+| columns-bottom `v2.11.1` | Custom content below columns | - |
+
 ### Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DatetimePicker instance and call instance methods.

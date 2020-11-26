@@ -36,7 +36,7 @@ export default createComponent({
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const formatValue = (value) => {
       const { minHour, maxHour, maxMinute, minMinute } = props;
 
@@ -171,6 +171,7 @@ export default createComponent({
 
     return () => (
       <Picker
+        v-slots={slots}
         ref={picker}
         columns={columns.value}
         readonly={props.readonly}

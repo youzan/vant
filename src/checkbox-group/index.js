@@ -25,18 +25,25 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { children, linkChildren } = useChildren(CHECKBOX_KEY);
 
-    const toggleAll = (checked) => {
-      if (checked === false) {
-        emit('update:modelValue', []);
-      } else {
-        const names = children
-          .filter((item) => {
-            const willCheck = checked || !item.checked.value;
-            return item.props.bindGroup && willCheck;
-          })
-          .map((item) => item.name);
-        emit('update:modelValue', names);
+    const toggleAll = (options = {}) => {
+      if (typeof options === 'boolean') {
+        options = { checked: options };
       }
+
+      const { checked, skipDisabled } = options;
+
+      const checkedChildren = children.filter((item) => {
+        if (!item.props.bindGroup) {
+          return false;
+        }
+        if (item.props.disabled && skipDisabled) {
+          return item.checked.value;
+        }
+        return checked ?? !item.checked.value;
+      });
+
+      const names = checkedChildren.map((item) => item.name);
+      emit('update:modelValue', names);
     };
 
     watch(
