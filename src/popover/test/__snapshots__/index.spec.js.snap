@@ -9,21 +9,21 @@ exports[`should allow to custom the className of action 1`] = `
 exports[`should locate to reference element when showed 1`] = `<!---->`;
 
 exports[`should locate to reference element when showed 2`] = `
-<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2006;" data-popper-placement="bottom">
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2007;" data-popper-placement="bottom">
   <div class="van-popover__arrow"></div>
   <div class="van-popover__content"></div>
 </div>
 `;
 
 exports[`should locate to reference element when showed 3`] = `
-<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2006; display: none;" data-popper-placement="bottom">
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="position: absolute; left: 0px; top: 8px; margin: 0px; z-index: 2007; display: none;" data-popper-placement="bottom">
   <div class="van-popover__arrow"></div>
   <div class="van-popover__content"></div>
 </div>
 `;
 
 exports[`should watch placement prop and update location 1`] = `
-<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="z-index: 2007; position: absolute; left: 0px; top: -8px; margin: 0px;" data-popper-placement="top">
+<div class="van-popup van-popover van-popover--light" name="van-popover-zoom" style="z-index: 2008; position: absolute; left: 0px; top: -8px; margin: 0px;" data-popper-placement="top">
   <div class="van-popover__arrow"></div>
   <div class="van-popover__content"></div>
 </div>

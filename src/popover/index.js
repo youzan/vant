@@ -21,6 +21,7 @@ export default createComponent({
 
   props: {
     value: Boolean,
+    trigger: String,
     overlay: Boolean,
     offset: {
       type: Array,
@@ -120,6 +121,12 @@ export default createComponent({
       this.$emit('input', value);
     },
 
+    onClickWrapper() {
+      if (this.trigger === 'click') {
+        this.onToggle(!this.value);
+      }
+    },
+
     onTouchstart(event) {
       event.stopPropagation();
       this.$emit('touchstart', event);
@@ -162,7 +169,7 @@ export default createComponent({
 
   render() {
     return (
-      <span ref="wrapper" class={bem('wrapper')}>
+      <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
         <Popup
           ref="popover"
           value={this.value}
