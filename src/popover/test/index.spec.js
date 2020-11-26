@@ -11,6 +11,7 @@ test('should toggle popover when trigger is "click" and the reference element is
   const wrapper = mount(Popover, {
     props: {
       show: true,
+      trigger: 'manual',
     },
     slots: {
       reference: () => <div class="reference"></div>,

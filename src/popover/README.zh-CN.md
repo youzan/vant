@@ -23,7 +23,7 @@ app.use(Popover);
 ```html
 <van-popover v-model:show="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
-    <van-button type="primary"> 浅色风格 </van-button>
+    <van-button type="primary">浅色风格</van-button>
   </template>
 </van-popover>
 ```
@@ -54,7 +54,7 @@ Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 
 ```html
 <van-popover v-model:show="showPopover" theme="dark" :actions="actions">
   <template #reference>
-    <van-button type="primary"> 深色风格 </van-button>
+    <van-button type="primary">深色风格</van-button>
   </template>
 </van-popover>
 ```
@@ -102,7 +102,7 @@ bottom-end    # 底部右侧位置
 ```html
 <van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
-    <van-button type="primary"> 展示图标 </van-button>
+    <van-button type="primary">展示图标</van-button>
   </template>
 </van-popover>
 ```
@@ -129,7 +129,7 @@ export default {
 ```html
 <van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
-    <van-button type="primary"> 禁用选项 </van-button>
+    <van-button type="primary">禁用选项</van-button>
   </template>
 </van-popover>
 ```
@@ -171,7 +171,7 @@ export default {
     />
   </van-grid>
   <template #reference>
-    <van-button type="primary"> 自定义内容 </van-button>
+    <van-button type="primary">自定义内容</van-button>
   </template>
 </van-popover>
 ```
@@ -196,7 +196,7 @@ export default {
 | actions | 选项列表 | _Action[]_ | `[]` |
 | placement | 弹出位置 | _string_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _string_ | `light` |
-| trigger `v2.11.1` | 触发方式，可选值为 `click` | - |
+| trigger `v2.11.1` | 触发方式，可选值为 `manual` | `click` |
 | offset | 出现位置的偏移量 | _[number, number]_ | `[0, 8]` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |

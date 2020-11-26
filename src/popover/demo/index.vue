@@ -7,7 +7,7 @@
       @select="onSelect"
     >
       <template #reference>
-        <van-button type="primary" @click="show.lightTheme = true">
+        <van-button type="primary">
           {{ t('lightTheme') }}
         </van-button>
       </template>
@@ -19,7 +19,7 @@
       @select="onSelect"
     >
       <template #reference>
-        <van-button type="primary" @click="show.darkTheme = true">
+        <van-button type="primary">
           {{ t('darkTheme') }}
         </van-button>
       </template>
@@ -70,7 +70,7 @@
       @select="onSelect"
     >
       <template #reference>
-        <van-button type="primary" @click="show.showIcon = true">
+        <van-button type="primary">
           {{ t('showIcon') }}
         </van-button>
       </template>
@@ -82,7 +82,7 @@
       @select="onSelect"
     >
       <template #reference>
-        <van-button type="primary" @click="show.disableAction = true">
+        <van-button type="primary">
           {{ t('disableAction') }}
         </van-button>
       </template>
@@ -111,7 +111,7 @@
         />
       </van-grid>
       <template #reference>
-        <van-button type="primary" @click="show.customContent = true">
+        <van-button type="primary">
           {{ t('customContent') }}
         </van-button>
       </template>

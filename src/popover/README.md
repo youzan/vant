@@ -17,7 +17,7 @@ app.use(Popover);
 ```html
 <van-popover v-model:show="showPopover" :actions="actions" @select="onSelect">
   <template #reference>
-    <van-button type="primary"> Light Theme </van-button>
+    <van-button type="primary">Light Theme</van-button>
   </template>
 </van-popover>
 ```
@@ -51,7 +51,7 @@ Using the `theme` prop to change the style of Popover.
 ```html
 <van-popover v-model:show="showPopover" theme="dark" :actions="actions">
   <template #reference>
-    <van-button type="primary"> Dark Theme </van-button>
+    <van-button type="primary">Dark Theme</van-button>
   </template>
 </van-popover>
 ```
@@ -99,7 +99,7 @@ bottom-end    # Bottom right
 ```html
 <van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
-    <van-button type="primary"> Show Icon </van-button>
+    <van-button type="primary">Show Icon</van-button>
   </template>
 </van-popover>
 ```
@@ -126,7 +126,7 @@ Using the `disabled` option to disable an action.
 ```html
 <van-popover v-model:show="showPopover" :actions="actions">
   <template #reference>
-    <van-button type="primary"> Disable Action </van-button>
+    <van-button type="primary">Disable Action</van-button>
   </template>
 </van-popover>
 ```
@@ -146,6 +146,41 @@ export default {
 };
 ```
 
+### Custom Content
+
+```html
+<van-popover v-model:show="showPopover">
+  <van-grid
+    square
+    clickable
+    :border="false"
+    column-num="3"
+    style="width: 240px;"
+  >
+    <van-grid-item
+      v-for="i in 6"
+      :key="i"
+      text="Option"
+      icon="photo-o"
+      @click="showPopover = false"
+    />
+  </van-grid>
+  <template #reference>
+    <van-button type="primary">Custom Content</van-button>
+  </template>
+</van-popover>
+```
+
+```js
+export default {
+  data() {
+    return {
+      showPopover: false,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -156,7 +191,7 @@ export default {
 | actions | Actions | _Action[]_ | `[]` |
 | placement | Placement | _string_ | `bottom` |
 | theme | Theme，can be set to `dark` | _string_ | `light` |
-| trigger `v2.11.1` | Trigger mode，can be set to `click` | - |
+| trigger `v2.11.1` | Trigger mode，can be set to `manual` | `click` |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |

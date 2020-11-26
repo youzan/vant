@@ -2,7 +2,7 @@ import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import { createPopper, offsetModifier } from '@vant/popperjs';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, stopPropagation } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composition
@@ -19,7 +19,6 @@ export default createComponent({
 
   props: {
     show: Boolean,
-    trigger: String,
     overlay: Boolean,
     offset: {
       type: Array,
@@ -28,6 +27,10 @@ export default createComponent({
     theme: {
       type: String,
       default: 'light',
+    },
+    trigger: {
+      type: String,
+      default: 'click',
     },
     actions: {
       type: Array,
@@ -159,6 +162,7 @@ export default createComponent({
           teleport={props.teleport}
           transition="van-popover-zoom"
           lockScroll={false}
+          onClick={stopPropagation}
           onTouchstart={onTouchstart}
           {...{ ...attrs, 'onUpdate:show': toggle }}
         >

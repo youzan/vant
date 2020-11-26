@@ -197,6 +197,10 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 - 默认开启 `show-toolbar` 属性
 - 级联选择下，`confirm`、`change` 事件返回的回调参数将包含为完整的选项对象。
 
+#### Popover
+
+- `trigger` 属性的默认值调整为 `click`
+
 #### SwipeCell
 
 - `open` 事件的 `detail` 参数重命名为 `name`
