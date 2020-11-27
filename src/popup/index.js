@@ -226,7 +226,7 @@ export default createComponent({
       return (
         <Transition
           name={transition || name}
-          transitionAppear={transitionAppear}
+          appear={transitionAppear}
           onAfterEnter={onOpened}
           onAfterLeave={onClosed}
         >
