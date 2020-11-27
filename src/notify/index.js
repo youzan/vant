@@ -52,14 +52,14 @@ function Notify(options) {
 function defaultOptions() {
   return {
     type: 'danger',
-    message: '',
     color: undefined,
-    background: undefined,
-    duration: 3000,
-    className: '',
+    message: '',
     onClose: null,
     onClick: null,
     onOpened: null,
+    duration: 3000,
+    className: '',
+    background: undefined,
   };
 }
 
