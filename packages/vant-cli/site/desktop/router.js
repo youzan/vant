@@ -49,13 +49,17 @@ function getRoutes() {
     routes.push({
       name: 'notFound',
       path: '/:path(.*)+',
-      redirect: (route) => `/${getLangFromRoute(route)}/`,
+      redirect: (route) => ({
+        name: getLangFromRoute(route),
+      }),
     });
   } else {
     routes.push({
       name: 'notFound',
       path: '/:path(.*)+',
-      redirect: '/',
+      redirect: {
+        name: 'home',
+      },
     });
   }
 
