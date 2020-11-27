@@ -18,6 +18,7 @@ module.exports = function (api?: ConfigAPI) {
         },
       ],
       '@babel/preset-typescript',
+      require('../compiler/babel-preset-vue-ts'),
     ],
     plugins: [
       [
