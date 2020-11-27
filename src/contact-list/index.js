@@ -33,7 +33,7 @@ export default createComponent({
         <Radio name={item.id} iconSize={16} checkedColor={RED} />
       );
 
-      const renderLeftIcon = () => (
+      const renderEditIcon = () => (
         <Icon
           name="edit"
           class={bem('edit')}
@@ -61,7 +61,7 @@ export default createComponent({
       return (
         <Cell
           v-slots={{
-            icon: renderLeftIcon,
+            icon: renderEditIcon,
             default: renderContent,
             'right-icon': renderRightIcon,
           }}
