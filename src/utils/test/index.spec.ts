@@ -1,8 +1,6 @@
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
 import { isDef, get, noop } from '..';
-import { raf, cancelRaf } from '../dom/raf';
-import { later } from '../../../test';
 import { isEmail } from '../validate/email';
 import { isMobile } from '../validate/mobile';
 import { isNumeric } from '../validate/number';
@@ -20,7 +18,6 @@ test('deepClone', () => {
   expect(deepClone(noop)).toEqual(noop);
   expect(deepClone(arr)).toEqual(arr);
   expect(deepClone(undefined)).toEqual(undefined);
-  expect(deepClone(1)).toEqual(1);
 });
 
 test('deepAssign', () => {
@@ -64,15 +61,6 @@ test('get', () => {
 
 test('isAndroid', () => {
   expect(isAndroid()).toBeFalsy();
-});
-
-test('raf', async () => {
-  const spy = jest.fn();
-  raf(spy);
-
-  await later(50);
-  expect(spy).toHaveBeenCalledTimes(1);
-  cancelRaf(1);
 });
 
 test('isEmail', () => {
@@ -132,9 +120,9 @@ test('addUnit', () => {
 test('unitToPx', () => {
   const originGetComputedStyle = window.getComputedStyle;
 
-  window.innerWidth = 100;
-  window.innerHeight = 200;
-  window.getComputedStyle = () => ({ fontSize: '16px' });
+  Object.defineProperty(window, 'innerWidth', { value: 100 });
+  Object.defineProperty(window, 'innerHeight', { value: 200 });
+  window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
 
   expect(unitToPx(0)).toEqual(0);
   expect(unitToPx(10)).toEqual(10);

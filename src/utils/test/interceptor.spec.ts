@@ -1,7 +1,7 @@
 import { later } from '../../../test';
 import { callInterceptor } from '../interceptor';
 
-test('#callInterceptor', async () => {
+test('callInterceptor', async () => {
   const done = jest.fn();
   callInterceptor({ done });
   expect(done).toHaveBeenCalledTimes(1);
@@ -42,9 +42,11 @@ test('#callInterceptor', async () => {
   callInterceptor({
     interceptor: (...args) => {
       expect(args).toEqual(['foo']);
+      return false;
     },
     args: ['foo'],
     done,
   });
+
   expect(done).toHaveBeenCalledTimes(3);
 });
