@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Paginaion from '..';
 
-test('render prev-text & next-text slot', () => {
+test('should render prev-text、next-text slot correctly', () => {
   const wrapper = mount(Paginaion, {
     props: {
       totalItems: 50,
@@ -16,14 +16,14 @@ test('render prev-text & next-text slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render page slot', () => {
+test('should render page slot correctly', () => {
   const wrapper = mount(Paginaion, {
     props: {
       totalItems: 50,
       showPageSize: 5,
     },
     slots: {
-      page: ({ text }) => `${text}`,
+      page: ({ text }) => `foo ${text}`,
     },
   });
 
