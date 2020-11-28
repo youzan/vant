@@ -1,25 +1,26 @@
 import Progress from '..';
-import { mount, later } from '../../../test';
+import { mount } from '../../../test';
 
-test('calc width', async () => {
+test('should re-calc width if showing pivot dynamically', async () => {
   const wrapper = mount(Progress, {
     props: {
       showPivot: false,
       percentage: 100,
     },
   });
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
-  wrapper.vm.showPivot = true;
-  wrapper.vm.pivotText = 'test';
-  await later();
+  await wrapper.setProps({
+    showPivot: true,
+    pivotText: 'test',
+  });
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('track color prop', async () => {
+test('should change track color when using track-color prop', () => {
   const wrapper = mount(Progress, {
     props: {
+      percentage: 0,
       trackColor: 'green',
     },
   });
