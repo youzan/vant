@@ -1,5 +1,9 @@
 # Changelog
 
+### Tips
+
+The current document is the changelog of Vant 3.x. If you want to view the changelog of Vant 2.x, please visit [Vant 2.x Changelog](https://youzan.github.io/vant/#/en-US/changelog).
+
 ### Intro
 
 Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
@@ -9,6 +13,8 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Patch version：released weekly, including features and bug fixes.
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
+
+## Details
 
 ### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
 
