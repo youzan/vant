@@ -2,7 +2,7 @@
 
 ### Tips
 
-The current document is the changelog of Vant 3.x. If you want to view the changelog of Vant 2.x, please visit [Vant 2.x Changelog](https://youzan.github.io/vant/#/en-US/changelog).
+The current document is the changelog of Vant 2.x. If you want to view the changelog of Vant 3.x, please visit [Vant 3.x Changelog](https://youzan.github.io/vant/next/#/en-US/changelog).
 
 ### Intro
 
