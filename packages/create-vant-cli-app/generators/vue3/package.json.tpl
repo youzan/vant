@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@vant/cli": "^3.0.0",
-    "@vue/sfc-compiler": "^3.0.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "babel-plugin-import": "^1.13.0",
     "vue": "^3.0.0"
   },

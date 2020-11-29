@@ -6,7 +6,6 @@ import { CWD, GENERATOR_DIR } from './constant';
 import Yeoman from 'yeoman-environment';
 import Generator from 'yeoman-generator';
 
-const TEMPLATES_ROOT = join(GENERATOR_DIR, 'templates');
 const PROMPTS = [
   {
     name: 'vueVersion',
@@ -64,13 +63,11 @@ export class VanGenerator extends Generator {
   writing() {
     consola.info(`Creating project in ${join(CWD, this.inputs.name)}\n`);
 
-    const templatePath = join(TEMPLATES_ROOT, this.inputs.vueVersion);
+    const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion);
     const templateFiles = glob.sync(join(templatePath, '**', '*'), {
       dot: true,
     });
     const destinationRoot = this.destinationRoot();
-
-    console.log(templateFiles);
 
     templateFiles.forEach((filePath) => {
       const outputPath = filePath
