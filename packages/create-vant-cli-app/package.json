@@ -21,6 +21,9 @@
   "keywords": [
     "vant"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
