@@ -6,8 +6,23 @@ import { CWD, GENERATOR_DIR } from './constant';
 import Yeoman from 'yeoman-environment';
 import Generator from 'yeoman-generator';
 
-const TEMPLATES_PATH = join(GENERATOR_DIR, 'templates');
+const TEMPLATES_ROOT = join(GENERATOR_DIR, 'templates');
 const PROMPTS = [
+  {
+    name: 'vueVersion',
+    message: 'Select Vue version',
+    type: 'list',
+    choices: [
+      {
+        name: 'Vue 2',
+        value: 'vue2',
+      },
+      {
+        name: 'Vue 3',
+        value: 'vue3',
+      },
+    ],
+  },
   {
     name: 'preprocessor',
     message: 'Select css preprocessor',
@@ -20,6 +35,7 @@ export class VanGenerator extends Generator {
   inputs = {
     name: '',
     cssLang: '',
+    vueVersion: '',
     preprocessor: '',
   };
 
@@ -40,6 +56,7 @@ export class VanGenerator extends Generator {
       const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
 
       this.inputs.cssLang = cssLang;
+      this.inputs.vueVersion = inputs.vueVersion;
       this.inputs.preprocessor = preprocessor;
     });
   }
@@ -47,7 +64,8 @@ export class VanGenerator extends Generator {
   writing() {
     consola.info(`Creating project in ${join(CWD, this.inputs.name)}\n`);
 
-    const templateFiles = glob.sync(join(TEMPLATES_PATH, '**', '*'), {
+    const templatePath = join(TEMPLATES_ROOT, this.inputs.vueVersion);
+    const templateFiles = glob.sync(join(templatePath, '**', '*'), {
       dot: true,
     });
     const destinationRoot = this.destinationRoot();
@@ -57,7 +75,7 @@ export class VanGenerator extends Generator {
     templateFiles.forEach((filePath) => {
       const outputPath = filePath
         .replace('.tpl', '')
-        .replace(TEMPLATES_PATH, destinationRoot);
+        .replace(templatePath, destinationRoot);
       this.fs.copyTpl(filePath, outputPath, this.inputs);
     });
   }
