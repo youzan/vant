@@ -1,5 +1,16 @@
 # 更新日志
 
+## v3.0.0
+
+`2020-11-29`
+
+- 升级 Vue 3
+- 升级 VueRouter 4
+- 升级 VueLoader 16
+- 升级 Webpack 5
+- 升级 ESLint 7
+- 升级 TypeScript 4
+
 ## v2.6.2
 
 `2020-11-15`

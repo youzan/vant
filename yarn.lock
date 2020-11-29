@@ -1719,10 +1719,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.0.0-rc.4":
-  version "3.0.0-rc.4"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.0.0-rc.4.tgz#e87a40ffc04300325f0dbcc5ffd18d9692125c84"
-  integrity sha1-6HpA/8BDADJfDbzF/9GNlpISXIQ=
+"@vant/cli@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.0.0.tgz#155c3a669a853ec07cfa628dc7c9a99edbc90e9a"
+  integrity sha1-FVw6ZpqFPsB8+mKNx8mpntvJDpo=
   dependencies:
     "@babel/core" "^7.12.7"
     "@babel/plugin-transform-object-assign" "^7.12.1"
@@ -1777,7 +1777,7 @@
     stylelint "^13.8.0"
     typescript "^4.1.2"
     vue-jest "^5.0.0-alpha.6"
-    vue-loader "^16.0.0-rc.2"
+    vue-loader "^16.0.0"
     vue-router "^4.0.0-rc.5"
     webpack "^5.6.0"
     webpack-dev-server "^3.11.0"
@@ -10407,9 +10407,9 @@ vue-lazyload@1.2.3:
   resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
   integrity sha512-DC0ZwxanbRhx79tlA3zY5OYJkH8FYp3WBAnAJbrcuoS8eye1P73rcgAZhyxFSPUluJUTelMB+i/+VkNU/qVm7g==
 
-vue-loader@^16.0.0-rc.2:
+vue-loader@^16.0.0:
   version "16.0.0"
-  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0.tgz?cache=0&sync_timestamp=1606320803825&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0.tgz#7ec137c7f9029f2a5990f39dc5abbca06d60ba30"
+  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0.tgz?cache=0&sync_timestamp=1606320811583&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0.tgz#7ec137c7f9029f2a5990f39dc5abbca06d60ba30"
   integrity sha1-fsE3x/kCnypZkPOdxau8oG1gujA=
   dependencies:
     chalk "^4.1.0"

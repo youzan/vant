@@ -67,7 +67,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.0.0-rc.4",
+    "@vant/cli": "^3.0.0",
     "@vue/compiler-sfc": "^3.0.3",
     "vue": "^3.0.3"
   },
