@@ -3,5 +3,5 @@ import DemoButton from '../../demo-button';
 
 test('render demo button', () => {
   const wrapper = mount(DemoButton);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.html()).toMatchSnapshot();
 });
