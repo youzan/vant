@@ -33,6 +33,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "consola": "^2.11.3",
+    "fast-glob": "^3.2.4",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.6",
     "yeoman-environment": "^2.8.0",

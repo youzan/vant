@@ -14,7 +14,7 @@ Vant Cli 是一个 Vue 组件库构建工具，通过 Vant Cli 可以快速搭�
 执行以下命令可以快速创建一个基于 Vant Cli 的项目：
 
 ```bash
-npx create-vant-cli-app
+yarn create vant-cli-app
 ```
 
 ### 手动安装
