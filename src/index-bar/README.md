@@ -68,7 +68,7 @@ export default {
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
-| highlight-color | Index character highlight color | _string_ | `#07c160` | - |
+| highlight-color | Index character highlight color | _string_ | `#ee0a24` | - |
 
 ### IndexAnchor Props
 
@@ -98,7 +98,7 @@ How to use: [Custom Theme](#/en-US/theme).
 | @index-bar-sidebar-z-index            | `2`                 | -           |
 | @index-bar-index-font-size            | `@font-size-xs`     | -           |
 | @index-bar-index-line-height          | `@line-height-xs`   | -           |
-| @index-bar-index-active-color         | `@green`            | -           |
+| @index-bar-index-active-color         | `@red`              | -           |
 | @index-anchor-z-index                 | `1`                 | -           |
 | @index-anchor-padding                 | `0 @padding-md`     | -           |
 | @index-anchor-text-color              | `@text-color`       | -           |
