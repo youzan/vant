@@ -1801,6 +1801,11 @@
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.4.0.tgz#a91f7894f2f34356f78a5d6f8b9d4f1a46add0c5"
   integrity sha1-qR94lPLzQ1b3il1vi51PGkat0MU=
 
+"@vant/lazyload@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/lazyload/download/@vant/lazyload-1.0.0.tgz?cache=0&sync_timestamp=1606738038177&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Flazyload%2Fdownload%2F%40vant%2Flazyload-1.0.0.tgz#781317ef81616df045b1061188518fe5013b7d1c"
+  integrity sha1-eBMX74FhbfBFsQYRiFGP5QE7fRw=
+
 "@vant/markdown-loader@^3.0.1":
   version "3.0.1"
   resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-3.0.1.tgz#add005ce58b6f62c3567df168d42a502731fdecb"

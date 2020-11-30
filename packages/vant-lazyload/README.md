@@ -1,6 +1,6 @@
 # @vant/lazyload
 
-This is a of [vue-lazyload](https://github.com/hilongjw/vue-lazyload) with Vue 3 support.
+This is a fork of [vue-lazyload](https://github.com/hilongjw/vue-lazyload) with Vue 3 support.
 
 ## Install
 

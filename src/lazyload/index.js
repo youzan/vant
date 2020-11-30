@@ -1,3 +1,3 @@
-// import Lazyload from 'vue-lazyload';
-// TODO
-export default {};
+import { Lazyload } from '@vant/lazyload';
+
+export default Lazyload;

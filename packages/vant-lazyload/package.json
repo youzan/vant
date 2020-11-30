@@ -3,22 +3,29 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "files": [
+    "es",
+    "lib",
+    "types"
+  ],
   "scripts": {
-    "dev": "rollup --config rollup.config.js --watch",
-    "build": "rollup --config rollup.config.js && tsc -p ./tsconfig.json --emitDeclarationOnly"
+    "dev": "babel src --out-dir esm --watch",
+    "build": "babel src --out-dir esm && BABEL_MODULE=commonjs babel src --out-dir lib",
+    "release": "npm run build && release-it"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-lazyload",
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
     "@babel/runtime": "7.x",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "rollup": "^2.33.3",
+    "release-it": "^14.2.2",
     "vue": "^3.0.0"
   },
   "browserslist": [

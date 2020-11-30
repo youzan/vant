@@ -10,6 +10,7 @@ package-lock.json
 
 # dist file
 es
+esm
 lib
 dist
 /site
