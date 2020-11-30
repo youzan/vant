@@ -1,4 +1,12 @@
-import { ref, watch, computed, PropType, CSSProperties } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  PropType,
+  CSSProperties,
+  onBeforeUnmount,
+  getCurrentInstance,
+} from 'vue';
 import { isDef, addUnit, inBrowser, createNamespace } from '../utils';
 import Icon from '../icon';
 
@@ -42,6 +50,9 @@ export default createComponent({
     const loading = ref(true);
     const imageRef = ref<HTMLElement>();
 
+    // TODO: types
+    const { $Lazyload } = getCurrentInstance()!.proxy as any;
+
     const style = computed(() => {
       const style: CSSProperties = {};
 
@@ -69,12 +80,12 @@ export default createComponent({
       }
     );
 
-    const onLoad = (event: Event) => {
+    const onLoad = (event?: Event) => {
       loading.value = false;
       emit('load', event);
     };
 
-    const onError = (event: Event) => {
+    const onError = (event?: Event) => {
       error.value = true;
       loading.value = false;
       emit('error', event);
@@ -139,6 +150,28 @@ export default createComponent({
       );
     };
 
+    const onLazyLoaded = ({ el }: { el: HTMLElement }) => {
+      if (el === imageRef.value && loading.value) {
+        onLoad();
+      }
+    };
+
+    const onLazyLoadError = ({ el }: { el: HTMLElement }) => {
+      if (el === imageRef.value && !error.value) {
+        onError();
+      }
+    };
+
+    if ($Lazyload && inBrowser) {
+      $Lazyload.$on('loaded', onLazyLoaded);
+      $Lazyload.$on('error', onLazyLoadError);
+
+      onBeforeUnmount(() => {
+        $Lazyload.$off('loaded', onLazyLoaded);
+        $Lazyload.$off('error', onLazyLoadError);
+      });
+    }
+
     return () => (
       <div class={bem({ round: props.round })} style={style.value}>
         {renderImage()}
@@ -147,37 +180,4 @@ export default createComponent({
       </div>
     );
   },
-
-  // TODO: lazyLoad
-  // created() {
-  //   const { $Lazyload } = this;
-
-  //   if ($Lazyload && inBrowser) {
-  //     $Lazyload.$on('loaded', this.onLazyLoaded);
-  //     $Lazyload.$on('error', this.onLazyLoadError);
-  //   }
-  // },
-
-  // beforeUnmount() {
-  //   const { $Lazyload } = this;
-
-  //   if ($Lazyload) {
-  //     $Lazyload.$off('loaded', this.onLazyLoaded);
-  //     $Lazyload.$off('error', this.onLazyLoadError);
-  //   }
-  // },
-
-  // methods: {
-  // onLazyLoaded({ el }) {
-  //   if (el === this.$refs.image && this.loading) {
-  //     this.onLoad();
-  //   }
-  // },
-
-  // onLazyLoadError({ el }) {
-  //   if (el === this.$refs.image && !this.error) {
-  //     this.onError();
-  //   }
-  // },
-  // },
 });
