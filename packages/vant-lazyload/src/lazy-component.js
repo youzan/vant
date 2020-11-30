@@ -11,7 +11,11 @@ export default (lazy) => {
     },
     emits: ['show'],
     render() {
-      return h(this.tag, null, this.show ? this.$slots.default : null);
+      return h(
+        this.tag,
+        null,
+        this.show && this.$slots.default ? this.$slots.default() : null
+      );
     },
     data() {
       return {
