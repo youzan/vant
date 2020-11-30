@@ -2,21 +2,19 @@
   "name": "@vant/lazyload",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "es",
-    "lib",
-    "types"
+    "dist"
   ],
   "scripts": {
-    "dev": "babel src --out-dir esm --watch",
-    "build": "babel src --out-dir esm && BABEL_MODULE=commonjs babel src --out-dir lib",
+    "dev": "babel src --out-dir dist/esm --watch",
+    "build": "babel src --out-dir dist/esm && BABEL_MODULE=commonjs babel src --out-dir dist/cjs",
     "release": "npm run build && release-it"
   },
   "license": "MIT",

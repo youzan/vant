@@ -10,4 +10,18 @@ yarn add @vant/lazyload
 
 ## Usage
 
+```js
+import { createApp } from 'vue';
+import { LazyLoad } from '@vant/lazyload';
+
+const app = createApp();
+app.use(LazyLoad);
+```
+
+## API
+
 see: https://github.com/hilongjw/vue-lazyload
+
+## TODO
+
+support TypeScript.
