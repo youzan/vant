@@ -142,6 +142,7 @@ export default {
 
 | 名称                     | 默认值              | 描述 |
 | ------------------------ | ------------------- | ---- |
+| @circle-size             | `100px`             | -    |
 | @circle-color            | `@blue`             | -    |
 | @circle-layer-color      | `@white`            | -    |
 | @circle-text-color       | `@text-color`       | -    |

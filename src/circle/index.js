@@ -21,6 +21,7 @@ function getPath(clockwise, viewBoxSize) {
 export default createComponent({
   props: {
     text: String,
+    size: [Number, String],
     color: [String, Object],
     layerColor: String,
     strokeLinecap: String,
@@ -31,10 +32,6 @@ export default createComponent({
     speed: {
       type: [Number, String],
       default: 0,
-    },
-    size: {
-      type: [Number, String],
-      default: 100,
     },
     fill: {
       type: String,
