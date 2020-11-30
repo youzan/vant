@@ -1,6 +1,5 @@
 // color
 export const RED = '#ee0a24';
-export const BLUE = '#1989fa';
 export const WHITE = '#fff';
 
 // border

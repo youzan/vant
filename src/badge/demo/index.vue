@@ -28,13 +28,13 @@
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <van-badge content="5" :color="BLUE">
+      <van-badge content="5" color="#1989fa">
         <div class="child" />
       </van-badge>
-      <van-badge content="10" :color="BLUE">
+      <van-badge content="10" color="#1989fa">
         <div class="child" />
       </van-badge>
-      <van-badge dot :color="BLUE">
+      <van-badge dot color="#1989fa">
         <div class="child" />
       </van-badge>
     </demo-block>
@@ -68,8 +68,6 @@
 </template>
 
 <script>
-import { BLUE } from '../../utils/constant';
-
 export default {
   i18n: {
     'zh-CN': {
@@ -84,12 +82,6 @@ export default {
       customColor: 'Custom Color',
       customContent: 'Custom Content',
     },
-  },
-
-  data() {
-    return {
-      BLUE,
-    };
   },
 };
 </script>
