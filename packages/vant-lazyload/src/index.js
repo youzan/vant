@@ -26,8 +26,7 @@ export const Lazyload = {
 
     app.directive('lazy', {
       beforeMount: lazy.add.bind(lazy),
-      update: lazy.update.bind(lazy),
-      updated: lazy.lazyLoadHandler.bind(lazy),
+      updated: lazy.update.bind(lazy),
       unmounted: lazy.remove.bind(lazy),
     });
 
