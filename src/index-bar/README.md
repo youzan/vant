@@ -106,5 +106,5 @@ How to use: [Custom Theme](#/en-US/theme).
 | @index-anchor-font-size               | `@font-size-md`     | -           |
 | @index-anchor-line-height             | `32px`              | -           |
 | @index-anchor-background-color        | `transparent`       | -           |
-| @index-anchor-sticky-text-color       | `@green`            | -           |
+| @index-anchor-sticky-text-color       | `@red`              | -           |
 | @index-anchor-sticky-background-color | `@white`            | -           |
