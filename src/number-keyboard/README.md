@@ -141,7 +141,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) | Current value | _string_ | - |
+| v-model | Current value | _string_ | - |
 | show | Whether to show keyboard | _boolean_ | - |
 | title | Keyboard title | _string_ | - |
 | theme | Keyboard theme，can be set to `custom` | _string_ | `default` |

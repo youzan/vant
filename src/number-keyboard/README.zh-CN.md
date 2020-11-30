@@ -154,7 +154,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) | 当前输入值 | _string_ | - |
+| v-model | 当前输入值 | _string_ | - |
 | show | 是否显示键盘 | _boolean_ | - |
 | title | 键盘标题 | _string_ | - |
 | theme | 样式风格，可选值为 `custom` | _string_ | `default` |

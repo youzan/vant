@@ -198,7 +198,7 @@ Use `disabled` prop to disable uploader.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (fileList) | List of uploaded files | _FileListItem[]_ | - |
+| v-model | List of uploaded files | _FileListItem[]_ | - |
 | accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | _string_ | `image/*` |
 | name | Input name | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string_ | `80px` |

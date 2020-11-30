@@ -226,7 +226,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| v-model (value) | Check status | _boolean_ | `false` |
+| v-model | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Disable checkbox | _boolean_ | `false` |
@@ -240,7 +240,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| v-model (value) | Names of all checked checkboxes | _any[]_ | - |
+| v-model | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |

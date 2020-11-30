@@ -164,7 +164,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- | --- |
-| v-model (v-model) | Name of checked radio | _any_ | - |
+| v-model | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all radios | _number \| string_ | `20px` |
