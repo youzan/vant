@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_SURROUND, WHITE } from '../utils/constant';
+import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 
 // Components
@@ -70,7 +70,7 @@ function Button(
   const style: Record<string, string | number> = {};
 
   if (color) {
-    style.color = plain ? color : WHITE;
+    style.color = plain ? color : 'white';
 
     if (!plain) {
       // Use background instead of backgroundColor to make linear-gradient work

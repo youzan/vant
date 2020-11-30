@@ -1,6 +1,5 @@
 // color
 export const RED = '#ee0a24';
-export const WHITE = '#fff';
 
 // border
 export const BORDER = 'van-hairline';

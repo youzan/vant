@@ -143,6 +143,7 @@ export default {
 | 名称                     | 默认值              | 描述 |
 | ------------------------ | ------------------- | ---- |
 | @circle-color            | `@blue`             | -    |
+| @circle-layer-color      | `@white`            | -    |
 | @circle-text-color       | `@text-color`       | -    |
 | @circle-text-font-weight | `@font-weight-bold` | -    |
 | @circle-text-font-size   | `@font-size-md`     | -    |
