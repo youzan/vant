@@ -25,10 +25,10 @@
 
         <demo-block :title="t('color')">
           <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
-            <van-icon :name="demoIcon" :color="BLUE" />
+            <van-icon name="cart-o" :color="BLUE" />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
-            <van-icon :name="demoIcon" :color="GREEN" />
+          <van-col span="6" @click="copy(demoIcon, { color: RED })">
+            <van-icon name="fire-o" :color="RED" />
           </van-col>
         </demo-block>
 
@@ -83,7 +83,7 @@
 
 <script>
 import icons from '@vant/icons';
-import { BLUE, GREEN } from '../../utils/constant';
+import { RED, BLUE } from '../../utils/constant';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
@@ -136,8 +136,8 @@ export default {
   },
 
   data() {
+    this.RED = RED;
     this.BLUE = BLUE;
-    this.GREEN = GREEN;
     this.icons = icons;
     return {
       tab: 0,

@@ -113,7 +113,7 @@ export default {
 通过 `color` 属性可以自定义日历的颜色，对选中日期和底部按钮生效。
 
 ```html
-<van-calendar v-model="show" color="#07c160" />
+<van-calendar v-model="show" color="#1989fa" />
 ```
 
 ### 自定义日期范围
