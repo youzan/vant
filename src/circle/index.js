@@ -1,6 +1,6 @@
 import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
-import { BLUE, WHITE } from '../utils/constant';
+import { WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
 
@@ -22,6 +22,7 @@ function getPath(clockwise, viewBoxSize) {
 export default createComponent({
   props: {
     text: String,
+    color: [String, Object],
     strokeLinecap: String,
     value: {
       type: Number,
@@ -46,10 +47,6 @@ export default createComponent({
     layerColor: {
       type: String,
       default: WHITE,
-    },
-    color: {
-      type: [String, Object],
-      default: BLUE,
     },
     strokeWidth: {
       type: [Number, String],

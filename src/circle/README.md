@@ -131,6 +131,7 @@ How to use: [Custom Theme](#/en-US/theme).
 
 | Name                     | Default Value       | Description |
 | ------------------------ | ------------------- | ----------- |
+| @circle-color            | `@blue`             | -           |
 | @circle-text-color       | `@text-color`       | -           |
 | @circle-text-font-weight | `@font-weight-bold` | -           |
 | @circle-text-font-size   | `@font-size-md`     | -           |
