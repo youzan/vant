@@ -64,8 +64,8 @@ export default {
 
 ```html
 <van-radio-group v-model="radio">
-  <van-radio name="1" checked-color="#07c160">Radio 1</van-radio>
-  <van-radio name="2" checked-color="#07c160">Radio 2</van-radio>
+  <van-radio name="1" checked-color="#ee0a24">Radio 1</van-radio>
+  <van-radio name="2" checked-color="#ee0a24">Radio 2</van-radio>
 </van-radio-group>
 ```
 

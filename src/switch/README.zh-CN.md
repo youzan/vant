@@ -62,7 +62,7 @@ export default {
 `active-color` 属性表示打开时的背景色，`inactive-color` 表示关闭时的背景色。
 
 ```html
-<van-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />
+<van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
 ### 异步控制

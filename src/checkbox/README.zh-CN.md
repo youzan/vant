@@ -55,7 +55,7 @@ export default {
 通过 `checked-color` 属性设置选中状态的图标颜色。
 
 ```html
-<van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#ee0a24">复选框</van-checkbox>
 ```
 
 ### 自定义大小

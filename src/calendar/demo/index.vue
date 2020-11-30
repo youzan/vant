@@ -121,7 +121,7 @@
 </template>
 
 <script>
-import { GREEN } from '../../utils/constant';
+import { BLUE } from '../../utils/constant';
 
 export default {
   i18n: {
@@ -235,7 +235,7 @@ export default {
           this.showConfirm = false;
           break;
         case 'customColor':
-          this.color = GREEN;
+          this.color = BLUE;
           break;
         case 'customConfirm':
           this.confirmText = this.t('confirmText');

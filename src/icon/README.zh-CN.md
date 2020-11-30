@@ -39,8 +39,8 @@ Vue.use(Icon);
 `Icon` 的 `color` 属性用来设置图标的颜色。
 
 ```html
-<van-icon name="chat-o" color="#1989fa" />
-<van-icon name="chat-o" color="#07c160" />
+<van-icon name="cart-o" color="#1989fa" />
+<van-icon name="fire-o" color="#ee0a24" />
 ```
 
 ### 图标大小

@@ -55,7 +55,7 @@
     <demo-block :title="t('customColor')">
       <van-tabbar
         v-model="active4"
-        active-color="#07c160"
+        active-color="#ee0a24"
         inactive-color="#000"
       >
         <van-tabbar-item icon="home-o">{{ t('tab') }}</van-tabbar-item>

@@ -45,7 +45,7 @@ export default {
 
 ### 徽标提示
 
-在 GoodsActionIcon 组件上设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标。
+在 GoodsActionIcon 组件上设置 `dot` 属性后，会在图标右上角展示一个小红点。设置 `badge` 属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-goods-action>
@@ -59,11 +59,11 @@ export default {
 
 ### 自定义图标颜色
 
-通过 GoodsActionIcon 的`color`属性可以自定义图标的颜色。
+通过 GoodsActionIcon 的 `color` 属性可以自定义图标的颜色。
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" color="#07c160" />
+  <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
   <van-goods-action-icon icon="cart-o" text="购物车" />
   <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
   <van-goods-action-button type="warning" text="加入购物车" />
