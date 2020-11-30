@@ -91,7 +91,7 @@ export function genComponentStyle(
     genEntry({
       baseFile,
       component,
-      filename: 'index.js',
+      filename: 'css.js',
       ext: '.css',
     });
 
@@ -99,7 +99,7 @@ export function genComponentStyle(
       genEntry({
         baseFile,
         component,
-        filename: CSS_LANG + '.js',
+        filename: 'index.js',
         ext: '.' + CSS_LANG,
       });
     }
