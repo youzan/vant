@@ -9,11 +9,9 @@
   </demo-block>
 
   <demo-block :title="t('title2')">
-    <van-swipe :autoplay="3000">
-      <van-swipe-item v-for="(image, index) in images" :key="index">
+    <van-swipe :autoplay="3000" lazy-render>
+      <van-swipe-item v-for="image in images" :key="image">
         <img :src="image" />
-        <!-- TODO -->
-        <!-- <img v-lazy="image" /> -->
       </van-swipe-item>
     </van-swipe>
   </demo-block>
@@ -32,7 +30,7 @@
       vertical
       :autoplay="3000"
       indicator-color="white"
-      style="height: 200px;"
+      style="height: 200px"
       class="demo-swipe--vertical"
     >
       <van-swipe-item>1</van-swipe-item>
@@ -69,7 +67,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '图片懒加载',
+      title2: '懒加载',
       title3: '监听 change 事件',
       title4: '纵向滚动',
       title5: '自定义滑块大小',
@@ -77,7 +75,7 @@ export default {
       message: '当前 Swipe 索引：',
     },
     'en-US': {
-      title2: 'Image Lazyload',
+      title2: 'Lazy Render',
       title3: 'Change Event',
       title4: 'Vertical Scrolling',
       title5: 'Set SwipeItem Size',

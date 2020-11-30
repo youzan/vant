@@ -40,25 +40,19 @@ app.use(SwipeItem);
 </style>
 ```
 
-### 图片懒加载
+### 懒加载
 
-当 Swipe 中含有图片时，可以配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载。
+当 Swipe 中含有图片时，可以通过 `lazy-render` 属性来开启懒加载模式。在懒加载模式下，只会渲染当前页和下一页。
 
 ```html
-<van-swipe :autoplay="3000">
-  <van-swipe-item v-for="(image, index) in images" :key="index">
-    <img v-lazy="image" />
+<van-swipe :autoplay="3000" lazy-render>
+  <van-swipe-item v-for="image in images" :key="image">
+    <img :src="image" />
   </van-swipe-item>
 </van-swipe>
 ```
 
 ```js
-import { createApp } from 'vue';
-import { Lazyload } from 'vant';
-
-const app = createApp();
-app.use(Lazyload);
-
 export default {
   data() {
     return {

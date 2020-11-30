@@ -59,7 +59,6 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-swipe-item"
            style="width: 100px;"
       >
-        <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
       </div>
       <div class="van-swipe-item"
            style="width: 100px;"
