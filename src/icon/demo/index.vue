@@ -29,7 +29,7 @@
       <demo-block :title="t('color')">
         <van-row>
           <van-col span="6" @click="copy(demoIcon, { color: '#1989fa' })">
-            <van-icon name="cart-o" :color="BLUE" />
+            <van-icon name="cart-o" color="#1989fa" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { color: RED })">
             <van-icon name="fire-o" :color="RED" />
