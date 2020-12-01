@@ -61,14 +61,13 @@
     "@vant/icons": "1.4.0",
     "@vant/lazyload": "^1.0.0",
     "@vant/popperjs": "^1.0.0",
-    "@vant/use": "^0.1.0",
-    "vue-lazyload": "1.2.3"
+    "@vant/use": "^0.1.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.0.0",
+    "@vant/cli": "^3.1.0",
     "@vue/compiler-sfc": "^3.0.3",
     "vue": "^3.0.3"
   },

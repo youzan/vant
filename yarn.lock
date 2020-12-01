@@ -1865,16 +1865,18 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.0.0.tgz#155c3a669a853ec07cfa628dc7c9a99edbc90e9a"
-  integrity sha1-FVw6ZpqFPsB8+mKNx8mpntvJDpo=
+"@vant/cli@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.1.0.tgz#4f49162a62753b8a5fcf0cc8cc6918492fa0fedf"
+  integrity sha1-T0kWKmJ1O4pfzwzIzGkYSS+g/t8=
   dependencies:
     "@babel/core" "^7.12.7"
     "@babel/plugin-transform-object-assign" "^7.12.1"
     "@babel/plugin-transform-runtime" "^7.12.1"
     "@babel/preset-env" "^7.12.7"
     "@babel/preset-typescript" "^7.12.7"
+    "@docsearch/css" "3.0.0-alpha.31"
+    "@docsearch/js" "3.0.0-alpha.31"
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.0"
     "@types/jest" "^26.0.15"
     "@types/webpack-dev-server" "^3.11.1"
@@ -10577,11 +10579,6 @@ vue-jest@^5.0.0-alpha.6:
     convert-source-map "^1.6.0"
     extract-from-css "^0.4.4"
     ts-jest "^24.0.0"
-
-vue-lazyload@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.2.3.tgz#901f9ec15c7e6ca78781a2bae4a343686bdedb2c"
-  integrity sha512-DC0ZwxanbRhx79tlA3zY5OYJkH8FYp3WBAnAJbrcuoS8eye1P73rcgAZhyxFSPUluJUTelMB+i/+VkNU/qVm7g==
 
 vue-loader@^16.0.0:
   version "16.0.0"
