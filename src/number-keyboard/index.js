@@ -223,7 +223,9 @@ export default createComponent({
       }
     );
 
-    useClickAway(root, onClose, { eventName: 'touchstart' });
+    if (props.hideOnClickOutside) {
+      useClickAway(root, onClose, { eventName: 'touchstart' });
+    }
 
     return () => {
       const Title = renderTitle();
