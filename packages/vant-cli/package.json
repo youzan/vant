@@ -92,13 +92,13 @@
     "style-loader": "^2.0.0",
     "stylelint": "^13.8.0",
     "typescript": "^4.1.2",
-    "vue-jest": "^5.0.0-alpha.6",
+    "vue-jest": "^5.0.0-alpha.7",
     "vue-loader": "^16.0.0",
     "vue-router": "^4.0.0-rc.5",
     "webpack": "^5.6.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.4.0",
-    "webpackbar": "^4.0.0"
+    "webpackbar": "^5.0.0-3"
   },
   "release-it": {
     "git": {
