@@ -132,14 +132,14 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 
 ### Events
 
-| Event  | Description                               | Arguments       |
-| ------ | ----------------------------------------- | --------------- |
-| search | Emitted when confirming search            | _value: string_ |
-| input  | Emitted when input value changed          | _value: string_ |
-| focus  | Emitted when input is focused             | _event: Event_  |
-| blur   | Emitted when input is blured              | _event: Event_  |
-| clear  | Emitted when the clear icon is clicked    | _event: Event_  |
-| cancel | Emitted when the cancel button is clicked | -               |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| search | Emitted when confirming search | _value: string_ |
+| update:model-value | Emitted when input value changed | _value: string_ |
+| focus | Emitted when input is focused | _event: Event_ |
+| blur | Emitted when input is blured | _event: Event_ |
+| clear | Emitted when the clear icon is clicked | _event: Event_ |
+| cancel | Emitted when the cancel button is clicked | - |
 
 ### Methods
 

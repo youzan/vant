@@ -260,7 +260,7 @@ Field support all native events of input tag
 
 | Event | Description | Parameters |
 | --- | --- | --- |
-| input | Emitted when input value changed | _value: string_ |
+| update:model-value | Emitted when input value changed | _value: string_ |
 | focus | Emitted when input is focused | _event: Event_ |
 | blur | Emitted when input is blured | _event: Event_ |
 | clear | Emitted when the clear icon is clicked | _event: Event_ |

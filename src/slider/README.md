@@ -160,12 +160,12 @@ export default {
 
 ### Events
 
-| Event      | Description                    | Arguments           |
-| ---------- | ------------------------------ | ------------------- |
-| input      | Emitted when value is changing | value: current rate |
-| change     | Emitted after value changed    | value: current rate |
-| drag-start | Emitted when start draging     | -                   |
-| drag-end   | Emitted when end draging       | -                   |
+| Event              | Description                    | Arguments           |
+| ------------------ | ------------------------------ | ------------------- |
+| update:model-value | Emitted when value is changing | value: current rate |
+| change             | Emitted after value changed    | value: current rate |
+| drag-start         | Emitted when start draging     | -                   |
+| drag-end           | Emitted when end draging       | -                   |
 
 ### Slots
 
