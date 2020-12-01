@@ -37,7 +37,6 @@ module.exports = {
         searchConfig: {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
-          placeholder: '搜索文档...',
           transformItems(items) {
             if (location.hostname !== 'youzan.github.io') {
               items.forEach((item) => {
@@ -411,7 +410,6 @@ module.exports = {
         searchConfig: {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
-          placeholder: 'Search...',
         },
         nav: [
           {
