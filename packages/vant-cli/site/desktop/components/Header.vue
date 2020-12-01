@@ -7,12 +7,6 @@
           <span>{{ config.title }}</span>
         </a>
 
-        <search-input
-          v-if="searchConfig"
-          :lang="lang"
-          :search-config="searchConfig"
-        />
-
         <ul class="van-doc-header__top-nav">
           <li
             v-for="(item, index) in config.links"
@@ -56,6 +50,12 @@
           <li v-if="langLabel && langLink" class="van-doc-header__top-nav-item">
             <a class="van-doc-header__cube" :href="langLink">{{ langLabel }}</a>
           </li>
+
+          <search-input
+            v-if="searchConfig"
+            :lang="lang"
+            :search-config="searchConfig"
+          />
         </ul>
       </div>
     </div>
