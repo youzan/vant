@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render icon-slot correctly 1`] = `
+<div class="van-grid van-hairline--top">
+  <div class="van-grid-item"
+       style="flex-basis: 25%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center van-hairline">
+      <div class="van-badge__wrapper">
+        Custom Icon
+        <div class="van-badge van-badge--fixed">
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render square grid with gutter correctly 1`] = `
+<div style="padding-left: 10rem;"
+     class="van-grid"
+>
+  <div class="van-grid-item van-grid-item--square"
+       style="flex-basis: 50%; padding-top: 50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline"
+         style="right: 10rem; bottom: 10rem; height: auto;"
+    >
+    </div>
+  </div>
+  <div class="van-grid-item van-grid-item--square"
+       style="flex-basis: 50%; padding-top: 50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline"
+         style="right: 10rem; bottom: 10rem; height: auto;"
+    >
+    </div>
+  </div>
+  <div class="van-grid-item van-grid-item--square"
+       style="flex-basis: 50%; padding-top: 50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline"
+         style="right: 10rem; bottom: 10rem; height: auto;"
+    >
+    </div>
+  </div>
+</div>
+`;

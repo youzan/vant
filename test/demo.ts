@@ -8,7 +8,7 @@ Locale.use('en-US', enUS);
 
 const EmptyComponent = {
   render() {
-    return h('div', [(this as any).$slots.default()]);
+    return h('div', [this.$slots.default()]);
   },
   inheritAttrs: false,
 };
@@ -28,7 +28,6 @@ export function snapshotDemo(Demo: any, option: any = {}) {
         mixins: [DemoLocaleMixin],
         components: {
           'demo-block': EmptyComponent,
-          'demo-section': EmptyComponent,
         },
         plugins: [(window as any).vant],
       },
