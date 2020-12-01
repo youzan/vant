@@ -15,8 +15,9 @@ module.exports = {
   site: {
     defaultLang: 'en-US',
     versions: [
-      { label: '1.x', link: '/vant/1.x/' },
-      { label: '2.x', link: '/vant/' },
+      { label: 'Vant 1.x', link: '/vant/1.x/' },
+      { label: 'Vant 2.x', link: '/vant/' },
+      { label: 'Vant Weapp', link: '/vant-weapp/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
@@ -28,10 +29,6 @@ module.exports = {
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         langLabel: '中文',
         links: [
-          {
-            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: '/vant-weapp',
-          },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant',
@@ -404,12 +401,8 @@ module.exports = {
         title: 'Vant',
         description: 'Mobile UI Components built on Vue',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
-        langLabel: 'En',
+        langLabel: 'EN',
         links: [
-          {
-            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
-            url: '/vant-weapp',
-          },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant',

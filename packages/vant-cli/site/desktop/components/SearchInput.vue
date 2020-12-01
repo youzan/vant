@@ -47,4 +47,8 @@ export default {
   display: inline-block;
   vertical-align: middle;
 }
+
+.DocSearch-Button {
+  height: 32px;
+}
 </style>

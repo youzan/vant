@@ -15,7 +15,7 @@
 
 <script>
 import VanDoc from './components';
-import { config, packageVersion } from 'site-desktop-shared';
+import { config } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
 import { scrollToAnchor } from './utils';
 
@@ -28,7 +28,6 @@ export default {
     const path = location.pathname.replace(/\/index(\.html)?/, '/');
 
     return {
-      packageVersion,
       simulator: `${path}mobile.html${location.hash}`,
     };
   },
@@ -58,11 +57,7 @@ export default {
     },
 
     versions() {
-      if (config.site.versions) {
-        return [{ label: packageVersion }, ...config.site.versions];
-      }
-
-      return null;
+      return config.site.versions || null;
     },
   },
 

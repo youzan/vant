@@ -7,7 +7,7 @@ module.exports = {
   themeConfig: {
     nav: [
       {
-        text: 'Github',
+        text: 'GitHub',
         link: 'https://github.com/youzan/vant/tree/next/packages/vant-use',
       },
     ],
