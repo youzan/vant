@@ -78,6 +78,7 @@ export async function compileSfc(filePath: string): Promise<any> {
 
         if (template) {
           const render = compileTemplate({
+            id: scopeId,
             source: template.content,
             filename: filePath,
           }).code;
