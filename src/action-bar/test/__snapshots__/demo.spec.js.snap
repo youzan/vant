@@ -99,7 +99,7 @@ exports[`should render demo and match snapshot 1`] = `
          tabindex="0"
     >
       <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon"
-           style="color: rgb(7, 193, 96);"
+           style="color: rgb(238, 10, 36);"
       >
       </div>
       Icon1
@@ -162,7 +162,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <button type="button"
             class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
-            style="color: rgb(255, 255, 255); border-color: #be99ff; background: rgb(190, 153, 255);"
+            style="color: white; border-color: #be99ff; background: rgb(190, 153, 255);"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -172,7 +172,7 @@ exports[`should render demo and match snapshot 1`] = `
     </button>
     <button type="button"
             class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last"
-            style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;"
+            style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
     >
       <div class="van-button__content">
         <span class="van-button__text">

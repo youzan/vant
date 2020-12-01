@@ -73,7 +73,7 @@ export default {
 | z-index | z-index 层级 | _number \| string_ | `1` |
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
-| highlight-color | 索引字符高亮颜色 | _string_ | `#07c160` |
+| highlight-color | 索引字符高亮颜色 | _string_ | `#ee0a24` |
 
 ### IndexAnchor Props
 
@@ -103,7 +103,7 @@ export default {
 | @index-bar-sidebar-z-index            | `2`                 | -    |
 | @index-bar-index-font-size            | `@font-size-xs`     | -    |
 | @index-bar-index-line-height          | `@line-height-xs`   | -    |
-| @index-bar-index-active-color         | `@green`            | -    |
+| @index-bar-index-active-color         | `@red`              | -    |
 | @index-anchor-z-index                 | `1`                 | -    |
 | @index-anchor-padding                 | `0 @padding-md`     | -    |
 | @index-anchor-text-color              | `@text-color`       | -    |
@@ -111,5 +111,5 @@ export default {
 | @index-anchor-font-size               | `@font-size-md`     | -    |
 | @index-anchor-line-height             | `32px`              | -    |
 | @index-anchor-background-color        | `transparent`       | -    |
-| @index-anchor-sticky-text-color       | `@green`            | -    |
+| @index-anchor-sticky-text-color       | `@red`              | -    |
 | @index-anchor-sticky-background-color | `@white`            | -    |

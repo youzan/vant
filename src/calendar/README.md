@@ -112,7 +112,7 @@ Set `show-confirm` to `false` to hide the confirm button. In this case, the `con
 Use `color` prop to custom calendar color.
 
 ```html
-<van-calendar v-model:show="show" color="#07c160" />
+<van-calendar v-model:show="show" color="#1989fa" />
 ```
 
 ### Custom Date Range

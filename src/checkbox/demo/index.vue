@@ -19,7 +19,7 @@
   </demo-block>
 
   <demo-block :title="t('customColor')">
-    <van-checkbox v-model="checkbox2" checked-color="#07c160">
+    <van-checkbox v-model="checkbox2" checked-color="#ee0a24">
       {{ t('customColor') }}
     </van-checkbox>
   </demo-block>

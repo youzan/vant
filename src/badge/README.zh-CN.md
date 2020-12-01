@@ -24,14 +24,20 @@ app.use(Badge);
 <van-badge :content="5">
   <div class="child" />
 </van-badge>
+<van-badge :content="10">
+  <div class="child" />
+</van-badge>
+<van-badge content="Hot">
+  <div class="child" />
+</van-badge>
 <van-badge dot>
   <div class="child" />
 </van-badge>
 
 <style>
   .child {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background: #f2f3f5;
     border-radius: 4px;
   }
@@ -44,6 +50,9 @@ app.use(Badge);
 
 ```html
 <van-badge :content="20" max="9">
+  <div class="child" />
+</van-badge>
+<van-badge :content="50" max="20">
   <div class="child" />
 </van-badge>
 <van-badge :content="200" max="99">
@@ -59,9 +68,45 @@ app.use(Badge);
 <van-badge :content="5" color="#1989fa">
   <div class="child" />
 </van-badge>
+<van-badge :content="10" color="#1989fa">
+  <div class="child" />
+</van-badge>
 <van-badge dot color="#1989fa">
   <div class="child" />
 </van-badge>
+```
+
+### 自定义徽标内容
+
+通过 `content` 插槽可以自定义徽标的内容，比如插入一个图标。
+
+```html
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="success" class="badge-icon" />
+  </template>
+</van-badge>
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="cross" class="badge-icon" />
+  </template>
+</van-badge>
+<van-badge>
+  <div class="child" />
+  <template #content>
+    <van-icon name="down" class="badge-icon" />
+  </template>
+</van-badge>
+```
+
+```css
+.badge-icon {
+  display: block;
+  font-size: 10px;
+  line-height: 16px;
+}
 ```
 
 ### 独立展示
@@ -69,6 +114,8 @@ app.use(Badge);
 当 Badge 没有子元素时，会作为一个独立的元素进行展示。
 
 ```html
+<van-badge :content="20" />
+
 <van-badge :content="200" max="99" />
 ```
 

@@ -1,7 +1,6 @@
 import { watch, computed, PropType } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import { isObject, getSizeStyle, createNamespace } from '../utils';
-import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
 
@@ -21,6 +20,9 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
 export default createComponent({
   props: {
     text: String,
+    size: [Number, String],
+    color: [String, Object] as PropType<string | Record<string, string>>,
+    layerColor: String,
     strokeLinecap: String as PropType<CanvasLineCap>,
     currentRate: {
       type: Number,
@@ -30,10 +32,6 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    size: {
-      type: [Number, String],
-      default: 100,
-    },
     fill: {
       type: String,
       default: 'none',
@@ -41,14 +39,6 @@ export default createComponent({
     rate: {
       type: [Number, String],
       default: 100,
-    },
-    layerColor: {
-      type: String,
-      default: WHITE,
-    },
-    color: {
-      type: [String, Object],
-      default: BLUE,
     },
     strokeWidth: {
       type: [Number, String],
@@ -105,16 +95,6 @@ export default createComponent({
     );
 
     const renderHover = () => {
-      const style = {
-        fill: props.fill,
-        stroke: props.layerColor,
-        strokeWidth: `${props.strokeWidth}px`,
-      };
-
-      return <path class={bem('hover')} style={style} d={path.value} />;
-    };
-
-    const renderLayer = () => {
       const PERIMETER = 3140;
       const { color, strokeWidth, currentRate, strokeLinecap } = props;
       const offset = (PERIMETER * currentRate) / 100;
@@ -129,10 +109,20 @@ export default createComponent({
         <path
           d={path.value}
           style={style}
-          class={bem('layer')}
+          class={bem('hover')}
           stroke={isObject(color) ? `url(#${id})` : color}
         />
       );
+    };
+
+    const renderLayer = () => {
+      const style = {
+        fill: props.fill,
+        stroke: props.layerColor,
+        strokeWidth: `${props.strokeWidth}px`,
+      };
+
+      return <path class={bem('layer')} style={style} d={path.value} />;
     };
 
     const renderGradient = () => {
@@ -170,8 +160,8 @@ export default createComponent({
       <div class={bem()} style={getSizeStyle(props.size)}>
         <svg viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}>
           {renderGradient()}
-          {renderHover()}
           {renderLayer()}
+          {renderHover()}
         </svg>
         {renderText()}
       </div>

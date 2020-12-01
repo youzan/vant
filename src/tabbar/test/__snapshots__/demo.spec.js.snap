@@ -167,7 +167,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
     <div class="van-tabbar-item van-tabbar-item--active"
-         style="color: rgb(7, 193, 96);"
+         style="color: rgb(238, 10, 36);"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">

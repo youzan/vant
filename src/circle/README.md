@@ -137,6 +137,9 @@ How to use: [Custom Theme](#/en-US/theme).
 
 | Name                     | Default Value       | Description |
 | ------------------------ | ------------------- | ----------- |
+| @circle-size             | `100px`             | -           |
+| @circle-color            | `@blue`             | -           |
+| @circle-layer-color      | `@white`            | -           |
 | @circle-text-color       | `@text-color`       | -           |
 | @circle-text-font-weight | `@font-weight-bold` | -           |
 | @circle-text-font-size   | `@font-size-md`     | -           |

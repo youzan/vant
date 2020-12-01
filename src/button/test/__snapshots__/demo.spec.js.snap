@@ -324,7 +324,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <button type="button"
           class="van-button van-button--default van-button--normal"
-          style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;"
+          style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -344,7 +344,7 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
   <button type="button"
           class="van-button van-button--default van-button--normal"
-          style="color: rgb(255, 255, 255); border: 0px;"
+          style="color: white; border: 0px;"
   >
     <div class="van-button__content">
       <span class="van-button__text">

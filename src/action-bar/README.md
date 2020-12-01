@@ -58,7 +58,7 @@ Use `badge` prop to show badge in icon.
 
 ```html
 <van-action-bar>
-  <van-action-bar-icon icon="chat-o" text="Icon1" color="#07c160" />
+  <van-action-bar-icon icon="chat-o" text="Icon1" color="#ee0a24" />
   <van-action-bar-icon icon="cart-o" text="Icon2" />
   <van-action-bar-icon icon="star" text="Collected" color="#ff5000" />
   <van-action-bar-button type="warning" text="Button" />

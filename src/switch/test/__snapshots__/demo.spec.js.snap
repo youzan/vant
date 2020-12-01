@@ -55,7 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="switch"
        class="van-switch van-switch--on"
-       style="background-color: rgb(7, 193, 96);"
+       style="background-color: rgb(238, 10, 36);"
        aria-checked="true"
   >
     <div class="van-switch__node">

@@ -18,40 +18,34 @@
   </demo-block>
 
   <demo-block :title="t('customColor')">
-    <van-badge content="5" :color="BLUE">
+    <van-badge content="5" color="#1989fa">
       <div class="child" />
     </van-badge>
-    <van-badge dot :color="BLUE">
+    <van-badge dot color="#1989fa">
       <div class="child" />
     </van-badge>
   </demo-block>
 
   <demo-block :title="t('standalone')">
-    <van-badge content="200" max="99" style="margin-left: 16px;" />
+    <van-badge content="200" max="99" style="margin-left: 16px" />
   </demo-block>
 </template>
 
 <script>
-import { BLUE } from '../../utils/constant';
-
 export default {
   i18n: {
     'zh-CN': {
       max: '最大值',
       standalone: '独立展示',
       customColor: '自定义颜色',
+      customContent: '自定义徽标内容',
     },
     'en-US': {
       max: 'Max',
       standalone: 'Standalone',
       customColor: 'Custom Color',
+      customContent: 'Custom Content',
     },
-  },
-
-  data() {
-    return {
-      BLUE,
-    };
   },
 };
 </script>
@@ -67,10 +61,16 @@ export default {
   }
 
   .child {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background: @gray-2;
     border-radius: 4px;
+  }
+
+  .badge-icon {
+    display: block;
+    font-size: 10px;
+    line-height: 16px;
   }
 }
 </style>

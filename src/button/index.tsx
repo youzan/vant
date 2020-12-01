@@ -2,7 +2,7 @@ import { PropType, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
-import { BORDER_SURROUND, WHITE } from '../utils/constant';
+import { BORDER_SURROUND } from '../utils/constant';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
@@ -116,7 +116,7 @@ export default createComponent({
       if (color) {
         const style: CSSProperties = {};
 
-        style.color = plain ? color : WHITE;
+        style.color = plain ? color : 'white';
 
         if (!plain) {
           // Use background instead of backgroundColor to make linear-gradient work
