@@ -27,7 +27,7 @@ module.exports = {
         title: 'Vant',
         description: '轻量、可靠的移动端 Vue 组件库',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
-        langLabel: '中文',
+        langLabel: '中',
         links: [
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',

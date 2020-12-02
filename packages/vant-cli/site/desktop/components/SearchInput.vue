@@ -50,5 +50,15 @@ export default {
 
 .DocSearch-Button {
   height: 32px;
+  background: #f7f8fa;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.DocSearch-Search-Icon {
+  width: 18px;
+  height: 18px;
 }
 </style>

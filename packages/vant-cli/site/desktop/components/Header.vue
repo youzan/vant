@@ -47,7 +47,9 @@
           </li>
 
           <li v-if="langLabel && langLink" class="van-doc-header__top-nav-item">
-            <a class="van-doc-header__cube" :href="langLink">{{ langLabel }}</a>
+            <a class="van-doc-header__cube" :href="langLink">
+              {{ langLabel }}
+            </a>
           </li>
 
           <search-input
@@ -181,9 +183,10 @@ export default {
     position: relative;
     display: block;
     padding: 0 12px;
-    color: #fff;
+    color: #001938;
+    background: #f7f8fa;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 30px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.7);
     border-radius: 20px;
@@ -196,11 +199,11 @@ export default {
 
     &::after {
       position: absolute;
-      top: 9px;
+      top: 10px;
       right: 9px;
       width: 5px;
       height: 5px;
-      color: rgba(255, 255, 255, 0.9);
+      color: #001938;
       border: 1px solid;
       border-color: transparent transparent currentColor currentColor;
       transform: rotate(-45deg);
@@ -263,8 +266,8 @@ export default {
 
     img {
       display: block;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
       &:hover {
