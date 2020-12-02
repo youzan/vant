@@ -1,16 +1,14 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-contact-list
-        v-model="chosenContactId"
-        :list="t('list')"
-        :default-tag-text="t('defaultTagText')"
-        @add="onAdd"
-        @edit="onEdit"
-        @select="onSelect"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('basicUsage')">
+    <van-contact-list
+      v-model="chosenContactId"
+      :list="t('list')"
+      :default-tag-text="t('defaultTagText')"
+      @add="onAdd"
+      @edit="onEdit"
+      @select="onSelect"
+    />
+  </demo-block>
 </template>
 
 <script>

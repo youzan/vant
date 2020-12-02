@@ -1,16 +1,14 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('basicUsage')">
-      <van-contact-edit
-        is-edit
-        show-set-default
-        :contact-info="editingContact"
-        :set-default-label="t('defaultLabel')"
-        @save="onSave"
-        @delete="onDelete"
-      />
-    </demo-block>
-  </demo-section>
+  <demo-block :title="t('basicUsage')">
+    <van-contact-edit
+      is-edit
+      show-set-default
+      :contact-info="editingContact"
+      :set-default-label="t('defaultLabel')"
+      @save="onSave"
+      @delete="onDelete"
+    />
+  </demo-block>
 </template>
 
 <script>
