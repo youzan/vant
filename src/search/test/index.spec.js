@@ -119,3 +119,21 @@ test('should render action text when using action-text prop', () => {
 
   expect(wrapper.find('.van-search__action').html()).toMatchSnapshot();
 });
+
+test('should call input.focus when vm.focus is called', () => {
+  const wrapper = mount(Search);
+  const onFocus = jest.fn();
+  wrapper.find('input').element.focus = onFocus;
+
+  wrapper.vm.focus();
+  expect(onFocus).toHaveBeenCalledTimes(1);
+});
+
+test('should call input.blur when vm.blur is called', () => {
+  const wrapper = mount(Search);
+  const onBlur = jest.fn();
+  wrapper.find('input').element.blur = onBlur;
+
+  wrapper.vm.blur();
+  expect(onBlur).toHaveBeenCalledTimes(1);
+});
