@@ -1,5 +1,12 @@
 # 更新日志
 
+## v3.1.3
+
+`2020-12-03`
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
+
 ## v3.1.2
 
 `2020-12-02`
@@ -30,6 +37,8 @@
 - 升级 TypeScript 4
 
 ## v2.7.0
+
+`2020-12-03`
 
 - 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
 - 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
