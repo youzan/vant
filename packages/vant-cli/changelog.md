@@ -1,5 +1,10 @@
 # 更新日志
 
+## v2.7.0
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
+
 ## v2.6.2
 
 `2020-11-15`
