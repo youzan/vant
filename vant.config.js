@@ -22,6 +22,11 @@ module.exports = {
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
+    htmlPluginOptions: {
+      meta: {
+        'docsearch:version': '3.x',
+      },
+    },
     locales: {
       'zh-CN': {
         title: 'Vant',

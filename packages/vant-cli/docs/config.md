@@ -222,6 +222,13 @@ module.exports = {
 
 配置内容参见 [docsearch](https://docsearch.algolia.com/docs/behavior)。
 
+### site.htmlPluginOptions
+
+- Type: `object`
+- Default: `undefined`
+
+html-webpack-plugin 的配置项，详见 [Options](https://github.com/jantimon/html-webpack-plugin#options)。
+
 ## Webpack
 
 通过根目录下的`webpack.config.js`文件可以修改 Webpack 配置，配置内容会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。
