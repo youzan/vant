@@ -30,9 +30,6 @@ export default {
         docsearch({
           ...this.searchConfig,
           container: '#docsearch',
-          searchParameters: {
-            facetFilters: [`lang:${this.lang}`],
-          },
         });
       }
     },
