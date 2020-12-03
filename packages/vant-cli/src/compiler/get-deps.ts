@@ -71,3 +71,15 @@ export function getDeps(filePath: string) {
 
   return paths;
 }
+
+// "import App from 'App.vue';" => "import App from 'App.xxx';"
+export function replaceScriptImportExt(code: string, from: string, to: string) {
+  const importLines = matchImports(code);
+
+  importLines.forEach(importLine => {
+    const result = importLine.replace(from, to);
+    code = code.replace(importLine, result);
+  });
+
+  return code;
+}
