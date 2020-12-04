@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 // Utils
 import { bem, createComponent } from './shared';
@@ -121,7 +121,7 @@ export default createComponent({
           return;
         }
       }
-
+      items = reactive(items);
       emit('update:modelValue', [...props.modelValue, ...toArray(items)]);
 
       if (props.afterRead) {
