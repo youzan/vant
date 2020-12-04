@@ -2,8 +2,12 @@
   "name": "@vant/popperjs",
   "version": "1.0.0",
   "description": "Precompiled popperjs core",
-  "main": "lib/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

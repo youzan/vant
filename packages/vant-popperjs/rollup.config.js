@@ -4,9 +4,15 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: path.join(__dirname, 'src', 'index.ts'),
-  output: {
-    dir: 'lib',
-    format: 'cjs',
-  },
+  output: [
+    {
+      dir: 'dist/cjs',
+      format: 'cjs',
+    },
+    {
+      dir: 'dist/esm',
+      format: 'esm',
+    },
+  ],
   plugins: [nodeResolve(), babel({ babelHelpers: 'runtime' })],
 };
