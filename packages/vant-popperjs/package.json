@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "rollup --config rollup.config.js --watch",
-    "build": "rollup --config rollup.config.js && tsc -p ./tsconfig.json --emitDeclarationOnly"
+    "build": "rollup --config rollup.config.js && tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "release": "npm run build && release-it"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-popperjs",
@@ -25,10 +26,17 @@
     "@babel/runtime": "7.x",
     "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-node-resolve": "^10.0.0",
+    "release-it": "^14.2.2",
     "rollup": "^2.33.3"
   },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
-  ]
+  ],
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "chore: release @vant/popperjs ${version}"
+    }
+  }
 }
