@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
+
+`2020-12-04`
+
+**perf**
+
+- reduce bundle size [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Lazyload: missing esm output [#7685](https://github.com/youzan/vant/issues/7685)
+- NumberKeyboard: fix hide-on-click-outside prop not working [#7668](https://github.com/youzan/vant/issues/7668) [#7667](https://github.com/youzan/vant/issues/7667)
+- Uploader: fix change status is not valid [#7681](https://github.com/youzan/vant/issues/7681)
+- Types: fix teleport typing [#7687](https://github.com/youzan/vant/issues/7687)
+
 ### [v3.0.0-rc.1](https://github.com/youzan/vant/compare/v2.11.1...v3.0.0-rc.1)
 
 `2020-12-01`

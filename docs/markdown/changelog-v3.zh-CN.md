@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
+
+`2020-12-04`
+
+**perf**
+
+- 优化包体积大小 [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Lazyload: 修复未导出 ESModule 的问题 [#7685](https://github.com/youzan/vant/issues/7685)
+- NumberKeyboard: 修复 hide-on-click-outside 属性不生效的问题 [#7668](https://github.com/youzan/vant/issues/7668) [#7667](https://github.com/youzan/vant/issues/7667)
+- Uploader: 修复动态修改 status 不生效的问题 [#7681](https://github.com/youzan/vant/issues/7681)
+- Types: 修复 teleport 类型定义错误的问题 [#7687](https://github.com/youzan/vant/issues/7687)
+
 ### [v3.0.0-rc.1](https://github.com/youzan/vant/compare/v2.11.1...v3.0.0-rc.1)
 
 `2020-12-01`
