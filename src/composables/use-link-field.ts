@@ -1,5 +1,7 @@
 import { watch, inject } from 'vue';
-import { FIELD_KEY } from '../field';
+
+export const FORM_KEY = 'vanForm';
+export const FIELD_KEY = 'vanField';
 
 export function useLinkField(getValue: () => unknown) {
   const field = inject(FIELD_KEY, null) as any;

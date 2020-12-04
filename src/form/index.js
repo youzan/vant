@@ -1,10 +1,9 @@
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
+import { FORM_KEY } from '../composables/use-link-field';
 import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('form');
-
-export const FORM_KEY = 'vanForm';
 
 export default createComponent({
   props: {

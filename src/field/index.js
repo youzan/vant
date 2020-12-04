@@ -26,15 +26,13 @@ import { runSyncRule } from './utils';
 // Composition
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
+import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
 
 // Components
 import Icon from '../icon';
 import Cell, { cellProps } from '../cell';
-import { FORM_KEY } from '../form';
 
 const [createComponent, bem] = createNamespace('field');
-
-export const FIELD_KEY = 'vanField';
 
 export default createComponent({
   props: {
