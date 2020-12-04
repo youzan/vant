@@ -1,3 +1,4 @@
+import { TeleportProps } from 'vue';
 import { VanComponent } from './component';
 import { SwipeToOptions } from './swipe';
 
@@ -8,6 +9,7 @@ export type ImagePreviewOptions =
       images: string[];
       maxZoom?: number;
       minZoom?: number;
+      teleport?: TeleportProps['to'];
       className?: any;
       showIndex?: boolean;
       closeable?: boolean;
@@ -18,7 +20,6 @@ export type ImagePreviewOptions =
       showIndicators?: boolean;
       closeOnPopstate?: boolean;
       closeIconPosition?: string;
-      getContainer?: string | (() => Element);
       onClose?(): void;
       onChange?(index: number): void;
       swipeTo?(index: number, options?: SwipeToOptions): void;

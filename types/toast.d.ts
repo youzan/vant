@@ -1,3 +1,5 @@
+import { TeleportProps } from 'vue';
+
 type ToastMessage = string | number;
 type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 type ToastPosition = 'top' | 'middle' | 'bottom';
@@ -12,6 +14,7 @@ export type ToastOptions = {
   onOpened?: () => void;
   overlay?: boolean;
   duration?: number;
+  teleport?: TeleportProps['to'];
   position?: ToastPosition;
   className?: any;
   transition?: string;
@@ -20,7 +23,6 @@ export type ToastOptions = {
   forbidClick?: boolean;
   closeOnClick?: boolean;
   closeOnClickOverlay?: boolean;
-  getContainer?: string | (() => Element);
 };
 
 export interface VanToast {

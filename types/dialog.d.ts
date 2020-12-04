@@ -1,4 +1,5 @@
 import { VanComponent } from './component';
+import { TeleportProps } from 'vue';
 
 type DialogAction = 'confirm' | 'cancel';
 type DialogDone = (close?: boolean) => void;
@@ -9,6 +10,7 @@ export type DialogOptions = {
   message?: string;
   theme?: string;
   overlay?: boolean;
+  teleport?: TeleportProps['to'];
   className?: any;
   allowHtml?: boolean;
   lockScroll?: boolean;
@@ -24,7 +26,6 @@ export type DialogOptions = {
   showConfirmButton?: boolean;
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
-  getContainer?: string | (() => Element);
   beforeClose?: (action: DialogAction, done: DialogDone) => void;
 };
 
