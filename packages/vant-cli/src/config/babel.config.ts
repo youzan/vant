@@ -1,6 +1,10 @@
 import { ConfigAPI } from '@babel/core';
 
-module.exports = function (api?: ConfigAPI) {
+type PresetOption = {
+  loose?: boolean;
+};
+
+module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
   if (api) {
     api.cache.never();
   }
@@ -15,6 +19,7 @@ module.exports = function (api?: ConfigAPI) {
         '@babel/preset-env',
         {
           modules: useESModules ? false : 'commonjs',
+          loose: options.loose,
         },
       ],
       '@babel/preset-typescript',

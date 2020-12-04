@@ -24,6 +24,7 @@ import {
   isTestDir,
   setNodeEnv,
   setModuleEnv,
+  setBuildTarget,
 } from '../common';
 
 async function compileFile(filePath: string) {
@@ -64,12 +65,14 @@ async function compileDir(dir: string) {
 
 async function buildEs() {
   setModuleEnv('esmodule');
+  setBuildTarget('package');
   await copy(SRC_DIR, ES_DIR);
   await compileDir(ES_DIR);
 }
 
 async function buildLib() {
   setModuleEnv('commonjs');
+  setBuildTarget('package');
   await copy(SRC_DIR, LIB_DIR);
   await compileDir(LIB_DIR);
 }
