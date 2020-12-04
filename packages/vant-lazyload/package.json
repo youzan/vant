@@ -1,7 +1,7 @@
 {
   "name": "@vant/lazyload",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "This is a fork of vue-lazyload",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -29,5 +29,11 @@
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
-  ]
+  ],
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "chore: release @vant/lazyload ${version}"
+    }
+  }
 }
