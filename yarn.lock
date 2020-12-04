@@ -1944,7 +1944,7 @@
     eslint-plugin-import "^2.22.1"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/icons@1.4.0":
+"@vant/icons@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.4.0.tgz#a91f7894f2f34356f78a5d6f8b9d4f1a46add0c5"
   integrity sha1-qR94lPLzQ1b3il1vi51PGkat0MU=
