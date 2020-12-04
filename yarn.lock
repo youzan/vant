@@ -1865,10 +1865,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.1.3":
-  version "3.1.3"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.1.3.tgz?cache=0&sync_timestamp=1606987332362&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.1.3.tgz#7bcb985791d57bca43f07531874a7f75cbd9695b"
-  integrity sha1-e8uYV5HVe8pD8HUxh0p/dcvZaVs=
+"@vant/cli@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.1.4.tgz?cache=0&sync_timestamp=1607063338663&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.1.4.tgz#167bd2c10ecb7f1873d81ab8a41863fa7af2aa1a"
+  integrity sha1-FnvSwQ7Lfxhz2Bq4pBhj+nryqho=
   dependencies:
     "@babel/core" "^7.12.7"
     "@babel/plugin-transform-object-assign" "^7.12.1"
@@ -1949,10 +1949,10 @@
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.4.0.tgz#a91f7894f2f34356f78a5d6f8b9d4f1a46add0c5"
   integrity sha1-qR94lPLzQ1b3il1vi51PGkat0MU=
 
-"@vant/lazyload@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@vant/lazyload/download/@vant/lazyload-1.0.1.tgz#d86859afd612c7058d70d04036aab5cb87009f49"
-  integrity sha1-2GhZr9YSxwWNcNBANqq1y4cAn0k=
+"@vant/lazyload@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@vant/lazyload/download/@vant/lazyload-1.0.2.tgz?cache=0&sync_timestamp=1607063029666&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Flazyload%2Fdownload%2F%40vant%2Flazyload-1.0.2.tgz#1ca486bee2b9465ae005a88014bee873a647f763"
+  integrity sha1-HKSGvuK5RlrgBaiAFL7oc6ZH92M=
 
 "@vant/markdown-loader@^3.0.1":
   version "3.0.1"
@@ -1974,10 +1974,10 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/popperjs@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@vant/popperjs/download/@vant/popperjs-1.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fpopperjs%2Fdownload%2F%40vant%2Fpopperjs-1.0.1.tgz#60fe11a140e52b0262d7cef2542a16e8bb6c31b1"
-  integrity sha1-YP4RoUDlKwJi187yVCoW6LtsMbE=
+"@vant/popperjs@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/@vant/popperjs/download/@vant/popperjs-1.0.2.tgz#522d71656235125a3ae08e9c701a3bae6fd88d7b"
+  integrity sha1-Ui1xZWI1Elo64I6ccBo7rm/YjXs=
   dependencies:
     "@popperjs/core" "^2.5.4"
 
