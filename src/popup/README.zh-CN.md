@@ -26,17 +26,18 @@ app.use(Popup);
 ```
 
 ```js
-export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
+import { ref } from 'vue';
 
-  methods: {
-    showPopup() {
-      this.show = true;
-    },
+export default {
+  setup() {
+    const show = ref(false);
+    const showPopup = () => {
+      show.value = true;
+    };
+    return {
+      show,
+      showPopup,
+    };
   },
 };
 ```
@@ -93,7 +94,7 @@ export default {
 
 ### 指定挂载位置
 
-弹出层默认挂载到组件所在位置，可以通过 `teleport` 属性指定挂载位置。
+弹出层默认挂载到组件标签所在位置，可以通过 `teleport` 属性指定挂载位置。
 
 ```html
 <!-- 挂载到 body 节点下 -->
@@ -108,8 +109,11 @@ export default {
 
 ```js
 export default {
-  beforeCreate() {
-    this.myContainer = document.querySelector('.my-container');
+  setup() {
+    const myContainer = document.querySelector('.my-container');
+    return {
+      myContainer,
+    };
   },
 };
 ```

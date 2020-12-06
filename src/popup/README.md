@@ -20,17 +20,18 @@ app.use(Popup);
 ```
 
 ```js
-export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
+import { ref } from 'vue';
 
-  methods: {
-    showPopup() {
-      this.show = true;
-    },
+export default {
+  setup() {
+    const show = ref(false);
+    const showPopup = () => {
+      show.value = true;
+    };
+    return {
+      show,
+      showPopup,
+    };
   },
 };
 ```
@@ -86,20 +87,23 @@ Use `position` prop to set popup display position.
 Use `teleport` prop to specify mount location.
 
 ```html
-<!-- mount to body -->
+<!-- teleport to body -->
 <van-popup v-model:show="show" teleport="body" />
 
-<!-- mount to #app -->
+<!-- teleport to #app -->
 <van-popup v-model:show="show" teleport="#app" />
 
-<!-- mount to Element -->
+<!-- teleport to Element -->
 <van-popup v-model:show="show" :teleport="myContainer" />
 ```
 
 ```js
 export default {
-  beforeCreate() {
-    this.myContainer = document.querySelector('.my-container');
+  setup() {
+    const myContainer = document.querySelector('.my-container');
+    return {
+      myContainer,
+    };
   },
 };
 ```
