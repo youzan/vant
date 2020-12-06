@@ -94,6 +94,8 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -124,8 +126,8 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       showBasic: false,
       showTop: false,
       showBottom: false,
@@ -136,7 +138,9 @@ export default {
       showGetContainer: false,
       showCustomCloseIcon: false,
       showCustomIconPosition: false,
-    };
+    });
+
+    return toRefs(state);
   },
 };
 </script>

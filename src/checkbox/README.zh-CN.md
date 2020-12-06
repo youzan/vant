@@ -26,11 +26,12 @@ app.use(CheckboxGroup);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
+  setup() {
+    const checked = ref(true);
+    return { checked };
   },
 };
 ```
@@ -87,12 +88,17 @@ export default {
 ```
 
 ```js
+import { toRefs, reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       checked: true,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+    });
+    return {
+      ...toRefs(state),
     };
   },
 };
@@ -111,18 +117,19 @@ export default {
 复选框可以与复选框组一起使用，复选框组通过 `v-model` 数组绑定复选框的勾选状态。
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: ['a', 'b'],
-    };
+  setup() {
+    const checked = ref(['a', 'b']);
+    return { checked };
   },
 };
 ```
@@ -132,18 +139,19 @@ export default {
 将 `direction` 属性设置为 `horizontal` 后，复选框组会变成水平排列。
 
 ```html
-<van-checkbox-group v-model="result" direction="horizontal">
+<van-checkbox-group v-model="checked" direction="horizontal">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      result: [],
-    };
+  setup() {
+    const checked = ref([]);
+    return { checked };
   },
 };
 ```
@@ -176,19 +184,26 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref([]);
+    const checkboxGroup = ref(null);
+
+    const checkAll = () => {
+      checkboxGroup.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      checkboxGroup.value.toggleAll();
+    },
+
     return {
-      result: [],
+      checked,
+      checkAll,
+      toggleAll,
+      checkboxGroup,
     };
-  },
-  methods: {
-    checkAll() {
-      this.$refs.checkboxGroup.toggleAll(true);
-    },
-    toggleAll() {
-      this.$refs.checkboxGroup.toggleAll();
-    },
   },
 };
 ```
@@ -198,7 +213,7 @@ export default {
 此时你需要再引入 `Cell` 和 `CellGroup` 组件，并通过 `Checkbox` 实例上的 toggle 方法触发切换。
 
 ```html
-<van-checkbox-group v-model="result">
+<van-checkbox-group v-model="checked">
   <van-cell-group>
     <van-cell
       v-for="(item, index) in list"
@@ -210,7 +225,7 @@ export default {
       <template #right-icon>
         <van-checkbox
           :name="item"
-          :ref="el => checkboxes[index] = el"
+          :ref="el => checkboxRefs[index] = el"
           @click.stop
         />
       </template>
@@ -224,21 +239,21 @@ import { ref, onBeforeUpdate } from 'vue';
 
 export default {
   setup() {
-    const result = ref([]);
-    const checkboxes = ref([]);
+    const checked = ref([]);
+    const checkboxRefs = ref([]);
     const toggle = (index) => {
-      checkboxes.value[index].toggle();
+      checkboxRefs.value[index].toggle();
     };
 
     onBeforeUpdate(() => {
-      checkboxes.value = [];
+      checkboxRefs.value = [];
     });
 
     return {
       list: ['a', 'b'],
-      result,
       toggle,
-      checkboxes,
+      checked,
+      checkboxRefs,
     };
   },
 };
