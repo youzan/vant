@@ -23,11 +23,12 @@ app.use(Rate);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: 3,
-    };
+  setup() {
+    const value = ref(3);
+    return { value };
   },
 };
 ```
@@ -57,11 +58,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: 2.5,
-    };
+  setup() {
+    const value = ref(2.5);
+    return { value };
   },
 };
 ```
@@ -91,11 +93,19 @@ export default {
 ```
 
 ```javascript
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
 export default {
-  method: {
-    onChange(value) {
+  setup() {
+    const value = ref(3);
+    const onChange = (value) => {
       Toast('当前值：' + value);
-    },
+    };
+    return {
+      value,
+      onChange,
+    };
   },
 };
 ```
