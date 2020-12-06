@@ -25,11 +25,12 @@ app.use(Search);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -51,21 +52,23 @@ Search 组件提供了 `search` 和 `cancel` 事件，`search` 事件在点击�
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      value: '',
-    };
-  },
-  methods: {
-    onSearch(val) {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => {
       Toast(val);
-    },
-    onCancel() {
+    };
+    const onCancel = () => {
       Toast('取消');
-    },
+    };
+    return {
+      value,
+      onSearch,
+      onCancel,
+    };
   },
 };
 ```

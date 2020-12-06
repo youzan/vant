@@ -52,6 +52,10 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -74,25 +78,30 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const t = useTranslate();
+    const state = reactive({
       value1: '',
       value2: '',
       value3: '',
       value4: '',
       value5: '',
       value6: '',
+    });
+
+    const onSearch = (val) => {
+      Toast(val);
     };
-  },
 
-  methods: {
-    onSearch(val) {
-      this.$toast(val);
-    },
+    const onCancel = () => {
+      Toast(t('cancel'));
+    };
 
-    onCancel() {
-      this.$toast(this.t('cancel'));
-    },
+    return {
+      ...toRefs(state),
+      onSearch,
+      onCancel,
+    };
   },
 };
 </script>
