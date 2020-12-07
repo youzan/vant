@@ -89,7 +89,8 @@ export default {
     onChange(value) {
       Toast.loading({ forbidClick: true });
 
-      setTimeout(() => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         Toast.clear();
         this.value = value;
       }, 500);

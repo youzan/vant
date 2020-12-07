@@ -126,14 +126,14 @@ export default createComponent({
     const renderAction = (action, index) => {
       const { icon, text, disabled, className } = action;
       return (
-        <button
-          type="button"
+        <div
+          role="menuitem"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
           onClick={() => onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
-        </button>
+        </div>
       );
     };
 
@@ -167,7 +167,7 @@ export default createComponent({
           {...{ ...attrs, 'onUpdate:show': toggle }}
         >
           <div class={bem('arrow')} />
-          <div class={bem('content')}>
+          <div role="menu" class={bem('content')}>
             {slots.default ? slots.default() : props.actions.map(renderAction)}
           </div>
         </Popup>

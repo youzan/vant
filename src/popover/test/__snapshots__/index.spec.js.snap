@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should allow to custom the className of action 1`] = `
-<button type="button"
-        class="van-popover__action foo"
+<div role="menuitem"
+     class="van-popover__action foo"
 >
   <div class="van-popover__action-text van-hairline--bottom">
     Option
   </div>
-</button>
+</div>
 `;
 
 exports[`should locate to reference element when showed 1`] = `
@@ -23,7 +23,9 @@ exports[`should locate to reference element when showed 2`] = `
   >
     <div class="van-popover__arrow">
     </div>
-    <div class="van-popover__content">
+    <div role="menu"
+         class="van-popover__content"
+    >
     </div>
   </div>
 </transition-stub>
@@ -36,7 +38,9 @@ exports[`should locate to reference element when showed 3`] = `
   >
     <div class="van-popover__arrow">
     </div>
-    <div class="van-popover__content">
+    <div role="menu"
+         class="van-popover__content"
+    >
     </div>
   </div>
 </transition-stub>
@@ -50,7 +54,9 @@ exports[`should watch placement prop and update location 1`] = `
   >
     <div class="van-popover__arrow">
     </div>
-    <div class="van-popover__content">
+    <div role="menu"
+         class="van-popover__content"
+    >
     </div>
   </div>
 </transition-stub>

@@ -238,6 +238,14 @@ export default createComponent({
       }
     };
 
+    const onMousedown = (event: MouseEvent) => {
+      // fix mobile safari page scroll down issue
+      // see: https://github.com/youzan/vant/issues/7690
+      if (props.disableInput) {
+        event.preventDefault();
+      }
+    };
+
     const createListeners = (type: 'plus' | 'minus') => ({
       onClick: (event: MouseEvent) => {
         // disable double tap scrolling on mobile safari
@@ -303,9 +311,10 @@ export default createComponent({
           aria-valuemax={+props.max}
           aria-valuemin={+props.min}
           aria-valuenow={+current.value}
+          onBlur={onBlur}
           onInput={onInput}
           onFocus={onFocus}
-          onBlur={onBlur}
+          onMousedown={onMousedown}
         />
         <button
           v-show={props.showPlus}
