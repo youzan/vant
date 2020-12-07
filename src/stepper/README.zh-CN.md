@@ -110,9 +110,9 @@ export default {
     onChange(value) {
       Toast.loading({ forbidClick: true });
 
-      setTimeout(() => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         Toast.clear();
-
         // 注意此时修改 value 后会再次触发 change 事件
         this.value = value;
       }, 500);
