@@ -106,14 +106,14 @@ export default createComponent({
     renderAction(action, index) {
       const { icon, text, disabled, className } = action;
       return (
-        <button
-          type="button"
+        <div
+          role="menuitem"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
           onClick={() => this.onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
-        </button>
+        </div>
       );
     },
 
@@ -187,7 +187,7 @@ export default createComponent({
           nativeOnTouchstart={this.onTouchstart}
         >
           <div class={bem('arrow')} />
-          <div class={bem('content')}>
+          <div class={bem('content')} role="menu">
             {this.slots('default') || this.actions.map(this.renderAction)}
           </div>
         </Popup>
