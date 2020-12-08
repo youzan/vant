@@ -23,18 +23,19 @@ app.use(Slider);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      value: 50,
-    };
-  },
-  methods: {
-    onChange(value) {
+  setup() {
+    const value = ref(50);
+    const onChange = (value) => {
       Toast('当前值：' + value);
-    },
+    };
+    return {
+      value,
+      onChange,
+    };
   },
 };
 ```
@@ -48,19 +49,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      // 双滑块模式时，值必须是数组
-      value: [10, 50],
-    };
-  },
-  methods: {
-    onChange(value) {
+  setup() {
+    // 双滑块模式时，值必须是数组
+    const value = ref([10, 50]);
+    const onChange = (value) => {
       Toast('当前值：' + value);
-    },
+    };
+    return {
+      value,
+      onChange,
+    };
   },
 };
 ```
@@ -129,19 +131,21 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      value: 50,
-      value2: [10, 50],
-    };
-  },
-  methods: {
-    onChange(value) {
+  setup() {
+    const value = ref(50);
+    const value2 = ref([10, 50]);
+    const onChange = (value) => {
       Toast('当前值：' + value);
-    },
+    };
+    return {
+      value,
+      value2,
+      onChange,
+    };
   },
 };
 ```
