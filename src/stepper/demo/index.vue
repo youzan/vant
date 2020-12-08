@@ -46,6 +46,9 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -70,8 +73,8 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       stepper1: 1,
       stepper2: 1,
       stepper3: 1,
@@ -82,19 +85,27 @@ export default {
       stepper8: 1,
       stepperRound: 1,
       disabledInput: 1,
-    };
-  },
+    });
 
-  methods: {
-    onChange(value) {
-      this.$toast.loading({ forbidClick: true });
+    let timer;
+    const onChange = (newValue) => {
+      if (newValue === state.stepper6) {
+        return;
+      }
 
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.stepper6 = value;
-        this.$toast.clear();
+      Toast.loading({ forbidClick: true });
+
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        state.stepper6 = newValue;
+        Toast.clear();
       }, 500);
-    },
+    };
+
+    return {
+      ...toRefs(state),
+      onChange,
+    };
   },
 };
 </script>

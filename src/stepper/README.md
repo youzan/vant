@@ -19,11 +19,12 @@ app.use(Stepper);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: 1,
-    };
+  setup() {
+    const value = ref(1);
+    return { value };
   },
 };
 ```
@@ -77,24 +78,29 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      value: 1,
-    };
-  },
-  methods: {
-    onChange(value) {
+  setup() {
+    const value = ref(1);
+
+    let timer;
+    const onChange = (newValue) => {
+      if (newValue === value.value) {
+        return;
+      }
+
       Toast.loading({ forbidClick: true });
 
       clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
+      timer = setTimeout(() => {
         Toast.clear();
-        this.value = value;
+        value.value = newValue;
       }, 500);
-    },
+    };
+
+    return { value };
   },
 };
 ```
