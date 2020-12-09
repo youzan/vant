@@ -155,8 +155,6 @@ export default {
       result3: [],
       checkAllResult: [],
       horizontalResult: [],
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     });
 
     const group = ref();
@@ -181,6 +179,8 @@ export default {
       setRefs,
       checkAll,
       toggleAll,
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
   },
 };

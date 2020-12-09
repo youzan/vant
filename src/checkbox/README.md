@@ -76,17 +76,15 @@ Use icon slot to custom icon.
 ```
 
 ```js
-import { toRefs, reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      checked: true,
+    const checked = ref(true);
+    return {
+      checked,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
-    });
-    return {
-      ...toRefs(state),
     };
   },
 };
