@@ -1,7 +1,7 @@
 <template>
   <demo-block :title="t('basicUsage')">
     <van-sticky>
-      <van-button type="primary" style="margin-left: 15px;">
+      <van-button type="primary" style="margin-left: 15px">
         {{ t('basicUsage') }}
       </van-button>
     </van-sticky>
@@ -9,16 +9,16 @@
 
   <demo-block :title="t('offsetTop')">
     <van-sticky :offset-top="50">
-      <van-button type="primary" style="margin-left: 115px;">
+      <van-button type="primary" style="margin-left: 115px">
         {{ t('offsetTop') }}
       </van-button>
     </van-sticky>
   </demo-block>
 
   <demo-block v-if="!isWeapp" :title="t('setContainer')">
-    <div ref="container" style="height: 150px; background-color: #fff;">
+    <div ref="container" style="height: 150px; background-color: #fff">
       <van-sticky :container="container">
-        <van-button type="warning" style="margin-left: 215px;">
+        <van-button type="warning" style="margin-left: 215px">
           {{ t('setContainer') }}
         </van-button>
       </van-sticky>
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -39,14 +41,9 @@ export default {
     },
   },
 
-  data() {
-    return {
-      container: null,
-    };
-  },
-
-  mounted() {
-    this.container = this.$refs.container;
+  setup() {
+    const container = ref(null);
+    return { container };
   },
 };
 </script>
