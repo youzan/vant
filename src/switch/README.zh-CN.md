@@ -25,11 +25,12 @@ app.use(Switch);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
+  setup() {
+    const checked = ref(true);
+    return { checked };
   },
 };
 ```
@@ -75,21 +76,25 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+import { Dialog } from 'vant';
+
 export default {
-  data() {
-    return {
-      checked: true,
-    };
-  },
-  methods: {
-    onUpdateValue(checked) {
+  setup() {
+    const checked = ref(true);
+    const onUpdateValue = (newValue) => {
       Dialog.confirm({
         title: '提醒',
         message: '是否切换开关？',
       }).then(() => {
-        this.checked = checked;
+        checked.value = newValue;
       });
-    },
+    };
+
+    return {
+      checked,
+      onUpdateValue,
+    };
   },
 };
 ```
