@@ -111,11 +111,12 @@ If you need to render vue components within a dialog, you can use dialog compone
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: false,
-    };
+  setup() {
+    const show = ref(false);
+    return { show };
   },
 };
 ```
