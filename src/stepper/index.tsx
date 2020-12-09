@@ -157,7 +157,10 @@ export default createComponent({
     };
 
     const onChange = () => {
-      if ((props as any)[`${actionType}Disabled`]) {
+      if (
+        (actionType === 'plus' && plusDisabled.value) ||
+        (actionType === 'minus' && minusDisabled.value)
+      ) {
         emit('overlimit', actionType);
         return;
       }
