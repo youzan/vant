@@ -24,7 +24,7 @@
   </demo-block>
 
   <demo-block card :title="t('componentCall')">
-    <van-cell is-link @click="componentCall">
+    <van-cell is-link @click="showComponentCall">
       {{ t('componentCall') }}
     </van-cell>
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
@@ -34,7 +34,10 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
 import ImagePreview from '..';
+import Toast from '../../toast';
 
 const images = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',
@@ -69,36 +72,33 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const t = useTranslate();
+    const state = reactive({
       show: false,
-      images,
       index: 0,
+    });
+
+    const onClose = () => {
+      Toast(t('closed'));
     };
-  },
 
-  methods: {
-    onClose() {
-      this.$toast(this.t('closed'));
-    },
-
-    beforeClose() {
-      return new Promise((resolve) => {
+    const beforeClose = () =>
+      new Promise((resolve) => {
         setTimeout(() => {
           resolve(true);
         }, 1000);
       });
-    },
 
-    componentCall() {
-      this.show = true;
-    },
+    const showComponentCall = () => {
+      state.show = true;
+    };
 
-    onChange(index) {
-      this.index = index;
-    },
+    const onChange = (index) => {
+      state.index = index;
+    };
 
-    showImagePreview(options = {}) {
+    const showImagePreview = (options = {}) => {
       const instance = ImagePreview({
         images,
         ...options,
@@ -109,7 +109,17 @@ export default {
           instance.close();
         }, 2000);
       }
-    },
+    };
+
+    return {
+      ...toRefs(state),
+      images,
+      onClose,
+      onChange,
+      beforeClose,
+      showImagePreview,
+      showComponentCall,
+    };
   },
 };
 </script>

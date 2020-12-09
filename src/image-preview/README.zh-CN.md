@@ -123,21 +123,26 @@ setTimeout(() => {
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       show: false,
       index: 0,
+    });
+    const onChange = (index) => {
+      state.index = index;
+    };
+
+    return {
+      ...toRefs(state),
       images: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg',
       ],
+      onChange,
     };
-  },
-  methods: {
-    onChange(index) {
-      this.index = index;
-    },
   },
 };
 ```
