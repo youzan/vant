@@ -31,8 +31,8 @@
     <van-stepper v-model="stepper7" button-size="32px" input-width="40px" />
   </van-cell>
 
-  <van-cell center :title="t('asyncChange')">
-    <van-stepper :model-value="stepper6" async-change @change="onChange" />
+  <van-cell center :title="t('beforeChange')">
+    <van-stepper v-model="stepper6" :before-change="beforeChange" />
   </van-cell>
 
   <van-cell v-if="!isWeapp" center :title="t('roundTheme')">
@@ -56,8 +56,8 @@ export default {
       range: '限制输入范围',
       integer: '限制输入整数',
       roundTheme: '圆角风格',
-      asyncChange: '异步变更',
       customSize: '自定义大小',
+      beforeChange: '异步变更',
       disableInput: '禁用输入框',
       decimalLength: '固定小数位数',
     },
@@ -66,8 +66,8 @@ export default {
       range: 'Range',
       integer: 'Integer',
       roundTheme: 'Round Theme',
-      asyncChange: 'Async Change',
       customSize: 'Custom Size',
+      beforeChange: 'Before Change',
       disableInput: 'Disable Input',
       decimalLength: 'Decimal Length',
     },
@@ -87,24 +87,20 @@ export default {
       disabledInput: 1,
     });
 
-    let timer;
-    const onChange = (newValue) => {
-      if (newValue === state.stepper6) {
-        return;
-      }
-
+    const beforeChange = () => {
       Toast.loading({ forbidClick: true });
 
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        state.stepper6 = newValue;
-        Toast.clear();
-      }, 500);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          Toast.clear();
+          resolve(true);
+        }, 500);
+      });
     };
 
     return {
       ...toRefs(state),
-      onChange,
+      beforeChange,
     };
   },
 };

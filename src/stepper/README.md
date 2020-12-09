@@ -71,10 +71,10 @@ export default {
 <van-stepper v-model="value" input-width="40px" button-size="32px" />
 ```
 
-### Async Change
+### Before Change
 
 ```html
-<van-stepper :model-value="value" async-change @change="onChange" />
+<van-stepper v-model="value" :before-change="beforeChange" />
 ```
 
 ```js
@@ -85,22 +85,22 @@ export default {
   setup() {
     const value = ref(1);
 
-    let timer;
-    const onChange = (newValue) => {
-      if (newValue === value.value) {
-        return;
-      }
-
+    const beforeChange = (value) => {
       Toast.loading({ forbidClick: true });
 
-      clearTimeout(this.timer);
-      timer = setTimeout(() => {
-        Toast.clear();
-        value.value = newValue;
-      }, 500);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          Toast.clear();
+          // resolve 'true' or 'false'
+          resolve(true);
+        }, 500);
+      });
     };
 
-    return { value };
+    return {
+      value,
+      beforeChange,
+    };
   },
 };
 ```
@@ -116,7 +116,7 @@ export default {
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Current value | _number \| string_ | - |
 | min | Min value | _number \| string_ | `1` |
 | max | Max value | _number \| string_ | - |
@@ -133,7 +133,7 @@ export default {
 | disable-plus | Whether to disable plus button | _boolean_ | `false` |
 | disable-minus | Whether to disable minus button | _boolean_ | `false` |
 | disable-input | Whether to disable input | _boolean_ | `false` |
-| async-change | Whether to enable async change | _boolean_ | `false` | - |
+| before-change | Callback function before changing，return `false` to prevent change，support return Promise | _(value) => boolean \| Promise_ | `false` |
 | show-plus | Whether to show plus button | _boolean_ | `true` |
 | show-minus | Whether to show minus button | _boolean_ | `true` |
 | long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |

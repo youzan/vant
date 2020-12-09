@@ -1,7 +1,9 @@
 import { isPromise, noop } from '.';
 
+export type Interceptor = (...args: any[]) => Promise<boolean> | boolean;
+
 export function callInterceptor(options: {
-  interceptor?: (...args: any[]) => Promise<boolean> | boolean;
+  interceptor?: Interceptor;
   args?: any[];
   done: () => void;
   canceled?: () => void;

@@ -93,10 +93,10 @@ export default {
 
 ### 异步变更
 
-如果需要异步地修改输入框的值，可以设置 `async-change` 属性，并在 `change` 事件中手动修改 `value`。
+通过 `before-change` 属性可以在
 
 ```html
-<van-stepper :model-value="value" async-change @change="onChange" />
+<van-stepper v-model="value" :before-change="beforeChange" />
 ```
 
 ```js
@@ -107,22 +107,22 @@ export default {
   setup() {
     const value = ref(1);
 
-    let timer;
-    const onChange = (newValue) => {
-      if (newValue === value.value) {
-        return;
-      }
-
+    const beforeChange = (value) => {
       Toast.loading({ forbidClick: true });
 
-      clearTimeout(this.timer);
-      timer = setTimeout(() => {
-        Toast.clear();
-        value.value = newValue;
-      }, 500);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          Toast.clear();
+          // 在 resolve 函数中返回 true 或 false
+          resolve(true);
+        }, 500);
+      });
     };
 
-    return { value };
+    return {
+      value,
+      beforeChange,
+    };
   },
 };
 ```
@@ -157,7 +157,7 @@ export default {
 | disable-plus | 是否禁用增加按钮 | _boolean_ | `false` |
 | disable-minus | 是否禁用减少按钮 | _boolean_ | `false` |
 | disable-input | 是否禁用输入框 | _boolean_ | `false` |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | _boolean_ | `false` |
+| before-change | 输入值变化前的回调函数，返回 `false` 可阻止输入，支持返回 Promise | _(value) => boolean \| Promise_ | `false` |
 | show-plus | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus | 是否显示减少按钮 | _boolean_ | `true` |
 | long-press `v2.4.3` | 是否开启长按手势 | _boolean_ | `true` |
