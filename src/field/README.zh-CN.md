@@ -28,11 +28,12 @@ app.use(Field);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -55,14 +56,20 @@ export default {
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       tel: '',
       text: '',
       digit: '',
       number: '',
       password: '',
+    });
+
+    return {
+      ...toRefs(state),
     };
   },
 };
@@ -105,11 +112,17 @@ export default {
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '123',
+    });
+
+    return {
+      ...toRefs(state),
     };
   },
 };
@@ -177,18 +190,21 @@ export default {
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
+    });
+    // 过滤输入的数字
+    const formatter = (value) => value.replace(/\d/g, '');
+
+    return {
+      ...toRefs(state),
+      formatter,
     };
-  },
-  methods: {
-    formatter(value) {
-      // 过滤输入的数字
-      return value.replace(/\d/g, '');
-    },
   },
 };
 ```

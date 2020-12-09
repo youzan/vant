@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -62,13 +64,15 @@ export default {
   },
 
   data() {
-    return {
+    const state = reactive({
       text: '',
       phone: '',
       digit: '',
       number: '',
       password: '',
-    };
+    });
+
+    return toRefs(state);
   },
 };
 </script>

@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -26,10 +28,9 @@ export default {
     },
   },
 
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 </script>

@@ -23,11 +23,12 @@ The value of field is bound with v-model.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -45,14 +46,20 @@ Use `type` prop to custom different type fields.
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       tel: '',
       text: '',
       digit: '',
       number: '',
       password: '',
+    });
+
+    return {
+      ...toRefs(state),
     };
   },
 };
@@ -89,11 +96,17 @@ export default {
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '123',
+    });
+
+    return {
+      ...toRefs(state),
     };
   },
 };
@@ -155,17 +168,20 @@ Use `formatter` prop to format the input value.
 ```
 
 ```js
+import { reactive, toRefs } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
+    });
+    const formatter = (value) => value.replace(/\d/g, '');
+
+    return {
+      ...toRefs(state),
+      formatter,
     };
-  },
-  methods: {
-    formatter(value) {
-      return value.replace(/\d/g, '');
-    },
   },
 };
 ```
