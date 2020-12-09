@@ -82,7 +82,7 @@
   },
   "web-types": "vetur/web-types.json",
   "browserslist": [
-    "Android >= 4.0",
-    "iOS >= 8"
+    "Chrome >= 49",
+    "iOS >= 10"
   ]
 }
