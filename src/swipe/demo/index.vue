@@ -64,6 +64,10 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -84,26 +88,30 @@ export default {
     },
   },
 
-  data() {
-    return {
-      current: 0,
-      images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-        'https://img.yzcdn.cn/vant/apple-3.jpg',
-        'https://img.yzcdn.cn/vant/apple-4.jpg',
-      ],
+  setup() {
+    const t = useTranslate();
+    const current = ref(0);
+    const images = [
+      'https://img.yzcdn.cn/vant/apple-1.jpg',
+      'https://img.yzcdn.cn/vant/apple-2.jpg',
+      'https://img.yzcdn.cn/vant/apple-3.jpg',
+      'https://img.yzcdn.cn/vant/apple-4.jpg',
+    ];
+
+    const onChange1 = (index) => {
+      Toast(t('message') + index);
     };
-  },
 
-  methods: {
-    onChange1(index) {
-      this.$toast(this.t('message') + index);
-    },
+    const onChange2 = (index) => {
+      current.value = index;
+    };
 
-    onChange2(index) {
-      this.current = index;
-    },
+    return {
+      images,
+      current,
+      onChange1,
+      onChange2,
+    };
   },
 };
 </script>

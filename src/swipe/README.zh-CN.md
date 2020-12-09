@@ -54,13 +54,12 @@ app.use(SwipeItem);
 
 ```js
 export default {
-  data() {
-    return {
-      images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-      ],
-    };
+  setup() {
+    const images = [
+      'https://img.yzcdn.cn/vant/apple-1.jpg',
+      'https://img.yzcdn.cn/vant/apple-2.jpg',
+    ];
+    return { images };
   },
 };
 ```
@@ -80,10 +79,11 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onChange(index) {
+  setup() {
+    const onChange = (index) => {
       Toast('当前 Swipe 索引：' + index);
-    },
+    };
+    return { onChange };
   },
 };
 ```
@@ -144,16 +144,18 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      current: 0,
+  setup() {
+    const current = ref(0);
+    const onChange = (index) => {
+      current.value = index;
     };
-  },
-  methods: {
-    onChange(index) {
-      this.current = index;
-    },
+    return {
+      current,
+      onChange,
+    };
   },
 };
 ```
