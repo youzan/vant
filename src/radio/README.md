@@ -18,18 +18,19 @@ app.use(RadioGroup);
 Use `v-model` to bind the name of checked radio.
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1">Radio 1</van-radio>
   <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      radio: '1',
-    };
+  setup() {
+    const checked = ref('1');
+    return { checked };
   },
 };
 ```
@@ -37,7 +38,7 @@ export default {
 ### Horizontal
 
 ```html
-<van-radio-group v-model="radio" direction="horizontal">
+<van-radio-group v-model="checked" direction="horizontal">
   <van-radio name="1">Radio 1</van-radio>
   <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
@@ -46,7 +47,7 @@ export default {
 ### Disabled
 
 ```html
-<van-radio-group v-model="radio" disabled>
+<van-radio-group v-model="checked" disabled>
   <van-radio name="1">Radio 1</van-radio>
   <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
@@ -55,7 +56,7 @@ export default {
 ### Custom Shape
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1" shape="square">Radio 1</van-radio>
   <van-radio name="2" shape="square">Radio 2</van-radio>
 </van-radio-group>
@@ -64,7 +65,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1" checked-color="#ee0a24">Radio 1</van-radio>
   <van-radio name="2" checked-color="#ee0a24">Radio 2</van-radio>
 </van-radio-group>
@@ -73,7 +74,7 @@ export default {
 ### Custom Icon Size
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1" icon-size="24px">Radio 1</van-radio>
   <van-radio name="2" icon-size="24px">Radio 2</van-radio>
 </van-radio-group>
@@ -84,7 +85,7 @@ export default {
 Use icon slot to custom icon
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1">
     Radio 1
     <template #icon="props">
@@ -107,10 +108,13 @@ Use icon slot to custom icon
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref('1');
     return {
-      radio: '1',
+      checked,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
@@ -121,7 +125,7 @@ export default {
 ### Disable Label Click
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-radio name="1" label-disabled>Radio 1</van-radio>
   <van-radio name="2" label-disabled>Radio 2</van-radio>
 </van-radio-group>
@@ -130,14 +134,14 @@ export default {
 ### Inside a Cell
 
 ```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="checked">
   <van-cell-group>
-    <van-cell title="Radio 1" clickable @click="radio = '1'">
+    <van-cell title="Radio 1" clickable @click="checked = '1'">
       <template #right-icon>
         <van-radio name="1" />
       </template>
     </van-cell>
-    <van-cell title="Radio 2" clickable @click="radio = '2'">
+    <van-cell title="Radio 2" clickable @click="checked = '2'">
       <template #right-icon>
         <van-radio name="2" />
       </template>
