@@ -26,22 +26,29 @@ app.use(ActionSheet);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: false,
-      actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
-    };
-  },
-  methods: {
-    onSelect(item) {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '选项一' },
+      { name: '选项二' },
+      { name: '选项三' },
+    ];
+    const onSelect = (item) => {
       // 默认情况下点击选项时不会自动收起
       // 可以通过 close-on-click-action 属性开启自动收起
-      this.show = false;
+      show.value = false;
       Toast(item.name);
-    },
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
   },
 };
 ```
@@ -61,19 +68,26 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: false,
-      actions: [{ name: '选项一' }, { name: '选项二' }, { name: '选项三' }],
-    };
-  },
-  methods: {
-    onCancel() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '选项一' },
+      { name: '选项二' },
+      { name: '选项三' },
+    ];
+    const onCancel = () => {
       Toast('取消');
-    },
+    };
+
+    return {
+      show,
+      actions,
+      onCancel,
+    };
   },
 };
 ```
@@ -93,15 +107,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '选项一' },
+      { name: '选项二' },
+      { name: '选项三', subname: '描述信息' },
+    ];
+
     return {
-      show: false,
-      actions: [
-        { name: '选项一' },
-        { name: '选项二' },
-        { name: '选项三', subname: '描述信息' },
-      ],
+      show,
+      actions,
     };
   },
 };
@@ -121,15 +140,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '着色选项', color: '#ee0a24' },
+      { name: '禁用选项', disabled: true },
+      { name: '加载选项', loading: true },
+    ];
+
     return {
-      show: false,
-      actions: [
-        { name: '着色选项', color: '#ee0a24' },
-        { name: '禁用选项', disabled: true },
-        { name: '加载选项', loading: true },
-      ],
+      show,
+      actions,
     };
   },
 };

@@ -22,24 +22,27 @@ Use `actions` prop to set options of action-sheet.
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: false,
-      actions: [
-        { name: 'Option 1' },
-        { name: 'Option 2' },
-        { name: 'Option 3' },
-      ],
-    };
-  },
-  methods: {
-    onSelect(item) {
-      this.show = false;
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Option 1' },
+      { name: 'Option 2' },
+      { name: 'Option 3' },
+    ];
+    const onSelect = (item) => {
+      show.value = false;
       Toast(item.name);
-    },
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
   },
 };
 ```
@@ -57,23 +60,26 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: false,
-      actions: [
-        { name: 'Option 1' },
-        { name: 'Option 2' },
-        { name: 'Option 3' },
-      ],
-    };
-  },
-  methods: {
-    onCancel() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Option 1' },
+      { name: 'Option 2' },
+      { name: 'Option 3' },
+    ];
+    const onCancel = () => {
       Toast('cancel');
-    },
+    };
+
+    return {
+      show,
+      actions,
+      onCancel,
+    };
   },
 };
 ```
@@ -91,15 +97,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Option 1' },
+      { name: 'Option 2' },
+      { name: 'Option 3', subname: 'Description' },
+    ];
+
     return {
-      show: false,
-      actions: [
-        { name: 'Option 1' },
-        { name: 'Option 2' },
-        { name: 'Option 3', subname: 'Description' },
-      ],
+      show,
+      actions,
     };
   },
 };
@@ -117,15 +128,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Colored Option', color: '#ee0a24' },
+      { name: 'Disabled Option', disabled: true },
+      { name: 'Loading Option', loading: true },
+    ];
+
     return {
-      show: false,
-      actions: [
-        { name: 'Colored Option', color: '#ee0a24' },
-        { name: 'Disabled Option', disabled: true },
-        { name: 'Loading Option', loading: true },
-      ],
+      show,
+      actions,
     };
   },
 };

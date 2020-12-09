@@ -52,7 +52,9 @@
 </template>
 
 <script>
-import { RED } from '../../utils/constant';
+import { computed, reactive, toRefs } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Toast from '../../toast';
 
 export default {
   i18n: {
@@ -86,8 +88,9 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const t = useTranslate();
+    const state = reactive({
       show: {
         basic: false,
         cancel: false,
@@ -95,44 +98,43 @@ export default {
         status: false,
         description: false,
       },
+    });
+
+    const simpleActions = computed(() => [
+      { name: t('option1') },
+      { name: t('option2') },
+      { name: t('option3') },
+    ]);
+
+    const statusActions = computed(() => [
+      { name: t('coloredOption'), color: '#ee0a24' },
+      { name: t('disabledOption'), disabled: true },
+      { loading: true },
+    ]);
+
+    const actionsWithDescription = computed(() => [
+      { name: t('option1') },
+      { name: t('option2') },
+      { name: t('option3'), subname: t('subname') },
+    ]);
+
+    const onSelect = (item) => {
+      state.show.basic = false;
+      Toast(item.name);
     };
-  },
 
-  computed: {
-    simpleActions() {
-      return [
-        { name: this.t('option1') },
-        { name: this.t('option2') },
-        { name: this.t('option3') },
-      ];
-    },
+    const onCancel = () => {
+      Toast(t('cancel'));
+    };
 
-    actionsWithDescription() {
-      return [
-        { name: this.t('option1') },
-        { name: this.t('option2') },
-        { name: this.t('option3'), subname: this.t('subname') },
-      ];
-    },
-
-    statusActions() {
-      return [
-        { name: this.t('coloredOption'), color: RED },
-        { name: this.t('disabledOption'), disabled: true },
-        { loading: true },
-      ];
-    },
-  },
-
-  methods: {
-    onSelect(item) {
-      this.show.basic = false;
-      this.$toast(item.name);
-    },
-
-    onCancel() {
-      this.$toast(this.t('cancel'));
-    },
+    return {
+      ...toRefs(state),
+      onSelect,
+      onCancel,
+      simpleActions,
+      statusActions,
+      actionsWithDescription,
+    };
   },
 };
 </script>
