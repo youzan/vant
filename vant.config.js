@@ -39,25 +39,26 @@ module.exports = {
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          searchParameters: {
-            facetFilters: ['lang:zh-CN', 'version:3.x'],
-          },
-          transformItems(items) {
-            if (location.hostname !== 'youzan.github.io') {
-              items.forEach((item) => {
-                if (item.url) {
-                  item.url =
-                    item.url &&
-                    item.url.replace('youzan.github.io', location.hostname);
-                }
-              });
-            }
-            return items;
-          },
-        },
+        // TODO
+        // searchConfig: {
+        //   apiKey: '90067aecdaa2c85220e2783cd305caac',
+        //   indexName: 'vant',
+        //   searchParameters: {
+        //     facetFilters: ['lang:zh-CN', 'version:3.x'],
+        //   },
+        //   transformItems(items) {
+        //     if (location.hostname !== 'youzan.github.io') {
+        //       items.forEach((item) => {
+        //         if (item.url) {
+        //           item.url =
+        //             item.url &&
+        //             item.url.replace('youzan.github.io', location.hostname);
+        //         }
+        //       });
+        //     }
+        //     return items;
+        //   },
+        // },
         nav: [
           {
             title: '开发指南',
@@ -415,13 +416,14 @@ module.exports = {
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          searchParameters: {
-            facetFilters: ['lang:en-US', 'version:3.x'],
-          },
-        },
+        // TODO
+        // searchConfig: {
+        //   apiKey: '90067aecdaa2c85220e2783cd305caac',
+        //   indexName: 'vant',
+        //   searchParameters: {
+        //     facetFilters: ['lang:en-US', 'version:3.x'],
+        //   },
+        // },
         nav: [
           {
             title: 'Essentials',
