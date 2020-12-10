@@ -1,14 +1,14 @@
 <template>
   <van-tabs>
     <van-tab :title="t('basicUsage')">
-      <van-pull-refresh v-model="isLoading" @refresh="onRefresh(true)">
+      <van-pull-refresh v-model="loading" @refresh="onRefresh(true)">
         <p>{{ tips }}</p>
       </van-pull-refresh>
     </van-tab>
 
     <van-tab :title="t('successTip')">
       <van-pull-refresh
-        v-model="isLoading"
+        v-model="loading"
         :success-text="t('success')"
         @refresh="onRefresh(false)"
       >
@@ -18,7 +18,7 @@
 
     <van-tab :title="t('customTips')">
       <van-pull-refresh
-        v-model="isLoading"
+        v-model="loading"
         head-height="80"
         @refresh="onRefresh(true)"
       >
@@ -42,6 +42,10 @@
 </template>
 
 <script>
+import { computed, onMounted, reactive, toRefs } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -60,47 +64,46 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const t = useTranslate();
+    const state = reactive({
       count: 0,
-      isLoading: false,
-    };
-  },
+      loading: false,
+    });
 
-  computed: {
-    tips() {
-      if (this.count) {
-        return `${this.t('text')}: ${this.count}`;
+    const tips = computed(() => {
+      if (state.count) {
+        return `${t('text')}: ${state.count}`;
       }
+      return t('try');
+    });
 
-      return this.t('try');
-    },
-  },
+    const onRefresh = (showToast) => {
+      setTimeout(() => {
+        if (showToast) {
+          Toast(t('success'));
+        }
+        state.loading = false;
+        state.count++;
+      }, 1000);
+    };
 
-  mounted() {
-    this.preloadImage();
-  },
-
-  methods: {
-    preloadImage() {
+    const preloadImage = () => {
       // preload doge image
       const doge = new Image();
       const dogeFire = new Image();
 
       doge.src = 'https://b.yzcdn.cn/vant/doge.png';
       dogeFire.src = 'https://b.yzcdn.cn/vant/doge-fire.jpg';
-    },
+    };
 
-    onRefresh(showToast) {
-      setTimeout(() => {
-        if (showToast) {
-          this.$toast(this.t('success'));
-        }
+    onMounted(preloadImage);
 
-        this.isLoading = false;
-        this.count++;
-      }, 1000);
-    },
+    return {
+      ...toRefs(state),
+      tips,
+      onRefresh,
+    };
   },
 };
 </script>
