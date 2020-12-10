@@ -16,6 +16,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.11.2](https://github.com/youzan/vant/compare/v2.11.1...v2.11.2)
+
+`2020-12-10`
+
+**style**
+
+- Circle: 新增 @circle-color Less 变量 [1a6cf6](https://github.com/youzan/vant/commit/1a6cf64f548bb19c6bd478db67f2e0a1d7c9a145)
+- Circle: 新增 @circle-layer-color Less 变量 [65a5ed](https://github.com/youzan/vant/commit/65a5ed85537b7a406655bd39f7e4f5332d780a82)
+- Circle: 新增 @circle-size Less 变量 [b57f7e](https://github.com/youzan/vant/commit/b57f7e9d9810ce95047334f0897899ebddaac6f3)
+- IndexBar: 默认高亮颜色调整为红色 [65b680](https://github.com/youzan/vant/commit/65b6807a7e6b8a415b5f228c5d55426cd81a1dfa) [87b0a0](https://github.com/youzan/vant/commit/87b0a034958296a720409ded893e708081c35bc5)
+- IndexBar: 右边距调整为 8px [aad055](https://github.com/youzan/vant/commit/aad055906484d8b6c38a9f84a768f09522b13a41)
+
+**Bug Fixes**
+
+- Popover: 修复在企业微信内边框位置错误的问题 [#7702](https://github.com/youzan/vant/issues/7702)
+- Stepper: 修复在 iOS 下禁用输入框时，点击输入框会导致页面下滑的问题 [#7701](https://github.com/youzan/vant/issues/7701)
+
 ### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
 
 `2020-11-26`
