@@ -16,6 +16,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
+
+`2020-12-10`
+
+**Breaking Change**
+
+- Stepper: rename async-change to before-change [e026d2](https://github.com/youzan/vant/commit/e026d2d83f66bb25c66f805cf8085de70d8e009f)
+
+**perf**
+
+- Stepper: improve bundle size [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Stepper: disabled not work [c27760](https://github.com/youzan/vant/commit/c277603160a7a17685dc532304b9a0c2444db959)
+- Tabs: failed to set active tab [#7717](https://github.com/youzan/vant/issues/7717)
+
 ### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
 
 `2020-12-04`

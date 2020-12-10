@@ -16,6 +16,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
+
+`2020-12-10`
+
+**Breaking Change**
+
+- Stepper: `async-change` 属性重命名为 `before-change`，并调整使用方法 [e026d2](https://github.com/youzan/vant/commit/e026d2d83f66bb25c66f805cf8085de70d8e009f)
+
+**perf**
+
+- Stepper: 优化代码包体积 [#7675](https://github.com/youzan/vant/issues/7675)
+
+**Bug Fixes**
+
+- Stepper: 修复禁用按钮仍然能点击的问题 [c27760](https://github.com/youzan/vant/commit/c277603160a7a17685dc532304b9a0c2444db959)
+- Tabs: 修复动态设置 active 值无效的问题 [#7717](https://github.com/youzan/vant/issues/7717)
+
 ### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
 
 `2020-12-04`
