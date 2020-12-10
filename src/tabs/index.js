@@ -362,7 +362,7 @@ export default createComponent({
       () => props.active,
       (value) => {
         if (value !== currentName.value) {
-          setCurrentIndexByName(name);
+          setCurrentIndexByName(value);
         }
       }
     );
