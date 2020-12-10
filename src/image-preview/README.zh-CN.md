@@ -117,13 +117,17 @@ setTimeout(() => {
 如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `app.use` 注册组件。
 
 ```html
-<van-image-preview v-model:show="show" :images="images" @change="onChange">
+<van-image-preview
+  v-model:show="state.show"
+  :images="state.images"
+  @change="onChange"
+>
   <template v-slot:index>第{{ index }}页</template>
 </van-image-preview>
 ```
 
 ```js
-import { reactive, toRefs } from 'vue';
+import { reactive } from 'vue';
 
 export default {
   setup() {
@@ -136,7 +140,7 @@ export default {
     };
 
     return {
-      ...toRefs(state),
+      state,
       images: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg',
