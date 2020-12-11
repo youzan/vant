@@ -65,31 +65,31 @@
 
 <script>
 import { ref } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      title2: '懒加载',
-      title3: '监听 change 事件',
-      title4: '纵向滚动',
-      title5: '自定义滑块大小',
-      title6: '自定义指示器',
-      message: '当前 Swipe 索引：',
-    },
-    'en-US': {
-      title2: 'Lazy Render',
-      title3: 'Change Event',
-      title4: 'Vertical Scrolling',
-      title5: 'Set SwipeItem Size',
-      title6: 'Custom indicator',
-      message: 'Current Swipe index:',
-    },
+const i18n = {
+  'zh-CN': {
+    title2: '懒加载',
+    title3: '监听 change 事件',
+    title4: '纵向滚动',
+    title5: '自定义滑块大小',
+    title6: '自定义指示器',
+    message: '当前 Swipe 索引：',
   },
+  'en-US': {
+    title2: 'Lazy Render',
+    title3: 'Change Event',
+    title4: 'Vertical Scrolling',
+    title5: 'Set SwipeItem Size',
+    title6: 'Custom indicator',
+    message: 'Current Swipe index:',
+  },
+};
 
+export default {
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const current = ref(0);
     const images = [
       'https://img.yzcdn.cn/vant/apple-1.jpg',
@@ -107,6 +107,7 @@ export default {
     };
 
     return {
+      t,
       images,
       current,
       onChange1,

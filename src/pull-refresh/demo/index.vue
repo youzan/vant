@@ -43,29 +43,29 @@
 
 <script>
 import { computed, onMounted, reactive, toRefs } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      try: '下拉试试',
-      text: '刷新次数',
-      success: '刷新成功',
-      successTip: '成功提示',
-      customTips: '自定义提示',
-    },
-    'en-US': {
-      try: 'Try it down',
-      text: 'Refresh Count',
-      success: 'Refresh success',
-      successTip: 'Success Tip',
-      customTips: 'Custom Tips',
-    },
+const i18n = {
+  'zh-CN': {
+    try: '下拉试试',
+    text: '刷新次数',
+    success: '刷新成功',
+    successTip: '成功提示',
+    customTips: '自定义提示',
   },
+  'en-US': {
+    try: 'Try it down',
+    text: 'Refresh Count',
+    success: 'Refresh success',
+    successTip: 'Success Tip',
+    customTips: 'Custom Tips',
+  },
+};
 
+export default {
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const state = reactive({
       count: 0,
       loading: false,
@@ -101,6 +101,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       tips,
       onRefresh,
     };

@@ -46,35 +46,35 @@
 
 <script>
 import { toRefs, reactive } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      halfStar: '半星',
-      disabled: '禁用状态',
-      customIcon: '自定义图标',
-      customStyle: '自定义样式',
-      customCount: '自定义数量',
-      readonly: '只读状态',
-      changeEvent: '监听 change 事件',
-      toastContent: (value) => `当前值：${value}`,
-    },
-    'en-US': {
-      halfStar: 'Half Star',
-      disabled: 'Disabled',
-      customIcon: 'Custom Icon',
-      customStyle: 'Custom Style',
-      customCount: 'Custom Count',
-      readonly: 'Readonly',
-      changeEvent: 'Change Event',
-      toastContent: (value) => `current value：${value}`,
-    },
+const i18n = {
+  'zh-CN': {
+    halfStar: '半星',
+    disabled: '禁用状态',
+    customIcon: '自定义图标',
+    customStyle: '自定义样式',
+    customCount: '自定义数量',
+    readonly: '只读状态',
+    changeEvent: '监听 change 事件',
+    toastContent: (value) => `当前值：${value}`,
   },
+  'en-US': {
+    halfStar: 'Half Star',
+    disabled: 'Disabled',
+    customIcon: 'Custom Icon',
+    customStyle: 'Custom Style',
+    customCount: 'Custom Count',
+    readonly: 'Readonly',
+    changeEvent: 'Change Event',
+    toastContent: (value) => `current value：${value}`,
+  },
+};
 
+export default {
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const state = reactive({
       value1: 3,
       value2: 3,

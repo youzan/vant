@@ -6,4 +6,7 @@ module.exports = {
     '!**/test/**',
     '!**/lang/**',
   ],
+  moduleNameMapper: {
+    '^@demo(.*)$': '<rootDir>/docs/site$1',
+  },
 };
