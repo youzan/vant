@@ -220,6 +220,40 @@ export default {
 <van-uploader disabled />
 ```
 
+### 自定义单个图片预览
+
+在 `v-model` 数组中个性化单个元素
+
+```html
+<van-uploader v-model="fileList5" :deletable="false" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      fileList5: [
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        {
+          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          deletable: true,
+          beforeDelete: () => {
+            this.$toast('自定义单个图片预览');
+          },
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          deletable: true,
+          imageFit: 'contain',
+          previewSize: 120,
+        },
+      ],
+      deletable: false,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
