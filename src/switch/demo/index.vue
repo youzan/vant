@@ -38,33 +38,33 @@
 
 <script>
 import { reactive, toRefs } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import Dialog from '../../dialog';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      title: '标题',
-      confirm: '提醒',
-      message: '是否切换开关？',
-      withCell: '搭配单元格使用',
-      customSize: '自定义大小',
-      customColor: '自定义颜色',
-      asyncControl: '异步控制',
-    },
-    'en-US': {
-      title: 'Title',
-      confirm: 'Confirm',
-      message: 'Are you sure to toggle switch?',
-      withCell: 'Inside a Cell',
-      customSize: 'Custom Size',
-      customColor: 'Custom Color',
-      asyncControl: 'Async Control',
-    },
+const i18n = {
+  'zh-CN': {
+    title: '标题',
+    confirm: '提醒',
+    message: '是否切换开关？',
+    withCell: '搭配单元格使用',
+    customSize: '自定义大小',
+    customColor: '自定义颜色',
+    asyncControl: '异步控制',
   },
+  'en-US': {
+    title: 'Title',
+    confirm: 'Confirm',
+    message: 'Are you sure to toggle switch?',
+    withCell: 'Inside a Cell',
+    customSize: 'Custom Size',
+    customColor: 'Custom Color',
+    asyncControl: 'Async Control',
+  },
+};
 
+export default {
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const state = reactive({
       checked: true,
       checked2: true,
@@ -85,6 +85,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       onUpdateValue,
     };
   },

@@ -29,32 +29,32 @@
 
 <script>
 import { ref } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import Dialog from '..';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      alert1: '提示弹窗',
-      alert2: '提示弹窗（无标题）',
-      confirm: '确认弹窗',
-      beforeClose: '异步关闭',
-      roundButton: '圆角按钮样式',
-      componentCall: '组件调用',
-      content: '代码是写出来给人看的，附带能在机器上运行',
-    },
-    'en-US': {
-      alert1: 'Alert',
-      alert2: 'Alert without title',
-      confirm: 'Confirm dialog',
-      beforeClose: 'Before Close',
-      roundButton: 'Round Button Style',
-      componentCall: 'Component Call',
-    },
+const i18n = {
+  'zh-CN': {
+    alert1: '提示弹窗',
+    alert2: '提示弹窗（无标题）',
+    confirm: '确认弹窗',
+    beforeClose: '异步关闭',
+    roundButton: '圆角按钮样式',
+    componentCall: '组件调用',
+    content: '代码是写出来给人看的，附带能在机器上运行',
   },
+  'en-US': {
+    alert1: 'Alert',
+    alert2: 'Alert without title',
+    confirm: 'Confirm dialog',
+    beforeClose: 'Before Close',
+    roundButton: 'Round Button Style',
+    componentCall: 'Component Call',
+  },
+};
 
+export default {
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const show = ref(false);
 
     const onClickAlert = () => {
@@ -106,6 +106,7 @@ export default {
     };
 
     return {
+      t,
       show,
       image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
       onClickAlert,

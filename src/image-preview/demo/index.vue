@@ -35,9 +35,34 @@
 
 <script>
 import { reactive, toRefs } from 'vue';
-import { useTranslate } from '../../composables/use-translate';
+import { useTranslate } from '@demo/use-translate';
 import ImagePreview from '..';
 import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    closed: '关闭',
+    showClose: '展示关闭按钮',
+    showImages: '预览图片',
+    beforeClose: '异步关闭',
+    closeEvent: '监听关闭事件',
+    customConfig: '传入配置项',
+    startPosition: '指定初始位置',
+    componentCall: '组件调用',
+    index: (index) => `第${index + 1}页`,
+  },
+  'en-US': {
+    closed: 'closed',
+    showClose: 'Show Close Icon',
+    showImages: 'Show Images',
+    beforeClose: 'Before Close',
+    closeEvent: 'Close Event',
+    customConfig: 'Custom Config',
+    startPosition: 'Set Start Position',
+    componentCall: 'Component Call',
+    index: (index) => `Page: ${index}`,
+  },
+};
 
 const images = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',
@@ -47,33 +72,8 @@ const images = [
 ];
 
 export default {
-  i18n: {
-    'zh-CN': {
-      closed: '关闭',
-      showClose: '展示关闭按钮',
-      showImages: '预览图片',
-      beforeClose: '异步关闭',
-      closeEvent: '监听关闭事件',
-      customConfig: '传入配置项',
-      startPosition: '指定初始位置',
-      componentCall: '组件调用',
-      index: (index) => `第${index + 1}页`,
-    },
-    'en-US': {
-      closed: 'closed',
-      showClose: 'Show Close Icon',
-      showImages: 'Show Images',
-      beforeClose: 'Before Close',
-      closeEvent: 'Close Event',
-      customConfig: 'Custom Config',
-      startPosition: 'Set Start Position',
-      componentCall: 'Component Call',
-      index: (index) => `Page: ${index}`,
-    },
-  },
-
   setup() {
-    const t = useTranslate();
+    const t = useTranslate(i18n);
     const state = reactive({
       show: false,
       index: 0,
@@ -113,6 +113,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       images,
       onClose,
       onChange,
