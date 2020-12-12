@@ -1,4 +1,4 @@
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, PropType } from 'vue';
 
 // Utils
 import { isNaN } from '../utils/validate/number';
@@ -14,6 +14,7 @@ import {
 
 // Composition
 import { useLinkField } from '../composables/use-link-field';
+import { Interceptor, callInterceptor } from '../utils/interceptor';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -39,11 +40,11 @@ export default createComponent({
     modelValue: [Number, String],
     inputWidth: [Number, String],
     buttonSize: [Number, String],
-    asyncChange: Boolean,
     placeholder: String,
     disablePlus: Boolean,
     disableMinus: Boolean,
     disableInput: Boolean,
+    beforeChange: Function as PropType<Interceptor>,
     decimalLength: [Number, String],
     name: {
       type: [Number, String],
@@ -147,17 +148,25 @@ export default createComponent({
       }
     };
 
-    const emitChange = (value: string | number) => {
-      if (props.asyncChange) {
-        emit('update:modelValue', value);
-        emit('change', value, { name: props.name });
+    const setValue = (value: string | number) => {
+      if (props.beforeChange) {
+        callInterceptor({
+          args: [value],
+          interceptor: props.beforeChange,
+          done() {
+            current.value = value;
+          },
+        });
       } else {
         current.value = value;
       }
     };
 
     const onChange = () => {
-      if ((props as any)[`${actionType}Disabled`]) {
+      if (
+        (actionType === 'plus' && plusDisabled.value) ||
+        (actionType === 'minus' && minusDisabled.value)
+      ) {
         emit('overlimit', actionType);
         return;
       }
@@ -165,7 +174,7 @@ export default createComponent({
       const diff = actionType === 'minus' ? -props.step : +props.step;
       const value = format(add(+current.value, diff));
 
-      emitChange(value);
+      setValue(value);
       emit(actionType);
     };
 
@@ -182,11 +191,13 @@ export default createComponent({
         formatted = `${pair[0]}.${pair[1].slice(0, +decimalLength)}`;
       }
 
-      if (!equal(value, formatted)) {
+      if (props.beforeChange) {
+        input.value = String(current.value);
+      } else if (!equal(value, formatted)) {
         input.value = formatted;
       }
 
-      emitChange(formatted);
+      setValue(formatted);
     };
 
     const onFocus = (event: Event) => {

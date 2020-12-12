@@ -24,7 +24,7 @@
   </demo-block>
 
   <demo-block :title="t('asyncControl')">
-    <van-switch :model-value="checked4" @update:model-value="onInput" />
+    <van-switch :model-value="checked4" @update:model-value="onUpdateValue" />
   </demo-block>
 
   <demo-block :title="t('withCell')">
@@ -37,6 +37,10 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Dialog from '../../dialog';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -59,28 +63,30 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const t = useTranslate();
+    const state = reactive({
       checked: true,
       checked2: true,
       checked3: true,
       checked4: true,
       checked5: true,
       checked6: false,
-    };
-  },
+    });
 
-  methods: {
-    onInput(checked) {
-      this.$dialog
-        .confirm({
-          title: this.t('title'),
-          message: this.t('message'),
-        })
-        .then(() => {
-          this.checked4 = checked;
-        });
-    },
+    const onUpdateValue = (checked) => {
+      Dialog.confirm({
+        title: t('title'),
+        message: t('message'),
+      }).then(() => {
+        state.checked4 = checked;
+      });
+    };
+
+    return {
+      ...toRefs(state),
+      onUpdateValue,
+    };
   },
 };
 </script>

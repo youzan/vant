@@ -21,29 +21,33 @@ app.use(PullRefresh);
 下拉刷新时会触发 `refresh` 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 `v-model` 设置为 `false`，表示加载完成。
 
 ```html
-<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-  <p>刷新次数: {{ count }}</p>
+<van-pull-refresh v-model="state.loading" @refresh="onRefresh">
+  <p>刷新次数: {{ state.count }}</p>
 </van-pull-refresh>
 ```
 
 ```js
+import { reactive } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       count: 0,
-      isLoading: false,
-    };
-  },
-  methods: {
-    onRefresh() {
+      loading: false,
+    });
+    const onRefresh = () => {
       setTimeout(() => {
         Toast('刷新成功');
-        this.isLoading = false;
-        this.count++;
+        state.loading = false;
+        state.count++;
       }, 1000);
-    },
+    };
+
+    return {
+      state,
+      onRefresh,
+    };
   },
 };
 ```

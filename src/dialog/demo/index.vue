@@ -28,6 +28,10 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useTranslate } from '../../composables/use-translate';
+import Dialog from '..';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -49,62 +53,68 @@ export default {
     },
   },
 
-  data() {
-    return {
-      show: false,
-      currentRate: 0,
-      image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
+  setup() {
+    const t = useTranslate();
+    const show = ref(false);
+
+    const onClickAlert = () => {
+      Dialog.alert({
+        title: t('title'),
+        message: t('content'),
+      });
     };
-  },
 
-  methods: {
-    onClickAlert() {
-      this.$dialog.alert({
-        title: this.t('title'),
-        message: this.t('content'),
+    const onClickAlert2 = () => {
+      Dialog.alert({
+        message: t('content'),
       });
-    },
+    };
 
-    onClickAlert2() {
-      this.$dialog.alert({
-        message: this.t('content'),
-      });
-    },
-
-    onClickRound() {
-      this.$dialog.alert({
+    const onClickRound = () => {
+      Dialog.alert({
         theme: 'round-button',
-        title: this.t('title'),
-        message: this.t('content'),
+        title: t('title'),
+        message: t('content'),
       });
-    },
+    };
 
-    onClickRound2() {
-      this.$dialog.alert({
+    const onClickRound2 = () => {
+      Dialog.alert({
         theme: 'round-button',
-        message: this.t('content'),
+        message: t('content'),
       });
-    },
+    };
 
-    onClickConfirm() {
-      this.$dialog.confirm({
-        title: this.t('title'),
-        message: this.t('content'),
+    const onClickConfirm = () => {
+      Dialog.confirm({
+        title: t('title'),
+        message: t('content'),
       });
-    },
+    };
 
-    onClickBeforeClose() {
+    const onClickBeforeClose = () => {
       const beforeClose = (action) =>
         new Promise((resolve) => {
           setTimeout(() => resolve(action === 'confirm'), 1000);
         });
 
-      this.$dialog.confirm({
-        title: this.t('title'),
-        message: this.t('content'),
+      Dialog.confirm({
+        title: t('title'),
+        message: t('content'),
         beforeClose,
       });
-    },
+    };
+
+    return {
+      show,
+      image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
+      onClickAlert,
+      onClickAlert2,
+      onClickRound,
+      onClickRound2,
+      onClickConfirm,
+      onClickBeforeClose,
+    };
   },
 };
 </script>

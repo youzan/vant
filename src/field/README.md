@@ -23,11 +23,12 @@ The value of field is bound with v-model.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -37,23 +38,27 @@ export default {
 Use `type` prop to custom different type fields.
 
 ```html
-<van-field v-model="text" label="Text" />
-<van-field v-model="tel" type="tel" label="Phone" />
-<van-field v-model="digit" type="digit" label="Digit" />
-<van-field v-model="number" type="number" label="Number" />
-<van-field v-model="password" type="password" label="Password" />
+<van-field v-model="state.text" label="Text" />
+<van-field v-model="state.tel" type="tel" label="Phone" />
+<van-field v-model="state.digit" type="digit" label="Digit" />
+<van-field v-model="state.number" type="number" label="Number" />
+<van-field v-model="state.password" type="password" label="Password" />
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       tel: '',
       text: '',
       digit: '',
       number: '',
       password: '',
-    };
+    });
+
+    return { state };
   },
 };
 ```
@@ -72,14 +77,14 @@ export default {
 ```html
 <van-cell-group>
   <van-field
-    v-model="value1"
+    v-model="state.value1"
     label="Text"
     left-icon="smile-o"
     right-icon="warning-o"
     placeholder="Show Icon"
   />
   <van-field
-    v-model="value2"
+    v-model="state.value2"
     clearable
     label="Text"
     left-icon="music-o"
@@ -89,12 +94,16 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '123',
-    };
+    });
+
+    return { state };
   },
 };
 ```
@@ -140,13 +149,13 @@ Use `formatter` prop to format the input value.
 
 ```html
 <van-field
-  v-model="value1"
+  v-model="state.value1"
   label="Text"
   :formatter="formatter"
   placeholder="Format On Change"
 />
 <van-field
-  v-model="value2"
+  v-model="state.value2"
   label="Text"
   :formatter="formatter"
   format-trigger="onBlur"
@@ -155,17 +164,20 @@ Use `formatter` prop to format the input value.
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
+    });
+    const formatter = (value) => value.replace(/\d/g, '');
+
+    return {
+      state,
+      formatter,
     };
-  },
-  methods: {
-    formatter(value) {
-      return value.replace(/\d/g, '');
-    },
   },
 };
 ```

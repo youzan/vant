@@ -48,16 +48,19 @@ app.use(Tag);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: true,
+  setup() {
+    const show = ref(true);
+    const close = () => {
+      show.value = false;
     };
-  },
-  methods: {
-    close() {
-      this.show = false;
-    },
+
+    return {
+      show,
+      close,
+    };
   },
 };
 ```

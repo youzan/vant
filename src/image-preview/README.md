@@ -82,27 +82,36 @@ setTimeout(() => {
 ### Component Call
 
 ```html
-<van-image-preview v-model:show="show" :images="images" @change="onChange">
+<van-image-preview
+  v-model:show="state.show"
+  :images="state.images"
+  @change="onChange"
+>
   <template v-slot:index>Page: {{ index }}</template>
 </van-image-preview>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       show: false,
       index: 0,
+    });
+    const onChange = (index) => {
+      state.index = index;
+    };
+
+    return {
+      state,
       images: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg',
       ],
+      onChange,
     };
-  },
-  methods: {
-    onChange(index) {
-      this.index = index;
-    },
   },
 };
 ```

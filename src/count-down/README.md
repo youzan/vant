@@ -19,11 +19,12 @@ app.use(CountDown);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      time: 30 * 60 * 60 * 1000,
-    };
+  setup() {
+    const time = ref(30 * 60 * 60 * 1000);
+    return { time };
   },
 };
 ```
@@ -79,7 +80,7 @@ export default {
   :time="3000"
   :auto-start="false"
   format="ss:SSS"
-  @finish="finish"
+  @finish="onFinish"
 />
 <van-grid clickable :column-num="3">
   <van-grid-item text="Start" icon="play-circle-o" @click="start" />
@@ -92,19 +93,29 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    start() {
-      this.$refs.countDown.start();
-    },
-    pause() {
-      this.$refs.countDown.pause();
-    },
-    reset() {
-      this.$refs.countDown.reset();
-    },
-    finish() {
+  setup() {
+    const countDown = ref(null);
+
+    const start = () => {
+      countDown.value.start();
+    };
+    const pause = () => {
+      countDown.value.pause();
+    };
+    const reset = () => {
+      countDown.value.reset();
+    };
+    const onFinish = () => {
       Toast('Finished');
-    },
+    };
+
+    return {
+      start,
+      pause,
+      reset,
+      onFinish,
+      countDown,
+    };
   },
 };
 ```

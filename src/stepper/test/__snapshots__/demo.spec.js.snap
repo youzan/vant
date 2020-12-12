@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-cell van-cell--center">
   <div class="van-cell__title">
     <span>
-      Async Change
+      Before Change
     </span>
   </div>
   <div class="van-cell__value">

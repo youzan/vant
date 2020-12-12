@@ -17,29 +17,33 @@ app.use(PullRefresh);
 The `refresh` event will be Emitted when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
 
 ```html
-<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-  <p>Refresh Count: {{ count }}</p>
+<van-pull-refresh v-model="state.loading" @refresh="onRefresh">
+  <p>Refresh Count: {{ state.count }}</p>
 </van-pull-refresh>
 ```
 
 ```js
+import { reactive } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       count: 0,
-      isLoading: false,
-    };
-  },
-  methods: {
-    onRefresh() {
+      loading: false,
+    });
+    const onRefresh = () => {
       setTimeout(() => {
         Toast('Refresh Success');
-        this.isLoading = false;
-        this.count++;
+        state.loading = false;
+        state.count++;
       }, 1000);
-    },
+    };
+
+    return {
+      state,
+      onRefresh,
+    };
   },
 };
 ```

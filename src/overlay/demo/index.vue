@@ -3,7 +3,7 @@
     <van-button
       type="primary"
       :text="t('showOverlay')"
-      style="margin-left: 16px;"
+      style="margin-left: 16px"
       @click="show = true"
     />
     <van-overlay :show="show" @click="show = false" />
@@ -13,7 +13,7 @@
     <van-button
       type="primary"
       :text="t('embeddedContent')"
-      style="margin-left: 16px;"
+      style="margin-left: 16px"
       @click="showEmbedded = true"
     />
     <van-overlay :show="showEmbedded" @click="showEmbedded = false">
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -37,11 +39,13 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       show: false,
       showEmbedded: false,
-    };
+    });
+
+    return toRefs(state);
   },
 };
 </script>

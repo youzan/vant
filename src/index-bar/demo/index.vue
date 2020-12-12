@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -39,7 +41,8 @@ export default {
     },
   },
 
-  data() {
+  setup() {
+    const activeTab = ref(0);
     const indexList = [];
     const charCodeOfA = 'A'.charCodeAt(0);
 
@@ -48,7 +51,7 @@ export default {
     }
 
     return {
-      activeTab: 0,
+      activeTab,
       indexList,
       customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
     };

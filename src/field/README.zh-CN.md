@@ -28,11 +28,12 @@ app.use(Field);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '',
-    };
+  setup() {
+    const value = ref('');
+    return { value };
   },
 };
 ```
@@ -43,27 +44,31 @@ export default {
 
 ```html
 <!-- 输入任意文本 -->
-<van-field v-model="text" label="文本" />
+<van-field v-model="state.text" label="文本" />
 <!-- 输入手机号，调起手机号键盘 -->
-<van-field v-model="tel" type="tel" label="手机号" />
+<van-field v-model="state.tel" type="tel" label="手机号" />
 <!-- 允许输入正整数，调起纯数字键盘 -->
-<van-field v-model="digit" type="digit" label="整数" />
+<van-field v-model="state.digit" type="digit" label="整数" />
 <!-- 允许输入数字，调起带符号的纯数字键盘 -->
-<van-field v-model="number" type="number" label="数字" />
+<van-field v-model="state.number" type="number" label="数字" />
 <!-- 输入密码 -->
-<van-field v-model="password" type="password" label="密码" />
+<van-field v-model="state.password" type="password" label="密码" />
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       tel: '',
       text: '',
       digit: '',
       number: '',
       password: '',
-    };
+    });
+
+    return { state };
   },
 };
 ```
@@ -88,14 +93,14 @@ export default {
 ```html
 <van-cell-group>
   <van-field
-    v-model="value1"
+    v-model="state.value1"
     label="文本"
     left-icon="smile-o"
     right-icon="warning-o"
     placeholder="显示图标"
   />
   <van-field
-    v-model="value2"
+    v-model="state.value2"
     clearable
     label="文本"
     left-icon="music-o"
@@ -105,12 +110,16 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '123',
-    };
+    });
+
+    return { state };
   },
 };
 ```
@@ -162,13 +171,13 @@ export default {
 
 ```html
 <van-field
-  v-model="value1"
+  v-model="state.value1"
   label="文本"
   :formatter="formatter"
   placeholder="在输入时执行格式化"
 />
 <van-field
-  v-model="value2"
+  v-model="state.value2"
   label="文本"
   :formatter="formatter"
   format-trigger="onBlur"
@@ -177,18 +186,21 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
+    });
+    // 过滤输入的数字
+    const formatter = (value) => value.replace(/\d/g, '');
+
+    return {
+      state,
+      formatter,
     };
-  },
-  methods: {
-    formatter(value) {
-      // 过滤输入的数字
-      return value.replace(/\d/g, '');
-    },
   },
 };
 ```

@@ -40,13 +40,9 @@ app.use(Sticky);
 
 ```js
 export default {
-  data() {
-    return {
-      container: null,
-    };
-  },
-  mounted() {
-    this.container = this.$refs.container;
+  setup() {
+    const container = ref(null);
+    return { container };
   },
 };
 ```

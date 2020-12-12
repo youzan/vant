@@ -31,8 +31,8 @@
     <van-stepper v-model="stepper7" button-size="32px" input-width="40px" />
   </van-cell>
 
-  <van-cell center :title="t('asyncChange')">
-    <van-stepper :model-value="stepper6" async-change @change="onChange" />
+  <van-cell center :title="t('beforeChange')">
+    <van-stepper v-model="stepper6" :before-change="beforeChange" />
   </van-cell>
 
   <van-cell v-if="!isWeapp" center :title="t('roundTheme')">
@@ -46,6 +46,9 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+import Toast from '../../toast';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -53,8 +56,8 @@ export default {
       range: '限制输入范围',
       integer: '限制输入整数',
       roundTheme: '圆角风格',
-      asyncChange: '异步变更',
       customSize: '自定义大小',
+      beforeChange: '异步变更',
       disableInput: '禁用输入框',
       decimalLength: '固定小数位数',
     },
@@ -63,15 +66,15 @@ export default {
       range: 'Range',
       integer: 'Integer',
       roundTheme: 'Round Theme',
-      asyncChange: 'Async Change',
       customSize: 'Custom Size',
+      beforeChange: 'Before Change',
       disableInput: 'Disable Input',
       decimalLength: 'Decimal Length',
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       stepper1: 1,
       stepper2: 1,
       stepper3: 1,
@@ -82,19 +85,23 @@ export default {
       stepper8: 1,
       stepperRound: 1,
       disabledInput: 1,
+    });
+
+    const beforeChange = () => {
+      Toast.loading({ forbidClick: true });
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          Toast.clear();
+          resolve(true);
+        }, 500);
+      });
     };
-  },
 
-  methods: {
-    onChange(value) {
-      this.$toast.loading({ forbidClick: true });
-
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.stepper6 = value;
-        this.$toast.clear();
-      }, 500);
-    },
+    return {
+      ...toRefs(state),
+      beforeChange,
+    };
   },
 };
 </script>

@@ -24,13 +24,14 @@ app.use(Overlay);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: false
-    }
-  }
-},
+  setup() {
+    const show = ref(false);
+    return { show };
+  },
+};
 ```
 
 ### 嵌入内容

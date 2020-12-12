@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { reactive, toRefs } from 'vue';
+
 export default {
   i18n: {
     'zh-CN': {
@@ -33,17 +35,17 @@ export default {
     },
   },
 
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
-    };
-  },
+    });
+    const formatter = (value) => value.replace(/\d/g, '');
 
-  methods: {
-    formatter(value) {
-      return value.replace(/\d/g, '');
-    },
+    return {
+      ...toRefs(state),
+      formatter,
+    };
   },
 };
 </script>
