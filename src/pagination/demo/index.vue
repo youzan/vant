@@ -48,31 +48,40 @@
   </demo-block>
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      title2: '简单模式',
-      title3: '显示省略号',
-      title4: '自定义按钮',
-      prevText: '上一页',
-      nextText: '下一页',
-    },
-    'en-US': {
-      title2: 'Simple Mode',
-      title3: 'Show ellipses',
-      title4: 'Custom Button',
-      prevText: 'Prev',
-      nextText: 'Next',
-    },
-  },
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    title2: '简单模式',
+    title3: '显示省略号',
+    title4: '自定义按钮',
+    prevText: '上一页',
+    nextText: '下一页',
+  },
+  'en-US': {
+    title2: 'Simple Mode',
+    title3: 'Show ellipses',
+    title4: 'Custom Button',
+    prevText: 'Prev',
+    nextText: 'Next',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       currentPage1: 1,
       currentPage2: 1,
       currentPage3: 1,
       currentPage4: 1,
+    });
+
+    return {
+      ...toRefs(state),
+      t,
     };
   },
 };
