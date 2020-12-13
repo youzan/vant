@@ -26,11 +26,12 @@ The first tab is actived by default, you can set `v-model:active` to active spec
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 2,
-    };
+  setup() {
+    const active = ref(2);
+    return { active };
   },
 };
 ```
@@ -46,11 +47,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeName: 'a',
-    };
+  setup() {
+    const activeName = ref('a');
+    return { activeName };
   },
 };
 ```
@@ -83,10 +85,14 @@ You can set `disabled` attribute on the corresponding `van-tab`.
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickDisabled(name, title) {
-      Toast(title + ' is disabled');
-    },
+  setup() {
+    const onClickDisabled = (name, title) => {
+      Toast(name + ' is disabled');
+    };
+
+    return {
+      onClickDisabled,
+    };
   },
 };
 ```
@@ -117,10 +123,14 @@ Tabs styled as cards.
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClick(name, title) {
+  setup() {
+    const onClick = (name, title) => {
       Toast(title);
-    },
+    };
+
+    return {
+      onClick,
+    };
   },
 };
 ```
@@ -198,8 +208,8 @@ In scrollspy mode, the list of content will be tiled.
 
 ```js
 export default {
-  methods: {
-    beforeChange(index) {
+  setup() {
+    const beforeChange = (index) => {
       // prevent change
       if (index === 1) {
         return false;
@@ -209,7 +219,11 @@ export default {
       return new Promise((resolve) => {
         resolve(index !== 3);
       });
-    },
+    };
+
+    return {
+      beforeChange,
+    };
   },
 };
 ```
