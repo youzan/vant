@@ -27,44 +27,50 @@ app.use(AddressList);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      chosenAddressId: '1',
-      list: [
-        {
-          id: '1',
-          name: 'John Snow',
-          tel: '13000000000',
-          address: 'Somewhere',
-          isDefault: true,
-        },
-        {
-          id: '2',
-          name: 'Ned Stark',
-          tel: '1310000000',
-          address: 'Somewhere',
-        },
-      ],
-      disabledList: [
-        {
-          id: '3',
-          name: 'Tywin',
-          tel: '1320000000',
-          address: 'Somewhere',
-        },
-      ],
-    };
-  },
-  methods: {
-    onAdd() {
+  setup() {
+    const chosenAddressId = ref('1');
+    const list = [
+      {
+        id: '1',
+        name: 'John Snow',
+        tel: '13000000000',
+        address: 'Somewhere',
+        isDefault: true,
+      },
+      {
+        id: '2',
+        name: 'Ned Stark',
+        tel: '1310000000',
+        address: 'Somewhere',
+      },
+    ];
+    const disabledList = [
+      {
+        id: '3',
+        name: 'Tywin',
+        tel: '1320000000',
+        address: 'Somewhere',
+      },
+    ];
+
+    const onAdd = () => {
       Toast('Add');
-    },
-    onEdit(item, index) {
+    };
+    const onEdit = (item, index) => {
       Toast('Edit:' + index);
-    },
+    };
+
+    return {
+      list,
+      onAdd,
+      onEdit,
+      disabledList,
+      chosenAddressId,
+    };
   },
 };
 ```

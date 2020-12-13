@@ -74,6 +74,7 @@ export default {
     };
 
     return {
+      t,
       onSave,
       onDelete,
       areaList,
