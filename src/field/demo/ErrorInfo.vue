@@ -17,32 +17,37 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    phone: '手机号',
+    errorInfo: '错误提示',
+    phoneError: '手机号格式错误',
+    phonePlaceholder: '请输入手机号',
+  },
+  'en-US': {
+    phone: 'Phone',
+    errorInfo: 'Error Info',
+    phoneError: 'Invalid phone',
+    phonePlaceholder: 'Phone',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      phone: '手机号',
-      errorInfo: '错误提示',
-      phoneError: '手机号格式错误',
-      phonePlaceholder: '请输入手机号',
-    },
-    'en-US': {
-      phone: 'Phone',
-      errorInfo: 'Error Info',
-      phoneError: 'Invalid phone',
-      phonePlaceholder: 'Phone',
-    },
-  },
-
-  data() {
+  setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       phone: '123',
       username: '',
     });
 
-    return toRefs(state);
+    return {
+      ...toRefs(state),
+      t,
+    };
   },
 };
 </script>
