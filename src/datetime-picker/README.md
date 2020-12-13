@@ -29,12 +29,15 @@ app.use(DatetimePicker);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -54,23 +57,27 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'year') {
         return `${val} Year`;
       } else if (type === 'month') {
         return `${val} Month`;
       }
       return val;
-    },
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      formatter,
+      currentDate,
+    };
   },
 };
 ```
@@ -89,23 +96,27 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'month') {
         return `${val} Month`;
       } else if (type === 'day') {
         return `${val} Day`;
       }
       return val;
-    },
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      formatter,
+      currentDate,
+    };
   },
 };
 ```
@@ -123,11 +134,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      currentTime: '12:00',
-    };
+    const currentTime = ref('12:00');
+    return { currentTime };
   },
 };
 ```
@@ -145,12 +157,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -169,12 +184,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -192,19 +210,23 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      currentTime: '12:00',
-    };
-  },
-  methods: {
-    filter(type, options) {
+    const currentTime = ref('12:00');
+
+    const filter = (type, options) => {
       if (type === 'minute') {
-        return options.filter((option) => option % 5 === 0);
+        return options.filter((option) => Number(option) % 5 === 0);
       }
       return options;
-    },
+    };
+
+    return {
+      filter,
+      currentTime,
+    };
   },
 };
 ```
@@ -222,14 +244,13 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+  setup() {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'year') {
         return val + ' Year';
       }
@@ -240,7 +261,12 @@ export default {
         return val + ' Day';
       }
       return val;
-    },
+    };
+
+    return {
+      formatter,
+      currentDate,
+    };
   },
 };
 ```
