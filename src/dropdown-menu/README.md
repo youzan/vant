@@ -17,27 +17,35 @@ app.use(DropdownItem);
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="value1" :options="option1" />
-  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="state.value1" :options="option1" />
+  <van-dropdown-item v-model="state.value2" :options="option2" />
 </van-dropdown-menu>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: 0,
       value2: 'a',
-      option1: [
-        { text: 'Option1', value: 0 },
-        { text: 'Option2', value: 1 },
-        { text: 'Option3', value: 2 },
-      ],
-      option2: [
-        { text: 'Option A', value: 'a' },
-        { text: 'Option B', value: 'b' },
-        { text: 'Option C', value: 'c' },
-      ],
+    });
+    const option1 = [
+      { text: 'Option1', value: 0 },
+      { text: 'Option2', value: 1 },
+      { text: 'Option3', value: 2 },
+    ];
+    const option2 = [
+      { text: 'Option A', value: 'a' },
+      { text: 'Option B', value: 'b' },
+      { text: 'Option C', value: 'c' },
+    ];
+
+    return {
+      state,
+      option1,
+      option2,
     };
   },
 };
@@ -47,16 +55,16 @@ export default {
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="value" :options="option" />
+  <van-dropdown-item v-model="state.value" :options="option" />
   <van-dropdown-item title="Title" ref="item">
     <van-cell center title="Title">
       <template #right-icon>
-        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
+        <van-switch v-model="state.switch1" size="24" active-color="#ee0a24" />
       </template>
     </van-cell>
     <van-cell center title="Title">
       <template #right-icon>
-        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
+        <van-switch v-model="state.switch2" size="24" active-color="#ee0a24" />
       </template>
     </van-cell>
     <div style="padding: 5px 16px;">
@@ -69,23 +77,31 @@ export default {
 ```
 
 ```js
+import { ref, reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const item = ref(null);
+    const state = reactive({
       value: 0,
       switch1: false,
       switch2: false,
-      option: [
-        { text: 'Option1', value: 0 },
-        { text: 'Option2', value: 1 },
-        { text: 'Option3', value: 2 },
-      ],
+    });
+    const options = [
+      { text: 'Option1', value: 0 },
+      { text: 'Option2', value: 1 },
+      { text: 'Option3', value: 2 },
+    ];
+    const onConfirm = () => {
+      item.value.toggle();
     };
-  },
-  methods: {
-    onConfirm() {
-      this.$refs.item.toggle();
-    },
+
+    return {
+      item,
+      state,
+      option,
+      onConfirm,
+    };
   },
 };
 ```
