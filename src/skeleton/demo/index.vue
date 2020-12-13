@@ -21,7 +21,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 

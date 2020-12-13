@@ -25,11 +25,12 @@ app.use(Steps);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 1,
-    };
+  steup() {
+    const active = ref(1);
+    return { active };
   },
 };
 ```
