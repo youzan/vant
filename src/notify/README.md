@@ -65,19 +65,23 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
-  methods: {
-    showNotify() {
-      this.show = true;
+  setup() {
+    const show = ref(false);
+
+    const showNotify = () => {
+      show.value = true;
       setTimeout(() => {
-        this.show = false;
+        show.value = false;
       }, 2000);
-    },
+    };
+
+    return {
+      show,
+      showNotify,
+    };
   },
 };
 ```

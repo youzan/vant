@@ -23,80 +23,91 @@
     <van-cell is-link :title="t('componentCall')" @click="showComponentCall" />
 
     <van-notify v-model:show="show" type="success">
-      <van-icon name="bell" style="margin-right: 4px;" />
+      <van-icon name="bell" style="margin-right: 4px" />
       <span>{{ t('content') }}</span>
     </van-notify>
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Notify from '..';
+
+const i18n = {
+  'zh-CN': {
+    primary: '主要通知',
+    success: '成功通知',
+    danger: '危险通知',
+    warning: '警告通知',
+    content: '通知内容',
+    notifyType: '通知类型',
+    customColor: '自定义颜色',
+    customNotify: '自定义配置',
+    componentCall: '组件调用',
+    customDuration: '自定义时长',
+  },
+  'en-US': {
+    primary: 'Primary',
+    success: 'Success',
+    danger: 'Danger',
+    warning: 'Warning',
+    content: 'Notify Message',
+    notifyType: 'Notify Type',
+    customColor: 'Custom Color',
+    customNotify: 'Custom Notify',
+    componentCall: 'Component Call',
+    customDuration: 'Custom Duration',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      primary: '主要通知',
-      success: '成功通知',
-      danger: '危险通知',
-      warning: '警告通知',
-      content: '通知内容',
-      notifyType: '通知类型',
-      customColor: '自定义颜色',
-      customNotify: '自定义配置',
-      componentCall: '组件调用',
-      customDuration: '自定义时长',
-    },
-    'en-US': {
-      primary: 'Primary',
-      success: 'Success',
-      danger: 'Danger',
-      warning: 'Warning',
-      content: 'Notify Message',
-      notifyType: 'Notify Type',
-      customColor: 'Custom Color',
-      customNotify: 'Custom Notify',
-      componentCall: 'Component Call',
-      customDuration: 'Custom Duration',
-    },
-  },
-
   data() {
-    return {
-      show: false,
+    const t = useTranslate(i18n);
+    const show = ref(false);
+
+    const showNotify = () => {
+      Notify(t('content'));
     };
-  },
 
-  methods: {
-    showNotify() {
-      this.$notify(this.t('content'));
-    },
-
-    showCustomColor() {
-      this.$notify({
-        message: this.t('customColor'),
+    const showCustomColor = () => {
+      Notify({
         color: '#ad0000',
+        message: t('customColor'),
         background: '#ffe1e1',
       });
-    },
+    };
 
-    showCustomDuration() {
-      this.$notify({
-        message: this.t('customDuration'),
+    const showCustomDuration = () => {
+      Notify({
+        message: t('customDuration'),
         duration: 1000,
       });
-    },
+    };
 
-    showType(type) {
-      this.$notify({
-        message: this.t('content'),
+    const showType = (type: string) => {
+      Notify({
+        message: t('content'),
         type,
       });
-    },
+    };
 
-    showComponentCall() {
-      this.show = true;
+    const showComponentCall = () => {
+      show.value = true;
       setTimeout(() => {
-        this.show = false;
+        show.value = false;
       }, 2000);
-    },
+    };
+
+    return {
+      t,
+      show,
+      showType,
+      showNotify,
+      showCustomColor,
+      showComponentCall,
+      showCustomDuration,
+    };
   },
 };
 </script>
