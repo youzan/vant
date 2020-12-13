@@ -30,11 +30,12 @@ app.use(CollapseItem);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeNames: ['1'],
-    };
+  setup() {
+    const activeNames = ref(['1']);
+    return { activeNames };
   },
 };
 ```
@@ -52,11 +53,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeName: '1',
-    };
+  setup() {
+    const activeName = ref('1');
+    return { activeName };
   },
 };
 ```
@@ -92,11 +94,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeNames: ['1'],
-    };
+  setup() {
+    const activeNames = ref(['1']);
+    return { activeNames };
   },
 };
 ```

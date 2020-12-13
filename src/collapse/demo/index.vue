@@ -60,27 +60,36 @@
   </demo-block>
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      accordion: '手风琴',
-      titleSlot: '自定义标题内容',
-      text: '代码是写出来给人看的，附带能在机器上运行',
-    },
-    'en-US': {
-      accordion: 'Accordion',
-      titleSlot: 'Custom title',
-      text: 'Content',
-    },
-  },
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    accordion: '手风琴',
+    titleSlot: '自定义标题内容',
+    text: '代码是写出来给人看的，附带能在机器上运行',
+  },
+  'en-US': {
+    accordion: 'Accordion',
+    titleSlot: 'Custom title',
+    text: 'Content',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       active1: [0],
       active2: 0,
       active3: [],
       active4: [],
+    });
+
+    return {
+      ...toRefs(state),
+      t,
     };
   },
 };
