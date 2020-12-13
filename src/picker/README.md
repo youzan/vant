@@ -32,21 +32,25 @@ app.use(Picker);
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  setup() {
+    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
+
+    const onConfirm = (value, index) => {
+      Toast(`Value: ${value}, Index: ${index}`);
     };
-  },
-  methods: {
-    onConfirm(value, index) {
+    const onChange = (value, index) => {
       Toast(`Value: ${value}, Index: ${index}`);
-    },
-    onChange(value, index) {
-      Toast(`Value: ${value}, Index: ${index}`);
-    },
-    onCancel() {
+    };
+    const onCancel = () => {
       Toast('Cancel');
-    },
+    };
+
+    return {
+      columns,
+      onChange,
+      onCancel,
+      onConfirm,
+    };
   },
 };
 ```
@@ -65,19 +69,19 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        {
-          values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
-          defaultIndex: 2,
-        },
-        {
-          values: ['Morging', 'Afternoon', 'Evening'],
-          defaultIndex: 1,
-        },
-      ],
-    };
+  setup() {
+    const columns = [
+      {
+        values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
+        defaultIndex: 2,
+      },
+      {
+        values: ['Morging', 'Afternoon', 'Evening'],
+        defaultIndex: 1,
+      },
+    ];
+
+    return { columns };
   },
 };
 ```
@@ -90,37 +94,37 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        {
-          text: 'Zhejiang',
-          children: [
-            {
-              text: 'Hangzhou',
-              children: [{ text: 'Xihu' }, { text: 'Yuhang' }],
-            },
-            {
-              text: 'Wenzhou',
-              children: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
-            },
-          ],
-        },
-        {
-          text: 'Fujian',
-          children: [
-            {
-              text: 'Fuzhou',
-              children: [{ text: 'Gulou' }, { text: 'Taijiang' }],
-            },
-            {
-              text: 'Xiamen',
-              children: [{ text: 'Siming' }, { text: 'Haicang' }],
-            },
-          ],
-        },
-      ],
-    };
+  setup() {
+    const columns = [
+      {
+        text: 'Zhejiang',
+        children: [
+          {
+            text: 'Hangzhou',
+            children: [{ text: 'Xihu' }, { text: 'Yuhang' }],
+          },
+          {
+            text: 'Wenzhou',
+            children: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
+          },
+        ],
+      },
+      {
+        text: 'Fujian',
+        children: [
+          {
+            text: 'Fuzhou',
+            children: [{ text: 'Gulou' }, { text: 'Taijiang' }],
+          },
+          {
+            text: 'Xiamen',
+            children: [{ text: 'Siming' }, { text: 'Haicang' }],
+          },
+        ],
+      },
+    ];
+
+    return { columns };
   },
 };
 ```
@@ -133,14 +137,14 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        { text: 'Delaware', disabled: true },
-        { text: 'Florida' },
-        { text: 'Georqia' },
-      ],
-    };
+  setup() {
+    const columns = [
+      { text: 'Delaware', disabled: true },
+      { text: 'Florida' },
+      { text: 'Georqia' },
+    ];
+
+    return { columns };
   },
 };
 ```
@@ -152,21 +156,30 @@ export default {
 ```
 
 ```js
-const states = {
-  Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-  Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
-};
+import { ref } from 'vue';
 
 export default {
-  data() {
-    return {
-      columns: [{ values: Object.keys(states) }, { values: states.Group1 }],
+  setup() {
+    const picker = ref(null);
+
+    const states = {
+      Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
     };
-  },
-  methods: {
-    onChange(values) {
-      this.$refs.picker.setColumnValues(1, states[values[0]]);
-    },
+    const columns = [
+      { values: Object.keys(states) },
+      { values: states.Group1 },
+    ];
+
+    const onChange = (values) => {
+      picker.value.setColumnValues(1, states[values[0]]);
+    };
+
+    return {
+      picker,
+      columns,
+      onChange,
+    };
   },
 };
 ```
@@ -180,18 +193,21 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       columns: [],
       loading: true,
-    };
-  },
-  created() {
+    });
+
     setTimeout(() => {
-      this.loading = false;
-      this.columns = ['Option'];
+      state.loading = false;
+      state.columns = ['Option'];
     }, 1000);
+
+    return { state };
   },
 };
 ```
@@ -218,19 +234,26 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
+    const state = reactive({
       value: '',
       showPicker: false,
-      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+    });
+
+    const onConfirm = (value) => {
+      state.value = value;
+      state.showPicker = false;
     };
-  },
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    },
+
+    return {
+      state,
+      columns,
+      onConfirm,
+    };
   },
 };
 ```

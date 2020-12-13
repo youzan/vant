@@ -67,79 +67,82 @@
 </template>
 
 <script>
+import { ref, computed, reactive, toRefs } from 'vue';
 import { dateColumns, cascadeColumns } from './data';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    city: '城市',
+    cascade: '级联选择',
+    withPopup: '搭配弹出层使用',
+    chooseCity: '选择城市',
+    showToolbar: '展示顶部栏',
+    dateColumns: dateColumns['zh-CN'],
+    defaultIndex: '默认选中项',
+    disableOption: '禁用选项',
+    cascadeColumns: cascadeColumns['zh-CN'],
+    multipleColumns: '多列选择',
+    setColumnValues: '动态设置选项',
+    textColumns: [
+      '杭州',
+      '宁波',
+      '温州',
+      '绍兴',
+      '湖州',
+      '嘉兴',
+      '金华',
+      '衢州',
+    ],
+    disabledColumns: [
+      { text: '杭州', disabled: true },
+      { text: '宁波' },
+      { text: '温州' },
+    ],
+    column3: {
+      浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      福建: ['福州', '厦门', '莆田', '三明', '泉州'],
+    },
+    toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
+  },
+  'en-US': {
+    city: 'City',
+    cascade: 'Cascade',
+    withPopup: 'With Popup',
+    chooseCity: 'Choose City',
+    showToolbar: 'Show Toolbar',
+    dateColumns: dateColumns['en-US'],
+    defaultIndex: 'Default Index',
+    disableOption: 'Disable Option',
+    cascadeColumns: cascadeColumns['en-US'],
+    multipleColumns: 'Multiple Columns',
+    setColumnValues: 'Set Column Values',
+    textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+    disabledColumns: [
+      { text: 'Delaware', disabled: true },
+      { text: 'Florida' },
+      { text: 'Georqia' },
+    ],
+    column3: {
+      Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+      Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
+    },
+    toastContent: (value, index) => `Value: ${value}, Index：${index}`,
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      city: '城市',
-      cascade: '级联选择',
-      withPopup: '搭配弹出层使用',
-      chooseCity: '选择城市',
-      showToolbar: '展示顶部栏',
-      dateColumns: dateColumns['zh-CN'],
-      defaultIndex: '默认选中项',
-      disableOption: '禁用选项',
-      cascadeColumns: cascadeColumns['zh-CN'],
-      multipleColumns: '多列选择',
-      setColumnValues: '动态设置选项',
-      textColumns: [
-        '杭州',
-        '宁波',
-        '温州',
-        '绍兴',
-        '湖州',
-        '嘉兴',
-        '金华',
-        '衢州',
-      ],
-      disabledColumns: [
-        { text: '杭州', disabled: true },
-        { text: '宁波' },
-        { text: '温州' },
-      ],
-      column3: {
-        浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-        福建: ['福州', '厦门', '莆田', '三明', '泉州'],
-      },
-      toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
-    },
-    'en-US': {
-      city: 'City',
-      cascade: 'Cascade',
-      withPopup: 'With Popup',
-      chooseCity: 'Choose City',
-      showToolbar: 'Show Toolbar',
-      dateColumns: dateColumns['en-US'],
-      defaultIndex: 'Default Index',
-      disableOption: 'Disable Option',
-      cascadeColumns: cascadeColumns['en-US'],
-      multipleColumns: 'Multiple Columns',
-      setColumnValues: 'Set Column Values',
-      textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-      disabledColumns: [
-        { text: 'Delaware', disabled: true },
-        { text: 'Florida' },
-        { text: 'Georqia' },
-      ],
-      column3: {
-        Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-        Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
-      },
-      toastContent: (value, index) => `Value: ${value}, Index：${index}`,
-    },
-  },
-
-  data() {
-    return {
+  setup() {
+    const t = useTranslate(i18n);
+    const picker = ref();
+    const state = reactive({
       showPicker: false,
       fieldValue: '',
-    };
-  },
+    });
 
-  computed: {
-    columns() {
-      const column = this.t('column3');
+    const columns = computed(() => {
+      const column = t('column3');
       return [
         {
           values: Object.keys(column),
@@ -151,38 +154,50 @@ export default {
           defaultIndex: 2,
         },
       ];
-    },
-  },
+    });
 
-  methods: {
-    onChange1(value, index) {
-      this.$toast(this.t('toastContent', value, index));
-    },
+    const onChange1 = (value, index) => {
+      Toast(t('toastContent', value, index));
+    };
 
-    onChange2(values) {
-      this.$refs.picker.setColumnValues(1, this.t('column3')[values[0]]);
-    },
+    const onChange2 = (values) => {
+      picker.value.setColumnValues(1, t('column3')[values[0]]);
+    };
 
-    onConfirm(value, index) {
-      this.$toast(this.t('toastContent', value, index));
-    },
+    const onConfirm = (value, index) => {
+      Toast(t('toastContent', value, index));
+    };
 
-    onCancel() {
-      this.$toast(this.t('cancel'));
-    },
+    const onCancel = () => {
+      Toast(t('cancel'));
+    };
 
-    onClickField() {
-      this.showPicker = true;
-    },
+    const onCancel2 = () => {
+      state.showPicker = false;
+    };
 
-    onConfirm2(value) {
-      this.showPicker = false;
-      this.fieldValue = value;
-    },
+    const onClickField = () => {
+      state.showPicker = true;
+    };
 
-    onCancel2() {
-      this.showPicker = false;
-    },
+    const onConfirm2 = (value) => {
+      state.showPicker = false;
+      state.fieldValue = value;
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      picker,
+      columns,
+      onCancel,
+      onCancel2,
+      onChange1,
+      onChange2,
+      onConfirm,
+      onConfirm2,
+      onClickField,
+    };
   },
 };
 </script>

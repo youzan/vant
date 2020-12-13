@@ -40,21 +40,25 @@ Picker 组件通过 `columns` 属性配置选项数据，`columns` 是一个包�
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      columns: ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华', '衢州'],
+  setup() {
+    const columns = ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华'];
+
+    const onConfirm = (value, index) => {
+      Toast(`当前值: ${value}, 当前索引: ${index}`);
     };
-  },
-  methods: {
-    onConfirm(value, index) {
-      Toast(`当前值：${value}, 当前索引：${index}`);
-    },
-    onChange(value, index) {
-      Toast(`当前值：${value}, 当前索引：${index}`);
-    },
-    onCancel() {
+    const onChange = (value, index) => {
+      Toast(`当前值: ${value}, 当前索引: ${index}`);
+    };
+    const onCancel = () => {
       Toast('取消');
-    },
+    };
+
+    return {
+      columns,
+      onChange,
+      onCancel,
+      onConfirm,
+    };
   },
 };
 ```
@@ -77,28 +81,28 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        // 第一列
-        {
-          values: ['周一', '周二', '周三', '周四', '周五'],
-          defaultIndex: 2,
-        },
-        // 第二列
-        {
-          values: ['上午', '下午', '晚上'],
-          defaultIndex: 1,
-        },
-      ],
-    };
+  setup() {
+    const columns = [
+      // 第一列
+      {
+        values: ['周一', '周二', '周三', '周四', '周五'],
+        defaultIndex: 2,
+      },
+      // 第二列
+      {
+        values: ['上午', '下午', '晚上'],
+        defaultIndex: 1,
+      },
+    ];
+
+    return { columns };
   },
 };
 ```
 
 ### 级联选择
 
-使用 `columns` 的 `children` 字段可以实现选项级联的效果（从 2.4.5 版本开始支持）。
+使用 `columns` 的 `children` 字段可以实现选项级联的效果。
 
 ```html
 <van-picker title="标题" :columns="columns" />
@@ -106,37 +110,37 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        {
-          text: '浙江',
-          children: [
-            {
-              text: '杭州',
-              children: [{ text: '西湖区' }, { text: '余杭区' }],
-            },
-            {
-              text: '温州',
-              children: [{ text: '鹿城区' }, { text: '瓯海区' }],
-            },
-          ],
-        },
-        {
-          text: '福建',
-          children: [
-            {
-              text: '福州',
-              children: [{ text: '鼓楼区' }, { text: '台江区' }],
-            },
-            {
-              text: '厦门',
-              children: [{ text: '思明区' }, { text: '海沧区' }],
-            },
-          ],
-        },
-      ],
-    };
+  setup() {
+    const columns = [
+      {
+        text: '浙江',
+        children: [
+          {
+            text: '杭州',
+            children: [{ text: '西湖区' }, { text: '余杭区' }],
+          },
+          {
+            text: '温州',
+            children: [{ text: '鹿城区' }, { text: '瓯海区' }],
+          },
+        ],
+      },
+      {
+        text: '福建',
+        children: [
+          {
+            text: '福州',
+            children: [{ text: '鼓楼区' }, { text: '台江区' }],
+          },
+          {
+            text: '厦门',
+            children: [{ text: '思明区' }, { text: '海沧区' }],
+          },
+        ],
+      },
+    ];
+
+    return { columns };
   },
 };
 ```
@@ -153,14 +157,14 @@ export default {
 
 ```js
 export default {
-  data() {
-    return {
-      columns: [
-        { text: '杭州', disabled: true },
-        { text: '宁波' },
-        { text: '温州' },
-      ],
-    };
+  setup() {
+    const columns = [
+      { text: '杭州', disabled: true },
+      { text: '宁波' },
+      { text: '温州' },
+    ];
+
+    return { columns };
   },
 };
 ```
@@ -174,21 +178,30 @@ export default {
 ```
 
 ```js
-const cities = {
-  浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-  福建: ['福州', '厦门', '莆田', '三明', '泉州'],
-};
+import { ref } from 'vue';
 
 export default {
-  data() {
-    return {
-      columns: [{ values: Object.keys(cities) }, { values: cities['浙江'] }],
+  setup() {
+    const picker = ref(null);
+
+    const cities = {
+      浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      福建: ['福州', '厦门', '莆田', '三明', '泉州'],
     };
-  },
-  methods: {
-    onChange(values) {
-      this.$refs.picker.setColumnValues(1, cities[values[0]]);
-    },
+    const columns = [
+      { values: Object.keys(cities) },
+      { values: cities['浙江'] },
+    ];
+
+    const onChange = (values) => {
+      picker.value.setColumnValues(1, cities[values[0]]);
+    };
+
+    return {
+      picker,
+      columns,
+      onChange,
+    };
   },
 };
 ```
@@ -202,18 +215,21 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       columns: [],
       loading: true,
-    };
-  },
-  created() {
+    });
+
     setTimeout(() => {
-      this.loading = false;
-      this.columns = ['选项'];
+      state.loading = false;
+      state.columns = ['选项'];
     }, 1000);
+
+    return { state };
   },
 };
 ```
@@ -241,19 +257,26 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const columns = ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华'];
+    const state = reactive({
       value: '',
       showPicker: false,
-      columns: ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华', '衢州'],
+    });
+
+    const onConfirm = (value) => {
+      state.value = value;
+      state.showPicker = false;
     };
-  },
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    },
+
+    return {
+      state,
+      columns,
+      onConfirm,
+    };
   },
 };
 ```
