@@ -37,11 +37,16 @@ app.use(NumberKeyboard);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const value = ref('123');
+    const showKeyboard = ref(true);
+
     return {
-      value: '123',
-      showKeyboard: true,
+      value,
+      showKeyboard,
     };
   },
 };
@@ -106,22 +111,27 @@ export default {
 ```
 
 ```js
+import { ref, watch } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '123',
-      errorInfo: '',
-      showKeyboard: true,
-    };
-  },
-  watch: {
-    value(value) {
-      if (value.length === 6 && value !== '123456') {
-        this.errorInfo = '密码错误';
+  setup() {
+    const value = ref('123');
+    const errorInfo = ref('');
+    const showKeyboard = ref(true);
+
+    watch(value, (newVal) => {
+      if (newVal.length === 6 && newVal !== '123456') {
+        errorInfo.value = '密码错误';
       } else {
-        this.errorInfo = '';
+        errorInfo.value = '';
       }
-    },
+    });
+
+    return {
+      value,
+      errorInfo,
+      showKeyboard,
+    };
   },
 };
 ```
