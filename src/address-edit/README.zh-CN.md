@@ -34,34 +34,39 @@ app.use(AddressEdit);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      areaList,
-      searchResult: [],
-    };
-  },
-  methods: {
-    onSave() {
+  setup() {
+    const searchResult = ref([]);
+
+    const onSave = () => {
       Toast('save');
-    },
-    onDelete() {
+    };
+    const onDelete = () => {
       Toast('delete');
-    },
-    onChangeDetail(val) {
+    };
+    const onChangeDetail = (val) => {
       if (val) {
-        this.searchResult = [
+        searchResult.value = [
           {
             name: '黄龙万科中心',
             address: '杭州市西湖区',
           },
         ];
       } else {
-        this.searchResult = [];
+        searchResult.value = [];
       }
-    },
+    };
+
+    return {
+      onSave,
+      onDelete,
+      areaList,
+      searchResult,
+      onChangeDetail,
+    };
   },
 };
 ```
