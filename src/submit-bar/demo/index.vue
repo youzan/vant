@@ -3,7 +3,7 @@
     <van-submit-bar
       :price="3050"
       :button-text="t('submit')"
-      @submit="onClickButton"
+      @submit="onSubmit"
     />
   </demo-block>
 
@@ -14,7 +14,7 @@
       :button-text="t('submit')"
       :tip="t('tip1')"
       tip-icon="info-o"
-      @submit="onClickButton"
+      @submit="onSubmit"
     />
   </demo-block>
 
@@ -23,16 +23,12 @@
       loading
       :price="3050"
       :button-text="t('submit')"
-      @submit="onClickButton"
+      @submit="onSubmit"
     />
   </demo-block>
 
   <demo-block :title="t('advancedUsage')">
-    <van-submit-bar
-      :price="3050"
-      :button-text="t('submit')"
-      @submit="onClickButton"
-    >
+    <van-submit-bar :price="3050" :button-text="t('submit')" @submit="onSubmit">
       <van-checkbox v-model="checked">{{ t('check') }}</van-checkbox>
       <template #tip>
         {{ t('tip2') }}
@@ -44,42 +40,50 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    tip1: '你的收货地址不支持同城送, 我们已为你推荐快递',
+    tip2: '你的收货地址不支持同城送, ',
+    tip3: '修改地址',
+    check: '全选',
+    submit: '提交订单',
+    clickLink: '修改地址',
+    clickButton: '点击按钮',
+  },
+  'en-US': {
+    tip1: 'Some tips',
+    tip2: 'Some tips, ',
+    tip3: 'Link',
+    check: 'Label',
+    submit: 'Submit',
+    clickLink: 'Click Link',
+    clickButton: 'Submit',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      submit: '提交订单',
-      tip1: '你的收货地址不支持同城送, 我们已为你推荐快递',
-      tip2: '你的收货地址不支持同城送, ',
-      tip3: '修改地址',
-      check: '全选',
-      clickButton: '点击按钮',
-      clickLink: '修改地址',
-    },
-    'en-US': {
-      submit: 'Submit',
-      tip1: 'Some tips',
-      tip2: 'Some tips, ',
-      tip3: 'Link',
-      check: 'Label',
-      clickButton: 'Click button',
-      clickLink: 'Click Link',
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
+    const checked = ref(true);
 
-  data() {
-    return {
-      checked: true,
+    const onSubmit = () => {
+      Toast(t('clickButton'));
     };
-  },
+    const onClickLink = () => {
+      Toast(t('clickLink'));
+    };
 
-  methods: {
-    onClickButton() {
-      this.$toast(this.t('clickButton'));
-    },
-    onClickLink() {
-      this.$toast(this.t('clickLink'));
-    },
+    return {
+      t,
+      checked,
+      onSubmit,
+      onClickLink,
+    };
   },
 };
 </script>

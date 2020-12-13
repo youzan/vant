@@ -18,6 +18,22 @@ app.use(SubmitBar);
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit" />
 ```
 
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const onSubmit = () => {
+      Toast('点击按钮');
+    };
+
+    return {
+      onSubmit,
+    };
+  },
+};
+```
+
 ### 禁用状态
 
 禁用状态下不会触发 `submit` 事件。
@@ -54,9 +70,29 @@ app.use(SubmitBar);
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
   <van-checkbox v-model="checked">全选</van-checkbox>
   <template #tip>
-    你的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址</span>
+    你的收货地址不支持同城送, <span @click="onClickLink">修改地址</span>
   </template>
 </van-submit-bar>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const onSubmit = () => {
+      Toast('点击按钮');
+    };
+    const onClickLink = () => {
+      Toast('修改地址');
+    };
+
+    return {
+      onSubmit,
+      onClickLink,
+    };
+  },
+};
 ```
 
 ## API

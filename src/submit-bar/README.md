@@ -18,6 +18,22 @@ app.use(SubmitBar);
 <van-submit-bar :price="3050" button-text="Submit" @submit="onSubmit" />
 ```
 
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const onSubmit = () => {
+      Toast('Submit');
+    };
+
+    return {
+      onSubmit,
+    };
+  },
+};
+```
+
 ### Disabled
 
 `submit` event will not triggerd when disabled.
@@ -48,10 +64,28 @@ Use slot to add custom contents.
 ```html
 <van-submit-bar :price="3050" button-text="Submit" @submit="onSubmit">
   <van-checkbox v-model="checked">Check</van-checkbox>
-  <template #tip>
-    Some tips, <span @click="onClickEditAddress">Link</span>
-  </template>
+  <template #tip> Some tips, <span @click="onClickLink">Link</span> </template>
 </van-submit-bar>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const onSubmit = () => {
+      Toast('Submit');
+    };
+    const onClickLink = () => {
+      Toast('Click Link');
+    };
+
+    return {
+      onSubmit,
+      onClickLink,
+    };
+  },
+};
 ```
 
 ## API
