@@ -26,21 +26,24 @@ app.use(ContactEdit);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      editingContact: {},
-    };
-  },
-  methods: {
-    onSave(contactInfo) {
+  setup() {
+    const editingContact = ref({});
+    const onSave = (contactInfo) => {
       Toast('Save');
-    },
-    onDelete(contactInfo) {
+    };
+    const onDelete = (contactInfo) => {
       Toast('Delete');
-    },
+    };
+
+    return {
+      onSave,
+      onDelete,
+      editingContact,
+    };
   },
 };
 ```
