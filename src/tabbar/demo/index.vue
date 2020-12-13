@@ -62,57 +62,63 @@
 
   <demo-block :title="t('switchEvent')">
     <van-tabbar v-model="active5" @change="onChange">
-      <van-tabbar-item icon="home-o">{{ t('tab') + 1 }}</van-tabbar-item>
-      <van-tabbar-item icon="search">{{ t('tab') + 2 }}</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">{{ t('tab') + 3 }}</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">{{ t('tab') + 4 }}</van-tabbar-item>
+      <van-tabbar-item icon="home-o">{{ `${t('tab')} 1` }}</van-tabbar-item>
+      <van-tabbar-item icon="search">{{ `${t('tab')} 2` }}</van-tabbar-item>
+      <van-tabbar-item icon="friends-o">{{ `${t('tab')} 3` }}</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">{{ `${t('tab')} 4` }}</van-tabbar-item>
     </van-tabbar>
   </demo-block>
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      badge: '徽标提示',
-      customIcon: '自定义图标',
-      customColor: '自定义颜色',
-      matchByName: '通过名称匹配',
-      switchEvent: '监听切换事件',
-      selectTip: '你切换到了',
-    },
-    'en-US': {
-      badge: 'Show Badge',
-      customIcon: 'Custom Icon',
-      customColor: 'Custom Color',
-      matchByName: 'Match by name',
-      switchEvent: 'Change Event',
-      selectTip: 'You select ',
-    },
-  },
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    badge: '徽标提示',
+    customIcon: '自定义图标',
+    customColor: '自定义颜色',
+    matchByName: '通过名称匹配',
+    switchEvent: '监听切换事件',
+    selectTip: '你切换到了',
+  },
+  'en-US': {
+    badge: 'Show Badge',
+    customIcon: 'Custom Icon',
+    customColor: 'Custom Color',
+    matchByName: 'Match by name',
+    switchEvent: 'Change Event',
+    selectTip: 'You select ',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       active: 0,
       active2: 0,
       active3: 0,
       active4: 0,
       active5: 0,
       activeName: 'home',
+    });
+
+    const onChange = (index: number) => {
+      Toast(`${t('tab')} ${index + 1}`);
+    };
+
+    return {
+      ...toRefs(state),
+      t,
       icon: {
         active: 'https://img.yzcdn.cn/vant/user-active.png',
         inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
       },
+      onChange,
     };
-  },
-
-  methods: {
-    onChange(index) {
-      this.$notify({
-        type: 'primary',
-        message: `${this.t('selectTip')} ${this.t('tab')}${index + 1}`,
-      });
-    },
   },
 };
 </script>

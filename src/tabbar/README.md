@@ -25,11 +25,12 @@ app.use(TabbarItem);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 0,
-    };
+  setup() {
+    const active = ref(0);
+    return { active };
   },
 };
 ```
@@ -46,11 +47,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 'home',
-    };
+  setup() {
+    const active = ref('home');
+    return { active };
   },
 };
 ```
@@ -84,14 +86,18 @@ Use `icon` slot to custom icon.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const active = ref(0);
+    const icon = {
+      active: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+    };
     return {
-      active: 0,
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      },
+      icon,
+      active,
     };
   },
 };
@@ -112,21 +118,28 @@ export default {
 
 ```html
 <van-tabbar v-model="active" @change="onChange">
-  <van-tabbar-item icon="home-o">Tab1</van-tabbar-item>
-  <van-tabbar-item icon="search">Tab2</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">Tab3</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">Tab4</van-tabbar-item>
+  <van-tabbar-item icon="home-o">Tab 1</van-tabbar-item>
+  <van-tabbar-item icon="search">Tab 2</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">Tab 3</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">Tab 4</van-tabbar-item>
 </van-tabbar>
 ```
 
 ```js
-import { Notify } from 'vant';
+import { ref } from 'vue';
+import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onChange(index) {
-      Notify({ type: 'primary', message: index });
-    },
+  setup() {
+    const active = ref(0);
+    const onChange = (index) => {
+      Toast(`Tab ${index}`);
+    };
+
+    return {
+      icon,
+      onChange,
+    };
   },
 };
 ```
@@ -137,8 +150,8 @@ export default {
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item replace to="/home" icon="home-o"> Tab </van-tabbar-item>
-  <van-tabbar-item replace to="/search" icon="search"> Tab </van-tabbar-item>
+  <van-tabbar-item replace to="/home" icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item replace to="/search" icon="search">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 

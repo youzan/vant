@@ -27,11 +27,12 @@ app.use(TabbarItem);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 0,
-    };
+  setup() {
+    const active = ref(0);
+    return { active };
   },
 };
 ```
@@ -50,11 +51,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 'home',
-    };
+  setup() {
+    const active = ref('home');
+    return { active };
   },
 };
 ```
@@ -90,14 +92,18 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const active = ref(0);
+    const icon = {
+      active: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+    };
     return {
-      active: 0,
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      },
+      icon,
+      active,
     };
   },
 };
@@ -118,21 +124,28 @@ export default {
 
 ```html
 <van-tabbar v-model="active" @change="onChange">
-  <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
-  <van-tabbar-item icon="search">标签2</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
+  <van-tabbar-item icon="home-o">标签 1</van-tabbar-item>
+  <van-tabbar-item icon="search">标签 2</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签 3</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签 4</van-tabbar-item>
 </van-tabbar>
 ```
 
 ```js
-import { Notify } from 'vant';
+import { ref } from 'vue';
+import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onChange(index) {
-      Notify({ type: 'primary', message: index });
-    },
+  setup() {
+    const active = ref(0);
+    const onChange = (index) => {
+      Toast(`标签 ${index}`);
+    };
+
+    return {
+      icon,
+      onChange,
+    };
   },
 };
 ```
@@ -145,8 +158,8 @@ export default {
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item replace to="/home" icon="home-o"> 标签 </van-tabbar-item>
-  <van-tabbar-item replace to="/search" icon="search"> 标签 </van-tabbar-item>
+  <van-tabbar-item replace to="/home" icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item replace to="/search" icon="search">标签</van-tabbar-item>
 </van-tabbar>
 ```
 
