@@ -29,7 +29,7 @@ app.use(Lazyload, {
 
 ```js
 export default {
-  data() {
+  setup() {
     return {
       imageList: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
