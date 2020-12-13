@@ -81,10 +81,12 @@ app.use(SwipeCell);
 ```
 
 ```js
+import { Dialog } from 'vant';
+
 export default {
-  methods: {
+  setup() {
     // position 为关闭时点击的位置
-    beforeClose({ position }) {
+    const beforeClose = ({ position }) => {
       switch (position) {
         case 'left':
         case 'cell':
@@ -92,14 +94,14 @@ export default {
           return true;
         case 'right':
           return new Promise((resolve) => {
-            this.$dialog
-              .confirm({
-                message: '确定删除吗？',
-              })
-              .then(resolve);
+            Dialog.confirm({
+              title: '确定删除吗？',
+            }).then(resolve);
           });
       }
-    },
+    };
+
+    return { beforeClose };
   },
 };
 ```

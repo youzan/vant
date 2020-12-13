@@ -45,39 +45,37 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { useTranslate } from '@demo/use-translate';
+import Dialog from '../../dialog';
+
+const i18n = {
+  'zh-CN': {
+    select: '选择',
+    delete: '删除',
+    collect: '收藏',
+    title: '单元格',
+    confirm: '确定删除吗？',
+    cardTitle: '商品标题',
+    beforeClose: '异步关闭',
+    customContent: '自定义内容',
+  },
+  'en-US': {
+    select: 'Select',
+    delete: 'Delete',
+    collect: 'Collect',
+    title: 'Cell',
+    confirm: 'Are you sure to delete?',
+    cardTitle: 'Title',
+    beforeClose: 'Before Close',
+    customContent: 'Custom Content',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      select: '选择',
-      delete: '删除',
-      collect: '收藏',
-      title: '单元格',
-      confirm: '确定删除吗？',
-      cardTitle: '商品标题',
-      beforeClose: '异步关闭',
-      customContent: '自定义内容',
-    },
-    'en-US': {
-      select: 'Select',
-      delete: 'Delete',
-      collect: 'Collect',
-      title: 'Cell',
-      confirm: 'Are you sure to delete?',
-      cardTitle: 'Title',
-      beforeClose: 'Before Close',
-      customContent: 'Custom Content',
-    },
-  },
-
-  data() {
-    return {
-      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
-    };
-  },
-
-  methods: {
-    beforeClose({ position }) {
+  setup() {
+    const t = useTranslate(i18n);
+    const beforeClose = ({ position }: { position: string }) => {
       switch (position) {
         case 'left':
         case 'cell':
@@ -85,14 +83,18 @@ export default {
           return true;
         case 'right':
           return new Promise((resolve) => {
-            this.$dialog
-              .confirm({
-                message: this.t('confirm'),
-              })
-              .then(resolve);
+            Dialog.confirm({
+              title: t('confirm'),
+            }).then(resolve);
           });
       }
-    },
+    };
+
+    return {
+      t,
+      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
+      beforeClose,
+    };
   },
 };
 </script>
