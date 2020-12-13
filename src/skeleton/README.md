@@ -33,14 +33,19 @@ app.use(Skeleton);
 ```
 
 ```js
+import { ref, onMounted } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const loading = ref(true);
+
+    onMounted(() => {
+      loading.value = false;
+    });
+
     return {
-      loading: true,
+      loading,
     };
-  },
-  mounted() {
-    this.loading = false;
   },
 };
 ```
