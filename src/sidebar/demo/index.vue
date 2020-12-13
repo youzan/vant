@@ -2,7 +2,7 @@
   <van-grid :column-num="2" :border="false">
     <van-grid-item>
       <h3 class="demo-sidebar-title">{{ t('basicUsage') }}</h3>
-      <van-sidebar v-model="activeKey1">
+      <van-sidebar v-model="active1">
         <van-sidebar-item :title="t('title')" />
         <van-sidebar-item :title="t('title')" />
         <van-sidebar-item :title="t('title')" />
@@ -11,16 +11,16 @@
 
     <van-grid-item>
       <h3 class="demo-sidebar-title">{{ t('showBadge') }}</h3>
-      <van-sidebar v-model="activeKey2">
+      <van-sidebar v-model="active2">
         <van-sidebar-item :title="t('title')" dot />
         <van-sidebar-item :title="t('title')" badge="5" />
-        <van-sidebar-item :title="t('title')" badge="99+" />
+        <van-sidebar-item :title="t('title')" badge="20" />
       </van-sidebar>
     </van-grid-item>
 
     <van-grid-item>
       <h3 class="demo-sidebar-title">{{ t('disabled') }}</h3>
-      <van-sidebar v-model="activeKey3">
+      <van-sidebar v-model="active3">
         <van-sidebar-item :title="t('title')" />
         <van-sidebar-item :title="t('title')" disabled />
         <van-sidebar-item :title="t('title')" />
@@ -29,49 +29,53 @@
 
     <van-grid-item>
       <h3 class="demo-sidebar-title">{{ t('changeEvent') }}</h3>
-      <van-sidebar v-model="activeKey4" @change="onChange">
-        <van-sidebar-item :title="t('title') + 1" />
-        <van-sidebar-item :title="t('title') + 2" />
-        <van-sidebar-item :title="t('title') + 3" />
+      <van-sidebar v-model="active4" @change="onChange">
+        <van-sidebar-item :title="`${t('title')} 1`" />
+        <van-sidebar-item :title="`${t('title')} 2`" />
+        <van-sidebar-item :title="`${t('title')} 3`" />
       </van-sidebar>
     </van-grid-item>
   </van-grid>
 </template>
 
-<script>
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    title: '标签名',
+    disabled: '禁用选项',
+    showBadge: '徽标提示',
+    changeEvent: '监听切换事件',
+  },
+  'en-US': {
+    disabled: 'Disabled',
+    showBadge: 'Show Badge',
+    changeEvent: 'Change Event',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      title: '标签名',
-      showBadge: '徽标提示',
-      disabled: '禁用选项',
-      changeEvent: '监听切换事件',
-      selectTip: '你切换到了',
-    },
-    'en-US': {
-      showBadge: 'Show Badge',
-      disabled: 'Disabled',
-      changeEvent: 'Change Event',
-      selectTip: 'You select ',
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
+      active1: 0,
+      active2: 0,
+      active3: 0,
+      active4: 0,
+    });
 
-  data() {
-    return {
-      activeKey1: 0,
-      activeKey2: 0,
-      activeKey3: 0,
-      activeKey4: 0,
+    const onChange = (index: number) => {
+      Toast(`${t('title')} ${index + 1}`);
     };
-  },
 
-  methods: {
-    onChange(index) {
-      this.$notify({
-        type: 'primary',
-        message: `${this.t('selectTip')} ${this.t('title')}${index + 1}`,
-      });
-    },
+    return {
+      ...toRefs(state),
+      t,
+      onChange,
+    };
   },
 };
 </script>

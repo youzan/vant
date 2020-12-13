@@ -16,7 +16,7 @@ app.use(SidebarItem);
 ### Basic Usage
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="Title" />
   <van-sidebar-item title="Title" />
   <van-sidebar-item title="Title" />
@@ -24,11 +24,12 @@ app.use(SidebarItem);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeKey: 0,
-    };
+  setup() {
+    const active = ref(0);
+    return { active };
   },
 };
 ```
@@ -36,17 +37,17 @@ export default {
 ### Show Badge
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="Title" dot />
   <van-sidebar-item title="Title" badge="5" />
-  <van-sidebar-item title="Title" badge="99+" />
+  <van-sidebar-item title="Title" badge="20" />
 </van-sidebar>
 ```
 
 ### Disabled
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="Title" />
   <van-sidebar-item title="Title" disabled />
   <van-sidebar-item title="Title" />
@@ -56,26 +57,28 @@ export default {
 ### Change Event
 
 ```html
-<van-sidebar v-model="activeKey" @change="onChange">
-  <van-sidebar-item title="Title1" />
-  <van-sidebar-item title="Title2" />
-  <van-sidebar-item title="Title3" />
+<van-sidebar v-model="active" @change="onChange">
+  <van-sidebar-item title="Title 1" />
+  <van-sidebar-item title="Title 2" />
+  <van-sidebar-item title="Title 3" />
 </van-sidebar>
 ```
 
 ```js
-import { Notify } from 'vant';
+import { ref } from 'vue';
+import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      activeKey: 0,
+  setup() {
+    const active = ref(0);
+    const onChange = (index) => {
+      Toast(`Title ${index + 1}`);
     };
-  },
-  methods: {
-    onChange(index) {
-      Notify({ type: 'primary', message: index });
-    },
+
+    return {
+      active,
+      onChange,
+    };
   },
 };
 ```
