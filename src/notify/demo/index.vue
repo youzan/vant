@@ -62,7 +62,7 @@ const i18n = {
 };
 
 export default {
-  data() {
+  setup() {
     const t = useTranslate(i18n);
     const show = ref(false);
 
