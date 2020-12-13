@@ -24,16 +24,17 @@ app.use(Circle);
 ```
 
 ```js
+import { ref, computed } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const currentRate = ref(0);
+    const text = computed(() => currentRate.value.toFixed(0) + '%');
+
     return {
-      currentRate: 0,
+      text,
+      currentRate,
     };
-  },
-  computed: {
-    text() {
-      return this.currentRate.toFixed(0) + '%';
-    },
   },
 };
 ```
@@ -72,14 +73,19 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const currentRate = ref(0);
+    const gradientColor = {
+      '0%': '#3fecff',
+      '100%': '#6149f6',
+    };
+
     return {
-      currentRate: 0,
-      gradientColor: {
-        '0%': '#3fecff',
-        '100%': '#6149f6',
-      },
+      currentRate,
+      gradientColor,
     };
   },
 };

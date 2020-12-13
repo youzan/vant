@@ -41,7 +41,7 @@
       :speed="100"
       :clockwise="false"
       :text="t('counterClockwise')"
-      style="margin-top: 15px;"
+      style="margin-top: 15px"
     />
 
     <van-circle
@@ -52,11 +52,11 @@
       size="120px"
       :clockwise="false"
       :text="t('customSize')"
-      style="margin-top: 15px;"
+      style="margin-top: 15px"
     />
   </demo-block>
 
-  <div style="margin-top: 15px;">
+  <div style="margin-top: 15px">
     <van-button :text="t('add')" type="primary" size="small" @click="add" />
     <van-button
       :text="t('decrease')"
@@ -67,51 +67,62 @@
   </div>
 </template>
 
-<script>
-const format = (rate) => Math.min(Math.max(rate, 0), 100);
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
+
+const i18n = {
+  'zh-CN': {
+    gradient: '渐变色',
+    customSize: '大小定制',
+    customStyle: '样式定制',
+    customColor: '颜色定制',
+    customWidth: '宽度定制',
+    counterClockwise: '逆时针',
+  },
+  'en-US': {
+    gradient: 'Gradient',
+    customSize: 'Custom Size',
+    customStyle: 'Custom Style',
+    customColor: 'Custom Color',
+    customWidth: 'Custom Width',
+    counterClockwise: 'Counter Clockwise',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      gradient: '渐变色',
-      customSize: '大小定制',
-      customStyle: '样式定制',
-      customColor: '颜色定制',
-      customWidth: '宽度定制',
-      counterClockwise: '逆时针',
-    },
-    'en-US': {
-      gradient: 'Gradient',
-      customSize: 'Custom Size',
-      customStyle: 'Custom Style',
-      customColor: 'Custom Color',
-      customWidth: 'Custom Width',
-      counterClockwise: 'Counter Clockwise',
-    },
-  },
-
-  data() {
-    return {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       rate: 70,
       currentRate1: 70,
       currentRate2: 70,
       currentRate3: 70,
       currentRate4: 70,
-      gradientColor: {
-        '0%': '#3fecff',
-        '100%': '#6149f6',
-      },
+    });
+
+    const gradientColor = {
+      '0%': '#3fecff',
+      '100%': '#6149f6',
     };
-  },
 
-  methods: {
-    add() {
-      this.rate = format(this.rate + 20);
-    },
+    const add = () => {
+      state.rate = format(state.rate + 20);
+    };
 
-    reduce() {
-      this.rate = format(this.rate - 20);
-    },
+    const reduce = () => {
+      state.rate = format(state.rate - 20);
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      add,
+      reduce,
+      gradientColor,
+    };
   },
 };
 </script>
