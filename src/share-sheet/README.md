@@ -25,26 +25,30 @@ app.use(ShareSheet);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      showShare: false,
-      options: [
-        { name: 'Wechat', icon: 'wechat' },
-        { name: 'Weibo', icon: 'weibo' },
-        { name: 'Link', icon: 'link' },
-        { name: 'Poster', icon: 'poster' },
-        { name: 'Qrcode', icon: 'qrcode' },
-      ],
-    };
-  },
-  methods: {
-    onSelect(option) {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      { name: 'Wechat', icon: 'wechat' },
+      { name: 'Weibo', icon: 'weibo' },
+      { name: 'Link', icon: 'link' },
+      { name: 'Poster', icon: 'poster' },
+      { name: 'Qrcode', icon: 'qrcode' },
+    ];
+
+    const onSelect = (option) => {
       Toast(option.name);
-      this.showShare = false;
-    },
+      showShare.value = false;
+    };
+
+    return {
+      options,
+      onSelect,
+      showShare,
+    };
   },
 };
 ```
@@ -56,23 +60,63 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      showShare: false,
-      options: [
-        [
-          { name: 'Wechat', icon: 'wechat' },
-          { name: 'Weibo', icon: 'weibo' },
-          { name: 'QQ', icon: 'qq' },
-        ],
-        [
-          { name: 'Link', icon: 'link' },
-          { name: 'Poster', icon: 'poster' },
-          { name: 'Qrcode', icon: 'qrcode' },
-          { name: 'Weapp Qrcode', icon: 'weapp-qrcode' },
-        ],
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      [
+        { name: 'Wechat', icon: 'wechat' },
+        { name: 'Weibo', icon: 'weibo' },
+        { name: 'QQ', icon: 'qq' },
       ],
+      [
+        { name: 'Link', icon: 'link' },
+        { name: 'Poster', icon: 'poster' },
+        { name: 'Qrcode', icon: 'qrcode' },
+        { name: 'Weapp Qrcode', icon: 'weapp-qrcode' },
+      ],
+    ];
+
+    return {
+      options,
+      showShare,
+    };
+  },
+};
+```
+
+### Custom Icon
+
+```html
+<van-share-sheet v-model:show="showShare" :options="options" />
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      {
+        name: 'Name',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+      },
+      {
+        name: 'Name',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+      },
+      {
+        name: 'Name',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+      },
+    ];
+
+    return {
+      options,
+      showShare,
     };
   },
 };
@@ -90,17 +134,22 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      { name: 'Wechat', icon: 'wechat' },
+      { name: 'Weibo', icon: 'weibo' },
+      { name: 'Link', icon: 'link', description: 'Description' },
+      { name: 'Poster', icon: 'poster' },
+      { name: 'Qrcode', icon: 'qrcode' },
+    ];
+
     return {
-      showShare: false,
-      options: [
-        { name: 'Wechat', icon: 'wechat' },
-        { name: 'Weibo', icon: 'weibo' },
-        { name: 'Link', icon: 'link', description: 'Description' },
-        { name: 'Poster', icon: 'poster' },
-        { name: 'Qrcode', icon: 'qrcode' },
-      ],
+      options,
+      showShare,
     };
   },
 };
