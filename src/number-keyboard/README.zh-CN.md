@@ -31,21 +31,24 @@ app.use(NumberKeyboard);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: true,
-    };
-  },
-  methods: {
-    onInput(value) {
+  setup() {
+    const show = ref(true);
+    const onInput = (value) => {
       Toast(value);
-    },
-    onDelete() {
+    };
+    const onDelete = () => {
       Toast('删除');
-    },
+    };
+
+    return {
+      show,
+      onInput,
+      onDelete,
+    };
   },
 };
 ```
@@ -138,11 +141,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(true);
+    const value = ref('');
     return {
-      show: false,
-      value: '',
+      show,
+      value,
     };
   },
 };
