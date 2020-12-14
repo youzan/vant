@@ -136,12 +136,8 @@ export default {
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item replace to="/home" icon="home-o">
-    Tab
-  </van-tabbar-item>
-  <van-tabbar-item replace to="/search" icon="search">
-    Tab
-  </van-tabbar-item>
+  <van-tabbar-item replace to="/home" icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item replace to="/search" icon="search">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 

@@ -33,21 +33,15 @@ Vue.use(NoticeBar);
 ### Wrapable
 
 ```html
-<van-notice-bar wrapable :scrollable="false">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar wrapable :scrollable="false">Notice Content</van-notice-bar>
 ```
 
 ### Mode
 
 ```html
-<van-notice-bar mode="closeable">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar mode="closeable">Notice Content</van-notice-bar>
 
-<van-notice-bar mode="link">
-  Notice Content
-</van-notice-bar>
+<van-notice-bar mode="link">Notice Content</van-notice-bar>
 ```
 
 ### Custom Style
