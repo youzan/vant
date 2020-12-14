@@ -14,9 +14,7 @@ Vue.use(NumberKeyboard);
 ### Default Keyboard
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
-  Show Keyboard
-</van-cell>
+<van-cell @touchstart.native.stop="show = true">Show Keyboard</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"
