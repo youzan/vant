@@ -128,7 +128,7 @@ export default {
 ### 方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Notify | 展示提示 | `options | message` | notify 实例 |
 | Notify.clear | 关闭提示 | - | `void` |
 | Notify.setDefaultOptions | 修改默认配置，对所有 Notify 生效 | `options` | `void` |

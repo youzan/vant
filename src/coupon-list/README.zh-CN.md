@@ -77,13 +77,13 @@ export default {
 ### CouponCell Props
 
 | 参数          | 说明                 | 类型               | 默认值   |
-| ------------- | -------------------- | ------------------ | -------- | --- |
+| ------------- | -------------------- | ------------------ | -------- |
 | title         | 单元格标题           | _string_           | `优惠券` |
 | chosen-coupon | 当前选中优惠券的索引 | _number \| string_ | `-1`     |
 | coupons       | 可用优惠券列表       | _Coupon[]_         | `[]`     |
 | editable      | 能否切换优惠券       | _boolean_          | `true`   |
 | border        | 是否显示内边框       | _boolean_          | `true`   |
-| currency      | 货币符号             | _string_           | `¥`      | -   |
+| currency      | 货币符号             | _string_           | `¥`      | - |
 
 ### CouponList Props
 
