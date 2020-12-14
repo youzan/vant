@@ -21,7 +21,7 @@ app.use(NumberKeyboard);
 数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作。
 
 ```html
-<van-cell @touchstart.stop="show = true"> 弹出默认键盘 </van-cell>
+<van-cell @touchstart.stop="show = true">弹出默认键盘</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"

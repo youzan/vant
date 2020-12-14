@@ -15,7 +15,7 @@ app.use(NumberKeyboard);
 ### Default Keyboard
 
 ```html
-<van-cell @touchstart.stop="show = true"> Show Keyboard </van-cell>
+<van-cell @touchstart.stop="show = true">Show Keyboard</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"

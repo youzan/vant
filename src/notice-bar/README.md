@@ -34,15 +34,15 @@ app.use(NoticeBar);
 ### Wrapable
 
 ```html
-<van-notice-bar wrapable :scrollable="false"> Notice Content </van-notice-bar>
+<van-notice-bar wrapable :scrollable="false">Notice Content</van-notice-bar>
 ```
 
 ### Mode
 
 ```html
-<van-notice-bar mode="closeable"> Notice Content </van-notice-bar>
+<van-notice-bar mode="closeable">Notice Content</van-notice-bar>
 
-<van-notice-bar mode="link"> Notice Content </van-notice-bar>
+<van-notice-bar mode="link">Notice Content</van-notice-bar>
 ```
 
 ### Custom Style
@@ -82,7 +82,7 @@ app.use(NoticeBar);
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
 | text | Notice text content | _string_ | `''` | - |
 | color | Text color | _string_ | `#f60` |
