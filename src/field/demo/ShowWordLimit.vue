@@ -13,26 +13,29 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    message: '留言',
+    placeholder: '请输入留言',
+    showWordLimit: '显示字数统计',
+  },
+  'en-US': {
+    message: 'Message',
+    placeholder: 'Message',
+    showWordLimit: 'Show Word Limit',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      message: '留言',
-      placeholder: '请输入留言',
-      showWordLimit: '显示字数统计',
-    },
-    'en-US': {
-      message: 'Message',
-      placeholder: 'Message',
-      showWordLimit: 'Show Word Limit',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const value = ref('');
-    return { value };
+
+    return { t, value };
   },
 };
 </script>

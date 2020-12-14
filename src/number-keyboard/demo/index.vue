@@ -77,54 +77,64 @@
   />
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      close: '完成',
-      input: '输入',
-      title: '键盘标题',
-      button1: '弹出默认键盘',
-      button2: '弹出带右侧栏的键盘',
-      button3: '弹出身份证号键盘',
-      button4: '弹出带标题的键盘',
-      button5: '弹出配置多个按键的键盘',
-      bindValue: '双向绑定',
-      clickToInput: '点此输入',
-      extraKey: '左下角按键内容',
-      multiExtraKey: '配置多个按键',
-    },
-    'en-US': {
-      close: 'Close',
-      input: 'Input',
-      title: 'Keyboard Title',
-      button1: 'Show Default Keyboard',
-      button2: 'Show Keyboard With Sidebar',
-      button3: 'Show IdNumber Keyboard',
-      button4: 'Show Keyboard With Title',
-      button5: 'Show Keyboard With Multiple ExtraKey',
-      bindValue: 'Bind Value',
-      clickToInput: 'Click To Input',
-      extraKey: 'IdNumber Keyboard',
-      multiExtraKey: 'Multiple ExtraKey',
-    },
-  },
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    close: '完成',
+    input: '输入',
+    title: '键盘标题',
+    button1: '弹出默认键盘',
+    button2: '弹出带右侧栏的键盘',
+    button3: '弹出身份证号键盘',
+    button4: '弹出带标题的键盘',
+    button5: '弹出配置多个按键的键盘',
+    bindValue: '双向绑定',
+    clickToInput: '点此输入',
+    extraKey: '左下角按键内容',
+    multiExtraKey: '配置多个按键',
+  },
+  'en-US': {
+    close: 'Close',
+    input: 'Input',
+    title: 'Keyboard Title',
+    button1: 'Show Default Keyboard',
+    button2: 'Show Keyboard With Sidebar',
+    button3: 'Show IdNumber Keyboard',
+    button4: 'Show Keyboard With Title',
+    button5: 'Show Keyboard With Multiple ExtraKey',
+    bindValue: 'Bind Value',
+    clickToInput: 'Click To Input',
+    extraKey: 'IdNumber Keyboard',
+    multiExtraKey: 'Multiple ExtraKey',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value: '',
       keyboard: 'default',
+    });
+
+    const onInput = (value: string) => {
+      Toast(`${t('input')}: ${value}`);
     };
-  },
 
-  methods: {
-    onInput(value) {
-      this.$toast(`${this.t('input')}: ${value}`);
-    },
+    const onDelete = () => {
+      Toast(t('delete'));
+    };
 
-    onDelete() {
-      this.$toast(this.t('delete'));
-    },
+    return {
+      ...toRefs(state),
+      t,
+      onInput,
+      onDelete,
+    };
   },
 };
 </script>

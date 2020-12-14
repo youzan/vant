@@ -71,9 +71,11 @@ app.use(SwipeCell);
 ```
 
 ```js
+import { Dialog } from 'vant';
+
 export default {
-  methods: {
-    beforeClose({ position, instance }) {
+  setup() {
+    const beforeClose = ({ position }) => {
       switch (position) {
         case 'left':
         case 'cell':
@@ -81,14 +83,14 @@ export default {
           return true;
         case 'right':
           return new Promise((resolve) => {
-            this.$dialog
-              .confirm({
-                message: 'Are you sure to delete?',
-              })
-              .then(resolve);
+            Dialog.confirm({
+              title: 'Are you sure to delete?',
+            }).then(resolve);
           });
       }
-    },
+    };
+
+    return { beforeClose };
   },
 };
 ```
@@ -134,10 +136,10 @@ export default {
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get SwipeCell instance and call instance methods.
 
-| Name  | Description     | Attribute       | Return value |
-| ----- | --------------- | --------------- | ------------ | --- |
-| open  | open SwipeCell  | position: `left | right`       | -   |
-| close | close SwipeCell | -               | -            |
+| Name  | Description     | Attribute                 | Return value |
+| ----- | --------------- | ------------------------- | ------------ |
+| open  | open SwipeCell  | position: `left \| right` | -            |
+| close | close SwipeCell | -                         | -            |
 
 ### Less Variables
 

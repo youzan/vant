@@ -26,11 +26,12 @@ app.use(ContactList);
 ```
 
 ```js
+import { reactive } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       chosenContactId: '1',
       list: [
         {
@@ -45,18 +46,24 @@ export default {
           tel: '1310000000',
         },
       ],
-    };
-  },
-  methods: {
-    onAdd() {
+    });
+
+    const onAdd = () => {
       Toast('Add');
-    },
-    onEdit(contact) {
+    };
+    const onEdit = (contact) => {
       Toast('Edit' + contact.id);
-    },
-    onSelect(contact) {
+    };
+    const onSelect = (contact) => {
       Toast('Select' + contact.id);
-    },
+    };
+
+    return {
+      state,
+      onAdd,
+      onEdit,
+      onSelect,
+    };
   },
 };
 ```

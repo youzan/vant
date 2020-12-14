@@ -22,42 +22,48 @@ List 组件通过 `loading` 和 `finished` 两个变量控制加载状态，当�
 
 ```html
 <van-list
-  v-model:loading="loading"
-  :finished="finished"
+  v-model:loading="state.loading"
+  :finished="state.finished"
   finished-text="没有更多了"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item" />
+  <van-cell v-for="item in state.list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       loading: false,
       finished: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       // 异步更新数据
       // setTimeout 仅做示例，真实场景中一般为 ajax 请求
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1);
+          state.list.push(state.list.length + 1);
         }
 
         // 加载状态结束
-        this.loading = false;
+        state.loading = false;
 
         // 数据全部加载完成
-        if (this.list.length >= 40) {
-          this.finished = true;
+        if (state.list.length >= 40) {
+          state.finished = true;
         }
       }, 1000);
-    },
+    };
+
+    return {
+      state,
+      onLoad,
+    };
   },
 };
 ```
@@ -68,30 +74,36 @@ export default {
 
 ```html
 <van-list
-  v-model:loading="loading"
-  v-model:error="error"
+  v-model:loading="state.loading"
+  v-model:error="state.error"
   error-text="请求失败，点击重新加载"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item" />
+  <van-cell v-for="item in state.list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       error: false,
       loading: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       fetchSomeThing().catch(() => {
-        this.error = true;
+        state.error = true;
       });
-    },
+    };
+
+    return {
+      state,
+      onLoad,
+    };
   },
 };
 ```
@@ -101,55 +113,63 @@ export default {
 List 组件可以与 [PullRefresh](#/zh-CN/pull-refresh) 组件结合使用，实现下拉刷新的效果。
 
 ```html
-<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+<van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
   <van-list
-    v-model:loading="loading"
-    :finished="finished"
+    v-model:loading="state.loading"
+    :finished="state.finished"
     finished-text="没有更多了"
     @load="onLoad"
   >
-    <van-cell v-for="item in list" :key="item" :title="item" />
+    <van-cell v-for="item in state.list" :key="item" :title="item" />
   </van-list>
 </van-pull-refresh>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       loading: false,
       finished: false,
       refreshing: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       setTimeout(() => {
-        if (this.refreshing) {
-          this.list = [];
-          this.refreshing = false;
+        if (state.refreshing) {
+          state.list = [];
+          state.refreshing = false;
         }
 
         for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1);
+          state.list.push(state.list.length + 1);
         }
-        this.loading = false;
+        state.loading = false;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
+        if (state.list.length >= 40) {
+          state.finished = true;
         }
       }, 1000);
-    },
-    onRefresh() {
+    };
+
+    const onRefresh = () => {
       // 清空列表数据
-      this.finished = false;
+      state.finished = false;
 
       // 重新加载数据
       // 将 loading 设置为 true，表示处于加载状态
-      this.loading = true;
-      this.onLoad();
-    },
+      state.loading = true;
+      onLoad();
+    };
+
+    return {
+      state,
+      onLoad,
+      onRefresh,
+    };
   },
 };
 ```

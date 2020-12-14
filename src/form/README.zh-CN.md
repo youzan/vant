@@ -38,9 +38,7 @@ app.use(Form);
     :rules="[{ required: true, message: '请填写密码' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="primary" native-type="submit">
-      提交
-    </van-button>
+    <van-button round block type="info" native-type="submit">提交</van-button>
   </div>
 </van-form>
 ```
@@ -89,9 +87,9 @@ export default {
     :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="primary" native-type="submit">
-      提交
-    </van-button>
+    <van-button round block type="primary" native-type="submit"
+      >提交</van-button
+    >
   </div>
 </van-form>
 ```

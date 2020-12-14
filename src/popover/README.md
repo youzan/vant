@@ -23,23 +23,27 @@ app.use(Popover);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      showPopover: false,
-      actions: [
-        { text: 'Option 1' },
-        { text: 'Option 2' },
-        { text: 'Option 3' },
-      ],
-    };
-  },
-  methods: {
-    onSelect(action) {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: 'Option 1' },
+      { text: 'Option 2' },
+      { text: 'Option 3' },
+    ];
+
+    const onSelect = (action) => {
       Toast(action.text);
-    },
+    };
+
+    return {
+      actions,
+      onSelect,
+      showPopover,
+    };
   },
 };
 ```
@@ -57,15 +61,20 @@ Using the `theme` prop to change the style of Popover.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: 'Option 1' },
+      { text: 'Option 2' },
+      { text: 'Option 3' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [
-        { text: 'Option 1' },
-        { text: 'Option 2' },
-        { text: 'Option 3' },
-      ],
+      actions,
+      showPopover,
     };
   },
 };
@@ -105,15 +114,20 @@ bottom-end    # Bottom right
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: 'Option 1', icon: 'add-o' },
+      { text: 'Option 2', icon: 'music-o' },
+      { text: 'Option 3', icon: 'more-o' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [
-        { text: 'Option 1', icon: 'add-o' },
-        { text: 'Option 2', icon: 'music-o' },
-        { text: 'Option 3', icon: 'more-o' },
-      ],
+      actions,
+      showPopover,
     };
   },
 };
@@ -132,15 +146,20 @@ Using the `disabled` option to disable an action.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: 'Option 1', disabled: true },
+      { text: 'Option 2', disabled: true },
+      { text: 'Option 3' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [
-        { text: 'Option 1', disabled: true },
-        { text: 'Option 2', disabled: true },
-        { text: 'Option 3' },
-      ],
+      actions,
+      showPopover,
     };
   },
 };
@@ -172,11 +191,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      showPopover: false,
-    };
+  setup() {
+    const showPopover = ref(false);
+    return { showPopover };
   },
 };
 ```

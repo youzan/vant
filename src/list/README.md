@@ -20,37 +20,43 @@ app.use(List);
 
 ```html
 <van-list
-  v-model:loading="loading"
-  :finished="finished"
+  v-model:loading="state.loading"
+  :finished="state.finished"
   finished-text="Finished"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item" />
+  <van-cell v-for="item in state.list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       loading: false,
       finished: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1);
+          state.list.push(state.list.length + 1);
         }
-        this.loading = false;
+        state.loading = false;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
+        if (state.list.length >= 40) {
+          state.finished = true;
         }
       }, 1000);
-    },
+    };
+
+    return {
+      state,
+      onLoad,
+    };
   },
 };
 ```
@@ -59,30 +65,36 @@ export default {
 
 ```html
 <van-list
-  v-model:loading="loading"
-  v-model:error="error"
+  v-model:loading="state.loading"
+  v-model:error="state.error"
   error-text="Request failed. Click to reload"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item" />
+  <van-cell v-for="item in state.list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       error: false,
       loading: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       fetchSomeThing().catch(() => {
-        this.error = true;
+        state.error = true;
       });
-    },
+    };
+
+    return {
+      state,
+      onLoad,
+    };
   },
 };
 ```
@@ -90,51 +102,59 @@ export default {
 ### PullRefresh
 
 ```html
-<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+<van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
   <van-list
-    v-model:loading="loading"
-    :finished="finished"
+    v-model:loading="state.loading"
+    :finished="state.finished"
     finished-text="Finished"
     @load="onLoad"
   >
-    <van-cell v-for="item in list" :key="item" :title="item" />
+    <van-cell v-for="item in state.list" :key="item" :title="item" />
   </van-list>
 </van-pull-refresh>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       list: [],
       loading: false,
       finished: false,
       refreshing: false,
-    };
-  },
-  methods: {
-    onLoad() {
+    });
+
+    const onLoad = () => {
       setTimeout(() => {
-        if (this.refreshing) {
-          this.list = [];
-          this.refreshing = false;
+        if (state.refreshing) {
+          state.list = [];
+          state.refreshing = false;
         }
 
         for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1);
+          state.list.push(state.list.length + 1);
         }
-        this.loading = false;
+        state.loading = false;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
+        if (state.list.length >= 40) {
+          state.finished = true;
         }
       }, 1000);
-    },
-    onRefresh() {
-      this.finished = false;
-      this.loading = true;
-      this.onLoad();
-    },
+    };
+
+    const onRefresh = () => {
+      state.finished = false;
+      state.loading = true;
+      onLoad();
+    };
+
+    return {
+      state,
+      onLoad,
+      onRefresh,
+    };
   },
 };
 ```

@@ -155,7 +155,7 @@ export default {
 ### Radio Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | name | Radio name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Whether to disable radio | _boolean_ | `false` |
@@ -167,7 +167,7 @@ export default {
 ### RadioGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |

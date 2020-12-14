@@ -27,11 +27,12 @@ app.use(Tabs);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      active: 2,
-    };
+  setup() {
+    const active = ref(2);
+    return { active };
   },
 };
 ```
@@ -49,11 +50,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeName: 'a',
-    };
+  setup() {
+    const activeName = ref('a');
+    return { activeName };
   },
 };
 ```
@@ -86,10 +88,14 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickDisabled(name, title) {
+  setup() {
+    const onClickDisabled = (name, title) => {
       Toast(name + '已被禁用');
-    },
+    };
+
+    return {
+      onClickDisabled,
+    };
   },
 };
 ```
@@ -121,10 +127,14 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClick(name, title) {
+  setup() {
+    const onClick = (name, title) => {
       Toast(title);
-    },
+    };
+
+    return {
+      onClick,
+    };
   },
 };
 ```
@@ -204,8 +214,8 @@ export default {
 
 ```js
 export default {
-  methods: {
-    beforeChange(index) {
+  setup() {
+    const beforeChange = (index) => {
       // 返回 false 表示阻止此次切换
       if (index === 1) {
         return false;
@@ -216,7 +226,11 @@ export default {
         // 在 resolve 函数中返回 true 或 false
         resolve(index !== 3);
       });
-    },
+    };
+
+    return {
+      beforeChange,
+    };
   },
 };
 ```

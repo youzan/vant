@@ -19,11 +19,12 @@ app.use(Pagination);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      currentPage: 1,
-    };
+  setup() {
+    const currentPage = ref(1);
+    return { currentPage };
   },
 };
 ```

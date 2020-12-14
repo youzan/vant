@@ -88,7 +88,7 @@ export default {
 ### CouponList Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
 | chosen-coupon | Index of chosen coupon | _number_ | `-1` |
 | coupons | Coupon list | _Coupon[]_ | `[]` |

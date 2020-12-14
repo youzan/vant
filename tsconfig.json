@@ -9,15 +9,11 @@
     "noEmit": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@demo/*": ["docs/site/*"]
+    }
   },
-  "include": [
-    "types/**/*",
-    "src/**/*"
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.js",
-    "node_modules"
-  ]
+  "include": ["types/**/*", "docs/**/*", "src/**/*"],
+  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
 }

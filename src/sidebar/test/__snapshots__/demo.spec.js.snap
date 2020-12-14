@@ -55,7 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
             <div class="van-badge van-badge--fixed">
-              99+
+              20
             </div>
           </div>
         </a>
@@ -98,17 +98,17 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-sidebar">
         <a class="van-sidebar-item van-sidebar-item--select">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            Title1
+            Title 1
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            Title2
+            Title 2
           </div>
         </a>
         <a class="van-sidebar-item">
           <div class="van-badge__wrapper van-sidebar-item__text">
-            Title3
+            Title 3
           </div>
         </a>
       </div>

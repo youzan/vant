@@ -26,11 +26,12 @@ Use `v-model` to control the name of active panels.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeNames: ['1'],
-    };
+  setup() {
+    const activeNames = ref(['1']);
+    return { activeNames };
   },
 };
 ```
@@ -48,11 +49,12 @@ In accordion mode, only one panel can be expanded at the same time.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeName: '1',
-    };
+  setup() {
+    const activeName = ref('1');
+    return { activeName };
   },
 };
 ```
@@ -90,11 +92,12 @@ Use the `disabled` prop to disable CollaseItem.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeNames: ['1'],
-    };
+  setup() {
+    const activeNames = ref(['1']);
+    return { activeNames };
   },
 };
 ```

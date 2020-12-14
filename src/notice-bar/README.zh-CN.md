@@ -60,10 +60,10 @@ app.use(NoticeBar);
 
 ```html
 <!-- closeable 模式，在右侧显示关闭按钮 -->
-<van-notice-bar mode="closeable"> 技术是开发它的人的共同灵魂。 </van-notice-bar>
+<van-notice-bar mode="closeable">技术是开发它的人的共同灵魂。</van-notice-bar>
 
 <!-- link 模式，在右侧显示链接箭头 -->
-<van-notice-bar mode="link"> 技术是开发它的人的共同灵魂。 </van-notice-bar>
+<van-notice-bar mode="link">技术是开发它的人的共同灵魂。</van-notice-bar>
 ```
 
 ### 自定义样式

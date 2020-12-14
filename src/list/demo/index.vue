@@ -38,54 +38,56 @@
   </van-tabs>
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      errorInfo: '错误提示',
-      errorText: '请求失败，点击重新加载',
-      pullRefresh: '下拉刷新',
-      finishedText: '没有更多了',
-    },
-    'en-US': {
-      errorInfo: 'Error Info',
-      errorText: 'Request failed. Click to reload',
-      pullRefresh: 'PullRefresh',
-      finishedText: 'Finished',
-    },
-  },
+<script lang="ts">
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    errorInfo: '错误提示',
+    errorText: '请求失败，点击重新加载',
+    pullRefresh: '下拉刷新',
+    finishedText: '没有更多了',
+  },
+  'en-US': {
+    errorInfo: 'Error Info',
+    errorText: 'Request failed. Click to reload',
+    pullRefresh: 'PullRefresh',
+    finishedText: 'Finished',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       list: [
         {
-          items: [],
+          items: [] as string[],
           refreshing: false,
           loading: false,
           error: false,
           finished: false,
         },
         {
-          items: [],
+          items: [] as string[],
           refreshing: false,
           loading: false,
           error: false,
           finished: false,
         },
         {
-          items: [],
+          items: [] as string[],
           refreshing: false,
           loading: false,
           error: false,
           finished: false,
         },
       ],
-    };
-  },
+    });
 
-  methods: {
-    onLoad(index) {
-      const list = this.list[index];
+    const onLoad = (index: number) => {
+      const list = state.list[index];
       list.loading = true;
 
       setTimeout(() => {
@@ -96,7 +98,7 @@ export default {
 
         for (let i = 0; i < 10; i++) {
           const text = list.items.length + 1;
-          list.items.push(text < 10 ? '0' + text : text);
+          list.items.push(text < 10 ? '0' + text : String(text));
         }
 
         list.loading = false;
@@ -113,12 +115,19 @@ export default {
           list.finished = true;
         }
       }, 1000);
-    },
+    };
 
-    onRefresh(index) {
-      this.list[index].finished = false;
-      this.onLoad(index);
-    },
+    const onRefresh = (index: number) => {
+      state.list[index].finished = false;
+      onLoad(index);
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      onLoad,
+      onRefresh,
+    };
   },
 };
 </script>

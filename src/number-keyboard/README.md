@@ -15,7 +15,7 @@ app.use(NumberKeyboard);
 ### Default Keyboard
 
 ```html
-<van-cell @touchstart.stop="show = true"> Show Keyboard </van-cell>
+<van-cell @touchstart.stop="show = true">Show Keyboard</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"
@@ -25,21 +25,24 @@ app.use(NumberKeyboard);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      show: true,
-    };
-  },
-  methods: {
-    onInput(value) {
+  setup() {
+    const show = ref(true);
+    const onInput = (value) => {
       Toast(value);
-    },
-    onDelete() {
+    };
+    const onDelete = () => {
       Toast('delete');
-    },
+    };
+
+    return {
+      show,
+      onInput,
+      onDelete,
+    };
   },
 };
 ```
@@ -125,11 +128,15 @@ Use `title` prop to set keyboard title.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(true);
+    const value = ref('');
     return {
-      show: false,
-      value: '',
+      show,
+      value,
     };
   },
 };

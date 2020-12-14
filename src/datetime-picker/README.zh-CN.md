@@ -31,12 +31,15 @@ DatetimePicker 通过 type 属性来定义需要选择的时间类型，type 为
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -58,23 +61,27 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'year') {
         return `${val}年`;
       } else if (type === 'month') {
         return `${val}月`;
       }
       return val;
-    },
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      formatter,
+      currentDate,
+    };
   },
 };
 ```
@@ -95,23 +102,27 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'month') {
         return `${val}月`;
       } else if (type === 'day') {
         return `${val}日`;
       }
       return val;
-    },
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      formatter,
+      currentDate,
+    };
   },
 };
 ```
@@ -131,11 +142,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      currentTime: '12:00',
-    };
+    const currentTime = ref('12:00');
+    return { currentTime };
   },
 };
 ```
@@ -155,12 +167,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -181,12 +196,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate,
     };
   },
 };
@@ -201,19 +219,23 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
-    return {
-      currentTime: '12:00',
-    };
-  },
-  methods: {
-    filter(type, options) {
+    const currentTime = ref('12:00');
+
+    const filter = (type, options) => {
       if (type === 'minute') {
-        return options.filter((option) => option % 5 === 0);
+        return options.filter((option) => Number(option) % 5 === 0);
       }
       return options;
-    },
+    };
+
+    return {
+      filter,
+      currentTime,
+    };
   },
 };
 ```
@@ -231,14 +253,13 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      currentDate: new Date(),
-    };
-  },
-  methods: {
-    formatter(type, val) {
+  setup() {
+    const currentDate = ref(new Date());
+
+    const formatter = (type, val) => {
       if (type === 'year') {
         return val + '年';
       }
@@ -249,7 +270,12 @@ export default {
         return val + '日';
       }
       return val;
-    },
+    };
+
+    return {
+      formatter,
+      currentDate,
+    };
   },
 };
 ```

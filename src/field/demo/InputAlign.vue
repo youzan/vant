@@ -9,26 +9,29 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    text: '文本',
+    inputAlign: '输入框内容对齐',
+    alignPlaceHolder: '输入框内容右对齐',
+  },
+  'en-US': {
+    text: 'Text',
+    inputAlign: 'Input Align',
+    alignPlaceHolder: 'Input Align Right',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      text: '文本',
-      inputAlign: '输入框内容对齐',
-      alignPlaceHolder: '输入框内容右对齐',
-    },
-    'en-US': {
-      text: 'Text',
-      inputAlign: 'Input Align',
-      alignPlaceHolder: 'Input Align Right',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const value = ref('');
-    return { value };
+
+    return { t, value };
   },
 };
 </script>

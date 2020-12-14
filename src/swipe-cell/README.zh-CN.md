@@ -81,10 +81,12 @@ app.use(SwipeCell);
 ```
 
 ```js
+import { Dialog } from 'vant';
+
 export default {
-  methods: {
+  setup() {
     // position 为关闭时点击的位置
-    beforeClose({ position }) {
+    const beforeClose = ({ position }) => {
       switch (position) {
         case 'left':
         case 'cell':
@@ -92,14 +94,14 @@ export default {
           return true;
         case 'right':
           return new Promise((resolve) => {
-            this.$dialog
-              .confirm({
-                message: '确定删除吗？',
-              })
-              .then(resolve);
+            Dialog.confirm({
+              title: '确定删除吗？',
+            }).then(resolve);
           });
       }
-    },
+    };
+
+    return { beforeClose };
   },
 };
 ```
@@ -146,10 +148,10 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
-| 方法名 | 说明             | 参数            | 返回值 |
-| ------ | ---------------- | --------------- | ------ | --- |
-| open   | 打开单元格侧边栏 | position: `left | right` | -   |
-| close  | 收起单元格侧边栏 | -               | -      |
+| 方法名 | 说明             | 参数                      | 返回值 |
+| ------ | ---------------- | ------------------------- | ------ |
+| open   | 打开单元格侧边栏 | position: `left \| right` | -      |
+| close  | 收起单元格侧边栏 | -                         | -      |
 
 ### 样式变量
 

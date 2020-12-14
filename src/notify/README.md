@@ -65,19 +65,23 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      show: false,
-    };
-  },
-  methods: {
-    showNotify() {
-      this.show = true;
+  setup() {
+    const show = ref(false);
+
+    const showNotify = () => {
+      show.value = true;
       setTimeout(() => {
-        this.show = false;
+        show.value = false;
       }, 2000);
-    },
+    };
+
+    return {
+      show,
+      showNotify,
+    };
   },
 };
 ```
@@ -87,7 +91,7 @@ export default {
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Notify | `options | message` | notify instance | Show notify |
 | Notify.clear | - | `void` | Close notify |
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
@@ -96,7 +100,7 @@ export default {
 ### Options
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | type | Can be set to `primary` `success` `warning` | _string_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |

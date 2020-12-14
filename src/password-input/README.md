@@ -33,11 +33,16 @@ app.use(NumberKeyboard);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const value = ref('123');
+    const showKeyboard = ref(true);
+
     return {
-      value: '123',
-      showKeyboard: true,
+      value,
+      showKeyboard,
     };
   },
 };
@@ -96,22 +101,27 @@ Use `info` to set info message, use `error-info` prop to set error message.
 ```
 
 ```js
+import { ref, watch } from 'vue';
+
 export default {
-  data() {
-    return {
-      value: '123',
-      errorInfo: '',
-      showKeyboard: true,
-    };
-  },
-  watch: {
-    value(value) {
-      if (value.length === 6 && value !== '123456') {
-        this.errorInfo = 'Password Mistake';
+  setup() {
+    const value = ref('123');
+    const errorInfo = ref('');
+    const showKeyboard = ref(true);
+
+    watch(value, (newVal) => {
+      if (newVal.length === 6 && newVal !== '123456') {
+        errorInfo.value = 'Password Mistake';
       } else {
-        this.errorInfo = '';
+        errorInfo.value = '';
       }
-    },
+    });
+
+    return {
+      value,
+      errorInfo,
+      showKeyboard,
+    };
   },
 };
 ```

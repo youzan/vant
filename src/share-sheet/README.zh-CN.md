@@ -31,26 +31,30 @@ app.use(ShareSheet);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      showShare: false,
-      options: [
-        { name: '微信', icon: 'wechat' },
-        { name: '微博', icon: 'weibo' },
-        { name: '复制链接', icon: 'link' },
-        { name: '分享海报', icon: 'poster' },
-        { name: '二维码', icon: 'qrcode' },
-      ],
-    };
-  },
-  methods: {
-    onSelect(option) {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      { name: '微信', icon: 'wechat' },
+      { name: '微博', icon: 'weibo' },
+      { name: '复制链接', icon: 'link' },
+      { name: '分享海报', icon: 'poster' },
+      { name: '二维码', icon: 'qrcode' },
+    ];
+
+    const onSelect = (option) => {
       Toast(option.name);
-      this.showShare = false;
-    },
+      showShare.value = false;
+    };
+
+    return {
+      options,
+      onSelect,
+      showShare,
+    };
   },
 };
 ```
@@ -68,23 +72,28 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      showShare: false,
-      options: [
-        [
-          { name: '微信', icon: 'wechat' },
-          { name: '微博', icon: 'weibo' },
-          { name: 'QQ', icon: 'qq' },
-        ],
-        [
-          { name: '复制链接', icon: 'link' },
-          { name: '分享海报', icon: 'poster' },
-          { name: '二维码', icon: 'qrcode' },
-          { name: '小程序码', icon: 'weapp-qrcode' },
-        ],
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      [
+        { name: '微信', icon: 'wechat' },
+        { name: '微博', icon: 'weibo' },
+        { name: 'QQ', icon: 'qq' },
       ],
+      [
+        { name: '复制链接', icon: 'link' },
+        { name: '分享海报', icon: 'poster' },
+        { name: '二维码', icon: 'qrcode' },
+        { name: '小程序码', icon: 'weapp-qrcode' },
+      ],
+    ];
+
+    return {
+      options,
+      showShare,
     };
   },
 };
@@ -99,24 +108,29 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      {
+        name: '名称',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+      },
+      {
+        name: '名称',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+      },
+      {
+        name: '名称',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+      },
+    ];
+
     return {
-      showShare: false,
-      options: [
-        {
-          name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
-        },
-        {
-          name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
-        },
-        {
-          name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
-        },
-      ],
+      options,
+      showShare,
     };
   },
 };
@@ -136,17 +150,22 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showShare = ref(false);
+    const options = [
+      { name: '微信', icon: 'wechat' },
+      { name: '微博', icon: 'weibo' },
+      { name: '复制链接', icon: 'link', description: '描述信息' },
+      { name: '分享海报', icon: 'poster' },
+      { name: '二维码', icon: 'qrcode' },
+    ];
+
     return {
-      showShare: false,
-      options: [
-        { name: '微信', icon: 'wechat' },
-        { name: '微博', icon: 'weibo' },
-        { name: '复制链接', icon: 'link', description: '描述信息' },
-        { name: '分享海报', icon: 'poster' },
-        { name: '二维码', icon: 'qrcode' },
-      ],
+      options,
+      showShare,
     };
   },
 };

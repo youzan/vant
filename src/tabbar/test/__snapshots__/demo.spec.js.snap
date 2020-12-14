@@ -220,7 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        Tab1
+        Tab 1
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -229,7 +229,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        Tab2
+        Tab 2
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -238,7 +238,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        Tab3
+        Tab 3
       </div>
     </div>
     <div class="van-tabbar-item">
@@ -247,7 +247,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-tabbar-item__text">
-        Tab4
+        Tab 4
       </div>
     </div>
   </div>

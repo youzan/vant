@@ -18,7 +18,7 @@ app.use(SidebarItem);
 通过 `v-model` 绑定当前选中项的索引。
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="标签名称" />
   <van-sidebar-item title="标签名称" />
   <van-sidebar-item title="标签名称" />
@@ -26,11 +26,12 @@ app.use(SidebarItem);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      activeKey: 0,
-    };
+  setup() {
+    const active = ref(0);
+    return { active };
   },
 };
 ```
@@ -40,10 +41,10 @@ export default {
 设置 `dot` 属性后，会在右上角展示一个小红点；设置 `badge` 属性后，会在右上角展示相应的徽标。
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="标签名称" dot />
   <van-sidebar-item title="标签名称" badge="5" />
-  <van-sidebar-item title="标签名称" badge="99+" />
+  <van-sidebar-item title="标签名称" badge="20" />
 </van-sidebar>
 ```
 
@@ -52,7 +53,7 @@ export default {
 通过 `disabled` 属性禁用选项。
 
 ```html
-<van-sidebar v-model="activeKey">
+<van-sidebar v-model="active">
   <van-sidebar-item title="标签名称" />
   <van-sidebar-item title="标签名称" disabled />
   <van-sidebar-item title="标签名称" />
@@ -64,26 +65,28 @@ export default {
 设置 `change` 方法来监听切换导航项时的事件。
 
 ```html
-<van-sidebar v-model="activeKey" @change="onChange">
-  <van-sidebar-item title="标签名1" />
-  <van-sidebar-item title="标签名2" />
-  <van-sidebar-item title="标签名3" />
+<van-sidebar v-model="active" @change="onChange">
+  <van-sidebar-item title="标签名 1" />
+  <van-sidebar-item title="标签名 2" />
+  <van-sidebar-item title="标签名 3" />
 </van-sidebar>
 ```
 
 ```js
-import { Notify } from 'vant';
+import { ref } from 'vue';
+import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      activeKey: 0,
+  setup() {
+    const active = ref(0);
+    const onChange = (index) => {
+      Toast(`标签名 ${index + 1}`);
     };
-  },
-  methods: {
-    onChange(index) {
-      Notify({ type: 'primary', message: index });
-    },
+
+    return {
+      active,
+      onChange,
+    };
   },
 };
 ```

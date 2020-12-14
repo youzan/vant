@@ -18,19 +18,41 @@ app.use(TreeSelect);
 
 ```html
 <van-tree-select
-  v-model:active-id="activeId"
-  v-model:main-active-index="activeIndex"
+  v-model:active-id="state.activeId"
+  v-model:main-active-index="state.activeIndex"
   :items="items"
 />
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
-      items,
+  setup() {
+    const state = reactive({
       activeId: 1,
       activeIndex: 0,
+    });
+    const items = [
+      {
+        text: '浙江',
+        children: [
+          { text: '杭州', id: 1 },
+          { text: '温州', id: 2 },
+        ],
+      },
+      {
+        text: '江苏',
+        children: [
+          { text: '南京', id: 5 },
+          { text: '无锡', id: 6 },
+        ],
+      },
+    ];
+
+    return {
+      state,
+      items,
     };
   },
 };
@@ -42,19 +64,41 @@ export default {
 
 ```html
 <van-tree-select
-  v-model:active-id="activeIds"
-  v-model:main-active-index="activeIndex"
+  v-model:active-id="state.activeIds"
+  v-model:main-active-index="state.activeIndex"
   :items="items"
 />
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
-      items,
-      activeIds: [1, 2],
+  setup() {
+    const state = reactive({
+      activeId: [1, 2],
       activeIndex: 0,
+    });
+    const items = [
+      {
+        text: '浙江',
+        children: [
+          { text: '杭州', id: 1 },
+          { text: '温州', id: 2 },
+        ],
+      },
+      {
+        text: '江苏',
+        children: [
+          { text: '南京', id: 5 },
+          { text: '无锡', id: 6 },
+        ],
+      },
+    ];
+
+    return {
+      state,
+      items,
     };
   },
 };
@@ -66,17 +110,17 @@ export default {
 
 ```html
 <van-tree-select
-  v-model:main-active-index="active"
+  v-model:main-active-index="activeIndex"
   height="55vw"
   :items="items"
 >
   <template #content>
     <van-image
-      v-if="active === 0"
+      v-if="activeIndex === 0"
       src="https://img.yzcdn.cn/vant/apple-1.jpg"
     />
     <van-image
-      v-if="active === 1"
+      v-if="activeIndex === 1"
       src="https://img.yzcdn.cn/vant/apple-2.jpg"
     />
   </template>
@@ -84,10 +128,13 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const activeIndex = ref(0);
     return {
-      active: 0,
+      activeIndex,
       items: [{ text: '分组 1' }, { text: '分组 2' }],
     };
   },
@@ -107,10 +154,13 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   data() {
+    const activeIndex = ref(0);
     return {
-      activeIndex: 0,
+      activeIndex,
       items: [
         { text: '浙江', children: [], dot: true },
         { text: '江苏', children: [], badge: 5 },

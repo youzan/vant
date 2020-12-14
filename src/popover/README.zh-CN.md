@@ -29,20 +29,29 @@ app.use(Popover);
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      showPopover: false,
-      // 通过 actions 属性来定义菜单选项
-      actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
-    };
-  },
-  methods: {
-    onSelect(action) {
+  setup() {
+    const showPopover = ref(false);
+
+    // 通过 actions 属性来定义菜单选项
+    const actions = [
+      { text: '选项一' },
+      { text: '选项二' },
+      { text: '选项三' },
+    ];
+
+    const onSelect = (action) => {
       Toast(action.text);
-    },
+    };
+
+    return {
+      actions,
+      onSelect,
+      showPopover,
+    };
   },
 };
 ```
@@ -60,11 +69,20 @@ Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: '选项一' },
+      { text: '选项二' },
+      { text: '选项三' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+      actions,
+      showPopover,
     };
   },
 };
@@ -108,15 +126,20 @@ bottom-end    # 底部右侧位置
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: '选项一', icon: 'add-o' },
+      { text: '选项二', icon: 'music-o' },
+      { text: '选项三', icon: 'more-o' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [
-        { text: '选项一', icon: 'add-o' },
-        { text: '选项二', icon: 'music-o' },
-        { text: '选项三', icon: 'more-o' },
-      ],
+      actions,
+      showPopover,
     };
   },
 };
@@ -135,15 +158,20 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: '选项一', disabled: true },
+      { text: '选项二', disabled: true },
+      { text: '选项三' },
+    ];
+
     return {
-      showPopover: false,
-      actions: [
-        { text: '选项一', disabled: true },
-        { text: '选项二', disabled: true },
-        { text: '选项三' },
-      ],
+      actions,
+      showPopover,
     };
   },
 };
@@ -177,11 +205,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      showPopover: false,
-    };
+  setup() {
+    const showPopover = ref(false);
+    return { showPopover };
   },
 };
 ```

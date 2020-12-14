@@ -8,7 +8,7 @@ export function useTranslate(i18n: Record<string, any>) {
   const demoName = `demo-i18n-${demoUid++}`;
 
   if (i18n) {
-    const locales = {};
+    const locales: Record<string, any> = {};
     const camelizedName = camelize(demoName);
 
     Object.keys(i18n).forEach((key) => {

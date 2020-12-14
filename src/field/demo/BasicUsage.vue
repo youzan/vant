@@ -10,24 +10,26 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    label: '文本',
+    placeholder: '请输入文本',
+  },
+  'en-US': {
+    label: 'Label',
+    placeholder: 'Text',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      label: '文本',
-      placeholder: '请输入文本',
-    },
-    'en-US': {
-      label: 'Label',
-      placeholder: 'Text',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const value = ref('');
-    return { value };
+    return { t, value };
   },
 };
 </script>

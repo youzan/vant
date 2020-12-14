@@ -15,64 +15,72 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 import areaList from '../../area/demo/area';
 
+const i18n = {
+  'zh-CN': {
+    areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
+    searchResult: [
+      {
+        name: '黄龙万科中心',
+        address: '杭州市西湖区',
+      },
+      {
+        name: '黄龙万科中心G座',
+      },
+      {
+        name: '黄龙万科中心H座',
+        address: '杭州市西湖区',
+      },
+    ],
+  },
+  'en-US': {
+    areaColumnsPlaceholder: ['Choose', 'Choose', 'Choose'],
+    searchResult: [
+      {
+        name: 'Name1',
+        address: 'Address',
+      },
+      {
+        name: 'Name2',
+      },
+      {
+        name: 'Name3',
+        address: 'Address',
+      },
+    ],
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
-      searchResult: [
-        {
-          name: '黄龙万科中心',
-          address: '杭州市西湖区',
-        },
-        {
-          name: '黄龙万科中心G座',
-        },
-        {
-          name: '黄龙万科中心H座',
-          address: '杭州市西湖区',
-        },
-      ],
-    },
-    'en-US': {
-      areaColumnsPlaceholder: ['Choose', 'Choose', 'Choose'],
-      searchResult: [
-        {
-          name: 'Name1',
-          address: 'Address',
-        },
-        {
-          name: 'Name2',
-        },
-        {
-          name: 'Name3',
-          address: 'Address',
-        },
-      ],
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
+    const searchResult = ref([]);
 
-  data() {
-    return {
-      areaList,
-      searchResult: [],
+    const onSave = () => {
+      Toast(t('save'));
     };
-  },
 
-  methods: {
-    onSave() {
-      this.$toast(this.t('save'));
-    },
+    const onDelete = () => {
+      Toast(t('delete'));
+    };
 
-    onDelete() {
-      this.$toast(this.t('delete'));
-    },
+    const onChangeDetail = (val: string) => {
+      searchResult.value = val ? t('searchResult') : [];
+    };
 
-    onChangeDetail(val) {
-      this.searchResult = val ? this.t('searchResult') : [];
-    },
+    return {
+      t,
+      onSave,
+      onDelete,
+      areaList,
+      searchResult,
+      onChangeDetail,
+    };
   },
 };
 </script>

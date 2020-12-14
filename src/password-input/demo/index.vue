@@ -52,54 +52,58 @@
   />
 </template>
 
-<script>
+<script lang="ts">
+import { ComponentPublicInstance, reactive, ref, toRefs, watch } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    info: '密码为 6 位数字',
+    showInfo: '提示信息',
+    addGutter: '格子间距',
+    errorInfo: '密码错误',
+    removeMask: '明文展示',
+    customLength: '自定义长度',
+  },
+  'en-US': {
+    info: 'Some tips',
+    showInfo: 'Show Info',
+    addGutter: 'Add Gutter',
+    errorInfo: 'Password Mistake',
+    removeMask: 'Remove Mask',
+    customLength: 'Custom Length',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      info: '密码为 6 位数字',
-      showInfo: '提示信息',
-      addGutter: '格子间距',
-      errorInfo: '密码错误',
-      removeMask: '明文展示',
-      customLength: '自定义长度',
-    },
-    'en-US': {
-      info: 'Some tips',
-      showInfo: 'Show Info',
-      addGutter: 'Add Gutter',
-      errorInfo: 'Password Mistake',
-      removeMask: 'Remove Mask',
-      customLength: 'Custom Length',
-    },
-  },
-
-  data() {
-    return {
-      value: {
-        showInfo: '123',
-        addGutter: '123',
-        basicUsage: '123',
-        removeMask: '123',
-        customLength: '123',
-      },
-      current: 'basicUsage',
-      errorInfo: '',
+  setup() {
+    const t = useTranslate(i18n);
+    const initialValue = {
+      showInfo: '123',
+      addGutter: '123',
+      basicUsage: '123',
+      removeMask: '123',
+      customLength: '123',
     };
-  },
 
-  watch: {
-    current(value) {
-      if (value) {
-        const el = this.$refs[value].$el;
-        const { top } = el.getBoundingClientRect();
-        window.scrollTo(0, window.pageYOffset + top);
-      }
-    },
-  },
+    const refMap = {
+      showInfo: ref<ComponentPublicInstance>(),
+      addGutter: ref<ComponentPublicInstance>(),
+      basicUsage: ref<ComponentPublicInstance>(),
+      removeMask: ref<ComponentPublicInstance>(),
+      customLength: ref<ComponentPublicInstance>(),
+    };
 
-  methods: {
-    onInput(key) {
-      const { value, current } = this;
+    type ValueKeys = keyof typeof initialValue;
+
+    const state = reactive({
+      value: initialValue,
+      current: 'basicUsage' as ValueKeys,
+      errorInfo: '',
+    });
+
+    const onInput = (key: ValueKeys) => {
+      const { value, current } = state;
       const maxlegnth = current === 'customLength' ? 4 : 6;
       const newValue = (value[current] + key).slice(0, maxlegnth);
 
@@ -110,23 +114,45 @@ export default {
         newValue.length === 6 &&
         newValue !== '123456'
       ) {
-        this.errorInfo = this.t('errorInfo');
+        state.errorInfo = t('errorInfo');
       }
-    },
-    onDelete() {
-      const { value, current } = this;
+    };
+
+    const onDelete = () => {
+      const { value, current } = state;
       value[current] = value[current].slice(0, value[current].length - 1);
 
       if (current === 'showInfo') {
-        this.errorInfo = '';
+        state.errorInfo = '';
       }
-    },
+    };
+
+    watch(
+      () => state.current,
+      (value) => {
+        if (value) {
+          const vm = refMap[value].value;
+          if (vm) {
+            const { top } = vm.$el.getBoundingClientRect();
+            window.scrollTo(0, window.pageYOffset + top);
+          }
+        }
+      }
+    );
+
+    return {
+      ...toRefs(state),
+      ...refMap,
+      t,
+      onInput,
+      onDelete,
+    };
   },
 };
 </script>
 
 <style lang="less">
 .demo-password-input {
-  min-height: 140vh;
+  min-height: 150vh;
 }
 </style>

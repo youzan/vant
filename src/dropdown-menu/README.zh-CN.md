@@ -21,27 +21,35 @@ app.use(DropdownItem);
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="value1" :options="option1" />
-  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="state.value1" :options="option1" />
+  <van-dropdown-item v-model="state.value2" :options="option2" />
 </van-dropdown-menu>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: 0,
       value2: 'a',
-      option1: [
-        { text: '全部商品', value: 0 },
-        { text: '新款商品', value: 1 },
-        { text: '活动商品', value: 2 },
-      ],
-      option2: [
-        { text: '默认排序', value: 'a' },
-        { text: '好评排序', value: 'b' },
-        { text: '销量排序', value: 'c' },
-      ],
+    });
+    const option1 = [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 },
+    ];
+    const option2 = [
+      { text: '默认排序', value: 'a' },
+      { text: '好评排序', value: 'b' },
+      { text: '销量排序', value: 'c' },
+    ];
+
+    return {
+      state,
+      option1,
+      option2,
     };
   },
 };
@@ -75,23 +83,31 @@ export default {
 ```
 
 ```js
+import { ref, reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const item = ref(null);
+    const state = reactive({
       value: 0,
       switch1: false,
       switch2: false,
-      option: [
-        { text: '全部商品', value: 0 },
-        { text: '新款商品', value: 1 },
-        { text: '活动商品', value: 2 },
-      ],
+    });
+    const options = [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 },
+    ];
+    const onConfirm = () => {
+      item.value.toggle();
     };
-  },
-  methods: {
-    onConfirm() {
-      this.$refs.item.toggle();
-    },
+
+    return {
+      item,
+      state,
+      option,
+      onConfirm,
+    };
   },
 };
 ```
