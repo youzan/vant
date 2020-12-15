@@ -1994,10 +1994,12 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vant/use@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-0.1.0.tgz?cache=0&sync_timestamp=1605099108765&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-0.1.0.tgz#7d2020aa7e5ab92d57dea46cb24dd9013c7eacee"
-  integrity sha1-fSAgqn5auS1X3qRssk3ZATx+rO4=
+"@vant/use@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-1.0.0.tgz?cache=0&sync_timestamp=1608030568231&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-1.0.0.tgz#68db22af1130ccf867814fec5ec8c4f7ad94f36d"
+  integrity sha1-aNsirxEwzPhngU/sXsjE962U820=
+  dependencies:
+    "@babel/runtime" "7.x"
 
 "@vue/babel-helper-vue-transform-on@^1.0.0-rc.2":
   version "1.0.0-rc.2"
