@@ -119,60 +119,64 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      in: '入店',
-      out: '离店',
-      today: '今天',
-      laborDay: '劳动节',
-      youthDay: '青年节',
-      calendar: '日历',
-      maxRange: '日期区间最大范围',
-      selectCount: (count) => `选择了 ${count} 个日期`,
-      selectSingle: '选择单个日期',
-      selectMultiple: '选择多个日期',
-      selectRange: '选择日期区间',
-      quickSelect: '快捷选择',
-      confirmText: '完成',
-      customColor: '自定义颜色',
-      customRange: '自定义日期范围',
-      customConfirm: '自定义按钮文字',
-      customDayText: '自定义日期文案',
-      customPosition: '自定义弹出位置',
-      customCalendar: '自定义日历',
-      confirmDisabledText: '请选择结束时间',
-      firstDayOfWeek: '自定义周起始日',
-      tiledDisplay: '平铺展示',
-    },
-    'en-US': {
-      in: 'In',
-      out: 'Out',
-      today: 'Today',
-      laborDay: 'Labor day',
-      youthDay: 'Youth Day',
-      calendar: 'Calendar',
-      maxRange: 'Max Range',
-      selectCount: (count) => `${count} dates selected`,
-      selectSingle: 'Select Single Date',
-      selectMultiple: 'Select Multiple Date',
-      selectRange: 'Select Date Range',
-      quickSelect: 'Quick Select',
-      confirmText: 'OK',
-      customColor: 'Custom Color',
-      customRange: 'Custom Date Range',
-      customConfirm: 'Custom Confirm Text',
-      customDayText: 'Custom Day Text',
-      customPosition: 'Custom Position',
-      customCalendar: 'Custom Calendar',
-      firstDayOfWeek: 'Custom First Day Of Week',
-      confirmDisabledText: 'Select End Time',
-      tiledDisplay: 'Tiled display',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    in: '入店',
+    out: '离店',
+    today: '今天',
+    laborDay: '劳动节',
+    youthDay: '青年节',
+    calendar: '日历',
+    maxRange: '日期区间最大范围',
+    selectCount: (count) => `选择了 ${count} 个日期`,
+    selectSingle: '选择单个日期',
+    selectMultiple: '选择多个日期',
+    selectRange: '选择日期区间',
+    quickSelect: '快捷选择',
+    confirmText: '完成',
+    customColor: '自定义颜色',
+    customRange: '自定义日期范围',
+    customConfirm: '自定义按钮文字',
+    customDayText: '自定义日期文案',
+    customPosition: '自定义弹出位置',
+    customCalendar: '自定义日历',
+    confirmDisabledText: '请选择结束时间',
+    firstDayOfWeek: '自定义周起始日',
+    tiledDisplay: '平铺展示',
+  },
+  'en-US': {
+    in: 'In',
+    out: 'Out',
+    today: 'Today',
+    laborDay: 'Labor day',
+    youthDay: 'Youth Day',
+    calendar: 'Calendar',
+    maxRange: 'Max Range',
+    selectCount: (count) => `${count} dates selected`,
+    selectSingle: 'Select Single Date',
+    selectMultiple: 'Select Multiple Date',
+    selectRange: 'Select Date Range',
+    quickSelect: 'Quick Select',
+    confirmText: 'OK',
+    customColor: 'Custom Color',
+    customRange: 'Custom Date Range',
+    customConfirm: 'Custom Confirm Text',
+    customDayText: 'Custom Day Text',
+    customPosition: 'Custom Position',
+    customCalendar: 'Custom Calendar',
+    firstDayOfWeek: 'Custom First Day Of Week',
+    confirmDisabledText: 'Select End Time',
+    tiledDisplay: 'Tiled display',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       date: {
         maxRange: [],
         selectSingle: null,
@@ -201,116 +205,125 @@ export default {
       confirmText: undefined,
       confirmDisabledText: undefined,
       firstDayOfWeek: 0,
+    });
+
+    const resetSettings = () => {
+      state.round = true;
+      state.color = undefined;
+      state.minDate = undefined;
+      state.maxDate = undefined;
+      state.maxRange = undefined;
+      state.position = undefined;
+      state.formatter = undefined;
+      state.showConfirm = true;
+      state.confirmText = undefined;
+      state.confirmDisabledText = undefined;
+      state.firstDayOfWeek = 0;
     };
-  },
 
-  methods: {
-    resetSettings() {
-      this.round = true;
-      this.color = undefined;
-      this.minDate = undefined;
-      this.maxDate = undefined;
-      this.maxRange = undefined;
-      this.position = undefined;
-      this.formatter = undefined;
-      this.showConfirm = true;
-      this.confirmText = undefined;
-      this.confirmDisabledText = undefined;
-      this.firstDayOfWeek = 0;
-    },
-
-    show(type, id) {
-      this.resetSettings();
-      this.id = id;
-      this.type = type;
-      this.showCalendar = true;
-
-      switch (id) {
-        case 'quickSelect1':
-        case 'quickSelect2':
-          this.showConfirm = false;
-          break;
-        case 'customColor':
-          this.color = '#1989fa';
-          break;
-        case 'customConfirm':
-          this.confirmText = this.t('confirmText');
-          this.confirmDisabledText = this.t('confirmDisabledText');
-          break;
-        case 'customRange':
-          this.minDate = new Date(2010, 0, 1);
-          this.maxDate = new Date(2010, 0, 31);
-          break;
-        case 'customDayText':
-          this.minDate = new Date(2010, 4, 1);
-          this.maxDate = new Date(2010, 4, 31);
-          this.formatter = this.dayFormatter;
-          break;
-        case 'customPosition':
-          this.round = false;
-          this.position = 'right';
-          break;
-        case 'maxRange':
-          this.maxRange = 3;
-          break;
-        case 'firstDayOfWeek':
-          this.firstDayOfWeek = 1;
-          break;
-      }
-    },
-
-    dayFormatter(day) {
+    const dayFormatter = (day) => {
       const month = day.date.getMonth() + 1;
       const date = day.date.getDate();
 
       if (month === 5) {
         if (date === 1) {
-          day.topInfo = this.t('laborDay');
+          day.topInfo = t('laborDay');
         } else if (date === 4) {
-          day.topInfo = this.t('youthDay');
+          day.topInfo = t('youthDay');
         } else if (date === 11) {
-          day.text = this.t('today');
+          day.text = t('today');
         }
       }
 
       if (day.type === 'start') {
-        day.bottomInfo = this.t('in');
+        day.bottomInfo = t('in');
       } else if (day.type === 'end') {
-        day.bottomInfo = this.t('out');
+        day.bottomInfo = t('out');
       }
 
       return day;
-    },
+    };
 
-    formatDate(date) {
+    const show = (type, id) => {
+      resetSettings();
+      state.id = id;
+      state.type = type;
+      state.showCalendar = true;
+
+      switch (id) {
+        case 'quickSelect1':
+        case 'quickSelect2':
+          state.showConfirm = false;
+          break;
+        case 'customColor':
+          state.color = '#1989fa';
+          break;
+        case 'customConfirm':
+          state.confirmText = t('confirmText');
+          state.confirmDisabledText = t('confirmDisabledText');
+          break;
+        case 'customRange':
+          state.minDate = new Date(2010, 0, 1);
+          state.maxDate = new Date(2010, 0, 31);
+          break;
+        case 'customDayText':
+          state.minDate = new Date(2010, 4, 1);
+          state.maxDate = new Date(2010, 4, 31);
+          state.formatter = dayFormatter;
+          break;
+        case 'customPosition':
+          state.round = false;
+          state.position = 'right';
+          break;
+        case 'maxRange':
+          state.maxRange = 3;
+          break;
+        case 'firstDayOfWeek':
+          state.firstDayOfWeek = 1;
+          break;
+      }
+    };
+
+    const formatDate = (date) => {
       if (date) {
         return `${date.getMonth() + 1}/${date.getDate()}`;
       }
-    },
+    };
 
-    formatFullDate(date) {
+    const formatFullDate = (date) => {
       if (date) {
-        return `${date.getFullYear()}/${this.formatDate(date)}`;
+        return `${date.getFullYear()}/${formatDate(date)}`;
       }
-    },
+    };
 
-    formatMultiple(dates) {
+    const formatMultiple = (dates) => {
       if (dates.length) {
-        return this.t('selectCount', dates.length);
+        return t('selectCount', dates.length);
       }
-    },
+    };
 
-    formatRange(dateRange) {
+    const formatRange = (dateRange) => {
       if (dateRange.length) {
         const [start, end] = dateRange;
-        return `${this.formatDate(start)} - ${this.formatDate(end)}`;
+        return `${formatDate(start)} - ${formatDate(end)}`;
       }
-    },
+    };
 
-    onConfirm(date) {
-      this.showCalendar = false;
-      this.date[this.id] = date;
-    },
+    const onConfirm = (date) => {
+      state.showCalendar = false;
+      state.date[state.id] = date;
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      show,
+      onConfirm,
+      formatDate,
+      formatRange,
+      formatFullDate,
+      formatMultiple,
+    };
   },
 };
 </script>
