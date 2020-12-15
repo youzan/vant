@@ -42,21 +42,24 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
-      currentContact: {
-        name: 'John Snow',
-        tel: '13000000000',
-      },
-    };
-  },
-  methods: {
-    onEdit() {
+  setup() {
+    const currentContact = reactive({
+      name: 'John Snow',
+      tel: '13000000000',
+    });
+
+    const onEdit = () => {
       Toast('edit');
-    },
+    };
+
+    return {
+      onEdit,
+      currentContact,
+    };
   },
 };
 ```
