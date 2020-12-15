@@ -2,17 +2,18 @@
   "name": "@vant/use",
   "version": "0.1.0",
   "description": "Vant Composition API",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "typings": "es/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/types/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "dev": "tsc -m esNext --outDir es --watch",
-    "clean": "rm -rf ./es && rm -rf ./lib",
-    "build": "yarn clean && tsc && tsc -m esNext --outDir es",
+    "clean": "rm -rf ./dist",
+    "build:lib": "node ./scripts/build.js",
+    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "build": "yarn build:lib && yarn build:types",
     "release": "yarn build && release-it",
     "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build && gh-pages -d dist --add --dest vant-use"
+    "docs:build": "vuepress build && gh-pages -d dist/site --add --dest vant-use && rm -rf ./dist/site"
   },
   "publishConfig": {
     "access": "public",
@@ -20,7 +21,11 @@
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-use",
+  "dependencies": {
+    "@babel/runtime": "7.x"
+  },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
     "gh-pages": "^3.1.0",
     "release-it": "^14.0.2",
     "typescript": "^4.0.2",
