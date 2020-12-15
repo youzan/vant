@@ -93,40 +93,42 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    position: '弹出位置',
+    buttonBasic: '展示弹出层',
+    buttonTop: '顶部弹出',
+    buttonBottom: '底部弹出',
+    buttonLeft: '左侧弹出',
+    buttonRight: '右侧弹出',
+    teleport: '指定挂载节点',
+    roundCorner: '圆角弹窗',
+    closeIcon: '关闭图标',
+    customCloseIcon: '自定义图标',
+    customIconPosition: '图标位置',
+  },
+  'en-US': {
+    position: 'Position',
+    buttonBasic: 'Show Popup',
+    buttonTop: 'From Top',
+    buttonBottom: 'From Bottom',
+    buttonLeft: 'From Left',
+    buttonRight: 'From Right',
+    teleport: 'Get Container',
+    roundCorner: 'Round Corner',
+    closeIcon: 'Close Icon',
+    customCloseIcon: 'Custom Icon',
+    customIconPosition: 'Icon Position',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      position: '弹出位置',
-      buttonBasic: '展示弹出层',
-      buttonTop: '顶部弹出',
-      buttonBottom: '底部弹出',
-      buttonLeft: '左侧弹出',
-      buttonRight: '右侧弹出',
-      teleport: '指定挂载节点',
-      roundCorner: '圆角弹窗',
-      closeIcon: '关闭图标',
-      customCloseIcon: '自定义图标',
-      customIconPosition: '图标位置',
-    },
-    'en-US': {
-      position: 'Position',
-      buttonBasic: 'Show Popup',
-      buttonTop: 'From Top',
-      buttonBottom: 'From Bottom',
-      buttonLeft: 'From Left',
-      buttonRight: 'From Right',
-      teleport: 'Get Container',
-      roundCorner: 'Round Corner',
-      closeIcon: 'Close Icon',
-      customCloseIcon: 'Custom Icon',
-      customIconPosition: 'Icon Position',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       showBasic: false,
       showTop: false,
@@ -140,7 +142,10 @@ export default {
       showCustomIconPosition: false,
     });
 
-    return toRefs(state);
+    return {
+      ...toRefs(state),
+      t,
+    };
   },
 };
 </script>

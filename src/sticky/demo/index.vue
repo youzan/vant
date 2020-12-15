@@ -26,24 +26,30 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    offsetTop: '吸顶距离',
+    setContainer: '指定容器',
+  },
+  'en-US': {
+    offsetTop: 'Offset Top',
+    setContainer: 'Set Container',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      offsetTop: '吸顶距离',
-      setContainer: '指定容器',
-    },
-    'en-US': {
-      offsetTop: 'Offset Top',
-      setContainer: 'Set Container',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const container = ref(null);
-    return { container };
+
+    return {
+      t,
+      container,
+    };
   },
 };
 </script>

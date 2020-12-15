@@ -105,43 +105,45 @@
 
 <script>
 import { ref, reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 import { useRefs } from '../../composables/use-refs';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      checkbox: '复选框',
-      customIcon: '自定义图标',
-      customIconSize: '自定义大小',
-      customColor: '自定义颜色',
-      customShape: '自定义形状',
-      title3: '复选框组',
-      title4: '限制最大可选数',
-      title5: '搭配单元格组件使用',
-      toggleAll: '全选与反选',
-      checkAll: '全选',
-      inverse: '反选',
-      horizontal: '水平排列',
-      disableLabel: '禁用文本点击',
-    },
-    'en-US': {
-      checkbox: 'Checkbox',
-      customIcon: 'Custom Icon',
-      customIconSize: 'Custom Icon Size',
-      customColor: 'Custom Color',
-      customShape: 'Custom Shape',
-      title3: 'Checkbox Group',
-      title4: 'Maximum amount of checked options',
-      title5: 'Inside a Cell',
-      toggleAll: 'Toggle All',
-      checkAll: 'Check All',
-      inverse: 'Inverse',
-      horizontal: 'Horizontal',
-      disableLabel: 'Disable label click',
-    },
+const i18n = {
+  'zh-CN': {
+    checkbox: '复选框',
+    customIcon: '自定义图标',
+    customIconSize: '自定义大小',
+    customColor: '自定义颜色',
+    customShape: '自定义形状',
+    title3: '复选框组',
+    title4: '限制最大可选数',
+    title5: '搭配单元格组件使用',
+    toggleAll: '全选与反选',
+    checkAll: '全选',
+    inverse: '反选',
+    horizontal: '水平排列',
+    disableLabel: '禁用文本点击',
   },
+  'en-US': {
+    checkbox: 'Checkbox',
+    customIcon: 'Custom Icon',
+    customIconSize: 'Custom Icon Size',
+    customColor: 'Custom Color',
+    customShape: 'Custom Shape',
+    title3: 'Checkbox Group',
+    title4: 'Maximum amount of checked options',
+    title5: 'Inside a Cell',
+    toggleAll: 'Toggle All',
+    checkAll: 'Check All',
+    inverse: 'Inverse',
+    horizontal: 'Horizontal',
+    disableLabel: 'Disable label click',
+  },
+};
 
+export default {
   setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       checkbox1: true,
       checkbox2: true,
@@ -174,6 +176,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       group,
       toggle,
       setRefs,

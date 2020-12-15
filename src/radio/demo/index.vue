@@ -91,38 +91,40 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    radio: '单选框',
+    text1: '未选中禁用',
+    text2: '选中且禁用',
+    withCell: '与 Cell 组件一起使用',
+    horizontal: '水平排列',
+    customIcon: '自定义图标',
+    customColor: '自定义颜色',
+    customShape: '自定义形状',
+    customIconSize: '自定义大小',
+    disableLabel: '禁用文本点击',
+  },
+  'en-US': {
+    radio: 'Radio',
+    text1: 'Disabled',
+    text2: 'Disabled and checked',
+    withCell: 'Inside a Cell',
+    horizontal: 'Hrizontal',
+    customIcon: 'Custom Icon',
+    customColor: 'Custom Color',
+    customShape: 'Custom Shape',
+    customIconSize: 'Custom Icon Size',
+    disableLabel: 'Disable label click',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      radio: '单选框',
-      text1: '未选中禁用',
-      text2: '选中且禁用',
-      withCell: '与 Cell 组件一起使用',
-      horizontal: '水平排列',
-      customIcon: '自定义图标',
-      customColor: '自定义颜色',
-      customShape: '自定义形状',
-      customIconSize: '自定义大小',
-      disableLabel: '禁用文本点击',
-    },
-    'en-US': {
-      radio: 'Radio',
-      text1: 'Disabled',
-      text2: 'Disabled and checked',
-      withCell: 'Inside a Cell',
-      horizontal: 'Hrizontal',
-      customIcon: 'Custom Icon',
-      customColor: 'Custom Color',
-      customShape: 'Custom Shape',
-      customIconSize: 'Custom Icon Size',
-      disableLabel: 'Disable label click',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       radio1: '1',
       radio2: '2',
@@ -137,6 +139,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };

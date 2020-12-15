@@ -1,50 +1,16 @@
 import Locale from '../../src/locale';
 import enUS from '../../src/locale/lang/en-US';
-import { get } from '../../src/utils';
-import { camelize } from '../../src/utils/format/string';
 
 Locale.add({
   'en-US': enUS,
 });
 
-let demoUid = 0;
-
 export const DemoLocaleMixin = {
   computed: {
-    t() {
-      const { name } = this.$options;
-      const prefix = name ? camelize(name) + '.' : '';
-      const messages = Locale.messages();
-
-      return (path, ...args) => {
-        const message = get(messages, prefix + path) || get(messages, path);
-        return typeof message === 'function' ? message(...args) : message;
-      };
-    },
-
     // flag for vant-weapp demos
     isWeapp() {
       return location.search.indexOf('weapp=1') !== -1;
     },
-  },
-
-  beforeCreate() {
-    if (!this.$options.name) {
-      this.$options.name = `demo-${demoUid++}`;
-    }
-
-    const { i18n, name } = this.$options;
-
-    if (i18n && name) {
-      const locales = {};
-      const camelizedName = camelize(name);
-
-      Object.keys(i18n).forEach((key) => {
-        locales[key] = { [camelizedName]: i18n[key] };
-      });
-
-      Locale.add(locales);
-    }
   },
 };
 

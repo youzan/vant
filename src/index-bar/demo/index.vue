@@ -26,22 +26,24 @@
   </van-tabs>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    text: '文本',
+    customIndexList: '自定义索引列表',
+  },
+  'en-US': {
+    text: 'Text',
+    customIndexList: 'Custom Index List',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      text: '文本',
-      customIndexList: '自定义索引列表',
-    },
-    'en-US': {
-      text: 'Text',
-      customIndexList: 'Custom Index List',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const activeTab = ref(0);
     const indexList = [];
     const charCodeOfA = 'A'.charCodeAt(0);
@@ -51,6 +53,7 @@ export default {
     }
 
     return {
+      t,
       activeTab,
       indexList,
       customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],

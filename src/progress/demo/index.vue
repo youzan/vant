@@ -23,19 +23,26 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title2: '置灰',
+    title3: '样式定制',
+    strokeWidth: '线条粗细',
+  },
+  'en-US': {
+    title2: 'Inactive',
+    title3: 'Custom Style',
+    strokeWidth: 'Stroke Width',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      title2: '置灰',
-      title3: '样式定制',
-      strokeWidth: '线条粗细',
-    },
-    'en-US': {
-      title2: 'Inactive',
-      title3: 'Custom Style',
-      strokeWidth: 'Stroke Width',
-    },
+  setup() {
+    const t = useTranslate(i18n);
+    return { t };
   },
 };
 </script>

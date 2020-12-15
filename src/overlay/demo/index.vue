@@ -24,28 +24,33 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    showOverlay: '显示遮罩层',
+    embeddedContent: '嵌入内容',
+  },
+  'en-US': {
+    showOverlay: 'Show Overlay',
+    embeddedContent: 'Embedded Content',
+  },
+};
 
 export default {
-  i18n: {
-    'zh-CN': {
-      showOverlay: '显示遮罩层',
-      embeddedContent: '嵌入内容',
-    },
-    'en-US': {
-      showOverlay: 'Show Overlay',
-      embeddedContent: 'Embedded Content',
-    },
-  },
-
   setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       show: false,
       showEmbedded: false,
     });
 
-    return toRefs(state);
+    return {
+      ...toRefs(state),
+      t,
+    };
   },
 };
 </script>
