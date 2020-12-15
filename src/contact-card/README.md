@@ -22,10 +22,13 @@ app.use(ContactCard);
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onAdd() {
+  setup() {
+    const onAdd = () => {
       Toast('add');
-    },
+    };
+    return {
+      onAdd,
+    };
   },
 };
 ```
