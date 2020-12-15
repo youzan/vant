@@ -208,7 +208,7 @@ export default {
           url: 'https://img.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
-            this.$toast('自定义单个图片预览');
+            this.$toast('can customize single preview image style and action');
           },
         },
         {
