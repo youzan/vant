@@ -29,13 +29,17 @@ app.use(ActionBarButton);
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickIcon() {
+  setup() {
+    const onClickIcon = () => {
       Toast('点击图标');
-    },
-    onClickButton() {
+    };
+    const onClickButton = () => {
       Toast('点击按钮');
-    },
+    };
+    return {
+      onClickIcon,
+      onClickButton,
+    };
   },
 };
 ```

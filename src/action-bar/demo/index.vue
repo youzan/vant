@@ -62,43 +62,56 @@
   </demo-block>
 </template>
 
-<script>
-export default {
-  i18n: {
-    'zh-CN': {
-      icon1: '客服',
-      icon2: '购物车',
-      icon3: '店铺',
-      button1: '加入购物车',
-      button2: '立即购买',
-      iconBadge: '徽标提示',
-      collected: '已收藏',
-      clickIcon: '点击图标',
-      clickButton: '点击按钮',
-      customIconColor: '自定义图标颜色',
-      customButtonColor: '自定义按钮颜色',
-    },
-    'en-US': {
-      icon1: 'Icon1',
-      icon2: 'Icon2',
-      icon3: 'Icon3',
-      button1: 'Button',
-      button2: 'Button',
-      iconBadge: 'Icon Badge',
-      collected: 'Collected',
-      clickIcon: 'Click Icon',
-      clickButton: 'Click Button',
-      customIconColor: 'Custom Icon Color',
-      customButtonColor: 'Custom Button Color',
-    },
+<script lang="ts">
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    icon1: '客服',
+    icon2: '购物车',
+    icon3: '店铺',
+    button1: '加入购物车',
+    button2: '立即购买',
+    iconBadge: '徽标提示',
+    collected: '已收藏',
+    clickIcon: '点击图标',
+    clickButton: '点击按钮',
+    customIconColor: '自定义图标颜色',
+    customButtonColor: '自定义按钮颜色',
   },
-  methods: {
-    onClickIcon() {
-      this.$toast(this.t('clickIcon'));
-    },
-    onClickButton() {
-      this.$toast(this.t('clickButton'));
-    },
+  'en-US': {
+    icon1: 'Icon1',
+    icon2: 'Icon2',
+    icon3: 'Icon3',
+    button1: 'Button',
+    button2: 'Button',
+    iconBadge: 'Icon Badge',
+    collected: 'Collected',
+    clickIcon: 'Click Icon',
+    clickButton: 'Click Button',
+    customIconColor: 'Custom Icon Color',
+    customButtonColor: 'Custom Button Color',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+
+    const onClickIcon = () => {
+      Toast(t('clickIcon'));
+    };
+
+    const onClickButton = () => {
+      Toast(t('clickButton'));
+    };
+
+    return {
+      t,
+      onClickIcon,
+      onClickButton,
+    };
   },
 };
 </script>

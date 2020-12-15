@@ -29,13 +29,17 @@ app.use(ActionBarButton);
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickIcon() {
+  setup() {
+    const onClickIcon = () => {
       Toast('Click Icon');
-    },
-    onClickButton() {
+    };
+    const onClickButton = () => {
       Toast('Click Button');
-    },
+    };
+    return {
+      onClickIcon,
+      onClickButton,
+    };
   },
 };
 ```
