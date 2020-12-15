@@ -109,7 +109,7 @@ export const router = createRouter({
   routes: getRoutes(),
   scrollBehavior(to) {
     if (to.hash) {
-      return { selector: to.hash };
+      return { el: to.hash };
     }
 
     return { x: 0, y: 0 };
