@@ -237,8 +237,6 @@ export default createComponent({
 
     const renderPreviewItem = (item, index) => {
       const needPickData = [
-        'name',
-        'lazyLoad',
         'imageFit',
         'deletable',
         'previewSize',
@@ -268,6 +266,7 @@ export default createComponent({
           onPreview={() => {
             previewImage(item);
           }}
+          {...pick(props, ['name', 'lazyLoad'])}
           {...previewData}
         />
       );

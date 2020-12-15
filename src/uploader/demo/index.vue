@@ -119,7 +119,6 @@ export default {
       ],
       statusFileList: [],
       previewCoverFiles: [],
-      deletable: false,
     };
   },
 

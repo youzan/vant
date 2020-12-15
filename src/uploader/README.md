@@ -192,6 +192,37 @@ Use `disabled` prop to disable uploader.
 <van-uploader disabled />
 ```
 
+### Customize Single Preview Image Style
+
+```html
+<van-uploader v-model="fileList" :deletable="false" />
+```
+
+```js
+export default {
+  data() {
+    return {
+      fileList: [
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        {
+          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          deletable: true,
+          beforeDelete: () => {
+            this.$toast('自定义单个图片预览');
+          },
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          deletable: true,
+          imageFit: 'contain',
+          previewSize: 120,
+        },
+      ],
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
