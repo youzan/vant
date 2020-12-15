@@ -14,34 +14,42 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      label: '时间选择',
-      placeholder: '点击选择时间',
-    },
-    'en-US': {
-      label: 'Datetime Picker',
-      placeholder: 'Select time',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    label: '时间选择',
+    placeholder: '点击选择时间',
+  },
+  'en-US': {
+    label: 'Datetime Picker',
+    placeholder: 'Select time',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value: '',
       showPicker: false,
-    };
-  },
+    });
 
-  methods: {
-    onConfirm(time) {
-      console.log('time', time);
-      this.value = time;
-      this.showPicker = false;
-    },
-    onCancel() {
-      this.showPicker = false;
-    },
+    const onConfirm = (time) => {
+      state.value = time;
+      state.showPicker = false;
+    };
+    const onCancel = () => {
+      state.showPicker = false;
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      onCancel,
+      onConfirm,
+    };
   },
 };
 </script>

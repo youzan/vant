@@ -22,7 +22,7 @@
         :rules="[{ validator: asyncValidator, message: t('message') }]"
         :placeholder="t('asyncValidator')"
       />
-      <div style="margin: 16px 16px 0;">
+      <div style="margin: 16px 16px 0">
         <van-button round block type="primary" native-type="submit">
           {{ t('submit') }}
         </van-button>
@@ -32,62 +32,71 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      label: '文本',
-      title: '校验规则',
-      submit: '提交',
-      message: '请输入正确内容',
-      pattern: '正则校验',
-      validator: '函数校验',
-      validating: '验证中...',
-      asyncValidator: '异步函数校验',
-    },
-    'en-US': {
-      label: 'Label',
-      title: 'Validate Rules',
-      submit: 'Submit',
-      message: 'Error message',
-      pattern: 'Use pattern',
-      validator: 'Use validator',
-      validating: 'Validating...',
-      asyncValidator: 'Use async validator',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    label: '文本',
+    title: '校验规则',
+    submit: '提交',
+    message: '请输入正确内容',
+    pattern: '正则校验',
+    validator: '函数校验',
+    validating: '验证中...',
+    asyncValidator: '异步函数校验',
+  },
+  'en-US': {
+    label: 'Label',
+    title: 'Validate Rules',
+    submit: 'Submit',
+    message: 'Error message',
+    pattern: 'Use pattern',
+    validator: 'Use validator',
+    validating: 'Validating...',
+    asyncValidator: 'Use async validator',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value1: '',
       value2: '',
       value3: '',
-      pattern: /\d{6}/,
-    };
-  },
+    });
 
-  methods: {
-    validator(val) {
-      return /1\d{10}/.test(val);
-    },
+    const validator = (val) => /1\d{10}/.test(val);
 
-    asyncValidator(val) {
-      return new Promise((resolve) => {
-        this.$toast.loading(this.t('validating'));
+    const asyncValidator = (val) =>
+      new Promise((resolve) => {
+        Toast.loading(t('validating'));
 
         setTimeout(() => {
-          this.$toast.clear();
+          Toast.clear();
           resolve(val === '1234');
         }, 1000);
       });
-    },
 
-    onSubmit(values) {
+    const onSubmit = (values) => {
       console.log('submit', values);
-    },
+    };
 
-    onFailed(errorInfo) {
+    const onFailed = (errorInfo) => {
       console.log('failed', errorInfo);
-    },
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      pattern: /\d{6}/,
+      onSubmit,
+      onFailed,
+      validator,
+      asyncValidator,
+    };
   },
 };
 </script>

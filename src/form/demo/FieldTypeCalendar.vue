@@ -17,34 +17,40 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      calendar: '日历',
-      placeholder: '点击选择日期',
-    },
-    'en-US': {
-      calendar: 'Calendar',
-      placeholder: 'Select date',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    calendar: '日历',
+    placeholder: '点击选择日期',
+  },
+  'en-US': {
+    calendar: 'Calendar',
+    placeholder: 'Select date',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value: '',
       showCalendar: false,
+    });
+
+    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+
+    const onConfirm = (date) => {
+      state.value = formatDate(date);
+      state.showCalendar = false;
     };
-  },
 
-  methods: {
-    formatDate(date) {
-      return `${date.getMonth() + 1}/${date.getDate()}`;
-    },
-
-    onConfirm(date) {
-      this.value = this.formatDate(date);
-      this.showCalendar = false;
-    },
+    return {
+      ...toRefs(state),
+      t,
+      onConfirm,
+    };
   },
 };
 </script>

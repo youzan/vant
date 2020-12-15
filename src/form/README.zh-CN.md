@@ -23,14 +23,14 @@ app.use(Form);
 ```html
 <van-form @submit="onSubmit">
   <van-field
-    v-model="username"
+    v-model="state.username"
     name="用户名"
     label="用户名"
     placeholder="用户名"
     :rules="[{ required: true, message: '请填写用户名' }]"
   />
   <van-field
-    v-model="password"
+    v-model="state.password"
     type="password"
     name="密码"
     label="密码"
@@ -44,17 +44,22 @@ app.use(Form);
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       username: '',
       password: '',
-    };
-  },
-  methods: {
-    onSubmit(values) {
+    });
+    const onSubmit = (values) => {
       console.log('submit', values);
-    },
+    };
+
+    return {
+      state,
+      onSubmit,
+    };
   },
 };
 ```
@@ -67,21 +72,21 @@ export default {
 <van-form validate-first @failed="onFailed">
   <!-- 通过 pattern 进行正则校验 -->
   <van-field
-    v-model="value1"
+    v-model="state.value1"
     name="pattern"
     placeholder="正则校验"
     :rules="[{ pattern, message: '请输入正确内容' }]"
   />
   <!-- 通过 validator 进行函数校验 -->
   <van-field
-    v-model="value2"
+    v-model="state.value2"
     name="validator"
     placeholder="函数校验"
     :rules="[{ validator, message: '请输入正确内容' }]"
   />
   <!-- 通过 validator 进行异步函数校验 -->
   <van-field
-    v-model="value3"
+    v-model="state.value3"
     name="asyncValidator"
     placeholder="异步函数校验"
     :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
@@ -95,25 +100,24 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
 import { Toast } from 'vant';
 
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value1: '',
       value2: '',
       value3: '',
-      pattern: /\d{6}/,
-    };
-  },
-  methods: {
+    });
+    const pattern = /\d{6}/;
+
     // 校验函数返回 true 表示校验通过，false 表示不通过
-    validator(val) {
-      return /1\d{10}/.test(val);
-    },
+    const validator = (val) => /1\d{10}/.test(val);
+
     // 异步校验函数返回 Promise
-    asyncValidator(val) {
-      return new Promise((resolve) => {
+    const asyncValidator = (val) =>
+      new Promise((resolve) => {
         Toast.loading('验证中...');
 
         setTimeout(() => {
@@ -121,10 +125,18 @@ export default {
           resolve(/\d{6}/.test(val));
         }, 1000);
       });
-    },
-    onFailed(errorInfo) {
+
+    const onFailed = (errorInfo) => {
       console.log('failed', errorInfo);
-    },
+    };
+
+    return {
+      state,
+      pattern,
+      onFailed,
+      validator,
+      asyncValidator,
+    };
   },
 };
 ```
@@ -136,17 +148,18 @@ export default {
 ```html
 <van-field name="switch" label="开关">
   <template #input>
-    <van-switch v-model="switchChecked" size="20" />
+    <van-switch v-model="checked" size="20" />
   </template>
 </van-field>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      switchChecked: false,
-    };
+  setup() {
+    const checked = ref(false);
+    return { checked };
   },
 };
 ```
@@ -158,12 +171,12 @@ export default {
 ```html
 <van-field name="checkbox" label="复选框">
   <template #input>
-    <van-checkbox v-model="checkbox" shape="square" />
+    <van-checkbox v-model="checked" shape="square" />
   </template>
 </van-field>
 <van-field name="checkboxGroup" label="复选框组">
   <template #input>
-    <van-checkbox-group v-model="checkboxGroup" direction="horizontal">
+    <van-checkbox-group v-model="groupChecked" direction="horizontal">
       <van-checkbox name="1" shape="square">复选框 1</van-checkbox>
       <van-checkbox name="2" shape="square">复选框 2</van-checkbox>
     </van-checkbox-group>
@@ -172,11 +185,15 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const checked = ref(false);
+    const groupChecked = ref([]);
     return {
-      checkbox: false,
-      checkboxGroup: [],
+      checked,
+      groupChecked,
     };
   },
 };
@@ -189,7 +206,7 @@ export default {
 ```html
 <van-field name="radio" label="单选框">
   <template #input>
-    <van-radio-group v-model="radio" direction="horizontal">
+    <van-radio-group v-model="checked" direction="horizontal">
       <van-radio name="1">单选框 1</van-radio>
       <van-radio name="2">单选框 2</van-radio>
     </van-radio-group>
@@ -198,11 +215,12 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      radio: '1',
-    };
+  setup() {
+    const checked = ref('1');
+    return { checked };
   },
 };
 ```
@@ -214,17 +232,18 @@ export default {
 ```html
 <van-field name="stepper" label="步进器">
   <template #input>
-    <van-stepper v-model="stepper" />
+    <van-stepper v-model="value" />
   </template>
 </van-field>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      stepper: 1,
-    };
+  setup() {
+    const value = ref(1);
+    return { value };
   },
 };
 ```
@@ -236,17 +255,18 @@ export default {
 ```html
 <van-field name="rate" label="评分">
   <template #input>
-    <van-rate v-model="rate" />
+    <van-rate v-model="value" />
   </template>
 </van-field>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      rate: 3,
-    };
+  setup() {
+    const value = ref(3);
+    return { value };
   },
 };
 ```
@@ -258,17 +278,18 @@ export default {
 ```html
 <van-field name="slider" label="滑块">
   <template #input>
-    <van-slider v-model="slider" />
+    <van-slider v-model="value" />
   </template>
 </van-field>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      slider: 50,
-    };
+  setup() {
+    const value = ref(50);
+    return { value };
   },
 };
 ```
@@ -280,17 +301,18 @@ export default {
 ```html
 <van-field name="uploader" label="文件上传">
   <template #input>
-    <van-uploader v-model="uploader" />
+    <van-uploader v-model="value" />
   </template>
 </van-field>
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
-    };
+  setup() {
+    const value = ref([{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }]);
+    return { value };
   },
 };
 ```
@@ -304,34 +326,41 @@ export default {
   readonly
   clickable
   name="picker"
-  :value="value"
+  :value="state.value"
   label="选择器"
   placeholder="点击选择城市"
-  @click="showPicker = true"
+  @click="state.showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
+<van-popup v-model:show="state.showPicker" position="bottom">
   <van-picker
     :columns="columns"
     @confirm="onConfirm"
-    @cancel="showPicker = false"
+    @cancel="state.showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value: '',
-      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       showPicker: false,
+    });
+    const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州'];
+
+    const onConfirm = (value) => {
+      state.value = value;
+      state.showPicker = false;
     };
-  },
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    },
+
+    return {
+      state,
+      columns,
+      onConfirm,
+    };
   },
 };
 ```
@@ -345,33 +374,38 @@ export default {
   readonly
   clickable
   name="datetimePicker"
-  :value="value"
+  :value="state.value"
   label="时间选择"
   placeholder="点击选择时间"
-  @click="showPicker = true"
+  @click="state.showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
+<van-popup v-model:show="state.showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
-    @cancel="showPicker = false"
+    @cancel="state.showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value: '',
       showPicker: false,
+    });
+    const onConfirm = (value) => {
+      state.value = value;
+      state.showPicker = false;
     };
-  },
-  methods: {
-    onConfirm(time) {
-      this.value = time;
-      this.showPicker = false;
-    },
+
+    return {
+      state,
+      onConfirm,
+    };
   },
 };
 ```
@@ -385,37 +419,42 @@ export default {
   readonly
   clickable
   name="area"
-  :value="value"
+  :value="state.value"
   label="地区选择"
   placeholder="点击选择省市区"
-  @click="showArea = true"
+  @click="state.showArea = true"
 />
-<van-popup v-model:show="showArea" position="bottom">
+<van-popup v-model:show="state.showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"
-    @cancel="showArea = false"
+    @cancel="state.showArea = false"
   />
 </van-popup>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value: '',
       showArea: false,
-      areaList: {}, // 数据格式见 Area 组件文档
-    };
-  },
-  methods: {
-    onConfirm(values) {
-      this.value = values
+    });
+    const onConfirm = (value) => {
+      state.showArea = false;
+      state.value = values
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');
-      this.showArea = false;
-    },
+    };
+
+    return {
+      state,
+      areaList: {}, // 数据格式见 Area 组件文档
+      onConfirm,
+    };
   },
 };
 ```
@@ -429,27 +468,32 @@ export default {
   readonly
   clickable
   name="calendar"
-  :value="value"
+  :value="state.value"
   label="日历"
   placeholder="点击选择日期"
-  @click="showCalendar = true"
+  @click="state.showCalendar = true"
 />
-<van-calendar v-model="showCalendar" @confirm="onConfirm" />
+<van-calendar v-model="state.showCalendar" @confirm="onConfirm" />
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       value: '',
       showCalendar: false,
+    });
+    const onConfirm = (date) => {
+      state.value = `${date.getMonth() + 1}/${date.getDate()}`;
+      state.showCalendar = false;
     };
-  },
-  methods: {
-    onConfirm(date) {
-      this.value = `${date.getMonth() + 1}/${date.getDate()}`;
-      this.showCalendar = false;
-    },
+
+    return {
+      state,
+      onConfirm,
+    };
   },
 };
 ```
