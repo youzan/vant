@@ -24,7 +24,7 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
       <div>
-        John Snow：John Snow
+        Name：John Snow
       </div>
       <div>
         Phone：13000000000
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
       <div>
-        John Snow：John Snow
+        Name：John Snow
       </div>
       <div>
         Phone：13000000000
