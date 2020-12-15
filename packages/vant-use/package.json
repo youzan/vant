@@ -1,12 +1,14 @@
 {
   "name": "@vant/use",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Vant Composition API",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/types/index.d.ts",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf ./dist",
     "build:lib": "node ./scripts/build.js",
