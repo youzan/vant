@@ -1872,10 +1872,10 @@
     eslint-plugin-import "^2.22.1"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/markdown-loader@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-3.0.1.tgz?cache=0&sync_timestamp=1605962030781&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fmarkdown-loader%2Fdownload%2F%40vant%2Fmarkdown-loader-3.0.1.tgz#add005ce58b6f62c3567df168d42a502731fdecb"
-  integrity sha1-rdAFzli29iw1Z98WjUKlAnMf3ss=
+"@vant/markdown-loader@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-3.0.2.tgz#00360b56ff20801040e3f6991d1ff78d8025639b"
+  integrity sha1-ADYLVv8ggBBA4/aZHR/3jYAlY5s=
   dependencies:
     front-matter "^4.0.2"
     highlight.js "^10.3.1"
