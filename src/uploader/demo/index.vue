@@ -72,6 +72,7 @@ export default {
       customUpload: '自定义上传样式',
       previewCover: '自定义预览样式',
       customPreviewImage: '自定义单个图片预览',
+      deleteMessage: '自定义单个预览图片的事件和样式',
     },
     'en-US': {
       status: 'Upload Status',
@@ -89,6 +90,8 @@ export default {
       customUpload: 'Custom Upload Area',
       previewCover: 'Preview Cover',
       customPreviewImage: 'Custom single prevew image',
+      deleteMessage:
+        'Customize the events and styles of a single preview image',
     },
   },
 
@@ -107,7 +110,7 @@ export default {
           url: 'https://img.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
-            this.$toast('自定义单个图片预览');
+            this.$toast(this.t('deleteMessage'));
           },
         },
         {
