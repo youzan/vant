@@ -75,7 +75,7 @@ const i18n = {
     customUpload: '自定义上传样式',
     previewCover: '自定义预览样式',
     customPreviewImage: '自定义单个图片预览',
-    deleteMessage: '自定义单个预览图片的事件和样式',
+    deleteMessage: '删除前置处理',
   },
   'en-US': {
     status: 'Upload Status',
@@ -93,7 +93,7 @@ const i18n = {
     customUpload: 'Custom Upload Area',
     previewCover: 'Preview Cover',
     customPreviewImage: 'Custom single prevew image',
-    deleteMessage: 'Customize the events and styles of a single preview image',
+    deleteMessage: 'Before Delete',
   },
 };
 
