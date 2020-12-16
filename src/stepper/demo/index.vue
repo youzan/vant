@@ -47,33 +47,35 @@
 
 <script>
 import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
-export default {
-  i18n: {
-    'zh-CN': {
-      step: '步长设置',
-      range: '限制输入范围',
-      integer: '限制输入整数',
-      roundTheme: '圆角风格',
-      customSize: '自定义大小',
-      beforeChange: '异步变更',
-      disableInput: '禁用输入框',
-      decimalLength: '固定小数位数',
-    },
-    'en-US': {
-      step: 'Step',
-      range: 'Range',
-      integer: 'Integer',
-      roundTheme: 'Round Theme',
-      customSize: 'Custom Size',
-      beforeChange: 'Before Change',
-      disableInput: 'Disable Input',
-      decimalLength: 'Decimal Length',
-    },
+const i18n = {
+  'zh-CN': {
+    step: '步长设置',
+    range: '限制输入范围',
+    integer: '限制输入整数',
+    roundTheme: '圆角风格',
+    customSize: '自定义大小',
+    beforeChange: '异步变更',
+    disableInput: '禁用输入框',
+    decimalLength: '固定小数位数',
   },
+  'en-US': {
+    step: 'Step',
+    range: 'Range',
+    integer: 'Integer',
+    roundTheme: 'Round Theme',
+    customSize: 'Custom Size',
+    beforeChange: 'Before Change',
+    disableInput: 'Disable Input',
+    decimalLength: 'Decimal Length',
+  },
+};
 
+export default {
   setup() {
+    const t = useTranslate(i18n);
     const state = reactive({
       stepper1: 1,
       stepper2: 1,
@@ -100,6 +102,7 @@ export default {
 
     return {
       ...toRefs(state),
+      t,
       beforeChange,
     };
   },

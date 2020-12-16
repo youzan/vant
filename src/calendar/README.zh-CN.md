@@ -26,21 +26,24 @@ app.use(Calendar);
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      date: '',
-      show: false,
+  setup() {
+    const date = ref('');
+    const show = ref(false);
+
+    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const onConfirm = (date) => {
+      show.value = false;
+      date.value = formatDate(date);
     };
-  },
-  methods: {
-    formatDate(date) {
-      return `${date.getMonth() + 1}/${date.getDate()}`;
-    },
-    onConfirm(date) {
-      this.show = false;
-      this.date = this.formatDate(date);
-    },
+
+    return {
+      date,
+      show,
+      onConfirm,
+    };
   },
 };
 ```
@@ -55,18 +58,23 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      text: '',
-      show: false,
+  setup() {
+    const text = ref('');
+    const show = ref(false);
+
+    const onConfirm = (dates) => {
+      show.value = false;
+      text.value = `选择了 ${dates.length} 个日期`;
     };
-  },
-  methods: {
-    onConfirm(date) {
-      this.show = false;
-      this.text = `选择了 ${date.length} 个日期`;
-    },
+
+    return {
+      text,
+      show,
+      onConfirm,
+    };
   },
 };
 ```
@@ -81,25 +89,30 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      date: '',
-      show: false,
-    };
-  },
-  methods: {
-    formatDate(date) {
-      return `${date.getMonth() + 1}/${date.getDate()}`;
-    },
-    onConfirm(date) {
+  setup() {
+    const date = ref('');
+    const show = ref(false);
+
+    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const onConfirm = (date) => {
       const [start, end] = date;
-      this.show = false;
-      this.date = `${this.formatDate(start)} - ${this.formatDate(end)}`;
-    },
+      show.value = false;
+      date.value = `${formatDate(start)} - ${formatDate(end)}`;
+    };
+
+    return {
+      date,
+      show,
+      onConfirm,
+    };
   },
 };
 ```
+
+> Tips: 默认情况下，日期区间的起止时间不能为同一天，可以通过设置 allow-same-day 属性来允许选择同一天。
 
 ### 快捷选择
 
@@ -126,10 +139,14 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const show = ref(false);
+
     return {
-      show: false,
+      show,
       minDate: new Date(2010, 0, 1),
       maxDate: new Date(2010, 0, 31),
     };
@@ -160,8 +177,8 @@ export default {
 
 ```js
 export default {
-  methods: {
-    formatter(day) {
+  setup() {
+    const formatter = (day) => {
       const month = day.date.getMonth() + 1;
       const date = day.date.getDate();
 
@@ -182,7 +199,11 @@ export default {
       }
 
       return day;
-    },
+    };
+
+    return {
+      formatter,
+    };
   },
 };
 ```

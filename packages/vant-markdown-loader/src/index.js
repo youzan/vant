@@ -30,9 +30,7 @@ export default {
       if (event.target.id) {
         this.$router.push({
           name: this.$route.name,
-          query: {
-            anchor: event.target.id
-          }
+          hash: '#' + event.target.id
         })
       }
     }

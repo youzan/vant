@@ -60,13 +60,13 @@
     "@vant/icons": "^1.4.0",
     "@vant/lazyload": "^1.0.2",
     "@vant/popperjs": "^1.0.2",
-    "@vant/use": "^0.1.0"
+    "@vant/use": "^1.0.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.1.4",
+    "@vant/cli": "^3.1.5",
     "@vue/compiler-sfc": "3.0.3",
     "vue": "3.0.3",
     "prettier": "2.1.0"

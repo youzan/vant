@@ -18,20 +18,20 @@ app.use(CouponList);
 ```html
 <!-- 优惠券单元格 -->
 <van-coupon-cell
-  :coupons="coupons"
-  :chosen-coupon="chosenCoupon"
-  @click="showList = true"
+  :coupons="state.coupons"
+  :chosen-coupon="state.chosenCoupon"
+  @click="state.showList = true"
 />
 <!-- 优惠券列表 -->
 <van-popup
-  v-model="showList"
+  v-model="state.showList"
   round
   position="bottom"
   style="height: 90%; padding-top: 4px;"
 >
   <van-coupon-list
-    :coupons="coupons"
-    :chosen-coupon="chosenCoupon"
+    :coupons="state.coupons"
+    :chosen-coupon="state.chosenCoupon"
     :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
@@ -40,6 +40,8 @@ app.use(CouponList);
 ```
 
 ```js
+import { reactive } from 'vue';
+
 const coupon = {
   available: 1,
   condition: '无使用门槛\n最多优惠12元',
@@ -53,21 +55,27 @@ const coupon = {
 };
 
 export default {
-  data() {
-    return {
-      chosenCoupon: -1,
+  setup() {
+    const state = reactive({
       coupons: [coupon],
+      showList: false,
+      chosenCoupon: -1,
+    });
+
+    const onChange = (index) => {
+      state.showList = false;
+      state.chosenCoupon = index;
+    };
+    const onExchange = (code) => {
+      state.coupons.push(coupon);
+    };
+
+    return {
+      state,
+      onChange,
+      onExchange,
       disabledCoupons: [coupon],
     };
-  },
-  methods: {
-    onChange(index) {
-      this.showList = false;
-      this.chosenCoupon = index;
-    },
-    onExchange(code) {
-      this.coupons.push(coupon);
-    },
   },
 };
 ```
@@ -77,13 +85,13 @@ export default {
 ### CouponCell Props
 
 | 参数          | 说明                 | 类型               | 默认值   |
-| ------------- | -------------------- | ------------------ | -------- |
+| ------------- | -------------------- | ------------------ | -------- | --- |
 | title         | 单元格标题           | _string_           | `优惠券` |
 | chosen-coupon | 当前选中优惠券的索引 | _number \| string_ | `-1`     |
 | coupons       | 可用优惠券列表       | _Coupon[]_         | `[]`     |
 | editable      | 能否切换优惠券       | _boolean_          | `true`   |
 | border        | 是否显示内边框       | _boolean_          | `true`   |
-| currency      | 货币符号             | _string_           | `¥`      | - |
+| currency      | 货币符号             | _string_           | `¥`      | -   |
 
 ### CouponList Props
 

@@ -22,44 +22,51 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { computed } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
+const i18n = {
+  'zh-CN': {
+    add: '新增',
+    edit: '编辑',
+    name: '张三',
+    addContact: '添加联系人',
+    editContact: '编辑联系人',
+  },
+  'en-US': {
+    add: 'Add',
+    edit: 'Edit',
+    name: 'John Snow',
+    addContact: 'Add Contact',
+    editContact: 'Edit Contact',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      add: '新增',
-      edit: '编辑',
-      name: '张三',
-      addContact: '添加联系人',
-      editContact: '编辑联系人',
-    },
-    'en-US': {
-      add: 'Add',
-      edit: 'Edit',
-      name: 'John Snow',
-      addContact: 'Add Contact',
-      editContact: 'Edit Contact',
-    },
-  },
+  setup() {
+    const t = useTranslate(i18n);
 
-  computed: {
-    currentContact() {
-      return {
-        name: this.t('name'),
-        tel: '13000000000',
-      };
-    },
-  },
+    const currentContact = computed(() => ({
+      name: t('name'),
+      tel: '13000000000',
+    }));
 
-  methods: {
-    onAdd() {
-      Toast(this.t('add'));
-    },
+    const onAdd = () => {
+      Toast(t('add'));
+    };
 
-    onEdit() {
-      Toast(this.t('edit'));
-    },
+    const onEdit = () => {
+      Toast(t('edit'));
+    };
+
+    return {
+      t,
+      onAdd,
+      onEdit,
+      currentContact,
+    };
   },
 };
 </script>

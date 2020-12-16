@@ -149,7 +149,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const activeIndex = ref(0);
     return {
       activeIndex,

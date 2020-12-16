@@ -20,10 +20,14 @@ app.use(Uploader);
 
 ```js
 export default {
-  methods: {
-    afterRead(file) {
+  setup() {
+    const afterRead = (file) => {
       console.log(file);
-    },
+    };
+
+    return {
+      afterRead,
+    };
   },
 };
 ```
@@ -35,10 +39,17 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      { url: 'https://cloud-image', isImage: true },
+    ]);
+
     return {
-      fileList: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+      fileList,
     };
   },
 };
@@ -51,25 +62,24 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      fileList: [
-        {
-          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-          status: 'uploading',
-          message: 'Uploading...',
-        },
-        {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
-          status: 'failed',
-          message: 'Failed',
-        },
-      ],
-    };
-  },
-  methods: {
-    afterRead(file) {
+  setup() {
+    const fileList = ref([
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        status: 'uploading',
+        message: 'Uploading...',
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        status: 'failed',
+        message: 'Failed',
+      },
+    ]);
+
+    const afterRead = (file) => {
       file.status = 'uploading';
       file.message = 'Uploading...';
 
@@ -77,7 +87,12 @@ export default {
         file.status = 'failed';
         file.message = 'Failed';
       }, 1000);
-    },
+    };
+
+    return {
+      fileList,
+      afterRead,
+    };
   },
 };
 ```
@@ -89,10 +104,14 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([]);
+
     return {
-      fileList: [],
+      fileList,
     };
   },
 };
@@ -108,11 +127,15 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onOversize(file) {
+  setup() {
+    const onOversize = (file) => {
       console.log(file);
-      Toast('File size cannot exceed 500kb);
-    },
+      Toast('File size cannot exceed 500kb');
+    };
+
+    return {
+      onOversize,
+    };
   },
 };
 ```
@@ -159,15 +182,18 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    beforeRead(file) {
+  setup() {
+    // 返回布尔值
+    const beforeRead = (file) => {
       if (file.type !== 'image/jpeg') {
         Toast('Please upload an image in jpg format');
         return false;
       }
       return true;
-    },
-    asyncBeforeRead(file) {
+    };
+
+    // 返回 Promise
+    const asyncBeforeRead = (file) => {
       return new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
           Toast('Please upload an image in jpg format');
@@ -179,7 +205,12 @@ export default {
           resolve(img);
         }
       });
-    },
+    };
+
+    return {
+      beforeRead,
+      asyncBeforeRead,
+    };
   },
 };
 ```
@@ -199,27 +230,31 @@ Use `disabled` prop to disable uploader.
 ```
 
 ```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      {
+        url: 'https://img.yzcdn.cn/vant/sand.jpg',
+        deletable: true,
+        beforeDelete: () => {
+          Toast('Customize the events and styles of a single preview image');
+        },
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        deletable: true,
+        imageFit: 'contain',
+        previewSize: 120,
+      },
+    ]);
     return {
-      fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-        {
-          url: 'https://img.yzcdn.cn/vant/sand.jpg',
-          deletable: true,
-          beforeDelete: () => {
-            this.$toast('can customize single preview image style and action');
-          },
-        },
-        {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
-          deletable: true,
-          imageFit: 'contain',
-          previewSize: 120,
-        },
-      ],
+      fileList:
     };
-  },
+  }
 };
 ```
 

@@ -17,7 +17,6 @@
 import VanDoc from './components';
 import { config } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
-import { scrollToAnchor } from './utils';
 
 export default {
   components: {
@@ -80,14 +79,6 @@ export default {
       },
       immediate: true,
     },
-  },
-
-  mounted() {
-    setTimeout(() => {
-      if (this.$route.query.anchor) {
-        scrollToAnchor(this.$route.query.anchor);
-      }
-    });
   },
 
   methods: {

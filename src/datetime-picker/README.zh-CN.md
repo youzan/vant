@@ -34,7 +34,7 @@ DatetimePicker 通过 type 属性来定义需要选择的时间类型，type 为
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
@@ -64,7 +64,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentDate = ref(new Date());
 
     const formatter = (type, val) => {
@@ -105,7 +105,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentDate = ref(new Date());
 
     const formatter = (type, val) => {
@@ -145,7 +145,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentTime = ref('12:00');
     return { currentTime };
   },
@@ -170,7 +170,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
@@ -199,7 +199,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentDate = ref(new Date());
     return {
       minDate: new Date(2020, 0, 1),
@@ -222,7 +222,7 @@ export default {
 import { ref } from 'vue';
 
 export default {
-  data() {
+  setup() {
     const currentTime = ref('12:00');
 
     const filter = (type, options) => {

@@ -74,37 +74,44 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    cell: '单元格',
+    valueOnly: '只设置 value',
+    showIcon: '展示图标',
+    showArrow: '展示箭头',
+    largeSize: '单元格大小',
+    group: '分组',
+    groupTitle: '分组标题',
+    router: '页面导航',
+    urlRoute: 'URL 跳转',
+    vueRoute: '路由跳转',
+    useSlots: '使用插槽',
+    verticalCenter: '垂直居中',
+  },
+  'en-US': {
+    cell: 'Cell title',
+    valueOnly: 'Value only',
+    showIcon: 'Left Icon',
+    showArrow: 'Link',
+    largeSize: 'Size',
+    group: 'Group',
+    groupTitle: 'Group Title',
+    router: 'Router',
+    urlRoute: 'URL',
+    vueRoute: 'Vue Router',
+    useSlots: 'Use Slots',
+    verticalCenter: 'Vertical center',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      cell: '单元格',
-      valueOnly: '只设置 value',
-      showIcon: '展示图标',
-      showArrow: '展示箭头',
-      largeSize: '单元格大小',
-      group: '分组',
-      groupTitle: '分组标题',
-      router: '页面导航',
-      urlRoute: 'URL 跳转',
-      vueRoute: '路由跳转',
-      useSlots: '使用插槽',
-      verticalCenter: '垂直居中',
-    },
-    'en-US': {
-      cell: 'Cell title',
-      valueOnly: 'Value only',
-      showIcon: 'Left Icon',
-      showArrow: 'Link',
-      largeSize: 'Size',
-      group: 'Group',
-      groupTitle: 'Group Title',
-      router: 'Router',
-      urlRoute: 'URL',
-      vueRoute: 'Vue Router',
-      useSlots: 'Use Slots',
-      verticalCenter: 'Vertical center',
-    },
+  setup() {
+    const t = useTranslate(i18n);
+    return { t };
   },
 };
 </script>

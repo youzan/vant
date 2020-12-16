@@ -31,109 +31,126 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      fail: '失败提示',
-      text: '提示内容',
-      text2: '成功文案',
-      text3: '失败文案',
-      text4: (second) => `倒计时 ${second} 秒`,
-      title1: '文字提示',
-      title2: '加载提示',
-      title3: '成功/失败提示',
-      success: '成功提示',
-      customIcon: '自定义图标',
-      customImage: '自定义图片',
-      loadingType: '自定义加载图标',
-      positionTop: '顶部展示',
-      updateMessage: '动态更新提示',
-      positionBottom: '底部展示',
-      customPosition: '自定义位置',
-    },
-    'en-US': {
-      fail: 'Fail',
-      text: 'Some messages',
-      text2: 'Success',
-      text3: 'Fail',
-      text4: (second) => `${second} seconds`,
-      title1: 'Text',
-      title2: 'Loading',
-      title3: 'Success/Fail',
-      success: 'Success',
-      customIcon: 'Custom Icon',
-      customImage: 'Custom Image',
-      loadingType: 'Loading Type',
-      positionTop: 'Top',
-      updateMessage: 'Update Message',
-      positionBottom: 'Bottom',
-      customPosition: 'Custom Position',
-    },
-  },
+import { useTranslate } from '@demo/use-translate';
+import Toast from '..';
 
-  methods: {
-    showLoadingToast(loadingType) {
-      this.$toast.loading({
+const i18n = {
+  'zh-CN': {
+    fail: '失败提示',
+    text: '提示内容',
+    text2: '成功文案',
+    text3: '失败文案',
+    text4: (second) => `倒计时 ${second} 秒`,
+    title1: '文字提示',
+    title2: '加载提示',
+    title3: '成功/失败提示',
+    success: '成功提示',
+    customIcon: '自定义图标',
+    customImage: '自定义图片',
+    loadingType: '自定义加载图标',
+    positionTop: '顶部展示',
+    updateMessage: '动态更新提示',
+    positionBottom: '底部展示',
+    customPosition: '自定义位置',
+  },
+  'en-US': {
+    fail: 'Fail',
+    text: 'Some messages',
+    text2: 'Success',
+    text3: 'Fail',
+    text4: (second) => `${second} seconds`,
+    title1: 'Text',
+    title2: 'Loading',
+    title3: 'Success/Fail',
+    success: 'Success',
+    customIcon: 'Custom Icon',
+    customImage: 'Custom Image',
+    loadingType: 'Loading Type',
+    positionTop: 'Top',
+    updateMessage: 'Update Message',
+    positionBottom: 'Bottom',
+    customPosition: 'Custom Position',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+
+    const showLoadingToast = (loadingType) => {
+      Toast.loading({
         forbidClick: true,
-        message: this.t('loading'),
+        message: t('loading'),
         loadingType,
       });
-    },
+    };
 
-    showSuccessToast() {
-      this.$toast.success(this.t('text2'));
-    },
+    const showSuccessToast = () => {
+      Toast.success(t('text2'));
+    };
 
-    showFailToast() {
-      this.$toast.fail(this.t('text3'));
-    },
+    const showFailToast = () => {
+      Toast.fail(t('text3'));
+    };
 
-    showTopToast() {
-      this.$toast({
-        message: this.t('positionTop'),
+    const showTopToast = () => {
+      Toast({
+        message: t('positionTop'),
         position: 'top',
       });
-    },
+    };
 
-    showBottomToast() {
-      this.$toast({
-        message: this.t('positionBottom'),
+    const showBottomToast = () => {
+      Toast({
+        message: t('positionBottom'),
         position: 'bottom',
       });
-    },
+    };
 
-    showIconToast() {
-      this.$toast({
-        message: this.t('customIcon'),
+    const showIconToast = () => {
+      Toast({
+        message: t('customIcon'),
         icon: 'like-o',
       });
-    },
+    };
 
-    showImageToast() {
-      this.$toast({
-        message: this.t('customImage'),
+    const showImageToast = () => {
+      Toast({
+        message: t('customImage'),
         icon: 'https://img.yzcdn.cn/vant/logo.png',
       });
-    },
+    };
 
-    showCustomizedToast() {
-      const toast = this.$toast.loading({
+    const showCustomizedToast = () => {
+      const toast = Toast.loading({
         duration: 0,
         forbidClick: true,
-        message: this.t('text4', 3),
+        message: t('text4', 3),
       });
 
       let second = 3;
       const timer = setInterval(() => {
         second--;
         if (second) {
-          toast.message = this.t('text4', second);
+          toast.message = t('text4', second);
         } else {
           clearInterval(timer);
-          this.$toast.clear();
+          Toast.clear();
         }
       }, 1000);
-    },
+    };
+
+    return {
+      t,
+      showTopToast,
+      showFailToast,
+      showIconToast,
+      showImageToast,
+      showBottomToast,
+      showLoadingToast,
+      showSuccessToast,
+      showCustomizedToast,
+    };
   },
 };
 </script>

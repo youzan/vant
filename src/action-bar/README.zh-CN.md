@@ -29,13 +29,17 @@ app.use(ActionBarButton);
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickIcon() {
+  setup() {
+    const onClickIcon = () => {
       Toast('点击图标');
-    },
-    onClickButton() {
+    };
+    const onClickButton = () => {
       Toast('点击按钮');
-    },
+    };
+    return {
+      onClickIcon,
+      onClickButton,
+    };
   },
 };
 ```
@@ -106,7 +110,7 @@ export default {
 ### ActionBarButton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - |

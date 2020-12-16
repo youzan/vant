@@ -54,49 +54,53 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      status: '上传状态',
-      failed: '上传失败',
-      upload: '上传文件',
-      preview: '文件预览',
-      maxSize: '限制上传大小',
-      disabled: '禁用文件上传',
-      maxCount: '限制上传数量',
-      uploading: '上传中...',
-      imageName: '图片名称',
-      beforeRead: '上传前置处理',
-      overSizeTip: '文件大小不能超过 500kb',
-      invalidType: '请上传 jpg 格式图片',
-      customUpload: '自定义上传样式',
-      previewCover: '自定义预览样式',
-      customPreviewImage: '自定义单个图片预览',
-      deleteMessage: '自定义单个预览图片的事件和样式',
-    },
-    'en-US': {
-      status: 'Upload Status',
-      failed: 'Failed',
-      upload: 'Upload File',
-      preview: 'Preview File',
-      maxSize: 'Max Size',
-      disabled: 'Disable Uploader',
-      maxCount: 'Max Count',
-      uploading: 'Uploading...',
-      imageName: 'Image Name',
-      beforeRead: 'Before Read',
-      overSizeTip: 'File size cannot exceed 500kb',
-      invalidType: 'Please upload an image in jpg format',
-      customUpload: 'Custom Upload Area',
-      previewCover: 'Preview Cover',
-      customPreviewImage: 'Custom single prevew image',
-      deleteMessage:
-        'Customize the events and styles of a single preview image',
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import Toast from '../../toast';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    status: '上传状态',
+    failed: '上传失败',
+    upload: '上传文件',
+    preview: '文件预览',
+    maxSize: '限制上传大小',
+    disabled: '禁用文件上传',
+    maxCount: '限制上传数量',
+    uploading: '上传中...',
+    imageName: '图片名称',
+    beforeRead: '上传前置处理',
+    overSizeTip: '文件大小不能超过 500kb',
+    invalidType: '请上传 jpg 格式图片',
+    customUpload: '自定义上传样式',
+    previewCover: '自定义预览样式',
+    customPreviewImage: '自定义单个图片预览',
+    deleteMessage: '自定义单个预览图片的事件和样式',
+  },
+  'en-US': {
+    status: 'Upload Status',
+    failed: 'Failed',
+    upload: 'Upload File',
+    preview: 'Preview File',
+    maxSize: 'Max Size',
+    disabled: 'Disable Uploader',
+    maxCount: 'Max Count',
+    uploading: 'Uploading...',
+    imageName: 'Image Name',
+    beforeRead: 'Before Read',
+    overSizeTip: 'File size cannot exceed 500kb',
+    invalidType: 'Please upload an image in jpg format',
+    customUpload: 'Custom Upload Area',
+    previewCover: 'Preview Cover',
+    customPreviewImage: 'Custom single prevew image',
+    deleteMessage: 'Customize the events and styles of a single preview image',
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       fileList: [
         { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
         { url: 'https://img.yzcdn.cn/vant/tree.jpg' },
@@ -110,7 +114,7 @@ export default {
           url: 'https://img.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
-            this.$toast(this.t('deleteMessage'));
+            Toast(t('deleteMessage'));
           },
         },
         {
@@ -120,61 +124,63 @@ export default {
           previewSize: 120,
         },
       ],
-      statusFileList: [],
-      previewCoverFiles: [],
-    };
-  },
-
-  created() {
-    this.statusFileList.push(
-      {
-        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        status: 'uploading',
-        message: this.t('uploading'),
-      },
-      {
-        url: 'https://img.yzcdn.cn/vant/tree.jpg',
-        status: 'failed',
-        message: this.t('failed'),
-      }
-    );
-
-    this.previewCoverFiles.push({
-      url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-      file: {
-        name: this.t('imageName'),
-      },
+      statusFileList: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          status: 'uploading',
+          message: t('uploading'),
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          status: 'failed',
+          message: t('failed'),
+        },
+      ],
+      previewCoverFiles: [
+        {
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          file: {
+            name: t('imageName'),
+          },
+        },
+      ],
     });
-  },
 
-  methods: {
-    beforeRead(file) {
+    const beforeRead = (file) => {
       if (file.type !== 'image/jpeg') {
-        this.$toast(this.t('invalidType'));
+        Toast(t('invalidType'));
         return false;
       }
-
       return true;
-    },
+    };
 
-    afterRead(file, detail) {
+    const afterRead = (file, detail) => {
       console.log(file, detail);
-    },
+    };
 
-    afterReadFailed(item) {
+    const afterReadFailed = (item) => {
       item.status = 'uploading';
-      item.message = this.t('uploading');
+      item.message = t('uploading');
 
       setTimeout(() => {
         item.status = 'failed';
-        item.message = this.t('failed');
+        item.message = t('failed');
       }, 1000);
-    },
+    };
 
-    onOversize(file, detail) {
+    const onOversize = (file, detail) => {
       console.log(file, detail);
-      this.$toast(this.t('overSizeTip'));
-    },
+      Toast(t('overSizeTip'));
+    };
+
+    return {
+      ...toRefs(state),
+      t,
+      afterRead,
+      beforeRead,
+      onOversize,
+      afterReadFailed,
+    };
   },
 };
 </script>

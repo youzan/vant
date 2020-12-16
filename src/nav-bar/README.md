@@ -29,13 +29,17 @@ app.use(NavBar);
 import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onClickLeft() {
+  setup() {
+    const onClickLeft = () => {
       Toast('Back');
-    },
-    onClickRight() {
+    };
+    const onClickRight = () => {
       Toast('Button');
-    },
+    };
+    return {
+      onClickLeft,
+      onClickRight,
+    };
   },
 };
 ```

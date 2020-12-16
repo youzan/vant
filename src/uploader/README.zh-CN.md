@@ -26,11 +26,15 @@ app.use(Uploader);
 
 ```js
 export default {
-  methods: {
-    afterRead(file) {
+  setup() {
+    const afterRead = (file) => {
       // 此时可以自行将文件上传至服务器
       console.log(file);
-    },
+    };
+
+    return {
+      afterRead,
+    };
   },
 };
 ```
@@ -44,15 +48,19 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      // Uploader 根据文件后缀来判断是否为图片文件
+      // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
+      { url: 'https://cloud-image', isImage: true },
+    ]);
+
     return {
-      fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-        // Uploader 根据文件后缀来判断是否为图片文件
-        // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
-        { url: 'https://cloud-image', isImage: true },
-      ],
+      fileList,
     };
   },
 };
@@ -67,25 +75,24 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return {
-      fileList: [
-        {
-          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-          status: 'uploading',
-          message: '上传中...',
-        },
-        {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
-          status: 'failed',
-          message: '上传失败',
-        },
-      ],
-    };
-  },
-  methods: {
-    afterRead(file) {
+  setup() {
+    const fileList = ref([
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        status: 'uploading',
+        message: '上传中...',
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        status: 'failed',
+        message: '上传失败',
+      },
+    ]);
+
+    const afterRead = (file) => {
       file.status = 'uploading';
       file.message = '上传中...';
 
@@ -93,7 +100,12 @@ export default {
         file.status = 'failed';
         file.message = '上传失败';
       }, 1000);
-    },
+    };
+
+    return {
+      fileList,
+      afterRead,
+    };
   },
 };
 ```
@@ -107,10 +119,14 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([]);
+
     return {
-      fileList: [],
+      fileList,
     };
   },
 };
@@ -125,14 +141,18 @@ export default {
 ```
 
 ```js
-import Toast from 'vant';
+import { Toast } from 'vant';
 
 export default {
-  methods: {
-    onOversize(file) {
+  setup() {
+    const onOversize = (file) => {
       console.log(file);
       Toast('文件大小不能超过 500kb');
-    },
+    };
+
+    return {
+      onOversize,
+    };
   },
 };
 ```
@@ -185,17 +205,18 @@ export default {
 import { Toast } from 'vant';
 
 export default {
-  methods: {
+  setup() {
     // 返回布尔值
-    beforeRead(file) {
+    const beforeRead = (file) => {
       if (file.type !== 'image/jpeg') {
         Toast('请上传 jpg 格式图片');
         return false;
       }
       return true;
-    },
+    };
+
     // 返回 Promise
-    asyncBeforeRead(file) {
+    const asyncBeforeRead = (file) => {
       return new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
           Toast('请上传 jpg 格式图片');
@@ -207,7 +228,12 @@ export default {
           resolve(img);
         }
       });
-    },
+    };
+
+    return {
+      beforeRead,
+      asyncBeforeRead,
+    };
   },
 };
 ```
@@ -229,27 +255,31 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
 export default {
-  data() {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      {
+        url: 'https://img.yzcdn.cn/vant/sand.jpg',
+        deletable: true,
+        beforeDelete: () => {
+          Toast('自定义单个预览图片的事件和样式');
+        },
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        deletable: true,
+        imageFit: 'contain',
+        previewSize: 120,
+      },
+    ]);
     return {
-      fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-        {
-          url: 'https://img.yzcdn.cn/vant/sand.jpg',
-          deletable: true,
-          beforeDelete: () => {
-            this.$toast('自定义单个图片预览');
-          },
-        },
-        {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
-          deletable: true,
-          imageFit: 'contain',
-          previewSize: 120,
-        },
-      ],
+      fileList:
     };
-  },
+  }
 };
 ```
 

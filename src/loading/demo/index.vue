@@ -27,23 +27,30 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    type: '加载类型',
+    text: '加载文案',
+    size: '自定义大小',
+    color: '自定义颜色',
+    vertical: '垂直排列',
+  },
+  'en-US': {
+    type: 'Type',
+    text: 'Text',
+    size: 'Size',
+    color: 'Color',
+    vertical: 'Vertical',
+  },
+};
+
 export default {
-  i18n: {
-    'zh-CN': {
-      type: '加载类型',
-      text: '加载文案',
-      size: '自定义大小',
-      color: '自定义颜色',
-      vertical: '垂直排列',
-    },
-    'en-US': {
-      type: 'Type',
-      text: 'Text',
-      size: 'Size',
-      color: 'Color',
-      vertical: 'Vertical',
-    },
+  setup() {
+    const t = useTranslate(i18n);
+    return { t };
   },
 };
 </script>

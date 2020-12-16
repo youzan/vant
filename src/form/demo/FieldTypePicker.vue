@@ -18,36 +18,45 @@
 </template>
 
 <script>
-export default {
-  i18n: {
-    'zh-CN': {
-      picker: '选择器',
-      placeholder: '点击选择城市',
-      textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-    },
-    'en-US': {
-      picker: 'Picker',
-      placeholder: 'Select city',
-      textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-    },
-  },
+import { reactive, toRefs } from 'vue';
+import { useTranslate } from '@demo/use-translate';
 
-  data() {
-    return {
+const i18n = {
+  'zh-CN': {
+    picker: '选择器',
+    placeholder: '点击选择城市',
+    textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  },
+  'en-US': {
+    picker: 'Picker',
+    placeholder: 'Select city',
+    textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  },
+};
+
+export default {
+  setup() {
+    const t = useTranslate(i18n);
+    const state = reactive({
       value: '',
       showPicker: false,
+    });
+
+    const onConfirm = (value) => {
+      state.value = value;
+      state.showPicker = false;
     };
-  },
 
-  methods: {
-    onConfirm(value) {
-      this.value = value;
-      this.showPicker = false;
-    },
+    const onCancel = () => {
+      state.showPicker = false;
+    };
 
-    onCancel() {
-      this.showPicker = false;
-    },
+    return {
+      ...toRefs(state),
+      t,
+      onCancel,
+      onConfirm,
+    };
   },
 };
 </script>
